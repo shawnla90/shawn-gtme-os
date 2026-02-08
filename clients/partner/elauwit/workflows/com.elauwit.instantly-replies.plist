@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.elauwit.instantly-replies</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/local/bin/python3</string>
+        <string>/Users/shawntenam/Desktop/shawn-gtme-os/clients/partner/elauwit/workflows/fetch-replies-automation.py</string>
+    </array>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>INSTANTLY_API_KEY</key>
+        <string>M2ViZWVlOTctNjI3MC00NzMwLTljOTQtYjFhODViMzAxZmUxOkp4WUhYUXFBYXZXbQ==</string>
+        <key>PARTNER</key>
+        <string>elauwit</string>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+    
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>0</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    
+    <key>RunAtLoad</key>
+    <false/>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/shawntenam/Desktop/shawn-gtme-os/clients/partner/elauwit/resources/replies/automation.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/shawntenam/Desktop/shawn-gtme-os/clients/partner/elauwit/resources/replies/automation.error.log</string>
+</dict>
+</plist>

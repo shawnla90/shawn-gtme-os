@@ -77,10 +77,21 @@ This command complements the monitoring workflow:
 - **Weekly analysis**: Review saved replies to identify trends
 - **Reply routing**: Positive replies saved here can be routed to sales (4-hour SLA)
 
+## Automation
+
+The command can be automated to run every 24 hours automatically. See [`automation-setup.md`](automation-setup.md) for setup instructions.
+
+**Quick setup options**:
+- **macOS launchd** (recommended) - Runs locally, reliable
+- **Cron** - Traditional scheduling
+- **GitHub Actions** - Cloud-based, runs even when Mac is off
+
+The automation script (`fetch-replies-automation.py`) uses the Instantly API directly (doesn't require Cursor/MCP to be running).
+
 ## Future Enhancements
 
 - Filter options: `--last-7-days`, `--campaign <id>`, `--unread-only`
 - Reply sentiment detection (positive/negative keywords)
-- Deduplication logic (don't re-save same email)
+- Deduplication logic (don't re-save same email) ✅ Already implemented in automation script
 - Auto-routing to CRM for positive replies
 - Summary reports analyzing saved replies
