@@ -270,10 +270,105 @@ Your captured content here
 
 ---
 
+## Part D: Slack MCP Integration
+
+### Overview
+
+Slack MCP server enables programmatic access to Slack workspaces directly from Cursor, complementing webhook notifications and bot integrations. Use MCP tools to read channel history, search messages, send updates, and look up users.
+
+### Prerequisites
+
+- Slack MCP server configured (see `slack-mcp-setup.md` for setup)
+- Node.js/npx installed
+- Slack app with MCP scopes configured
+
+### Available MCP Tools
+
+The Slack MCP server provides these tools:
+
+- **`mcp_slack_list_channels`** - List all public channels
+- **`mcp_slack_get_channel_history`** - Read channel messages
+- **`mcp_slack_post_message`** - Send messages to channels
+- **`mcp_slack_get_users`** - List workspace users
+- **`mcp_slack_get_user_profile`** - Get user details
+- **`mcp_slack_get_thread_replies`** - Read thread messages
+- **`mcp_slack_reply_to_thread`** - Reply to threads
+- **`mcp_slack_add_reaction`** - Add emoji reactions
+
+### Common Use Cases
+
+**1. Search Channel History**
+
+Ask Cursor:
+```
+Get the last 20 messages from #general channel using Slack MCP
+```
+
+**2. Send Status Updates**
+
+Ask Cursor:
+```
+Post "Deployment complete" to #alerts channel using Slack MCP
+```
+
+**3. Look Up Users**
+
+Ask Cursor:
+```
+Find email address for user John Doe using Slack MCP
+```
+
+**4. Monitor Channels**
+
+Ask Cursor:
+```
+What are the latest messages in #support channel?
+```
+
+### Integration Patterns
+
+**With Instantly MCP**:
+- Fetch email replies → Post summary to Slack
+- Monitor campaign performance → Alert in Slack channels
+
+**With Webhooks**:
+- Webhooks: Automated one-way notifications
+- MCP: On-demand queries and two-way interaction
+
+**With Slack Bot**:
+- Bot: Event-driven content capture
+- MCP: Programmatic history reading and searching
+
+### Example Workflows
+
+**Daily Reply Summary**:
+1. Use Instantly MCP to fetch replies (`/instantlyreplies_elauwit`)
+2. Use Slack MCP to post summary to #email-replies channel
+3. Format as rich message with reply counts and highlights
+
+**Channel Monitoring**:
+1. Use Slack MCP to read #support channel history
+2. Search for keywords or specific users
+3. Extract context for follow-up actions
+
+**User Lookup**:
+1. Use Slack MCP to search for user by name
+2. Get profile information including email
+3. Use for contact enrichment or routing
+
+### Documentation
+
+- **Setup Guide**: See `slack-mcp-setup.md` for detailed setup instructions
+- **Skill Reference**: See `.cursor/skills/slack-mcp/SKILL.md` for tool documentation
+- **Slack API**: https://api.slack.com/
+
+---
+
 ## Next Steps
 
 - **Phase 2**: Add slash commands for status checks (`/gtm status`, `/gtm fetch`)
 - **Phase 3**: Add proactive alerts and monitoring dashboards
+- **Phase 4**: Integrate Slack MCP with partner monitoring workflows
 
 ---
 
@@ -282,6 +377,8 @@ Your captured content here
 - `slack_notifier.py` - Notification helper module
 - `slack_bot.py` - Flask server for Slack events
 - `content_capture.py` - Content parsing and saving logic
+- `cursor_to_slack.py` - Send messages from Cursor to Slack
+- `slack-mcp-setup.md` - Slack MCP server setup guide
 - `captures/` directory - Where content is saved
 - `slack-integration.md` - This documentation
 
@@ -290,4 +387,5 @@ Your captured content here
 - Python 3.7+
 - `requests` library (for HTTP)
 - `flask` library (for bot server)
+- Node.js/npx (for Slack MCP server)
 - Slack workspace with admin access
