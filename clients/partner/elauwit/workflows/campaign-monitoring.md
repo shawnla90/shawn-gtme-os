@@ -26,12 +26,23 @@
 
 ## MCP Server Integration
 
-<!-- Document Instantly MCP server setup, API endpoints, and automated monitoring queries here as they're configured -->
+Instantly MCP server is configured and connected. Use the following commands for monitoring:
+
+### Reply Management Command
+
+**`/instantlyreplies_elauwit`** — Fetch all email replies from the last 24 hours and save them to `resources/replies/` for analysis.
+
+- **Usage**: Type `/instantlyreplies_elauwit` in Cursor chat
+- **Output**: Saves each reply as a markdown file with full details
+- **Location**: `clients/partner/elauwit/resources/replies/`
+- **Use case**: Daily reply capture, reply analysis, sales routing
+
+See [`replies-management.md`](replies-management.md) for full documentation.
 
 ### Monitoring Queries (Planned)
 - Pull campaign stats by sequence
 - Flag domains dropping below deliverability threshold
-- Surface positive replies for immediate sales routing
+- Surface positive replies for immediate sales routing (use `/instantlyreplies_elauwit` to capture)
 - Track "quote the switch" CTA conversion specifically
 
 ## Reporting Cadence
