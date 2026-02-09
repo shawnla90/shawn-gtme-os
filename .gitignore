@@ -3,3 +3,4 @@
 .env.*
 clients/
 partners/
+.notion-sync-state.json
