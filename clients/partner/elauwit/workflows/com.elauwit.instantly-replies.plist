@@ -7,7 +7,7 @@
     
     <key>ProgramArguments</key>
     <array>
-        <string>/usr/local/bin/python3</string>
+        <string>/usr/bin/python3</string>
         <string>/Users/shawntenam/Desktop/shawn-gtme-os/clients/partner/elauwit/workflows/fetch-replies-automation.py</string>
     </array>
     

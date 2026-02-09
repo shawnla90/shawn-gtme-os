@@ -89,6 +89,7 @@ Commands compose pieces from each tier based on what they need:
 - **`/slop-check`** loads anti-slop.md for fast check, or ai-pattern-detection for full 29-flag scan
 - **`/client-update`** loads Tier 1 core-voice + client-comms playbook
 - **`/new-play`** loads plays-series pillar + plays-index + LinkedIn playbook
+- **`/finalcopy`** runs final review pass + strips markdown to platform-ready plain text for copy-paste
 
 ---
 

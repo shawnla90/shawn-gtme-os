@@ -117,7 +117,9 @@ If you already have a Slack bot app (from Part B of slack-integration.md), you c
 
 If Cursor uses a configuration file (typically `~/.cursor/mcp.json`):
 
-1. Open or create the MCP configuration file
+**Quick Reference**: See `slack-mcp-config.json` in this directory for ready-to-use configuration with both workspaces.
+
+1. Open or create the MCP configuration file (`~/.cursor/mcp.json`)
 2. Add Slack server configuration:
 
 ```json
@@ -138,6 +140,53 @@ If Cursor uses a configuration file (typically `~/.cursor/mcp.json`):
 3. Replace token and Team ID placeholders
 4. Save file
 5. Restart Cursor
+
+### Method 3: Multiple Workspaces Configuration
+
+To configure multiple Slack workspaces (e.g., Lead Alchemy and Revpartners), add separate server entries with distinct names:
+
+**Via Cursor Settings UI:**
+
+1. Add first workspace:
+   - Server Name: `slack-lead-alchemy` (or your workspace name)
+   - Configuration with Lead Alchemy credentials
+2. Add second workspace:
+   - Server Name: `slack-revpartners` (or your workspace name)
+   - Configuration with Revpartners credentials
+3. Save and restart Cursor
+
+**Via Configuration File:**
+
+```json
+{
+  "mcpServers": {
+    "slack-lead-alchemy": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-LEAD-ALCHEMY-TOKEN-PLACEHOLDER",
+        "SLACK_TEAM_ID": "T0AE2EHPKED"
+      }
+    },
+    "slack-revpartners": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "env": {
+        "SLACK_BOT_TOKEN": "xoxb-REVPARTNERS-TOKEN-PLACEHOLDER",
+        "SLACK_TEAM_ID": "T01FPGB7QCX"
+      }
+    }
+  }
+}
+```
+
+**Note**: When multiple Slack MCP servers are configured, tool names will be prefixed with the server name:
+- Lead Alchemy: `mcp_slack-lead-alchemy_list_channels`, `mcp_slack-lead-alchemy_post_message`
+- Revpartners: `mcp_slack-revpartners_list_channels`, `mcp_slack-revpartners_post_message`
+
+To use a specific workspace, specify it in your query:
+- "List channels in Lead Alchemy workspace using Slack MCP"
+- "Get messages from #general in Revpartners Slack"
 
 ---
 
@@ -164,7 +213,9 @@ After configuring, verify the MCP server is working:
 
 ## Step 7: Test Integration
 
-### Test 1: List Channels
+### Single Workspace Testing
+
+**Test 1: List Channels**
 
 Ask Cursor:
 ```
@@ -173,7 +224,7 @@ Use Slack MCP to list all public channels
 
 Expected: List of channels with IDs and names
 
-### Test 2: Read Channel History
+**Test 2: Read Channel History**
 
 Ask Cursor:
 ```
@@ -182,7 +233,7 @@ Get the last 10 messages from #general channel using Slack MCP
 
 Expected: Recent messages from the channel
 
-### Test 3: Get Users
+**Test 3: Get Users**
 
 Ask Cursor:
 ```
@@ -190,6 +241,26 @@ List all users in the Slack workspace using MCP
 ```
 
 Expected: List of workspace users
+
+### Multiple Workspaces Testing
+
+If you've configured multiple workspaces, test each separately:
+
+**Test Lead Alchemy Workspace:**
+```
+List all channels in Lead Alchemy Slack workspace
+```
+
+**Test Revpartners Workspace:**
+```
+List all channels in Revpartners Slack workspace
+```
+
+Both should return their respective channel lists. You can also test reading history from each:
+```
+Get the last 10 messages from #general in Lead Alchemy workspace
+Get the last 10 messages from #general in Revpartners workspace
+```
 
 ---
 
