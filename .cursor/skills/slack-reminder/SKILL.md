@@ -33,11 +33,11 @@ Default reminder channel: `reminder-channel` (ID: `C0ADP5Z9GUW`)
    - Keep message concise and clear
 
 3. **Get Channel ID**
-   - If channel name specified, use `mcp_slack-lead-alchemy_slack_list_channels` to find channel ID
+   - If channel name specified, use `mcp_slack_list_channels` to find channel ID
    - If no channel specified, use default: `C0ADP5Z9GUW`
 
 4. **Post Message**
-   - Use `mcp_slack-lead-alchemy_slack_post_message` with:
+   - Use `mcp_slack_post_message` with:
      - `channel_id`: Channel ID from step 3
      - `text`: Formatted reminder message
 

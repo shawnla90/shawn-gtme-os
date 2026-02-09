@@ -112,15 +112,19 @@ different from the templated sequence they've been ignoring}}
 
 ### Step 5: Save Report
 
-1. Save individual recon files to: `clients/partner/elauwit/resources/recon/`
+1. **Determine Output Directory**:
+   - If input was a CSV file: Use `{{directory_of_csv}}/recon/`
+   - If input was `accepted` or a URL: Use default `clients/partner/elauwit/resources/recon/`
+
+2. Save individual recon files to the output directory:
    - Filename: `{{linkedin-username}}-recon-{{YYYY-MM-DD}}.md`
    - Example: `zachschofel-recon-2026-02-08.md`
 
-2. Save summary CSV with personalization hooks:
-   - Path: `clients/partner/elauwit/resources/linkedin-recon-{{YYYY-MM-DD}}.csv`
+3. Save summary CSV with personalization hooks to the parent of output directory:
+   - Path: `{{output_directory_parent}}/linkedin-recon-{{YYYY-MM-DD}}.csv`
    - Columns: First Name, Last Name, Company, Position, LinkedIn URL, Recent Post Topic, Personalization Hook, Suggested Message
 
-3. Display summary:
+4. Display summary:
 
 ```
 ## LinkedIn Recon Complete
