@@ -1,3 +1,8 @@
+---
+name: update-github
+description: Pre-push safety scan for the public GitHub repo. Scans tracked files for sensitive partner/client names using a local blocklist, audits .gitignore, checks commit messages, then commits and pushes. Use when the user types /update-github or asks to push to GitHub safely.
+---
+
 # Update GitHub — Pre-Push Safety Scan
 
 Run a full audit of tracked files and commit history before pushing to the public GitHub repo. Fix any findings, then commit and push.
