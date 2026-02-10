@@ -112,7 +112,7 @@ The Slack MCP server provides the following tools:
 
 Combine Slack MCP with Instantly MCP for comprehensive monitoring:
 
-1. Fetch email replies using Instantly MCP (`/instantlyreplies_elauwit`)
+1. Fetch email replies using Instantly MCP (`/instantlyreplies_<partner>`)
 2. Post summary to Slack channel using Slack MCP
 3. Create alerts for high-priority replies
 
@@ -179,6 +179,6 @@ Common errors and solutions:
 
 ## Related Documentation
 
-- Setup guide: `clients/partner/elauwit/workflows/slack-mcp-setup.md`
-- Integration guide: `clients/partner/elauwit/workflows/slack-integration.md` (Part D)
+- Setup guide: `clients/partner/<partner>/workflows/slack-mcp-setup.md`
+- Integration guide: `clients/partner/<partner>/workflows/slack-integration.md` (Part D)
 - Slack API docs: https://api.slack.com/

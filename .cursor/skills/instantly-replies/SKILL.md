@@ -1,22 +1,22 @@
 ---
 name: instantly-replies
-description: Fetches email replies from Instantly campaigns using MCP and saves them to partner-specific resources folders. Use when the user types /instantlyreplies_<partner> (e.g., /instantlyreplies_elauwit) or asks to fetch Instantly email replies for a partner.
+description: Fetches email replies from Instantly campaigns using MCP and saves them to partner-specific resources folders. Use when the user types /instantlyreplies_<partner> (e.g., /instantlyreplies_acme) or asks to fetch Instantly email replies for a partner.
 ---
 
 # Instantly Replies Command
 
-When the user types `/instantlyreplies_<partner>` (e.g., `/instantlyreplies_elauwit`), fetch all email replies from that partner's Instantly campaigns and save them to the partner's resources folder.
+When the user types `/instantlyreplies_<partner>` (e.g., `/instantlyreplies_acme`), fetch all email replies from that partner's Instantly campaigns and save them to the partner's resources folder.
 
 ## Command Pattern
 
-The command follows the pattern: `/instantlyreplies_<partner>` where `<partner>` is one of: `elauwit`, `connext`, `exol`
+The command follows the pattern: `/instantlyreplies_<partner>` where `<partner>` is one of: `acme`, `globex`, `initech`
 
 ## Workflow
 
 1. **Extract Partner Name**
-   - Parse command to extract partner name (e.g., `elauwit` from `/instantlyreplies_elauwit`)
+   - Parse command to extract partner name (e.g., `acme` from `/instantlyreplies_acme`)
    - Validate partner directory exists: `clients/partner/{partner}/`
-   - If partner doesn't exist, show error: "Partner '{partner}' not found. Available partners: elauwit, connext, exol"
+   - If partner doesn't exist, show error: "Partner '{partner}' not found. Available partners: acme, globex, initech"
 
 2. **Fetch Replies**
    - Call `mcp_instantly_list_emails` with:
@@ -75,14 +75,14 @@ After saving, show a formatted table:
 ## Error Handling
 
 - No replies found: "No replies found in the last 24 hours for {{partner}}"
-- Partner not found: "Partner '{{partner}}' not found. Available partners: elauwit, connext, exol"
+- Partner not found: "Partner '{{partner}}' not found. Available partners: acme, globex, initech"
 - MCP error: Show error message and suggest checking MCP connection
 
 ## Example
 
-User: `/instantlyreplies_elauwit`
+User: `/instantlyreplies_acme`
 
 Response:
 1. Fetch replies from Instantly MCP
-2. Save each to `clients/partner/elauwit/resources/replies/`
+2. Save each to `clients/partner/acme/resources/replies/`
 3. Display summary table with all saved files

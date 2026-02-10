@@ -17,14 +17,14 @@ When the user types `/linkedin-recon`, use Browserbase to visit LinkedIn profile
 | `<linkedin-url>` | Recon a single LinkedIn profile URL |
 | `<csv-path>` | Recon all profiles from a CSV file with a "LinkedIn URL" column |
 
-If no source is provided, default to `accepted` (uses the most recent `heyreach-accepted-*.csv` in `clients/partner/elauwit/resources/`).
+If no source is provided, default to `accepted` (uses the most recent `heyreach-accepted-*.csv` in `clients/partner/<partner>/resources/`).
 
 ## Workflow
 
 ### Step 1: Identify Profiles to Recon
 
 **If `accepted` (default):**
-1. Find the most recent `heyreach-accepted-*.csv` in `clients/partner/elauwit/resources/`
+1. Find the most recent `heyreach-accepted-*.csv` in `clients/partner/<partner>/resources/`
 2. Extract unique LinkedIn URLs from the "LinkedIn URL" column
 3. Deduplicate by URL
 
@@ -114,7 +114,7 @@ different from the templated sequence they've been ignoring}}
 
 1. **Determine Output Directory**:
    - If input was a CSV file: Use `{{directory_of_csv}}/recon/`
-   - If input was `accepted` or a URL: Use default `clients/partner/elauwit/resources/recon/`
+   - If input was `accepted` or a URL: Use default `clients/partner/<partner>/resources/recon/`
 
 2. Save individual recon files to the output directory:
    - Filename: `{{linkedin-username}}-recon-{{YYYY-MM-DD}}.md`
@@ -196,7 +196,7 @@ User: /linkedin-recon https://www.linkedin.com/in/zachschofel
 
 ### Recon from custom CSV
 ```
-User: /linkedin-recon clients/partner/elauwit/resources/vip-contacts.csv
+User: /linkedin-recon clients/partner/<partner>/resources/vip-contacts.csv
 
 → Reads CSV for LinkedIn URLs
 → Visits each profile

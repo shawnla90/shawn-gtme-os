@@ -1,0 +1,67 @@
+=== TWEET 1 (attach image: Screenshot_2026-02-09_at_3.00.09_PM.png) ===
+built a slash command that syncs my entire partner Slack channel into structured markdown.
+
+191 messages. 10 weeks. one command. ⚡
+
+=== TWEET 2 ===
+it pulls every message, thread, and decision into categorized sections.
+
+references. timeline. decisions. deliverables. next steps.
+
+full operational context in one file.
+
+=== TWEET 3 ===
+most people prep for partner calls by scrolling Slack for 15 minutes.
+
+I read a markdown file.
+
+=== TWEET 4 ===
+the stack: Slack MCP + Cursor.
+
+one skill file. reads the full channel history through Slack's API. outputs structured markdown to my partner's resource folder.
+
+=== TWEET 5 ===
+what one sync gives me:
+
+→ 61 direct references
+→ 14 key decisions
+→ 28 deliverables tracked
+→ 10 open items
+→ full week-by-week timeline
+
+=== TWEET 6 ===
+structured context changes how you operate.
+
+you stop being reactive. you walk into calls knowing exactly where things stand.
+
+no more "where did we land on that?"
+
+=== TWEET 7 ===
+best part — it categorizes my messages by type.
+
+status updates. asks. commitments. FYIs.
+
+I can see exactly what I've promised and what's waiting on me.
+
+=== TWEET 8 ===
+without this: scroll slack. miss context. repeat conversations.
+
+with this: full operational picture in 30 seconds.
+
+infrastructure > memory.
+
+=== TWEET 9 ===
+this isn't about having better tools.
+
+it's about building habits that give you complete context on demand.
+
+the best preparation isn't talent. it's systems.
+
+=== TWEET 10 ===
+building my own operating system inside a code editor.
+
+every skill I build makes the next one easier.
+
+follow along if you want the mess and the wins.
+
+— shawn ⚡

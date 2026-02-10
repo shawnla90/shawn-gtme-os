@@ -4,3 +4,6 @@
 clients/
 partners/
 .notion-sync-state.json
+data/
+scripts/
+qualified_leads_to_process.json

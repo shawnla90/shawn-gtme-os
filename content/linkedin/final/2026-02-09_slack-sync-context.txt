@@ -1,0 +1,33 @@
+the gap between reactive and proactive partner management is one sync command.
+
+here's what I mean.
+
+I built a skill that pulls my entire partner Slack channel — every message, every thread, every decision — into one structured markdown file.
+
+191 messages. 10 weeks. categorized into sections I actually need:
+
+🔹 references — every message from or about me
+🔹 timeline — week-by-week history with thread counts
+🔹 decisions — 14 key decisions extracted
+🔹 deliverables — 28 items tracked with completion status
+🔹 next steps — 10 open items from recent activity
+
+the pattern most people miss:
+
+you don't need a better CRM for partner management. you don't need a project management tool. you need structured context that lives where you already work.
+
+my partner resources live in the same repo where I build their campaigns. the context is right there. not in a separate app. not in a dashboard. not buried in Slack history.
+
+when I prep for a partner call, I don't scroll through Slack. I read a markdown file that tells me exactly where we are, what's open, and what we decided.
+
+that's the difference between managing a relationship reactively and running it proactively.
+
+one skill. one command. full operational context.
+
+shawn ⚡ the gtme alchemist 🧙‍♂️
+
+=== COMMENT 1 ===
+the skill is a markdown file that tells Cursor exactly how to use the Slack MCP. it reads every message in the channel, categorizes them, extracts decisions and deliverables, and writes a structured summary. same output every time. no prompt engineering needed — just /slacksync.
+
+=== COMMENT 2 ===
+this is part of the operating system I've been building inside my code editor. every partner has a resource folder. slack history, email replies, campaign data — all structured, all versioned, all in one place. planning ahead becomes the default because the context is always there.

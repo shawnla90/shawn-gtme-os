@@ -3,7 +3,7 @@
 > **Platform**: LinkedIn
 > **Pillar**: Building & Sharing
 > **Date**: 2026-02-09
-> **Status**: draft
+> **Status**: final
 > **Image**: Screenshot 2026-02-09 at 1.50.01 PM.png (Final Fantasy 10 skill tree)
 
 ---

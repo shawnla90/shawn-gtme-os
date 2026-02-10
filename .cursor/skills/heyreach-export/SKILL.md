@@ -71,7 +71,7 @@ filters = {
 
 ### Step 4: Write CSV
 
-1. **Target directory**: `clients/partner/elauwit/resources/`
+1. **Target directory**: `clients/partner/<partner>/resources/`
    - If the user specifies a different partner/client path, use that instead
 2. **Filename format**: `heyreach-{{filter}}-{{YYYY-MM-DD}}.csv`
    - Example: `heyreach-unaccepted-2026-02-08.csv`
@@ -107,7 +107,7 @@ filtered = [l for l in all_leads if filter_fn(l)]
 
 # Write CSV
 date_str = datetime.now().strftime("%Y-%m-%d")
-csv_path = f"clients/partner/elauwit/resources/heyreach-{filter_name}-{date_str}.csv"
+csv_path = f"clients/partner/<partner>/resources/heyreach-{filter_name}-{date_str}.csv"
 
 with open(csv_path, 'w', newline='') as f:
     writer = csv.writer(f)

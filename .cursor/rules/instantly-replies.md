@@ -2,14 +2,14 @@
 
 ## Command Pattern
 
-When the user types `/instantlyreplies_<partner>` (e.g., `/instantlyreplies_elauwit`), execute the following workflow:
+When the user types `/instantlyreplies_<partner>` (e.g., `/instantlyreplies_acme`), execute the following workflow:
 
 ## Workflow Steps
 
 1. **Extract Partner Name**
    - Parse command: `/instantlyreplies_<partner>` → extract partner name
    - Validate partner directory exists: `clients/partner/{partner}/`
-   - If partner doesn't exist, show error listing available partners: `elauwit`, `connext`, `exol`
+   - If partner doesn't exist, show error listing available partners: `acme`, `globex`, `initech`
 
 2. **Fetch Replies from Instantly MCP**
    - Call `mcp_instantly_list_emails` with:
@@ -69,14 +69,14 @@ After saving all replies, display a formatted table in chat:
 6. **Error Handling**
 
 - If no replies found: "No replies found in the last 24 hours for {{partner}}"
-- If partner doesn't exist: "Partner '{{partner}}' not found. Available partners: elauwit, connext, exol"
+- If partner doesn't exist: "Partner '{{partner}}' not found. Available partners: acme, globex, initech"
 - If Instantly MCP fails: Show error message and suggest checking MCP connection
 
 ## Example Usage
 
-User: `/instantlyreplies_elauwit`
+User: `/instantlyreplies_acme`
 
 Response:
 1. Fetch replies from Instantly
-2. Save each to `clients/partner/elauwit/resources/replies/`
+2. Save each to `clients/partner/<partner>/resources/replies/`
 3. Display summary table
