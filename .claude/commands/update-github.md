@@ -2,19 +2,17 @@
 
 Run a full audit of tracked files and commit history before pushing to the public GitHub repo. Fix any findings, then commit and push.
 
-## Step 1: Blocklist Scan
+## Step 1: Load Blocklist
 
-Grep all **tracked files** (`git ls-files`) for sensitive terms. The scan must be case-insensitive.
+Read the blocklist from `.claude/blocklist.txt` (one term per line, case-insensitive). This file is gitignored and contains partner names, client names, contact names, and other sensitive terms that must not appear in tracked files.
 
-### Partner / Client Names
-Search for these exact terms (case-insensitive):
-- `elauwit` / `elwt`
-- `connext`
-- `exol` / `greenbox`
-- `switzer` / `legacy recruiting`
-- `hayward`
+If `.claude/blocklist.txt` does not exist, stop and tell the user:
+> "Missing `.claude/blocklist.txt`. Create it with one sensitive term per line (partner names, client names, contact info)."
 
-### Contact Info Patterns
+## Step 2: Blocklist Scan
+
+Grep all **tracked files** (`git ls-files`) for each term in the blocklist. The scan must be case-insensitive.
+
 Also scan for patterns that look like:
 - Email addresses containing partner/client domains
 - Phone numbers (10+ digit sequences or formatted numbers)
@@ -25,7 +23,9 @@ Also scan for patterns that look like:
 - If the file is a template/skill file (`.cursor/`, `.claude/`, root markdown), replace the sensitive term with a generic placeholder (`<partner>`, `acme`, `globex`, `initech`, etc.)
 - Show the user what was found and what was fixed
 
-## Step 2: `.gitignore` Audit
+**Important**: Exclude `.claude/blocklist.txt` itself from the scan results.
+
+## Step 3: `.gitignore` Audit
 
 Verify these entries exist in `.gitignore`:
 ```
@@ -36,18 +36,19 @@ scripts/
 qualified_leads_to_process.json
 *.env
 .env.*
+.claude/blocklist.txt
 ```
 
 If any are missing, add them and inform the user.
 
-## Step 3: Commit Message Audit
+## Step 4: Commit Message Audit
 
-Check the last 20 commit messages (`git log --oneline -20`) for any of the blocklist terms from Step 1.
+Check the last 20 commit messages (`git log --oneline -20`) for any of the blocklist terms.
 
 - If found, warn the user and suggest an interactive rebase or `git filter-repo` to clean history
 - Do NOT automatically rewrite history — just report findings
 
-## Step 4: Stage, Commit, Push
+## Step 5: Stage, Commit, Push
 
 1. Stage all modified tracked files: `git add -u`
 2. Stage any new files that should be tracked (e.g., new `.claude/commands/` files)
@@ -56,11 +57,11 @@ Check the last 20 commit messages (`git log --oneline -20`) for any of the block
 
 If there are no changes to commit, skip straight to push (or confirm the remote is already up to date).
 
-## Step 5: Post-Push Verification
+## Step 6: Post-Push Verification
 
-Run a final check:
+Build a grep pattern from the blocklist and run:
 ```bash
-git ls-files | xargs grep -il 'elauwit\|connext\|exol\|greenbox\|switzer\|hayward' || echo "CLEAN: No sensitive terms found in tracked files"
+git ls-files | xargs grep -il '<pattern>' || echo "CLEAN: No sensitive terms found in tracked files"
 ```
 
 Report the result to the user.
