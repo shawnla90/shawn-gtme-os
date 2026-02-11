@@ -4,7 +4,7 @@
 > **Series**: OS.AI Labs, Post 1
 > **Structure**: Personal POV Essay
 > **Date**: 2026-02-10
-> **Status**: draft
+> **Status**: final
 > **Source**: new (draws from content/linkedin/drafts/2026-02-10_content-os-schematic.md and content/linkedin/drafts/2026-02-10_content-os-meta.md)
 > **Visual**: screenshots/content-os-schematic.png (dark-themed schematic showing the full content OS architecture)
 
@@ -39,17 +39,17 @@ the first issue of OS.AI Labs. what I built, why it matters, and what I want to 
 
 ## the return
 
-something shifted while I was quiet.
+last time I wrote here it was Inside the Lab on Beehiiv.
 
-last time I wrote here it was Inside the Lab on Beehiiv. custom anime artwork. signal chaining deep dives. that was 9 months ago. I didn't stop working. I stopped broadcasting. and I started building.
+custom anime artwork. signal chaining deep dives. that was 9 months ago. I didn't stop working. I stopped broadcasting. and I started building.
 
 what I built is worth showing you now.
 
 ## the bigger picture
 
-here's what I keep thinking about. there's a new kind of GTM professional emerging right now. not ops people with spreadsheets. not SDRs with sequences. GTM engineers who understand Git. who version control their workflows. who build inside repos instead of slide decks.
+here's what I keep thinking about. there's a new kind of GTM pro emerging right now. not ops people with spreadsheets. not SDRs with sequences. GTM engineers who understand Git. who version control their workflows. who build inside repos instead of slide decks.
 
-I was an SDR who manually built buying committees in Salesforce. sent 200+ cold emails a day from primary domains with no warmup. learned GTM from the absolute grind up. and then I learned to code. and everything changed.
+I was an SDR who manually built buying committees in Salesforce. sent 200+ cold emails a day from primary domains with no warmup. learned GTM from the absolute grind up. and then I learned to really vibe code. and everything changed.
 
 when you understand Git, you stop tracking changes and start thinking in systems. you version your outbound. you branch your experiments. you commit your wins and revert your failures. that's not workflow management. that's engineering.
 
@@ -67,7 +67,7 @@ the content OS runs the entire content machine. voice DNA files, platform playbo
 
 they live side by side. they feed each other. the GTM OS generates the stories. the content OS documents them. the content OS ships the plays. the GTM OS runs the pipeline they describe.
 
-two weeks ago the content side had maybe 5 skills and 2 pillars. today:
+two weeks ago the content side was a chatbot or two or three that I was stringing up together that may have had a skill file attached to it with some brand resonance. today:
 
 - 23 active Cursor skills
 - 10 content pillars

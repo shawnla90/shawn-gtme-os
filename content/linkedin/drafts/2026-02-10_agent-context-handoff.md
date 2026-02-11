@@ -107,4 +107,4 @@ the sections are generic. swap partner for project, client, or sprint. the file-
 
 ## Notes
 
-Skill: agent-context-handoff. Part 3 in series. Meta play — handoff skill producing handoff doc that handed off to content agent to create content about the handoff skill. Partner context: Elauwit (Katie via Contax). Version 1 = system reveal (what it does, how it works). Version 2 = meta take (why building handoff systems matters, recursion in action). Version 3 = invitation (here's the framework, make it yours). No P.S. (Part 1 only).
+Skill: agent-context-handoff. Part 3 in series. Meta play — handoff skill producing handoff doc that handed off to content agent to create content about the handoff skill. Partner context: <partner> (<contact> via Contax). Version 1 = system reveal (what it does, how it works). Version 2 = meta take (why building handoff systems matters, recursion in action). Version 3 = invitation (here's the framework, make it yours). No P.S. (Part 1 only).

@@ -24,7 +24,7 @@ Note: Legacy volume numbers were non-sequential. That era is archived. New era s
 
 | # | Title | Date | Structure | Source | Visual | Status |
 |---|-------|------|-----------|--------|--------|--------|
-| 1 | The Content OS Reveal | 2026-02-10 | Personal POV Essay | New (draws from LI content-os-schematic + content-os-meta) | screenshots/content-os-schematic.png | draft |
+| 1 | The Content OS Reveal | 2026-02-10 | Personal POV Essay | New (draws from LI content-os-schematic + content-os-meta) | screenshots/content-os-schematic.png | final |
 
 ## Next Post
 

@@ -1,6 +1,6 @@
 ---
 name: heyreach-partner-handoff
-description: Orchestrates HeyReach campaign export → Slack → Contax handoff for partner campaigns. Uses HeyReach MCP to pull accepted and unaccepted CSVs, runs deep research on accepted, routes to caller, uploads to Slack, and drafts Contax message. Use when the user says "heyreach handoff", "elauwit heyreach", "HeyReach export for Katie", or asks to run the full HeyReach → partner handoff workflow.
+description: Orchestrates HeyReach campaign export → Slack → Contax handoff for partner campaigns. Uses HeyReach MCP to pull accepted and unaccepted CSVs, runs deep research on accepted, routes to caller, uploads to Slack, and drafts Contax message. Use when the user says "heyreach handoff", "<partner> heyreach", "HeyReach export for <contact>", or asks to run the full HeyReach → partner handoff workflow.
 ---
 
 # HeyReach Partner Handoff
@@ -11,9 +11,9 @@ This is a **multi-workflow** — it chains skills (heyreach-export, linkedin-rec
 
 ## Command Pattern
 
-- `heyreach handoff` — run full handoff for default partner (elauwit)
-- `heyreach handoff <partner>` — run for specific partner (e.g., elauwit)
-- Also: "elauwit heyreach", "HeyReach export for Katie", "run the HeyReach → partner handoff"
+- `heyreach handoff` — run full handoff for default partner
+- `heyreach handoff <partner>` — run for specific partner (e.g., acme)
+- Also: "<partner> heyreach", "HeyReach export for <contact>", "run the HeyReach → partner handoff"
 
 ## Workflow Overview
 
@@ -51,7 +51,7 @@ For accepted leads — route to caller with full context:
 1. Ensure CSVs exist in `clients/partner/<partner>/resources/exports/`
 2. Run: `python clients/partner/<partner>/workflows/upload_heyreach_to_slack.py`
 3. Requires: `SLACK_BOT_TOKEN` env var, `files:write` scope on Slack app
-4. Sends: summary message + accepted CSV + unaccepted CSV to partner channel (e.g., #rp-elauwit)
+4. Sends: summary message + accepted CSV + unaccepted CSV to partner channel (e.g., #rp-<partner>)
 
 See `clients/partner/<partner>/workflows/heyreach-slack-export.md` for full setup.
 
@@ -63,7 +63,7 @@ Create `clients/partner/<partner>/resources/contax-<contact>-YYYY-MM-DD.md`:
 - List files to attach
 - Keep message concise; partner can ask follow-ups
 
-**Example structure** (from elauwit):
+**Example structure** (from acme):
 ```
 Hi [Contact],
 
@@ -80,7 +80,7 @@ Files attached:
 
 | Partner | Contact | Slack Channel | Workflow Path |
 |---------|---------|---------------|---------------|
-| elauwit | Katie (Contax) | #rp-elauwit | clients/partner/elauwit/workflows/heyreach-slack-export.md |
+| acme | <contact> (Contax) | #rp-acme | clients/partner/acme/workflows/heyreach-slack-export.md |
 
 ## Integration with Other Skills
 
