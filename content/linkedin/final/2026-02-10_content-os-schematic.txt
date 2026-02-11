@@ -1,0 +1,40 @@
+watching your own system evolve is one of the dopest parts of building in public.
+
+last week my content OS was a handful of skill files and two content pillars inside my own head. today it's this:
+
+⚡ 10 content pillars
+⚡ 6 platforms
+⚡ 16 GTM plays documented
+⚡ 23 active Cursor skills
+⚡ full pipeline: IDEA → DRAFT → FINAL → PUBLISH → REPURPOSE
+⚡ TikTok series queued. Substack defined. YouTube and Reddit on deck.
+
+and that's just the content OS.
+
+I actually built two operating systems inside the same repo.
+
+the GTM OS runs outbound infrastructure. Clay tables, HeyReach campaigns, Instantly sequences, partner exports, CRM syncs. that's the engine that builds pipeline.
+
+the content OS runs the entire content machine. voice DNA, platform playbooks, draft workflows, publishing automations. that's the engine that builds audience.
+
+two systems. one repo. separate identities. working together every single day.
+
+the GTM OS generates the stories. the content OS tells them.
+
+the GTM OS ships the plays. the content OS documents them.
+
+they feed each other. and they're both growing. fast.
+
+today I generated a schematic and got to see the content side mapped out in one frame. Python script, Pillow, the actual file tree as the data source. one render. one screenshot.
+
+and honestly? I'm fired up about it. seeing what started as a messy folder of markdown files turn into a real system with real structure. that never gets old.
+
+this is what building in public looks like when you stop talking about it and start versioning it.
+
+still early. still growing. and tomorrow the schematic will already be outdated. because something new gets added every day.
+
+shawn ⚡ the gtme alchemist 🧙‍♂️
+
+PS. to clarify the dual-OS setup: the GTM OS and content OS share the same git repo but have completely separate directory trees. GTM side has client folders, partner resources, campaign exports, CRM sync scripts. content side has skills, voice tiers, platform playbooks, draft pipelines. they coexist because the work feeds each other. but they're distinct systems. if there's interest I'll break down the repo structure. no gatekeeping ✌
+
+PPS. the schematic was generated with a Python script that reads the actual file tree. skill files, draft counts, platform directories, voice tiers. and renders it with Pillow. no Figma, no manual layout. the repo IS the data source. one-shot render, no iteration needed. that's the part that gets me. the system is structured enough that it can describe itself.

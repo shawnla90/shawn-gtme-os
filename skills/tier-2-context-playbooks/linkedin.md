@@ -8,9 +8,10 @@ Casual, builder, competent. Shifts slightly by content pillar (see Content Pilla
 
 ## Opening Line Style
 
-- **Always lowercase first word** (unless proper noun)
+- **Always lowercase first word** (unless proper noun or first-person I — always capitalize I, I'm, I'll)
 - Strong hook in first 2 lines. Lead with pain, contrarian take, or action.
 - No generic greetings
+- **Hook inspiration**: For scroll-stopping styles (curiosity, contrarian, data bombs, story openers, problem-first), see `tier-1-voice-dna/viral-hooks.md`. Same voice, amplified impact.
 
 **Good openers from your posts**:
 - "cold email is dead on arrival if you're only checking for google and microsoft."
@@ -142,6 +143,7 @@ Your comments section is a content delivery channel:
 
 ## Avoid
 
+- Quotation marks (write phrases directly, not "in quotes")
 - Corporate speak
 - Generic advice without specifics
 - Performing expertise (authority signaling)

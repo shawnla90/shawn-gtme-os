@@ -1,0 +1,31 @@
+the gtm plays series just leveled up. part 16.
+
+and no — i'm not dropping Clay. we're evolving.
+
+this one runs on HeyReach's MCP. Cursor. LinkedIn recon. Slack. one workflow, chained.
+
+here's the play:
+
+✅ HeyReach MCP — pull accepted + unaccepted CSV from the campaign. two exports, one source of truth.
+
+🔧 accepted list — run linkedin recon. deep research on every profile. recent posts, activity, personalization hooks. the caller gets context before the call, not a cold sheet.
+
+➡️ unaccepted list — updated tab, current as of today. partner gets both. caller knows who to prioritize.
+
+🧠 partner handoff — draft the message. attach the CSVs. ship. one skill orchestrates the whole thing.
+
+the energy shift: more MCP, more Cursor, more the workflow versions itself. Clay still runs half my plays. 
+
+but the stack is growing. and the plays are too.
+
+shawn ⚡ the gtme alchemist 🧙‍♂️
+
+
+=== COMMENT 1 ===
+Full heyreach-partner-handoff skill lives at .cursor/skills/heyreach-partner-handoff/SKILL.md — chains heyreach-export (MCP), linkedin-recon (browser), upload_heyreach_to_slack.py. Partner path: clients/partner/<partner>/resources/. Contax message drafts to resources/contax-<contact>-YYYY-MM-DD.md.
+
+=== COMMENT 2 ===
+Play 16 is the first "v2" play in the series — MCP + Cursor orchestration, not Clay-heavy. The shift: workflows that version in a repo, skills that chain other skills. Clay stays. We're expanding the stack.
+
+=== COMMENT 3 ===
+If you're running HeyReach campaigns and hand off to partners (SDRs, AEs, callers) — this play gives them accepted with recon context and unaccepted with an updated list. No more "which CSV is current."

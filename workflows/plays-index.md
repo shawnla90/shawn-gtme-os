@@ -20,8 +20,9 @@ Series of daily workflow breakdowns shared on LinkedIn with screen recordings. E
 | 13 | Competitor Follower Scraping | Clay + HubSpot + scraping tool | Pre-qualified category interest |
 | 14 | MX Record Classification | Clay (HTTP API + formula) | Email security tier, deliverability |
 | 15 | Enterprise Dedupe with Sculptor | Clay (Sculptor + formulas) | Dedupe within company subsets |
+| 16 | HeyReach Partner Handoff (v2) | HeyReach MCP + Cursor + LinkedIn recon + Slack | LinkedIn campaign → accepted/unaccepted CSV → deep research → caller routing → Contax handoff |
 
-Note: Plays 7 and 9 don't exist in the series. Play 13 was originally labeled as "part 12" in the post.
+Note: Plays 7 and 9 don't exist in the series. Play 13 was originally labeled as "part 12" in the post. Play 16 is v2 — more MCP, more Cursor; evolving from Clay-heavy plays.
 
 ## Unnumbered Canonical Workflows
 
@@ -46,6 +47,8 @@ Note: Plays 7 and 9 don't exist in the series. Play 13 was originally labeled as
 | HTTP API | Play 14 |
 | Sculptor | Play 15 |
 | Time Tracking API | Play 2 |
+| HeyReach MCP | Play 16 |
+| Cursor + linkedin-recon | Play 16 |
 
 ## Series Naming Convention
 
@@ -61,5 +64,5 @@ Each post includes:
 Each play can expand into:
 - X thread (condensed version)
 - YouTube walkthrough (expanded with voiceover)
-- TikTok clip (30-60 sec key moment)
-- Blog post / Substack article (full written breakdown)
+- TikTok script via `/tiktokscript repurpose <path>` (the 30-sec "aha moment" — see `workflows/tiktok-index.md` for queued plays)
+- Substack article via `/substackpost repurpose <path>` (full Tactical Breakdown — see `workflows/substack-index.md`)

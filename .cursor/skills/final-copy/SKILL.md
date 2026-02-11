@@ -9,14 +9,14 @@ When the user types `/finalcopy`, convert the current or specified draft from ma
 
 ## Command Pattern
 
-- `/finalcopy` -- converts the draft currently being discussed in conversation
-- `/finalcopy <path>` -- converts a specific draft file (e.g., `/finalcopy content/linkedin/drafts/2026-02-09_weekend-build.md`)
+- `/finalcopy` -- converts the draft currently being discussed in conversation, saves locally, and pushes to Typefully
+- `/finalcopy <path>` -- converts a specific draft file
 - `/finalcopy` with adjustment notes in the same message -- apply adjustments, then convert
-- `/finalcopy --typefully` -- convert and push the post body to Typefully as a draft
-- `/finalcopy --typefully --schedule "next-free-slot"` -- convert and schedule via Typefully
-- `/finalcopy --typefully --schedule "2026-02-10T09:00:00Z"` -- convert and schedule for a specific time
+- `/finalcopy --no-typefully` -- convert and save locally only (skip Typefully push)
+- `/finalcopy --schedule "next-free-slot"` -- convert, push to Typefully, and schedule for next free slot
+- `/finalcopy --schedule "2026-02-10T09:00:00Z"` -- convert, push to Typefully, and schedule for specific time
 
-**Default behavior**: When no flags are provided, the command converts and saves locally + displays inline. Add `--typefully` to also push to Typefully.
+**Default behavior**: Converts, saves locally, displays inline, and pushes to Typefully. Use `--no-typefully` to skip the push.
 
 ## Workflow
 
@@ -59,6 +59,16 @@ Transform the markdown draft into clean plain text by removing:
 - The actual content and its structure
 - Sign-off line
 
+### Step 3b: Text Normalization (Voice Rules — Insanely Accurate)
+
+Apply these rules to the output. Match the markdown exactly but enforce:
+
+1. **No m-dashes, em-dashes, or en-dashes** — Replace `—` (em-dash), `–` (en-dash), and `--` (double hyphen used as dash) with period + space (`. `). Do NOT replace hyphens in compound words (e.g. well-known, re-con, non-GTM). Example: "we're evolving — and fast" → "we're evolving. and fast"
+2. **No quotation marks** — Strip `"`, `'`, `"`, `'`, `«`, `»`. Keep the text; remove the quote characters.
+3. **Always capitalize I** — `i` when used as first-person pronoun becomes `I`. Include: `i'm` → `I'm`, `i'll` → `I'll`, `i've` → `I've`, `i'd` → `I'd`, standalone `i` → `I`.
+4. **Output must match the markdown** — Same line breaks, same rhythm, same structure. No extra conversion that introduces dashes, smart quotes, or lowercase i.
+5. **Double-check** — Before saving and before pushing to Typefully, verify: no m-dashes, no quotes, no lowercase i. Period + space for breaks only.
+
 ### Step 4: Split into Sections
 
 Separate the output into clearly labeled sections:
@@ -86,20 +96,24 @@ Separate the output into clearly labeled sections:
 1. **Determine platform** from the draft's frontmatter or file path:
    - `content/linkedin/drafts/...` -> platform is `linkedin`
    - `content/x/drafts/...` -> platform is `x`
+   - `content/substack/drafts/...` -> platform is `substack`
 2. **Save to**: `content/{platform}/final/{original-filename-without-extension}.txt`
    - Example: `content/linkedin/drafts/2026-02-09_weekend-build.md` -> `content/linkedin/final/2026-02-09_weekend-build.txt`
+   - Example: `content/substack/drafts/2026-02-11_content-os-reveal.md` -> `content/substack/final/2026-02-11_content-os-reveal.md` (keep as `.md` — Substack supports markdown natively)
    - Create the `final/` directory if it doesn't exist
+   - **Substack note**: Substack drafts keep markdown formatting (headers, bold, code blocks). Do NOT strip markdown for Substack — only strip for LinkedIn/X. Apply text normalization (Step 3b) but preserve markdown structure.
 3. **Display the full plain text inline** in the chat response so the user can copy-paste immediately
 4. **Show confirmation**: `Ready to paste. Post body + {n} comments saved to {path}`
 5. **Update draft status**: Change `**Status**: draft` to `**Status**: final` in the original markdown file's frontmatter
 
-### Step 6: Push to Typefully (if `--typefully` flag is set)
+### Step 6: Push to Typefully (default — skip if `--no-typefully` or Substack)
 
-If the user included `--typefully` in the command, push the post to Typefully as a draft using the Typefully MCP server.
+By default, push the post to Typefully as a draft using the Typefully MCP server. Skip if the user passed `--no-typefully` OR if the platform is `substack` (Substack has its own editor; Typefully is for LinkedIn/X only). For Substack drafts, save locally and display: "Substack post ready. Copy-paste into Substack editor or push via Substack MCP when available."
 
-1. **Push the post body** using `mcp_typefully_create_draft`:
+1. **Apply the same text normalization** (Step 3b) to the content before pushing. No m-dashes, no quotes, no lowercase i. Period + space for breaks.
+2. **Push the post body** using `mcp_typefully_create_draft`:
    - `content`: The stripped plain text post body (NOT the comments -- those are posted separately on the platform)
-   - `schedule_date`: If `--schedule` was provided, use that value. Accepts ISO 8601 timestamps or `"next-free-slot"`
+   - `schedule_date`: If `--schedule` was provided, use that value. Accepts ISO 8601 timestamps or `next-free-slot`
    - `share`: Set to `true` to get a shareable preview link back
 
 2. **Handle comments**: Comments are NOT pushed to Typefully (LinkedIn comments are posted manually or via a separate flow after the main post goes live). Display them inline in the chat for manual posting.
@@ -118,6 +132,7 @@ If the user included `--typefully` in the command, push the post to Typefully as
    ```
 
 4. **If Typefully MCP is not connected**: Fall back gracefully. Show: "Typefully MCP not connected. Saved locally to {path}. Add the Typefully MCP server to push drafts directly."
+5. **Content sent to Typefully must follow the same voice rules**: No m-dashes, no quotation marks, no lowercase i. Period + space for breaks. Insanely accurate.
 
 **Typefully MCP Tool Reference**:
 - `create_draft` -- creates a new draft. Parameters:
@@ -166,7 +181,7 @@ if you want to build something like this, start with one skill file...
 - **File isn't a draft**: "This file doesn't look like a content draft (no `## Post Body` section found). Are you sure this is the right file?"
 - **No comments section**: That's fine -- just output the post body alone. Not every post has comment threads.
 - **Already finalized**: If the draft status is already `final`, warn: "This draft was already finalized. Want to re-export anyway?"
-- **Typefully MCP not available**: If `--typefully` flag is set but the MCP server isn't connected, save locally and show: "Typefully MCP not connected. Saved locally to {path}. Check your MCP settings or remove the --typefully flag."
+- **Typefully MCP not available**: If MCP server isn't connected (and user didn't pass `--no-typefully`), save locally and show: "Typefully MCP not connected. Saved locally to {path}. Add the Typefully MCP server to push drafts. Use --no-typefully to skip."
 - **Typefully push fails**: Save locally (always works) and show the error: "Saved locally but Typefully push failed: {error}. You can copy-paste from the local file."
 
 ## Examples
@@ -203,33 +218,42 @@ Response:
   4. Displays inline + confirmation
 ```
 
-### Example 4: Finalize and push to Typefully
+### Example 4: Finalize (default — save + push to Typefully)
 ```
-User: /finalcopy --typefully
+User: /finalcopy
 Response:
   1. Reads the draft from current conversation context
-  2. Strips markdown to plain text
+  2. Strips markdown, applies text normalization (no m-dashes, no quotes, no lowercase i)
   3. Saves locally to content/linkedin/final/2026-02-09_weekend-build.txt
-  4. Pushes post body to Typefully via create_draft
+  4. Pushes post body to Typefully via create_draft (same normalized text)
   5. Displays inline text + Typefully confirmation
-  6. "Pushed to Typefully as draft. Open Typefully to review and publish."
+  6. "Ready to paste. Post body + 3 comments saved. Pushed to Typefully as draft."
 ```
 
-### Example 5: Finalize, push, and schedule
+### Example 5: Finalize locally only (skip Typefully)
 ```
-User: /finalcopy --typefully --schedule "next-free-slot"
+User: /finalcopy --no-typefully
 Response:
-  1. Strips markdown, saves locally
-  2. Pushes to Typefully with schedule_date: "next-free-slot"
+  1. Strips markdown, applies text normalization
+  2. Saves locally only. Does not push to Typefully.
+  3. "Ready to paste. Post body + 3 comments saved to {path}. (Skipped Typefully.)"
+```
+
+### Example 6: Finalize, push, and schedule
+```
+User: /finalcopy --schedule "next-free-slot"
+Response:
+  1. Strips markdown, applies text normalization, saves locally
+  2. Pushes to Typefully with schedule_date: next-free-slot
   3. "Pushed to Typefully and queued for next free slot."
 ```
 
-### Example 6: Finalize with adjustments and push
+### Example 7: Finalize with adjustments and push
 ```
-User: /finalcopy --typefully -- change "four active clients" to "multiple clients"
+User: /finalcopy -- change "four active clients" to "multiple clients"
 Response:
   1. Applies edit to markdown draft
-  2. Strips markdown
+  2. Strips markdown, applies text normalization
   3. Saves locally + pushes to Typefully
-  4. "Applied 1 adjustment. Pushed to Typefully as draft."
+  4. "Applied 1 adjustment. Ready to paste. Pushed to Typefully as draft."
 ```

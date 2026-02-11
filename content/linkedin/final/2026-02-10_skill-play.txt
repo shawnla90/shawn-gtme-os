@@ -1,0 +1,20 @@
+meta x3: a post about the command that creates posts about skills. written by running that command on itself. with a screenshot of the prompt as you type it.
+
+that's skill-play in action. skills I use everyday, part 2 ⚡
+
+the content operating system documents itself. you build a skill that turns skills into content. you use it for the first time on... itself. the screenshot captures the exact moment you're writing the prompt that generates the post. recursion done right.
+
+why document your documentation tools? because the builders who level up fastest are the ones who treat their setup as content. GTM plays got screen recordings. skills get slash commands. same energy, different medium.
+
+/skillplay — skill name or open file, and you get 3 LinkedIn versions plus 10 X tweets. the skill file is the context. no screenshot required. but when you've got one of you literally using it in the moment... that's the hook.
+
+shawn ⚡ the gtme alchemist 🧙‍♂️
+
+=== COMMENT 1 ===
+the workflow: resolve skill → get series part number → extract context (triggers, what it does, why it matters) → load voice + pillar refs → generate 3 LinkedIn versions + 10 X tweets → update index. all from the skill file. the screenshot was bonus — proof that the first action was using it on itself.
+
+=== COMMENT 2 ===
+you learn more from the recursion than from the output. when your documentation tool documents itself, you're forced to make it general enough to work on any skill. that constraint makes the system better.
+
+=== COMMENT 3 ===
+if you grab this and want to make it yours: the version angles (system reveal, meta take, invitation) work for any skill share. swap the skill file, keep the structure.

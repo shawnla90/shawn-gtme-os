@@ -8,3 +8,4 @@ data/
 scripts/
 qualified_leads_to_process.json
 .claude/blocklist.txt
+screenshots/

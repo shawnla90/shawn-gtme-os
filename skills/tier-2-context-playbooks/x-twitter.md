@@ -20,9 +20,10 @@ Casual, builder, punchy. Everything that works on LinkedIn but stripped to the b
 
 ## Opening Line Style
 
-- **Always lowercase first word** (same as LinkedIn)
+- **Always lowercase first word** (same as LinkedIn), except first-person **I** — always capitalize I, I'm, I'll, I built, etc.
 - Hooks even harder than LinkedIn -- you're competing with the entire timeline, not just a feed
 - First tweet of a thread must be self-contained and compelling on its own
+- **Hook inspiration**: For fast hooks, punchy facts, meme-ability, see `tier-1-voice-dna/viral-hooks.md`. Same voice, amplified impact.
 
 **Good X openers**:
 - "built two operating systems this weekend. inside a code editor."
@@ -144,6 +145,7 @@ Separate each tweet in drafts with `---` for easy copy-paste.
 
 ## Avoid
 
+- **Quotation marks** — no quoted phrases. Write directly: I'll write about it later, not "I'll write about it later"
 - Long paragraphs (this isn't LinkedIn)
 - Threads longer than 8 tweets (diminishing returns)
 - Generic motivational content

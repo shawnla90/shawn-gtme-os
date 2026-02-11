@@ -103,7 +103,7 @@ Pick 2-3 to pin. I'd recommend Options {X}, {Y}, and {Z} for the best coverage.
 ```
 
 Each comment should:
-- Start with lowercase first word (unless proper noun)
+- Start with lowercase first word (unless proper noun or I — always capitalize I; don't overuse I; no quotation marks)
 - Be 2-5 short paragraphs (match existing comment length/style)
 - Use builder-first voice — casual, competent, no corporate speak
 - Include specific details from the post (data points, tool names, workflow steps)

@@ -1,0 +1,20 @@
+[POST BODY]
+
+i love what's possible now. MCPs, AI agents, repos that version your entire GTM stack. but here's the thing nobody talks about when you're deep in the builder flow: if your repo holds skills, plays, and workflows — especially with partners or clients in the mix — learning git and github correctly isn't optional. it's survival.
+
+i committed myself to learning it the right way. not rushing. not shipping until i understood what i was actually pushing.
+
+the screenshot? that's a pre-push safety scan. blocklist check, .gitignore audit, commit history review, webhook and token scans. everything clean before anything touches the remote. that scan is my peace of mind. it means i can open my github, see my skills, see my plays, and know that nothing sensitive is leaving my machine.
+
+for GTM engineers building repos — this world is new. the unlocks are endless. but so is the learning curve. don't skip the fundamentals. take your time. get the basics right. the alternative is burning trust, burning relationships, and losing everything you thought you were protecting.
+
+shawn ⚡ the gtme alchemist 🧙‍♂️
+
+=== COMMENT 1 ===
+the pre-push scan runs blocklist checks (8 terms), .gitignore audit, commit history review, and scans for emails, webhooks, API tokens, phone numbers. runs via /update-github before any push. keeps my skills and plays in the repo without ever leaking partner or client data.
+
+=== COMMENT 2 ===
+no gatekeeping — the skill file lives in the repo. dm me if you want the structure or you're building something similar and want to compare notes.
+
+=== COMMENT 3 ===
+if you're leveling up from spreadsheets to repos and figuring out git: take the weekend. read the docs. get comfortable with .gitignore and branch hygiene. worth every hour.

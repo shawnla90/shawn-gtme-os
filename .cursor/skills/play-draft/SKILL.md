@@ -69,6 +69,7 @@ The user will provide (in their message or via follow-up):
 Read the relevant files before drafting:
 - `skills/tier-3-content-ops/pillars/{pillar-file}.md` — pillar-specific structure and voice
 - `skills/tier-1-voice-dna/core-voice.md` — core voice principles
+- `skills/tier-1-voice-dna/viral-hooks.md` — hook styles (creative benchmark layer; use at opener level)
 - `skills/tier-2-context-playbooks/linkedin.md` — LinkedIn formatting
 - `skills/tier-2-context-playbooks/x-twitter.md` — X formatting
 
@@ -93,9 +94,20 @@ Create one markdown file with **three different versions** of the LinkedIn post.
 
 ---
 
+## Hook Options (2–5 alternatives for first line)
+
+Generate 2–5 scroll-stopping opener options using styles from `viral-hooks.md` (curiosity, contrarian, data bomb, story opener, problem-first, direct challenge). User can swap these in.
+
+1. [hook option]
+2. [hook option]
+3. [hook option]
+…
+
+---
+
 ## Version 1: {Angle Name}
 
-{Post body}
+{Post body — use one of the hook options or a variant as the opener}
 
 ---
 
@@ -152,7 +164,7 @@ For **Release Reactions**:
 - **The Implications**: What this means for GTM/builders
 
 **Each version must**:
-- Start with lowercase first word (unless proper noun)
+- Start with lowercase first word (unless proper noun or first-person I — always capitalize I, I'm, I'll)
 - Follow the specific pillar structure (see pillar file)
 - Match the pillar's voice (Plays = technical + step-by-step, Building = reflective + narrative, Skill/System = meta + framework-sharing)
 - Include emoji markers (⚡ 🧙‍♂️) for identity
@@ -185,9 +197,19 @@ Create one markdown file with **10 tweets** that form a story arc.
 
 ---
 
+## Hook Options for Tweet 1 (2–5 alternatives)
+
+Generate 2–5 scroll-stopping first-tweet options using styles from `viral-hooks.md`. X hooks are faster and punchier than LinkedIn.
+
+1. [hook option]
+2. [hook option]
+…
+
+---
+
 ## Tweet 1 (Hook)
 
-{First tweet — standalone hook, screenshot attached}
+{First tweet — standalone hook, screenshot attached; use one of the options above}
 
 ---
 
@@ -251,7 +273,7 @@ Create one markdown file with **10 tweets** that form a story arc.
 ```
 
 **Each tweet must**:
-- Start with lowercase first word
+- Start with lowercase first word (except I — always capitalize; don't overuse I; no quotation marks)
 - Be under 280 characters
 - Stand alone (readable without context)
 - Build on previous tweets

@@ -1,0 +1,31 @@
+=== TWEET 1 ===
+I'm screen recording myself creating this post. the play I'm showing is the system that creates the post. meta af.
+
+=== TWEET 2 ===
+content operating system. cursor + claude + skill files. when I ship something, run /playdraft with a screenshot and context. the system outputs linkedin + x drafts before I close the tab.
+
+=== TWEET 3 ===
+the old way: ship something cool → I'll write about it later → different app, different energy, moment's gone. content becomes a separate job from building.
+
+=== TWEET 4 ===
+the content OS flips it. the build IS the content context. cursor's open. claude's running. screenshot + pillar + enter. drafts in markdown. no handoff.
+
+=== TWEET 5 ===
+two linkedin posts. 20 tweets. straight into Typefully. all from I built this, here's the screenshot, go. completely modular — use what you want, post when you're ready. the amount of content I can produce has increased exponentially.
+
+=== TWEET 6 ===
+dogfooding at the idea level. the system documents itself because it's already running when you need the documentation. not an afterthought. part of the loop.
+
+=== TWEET 7 ===
+your build environment should be your content environment. no gate between shipping and drafting. the moment you ship is the moment you draft.
+
+=== TWEET 8 ===
+skill file loads voice DNA, pillar structure, formatting guides. human provides: what I built + which pillar. everything else is system. scales.
+
+=== TWEET 9 ===
+if you're building systems for GTM or content — make the system document itself. not I'll write about it. write WITH it. same context. same loop.
+
+=== TWEET 10 ===
+building this in public. follow if you want the mess and the wins. more plays coming.
+
+shawn ⚡

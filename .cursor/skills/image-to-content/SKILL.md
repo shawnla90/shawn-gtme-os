@@ -31,6 +31,14 @@ Both files follow the standard draft format with frontmatter, post bodies, and n
 3. **If image is in conversation context**: Use the image the user is referencing
 4. **If no image found**: Ask user to load the image into the editor or provide the path
 
+### Step 1b: Route GTM Plays to /playdraft
+
+**If the image is a GTM play** — screenshot of a workflow, automation output, HeyReach export, Clay table, Instantly campaign, Slack sync, or any "I built this / this is my workflow running" proof — **route to `/playdraft`** with the **Plays Series** pillar instead of generating image-to-content drafts.
+
+Say: "This looks like a GTM play screenshot. Use `/playdraft` with Plays Series pillar for the right format (gtm plays i use every day, part [n]). Want me to draft from it?"
+
+Use image-to-content for: games, memes, diagrams, non-workflow visuals where the image IS the content hook. Use play-draft when the screenshot shows something you built or shipped.
+
 ### Step 2: Extract Image Context
 
 Read the image file and extract:
@@ -74,9 +82,20 @@ Create one markdown file with **three different versions** of the LinkedIn post:
 
 ---
 
+## Hook Options (2–5 alternatives for first line)
+
+Generate 2–5 scroll-stopping opener options using styles from `viral-hooks.md`. User can swap these in.
+
+1. [hook option]
+2. [hook option]
+3. [hook option]
+…
+
+---
+
 ## Version 1: {Angle Name}
 
-{Post body}
+{Post body — use one of the hook options or a variant as the opener}
 
 ---
 
@@ -117,7 +136,7 @@ Create one markdown file with **three different versions** of the LinkedIn post:
 - **The Meta Take**: Self-aware, meta commentary
 
 **Each version should**:
-- Start with lowercase first word (unless proper noun)
+- Start with lowercase first word (unless proper noun or first-person I — always capitalize I; don't overuse I; no quotation marks)
 - Follow LinkedIn voice guide (casual, builder, competent)
 - Include emoji markers (⚡ 🧙‍♂️) for identity
 - End with sign-off: "shawn ⚡ the gtme alchemist 🧙‍♂️"
@@ -140,9 +159,19 @@ Create one markdown file with **10 tweets** that form a story arc:
 
 ---
 
+## Hook Options for Tweet 1 (2–5 alternatives)
+
+Generate 2–5 scroll-stopping first-tweet options using styles from `viral-hooks.md`. X hooks are faster and punchier than LinkedIn.
+
+1. [hook option]
+2. [hook option]
+…
+
+---
+
 ## Tweet 1 (Hook)
 
-{First tweet - standalone hook}
+{First tweet — standalone hook; use one of the options above}
 
 ---
 
@@ -174,7 +203,7 @@ Create one markdown file with **10 tweets** that form a story arc:
 10. **Tweet 10**: CTA (follow, sign-off)
 
 **Each tweet should**:
-- Start with lowercase first word
+- Start with lowercase first word (except I — always capitalize; don't overuse I; no quotation marks)
 - Be under 280 characters (but don't pad unnecessarily)
 - Stand alone (readable without context)
 - Build on previous tweets
@@ -185,11 +214,12 @@ Create one markdown file with **10 tweets** that form a story arc:
 
 **Reference these files**:
 - `skills/tier-1-voice-dna/core-voice.md` - Core voice principles
+- `skills/tier-1-voice-dna/viral-hooks.md` - Hook styles (creative benchmark layer; use at opener level)
 - `skills/tier-2-context-playbooks/linkedin.md` - LinkedIn formatting
 - `skills/tier-2-context-playbooks/x-twitter.md` - X formatting
 
 **Key voice rules**:
-- Lowercase first word (unless proper noun)
+- Lowercase first word (unless proper noun or I — always capitalize I; don't overuse I; no quotation marks)
 - Casual, builder, competent tone
 - Pattern articulation (name patterns others haven't seen)
 - Technical but accessible

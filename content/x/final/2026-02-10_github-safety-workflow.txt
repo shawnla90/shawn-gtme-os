@@ -1,0 +1,29 @@
+[TWEET 1 - Hook - ATTACH SCREENSHOT HERE]
+your GTM repo has skills, plays, and workflows. maybe partner or client stuff too. are you sure you know what you're pushing? pre-push safety scan — blocklist, .gitignore, commit audit. peace of mind before it hits github. ⚡
+
+[TWEET 2]
+MCPs and AI agents made it possible to version your entire operating system. but if you're building repos with sensitive info — and most GTM engineers are — git and github are non-negotiable. and most of us learned them wrong or not at all.
+
+[TWEET 3]
+i was shipping fast before i understood what i was actually committing. the risk: burn tokens, burn trust, leak things that shouldn't leave your machine. the fix: slow down. learn the fundamentals. don't rush the basics.
+
+[TWEET 4]
+committed to learning git and github properly. built a pre-push scan that runs before any push: blocklist check, .gitignore audit, commit message review, webhook and token scans. screenshot shows the output. everything clean. nothing to push.
+
+[TWEET 5]
+that scan is why i can open my github and actually use it. skills visible. plays visible. no second-guessing. no "did i push something i shouldn't have?" the receipts are in the terminal. clean and current.
+
+[TWEET 6]
+GTM engineers with repos: this is new territory. the unlocks are endless. so is the learning curve. the people who win long-term aren't the ones moving fastest. they're the ones who got the foundation right first.
+
+[TWEET 7]
+pattern i keep seeing: excitement → rush to ship → skip the basics → regret. the fix is boring. read the docs. learn .gitignore. understand what gets pushed vs what stays local. build the safety checks. then ship.
+
+[TWEET 8]
+the scan lives in my repo as a skill. runs before every push. blocklist, emails, tokens, phone numbers — all checked. .gitignore audited. commit history scanned. no gatekeeping. the structure is there if you want it.
+
+[TWEET 9]
+if you're building GTM repos and figuring this out: take your time. the fundamentals matter more than the speed. dm me if you're in the same boat and want to compare notes.
+
+[TWEET 10]
+more on building GTM systems in public. follow if you want the mess and the wins. shawn ⚡

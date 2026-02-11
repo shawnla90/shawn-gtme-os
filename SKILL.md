@@ -46,9 +46,9 @@ Each platform or audience gets its own playbook that inherits from Tier 1 but ha
 | [`linkedin.md`](skills/tier-2-context-playbooks/linkedin.md) | Active | 5 content pillars, emoji system, sign-off style, CTA types, comment strategy |
 | [`client-comms.md`](skills/tier-2-context-playbooks/client-comms.md) | Active | Email/deck/recap tone, diagnosis-impact-next structure |
 | [`internal-team.md`](skills/tier-2-context-playbooks/internal-team.md) | Active | Slack/Notion operational updates |
-| [`x-twitter.md`](skills/tier-2-context-playbooks/x-twitter.md) | Stub | Thread format, migration from LinkedIn plays |
+| [`x-twitter.md`](skills/tier-2-context-playbooks/x-twitter.md) | Active | Thread format, compression rules, cross-posting from LinkedIn |
 | [`youtube.md`](skills/tier-2-context-playbooks/youtube.md) | Stub | Expanded walkthroughs, episode format |
-| [`tiktok.md`](skills/tier-2-context-playbooks/tiktok.md) | Stub | Short-form clips, 30-sec workflow moments |
+| [`tiktok.md`](skills/tier-2-context-playbooks/tiktok.md) | Active | Short-form video (TikTok/Reels/Shorts), 16-sec structure, 6 content series, cross-platform distribution |
 
 ### Tier 3: Content Operations (what you do with the voice - used per task)
 
@@ -76,7 +76,8 @@ Each platform or audience gets its own playbook that inherits from Tier 1 but ha
 
 | File | What it covers |
 |------|---------------|
-| [`plays-index.md`](workflows/plays-index.md) | Master index of all 15 GTM plays + unnumbered canonical workflows, tool frequency, repurpose potential |
+| [`plays-index.md`](workflows/plays-index.md) | Master index of all 16 GTM plays + unnumbered canonical workflows, tool frequency, repurpose potential |
+| [`tiktok-index.md`](workflows/tiktok-index.md) | TikTok series tracking, episode queues, repurpose tracker, content calendar |
 
 ---
 
@@ -89,6 +90,7 @@ Commands compose pieces from each tier based on what they need:
 - **`/slop-check`** loads anti-slop.md for fast check, or ai-pattern-detection for full 29-flag scan
 - **`/client-update`** loads Tier 1 core-voice + client-comms playbook
 - **`/new-play`** loads plays-series pillar + plays-index + LinkedIn playbook
+- **`/tiktokscript`** loads TikTok playbook + tiktok-index + viral-hooks + source material
 - **`/finalcopy`** runs final review pass + strips markdown to platform-ready plain text for copy-paste
 
 ---

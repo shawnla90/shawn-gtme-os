@@ -1,0 +1,29 @@
+[POST BODY]
+
+i'm screen recording myself right now. talking to my IDE. and the play i'm showing is the content operating system — creating itself.
+
+that's the meta angle. the system generates the post that documents the system.
+
+here's how it actually works ⚡
+
+🔧 cursor + claude code + a skill file called play-draft
+🔗 i describe what i built, drop the pillar, hit enter
+🧠 the skill loads voice DNA, pillar structure, formatting guides
+➡️ it outputs 3 linkedin versions + 10 x tweets + comment thread content
+
+all from "i built this, here's the screenshot, go."
+
+no jumping between notion and docs. no "let me write this later." the build is the draft. the draft is the build.
+
+if you're building in public but content creation feels like a separate job from the thing you're building — that's the gap this closes. your output becomes your content. the receipts are the post.
+
+shawn ⚡ the gtme alchemist 🧙‍♂️
+
+=== COMMENT 1 ===
+the play-draft skill is in the repo. it reads a screenshot, loads pillar guides (plays series, building & sharing, skill/system shares), pulls voice DNA, and outputs markdown files to content/linkedin/drafts and content/x/drafts. the structure is all in the skill — the human provides context + pillar. that's it.
+
+=== COMMENT 2 ===
+no gatekeeping — the repo structure, skill files, and play index are all documented. if you want to adapt this for your own content system, start with the /playdraft flow. screenshot → context → pillar → drafts. the rest scales from there.
+
+=== COMMENT 3 ===
+building in public is only sustainable if content creation isn't a separate job. this is how i made it one job. if you're doing something similar, dm me. i want to see it.

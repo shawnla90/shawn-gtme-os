@@ -105,11 +105,17 @@ Past stack (referenced in SDR backstory):
 - Too technical (losing accessibility for the SDR crowd)
 - Numbering mistakes in the series (plays 7, 9 don't exist, play 13 was labeled 12)
 
+## Formatting Rules
+
+- **Capital I**: When using first-person "I", never lowercase it. Always capitalize: I'm, I run, I built, I'll. This is the one pronoun that stays capitalized even with lowercase-first-line style.
+- **Don't overuse "I"**: Vary phrasing. Use passive or second-person where it flows. "Ship something → run /playdraft" beats "When I ship something, I run /playdraft" when both work.
+- **No quotation marks**: Do not put phrases in quotes. Write them as plain text. Bad: "i'll write about it later". Good: I'll write about it later. Quotations feel stiff and formal; your voice is direct.
+
 ## Remember
 
 Your authentic voice is your asset.
 
-The lowercase-first-line style, the casual builder energy, the pattern recognition, the technical depth, the messy honesty. This is what makes your content perform.
+The lowercase-first-line style (except for I), the casual builder energy, the pattern recognition, the technical depth, the messy honesty. This is what makes your content perform.
 
 The goal isn't to be safe and boring. It's to be strategically authentic and substantive.
 
