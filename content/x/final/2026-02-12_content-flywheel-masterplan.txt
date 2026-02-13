@@ -1,0 +1,116 @@
+your content workflow is browser tabs. mine is infrastructure.
+
+26 skills. 6 platforms. 1 repo. 0 copy-paste.
+
+here's the content OS master plan ⚡
+
+[attach content-os-masterplan.png]
+
+=== TWEET 2 ===
+
+the standard AI content workflow in 2026:
+
+→ open ChatGPT
+→ paste a prompt
+→ copy the output
+→ open another tab
+→ paste a different prompt
+→ hope the voice matches
+
+that's not a system. that's a scavenger hunt.
+
+=== TWEET 3 ===
+
+what I built instead:
+
+a git repo with two operating systems.
+
+GTM OS → runs pipeline (Clay, HeyReach, Instantly)
+Content OS → runs distribution (LinkedIn, X, Substack, Reddit, TikTok, YouTube)
+
+same codebase. they feed each other.
+
+=== TWEET 4 ===
+
+the secret ingredient is the voice DNA.
+
+4 files that every skill reads before it writes anything:
+
+→ core-voice.md (my tone, patterns, identity)
+→ viral-hooks.md (scroll-stopping openers)
+→ anti-slop.md (29 AI patterns to catch)
+→ safety-filters.md (name protection)
+
+my voice isn't a vibe. it's versioned.
+
+=== TWEET 5 ===
+
+the skills engine is where the work happens.
+
+26 active Cursor skills. each one a specialized pipeline:
+
+/playdraft → screenshot to content
+/finalcopy → draft to publish-ready
+/substackpost → topic to newsletter
+/xtip → idea to micro-tip
+/tiktokscript → concept to storyboard
+
+one slash command. done.
+
+=== TWEET 6 ===
+
+each platform has its own playbook.
+
+LinkedIn → long-form, builder narrative, 1000+ chars
+X → compressed, punchy, standalone tweets
+Substack → breathing room, deeper thinking
+Reddit → SEO, community credibility
+TikTok → 16-second hooks
+
+same voice. different compression. the skills know which rules to follow.
+
+=== TWEET 7 ===
+
+here's the flywheel:
+
+GTM OS runs campaigns → campaigns generate stories
+Content OS documents stories → stories build audience
+Audience feeds pipeline → pipeline feeds campaigns
+
+the two systems create a loop. content isn't a task. it's infrastructure that compounds.
+
+=== TWEET 8 ===
+
+what's running right now:
+
+→ 36 active drafts across all platforms
+→ 11+ LinkedIn drafts queued
+→ 12+ X drafts queued
+→ 4 Substack posts in pipeline
+→ daily tracker auto-detects all of it from git
+
+no content calendar. no Notion board. auto-detected from commits.
+
+=== TWEET 9 ===
+
+things I no longer do:
+
+→ paste prompts into ChatGPT tabs
+→ manually format for each platform
+→ copy content between browser windows
+→ hope my voice stays consistent
+→ track drafts in a spreadsheet
+
+the repo handles all of it. versioned. tracked. consistent.
+
+=== TWEET 10 ===
+
+building this in public.
+
+the GTM plays. the content skills. the voice system. the daily output.
+
+follow along if you want to see what happens when a GTM engineer builds their own content infrastructure.
+
+more coming. no gatekeeping ⚡
+
+shawn 🧙‍♂️

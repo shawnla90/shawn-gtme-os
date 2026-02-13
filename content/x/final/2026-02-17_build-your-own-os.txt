@@ -1,0 +1,58 @@
+=== TWEET 1 (Hook) === [+ image: content-os-masterplan.png]
+I had 17 tabs open and my laptop was frozen.
+
+Instantly. HubSpot. Clay. Slack. Sheets. LinkedIn. Notion.
+
+so I built something different. a modular operating system inside a code editor.
+
+today I'm sharing the scaffold prompt + a full video walkthrough. thread 🧵
+
+=== TWEET 2 (The Problem) ===
+the problem was never the tools.
+
+every tool worked fine alone. the problem was the switching. every context switch = 5 minutes lost. every cross-tool data move = copy-paste. every how did I set this up? = digging through Slack.
+
+tabs are not infrastructure.
+
+=== TWEET 3 (The Solution) ===
+what if your repo was the operating system?
+
+one repo. version controlled. MCP servers connecting every tool natively. your AI talks to your CRM. your content system talks to your outreach stack.
+
+no more tabs. no more copy-pasting.
+
+=== TWEET 4 (What the Prompt Builds) ===
+the scaffold prompt asks you 3 questions:
+- your name/brand
+- your platforms
+- your tool stack
+
+then it builds:
+- 3-tier skill architecture
+- content pipeline folders
+- .gitignore (security layer)
+- platform playbook starters
+- README explaining the system
+
+=== TWEET 5 (MCP Guide) ===
+it also includes an MCP connection guide by stack type:
+
+GTM: Instantly, HeyReach, Firecrawl
+Content: Typefully, Substack, Reddit
+Both: GitHub, Browserbase, Slack
+
+connect the tools you already use. add more as your system demands it.
+
+=== TWEET 6 (The Honest Part) ===
+real talk: the scaffold gives you architecture. it doesn't give you skill.
+
+I'm still learning this every day. mastery comes from building inside it. from writing voice files that are wrong. from skills that break. from commits you immediately want to change.
+
+the prompt gives you a foundation. you build the rest.
+
+=== TWEET 7 (CTA) ===
+the full scaffold prompt, MCP guide, security guide, AI slop checklist, 5 platform templates, and a video walkthrough of me building a repo from scratch are all in Monday's OS.AI Labs newsletter.
+
+subscribe and it's yours. no gatekeeping.
+
+[substack link]

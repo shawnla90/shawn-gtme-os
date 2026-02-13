@@ -1,0 +1,70 @@
+26 skills. 10 pillars. 6 platforms. 36 active drafts. 1 repo.
+
+that's what the content operating system looks like today (diagram attached).
+
+I don't write content in browser tabs. I don't maintain a Notion board. I don't paste prompts into ChatGPT and hope the formatting works.
+
+I run slash commands inside a code editor.
+
+/playdraft → screenshot becomes LinkedIn + X drafts
+/finalcopy → draft becomes publish-ready plain text
+/substackpost → topic becomes newsletter post #N
+/xtip → one-liner becomes micro-tip thread
+/tiktokscript → concept becomes 16-second storyboard
+/imagecontent → image becomes 3 LinkedIn versions + 10-post X arc
+
+every one of those skills inherits from the same voice DNA files. core-voice.md defines how I write. viral-hooks.md sharpens the openers. anti-slop.md catches AI patterns before they ship. platform playbooks handle the formatting per channel.
+
+what you get is multi-threaded content output that all sounds like you.
+
+
+the content side has:
+
+⚡ 26 Cursor skills. each one a specialized workflow. /playdraft turns a screenshot into LinkedIn + X drafts. /finalcopy converts a markdown draft to publish-ready plain text. /substackpost generates newsletter content with automatic post numbering. /xtip produces micro-tip posts. /tiktokscript writes short-form video scripts.
+
+🧠 3 voice tiers. core voice DNA, platform-specific playbooks, and content ops rules. every skill inherits from the same voice files. that means my LinkedIn posts, X threads, Substack essays, and Reddit posts all sound like me. not like ChatGPT doing a Shawn impression.
+
+📡 6 platform outputs. LinkedIn, X, Substack, Reddit, TikTok, YouTube. each platform has its own formatting rules, CTA patterns, and hook styles. the skills know the difference.
+
+10 content pillars structure the topics. a daily tracker auto-detects what I shipped. the whole thing versions itself through git.
+
+right now there are 36 active drafts in the pipeline across all platforms. all generated from the same hub. all in my voice.
+
+the master plan diagram attached shows the full architecture. voice tiers, skills engine, platform distribution, everything.
+
+this is what happens when you stop treating content as a task and start treating it as a system.
+
+shawn ⚡ the gtme alchemist 🧙‍♂️
+
+=== COMMENT 1 (pipeline) ===
+today's pipeline:
+⚡ LinkedIn: 11+ drafts queued
+⚡ X: 12+ drafts queued
+📰 Substack: 4 posts in pipeline
+🗣️ Reddit: 2 posts ready
+🎬 TikTok: scripts queued
+📺 YouTube: platform defined
+
+and the daily tracker caught all of it automatically. git commits, new files, content directory scans. merged into a JSON log and rendered as a dashboard card.
+
+two operating systems in one repo. GTM OS for pipeline. content OS for distribution. they feed each other.
+
+the architecture diagram shows the full master plan. every skill, every tier, every platform.
+
+=== COMMENT 2 (voice layer) ===
+the voice layer is the part that changed everything. before I built the voice DNA files, every AI-generated draft sounded generic. now every skill reads the same 4 core files before it writes anything. the output sounds like me because it literally learned from my patterns, not a generic writing prompt.
+
+here's what lives in the voice DNA:
+→ core-voice.md (identity, tone, sentence patterns)
+→ viral-hooks.md (scroll-stopping openers)
+→ anti-slop.md (29 AI patterns to catch and fix)
+→ safety-filters.md (client/partner name protection)
+
+=== COMMENT 3 (flywheel) ===
+the flywheel isn't theoretical. the GTM OS runs campaigns. Clay enrichment, HeyReach outreach, Instantly email sequences, partner handoffs. every one of those generates a story. the content OS documents those stories as plays, skill shares, build logs. those posts build audience. that audience feeds the GTM pipeline. loop.
+
+=== COMMENT 4 (skill list) ===
+full skill list for the curious:
+play-draft, final-copy, substack-post, final-substack, x-tip, tiktok-script, viral-hooks, image-to-content, content-images, daily-tracker, skill-play, value-pin-comments, linkedin-comments, agent-context-handoff, heyreach-export, heyreach-handoff, heyreach-conversations, linkedin-recon, slack-sync, slack-mcp, slack-reminder, email-copy, instantly-replies, notion-sync, repo-stats, add-mcp
+
+26 active. more queued. no gatekeeping. ask me about any of them.

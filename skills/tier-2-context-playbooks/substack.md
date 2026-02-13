@@ -60,9 +60,21 @@ Links + commentary on things you're watching, reading, building.
 - Good for weeks when you're building more than writing
 - Lowest lift, still delivers value
 
+### Notes (Feed Posts)
+
+Short-form social posts in the Substack Notes feed. Not articles. 1-4 sentences. Ultra-casual builder energy. Use `/substacknote` to generate from the daily tracker.
+
+- 1-4 sentences (2-3 is the sweet spot)
+- No titles, no headers, no CTAs
+- Lowercase everything except I
+- Screenshots from the build welcome but not required
+- Think "what's on your mind" not "here's my take"
+- Frequency: 2-3x per week minimum, daily when shipping
+- Saved to `content/substack/notes/` and tracked in the Notes Log in `workflows/substack-index.md`
+
 ## Word Count Range
 
-300–800 words per post. Can go longer for essays if the content earns it. Shorter is fine for curated drops. The constraint is substance, not length.
+300–800 words per post (articles). Can go longer for essays if the content earns it. Shorter is fine for curated drops. Notes are 1-4 sentences and don't follow word count targets. The constraint is substance, not length.
 
 ## Opening Line Style
 
@@ -146,6 +158,19 @@ Start with 1x per week or biweekly. Consistency matters more than frequency, esp
 - **No em-dashes**: Period + space for breaks. Same as LinkedIn/X.
 - **Markdown native**: Substack supports markdown. Use headers, bold, code blocks, bullet lists natively. No need to strip like LinkedIn.
 - **Headers for sections**: Use `##` for major sections in longer posts. Helps scanability.
+
+## Substack Anti-Slop Patterns
+
+These are the most common AI-generated voice drift patterns in Substack posts. Learned from real edits across published posts. Cut these during drafting and enforce during finalization.
+
+1. **No throat-clearing transitions** -- cut phrases like "here's the thing", "here's what I keep coming back to", "here's where I have to be honest", "this hit me harder than I expected." These are filler that delay the point. Go direct.
+2. **No metaphors/similes as paragraph closers** -- if the direct statement is strong enough, an analogy weakens it. "and it worked" beats "and it worked. people associated me with Clay the way they'd associate a chef with their signature dish." Cut the comparison. Let the literal land.
+3. **No hidden knowledge framing** -- don't use "nobody tells you about", "the thing most people miss", "what they don't teach you." Say the observation directly. "heres the reality about being the tool guy" not "but here's the thing nobody tells you about being the tool guy."
+4. **Two examples, not three** -- AI defaults to tripling (Clay, Instantly, Cursor). Two examples is a cleaner rhythm. Only use three when each one adds something genuinely distinct. Two that hit > three that pattern.
+5. **No emotional telegraphing** -- don't preview how the reader should feel before the reveal. "I realized I was one rebrand away from having to rebuild" is stronger than "this hit me harder than I expected. I realized I was one rebrand away." Let the content create the emotion.
+6. **Broad tool references when tools aren't the point** -- don't namecheck specific features (Sculptor prompts, Claygents, lifecycle stages) when the post is about identity, systems, or journey. Save feature-level specifics for tactical breakdowns where they earn their space.
+7. **Paragraph breaks for punchlines** -- one-line statements that carry weight get their own paragraph beat. Don't bury them inside longer paragraphs. "your most valuable IP isn't your proficiency with a tool." lands harder alone.
+8. **Lowercase days of the week** -- "friday", "monday", "tuesday" match the lowercase-first-word voice. Only capitalize if it starts a sentence AND is the first word (which is already lowercase per voice rules, so effectively always lowercase).
 
 ## Avoid
 

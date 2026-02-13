@@ -182,6 +182,18 @@ After generating the draft:
 - **Builder-first**: Sound like you're sharing from the build, not consulting from theory.
 - **No gatekeeping**: Resources, files, links shared openly.
 
+### Anti-Slop (from substack playbook — `skills/tier-2-context-playbooks/substack.md`)
+
+These are the most common AI drift patterns in Substack drafts. Catch them during generation:
+
+- **No throat-clearing** -- cut "here's the thing", "here's what I keep coming back to", "here's where I have to be honest." Go direct.
+- **No tripling** -- two examples is cleaner than three. AI defaults to three parallel items. Use two unless each one genuinely adds something.
+- **No metaphor closers** -- if the direct statement lands, the analogy weakens it. Cut similes tacked onto the end of paragraphs.
+- **No emotional telegraphing** -- don't preview how the reader should feel. Let the content create the emotion.
+- **No hidden knowledge framing** -- don't use "nobody tells you", "what most people miss." Say it directly.
+- **Lowercase days** -- "friday", "monday" not "Friday", "Monday."
+- **Punchlines get their own paragraph** -- don't bury one-line statements inside longer blocks.
+
 ### Structure (from substack playbook)
 
 - 300–800 words. Can go longer for essays if the content earns it.
