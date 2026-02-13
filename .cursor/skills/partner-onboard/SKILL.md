@@ -74,7 +74,7 @@ Tell the user:
 > 4. **Revenue Mapping Miro** — customer journey (if exported)
 >
 > You can download from Chrome: File > Download > PDF or .xlsx
-> Then share the path like: `@~/Downloads/filename.xlsx`
+> Then share the path like: `@/Users/shawntenam/Downloads/filename.xlsx`
 >
 > If you don't have access or can't download, we'll proceed with ClickUp + website data only.
 

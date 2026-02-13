@@ -34,6 +34,21 @@ If `.claude/blocklist.txt` does not exist, stop and tell the user:
 
 ## Step 2: Blocklist Scan
 
+### 2a: Filename Scan
+
+Check **filenames** of all tracked files (`git ls-files`) against every blocklist term (case-insensitive). A file whose name contains a blocklist term is a privacy leak even if its contents are clean.
+
+```bash
+git ls-files | grep -i '<term>'
+```
+
+**If any tracked filename matches a blocklist term:**
+- `git rm --cached <file>` to untrack it (preserves the local copy)
+- Add a `.gitignore` rule if one doesn't already cover it
+- Report the finding to the user — this is a **hard block** on pushing
+
+### 2b: Content Scan
+
 Grep all **tracked files** (`git ls-files`) for each term in the blocklist. The scan must be case-insensitive.
 
 Also scan for patterns that look like:
