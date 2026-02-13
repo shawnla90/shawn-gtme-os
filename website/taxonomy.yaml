@@ -1,0 +1,141 @@
+# Website Network Taxonomy
+# Referenced by content creation skills, routing rules, and breadcrumb placement.
+# Source of truth for domain mapping, keyword territories, and content routing.
+
+# ── SEO Topology ────────────────────────────────────────────────────────────
+
+seo_topology:
+  parent_keyword: "building with AI"
+  thesis: >
+    All three sites are vertical specializations of one concept: building with AI.
+    shawnos is the hub (the builder). gtmos is the GTM arm (building GTM with AI).
+    contentos is the content arm (building content with AI). Each site builds
+    domain authority in its niche while the cross-links and sameAs schema tell
+    Google they're one connected entity by the same author.
+  recursive_structure: >
+    The act of building the system IS the content for shawnos.
+    The GTM workflows produced by the system ARE the content for gtmos.
+    The methodology of creating content with the system IS the content for contentos.
+    Each site's content proves the other two sites' thesis.
+
+# ── Domains ─────────────────────────────────────────────────────────────────
+
+domains:
+  shawnos:
+    url: https://shawnos.ai
+    label: "shawn/os"
+    accent: "#00FF41"      # green (from tokens.css)
+    focus: personal brand, build-in-public, GTM engineering
+    status: active
+    keyword_clusters:
+      primary:
+        - "building with AI"
+        - "AI coding"
+        - "Claude Code"
+        - "Cursor IDE"
+        - "AI agents"
+      secondary:
+        - "build in public"
+        - "AI entrepreneurship"
+        - "solo founder AI"
+        - "AI operating system"
+        - "one-person startup AI"
+        - "monorepo"
+      long_tail:
+        - "how to build a business with Claude"
+        - "Cursor IDE for entrepreneurs"
+        - "AI coding assistant workflow"
+        - "building in public with AI tools"
+
+  gtmos:
+    url: https://thegtmos.ai
+    label: "the gtm/os"
+    accent: "#D2A53C"      # amber
+    focus: GTM operations, partner playbooks, systems
+    status: placeholder
+    keyword_clusters:
+      primary:
+        - "GTM engineering"
+        - "AI cold email"
+        - "Clay enrichment"
+        - "lead generation AI"
+      secondary:
+        - "HeyReach LinkedIn automation"
+        - "Instantly campaigns"
+        - "outbound automation"
+        - "sales ops with AI"
+        - "ABM workflow"
+        - "web reveal"
+      long_tail:
+        - "Clay cold email workflow"
+        - "how to use AI for cold outreach"
+        - "MCP server setup guide"
+        - "AI-powered sales pipeline"
+        - "GTM playbook automation"
+
+  contentos:
+    url: https://thecontentos.ai
+    label: "the content/os"
+    accent: "#9B72CF"      # purple
+    focus: content methodology, voice systems, AI-assisted writing
+    status: placeholder
+    keyword_clusters:
+      primary:
+        - "AI content creation"
+        - "content operating system"
+        - "AI writing workflow"
+      secondary:
+        - "Figma to content pipeline"
+        - "voice DNA"
+        - "anti-AI-slop"
+        - "LinkedIn content strategy with AI"
+        - "Substack growth"
+        - "content pipeline automation"
+      long_tail:
+        - "how to create content with AI without sounding like AI"
+        - "Figma MVP stories"
+        - "AI content repurpose workflow"
+        - "turn one idea into multiple posts with AI"
+        - "AI-assisted writing that sounds human"
+
+# ── Content Types ───────────────────────────────────────────────────────────
+
+content_types:
+  - blog-post
+  - newsletter
+  - social-post
+  - tiktok-script
+  - case-study
+
+# ── Status Lifecycle ────────────────────────────────────────────────────────
+
+status_lifecycle:
+  - draft
+  - review
+  - final
+  - published
+  - archived
+
+# ── Routing Rules ───────────────────────────────────────────────────────────
+
+routing_rules:
+  - "Personal stories, build-in-public, career → shawnos"
+  - "GTM systems, partner ops, outbound playbooks → gtmos"
+  - "Content strategy, voice DNA, AI writing methodology → contentos"
+  - "Cross-domain posts get primary domain + cross-links to siblings"
+
+# ── Pillar-to-Domain Mapping ────────────────────────────────────────────────
+# Maps existing content pillars to their natural website home.
+
+pillar_to_domain_mapping:
+  building-sharing: shawnos
+  plays-series: gtmos
+  skill-system-shares: gtmos
+  release-reactions: shawnos
+  gtm-memes: gtmos
+  x-micro-tips: shawnos           # personal brand, bite-sized
+  newsletter-editorial: shawnos
+  newsletter-growth: contentos
+  newsletter-repurpose: contentos
+  reddit-growth-seo: contentos
+  youtube-builder-systems: shawnos

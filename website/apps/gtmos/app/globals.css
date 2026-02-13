@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "@shawnos/shared/styles";
+
+/* === thegtmos.ai accent override === */
+:root {
+  --accent: #D2A53C;
+}
+
+/* === Base body styles === */
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--canvas);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -26,7 +26,7 @@ Note: Legacy volume numbers were non-sequential. That era is archived. New era s
 |---|-------|------|-----------|--------|--------|--------|
 | 1 | The Content OS Reveal | 2026-02-10 | Personal POV Essay | New (draws from LI content-os-schematic + content-os-meta) | screenshots/content-os-schematic.png | final |
 | 2 | The Awakening (Identity, Not Tools) | 2026-02-11 | Personal POV Essay | New (identity shift from tool guy to system builder, journey narrative) | Repo file tree showing skills/ + content/ directories | final |
-| 3 | Build Day | 2026-02-13 | Personal POV Essay | New (live build day narrative, website launch, skill development, content OS expansion to 5th platform) | Cursor workspace during the build / terminal design palette | draft |
+| 3 | Build Weekend | 2026-02-13 | Personal POV Essay | New (live build weekend, 3-site network launch, redefining building in public, recursive plan evolution 1→3) | Cursor workspace with Turborepo monorepo scaffold / three apps in file tree | draft |
 | 4 | The Cursor Discovery | 2026-02-17 | Hybrid (POV Essay + Architecture Glimpse + Tease) | New (personal Cursor origin story, teases Post 5 lead magnet) | Cursor workspace screenshot / skill tree | draft |
 | 5 | Build Your Own OS | 2026-02-24 | Tactical Breakdown (Lead Magnet) | New (scaffold prompt, MCP guide, security guide, platform templates, YouTube walkthrough) | Scaffold prompt running + generated directory tree | draft |
 | 6 | Start at Level One | 2026-03-03 | Personal POV Essay | New (reflection on importing external skill MDs vs organic repo growth, video game leveling analogy) | Side-by-side: generic frontend-design SKILL.md vs aios-image skill with exact constraints | draft |

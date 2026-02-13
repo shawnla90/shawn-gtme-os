@@ -1,0 +1,36 @@
+:root {
+  /* === Canvas === */
+  --canvas: #0D1117;
+  --canvas-subtle: #161B22;
+  --canvas-border: #30363D;
+
+  /* === Text === */
+  --text-primary: #C9D1D9;
+  --text-secondary: #8B949E;
+  --text-muted: #484F58;
+
+  /* === shawnos.ai palette === */
+  --shawnos-green: #4EC373;
+  --shawnos-purple: #9B72CF;
+  --shawnos-amber: #D2A53C;
+
+  /* === thegtmos.ai palette === */
+  --gtmos-teal: #3DBFA0;
+  --gtmos-red: #E05555;
+
+  /* === thecontentos.ai palette === */
+  --contentos-purple: #9B72CF;
+  --contentos-green: #4EC373;
+
+  /* === Per-app accent (overridden by each app's tailwind/globals) === */
+  --accent: #4EC373;  /* default to green -- the connective tissue */
+
+  /* === Shared functional colors === */
+  --link: var(--accent);
+  --link-hover: color-mix(in srgb, var(--accent) 80%, white);
+  --border: var(--canvas-border);
+  --code-bg: var(--canvas-subtle);
+
+  /* === Font === */
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+}

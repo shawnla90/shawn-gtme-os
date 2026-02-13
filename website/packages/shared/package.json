@@ -1,0 +1,31 @@
+{
+  "name": "@shawnos/shared",
+  "version": "0.0.0",
+  "private": true,
+  "exports": {
+    "./components": "./components/index.ts",
+    "./lib": "./lib/index.ts",
+    "./styles": "./styles/tokens.css"
+  },
+  "dependencies": {
+    "gray-matter": "latest",
+    "rehype-highlight": "latest",
+    "rehype-slug": "latest",
+    "rehype-stringify": "latest",
+    "remark-gfm": "latest",
+    "remark-parse": "latest",
+    "remark-rehype": "latest",
+    "unified": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.3",
+    "@types/react": "^19",
+    "react": "^19",
+    "react-dom": "^19",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": "^19",
+    "react-dom": "^19"
+  }
+}
