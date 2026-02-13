@@ -16,7 +16,8 @@ Before ANY git operations, take a snapshot of all gitignored local data director
 1. Run `find clients/ -type f 2>/dev/null | wc -l` and record the count
 2. Run `find data/ -type f 2>/dev/null | wc -l` and record the count
 3. Run `find scripts/ -type f 2>/dev/null | wc -l` and record the count
-4. Run `ls -d clients/partner/*/ clients/client/*/ 2>/dev/null` and record the directory list
+4. Run `find content/internal/ -type f 2>/dev/null | wc -l` and record the count
+5. Run `ls -d clients/partner/*/ clients/client/*/ 2>/dev/null` and record the directory list
 
 Store these values. They will be verified again in Step 7.
 
@@ -55,6 +56,7 @@ clients/
 partners/
 data/
 scripts/
+content/internal/
 qualified_leads_to_process.json
 *.env
 .env.*
@@ -76,7 +78,7 @@ Check the last 20 commit messages (`git log --oneline -20`) for any of the block
 
 - **NEVER run `git checkout`** to switch branches. Always push from the current branch.
 - **NEVER run `git clean`**, `git reset --hard`, `git checkout .`, or `git restore .`** — these destroy untracked/local data.
-- **NEVER run any command that could delete or overwrite files in gitignored directories** (`clients/`, `data/`, `scripts/`).
+- **NEVER run any command that could delete or overwrite files in gitignored directories** (`clients/`, `data/`, `scripts/`, `content/internal/`).
 - Only use `git add -u` (tracked files only) or `git add <specific-file>`. **NEVER use `git add -A` or `git add .`** — these could accidentally track gitignored files.
 
 **Procedure:**
@@ -109,7 +111,8 @@ Re-run the same checks from Step 0:
 1. `find clients/ -type f 2>/dev/null | wc -l`
 2. `find data/ -type f 2>/dev/null | wc -l`
 3. `find scripts/ -type f 2>/dev/null | wc -l`
-4. `ls -d clients/partner/*/ clients/client/*/ 2>/dev/null`
+4. `find content/internal/ -type f 2>/dev/null | wc -l`
+5. `ls -d clients/partner/*/ clients/client/*/ 2>/dev/null`
 
 Compare against the Step 0 snapshot.
 
