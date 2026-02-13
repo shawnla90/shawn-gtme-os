@@ -6,8 +6,8 @@
 > **Status**: draft
 > **Source**: cross-promo for content/substack/final/2026-02-10_content-os-reveal.md
 > **CTA**: comment "my skill" to receive the guide + scaffold prompt + MCP files
-> **Image Option A**: content/linkedin/drafts/substack-crosspromo-branch.png (4:5 portrait, branching tree)
-> **Image Option B**: content/linkedin/drafts/substack-crosspromo-split.png (landscape, comparison)
+> **Image Option A**: content/images/substack-crosspromo-branch.png (4:5 portrait, branching tree)
+> **Image Option B**: content/images/substack-crosspromo-split.png (landscape, comparison)
 
 ---
 

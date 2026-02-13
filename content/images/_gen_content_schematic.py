@@ -471,8 +471,7 @@ final_h = Y_START + 30
 img = img.crop((0, 0, W, final_h))
 
 # ── Save ───────────────────────────────────────────────────────
-out = "/Users/shawntenam/Desktop/shawn-gtme-os/screenshots/content-os-schematic.png"
 import os
-os.makedirs(os.path.dirname(out), exist_ok=True)
+out = os.path.join(os.path.dirname(__file__), "content-os-schematic.png")
 img.save(out, dpi=(144, 144))
 print(f"Saved: {out}  ({W}x{final_h})")

@@ -64,7 +64,7 @@ fFoot  = ImageFont.truetype(MENLO, 12, index=0)   # footer
 
 Two-panel layout showing directory trees. Green box-drawing characters for branches, light text for names, muted text for annotations in parentheses.
 
-**Reference implementation**: `content/x/drafts/_gen_tree.py`
+**Reference implementation**: `content/images/_gen_tree.py`
 
 Key rendering logic -- split each line into green branch prefix and gray text:
 
@@ -120,14 +120,14 @@ Read the post content. Match to image type:
 
 ### Step 2: Write the Generation Script
 
-1. Create a Python script at `content/{platform}/drafts/_gen_{slug}.py`
+1. Create a Python script at `content/images/_gen_{slug}.py`
 2. Use the color palette, fonts, and layout rules above
 3. Keep the script self-contained (only dependency: Pillow)
-4. Output PNG to same directory as the draft
+4. Output PNG to `content/images/{slug}.png`
 
 ### Step 3: Generate and Verify
 
-1. Run the script: `python3 content/{platform}/drafts/_gen_{slug}.py`
+1. Run the script: `python3 content/images/_gen_{slug}.py`
 2. Read the output image back to verify rendering
 3. Show the image to the user for review
 4. Iterate on adjustments (colors, spacing, content) as needed
@@ -137,7 +137,7 @@ Read the post content. Match to image type:
 Update the draft markdown frontmatter to reference the image:
 
 ```markdown
-> **Image**: content/{platform}/drafts/{image-filename}.png
+> **Image**: content/images/{image-filename}.png
 ```
 
 ## Confidentiality Rules

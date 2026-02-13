@@ -4,7 +4,7 @@
 > **Pillar**: Building & Sharing + Skill/System Shares
 > **Date**: 2026-02-09
 > **Status**: final
-> **Image**: content/x/drafts/gtme-os-tree-visualization.png
+> **Image**: content/images/gtme-os-tree-visualization.png
 
 ---
 

@@ -193,7 +193,7 @@ description: GTM engineering operations for {{Partner Name}}. {{One-line descrip
 
 ### research/icp.md Template
 
-See `clients/partner/elauwit/research/icp.md` or `clients/partner/praecipio/research/icp.md` for format. Key sections:
+See `clients/partner/<partner>/research/icp.md` for format. Key sections:
 - What the partner sells
 - Target accounts (company type, revenue, employee count, geography)
 - Key verticals (table with vertical + why they fit)
@@ -211,13 +211,13 @@ If the user has a preferred Clay query for this partner's personas, use that. Ot
 
 ### prompts/web-reveal-qualification.md Template
 
-See `clients/partner/elauwit/prompts/web-reveal-qualification.md` for format. Key sections:
+See `clients/partner/<partner>/prompts/web-reveal-qualification.md` for format. Key sections:
 - Purpose
 - Qualification Prompt (template with {placeholders} for company data)
 - Scoring Logic table (signal + points)
 - Routing rules (Qualified / Needs Research / Not Qualified → next action)
 
-The PRIMARY GATE in scoring should be the partner's most critical qualification criterion (e.g., location count for Connext, Atlassian footprint for Praecipio, portfolio size for Elauwit).
+The PRIMARY GATE in scoring should be the partner's most critical qualification criterion (e.g., location count, technology footprint, portfolio size).
 
 ## ClickUp Reference
 

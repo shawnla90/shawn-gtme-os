@@ -39,13 +39,13 @@ If a file path is given, read it. If a topic is given, work from description. Ex
 
 ### Step 3: Write the Generation Script
 
-Create at: `content/{platform}/images/_gen_{slug}.py`
+Create at: `content/images/_gen_{slug}.py`
 
 Use the design system below. Script must be self-contained (only dep: Pillow).
 
 ### Step 4: Generate, Verify, Iterate
 
-1. Run: `python3 content/{platform}/images/_gen_{slug}.py`
+1. Run: `python3 content/images/_gen_{slug}.py`
 2. Read the output PNG back to verify rendering
 3. Show user for review
 4. Iterate on spacing, content, layout
@@ -269,15 +269,15 @@ $ top -o impact              # metrics/results posts
 
 ## Reference Implementations
 
-- **2x2 phase grid**: `content/substack/images/_gen_identity_awakening.py` → `identity-awakening.png`
-- **Radial hub diagram**: `content/linkedin/drafts/_gen_content_os_masterplan.py`
-- **Branching tree**: `content/linkedin/drafts/_gen_substack_crosspromo_branch.py`
-- **Split comparison**: `content/linkedin/drafts/_gen_substack_crosspromo_split.py`
+- **2x2 phase grid**: `content/images/_gen_identity_awakening.py` → `identity-awakening.png`
+- **Radial hub diagram**: `content/images/_gen_content_os_masterplan.py`
+- **Branching tree**: `content/images/_gen_substack_crosspromo_branch.py`
+- **Split comparison**: `content/images/_gen_substack_crosspromo_split.py`
 
 ## Output
 
-- Save PNG to `content/{platform}/images/{slug}.png`
-- Save generator script alongside as `_gen_{slug}.py`
+- Save PNG to `content/images/{slug}.png`
+- Save generator script alongside as `content/images/_gen_{slug}.py`
 - Print dimensions and path on completion
 - Read image back to verify before showing user
 

@@ -54,14 +54,14 @@ Map the tip topic to a boot mode flag:
 
 ### Step 3: Write the Generator Script
 
-Create at: `content/x/images/_gen_{tip_slug}.py`
+Create at: `content/images/_gen_{tip_slug}.py`
 
 Use the **exact template** below. Only change the values marked with `# VARIABLE`.
 
 ### Step 4: Generate, Verify, Open
 
-1. Run: `python3 content/x/images/_gen_{tip_slug}.py`
-2. Open the PNG with `open content/x/images/{output_filename}.png` so the user can see it
+1. Run: `python3 content/images/_gen_{tip_slug}.py`
+2. Open the PNG with `open content/images/{output_filename}.png` so the user can see it
 3. Confirm with user
 
 ## Generator Template
@@ -406,14 +406,14 @@ The hero number comes from the series prefix:
 
 ## Output
 
-- Save PNG to `content/x/images/{output_filename}`
-- Save generator script to `content/x/images/_gen_{tip_slug}.py`
+- Save PNG to `content/images/{output_filename}`
+- Save generator script to `content/images/_gen_{tip_slug}.py`
 - Open image with `open` command so user can preview
 - Confirm with user before moving on
 
 ## Reference Implementation
 
-- **Canonical first PI**: `content/x/images/_gen_cursor_tip_101_plan_mode.py` -> `cursor-tip-101-plan-mode.png`
+- **Canonical first PI**: `content/images/_gen_cursor_tip_101_plan_mode.py` -> `cursor-tip-101-plan-mode.png`
 
 ## Dependencies
 

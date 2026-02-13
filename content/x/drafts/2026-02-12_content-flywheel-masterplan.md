@@ -4,7 +4,7 @@
 > **Pillar**: Building & Sharing + Skill/System Shares
 > **Date**: 2026-02-12
 > **Status**: final
-> **Image**: content/linkedin/drafts/content-os-masterplan.png (attach to tweet 1)
+> **Image**: content/images/content-os-masterplan.png (attach to tweet 1)
 
 ---
 

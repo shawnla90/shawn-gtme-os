@@ -190,5 +190,5 @@ All prompts MUST follow `.cursor/rules/prompt-formatting.md`:
 ## Partner-Specific Examples
 
 - **Praecipio**: Primary gate = Atlassian footprint. See `clients/partner/praecipio/prompts/web-reveal-qualification.md`
-- **Elauwit**: Primary gate = portfolio size (1,000-20,000 units). See `clients/partner/elauwit/prompts/web-reveal-qualification.md`
-- **Connext**: Primary gate = 100+ physical locations. See `clients/partner/connext/prompts/web-reveal-qualification.md`
+- **Partner B**: Primary gate = portfolio size (1,000-20,000 units). See `clients/partner/<partner>/prompts/web-reveal-qualification.md`
+- **Partner C**: Primary gate = 100+ physical locations. See `clients/partner/<partner>/prompts/web-reveal-qualification.md`
