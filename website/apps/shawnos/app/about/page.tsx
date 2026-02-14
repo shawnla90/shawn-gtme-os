@@ -3,19 +3,19 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'SDR to GTM Engineer — the arc, the stack, and the operating system behind shawnos.ai.',
+    'SDR to GTM Engineer. The arc, the stack, and the operating system behind shawnos.ai.',
   alternates: { canonical: 'https://shawnos.ai/about' },
   openGraph: {
     title: 'About | shawnos.ai',
     description:
-      'SDR to GTM Engineer — the arc, the stack, and the operating system behind shawnos.ai.',
+      'SDR to GTM Engineer. The arc, the stack, and the operating system behind shawnos.ai.',
     url: 'https://shawnos.ai/about',
     images: [{ url: '/og?title=About&subtitle=SDR+to+GTM+Engineer', width: 1200, height: 630 }],
   },
   twitter: {
     title: 'About | shawnos.ai',
     description:
-      'SDR to GTM Engineer — the arc, the stack, and the operating system behind shawnos.ai.',
+      'SDR to GTM Engineer. The arc, the stack, and the operating system behind shawnos.ai.',
     images: ['/og?title=About&subtitle=SDR+to+GTM+Engineer'],
   },
 }
@@ -39,13 +39,13 @@ const network: { label: string; url: string; accent: string; desc: string }[] = 
     label: 'theGTMOS.ai',
     url: 'https://thegtmos.ai',
     accent: 'var(--gtmos-teal)',
-    desc: 'The GTM operating system — frameworks, playbooks, and live builds for go-to-market engineering.',
+    desc: 'The GTM operating system. Frameworks, playbooks, and live builds for go-to-market engineering.',
   },
   {
     label: 'theContentOS.ai',
     url: 'https://thecontentos.ai',
     accent: 'var(--contentos-purple)',
-    desc: 'The content operating system — voice-first publishing, repurpose pipelines, and content-as-code.',
+    desc: 'The content operating system. Voice-first publishing, repurpose pipelines, and content-as-code.',
   },
 ]
 
@@ -113,9 +113,9 @@ export default function AboutPage() {
 
         <p style={paragraph}>
           I started as an SDR, cold-calling and booking meetings the way everyone
-          did — manually, one at a time. Moved into an AE role, ran full-cycle
+          did. Manually, one at a time. Moved into an AE role, ran full-cycle
           deals, and learned what actually converts. Then shifted into GTM
-          strategy — designing the systems behind pipeline, not just working
+          strategy. Designing the systems behind pipeline, not just working
           inside them.
         </p>
 
@@ -132,7 +132,7 @@ export default function AboutPage() {
             GTM engineer
           </span>
           . I build AI-native pipelines, agent-driven workflows, and content
-          systems that compound — all from a single monorepo. Every skill I
+          systems that compound. All from a single monorepo. Every skill I
           ship, every post I publish, every campaign I launch runs through this
           operating system.
         </p>
@@ -187,7 +187,7 @@ export default function AboutPage() {
         <h2 style={sectionTitle}>the network</h2>
 
         <p style={{ ...mutedText, marginBottom: '16px' }}>
-          shawnos.ai is one node in a three-site network — each site owns a
+          shawnos.ai is one node in a three-site network. Each site owns a
           domain of the stack.
         </p>
 

@@ -1,8 +1,20 @@
 import React from 'react'
 import type { LogAggregates } from '../lib/logs'
+import { AvatarBadge } from './AvatarBadge'
+import type { RPGProfile } from '../lib/rpg'
 
 interface LogHeroProps {
   aggregates: LogAggregates
+  /**
+   * When true, renders the AvatarBadge in compact size to the left of
+   * the receipts header, creating a two-column hero (avatar | stats).
+   * @default false
+   */
+  showAvatar?: boolean
+  /** RPG profile data passed through to AvatarBadge. */
+  profile?: RPGProfile | null
+  /** Avatar image src passed through to AvatarBadge. */
+  avatarSrc?: string | null
 }
 
 /** Format large numbers with K/M suffix. */
@@ -58,7 +70,12 @@ function AggregateStat({
  * Provides narrative framing ("The Receipts") and aggregate stats
  * computed across all available daily logs.
  */
-export function LogHero({ aggregates }: LogHeroProps) {
+export function LogHero({
+  aggregates,
+  showAvatar = false,
+  profile = null,
+  avatarSrc = null,
+}: LogHeroProps) {
   const { totalDays, totalShipped, totalWords, totalCommits, totalFinals } =
     aggregates
 
@@ -86,6 +103,23 @@ export function LogHero({ aggregates }: LogHeroProps) {
         .log-hero-stat-bar > div + div {
           border-left: 1px solid var(--border);
         }
+        .log-hero-inner {
+          display: flex;
+          gap: 24px;
+          align-items: flex-start;
+          padding: 20px 24px 0;
+        }
+        .log-hero-avatar-col {
+          flex: 0 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+        .log-hero-content-col {
+          flex: 1 1 0;
+          min-width: 0;
+        }
         @media (max-width: 600px) {
           .log-hero-stat-bar > div + div {
             border-left: none;
@@ -96,6 +130,13 @@ export function LogHero({ aggregates }: LogHeroProps) {
           .log-hero-stat-bar > div {
             flex: 1 1 45% !important;
             min-width: 0 !important;
+          }
+          .log-hero-inner {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .log-hero-avatar-col {
+            align-items: center;
           }
         }
       `}</style>
@@ -110,65 +151,75 @@ export function LogHero({ aggregates }: LogHeroProps) {
           marginBottom: '32px',
         }}
       >
-        {/* Terminal prompt header */}
-        <div
-          style={{
-            padding: '20px 24px 0',
-          }}
-        >
-          <div
-            style={{
-              fontSize: '13px',
-              color: 'var(--accent)',
-              fontWeight: 400,
-              letterSpacing: '0.5px',
-              marginBottom: '16px',
-            }}
-          >
-            $ cat ~/receipts
-            <span className="log-hero-cursor" />
+        {/* Terminal prompt header + optional avatar */}
+        <div className="log-hero-inner">
+          {/* Avatar column (only when showAvatar is true) */}
+          {showAvatar && (
+            <div className="log-hero-avatar-col">
+              <AvatarBadge
+                size="compact"
+                profile={profile}
+                avatarSrc={avatarSrc}
+              />
+            </div>
+          )}
+
+          {/* Content column */}
+          <div className={showAvatar ? 'log-hero-content-col' : undefined}>
+            <div
+              style={{
+                fontSize: '13px',
+                color: 'var(--accent)',
+                fontWeight: 400,
+                letterSpacing: '0.5px',
+                marginBottom: '16px',
+              }}
+            >
+              $ cat ~/receipts
+              <span className="log-hero-cursor" />
+            </div>
+
+            {/* Headline */}
+            <h2
+              style={{
+                margin: '0 0 10px',
+                fontSize: '22px',
+                fontWeight: 700,
+                color: 'var(--text-primary)',
+                letterSpacing: '0.03em',
+                lineHeight: 1.3,
+              }}
+            >
+              The Receipts
+            </h2>
+
+            {/* Narrative copy */}
+            <p
+              style={{
+                margin: '0 0 8px',
+                fontSize: '14px',
+                lineHeight: 1.65,
+                color: 'var(--text-secondary)',
+                maxWidth: '620px',
+              }}
+            >
+              Everyone says they ship. This is the proof.
+            </p>
+            <p
+              style={{
+                margin: '0 0 20px',
+                fontSize: '13px',
+                lineHeight: 1.6,
+                color: 'var(--text-muted)',
+                maxWidth: '620px',
+              }}
+            >
+              Every line auto-scanned from git commits, the content pipeline, and
+              AI sessions. Not a screenshot. A live dashboard built into the
+              codebase. Python + Pillow scans it daily. Each card below is a build
+              receipt.
+            </p>
           </div>
-
-          {/* Headline */}
-          <h2
-            style={{
-              margin: '0 0 10px',
-              fontSize: '22px',
-              fontWeight: 700,
-              color: 'var(--text-primary)',
-              letterSpacing: '0.03em',
-              lineHeight: 1.3,
-            }}
-          >
-            The Receipts
-          </h2>
-
-          {/* Narrative copy */}
-          <p
-            style={{
-              margin: '0 0 8px',
-              fontSize: '14px',
-              lineHeight: 1.65,
-              color: 'var(--text-secondary)',
-              maxWidth: '620px',
-            }}
-          >
-            Everyone says they ship. This is the proof.
-          </p>
-          <p
-            style={{
-              margin: '0 0 20px',
-              fontSize: '13px',
-              lineHeight: 1.6,
-              color: 'var(--text-muted)',
-              maxWidth: '620px',
-            }}
-          >
-            Every line auto-scanned from git commits, the content pipeline, and
-            AI sessions. Not a screenshot&mdash;a live dashboard built into the
-            codebase. Python + Pillow scans it daily. Each card below is a build
-            receipt.
-          </p>
         </div>
 
         {/* Aggregate stats bar */}

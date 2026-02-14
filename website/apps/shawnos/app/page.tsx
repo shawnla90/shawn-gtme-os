@@ -2,22 +2,22 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllPosts, getAllLogs } from '@shawnos/shared/lib'
-import { PostCard, LogCard, TypewriterHero } from '@shawnos/shared/components'
+import { PostCard, LogCard, TypewriterHero, AvatarBadge } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
-  title: 'ShawnOS.ai — GTM engineering, built in public',
+  title: 'ShawnOS.ai | GTM engineering, built in public',
   description:
     'One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
   alternates: { canonical: 'https://shawnos.ai' },
   openGraph: {
-    title: 'ShawnOS.ai — GTM engineering, built in public',
+    title: 'ShawnOS.ai | GTM engineering, built in public',
     description:
       'One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
     url: 'https://shawnos.ai',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {
-    title: 'ShawnOS.ai — GTM engineering, built in public',
+    title: 'ShawnOS.ai | GTM engineering, built in public',
     description:
       'One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
     images: ['/og'],
@@ -51,6 +51,28 @@ const page: React.CSSProperties = {
 
 const heroSection: React.CSSProperties = {
   marginBottom: 56,
+}
+
+const heroRow: React.CSSProperties = {
+  display: 'flex',
+  gap: 32,
+  alignItems: 'flex-start',
+  flexWrap: 'wrap',
+}
+
+const heroLeft: React.CSSProperties = {
+  flex: '1 1 340px',
+  minWidth: 0,
+}
+
+const heroRight: React.CSSProperties = {
+  flex: '0 0 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: 12,
+  alignSelf: 'flex-start',
+  marginTop: 4,
 }
 
 const prompt: React.CSSProperties = {
@@ -137,6 +159,9 @@ const divider: React.CSSProperties = {
 /* ── page ────────────────────────────────────────── */
 
 export default function HomePage() {
+  // #region agent log
+  fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:HomePage',message:'HomePage render start',data:{CONTENT_DIR,LOG_DIR,cwd:process.cwd()},hypothesisId:'H5',timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
   const posts = getAllPosts(CONTENT_DIR)
   const latestPosts = posts.slice(0, 3)
   const logs = getAllLogs(LOG_DIR)
@@ -152,28 +177,50 @@ export default function HomePage() {
 
         <p style={heroLoaded}>&gt; ShawnOS.ai loaded</p>
 
-        <TypewriterHero
-          siteName="ShawnOS.ai"
-          sequences={[
-            {
-              text: 'GTM engineering, built in public. One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
-              pauseAfter: 3000,
-            },
-            {
-              text: 'S.H.A.W.N. \u2014 Self-Hosted AI Workspace Node',
-              color: 'accent',
-              pauseAfter: 4000,
-            },
-          ]}
-        />
+        <div style={heroRow}>
+          {/* Left — title + typewriter + CTAs */}
+          <div style={heroLeft}>
+            <TypewriterHero
+              siteName="ShawnOS.ai"
+              sequences={[
+                {
+                  text: 'GTM engineering, built in public. One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
+                  pauseAfter: 3000,
+                },
+                {
+                  text: 'S.H.A.W.N. Self-Hosted AI Workspace Node',
+                  color: 'accent',
+                  pauseAfter: 4000,
+                },
+              ]}
+            />
 
-        <div style={ctaRow}>
-          <Link href="/blog" style={ctaPrimary}>
-            read the blog &rarr;
-          </Link>
-          <Link href="/about" style={ctaSecondary}>
-            about
-          </Link>
+            <div style={ctaRow}>
+              <Link href="/blog" style={ctaPrimary}>
+                read the blog &rarr;
+              </Link>
+              <Link href="/about" style={ctaSecondary}>
+                about
+              </Link>
+            </div>
+          </div>
+
+          {/* Right — RPG avatar badge */}
+          <div style={heroRight}>
+            <AvatarBadge size="compact" />
+            <Link
+              href="/log/skill-guide"
+              style={{
+                fontSize: '12px',
+                color: 'var(--text-muted)',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-mono)',
+                transition: 'color 0.15s ease',
+              }}
+            >
+              what is this? &rarr;
+            </Link>
+          </div>
         </div>
       </section>
 

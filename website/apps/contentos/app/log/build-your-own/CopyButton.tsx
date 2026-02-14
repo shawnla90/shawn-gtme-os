@@ -45,9 +45,9 @@ export default function CopyButton({ text }: { text: string }) {
       textarea.value = text
       document.body.appendChild(textarea)
       textarea.select()
-      document.execCommand('copy')
+      const success = document.execCommand('copy')
       document.body.removeChild(textarea)
-      resetAfterDelay()
+      if (success) resetAfterDelay()
     }
   }
 

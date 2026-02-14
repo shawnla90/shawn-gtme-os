@@ -312,6 +312,10 @@ The scanner auto-parses Claude Code session transcripts:
 
 | Item Type | Type Code | Points |
 |-----------|-----------|--------|
+| Monorepo / project scaffold | `monorepo_build` / `project_scaffold` | 50 |
+| Feature system (RPG, dashboard, complex feature) | `feature_system` | 30 |
+| Landing page / full page build | `landing_page` / `full_page_build` | 25 |
+| Code infrastructure (scripts, config, CI/CD) | `code_infra` | 15 |
 | Finalized content (in `final/`) | `*_final` | 10 |
 | Partner/client onboard (SKILL.md) | `partner_onboard` / `client_onboard` | 8 |
 | Manual accomplishment | `manual` | 5 |
@@ -334,9 +338,11 @@ The scanner auto-parses Claude Code session transcripts:
 
 | Score | Grade |
 |-------|-------|
-| >= 50 | A+ |
-| 30-49 | A |
-| 15-29 | B |
+| > 500 | S+ |
+| 300-500 | S |
+| 150-299 | A+ |
+| 50-149 | A |
+| 15-49 | B |
 | 5-14 | C |
 | < 5 | D |
 

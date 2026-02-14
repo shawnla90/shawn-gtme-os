@@ -2,21 +2,21 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllLogs } from '@shawnos/shared/lib'
-import { LogCard, TypewriterHero, ScrambleCycler } from '@shawnos/shared/components'
+import { LogCard, TypewriterHero, ScrambleCycler, AvatarBadge } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
-  title: 'theContentOS.ai — the content operating system',
+  title: 'theContentOS.ai | the content operating system',
   description:
-    'One voice across every platform. AI-powered content that sounds like you, not AI slop. Voice engine, platform playbooks, and recursive content loops — from one repo.',
+    'One voice across every platform. AI-powered content that sounds like you, not AI slop. Voice engine, platform playbooks, and recursive content loops. From one repo.',
   alternates: { canonical: 'https://thecontentos.ai' },
   openGraph: {
-    title: 'theContentOS.ai — the content operating system',
+    title: 'theContentOS.ai | the content operating system',
     description:
       'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
     url: 'https://thecontentos.ai',
   },
   twitter: {
-    title: 'theContentOS.ai — the content operating system',
+    title: 'theContentOS.ai | the content operating system',
     description:
       'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
   },
@@ -40,11 +40,11 @@ const bootLines: { status: string; label: string }[] = [
 const systemFeatures: { title: string; desc: string }[] = [
   {
     title: 'voice engine',
-    desc: 'Speak to your AI. Generate content that sounds like you — not a template, not slop. Your cadence, your energy, your words.',
+    desc: 'Speak to your AI. Generate content that sounds like you. Not a template, not slop. Your cadence, your energy, your words.',
   },
   {
     title: 'platform playbooks',
-    desc: 'LinkedIn, X, Substack, TikTok, Reddit — each platform\'s rules encoded. The system adapts your voice without losing it.',
+    desc: 'LinkedIn, X, Substack, TikTok, Reddit. Each platform\'s rules encoded. The system adapts your voice without losing it.',
   },
   {
     title: 'pillar detection',
@@ -52,7 +52,7 @@ const systemFeatures: { title: string; desc: string }[] = [
   },
   {
     title: 'recursive loop',
-    desc: 'Every post feeds the next one. Breadcrumbs. Forward-references. The system compounds — your content library grows itself.',
+    desc: 'Every post feeds the next one. Breadcrumbs. Forward-references. The system compounds. Your content library grows itself.',
   },
   {
     title: 'cross-platform distribution',
@@ -69,7 +69,7 @@ const resources: { title: string; desc: string }[] = [
   },
   {
     title: 'platform playbook starters',
-    desc: 'X, TikTok, Reddit, YouTube — starter playbooks for each platform.',
+    desc: 'X, TikTok, Reddit, YouTube. Starter playbooks for each platform.',
   },
   {
     title: 'AI slop detection checklist',
@@ -77,7 +77,7 @@ const resources: { title: string; desc: string }[] = [
   },
   {
     title: 'MCP integration guide',
-    desc: 'Connect your tools — Instantly, HeyReach, Firecrawl, and more.',
+    desc: 'Connect your tools: Instantly, HeyReach, Firecrawl, and more.',
   },
 ]
 
@@ -85,9 +85,9 @@ const resources: { title: string; desc: string }[] = [
 
 const painPoints: string[] = [
   'You want to grow. But every platform rewrites your voice.',
-  'LinkedIn has its rules. X has its rules. Substack, TikTok, Reddit — all different.',
+  'LinkedIn has its rules. X has its rules. Substack, TikTok, Reddit. All different.',
   'People make it look easy. It\'s not. It takes real work.',
-  'The energy it takes to adapt, engage, and thread across platforms — that\'s the hidden cost nobody talks about.',
+  'The energy it takes to adapt, engage, and thread across platforms. That\'s the hidden cost nobody talks about.',
   'You shouldn\'t have to navigate a million tabs to be yourself everywhere.',
 ]
 
@@ -330,13 +330,33 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right — scramble decode cycler */}
+          {/* Right — avatar badge + scramble decode cycler */}
           <div style={heroRight}>
+            <AvatarBadge size="compact" />
+            <Link
+              href="/log/skill-guide"
+              style={{
+                fontSize: '12px',
+                color: 'var(--text-muted)',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-mono)',
+                transition: 'color 0.15s ease',
+              }}
+            >
+              what is this? &rarr;
+            </Link>
+            <div
+              style={{
+                width: '100%',
+                borderTop: '1px solid var(--border)',
+                margin: '4px 0',
+              }}
+            />
             <div style={scrambleLabel}>C.O.S.</div>
             <ScrambleCycler
               phrases={[
                 'Create. Orchestrate. Ship.',
-                'one voice — every platform',
+                'one voice. every platform',
                 'draft > ship > compound > repeat',
               ]}
               holdMs={3000}

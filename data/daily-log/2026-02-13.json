@@ -1053,49 +1053,57 @@
       "type": "manual",
       "title": "Turborepo monorepo scaffold (3 apps + shared pkg)",
       "source": "manual",
-      "timestamp": "12:51"
+      "timestamp": "12:51",
+      "value_score": 5
     },
     {
       "type": "manual",
       "title": "shared design system (@shawnos/shared, 5 components, tokens.css)",
       "source": "manual",
-      "timestamp": "13:30"
+      "timestamp": "13:30",
+      "value_score": 5
     },
     {
       "type": "manual",
       "title": "shawnos.ai full site (landing, about, blog, blog/[slug])",
       "source": "manual",
-      "timestamp": "14:18"
+      "timestamp": "14:18",
+      "value_score": 5
     },
     {
       "type": "manual",
       "title": "shawnos.ai full SEO (sitemap, RSS, OG images, JSON-LD, meta)",
       "source": "manual",
-      "timestamp": "15:00"
+      "timestamp": "15:00",
+      "value_score": 5
     },
     {
       "type": "manual",
       "title": "Vercel deployment (shawnos.ai live, 67 files, 8,143 lines)",
       "source": "manual",
-      "timestamp": "19:47"
+      "timestamp": "19:47",
+      "value_score": 5
     },
     {
       "type": "manual",
       "title": "6 architecture plans (parallel agent orchestration)",
       "source": "manual",
-      "timestamp": "12:00"
+      "timestamp": "12:00",
+      "value_score": 5
     },
     {
       "type": "manual",
       "title": "blog engine + markdown pipeline (gray-matter, remark, rehype)",
       "source": "manual",
-      "timestamp": "13:45"
+      "timestamp": "13:45",
+      "value_score": 5
     },
     {
       "type": "manual",
       "title": "GitHub repo sanitized for public (blocklist pre-push scan)",
       "source": "manual",
-      "timestamp": "00:35"
+      "timestamp": "00:35",
+      "value_score": 5
     }
   ],
   "pipeline": {
@@ -1506,7 +1514,7 @@
     "finals_count": 0,
     "first_activity": "00:30",
     "last_activity": "23:16",
-    "output_score": 385,
+    "output_score": 425,
     "letter_grade": "S",
     "score_breakdown": [
       {
@@ -2038,9 +2046,49 @@
         "type": "linkedin_draft",
         "title": "content flywheel masterplan",
         "points": 2
+      },
+      {
+        "type": "manual",
+        "title": "Turborepo monorepo scaffold (3 apps + shared pkg)",
+        "points": 5
+      },
+      {
+        "type": "manual",
+        "title": "shared design system (@shawnos/shared, 5 components, tokens.css)",
+        "points": 5
+      },
+      {
+        "type": "manual",
+        "title": "shawnos.ai full site (landing, about, blog, blog/[slug])",
+        "points": 5
+      },
+      {
+        "type": "manual",
+        "title": "shawnos.ai full SEO (sitemap, RSS, OG images, JSON-LD, meta)",
+        "points": 5
+      },
+      {
+        "type": "manual",
+        "title": "Vercel deployment (shawnos.ai live, 67 files, 8,143 lines)",
+        "points": 5
+      },
+      {
+        "type": "manual",
+        "title": "6 architecture plans (parallel agent orchestration)",
+        "points": 5
+      },
+      {
+        "type": "manual",
+        "title": "blog engine + markdown pipeline (gray-matter, remark, rehype)",
+        "points": 5
+      },
+      {
+        "type": "manual",
+        "title": "GitHub repo sanitized for public (blocklist pre-push scan)",
+        "points": 5
       }
     ],
-    "efficiency_rating": 24.2,
+    "efficiency_rating": 26.72,
     "shipped_count": 88,
     "draft_count": 26,
     "ship_rate": 0.77,

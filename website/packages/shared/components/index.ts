@@ -1,3 +1,4 @@
+export { AvatarBadge } from './AvatarBadge'
 export { TerminalChrome } from './TerminalChrome'
 export { Navigation } from './Navigation'
 export { NetworkBanner } from './NetworkBanner'

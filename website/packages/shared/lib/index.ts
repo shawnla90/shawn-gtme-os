@@ -17,3 +17,11 @@ export type {
   Stats,
   GitSummary,
 } from './logs'
+export { TITLE_TABLE, DEFAULT_PROFILE, tierColor } from './rpg'
+export type { RPGProfile, RPGClass, Milestone, TitleTier } from './rpg'
+export {
+  getTierAvatarUrls,
+  getAvatarUrlsForProfile,
+  isAdvancedVariant,
+} from './rpg'
+export { getRPGProfile, getAvatarPath, getAvatarGifPath, hasRPGData } from './rpg.server'

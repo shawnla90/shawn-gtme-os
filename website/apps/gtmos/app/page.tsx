@@ -2,23 +2,23 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllLogs } from '@shawnos/shared/lib'
-import { LogCard, TypewriterHero, ScrambleCycler } from '@shawnos/shared/components'
+import { LogCard, TypewriterHero, ScrambleCycler, AvatarBadge } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
-  title: 'theGTMOS.ai — the GTM operating system',
+  title: 'theGTMOS.ai | the GTM operating system',
   description:
-    'Pipeline orchestration, outbound automation, and partner workflows — running from one repo. The go-to-market operating system, built in public.',
+    'Pipeline orchestration, outbound automation, and partner workflows. Running from one repo. The go-to-market operating system, built in public.',
   alternates: { canonical: 'https://thegtmos.ai' },
   openGraph: {
-    title: 'theGTMOS.ai — the GTM operating system',
+    title: 'theGTMOS.ai | the GTM operating system',
     description:
-      'Pipeline orchestration, outbound automation, and partner workflows — running from one repo.',
+      'Pipeline orchestration, outbound automation, and partner workflows. Running from one repo.',
     url: 'https://thegtmos.ai',
   },
   twitter: {
-    title: 'theGTMOS.ai — the GTM operating system',
+    title: 'theGTMOS.ai | the GTM operating system',
     description:
-      'Pipeline orchestration, outbound automation, and partner workflows — running from one repo.',
+      'Pipeline orchestration, outbound automation, and partner workflows. Running from one repo.',
   },
 }
 
@@ -253,8 +253,28 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right — scramble decode cycler */}
+          {/* Right — avatar badge + scramble decode cycler */}
           <div style={heroRight}>
+            <AvatarBadge size="compact" />
+            <Link
+              href="/log/skill-guide"
+              style={{
+                fontSize: '12px',
+                color: 'var(--text-muted)',
+                textDecoration: 'none',
+                fontFamily: 'var(--font-mono)',
+                transition: 'color 0.15s ease',
+              }}
+            >
+              what is this? &rarr;
+            </Link>
+            <div
+              style={{
+                width: '100%',
+                borderTop: '1px solid var(--border)',
+                margin: '4px 0',
+              }}
+            />
             <div style={scrambleLabel}>G.T.M.</div>
             <ScrambleCycler
               phrases={[

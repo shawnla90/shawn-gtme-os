@@ -8,6 +8,8 @@ interface LogCardProps extends DailyLogSummary {
 
 /** Map letter grade to a color string. */
 function gradeColor(grade: string): string {
+  if (grade === 'S+') return '#FF6B35'   // Orange-gold for S+
+  if (grade === 'S') return '#FFC83C'    // Gold for S
   if (grade.startsWith('A')) return '#4EC373'
   if (grade.startsWith('B')) return '#50BEDC'
   if (grade.startsWith('C')) return '#DCA83C'

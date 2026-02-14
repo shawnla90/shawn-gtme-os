@@ -40,10 +40,10 @@ export async function generateMetadata({
 
   const { stats, accomplishments } = log
   const formatted = shortDate(date)
-  const title = `Build Log — ${formatted} [${stats.letter_grade} ${stats.output_score}pts]`
+  const title = `Build Log | ${formatted} [${stats.letter_grade} ${stats.output_score}pts]`
   const description = `Shipped ${accomplishments.length} items, wrote ${stats.words_today.toLocaleString()} words. ${stats.finals_count} finalized. Score: ${stats.output_score} (${stats.letter_grade}). Daily build log from the content operating system.`
   const pageUrl = `${SITE_URL}/log/${date}`
-  const ogImage = `/og?title=${encodeURIComponent(`Build Log — ${formatted}`)}&subtitle=${encodeURIComponent(`${stats.letter_grade} ${stats.output_score}pts · ${accomplishments.length} shipped · ${stats.words_today.toLocaleString()} words`)}`
+  const ogImage = `/og?title=${encodeURIComponent(`Build Log | ${formatted}`)}&subtitle=${encodeURIComponent(`${stats.letter_grade} ${stats.output_score}pts · ${accomplishments.length} shipped · ${stats.words_today.toLocaleString()} words`)}`
 
   return {
     title,
@@ -125,7 +125,7 @@ export default async function LogPage({
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: `Build Log — ${formatted} [${log.stats.letter_grade} ${log.stats.output_score}pts]`,
+    headline: `Build Log | ${formatted} [${log.stats.letter_grade} ${log.stats.output_score}pts]`,
     description: `Shipped ${log.accomplishments.length} items, wrote ${log.stats.words_today.toLocaleString()} words.`,
     datePublished: date,
     wordCount: log.stats.words_today,

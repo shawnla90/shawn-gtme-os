@@ -41,7 +41,7 @@ export function LogDetailIntro() {
           color: 'var(--text-secondary)',
         }}
       >
-        Auto-generated build receipt &mdash; every item scanned from git
+        Auto-generated build receipt. Every item scanned from git
         commits, content drafts, finalized posts, and AI token usage. Not a
         screenshot. Not a mockup. Live data from the codebase.
       </p>

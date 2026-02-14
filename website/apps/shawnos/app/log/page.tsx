@@ -9,7 +9,7 @@ const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
 export const metadata: Metadata = {
   title: 'Daily Build Log',
   description:
-    'Daily build log from the GTM operating system — shipped items, word counts, content pipeline, AI workflow tracking.',
+    'Daily build log from the GTM operating system. Shipped items, word counts, content pipeline, AI workflow tracking.',
   keywords: [
     'daily build log',
     'GTM engineering',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Daily Build Log | shawnos.ai',
     description:
-      'Daily build log from the GTM operating system — shipped items, word counts, content pipeline, AI workflow tracking.',
+      'Daily build log from the GTM operating system. Shipped items, word counts, content pipeline, AI workflow tracking.',
     url: 'https://shawnos.ai/log',
     images: [
       {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Daily Build Log | shawnos.ai',
     description:
-      'Daily build log from the GTM operating system — shipped items, word counts, content pipeline, AI workflow tracking.',
+      'Daily build log from the GTM operating system. Shipped items, word counts, content pipeline, AI workflow tracking.',
     images: [
       '/og?title=Daily+Build+Log&subtitle=Shipped+items%2C+word+counts%2C+content+pipeline',
     ],
@@ -42,6 +42,9 @@ export const metadata: Metadata = {
 }
 
 export default function LogIndex() {
+  // #region agent log
+  fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'log/page.tsx:LogIndex',message:'LogIndex render start',data:{LOG_DIR,cwd:process.cwd()},hypothesisId:'H5',timestamp:Date.now()})}).catch(()=>{});
+  // #endregion
   const logs = getAllLogs(LOG_DIR)
   const aggregates = getLogAggregates(LOG_DIR)
 
@@ -54,7 +57,27 @@ export default function LogIndex() {
         fontFamily: 'var(--font-mono)',
       }}
     >
-      <LogHero aggregates={aggregates} />
+      <LogHero aggregates={aggregates} showAvatar />
+
+      {/* CTA — skill guide */}
+      <Link
+        href="/log/skill-guide"
+        style={{
+          display: 'block',
+          padding: '14px 18px',
+          marginBottom: '12px',
+          background: 'var(--canvas-subtle)',
+          border: '1px solid var(--accent)',
+          borderRadius: '6px',
+          textDecoration: 'none',
+          fontSize: '13px',
+          fontWeight: 600,
+          color: 'var(--accent)',
+          transition: 'border-color 0.15s ease',
+        }}
+      >
+        explore the skill guide &rarr;
+      </Link>
 
       {/* CTA — build your own */}
       <Link

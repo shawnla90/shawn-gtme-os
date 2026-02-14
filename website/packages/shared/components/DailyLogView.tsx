@@ -22,6 +22,8 @@ const MUTED = '#484F58'
 
 /** Map letter grade to color. */
 function gradeColor(grade: string): string {
+  if (grade === 'S+') return '#FF6B35'   // Orange-gold for S+
+  if (grade === 'S') return GOLD         // Gold for S
   if (grade.startsWith('A')) return GREEN
   if (grade.startsWith('B')) return CYAN
   if (grade.startsWith('C')) return AMBER

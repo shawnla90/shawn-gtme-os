@@ -7,7 +7,7 @@ import CopyButton from './CopyButton'
 export const metadata: Metadata = {
   title: 'Build Your Own Daily Tracker',
   description:
-    'A copy-paste prompt to build your own AI-native daily activity tracker — auto-detects output from git, file mtime, and content directories, scores it, and renders a visual dashboard.',
+    'A copy-paste prompt to build your own AI-native daily activity tracker. Auto-detects output from git, file mtime, and content directories, scores it, and renders a visual dashboard.',
   keywords: [
     'daily tracker',
     'AI workflow',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Build Your Own Daily Tracker | shawnos.ai',
     description:
-      'A copy-paste prompt to build your own AI-native daily activity tracker — auto-detects output, scores it, and renders a visual dashboard.',
+      'A copy-paste prompt to build your own AI-native daily activity tracker. Auto-detects output, scores it, and renders a visual dashboard.',
     url: 'https://shawnos.ai/log/build-your-own',
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     title: 'Build Your Own Daily Tracker | shawnos.ai',
     description:
-      'A copy-paste prompt to build your own AI-native daily activity tracker — auto-detects output, scores it, and renders a visual dashboard.',
+      'A copy-paste prompt to build your own AI-native daily activity tracker. Auto-detects output, scores it, and renders a visual dashboard.',
     images: [
       '/og?title=Build+Your+Own+Tracker&subtitle=The+prompt+behind+the+daily+receipts',
     ],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
 
 /* ── The self-contained prompt ── */
 
-const TRACKER_PROMPT = `# Daily Activity Tracker — Build Your Own
+const TRACKER_PROMPT = `# Daily Activity Tracker: Build Your Own
 
 You are a daily output tracker. Every evening (~8 PM), scan the user's work from the current calendar day (00:00–23:59) and generate a structured JSON log + a visual Pillow dashboard image.
 
@@ -52,20 +52,20 @@ You are a daily output tracker. Every evening (~8 PM), scan the user's work from
 
 Scan these sources for accomplishments:
 
-1. **Git commits** — files added or modified in today's commits
-2. **Untracked files** — new files with today's date in the filename (e.g., \`2026-02-14_slug.md\`)
-3. **File modification time (mtime)** — walk key directories and find ANY file modified today, regardless of filename pattern. This is critical for work that doesn't have date-prefixed filenames.
-4. **Content pipeline** — walk \`content/*/drafts/\` and \`content/*/final/\` for current state
+1. **Git commits**: files added or modified in today's commits
+2. **Untracked files**: new files with today's date in the filename (e.g., \`2026-02-14_slug.md\`)
+3. **File modification time (mtime)**: walk key directories and find ANY file modified today, regardless of filename pattern. This is critical for work that doesn't have date-prefixed filenames.
+4. **Content pipeline**: walk \`content/*/drafts/\` and \`content/*/final/\` for current state
 
 ### Directories to Scan by mtime
 
 Customize these to match your repo structure:
 
-- \`content/\` — drafts and finals
-- \`scripts/\` — Python/shell scripts
-- \`workflows/\` — workflow docs
-- \`.cursor/skills/\` — Cursor agent skills
-- \`.cursor/rules/\` — Cursor rules
+- \`content/\`: drafts and finals
+- \`scripts/\`: Python/shell scripts
+- \`workflows/\`: workflow docs
+- \`.cursor/skills/\`: Cursor agent skills
+- \`.cursor/rules/\`: Cursor rules
 
 ### Classification Rules
 
@@ -91,6 +91,10 @@ For each accomplishment, record:
 
 | Item Type | Points |
 |---|---|
+| Monorepo / project scaffold (\`monorepo_build\` / \`project_scaffold\`) | 50 |
+| Feature system — RPG, dashboard, complex feature (\`feature_system\`) | 30 |
+| Landing page / full page build (\`landing_page\` / \`full_page_build\`) | 25 |
+| Code infrastructure — scripts, config, CI/CD (\`code_infra\`) | 15 |
 | Finalized content (\`*_final\`) | 10 |
 | New skill or workflow | 5 |
 | Manual accomplishment | 5 |
@@ -102,17 +106,18 @@ For each accomplishment, record:
 
 | Score | Grade |
 |---|---|
-| >= 200 | S (legendary) |
-| >= 50 | A+ |
-| 30–49 | A |
-| 15–29 | B |
+| > 500 | S+ |
+| 300–500 | S |
+| 150–299 | A+ |
+| 50–149 | A |
+| 15–49 | B |
 | 5–14 | C |
 | < 5 | D |
 
 ### Computed Metrics
 
 - **Output Score** = sum of weighted points from all accomplishments
-- **Efficiency Rating** = Output Score / Total Token Cost (pts/$ — higher is better)
+- **Efficiency Rating** = Output Score / Total Token Cost (pts/$: higher is better)
 
 ## Token Usage Tracking
 
@@ -210,8 +215,8 @@ Since Cursor doesn't expose token data on disk, estimate based on conversation l
 Generate a PNG dashboard card using Python + Pillow with this layout:
 
 ### Design System
-- **Background**: \`(12, 13, 17)\` — near-black
-- **Panel fill**: \`(22, 24, 30)\` — dark gray
+- **Background**: \`(12, 13, 17)\`, near-black
+- **Panel fill**: \`(22, 24, 30)\`, dark gray
 - **Border**: \`(40, 44, 54)\`
 - **Green accent**: \`(78, 195, 115)\`
 - **Text**: \`(185, 195, 210)\`
@@ -224,16 +229,17 @@ Generate a PNG dashboard card using Python + Pillow with this layout:
 - **Font**: Menlo (monospace, pre-installed on macOS)
 
 ### Layout Structure
-1. **Header row** — "DAILY TRACKER" in green + letter grade badge (colored pill) + date right-aligned
-2. **Stat boxes row** — small cards: shipped count, finalized, pending TODOs, pipeline count, words today, commits, files touched, tokens, est. cost
-3. **Platform breakdown bar** — e.g., \`LI:3  SUB:2  X:1\` with per-platform colors
+1. **Header row**: "DAILY TRACKER" in green + letter grade badge (colored pill) + date right-aligned
+2. **Stat boxes row**: small cards: shipped count, finalized, pending TODOs, pipeline count, words today, commits, files touched, tokens, est. cost
+3. **Platform breakdown bar**: e.g., \`LI:3  SUB:2  X:1\` with per-platform colors
 4. **Three-column panels**:
-   - **Left (40%)**: Accomplishments list — timestamp, [type tag], title (word count)
+   - **Left (40%)**: Accomplishments list: timestamp, [type tag], title (word count)
    - **Middle (32%)**: TODOs (high priority first) + Pipeline drafts (sorted by target date)
-   - **Right (28%)**: Token usage — sessions, input/output/cache totals, cost, model breakdown, efficiency rating
-5. **Footer** — summary stats centered
+   - **Right (28%)**: Token usage: sessions, input/output/cache totals, cost, model breakdown, efficiency rating
+5. **Footer**: summary stats centered
 
 ### Grade Badge Colors
+- S+: Orange-Gold \`(255, 107, 53)\`
 - S: Gold \`(255, 200, 60)\`
 - A+/A: Green \`(78, 195, 115)\`
 - B: Cyan \`(80, 190, 220)\`
@@ -405,7 +411,7 @@ export default function BuildYourOwnPage() {
         >
           the log page
         </Link>{' '}
-        are generated by an AI-native tracking system — a scanner that auto-detects
+        are generated by an AI-native tracking system. A scanner that auto-detects
         your daily output from git, file modification times, and content directories,
         then scores it and renders a visual dashboard card. Below is the full prompt
         you can drop into Cursor, Claude, or any AI IDE to build your own.
@@ -416,7 +422,7 @@ export default function BuildYourOwnPage() {
         <div style={calloutTitle}>Living Document</div>
         <p style={calloutText}>
           This prompt evolves as the tracker evolves. If the receipts change shape,
-          gain new metrics, or add new scoring categories — so does this prompt.
+          gain new metrics, or add new scoring categories. So does this prompt.
           Changes only make it better. Bookmark this page and come back for the
           latest version.
         </p>

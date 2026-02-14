@@ -6,6 +6,8 @@ partners/
 .notion-sync-state.json
 data/*
 !data/daily-log/
+!data/progression/
+!data/progression/avatars/
 data/daily-log/*.png
 scripts/
 qualified_leads_to_process.json
