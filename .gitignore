@@ -4,7 +4,9 @@
 clients/
 partners/
 .notion-sync-state.json
-data/
+data/*
+!data/daily-log/
+data/daily-log/*.png
 scripts/
 qualified_leads_to_process.json
 .claude/blocklist.txt

@@ -1,0 +1,512 @@
+{
+  "date": "2026-02-11",
+  "generated_at": "2026-02-12T02:37:36.365392+00:00",
+  "version": 3,
+  "accomplishments": [
+    {
+      "type": "linkedin_draft",
+      "title": "agent context handoff",
+      "source": "auto",
+      "timestamp": "11:47",
+      "words": 848
+    },
+    {
+      "type": "workflow_updated",
+      "title": "substack-index",
+      "source": "auto",
+      "timestamp": "20:44",
+      "words": 575
+    },
+    {
+      "type": "substack_draft",
+      "title": "content os reveal",
+      "source": "auto",
+      "timestamp": "11:47",
+      "words": 1187
+    },
+    {
+      "type": "skill_updated",
+      "title": "heyreach-partner-handoff",
+      "source": "auto",
+      "timestamp": "11:47",
+      "words": 568
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "daily tracker system",
+      "source": "auto",
+      "timestamp": "20:46",
+      "words": 1341
+    },
+    {
+      "type": "substack_draft",
+      "title": "identity not tools",
+      "source": "auto",
+      "timestamp": "20:44",
+      "words": 1440
+    },
+    {
+      "type": "x_draft",
+      "title": "cursor tip plan mode",
+      "source": "auto",
+      "timestamp": "19:29",
+      "words": 96
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "identity not tools",
+      "source": "auto",
+      "timestamp": "20:26",
+      "words": 826
+    },
+    {
+      "type": "reddit_draft",
+      "title": "content os reddit",
+      "source": "auto",
+      "timestamp": "01:09",
+      "words": 1323
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "substack identity crosspromo",
+      "source": "auto",
+      "timestamp": "19:31",
+      "words": 120
+    },
+    {
+      "type": "x_draft",
+      "title": "daily tracker system",
+      "source": "auto",
+      "timestamp": "20:46",
+      "words": 604
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "substack launch crosspromo",
+      "source": "auto",
+      "timestamp": "20:51",
+      "words": 1586
+    },
+    {
+      "type": "x_draft",
+      "title": "identity not tools",
+      "source": "auto",
+      "timestamp": "20:26",
+      "words": 381
+    },
+    {
+      "type": "x_draft",
+      "title": "substack identity crosspromo",
+      "source": "auto",
+      "timestamp": "20:44",
+      "words": 55
+    },
+    {
+      "type": "substack_final",
+      "title": "identity not tools",
+      "source": "auto",
+      "timestamp": "20:44",
+      "words": 881
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "target_date": "2026-02-12",
+        "words": 1268
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "target_date": "2026-02-14",
+        "words": 1579
+      },
+      {
+        "platform": "substack",
+        "title": "build your own os",
+        "target_date": "2026-02-17",
+        "words": 1541
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "target_date": "2026-02-17",
+        "words": 1119
+      }
+    ],
+    "finalized_today": [
+      {
+        "platform": "substack"
+      }
+    ]
+  },
+  "todos": [
+    {
+      "id": "t1",
+      "task": "Finalize cursor-discovery substack for 2/14",
+      "status": "pending",
+      "priority": "high"
+    },
+    {
+      "id": "t2",
+      "task": "Generate X cross-promo for identity post",
+      "status": "done",
+      "priority": "normal"
+    },
+    {
+      "id": "t3",
+      "task": "Record first TikTok with /tiktokscript",
+      "status": "pending",
+      "priority": "normal"
+    }
+  ],
+  "token_usage": [
+    {
+      "input_tokens": 15,
+      "output_tokens": 68,
+      "cache_read_tokens": 126657,
+      "cache_write_tokens": 74281,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 7,
+      "logged_at": "21:37",
+      "cost": 1.5881,
+      "context": "claude-code 03:09"
+    },
+    {
+      "input_tokens": 155,
+      "output_tokens": 743,
+      "cache_read_tokens": 3709248,
+      "cache_write_tokens": 387734,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 88,
+      "logged_at": "21:37",
+      "cost": 12.8919,
+      "context": "claude-code 16:43"
+    },
+    {
+      "input_tokens": 45000,
+      "output_tokens": 18000,
+      "model": "opus",
+      "context": "daily tracker v2 upgrade",
+      "logged_at": "21:05",
+      "cost": null
+    }
+  ],
+  "stats": {
+    "platform_breakdown": {
+      "linkedin": 5,
+      "other": 2,
+      "substack": 3,
+      "x": 4,
+      "reddit": 1
+    },
+    "words_today": 11831,
+    "pipeline_words": 30163,
+    "finals_count": 1,
+    "first_activity": "01:09",
+    "last_activity": "20:51",
+    "output_score": 44,
+    "letter_grade": "A",
+    "score_breakdown": [
+      {
+        "type": "linkedin_draft",
+        "title": "agent context handoff",
+        "points": 2
+      },
+      {
+        "type": "workflow_updated",
+        "title": "substack-index",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "content os reveal",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "heyreach-partner-handoff",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "daily tracker system",
+        "points": 2
+      },
+      {
+        "type": "substack_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "cursor tip plan mode",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "reddit_draft",
+        "title": "content os reddit",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "substack identity crosspromo",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "daily tracker system",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "substack launch crosspromo",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "substack identity crosspromo",
+        "points": 2
+      },
+      {
+        "type": "substack_final",
+        "title": "identity not tools",
+        "points": 10
+      }
+    ],
+    "efficiency_rating": 2.67
+  },
+  "git_summary": {
+    "commits_today": 1
+  }
+}
