@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 const copyBtn: React.CSSProperties = {
   position: 'absolute',
@@ -21,12 +21,25 @@ const copyBtn: React.CSSProperties = {
 
 export default function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false)
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // Clear any pending timer on unmount
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current)
+    }
+  }, [])
+
+  const resetAfterDelay = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current)
+    setCopied(true)
+    timerRef.current = setTimeout(() => setCopied(false), 2000)
+  }, [])
 
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(text)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      resetAfterDelay()
     } catch {
       const textarea = document.createElement('textarea')
       textarea.value = text
@@ -34,8 +47,7 @@ export default function CopyButton({ text }: { text: string }) {
       textarea.select()
       document.execCommand('copy')
       document.body.removeChild(textarea)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      resetAfterDelay()
     }
   }
 
