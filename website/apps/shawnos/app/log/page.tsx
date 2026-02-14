@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
-import { getAllLogs } from '@shawnos/shared/lib'
-import { LogCard } from '@shawnos/shared/components'
+import { getAllLogs, getLogAggregates } from '@shawnos/shared/lib'
+import { LogCard, LogHero } from '@shawnos/shared/components'
 
 const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
 
@@ -42,6 +42,7 @@ export const metadata: Metadata = {
 
 export default function LogIndex() {
   const logs = getAllLogs(LOG_DIR)
+  const aggregates = getLogAggregates(LOG_DIR)
 
   return (
     <section
@@ -52,17 +53,7 @@ export default function LogIndex() {
         fontFamily: 'var(--font-mono)',
       }}
     >
-      <h1
-        style={{
-          fontSize: '14px',
-          color: 'var(--accent)',
-          fontWeight: 400,
-          marginBottom: 32,
-          letterSpacing: '0.5px',
-        }}
-      >
-        $ ls ~/log
-      </h1>
+      <LogHero aggregates={aggregates} />
 
       {logs.length === 0 ? (
         <p

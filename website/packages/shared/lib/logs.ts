@@ -210,6 +210,47 @@ export function getLogByDate(date: string, logDir: string): DailyLog | null {
   return scrubLog(raw)
 }
 
+/* ------------------------------------------------------------------ */
+/*  Aggregate stats across all logs                                    */
+/* ------------------------------------------------------------------ */
+
+export interface LogAggregates {
+  totalDays: number
+  totalShipped: number
+  totalWords: number
+  totalCommits: number
+  totalFinals: number
+}
+
+/**
+ * Computes totals across every available daily log in `logDir`.
+ * Used by the LogHero component on the /log index page.
+ */
+export function getLogAggregates(logDir: string): LogAggregates {
+  const dates = getLogDates(logDir)
+  let totalShipped = 0
+  let totalWords = 0
+  let totalCommits = 0
+  let totalFinals = 0
+
+  for (const date of dates) {
+    const log = getLogByDate(date, logDir)
+    if (!log) continue
+    totalShipped += log.accomplishments.length
+    totalWords += log.stats.words_today
+    totalCommits += log.git_summary.commits_today
+    totalFinals += log.stats.finals_count
+  }
+
+  return {
+    totalDays: dates.length,
+    totalShipped,
+    totalWords,
+    totalCommits,
+    totalFinals,
+  }
+}
+
 /**
  * Returns lightweight summaries for every daily log, sorted newest-first.
  * Used on the /log index page.

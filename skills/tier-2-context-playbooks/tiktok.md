@@ -187,6 +187,46 @@ Series are the growth engine on TikTok. Each series should:
 - One Shortcut a Day
 - Do This, Not That (AI Tool Edition)
 
+## Twitch Stream Repurpose (Dormant -- Activates Post-Build)
+
+When the Twitch Gaming + Discord pillar activates, streams become a major source of TikTok content. Every stream should produce 2-3 clips minimum.
+
+### Source Types
+
+| Stream Moment | TikTok Treatment | Notes |
+|---|---|---|
+| Code highlight (30-60s) | Quick build clip with text overlay | "I just vibe-coded [X] live on stream" |
+| Boss fight / clutch moment | Gaming highlight, reaction-style | Highest viral potential -- gaming clips travel |
+| Build result reveal | Before/after or demo clip | "Built this with AI in 30 minutes" |
+| Failed build / funny bug | Relatable dev humor | "Claude tried its best" energy |
+| Chat-driven moment | Community interaction highlight | Shows the live community aspect |
+| Hot take / reaction | Commentary clip with face cam | AI tool drops, game announcements |
+
+### Automation Tools
+
+- **Clipbot** (free, 10k+ creators): Automatically uploads Twitch clips to TikTok and YouTube Shorts. Zero editing required for basic clips.
+- **Vizard**: AI-powered moment detection. Automatically identifies stream highlights and converts to vertical format. Handles text overlays and 30+ language captions.
+- **Cross Clip** ($5/mo): One-click Twitch clip conversion with customizable editing features. Free tier available.
+
+### Hashtag Strategy for Gaming + Coding TikToks
+
+Mix niche and broad tags. 3-5 per video.
+
+**Coding clips**: `#vibecoding` `#claudeai` `#cursoride` `#codetok` `#aitools` `#livecoding`
+**Gaming clips**: `#eldenring` `#soulslike` `#gaming` `#twitchclips` `#bossfight`
+**Hybrid clips**: `#vibecoding` `#gamedev` `#aigaming` `#builtwithai` `#retrogaming`
+
+### Workflow Addition
+
+When repurposing from Twitch:
+
+1. Review stream VOD or auto-generated clips (Clipbot/Vizard)
+2. Select 2-3 strongest moments
+3. Run through `/tiktokscript` for structure refinement if needed
+4. Add text overlays and captions (CapCut or Descript)
+5. Post with gaming-specific hashtags alongside regular tags
+6. Cross-post to Reels + Shorts same day
+
 ## Cross-Posting Rules
 
 | Content Type | Origin | TikTok Treatment |
@@ -197,6 +237,8 @@ Series are the growth engine on TikTok. Each series should:
 | Memes | X native | Adapt to video meme format (green screen, trending sound) |
 | Tutorials | TikTok native | Keep here first. Cross-post to Reels/Shorts same day. |
 | Claude/Cursor tips | TikTok native | These live here first. Expand to LinkedIn/X if they perform. |
+| Twitch code clips | Twitch first | Clipbot auto-upload or manual edit. Post within 24 hours. |
+| Twitch gaming clips | Twitch first | Highest volume source. Auto-upload via Clipbot. |
 
 ## Cross-Platform Distribution
 
@@ -245,3 +287,5 @@ Start with 3x per week. TikTok rewards consistency over quality-per-post. One "b
 - `workflows/tiktok-index.md` — Series tracking and content calendar
 - `workflows/plays-index.md` — Source material for GTM Plays repurpose
 - `.cursor/skills/tiktok-script/SKILL.md` — Agent skill for generating TikTok scripts
+- `tier-2-context-playbooks/twitch.md` — Twitch playbook (source for stream clip repurpose)
+- `tier-3-content-ops/pillars/twitch-gaming-discord.md` — Twitch Gaming + Discord pillar

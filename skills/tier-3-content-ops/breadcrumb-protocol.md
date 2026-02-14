@@ -61,6 +61,35 @@ Ideas from the idea bank (`skills/tier-3-content-ops/captures/idea-bank.md`) tha
 - Play-by-play series posts focused on a specific tactic
 - Any post where it would feel shoehorned
 
+### 2. The Build Unlocks a New Layer → Twitch Gaming + Discord (parked)
+
+**Idea bank ID**: `twitch-gaming-discord`
+
+**What to hint at**: The computer build unlocks a new content layer. Live, unfiltered, community-driven. The OS goes real-time. Coding and gaming converge.
+
+**Natural language patterns** (use variations, not verbatim):
+- "building the machine that runs the stream"
+- "the build isn't just hardware -- it's a new channel"
+- "once this rig is done, you'll see why"
+- "the OS goes live"
+- "there's a reason I'm documenting the build"
+- "the system doesn't stop at written content"
+- "real-time is the next layer"
+
+**Where it fits naturally**:
+- Posts about the computer build -- the "building the machine" framing implies something beyond the hardware
+- Posts about expanding the content network or adding new platforms
+- Posts about community building or audience beyond LinkedIn/X
+- Posts about the recursive loop -- "the build becomes the content becomes the build"
+- Posts about what's next or future plans -- "the OS keeps expanding"
+
+**Where it does NOT fit**:
+- GTM partner campaign posts
+- Technical Clay/CRM workflow breakdowns
+- Newsletter growth or content methodology posts
+- Play-by-play series posts focused on a specific tactic
+- Any post where mentioning hardware or live content would feel shoehorned
+
 ---
 
 ## Retired Breadcrumbs

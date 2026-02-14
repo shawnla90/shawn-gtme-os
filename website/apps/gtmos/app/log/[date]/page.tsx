@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getLogDates, getLogByDate } from '@shawnos/shared/lib'
-import { DailyLogView } from '@shawnos/shared/components'
+import { DailyLogView, LogDetailIntro } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://thegtmos.ai'
 const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
@@ -161,6 +161,8 @@ export default async function LogPage({
       >
         &larr; back to logs
       </a>
+
+      <LogDetailIntro />
 
       <DailyLogView
         log={log}
