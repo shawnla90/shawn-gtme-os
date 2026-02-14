@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import path from 'path'
+import Link from 'next/link'
 import { getAllLogs, getLogAggregates } from '@shawnos/shared/lib'
 import { LogCard, LogHero } from '@shawnos/shared/components'
 
@@ -54,6 +55,26 @@ export default function LogIndex() {
       }}
     >
       <LogHero aggregates={aggregates} />
+
+      {/* CTA — build your own */}
+      <Link
+        href="/log/build-your-own"
+        style={{
+          display: 'block',
+          padding: '14px 18px',
+          marginBottom: '24px',
+          background: 'var(--canvas-subtle)',
+          border: '1px solid var(--border)',
+          borderRadius: '6px',
+          textDecoration: 'none',
+          fontSize: '13px',
+          fontWeight: 600,
+          color: 'var(--accent)',
+          transition: 'border-color 0.15s ease',
+        }}
+      >
+        Want to build your own? Grab the prompt. &rarr;
+      </Link>
 
       {logs.length === 0 ? (
         <p
