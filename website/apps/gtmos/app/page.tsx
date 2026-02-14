@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllLogs } from '@shawnos/shared/lib'
-import { LogCard, TypewriterHero } from '@shawnos/shared/components'
+import { LogCard, TypewriterHero, ScrambleCycler } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'theGTMOS.ai — the GTM operating system',
@@ -67,6 +67,40 @@ const page: React.CSSProperties = {
 
 const heroSection: React.CSSProperties = {
   marginBottom: 56,
+}
+
+const heroRow: React.CSSProperties = {
+  display: 'flex',
+  gap: 32,
+  alignItems: 'flex-start',
+  flexWrap: 'wrap',
+}
+
+const heroLeft: React.CSSProperties = {
+  flex: '1 1 340px',
+  minWidth: 0,
+}
+
+const heroRight: React.CSSProperties = {
+  flex: '0 0 auto',
+  padding: '20px 24px',
+  background: 'var(--canvas-subtle)',
+  border: '1px solid var(--border)',
+  borderRadius: 6,
+  minWidth: 200,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 8,
+  alignSelf: 'flex-start',
+  marginTop: 4,
+}
+
+const scrambleLabel: React.CSSProperties = {
+  fontSize: '20px',
+  fontWeight: 700,
+  color: 'var(--accent)',
+  letterSpacing: '0.08em',
+  fontFamily: 'var(--font-mono)',
 }
 
 const prompt: React.CSSProperties = {
@@ -195,28 +229,44 @@ export default function HomePage() {
 
         <p style={heroLoaded}>&gt; theGTMOS.ai loaded</p>
 
-        <TypewriterHero
-          siteName="theGTMOS.ai"
-          sequences={[
-            {
-              text: 'the go-to-market operating system. pipeline to close, one repo. every workflow, campaign, and partner playbook runs through the same codebase.',
-              pauseAfter: 3000,
-            },
-            {
-              text: 'G.T.M. \u2014 Growth. Targeting. Motion.',
-              color: 'accent',
-              pauseAfter: 4000,
-            },
-          ]}
-        />
+        <div style={heroRow}>
+          {/* Left — title + typewriter + CTAs */}
+          <div style={heroLeft}>
+            <TypewriterHero
+              siteName="theGTMOS.ai"
+              maxWidth={420}
+              typeOnce
+              sequences={[
+                {
+                  text: 'the go-to-market operating system. pipeline to close, one repo. every workflow, campaign, and partner playbook runs through the same codebase.',
+                },
+              ]}
+            />
 
-        <div style={ctaRow}>
-          <Link href="/log" style={ctaPrimary}>
-            view the build log &rarr;
-          </Link>
-          <a href="https://shawnos.ai" style={ctaSecondary}>
-            explore ShawnOS.ai
-          </a>
+            <div style={ctaRow}>
+              <Link href="/log" style={ctaPrimary}>
+                view the build log &rarr;
+              </Link>
+              <a href="https://shawnos.ai" style={ctaSecondary}>
+                explore ShawnOS.ai
+              </a>
+            </div>
+          </div>
+
+          {/* Right — scramble decode cycler */}
+          <div style={heroRight}>
+            <div style={scrambleLabel}>G.T.M.</div>
+            <ScrambleCycler
+              phrases={[
+                'Go. To. Market.',
+                'Get. The. Meeting.',
+                'Grow. The. Machine.',
+              ]}
+              holdMs={3000}
+              scrambleSpeed={30}
+              resolveSpeed={50}
+            />
+          </div>
         </div>
       </section>
 

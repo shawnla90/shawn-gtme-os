@@ -28,6 +28,10 @@ export interface TypewriterHeroProps {
   deleteSpeed?: number
   /** Blinking cursor character (default "_") */
   cursorChar?: string
+  /** If true, types the first sequence once and stops (no delete/cycle) */
+  typeOnce?: boolean
+  /** Max width of the typing area */
+  maxWidth?: number
 }
 
 type Phase = 'typing' | 'paused' | 'deleting'
@@ -86,6 +90,8 @@ export function TypewriterHero({
   typeSpeed = 40,
   deleteSpeed = 25,
   cursorChar = '_',
+  typeOnce = false,
+  maxWidth,
 }: TypewriterHeroProps) {
   /*
    * Initialise with the first sequence *fully visible*.  On the server this
@@ -112,6 +118,8 @@ export function TypewriterHero({
     switch (phase) {
       /* Hold the fully-typed text, then begin erasing */
       case 'paused':
+        // typeOnce: stay paused forever once fully typed
+        if (typeOnce) break
         timer = setTimeout(() => {
           setPhase('deleting')
         }, seq.pauseAfter ?? 3000)
@@ -148,7 +156,7 @@ export function TypewriterHero({
     }
 
     return () => clearTimeout(timer)
-  }, [phase, charIndex, seqIndex, sequences, typeSpeed, deleteSpeed])
+  }, [phase, charIndex, seqIndex, sequences, typeSpeed, deleteSpeed, typeOnce])
 
   /* ── derived display text ── */
 
@@ -192,7 +200,7 @@ export function TypewriterHero({
           color: 'var(--text-primary)',
           lineHeight: 1.6,
           marginBottom: 28,
-          maxWidth: 520,
+          maxWidth: maxWidth ?? 560,
           minHeight: '3.2em', // reserve ~2 lines to prevent CTA jump
         }}
       >

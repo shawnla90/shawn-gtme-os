@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllLogs } from '@shawnos/shared/lib'
-import { LogCard, TypewriterHero } from '@shawnos/shared/components'
+import { LogCard, TypewriterHero, ScrambleCycler } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'theContentOS.ai — the content operating system',
@@ -102,6 +102,40 @@ const page: React.CSSProperties = {
 
 const heroSection: React.CSSProperties = {
   marginBottom: 56,
+}
+
+const heroRow: React.CSSProperties = {
+  display: 'flex',
+  gap: 32,
+  alignItems: 'flex-start',
+  flexWrap: 'wrap',
+}
+
+const heroLeft: React.CSSProperties = {
+  flex: '1 1 340px',
+  minWidth: 0,
+}
+
+const heroRight: React.CSSProperties = {
+  flex: '0 0 auto',
+  padding: '20px 24px',
+  background: 'var(--canvas-subtle)',
+  border: '1px solid var(--border)',
+  borderRadius: 6,
+  minWidth: 200,
+  display: 'flex',
+  flexDirection: 'column',
+  gap: 8,
+  alignSelf: 'flex-start',
+  marginTop: 4,
+}
+
+const scrambleLabel: React.CSSProperties = {
+  fontSize: '20px',
+  fontWeight: 700,
+  color: 'var(--accent)',
+  letterSpacing: '0.08em',
+  fontFamily: 'var(--font-mono)',
 }
 
 const promptStyle: React.CSSProperties = {
@@ -272,28 +306,44 @@ export default function HomePage() {
 
         <p style={heroLoaded}>&gt; theContentOS.ai loaded</p>
 
-        <TypewriterHero
-          siteName="theContentOS.ai"
-          sequences={[
-            {
-              text: 'the content operating system. one voice. every platform. no tab-surfing. speak to your AI and ship content that actually sounds like you.',
-              pauseAfter: 3000,
-            },
-            {
-              text: 'C.O.S. \u2014 Calibrated Output System',
-              color: 'accent',
-              pauseAfter: 4000,
-            },
-          ]}
-        />
+        <div style={heroRow}>
+          {/* Left — title + typewriter + CTAs */}
+          <div style={heroLeft}>
+            <TypewriterHero
+              siteName="theContentOS.ai"
+              maxWidth={420}
+              typeOnce
+              sequences={[
+                {
+                  text: 'the content operating system. one voice. every platform. no tab-surfing. speak to your AI and ship content that actually sounds like you.',
+                },
+              ]}
+            />
 
-        <div style={ctaRow}>
-          <Link href="/log" style={ctaPrimary}>
-            view the build log &rarr;
-          </Link>
-          <a href="https://shawnos.ai" style={ctaSecondary}>
-            explore ShawnOS.ai
-          </a>
+            <div style={ctaRow}>
+              <Link href="/log" style={ctaPrimary}>
+                view the build log &rarr;
+              </Link>
+              <a href="https://shawnos.ai" style={ctaSecondary}>
+                explore ShawnOS.ai
+              </a>
+            </div>
+          </div>
+
+          {/* Right — scramble decode cycler */}
+          <div style={heroRight}>
+            <div style={scrambleLabel}>C.O.S.</div>
+            <ScrambleCycler
+              phrases={[
+                'Create. Orchestrate. Ship.',
+                'one voice — every platform',
+                'draft > ship > compound > repeat',
+              ]}
+              holdMs={3000}
+              scrambleSpeed={30}
+              resolveSpeed={50}
+            />
+          </div>
         </div>
       </section>
 
