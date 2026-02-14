@@ -53,7 +53,10 @@ export default function RootLayout({
         <TerminalChrome title="thecontentos.ai">
           <Navigation
             siteName="thecontentos.ai"
-            links={[{ href: '/', label: 'Home' }]}
+            links={[
+              { href: '/', label: 'Home' },
+              { href: '/log', label: 'Log' },
+            ]}
           />
           <main>{children}</main>
           <NetworkBanner currentSite="contentos" />

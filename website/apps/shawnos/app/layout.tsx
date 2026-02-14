@@ -91,7 +91,15 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <TerminalChrome title="shawnos.ai">
-          <Navigation siteName="shawnos.ai" />
+          <Navigation
+            siteName="shawnos.ai"
+            links={[
+              { href: '/', label: 'Home' },
+              { href: '/blog', label: 'Blog' },
+              { href: '/log', label: 'Log' },
+              { href: '/about', label: 'About' },
+            ]}
+          />
           <main>{children}</main>
           <NetworkBanner currentSite="shawnos" />
           <Footer siteName="shawnos.ai" />

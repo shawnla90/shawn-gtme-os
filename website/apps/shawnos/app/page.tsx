@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
-import { getAllPosts } from '@shawnos/shared/lib'
-import { PostCard } from '@shawnos/shared/components'
+import { getAllPosts, getAllLogs } from '@shawnos/shared/lib'
+import { PostCard, LogCard } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'shawnos.ai — GTM engineering, built in public',
@@ -25,15 +25,19 @@ export const metadata: Metadata = {
 }
 
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
+const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
 
 /* ── boot log entries ────────────────────────────── */
 
 const bootLines: { status: string; label: string }[] = [
   { status: 'OK', label: 'content engine ... online' },
-  { status: 'OK', label: 'three-site network ... linked' },
+  { status: 'OK', label: 'three-site network ... synced' },
+  { status: 'OK', label: 'gtm engine ... thegtmos.ai' },
+  { status: 'OK', label: 'content os ... thecontentos.ai' },
   { status: 'OK', label: 'cursor agent ... active' },
   { status: 'OK', label: 'blog pipeline ... mounted' },
   { status: 'OK', label: 'build-in-public mode ... engaged' },
+  { status: 'OK', label: 'daily tracker ... streaming' },
 ]
 
 /* ── styles ──────────────────────────────────────── */
@@ -151,6 +155,8 @@ const divider: React.CSSProperties = {
 export default function HomePage() {
   const posts = getAllPosts(CONTENT_DIR)
   const latestPosts = posts.slice(0, 3)
+  const logs = getAllLogs(LOG_DIR)
+  const latestLog = logs.length > 0 ? logs[0] : null
 
   return (
     <div style={page}>
@@ -217,6 +223,38 @@ export default function HomePage() {
             </Link>
           </div>
         </section>
+      )}
+
+      {/* ── Latest Log ── */}
+      {latestLog && (
+        <>
+          <hr style={divider} />
+
+          <section style={section}>
+            <h2 style={sectionTitle}>
+              <span style={promptChar}>$</span>{' '}
+              <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
+                cat ~/log --latest
+              </span>
+            </h2>
+
+            <LogCard {...latestLog} basePath="/log" />
+
+            <div style={{ marginTop: 24 }}>
+              <Link
+                href="/log"
+                style={{
+                  fontSize: '13px',
+                  color: 'var(--accent)',
+                  textDecoration: 'none',
+                  fontWeight: 600,
+                }}
+              >
+                view all logs &rarr;
+              </Link>
+            </div>
+          </section>
+        </>
       )}
 
       <hr style={divider} />
