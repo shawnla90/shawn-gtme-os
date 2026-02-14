@@ -1,250 +1,755 @@
 {
   "date": "2026-02-12",
-  "generated_at": "2026-02-13T01:25:02.582013+00:00",
+  "generated_at": "2026-02-14T08:47:02.780533+00:00",
   "version": 3,
   "accomplishments": [
     {
-      "type": "linkedin_draft",
-      "title": "content flywheel masterplan",
+      "type": "lead_magnet",
+      "title": "scaffold prompt",
+      "path": "content/substack/lead-magnet/scaffold-prompt.md",
       "source": "auto",
-      "timestamp": "21:42",
-      "words": 1463
-    },
-    {
-      "type": "linkedin_final",
-      "title": "content flywheel masterplan",
-      "source": "auto",
-      "timestamp": "21:58",
-      "words": 635
-    },
-    {
-      "type": "x_draft",
-      "title": "content flywheel masterplan",
-      "source": "auto",
-      "timestamp": "23:08",
-      "words": 647
-    },
-    {
-      "type": "partner_workflow",
-      "title": "partner campaign patterns",
-      "source": "auto-mtime",
-      "timestamp": "16:55",
-      "words": 273
+      "timestamp": "19:43",
+      "words": 1500,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "skill_updated",
-      "title": "x-tip-image",
-      "source": "auto-mtime",
-      "timestamp": "00:46",
-      "words": 2211
-    },
-    {
-      "type": "substack_draft",
-      "title": "start at level one",
-      "source": "auto-mtime",
-      "timestamp": "02:40",
-      "words": 1013
-    },
-    {
-      "type": "skill_updated",
-      "title": "daily-tracker",
-      "source": "auto-mtime",
-      "timestamp": "20:24",
-      "words": 2280
-    },
-    {
-      "type": "partner_prompt",
-      "title": "partner signal retrieval",
-      "source": "auto-mtime",
-      "timestamp": "13:29",
-      "words": 408
-    },
-    {
-      "type": "skill_updated",
-      "title": "substack-note",
-      "source": "auto-mtime",
-      "timestamp": "01:27",
-      "words": 1907
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "build day",
-      "source": "auto-mtime",
-      "timestamp": "02:54",
-      "words": 271
-    },
-    {
-      "type": "workflow_updated",
-      "title": "substack-index",
-      "source": "auto-mtime",
-      "timestamp": "16:37",
-      "words": 709
+      "title": "substack-post",
+      "path": ".cursor/skills/substack-post/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1548,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "skill_updated",
       "title": "web-reveal-workflow",
-      "source": "auto-mtime",
-      "timestamp": "13:53",
-      "words": 887
+      "path": ".cursor/skills/web-reveal-workflow/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 889,
+      "value_score": 5,
+      "shipped": true
     },
     {
-      "type": "partner_research",
-      "title": "partner icp",
-      "source": "auto-mtime",
-      "timestamp": "13:28",
-      "words": 563
+      "type": "x_final",
+      "title": "cursor tip plan mode",
+      "path": "content/x/final/2026-02-11_cursor-tip-plan-mode.txt",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 62,
+      "value_score": 10,
+      "shipped": true
     },
     {
-      "type": "partner_research",
-      "title": "partner personas",
-      "source": "auto-mtime",
-      "timestamp": "17:34",
-      "words": 322
+      "type": "linkedin_draft",
+      "title": "substack launch crosspromo",
+      "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1586,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "reddit_draft",
+      "title": "content os reddit",
+      "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1323,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "skill-tree",
+      "path": ".cursor/skills/skill-tree/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 584,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "substack-note",
+      "path": ".cursor/skills/substack-note/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1907,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "lead_magnet",
+      "title": "mcp guide",
+      "path": "content/substack/lead-magnet/mcp-guide.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 931,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "build your own os",
+      "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1064,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "identity not tools",
+      "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 381,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "daily tracker system",
+      "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1341,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "script",
-      "title": "daily_scan",
-      "source": "auto-mtime",
-      "timestamp": "20:24"
+      "title": "_gen_content_os_masterplan",
+      "path": "content/linkedin/drafts/_gen_content_os_masterplan.py",
+      "source": "auto",
+      "value_score": 2,
+      "shipped": true
     },
     {
-      "type": "substack_draft",
-      "title": "cursor discovery",
-      "source": "auto-mtime",
-      "timestamp": "02:54",
-      "words": 1599
-    },
-    {
-      "type": "skill_updated",
-      "title": "xlsx",
-      "source": "auto-mtime",
-      "timestamp": "01:14",
-      "words": 1446
-    },
-    {
-      "type": "partner_onboard",
-      "title": "partner onboard skill",
-      "source": "auto-mtime",
-      "timestamp": "16:55",
-      "words": 508
-    },
-    {
-      "type": "partner_research",
-      "title": "partner icp",
-      "source": "auto-mtime",
-      "timestamp": "17:34",
-      "words": 242
-    },
-    {
-      "type": "partner_prompt",
-      "title": "partner campaign copy",
-      "source": "auto-mtime",
-      "timestamp": "17:28",
-      "words": 376
-    },
-    {
-      "type": "partner_prompt",
-      "title": "partner personalization research",
-      "source": "auto-mtime",
-      "timestamp": "17:28",
-      "words": 738
-    },
-    {
-      "type": "partner_workflow",
-      "title": "partner campaign monitoring",
-      "source": "auto-mtime",
-      "timestamp": "13:11",
-      "words": 105
+      "type": "linkedin_draft",
+      "title": "weekend build",
+      "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 666,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "script",
-      "title": "recalc",
-      "source": "auto-mtime",
-      "timestamp": "01:14"
+      "title": "_gen_identity_awakening",
+      "path": "content/substack/images/_gen_identity_awakening.py",
+      "source": "auto",
+      "value_score": 2,
+      "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "campaign-copy-workflow",
-      "source": "auto-mtime",
-      "timestamp": "17:28",
-      "words": 887
-    },
-    {
-      "type": "skill_updated",
-      "title": "partner-comms",
-      "source": "auto-mtime",
-      "timestamp": "17:55",
-      "words": 863
-    },
-    {
-      "type": "cursor_rule",
-      "title": "prompt-formatting",
-      "source": "auto-mtime",
-      "timestamp": "13:52",
-      "words": 234
-    },
-    {
-      "type": "partner_resource",
-      "title": "partner contacts",
-      "source": "auto-mtime",
-      "timestamp": "13:11",
-      "words": 75
-    },
-    {
-      "type": "partner_prompt",
-      "title": "partner web reveal qualification",
-      "source": "auto-mtime",
-      "timestamp": "18:12",
-      "words": 1576
+      "type": "x_final",
+      "title": "build your own os",
+      "path": "content/x/final/2026-02-17_build-your-own-os.txt",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 339,
+      "value_score": 10,
+      "shipped": true
     },
     {
       "type": "substack_draft",
       "title": "build your own os",
-      "source": "auto-mtime",
-      "timestamp": "02:40",
-      "words": 1541
+      "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1541,
+      "value_score": 2,
+      "shipped": false
     },
     {
-      "type": "substack_draft",
-      "title": "weekend web build",
-      "source": "auto-mtime",
-      "timestamp": "16:37",
-      "words": 1054
-    },
-    {
-      "type": "partner_prompt",
-      "title": "partner web reveal qualification",
-      "source": "auto-mtime",
-      "timestamp": "14:54",
-      "words": 959
+      "type": "substack_final",
+      "title": "content os reveal",
+      "path": "content/substack/final/2026-02-10_content-os-reveal.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 726,
+      "value_score": 10,
+      "shipped": true
     },
     {
       "type": "skill_updated",
-      "title": "aios-image",
-      "source": "auto-mtime",
-      "timestamp": "02:38",
-      "words": 1682
+      "title": "x-tip-image",
+      "path": ".cursor/skills/x-tip-image/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 2211,
+      "value_score": 5,
+      "shipped": true
     },
     {
-      "type": "partner_research",
-      "title": "partner personas",
-      "source": "auto-mtime",
-      "timestamp": "18:14",
-      "words": 1754
+      "type": "lead_magnet",
+      "title": "youtube playbook starter",
+      "path": "content/substack/lead-magnet/templates/youtube-playbook-starter.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 742,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_final",
+      "title": "content flywheel masterplan",
+      "path": "content/x/final/2026-02-12_content-flywheel-masterplan.txt",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 444,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "lead_magnet",
+      "title": "youtube outline",
+      "path": "content/substack/lead-magnet/youtube-outline.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 952,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "_gen_cursor_tip_101_plan_mode",
+      "path": "content/x/images/_gen_cursor_tip_101_plan_mode.py",
+      "source": "auto",
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "daily tracker build",
+      "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 550,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "partner-comms",
+      "path": ".cursor/skills/partner-comms/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 863,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "daily-tracker",
+      "path": ".cursor/skills/daily-tracker/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 2280,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "substack_draft",
       "title": "build day",
-      "source": "auto-mtime",
-      "timestamp": "02:53",
-      "words": 1175
+      "path": "content/substack/drafts/2026-02-13_build-day.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1329,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "script",
+      "title": "_gen_substack_crosspromo_branch",
+      "path": "content/linkedin/drafts/_gen_substack_crosspromo_branch.py",
+      "source": "auto",
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "campaign-copy-workflow",
+      "path": ".cursor/skills/campaign-copy-workflow/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 887,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "daily tracker system",
+      "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 604,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "xlsx",
+      "path": ".cursor/skills/xlsx/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1446,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "build day",
+      "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 271,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "identity not tools",
+      "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 826,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "content flywheel masterplan",
+      "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 647,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "workflow_updated",
+      "title": "substack-index",
+      "path": "workflows/substack-index.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 712,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "_gen_substack_crosspromo_split",
+      "path": "content/linkedin/drafts/_gen_substack_crosspromo_split.py",
+      "source": "auto",
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "reddit_draft",
+      "title": "build your own os",
+      "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1119,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "script",
+      "title": "_gen_start_at_level_one",
+      "path": "content/substack/images/_gen_start_at_level_one.py",
+      "source": "auto",
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "lead_magnet",
+      "title": "tiktok playbook starter",
+      "path": "content/substack/lead-magnet/templates/tiktok-playbook-starter.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 682,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "identity not tools",
+      "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1440,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "substack_draft",
+      "title": "weekend web build",
+      "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1054,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "security guide",
+      "path": "content/substack/lead-magnet/security-guide.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 762,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "build your own os",
+      "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 465,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "cursor_rule",
+      "title": "prompt-formatting",
+      "path": ".cursor/rules/prompt-formatting.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 234,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "content-images",
+      "path": ".cursor/skills/content-images/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 885,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "substack identity crosspromo",
+      "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 120,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "substack_draft",
+      "title": "start at level one",
+      "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1013,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "ai slop basics",
+      "path": "content/substack/lead-magnet/templates/ai-slop-basics.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 777,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "aios-image",
+      "path": ".cursor/skills/aios-image/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1682,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "cursor discovery",
+      "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1599,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "reddit playbook starter",
+      "path": "content/substack/lead-magnet/templates/reddit-playbook-starter.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 574,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "content flywheel masterplan",
+      "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1463,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "update-github",
+      "path": ".claude/skills/update-github/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 917,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "substack_final",
+      "title": "identity not tools",
+      "path": "content/substack/final/2026-02-11_identity-not-tools.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 881,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "daily tracker build",
+      "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1462,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_final",
+      "title": "content flywheel masterplan",
+      "path": "content/linkedin/final/2026-02-12_content-flywheel-masterplan.txt",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 635,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "substack identity crosspromo",
+      "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 55,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "skill_updated",
       "title": "partner-onboard",
+      "path": ".cursor/skills/partner-onboard/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 1194,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "lead_magnet",
+      "title": "x playbook starter",
+      "path": "content/substack/lead-magnet/templates/x-playbook-starter.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 471,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "x-tip",
+      "path": ".cursor/skills/x-tip/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 934,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "final-substack",
+      "path": ".cursor/skills/final-substack/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 2676,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "cursor tip plan mode",
+      "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 96,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign patterns",
+      "path": "clients/partner/praecipio/workflows/campaign-patterns.md",
       "source": "auto-mtime",
-      "timestamp": "13:40",
-      "words": 1202
+      "timestamp": "20:27",
+      "words": 273,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner personalization research",
+      "path": "clients/partner/praecipio/prompts/personalization-research.md",
+      "source": "auto-mtime",
+      "timestamp": "17:28",
+      "words": 738,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_onboard",
+      "title": "partner onboard skill",
+      "path": "clients/partner/praecipio/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "20:27",
+      "words": 508,
+      "value_score": 8,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner personas",
+      "path": "clients/partner/elauwit/research/personas.md",
+      "source": "auto-mtime",
+      "timestamp": "17:34",
+      "words": 322,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner web reveal qualification",
+      "path": "clients/partner/praecipio/prompts/web-reveal-qualification.md",
+      "source": "auto-mtime",
+      "timestamp": "20:51",
+      "words": 1591,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner icp",
+      "path": "clients/partner/praecipio/research/icp.md",
+      "source": "auto-mtime",
+      "timestamp": "13:28",
+      "words": 563,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign monitoring",
+      "path": "clients/partner/praecipio/workflows/campaign-monitoring.md",
+      "source": "auto-mtime",
+      "timestamp": "13:11",
+      "words": 105,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner signal retrieval",
+      "path": "clients/partner/praecipio/prompts/signal-retrieval.md",
+      "source": "auto-mtime",
+      "timestamp": "13:29",
+      "words": 408,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "recalc",
+      "path": ".cursor/skills/xlsx/scripts/recalc.py",
+      "source": "auto-mtime",
+      "timestamp": "01:14",
+      "words": 470,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner campaign copy",
+      "path": "clients/partner/praecipio/prompts/campaign-copy.md",
+      "source": "auto-mtime",
+      "timestamp": "17:28",
+      "words": 376,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner personas",
+      "path": "clients/partner/praecipio/research/personas.md",
+      "source": "auto-mtime",
+      "timestamp": "20:32",
+      "words": 1754,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner contacts",
+      "path": "clients/partner/praecipio/resources/contacts.md",
+      "source": "auto-mtime",
+      "timestamp": "13:11",
+      "words": 75,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner web reveal qualification",
+      "path": "clients/partner/elauwit/prompts/web-reveal-qualification.md",
+      "source": "auto-mtime",
+      "timestamp": "14:54",
+      "words": 959,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner icp",
+      "path": "clients/partner/elauwit/research/icp.md",
+      "source": "auto-mtime",
+      "timestamp": "17:34",
+      "words": 242,
+      "value_score": 5,
+      "shipped": true
     }
   ],
   "pipeline": {
@@ -252,277 +757,375 @@
       {
         "platform": "linkedin",
         "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
         "target_date": "2026-02-09",
         "words": 1103
       },
       {
         "platform": "linkedin",
         "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
         "target_date": "2026-02-09",
         "words": 907
       },
       {
         "platform": "linkedin",
         "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
         "target_date": "2026-02-09",
         "words": 666
       },
       {
         "platform": "linkedin",
         "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
         "target_date": "2026-02-09",
         "words": 402
       },
       {
         "platform": "linkedin",
         "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
         "target_date": "2026-02-10",
         "words": 848
       },
       {
         "platform": "linkedin",
         "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
         "target_date": "2026-02-10",
         "words": 678
       },
       {
         "platform": "linkedin",
         "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
         "target_date": "2026-02-10",
         "words": 1263
       },
       {
         "platform": "linkedin",
         "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
         "target_date": "2026-02-10",
         "words": 784
       },
       {
         "platform": "linkedin",
         "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
         "target_date": "2026-02-10",
         "words": 629
       },
       {
         "platform": "linkedin",
         "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
         "target_date": "2026-02-10",
         "words": 740
       },
       {
         "platform": "linkedin",
         "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
         "target_date": "2026-02-10",
         "words": 795
       },
       {
         "platform": "linkedin",
         "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
         "target_date": "2026-02-11",
         "words": 1341
       },
       {
         "platform": "linkedin",
         "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 826
       },
       {
         "platform": "linkedin",
         "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 120
       },
       {
         "platform": "linkedin",
         "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 1586
       },
       {
         "platform": "linkedin",
         "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
         "target_date": "2026-02-12",
         "words": 1463
       },
       {
         "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
         "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
         "target_date": "2026-02-13",
         "words": 271
       },
       {
         "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
         "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1064
       },
       {
         "platform": "x",
         "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
         "target_date": "2026-02-09",
         "words": 611
       },
       {
         "platform": "x",
         "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
         "target_date": "2026-02-09",
         "words": 390
       },
       {
         "platform": "x",
         "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
         "target_date": "2026-02-09",
         "words": 271
       },
       {
         "platform": "x",
         "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
         "target_date": "2026-02-09",
         "words": 348
       },
       {
         "platform": "x",
         "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
         "target_date": "2026-02-10",
         "words": 390
       },
       {
         "platform": "x",
         "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
         "target_date": "2026-02-10",
         "words": 385
       },
       {
         "platform": "x",
         "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
         "target_date": "2026-02-10",
         "words": 577
       },
       {
         "platform": "x",
         "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
         "target_date": "2026-02-10",
         "words": 489
       },
       {
         "platform": "x",
         "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
         "target_date": "2026-02-10",
         "words": 419
       },
       {
         "platform": "x",
         "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
         "target_date": "2026-02-10",
         "words": 369
       },
       {
         "platform": "x",
         "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
         "target_date": "2026-02-10",
         "words": 457
       },
       {
         "platform": "x",
         "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
         "target_date": "2026-02-11",
         "words": 96
       },
       {
         "platform": "x",
         "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
         "target_date": "2026-02-11",
         "words": 604
       },
       {
         "platform": "x",
         "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 381
       },
       {
         "platform": "x",
         "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 55
       },
       {
         "platform": "x",
         "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
         "target_date": "2026-02-12",
         "words": 647
       },
       {
         "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
         "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 465
       },
       {
         "platform": "substack",
         "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
         "target_date": "2026-02-10",
         "words": 1187
       },
       {
         "platform": "substack",
         "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 1440
       },
       {
         "platform": "substack",
         "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
         "target_date": "2026-02-13",
-        "words": 1175
+        "words": 1329
       },
       {
         "platform": "substack",
         "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
         "target_date": "2026-02-14",
         "words": 1599
       },
       {
         "platform": "substack",
         "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
         "target_date": "2026-02-14",
         "words": 1054
       },
       {
         "platform": "substack",
         "title": "build your own os",
+        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1541
       },
       {
         "platform": "substack",
         "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
         "target_date": "2026-02-24",
         "words": 1013
       },
       {
         "platform": "reddit",
         "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
         "target_date": "2026-02-11",
         "words": 1323
       },
       {
         "platform": "reddit",
         "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1119
       }
     ],
     "finalized_today": [
       {
-        "platform": "linkedin"
+        "platform": "x",
+        "path": "content/x/final/2026-02-11_cursor-tip-plan-mode.txt"
+      },
+      {
+        "platform": "x",
+        "path": "content/x/final/2026-02-17_build-your-own-os.txt"
+      },
+      {
+        "platform": "substack",
+        "path": "content/substack/final/2026-02-10_content-os-reveal.md"
+      },
+      {
+        "platform": "x",
+        "path": "content/x/final/2026-02-12_content-flywheel-masterplan.txt"
+      },
+      {
+        "platform": "reddit",
+        "path": "content/reddit/final/.gitkeep"
+      },
+      {
+        "platform": "substack",
+        "path": "content/substack/final/2026-02-11_identity-not-tools.md"
+      },
+      {
+        "platform": "linkedin",
+        "path": "content/linkedin/final/2026-02-12_content-flywheel-masterplan.txt"
       }
     ]
   },
   "todos": [],
   "token_usage": [
     {
+      "session_id": "62a47b1b-1b3b-4b80-b282-2d95ccd9f169",
       "input_tokens": 9,
       "output_tokens": 30,
       "cache_read_tokens": 31068,
@@ -530,11 +1133,12 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 3,
-      "logged_at": "20:25",
+      "logged_at": "03:47",
       "cost": 1.0549,
       "context": "claude-code 05:30"
     },
     {
+      "session_id": "e801554c-0a22-469a-9353-15f2b93edf18",
       "input_tokens": 1910,
       "output_tokens": 1073,
       "cache_read_tokens": 2859969,
@@ -542,7 +1146,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 38,
-      "logged_at": "20:25",
+      "logged_at": "03:47",
       "cost": 6.25,
       "context": "claude-code 04:04"
     },
@@ -561,23 +1165,294 @@
   ],
   "stats": {
     "platform_breakdown": {
-      "linkedin": 3,
-      "x": 1,
-      "ops": 13,
-      "other": 13,
-      "substack": 5
+      "other": 33,
+      "x": 10,
+      "linkedin": 10,
+      "reddit": 2,
+      "substack": 8,
+      "ops": 13
     },
-    "words_today": 31605,
-    "pipeline_words": 33891,
-    "finals_count": 1,
-    "first_activity": "00:46",
-    "last_activity": "23:08",
-    "output_score": 148,
-    "letter_grade": "A+",
+    "words_today": 62726,
+    "pipeline_words": 36584,
+    "finals_count": 7,
+    "first_activity": "01:14",
+    "last_activity": "20:51",
+    "output_score": 315,
+    "letter_grade": "S",
     "score_breakdown": [
+      {
+        "type": "lead_magnet",
+        "title": "scaffold prompt",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "substack-post",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "web-reveal-workflow",
+        "points": 5
+      },
+      {
+        "type": "x_final",
+        "title": "cursor tip plan mode",
+        "points": 10
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "substack launch crosspromo",
+        "points": 2
+      },
+      {
+        "type": "reddit_draft",
+        "title": "content os reddit",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "skill-tree",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "substack-note",
+        "points": 5
+      },
+      {
+        "type": "lead_magnet",
+        "title": "mcp guide",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "daily tracker system",
+        "points": 2
+      },
+      {
+        "type": "script",
+        "title": "_gen_content_os_masterplan",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "weekend build",
+        "points": 2
+      },
+      {
+        "type": "script",
+        "title": "_gen_identity_awakening",
+        "points": 2
+      },
+      {
+        "type": "x_final",
+        "title": "build your own os",
+        "points": 10
+      },
+      {
+        "type": "substack_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "substack_final",
+        "title": "content os reveal",
+        "points": 10
+      },
+      {
+        "type": "skill_updated",
+        "title": "x-tip-image",
+        "points": 5
+      },
+      {
+        "type": "lead_magnet",
+        "title": "youtube playbook starter",
+        "points": 5
+      },
+      {
+        "type": "x_final",
+        "title": "content flywheel masterplan",
+        "points": 10
+      },
+      {
+        "type": "lead_magnet",
+        "title": "youtube outline",
+        "points": 5
+      },
+      {
+        "type": "script",
+        "title": "_gen_cursor_tip_101_plan_mode",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "daily tracker build",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "partner-comms",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "daily-tracker",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "build day",
+        "points": 2
+      },
+      {
+        "type": "script",
+        "title": "_gen_substack_crosspromo_branch",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "campaign-copy-workflow",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "daily tracker system",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "xlsx",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "build day",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "content flywheel masterplan",
+        "points": 2
+      },
+      {
+        "type": "workflow_updated",
+        "title": "substack-index",
+        "points": 5
+      },
+      {
+        "type": "script",
+        "title": "_gen_substack_crosspromo_split",
+        "points": 2
+      },
+      {
+        "type": "reddit_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "script",
+        "title": "_gen_start_at_level_one",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "tiktok playbook starter",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "substack_draft",
+        "title": "weekend web build",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "security guide",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "cursor_rule",
+        "title": "prompt-formatting",
+        "points": 3
+      },
+      {
+        "type": "skill_updated",
+        "title": "content-images",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "substack identity crosspromo",
+        "points": 2
+      },
+      {
+        "type": "substack_draft",
+        "title": "start at level one",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "ai slop basics",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "aios-image",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "cursor discovery",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "reddit playbook starter",
+        "points": 5
+      },
       {
         "type": "linkedin_draft",
         "title": "content flywheel masterplan",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "update-github",
+        "points": 5
+      },
+      {
+        "type": "substack_final",
+        "title": "identity not tools",
+        "points": 10
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "daily tracker build",
         "points": 2
       },
       {
@@ -587,7 +1462,32 @@
       },
       {
         "type": "x_draft",
-        "title": "content flywheel masterplan",
+        "title": "substack identity crosspromo",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "partner-onboard",
+        "points": 5
+      },
+      {
+        "type": "lead_magnet",
+        "title": "x playbook starter",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "x-tip",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "final-substack",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "cursor tip plan mode",
         "points": 2
       },
       {
@@ -596,68 +1496,8 @@
         "points": 5
       },
       {
-        "type": "skill_updated",
-        "title": "x-tip-image",
-        "points": 5
-      },
-      {
-        "type": "substack_draft",
-        "title": "start at level one",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "daily-tracker",
-        "points": 5
-      },
-      {
         "type": "partner_prompt",
-        "title": "partner signal retrieval",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "substack-note",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "build day",
-        "points": 2
-      },
-      {
-        "type": "workflow_updated",
-        "title": "substack-index",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "web-reveal-workflow",
-        "points": 5
-      },
-      {
-        "type": "partner_research",
-        "title": "partner icp",
-        "points": 5
-      },
-      {
-        "type": "partner_research",
-        "title": "partner personas",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "daily_scan",
-        "points": 2
-      },
-      {
-        "type": "substack_draft",
-        "title": "cursor discovery",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "xlsx",
+        "title": "partner personalization research",
         "points": 5
       },
       {
@@ -667,17 +1507,17 @@
       },
       {
         "type": "partner_research",
+        "title": "partner personas",
+        "points": 5
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner web reveal qualification",
+        "points": 5
+      },
+      {
+        "type": "partner_research",
         "title": "partner icp",
-        "points": 5
-      },
-      {
-        "type": "partner_prompt",
-        "title": "partner campaign copy",
-        "points": 5
-      },
-      {
-        "type": "partner_prompt",
-        "title": "partner personalization research",
         "points": 5
       },
       {
@@ -686,24 +1526,24 @@
         "points": 5
       },
       {
+        "type": "partner_prompt",
+        "title": "partner signal retrieval",
+        "points": 5
+      },
+      {
         "type": "script",
         "title": "recalc",
         "points": 2
       },
       {
-        "type": "skill_updated",
-        "title": "campaign-copy-workflow",
+        "type": "partner_prompt",
+        "title": "partner campaign copy",
         "points": 5
       },
       {
-        "type": "skill_updated",
-        "title": "partner-comms",
+        "type": "partner_research",
+        "title": "partner personas",
         "points": 5
-      },
-      {
-        "type": "cursor_rule",
-        "title": "prompt-formatting",
-        "points": 3
       },
       {
         "type": "partner_resource",
@@ -716,44 +1556,139 @@
         "points": 5
       },
       {
-        "type": "substack_draft",
-        "title": "build your own os",
-        "points": 2
-      },
-      {
-        "type": "substack_draft",
-        "title": "weekend web build",
-        "points": 2
-      },
-      {
-        "type": "partner_prompt",
-        "title": "partner web reveal qualification",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "aios-image",
-        "points": 5
-      },
-      {
         "type": "partner_research",
-        "title": "partner personas",
-        "points": 5
-      },
-      {
-        "type": "substack_draft",
-        "title": "build day",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "partner-onboard",
+        "title": "partner icp",
         "points": 5
       }
     ],
-    "efficiency_rating": 19.08
+    "efficiency_rating": 40.62,
+    "shipped_count": 52,
+    "draft_count": 24,
+    "ship_rate": 0.68,
+    "agent_cost": 7.75,
+    "dev_equivalent_cost": 8806.0,
+    "dev_equivalent_breakdown": {
+      "code_loc": 1689,
+      "code_hours": 33.78,
+      "code_cost": 2533.5,
+      "content_words": 62726,
+      "content_hours": 125.45,
+      "content_cost": 6272.5,
+      "total": 8806.0
+    },
+    "cost_savings": 8798.25,
+    "roi_multiplier": 1135.5,
+    "lines_added": 10459,
+    "lines_removed": 61,
+    "lines_net": 10398,
+    "code_loc": 1689,
+    "content_loc": 8395,
+    "data_loc": 375
   },
   "git_summary": {
-    "commits_today": 0
+    "commits_today": 3,
+    "files_added": [
+      ".cursor/plans/website_launch_plan_98c4aad2.plan.md",
+      ".cursor/plans/weekend_launch_skills_audit_931c72d1.plan.md",
+      ".cursor/rules/prompt-formatting.md",
+      ".cursor/skills/aios-image/SKILL.md",
+      ".cursor/skills/campaign-copy-workflow/SKILL.md",
+      ".cursor/skills/daily-tracker/SKILL.md",
+      ".cursor/skills/final-substack/SKILL.md",
+      ".cursor/skills/partner-comms/SKILL.md",
+      ".cursor/skills/partner-onboard/SKILL.md",
+      ".cursor/skills/skill-tree/SKILL.md",
+      ".cursor/skills/substack-note/SKILL.md",
+      ".cursor/skills/web-reveal-workflow/SKILL.md",
+      ".cursor/skills/x-tip-image/SKILL.md",
+      ".cursor/skills/x-tip/SKILL.md",
+      ".cursor/skills/xlsx/LICENSE.txt",
+      ".cursor/skills/xlsx/SKILL.md",
+      "chime options/elden-ring.mp3",
+      "chime options/halo-shield-recharge-sound.mp3",
+      "chime options/one-piece-ost-overtaken.mp3",
+      "chime options/sithignition.mp3",
+      "chime options/transmutation-clap-fullmetal-alchemist.mp3",
+      "content/internal/2026-02-11_elauwit-instantly-update.md",
+      "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+      "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+      "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+      "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+      "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+      "content/linkedin/drafts/2026-02-13_build-day.md",
+      "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+      "content/linkedin/drafts/_gen_content_os_masterplan.py",
+      "content/linkedin/drafts/_gen_substack_crosspromo_branch.py",
+      "content/linkedin/drafts/_gen_substack_crosspromo_split.py",
+      "content/linkedin/drafts/content-os-masterplan.png",
+      "content/linkedin/drafts/substack-crosspromo-branch.png",
+      "content/linkedin/drafts/substack-crosspromo-split.png",
+      "content/linkedin/final/2026-02-12_content-flywheel-masterplan.txt",
+      "content/reddit/README.md",
+      "content/reddit/drafts/.gitkeep",
+      "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+      "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+      "content/reddit/final/.gitkeep",
+      "content/substack/drafts/2026-02-11_identity-not-tools.md",
+      "content/substack/drafts/2026-02-13_build-day.md",
+      "content/substack/drafts/2026-02-14_cursor-discovery.md",
+      "content/substack/drafts/2026-02-14_weekend-web-build.md",
+      "content/substack/drafts/2026-02-17_build-your-own-os.md",
+      "content/substack/drafts/2026-02-24_start-at-level-one.md",
+      "content/substack/final/2026-02-10_content-os-reveal.md",
+      "content/substack/final/2026-02-11_identity-not-tools.md",
+      "content/substack/images/_gen_identity_awakening.py",
+      "content/substack/images/_gen_start_at_level_one.py",
+      "content/substack/images/identity-awakening.png",
+      "content/substack/images/start-at-level-one.png",
+      "content/substack/lead-magnet/mcp-guide.md",
+      "content/substack/lead-magnet/scaffold-prompt.md",
+      "content/substack/lead-magnet/security-guide.md",
+      "content/substack/lead-magnet/templates/ai-slop-basics.md",
+      "content/substack/lead-magnet/templates/reddit-playbook-starter.md",
+      "content/substack/lead-magnet/templates/tiktok-playbook-starter.md",
+      "content/substack/lead-magnet/templates/x-playbook-starter.md",
+      "content/substack/lead-magnet/templates/youtube-playbook-starter.md",
+      "content/substack/lead-magnet/youtube-outline.md",
+      "content/substack/notes/.gitkeep",
+      "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+      "content/x/drafts/2026-02-11_daily-tracker-system.md",
+      "content/x/drafts/2026-02-11_identity-not-tools.md",
+      "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+      "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "content/x/drafts/2026-02-12_daily-tracker-build.md",
+      "content/x/drafts/2026-02-17_build-your-own-os.md",
+      "content/x/final/2026-02-11_cursor-tip-plan-mode.txt",
+      "content/x/final/2026-02-12_content-flywheel-masterplan.txt",
+      "content/x/final/2026-02-17_build-your-own-os.txt",
+      "content/x/images/_gen_cursor_tip_101_plan_mode.py",
+      "content/x/images/cursor-tip-101-plan-mode.png",
+      "elauwit-known-reviews-completed-no-response.csv",
+      "elauwit-unknown-reviews-completed-no-response.csv",
+      "skills/tier-3-content-ops/pillars/x-micro-tips.md"
+    ],
+    "files_modified": [
+      ".claude/skills/update-github/SKILL.md",
+      ".cursor/skills/aios-image/SKILL.md",
+      ".cursor/skills/content-images/SKILL.md",
+      ".cursor/skills/partner-onboard/SKILL.md",
+      ".cursor/skills/substack-post/SKILL.md",
+      ".cursor/skills/web-reveal-workflow/SKILL.md",
+      ".cursor/skills/x-tip-image/SKILL.md",
+      ".gitignore",
+      "content/linkedin/drafts/2026-02-09_weekend-build.md",
+      "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+      "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "skills/tier-2-context-playbooks/substack.md",
+      "workflows/substack-index.md"
+    ],
+    "lines_added_count": 10459,
+    "lines_removed_count": 61,
+    "lines_net": 10398,
+    "code_loc": 1689,
+    "content_loc": 8395,
+    "data_loc": 375
   }
 }

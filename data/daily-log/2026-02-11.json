@@ -1,112 +1,1047 @@
 {
   "date": "2026-02-11",
-  "generated_at": "2026-02-12T02:37:36.365392+00:00",
+  "generated_at": "2026-02-14T08:46:59.545500+00:00",
   "version": 3,
   "accomplishments": [
     {
-      "type": "linkedin_draft",
-      "title": "agent context handoff",
-      "source": "auto",
-      "timestamp": "11:47",
-      "words": 848
-    },
-    {
       "type": "workflow_updated",
       "title": "substack-index",
+      "path": "workflows/substack-index.md",
       "source": "auto",
-      "timestamp": "20:44",
-      "words": 575
+      "timestamp": "19:43",
+      "words": 712,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "substack_draft",
       "title": "content os reveal",
+      "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
       "source": "auto",
       "timestamp": "11:47",
-      "words": 1187
+      "words": 1187,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "agent context handoff",
+      "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+      "source": "auto",
+      "timestamp": "11:47",
+      "words": 848,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "skill_updated",
       "title": "heyreach-partner-handoff",
+      "path": ".cursor/skills/heyreach-partner-handoff/SKILL.md",
       "source": "auto",
       "timestamp": "11:47",
-      "words": 568
+      "words": 568,
+      "value_score": 5,
+      "shipped": true
     },
     {
-      "type": "linkedin_draft",
-      "title": "daily tracker system",
-      "source": "auto",
-      "timestamp": "20:46",
-      "words": 1341
+      "type": "partner_prompt",
+      "title": "partner campaign copy",
+      "path": "clients/partner/connext/prompts/campaign-copy.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 286,
+      "value_score": 5,
+      "shipped": true
     },
     {
-      "type": "substack_draft",
-      "title": "identity not tools",
-      "source": "auto",
-      "timestamp": "20:44",
-      "words": 1440
-    },
-    {
-      "type": "x_draft",
-      "title": "cursor tip plan mode",
-      "source": "auto",
-      "timestamp": "19:29",
-      "words": 96
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "identity not tools",
-      "source": "auto",
-      "timestamp": "20:26",
-      "words": 826
-    },
-    {
-      "type": "reddit_draft",
-      "title": "content os reddit",
-      "source": "auto",
-      "timestamp": "01:09",
-      "words": 1323
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "substack identity crosspromo",
-      "source": "auto",
-      "timestamp": "19:31",
-      "words": 120
+      "type": "partner_resource",
+      "title": "partner pre call",
+      "path": "clients/partner/connext/resources/transcripts/pre-call.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 17,
+      "value_score": 2,
+      "shipped": true
     },
     {
       "type": "x_draft",
-      "title": "daily tracker system",
-      "source": "auto",
-      "timestamp": "20:46",
-      "words": 604
+      "title": "voice modularity",
+      "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 457,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign patterns",
+      "path": "clients/partner/elauwit/workflows/campaign-patterns.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 359,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "heyreach partner handoff v2",
+      "path": "content/linkedin/final/2026-02-10_heyreach-partner-handoff-v2.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 252,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "slack_bot",
+      "path": "clients/partner/elauwit/workflows/slack_bot.py",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 500,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "client_onboard",
+      "title": "client onboard skill",
+      "path": "clients/client/steves-recruiting/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 552,
+      "value_score": 8,
+      "shipped": true
     },
     {
       "type": "linkedin_draft",
-      "title": "substack launch crosspromo",
-      "source": "auto",
-      "timestamp": "20:51",
-      "words": 1586
+      "title": "heyreach partner handoff v2",
+      "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 629,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner contacts",
+      "path": "clients/partner/connext/resources/contacts.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 26,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign patterns",
+      "path": "clients/partner/exol/workflows/campaign-patterns.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 335,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner domain management",
+      "path": "clients/partner/elauwit/workflows/domain-management.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 265,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "workflow_updated",
+      "title": "skills-series-index",
+      "path": "workflows/skills-series-index.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 421,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner strategy",
+      "path": "clients/partner/connext/research/strategy.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 424,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner web reveal qualification",
+      "path": "clients/partner/connext/prompts/web-reveal-qualification.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 297,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner automation setup",
+      "path": "clients/partner/elauwit/workflows/automation-setup.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 499,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner tam",
+      "path": "clients/partner/connext/research/tam.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 271,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "x_draft",
-      "title": "identity not tools",
-      "source": "auto",
-      "timestamp": "20:26",
-      "words": 381
+      "title": "agent context handoff",
+      "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 390,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner roadmap",
+      "path": "clients/partner/connext/resources/transcripts/roadmap.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 22,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner pre call",
+      "path": "clients/partner/elauwit/resources/transcripts/pre-call.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 17,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner personas",
+      "path": "clients/partner/exol/research/personas.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 497,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "slack_notifier",
+      "path": "clients/partner/elauwit/workflows/slack_notifier.py",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 453,
+      "value_score": 2,
+      "shipped": true
     },
     {
       "type": "x_draft",
-      "title": "substack identity crosspromo",
-      "source": "auto",
-      "timestamp": "20:44",
-      "words": 55
+      "title": "skill play",
+      "path": "content/x/drafts/2026-02-10_skill-play.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 369,
+      "value_score": 2,
+      "shipped": false
     },
     {
-      "type": "substack_final",
-      "title": "identity not tools",
-      "source": "auto",
-      "timestamp": "20:44",
-      "words": 881
+      "type": "linkedin_draft",
+      "title": "voice modularity",
+      "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 795,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "client_research",
+      "title": "client icp",
+      "path": "clients/client/steves-recruiting/research/icp.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 219,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner contacts",
+      "path": "clients/partner/elauwit/resources/contacts.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 73,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "client_prompt",
+      "title": "client lead prioritization",
+      "path": "clients/client/steves-recruiting/prompts/lead-prioritization.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 344,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "github safety workflow",
+      "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 784,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "skill play",
+      "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 740,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "content os schematic",
+      "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 577,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner signal retrieval",
+      "path": "clients/partner/connext/prompts/signal-retrieval.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 369,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "image-to-content",
+      "path": ".cursor/skills/image-to-content/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 1574,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "client_workflow",
+      "title": "client list management",
+      "path": "clients/client/steves-recruiting/workflows/list-management.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 354,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner pre call",
+      "path": "clients/partner/exol/resources/transcripts/pre-call.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 18,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "play-draft",
+      "path": ".cursor/skills/play-draft/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 1921,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "voice modularity",
+      "path": "content/linkedin/final/2026-02-10_voice-modularity.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 277,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign monitoring",
+      "path": "clients/partner/connext/workflows/campaign-monitoring.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 182,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner tam identification",
+      "path": "clients/partner/connext/workflows/tam-identification.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 387,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner session 01",
+      "path": "clients/partner/connext/resources/transcripts/session-01.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 19,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_onboard",
+      "title": "partner onboard skill",
+      "path": "clients/partner/connext/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 399,
+      "value_score": 8,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "heyreach partner handoff v2",
+      "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 419,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "content os meta",
+      "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 385,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "workflow_updated",
+      "title": "plays-index",
+      "path": "workflows/plays-index.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 639,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "agent-context-handoff",
+      "path": ".cursor/skills/agent-context-handoff/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 254,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "client_workflow",
+      "title": "client daily batching",
+      "path": "clients/client/steves-recruiting/workflows/daily-batching.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 308,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner pain points",
+      "path": "clients/partner/connext/research/pain-points.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 357,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "client_research",
+      "title": "client personas",
+      "path": "clients/client/steves-recruiting/research/personas.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 310,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "final-copy",
+      "path": ".cursor/skills/final-copy/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 1884,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "skill play",
+      "path": "content/linkedin/final/2026-02-10_skill-play.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 296,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "value-pin-comments",
+      "path": ".cursor/skills/value-pin-comments/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 1395,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner location count validation",
+      "path": "clients/partner/connext/prompts/location-count-validation.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 318,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "content_capture",
+      "path": "clients/partner/elauwit/workflows/content_capture.py",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 369,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner pain points",
+      "path": "clients/partner/exol/research/pain-points.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 331,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign monitoring",
+      "path": "clients/partner/elauwit/workflows/campaign-monitoring.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 349,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "client_prompt",
+      "title": "client list cleaning",
+      "path": "clients/client/steves-recruiting/prompts/list-cleaning.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 342,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner campaign copy",
+      "path": "clients/partner/elauwit/prompts/campaign-copy.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 373,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner icp",
+      "path": "clients/partner/connext/research/icp.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 296,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner contacts",
+      "path": "clients/partner/exol/resources/contacts.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 27,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner slack integration",
+      "path": "clients/partner/elauwit/workflows/slack-integration.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 1399,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign monitoring",
+      "path": "clients/partner/exol/workflows/campaign-monitoring.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 246,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "client_resource",
+      "title": "client csv notes",
+      "path": "clients/client/steves-recruiting/resources/csv-notes.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 399,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "client_resource",
+      "title": "client session 01",
+      "path": "clients/client/steves-recruiting/resources/transcripts/session-01.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 20,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "client_resource",
+      "title": "client email thread",
+      "path": "clients/client/steves-recruiting/resources/email-thread.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 998,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "content os schematic",
+      "path": "content/linkedin/final/2026-02-10_content-os-schematic.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 412,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner session 01",
+      "path": "clients/partner/exol/resources/transcripts/session-01.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 20,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner roadmap",
+      "path": "clients/partner/elauwit/resources/transcripts/roadmap.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 22,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "client_workflow",
+      "title": "client tool consolidation",
+      "path": "clients/client/steves-recruiting/workflows/tool-consolidation.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 658,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner domain management",
+      "path": "clients/partner/connext/workflows/domain-management.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 155,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_onboard",
+      "title": "partner onboard skill",
+      "path": "clients/partner/elauwit/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 316,
+      "value_score": 8,
+      "shipped": true
+    },
+    {
+      "type": "partner_onboard",
+      "title": "partner onboard skill",
+      "path": "clients/partner/exol/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 386,
+      "value_score": 8,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner campaign patterns",
+      "path": "clients/partner/connext/workflows/campaign-patterns.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 312,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner icp",
+      "path": "clients/partner/exol/research/icp.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 298,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner web reveal qualification",
+      "path": "clients/partner/exol/prompts/web-reveal-qualification.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 341,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_final",
+      "title": "github safety workflow",
+      "path": "content/x/final/2026-02-10_github-safety-workflow.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 376,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "content os meta",
+      "path": "content/linkedin/final/2026-02-10_content-os-meta.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 296,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner replies management",
+      "path": "clients/partner/elauwit/workflows/replies-management.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 359,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "content os schematic",
+      "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 1263,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner signal retrieval",
+      "path": "clients/partner/exol/prompts/signal-retrieval.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 376,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner lead scoring",
+      "path": "clients/partner/exol/prompts/lead-scoring.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 446,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "skill-play",
+      "path": ".cursor/skills/skill-play/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 973,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner kickoff",
+      "path": "clients/partner/elauwit/resources/transcripts/kickoff.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 37,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "content os meta",
+      "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 678,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "viral-hooks",
+      "path": ".cursor/skills/viral-hooks/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 402,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "workflow_updated",
+      "title": "tiktok-index",
+      "path": "workflows/tiktok-index.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 735,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "fetch-replies-automation",
+      "path": "clients/partner/elauwit/workflows/fetch-replies-automation.py",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 642,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner session 01",
+      "path": "clients/partner/elauwit/resources/transcripts/session-01.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 19,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "github safety workflow",
+      "path": "content/linkedin/final/2026-02-10_github-safety-workflow.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 295,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "x_final",
+      "title": "voice modularity",
+      "path": "content/x/final/2026-02-10_voice-modularity.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 355,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner strategy",
+      "path": "clients/partner/exol/research/strategy.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 379,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner roadmap",
+      "path": "clients/partner/exol/resources/transcripts/roadmap.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 23,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner campaign copy",
+      "path": "clients/partner/exol/prompts/campaign-copy.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 298,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "tiktok-script",
+      "path": ".cursor/skills/tiktok-script/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 1260,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_research",
+      "title": "partner personas",
+      "path": "clients/partner/connext/research/personas.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 585,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "client_resource",
+      "title": "client contacts",
+      "path": "clients/client/steves-recruiting/resources/contacts.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 94,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "client_prompt",
+      "title": "client signal retrieval",
+      "path": "clients/client/steves-recruiting/prompts/signal-retrieval.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 259,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "github safety workflow",
+      "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 489,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner kickoff",
+      "path": "clients/partner/exol/resources/transcripts/kickoff.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 38,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner signal retrieval",
+      "path": "clients/partner/elauwit/prompts/signal-retrieval.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 272,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner kickoff",
+      "path": "clients/partner/connext/resources/transcripts/kickoff.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 37,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "x_final",
+      "title": "content os meta",
+      "path": "content/x/final/2026-02-10_content-os-meta.txt",
+      "source": "auto-mtime",
+      "timestamp": "11:47",
+      "words": 295,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner scoring pipeline",
+      "path": "clients/partner/exol/workflows/scoring-pipeline.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 259,
+      "value_score": 5,
+      "shipped": true
     }
   ],
   "pipeline": {
@@ -114,249 +1049,341 @@
       {
         "platform": "linkedin",
         "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
         "target_date": "2026-02-09",
         "words": 1103
       },
       {
         "platform": "linkedin",
         "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
         "target_date": "2026-02-09",
         "words": 907
       },
       {
         "platform": "linkedin",
         "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
         "target_date": "2026-02-09",
         "words": 666
       },
       {
         "platform": "linkedin",
         "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
         "target_date": "2026-02-09",
         "words": 402
       },
       {
         "platform": "linkedin",
         "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
         "target_date": "2026-02-10",
         "words": 848
       },
       {
         "platform": "linkedin",
         "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
         "target_date": "2026-02-10",
         "words": 678
       },
       {
         "platform": "linkedin",
         "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
         "target_date": "2026-02-10",
         "words": 1263
       },
       {
         "platform": "linkedin",
         "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
         "target_date": "2026-02-10",
         "words": 784
       },
       {
         "platform": "linkedin",
         "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
         "target_date": "2026-02-10",
         "words": 629
       },
       {
         "platform": "linkedin",
         "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
         "target_date": "2026-02-10",
         "words": 740
       },
       {
         "platform": "linkedin",
         "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
         "target_date": "2026-02-10",
         "words": 795
       },
       {
         "platform": "linkedin",
         "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
         "target_date": "2026-02-11",
         "words": 1341
       },
       {
         "platform": "linkedin",
         "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 826
       },
       {
         "platform": "linkedin",
         "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 120
       },
       {
         "platform": "linkedin",
         "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 1586
       },
       {
         "platform": "linkedin",
         "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
         "target_date": "2026-02-12",
-        "words": 1268
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
       },
       {
         "platform": "linkedin",
         "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1064
       },
       {
         "platform": "x",
         "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
         "target_date": "2026-02-09",
         "words": 611
       },
       {
         "platform": "x",
         "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
         "target_date": "2026-02-09",
         "words": 390
       },
       {
         "platform": "x",
         "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
         "target_date": "2026-02-09",
         "words": 271
       },
       {
         "platform": "x",
         "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
         "target_date": "2026-02-09",
         "words": 348
       },
       {
         "platform": "x",
         "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
         "target_date": "2026-02-10",
         "words": 390
       },
       {
         "platform": "x",
         "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
         "target_date": "2026-02-10",
         "words": 385
       },
       {
         "platform": "x",
         "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
         "target_date": "2026-02-10",
         "words": 577
       },
       {
         "platform": "x",
         "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
         "target_date": "2026-02-10",
         "words": 489
       },
       {
         "platform": "x",
         "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
         "target_date": "2026-02-10",
         "words": 419
       },
       {
         "platform": "x",
         "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
         "target_date": "2026-02-10",
         "words": 369
       },
       {
         "platform": "x",
         "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
         "target_date": "2026-02-10",
         "words": 457
       },
       {
         "platform": "x",
         "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
         "target_date": "2026-02-11",
         "words": 96
       },
       {
         "platform": "x",
         "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
         "target_date": "2026-02-11",
         "words": 604
       },
       {
         "platform": "x",
         "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 381
       },
       {
         "platform": "x",
         "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 55
       },
       {
         "platform": "x",
         "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
         "target_date": "2026-02-12",
         "words": 647
       },
       {
         "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
         "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 465
       },
       {
         "platform": "substack",
         "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
         "target_date": "2026-02-10",
         "words": 1187
       },
       {
         "platform": "substack",
         "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 1440
       },
       {
         "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
         "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
         "target_date": "2026-02-14",
-        "words": 1579
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
       },
       {
         "platform": "substack",
         "title": "build your own os",
+        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1541
       },
       {
+        "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1013
+      },
+      {
         "platform": "reddit",
         "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
         "target_date": "2026-02-11",
         "words": 1323
       },
       {
         "platform": "reddit",
         "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1119
       }
     ],
-    "finalized_today": [
-      {
-        "platform": "substack"
-      }
-    ]
+    "finalized_today": []
   },
   "todos": [
     {
@@ -380,6 +1407,7 @@
   ],
   "token_usage": [
     {
+      "session_id": "1c69facd-356c-4fcb-b6b2-6693b1fe8d65",
       "input_tokens": 15,
       "output_tokens": 68,
       "cache_read_tokens": 126657,
@@ -387,11 +1415,12 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 7,
-      "logged_at": "21:37",
+      "logged_at": "03:46",
       "cost": 1.5881,
       "context": "claude-code 03:09"
     },
     {
+      "session_id": "e801554c-0a22-469a-9353-15f2b93edf18",
       "input_tokens": 155,
       "output_tokens": 743,
       "cache_read_tokens": 3709248,
@@ -399,7 +1428,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 88,
-      "logged_at": "21:37",
+      "logged_at": "03:46",
       "cost": 12.8919,
       "context": "claude-code 16:43"
     },
@@ -414,25 +1443,20 @@
   ],
   "stats": {
     "platform_breakdown": {
-      "linkedin": 5,
-      "other": 2,
-      "substack": 3,
-      "x": 4,
-      "reddit": 1
+      "other": 17,
+      "substack": 1,
+      "linkedin": 13,
+      "ops": 63,
+      "x": 10
     },
-    "words_today": 11831,
-    "pipeline_words": 30163,
-    "finals_count": 1,
-    "first_activity": "01:09",
-    "last_activity": "20:51",
-    "output_score": 44,
-    "letter_grade": "A",
+    "words_today": 45859,
+    "pipeline_words": 36584,
+    "finals_count": 0,
+    "first_activity": "11:47",
+    "last_activity": "19:43",
+    "output_score": 463,
+    "letter_grade": "S",
     "score_breakdown": [
-      {
-        "type": "linkedin_draft",
-        "title": "agent context handoff",
-        "points": 2
-      },
       {
         "type": "workflow_updated",
         "title": "substack-index",
@@ -444,69 +1468,554 @@
         "points": 2
       },
       {
+        "type": "linkedin_draft",
+        "title": "agent context handoff",
+        "points": 2
+      },
+      {
         "type": "skill_updated",
         "title": "heyreach-partner-handoff",
         "points": 5
       },
       {
-        "type": "linkedin_draft",
-        "title": "daily tracker system",
-        "points": 2
+        "type": "partner_prompt",
+        "title": "partner campaign copy",
+        "points": 5
       },
       {
-        "type": "substack_draft",
-        "title": "identity not tools",
-        "points": 2
-      },
-      {
-        "type": "x_draft",
-        "title": "cursor tip plan mode",
-        "points": 2
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "identity not tools",
-        "points": 2
-      },
-      {
-        "type": "reddit_draft",
-        "title": "content os reddit",
-        "points": 2
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "substack identity crosspromo",
+        "type": "partner_resource",
+        "title": "partner pre call",
         "points": 2
       },
       {
         "type": "x_draft",
-        "title": "daily tracker system",
+        "title": "voice modularity",
         "points": 2
       },
       {
-        "type": "linkedin_draft",
-        "title": "substack launch crosspromo",
-        "points": 2
+        "type": "partner_workflow",
+        "title": "partner campaign patterns",
+        "points": 5
       },
       {
-        "type": "x_draft",
-        "title": "identity not tools",
-        "points": 2
-      },
-      {
-        "type": "x_draft",
-        "title": "substack identity crosspromo",
-        "points": 2
-      },
-      {
-        "type": "substack_final",
-        "title": "identity not tools",
+        "type": "linkedin_final",
+        "title": "heyreach partner handoff v2",
         "points": 10
+      },
+      {
+        "type": "script",
+        "title": "slack_bot",
+        "points": 2
+      },
+      {
+        "type": "client_onboard",
+        "title": "client onboard skill",
+        "points": 8
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "heyreach partner handoff v2",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner contacts",
+        "points": 2
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner campaign patterns",
+        "points": 5
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner domain management",
+        "points": 5
+      },
+      {
+        "type": "workflow_updated",
+        "title": "skills-series-index",
+        "points": 5
+      },
+      {
+        "type": "partner_research",
+        "title": "partner strategy",
+        "points": 5
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner web reveal qualification",
+        "points": 5
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner automation setup",
+        "points": 5
+      },
+      {
+        "type": "partner_research",
+        "title": "partner tam",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "agent context handoff",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner roadmap",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner pre call",
+        "points": 2
+      },
+      {
+        "type": "partner_research",
+        "title": "partner personas",
+        "points": 5
+      },
+      {
+        "type": "script",
+        "title": "slack_notifier",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "skill play",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "voice modularity",
+        "points": 2
+      },
+      {
+        "type": "client_research",
+        "title": "client icp",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner contacts",
+        "points": 2
+      },
+      {
+        "type": "client_prompt",
+        "title": "client lead prioritization",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "github safety workflow",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "skill play",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "content os schematic",
+        "points": 2
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner signal retrieval",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "image-to-content",
+        "points": 5
+      },
+      {
+        "type": "client_workflow",
+        "title": "client list management",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner pre call",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "play-draft",
+        "points": 5
+      },
+      {
+        "type": "linkedin_final",
+        "title": "voice modularity",
+        "points": 10
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner campaign monitoring",
+        "points": 5
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner tam identification",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner session 01",
+        "points": 2
+      },
+      {
+        "type": "partner_onboard",
+        "title": "partner onboard skill",
+        "points": 8
+      },
+      {
+        "type": "x_draft",
+        "title": "heyreach partner handoff v2",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "content os meta",
+        "points": 2
+      },
+      {
+        "type": "workflow_updated",
+        "title": "plays-index",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "agent-context-handoff",
+        "points": 5
+      },
+      {
+        "type": "client_workflow",
+        "title": "client daily batching",
+        "points": 5
+      },
+      {
+        "type": "partner_research",
+        "title": "partner pain points",
+        "points": 5
+      },
+      {
+        "type": "client_research",
+        "title": "client personas",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "final-copy",
+        "points": 5
+      },
+      {
+        "type": "linkedin_final",
+        "title": "skill play",
+        "points": 10
+      },
+      {
+        "type": "skill_updated",
+        "title": "value-pin-comments",
+        "points": 5
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner location count validation",
+        "points": 5
+      },
+      {
+        "type": "script",
+        "title": "content_capture",
+        "points": 2
+      },
+      {
+        "type": "partner_research",
+        "title": "partner pain points",
+        "points": 5
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner campaign monitoring",
+        "points": 5
+      },
+      {
+        "type": "client_prompt",
+        "title": "client list cleaning",
+        "points": 5
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner campaign copy",
+        "points": 5
+      },
+      {
+        "type": "partner_research",
+        "title": "partner icp",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner contacts",
+        "points": 2
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner slack integration",
+        "points": 5
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner campaign monitoring",
+        "points": 5
+      },
+      {
+        "type": "client_resource",
+        "title": "client csv notes",
+        "points": 2
+      },
+      {
+        "type": "client_resource",
+        "title": "client session 01",
+        "points": 2
+      },
+      {
+        "type": "client_resource",
+        "title": "client email thread",
+        "points": 2
+      },
+      {
+        "type": "linkedin_final",
+        "title": "content os schematic",
+        "points": 10
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner session 01",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner roadmap",
+        "points": 2
+      },
+      {
+        "type": "client_workflow",
+        "title": "client tool consolidation",
+        "points": 5
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner domain management",
+        "points": 5
+      },
+      {
+        "type": "partner_onboard",
+        "title": "partner onboard skill",
+        "points": 8
+      },
+      {
+        "type": "partner_onboard",
+        "title": "partner onboard skill",
+        "points": 8
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner campaign patterns",
+        "points": 5
+      },
+      {
+        "type": "partner_research",
+        "title": "partner icp",
+        "points": 5
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner web reveal qualification",
+        "points": 5
+      },
+      {
+        "type": "x_final",
+        "title": "github safety workflow",
+        "points": 10
+      },
+      {
+        "type": "linkedin_final",
+        "title": "content os meta",
+        "points": 10
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner replies management",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "content os schematic",
+        "points": 2
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner signal retrieval",
+        "points": 5
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner lead scoring",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "skill-play",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner kickoff",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "content os meta",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "viral-hooks",
+        "points": 5
+      },
+      {
+        "type": "workflow_updated",
+        "title": "tiktok-index",
+        "points": 5
+      },
+      {
+        "type": "script",
+        "title": "fetch-replies-automation",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner session 01",
+        "points": 2
+      },
+      {
+        "type": "linkedin_final",
+        "title": "github safety workflow",
+        "points": 10
+      },
+      {
+        "type": "x_final",
+        "title": "voice modularity",
+        "points": 10
+      },
+      {
+        "type": "partner_research",
+        "title": "partner strategy",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner roadmap",
+        "points": 2
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner campaign copy",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "tiktok-script",
+        "points": 5
+      },
+      {
+        "type": "partner_research",
+        "title": "partner personas",
+        "points": 5
+      },
+      {
+        "type": "client_resource",
+        "title": "client contacts",
+        "points": 2
+      },
+      {
+        "type": "client_prompt",
+        "title": "client signal retrieval",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "github safety workflow",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner kickoff",
+        "points": 2
+      },
+      {
+        "type": "partner_prompt",
+        "title": "partner signal retrieval",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner kickoff",
+        "points": 2
+      },
+      {
+        "type": "x_final",
+        "title": "content os meta",
+        "points": 10
+      },
+      {
+        "type": "partner_workflow",
+        "title": "partner scoring pipeline",
+        "points": 5
       }
     ],
-    "efficiency_rating": 2.67
+    "efficiency_rating": 28.05,
+    "shipped_count": 89,
+    "draft_count": 15,
+    "ship_rate": 0.86,
+    "agent_cost": 16.5,
+    "dev_equivalent_cost": 4586.0,
+    "dev_equivalent_breakdown": {
+      "code_loc": 0,
+      "code_hours": 0,
+      "code_cost": 0,
+      "content_words": 45859,
+      "content_hours": 91.72,
+      "content_cost": 4586.0,
+      "total": 4586.0
+    },
+    "cost_savings": 4569.49,
+    "roi_multiplier": 277.9,
+    "lines_added": 15,
+    "lines_removed": 15,
+    "lines_net": 0,
+    "code_loc": 0,
+    "content_loc": 15,
+    "data_loc": 0
   },
   "git_summary": {
-    "commits_today": 1
+    "commits_today": 1,
+    "files_added": [],
+    "files_modified": [
+      ".cursor/skills/heyreach-partner-handoff/SKILL.md",
+      "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+      "content/substack/drafts/2026-02-10_content-os-reveal.md",
+      "workflows/substack-index.md"
+    ],
+    "lines_added_count": 15,
+    "lines_removed_count": 15,
+    "lines_net": 0,
+    "code_loc": 0,
+    "content_loc": 15,
+    "data_loc": 0
   }
 }

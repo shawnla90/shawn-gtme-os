@@ -1,406 +1,1053 @@
 {
   "date": "2026-02-13",
-  "generated_at": "2026-02-14T07:37:01.956276+00:00",
+  "generated_at": "2026-02-14T08:47:06.450736+00:00",
   "version": 3,
   "accomplishments": [
     {
       "type": "skill_updated",
-      "title": "update-github",
+      "title": "partner-onboard",
+      "path": ".cursor/skills/partner-onboard/SKILL.md",
       "source": "auto",
       "timestamp": "19:43",
-      "words": 917
+      "words": 1194,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "Navigation",
+      "path": "website/packages/shared/components/Navigation.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 142,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "substack_draft",
       "title": "build day",
+      "path": "content/substack/drafts/2026-02-13_build-day.md",
       "source": "auto",
       "timestamp": "19:43",
-      "words": 1329
+      "words": 1329,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "website_component",
+      "title": "NetworkBanner",
+      "path": "website/packages/shared/components/NetworkBanner.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 174,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos og route",
+      "path": "website/apps/shawnos/app/og/route.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 201,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/contentos/app/globals.css",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 40,
+      "value_score": 2,
+      "shipped": true
     },
     {
       "type": "skill_updated",
       "title": "idea-bank",
+      "path": ".cursor/skills/idea-bank/SKILL.md",
       "source": "auto",
       "timestamp": "19:43",
-      "words": 1351
+      "words": 1351,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 54,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "root tsconfig",
+      "path": "website/tsconfig.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "gtmos tsconfig",
+      "path": "website/apps/gtmos/tsconfig.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "22:54",
+      "words": 284,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "contentos vercel",
+      "path": "website/apps/contentos/vercel.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed.xml route",
+      "path": "website/apps/shawnos/app/feed.xml/route.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 87,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared markdown",
+      "path": "website/packages/shared/lib/markdown.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 74,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "00:30",
+      "words": 163,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "shawnos vercel",
+      "path": "website/apps/shawnos/vercel.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "shared tsconfig",
+      "path": "website/packages/shared/tsconfig.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "shawnos tsconfig",
+      "path": "website/apps/shawnos/tsconfig.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "root package",
+      "path": "website/package.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:08",
+      "words": 780,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "taxonomy",
+      "path": "website/taxonomy.yaml",
+      "source": "auto",
+      "timestamp": "00:41",
+      "words": 535,
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:08",
+      "words": 1282,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "contentos next config",
+      "path": "website/apps/contentos/next.config.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 20,
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/gtmos/app/globals.css",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 40,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "gtmos vercel",
+      "path": "website/apps/gtmos/vercel.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "gtmos package",
+      "path": "website/apps/gtmos/package.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos blog slug page",
+      "path": "website/apps/shawnos/app/blog/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 319,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "Footer",
+      "path": "website/packages/shared/components/Footer.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 73,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared posts",
+      "path": "website/packages/shared/lib/posts.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 166,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "tokens styles",
+      "path": "website/packages/shared/styles/tokens.css",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 112,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/shawnos/app/globals.css",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 158,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "PostCard",
+      "path": "website/packages/shared/components/PostCard.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 105,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/components/index.ts",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 54,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "TerminalChrome",
+      "path": "website/packages/shared/components/TerminalChrome.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 137,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "skill_updated",
-      "title": "partner-onboard",
+      "title": "update-github",
+      "path": ".claude/skills/update-github/SKILL.md",
       "source": "auto",
       "timestamp": "19:43",
-      "words": 1194
+      "words": 917,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "gtmos next config",
+      "path": "website/apps/gtmos/next.config.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 20,
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "00:30",
+      "words": 163,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos about page",
+      "path": "website/apps/shawnos/app/about/page.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 786,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "shawnos package",
+      "path": "website/apps/shawnos/package.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
     },
     {
       "type": "workflow_updated",
       "title": "substack-index",
+      "path": "workflows/substack-index.md",
       "source": "auto",
       "timestamp": "19:43",
-      "words": 712
+      "words": 712,
+      "value_score": 5,
+      "shipped": true
     },
     {
-      "type": "lead_magnet",
-      "title": "mcp guide",
+      "type": "website_config",
+      "title": "root turbo",
+      "path": "website/turbo.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "contentos tsconfig",
+      "path": "website/apps/contentos/tsconfig.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/index.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 8,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "contentos package",
+      "path": "website/apps/contentos/package.json",
+      "source": "auto",
+      "timestamp": "19:43",
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos home page",
+      "path": "website/apps/gtmos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:07",
+      "words": 855,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_config",
+      "title": "shawnos next config",
+      "path": "website/apps/shawnos/next.config.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 20,
+      "value_score": 1,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos blog page",
+      "path": "website/apps/shawnos/app/blog/page.tsx",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 191,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared related",
+      "path": "website/packages/shared/lib/related.ts",
+      "source": "auto",
+      "timestamp": "19:43",
+      "words": 51,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "x_final",
+      "title": "content flywheel masterplan",
+      "path": "content/x/final/2026-02-12_content-flywheel-masterplan.txt",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 931
+      "words": 444,
+      "value_score": 10,
+      "shipped": true
     },
     {
       "type": "lead_magnet",
       "title": "tiktok playbook starter",
+      "path": "content/substack/lead-magnet/templates/tiktok-playbook-starter.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 682
-    },
-    {
-      "type": "lead_magnet",
-      "title": "x playbook starter",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 471
-    },
-    {
-      "type": "x_draft",
-      "title": "daily tracker system",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 604
-    },
-    {
-      "type": "linkedin_final",
-      "title": "content flywheel masterplan",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 635
-    },
-    {
-      "type": "x_draft",
-      "title": "substack identity crosspromo",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 55
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "substack launch crosspromo",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1586
+      "words": 682,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "substack_draft",
-      "title": "cursor discovery",
+      "title": "identity not tools",
+      "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 1599
-    },
-    {
-      "type": "skill_updated",
-      "title": "substack-post",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1548
-    },
-    {
-      "type": "skill_updated",
-      "title": "xlsx",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1446
-    },
-    {
-      "type": "lead_magnet",
-      "title": "reddit playbook starter",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 574
-    },
-    {
-      "type": "substack_final",
-      "title": "content os reveal",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 726
-    },
-    {
-      "type": "x_draft",
-      "title": "cursor tip plan mode",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 96
-    },
-    {
-      "type": "substack_draft",
-      "title": "build your own os",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1541
-    },
-    {
-      "type": "x_final",
-      "title": "cursor tip plan mode",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 62
-    },
-    {
-      "type": "x_draft",
-      "title": "build your own os",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 465
-    },
-    {
-      "type": "reddit_draft",
-      "title": "content os reddit",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1323
-    },
-    {
-      "type": "skill_updated",
-      "title": "daily-tracker",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 2280
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "build day",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 271
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "content flywheel masterplan",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1463
-    },
-    {
-      "type": "reddit_draft",
-      "title": "build your own os",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1119
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "weekend build",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 666
+      "words": 1440,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "skill_updated",
       "title": "campaign-copy-workflow",
+      "path": ".cursor/skills/campaign-copy-workflow/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 887
-    },
-    {
-      "type": "x_draft",
-      "title": "daily tracker build",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 550
-    },
-    {
-      "type": "skill_updated",
-      "title": "substack-note",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1907
-    },
-    {
-      "type": "x_draft",
-      "title": "content flywheel masterplan",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 647
-    },
-    {
-      "type": "lead_magnet",
-      "title": "security guide",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 762
-    },
-    {
-      "type": "substack_draft",
-      "title": "identity not tools",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1440
-    },
-    {
-      "type": "lead_magnet",
-      "title": "ai slop basics",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 777
-    },
-    {
-      "type": "substack_final",
-      "title": "identity not tools",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 881
-    },
-    {
-      "type": "cursor_rule",
-      "title": "prompt-formatting",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 234
-    },
-    {
-      "type": "skill_updated",
-      "title": "partner-comms",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 863
+      "words": 887,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "linkedin_draft",
-      "title": "build your own os",
+      "title": "substack launch crosspromo",
+      "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 1064
-    },
-    {
-      "type": "skill_updated",
-      "title": "aios-image",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1682
-    },
-    {
-      "type": "skill_updated",
-      "title": "web-reveal-workflow",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 889
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "daily tracker system",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1341
-    },
-    {
-      "type": "skill_updated",
-      "title": "content-images",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 885
+      "words": 1586,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "skill_updated",
       "title": "skill-tree",
+      "path": ".cursor/skills/skill-tree/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 584
-    },
-    {
-      "type": "skill_updated",
-      "title": "final-substack",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 2676
-    },
-    {
-      "type": "lead_magnet",
-      "title": "youtube outline",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 952
-    },
-    {
-      "type": "skill_updated",
-      "title": "x-tip-image",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 2211
-    },
-    {
-      "type": "x_final",
-      "title": "build your own os",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 339
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "substack identity crosspromo",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 120
-    },
-    {
-      "type": "x_draft",
-      "title": "identity not tools",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 381
-    },
-    {
-      "type": "x_final",
-      "title": "content flywheel masterplan",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 444
-    },
-    {
-      "type": "lead_magnet",
-      "title": "scaffold prompt",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1500
-    },
-    {
-      "type": "lead_magnet",
-      "title": "youtube playbook starter",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 742
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "daily tracker build",
-      "source": "auto-mtime",
-      "timestamp": "19:43",
-      "words": 1462
+      "words": 584,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "skill_updated",
       "title": "x-tip",
+      "path": ".cursor/skills/x-tip/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 934
+      "words": 934,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "aios-image",
+      "path": ".cursor/skills/aios-image/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1682,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "x-tip-image",
+      "path": ".cursor/skills/x-tip-image/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 2211,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "build your own os",
+      "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 465,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "substack-post",
+      "path": ".cursor/skills/substack-post/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1548,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "build your own os",
+      "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1541,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "web-reveal-workflow",
+      "path": ".cursor/skills/web-reveal-workflow/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 889,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "lead_magnet",
+      "title": "x playbook starter",
+      "path": "content/substack/lead-magnet/templates/x-playbook-starter.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 471,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "screen teaser",
+      "path": "content/linkedin/final/2026-02-13_screen-teaser.txt",
+      "source": "auto-mtime",
+      "timestamp": "22:04",
+      "words": 85,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "daily tracker system",
+      "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1341,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "identity not tools",
+      "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 381,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "final-substack",
+      "path": ".cursor/skills/final-substack/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 2676,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "substack identity crosspromo",
+      "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 55,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "linkedin_draft",
       "title": "identity not tools",
+      "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 826
+      "words": 826,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "build day",
+      "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 271,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "ai slop basics",
+      "path": "content/substack/lead-magnet/templates/ai-slop-basics.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 777,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "screen teaser",
+      "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+      "source": "auto-mtime",
+      "timestamp": "22:42",
+      "words": 232,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "youtube outline",
+      "path": "content/substack/lead-magnet/youtube-outline.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 952,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_final",
+      "title": "cursor tip plan mode",
+      "path": "content/x/final/2026-02-11_cursor-tip-plan-mode.txt",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 62,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "content-images",
+      "path": ".cursor/skills/content-images/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 885,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "daily tracker system",
+      "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 604,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "reddit_draft",
+      "title": "content os reddit",
+      "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1323,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "substack_final",
+      "title": "identity not tools",
+      "path": "content/substack/final/2026-02-11_identity-not-tools.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 881,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "DailyLogView",
+      "path": "website/packages/shared/components/DailyLogView.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:16",
+      "words": 2062,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "cursor tip plan mode",
+      "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 96,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "security guide",
+      "path": "content/substack/lead-magnet/security-guide.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 762,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "lead_magnet",
+      "title": "youtube playbook starter",
+      "path": "content/substack/lead-magnet/templates/youtube-playbook-starter.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 742,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "substack_draft",
       "title": "weekend web build",
+      "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 1054
+      "words": 1054,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "scaffold prompt",
+      "path": "content/substack/lead-magnet/scaffold-prompt.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1500,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "xlsx",
+      "path": ".cursor/skills/xlsx/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1446,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_final",
+      "title": "build your own os",
+      "path": "content/x/final/2026-02-17_build-your-own-os.txt",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 339,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "screen teaser",
+      "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+      "source": "auto-mtime",
+      "timestamp": "22:47",
+      "words": 295,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "substack identity crosspromo",
+      "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 120,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "weekend build",
+      "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 666,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "substack_final",
+      "title": "content os reveal",
+      "path": "content/substack/final/2026-02-10_content-os-reveal.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 726,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "daily tracker build",
+      "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1462,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_final",
+      "title": "content flywheel masterplan",
+      "path": "content/linkedin/final/2026-02-12_content-flywheel-masterplan.txt",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 635,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "cursor_rule",
+      "title": "prompt-formatting",
+      "path": ".cursor/rules/prompt-formatting.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 234,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "substack-note",
+      "path": ".cursor/skills/substack-note/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1907,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "reddit_draft",
+      "title": "build your own os",
+      "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1119,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "daily-tracker",
+      "path": ".cursor/skills/daily-tracker/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 2280,
+      "value_score": 5,
+      "shipped": true
     },
     {
       "type": "substack_draft",
       "title": "start at level one",
+      "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
       "source": "auto-mtime",
       "timestamp": "19:43",
-      "words": 1013
+      "words": 1013,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "skill_updated",
+      "title": "partner-comms",
+      "path": ".cursor/skills/partner-comms/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 863,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "lead_magnet",
+      "title": "mcp guide",
+      "path": "content/substack/lead-magnet/mcp-guide.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 931,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "cursor discovery",
+      "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1599,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "build your own os",
+      "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1064,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "lead_magnet",
+      "title": "reddit playbook starter",
+      "path": "content/substack/lead-magnet/templates/reddit-playbook-starter.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 574,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "LogCard",
+      "path": "website/packages/shared/components/LogCard.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:16",
+      "words": 354,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "content flywheel masterplan",
+      "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 647,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "daily tracker build",
+      "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 550,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "content flywheel masterplan",
+      "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+      "source": "auto-mtime",
+      "timestamp": "19:43",
+      "words": 1463,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "manual",
@@ -449,214 +1096,6 @@
       "title": "GitHub repo sanitized for public (blocklist pre-push scan)",
       "source": "manual",
       "timestamp": "00:35"
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log date page",
-      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "01:41",
-      "words": 516
-    },
-    {
-      "type": "website_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "01:08",
-      "words": 1282
-    },
-    {
-      "type": "website_page",
-      "title": "contentos layout",
-      "path": "website/apps/contentos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "00:30",
-      "words": 163
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log date page",
-      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "01:41",
-      "words": 516
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/components/index.ts",
-      "source": "auto",
-      "timestamp": "01:52",
-      "words": 54
-    },
-    {
-      "type": "linkedin_final",
-      "title": "screen teaser",
-      "path": "content/linkedin/final/2026-02-13_screen-teaser.txt",
-      "source": "auto",
-      "timestamp": "22:04",
-      "words": 85
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos home page",
-      "path": "website/apps/gtmos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "01:07",
-      "words": 855
-    },
-    {
-      "type": "website_component",
-      "title": "LogDetailIntro",
-      "path": "website/packages/shared/components/LogDetailIntro.tsx",
-      "source": "auto",
-      "timestamp": "01:41",
-      "words": 143
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log date page",
-      "path": "website/apps/contentos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "01:41",
-      "words": 516
-    },
-    {
-      "type": "website_component",
-      "title": "LogHero",
-      "path": "website/packages/shared/components/LogHero.tsx",
-      "source": "auto",
-      "timestamp": "01:52",
-      "words": 452
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "00:30",
-      "words": 163
-    },
-    {
-      "type": "skill_updated",
-      "title": "deploy",
-      "path": ".cursor/skills/deploy/SKILL.md",
-      "source": "auto",
-      "timestamp": "01:49",
-      "words": 917
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log page",
-      "path": "website/apps/contentos/app/log/page.tsx",
-      "source": "auto",
-      "timestamp": "01:52",
-      "words": 224
-    },
-    {
-      "type": "website_component",
-      "title": "LogCard",
-      "path": "website/packages/shared/components/LogCard.tsx",
-      "source": "auto",
-      "timestamp": "23:16",
-      "words": 354
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log page",
-      "path": "website/apps/shawnos/app/log/page.tsx",
-      "source": "auto",
-      "timestamp": "01:52",
-      "words": 224
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "22:54",
-      "words": 284
-    },
-    {
-      "type": "x_draft",
-      "title": "screen teaser",
-      "path": "content/x/drafts/2026-02-13_screen-teaser.md",
-      "source": "auto",
-      "timestamp": "22:42",
-      "words": 232
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log page",
-      "path": "website/apps/gtmos/app/log/page.tsx",
-      "source": "auto",
-      "timestamp": "01:52",
-      "words": 224
-    },
-    {
-      "type": "website_config",
-      "title": "taxonomy",
-      "path": "website/taxonomy.yaml",
-      "source": "auto",
-      "timestamp": "00:41",
-      "words": 535
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos home page",
-      "path": "website/apps/shawnos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "01:08",
-      "words": 780
-    },
-    {
-      "type": "website_component",
-      "title": "DailyLogView",
-      "path": "website/packages/shared/components/DailyLogView.tsx",
-      "source": "auto",
-      "timestamp": "23:16",
-      "words": 2062
-    },
-    {
-      "type": "skill_updated",
-      "title": "edit",
-      "path": ".cursor/skills/edit/SKILL.md",
-      "source": "auto",
-      "timestamp": "01:50",
-      "words": 1260
-    },
-    {
-      "type": "website_lib",
-      "title": "shared logs",
-      "path": "website/packages/shared/lib/logs.ts",
-      "source": "auto",
-      "timestamp": "01:52",
-      "words": 815
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "screen teaser",
-      "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
-      "source": "auto",
-      "timestamp": "22:47",
-      "words": 295
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/index.ts",
-      "source": "auto",
-      "timestamp": "01:52",
-      "words": 54
-    },
-    {
-      "type": "script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
-      "source": "auto-mtime",
-      "timestamp": "02:30",
-      "words": 3347
     }
   ],
   "pipeline": {
@@ -664,276 +1103,336 @@
       {
         "platform": "linkedin",
         "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
         "target_date": "2026-02-09",
         "words": 1103
       },
       {
         "platform": "linkedin",
         "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
         "target_date": "2026-02-09",
         "words": 907
       },
       {
         "platform": "linkedin",
         "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
         "target_date": "2026-02-09",
         "words": 666
       },
       {
         "platform": "linkedin",
         "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
         "target_date": "2026-02-09",
         "words": 402
       },
       {
         "platform": "linkedin",
         "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
         "target_date": "2026-02-10",
         "words": 848
       },
       {
         "platform": "linkedin",
         "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
         "target_date": "2026-02-10",
         "words": 678
       },
       {
         "platform": "linkedin",
         "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
         "target_date": "2026-02-10",
         "words": 1263
       },
       {
         "platform": "linkedin",
         "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
         "target_date": "2026-02-10",
         "words": 784
       },
       {
         "platform": "linkedin",
         "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
         "target_date": "2026-02-10",
         "words": 629
       },
       {
         "platform": "linkedin",
         "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
         "target_date": "2026-02-10",
         "words": 740
       },
       {
         "platform": "linkedin",
         "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
         "target_date": "2026-02-10",
         "words": 795
       },
       {
         "platform": "linkedin",
         "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
         "target_date": "2026-02-11",
         "words": 1341
       },
       {
         "platform": "linkedin",
         "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 826
       },
       {
         "platform": "linkedin",
         "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 120
       },
       {
         "platform": "linkedin",
         "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 1586
       },
       {
         "platform": "linkedin",
         "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
         "target_date": "2026-02-12",
         "words": 1463
       },
       {
         "platform": "linkedin",
         "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
         "target_date": "2026-02-12",
         "words": 1462
       },
       {
         "platform": "linkedin",
         "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
         "target_date": "2026-02-13",
         "words": 271
       },
       {
         "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
         "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1064
       },
       {
         "platform": "x",
         "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
         "target_date": "2026-02-09",
         "words": 611
       },
       {
         "platform": "x",
         "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
         "target_date": "2026-02-09",
         "words": 390
       },
       {
         "platform": "x",
         "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
         "target_date": "2026-02-09",
         "words": 271
       },
       {
         "platform": "x",
         "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
         "target_date": "2026-02-09",
         "words": 348
       },
       {
         "platform": "x",
         "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
         "target_date": "2026-02-10",
         "words": 390
       },
       {
         "platform": "x",
         "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
         "target_date": "2026-02-10",
         "words": 385
       },
       {
         "platform": "x",
         "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
         "target_date": "2026-02-10",
         "words": 577
       },
       {
         "platform": "x",
         "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
         "target_date": "2026-02-10",
         "words": 489
       },
       {
         "platform": "x",
         "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
         "target_date": "2026-02-10",
         "words": 419
       },
       {
         "platform": "x",
         "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
         "target_date": "2026-02-10",
         "words": 369
       },
       {
         "platform": "x",
         "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
         "target_date": "2026-02-10",
         "words": 457
       },
       {
         "platform": "x",
         "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
         "target_date": "2026-02-11",
         "words": 96
       },
       {
         "platform": "x",
         "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
         "target_date": "2026-02-11",
         "words": 604
       },
       {
         "platform": "x",
         "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 381
       },
       {
         "platform": "x",
         "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
         "target_date": "2026-02-11",
         "words": 55
       },
       {
         "platform": "x",
         "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
         "target_date": "2026-02-12",
         "words": 647
       },
       {
         "platform": "x",
         "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
         "target_date": "2026-02-12",
         "words": 550
       },
       {
         "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
         "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 465
       },
       {
         "platform": "substack",
         "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
         "target_date": "2026-02-10",
         "words": 1187
       },
       {
         "platform": "substack",
         "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
         "target_date": "2026-02-11",
         "words": 1440
       },
       {
         "platform": "substack",
         "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
         "target_date": "2026-02-13",
         "words": 1329
       },
       {
         "platform": "substack",
         "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
         "target_date": "2026-02-14",
         "words": 1599
       },
       {
         "platform": "substack",
         "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
         "target_date": "2026-02-14",
         "words": 1054
       },
       {
         "platform": "substack",
         "title": "build your own os",
+        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1541
       },
       {
         "platform": "substack",
         "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
         "target_date": "2026-02-24",
         "words": 1013
       },
       {
         "platform": "reddit",
         "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
         "target_date": "2026-02-11",
         "words": 1323
       },
       {
         "platform": "reddit",
         "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1119
       }
@@ -943,6 +1442,7 @@
   "todos": [],
   "token_usage": [
     {
+      "session_id": "5dcd59e0-03fd-4914-a56f-b774c2cb75b5",
       "input_tokens": 728,
       "output_tokens": 1458,
       "cache_read_tokens": 2341087,
@@ -950,11 +1450,12 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 65,
-      "logged_at": "20:00",
+      "logged_at": "03:47",
       "cost": 6.5851,
       "context": "claude-code 05:31"
     },
     {
+      "session_id": "62a47b1b-1b3b-4b80-b282-2d95ccd9f169",
       "input_tokens": 78,
       "output_tokens": 454,
       "cache_read_tokens": 2295464,
@@ -962,7 +1463,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 64,
-      "logged_at": "20:00",
+      "logged_at": "03:47",
       "cost": 5.2271,
       "context": "claude-code 04:28"
     },
@@ -979,19 +1480,6 @@
       "cost": null
     },
     {
-      "session_id": "032b5b2c-b1fd-4422-a52b-656df4505d43",
-      "input_tokens": 56,
-      "output_tokens": 266,
-      "cache_read_tokens": 845511,
-      "cache_write_tokens": 78099,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 30,
-      "logged_at": "02:31",
-      "cost": 2.7534,
-      "context": "claude-code 00:31"
-    },
-    {
       "input_tokens": 30000,
       "output_tokens": 12000,
       "cache_read_tokens": 0,
@@ -1006,30 +1494,49 @@
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 30,
+      "other": 27,
+      "website": 46,
       "substack": 8,
       "x": 11,
       "linkedin": 12,
-      "reddit": 2,
-      "infra": 8,
-      "website": 20
+      "reddit": 2
     },
-    "words_today": 72045,
-    "pipeline_words": 36057,
+    "words_today": 65815,
+    "pipeline_words": 36584,
     "finals_count": 0,
     "first_activity": "00:30",
     "last_activity": "23:16",
-    "output_score": 397,
-    "letter_grade": "A+",
+    "output_score": 385,
+    "letter_grade": "S",
     "score_breakdown": [
       {
         "type": "skill_updated",
-        "title": "update-github",
+        "title": "partner-onboard",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "Navigation",
         "points": 5
       },
       {
         "type": "substack_draft",
         "title": "build day",
+        "points": 2
+      },
+      {
+        "type": "website_component",
+        "title": "NetworkBanner",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos og route",
+        "points": 3
+      },
+      {
+        "type": "website_style",
+        "title": "globals styles",
         "points": 2
       },
       {
@@ -1038,389 +1545,19 @@
         "points": 5
       },
       {
-        "type": "skill_updated",
-        "title": "partner-onboard",
-        "points": 5
-      },
-      {
-        "type": "workflow_updated",
-        "title": "substack-index",
-        "points": 5
-      },
-      {
-        "type": "lead_magnet",
-        "title": "mcp guide",
-        "points": 5
-      },
-      {
-        "type": "lead_magnet",
-        "title": "tiktok playbook starter",
-        "points": 5
-      },
-      {
-        "type": "lead_magnet",
-        "title": "x playbook starter",
-        "points": 5
-      },
-      {
-        "type": "x_draft",
-        "title": "daily tracker system",
-        "points": 2
-      },
-      {
-        "type": "linkedin_final",
-        "title": "content flywheel masterplan",
-        "points": 10
-      },
-      {
-        "type": "x_draft",
-        "title": "substack identity crosspromo",
-        "points": 2
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "substack launch crosspromo",
-        "points": 2
-      },
-      {
-        "type": "substack_draft",
-        "title": "cursor discovery",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "substack-post",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "xlsx",
-        "points": 5
-      },
-      {
-        "type": "lead_magnet",
-        "title": "reddit playbook starter",
-        "points": 5
-      },
-      {
-        "type": "substack_final",
-        "title": "content os reveal",
-        "points": 10
-      },
-      {
-        "type": "x_draft",
-        "title": "cursor tip plan mode",
-        "points": 2
-      },
-      {
-        "type": "substack_draft",
-        "title": "build your own os",
-        "points": 2
-      },
-      {
-        "type": "x_final",
-        "title": "cursor tip plan mode",
-        "points": 10
-      },
-      {
-        "type": "x_draft",
-        "title": "build your own os",
-        "points": 2
-      },
-      {
-        "type": "reddit_draft",
-        "title": "content os reddit",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "daily-tracker",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "build day",
-        "points": 2
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "content flywheel masterplan",
-        "points": 2
-      },
-      {
-        "type": "reddit_draft",
-        "title": "build your own os",
-        "points": 2
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "weekend build",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "campaign-copy-workflow",
-        "points": 5
-      },
-      {
-        "type": "x_draft",
-        "title": "daily tracker build",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "substack-note",
-        "points": 5
-      },
-      {
-        "type": "x_draft",
-        "title": "content flywheel masterplan",
-        "points": 2
-      },
-      {
-        "type": "lead_magnet",
-        "title": "security guide",
-        "points": 5
-      },
-      {
-        "type": "substack_draft",
-        "title": "identity not tools",
-        "points": 2
-      },
-      {
-        "type": "lead_magnet",
-        "title": "ai slop basics",
-        "points": 5
-      },
-      {
-        "type": "substack_final",
-        "title": "identity not tools",
-        "points": 10
-      },
-      {
-        "type": "cursor_rule",
-        "title": "prompt-formatting",
-        "points": 3
-      },
-      {
-        "type": "skill_updated",
-        "title": "partner-comms",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "build your own os",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "aios-image",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "web-reveal-workflow",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "daily tracker system",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "content-images",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "skill-tree",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "final-substack",
-        "points": 5
-      },
-      {
-        "type": "lead_magnet",
-        "title": "youtube outline",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "x-tip-image",
-        "points": 5
-      },
-      {
-        "type": "x_final",
-        "title": "build your own os",
-        "points": 10
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "substack identity crosspromo",
-        "points": 2
-      },
-      {
-        "type": "x_draft",
-        "title": "identity not tools",
-        "points": 2
-      },
-      {
-        "type": "x_final",
-        "title": "content flywheel masterplan",
-        "points": 10
-      },
-      {
-        "type": "lead_magnet",
-        "title": "scaffold prompt",
-        "points": 5
-      },
-      {
-        "type": "lead_magnet",
-        "title": "youtube playbook starter",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "daily tracker build",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "x-tip",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "identity not tools",
-        "points": 2
-      },
-      {
-        "type": "substack_draft",
-        "title": "weekend web build",
-        "points": 2
-      },
-      {
-        "type": "substack_draft",
-        "title": "start at level one",
-        "points": 2
-      },
-      {
-        "type": "manual",
-        "title": "Turborepo monorepo scaffold (3 apps + shared pkg)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "shared design system (@shawnos/shared, 5 components, tokens.css)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "shawnos.ai full site (landing, about, blog, blog/[slug])",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "shawnos.ai full SEO (sitemap, RSS, OG images, JSON-LD, meta)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "Vercel deployment (shawnos.ai live, 67 files, 8,143 lines)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "6 architecture plans (parallel agent orchestration)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "blog engine + markdown pipeline (gray-matter, remark, rehype)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "GitHub repo sanitized for public (blocklist pre-push scan)",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log date page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos home page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos layout",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log date page",
-        "points": 5
-      },
-      {
         "type": "website_lib",
         "title": "shared index",
         "points": 3
       },
       {
-        "type": "linkedin_final",
-        "title": "screen teaser",
-        "points": 10
+        "type": "website_config",
+        "title": "root tsconfig",
+        "points": 1
       },
       {
-        "type": "website_page",
-        "title": "gtmos home page",
-        "points": 5
-      },
-      {
-        "type": "website_component",
-        "title": "LogDetailIntro",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log date page",
-        "points": 5
-      },
-      {
-        "type": "website_component",
-        "title": "LogHero",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos layout",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "deploy",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log page",
-        "points": 5
-      },
-      {
-        "type": "website_component",
-        "title": "LogCard",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log page",
-        "points": 5
+        "type": "website_config",
+        "title": "gtmos tsconfig",
+        "points": 1
       },
       {
         "type": "website_page",
@@ -1428,13 +1565,53 @@
         "points": 5
       },
       {
-        "type": "x_draft",
-        "title": "screen teaser",
-        "points": 2
+        "type": "website_config",
+        "title": "contentos vercel",
+        "points": 1
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared markdown",
+        "points": 3
+      },
+      {
+        "type": "website_config",
+        "title": "shared package",
+        "points": 1
       },
       {
         "type": "website_page",
-        "title": "gtmos log page",
+        "title": "gtmos layout",
+        "points": 5
+      },
+      {
+        "type": "website_config",
+        "title": "shawnos vercel",
+        "points": 1
+      },
+      {
+        "type": "website_config",
+        "title": "shared tsconfig",
+        "points": 1
+      },
+      {
+        "type": "website_config",
+        "title": "shawnos tsconfig",
+        "points": 1
+      },
+      {
+        "type": "website_config",
+        "title": "root package",
+        "points": 1
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos home page",
         "points": 5
       },
       {
@@ -1444,28 +1621,58 @@
       },
       {
         "type": "website_page",
-        "title": "shawnos home page",
+        "title": "contentos home page",
+        "points": 5
+      },
+      {
+        "type": "website_config",
+        "title": "contentos next config",
+        "points": 1
+      },
+      {
+        "type": "website_style",
+        "title": "globals styles",
+        "points": 2
+      },
+      {
+        "type": "website_config",
+        "title": "gtmos vercel",
+        "points": 1
+      },
+      {
+        "type": "website_config",
+        "title": "gtmos package",
+        "points": 1
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos blog slug page",
         "points": 5
       },
       {
         "type": "website_component",
-        "title": "DailyLogView",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "edit",
+        "title": "Footer",
         "points": 5
       },
       {
         "type": "website_lib",
-        "title": "shared logs",
+        "title": "shared posts",
         "points": 3
       },
       {
-        "type": "linkedin_draft",
-        "title": "screen teaser",
+        "type": "website_style",
+        "title": "tokens styles",
         "points": 2
+      },
+      {
+        "type": "website_style",
+        "title": "globals styles",
+        "points": 2
+      },
+      {
+        "type": "website_component",
+        "title": "PostCard",
+        "points": 5
       },
       {
         "type": "website_lib",
@@ -1473,61 +1680,471 @@
         "points": 3
       },
       {
-        "type": "script",
-        "title": "daily_scan",
+        "type": "website_component",
+        "title": "TerminalChrome",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "update-github",
+        "points": 5
+      },
+      {
+        "type": "website_config",
+        "title": "gtmos next config",
+        "points": 1
+      },
+      {
+        "type": "website_page",
+        "title": "contentos layout",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos about page",
+        "points": 5
+      },
+      {
+        "type": "website_config",
+        "title": "shawnos package",
+        "points": 1
+      },
+      {
+        "type": "workflow_updated",
+        "title": "substack-index",
+        "points": 5
+      },
+      {
+        "type": "website_config",
+        "title": "root turbo",
+        "points": 1
+      },
+      {
+        "type": "website_config",
+        "title": "contentos tsconfig",
+        "points": 1
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "website_config",
+        "title": "contentos package",
+        "points": 1
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos home page",
+        "points": 5
+      },
+      {
+        "type": "website_config",
+        "title": "shawnos next config",
+        "points": 1
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos blog page",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared related",
+        "points": 3
+      },
+      {
+        "type": "x_final",
+        "title": "content flywheel masterplan",
+        "points": 10
+      },
+      {
+        "type": "lead_magnet",
+        "title": "tiktok playbook starter",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "campaign-copy-workflow",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "substack launch crosspromo",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "skill-tree",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "x-tip",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "aios-image",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "x-tip-image",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "substack-post",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "web-reveal-workflow",
+        "points": 5
+      },
+      {
+        "type": "lead_magnet",
+        "title": "x playbook starter",
+        "points": 5
+      },
+      {
+        "type": "linkedin_final",
+        "title": "screen teaser",
+        "points": 10
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "daily tracker system",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "final-substack",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "substack identity crosspromo",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "identity not tools",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "build day",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "ai slop basics",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "screen teaser",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "youtube outline",
+        "points": 5
+      },
+      {
+        "type": "x_final",
+        "title": "cursor tip plan mode",
+        "points": 10
+      },
+      {
+        "type": "skill_updated",
+        "title": "content-images",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "daily tracker system",
+        "points": 2
+      },
+      {
+        "type": "reddit_draft",
+        "title": "content os reddit",
+        "points": 2
+      },
+      {
+        "type": "substack_final",
+        "title": "identity not tools",
+        "points": 10
+      },
+      {
+        "type": "website_component",
+        "title": "DailyLogView",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "cursor tip plan mode",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "security guide",
+        "points": 5
+      },
+      {
+        "type": "lead_magnet",
+        "title": "youtube playbook starter",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "weekend web build",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "scaffold prompt",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "xlsx",
+        "points": 5
+      },
+      {
+        "type": "x_final",
+        "title": "build your own os",
+        "points": 10
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "screen teaser",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "substack identity crosspromo",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "weekend build",
+        "points": 2
+      },
+      {
+        "type": "substack_final",
+        "title": "content os reveal",
+        "points": 10
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "daily tracker build",
+        "points": 2
+      },
+      {
+        "type": "linkedin_final",
+        "title": "content flywheel masterplan",
+        "points": 10
+      },
+      {
+        "type": "cursor_rule",
+        "title": "prompt-formatting",
+        "points": 3
+      },
+      {
+        "type": "skill_updated",
+        "title": "substack-note",
+        "points": 5
+      },
+      {
+        "type": "reddit_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "daily-tracker",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "start at level one",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "partner-comms",
+        "points": 5
+      },
+      {
+        "type": "lead_magnet",
+        "title": "mcp guide",
+        "points": 5
+      },
+      {
+        "type": "substack_draft",
+        "title": "cursor discovery",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "build your own os",
+        "points": 2
+      },
+      {
+        "type": "lead_magnet",
+        "title": "reddit playbook starter",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "LogCard",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "content flywheel masterplan",
+        "points": 2
+      },
+      {
+        "type": "x_draft",
+        "title": "daily tracker build",
+        "points": 2
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "content flywheel masterplan",
         "points": 2
       }
     ],
-    "efficiency_rating": 21.27
+    "efficiency_rating": 24.2,
+    "shipped_count": 88,
+    "draft_count": 26,
+    "ship_rate": 0.77,
+    "agent_cost": 15.91,
+    "dev_equivalent_cost": 9695.5,
+    "dev_equivalent_breakdown": {
+      "code_loc": 2076,
+      "code_hours": 41.52,
+      "code_cost": 3114.0,
+      "content_words": 65815,
+      "content_hours": 131.63,
+      "content_cost": 6581.5,
+      "total": 9695.5
+    },
+    "cost_savings": 9679.59,
+    "roi_multiplier": 609.5,
+    "lines_added": 8160,
+    "lines_removed": 438,
+    "lines_net": 7722,
+    "code_loc": 2076,
+    "content_loc": 1964,
+    "data_loc": 4120
   },
   "git_summary": {
-    "commits_today": 6,
+    "commits_today": 3,
     "files_added": [
-      ".cursor/skills/deploy/SKILL.md",
-      ".cursor/skills/edit/SKILL.md",
-      "content/linkedin/drafts/2026-02-13_screen-teaser.md",
-      "content/linkedin/final/2026-02-13_screen-teaser.txt",
-      "content/x/drafts/2026-02-13_screen-teaser.md",
-      "data/daily-log/2026-02-11.json",
-      "data/daily-log/2026-02-12.json",
-      "data/daily-log/2026-02-13.json",
-      "data/daily-log/schema.md",
-      "skills/tier-2-context-playbooks/twitch.md",
-      "skills/tier-3-content-ops/pillars/twitch-gaming-discord.md",
-      "website/apps/contentos/app/log/[date]/page.tsx",
-      "website/apps/contentos/app/log/page.tsx",
-      "website/apps/gtmos/app/log/[date]/page.tsx",
-      "website/apps/gtmos/app/log/page.tsx",
-      "website/apps/gtmos/next-env.d.ts",
-      "website/apps/shawnos/app/log/[date]/page.tsx",
-      "website/apps/shawnos/app/log/page.tsx",
-      "website/packages/shared/components/DailyLogView.tsx",
-      "website/packages/shared/components/LogCard.tsx",
-      "website/packages/shared/components/LogDetailIntro.tsx",
-      "website/packages/shared/components/LogHero.tsx",
-      "website/packages/shared/lib/logs.ts"
-    ],
-    "files_modified": [
-      ".gitignore",
-      "skills/tier-2-context-playbooks/tiktok.md",
+      ".cursor/plans/deploy_shawnos_to_vercel_08a576f4.plan.md",
+      ".cursor/plans/gtm_os_architecture_comparison_accc3254.plan.md",
+      ".cursor/plans/post-build_launch_phases_110af9e8.plan.md",
+      ".cursor/plans/shared_design_package_todo2.plan.md",
+      ".cursor/plans/three-domain_network_strategy_4f8389b8.plan.md",
+      ".cursor/plans/weekend_three-site_launch_a60af212.plan.md",
+      ".cursor/skills/idea-bank/SKILL.md",
+      ".cursor/worktrees.json",
+      "content/website/drafts/.gitkeep",
+      "content/website/final/hello-world.md",
       "skills/tier-3-content-ops/breadcrumb-protocol.md",
       "skills/tier-3-content-ops/captures/idea-bank.md",
+      "website/.gitignore",
+      "website/apps/contentos/app/globals.css",
       "website/apps/contentos/app/layout.tsx",
-      "website/apps/contentos/app/log/[date]/page.tsx",
-      "website/apps/contentos/app/log/page.tsx",
       "website/apps/contentos/app/page.tsx",
+      "website/apps/contentos/next-env.d.ts",
+      "website/apps/contentos/next.config.ts",
+      "website/apps/contentos/package.json",
+      "website/apps/contentos/postcss.config.mjs",
+      "website/apps/contentos/tsconfig.json",
+      "website/apps/contentos/vercel.json",
+      "website/apps/gtmos/app/globals.css",
       "website/apps/gtmos/app/layout.tsx",
-      "website/apps/gtmos/app/log/[date]/page.tsx",
-      "website/apps/gtmos/app/log/page.tsx",
       "website/apps/gtmos/app/page.tsx",
+      "website/apps/gtmos/next.config.ts",
+      "website/apps/gtmos/package.json",
+      "website/apps/gtmos/postcss.config.mjs",
+      "website/apps/gtmos/tsconfig.json",
+      "website/apps/gtmos/vercel.json",
+      "website/apps/shawnos/app/about/page.tsx",
+      "website/apps/shawnos/app/blog/[slug]/page.tsx",
+      "website/apps/shawnos/app/blog/page.tsx",
+      "website/apps/shawnos/app/feed.xml/route.ts",
+      "website/apps/shawnos/app/globals.css",
       "website/apps/shawnos/app/layout.tsx",
-      "website/apps/shawnos/app/log/[date]/page.tsx",
-      "website/apps/shawnos/app/log/page.tsx",
+      "website/apps/shawnos/app/og/route.tsx",
       "website/apps/shawnos/app/page.tsx",
+      "website/apps/shawnos/next-env.d.ts",
+      "website/apps/shawnos/next-sitemap.config.js",
+      "website/apps/shawnos/next.config.ts",
+      "website/apps/shawnos/package.json",
+      "website/apps/shawnos/postcss.config.mjs",
+      "website/apps/shawnos/tsconfig.json",
+      "website/apps/shawnos/vercel.json",
+      "website/package-lock.json",
+      "website/package.json",
+      "website/packages/shared/components/Footer.tsx",
+      "website/packages/shared/components/Navigation.tsx",
+      "website/packages/shared/components/NetworkBanner.tsx",
+      "website/packages/shared/components/PostCard.tsx",
+      "website/packages/shared/components/TerminalChrome.tsx",
       "website/packages/shared/components/index.ts",
+      "website/packages/shared/index.ts",
       "website/packages/shared/lib/index.ts",
-      "website/packages/shared/lib/logs.ts",
-      "website/taxonomy.yaml"
-    ]
+      "website/packages/shared/lib/markdown.ts",
+      "website/packages/shared/lib/posts.ts",
+      "website/packages/shared/lib/related.ts",
+      "website/packages/shared/package.json",
+      "website/packages/shared/styles/tokens.css",
+      "website/packages/shared/tsconfig.json",
+      "website/taxonomy.yaml",
+      "website/tsconfig.json",
+      "website/turbo.json"
+    ],
+    "files_modified": [
+      ".claude/skills/update-github/SKILL.md",
+      ".cursor/skills/partner-onboard/SKILL.md",
+      ".gitignore",
+      "content/substack/drafts/2026-02-13_build-day.md",
+      "skills/tier-3-content-ops/captures/README.md",
+      "workflows/substack-index.md"
+    ],
+    "lines_added_count": 8160,
+    "lines_removed_count": 438,
+    "lines_net": 7722,
+    "code_loc": 2076,
+    "content_loc": 1964,
+    "data_loc": 4120
   }
 }
