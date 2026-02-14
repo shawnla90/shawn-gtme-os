@@ -1,6 +1,6 @@
 {
   "date": "2026-02-13",
-  "generated_at": "2026-02-14T01:00:20.466759+00:00",
+  "generated_at": "2026-02-14T07:37:01.956276+00:00",
   "version": 3,
   "accomplishments": [
     {
@@ -428,24 +428,6 @@
     },
     {
       "type": "manual",
-      "title": "gtmos placeholder app (amber accent, coming soon)",
-      "source": "manual",
-      "timestamp": "16:00"
-    },
-    {
-      "type": "manual",
-      "title": "contentos placeholder app (purple accent, coming soon)",
-      "source": "manual",
-      "timestamp": "16:30"
-    },
-    {
-      "type": "manual",
-      "title": "taxonomy.yaml (domain mapping, keyword clusters, routing rules)",
-      "source": "manual",
-      "timestamp": "17:00"
-    },
-    {
-      "type": "manual",
       "title": "Vercel deployment (shawnos.ai live, 67 files, 8,143 lines)",
       "source": "manual",
       "timestamp": "19:47"
@@ -464,15 +446,217 @@
     },
     {
       "type": "manual",
-      "title": "NetworkBanner cross-site linking component",
-      "source": "manual",
-      "timestamp": "14:00"
-    },
-    {
-      "type": "manual",
       "title": "GitHub repo sanitized for public (blocklist pre-push scan)",
       "source": "manual",
       "timestamp": "00:35"
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log date page",
+      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "01:41",
+      "words": 516
+    },
+    {
+      "type": "website_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:08",
+      "words": 1282
+    },
+    {
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "00:30",
+      "words": 163
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log date page",
+      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "01:41",
+      "words": 516
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/components/index.ts",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 54
+    },
+    {
+      "type": "linkedin_final",
+      "title": "screen teaser",
+      "path": "content/linkedin/final/2026-02-13_screen-teaser.txt",
+      "source": "auto",
+      "timestamp": "22:04",
+      "words": 85
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos home page",
+      "path": "website/apps/gtmos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:07",
+      "words": 855
+    },
+    {
+      "type": "website_component",
+      "title": "LogDetailIntro",
+      "path": "website/packages/shared/components/LogDetailIntro.tsx",
+      "source": "auto",
+      "timestamp": "01:41",
+      "words": 143
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log date page",
+      "path": "website/apps/contentos/app/log/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "01:41",
+      "words": 516
+    },
+    {
+      "type": "website_component",
+      "title": "LogHero",
+      "path": "website/packages/shared/components/LogHero.tsx",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 452
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "00:30",
+      "words": 163
+    },
+    {
+      "type": "skill_updated",
+      "title": "deploy",
+      "path": ".cursor/skills/deploy/SKILL.md",
+      "source": "auto",
+      "timestamp": "01:49",
+      "words": 917
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log page",
+      "path": "website/apps/contentos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 224
+    },
+    {
+      "type": "website_component",
+      "title": "LogCard",
+      "path": "website/packages/shared/components/LogCard.tsx",
+      "source": "auto",
+      "timestamp": "23:16",
+      "words": 354
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log page",
+      "path": "website/apps/shawnos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 224
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "22:54",
+      "words": 284
+    },
+    {
+      "type": "x_draft",
+      "title": "screen teaser",
+      "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+      "source": "auto",
+      "timestamp": "22:42",
+      "words": 232
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log page",
+      "path": "website/apps/gtmos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 224
+    },
+    {
+      "type": "website_config",
+      "title": "taxonomy",
+      "path": "website/taxonomy.yaml",
+      "source": "auto",
+      "timestamp": "00:41",
+      "words": 535
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:08",
+      "words": 780
+    },
+    {
+      "type": "website_component",
+      "title": "DailyLogView",
+      "path": "website/packages/shared/components/DailyLogView.tsx",
+      "source": "auto",
+      "timestamp": "23:16",
+      "words": 2062
+    },
+    {
+      "type": "skill_updated",
+      "title": "edit",
+      "path": ".cursor/skills/edit/SKILL.md",
+      "source": "auto",
+      "timestamp": "01:50",
+      "words": 1260
+    },
+    {
+      "type": "website_lib",
+      "title": "shared logs",
+      "path": "website/packages/shared/lib/logs.ts",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 815
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "screen teaser",
+      "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+      "source": "auto",
+      "timestamp": "22:47",
+      "words": 295
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "01:52",
+      "words": 54
+    },
+    {
+      "type": "script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
+      "source": "auto-mtime",
+      "timestamp": "02:30",
+      "words": 3347
     }
   ],
   "pipeline": {
@@ -793,23 +977,49 @@
       "context": "cursor multi-session website build (parallel agents)",
       "logged_at": "20:00",
       "cost": null
+    },
+    {
+      "session_id": "032b5b2c-b1fd-4422-a52b-656df4505d43",
+      "input_tokens": 56,
+      "output_tokens": 266,
+      "cache_read_tokens": 845511,
+      "cache_write_tokens": 78099,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 30,
+      "logged_at": "02:31",
+      "cost": 2.7534,
+      "context": "claude-code 00:31"
+    },
+    {
+      "input_tokens": 30000,
+      "output_tokens": 12000,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "sonnet",
+      "source": "cursor-estimate",
+      "confidence": "rough",
+      "context": "cursor tracker + scanner upgrade session",
+      "logged_at": "02:35",
+      "cost": null
     }
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 27,
+      "other": 30,
       "substack": 8,
-      "x": 10,
-      "linkedin": 10,
+      "x": 11,
+      "linkedin": 12,
       "reddit": 2,
-      "infra": 12
+      "infra": 8,
+      "website": 20
     },
-    "words_today": 55693,
+    "words_today": 72045,
     "pipeline_words": 36057,
     "finals_count": 0,
-    "first_activity": "00:35",
-    "last_activity": "19:47",
-    "output_score": 301,
+    "first_activity": "00:30",
+    "last_activity": "23:16",
+    "output_score": 397,
     "letter_grade": "A+",
     "score_breakdown": [
       {
@@ -1119,21 +1329,6 @@
       },
       {
         "type": "manual",
-        "title": "gtmos placeholder app (amber accent, coming soon)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "contentos placeholder app (purple accent, coming soon)",
-        "points": 5
-      },
-      {
-        "type": "manual",
-        "title": "taxonomy.yaml (domain mapping, keyword clusters, routing rules)",
-        "points": 5
-      },
-      {
-        "type": "manual",
         "title": "Vercel deployment (shawnos.ai live, 67 files, 8,143 lines)",
         "points": 5
       },
@@ -1149,18 +1344,190 @@
       },
       {
         "type": "manual",
-        "title": "NetworkBanner cross-site linking component",
+        "title": "GitHub repo sanitized for public (blocklist pre-push scan)",
         "points": 5
       },
       {
-        "type": "manual",
-        "title": "GitHub repo sanitized for public (blocklist pre-push scan)",
+        "type": "website_page",
+        "title": "gtmos log date page",
         "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "contentos home page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "contentos layout",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log date page",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "linkedin_final",
+        "title": "screen teaser",
+        "points": 10
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos home page",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "LogDetailIntro",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "contentos log date page",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "LogHero",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos layout",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "deploy",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "contentos log page",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "LogCard",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos layout",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "screen teaser",
+        "points": 2
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos log page",
+        "points": 5
+      },
+      {
+        "type": "website_config",
+        "title": "taxonomy",
+        "points": 1
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos home page",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "DailyLogView",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "edit",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared logs",
+        "points": 3
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "screen teaser",
+        "points": 2
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "script",
+        "title": "daily_scan",
+        "points": 2
       }
     ],
-    "efficiency_rating": 25.5
+    "efficiency_rating": 21.27
   },
   "git_summary": {
-    "commits_today": 3
+    "commits_today": 6,
+    "files_added": [
+      ".cursor/skills/deploy/SKILL.md",
+      ".cursor/skills/edit/SKILL.md",
+      "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+      "content/linkedin/final/2026-02-13_screen-teaser.txt",
+      "content/x/drafts/2026-02-13_screen-teaser.md",
+      "data/daily-log/2026-02-11.json",
+      "data/daily-log/2026-02-12.json",
+      "data/daily-log/2026-02-13.json",
+      "data/daily-log/schema.md",
+      "skills/tier-2-context-playbooks/twitch.md",
+      "skills/tier-3-content-ops/pillars/twitch-gaming-discord.md",
+      "website/apps/contentos/app/log/[date]/page.tsx",
+      "website/apps/contentos/app/log/page.tsx",
+      "website/apps/gtmos/app/log/[date]/page.tsx",
+      "website/apps/gtmos/app/log/page.tsx",
+      "website/apps/gtmos/next-env.d.ts",
+      "website/apps/shawnos/app/log/[date]/page.tsx",
+      "website/apps/shawnos/app/log/page.tsx",
+      "website/packages/shared/components/DailyLogView.tsx",
+      "website/packages/shared/components/LogCard.tsx",
+      "website/packages/shared/components/LogDetailIntro.tsx",
+      "website/packages/shared/components/LogHero.tsx",
+      "website/packages/shared/lib/logs.ts"
+    ],
+    "files_modified": [
+      ".gitignore",
+      "skills/tier-2-context-playbooks/tiktok.md",
+      "skills/tier-3-content-ops/breadcrumb-protocol.md",
+      "skills/tier-3-content-ops/captures/idea-bank.md",
+      "website/apps/contentos/app/layout.tsx",
+      "website/apps/contentos/app/log/[date]/page.tsx",
+      "website/apps/contentos/app/log/page.tsx",
+      "website/apps/contentos/app/page.tsx",
+      "website/apps/gtmos/app/layout.tsx",
+      "website/apps/gtmos/app/log/[date]/page.tsx",
+      "website/apps/gtmos/app/log/page.tsx",
+      "website/apps/gtmos/app/page.tsx",
+      "website/apps/shawnos/app/layout.tsx",
+      "website/apps/shawnos/app/log/[date]/page.tsx",
+      "website/apps/shawnos/app/log/page.tsx",
+      "website/apps/shawnos/app/page.tsx",
+      "website/packages/shared/components/index.ts",
+      "website/packages/shared/lib/index.ts",
+      "website/packages/shared/lib/logs.ts",
+      "website/taxonomy.yaml"
+    ]
   }
 }
