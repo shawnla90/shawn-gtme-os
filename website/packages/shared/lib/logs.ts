@@ -70,10 +70,33 @@ export interface Stats {
   letter_grade: string
   score_breakdown: ScoreBreakdownItem[]
   efficiency_rating: number | null
+  shipped_count?: number
+  draft_count?: number
+  ship_rate?: number
+  agent_cost?: number
+  dev_equivalent_cost?: number
+  dev_equivalent_breakdown?: {
+    code_loc: number
+    code_hours: number
+    code_cost: number
+    content_words: number
+    content_hours: number
+    content_cost: number
+    total: number
+  }
+  cost_savings?: number
+  roi_multiplier?: number
+  lines_added?: number
+  lines_removed?: number
+  lines_net?: number
+  code_loc?: number
+  content_loc?: number
+  data_loc?: number
 }
 
 export interface GitSummary {
   commits_today: number
+  files_touched?: number
   // `files_added` and `files_modified` stripped — contain full repo paths
 }
 
@@ -153,9 +176,11 @@ function scrubLog(raw: Record<string, unknown>): DailyLog {
     }),
   )
 
-  // Scrub git summary — drop files_added, files_modified
+  // Scrub git summary — drop files_added, files_modified (but compute files_touched first)
   const git_summary: GitSummary = {
     commits_today: data.git_summary?.commits_today ?? 0,
+    files_touched: (data.git_summary?.files_added?.length ?? 0) +
+                   (data.git_summary?.files_modified?.length ?? 0),
   }
 
   return {

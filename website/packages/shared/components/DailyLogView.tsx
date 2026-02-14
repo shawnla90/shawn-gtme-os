@@ -17,6 +17,7 @@ const PURPLE = '#A078DC'
 const AMBER = '#DCA83C'
 const CYAN = '#50BEDC'
 const RED = '#E05555'
+const GOLD = '#FFC83C'
 const MUTED = '#484F58'
 
 /** Map letter grade to color. */
@@ -121,7 +122,7 @@ function GradeBadge({ grade }: { grade: string }) {
   )
 }
 
-function StatBox({ label, value }: { label: string; value: string | number }) {
+function StatBox({ label, value, color }: { label: string; value: string | number; color?: string }) {
   return (
     <div
       style={{
@@ -138,7 +139,7 @@ function StatBox({ label, value }: { label: string; value: string | number }) {
         style={{
           fontSize: '22px',
           fontWeight: 700,
-          color: 'var(--text-primary)',
+          color: color ?? 'var(--text-primary)',
           lineHeight: 1.2,
         }}
       >
@@ -662,20 +663,29 @@ export function DailyLogView({
 
         {/* ============ STAT BOXES ============ */}
         <div className="dlv-stat-row" style={{ marginBottom: '10px' }}>
-          <StatBox label="shipped" value={accomplishments.length} />
-          <StatBox label="finalized" value={stats.finals_count} />
+          <StatBox label="shipped" value={accomplishments.length} color={GREEN} />
+          <StatBox label="finalized" value={stats.finals_count} color={stats.finals_count > 0 ? GREEN : undefined} />
           <StatBox
             label="pending"
             value={todos.filter((t) => t.status === 'pending').length}
+            color={todos.filter((t) => t.status === 'pending').length > 0 ? AMBER : undefined}
           />
           <StatBox label="in pipeline" value={pipeline.drafts_active.length} />
-          <StatBox label="words today" value={stats.words_today.toLocaleString()} />
+          <StatBox label="words today" value={stats.words_today.toLocaleString()} color={CYAN} />
           <StatBox label="commits" value={git_summary.commits_today} />
-          <StatBox label="tokens" value={compactNum(totalTokens)} />
+          <StatBox label="files touched" value={git_summary.files_touched ?? 0} />
+          <StatBox label="tokens" value={compactNum(totalTokens)} color={PURPLE} />
           <StatBox
             label="est. cost"
             value={`$${totalCost.toFixed(2)}`}
+            color={PURPLE}
           />
+          {stats.roi_multiplier != null && (
+            <StatBox label="ROI" value={`${stats.roi_multiplier.toLocaleString()}x`} color={GOLD} />
+          )}
+          {stats.ship_rate != null && (
+            <StatBox label="ship rate" value={`${stats.ship_rate}%`} color={GREEN} />
+          )}
         </div>
 
         {/* ============ PLATFORM BAR ============ */}
@@ -770,11 +780,227 @@ export function DailyLogView({
             )}
           </Panel>
 
-          {/* --- Token Usage --- */}
-          <Panel title="Token Usage">
+          {/* --- Analytics (Economics + Efficiency + Token Usage) --- */}
+          <Panel title={stats.agent_cost != null ? 'Analytics' : 'Token Usage'}>
+            {stats.agent_cost != null && (
+              <>
+                {/* ---- ECONOMICS ---- */}
+                <div
+                  style={{
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    marginBottom: '8px',
+                    fontWeight: 600,
+                  }}
+                >
+                  ECONOMICS
+                </div>
+
+                <TokenStat
+                  label="Agent cost"
+                  value={`$${stats.agent_cost.toFixed(2)}`}
+                  color={PURPLE}
+                />
+                {stats.dev_equivalent_cost != null && (
+                  <TokenStat
+                    label="Dev equivalent"
+                    value={`$${stats.dev_equivalent_cost.toLocaleString()}`}
+                    color={GREEN}
+                  />
+                )}
+                {stats.cost_savings != null && (
+                  <TokenStat
+                    label="Savings"
+                    value={`$${stats.cost_savings.toLocaleString()}`}
+                    color={GREEN}
+                  />
+                )}
+                {stats.roi_multiplier != null && (
+                  <TokenStat
+                    label="ROI"
+                    value={`${stats.roi_multiplier.toLocaleString()}x`}
+                    color={GOLD}
+                  />
+                )}
+
+                {/* LOC breakdown */}
+                {(stats.code_loc != null ||
+                  stats.content_loc != null ||
+                  stats.data_loc != null) && (
+                  <div
+                    style={{
+                      marginTop: '10px',
+                      paddingTop: '8px',
+                      borderTop: '1px solid var(--border)',
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: '11px',
+                        color: 'var(--text-muted)',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        marginBottom: '4px',
+                      }}
+                    >
+                      OUTPUT BREAKDOWN
+                    </div>
+                    {stats.code_loc != null && (
+                      <TokenStat
+                        label="Code LOC"
+                        value={stats.code_loc.toLocaleString()}
+                        color={CYAN}
+                      />
+                    )}
+                    {stats.content_loc != null && (
+                      <TokenStat
+                        label="Content words"
+                        value={stats.content_loc.toLocaleString()}
+                        color={CYAN}
+                      />
+                    )}
+                    {stats.data_loc != null && (
+                      <TokenStat
+                        label="Data LOC"
+                        value={stats.data_loc.toLocaleString()}
+                        color={CYAN}
+                      />
+                    )}
+                  </div>
+                )}
+
+                {/* ---- EFFICIENCY ---- */}
+                <div
+                  style={{
+                    marginTop: '14px',
+                    paddingTop: '10px',
+                    borderTop: '1px solid var(--border)',
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    marginBottom: '8px',
+                    fontWeight: 600,
+                  }}
+                >
+                  EFFICIENCY
+                </div>
+
+                {stats.ship_rate != null && (
+                  <TokenStat
+                    label="Ship rate"
+                    value={`${stats.ship_rate}%`}
+                    color={GREEN}
+                  />
+                )}
+                {stats.agent_cost > 0 && (
+                  <>
+                    <TokenStat
+                      label="pts/$"
+                      value={(stats.output_score / stats.agent_cost).toFixed(1)}
+                      color={AMBER}
+                    />
+                    <TokenStat
+                      label="words/$"
+                      value={Math.round(
+                        stats.words_today / stats.agent_cost,
+                      ).toLocaleString()}
+                      color={AMBER}
+                    />
+                    {(stats.code_loc != null || stats.data_loc != null) && (
+                      <TokenStat
+                        label="LOC/$"
+                        value={Math.round(
+                          ((stats.code_loc ?? 0) + (stats.data_loc ?? 0)) /
+                            stats.agent_cost,
+                        ).toLocaleString()}
+                        color={AMBER}
+                      />
+                    )}
+                    {accomplishments.length > 0 && (
+                      <TokenStat
+                        label="cost/item"
+                        value={`$${(stats.agent_cost / accomplishments.length).toFixed(2)}`}
+                        color={AMBER}
+                      />
+                    )}
+                  </>
+                )}
+
+                {/* ---- TOKEN USAGE section header ---- */}
+                <div
+                  style={{
+                    marginTop: '14px',
+                    paddingTop: '10px',
+                    borderTop: '1px solid var(--border)',
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    marginBottom: '8px',
+                    fontWeight: 600,
+                  }}
+                >
+                  TOKEN USAGE
+                </div>
+              </>
+            )}
             <TokenUsagePanel entries={token_usage} />
           </Panel>
         </div>
+
+        {/* ============ SUMMARY LINE ============ */}
+        {stats.agent_cost != null && (
+          <div
+            style={{
+              marginTop: '18px',
+              padding: '10px 14px',
+              background: 'var(--canvas-subtle)',
+              border: '1px solid var(--border)',
+              borderRadius: '6px',
+              fontSize: '12px',
+              fontWeight: 600,
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              letterSpacing: '0.02em',
+            }}
+          >
+            <span style={{ color: CYAN }}>
+              {stats.words_today.toLocaleString()}w
+            </span>
+            {' + '}
+            <span style={{ color: CYAN }}>
+              {((stats.code_loc ?? 0) + (stats.data_loc ?? 0)).toLocaleString()} LOC
+            </span>
+            {' + '}
+            <span style={{ color: gc }}>
+              {stats.output_score} pts
+            </span>
+            {' for '}
+            <span style={{ color: PURPLE }}>
+              ${stats.agent_cost.toFixed(2)}
+            </span>
+            {stats.dev_equivalent_cost != null && (
+              <>
+                {' (dev equiv: '}
+                <span style={{ color: GREEN }}>
+                  ${stats.dev_equivalent_cost.toLocaleString()}
+                </span>
+                {stats.roi_multiplier != null && (
+                  <>
+                    {' | '}
+                    <span style={{ color: GOLD }}>
+                      {stats.roi_multiplier.toLocaleString()}x ROI
+                    </span>
+                  </>
+                )}
+                {')'}
+              </>
+            )}
+          </div>
+        )}
 
         {/* ============ FOOTER ============ */}
         <div
