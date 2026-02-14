@@ -36,13 +36,13 @@ const tools: { name: string; note: string }[] = [
 
 const network: { label: string; url: string; accent: string; desc: string }[] = [
   {
-    label: 'thegtmos.ai',
+    label: 'theGTMOS.ai',
     url: 'https://thegtmos.ai',
     accent: 'var(--gtmos-teal)',
     desc: 'The GTM operating system — frameworks, playbooks, and live builds for go-to-market engineering.',
   },
   {
-    label: 'thecontentos.ai',
+    label: 'theContentOS.ai',
     url: 'https://thecontentos.ai',
     accent: 'var(--contentos-purple)',
     desc: 'The content operating system — voice-first publishing, repurpose pipelines, and content-as-code.',

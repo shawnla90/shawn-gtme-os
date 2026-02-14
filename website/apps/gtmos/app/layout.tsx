@@ -14,23 +14,23 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'thegtmos.ai',
-    template: '%s | thegtmos.ai',
+    default: 'theGTMOS.ai',
+    template: '%s | theGTMOS.ai',
   },
   description: 'The GTM operating system. Launching soon.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
-    siteName: 'thegtmos.ai',
-    title: 'thegtmos.ai',
+    siteName: 'theGTMOS.ai',
+    title: 'theGTMOS.ai',
     description: 'The GTM operating system. Launching soon.',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'thegtmos.ai',
+    title: 'theGTMOS.ai',
     description: 'The GTM operating system. Launching soon.',
   },
   alternates: {
@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <body>
-        <TerminalChrome title="thegtmos.ai">
+        <TerminalChrome title="theGTMOS.ai">
           <Navigation
-            siteName="thegtmos.ai"
+            siteName="theGTMOS.ai"
             links={[
               { href: '/', label: 'Home' },
               { href: '/log', label: 'Log' },
@@ -60,7 +60,7 @@ export default function RootLayout({
           />
           <main>{children}</main>
           <NetworkBanner currentSite="gtmos" />
-          <Footer siteName="thegtmos.ai" />
+          <Footer siteName="theGTMOS.ai" />
         </TerminalChrome>
       </body>
     </html>

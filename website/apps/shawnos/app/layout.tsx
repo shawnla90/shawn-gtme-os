@@ -14,24 +14,24 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'shawnos.ai',
-    template: '%s | shawnos.ai',
+    default: 'ShawnOS.ai',
+    template: '%s | ShawnOS.ai',
   },
   description: 'GTM engineering, built in public. One monorepo. One operating system.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
-    siteName: 'shawnos.ai',
-    title: 'shawnos.ai',
+    siteName: 'ShawnOS.ai',
+    title: 'ShawnOS.ai',
     description: 'GTM engineering, built in public. One monorepo. One operating system.',
-    images: [{ url: '/og', width: 1200, height: 630, alt: 'shawnos.ai' }],
+    images: [{ url: '/og', width: 1200, height: 630, alt: 'ShawnOS.ai' }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'shawnos.ai',
+    title: 'ShawnOS.ai',
     description: 'GTM engineering, built in public. One monorepo. One operating system.',
     images: ['/og'],
   },
@@ -68,7 +68,7 @@ const personSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'shawnos.ai',
+  name: 'ShawnOS.ai',
   url: SITE_URL,
   description: 'GTM engineering, built in public. One monorepo. One operating system.',
   author: { '@type': 'Person', name: 'Shawn Tenam' },
@@ -90,9 +90,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <TerminalChrome title="shawnos.ai">
+        <TerminalChrome title="ShawnOS.ai">
           <Navigation
-            siteName="shawnos.ai"
+            siteName="ShawnOS.ai"
             links={[
               { href: '/', label: 'Home' },
               { href: '/blog', label: 'Blog' },
@@ -102,7 +102,7 @@ export default function RootLayout({
           />
           <main>{children}</main>
           <NetworkBanner currentSite="shawnos" />
-          <Footer siteName="shawnos.ai" />
+          <Footer siteName="ShawnOS.ai" />
         </TerminalChrome>
       </body>
     </html>

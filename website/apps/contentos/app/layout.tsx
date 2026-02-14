@@ -14,23 +14,23 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'thecontentos.ai',
-    template: '%s | thecontentos.ai',
+    default: 'theContentOS.ai',
+    template: '%s | theContentOS.ai',
   },
   description: 'The content operating system. Launching soon.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
-    siteName: 'thecontentos.ai',
-    title: 'thecontentos.ai',
+    siteName: 'theContentOS.ai',
+    title: 'theContentOS.ai',
     description: 'The content operating system. Launching soon.',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'thecontentos.ai',
+    title: 'theContentOS.ai',
     description: 'The content operating system. Launching soon.',
   },
   alternates: {
@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <body>
-        <TerminalChrome title="thecontentos.ai">
+        <TerminalChrome title="theContentOS.ai">
           <Navigation
-            siteName="thecontentos.ai"
+            siteName="theContentOS.ai"
             links={[
               { href: '/', label: 'Home' },
               { href: '/log', label: 'Log' },
@@ -60,7 +60,7 @@ export default function RootLayout({
           />
           <main>{children}</main>
           <NetworkBanner currentSite="contentos" />
-          <Footer siteName="thecontentos.ai" />
+          <Footer siteName="theContentOS.ai" />
         </TerminalChrome>
       </body>
     </html>

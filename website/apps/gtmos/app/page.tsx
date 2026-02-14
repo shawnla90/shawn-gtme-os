@@ -2,21 +2,21 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllLogs } from '@shawnos/shared/lib'
-import { LogCard } from '@shawnos/shared/components'
+import { LogCard, TypewriterHero } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
-  title: 'thegtmos.ai — the GTM operating system',
+  title: 'theGTMOS.ai — the GTM operating system',
   description:
     'Pipeline orchestration, outbound automation, and partner workflows — running from one repo. The go-to-market operating system, built in public.',
   alternates: { canonical: 'https://thegtmos.ai' },
   openGraph: {
-    title: 'thegtmos.ai — the GTM operating system',
+    title: 'theGTMOS.ai — the GTM operating system',
     description:
       'Pipeline orchestration, outbound automation, and partner workflows — running from one repo.',
     url: 'https://thegtmos.ai',
   },
   twitter: {
-    title: 'thegtmos.ai — the GTM operating system',
+    title: 'theGTMOS.ai — the GTM operating system',
     description:
       'Pipeline orchestration, outbound automation, and partner workflows — running from one repo.',
   },
@@ -32,7 +32,7 @@ const bootLines: { status: string; label: string }[] = [
   { status: 'OK', label: 'outbound stack ... routing' },
   { status: 'OK', label: 'partner engine ... synced' },
   { status: 'OK', label: 'lead magnets ... loaded' },
-  { status: 'OK', label: 'network link ... thecontentos.ai' },
+  { status: 'OK', label: 'network link ... theContentOS.ai' },
 ]
 
 /* ── feature grid data ───────────────────────────── */
@@ -79,27 +79,11 @@ const promptChar: React.CSSProperties = {
   color: 'var(--accent)',
 }
 
-const heroTitle: React.CSSProperties = {
-  fontSize: '28px',
-  fontWeight: 700,
-  color: 'var(--accent)',
-  margin: '0 0 8px 0',
-  lineHeight: 1.2,
-}
-
 const heroLoaded: React.CSSProperties = {
   fontSize: '14px',
   color: 'var(--text-muted)',
   marginBottom: 8,
   fontWeight: 400,
-}
-
-const tagline: React.CSSProperties = {
-  fontSize: '16px',
-  color: 'var(--text-primary)',
-  lineHeight: 1.6,
-  marginBottom: 28,
-  maxWidth: 560,
 }
 
 const ctaRow: React.CSSProperties = {
@@ -206,24 +190,32 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section style={heroSection}>
         <p style={prompt}>
-          <span style={promptChar}>$</span> ./boot thegtmos.ai
+          <span style={promptChar}>$</span> ./boot theGTMOS.ai
         </p>
 
-        <p style={heroLoaded}>&gt; thegtmos.ai loaded</p>
+        <p style={heroLoaded}>&gt; theGTMOS.ai loaded</p>
 
-        <h1 style={heroTitle}>thegtmos.ai</h1>
-
-        <p style={tagline}>
-          the go-to-market operating system. pipeline to close, one repo.
-          every workflow, campaign, and partner playbook runs through the same codebase.
-        </p>
+        <TypewriterHero
+          siteName="theGTMOS.ai"
+          sequences={[
+            {
+              text: 'the go-to-market operating system. pipeline to close, one repo. every workflow, campaign, and partner playbook runs through the same codebase.',
+              pauseAfter: 3000,
+            },
+            {
+              text: 'G.T.M. \u2014 Growth. Targeting. Motion.',
+              color: 'accent',
+              pauseAfter: 4000,
+            },
+          ]}
+        />
 
         <div style={ctaRow}>
           <Link href="/log" style={ctaPrimary}>
             view the build log &rarr;
           </Link>
           <a href="https://shawnos.ai" style={ctaSecondary}>
-            explore shawnos.ai
+            explore ShawnOS.ai
           </a>
         </div>
       </section>

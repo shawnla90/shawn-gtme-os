@@ -2,21 +2,21 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllLogs } from '@shawnos/shared/lib'
-import { LogCard } from '@shawnos/shared/components'
+import { LogCard, TypewriterHero } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
-  title: 'thecontentos.ai — the content operating system',
+  title: 'theContentOS.ai — the content operating system',
   description:
     'One voice across every platform. AI-powered content that sounds like you, not AI slop. Voice engine, platform playbooks, and recursive content loops — from one repo.',
   alternates: { canonical: 'https://thecontentos.ai' },
   openGraph: {
-    title: 'thecontentos.ai — the content operating system',
+    title: 'theContentOS.ai — the content operating system',
     description:
       'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
     url: 'https://thecontentos.ai',
   },
   twitter: {
-    title: 'thecontentos.ai — the content operating system',
+    title: 'theContentOS.ai — the content operating system',
     description:
       'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
   },
@@ -32,7 +32,7 @@ const bootLines: { status: string; label: string }[] = [
   { status: 'OK', label: 'pillar detection ... active' },
   { status: 'OK', label: 'recursive loop ... engaged' },
   { status: 'OK', label: 'platform playbooks ... loaded' },
-  { status: 'OK', label: 'network link ... thegtmos.ai' },
+  { status: 'OK', label: 'network link ... theGTMOS.ai' },
 ]
 
 /* ── system features ─────────────────────────────── */
@@ -114,27 +114,11 @@ const promptChar: React.CSSProperties = {
   color: 'var(--accent)',
 }
 
-const heroTitle: React.CSSProperties = {
-  fontSize: '28px',
-  fontWeight: 700,
-  color: 'var(--accent)',
-  margin: '0 0 8px 0',
-  lineHeight: 1.2,
-}
-
 const heroLoaded: React.CSSProperties = {
   fontSize: '14px',
   color: 'var(--text-muted)',
   marginBottom: 8,
   fontWeight: 400,
-}
-
-const tagline: React.CSSProperties = {
-  fontSize: '16px',
-  color: 'var(--text-primary)',
-  lineHeight: 1.6,
-  marginBottom: 28,
-  maxWidth: 560,
 }
 
 const ctaRow: React.CSSProperties = {
@@ -283,24 +267,32 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section style={heroSection}>
         <p style={promptStyle}>
-          <span style={promptChar}>$</span> ./boot thecontentos.ai
+          <span style={promptChar}>$</span> ./boot theContentOS.ai
         </p>
 
-        <p style={heroLoaded}>&gt; thecontentos.ai loaded</p>
+        <p style={heroLoaded}>&gt; theContentOS.ai loaded</p>
 
-        <h1 style={heroTitle}>thecontentos.ai</h1>
-
-        <p style={tagline}>
-          the content operating system. one voice. every platform. no tab-surfing.
-          speak to your AI and ship content that actually sounds like you.
-        </p>
+        <TypewriterHero
+          siteName="theContentOS.ai"
+          sequences={[
+            {
+              text: 'the content operating system. one voice. every platform. no tab-surfing. speak to your AI and ship content that actually sounds like you.',
+              pauseAfter: 3000,
+            },
+            {
+              text: 'C.O.S. \u2014 Calibrated Output System',
+              color: 'accent',
+              pauseAfter: 4000,
+            },
+          ]}
+        />
 
         <div style={ctaRow}>
           <Link href="/log" style={ctaPrimary}>
             view the build log &rarr;
           </Link>
           <a href="https://shawnos.ai" style={ctaSecondary}>
-            explore shawnos.ai
+            explore ShawnOS.ai
           </a>
         </div>
       </section>

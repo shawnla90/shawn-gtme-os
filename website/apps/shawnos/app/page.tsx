@@ -2,22 +2,22 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllPosts, getAllLogs } from '@shawnos/shared/lib'
-import { PostCard, LogCard } from '@shawnos/shared/components'
+import { PostCard, LogCard, TypewriterHero } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
-  title: 'shawnos.ai — GTM engineering, built in public',
+  title: 'ShawnOS.ai — GTM engineering, built in public',
   description:
     'One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
   alternates: { canonical: 'https://shawnos.ai' },
   openGraph: {
-    title: 'shawnos.ai — GTM engineering, built in public',
+    title: 'ShawnOS.ai — GTM engineering, built in public',
     description:
       'One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
     url: 'https://shawnos.ai',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {
-    title: 'shawnos.ai — GTM engineering, built in public',
+    title: 'ShawnOS.ai — GTM engineering, built in public',
     description:
       'One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
     images: ['/og'],
@@ -32,8 +32,8 @@ const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
 const bootLines: { status: string; label: string }[] = [
   { status: 'OK', label: 'content engine ... online' },
   { status: 'OK', label: 'three-site network ... synced' },
-  { status: 'OK', label: 'gtm engine ... thegtmos.ai' },
-  { status: 'OK', label: 'content os ... thecontentos.ai' },
+  { status: 'OK', label: 'gtm engine ... theGTMOS.ai' },
+  { status: 'OK', label: 'content os ... theContentOS.ai' },
   { status: 'OK', label: 'cursor agent ... active' },
   { status: 'OK', label: 'blog pipeline ... mounted' },
   { status: 'OK', label: 'build-in-public mode ... engaged' },
@@ -63,27 +63,11 @@ const promptChar: React.CSSProperties = {
   color: 'var(--accent)',
 }
 
-const heroTitle: React.CSSProperties = {
-  fontSize: '28px',
-  fontWeight: 700,
-  color: 'var(--accent)',
-  margin: '0 0 8px 0',
-  lineHeight: 1.2,
-}
-
 const heroLoaded: React.CSSProperties = {
   fontSize: '14px',
   color: 'var(--text-muted)',
   marginBottom: 8,
   fontWeight: 400,
-}
-
-const tagline: React.CSSProperties = {
-  fontSize: '16px',
-  color: 'var(--text-primary)',
-  lineHeight: 1.6,
-  marginBottom: 28,
-  maxWidth: 520,
 }
 
 const ctaRow: React.CSSProperties = {
@@ -163,17 +147,25 @@ export default function HomePage() {
       {/* ── Hero ── */}
       <section style={heroSection}>
         <p style={prompt}>
-          <span style={promptChar}>$</span> ./boot shawnos.ai
+          <span style={promptChar}>$</span> ./boot ShawnOS.ai
         </p>
 
-        <p style={heroLoaded}>&gt; shawnos.ai loaded</p>
+        <p style={heroLoaded}>&gt; ShawnOS.ai loaded</p>
 
-        <h1 style={heroTitle}>shawnos.ai</h1>
-
-        <p style={tagline}>
-          GTM engineering, built in public. One monorepo. One operating system.
-          Every skill, post, and campaign runs through the same codebase.
-        </p>
+        <TypewriterHero
+          siteName="ShawnOS.ai"
+          sequences={[
+            {
+              text: 'GTM engineering, built in public. One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.',
+              pauseAfter: 3000,
+            },
+            {
+              text: 'S.H.A.W.N. \u2014 Self-Hosted AI Workspace Node',
+              color: 'accent',
+              pauseAfter: 4000,
+            },
+          ]}
+        />
 
         <div style={ctaRow}>
           <Link href="/blog" style={ctaPrimary}>

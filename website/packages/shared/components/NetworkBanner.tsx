@@ -7,9 +7,9 @@ interface NetworkBannerProps {
 }
 
 const sites: { key: SiteKey; label: string; url: string; accent: string }[] = [
-  { key: 'shawnos', label: 'shawnos.ai', url: 'https://shawnos.ai', accent: 'var(--shawnos-green)' },
-  { key: 'gtmos', label: 'thegtmos.ai', url: 'https://thegtmos.ai', accent: 'var(--gtmos-teal)' },
-  { key: 'contentos', label: 'thecontentos.ai', url: 'https://thecontentos.ai', accent: 'var(--contentos-purple)' },
+  { key: 'shawnos', label: 'ShawnOS.ai', url: 'https://shawnos.ai', accent: 'var(--shawnos-green)' },
+  { key: 'gtmos', label: 'theGTMOS.ai', url: 'https://thegtmos.ai', accent: 'var(--gtmos-teal)' },
+  { key: 'contentos', label: 'theContentOS.ai', url: 'https://thecontentos.ai', accent: 'var(--contentos-purple)' },
 ]
 
 export function NetworkBanner({ currentSite }: NetworkBannerProps) {

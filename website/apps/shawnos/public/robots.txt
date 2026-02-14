@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://shawnos.ai
+
+# Sitemaps
+Sitemap: https://shawnos.ai/sitemap.xml
