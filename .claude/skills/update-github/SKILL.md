@@ -63,6 +63,44 @@ Also scan for patterns that look like:
 
 **Important**: Exclude `.claude/blocklist.txt` itself from the scan results.
 
+### 2c: IP Exposure Scan
+
+Before pushing, check all **tracked files** for proprietary algorithm patterns that should be in `scripts/` (gitignored), not in public code.
+
+Scan for these patterns in tracked files:
+
+```bash
+git ls-files | xargs grep -l 'def calculate_xp\|def score_output\|SCORING_WEIGHTS\s*=\|XP_FORMULA\s*=\|# Proprietary algorithm:'
+```
+
+**Patterns to flag:**
+- `def calculate_xp` or `def score_output` → Core XP/scoring functions
+- `SCORING_WEIGHTS = {` or `XP_FORMULA =` → Hardcoded scoring formulas
+- `# Proprietary algorithm:` → Explicit proprietary comment markers
+
+**If any match is found:**
+
+1. **Check file location:**
+   - If in `scripts/` → Verify it's gitignored, flag if somehow tracked
+   - If in `website/` or other public paths → **IP LEAK — needs action**
+
+2. **Resolution options:**
+   - **Option A**: Move file to `scripts/` and add to `.gitignore`
+   - **Option B**: Redact the proprietary code and replace with placeholder:
+     ```python
+     # [Proprietary calculation — see internal docs]
+     # Contact: shawn@example.com for licensing
+     ```
+   - **Option C**: If it's a demo/example, rename functions to `example_calculate_xp` and add disclaimer comment
+
+3. **Report to user:**
+   - Show which files contain proprietary patterns
+   - Show the specific lines matched
+   - Recommend which resolution option to use
+   - **Hard block on pushing** until resolved
+
+**Note:** This protects trade secrets (scoring algorithms, XP formulas) from accidental exposure while allowing architectural patterns and UI code to remain public.
+
 ## Step 3: `.gitignore` Audit
 
 Verify these entries exist in `.gitignore`:

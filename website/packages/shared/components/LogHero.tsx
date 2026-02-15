@@ -1,3 +1,10 @@
+/**
+ * ShawnOS — Proprietary System Architecture
+ * Copyright (c) 2026 Shawn Tenam
+ * Licensed under ShawnOS Proprietary License v1.0
+ * See LICENSE.md for terms
+ */
+
 import React from 'react'
 import type { LogAggregates } from '../lib/logs'
 import { AvatarBadge } from './AvatarBadge'
