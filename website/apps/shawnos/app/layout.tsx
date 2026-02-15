@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
-import { TerminalChrome, Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -90,21 +90,19 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <TerminalChrome title="ShawnOS.ai">
-          <Navigation
-            siteName="ShawnOS.ai"
-            links={[
-              { href: '/', label: 'Home' },
-              { href: '/blog', label: 'Blog' },
-              { href: '/log', label: 'Log' },
-              { href: '/rpg-preview', label: 'RPG' },
-              { href: '/about', label: 'About' },
-            ]}
-          />
-          <main>{children}</main>
-          <NetworkBanner currentSite="shawnos" />
-          <Footer siteName="ShawnOS.ai" />
-        </TerminalChrome>
+        <Navigation
+          siteName="ShawnOS.ai"
+          links={[
+            { href: '/', label: 'Home' },
+            { href: '/blog', label: 'Blog' },
+            { href: '/log', label: 'Log' },
+            { href: '/rpg-preview', label: 'RPG' },
+            { href: '/about', label: 'About' },
+          ]}
+        />
+        <main>{children}</main>
+        <NetworkBanner currentSite="shawnos" />
+        <Footer siteName="ShawnOS.ai" />
       </body>
     </html>
   )

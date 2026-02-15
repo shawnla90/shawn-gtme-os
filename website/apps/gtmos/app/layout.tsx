@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
-import { TerminalChrome, Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import './globals.css'
 
 const SITE_URL = 'https://thegtmos.ai'
@@ -50,18 +50,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <body>
-        <TerminalChrome title="theGTMOS.ai">
-          <Navigation
-            siteName="theGTMOS.ai"
-            links={[
-              { href: '/', label: 'Home' },
-              { href: '/log', label: 'Log' },
-            ]}
-          />
-          <main>{children}</main>
-          <NetworkBanner currentSite="gtmos" />
-          <Footer siteName="theGTMOS.ai" />
-        </TerminalChrome>
+        <Navigation
+          siteName="theGTMOS.ai"
+          links={[
+            { href: '/', label: 'Home' },
+            { href: '/log', label: 'Log' },
+          ]}
+        />
+        <main>{children}</main>
+        <NetworkBanner currentSite="gtmos" />
+        <Footer siteName="theGTMOS.ai" />
       </body>
     </html>
   )

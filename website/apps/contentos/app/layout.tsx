@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
-import { TerminalChrome, Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import './globals.css'
 
 const SITE_URL = 'https://thecontentos.ai'
@@ -50,18 +50,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <body>
-        <TerminalChrome title="theContentOS.ai">
-          <Navigation
-            siteName="theContentOS.ai"
-            links={[
-              { href: '/', label: 'Home' },
-              { href: '/log', label: 'Log' },
-            ]}
-          />
-          <main>{children}</main>
-          <NetworkBanner currentSite="contentos" />
-          <Footer siteName="theContentOS.ai" />
-        </TerminalChrome>
+        <Navigation
+          siteName="theContentOS.ai"
+          links={[
+            { href: '/', label: 'Home' },
+            { href: '/log', label: 'Log' },
+          ]}
+        />
+        <main>{children}</main>
+        <NetworkBanner currentSite="contentos" />
+        <Footer siteName="theContentOS.ai" />
       </body>
     </html>
   )

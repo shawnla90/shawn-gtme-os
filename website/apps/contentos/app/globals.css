@@ -7,9 +7,9 @@
 }
 
 /* === Base body styles === */
-body {
+html body {
   margin: 0;
-  padding: 0;
+  padding: 24px;
   background: var(--canvas);
   color: var(--text-primary);
   font-family: var(--font-mono);
