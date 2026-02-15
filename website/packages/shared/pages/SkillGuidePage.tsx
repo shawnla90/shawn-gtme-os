@@ -608,9 +608,14 @@ export function SkillGuidePage() {
               grab the prompt &rarr;
             </Link>
             <br />
-            <Link href="/api" style={ctaSecondary}>
+            <a
+              href="https://shawnos.ai/api"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={ctaSecondary}
+            >
               want the RPG layer too? &rarr;
-            </Link>
+            </a>
           </div>
         </section>
 
