@@ -108,7 +108,7 @@ export function tierColor(tier: number, variant?: 'early' | 'advanced'): string 
 
 /**
  * Returns public URLs for tier avatar assets (idle GIF, action GIF, static PNG).
- * Use with the /progression/avatars route that serves files from data/progression/avatars/.
+ * Files are served from public/progression/avatars/ (static assets).
  *
  * @param tier    - Avatar tier (1-6)
  * @param variant - 'early' = basic assets (default); 'advanced' = tier-{n}-*-advanced.gif/png
