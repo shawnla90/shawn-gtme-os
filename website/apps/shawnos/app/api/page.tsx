@@ -287,7 +287,7 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             <p>
               Type definitions are available in the{' '}
               <a
-                href="https://github.com/shawntenam/shawn-gtme-os/blob/main/website/packages/shared/lib/rpg.ts"
+                href="https://github.com/shawnla90/shawn-gtme-os/blob/main/website/packages/shared/lib/rpg.ts"
                 className="text-green-400 underline hover:text-green-300"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -376,7 +376,7 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
           <p className="mt-6 text-gray-400">
             I built this using Claude Code and Cursor IDE. The full repo is on{' '}
             <a
-              href="https://github.com/shawntenam/shawn-gtme-os"
+              href="https://github.com/shawnla90/shawn-gtme-os"
               className="text-green-400 underline hover:text-green-300"
               target="_blank"
               rel="noopener noreferrer"
@@ -431,13 +431,13 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
               description="Main landing page and RPG progression dashboard"
             />
             <ResourceLink
-              href="https://github.com/shawntenam/shawn-gtme-os"
+              href="https://github.com/shawnla90/shawn-gtme-os"
               title="GitHub Repository"
               description="Full source code and documentation"
               external
             />
             <ResourceLink
-              href="https://github.com/shawntenam/shawn-gtme-os/blob/main/README.md"
+              href="https://github.com/shawnla90/shawn-gtme-os/blob/main/README.md"
               title="README"
               description="Project overview and setup instructions"
               external

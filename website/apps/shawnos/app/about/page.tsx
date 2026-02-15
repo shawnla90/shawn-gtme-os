@@ -53,7 +53,7 @@ const socials: { label: string; url: string }[] = [
   { label: 'LinkedIn', url: 'https://linkedin.com/in/shawntenam' },
   { label: 'X / Twitter', url: 'https://x.com/shawntenam' },
   { label: 'Substack', url: 'https://shawntenam.substack.com' },
-  { label: 'GitHub', url: 'https://github.com/shawntenam' },
+  { label: 'GitHub', url: 'https://github.com/shawnla90' },
 ]
 
 /* ── styles ───────────────────────────────────────── */

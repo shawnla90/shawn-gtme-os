@@ -608,7 +608,7 @@ export function SkillGuidePage() {
               grab the prompt &rarr;
             </Link>
             <br />
-            <Link href="/log/build-your-own#rpg" style={ctaSecondary}>
+            <Link href="/api" style={ctaSecondary}>
               want the RPG layer too? &rarr;
             </Link>
           </div>

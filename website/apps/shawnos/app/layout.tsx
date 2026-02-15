@@ -59,7 +59,7 @@ const personSchema = {
     'https://linkedin.com/in/shawntenam',
     'https://x.com/shawntenam',
     'https://shawntenam.substack.com',
-    'https://github.com/shawntenam',
+    'https://github.com/shawnla90',
     'https://thegtmos.ai',
     'https://thecontentos.ai',
   ],
@@ -98,6 +98,7 @@ export default function RootLayout({
             { href: '/log', label: 'Log' },
             { href: '/rpg-preview', label: 'RPG' },
             { href: '/about', label: 'About' },
+            { href: '/api', label: 'API' },
           ]}
         />
         <main>{children}</main>
