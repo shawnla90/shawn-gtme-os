@@ -51,6 +51,7 @@ Also triggers on: "what did I do today", "what's next", "daily progress", "daily
 
 **IMPORTANT**: Always generate the dashboard image on every `/tracker` call.
 
+0. **Pre-flight Scoring Check** (see Pre-flight Scoring Consistency Check section below).
 1. Run the scanner (auto-detects accomplishments + Claude Code tokens + computes score):
    ```bash
    python3 scripts/daily_scan.py
@@ -234,6 +235,23 @@ Same as `/tracker` — always generates the image. Kept for backward compatibili
 
 No image for weekly view yet — that's a future enhancement.
 
+## Pre-flight Scoring Consistency Check
+
+Before every `/tracker` run (Step 0), the agent verifies that the scoring tables in this SKILL.md match the actual code in `scripts/daily_scan.py`. The **code is always the source of truth** — this SKILL.md is documentation that may drift.
+
+### Protocol
+
+1. Read `SCORE_WEIGHTS` dict from `scripts/daily_scan.py` (grep for the dict definition).
+2. Read `GRADE_THRESHOLDS` from `scripts/daily_scan.py`.
+3. Read `FEATURE_COMPONENTS` from `scripts/daily_scan.py`.
+4. Compare against the **Point Weights** table and **Grade Thresholds** table in this SKILL.md.
+5. If any mismatch is found: **use the code as source of truth** — note the drift in the summary output and flag it for the user, but **do NOT block the run**.
+6. If new types exist in code but not in this SKILL.md: mention them in the summary under a **"Scoring Drift"** note so the user knows the documentation needs updating.
+
+### Why This Exists
+
+The scoring logic in `daily_scan.py` evolves faster than this SKILL.md (new weight tiers, new classification types, threshold changes). Without this check, the agent may follow stale documentation and report incorrect expected scores. Running a quick diff at Step 0 ensures the agent always operates against the real scoring model.
+
 ## Auto-Detection: How It Works
 
 ### Accomplishments (git + content + mtime)
@@ -280,12 +298,41 @@ Each accomplishment includes:
 - `clients/client/{name}/workflows/*.md` -> `client_workflow`
 - `clients/client/{name}/resources/*.md` -> `client_resource`
 
+**Website (noise-filtered — skips `node_modules/`, `.next/`, `.turbo/`, lock files):**
+- `website/turbo.json` -> `monorepo_build` (50)
+- `website/apps/<app>/app/page.tsx` (home route, empty path) -> `landing_page` (25)
+- `website/apps/<app>/app/**/page.tsx` (non-home routes) -> `website_page` (5)
+- `website/apps/<app>/app/layout.tsx` -> `website_page` (5)
+- `website/apps/<app>/app/**/route.ts|tsx` -> `website_route` (3)
+- `website/packages/shared/components/*.tsx` -> `website_component` (5), or `feature_system` (30) if stem in FEATURE_COMPONENTS
+- `website/packages/shared/pages/*.tsx` -> `website_page` (5), or `feature_system` (30) if stem in FEATURE_COMPONENTS
+- `website/packages/shared/lib/*.ts` -> `website_lib` (3)
+- `website/packages/shared/index.ts` (barrel export) -> `website_lib` (3)
+- `website/**/*.css` -> `website_style` (2)
+- `website/**/taxonomy.yaml` -> `code_infra` (15)
+- `website/**/next.config.ts` -> `code_infra` (15)
+- `website/**/tsconfig.json|vercel.json|package.json` -> `code_infra` (15)
+
+**FEATURE_COMPONENTS** — components/pages promoted to `feature_system` (30 pts):
+`{DailyLogView, LogCard, LogHero, LogDetailIntro, AvatarBadge, TypewriterHero, SkillGuidePage}`
+
 **Skills & System:**
-- `.cursor/skills/*/SKILL.md` -> `skill_updated`
-- `.claude/skills/*/SKILL.md` -> `skill_updated`
-- `.cursor/rules/*.md` -> `cursor_rule`
-- `workflows/*.md` -> `workflow_updated`
-- `*.py` -> `script`
+- `.cursor/skills/*/SKILL.md` -> `skill_updated` (5)
+- `.claude/skills/*/SKILL.md` -> `skill_updated` (5)
+- `.cursor/rules/*.md` -> `cursor_rule` (3)
+- `workflows/*.md` -> `workflow_updated` (5)
+
+**Python Scripts (tiered by complexity):**
+- `scripts/rpg_sprites.py` -> `system_engine` (50) — one-of-a-kind multi-layered system
+- `scripts/<slug>.py` where slug in FEATURE_SCRIPTS -> `feature_script` (30)
+- `scripts/<slug>.py` with 400+ LOC (auto-detected) -> `complex_script` (25)
+- `scripts/<slug>.py` (all other) -> `code_infra` (15)
+- Other `*.py` outside `scripts/` -> `script` (2)
+
+**FEATURE_SCRIPTS** — named scripts promoted to `feature_script` (30 pts):
+`{avatar_generator, progression_engine, daily_scan, daily_dashboard}`
+
+**LOC Threshold**: Scripts in `scripts/` not matching `system_engine` or FEATURE_SCRIPTS are auto-checked for line count. If >= 400 lines, they score as `complex_script` (25 pts) instead of `code_infra` (15 pts).
 
 ### Token Usage (auto-detected from Claude Code)
 
@@ -313,21 +360,31 @@ The scanner auto-parses Claude Code session transcripts:
 | Item Type | Type Code | Points |
 |-----------|-----------|--------|
 | Monorepo / project scaffold | `monorepo_build` / `project_scaffold` | 50 |
-| Feature system (RPG, dashboard, complex feature) | `feature_system` | 30 |
+| System engine (rpg_sprites — multi-layered animation/timer/unlock) | `system_engine` | 50 |
+| Feature system (RPG, dashboard, complex shared components) | `feature_system` | 30 |
+| Feature script (named complex scripts in FEATURE_SCRIPTS) | `feature_script` | 30 |
 | Landing page / full page build | `landing_page` / `full_page_build` | 25 |
-| Code infrastructure (scripts, config, CI/CD) | `code_infra` | 15 |
+| Complex script (auto-detected: 400+ LOC, not in named sets) | `complex_script` | 25 |
+| Code infrastructure (tsconfig, next.config, CI) | `code_infra` | 15 |
 | Finalized content (in `final/`) | `*_final` | 10 |
 | Partner/client onboard (SKILL.md) | `partner_onboard` / `client_onboard` | 8 |
 | Manual accomplishment | `manual` | 5 |
-| New skill or workflow | `skill_updated` / `workflow_updated` | 5 |
+| Skill updated or created | `skill_updated` / `skill_created` | 5 |
+| Workflow updated | `workflow_updated` | 5 |
 | Partner/client prompt | `partner_prompt` / `client_prompt` | 5 |
 | Partner/client research | `partner_research` / `client_research` | 5 |
 | Partner/client workflow | `partner_workflow` / `client_workflow` | 5 |
 | Lead magnet | `lead_magnet` | 5 |
+| Website page (app/**/page.tsx) | `website_page` | 5 |
+| Website component (shared UI component) | `website_component` | 5 |
 | Cursor rule | `cursor_rule` | 3 |
+| Website lib (shared utility / lib) | `website_lib` | 3 |
+| Website route (API route, RSS, OG image) | `website_route` | 3 |
 | Draft content (in `drafts/`) | `*_draft` | 2 |
 | Partner/client resource | `partner_resource` / `client_resource` | 2 |
-| Script | `script` | 2 |
+| Website style (CSS / design tokens) | `website_style` | 2 |
+| Script (fallback .py not in named sets) | `script` | 2 |
+| Website config (fallback website config) | `website_config` | 1 |
 | Pipeline draft (untouched) | — | 0 |
 
 ### Computed Metrics
@@ -352,6 +409,18 @@ The scanner auto-parses Claude Code session transcripts:
 - **Score text**: "34 pts" next to the badge
 - **Score breakdown**: Compact formula in the subheader area (e.g., `10+10+5+5+2+2 = 34 pts`)
 - **Efficiency**: Shown in the token panel (e.g., `Efficiency: 2.6 pts/$`)
+
+#### Economics Panel (right panel, displayed when token data exists)
+
+The dashboard renders an **Economics** section in the right panel when `agent_cost` or `dev_equivalent_cost` stats are present. It shows:
+
+- **Agent cost**: Total token/API cost for the day
+- **Dev equivalent**: Estimated cost if a developer produced the same output (based on Code LOC + Content words)
+- **Savings**: Dev equivalent minus agent cost
+- **ROI**: Multiplier (dev equivalent / agent cost)
+- **LOC breakdown**: Code LOC with dev equiv, Content words with dev equiv, Data LOC (not valued)
+
+Below Economics, an **Efficiency** sub-section shows shipped vs draft counts, ship rate, lines added, and words written.
 
 ## Data
 
