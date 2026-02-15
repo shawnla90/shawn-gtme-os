@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import fs from 'fs'
 import path from 'path'
+import { resolveDataRoot } from '@shawnos/shared/lib'
 
-const AVATAR_DIR = path.join(process.cwd(), '../../../data/progression/avatars')
+const AVATAR_DIR = path.join(resolveDataRoot(), 'progression', 'avatars')
 
 const MIME: Record<string, string> = {
   '.gif': 'image/gif',

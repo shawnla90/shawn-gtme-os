@@ -5,6 +5,7 @@
   "exports": {
     "./components": "./components/index.ts",
     "./lib": "./lib/index.ts",
+    "./lib/rpg": "./lib/rpg.ts",
     "./pages/SkillGuidePage": "./pages/SkillGuidePage.tsx",
     "./styles": "./styles/tokens.css"
   },

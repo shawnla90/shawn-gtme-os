@@ -26,3 +26,4 @@ export {
   getClassAvatarUrls,
 } from './rpg'
 export { getRPGProfile, getAvatarPath, getAvatarGifPath, hasRPGData } from './rpg.server'
+export { resolveDataRoot } from './dataRoot'

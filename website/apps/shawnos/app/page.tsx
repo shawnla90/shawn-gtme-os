@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
-import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile } from '@shawnos/shared/lib'
+import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
 import { PostCard, LogCard, TypewriterHero, AvatarBadge } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
 }
 
+const DATA_ROOT = resolveDataRoot()
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
-const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
-const DATA_ROOT = path.join(process.cwd(), '../../../data')
+const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
 
 /* ── boot log entries ────────────────────────────── */
 

@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import path from 'path'
-import { getLogDates, getLogByDate } from '@shawnos/shared/lib'
+import { getLogDates, getLogByDate, resolveDataRoot } from '@shawnos/shared/lib'
 import { DailyLogView, LogDetailIntro } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://shawnos.ai'
-const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
+const LOG_DIR = path.join(resolveDataRoot(), 'daily-log')
 
 /* ── Static generation ─────────────────────────── */
 

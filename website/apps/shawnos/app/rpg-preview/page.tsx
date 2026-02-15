@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
-import { TITLE_TABLE, getTierAvatarUrls, getAvatarUrlsForProfile, getClassAvatarUrls } from '@shawnos/shared/lib'
-import type { RPGProfile, RPGClass } from '@shawnos/shared/lib'
-import { AvatarBadge } from '@shawnos/shared/components'
+import { TITLE_TABLE, getRPGProfile, resolveDataRoot } from '@shawnos/shared/lib'
+import { TierProgressionGrid } from './TierProgressionGrid'
+import { ClassShowcaseGrid } from './ClassShowcaseGrid'
+import { ALL_CLASSES } from './constants'
+
+const DATA_ROOT = resolveDataRoot()
 
 export const metadata: Metadata = {
   title: 'RPG Preview | ShawnOS.ai',
@@ -9,41 +12,6 @@ export const metadata: Metadata = {
 }
 
 /* ── helpers ──────────────────────────────────────── */
-
-const ALL_CLASSES: RPGClass[] = ['Builder', 'Scribe', 'Strategist', 'Alchemist', 'Polymath']
-
-/** Build a mock RPGProfile for a given tier index. */
-function mockProfileForTier(tierIdx: number): RPGProfile {
-  const tier = TITLE_TABLE[tierIdx]!
-  const nextTier = TITLE_TABLE[tierIdx + 1] ?? null
-  return {
-    name: 'Operator',
-    title: tier.title,
-    level: tier.level,
-    xp_total: tier.xp_required,
-    xp_next_level: nextTier ? nextTier.xp_required : 999999,
-    class: ALL_CLASSES[tierIdx % ALL_CLASSES.length]!,
-    avatar_tier: tier.avatar_tier,
-    milestones: [],
-    updated_at: new Date().toISOString(),
-  }
-}
-
-/** Build a mock RPGProfile for a given class at level 20. */
-function mockProfileForClass(rpgClass: RPGClass): RPGProfile {
-  const tier = TITLE_TABLE.find((t) => t.level === 20) ?? TITLE_TABLE[4]!
-  return {
-    name: 'Operator',
-    title: tier.title,
-    level: tier.level,
-    xp_total: tier.xp_required,
-    xp_next_level: 18000,
-    class: rpgClass,
-    avatar_tier: tier.avatar_tier,
-    milestones: [],
-    updated_at: new Date().toISOString(),
-  }
-}
 
 function formatXP(xp: number): string {
   return xp.toLocaleString()
@@ -75,27 +43,6 @@ const divider: React.CSSProperties = {
   border: 'none',
   borderTop: '1px solid var(--border)',
   margin: '48px 0',
-}
-
-const grid: React.CSSProperties = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
-  gap: 20,
-}
-
-const cardWrapper: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: 8,
-}
-
-const tierLabel: React.CSSProperties = {
-  fontSize: '10px',
-  color: 'var(--text-muted)',
-  textTransform: 'uppercase',
-  letterSpacing: '0.08em',
-  textAlign: 'center',
 }
 
 const tableWrapper: React.CSSProperties = {
@@ -140,6 +87,9 @@ const tdAccent: React.CSSProperties = {
 /* ── page ────────────────────────────────────────── */
 
 export default function RPGPreviewPage() {
+  const profile = getRPGProfile(DATA_ROOT)
+  const currentAvatarTier = profile?.avatar_tier ?? 0
+
   return (
     <div style={page}>
       {/* ── Header ── */}
@@ -166,7 +116,7 @@ export default function RPGPreviewPage() {
 
       <hr style={divider} />
 
-      {/* ── Section 1: Full Title Progression ── */}
+      {/* ── Section 1: Full Title Progression (client component with click-to-reveal) ── */}
       <section>
         <h2 style={sectionHeading}>
           <span style={promptChar}>$</span>{' '}
@@ -175,39 +125,7 @@ export default function RPGPreviewPage() {
           </span>
         </h2>
 
-        <div style={grid}>
-          {TITLE_TABLE.map((tier, idx) => {
-            const profile = mockProfileForTier(idx)
-            const nextTier = TITLE_TABLE[idx + 1] ?? null
-            const urls = getAvatarUrlsForProfile(profile)
-            const variant =
-              idx % 2 === 1 || tier.avatar_tier === 6 ? 'advanced' : 'early'
-            return (
-              <div key={tier.level} style={cardWrapper}>
-                <AvatarBadge
-                  size="compact"
-                  profile={profile}
-                  avatarSrc={urls.static}
-                  avatarIdleSrc={urls.idle}
-                  avatarActionSrc={urls.action}
-                />
-                <div style={tierLabel}>
-                  Tier {tier.avatar_tier} · {variant} · {formatXP(tier.xp_required)} XP
-                </div>
-                {nextTier && (
-                  <div style={{ ...tierLabel, opacity: 0.5 }}>
-                    next → LVL {nextTier.level}
-                  </div>
-                )}
-                {!nextTier && (
-                  <div style={{ ...tierLabel, color: 'var(--accent)' }}>
-                    ★ MAX RANK
-                  </div>
-                )}
-              </div>
-            )
-          })}
-        </div>
+        <TierProgressionGrid currentAvatarTier={currentAvatarTier} />
       </section>
 
       <hr style={divider} />
@@ -221,27 +139,7 @@ export default function RPGPreviewPage() {
           </span>
         </h2>
 
-        <div style={{ ...grid, gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))' }}>
-          {ALL_CLASSES.map((rpgClass) => {
-            const profile = mockProfileForClass(rpgClass)
-            // Use class-specific URLs instead of generic tier URLs
-            const urls = getClassAvatarUrls(rpgClass)
-            return (
-              <div key={rpgClass} style={cardWrapper}>
-                <AvatarBadge
-                  size="compact"
-                  profile={profile}
-                  avatarSrc={urls.static}
-                  avatarIdleSrc={urls.idle}
-                  avatarActionSrc={urls.action}
-                />
-                <div style={{ ...tierLabel, color: 'var(--accent)' }}>
-                  {rpgClass}
-                </div>
-              </div>
-            )
-          })}
-        </div>
+        <ClassShowcaseGrid currentClass={profile?.class ?? 'Polymath'} />
       </section>
 
       <hr style={divider} />
@@ -298,7 +196,7 @@ export default function RPGPreviewPage() {
           opacity: 0.6,
         }}
       >
-        &gt; {TITLE_TABLE.length} tiers · {ALL_CLASSES.length} classes · preview only — not linked in navigation_
+        &gt; {TITLE_TABLE.length} tiers · {ALL_CLASSES.length} classes · interactive reveal preview_
       </div>
     </div>
   )

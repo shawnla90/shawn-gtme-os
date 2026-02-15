@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
-import { getAllLogs, getLogAggregates, getRPGProfile, getAvatarUrlsForProfile } from '@shawnos/shared/lib'
+import { getAllLogs, getLogAggregates, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
 import { LogCard, LogHero } from '@shawnos/shared/components'
 
-const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
-const DATA_ROOT = path.join(process.cwd(), '../../../data')
+const DATA_ROOT = resolveDataRoot()
+const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
 
 export const metadata: Metadata = {
   title: 'Daily Build Log',
