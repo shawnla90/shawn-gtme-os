@@ -46,7 +46,7 @@
     {
       "type": "partner_prompt",
       "title": "partner campaign copy",
-      "path": "clients/partner/connext/prompts/campaign-copy.md",
+      "path": "clients/partner/globex/prompts/campaign-copy.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 286,
@@ -56,7 +56,7 @@
     {
       "type": "partner_resource",
       "title": "partner pre call",
-      "path": "clients/partner/connext/resources/transcripts/pre-call.md",
+      "path": "clients/partner/globex/resources/transcripts/pre-call.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 17,
@@ -76,7 +76,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign patterns",
-      "path": "clients/partner/elauwit/workflows/campaign-patterns.md",
+      "path": "clients/partner/acme/workflows/campaign-patterns.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 359,
@@ -96,7 +96,7 @@
     {
       "type": "script",
       "title": "slack_bot",
-      "path": "clients/partner/elauwit/workflows/slack_bot.py",
+      "path": "clients/partner/acme/workflows/slack_bot.py",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 500,
@@ -126,7 +126,7 @@
     {
       "type": "partner_resource",
       "title": "partner contacts",
-      "path": "clients/partner/connext/resources/contacts.md",
+      "path": "clients/partner/globex/resources/contacts.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 26,
@@ -136,7 +136,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign patterns",
-      "path": "clients/partner/exol/workflows/campaign-patterns.md",
+      "path": "clients/partner/initech/workflows/campaign-patterns.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 335,
@@ -146,7 +146,7 @@
     {
       "type": "partner_workflow",
       "title": "partner domain management",
-      "path": "clients/partner/elauwit/workflows/domain-management.md",
+      "path": "clients/partner/acme/workflows/domain-management.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 265,
@@ -166,7 +166,7 @@
     {
       "type": "partner_research",
       "title": "partner strategy",
-      "path": "clients/partner/connext/research/strategy.md",
+      "path": "clients/partner/globex/research/strategy.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 424,
@@ -176,7 +176,7 @@
     {
       "type": "partner_prompt",
       "title": "partner web reveal qualification",
-      "path": "clients/partner/connext/prompts/web-reveal-qualification.md",
+      "path": "clients/partner/globex/prompts/web-reveal-qualification.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 297,
@@ -186,7 +186,7 @@
     {
       "type": "partner_workflow",
       "title": "partner automation setup",
-      "path": "clients/partner/elauwit/workflows/automation-setup.md",
+      "path": "clients/partner/acme/workflows/automation-setup.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 499,
@@ -196,7 +196,7 @@
     {
       "type": "partner_research",
       "title": "partner tam",
-      "path": "clients/partner/connext/research/tam.md",
+      "path": "clients/partner/globex/research/tam.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 271,
@@ -216,7 +216,7 @@
     {
       "type": "partner_resource",
       "title": "partner roadmap",
-      "path": "clients/partner/connext/resources/transcripts/roadmap.md",
+      "path": "clients/partner/globex/resources/transcripts/roadmap.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 22,
@@ -226,7 +226,7 @@
     {
       "type": "partner_resource",
       "title": "partner pre call",
-      "path": "clients/partner/elauwit/resources/transcripts/pre-call.md",
+      "path": "clients/partner/acme/resources/transcripts/pre-call.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 17,
@@ -236,7 +236,7 @@
     {
       "type": "partner_research",
       "title": "partner personas",
-      "path": "clients/partner/exol/research/personas.md",
+      "path": "clients/partner/initech/research/personas.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 497,
@@ -246,7 +246,7 @@
     {
       "type": "script",
       "title": "slack_notifier",
-      "path": "clients/partner/elauwit/workflows/slack_notifier.py",
+      "path": "clients/partner/acme/workflows/slack_notifier.py",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 453,
@@ -286,7 +286,7 @@
     {
       "type": "partner_resource",
       "title": "partner contacts",
-      "path": "clients/partner/elauwit/resources/contacts.md",
+      "path": "clients/partner/acme/resources/contacts.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 73,
@@ -336,7 +336,7 @@
     {
       "type": "partner_prompt",
       "title": "partner signal retrieval",
-      "path": "clients/partner/connext/prompts/signal-retrieval.md",
+      "path": "clients/partner/globex/prompts/signal-retrieval.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 369,
@@ -366,7 +366,7 @@
     {
       "type": "partner_resource",
       "title": "partner pre call",
-      "path": "clients/partner/exol/resources/transcripts/pre-call.md",
+      "path": "clients/partner/initech/resources/transcripts/pre-call.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 18,
@@ -396,7 +396,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign monitoring",
-      "path": "clients/partner/connext/workflows/campaign-monitoring.md",
+      "path": "clients/partner/globex/workflows/campaign-monitoring.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 182,
@@ -406,7 +406,7 @@
     {
       "type": "partner_workflow",
       "title": "partner tam identification",
-      "path": "clients/partner/connext/workflows/tam-identification.md",
+      "path": "clients/partner/globex/workflows/tam-identification.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 387,
@@ -416,7 +416,7 @@
     {
       "type": "partner_resource",
       "title": "partner session 01",
-      "path": "clients/partner/connext/resources/transcripts/session-01.md",
+      "path": "clients/partner/globex/resources/transcripts/session-01.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 19,
@@ -426,7 +426,7 @@
     {
       "type": "partner_onboard",
       "title": "partner onboard skill",
-      "path": "clients/partner/connext/SKILL.md",
+      "path": "clients/partner/globex/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 399,
@@ -486,7 +486,7 @@
     {
       "type": "partner_research",
       "title": "partner pain points",
-      "path": "clients/partner/connext/research/pain-points.md",
+      "path": "clients/partner/globex/research/pain-points.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 357,
@@ -536,7 +536,7 @@
     {
       "type": "partner_prompt",
       "title": "partner location count validation",
-      "path": "clients/partner/connext/prompts/location-count-validation.md",
+      "path": "clients/partner/globex/prompts/location-count-validation.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 318,
@@ -546,7 +546,7 @@
     {
       "type": "script",
       "title": "content_capture",
-      "path": "clients/partner/elauwit/workflows/content_capture.py",
+      "path": "clients/partner/acme/workflows/content_capture.py",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 369,
@@ -556,7 +556,7 @@
     {
       "type": "partner_research",
       "title": "partner pain points",
-      "path": "clients/partner/exol/research/pain-points.md",
+      "path": "clients/partner/initech/research/pain-points.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 331,
@@ -566,7 +566,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign monitoring",
-      "path": "clients/partner/elauwit/workflows/campaign-monitoring.md",
+      "path": "clients/partner/acme/workflows/campaign-monitoring.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 349,
@@ -586,7 +586,7 @@
     {
       "type": "partner_prompt",
       "title": "partner campaign copy",
-      "path": "clients/partner/elauwit/prompts/campaign-copy.md",
+      "path": "clients/partner/acme/prompts/campaign-copy.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 373,
@@ -596,7 +596,7 @@
     {
       "type": "partner_research",
       "title": "partner icp",
-      "path": "clients/partner/connext/research/icp.md",
+      "path": "clients/partner/globex/research/icp.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 296,
@@ -606,7 +606,7 @@
     {
       "type": "partner_resource",
       "title": "partner contacts",
-      "path": "clients/partner/exol/resources/contacts.md",
+      "path": "clients/partner/initech/resources/contacts.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 27,
@@ -616,7 +616,7 @@
     {
       "type": "partner_workflow",
       "title": "partner slack integration",
-      "path": "clients/partner/elauwit/workflows/slack-integration.md",
+      "path": "clients/partner/acme/workflows/slack-integration.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 1399,
@@ -626,7 +626,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign monitoring",
-      "path": "clients/partner/exol/workflows/campaign-monitoring.md",
+      "path": "clients/partner/initech/workflows/campaign-monitoring.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 246,
@@ -676,7 +676,7 @@
     {
       "type": "partner_resource",
       "title": "partner session 01",
-      "path": "clients/partner/exol/resources/transcripts/session-01.md",
+      "path": "clients/partner/initech/resources/transcripts/session-01.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 20,
@@ -686,7 +686,7 @@
     {
       "type": "partner_resource",
       "title": "partner roadmap",
-      "path": "clients/partner/elauwit/resources/transcripts/roadmap.md",
+      "path": "clients/partner/acme/resources/transcripts/roadmap.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 22,
@@ -706,7 +706,7 @@
     {
       "type": "partner_workflow",
       "title": "partner domain management",
-      "path": "clients/partner/connext/workflows/domain-management.md",
+      "path": "clients/partner/globex/workflows/domain-management.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 155,
@@ -716,7 +716,7 @@
     {
       "type": "partner_onboard",
       "title": "partner onboard skill",
-      "path": "clients/partner/elauwit/SKILL.md",
+      "path": "clients/partner/acme/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 316,
@@ -726,7 +726,7 @@
     {
       "type": "partner_onboard",
       "title": "partner onboard skill",
-      "path": "clients/partner/exol/SKILL.md",
+      "path": "clients/partner/initech/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 386,
@@ -736,7 +736,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign patterns",
-      "path": "clients/partner/connext/workflows/campaign-patterns.md",
+      "path": "clients/partner/globex/workflows/campaign-patterns.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 312,
@@ -746,7 +746,7 @@
     {
       "type": "partner_research",
       "title": "partner icp",
-      "path": "clients/partner/exol/research/icp.md",
+      "path": "clients/partner/initech/research/icp.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 298,
@@ -756,7 +756,7 @@
     {
       "type": "partner_prompt",
       "title": "partner web reveal qualification",
-      "path": "clients/partner/exol/prompts/web-reveal-qualification.md",
+      "path": "clients/partner/initech/prompts/web-reveal-qualification.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 341,
@@ -786,7 +786,7 @@
     {
       "type": "partner_workflow",
       "title": "partner replies management",
-      "path": "clients/partner/elauwit/workflows/replies-management.md",
+      "path": "clients/partner/acme/workflows/replies-management.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 359,
@@ -806,7 +806,7 @@
     {
       "type": "partner_prompt",
       "title": "partner signal retrieval",
-      "path": "clients/partner/exol/prompts/signal-retrieval.md",
+      "path": "clients/partner/initech/prompts/signal-retrieval.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 376,
@@ -816,7 +816,7 @@
     {
       "type": "partner_prompt",
       "title": "partner lead scoring",
-      "path": "clients/partner/exol/prompts/lead-scoring.md",
+      "path": "clients/partner/initech/prompts/lead-scoring.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 446,
@@ -836,7 +836,7 @@
     {
       "type": "partner_resource",
       "title": "partner kickoff",
-      "path": "clients/partner/elauwit/resources/transcripts/kickoff.md",
+      "path": "clients/partner/acme/resources/transcripts/kickoff.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 37,
@@ -876,7 +876,7 @@
     {
       "type": "script",
       "title": "fetch-replies-automation",
-      "path": "clients/partner/elauwit/workflows/fetch-replies-automation.py",
+      "path": "clients/partner/acme/workflows/fetch-replies-automation.py",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 642,
@@ -886,7 +886,7 @@
     {
       "type": "partner_resource",
       "title": "partner session 01",
-      "path": "clients/partner/elauwit/resources/transcripts/session-01.md",
+      "path": "clients/partner/acme/resources/transcripts/session-01.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 19,
@@ -916,7 +916,7 @@
     {
       "type": "partner_research",
       "title": "partner strategy",
-      "path": "clients/partner/exol/research/strategy.md",
+      "path": "clients/partner/initech/research/strategy.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 379,
@@ -926,7 +926,7 @@
     {
       "type": "partner_resource",
       "title": "partner roadmap",
-      "path": "clients/partner/exol/resources/transcripts/roadmap.md",
+      "path": "clients/partner/initech/resources/transcripts/roadmap.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 23,
@@ -936,7 +936,7 @@
     {
       "type": "partner_prompt",
       "title": "partner campaign copy",
-      "path": "clients/partner/exol/prompts/campaign-copy.md",
+      "path": "clients/partner/initech/prompts/campaign-copy.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 298,
@@ -956,7 +956,7 @@
     {
       "type": "partner_research",
       "title": "partner personas",
-      "path": "clients/partner/connext/research/personas.md",
+      "path": "clients/partner/globex/research/personas.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 585,
@@ -996,7 +996,7 @@
     {
       "type": "partner_resource",
       "title": "partner kickoff",
-      "path": "clients/partner/exol/resources/transcripts/kickoff.md",
+      "path": "clients/partner/initech/resources/transcripts/kickoff.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 38,
@@ -1006,7 +1006,7 @@
     {
       "type": "partner_prompt",
       "title": "partner signal retrieval",
-      "path": "clients/partner/elauwit/prompts/signal-retrieval.md",
+      "path": "clients/partner/acme/prompts/signal-retrieval.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 272,
@@ -1016,7 +1016,7 @@
     {
       "type": "partner_resource",
       "title": "partner kickoff",
-      "path": "clients/partner/connext/resources/transcripts/kickoff.md",
+      "path": "clients/partner/globex/resources/transcripts/kickoff.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 37,
@@ -1036,7 +1036,7 @@
     {
       "type": "partner_workflow",
       "title": "partner scoring pipeline",
-      "path": "clients/partner/exol/workflows/scoring-pipeline.md",
+      "path": "clients/partner/initech/workflows/scoring-pipeline.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 259,

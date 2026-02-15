@@ -7,7 +7,7 @@ import { ALL_CLASSES } from './constants'
 const DATA_ROOT = resolveDataRoot()
 
 export const metadata: Metadata = {
-  title: 'The Progression System | ShawnOS.ai',
+  title: 'The Progression Engine | ShawnOS.ai',
   description: '11 tiers. 5 classes. Every title earned through daily output, tracked in the build log.',
 }
 
@@ -105,7 +105,7 @@ export default function RPGPreviewPage() {
           fontFamily: 'var(--font-mono)',
         }}
       >
-        The Progression System
+        The Progression Engine
       </h1>
       <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: 0, lineHeight: 1.6 }}>
         11 tiers. 5 classes. every title earned through daily output, tracked in the{' '}

@@ -644,7 +644,7 @@
     {
       "type": "partner_research",
       "title": "partner personas",
-      "path": "clients/partner/elauwit/research/personas.md",
+      "path": "clients/partner/acme/research/personas.md",
       "source": "auto-mtime",
       "timestamp": "17:34",
       "words": 322,
@@ -734,7 +734,7 @@
     {
       "type": "partner_prompt",
       "title": "partner web reveal qualification",
-      "path": "clients/partner/elauwit/prompts/web-reveal-qualification.md",
+      "path": "clients/partner/acme/prompts/web-reveal-qualification.md",
       "source": "auto-mtime",
       "timestamp": "14:54",
       "words": 959,
@@ -744,7 +744,7 @@
     {
       "type": "partner_research",
       "title": "partner icp",
-      "path": "clients/partner/elauwit/research/icp.md",
+      "path": "clients/partner/acme/research/icp.md",
       "source": "auto-mtime",
       "timestamp": "17:34",
       "words": 242,
@@ -1609,7 +1609,7 @@
       "chime options/one-piece-ost-overtaken.mp3",
       "chime options/sithignition.mp3",
       "chime options/transmutation-clap-fullmetal-alchemist.mp3",
-      "content/internal/2026-02-11_elauwit-instantly-update.md",
+      "content/internal/2026-02-11_acme-instantly-update.md",
       "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
       "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
       "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
@@ -1664,8 +1664,8 @@
       "content/x/final/2026-02-17_build-your-own-os.txt",
       "content/x/images/_gen_cursor_tip_101_plan_mode.py",
       "content/x/images/cursor-tip-101-plan-mode.png",
-      "elauwit-known-reviews-completed-no-response.csv",
-      "elauwit-unknown-reviews-completed-no-response.csv",
+      "acme-known-reviews-completed-no-response.csv",
+      "acme-unknown-reviews-completed-no-response.csv",
       "skills/tier-3-content-ops/pillars/x-micro-tips.md"
     ],
     "files_modified": [

@@ -443,8 +443,8 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
               external
             />
             <ResourceLink
-              href="/guides"
-              title="RPG Progression Guide"
+              href="/rpg-preview"
+              title="RPG Progression Engine"
               description="Visual breakdown of titles, tiers, and milestones"
             />
           </div>
