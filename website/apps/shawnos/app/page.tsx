@@ -340,6 +340,50 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Choose Your Path ── */}
+      <section
+        style={{
+          marginTop: 32,
+          padding: '20px 24px',
+          background: 'var(--canvas-subtle)',
+          border: '1px solid var(--border)',
+          borderRadius: 6,
+          fontSize: '13px',
+          lineHeight: 2,
+        }}
+      >
+        <div style={{ color: 'var(--text-muted)', marginBottom: 8 }}>
+          <span style={promptChar}>$</span> ls ~/paths
+        </div>
+        <div>
+          <span style={{ color: 'var(--text-secondary)' }}>building content systems?</span>{' '}
+          <a
+            href="https://thecontentos.ai"
+            style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
+          >
+            theContentOS.ai &rarr;
+          </a>
+        </div>
+        <div>
+          <span style={{ color: 'var(--text-secondary)' }}>building GTM pipelines?</span>{' '}
+          <a
+            href="https://thegtmos.ai"
+            style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
+          >
+            theGTMOS.ai &rarr;
+          </a>
+        </div>
+        <div>
+          <span style={{ color: 'var(--text-secondary)' }}>want to see how it all works?</span>{' '}
+          <Link
+            href="/blog"
+            style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
+          >
+            read the blog &rarr;
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }

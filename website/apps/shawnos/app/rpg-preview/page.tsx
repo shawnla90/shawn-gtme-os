@@ -7,8 +7,8 @@ import { ALL_CLASSES } from './constants'
 const DATA_ROOT = resolveDataRoot()
 
 export const metadata: Metadata = {
-  title: 'RPG Preview | ShawnOS.ai',
-  description: 'Visual preview of all RPG title tiers, classes, and progression data.',
+  title: 'The Progression System | ShawnOS.ai',
+  description: '11 tiers. 5 classes. Every title earned through daily output, tracked in the build log.',
 }
 
 /* ── helpers ──────────────────────────────────────── */
@@ -105,13 +105,11 @@ export default function RPGPreviewPage() {
           fontFamily: 'var(--font-mono)',
         }}
       >
-        RPG Title Progression Preview
+        The Progression System
       </h1>
       <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: 0, lineHeight: 1.6 }}>
-        All 11 title tiers rendered with the <code style={{ color: 'var(--accent)' }}>AvatarBadge</code> component.
-        Edit{' '}
-        <code style={{ color: 'var(--accent)' }}>rpg.ts</code> or{' '}
-        <code style={{ color: 'var(--accent)' }}>AvatarBadge.tsx</code> and hot reload will update this page.
+        11 tiers. 5 classes. every title earned through daily output, tracked in the{' '}
+        <a href="/log" style={{ color: 'var(--accent)', textDecoration: 'none' }}>build log</a>.
       </p>
 
       <hr style={divider} />
@@ -196,7 +194,8 @@ export default function RPGPreviewPage() {
           opacity: 0.6,
         }}
       >
-        &gt; {TITLE_TABLE.length} tiers · {ALL_CLASSES.length} classes · interactive reveal preview_
+        &gt; {TITLE_TABLE.length} tiers · {ALL_CLASSES.length} classes ·{' '}
+        <a href="/log" style={{ color: 'var(--accent)', textDecoration: 'none' }}>see how this score is earned</a>_
       </div>
     </div>
   )

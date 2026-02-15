@@ -23,6 +23,10 @@ html body {
   color: var(--text-primary);
 }
 
+.prose p {
+  margin-bottom: 1.25em;
+}
+
 .prose h1,
 .prose h2,
 .prose h3 {
