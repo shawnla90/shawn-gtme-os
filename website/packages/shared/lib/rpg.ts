@@ -80,17 +80,26 @@ export const TITLE_TABLE: TitleTier[] = [
 /**
  * Returns the accent color for a given avatar tier.
  * Used for badges, borders, title text, and XP bar fill.
+ *
+ * When `variant` is `'advanced'`, returns a warmer/red-tinted version
+ * of the tier color via CSS `color-mix`, giving upgraded avatars a
+ * subtle visual distinction in the UI.
  */
-export function tierColor(tier: number): string {
+export function tierColor(tier: number, variant?: 'early' | 'advanced'): string {
+  let base: string
   switch (tier) {
-    case 1: return '#64748B'
-    case 2: return '#10B981'
-    case 3: return '#06B6D4'
-    case 4: return '#F59E0B'
-    case 5: return '#8B5CF6'
-    case 6: return '#FBBF24'
-    default: return '#64748B'
+    case 1: base = '#64748B'; break
+    case 2: base = '#10B981'; break
+    case 3: base = '#06B6D4'; break
+    case 4: base = '#F59E0B'; break
+    case 5: base = '#8B5CF6'; break
+    case 6: base = '#FBBF24'; break
+    default: base = '#64748B'; break
   }
+  if (variant === 'advanced') {
+    return `color-mix(in srgb, ${base}, #e06060 15%)`
+  }
+  return base
 }
 
 /* ------------------------------------------------------------------ */
@@ -175,6 +184,27 @@ export function getAvatarUrlsForProfile(profile: RPGProfile): {
     ? 'advanced'
     : 'early'
   return getTierAvatarUrls(profile.avatar_tier || 1, variant)
+}
+
+/**
+ * Returns avatar URLs for a specific RPG Class.
+ * Class sprites do not currently have variants or separate action animations.
+ */
+export function getClassAvatarUrls(
+  rpgClass: string
+): {
+  idle: string
+  action: string
+  static: string
+} {
+  const c = rpgClass.toLowerCase()
+  const base = '/progression/avatars'
+  // No action sprites for classes yet, fallback to idle
+  return {
+    idle: `${base}/class-${c}-idle.gif`,
+    action: `${base}/class-${c}-idle.gif`,
+    static: `${base}/class-${c}-static.png`,
+  }
 }
 
 /** Default profile returned when the progression engine hasn't run yet. */

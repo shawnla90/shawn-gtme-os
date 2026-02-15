@@ -339,7 +339,7 @@ The scanner auto-parses Claude Code session transcripts:
 | Score | Grade |
 |-------|-------|
 | > 500 | S+ |
-| 300-500 | S |
+| 350-500 | S |
 | 150-299 | A+ |
 | 50-149 | A |
 | 15-49 | B |

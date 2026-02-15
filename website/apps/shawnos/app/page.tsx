@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
-import { getAllPosts, getAllLogs } from '@shawnos/shared/lib'
+import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile } from '@shawnos/shared/lib'
 import { PostCard, LogCard, TypewriterHero, AvatarBadge } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
@@ -26,6 +26,7 @@ export const metadata: Metadata = {
 
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
 const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
+const DATA_ROOT = path.join(process.cwd(), '../../../data')
 
 /* ── boot log entries ────────────────────────────── */
 
@@ -167,6 +168,10 @@ export default function HomePage() {
   const logs = getAllLogs(LOG_DIR)
   const latestLog = logs.length > 0 ? logs[0] : null
 
+  const profile = getRPGProfile(DATA_ROOT)
+  const urls =
+    profile && profile.level > 0 ? getAvatarUrlsForProfile(profile) : null
+
   return (
     <div style={page}>
       {/* ── Hero ── */}
@@ -207,7 +212,13 @@ export default function HomePage() {
 
           {/* Right — RPG avatar badge */}
           <div style={heroRight}>
-            <AvatarBadge size="compact" />
+            <AvatarBadge
+              size="compact"
+              profile={profile ?? undefined}
+              avatarSrc={urls?.static ?? undefined}
+              avatarIdleSrc={urls?.idle ?? undefined}
+              avatarActionSrc={urls?.action ?? undefined}
+            />
             <Link
               href="/log/skill-guide"
               style={{

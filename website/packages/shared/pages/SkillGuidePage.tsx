@@ -514,54 +514,76 @@ export function SkillGuidePage() {
                 <div
                   style={{
                     display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    marginBottom: '4px',
+                    alignItems: 'flex-start',
+                    gap: '12px',
+                    marginBottom: '8px',
                   }}
                 >
-                  <span
+                  {/* Class sprite */}
+                  <img
+                    src={`/progression/avatars/class-${cls.name.toLowerCase()}-idle-128.gif`}
+                    alt={`${cls.name} class sprite`}
+                    width={64}
+                    height={64}
                     style={{
-                      fontSize: '13px',
-                      fontWeight: 700,
-                      color: 'var(--accent)',
+                      imageRendering: 'pixelated',
+                      flexShrink: 0,
                     }}
-                  >
-                    {cls.name}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '10px',
-                      fontWeight: 600,
-                      color: 'var(--text-muted)',
-                      textTransform: 'uppercase' as const,
-                      letterSpacing: '0.06em',
-                      padding: '1px 6px',
-                      border: '1px solid var(--border)',
-                      borderRadius: '3px',
-                    }}
-                  >
-                    {cls.domain}
-                  </span>
-                </div>
-                <div
-                  style={{
-                    fontSize: '12px',
-                    lineHeight: 1.5,
-                    color: 'var(--text-secondary)',
-                    marginBottom: '6px',
-                  }}
-                >
-                  {cls.description}
-                </div>
-                <div
-                  style={{
-                    fontSize: '11px',
-                    lineHeight: 1.5,
-                    color: 'var(--text-muted)',
-                    fontStyle: 'italic',
-                  }}
-                >
-                  {cls.trigger}
+                  />
+                  <div style={{ minWidth: 0 }}>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        marginBottom: '4px',
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontSize: '13px',
+                          fontWeight: 700,
+                          color: 'var(--accent)',
+                        }}
+                      >
+                        {cls.name}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: '10px',
+                          fontWeight: 600,
+                          color: 'var(--text-muted)',
+                          textTransform: 'uppercase' as const,
+                          letterSpacing: '0.06em',
+                          padding: '1px 6px',
+                          border: '1px solid var(--border)',
+                          borderRadius: '3px',
+                        }}
+                      >
+                        {cls.domain}
+                      </span>
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '12px',
+                        lineHeight: 1.5,
+                        color: 'var(--text-secondary)',
+                        marginBottom: '6px',
+                      }}
+                    >
+                      {cls.description}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '11px',
+                        lineHeight: 1.5,
+                        color: 'var(--text-muted)',
+                        fontStyle: 'italic',
+                      }}
+                    >
+                      {cls.trigger}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}

@@ -13,8 +13,12 @@ interface LogHeroProps {
   showAvatar?: boolean
   /** RPG profile data passed through to AvatarBadge. */
   profile?: RPGProfile | null
-  /** Avatar image src passed through to AvatarBadge. */
+  /** Avatar static image src passed through to AvatarBadge. */
   avatarSrc?: string | null
+  /** Avatar idle animation GIF src passed through to AvatarBadge. */
+  avatarIdleSrc?: string | null
+  /** Avatar action animation GIF src passed through to AvatarBadge. */
+  avatarActionSrc?: string | null
 }
 
 /** Format large numbers with K/M suffix. */
@@ -75,6 +79,8 @@ export function LogHero({
   showAvatar = false,
   profile = null,
   avatarSrc = null,
+  avatarIdleSrc = null,
+  avatarActionSrc = null,
 }: LogHeroProps) {
   const { totalDays, totalShipped, totalWords, totalCommits, totalFinals } =
     aggregates
@@ -160,6 +166,8 @@ export function LogHero({
                 size="compact"
                 profile={profile}
                 avatarSrc={avatarSrc}
+                avatarIdleSrc={avatarIdleSrc}
+                avatarActionSrc={avatarActionSrc}
               />
             </div>
           )}

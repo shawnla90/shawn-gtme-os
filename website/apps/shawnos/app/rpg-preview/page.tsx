@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { TITLE_TABLE, getTierAvatarUrls, getAvatarUrlsForProfile } from '@shawnos/shared/lib'
+import { TITLE_TABLE, getTierAvatarUrls, getAvatarUrlsForProfile, getClassAvatarUrls } from '@shawnos/shared/lib'
 import type { RPGProfile, RPGClass } from '@shawnos/shared/lib'
 import { AvatarBadge } from '@shawnos/shared/components'
 
@@ -224,7 +224,8 @@ export default function RPGPreviewPage() {
         <div style={{ ...grid, gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))' }}>
           {ALL_CLASSES.map((rpgClass) => {
             const profile = mockProfileForClass(rpgClass)
-            const urls = getTierAvatarUrls(profile.avatar_tier, 'advanced')
+            // Use class-specific URLs instead of generic tier URLs
+            const urls = getClassAvatarUrls(rpgClass)
             return (
               <div key={rpgClass} style={cardWrapper}>
                 <AvatarBadge

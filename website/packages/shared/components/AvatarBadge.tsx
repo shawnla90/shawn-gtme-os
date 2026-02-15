@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { TITLE_TABLE, tierColor } from '../lib/rpg'
+import { TITLE_TABLE, tierColor, isAdvancedVariant } from '../lib/rpg'
 import type { RPGProfile } from '../lib/rpg'
 
 /* ── types ────────────────────────────────────────── */
@@ -80,8 +80,11 @@ export function AvatarBadge({
   const s = SIZES[size]
   const hasProfile = profile !== null && profile.level > 0
   const [hovered, setHovered] = useState(false)
+  const isAdvanced = hasProfile
+    ? isAdvancedVariant(profile!.level, profile!.avatar_tier)
+    : false
   const accent = hasProfile
-    ? tierColor(profile?.avatar_tier ?? 0)
+    ? tierColor(profile?.avatar_tier ?? 0, isAdvanced ? 'advanced' : 'early')
     : 'var(--accent)'
 
   /* ── Fallback chain: idle GIF → static PNG → null (placeholder) ── */
@@ -261,9 +264,25 @@ export function AvatarBadge({
                 marginTop: 4,
                 textTransform: 'uppercase',
                 letterSpacing: '0.06em',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
               }}
             >
-              LVL {profile!.level} · {profile!.class}
+              <span>
+                LVL {profile!.level} · {profile!.class}
+              </span>
+              <img
+                src={`/progression/avatars/class-${profile!.class.toLowerCase()}-static.png`}
+                alt={profile!.class}
+                width={24}
+                height={24}
+                style={{
+                  imageRendering: 'pixelated',
+                  display: 'block',
+                }}
+              />
             </div>
 
             {/* XP progress bar — glow + gradient fill */}

@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
-import { getAllLogs, getLogAggregates } from '@shawnos/shared/lib'
+import { getAllLogs, getLogAggregates, getRPGProfile, getAvatarUrlsForProfile } from '@shawnos/shared/lib'
 import { LogCard, LogHero } from '@shawnos/shared/components'
 
 const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
+const DATA_ROOT = path.join(process.cwd(), '../../../data')
 
 export const metadata: Metadata = {
   title: 'Daily Build Log',
@@ -47,6 +48,8 @@ export default function LogIndex() {
   // #endregion
   const logs = getAllLogs(LOG_DIR)
   const aggregates = getLogAggregates(LOG_DIR)
+  const profile = getRPGProfile(DATA_ROOT)
+  const urls = profile && profile.level > 0 ? getAvatarUrlsForProfile(profile) : null
 
   return (
     <section
@@ -57,7 +60,14 @@ export default function LogIndex() {
         fontFamily: 'var(--font-mono)',
       }}
     >
-      <LogHero aggregates={aggregates} showAvatar />
+      <LogHero
+        aggregates={aggregates}
+        showAvatar
+        profile={profile ?? undefined}
+        avatarSrc={urls?.static ?? undefined}
+        avatarIdleSrc={urls?.idle ?? undefined}
+        avatarActionSrc={urls?.action ?? undefined}
+      />
 
       {/* CTA — skill guide */}
       <Link
