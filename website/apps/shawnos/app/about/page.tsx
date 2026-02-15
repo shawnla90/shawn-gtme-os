@@ -1,22 +1,23 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'SDR to GTM Engineer. The arc, the stack, and the operating system behind shawnos.ai.',
+    'GTM Engineer. Builder. Shipped from a monorepo. The operating system behind shawnos.ai.',
   alternates: { canonical: 'https://shawnos.ai/about' },
   openGraph: {
     title: 'About | shawnos.ai',
     description:
-      'SDR to GTM Engineer. The arc, the stack, and the operating system behind shawnos.ai.',
+      'GTM Engineer. Builder. Shipped from a monorepo.',
     url: 'https://shawnos.ai/about',
-    images: [{ url: '/og?title=About&subtitle=SDR+to+GTM+Engineer', width: 1200, height: 630 }],
+    images: [{ url: '/og?title=About&subtitle=GTM+Engineer.+Builder.+Shipped+from+a+monorepo.', width: 1200, height: 630 }],
   },
   twitter: {
     title: 'About | shawnos.ai',
     description:
-      'SDR to GTM Engineer. The arc, the stack, and the operating system behind shawnos.ai.',
-    images: ['/og?title=About&subtitle=SDR+to+GTM+Engineer'],
+      'GTM Engineer. Builder. Shipped from a monorepo.',
+    images: ['/og?title=About&subtitle=GTM+Engineer.+Builder.+Shipped+from+a+monorepo.'],
   },
 }
 
@@ -107,38 +108,19 @@ export default function AboutPage() {
         <span style={{ color: 'var(--accent)' }}>$</span> cat ~/about.md
       </h1>
 
-      {/* ── The Arc ── */}
+      {/* ── Identity ── */}
       <div style={section}>
-        <h2 style={sectionTitle}>the arc</h2>
+        <h2 style={sectionTitle}>identity</h2>
 
         <p style={paragraph}>
-          I started as an SDR, cold-calling and booking meetings the way everyone
-          did. Manually, one at a time. Moved into an AE role, ran full-cycle
-          deals, and learned what actually converts. Then shifted into GTM
-          strategy. Designing the systems behind pipeline, not just working
-          inside them.
+          GTM engineer. builder. shipped from a monorepo.
         </p>
 
         <p style={paragraph}>
-          Somewhere along the way, AI went from a buzzword to a build tool. I
-          stopped waiting for vendors to ship features and started building my
-          own. Cursor became my IDE. Claude became my reasoning engine. The repo
-          became my operating system.
-        </p>
-
-        <p style={paragraph}>
-          Now I&apos;m a{' '}
-          <span style={{ color: 'var(--accent)', fontWeight: 600 }}>
-            GTM engineer
-          </span>
-          . I build AI-native pipelines, agent-driven workflows, and content
-          systems that compound. All from a single monorepo. Every skill I
-          ship, every post I publish, every campaign I launch runs through this
-          operating system.
-        </p>
-
-        <p style={{ ...paragraph, marginBottom: 0 }}>
-          This site is the proof of work.
+          I build AI-native pipelines, agent-driven workflows, and content
+          systems that compound. every skill, every post, every campaign runs
+          through a single codebase. the site you&apos;re on right now is the
+          proof of work.
         </p>
       </div>
 
@@ -187,7 +169,7 @@ export default function AboutPage() {
         <h2 style={sectionTitle}>the network</h2>
 
         <p style={{ ...mutedText, marginBottom: '16px' }}>
-          shawnos.ai is one node in a three-site network. Each site owns a
+          shawnos.ai is one node in a three-site system. each site owns a
           domain of the stack.
         </p>
 
@@ -252,6 +234,58 @@ export default function AboutPage() {
             </a>
           ))}
         </div>
+      </div>
+
+      {/* ── Arc CTA ── */}
+      <div
+        style={{
+          background: 'var(--canvas-subtle)',
+          border: '1px solid var(--accent)',
+          borderRadius: '8px',
+          padding: '24px',
+          textAlign: 'center',
+          marginBottom: '24px',
+        }}
+      >
+        <div
+          style={{
+            fontSize: '16px',
+            fontWeight: 700,
+            color: 'var(--accent)',
+            marginBottom: '8px',
+          }}
+        >
+          want the full story?
+        </div>
+        <p
+          style={{
+            fontSize: '13px',
+            lineHeight: 1.65,
+            color: 'var(--text-secondary)',
+            marginBottom: '16px',
+          }}
+        >
+          plumber. SDR. GTM engineer. the layers, the thesis, and why three
+          domains exist.
+        </p>
+        <Link
+          href="/arc"
+          style={{
+            display: 'inline-block',
+            padding: '10px 22px',
+            fontSize: '13px',
+            fontWeight: 600,
+            fontFamily: 'var(--font-mono)',
+            color: 'var(--canvas)',
+            background: 'var(--accent)',
+            border: '1px solid var(--accent)',
+            borderRadius: 6,
+            textDecoration: 'none',
+            transition: 'opacity 0.15s ease',
+          }}
+        >
+          read the arc &rarr;
+        </Link>
       </div>
     </div>
   )

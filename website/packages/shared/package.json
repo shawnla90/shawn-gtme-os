@@ -8,6 +8,7 @@
     "./lib/rpg": "./lib/rpg.ts",
     "./lib/rpg.server": "./lib/rpg.server.ts",
     "./pages/SkillGuidePage": "./pages/SkillGuidePage.tsx",
+    "./pages/QuestBoardPage": "./pages/QuestBoardPage.tsx",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {

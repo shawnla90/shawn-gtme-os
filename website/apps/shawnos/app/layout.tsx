@@ -98,6 +98,7 @@ export default function RootLayout({
             { href: '/log', label: 'Log' },
             { href: '/rpg-preview', label: 'RPG' },
             { href: '/about', label: 'About' },
+            { href: '/arc', label: 'Arc' },
             { href: '/api', label: 'API' },
           ]}
         />
