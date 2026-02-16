@@ -9,6 +9,7 @@ data/*
 !data/progression/
 !data/progression/avatars/
 data/daily-log/*.png
+data/daily-log/*.log
 scripts/
 qualified_leads_to_process.json
 .claude/blocklist.txt
