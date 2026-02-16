@@ -1,46 +1,66 @@
 {
   "date": "2026-02-15",
-  "generated_at": "2026-02-16T00:13:42.697502+00:00",
+  "generated_at": "2026-02-16T00:30:25.913405+00:00",
   "version": 3,
   "accomplishments": [
     {
-      "type": "feature_system",
-      "title": "AvatarBadge",
-      "path": "website/packages/shared/components/AvatarBadge.tsx",
+      "type": "website_page",
+      "title": "gtmos log quests page",
+      "path": "website/apps/gtmos/app/log/quests/page.tsx",
       "source": "auto",
-      "timestamp": "15:50",
-      "words": 985,
+      "timestamp": "18:08",
+      "words": 146,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos arc page",
+      "path": "website/apps/shawnos/app/arc/page.tsx",
+      "source": "auto",
+      "timestamp": "18:38",
+      "words": 1374,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "18:09",
+      "words": 298,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "daily-tracker",
+      "path": ".cursor/skills/daily-tracker/SKILL.md",
+      "source": "auto",
+      "timestamp": "00:49",
+      "words": 2976,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "TypewriterHero",
+      "path": "website/packages/shared/components/TypewriterHero.tsx",
+      "source": "auto",
+      "timestamp": "15:21",
+      "words": 798,
       "value_score": 30,
       "shipped": true
     },
     {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/gtmos/app/globals.css",
+      "type": "website_lib",
+      "title": "shared logs",
+      "path": "website/packages/shared/lib/logs.ts",
       "source": "auto",
-      "timestamp": "23:44",
-      "words": 41,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log quests page",
-      "path": "website/apps/shawnos/app/log/quests/page.tsx",
-      "source": "auto",
-      "timestamp": "18:08",
-      "words": 147,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos layout",
-      "path": "website/apps/contentos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "23:44",
-      "words": 159,
-      "value_score": 5,
+      "timestamp": "15:50",
+      "words": 959,
+      "value_score": 3,
       "shipped": true
     },
     {
@@ -54,6 +74,26 @@
       "shipped": true
     },
     {
+      "type": "feature_system",
+      "title": "AvatarBadge",
+      "path": "website/packages/shared/components/AvatarBadge.tsx",
+      "source": "auto",
+      "timestamp": "15:50",
+      "words": 985,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log quests page",
+      "path": "website/apps/contentos/app/log/quests/page.tsx",
+      "source": "auto",
+      "timestamp": "18:09",
+      "words": 146,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
       "type": "website_route",
       "title": "shawnos api status route",
       "path": "website/apps/shawnos/app/api/status/route.ts",
@@ -61,6 +101,36 @@
       "timestamp": "16:31",
       "words": 336,
       "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/gtmos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:44",
+      "words": 41,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "webfix",
+      "path": ".cursor/skills/webfix/SKILL.md",
+      "source": "auto",
+      "timestamp": "15:37",
+      "words": 1569,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "update-github",
+      "path": ".claude/skills/update-github/SKILL.md",
+      "source": "auto",
+      "timestamp": "15:38",
+      "words": 1137,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -84,76 +154,6 @@
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "daily-tracker",
-      "path": ".cursor/skills/daily-tracker/SKILL.md",
-      "source": "auto",
-      "timestamp": "00:49",
-      "words": 2976,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/contentos/app/globals.css",
-      "source": "auto",
-      "timestamp": "23:44",
-      "words": 41,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/shawnos/app/globals.css",
-      "source": "auto",
-      "timestamp": "14:27",
-      "words": 165,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "TypewriterHero",
-      "path": "website/packages/shared/components/TypewriterHero.tsx",
-      "source": "auto",
-      "timestamp": "15:21",
-      "words": 798,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos api page",
-      "path": "website/apps/shawnos/app/api/page.tsx",
-      "source": "auto",
-      "timestamp": "17:24",
-      "words": 1447,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos arc page",
-      "path": "website/apps/shawnos/app/arc/page.tsx",
-      "source": "auto",
-      "timestamp": "18:38",
-      "words": 1374,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg",
-      "path": "website/packages/shared/lib/rpg.ts",
-      "source": "auto",
-      "timestamp": "15:50",
-      "words": 973,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
       "type": "code_infra",
       "title": "shared package",
       "path": "website/packages/shared/package.json",
@@ -163,32 +163,12 @@
       "shipped": true
     },
     {
-      "type": "feature_system",
-      "title": "SkillGuidePage",
-      "path": "website/packages/shared/pages/SkillGuidePage.tsx",
-      "source": "auto",
-      "timestamp": "17:07",
-      "words": 1946,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
       "type": "website_page",
-      "title": "gtmos log quests page",
-      "path": "website/apps/gtmos/app/log/quests/page.tsx",
+      "title": "shawnos log quests page",
+      "path": "website/apps/shawnos/app/log/quests/page.tsx",
       "source": "auto",
       "timestamp": "18:08",
-      "words": 146,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "18:09",
-      "words": 298,
+      "words": 147,
       "value_score": 5,
       "shipped": true
     },
@@ -203,13 +183,23 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos rpg-preview page",
-      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "type": "website_lib",
+      "title": "shared rpg",
+      "path": "website/packages/shared/lib/rpg.ts",
       "source": "auto",
-      "timestamp": "17:24",
-      "words": 540,
-      "value_score": 5,
+      "timestamp": "15:50",
+      "words": 973,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/contentos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:44",
+      "words": 41,
+      "value_score": 2,
       "shipped": true
     },
     {
@@ -223,42 +213,52 @@
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared logs",
-      "path": "website/packages/shared/lib/logs.ts",
+      "type": "feature_system",
+      "title": "SkillGuidePage",
+      "path": "website/packages/shared/pages/SkillGuidePage.tsx",
       "source": "auto",
-      "timestamp": "15:50",
-      "words": 959,
-      "value_score": 3,
+      "timestamp": "17:07",
+      "words": 1946,
+      "value_score": 30,
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "webfix",
-      "path": ".cursor/skills/webfix/SKILL.md",
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "15:37",
-      "words": 1569,
+      "timestamp": "23:44",
+      "words": 159,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "contentos log quests page",
-      "path": "website/apps/contentos/app/log/quests/page.tsx",
+      "title": "shawnos rpg-preview page",
+      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
       "source": "auto",
-      "timestamp": "18:09",
-      "words": 146,
+      "timestamp": "17:24",
+      "words": 540,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "update-github",
-      "path": ".claude/skills/update-github/SKILL.md",
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/shawnos/app/globals.css",
       "source": "auto",
-      "timestamp": "15:38",
-      "words": 1137,
+      "timestamp": "14:27",
+      "words": 165,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos api page",
+      "path": "website/apps/shawnos/app/api/page.tsx",
+      "source": "auto",
+      "timestamp": "17:24",
+      "words": 1447,
       "value_score": 5,
       "shipped": true
     },
@@ -274,21 +274,21 @@
     },
     {
       "type": "feature_script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
-      "source": "auto-mtime",
-      "timestamp": "01:10",
-      "words": 4165,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
       "title": "daily_dashboard",
       "path": "scripts/daily_dashboard.py",
       "source": "auto-mtime",
       "timestamp": "01:10",
       "words": 3973,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
+      "source": "auto-mtime",
+      "timestamp": "19:30",
+      "words": 4668,
       "value_score": 30,
       "shipped": true
     }
@@ -635,13 +635,59 @@
     "finalized_today": []
   },
   "todos": [],
-  "token_usage": [],
+  "token_usage": [
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 179887,
+      "output_tokens": 59963,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "sonnet",
+      "source": "cursor-db",
+      "messages": 1599,
+      "conversations": 13,
+      "logged_at": "19:30",
+      "context": "cursor-ide 00:12-16:52",
+      "cost": 1.4391,
+      "estimated": true
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 229725,
+      "output_tokens": 76575,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "opus",
+      "source": "cursor-db",
+      "messages": 2042,
+      "conversations": 12,
+      "logged_at": "19:30",
+      "context": "cursor-ide 00:32-19:30",
+      "cost": 9.189,
+      "estimated": true
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 3375,
+      "output_tokens": 1125,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "cursor",
+      "source": "cursor-db",
+      "messages": 30,
+      "conversations": 2,
+      "logged_at": "19:30",
+      "context": "cursor-ide 17:04-17:24",
+      "cost": 0.0,
+      "estimated": true
+    }
+  ],
   "stats": {
     "platform_breakdown": {
-      "other": 12,
-      "website": 17
+      "website": 17,
+      "other": 12
     },
-    "words_today": 28974,
+    "words_today": 29477,
     "pipeline_words": 36584,
     "finals_count": 0,
     "first_activity": "00:46",
@@ -650,24 +696,34 @@
     "letter_grade": "A+",
     "score_breakdown": [
       {
+        "type": "website_page",
+        "title": "gtmos log quests page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos arc page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos layout",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "daily-tracker",
+        "points": 5
+      },
+      {
         "type": "feature_system",
-        "title": "AvatarBadge",
+        "title": "TypewriterHero",
         "points": 30
       },
       {
-        "type": "website_style",
-        "title": "globals styles",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log quests page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos layout",
-        "points": 5
+        "type": "website_lib",
+        "title": "shared logs",
+        "points": 3
       },
       {
         "type": "website_page",
@@ -675,9 +731,34 @@
         "points": 5
       },
       {
+        "type": "feature_system",
+        "title": "AvatarBadge",
+        "points": 30
+      },
+      {
+        "type": "website_page",
+        "title": "contentos log quests page",
+        "points": 5
+      },
+      {
         "type": "website_route",
         "title": "shawnos api status route",
         "points": 3
+      },
+      {
+        "type": "website_style",
+        "title": "globals styles",
+        "points": 2
+      },
+      {
+        "type": "skill_updated",
+        "title": "webfix",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "update-github",
+        "points": 5
       },
       {
         "type": "website_page",
@@ -690,58 +771,13 @@
         "points": 25
       },
       {
-        "type": "skill_updated",
-        "title": "daily-tracker",
-        "points": 5
-      },
-      {
-        "type": "website_style",
-        "title": "globals styles",
-        "points": 2
-      },
-      {
-        "type": "website_style",
-        "title": "globals styles",
-        "points": 2
-      },
-      {
-        "type": "feature_system",
-        "title": "TypewriterHero",
-        "points": 30
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos api page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos arc page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared rpg",
-        "points": 3
-      },
-      {
         "type": "code_infra",
         "title": "shared package",
         "points": 15
       },
       {
-        "type": "feature_system",
-        "title": "SkillGuidePage",
-        "points": 30
-      },
-      {
         "type": "website_page",
-        "title": "gtmos log quests page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos layout",
+        "title": "shawnos log quests page",
         "points": 5
       },
       {
@@ -750,9 +786,14 @@
         "points": 30
       },
       {
-        "type": "website_page",
-        "title": "shawnos rpg-preview page",
-        "points": 5
+        "type": "website_lib",
+        "title": "shared rpg",
+        "points": 3
+      },
+      {
+        "type": "website_style",
+        "title": "globals styles",
+        "points": 2
       },
       {
         "type": "website_page",
@@ -760,23 +801,28 @@
         "points": 5
       },
       {
-        "type": "website_lib",
-        "title": "shared logs",
-        "points": 3
+        "type": "feature_system",
+        "title": "SkillGuidePage",
+        "points": 30
       },
       {
-        "type": "skill_updated",
-        "title": "webfix",
+        "type": "website_page",
+        "title": "contentos layout",
         "points": 5
       },
       {
         "type": "website_page",
-        "title": "contentos log quests page",
+        "title": "shawnos rpg-preview page",
         "points": 5
       },
       {
-        "type": "skill_updated",
-        "title": "update-github",
+        "type": "website_style",
+        "title": "globals styles",
+        "points": 2
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos api page",
         "points": 5
       },
       {
@@ -786,41 +832,41 @@
       },
       {
         "type": "feature_script",
-        "title": "daily_scan",
+        "title": "daily_dashboard",
         "points": 30
       },
       {
         "type": "feature_script",
-        "title": "daily_dashboard",
+        "title": "daily_scan",
         "points": 30
       }
     ],
-    "efficiency_rating": null,
+    "efficiency_rating": 30.11,
     "shipped_count": 29,
     "draft_count": 0,
     "ship_rate": 1.0,
-    "agent_cost": 0,
-    "dev_equivalent_cost": 5615.5,
+    "agent_cost": 10.63,
+    "dev_equivalent_cost": 5665.5,
     "dev_equivalent_breakdown": {
       "code_loc": 1812,
       "code_hours": 36.24,
       "code_cost": 2718.0,
-      "content_words": 28974,
-      "content_hours": 57.95,
-      "content_cost": 2897.5,
-      "total": 5615.5
+      "content_words": 29477,
+      "content_hours": 58.95,
+      "content_cost": 2947.5,
+      "total": 5665.5
     },
-    "cost_savings": 5615.5,
-    "roi_multiplier": 0.0,
-    "lines_added": 5499,
+    "cost_savings": 5654.87,
+    "roi_multiplier": 533.1,
+    "lines_added": 6381,
     "lines_removed": 676,
-    "lines_net": 4823,
+    "lines_net": 5705,
     "code_loc": 1812,
     "content_loc": 2382,
-    "data_loc": 1305
+    "data_loc": 2187
   },
   "git_summary": {
-    "commits_today": 12,
+    "commits_today": 13,
     "files_added": [
       ".cursor/phase2-completion-summary.md",
       ".cursor/skills/webfix/SKILL.md",
@@ -834,6 +880,7 @@
       "content/drafts/2026-02-16_monday-launch-drafts.md",
       "content/drafts/2026-02-16_quest-board-page-copy.md",
       "content/drafts/2026-02-16_text-swap-plan.md",
+      "data/daily-log/2026-02-15.json",
       "website/apps/contentos/app/log/quests/page.tsx",
       "website/apps/gtmos/app/log/quests/page.tsx",
       "website/apps/shawnos/app/api/components.tsx",
@@ -872,11 +919,11 @@
       "website/packages/shared/package.json",
       "website/packages/shared/pages/SkillGuidePage.tsx"
     ],
-    "lines_added_count": 5499,
+    "lines_added_count": 6381,
     "lines_removed_count": 676,
-    "lines_net": 4823,
+    "lines_net": 5705,
     "code_loc": 1812,
     "content_loc": 2382,
-    "data_loc": 1305
+    "data_loc": 2187
   }
 }
