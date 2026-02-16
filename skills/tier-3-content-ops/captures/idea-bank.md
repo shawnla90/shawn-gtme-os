@@ -4,7 +4,7 @@ Future project ideas, organized by domain. Captured via `/ideabank park` or `/pa
 
 **Status key**: parked (just captured) | incubating (actively thinking) | ready (could start building) | shipped (done)
 
-**Stats**: 2 ideas — 2 parked, 0 incubating, 0 ready, 0 shipped
+**Stats**: 3 ideas — 2 parked, 1 incubating, 0 ready, 0 shipped
 
 ---
 
@@ -24,6 +24,20 @@ Future project ideas, organized by domain. Captured via `/ideabank park` or `/pa
 ---
 
 ## shawnos
+
+### recursive-drift-method
+
+- **Title**: Recursive Drift — The Non-Linear Method for Building With AI
+- **Domain**: shawnos
+- **Pillars**: Building and Sharing, Knowledge Engineering
+- **Status**: incubating
+- **Description**: A codified methodology for how Shawn builds with AI. Not a step-by-step framework — a state machine with recursive feedback. Six modes (Freefall, Plan, Build, Break, Ask, Seed) cycled in no fixed order, where each loop's output becomes the next loop's input. The build IS the content. Plans rewrite themselves during execution. Differentiator from linear methods: the recursive property and the non-linear state transitions. Terminal aesthetic shorthand: `recursive-drift --init`.
+- **Related ideas**: zen-os, twitch-gaming-discord, recursive-loop
+- **Breadcrumb notes**: Seeds already planned for Monday launch drafts and Hello World blog post. Subtle forward-references like "the way I build with AI isn't a framework. it's closer to structured freefall." and "plans rewrite themselves." Don't announce — tease. The `/recursive` concept page comes mid-week, `/method` page late-week, full content series next week.
+- **Next phases**: (1) Internal definition doc at `skills/tier-1-voice-dna/method.md`, (2) Breadcrumb seeds in Monday drafts, (3) `/recursive` concept page, (4) `/method` page on shawnos.ai, (5) LinkedIn + Substack + X content series
+- **Date captured**: 2026-02-16
+
+---
 
 ### twitch-gaming-discord
 

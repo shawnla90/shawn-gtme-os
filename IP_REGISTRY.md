@@ -28,6 +28,8 @@ Last Updated: 2026-02-15
 | Skill framework | .cursor/skills/ (42 skills) | Public + licensed | Agentic workflow library |
 | Voice modularity system | skills/tier-1-voice-dna/ (4 playbooks) | Public + licensed | Brand voice architecture |
 | Plan formatting framework | .cursor/skills/plan-format/ | Public + licensed | Structured planning methodology |
+| /recursive concept page | website/apps/shawnos/app/recursive/ (pending) | Public + licensed | Self-referential system principle |
+| /method page | website/apps/shawnos/app/method/ (pending) | Public + licensed | Recursive Drift methodology showcase |
 
 **Total Skills**: 42 invokable skills across .cursor/skills/
 
@@ -40,6 +42,7 @@ Last Updated: 2026-02-15
 | Terminal UI design system | website/packages/shared/components/ (12 components) | Public + licensed | Visual brand identity |
 | Avatar sprite assets | data/progression/avatars/ (227 files) | All Rights Reserved | Character progression visuals |
 | ShawnOS/GTMOS/ContentOS branding | N/A | Trademark claim | Brand differentiation |
+| Recursive Drift method name | skills/tier-1-voice-dna/method.md (pending) | Trademark claim | Methodology brand asset |
 | TypewriterHero component | website/packages/shared/components/TypewriterHero.tsx | Public + licensed | Signature UI pattern |
 | LogHero & AvatarBadge | website/packages/shared/components/LogHero.tsx, AvatarBadge.tsx | Public + licensed | Progression display components |
 | Terminal Chrome wrapper | website/packages/shared/components/TerminalChrome.tsx | Public + licensed | Retro-terminal aesthetic |

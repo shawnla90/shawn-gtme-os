@@ -148,6 +148,7 @@ export default function RootLayout({
             { href: '/vitals', label: 'Vitals' },
             { href: '/about', label: 'About' },
             { href: '/arc', label: 'Arc' },
+            { href: '/method', label: 'Method' },
             { href: '/api', label: 'API' },
           ]}
         />

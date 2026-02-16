@@ -60,7 +60,7 @@ If you want to understand how the scoring works, there's a skill guide that brea
 
 ### Why none of this is hidden
 
-Because the system was built to share itself. The blog posts ship through the same pipeline as everything else. The daily log scans the same commits that built the blog engine. The content is the build. The build is the content.
+Because the system was built to share itself. The blog posts ship through the same pipeline as everything else. The daily log scans the same commits that built the blog engine. The content is the build. The build is the content. The process isn't linear. I'll write about why that matters.
 
 But here's the thing worth saying out loud: none of this required knowing everything upfront. Two weeks before this page existed, I had never registered a domain. Never configured DNS. Never touched Next.js.
 

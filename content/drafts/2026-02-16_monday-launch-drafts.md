@@ -56,6 +56,9 @@ right now it's completely open. no gate, no email, no catch. just copy and use i
 **Comment 3:**
 stack for the curious: Next.js, Turborepo monorepo, Vercel hosting, markdown files for all content, Cursor as the IDE, Claude as the build partner. three sites (shawnos.ai, thegtmos.ai, thecontentos.ai) deployed from a single repo.
 
+**Comment 4:**
+the way I build with AI isn't a framework. it's closer to structured freefall. more on that soon.
+
 ---
 
 ## Draft 2: "One Repo, One Address" [DRAFT]
@@ -89,6 +92,8 @@ here's what you'll find if you visit shawnos.ai:
 nothing is behind a gate. the system is the proof of work.
 
 this is what building in public looks like when you stop planning and start deploying.
+
+there's a method to this. I haven't named it yet. but it's recursive.
 
 shawn ⚡ the gtme alchemist 🧙‍♂️
 
