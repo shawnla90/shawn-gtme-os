@@ -8,6 +8,7 @@ data/*
 !data/daily-log/
 !data/progression/
 !data/progression/avatars/
+!data/website-stats.json
 data/daily-log/*.png
 data/daily-log/*.log
 scripts/
