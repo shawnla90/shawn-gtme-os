@@ -13,6 +13,7 @@ interface NavigationProps {
 const defaultLinks: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
+  { href: '/knowledge', label: 'Knowledge' },
   { href: '/about', label: 'About' },
 ]
 

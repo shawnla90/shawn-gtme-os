@@ -96,6 +96,7 @@ export default function RootLayout({
             { href: '/', label: 'Home' },
             { href: '/blog', label: 'Blog' },
             { href: '/log', label: 'Log' },
+            { href: '/knowledge', label: 'Knowledge' },
             { href: '/rpg-preview', label: 'RPG' },
             { href: '/about', label: 'About' },
             { href: '/arc', label: 'Arc' },
