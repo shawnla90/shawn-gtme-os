@@ -145,6 +145,7 @@ export default function RootLayout({
             { href: '/log', label: 'Log' },
             { href: '/knowledge', label: 'Knowledge' },
             { href: '/clay-wiki', label: 'Clay Wiki' },
+            { href: '/content-wiki', label: 'Content Wiki' },
             { href: '/context-wiki', label: 'Context Wiki' },
             { href: '/rpg-preview', label: 'RPG' },
             { href: '/vitals', label: 'Vitals' },

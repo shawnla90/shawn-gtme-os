@@ -16,6 +16,7 @@
     "./data/gtm-terms": "./data/gtm-terms.ts",
     "./data/clay-wiki": "./data/clay-wiki.ts",
     "./data/context-wiki": "./data/context-wiki.ts",
+    "./data/content-wiki": "./data/content-wiki.ts",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {

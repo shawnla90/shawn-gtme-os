@@ -56,6 +56,7 @@ export default function RootLayout({
           links={[
             { href: '/', label: 'Home' },
             { href: '/clay-wiki', label: 'Clay Wiki' },
+            { href: '/content-wiki', label: 'Content Wiki' },
             { href: '/log', label: 'Log' },
             { href: '/vitals', label: 'Vitals' },
           ]}

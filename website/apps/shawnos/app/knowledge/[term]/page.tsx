@@ -8,6 +8,7 @@ import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { CONTEXT_WIKI_ENTRIES } from '@shawnos/shared/data/context-wiki'
+import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -472,6 +473,72 @@ export default async function TermPage({
                   <Link
                     key={entry.id}
                     href={`/context-wiki/${entry.id}`}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      color: 'var(--accent)',
+                      background: 'var(--canvas-subtle)',
+                      border: '1px solid var(--border)',
+                      borderRadius: '6px',
+                      padding: '10px 18px',
+                      textDecoration: 'none',
+                      transition: 'border-color 0.15s ease',
+                    }}
+                  >
+                    <span style={{ fontSize: '16px' }}>&#9826;</span>
+                    {entry.title} &rarr;
+                  </Link>
+                ))}
+              </div>
+            </>
+          )
+        })()}
+
+        {/* Content Wiki backlinks */}
+        {(() => {
+          const contentTermMap: Record<string, string[]> = {
+            content: ['recursive-content-flow', 'repo-content-system', 'content-pillars'],
+            voice: ['voice-system', 'ai-slop-guide'],
+            linkedin: ['linkedin-playbook', 'commenting-strategy', 'call-to-actions'],
+            twitter: ['x-algorithm', 'x-best-practices'],
+            x: ['x-algorithm', 'x-best-practices'],
+            substack: ['substack-growth'],
+            tiktok: ['tiktok-playbook'],
+            reddit: ['reddit-strategy'],
+            typefully: ['typefully-mcp', 'content-mcps'],
+            algorithm: ['x-algorithm', 'linkedin-playbook', 'tiktok-playbook'],
+            slop: ['ai-slop-guide', 'anti-patterns'],
+            pillar: ['content-pillars'],
+            workflow: ['recursive-content-flow', 'content-skills'],
+            figma: ['design-tools'],
+            canva: ['design-tools'],
+            pillow: ['python-pillow', 'image-generation-tools'],
+            automation: ['content-skills', 'content-mcps'],
+          }
+          const matched = new Set<string>()
+          const slug = t.slug.toLowerCase()
+          const name = t.name.toLowerCase()
+          for (const [keyword, entryIds] of Object.entries(contentTermMap)) {
+            if (slug.includes(keyword) || name.includes(keyword)) {
+              entryIds.forEach((id) => matched.add(id))
+            }
+          }
+          const matchedEntries = CONTENT_WIKI_ENTRIES.filter((e) =>
+            matched.has(e.id)
+          )
+          if (matchedEntries.length === 0) return null
+          return (
+            <>
+              <hr style={divider} />
+              <div style={sectionLabel}>content playbooks</div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {matchedEntries.slice(0, 5).map((entry) => (
+                  <Link
+                    key={entry.id}
+                    href={`/content-wiki/${entry.id}`}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
