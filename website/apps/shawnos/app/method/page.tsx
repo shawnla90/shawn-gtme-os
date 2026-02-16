@@ -122,6 +122,10 @@ const antiPatterns: { label: string; desc: string }[] = [
     label: 'not linear',
     desc: 'no phase 1 → phase 2 pipeline. the sequence is determined by the work, not by the method.',
   },
+  {
+    label: 'not a productivity hack',
+    desc: 'this isn\'t about shipping faster (though it does). it\'s about shipping things that compound. each output makes the next build easier, the next content more grounded, the next plan more informed.',
+  },
 ]
 
 const contrasts: { from: string; diff: string }[] = [

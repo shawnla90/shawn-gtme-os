@@ -10,11 +10,12 @@
     "./pages/SkillGuidePage": "./pages/SkillGuidePage.tsx",
     "./pages/QuestBoardPage": "./pages/QuestBoardPage.tsx",
     "./pages/KnowledgeGuidePage": "./pages/KnowledgeGuidePage.tsx",
-    "./pages/KnowledgeGuidePage": "./pages/KnowledgeGuidePage.tsx",
     "./pages/GTMKnowledgeGuidePage": "./pages/GTMKnowledgeGuidePage.tsx",
     "./pages/VitalsPage": "./pages/VitalsPage.tsx",
     "./data/engineering-terms": "./data/engineering-terms.ts",
     "./data/gtm-terms": "./data/gtm-terms.ts",
+    "./data/clay-wiki": "./data/clay-wiki.ts",
+    "./data/context-wiki": "./data/context-wiki.ts",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {

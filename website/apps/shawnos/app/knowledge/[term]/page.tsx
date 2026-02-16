@@ -7,6 +7,7 @@ import {
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
+import { CONTEXT_WIKI_ENTRIES } from '@shawnos/shared/data/context-wiki'
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -406,6 +407,94 @@ export default async function TermPage({
             </div>
           </>
         )}
+
+        {/* Clay Wiki backlink */}
+        {['clay', 'claygent', 'sculptor', 'enrichment'].includes(t.slug) && (
+          <>
+            <hr style={divider} />
+            <div style={sectionLabel}>go deeper</div>
+            <Link
+              href="/clay-wiki"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '13px',
+                fontWeight: 600,
+                color: 'var(--accent)',
+                background: 'var(--canvas-subtle)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '10px 18px',
+                textDecoration: 'none',
+                transition: 'border-color 0.15s ease',
+              }}
+            >
+              <span style={{ fontSize: '16px' }}>&#9670;</span>
+              See the Clay Wiki &rarr;
+            </Link>
+          </>
+        )}
+
+        {/* Context Wiki backlinks */}
+        {(() => {
+          const contextTermMap: Record<string, string[]> = {
+            context: ['context-engineering', 'context-repository'],
+            parallel: ['parallel-agents'],
+            agent: ['agent-mode', 'parallel-agents'],
+            skills: ['skills'],
+            deploy: ['deployments-vercel'],
+            vercel: ['deployments-vercel'],
+            git: ['git-for-gtm', 'github-repos'],
+            python: ['python-for-gtm'],
+            mcp: ['mcp-servers'],
+            cron: ['cron-jobs'],
+            monorepo: ['monorepos'],
+          }
+          const matched = new Set<string>()
+          const slug = t.slug.toLowerCase()
+          const name = t.name.toLowerCase()
+          for (const [keyword, entryIds] of Object.entries(contextTermMap)) {
+            if (slug.includes(keyword) || name.includes(keyword)) {
+              entryIds.forEach((id) => matched.add(id))
+            }
+          }
+          const matchedEntries = CONTEXT_WIKI_ENTRIES.filter((e) =>
+            matched.has(e.id)
+          )
+          if (matchedEntries.length === 0) return null
+          return (
+            <>
+              <hr style={divider} />
+              <div style={sectionLabel}>deep dive</div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                {matchedEntries.map((entry) => (
+                  <Link
+                    key={entry.id}
+                    href={`/context-wiki/${entry.id}`}
+                    style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '13px',
+                      fontWeight: 600,
+                      color: 'var(--accent)',
+                      background: 'var(--canvas-subtle)',
+                      border: '1px solid var(--border)',
+                      borderRadius: '6px',
+                      padding: '10px 18px',
+                      textDecoration: 'none',
+                      transition: 'border-color 0.15s ease',
+                    }}
+                  >
+                    <span style={{ fontSize: '16px' }}>&#9826;</span>
+                    {entry.title} &rarr;
+                  </Link>
+                ))}
+              </div>
+            </>
+          )
+        })()}
 
         {/* Navigation */}
         <div style={navRow}>
