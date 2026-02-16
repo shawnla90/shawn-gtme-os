@@ -2,7 +2,7 @@
  * ShawnOS — Proprietary System Architecture
  * Copyright (c) 2026 Shawn Tenam
  * Licensed under ShawnOS Proprietary License v1.0
- * See LICENSE.md for terms
+ * See LICENSE for terms
  */
 
 /* ------------------------------------------------------------------ */

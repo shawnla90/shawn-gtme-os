@@ -66,7 +66,7 @@ Structured brand voice framework with 4 core playbooks:
 
 This repo uses a dual-license structure:
 
-- **Public code** (UI, components, design patterns): [Licensed for educational use](LICENSE.md)
+- **Public code** (UI, components, design patterns): [Licensed for educational use](LICENSE)
 - **Proprietary algorithms** (scoring, XP, business logic): All Rights Reserved (not publicly accessible)
 
 See [IP_REGISTRY.md](IP_REGISTRY.md) for a full asset inventory and protection strategy.
@@ -90,7 +90,7 @@ If you're building your own productivity OS, content engine, or agentic workflow
 
 ## 📄 License
 
-Licensed under [ShawnOS Proprietary License v1.0](LICENSE.md).
+Licensed under [ShawnOS Proprietary License v1.0](LICENSE).
 
 **TL;DR**: You can view, fork, and reference for educational purposes. You cannot use this code to build competing products.
 
