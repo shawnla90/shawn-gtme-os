@@ -214,6 +214,22 @@ export function getClassAvatarUrls(
   }
 }
 
+/**
+ * Returns public URLs for partner tool avatar assets.
+ * Files are served from public/progression/avatars/
+ */
+export function getToolAvatarUrls(tool: string): {
+  idle: string
+  static: string
+} {
+  const t = tool.toLowerCase()
+  const base = '/progression/avatars'
+  return {
+    idle: `${base}/tool-${t}-idle.gif`,
+    static: `${base}/tool-${t}-static.png`,
+  }
+}
+
 /** Default profile returned when the progression engine hasn't run yet. */
 export const DEFAULT_PROFILE: RPGProfile = {
   name: 'Operator',

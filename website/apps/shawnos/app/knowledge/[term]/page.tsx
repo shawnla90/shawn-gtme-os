@@ -6,6 +6,7 @@ import {
 } from '@shawnos/shared/data/engineering-terms'
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -346,6 +347,23 @@ export default async function TermPage({
           <span style={{ color: 'var(--accent)' }}>$</span> man{' '}
           {t.slug}
         </h1>
+
+        {/* Tool Avatar Display */}
+        {['clay', 'instantly', 'heyreach'].includes(t.slug) && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img 
+            src={getToolAvatarUrls(t.slug).idle}
+            alt={`${t.name} avatar`}
+            width={96}
+            height={96}
+            style={{ 
+              float: 'right', 
+              imageRendering: 'pixelated',
+              marginLeft: '24px',
+              marginBottom: '16px'
+            }}
+          />
+        )}
 
         {/* Category badge */}
         <div style={categoryBadge}>
