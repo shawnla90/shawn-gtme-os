@@ -17,3 +17,4 @@ screenshots/
 content/internal/
 .internal/
 *.csv
+node_modules/
