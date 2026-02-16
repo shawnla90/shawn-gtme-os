@@ -14,6 +14,7 @@ const defaultLinks: NavLink[] = [
   { href: '/', label: 'Home' },
   { href: '/blog', label: 'Blog' },
   { href: '/knowledge', label: 'Knowledge' },
+  { href: '/vitals', label: 'Vitals' },
   { href: '/about', label: 'About' },
 ]
 

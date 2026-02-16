@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
+import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -98,6 +99,7 @@ export default function RootLayout({
             { href: '/log', label: 'Log' },
             { href: '/knowledge', label: 'Knowledge' },
             { href: '/rpg-preview', label: 'RPG' },
+            { href: '/vitals', label: 'Vitals' },
             { href: '/about', label: 'About' },
             { href: '/arc', label: 'Arc' },
             { href: '/api', label: 'API' },
@@ -106,6 +108,7 @@ export default function RootLayout({
         <main>{children}</main>
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
+        <Analytics />
       </body>
     </html>
   )

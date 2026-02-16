@@ -15,5 +15,8 @@
   "devDependencies": {
     "turbo": "^2.8.8"
   },
-  "packageManager": "npm@10.8.2"
+  "packageManager": "npm@10.8.2",
+  "dependencies": {
+    "@vercel/analytics": "^1.6.1"
+  }
 }

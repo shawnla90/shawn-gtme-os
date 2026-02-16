@@ -12,6 +12,7 @@
     "./pages/KnowledgeGuidePage": "./pages/KnowledgeGuidePage.tsx",
     "./pages/KnowledgeGuidePage": "./pages/KnowledgeGuidePage.tsx",
     "./pages/GTMKnowledgeGuidePage": "./pages/GTMKnowledgeGuidePage.tsx",
+    "./pages/VitalsPage": "./pages/VitalsPage.tsx",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {

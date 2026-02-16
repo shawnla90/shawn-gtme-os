@@ -27,3 +27,22 @@ export {
 } from './rpg'
 export { getRPGProfile, getAvatarPath, getAvatarGifPath, hasRPGData } from './rpg.server'
 export { resolveDataRoot } from './dataRoot'
+export {
+  getNioAvatarUrls,
+  totalLOC,
+  formatNumber,
+  gradeColor,
+  LANGUAGE_COLORS,
+  NIO_TIERS,
+} from './vitals'
+export type {
+  WebsiteStats,
+  SiteStats,
+  SiteLOC,
+  TechnicalFeature,
+  NioProgress,
+  SharedStats,
+  InfraStats,
+  NioTierInfo,
+} from './vitals'
+export { getWebsiteStats } from './vitals.server'
