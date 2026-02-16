@@ -225,7 +225,7 @@ const ctaLinkStyle: React.CSSProperties = {
 
 /* ── data: Engineering / AI ────────────────────────── */
 
-const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
+export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
   {
     name: 'Version Control',
     prompt: '$ cd ~/version-control',
@@ -898,7 +898,23 @@ export function KnowledgeGuideLayout({
                               data-toc-id={termSlug}
                               style={termNameStyle}
                             >
-                              {term.name}
+                              <Link
+                                href={`/knowledge/${termSlug}`}
+                                style={{
+                                  color: 'inherit',
+                                  textDecoration: 'none',
+                                  borderBottom: '1px solid transparent',
+                                  transition: 'border-color 0.15s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                  ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--accent)'
+                                }}
+                                onMouseLeave={(e) => {
+                                  ;(e.currentTarget as HTMLElement).style.borderColor = 'transparent'
+                                }}
+                              >
+                                {term.name} →
+                              </Link>
                             </h3>
 
                             <p style={termDefStyle}>

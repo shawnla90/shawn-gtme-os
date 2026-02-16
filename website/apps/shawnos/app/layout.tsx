@@ -56,6 +56,52 @@ const personSchema = {
   name: 'Shawn Tenam',
   url: SITE_URL,
   jobTitle: 'GTM Engineer',
+  description:
+    'GTM engineer who builds AI-native pipelines, agent-driven workflows, and content systems that compound — all shipped from a single monorepo.',
+  knowsAbout: [
+    'GTM Engineering',
+    'AI Agent Development',
+    'Sales Operations',
+    'Revenue Operations',
+    'Pipeline Automation',
+    'Cold Email Infrastructure',
+    'LinkedIn Outreach Automation',
+    'Data Enrichment Pipelines',
+    'Content-as-Code Publishing',
+    'Next.js',
+    'TypeScript',
+    'Python',
+    'Vercel Deployment',
+    'Monorepo Architecture',
+    'Clay Workflows',
+    'HubSpot Automation',
+    'MCP Servers',
+    'Cursor IDE',
+  ],
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'GTM Engineer',
+    description:
+      'Designs and builds go-to-market infrastructure — AI-native pipelines, enrichment workflows, outbound automation, and content systems.',
+    skills:
+      'Clay, HeyReach, Instantly, HubSpot, Next.js, TypeScript, Python, Vercel, Cursor IDE, Claude AI',
+    occupationLocation: {
+      '@type': 'Country',
+      name: 'US',
+    },
+  },
+  alumniOf: [
+    {
+      '@type': 'Organization',
+      name: 'Plumbing Industry',
+      description: 'Licensed plumber turned GTM engineer — career pivot from trades to tech',
+    },
+    {
+      '@type': 'Role',
+      roleName: 'SDR / BDR',
+      description: 'Sales development representative building outbound systems and pipeline automation',
+    },
+  ],
   sameAs: [
     'https://linkedin.com/in/shawntenam',
     'https://x.com/shawntenam',

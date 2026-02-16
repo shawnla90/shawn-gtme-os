@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
-import { PostCard, LogCard, TypewriterHero, AvatarBadge } from '@shawnos/shared/components'
+import { PostCard, LogCard, TypewriterHero, AvatarBadge, BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'ShawnOS.ai | GTM engineering, built in public',
@@ -173,6 +173,8 @@ export default function HomePage() {
     profile && profile.level > 0 ? getAvatarUrlsForProfile(profile) : null
 
   return (
+    <>
+    <BreadcrumbSchema items={[]} />
     <div style={page}>
       {/* ── Hero ── */}
       <section style={heroSection}>
@@ -385,5 +387,6 @@ export default function HomePage() {
         </div>
       </section>
     </div>
+    </>
   )
 }

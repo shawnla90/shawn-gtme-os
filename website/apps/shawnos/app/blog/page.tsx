@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getAllPosts } from '@shawnos/shared/lib'
-import { PostCard } from '@shawnos/shared/components'
+import { PostCard, BreadcrumbSchema } from '@shawnos/shared/components'
 
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
 
@@ -26,6 +26,8 @@ export default function BlogIndex() {
   const posts = getAllPosts(CONTENT_DIR)
 
   return (
+    <>
+    <BreadcrumbSchema items={[{ name: 'Blog', url: 'https://shawnos.ai/blog' }]} />
     <section
       style={{
         maxWidth: 720,
@@ -69,5 +71,6 @@ export default function BlogIndex() {
         </div>
       )}
     </section>
+    </>
   )
 }

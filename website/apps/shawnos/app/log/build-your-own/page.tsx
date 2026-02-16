@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import CopyButton from './CopyButton'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 /* ── Metadata & SEO ── */
 
@@ -391,6 +392,13 @@ const backLink: React.CSSProperties = {
 
 export default function BuildYourOwnPage() {
   return (
+    <>
+    <BreadcrumbSchema
+      items={[
+        { name: 'Log', url: 'https://shawnos.ai/log' },
+        { name: 'Build Your Own', url: 'https://shawnos.ai/log/build-your-own' },
+      ]}
+    />
     <div style={container}>
       {/* Terminal header */}
       <h1 style={terminalHeader}>
@@ -443,5 +451,6 @@ export default function BuildYourOwnPage() {
         &larr; Back to the log
       </Link>
     </div>
+    </>
   )
 }

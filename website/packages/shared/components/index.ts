@@ -1,4 +1,5 @@
 export { AvatarBadge } from './AvatarBadge'
+export { BreadcrumbSchema } from './BreadcrumbSchema'
 export { TerminalChrome } from './TerminalChrome'
 export { Navigation } from './Navigation'
 export { NetworkBanner } from './NetworkBanner'

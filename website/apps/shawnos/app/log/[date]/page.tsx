@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getLogDates, getLogByDate, resolveDataRoot } from '@shawnos/shared/lib'
-import { DailyLogView, LogDetailIntro } from '@shawnos/shared/components'
+import { DailyLogView, LogDetailIntro, BreadcrumbSchema } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://shawnos.ai'
 const LOG_DIR = path.join(resolveDataRoot(), 'daily-log')
@@ -136,6 +136,13 @@ export default async function LogPage({
   }
 
   return (
+    <>
+    <BreadcrumbSchema
+      items={[
+        { name: 'Log', url: `${SITE_URL}/log` },
+        { name: formatted, url: `${SITE_URL}/log/${date}` },
+      ]}
+    />
     <div
       style={{
         maxWidth: 1200,
@@ -171,5 +178,6 @@ export default async function LogPage({
         basePath="/log"
       />
     </div>
+    </>
   )
 }

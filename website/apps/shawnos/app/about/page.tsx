@@ -1,10 +1,23 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'About',
   description:
     'GTM Engineer. Builder. Shipped from a monorepo. The operating system behind shawnos.ai.',
+  keywords: [
+    'GTM engineer',
+    'revenue operations engineer',
+    'GTM systems architect',
+    'go-to-market automation',
+    'sales operations engineer',
+    'AI-native development',
+    'monorepo builder',
+    'Clay HubSpot automation',
+    'outbound pipeline engineering',
+    'Cursor IDE developer',
+  ],
   alternates: { canonical: 'https://shawnos.ai/about' },
   openGraph: {
     title: 'About | shawnos.ai',
@@ -89,6 +102,8 @@ const mutedText: React.CSSProperties = {
 
 export default function AboutPage() {
   return (
+    <>
+    <BreadcrumbSchema items={[{ name: 'About', url: 'https://shawnos.ai/about' }]} />
     <div
       style={{
         maxWidth: '680px',
@@ -288,5 +303,6 @@ export default function AboutPage() {
         </Link>
       </div>
     </div>
+    </>
   )
 }

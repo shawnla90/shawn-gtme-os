@@ -1,10 +1,23 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'The Arc',
   description:
     'Plumber. SDR. GTM Engineer. The full arc behind shawnos.ai and the operating system.',
+  keywords: [
+    'plumber to tech',
+    'SDR career path',
+    'self-taught developer',
+    'career transition into tech',
+    'non-traditional tech background',
+    'GTM engineer origin story',
+    'sales development representative',
+    'blue collar to software engineer',
+    'build in public journey',
+    'unconventional career path',
+  ],
   alternates: { canonical: 'https://shawnos.ai/arc' },
   openGraph: {
     title: 'The Arc | shawnos.ai',
@@ -128,6 +141,8 @@ const card: React.CSSProperties = {
 
 export default function ArcPage() {
   return (
+    <>
+    <BreadcrumbSchema items={[{ name: 'The Arc', url: 'https://shawnos.ai/arc' }]} />
     <div
       style={{
         maxWidth: '680px',
@@ -414,5 +429,6 @@ export default function ArcPage() {
         </Link>
       </div>
     </div>
+    </>
   )
 }

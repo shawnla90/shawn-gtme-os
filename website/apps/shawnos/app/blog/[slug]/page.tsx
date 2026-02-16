@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -64,6 +65,13 @@ export default async function BlogPost({
   }
 
   return (
+    <>
+    <BreadcrumbSchema
+      items={[
+        { name: 'Blog', url: `${SITE_URL}/blog` },
+        { name: post.title, url: `${SITE_URL}/blog/${slug}` },
+      ]}
+    />
     <article
       style={{
         maxWidth: 720,
@@ -139,5 +147,6 @@ export default async function BlogPost({
         </a>
       </footer>
     </article>
+    </>
   )
 }

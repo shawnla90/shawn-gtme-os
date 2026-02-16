@@ -13,6 +13,8 @@
     "./pages/KnowledgeGuidePage": "./pages/KnowledgeGuidePage.tsx",
     "./pages/GTMKnowledgeGuidePage": "./pages/GTMKnowledgeGuidePage.tsx",
     "./pages/VitalsPage": "./pages/VitalsPage.tsx",
+    "./data/engineering-terms": "./data/engineering-terms.ts",
+    "./data/gtm-terms": "./data/gtm-terms.ts",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {

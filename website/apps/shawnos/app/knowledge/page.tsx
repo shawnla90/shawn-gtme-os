@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { KnowledgeGuidePage } from '@shawnos/shared/pages/KnowledgeGuidePage'
+import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'Knowledge Guide | Engineering & AI Terms You Actually Need',
@@ -41,6 +43,30 @@ export const metadata: Metadata = {
   },
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: ENGINEERING_CATEGORIES.flatMap((cat) =>
+    cat.terms.map((term) => ({
+      '@type': 'Question',
+      name: `What is ${term.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${term.definition} ${term.whyItMatters.slice(0, 300)}`,
+      },
+    })),
+  ),
+}
+
 export default function Page() {
-  return <KnowledgeGuidePage />
+  return (
+    <>
+      <BreadcrumbSchema items={[{ name: 'Knowledge', url: 'https://shawnos.ai/knowledge' }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <KnowledgeGuidePage />
+    </>
+  )
 }

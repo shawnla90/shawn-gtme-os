@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { SkillGuidePage } from '@shawnos/shared/pages/SkillGuidePage'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'Skill Guide | How the Daily Tracker Works',
@@ -40,5 +41,15 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <SkillGuidePage />
+  return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Log', url: 'https://shawnos.ai/log' },
+          { name: 'Skill Guide', url: 'https://shawnos.ai/log/skill-guide' },
+        ]}
+      />
+      <SkillGuidePage />
+    </>
+  )
 }

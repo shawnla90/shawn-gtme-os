@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { CopyButton, CodeBlock } from './components'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'Public API | ShawnOS.ai — Real-Time RPG Progression Feed',
@@ -45,6 +46,8 @@ export const metadata: Metadata = {
 
 export default function APIPage() {
   return (
+    <>
+    <BreadcrumbSchema items={[{ name: 'API', url: 'https://shawnos.ai/api' }]} />
     <div className="min-h-screen bg-black text-gray-100">
       {/* Hero Section */}
       <section className="border-b border-gray-800 bg-gradient-to-b from-gray-900 to-black py-16">
@@ -459,6 +462,7 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
         </div>
       </footer>
     </div>
+    </>
   )
 }
 

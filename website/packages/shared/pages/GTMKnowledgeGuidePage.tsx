@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 /* ── types ───────────────────────────────────────── */
 
-interface Term {
+export interface GTMTerm {
   id: string
   name: string
   definition: string
@@ -14,16 +14,16 @@ interface Term {
   related: string[]
 }
 
-interface Category {
+export interface GTMCategory {
   id: string
   name: string
   prompt: string
-  terms: Term[]
+  terms: GTMTerm[]
 }
 
 /* ── content data ────────────────────────────────── */
 
-const CATEGORIES: Category[] = [
+export const GTM_CATEGORIES: GTMCategory[] = [
   {
     id: 'email-campaigns',
     name: 'Email Campaigns',
@@ -693,7 +693,7 @@ export function GTMKnowledgeGuidePage() {
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   /* build a flat list of all IDs (categories + terms) for the observer */
-  const allIds = CATEGORIES.flatMap((cat) => [
+  const allIds = GTM_CATEGORIES.flatMap((cat) => [
     cat.id,
     ...cat.terms.map((t) => t.id),
   ])
@@ -741,11 +741,11 @@ export function GTMKnowledgeGuidePage() {
 
   /* find term name from id for related tag display */
   const termNameMap = new Map<string, string>()
-  CATEGORIES.forEach((cat) =>
+  GTM_CATEGORIES.forEach((cat) =>
     cat.terms.forEach((t) => termNameMap.set(t.id, t.name)),
   )
 
-  const termCount = CATEGORIES.reduce((n, c) => n + c.terms.length, 0)
+  const termCount = GTM_CATEGORIES.reduce((n, c) => n + c.terms.length, 0)
 
   return (
     <>
@@ -828,7 +828,7 @@ export function GTMKnowledgeGuidePage() {
             who can build systems because they learned the vocabulary.
           </p>
           <p style={heroMuted}>
-            {CATEGORIES.length} categories &middot; {termCount} terms &middot;
+            {GTM_CATEGORIES.length} categories &middot; {termCount} terms &middot;
             from the builder side
           </p>
         </section>
@@ -846,7 +846,7 @@ export function GTMKnowledgeGuidePage() {
 
         {mobileTocOpen && (
           <nav className="kg-mobile-toc-content">
-            {CATEGORIES.map((cat) => (
+            {GTM_CATEGORIES.map((cat) => (
               <div key={cat.id}>
                 <a
                   href={`#${cat.id}`}
@@ -899,7 +899,7 @@ export function GTMKnowledgeGuidePage() {
         <div className="kg-two-col" style={twoColumnLayout}>
           {/* ── Main content ── */}
           <main style={mainContent}>
-            {CATEGORIES.map((cat, catIdx) => (
+            {GTM_CATEGORIES.map((cat, catIdx) => (
               <React.Fragment key={cat.id}>
                 <section id={cat.id}>
                   <div style={sectionPrompt}>{cat.prompt}</div>
@@ -912,7 +912,25 @@ export function GTMKnowledgeGuidePage() {
                       className="kg-term-card"
                       style={termCard}
                     >
-                      <h3 style={termName}>{term.name}</h3>
+                      <h3 style={termName}>
+                        <Link
+                          href={`/knowledge/${term.id}`}
+                          style={{
+                            color: 'inherit',
+                            textDecoration: 'none',
+                            borderBottom: '1px solid transparent',
+                            transition: 'border-color 0.15s ease',
+                          }}
+                          onMouseEnter={(e) => {
+                            ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--accent)'
+                          }}
+                          onMouseLeave={(e) => {
+                            ;(e.currentTarget as HTMLElement).style.borderColor = 'transparent'
+                          }}
+                        >
+                          {term.name} →
+                        </Link>
+                      </h3>
                       <p style={termDefinition}>{term.definition}</p>
 
                       <div style={termLabel}>Why it matters</div>
@@ -947,7 +965,7 @@ export function GTMKnowledgeGuidePage() {
                   ))}
                 </section>
 
-                {catIdx < CATEGORIES.length - 1 && <hr style={divider} />}
+                {catIdx < GTM_CATEGORIES.length - 1 && <hr style={divider} />}
               </React.Fragment>
             ))}
 
@@ -1018,7 +1036,7 @@ export function GTMKnowledgeGuidePage() {
           {/* ── Sticky TOC sidebar ── */}
           <nav className="kg-toc-sidebar" style={tocSidebar}>
             <div style={tocTitle}>On this page</div>
-            {CATEGORIES.map((cat) => (
+            {GTM_CATEGORIES.map((cat) => (
               <div key={cat.id}>
                 <a
                   href={`#${cat.id}`}

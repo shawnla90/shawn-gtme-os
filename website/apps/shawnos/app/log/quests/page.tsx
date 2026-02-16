@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { QuestBoardPage } from '@shawnos/shared/pages/QuestBoardPage'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'Quest Board | Challenges for Builders',
@@ -41,5 +42,15 @@ export const metadata: Metadata = {
 }
 
 export default function Page() {
-  return <QuestBoardPage />
+  return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Log', url: 'https://shawnos.ai/log' },
+          { name: 'Quests', url: 'https://shawnos.ai/log/quests' },
+        ]}
+      />
+      <QuestBoardPage />
+    </>
+  )
 }

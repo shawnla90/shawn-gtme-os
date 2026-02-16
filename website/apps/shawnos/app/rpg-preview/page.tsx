@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { TITLE_TABLE, getRPGProfile, resolveDataRoot } from '@shawnos/shared/lib'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { TierProgressionGrid } from './TierProgressionGrid'
 import { ClassShowcaseGrid } from './ClassShowcaseGrid'
 import { ALL_CLASSES } from './constants'
@@ -10,6 +11,30 @@ const DATA_ROOT = resolveDataRoot()
 export const metadata: Metadata = {
   title: 'The Progression Engine | ShawnOS.ai',
   description: '11 tiers. 5 classes. Every title earned through daily output, tracked in the build log.',
+  keywords: [
+    'productivity gamification',
+    'build in public gamification',
+    'RPG progression system',
+    'developer XP system',
+    'output-based leveling',
+    'daily build tracker',
+    'pixel art avatar system',
+    'gamified developer portfolio',
+    'tier progression engine',
+    'creative coding RPG',
+  ],
+  alternates: { canonical: 'https://shawnos.ai/rpg-preview' },
+  openGraph: {
+    title: 'The Progression Engine | ShawnOS.ai',
+    description: '11 tiers. 5 classes. Every title earned through daily output, tracked in the build log.',
+    url: 'https://shawnos.ai/rpg-preview',
+    images: [{ url: '/og?title=Progression+Engine&subtitle=11+tiers.+5+classes.+Every+title+earned.', width: 1200, height: 630 }],
+  },
+  twitter: {
+    title: 'The Progression Engine | ShawnOS.ai',
+    description: '11 tiers. 5 classes. Every title earned through daily output.',
+    images: ['/og?title=Progression+Engine&subtitle=11+tiers.+5+classes.+Every+title+earned.'],
+  },
 }
 
 /* ── helpers ──────────────────────────────────────── */
@@ -92,6 +117,8 @@ export default function RPGPreviewPage() {
   const currentAvatarTier = profile?.avatar_tier ?? 0
 
   return (
+    <>
+    <BreadcrumbSchema items={[{ name: 'RPG', url: 'https://shawnos.ai/rpg-preview' }]} />
     <RPGPageShell>
     <div style={page}>
       {/* ── Header ── */}
@@ -201,5 +228,6 @@ export default function RPGPreviewPage() {
       </div>
     </div>
     </RPGPageShell>
+    </>
   )
 }

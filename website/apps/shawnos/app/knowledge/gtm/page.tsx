@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { GTMKnowledgeGuidePage } from '@shawnos/shared/pages/GTMKnowledgeGuidePage'
+import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 export const metadata: Metadata = {
   title: 'GTM OS Knowledge Guide | Email Campaigns & Outreach Terms',
@@ -41,6 +43,35 @@ export const metadata: Metadata = {
   },
 }
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: GTM_CATEGORIES.flatMap((cat) =>
+    cat.terms.map((term) => ({
+      '@type': 'Question',
+      name: `What is ${term.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `${term.definition} ${term.whyItMatters.slice(0, 300)}`,
+      },
+    })),
+  ),
+}
+
 export default function Page() {
-  return <GTMKnowledgeGuidePage />
+  return (
+    <>
+      <BreadcrumbSchema
+        items={[
+          { name: 'Knowledge', url: 'https://shawnos.ai/knowledge' },
+          { name: 'GTM', url: 'https://shawnos.ai/knowledge/gtm' },
+        ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <GTMKnowledgeGuidePage />
+    </>
+  )
 }

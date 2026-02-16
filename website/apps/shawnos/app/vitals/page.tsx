@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getWebsiteStats, resolveDataRoot } from '@shawnos/shared/lib'
 import { VitalsPage } from '@shawnos/shared/pages/VitalsPage'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 const DATA_ROOT = resolveDataRoot()
 
@@ -8,6 +9,18 @@ export const metadata: Metadata = {
   title: 'System Vitals',
   description:
     'Live system scan of the ShawnOS website ecosystem. Code depth, technical features, and the Nio website guardian.',
+  keywords: [
+    'developer portfolio stats',
+    'code metrics dashboard',
+    'website ecosystem scanner',
+    'monorepo statistics',
+    'technical portfolio vitals',
+    'live code depth analysis',
+    'build in public metrics',
+    'developer output dashboard',
+    'Next.js site statistics',
+    'open source project stats',
+  ],
   alternates: { canonical: 'https://shawnos.ai/vitals' },
   openGraph: {
     title: 'System Vitals | shawnos.ai',
@@ -61,5 +74,10 @@ export default function VitalsRoute() {
     )
   }
 
-  return <VitalsPage stats={stats} />
+  return (
+    <>
+      <BreadcrumbSchema items={[{ name: 'Vitals', url: 'https://shawnos.ai/vitals' }]} />
+      <VitalsPage stats={stats} />
+    </>
+  )
 }

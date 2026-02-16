@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import Link from 'next/link'
 import { getAllLogs, getLogAggregates, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
-import { LogCard, LogHero } from '@shawnos/shared/components'
+import { LogCard, LogHero, BreadcrumbSchema } from '@shawnos/shared/components'
 
 const DATA_ROOT = resolveDataRoot()
 const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
@@ -52,6 +52,8 @@ export default function LogIndex() {
   const urls = profile && profile.level > 0 ? getAvatarUrlsForProfile(profile) : null
 
   return (
+    <>
+    <BreadcrumbSchema items={[{ name: 'Log', url: 'https://shawnos.ai/log' }]} />
     <section
       style={{
         maxWidth: 720,
@@ -126,5 +128,6 @@ export default function LogIndex() {
         </div>
       )}
     </section>
+    </>
   )
 }
