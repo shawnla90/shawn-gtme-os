@@ -169,7 +169,7 @@ shawnos.ai is live right now. here's what's on it:
 
 ## building vs sharing
 
-I've been saying I build in public. and I meant it. I was sharing Clay tables, walking through enrichment flows, posting prompts in the comments. no gatekeeping.
+I've been saying I build in public. and I meant it. I was sharing Clay tables, walking through enrichment flows, posting wquick workflow wins.
 
 but that was sharing in public. not building.
 

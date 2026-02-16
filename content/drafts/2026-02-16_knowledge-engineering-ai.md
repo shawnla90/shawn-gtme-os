@@ -1,6 +1,6 @@
 # AI Knowledge Guide
 
- weeks ago I didn't know what a git repo was. not really.
+2 weeks ago I didn't know what a git repo was. not really. 
 
 I'd heard the word. I knew engineers used it. but I didn't understand it. I was an SDR who built systems in my head, in scattered Notion docs, in Slack messages I'd never find again.
 
@@ -76,7 +76,7 @@ when Git can't automatically combine changes from two branches because they edit
 
 hosting platform that deploys websites from Git repos with zero config.
 
-**why it matters**: the first time I pushed to main and watched Vercel build my site in 45 seconds, I realized I'd been doing web hosting wrong for years. no FTP uploads. no manual file transfers. just push the code and it's live. three websites (shawnos.ai, thegtmos.ai, thecontentos.ai) all deploy from one push. that's not magic. that's just how modern web development works.
+**why it matters**: the first time I pushed to main and saw Vercel build my site in 45 seconds, it felt like skipping straight to the good part. no FTP uploads, no manual file transfers—just push the code and it's live. I never did it the "old way," so I got to learn by doing, mistakes and all, and I’m not sorry for it. three websites (shawnos.ai, thegtmos.ai, thecontentos.ai) all deploy from one push. that's not magic. that's just how modern web development works.
 
 **how I use it**: every time I run `/deploy`, it pushes to GitHub, Vercel picks it up, builds all three sites, and they go live. I get a preview URL for every branch. if something breaks, I check the build logs. if it works, it's live in under a minute.
 

@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { getClassAvatarUrls } from '@shawnos/shared/lib/rpg'
 import type { RPGClass, RPGProfile } from '@shawnos/shared/lib/rpg'
 import { AvatarBadge } from '@shawnos/shared/components'
-import { ALL_CLASSES, REVEAL_DURATION, CLASS_COLORS } from './constants'
+import { ALL_CLASSES, REVEAL_DURATION_MAX, CLASS_COLORS } from './constants'
 
 type RevealPhase = 'locked' | 'glitch' | 'revealed' | 'fading'
 
@@ -68,7 +68,7 @@ function RevealableAvatar({ children, isLocked, rpgClass }: RevealableAvatarProp
     setShowFlash(true)
     setTimeout(() => {
       setPhase('revealed')
-      setTimeLeft(REVEAL_DURATION)
+      setTimeLeft(REVEAL_DURATION_MAX)
     }, 300)
     setTimeout(() => setShowFlash(false), 800)
   }
@@ -246,7 +246,7 @@ function RevealableAvatar({ children, isLocked, rpgClass }: RevealableAvatarProp
             <div
               style={{
                 height: '100%',
-                width: `${(timeLeft / REVEAL_DURATION) * 100}%`,
+                width: `${(timeLeft / REVEAL_DURATION_MAX) * 100}%`,
                 background: colors.primary,
                 borderRadius: 2,
                 transition: 'width 1s linear',

@@ -67,6 +67,7 @@ function RevealableAvatar({ children, isLocked, rpgClass, revealDuration }: Reve
   const [timeLeft, setTimeLeft] = useState(0)
   const [showFlash, setShowFlash] = useState(false)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const startTimeRef = useRef<number>(0)
 
   const colors = CLASS_COLORS[rpgClass]
   const classKey = rpgClass.toLowerCase()
@@ -78,6 +79,7 @@ function RevealableAvatar({ children, isLocked, rpgClass, revealDuration }: Reve
     setShowFlash(true)
     setTimeout(() => {
       setPhase('revealed')
+      startTimeRef.current = Date.now()
       setTimeLeft(revealDuration)
     }, 300)
     setTimeout(() => setShowFlash(false), 800)
@@ -87,19 +89,20 @@ function RevealableAvatar({ children, isLocked, rpgClass, revealDuration }: Reve
   useEffect(() => {
     if (phase !== 'revealed') return
     intervalRef.current = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev <= 1) {
-          if (intervalRef.current) clearInterval(intervalRef.current)
-          setPhase('fading')
-          return 0
-        }
-        return prev - 1
-      })
-    }, 1000)
+      const elapsed = (Date.now() - startTimeRef.current) / 1000
+      const remaining = revealDuration - elapsed
+      if (remaining <= 0) {
+        if (intervalRef.current) clearInterval(intervalRef.current)
+        setTimeLeft(0)
+        setPhase('fading')
+      } else {
+        setTimeLeft(remaining)
+      }
+    }, 100)
     return () => {
       if (intervalRef.current) clearInterval(intervalRef.current)
     }
-  }, [phase])
+  }, [phase, revealDuration])
 
   /* ── Auto-close after fade-out ── */
   useEffect(() => {
@@ -264,7 +267,7 @@ function RevealableAvatar({ children, isLocked, rpgClass, revealDuration }: Reve
                 width: `${(timeLeft / revealDuration) * 100}%`,
                 background: colors.primary,
                 borderRadius: 2,
-                transition: 'width 1s linear',
+                transition: 'width 0.1s linear',
                 boxShadow: `0 0 6px ${colors.glow}`,
               }}
             />
@@ -279,7 +282,7 @@ function RevealableAvatar({ children, isLocked, rpgClass, revealDuration }: Reve
               opacity: 0.6,
             }}
           >
-            {timeLeft}s
+            {Math.ceil(timeLeft)}s
           </div>
         </div>
       )}

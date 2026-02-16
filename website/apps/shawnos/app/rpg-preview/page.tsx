@@ -3,6 +3,7 @@ import { TITLE_TABLE, getRPGProfile, resolveDataRoot } from '@shawnos/shared/lib
 import { TierProgressionGrid } from './TierProgressionGrid'
 import { ClassShowcaseGrid } from './ClassShowcaseGrid'
 import { ALL_CLASSES } from './constants'
+import { RPGPageShell } from './RPGPageShell'
 
 const DATA_ROOT = resolveDataRoot()
 
@@ -91,6 +92,7 @@ export default function RPGPreviewPage() {
   const currentAvatarTier = profile?.avatar_tier ?? 0
 
   return (
+    <RPGPageShell>
     <div style={page}>
       {/* ── Header ── */}
       <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: 8 }}>
@@ -198,5 +200,6 @@ export default function RPGPreviewPage() {
         <a href="/log" style={{ color: 'var(--accent)', textDecoration: 'none' }}>see how this score is earned</a>_
       </div>
     </div>
+    </RPGPageShell>
   )
 }
