@@ -1,6 +1,7 @@
 import type { RPGClass } from '@shawnos/shared/lib'
 
-export const REVEAL_DURATION = 10 // seconds
+export const REVEAL_DURATION_MAX = 9    // closest locked tier (seconds)
+export const REVEAL_DURATION_MIN = 1.5  // max rank / farthest (seconds)
 export const ALL_CLASSES: RPGClass[] = ['Builder', 'Scribe', 'Strategist', 'Alchemist', 'Polymath']
 
 /* ── Per-class color palette (Easter egg reveal effects) ── */

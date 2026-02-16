@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import { TITLE_TABLE, getAvatarUrlsForProfile } from '@shawnos/shared/lib/rpg'
 import type { RPGProfile, RPGClass } from '@shawnos/shared/lib/rpg'
 import { AvatarBadge } from '@shawnos/shared/components'
-import { ALL_CLASSES, REVEAL_DURATION, CLASS_COLORS } from './constants'
+import { ALL_CLASSES, REVEAL_DURATION_MAX, REVEAL_DURATION_MIN, CLASS_COLORS } from './constants'
 
 /* ── helpers (client-safe, duplicated from page) ── */
 
@@ -59,9 +59,10 @@ interface RevealableAvatarProps {
   children: React.ReactNode
   isLocked: boolean
   rpgClass: RPGClass
+  revealDuration: number
 }
 
-function RevealableAvatar({ children, isLocked, rpgClass }: RevealableAvatarProps) {
+function RevealableAvatar({ children, isLocked, rpgClass, revealDuration }: RevealableAvatarProps) {
   const [phase, setPhase] = useState<RevealPhase>('locked')
   const [timeLeft, setTimeLeft] = useState(0)
   const [showFlash, setShowFlash] = useState(false)
@@ -77,7 +78,7 @@ function RevealableAvatar({ children, isLocked, rpgClass }: RevealableAvatarProp
     setShowFlash(true)
     setTimeout(() => {
       setPhase('revealed')
-      setTimeLeft(REVEAL_DURATION)
+      setTimeLeft(revealDuration)
     }, 300)
     setTimeout(() => setShowFlash(false), 800)
   }
@@ -260,7 +261,7 @@ function RevealableAvatar({ children, isLocked, rpgClass }: RevealableAvatarProp
             <div
               style={{
                 height: '100%',
-                width: `${(timeLeft / REVEAL_DURATION) * 100}%`,
+                width: `${(timeLeft / revealDuration) * 100}%`,
                 background: colors.primary,
                 borderRadius: 2,
                 transition: 'width 1s linear',
@@ -370,6 +371,19 @@ interface TierProgressionGridProps {
 }
 
 export function TierProgressionGrid({ currentAvatarTier }: TierProgressionGridProps) {
+  const lockedIndices = TITLE_TABLE
+    .map((t, i) => ({ i, locked: t.avatar_tier > currentAvatarTier }))
+    .filter(x => x.locked)
+    .map(x => x.i)
+
+  function getRevealDuration(idx: number): number {
+    const pos = lockedIndices.indexOf(idx)
+    if (pos === -1) return REVEAL_DURATION_MAX
+    if (lockedIndices.length === 1) return REVEAL_DURATION_MIN
+    const t = pos / (lockedIndices.length - 1)
+    return Math.round((REVEAL_DURATION_MAX - t * (REVEAL_DURATION_MAX - REVEAL_DURATION_MIN)) * 10) / 10
+  }
+
   return (
     <>
       <style>{EASTER_EGG_CSS}</style>
@@ -386,7 +400,7 @@ export function TierProgressionGrid({ currentAvatarTier }: TierProgressionGridPr
 
           return (
             <div key={tier.level} style={cardWrapper}>
-              <RevealableAvatar isLocked={isLocked} rpgClass={rpgClass}>
+              <RevealableAvatar isLocked={isLocked} rpgClass={rpgClass} revealDuration={getRevealDuration(idx)}>
                 <AvatarBadge
                   size="compact"
                   profile={profile}
