@@ -15,6 +15,8 @@ export function RPGPageShell({ children }: { children: ReactNode }) {
         style={{
           opacity: loaded ? 1 : 0,
           transition: 'opacity 0.4s ease-in',
+          overflowX: 'hidden',
+          WebkitOverflowScrolling: 'touch',
         }}
       >
         {children}

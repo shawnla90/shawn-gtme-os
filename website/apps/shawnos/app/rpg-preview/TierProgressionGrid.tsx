@@ -30,12 +30,6 @@ function formatXP(xp: number): string {
 
 /* ── styles ──────────────────────────────────────── */
 
-const grid: React.CSSProperties = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))',
-  gap: 20,
-}
-
 const cardWrapper: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
@@ -390,8 +384,21 @@ export function TierProgressionGrid({ currentAvatarTier }: TierProgressionGridPr
   return (
     <>
       <style>{EASTER_EGG_CSS}</style>
+      <style>{`
+        .tier-progression-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+          gap: 20px;
+        }
+        @media (max-width: 480px) {
+          .tier-progression-grid {
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 12px;
+          }
+        }
+      `}</style>
 
-      <div style={grid}>
+      <div className="tier-progression-grid">
         {TITLE_TABLE.map((tier, idx) => {
           const profile = mockProfileForTier(idx)
           const nextTier = TITLE_TABLE[idx + 1] ?? null

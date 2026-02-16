@@ -247,7 +247,16 @@ function AccomplishmentRow({ item }: { item: Accomplishment }) {
         {item.timestamp}
       </span>
       <TypeTag type={item.type} />
-      <span style={{ color: 'var(--text-primary)', flexShrink: 1, minWidth: 0 }}>
+      <span
+        style={{
+          color: 'var(--text-primary)',
+          flexShrink: 1,
+          minWidth: 0,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+        }}
+      >
         {item.title}
       </span>
       {item.words != null && (
@@ -297,7 +306,16 @@ function PipelineRow({ item }: { item: PipelineDraft }) {
       >
         {label}
       </span>
-      <span style={{ color: 'var(--text-primary)', flexShrink: 1, minWidth: 0 }}>
+      <span
+        style={{
+          color: 'var(--text-primary)',
+          flexShrink: 1,
+          minWidth: 0,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+        }}
+      >
         {item.title}
       </span>
       {item.target_date && (

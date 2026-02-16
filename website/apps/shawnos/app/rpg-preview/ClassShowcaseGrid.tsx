@@ -18,12 +18,6 @@ interface RevealableAvatarProps {
   rpgClass: RPGClass
 }
 
-const grid: React.CSSProperties = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-  gap: 20,
-}
-
 const cardWrapper: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
@@ -381,11 +375,26 @@ const EASTER_EGG_CSS = `
   }
 `
 
+const GRID_CSS = `
+  .class-showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 20px;
+  }
+  @media (max-width: 480px) {
+    .class-showcase-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 12px;
+    }
+  }
+`
+
 export function ClassShowcaseGrid({ currentClass }: ClassShowcaseGridProps) {
   return (
     <>
       <style>{EASTER_EGG_CSS}</style>
-      <div style={grid}>
+      <style>{GRID_CSS}</style>
+      <div className="class-showcase-grid">
         {ALL_CLASSES.map((rpgClass) => {
           const profile = mockProfileForClass(rpgClass)
           const urls = getClassAvatarUrls(rpgClass)

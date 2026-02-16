@@ -77,6 +77,7 @@ export function RPGLoadingScreen({ onComplete }: { onComplete: () => void }) {
   const [phase, setPhase] = useState<LoadingPhase>('loading')
   const [progress, setProgress] = useState(0)
   const [visibleLines, setVisibleLines] = useState(0)
+  const [audioUnlocked, setAudioUnlocked] = useState(false)
   const startRef = useRef<number>(0)
   const rafRef = useRef<number>(0)
 
@@ -89,9 +90,14 @@ export function RPGLoadingScreen({ onComplete }: { onComplete: () => void }) {
     /* final value at t=1 → 1.0 */
   }, [])
 
-  useEffect(() => {
-    playBootSound()
+  const handleTapToStart = useCallback(() => {
+    if (!audioUnlocked) {
+      playBootSound()
+      setAudioUnlocked(true)
+    }
+  }, [audioUnlocked])
 
+  useEffect(() => {
     /* reveal boot lines on staggered timers */
     const lineTimers: ReturnType<typeof setTimeout>[] = []
     BOOT_LINES.forEach((_, i) => {
@@ -151,6 +157,9 @@ export function RPGLoadingScreen({ onComplete }: { onComplete: () => void }) {
         aria-valuemax={100}
         aria-label="Loading RPG preview"
         style={{ opacity: phase === 'complete' ? 0 : 1 }}
+        onClick={handleTapToStart}
+        onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleTapToStart() }}
+        tabIndex={0}
       >
         {/* scanline overlay */}
         <div className="rpg-loading-scanlines" />
@@ -177,6 +186,9 @@ export function RPGLoadingScreen({ onComplete }: { onComplete: () => void }) {
 
           {/* system label */}
           <div className="rpg-loading-label">LOADING SYSTEM v1.0</div>
+          {!audioUnlocked && (
+            <div className="rpg-loading-tap-prompt">Tap to start</div>
+          )}
         </div>
       </div>
     </>
@@ -195,6 +207,7 @@ const CSS_TEXT = `
     justify-content: center;
     background: #0a0a0a;
     transition: opacity ${FADE_DURATION}ms ease-out;
+    cursor: pointer;
   }
 
   .rpg-loading-scanlines {
@@ -288,5 +301,15 @@ const CSS_TEXT = `
     color: rgba(0, 255, 65, 0.4);
     text-transform: uppercase;
     letter-spacing: 0.15em;
+  }
+
+  .rpg-loading-tap-prompt {
+    font-family: var(--font-mono, 'Courier New', monospace);
+    font-size: 10px;
+    color: rgba(0, 255, 65, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 8px;
+    animation: rpg-blink 0.6s step-end infinite;
   }
 `
