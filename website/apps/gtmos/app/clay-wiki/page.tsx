@@ -285,6 +285,7 @@ export default function ClayWikiPage() {
     <>
       <BreadcrumbSchema
         items={[
+          { name: 'Knowledge', url: `${SITE_URL}/knowledge` },
           { name: 'Clay Wiki', url: `${SITE_URL}/clay-wiki` },
         ]}
       />
@@ -379,8 +380,11 @@ export default function ClayWikiPage() {
 
         {/* Navigation */}
         <div style={navRow}>
-          <Link href="/" style={navLink}>
-            &larr; home
+          <Link href="/knowledge" style={navLink}>
+            &larr; knowledge guide
+          </Link>
+          <Link href="/content-wiki" style={navLink}>
+            content wiki &rarr;
           </Link>
         </div>
       </div>

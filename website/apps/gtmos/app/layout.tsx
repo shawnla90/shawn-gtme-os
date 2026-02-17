@@ -55,8 +55,9 @@ export default function RootLayout({
           siteName="theGTMOS.ai"
           links={[
             { href: '/', label: 'Home' },
+            { href: '/knowledge', label: 'Knowledge' },
             { href: '/clay-wiki', label: 'Clay Wiki' },
-            { href: '/content-wiki', label: 'Content Wiki' },
+            { href: 'https://thecontentos.ai/content-wiki', label: 'Content Wiki' },
             { href: '/log', label: 'Log' },
             { href: '/vitals', label: 'Vitals' },
           ]}

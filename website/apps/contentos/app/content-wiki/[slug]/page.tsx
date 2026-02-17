@@ -8,7 +8,8 @@ import {
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = 'https://thecontentos.ai'
+const GTMOS_URL = 'https://thegtmos.ai'
 
 /* ── static params for SSG ────────────────────────── */
 
@@ -248,7 +249,7 @@ const navLink: React.CSSProperties = {
   textDecoration: 'none',
 }
 
-/* ── page component ───────────────────────────────── */
+/* ── page component ─────────────────────────────── */
 
 export default async function ContentWikiEntryPage({
   params,
@@ -390,9 +391,9 @@ export default async function ContentWikiEntryPage({
           <Link href="/content-wiki" style={navLink}>
             &larr; content wiki
           </Link>
-          <Link href="/" style={navLink}>
-            home &rarr;
-          </Link>
+          <a href={`${GTMOS_URL}/knowledge`} style={navLink}>
+            knowledge guide &rarr;
+          </a>
         </div>
       </div>
     </>

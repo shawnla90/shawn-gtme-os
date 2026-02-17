@@ -6,7 +6,8 @@ import {
 } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = 'https://thecontentos.ai'
+const GTMOS_URL = 'https://thegtmos.ai'
 
 /* ── metadata ─────────────────────────────────────── */
 
@@ -327,9 +328,9 @@ export default function ContentWikiPage() {
           <Link href="/" style={navLink}>
             &larr; home
           </Link>
-          <Link href="/clay-wiki" style={navLink}>
-            clay wiki &rarr;
-          </Link>
+          <a href={`${GTMOS_URL}/knowledge`} style={navLink}>
+            knowledge guide &rarr;
+          </a>
         </div>
       </div>
     </>

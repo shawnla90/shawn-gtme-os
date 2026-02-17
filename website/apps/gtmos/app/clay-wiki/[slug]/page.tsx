@@ -308,6 +308,7 @@ export default async function ClayWikiEntryPage({
     <>
       <BreadcrumbSchema
         items={[
+          { name: 'Knowledge', url: `${SITE_URL}/knowledge` },
           { name: 'Clay Wiki', url: `${SITE_URL}/clay-wiki` },
           { name: entry.title, url: `${SITE_URL}/clay-wiki/${entry.id}` },
         ]}
@@ -412,8 +413,8 @@ export default async function ClayWikiEntryPage({
           <Link href="/clay-wiki" style={navLink}>
             &larr; clay wiki
           </Link>
-          <Link href="/" style={navLink}>
-            home &rarr;
+          <Link href="/content-wiki" style={navLink}>
+            content wiki &rarr;
           </Link>
         </div>
       </div>
