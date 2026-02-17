@@ -287,6 +287,72 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
     ],
   },
   {
+    name: 'Terminal and CLI',
+    prompt: '$ cd ~/terminal',
+    terms: [
+      {
+        name: 'Terminal',
+        definition:
+          'A text-based interface to your computer where you type commands instead of clicking icons.',
+        whyItMatters:
+          'Every skill, every deploy, every script, every package install runs through the terminal. It is the execution layer under everything else. When you type /deploy, git commands run in the terminal. When you run the daily tracker, a Python script executes in the terminal. It looks intimidating but it is just typing commands and reading output.',
+        howYouUseIt:
+          'Open Terminal on Mac (or the integrated terminal in Cursor). Type commands. Read the output. If something errors, read the error message. Most of the time the error tells you exactly what went wrong. The terminal is where everything actually happens.',
+        related: ['Bash', 'CLI Commands', 'Homebrew'],
+      },
+      {
+        name: 'Bash',
+        definition:
+          'A shell language that interprets the commands you type in the terminal. Zsh is the modern Mac default and is Bash-compatible.',
+        whyItMatters:
+          'When you type a command in the terminal, Bash (or Zsh) is the program that interprets it and tells the computer what to do. Bash scripts automate sequences of commands. The .zshrc file configures your shell environment. Understanding that a shell exists between you and the computer explains why things like PATH and permissions work the way they do.',
+        howYouUseIt:
+          'Mac uses Zsh by default but Bash scripts still work. Shell scripts start with #!/bin/bash or #!/bin/zsh. You write scripts to automate repeated command sequences. Most of the time you do not write shell scripts directly. You let Claude write them.',
+        related: ['Terminal', 'CLI Commands', 'PATH'],
+      },
+      {
+        name: 'Homebrew',
+        definition:
+          'The Mac package manager. An app store for developer tools that runs from the terminal.',
+        whyItMatters:
+          'Homebrew installs Git, Python, Node, and everything else developer tools depend on. Instead of downloading installers from websites, you type brew install and the tool appears. I learned Homebrew during my Mac Mini migration. Did not know what it was. Installed it anyway. Then installed Git, Python, Node. That experience became content. The learning was the content.',
+        howYouUseIt:
+          'brew install git installs Git. brew install python installs Python. brew update refreshes the package list. brew list shows installed packages. brew upgrade updates everything. Five commands cover 90% of Homebrew usage.',
+        related: ['Terminal', 'Dependencies', 'PATH'],
+      },
+      {
+        name: 'CLI Commands',
+        definition:
+          'The core terminal commands for navigating folders and manipulating files. pwd, ls, cd, mkdir, cp, mv, rm, cat, chmod, echo.',
+        whyItMatters:
+          'These 10 commands cover 90% of what you need in the terminal. Navigate folders, create files, copy things, delete things, read contents. No GUI needed. Once you know these, you can move through your file system faster than clicking through Finder.',
+        howYouUseIt:
+          'pwd shows where you are. ls lists files. cd changes directory. mkdir creates folders. cp copies. mv moves or renames. rm deletes. cat shows file contents. chmod changes permissions. Pipe commands together with | to chain operations.',
+        related: ['Terminal', 'Bash', 'Permissions'],
+      },
+      {
+        name: 'PATH',
+        definition:
+          'An environment variable that tells the terminal where to find executable programs.',
+        whyItMatters:
+          'When you type git or python or node, the terminal searches the folders listed in PATH to find that program. If a command returns "not found" even though you installed it, the problem is almost always PATH. The terminal does not know where the program lives. Understanding PATH saves hours of debugging "command not found" errors.',
+        howYouUseIt:
+          'echo $PATH shows your current PATH. Each folder is separated by a colon. When you install something with Homebrew, it adds the install location to your PATH. If you get "command not found" after installing something, run hash -r to refresh the shell cache or open a new terminal session.',
+        related: ['Terminal', 'Bash', 'Homebrew'],
+      },
+      {
+        name: 'Permissions',
+        definition:
+          'File-level access rules that control who can read, write, or execute a file.',
+        whyItMatters:
+          'When you see "permission denied" in the terminal, permissions are the reason. Files have read, write, and execute flags for the owner, group, and everyone else. sudo runs a command as the administrator. chmod changes permissions. npm install errors, Homebrew ownership conflicts, script execution failures. All permissions issues.',
+        howYouUseIt:
+          'chmod +x script.sh makes a script executable. sudo npm install -g runs the install with admin privileges. If Homebrew gives permission errors, fix ownership with sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}. Read the error message. It usually tells you exactly which permission is missing.',
+        related: ['Terminal', 'CLI Commands', 'Homebrew'],
+      },
+    ],
+  },
+  {
     name: 'Data Formats',
     prompt: '$ cd ~/data-formats',
     terms: [

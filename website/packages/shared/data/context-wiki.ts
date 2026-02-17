@@ -792,6 +792,61 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
     ],
   },
 
+  {
+    id: 'terminal-and-cli',
+    title: 'Terminal and CLI',
+    subtitle:
+      'The black screen with text that runs everything under the hood',
+    category: 'infrastructure',
+    description:
+      'What the terminal is, how to use it, and why it matters for non-developers doing context engineering. Homebrew, bash commands, and the recursive content pattern of learning the tool while using the tool.',
+    keywords: [
+      'terminal',
+      'bash',
+      'homebrew',
+      'cli',
+      'command line',
+      'shell',
+      'terminal commands gtm',
+      'brew install',
+      'mac terminal',
+    ],
+    difficulty: 'beginner',
+    related: ['git-for-gtm', 'python-for-gtm', 'cron-jobs', 'deployments-vercel'],
+    sections: [
+      {
+        heading: 'What the Terminal Is',
+        type: 'prose',
+        content:
+          "The terminal is a text-based interface to your computer. No icons, no buttons, no drag and drop. You type commands, hit enter, and the computer does things. It looks intimidating. Black screen, blinking cursor, no clue what to type. I get it. I was there. But here is the thing: every skill you run, every deploy you trigger, every script you execute, every package you install runs through the terminal. It is the execution layer under everything else in this knowledge base. When you type /deploy, that skill runs git commands in the terminal. When you run the daily tracker, it executes a Python script in the terminal. When you install a tool with Homebrew, that is the terminal. You do not need to be a terminal power user. You need to understand that it exists, what it does, and how to not panic when you see it.",
+      },
+      {
+        heading: 'Homebrew: Your First Package Manager',
+        type: 'pattern',
+        content:
+          "Homebrew is the Mac equivalent of an app store for developer tools. Instead of downloading installers from websites, you type brew install and the tool appears. brew install git installs Git. brew install python installs Python. brew install node installs Node.js. One command, done. I learned Homebrew during my Mac Mini migration. I was setting up a new machine from scratch, and every guide said \"install Homebrew first.\" I did not know what it was. I did not know what a package manager meant. I just ran the install script, typed brew install git, and it worked. Then I installed Python. Then Node. Then everything else. That experience became content. The process of not knowing what Homebrew was, learning it by using it, and then explaining it to others. That is the recursive pattern. The learning is the content. brew install is the command. brew update refreshes the package list. brew list shows everything you have installed. brew upgrade updates your installed packages. That covers 90% of what you will ever need from Homebrew.",
+      },
+      {
+        heading: 'Bash Commands You Will Actually Use',
+        type: 'code',
+        content:
+          "You do not need to memorize 200 commands. You need 10 that cover 90% of terminal usage.\n\npwd prints where you are right now. Think of it as \"show me the address of this folder.\"\nls lists the files in the current folder. ls -la shows hidden files and details.\ncd changes directory. cd ~/Desktop moves to your Desktop. cd .. goes up one level.\nmkdir creates a new folder. mkdir my-project.\ncp copies a file. cp file.txt backup.txt.\nmv moves or renames a file. mv old-name.txt new-name.txt.\nrm deletes a file. rm file.txt. Be careful. There is no trash can in the terminal.\ncat shows the contents of a file. cat README.md.\nchmod changes permissions. chmod +x script.sh makes a script executable.\necho prints text. echo $PATH shows your PATH variable.\n\nPiping connects commands. ls | grep .md lists only markdown files. The pipe symbol (|) sends the output of one command into another. This is how you chain small tools into powerful workflows.",
+      },
+      {
+        heading: 'How Terminal Connects to Everything Else',
+        type: 'pro-tip',
+        content:
+          "The terminal is where everything in this knowledge base actually executes. git push runs in the terminal. python daily_scan.py runs in the terminal. npm run dev starts your dev server in the terminal. brew install adds tools through the terminal. vercel deploy triggers from the terminal. Every other knowledge base entry depends on the terminal existing. Git is a terminal tool. Python scripts run in the terminal. Cron jobs execute terminal commands on a schedule. Deployments push through terminal commands. Understanding the terminal is not a separate skill. It is the foundation that every other skill stands on. You do not need to master it. You need to know it is there and not be afraid of it.",
+      },
+      {
+        heading: 'The Recursive Content Pattern',
+        type: 'pattern',
+        content:
+          "Here is the meta point. I migrated to a Mac Mini. I had to install Homebrew. I did not know what Homebrew was. I installed it anyway because every setup guide said to. I learned what a package manager is by using one. Then I wrote about that experience as content. The process of learning became the content. The terminal is both the tool and the topic. This pattern repeats across everything in the GTM OS. I did not know Git when I started. I learned it by breaking things and reverting. That became the Git for GTM article. I did not know Python. I learned it by asking Claude to write scripts and reading the output. That became the Python for GTM article. The terminal is the same story. You do not wait until you are an expert to write about something. You write about it while you learn it. The learning process is the most relatable content because your audience is going through the same thing.",
+      },
+    ],
+  },
+
   /* ================================================================== */
   /*  CODE                                                               */
   /* ================================================================== */
@@ -812,7 +867,7 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
       'python pillow automation',
     ],
     difficulty: 'beginner',
-    related: ['mcp-servers', 'cron-jobs', 'skills', 'skill-trees'],
+    related: ['mcp-servers', 'cron-jobs', 'skills', 'skill-trees', 'terminal-and-cli'],
     sections: [
       {
         heading: 'Why Python',
