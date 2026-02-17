@@ -883,6 +883,12 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         content:
           "Running the full flow without CRM lookup first. If the company already has an active deal, your cold outreach undercuts the AE working the account. CRM lookup is step 2 for a reason.\n\nAnother mistake: running a single qualification prompt instead of splitting company and contact. A single prompt conflates two independent evaluations. The company might be perfect but the contact is an intern. The split catches that. Always split.\n\nSkipping the MX check is also common. If you send every qualified contact to email, you'll tank deliverability when half your list runs Microsoft. MX classification is the routing layer that keeps your domain healthy.",
       },
+      {
+        heading: 'Related: Email Infrastructure Guide',
+        type: 'pro-tip',
+        content:
+          "MX-based routing only works if your sending infrastructure is set up correctly. Secondary domains, DNS records (SPF/DKIM/DMARC), inbox provider splits, warmup timelines, and per-inbox sending limits — all of that determines whether the emails you route actually land. See the Email Infrastructure Guide at /knowledge/email for the full breakdown of the infrastructure layer that sits underneath this play.",
+      },
     ],
   },
 
@@ -1365,6 +1371,12 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         content:
           "Use the HTTP column instead of a native integration when: (1) The native integration doesn't expose the field you need. (2) The native integration costs more credits than a direct API call. (3) You need custom logic in the request (conditional headers, dynamic parameters). (4) The native integration hasn't been updated and the API has new features. (5) You're calling an API that Clay doesn't have a native integration for at all. The HTTP column is the most versatile tool in Clay. Learn it once, use it everywhere.",
       },
+      {
+        heading: 'Related: Email Infrastructure Guide',
+        type: 'pro-tip',
+        content:
+          "MX record lookups are one of the highest-ROI uses of the HTTP column — but the value only materializes when you have the infrastructure to act on the routing decision. Understanding MX records, provider splits (Google Workspace vs Microsoft 365), sending limits, and domain warming is essential context. See the Email Infrastructure Guide at /knowledge/email for the complete infrastructure layer.",
+      },
     ],
   },
 
@@ -1494,6 +1506,12 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         type: 'anti-pattern',
         content:
           "Never push contacts to outreach platforms before they're fully qualified and scored. I've seen people connect Clay to Instantly and push every enriched contact immediately. No scoring. No persona verification. No CRM check. The result: emails go to people who don't match ICP, people already in the pipeline, and people at companies that are too small or too large for the offer. That's not GTM engineering — that's spam with extra steps. The flow is always: source → CRM lookup → enrich → score → qualify → THEN route. Routing is the last step, not the first.",
+      },
+      {
+        heading: 'Related: Email Infrastructure Guide',
+        type: 'pro-tip',
+        content:
+          "Routing contacts to Instantly or HeyReach is the last step in Clay — but the infrastructure those platforms sit on determines whether your emails land. Domain provisioning, DNS records, inbox provider splits, warmup schedules, sending limits, and mailbox rotation all matter. See the Email Infrastructure Guide at /knowledge/email for the complete sending infrastructure breakdown.",
       },
     ],
   },

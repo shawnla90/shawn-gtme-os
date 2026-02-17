@@ -5,6 +5,7 @@ import {
   toSlug,
 } from '@shawnos/shared/data/engineering-terms'
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
+import { EMAIL_CATEGORIES } from '@shawnos/shared/data/email-infrastructure'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
@@ -21,7 +22,7 @@ interface UnifiedTerm {
   howYouUseIt: string
   relatedRaw: string[]
   category: string
-  source: 'engineering' | 'gtm'
+  source: 'engineering' | 'gtm' | 'email'
 }
 
 /* ── build lookup tables ────────────────────────── */
@@ -38,6 +39,13 @@ for (const cat of ENGINEERING_CATEGORIES) {
 }
 
 for (const cat of GTM_CATEGORIES) {
+  for (const term of cat.terms) {
+    NAME_OR_ID_TO_SLUG.set(term.id, term.id)
+    NAME_OR_ID_TO_SLUG.set(term.name, term.id)
+  }
+}
+
+for (const cat of EMAIL_CATEGORIES) {
   for (const term of cat.terms) {
     NAME_OR_ID_TO_SLUG.set(term.id, term.id)
     NAME_OR_ID_TO_SLUG.set(term.name, term.id)
@@ -75,6 +83,21 @@ for (const cat of GTM_CATEGORIES) {
   }
 }
 
+for (const cat of EMAIL_CATEGORIES) {
+  for (const term of cat.terms) {
+    SLUG_TO_TERM.set(term.id, {
+      slug: term.id,
+      name: term.name,
+      definition: term.definition,
+      whyItMatters: term.whyItMatters,
+      howYouUseIt: term.howYouUseIt,
+      relatedRaw: term.related,
+      category: cat.name,
+      source: 'email',
+    })
+  }
+}
+
 function resolveRelated(t: UnifiedTerm): { slug: string; name: string }[] {
   return t.relatedRaw
     .map((r) => {
@@ -101,7 +124,9 @@ export async function generateMetadata({
     return { title: 'Term Not Found' }
   }
 
-  const title = `What is ${t.name}? | ${t.source === 'gtm' ? 'GTM' : 'Engineering'} Knowledge`
+  const sourceLabel =
+    t.source === 'email' ? 'Email Infrastructure' : t.source === 'gtm' ? 'GTM' : 'Engineering'
+  const title = `What is ${t.name}? | ${sourceLabel} Knowledge`
   const description = `${t.definition} Learn how ${t.name} works in real GTM and engineering workflows.`
   const url = `${SITE_URL}/knowledge/${t.slug}`
 
@@ -112,7 +137,11 @@ export async function generateMetadata({
       t.name.toLowerCase(),
       `what is ${t.name.toLowerCase()}`,
       `${t.name.toLowerCase()} explained`,
-      t.source === 'gtm' ? 'gtm engineering' : 'vibe coding',
+      t.source === 'email'
+        ? 'email infrastructure'
+        : t.source === 'gtm'
+          ? 'gtm engineering'
+          : 'vibe coding',
       t.category.toLowerCase(),
     ],
     alternates: { canonical: url },
@@ -251,21 +280,43 @@ export default async function TermPage({
     )
   }
 
-  const backHref = t.source === 'gtm' ? '/knowledge/gtm' : '/knowledge'
+  const backHref =
+    t.source === 'email'
+      ? '/knowledge/email'
+      : t.source === 'gtm'
+        ? '/knowledge/gtm'
+        : '/knowledge'
   const backLabel =
-    t.source === 'gtm' ? 'GTM knowledge guide' : 'engineering & AI guide'
+    t.source === 'email'
+      ? 'email infrastructure guide'
+      : t.source === 'gtm'
+        ? 'GTM knowledge guide'
+        : 'engineering & AI guide'
 
   const breadcrumbItems =
-    t.source === 'gtm'
+    t.source === 'email'
       ? [
           { name: 'Knowledge', url: `${SITE_URL}/knowledge` },
-          { name: 'GTM', url: `${SITE_URL}/knowledge/gtm` },
+          { name: 'Email Infrastructure', url: `${SITE_URL}/knowledge/email` },
           { name: t.name, url: `${SITE_URL}/knowledge/${t.slug}` },
         ]
-      : [
-          { name: 'Knowledge', url: `${SITE_URL}/knowledge` },
-          { name: t.name, url: `${SITE_URL}/knowledge/${t.slug}` },
-        ]
+      : t.source === 'gtm'
+        ? [
+            { name: 'Knowledge', url: `${SITE_URL}/knowledge` },
+            { name: 'GTM', url: `${SITE_URL}/knowledge/gtm` },
+            { name: t.name, url: `${SITE_URL}/knowledge/${t.slug}` },
+          ]
+        : [
+            { name: 'Knowledge', url: `${SITE_URL}/knowledge` },
+            { name: t.name, url: `${SITE_URL}/knowledge/${t.slug}` },
+          ]
+
+  const sourceBadge =
+    t.source === 'email'
+      ? 'Email Infrastructure'
+      : t.source === 'gtm'
+        ? 'GTM'
+        : 'Engineering'
 
   const faqSchema = {
     '@context': 'https://schema.org',
@@ -300,7 +351,7 @@ export default async function TermPage({
     url: `${SITE_URL}/knowledge/${t.slug}`,
     mainEntityOfPage: `${SITE_URL}/knowledge/${t.slug}`,
     articleSection: t.category,
-    keywords: [t.name, t.category, t.source === 'gtm' ? 'GTM' : 'Engineering'],
+    keywords: [t.name, t.category, sourceBadge],
   }
 
   const related = resolveRelated(t)
@@ -340,7 +391,7 @@ export default async function TermPage({
         )}
 
         <div style={categoryBadge}>
-          {t.source === 'gtm' ? 'GTM' : 'Engineering'} &middot; {t.category}
+          {sourceBadge} &middot; {t.category}
         </div>
 
         <h2 style={termTitle}>{t.name}</h2>
@@ -352,7 +403,9 @@ export default async function TermPage({
         <p style={sectionBody}>{t.whyItMatters}</p>
 
         <div style={sectionLabel}>
-          {t.source === 'gtm' ? 'how I use it' : 'how you use it'}
+          {t.source === 'gtm' || t.source === 'email'
+            ? 'how I use it'
+            : 'how you use it'}
         </div>
         <p style={sectionBody}>{t.howYouUseIt}</p>
 
@@ -371,6 +424,37 @@ export default async function TermPage({
                 </Link>
               ))}
             </div>
+          </>
+        )}
+
+        {/* Email Infrastructure backlink */}
+        {(t.source === 'email' ||
+          ['deliverability', 'mx-record', 'domain-warming', 'instantly'].includes(
+            t.slug,
+          )) && (
+          <>
+            <hr style={divider} />
+            <div style={sectionLabel}>go deeper</div>
+            <Link
+              href="/knowledge/email"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                fontSize: '13px',
+                fontWeight: 600,
+                color: 'var(--accent)',
+                background: 'var(--canvas-subtle)',
+                border: '1px solid var(--border)',
+                borderRadius: '6px',
+                padding: '10px 18px',
+                textDecoration: 'none',
+                transition: 'border-color 0.15s ease',
+              }}
+            >
+              <span style={{ fontSize: '16px' }}>&#9993;</span>
+              Email Infrastructure Guide &rarr;
+            </Link>
           </>
         )}
 

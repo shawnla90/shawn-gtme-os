@@ -1008,6 +1008,10 @@ export function GTMKnowledgeGuidePage() {
                   engineering &amp; AI guide &rarr;
                 </Link>
                 <br />
+                <Link href="/knowledge/email" style={ctaSecondary}>
+                  email infrastructure guide &rarr;
+                </Link>
+                <br />
                 <Link href="/api" style={ctaSecondary}>
                   see the API docs &rarr;
                 </Link>
@@ -1027,8 +1031,8 @@ export function GTMKnowledgeGuidePage() {
               <Link href="/knowledge" style={backLink}>
                 &larr; engineering &amp; AI guide
               </Link>
-              <Link href="/" style={backLink}>
-                home &rarr;
+              <Link href="/knowledge/email" style={backLink}>
+                email infrastructure &rarr;
               </Link>
             </div>
           </main>
