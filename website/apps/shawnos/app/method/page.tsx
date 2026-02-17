@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 
 export const metadata: Metadata = {
   title: 'The Method',
@@ -193,6 +194,8 @@ const card: React.CSSProperties = {
 /* ── page ─────────────────────────────────────────── */
 
 export default function MethodPage() {
+  const ouroborosSprite = getToolAvatarUrls('ouroboros')
+
   return (
     <>
       <BreadcrumbSchema
@@ -219,6 +222,19 @@ export default function MethodPage() {
 
         {/* ── Opening ── */}
         <div style={section}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={ouroborosSprite.idle}
+            alt="Recursive Drift ouroboros"
+            width={96}
+            height={96}
+            style={{
+              float: 'right',
+              imageRendering: 'pixelated',
+              marginLeft: '24px',
+              marginBottom: '16px',
+            }}
+          />
           <p
             style={{
               fontSize: '20px',
