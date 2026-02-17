@@ -70,8 +70,8 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         whyItMatters:
           "I learned this the hard way. when I was an SDR, I sent 200+ emails a day from primary domains with zero warmup. no one told me about deliverability. I thought if the email sent, it worked. then I started checking spam folders. half my emails were there. I was torching my domain reputation and didn't even know it. now I obsess over deliverability before I obsess over copy. because the best email in the world doesn't matter if no one sees it.",
         howYouUseIt:
-          "I check MX records before routing contacts to email platforms. Google Workspace domains go to Instantly (because that's where I have Google-only sending infrastructure). Non-Google domains go to HeyReach on LinkedIn because I can't reliably deliver to Microsoft 365 or other providers from my Instantly setup. I also monitor bounce rates. If a campaign hits >5% hard bounces, something's broken upstream — usually the email validation waterfall. I learned to fix the plumbing before I write the copy.",
-        related: ['mx-record', 'domain-warming', 'waterfall', 'instantly'],
+          "I check MX records before routing contacts to email platforms. Google Workspace domains go to Instantly (because that's where I have Google-only sending infrastructure). Non-Google domains go to HeyReach on LinkedIn because I can't reliably deliver to Microsoft 365 or other providers from my Instantly setup. I also monitor bounce rates. If a campaign hits >5% hard bounces, something's broken upstream — usually the email provider or MX routing. I learned to fix the plumbing before I write the copy.",
+        related: ['mx-record', 'domain-warming', 'enrichment', 'instantly'],
       },
       {
         id: 'spin-text',
@@ -110,7 +110,7 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         whyItMatters:
           "Email still works if you do it right. I use Instantly because it handles the part I used to do manually as an SDR — domain rotation, throttling, warmup, deliverability monitoring. back then, I was sending from one inbox with no infrastructure. now I'm sending from multiple domains with automated warmup and health checks. Instantly is the infrastructure layer between \"I wrote an email\" and \"500 people received it in their inbox.\"",
         howYouUseIt:
-          "I route Google Workspace contacts to Instantly because that's the only MX provider my Instantly setup can reliably deliver to. I paste in the static email bodies (from campaign-copy.md), connect the merge fields to Clay columns, and launch. I check replies daily. Hard bounces and spam reports go back into Clay for waterfall debugging. Instantly doesn't write the emails or qualify the leads — that's all upstream in Clay. Instantly just sends. it's the deployment layer for email.",
+          "I route Google Workspace contacts to Instantly because that's the only MX provider my Instantly setup can reliably deliver to. I paste in the static email bodies (from campaign-copy.md), connect the merge fields to Clay columns, and launch. I check replies daily. Hard bounces and spam reports go back into Clay for enrichment debugging. Instantly doesn't write the emails or qualify the leads — that's all upstream in Clay. Instantly just sends. it's the deployment layer for email.",
         related: ['heyreach', 'deliverability', 'mx-record', 'sequence'],
       },
       {
@@ -128,11 +128,11 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         id: 'waterfall',
         name: 'Waterfall',
         definition:
-          'A sequence of fallback options tried in order until one succeeds. Used for email finding (try Apollo, then Hunter, then RocketReach) and routing (try Google email, then non-Google email, then LinkedIn).',
+          'A sequence of fallback providers tried in order until one succeeds. The traditional approach to email finding — stack 4-6 providers and hope one hits.',
         whyItMatters:
-          "No single data provider has every email. No single platform works for every contact. Waterfalls let you stack multiple options so if the first one fails, the second one runs. If that fails, the third. You don't lose the lead — you just try the next method.",
+          "I used to run 6-provider waterfalls — Apollo → Hunter → Clearbit → RocketReach → Prospeo → Dropcontact. it felt thorough. but when I layered in MX-based routing (Google → Instantly, non-Google → HeyReach), I realized the waterfall logic made no sense. I was burning 8-12 credits per contact chasing marginal coverage gains, and validation still bounced anyway. the routing layer downstream made most of that effort pointless. so I stopped. now I use one provider, validate with MX records, and route. simpler. cheaper. same deliverability.",
         howYouUseIt:
-          'My email waterfall in Clay runs: Apollo → Hunter.io → Clearbit → RocketReach → Prospeo → Dropcontact. First valid email wins. If no email found after 6 providers, the contact routes to HeyReach for LinkedIn outreach. I also use waterfall logic for routing: if Google MX, send to Instantly. If non-Google MX, send to HeyReach. If no email at all, send to HeyReach. Waterfalls turn "lead lost" into "lead routed."',
+          "I don't use waterfalls anymore. I go single-provider — Prospeo or LeadMagic — and check MX records instead of stacking fallback providers. if the single provider finds an email, I validate the domain's MX record (Google vs non-Google) and route: Google → Instantly, non-Google → HeyReach, no email → HeyReach for LinkedIn. the old waterfall burned credits trying to squeeze out emails that bounced anyway. single-provider + MX routing gets me the same result at a fraction of the cost. waterfalls are a concept worth understanding, but my philosophy is: don't use them.",
         related: ['enrichment', 'routing', 'deliverability', 'clay'],
       },
       {
@@ -172,8 +172,8 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         whyItMatters:
           "Clay is where I went from manual SDR to GTM engineer. when I was building buying committees in Salesforce by hand, I was the orchestration layer. I was the one pulling emails from Apollo, checking LinkedIn, researching pain points, deciding who to target. Clay does all of that. but faster. and at scale. and without forgetting. everything I used to do in my head now lives in a Clay table. qualification, enrichment, personalization, routing. all of it.",
         howYouUseIt:
-          "every play in my series uses Clay. web reveal → Clay table. qualification prompts → Clay. personalization research → Clay. email waterfall → Clay. MX record check → Clay. then Clay syncs qualified + enriched contacts to HubSpot or Instantly or HeyReach. I don't use Clay for CRM. I use it for everything that makes the CRM data actually useful. it's the brain. the CRM is just the notebook.",
-        related: ['enrichment', 'claygent', 'waterfall', 'web-reveal', 'hubspot'],
+          "every play in my series uses Clay. web reveal → Clay table. qualification prompts → Clay. personalization research → Clay. single-provider email enrichment → Clay. MX record check → Clay. then Clay syncs qualified + enriched contacts to HubSpot or Instantly or HeyReach. I don't use Clay for CRM. I use it for everything that makes the CRM data actually useful. it's the brain. the CRM is just the notebook.",
+        related: ['enrichment', 'claygent', 'routing', 'web-reveal', 'hubspot'],
       },
       {
         id: 'enrichment',
@@ -183,8 +183,8 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         whyItMatters:
           "You can't personalize with incomplete data. You can't qualify without firmographics. You can't route without an email address. Enrichment turns \"name + domain\" into a full actionable record. It's the difference between \"spray and pray\" and \"targeted and relevant.\"",
         howYouUseIt:
-          "I run enrichment waterfalls in Clay. For every contact, I try 6 email providers in sequence. I pull LinkedIn profiles when available. I scrape company posts with Apify. I validate job titles against persona tiers. I check MX records for routing. I run research prompts to generate icebreakers and pain points. All of that is enrichment. It happens before the contact moves downstream.",
-        related: ['clay', 'waterfall', 'personalization', 'validation'],
+          "I run single-provider enrichment in Clay — one email provider (Prospeo or LeadMagic), not a 6-provider waterfall. I used to stack all the providers. I stopped because the routing logic made it pointless — once you check MX records and route Google vs non-Google, the marginal coverage from extra providers doesn't matter. I pull LinkedIn profiles when available. I scrape company posts with Apify. I validate job titles against persona tiers. I check MX records for routing. I run research prompts to generate icebreakers and pain points. All of that is enrichment. It happens before the contact moves downstream.",
+        related: ['clay', 'routing', 'personalization', 'validation'],
       },
       {
         id: 'claygent',
@@ -216,7 +216,7 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         whyItMatters:
           "Bad data kills campaigns. If 20% of your emails are invalid, your bounce rate tanks deliverability. If your AI-generated icebreakers are fabricated, your reply rate goes to zero and you look like an idiot. Validation is the filter between \"data exists\" and \"data is trustworthy.\"",
         howYouUseIt:
-          "I validate emails through the waterfall — first provider to return a valid result wins. I validate personas by running job titles through a qualification prompt that checks them against tier definitions. I validate companies with a scoring prompt that checks firmographics against ICP. I validate Claygent outputs with a 6-step checklist: row sample → hallucination check → JSON schema → confidence scoring → credit cap → scale. Validation happens at every layer. It's not one tool. It's a discipline.",
+          "I validate emails with MX records — not by stacking providers in a waterfall. single provider finds the email, MX record confirms the domain's mail server, routing logic takes it from there. I validate personas by running job titles through a qualification prompt that checks them against tier definitions. I validate companies with a scoring prompt that checks firmographics against ICP. I validate Claygent outputs with a 6-step checklist: row sample → hallucination check → JSON schema → confidence scoring → credit cap → scale. Validation happens at every layer. It's not one tool. It's a discipline.",
         related: ['enrichment', 'qualification', 'claygent', 'icp'],
       },
     ],
@@ -340,7 +340,7 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         whyItMatters:
           "Inbound interest is the warmest signal you can get. If someone from a target account visits your pricing page, they're researching. If you wait for them to fill out a form, you lose. Web reveal lets you capture that intent and act on it immediately — route qualified visitors into outreach, enrich contacts at that company, prioritize them in your pipeline.",
         howYouUseIt:
-          "I use Vector + Midbound for web reveal. When a qualified company visits, the signal fires into Clay. Clay runs company qualification (does it fit ICP?), persona enrichment (find the right contacts), email waterfall (get addresses), MX routing (Google → Instantly, non-Google → HeyReach), and personalization research (generate icebreakers referencing the site visit). Web reveal is Play 5. It's one of the highest-converting workflows because the intent signal is real.",
+          "I use Vector + Midbound for web reveal. When a qualified company visits, the signal fires into Clay. Clay runs company qualification (does it fit ICP?), persona enrichment (find the right contacts), single-provider email lookup (get addresses), MX routing (Google → Instantly, non-Google → HeyReach), and personalization research (generate icebreakers referencing the site visit). Web reveal is Play 5. It's one of the highest-converting workflows because the intent signal is real.",
         related: ['icp', 'routing', 'signals'],
       },
       {
@@ -352,7 +352,7 @@ export const GTM_CATEGORIES: GTMCategory[] = [
           'Qualification without routing is useless. You know who\'s a fit — now what? Routing automates the "now what." It connects qualification to action. Instead of "this lead is good," it\'s "this lead is good AND going to the high-priority Instantly sequence AND getting handed to the AE."',
         howYouUseIt:
           'I build routing logic in Clay with formula columns and conditional filters. After company + persona qualification, I run a routing decision prompt that outputs: route (outreach / enrich_company / manual_review / skip), priority (high / medium / low), and next step. High-priority routes sync to HubSpot and Instantly. Medium routes go to standard sequences. Low goes to nurture. Manual_review gets flagged for human check. Routing is the bridge between "data in" and "action out."',
-        related: ['icp', 'persona', 'waterfall'],
+        related: ['icp', 'persona', 'routing'],
       },
       {
         id: 'scoring',

@@ -116,7 +116,7 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         heading: 'The Split Pattern Step by Step',
         type: 'pattern',
         content:
-          "1. Source contacts from whatever input — web reveal, CSV import, Apollo, LinkedIn Sales Navigator.\n2. Write contacts to a new table — the account table. Map the domain column.\n3. Deduplicate the account table by domain. One row per company.\n4. Enrich at the account level — firmographics, tech stack, ICP scoring, industry classification.\n5. Back on the contact table, add a lookup column that matches on domain.\n6. The lookup pulls company-level data (ICP score, industry, employee count, service fit) from the account table into the contact row.\n7. Run contact-level enrichment (email waterfall, persona qualification) on the contact table only.\n\nThe account table is your research table. The contact table is your outreach table. They're connected by domain. That's the architecture.",
+          "1. Source contacts from whatever input — web reveal, CSV import, Apollo, LinkedIn Sales Navigator.\n2. Write contacts to a new table — the account table. Map the domain column.\n3. Deduplicate the account table by domain. One row per company.\n4. Enrich at the account level — firmographics, tech stack, ICP scoring, industry classification.\n5. Back on the contact table, add a lookup column that matches on domain.\n6. The lookup pulls company-level data (ICP score, industry, employee count, service fit) from the account table into the contact row.\n7. Run contact-level enrichment (single-provider email lookup, persona qualification) on the contact table only.\n\nThe account table is your research table. The contact table is your outreach table. They're connected by domain. That's the architecture.",
       },
       {
         heading: 'Domain Is the Universal Join Key',
@@ -325,13 +325,13 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
     subtitle: 'If time spent avoiding credits exceeds the credit cost, use the credits',
     category: 'core-concepts',
     description:
-      'How Clay credits work — provider costs, waterfall economics, the API vs native tradeoff, and the practitioner philosophy on when to spend credits vs optimize with direct APIs.',
+      'How Clay credits work — provider costs, single-provider vs waterfall economics, the API vs native tradeoff, and the practitioner philosophy on when to spend credits vs optimize with direct APIs.',
     keywords: [
       'clay credits',
       'clay credit system',
       'clay credit cost',
       'clay pricing',
-      'clay waterfall credits',
+      'clay single provider credits',
       'clay api vs native',
     ],
     difficulty: 'beginner',
@@ -355,10 +355,10 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
           "If the time spent avoiding credits exceeds the credit cost, use the credits. This is my core principle. I've watched people spend 3 hours trying to avoid a $5 enrichment run. That's not efficiency — that's false economy. Use credits to prove and test your workflow. Get the flow working. Validate the output. Confirm the pipeline produces qualified leads. Then optimize.\n\nOptimization means: replace native integrations with direct API calls where the API is cheaper. Replace AI columns with formulas where the transformation is deterministic. Replace waterfall providers with single-provider calls where coverage is adequate. But you can't optimize what you haven't built yet. Build first. Optimize second.",
       },
       {
-        heading: 'Waterfall Economics',
+        heading: 'Single-Provider vs Waterfall Economics',
         type: 'pattern',
         content:
-          "The email waterfall (Apollo → Hunter → Clearbit → RocketReach → Prospeo → Dropcontact) uses credits at each step until a valid result is found. Best case: the first provider finds the email — 1-2 credits. Worst case: all 6 providers run — 8-12 credits per contact.\n\nTo improve waterfall economics: (1) Qualify persona before running the waterfall. If the title doesn't match a buyer tier, don't look for their email. (2) Order providers by coverage for your target market. If you're targeting US tech, Apollo goes first (highest hit rate). (3) Stop at first valid result — don't run all providers for validation. (4) Consider single-provider instead of waterfall when coverage is good enough. Skip waterfall validation entirely — go single-provider (Prospeo or LeadMagic). Validation still bounces anyway. Check MX records instead.",
+          "I used to run a 6-provider email waterfall (Apollo → Hunter → Clearbit → RocketReach → Prospeo → Dropcontact). Best case: 1-2 credits. Worst case: all 6 providers run — 8-12 credits per contact. Then I added MX-based routing and realized the waterfall logic made no sense. I was burning credits chasing marginal coverage gains on emails that bounced anyway once routing kicked in.\n\nMy philosophy now: skip the waterfall entirely. Go single-provider — Prospeo or LeadMagic. Check MX records instead of stacking validation providers. Qualify persona before running the email lookup — if the title doesn't match a buyer tier, don't look for their email at all. Single-provider + MX routing gets the same deliverability at a fraction of the cost. The waterfall is a concept worth understanding, but I don't recommend using one.",
       },
       {
         heading: 'API vs Native Credit Costs',
@@ -370,7 +370,7 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         heading: 'Where Credits Get Wasted',
         type: 'anti-pattern',
         content:
-          "The biggest credit drains I see: (1) Enriching company data on a contact table instead of an account table — 50x credit waste on large accounts. (2) Running the email waterfall on contacts who don't match any persona tier — you're paying to find emails for people you'll never contact. (3) Running Claygent on tasks a formula could handle — name merging, title normalization, domain extraction. (4) Re-enriching contacts that already have data — always add a condition: only enrich if the target column is empty. (5) Not deduplicating before enrichment — you're enriching the same company or contact multiple times.\n\nFix the architecture and you fix the credit waste. Most credit problems are architecture problems.",
+          "The biggest credit drains I see: (1) Enriching company data on a contact table instead of an account table — 50x credit waste on large accounts. (2) Running email lookups on contacts who don't match any persona tier — you're paying to find emails for people you'll never contact. (3) Running Claygent on tasks a formula could handle — name merging, title normalization, domain extraction. (4) Re-enriching contacts that already have data — always add a condition: only enrich if the target column is empty. (5) Not deduplicating before enrichment — you're enriching the same company or contact multiple times.\n\nFix the architecture and you fix the credit waste. Most credit problems are architecture problems.",
       },
       {
         heading: 'The Free Tier Toolkit',
@@ -459,12 +459,12 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
     subtitle: 'The practitioner core play — enrich contacts as they arrive',
     category: 'plays',
     description:
-      'The on-demand enrichment play for Clay — trigger enrichment when contacts arrive, waterfall through providers, validate, and route. A practitioner core workflow.',
+      'The on-demand enrichment play for Clay — trigger enrichment when contacts arrive, single-provider email lookup, MX validation, and route. A practitioner core workflow.',
     keywords: [
       'clay on demand',
       'clay enrichment play',
       'clay contact enrichment',
-      'clay waterfall',
+      'clay single provider',
       'clay practitioner',
     ],
     difficulty: 'intermediate',
@@ -488,28 +488,28 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
           "Use on-demand enrichment when contacts arrive in real-time or near-real-time. Web reveal fires and a company is identified — enrich the contacts at that company immediately. A sales rep manually adds a prospect to HubSpot — Clay picks it up and fills in the gaps. A form submission comes in — enrichment runs before the lead hits the queue. The trigger varies. The enrichment flow is the same.",
       },
       {
-        heading: 'The Enrichment Waterfall',
+        heading: 'Single-Provider Email Enrichment',
         type: 'pattern',
         content:
-          "Every on-demand table runs an email waterfall. The order matters because you stop at the first valid result:\n\n1. Apollo — highest coverage for tech companies\n2. Hunter.io — good for smaller domains\n3. Clearbit / Breeze — strong on enterprise\n4. RocketReach — catches what others miss\n5. Prospeo — my single-provider fallback for validation\n6. Dropcontact — GDPR-compliant, European coverage\n\nFirst valid email wins. If no email after 6 providers, the contact routes to HeyReach for LinkedIn outreach. Skip waterfall validation — go single-provider (Prospeo or LeadMagic). Validation still bounces anyway. Check MX records instead.",
+          "I used to run a 6-provider email waterfall — Apollo, Hunter, Clearbit, RocketReach, Prospeo, Dropcontact. I stopped. Once I layered in MX-based routing (Google → Instantly, non-Google → HeyReach), the waterfall logic made no sense. I was burning 8-12 credits per contact for marginal coverage gains on emails that bounced anyway.\n\nNow every on-demand table runs a single email provider — Prospeo or LeadMagic. One provider finds the email. MX record check validates the domain. Routing formula decides: Google → Instantly, non-Google → HeyReach, no email → HeyReach for LinkedIn. Simpler. Cheaper. Same deliverability. Don't stack providers — pick one good one and validate with MX records instead.",
       },
       {
         heading: 'Table Architecture',
         type: 'pattern',
         content:
-          "The on-demand table is a contact table, not an account table. But it should always have a lookup column that connects back to your account table (if you have one). When a new contact arrives:\n\n1. CRM lookup runs (does this person already exist in HubSpot/Salesforce?)\n2. If CRM match → skip enrichment, flag as existing\n3. Persona qualification prompt runs (match title to tier)\n4. If persona NOT_MATCHED → skip email waterfall, save credits\n5. Email waterfall runs (find email)\n6. Company lookup runs (pull account-level data — ICP score, industry, employee count)\n7. MX record check runs (Google vs non-Google)\n8. Routing formula runs (Instantly vs HeyReach vs skip)\n\nAll steps trigger automatically when a new row is added. No manual work. The contact arrives incomplete and leaves the table fully enriched and routed.",
+          "The on-demand table is a contact table, not an account table. But it should always have a lookup column that connects back to your account table (if you have one). When a new contact arrives:\n\n1. CRM lookup runs (does this person already exist in HubSpot/Salesforce?)\n2. If CRM match → skip enrichment, flag as existing\n3. Persona qualification prompt runs (match title to tier)\n4. If persona NOT_MATCHED → skip email lookup, save credits\n5. Single-provider email lookup runs (Prospeo or LeadMagic)\n6. Company lookup runs (pull account-level data — ICP score, industry, employee count)\n7. MX record check runs (Google vs non-Google)\n8. Routing formula runs (Instantly vs HeyReach vs skip)\n\nAll steps trigger automatically when a new row is added. No manual work. The contact arrives incomplete and leaves the table fully enriched and routed.",
       },
       {
         heading: 'Credit Efficiency',
         type: 'pro-tip',
         content:
-          "On-demand enrichment uses more credits per contact than batch enrichment because every contact gets the full waterfall treatment immediately. That is fine. If the contact came from a web reveal or form fill, they have active intent. Spending 5-10 credits to fully enrich an intent signal is always worth it. If time spent avoiding credits exceeds the credit cost, use the credits. Where you save credits: the persona qualification prompt should run before the email waterfall. If the persona does not match (wrong title, wrong department), skip the waterfall entirely. Do not waste credits finding an email for someone you will never contact.",
+          "On-demand enrichment uses more credits per contact than batch enrichment because every contact gets enriched immediately. That is fine. If the contact came from a web reveal or form fill, they have active intent. Spending 2-4 credits to fully enrich an intent signal is always worth it. If time spent avoiding credits exceeds the credit cost, use the credits. Where you save credits: the persona qualification prompt should run before the email lookup. If the persona does not match (wrong title, wrong department), skip the lookup entirely. Do not waste credits finding an email for someone you will never contact. Single-provider is cheaper than a waterfall and gets the same result once MX routing is in play.",
       },
       {
         heading: 'Common Mistakes',
         type: 'anti-pattern',
         content:
-          "Running on-demand enrichment without a CRM lookup first. Before any enrichment runs, check if this contact already exists in HubSpot or Salesforce. If they do, pull their existing data instead of re-enriching. Sending leads already in pipeline is the fastest way to lose trust with a partner or sales team. The CRM lookup column should be the first thing that fires — before the waterfall, before persona qual, before anything.\n\nAnother mistake: enriching every contact equally. If the persona doesn't match your buyer tiers, don't run the waterfall. Qualify the person before you spend credits finding their email.",
+          "Running on-demand enrichment without a CRM lookup first. Before any enrichment runs, check if this contact already exists in HubSpot or Salesforce. If they do, pull their existing data instead of re-enriching. Sending leads already in pipeline is the fastest way to lose trust with a partner or sales team. The CRM lookup column should be the first thing that fires — before the email lookup, before persona qual, before anything.\n\nAnother mistake: enriching every contact equally. If the persona doesn't match your buyer tiers, don't run the email lookup. Qualify the person before you spend credits finding their email.",
       },
     ],
   },
@@ -613,25 +613,25 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         heading: 'What Goes on a Contact Card',
         type: 'pattern',
         content:
-          "Every contact card should have these columns:\n\n• Email (from waterfall — first valid result wins)\n• First name / Last name\n• Job title\n• Department\n• Seniority level\n• LinkedIn profile URL\n• Persona tier (1-5 from qualification prompt)\n• Outreach priority (primary / secondary / champion / not_target)\n• Company domain (lookup key to account table)\n• ICP score (pulled from account table via lookup)\n• MX provider (Google / Microsoft / Other — from HTTP column)\n• Route (Instantly / HeyReach / skip)\n• Personalization variables (icebreaker, pain point — from research prompt)",
+          "Every contact card should have these columns:\n\n• Email (from single-provider lookup — Prospeo or LeadMagic)\n• First name / Last name\n• Job title\n• Department\n• Seniority level\n• LinkedIn profile URL\n• Persona tier (1-5 from qualification prompt)\n• Outreach priority (primary / secondary / champion / not_target)\n• Company domain (lookup key to account table)\n• ICP score (pulled from account table via lookup)\n• MX provider (Google / Microsoft / Other — from HTTP column)\n• Route (Instantly / HeyReach / skip)\n• Personalization variables (icebreaker, pain point — from research prompt)",
       },
       {
         heading: 'Persona Qualification Prompt',
         type: 'pattern',
         content:
-          "The persona qualification prompt maps job titles to buyer tiers. Every partner has 3-7 persona tiers defined:\n\n• Tier 1 — Economic Buyer (C-Suite, SVP). Primary outreach priority.\n• Tier 2 — Technical Decision Maker (VP, Director). Primary outreach priority.\n• Tier 3 — Influencer / Champion (Manager, Senior IC). Secondary priority.\n• Tier 4 — Operational (Specialist, Analyst). Low priority or skip.\n• Tier 5 — Edge cases (varies by partner).\n\nThe prompt takes a job title and outputs: persona_qualified (MATCHED / NOT_MATCHED), tier, tier_name, outreach_priority, and reasoning. A clean persona qualification prompt eliminates 40-60% of contacts before you spend credits on email waterfall and personalization research.",
+          "The persona qualification prompt maps job titles to buyer tiers. Every partner has 3-7 persona tiers defined:\n\n• Tier 1 — Economic Buyer (C-Suite, SVP). Primary outreach priority.\n• Tier 2 — Technical Decision Maker (VP, Director). Primary outreach priority.\n• Tier 3 — Influencer / Champion (Manager, Senior IC). Secondary priority.\n• Tier 4 — Operational (Specialist, Analyst). Low priority or skip.\n• Tier 5 — Edge cases (varies by partner).\n\nThe prompt takes a job title and outputs: persona_qualified (MATCHED / NOT_MATCHED), tier, tier_name, outreach_priority, and reasoning. A clean persona qualification prompt eliminates 40-60% of contacts before you spend credits on email lookup and personalization research.",
       },
       {
-        heading: 'The Email Waterfall on Contact Cards',
+        heading: 'Single-Provider Email Lookup on Contact Cards',
         type: 'pro-tip',
         content:
-          "After persona qualification, run the email waterfall only on MATCHED personas. Order: Apollo → Hunter.io → Clearbit → RocketReach → Prospeo → Dropcontact. First valid email wins.\n\nSkip waterfall validation. I know that sounds counterintuitive, but validation still bounces anyway. Go single-provider for validation (Prospeo or LeadMagic) and check MX records instead. MX records tell you more about deliverability than any validation tool. If the domain runs Microsoft Exchange, you're not reliably delivering from your Google-only Instantly setup — route to HeyReach instead.",
+          "After persona qualification, run the email lookup only on MATCHED personas. Use one provider — Prospeo or LeadMagic. Don't stack a 6-provider waterfall. I used to run Apollo → Hunter → Clearbit → RocketReach → Prospeo → Dropcontact. I stopped because the routing logic made the waterfall pointless.\n\nHere's why: once you check MX records and route Google → Instantly, non-Google → HeyReach, the marginal coverage from extra providers doesn't matter. You're burning credits chasing emails that bounce anyway when the MX doesn't match your sending infrastructure. One provider + MX check = same deliverability at a fraction of the cost. MX records tell you more about deliverability than any validation tool.",
       },
       {
         heading: 'Common Mistakes',
         type: 'anti-pattern',
         content:
-          "Running persona qualification after the email waterfall. Flip the order. Qualify the persona first. If the title doesn't match any tier, don't waste credits finding their email. You'll never contact them anyway.\n\nAnother mistake: sourcing contacts without checking the CRM first. Before any contact enrichment, run a CRM lookup. If this person is already in HubSpot with an active deal, don't re-enrich and don't add them to a cold outreach sequence. Sending leads already in pipeline is the fastest way to lose trust.",
+          "Running persona qualification after the email lookup. Flip the order. Qualify the persona first. If the title doesn't match any tier, don't waste credits finding their email. You'll never contact them anyway.\n\nAnother mistake: sourcing contacts without checking the CRM first. Before any contact enrichment, run a CRM lookup. If this person is already in HubSpot with an active deal, don't re-enrich and don't add them to a cold outreach sequence. Sending leads already in pipeline is the fastest way to lose trust.",
       },
     ],
   },
@@ -869,7 +869,7 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         heading: 'The Full Flow in Sequence',
         type: 'pattern',
         content:
-          "1. Web reveal fires — company identified from website visit\n2. CRM lookup — is this company already in pipeline? If yes, alert the account owner instead of cold outreach\n3. Company qualification prompt — score against ICP criteria, identify primary gate\n4. If NOT_QUALIFIED → stop\n5. If QUALIFIED or NEEDS_RESEARCH → source contacts at the company\n6. Email waterfall on each contact (Apollo → Hunter → Clearbit → RocketReach → Prospeo → Dropcontact)\n7. Persona qualification prompt — match title to tier\n8. If NOT_MATCHED → skip contact, try next\n9. MX record check on email domain\n10. Routing decision prompt — combine company score + persona tier + MX provider\n11. Route to Instantly (Google) or HeyReach (non-Google)\n12. Personalization research prompt — generate icebreaker referencing the website visit\n\nSteps 2-12 run automatically. The only human touchpoint is manual review for NEEDS_RESEARCH companies with MATCHED personas.",
+          "1. Web reveal fires — company identified from website visit\n2. CRM lookup — is this company already in pipeline? If yes, alert the account owner instead of cold outreach\n3. Company qualification prompt — score against ICP criteria, identify primary gate\n4. If NOT_QUALIFIED → stop\n5. If QUALIFIED or NEEDS_RESEARCH → source contacts at the company\n6. Persona qualification prompt — match title to tier\n7. If NOT_MATCHED → skip contact, try next\n8. Single-provider email lookup (Prospeo or LeadMagic) — only on MATCHED personas\n9. MX record check on email domain\n10. Routing decision prompt — combine company score + persona tier + MX provider\n11. Route to Instantly (Google) or HeyReach (non-Google)\n12. Personalization research prompt — generate icebreaker referencing the website visit\n\nSteps 2-12 run automatically. The only human touchpoint is manual review for NEEDS_RESEARCH companies with MATCHED personas. Note: persona qualification runs before the email lookup — don't waste credits finding emails for people you'll never contact.",
       },
       {
         heading: 'Personalization for Web Reveal Leads',
@@ -979,13 +979,13 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         heading: 'What This Play Does',
         type: 'prose',
         content:
-          "Enterprise accounts break normal Clay workflows. A company with 50,000 employees can have 200 valid contacts across 15 personas. If you run standard enrichment on a table that mixes enterprise accounts with mid-market accounts, the enterprise rows consume disproportionate credits, blow out your waterfall, and create duplicate problems that are painful to clean up. Enterprise guardrails are a set of rules that isolate large accounts, cap enrichment per domain, and batch enterprise separately from everything else.",
+          "Enterprise accounts break normal Clay workflows. A company with 50,000 employees can have 200 valid contacts across 15 personas. If you run standard enrichment on a table that mixes enterprise accounts with mid-market accounts, the enterprise rows consume disproportionate credits, overwhelm your enrichment pipeline, and create duplicate problems that are painful to clean up. Enterprise guardrails are a set of rules that isolate large accounts, cap enrichment per domain, and batch enterprise separately from everything else.",
       },
       {
         heading: 'Why Enterprise Needs Isolation',
         type: 'prose',
         content:
-          "When I say \"always source enterprise contacts separately,\" I mean it. Here's what happens when you don't:\n\n1. You import 500 contacts from various companies. 50 of them work at Microsoft.\n2. Your email waterfall runs on all 500. Microsoft contacts consume 50x the credits because every provider attempts enrichment on the same @microsoft.com domain.\n3. Your persona qualification prompt returns 30 MATCHED personas at Microsoft alone. You now have 30 contacts routed to outreach at one company.\n4. Your sales rep receives 30 \"new leads\" from the same account and immediately distrusts the system.\n\nBigger batches need isolation. Enterprise accounts have more contacts, more personas, more data to process. If they run alongside mid-market accounts, they dominate the table and distort your metrics.",
+          "When I say \"always source enterprise contacts separately,\" I mean it. Here's what happens when you don't:\n\n1. You import 500 contacts from various companies. 50 of them work at Microsoft.\n2. Your email lookup runs on all 500. Microsoft contacts consume disproportionate credits because the same @microsoft.com domain gets processed 50 times.\n3. Your persona qualification prompt returns 30 MATCHED personas at Microsoft alone. You now have 30 contacts routed to outreach at one company.\n4. Your sales rep receives 30 \"new leads\" from the same account and immediately distrusts the system.\n\nBigger batches need isolation. Enterprise accounts have more contacts, more personas, more data to process. If they run alongside mid-market accounts, they dominate the table and distort your metrics.",
       },
       {
         heading: 'The Domain Cap Rule',
