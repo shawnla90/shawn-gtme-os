@@ -11,7 +11,8 @@ data/*
 !data/website-stats.json
 data/daily-log/*.png
 data/daily-log/*.log
-scripts/
+scripts/*.csv
+scripts/*.log
 qualified_leads_to_process.json
 .claude/blocklist.txt
 screenshots/
