@@ -142,6 +142,7 @@ export default function RootLayout({
           links={[
             { href: '/', label: 'Home' },
             { href: '/blog', label: 'Blog' },
+            { href: '/how-to', label: 'How-To' },
             { href: '/log', label: 'Log' },
             { href: '/knowledge', label: 'Knowledge' },
             { href: '/clay-wiki', label: 'Clay Wiki' },

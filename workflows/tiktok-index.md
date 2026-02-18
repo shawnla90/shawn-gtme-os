@@ -93,6 +93,60 @@ Repurposed from the LinkedIn GTM Plays series. The "aha moment" from each play.
 - Play 14: MX Record Classification — one HTTP call reveals email security tier
 - Play 16: HeyReach Partner Handoff — Cursor agent pulling LinkedIn data to CSV
 
+## Faceless Series (The Terminal Alchemist)
+
+Animated character voiceover videos. Script → ElevenLabs TTS → lip sync → composite over screen recording.
+
+### Terminal Alchemist Tips
+
+General tool tips, workflow moments, and builder philosophy.
+
+| # | Topic | Source | Duration | Status |
+|---|-------|--------|----------|--------|
+| 1 | 17 Tabs. One Repo. | content/x/drafts/2026-02-17_build-your-own-os.md | ~24s | draft |
+
+### Skills That Run My Business
+
+Deep dive on one repo skill per video. 44+ skills to mine.
+
+| # | Topic | Source | Duration | Status |
+|---|-------|--------|----------|--------|
+| 1 | $7.75 and 35 Things Shipped (/tracker) | content/linkedin/drafts/2026-02-12_daily-tracker-build.md | ~25s | draft |
+
+### Claude Code Secrets
+
+Claude Code-specific tricks and commands.
+
+| # | Topic | Source | Duration | Status |
+|---|-------|--------|----------|--------|
+| 1 | One Command: Markdown to Post (/finalcopy) | tiktok-index queued topic | ~18s | draft |
+
+### Cursor Tricks You Missed
+
+Cursor IDE features and MCP integrations.
+
+| # | Topic | Source | Duration | Status |
+|---|-------|--------|----------|--------|
+| 1 | The System Documents Itself (/playdraft) | content/x/drafts/2026-02-10_content-os-meta.md | ~20s | draft |
+
+### How to Not Sound Like AI
+
+Voice system, anti-slop rules, content quality.
+
+| # | Topic | Source | Duration | Status |
+|---|-------|--------|----------|--------|
+| 1 | Voice Rules in a File | content/linkedin/drafts/2026-02-10_voice-modularity.md | ~22s | draft |
+
+### 30-Second GTM Plays
+
+Repurposed from LinkedIn plays series. The "aha moment" from each play.
+
+| # | Play | Source | Duration | Status |
+|---|------|--------|----------|--------|
+| — | (queue from plays-index.md) | | | planned |
+
+---
+
 ## Repurpose Tracker
 
 Tracks which LinkedIn/X posts have been compressed into TikTok scripts.

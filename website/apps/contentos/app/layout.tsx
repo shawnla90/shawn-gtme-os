@@ -55,6 +55,7 @@ export default function RootLayout({
           siteName="theContentOS.ai"
           links={[
             { href: '/', label: 'Home' },
+            { href: '/how-to', label: 'How-To' },
             { href: '/content-wiki', label: 'Content Wiki' },
             { href: 'https://shawnos.ai/knowledge', label: 'Knowledge' },
             { href: 'https://thegtmos.ai/clay-wiki', label: 'Clay Wiki' },
