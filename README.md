@@ -16,8 +16,8 @@ ShawnOS is a personal productivity and content operating system that gamifies da
 ### Mono-Repo Architecture
 Three-domain publishing system powered by Turborepo:
 - **shawnos.ai** — Main landing page and RPG dashboard
-- **gtm.shawnos.ai** — GTM operations showcase
-- **content.shawnos.ai** — Content portfolio and writing samples
+- **thegtmos.ai** — GTM operations showcase
+- **thecontentos.ai** — Content portfolio and writing samples
 
 All domains share a unified component library, design system, and terminal-inspired aesthetic.
 
