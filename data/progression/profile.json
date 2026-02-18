@@ -2,7 +2,7 @@
   "name": "Operator",
   "title": "Repo Architect",
   "level": 12,
-  "xp_total": 3488,
+  "xp_total": 3418,
   "xp_next_level": 5000,
   "class": "Builder",
   "avatar_tier": 2,
@@ -17,80 +17,80 @@
       "id": "first_100xp",
       "title": "Spark Plug",
       "description": "Earned 100 XP",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "first_500xp",
       "title": "Warm Boot",
       "description": "Earned 500 XP",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "first_1000xp",
       "title": "Kilobyte Club",
       "description": "Earned 1,000 XP",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "first_2000xp",
       "title": "Repo Unlocked",
       "description": "Earned 2,000 XP",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "shipped_10",
       "title": "Shipping Container",
       "description": "Shipped 10+ items across all days",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "shipped_50",
       "title": "Cargo Fleet",
       "description": "Shipped 50+ items across all days",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "shipped_100",
       "title": "Assembly Line",
       "description": "Shipped 100+ items across all days",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "first_s_grade",
       "title": "S-Rank Day",
       "description": "Achieved S letter grade on a daily log",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "s_grade_streak",
       "title": "S-Rank Streak",
       "description": "Achieved S letter grade on 3+ daily logs",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "streak_3",
       "title": "Three-Day March",
       "description": "Logged activity for 3+ consecutive days",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "streak_7",
       "title": "Week Warrior",
       "description": "Logged activity for 7+ days",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "words_50k",
       "title": "Fifty Thousand Words",
       "description": "Wrote 50,000+ words across all days",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     },
     {
       "id": "words_100k",
       "title": "Novelist",
       "description": "Wrote 100,000+ words across all days",
-      "unlocked_at": "2026-02-18T05:00:02.930593+00:00"
+      "unlocked_at": "2026-02-18T05:03:04.840865+00:00"
     }
   ],
-  "updated_at": "2026-02-18T05:00:02.931113+00:00"
+  "updated_at": "2026-02-18T05:03:04.841001+00:00"
 }

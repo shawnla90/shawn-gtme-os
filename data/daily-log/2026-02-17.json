@@ -1,8 +1,58 @@
 {
   "date": "2026-02-17",
-  "generated_at": "2026-02-18T05:00:02.275531+00:00",
+  "generated_at": "2026-02-18T05:03:04.754384+00:00",
   "version": 3,
   "accomplishments": [
+    {
+      "type": "website_page",
+      "title": "EmailInfrastructureGuidePage",
+      "path": "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "20:16",
+      "words": 1694,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge term page",
+      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "source": "auto",
+      "timestamp": "20:16",
+      "words": 1430,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge email page",
+      "path": "website/apps/gtmos/app/knowledge/email/page.tsx",
+      "source": "auto",
+      "timestamp": "20:16",
+      "words": 230,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos method page",
+      "path": "website/apps/shawnos/app/method/page.tsx",
+      "source": "auto",
+      "timestamp": "20:16",
+      "words": 2114,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "22:46",
+      "words": 1489,
+      "value_score": 25,
+      "shipped": true
+    },
     {
       "type": "code_infra",
       "title": "write_mx_and_bodies",
@@ -14,23 +64,13 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "gtmos knowledge term page",
-      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "type": "feature_script",
+      "title": "progression_engine",
+      "path": "scripts/progression_engine.py",
       "source": "auto",
-      "timestamp": "12:10",
-      "words": 1430,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "rescore_logs",
-      "path": "scripts/rescore_logs.py",
-      "source": "auto",
-      "timestamp": "14:02",
-      "words": 319,
-      "value_score": 15,
+      "timestamp": "16:47",
+      "words": 1855,
+      "value_score": 30,
       "shipped": true
     },
     {
@@ -38,58 +78,37 @@
       "title": "website_scanner",
       "path": "scripts/website_scanner.py",
       "source": "auto",
-      "timestamp": "14:02",
+      "timestamp": "16:47",
       "words": 2193,
       "value_score": 25,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos method page",
-      "path": "website/apps/shawnos/app/method/page.tsx",
-      "source": "auto",
-      "timestamp": "12:10",
-      "words": 2114,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "code_infra",
-      "title": "push_enrichment_to_sheet",
-      "path": "scripts/push_enrichment_to_sheet.py",
+      "title": "view_sprite",
+      "path": "scripts/view_sprite.py",
       "source": "auto",
-      "timestamp": "23:41",
-      "words": 149,
+      "timestamp": "16:47",
+      "words": 483,
       "value_score": 15,
       "shipped": true
     },
     {
       "type": "code_infra",
-      "title": "push_remaining_enrichment",
-      "path": "scripts/push_remaining_enrichment.py",
+      "title": "session_cost_tracker",
+      "path": "scripts/session_cost_tracker.py",
       "source": "auto",
-      "timestamp": "23:41",
-      "words": 152,
+      "timestamp": "22:58",
+      "words": 812,
       "value_score": 15,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "GTMKnowledgeGuidePage",
-      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
-      "source": "auto",
-      "timestamp": "12:10",
-      "words": 7206,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "code_infra",
-      "title": "find_missing_touch2",
-      "path": "scripts/find_missing_touch2.py",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
       "source": "auto",
-      "timestamp": "23:41",
-      "words": 267,
+      "timestamp": "20:16",
       "value_score": 15,
       "shipped": true
     },
@@ -104,22 +123,22 @@
       "shipped": true
     },
     {
-      "type": "feature_script",
-      "title": "progression_engine",
-      "path": "scripts/progression_engine.py",
-      "source": "auto",
-      "timestamp": "14:02",
-      "words": 1855,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
       "type": "code_infra",
       "title": "gen_touch2_updates",
       "path": "scripts/gen_touch2_updates.py",
       "source": "auto",
       "timestamp": "23:41",
       "words": 712,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "push_remaining_enrichment",
+      "path": "scripts/push_remaining_enrichment.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 152,
       "value_score": 15,
       "shipped": true
     },
@@ -138,48 +157,79 @@
       "title": "rpg_sprites",
       "path": "scripts/rpg_sprites.py",
       "source": "auto",
-      "timestamp": "14:02",
-      "words": 13086,
+      "timestamp": "04:36",
+      "words": 12575,
       "value_score": 50,
       "shipped": true
     },
     {
       "type": "feature_script",
-      "title": "avatar_generator",
-      "path": "scripts/avatar_generator.py",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
       "source": "auto",
-      "timestamp": "14:02",
-      "words": 1854,
+      "timestamp": "16:47",
+      "words": 4668,
       "value_score": 30,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "EmailInfrastructureGuidePage",
-      "path": "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx",
+      "type": "skill_updated",
+      "title": "clickup-time-track",
+      "path": ".cursor/skills/clickup-time-track/SKILL.md",
       "source": "auto",
-      "timestamp": "12:10",
-      "words": 1694,
+      "timestamp": "20:16",
+      "words": 302,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "code_infra",
-      "title": "view_sprite",
-      "path": "scripts/view_sprite.py",
+      "title": "find_missing_touch2",
+      "path": "scripts/find_missing_touch2.py",
       "source": "auto",
-      "timestamp": "14:02",
-      "words": 483,
+      "timestamp": "23:41",
+      "words": 267,
       "value_score": 15,
       "shipped": true
     },
     {
       "type": "code_infra",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
+      "title": "push_enrichment_to_sheet",
+      "path": "scripts/push_enrichment_to_sheet.py",
       "source": "auto",
-      "timestamp": "12:10",
+      "timestamp": "23:41",
+      "words": 149,
       "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "GTMKnowledgeGuidePage",
+      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "20:16",
+      "words": 7206,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "rescore_logs",
+      "path": "scripts/rescore_logs.py",
+      "source": "auto",
+      "timestamp": "16:47",
+      "words": 319,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "sync-machines",
+      "path": ".cursor/skills/sync-machines/SKILL.md",
+      "source": "auto",
+      "timestamp": "20:25",
+      "words": 940,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -193,6 +243,16 @@
       "shipped": true
     },
     {
+      "type": "feature_script",
+      "title": "avatar_generator",
+      "path": "scripts/avatar_generator.py",
+      "source": "auto",
+      "timestamp": "16:47",
+      "words": 1854,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
       "type": "code_infra",
       "title": "repo_stats",
       "path": "scripts/repo_stats.py",
@@ -203,193 +263,13 @@
       "shipped": true
     },
     {
-      "type": "feature_script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
-      "source": "auto",
-      "timestamp": "14:02",
-      "words": 4668,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "clickup-time-track",
-      "path": ".cursor/skills/clickup-time-track/SKILL.md",
-      "source": "auto",
-      "timestamp": "14:56",
-      "words": 302,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge email page",
-      "path": "website/apps/gtmos/app/knowledge/email/page.tsx",
-      "source": "auto",
-      "timestamp": "12:10",
-      "words": 230,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log skill-guide page",
-      "path": "website/apps/gtmos/app/log/skill-guide/page.tsx",
+      "type": "code_infra",
+      "title": "shawnos next config",
+      "path": "website/apps/shawnos/next.config.ts",
       "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 155,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "partner_resource",
-      "title": "partner plan 2026 02 17",
-      "path": "clients/partner/connext/resources/plan-2026-02-17.md",
-      "source": "auto-mtime",
-      "timestamp": "15:43",
-      "words": 818,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "partner_onboard",
-      "title": "partner onboard skill",
-      "path": "clients/partner/connext/SKILL.md",
-      "source": "auto-mtime",
-      "timestamp": "22:16",
-      "words": 455,
-      "value_score": 8,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log skill-guide page",
-      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 155,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log page",
-      "path": "website/apps/gtmos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 319,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "partner_resource",
-      "title": "partner plan 2026 02 17",
-      "path": "clients/partner/exol/resources/plan-2026-02-17.md",
-      "source": "auto-mtime",
-      "timestamp": "12:43",
-      "words": 1669,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "TypewriterHero",
-      "path": "website/packages/shared/components/TypewriterHero.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 798,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log page",
-      "path": "website/apps/contentos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 319,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "partner_resource",
-      "title": "partner enrichment map",
-      "path": "clients/partner/exol/resources/enrichment-map.md",
-      "source": "auto-mtime",
-      "timestamp": "13:10",
-      "words": 2342,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "partner_resource",
-      "title": "partner session 02 2026 02 13",
-      "path": "clients/partner/connext/resources/transcripts/session-02-2026-02-13.md",
-      "source": "auto-mtime",
-      "timestamp": "22:16",
-      "words": 330,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "partner_resource",
-      "title": "partner handoff 2026 02 17",
-      "path": "clients/partner/exol/resources/handoff-2026-02-17.md",
-      "source": "auto-mtime",
-      "timestamp": "13:11",
-      "words": 748,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log date page",
-      "path": "website/apps/contentos/app/log/[date]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 516,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "partner_resource",
-      "title": "partner session 02 2026 02 16",
-      "path": "clients/partner/exol/resources/transcripts/session-02-2026-02-16.md",
-      "source": "auto-mtime",
-      "timestamp": "12:43",
-      "words": 1846,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 1411,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "gtmos home page",
-      "path": "website/apps/gtmos/app/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 984,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log date page",
-      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "14:02",
-      "words": 516,
-      "value_score": 5,
+      "timestamp": "20:16",
+      "words": 51,
+      "value_score": 15,
       "shipped": true
     }
   ],
@@ -759,38 +639,37 @@
   "token_usage": [
     {
       "session_id": "cursor-aggregate",
-      "input_tokens": 244575,
-      "output_tokens": 81525,
+      "input_tokens": 78637,
+      "output_tokens": 26213,
       "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "model": "opus",
       "source": "cursor-db",
-      "messages": 2174,
-      "conversations": 15,
-      "logged_at": "00:00",
-      "context": "cursor-ide 00:45-20:50",
-      "cost": 9.783,
+      "messages": 699,
+      "conversations": 5,
+      "logged_at": "00:03",
+      "context": "cursor-ide 18:41-20:00",
+      "cost": 3.1455,
       "estimated": true
     }
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 21,
-      "website": 11,
-      "ops": 7
+      "website": 5,
+      "other": 22
     },
-    "words_today": 59303,
+    "words_today": 48703,
     "pipeline_words": 36965,
     "finals_count": 0,
     "first_activity": "01:10",
     "last_activity": "23:41",
-    "output_score": 520,
-    "letter_grade": "S+",
+    "output_score": 450,
+    "letter_grade": "S",
     "score_breakdown": [
       {
-        "type": "code_infra",
-        "title": "write_mx_and_bodies",
-        "points": 15
+        "type": "website_page",
+        "title": "EmailInfrastructureGuidePage",
+        "points": 5
       },
       {
         "type": "website_page",
@@ -798,14 +677,9 @@
         "points": 5
       },
       {
-        "type": "code_infra",
-        "title": "rescore_logs",
-        "points": 15
-      },
-      {
-        "type": "complex_script",
-        "title": "website_scanner",
-        "points": 25
+        "type": "website_page",
+        "title": "gtmos knowledge email page",
+        "points": 5
       },
       {
         "type": "website_page",
@@ -813,28 +687,13 @@
         "points": 5
       },
       {
-        "type": "code_infra",
-        "title": "push_enrichment_to_sheet",
-        "points": 15
+        "type": "landing_page",
+        "title": "contentos home page",
+        "points": 25
       },
       {
         "type": "code_infra",
-        "title": "push_remaining_enrichment",
-        "points": 15
-      },
-      {
-        "type": "website_page",
-        "title": "GTMKnowledgeGuidePage",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "find_missing_touch2",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "mx_check",
+        "title": "write_mx_and_bodies",
         "points": 15
       },
       {
@@ -843,8 +702,38 @@
         "points": 30
       },
       {
+        "type": "complex_script",
+        "title": "website_scanner",
+        "points": 25
+      },
+      {
+        "type": "code_infra",
+        "title": "view_sprite",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "session_cost_tracker",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "shared package",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "mx_check",
+        "points": 15
+      },
+      {
         "type": "code_infra",
         "title": "gen_touch2_updates",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "push_remaining_enrichment",
         "points": 15
       },
       {
@@ -859,36 +748,6 @@
       },
       {
         "type": "feature_script",
-        "title": "avatar_generator",
-        "points": 30
-      },
-      {
-        "type": "website_page",
-        "title": "EmailInfrastructureGuidePage",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "view_sprite",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "shared package",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "enrich_vector_leads",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "repo_stats",
-        "points": 15
-      },
-      {
-        "type": "feature_script",
         "title": "daily_scan",
         "points": 30
       },
@@ -898,123 +757,89 @@
         "points": 5
       },
       {
-        "type": "website_page",
-        "title": "gtmos knowledge email page",
-        "points": 5
+        "type": "code_infra",
+        "title": "find_missing_touch2",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "push_enrichment_to_sheet",
+        "points": 15
       },
       {
         "type": "website_page",
-        "title": "gtmos log skill-guide page",
+        "title": "GTMKnowledgeGuidePage",
         "points": 5
       },
       {
-        "type": "partner_resource",
-        "title": "partner plan 2026 02 17",
-        "points": 2
+        "type": "code_infra",
+        "title": "rescore_logs",
+        "points": 15
       },
       {
-        "type": "partner_onboard",
-        "title": "partner onboard skill",
-        "points": 8
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log skill-guide page",
+        "type": "skill_updated",
+        "title": "sync-machines",
         "points": 5
       },
       {
-        "type": "website_page",
-        "title": "gtmos log page",
-        "points": 5
+        "type": "code_infra",
+        "title": "enrich_vector_leads",
+        "points": 15
       },
       {
-        "type": "partner_resource",
-        "title": "partner plan 2026 02 17",
-        "points": 2
-      },
-      {
-        "type": "feature_system",
-        "title": "TypewriterHero",
+        "type": "feature_script",
+        "title": "avatar_generator",
         "points": 30
       },
       {
-        "type": "website_page",
-        "title": "contentos log page",
-        "points": 5
+        "type": "code_infra",
+        "title": "repo_stats",
+        "points": 15
       },
       {
-        "type": "partner_resource",
-        "title": "partner enrichment map",
-        "points": 2
-      },
-      {
-        "type": "partner_resource",
-        "title": "partner session 02 2026 02 13",
-        "points": 2
-      },
-      {
-        "type": "partner_resource",
-        "title": "partner handoff 2026 02 17",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log date page",
-        "points": 5
-      },
-      {
-        "type": "partner_resource",
-        "title": "partner session 02 2026 02 16",
-        "points": 2
-      },
-      {
-        "type": "landing_page",
-        "title": "contentos home page",
-        "points": 25
-      },
-      {
-        "type": "landing_page",
-        "title": "gtmos home page",
-        "points": 25
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log date page",
-        "points": 5
+        "type": "code_infra",
+        "title": "shawnos next config",
+        "points": 15
       }
     ],
-    "efficiency_rating": 53.15,
-    "shipped_count": 39,
+    "efficiency_rating": 143.06,
+    "shipped_count": 27,
     "draft_count": 0,
     "ship_rate": 1.0,
-    "agent_cost": 9.78,
-    "dev_equivalent_cost": 22367.5,
+    "agent_cost": 3.15,
+    "dev_equivalent_cost": 22104.0,
     "dev_equivalent_breakdown": {
-      "code_loc": 10958,
-      "code_hours": 219.16,
-      "code_cost": 16437.0,
-      "content_words": 59303,
-      "content_hours": 118.61,
-      "content_cost": 5930.5,
-      "total": 22367.5
+      "code_loc": 11489,
+      "code_hours": 229.78,
+      "code_cost": 17233.5,
+      "content_words": 48703,
+      "content_hours": 97.41,
+      "content_cost": 4870.5,
+      "total": 22104.0
     },
-    "cost_savings": 22357.72,
-    "roi_multiplier": 2286.4,
-    "lines_added": 13573,
-    "lines_removed": 631,
-    "lines_net": 12942,
-    "code_loc": 10958,
-    "content_loc": 220,
-    "data_loc": 2395
+    "cost_savings": 22100.85,
+    "roi_multiplier": 7027.2,
+    "lines_added": 16189,
+    "lines_removed": 781,
+    "lines_net": 15408,
+    "code_loc": 11489,
+    "content_loc": 1225,
+    "data_loc": 3475
   },
   "git_summary": {
-    "commits_today": 8,
+    "commits_today": 14,
     "files_added": [
+      ".cursor/mcp-servers.md",
+      ".cursor/mcp-template.json",
       ".cursor/plans/progression_cron_and_xp_receipts_2b38a1dd.plan.md",
       ".cursor/skills/clickup-time-track/SKILL.md",
+      ".cursor/skills/sync-machines/SKILL.md",
+      ".vscode/settings.json",
       "data/daily-log/2026-02-16.json",
+      "data/daily-log/cost-tracker/2026-02-18.json",
       "data/progression/avatars/tool-ouroboros-idle.gif",
       "data/progression/avatars/tool-ouroboros-static.png",
+      "requirements.txt",
       "scripts/LICENSE.md",
       "scripts/avatar_generator.py",
       "scripts/bootstrap.sh",
@@ -1032,9 +857,12 @@
       "scripts/rescore_logs.py",
       "scripts/reword_elauwit_commit_msg.sh",
       "scripts/rpg_sprites.py",
+      "scripts/session_cost_tracker.py",
+      "scripts/v2/SPEC.md",
       "scripts/view_sprite.py",
       "scripts/website_scanner.py",
       "scripts/write_mx_and_bodies.py",
+      "setup.sh",
       "website/apps/gtmos/app/knowledge/email/page.tsx",
       "website/apps/shawnos/app/method/page.draft.tsx",
       "website/apps/shawnos/public/progression/avatars/tool-ouroboros-idle.gif",
@@ -1044,21 +872,26 @@
     ],
     "files_modified": [
       ".gitignore",
+      "content/images/gtme-os-tree-visualization.png",
       "data/daily-log/2026-02-16.json",
       "data/progression/profile.json",
       "data/website-stats.json",
+      "scripts/daily_cron.sh",
+      "website/apps/contentos/app/page.tsx",
       "website/apps/gtmos/app/knowledge/[term]/page.tsx",
       "website/apps/shawnos/app/method/page.tsx",
+      "website/apps/shawnos/public/sitemap-0.xml",
+      "website/package-lock.json",
       "website/packages/shared/data/clay-wiki.ts",
       "website/packages/shared/data/gtm-terms.ts",
       "website/packages/shared/package.json",
       "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx"
     ],
-    "lines_added_count": 13573,
-    "lines_removed_count": 631,
-    "lines_net": 12942,
-    "code_loc": 10958,
-    "content_loc": 220,
-    "data_loc": 2395
+    "lines_added_count": 16189,
+    "lines_removed_count": 781,
+    "lines_net": 15408,
+    "code_loc": 11489,
+    "content_loc": 1225,
+    "data_loc": 3475
   }
 }
