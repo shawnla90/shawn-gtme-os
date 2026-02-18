@@ -179,9 +179,11 @@ For **Release Reactions**:
 - End with "no gatekeeping" + resource delivery to comments
 - Reference the play number from the plays index
 
-### Step 6: Generate X Drafts (10-Post Story Arc)
+### Step 6: Generate X Drafts (4-5 Post Thread)
 
-Create one markdown file with **10 tweets** that form a story arc.
+Create one markdown file with **4-5 tweets** that form a tight comment thread.
+
+Threads longer than 5 tweets have diminishing returns on X. Each tweet should be a standalone banger that also builds the narrative forward. The goal is density, not length.
 
 **File path**: `content/x/drafts/YYYY-MM-DD_{slug}.md`
 
@@ -209,61 +211,31 @@ Generate 2–5 scroll-stopping first-tweet options using styles from `viral-hook
 
 ## Tweet 1 (Hook)
 
-{First tweet — standalone hook, screenshot attached; use one of the options above}
+{First tweet — standalone hook, screenshot attached. Must stop the scroll on its own.}
 
 ---
 
-## Tweet 2 (Context)
+## Tweet 2 (The Build / Context)
 
-{What you built and why}
-
----
-
-## Tweet 3 (The Problem)
-
-{The pain point or gap this addresses}
+{What you built, why, and the core mechanic. Compress the problem + solution into one tweet.}
 
 ---
 
-## Tweet 4 (The Build)
+## Tweet 3 (The Substance)
 
-{How you built it — tools, process, stack}
-
----
-
-## Tweet 5 (The Results)
-
-{What the screenshot shows — quantifiable output}
+{The specific details — tools, steps, results, real data from the screenshot. This is the meat.}
 
 ---
 
-## Tweet 6 (The Insight)
+## Tweet 4 (The Insight / Pattern)
 
-{What you learned or what clicked}
-
----
-
-## Tweet 7 (The Pattern)
-
-{Broader pattern this reveals about GTM/building}
+{What you learned, what clicked, or the broader pattern this reveals. The takeaway.}
 
 ---
 
-## Tweet 8 (The System)
+## Tweet 5 (CTA / Resource Delivery) [optional — use when there's a resource to share]
 
-{How this fits into your larger system/repo}
-
----
-
-## Tweet 9 (The Invitation)
-
-{Why others should build something similar}
-
----
-
-## Tweet 10 (CTA)
-
-{Follow, sign-off, what's next}
+{Sign-off, follow CTA, or resource link. Only include if it adds value — 4 tweets is fine if the thread is tight.}
 
 ---
 
@@ -271,6 +243,13 @@ Generate 2–5 scroll-stopping first-tweet options using styles from `viral-hook
 
 {Screenshot reference, key themes, pillar rationale}
 ```
+
+**Thread structure by pillar**:
+
+For **Plays Series**: Hook (pain + play) → Setup (tool + signal) → Steps (1-2 per tweet) → Resource delivery
+For **Building & Sharing**: Hook (what you built) → The messy process → The insight → What's next
+For **Skill/System Shares**: Hook (the system) → How it works → Why it matters → Where to get it
+For **Release Reactions**: Hook (what changed) → How you tested it → What it means → Forward-looking take
 
 **Each tweet must**:
 - Start with lowercase first word (except I — always capitalize; don't overuse I; no quotation marks)
@@ -294,7 +273,7 @@ Generate 2–5 scroll-stopping first-tweet options using styles from `viral-hook
 
    X: content/x/drafts/YYYY-MM-DD_{slug}.md
       - Pillar: {pillar name}
-      - 10-post story arc ready for review
+      - 4-5 post thread ready for review
 
    Next step: Review drafts, pick a version, then /finalcopy when ready.
    ```
@@ -311,7 +290,7 @@ Response:
 1. Reads screenshot (extracts: 191 messages, 61 Shawn references, 14 decisions, 28 deliverables)
 2. Loads Skill/System Shares pillar guide
 3. Generates 3 LinkedIn versions (System Reveal, Meta Take, Invitation)
-4. Generates 10 X tweets (hook → CTA arc)
+4. Generates 4-5 X thread (hook → CTA arc)
 5. Saves both files with slug "slack-sync-skill"
 6. Confirms with file paths
 ```
@@ -326,7 +305,7 @@ Response:
 2. Loads Plays Series pillar + plays-index.md
 3. Uses "gtm plays i use every day, part 16 ⚡" format
 4. Generates 3 LinkedIn versions (Workflow Walkthrough, Pain Point Hook, Results Angle)
-5. Generates 10 X tweets
+5. Generates 4-5 X thread
 6. Saves both files
 ```
 
@@ -339,7 +318,7 @@ Response:
 1. Reads screenshot (extracts feature details)
 2. Loads Release Reactions pillar
 3. Generates 3 LinkedIn versions (First Take, Builder Test, Implications)
-4. Generates 10 X tweets
+4. Generates 4-5 X thread
 5. Saves both files
 ```
 
@@ -352,7 +331,7 @@ Response:
 1. Reads screenshot (extracts visible structure/output)
 2. Loads Building & Sharing pillar
 3. Generates 3 LinkedIn versions (Builder Story, Process Angle, Pattern Recognition)
-4. Generates 10 X tweets
+4. Generates 4-5 X thread
 5. Saves both files
 ```
 
@@ -377,6 +356,6 @@ Response:
 - The screenshot is evidence/proof — reference the real data points from it
 - Each pillar has its own structure and voice — follow the pillar guide closely
 - The 3 LinkedIn versions give options for different angles on the same build
-- The 10 X tweets form a complete story arc
+- The 4-5 X tweets form a tight, high-density thread
 - All drafts follow the standard format for consistency with existing workflow
 - This command is about turning YOUR work output into content — the screenshot shows the receipts
