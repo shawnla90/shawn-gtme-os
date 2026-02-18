@@ -53,6 +53,14 @@ else
   log "WARN: Cost tracker failed (non-fatal, continuing)"
 fi
 
+# ── Step 1c: Run the progression engine ──────────────────────────────
+log "Running progression_engine.py"
+if $PYTHON scripts/progression_engine.py --skip-avatar >> "$LOGFILE" 2>&1; then
+  log "Progression engine completed successfully"
+else
+  log "WARN: Progression engine failed (non-fatal, continuing)"
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
@@ -73,6 +81,7 @@ fi
 # Stage only the daily-log JSON files (PNGs are gitignored)
 $GIT add data/daily-log/*.json
 $GIT add data/daily-log/cost-tracker/*.json 2>/dev/null || true
+$GIT add data/progression/profile.json 2>/dev/null || true
 
 # Check if there are staged changes
 if $GIT diff --cached --quiet; then
