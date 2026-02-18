@@ -45,28 +45,20 @@ else
   exit 1
 fi
 
+# ── Step 1b: Run the cost tracker ────────────────────────────────────
+log "Running session_cost_tracker.py --date $TARGET_DATE"
+if $PYTHON scripts/session_cost_tracker.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
+  log "Cost tracker completed successfully"
+else
+  log "WARN: Cost tracker failed (non-fatal, continuing)"
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
   log "Dashboard generated"
 else
   log "WARN: Dashboard generation failed (non-fatal, continuing)"
-fi
-
-# ── Step 2.5: Run progression engine ─────────────────────────────────
-log "Running progression_engine.py"
-if $PYTHON scripts/progression_engine.py --skip-avatar -q >> "$LOGFILE" 2>&1; then
-  log "Progression updated"
-else
-  log "WARN: Progression engine failed (non-fatal, continuing)"
-fi
-
-# ── Step 2.75: Run website scanner (Nio vitals) ──────────────────────
-log "Running website_scanner.py"
-if $PYTHON scripts/website_scanner.py >> "$LOGFILE" 2>&1; then
-  log "Website stats updated"
-else
-  log "WARN: Website scanner failed (non-fatal, continuing)"
 fi
 
 # ── Step 3: Check if there's anything new to commit ──────────────────
@@ -79,7 +71,8 @@ if [[ ! -f "$JSON_FILE" ]]; then
 fi
 
 # Stage only the daily-log JSON files (PNGs are gitignored)
-$GIT add data/daily-log/*.json data/progression/profile.json data/website-stats.json
+$GIT add data/daily-log/*.json
+$GIT add data/daily-log/cost-tracker/*.json 2>/dev/null || true
 
 # Check if there are staged changes
 if $GIT diff --cached --quiet; then
@@ -89,7 +82,7 @@ if $GIT diff --cached --quiet; then
 fi
 
 # ── Step 4: Commit ───────────────────────────────────────────────────
-COMMIT_MSG="chore: daily tracker + progression + vitals $TARGET_DATE"
+COMMIT_MSG="chore: daily tracker scan $TARGET_DATE"
 log "Committing: $COMMIT_MSG"
 $GIT commit -m "$COMMIT_MSG" >> "$LOGFILE" 2>&1
 
