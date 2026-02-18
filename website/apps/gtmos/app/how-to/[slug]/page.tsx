@@ -310,11 +310,7 @@ export default async function HowToEntryPage({
       if (!r) return null
       return { id: r.id, title: r.title, canonicalSite: r.canonicalSite }
     })
-    .filter(
-      (
-        r,
-      ): r is { id: string; title: string; canonicalSite: string } => !!r,
-    )
+    .filter(Boolean) as { id: string; title: string; canonicalSite: string }[]
 
   const localRelated = relatedEntries.filter(
     (r) => r.canonicalSite === 'gtmos',
