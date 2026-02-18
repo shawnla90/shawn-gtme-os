@@ -1,0 +1,1064 @@
+{
+  "date": "2026-02-17",
+  "generated_at": "2026-02-18T05:00:02.275531+00:00",
+  "version": 3,
+  "accomplishments": [
+    {
+      "type": "code_infra",
+      "title": "write_mx_and_bodies",
+      "path": "scripts/write_mx_and_bodies.py",
+      "source": "auto",
+      "timestamp": "19:00",
+      "words": 640,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge term page",
+      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 1430,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "rescore_logs",
+      "path": "scripts/rescore_logs.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 319,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "website_scanner",
+      "path": "scripts/website_scanner.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 2193,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos method page",
+      "path": "website/apps/shawnos/app/method/page.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 2114,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "push_enrichment_to_sheet",
+      "path": "scripts/push_enrichment_to_sheet.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 149,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "push_remaining_enrichment",
+      "path": "scripts/push_remaining_enrichment.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 152,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "GTMKnowledgeGuidePage",
+      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 7206,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "find_missing_touch2",
+      "path": "scripts/find_missing_touch2.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 267,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mx_check",
+      "path": "scripts/mx_check.py",
+      "source": "auto",
+      "timestamp": "18:59",
+      "words": 517,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "progression_engine",
+      "path": "scripts/progression_engine.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 1855,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "gen_touch2_updates",
+      "path": "scripts/gen_touch2_updates.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 712,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_dashboard",
+      "path": "scripts/daily_dashboard.py",
+      "source": "auto",
+      "timestamp": "01:10",
+      "words": 3973,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 13086,
+      "value_score": 50,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "avatar_generator",
+      "path": "scripts/avatar_generator.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 1854,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "EmailInfrastructureGuidePage",
+      "path": "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 1694,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "view_sprite",
+      "path": "scripts/view_sprite.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 483,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "12:10",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "enrich_vector_leads",
+      "path": "scripts/enrich_vector_leads.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 1568,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "repo_stats",
+      "path": "scripts/repo_stats.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 510,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 4668,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "clickup-time-track",
+      "path": ".cursor/skills/clickup-time-track/SKILL.md",
+      "source": "auto",
+      "timestamp": "14:56",
+      "words": 302,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge email page",
+      "path": "website/apps/gtmos/app/knowledge/email/page.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 230,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log skill-guide page",
+      "path": "website/apps/gtmos/app/log/skill-guide/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 155,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner plan 2026 02 17",
+      "path": "clients/partner/connext/resources/plan-2026-02-17.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 818,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_onboard",
+      "title": "partner onboard skill",
+      "path": "clients/partner/connext/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "22:16",
+      "words": 455,
+      "value_score": 8,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log skill-guide page",
+      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 155,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log page",
+      "path": "website/apps/gtmos/app/log/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 319,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner plan 2026 02 17",
+      "path": "clients/partner/exol/resources/plan-2026-02-17.md",
+      "source": "auto-mtime",
+      "timestamp": "12:43",
+      "words": 1669,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "TypewriterHero",
+      "path": "website/packages/shared/components/TypewriterHero.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 798,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log page",
+      "path": "website/apps/contentos/app/log/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 319,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner enrichment map",
+      "path": "clients/partner/exol/resources/enrichment-map.md",
+      "source": "auto-mtime",
+      "timestamp": "13:10",
+      "words": 2342,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner session 02 2026 02 13",
+      "path": "clients/partner/connext/resources/transcripts/session-02-2026-02-13.md",
+      "source": "auto-mtime",
+      "timestamp": "22:16",
+      "words": 330,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner handoff 2026 02 17",
+      "path": "clients/partner/exol/resources/handoff-2026-02-17.md",
+      "source": "auto-mtime",
+      "timestamp": "13:11",
+      "words": 748,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log date page",
+      "path": "website/apps/contentos/app/log/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 516,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner session 02 2026 02 16",
+      "path": "clients/partner/exol/resources/transcripts/session-02-2026-02-16.md",
+      "source": "auto-mtime",
+      "timestamp": "12:43",
+      "words": 1846,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 1411,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "gtmos home page",
+      "path": "website/apps/gtmos/app/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 984,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log date page",
+      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "14:02",
+      "words": 516,
+      "value_score": 5,
+      "shipped": true
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+        "target_date": "2026-02-14",
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
+      },
+      {
+        "platform": "substack",
+        "title": "build your own os",
+        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1541
+      },
+      {
+        "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1013
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1119
+      }
+    ],
+    "finalized_today": []
+  },
+  "todos": [],
+  "token_usage": [
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 244575,
+      "output_tokens": 81525,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "opus",
+      "source": "cursor-db",
+      "messages": 2174,
+      "conversations": 15,
+      "logged_at": "00:00",
+      "context": "cursor-ide 00:45-20:50",
+      "cost": 9.783,
+      "estimated": true
+    }
+  ],
+  "stats": {
+    "platform_breakdown": {
+      "other": 21,
+      "website": 11,
+      "ops": 7
+    },
+    "words_today": 59303,
+    "pipeline_words": 36965,
+    "finals_count": 0,
+    "first_activity": "01:10",
+    "last_activity": "23:41",
+    "output_score": 520,
+    "letter_grade": "S+",
+    "score_breakdown": [
+      {
+        "type": "code_infra",
+        "title": "write_mx_and_bodies",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos knowledge term page",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "rescore_logs",
+        "points": 15
+      },
+      {
+        "type": "complex_script",
+        "title": "website_scanner",
+        "points": 25
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos method page",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "push_enrichment_to_sheet",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "push_remaining_enrichment",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "GTMKnowledgeGuidePage",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "find_missing_touch2",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "mx_check",
+        "points": 15
+      },
+      {
+        "type": "feature_script",
+        "title": "progression_engine",
+        "points": 30
+      },
+      {
+        "type": "code_infra",
+        "title": "gen_touch2_updates",
+        "points": 15
+      },
+      {
+        "type": "feature_script",
+        "title": "daily_dashboard",
+        "points": 30
+      },
+      {
+        "type": "system_engine",
+        "title": "rpg_sprites",
+        "points": 50
+      },
+      {
+        "type": "feature_script",
+        "title": "avatar_generator",
+        "points": 30
+      },
+      {
+        "type": "website_page",
+        "title": "EmailInfrastructureGuidePage",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "view_sprite",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "shared package",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "enrich_vector_leads",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "repo_stats",
+        "points": 15
+      },
+      {
+        "type": "feature_script",
+        "title": "daily_scan",
+        "points": 30
+      },
+      {
+        "type": "skill_updated",
+        "title": "clickup-time-track",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos knowledge email page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos log skill-guide page",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner plan 2026 02 17",
+        "points": 2
+      },
+      {
+        "type": "partner_onboard",
+        "title": "partner onboard skill",
+        "points": 8
+      },
+      {
+        "type": "website_page",
+        "title": "contentos log skill-guide page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos log page",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner plan 2026 02 17",
+        "points": 2
+      },
+      {
+        "type": "feature_system",
+        "title": "TypewriterHero",
+        "points": 30
+      },
+      {
+        "type": "website_page",
+        "title": "contentos log page",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner enrichment map",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner session 02 2026 02 13",
+        "points": 2
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner handoff 2026 02 17",
+        "points": 2
+      },
+      {
+        "type": "website_page",
+        "title": "contentos log date page",
+        "points": 5
+      },
+      {
+        "type": "partner_resource",
+        "title": "partner session 02 2026 02 16",
+        "points": 2
+      },
+      {
+        "type": "landing_page",
+        "title": "contentos home page",
+        "points": 25
+      },
+      {
+        "type": "landing_page",
+        "title": "gtmos home page",
+        "points": 25
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos log date page",
+        "points": 5
+      }
+    ],
+    "efficiency_rating": 53.15,
+    "shipped_count": 39,
+    "draft_count": 0,
+    "ship_rate": 1.0,
+    "agent_cost": 9.78,
+    "dev_equivalent_cost": 22367.5,
+    "dev_equivalent_breakdown": {
+      "code_loc": 10958,
+      "code_hours": 219.16,
+      "code_cost": 16437.0,
+      "content_words": 59303,
+      "content_hours": 118.61,
+      "content_cost": 5930.5,
+      "total": 22367.5
+    },
+    "cost_savings": 22357.72,
+    "roi_multiplier": 2286.4,
+    "lines_added": 13573,
+    "lines_removed": 631,
+    "lines_net": 12942,
+    "code_loc": 10958,
+    "content_loc": 220,
+    "data_loc": 2395
+  },
+  "git_summary": {
+    "commits_today": 8,
+    "files_added": [
+      ".cursor/plans/progression_cron_and_xp_receipts_2b38a1dd.plan.md",
+      ".cursor/skills/clickup-time-track/SKILL.md",
+      "data/daily-log/2026-02-16.json",
+      "data/progression/avatars/tool-ouroboros-idle.gif",
+      "data/progression/avatars/tool-ouroboros-static.png",
+      "scripts/LICENSE.md",
+      "scripts/avatar_generator.py",
+      "scripts/bootstrap.sh",
+      "scripts/daily_cron.sh",
+      "scripts/daily_dashboard.py",
+      "scripts/daily_scan.py",
+      "scripts/enrich_vector_leads.py",
+      "scripts/find_missing_touch2.py",
+      "scripts/gen_touch2_updates.py",
+      "scripts/mx_check.py",
+      "scripts/progression_engine.py",
+      "scripts/push_enrichment_to_sheet.py",
+      "scripts/push_remaining_enrichment.py",
+      "scripts/repo_stats.py",
+      "scripts/rescore_logs.py",
+      "scripts/reword_elauwit_commit_msg.sh",
+      "scripts/rpg_sprites.py",
+      "scripts/view_sprite.py",
+      "scripts/website_scanner.py",
+      "scripts/write_mx_and_bodies.py",
+      "website/apps/gtmos/app/knowledge/email/page.tsx",
+      "website/apps/shawnos/app/method/page.draft.tsx",
+      "website/apps/shawnos/public/progression/avatars/tool-ouroboros-idle.gif",
+      "website/apps/shawnos/public/progression/avatars/tool-ouroboros-static.png",
+      "website/packages/shared/data/email-infrastructure.ts",
+      "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx"
+    ],
+    "files_modified": [
+      ".gitignore",
+      "data/daily-log/2026-02-16.json",
+      "data/progression/profile.json",
+      "data/website-stats.json",
+      "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "website/apps/shawnos/app/method/page.tsx",
+      "website/packages/shared/data/clay-wiki.ts",
+      "website/packages/shared/data/gtm-terms.ts",
+      "website/packages/shared/package.json",
+      "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx"
+    ],
+    "lines_added_count": 13573,
+    "lines_removed_count": 631,
+    "lines_net": 12942,
+    "code_loc": 10958,
+    "content_loc": 220,
+    "data_loc": 2395
+  }
+}
