@@ -37,7 +37,7 @@ const bootLines: { status: string; label: string }[] = [
 
 /* ── system features ─────────────────────────────── */
 
-const systemFeatures: { title: string; desc: string }[] = [
+const systemFeatures: { title: string; desc: string; href?: string }[] = [
   {
     title: 'voice engine',
     desc: 'Speak to your AI. Generate content that sounds like you. Not a template, not slop. Your cadence, your energy, your words.',
@@ -45,6 +45,7 @@ const systemFeatures: { title: string; desc: string }[] = [
   {
     title: 'platform playbooks',
     desc: 'LinkedIn, X, Substack, TikTok, Reddit. Each platform\'s rules encoded. The system adapts your voice without losing it.',
+    href: '/content-wiki',
   },
   {
     title: 'pillar detection',
@@ -53,6 +54,7 @@ const systemFeatures: { title: string; desc: string }[] = [
   {
     title: 'recursive loop',
     desc: 'Every post feeds the next one. Breadcrumbs. Forward-references. The system compounds. Your content library grows itself.',
+    href: 'https://shawnos.ai/method',
   },
   {
     title: 'cross-platform distribution',
@@ -411,12 +413,50 @@ export default function HomePage() {
         </h2>
 
         <div style={featureGrid}>
-          {systemFeatures.map((f) => (
-            <div key={f.title} style={featureCard}>
-              <h3 style={featureTitle}>{f.title}</h3>
-              <p style={featureDesc}>{f.desc}</p>
-            </div>
-          ))}
+          {systemFeatures.map((f) => {
+            const isExternal = f.href?.startsWith('http')
+            const inner = (
+              <>
+                <h3 style={featureTitle}>
+                  {f.title}
+                  {f.href && (
+                    <span style={{ marginLeft: 6, fontSize: '11px', opacity: 0.6 }}>&rarr;</span>
+                  )}
+                </h3>
+                <p style={featureDesc}>{f.desc}</p>
+              </>
+            )
+
+            if (f.href && isExternal) {
+              return (
+                <a
+                  key={f.title}
+                  href={f.href}
+                  style={{ ...featureCard, textDecoration: 'none', cursor: 'pointer' }}
+                >
+                  {inner}
+                </a>
+              )
+            }
+
+            if (f.href) {
+              return (
+                <Link
+                  key={f.title}
+                  href={f.href}
+                  style={{ ...featureCard, textDecoration: 'none', cursor: 'pointer' }}
+                >
+                  {inner}
+                </Link>
+              )
+            }
+
+            return (
+              <div key={f.title} style={featureCard}>
+                {inner}
+              </div>
+            )
+          })}
         </div>
       </section>
 
