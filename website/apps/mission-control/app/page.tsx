@@ -1,6 +1,7 @@
 import TasksBoard from './components/TasksBoard'
 import SystemStatus from './components/SystemStatus'
 import RecentMemories from './components/RecentMemories'
+import NioStatus from './components/NioStatus'
 
 export default function Dashboard() {
   return (
@@ -17,6 +18,7 @@ export default function Dashboard() {
         
         {/* Side Panel */}
         <div className="space-y-6">
+          <NioStatus />
           <RecentMemories />
         </div>
       </div>
