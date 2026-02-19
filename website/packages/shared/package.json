@@ -13,6 +13,7 @@
     "./pages/GTMKnowledgeGuidePage": "./pages/GTMKnowledgeGuidePage.tsx",
     "./pages/EmailInfrastructureGuidePage": "./pages/EmailInfrastructureGuidePage.tsx",
     "./pages/VitalsPage": "./pages/VitalsPage.tsx",
+    "./pages/NioTerminalPage": "./pages/NioTerminalPage.tsx",
     "./pages/HowToWikiPage": "./pages/HowToWikiPage.tsx",
     "./data/engineering-terms": "./data/engineering-terms.ts",
     "./data/gtm-terms": "./data/gtm-terms.ts",

@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import type { WebsiteStats } from '../lib/vitals'
 import { formatNumber, gradeColor } from '../lib/vitals'
 import { NioAvatar } from '../components/NioAvatar'
@@ -107,13 +108,40 @@ export function VitalsPage({ stats }: VitalsPageProps) {
         </p>
         <div
           style={{
-            marginTop: 12,
-            fontSize: '11px',
-            color: 'var(--text-muted)',
-            opacity: 0.6,
+            marginTop: 16,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
-          {'// tier progression is permanent. every deploy counts.'}
+          <div
+            style={{
+              fontSize: '11px',
+              color: 'var(--text-muted)',
+              opacity: 0.6,
+            }}
+          >
+            {'// tier progression is permanent. every deploy counts.'}
+          </div>
+          <Link
+            href="/vitals/nio-terminal"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              fontSize: '11px',
+              color: '#4EC373',
+              textDecoration: 'none',
+              fontWeight: 600,
+              textTransform: 'uppercase',
+              letterSpacing: '0.08em',
+              opacity: 0.9,
+              transition: 'opacity 0.2s',
+            }}
+          >
+            <span>what's nio thinking?</span>
+            <span style={{ fontSize: '9px' }}>→</span>
+          </Link>
         </div>
       </section>
 
