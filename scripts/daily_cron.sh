@@ -61,6 +61,14 @@ else
   log "WARN: Progression engine failed (non-fatal, continuing)"
 fi
 
+# ── Step 1d: Run the website scanner (Nio vitals) ────────────────────
+log "Running website_scanner.py"
+if $PYTHON scripts/website_scanner.py >> "$LOGFILE" 2>&1; then
+  log "Website scanner completed successfully"
+else
+  log "WARN: Website scanner failed (non-fatal, continuing)"
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
@@ -82,6 +90,7 @@ fi
 $GIT add data/daily-log/*.json
 $GIT add data/daily-log/cost-tracker/*.json 2>/dev/null || true
 $GIT add data/progression/profile.json 2>/dev/null || true
+$GIT add data/website-stats.json 2>/dev/null || true
 
 # Check if there are staged changes
 if $GIT diff --cached --quiet; then
