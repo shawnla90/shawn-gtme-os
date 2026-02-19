@@ -225,17 +225,6 @@ HEYREACH_PALETTE: Dict[str, tuple] = {
     "ring":        (200, 170, 255),   # connection ring color
 }
 
-OUROBOROS_PALETTE: Dict[str, tuple] = {
-    "primary":   (78,  195, 115),   # green scales
-    "secondary": (45,  140, 75),    # darker green shading
-    "dark":      (25,  80,  45),    # deep shadow
-    "highlight": (127, 255, 170),   # mint glow
-    "glow":      (90,  220, 130),   # energy glow
-    "accent":    (220, 60,  50),    # red (eyes, jaw)
-    "gold":      (220, 190, 60),    # gold (horns, belly, bite)
-    "gold_dark": (170, 140, 30),    # darker gold
-}
-
 # ══════════════════════════════════════════════════════════════════════
 #  Drawing Primitives & Types
 # ══════════════════════════════════════════════════════════════════════
@@ -1846,86 +1835,6 @@ def _heyreach_sprite() -> Sprite:
         ], z_order=5),
     }
 
-
-def _ouroboros_sprite() -> Sprite:
-    """Ouroboros avatar: Infinity-shaped dragon biting its own tail."""
-    p = OUROBOROS_PALETTE
-    return {
-        # Dragon head at crossover point (biting tail)
-        "head": BodyPart("head", [
-            Rect(14, 14, 17, 16, p["primary"]),
-            Pixel(17, 14, p["accent"]),
-            Pixel(14, 14, p["accent"]),
-            Pixel(15, 17, p["gold"]),
-            Pixel(16, 17, p["gold"]),
-            Pixel(15, 13, p["gold"]),
-            Pixel(16, 13, p["gold"]),
-        ], z_order=20),
-
-        # Seg 0: upper-right from crossover
-        "seg_0": BodyPart("seg_0", [
-            Rect(18, 12, 19, 13, p["primary"]),
-            Rect(20, 10, 21, 11, p["primary"]),
-        ], z_order=10),
-
-        # Seg 1: top of right loop
-        "seg_1": BodyPart("seg_1", [
-            Rect(22, 8, 23, 9, p["primary"]),
-            Rect(24, 7, 26, 8, p["secondary"]),
-        ], z_order=10),
-
-        # Seg 2: right side descending
-        "seg_2": BodyPart("seg_2", [
-            Rect(27, 9, 28, 11, p["primary"]),
-            Rect(27, 12, 28, 14, p["secondary"]),
-        ], z_order=10),
-
-        # Seg 3: bottom-right back to center
-        "seg_3": BodyPart("seg_3", [
-            Rect(25, 15, 26, 16, p["primary"]),
-            Rect(22, 16, 24, 17, p["secondary"]),
-            Rect(18, 16, 21, 17, p["primary"]),
-        ], z_order=8),
-
-        # Seg 4: lower-left from crossover
-        "seg_4": BodyPart("seg_4", [
-            Rect(12, 18, 13, 19, p["primary"]),
-            Rect(10, 20, 11, 21, p["primary"]),
-        ], z_order=10),
-
-        # Seg 5: bottom of left loop
-        "seg_5": BodyPart("seg_5", [
-            Rect(8, 22, 9, 23, p["primary"]),
-            Rect(5, 23, 7, 24, p["secondary"]),
-        ], z_order=10),
-
-        # Seg 6: left side ascending
-        "seg_6": BodyPart("seg_6", [
-            Rect(3, 20, 4, 22, p["primary"]),
-            Rect(3, 17, 4, 19, p["secondary"]),
-        ], z_order=10),
-
-        # Seg 7: upper-left back to center (tail end)
-        "seg_7": BodyPart("seg_7", [
-            Rect(5, 15, 6, 16, p["primary"]),
-            Rect(7, 14, 9, 15, p["secondary"]),
-            Rect(10, 14, 13, 15, p["primary"]),
-        ], z_order=8),
-
-        # Gold belly highlights along the body
-        "belly": BodyPart("belly", [
-            Pixel(21, 11, p["gold_dark"]),
-            Pixel(25, 8, p["gold_dark"]),
-            Pixel(28, 13, p["gold_dark"]),
-            Pixel(23, 17, p["gold_dark"]),
-            Pixel(11, 21, p["gold_dark"]),
-            Pixel(6, 24, p["gold_dark"]),
-            Pixel(4, 19, p["gold_dark"]),
-            Pixel(8, 15, p["gold_dark"]),
-        ], z_order=12),
-    }
-
-
 # ══════════════════════════════════════════════════════════════════════
 #  Frame Transform Functions
 # ══════════════════════════════════════════════════════════════════════
@@ -2473,35 +2382,6 @@ def heyreach_idle(sprite: Sprite, frame: int, total: int = 10) -> Sprite:
         
     return s
 
-def ouroboros_idle(sprite: Sprite, frame: int, total: int = 8) -> Sprite:
-    """Ouroboros: Color bands cycle along infinity path + glow pulse."""
-    s = deep_copy_sprite(sprite)
-    p = OUROBOROS_PALETTE
-
-    seg_names = [f"seg_{i}" for i in range(8)]
-    active = frame % 8
-
-    s = brighten_part(s, seg_names[active], 60)
-    s = brighten_part(s, seg_names[(active - 1) % 8], 25)
-
-    head_glow = int(20 * math.sin(2 * math.pi * frame / total))
-    s = brighten_part(s, "head", head_glow)
-
-    glow_px: List[Tuple[int, int, tuple]] = []
-    for i in range(3):
-        angle = 2 * math.pi * (frame + i * total / 3) / total
-        denom = 1 + math.sin(angle) ** 2
-        gx = 16 + int(12 * math.cos(angle) / denom)
-        gy = 16 + int(8 * math.sin(angle) * math.cos(angle) / denom)
-        if 0 <= gx < GRID and 0 <= gy < GRID:
-            fade = int(40 * math.sin(2 * math.pi * (frame + i * 2) / total))
-            glow_px.append((gx, gy, brightness(p["glow"], fade)))
-
-    if glow_px:
-        s = add_pixels(s, "glow_particles", glow_px, z_order=5)
-
-    return s
-
 
 # ══════════════════════════════════════════════════════════════════════
 #  Advanced Variant Transforms (enhanced glow, particles, intensity)
@@ -2875,14 +2755,12 @@ _TOOL_BUILDERS: Dict[str, Callable[[], Sprite]] = {
     "clay":      _clay_sprite,
     "instantly": _instantly_sprite,
     "heyreach":  _heyreach_sprite,
-    "ouroboros": _ouroboros_sprite,
 }
 
 TOOL_ANIMATIONS: Dict[str, Dict[str, AnimationSpec]] = {
     "clay":      {"idle": AnimationSpec(clay_idle,      frames=10, duration_ms=150)},
     "instantly": {"idle": AnimationSpec(instantly_idle, frames=8,  duration_ms=100)},
     "heyreach":  {"idle": AnimationSpec(heyreach_idle,  frames=10, duration_ms=150)},
-    "ouroboros": {"idle": AnimationSpec(ouroboros_idle,  frames=8,  duration_ms=150)},
 }
 
 def get_tool_sprite(tool_name: str) -> Sprite:
@@ -3008,7 +2886,7 @@ def main() -> None:
                         help="Output size in px (default 256)")
     parser.add_argument("--tools", action="store_true",
                         help="Render all partner tool avatars (Clay, Instantly, HeyReach).")
-    parser.add_argument("--tool", type=str, choices=["clay", "instantly", "heyreach", "ouroboros"],
+    parser.add_argument("--tool", type=str, choices=["clay", "instantly", "heyreach"],
                         help="Render a specific partner tool avatar.")
     args = parser.parse_args()
 
@@ -3016,7 +2894,7 @@ def main() -> None:
 
     # Tool rendering mode
     if args.tools or args.tool:
-        tool_names = [args.tool] if args.tool else ["clay", "instantly", "heyreach", "ouroboros"]
+        tool_names = [args.tool] if args.tool else ["clay", "instantly", "heyreach"]
         _render_tool_assets(tool_names, args.size)
         print(f"\n  Done — {len(tool_names)} tool avatar(s) rendered to {AVATAR_DIR}/")
         return
