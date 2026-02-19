@@ -21,14 +21,14 @@ interface Agent {
 
 const OFFICE_AGENTS: Agent[] = [
   {
-    id: 'nio-main',
+    id: 'nio-commander',
     name: 'Nio',
     role: 'alchemist',
     status: 'working',
-    currentTask: 'Building Mission Control Office View',
-    workstation: { x: 20, y: 30, desk: 'Command Center' },
+    currentTask: 'Commanding AI operations & building systems',
+    workstation: { x: 50, y: 15, desk: 'COMMAND CENTER' },
     avatar: '/data/progression/avatars/class-alchemist-idle.gif',
-    mood: '🎯',
+    mood: '⚡',
     lastActivity: 'just now'
   },
   {
@@ -68,12 +68,34 @@ const OFFICE_AGENTS: Agent[] = [
     id: 'polymath-01',
     name: 'Polymath',
     role: 'polymath',
-    status: 'break',
+    status: 'thinking',
     currentTask: 'Processing multi-domain analysis',
-    workstation: { x: 45, y: 45, desk: 'Research Hub' },
+    workstation: { x: 25, y: 55, desk: 'Research Hub' },
     avatar: '/data/progression/avatars/class-polymath-idle.gif',
-    mood: '☕',
+    mood: '🧠',
     lastActivity: '8m ago'
+  },
+  {
+    id: 'cursor-slayer',
+    name: 'Cursor Slayer',
+    role: 'builder',
+    status: 'working',
+    currentTask: 'Slaying bugs in Cursor IDE',
+    workstation: { x: 75, y: 25, desk: 'IDE Station' },
+    avatar: '/data/progression/avatars/class-builder-idle.gif',
+    mood: '⚔️',
+    lastActivity: '30s ago'
+  },
+  {
+    id: 'claude-code',
+    name: 'Claude Code',
+    role: 'builder',
+    status: 'working', 
+    currentTask: 'Architecting clean code solutions',
+    workstation: { x: 75, y: 45, desk: 'Code Lab' },
+    avatar: '/data/progression/avatars/class-strategist-idle.gif',
+    mood: '🔥',
+    lastActivity: '1m ago'
   }
 ]
 
@@ -196,6 +218,11 @@ export default function OfficeView() {
         
         {/* Office Elements */}
         <div className="absolute inset-0">
+          {/* Command Center Platform */}
+          <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-32 h-16 bg-green-900/30 rounded border-2 border-green-600/50 flex items-center justify-center">
+            <div className="text-xs text-green-400 font-bold">COMMAND CENTER</div>
+          </div>
+          
           {/* Office furniture/layout elements */}
           <div className="absolute top-2 left-2 w-16 h-8 bg-gray-700 rounded border border-gray-600 flex items-center justify-center">
             <Coffee className="w-4 h-4 text-yellow-600" />
@@ -203,6 +230,11 @@ export default function OfficeView() {
           
           <div className="absolute bottom-2 right-2 w-12 h-12 bg-gray-700 rounded-full border border-gray-600 flex items-center justify-center">
             <Monitor className="w-6 h-6 text-green-600" />
+          </div>
+          
+          {/* IDE Workstations */}
+          <div className="absolute top-16 right-8 w-20 h-12 bg-blue-900/30 rounded border border-blue-600/50 flex items-center justify-center">
+            <div className="text-xs text-blue-400">IDE ZONE</div>
           </div>
 
           {/* Agents at their workstations */}
