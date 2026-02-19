@@ -14,6 +14,7 @@
     "./pages/EmailInfrastructureGuidePage": "./pages/EmailInfrastructureGuidePage.tsx",
     "./pages/VitalsPage": "./pages/VitalsPage.tsx",
     "./pages/NioTerminalPage": "./pages/NioTerminalPage.tsx",
+    "./pages/NioPostPage": "./pages/NioPostPage.tsx",
     "./pages/HowToWikiPage": "./pages/HowToWikiPage.tsx",
     "./data/engineering-terms": "./data/engineering-terms.ts",
     "./data/gtm-terms": "./data/gtm-terms.ts",
