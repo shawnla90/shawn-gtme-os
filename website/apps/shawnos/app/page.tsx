@@ -385,17 +385,17 @@ export default function HomePage() {
             read the blog &rarr;
           </Link>
         </div>
-        <div>
+        {/* <div>
           <span style={{ color: 'var(--text-secondary)' }}>curious what an openclaw/nio bot looks like?</span>{' '}
           <a
-            href="https://mission-control-git-main-shawnla90.vercel.app"
+            href="REPLACE-WITH-VERCEL-URL"
             style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
             target="_blank"
             rel="noopener noreferrer"
           >
             mission control &rarr;
           </a>
-        </div>
+        </div> */}
       </section>
     </div>
     </>

@@ -6,7 +6,8 @@
     "dev": "next dev --port 3003",
     "build": "next build",
     "start": "next start --port 3003",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "vercel --prod"
   },
   "dependencies": {
     "next": "^15.5.12",
