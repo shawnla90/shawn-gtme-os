@@ -33,7 +33,7 @@ const TEAM_ROSTER: TeamMember[] = [
     skills: ['Leadership', 'System Design', 'Content Strategy', 'Agent Orchestration', 'Voice DNA'],
     level: 6,
     experience: 2847,
-    avatar: '/data/progression/avatars/class-alchemist-idle.gif',
+    avatar: '/data/progression/avatars/nio-tier-2-idle.gif',
     lastActive: 'now',
     performance: {
       tasksCompleted: 127,

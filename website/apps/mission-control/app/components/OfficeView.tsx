@@ -27,7 +27,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'working',
     currentTask: 'Commanding AI operations & building systems',
     workstation: { x: 50, y: 15, desk: 'COMMAND CENTER' },
-    avatar: '/data/progression/avatars/class-alchemist-idle.gif',
+    avatar: '/data/progression/avatars/nio-tier-2-idle.gif',
     mood: '⚡',
     lastActivity: 'just now'
   },
