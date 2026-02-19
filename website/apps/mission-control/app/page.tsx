@@ -43,15 +43,20 @@ export default function Dashboard() {
           </div>
         </Link>
         
-        <div className="card opacity-50">
-          <div className="flex items-center gap-3">
-            <Calendar className="w-5 h-5 text-gray-600" />
-            <div>
-              <h3 className="font-medium text-gray-400">Calendar View</h3>
-              <p className="text-xs text-gray-500">Coming soon</p>
+        <Link href="/calendar" className="group">
+          <div className="card hover:bg-gray-800 transition-colors cursor-pointer">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <Calendar className="w-5 h-5 text-green-400" />
+                <div>
+                  <h3 className="font-medium text-green-300">Mission Calendar</h3>
+                  <p className="text-xs text-gray-400">Events & deployments</p>
+                </div>
+              </div>
+              <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-green-400 transition-colors" />
             </div>
           </div>
-        </div>
+        </Link>
       </div>
       
       {/* Main Dashboard Grid */}

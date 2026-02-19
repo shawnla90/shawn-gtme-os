@@ -19,31 +19,32 @@ interface NioActivity {
   }
 }
 
-// Safe activity messages (no client info)
+// Safe activity messages with HYPE! 🚀
 const SAFE_ACTIVITIES = {
   idle: [
-    "monitoring system status",
-    "ready for next task",
-    "scanning memory files",
-    "optimizing workflows",
-    "awaiting instructions",
-    "reviewing daily logs"
+    "command center on standby, ready for action!",
+    "monitoring systems like a digital guardian",
+    "scanning for optimization opportunities",
+    "awaiting the next epic challenge",
+    "reviewing team performance with pride",
+    "standing by for deployment greatness!"
   ],
   working: [
-    "building dashboard components",
-    "analyzing content performance", 
-    "optimizing automation scripts",
-    "processing memory updates",
-    "drafting content pieces",
-    "managing system tasks"
+    "leveling up the command center today!",
+    "crushing code like a digital warrior!", 
+    "orchestrating AI magic behind the scenes!",
+    "building the future one commit at a time!",
+    "shipping features faster than light speed!",
+    "agents assembled and ready for action!",
+    "mission control operating at peak performance!"
   ],
   thinking: [
-    "processing recursive drift patterns",
-    "evaluating content strategy",
-    "analyzing system performance",
-    "considering optimization paths",
-    "reviewing voice consistency",
-    "planning next actions"
+    "processing next-level strategies",
+    "analyzing patterns like a data wizard",
+    "plotting the perfect system architecture", 
+    "calculating optimal deployment paths",
+    "strategizing for maximum impact",
+    "planning the next breakthrough moment"
   ]
 }
 
