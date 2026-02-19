@@ -1,8 +1,8 @@
 {
-  "buildCommand": "cd ../.. && npx turbo run build --filter=mission-control",
-  "outputDirectory": ".next",
-  "installCommand": "cd ../.. && npm install --legacy-peer-deps",
   "framework": "nextjs",
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm install --legacy-peer-deps",
   "headers": [
     {
       "source": "/(.*)",
