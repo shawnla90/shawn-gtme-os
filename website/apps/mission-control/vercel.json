@@ -1,6 +1,17 @@
 {
   "buildCommand": "cd ../.. && npx turbo run build --filter=mission-control",
   "outputDirectory": ".next",
-  "installCommand": "cd ../.. && npm install",
-  "framework": "nextjs"
+  "installCommand": "cd ../.. && npm install --legacy-peer-deps",
+  "framework": "nextjs",
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
 }
