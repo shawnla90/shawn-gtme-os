@@ -57,8 +57,8 @@ export default function NioStatus() {
   useEffect(() => {
     fetchStatus()
     
-    // Refresh every 2 minutes
-    const interval = setInterval(fetchStatus, 2 * 60 * 1000)
+    // Refresh every 12 hours (matching cron schedule)
+    const interval = setInterval(fetchStatus, 12 * 60 * 60 * 1000)
     return () => clearInterval(interval)
   }, [])
 
