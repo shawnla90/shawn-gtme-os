@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shawnos.sync-main</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os/scripts/sync_main.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os</string>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>23</integer>
+    <key>Minute</key>
+    <integer>58</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/sync-main-stdout.log</string>
+
+  <key>StandardErrorPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/sync-main-stderr.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <false/>
+</dict>
+</plist>
