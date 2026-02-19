@@ -18,9 +18,9 @@ const MOCK_METRICS: SystemMetrics = {
   status: 'online',
   uptime: '2d 14h 23m',
   lastCron: '6:00 AM EST (Success)',
-  commitCount: 108,
+  commitCount: 112, // Updated with recent RSS feed & Discord strategy commits
   activeSkills: 42,
-  memoryFiles: 18,
+  memoryFiles: 21, // Increased with new memory system files
   sessionCost: '$2.14',
   model: 'claude-sonnet-4-5'
 }
