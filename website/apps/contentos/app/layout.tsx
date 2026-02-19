@@ -36,6 +36,12 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_URL,
+    types: {
+      'application/rss+xml': [
+        { url: '/feed.xml', title: 'theContentOS.ai — All Content' },
+        { url: '/feed/content-wiki.xml', title: 'theContentOS.ai — Content Wiki' },
+      ],
+    },
   },
   robots: {
     index: true,

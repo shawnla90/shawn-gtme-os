@@ -5,6 +5,7 @@
   "exports": {
     "./components": "./components/index.ts",
     "./lib": "./lib/index.ts",
+    "./lib/rss": "./lib/rss/index.ts",
     "./lib/rpg": "./lib/rpg.ts",
     "./lib/rpg.server": "./lib/rpg.server.ts",
     "./pages/SkillGuidePage": "./pages/SkillGuidePage.tsx",
@@ -26,6 +27,7 @@
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {
+    "feed": "^5.2.0",
     "gray-matter": "latest",
     "rehype-highlight": "latest",
     "rehype-slug": "latest",

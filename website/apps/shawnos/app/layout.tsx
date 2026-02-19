@@ -39,7 +39,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: SITE_URL,
     types: {
-      'application/rss+xml': `${SITE_URL}/feed.xml`,
+      'application/rss+xml': [
+        { url: '/feed.xml', title: 'ShawnOS.ai — Blog' },
+        { url: '/feed/all.xml', title: 'ShawnOS.ai — All Content' },
+        { url: '/feed/knowledge.xml', title: 'ShawnOS.ai — Knowledge' },
+        { url: '/feed/how-to.xml', title: 'ShawnOS.ai — How-To' },
+        { url: '/feed/nio-terminal.xml', title: 'ShawnOS.ai — Nio Terminal' },
+        { url: '/feed/daily-logs.xml', title: 'ShawnOS.ai — Daily Logs' },
+      ],
     },
   },
   robots: {

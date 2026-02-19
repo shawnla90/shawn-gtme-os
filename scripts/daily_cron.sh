@@ -115,4 +115,12 @@ else
   log "Retry push completed"
 fi
 
+# ── Step 6: Validate RSS feeds (post-deploy smoke test) ───────────
+log "Running RSS feed validation (production)"
+if bash "$REPO_ROOT/scripts/validate_feeds.sh" --quiet >> "$LOGFILE" 2>&1; then
+  log "RSS feeds: HEALTHY"
+else
+  log "WARN: RSS feed validation found issues (non-fatal, check cron.log)"
+fi
+
 log "═══ Daily Cron End (success) ═══"

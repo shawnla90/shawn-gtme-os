@@ -36,6 +36,13 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_URL,
+    types: {
+      'application/rss+xml': [
+        { url: '/feed.xml', title: 'theGTMOS.ai — All Content' },
+        { url: '/feed/knowledge.xml', title: 'theGTMOS.ai — Knowledge' },
+        { url: '/feed/clay-wiki.xml', title: 'theGTMOS.ai — Clay Wiki' },
+      ],
+    },
   },
   robots: {
     index: true,
