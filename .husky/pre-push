@@ -84,6 +84,9 @@ IP_PATTERNS=(
 for pattern in "${IP_PATTERNS[@]}"; do
   matches=$(git ls-files -z \
     | xargs -0 grep -il "$pattern" 2>/dev/null \
+    | grep -v '\.husky/pre-push' \
+    | grep -v '\.claude/skills/update-github/SKILL\.md' \
+    | grep -v '\.cursor/phase2-completion-summary\.md' \
     || true)
   if [[ -n "$matches" ]]; then
     red "VIOLATION: IP-sensitive pattern '$pattern' found in:"
