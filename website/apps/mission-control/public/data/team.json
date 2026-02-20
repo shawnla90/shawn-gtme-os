@@ -1,0 +1,116 @@
+{
+  "generated": "2026-02-20T06:38:07.914Z",
+  "members": [
+    {
+      "id": "nio",
+      "name": "Nio",
+      "role": "commander",
+      "model": "Claude Sonnet 4",
+      "provider": "Anthropic API",
+      "specialization": "Main agent — chat, WhatsApp, Discord, orchestration",
+      "status": "active",
+      "currentAssignment": "Handling all conversations and agent coordination",
+      "skills": [
+        "Chat",
+        "WhatsApp",
+        "Discord",
+        "Orchestration",
+        "Memory Management"
+      ],
+      "level": 6,
+      "experience": 100,
+      "performance": {
+        "tasksCompleted": 1,
+        "assignedCrons": 3,
+        "successRate": 33,
+        "avgResponseTime": "20.9s",
+        "cost": "API pay-per-use"
+      }
+    },
+    {
+      "id": "qwen-local",
+      "name": "Qwen 2.5 14B",
+      "role": "scout",
+      "model": "qwen2.5:14b",
+      "provider": "Ollama (local)",
+      "specialization": "High-frequency cron jobs — commit tracking, RSS, mission control, status updates",
+      "status": "active",
+      "currentAssignment": "Nio Status Updater, RSS to Discord announcer, Nio Commit Tracker, Mission Control Enhanced Updater",
+      "skills": [
+        "Commit Tracking",
+        "RSS Monitoring",
+        "Mission Control Updates",
+        "Status Reports"
+      ],
+      "level": 4,
+      "experience": 200,
+      "performance": {
+        "tasksCompleted": 4,
+        "assignedCrons": 4,
+        "successRate": 100,
+        "avgResponseTime": "119.5s",
+        "cost": "FREE (local)"
+      }
+    },
+    {
+      "id": "opus",
+      "name": "Claude Opus 4",
+      "role": "strategist",
+      "model": "claude-opus-4-20250514",
+      "provider": "Anthropic API",
+      "specialization": "Content creation — blog posts, Substack essays, LinkedIn, deep thinking",
+      "status": "active",
+      "currentAssignment": "nio daily blog generator",
+      "skills": [
+        "Blog Writing",
+        "Substack Essays",
+        "LinkedIn Posts",
+        "Deep Analysis",
+        "Voice DNA"
+      ],
+      "level": 7,
+      "experience": 0,
+      "performance": {
+        "tasksCompleted": 0,
+        "assignedCrons": 1,
+        "successRate": 0,
+        "avgResponseTime": "0.0s",
+        "cost": "API pay-per-use (premium)"
+      }
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "role": "builder",
+      "model": "Claude Opus 4.6",
+      "provider": "Max Subscription",
+      "specialization": "Silent gatekeeper — infrastructure, debugging, deployments, system fixes",
+      "status": "active",
+      "currentAssignment": "Watching over the system from the CLI",
+      "skills": [
+        "Infrastructure",
+        "Debugging",
+        "Git Operations",
+        "Deployments",
+        "System Architecture"
+      ],
+      "level": 7,
+      "experience": 9999,
+      "performance": {
+        "tasksCompleted": 0,
+        "assignedCrons": 0,
+        "successRate": 100,
+        "avgResponseTime": "instant",
+        "cost": "FREE (Max sub)"
+      }
+    }
+  ],
+  "stats": {
+    "totalMembers": 4,
+    "activeMembers": 4,
+    "idleMembers": 0,
+    "totalCrons": 8,
+    "totalTasksCompleted": 5,
+    "avgSuccessRate": 58
+  }
+}

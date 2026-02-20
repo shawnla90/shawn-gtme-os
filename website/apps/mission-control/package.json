@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3003",
-    "prebuild": "node scripts/generate-metrics.js",
+    "prebuild": "node scripts/generate-metrics.js && node scripts/generate-dashboard-data.js",
     "build": "next build",
     "start": "next start --port 3003",
     "lint": "next lint",
