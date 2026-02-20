@@ -91,6 +91,13 @@ interface FeatureMilestone {
 const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
     date: '2026-02-20',
+    title: 'OpenClaw: OAuth vs API Cost Guide',
+    description: 'Updated OpenClaw setup guide with OAuth vs API key cost breakdown, ChatGPT OAuth recommendation, and living status disclaimer. $50+/day lessons learned.',
+    type: 'launch',
+    link: '/how-to/openclaw-setup',
+  },
+  {
+    date: '2026-02-20',
     title: 'Multi-Model AI Optimization Guide',
     description: 'Context wiki entry covering 4-model stack, build-time static JSON, and 99% cost reduction',
     type: 'launch',

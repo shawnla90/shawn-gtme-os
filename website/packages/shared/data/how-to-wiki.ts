@@ -414,10 +414,22 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
     ],
     sections: [
       {
+        heading: 'Status: February 2026',
+        type: 'anti-pattern',
+        content:
+          'OpenClaw is actively evolving and so is the ecosystem around it. The information on this page reflects my hands-on experience as of February 20, 2026. Provider integrations, pricing, and OAuth support are changing fast. What works today may change next week. I will keep this page updated as things shift, but treat every recommendation here as a snapshot in time, not a permanent answer. If something feels off when you try it, check the OpenClaw docs and provider changelogs first.',
+      },
+      {
         heading: 'What OpenClaw Is',
         type: 'prose',
         content:
           'OpenClaw is an open-source CLI tool that replicates much of the Claude Code experience but lets you bring your own API key and choose your model. Instead of paying for the Claude Code subscription, you pay per token through your own Anthropic API key. For light usage, this can be cheaper. For heavy usage, the subscription is usually the better deal. The interface is similar: navigate to a project, start a session, describe tasks, and the agent reads and writes files. The key difference is flexibility. OpenClaw supports multiple model providers, so you can use cheaper models for simple tasks and expensive models for complex ones.',
+      },
+      {
+        heading: 'OAuth vs API Key: The Cost Reality',
+        type: 'pro-tip',
+        content:
+          'This is the single most important decision when setting up OpenClaw: how you authenticate determines how fast you burn money. There are two paths. API key means you pay per token, directly from your wallet, every single call. OAuth means you authenticate through a provider\'s existing subscription and use their models within your plan limits.\n\nThe API key path will drain your wallet. I learned this the hard way. Running Opus 4.6 through an Anthropic API key, I was spending over $50 a day for three consecutive days. That is not a typo. Heavy agentic usage with a top-tier model burns through tokens at a rate that makes your credit card cry. If you are experimenting, exploring, iterating on prompts, or running multi-step agent workflows, the tokens add up astronomically.\n\nThe free and cheap models available through API keys are not great either. You save money but the output quality drops so much that you end up re-running tasks, which costs more time and sometimes more tokens than just using the good model once.\n\nMy current recommendation as of February 2026: set up OpenClaw with ChatGPT via OAuth. OpenAI supports OAuth connections with OpenClaw, which means you authenticate through your existing ChatGPT subscription instead of paying per token. You get access to GPT models within your plan. It is not perfect, but it is dramatically more cost-effective for daily driver usage.\n\nAnthropic, unfortunately, does not currently support OAuth with OpenClaw. They have said no to this integration path. That means if you want to use Claude models through OpenClaw, you are stuck on the API key path with per-token billing. This may change in the future, but as of today, that is the reality. I will update this page if and when Anthropic opens up OAuth support.',
       },
       {
         heading: 'Installation',
