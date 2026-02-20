@@ -1,0 +1,149 @@
+{
+  "last_update": "2026-02-20T00:47:25.924891",
+  "system_status": {
+    "overall": "optimal",
+    "services": {
+      "website": "operational",
+      "rss_feed": "live",
+      "discord_bot": "connected",
+      "openclaw": "active"
+    }
+  },
+  "daily_metrics": {
+    "total_commits": 31,
+    "total_insertions": 19542,
+    "total_deletions": 3309,
+    "total_files": 122,
+    "score": 2839,
+    "grade": "S"
+  },
+  "calendar": [
+    {
+      "date": "2026-02-20",
+      "day": "Friday",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "nio.terminal blog generation",
+          "type": "automated"
+        },
+        {
+          "time": "6:00 AM",
+          "event": "Morning briefing scan",
+          "type": "automated"
+        },
+        {
+          "time": "10:00 PM",
+          "event": "Daily build summary",
+          "type": "automated"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-21",
+      "day": "Saturday",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "nio.terminal blog generation",
+          "type": "automated"
+        },
+        {
+          "time": "10:00 PM",
+          "event": "Daily build summary",
+          "type": "automated"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-22",
+      "day": "Sunday",
+      "events": [
+        {
+          "time": "8:00 AM",
+          "event": "nio.terminal blog generation",
+          "type": "automated"
+        },
+        {
+          "time": "10:00 PM",
+          "event": "Daily build summary",
+          "type": "automated"
+        }
+      ]
+    }
+  ],
+  "todos": [
+    {
+      "task": "Review nio.terminal blog post",
+      "time": "8:15 AM",
+      "priority": "high",
+      "automated": true
+    },
+    {
+      "task": "Check Discord community engagement",
+      "time": "10:00 AM",
+      "priority": "medium",
+      "automated": false
+    },
+    {
+      "task": "Monitor RSS feed performance",
+      "time": "2:00 PM",
+      "priority": "medium",
+      "automated": true
+    },
+    {
+      "task": "Publish 5 pending drafts",
+      "time": "Flexible",
+      "priority": "high",
+      "automated": false
+    }
+  ],
+  "drafts": [
+    {
+      "type": "substack",
+      "title": "2026-02-17 Build-Your-Own-Os",
+      "status": "ready to ship",
+      "created": "2026-02-16"
+    },
+    {
+      "type": "substack",
+      "title": "2026-02-14 Cursor-Discovery",
+      "status": "ready to ship",
+      "created": "2026-02-16"
+    },
+    {
+      "type": "substack",
+      "title": "2026-02-13 Build-Day",
+      "status": "ready to ship",
+      "created": "2026-02-16"
+    },
+    {
+      "type": "substack",
+      "title": "2026-02-19 Recursive-Drift",
+      "status": "ready to ship",
+      "created": "2026-02-19"
+    },
+    {
+      "type": "substack",
+      "title": "2026-02-24 Start-At-Level-One",
+      "status": "ready to ship",
+      "created": "2026-02-16"
+    }
+  ],
+  "recent_features": [
+    "blog post - Nio achieves Blade Tier at 30k lines!",
+    "linkedin post - nio live level up moment",
+    "LinkedIn About Me updates - minimal, outcome-focus",
+    "tier 4 upgrades - real commit tracking + enhanced ",
+    "add discord intro template skill",
+    "update mission control with RSS feed launch celebr",
+    "add 'recursive drift' substack essay draft",
+    "add RSS feeds with autodiscovery for all three sit",
+    "add nio.terminal blog section to vitals"
+  ],
+  "nio_insights": {
+    "observation": "Discord integration complete. Community engagement beginning.",
+    "suggestion": "Consider creating Discord-exclusive content to drive server growth.",
+    "focus": "Automation refinement and content pipeline optimization"
+  }
+}
