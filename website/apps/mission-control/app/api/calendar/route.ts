@@ -1,97 +1,93 @@
 import { NextResponse } from 'next/server'
+import { execSync } from 'child_process'
+import fs from 'fs'
 
-// Calendar events data
-const CALENDAR_EVENTS = {
-  events: [
-    {
-      id: '1',
-      title: 'Mission Control Deployed 🚀',
-      type: 'deployment',
-      datetime: '2026-02-19T07:46:00Z',
-      status: 'completed',
-      description: 'Successfully deployed Mission Control to Vercel with all 10 pages',
-      metadata: {
-        deploymentUrl: 'https://mission-control-six-smoky.vercel.app',
-        commitHash: '3826995',
-        duration: '2m 15s'
+function getRecentCommits(): any[] {
+  try {
+    const since = new Date(Date.now() - 48 * 60 * 60 * 1000).toISOString()
+    const output = execSync(
+      `git log --since="${since}" --pretty=format:"%H|%s|%aI" --max-count=15`,
+      { cwd: '/Users/shawnos.ai/shawn-gtme-os', encoding: 'utf8' }
+    )
+    return output.split('\n').filter(Boolean).map((line, i) => {
+      const [hash, message, date] = line.split('|')
+      const isFeat = message.startsWith('feat:')
+      const isFix = message.startsWith('fix:')
+      return {
+        id: `commit-${hash?.substring(0, 7)}`,
+        title: message?.substring(0, 60) || 'commit',
+        type: isFeat ? 'milestone' : isFix ? 'deployment' : 'system',
+        datetime: date,
+        status: 'completed',
+        description: message,
+        metadata: { commitHash: hash?.substring(0, 7) }
       }
-    },
-    {
-      id: '2', 
-      title: 'Nio Status Update - HYPE MODE! ⚡',
-      type: 'cron',
-      datetime: new Date(Date.now() + 6 * 60 * 60 * 1000).toISOString(), // 6 hours from now
-      status: 'scheduled',
-      description: 'Next hype status update with creative messaging',
-      metadata: {
-        cronId: 'bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec'
-      }
-    },
-    {
-      id: '3',
-      title: 'Morning Team Briefing 📋',
-      type: 'cron', 
-      datetime: new Date(new Date().setHours(6, 0, 0, 0) + 24 * 60 * 60 * 1000).toISOString(), // Tomorrow 6 AM
-      status: 'scheduled',
-      description: 'Daily morning scan: Slack channels, system health, team updates',
-      metadata: {
-        cronId: 'morning-briefing-id'
-      }
-    },
-    {
-      id: '4',
-      title: '100+ Commits Milestone 🎯',
-      type: 'milestone',
-      datetime: '2026-02-18T22:00:00Z', 
-      status: 'completed',
-      description: 'Hit 108 commits! From zero to full GTM OS in 2 weeks'
-    },
-    {
-      id: '5',
-      title: 'Calendar System Launch 📅',
-      type: 'system',
-      datetime: new Date().toISOString(),
-      status: 'completed', 
-      description: 'Added Mission Calendar with events tracking, deployment history, and cron monitoring'
-    },
-    {
-      id: '6',
-      title: 'Next Deployment Window 🚀',
-      type: 'system',
-      datetime: new Date(Date.now() + 12 * 60 * 60 * 1000).toISOString(), // 12 hours from now
-      status: 'scheduled',
-      description: 'Upcoming feature deployment window - Calendar enhancements and system updates'
-    }
-  ],
-  stats: {
-    totalEvents: 6,
-    completedEvents: 3,
-    scheduledEvents: 3,
-    deploymentsThisWeek: 2,
-    upcomingCronJobs: 2
+    })
+  } catch (e) {
+    return []
   }
+}
+
+function getCronSchedule(): any[] {
+  const events: any[] = []
+  try {
+    const jobsPath = '/Users/shawnos.ai/.openclaw/cron/jobs.json'
+    if (fs.existsSync(jobsPath)) {
+      const jobs = JSON.parse(fs.readFileSync(jobsPath, 'utf8'))
+      const jobList = Array.isArray(jobs) ? jobs : jobs.jobs || []
+      for (const job of jobList) {
+        if (!job.enabled) continue
+        const nextRun = job.state?.nextRunAtMs
+        const lastRun = job.state?.lastRunAtMs
+        const lastStatus = job.state?.lastStatus
+
+        if (nextRun) {
+          events.push({
+            id: `cron-next-${job.id}`,
+            title: job.name || 'Cron Job',
+            type: 'cron',
+            datetime: new Date(nextRun).toISOString(),
+            status: 'scheduled',
+            description: `Next run scheduled`,
+            metadata: { cronId: job.id, duration: job.state?.lastDurationMs ? `${Math.round(job.state.lastDurationMs / 1000)}s` : undefined }
+          })
+        }
+        if (lastRun) {
+          events.push({
+            id: `cron-last-${job.id}`,
+            title: job.name || 'Cron Job',
+            type: 'cron',
+            datetime: new Date(lastRun).toISOString(),
+            status: lastStatus === 'ok' ? 'completed' : lastStatus === 'error' ? 'failed' : 'completed',
+            description: `Last run: ${lastStatus}`,
+            metadata: { cronId: job.id, duration: job.state?.lastDurationMs ? `${Math.round(job.state.lastDurationMs / 1000)}s` : undefined }
+          })
+        }
+      }
+    }
+  } catch (e) { /* skip */ }
+  return events
 }
 
 export async function GET() {
   try {
-    // In the future, this could:
-    // - Read from actual cron job schedules
-    // - Integration with Vercel deployment API
-    // - Pull from git commit history
-    // - Read from system logs and events
-    
-    // Add real-time data
-    const eventsWithCurrentData = CALENDAR_EVENTS.events.map(event => ({
-      ...event,
-      // Add deployment status checks, cron job status, etc.
-      lastUpdated: new Date().toISOString()
-    }))
+    const commits = getRecentCommits()
+    const crons = getCronSchedule()
+    const allEvents = [...commits, ...crons].sort((a, b) =>
+      new Date(b.datetime).getTime() - new Date(a.datetime).getTime()
+    )
 
     return NextResponse.json({
       success: true,
       calendar: {
-        ...CALENDAR_EVENTS,
-        events: eventsWithCurrentData
+        events: allEvents,
+        stats: {
+          totalEvents: allEvents.length,
+          completedEvents: allEvents.filter(e => e.status === 'completed').length,
+          scheduledEvents: allEvents.filter(e => e.status === 'scheduled').length,
+          deploymentsThisWeek: commits.length,
+          upcomingCronJobs: crons.filter(e => e.status === 'scheduled').length
+        }
       },
       timestamp: new Date().toISOString()
     })
@@ -107,13 +103,6 @@ export async function GET() {
 export async function POST(request: Request) {
   try {
     const { eventType, title, datetime, description } = await request.json()
-    
-    // In the future, this could:
-    // - Add new scheduled events
-    // - Update deployment statuses
-    // - Log system milestones
-    // - Schedule new cron jobs
-    
     const newEvent = {
       id: Date.now().toString(),
       title,
@@ -123,15 +112,8 @@ export async function POST(request: Request) {
       description,
       metadata: {}
     }
-
-    return NextResponse.json({
-      success: true,
-      message: 'Event added to calendar',
-      event: newEvent,
-      timestamp: new Date().toISOString()
-    })
+    return NextResponse.json({ success: true, event: newEvent })
   } catch (error) {
-    console.error('Failed to add calendar event:', error)
     return NextResponse.json(
       { success: false, error: 'Failed to add calendar event' },
       { status: 500 }

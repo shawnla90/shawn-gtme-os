@@ -6,15 +6,15 @@ import { Users, Settings, Crown, Code, Pen, Brain, Sparkles, Shield } from 'luci
 interface TeamMember {
   id: string
   name: string
-  role: 'commander' | 'builder' | 'scribe' | 'strategist' | 'polymath'
+  role: 'commander' | 'builder' | 'scribe' | 'strategist' | 'polymath' | 'scout'
   specialization: string
-  status: 'active' | 'idle' | 'offline'
+  status: 'active' | 'idle' | 'offline' | 'error'
   currentAssignment?: string
   skills: string[]
   level: number
   experience: number
-  avatar: string
-  lastActive: string
+  avatar?: string
+  lastActive?: string
   performance: {
     tasksCompleted: number
     successRate: number
@@ -22,143 +22,52 @@ interface TeamMember {
   }
 }
 
-const TEAM_ROSTER: TeamMember[] = [
-  {
-    id: 'nio-commander',
-    name: 'Nio',
-    role: 'commander',
-    specialization: 'AI Operations & System Architecture', 
-    status: 'active',
-    currentAssignment: 'Overseeing Mission Control development',
-    skills: ['Leadership', 'System Design', 'Content Strategy', 'Agent Orchestration', 'Voice DNA'],
-    level: 6,
-    experience: 2847,
-    avatar: '/data/progression/avatars/nio-tier-2-idle.gif',
-    lastActive: 'now',
-    performance: {
-      tasksCompleted: 127,
-      successRate: 94,
-      avgResponseTime: '0.8s'
-    }
-  },
-  {
-    id: 'cursor-slayer',
-    name: 'Grand Master Cursor Slayer',
-    role: 'builder',
-    specialization: 'IDE Mastery & Code Generation',
-    status: 'active', 
-    currentAssignment: 'Optimizing development workflows',
-    skills: ['Cursor IDE', 'Code Generation', 'Bug Hunting', 'Refactoring', 'TypeScript Mastery'],
-    level: 5,
-    experience: 1923,
-    avatar: '/data/progression/avatars/class-builder-idle.gif',
-    lastActive: '2m ago',
-    performance: {
-      tasksCompleted: 89,
-      successRate: 97,
-      avgResponseTime: '1.2s'
-    }
-  },
-  {
-    id: 'claude-code',
-    name: 'Claude Code',
-    role: 'builder',
-    specialization: 'Architecture & Clean Code',
-    status: 'active',
-    currentAssignment: 'Building scalable system components', 
-    skills: ['System Architecture', 'Clean Code', 'API Design', 'Performance Optimization', 'Security'],
-    level: 5,
-    experience: 2134,
-    avatar: '/data/progression/avatars/class-strategist-idle.gif',
-    lastActive: '1m ago',
-    performance: {
-      tasksCompleted: 76,
-      successRate: 92,
-      avgResponseTime: '1.5s'
-    }
-  },
-  {
-    id: 'content-scribe',
-    name: 'Content Scribe',
-    role: 'scribe',
-    specialization: 'Content Creation & Documentation',
-    status: 'active',
-    currentAssignment: 'Managing content pipeline',
-    skills: ['Content Writing', 'Voice Consistency', 'LinkedIn Posts', 'X Threads', 'Documentation'],
-    level: 4,
-    experience: 1567,
-    avatar: '/data/progression/avatars/class-scribe-idle.gif',
-    lastActive: '5m ago',
-    performance: {
-      tasksCompleted: 134,
-      successRate: 89,
-      avgResponseTime: '2.1s'
-    }
-  },
-  {
-    id: 'strategy-mind',
-    name: 'Strategy Mind',
-    role: 'strategist', 
-    specialization: 'Planning & Analysis',
-    status: 'idle',
-    currentAssignment: 'Analyzing growth opportunities',
-    skills: ['Strategic Planning', 'Market Analysis', 'Growth Hacking', 'Competitive Research', 'ROI Analysis'],
-    level: 4,
-    experience: 1234,
-    avatar: '/data/progression/avatars/class-strategist-idle.gif',
-    lastActive: '15m ago',
-    performance: {
-      tasksCompleted: 43,
-      successRate: 91,
-      avgResponseTime: '3.2s'
-    }
-  },
-  {
-    id: 'polymath-mind',
-    name: 'Polymath Mind',
-    role: 'polymath',
-    specialization: 'Cross-domain Problem Solving',
-    status: 'active',
-    currentAssignment: 'Research & multi-modal analysis',
-    skills: ['Research', 'Data Analysis', 'Pattern Recognition', 'Cross-domain Thinking', 'Innovation'],
-    level: 3,
-    experience: 892,
-    avatar: '/data/progression/avatars/class-polymath-idle.gif',
-    lastActive: '8m ago',
-    performance: {
-      tasksCompleted: 28,
-      successRate: 87,
-      avgResponseTime: '4.1s'
-    }
-  }
-]
-
-const roleIcons = {
+const roleIcons: Record<string, any> = {
   commander: Crown,
-  builder: Code, 
+  builder: Code,
   scribe: Pen,
   strategist: Brain,
-  polymath: Sparkles
+  polymath: Sparkles,
+  scout: Shield
 }
 
-const roleColors = {
+const roleColors: Record<string, string> = {
   commander: 'text-yellow-400 border-yellow-600',
   builder: 'text-blue-400 border-blue-600',
-  scribe: 'text-green-400 border-green-600', 
+  scribe: 'text-green-400 border-green-600',
   strategist: 'text-purple-400 border-purple-600',
-  polymath: 'text-pink-400 border-pink-600'
+  polymath: 'text-pink-400 border-pink-600',
+  scout: 'text-cyan-400 border-cyan-600'
 }
 
-const statusColors = {
+const statusColors: Record<string, string> = {
   active: 'text-green-400',
   idle: 'text-yellow-400',
-  offline: 'text-red-400'
+  offline: 'text-red-400',
+  error: 'text-red-500'
 }
 
 export default function TeamManagement() {
-  const [team, setTeam] = useState<TeamMember[]>(TEAM_ROSTER)
+  const [team, setTeam] = useState<TeamMember[]>([])
   const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
-  const [filterRole, setFilterRole] = useState<'all' | 'commander' | 'builder' | 'scribe' | 'strategist' | 'polymath'>('all')
+  const [filterRole, setFilterRole] = useState<string>('all')
+
+  useEffect(() => {
+    const fetchTeam = async () => {
+      try {
+        const res = await fetch('/api/team')
+        const data = await res.json()
+        if (data.success && data.team?.members?.length > 0) {
+          setTeam(data.team.members)
+        }
+      } catch (e) {
+        console.error('Failed to fetch team:', e)
+      }
+    }
+    fetchTeam()
+    const interval = setInterval(fetchTeam, 5 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   const filteredTeam = team.filter(member => 
     filterRole === 'all' || member.role === filterRole
@@ -216,8 +125,8 @@ export default function TeamManagement() {
       </div>
 
       {/* Role Filters */}
-      <div className="flex gap-2 mb-6">
-        {(['all', 'commander', 'builder', 'scribe', 'strategist', 'polymath'] as const).map(role => (
+      <div className="flex gap-2 mb-6 flex-wrap">
+        {['all', ...Array.from(new Set(team.map(m => m.role)))].map(role => (
           <button
             key={role}
             onClick={() => setFilterRole(role)}
@@ -249,13 +158,12 @@ export default function TeamManagement() {
             >
               <div className="flex items-start gap-3">
                 <div className="relative">
-                  <div className={`w-12 h-12 rounded-lg overflow-hidden border-2 ${roleColors[member.role]}`}>
-                    <img
-                      src={member.avatar}
-                      alt={member.name}
-                      className="w-full h-full object-cover"
-                      style={{ imageRendering: 'pixelated' }}
-                    />
+                  <div className={`w-12 h-12 rounded-lg overflow-hidden border-2 flex items-center justify-center bg-gray-700 ${roleColors[member.role] || 'text-gray-400 border-gray-600'}`}>
+                    {member.avatar ? (
+                      <img src={member.avatar} alt={member.name} className="w-full h-full object-cover" style={{ imageRendering: 'pixelated' }} />
+                    ) : (
+                      <span className="text-lg">{(roleIcons[member.role] || Shield) === Crown ? '👑' : '🤖'}</span>
+                    )}
                   </div>
                   {member.role === 'commander' && (
                     <Crown className="absolute -top-1 -right-1 w-4 h-4 text-yellow-400" />
@@ -293,13 +201,12 @@ export default function TeamManagement() {
         <div className="bg-gray-800 border border-green-700 rounded-lg p-6">
           <div className="flex items-start gap-6">
             <div className="relative">
-              <div className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${roleColors[selectedMember.role]}`}>
-                <img
-                  src={selectedMember.avatar}
-                  alt={selectedMember.name}
-                  className="w-full h-full object-cover"
-                  style={{ imageRendering: 'pixelated' }}
-                />
+              <div className={`w-20 h-20 rounded-lg overflow-hidden border-2 flex items-center justify-center bg-gray-700 ${roleColors[selectedMember.role] || 'text-gray-400 border-gray-600'}`}>
+                {selectedMember.avatar ? (
+                  <img src={selectedMember.avatar} alt={selectedMember.name} className="w-full h-full object-cover" style={{ imageRendering: 'pixelated' }} />
+                ) : (
+                  <span className="text-3xl">{selectedMember.role === 'commander' ? '👑' : '🤖'}</span>
+                )}
               </div>
               {selectedMember.role === 'commander' && (
                 <Crown className="absolute -top-2 -right-2 w-6 h-6 text-yellow-400" />

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Brain, Search, FileText, Calendar } from 'lucide-react'
 
 interface Memory {
@@ -12,51 +12,25 @@ interface Memory {
   tags: string[]
 }
 
-const MOCK_MEMORIES: Memory[] = [
-  {
-    id: '1',
-    title: 'Mission Control Build',
-    content: 'Started building the Mission Control dashboard with Tasks Board, System Status, and Memory viewer components...',
-    date: '2026-02-19',
-    type: 'daily',
-    tags: ['development', 'nextjs', 'dashboard']
-  },
-  {
-    id: '2',
-    title: 'Jason Calacanis Outreach',
-    content: 'Crafted email to Jason Calacanis about the AI operating system. Created meta content for LinkedIn/X about shooting our shot...',
-    date: '2026-02-18',
-    type: 'daily',
-    tags: ['outreach', 'content', 'networking']
-  },
-  {
-    id: '3',
-    title: 'Recursive Drift Method',
-    content: 'The non-linear method for building with AI. Six states: freefall, plan, build, break, ask, seed. Output feeds back as input...',
-    date: '2026-02-19',
-    type: 'long-term',
-    tags: ['methodology', 'ai', 'framework']
-  },
-  {
-    id: '4',
-    title: 'Voice Rules',
-    content: 'No em-dashes, no quotes, lowercase first word, builder voice, substance first. Critical for maintaining consistent output...',
-    date: '2026-02-18',
-    type: 'long-term',
-    tags: ['voice', 'content', 'rules']
-  },
-  {
-    id: '5',
-    title: '100 Commits Milestone',
-    content: 'Hit 108 commits in 2 weeks. Created LinkedIn and X content celebrating the milestone. Perfect example of recursive drift in action...',
-    date: '2026-02-18',
-    type: 'daily',
-    tags: ['milestone', 'git', 'content']
-  }
-]
-
 export default function RecentMemories() {
-  const [memories] = useState<Memory[]>(MOCK_MEMORIES)
+  const [memories, setMemories] = useState<Memory[]>([])
+  useEffect(() => {
+    const fetchMemories = async () => {
+      try {
+        const res = await fetch('/api/enhanced-data')
+        const data = await res.json()
+        if (data.success && data.data?.memories?.length > 0) {
+          setMemories(data.data.memories)
+        }
+      } catch (e) {
+        console.error('Failed to fetch memories:', e)
+      }
+    }
+    fetchMemories()
+    const interval = setInterval(fetchMemories, 10 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [])
+
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedType, setSelectedType] = useState<'all' | 'daily' | 'long-term' | 'project'>('all')
 

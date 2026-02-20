@@ -15,50 +15,6 @@ interface Task {
   sessionId?: string
 }
 
-const MOCK_TASKS: Task[] = [
-  {
-    id: '1',
-    title: 'Build Mission Control Dashboard',
-    description: 'Create the tasks board, memory viewer, and system status components',
-    assignee: 'nio',
-    status: 'in_progress',
-    priority: 'high',
-    createdAt: '2026-02-19T05:00:00Z',
-    updatedAt: '2026-02-19T05:30:00Z',
-    sessionId: 'current'
-  },
-  {
-    id: '2',
-    title: 'Jason Calacanis Outreach',
-    description: 'Follow up on the email and post the meta content about shooting our shot',
-    assignee: 'shawn',
-    status: 'todo',
-    priority: 'medium',
-    createdAt: '2026-02-18T20:00:00Z',
-    updatedAt: '2026-02-18T20:00:00Z'
-  },
-  {
-    id: '3',
-    title: 'Upwork Gig Analysis',
-    description: 'Find and analyze AI automation gigs in the $2K-5K range',
-    assignee: 'nio',
-    status: 'blocked',
-    priority: 'medium',
-    createdAt: '2026-02-18T20:40:00Z',
-    updatedAt: '2026-02-18T20:45:00Z'
-  },
-  {
-    id: '4',
-    title: 'Recursive Drift Content',
-    description: 'Review and publish the LinkedIn/X posts about the methodology',
-    assignee: 'shawn',
-    status: 'todo',
-    priority: 'medium',
-    createdAt: '2026-02-19T05:24:00Z',
-    updatedAt: '2026-02-19T05:24:00Z'
-  }
-]
-
 const statusIcons = {
   todo: Circle,
   in_progress: Clock,
@@ -80,8 +36,25 @@ const priorityColors = {
 }
 
 export default function TasksBoard() {
-  const [tasks, setTasks] = useState<Task[]>(MOCK_TASKS)
+  const [tasks, setTasks] = useState<Task[]>([])
   const [filter, setFilter] = useState<'all' | 'shawn' | 'nio'>('all')
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      try {
+        const res = await fetch('/api/tasks')
+        const data = await res.json()
+        if (data.success && data.tasks?.length > 0) {
+          setTasks(data.tasks)
+        }
+      } catch (e) {
+        console.error('Failed to fetch tasks:', e)
+      }
+    }
+    fetchTasks()
+    const interval = setInterval(fetchTasks, 5 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   const filteredTasks = tasks.filter(task => 
     filter === 'all' || task.assignee === filter

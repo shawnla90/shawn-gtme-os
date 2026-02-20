@@ -18,79 +18,6 @@ interface CalendarEvent {
   }
 }
 
-const MOCK_EVENTS: CalendarEvent[] = [
-  {
-    id: '1',
-    title: 'Mission Control Deployed 🚀',
-    type: 'deployment',
-    datetime: '2026-02-19T07:46:00Z',
-    status: 'completed',
-    description: 'Successfully deployed Mission Control to Vercel with all 10 pages',
-    metadata: {
-      deploymentUrl: 'https://mission-control-six-smoky.vercel.app',
-      commitHash: '3826995',
-      duration: '2m 15s'
-    }
-  },
-  {
-    id: '2', 
-    title: 'Nio Status Update - HYPE MODE! ⚡',
-    type: 'cron',
-    datetime: '2026-02-19T12:00:00Z',
-    status: 'scheduled',
-    description: 'Next hype status update: "leveling up the command center today!"',
-    metadata: {
-      cronId: 'bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec'
-    }
-  },
-  {
-    id: '3',
-    title: 'Morning Team Briefing 📋',
-    type: 'cron', 
-    datetime: '2026-02-19T11:00:00Z',
-    status: 'completed',
-    description: 'Daily morning scan: Slack channels, ClickUp tasks, system health',
-    metadata: {
-      cronId: 'morning-briefing-id'
-    }
-  },
-  {
-    id: '4',
-    title: '100+ Commits Milestone 🎯',
-    type: 'milestone',
-    datetime: '2026-02-18T22:00:00Z', 
-    status: 'completed',
-    description: 'Hit 108 commits! From zero to full GTM OS in 2 weeks'
-  },
-  {
-    id: '5',
-    title: 'Office View Launch 🏢',
-    type: 'system',
-    datetime: '2026-02-19T07:10:00Z',
-    status: 'completed', 
-    description: 'Added interactive office with agent workstations and Command Center'
-  },
-  {
-    id: '6',
-    title: 'Next Hype Update ⚡',
-    type: 'cron',
-    datetime: '2026-02-19T18:00:00Z',
-    status: 'scheduled',
-    description: 'Incoming creative status: "crushing code like a digital warrior!" or similar',
-    metadata: {
-      cronId: 'bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec'
-    }
-  },
-  {
-    id: '7',
-    title: 'Team Management System 👥',
-    type: 'system', 
-    datetime: '2026-02-19T06:30:00Z',
-    status: 'completed',
-    description: 'Full agent roster with Nio as Commander, performance tracking, role management'
-  }
-]
-
 const eventTypeIcons = {
   cron: Clock,
   deployment: GitBranch,
@@ -120,9 +47,26 @@ const statusIndicators = {
 }
 
 export default function CalendarView() {
-  const [events, setEvents] = useState<CalendarEvent[]>(MOCK_EVENTS)
+  const [events, setEvents] = useState<CalendarEvent[]>([])
   const [selectedDate, setSelectedDate] = useState(new Date())
   const [viewMode, setViewMode] = useState<'day' | 'week' | 'timeline'>('timeline')
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const res = await fetch('/api/calendar')
+        const data = await res.json()
+        if (data.success && data.calendar?.events) {
+          setEvents(data.calendar.events)
+        }
+      } catch (e) {
+        console.error('Failed to fetch calendar:', e)
+      }
+    }
+    fetchEvents()
+    const interval = setInterval(fetchEvents, 5 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   // Sort events by datetime (newest first for timeline)
   const sortedEvents = [...events].sort((a, b) => 
