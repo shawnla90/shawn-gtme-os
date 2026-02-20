@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: NioPostRouteProps): Promise<M
 export default async function NioPostRoute({ params }: NioPostRouteProps) {
   const { slug } = await params
   
-  // For now, only support post-zero
-  if (slug !== 'post-zero') {
+  // Support post-zero and post-one
+  if (slug !== 'post-zero' && slug !== 'post-one') {
     notFound()
   }
 
