@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-20T06:46:05.328Z",
+  "generated": "2026-02-20T06:50:15.362Z",
   "events": [
     {
       "id": "cron-next-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
@@ -60,6 +60,18 @@
       }
     },
     {
+      "id": "cron-next-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+      "title": "Mission Control Enhanced Updater",
+      "type": "cron",
+      "datetime": "2026-02-20T07:44:44.735Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+        "duration": "144s"
+      }
+    },
+    {
       "id": "cron-next-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
       "title": "RSS to Discord announcer",
       "type": "cron",
@@ -72,27 +84,50 @@
       }
     },
     {
-      "id": "cron-next-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-      "title": "Mission Control Enhanced Updater",
-      "type": "cron",
-      "datetime": "2026-02-20T06:44:44.735Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-        "duration": "147s"
-      }
-    },
-    {
       "id": "cron-next-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
       "title": "Nio Commit Tracker",
       "type": "cron",
-      "datetime": "2026-02-20T06:43:17.084Z",
+      "datetime": "2026-02-20T07:13:17.084Z",
       "status": "scheduled",
       "description": "Next run scheduled",
       "metadata": {
         "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-        "duration": "212s"
+        "duration": "233s"
+      }
+    },
+    {
+      "id": "commit-004d926",
+      "title": "fix: security cleanup + build-time data for Vercel deploy",
+      "type": "deployment",
+      "datetime": "2026-02-20T01:49:30-05:00",
+      "status": "completed",
+      "description": "fix: security cleanup + build-time data for Vercel deploy",
+      "metadata": {
+        "commitHash": "004d926"
+      }
+    },
+    {
+      "id": "cron-last-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+      "title": "Mission Control Enhanced Updater",
+      "type": "cron",
+      "datetime": "2026-02-20T06:47:10.493Z",
+      "status": "completed",
+      "description": "Last run: ok",
+      "metadata": {
+        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+        "duration": "144s"
+      }
+    },
+    {
+      "id": "cron-last-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
+      "title": "Nio Commit Tracker",
+      "type": "cron",
+      "datetime": "2026-02-20T06:43:17.093Z",
+      "status": "completed",
+      "description": "Last run: ok",
+      "metadata": {
+        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
+        "duration": "233s"
       }
     },
     {
@@ -116,18 +151,6 @@
       "metadata": {
         "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
         "duration": "80s"
-      }
-    },
-    {
-      "id": "cron-last-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-      "title": "Nio Commit Tracker",
-      "type": "cron",
-      "datetime": "2026-02-20T06:13:17.092Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-        "duration": "212s"
       }
     },
     {
@@ -172,18 +195,6 @@
       "description": "Update Mission Control with enhanced metrics",
       "metadata": {
         "commitHash": "03c2d22"
-      }
-    },
-    {
-      "id": "cron-last-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-      "title": "Mission Control Enhanced Updater",
-      "type": "cron",
-      "datetime": "2026-02-20T05:46:50.607Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-        "duration": "147s"
       }
     },
     {
@@ -283,17 +294,6 @@
       "description": "trigger: redeploy mission-control with fixed settings",
       "metadata": {
         "commitHash": "f239004"
-      }
-    },
-    {
-      "id": "commit-bc3b720",
-      "title": "fix: align mission-control vercel config with other apps",
-      "type": "deployment",
-      "datetime": "2026-02-19T23:36:32-05:00",
-      "status": "completed",
-      "description": "fix: align mission-control vercel config with other apps",
-      "metadata": {
-        "commitHash": "bc3b720"
       }
     },
     {

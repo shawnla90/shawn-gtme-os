@@ -1043,4 +1043,81 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
       },
     ],
   },
+
+  {
+    id: 'multi-model-optimization',
+    title: 'Multi-Model AI Optimization',
+    subtitle:
+      'How to run 4 AI models for under $1/day with build-time static data',
+    category: 'infrastructure',
+    description:
+      'The practical guide to running a multi-model AI stack. How to route tasks to the right model, generate static JSON at build time so dashboards work on Vercel, and cut API costs by 99% without losing quality where it matters.',
+    keywords: [
+      'multi model ai optimization',
+      'ai model cost optimization',
+      'ollama local model',
+      'build time static json',
+      'vercel static data generation',
+      'ai agent cost reduction',
+      'multi model stack',
+      'ai model routing',
+    ],
+    difficulty: 'advanced',
+    related: [
+      'model-selection',
+      'cron-jobs',
+      'deployments-vercel',
+      'skills',
+    ],
+    sections: [
+      {
+        heading: 'The Problem with One Model',
+        type: 'prose',
+        content:
+          'Most people pick one AI model and use it for everything. That is like using a sledgehammer to hang a picture frame. It works but you are overpaying and overbuilding. I was running Claude Opus for 104 daily cron API calls at $75/M output tokens. WhatsApp self-chat loop was generating cascade replies. The bill was $50/day for work that a local 14B model could handle. The fix was not to stop using AI. It was to route each task to the right model based on one question: does a human read the output?',
+      },
+      {
+        heading: 'The 4-Model Squad',
+        type: 'pattern',
+        content:
+          '<strong>1. Ollama / Qwen 2.5 14B (FREE, local)</strong><br/>Runs on Mac Mini M4 Pro. Handles all repetitive cron work: commit tracking, RSS monitoring, dashboard data generation, status reports. These tasks run 4+ times per day. At Opus pricing, that was 96 API calls burning real money for structured data extraction that a 14B model handles fine. M4 Pro with 24GB runs it at ~9GB VRAM.<br/><br/><strong>2. Claude Sonnet 4 ($15/M output)</strong><br/>All conversations, orchestration, and agent coordination. This is the main agent. Chat, WhatsApp, Discord, memory management. Sonnet is 5x cheaper than Opus but handles conversation just as well. Quality difference only matters for long-form content.<br/><br/><strong>3. Claude Opus 4 ($75/M output)</strong><br/>Reserved for content creation only. Blog posts, Substack essays, LinkedIn drafts, deep analysis. Content creation is where model quality directly maps to output quality. You can feel the difference in a 2000-word essay. For a commit summary? Zero difference.<br/><br/><strong>4. Claude Code / Opus 4.6 (FREE, Max subscription)</strong><br/>The infrastructure layer. Debugging, deployments, git operations, architecture decisions, quality review on what the other models ship. Unlimited usage via subscription. No per-token cost. This is where you do the heavy lifting.',
+      },
+      {
+        heading: 'The Decision Framework',
+        type: 'formula',
+        content:
+          'One question decides the model: does the output quality matter to a human reader?<br/><br/><strong>Cron jobs (tracking, monitoring, updates)</strong> -> Ollama local. Runs frequently, output is structured data, quality does not matter.<br/><strong>Conversations, routing, memory</strong> -> Sonnet. Good enough for real-time interaction, 5x cheaper than Opus.<br/><strong>Blog posts, essays, content</strong> -> Opus. Quality is the product, humans read this.<br/><strong>Infrastructure, debugging, deploys</strong> -> Claude Code. Free via subscription, needs full codebase context.<br/><br/>If no human reads the output, use the cheapest model that works. If a human reads the output, use the best model you can afford. If it touches infrastructure, use Claude Code.',
+      },
+      {
+        heading: 'Build-Time Static JSON Pattern',
+        type: 'pattern',
+        content:
+          'This is the key architectural pattern that makes dashboards work on Vercel. The problem: API routes that read local files like <code>~/.openclaw/workspace/HEARTBEAT.md</code> or run <code>execSync("git log")</code> work perfectly on localhost but completely break on Vercel. The build server cannot access your laptop filesystem.<br/><br/>The solution: generate static JSON at build time. Commit the JSON. Vercel serves it.<br/><br/>A generator script reads all local data sources (markdown files, cron job configs, git log) and writes structured JSON to <code>public/data/*.json</code>. The API routes read from those JSON files instead of absolute paths. The generator runs in <code>prebuild</code> so every deploy gets fresh data. A cron job regenerates the data, commits, and pushes. The push triggers a Vercel rebuild with updated data.<br/><br/>Five JSON files cover the entire dashboard: <code>tasks.json</code> from HEARTBEAT.md checkboxes, <code>calendar.json</code> from git commits and cron schedules, <code>memories.json</code> from workspace memory files, <code>team.json</code> from cron job model stats, <code>status.json</code> from status update markdown.',
+      },
+      {
+        heading: 'How the API Routes Changed',
+        type: 'code',
+        content:
+          'Before: every API route had hardcoded absolute paths and shell commands.<br/><br/><code>const heartbeatPath = "/Users/shawnos.ai/.openclaw/workspace/HEARTBEAT.md"</code><br/><code>execSync("git log --since=...", { cwd: "/Users/shawnos.ai/shawn-gtme-os" })</code><br/><code>const jobsPath = "/Users/shawnos.ai/.openclaw/cron/jobs.json"</code><br/><br/>After: every API route reads from a relative static JSON file.<br/><br/><code>const dataPath = path.join(process.cwd(), "public/data/tasks.json")</code><br/><code>const data = JSON.parse(fs.readFileSync(dataPath, "utf8"))</code><br/><code>return data.tasks || []</code><br/><br/>No execSync. No absolute paths. No filesystem dependencies. Works anywhere. The generator script handles all the local filesystem access at build time so the production API never needs it.',
+      },
+      {
+        heading: 'Keeping Data Fresh',
+        type: 'pattern',
+        content:
+          'The generator runs in two places. First, <code>prebuild</code> in package.json runs it before <code>next build</code>, so every deploy gets fresh data. Second, a cron job on the local machine runs the generator, commits the new JSONs, and pushes to GitHub. The push triggers a Vercel deploy.<br/><br/>Data freshness depends on cron frequency. Every 30 minutes means the dashboard is never more than 30 minutes stale. For a status dashboard, that is plenty. You do not need WebSockets or real-time subscriptions. Cron plus git push plus rebuild is simple, reliable, and free.',
+      },
+      {
+        heading: 'What This Actually Saved',
+        type: 'pro-tip',
+        content:
+          'Before: all Opus, all the time. 104 daily cron API calls at $75/M output. WhatsApp self-chat loop generating cascade replies. ~$50/day in API costs.<br/><br/>After: 96 cron calls moved to free local Ollama. 8 remaining API calls on Sonnet at $15/M. Content creation on Opus at 1-2 calls per day. Self-chat loop killed with 3s debounce. ~$0.50/day in API costs.<br/><br/>That is a 99% cost reduction. Same output quality where it matters. The dashboard works on Vercel. The team roster shows actual model stats from real cron job data. The tasks board reads real checkboxes from HEARTBEAT.md. No mock data. No localhost dependencies. Ship it.',
+      },
+      {
+        heading: 'Common Mistakes',
+        type: 'anti-pattern',
+        content:
+          '<strong>Using Opus for everything.</strong> The biggest money pit. Most tasks do not need frontier-level reasoning. A 14B local model handles structured data extraction just fine.<br/><br/><strong>Reading local files from serverless functions.</strong> Your production server is not your laptop. Absolute paths will always fail on Vercel, AWS Lambda, or any cloud platform. Generate the data before deploy.<br/><br/><strong>No fallback when data is missing.</strong> Always return empty arrays instead of crashing. If tasks.json does not exist yet, return []. The dashboard should render empty, not error out.<br/><br/><strong>Running git commands in API routes.</strong> execSync("git log") works locally but fails in production where there is no git repo. Move it to build time.<br/><br/><strong>Over-engineering the refresh.</strong> You do not need WebSockets for a status dashboard. Cron plus git push plus rebuild is simple and reliable.',
+      },
+    ],
+  },
 ]

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@shawnos/shared": "*",
+    "feed": "^5.2.0",
     "next": "^15",
     "next-sitemap": "^4.2.3",
     "react": "^19",
