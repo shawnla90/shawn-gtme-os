@@ -22,3 +22,4 @@ content/internal/
 *.csv
 node_modules/
 .cursor/debug.log
+.vercel
