@@ -14,20 +14,43 @@ interface SystemMetrics {
   model: string
 }
 
-const MOCK_METRICS: SystemMetrics = {
+const DEFAULT_METRICS: SystemMetrics = {
   status: 'online',
-  uptime: '2d 14h 23m',
-  lastCron: '6:00 AM EST (Success)',
-  commitCount: 112, // Updated with recent RSS feed & Discord strategy commits
+  uptime: 'calculating...',
+  lastCron: 'checking...',
+  commitCount: 0,
   activeSkills: 42,
-  memoryFiles: 21, // Increased with new memory system files
-  sessionCost: '$2.14',
-  model: 'claude-sonnet-4-5'
+  memoryFiles: 0,
+  sessionCost: '$0.00',
+  model: 'loading...'
 }
 
 export default function SystemStatus() {
-  const [metrics, setMetrics] = useState<SystemMetrics>(MOCK_METRICS)
+  const [metrics, setMetrics] = useState<SystemMetrics>(DEFAULT_METRICS)
   const [currentTime, setCurrentTime] = useState(new Date())
+  const [isLoading, setIsLoading] = useState(true)
+
+  // Fetch real metrics from API
+  const fetchMetrics = async () => {
+    try {
+      const response = await fetch('/api/system-metrics')
+      const data = await response.json()
+      if (data.success && data.metrics) {
+        setMetrics(data.metrics)
+      }
+    } catch (error) {
+      console.error('Failed to fetch system metrics:', error)
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  useEffect(() => {
+    fetchMetrics()
+    // Refresh every 5 minutes
+    const interval = setInterval(fetchMetrics, 5 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [])
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000)
