@@ -1,5 +1,5 @@
 {
-  "last_update": "2026-02-20T00:47:25.924891",
+  "last_update": "2026-02-20T02:49:38.136867",
   "system_status": {
     "overall": "optimal",
     "services": {
@@ -11,10 +11,10 @@
   },
   "daily_metrics": {
     "total_commits": 31,
-    "total_insertions": 19542,
-    "total_deletions": 3309,
+    "total_insertions": 8718,
+    "total_deletions": 3346,
     "total_files": 122,
-    "score": 2839,
+    "score": 1760,
     "grade": "S"
   },
   "calendar": [
@@ -131,15 +131,16 @@
     }
   ],
   "recent_features": [
+    "add /updates page with unified content feed and fe",
+    "add multi-model optimization guide to context wiki",
+    "add multi-model AI optimization how-to guide",
+    "mission control APIs serve static JSON instead of ",
+    "team roster shows actual models as squad members",
+    "wire mission control to real data sources",
+    "nio.terminal post-one - BLADE TIER ACHIEVED! \ud83d\ude80",
     "blog post - Nio achieves Blade Tier at 30k lines!",
     "linkedin post - nio live level up moment",
-    "LinkedIn About Me updates - minimal, outcome-focus",
-    "tier 4 upgrades - real commit tracking + enhanced ",
-    "add discord intro template skill",
-    "update mission control with RSS feed launch celebr",
-    "add 'recursive drift' substack essay draft",
-    "add RSS feeds with autodiscovery for all three sit",
-    "add nio.terminal blog section to vitals"
+    "LinkedIn About Me updates - minimal, outcome-focus"
   ],
   "nio_insights": {
     "observation": "Discord integration complete. Community engagement beginning.",
