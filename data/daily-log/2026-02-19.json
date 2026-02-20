@@ -1,0 +1,1229 @@
+{
+  "date": "2026-02-19",
+  "generated_at": "2026-02-20T05:00:02.038929+00:00",
+  "version": 3,
+  "accomplishments": [
+    {
+      "type": "website_page",
+      "title": "mission-control office page",
+      "path": "website/apps/mission-control/app/office/page.tsx",
+      "source": "auto",
+      "timestamp": "02:02",
+      "words": 71,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "13:12",
+      "words": 767,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared types",
+      "path": "website/packages/shared/lib/rss/types.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 63,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed how-to.xml route",
+      "path": "website/apps/shawnos/app/feed/how-to.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 54,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "recursive drift",
+      "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 1641,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api calendar route",
+      "path": "website/apps/mission-control/app/api/calendar/route.ts",
+      "source": "auto",
+      "timestamp": "02:59",
+      "words": 471,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission_control_updater",
+      "path": "scripts/mission_control_updater.py",
+      "source": "auto",
+      "timestamp": "22:44",
+      "words": 472,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed clay-wiki.xml route",
+      "path": "website/apps/gtmos/app/feed/clay-wiki.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 54,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control team page",
+      "path": "website/apps/mission-control/app/team/page.tsx",
+      "source": "auto",
+      "timestamp": "02:09",
+      "words": 71,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed.xml route",
+      "path": "website/apps/gtmos/app/feed.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 108,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
+      "source": "auto",
+      "timestamp": "02:58",
+      "words": 224,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 162,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api office route",
+      "path": "website/apps/mission-control/app/api/office/route.ts",
+      "source": "auto",
+      "timestamp": "02:03",
+      "words": 422,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api system-metrics route",
+      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "source": "auto",
+      "timestamp": "23:43",
+      "words": 272,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared content-sources",
+      "path": "website/packages/shared/lib/rss/content-sources.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 510,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 549,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed.xml route",
+      "path": "website/apps/shawnos/app/feed.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 57,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "17:18",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api team route",
+      "path": "website/apps/mission-control/app/api/team/route.ts",
+      "source": "auto",
+      "timestamp": "02:10",
+      "words": 335,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed all.xml route",
+      "path": "website/apps/shawnos/app/feed/all.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 147,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/rss/index.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 40,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 231,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared generator",
+      "path": "website/packages/shared/lib/rss/generator.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 191,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api tasks route",
+      "path": "website/apps/mission-control/app/api/tasks/route.ts",
+      "source": "auto",
+      "timestamp": "01:02",
+      "words": 227,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "nio_commit_tracker",
+      "path": "scripts/nio_commit_tracker.py",
+      "source": "auto",
+      "timestamp": "22:42",
+      "words": 532,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control layout",
+      "path": "website/apps/mission-control/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "00:59",
+      "words": 91,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "contentos feed content-wiki.xml route",
+      "path": "website/apps/contentos/app/feed/content-wiki.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 58,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "02:46",
+      "words": 1063,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "VitalsPage",
+      "path": "website/packages/shared/pages/VitalsPage.tsx",
+      "source": "auto",
+      "timestamp": "12:43",
+      "words": 803,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
+      "source": "auto",
+      "timestamp": "22:53",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
+      "source": "auto",
+      "timestamp": "12:41",
+      "words": 183,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission-control tsconfig",
+      "path": "website/apps/mission-control/tsconfig.json",
+      "source": "auto",
+      "timestamp": "01:01",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "13:13",
+      "words": 693,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control calendar page",
+      "path": "website/apps/mission-control/app/calendar/page.tsx",
+      "source": "auto",
+      "timestamp": "02:58",
+      "words": 72,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared config",
+      "path": "website/packages/shared/lib/rss/config.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 168,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed daily-logs.xml route",
+      "path": "website/apps/shawnos/app/feed/daily-logs.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 64,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed knowledge.xml route",
+      "path": "website/apps/gtmos/app/feed/knowledge.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 64,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission-control vercel",
+      "path": "website/apps/mission-control/vercel.json",
+      "source": "auto",
+      "timestamp": "23:36",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api enhanced-data route",
+      "path": "website/apps/mission-control/app/api/enhanced-data/route.ts",
+      "source": "auto",
+      "timestamp": "22:52",
+      "words": 239,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api nio-status route",
+      "path": "website/apps/mission-control/app/api/nio-status/route.ts",
+      "source": "auto",
+      "timestamp": "02:59",
+      "words": 593,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed nio-terminal.xml route",
+      "path": "website/apps/shawnos/app/feed/nio-terminal.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 117,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed knowledge.xml route",
+      "path": "website/apps/shawnos/app/feed/knowledge.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 51,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal slug page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "13:11",
+      "words": 129,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 223,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "contentos feed.xml route",
+      "path": "website/apps/contentos/app/feed.xml/route.ts",
+      "source": "auto",
+      "timestamp": "17:18",
+      "words": 96,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/mission-control/app/globals.css",
+      "source": "auto",
+      "timestamp": "00:59",
+      "words": 71,
+      "value_score": 2,
+      "shipped": true
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+        "target_date": "2026-02-14",
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
+      },
+      {
+        "platform": "substack",
+        "title": "build your own os",
+        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1541
+      },
+      {
+        "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1013
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1119
+      }
+    ],
+    "finalized_today": []
+  },
+  "todos": [],
+  "token_usage": [],
+  "stats": {
+    "platform_breakdown": {
+      "website": 37,
+      "substack": 1,
+      "other": 8
+    },
+    "words_today": 12449,
+    "pipeline_words": 40505,
+    "finals_count": 0,
+    "first_activity": "00:59",
+    "last_activity": "23:43",
+    "output_score": 276,
+    "letter_grade": "A+",
+    "score_breakdown": [
+      {
+        "type": "website_page",
+        "title": "mission-control office page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "NioPostPage",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared types",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed how-to.xml route",
+        "points": 3
+      },
+      {
+        "type": "substack_draft",
+        "title": "recursive drift",
+        "points": 2
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api calendar route",
+        "points": 3
+      },
+      {
+        "type": "code_infra",
+        "title": "mission_control_updater",
+        "points": 15
+      },
+      {
+        "type": "website_route",
+        "title": "gtmos feed clay-wiki.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control team page",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "gtmos feed.xml route",
+        "points": 3
+      },
+      {
+        "type": "landing_page",
+        "title": "mission-control home page",
+        "points": 25
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api office route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api system-metrics route",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared content-sources",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos layout",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed.xml route",
+        "points": 3
+      },
+      {
+        "type": "code_infra",
+        "title": "shared package",
+        "points": 15
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api team route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed all.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos layout",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared generator",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api tasks route",
+        "points": 3
+      },
+      {
+        "type": "code_infra",
+        "title": "nio_commit_tracker",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control layout",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "contentos feed content-wiki.xml route",
+        "points": 3
+      },
+      {
+        "type": "landing_page",
+        "title": "shawnos home page",
+        "points": 25
+      },
+      {
+        "type": "website_page",
+        "title": "VitalsPage",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "mission-control package",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos vitals nio-terminal page",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "mission-control tsconfig",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "NioTerminalPage",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control calendar page",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared config",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed daily-logs.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "gtmos feed knowledge.xml route",
+        "points": 3
+      },
+      {
+        "type": "code_infra",
+        "title": "mission-control vercel",
+        "points": 15
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api enhanced-data route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api nio-status route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed nio-terminal.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed knowledge.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos vitals nio-terminal slug page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "contentos layout",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "contentos feed.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_style",
+        "title": "globals styles",
+        "points": 2
+      }
+    ],
+    "efficiency_rating": null,
+    "shipped_count": 45,
+    "draft_count": 1,
+    "ship_rate": 0.98,
+    "agent_cost": 0,
+    "dev_equivalent_cost": 8277.0,
+    "dev_equivalent_breakdown": {
+      "code_loc": 4688,
+      "code_hours": 93.76,
+      "code_cost": 7032.0,
+      "content_words": 12449,
+      "content_hours": 24.9,
+      "content_cost": 1245.0,
+      "total": 8277.0
+    },
+    "cost_savings": 8277.0,
+    "roi_multiplier": 0.0,
+    "lines_added": 19323,
+    "lines_removed": 3306,
+    "lines_net": 16017,
+    "code_loc": 4688,
+    "content_loc": 639,
+    "data_loc": 13996
+  },
+  "git_summary": {
+    "commits_today": 29,
+    "files_added": [
+      "content/images/python-for-gtm.png",
+      "content/linkedin/about-me-alt.md",
+      "content/linkedin/about-me-update.md",
+      "content/substack/drafts/2026-02-19_recursive-drift.md",
+      "data/daily-log/2026-02-18.json",
+      "data/daily-log/briefings/2026-02-18.md",
+      "data/daily-log/briefings/STEVE_REASONING_AGENT_HANDOFF.md",
+      "data/daily-log/briefings/steves-recruiting-transcript-2026-02-17.md",
+      "mission-control.md",
+      "scripts/mission_control_updater.py",
+      "scripts/nio_commit_tracker.py",
+      "skills/tier-3-content-ops/discord-intro-template.md",
+      "skills/tier-4-nio-systems/token-tracker/SKILL.md",
+      "website/apps/contentos/app/feed.xml/route.ts",
+      "website/apps/contentos/app/feed/content-wiki.xml/route.ts",
+      "website/apps/gtmos/app/feed.xml/route.ts",
+      "website/apps/gtmos/app/feed/clay-wiki.xml/route.ts",
+      "website/apps/gtmos/app/feed/knowledge.xml/route.ts",
+      "website/apps/mission-control/.gitignore",
+      "website/apps/mission-control/README.md",
+      "website/apps/mission-control/app/api/calendar/route.ts",
+      "website/apps/mission-control/app/api/enhanced-data/route.ts",
+      "website/apps/mission-control/app/api/nio-status/route.ts",
+      "website/apps/mission-control/app/api/office/route.ts",
+      "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "website/apps/mission-control/app/api/tasks/route.ts",
+      "website/apps/mission-control/app/api/team/route.ts",
+      "website/apps/mission-control/app/calendar/page.tsx",
+      "website/apps/mission-control/app/components/CalendarView.tsx",
+      "website/apps/mission-control/app/components/NioStatus.tsx",
+      "website/apps/mission-control/app/components/OfficeView.tsx",
+      "website/apps/mission-control/app/components/RecentMemories.tsx",
+      "website/apps/mission-control/app/components/SystemStatus.tsx",
+      "website/apps/mission-control/app/components/TasksBoard.tsx",
+      "website/apps/mission-control/app/components/TeamManagement.tsx",
+      "website/apps/mission-control/app/globals.css",
+      "website/apps/mission-control/app/layout.tsx",
+      "website/apps/mission-control/app/office/page.tsx",
+      "website/apps/mission-control/app/page.tsx",
+      "website/apps/mission-control/app/team/page.tsx",
+      "website/apps/mission-control/next-env.d.ts",
+      "website/apps/mission-control/next.config.js",
+      "website/apps/mission-control/package-lock.json",
+      "website/apps/mission-control/package.json",
+      "website/apps/mission-control/postcss.config.js",
+      "website/apps/mission-control/public/data/progression/avatars/class-alchemist-idle.gif",
+      "website/apps/mission-control/public/data/progression/avatars/class-builder-idle.gif",
+      "website/apps/mission-control/public/data/progression/avatars/class-polymath-idle.gif",
+      "website/apps/mission-control/public/data/progression/avatars/class-scribe-idle.gif",
+      "website/apps/mission-control/public/data/progression/avatars/class-strategist-idle.gif",
+      "website/apps/mission-control/public/data/progression/avatars/nio-tier-1-idle.gif",
+      "website/apps/mission-control/public/data/progression/avatars/nio-tier-1-static.png",
+      "website/apps/mission-control/public/data/progression/avatars/nio-tier-2-idle.gif",
+      "website/apps/mission-control/public/metrics.json",
+      "website/apps/mission-control/scripts/generate-metrics.js",
+      "website/apps/mission-control/tailwind.config.js",
+      "website/apps/mission-control/tsconfig.json",
+      "website/apps/mission-control/vercel.json",
+      "website/apps/shawnos/app/feed/all.xml/route.ts",
+      "website/apps/shawnos/app/feed/daily-logs.xml/route.ts",
+      "website/apps/shawnos/app/feed/how-to.xml/route.ts",
+      "website/apps/shawnos/app/feed/knowledge.xml/route.ts",
+      "website/apps/shawnos/app/feed/nio-terminal.xml/route.ts",
+      "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
+      "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
+      "website/packages/shared/lib/rss/config.ts",
+      "website/packages/shared/lib/rss/content-sources.ts",
+      "website/packages/shared/lib/rss/generator.ts",
+      "website/packages/shared/lib/rss/index.ts",
+      "website/packages/shared/lib/rss/types.ts",
+      "website/packages/shared/pages/NioPostPage.tsx",
+      "website/packages/shared/pages/NioTerminalPage.tsx"
+    ],
+    "files_modified": [
+      "data/daily-log/2026-02-18.json",
+      "data/daily-log/cost-tracker/2026-02-18.json",
+      "data/progression/profile.json",
+      "data/website-stats.json",
+      "scripts/daily_cron.sh",
+      "website/apps/contentos/app/layout.tsx",
+      "website/apps/gtmos/app/layout.tsx",
+      "website/apps/mission-control/app/api/nio-status/route.ts",
+      "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "website/apps/mission-control/app/components/NioStatus.tsx",
+      "website/apps/mission-control/app/components/OfficeView.tsx",
+      "website/apps/mission-control/app/components/SystemStatus.tsx",
+      "website/apps/mission-control/app/components/TeamManagement.tsx",
+      "website/apps/mission-control/app/page.tsx",
+      "website/apps/mission-control/next-env.d.ts",
+      "website/apps/mission-control/package.json",
+      "website/apps/mission-control/public/metrics.json",
+      "website/apps/mission-control/vercel.json",
+      "website/apps/shawnos/app/feed.xml/route.ts",
+      "website/apps/shawnos/app/layout.tsx",
+      "website/apps/shawnos/app/page.tsx",
+      "website/apps/shawnos/public/sitemap-0.xml",
+      "website/package-lock.json",
+      "website/packages/shared/lib/index.ts",
+      "website/packages/shared/package.json",
+      "website/packages/shared/pages/NioTerminalPage.tsx",
+      "website/packages/shared/pages/VitalsPage.tsx"
+    ],
+    "lines_added_count": 19323,
+    "lines_removed_count": 3306,
+    "lines_net": 16017,
+    "code_loc": 4688,
+    "content_loc": 639,
+    "data_loc": 13996
+  }
+}
