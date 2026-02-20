@@ -15,6 +15,7 @@ scripts/*.csv
 scripts/*.log
 qualified_leads_to_process.json
 .claude/blocklist.txt
+data/daily-log/briefings/
 screenshots/
 content/internal/
 .internal/

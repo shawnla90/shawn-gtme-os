@@ -430,6 +430,31 @@ function generateTeam() {
   return members.length
 }
 
+// ─── Status ──────────────────────────────────────────────────────────────────
+
+function generateStatus() {
+  try {
+    const statusPath = path.join(REPO_ROOT, 'data/mission-control/nio-status-update.md')
+    if (fs.existsSync(statusPath)) {
+      const content = fs.readFileSync(statusPath, 'utf8')
+      const sections = content.split(/^##\s+/m).filter(Boolean)
+      writeJSON('status.json', {
+        generated: new Date().toISOString(),
+        raw: content,
+        sections: sections.map(s => ({
+          title: s.split('\n')[0]?.trim(),
+          content: s.split('\n').slice(1).join('\n').trim()
+        }))
+      })
+      return sections.length
+    }
+  } catch (e) {
+    console.error('  Status generation failed:', e.message)
+  }
+  writeJSON('status.json', { generated: new Date().toISOString(), raw: '', sections: [] })
+  return 0
+}
+
 // ─── Main ───────────────────────────────────────────────────────────────────
 
 function main() {
@@ -440,9 +465,10 @@ function main() {
   const eventCount = generateCalendar()
   const memoryCount = generateMemories()
   const teamCount = generateTeam()
+  const statusCount = generateStatus()
 
   console.log(`\n✅ Dashboard data generated:`)
-  console.log(`   ${taskCount} tasks, ${eventCount} events, ${memoryCount} memories, ${teamCount} team members`)
+  console.log(`   ${taskCount} tasks, ${eventCount} events, ${memoryCount} memories, ${teamCount} team members, ${statusCount} status sections`)
 }
 
 main()

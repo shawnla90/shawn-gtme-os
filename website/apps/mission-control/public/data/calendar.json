@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-20T06:38:07.913Z",
+  "generated": "2026-02-20T06:46:05.328Z",
   "events": [
     {
       "id": "cron-next-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
@@ -93,6 +93,17 @@
       "metadata": {
         "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
         "duration": "212s"
+      }
+    },
+    {
+      "id": "commit-d6ad7ed",
+      "title": "feat: mission control APIs serve static JSON instead of read",
+      "type": "milestone",
+      "datetime": "2026-02-20T01:38:40-05:00",
+      "status": "completed",
+      "description": "feat: mission control APIs serve static JSON instead of reading local filesystem",
+      "metadata": {
+        "commitHash": "d6ad7ed"
       }
     },
     {
@@ -283,17 +294,6 @@
       "description": "fix: align mission-control vercel config with other apps",
       "metadata": {
         "commitHash": "bc3b720"
-      }
-    },
-    {
-      "id": "commit-bfda835",
-      "title": "fix: refresh mission control metrics after github connect",
-      "type": "deployment",
-      "datetime": "2026-02-19T23:33:32-05:00",
-      "status": "completed",
-      "description": "fix: refresh mission control metrics after github connect",
-      "metadata": {
-        "commitHash": "bfda835"
       }
     },
     {
