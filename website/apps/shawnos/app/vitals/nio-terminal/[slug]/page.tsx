@@ -21,7 +21,7 @@ export default async function NioPostRoute({ params }: NioPostRouteProps) {
   const { slug } = await params
   
   // Support post-zero, post-one, and date-based slugs (YYYY-MM-DD)
-  const validPosts = ['post-zero', 'post-one']
+  const validPosts = ['post-zero', 'post-one', '2026-02-20']
   const datePattern = /^\d{4}-\d{2}-\d{2}$/
   
   if (!validPosts.includes(slug) && !datePattern.test(slug)) {
