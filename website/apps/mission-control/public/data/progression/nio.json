@@ -1,0 +1,51 @@
+{
+  "tier": 3,
+  "tierName": "blade",
+  "totalScore": 30000,
+  "progress": {
+    "current": 2000,
+    "needed": 20000,
+    "percent": 10,
+    "next_tier": 4,
+    "next_tier_name": "champion"
+  },
+  "achievements": [
+    {
+      "id": "blade-achieved",
+      "title": "Blade Tier Unlocked!",
+      "description": "Achieved at exactly 30,000 lines of code",
+      "date": "2026-02-20T00:00:00.000Z",
+      "milestone": true
+    },
+    {
+      "id": "s-grade",
+      "title": "S-Grade Productivity",
+      "description": "2,711 points - exceptional performance",
+      "date": "2026-02-19T23:00:00.000Z"
+    },
+    {
+      "id": "discord-live",
+      "title": "Discord Bot Operational",
+      "description": "NioBot connected and posting to server",
+      "date": "2026-02-19T21:00:00.000Z"
+    },
+    {
+      "id": "rss-live",
+      "title": "RSS Feed Deployed",
+      "description": "Content syndication system active",
+      "date": "2026-02-19T17:00:00.000Z"
+    }
+  ],
+  "stats": {
+    "linesOfCode": 30432,
+    "commits": 33,
+    "dailyScore": 2711,
+    "grade": "S",
+    "features_shipped": 12,
+    "automation_count": 8
+  },
+  "avatar": {
+    "path": "/data/progression/avatars/nio-tier-3-static.png",
+    "animated": "/data/progression/avatars/nio-tier-3-idle.gif"
+  }
+}

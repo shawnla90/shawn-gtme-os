@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-20T06:50:15.363Z",
+  "generated": "2026-02-20T13:02:32.886Z",
   "members": [
     {
       "id": "nio",
@@ -18,12 +18,12 @@
         "Memory Management"
       ],
       "level": 6,
-      "experience": 100,
+      "experience": 0,
       "performance": {
-        "tasksCompleted": 1,
-        "assignedCrons": 3,
-        "successRate": 33,
-        "avgResponseTime": "20.9s",
+        "tasksCompleted": 0,
+        "assignedCrons": 0,
+        "successRate": 100,
+        "avgResponseTime": "n/a",
         "cost": "API pay-per-use"
       }
     },
@@ -35,7 +35,7 @@
       "provider": "Ollama (local)",
       "specialization": "High-frequency cron jobs — commit tracking, RSS, mission control, status updates",
       "status": "active",
-      "currentAssignment": "Nio Status Updater, RSS to Discord announcer, Nio Commit Tracker, Mission Control Enhanced Updater",
+      "currentAssignment": "daily-morning-briefing, Nio Status Updater, nio-terminal Discord post, RSS to Discord announcer, Daily Discord build summary, Nio Commit Tracker, Mission Control Enhanced Updater",
       "skills": [
         "Commit Tracking",
         "RSS Monitoring",
@@ -43,12 +43,12 @@
         "Status Reports"
       ],
       "level": 4,
-      "experience": 200,
+      "experience": 250,
       "performance": {
-        "tasksCompleted": 4,
-        "assignedCrons": 4,
-        "successRate": 100,
-        "avgResponseTime": "123.9s",
+        "tasksCompleted": 5,
+        "assignedCrons": 7,
+        "successRate": 71,
+        "avgResponseTime": "93.8s",
         "cost": "FREE (local)"
       }
     },
@@ -111,6 +111,6 @@
     "idleMembers": 0,
     "totalCrons": 8,
     "totalTasksCompleted": 5,
-    "avgSuccessRate": 58
+    "avgSuccessRate": 68
   }
 }

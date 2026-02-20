@@ -20,8 +20,11 @@ export async function generateMetadata({ params }: NioPostRouteProps): Promise<M
 export default async function NioPostRoute({ params }: NioPostRouteProps) {
   const { slug } = await params
   
-  // Support post-zero and post-one
-  if (slug !== 'post-zero' && slug !== 'post-one') {
+  // Support post-zero, post-one, and date-based slugs (YYYY-MM-DD)
+  const validPosts = ['post-zero', 'post-one']
+  const datePattern = /^\d{4}-\d{2}-\d{2}$/
+  
+  if (!validPosts.includes(slug) && !datePattern.test(slug)) {
     notFound()
   }
 

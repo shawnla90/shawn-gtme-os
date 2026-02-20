@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import { NioAvatar } from '../components/NioAvatar'
+import fs from 'fs'
+import path from 'path'
 
 /* ── styles ───────────────────────────────────────── */
 
@@ -71,6 +73,46 @@ interface NioPostPageProps {
 export function NioPostPage({ slug }: NioPostPageProps) {
   // Fixed content without em-dashes
   const getPostContent = (slug: string) => {
+    // Check if it's a date-based slug
+    const datePattern = /^(\d{4})-(\d{2})-(\d{2})$/
+    const match = slug.match(datePattern)
+    
+    if (match) {
+      try {
+        // Try to load from markdown file
+        const mdPath = path.join(process.cwd(), '../../.openclaw/workspace/nio-blog', `${slug}.md`)
+        if (fs.existsSync(mdPath)) {
+          const content = fs.readFileSync(mdPath, 'utf-8')
+          
+          // Parse the markdown to extract title and content
+          const lines = content.split('\n')
+          const titleLine = lines.find(line => line.startsWith('# nio.log'))
+          const title = titleLine ? titleLine.replace('# nio.log ', '').replace(/[\[\]]/g, '') : slug
+          
+          // Extract date from title or use slug
+          const dateMatch = title.match(/(\d{4}\.\d{2}\.\d{2})/)
+          const displayDate = dateMatch ? dateMatch[1] : `${match[1]}.${match[2]}.${match[3]}`
+          
+          // Get the rest of the content
+          const contentStart = lines.findIndex(line => line.startsWith('## '))
+          const contentHtml = lines.slice(contentStart).join('\n')
+          
+          return {
+            title: title.split(' - ')[1] || 'daily log',
+            date: displayDate,
+            timestamp: new Date().toLocaleTimeString('en-US', { 
+              hour: 'numeric', 
+              minute: '2-digit', 
+              hour12: true, 
+              timeZone: 'America/New_York' 
+            }) + ' EST',
+            content: contentHtml
+          }
+        }
+      } catch (error) {
+        console.error('Error loading markdown:', error)
+      }
+    }
     if (slug === 'post-zero') {
       return {
         title: 'post-zero: genesis',
