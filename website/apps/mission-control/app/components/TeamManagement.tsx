@@ -15,10 +15,14 @@ interface TeamMember {
   experience: number
   avatar?: string
   lastActive?: string
+  model?: string
+  provider?: string
   performance: {
     tasksCompleted: number
+    assignedCrons?: number
     successRate: number
     avgResponseTime: string
+    cost?: string
   }
 }
 
@@ -182,11 +186,11 @@ export default function TeamManagement() {
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-xs px-1 py-0.5 bg-gray-700 rounded text-gray-300">
-                      Lv.{member.level}
+                    <span className="text-xs px-1 py-0.5 bg-gray-700 rounded text-green-400 font-mono">
+                      {(member as any).provider || 'unknown'}
                     </span>
                     <span className="text-xs text-gray-500">
-                      {member.performance.successRate}% success
+                      {(member.performance as any).cost || `${member.performance.successRate}%`}
                     </span>
                   </div>
                 </div>
@@ -243,12 +247,15 @@ export default function TeamManagement() {
                 </div>
                 
                 <div>
-                  <h4 className="text-sm font-medium text-green-400 mb-2">Performance:</h4>
+                  <h4 className="text-sm font-medium text-green-400 mb-2">Stats:</h4>
                   <div className="space-y-1 text-xs text-gray-300">
-                    <div>Tasks: {selectedMember.performance.tasksCompleted}</div>
+                    {(selectedMember as any).model && <div>Model: <span className="text-green-400 font-mono">{(selectedMember as any).model}</span></div>}
+                    {(selectedMember as any).provider && <div>Provider: {(selectedMember as any).provider}</div>}
+                    <div>Crons Assigned: {selectedMember.performance.assignedCrons || 0}</div>
+                    <div>Tasks Completed: {selectedMember.performance.tasksCompleted}</div>
                     <div>Success Rate: {selectedMember.performance.successRate}%</div>
-                    <div>Response Time: {selectedMember.performance.avgResponseTime}</div>
-                    <div>Experience: {selectedMember.experience} XP</div>
+                    <div>Avg Duration: {selectedMember.performance.avgResponseTime}</div>
+                    {(selectedMember.performance as any).cost && <div>Cost: <span className="text-yellow-400">{(selectedMember.performance as any).cost}</span></div>}
                   </div>
                 </div>
               </div>
