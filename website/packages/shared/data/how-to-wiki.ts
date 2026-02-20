@@ -502,6 +502,71 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
     ],
   },
 
+  {
+    id: 'claude-code-power-features',
+    title: 'Claude Code Power Features',
+    subtitle: 'Memory, hooks, custom skills, cost tracking, and worktrees',
+    category: 'cli-tools',
+    description:
+      'The features that turn Claude Code from a terminal chatbot into a persistent, customizable AI operating system. Memory that persists across sessions, hooks that automate behavior, custom slash commands, cost visibility, and isolated worktrees.',
+    keywords: [
+      'claude code memory',
+      'claude code hooks',
+      'claude code skills',
+      'claude code slash commands',
+      'claude code cost tracking',
+      'claude code worktrees',
+      'claude code advanced features',
+      'claude code power user',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'claude-code-quickstart',
+      'claude-code-inside-cursor',
+      'rules-skills-context',
+      'agent-teams-claude-code',
+    ],
+    sections: [
+      {
+        heading: 'Beyond the Quickstart',
+        type: 'prose',
+        content:
+          'The Claude Code quickstart gets you installed and running. This guide covers the features that make it stick. Memory that remembers what you taught it last Tuesday. Hooks that run shell commands when Claude touches specific tools. Custom slash commands that execute your workflows with a single keystroke. Cost tracking so you know where your tokens go. And worktrees for running parallel sessions without file conflicts. These are the features I use daily. Most of them I discovered by accident, weeks after I started using Claude Code. You should not have to wait weeks.',
+      },
+      {
+        heading: 'Memory: Your Agent Remembers',
+        type: 'pattern',
+        content:
+          'Claude Code has a persistent memory system. It writes notes to a directory at ~/.claude/projects/<project-hash>/memory/ and reads them back at the start of every session. The index file is MEMORY.md. The first 200 lines load automatically into every session. Additional topic files (debugging.md, patterns.md, whatever you need) get created as the repo evolves.\n\nWhat gets saved: stable patterns confirmed across multiple sessions, architectural decisions, important file paths, user preferences, solutions to recurring problems. What does not get saved: session-specific context, in-progress work, unverified guesses from a single file read.\n\nYou can also tell Claude to remember things explicitly. Say "always use bun instead of npm" and it writes that to memory. Say "forget about using bun" and it removes it. The memory compounds. After a few weeks, Claude starts a session already knowing your repo structure, your naming conventions, your preferred tools, and the mistakes it made before. That is the difference between a blank agent and a teammate.',
+      },
+      {
+        heading: 'Hooks: Automating Agent Behavior',
+        type: 'code',
+        content:
+          'Hooks are shell commands that fire on Claude Code lifecycle events. There are 14 hook events: PreToolUse, PostToolUse, SessionStart, Stop, and more. You configure them in .claude/settings.json (project level) or ~/.claude/settings.json (global).\n\nThe format:\n\n"hooks": {\n  "PreToolUse": [\n    {\n      "matcher": "Bash",\n      "hooks": [\n        {\n          "type": "command",\n          "command": "./hooks/validate.sh",\n          "timeout": 600\n        }\n      ]\n    }\n  ]\n}\n\nThree hook types exist. Command hooks run shell scripts. Prompt hooks send context to Claude for a yes/no decision. Agent hooks spawn a subagent with read-only tools for complex verification.\n\nPractical uses: block dangerous rm commands before they execute. Run a linter after every file write. Send a Slack notification when a session ends. Validate commit messages before they go through. The /hooks command gives you an interactive menu to manage them without editing JSON by hand.',
+      },
+      {
+        heading: 'Custom Skills and Slash Commands',
+        type: 'pattern',
+        content:
+          'Skills are markdown files in .claude/skills/ that define reusable workflows. Each skill folder contains a SKILL.md file with YAML frontmatter and step-by-step instructions. When you type /skill-name in a Claude Code session, the skill loads and Claude follows the instructions.\n\nThe frontmatter controls behavior. The basics: name (becomes the slash command), description (Claude uses this to auto-invoke when relevant), and allowed-tools (tools Claude can use without asking permission). The advanced fields: model (override which model runs this skill), context: fork (run in an isolated subagent context instead of the main conversation), disable-model-invocation: true (only the user can trigger it, useful for deploy and commit skills), and argument-hint (autocomplete hint like [issue-number]). You can also embed dynamic context with the !command syntax, which runs a shell command before the skill content is sent to Claude.\n\nMy repo has four custom skills: /handoff generates a context handoff document for the next session. /sync-main handles git divergence from automated machines. /update-github runs a pre-push safety scan before pushing to the public repo. /restart-openclaw diagnoses and restarts the OpenClaw gateway. Each one started simple and got more robust through actual use.\n\nThe skill file is plain English. You are not writing code. You are writing instructions that an AI agent follows step by step. Skills load on demand, so they do not consume context window space until invoked. That is the key difference between skills and CLAUDE.md. Put always-needed context in CLAUDE.md. Put workflow-specific instructions in skills. Skill descriptions are loaded into context at startup (capped at about 2% of your context window), so Claude knows which skills exist and can suggest them.',
+      },
+      {
+        heading: 'Cost Tracking and Insights',
+        type: 'pro-tip',
+        content:
+          'Type /cost in a session to see your token spend. It shows total cost, API duration, wall duration, and code changes. Type /context to see what is consuming your context window. Type /model to switch models mid-session.\n\nThe power move is /insights. It generates an interactive HTML report at ~/.claude/usage-data/report.html that analyzes up to 50 recent sessions. The report includes a statistics dashboard (session counts, messages, duration, tokens, git commits, activity streaks, peak hours), daily activity charts, tool usage distribution, language breakdown, friction points with specific examples, and recommended CLAUDE.md additions. It runs your transcripts through Haiku for facet extraction and caches results so subsequent runs are fast. If you want to understand how you actually use Claude Code versus how you think you use it, /insights shows you the data.\n\nThe biggest cost lever is model selection. Sonnet handles most daily work. Opus is for complex architecture and judgment calls. Haiku works well for subagents doing mechanical tasks. Defaulting to Opus on everything is like hiring a senior architect to paint walls.\n\nOther cost reducers: /clear between unrelated tasks starts a fresh context window. Move workflow instructions from CLAUDE.md to skills so they only load when invoked. Reference specific file paths instead of asking Claude to search. Short, focused sessions beat marathon conversations where context accumulates and old messages get compressed.\n\nAverage cost runs about $6 per developer per day. 90% of users stay under $12. If you are above that, check what is loading into every session and move it to on-demand skills.',
+      },
+      {
+        heading: 'Worktrees: Isolated Parallel Work',
+        type: 'code',
+        content:
+          'Worktrees let you run parallel Claude Code sessions without file conflicts. Each worktree gets its own branch and working directory while sharing the same git history.\n\nCreate one with: claude -w feature-name\n\nThis creates a worktree at .claude/worktrees/feature-name with a branch called worktree-feature-name. Start Claude in that directory and work on whatever you need. The main working tree stays untouched.\n\nWhen you exit, Claude asks whether to keep or remove the worktree. If you had no changes, it cleans up automatically. The /resume command shows sessions from all worktrees in the same repo, so you can switch between parallel work easily.\n\nWorktrees are good for isolated experiments and feature branches. For coordinated parallel work where agents need to talk to each other, Agent Teams are the better tool. Worktrees are solo lanes. Teams are a coordinated fleet.',
+      },
+    ],
+  },
+
   /* ================================================================== */
   /*  MCP SERVERS                                                         */
   /* ================================================================== */
@@ -1050,6 +1115,71 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
         type: 'pro-tip',
         content:
           'When I built the Clay Wiki, the orchestration was: Wave 1 — one agent wrote the data file (all 17 entries, types, helpers). Wave 2 — three agents ran in parallel: hub page component, detail page component, and ShawnOS route setup. Wave 3 — two agents ran in parallel: navigation updates and cross-link backfills. Wave 4 — one agent ran the build and verified all routes.\n\nTotal time: under 15 minutes. Sequential time estimate: over 45 minutes. The speed difference came from planning. Identifying which tasks were independent. Grouping them into waves. Giving each agent exactly the context it needed. The actual execution was fast. The planning is what made the execution possible.',
+      },
+    ],
+  },
+
+  {
+    id: 'agent-teams-claude-code',
+    title: 'Agent Teams in Claude Code',
+    subtitle: 'Multi-agent coordination with shared task lists, messaging, and management layers',
+    category: 'parallel-agents',
+    description:
+      'How to use Claude Code Agent Teams for coordinated parallel work. Creating teams, assigning tasks, inter-agent messaging, the management layer that prevents chaos, and real examples from production.',
+    keywords: [
+      'claude code agent teams',
+      'claude code multi agent',
+      'agent teams tutorial',
+      'claude code team coordination',
+      'multi agent orchestration claude',
+      'agent teams experimental',
+      'claude code teammates',
+      'claude code task management',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'parallel-agent-patterns',
+      'orchestrating-multi-agent-workflows',
+      'claude-code-power-features',
+      'model-selection-strategy',
+    ],
+    sections: [
+      {
+        heading: 'What Agent Teams Are',
+        type: 'prose',
+        content:
+          'Agent Teams are Claude Code sessions that can talk to each other. The earlier parallel agent entries in this guide cover subagents, which are fire-and-forget. You launch a subagent, it does its task, it reports back to the parent. That is it. No communication between subagents. No shared task tracking. No coordination beyond what the parent orchestrates.\n\nAgent Teams add three things subagents do not have. First, a shared task list that every teammate can read and update. Second, direct messaging between agents, not just parent-to-child but peer-to-peer. Third, lifecycle management so the team lead can spawn, assign, monitor, and shut down teammates from a single session.\n\nThe practical difference: subagents are good for independent parallel tasks where no agent needs to know what another agent is doing. Teams are good for coordinated parallel tasks where agents need to hand off context, check each other\'s work, or adapt based on what a teammate discovered. If you have ever managed a small team of people, the mental model is identical. You assign tasks, people work in parallel, they message you with questions, you review output, and you decide when the work is done.',
+      },
+      {
+        heading: 'Enabling and Creating a Team',
+        type: 'code',
+        content:
+          'Agent Teams are experimental as of February 2026. Enable them by adding the environment variable to your Claude Code settings:\n\nIn ~/.claude/settings.json:\n{\n  "env": {\n    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"\n  }\n}\n\nRestart Claude Code after adding this. The feature will not activate until the next session.\n\nOnce enabled, you can ask Claude to create a team naturally or it happens through the TeamCreate tool. A team gets a name, a description, and a config file at ~/.claude/teams/{team-name}/config.json. The config tracks team members with their names, agent IDs, and roles.\n\nEach team gets a corresponding task list at ~/.claude/tasks/{team-name}/. This is the shared work tracker that every teammate can read and write to.\n\nDisplay modes matter. The default is in-process, where all teammates run in the main terminal and you use Shift+Down to cycle between them. If you have tmux or iTerm2, set "teammateMode": "tmux" in settings.json and each teammate gets its own split pane. The pane view makes it easier to monitor parallel work. You can also pass --teammate-mode on the command line for one-off sessions.',
+      },
+      {
+        heading: 'Task Lists and Assignment',
+        type: 'pattern',
+        content:
+          'Tasks are the coordination backbone. Every piece of work gets a task with a subject, description, status (pending, in_progress, completed), and optional dependencies.\n\nDependencies are the key feature. Task 4 can be blocked by tasks 2 and 3. That means no one picks up task 4 until both 2 and 3 are done. This enforces wave discipline automatically. You do not need to babysit the sequencing. The task list enforces it.\n\nThe workflow: the team lead creates tasks, sets dependencies, and assigns owners. Teammates check the task list after completing each piece of work to find what is available next. They claim unblocked tasks, work them, mark them complete, and check for the next one.\n\nTip: prefer assigning tasks in ID order (lowest first) when multiple are available. Earlier tasks often set up context that later tasks depend on. This is the same wave pattern from the parallel agents guide, just formalized into a task system instead of manual orchestration.',
+      },
+      {
+        heading: 'Inter-Agent Communication',
+        type: 'pattern',
+        content:
+          'Teammates communicate through SendMessage. Three message types exist.\n\nDirect messages go to one specific teammate by name. The researcher sends findings to the team lead. The writer asks the reviewer a question. These are the most common and cheapest messages.\n\nBroadcasts go to every teammate at once. Use these sparingly because each broadcast sends a separate message to every agent, which means N teammates equals N API calls. Valid use: a critical blocker that affects everyone. Invalid use: a status update that only the lead cares about.\n\nShutdown requests tell a teammate to wrap up and exit. The teammate can approve (and terminate) or reject with a reason. This is how you cleanly end a team session without killing processes.\n\nMessages are delivered automatically. You do not need to poll an inbox. When a teammate sends a message, it arrives in your conversation as a new turn. If you are busy mid-turn, messages queue and deliver when your turn ends.',
+      },
+      {
+        heading: 'The Management Layer',
+        type: 'pro-tip',
+        content:
+          'The agents are not the breakthrough. The management layer is. Without constraints, parallel agents create chaos. Two agents edit the same file and the last write wins silently. An agent makes an architectural decision that conflicts with another agent\'s assumption. A deploy goes out before all agents finish.\n\nThe management layer is a constraints file that every teammate reads before making any change. My TEAM-CONSTRAINTS.md enforces six rules:\n\n1. File ownership. One writer per file per wave. No two agents touch the same file simultaneously.\n2. Decision logging. When an agent makes a choice (naming convention, import path, data structure), it messages the team lead with a [DECISION] prefix. That decision becomes available to all teammates.\n3. Read before write. Every agent reads an existing example of whatever it is about to create. The existing code IS the style guide.\n4. Wave discipline. Foundation tasks first, consumers second, integration third, validation last. No skipping ahead.\n5. Build gate. No deploy until the build passes clean and the team lead confirms.\n6. Context before action. Every teammate gets the constraints file, a specific task description, file references, and ownership boundaries. If any are missing, the agent asks before proceeding.\n\nYou do not need my exact constraints file. You need A constraints file. The specific rules matter less than having rules at all. Without them, agents drift. With them, agents coordinate.',
+      },
+      {
+        heading: 'Teams vs Subagents: When to Use Which',
+        type: 'formula',
+        content:
+          'Use subagents (the Task tool) when tasks are fully independent. No agent needs output from another agent. No agent needs to check another agent\'s work. Each task has a clear input and clear output with no cross-dependencies. Example: three agents each writing a separate wiki page that does not reference the others.\n\nUse teams when tasks are coordinated. Agents need to hand off context. One agent\'s output feeds another agent\'s input. Someone needs to review before the next step starts. Example: a researcher gathers data, a writer turns it into content, a reviewer checks voice compliance, and a deploy agent pushes the result.\n\nThe cost difference matters. Teams use roughly 7x more tokens than a single session because each teammate runs its own context window. Keep teams small (2 to 4 agents), keep tasks focused, and clean up when done. Do not spin up a team for a task that one focused agent can handle.\n\nCurrent limitations to know: one team per session, no nested teams (teammates cannot spawn their own teams), the lead role is fixed (cannot transfer leadership mid-session), and session resumption does not work with in-process teammates. These are experimental constraints that will likely improve.\n\nThe decision framework: if you can describe the task in one prompt and the agent can finish without asking anyone a question, use a subagent. If the task involves handoffs, reviews, or multi-step coordination, use a team.',
       },
     ],
   },

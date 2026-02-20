@@ -91,6 +91,20 @@ interface FeatureMilestone {
 const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
     date: '2026-02-20',
+    title: 'Claude Code Power Features Guide',
+    description: 'New how-to covering Memory, Hooks, Custom Skills, Cost Tracking, and Worktrees. The features that turn Claude Code from a chatbot into a persistent AI operating system.',
+    type: 'launch',
+    link: '/how-to/claude-code-power-features',
+  },
+  {
+    date: '2026-02-20',
+    title: 'Agent Teams Documentation',
+    description: 'Full guide to Claude Code Agent Teams: team creation, shared task lists, inter-agent messaging, and the management layer that prevents multi-agent chaos.',
+    type: 'launch',
+    link: '/how-to/agent-teams-claude-code',
+  },
+  {
+    date: '2026-02-20',
     title: 'OpenClaw: OAuth vs API Cost Guide',
     description: 'Updated OpenClaw setup guide with OAuth vs API key cost breakdown, ChatGPT OAuth recommendation, and living status disclaimer. $50+/day lessons learned.',
     type: 'launch',
