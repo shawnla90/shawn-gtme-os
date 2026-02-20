@@ -12,7 +12,6 @@ import {
   contextWikiToFeedItems,
   clayWikiToFeedItems,
   contentWikiToFeedItems,
-  gtmTermsToFeedItems,
   mergeFeedItems,
 } from '@shawnos/shared/lib'
 import type { FeedItem } from '@shawnos/shared/lib'
@@ -21,8 +20,9 @@ import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 import { CONTEXT_WIKI_ENTRIES } from '@shawnos/shared/data/context-wiki'
 import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
-import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import UpdatesFeed from './UpdatesFeed'
+import type { FeedEntry, CategoryFilter } from './UpdatesFeed'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -199,31 +199,45 @@ const FEATURE_MILESTONES: FeatureMilestone[] = [
   },
 ]
 
-/* ── helpers ──────────────────────────────────────── */
+/* ── category mapping ────────────────────────────── */
 
-function getCategoryFromItem(item: FeedItem): { label: string; color: string; href: string } {
+const CATEGORY_MAP: Record<string, { label: string; color: string }> = {
+  blog: { label: 'Blog', color: '#60a5fa' },
+  'nio-terminal': { label: 'Nio Terminal', color: '#c084fc' },
+  'daily-log': { label: 'Daily Log', color: '#facc15' },
+  'context-wiki': { label: 'Context Wiki', color: '#4ade80' },
+  'clay-wiki': { label: 'Clay Wiki', color: '#fb923c' },
+  'content-wiki': { label: 'Content Wiki', color: '#f472b6' },
+  'how-to': { label: 'How-To', color: '#38bdf8' },
+  knowledge: { label: 'Knowledge', color: '#a78bfa' },
+}
+
+function classifyItem(item: FeedItem): { key: string; label: string; color: string } {
   const cats = item.category || []
   const link = item.link.replace(SITE_URL, '')
 
   if (cats.includes('blog') || link.startsWith('/blog'))
-    return { label: 'BLOG', color: '#60a5fa', href: '/blog' }
+    return { key: 'blog', ...CATEGORY_MAP.blog }
   if (cats.includes('nio-terminal') || link.includes('nio-terminal'))
-    return { label: 'NIO TERMINAL', color: '#c084fc', href: '/vitals/nio-terminal' }
+    return { key: 'nio-terminal', ...CATEGORY_MAP['nio-terminal'] }
   if (cats.includes('daily-log') || link.startsWith('/log/'))
-    return { label: 'DAILY LOG', color: '#facc15', href: '/log' }
+    return { key: 'daily-log', ...CATEGORY_MAP['daily-log'] }
   if (cats.includes('context-wiki') || link.startsWith('/context-wiki'))
-    return { label: 'CONTEXT WIKI', color: '#4ade80', href: '/context-wiki' }
+    return { key: 'context-wiki', ...CATEGORY_MAP['context-wiki'] }
   if (cats.includes('clay-wiki') || link.startsWith('/clay-wiki'))
-    return { label: 'CLAY WIKI', color: '#fb923c', href: '/clay-wiki' }
+    return { key: 'clay-wiki', ...CATEGORY_MAP['clay-wiki'] }
   if (cats.includes('content-wiki') || link.startsWith('/content-wiki'))
-    return { label: 'CONTENT WIKI', color: '#f472b6', href: '/content-wiki' }
+    return { key: 'content-wiki', ...CATEGORY_MAP['content-wiki'] }
   if (cats.includes('how-to') || link.startsWith('/how-to'))
-    return { label: 'HOW-TO', color: '#38bdf8', href: '/how-to' }
+    return { key: 'how-to', ...CATEGORY_MAP['how-to'] }
   if (cats.includes('knowledge') || link.startsWith('/knowledge'))
-    return { label: 'KNOWLEDGE', color: '#a78bfa', href: '/knowledge' }
-  if (cats.includes('gtm-terms') || link.includes('gtm'))
-    return { label: 'GTM TERMS', color: '#fb7185', href: '/knowledge' }
-  return { label: 'UPDATE', color: 'var(--accent)', href: '/updates' }
+    return { key: 'knowledge', ...CATEGORY_MAP.knowledge }
+  return { key: 'other', label: 'Update', color: 'var(--accent)' }
+}
+
+function formatDate(date: Date | string): string {
+  const d = typeof date === 'string' ? new Date(date) : date
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 }
 
 function featureTypeStyle(type: FeatureMilestone['type']): { color: string; label: string } {
@@ -237,11 +251,6 @@ function featureTypeStyle(type: FeatureMilestone['type']): { color: string; labe
     case 'infrastructure':
       return { color: '#facc15', label: 'INFRA' }
   }
-}
-
-function formatDate(date: Date | string): string {
-  const d = typeof date === 'string' ? new Date(date) : date
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 }
 
 /* ── styles ────────────────────────────────────────── */
@@ -340,8 +349,6 @@ const sectionPrompt: React.CSSProperties = {
   marginBottom: '8px',
 }
 
-/* ── feature timeline styles ─────────────────────── */
-
 const timelineScroll: React.CSSProperties = {
   overflowX: 'auto',
   overflowY: 'hidden',
@@ -399,76 +406,6 @@ const typeBadge = (color: string): React.CSSProperties => ({
   letterSpacing: '0.06em',
 })
 
-/* ── content feed styles ─────────────────────────── */
-
-const feedList: React.CSSProperties = {
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '2px',
-}
-
-const feedItem: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'flex-start',
-  gap: '12px',
-  padding: '14px 16px',
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '6px',
-  textDecoration: 'none',
-  transition: 'border-color 0.15s ease',
-}
-
-const feedItemContent: React.CSSProperties = {
-  flex: 1,
-  minWidth: 0,
-}
-
-const feedItemTitle: React.CSSProperties = {
-  fontSize: '13px',
-  fontWeight: 600,
-  color: 'var(--text-primary)',
-  lineHeight: 1.3,
-  marginBottom: '4px',
-}
-
-const feedItemDesc: React.CSSProperties = {
-  fontSize: '12px',
-  lineHeight: 1.5,
-  color: 'var(--text-secondary)',
-  overflow: 'hidden',
-  textOverflow: 'ellipsis',
-  display: '-webkit-box',
-  WebkitLineClamp: 2,
-  WebkitBoxOrient: 'vertical',
-}
-
-const feedItemMeta: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '8px',
-  marginTop: '6px',
-}
-
-const feedItemDate: React.CSSProperties = {
-  fontSize: '11px',
-  fontWeight: 400,
-  color: 'var(--text-muted)',
-  whiteSpace: 'nowrap',
-}
-
-const catBadge = (color: string): React.CSSProperties => ({
-  display: 'inline-block',
-  fontSize: '9px',
-  fontWeight: 700,
-  color,
-  border: `1px solid ${color}44`,
-  borderRadius: '3px',
-  padding: '1px 6px',
-  letterSpacing: '0.06em',
-  whiteSpace: 'nowrap',
-})
-
 const scrollHint: React.CSSProperties = {
   fontSize: '11px',
   color: 'var(--text-muted)',
@@ -491,10 +428,9 @@ const navLink: React.CSSProperties = {
   textDecoration: 'none',
 }
 
-/* ── page component ───────────────────────────────── */
+/* ── page component (server) ─────────────────────── */
 
 export default function UpdatesPage() {
-  // Gather all content sources
   const posts = getAllPosts(CONTENT_DIR)
   const logs = getAllLogs(LOG_DIR)
 
@@ -517,7 +453,7 @@ export default function UpdatesPage() {
     },
   ]
 
-  // Merge everything into one sorted feed
+  // Merge all sources (no GTM terms — no page exists for them)
   const allItems = mergeFeedItems(
     blogPostsToFeedItems(posts, SITE_URL),
     dailyLogsToFeedItems(logs, SITE_URL),
@@ -527,13 +463,40 @@ export default function UpdatesPage() {
     contextWikiToFeedItems(CONTEXT_WIKI_ENTRIES, SITE_URL),
     clayWikiToFeedItems(CLAY_WIKI_ENTRIES, SITE_URL),
     contentWikiToFeedItems(CONTENT_WIKI_ENTRIES, SITE_URL),
-    gtmTermsToFeedItems(GTM_CATEGORIES, SITE_URL),
   )
 
-  // Stats
-  const totalContent = allItems.length
+  // Serialize items for the client component
+  const entries: FeedEntry[] = allItems.map((item) => {
+    const cat = classifyItem(item)
+    return {
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      href: item.link.replace(SITE_URL, '') || '/',
+      date: formatDate(item.date),
+      categoryKey: cat.key,
+      categoryLabel: cat.label,
+      categoryColor: cat.color,
+    }
+  })
+
+  // Build category filter list with counts
+  const categoryCounts = new Map<string, number>()
+  for (const entry of entries) {
+    categoryCounts.set(entry.categoryKey, (categoryCounts.get(entry.categoryKey) || 0) + 1)
+  }
+
+  const categories: CategoryFilter[] = Object.entries(CATEGORY_MAP)
+    .filter(([key]) => categoryCounts.has(key))
+    .map(([key, val]) => ({
+      key,
+      label: val.label,
+      color: val.color,
+      count: categoryCounts.get(key) || 0,
+    }))
+
+  const totalContent = entries.length
   const totalFeatures = FEATURE_MILESTONES.length
-  const contentCategories = new Set(allItems.flatMap(i => i.category || []))
 
   return (
     <>
@@ -569,7 +532,7 @@ export default function UpdatesPage() {
             <span style={statLabel}>Features Shipped</span>
           </div>
           <div style={statBox}>
-            <span style={statNum}>{contentCategories.size}</span>
+            <span style={statNum}>{categories.length}</span>
             <span style={statLabel}>Categories</span>
           </div>
         </div>
@@ -613,28 +576,11 @@ export default function UpdatesPage() {
 
         <hr style={divider} />
 
-        {/* ── Content Feed (all articles + pages) ── */}
-        <div style={sectionPrompt}>$ cat ~/feed/all.xml | head -100</div>
+        {/* ── Filterable Content Feed ── */}
+        <div style={sectionPrompt}>$ cat ~/feed/all.xml | grep --category</div>
         <div style={sectionTitle}>All Content</div>
 
-        <div style={feedList}>
-          {allItems.map((item) => {
-            const cat = getCategoryFromItem(item)
-            const href = item.link.replace(SITE_URL, '') || '/'
-            return (
-              <Link key={item.id} href={href} style={feedItem}>
-                <div style={feedItemContent}>
-                  <div style={feedItemTitle}>{item.title}</div>
-                  <div style={feedItemDesc}>{item.description}</div>
-                  <div style={feedItemMeta}>
-                    <span style={catBadge(cat.color)}>{cat.label}</span>
-                    <span style={feedItemDate}>{formatDate(item.date)}</span>
-                  </div>
-                </div>
-              </Link>
-            )
-          })}
-        </div>
+        <UpdatesFeed entries={entries} categories={categories} />
 
         {/* Navigation */}
         <div style={navRow}>

@@ -12,7 +12,6 @@ import {
   contextWikiToFeedItems,
   clayWikiToFeedItems,
   contentWikiToFeedItems,
-  gtmTermsToFeedItems,
   mergeFeedItems,
 } from '@shawnos/shared/lib'
 import type { FeedItem } from '@shawnos/shared/lib'
@@ -21,7 +20,6 @@ import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 import { CONTEXT_WIKI_ENTRIES } from '@shawnos/shared/data/context-wiki'
 import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
-import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -64,7 +62,6 @@ export function GET() {
     contextWikiToFeedItems(CONTEXT_WIKI_ENTRIES, SITE_URL),
     clayWikiToFeedItems(CLAY_WIKI_ENTRIES, SITE_URL),
     contentWikiToFeedItems(CONTENT_WIKI_ENTRIES, SITE_URL),
-    gtmTermsToFeedItems(GTM_CATEGORIES, SITE_URL),
   )
 
   return feedResponse(config, items)
