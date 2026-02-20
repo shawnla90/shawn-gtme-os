@@ -69,6 +69,14 @@ else
   log "WARN: Website scanner failed (non-fatal, continuing)"
 fi
 
+# ── Step 1e: Run repo stats ─────────────────────────────────────────
+log "Running repo_stats.py"
+if $PYTHON scripts/repo_stats.py >> "$LOGFILE" 2>&1; then
+  log "Repo stats completed successfully"
+else
+  log "WARN: Repo stats failed (non-fatal, continuing)"
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
@@ -91,6 +99,7 @@ $GIT add data/daily-log/*.json
 $GIT add data/daily-log/cost-tracker/*.json 2>/dev/null || true
 $GIT add data/progression/profile.json 2>/dev/null || true
 $GIT add data/website-stats.json 2>/dev/null || true
+$GIT add data/repo-stats.json 2>/dev/null || true
 
 # Check if there are staged changes
 if $GIT diff --cached --quiet; then

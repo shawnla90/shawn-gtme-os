@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- MAC MINI ONLY — paths use /Users/shawnos.ai/
+     MacBook uses com.shawnos.daily-tracker.plist with /Users/shawntenam/ paths.
+     See docs/MACHINE-SETUP.md for canonical machine identity. -->
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
   "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">

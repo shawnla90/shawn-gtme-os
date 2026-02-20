@@ -1,35 +1,45 @@
 {
   "date": "2026-02-19",
-  "generated_at": "2026-02-20T05:00:02.038929+00:00",
+  "generated_at": "2026-02-20T05:00:02.941993+00:00",
   "version": 3,
   "accomplishments": [
-    {
-      "type": "website_page",
-      "title": "mission-control office page",
-      "path": "website/apps/mission-control/app/office/page.tsx",
-      "source": "auto",
-      "timestamp": "02:02",
-      "words": 71,
-      "value_score": 5,
-      "shipped": true
-    },
     {
       "type": "website_page",
       "title": "NioPostPage",
       "path": "website/packages/shared/pages/NioPostPage.tsx",
       "source": "auto",
-      "timestamp": "13:12",
+      "timestamp": "14:21",
       "words": 767,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared types",
-      "path": "website/packages/shared/lib/rss/types.ts",
+      "type": "website_page",
+      "title": "VitalsPage",
+      "path": "website/packages/shared/pages/VitalsPage.tsx",
       "source": "auto",
-      "timestamp": "17:18",
-      "words": 63,
+      "timestamp": "14:21",
+      "words": 803,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 183,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api nio-status route",
+      "path": "website/apps/mission-control/app/api/nio-status/route.ts",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 593,
       "value_score": 3,
       "shipped": true
     },
@@ -38,177 +48,8 @@
       "title": "shawnos feed how-to.xml route",
       "path": "website/apps/shawnos/app/feed/how-to.xml/route.ts",
       "source": "auto",
-      "timestamp": "17:18",
+      "timestamp": "15:29",
       "words": 54,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "substack_draft",
-      "title": "recursive drift",
-      "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 1641,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api calendar route",
-      "path": "website/apps/mission-control/app/api/calendar/route.ts",
-      "source": "auto",
-      "timestamp": "02:59",
-      "words": 471,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "mission_control_updater",
-      "path": "scripts/mission_control_updater.py",
-      "source": "auto",
-      "timestamp": "22:44",
-      "words": 472,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "gtmos feed clay-wiki.xml route",
-      "path": "website/apps/gtmos/app/feed/clay-wiki.xml/route.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 54,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control team page",
-      "path": "website/apps/mission-control/app/team/page.tsx",
-      "source": "auto",
-      "timestamp": "02:09",
-      "words": 71,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "gtmos feed.xml route",
-      "path": "website/apps/gtmos/app/feed.xml/route.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 108,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "mission-control home page",
-      "path": "website/apps/mission-control/app/page.tsx",
-      "source": "auto",
-      "timestamp": "02:58",
-      "words": 224,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/index.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 162,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api office route",
-      "path": "website/apps/mission-control/app/api/office/route.ts",
-      "source": "auto",
-      "timestamp": "02:03",
-      "words": 422,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api system-metrics route",
-      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
-      "source": "auto",
-      "timestamp": "23:43",
-      "words": 272,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared content-sources",
-      "path": "website/packages/shared/lib/rss/content-sources.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 510,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 549,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "shawnos feed.xml route",
-      "path": "website/apps/shawnos/app/feed.xml/route.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 57,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "17:18",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api team route",
-      "path": "website/apps/mission-control/app/api/team/route.ts",
-      "source": "auto",
-      "timestamp": "02:10",
-      "words": 335,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "shawnos feed all.xml route",
-      "path": "website/apps/shawnos/app/feed/all.xml/route.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 147,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/rss/index.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 40,
       "value_score": 3,
       "shipped": true
     },
@@ -217,18 +58,46 @@
       "title": "gtmos layout",
       "path": "website/apps/gtmos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "17:18",
+      "timestamp": "15:31",
       "words": 231,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared generator",
-      "path": "website/packages/shared/lib/rss/generator.ts",
+      "type": "code_infra",
+      "title": "mission-control vercel",
+      "path": "website/apps/mission-control/vercel.json",
       "source": "auto",
-      "timestamp": "17:18",
-      "words": 191,
+      "timestamp": "14:21",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api office route",
+      "path": "website/apps/mission-control/app/api/office/route.ts",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 422,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
+      "source": "auto",
+      "timestamp": "14:21",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "contentos feed.xml route",
+      "path": "website/apps/contentos/app/feed.xml/route.ts",
+      "source": "auto",
+      "timestamp": "15:31",
+      "words": 96,
       "value_score": 3,
       "shipped": true
     },
@@ -237,107 +106,9 @@
       "title": "mission-control api tasks route",
       "path": "website/apps/mission-control/app/api/tasks/route.ts",
       "source": "auto",
-      "timestamp": "01:02",
+      "timestamp": "14:21",
       "words": 227,
       "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "nio_commit_tracker",
-      "path": "scripts/nio_commit_tracker.py",
-      "source": "auto",
-      "timestamp": "22:42",
-      "words": 532,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control layout",
-      "path": "website/apps/mission-control/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "00:59",
-      "words": 91,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "contentos feed content-wiki.xml route",
-      "path": "website/apps/contentos/app/feed/content-wiki.xml/route.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 58,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "shawnos home page",
-      "path": "website/apps/shawnos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "02:46",
-      "words": 1063,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "VitalsPage",
-      "path": "website/packages/shared/pages/VitalsPage.tsx",
-      "source": "auto",
-      "timestamp": "12:43",
-      "words": 803,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "mission-control package",
-      "path": "website/apps/mission-control/package.json",
-      "source": "auto",
-      "timestamp": "22:53",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals nio-terminal page",
-      "path": "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
-      "source": "auto",
-      "timestamp": "12:41",
-      "words": 183,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "mission-control tsconfig",
-      "path": "website/apps/mission-control/tsconfig.json",
-      "source": "auto",
-      "timestamp": "01:01",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioTerminalPage",
-      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
-      "source": "auto",
-      "timestamp": "13:13",
-      "words": 693,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control calendar page",
-      "path": "website/apps/mission-control/app/calendar/page.tsx",
-      "source": "auto",
-      "timestamp": "02:58",
-      "words": 72,
-      "value_score": 5,
       "shipped": true
     },
     {
@@ -345,18 +116,8 @@
       "title": "shared config",
       "path": "website/packages/shared/lib/rss/config.ts",
       "source": "auto",
-      "timestamp": "17:18",
+      "timestamp": "15:20",
       "words": 168,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "shawnos feed daily-logs.xml route",
-      "path": "website/apps/shawnos/app/feed/daily-logs.xml/route.ts",
-      "source": "auto",
-      "timestamp": "17:18",
-      "words": 64,
       "value_score": 3,
       "shipped": true
     },
@@ -365,38 +126,69 @@
       "title": "gtmos feed knowledge.xml route",
       "path": "website/apps/gtmos/app/feed/knowledge.xml/route.ts",
       "source": "auto",
-      "timestamp": "17:18",
+      "timestamp": "15:31",
       "words": 64,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "code_infra",
-      "title": "mission-control vercel",
-      "path": "website/apps/mission-control/vercel.json",
+      "type": "website_route",
+      "title": "gtmos feed.xml route",
+      "path": "website/apps/gtmos/app/feed.xml/route.ts",
       "source": "auto",
-      "timestamp": "23:36",
-      "value_score": 15,
+      "timestamp": "15:31",
+      "words": 108,
+      "value_score": 3,
       "shipped": true
     },
     {
-      "type": "website_route",
-      "title": "mission-control api enhanced-data route",
-      "path": "website/apps/mission-control/app/api/enhanced-data/route.ts",
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/rss/index.ts",
       "source": "auto",
-      "timestamp": "22:52",
-      "words": 239,
+      "timestamp": "15:20",
+      "words": 40,
       "value_score": 3,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "mission-control api nio-status route",
-      "path": "website/apps/mission-control/app/api/nio-status/route.ts",
+      "title": "shawnos feed.xml route",
+      "path": "website/apps/shawnos/app/feed.xml/route.ts",
       "source": "auto",
-      "timestamp": "02:59",
-      "words": 593,
+      "timestamp": "15:29",
+      "words": 57,
       "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 693,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed all.xml route",
+      "path": "website/apps/shawnos/app/feed/all.xml/route.ts",
+      "source": "auto",
+      "timestamp": "15:29",
+      "words": 147,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "15:31",
+      "words": 549,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -404,18 +196,126 @@
       "title": "shawnos feed nio-terminal.xml route",
       "path": "website/apps/shawnos/app/feed/nio-terminal.xml/route.ts",
       "source": "auto",
-      "timestamp": "17:18",
+      "timestamp": "15:29",
       "words": 117,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "website_route",
-      "title": "shawnos feed knowledge.xml route",
-      "path": "website/apps/shawnos/app/feed/knowledge.xml/route.ts",
+      "type": "website_lib",
+      "title": "shared generator",
+      "path": "website/packages/shared/lib/rss/generator.ts",
       "source": "auto",
-      "timestamp": "17:18",
-      "words": 51,
+      "timestamp": "15:20",
+      "words": 191,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared types",
+      "path": "website/packages/shared/lib/rss/types.ts",
+      "source": "auto",
+      "timestamp": "15:20",
+      "words": 63,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 224,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control office page",
+      "path": "website/apps/mission-control/app/office/page.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 71,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control team page",
+      "path": "website/apps/mission-control/app/team/page.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 71,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission-control tsconfig",
+      "path": "website/apps/mission-control/tsconfig.json",
+      "source": "auto",
+      "timestamp": "14:21",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "contentos feed content-wiki.xml route",
+      "path": "website/apps/contentos/app/feed/content-wiki.xml/route.ts",
+      "source": "auto",
+      "timestamp": "15:31",
+      "words": 58,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "15:32",
+      "words": 223,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "15:20",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "15:29",
+      "words": 162,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control layout",
+      "path": "website/apps/mission-control/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 91,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed daily-logs.xml route",
+      "path": "website/apps/shawnos/app/feed/daily-logs.xml/route.ts",
+      "source": "auto",
+      "timestamp": "15:29",
+      "words": 64,
       "value_score": 3,
       "shipped": true
     },
@@ -424,28 +324,58 @@
       "title": "shawnos vitals nio-terminal slug page",
       "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
       "source": "auto",
-      "timestamp": "13:11",
+      "timestamp": "14:21",
       "words": 129,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "contentos layout",
-      "path": "website/apps/contentos/app/layout.tsx",
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
       "source": "auto",
-      "timestamp": "17:18",
-      "words": 223,
+      "timestamp": "14:21",
+      "words": 1063,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control calendar page",
+      "path": "website/apps/mission-control/app/calendar/page.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 72,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "contentos feed.xml route",
-      "path": "website/apps/contentos/app/feed.xml/route.ts",
+      "title": "mission-control api calendar route",
+      "path": "website/apps/mission-control/app/api/calendar/route.ts",
       "source": "auto",
-      "timestamp": "17:18",
-      "words": 96,
+      "timestamp": "14:21",
+      "words": 471,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared content-sources",
+      "path": "website/packages/shared/lib/rss/content-sources.ts",
+      "source": "auto",
+      "timestamp": "15:20",
+      "words": 510,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed knowledge.xml route",
+      "path": "website/apps/shawnos/app/feed/knowledge.xml/route.ts",
+      "source": "auto",
+      "timestamp": "15:29",
+      "words": 51,
       "value_score": 3,
       "shipped": true
     },
@@ -454,9 +384,69 @@
       "title": "globals styles",
       "path": "website/apps/mission-control/app/globals.css",
       "source": "auto",
-      "timestamp": "00:59",
+      "timestamp": "14:21",
       "words": 71,
       "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api team route",
+      "path": "website/apps/mission-control/app/api/team/route.ts",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 335,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed clay-wiki.xml route",
+      "path": "website/apps/gtmos/app/feed/clay-wiki.xml/route.ts",
+      "source": "auto",
+      "timestamp": "15:31",
+      "words": 54,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
+      "source": "auto-mtime",
+      "timestamp": "00:00",
+      "words": 12575,
+      "value_score": 50,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "restart-openclaw",
+      "path": ".claude/skills/restart-openclaw/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "00:00",
+      "words": 273,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "domain-calc",
+      "path": ".cursor/skills/domain-calc/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "16:42",
+      "words": 1070,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "sync-main",
+      "path": ".claude/skills/sync-main/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "00:00",
+      "words": 347,
+      "value_score": 5,
       "shipped": true
     }
   ],
@@ -814,13 +804,6 @@
       },
       {
         "platform": "substack",
-        "title": "recursive drift",
-        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
-        "target_date": "2026-02-19",
-        "words": 1641
-      },
-      {
-        "platform": "substack",
         "title": "start at level one",
         "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
         "target_date": "2026-02-24",
@@ -844,34 +827,67 @@
     "finalized_today": []
   },
   "todos": [],
-  "token_usage": [],
+  "token_usage": [
+    {
+      "session_id": "566b3cd9-d296-4987-bac8-a2e888534262",
+      "input_tokens": 1529,
+      "output_tokens": 669,
+      "cache_read_tokens": 1390366,
+      "cache_write_tokens": 115954,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 41,
+      "logged_at": "00:00",
+      "cost": 4.3328,
+      "context": "claude-code 19:17"
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 103162,
+      "output_tokens": 34388,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "opus",
+      "source": "cursor-db",
+      "messages": 917,
+      "conversations": 9,
+      "logged_at": "00:00",
+      "context": "cursor-ide 14:16-16:42",
+      "cost": 4.1265,
+      "estimated": true
+    }
+  ],
   "stats": {
     "platform_breakdown": {
-      "website": 37,
-      "substack": 1,
-      "other": 8
+      "website": 35,
+      "other": 10
     },
-    "words_today": 12449,
-    "pipeline_words": 40505,
+    "words_today": 23558,
+    "pipeline_words": 38864,
     "finals_count": 0,
-    "first_activity": "00:59",
-    "last_activity": "23:43",
-    "output_score": 276,
+    "first_activity": "00:00",
+    "last_activity": "16:42",
+    "output_score": 303,
     "letter_grade": "A+",
     "score_breakdown": [
-      {
-        "type": "website_page",
-        "title": "mission-control office page",
-        "points": 5
-      },
       {
         "type": "website_page",
         "title": "NioPostPage",
         "points": 5
       },
       {
-        "type": "website_lib",
-        "title": "shared types",
+        "type": "website_page",
+        "title": "VitalsPage",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos vitals nio-terminal page",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api nio-status route",
         "points": 3
       },
       {
@@ -880,39 +896,49 @@
         "points": 3
       },
       {
-        "type": "substack_draft",
-        "title": "recursive drift",
-        "points": 2
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api calendar route",
-        "points": 3
+        "type": "website_page",
+        "title": "gtmos layout",
+        "points": 5
       },
       {
         "type": "code_infra",
-        "title": "mission_control_updater",
+        "title": "mission-control vercel",
         "points": 15
       },
       {
         "type": "website_route",
-        "title": "gtmos feed clay-wiki.xml route",
+        "title": "mission-control api office route",
         "points": 3
       },
       {
-        "type": "website_page",
-        "title": "mission-control team page",
-        "points": 5
+        "type": "code_infra",
+        "title": "mission-control package",
+        "points": 15
+      },
+      {
+        "type": "website_route",
+        "title": "contentos feed.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api tasks route",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared config",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "gtmos feed knowledge.xml route",
+        "points": 3
       },
       {
         "type": "website_route",
         "title": "gtmos feed.xml route",
         "points": 3
-      },
-      {
-        "type": "landing_page",
-        "title": "mission-control home page",
-        "points": 25
       },
       {
         "type": "website_lib",
@@ -921,17 +947,17 @@
       },
       {
         "type": "website_route",
-        "title": "mission-control api office route",
+        "title": "shawnos feed.xml route",
         "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "NioTerminalPage",
+        "points": 5
       },
       {
         "type": "website_route",
-        "title": "mission-control api system-metrics route",
-        "points": 3
-      },
-      {
-        "type": "website_lib",
-        "title": "shared content-sources",
+        "title": "shawnos feed all.xml route",
         "points": 3
       },
       {
@@ -941,33 +967,8 @@
       },
       {
         "type": "website_route",
-        "title": "shawnos feed.xml route",
+        "title": "shawnos feed nio-terminal.xml route",
         "points": 3
-      },
-      {
-        "type": "code_infra",
-        "title": "shared package",
-        "points": 15
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api team route",
-        "points": 3
-      },
-      {
-        "type": "website_route",
-        "title": "shawnos feed all.xml route",
-        "points": 3
-      },
-      {
-        "type": "website_lib",
-        "title": "shared index",
-        "points": 3
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos layout",
-        "points": 5
       },
       {
         "type": "website_lib",
@@ -975,43 +976,23 @@
         "points": 3
       },
       {
-        "type": "website_route",
-        "title": "mission-control api tasks route",
-        "points": 3
-      },
-      {
-        "type": "code_infra",
-        "title": "nio_commit_tracker",
-        "points": 15
-      },
-      {
-        "type": "website_page",
-        "title": "mission-control layout",
-        "points": 5
-      },
-      {
-        "type": "website_route",
-        "title": "contentos feed content-wiki.xml route",
+        "type": "website_lib",
+        "title": "shared types",
         "points": 3
       },
       {
         "type": "landing_page",
-        "title": "shawnos home page",
+        "title": "mission-control home page",
         "points": 25
       },
       {
         "type": "website_page",
-        "title": "VitalsPage",
+        "title": "mission-control office page",
         "points": 5
       },
       {
-        "type": "code_infra",
-        "title": "mission-control package",
-        "points": 15
-      },
-      {
         "type": "website_page",
-        "title": "shawnos vitals nio-terminal page",
+        "title": "mission-control team page",
         "points": 5
       },
       {
@@ -1020,53 +1001,33 @@
         "points": 15
       },
       {
-        "type": "website_page",
-        "title": "NioTerminalPage",
-        "points": 5
+        "type": "website_route",
+        "title": "contentos feed content-wiki.xml route",
+        "points": 3
       },
       {
         "type": "website_page",
-        "title": "mission-control calendar page",
+        "title": "contentos layout",
         "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "shared package",
+        "points": 15
       },
       {
         "type": "website_lib",
-        "title": "shared config",
+        "title": "shared index",
         "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control layout",
+        "points": 5
       },
       {
         "type": "website_route",
         "title": "shawnos feed daily-logs.xml route",
-        "points": 3
-      },
-      {
-        "type": "website_route",
-        "title": "gtmos feed knowledge.xml route",
-        "points": 3
-      },
-      {
-        "type": "code_infra",
-        "title": "mission-control vercel",
-        "points": 15
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api enhanced-data route",
-        "points": 3
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api nio-status route",
-        "points": 3
-      },
-      {
-        "type": "website_route",
-        "title": "shawnos feed nio-terminal.xml route",
-        "points": 3
-      },
-      {
-        "type": "website_route",
-        "title": "shawnos feed knowledge.xml route",
         "points": 3
       },
       {
@@ -1075,61 +1036,98 @@
         "points": 5
       },
       {
+        "type": "landing_page",
+        "title": "shawnos home page",
+        "points": 25
+      },
+      {
         "type": "website_page",
-        "title": "contentos layout",
+        "title": "mission-control calendar page",
         "points": 5
       },
       {
         "type": "website_route",
-        "title": "contentos feed.xml route",
+        "title": "mission-control api calendar route",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared content-sources",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed knowledge.xml route",
         "points": 3
       },
       {
         "type": "website_style",
         "title": "globals styles",
         "points": 2
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api team route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "gtmos feed clay-wiki.xml route",
+        "points": 3
+      },
+      {
+        "type": "system_engine",
+        "title": "rpg_sprites",
+        "points": 50
+      },
+      {
+        "type": "skill_updated",
+        "title": "restart-openclaw",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "domain-calc",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "sync-main",
+        "points": 5
       }
     ],
-    "efficiency_rating": null,
+    "efficiency_rating": 35.82,
     "shipped_count": 45,
-    "draft_count": 1,
-    "ship_rate": 0.98,
-    "agent_cost": 0,
-    "dev_equivalent_cost": 8277.0,
+    "draft_count": 0,
+    "ship_rate": 1.0,
+    "agent_cost": 8.46,
+    "dev_equivalent_cost": 8410.0,
     "dev_equivalent_breakdown": {
-      "code_loc": 4688,
-      "code_hours": 93.76,
-      "code_cost": 7032.0,
-      "content_words": 12449,
-      "content_hours": 24.9,
-      "content_cost": 1245.0,
-      "total": 8277.0
+      "code_loc": 4036,
+      "code_hours": 80.72,
+      "code_cost": 6054.0,
+      "content_words": 23558,
+      "content_hours": 47.12,
+      "content_cost": 2356.0,
+      "total": 8410.0
     },
-    "cost_savings": 8277.0,
-    "roi_multiplier": 0.0,
-    "lines_added": 19323,
-    "lines_removed": 3306,
-    "lines_net": 16017,
-    "code_loc": 4688,
-    "content_loc": 639,
-    "data_loc": 13996
+    "cost_savings": 8401.54,
+    "roi_multiplier": 994.2,
+    "lines_added": 18271,
+    "lines_removed": 3270,
+    "lines_net": 15001,
+    "code_loc": 4036,
+    "content_loc": 307,
+    "data_loc": 13928
   },
   "git_summary": {
-    "commits_today": 29,
+    "commits_today": 17,
     "files_added": [
       "content/images/python-for-gtm.png",
-      "content/linkedin/about-me-alt.md",
-      "content/linkedin/about-me-update.md",
-      "content/substack/drafts/2026-02-19_recursive-drift.md",
       "data/daily-log/2026-02-18.json",
       "data/daily-log/briefings/2026-02-18.md",
       "data/daily-log/briefings/STEVE_REASONING_AGENT_HANDOFF.md",
       "data/daily-log/briefings/steves-recruiting-transcript-2026-02-17.md",
-      "mission-control.md",
-      "scripts/mission_control_updater.py",
-      "scripts/nio_commit_tracker.py",
-      "skills/tier-3-content-ops/discord-intro-template.md",
-      "skills/tier-4-nio-systems/token-tracker/SKILL.md",
       "website/apps/contentos/app/feed.xml/route.ts",
       "website/apps/contentos/app/feed/content-wiki.xml/route.ts",
       "website/apps/gtmos/app/feed.xml/route.ts",
@@ -1138,10 +1136,8 @@
       "website/apps/mission-control/.gitignore",
       "website/apps/mission-control/README.md",
       "website/apps/mission-control/app/api/calendar/route.ts",
-      "website/apps/mission-control/app/api/enhanced-data/route.ts",
       "website/apps/mission-control/app/api/nio-status/route.ts",
       "website/apps/mission-control/app/api/office/route.ts",
-      "website/apps/mission-control/app/api/system-metrics/route.ts",
       "website/apps/mission-control/app/api/tasks/route.ts",
       "website/apps/mission-control/app/api/team/route.ts",
       "website/apps/mission-control/app/calendar/page.tsx",
@@ -1170,8 +1166,6 @@
       "website/apps/mission-control/public/data/progression/avatars/nio-tier-1-idle.gif",
       "website/apps/mission-control/public/data/progression/avatars/nio-tier-1-static.png",
       "website/apps/mission-control/public/data/progression/avatars/nio-tier-2-idle.gif",
-      "website/apps/mission-control/public/metrics.json",
-      "website/apps/mission-control/scripts/generate-metrics.js",
       "website/apps/mission-control/tailwind.config.js",
       "website/apps/mission-control/tsconfig.json",
       "website/apps/mission-control/vercel.json",
@@ -1199,15 +1193,12 @@
       "website/apps/contentos/app/layout.tsx",
       "website/apps/gtmos/app/layout.tsx",
       "website/apps/mission-control/app/api/nio-status/route.ts",
-      "website/apps/mission-control/app/api/system-metrics/route.ts",
       "website/apps/mission-control/app/components/NioStatus.tsx",
       "website/apps/mission-control/app/components/OfficeView.tsx",
-      "website/apps/mission-control/app/components/SystemStatus.tsx",
       "website/apps/mission-control/app/components/TeamManagement.tsx",
       "website/apps/mission-control/app/page.tsx",
       "website/apps/mission-control/next-env.d.ts",
       "website/apps/mission-control/package.json",
-      "website/apps/mission-control/public/metrics.json",
       "website/apps/mission-control/vercel.json",
       "website/apps/shawnos/app/feed.xml/route.ts",
       "website/apps/shawnos/app/layout.tsx",
@@ -1219,11 +1210,11 @@
       "website/packages/shared/pages/NioTerminalPage.tsx",
       "website/packages/shared/pages/VitalsPage.tsx"
     ],
-    "lines_added_count": 19323,
-    "lines_removed_count": 3306,
-    "lines_net": 16017,
-    "code_loc": 4688,
-    "content_loc": 639,
-    "data_loc": 13996
+    "lines_added_count": 18271,
+    "lines_removed_count": 3270,
+    "lines_net": 15001,
+    "code_loc": 4036,
+    "content_loc": 307,
+    "data_loc": 13928
   }
 }

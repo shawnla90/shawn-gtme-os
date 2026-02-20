@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -169,6 +170,7 @@ export default function RootLayout({
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

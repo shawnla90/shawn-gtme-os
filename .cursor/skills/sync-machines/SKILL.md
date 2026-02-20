@@ -20,12 +20,14 @@ Bidirectional rsync of gitignored operational directories between the two dev ma
 | Machine | Hostname | User | Repo Path |
 |---------|----------|------|-----------|
 | Mac Mini | `Shawns-Mac-mini.local` | `shawnos.ai` | `/Users/shawnos.ai/shawn-gtme-os` |
-| MacBook | `Shawns-MacBook-Pro.local` | `shawnos.ai` | `/Users/shawnos.ai/shawn-gtme-os` |
+| MacBook | `Shawns-MacBook-Pro.local` | `shawntenam` | `/Users/shawntenam/Desktop/shawn-gtme-os` |
 
 **Prerequisite**: SSH key auth must be configured between machines (no password prompts). Test with:
 ```bash
+# From MacBook:
 ssh shawnos.ai@Shawns-Mac-mini.local echo "ok"
-ssh shawnos.ai@Shawns-MacBook-Pro.local echo "ok"
+# From Mac Mini:
+ssh shawntenam@Shawns-MacBook-Pro.local echo "ok"
 ```
 
 ## What Gets Synced
@@ -107,6 +109,15 @@ Mode: --dry-run first, then execute
 
 Always do a dry run first to show what would transfer:
 
+Determine the local repo path dynamically based on current machine:
+
+```bash
+# Auto-detect repo root (works on both machines)
+REPO_ROOT="$(cd "$(dirname "$0")/.." 2>/dev/null && pwd)" || REPO_ROOT="$(git rev-parse --show-toplevel)"
+```
+
+Then dry-run:
+
 ```bash
 rsync -avzn --delete \
   --include='clients/***' \
@@ -118,8 +129,8 @@ rsync -avzn --delete \
   --include='.env.*' \
   --include='.notion-sync-state.json' \
   --exclude='*' \
-  /Users/shawnos.ai/shawn-gtme-os/ \
-  shawnos.ai@<REMOTE_HOST>:/Users/shawnos.ai/shawn-gtme-os/
+  "$REPO_ROOT/" \
+  <REMOTE_USER>@<REMOTE_HOST>:<REMOTE_REPO_PATH>/
 ```
 
 The `-n` flag makes this a dry run. Display the output to the user:
@@ -149,8 +160,8 @@ rsync -avz --delete \
   --include='.env.*' \
   --include='.notion-sync-state.json' \
   --exclude='*' \
-  /Users/shawnos.ai/shawn-gtme-os/ \
-  shawnos.ai@<REMOTE_HOST>:/Users/shawnos.ai/shawn-gtme-os/
+  "$REPO_ROOT/" \
+  <REMOTE_USER>@<REMOTE_HOST>:<REMOTE_REPO_PATH>/
 ```
 
 **For pulling FROM remote** (when remote is source), swap the paths:
@@ -166,13 +177,16 @@ rsync -avz --delete \
   --include='.env.*' \
   --include='.notion-sync-state.json' \
   --exclude='*' \
-  shawnos.ai@<REMOTE_HOST>:/Users/shawnos.ai/shawn-gtme-os/ \
-  /Users/shawnos.ai/shawn-gtme-os/
+  <REMOTE_USER>@<REMOTE_HOST>:<REMOTE_REPO_PATH>/ \
+  "$REPO_ROOT/"
 ```
 
-Replace `<REMOTE_HOST>` with:
-- `Shawns-Mac-mini.local` when pushing to Mini or pulling from Mini
-- `Shawns-MacBook-Pro.local` when pushing to MacBook or pulling from MacBook
+**Machine-specific values** (see [docs/MACHINE-SETUP.md](../../docs/MACHINE-SETUP.md)):
+
+| If you're on... | REMOTE_USER | REMOTE_HOST | REMOTE_REPO_PATH |
+|-----------------|-------------|-------------|-------------------|
+| MacBook → Mini | `shawnos.ai` | `Shawns-Mac-mini.local` | `/Users/shawnos.ai/shawn-gtme-os` |
+| Mini → MacBook | `shawntenam` | `Shawns-MacBook-Pro.local` | `/Users/shawntenam/Desktop/shawn-gtme-os` |
 
 ### Step 6: Post-Sync Report
 
@@ -193,8 +207,8 @@ Synced directories:
 
 ## Error Handling
 
-- **SSH connection refused**: "Can't reach `<host>`. Is the machine awake and on the same network? Test with: `ssh shawnos.ai@<host> echo ok`"
-- **Permission denied**: "SSH key auth not set up. Run `ssh-copy-id shawnos.ai@<host>` from this machine first."
+- **SSH connection refused**: "Can't reach `<host>`. Is the machine awake and on the same network? Test with: `ssh <REMOTE_USER>@<host> echo ok`"
+- **Permission denied**: "SSH key auth not set up. Run `ssh-copy-id <REMOTE_USER>@<host>` from this machine first."
 - **Host not found**: "Hostname `<host>` not resolving. Try the machine's IP address instead, or check if both machines are on the same network."
 - **Partial transfer**: rsync is resumable — re-run the same command to pick up where it left off.
 - **Conflict concern**: rsync overwrites the destination. If both machines edited the same file, the source wins. The `--dry-run` step catches this — review deletions carefully.
