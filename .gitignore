@@ -14,6 +14,13 @@ data/daily-log/*.png
 data/daily-log/*.log
 scripts/*.csv
 scripts/*.log
+scripts/enrich_*.py
+scripts/gen_touch2_*.py
+scripts/mx_check.py
+scripts/push_*_to_sheet.py
+scripts/push_remaining_*.py
+scripts/reword_*_commit_msg.sh
+scripts/write_mx_*.py
 qualified_leads_to_process.json
 .claude/blocklist.txt
 data/daily-log/briefings/

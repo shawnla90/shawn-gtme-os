@@ -855,7 +855,7 @@
       "scripts/push_remaining_enrichment.py",
       "scripts/repo_stats.py",
       "scripts/rescore_logs.py",
-      "scripts/reword_elauwit_commit_msg.sh",
+      "scripts/reword_partner_commit_msg.sh",
       "scripts/rpg_sprites.py",
       "scripts/session_cost_tracker.py",
       "scripts/v2/SPEC.md",

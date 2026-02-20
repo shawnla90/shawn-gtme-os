@@ -44,7 +44,7 @@ The most critical piece of automation. Two launchd jobs fire in sequence every n
 ```
 23:58  sync_main.sh      ← Pre-sync: stash, pull --rebase, push (clean repo)
 00:00  daily_cron.sh      ← Main pipeline: scan → score → commit → deploy → validate
-00:00  elauwit automation ← Partner: fetch Instantly replies (parallel, independent)
+00:00  partner-alpha automation ← Partner: fetch Instantly replies (parallel, independent)
 ```
 
 ### Data Flow
@@ -339,11 +339,11 @@ Three-tier marketing voice architecture (v4.0):
 ```
 clients/
 ├── partner/          # GTM engineering (employer work)
-│   ├── elauwit/      # Multifamily WiFi/NaaS (Nasdaq: ELWT)
-│   ├── connext/      # Multi-site enterprise tech deployment
-│   └── exol/         # Warehouse-as-a-Service (GreenBox)
+│   ├── partner-alpha/      # Multifamily WiFi/NaaS (Nasdaq: PALP)
+│   ├── partner-beta/      # Multi-site enterprise tech deployment
+│   └── partner-gamma/         # Warehouse-as-a-Service (Partner-Gamma-Brand)
 └── client/           # Lead Alchemy consulting ($200/hr)
-    └── steves/       # Legacy Recruiting (cold call-first)
+    └── client-one/       # Partner-Recruiting (cold call-first)
 ```
 
 Each entity follows the standard structure: SKILL.md, research/, prompts/, workflows/, resources/.

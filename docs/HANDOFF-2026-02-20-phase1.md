@@ -72,7 +72,7 @@ These are documented in `docs/ARCHITECTURE.md` under "Known Gaps":
 5. **Hardcoded paths in code** — `nio_commit_tracker.py:150`, `mission_control_updater.py:17,28`, `mission-control/app/api/tasks/route.ts:8-9` all hardcode Mac Mini paths.
 6. **No auto-generated skill manifest** — 49 skills with no index.
 7. **Discord placeholders** — Mission Control shows 'connected' for a bot that doesn't exist.
-8. **Elauwit plist timing** — Fires at 00:00 same as daily_cron.sh. Could race on git ops. Consider staggering to 00:15.
+8. **Partner-Alpha plist timing** — Fires at 00:00 same as daily_cron.sh. Could race on git ops. Consider staggering to 00:15.
 
 ---
 

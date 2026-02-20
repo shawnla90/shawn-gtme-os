@@ -68,7 +68,7 @@ HOME = os.path.expanduser("~")
 | `~/.openclaw/` | Workspace memory, session logs |
 | Claude Code terminal | Runs via OpenClaw |
 | `.claude/skills/` (3 skills) | restart-openclaw, sync-main, update-github |
-| Elauwit automation | fetch-replies-automation.py at midnight |
+| Partner-Alpha automation | fetch-replies-automation.py at midnight |
 
 ## LaunchAgent Plists
 
@@ -78,7 +78,7 @@ Each machine needs its own plist because paths differ. The repo contains referen
 |-------|---------------|----------|--------|
 | `scripts/com.shawnos.sync-main.plist` | Mac Mini | 23:58 | sync_main.sh |
 | `scripts/com.shawnos.daily-tracker.plist` | MacBook | 00:00 | daily_cron.sh |
-| `clients/partner/elauwit/workflows/com.elauwit.instantly-replies.plist` | MacBook | 00:00 | fetch-replies-automation.py |
+| `clients/partner/partner-alpha/workflows/com.partner-alpha.instantly-replies.plist` | MacBook | 00:00 | fetch-replies-automation.py |
 
 **Installation**: Copy to `~/Library/LaunchAgents/` and `launchctl load`.
 
