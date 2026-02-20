@@ -125,6 +125,49 @@ const catBadge = (color: string): React.CSSProperties => ({
   whiteSpace: 'nowrap',
 })
 
+const searchWrap: React.CSSProperties = {
+  position: 'relative',
+  marginBottom: '16px',
+}
+
+const searchInput: React.CSSProperties = {
+  width: '100%',
+  padding: '10px 14px 10px 36px',
+  fontSize: '13px',
+  fontFamily: 'inherit',
+  color: 'var(--text-primary)',
+  background: 'var(--canvas-subtle)',
+  border: '1px solid var(--border)',
+  borderRadius: '6px',
+  outline: 'none',
+  transition: 'border-color 0.15s ease',
+  boxSizing: 'border-box',
+}
+
+const searchIcon: React.CSSProperties = {
+  position: 'absolute',
+  left: '12px',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  fontSize: '14px',
+  color: 'var(--text-muted)',
+  pointerEvents: 'none',
+}
+
+const searchClear: React.CSSProperties = {
+  position: 'absolute',
+  right: '10px',
+  top: '50%',
+  transform: 'translateY(-50%)',
+  fontSize: '11px',
+  color: 'var(--text-muted)',
+  background: 'none',
+  border: 'none',
+  cursor: 'pointer',
+  fontFamily: 'inherit',
+  padding: '2px 6px',
+}
+
 const emptyState: React.CSSProperties = {
   padding: '32px',
   textAlign: 'center',
@@ -151,6 +194,7 @@ export default function UpdatesFeed({
   categories: CategoryFilter[]
 }) {
   const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set())
+  const [query, setQuery] = useState('')
 
   const toggleFilter = (key: string) => {
     setActiveFilters((prev) => {
@@ -164,10 +208,13 @@ export default function UpdatesFeed({
     })
   }
 
-  const filtered =
-    activeFilters.size === 0
-      ? entries
-      : entries.filter((e) => activeFilters.has(e.categoryKey))
+  const q = query.toLowerCase().trim()
+
+  const filtered = entries.filter((e) => {
+    if (activeFilters.size > 0 && !activeFilters.has(e.categoryKey)) return false
+    if (q && !e.title.toLowerCase().includes(q) && !e.description.toLowerCase().includes(q) && !e.categoryLabel.toLowerCase().includes(q)) return false
+    return true
+  })
 
   return (
     <>
@@ -190,12 +237,29 @@ export default function UpdatesFeed({
         ))}
       </div>
 
+      {/* Search bar */}
+      <div style={searchWrap}>
+        <span style={searchIcon}>&#8981;</span>
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Search titles, descriptions..."
+          style={searchInput}
+        />
+        {query && (
+          <button onClick={() => setQuery('')} style={searchClear}>
+            clear
+          </button>
+        )}
+      </div>
+
       {/* Result count */}
       <div style={showingCount}>
         {filtered.length} of {entries.length} items
-        {activeFilters.size > 0 && (
+        {(activeFilters.size > 0 || q) && (
           <button
-            onClick={() => setActiveFilters(new Set())}
+            onClick={() => { setActiveFilters(new Set()); setQuery('') }}
             style={{
               marginLeft: '8px',
               fontSize: '11px',
@@ -207,7 +271,7 @@ export default function UpdatesFeed({
               fontFamily: 'inherit',
             }}
           >
-            clear filters
+            clear all
           </button>
         )}
       </div>
@@ -215,7 +279,23 @@ export default function UpdatesFeed({
       {/* Feed list */}
       <div style={feedList}>
         {filtered.length === 0 ? (
-          <div style={emptyState}>No content matches the current filters.</div>
+          <div style={emptyState}>
+            No results for {q ? `"${query}"` : 'the current filters'}.{' '}
+            <button
+              onClick={() => { setActiveFilters(new Set()); setQuery('') }}
+              style={{
+                color: 'var(--accent)',
+                background: 'none',
+                border: 'none',
+                cursor: 'pointer',
+                textDecoration: 'underline',
+                fontFamily: 'inherit',
+                fontSize: '13px',
+              }}
+            >
+              Reset
+            </button>
+          </div>
         ) : (
           filtered.map((entry) => (
             <Link key={entry.id} href={entry.href} style={feedItemStyle}>
