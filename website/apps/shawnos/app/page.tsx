@@ -160,9 +160,6 @@ const divider: React.CSSProperties = {
 /* ── page ────────────────────────────────────────── */
 
 export default function HomePage() {
-  // #region agent log
-  fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'page.tsx:HomePage',message:'HomePage render start',data:{CONTENT_DIR,LOG_DIR,cwd:process.cwd()},hypothesisId:'H5',timestamp:Date.now()})}).catch(()=>{});
-  // #endregion
   const posts = getAllPosts(CONTENT_DIR)
   const latestPosts = posts.slice(0, 3)
   const logs = getAllLogs(LOG_DIR)

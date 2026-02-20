@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-20T13:02:32.886Z",
+  "generated": "2026-02-20T23:28:27.923Z",
   "members": [
     {
       "id": "nio",
@@ -34,8 +34,8 @@
       "model": "qwen2.5:14b",
       "provider": "Ollama (local)",
       "specialization": "High-frequency cron jobs — commit tracking, RSS, mission control, status updates",
-      "status": "active",
-      "currentAssignment": "daily-morning-briefing, Nio Status Updater, nio-terminal Discord post, RSS to Discord announcer, Daily Discord build summary, Nio Commit Tracker, Mission Control Enhanced Updater",
+      "status": "idle",
+      "currentAssignment": "Awaiting cron schedule",
       "skills": [
         "Commit Tracking",
         "RSS Monitoring",
@@ -43,12 +43,12 @@
         "Status Reports"
       ],
       "level": 4,
-      "experience": 250,
+      "experience": 0,
       "performance": {
-        "tasksCompleted": 5,
-        "assignedCrons": 7,
-        "successRate": 71,
-        "avgResponseTime": "93.8s",
+        "tasksCompleted": 0,
+        "assignedCrons": 0,
+        "successRate": 100,
+        "avgResponseTime": "n/a",
         "cost": "FREE (local)"
       }
     },
@@ -59,8 +59,8 @@
       "model": "claude-opus-4-20250514",
       "provider": "Anthropic API",
       "specialization": "Content creation — blog posts, Substack essays, LinkedIn, deep thinking",
-      "status": "active",
-      "currentAssignment": "nio daily blog generator",
+      "status": "standby",
+      "currentAssignment": "On-demand content creation",
       "skills": [
         "Blog Writing",
         "Substack Essays",
@@ -72,9 +72,9 @@
       "experience": 0,
       "performance": {
         "tasksCompleted": 0,
-        "assignedCrons": 1,
-        "successRate": 0,
-        "avgResponseTime": "0.0s",
+        "assignedCrons": 0,
+        "successRate": 100,
+        "avgResponseTime": "n/a",
         "cost": "API pay-per-use (premium)"
       }
     },
@@ -107,10 +107,10 @@
   ],
   "stats": {
     "totalMembers": 4,
-    "activeMembers": 4,
-    "idleMembers": 0,
-    "totalCrons": 8,
-    "totalTasksCompleted": 5,
-    "avgSuccessRate": 68
+    "activeMembers": 2,
+    "idleMembers": 2,
+    "totalCrons": 0,
+    "totalTasksCompleted": 0,
+    "avgSuccessRate": 100
   }
 }

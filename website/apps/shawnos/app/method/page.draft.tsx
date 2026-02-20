@@ -706,7 +706,7 @@ export default function MethodPage() {
           >
             {[
               {
-                href: '/arc',
+                href: '/about/arc',
                 label: 'the arc',
                 desc: 'where this started. plumber, SDR, GTM engineer',
               },

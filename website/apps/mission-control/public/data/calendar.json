@@ -1,146 +1,103 @@
 {
-  "generated": "2026-02-20T13:02:32.884Z",
+  "generated": "2026-02-20T23:28:27.922Z",
   "events": [
     {
-      "id": "cron-next-c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-      "title": "daily-morning-briefing",
-      "type": "cron",
-      "datetime": "2026-02-21T11:00:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-        "duration": "31s"
-      }
-    },
-    {
-      "id": "cron-next-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-      "title": "Daily Discord build summary",
-      "type": "cron",
-      "datetime": "2026-02-21T03:00:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-        "duration": "63s"
-      }
-    },
-    {
-      "id": "cron-next-bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-      "title": "Nio Status Updater",
-      "type": "cron",
-      "datetime": "2026-02-20T13:57:15.286Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-        "duration": "300s"
-      }
-    },
-    {
-      "id": "cron-next-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-      "title": "Mission Control Enhanced Updater",
-      "type": "cron",
-      "datetime": "2026-02-20T13:44:44.735Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-        "duration": "82s"
-      }
-    },
-    {
-      "id": "cron-next-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-      "title": "RSS to Discord announcer",
-      "type": "cron",
-      "datetime": "2026-02-20T13:19:24.506Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-        "duration": "117s"
-      }
-    },
-    {
-      "id": "cron-next-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-      "title": "Nio Commit Tracker",
-      "type": "cron",
-      "datetime": "2026-02-20T13:13:17.084Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-        "duration": "65s"
-      }
-    },
-    {
-      "id": "cron-next-a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
-      "title": "nio-terminal Discord post",
-      "type": "cron",
-      "datetime": "2026-02-20T13:05:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7"
-      }
-    },
-    {
-      "id": "cron-next-28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
-      "title": "nio daily blog generator",
-      "type": "cron",
-      "datetime": "2026-02-20T13:00:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d"
-      }
-    },
-    {
-      "id": "cron-last-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-      "title": "Mission Control Enhanced Updater",
-      "type": "cron",
-      "datetime": "2026-02-20T12:44:44.744Z",
+      "id": "commit-c7807ad",
+      "title": "feat: add agent-routing skill for team vs subagent decision ",
+      "type": "milestone",
+      "datetime": "2026-02-20T17:52:48-05:00",
       "status": "completed",
-      "description": "Last run: ok",
+      "description": "feat: add agent-routing skill for team vs subagent decision framework",
       "metadata": {
-        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-        "duration": "82s"
+        "commitHash": "c7807ad"
       }
     },
     {
-      "id": "cron-last-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-      "title": "Nio Commit Tracker",
-      "type": "cron",
-      "datetime": "2026-02-20T12:43:17.096Z",
+      "id": "commit-c02d988",
+      "title": "feat: add Claude Code Power Features + Agent Teams how-to gu",
+      "type": "milestone",
+      "datetime": "2026-02-20T17:24:16-05:00",
       "status": "completed",
-      "description": "Last run: ok",
+      "description": "feat: add Claude Code Power Features + Agent Teams how-to guides",
       "metadata": {
-        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-        "duration": "65s"
+        "commitHash": "c02d988"
       }
     },
     {
-      "id": "cron-last-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-      "title": "RSS to Discord announcer",
-      "type": "cron",
-      "datetime": "2026-02-20T12:19:24.517Z",
+      "id": "commit-d0ab0f4",
+      "title": "feat: add OAuth vs API cost guide to OpenClaw how-to + updat",
+      "type": "milestone",
+      "datetime": "2026-02-20T16:31:31-05:00",
       "status": "completed",
-      "description": "Last run: ok",
+      "description": "feat: add OAuth vs API cost guide to OpenClaw how-to + updates milestone",
       "metadata": {
-        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-        "duration": "117s"
+        "commitHash": "d0ab0f4"
       }
     },
     {
-      "id": "cron-last-c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-      "title": "daily-morning-briefing",
-      "type": "cron",
-      "datetime": "2026-02-20T11:00:00.016Z",
+      "id": "commit-4f7d6ca",
+      "title": "fix: exclude self-referencing files from IP exposure scan",
+      "type": "deployment",
+      "datetime": "2026-02-20T13:35:47-05:00",
       "status": "completed",
-      "description": "Last run: ok",
+      "description": "fix: exclude self-referencing files from IP exposure scan",
       "metadata": {
-        "cronId": "c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-        "duration": "31s"
+        "commitHash": "4f7d6ca"
+      }
+    },
+    {
+      "id": "commit-50f4d02",
+      "title": "Sanitize repo for public GitHub",
+      "type": "system",
+      "datetime": "2026-02-20T13:33:40-05:00",
+      "status": "completed",
+      "description": "Sanitize repo for public GitHub",
+      "metadata": {
+        "commitHash": "50f4d02"
+      }
+    },
+    {
+      "id": "commit-5a75bb1",
+      "title": "feat: Phase 2 safety enforcement — pre-push hook, Slack aler",
+      "type": "milestone",
+      "datetime": "2026-02-20T13:14:17-05:00",
+      "status": "completed",
+      "description": "feat: Phase 2 safety enforcement — pre-push hook, Slack alerts, skill manifest",
+      "metadata": {
+        "commitHash": "5a75bb1"
+      }
+    },
+    {
+      "id": "commit-2ba4c74",
+      "title": "chore: add .vercel to gitignore",
+      "type": "system",
+      "datetime": "2026-02-20T12:48:13-05:00",
+      "status": "completed",
+      "description": "chore: add .vercel to gitignore",
+      "metadata": {
+        "commitHash": "2ba4c74"
+      }
+    },
+    {
+      "id": "commit-91864aa",
+      "title": "fix: add 2026-02-20 blog post inline for Vercel deployment",
+      "type": "deployment",
+      "datetime": "2026-02-20T11:35:03-05:00",
+      "status": "completed",
+      "description": "fix: add 2026-02-20 blog post inline for Vercel deployment",
+      "metadata": {
+        "commitHash": "91864aa"
+      }
+    },
+    {
+      "id": "commit-69a9695",
+      "title": "feat(nio): add daily blog post for 2026-02-20 - THE AUTOMATI",
+      "type": "system",
+      "datetime": "2026-02-20T08:02:54-05:00",
+      "status": "completed",
+      "description": "feat(nio): add daily blog post for 2026-02-20 - THE AUTOMATION SYMPHONY",
+      "metadata": {
+        "commitHash": "69a9695"
       }
     },
     {
@@ -152,18 +109,6 @@
       "description": "feat: add search bar to updates page content feed",
       "metadata": {
         "commitHash": "3220bbf"
-      }
-    },
-    {
-      "id": "cron-last-bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-      "title": "Nio Status Updater",
-      "type": "cron",
-      "datetime": "2026-02-20T07:57:15.297Z",
-      "status": "failed",
-      "description": "Last run: error",
-      "metadata": {
-        "cronId": "bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-        "duration": "300s"
       }
     },
     {
@@ -211,133 +156,22 @@
       }
     },
     {
-      "id": "commit-777a122",
-      "title": "feat: add multi-model AI optimization how-to guide",
-      "type": "milestone",
-      "datetime": "2026-02-20T01:59:01-05:00",
-      "status": "completed",
-      "description": "feat: add multi-model AI optimization how-to guide",
-      "metadata": {
-        "commitHash": "777a122"
-      }
-    },
-    {
-      "id": "commit-004d926",
-      "title": "fix: security cleanup + build-time data for Vercel deploy",
-      "type": "deployment",
-      "datetime": "2026-02-20T01:49:30-05:00",
-      "status": "completed",
-      "description": "fix: security cleanup + build-time data for Vercel deploy",
-      "metadata": {
-        "commitHash": "004d926"
-      }
-    },
-    {
-      "id": "commit-d6ad7ed",
-      "title": "feat: mission control APIs serve static JSON instead of read",
-      "type": "milestone",
-      "datetime": "2026-02-20T01:38:40-05:00",
-      "status": "completed",
-      "description": "feat: mission control APIs serve static JSON instead of reading local filesystem",
-      "metadata": {
-        "commitHash": "d6ad7ed"
-      }
-    },
-    {
-      "id": "commit-16633c5",
-      "title": "update: fresh metrics with 34 commits and today's milestones",
+      "id": "commit-54dc5df",
+      "title": "chore: daily tracker scan 2026-02-19",
       "type": "system",
-      "datetime": "2026-02-20T01:11:54-05:00",
+      "datetime": "2026-02-20T00:00:03-05:00",
       "status": "completed",
-      "description": "update: fresh metrics with 34 commits and today's milestones",
+      "description": "chore: daily tracker scan 2026-02-19",
       "metadata": {
-        "commitHash": "16633c5"
-      }
-    },
-    {
-      "id": "commit-8419a7e",
-      "title": "feat: team roster shows actual models as squad members",
-      "type": "milestone",
-      "datetime": "2026-02-20T01:10:28-05:00",
-      "status": "completed",
-      "description": "feat: team roster shows actual models as squad members",
-      "metadata": {
-        "commitHash": "8419a7e"
-      }
-    },
-    {
-      "id": "commit-3452bde",
-      "title": "feat: wire mission control to real data sources",
-      "type": "milestone",
-      "datetime": "2026-02-20T01:02:56-05:00",
-      "status": "completed",
-      "description": "feat: wire mission control to real data sources",
-      "metadata": {
-        "commitHash": "3452bde"
-      }
-    },
-    {
-      "id": "commit-03c2d22",
-      "title": "Update Mission Control with enhanced metrics",
-      "type": "system",
-      "datetime": "2026-02-20T00:49:04-05:00",
-      "status": "completed",
-      "description": "Update Mission Control with enhanced metrics",
-      "metadata": {
-        "commitHash": "03c2d22"
-      }
-    },
-    {
-      "id": "commit-1e3264f",
-      "title": "feat: nio.terminal post-one - BLADE TIER ACHIEVED! 🚀",
-      "type": "milestone",
-      "datetime": "2026-02-20T00:45:02-05:00",
-      "status": "completed",
-      "description": "feat: nio.terminal post-one - BLADE TIER ACHIEVED! 🚀",
-      "metadata": {
-        "commitHash": "1e3264f"
-      }
-    },
-    {
-      "id": "commit-ff49ce5",
-      "title": "feat: blog post - Nio achieves Blade Tier at 30k lines!",
-      "type": "milestone",
-      "datetime": "2026-02-20T00:38:54-05:00",
-      "status": "completed",
-      "description": "feat: blog post - Nio achieves Blade Tier at 30k lines!",
-      "metadata": {
-        "commitHash": "ff49ce5"
-      }
-    },
-    {
-      "id": "commit-119d7e6",
-      "title": "update: mission control metrics.json with latest data",
-      "type": "system",
-      "datetime": "2026-02-20T00:16:39-05:00",
-      "status": "completed",
-      "description": "update: mission control metrics.json with latest data",
-      "metadata": {
-        "commitHash": "119d7e6"
-      }
-    },
-    {
-      "id": "cron-last-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-      "title": "Daily Discord build summary",
-      "type": "cron",
-      "datetime": "2026-02-20T03:00:00.017Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-        "duration": "63s"
+        "commitHash": "54dc5df"
       }
     }
   ],
   "stats": {
-    "totalEvents": 29,
-    "completedEvents": 20,
-    "scheduledEvents": 8,
+    "totalEvents": 15,
+    "completedEvents": 15,
+    "scheduledEvents": 0,
     "deploymentsThisWeek": 15,
-    "upcomingCronJobs": 8
+    "upcomingCronJobs": 0
   }
 }

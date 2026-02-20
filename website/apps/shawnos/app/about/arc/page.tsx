@@ -18,12 +18,12 @@ export const metadata: Metadata = {
     'build in public journey',
     'unconventional career path',
   ],
-  alternates: { canonical: 'https://shawnos.ai/arc' },
+  alternates: { canonical: 'https://shawnos.ai/about/arc' },
   openGraph: {
     title: 'The Arc | shawnos.ai',
     description:
       'Plumber. SDR. GTM Engineer. The full arc.',
-    url: 'https://shawnos.ai/arc',
+    url: 'https://shawnos.ai/about/arc',
     images: [{ url: '/og?title=The+Arc&subtitle=Plumber.+SDR.+GTM+Engineer.', width: 1200, height: 630 }],
   },
   twitter: {
@@ -142,7 +142,7 @@ const card: React.CSSProperties = {
 export default function ArcPage() {
   return (
     <>
-    <BreadcrumbSchema items={[{ name: 'The Arc', url: 'https://shawnos.ai/arc' }]} />
+    <BreadcrumbSchema items={[{ name: 'About', url: 'https://shawnos.ai/about' }, { name: 'The Arc', url: 'https://shawnos.ai/about/arc' }]} />
     <div
       style={{
         maxWidth: '680px',

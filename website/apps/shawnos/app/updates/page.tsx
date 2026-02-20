@@ -91,6 +91,13 @@ interface FeatureMilestone {
 const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
     date: '2026-02-20',
+    title: 'Testing AI Features with Recursive Drift',
+    description: 'How-to guide for systematically evaluating new AI/CLI features. The build-test-interrogate-codify loop — Recursive Drift applied to feature velocity.',
+    type: 'launch',
+    link: '/how-to/testing-ai-features-recursive-method',
+  },
+  {
+    date: '2026-02-20',
     title: 'Claude Code Power Features Guide',
     description: 'New how-to covering Memory, Hooks, Custom Skills, Cost Tracking, and Worktrees. The features that turn Claude Code from a chatbot into a persistent AI operating system.',
     type: 'launch',

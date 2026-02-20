@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         destination: 'https://thecontentos.ai/content-wiki/:path*',
         permanent: true,
       },
+      {
+        source: '/arc',
+        destination: '/about/arc',
+        permanent: true,
+      },
     ]
   },
 }

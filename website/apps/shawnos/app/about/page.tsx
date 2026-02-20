@@ -284,7 +284,7 @@ export default function AboutPage() {
           domains exist.
         </p>
         <Link
-          href="/arc"
+          href="/about/arc"
           style={{
             display: 'inline-block',
             padding: '10px 22px',

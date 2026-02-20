@@ -567,7 +567,12 @@ export default function MethodPage() {
           >
             {[
               {
-                href: '/arc',
+                href: '/how-to/testing-ai-features-recursive-method',
+                label: 'the field guide',
+                desc: 'recursive drift applied to testing new AI features',
+              },
+              {
+                href: '/about/arc',
                 label: 'the arc',
                 desc: 'where this started. plumber, SDR, GTM engineer',
               },

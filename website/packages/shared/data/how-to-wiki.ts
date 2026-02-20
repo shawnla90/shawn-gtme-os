@@ -1183,4 +1183,69 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       },
     ],
   },
+
+  {
+    id: 'testing-ai-features-recursive-method',
+    title: 'Testing New AI Features with Recursive Drift',
+    subtitle:
+      'The build-test-interrogate-codify loop for staying current without getting overwhelmed',
+    category: 'cli-tools',
+    description:
+      'A systematic method for evaluating new AI tool features using the Recursive Drift framework. Two-terminal workflow, interrogation-as-debugging, and codifying validated knowledge into reusable skills.',
+    keywords: [
+      'testing AI updates',
+      'claude code new features',
+      'AI CLI updates',
+      'recursive testing method',
+      'AI feature evaluation',
+      'claude code testing workflow',
+      'staying current with AI tools',
+      'AI tool evaluation framework',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'claude-code-power-features',
+      'agent-teams-claude-code',
+      'model-selection-strategy',
+    ],
+    sections: [
+      {
+        heading: 'The Problem: Feature Velocity',
+        type: 'prose',
+        content:
+          'AI tools ship updates faster than you can learn them. Claude Code, Cursor, ChatGPT, Windsurf — they all push new features weekly. Sometimes daily. And every feature could change how you work.\n\nThe natural reaction is one of two extremes. Ignore everything and keep doing what works until it breaks. Or chase every update and never finish anything because you\'re always learning something new.\n\nBoth lose. The first person misses the feature that would have saved them 3 hours a day. The second person never ships because they\'re perpetually onboarding.\n\nYou need a middle path. A systematic way to triage, test, and integrate new features without derailing your actual work.',
+      },
+      {
+        heading: 'The Four-Step Loop',
+        type: 'pattern',
+        content:
+          'Build it. Test it. Interrogate it. Codify it.\n\nThese four steps are Recursive Drift applied to feature evaluation. Each step produces output that feeds the next, and the final step feeds back into your system so the next evaluation starts smarter.\n\nBuild: actually use the feature. Don\'t read the changelog and form an opinion. Open a terminal and try it. Build something real with it, not a toy example. You don\'t know if a feature works until you\'ve shipped something with it.\n\nTest: evaluate what you built. Did it work? Was it faster? Did it introduce problems? This isn\'t "does it run without errors." This is "does it make my existing workflow better or worse." Use a second context to evaluate — a different terminal, a different session, a fresh perspective.\n\nInterrogate: ask the AI about what just happened. What did the feature actually do under the hood? What are the edge cases? What did it get wrong? Copy your build output into a new session and ask it to critique itself. The AI\'s self-assessment reveals limitations the build step missed.\n\nCodify: turn validated knowledge into reusable context. Write a skill. Update a workflow. Add it to your memory files. If the feature is worth using, it\'s worth documenting in a form your future sessions can access automatically.',
+      },
+      {
+        heading: 'The Two-Terminal Method',
+        type: 'formula',
+        content:
+          'Terminal 1 is the builder. Terminal 2 is the evaluator. They never merge.\n\nThe split is the method. When you build and evaluate in the same session, confirmation bias takes over. The AI that built the thing will defend the thing it built. A fresh context has no attachment to the output.\n\nWorkflow:\n1. Terminal 1: start building with the new feature. Give it a real task from your actual work.\n2. Let it run. Don\'t interrupt.\n3. Terminal 2: open a new session. Paste the output from Terminal 1. Ask: "What does this do well? What are the limitations? What would break this?"\n4. Take Terminal 2\'s findings and paste them back into Terminal 1. Ask it to address the concerns.\n5. Repeat until you have a clear picture of what works and what doesn\'t.\n\nThis is the freefall-break-ask loop from Recursive Drift, externalized across two contexts. The builder freefalls. The evaluator breaks. The back-and-forth is the ask state. The separation forces honesty.',
+      },
+      {
+        heading: 'Interrogation as Debugging',
+        type: 'pro-tip',
+        content:
+          'The interrogation step is where most people stop too early. They test the feature, decide "it works" or "it doesn\'t," and move on. That\'s a binary when you need a spectrum.\n\nAsk the AI about what it just built. Not "did this work?" but "what assumptions did you make? what would happen if the input was 10x larger? what did you choose not to do?"\n\nCopy outputs from one session into another. Terminal 2 doesn\'t have Terminal 1\'s context, which is the point. It reads the output cold. It catches things the builder\'s context window buried.\n\nThe pattern: build in context A, evaluate in context B, synthesize in context A. This cross-pollination surfaces edge cases, performance limits, and failure modes you\'d miss in a single-context workflow.\n\nReal example: testing Agent Teams in Claude Code. Terminal 1 built a team, ran tasks, exercised the messaging system. Terminal 2 received the full output and identified that the task was actually too simple for teams — subagents would have been cheaper and faster. That evaluation became the agent-routing skill. The test of the feature produced the guardrail against its misuse.',
+      },
+      {
+        heading: 'From Evaluation to Skill',
+        type: 'pattern',
+        content:
+          'The interrogation phase produces raw knowledge. The codification phase turns it into infrastructure.\n\nWhen you validate that a feature works, you have three options. You can remember it and forget it by next week. You can bookmark the docs and never read them again. Or you can write it into your system — a skill file, a CLAUDE.md rule, a workflow document, a how-to entry.\n\nThe third option is the only one that compounds. Every feature you codify makes your system denser. The next session starts with that knowledge already loaded. You don\'t re-learn. You build on top of what the last session discovered.\n\nThe codification template:\n- What the feature does (one sentence)\n- When to use it vs when not to (the triage output)\n- The workflow that worked (the two-terminal findings)\n- Known limitations (from interrogation)\n- Related skills it connects to\n\nThis template is itself a product of the recursive loop. It was refined across multiple feature evaluations until the pattern stabilized.',
+      },
+      {
+        heading: 'Triage: What Deserves the Full Loop',
+        type: 'anti-pattern',
+        content:
+          'Not every update deserves the full loop. The goal is selective depth, not comprehensive coverage.\n\nRun the full loop when:\n- A feature maps to a known pain point in your workflow. You\'ve been working around something manually. The update might automate it.\n- A feature changes behavior you depend on. Breaking changes need immediate attention. Your existing skills and workflows may stop working.\n- A feature enables something previously impossible. New capabilities expand what you can build. These are the highest-ROI evaluations.\n\nSkip when:\n- The feature is for a use case you don\'t have. Not every update is relevant.\n- The change is cosmetic or minor. UI tweaks rarely affect output.\n- You\'re mid-sprint on a deadline. Schedule the evaluation, don\'t let it interrupt production work.\n\nThe triage takes 5 minutes. Scan the changelog. Match against your active pain points. If nothing maps, move on. If something does, run the loop. Over time you develop an instinct for which updates matter. That instinct is itself a compound skill built from running the loop enough times.',
+      },
+    ],
+  },
 ]

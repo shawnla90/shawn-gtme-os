@@ -43,9 +43,6 @@ export const metadata: Metadata = {
 }
 
 export default function LogIndex() {
-  // #region agent log
-  fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'log/page.tsx:LogIndex',message:'LogIndex render start',data:{LOG_DIR,cwd:process.cwd()},hypothesisId:'H5',timestamp:Date.now()})}).catch(()=>{});
-  // #endregion
   const logs = getAllLogs(LOG_DIR)
   const aggregates = getLogAggregates(LOG_DIR)
   const profile = getRPGProfile(DATA_ROOT)

@@ -223,10 +223,7 @@ function scrubLog(raw: Record<string, unknown>): DailyLog {
  * sorted newest-first.
  */
 export function getLogDates(logDir: string): string[] {
-  // #region agent log
   const exists = fs.existsSync(logDir)
-  fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'logs.ts:getLogDates',message:'getLogDates entry',data:{logDir,exists,cwd:process.cwd()},hypothesisId:'H2',timestamp:Date.now()})}).catch(()=>{});
-  // #endregion
   if (!exists) return []
   return fs
     .readdirSync(logDir)
@@ -242,22 +239,8 @@ export function getLogByDate(date: string, logDir: string): DailyLog | null {
   const fullPath = path.join(logDir, `${date}.json`)
   if (!fs.existsSync(fullPath)) return null
 
-  // #region agent log
-  let raw: Record<string, unknown>
-  try {
-    raw = JSON.parse(fs.readFileSync(fullPath, 'utf8'))
-  } catch (err) {
-    fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'logs.ts:getLogByDate',message:'JSON.parse or readFileSync threw',data:{fullPath,date,error:String(err),stack:(err as Error)?.stack},hypothesisId:'H1',timestamp:Date.now()})}).catch(()=>{});
-    throw err
-  }
-  try {
-    const result = scrubLog(raw)
-    return result
-  } catch (err) {
-    fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'logs.ts:getLogByDate',message:'scrubLog threw',data:{fullPath,date,error:String(err),stack:(err as Error)?.stack},hypothesisId:'H4',timestamp:Date.now()})}).catch(()=>{});
-    throw err
-  }
-  // #endregion
+  const raw = JSON.parse(fs.readFileSync(fullPath, 'utf8')) as Record<string, unknown>
+  return scrubLog(raw)
 }
 
 /* ------------------------------------------------------------------ */
@@ -306,9 +289,6 @@ export function getLogAggregates(logDir: string): LogAggregates {
  * Used on the /log index page.
  */
 export function getAllLogs(logDir: string): DailyLogSummary[] {
-  // #region agent log
-  fetch('http://127.0.0.1:7243/ingest/2ae96287-cf1e-48b7-8e72-bc016034aed8',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'logs.ts:getAllLogs',message:'getAllLogs entry',data:{logDir},hypothesisId:'H5',timestamp:Date.now()})}).catch(()=>{});
-  // #endregion
   const dates = getLogDates(logDir)
   return dates.map((date) => {
     const log = getLogByDate(date, logDir)
