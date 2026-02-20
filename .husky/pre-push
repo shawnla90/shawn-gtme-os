@@ -1,0 +1,119 @@
+#!/usr/bin/env bash
+# ──────────────────────────────────────────────────────────────────────
+# pre-push — Blocklist safety scan before every push
+#
+# Loads terms from .claude/blocklist.txt and scans:
+#   1. Tracked filenames
+#   2. Tracked file contents
+#   3. IP-sensitive patterns (proprietary algorithms)
+#   4. Recent commit messages
+#
+# Blocks the push (exit 1) if ANY violation is found.
+# ──────────────────────────────────────────────────────────────────────
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+BLOCKLIST="$REPO_ROOT/.claude/blocklist.txt"
+VIOLATIONS=0
+
+red()   { printf "\033[1;31m%s\033[0m\n" "$*"; }
+green() { printf "\033[1;32m%s\033[0m\n" "$*"; }
+dim()   { printf "\033[2m%s\033[0m\n" "$*"; }
+
+echo ""
+echo "╔══════════════════════════════════════════════╗"
+echo "║        PRE-PUSH SAFETY SCAN                  ║"
+echo "╚══════════════════════════════════════════════╝"
+echo ""
+
+# ── Load blocklist ─────────────────────────────────────────────────
+if [[ ! -f "$BLOCKLIST" ]]; then
+  red "FATAL: Blocklist not found at $BLOCKLIST"
+  exit 1
+fi
+
+TERMS=()
+while IFS= read -r line; do
+  [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+  TERMS+=("$line")
+done < "$BLOCKLIST"
+
+if [[ ${#TERMS[@]} -eq 0 ]]; then
+  red "FATAL: Blocklist is empty"
+  exit 1
+fi
+
+dim "Loaded ${#TERMS[@]} blocklist terms"
+echo ""
+
+# ── 1. Filename scan ──────────────────────────────────────────────
+echo "── Scanning filenames..."
+for term in "${TERMS[@]}"; do
+  matches=$(git ls-files | grep -i "$term" || true)
+  if [[ -n "$matches" ]]; then
+    red "VIOLATION: Filename matches blocklist term '$term':"
+    echo "$matches" | while read -r f; do echo "  - $f"; done
+    VIOLATIONS=$((VIOLATIONS + 1))
+  fi
+done
+
+# ── 2. Content scan ───────────────────────────────────────────────
+echo "── Scanning file contents..."
+for term in "${TERMS[@]}"; do
+  matches=$(git ls-files -z \
+    | xargs -0 grep -il "$term" 2>/dev/null \
+    | grep -v '\.claude/blocklist\.txt' \
+    | grep -v '\.husky/pre-push' \
+    || true)
+  if [[ -n "$matches" ]]; then
+    red "VIOLATION: Content matches blocklist term '$term' in:"
+    echo "$matches" | while read -r f; do echo "  - $f"; done
+    VIOLATIONS=$((VIOLATIONS + 1))
+  fi
+done
+
+# ── 3. IP exposure scan ──────────────────────────────────────────
+echo "── Scanning for IP-sensitive patterns..."
+IP_PATTERNS=(
+  "def calculate_xp"
+  "def score_output"
+  "SCORING_WEIGHTS"
+  "XP_FORMULA"
+  "# Proprietary algorithm:"
+)
+
+for pattern in "${IP_PATTERNS[@]}"; do
+  matches=$(git ls-files -z \
+    | xargs -0 grep -il "$pattern" 2>/dev/null \
+    || true)
+  if [[ -n "$matches" ]]; then
+    red "VIOLATION: IP-sensitive pattern '$pattern' found in:"
+    echo "$matches" | while read -r f; do echo "  - $f"; done
+    VIOLATIONS=$((VIOLATIONS + 1))
+  fi
+done
+
+# ── 4. Commit message audit ──────────────────────────────────────
+echo "── Scanning recent commit messages..."
+for term in "${TERMS[@]}"; do
+  matches=$(git log --oneline -20 | grep -i "$term" || true)
+  if [[ -n "$matches" ]]; then
+    red "VIOLATION: Commit message contains blocklist term '$term':"
+    echo "$matches" | while read -r c; do echo "  - $c"; done
+    VIOLATIONS=$((VIOLATIONS + 1))
+  fi
+done
+
+# ── Result ────────────────────────────────────────────────────────
+echo ""
+if [[ $VIOLATIONS -gt 0 ]]; then
+  red "╔══════════════════════════════════════════════╗"
+  red "║  PUSH BLOCKED — $VIOLATIONS violation(s) found           ║"
+  red "╚══════════════════════════════════════════════╝"
+  echo ""
+  red "Fix the violations above, then try again."
+  exit 1
+else
+  green "✓ All scans passed — push allowed"
+  echo ""
+  exit 0
+fi

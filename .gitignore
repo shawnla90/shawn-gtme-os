@@ -1,6 +1,7 @@
 .DS_Store
 *.env
 .env.*
+!.env.example
 clients/
 partners/
 .notion-sync-state.json

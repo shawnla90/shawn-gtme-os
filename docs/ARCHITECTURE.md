@@ -5,14 +5,14 @@
 
 ## System Overview
 
-ShawnOS is a personal AI operating system that gamifies daily engineering output with RPG progression mechanics. It spans 2 machines, 4 websites, 49 skills, 17 MCP servers, and a nightly automation pipeline that scans work, scores it, and deploys fresh data.
+ShawnOS is a personal AI operating system that gamifies daily engineering output with RPG progression mechanics. It spans 2 machines, 4 websites, 50 skills, 17 MCP servers, and a nightly automation pipeline that scans work, scores it, and deploys fresh data. A Husky pre-push hook enforces blocklist scans on every `git push`, and Slack notifications alert on cron success/failure.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        SHAWN AI OS                              │
 ├──────────────┬──────────────┬──────────────┬───────────────────┤
 │  Skill Tree  │  Client Ops  │   Websites   │  Data Pipeline    │
-│  (49 skills) │  (3 partners │  (4 Next.js  │  (6 Python + 2   │
+│  (50 skills) │  (3 partners │  (4 Next.js  │  (7 Python + 2   │
 │              │   1 client)  │   apps)      │   shell scripts)  │
 ├──────────────┴──────────────┴──────────────┴───────────────────┤
 │                     2 Machines (git + rsync)                    │
@@ -83,6 +83,11 @@ The most critical piece of automation. Two launchd jobs fire in sequence every n
          │    Writes: data/repo-stats.json
          │    (file counts, LOC, skill count, content inventory)
          │
+         ├─ Step 1f: skill_inventory.py (non-fatal)
+         │    Reads: .cursor/skills/*/SKILL.md, .claude/skills/*/SKILL.md
+         │    Writes: docs/_generated/skill-manifest.md
+         │    (auto-indexed skill table with descriptions and git dates)
+         │
          ├─ Step 2: daily_dashboard.py (non-fatal)
          │    Reads: daily JSON + profile
          │    Writes: data/daily-log/YYYY-MM-DD.png (gitignored)
@@ -92,7 +97,8 @@ The most critical piece of automation. Two launchd jobs fire in sequence every n
          │
          ├─ Step 4: git add + commit
          │    Stages: daily-log/*.json, cost-tracker/*.json,
-         │            profile.json, website-stats.json, repo-stats.json
+         │            profile.json, website-stats.json, repo-stats.json,
+         │            docs/_generated/skill-manifest.md
          │    Message: "chore: daily tracker scan YYYY-MM-DD"
          │
          ├─ Step 5: git push origin HEAD
@@ -113,6 +119,7 @@ The most critical piece of automation. Two launchd jobs fire in sequence every n
 | progression_engine.py | Non-fatal (WARN) | Profile not updated, cron continues |
 | website_scanner.py | Non-fatal (WARN) | Website stats stale, cron continues |
 | repo_stats.py | Non-fatal (WARN) | Repo stats stale, cron continues |
+| skill_inventory.py | Non-fatal (WARN) | Skill manifest stale, cron continues |
 | git push | Retry once | Pulls --rebase then retries |
 | validate_feeds.sh | Non-fatal (WARN) | Logged but cron succeeds |
 
@@ -155,13 +162,29 @@ AvatarBadge, TerminalChrome, TypewriterHero, DailyLogView, Navigation, Footer, K
 
 Validated nightly by `scripts/validate_feeds.sh` (XML well-formedness, item count, HTTP status).
 
+### Blog Posts
+
+Blog posts for `/nio-terminal/[slug]` use **inline content** in `NioPostPage.tsx`. Each post is hardcoded as a return object with `title`, `date`, `timestamp`, and `content` fields — no filesystem dependency, deploys cleanly on Vercel.
+
+Date-based slugs have a fallback to `~/.openclaw/workspace/nio-blog/{slug}.md` for local previews, but inline posts are the production pattern.
+
 ### Deploy Flow
+
+**Platform**: Vercel Pro plan
 
 ```
 git push origin main → Vercel webhook → Build all 3 public sites → Edge deploy
 ```
 
-Mission Control pre-generates `public/metrics.json` at build time via `scripts/generate-metrics.js`.
+Mission Control uses **build-time static JSON** generation. `scripts/generate-metrics.js` runs pre-build and outputs:
+- `public/metrics.json` — Site scores, features, infrastructure data
+- `public/data/tasks.json` — From HEARTBEAT.md + workspace memory
+- `public/data/calendar.json` — From git log + cron jobs
+- `public/data/memories.json` — From workspace memory
+- `public/data/team.json` — From cron jobs.json (model stats)
+- `public/data/status.json` — From nio-status-update.md
+
+All Mission Control API routes read from these static JSONs, ensuring Vercel compatibility (no local filesystem reads at runtime).
 
 ---
 
@@ -184,6 +207,20 @@ data/
 ├── repo-stats.json               # Repository statistics snapshot
 ├── website-stats.json            # Website monorepo scoring
 └── skill-tree/                   # Skill tree snapshots
+
+docs/
+└── _generated/
+    └── skill-manifest.md         # Auto-indexed skill table (50 skills)
+```
+
+### Gitignored Directories
+
+```
+.vercel/                          # Vercel build metadata (generated, not committed)
+node_modules/                     # Package dependencies
+.DS_Store                         # macOS artifacts
+data/daily-log/*.png              # Dashboard images (social preview only)
+clients/                          # Partner/client work (synced via rsync)
 ```
 
 ### Key Schemas
@@ -207,6 +244,7 @@ data/
 | `progression_engine.py` | Aggregate XP, resolve level/class | daily_cron.sh | progression/profile.json |
 | `website_scanner.py` | Score website monorepo | daily_cron.sh | website-stats.json |
 | `repo_stats.py` | Repo file/LOC inventory | daily_cron.sh | repo-stats.json |
+| `skill_inventory.py` | Auto-index all skills from SKILL.md frontmatter | daily_cron.sh | docs/_generated/skill-manifest.md |
 | `daily_dashboard.py` | Render dashboard PNG | daily_cron.sh | daily-log/YYYY-MM-DD.png |
 | `rpg_sprites.py` | Generate avatar GIFs | progression_engine.py | avatars/tier-*.gif |
 | `daily_cron.sh` | Orchestrate nightly pipeline | launchd (00:00) | Commit + push + validate |
@@ -215,6 +253,21 @@ data/
 | `mission_control_updater.py` | Update Mission Control data | NOT integrated | Orphaned |
 | `nio_commit_tracker.py` | Track NIO commit productivity | NOT integrated | Orphaned |
 
+### Cron Model Allocation
+
+| Task | Script | Model | Rationale |
+|------|--------|-------|-----------|
+| Daily scan | daily_scan.py | Opus 4 | Reasoning-heavy: scoring, XP calculation |
+| Cost tracking | session_cost_tracker.py | Sonnet 4 | Simple aggregation, data extraction |
+| Progression engine | progression_engine.py | Opus 4 | Complex tier/class logic |
+| Website scanning | website_scanner.py | Sonnet 4 | Counting, metrics generation |
+| Repo stats | repo_stats.py | Qwen 2.5 (Ollama, local) | Lightweight inventory scan |
+| Dashboard render | daily_dashboard.py | Qwen 2.5 (Ollama, local) | Image generation, deterministic |
+| Feed validation | validate_feeds.sh | None (bash) | HTTP + XML parsing only |
+| Discord posting | Discord cron | Sonnet 4 | Content generation for community |
+
+Expensive models (Opus) reserved for reasoning-heavy tasks. Sonnet handles orchestration. Cheap/free models (Qwen via Ollama on Mac Mini) handle routine work.
+
 ### Orphaned Scripts (need integration or removal)
 
 - `mission_control_updater.py` — Has hardcoded Mac Mini paths, not called by cron
@@ -222,7 +275,7 @@ data/
 
 ---
 
-## Skills (49 total)
+## Skills (50 total)
 
 ### By Category
 
@@ -241,7 +294,9 @@ data/
 ### Skill Locations
 
 - `.cursor/skills/` — 46 skills (Cursor IDE)
-- `.claude/skills/` — 3 skills (Claude Code terminal)
+- `.claude/skills/` — 4 skills (Claude Code terminal)
+
+Full auto-generated index: [`docs/_generated/skill-manifest.md`](../_generated/skill-manifest.md)
 
 ---
 
@@ -315,18 +370,14 @@ Restart procedure: `.claude/skills/restart-openclaw/SKILL.md`
 - **Tier 2 (MIT/Educational)**: UI components, website templates
 - **Tier 3 (Public)**: Blog content, RSS feeds
 
-The `/update-github` skill enforces a blocklist scan before every push to the public repo.
+The `/update-github` skill enforces a blocklist scan before every push to the public repo. A Husky pre-push hook (`.husky/pre-push`) provides an automated safety net — scanning filenames, file contents, IP-sensitive patterns, and commit messages against `.claude/blocklist.txt` on every `git push`.
 
 ---
 
 ## Known Gaps (as of 2026-02-20)
 
-1. **No git hooks** — Safety scans require manual `/update-github` invocation
-2. **No GitHub Actions** — No automated validation of what Mac Mini pushes
-3. **No cron failure alerting** — Silent failures go unnoticed
-4. **Orphaned scripts** — mission_control_updater.py and nio_commit_tracker.py have hardcoded paths and aren't wired into the pipeline
-5. **No auto-generated skill manifest** — 49 skills with no auto-index
-6. **Discord placeholders** — Mission Control reports 'connected' but no bot exists
+1. **No GitHub Actions** — No automated validation of what Mac Mini pushes
+2. **Orphaned scripts** — mission_control_updater.py and nio_commit_tracker.py have hardcoded paths and aren't wired into the pipeline
 
 ---
 
@@ -335,3 +386,5 @@ The `/update-github` skill enforces a blocklist scan before every push to the pu
 | Date | Change |
 |------|--------|
 | 2026-02-20 | Initial creation (Phase 1 audit) |
+| 2026-02-20 | Mini corrections: Vercel Pro, Discord operational, blog inline pattern, model allocation table, build-time JSON pattern, .vercel gitignore |
+| 2026-02-20 | Phase 2 safety enforcement: Husky pre-push hook, Slack cron notifications, skill_inventory.py (50-skill auto-manifest), 3 known gaps closed |

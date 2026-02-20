@@ -16,6 +16,10 @@ REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 LOGFILE="$REPO_ROOT/data/daily-log/cron.log"
 PYTHON="/usr/bin/python3"
 GIT="/usr/bin/git"
+WARN_COUNT=0
+
+# ── Load .env (Slack webhook, etc.) ────────────────────────────────
+[[ -f "$REPO_ROOT/.env" ]] && source "$REPO_ROOT/.env"
 
 # ── Resolve target date ──────────────────────────────────────────────
 # When called by the midnight cron, we scan *yesterday* (the day that
@@ -30,6 +34,30 @@ fi
 log() {
   echo "[$(date '+%Y-%m-%d %H:%M:%S')] $*" | tee -a "$LOGFILE"
 }
+
+# ── Slack notification helper ─────────────────────────────────────────
+send_slack() {
+  local status="$1"
+  local message="$2"
+  if [[ -z "${SLACK_CRON_WEBHOOK:-}" ]]; then
+    return 0
+  fi
+  local hostname
+  hostname="$(hostname -s)"
+  local payload
+  payload=$(printf '{"text":"[%s] %s — %s (%s)"}' "$status" "$TARGET_DATE" "$message" "$hostname")
+  curl -s -X POST -H 'Content-type: application/json' \
+    --data "$payload" "$SLACK_CRON_WEBHOOK" >/dev/null 2>&1 || true
+}
+
+# ── Failure trap ──────────────────────────────────────────────────────
+cleanup() {
+  local exit_code=$?
+  if [[ $exit_code -ne 0 ]]; then
+    send_slack "FAILED" "Daily cron failed (exit $exit_code). Check cron.log."
+  fi
+}
+trap cleanup EXIT
 
 mkdir -p "$(dirname "$LOGFILE")"
 log "═══ Daily Cron Start ═══  target=$TARGET_DATE"
@@ -51,6 +79,7 @@ if $PYTHON scripts/session_cost_tracker.py --date "$TARGET_DATE" >> "$LOGFILE" 2
   log "Cost tracker completed successfully"
 else
   log "WARN: Cost tracker failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
 # ── Step 1c: Run the progression engine ──────────────────────────────
@@ -59,6 +88,7 @@ if $PYTHON scripts/progression_engine.py --skip-avatar >> "$LOGFILE" 2>&1; then
   log "Progression engine completed successfully"
 else
   log "WARN: Progression engine failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
 # ── Step 1d: Run the website scanner (Nio vitals) ────────────────────
@@ -67,6 +97,7 @@ if $PYTHON scripts/website_scanner.py >> "$LOGFILE" 2>&1; then
   log "Website scanner completed successfully"
 else
   log "WARN: Website scanner failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
 # ── Step 1e: Run repo stats ─────────────────────────────────────────
@@ -75,6 +106,16 @@ if $PYTHON scripts/repo_stats.py >> "$LOGFILE" 2>&1; then
   log "Repo stats completed successfully"
 else
   log "WARN: Repo stats failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
+# ── Step 1f: Generate skill inventory ────────────────────────────────
+log "Running skill_inventory.py"
+if $PYTHON scripts/skill_inventory.py >> "$LOGFILE" 2>&1; then
+  log "Skill inventory generated"
+else
+  log "WARN: Skill inventory failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
 # ── Step 2: Generate dashboard image ─────────────────────────────────
@@ -83,6 +124,7 @@ if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; 
   log "Dashboard generated"
 else
   log "WARN: Dashboard generation failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
 # ── Step 3: Check if there's anything new to commit ──────────────────
@@ -100,6 +142,7 @@ $GIT add data/daily-log/cost-tracker/*.json 2>/dev/null || true
 $GIT add data/progression/profile.json 2>/dev/null || true
 $GIT add data/website-stats.json 2>/dev/null || true
 $GIT add data/repo-stats.json 2>/dev/null || true
+$GIT add docs/_generated/skill-manifest.md 2>/dev/null || true
 
 # Check if there are staged changes
 if $GIT diff --cached --quiet; then
@@ -130,6 +173,8 @@ if bash "$REPO_ROOT/scripts/validate_feeds.sh" --quiet >> "$LOGFILE" 2>&1; then
   log "RSS feeds: HEALTHY"
 else
   log "WARN: RSS feed validation found issues (non-fatal, check cron.log)"
+  WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
+send_slack "SUCCESS" "Daily cron completed. ${WARN_COUNT} warning(s)."
 log "═══ Daily Cron End (success) ═══"
