@@ -2,6 +2,7 @@ import TasksBoard from './components/TasksBoard'
 import SystemStatus from './components/SystemStatus'
 import RecentMemories from './components/RecentMemories'
 import NioStatus from './components/NioStatus'
+import SessionStatus from './components/SessionStatus'
 import TodayFocus from './components/TodayFocus'
 import Link from 'next/link'
 import { Users, ArrowRight, Crown, Calendar } from 'lucide-react'
@@ -72,6 +73,7 @@ export default function Dashboard() {
         {/* Side Panel */}
         <div className="space-y-6">
           <NioStatus />
+          <SessionStatus />
           <RecentMemories />
         </div>
       </div>
