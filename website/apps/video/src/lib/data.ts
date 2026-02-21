@@ -95,3 +95,108 @@ export const CHARACTER_CLASSES = [
   { name: 'Alchemist',   color: '#a855f7', avatar: 'class-alchemist-static.png' },
   { name: 'Polymath',    color: '#00ff41', avatar: 'class-polymath-static.png' },
 ] as const;
+
+/* ═══════════════════════════════════════════════════
+   GTM OS Video Data
+   ═══════════════════════════════════════════════════ */
+
+export const GTM_OS_MONTAGE = [
+  {
+    name: 'Clay Wiki',
+    count: CLAY_WIKI_ENTRIES.length,
+    label: 'pages',
+    highlights: ['Enrichment Plays', 'Claygent AI', 'Scoring Logic'],
+  },
+  {
+    name: 'Email Infrastructure',
+    count: countTerms(EMAIL_CATEGORIES),
+    label: 'terms',
+    highlights: ['DNS Records', 'Domain Warming', 'Inbox Rotation'],
+  },
+  {
+    name: 'GTM Playbooks',
+    count: countTerms(GTM_CATEGORIES),
+    label: 'terms',
+    highlights: ['Sequences', 'Signals', 'Personalization'],
+  },
+  {
+    name: 'MCP Servers',
+    count: 17,
+    label: 'servers',
+    highlights: ['Clay MCP', 'Slack MCP', 'HeyReach MCP'],
+  },
+  {
+    name: 'Engineering',
+    count: countTerms(ENGINEERING_CATEGORIES),
+    label: 'terms',
+    highlights: ['Context Window', 'Agent Patterns', 'MCP Protocol'],
+  },
+];
+
+export const GTM_OS_TOTAL = GTM_OS_MONTAGE.reduce((sum, w) => sum + w.count, 0);
+
+export const GTM_OS_CONCEPTS = [
+  { name: 'Clay Enrichment', color: '#3DBFA0', subtitle: 'data intelligence' },
+  { name: 'Cold Email', color: '#4EC373', subtitle: 'outbound engine' },
+  { name: 'Signal Triggers', color: '#D2A53C', subtitle: 'intent detection' },
+  { name: 'MCP Servers', color: '#9B72CF', subtitle: 'tool integration' },
+  { name: 'Pipeline Ops', color: '#3DBFA0', subtitle: 'qualification flow' },
+] as const;
+
+export const GTM_OS_REVEAL = [
+  { value: String(CLAY_WIKI_ENTRIES.length), label: 'Clay pages' },
+  { value: '17', label: 'MCP servers' },
+] as const;
+
+/* ═══════════════════════════════════════════════════
+   Content OS Video Data
+   ═══════════════════════════════════════════════════ */
+
+export const CONTENT_OS_MONTAGE = [
+  {
+    name: 'Platform Playbooks',
+    count: 6,
+    label: 'platforms',
+    highlights: ['LinkedIn', 'X / Twitter', 'Reddit'],
+  },
+  {
+    name: 'Voice & Anti-Slop',
+    count: 6,
+    label: 'frameworks',
+    highlights: ['Tone DNA', 'AI Filters', 'Calibration'],
+  },
+  {
+    name: 'Content Workflows',
+    count: 5,
+    label: 'systems',
+    highlights: ['Recursive Loop', 'Pillars', 'Distribution'],
+  },
+  {
+    name: 'Content Tools',
+    count: 5,
+    label: 'tools',
+    highlights: ['Typefully MCP', 'Image Gen', 'Figma'],
+  },
+  {
+    name: 'How-To Guides',
+    count: HOW_TO_WIKI_ENTRIES.length,
+    label: 'guides',
+    highlights: ['Claude Code', 'Parallel Agents', 'MCP Setup'],
+  },
+];
+
+export const CONTENT_OS_TOTAL =
+  CONTENT_WIKI_ENTRIES.length + HOW_TO_WIKI_ENTRIES.length;
+
+export const CONTENT_OS_PLATFORMS = [
+  { name: 'LinkedIn', color: '#0A66C2', subtitle: 'professional network' },
+  { name: 'X / Twitter', color: '#E7E9EA', subtitle: 'micro-content engine' },
+  { name: 'Reddit', color: '#FF4500', subtitle: 'community growth' },
+  { name: 'Substack', color: '#FF6719', subtitle: 'newsletter empire' },
+  { name: 'YouTube', color: '#FF0000', subtitle: 'long-form authority' },
+] as const;
+
+export const CONTENT_OS_REVEAL = [
+  { value: '6', label: 'platforms' },
+  { value: '1', label: 'voice' },
+] as const;

@@ -1,15 +1,16 @@
 import { Composition } from 'remotion';
 import { LeadMagnet } from './LeadMagnet';
 import { LeadMagnetV2 } from './LeadMagnetV2';
+import { GtmOsVideo } from './GtmOsVideo';
+import { ContentOsVideo } from './ContentOsVideo';
 import { FPS, TOTAL_FRAMES, PRESETS } from './lib/timing';
 import { FPS_V2, TOTAL_FRAMES_V2 } from './lib/timing-v2';
 
 export const Root: React.FC = () => {
   return (
     <>
-      {/* ── V3 Compositions (15s, with audio + transitions + visual integration) ── */}
+      {/* ── V3 Lead Magnet (shawnos.ai) ── */}
 
-      {/* V3 Primary: LinkedIn 4:5 */}
       <Composition
         id="LeadMagnetV3"
         component={LeadMagnetV2}
@@ -19,7 +20,6 @@ export const Root: React.FC = () => {
         height={PRESETS.linkedin.height}
       />
 
-      {/* V3 Secondary: IG Reels / TikTok / Shorts 9:16 */}
       <Composition
         id="LeadMagnetV3Reels"
         component={LeadMagnetV2}
@@ -29,7 +29,6 @@ export const Root: React.FC = () => {
         height={PRESETS.reels.height}
       />
 
-      {/* V3 Tertiary: YouTube / website embed 16:9 */}
       <Composition
         id="LeadMagnetV3Landscape"
         component={LeadMagnetV2}
@@ -39,9 +38,66 @@ export const Root: React.FC = () => {
         height={PRESETS.landscape.height}
       />
 
+      {/* ── GTM OS (thegtmos.ai) ── */}
+
+      <Composition
+        id="GtmOsLandscape"
+        component={GtmOsVideo}
+        durationInFrames={TOTAL_FRAMES_V2}
+        fps={FPS_V2}
+        width={PRESETS.landscape.width}
+        height={PRESETS.landscape.height}
+      />
+
+      <Composition
+        id="GtmOsLinkedIn"
+        component={GtmOsVideo}
+        durationInFrames={TOTAL_FRAMES_V2}
+        fps={FPS_V2}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="GtmOsReels"
+        component={GtmOsVideo}
+        durationInFrames={TOTAL_FRAMES_V2}
+        fps={FPS_V2}
+        width={PRESETS.reels.width}
+        height={PRESETS.reels.height}
+      />
+
+      {/* ── Content OS (thecontentos.ai) ── */}
+
+      <Composition
+        id="ContentOsLandscape"
+        component={ContentOsVideo}
+        durationInFrames={TOTAL_FRAMES_V2}
+        fps={FPS_V2}
+        width={PRESETS.landscape.width}
+        height={PRESETS.landscape.height}
+      />
+
+      <Composition
+        id="ContentOsLinkedIn"
+        component={ContentOsVideo}
+        durationInFrames={TOTAL_FRAMES_V2}
+        fps={FPS_V2}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="ContentOsReels"
+        component={ContentOsVideo}
+        durationInFrames={TOTAL_FRAMES_V2}
+        fps={FPS_V2}
+        width={PRESETS.reels.width}
+        height={PRESETS.reels.height}
+      />
+
       {/* ── V1 Compositions (60s, silent — kept for reference) ── */}
 
-      {/* V1 Primary: LinkedIn 4:5 */}
       <Composition
         id="LeadMagnet"
         component={LeadMagnet}
@@ -51,7 +107,6 @@ export const Root: React.FC = () => {
         height={PRESETS.linkedin.height}
       />
 
-      {/* V1 Secondary: IG Reels / TikTok / Shorts 9:16 */}
       <Composition
         id="LeadMagnetReels"
         component={LeadMagnet}
@@ -61,7 +116,6 @@ export const Root: React.FC = () => {
         height={PRESETS.reels.height}
       />
 
-      {/* V1 Tertiary: YouTube / website embed 16:9 */}
       <Composition
         id="LeadMagnetLandscape"
         component={LeadMagnet}

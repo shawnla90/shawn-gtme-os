@@ -3,6 +3,7 @@ import path from 'path'
 import Link from 'next/link'
 import { getAllLogs } from '@shawnos/shared/lib'
 import { LogCard, TypewriterHero, ScrambleCycler, AvatarBadge } from '@shawnos/shared/components'
+import { VideoShowcase } from './VideoShowcase'
 
 export const metadata: Metadata = {
   title: 'theGTMOS.ai | the GTM operating system',
@@ -288,6 +289,19 @@ export default function HomePage() {
             />
           </div>
         </div>
+      </section>
+
+      <hr style={divider} />
+
+      {/* ── Highlight Reel ── */}
+      <section style={section}>
+        <h2 style={sectionTitle}>
+          <span style={promptChar}>$</span>{' '}
+          <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
+            play ./highlight-reel
+          </span>
+        </h2>
+        <VideoShowcase />
       </section>
 
       <hr style={divider} />
