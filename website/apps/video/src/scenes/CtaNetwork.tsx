@@ -10,7 +10,6 @@ import {
 import { COLORS } from '../lib/tokens';
 import { SITES, STATS } from '../lib/data';
 import { AUDIO, VOLUMES } from '../lib/sounds';
-import { TerminalChrome } from '../components/TerminalChrome';
 import { TypewriterText } from '../components/TypewriterText';
 import { ConnectionLines } from '../components/ConnectionLines';
 import { MatrixRain } from '../components/MatrixRain';
@@ -130,15 +129,14 @@ export const CtaNetwork: React.FC = () => {
               transform,
             }}
           >
-            <TerminalChrome
-              title={site.name}
-              accentColor={site.color}
-              glowColor={site.color}
-              titleBarHeight={s(40)}
-              contentPadding={s(24)}
-              borderRadius={s(8)}
-              trafficLightSize={s(12)}
-              titleFontSize={s(13)}
+            <div
+              style={{
+                border: `1px solid ${site.color}33`,
+                borderRadius: s(8),
+                backgroundColor: COLORS.canvas,
+                padding: s(24),
+                boxShadow: `0 0 40px ${site.color}22, 0 0 80px ${site.color}11`,
+              }}
             >
               <div
                 style={{
@@ -169,7 +167,7 @@ export const CtaNetwork: React.FC = () => {
                   {site.tagline}
                 </div>
               </div>
-            </TerminalChrome>
+            </div>
           </div>
         ))}
 

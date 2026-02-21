@@ -10,7 +10,6 @@ import {
 import { COLORS } from '../lib/tokens';
 import { WIKI_MONTAGE } from '../lib/data';
 import { AUDIO, VOLUMES } from '../lib/sounds';
-import { TerminalChrome } from '../components/TerminalChrome';
 import { TypewriterText } from '../components/TypewriterText';
 import { WikiCard } from '../components/WikiCard';
 import { SceneWrapper } from '../components/SceneWrapper';
@@ -152,15 +151,14 @@ export const BootWikiBlitz: React.FC = () => {
               transformOrigin: 'center center',
             }}
           >
-            <TerminalChrome
-              title="shawnos.ai"
-              accentColor={COLORS.green}
-              glowColor={COLORS.green}
-              titleBarHeight={s(40)}
-              contentPadding={s(24)}
-              borderRadius={s(8)}
-              trafficLightSize={s(12)}
-              titleFontSize={s(13)}
+            <div
+              style={{
+                border: `1px solid ${COLORS.green}33`,
+                borderRadius: s(8),
+                backgroundColor: COLORS.canvas,
+                padding: s(24),
+                boxShadow: `0 0 40px ${COLORS.green}22`,
+              }}
             >
               <div
                 style={{
@@ -218,7 +216,7 @@ export const BootWikiBlitz: React.FC = () => {
                   </div>
                 )}
               </div>
-            </TerminalChrome>
+            </div>
           </div>
         </div>
       )}

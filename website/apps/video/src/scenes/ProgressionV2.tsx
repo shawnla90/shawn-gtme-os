@@ -363,18 +363,62 @@ export const ProgressionV2: React.FC = () => {
 
       {/* White flash overlay */}
       {isFlashPhase && (
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'white',
-            opacity: flashOpacity,
-            zIndex: 50,
-          }}
-        />
+        <>
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'white',
+              opacity: flashOpacity,
+              zIndex: 50,
+            }}
+          />
+          {/* Platform flash — LinkedIn + X */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: s(40),
+              zIndex: 51,
+              opacity: interpolate(frame, [51, 53, 57, 60], [0, 1, 1, 0], {
+                extrapolateLeft: 'clamp',
+                extrapolateRight: 'clamp',
+              }),
+            }}
+          >
+            <div
+              style={{
+                fontSize: s(42),
+                fontWeight: 800,
+                color: '#0A66C2',
+                textShadow: `0 0 ${s(20)}px #0A66C244`,
+                transform: `scale(${spring({ frame: frame - 51, fps, config: { damping: 10, stiffness: 300 } })})`,
+              }}
+            >
+              LinkedIn
+            </div>
+            <div
+              style={{
+                fontSize: s(42),
+                fontWeight: 800,
+                color: '#E7E9EA',
+                textShadow: `0 0 ${s(20)}px #E7E9EA44`,
+                transform: `scale(${spring({ frame: frame - 52, fps, config: { damping: 10, stiffness: 300 } })})`,
+              }}
+            >
+              X
+            </div>
+          </div>
+        </>
       )}
     </SceneWrapper>
   );

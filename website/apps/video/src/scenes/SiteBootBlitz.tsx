@@ -9,7 +9,7 @@ import {
 } from 'remotion';
 import { COLORS } from '../lib/tokens';
 import { AUDIO, VOLUMES } from '../lib/sounds';
-import { TerminalChrome } from '../components/TerminalChrome';
+
 import { TypewriterText } from '../components/TypewriterText';
 import { WikiCard } from '../components/WikiCard';
 import { SceneWrapper } from '../components/SceneWrapper';
@@ -164,15 +164,17 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
               transformOrigin: 'center center',
             }}
           >
-            <TerminalChrome
-              title={terminalTitle}
-              accentColor={accentColor}
-              glowColor={accentColor}
-              titleBarHeight={s(40)}
-              contentPadding={s(24)}
-              borderRadius={s(8)}
-              trafficLightSize={s(12)}
-              titleFontSize={s(13)}
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                borderRadius: s(8),
+                border: `1px solid ${accentColor}33`,
+                overflow: 'hidden',
+                boxShadow: `0 0 40px ${accentColor}22, 0 0 80px ${accentColor}11`,
+                backgroundColor: COLORS.canvas,
+                padding: s(24),
+              }}
             >
               <div
                 style={{
@@ -230,7 +232,7 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
                   </div>
                 )}
               </div>
-            </TerminalChrome>
+            </div>
           </div>
         </div>
       )}

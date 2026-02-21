@@ -135,12 +135,20 @@ export const GTM_OS_MONTAGE = [
 
 export const GTM_OS_TOTAL = GTM_OS_MONTAGE.reduce((sum, w) => sum + w.count, 0);
 
+/** GTM OS Tool Stack — displayed in the video showcase */
+export const GTM_OS_TOOLS = [
+  { name: 'Clay', color: '#3DBFA0', subtitle: 'enrichment engine' },
+  { name: 'HeyReach', color: '#6366F1', subtitle: 'LinkedIn outbound' },
+  { name: 'Instantly', color: '#4EC373', subtitle: 'email sequences' },
+  { name: 'Firecrawl', color: '#FF6B35', subtitle: 'web intelligence' },
+] as const;
+
 export const GTM_OS_CONCEPTS = [
-  { name: 'Clay Enrichment', color: '#3DBFA0', subtitle: 'data intelligence' },
-  { name: 'Cold Email', color: '#4EC373', subtitle: 'outbound engine' },
+  { name: 'Clay', color: '#3DBFA0', subtitle: 'enrichment + scoring' },
+  { name: 'Instantly', color: '#4EC373', subtitle: 'email sequences' },
+  { name: 'HeyReach', color: '#6366F1', subtitle: 'LinkedIn outbound' },
+  { name: 'Firecrawl', color: '#FF6B35', subtitle: 'web scraping MCP' },
   { name: 'Signal Triggers', color: '#D2A53C', subtitle: 'intent detection' },
-  { name: 'MCP Servers', color: '#9B72CF', subtitle: 'tool integration' },
-  { name: 'Pipeline Ops', color: '#3DBFA0', subtitle: 'qualification flow' },
 ] as const;
 
 export const GTM_OS_REVEAL = [
