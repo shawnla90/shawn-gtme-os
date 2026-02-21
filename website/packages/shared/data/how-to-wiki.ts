@@ -567,32 +567,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
         heading: 'Production Knowledge Graph: Nio System (Feb 21, 2026)',
         type: 'pattern',
         content:
-          'This is the actual workspace structure powering the Nio AI ops layer as of February 21, 2026.
-
-## one-screen map
-
-```
-AGENTS.md (boot controller)
-  ├─ SOUL.md (behavior + model routing + blog structure)
-  ├─ IDENTITY.md (role + avatar)
-  ├─ USER.md (human context)
-  ├─ BRAIN.md (session scratchpad)
-  ├─ HEARTBEAT.md (active TODOs + rotating checks)
-  ├─ VOICE.md (delivery constraints)
-  └─ MEMORY.md (long-term memory, main session only)
-
-on-demand context
-  ├─ TOOLS.md (infra map)
-  ├─ PLAYBOOK.md (decision switchboard)
-  ├─ MISSION-CONTROL.md (dashboard pipeline)
-  └─ skills/ (execution workflows)
-```
-
-## boot sequence (runs every session)
-
-AGENTS.md is the boot controller. It loads the core files in order.
-
-1) SOUL.md\n- what it does: core identity, voice DNA, decision rules, model routing\n- what it points to: skills/tier-1-voice-dna/core-voice.md, skills/tier-1-voice-dna/anti-slop.md\n\n2) IDENTITY.md\n- what it does: role definition, personality constraints, avatar references\n\n3) USER.md\n- what it does: who Shawn is, preferences, pet peeves, what success looks like\n- what it points to: CLIENTS.md, partner/client folders\n\n4) BRAIN.md\n- what it does: live scratchpad for the current session\n- rule: if empty, fall back to HEARTBEAT.md\n\n5) HEARTBEAT.md\n- what it does: active TODOs + rotating checks + quiet rules\n- purpose: keep me from inventing work when nothing changed\n\n6) VOICE.md\n- what it does: delivery constraints so output stays in Nio voice\n- source: distilled from tier-1 voice DNA files\n\n7) MEMORY.md (main session only)\n- what it does: long-term, curated decisions and stable facts\n- feeds: daily logs in memory/YYYY-MM-DD.md, promoted over time\n\nboot cost: ~3,125 tokens (about 12% of the context window).\n\n## how the files connect\n\n- SOUL.md sets behavior. VOICE.md enforces delivery.\n- USER.md anchors the human. MEMORY.md anchors continuity.\n- HEARTBEAT.md prevents drift by forcing a check of what is actually active.\n- BRAIN.md holds the temporary state so it does not pollute long-term memory.',
+          'This is the actual workspace structure powering the Nio AI ops layer as of February 21, 2026.\n\n## one-screen map\n\n```\nAGENTS.md (boot controller)\n  ├─ SOUL.md (behavior + model routing + blog structure)\n  ├─ IDENTITY.md (role + avatar)\n  ├─ USER.md (human context)\n  ├─ BRAIN.md (session scratchpad)\n  ├─ HEARTBEAT.md (active TODOs + rotating checks)\n  ├─ VOICE.md (delivery constraints)\n  └─ MEMORY.md (long-term memory, main session only)\n\non-demand context\n  ├─ TOOLS.md (infra map)\n  ├─ PLAYBOOK.md (decision switchboard)\n  ├─ MISSION-CONTROL.md (dashboard pipeline)\n  └─ skills/ (execution workflows)\n```\n\n## boot sequence (runs every session)\n\nAGENTS.md is the boot controller. It loads the core files in order.\n\n1) SOUL.md\n- what it does: core identity, voice DNA, decision rules, model routing\n- what it points to: skills/tier-1-voice-dna/core-voice.md, skills/tier-1-voice-dna/anti-slop.md\n\n2) IDENTITY.md\n- what it does: role definition, personality constraints, avatar references\n\n3) USER.md\n- what it does: who Shawn is, preferences, pet peeves, what success looks like\n- what it points to: CLIENTS.md, partner/client folders\n\n4) BRAIN.md\n- what it does: live scratchpad for the current session\n- rule: if empty, fall back to HEARTBEAT.md\n\n5) HEARTBEAT.md\n- what it does: active TODOs + rotating checks + quiet rules\n- purpose: keep me from inventing work when nothing changed\n\n6) VOICE.md\n- what it does: delivery constraints so output stays in Nio voice\n- source: distilled from tier-1 voice DNA files\n\n7) MEMORY.md (main session only)\n- what it does: long-term, curated decisions and stable facts\n- feeds: daily logs in memory/YYYY-MM-DD.md, promoted over time\n\nboot cost: ~3,125 tokens (about 12% of the context window).\n\n## how the files connect\n\n- SOUL.md sets behavior. VOICE.md enforces delivery.\n- USER.md anchors the human. MEMORY.md anchors continuity.\n- HEARTBEAT.md prevents drift by forcing a check of what is actually active.\n- BRAIN.md holds the temporary state so it does not pollute long-term memory.',
       },
       {
         heading: 'Infrastructure and Pipeline Integration',
