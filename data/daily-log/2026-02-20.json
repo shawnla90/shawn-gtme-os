@@ -1,0 +1,1533 @@
+{
+  "date": "2026-02-20",
+  "generated_at": "2026-02-21T05:00:04.402609+00:00",
+  "version": 3,
+  "accomplishments": [
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v2",
+      "path": "website/packages/shared/lib/rpg-v2.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 235,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos updates page",
+      "path": "website/apps/shawnos/app/updates/page.tsx",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 1995,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "progression_engine_v2",
+      "path": "scripts/progression_engine_v2.py",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 2272,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "video tsconfig",
+      "path": "website/apps/video/tsconfig.json",
+      "source": "auto",
+      "timestamp": "21:18",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control logs page",
+      "path": "website/apps/mission-control/app/logs/page.tsx",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 123,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "shawnos next config",
+      "path": "website/apps/shawnos/next.config.ts",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 59,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "video",
+      "path": ".claude/skills/video/SKILL.md",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 1112,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos method page",
+      "path": "website/apps/shawnos/app/method/page.tsx",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 2131,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals v2-lab page",
+      "path": "website/apps/shawnos/app/vitals/v2-lab/page.tsx",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 2045,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control analytics page",
+      "path": "website/apps/mission-control/app/analytics/page.tsx",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 166,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "sync-machines",
+      "path": ".cursor/skills/sync-machines/SKILL.md",
+      "source": "auto",
+      "timestamp": "17:57",
+      "words": 994,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared crews",
+      "path": "website/packages/shared/lib/crews.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 161,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api team route",
+      "path": "website/apps/mission-control/app/api/team/route.ts",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 172,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 227,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "video package",
+      "path": "website/apps/video/package.json",
+      "source": "auto",
+      "timestamp": "23:28",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/rss/index.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 42,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control progression page",
+      "path": "website/apps/mission-control/app/progression/page.tsx",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 355,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "skill_inventory",
+      "path": "scripts/skill_inventory.py",
+      "source": "auto",
+      "timestamp": "17:57",
+      "words": 395,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v3",
+      "path": "website/packages/shared/lib/rpg-v3.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 260,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared logs",
+      "path": "website/packages/shared/lib/logs.ts",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 905,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "agent-routing",
+      "path": ".claude/skills/agent-routing/SKILL.md",
+      "source": "auto",
+      "timestamp": "17:57",
+      "words": 1127,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos feed updates.xml route",
+      "path": "website/apps/shawnos/app/feed/updates.xml/route.ts",
+      "source": "auto",
+      "timestamp": "02:51",
+      "words": 214,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared posts",
+      "path": "website/packages/shared/lib/posts.ts",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 170,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "morning",
+      "path": ".claude/skills/morning/SKILL.md",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 580,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared generator",
+      "path": "website/packages/shared/lib/rss/generator.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 331,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 1090,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "crew_orchestrator",
+      "path": "scripts/crew_orchestrator.py",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 820,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v2.server",
+      "path": "website/packages/shared/lib/rpg-v2.server.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 167,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "cost_aggregator",
+      "path": "scripts/cost_aggregator.py",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 652,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "23:28",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
+      "source": "auto",
+      "timestamp": "21:18",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal slug page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "11:34",
+      "words": 141,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api enhanced-data route",
+      "path": "website/apps/mission-control/app/api/enhanced-data/route.ts",
+      "source": "auto",
+      "timestamp": "01:37",
+      "words": 163,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "domain-calc",
+      "path": ".cursor/skills/domain-calc/SKILL.md",
+      "source": "auto",
+      "timestamp": "17:57",
+      "words": 1070,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared costs",
+      "path": "website/packages/shared/lib/costs.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 102,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "08:02",
+      "words": 782,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api calendar route",
+      "path": "website/apps/mission-control/app/api/calendar/route.ts",
+      "source": "auto",
+      "timestamp": "01:36",
+      "words": 183,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal post-one page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/post-one/page.tsx",
+      "source": "auto",
+      "timestamp": "00:43",
+      "words": 186,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v3.server",
+      "path": "website/packages/shared/lib/rpg-v3.server.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 167,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api tasks route",
+      "path": "website/apps/mission-control/app/api/tasks/route.ts",
+      "source": "auto",
+      "timestamp": "01:36",
+      "words": 169,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "context-handoff",
+      "path": ".claude/skills/context-handoff/SKILL.md",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 295,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "shawnos package",
+      "path": "website/apps/shawnos/package.json",
+      "source": "auto",
+      "timestamp": "17:57",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "11:34",
+      "words": 1693,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos rpg-preview page",
+      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 667,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "progression_engine_v3",
+      "path": "scripts/progression_engine_v3.py",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 2843,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared config",
+      "path": "website/packages/shared/lib/rss/config.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 174,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos about page",
+      "path": "website/apps/shawnos/app/about/page.tsx",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 801,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos search page",
+      "path": "website/apps/shawnos/app/search/page.tsx",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 369,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control logs date page",
+      "path": "website/apps/mission-control/app/logs/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 202,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 572,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log page",
+      "path": "website/apps/shawnos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "21:18",
+      "words": 365,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared costs.server",
+      "path": "website/packages/shared/lib/costs.server.ts",
+      "source": "auto",
+      "timestamp": "23:28",
+      "words": 207,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control layout",
+      "path": "website/apps/mission-control/app/layout.tsx",
+      "source": "auto-mtime",
+      "timestamp": "21:18",
+      "words": 91,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos about arc page",
+      "path": "website/apps/shawnos/app/about/arc/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "21:18",
+      "words": 1434,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "root package",
+      "path": "website/package.json",
+      "source": "auto-mtime",
+      "timestamp": "21:18",
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "21:18",
+      "words": 224,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control team page",
+      "path": "website/apps/mission-control/app/team/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "21:18",
+      "words": 71,
+      "value_score": 5,
+      "shipped": true
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+        "target_date": "2026-02-14",
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
+      },
+      {
+        "platform": "substack",
+        "title": "build your own os",
+        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1541
+      },
+      {
+        "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1013
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1119
+      }
+    ],
+    "finalized_today": []
+  },
+  "todos": [],
+  "token_usage": [],
+  "stats": {
+    "platform_breakdown": {
+      "website": 37,
+      "other": 20
+    },
+    "words_today": 31771,
+    "pipeline_words": 40505,
+    "finals_count": 0,
+    "first_activity": "00:43",
+    "last_activity": "23:28",
+    "output_score": 429,
+    "letter_grade": "S",
+    "score_breakdown": [
+      {
+        "type": "website_lib",
+        "title": "shared rpg-v2",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos updates page",
+        "points": 5
+      },
+      {
+        "type": "complex_script",
+        "title": "progression_engine_v2",
+        "points": 25
+      },
+      {
+        "type": "code_infra",
+        "title": "video tsconfig",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control logs page",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "shawnos next config",
+        "points": 15
+      },
+      {
+        "type": "skill_updated",
+        "title": "video",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos method page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos vitals v2-lab page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control analytics page",
+        "points": 5
+      },
+      {
+        "type": "skill_updated",
+        "title": "sync-machines",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared crews",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api team route",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "code_infra",
+        "title": "video package",
+        "points": 15
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control progression page",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "skill_inventory",
+        "points": 15
+      },
+      {
+        "type": "website_lib",
+        "title": "shared rpg-v3",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared logs",
+        "points": 3
+      },
+      {
+        "type": "skill_updated",
+        "title": "agent-routing",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "shawnos feed updates.xml route",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared posts",
+        "points": 3
+      },
+      {
+        "type": "skill_updated",
+        "title": "morning",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared generator",
+        "points": 3
+      },
+      {
+        "type": "landing_page",
+        "title": "shawnos home page",
+        "points": 25
+      },
+      {
+        "type": "code_infra",
+        "title": "crew_orchestrator",
+        "points": 15
+      },
+      {
+        "type": "website_lib",
+        "title": "shared rpg-v2.server",
+        "points": 3
+      },
+      {
+        "type": "code_infra",
+        "title": "cost_aggregator",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "shared package",
+        "points": 15
+      },
+      {
+        "type": "code_infra",
+        "title": "mission-control package",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos vitals nio-terminal slug page",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api enhanced-data route",
+        "points": 3
+      },
+      {
+        "type": "skill_updated",
+        "title": "domain-calc",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared costs",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "NioTerminalPage",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api calendar route",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos vitals nio-terminal post-one page",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared rpg-v3.server",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api tasks route",
+        "points": 3
+      },
+      {
+        "type": "skill_updated",
+        "title": "context-handoff",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "shawnos package",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "NioPostPage",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos rpg-preview page",
+        "points": 5
+      },
+      {
+        "type": "complex_script",
+        "title": "progression_engine_v3",
+        "points": 25
+      },
+      {
+        "type": "website_lib",
+        "title": "shared config",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos about page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos search page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control logs date page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos layout",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log page",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared costs.server",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control layout",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos about arc page",
+        "points": 5
+      },
+      {
+        "type": "code_infra",
+        "title": "root package",
+        "points": 15
+      },
+      {
+        "type": "landing_page",
+        "title": "mission-control home page",
+        "points": 25
+      },
+      {
+        "type": "website_page",
+        "title": "mission-control team page",
+        "points": 5
+      }
+    ],
+    "efficiency_rating": null,
+    "shipped_count": 57,
+    "draft_count": 0,
+    "ship_rate": 1.0,
+    "agent_cost": 0,
+    "dev_equivalent_cost": 23659.5,
+    "dev_equivalent_breakdown": {
+      "code_loc": 13655,
+      "code_hours": 273.1,
+      "code_cost": 20482.5,
+      "content_words": 31771,
+      "content_hours": 63.54,
+      "content_cost": 3177.0,
+      "total": 23659.5
+    },
+    "cost_savings": 23659.5,
+    "roi_multiplier": 0.0,
+    "lines_added": 24805,
+    "lines_removed": 6389,
+    "lines_net": 18416,
+    "code_loc": 13655,
+    "content_loc": 2578,
+    "data_loc": 8572
+  },
+  "git_summary": {
+    "commits_today": 35,
+    "files_added": [
+      ".claude/context-handoff.md",
+      ".claude/skills/agent-routing/SKILL.md",
+      ".claude/skills/context-handoff/SKILL.md",
+      ".claude/skills/morning/SKILL.md",
+      ".claude/skills/video/SKILL.md",
+      ".claude/teams/TEAM-CONSTRAINTS.md",
+      ".cursor/skills/domain-calc/SKILL.md",
+      ".env.example",
+      ".husky/pre-push",
+      "content/blog/2026-02-20-nio-blade-tier.md",
+      "content/drafts/2026-02-20_multi-model-ai-optimization.md",
+      "content/linkedin/nio-levelup-post.md",
+      "data/daily-log/2026-02-19.json",
+      "data/daily-log/cost-tracker/2026-02-11.json",
+      "data/daily-log/cost-tracker/2026-02-12.json",
+      "data/daily-log/cost-tracker/2026-02-13.json",
+      "data/daily-log/cost-tracker/2026-02-14.json",
+      "data/daily-log/cost-tracker/2026-02-15.json",
+      "data/daily-log/cost-tracker/2026-02-16.json",
+      "data/daily-log/cost-tracker/2026-02-19.json",
+      "data/progression/profile-v2.json",
+      "data/progression/profile-v3.json",
+      "docs/ARCHITECTURE.md",
+      "docs/HANDOFF-2026-02-20-phase1.md",
+      "docs/HANDOFF-phase2.md",
+      "docs/MACHINE-SETUP.md",
+      "docs/_generated/skill-manifest.md",
+      "package-lock.json",
+      "package.json",
+      "public/metrics.json",
+      "scripts/cost_aggregator.py",
+      "scripts/crew_orchestrator.py",
+      "scripts/progression_engine_v2.py",
+      "scripts/progression_engine_v3.py",
+      "scripts/skill_inventory.py",
+      "scripts/validate_feeds.sh",
+      "website/apps/contentos/public/llms.txt",
+      "website/apps/contentos/public/robots.txt",
+      "website/apps/gtmos/public/llms.txt",
+      "website/apps/gtmos/public/robots.txt",
+      "website/apps/mission-control/app/analytics/loading.tsx",
+      "website/apps/mission-control/app/analytics/page.tsx",
+      "website/apps/mission-control/app/components/AvatarUnlockCeremony.tsx",
+      "website/apps/mission-control/app/components/CostAnalyticsDashboard.tsx",
+      "website/apps/mission-control/app/components/CostHeatmap.tsx",
+      "website/apps/mission-control/app/components/CrewDashboard.tsx",
+      "website/apps/mission-control/app/components/CrewDetail.tsx",
+      "website/apps/mission-control/app/components/ErrorBoundary.tsx",
+      "website/apps/mission-control/app/components/LogDetail.tsx",
+      "website/apps/mission-control/app/components/LogIndex.tsx",
+      "website/apps/mission-control/app/components/LogTokenPanel.tsx",
+      "website/apps/mission-control/app/components/ProgressionChainViz.tsx",
+      "website/apps/mission-control/app/components/ProgressionClassBreakdown.tsx",
+      "website/apps/mission-control/app/components/ProgressionGradeTable.tsx",
+      "website/apps/mission-control/app/components/ProgressionMilestones.tsx",
+      "website/apps/mission-control/app/components/ProgressionProfile.tsx",
+      "website/apps/mission-control/app/components/ProgressionTokenEfficiency.tsx",
+      "website/apps/mission-control/app/components/ProgressionXPGraph.tsx",
+      "website/apps/mission-control/app/loading.tsx",
+      "website/apps/mission-control/app/logs/[date]/page.tsx",
+      "website/apps/mission-control/app/logs/loading.tsx",
+      "website/apps/mission-control/app/logs/page.tsx",
+      "website/apps/mission-control/app/progression/loading.tsx",
+      "website/apps/mission-control/app/progression/page.tsx",
+      "website/apps/mission-control/public/data/calendar.json",
+      "website/apps/mission-control/public/data/memories.json",
+      "website/apps/mission-control/public/data/progression/avatars/nio-tier-3-idle.gif",
+      "website/apps/mission-control/public/data/progression/avatars/nio-tier-3-static.png",
+      "website/apps/mission-control/public/data/progression/nio.json",
+      "website/apps/mission-control/public/data/status.json",
+      "website/apps/mission-control/public/data/tasks.json",
+      "website/apps/mission-control/public/data/team.json",
+      "website/apps/mission-control/public/progression/avatars/tier-2-action.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-2-idle.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-2-static.png",
+      "website/apps/mission-control/public/progression/avatars/tier-3-action-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-3-action.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-3-idle-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-3-idle.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-3-static.png",
+      "website/apps/mission-control/public/progression/avatars/tier-4-action-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-4-action.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-4-idle-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-4-idle.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-4-static.png",
+      "website/apps/mission-control/public/progression/avatars/tier-5-action-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-5-action.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-5-idle-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-5-idle.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-5-static.png",
+      "website/apps/mission-control/public/progression/avatars/tier-6-action-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-6-action.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-6-idle-advanced.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-6-idle.gif",
+      "website/apps/mission-control/public/progression/avatars/tier-6-static.png",
+      "website/apps/mission-control/scripts/generate-dashboard-data.js",
+      "website/apps/shawnos/.gitignore",
+      "website/apps/shawnos/app/VideoShowcase.tsx",
+      "website/apps/shawnos/app/feed/updates.xml/route.ts",
+      "website/apps/shawnos/app/search/SearchContent.tsx",
+      "website/apps/shawnos/app/search/page.tsx",
+      "website/apps/shawnos/app/updates/UpdatesFeed.tsx",
+      "website/apps/shawnos/app/updates/page.tsx",
+      "website/apps/shawnos/app/vitals/nio-terminal/post-one/page.tsx",
+      "website/apps/shawnos/app/vitals/v2-lab/page.tsx",
+      "website/apps/shawnos/public/llms.txt",
+      "website/apps/shawnos/public/video/lead-magnet.mp4",
+      "website/apps/video/.gitignore",
+      "website/apps/video/package.json",
+      "website/apps/video/public/audio/bgm-loop.wav",
+      "website/apps/video/public/audio/boot-beep.wav",
+      "website/apps/video/public/audio/card-flip.wav",
+      "website/apps/video/public/audio/key-click.wav",
+      "website/apps/video/public/audio/level-up.wav",
+      "website/apps/video/public/audio/resolve.wav",
+      "website/apps/video/public/audio/whoosh.wav",
+      "website/apps/video/public/progression/avatars/class-alchemist-static.png",
+      "website/apps/video/public/progression/avatars/class-builder-static.png",
+      "website/apps/video/public/progression/avatars/class-polymath-static.png",
+      "website/apps/video/public/progression/avatars/class-scribe-static.png",
+      "website/apps/video/public/progression/avatars/class-strategist-static.png",
+      "website/apps/video/public/progression/avatars/tier-3-static.png",
+      "website/apps/video/public/progression/avatars/tier-4-static.png",
+      "website/apps/video/public/progression/avatars/tier-5-static.png",
+      "website/apps/video/public/progression/avatars/tier-6-static.png",
+      "website/apps/video/remotion.config.ts",
+      "website/apps/video/scripts/generate-sounds.ts",
+      "website/apps/video/src/LeadMagnet.tsx",
+      "website/apps/video/src/LeadMagnetV2.tsx",
+      "website/apps/video/src/Root.tsx",
+      "website/apps/video/src/components/AnimatedCounter.tsx",
+      "website/apps/video/src/components/AvatarSprite.tsx",
+      "website/apps/video/src/components/ConnectionLines.tsx",
+      "website/apps/video/src/components/MatrixRain.tsx",
+      "website/apps/video/src/components/ParticleField.tsx",
+      "website/apps/video/src/components/ScanlineOverlay.tsx",
+      "website/apps/video/src/components/SceneWrapper.tsx",
+      "website/apps/video/src/components/TerminalChrome.tsx",
+      "website/apps/video/src/components/TypewriterText.tsx",
+      "website/apps/video/src/components/WikiCard.tsx",
+      "website/apps/video/src/index.ts",
+      "website/apps/video/src/lib/data.ts",
+      "website/apps/video/src/lib/sounds.ts",
+      "website/apps/video/src/lib/timing-v2.ts",
+      "website/apps/video/src/lib/timing.ts",
+      "website/apps/video/src/lib/tokens.ts",
+      "website/apps/video/src/lib/useScale.ts",
+      "website/apps/video/src/scenes/BootSequence.tsx",
+      "website/apps/video/src/scenes/BootWikiBlitz.tsx",
+      "website/apps/video/src/scenes/CTA.tsx",
+      "website/apps/video/src/scenes/CtaNetwork.tsx",
+      "website/apps/video/src/scenes/Hook.tsx",
+      "website/apps/video/src/scenes/HookV2.tsx",
+      "website/apps/video/src/scenes/NetworkReveal.tsx",
+      "website/apps/video/src/scenes/Progression.tsx",
+      "website/apps/video/src/scenes/ProgressionV2.tsx",
+      "website/apps/video/src/scenes/WikiMontage.tsx",
+      "website/apps/video/tsconfig.json",
+      "website/packages/shared/lib/costs.server.ts",
+      "website/packages/shared/lib/costs.ts",
+      "website/packages/shared/lib/crews.ts",
+      "website/packages/shared/lib/rpg-v2.server.ts",
+      "website/packages/shared/lib/rpg-v2.ts",
+      "website/packages/shared/lib/rpg-v3.server.ts",
+      "website/packages/shared/lib/rpg-v3.ts"
+    ],
+    "files_modified": [
+      ".claude/context-handoff.md",
+      ".claude/skills/morning/SKILL.md",
+      ".claude/skills/video/SKILL.md",
+      ".cursor/skills/sync-machines/SKILL.md",
+      ".gitignore",
+      ".husky/pre-push",
+      "data/daily-log/2026-02-17.json",
+      "data/daily-log/2026-02-19.json",
+      "data/progression/profile.json",
+      "data/website-stats.json",
+      "docs/ARCHITECTURE.md",
+      "docs/HANDOFF-2026-02-20-phase1.md",
+      "docs/MACHINE-SETUP.md",
+      "public/metrics.json",
+      "scripts/com.shawnos.sync-main.plist",
+      "scripts/daily_cron.sh",
+      "website/apps/mission-control/app/api/calendar/route.ts",
+      "website/apps/mission-control/app/api/enhanced-data/route.ts",
+      "website/apps/mission-control/app/api/tasks/route.ts",
+      "website/apps/mission-control/app/api/team/route.ts",
+      "website/apps/mission-control/app/components/CalendarView.tsx",
+      "website/apps/mission-control/app/components/NioStatus.tsx",
+      "website/apps/mission-control/app/components/OfficeView.tsx",
+      "website/apps/mission-control/app/components/RecentMemories.tsx",
+      "website/apps/mission-control/app/components/TasksBoard.tsx",
+      "website/apps/mission-control/app/components/TeamManagement.tsx",
+      "website/apps/mission-control/package.json",
+      "website/apps/mission-control/public/data/calendar.json",
+      "website/apps/mission-control/public/data/memories.json",
+      "website/apps/mission-control/public/data/progression/nio.json",
+      "website/apps/mission-control/public/data/status.json",
+      "website/apps/mission-control/public/data/tasks.json",
+      "website/apps/mission-control/public/data/team.json",
+      "website/apps/mission-control/public/metrics.json",
+      "website/apps/mission-control/scripts/generate-dashboard-data.js",
+      "website/apps/shawnos/app/VideoShowcase.tsx",
+      "website/apps/shawnos/app/about/page.tsx",
+      "website/apps/shawnos/app/feed/updates.xml/route.ts",
+      "website/apps/shawnos/app/layout.tsx",
+      "website/apps/shawnos/app/log/page.tsx",
+      "website/apps/shawnos/app/method/page.draft.tsx",
+      "website/apps/shawnos/app/method/page.tsx",
+      "website/apps/shawnos/app/page.tsx",
+      "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "website/apps/shawnos/app/updates/UpdatesFeed.tsx",
+      "website/apps/shawnos/app/updates/page.tsx",
+      "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
+      "website/apps/shawnos/next.config.ts",
+      "website/apps/shawnos/package.json",
+      "website/apps/shawnos/public/robots.txt",
+      "website/apps/shawnos/public/sitemap-0.xml",
+      "website/apps/video/package.json",
+      "website/apps/video/src/LeadMagnetV2.tsx",
+      "website/apps/video/src/Root.tsx",
+      "website/apps/video/src/components/MatrixRain.tsx",
+      "website/apps/video/src/components/TerminalChrome.tsx",
+      "website/apps/video/src/components/WikiCard.tsx",
+      "website/apps/video/src/lib/data.ts",
+      "website/apps/video/src/lib/timing-v2.ts",
+      "website/apps/video/src/scenes/BootWikiBlitz.tsx",
+      "website/apps/video/src/scenes/CtaNetwork.tsx",
+      "website/apps/video/src/scenes/HookV2.tsx",
+      "website/apps/video/src/scenes/ProgressionV2.tsx",
+      "website/package-lock.json",
+      "website/packages/shared/data/context-wiki.ts",
+      "website/packages/shared/data/engineering-terms.ts",
+      "website/packages/shared/data/how-to-wiki.ts",
+      "website/packages/shared/lib/index.ts",
+      "website/packages/shared/lib/logs.ts",
+      "website/packages/shared/lib/posts.ts",
+      "website/packages/shared/lib/rss/config.ts",
+      "website/packages/shared/lib/rss/generator.ts",
+      "website/packages/shared/lib/rss/index.ts",
+      "website/packages/shared/package.json",
+      "website/packages/shared/pages/NioPostPage.tsx",
+      "website/packages/shared/pages/NioTerminalPage.tsx"
+    ],
+    "lines_added_count": 24805,
+    "lines_removed_count": 6389,
+    "lines_net": 18416,
+    "code_loc": 13655,
+    "content_loc": 2578,
+    "data_loc": 8572
+  }
+}
