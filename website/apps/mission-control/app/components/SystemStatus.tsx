@@ -87,12 +87,15 @@ export default function SystemStatus() {
       }
     } catch (error) {
       console.error('Failed to fetch system metrics:', error)
+      // Set degraded status on fetch error
+      setMetrics(prev => ({ ...prev, status: 'degraded' as 'degraded' }))
     }
   }
 
   useEffect(() => {
     fetchMetrics()
-    const interval = setInterval(fetchMetrics, 5 * 60 * 1000)
+    // Reduced refresh interval for more real-time updates
+    const interval = setInterval(fetchMetrics, 2 * 60 * 1000) // Every 2 minutes
     return () => clearInterval(interval)
   }, [])
 
@@ -187,6 +190,9 @@ export default function SystemStatus() {
           <div className="flex items-center gap-2">
             <span className="text-gray-300">OpenClaw:</span>
             <span className="text-green-400 font-mono">{openclaw?.version || 'loading...'}</span>
+            {openclaw && (
+              <div className="status-indicator status-active ml-1" title="OpenClaw Active"></div>
+            )}
           </div>
 
           <div className="flex items-center gap-2">
@@ -203,11 +209,18 @@ export default function SystemStatus() {
                   }`
                 : '...'}
             </span>
+            {openclaw?.activeSession?.percentUsed != null && openclaw.activeSession.percentUsed > 80 && (
+              <span className="text-yellow-400 text-xs">HIGH</span>
+            )}
           </div>
         </div>
 
-        <div className="mt-2 text-xs text-gray-500">
-          status snapshot refreshes every 2 hours. last updated {openclaw?.updatedAt ? new Date(openclaw.updatedAt).toLocaleString() : '...'}
+        <div className="mt-2 flex items-center justify-between text-xs text-gray-500">
+          <span>status snapshot refreshes every 2 hours. last updated {openclaw?.updatedAt ? new Date(openclaw.updatedAt).toLocaleString() : '...'}</span>
+          <div className="flex items-center gap-2">
+            <div className="status-indicator status-active"></div>
+            <span className="text-green-500">LIVE</span>
+          </div>
         </div>
       </div>
 
@@ -233,10 +246,42 @@ export default function SystemStatus() {
       <div className="mt-4 pt-4 border-t border-green-800">
         <div className="flex items-center gap-2 mb-2">
           <AlertTriangle className="w-4 h-4 text-yellow-400" />
-          <h3 className="text-sm font-semibold text-green-300">Incident Feed</h3>
+          <h3 className="text-sm font-semibold text-green-300">System Health</h3>
         </div>
+        
+        {/* System Health Summary */}
+        <div className="mb-3 p-2 bg-gray-800 rounded text-xs">
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-gray-300">Overall System Health:</span>
+            <span className={`font-semibold ${
+              incidents.length === 0 ? 'text-green-400' : 
+              incidents.filter(i => i.severity === 'red').length > 0 ? 'text-red-400' : 'text-yellow-400'
+            }`}>
+              {incidents.length === 0 ? 'OPTIMAL' : 
+               incidents.filter(i => i.severity === 'red').length > 0 ? 'DEGRADED' : 'WARNING'}
+            </span>
+          </div>
+          
+          <div className="grid grid-cols-3 gap-2 text-center">
+            <div>
+              <div className="text-green-400 font-bold">{cronHealth.filter(j => j.status === 'green').length}</div>
+              <div className="text-gray-500">Healthy</div>
+            </div>
+            <div>
+              <div className="text-yellow-400 font-bold">{cronHealth.filter(j => j.status === 'yellow').length}</div>
+              <div className="text-gray-500">Warning</div>
+            </div>
+            <div>
+              <div className="text-red-400 font-bold">{cronHealth.filter(j => j.status === 'red').length}</div>
+              <div className="text-gray-500">Critical</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Incidents */}
+        <h4 className="text-xs font-semibold text-green-300 mb-2">Active Incidents</h4>
         {incidents.length === 0 ? (
-          <p className="text-xs text-green-400">No active incidents</p>
+          <p className="text-xs text-green-400">✅ No active incidents - all systems operational</p>
         ) : (
           <ul className="space-y-1">
             {incidents.map((incident) => (

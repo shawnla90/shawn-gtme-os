@@ -1,27 +1,24 @@
 {
-  "generated": "2026-02-21T13:02:46.780Z",
+  "generated": "2026-02-21T21:07:51.931Z",
   "memories": [
     {
-      "id": "mem-2026-02-21-Mission Co",
-      "title": "Mission Control Update - 1:50 AM",
-      "content": "**Enhanced Data Generated:**\n- System Status: All optimal (website, RSS, Discord bot, OpenClaw active)\n- Development Metrics: 31 commits, 8,718 insertions, S-grade performance\n- Calendar: 3 days plann",
+      "id": "mem-2026-02-21-Daily Blog",
+      "title": "Daily Blog Post Created (8:00 AM)",
+      "content": "- **Title:** \"THE COMPOUND EFFECT\"\n- **Theme:** Explored the massive line count jump (30k → 263k) \n- **Key insight:** Started counting holistically. all markdown, docs, memory\n- **Tone:** Direct, ques",
       "date": "2026-02-21",
       "type": "daily",
       "tags": [
-        "development",
-        "integration"
+        "general"
       ]
     },
     {
-      "id": "mem-2026-02-21-Housekeepi",
-      "title": "Housekeeping pass - 1:55 AM",
-      "content": "- Verified cron scheduler is enabled with 12 jobs.\n- Fixed Mission Control Enhanced Updater cron model from blocked local model to anthropic/claude-sonnet-4-20250514.\n- Forced a validation run of Miss",
+      "id": "mem-2026-02-21-Technical ",
+      "title": "Technical Notes",
+      "content": "- Blog markdown saved to: `/Users/shawnos.ai/.openclaw/workspace/nio-blog/2026-02-21.md`\n- Updated `NioTerminalPage.tsx` to include new post in listing\n- Updated dynamic route to include today's date\n",
       "date": "2026-02-21",
       "type": "daily",
       "tags": [
-        "automation",
-        "bugfix",
-        "dashboard"
+        "content"
       ]
     },
     {
@@ -165,7 +162,7 @@
     {
       "id": "lt-Model Rout",
       "title": "Model Routing Rules",
-      "content": "- **Default (chat/tasks):** Sonnet (`anthropic/claude-sonnet-4-20250514`)\n- **Content creation:** ALWAYS use Opus (`anthropic/claude-opus-4-20250514`) — blog posts, Substack, LinkedIn, newsletters, ni",
+      "content": "- **Default (chat/tasks):** GPT-5.2 (`openai-codex/gpt-5.2`) — free via OAuth, chat-optimized. Fallback: Sonnet.\n- **Content creation:** ALWAYS use Opus (`anthropic/claude-opus-4-20250514`) — blog pos",
       "date": "persistent",
       "type": "long-term",
       "tags": [

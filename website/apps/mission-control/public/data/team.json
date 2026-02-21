@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-21T13:02:46.781Z",
+  "generated": "2026-02-21T21:07:51.931Z",
   "members": [
     {
       "id": "nio",
@@ -22,8 +22,8 @@
       "performance": {
         "tasksCompleted": 2,
         "assignedCrons": 3,
-        "successRate": 100,
-        "avgResponseTime": "26.1s",
+        "successRate": 67,
+        "avgResponseTime": "24.5s",
         "cost": "API pay-per-use"
       }
     },
@@ -74,7 +74,7 @@
         "tasksCompleted": 1,
         "assignedCrons": 1,
         "successRate": 100,
-        "avgResponseTime": "204.2s",
+        "avgResponseTime": "225.2s",
         "cost": "API pay-per-use (premium)"
       }
     },
@@ -111,6 +111,6 @@
     "idleMembers": 1,
     "totalCrons": 4,
     "totalTasksCompleted": 3,
-    "avgSuccessRate": 100
+    "avgSuccessRate": 92
   }
 }
