@@ -564,40 +564,262 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
     ],
     sections: [
       {
-        heading: 'Production Knowledge Graph: Nio System (Feb 21, 2026)',
+        heading: 'The Knowledge Graph (Visual)',
         type: 'pattern',
         content:
-          'This is the actual workspace structure powering the Nio AI ops layer as of February 21, 2026.\n\n## one-screen map\n\n```\nAGENTS.md (boot controller)\n  ├─ SOUL.md (behavior + model routing + blog structure)\n  ├─ IDENTITY.md (role + avatar)\n  ├─ USER.md (human context)\n  ├─ BRAIN.md (session scratchpad)\n  ├─ HEARTBEAT.md (active TODOs + rotating checks)\n  ├─ VOICE.md (delivery constraints)\n  └─ MEMORY.md (long-term memory, main session only)\n\non-demand context\n  ├─ TOOLS.md (infra map)\n  ├─ PLAYBOOK.md (decision switchboard)\n  ├─ MISSION-CONTROL.md (dashboard pipeline)\n  └─ skills/ (execution workflows)\n```\n\n## boot sequence (runs every session)\n\nAGENTS.md is the boot controller. It loads the core files in order.\n\n1) SOUL.md\n- what it does: core identity, voice DNA, decision rules, model routing\n- what it points to: skills/tier-1-voice-dna/core-voice.md, skills/tier-1-voice-dna/anti-slop.md\n\n2) IDENTITY.md\n- what it does: role definition, personality constraints, avatar references\n\n3) USER.md\n- what it does: who Shawn is, preferences, pet peeves, what success looks like\n- what it points to: CLIENTS.md, partner/client folders\n\n4) BRAIN.md\n- what it does: live scratchpad for the current session\n- rule: if empty, fall back to HEARTBEAT.md\n\n5) HEARTBEAT.md\n- what it does: active TODOs + rotating checks + quiet rules\n- purpose: keep me from inventing work when nothing changed\n\n6) VOICE.md\n- what it does: delivery constraints so output stays in Nio voice\n- source: distilled from tier-1 voice DNA files\n\n7) MEMORY.md (main session only)\n- what it does: long-term, curated decisions and stable facts\n- feeds: daily logs in memory/YYYY-MM-DD.md, promoted over time\n\nboot cost: ~3,125 tokens (about 12% of the context window).\n\n## how the files connect\n\n- SOUL.md sets behavior. VOICE.md enforces delivery.\n- USER.md anchors the human. MEMORY.md anchors continuity.\n- HEARTBEAT.md prevents drift by forcing a check of what is actually active.\n- BRAIN.md holds the temporary state so it does not pollute long-term memory.',
+          '<p style="margin-bottom:16px">This is the actual relationship map between every file in the Nio workspace as of February 21, 2026. Every arrow is a real reference. Every box is a real file.</p>' +
+          '<pre style="font-family:var(--font-mono);font-size:12px;line-height:1.5;color:#e2e8f0;background:#0d1117;border:1px solid #30363d;border-radius:8px;padding:24px;overflow-x:auto;white-space:pre">' +
+          '                              ┌─────────────┐\n' +
+          '                              │  AGENTS.md  │ ← BOOT CONTROLLER\n' +
+          '                              │ (boot seq)  │\n' +
+          '                              └──────┬──────┘\n' +
+          '                                     │\n' +
+          '                    boot order: 1→2→3→4→5→6 (+7 main only)\n' +
+          '                                     │\n' +
+          '          ┌──────────┬───────────┬────┼───┬──────────┬──────────┐\n' +
+          '          ▼          ▼           ▼    ▼   ▼          ▼          ▼\n' +
+          '     ┌─────────┐ ┌──────────┐ ┌────────┐ ┌─────────┐ ┌────────┐ ┌─────────┐\n' +
+          '     │ SOUL.md │ │IDENTITY  │ │USER.md │ │BRAIN.md │ │HEART   │ │VOICE.md │\n' +
+          '     │  (1)    │ │  .md (2) │ │  (3)   │ │  (4)    │ │BEAT(5) │ │  (6)    │\n' +
+          '     └────┬────┘ └──────────┘ └───┬────┘ └────┬────┘ └────────┘ └────┬────┘\n' +
+          '          │                       │            │                      │\n' +
+          '          │ voice DNA,            │            │ "if empty,           │ distilled from\n' +
+          '          │ model routing,        │ refs       │  read HEARTBEAT"     │\n' +
+          '          │ blog structure        ▼            │                      ▼\n' +
+          '          │                 ┌──────────┐       │        ┌──────────────────────┐\n' +
+          '          │                 │CLIENTS.md│       │        │skills/tier-1-voice-  │\n' +
+          '          │                 └─────┬────┘       │        │dna/core-voice.md     │\n' +
+          '          │                       │            │        │    + anti-slop.md     │\n' +
+          '          ▼                       ▼            │        └──────────────────────┘\n' +
+          '  ┌───────────────┐    5 client SKILL.md       │\n' +
+          '  │skills/tier-1  │    directories              │              ┌──────────┐\n' +
+          '  │  voice-dna/   │◄───────────────────────────────────────── │MEMORY.md │\n' +
+          '  │skills/tier-3  │                             │              │  (7)     │\n' +
+          '  │  pillars/     │                             │              │main only │\n' +
+          '  └───────────────┘                             │              └──────────┘\n' +
+          '                                                │\n' +
+          '          ┌─────────────────────────────────────┘\n' +
+          '          │\n' +
+          '          │          ┌──────────────┐         ┌──────────────┐\n' +
+          '          │          │  TOOLS.md    │────────▶│MISSION-      │\n' +
+          '          │          │ (infra map)  │         │CONTROL.md    │\n' +
+          '          │          └──────┬───────┘         └──────┬───────┘\n' +
+          '          │                 │                        │\n' +
+          '          │     ┌───────────┼────────────┐           │ THE PIPELINE\n' +
+          '          │     ▼           ▼            ▼           ▼\n' +
+          '          │  Discord    WhatsApp     9 MCP      ┌────────────────────────┐\n' +
+          '          │  channel    +1347..      tools      │ 4 scripts (in order): │\n' +
+          '          │  1474..                              │ 1. updater.py → /tmp/ │\n' +
+          '          │                                     │ 2. gen-dashboard.js   │\n' +
+          '          │                                     │ 3. gen-metrics.js     │\n' +
+          '          │                                     │ 4. validate.js        │\n' +
+          '          │                                     └─────────┬──────────────┘\n' +
+          '          │                                               │\n' +
+          '          │                                               ▼\n' +
+          '          │                                     6 output files:\n' +
+          '          │                                     metrics.json, tasks,\n' +
+          '          │                                     calendar, memories,\n' +
+          '          │                                     team, status\n' +
+          '          │\n' +
+          '          ▼\n' +
+          '   ┌──────────────┐\n' +
+          '   │ PLAYBOOK.md  │──────────────────────────────────────────┐\n' +
+          '   │  (decisions) │                                          │\n' +
+          '   └──────┬───────┘                                          │\n' +
+          '          │ references:                                      │\n' +
+          '          ├──▶ SOUL.md (blog structure)                      │\n' +
+          '          ├──▶ VOICE.md (anti-slop)                          │\n' +
+          '          ├──▶ MISSION-CONTROL.md (pipeline)                 │\n' +
+          '          │                                                  │\n' +
+          '          ▼                                                  ▼\n' +
+          '   ┌──────────────────────────────────────────────────────────────┐\n' +
+          '   │                    skills/ (4 SKILL.md)                      │\n' +
+          '   ├─────────────────┬────────────────┬──────────────┬───────────┤\n' +
+          '   │ blog-pipeline/  │ website-ops/   │content-      │ cron-ops/ │\n' +
+          '   │                 │                │pipeline/     │           │\n' +
+          '   │ refs:           │ refs:          │ refs:        │ refs:     │\n' +
+          '   │ • SOUL.md       │ • MISSION-     │ • VOICE.md   │ • jobs   │\n' +
+          '   │ • VOICE.md      │   CONTROL.md   │ • Typefully  │   .json  │\n' +
+          '   │ • Discord ch    │ • 5 apps       │ • Substack   │ • 3 on   │\n' +
+          '   │ • nio-blog/     │ • shared pkg   │ • pillars/   │ • 8 off  │\n' +
+          '   └─────────────────┴────────────────┴──────────────┴───────────┘\n' +
+          '</pre>' +
+          '<p style="margin-top:16px;font-size:13px;color:#8b949e"><strong style="color:#e2e8f0">Boot flow:</strong> AGENTS loads 7 files (~3,125 tokens) → Nio has full identity, context, voice. TOOLS, PLAYBOOK, MISSION-CONTROL, CLIENTS, and skills are loaded on-demand when needed for a specific task.</p>',
+      },
+      {
+        heading: 'Boot Sequence: What Loads and Why',
+        type: 'code',
+        content:
+          '<p style="margin-bottom:16px">AGENTS.md is the boot controller. It loads 7 files in order, every session. Total cost: ~3,125 tokens (about 12% of the context window).</p>' +
+          '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px">' +
+          '<tr style="border-bottom:1px solid #30363d">' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">Order</th>' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">File</th>' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">Purpose</th>' +
+          '<th style="text-align:right;padding:8px 12px;color:#e2e8f0">Tokens</th>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">1</td>' +
+          '<td style="padding:8px 12px;color:#e2e8f0">SOUL.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Core identity, voice DNA, decision rules, model routing, blog structure</td>' +
+          '<td style="padding:8px 12px;color:#8b949e;text-align:right">~952</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">2</td>' +
+          '<td style="padding:8px 12px;color:#e2e8f0">IDENTITY.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Role definition, personality constraints, avatar paths</td>' +
+          '<td style="padding:8px 12px;color:#8b949e;text-align:right">~161</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">3</td>' +
+          '<td style="padding:8px 12px;color:#e2e8f0">USER.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Who Shawn is, preferences, pet peeves, system overview</td>' +
+          '<td style="padding:8px 12px;color:#8b949e;text-align:right">~283</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">4</td>' +
+          '<td style="padding:8px 12px;color:#e2e8f0">BRAIN.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Live session scratchpad. If empty, fall back to HEARTBEAT.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e;text-align:right">~44</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">5</td>' +
+          '<td style="padding:8px 12px;color:#e2e8f0">HEARTBEAT.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Active TODOs, rotating checks, quiet rules</td>' +
+          '<td style="padding:8px 12px;color:#8b949e;text-align:right">~244</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">6</td>' +
+          '<td style="padding:8px 12px;color:#e2e8f0">VOICE.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Delivery constraints distilled from tier-1 voice DNA</td>' +
+          '<td style="padding:8px 12px;color:#8b949e;text-align:right">~380</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#facc15">7</td>' +
+          '<td style="padding:8px 12px;color:#e2e8f0">MEMORY.md</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Long-term curated memory. <em>Main session only</em></td>' +
+          '<td style="padding:8px 12px;color:#8b949e;text-align:right">~774</td>' +
+          '</tr>' +
+          '</table>' +
+          '<p style="font-size:13px;color:#8b949e"><strong style="color:#e2e8f0">How the files connect:</strong> SOUL.md sets behavior. VOICE.md enforces delivery. USER.md anchors the human. MEMORY.md anchors continuity. HEARTBEAT.md prevents drift by forcing a check of what is actually active. BRAIN.md holds temporary state so it does not pollute long-term memory.</p>',
       },
       {
         heading: 'Infrastructure and Pipeline Integration',
         type: 'code',
         content:
-          'This workspace is not just notes. It is wired into real infrastructure.\n\n## infra map\n\nTOOLS.md is the index of where everything lives (paths, scripts, channels, repo map).\n\nMISSION-CONTROL.md is the dashboard pipeline reference.\n\n## messaging + tools\n\n- Discord: channel 1474174694025330919\n- WhatsApp: +13474520467\n- MCP tools: Typefully, GitHub, Slack (x2), Firecrawl, Reddit, HeyReach, ElevenLabs, Substack, Browserbase\n\n## mission control data pipeline (the actual build)\n\nthese scripts run in order and generate the dashboard data:\n1. updater.py → writes /tmp/mission_control_enhanced.json\n2. generate-dashboard-data.js → writes 5 files to public/data/\n3. generate-metrics.js → writes public/metrics.json\n4. validate-mission-control-data.js → validates all outputs\n\noutput artifacts (Mission Control reads these):\n- metrics.json\n- tasks\n- calendar\n- memories\n- team\n- status',
+          '<p style="margin-bottom:16px">This workspace is not just notes. It is wired into real infrastructure.</p>' +
+          '<h4 style="font-size:14px;color:#e2e8f0;margin:20px 0 8px">Messaging Channels</h4>' +
+          '<ul style="margin:0 0 16px 20px;color:#8b949e">' +
+          '<li><strong style="color:#e2e8f0">Discord:</strong> channel 1474174694025330919 (nio-terminal)</li>' +
+          '<li><strong style="color:#e2e8f0">WhatsApp:</strong> +13474520467</li>' +
+          '</ul>' +
+          '<h4 style="font-size:14px;color:#e2e8f0;margin:20px 0 8px">MCP Tools (9 via OpenClaw)</h4>' +
+          '<p style="color:#8b949e;margin-bottom:16px">Typefully (social scheduling) · GitHub (repo/PR ops) · Slack x2 (lead-alchemy + revpartners) · Firecrawl (web scraping) · Reddit (browsing) · HeyReach (outreach) · ElevenLabs (TTS) · Substack (newsletters) · Browserbase (browser automation)</p>' +
+          '<h4 style="font-size:14px;color:#e2e8f0;margin:20px 0 8px">Mission Control Data Pipeline</h4>' +
+          '<p style="color:#8b949e;margin-bottom:8px">These 4 scripts run in sequence. All 4 must complete. Skipping any step produces incomplete data.</p>' +
+          '<ol style="margin:0 0 16px 20px;color:#8b949e">' +
+          '<li><code style="color:#79c0ff">mission_control_updater.py</code> → writes /tmp/mission_control_enhanced.json</li>' +
+          '<li><code style="color:#79c0ff">generate-dashboard-data.js</code> → writes 5 files to public/data/</li>' +
+          '<li><code style="color:#79c0ff">generate-metrics.js</code> → writes public/metrics.json</li>' +
+          '<li><code style="color:#79c0ff">validate-mission-control-data.js</code> → validates all 6 output files</li>' +
+          '</ol>' +
+          '<h4 style="font-size:14px;color:#e2e8f0;margin:20px 0 8px">Output Artifacts (6 files Mission Control reads)</h4>' +
+          '<p style="color:#8b949e">metrics.json · tasks.json · calendar.json · memories.json · team.json · status.json</p>',
       },
       {
         heading: 'Skills Architecture and Decision Flow',
         type: 'pattern',
         content:
-          'Skills are the execution layer. Playbooks are the decision layer.\n\n## decision layer\n\nPLAYBOOK.md is the switchboard. It points to the rules that matter for the current task:\n- SOUL.md for blog structure and behavior constraints\n- VOICE.md for anti-slop enforcement\n- MISSION-CONTROL.md for the dashboard pipeline\n\n## execution layer\n\nskills/ is split by workflow. each workflow has a SKILL.md that references the right context files.\n\nexamples:\n- blog-pipeline/\n  - refs: SOUL.md, VOICE.md, Discord channel, nio-blog/\n- website-ops/\n  - refs: MISSION-CONTROL.md, the 5 apps, shared packages\n- content-pipeline/\n  - refs: VOICE.md, Typefully, Substack, pillars/\n- cron-ops/\n  - refs: ~/.openclaw/cron/jobs.json, enabled vs disabled jobs\n\ncleanup note: older one-off workflow files got deleted (WORKFLOW_AUTO.md, mission-control-status.md). the system is converging toward fewer, sharper sources of truth.',
+          '<p style="margin-bottom:16px">Skills are the execution layer. Playbooks are the decision layer. They connect through shared references.</p>' +
+          '<h4 style="font-size:14px;color:#e2e8f0;margin:20px 0 8px">Decision Layer: PLAYBOOK.md</h4>' +
+          '<p style="color:#8b949e;margin-bottom:8px">The switchboard. It routes to the rules that matter for the current task:</p>' +
+          '<ul style="margin:0 0 16px 20px;color:#8b949e">' +
+          '<li>SOUL.md for blog structure and behavior constraints</li>' +
+          '<li>VOICE.md for anti-slop enforcement</li>' +
+          '<li>MISSION-CONTROL.md for the dashboard pipeline</li>' +
+          '</ul>' +
+          '<h4 style="font-size:14px;color:#e2e8f0;margin:20px 0 8px">Execution Layer: 4 Workspace Skills</h4>' +
+          '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px">' +
+          '<tr style="border-bottom:1px solid #30363d">' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">Skill</th>' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">References</th>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">blog-pipeline/</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">SOUL.md, VOICE.md, Discord channel, nio-blog/</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">website-ops/</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">MISSION-CONTROL.md, 5 apps, shared packages</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#4ade80">content-pipeline/</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">VOICE.md, Typefully, Substack, content pillars</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#60a5fa">cron-ops/</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">jobs.json (3 enabled, 8 disabled)</td>' +
+          '</tr>' +
+          '</table>' +
+          '<p style="font-size:13px;color:#8b949e"><strong style="color:#e2e8f0">Cleanup note:</strong> older one-off workflow files got deleted (WORKFLOW_AUTO.md, mission-control-status.md). The system converges toward fewer, sharper sources of truth.</p>',
       },
       {
-        heading: 'Boot Sequence and Token Management',
+        heading: 'Model Routing and Fallback Chain',
         type: 'pro-tip',
         content:
-          'The boot sequence is carefully optimized for context efficiency:\n\n**Boot Flow**: AGENTS.md loads 7 files (~3,125 tokens) → Nio has full identity, context, voice, and knows where everything else lives.\n\n**On-Demand Loading**: TOOLS.md, PLAYBOOK.md, MISSION-CONTROL.md, CLIENTS.md, and skills are loaded only when Nio needs them for a specific task.\n\n**Context Window Strategy**: The core 7 files consume about 12% of a typical context window, leaving 88% for actual work. Files like BRAIN.md ("if empty, read HEARTBEAT") prevent empty context consumption.\n\n**Memory Hierarchy**: MEMORY.md (main session only) contains curated long-term knowledge. Daily memory files in memory/YYYY-MM-DD.md capture session-specific learnings that get promoted when validated.',
+          '<p style="margin-bottom:16px">Different tasks route to different models based on cost and capability. If the primary model hits a rate limit or billing cap, the system automatically falls through the chain.</p>' +
+          '<table style="width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px">' +
+          '<tr style="border-bottom:1px solid #30363d">' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">Task</th>' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">Model</th>' +
+          '<th style="text-align:left;padding:8px 12px;color:#e2e8f0">Why</th>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#8b949e">Chat / quick ops</td>' +
+          '<td style="padding:8px 12px;color:#4ade80">GPT-5.2</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Free via OAuth</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#8b949e">Content creation</td>' +
+          '<td style="padding:8px 12px;color:#c084fc">Opus</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Non-negotiable for quality</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#8b949e">High-freq crons</td>' +
+          '<td style="padding:8px 12px;color:#facc15">Qwen 2.5 14B (local)</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Free, runs on Ollama</td>' +
+          '</tr>' +
+          '<tr style="border-bottom:1px solid #21262d">' +
+          '<td style="padding:8px 12px;color:#8b949e">Code / reasoning</td>' +
+          '<td style="padding:8px 12px;color:#60a5fa">Sonnet → Opus</td>' +
+          '<td style="padding:8px 12px;color:#8b949e">Cost-efficient escalation</td>' +
+          '</tr>' +
+          '</table>' +
+          '<h4 style="font-size:14px;color:#e2e8f0;margin:20px 0 8px">Automatic Fallback Chain</h4>' +
+          '<p style="color:#8b949e;margin-bottom:8px">If the primary model fails (rate limit, billing, timeout), OpenClaw walks down the chain automatically:</p>' +
+          '<ol style="margin:0 0 16px 20px;color:#8b949e">' +
+          '<li><strong style="color:#c084fc">Opus</strong> (primary, Anthropic API)</li>' +
+          '<li><strong style="color:#60a5fa">Sonnet</strong> (same provider, cheaper tier)</li>' +
+          '<li><strong style="color:#4ade80">GPT-5.3-codex</strong> (free OAuth, strongest OpenAI reasoning)</li>' +
+          '<li><strong style="color:#4ade80">GPT-5.2</strong> (free OAuth, general-purpose)</li>' +
+          '<li><strong style="color:#facc15">Gemini 3 Pro</strong> (Google API, last resort)</li>' +
+          '</ol>' +
+          '<p style="font-size:13px;color:#8b949e">No more dead stops mid-task. The agent keeps working regardless of which provider is available.</p>',
       },
       {
         heading: 'Using This as Your Template',
         type: 'pattern',
         content:
-          'To implement this structure in your workspace:\n\n1. **Start with AGENTS.md**: Define your boot sequence and file loading order\n2. **Create the core 7 files**: SOUL, IDENTITY, USER, BRAIN, HEARTBEAT, VOICE, MEMORY\n3. **Set up infrastructure files**: TOOLS, PLAYBOOK, MISSION-CONTROL, CLIENTS\n4. **Build skills incrementally**: Start with 3-4 skills, grow to your operational needs\n5. **Establish the pipeline**: Connect to your tools (Discord, messaging, dashboards)\n6. **Implement memory systems**: Daily logs that promote to long-term memory\n\nThe key insight: this isn\'t just file organization. It\'s an operational system where each file serves a specific function in the AI\'s decision-making process. The structure creates institutional memory that compounds over time.',
-      },
-      {
-        heading: 'Memory and Heartbeat Integration for Continuous Improvement',
-        type: 'formula',
-        content:
-          'This workspace structure enables systematic improvement tracking:\n\n**Setup HEARTBEAT.md with rotating system analysis**:\n- Daily: scan workspace file relationships, identify gaps or optimization opportunities\n- Weekly: analyze skill usage patterns, consolidate or split skills based on actual usage  \n- Monthly: review memory promotion pipeline, update knowledge graph structure\n\n**MEMORY.md integration for learning loops**:\n- Capture workspace evolution decisions ("why we restructured skills this way")\n- Document what configurations worked vs failed ("V1 skill structure was too granular")\n- Track compound improvements ("adding BRAIN.md reduced context window waste by 15%")\n\n**Startup task examples for continuous improvement**:\n1. "Analyze current workspace graph, identify unused files or broken references"\n2. "Review skill usage logs, suggest consolidation opportunities"  \n3. "Scan memory files for promotion candidates, update knowledge graph"\n4. "Check boot sequence efficiency, optimize context window usage"\n\nThe formula: structured workspace + systematic analysis + memory persistence = continuously improving AI ops layer.',
+          '<p style="margin-bottom:16px">To implement this structure in your own OpenClaw workspace:</p>' +
+          '<ol style="margin:0 0 16px 20px;color:#8b949e">' +
+          '<li style="margin-bottom:8px"><strong style="color:#e2e8f0">Start with AGENTS.md</strong> — define your boot sequence and file loading order</li>' +
+          '<li style="margin-bottom:8px"><strong style="color:#e2e8f0">Create the core 7 files</strong> — SOUL, IDENTITY, USER, BRAIN, HEARTBEAT, VOICE, MEMORY</li>' +
+          '<li style="margin-bottom:8px"><strong style="color:#e2e8f0">Set up infrastructure files</strong> — TOOLS, PLAYBOOK, MISSION-CONTROL, CLIENTS</li>' +
+          '<li style="margin-bottom:8px"><strong style="color:#e2e8f0">Build skills incrementally</strong> — start with 3-4 skills, grow to your operational needs</li>' +
+          '<li style="margin-bottom:8px"><strong style="color:#e2e8f0">Establish the pipeline</strong> — connect to your tools (Discord, messaging, dashboards)</li>' +
+          '<li style="margin-bottom:8px"><strong style="color:#e2e8f0">Implement memory systems</strong> — daily logs that promote to long-term memory</li>' +
+          '</ol>' +
+          '<p style="font-size:13px;color:#8b949e"><strong style="color:#e2e8f0">The key insight:</strong> this is not file organization. It is an operational system where each file serves a specific function in the AI decision-making process. The structure creates institutional memory that compounds over time.</p>',
       },
     ],
   },
