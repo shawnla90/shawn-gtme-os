@@ -1,5 +1,6 @@
 import type { CSSProperties } from 'react';
 import { useCurrentFrame, useVideoConfig } from 'remotion';
+import { noise2D } from '@remotion/noise';
 import { COLORS } from '../lib/tokens';
 
 interface MatrixRainProps {
@@ -10,8 +11,8 @@ interface MatrixRainProps {
 }
 
 /**
- * Deterministic matrix-rain effect. Each column has a seeded offset
- * so the same frame always produces the same output.
+ * Deterministic matrix-rain effect using @remotion/noise for organic
+ * character generation. Each column drifts with Perlin noise.
  */
 export const MatrixRain: React.FC<MatrixRainProps> = ({
   opacity = 0.12,
@@ -26,14 +27,17 @@ export const MatrixRain: React.FC<MatrixRainProps> = ({
   const charHeight = 18;
   const rows = Math.ceil(height / charHeight) + 4;
 
-  // Deterministic pseudo-random from column index and row
-  const seededChar = (col: number, row: number, f: number): string => {
-    const seed = ((col * 997 + row * 131 + Math.floor(f * speed) * 7) % 94) + 33;
-    return String.fromCharCode(seed);
+  // Noise-driven character selection (organic variation)
+  const noiseChar = (col: number, row: number, f: number): string => {
+    const n = noise2D(`char-${col}`, row * 0.3, f * speed * 0.05);
+    const code = Math.floor(((n + 1) / 2) * 94) + 33;
+    return String.fromCharCode(code);
   };
 
-  const seededOpacity = (col: number, row: number, f: number): number => {
-    const v = ((col * 373 + row * 59 + Math.floor(f * speed) * 13) % 100) / 100;
+  // Noise-driven opacity (organic shimmer)
+  const noiseOpacity = (col: number, row: number, f: number): number => {
+    const n = noise2D(`op-${col}`, row * 0.2, f * speed * 0.03);
+    const v = (n + 1) / 2; // 0-1
     const rowFade = 1 - row / rows;
     return v * rowFade;
   };
@@ -53,10 +57,13 @@ export const MatrixRain: React.FC<MatrixRainProps> = ({
 
   for (let c = 0; c < columns; c++) {
     const chars: React.ReactNode[] = [];
-    const offset = ((c * 47) % rows) + Math.floor(frame * speed * 0.3);
+    // Noise-based offset for organic drift
+    const driftOffset = noise2D('drift', c * 0.5, frame * speed * 0.01);
+    const offset = Math.floor((driftOffset + 1) * rows * 0.5) + Math.floor(frame * speed * 0.3);
+
     for (let r = 0; r < rows; r++) {
       const adjustedRow = (r + offset) % (rows + 8);
-      const charOpacity = seededOpacity(c, adjustedRow, frame);
+      const charOpacity = noiseOpacity(c, adjustedRow, frame);
       chars.push(
         <div
           key={r}
@@ -70,7 +77,7 @@ export const MatrixRain: React.FC<MatrixRainProps> = ({
             fontFamily: 'monospace',
           }}
         >
-          {seededChar(c, adjustedRow, frame)}
+          {noiseChar(c, adjustedRow, frame)}
         </div>,
       );
     }

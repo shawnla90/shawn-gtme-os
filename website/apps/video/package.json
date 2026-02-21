@@ -4,26 +4,32 @@
   "private": true,
   "scripts": {
     "dev": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts LeadMagnet out/lead-magnet-linkedin.mp4",
-    "render:linkedin": "remotion render src/index.ts LeadMagnet out/lead-magnet-linkedin.mp4",
-    "render:reels": "remotion render src/index.ts LeadMagnetReels out/lead-magnet-reels.mp4",
-    "render:landscape": "remotion render src/index.ts LeadMagnetLandscape out/lead-magnet-landscape.mp4",
+    "render": "remotion render src/index.ts LeadMagnetV2 out/lead-magnet-v2-linkedin.mp4",
+    "render:linkedin": "remotion render src/index.ts LeadMagnetV2 out/lead-magnet-v2-linkedin.mp4",
+    "render:reels": "remotion render src/index.ts LeadMagnetV2Reels out/lead-magnet-v2-reels.mp4",
+    "render:landscape": "remotion render src/index.ts LeadMagnetV2Landscape out/lead-magnet-v2-landscape.mp4",
     "render:all": "npm run render:linkedin && npm run render:reels && npm run render:landscape",
+    "render:v1": "remotion render src/index.ts LeadMagnet out/lead-magnet-linkedin.mp4",
     "build": "echo 'Video app — use render scripts instead'"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "remotion": "^4.0.0",
+    "@remotion/animation-utils": "^4.0.427",
     "@remotion/cli": "^4.0.0",
-    "@remotion/renderer": "^4.0.0",
     "@remotion/gif": "^4.0.0",
     "@remotion/media-utils": "^4.0.0",
+    "@remotion/motion-blur": "^4.0.427",
+    "@remotion/noise": "^4.0.427",
+    "@remotion/paths": "^4.0.427",
     "@remotion/player": "^4.0.0",
-    "@shawnos/shared": "*"
+    "@remotion/renderer": "^4.0.0",
+    "@remotion/transitions": "^4.0.427",
+    "@shawnos/shared": "*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.0"
   },
   "devDependencies": {
-    "typescript": "^5.0.0",
-    "@types/react": "^19.0.0"
+    "@types/react": "^19.0.0",
+    "typescript": "^5.0.0"
   }
 }
