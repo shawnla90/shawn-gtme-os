@@ -1,0 +1,250 @@
+{
+  "name": "Operator",
+  "title": "Repo Architect",
+  "level": 14,
+  "xp_total": 4684,
+  "xp_next_level": 5000,
+  "class": "Builder",
+  "avatar_tier": 2,
+  "milestones": [
+    {
+      "id": "first_log",
+      "title": "Boot Sequence",
+      "description": "Recorded first daily log",
+      "unlocked_at": "2026-02-11T00:00:00Z"
+    },
+    {
+      "id": "first_100xp",
+      "title": "Spark Plug",
+      "description": "Earned 100 XP",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "first_500xp",
+      "title": "Warm Boot",
+      "description": "Earned 500 XP",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "first_1000xp",
+      "title": "Kilobyte Club",
+      "description": "Earned 1,000 XP",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "first_2000xp",
+      "title": "Repo Unlocked",
+      "description": "Earned 2,000 XP",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "shipped_10",
+      "title": "Shipping Container",
+      "description": "Shipped 10+ items across all days",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "shipped_50",
+      "title": "Cargo Fleet",
+      "description": "Shipped 50+ items across all days",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "shipped_100",
+      "title": "Assembly Line",
+      "description": "Shipped 100+ items across all days",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "streak_3",
+      "title": "Three-Day March",
+      "description": "Logged activity for 3+ consecutive days",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "streak_7",
+      "title": "Week Warrior",
+      "description": "Logged activity for 7+ days",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "words_50k",
+      "title": "Fifty Thousand Words",
+      "description": "Wrote 50,000+ words across all days",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "words_100k",
+      "title": "Novelist",
+      "description": "Wrote 100,000+ words across all days",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "ascending_3",
+      "title": "Ascending Chain",
+      "description": "3-day ascending score chain",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "efficiency_king",
+      "title": "Efficiency King",
+      "description": "Day with >100 pts/$",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "polymath_day",
+      "title": "Renaissance Day",
+      "description": "Accomplishments in all 3 categories in one day",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    },
+    {
+      "id": "first_s_grade_v2",
+      "title": "S-Rank Day (v2)",
+      "description": "Achieved S grade on a daily log (v2 thresholds)",
+      "unlocked_at": "2026-02-21T04:23:45.731624+00:00"
+    }
+  ],
+  "updated_at": "2026-02-21T04:23:45.731843+00:00",
+  "v2_meta": {
+    "engine_version": "2.0",
+    "v1_xp_total": 3878,
+    "xp_delta": 806,
+    "current_ascending_chain": 2,
+    "chain_multiplier": 1.1,
+    "longest_chain": 3,
+    "class_window": "7d",
+    "class_breakdown": {
+      "builder": 0.83,
+      "scribe": 0.17,
+      "strategist": 0.0
+    },
+    "grade_thresholds": {
+      "S+": 850,
+      "S": 600,
+      "A+": 450,
+      "A": 300,
+      "B": 150,
+      "C": 50,
+      "D": 0
+    },
+    "scoring_log": [
+      {
+        "date": "2026-02-11",
+        "raw_score": 463,
+        "v1_grade": "S",
+        "v2_grade": "A+",
+        "chain_length": 1,
+        "chain_mult": 1.0,
+        "efficiency_bonus": 0.05,
+        "velocity_bonus": 0.0,
+        "ship_bonus": 0.05,
+        "total_mult": 1.1,
+        "v2_xp": 509
+      },
+      {
+        "date": "2026-02-12",
+        "raw_score": 315,
+        "v1_grade": "A+",
+        "v2_grade": "A",
+        "chain_length": 1,
+        "chain_mult": 1.0,
+        "efficiency_bonus": 0.05,
+        "velocity_bonus": 0.0,
+        "ship_bonus": 0.0,
+        "total_mult": 1.05,
+        "v2_xp": 330
+      },
+      {
+        "date": "2026-02-13",
+        "raw_score": 425,
+        "v1_grade": "S",
+        "v2_grade": "A",
+        "chain_length": 2,
+        "chain_mult": 1.1,
+        "efficiency_bonus": 0.05,
+        "velocity_bonus": 0.0,
+        "ship_bonus": 0.0,
+        "total_mult": 1.15,
+        "v2_xp": 488
+      },
+      {
+        "date": "2026-02-14",
+        "raw_score": 679,
+        "v1_grade": "S+",
+        "v2_grade": "S",
+        "chain_length": 3,
+        "chain_mult": 1.2,
+        "efficiency_bonus": 0.1,
+        "velocity_bonus": 0.05,
+        "ship_bonus": 0.05,
+        "total_mult": 1.4,
+        "v2_xp": 950
+      },
+      {
+        "date": "2026-02-15",
+        "raw_score": 374,
+        "v1_grade": "S",
+        "v2_grade": "A",
+        "chain_length": 1,
+        "chain_mult": 1.0,
+        "efficiency_bonus": 0.0,
+        "velocity_bonus": 0.05,
+        "ship_bonus": 0.05,
+        "total_mult": 1.1,
+        "v2_xp": 411
+      },
+      {
+        "date": "2026-02-16",
+        "raw_score": 712,
+        "v1_grade": "S+",
+        "v2_grade": "S",
+        "chain_length": 2,
+        "chain_mult": 1.1,
+        "efficiency_bonus": 0.0,
+        "velocity_bonus": 0.05,
+        "ship_bonus": 0.05,
+        "total_mult": 1.2,
+        "v2_xp": 854
+      },
+      {
+        "date": "2026-02-17",
+        "raw_score": 450,
+        "v1_grade": "S",
+        "v2_grade": "A+",
+        "chain_length": 1,
+        "chain_mult": 1.0,
+        "efficiency_bonus": 0.15,
+        "velocity_bonus": 0.05,
+        "ship_bonus": 0.1,
+        "total_mult": 1.3,
+        "v2_xp": 585
+      },
+      {
+        "date": "2026-02-18",
+        "raw_score": 157,
+        "v1_grade": "A+",
+        "v2_grade": "B",
+        "chain_length": 1,
+        "chain_mult": 1.0,
+        "efficiency_bonus": 0.0,
+        "velocity_bonus": 0.0,
+        "ship_bonus": 0.05,
+        "total_mult": 1.05,
+        "v2_xp": 164
+      },
+      {
+        "date": "2026-02-19",
+        "raw_score": 303,
+        "v1_grade": "A+",
+        "v2_grade": "A",
+        "chain_length": 2,
+        "chain_mult": 1.1,
+        "efficiency_bonus": 0.05,
+        "velocity_bonus": 0.05,
+        "ship_bonus": 0.1,
+        "total_mult": 1.3,
+        "v2_xp": 393
+      }
+    ]
+  }
+}

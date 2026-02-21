@@ -1,0 +1,13 @@
+{
+  "date": "2026-02-15",
+  "total_cost": 24.8652,
+  "by_model": {
+    "sonnet-4": 1.7262,
+    "opus-4": 23.139
+  },
+  "by_source": {
+    "cursor": 24.8652
+  },
+  "cumulative_total": 70.4228,
+  "cost_per_xp_v3": 0.0413
+}

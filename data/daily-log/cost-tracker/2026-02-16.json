@@ -1,0 +1,13 @@
+{
+  "date": "2026-02-16",
+  "total_cost": 32.5341,
+  "by_model": {
+    "opus-4": 32.454,
+    "gemini": 0.0801
+  },
+  "by_source": {
+    "cursor": 32.5341
+  },
+  "cumulative_total": 102.9569,
+  "cost_per_xp_v3": 0.0294
+}

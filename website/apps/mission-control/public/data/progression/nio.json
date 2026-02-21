@@ -45,7 +45,7 @@
     "automation_count": 8
   },
   "avatar": {
-    "path": "/data/progression/avatars/nio-tier-3-static.png",
-    "animated": "/data/progression/avatars/nio-tier-3-idle.gif"
+    "path": "/progression/avatars/nio-tier-3-static.png",
+    "animated": "/progression/avatars/nio-tier-3-idle.gif"
   }
 }

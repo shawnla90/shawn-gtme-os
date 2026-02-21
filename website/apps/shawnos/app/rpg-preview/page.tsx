@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { TITLE_TABLE, getRPGProfile, resolveDataRoot } from '@shawnos/shared/lib'
+import { TITLE_TABLE, getRPGProfile, getRPGProfileV3, resolveDataRoot } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { TierProgressionGrid } from './TierProgressionGrid'
 import { ClassShowcaseGrid } from './ClassShowcaseGrid'
@@ -113,7 +113,8 @@ const tdAccent: React.CSSProperties = {
 /* ── page ────────────────────────────────────────── */
 
 export default function RPGPreviewPage() {
-  const profile = getRPGProfile(DATA_ROOT)
+  const v3 = getRPGProfileV3(DATA_ROOT)
+  const profile = v3 ?? getRPGProfile(DATA_ROOT)
   const currentAvatarTier = profile?.avatar_tier ?? 0
 
   return (

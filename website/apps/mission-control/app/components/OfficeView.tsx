@@ -27,7 +27,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'working',
     currentTask: 'Commanding AI operations & building systems',
     workstation: { x: 50, y: 15, desk: 'COMMAND CENTER' },
-    avatar: '/data/progression/avatars/nio-tier-2-idle.gif',
+    avatar: '/progression/avatars/nio-tier-2-idle.gif',
     mood: '⚡',
     lastActivity: 'just now'
   },
@@ -38,7 +38,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'working',
     currentTask: 'Optimizing component architecture',
     workstation: { x: 60, y: 20, desk: 'Dev Station Alpha' },
-    avatar: '/data/progression/avatars/class-builder-idle.gif',
+    avatar: '/progression/avatars/class-builder-idle.gif',
     mood: '🔧',
     lastActivity: '2m ago'
   },
@@ -49,7 +49,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'thinking',
     currentTask: 'Drafting system documentation',
     workstation: { x: 20, y: 70, desk: 'Content Lab' },
-    avatar: '/data/progression/avatars/class-scribe-idle.gif',
+    avatar: '/progression/avatars/class-scribe-idle.gif',
     mood: '📝',
     lastActivity: '5m ago'
   },
@@ -60,7 +60,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'idle',
     currentTask: 'Planning next sprint objectives',
     workstation: { x: 75, y: 60, desk: 'Strategy Corner' },
-    avatar: '/data/progression/avatars/class-strategist-idle.gif',
+    avatar: '/progression/avatars/class-strategist-idle.gif',
     mood: '🧠',
     lastActivity: '12m ago'
   },
@@ -71,7 +71,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'thinking',
     currentTask: 'Processing multi-domain analysis',
     workstation: { x: 25, y: 55, desk: 'Research Hub' },
-    avatar: '/data/progression/avatars/class-polymath-idle.gif',
+    avatar: '/progression/avatars/class-polymath-idle.gif',
     mood: '🧠',
     lastActivity: '8m ago'
   },
@@ -82,7 +82,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'working',
     currentTask: 'Slaying bugs in Cursor IDE',
     workstation: { x: 75, y: 25, desk: 'IDE Station' },
-    avatar: '/data/progression/avatars/class-builder-idle.gif',
+    avatar: '/progression/avatars/class-builder-idle.gif',
     mood: '⚔️',
     lastActivity: '30s ago'
   },
@@ -93,7 +93,7 @@ const OFFICE_AGENTS: Agent[] = [
     status: 'working', 
     currentTask: 'Architecting clean code solutions',
     workstation: { x: 75, y: 45, desk: 'Code Lab' },
-    avatar: '/data/progression/avatars/class-strategist-idle.gif',
+    avatar: '/progression/avatars/class-strategist-idle.gif',
     mood: '🔥',
     lastActivity: '1m ago'
   }

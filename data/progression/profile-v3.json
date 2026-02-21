@@ -1,0 +1,330 @@
+{
+  "name": "Operator",
+  "title": "Pipeline Runner",
+  "level": 16,
+  "xp_total": 6102,
+  "xp_next_level": 10000,
+  "class": "Builder",
+  "avatar_tier": 2,
+  "milestones": [
+    {
+      "id": "first_log",
+      "title": "Boot Sequence",
+      "description": "Recorded first daily log",
+      "unlocked_at": "2026-02-11T00:00:00Z"
+    },
+    {
+      "id": "first_100xp",
+      "title": "Spark Plug",
+      "description": "Earned 100 XP",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "first_500xp",
+      "title": "Warm Boot",
+      "description": "Earned 500 XP",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "first_1000xp",
+      "title": "Kilobyte Club",
+      "description": "Earned 1,000 XP",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "first_2000xp",
+      "title": "Repo Unlocked",
+      "description": "Earned 2,000 XP",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "first_5000xp",
+      "title": "Pipeline Active",
+      "description": "Earned 5,000 XP",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "shipped_10",
+      "title": "Shipping Container",
+      "description": "Shipped 10+ items across all days",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "shipped_50",
+      "title": "Cargo Fleet",
+      "description": "Shipped 50+ items across all days",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "shipped_100",
+      "title": "Assembly Line",
+      "description": "Shipped 100+ items across all days",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "streak_3",
+      "title": "Three-Day March",
+      "description": "Logged activity for 3+ consecutive days",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "streak_7",
+      "title": "Week Warrior",
+      "description": "Logged activity for 7+ days",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "words_50k",
+      "title": "Fifty Thousand Words",
+      "description": "Wrote 50,000+ words across all days",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "words_100k",
+      "title": "Novelist",
+      "description": "Wrote 100,000+ words across all days",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "momentum_3",
+      "title": "Building Momentum",
+      "description": "3-day ascending momentum chain",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "efficiency_king",
+      "title": "Efficiency King",
+      "description": "Day with >100 pts/$",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "polymath_day",
+      "title": "Renaissance Day",
+      "description": "Accomplishments in all 3 categories in one day",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    },
+    {
+      "id": "first_s_grade_v3",
+      "title": "S-Rank Day (v3)",
+      "description": "Achieved S grade on a daily log (v3 thresholds)",
+      "unlocked_at": "2026-02-21T04:23:44.842696+00:00"
+    }
+  ],
+  "updated_at": "2026-02-21T04:23:44.842887+00:00",
+  "v3_meta": {
+    "engine_version": "3.0",
+    "v1_xp_total": 3878,
+    "xp_delta_from_v1": 2224,
+    "current_ascending_chain": 2,
+    "current_streak": 9,
+    "longest_chain": 3,
+    "longest_streak": 9,
+    "momentum_mult": 1.37,
+    "class_window": "7d",
+    "class_breakdown": {
+      "builder": 0.83,
+      "scribe": 0.17,
+      "strategist": 0.0
+    },
+    "grade_thresholds": {
+      "S+": 1200,
+      "S": 850,
+      "A+": 600,
+      "A": 400,
+      "B": 200,
+      "C": 75,
+      "D": 0
+    },
+    "scoring_log": [
+      {
+        "date": "2026-02-11",
+        "raw_score": 463,
+        "base_score": 452.1,
+        "v2_grade": "A+",
+        "v3_grade": "A+",
+        "ascending_chain": 1,
+        "ascending_bonus": 0.08,
+        "streak_days": 1,
+        "streak_bonus": 0.03,
+        "momentum_mult": 1.11,
+        "quality_bonus": 0.08,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.0,
+        "efficiency_bonus": 0.0444,
+        "velocity_bonus": 0.004,
+        "ship_bonus": 0.086,
+        "total_bonus": 0.2144,
+        "total_mult": 1.348,
+        "v3_xp": 609
+      },
+      {
+        "date": "2026-02-12",
+        "raw_score": 315,
+        "base_score": 315.0,
+        "v2_grade": "A",
+        "v3_grade": "A",
+        "ascending_chain": 1,
+        "ascending_bonus": 0.08,
+        "streak_days": 2,
+        "streak_bonus": 0.06,
+        "momentum_mult": 1.14,
+        "quality_bonus": 0.08,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.0,
+        "efficiency_bonus": 0.0598,
+        "velocity_bonus": 0.012,
+        "ship_bonus": 0.068,
+        "total_bonus": 0.2198,
+        "total_mult": 1.3905,
+        "v3_xp": 438
+      },
+      {
+        "date": "2026-02-13",
+        "raw_score": 425,
+        "base_score": 421.0,
+        "v2_grade": "A",
+        "v3_grade": "A+",
+        "ascending_chain": 2,
+        "ascending_bonus": 0.16,
+        "streak_days": 3,
+        "streak_bonus": 0.09,
+        "momentum_mult": 1.25,
+        "quality_bonus": 0.08,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.0,
+        "efficiency_bonus": 0.0426,
+        "velocity_bonus": 0.012,
+        "ship_bonus": 0.077,
+        "total_bonus": 0.2116,
+        "total_mult": 1.5145,
+        "v3_xp": 637
+      },
+      {
+        "date": "2026-02-14",
+        "raw_score": 679,
+        "base_score": 608.0,
+        "v2_grade": "S",
+        "v3_grade": "S",
+        "ascending_chain": 3,
+        "ascending_bonus": 0.24,
+        "streak_days": 4,
+        "streak_bonus": 0.12,
+        "momentum_mult": 1.36,
+        "quality_bonus": 0.115,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.5,
+        "efficiency_bonus": 0.0762,
+        "velocity_bonus": 0.06,
+        "ship_bonus": 0.097,
+        "total_bonus": 0.3482,
+        "total_mult": 1.8336,
+        "v3_xp": 1114
+      },
+      {
+        "date": "2026-02-15",
+        "raw_score": 374,
+        "base_score": 374.0,
+        "v2_grade": "A",
+        "v3_grade": "A+",
+        "ascending_chain": 1,
+        "ascending_bonus": 0.08,
+        "streak_days": 5,
+        "streak_bonus": 0.15,
+        "momentum_mult": 1.23,
+        "quality_bonus": 0.115,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.5,
+        "efficiency_bonus": 0.0257,
+        "velocity_bonus": 0.076,
+        "ship_bonus": 0.093,
+        "total_bonus": 0.3097,
+        "total_mult": 1.6109,
+        "v3_xp": 602
+      },
+      {
+        "date": "2026-02-16",
+        "raw_score": 712,
+        "base_score": 628.7,
+        "v2_grade": "S",
+        "v3_grade": "S",
+        "ascending_chain": 2,
+        "ascending_bonus": 0.16,
+        "streak_days": 6,
+        "streak_bonus": 0.18,
+        "momentum_mult": 1.34,
+        "quality_bonus": 0.115,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.5,
+        "efficiency_bonus": 0.0359,
+        "velocity_bonus": 0.068,
+        "ship_bonus": 0.096,
+        "total_bonus": 0.3149,
+        "total_mult": 1.762,
+        "v3_xp": 1107
+      },
+      {
+        "date": "2026-02-17",
+        "raw_score": 450,
+        "base_score": 441.6,
+        "v2_grade": "A+",
+        "v3_grade": "A+",
+        "ascending_chain": 1,
+        "ascending_bonus": 0.08,
+        "streak_days": 7,
+        "streak_bonus": 0.21,
+        "momentum_mult": 1.29,
+        "quality_bonus": 0.105,
+        "type_diversity": 0.88,
+        "high_value_ratio": 0.5,
+        "efficiency_bonus": 0.1248,
+        "velocity_bonus": 0.056,
+        "ship_bonus": 0.1,
+        "total_bonus": 0.3858,
+        "total_mult": 1.7877,
+        "v3_xp": 789
+      },
+      {
+        "date": "2026-02-18",
+        "raw_score": 157,
+        "base_score": 157.0,
+        "v2_grade": "B",
+        "v3_grade": "B",
+        "ascending_chain": 1,
+        "ascending_bonus": 0.08,
+        "streak_days": 8,
+        "streak_bonus": 0.21,
+        "momentum_mult": 1.29,
+        "quality_bonus": 0.1045,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.35,
+        "efficiency_bonus": 0.0169,
+        "velocity_bonus": 0.028,
+        "ship_bonus": 0.094,
+        "total_bonus": 0.2434,
+        "total_mult": 1.604,
+        "v3_xp": 251
+      },
+      {
+        "date": "2026-02-19",
+        "raw_score": 303,
+        "base_score": 303.0,
+        "v2_grade": "A",
+        "v3_grade": "A",
+        "ascending_chain": 2,
+        "ascending_bonus": 0.16,
+        "streak_days": 9,
+        "streak_bonus": 0.21,
+        "momentum_mult": 1.37,
+        "quality_bonus": 0.115,
+        "type_diversity": 1.0,
+        "high_value_ratio": 0.5,
+        "efficiency_bonus": 0.0541,
+        "velocity_bonus": 0.068,
+        "ship_bonus": 0.1,
+        "total_bonus": 0.3371,
+        "total_mult": 1.8319,
+        "v3_xp": 555
+      }
+    ]
+  }
+}

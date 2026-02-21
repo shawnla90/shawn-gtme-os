@@ -112,26 +112,26 @@ export default function NioStatus() {
           <div className="w-16 h-16 rounded-lg overflow-hidden bg-gray-800 border border-green-700">
             {isAnimated ? (
               <img 
-                src="/data/progression/avatars/nio-tier-3-idle.gif" 
+                src="/progression/avatars/nio-tier-3-idle.gif" 
                 alt="Nio Avatar - Blade Tier"
                 className="w-full h-full object-cover"
                 style={{ imageRendering: 'pixelated' }}
                 onError={(e) => {
                   // Fallback to static if animated fails
                   const target = e.target as HTMLImageElement
-                  target.src = "/data/progression/avatars/nio-tier-3-static.png"
+                  target.src = "/progression/avatars/nio-tier-3-static.png"
                 }}
               />
             ) : (
               <img 
-                src="/data/progression/avatars/nio-tier-3-static.png" 
+                src="/progression/avatars/nio-tier-3-static.png" 
                 alt="Nio Avatar - Blade Tier"
                 className="w-full h-full object-cover"
                 style={{ imageRendering: 'pixelated' }}
                 onError={(e) => {
                   // Fallback to tier-1 if blade tier fails
                   const target = e.target as HTMLImageElement
-                  target.src = "/data/progression/avatars/nio-tier-1-static.png"
+                  target.src = "/progression/avatars/nio-tier-1-static.png"
                 }}
               />
             )}

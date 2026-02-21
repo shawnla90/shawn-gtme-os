@@ -1,0 +1,12 @@
+{
+  "date": "2026-02-13",
+  "total_cost": 11.8122,
+  "by_model": {
+    "opus-4": 11.8122
+  },
+  "by_source": {
+    "claude-code": 11.8122
+  },
+  "cumulative_total": 33.5971,
+  "cost_per_xp_v3": 0.0185
+}

@@ -16,6 +16,7 @@ export type HowToWikiCategory =
   | 'cost-efficiency'
   | 'security'
   | 'parallel-agents'
+  | 'geo-seo'
 
 export type CanonicalSite = 'shawnos' | 'gtmos' | 'contentos'
 

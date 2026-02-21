@@ -48,6 +48,21 @@ export type {
 } from './vitals'
 export { getWebsiteStats } from './vitals.server'
 
+// V2 progression
+export type { V2ScoringEntry, V2Meta, RPGProfileV2 } from './rpg-v2'
+export { getRPGProfileV2 } from './rpg-v2.server'
+
+// V3 progression
+export type { V3ScoringEntry, V3Meta, RPGProfileV3 } from './rpg-v3'
+export { getRPGProfileV3 } from './rpg-v3.server'
+
+// Cost analytics
+export type { CostBreakdown, CostAnalytics } from './costs'
+export { getCostAnalytics } from './costs.server'
+
+// Crews
+export type { CrewAgent, Crew, CrewsConfig, CrewStatus } from './crews'
+
 export { buildFeed, feedResponse, getFeedConfig } from './rss'
 export {
   blogPostsToFeedItems,
