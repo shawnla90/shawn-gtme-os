@@ -26,9 +26,9 @@ const WIKI_ACCENTS = [
 
 /** Use first 5 wikis */
 const WIKIS = WIKI_MONTAGE.slice(0, 5);
-const BOOT_END = 22;   // Boot phase: frames 0-22 (~0.73s)
-const WIKI_START = 22;
-const FRAMES_PER_WIKI = 15; // 0.5s per wiki — rapid-fire
+const BOOT_END = 14;   // Boot phase: frames 0-14 (~0.47s) — compressed
+const WIKI_START = 14;
+const FRAMES_PER_WIKI = 12; // ~0.4s per wiki — snappy but readable
 
 /**
  * Scene 2 — Boot + Wiki Blitz (110 frames / ~3.7s)
@@ -47,7 +47,7 @@ export const BootWikiBlitz: React.FC = () => {
     config: { damping: 12, stiffness: 220 },
   });
 
-  const barProgress = interpolate(frame, [8, 20], [0, 100], {
+  const barProgress = interpolate(frame, [5, 13], [0, 100], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -65,21 +65,21 @@ export const BootWikiBlitz: React.FC = () => {
   const accent = WIKI_ACCENTS[wikiIndex] ?? COLORS.green;
 
   // Wiki card slide-in (rapid)
-  const slideInX = interpolate(localFrame, [0, 3], [50, 0], {
+  const slideInX = interpolate(localFrame, [0, 2], [50, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const slideInOpacity = interpolate(localFrame, [0, 3], [0, 1], {
+  const slideInOpacity = interpolate(localFrame, [0, 2], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
   // Wiki card wipe-out (rapid)
-  const wipeOutOpacity = interpolate(localFrame, [11, 15], [1, 0], {
+  const wipeOutOpacity = interpolate(localFrame, [9, 12], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const wipeOutX = interpolate(localFrame, [11, 15], [0, -40], {
+  const wipeOutX = interpolate(localFrame, [9, 12], [0, -40], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -88,7 +88,7 @@ export const BootWikiBlitz: React.FC = () => {
   const cardTranslateX = slideInX + wipeOutX;
 
   // Highlight progress
-  const highlightProgress = interpolate(localFrame, [3, 10], [0, 1], {
+  const highlightProgress = interpolate(localFrame, [2, 8], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -97,17 +97,17 @@ export const BootWikiBlitz: React.FC = () => {
   const runningTotal = WIKIS.slice(0, wikiIndex + 1).reduce((sum, w) => sum + w.count, 0);
   const prevTotal = WIKIS.slice(0, wikiIndex).reduce((sum, w) => sum + w.count, 0);
   const counterValue = Math.round(
-    interpolate(localFrame, [1, 10], [prevTotal, runningTotal], {
+    interpolate(localFrame, [1, 8], [prevTotal, runningTotal], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     }),
   );
 
   const isBootPhase = frame < BOOT_END;
-  const showTerminal = frame < BOOT_END + 8;
+  const showTerminal = frame < BOOT_END + 6;
 
   // Terminal fade-out
-  const terminalOpacity = interpolate(frame, [BOOT_END, BOOT_END + 8], [1, 0], {
+  const terminalOpacity = interpolate(frame, [BOOT_END, BOOT_END + 6], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -115,7 +115,7 @@ export const BootWikiBlitz: React.FC = () => {
   return (
     <SceneWrapper accentColor={accent} particleCount={25}>
       {/* SFX: key clicks during boot typewriter */}
-      {[3, 5, 7].map((f) => (
+      {[2, 3, 4].map((f) => (
         <Sequence key={`click-${f}`} from={f} durationInFrames={3}>
           <Audio src={AUDIO.keyClick} volume={VOLUMES.keyClick} />
         </Sequence>
@@ -168,19 +168,19 @@ export const BootWikiBlitz: React.FC = () => {
                   minHeight: s(120),
                 }}
               >
-                {frame >= 3 && (
+                {frame >= 2 && (
                   <TypewriterText
                     text="$ ./boot shawnos.ai"
-                    startFrame={3}
-                    speed={1.5}
+                    startFrame={2}
+                    speed={2.0}
                     color={COLORS.green}
                     fontSize={s(20)}
-                    showCursor={frame < 8}
+                    showCursor={frame < 5}
                     cursorColor={COLORS.green}
                   />
                 )}
 
-                {frame >= 8 && (
+                {frame >= 5 && (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: s(8) }}>
                     <div
                       style={{

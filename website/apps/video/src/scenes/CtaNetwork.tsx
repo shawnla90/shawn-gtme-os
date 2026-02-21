@@ -44,35 +44,35 @@ export const CtaNetwork: React.FC = () => {
   const centerY = interpolate(centerSlide, [0, 1], [80, 0]);
   const rightX = interpolate(rightSlide, [0, 1], [120, 0]);
 
-  // Stats overlay (frames 32-48)
+  // Stats overlay (frames 18-28)
   const statsScale = spring({
-    frame: frame - 32,
+    frame: frame - 18,
     fps,
-    config: { damping: 12, stiffness: 200 },
+    config: { damping: 10, stiffness: 250 },
   });
-  const statsVisible = frame >= 32 && frame < 50;
+  const statsVisible = frame >= 18 && frame < 28;
 
-  // ── Transition to CTA (frames 40-50) ──
-  const networkFade = interpolate(frame, [40, 50], [1, 0], {
+  // ── Transition to CTA (frames 22-30) ──
+  const networkFade = interpolate(frame, [22, 30], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // ── CTA Phase (frames 50+) ──
-  const ctaVisible = frame >= 50;
-  const ctaOpacity = interpolate(frame, [50, 56], [0, 1], {
+  // ── CTA Phase (frames 28+) ──
+  const ctaVisible = frame >= 28;
+  const ctaOpacity = interpolate(frame, [28, 33], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Subtitle (frames 62+)
-  const subtitleOpacity = interpolate(frame, [62, 72], [0, 1], {
+  // Subtitle (frames 36+)
+  const subtitleOpacity = interpolate(frame, [36, 44], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Matrix rain (frames 75+)
-  const matrixOpacity = interpolate(frame, [75, 88], [0, 0.08], {
+  // Matrix rain (frames 42+)
+  const matrixOpacity = interpolate(frame, [42, 52], [0, 0.08], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -106,12 +106,12 @@ export const CtaNetwork: React.FC = () => {
       </Sequence>
 
       {/* Resolve SFX at CTA reveal */}
-      <Sequence from={50} durationInFrames={20}>
+      <Sequence from={28} durationInFrames={15}>
         <Audio src={AUDIO.resolve} volume={VOLUMES.resolve} />
       </Sequence>
 
       {/* Matrix rain background — CTA phase */}
-      {frame >= 75 && (
+      {frame >= 42 && (
         <MatrixRain opacity={matrixOpacity} color={COLORS.green} columns={25} speed={0.6} />
       )}
 
@@ -246,7 +246,7 @@ export const CtaNetwork: React.FC = () => {
         >
           <TypewriterText
             text="shawnos.ai"
-            startFrame={52}
+            startFrame={30}
             speed={0.4}
             color={COLORS.green}
             fontSize={s(64)}

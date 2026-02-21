@@ -87,6 +87,19 @@ export const STATS = {
   wikis: 7,
 };
 
+/** ShawnOS master blitz — platforms + tools, ultra-fast montage */
+export const SHAWNOS_BLITZ = [
+  { name: 'LinkedIn', color: '#0A66C2' },
+  { name: 'X', color: '#E7E9EA' },
+  { name: 'Reddit', color: '#FF4500' },
+  { name: 'Substack', color: '#FF6719' },
+  { name: 'YouTube', color: '#FF0000' },
+  { name: 'Clay', color: '#3DBFA0' },
+  { name: 'HeyReach', color: '#6366F1' },
+  { name: 'Instantly', color: '#4EC373' },
+  { name: 'Firecrawl', color: '#FF6B35' },
+] as const;
+
 /** Character class data for progression scene */
 export const CHARACTER_CLASSES = [
   { name: 'Builder',     color: '#f59e0b', avatar: 'class-builder-static.png' },

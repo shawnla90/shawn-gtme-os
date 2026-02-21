@@ -1,6 +1,6 @@
 import { Composition } from 'remotion';
 import { LeadMagnet } from './LeadMagnet';
-import { LeadMagnetV2 } from './LeadMagnetV2';
+import { LeadMagnetV2, SHAWNOS_TOTAL_FRAMES } from './LeadMagnetV2';
 import { GtmOsVideo } from './GtmOsVideo';
 import { ContentOsVideo } from './ContentOsVideo';
 import { FPS, TOTAL_FRAMES, PRESETS } from './lib/timing';
@@ -9,12 +9,12 @@ import { FPS_V2, TOTAL_FRAMES_V2 } from './lib/timing-v2';
 export const Root: React.FC = () => {
   return (
     <>
-      {/* ── V3 Lead Magnet (shawnos.ai) ── */}
+      {/* ── V4 Lead Magnet (shawnos.ai) — 7.4s compressed ── */}
 
       <Composition
         id="LeadMagnetV3"
         component={LeadMagnetV2}
-        durationInFrames={TOTAL_FRAMES_V2}
+        durationInFrames={SHAWNOS_TOTAL_FRAMES}
         fps={FPS_V2}
         width={PRESETS.linkedin.width}
         height={PRESETS.linkedin.height}
@@ -23,7 +23,7 @@ export const Root: React.FC = () => {
       <Composition
         id="LeadMagnetV3Reels"
         component={LeadMagnetV2}
-        durationInFrames={TOTAL_FRAMES_V2}
+        durationInFrames={SHAWNOS_TOTAL_FRAMES}
         fps={FPS_V2}
         width={PRESETS.reels.width}
         height={PRESETS.reels.height}
@@ -32,7 +32,7 @@ export const Root: React.FC = () => {
       <Composition
         id="LeadMagnetV3Landscape"
         component={LeadMagnetV2}
-        durationInFrames={TOTAL_FRAMES_V2}
+        durationInFrames={SHAWNOS_TOTAL_FRAMES}
         fps={FPS_V2}
         width={PRESETS.landscape.width}
         height={PRESETS.landscape.height}
