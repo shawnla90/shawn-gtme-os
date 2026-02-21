@@ -79,7 +79,7 @@ const config: HowToWikiPageConfig = {
   siteUrl: SITE_URL,
   title: 'How-To: AI-Powered GTM',
   description:
-    'Step-by-step guides for building AI-powered go-to-market workflows. From MCP server setup for outbound tools to parallel agent orchestration for campaign builds. GTM-relevant entries featured here, with cross-links to the full engineering library on ShawnOS.',
+    'Step-by-step guides for building AI-powered go-to-market workflows. From MCP server setup for outbound tools to parallel agent orchestration for campaign builds. GTM-relevant entries featured here, with cross-links to the full engineering library on ShawnOS. Recently updated with advanced OpenClaw + knowledge graph setup covering how we use Nio daily for operations, soul/memory/identity configuration beyond boilerplate methods, and real production use cases like Mission Control integration.',
   terminalCommand: 'cd ~/how-to --site=gtmos',
   badge: 'GTM Engineering Guides',
   entries: HOW_TO_WIKI_ENTRIES.map((e) => ({

@@ -454,6 +454,91 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
   },
 
   {
+    id: 'advanced-openclaw-knowledge-graph-setup',
+    title: 'Advanced OpenClaw + Knowledge Graph Setup',
+    subtitle: 'Go beyond boilerplate: build an AI ops layer with soul, memory, and identity',
+    category: 'cli-tools',
+    description:
+      'How to set up OpenClaw with a complete knowledge graph system using Claygent as the configuration brain. Soul, memory, identity files, workspace context, and Mission Control integration for production AI operations.',
+    keywords: [
+      'openclaw advanced setup',
+      'AI knowledge graph setup',
+      'openclaw configuration',
+      'nio AI setup',
+      'AI ops layer setup',
+      'openclaw knowledge graph',
+      'claygent configuration',
+      'openclaw soul memory identity',
+      'advanced AI agent setup',
+      'openclaw production setup',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'openclaw-setup',
+      'repo-context-engine',
+      'claude-code-power-features',
+      'rules-skills-context',
+    ],
+    sections: [
+      {
+        heading: 'Beyond the Default Install: Building an AI Operating System',
+        type: 'prose',
+        content:
+          'The OpenClaw quickstart gets you a working CLI agent. This guide gets you an AI operating system. The difference: a quickstart agent follows instructions. An AI ops layer has personality, memory, decision-making capability, and context awareness that compounds over time. It knows your preferences, your workflows, your voice, and your goals. It pushes back on bad ideas and suggests better approaches. It maintains state across sessions and evolves with your work. This is what happens when you treat AI configuration as system design, not tool setup.',
+      },
+      {
+        heading: 'The Knowledge Graph Architecture',
+        type: 'pattern',
+        content:
+          'Instead of dumping everything into a single CLAUDE.md file, create a structured knowledge graph with specialized files that load contextually:\n\n• SOUL.md — core identity, decision rules, voice DNA, non-negotiable principles\n• IDENTITY.md — role definition, personality, capabilities, avatar/visual identity  \n• USER.md — detailed human context, preferences, pet peeves, working style\n• MEMORY.md — long-term learnings, key decisions, patterns, evolution history\n• HEARTBEAT.md — active focus areas, current priorities, rotating maintenance checks\n• BRAIN.md — live session scratchpad for active context and blockers\n• TOOLS.md — infrastructure map, key scripts, repo structure, deployment info\n\nEach file serves a specific purpose and loads when relevant. SOUL.md and IDENTITY.md load every session. MEMORY.md for long-term context. HEARTBEAT.md for priority awareness. BRAIN.md for session state. This prevents context window overflow while maintaining deep system knowledge.',
+      },
+      {
+        heading: 'Using Claygent as Configuration Brain',
+        type: 'pro-tip',
+        content:
+          'The breakthrough insight: use a capable model (Opus-class) to architect your knowledge graph, then deploy it to a cheaper model for daily operations. Claygent (Claude Code with Opus) becomes your configuration brain that designs the soul, memory, and identity systems.\n\nThe process: Start a Claygent session focused on AI agent architecture. Feed it your working style, business context, and operational requirements. Ask it to design the knowledge graph structure, write the initial SOUL.md and IDENTITY.md files, establish voice rules, and create decision frameworks. Claygent has the reasoning capability to understand the meta-problem: how should an AI agent be configured to work optimally with your specific context?\n\nOnce Claygent designs the system, you deploy it to OpenClaw with a cheaper default model (GPT-5.2) for daily operations. The expensive model designs the system. The cheap model operates within it. This pattern gives you Opus-quality system design at fast-model operational costs.',
+      },
+      {
+        heading: 'Voice DNA: Beyond Generic AI Responses',
+        type: 'anti-pattern',
+        content:
+          'Generic AI agents sound like customer service chatbots. Professional, helpful, and completely forgettable. Voice DNA gives your agent personality and prevents AI slop.\n\nThe anti-slop rules that matter: No em-dashes ever (use ellipses, arrows, or periods). No quotation marks around phrases (write them directly). No authority signaling ("the uncomfortable truth," "let me be clear"). No narrator setups ("here\'s the thing about..."). Lowercase first word except proper nouns and "I". Substance first, ship over perfect.\n\nThese rules are not style preferences. They are identity preservation. Every violation makes the agent sound more generic and less like your operational extension. Encode them as non-negotiable constraints in SOUL.md. The agent enforces them automatically because they become part of its core identity, not external rules it might forget.',
+      },
+      {
+        heading: 'Memory Systems That Compound',
+        type: 'pattern',
+        content:
+          'Most AI setups lose context between sessions. Advanced OpenClaw maintains persistent memory that grows smarter over time.\n\nThe memory hierarchy: MEMORY.md contains curated long-term knowledge, key decisions, and stable patterns. memory/YYYY-MM-DD.md files capture daily logs with raw context, experiments, and session learnings. The agent reads both automatically but at different frequencies.\n\nMemory update workflow: After significant sessions or breakthroughs, update MEMORY.md with validated patterns. Archive detailed session context in dated memory files. The agent learns to reference historical decisions ("last time we tried this approach, here\'s what we learned") and build on previous work instead of starting fresh each session.\n\nThis creates a compound learning effect. Month one, the agent knows your preferences. Month six, it knows your decision patterns, common failure modes, and successful strategies. It becomes less like a tool and more like an experienced teammate.',
+      },
+      {
+        heading: 'Mission Control Integration: Real-Time System Awareness',
+        type: 'code',
+        content:
+          'Advanced setups include live system monitoring through Mission Control dashboards. The agent doesn\'t just follow commands—it monitors system health, tracks performance, and suggests optimizations.\n\nMission Control components:\n• System Status — OpenClaw version, session usage, model routing, cron health\n• Active Tasks — current focus areas, blocked items, completed work\n• Memory Timeline — recent learnings, key decisions, pattern evolution\n• Session Analytics — token usage, task completion rates, efficiency metrics\n\nThe agent uses Mission Control data to make intelligent decisions. If session costs are spiking, it suggests cheaper models for routine tasks. If cron jobs are failing, it prioritizes debugging. If memory files are growing large, it suggests consolidation. The dashboard becomes the agent\'s sensory system for operational awareness.',
+      },
+      {
+        heading: 'Real Use Cases: Production AI Operations',
+        type: 'formula',
+        content:
+          'This setup enables use cases impossible with default configurations:\n\n**Website Operations**: Agent manages multi-site deployments, coordinates content updates across domains, monitors build status, and handles routine maintenance tasks with full context of the site architecture and user preferences.\n\n**Content Pipeline**: Automated blog posting with voice enforcement, cross-platform distribution, SEO optimization, and performance tracking. The agent maintains editorial standards and publishing schedules without constant oversight.\n\n**Partner Operations**: Client research, workflow automation, communication management, and deliverable tracking. The agent understands business context and can make judgment calls about priority and approach.\n\n**System Administration**: Cron job management, performance monitoring, cost optimization, and proactive maintenance. The agent spots patterns, prevents problems, and suggests efficiency improvements.\n\nThe formula: specific context + decision authority + memory persistence = operational capability. The agent becomes infrastructure, not just a tool.',
+      },
+      {
+        heading: 'Setup Workflow: From Install to Production',
+        type: 'pattern',
+        content:
+          'Phase 1 — Architecture (Claygent session): Design knowledge graph structure, write SOUL.md and IDENTITY.md, establish voice rules, create decision frameworks, map operational requirements.\n\nPhase 2 — Knowledge Graph Creation: Set up workspace files (USER.md, MEMORY.md, HEARTBEAT.md, BRAIN.md, TOOLS.md), establish memory persistence, configure session handoffs.\n\nPhase 3 — OpenClaw Configuration: Install and configure with workspace context, set model routing (cheap for daily ops, expensive for complex decisions), establish cron jobs for maintenance.\n\nPhase 4 — Mission Control Integration: Deploy monitoring dashboards, connect system metrics, establish health checks, create feedback loops.\n\nPhase 5 — Evolution and Refinement: Regular memory updates, voice rule enforcement, decision pattern recognition, system optimization.\n\nEach phase builds on the previous. Phase 1 creates the blueprint. Phases 2-4 implement it. Phase 5 evolves it. The system gets smarter with use instead of degrading over time.',
+      },
+      {
+        heading: 'Warning: This Is Not Plug-and-Play',
+        type: 'anti-pattern',
+        content:
+          'This setup requires significant upfront investment. You\'re building a custom AI operating system, not installing a tool. Expect 8-15 hours of initial configuration plus ongoing refinement. The payoff comes after 2-3 weeks when the system begins demonstrating institutional memory and operational intuition.\n\nCommon mistakes: Trying to shortcut the knowledge graph design phase (leads to inconsistent behavior). Using cheap models for system architecture (produces low-quality foundations). Neglecting memory maintenance (agent forgets learnings). Insufficient voice rule enforcement (agent reverts to generic responses). Not establishing clear decision boundaries (agent becomes paralyzed or reckless).\n\nThis approach makes sense for builders doing significant daily AI work where the agent becomes a core operational component. It does not make sense for occasional use or simple task automation. Evaluate your use case honestly before committing to this level of system design.',
+      },
+    ],
+  },
+
+  {
     id: 'repo-context-engine',
     title: 'Repo as Context Engine',
     subtitle: 'Your repo is not just code storage — it is the brain your AI reads from',
