@@ -1,0 +1,22 @@
+# The GTM OS — thegtmos.ai
+> The GTM Operating System — a knowledge base for go-to-market engineering. Clay workflows, outbound automation, intent-driven prospecting, and the infrastructure behind modern GTM.
+
+## About
+- Author: Shawn Tenam
+- Part of the ShawnOS network (shawnos.ai, thegtmos.ai, thecontentos.ai)
+- Architecture: Next.js app in a shared monorepo
+
+## Content Types
+- GTM Knowledge Base: /gtm-knowledge — Go-to-market terms, frameworks, and playbooks
+- Clay Wiki: /clay-wiki — Clay.com workflows, enrichment plays, and integration guides
+- How-To Wiki: /how-to — GTM engineering guides (cross-linked from shawnos.ai)
+
+## Feeds
+- RSS: /feed.xml, /feed/clay-wiki.xml, /feed/knowledge.xml
+
+## Key Topics
+- Clay.com workflows and enrichment
+- Outbound sales automation (HeyReach, Instantly)
+- Intent data and signal-based prospecting
+- Lead scoring and qualification
+- GTM infrastructure and tooling

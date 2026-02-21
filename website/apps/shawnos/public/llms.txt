@@ -1,0 +1,26 @@
+# ShawnOS — shawnos.ai
+> GTM engineering, built in public. The personal operating system of Shawn Tenam — where go-to-market engineering, content engineering, and AI-native development converge.
+
+## About
+- Author: Shawn Tenam
+- Sites: shawnos.ai, thegtmos.ai, thecontentos.ai
+- Architecture: Next.js monorepo with shared packages, deployed on Vercel
+
+## Content Types
+- Blog: /blog — GTM engineering stories, build logs, and insights
+- Knowledge Base: /knowledge — Engineering and AI concepts explained
+- How-To Wiki: /how-to — Step-by-step guides for AI IDEs, CLI tools, MCP servers, GEO/SEO
+- Daily Logs: /log — Daily build tracking with scores and accomplishments
+- Content Wiki: /content-wiki — Platform playbooks, voice systems, content workflows
+- Context Wiki: /context-wiki — Context engineering patterns and practices
+
+## Feeds
+- RSS: /feed.xml (blog), /feed/all.xml (everything), /feed/knowledge.xml, /feed/how-to.xml, /feed/daily-logs.xml
+- All feeds: RSS 2.0 format
+
+## Key Topics
+- Go-to-market engineering
+- AI-native development (Claude Code, Cursor, MCP servers)
+- Content engineering and GEO (Generative Engine Optimization)
+- Monorepo architecture and full-stack development
+- Daily build tracking and accountability systems

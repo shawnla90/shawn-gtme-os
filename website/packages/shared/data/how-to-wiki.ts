@@ -1248,4 +1248,268 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       },
     ],
   },
+
+  /* ================================================================== */
+  /*  GEO & SEO                                                          */
+  /* ================================================================== */
+
+  {
+    id: 'optimize-for-ai-citations',
+    title: 'How to Optimize Your Content for AI Citations',
+    subtitle: 'Structure content so ChatGPT, Perplexity, and Google AI Overviews cite you by name',
+    category: 'geo-seo',
+    description:
+      'Step-by-step guide to Generative Engine Optimization (GEO). How to structure content so AI platforms cite your brand in generated responses, with the Answer Block pattern and entity authority strategies.',
+    keywords: [
+      'generative engine optimization',
+      'GEO optimization',
+      'AI citations',
+      'how to get cited by ChatGPT',
+      'AI search optimization',
+      'perplexity SEO',
+      'google AI overview optimization',
+      'AEO optimization',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'build-content-knowledge-graph',
+      'schema-markup-for-geo',
+      'create-llms-txt',
+      'build-content-engineering-system',
+    ],
+    sections: [
+      {
+        heading: 'What GEO Is and Why It Matters Now',
+        type: 'prose',
+        content:
+          'Generative Engine Optimization is structuring your content so AI platforms cite your brand in their generated responses. Not rank your link in a list of ten. Cite you by name inside the answer. This is a fundamentally different game than traditional SEO. AI referral traffic is up 527% year over year. Gartner projects 25% of organic search traffic shifting to AI chatbots by 2026. The stat that rewired my entire content strategy: 47% of AI Overview citations come from pages ranking below position 5 in traditional search. Domain Authority correlation dropped to r=0.18 for AI citations. That means content quality and structure beat brand size. A well-built page on a small site can outperform enterprise content. This is the window.',
+      },
+      {
+        heading: 'The Answer Block Pattern — Write for Extraction',
+        type: 'pattern',
+        content:
+          'Every section on every page should open with a 40-60 word self-contained answer that stands alone without surrounding context. This is the answer block. AI engines scan for passages they can extract and cite verbatim. If your opening paragraph answers the question completely, you give the engine exactly what it needs.\n\nThe supporting detail follows the answer block and adds depth for human readers. But the answer block is what gets cited. Self-contained passages of 134-167 words hit the extraction sweet spot. Pages with semantic completeness scores above 8.5 out of 10 are 4.2x more likely to be cited. Adding statistics and cited sources boosts AI visibility 30-40%. Every knowledge term, how-to guide, and wiki entry on ShawnOS follows this pattern. The definition field is an answer block. The first paragraph of every section is an answer block. It is baked into the data structures, not bolted on afterward.',
+      },
+      {
+        heading: 'Entity Authority — Make Your Brand Recognizable to AI',
+        type: 'pattern',
+        content:
+          'Entity authority is how well AI engines recognize your brand as a known entity across the web. Sites with 15 or more recognized entities have a 4.8x higher citation probability. Building entity authority means consistent brand presence across multiple contexts: your own sites, third-party mentions, Reddit discussions, LinkedIn posts, guest contributions, and podcast appearances.\n\nThe ShawnOS approach: three sites (shawnos.ai, thegtmos.ai, thecontentos.ai) all reinforce the same entity with consistent expertise signals. Cross-site linking, shared RSS feeds, consistent author schema on every page. Every piece of content adds another node to the entity graph. The monorepo architecture makes this seamless — one shared data layer, one push, three sites updated simultaneously. You do not need three sites. You need consistent, recognizable presence across multiple surfaces.',
+      },
+      {
+        heading: 'Measuring Your AI Visibility',
+        type: 'pro-tip',
+        content:
+          'You cannot optimize what you cannot measure. Track AI citations manually by searching your brand name and key topics across ChatGPT, Perplexity, Google AI Overviews, and Claude. Tools like AirOps provide automated citation monitoring and share-of-voice tracking across AI engines. Their MCP server integrates directly into your development workflow for real-time visibility data.\n\nThe metrics that matter: citation rate (how often you are cited when your topic is discussed), citation accuracy (whether the AI attributes correctly), and citation freshness (whether it cites your latest content or a stale version). Track these monthly. Content not refreshed quarterly is 3x more likely to lose its AI citations. Freshness is not optional — it is a ranking signal.',
+      },
+    ],
+  },
+
+  {
+    id: 'build-content-knowledge-graph',
+    title: 'How to Build a Content Knowledge Graph',
+    subtitle: 'Turn scattered content into an interconnected system that compounds authority',
+    category: 'geo-seo',
+    description:
+      'How to architect a content knowledge graph using the Keyword Nugget Pattern and topic clusters. Turn individual pages into an interconnected system where every piece strengthens every other piece.',
+    keywords: [
+      'content knowledge graph',
+      'keyword nugget pattern',
+      'topic cluster architecture',
+      'internal linking strategy',
+      'content architecture',
+      'SEO content structure',
+      'content engineering system',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'optimize-for-ai-citations',
+      'build-content-engineering-system',
+      'schema-markup-for-geo',
+    ],
+    sections: [
+      {
+        heading: 'What a Content Knowledge Graph Is',
+        type: 'prose',
+        content:
+          'A content knowledge graph is a structured network of content where every piece is a node and every cross-reference is an edge. It is the opposite of a flat blog where posts exist in isolation. In a knowledge graph, a definition page links to a how-to guide that links to a blog post that links to a comparison page that links back to the definition. Every node strengthens every other node. AI engines love this because it signals comprehensive coverage and topical authority.\n\nIn ShawnOS, the knowledge graph is literal. TypeScript data objects in engineering-terms.ts, how-to-wiki.ts, content-wiki.ts, and context-wiki.ts are the nodes. The related arrays are the edges. Template-driven pages render the graph into HTML. Programmatic internal linking connects every mention of a term to its definition page automatically. The graph is not a metaphor. It is the data structure.',
+      },
+      {
+        heading: 'The Keyword Nugget Pattern — One Concept Becomes Five Pages',
+        type: 'pattern',
+        content:
+          'Take one concept. Create five or more interconnected pages from it. A knowledge term defines it. A how-to guide teaches it. A blog post tells the story of building it. A wiki entry provides the complete reference. A comparison page positions it against alternatives. Each page targets different search intents for the same underlying concept.\n\nExample: "Lead Scoring" becomes a knowledge term (definition and why it matters), a how-to guide (how to build a lead scoring model), a blog post (why we rebuilt our lead scoring in 2026), a wiki entry (complete reference guide), and a comparison page (lead scoring vs intent data). All five pages cross-link to each other. The knowledge term accumulates authority from every piece that references it. This is a self-reinforcing loop that compounds over time.',
+      },
+      {
+        heading: 'Topic Cluster Architecture — Three Pillars',
+        type: 'pattern',
+        content:
+          'Topic clusters organize your knowledge graph into pillars. Each pillar covers a broad topic. Supporting cluster pages go deep on subtopics. Every cluster page links back to the pillar and to sibling pages.\n\nShawnOS runs three pillars for GEO and content engineering:\n\n1. GEO (Generative Engine Optimization) — what GEO is, GEO vs SEO vs AEO, how AI engines source content, ranking factors, content extractability, entity authority, schema markup for GEO, monitoring tools.\n\n2. Content Engineering — what it is, knowledge graph architecture, topic cluster design, internal linking, the keyword nugget pattern, content types hierarchy, programmatic content systems, building your own content OS.\n\n3. SEO in the AI Era — technical SEO foundation, schema markup guide, RSS and feed optimization, robots.txt for AI crawlers, llms.txt implementation, content freshness signals.\n\nEach pillar has 8-10 supporting pages. The pillar page links to all of them. They all link back.',
+      },
+      {
+        heading: 'Internal Linking That Creates Authority Loops',
+        type: 'formula',
+        content:
+          'The formula: every mention of a defined term anywhere on your site should link to that term\'s definition page. Every definition page should link to the how-to guide, the wiki entry, and any blog post that covers the same concept. Every how-to guide should reference the terms it teaches. This creates loops where authority flows continuously between pages.\n\nIn a monorepo with shared data, this is programmatic. A component scans page content for term names and auto-links them. The related array on every data entry defines explicit connections. Cross-site links between shawnos.ai, thegtmos.ai, and thecontentos.ai extend the graph across domains. The result: adding one new knowledge term automatically creates links from every page that mentions that term. The graph grows itself.',
+      },
+    ],
+  },
+
+  {
+    id: 'schema-markup-for-geo',
+    title: 'How to Set Up Schema Markup for GEO',
+    subtitle: 'Tell AI engines exactly what your content is with structured data',
+    category: 'geo-seo',
+    description:
+      'How to implement schema markup that helps AI engines extract and cite your content. DefinedTerm, HowTo, FAQPage, BlogPosting, and the JSON-LD patterns that increase AI citation likelihood.',
+    keywords: [
+      'schema markup GEO',
+      'JSON-LD for AI',
+      'structured data SEO',
+      'DefinedTerm schema',
+      'HowTo schema markup',
+      'FAQPage schema',
+      'schema markup Next.js',
+      'structured data for AI citations',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'optimize-for-ai-citations',
+      'create-llms-txt',
+      'build-content-knowledge-graph',
+    ],
+    sections: [
+      {
+        heading: 'Why Schema Matters for AI Engines',
+        type: 'prose',
+        content:
+          'Schema markup is structured data embedded in your pages using JSON-LD that tells machines what kind of content they are looking at. Without schema, an AI engine has to guess whether a page is a definition, a tutorial, a blog post, or a product page. With schema, you tell it explicitly. Pages with 3 or more schema types have roughly 13% higher citation likelihood from AI engines. 96% of AI Overview citations come from sources with strong E-E-A-T signals, and schema is how you make those signals machine-readable. This is not optional for GEO. It is infrastructure.',
+      },
+      {
+        heading: 'Schema Types by Content Type',
+        type: 'code',
+        content:
+          'Match your schema to your content type. Knowledge terms and glossary entries use DefinedTerm or Article plus FAQPage plus BreadcrumbList. How-to guides use HowTo with step elements plus BreadcrumbList. Wiki entries use TechArticle or Article plus FAQPage. Blog posts use BlogPosting with author and datePublished. Every page on every site should also include Organization, Person (for the author), and WebSite schemas.\n\nThe schema-dts npm package gives you TypeScript types for all schema.org vocabulary. Install it and you get autocomplete and type checking for every schema property. No more guessing whether it is datePublished or publishDate. The types enforce correctness at build time.',
+      },
+      {
+        heading: 'Implementing Schema in Next.js with JSON-LD',
+        type: 'code',
+        content:
+          'In Next.js, inject JSON-LD schema as a script tag in your page or layout component. Create a reusable component that takes typed schema data and renders the script tag. In ShawnOS, the schema is generated from the same TypeScript data objects that render the page content. The knowledge term data object contains the name, definition, and related terms. The schema component reads those same fields and outputs a DefinedTerm JSON-LD block.\n\nThis means schema and content can never drift apart. When you update a definition in engineering-terms.ts, the schema updates automatically on the next build. No manual sync. No separate CMS field for schema data. One source of truth rendered two ways: once as visible content, once as invisible structured data.',
+      },
+      {
+        heading: 'Testing and Validating Your Schema',
+        type: 'pro-tip',
+        content:
+          'Use Google\'s Rich Results Test to validate individual pages. Use the Schema Markup Validator for comprehensive checks against the schema.org specification. Run both after every deploy that changes content structure. Common mistakes: missing required fields (HowTo needs at least one step element), mismatched types (using Article when DefinedTerm is more specific), and orphaned schema (structured data that does not match visible page content). Google explicitly warns against schema that does not reflect what users see on the page. Schema should describe your content, not invent content that does not exist.',
+      },
+    ],
+  },
+
+  {
+    id: 'create-llms-txt',
+    title: 'How to Create an llms.txt File',
+    subtitle: 'Give AI assistants a machine-readable map of your site content',
+    category: 'geo-seo',
+    description:
+      'How to create an llms.txt file that helps LLMs and AI assistants discover and understand your site content. Format, structure, placement, and best practices.',
+    keywords: [
+      'llms.txt',
+      'llms txt file',
+      'LLM site discovery',
+      'AI content discovery',
+      'llms.txt format',
+      'how to create llms.txt',
+      'AI assistant site map',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'shawnos',
+    related: [
+      'optimize-for-ai-citations',
+      'schema-markup-for-geo',
+      'build-content-engineering-system',
+    ],
+    sections: [
+      {
+        heading: 'What llms.txt Is and Why It Exists',
+        type: 'prose',
+        content:
+          'llms.txt is a machine-readable file that sits at your site root and helps LLMs and AI assistants understand what your site contains and how it is organized. Think of it as robots.txt for AI comprehension. robots.txt tells crawlers what they can access. llms.txt tells AI assistants what is actually there and what it is about. When an AI assistant encounters your domain, llms.txt gives it instant context — site description, content types, feed URLs, key topics. It is a small text file with outsized impact on AI discoverability. The format is simple markdown with a few conventions.',
+      },
+      {
+        heading: 'The llms.txt Format and Structure',
+        type: 'code',
+        content:
+          'The file follows a simple markdown structure. Start with a level-one heading containing your site name. Add a blockquote with a one-sentence description. Then use level-two headings to organize sections: About (author, tech stack, network), Content Types (paths and descriptions for each content type), Feeds (RSS and other feed URLs), and Key Topics (bulleted list of what your site covers).\n\nKeep it concise. This is not a full sitemap. It is a high-level content map that helps AI assistants decide whether your site is relevant to a query and where to look for specific types of information. Each content type entry should include the URL path and a brief description of what lives there. Feed URLs help AI assistants discover your latest content without crawling every page.',
+      },
+      {
+        heading: 'Where to Put It and How to Test It',
+        type: 'pattern',
+        content:
+          'Place llms.txt in your public directory so it is served at yourdomain.com/llms.txt. In a Next.js app, that means the public/ folder at the app root. In ShawnOS, each of the three sites has its own llms.txt tailored to that site\'s content. shawnos.ai/llms.txt maps the blog, knowledge base, how-to wiki, daily logs, and all wiki sections. thegtmos.ai/llms.txt maps the GTM knowledge base and Clay wiki. thecontentos.ai/llms.txt maps the content wiki.\n\nTest it by navigating to the URL in your browser. You should see the raw markdown text. Then test it by asking an AI assistant about your site and checking whether it references the content types and structure described in your llms.txt. The file is not widely standardized yet, but early adoption means you are indexed before the standard becomes crowded.',
+      },
+    ],
+  },
+
+  {
+    id: 'build-content-engineering-system',
+    title: 'How to Build Your Own Content Engineering System',
+    subtitle: 'Own the pipeline end to end — no CMS, no vendor lock-in, total control',
+    category: 'geo-seo',
+    description:
+      'How to build a content engineering system you fully control. Monorepo architecture, TypeScript data objects as content graph, programmatic RSS feeds, automated schema, and hyper-speed iteration.',
+    keywords: [
+      'content engineering system',
+      'build your own CMS',
+      'monorepo content architecture',
+      'programmatic content',
+      'content pipeline automation',
+      'TypeScript content management',
+      'content OS',
+      'content engineering vs CMS',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'build-content-knowledge-graph',
+      'optimize-for-ai-citations',
+      'schema-markup-for-geo',
+      'create-llms-txt',
+    ],
+    sections: [
+      {
+        heading: 'Why Owning the System Beats Using a Platform',
+        type: 'prose',
+        content:
+          'The win is not any single tool. It is building a system you fully control that gives you complete refinement over your content engineering pipeline at hyper speed. A CMS gives you a form and a publish button. A content engineering system gives you a codebase where every content type is a TypeScript interface, every page is a template, every link is programmatic, and every deploy updates three sites simultaneously. You change one data file and the knowledge base, RSS feeds, sitemaps, and schema markup all update in one push. No manual steps. No platform limitations. No vendor lock-in. Your knowledge graph is an asset you own, stored in version-controlled TypeScript files, not trapped in a SaaS database you cannot export from.',
+      },
+      {
+        heading: 'The Monorepo Architecture — Shared Packages Across Three Sites',
+        type: 'pattern',
+        content:
+          'ShawnOS is a Turborepo monorepo with three Next.js apps (shawnos.ai, thegtmos.ai, thecontentos.ai) and a shared package. The shared package holds everything that crosses site boundaries: components, data files, RSS feed infrastructure, type definitions, and utility functions. Each app imports from the shared package. One component library, one data layer, one set of types.\n\nThis means a new knowledge term added to engineering-terms.ts is immediately available on all three sites. A schema component update propagates everywhere. An RSS feed enhancement works across all feeds. The monorepo eliminates duplication and ensures consistency. You do not need three sites to benefit from this pattern. Even a single site gains from separating data, components, and app configuration into distinct packages.',
+      },
+      {
+        heading: 'Data Files as Content Graph — TypeScript Objects Not CMS',
+        type: 'code',
+        content:
+          'Every piece of content in ShawnOS is a TypeScript object in a data file. Knowledge terms are objects with name, definition, whyItMatters, howYouUseIt, and related fields. Wiki entries have id, title, subtitle, category, description, keywords, sections, and related fields. The TypeScript interfaces enforce structure at build time. You cannot publish a knowledge term without a definition. You cannot create a wiki entry without sections.\n\nThis is the content graph. The data files are the nodes. The related arrays and cross-references are the edges. Template-driven pages read the data and render HTML. You never write HTML directly. You write data and the system renders it. Adding a new content type means defining a new interface and a new template. The system scales horizontally without complexity growth.',
+      },
+      {
+        heading: 'RSS Feed Infrastructure — Seven Feeds Auto-Generated',
+        type: 'pattern',
+        content:
+          'The RSS infrastructure lives in packages/shared/lib/rss/. It uses the feed npm package to generate RSS 2.0, Atom 1.0, and JSON Feed 1.1 from the same data objects that render pages. Content source functions convert each data type (blog posts, wiki entries, knowledge terms, daily logs) into standardized FeedItem objects. A merge utility deduplicates and sorts items by date.\n\nshawnos.ai serves seven feeds: blog, all content, knowledge terms, how-to guides, daily logs, Nio terminal logs, and updates. Each feed is a Next.js route handler that calls getFeedConfig, converts the relevant data to feed items, and returns a Response with correct Content-Type and Cache-Control headers. Adding a new feed takes five lines of code. The entire feed infrastructure regenerates on every deploy because the data files are the source of truth.',
+      },
+      {
+        heading: 'The Result: Hyper-Speed Iteration with Complete Control',
+        type: 'pro-tip',
+        content:
+          'The end state is a system where adding content is adding data, not navigating a CMS. I open engineering-terms.ts, add a new term object, save the file, and push. On deploy, that term appears on the knowledge page, gets its own anchor link, appears in the RSS feed, gets schema markup, shows up in the sitemap, and is available for programmatic internal linking from every page that mentions it. Total time: under two minutes.\n\nThis is the competitive advantage tools like AirOps complement but cannot replace. AirOps is excellent for competitive intelligence, citation monitoring, and share-of-voice tracking. Use it for visibility into how your content performs across AI engines. But the system itself — the content graph, the templates, the automation, the feeds, the schema pipeline — that is yours. Own the system. Use tools to monitor it. The system is the moat.',
+      },
+    ],
+  },
 ]

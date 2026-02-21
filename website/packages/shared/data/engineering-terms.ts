@@ -398,4 +398,179 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
       },
     ],
   },
+  {
+    name: 'GEO & Content Engineering',
+    prompt: '$ cd ~/geo-content-engineering',
+    terms: [
+      {
+        name: 'GEO (Generative Engine Optimization)',
+        definition:
+          'Structuring content so AI platforms like ChatGPT, Perplexity, Google AI Overviews, and Claude cite your brand in their generated responses.',
+        whyItMatters:
+          "I ignored GEO for months because I thought traditional SEO was enough. Then I saw the data: AI referral traffic is up 527% year over year. 25% of organic search traffic is shifting to AI chatbots by 2026. The stat that broke my brain — 47% of AI Overview citations come from pages ranking below position 5 in traditional search. Domain Authority correlation dropped to r=0.18 for AI citations. That means a well-structured page on a small site can outperform a Fortune 500 blog. Content quality and extractability beat brand size. That changed how I build every page.",
+        howYouUseIt:
+          'Every page on ShawnOS follows GEO principles. Self-contained answer blocks at the top of each section. Factual density with specific numbers. Schema markup on every content type. The three sites are structured so AI engines can extract and cite any concept without needing surrounding context.',
+        related: [
+          'AEO (Answer Engine Optimization)',
+          'Content Extractability',
+          'Entity Authority',
+        ],
+      },
+      {
+        name: 'AEO (Answer Engine Optimization)',
+        definition:
+          'A subset of GEO focused specifically on the answer-extraction layer — making your content the source AI engines pull from when generating direct answers.',
+        whyItMatters:
+          "AEO is where GEO gets tactical. It's not enough to be visible to AI engines. You need to be the answer they extract. The pattern is simple: lead every section with a 40-60 word self-contained response that answers a specific question. Then add supporting evidence. AI engines are lazy in the best way — they grab the cleanest, most complete answer block they can find. If your content is structured for extraction, you win.",
+        howYouUseIt:
+          "Every knowledge term, how-to guide, and wiki entry on ShawnOS starts with an answer block. The definition field in engineering-terms.ts is an answer block. The first paragraph of every wiki section is an answer block. It's baked into the data structure, not bolted on after the fact.",
+        related: [
+          'GEO (Generative Engine Optimization)',
+          'The Answer Block Pattern',
+          'Content Extractability',
+        ],
+      },
+      {
+        name: 'Content Extractability',
+        definition:
+          'How easily an AI engine can pull a self-contained, citable passage from your content without needing surrounding context.',
+        whyItMatters:
+          "This is the single most actionable GEO metric. Self-contained passages of 134-167 words hit the sweet spot. Pages with semantic completeness scores above 8.5 out of 10 are 4.2x more likely to be cited by AI engines. I tested this on ShawnOS knowledge terms. The ones that read like standalone explanations get cited. The ones that depend on context from other sections don't. The fix is structural, not creative. Write passages that make sense if you rip them out of the page entirely.",
+        howYouUseIt:
+          'The KnowledgeTerm interface enforces extractability by design. Each term has a standalone definition, a standalone whyItMatters, and a standalone howYouUseIt. Three extractable passages per term. The wiki sections work the same way. Every heading introduces a self-contained block.',
+        related: [
+          'The Answer Block Pattern',
+          'GEO (Generative Engine Optimization)',
+          'Content Freshness Scoring',
+        ],
+      },
+      {
+        name: 'Entity Authority',
+        definition:
+          'How well AI engines recognize your brand as a known entity across the web — measured by mentions, citations, and contextual associations.',
+        whyItMatters:
+          "Domain Authority used to be the king metric for SEO. For AI citations, it barely matters — correlation dropped to r=0.18. What matters now is entity authority. Does the AI engine know who you are? Sites with 15 or more recognized entities have a 4.8x higher citation probability. Entity authority comes from being mentioned across the web in consistent contexts. Third-party articles, Reddit discussions, LinkedIn posts, guest contributions. The more places your brand appears with consistent expertise signals, the more AI engines trust you as a source.",
+        howYouUseIt:
+          'Three sites, one brand, consistent expertise. shawnos.ai, thegtmos.ai, and thecontentos.ai all reinforce the same entity — Shawn Tenam building GTM engineering. Cross-site linking, shared RSS feeds, consistent author schema. Every page builds entity recognition.',
+        related: [
+          'GEO (Generative Engine Optimization)',
+          'Schema Markup for AI',
+          'Topic Clusters',
+        ],
+      },
+      {
+        name: 'The Answer Block Pattern',
+        definition:
+          'A content structure where every section opens with a 40-60 word self-contained answer, followed by supporting evidence and detail.',
+        whyItMatters:
+          "This is the atomic unit of GEO content. AI engines scan for passages they can extract and cite verbatim. If your opening paragraph answers the question completely in 40-60 words, you give the AI exactly what it needs. The supporting detail that follows builds depth for human readers, but the answer block is what gets cited. I started applying this pattern across all ShawnOS content and the structure clicked immediately. It forces clarity. If you can't summarize a section in 50 words, you don't understand it well enough.",
+        howYouUseIt:
+          'Every definition field in engineering-terms.ts is an answer block. Every first paragraph in wiki sections is an answer block. The pattern is baked into the TypeScript data structures so contributors can\'t skip it. The template enforces the discipline.',
+        related: [
+          'Content Extractability',
+          'AEO (Answer Engine Optimization)',
+          'The Keyword Nugget Pattern',
+        ],
+      },
+      {
+        name: 'The Keyword Nugget Pattern',
+        definition:
+          'A content multiplication strategy where one concept becomes five or more interconnected pages: a knowledge term, a how-to guide, a blog post, a wiki entry, a framework, and a comparison page.',
+        whyItMatters:
+          "One concept. Six pages. All cross-linked. The knowledge term page defines it. The how-to guide teaches it. The blog post tells the story of building it. The wiki entry provides the reference. The framework gives it structure. The comparison page positions it against alternatives. Every page links to every other page. The term page accumulates authority from every piece that references it. It's a self-reinforcing loop. I used this pattern for every major concept in ShawnOS and it's why the knowledge base grows faster than the effort suggests.",
+        howYouUseIt:
+          'engineering-terms.ts holds the knowledge terms. how-to-wiki.ts holds the guides. content-wiki.ts holds the wiki entries. Blog posts live in the content directory. Each data file cross-references entries from other files through the related array. Programmatic internal linking connects everything automatically.',
+        related: [
+          'Topic Clusters',
+          'Content Engineering',
+          'The Answer Block Pattern',
+        ],
+      },
+      {
+        name: 'Topic Clusters',
+        definition:
+          'A content architecture where a pillar page covers a broad topic and links to supporting cluster pages that go deep on subtopics, all cross-linked to build collective authority.',
+        whyItMatters:
+          'Topic clusters are how you signal to both search engines and AI engines that you own a subject. One pillar page on GEO links to supporting pages on content extractability, entity authority, answer blocks, schema markup, AI crawlers. Each supporting page links back to the pillar and to each other. ShawnOS runs three pillars: GEO, Content Engineering, and SEO in the AI Era. Each pillar has 8-10 supporting pages. The cluster structure tells AI engines this site has comprehensive coverage of the topic.',
+        howYouUseIt:
+          'The data files are the cluster. engineering-terms.ts categories are natural clusters. The related array on every entry creates the cross-links. Wiki entries link to knowledge terms. How-to guides reference wiki entries. The monorepo makes cross-site linking between shawnos, gtmos, and contentos seamless.',
+        related: [
+          'The Keyword Nugget Pattern',
+          'Content Engineering',
+          'Entity Authority',
+        ],
+      },
+      {
+        name: 'Content Engineering',
+        definition:
+          'The systems approach to content: TypeScript data objects as the content graph, template-driven rendering, programmatic internal linking, automated feeds, and schema pipelines — owning the entire system end to end.',
+        whyItMatters:
+          "This is the core thesis. The win is not any single tool. It's building a system you fully control that gives you complete refinement over your content pipeline at hyper speed. A CMS gives you a form and a publish button. Content engineering gives you a codebase where every content type is a TypeScript interface, every page is a template, every link is programmatic, and every deploy updates three sites simultaneously. I change one data file and the knowledge base, RSS feeds, sitemaps, and schema markup all update in one push. That level of control is the competitive advantage.",
+        howYouUseIt:
+          'The monorepo is the system. packages/shared/data/ holds the content graph as TypeScript objects. packages/shared/pages/ holds the templates. packages/shared/lib/rss/ generates feeds automatically from the data. One push to main deploys all three sites through Vercel. No CMS. No vendor lock-in. The knowledge graph is an asset I own.',
+        related: [
+          'The Keyword Nugget Pattern',
+          'Topic Clusters',
+          'Content Freshness Scoring',
+          'Monorepo',
+        ],
+      },
+      {
+        name: 'AI Crawlers',
+        definition:
+          'Specialized web crawlers that AI companies use to discover and index content for their models and search features — including GPTBot, PerplexityBot, ClaudeBot, and Google-Extended.',
+        whyItMatters:
+          "Each AI engine has its own crawler with its own quirks. GPTBot can't execute JavaScript — if your site isn't server-side rendered, OpenAI can't see it. OAI-SearchBot handles real-time citations for ChatGPT search. PerplexityBot curates sources and cites by default. ClaudeBot uses the Brave Search index. Google-Extended feeds AI Overviews. If you block any of these in robots.txt, you're invisible to that engine. I explicitly allow all of them.",
+        howYouUseIt:
+          "All three ShawnOS sites have robots.txt files that explicitly allow every AI crawler: GPTBot, ChatGPT-User, PerplexityBot, ClaudeBot, Applebot-Extended, Google-Extended, OAI-SearchBot. The sites are server-side rendered with Next.js so JavaScript-blind crawlers can still read everything. No JavaScript-only content.",
+        related: [
+          'llms.txt',
+          'GEO (Generative Engine Optimization)',
+          'Schema Markup for AI',
+        ],
+      },
+      {
+        name: 'llms.txt',
+        definition:
+          'A machine-readable file at your site root that helps LLMs and AI assistants discover and understand your content structure, like robots.txt but designed for AI comprehension.',
+        whyItMatters:
+          "robots.txt tells crawlers what they can access. llms.txt tells AI assistants what your site actually contains and how it's organized. It's a content map written for machines — site description, content types, feed URLs, key topics. When an AI assistant encounters your domain, llms.txt gives it instant context about what kind of information lives here. It's a small file with outsized impact on AI discoverability.",
+        howYouUseIt:
+          'Each of the three sites has an llms.txt in the public directory. shawnos.ai/llms.txt maps the blog, knowledge base, how-to wiki, daily logs, content wiki, and context wiki. thegtmos.ai/llms.txt maps the GTM knowledge base and Clay wiki. thecontentos.ai/llms.txt maps the content wiki. Each file lists feed URLs and key topics.',
+        related: [
+          'AI Crawlers',
+          'Content Engineering',
+          'Configuration Files',
+        ],
+      },
+      {
+        name: 'Schema Markup for AI',
+        definition:
+          'Structured data embedded in your pages using JSON-LD that helps AI engines extract typed information — DefinedTerm for glossary entries, HowTo for guides, FAQPage for Q&A, BlogPosting for articles.',
+        whyItMatters:
+          "Pages with 3 or more schema types have roughly 13% higher citation likelihood from AI engines. 96% of AI Overview citations come from sources with strong E-E-A-T signals, and schema markup is how you make those signals machine-readable. Schema tells AI engines not just what your content says, but what kind of content it is. A DefinedTerm tells the engine this is a definition worth citing. A HowTo tells it these are steps worth following. Without schema, AI engines have to guess. With schema, you're telling them explicitly.",
+        howYouUseIt:
+          'Every content type in ShawnOS has a corresponding schema type. Knowledge terms get DefinedTerm. How-to guides get HowTo with step elements. Wiki entries get TechArticle. Blog posts get BlogPosting with author and datePublished. Every page also gets Organization, Person, WebSite, and BreadcrumbList. The schema is generated from the same TypeScript data objects that render the pages.',
+        related: [
+          'GEO (Generative Engine Optimization)',
+          'Entity Authority',
+          'Content Extractability',
+        ],
+      },
+      {
+        name: 'Content Freshness Scoring',
+        definition:
+          'Tracking and signaling how recently content was updated — critical because pages not refreshed quarterly are 3x more likely to lose AI citations.',
+        whyItMatters:
+          'AI engines penalize stale content. Not with a manual penalty, but by naturally preferring fresher sources when multiple pages answer the same question. Pages not refreshed in 90 days are 3x more likely to lose their AI citations to competitors who updated more recently. Freshness signals include dateModified in schema, Last-Modified HTTP headers, sitemap lastmod timestamps, and actual content changes. You need all four to signal freshness effectively.',
+        howYouUseIt:
+          'The daily tracker logs content changes. RSS feeds auto-update with new entries. Sitemaps regenerate on every deploy. The system tracks freshness by design because every deploy is a content refresh. Adding a single knowledge term updates the RSS feed, the sitemap, and the schema dateModified across all pages that reference it.',
+        related: [
+          'Content Engineering',
+          'Content Extractability',
+          'Cron Jobs',
+        ],
+      },
+    ],
+  },
 ]

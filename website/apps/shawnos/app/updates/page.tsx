@@ -91,6 +91,13 @@ interface FeatureMilestone {
 const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
     date: '2026-02-20',
+    title: 'GEO & SEO Infrastructure',
+    description: 'Full GEO/AEO/SEO content layer: 12 knowledge terms, 5 how-to guides, llms.txt on all 3 sites, AI crawler access in robots.txt, and multi-format RSS feeds (Atom + JSON Feed).',
+    type: 'launch',
+    link: '/knowledge',
+  },
+  {
+    date: '2026-02-20',
     title: 'Testing AI Features with Recursive Drift',
     description: 'How-to guide for systematically evaluating new AI/CLI features. The build-test-interrogate-codify loop — Recursive Drift applied to feature velocity.',
     type: 'launch',

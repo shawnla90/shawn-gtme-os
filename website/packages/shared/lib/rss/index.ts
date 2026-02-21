@@ -1,5 +1,5 @@
 export type { FeedConfig, FeedItem, FeedAuthor, SiteKey } from './types'
-export { buildFeed, generateETag, feedResponse } from './generator'
+export { buildFeed, generateETag, feedResponse, atomFeedResponse, jsonFeedResponse } from './generator'
 export {
   blogPostsToFeedItems,
   dailyLogsToFeedItems,

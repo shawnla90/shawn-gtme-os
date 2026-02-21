@@ -38,7 +38,11 @@ export function getFeedConfig(
     link: siteUrl,
     language: 'en',
     copyright: `© ${new Date().getFullYear()} Shawn Tenam. All rights reserved.`,
-    feedLinks: { rss: `${siteUrl}${feedPath}` },
+    feedLinks: {
+      rss: `${siteUrl}${feedPath}`,
+      atom: `${siteUrl}${feedPath.replace('.xml', '/atom.xml')}`,
+      json: `${siteUrl}${feedPath.replace('.xml', '/feed.json')}`,
+    },
     author: { ...AUTHOR },
     ...rest,
   }

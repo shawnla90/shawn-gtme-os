@@ -25,8 +25,8 @@ User-agent: OAI-SearchBot
 Allow: /
 
 # Host
-Host: https://shawnos.ai
+Host: https://thecontentos.ai
 
 # Sitemaps
-Sitemap: https://shawnos.ai/sitemap.xml
-Sitemap: https://shawnos.ai/feed.xml
+Sitemap: https://thecontentos.ai/sitemap.xml
+Sitemap: https://thecontentos.ai/feed.xml

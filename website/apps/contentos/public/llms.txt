@@ -1,0 +1,21 @@
+# The Content OS — thecontentos.ai
+> The Content Operating System — frameworks and tools for content-driven growth. Platform playbooks, voice engineering, anti-slop methodology, and recursive content workflows.
+
+## About
+- Author: Shawn Tenam
+- Part of the ShawnOS network (shawnos.ai, thegtmos.ai, thecontentos.ai)
+- Architecture: Next.js app in a shared monorepo
+
+## Content Types
+- Content Wiki: /content-wiki — Platform playbooks, voice systems, tools, and workflows
+- How-To Wiki: /how-to — Content engineering guides (cross-linked from shawnos.ai)
+
+## Feeds
+- RSS: /feed.xml, /feed/content-wiki.xml
+
+## Key Topics
+- Platform-specific content strategy (X, LinkedIn, Substack)
+- Voice engineering and anti-slop methodology
+- Content automation and MCP integrations
+- Recursive content workflows
+- AI-assisted content creation
