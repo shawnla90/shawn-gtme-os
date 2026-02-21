@@ -1,8 +1,16 @@
 import type { Metadata } from 'next'
 import path from 'path'
-import Link from 'next/link'
-import { getAllLogs, getLogAggregates, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
-import { LogCard, LogHero, BreadcrumbSchema } from '@shawnos/shared/components'
+import {
+  getAllLogs,
+  getLogAggregates,
+  getRPGProfileV3,
+  getRPGProfileV2,
+  getRPGProfile,
+  getAvatarUrlsForProfile,
+  resolveDataRoot,
+} from '@shawnos/shared/lib'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
+import LogIndexClient from './LogIndexClient'
 
 const DATA_ROOT = resolveDataRoot()
 const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
@@ -45,86 +53,35 @@ export const metadata: Metadata = {
 export default function LogIndex() {
   const logs = getAllLogs(LOG_DIR)
   const aggregates = getLogAggregates(LOG_DIR)
-  const profile = getRPGProfile(DATA_ROOT)
+
+  // V3 first, V2 fallback, V1 last resort
+  const profileV3 = getRPGProfileV3(DATA_ROOT)
+  const profileV2 = getRPGProfileV2(DATA_ROOT)
+  const profile = profileV3 ?? profileV2 ?? getRPGProfile(DATA_ROOT)
   const urls = profile && profile.level > 0 ? getAvatarUrlsForProfile(profile) : null
+
+  // Build V3 grade overrides from scoring log
+  const v3Grades: Record<string, string> = {}
+  if (profileV3?.v3_meta?.scoring_log) {
+    for (const entry of profileV3.v3_meta.scoring_log) {
+      v3Grades[entry.date] = entry.v3_grade
+    }
+  } else if (profileV2?.v2_meta?.scoring_log) {
+    for (const entry of profileV2.v2_meta.scoring_log) {
+      v3Grades[entry.date] = entry.v2_grade
+    }
+  }
 
   return (
     <>
-    <BreadcrumbSchema items={[{ name: 'Log', url: 'https://shawnos.ai/log' }]} />
-    <section
-      style={{
-        maxWidth: 720,
-        margin: '0 auto',
-        padding: '40px 20px',
-        fontFamily: 'var(--font-mono)',
-      }}
-    >
-      <LogHero
+      <BreadcrumbSchema items={[{ name: 'Log', url: 'https://shawnos.ai/log' }]} />
+      <LogIndexClient
+        logs={logs}
         aggregates={aggregates}
-        showAvatar
-        profile={profile ?? undefined}
-        avatarSrc={urls?.static ?? undefined}
-        avatarIdleSrc={urls?.idle ?? undefined}
-        avatarActionSrc={urls?.action ?? undefined}
+        profile={profile}
+        avatarUrls={urls}
+        v3Grades={v3Grades}
       />
-
-      {/* CTA — skill guide */}
-      <Link
-        href="/log/skill-guide"
-        style={{
-          display: 'block',
-          padding: '14px 18px',
-          marginBottom: '12px',
-          background: 'var(--canvas-subtle)',
-          border: '1px solid var(--accent)',
-          borderRadius: '6px',
-          textDecoration: 'none',
-          fontSize: '13px',
-          fontWeight: 600,
-          color: 'var(--accent)',
-          transition: 'border-color 0.15s ease',
-        }}
-      >
-        explore the skill guide &rarr;
-      </Link>
-
-      {/* CTA — build your own */}
-      <Link
-        href="/log/build-your-own"
-        style={{
-          display: 'block',
-          padding: '14px 18px',
-          marginBottom: '24px',
-          background: 'var(--canvas-subtle)',
-          border: '1px solid var(--border)',
-          borderRadius: '6px',
-          textDecoration: 'none',
-          fontSize: '13px',
-          fontWeight: 600,
-          color: 'var(--accent)',
-          transition: 'border-color 0.15s ease',
-        }}
-      >
-        Want to build your own? Grab the prompt. &rarr;
-      </Link>
-
-      {logs.length === 0 ? (
-        <p
-          style={{
-            color: 'var(--text-muted)',
-            fontSize: '14px',
-          }}
-        >
-          No logs found. Check back soon.
-        </p>
-      ) : (
-        <div>
-          {logs.map((log) => (
-            <LogCard key={log.date} {...log} basePath="/log" />
-          ))}
-        </div>
-      )}
-    </section>
     </>
   )
 }
