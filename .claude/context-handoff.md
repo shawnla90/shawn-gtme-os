@@ -1,61 +1,58 @@
 # Context Handoff
-> Generated: 2026-02-20 ~19:30 | Machine: MacBook | Session: How-to entry + Arc move + Search page + Method backlink
+> Generated: 2026-02-20 ~21:00 | Machine: MacBook | Session: Remotion video app v1 build
 
 ## What Was Done This Session
 
-**New how-to wiki entry** (20 entries total, up from 19):
-- **Edited** `website/packages/shared/data/how-to-wiki.ts` — added `testing-ai-features-recursive-method` entry. 6 sections: Feature Velocity, Four-Step Loop, Two-Terminal Method, Interrogation as Debugging, From Evaluation to Skill, Triage. Category: `cli-tools`, difficulty: `intermediate`.
-- **Edited** `website/apps/shawnos/app/updates/page.tsx` — added milestone at top of `FEATURE_MILESTONES[]`
+**Built complete Remotion video app** (`website/apps/video/`) — 22 files:
+- **Scaffold**: `package.json`, `tsconfig.json`, `remotion.config.ts`, `.gitignore`, `src/index.ts`
+- **Compositions**: `src/Root.tsx` (3 format presets), `src/LeadMagnet.tsx` (6-scene sequencer)
+- **Foundation**: `src/lib/tokens.ts` (design tokens), `src/lib/timing.ts` (scene timing), `src/lib/data.ts` (live imports from @shawnos/shared)
+- **7 Components**: `src/components/` — TerminalChrome, TypewriterText, AnimatedCounter, MatrixRain, ScanlineOverlay, WikiCard, AvatarSprite
+- **6 Scenes**: `src/scenes/` — Hook (0-3s), BootSequence (3-8s), WikiMontage (8-25s), Progression (25-40s), NetworkReveal (40-52s), CTA (52-60s)
+- **Avatar assets**: Copied tier-3, tier-4, tier-5 static PNGs to `public/progression/avatars/`
 
-**Method page backlink**:
-- **Edited** `website/apps/shawnos/app/method/page.tsx` — added "the field guide" link in "see it running" section pointing to new how-to entry. Also updated `/arc` → `/about/arc`.
+**Homepage video embed** (`website/apps/shawnos/`):
+- **Created** `app/VideoShowcase.tsx` — click-to-play client component in terminal chrome wrapper
+- **Edited** `app/page.tsx` — added video section after hero (line ~240), imported VideoShowcase
 
-**Arc page moved to About sub-page**:
-- **Created** `website/apps/shawnos/app/about/arc/page.tsx` — same content, updated canonical/OG URLs to `/about/arc`, nested breadcrumb (About > The Arc)
-- **Deleted** `website/apps/shawnos/app/arc/page.tsx`
-- **Edited** `website/apps/shawnos/app/about/page.tsx` — CTA link `/arc` → `/about/arc`
-- **Edited** `website/apps/shawnos/app/method/page.draft.tsx` — arc link updated
+**Created `/video` skill** (`.claude/skills/video/SKILL.md`) — render commands, deployment steps, architecture docs
 
-**Global search page**:
-- **Created** `website/apps/shawnos/app/search/page.tsx` — server component importing 7 data sources (how-to, knowledge, context/clay/content wikis, blog, daily logs)
-- **Created** `website/apps/shawnos/app/search/SearchContent.tsx` — client component with autofocused search input, results grouped by content type
-- **Edited** `website/apps/shawnos/app/layout.tsx` — nav link "Arc" replaced with "Search"
-
-**Agent routing skill tested**:
-- Routing skill auto-fired, correctly identified Pattern B (parallel subagents) for this task
-- Subagents hit permission walls twice (bypassPermissions mode didn't grant Write/Bash to subagents). All work completed in main session instead.
-- Lesson: subagent permission mode may not propagate Write/Bash tools. For file-creation tasks, keep in main session or investigate permission config.
+**Verified**: TypeScript compiles clean (`npx tsc --noEmit` = 0 errors), shawnos build passes (30s), Remotion Studio launches on port 3003
 
 ## Current State
-
-- **Git**: `main`, dirty (8 tracked changes + 2 new directories), last commit `c7807ad`
+- **Git**: `main`, dirty, last commit `a37db6c`
 - **Uncommitted changes**:
-  - Modified: `about/page.tsx`, `layout.tsx`, `method/page.tsx`, `method/page.draft.tsx`, `updates/page.tsx`, `how-to-wiki.ts`, `sitemap-0.xml`
-  - Deleted: `arc/page.tsx`
-  - New: `about/arc/page.tsx`, `search/page.tsx`, `search/SearchContent.tsx`
-- **Build**: passed clean (25.6s), all routes verified including `/search` and `/about/arc`
-- **Blocked on**: nothing — ready to commit and push
+  - Modified: `website/apps/shawnos/app/page.tsx`, `website/package-lock.json`, `sitemap-0.xml`
+  - New dirs: `website/apps/video/` (entire Remotion app), `.claude/skills/video/`, `.claude/skills/morning/`, `.claude/teams/`
+  - New file: `website/apps/shawnos/app/VideoShowcase.tsx`
+- **Blocked on**: nothing — v1 complete, ready for commit
 
 ## Next Steps
 
-1. **Commit and push** — all changes are build-verified. Use `/update-github` for pre-push safety scan.
-2. **Clean up posts.ts debug code** — `website/packages/shared/lib/posts.ts:19` has a suspicious `fetch()` to `127.0.0.1:7243` tagged `#region agent log`. Should be removed.
-3. **Commit untracked skill files** — `.claude/skills/context-handoff/` should be tracked. Consider `.claude/teams/TEAM-CONSTRAINTS.md` too.
-4. **SEO redirect for old /arc URL** — consider adding a redirect from `/arc` → `/about/arc` in `next.config.js` to preserve any existing links/bookmarks.
-5. **Phase 3 remaining** (carried forward): Slack webhook, Mac Mini sync, GitHub Actions, orphaned scripts.
+1. **Commit v1** — all changes are build-verified. Use `/update-github` for safety scan.
+2. **Build v2 of the video** — improve with:
+   - Audio: background track + 8-bit level-up chime (pre-render `sounds.ts` Web Audio API → WAV files)
+   - `@remotion/transitions` for proper scene transitions (replace manual interpolate wipes)
+   - `@remotion/layout-utils` for responsive text sizing
+   - `@remotion/noise` for organic matrix rain
+   - `@remotion/paths` for SVG network connection line animations
+3. **Add React/Remotion how-to wiki entry** — document animation patterns (spring, interpolate, frame-based design, Sequence composition)
+4. **Render actual MP4** — run `npm run render:linkedin` in `website/apps/video/`, then copy landscape version to `apps/shawnos/public/video/lead-magnet.mp4`
+5. **Polish in Remotion Studio** — scrub timeline, adjust scene timing, verify visual flow
 
 ## Key Decisions Made
 
-- **Pattern B over Pattern C** — agent-routing skill correctly identified this as parallel subagents (not full team). Voice-gated content stayed in main session, structural work was delegated.
-- **Subagent fallback** — when subagents couldn't get Write/Bash permissions, work was completed directly in main session rather than debugging the permission system. Faster.
-- **Search page uses server-side data flattening** — all data sources merged into flat `SearchItem[]` array on server, passed to lightweight client component. No client-side data fetching.
-- **Arc moved, not aliased** — old route deleted rather than redirected. May need redirect added to next.config.js if old URL has inbound links.
-- **How-to entry voice** — written in Shawn's direct, pattern-matching voice. Uses real example (Agent Teams test → agent-routing skill) as the recursive proof point.
+- **Data-driven counts** — video imports live from `@shawnos/shared/data/*`. Adding a wiki entry auto-updates the video count on next render. Hook says "190+ free knowledge entries" (actual: 191).
+- **Static MP4 for website** (not `@remotion/player`) — lighter bundle, simpler deployment. VideoShowcase uses HTML5 `<video>` with click-to-play poster overlay.
+- **3 render presets** — LinkedIn 1080x1350 (primary), Reels 1080x1920, Landscape 1920x1080. Same composition, different dimensions.
+- **Site accent colors from actual tokens** — gtmos = teal (#3DBFA0), not amber. Matches the real site design.
+- **Fan-out agent pattern** — scaffolded foundation myself, spawned 2 parallel agents (components + scenes) with `bypassPermissions`. Both succeeded — agents CAN write files with this mode.
+- **Sounds.ts not yet integrated** — Web Audio API (browser-only) needs offline rendering to WAV for Remotion. Deferred to v2.
 
 ## Files to Read First
 
-1. `website/packages/shared/data/how-to-wiki.ts` — new entry starts after `agent-teams-claude-code` (search for `testing-ai-features-recursive-method`)
-2. `website/apps/shawnos/app/search/page.tsx` — new search page (server component)
-3. `website/apps/shawnos/app/search/SearchContent.tsx` — search client component
-4. `website/apps/shawnos/app/about/arc/page.tsx` — moved Arc page
-5. `website/apps/shawnos/app/method/page.tsx` — updated "see it running" section with field guide link
+1. `website/apps/video/src/LeadMagnet.tsx` — main composition, shows scene sequencing
+2. `website/apps/video/src/lib/timing.ts` — all scene timing constants
+3. `website/apps/video/src/lib/data.ts` — data-driven imports, wiki counts, site info
+4. `website/apps/video/src/scenes/WikiMontage.tsx` — most complex scene (7 wiki fast cuts)
+5. `website/apps/shawnos/app/VideoShowcase.tsx` — homepage embed component

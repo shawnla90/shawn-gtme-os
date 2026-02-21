@@ -3,6 +3,7 @@ import path from 'path'
 import Link from 'next/link'
 import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
 import { PostCard, LogCard, TypewriterHero, AvatarBadge, BreadcrumbSchema } from '@shawnos/shared/components'
+import { VideoShowcase } from './VideoShowcase'
 
 export const metadata: Metadata = {
   title: 'ShawnOS.ai | GTM engineering, built in public',
@@ -232,6 +233,19 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      <hr style={divider} />
+
+      {/* ── Highlight Reel ── */}
+      <section style={section}>
+        <h2 style={sectionTitle}>
+          <span style={promptChar}>$</span>{' '}
+          <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
+            play ./highlight-reel
+          </span>
+        </h2>
+        <VideoShowcase />
       </section>
 
       <hr style={divider} />
