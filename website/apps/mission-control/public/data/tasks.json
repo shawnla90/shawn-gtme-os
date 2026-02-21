@@ -1,4 +1,236 @@
 {
-  "generated": "2026-02-20T23:28:27.903Z",
-  "tasks": []
+  "generated": "2026-02-21T07:06:51.985Z",
+  "tasks": [
+    {
+      "id": "hb-5",
+      "title": "Monitor Ollama cron performance over next 24h",
+      "description": "Monitor Ollama cron performance over next 24h",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "high",
+      "category": "Infrastructure",
+      "createdAt": "2026-02-21T07:06:51.984Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-6",
+      "title": "Verify all 4 local-model cron jobs succeed without errors",
+      "description": "Verify all 4 local-model cron jobs succeed without errors",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "high",
+      "category": "Infrastructure",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-7",
+      "title": "Set Anthropic API spending limits at console.anthropic.com",
+      "description": "Set Anthropic API spending limits at console.anthropic.com",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "high",
+      "category": "Infrastructure",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-8",
+      "title": "Install Ollama and Qwen 2.5 14B local model",
+      "description": "Install Ollama and Qwen 2.5 14B local model",
+      "assignee": "nio",
+      "status": "done",
+      "priority": "high",
+      "category": "Infrastructure",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-9",
+      "title": "Fix WhatsApp self-chat feedback loop",
+      "description": "Fix WhatsApp self-chat feedback loop",
+      "assignee": "nio",
+      "status": "done",
+      "priority": "high",
+      "category": "Infrastructure",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-10",
+      "title": "Fix Mission Control Vercel deploy config",
+      "description": "Fix Mission Control Vercel deploy config",
+      "assignee": "nio",
+      "status": "done",
+      "priority": "high",
+      "category": "Infrastructure",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-11",
+      "title": "Wire all dashboard components to real data",
+      "description": "Wire all dashboard components to real data",
+      "assignee": "nio",
+      "status": "done",
+      "priority": "high",
+      "category": "Infrastructure",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-14",
+      "title": "Review nio.terminal post-one engagement metrics",
+      "description": "Review nio.terminal post-one engagement metrics",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "Content Pipeline",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-15",
+      "title": "Prepare next blog post topic",
+      "description": "Prepare next blog post topic",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "Content Pipeline",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-16",
+      "title": "Check RSS feed performance and subscriber growth",
+      "description": "Check RSS feed performance and subscriber growth",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "Content Pipeline",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-17",
+      "title": "Deploy Blade Tier blog post to shawnos.ai",
+      "description": "Deploy Blade Tier blog post to shawnos.ai",
+      "assignee": "nio",
+      "status": "done",
+      "priority": "medium",
+      "category": "Content Pipeline",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-20",
+      "title": "Add more Discord channel IDs to TOOLS.md as channels are cre",
+      "description": "Add more Discord channel IDs to TOOLS.md as channels are created",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "Discord & Community",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-21",
+      "title": "Monitor Discord bot health after 4014 fix",
+      "description": "Monitor Discord bot health after 4014 fix",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "Discord & Community",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-22",
+      "title": "Plan Discord-exclusive content for community growth",
+      "description": "Plan Discord-exclusive content for community growth",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "Discord & Community",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-23",
+      "title": "Stabilize NioBot Discord connection",
+      "description": "Stabilize NioBot Discord connection",
+      "assignee": "nio",
+      "status": "done",
+      "priority": "medium",
+      "category": "Discord & Community",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-26",
+      "title": "Consider adding Gemini as fallback model for crons",
+      "description": "Consider adding Gemini as fallback model for crons",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "System Optimization",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-27",
+      "title": "Review memory flush effectiveness after 24h",
+      "description": "Review memory flush effectiveness after 24h",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "System Optimization",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "hb-28",
+      "title": "Optimize cron job schedules based on actual usage patterns",
+      "description": "Optimize cron job schedules based on actual usage patterns",
+      "assignee": "nio",
+      "status": "todo",
+      "priority": "medium",
+      "category": "System Optimization",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "maint-38",
+      "title": "Scan recent memory/*.md files for insights worth adding to M",
+      "description": "Scan recent memory/*.md files for insights worth adding to MEMORY.md",
+      "assignee": "nio",
+      "status": "in_progress",
+      "priority": "low",
+      "category": "Maintenance",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "maint-39",
+      "title": "Update MEMORY.md with significant decisions or lessons learn",
+      "description": "Update MEMORY.md with significant decisions or lessons learned",
+      "assignee": "nio",
+      "status": "in_progress",
+      "priority": "low",
+      "category": "Maintenance",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    },
+    {
+      "id": "maint-40",
+      "title": "Clean up outdated information in long-term memory",
+      "description": "Clean up outdated information in long-term memory",
+      "assignee": "nio",
+      "status": "in_progress",
+      "priority": "low",
+      "category": "Maintenance",
+      "createdAt": "2026-02-21T07:06:51.985Z",
+      "source": "heartbeat"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-20T23:28:27.923Z",
+  "generated": "2026-02-21T07:06:51.997Z",
   "members": [
     {
       "id": "nio",
@@ -18,12 +18,12 @@
         "Memory Management"
       ],
       "level": 6,
-      "experience": 0,
+      "experience": 200,
       "performance": {
-        "tasksCompleted": 0,
-        "assignedCrons": 0,
+        "tasksCompleted": 2,
+        "assignedCrons": 2,
         "successRate": 100,
-        "avgResponseTime": "n/a",
+        "avgResponseTime": "26.1s",
         "cost": "API pay-per-use"
       }
     },
@@ -59,8 +59,8 @@
       "model": "claude-opus-4-20250514",
       "provider": "Anthropic API",
       "specialization": "Content creation — blog posts, Substack essays, LinkedIn, deep thinking",
-      "status": "standby",
-      "currentAssignment": "On-demand content creation",
+      "status": "active",
+      "currentAssignment": "nio daily blog generator",
       "skills": [
         "Blog Writing",
         "Substack Essays",
@@ -69,12 +69,12 @@
         "Voice DNA"
       ],
       "level": 7,
-      "experience": 0,
+      "experience": 200,
       "performance": {
-        "tasksCompleted": 0,
-        "assignedCrons": 0,
+        "tasksCompleted": 1,
+        "assignedCrons": 1,
         "successRate": 100,
-        "avgResponseTime": "n/a",
+        "avgResponseTime": "204.2s",
         "cost": "API pay-per-use (premium)"
       }
     },
@@ -107,10 +107,10 @@
   ],
   "stats": {
     "totalMembers": 4,
-    "activeMembers": 2,
-    "idleMembers": 2,
-    "totalCrons": 0,
-    "totalTasksCompleted": 0,
+    "activeMembers": 3,
+    "idleMembers": 1,
+    "totalCrons": 3,
+    "totalTasksCompleted": 3,
     "avgSuccessRate": 100
   }
 }

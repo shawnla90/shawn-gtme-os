@@ -1,27 +1,27 @@
 {
-  "generated": "2026-02-20T23:28:27.879Z",
+  "generated": "2026-02-21T07:06:52.038Z",
   "system": {
     "status": "online",
-    "uptime": "2d 14h 52m",
-    "lastCron": "10:00 PM EST (Success)",
-    "commitCount": 37,
+    "uptime": "live",
+    "lastCron": "See scheduler",
+    "commitCount": 28,
     "activeSkills": 42,
-    "memoryFiles": 24,
-    "sessionCost": "$4.25",
-    "model": "opus-4.6"
+    "memoryFiles": 5,
+    "sessionCost": "$0.00",
+    "model": "claude-opus-4-20250514"
   },
   "calendar": [
     {
-      "date": "2026-02-20",
+      "date": "2026-02-21",
       "events": [
         {
           "time": "8:00 AM",
-          "event": "Blog generation",
+          "event": "nio.terminal blog generation",
           "type": "automated"
         },
         {
           "time": "10:00 PM",
-          "event": "Build summary",
+          "event": "Daily build summary",
           "type": "automated"
         }
       ]
@@ -29,31 +29,56 @@
   ],
   "todos": [
     {
-      "task": "Review morning automation",
-      "time": "9:00 AM",
+      "task": "Review nio.terminal blog post",
+      "time": "8:15 AM",
       "priority": "high"
     },
     {
-      "task": "Check Discord engagement",
-      "time": "11:00 AM",
+      "task": "Check Discord community engagement",
+      "time": "10:00 AM",
       "priority": "medium"
     },
     {
-      "task": "Publish pending drafts",
+      "task": "Monitor RSS feed performance",
+      "time": "2:00 PM",
+      "priority": "medium"
+    },
+    {
+      "task": "Publish 5 pending drafts",
       "time": "Flexible",
       "priority": "high"
     }
   ],
   "drafts": [
     {
-      "type": "newsletter",
-      "title": "Weekly roundup ready...",
-      "status": "ready"
+      "type": "substack",
+      "title": "2026-02-17 Build-Your-Own-Os",
+      "status": "ready to ship"
     },
     {
-      "type": "blog",
-      "title": "Technical deep dive...",
-      "status": "review"
+      "type": "substack",
+      "title": "2026-02-14 Cursor-Discovery",
+      "status": "ready to ship"
+    },
+    {
+      "type": "substack",
+      "title": "2026-02-13 Build-Day",
+      "status": "ready to ship"
+    },
+    {
+      "type": "substack",
+      "title": "2026-02-19 Recursive-Drift",
+      "status": "ready to ship"
+    },
+    {
+      "type": "substack",
+      "title": "2026-02-24 Start-At-Level-One",
+      "status": "ready to ship"
     }
-  ]
+  ],
+  "telemetry": {
+    "calendarEvents": 35,
+    "tasksTracked": 21,
+    "teamMembers": 4
+  }
 }

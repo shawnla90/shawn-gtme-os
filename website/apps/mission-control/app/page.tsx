@@ -2,6 +2,7 @@ import TasksBoard from './components/TasksBoard'
 import SystemStatus from './components/SystemStatus'
 import RecentMemories from './components/RecentMemories'
 import NioStatus from './components/NioStatus'
+import TodayFocus from './components/TodayFocus'
 import Link from 'next/link'
 import { Users, ArrowRight, Crown, Calendar } from 'lucide-react'
 
@@ -11,6 +12,8 @@ export default function Dashboard() {
       {/* System Status */}
       <SystemStatus />
       
+      <TodayFocus />
+
       {/* Navigation Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <Link href="/office" className="group">

@@ -1,6 +1,349 @@
 {
-  "generated": "2026-02-20T23:28:27.922Z",
+  "generated": "2026-02-21T07:06:51.996Z",
   "events": [
+    {
+      "id": "cron-next-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
+      "title": "Daily Discord build summary",
+      "type": "cron",
+      "datetime": "2026-02-22T03:00:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
+        "duration": "22s"
+      }
+    },
+    {
+      "id": "cron-next-a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
+      "title": "nio-terminal Discord post",
+      "type": "cron",
+      "datetime": "2026-02-21T13:05:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
+        "duration": "19s"
+      }
+    },
+    {
+      "id": "cron-next-28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
+      "title": "nio daily blog generator",
+      "type": "cron",
+      "datetime": "2026-02-21T13:00:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
+        "duration": "204s"
+      }
+    },
+    {
+      "id": "cron-next-crew-content-daily",
+      "title": "Crew Orchestrator: Content",
+      "type": "cron",
+      "datetime": "2026-02-21T12:55:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "crew-content-daily"
+      }
+    },
+    {
+      "id": "cron-next-c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
+      "title": "daily-morning-briefing",
+      "type": "cron",
+      "datetime": "2026-02-21T11:00:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
+        "duration": "31s"
+      }
+    },
+    {
+      "id": "cron-next-crew-build-periodic",
+      "title": "Crew Orchestrator: Build",
+      "type": "cron",
+      "datetime": "2026-02-21T08:40:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "crew-build-periodic"
+      }
+    },
+    {
+      "id": "cron-next-crew-ops-periodic",
+      "title": "Crew Orchestrator: Ops",
+      "type": "cron",
+      "datetime": "2026-02-21T08:40:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "crew-ops-periodic"
+      }
+    },
+    {
+      "id": "cron-next-bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
+      "title": "Nio Status Updater",
+      "type": "cron",
+      "datetime": "2026-02-21T07:57:15.286Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
+        "duration": "28s"
+      }
+    },
+    {
+      "id": "cron-next-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+      "title": "Mission Control Enhanced Updater",
+      "type": "cron",
+      "datetime": "2026-02-21T07:44:44.735Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+        "duration": "33s"
+      }
+    },
+    {
+      "id": "cron-next-v3-scoring-engine",
+      "title": "V3 Scoring Engine",
+      "type": "cron",
+      "datetime": "2026-02-21T07:40:00.000Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "v3-scoring-engine"
+      }
+    },
+    {
+      "id": "cron-next-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
+      "title": "RSS to Discord announcer",
+      "type": "cron",
+      "datetime": "2026-02-21T07:19:24.506Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
+        "duration": "92s"
+      }
+    },
+    {
+      "id": "cron-next-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
+      "title": "Nio Commit Tracker",
+      "type": "cron",
+      "datetime": "2026-02-21T07:13:17.084Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
+        "duration": "77s"
+      }
+    },
+    {
+      "id": "cron-last-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+      "title": "Mission Control Enhanced Updater",
+      "type": "cron",
+      "datetime": "2026-02-21T06:50:48.166Z",
+      "status": "completed",
+      "description": "Last run: ok",
+      "metadata": {
+        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
+        "duration": "33s"
+      }
+    },
+    {
+      "id": "cron-last-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
+      "title": "Nio Commit Tracker",
+      "type": "cron",
+      "datetime": "2026-02-21T06:43:17.093Z",
+      "status": "completed",
+      "description": "Last run: ok",
+      "metadata": {
+        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
+        "duration": "77s"
+      }
+    },
+    {
+      "id": "cron-last-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
+      "title": "RSS to Discord announcer",
+      "type": "cron",
+      "datetime": "2026-02-21T06:19:24.515Z",
+      "status": "completed",
+      "description": "Last run: ok",
+      "metadata": {
+        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
+        "duration": "92s"
+      }
+    },
+    {
+      "id": "commit-05fa741",
+      "title": "feat: add V3 progression page + scoring breakdown to shawnos",
+      "type": "milestone",
+      "datetime": "2026-02-21T01:00:20-05:00",
+      "status": "completed",
+      "description": "feat: add V3 progression page + scoring breakdown to shawnos log",
+      "metadata": {
+        "commitHash": "05fa741"
+      }
+    },
+    {
+      "id": "commit-9b94ee4",
+      "title": "chore: sanitize daily log — replace partner name with alias",
+      "type": "system",
+      "datetime": "2026-02-21T00:32:48-05:00",
+      "status": "completed",
+      "description": "chore: sanitize daily log — replace partner name with alias",
+      "metadata": {
+        "commitHash": "9b94ee4"
+      }
+    },
+    {
+      "id": "commit-1aadeb1",
+      "title": "feat: add GTM OS + Content OS highlight reel videos with hom",
+      "type": "milestone",
+      "datetime": "2026-02-21T00:31:54-05:00",
+      "status": "completed",
+      "description": "feat: add GTM OS + Content OS highlight reel videos with homepage integration",
+      "metadata": {
+        "commitHash": "1aadeb1"
+      }
+    },
+    {
+      "id": "commit-699c791",
+      "title": "chore: daily tracker scan 2026-02-20",
+      "type": "system",
+      "datetime": "2026-02-21T00:00:06-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-02-20",
+      "metadata": {
+        "commitHash": "699c791"
+      }
+    },
+    {
+      "id": "commit-88ab8f7",
+      "title": "chore: daily tracker scan 2026-02-20",
+      "type": "system",
+      "datetime": "2026-02-21T00:00:05-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-02-20",
+      "metadata": {
+        "commitHash": "88ab8f7"
+      }
+    },
+    {
+      "id": "commit-4c152d7",
+      "title": "feat: V3 scoring engine, cost analytics, crew system, MC pro",
+      "type": "milestone",
+      "datetime": "2026-02-20T23:28:35-05:00",
+      "status": "completed",
+      "description": "feat: V3 scoring engine, cost analytics, crew system, MC progression dashboard",
+      "metadata": {
+        "commitHash": "4c152d7"
+      }
+    },
+    {
+      "id": "commit-f7996a0",
+      "title": "chore: update video production skill + context handoff for n",
+      "type": "system",
+      "datetime": "2026-02-20T23:25:10-05:00",
+      "status": "completed",
+      "description": "chore: update video production skill + context handoff for next session",
+      "metadata": {
+        "commitHash": "f7996a0"
+      }
+    },
+    {
+      "id": "commit-db7230c",
+      "title": "feat: lead magnet video V3 — 10s final cut with production p",
+      "type": "milestone",
+      "datetime": "2026-02-20T23:11:38-05:00",
+      "status": "completed",
+      "description": "feat: lead magnet video V3 — 10s final cut with production polish",
+      "metadata": {
+        "commitHash": "db7230c"
+      }
+    },
+    {
+      "id": "cron-last-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
+      "title": "Daily Discord build summary",
+      "type": "cron",
+      "datetime": "2026-02-21T03:00:00.014Z",
+      "status": "completed",
+      "description": "Last run: ok",
+      "metadata": {
+        "cronId": "6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
+        "duration": "22s"
+      }
+    },
+    {
+      "id": "commit-bf73896",
+      "title": "feat: add GEO/SEO/AEO content layer + AI crawler infrastruct",
+      "type": "milestone",
+      "datetime": "2026-02-20T21:30:59-05:00",
+      "status": "completed",
+      "description": "feat: add GEO/SEO/AEO content layer + AI crawler infrastructure",
+      "metadata": {
+        "commitHash": "bf73896"
+      }
+    },
+    {
+      "id": "commit-826e6da",
+      "title": "chore: sanitize morning skill — remove hardcoded partner nam",
+      "type": "system",
+      "datetime": "2026-02-20T21:04:53-05:00",
+      "status": "completed",
+      "description": "chore: sanitize morning skill — remove hardcoded partner names",
+      "metadata": {
+        "commitHash": "826e6da"
+      }
+    },
+    {
+      "id": "commit-7eb35f6",
+      "title": "feat: add lead magnet video V2 — 30s, transitions, audio, no",
+      "type": "milestone",
+      "datetime": "2026-02-20T21:02:25-05:00",
+      "status": "completed",
+      "description": "feat: add lead magnet video V2 — 30s, transitions, audio, noise particles",
+      "metadata": {
+        "commitHash": "7eb35f6"
+      }
+    },
+    {
+      "id": "cron-last-bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
+      "title": "Nio Status Updater",
+      "type": "cron",
+      "datetime": "2026-02-21T01:57:15.296Z",
+      "status": "completed",
+      "description": "Last run: ok",
+      "metadata": {
+        "cronId": "bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
+        "duration": "28s"
+      }
+    },
+    {
+      "id": "commit-e324458",
+      "title": "feat: add Remotion video app + homepage video showcase (v1)",
+      "type": "milestone",
+      "datetime": "2026-02-20T19:40:39-05:00",
+      "status": "completed",
+      "description": "feat: add Remotion video app + homepage video showcase (v1)",
+      "metadata": {
+        "commitHash": "e324458"
+      }
+    },
+    {
+      "id": "commit-a37db6c",
+      "title": "feat: add search page, move arc to /about/arc, new how-to en",
+      "type": "milestone",
+      "datetime": "2026-02-20T18:35:52-05:00",
+      "status": "completed",
+      "description": "feat: add search page, move arc to /about/arc, new how-to entry, cleanup debug code",
+      "metadata": {
+        "commitHash": "a37db6c"
+      }
+    },
     {
       "id": "commit-c7807ad",
       "title": "feat: add agent-routing skill for team vs subagent decision ",
@@ -24,154 +367,47 @@
       }
     },
     {
-      "id": "commit-d0ab0f4",
-      "title": "feat: add OAuth vs API cost guide to OpenClaw how-to + updat",
-      "type": "milestone",
-      "datetime": "2026-02-20T16:31:31-05:00",
+      "id": "cron-last-a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
+      "title": "nio-terminal Discord post",
+      "type": "cron",
+      "datetime": "2026-02-20T16:49:23.851Z",
       "status": "completed",
-      "description": "feat: add OAuth vs API cost guide to OpenClaw how-to + updates milestone",
+      "description": "Last run: ok",
       "metadata": {
-        "commitHash": "d0ab0f4"
+        "cronId": "a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
+        "duration": "19s"
       }
     },
     {
-      "id": "commit-4f7d6ca",
-      "title": "fix: exclude self-referencing files from IP exposure scan",
-      "type": "deployment",
-      "datetime": "2026-02-20T13:35:47-05:00",
+      "id": "cron-last-28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
+      "title": "nio daily blog generator",
+      "type": "cron",
+      "datetime": "2026-02-20T13:00:00.015Z",
       "status": "completed",
-      "description": "fix: exclude self-referencing files from IP exposure scan",
+      "description": "Last run: ok",
       "metadata": {
-        "commitHash": "4f7d6ca"
+        "cronId": "28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
+        "duration": "204s"
       }
     },
     {
-      "id": "commit-50f4d02",
-      "title": "Sanitize repo for public GitHub",
-      "type": "system",
-      "datetime": "2026-02-20T13:33:40-05:00",
+      "id": "cron-last-c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
+      "title": "daily-morning-briefing",
+      "type": "cron",
+      "datetime": "2026-02-20T11:00:00.016Z",
       "status": "completed",
-      "description": "Sanitize repo for public GitHub",
+      "description": "Last run: ok",
       "metadata": {
-        "commitHash": "50f4d02"
-      }
-    },
-    {
-      "id": "commit-5a75bb1",
-      "title": "feat: Phase 2 safety enforcement — pre-push hook, Slack aler",
-      "type": "milestone",
-      "datetime": "2026-02-20T13:14:17-05:00",
-      "status": "completed",
-      "description": "feat: Phase 2 safety enforcement — pre-push hook, Slack alerts, skill manifest",
-      "metadata": {
-        "commitHash": "5a75bb1"
-      }
-    },
-    {
-      "id": "commit-2ba4c74",
-      "title": "chore: add .vercel to gitignore",
-      "type": "system",
-      "datetime": "2026-02-20T12:48:13-05:00",
-      "status": "completed",
-      "description": "chore: add .vercel to gitignore",
-      "metadata": {
-        "commitHash": "2ba4c74"
-      }
-    },
-    {
-      "id": "commit-91864aa",
-      "title": "fix: add 2026-02-20 blog post inline for Vercel deployment",
-      "type": "deployment",
-      "datetime": "2026-02-20T11:35:03-05:00",
-      "status": "completed",
-      "description": "fix: add 2026-02-20 blog post inline for Vercel deployment",
-      "metadata": {
-        "commitHash": "91864aa"
-      }
-    },
-    {
-      "id": "commit-69a9695",
-      "title": "feat(nio): add daily blog post for 2026-02-20 - THE AUTOMATI",
-      "type": "system",
-      "datetime": "2026-02-20T08:02:54-05:00",
-      "status": "completed",
-      "description": "feat(nio): add daily blog post for 2026-02-20 - THE AUTOMATION SYMPHONY",
-      "metadata": {
-        "commitHash": "69a9695"
-      }
-    },
-    {
-      "id": "commit-3220bbf",
-      "title": "feat: add search bar to updates page content feed",
-      "type": "milestone",
-      "datetime": "2026-02-20T03:00:30-05:00",
-      "status": "completed",
-      "description": "feat: add search bar to updates page content feed",
-      "metadata": {
-        "commitHash": "3220bbf"
-      }
-    },
-    {
-      "id": "commit-252cbe3",
-      "title": "feat: add category filter toggles to updates page, drop dead",
-      "type": "milestone",
-      "datetime": "2026-02-20T02:51:54-05:00",
-      "status": "completed",
-      "description": "feat: add category filter toggles to updates page, drop dead GTM term links",
-      "metadata": {
-        "commitHash": "252cbe3"
-      }
-    },
-    {
-      "id": "commit-0b3dc65",
-      "title": "Update Mission Control with enhanced metrics",
-      "type": "system",
-      "datetime": "2026-02-20T02:50:58-05:00",
-      "status": "completed",
-      "description": "Update Mission Control with enhanced metrics",
-      "metadata": {
-        "commitHash": "0b3dc65"
-      }
-    },
-    {
-      "id": "commit-63bc665",
-      "title": "feat: add /updates page with unified content feed and featur",
-      "type": "milestone",
-      "datetime": "2026-02-20T02:29:13-05:00",
-      "status": "completed",
-      "description": "feat: add /updates page with unified content feed and feature timeline",
-      "metadata": {
-        "commitHash": "63bc665"
-      }
-    },
-    {
-      "id": "commit-1554acb",
-      "title": "feat: add multi-model optimization guide to context wiki",
-      "type": "milestone",
-      "datetime": "2026-02-20T02:16:56-05:00",
-      "status": "completed",
-      "description": "feat: add multi-model optimization guide to context wiki",
-      "metadata": {
-        "commitHash": "1554acb"
-      }
-    },
-    {
-      "id": "commit-54dc5df",
-      "title": "chore: daily tracker scan 2026-02-19",
-      "type": "system",
-      "datetime": "2026-02-20T00:00:03-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-19",
-      "metadata": {
-        "commitHash": "54dc5df"
+        "cronId": "c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
+        "duration": "31s"
       }
     }
   ],
   "stats": {
-    "totalEvents": 15,
-    "completedEvents": 15,
-    "scheduledEvents": 0,
+    "totalEvents": 35,
+    "completedEvents": 23,
+    "scheduledEvents": 12,
     "deploymentsThisWeek": 15,
-    "upcomingCronJobs": 0
+    "upcomingCronJobs": 12
   }
 }
