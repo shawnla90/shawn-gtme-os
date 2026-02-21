@@ -539,6 +539,70 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
   },
 
   {
+    id: 'nio-workspace-knowledge-graph-example',
+    title: 'Nio Workspace Knowledge Graph (Live Example)',
+    subtitle: 'Real production workspace showing how 7 core files + 42 skills create an AI ops layer',
+    category: 'cli-tools',
+    description:
+      'Live example of a production OpenClaw knowledge graph from February 2026. Shows the actual file structure, boot sequence, and relationships that power the Nio AI ops layer. Use this as a template for your own advanced setup.',
+    keywords: [
+      'nio workspace example',
+      'openclaw knowledge graph example',
+      'production AI setup example',
+      'nio file structure',
+      'AI ops workspace example',
+      'openclaw production example',
+      'knowledge graph template',
+      'nio system architecture',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'advanced-openclaw-knowledge-graph-setup',
+      'repo-context-engine',
+      'rules-skills-context',
+    ],
+    sections: [
+      {
+        heading: 'Production Knowledge Graph: Nio System (Feb 21, 2026)',
+        type: 'code',
+        content:
+          'This is the actual workspace structure powering the Nio AI ops layer as of February 21, 2026. Not a theoretical example—this is the live production system managing websites, content pipeline, partner operations, and Mission Control.\n\n```\n┌─────────────┐\n│ AGENTS.md   │ ← BOOT CONTROLLER\n│ (boot seq)  │ \n└──────┬──────┘\n       │\n       boot order: 1→2→3→4→5→6 (+7 main only)\n       │\n┌──────────┬───────────┬───┼────┬──────────┬──────────┐\n▼          ▼           ▼   ▼    ▼          ▼          ▼\n┌─────────┐ ┌──────────┐ ┌────────┐ ┌─────────┐ ┌────────┐ ┌─────────┐\n│ SOUL.md │ │IDENTITY  │ │USER.md │ │BRAIN.md │ │HEART   │ │VOICE.md │\n│   (1)   │ │ .md (2)  │ │  (3)   │ │  (4)   │ │BEAT(5) │ │  (6)   │\n└────┬────┘ └──────────┘ └───┬────┘ └────┬────┘ └────────┘ └────┬────┘\n     │                      │         │                      │\n     │ voice DNA,           │         "if empty,             │\n     │ model routing,       │         read HEARTBEAT"        │\n     │ blog structure       ▼         │                      ▼\n     │                  ┌──────────┐   │         ┌──────────────────────┐\n     │                  │CLIENTS.md│   │         │skills/tier-1-voice- │\n     │                  └─────┬────┘   │         │dna/core-voice.md    │\n     │                        │        │         │ + anti-slop.md      │\n     ▼                        ▼        ▼         └──────────────────────┘\n┌───────────────┐       5 client SKILL.md\n│skills/tier-1  │       directories\n│ voice-dna/    │◄──────────────────────────────────────────┌──────────┐\n│skills/tier-3  │                                          │MEMORY.md │\n│ pillars/      │                                          │   (7)    │\n└───────────────┘                                          │main only │\n                                                           └──────────┘\n```',
+      },
+      {
+        heading: 'Infrastructure and Pipeline Integration',
+        type: 'code',
+        content:
+          'The workspace connects to live operational infrastructure:\n\n```\n┌──────────────┐        ┌──────────────┐\n│  TOOLS.md    │────────▶│MISSION-      │ \n│ (infra map)  │        │CONTROL.md    │\n└──────┬───────┘        └──────┬───────┘\n       │                       │\n       │ THE PIPELINE           │\n       ▼                       ▼\n┌─ Discord ─┬─ WhatsApp ─┬─ 9 MCP tools ─┐\n│ channel   │ +1347..    │              │\n│ 1474..    │            │              │\n└───────────┼────────────┼──────────────┘\n            │            │\n            ▼            ▼\n    ┌────────────────────────┐\n    │ 4 scripts (in order): │\n    │ 1. updater.py → /tmp/  │\n    │ 2. gen-dashboard.js    │\n    │ 3. gen-metrics.js      │\n    │ 4. validate.js        │\n    └─────────┬──────────────┘\n              │\n              ▼\n    6 output files:\n    metrics.json, tasks,\n    calendar, memories,\n    team, status\n```',
+      },
+      {
+        heading: 'Skills Architecture and Decision Flow',
+        type: 'pattern',
+        content:
+          'The 42 skills are organized in 4 tiers with clear decision flows:\n\n```\n┌──────────────┐\n│ PLAYBOOK.md  │──────────────────────────────────────────┐\n│ (decisions)  │                                          │\n└──────┬───────┘                                          │\n       │ references:                                      │\n       ├──▶ SOUL.md (blog structure)                     │\n       ├──▶ VOICE.md (anti-slop)                         │\n       ├──▶ MISSION-CONTROL.md (pipeline)                │\n       │                                                │\n       ▼                                                ▼\n┌──────────────────────────────────────────────────────────────┐\n│                     skills/ (4 SKILL.md)                    │\n├─────────────────┬────────────────┬──────────────┬───────────┤\n│ blog-pipeline/  │ website-ops/   │content-      │ cron-ops/ │\n│                 │                │pipeline/     │           │\n│ refs:           │ refs:          │ refs:        │ refs:     │\n│ • SOUL.md       │ • MISSION-     │ • VOICE.md   │ • jobs    │\n│ • VOICE.md      │   CONTROL.md   │ • Typefully  │   .json   │\n│ • Discord ch    │ • 5 apps       │ • Substack   │ • 3 on    │\n│ • nio-blog/     │ • shared pkg   │ • pillars/   │ • 8 off   │\n└─────────────────┴────────────────┴──────────────┴───────────┘\n```\n\nDELETED files (cleaned up): WORKFLOW_AUTO.md ✕, mission-control-status.md ✕',
+      },
+      {
+        heading: 'Boot Sequence and Token Management',
+        type: 'pro-tip',
+        content:
+          'The boot sequence is carefully optimized for context efficiency:\n\n**Boot Flow**: AGENTS.md loads 7 files (~3,125 tokens) → Nio has full identity, context, voice, and knows where everything else lives.\n\n**On-Demand Loading**: TOOLS.md, PLAYBOOK.md, MISSION-CONTROL.md, CLIENTS.md, and skills are loaded only when Nio needs them for a specific task.\n\n**Context Window Strategy**: The core 7 files consume about 12% of a typical context window, leaving 88% for actual work. Files like BRAIN.md ("if empty, read HEARTBEAT") prevent empty context consumption.\n\n**Memory Hierarchy**: MEMORY.md (main session only) contains curated long-term knowledge. Daily memory files in memory/YYYY-MM-DD.md capture session-specific learnings that get promoted when validated.',
+      },
+      {
+        heading: 'Using This as Your Template',
+        type: 'pattern',
+        content:
+          'To implement this structure in your workspace:\n\n1. **Start with AGENTS.md**: Define your boot sequence and file loading order\n2. **Create the core 7 files**: SOUL, IDENTITY, USER, BRAIN, HEARTBEAT, VOICE, MEMORY\n3. **Set up infrastructure files**: TOOLS, PLAYBOOK, MISSION-CONTROL, CLIENTS\n4. **Build skills incrementally**: Start with 3-4 skills, grow to your operational needs\n5. **Establish the pipeline**: Connect to your tools (Discord, messaging, dashboards)\n6. **Implement memory systems**: Daily logs that promote to long-term memory\n\nThe key insight: this isn\'t just file organization. It\'s an operational system where each file serves a specific function in the AI\'s decision-making process. The structure creates institutional memory that compounds over time.',
+      },
+      {
+        heading: 'Memory and Heartbeat Integration for Continuous Improvement',
+        type: 'formula',
+        content:
+          'This workspace structure enables systematic improvement tracking:\n\n**Setup HEARTBEAT.md with rotating system analysis**:\n- Daily: scan workspace file relationships, identify gaps or optimization opportunities\n- Weekly: analyze skill usage patterns, consolidate or split skills based on actual usage  \n- Monthly: review memory promotion pipeline, update knowledge graph structure\n\n**MEMORY.md integration for learning loops**:\n- Capture workspace evolution decisions ("why we restructured skills this way")\n- Document what configurations worked vs failed ("V1 skill structure was too granular")\n- Track compound improvements ("adding BRAIN.md reduced context window waste by 15%")\n\n**Startup task examples for continuous improvement**:\n1. "Analyze current workspace graph, identify unused files or broken references"\n2. "Review skill usage logs, suggest consolidation opportunities"  \n3. "Scan memory files for promotion candidates, update knowledge graph"\n4. "Check boot sequence efficiency, optimize context window usage"\n\nThe formula: structured workspace + systematic analysis + memory persistence = continuously improving AI ops layer.',
+      },
+    ],
+  },
+
+  {
     id: 'repo-context-engine',
     title: 'Repo as Context Engine',
     subtitle: 'Your repo is not just code storage — it is the brain your AI reads from',
