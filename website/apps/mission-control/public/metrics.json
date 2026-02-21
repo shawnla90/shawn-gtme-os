@@ -1,10 +1,10 @@
 {
-  "generated": "2026-02-21T07:06:52.038Z",
+  "generated": "2026-02-21T13:02:46.828Z",
   "system": {
     "status": "online",
     "uptime": "live",
     "lastCron": "See scheduler",
-    "commitCount": 28,
+    "commitCount": 24,
     "activeSkills": 42,
     "memoryFiles": 5,
     "sessionCost": "$0.00",
@@ -77,7 +77,7 @@
     }
   ],
   "telemetry": {
-    "calendarEvents": 35,
+    "calendarEvents": 22,
     "tasksTracked": 21,
     "teamMembers": 4
   }

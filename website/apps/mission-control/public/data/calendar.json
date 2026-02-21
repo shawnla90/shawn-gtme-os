@@ -1,16 +1,27 @@
 {
-  "generated": "2026-02-21T07:06:51.996Z",
+  "generated": "2026-02-21T13:02:46.779Z",
   "events": [
     {
-      "id": "cron-next-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-      "title": "Daily Discord build summary",
+      "id": "cron-next-7255c8d4-43bb-444a-bf11-209a059f7f95",
+      "title": "Saturday 10am Mission Control deep-dive reminder",
       "type": "cron",
-      "datetime": "2026-02-22T03:00:00.000Z",
+      "datetime": "2026-02-21T15:00:00.000Z",
       "status": "scheduled",
       "description": "Next run scheduled",
       "metadata": {
-        "cronId": "6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-        "duration": "22s"
+        "cronId": "7255c8d4-43bb-444a-bf11-209a059f7f95"
+      }
+    },
+    {
+      "id": "cron-next-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
+      "title": "RSS to Discord announcer",
+      "type": "cron",
+      "datetime": "2026-02-21T13:19:24.506Z",
+      "status": "scheduled",
+      "description": "Next run scheduled",
+      "metadata": {
+        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
+        "duration": "14s"
       }
     },
     {
@@ -38,143 +49,26 @@
       }
     },
     {
-      "id": "cron-next-crew-content-daily",
-      "title": "Crew Orchestrator: Content",
-      "type": "cron",
-      "datetime": "2026-02-21T12:55:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "crew-content-daily"
-      }
-    },
-    {
-      "id": "cron-next-c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-      "title": "daily-morning-briefing",
-      "type": "cron",
-      "datetime": "2026-02-21T11:00:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-        "duration": "31s"
-      }
-    },
-    {
-      "id": "cron-next-crew-build-periodic",
-      "title": "Crew Orchestrator: Build",
-      "type": "cron",
-      "datetime": "2026-02-21T08:40:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "crew-build-periodic"
-      }
-    },
-    {
-      "id": "cron-next-crew-ops-periodic",
-      "title": "Crew Orchestrator: Ops",
-      "type": "cron",
-      "datetime": "2026-02-21T08:40:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "crew-ops-periodic"
-      }
-    },
-    {
-      "id": "cron-next-bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-      "title": "Nio Status Updater",
-      "type": "cron",
-      "datetime": "2026-02-21T07:57:15.286Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-        "duration": "28s"
-      }
-    },
-    {
-      "id": "cron-next-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-      "title": "Mission Control Enhanced Updater",
-      "type": "cron",
-      "datetime": "2026-02-21T07:44:44.735Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-        "duration": "33s"
-      }
-    },
-    {
-      "id": "cron-next-v3-scoring-engine",
-      "title": "V3 Scoring Engine",
-      "type": "cron",
-      "datetime": "2026-02-21T07:40:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "v3-scoring-engine"
-      }
-    },
-    {
-      "id": "cron-next-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-      "title": "RSS to Discord announcer",
-      "type": "cron",
-      "datetime": "2026-02-21T07:19:24.506Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-        "duration": "92s"
-      }
-    },
-    {
-      "id": "cron-next-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-      "title": "Nio Commit Tracker",
-      "type": "cron",
-      "datetime": "2026-02-21T07:13:17.084Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
-      "metadata": {
-        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-        "duration": "77s"
-      }
-    },
-    {
-      "id": "cron-last-6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-      "title": "Mission Control Enhanced Updater",
-      "type": "cron",
-      "datetime": "2026-02-21T06:50:48.166Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "6fb6dc27-99d1-4d37-bef8-af072a8315ca",
-        "duration": "33s"
-      }
-    },
-    {
-      "id": "cron-last-5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-      "title": "Nio Commit Tracker",
-      "type": "cron",
-      "datetime": "2026-02-21T06:43:17.093Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "5267f626-7f1f-416b-9c3c-0a8fc0e7e56b",
-        "duration": "77s"
-      }
-    },
-    {
       "id": "cron-last-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
       "title": "RSS to Discord announcer",
       "type": "cron",
-      "datetime": "2026-02-21T06:19:24.515Z",
+      "datetime": "2026-02-21T12:19:24.519Z",
       "status": "completed",
       "description": "Last run: ok",
       "metadata": {
         "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-        "duration": "92s"
+        "duration": "14s"
+      }
+    },
+    {
+      "id": "commit-caf2f5a",
+      "title": "feat(mission-control): add phased ops hardening and operator",
+      "type": "system",
+      "datetime": "2026-02-21T02:07:34-05:00",
+      "status": "completed",
+      "description": "feat(mission-control): add phased ops hardening and operator cockpit",
+      "metadata": {
+        "commitHash": "caf2f5a"
       }
     },
     {
@@ -266,18 +160,6 @@
       }
     },
     {
-      "id": "cron-last-6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-      "title": "Daily Discord build summary",
-      "type": "cron",
-      "datetime": "2026-02-21T03:00:00.014Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "6e4b7420-d4a7-4b85-9299-541f8c48f1c1",
-        "duration": "22s"
-      }
-    },
-    {
       "id": "commit-bf73896",
       "title": "feat: add GEO/SEO/AEO content layer + AI crawler infrastruct",
       "type": "milestone",
@@ -308,18 +190,6 @@
       "description": "feat: add lead magnet video V2 — 30s, transitions, audio, noise particles",
       "metadata": {
         "commitHash": "7eb35f6"
-      }
-    },
-    {
-      "id": "cron-last-bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-      "title": "Nio Status Updater",
-      "type": "cron",
-      "datetime": "2026-02-21T01:57:15.296Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "bcd555fc-f9c8-4ff1-a7dc-ccf4f355deec",
-        "duration": "28s"
       }
     },
     {
@@ -356,17 +226,6 @@
       }
     },
     {
-      "id": "commit-c02d988",
-      "title": "feat: add Claude Code Power Features + Agent Teams how-to gu",
-      "type": "milestone",
-      "datetime": "2026-02-20T17:24:16-05:00",
-      "status": "completed",
-      "description": "feat: add Claude Code Power Features + Agent Teams how-to guides",
-      "metadata": {
-        "commitHash": "c02d988"
-      }
-    },
-    {
       "id": "cron-last-a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
       "title": "nio-terminal Discord post",
       "type": "cron",
@@ -389,25 +248,13 @@
         "cronId": "28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
         "duration": "204s"
       }
-    },
-    {
-      "id": "cron-last-c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-      "title": "daily-morning-briefing",
-      "type": "cron",
-      "datetime": "2026-02-20T11:00:00.016Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "c740e0f1-09d3-4ea3-a53e-5e51fcbd3de7",
-        "duration": "31s"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 35,
-    "completedEvents": 23,
-    "scheduledEvents": 12,
+    "totalEvents": 22,
+    "completedEvents": 18,
+    "scheduledEvents": 4,
     "deploymentsThisWeek": 15,
-    "upcomingCronJobs": 12
+    "upcomingCronJobs": 4
   }
 }

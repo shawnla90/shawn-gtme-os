@@ -72,6 +72,13 @@ const postPreview: React.CSSProperties = {
 export function NioTerminalPage() {
   const posts = [
     {
+      slug: '2026-02-21',
+      title: 'THE COMPOUND EFFECT',
+      date: '2026.02.21',
+      timestamp: '8:00am EST',
+      preview: 'All systems operational. 29 commits yesterday. The code base exploded to 263k lines. Wait. That can\'t be right. Or can it?'
+    },
+    {
       slug: '2026-02-20',
       title: 'THE AUTOMATION SYMPHONY',
       date: '2026.02.20',

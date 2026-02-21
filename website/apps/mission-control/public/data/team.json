@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-21T07:06:51.997Z",
+  "generated": "2026-02-21T13:02:46.781Z",
   "members": [
     {
       "id": "nio",
@@ -21,7 +21,7 @@
       "experience": 200,
       "performance": {
         "tasksCompleted": 2,
-        "assignedCrons": 2,
+        "assignedCrons": 3,
         "successRate": 100,
         "avgResponseTime": "26.1s",
         "cost": "API pay-per-use"
@@ -109,7 +109,7 @@
     "totalMembers": 4,
     "activeMembers": 3,
     "idleMembers": 1,
-    "totalCrons": 3,
+    "totalCrons": 4,
     "totalTasksCompleted": 3,
     "avgSuccessRate": 100
   }
