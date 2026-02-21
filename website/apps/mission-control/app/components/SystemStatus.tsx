@@ -14,6 +14,22 @@ interface SystemMetrics {
   model: string
 }
 
+type OpenClawStatus = {
+  updatedAt: string
+  version: string
+  channel: string
+  gatewayMode?: string
+  defaultModel?: string
+  activeSession?: {
+    key: string
+    kind: string
+    model: string
+    percentUsed?: number | null
+    totalTokens?: number | null
+    contextTokens?: number | null
+  }
+}
+
 interface CronHealth {
   id: string
   name: string
@@ -52,6 +68,7 @@ export default function SystemStatus() {
   const [metrics, setMetrics] = useState<SystemMetrics>(DEFAULT_METRICS)
   const [cronHealth, setCronHealth] = useState<CronHealth[]>([])
   const [incidents, setIncidents] = useState<Incident[]>([])
+  const [openclaw, setOpenclaw] = useState<OpenClawStatus | null>(null)
   const [currentTime, setCurrentTime] = useState(new Date())
 
   const fetchMetrics = async () => {
@@ -63,6 +80,11 @@ export default function SystemStatus() {
       }
       setCronHealth(data.cronHealth || [])
       setIncidents(data.incidents || [])
+
+      const oc = await fetch('/api/openclaw-status').then((r) => r.json())
+      if (oc?.success && oc?.data) {
+        setOpenclaw(oc.data)
+      }
     } catch (error) {
       console.error('Failed to fetch system metrics:', error)
     }
@@ -159,6 +181,33 @@ export default function SystemStatus() {
             <span className="text-gray-300">Session Cost:</span>
             <span className="text-green-400 font-mono">{metrics.sessionCost}</span>
           </div>
+        </div>
+
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div className="flex items-center gap-2">
+            <span className="text-gray-300">OpenClaw:</span>
+            <span className="text-green-400 font-mono">{openclaw?.version || 'loading...'}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-gray-300">Default model:</span>
+            <span className="text-green-400 font-mono">{openclaw?.defaultModel || '...'}</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-gray-300">Session:</span>
+            <span className="text-green-400 font-mono">
+              {openclaw?.activeSession
+                ? `${openclaw.activeSession.model}${
+                    openclaw.activeSession.percentUsed != null ? ` (${openclaw.activeSession.percentUsed}%)` : ''
+                  }`
+                : '...'}
+            </span>
+          </div>
+        </div>
+
+        <div className="mt-2 text-xs text-gray-500">
+          status snapshot refreshes every 2 hours. last updated {openclaw?.updatedAt ? new Date(openclaw.updatedAt).toLocaleString() : '...'}
         </div>
       </div>
 
