@@ -17,10 +17,10 @@ export default function RecentMemories() {
   useEffect(() => {
     const fetchMemories = async () => {
       try {
-        const res = await fetch('/api/enhanced-data')
+        const res = await fetch('/api/recent-memories')
         const data = await res.json()
-        if (data.success && data.data?.memories?.length > 0) {
-          setMemories(data.data.memories)
+        if (data.success && data.memories?.length > 0) {
+          setMemories(data.memories)
         }
       } catch (e) {
         console.error('Failed to fetch memories:', e)
