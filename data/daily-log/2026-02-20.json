@@ -352,7 +352,7 @@
     {
       "type": "partner_workflow",
       "title": "partner on demand enrichment spec",
-      "path": "clients/partner/exol/workflows/on-demand-enrichment-spec.md",
+      "path": "clients/partner/partner-gamma/workflows/on-demand-enrichment-spec.md",
       "source": "auto-mtime",
       "timestamp": "01:59",
       "words": 2912,
