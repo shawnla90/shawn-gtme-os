@@ -39,11 +39,7 @@ Count: modified files, untracked files, stashed changes. Compare against the han
 Query ClickUp for actionable tasks across all partner workspaces.
 
 1. Call `get_workspace_hierarchy` to get the current folder/list structure
-2. For each known partner folder, call `get_tasks` on every list within that folder:
-   - Exol
-   - Connext
-   - Praecipio
-   - Elauwit (if it has a ClickUp folder)
+2. For each known partner folder, call `get_tasks` on every list within that folder. Discover partner names dynamically by listing subdirectories of `clients/partner/`.
 3. From the returned tasks, filter for:
    - **Due today or overdue**: `due_date` exists AND `due_date <= end of today` AND status is NOT `completed` / `closed` / `done`
    - **Urgent priority**: any task with priority = 1 (urgent), regardless of due date
@@ -53,12 +49,11 @@ Query ClickUp for actionable tasks across all partner workspaces.
 
 ### Step 4: Partner Pulse
 
-Read the "Current Status" section from each partner SKILL.md:
+Read the "Current Status" section from each partner SKILL.md. Discover partners dynamically:
 
-- `clients/partner/elauwit/SKILL.md`
-- `clients/partner/connext/SKILL.md`
-- `clients/partner/exol/SKILL.md`
-- `clients/partner/praecipio/SKILL.md`
+```bash
+ls -d clients/partner/*/SKILL.md 2>/dev/null
+```
 
 For each file, scan for lines containing any of these keywords (case-insensitive):
 - `blocked`
