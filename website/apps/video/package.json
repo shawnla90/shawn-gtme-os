@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "remotion studio src/index.ts",
-    "render": "remotion render src/index.ts LeadMagnetV2 out/lead-magnet-v2-linkedin.mp4",
-    "render:linkedin": "remotion render src/index.ts LeadMagnetV2 out/lead-magnet-v2-linkedin.mp4",
-    "render:reels": "remotion render src/index.ts LeadMagnetV2Reels out/lead-magnet-v2-reels.mp4",
-    "render:landscape": "remotion render src/index.ts LeadMagnetV2Landscape out/lead-magnet-v2-landscape.mp4",
+    "render": "remotion render src/index.ts LeadMagnetV3 out/lead-magnet-v3-linkedin.mp4",
+    "render:linkedin": "remotion render src/index.ts LeadMagnetV3 out/lead-magnet-v3-linkedin.mp4",
+    "render:reels": "remotion render src/index.ts LeadMagnetV3Reels out/lead-magnet-v3-reels.mp4",
+    "render:landscape": "remotion render src/index.ts LeadMagnetV3Landscape out/lead-magnet-v3-landscape.mp4",
     "render:all": "npm run render:linkedin && npm run render:reels && npm run render:landscape",
     "render:v1": "remotion render src/index.ts LeadMagnet out/lead-magnet-linkedin.mp4",
     "build": "echo 'Video app — use render scripts instead'"

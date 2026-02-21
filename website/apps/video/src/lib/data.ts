@@ -17,13 +17,13 @@ export const WIKI_MONTAGE = [
   {
     name: 'Clay Wiki',
     count: CLAY_WIKI_ENTRIES.length,
-    label: 'entries',
+    label: 'pages',
     highlights: ['Clay Enrichment', 'Claygent Agents', 'Waterfall Logic'],
   },
   {
     name: 'Context Wiki',
     count: CONTEXT_WIKI_ENTRIES.length,
-    label: 'entries',
+    label: 'pages',
     highlights: ['Context Engineering', 'CLAUDE.md', 'MCP Servers'],
   },
   {
@@ -35,7 +35,7 @@ export const WIKI_MONTAGE = [
   {
     name: 'Content Wiki',
     count: CONTENT_WIKI_ENTRIES.length,
-    label: 'entries',
+    label: 'pages',
     highlights: ['Voice System', 'Anti-Slop', 'Platform Algorithms'],
   },
   {
@@ -86,3 +86,12 @@ export const STATS = {
   sites: 3,
   wikis: 7,
 };
+
+/** Character class data for progression scene */
+export const CHARACTER_CLASSES = [
+  { name: 'Builder',     color: '#f59e0b', avatar: 'class-builder-static.png' },
+  { name: 'Scribe',      color: '#06b6d4', avatar: 'class-scribe-static.png' },
+  { name: 'Strategist',  color: '#3b82f6', avatar: 'class-strategist-static.png' },
+  { name: 'Alchemist',   color: '#a855f7', avatar: 'class-alchemist-static.png' },
+  { name: 'Polymath',    color: '#00ff41', avatar: 'class-polymath-static.png' },
+] as const;

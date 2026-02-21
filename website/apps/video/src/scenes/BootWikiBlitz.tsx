@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  AbsoluteFill,
   useCurrentFrame,
   useVideoConfig,
   spring,
@@ -8,13 +7,14 @@ import {
   Audio,
   Sequence,
 } from 'remotion';
-import { COLORS, FONTS } from '../lib/tokens';
+import { COLORS } from '../lib/tokens';
 import { WIKI_MONTAGE } from '../lib/data';
 import { AUDIO, VOLUMES } from '../lib/sounds';
 import { TerminalChrome } from '../components/TerminalChrome';
 import { TypewriterText } from '../components/TypewriterText';
 import { WikiCard } from '../components/WikiCard';
-import { ScanlineOverlay } from '../components/ScanlineOverlay';
+import { SceneWrapper } from '../components/SceneWrapper';
+import { useScale } from '../lib/useScale';
 
 /** Accent colors cycling through the palette */
 const WIKI_ACCENTS = [
@@ -25,34 +25,35 @@ const WIKI_ACCENTS = [
   COLORS.green,   // GTM Knowledge
 ];
 
-/** Use first 5 wikis for V2 (tighter montage) */
+/** Use first 5 wikis */
 const WIKIS = WIKI_MONTAGE.slice(0, 5);
-const BOOT_END = 60;  // Boot phase: frames 0-60 (2s)
-const WIKI_START = 60;
-const FRAMES_PER_WIKI = 57; // ~1.9s per wiki
+const BOOT_END = 22;   // Boot phase: frames 0-22 (~0.73s)
+const WIKI_START = 22;
+const FRAMES_PER_WIKI = 15; // 0.5s per wiki — rapid-fire
 
 /**
- * Scene 2 — Boot + Wiki Blitz (350 frames / ~11.7s)
- * Merged scene: terminal boots (2s), then wiki cards rapid-fire.
+ * Scene 2 — Boot + Wiki Blitz (110 frames / ~3.7s)
+ * Fast terminal boot, then wiki cards rapid-fire.
  */
 export const BootWikiBlitz: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps, width } = useVideoConfig();
+  const { fps } = useVideoConfig();
+  const { s, sv } = useScale();
 
-  // ── Boot Phase (frames 0-60) ──
+  // ── Boot Phase (frames 0-22) ──
 
   const windowScale = spring({
     frame,
     fps,
-    config: { damping: 14, stiffness: 180 },
+    config: { damping: 12, stiffness: 220 },
   });
 
-  const barProgress = interpolate(frame, [25, 55], [0, 100], {
+  const barProgress = interpolate(frame, [8, 20], [0, 100], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // ── Wiki Phase (frames 60+) ──
+  // ── Wiki Phase (frames 22+) ──
 
   const wikiFrame = Math.max(0, frame - WIKI_START);
   const wikiIndex = Math.min(
@@ -64,22 +65,22 @@ export const BootWikiBlitz: React.FC = () => {
   const wiki = WIKIS[wikiIndex];
   const accent = WIKI_ACCENTS[wikiIndex] ?? COLORS.green;
 
-  // Wiki card slide-in
-  const slideInX = interpolate(localFrame, [0, 10], [60, 0], {
+  // Wiki card slide-in (rapid)
+  const slideInX = interpolate(localFrame, [0, 3], [50, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const slideInOpacity = interpolate(localFrame, [0, 10], [0, 1], {
+  const slideInOpacity = interpolate(localFrame, [0, 3], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Wiki card wipe-out
-  const wipeOutOpacity = interpolate(localFrame, [45, 57], [1, 0], {
+  // Wiki card wipe-out (rapid)
+  const wipeOutOpacity = interpolate(localFrame, [11, 15], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const wipeOutX = interpolate(localFrame, [45, 57], [0, -40], {
+  const wipeOutX = interpolate(localFrame, [11, 15], [0, -40], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -88,39 +89,34 @@ export const BootWikiBlitz: React.FC = () => {
   const cardTranslateX = slideInX + wipeOutX;
 
   // Highlight progress
-  const highlightProgress = interpolate(localFrame, [10, 40], [0, 1], {
+  const highlightProgress = interpolate(localFrame, [3, 10], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
   // Running counter
-  const runningTotal = WIKIS.slice(0, wikiIndex + 1).reduce((s, w) => s + w.count, 0);
-  const prevTotal = WIKIS.slice(0, wikiIndex).reduce((s, w) => s + w.count, 0);
+  const runningTotal = WIKIS.slice(0, wikiIndex + 1).reduce((sum, w) => sum + w.count, 0);
+  const prevTotal = WIKIS.slice(0, wikiIndex).reduce((sum, w) => sum + w.count, 0);
   const counterValue = Math.round(
-    interpolate(localFrame, [5, 35], [prevTotal, runningTotal], {
+    interpolate(localFrame, [1, 10], [prevTotal, runningTotal], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     }),
   );
 
   const isBootPhase = frame < BOOT_END;
-  const showTerminal = frame < BOOT_END + 15; // Terminal fades during wiki phase overlap
+  const showTerminal = frame < BOOT_END + 8;
 
   // Terminal fade-out
-  const terminalOpacity = interpolate(frame, [BOOT_END, BOOT_END + 15], [1, 0], {
+  const terminalOpacity = interpolate(frame, [BOOT_END, BOOT_END + 8], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
   return (
-    <AbsoluteFill
-      style={{
-        backgroundColor: COLORS.canvas,
-        fontFamily: FONTS.mono,
-      }}
-    >
-      {/* SFX: key clicks during boot typewriter (every 3 frames from 10-25) */}
-      {[10, 13, 16, 19, 22, 25].map((f) => (
+    <SceneWrapper accentColor={accent} particleCount={25}>
+      {/* SFX: key clicks during boot typewriter */}
+      {[3, 5, 7].map((f) => (
         <Sequence key={`click-${f}`} from={f} durationInFrames={3}>
           <Audio src={AUDIO.keyClick} volume={VOLUMES.keyClick} />
         </Sequence>
@@ -156,34 +152,43 @@ export const BootWikiBlitz: React.FC = () => {
               transformOrigin: 'center center',
             }}
           >
-            <TerminalChrome title="shawnos.ai" accentColor={COLORS.green}>
+            <TerminalChrome
+              title="shawnos.ai"
+              accentColor={COLORS.green}
+              glowColor={COLORS.green}
+              titleBarHeight={s(40)}
+              contentPadding={s(24)}
+              borderRadius={s(8)}
+              trafficLightSize={s(12)}
+              titleFontSize={s(13)}
+            >
               <div
                 style={{
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: 16,
-                  minHeight: 160,
+                  gap: s(16),
+                  minHeight: s(120),
                 }}
               >
-                {frame >= 10 && (
+                {frame >= 3 && (
                   <TypewriterText
                     text="$ ./boot shawnos.ai"
-                    startFrame={10}
-                    speed={0.8}
+                    startFrame={3}
+                    speed={1.5}
                     color={COLORS.green}
-                    fontSize={20}
-                    showCursor={frame < 25}
+                    fontSize={s(20)}
+                    showCursor={frame < 8}
                     cursorColor={COLORS.green}
                   />
                 )}
 
-                {frame >= 25 && (
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {frame >= 8 && (
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: s(8) }}>
                     <div
                       style={{
                         display: 'flex',
                         justifyContent: 'space-between',
-                        fontSize: 14,
+                        fontSize: s(14),
                         color: COLORS.textSecondary,
                       }}
                     >
@@ -195,9 +200,9 @@ export const BootWikiBlitz: React.FC = () => {
                     <div
                       style={{
                         width: '100%',
-                        height: 8,
+                        height: s(8),
                         backgroundColor: COLORS.canvasSubtle,
-                        borderRadius: 4,
+                        borderRadius: s(4),
                         overflow: 'hidden',
                       }}
                     >
@@ -206,23 +211,11 @@ export const BootWikiBlitz: React.FC = () => {
                           width: `${barProgress}%`,
                           height: '100%',
                           backgroundColor: COLORS.green,
-                          borderRadius: 4,
+                          borderRadius: s(4),
                         }}
                       />
                     </div>
                   </div>
-                )}
-
-                {frame >= 55 && (
-                  <TypewriterText
-                    text="> system loaded — 3 sites | 7 wikis | 1 repo"
-                    startFrame={55}
-                    speed={1}
-                    color={COLORS.textPrimary}
-                    fontSize={16}
-                    showCursor={false}
-                    cursorColor={COLORS.green}
-                  />
                 )}
               </div>
             </TerminalChrome>
@@ -237,18 +230,18 @@ export const BootWikiBlitz: React.FC = () => {
           <div
             style={{
               position: 'absolute',
-              top: 40,
-              right: 40,
+              top: s(40),
+              right: s(40),
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-end',
-              gap: 4,
+              gap: s(4),
               zIndex: 10,
             }}
           >
             <div
               style={{
-                fontSize: 14,
+                fontSize: s(14),
                 color: COLORS.textMuted,
                 letterSpacing: 1,
                 textTransform: 'uppercase',
@@ -258,7 +251,7 @@ export const BootWikiBlitz: React.FC = () => {
             </div>
             <div
               style={{
-                fontSize: 40,
+                fontSize: s(40),
                 fontWeight: 800,
                 color: COLORS.textPrimary,
                 fontVariantNumeric: 'tabular-nums',
@@ -266,7 +259,7 @@ export const BootWikiBlitz: React.FC = () => {
             >
               {counterValue}
             </div>
-            <div style={{ fontSize: 13, color: COLORS.textMuted, marginTop: 4 }}>
+            <div style={{ fontSize: s(13), color: COLORS.textMuted, marginTop: s(4) }}>
               {wikiIndex + 1} / {WIKIS.length}
             </div>
           </div>
@@ -290,13 +283,19 @@ export const BootWikiBlitz: React.FC = () => {
               highlights={wiki.highlights}
               accentColor={accent}
               animationProgress={highlightProgress}
+              glowColor={accent}
+              padding={s(32)}
+              minWidth={s(400)}
+              maxWidth={s(520)}
+              nameFontSize={s(28)}
+              countFontSize={s(56)}
+              labelFontSize={s(18)}
+              highlightFontSize={s(16)}
+              gap={s(16)}
             />
           </div>
         </>
       )}
-
-      {/* Scanline overlay */}
-      <ScanlineOverlay opacity={0.04} />
-    </AbsoluteFill>
+    </SceneWrapper>
   );
 };

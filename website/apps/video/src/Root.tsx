@@ -7,11 +7,11 @@ import { FPS_V2, TOTAL_FRAMES_V2 } from './lib/timing-v2';
 export const Root: React.FC = () => {
   return (
     <>
-      {/* ── V2 Compositions (30s, with audio + transitions) ── */}
+      {/* ── V3 Compositions (15s, with audio + transitions + visual integration) ── */}
 
-      {/* V2 Primary: LinkedIn 4:5 */}
+      {/* V3 Primary: LinkedIn 4:5 */}
       <Composition
-        id="LeadMagnetV2"
+        id="LeadMagnetV3"
         component={LeadMagnetV2}
         durationInFrames={TOTAL_FRAMES_V2}
         fps={FPS_V2}
@@ -19,9 +19,9 @@ export const Root: React.FC = () => {
         height={PRESETS.linkedin.height}
       />
 
-      {/* V2 Secondary: IG Reels / TikTok / Shorts 9:16 */}
+      {/* V3 Secondary: IG Reels / TikTok / Shorts 9:16 */}
       <Composition
-        id="LeadMagnetV2Reels"
+        id="LeadMagnetV3Reels"
         component={LeadMagnetV2}
         durationInFrames={TOTAL_FRAMES_V2}
         fps={FPS_V2}
@@ -29,9 +29,9 @@ export const Root: React.FC = () => {
         height={PRESETS.reels.height}
       />
 
-      {/* V2 Tertiary: YouTube / website embed 16:9 */}
+      {/* V3 Tertiary: YouTube / website embed 16:9 */}
       <Composition
-        id="LeadMagnetV2Landscape"
+        id="LeadMagnetV3Landscape"
         component={LeadMagnetV2}
         durationInFrames={TOTAL_FRAMES_V2}
         fps={FPS_V2}

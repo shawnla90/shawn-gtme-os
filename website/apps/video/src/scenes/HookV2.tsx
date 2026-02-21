@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  AbsoluteFill,
   useCurrentFrame,
   useVideoConfig,
   spring,
@@ -8,62 +7,48 @@ import {
   Audio,
   Sequence,
 } from 'remotion';
-import { COLORS, FONTS } from '../lib/tokens';
+import { COLORS } from '../lib/tokens';
+import { TOTAL_ENTRIES } from '../lib/data';
 import { AUDIO, VOLUMES } from '../lib/sounds';
-import { ParticleField } from '../components/ParticleField';
+import { SceneWrapper } from '../components/SceneWrapper';
+import { useScale } from '../lib/useScale';
 
 /**
- * Scene 1 — Hook (90 frames / ~3s including transition overlap)
- * Immediate stat punch. No cursor-wait dead time.
- * Frame 0: "190+" springs in immediately
- * Frame 10: subtitle snaps in
- * Frame 25: subtitle text swaps to topic categories
- * Frame 60-75: starts fading (TransitionSeries handles this)
+ * Scene 1 — Hook (36 frames / 1.2s)
+ * Immediate stat punch. Snappy — everything lands fast.
+ * Frame 0: count springs in
+ * Frame 3: subtitle snaps in
+ * Frame 7: "and growing" fades in
  */
 export const HookV2: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const { s } = useScale();
 
-  // --- Immediate spring-in of "190+" (frame 0, no delay) ---
+  // Dynamic count — rounds down to nearest 10
+  const displayCount = `${Math.floor(TOTAL_ENTRIES / 10) * 10}+`;
+
+  // --- Immediate spring-in of count (frame 0) ---
   const numberScale = spring({
     frame,
     fps,
-    config: { damping: 10, stiffness: 250 },
+    config: { damping: 10, stiffness: 280 },
   });
 
-  // --- Subtitle snap in (frame 10) ---
-  const subtitleOpacity = interpolate(frame, [10, 18], [0, 1], {
+  // --- Subtitle snap in (frame 3) ---
+  const subtitleOpacity = interpolate(frame, [3, 8], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // --- Subtitle text swap at frame 25 ---
-  const showCategories = frame >= 25;
-  const categoryOpacity = interpolate(frame, [25, 33], [0, 1], {
+  // --- "and growing" fade in (frame 7) ---
+  const growingOpacity = interpolate(frame, [7, 14], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const firstSubtitleOpacity = showCategories
-    ? interpolate(frame, [23, 28], [1, 0], {
-        extrapolateLeft: 'clamp',
-        extrapolateRight: 'clamp',
-      })
-    : subtitleOpacity;
 
   return (
-    <AbsoluteFill
-      style={{
-        backgroundColor: COLORS.canvas,
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        fontFamily: FONTS.mono,
-      }}
-    >
-      {/* Ambient particle background */}
-      <ParticleField count={30} opacity={0.4} speed={0.006} />
-
+    <SceneWrapper accentColor={COLORS.green} particleCount={30}>
       {/* Boot beep SFX at frame 0 */}
       <Sequence from={0} durationInFrames={10}>
         <Audio src={AUDIO.bootBeep} volume={VOLUMES.bootBeep} />
@@ -75,56 +60,59 @@ export const HookV2: React.FC = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 20,
-          zIndex: 10,
+          justifyContent: 'center',
+          width: '100%',
+          height: '100%',
+          gap: s(12),
         }}
       >
         {/* Big stat number */}
         <div
           style={{
-            fontSize: 80,
+            fontSize: s(96),
             fontWeight: 800,
             color: COLORS.textPrimary,
             transform: `scale(${numberScale})`,
             transformOrigin: 'center center',
             textAlign: 'center',
             lineHeight: 1,
-            letterSpacing: -2,
+            letterSpacing: s(-3),
+            textShadow: `0 0 ${s(30)}px ${COLORS.green}44, 0 0 ${s(60)}px ${COLORS.green}22`,
           }}
         >
-          190+
+          {displayCount}
         </div>
 
-        {/* First subtitle */}
+        {/* Subtitle */}
         <div
           style={{
-            fontSize: 28,
+            fontSize: s(28),
             fontWeight: 600,
             color: COLORS.green,
-            opacity: firstSubtitleOpacity,
+            opacity: subtitleOpacity,
             textAlign: 'center',
             letterSpacing: 0.5,
+            textShadow: `0 0 ${s(20)}px ${COLORS.green}33`,
           }}
         >
-          free knowledge entries
+          free wiki pages, guides & terms
         </div>
 
-        {/* Category swap subtitle */}
-        {showCategories && (
-          <div
-            style={{
-              fontSize: 20,
-              color: COLORS.textSecondary,
-              opacity: categoryOpacity,
-              textAlign: 'center',
-              letterSpacing: 1,
-              marginTop: -8,
-            }}
-          >
-            Clay · Context Engineering · Claude Code · GTM
-          </div>
-        )}
+        {/* "and growing" tag */}
+        <div
+          style={{
+            fontSize: s(18),
+            fontWeight: 500,
+            color: COLORS.textMuted,
+            opacity: growingOpacity,
+            textAlign: 'center',
+            letterSpacing: s(2),
+            textTransform: 'uppercase',
+          }}
+        >
+          and growing
+        </div>
       </div>
-    </AbsoluteFill>
+    </SceneWrapper>
   );
 };

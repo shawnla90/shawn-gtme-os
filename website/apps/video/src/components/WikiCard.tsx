@@ -8,6 +8,15 @@ interface WikiCardProps {
   highlights: string[];
   accentColor?: string;
   animationProgress?: number;
+  glowColor?: string;
+  padding?: number;
+  minWidth?: number;
+  maxWidth?: number;
+  nameFontSize?: number;
+  countFontSize?: number;
+  labelFontSize?: number;
+  highlightFontSize?: number;
+  gap?: number;
 }
 
 /**
@@ -21,45 +30,59 @@ export const WikiCard: React.FC<WikiCardProps> = ({
   highlights,
   accentColor = COLORS.green,
   animationProgress = 1,
+  glowColor,
+  padding = 32,
+  minWidth = 400,
+  maxWidth = 520,
+  nameFontSize = 28,
+  countFontSize = 56,
+  labelFontSize = 18,
+  highlightFontSize = 16,
+  gap = 16,
 }) => {
   const cardStyle: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
-    gap: 16,
-    padding: 32,
+    gap,
+    padding,
     borderRadius: 12,
     border: `1px solid ${COLORS.border}`,
     backgroundColor: COLORS.canvasSubtle,
     fontFamily: FONTS.mono,
-    minWidth: 400,
-    maxWidth: 520,
+    minWidth,
+    maxWidth,
+    ...(glowColor
+      ? {
+          boxShadow: `0 0 30px ${glowColor}22, 0 0 60px ${glowColor}11`,
+        }
+      : {}),
   };
 
   const nameStyle: CSSProperties = {
-    fontSize: 28,
+    fontSize: nameFontSize,
     fontWeight: 700,
     color: accentColor,
     letterSpacing: -0.5,
   };
 
   const countStyle: CSSProperties = {
-    fontSize: 56,
+    fontSize: countFontSize,
     fontWeight: 800,
     color: COLORS.textPrimary,
     lineHeight: 1,
   };
 
   const labelStyle: CSSProperties = {
-    fontSize: 18,
+    fontSize: labelFontSize,
     color: COLORS.textSecondary,
-    marginLeft: 8,
+    marginLeft: Math.round(labelFontSize * 0.44),
   };
 
   const highlightContainerStyle: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
-    gap: 6,
-    marginTop: 8,
+    gap: Math.round(gap * 0.375),
+    marginTop: Math.round(gap * 0.5),
   };
 
   return (
@@ -79,13 +102,13 @@ export const WikiCard: React.FC<WikiCardProps> = ({
             <div
               key={h}
               style={{
-                fontSize: 16,
+                fontSize: highlightFontSize,
                 color: COLORS.textSecondary,
                 opacity: itemProgress,
                 transform: `translateX(${(1 - itemProgress) * 12}px)`,
               }}
             >
-              <span style={{ color: accentColor, marginRight: 8 }}>{'>'}</span>
+              <span style={{ color: accentColor, marginRight: Math.round(highlightFontSize * 0.5) }}>{'>'}</span>
               {h}
             </div>
           );

@@ -1,21 +1,58 @@
 'use client'
 
-import { useState, useRef, useCallback } from 'react'
+import { useState, useRef, useCallback, useMemo } from 'react'
+import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
+import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
+import { CONTEXT_WIKI_ENTRIES } from '@shawnos/shared/data/context-wiki'
+import { HOW_TO_WIKI_ENTRIES } from '@shawnos/shared/data/how-to-wiki'
+import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
+import { EMAIL_CATEGORIES } from '@shawnos/shared/data/email-infrastructure'
+import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 
 /**
  * Click-to-play video showcase in terminal chrome.
  * Shows a styled poster with play button. Clicking plays the video inline.
  * Video stays on the page — no navigation, no modal.
  */
+const countTerms = (categories: { terms: unknown[] }[]) =>
+  categories.reduce((sum, cat) => sum + cat.terms.length, 0)
+
 export function VideoShowcase() {
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
+  const { entryCount, entryLabel } = useMemo(() => {
+    const total =
+      CLAY_WIKI_ENTRIES.length +
+      CONTEXT_WIKI_ENTRIES.length +
+      HOW_TO_WIKI_ENTRIES.length +
+      CONTENT_WIKI_ENTRIES.length +
+      countTerms(GTM_CATEGORIES) +
+      countTerms(EMAIL_CATEGORIES) +
+      countTerms(ENGINEERING_CATEGORIES)
+    const rounded = Math.floor(total / 10) * 10
+    return {
+      entryCount: `${rounded}+`,
+      entryLabel: 'free wiki pages, guides & terms',
+    }
+  }, [])
+
   const handlePlay = useCallback(() => {
     const video = videoRef.current
     if (!video) return
-    setIsPlaying(true)
-    video.play().catch(() => setIsPlaying(false))
+    video.playbackRate = 1.2
+    video.muted = false
+    // Reset to start in case it was previously played
+    video.currentTime = 0
+    video.play()
+      .then(() => setIsPlaying(true))
+      .catch(() => {
+        // Browser blocked unmuted play — retry muted
+        video.muted = true
+        video.play()
+          .then(() => setIsPlaying(true))
+          .catch(() => setIsPlaying(false))
+      })
   }, [])
 
   const handleEnded = useCallback(() => {
@@ -61,7 +98,7 @@ export function VideoShowcase() {
           onEnded={handleEnded}
           style={videoEl}
           playsInline
-          preload="metadata"
+          preload="auto"
         >
           <source src="/video/lead-magnet.mp4" type="video/mp4" />
         </video>
@@ -71,8 +108,10 @@ export function VideoShowcase() {
           <div style={overlay}>
             <div style={posterContent}>
               <div style={playIcon}>▶</div>
-              <div style={posterTitle}>190+ free knowledge entries</div>
-              <div style={posterSubtitle}>60s highlight reel — click to play</div>
+              <div style={posterCount}>{entryCount}</div>
+              <div style={posterTitle}>{entryLabel}</div>
+              <div style={posterGrowing}>and growing</div>
+              <div style={posterSubtitle}>10s highlight reel — click to play</div>
             </div>
           </div>
         )}
@@ -148,30 +187,52 @@ const posterContent: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: 16,
+  gap: 8,
 }
 
 const playIcon: React.CSSProperties = {
-  width: 64,
-  height: 64,
+  width: 56,
+  height: 56,
   borderRadius: '50%',
   border: '2px solid var(--accent)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  fontSize: 24,
+  fontSize: 22,
   color: 'var(--accent)',
+  marginBottom: 8,
   transition: 'transform 0.15s ease, background 0.15s ease',
 }
 
-const posterTitle: React.CSSProperties = {
-  fontSize: 22,
-  fontWeight: 700,
+const posterCount: React.CSSProperties = {
+  fontSize: 48,
+  fontWeight: 800,
   color: 'var(--text-primary)',
   textAlign: 'center',
+  lineHeight: 1,
+  letterSpacing: -2,
+  textShadow: '0 0 30px rgba(78, 195, 115, 0.3)',
+}
+
+const posterTitle: React.CSSProperties = {
+  fontSize: 16,
+  fontWeight: 600,
+  color: 'var(--accent)',
+  textAlign: 'center',
+}
+
+const posterGrowing: React.CSSProperties = {
+  fontSize: 12,
+  fontWeight: 500,
+  color: 'var(--text-muted)',
+  textAlign: 'center',
+  letterSpacing: 2,
+  textTransform: 'uppercase',
+  marginBottom: 8,
 }
 
 const posterSubtitle: React.CSSProperties = {
   fontSize: 13,
   color: 'var(--text-muted)',
+  opacity: 0.7,
 }

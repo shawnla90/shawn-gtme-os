@@ -6,51 +6,64 @@ interface TerminalChromeProps {
   children: ReactNode;
   scale?: number;
   accentColor?: string;
+  glowColor?: string;
+  titleBarHeight?: number;
+  contentPadding?: number;
+  borderRadius?: number;
+  trafficLightSize?: number;
+  titleFontSize?: number;
 }
-
-const TRAFFIC_LIGHT_SIZE = 12;
-const TRAFFIC_LIGHT_GAP = 8;
-const TITLE_BAR_HEIGHT = 40;
-const BORDER_RADIUS = 8;
-const CONTENT_PADDING = 24;
 
 export const TerminalChrome: React.FC<TerminalChromeProps> = ({
   title = 'terminal',
   children,
   scale = 1,
   accentColor,
+  glowColor,
+  titleBarHeight = 40,
+  contentPadding = 24,
+  borderRadius = 8,
+  trafficLightSize = 12,
+  titleFontSize = 13,
 }) => {
+  const trafficLightGap = Math.round(trafficLightSize * 0.67);
+
   const containerStyle: CSSProperties = {
     display: 'flex',
     flexDirection: 'column',
-    borderRadius: BORDER_RADIUS,
+    borderRadius,
     border: `1px solid ${COLORS.border}`,
     overflow: 'hidden',
     transform: `scale(${scale})`,
     transformOrigin: 'center center',
     fontFamily: FONTS.mono,
+    ...(glowColor
+      ? {
+          boxShadow: `0 0 40px ${glowColor}22, 0 0 80px ${glowColor}11`,
+        }
+      : {}),
   };
 
   const titleBarStyle: CSSProperties = {
     display: 'flex',
     alignItems: 'center',
-    height: TITLE_BAR_HEIGHT,
+    height: titleBarHeight,
     backgroundColor: COLORS.canvasSubtle,
-    paddingLeft: 16,
-    paddingRight: 16,
+    paddingLeft: Math.round(titleBarHeight * 0.4),
+    paddingRight: Math.round(titleBarHeight * 0.4),
     position: 'relative',
   };
 
   const trafficLightsContainerStyle: CSSProperties = {
     display: 'flex',
     alignItems: 'center',
-    gap: TRAFFIC_LIGHT_GAP,
+    gap: trafficLightGap,
     flexShrink: 0,
   };
 
   const trafficLightBase: CSSProperties = {
-    width: TRAFFIC_LIGHT_SIZE,
-    height: TRAFFIC_LIGHT_SIZE,
+    width: trafficLightSize,
+    height: trafficLightSize,
     borderRadius: '50%',
   };
 
@@ -58,7 +71,7 @@ export const TerminalChrome: React.FC<TerminalChromeProps> = ({
     position: 'absolute',
     left: '50%',
     transform: 'translateX(-50%)',
-    fontSize: 13,
+    fontSize: titleFontSize,
     color: accentColor ?? COLORS.textSecondary,
     letterSpacing: 0.5,
     whiteSpace: 'nowrap',
@@ -67,7 +80,7 @@ export const TerminalChrome: React.FC<TerminalChromeProps> = ({
 
   const contentStyle: CSSProperties = {
     backgroundColor: COLORS.canvas,
-    padding: CONTENT_PADDING,
+    padding: contentPadding,
     flexGrow: 1,
     minHeight: 0,
   };

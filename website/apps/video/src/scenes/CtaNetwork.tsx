@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  AbsoluteFill,
   useCurrentFrame,
   useVideoConfig,
   spring,
@@ -8,74 +7,78 @@ import {
   Audio,
   Sequence,
 } from 'remotion';
-import { COLORS, FONTS } from '../lib/tokens';
+import { COLORS } from '../lib/tokens';
 import { SITES, STATS } from '../lib/data';
 import { AUDIO, VOLUMES } from '../lib/sounds';
 import { TerminalChrome } from '../components/TerminalChrome';
 import { TypewriterText } from '../components/TypewriterText';
 import { ConnectionLines } from '../components/ConnectionLines';
 import { MatrixRain } from '../components/MatrixRain';
+import { SceneWrapper } from '../components/SceneWrapper';
+import { useScale } from '../lib/useScale';
 
 /**
- * Scene 4 — CTA + Network (255 frames / ~8.5s)
- * Merged scene: 3-site network reveal → shawnos.ai CTA.
+ * Scene 4 — CTA + Network (94 frames / ~3.1s)
+ * Compressed: network reveal → stats flash → CTA end card.
  *
- * Frames 0-60:    3 site cards slide in from different directions
- * Frames 40-100:  SVG connection lines draw on
- * Frames 100-130: Stats overlay fades in
- * Frames 140-180: Everything fades, shawnos.ai types out
- * Frames 180-200: "Free. Open. Updated daily." fades in
- * Frames 200-255: Hold with cursor blink + matrix rain
+ * Frames 0-30:   3 site cards slide in (0/2/4f stagger)
+ * Frames 10-28:  SVG connection lines draw on
+ * Frames 32-48:  Stats overlay flashes
+ * Frames 40-50:  Network fades out
+ * Frames 50-60:  CTA text types out
+ * Frames 62-72:  Subtitle fades in
+ * Frames 75-94:  Matrix rain + hold
  */
 export const CtaNetwork: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
+  const { s, sv } = useScale();
 
-  // ── Network Phase (frames 0-130) ──
+  // ── Network Phase (frames 0-50) ──
 
-  // Three cards slide in
-  const leftSlide = spring({ frame, fps, config: { damping: 14, stiffness: 120 } });
-  const centerSlide = spring({ frame: frame - 5, fps, config: { damping: 14, stiffness: 120 } });
-  const rightSlide = spring({ frame: frame - 10, fps, config: { damping: 14, stiffness: 120 } });
+  // Three cards slide in with tight stagger
+  const leftSlide = spring({ frame, fps, config: { damping: 12, stiffness: 180 } });
+  const centerSlide = spring({ frame: frame - 2, fps, config: { damping: 12, stiffness: 180 } });
+  const rightSlide = spring({ frame: frame - 4, fps, config: { damping: 12, stiffness: 180 } });
 
   const leftX = interpolate(leftSlide, [0, 1], [-120, 0]);
   const centerY = interpolate(centerSlide, [0, 1], [80, 0]);
   const rightX = interpolate(rightSlide, [0, 1], [120, 0]);
 
-  // Stats overlay (frames 100-130)
+  // Stats overlay (frames 32-48)
   const statsScale = spring({
-    frame: frame - 100,
+    frame: frame - 32,
     fps,
-    config: { damping: 12, stiffness: 180 },
+    config: { damping: 12, stiffness: 200 },
   });
-  const statsVisible = frame >= 100 && frame < 140;
+  const statsVisible = frame >= 32 && frame < 50;
 
-  // ── Transition to CTA (frames 130-140) ──
-  const networkFade = interpolate(frame, [130, 145], [1, 0], {
+  // ── Transition to CTA (frames 40-50) ──
+  const networkFade = interpolate(frame, [40, 50], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // ── CTA Phase (frames 140+) ──
-  const ctaVisible = frame >= 140;
-  const ctaOpacity = interpolate(frame, [140, 150], [0, 1], {
+  // ── CTA Phase (frames 50+) ──
+  const ctaVisible = frame >= 50;
+  const ctaOpacity = interpolate(frame, [50, 56], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Subtitle (frames 180-200)
-  const subtitleOpacity = interpolate(frame, [180, 200], [0, 1], {
+  // Subtitle (frames 62+)
+  const subtitleOpacity = interpolate(frame, [62, 72], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Matrix rain (frames 200+)
-  const matrixOpacity = interpolate(frame, [200, 220], [0, 0.08], {
+  // Matrix rain (frames 75+)
+  const matrixOpacity = interpolate(frame, [75, 88], [0, 0.08], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // Window layout
+  // Window layout (scaled)
   const windowWidth = Math.round(width * 0.28);
   const gap = Math.round(width * 0.03);
   const totalW = windowWidth * 3 + gap * 2;
@@ -97,31 +100,26 @@ export const CtaNetwork: React.FC = () => {
   ];
 
   return (
-    <AbsoluteFill
-      style={{
-        backgroundColor: COLORS.canvas,
-        fontFamily: FONTS.mono,
-      }}
-    >
+    <SceneWrapper accentColor={COLORS.teal} particleCount={25}>
       {/* Whoosh SFX at scene start */}
       <Sequence from={0} durationInFrames={15}>
         <Audio src={AUDIO.whoosh} volume={VOLUMES.whoosh} />
       </Sequence>
 
       {/* Resolve SFX at CTA reveal */}
-      <Sequence from={140} durationInFrames={20}>
+      <Sequence from={50} durationInFrames={20}>
         <Audio src={AUDIO.resolve} volume={VOLUMES.resolve} />
       </Sequence>
 
       {/* Matrix rain background — CTA phase */}
-      {frame >= 200 && (
+      {frame >= 75 && (
         <MatrixRain opacity={matrixOpacity} color={COLORS.green} columns={25} speed={0.6} />
       )}
 
       {/* Network phase */}
       <div style={{ opacity: networkFade }}>
         {/* Three terminal windows */}
-        {windows.map(({ site, x, transform }, i) => (
+        {windows.map(({ site, x, transform }) => (
           <div
             key={site.name}
             style={{
@@ -132,29 +130,39 @@ export const CtaNetwork: React.FC = () => {
               transform,
             }}
           >
-            <TerminalChrome title={site.name} accentColor={site.color}>
+            <TerminalChrome
+              title={site.name}
+              accentColor={site.color}
+              glowColor={site.color}
+              titleBarHeight={s(40)}
+              contentPadding={s(24)}
+              borderRadius={s(8)}
+              trafficLightSize={s(12)}
+              titleFontSize={s(13)}
+            >
               <div
                 style={{
-                  minHeight: windowH - 80,
+                  minHeight: windowH - s(80),
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
-                  padding: '12px 0',
+                  padding: `${s(12)}px 0`,
                 }}
               >
                 <div
                   style={{
-                    fontSize: 18,
+                    fontSize: s(18),
                     fontWeight: 700,
                     color: site.color,
-                    marginBottom: 12,
+                    marginBottom: s(12),
+                    textShadow: `0 0 ${s(15)}px ${site.color}33`,
                   }}
                 >
                   {site.name}
                 </div>
                 <div
                   style={{
-                    fontSize: 14,
+                    fontSize: s(14),
                     color: COLORS.textSecondary,
                   }}
                 >
@@ -168,8 +176,8 @@ export const CtaNetwork: React.FC = () => {
         {/* Connection lines */}
         <ConnectionLines
           points={connectionPoints}
-          startFrame={40}
-          durationFrames={60}
+          startFrame={10}
+          durationFrames={18}
           color={COLORS.teal}
           strokeWidth={2}
         />
@@ -192,23 +200,28 @@ export const CtaNetwork: React.FC = () => {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: 24,
-                fontSize: 22,
+                gap: s(28),
+                fontSize: s(20),
                 color: COLORS.textPrimary,
                 backgroundColor: COLORS.canvasSubtle,
-                padding: '14px 28px',
-                borderRadius: 12,
+                padding: `${s(16)}px ${s(32)}px`,
+                borderRadius: s(12),
                 border: `1px solid ${COLORS.border}`,
               }}
             >
-              <span>
-                <span style={{ color: COLORS.green, fontWeight: 700 }}>{STATS.routes}</span> routes
+              <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ color: COLORS.green, fontWeight: 800, fontSize: s(36) }}>{STATS.routes}+</span>
+                <span style={{ fontSize: s(14), color: COLORS.textSecondary }}>routes</span>
               </span>
-              <span style={{ color: COLORS.textMuted }}>|</span>
-              <span>Updated daily</span>
-              <span style={{ color: COLORS.textMuted }}>|</span>
-              <span>
-                <span style={{ color: COLORS.green, fontWeight: 700 }}>100%</span> free
+              <span style={{ color: COLORS.border, fontSize: s(32) }}>|</span>
+              <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ color: COLORS.green, fontWeight: 800, fontSize: s(36) }}>100%</span>
+                <span style={{ fontSize: s(14), color: COLORS.textSecondary }}>free</span>
+              </span>
+              <span style={{ color: COLORS.border, fontSize: s(32) }}>|</span>
+              <span style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <span style={{ color: COLORS.green, fontWeight: 800, fontSize: s(20) }}>Updated</span>
+                <span style={{ fontSize: s(14), color: COLORS.textSecondary }}>daily</span>
               </span>
             </div>
           </div>
@@ -217,40 +230,46 @@ export const CtaNetwork: React.FC = () => {
 
       {/* CTA phase */}
       {ctaVisible && (
-        <AbsoluteFill
+        <div
           style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: 24,
+            gap: s(24),
             opacity: ctaOpacity,
             zIndex: 10,
           }}
         >
           <TypewriterText
             text="shawnos.ai"
-            startFrame={145}
-            speed={0.35}
+            startFrame={52}
+            speed={0.4}
             color={COLORS.green}
-            fontSize={64}
+            fontSize={s(64)}
             showCursor={true}
             cursorColor={COLORS.green}
           />
 
           <div
             style={{
-              fontSize: 22,
+              fontSize: s(22),
               color: COLORS.textSecondary,
               opacity: subtitleOpacity,
               textAlign: 'center',
               letterSpacing: 1,
+              textShadow: `0 0 ${s(15)}px ${COLORS.green}22`,
             }}
           >
             Free. Open. Updated daily.
           </div>
-        </AbsoluteFill>
+        </div>
       )}
-    </AbsoluteFill>
+    </SceneWrapper>
   );
 };
