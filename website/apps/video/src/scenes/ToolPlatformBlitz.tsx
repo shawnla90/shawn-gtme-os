@@ -13,20 +13,32 @@ import { AUDIO, VOLUMES } from '../lib/sounds';
 import { SceneWrapper } from '../components/SceneWrapper';
 import { useScale } from '../lib/useScale';
 
-const FRAMES_PER_ITEM = 6;
-const ITEMS = SHAWNOS_BLITZ;
-const MONTAGE_END = FRAMES_PER_ITEM * ITEMS.length; // 54
-const FLASH_START = MONTAGE_END;
+interface ToolBlitzProps {
+  items?: ReadonlyArray<{ readonly name: string; readonly color: string }>;
+  framesPerItem?: number;
+  /** Counter label groups: [firstLabel, secondLabel, dividerIndex] */
+  labelGroups?: { first: string; second: string; divider: number };
+}
 
 /**
- * Ultra-fast platform + tool montage (54 frames / ~1.8s).
- * 9 items × 6 frames each = 54 frames of rapid-fire names,
- * then a quick flash to punctuate.
+ * Ultra-fast name montage — platforms, tools, MCP servers, etc.
+ * Configurable via props; defaults to ShawnOS blitz.
  */
-export const ToolPlatformBlitz: React.FC = () => {
+export const ToolPlatformBlitz: React.FC<ToolBlitzProps> = ({
+  items: itemsProp,
+  framesPerItem: fpProp,
+  labelGroups,
+}) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { s } = useScale();
+
+  const ITEMS = itemsProp ?? SHAWNOS_BLITZ;
+  const FRAMES_PER_ITEM = fpProp ?? 6;
+  const MONTAGE_END = FRAMES_PER_ITEM * ITEMS.length;
+  const FLASH_START = MONTAGE_END;
+
+  const labels = labelGroups ?? { first: 'platforms', second: 'tools', divider: 5 };
 
   const itemIndex = Math.min(
     Math.floor(frame / FRAMES_PER_ITEM),
@@ -35,20 +47,19 @@ export const ToolPlatformBlitz: React.FC = () => {
   const localFrame = frame - itemIndex * FRAMES_PER_ITEM;
   const current = ITEMS[itemIndex];
 
-  // Ultra-snappy spring
   const nameScale = spring({
     frame: localFrame,
     fps,
     config: { damping: 8, stiffness: 400 },
   });
 
-  // Quick fade in/out per item
-  const itemOpacity = interpolate(localFrame, [0, 1, 4, 6], [0, 1, 1, 0], {
-    extrapolateLeft: 'clamp',
-    extrapolateRight: 'clamp',
-  });
+  const itemOpacity = interpolate(
+    localFrame,
+    [0, 1, FRAMES_PER_ITEM - 2, FRAMES_PER_ITEM],
+    [0, 1, 1, 0],
+    { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' },
+  );
 
-  // End flash
   const flashOpacity = interpolate(
     frame,
     [FLASH_START, FLASH_START + 3, FLASH_START + 5],
@@ -56,9 +67,8 @@ export const ToolPlatformBlitz: React.FC = () => {
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' },
   );
 
-  // Running counter label
   const counterLabel = frame < MONTAGE_END
-    ? (itemIndex < 5 ? 'platforms' : 'tools')
+    ? (itemIndex < labels.divider ? labels.first : labels.second)
     : 'total';
   const counterValue = frame < MONTAGE_END
     ? itemIndex + 1
@@ -68,19 +78,16 @@ export const ToolPlatformBlitz: React.FC = () => {
 
   return (
     <SceneWrapper accentColor={current.color} particleCount={30}>
-      {/* Whoosh at start */}
       <Sequence from={0} durationInFrames={10}>
         <Audio src={AUDIO.whoosh} volume={VOLUMES.whoosh} />
       </Sequence>
 
-      {/* Card flip SFX per item */}
       {ITEMS.map((_, i) => (
         <Sequence key={`blitz-${i}`} from={i * FRAMES_PER_ITEM} durationInFrames={4}>
           <Audio src={AUDIO.cardFlip} volume={VOLUMES.cardFlip * 0.6} />
         </Sequence>
       ))}
 
-      {/* Level-up at flash */}
       <Sequence from={FLASH_START} durationInFrames={10}>
         <Audio src={AUDIO.levelUp} volume={VOLUMES.levelUp * 0.7} />
       </Sequence>
@@ -123,7 +130,6 @@ export const ToolPlatformBlitz: React.FC = () => {
         </div>
       </div>
 
-      {/* Rapid-fire name montage */}
       {isMontage && (
         <div
           style={{
@@ -152,7 +158,6 @@ export const ToolPlatformBlitz: React.FC = () => {
             {current.name}
           </div>
 
-          {/* Dot indicators */}
           <div style={{ display: 'flex', gap: s(6) }}>
             {ITEMS.map((item, i) => (
               <div
@@ -170,7 +175,6 @@ export const ToolPlatformBlitz: React.FC = () => {
         </div>
       )}
 
-      {/* End flash */}
       {frame >= FLASH_START && (
         <div
           style={{

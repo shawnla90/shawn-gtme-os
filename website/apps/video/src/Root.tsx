@@ -1,7 +1,7 @@
 import { Composition } from 'remotion';
 import { LeadMagnet } from './LeadMagnet';
 import { LeadMagnetV2, SHAWNOS_TOTAL_FRAMES } from './LeadMagnetV2';
-import { GtmOsVideo } from './GtmOsVideo';
+import { GtmOsVideo, GTM_OS_TOTAL_FRAMES } from './GtmOsVideo';
 import { ContentOsVideo } from './ContentOsVideo';
 import { FPS, TOTAL_FRAMES, PRESETS } from './lib/timing';
 import { FPS_V2, TOTAL_FRAMES_V2 } from './lib/timing-v2';
@@ -9,7 +9,7 @@ import { FPS_V2, TOTAL_FRAMES_V2 } from './lib/timing-v2';
 export const Root: React.FC = () => {
   return (
     <>
-      {/* ── V4 Lead Magnet (shawnos.ai) — 7.4s compressed ── */}
+      {/* ── V4 Lead Magnet (shawnos.ai) — 8.2s ── */}
 
       <Composition
         id="LeadMagnetV3"
@@ -38,12 +38,12 @@ export const Root: React.FC = () => {
         height={PRESETS.landscape.height}
       />
 
-      {/* ── GTM OS (thegtmos.ai) ── */}
+      {/* ── GTM OS (thegtmos.ai) — 8.2s ── */}
 
       <Composition
         id="GtmOsLandscape"
         component={GtmOsVideo}
-        durationInFrames={TOTAL_FRAMES_V2}
+        durationInFrames={GTM_OS_TOTAL_FRAMES}
         fps={FPS_V2}
         width={PRESETS.landscape.width}
         height={PRESETS.landscape.height}
@@ -52,7 +52,7 @@ export const Root: React.FC = () => {
       <Composition
         id="GtmOsLinkedIn"
         component={GtmOsVideo}
-        durationInFrames={TOTAL_FRAMES_V2}
+        durationInFrames={GTM_OS_TOTAL_FRAMES}
         fps={FPS_V2}
         width={PRESETS.linkedin.width}
         height={PRESETS.linkedin.height}
@@ -61,7 +61,7 @@ export const Root: React.FC = () => {
       <Composition
         id="GtmOsReels"
         component={GtmOsVideo}
-        durationInFrames={TOTAL_FRAMES_V2}
+        durationInFrames={GTM_OS_TOTAL_FRAMES}
         fps={FPS_V2}
         width={PRESETS.reels.width}
         height={PRESETS.reels.height}

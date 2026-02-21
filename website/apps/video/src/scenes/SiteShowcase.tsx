@@ -27,33 +27,33 @@ interface SiteShowcaseProps {
   concepts: readonly Concept[];
   revealStats: readonly RevealStat[];
   holdText: string;
+  framesPerConcept?: number;
 }
 
-const FRAMES_PER_CONCEPT = 10;
-const FLASH_START = 50;
-const FLASH_END = 60;
-const REVEAL_START = 58;
-const HOLD_START = 82;
-
 /**
- * Generic Showcase scene (100 frames / ~3.3s).
+ * Generic Showcase scene.
  * Text-based concept montage -> flash -> stat reveal -> hold.
- *
- * Frames 0-50:   5 concepts x 10f each
- * Frames 50-60:  White flash + level-up SFX
- * Frames 58-82:  3 stats reveal (staggered springs)
- * Frames 82-100: Hold with summary text
+ * Timing configurable via framesPerConcept prop.
  */
 export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
   concepts,
   revealStats,
   holdText,
+  framesPerConcept: fpcProp,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { s } = useScale();
 
-  // ── Concept montage (frames 0-50) ──
+  const FRAMES_PER_CONCEPT = fpcProp ?? 10;
+  const FLASH_START = FRAMES_PER_CONCEPT * concepts.length;
+  const compressed = FRAMES_PER_CONCEPT <= 8;
+  const FLASH_END = FLASH_START + (compressed ? 8 : 10);
+  const REVEAL_START = FLASH_START + (compressed ? 5 : 8);
+  const statStagger = compressed ? 2 : 6;
+  const HOLD_START = REVEAL_START + statStagger * 2 + (compressed ? 6 : 12);
+
+  // ── Concept montage ──
   const conceptIndex = Math.min(
     Math.floor(frame / FRAMES_PER_CONCEPT),
     concepts.length - 1,
@@ -72,50 +72,47 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
     extrapolateRight: 'clamp',
   });
 
-  // ── Flash (frames 50-60) ──
+  // ── Flash ──
+  const flashMid = FLASH_START + Math.round((FLASH_END - FLASH_START) / 2);
   const flashOpacity = interpolate(
     frame,
-    [FLASH_START, 55, FLASH_END],
+    [FLASH_START, flashMid, FLASH_END],
     [0, 0.8, 0],
     { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' },
   );
 
-  // ── Stat reveal (frames 58+) ──
-  // Three stats stagger 6 frames apart
-  const stat1Scale = spring({
-    frame: frame - 58,
-    fps,
-    config: { damping: 12, stiffness: 200 },
-  });
-  const stat1Y = interpolate(
-    spring({ frame: frame - 58, fps, config: { damping: 14, stiffness: 180 } }),
-    [0, 1],
-    [40, 0],
+  // ── Stat reveal ──
+  const statStarts = [
+    REVEAL_START,
+    REVEAL_START + statStagger,
+    REVEAL_START + statStagger * 2,
+  ];
+
+  const statScales = statStarts.map((start, i) =>
+    spring({
+      frame: frame - start,
+      fps,
+      config: i === 2
+        ? { damping: 10, stiffness: 220 }
+        : { damping: 12, stiffness: 200 },
+    }),
   );
 
-  const stat2Scale = spring({
-    frame: frame - 64,
-    fps,
-    config: { damping: 12, stiffness: 200 },
-  });
-  const stat2Y = interpolate(
-    spring({ frame: frame - 64, fps, config: { damping: 14, stiffness: 180 } }),
-    [0, 1],
-    [40, 0],
+  const statYs = statStarts.map((start, i) =>
+    interpolate(
+      spring({
+        frame: frame - start,
+        fps,
+        config: i === 2
+          ? { damping: 12, stiffness: 200 }
+          : { damping: 14, stiffness: 180 },
+      }),
+      [0, 1],
+      [i === 2 ? 50 : 40, 0],
+    ),
   );
 
-  const stat3Scale = spring({
-    frame: frame - 70,
-    fps,
-    config: { damping: 10, stiffness: 220 },
-  });
-  const stat3Y = interpolate(
-    spring({ frame: frame - 70, fps, config: { damping: 12, stiffness: 200 } }),
-    [0, 1],
-    [50, 0],
-  );
-
-  const holdOpacity = interpolate(frame, [HOLD_START, 88], [0, 1], {
+  const holdOpacity = interpolate(frame, [HOLD_START, HOLD_START + 6], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -127,13 +124,8 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
 
   const accentColor = isMontagePhase ? current.color : COLORS.green;
 
-  const statScales = [stat1Scale, stat2Scale, stat3Scale];
-  const statYs = [stat1Y, stat2Y, stat3Y];
-  const statStarts = [58, 64, 70];
-
   return (
     <SceneWrapper accentColor={accentColor} particleCount={20}>
-      {/* Level-up SFX */}
       <Sequence from={FLASH_START} durationInFrames={30}>
         <Audio src={AUDIO.levelUp} volume={VOLUMES.levelUp} />
       </Sequence>
@@ -151,7 +143,6 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
             gap: s(16),
           }}
         >
-          {/* Big concept name */}
           <div
             style={{
               fontSize: s(56),
@@ -167,7 +158,6 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
             {current.name}
           </div>
 
-          {/* Subtitle */}
           <div
             style={{
               fontSize: s(22),
@@ -182,7 +172,6 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
             {current.subtitle}
           </div>
 
-          {/* Dot indicators */}
           <div
             style={{
               display: 'flex',
@@ -219,7 +208,6 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
             gap: s(24),
           }}
         >
-          {/* 3-stat row */}
           <div
             style={{
               display: 'flex',
@@ -267,7 +255,6 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
             ))}
           </div>
 
-          {/* Hold text */}
           {isHoldPhase && (
             <div
               style={{
@@ -285,7 +272,6 @@ export const SiteShowcase: React.FC<SiteShowcaseProps> = ({
         </div>
       )}
 
-      {/* White flash */}
       {isFlashPhase && (
         <div
           style={{

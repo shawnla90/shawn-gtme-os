@@ -156,6 +156,19 @@ export const GTM_OS_TOOLS = [
   { name: 'Firecrawl', color: '#FF6B35', subtitle: 'web intelligence' },
 ] as const;
 
+/** GTM OS rapid-fire blitz — tools + MCP servers */
+export const GTM_OS_BLITZ = [
+  { name: 'Clay', color: '#3DBFA0' },
+  { name: 'HeyReach', color: '#6366F1' },
+  { name: 'Instantly', color: '#4EC373' },
+  { name: 'Firecrawl', color: '#FF6B35' },
+  { name: 'Signal Triggers', color: '#D2A53C' },
+  { name: 'Clay MCP', color: '#3DBFA0' },
+  { name: 'Slack MCP', color: '#E01E5A' },
+  { name: 'HeyReach MCP', color: '#6366F1' },
+  { name: 'OpenClaw', color: '#4EC373' },
+] as const;
+
 export const GTM_OS_CONCEPTS = [
   { name: 'Clay', color: '#3DBFA0', subtitle: 'enrichment + scoring' },
   { name: 'Instantly', color: '#4EC373', subtitle: 'email sequences' },

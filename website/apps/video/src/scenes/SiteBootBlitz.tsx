@@ -28,15 +28,14 @@ interface SiteBootBlitzProps {
   terminalTitle: string;
   accentColor?: string;
   accentColors?: string[];
+  bootEnd?: number;
+  framesPerWiki?: number;
 }
 
-const BOOT_END = 22;
-const WIKI_START = 22;
-const FRAMES_PER_WIKI = 15;
-
 /**
- * Generic Boot + Blitz scene (110 frames / ~3.7s).
+ * Generic Boot + Blitz scene.
  * Terminal boot → rapid-fire content cards.
+ * Timing configurable via bootEnd / framesPerWiki props.
  */
 export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
   montage,
@@ -44,10 +43,30 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
   terminalTitle,
   accentColor = COLORS.teal,
   accentColors,
+  bootEnd: bootEndProp,
+  framesPerWiki: framesPerWikiProp,
 }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const { s } = useScale();
+
+  const BOOT_END = bootEndProp ?? 22;
+  const WIKI_START = BOOT_END;
+  const FRAMES_PER_WIKI = framesPerWikiProp ?? 15;
+
+  // Derive boot timing from bootEnd
+  const compressed = BOOT_END <= 16;
+  const typewriterStart = compressed ? 2 : 3;
+  const cursorEnd = compressed ? 5 : 8;
+  const barShowFrame = compressed ? 5 : 8;
+  const barEndFrame = BOOT_END - 1;
+  const keyClickFrames = compressed ? [2, 3, 4] : [3, 5, 7];
+
+  // Derive wiki timing from framesPerWiki
+  const slideInEnd = compressed ? 2 : 3;
+  const wipeOutStart = FRAMES_PER_WIKI - 3;
+  const highlightEnd = compressed ? 8 : 10;
+  const counterEnd = highlightEnd;
 
   const items = montage.slice(0, 5);
   const colors = accentColors ?? [
@@ -65,7 +84,7 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
     config: { damping: 12, stiffness: 220 },
   });
 
-  const barProgress = interpolate(frame, [8, 20], [0, 100], {
+  const barProgress = interpolate(frame, [barShowFrame, barEndFrame], [0, 100], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -81,20 +100,20 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
   const wiki = items[wikiIndex];
   const accent = colors[wikiIndex] ?? COLORS.green;
 
-  const slideInX = interpolate(localFrame, [0, 3], [50, 0], {
+  const slideInX = interpolate(localFrame, [0, slideInEnd], [50, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const slideInOpacity = interpolate(localFrame, [0, 3], [0, 1], {
+  const slideInOpacity = interpolate(localFrame, [0, slideInEnd], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  const wipeOutOpacity = interpolate(localFrame, [11, 15], [1, 0], {
+  const wipeOutOpacity = interpolate(localFrame, [wipeOutStart, FRAMES_PER_WIKI], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
-  const wipeOutX = interpolate(localFrame, [11, 15], [0, -40], {
+  const wipeOutX = interpolate(localFrame, [wipeOutStart, FRAMES_PER_WIKI], [0, -40], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -102,7 +121,7 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
   const cardOpacity = slideInOpacity * wipeOutOpacity;
   const cardTranslateX = slideInX + wipeOutX;
 
-  const highlightProgress = interpolate(localFrame, [3, 10], [0, 1], {
+  const highlightProgress = interpolate(localFrame, [slideInEnd, highlightEnd], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -111,16 +130,17 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
   const runningTotal = items.slice(0, wikiIndex + 1).reduce((sum, w) => sum + w.count, 0);
   const prevTotal = items.slice(0, wikiIndex).reduce((sum, w) => sum + w.count, 0);
   const counterValue = Math.round(
-    interpolate(localFrame, [1, 10], [prevTotal, runningTotal], {
+    interpolate(localFrame, [1, counterEnd], [prevTotal, runningTotal], {
       extrapolateLeft: 'clamp',
       extrapolateRight: 'clamp',
     }),
   );
 
   const isBootPhase = frame < BOOT_END;
-  const showTerminal = frame < BOOT_END + 8;
+  const terminalFadeDuration = compressed ? 6 : 8;
+  const showTerminal = frame < BOOT_END + terminalFadeDuration;
 
-  const terminalOpacity = interpolate(frame, [BOOT_END, BOOT_END + 8], [1, 0], {
+  const terminalOpacity = interpolate(frame, [BOOT_END, BOOT_END + terminalFadeDuration], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -128,7 +148,7 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
   return (
     <SceneWrapper accentColor={accent} particleCount={25}>
       {/* Key click SFX during boot */}
-      {[3, 5, 7].map((f) => (
+      {keyClickFrames.map((f) => (
         <Sequence key={`click-${f}`} from={f} durationInFrames={3}>
           <Audio src={AUDIO.keyClick} volume={VOLUMES.keyClick} />
         </Sequence>
@@ -184,19 +204,19 @@ export const SiteBootBlitz: React.FC<SiteBootBlitzProps> = ({
                   minHeight: s(120),
                 }}
               >
-                {frame >= 3 && (
+                {frame >= typewriterStart && (
                   <TypewriterText
                     text={bootCommand}
-                    startFrame={3}
-                    speed={1.5}
+                    startFrame={typewriterStart}
+                    speed={compressed ? 2.0 : 1.5}
                     color={accentColor}
                     fontSize={s(20)}
-                    showCursor={frame < 8}
+                    showCursor={frame < cursorEnd}
                     cursorColor={accentColor}
                   />
                 )}
 
-                {frame >= 8 && (
+                {frame >= barShowFrame && (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: s(8) }}>
                     <div
                       style={{

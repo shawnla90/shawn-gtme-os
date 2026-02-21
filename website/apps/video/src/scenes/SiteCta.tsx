@@ -22,23 +22,45 @@ interface SiteCtaProps {
   subtitle: string;
   accentColor?: string;
   stats?: Array<{ value: string; label: string }>;
+  /** Frame where stats overlay appears (default 32) */
+  statsStart?: number;
+  /** Frame where CTA phase begins (default 50) */
+  ctaStart?: number;
 }
 
 /**
- * Generic CTA + Network scene (94 frames / ~3.1s).
+ * Generic CTA + Network scene.
  * Network reveal -> stats flash -> CTA end card.
+ * Timing configurable via statsStart / ctaStart props.
  */
 export const SiteCta: React.FC<SiteCtaProps> = ({
   ctaUrl,
   subtitle,
   accentColor = COLORS.teal,
   stats,
+  statsStart: ssStart,
+  ctaStart: csStart,
 }) => {
   const frame = useCurrentFrame();
   const { fps, width, height } = useVideoConfig();
   const { s } = useScale();
 
-  // Network phase (frames 0-50)
+  const STATS_START = ssStart ?? 32;
+  const CTA_START = csStart ?? 50;
+  const compressed = CTA_START <= 30;
+
+  // Derived timing
+  const statsEnd = STATS_START + 10;
+  const networkFadeStart = CTA_START - (compressed ? 6 : 10);
+  const ctaFadeEnd = CTA_START + 5;
+  const typewriterStart = CTA_START + 2;
+  const subtitleStart = CTA_START + (compressed ? 8 : 12);
+  const subtitleEnd = subtitleStart + 8;
+  const matrixStart = CTA_START + (compressed ? 14 : 25);
+  const matrixEnd = matrixStart + 10;
+  const resolveSfxFrame = CTA_START;
+
+  // Network phase
   const leftSlide = spring({ frame, fps, config: { damping: 12, stiffness: 180 } });
   const centerSlide = spring({ frame: frame - 2, fps, config: { damping: 12, stiffness: 180 } });
   const rightSlide = spring({ frame: frame - 4, fps, config: { damping: 12, stiffness: 180 } });
@@ -47,33 +69,31 @@ export const SiteCta: React.FC<SiteCtaProps> = ({
   const centerY = interpolate(centerSlide, [0, 1], [80, 0]);
   const rightX = interpolate(rightSlide, [0, 1], [120, 0]);
 
-  // Stats overlay (frames 32-48)
   const statsScale = spring({
-    frame: frame - 32,
+    frame: frame - STATS_START,
     fps,
-    config: { damping: 12, stiffness: 200 },
+    config: { damping: compressed ? 10 : 12, stiffness: compressed ? 250 : 200 },
   });
-  const statsVisible = frame >= 32 && frame < 50;
+  const statsVisible = frame >= STATS_START && frame < statsEnd;
 
-  // Transition (frames 40-50)
-  const networkFade = interpolate(frame, [40, 50], [1, 0], {
+  const networkFade = interpolate(frame, [networkFadeStart, CTA_START], [1, 0], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  // CTA phase (frames 50+)
-  const ctaVisible = frame >= 50;
-  const ctaOpacity = interpolate(frame, [50, 56], [0, 1], {
+  // CTA phase
+  const ctaVisible = frame >= CTA_START;
+  const ctaOpacity = interpolate(frame, [CTA_START, ctaFadeEnd], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  const subtitleOpacity = interpolate(frame, [62, 72], [0, 1], {
+  const subtitleOpacity = interpolate(frame, [subtitleStart, subtitleEnd], [0, 1], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
 
-  const matrixOpacity = interpolate(frame, [75, 88], [0, 0.08], {
+  const matrixOpacity = interpolate(frame, [matrixStart, matrixEnd], [0, 0.08], {
     extrapolateLeft: 'clamp',
     extrapolateRight: 'clamp',
   });
@@ -112,11 +132,11 @@ export const SiteCta: React.FC<SiteCtaProps> = ({
         <Audio src={AUDIO.whoosh} volume={VOLUMES.whoosh} />
       </Sequence>
 
-      <Sequence from={50} durationInFrames={20}>
+      <Sequence from={resolveSfxFrame} durationInFrames={20}>
         <Audio src={AUDIO.resolve} volume={VOLUMES.resolve} />
       </Sequence>
 
-      {frame >= 75 && (
+      {frame >= matrixStart && (
         <MatrixRain opacity={matrixOpacity} color={accentColor} columns={25} speed={0.6} />
       )}
 
@@ -176,7 +196,7 @@ export const SiteCta: React.FC<SiteCtaProps> = ({
         <ConnectionLines
           points={connectionPoints}
           startFrame={10}
-          durationFrames={18}
+          durationFrames={compressed ? 12 : 18}
           color={accentColor}
           strokeWidth={2}
         />
@@ -246,7 +266,7 @@ export const SiteCta: React.FC<SiteCtaProps> = ({
         >
           <TypewriterText
             text={ctaUrl}
-            startFrame={52}
+            startFrame={typewriterStart}
             speed={0.4}
             color={accentColor}
             fontSize={s(64)}
