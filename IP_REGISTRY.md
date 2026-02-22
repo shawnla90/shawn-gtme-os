@@ -1,6 +1,6 @@
 # ShawnOS — IP Asset Registry
 
-Last Updated: 2026-02-15
+Last Updated: 2026-02-22
 
 ## Tier 1: Core Proprietary Algorithms (All Rights Reserved)
 
@@ -25,6 +25,12 @@ Last Updated: 2026-02-15
 | RPG data model & types | website/packages/shared/lib/rpg.ts | Public + licensed | Game state management |
 | Log & progression API | website/packages/shared/lib/logs.ts | Public + licensed | Analytics backend |
 | Server-side RPG loader | website/packages/shared/lib/rpg.server.ts | Public + licensed | SSR state hydration |
+| ShawnOS Chat — CLI-to-chat bridge | website/apps/nio-chat/ | Public + licensed | Zero-API-cost multi-agent chat platform |
+| Recursive flywheel architecture | website/apps/nio-chat/lib/ | Public + licensed | Model builds system it powers |
+| Agent config registry | website/apps/nio-chat/lib/agents.ts | Public + licensed | Declarative multi-agent definitions |
+| Soul file system | website/apps/nio-chat/souls/ | Public + licensed | Per-agent personality injection |
+| HMAC session auth + rate limiting | website/apps/nio-chat/lib/auth.ts, rate-limit.ts | Public + licensed | Security hardening pattern |
+| File-based agent memory | website/apps/nio-chat/lib/memory.ts | Public + licensed | Per-agent memory snapshots |
 | Skill framework | .cursor/skills/ (42 skills) | Public + licensed | Agentic workflow library |
 | Voice modularity system | skills/tier-1-voice-dna/ (4 playbooks) | Public + licensed | Brand voice architecture |
 | Plan formatting framework | .cursor/skills/plan-format/ | Public + licensed | Structured planning methodology |
@@ -55,7 +61,7 @@ Last Updated: 2026-02-15
 
 | Asset | Location | Protection | Value Driver |
 |-------|----------|------------|--------------|
-| Blog posts & newsletters | content/substack/final/ (2 published) | CC BY-NC 4.0 | Thought leadership |
+| Blog posts & newsletters | content/substack/final/, content/website/final/ (3 published) | CC BY-NC 4.0 | Thought leadership |
 | LinkedIn drafts | content/drafts/ (20 posts) | Proprietary (pre-publish) | Content pipeline |
 | X/Twitter drafts | content/drafts/ (19 posts) | Proprietary (pre-publish) | Content pipeline |
 | Finalized social posts | content/finals/ (19 posts) | CC BY-NC 4.0 | Published content |

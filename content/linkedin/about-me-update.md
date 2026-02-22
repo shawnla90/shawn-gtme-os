@@ -1,12 +1,16 @@
 # LinkedIn About Me Update
 
-plumber turned GTM engineer. 
+plumber turned GTM engineer.
 
 was the "Clay guy" for a while. now I believe you shouldn't be defined by tools. you're defined by outcomes and what you actually ship.
 
-I embrace AI as a build-with-you partner, not a do-it-for-you crutch. currently building GTM infrastructure that scales.
+I build in public. not the kind where you tweet about it. the kind where the code is live, the systems are running, and the receipts are on the website. every blog post, every automation, every commit.
 
-proof is in the commits.
+I work with AI as a build partner, not a crutch. building GTM infrastructure, content systems, and ops layers that compound over time. shipping daily.
 
-🔗 deep dive: shawnos.ai  
-🛠️ what I'm building: github.com/shawnla90/shawn-gtme-os
+if you're curious what that looks like in practice, everything is out in the open.
+
+shawnos.ai - the full story, blog, and build log
+thegtmos.ai - the GTMe OS framework
+thecontentos.ai - the content engine
+github.com/shawnla90/shawn-gtme-os - the receipts

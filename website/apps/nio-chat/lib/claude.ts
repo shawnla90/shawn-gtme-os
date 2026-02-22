@@ -1,5 +1,8 @@
+// ShawnOS Chat - (c) 2026 Shawn Tenam - See /LICENSE
+
 import { spawn, ChildProcess } from 'child_process'
 import path from 'path'
+import type { AgentConfig } from './agents'
 
 interface ClaudeCallbacks {
   onText: (text: string) => void
@@ -11,19 +14,17 @@ interface ClaudeCallbacks {
 export function spawnClaude(
   message: string,
   sessionId: string | undefined,
+  agent: AgentConfig,
   callbacks: ClaudeCallbacks
 ): ChildProcess {
-  const soulPath = path.resolve(
-    process.cwd(),
-    'nio-soul.md'
-  )
+  const soulPath = path.resolve(process.cwd(), agent.soulFile)
 
   const args = [
     '-p', message,
     '--output-format', 'stream-json',
     '--verbose',
     '--append-system-prompt-file', soulPath,
-    '--max-turns', '10',
+    '--max-turns', String(agent.maxTurns),
     '--permission-mode', 'bypassPermissions',
   ]
 
@@ -35,10 +36,9 @@ export function spawnClaude(
   const env = { ...process.env }
   delete env.CLAUDECODE
 
-  console.log('[claude] cwd:', process.cwd())
-  console.log('[claude] soul path:', soulPath)
-  console.log('[claude] args:', args.join(' '))
-  console.log('[claude] CLAUDECODE in env:', 'CLAUDECODE' in env)
+  console.log(`[claude:${agent.id}] cwd:`, process.cwd())
+  console.log(`[claude:${agent.id}] soul path:`, soulPath)
+  console.log(`[claude:${agent.id}] args:`, args.join(' '))
 
   const child = spawn('/opt/homebrew/bin/claude', args, {
     env,
@@ -94,7 +94,7 @@ export function spawnClaude(
           }
         }
       } catch {
-        console.log('[claude] non-JSON stdout line:', line.substring(0, 200))
+        console.log(`[claude:${agent.id}] non-JSON stdout line:`, line.substring(0, 200))
       }
     }
   })
@@ -102,13 +102,13 @@ export function spawnClaude(
   child.stderr?.on('data', (chunk: Buffer) => {
     const text = chunk.toString()
     stderrBuffer += text
-    console.error('[claude stderr]', text.trim())
+    console.error(`[claude:${agent.id} stderr]`, text.trim())
   })
 
   child.on('close', (code) => {
-    console.log('[claude] process closed with code:', code)
+    console.log(`[claude:${agent.id}] process closed with code:`, code)
     if (stderrBuffer.trim()) {
-      console.error('[claude] full stderr:', stderrBuffer.trim())
+      console.error(`[claude:${agent.id}] full stderr:`, stderrBuffer.trim())
     }
 
     // Process remaining buffer
@@ -122,7 +122,7 @@ export function spawnClaude(
           callbacks.onSessionId(event.session_id)
         }
       } catch {
-        console.log('[claude] unparseable remaining buffer:', buffer.substring(0, 200))
+        console.log(`[claude:${agent.id}] unparseable remaining buffer:`, buffer.substring(0, 200))
       }
     }
 
@@ -134,7 +134,7 @@ export function spawnClaude(
   })
 
   child.on('error', (err) => {
-    console.error('[claude] spawn error:', err.message)
+    console.error(`[claude:${agent.id}] spawn error:`, err.message)
     callbacks.onError(err.message)
   })
 

@@ -9,12 +9,12 @@ const jetbrains = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Nio',
-  description: 'Chat with Nio',
+  title: 'ShawnOS Chat',
+  description: 'Multi-agent AI chat powered by ShawnOS',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
-    title: 'Nio',
+    title: 'ShawnOS Chat',
   },
   manifest: '/manifest.json',
 }

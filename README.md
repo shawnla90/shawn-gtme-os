@@ -18,17 +18,18 @@ Three-domain publishing system + mobile chat interface, powered by Turborepo:
 - **shawnos.ai** — Main landing page and RPG dashboard
 - **thegtmos.ai** — GTM operations showcase
 - **thecontentos.ai** — Content portfolio and writing samples
-- **nio-chat** — Mobile PWA for chatting with Nio (AI ops layer) from your phone
+- **ShawnOS Chat** — Multi-agent mobile PWA: CLI-to-chat bridge, per-agent soul files, zero API cost
 
 All domains share a unified component library, design system, and terminal-inspired aesthetic.
 
-### Nio Chat (Mobile AI Ops)
-A Next.js PWA that wraps the Claude CLI (`claude -p`) in an SSE API route, giving full system access to Nio from your phone. Zero API cost (Max subscription).
-- **iMessage-style chat UI** with streaming responses
+### ShawnOS Chat (Multi-Agent Mobile AI)
+A Next.js PWA that wraps the Claude CLI (`claude -p`) in an SSE API route. The recursive flywheel: Claude builds the system that Claude powers. Zero API cost (Max subscription).
+- **Multi-agent platform**: agent config registry with per-agent soul files, accent themes, session isolation
+- **iMessage-style chat UI** with streaming responses and per-agent bubble colors
 - **Full tool access**: Bash, file ops, web search, Playwright browser control, MCP integrations
-- **Session memory** via Claude CLI `--resume` flag
-- **Password-gated** with Cloudflare Tunnel for secure remote access
-- **Nio personality** injected via `nio-soul.md` system prompt
+- **Session memory** via Claude CLI `--resume` flag with file-based memory snapshots
+- **Security hardened**: HMAC-signed session tokens (24h TTL), sliding-window rate limiting, JSONL audit logging, CSP middleware
+- **Cloudflare Tunnel** for secure remote access from any device
 
 ### Agent Skills Library
 42+ invokable skills for Claude/Cursor IDE automation:

@@ -46,6 +46,10 @@ domains:
         - "Cursor IDE for entrepreneurs"
         - "AI coding assistant workflow"
         - "building in public with AI tools"
+        - "CLI-to-chat bridge pattern"
+        - "Claude Code Max chat interface"
+        - "multi-agent AI chat zero API cost"
+        - "soul file architecture AI agent"
 
   gtmos:
     url: https://thegtmos.ai

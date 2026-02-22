@@ -19,6 +19,15 @@ The following uses are explicitly **prohibited**:
 - Use in commercial content operating systems or automation platforms
 - Integration into competing GTM (go-to-market) automation services
 
+### ShawnOS Chat Specific Protections
+- CLI-to-chat bridge pattern: wrapping `claude` CLI as child process for zero-API-cost web chat
+- Recursive flywheel architecture: the model that builds the system is the model that powers it
+- Multi-agent session management: per-agent session isolation and state management via agent config registry
+- Memory/heartbeat system: file-based agent memory, daily snapshots, and health monitoring
+- Soul file architecture: system prompt composition via --append-system-prompt-file with per-agent personality files
+- Security layer: HMAC-signed session tokens, sliding-window rate limiting, JSONL audit logging, CSP middleware
+- Agent config registry pattern: declarative agent definitions with soul files, accent themes, and enable/disable toggles
+
 ## Permitted Uses
 
 The following uses **are permitted**:

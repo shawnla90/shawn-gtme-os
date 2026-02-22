@@ -1,6 +1,6 @@
 {
-  "name": "Nio",
-  "short_name": "Nio",
+  "name": "ShawnOS Chat",
+  "short_name": "Chat",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",

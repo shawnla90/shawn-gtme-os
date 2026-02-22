@@ -1,17 +1,90 @@
+// ShawnOS Chat - (c) 2026 Shawn Tenam - See /LICENSE
+
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import type { Message, ChatSSEEvent } from '../../lib/types'
+import type { Message, ChatSSEEvent, AgentChatState } from '../../lib/types'
+import type { AgentConfig } from '../../lib/agents'
+import { getEnabledAgents, getDefaultAgent } from '../../lib/agents'
 import ChatHeader from './ChatHeader'
 import MessageBubble from './MessageBubble'
 import TypingIndicator from './TypingIndicator'
 
+// localStorage key helpers
+function storageKey(agentId: string, suffix: string) {
+  return `shawnos-chat-${agentId}-${suffix}`
+}
+
+function applyAgentTheme(agent: AgentConfig) {
+  const root = document.documentElement
+  root.style.setProperty('--accent', agent.accentColor)
+  root.style.setProperty('--bubble-user', agent.bubbleColors.user)
+  root.style.setProperty('--bubble-user-text', agent.bubbleColors.userText)
+  root.style.setProperty('--bubble-nio', agent.bubbleColors.agent)
+  root.style.setProperty('--bubble-nio-text', agent.bubbleColors.agentText)
+}
+
+// One-time migration from old nio-* keys to new shawnos-chat-* namespace
+function migrateOldStorage() {
+  const migrated = localStorage.getItem('shawnos-chat-migrated')
+  if (migrated) return
+
+  const oldSessionId = localStorage.getItem('nio-session-id')
+  const oldMessages = localStorage.getItem('nio-messages')
+  const oldToken = localStorage.getItem('nio-token')
+
+  if (oldSessionId) {
+    localStorage.setItem(storageKey('nio', 'session-id'), oldSessionId)
+    localStorage.removeItem('nio-session-id')
+  }
+  if (oldMessages) {
+    localStorage.setItem(storageKey('nio', 'messages'), oldMessages)
+    localStorage.removeItem('nio-messages')
+  }
+  if (oldToken) {
+    localStorage.setItem('shawnos-chat-token', oldToken)
+    localStorage.removeItem('nio-token')
+  }
+
+  localStorage.setItem('shawnos-chat-migrated', '1')
+}
+
+function loadAgentState(agentId: string): AgentChatState {
+  const sessionId = localStorage.getItem(storageKey(agentId, 'session-id')) || undefined
+  let messages: Message[] = []
+  const saved = localStorage.getItem(storageKey(agentId, 'messages'))
+  if (saved) {
+    try {
+      messages = JSON.parse(saved)
+    } catch {
+      // corrupted, ignore
+    }
+  }
+  return { sessionId, messages }
+}
+
+function saveAgentState(agentId: string, state: AgentChatState) {
+  if (state.sessionId) {
+    localStorage.setItem(storageKey(agentId, 'session-id'), state.sessionId)
+  } else {
+    localStorage.removeItem(storageKey(agentId, 'session-id'))
+  }
+  if (state.messages.length > 0) {
+    localStorage.setItem(storageKey(agentId, 'messages'), JSON.stringify(state.messages))
+  } else {
+    localStorage.removeItem(storageKey(agentId, 'messages'))
+  }
+}
+
 export default function ChatInterface() {
-  const [messages, setMessages] = useState<Message[]>([])
+  const enabledAgents = getEnabledAgents()
+  const defaultAgent = getDefaultAgent()
+
+  const [activeAgentId, setActiveAgentId] = useState(defaultAgent.id)
+  const [agentStates, setAgentStates] = useState<Record<string, AgentChatState>>({})
   const [input, setInput] = useState('')
   const [isStreaming, setIsStreaming] = useState(false)
   const [isWaiting, setIsWaiting] = useState(false)
-  const [sessionId, setSessionId] = useState<string | undefined>()
   const [authed, setAuthed] = useState(false)
   const [authChecked, setAuthChecked] = useState(false)
   const [password, setPassword] = useState('')
@@ -21,48 +94,59 @@ export default function ChatInterface() {
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const abortRef = useRef<AbortController | null>(null)
 
-  // Load session from localStorage
+  const activeAgent = enabledAgents.find(a => a.id === activeAgentId) || defaultAgent
+  const currentState = agentStates[activeAgentId] || { sessionId: undefined, messages: [] }
+  const messages = currentState.messages
+  const sessionId = currentState.sessionId
+
+  // Initialize: migrate old storage, load states, restore active agent
   useEffect(() => {
-    const saved = localStorage.getItem('nio-session-id')
-    if (saved) setSessionId(saved)
+    migrateOldStorage()
 
-    const savedMessages = localStorage.getItem('nio-messages')
-    if (savedMessages) {
-      try {
-        setMessages(JSON.parse(savedMessages))
-      } catch {
-        // corrupted, ignore
-      }
+    // Restore active agent
+    const savedActive = localStorage.getItem('shawnos-chat-active-agent')
+    const initialAgentId = (savedActive && enabledAgents.some(a => a.id === savedActive)) ? savedActive : defaultAgent.id
+    setActiveAgentId(initialAgentId)
+
+    // Load all agent states
+    const states: Record<string, AgentChatState> = {}
+    for (const agent of enabledAgents) {
+      states[agent.id] = loadAgentState(agent.id)
     }
+    setAgentStates(states)
 
-    const token = localStorage.getItem('nio-token')
+    // Apply theme for initial agent
+    const initialAgent = enabledAgents.find(a => a.id === initialAgentId) || defaultAgent
+    applyAgentTheme(initialAgent)
+
+    // Check auth
+    const token = localStorage.getItem('shawnos-chat-token')
     if (token) {
       setAuthed(true)
       setAuthChecked(true)
     } else {
-      // Check if auth is needed
       checkAuth()
     }
   }, [])
 
-  // Save messages to localStorage
+  // Save messages to localStorage when they change
   useEffect(() => {
-    if (messages.length > 0) {
-      localStorage.setItem('nio-messages', JSON.stringify(messages))
+    if (agentStates[activeAgentId]) {
+      saveAgentState(activeAgentId, agentStates[activeAgentId])
     }
-  }, [messages])
-
-  // Save session ID
-  useEffect(() => {
-    if (sessionId) {
-      localStorage.setItem('nio-session-id', sessionId)
-    }
-  }, [sessionId])
+  }, [agentStates, activeAgentId])
 
   // Auto-scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages, isWaiting])
+
+  function updateCurrentState(updater: (prev: AgentChatState) => AgentChatState) {
+    setAgentStates(prev => ({
+      ...prev,
+      [activeAgentId]: updater(prev[activeAgentId] || { sessionId: undefined, messages: [] }),
+    }))
+  }
 
   async function checkAuth() {
     try {
@@ -73,7 +157,7 @@ export default function ChatInterface() {
       })
       if (res.ok) {
         setAuthed(true)
-        localStorage.setItem('nio-token', 'no-auth')
+        localStorage.setItem('shawnos-chat-token', 'no-auth')
       }
     } catch {
       // auth required
@@ -91,7 +175,7 @@ export default function ChatInterface() {
       })
       const data = await res.json()
       if (data.ok) {
-        localStorage.setItem('nio-token', data.token || password)
+        localStorage.setItem('shawnos-chat-token', data.token || password)
         setAuthed(true)
       } else {
         setAuthError(data.error || 'wrong password')
@@ -99,6 +183,38 @@ export default function ChatInterface() {
     } catch {
       setAuthError('connection failed')
     }
+  }
+
+  function handleSwitchAgent(agentId: string) {
+    if (agentId === activeAgentId) return
+
+    // Abort any in-progress stream
+    if (isStreaming && abortRef.current) {
+      abortRef.current.abort()
+      setIsStreaming(false)
+      setIsWaiting(false)
+    }
+
+    // Save current state
+    if (agentStates[activeAgentId]) {
+      saveAgentState(activeAgentId, agentStates[activeAgentId])
+    }
+
+    // Switch
+    setActiveAgentId(agentId)
+    localStorage.setItem('shawnos-chat-active-agent', agentId)
+
+    // Load new agent state if not already loaded
+    setAgentStates(prev => {
+      if (!prev[agentId]) {
+        return { ...prev, [agentId]: loadAgentState(agentId) }
+      }
+      return prev
+    })
+
+    // Apply theme
+    const newAgent = enabledAgents.find(a => a.id === agentId) || defaultAgent
+    applyAgentTheme(newAgent)
   }
 
   const sendMessage = useCallback(async () => {
@@ -110,9 +226,13 @@ export default function ChatInterface() {
       role: 'user',
       content: text,
       timestamp: Date.now(),
+      agentId: activeAgentId,
     }
 
-    setMessages(prev => [...prev, userMsg])
+    updateCurrentState(prev => ({
+      ...prev,
+      messages: [...prev.messages, userMsg],
+    }))
     setInput('')
     setIsStreaming(true)
     setIsWaiting(true)
@@ -122,9 +242,10 @@ export default function ChatInterface() {
       role: 'assistant',
       content: '',
       timestamp: Date.now(),
+      agentId: activeAgentId,
     }
 
-    const token = localStorage.getItem('nio-token')
+    const token = localStorage.getItem('shawnos-chat-token')
     const headers: Record<string, string> = {
       'Content-Type': 'application/json',
     }
@@ -138,16 +259,35 @@ export default function ChatInterface() {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers,
-        body: JSON.stringify({ message: text, sessionId }),
+        body: JSON.stringify({ message: text, sessionId, agentId: activeAgentId }),
         signal: abortRef.current.signal,
       })
 
+      if (res.status === 429) {
+        updateCurrentState(prev => ({
+          ...prev,
+          messages: [...prev.messages, { ...assistantMsg, content: 'slow down. too many requests. try again in a moment.' }],
+        }))
+        setIsStreaming(false)
+        setIsWaiting(false)
+        return
+      }
+
+      if (res.status === 401) {
+        localStorage.removeItem('shawnos-chat-token')
+        setAuthed(false)
+        setAuthChecked(true)
+        setIsStreaming(false)
+        setIsWaiting(false)
+        return
+      }
+
       if (!res.ok) {
         const errText = await res.text()
-        setMessages(prev => [...prev, {
-          ...assistantMsg,
-          content: `error: ${res.status} ${errText}`,
-        }])
+        updateCurrentState(prev => ({
+          ...prev,
+          messages: [...prev.messages, { ...assistantMsg, content: `error: ${res.status} ${errText}` }],
+        }))
         setIsStreaming(false)
         setIsWaiting(false)
         return
@@ -185,21 +325,37 @@ export default function ChatInterface() {
 
               if (!addedMsg) {
                 addedMsg = true
-                setMessages(prev => [...prev, { ...assistantMsg, content: currentContent }])
+                updateCurrentState(prev => ({
+                  ...prev,
+                  messages: [...prev.messages, { ...assistantMsg, content: currentContent }],
+                }))
               } else {
-                setMessages(prev =>
-                  prev.map(m => m.id === assistantMsg.id ? { ...m, content: currentContent } : m)
-                )
+                setAgentStates(prev => {
+                  const state = prev[activeAgentId]
+                  if (!state) return prev
+                  return {
+                    ...prev,
+                    [activeAgentId]: {
+                      ...state,
+                      messages: state.messages.map(m =>
+                        m.id === assistantMsg.id ? { ...m, content: currentContent } : m
+                      ),
+                    },
+                  }
+                })
               }
             }
 
             if (event.type === 'session') {
-              setSessionId(event.data)
+              updateCurrentState(prev => ({ ...prev, sessionId: event.data }))
             }
 
             if (event.type === 'error') {
               if (!addedMsg) {
-                setMessages(prev => [...prev, { ...assistantMsg, content: `error: ${event.data}` }])
+                updateCurrentState(prev => ({
+                  ...prev,
+                  messages: [...prev.messages, { ...assistantMsg, content: `error: ${event.data}` }],
+                }))
               }
             }
           } catch {
@@ -211,28 +367,30 @@ export default function ChatInterface() {
       if (err instanceof DOMException && err.name === 'AbortError') {
         // user cancelled
       } else {
-        setMessages(prev => [...prev, {
-          ...assistantMsg,
-          content: 'connection error. try again.',
-        }])
+        updateCurrentState(prev => ({
+          ...prev,
+          messages: [...prev.messages, {
+            ...assistantMsg,
+            content: 'connection error. try again.',
+          }],
+        }))
       }
     }
 
     setIsStreaming(false)
     setIsWaiting(false)
     abortRef.current = null
-  }, [input, isStreaming, sessionId])
+  }, [input, isStreaming, sessionId, activeAgentId])
 
   function handleNewChat() {
     if (isStreaming && abortRef.current) {
       abortRef.current.abort()
     }
-    setMessages([])
-    setSessionId(undefined)
+    updateCurrentState(() => ({ sessionId: undefined, messages: [] }))
+    localStorage.removeItem(storageKey(activeAgentId, 'session-id'))
+    localStorage.removeItem(storageKey(activeAgentId, 'messages'))
     setIsStreaming(false)
     setIsWaiting(false)
-    localStorage.removeItem('nio-session-id')
-    localStorage.removeItem('nio-messages')
     inputRef.current?.focus()
   }
 
@@ -257,7 +415,7 @@ export default function ChatInterface() {
       <div className="h-screen flex items-center justify-center bg-[var(--canvas)]">
         <div className="w-72 flex flex-col gap-4">
           <div className="text-center">
-            <h1 className="text-lg font-bold text-[var(--text-primary)]">Nio</h1>
+            <h1 className="text-lg font-bold text-[var(--text-primary)]">ShawnOS Chat</h1>
             <p className="text-xs text-[var(--text-secondary)] mt-1">enter password</p>
           </div>
           <input
@@ -285,13 +443,19 @@ export default function ChatInterface() {
 
   return (
     <div className="h-screen flex flex-col bg-[var(--canvas)]">
-      <ChatHeader onNewChat={handleNewChat} isStreaming={isStreaming} />
+      <ChatHeader
+        onNewChat={handleNewChat}
+        isStreaming={isStreaming}
+        agents={enabledAgents}
+        activeAgent={activeAgent}
+        onSwitchAgent={handleSwitchAgent}
+      />
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto px-4 py-4">
         {messages.length === 0 && (
           <div className="h-full flex items-center justify-center">
-            <p className="text-[var(--text-muted)] text-sm">say something to Nio</p>
+            <p className="text-[var(--text-muted)] text-sm">say something to {activeAgent.name}</p>
           </div>
         )}
         {messages.map(msg => (
@@ -309,9 +473,10 @@ export default function ChatInterface() {
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder={isStreaming ? 'nio is thinking...' : 'message nio'}
+            placeholder={isStreaming ? `${activeAgent.name.toLowerCase()} is thinking...` : `message ${activeAgent.name.toLowerCase()}`}
             disabled={isStreaming}
             rows={1}
+            maxLength={10000}
             className="flex-1 resize-none px-3 py-2 rounded-xl bg-[var(--canvas)] border border-[var(--border)] text-[var(--text-primary)] text-sm outline-none focus:border-[var(--accent)] transition-colors disabled:opacity-40 placeholder:text-[var(--text-muted)]"
             style={{ maxHeight: '120px' }}
             onInput={e => {

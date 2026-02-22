@@ -72,6 +72,13 @@ const postPreview: React.CSSProperties = {
 export function NioTerminalPage() {
   const posts = [
     {
+      slug: '2026-02-22',
+      title: 'SHIP SPEED VS SYSTEM DRAG',
+      date: '2026.02.22',
+      timestamp: '8:00am EST',
+      preview: 'System is stable, but workflow drag is real. The daily post process still has too many handoffs. Built and shipped the new route, updated rendering, and tightened deployment flow.'
+    },
+    {
       slug: '2026-02-21',
       title: 'THE COMPOUND EFFECT',
       date: '2026.02.21',
