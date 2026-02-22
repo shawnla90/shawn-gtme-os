@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-Daily activity scanner v3 — auto-detects accomplishments, token usage, and computes scores.
+Daily activity scanner v4 — commit-based classification, scoring, and dev equivalent metrics.
 Writes data/daily-log/YYYY-MM-DD.json. Safe to run multiple times (merges, never deletes manual entries).
 
+v4: Commit-level scoring (replaces file-level), dev equivalent explainer, token efficiency,
+    dual cost tracking (API equivalent vs actual $0 on Max subscription).
 v3: Auto-detect Claude Code tokens from JSONL, scoring engine with letter grades, efficiency rating.
 
 Usage:
@@ -75,6 +77,7 @@ TOKEN_PRICING = {
     "gpt4o":  {"input": 2.50,  "output": 10.00, "cache_read": 0.25,  "cache_write": 3.125},
     "gemini": {"input": 1.25,  "output": 5.00,  "cache_read": 0.3125, "cache_write": 1.5625},
     "cursor": {"input": 0.00,  "output": 0.00,  "cache_read": 0.00,  "cache_write": 0.00},
+    "max":    {"input": 0.00,  "output": 0.00,  "cache_read": 0.00,  "cache_write": 0.00},
 }
 
 # ── Scoring weights ──────────────────────────────────────────────────
@@ -142,6 +145,22 @@ GRADE_THRESHOLDS = [
     (5,   "C"),
     (0,   "D"),
 ]
+
+# ── V4 Commit-Based Scoring ─────────────────────────────────────────
+
+V4_GRADE_THRESHOLDS = [
+    (500, "S+"),   # Historic day — multiple systems built
+    (300, "S"),    # Monster day — major feature + supporting work
+    (150, "A+"),   # Strong day — a real feature shipped
+    (75,  "A"),    # Solid day — meaningful progress
+    (30,  "B"),    # Light day — fixes, content, small adds
+    (10,  "C"),    # Maintenance — chores, minor edits
+    (0,   "D"),    # Rest day
+]
+
+# Dev equivalent constants
+DEV_LINES_PER_DAY = 150   # Industry average for meaningful, reviewed code
+DEV_COST_PER_DAY = 500    # $125K/yr fully loaded
 
 # ── Helpers ──────────────────────────────────────────────────────────
 
@@ -788,6 +807,311 @@ def compute_cost_metrics(output_score, total_cost):
     }
 
 
+# ── V4 Commit-Based Scoring Engine ──────────────────────────────────
+
+def get_commit_hashes(target_date):
+    """Get all commit hashes for the target date, oldest first."""
+    date_str = target_date.strftime("%Y-%m-%d")
+    lines = run_git(
+        "log",
+        f"--since={date_str} 00:00",
+        f"--until={date_str} 23:59:59",
+        "--format=%H",
+        "--reverse"
+    )
+    return [h.strip() for h in lines if h.strip()]
+
+
+def classify_commit(commit_hash):
+    """Classify a single commit by examining message, files, and line counts.
+
+    Returns a dict with hash, message, type, score, files_changed,
+    lines_added, lines_removed, lines_net, directories, timestamp.
+    """
+    # Get commit message
+    msg_lines = run_git("log", "--format=%s", "-1", commit_hash)
+    message = msg_lines[0] if msg_lines else ""
+
+    # Get timestamp (local time)
+    ts_lines = run_git("log", "--format=%cd", "--date=format:%H:%M", "-1", commit_hash)
+    timestamp = ts_lines[0].strip() if ts_lines else ""
+
+    # Get numstat (lines added/removed per file)
+    numstat_lines = run_git("show", "--numstat", "--format=", commit_hash)
+
+    files = []
+    total_added = 0
+    total_removed = 0
+    directories = set()
+
+    for line in numstat_lines:
+        line = line.strip()
+        if not line:
+            continue
+        parts = line.split("\t")
+        if len(parts) == 3:
+            filepath = parts[2]
+            try:
+                added = int(parts[0]) if parts[0] != "-" else 0
+                removed = int(parts[1]) if parts[1] != "-" else 0
+            except ValueError:
+                continue
+            total_added += added
+            total_removed += removed
+            files.append(filepath)
+            top_dir = filepath.split("/")[0] + "/"
+            directories.add(top_dir)
+
+    msg_lower = message.lower()
+    file_count = len(files)
+
+    # ── Classification (priority order) ──
+
+    # Revert
+    if msg_lower.startswith("revert") or message.startswith("Revert"):
+        return _build_commit_entry(
+            commit_hash, message, "revert", 0,
+            files, total_added, total_removed, directories, timestamp)
+
+    # Chore
+    if msg_lower.startswith("chore"):
+        return _build_commit_entry(
+            commit_hash, message, "chore", 1,
+            files, total_added, total_removed, directories, timestamp)
+
+    # Fix
+    if msg_lower.startswith("fix"):
+        if file_count >= 4:
+            score = 8
+        elif file_count >= 2:
+            score = 5
+        else:
+            score = 3
+        return _build_commit_entry(
+            commit_hash, message, "bug_fix", score,
+            files, total_added, total_removed, directories, timestamp)
+
+    # Feat / docs — determine subtype
+    if msg_lower.startswith("feat") or msg_lower.startswith("docs"):
+        commit_type, score = _classify_feat_commit(
+            msg_lower, files, file_count, total_added, directories)
+        return _build_commit_entry(
+            commit_hash, message, commit_type, score,
+            files, total_added, total_removed, directories, timestamp)
+
+    # Unknown prefix — default to chore
+    return _build_commit_entry(
+        commit_hash, message, "chore", 1,
+        files, total_added, total_removed, directories, timestamp)
+
+
+def _classify_feat_commit(msg_lower, files, file_count, total_added, directories):
+    """Determine the commit type and score for feat/docs commits."""
+    # Count app directories touched
+    app_dirs = set()
+    for f in files:
+        m = re.match(r"website/apps/([^/]+)/", f)
+        if m:
+            app_dirs.add(m.group(1))
+
+    # monorepo_scaffold: 20+ files across 3+ apps, or +1000 lines in project config
+    if file_count >= 20 and len(app_dirs) >= 3:
+        return "monorepo_scaffold", 80
+    if total_added >= 1000 and len(app_dirs) >= 3:
+        return "monorepo_scaffold", 80
+
+    # system_engine: modifies scripts/*.py with +500 lines
+    script_files = [f for f in files if f.startswith("scripts/") and f.endswith(".py")]
+    if script_files and total_added >= 500:
+        return "system_engine", 60
+
+    # video_build: touches website/apps/video/
+    if any(f.startswith("website/apps/video/") for f in files):
+        return "video_build", 30
+
+    # wiki_section: touches 3+ wiki/how-to pages
+    wiki_files = [f for f in files if "how-to" in f or "wiki" in f]
+    if len(wiki_files) >= 3:
+        return "wiki_section", 20
+
+    # feature_build: touches website/apps/*/ (scale by website file count)
+    website_app_files = [f for f in files if f.startswith("website/apps/")]
+    if website_app_files:
+        fc = len(website_app_files)
+        if fc >= 13:
+            score = 40
+        elif fc >= 7:
+            score = 30
+        else:
+            score = 25
+        return "feature_build", score
+
+    # component: 1-2 component files with +100 lines
+    comp_files = [f for f in files if "component" in f.lower() or "packages/shared" in f]
+    if comp_files and len(comp_files) <= 3 and total_added >= 100:
+        return "component", 15
+
+    # infra_build: touches scripts/, configs, CI/CD
+    if script_files or any(f.startswith("scripts/") for f in files):
+        if total_added >= 200:
+            return "infra_build", 25
+        return "infra_build", 15
+
+    # content_ship: touches content/ with "final" or "post" or "blog"
+    content_files = [f for f in files if f.startswith("content/")]
+    if content_files and any(kw in msg_lower for kw in ("final", "post", "blog")):
+        return "content_ship", 10
+
+    # wiki_page: single wiki/how-to page
+    if wiki_files:
+        return "wiki_page", 8
+
+    # content_draft: draft content
+    if any("drafts/" in f for f in files):
+        return "content_draft", 5
+
+    # Default: if touches website, feature_build; else infra_build
+    if any(f.startswith("website/") for f in files):
+        return "feature_build", 25
+    return "infra_build", 15
+
+
+def _build_commit_entry(commit_hash, message, commit_type, score,
+                        files, total_added, total_removed, directories, timestamp):
+    """Build the commit classification entry dict."""
+    return {
+        "hash": commit_hash[:7],
+        "message": message,
+        "type": commit_type,
+        "score": score,
+        "files_changed": len(files),
+        "lines_added": total_added,
+        "lines_removed": total_removed,
+        "lines_net": total_added - total_removed,
+        "directories": sorted(directories),
+        "timestamp": timestamp,
+    }
+
+
+def score_commits(commits):
+    """Compute total output score from classified commits.
+
+    Uses V4 grade thresholds (higher bar for top grades).
+    """
+    total = 0
+    breakdown = []
+    for c in commits:
+        pts = c.get("score", 0)
+        if pts > 0:
+            breakdown.append({
+                "type": c["type"],
+                "title": c["message"][:60],
+                "points": pts,
+            })
+        total += pts
+
+    grade = "D"
+    for threshold, g in V4_GRADE_THRESHOLDS:
+        if total >= threshold:
+            grade = g
+            break
+
+    return {
+        "output_score": total,
+        "letter_grade": grade,
+        "score_breakdown": breakdown,
+    }
+
+
+def compute_dev_equivalent(git_summary):
+    """Compute dev equivalent metrics with explainer text.
+
+    Strategic metric for demos: shows what today's output would cost
+    if done by human developers at industry rates.
+    """
+    net_lines = git_summary.get("lines_net", 0)
+    if net_lines <= 0:
+        return {
+            "net_lines": net_lines,
+            "dev_days": 0,
+            "cost_estimate": 0,
+            "explanation": "No net new lines today.",
+            "assumptions": {
+                "lines_per_day": DEV_LINES_PER_DAY,
+                "cost_per_day": DEV_COST_PER_DAY,
+                "basis": "Industry average for meaningful, reviewed, production-quality code",
+            }
+        }
+
+    dev_days = round(net_lines / DEV_LINES_PER_DAY, 1)
+    cost_estimate = round(dev_days * DEV_COST_PER_DAY)
+
+    # Build human-readable explanation
+    months = dev_days / 22  # ~22 working days per month
+    if months >= 1:
+        time_desc = f"{months:.0f}+ month{'s' if months >= 2 else ''}"
+    else:
+        weeks = dev_days / 5
+        time_desc = f"{weeks:.0f}+ week{'s' if weeks >= 2 else ''}"
+
+    explanation = (
+        f"A mid-level developer writes ~{DEV_LINES_PER_DAY} lines of production code "
+        f"per day at ~${DEV_COST_PER_DAY}/day (fully loaded). Today's {net_lines:,} net "
+        f"lines represent approximately {dev_days:.0f} developer-days of output \u2014 what a "
+        f"small team would produce in {time_desc}."
+    )
+
+    return {
+        "net_lines": net_lines,
+        "dev_days": dev_days,
+        "cost_estimate": cost_estimate,
+        "explanation": explanation,
+        "assumptions": {
+            "lines_per_day": DEV_LINES_PER_DAY,
+            "cost_per_day": DEV_COST_PER_DAY,
+            "basis": "Industry average for meaningful, reviewed, production-quality code",
+        }
+    }
+
+
+def compute_token_efficiency(token_usage, output_score, commit_count, net_lines):
+    """Compute token efficiency metrics (informational, does not affect score).
+
+    Tracks "am I getting better at prompting?" over time.
+    """
+    total_tokens = sum(
+        e.get("input_tokens", 0) + e.get("output_tokens", 0) +
+        e.get("cache_read_tokens", 0) + e.get("cache_write_tokens", 0)
+        for e in token_usage
+    )
+    total_sessions = len(token_usage)
+
+    # API equivalent cost
+    api_cost = sum(
+        compute_token_cost(e) if e.get("cost") is None else e["cost"]
+        for e in token_usage
+    )
+
+    # Context utilization: average (session_tokens / 200000) capped at 1.0
+    context_utils = []
+    for e in token_usage:
+        session_tokens = e.get("input_tokens", 0) + e.get("cache_read_tokens", 0)
+        context_utils.append(min(session_tokens / 200_000, 1.0))
+    avg_context = round(sum(context_utils) / len(context_utils), 2) if context_utils else 0
+
+    return {
+        "total_tokens": total_tokens,
+        "total_sessions": total_sessions,
+        "tokens_per_point": round(total_tokens / output_score) if output_score > 0 else None,
+        "tokens_per_commit": round(total_tokens / commit_count) if commit_count > 0 else None,
+        "tokens_per_loc": round(total_tokens / net_lines) if net_lines > 0 else None,
+        "avg_context_utilization": avg_context,
+        "pricing_mode": "max",
+        "api_equivalent_cost": round(api_cost, 2),
+        "actual_cost": 0.00,
+    }
+
+
 # ── Git scanning ─────────────────────────────────────────────────────
 
 def scan_git(target_date):
@@ -1209,8 +1533,12 @@ def main():
     # Scan by file modification time (catches non-date-prefixed files like client deliverables)
     mtime_files = scan_mtime_for_date(target_date)
 
-    # Build accomplishments
+    # Build accomplishments (backward compat — kept for downstream consumers)
     accomplishments = build_accomplishments(added, modified, untracked, mtime_files, target_date)
+
+    # V4: Classify commits
+    commit_hashes = get_commit_hashes(target_date)
+    commits = [classify_commit(h) for h in commit_hashes]
 
     # Scan pipeline
     drafts_active = scan_pipeline()
@@ -1235,18 +1563,22 @@ def main():
     cursor_tokens = scan_cursor_tokens(target_date)
     auto_tokens = auto_tokens + cursor_tokens
 
-    # Compute scoring
-    score_data = compute_score(accomplishments)
+    # V4 commit-based scoring (replaces V3 file-based scoring)
+    score_data = score_commits(commits)
     stats["output_score"] = score_data["output_score"]
     stats["letter_grade"] = score_data["letter_grade"]
     stats["score_breakdown"] = score_data["score_breakdown"]
+
+    # Dev equivalent
+    dev_equivalent = compute_dev_equivalent(git_summary)
 
     # Build new data
     new_data = {
         "date": date_str,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "version": 3,
+        "version": 4,
         "accomplishments": accomplishments,
+        "commits": commits,
         "pipeline": {
             "drafts_active": drafts_active,
             "finalized_today": finalized_today
@@ -1255,6 +1587,7 @@ def main():
         "token_usage": auto_tokens,
         "stats": stats,
         "git_summary": git_summary,
+        "dev_equivalent": dev_equivalent,
     }
 
     # Merge with existing
@@ -1266,10 +1599,25 @@ def main():
     efficiency = compute_efficiency(stats["output_score"], all_tokens)
     merged["stats"]["efficiency_rating"] = efficiency
 
-    # Total agent cost across all token sessions
+    # Total agent cost across all token sessions (API equivalent)
     total_cost = sum(
         e.get("cost") if e.get("cost") is not None else compute_token_cost(e)
         for e in all_tokens
+    )
+
+    # V4 cost section — api_equivalent vs actual
+    merged["cost"] = {
+        "api_equivalent": round(total_cost, 2),
+        "actual_cost": 0.00,
+        "pricing_mode": "max",
+    }
+
+    # Token efficiency (informational — does not affect score)
+    merged["token_efficiency"] = compute_token_efficiency(
+        all_tokens,
+        stats["output_score"],
+        commit_count,
+        git_summary.get("lines_net", 0),
     )
 
     # Ship rate
@@ -1280,7 +1628,7 @@ def main():
     merged["stats"]["draft_count"] = len(drafts)
     merged["stats"]["ship_rate"] = round(len(shipped) / total_acc, 2) if total_acc > 0 else 0.0
 
-    # Agent cost (total across all token sessions)
+    # Agent cost (total across all token sessions — API equivalent)
     merged["stats"]["agent_cost"] = round(total_cost, 2)
 
     # Cost metrics — honest $/pt and pts/$
@@ -1301,12 +1649,12 @@ def main():
     merged["stats"]["data_loc"] = merged.get("git_summary", {}).get("data_loc", 0)
 
     # Sanitize partner names from paths before writing (pre-push blocklist)
+    # V4: also covers commit messages and file paths in the commits array
     blocklist_path = REPO_ROOT / ".claude" / "blocklist.txt"
     if blocklist_path.exists():
         terms = [t.strip().lower() for t in blocklist_path.read_text().splitlines() if t.strip()]
         raw = json.dumps(merged, indent=2)
         for term in terms:
-            # Replace partner names in file paths (case-insensitive)
             raw = re.sub(re.escape(term), "[redacted]", raw, flags=re.IGNORECASE)
         merged = json.loads(raw)
 
@@ -1315,28 +1663,26 @@ def main():
 
     # Summary output
     acc_count = len(merged["accomplishments"])
+    commit_count_v4 = len(merged.get("commits", []))
     todo_pending = len([t for t in merged.get("todos", []) if t.get("status") == "pending"])
     drafts_count = len(merged["pipeline"]["drafts_active"])
     final_count = len(merged["pipeline"]["finalized_today"])
     token_count = len(all_tokens)
+    dev_eq = merged.get("dev_equivalent", {})
 
-    print(f"Daily scan v3 complete for {date_str}")
-    print(f"  Accomplishments: {acc_count}")
+    print(f"Daily scan v4 complete for {date_str}")
+    print(f"  Commits scored:  {commit_count_v4}")
+    print(f"  Score:           {stats['output_score']} pts ({stats['letter_grade']})")
+    print(f"  Accomplishments: {acc_count} (backward compat)")
     print(f"  Drafts active:   {drafts_count}")
     print(f"  Finalized today: {final_count}")
-    print(f"  TODOs pending:   {todo_pending}")
     print(f"  Git commits:     {commit_count}")
     print(f"  LOC:             +{lines_added_total} / -{lines_removed_total} (net {lines_added_total - lines_removed_total})")
-    print(f"  Words (touched):  {stats['words_in_touched_files']}")
-    print(f"  Pipeline words:  {stats['pipeline_words']}")
+    print(f"  Dev equivalent:  {dev_eq.get('dev_days', 0)} dev-days (${dev_eq.get('cost_estimate', 0):,})")
     print(f"  Token sessions:  {token_count} (auto-detected)")
-    print(f"  Agent cost:      ${total_cost:.2f}")
-    cpp = cost_metrics['cost_per_point']
-    er = cost_metrics['efficiency_ratio']
-    print(f"  Cost/point:      {f'${cpp:.2f}/pt' if cpp is not None else 'N/A'}")
-    print(f"  Efficiency:      {f'{er:.2f} pts/$' if er is not None else 'N/A'}")
+    print(f"  API equiv cost:  ${total_cost:.2f}")
+    print(f"  Actual cost:     $0.00 (Max subscription)")
     print(f"  Ship rate:       {merged['stats']['ship_rate']*100:.0f}% ({merged['stats']['shipped_count']}/{total_acc})")
-    print(f"  Score:           {stats['output_score']} pts ({stats['letter_grade']})")
     print(f"  Output: {log_path.relative_to(REPO_ROOT)}")
 
 

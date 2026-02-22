@@ -1,17 +1,8 @@
 {
   "date": "2026-02-21",
-  "generated_at": "2026-02-22T05:00:03.900060+00:00",
-  "version": 3,
+  "generated_at": "2026-02-22T05:04:33.117798+00:00",
+  "version": 4,
   "accomplishments": [
-    {
-      "type": "config_file",
-      "title": "gtmos package",
-      "path": "website/apps/gtmos/package.json",
-      "source": "auto",
-      "timestamp": "20:17",
-      "value_score": 0,
-      "shipped": true
-    },
     {
       "type": "website_page",
       "title": "shawnos vitals nio-terminal slug page",
@@ -20,56 +11,6 @@
       "timestamp": "15:14",
       "words": 142,
       "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "progression_engine",
-      "path": "scripts/progression_engine.py",
-      "source": "auto",
-      "timestamp": "22:52",
-      "words": 1887,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioPostPage",
-      "path": "website/packages/shared/pages/NioPostPage.tsx",
-      "source": "auto",
-      "timestamp": "16:13",
-      "words": 1884,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioTerminalPage",
-      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 817,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "20:57",
-      "words": 1525,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "complex_script",
-      "title": "query_index",
-      "path": "scripts/query_index.py",
-      "source": "auto",
-      "timestamp": "22:51",
-      "words": 1762,
-      "value_score": 25,
       "shipped": true
     },
     {
@@ -83,90 +24,12 @@
       "shipped": true
     },
     {
-      "type": "config_file",
-      "title": "mission-control package",
-      "path": "website/apps/mission-control/package.json",
-      "source": "auto",
-      "timestamp": "15:14",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log progression page",
-      "path": "website/apps/shawnos/app/log/progression/page.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 432,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "complex_script",
-      "title": "build_index",
-      "path": "scripts/build_index.py",
+      "title": "query_index",
+      "path": "scripts/query_index.py",
       "source": "auto",
-      "timestamp": "22:52",
-      "words": 3405,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
-      "source": "auto",
-      "timestamp": "23:31",
-      "words": 4841,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log page",
-      "path": "website/apps/shawnos/app/log/page.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 276,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "contentos package",
-      "path": "website/apps/contentos/package.json",
-      "source": "auto",
-      "timestamp": "20:17",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "generate_content_json",
-      "path": "scripts/generate_content_json.py",
-      "source": "auto",
-      "timestamp": "22:24",
-      "words": 738,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api ops pipeline route",
-      "path": "website/apps/mission-control/app/api/ops/pipeline/route.ts",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 80,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "gtmos home page",
-      "path": "website/apps/gtmos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "20:57",
-      "words": 1020,
+      "timestamp": "22:51",
+      "words": 1762,
       "value_score": 25,
       "shipped": true
     },
@@ -181,12 +44,22 @@
       "shipped": true
     },
     {
+      "type": "feature_script",
+      "title": "progression_engine",
+      "path": "scripts/progression_engine.py",
+      "source": "auto",
+      "timestamp": "22:52",
+      "words": 1887,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
       "type": "website_route",
-      "title": "mission-control api system-metrics route",
-      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "title": "mission-control api openclaw-status route",
+      "path": "website/apps/mission-control/app/api/openclaw-status/route.ts",
       "source": "auto",
       "timestamp": "15:14",
-      "words": 499,
+      "words": 303,
       "value_score": 3,
       "shipped": true
     },
@@ -202,12 +75,71 @@
     },
     {
       "type": "website_route",
-      "title": "mission-control api openclaw-status route",
-      "path": "website/apps/mission-control/app/api/openclaw-status/route.ts",
+      "title": "mission-control api ops pipeline route",
+      "path": "website/apps/mission-control/app/api/ops/pipeline/route.ts",
       "source": "auto",
       "timestamp": "15:14",
-      "words": 303,
+      "words": 80,
       "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
+      "source": "auto",
+      "timestamp": "00:04",
+      "words": 6111,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log progression page",
+      "path": "website/apps/shawnos/app/log/progression/page.tsx",
+      "source": "auto",
+      "timestamp": "15:14",
+      "words": 432,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "generate_content_json",
+      "path": "scripts/generate_content_json.py",
+      "source": "auto",
+      "timestamp": "22:24",
+      "words": 738,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "15:14",
+      "words": 817,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "contentos package",
+      "path": "website/apps/contentos/package.json",
+      "source": "auto",
+      "timestamp": "20:17",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "gtmos home page",
+      "path": "website/apps/gtmos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 1020,
+      "value_score": 25,
       "shipped": true
     },
     {
@@ -221,6 +153,26 @@
       "shipped": true
     },
     {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 1525,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "build_index",
+      "path": "scripts/build_index.py",
+      "source": "auto",
+      "timestamp": "22:52",
+      "words": 3405,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
       "type": "website_route",
       "title": "mission-control api recent-memories route",
       "path": "website/apps/mission-control/app/api/recent-memories/route.ts",
@@ -231,103 +183,52 @@
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared generator",
-      "path": "website/packages/shared/lib/rss/generator.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 331,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
+      "type": "website_page",
+      "title": "shawnos log page",
+      "path": "website/apps/shawnos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "15:14",
+      "words": 276,
+      "value_score": 5,
+      "shipped": true
     },
     {
-      "type": "linkedin_draft",
-      "title": "contentos machine",
-      "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
-      "source": "auto-mtime",
-      "timestamp": "19:06",
-      "words": 896,
+      "type": "config_file",
+      "title": "gtmos package",
+      "path": "website/apps/gtmos/package.json",
+      "source": "auto",
+      "timestamp": "20:17",
       "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg-v2.server",
-      "path": "website/packages/shared/lib/rpg-v2.server.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 167,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "x_draft",
-      "title": "shawnos threads",
-      "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
-      "source": "auto-mtime",
-      "timestamp": "19:07",
-      "words": 594,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
+      "shipped": true
     },
     {
       "type": "website_page",
-      "title": "mission-control logs page",
-      "path": "website/apps/mission-control/app/logs/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 123,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "16:13",
+      "words": 1884,
+      "value_score": 5,
+      "shipped": true
     },
     {
-      "type": "partner_resource",
-      "title": "partner session 02 2026 02 13",
-      "path": "clients/partner/[redacted]/resources/transcripts/session-02-2026-02-13.md",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 330,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
+      "type": "website_route",
+      "title": "mission-control api system-metrics route",
+      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "source": "auto",
+      "timestamp": "15:14",
+      "words": 499,
+      "value_score": 3,
+      "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "contentos log page",
-      "path": "website/apps/contentos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 319,
+      "type": "config_file",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
+      "source": "auto",
+      "timestamp": "15:14",
       "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared costs.server",
-      "path": "website/packages/shared/lib/costs.server.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 207,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "ecosystem capstone",
-      "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
-      "source": "auto-mtime",
-      "timestamp": "19:06",
-      "words": 961,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
+      "shipped": true
     },
     {
       "type": "website_page",
@@ -336,159 +237,6 @@
       "source": "auto-mtime",
       "timestamp": "00:27",
       "words": 667,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log page",
-      "path": "website/apps/gtmos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 319,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "config_file",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals v2-lab page",
-      "path": "website/apps/shawnos/app/vitals/v2-lab/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 2045,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "complex_script",
-      "title": "progression_engine_v3",
-      "path": "scripts/progression_engine_v3.py",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 2843,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/index.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 227,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "shawnos anti lead magnet",
-      "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
-      "source": "auto-mtime",
-      "timestamp": "19:05",
-      "words": 765,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "feature_system",
-      "title": "TypewriterHero",
-      "path": "website/packages/shared/components/TypewriterHero.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 798,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "substack_draft",
-      "title": "start at level one",
-      "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
-      "source": "auto-mtime",
-      "timestamp": "20:17",
-      "words": 1543,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control progression page",
-      "path": "website/apps/mission-control/app/progression/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 355,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log date page",
-      "path": "website/apps/contentos/app/log/[date]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 516,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "code_infra",
-      "title": "crew_orchestrator",
-      "path": "scripts/crew_orchestrator.py",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 820,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log skill-guide page",
-      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 155,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control logs date page",
-      "path": "website/apps/mission-control/app/logs/[date]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 202,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "partner_workflow",
-      "title": "partner on demand enrichment spec",
-      "path": "clients/partner/[redacted]/workflows/on-demand-enrichment-spec.md",
-      "source": "auto-mtime",
-      "timestamp": "23:27",
-      "words": 2912,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -506,33 +254,11 @@
     },
     {
       "type": "x_draft",
-      "title": "ecosystem threads",
-      "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+      "title": "gtmos threads",
+      "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
       "source": "auto-mtime",
-      "timestamp": "19:08",
-      "words": 626,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/rss/index.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 42,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log date page",
-      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 516,
+      "timestamp": "19:07",
+      "words": 596,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -549,34 +275,122 @@
       "mtime_only": true
     },
     {
-      "type": "code_infra",
-      "title": "cost_aggregator",
-      "path": "scripts/cost_aggregator.py",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 652,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "x_draft",
-      "title": "gtmos threads",
-      "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
-      "source": "auto-mtime",
-      "timestamp": "19:07",
-      "words": 596,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
       "type": "complex_script",
       "title": "progression_engine_v2",
       "path": "scripts/progression_engine_v2.py",
       "source": "auto-mtime",
       "timestamp": "00:27",
       "words": 2272,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "x_draft",
+      "title": "shawnos threads",
+      "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+      "source": "auto-mtime",
+      "timestamp": "19:07",
+      "words": 594,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 227,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log skill-guide page",
+      "path": "website/apps/gtmos/app/log/skill-guide/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 155,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log page",
+      "path": "website/apps/gtmos/app/log/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 319,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared generator",
+      "path": "website/packages/shared/lib/rss/generator.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 331,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "start at level one",
+      "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+      "source": "auto-mtime",
+      "timestamp": "20:17",
+      "words": 1543,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log page",
+      "path": "website/apps/contentos/app/log/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 319,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log date page",
+      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 516,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner session 02 2026 02 13",
+      "path": "clients/partner/[redacted]/resources/transcripts/session-02-2026-02-13.md",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 330,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v3.server",
+      "path": "website/packages/shared/lib/rpg-v3.server.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 167,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -594,33 +408,22 @@
     },
     {
       "type": "website_page",
-      "title": "mission-control analytics page",
-      "path": "website/apps/mission-control/app/analytics/page.tsx",
+      "title": "mission-control logs page",
+      "path": "website/apps/mission-control/app/logs/page.tsx",
       "source": "auto-mtime",
       "timestamp": "00:27",
-      "words": 166,
+      "words": 123,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "website_lib",
-      "title": "shared crews",
-      "path": "website/packages/shared/lib/crews.ts",
+      "type": "code_infra",
+      "title": "crew_orchestrator",
+      "path": "scripts/crew_orchestrator.py",
       "source": "auto-mtime",
       "timestamp": "00:27",
-      "words": 161,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg-v3",
-      "path": "website/packages/shared/lib/rpg-v3.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 260,
+      "words": 820,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -638,11 +441,110 @@
     },
     {
       "type": "linkedin_draft",
+      "title": "shawnos anti lead magnet",
+      "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+      "source": "auto-mtime",
+      "timestamp": "19:05",
+      "words": 765,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "code_infra",
+      "title": "cost_aggregator",
+      "path": "scripts/cost_aggregator.py",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 652,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals v2-lab page",
+      "path": "website/apps/shawnos/app/vitals/v2-lab/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 2045,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control logs date page",
+      "path": "website/apps/mission-control/app/logs/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 202,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_onboard",
+      "title": "partner onboard skill",
+      "path": "clients/partner/[redacted]/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 455,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "linkedin_draft",
       "title": "gtmos infrastructure",
       "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
       "source": "auto-mtime",
       "timestamp": "19:05",
       "words": 821,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control progression page",
+      "path": "website/apps/mission-control/app/progression/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 355,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control analytics page",
+      "path": "website/apps/mission-control/app/analytics/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 166,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_workflow",
+      "title": "partner on demand enrichment spec",
+      "path": "clients/partner/[redacted]/workflows/on-demand-enrichment-spec.md",
+      "source": "auto-mtime",
+      "timestamp": "23:27",
+      "words": 2912,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log skill-guide page",
+      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 155,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -659,9 +561,41 @@
       "mtime_only": true
     },
     {
+      "type": "feature_system",
+      "title": "TypewriterHero",
+      "path": "website/packages/shared/components/TypewriterHero.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 798,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log date page",
+      "path": "website/apps/contentos/app/log/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 516,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
       "type": "website_lib",
-      "title": "shared rpg-v3.server",
-      "path": "website/packages/shared/lib/rpg-v3.server.ts",
+      "title": "shared rpg-v2.server",
+      "path": "website/packages/shared/lib/rpg-v2.server.ts",
       "source": "auto-mtime",
       "timestamp": "00:27",
       "words": 167,
@@ -670,26 +604,464 @@
       "mtime_only": true
     },
     {
-      "type": "website_page",
-      "title": "gtmos log skill-guide page",
-      "path": "website/apps/gtmos/app/log/skill-guide/page.tsx",
+      "type": "website_lib",
+      "title": "shared rpg-v3",
+      "path": "website/packages/shared/lib/rpg-v3.ts",
       "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 155,
+      "timestamp": "00:27",
+      "words": 260,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "partner_onboard",
-      "title": "partner onboard skill",
-      "path": "clients/partner/[redacted]/SKILL.md",
+      "type": "linkedin_draft",
+      "title": "ecosystem capstone",
+      "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
       "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 455,
+      "timestamp": "19:06",
+      "words": 961,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
+    },
+    {
+      "type": "complex_script",
+      "title": "progression_engine_v3",
+      "path": "scripts/progression_engine_v3.py",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 2843,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared costs.server",
+      "path": "website/packages/shared/lib/costs.server.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 207,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/rss/index.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 42,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "contentos machine",
+      "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+      "source": "auto-mtime",
+      "timestamp": "19:06",
+      "words": 896,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "x_draft",
+      "title": "ecosystem threads",
+      "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+      "source": "auto-mtime",
+      "timestamp": "19:08",
+      "words": 626,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared crews",
+      "path": "website/packages/shared/lib/crews.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 161,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "commits": [
+    {
+      "hash": "88ab8f7",
+      "message": "chore: daily tracker scan 2026-02-20",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 4,
+      "lines_added": 1601,
+      "lines_removed": 65,
+      "lines_net": 1536,
+      "directories": [
+        "data/",
+        "docs/"
+      ],
+      "timestamp": "00:00"
+    },
+    {
+      "hash": "699c791",
+      "message": "chore: daily tracker scan 2026-02-20",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 4,
+      "lines_added": 469,
+      "lines_removed": 658,
+      "lines_net": -189,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "00:28"
+    },
+    {
+      "hash": "1aadeb1",
+      "message": "feat: add GTM OS + Content OS highlight reel videos with homepage integration",
+      "type": "monorepo_scaffold",
+      "score": 80,
+      "files_changed": 14,
+      "lines_added": 1888,
+      "lines_removed": 7,
+      "lines_net": 1881,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "00:31"
+    },
+    {
+      "hash": "9b94ee4",
+      "message": "chore: sanitize daily log \u2014 replace partner name with alias",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 1,
+      "lines_removed": 1,
+      "lines_net": 0,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "00:32"
+    },
+    {
+      "hash": "05fa741",
+      "message": "feat: add V3 progression page + scoring breakdown to shawnos log",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 6,
+      "lines_added": 1317,
+      "lines_removed": 108,
+      "lines_net": 1209,
+      "directories": [
+        "data/",
+        "website/"
+      ],
+      "timestamp": "01:01"
+    },
+    {
+      "hash": "caf2f5a",
+      "message": "feat(mission-control): add phased ops hardening and operator cockpit",
+      "type": "feature_build",
+      "score": 40,
+      "files_changed": 14,
+      "lines_added": 1336,
+      "lines_removed": 211,
+      "lines_net": 1125,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "02:07"
+    },
+    {
+      "hash": "1253e53",
+      "message": "feat(nio.log): add daily blog post 2026-02-21 - THE COMPOUND EFFECT",
+      "type": "feature_build",
+      "score": 30,
+      "files_changed": 10,
+      "lines_added": 246,
+      "lines_removed": 395,
+      "lines_net": -149,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "08:03"
+    },
+    {
+      "hash": "e3132d5",
+      "message": "fix(nio-terminal): add 2026-02-21 post content fallback",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 32,
+      "lines_removed": 0,
+      "lines_net": 32,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "13:10"
+    },
+    {
+      "hash": "c85b736",
+      "message": "feat(mission-control): add OpenClaw session status snapshot (2h cache)",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 2,
+      "lines_added": 149,
+      "lines_removed": 0,
+      "lines_net": 149,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "14:02"
+    },
+    {
+      "hash": "2b8b1cf",
+      "message": "feat(mission-control): fix Nio avatar + add real tasks/memories APIs",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 4,
+      "lines_added": 276,
+      "lines_removed": 47,
+      "lines_net": 229,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:10"
+    },
+    {
+      "hash": "333d738",
+      "message": "feat: autoplay video showcase + remove terminal chrome + add tool/platform branding",
+      "type": "video_build",
+      "score": 30,
+      "files_changed": 9,
+      "lines_added": 235,
+      "lines_removed": 644,
+      "lines_net": -409,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:14"
+    },
+    {
+      "hash": "5fa860e",
+      "message": "feat(mission-control): add SessionStatus component to dashboard",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 2,
+      "lines_added": 195,
+      "lines_removed": 0,
+      "lines_net": 195,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:19"
+    },
+    {
+      "hash": "ad6921d",
+      "message": "fix(nio-terminal): rewrite posts 2 and 3 to match canonical structure",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 51,
+      "lines_removed": 51,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:26"
+    },
+    {
+      "hash": "2a51926",
+      "message": "feat(how-to): add Advanced OpenClaw + Knowledge Graph Setup guide",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 2,
+      "lines_added": 86,
+      "lines_removed": 1,
+      "lines_net": 85,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:56"
+    },
+    {
+      "hash": "0892213",
+      "message": "feat(mission-control): enhance real-time system status and dynamic task management",
+      "type": "feature_build",
+      "score": 30,
+      "files_changed": 8,
+      "lines_added": 360,
+      "lines_removed": 437,
+      "lines_net": -77,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:08"
+    },
+    {
+      "hash": "327cc85",
+      "message": "feat(how-to): add live Nio workspace knowledge graph example",
+      "type": "wiki_page",
+      "score": 8,
+      "files_changed": 1,
+      "lines_added": 64,
+      "lines_removed": 0,
+      "lines_net": 64,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:11"
+    },
+    {
+      "hash": "db7c656",
+      "message": "feat: ShawnOS video v4 \u2014 5-scene 8.2s cut with platform+tool blitz",
+      "type": "video_build",
+      "score": 30,
+      "files_changed": 10,
+      "lines_added": 368,
+      "lines_removed": 260,
+      "lines_net": 108,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:13"
+    },
+    {
+      "hash": "ba4fb8c",
+      "message": "fix(how-to): make workspace knowledge graph example readable",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 4,
+      "lines_removed": 4,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:26"
+    },
+    {
+      "hash": "84ebf27",
+      "message": "docs(how-to): add one-screen map to workspace knowledge graph",
+      "type": "wiki_page",
+      "score": 8,
+      "files_changed": 1,
+      "lines_added": 26,
+      "lines_removed": 1,
+      "lines_net": 25,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:27"
+    },
+    {
+      "hash": "20ae0a5",
+      "message": "fix(gtmos): repair how-to wiki string literal syntax",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 1,
+      "lines_removed": 26,
+      "lines_net": -25,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:29"
+    },
+    {
+      "hash": "eab407c",
+      "message": "feat: GTM OS video v2 \u2014 5-scene 8.2s cut with tool+MCP blitz",
+      "type": "video_build",
+      "score": 30,
+      "files_changed": 8,
+      "lines_added": 229,
+      "lines_removed": 137,
+      "lines_net": 92,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:29"
+    },
+    {
+      "hash": "9a67c2c",
+      "message": "fix(how-to): rewrite knowledge graph page with visual diagram and proper HTML",
+      "type": "bug_fix",
+      "score": 5,
+      "files_changed": 2,
+      "lines_added": 415,
+      "lines_removed": 191,
+      "lines_net": 224,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:42"
+    },
+    {
+      "hash": "401f3ea",
+      "message": "feat: add sitemaps to GTMOS & ContentOS, unify robots.txt with AI crawlers",
+      "type": "feature_build",
+      "score": 30,
+      "files_changed": 13,
+      "lines_added": 456,
+      "lines_removed": 180,
+      "lines_net": 276,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "20:17"
+    },
+    {
+      "hash": "4dd723d",
+      "message": "feat: add SQLite content index (build_index.py) for queryable repo metadata",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 3,
+      "lines_added": 630,
+      "lines_removed": 0,
+      "lines_net": 630,
+      "directories": [
+        ".gitignore/",
+        "scripts/"
+      ],
+      "timestamp": "20:52"
+    },
+    {
+      "hash": "404848d",
+      "message": "feat: complete SQLite phases 2-3 \u2014 query CLI, link enrichment, content JSON",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 6,
+      "lines_added": 1981,
+      "lines_removed": 55,
+      "lines_net": 1926,
+      "directories": [
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "22:26"
+    },
+    {
+      "hash": "7ba7d7c",
+      "message": "feat: SQLite phases 4-5 \u2014 asset index + scoring rewrite",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 9,
+      "lines_added": 2474,
+      "lines_removed": 1039,
+      "lines_net": 1435,
+      "directories": [
+        "data/",
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "22:57"
     }
   ],
   "pipeline": {
@@ -1142,7 +1514,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 47,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 10.7524,
       "context": "claude-code 02:07"
     },
@@ -1155,7 +1527,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 22,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 4.9708,
       "context": "claude-code 00:43"
     },
@@ -1168,7 +1540,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 127,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 35.1677,
       "context": "claude-code 04:27"
     },
@@ -1181,7 +1553,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 257,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 61.8005,
       "context": "claude-code 19:39"
     },
@@ -1194,7 +1566,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 138,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 26.8105,
       "context": "claude-code 01:13"
     },
@@ -1207,7 +1579,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 105,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 25.5948,
       "context": "claude-code 00:01"
     },
@@ -1220,7 +1592,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 15,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 2.0272,
       "context": "claude-code 02:33"
     },
@@ -1233,7 +1605,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 31,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 4.598,
       "context": "claude-code 23:47"
     },
@@ -1246,7 +1618,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 168,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 34.4159,
       "context": "claude-code 03:33"
     },
@@ -1259,7 +1631,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 11,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 1.1527,
       "context": "claude-code 23:51"
     },
@@ -1272,7 +1644,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 25,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 3.7252,
       "context": "claude-code 23:55"
     },
@@ -1285,7 +1657,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 58,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 10.2955,
       "context": "claude-code 02:19"
     },
@@ -1298,7 +1670,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 74,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 7.9261,
       "context": "claude-code 02:41"
     },
@@ -1311,342 +1683,167 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 2,
-      "logged_at": "00:00",
+      "logged_at": "00:04",
       "cost": 0.1835,
       "context": "claude-code 00:00"
     }
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 17,
       "website": 36,
-      "linkedin": 4,
+      "other": 17,
       "x": 4,
+      "substack": 1,
       "ops": 3,
-      "substack": 1
+      "linkedin": 4
     },
-    "words_in_touched_files": 50531,
+    "words_in_touched_files": 51801,
     "pipeline_words": 46861,
     "finals_count": 0,
-    "first_activity": "00:27",
-    "last_activity": "23:31",
-    "output_score": 491,
+    "first_activity": "00:04",
+    "last_activity": "23:27",
+    "output_score": 641,
     "letter_grade": "S+",
     "score_breakdown": [
       {
-        "type": "website_page",
-        "title": "shawnos vitals nio-terminal slug page",
-        "points": 5
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-20",
+        "points": 1
       },
       {
-        "type": "feature_script",
-        "title": "progression_engine",
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-20",
+        "points": 1
+      },
+      {
+        "type": "monorepo_scaffold",
+        "title": "feat: add GTM OS + Content OS highlight reel videos with hom",
+        "points": 80
+      },
+      {
+        "type": "chore",
+        "title": "chore: sanitize daily log \u2014 replace partner name with alias",
+        "points": 1
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: add V3 progression page + scoring breakdown to shawnos",
+        "points": 25
+      },
+      {
+        "type": "feature_build",
+        "title": "feat(mission-control): add phased ops hardening and operator",
+        "points": 40
+      },
+      {
+        "type": "feature_build",
+        "title": "feat(nio.log): add daily blog post 2026-02-21 - THE COMPOUND",
         "points": 30
       },
       {
-        "type": "website_page",
-        "title": "NioPostPage",
-        "points": 5
+        "type": "bug_fix",
+        "title": "fix(nio-terminal): add 2026-02-21 post content fallback",
+        "points": 3
       },
       {
-        "type": "website_page",
-        "title": "NioTerminalPage",
-        "points": 5
-      },
-      {
-        "type": "landing_page",
-        "title": "contentos home page",
+        "type": "feature_build",
+        "title": "feat(mission-control): add OpenClaw session status snapshot ",
         "points": 25
       },
       {
-        "type": "complex_script",
-        "title": "query_index",
+        "type": "feature_build",
+        "title": "feat(mission-control): fix Nio avatar + add real tasks/memor",
         "points": 25
       },
       {
-        "type": "website_page",
-        "title": "shawnos log date page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log progression page",
-        "points": 5
-      },
-      {
-        "type": "complex_script",
-        "title": "build_index",
-        "points": 25
-      },
-      {
-        "type": "feature_script",
-        "title": "daily_scan",
+        "type": "video_build",
+        "title": "feat: autoplay video showcase + remove terminal chrome + add",
         "points": 30
       },
       {
-        "type": "website_page",
-        "title": "shawnos log page",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "generate_content_json",
-        "points": 15
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api ops pipeline route",
-        "points": 3
-      },
-      {
-        "type": "landing_page",
-        "title": "gtmos home page",
+        "type": "feature_build",
+        "title": "feat(mission-control): add SessionStatus component to dashbo",
         "points": 25
       },
       {
-        "type": "landing_page",
-        "title": "mission-control home page",
+        "type": "bug_fix",
+        "title": "fix(nio-terminal): rewrite posts 2 and 3 to match canonical ",
+        "points": 3
+      },
+      {
+        "type": "feature_build",
+        "title": "feat(how-to): add Advanced OpenClaw + Knowledge Graph Setup ",
         "points": 25
       },
       {
-        "type": "website_route",
-        "title": "mission-control api system-metrics route",
-        "points": 3
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos how-to page",
-        "points": 5
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api openclaw-status route",
-        "points": 3
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api tasks route",
-        "points": 3
-      },
-      {
-        "type": "website_route",
-        "title": "mission-control api recent-memories route",
-        "points": 3
-      },
-      {
-        "type": "website_lib",
-        "title": "shared generator",
-        "points": 3
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "contentos machine",
-        "points": 2
-      },
-      {
-        "type": "website_lib",
-        "title": "shared rpg-v2.server",
-        "points": 3
-      },
-      {
-        "type": "x_draft",
-        "title": "shawnos threads",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "mission-control logs page",
-        "points": 5
-      },
-      {
-        "type": "partner_resource",
-        "title": "partner session 02 2026 02 13",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared costs.server",
-        "points": 3
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "ecosystem capstone",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos rpg-preview page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos vitals v2-lab page",
-        "points": 5
-      },
-      {
-        "type": "complex_script",
-        "title": "progression_engine_v3",
-        "points": 25
-      },
-      {
-        "type": "website_lib",
-        "title": "shared index",
-        "points": 3
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "shawnos anti lead magnet",
-        "points": 2
-      },
-      {
-        "type": "feature_system",
-        "title": "TypewriterHero",
+        "type": "feature_build",
+        "title": "feat(mission-control): enhance real-time system status and d",
         "points": 30
       },
       {
-        "type": "substack_draft",
-        "title": "start at level one",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "mission-control progression page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log date page",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "crew_orchestrator",
-        "points": 15
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log skill-guide page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "mission-control logs date page",
-        "points": 5
-      },
-      {
-        "type": "partner_workflow",
-        "title": "partner on demand enrichment spec",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared rpg-v2",
-        "points": 3
-      },
-      {
-        "type": "x_draft",
-        "title": "ecosystem threads",
-        "points": 2
-      },
-      {
-        "type": "website_lib",
-        "title": "shared index",
-        "points": 3
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log date page",
-        "points": 5
-      },
-      {
-        "type": "x_draft",
-        "title": "contentos threads",
-        "points": 2
-      },
-      {
-        "type": "code_infra",
-        "title": "cost_aggregator",
-        "points": 15
-      },
-      {
-        "type": "x_draft",
-        "title": "gtmos threads",
-        "points": 2
-      },
-      {
-        "type": "complex_script",
-        "title": "progression_engine_v2",
-        "points": 25
-      },
-      {
-        "type": "website_lib",
-        "title": "shared costs",
-        "points": 3
-      },
-      {
-        "type": "website_page",
-        "title": "mission-control analytics page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared crews",
-        "points": 3
-      },
-      {
-        "type": "website_lib",
-        "title": "shared rpg-v3",
-        "points": 3
-      },
-      {
-        "type": "website_lib",
-        "title": "shared config",
-        "points": 3
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "gtmos infrastructure",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos updates page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared rpg-v3.server",
-        "points": 3
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log skill-guide page",
-        "points": 5
-      },
-      {
-        "type": "partner_onboard",
-        "title": "partner onboard skill",
+        "type": "wiki_page",
+        "title": "feat(how-to): add live Nio workspace knowledge graph example",
         "points": 8
+      },
+      {
+        "type": "video_build",
+        "title": "feat: ShawnOS video v4 \u2014 5-scene 8.2s cut with platform+tool",
+        "points": 30
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix(how-to): make workspace knowledge graph example readable",
+        "points": 3
+      },
+      {
+        "type": "wiki_page",
+        "title": "docs(how-to): add one-screen map to workspace knowledge grap",
+        "points": 8
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix(gtmos): repair how-to wiki string literal syntax",
+        "points": 3
+      },
+      {
+        "type": "video_build",
+        "title": "feat: GTM OS video v2 \u2014 5-scene 8.2s cut with tool+MCP blitz",
+        "points": 30
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix(how-to): rewrite knowledge graph page with visual diagra",
+        "points": 5
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: add sitemaps to GTMOS & ContentOS, unify robots.txt wi",
+        "points": 30
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: add SQLite content index (build_index.py) for queryabl",
+        "points": 60
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: complete SQLite phases 2-3 \u2014 query CLI, link enrichmen",
+        "points": 60
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: SQLite phases 4-5 \u2014 asset index + scoring rewrite",
+        "points": 60
       }
     ],
-    "efficiency_rating": 2.14,
+    "efficiency_rating": 2.79,
     "shipped_count": 23,
     "draft_count": 42,
     "ship_rate": 0.35,
     "agent_cost": 229.42,
-    "cost_per_point": 0.47,
-    "efficiency_ratio": 2.14,
-    "words_today": 50531,
+    "cost_per_point": 0.36,
+    "efficiency_ratio": 2.79,
+    "words_today": 51801,
     "lines_added": 14890,
     "lines_removed": 4518,
     "lines_net": 10372,
@@ -1758,5 +1955,32 @@
     "code_loc": 7960,
     "content_loc": 82,
     "data_loc": 6848
+  },
+  "dev_equivalent": {
+    "net_lines": 10372,
+    "dev_days": 69.1,
+    "cost_estimate": 34550,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 10,372 net lines represent approximately 69 developer-days of output \u2014 what a small team would produce in 3+ months.",
+    "assumptions": {
+      "lines_per_day": 150,
+      "cost_per_day": 500,
+      "basis": "Industry average for meaningful, reviewed, production-quality code"
+    }
+  },
+  "cost": {
+    "api_equivalent": 229.42,
+    "actual_cost": 0.0,
+    "pricing_mode": "max"
+  },
+  "token_efficiency": {
+    "total_tokens": 98846473,
+    "total_sessions": 14,
+    "tokens_per_point": 154207,
+    "tokens_per_commit": 3801787,
+    "tokens_per_loc": 9530,
+    "avg_context_utilization": 0.97,
+    "pricing_mode": "max",
+    "api_equivalent_cost": 229.42,
+    "actual_cost": 0.0
   }
 }
