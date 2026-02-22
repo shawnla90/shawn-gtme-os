@@ -6,6 +6,8 @@ import type {
   TokenEntry,
   Todo,
   PlatformBreakdown,
+  Commit,
+  WeekDaySummary,
 } from '../lib/logs'
 
 /* ------------------------------------------------------------------ */
@@ -77,6 +79,44 @@ function platformDisplay(key: string): { label: string; color: string } {
   return map[key] ?? { label: key.toUpperCase().slice(0, 3), color: '#8B949E' }
 }
 
+/** V4 commit type → color mapping. */
+function commitTypeColor(type: string): string {
+  const map: Record<string, string> = {
+    chore: '#8B949E',
+    bug_fix: RED,
+    feature_build: GREEN,
+    system_engine: GOLD,
+    monorepo_scaffold: '#FF6B35',
+    video_build: PURPLE,
+    wiki_section: CYAN,
+    wiki_page: CYAN,
+    infra_build: AMBER,
+    component: GREEN,
+    content_ship: CYAN,
+    content_draft: '#8B949E',
+  }
+  return map[type] ?? '#8B949E'
+}
+
+/** V4 commit type → short label. */
+function commitTypeLabel(type: string): string {
+  const map: Record<string, string> = {
+    chore: 'CHORE',
+    bug_fix: 'FIX',
+    feature_build: 'FEAT',
+    system_engine: 'ENGINE',
+    monorepo_scaffold: 'SCAFFOLD',
+    video_build: 'VIDEO',
+    wiki_section: 'WIKI',
+    wiki_page: 'WIKI',
+    infra_build: 'INFRA',
+    component: 'COMP',
+    content_ship: 'SHIP',
+    content_draft: 'DRAFT',
+  }
+  return map[type] ?? type.replace(/_/g, ' ').toUpperCase()
+}
+
 /** Format YYYY-MM-DD as "Friday, Feb 13 2026". */
 function formatDateLong(dateStr: string): string {
   const [y, m, d] = dateStr.split('-').map(Number)
@@ -87,6 +127,13 @@ function formatDateLong(dateStr: string): string {
     day: 'numeric',
     year: 'numeric',
   })
+}
+
+/** Short day name from YYYY-MM-DD. */
+function dayName(dateStr: string): string {
+  const [y, m, d] = dateStr.split('-').map(Number)
+  const dt = new Date(y, m - 1, d)
+  return dt.toLocaleDateString('en-US', { weekday: 'short' })
 }
 
 /** Format large numbers with K/M suffix. */
@@ -114,6 +161,30 @@ function GradeBadge({ grade }: { grade: string }) {
         fontSize: '16px',
         width: '42px',
         height: '42px',
+        borderRadius: '50%',
+        lineHeight: 1,
+        flexShrink: 0,
+      }}
+    >
+      {grade}
+    </span>
+  )
+}
+
+function GradeBadgeSmall({ grade }: { grade: string }) {
+  const bg = gradeColor(grade)
+  return (
+    <span
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: bg,
+        color: '#0D1117',
+        fontWeight: 700,
+        fontSize: '10px',
+        width: '24px',
+        height: '24px',
         borderRadius: '50%',
         lineHeight: 1,
         flexShrink: 0,
@@ -220,6 +291,153 @@ function TypeTag({ type }: { type: string }) {
     >
       {label}
     </span>
+  )
+}
+
+function CommitTypeTag({ type }: { type: string }) {
+  const color = commitTypeColor(type)
+  const label = commitTypeLabel(type)
+  return (
+    <span
+      style={{
+        display: 'inline-block',
+        fontSize: '10px',
+        fontWeight: 600,
+        color: '#0D1117',
+        background: color,
+        padding: '1px 6px',
+        borderRadius: '3px',
+        textTransform: 'uppercase',
+        letterSpacing: '0.04em',
+        lineHeight: 1.5,
+        whiteSpace: 'nowrap',
+      }}
+    >
+      {label}
+    </span>
+  )
+}
+
+function CommitRow({ item }: { item: Commit }) {
+  const msg = item.message.length > 60
+    ? item.message.slice(0, 57) + '...'
+    : item.message
+  return (
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'baseline',
+        gap: '8px',
+        padding: '4px 0',
+        fontSize: '13px',
+        lineHeight: 1.5,
+      }}
+    >
+      <span
+        style={{
+          color: 'var(--text-muted)',
+          fontSize: '11px',
+          flexShrink: 0,
+          width: '42px',
+          textAlign: 'right',
+        }}
+      >
+        {item.timestamp}
+      </span>
+      <CommitTypeTag type={item.type} />
+      <span
+        style={{
+          color: 'var(--text-primary)',
+          flexShrink: 1,
+          minWidth: 0,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        {msg}
+      </span>
+      <span
+        style={{
+          color: item.score > 0 ? GREEN : 'var(--text-muted)',
+          fontSize: '11px',
+          flexShrink: 0,
+          marginLeft: 'auto',
+          fontWeight: 600,
+        }}
+      >
+        +{item.score}
+      </span>
+    </div>
+  )
+}
+
+function WeeklyPanel({ days, currentDate }: { days: WeekDaySummary[]; currentDate: string }) {
+  return (
+    <div>
+      {days.map((d) => {
+        const isCurrent = d.date === currentDate
+        return (
+          <div
+            key={d.date}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              padding: '5px 0',
+              fontSize: '12px',
+              opacity: d.score === 0 && !isCurrent ? 0.5 : 1,
+              borderLeft: isCurrent ? `2px solid var(--accent)` : '2px solid transparent',
+              paddingLeft: '8px',
+            }}
+          >
+            <span
+              style={{
+                color: isCurrent ? 'var(--text-primary)' : 'var(--text-muted)',
+                fontWeight: isCurrent ? 700 : 400,
+                width: '32px',
+                flexShrink: 0,
+              }}
+            >
+              {dayName(d.date)}
+            </span>
+            <span
+              style={{
+                color: 'var(--text-muted)',
+                fontSize: '11px',
+                width: '52px',
+                flexShrink: 0,
+              }}
+            >
+              {d.date.slice(5)}
+            </span>
+            <span
+              style={{
+                color: 'var(--text-secondary)',
+                width: '60px',
+                flexShrink: 0,
+              }}
+            >
+              {d.commits > 0 ? `${d.commits} commits` : '-'}
+            </span>
+            <span
+              style={{
+                color: d.score > 0 ? gradeColor(d.grade) : 'var(--text-muted)',
+                fontWeight: 600,
+                width: '50px',
+                flexShrink: 0,
+                textAlign: 'right',
+              }}
+            >
+              {d.score > 0 ? `${d.score} pts` : '-'}
+            </span>
+            {d.grade !== '-' && d.score > 0 && (
+              <GradeBadgeSmall grade={d.grade} />
+            )}
+          </div>
+        )
+      })}
+    </div>
   )
 }
 
@@ -516,6 +734,45 @@ function TokenStat({
   )
 }
 
+/** Section header used in analytics panel. */
+function SectionHeader({ label }: { label: string }) {
+  return (
+    <div
+      style={{
+        fontSize: '11px',
+        color: 'var(--text-muted)',
+        textTransform: 'uppercase',
+        letterSpacing: '0.05em',
+        marginBottom: '8px',
+        fontWeight: 600,
+      }}
+    >
+      {label}
+    </div>
+  )
+}
+
+/** Separator + section header used between analytics sections. */
+function SectionDivider({ label }: { label: string }) {
+  return (
+    <div
+      style={{
+        marginTop: '14px',
+        paddingTop: '10px',
+        borderTop: '1px solid var(--border)',
+        fontSize: '11px',
+        color: 'var(--text-muted)',
+        textTransform: 'uppercase',
+        letterSpacing: '0.05em',
+        marginBottom: '8px',
+        fontWeight: 600,
+      }}
+    >
+      {label}
+    </div>
+  )
+}
+
 /* ------------------------------------------------------------------ */
 /*  Panel wrapper                                                      */
 /* ------------------------------------------------------------------ */
@@ -575,6 +832,8 @@ interface DailyLogViewProps {
   nextDate?: string | null
   /** Base path, e.g. "/log" */
   basePath?: string
+  /** V4: 7-day weekly context for the "This Week" panel. */
+  weeklyContext?: WeekDaySummary[]
 }
 
 export function DailyLogView({
@@ -582,12 +841,20 @@ export function DailyLogView({
   prevDate,
   nextDate,
   basePath = '/log',
+  weeklyContext,
 }: DailyLogViewProps) {
   const { stats, accomplishments, pipeline, todos, token_usage, git_summary } =
     log
   const gc = gradeColor(stats.letter_grade)
 
-  // Compute some derived stats
+  // V4 detection
+  const isV4 = log.version >= 4 && log.commits != null
+  const commits = log.commits ?? []
+  const devEq = log.dev_equivalent
+  const costSection = log.cost
+  const tokenEff = log.token_efficiency
+
+  // Compute derived stats
   const totalTokens =
     token_usage.reduce(
       (s, e) =>
@@ -599,6 +866,14 @@ export function DailyLogView({
       0,
     )
   const totalCost = token_usage.reduce((s, e) => s + (e.cost ?? 0), 0)
+
+  // V4 net lines from commits
+  const netLines = isV4
+    ? commits.reduce((s, c) => s + c.lines_net, 0)
+    : (stats.lines_net ?? 0)
+  const filesTouched = isV4
+    ? new Set(commits.flatMap((c) => c.directories)).size
+    : (git_summary.files_touched ?? 0)
 
   return (
     <>
@@ -683,28 +958,50 @@ export function DailyLogView({
 
         {/* ============ STAT BOXES ============ */}
         <div className="dlv-stat-row" style={{ marginBottom: '10px' }}>
-          <StatBox label="shipped" value={accomplishments.length} color={GREEN} />
-          <StatBox label="finalized" value={stats.finals_count} color={stats.finals_count > 0 ? GREEN : undefined} />
-          <StatBox
-            label="pending"
-            value={todos.filter((t) => t.status === 'pending').length}
-            color={todos.filter((t) => t.status === 'pending').length > 0 ? AMBER : undefined}
-          />
-          <StatBox label="in pipeline" value={pipeline.drafts_active.length} />
-          <StatBox label="words today" value={stats.words_today.toLocaleString()} color={CYAN} />
-          <StatBox label="commits" value={git_summary.commits_today} />
-          <StatBox label="files touched" value={git_summary.files_touched ?? 0} />
-          <StatBox label="tokens" value={compactNum(totalTokens)} color={PURPLE} />
-          <StatBox
-            label="est. cost"
-            value={`$${totalCost.toFixed(2)}`}
-            color={PURPLE}
-          />
-          {stats.roi_multiplier != null && (
-            <StatBox label="ROI" value={`${stats.roi_multiplier.toLocaleString()}x`} color={GOLD} />
-          )}
-          {stats.ship_rate != null && (
-            <StatBox label="ship rate" value={`${stats.ship_rate}%`} color={GREEN} />
+          {isV4 ? (
+            <>
+              <StatBox label="commits" value={commits.length} color={GREEN} />
+              <StatBox label="score" value={stats.output_score} color={gc} />
+              <StatBox label="net lines" value={netLines.toLocaleString()} color={CYAN} />
+              <StatBox label="dirs touched" value={filesTouched} />
+              <StatBox label="tokens" value={compactNum(totalTokens)} color={PURPLE} />
+              <StatBox
+                label="actual cost"
+                value={costSection ? `$${costSection.actual_cost.toFixed(2)}` : '$0.00'}
+                color={GREEN}
+              />
+              <StatBox
+                label="API equiv"
+                value={costSection ? `$${costSection.api_equivalent.toFixed(2)}` : `$${totalCost.toFixed(2)}`}
+                color={PURPLE}
+              />
+            </>
+          ) : (
+            <>
+              <StatBox label="shipped" value={accomplishments.length} color={GREEN} />
+              <StatBox label="finalized" value={stats.finals_count} color={stats.finals_count > 0 ? GREEN : undefined} />
+              <StatBox
+                label="pending"
+                value={todos.filter((t) => t.status === 'pending').length}
+                color={todos.filter((t) => t.status === 'pending').length > 0 ? AMBER : undefined}
+              />
+              <StatBox label="in pipeline" value={pipeline.drafts_active.length} />
+              <StatBox label="words today" value={stats.words_today.toLocaleString()} color={CYAN} />
+              <StatBox label="commits" value={git_summary.commits_today} />
+              <StatBox label="files touched" value={git_summary.files_touched ?? 0} />
+              <StatBox label="tokens" value={compactNum(totalTokens)} color={PURPLE} />
+              <StatBox
+                label="est. cost"
+                value={`$${totalCost.toFixed(2)}`}
+                color={PURPLE}
+              />
+              {stats.roi_multiplier != null && (
+                <StatBox label="ROI" value={`${stats.roi_multiplier.toLocaleString()}x`} color={GOLD} />
+              )}
+              {stats.ship_rate != null && (
+                <StatBox label="ship rate" value={`${stats.ship_rate}%`} color={GREEN} />
+              )}
+            </>
           )}
         </div>
 
@@ -733,246 +1030,380 @@ export function DailyLogView({
 
         {/* ============ THREE-COLUMN PANELS ============ */}
         <div className="dlv-panels">
-          {/* --- Accomplishments --- */}
-          <Panel title="Accomplishments" count={accomplishments.length}>
-            <div style={{ maxHeight: '500px', overflowY: 'auto' }}>
-              {accomplishments.map((a, i) => (
-                <AccomplishmentRow key={i} item={a} />
-              ))}
-            </div>
-          </Panel>
+          {/* --- Left Panel: Commits (V4) / Accomplishments (V3) --- */}
+          {isV4 ? (
+            <Panel title="Commits" count={commits.length}>
+              <div style={{ maxHeight: '500px', overflowY: 'auto' }}>
+                {commits.map((c, i) => (
+                  <CommitRow key={i} item={c} />
+                ))}
+              </div>
+            </Panel>
+          ) : (
+            <Panel title="Accomplishments" count={accomplishments.length}>
+              <div style={{ maxHeight: '500px', overflowY: 'auto' }}>
+                {accomplishments.map((a, i) => (
+                  <AccomplishmentRow key={i} item={a} />
+                ))}
+              </div>
+            </Panel>
+          )}
 
-          {/* --- Next Up (Pipeline + TODOs) --- */}
-          <Panel title="Next Up">
-            <div
-              style={{
-                fontSize: '11px',
-                color: 'var(--text-muted)',
-                marginBottom: '8px',
-              }}
-            >
-              PIPELINE ({pipeline.drafts_active.length} drafts,{' '}
-              {stats.pipeline_words.toLocaleString()}w)
-            </div>
-            <div style={{ maxHeight: '350px', overflowY: 'auto' }}>
-              {pipeline.drafts_active.map((d, i) => (
-                <PipelineRow key={i} item={d} />
-              ))}
-            </div>
-
-            {pipeline.finalized_today.length > 0 && (
-              <>
-                <div
-                  style={{
-                    fontSize: '11px',
-                    color: GREEN,
-                    fontWeight: 600,
-                    margin: '12px 0 6px',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Finalized Today
-                </div>
-                {pipeline.finalized_today.map((d, i) => (
+          {/* --- Middle Panel: This Week (V4) / Next Up (V3) --- */}
+          {isV4 && weeklyContext ? (
+            <Panel title="This Week">
+              <WeeklyPanel days={weeklyContext} currentDate={log.date} />
+              {/* Weekly totals */}
+              <div
+                style={{
+                  marginTop: '12px',
+                  paddingTop: '10px',
+                  borderTop: '1px solid var(--border)',
+                  fontSize: '11px',
+                  color: 'var(--text-muted)',
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                }}
+              >
+                <span>
+                  Week total: {weeklyContext.reduce((s, d) => s + d.commits, 0)} commits
+                </span>
+                <span style={{ color: gc }}>
+                  {weeklyContext.reduce((s, d) => s + d.score, 0)} pts
+                </span>
+              </div>
+            </Panel>
+          ) : (
+            <Panel title="Next Up">
+              <div
+                style={{
+                  fontSize: '11px',
+                  color: 'var(--text-muted)',
+                  marginBottom: '8px',
+                }}
+              >
+                PIPELINE ({pipeline.drafts_active.length} drafts,{' '}
+                {stats.pipeline_words.toLocaleString()}w)
+              </div>
+              <div style={{ maxHeight: '350px', overflowY: 'auto' }}>
+                {pipeline.drafts_active.map((d, i) => (
                   <PipelineRow key={i} item={d} />
                 ))}
-              </>
-            )}
+              </div>
 
-            {todos.length > 0 && (
-              <>
-                <div
-                  style={{
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    fontWeight: 600,
-                    margin: '14px 0 6px',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.04em',
-                  }}
-                >
-                  TODOs
-                </div>
-                {todos.map((t) => (
-                  <TodoRow key={t.id} item={t} />
-                ))}
-              </>
-            )}
-          </Panel>
-
-          {/* --- Analytics (Economics + Efficiency + Token Usage) --- */}
-          <Panel title={stats.agent_cost != null ? 'Analytics' : 'Token Usage'}>
-            {stats.agent_cost != null && (
-              <>
-                {/* ---- ECONOMICS ---- */}
-                <div
-                  style={{
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '8px',
-                    fontWeight: 600,
-                  }}
-                >
-                  ECONOMICS
-                </div>
-
-                <TokenStat
-                  label="Agent cost"
-                  value={`$${stats.agent_cost.toFixed(2)}`}
-                  color={PURPLE}
-                />
-                {stats.dev_equivalent_cost != null && (
-                  <TokenStat
-                    label="Dev equivalent"
-                    value={`$${stats.dev_equivalent_cost.toLocaleString()}`}
-                    color={GREEN}
-                  />
-                )}
-                {stats.cost_savings != null && (
-                  <TokenStat
-                    label="Savings"
-                    value={`$${stats.cost_savings.toLocaleString()}`}
-                    color={GREEN}
-                  />
-                )}
-                {stats.roi_multiplier != null && (
-                  <TokenStat
-                    label="ROI"
-                    value={`${stats.roi_multiplier.toLocaleString()}x`}
-                    color={GOLD}
-                  />
-                )}
-
-                {/* LOC breakdown */}
-                {(stats.code_loc != null ||
-                  stats.content_loc != null ||
-                  stats.data_loc != null) && (
+              {pipeline.finalized_today.length > 0 && (
+                <>
                   <div
                     style={{
-                      marginTop: '10px',
-                      paddingTop: '8px',
-                      borderTop: '1px solid var(--border)',
+                      fontSize: '11px',
+                      color: GREEN,
+                      fontWeight: 600,
+                      margin: '12px 0 6px',
+                      textTransform: 'uppercase',
                     }}
                   >
-                    <div
-                      style={{
-                        fontSize: '11px',
-                        color: 'var(--text-muted)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.05em',
-                        marginBottom: '4px',
-                      }}
-                    >
-                      OUTPUT BREAKDOWN
-                    </div>
-                    {stats.code_loc != null && (
-                      <TokenStat
-                        label="Code LOC"
-                        value={stats.code_loc.toLocaleString()}
-                        color={CYAN}
-                      />
-                    )}
-                    {stats.content_loc != null && (
-                      <TokenStat
-                        label="Content words"
-                        value={stats.content_loc.toLocaleString()}
-                        color={CYAN}
-                      />
-                    )}
-                    {stats.data_loc != null && (
-                      <TokenStat
-                        label="Data LOC"
-                        value={stats.data_loc.toLocaleString()}
-                        color={CYAN}
-                      />
-                    )}
+                    Finalized Today
                   </div>
-                )}
+                  {pipeline.finalized_today.map((d, i) => (
+                    <PipelineRow key={i} item={d} />
+                  ))}
+                </>
+              )}
 
-                {/* ---- EFFICIENCY ---- */}
-                <div
-                  style={{
-                    marginTop: '14px',
-                    paddingTop: '10px',
-                    borderTop: '1px solid var(--border)',
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '8px',
-                    fontWeight: 600,
-                  }}
-                >
-                  EFFICIENCY
-                </div>
+              {todos.length > 0 && (
+                <>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      fontWeight: 600,
+                      margin: '14px 0 6px',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.04em',
+                    }}
+                  >
+                    TODOs
+                  </div>
+                  {todos.map((t) => (
+                    <TodoRow key={t.id} item={t} />
+                  ))}
+                </>
+              )}
+            </Panel>
+          )}
 
-                {stats.ship_rate != null && (
+          {/* --- Right Panel: Analytics --- */}
+          {isV4 ? (
+            <Panel title="Analytics">
+              {/* ---- DEV EQUIVALENT ---- */}
+              {devEq && (
+                <>
+                  <SectionHeader label="DEV EQUIVALENT" />
                   <TokenStat
-                    label="Ship rate"
-                    value={`${stats.ship_rate}%`}
+                    label="Net lines"
+                    value={devEq.net_lines.toLocaleString()}
+                    color={CYAN}
+                  />
+                  <TokenStat
+                    label="Dev-days"
+                    value={`${devEq.dev_days}`}
                     color={GREEN}
                   />
-                )}
-                {stats.agent_cost > 0 && (
-                  <>
+                  <TokenStat
+                    label="Cost equiv"
+                    value={`$${devEq.cost_estimate.toLocaleString()}`}
+                    color={GREEN}
+                  />
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      marginTop: '6px',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {devEq.explanation}
+                  </div>
+                </>
+              )}
+
+              {/* ---- COST ---- */}
+              {costSection && (
+                <>
+                  <SectionDivider label="COST" />
+                  <TokenStat
+                    label="Actual cost"
+                    value={`$${costSection.actual_cost.toFixed(2)}`}
+                    color={GREEN}
+                  />
+                  <TokenStat
+                    label="API equivalent"
+                    value={`$${costSection.api_equivalent.toFixed(2)}`}
+                    color={PURPLE}
+                  />
+                  <TokenStat
+                    label="Pricing"
+                    value={costSection.pricing_mode}
+                  />
+                </>
+              )}
+
+              {/* ---- TOKEN EFFICIENCY ---- */}
+              {tokenEff && (
+                <>
+                  <SectionDivider label="TOKEN EFFICIENCY" />
+                  {tokenEff.tokens_per_point != null && (
                     <TokenStat
-                      label="pts/$"
-                      value={(stats.output_score / stats.agent_cost).toFixed(1)}
+                      label="Tokens/pt"
+                      value={compactNum(tokenEff.tokens_per_point)}
                       color={AMBER}
                     />
+                  )}
+                  {tokenEff.tokens_per_commit != null && (
                     <TokenStat
-                      label="words/$"
-                      value={Math.round(
-                        stats.words_today / stats.agent_cost,
-                      ).toLocaleString()}
+                      label="Tokens/commit"
+                      value={compactNum(tokenEff.tokens_per_commit)}
                       color={AMBER}
                     />
-                    {(stats.code_loc != null || stats.data_loc != null) && (
+                  )}
+                  {tokenEff.tokens_per_loc != null && (
+                    <TokenStat
+                      label="Tokens/LOC"
+                      value={compactNum(tokenEff.tokens_per_loc)}
+                      color={AMBER}
+                    />
+                  )}
+                  <TokenStat
+                    label="Context util"
+                    value={`${(tokenEff.avg_context_utilization * 100).toFixed(0)}%`}
+                    color={tokenEff.avg_context_utilization >= 0.8 ? GREEN : AMBER}
+                  />
+                </>
+              )}
+
+              {/* ---- TOKEN USAGE ---- */}
+              <SectionDivider label="TOKEN USAGE" />
+              <TokenUsagePanel entries={token_usage} />
+            </Panel>
+          ) : (
+            <Panel title={stats.agent_cost != null ? 'Analytics' : 'Token Usage'}>
+              {stats.agent_cost != null && (
+                <>
+                  {/* ---- ECONOMICS ---- */}
+                  <SectionHeader label="ECONOMICS" />
+
+                  <TokenStat
+                    label="Agent cost"
+                    value={`$${stats.agent_cost.toFixed(2)}`}
+                    color={PURPLE}
+                  />
+                  {stats.dev_equivalent_cost != null && (
+                    <TokenStat
+                      label="Dev equivalent"
+                      value={`$${stats.dev_equivalent_cost.toLocaleString()}`}
+                      color={GREEN}
+                    />
+                  )}
+                  {stats.cost_savings != null && (
+                    <TokenStat
+                      label="Savings"
+                      value={`$${stats.cost_savings.toLocaleString()}`}
+                      color={GREEN}
+                    />
+                  )}
+                  {stats.roi_multiplier != null && (
+                    <TokenStat
+                      label="ROI"
+                      value={`${stats.roi_multiplier.toLocaleString()}x`}
+                      color={GOLD}
+                    />
+                  )}
+
+                  {/* LOC breakdown */}
+                  {(stats.code_loc != null ||
+                    stats.content_loc != null ||
+                    stats.data_loc != null) && (
+                    <div
+                      style={{
+                        marginTop: '10px',
+                        paddingTop: '8px',
+                        borderTop: '1px solid var(--border)',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: '11px',
+                          color: 'var(--text-muted)',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em',
+                          marginBottom: '4px',
+                        }}
+                      >
+                        OUTPUT BREAKDOWN
+                      </div>
+                      {stats.code_loc != null && (
+                        <TokenStat
+                          label="Code LOC"
+                          value={stats.code_loc.toLocaleString()}
+                          color={CYAN}
+                        />
+                      )}
+                      {stats.content_loc != null && (
+                        <TokenStat
+                          label="Content words"
+                          value={stats.content_loc.toLocaleString()}
+                          color={CYAN}
+                        />
+                      )}
+                      {stats.data_loc != null && (
+                        <TokenStat
+                          label="Data LOC"
+                          value={stats.data_loc.toLocaleString()}
+                          color={CYAN}
+                        />
+                      )}
+                    </div>
+                  )}
+
+                  {/* ---- EFFICIENCY ---- */}
+                  <SectionDivider label="EFFICIENCY" />
+
+                  {stats.ship_rate != null && (
+                    <TokenStat
+                      label="Ship rate"
+                      value={`${stats.ship_rate}%`}
+                      color={GREEN}
+                    />
+                  )}
+                  {stats.agent_cost > 0 && (
+                    <>
                       <TokenStat
-                        label="LOC/$"
+                        label="pts/$"
+                        value={(stats.output_score / stats.agent_cost).toFixed(1)}
+                        color={AMBER}
+                      />
+                      <TokenStat
+                        label="words/$"
                         value={Math.round(
-                          ((stats.code_loc ?? 0) + (stats.data_loc ?? 0)) /
-                            stats.agent_cost,
+                          stats.words_today / stats.agent_cost,
                         ).toLocaleString()}
                         color={AMBER}
                       />
-                    )}
-                    {accomplishments.length > 0 && (
-                      <TokenStat
-                        label="cost/item"
-                        value={`$${(stats.agent_cost / accomplishments.length).toFixed(2)}`}
-                        color={AMBER}
-                      />
-                    )}
-                  </>
-                )}
+                      {(stats.code_loc != null || stats.data_loc != null) && (
+                        <TokenStat
+                          label="LOC/$"
+                          value={Math.round(
+                            ((stats.code_loc ?? 0) + (stats.data_loc ?? 0)) /
+                              stats.agent_cost,
+                          ).toLocaleString()}
+                          color={AMBER}
+                        />
+                      )}
+                      {accomplishments.length > 0 && (
+                        <TokenStat
+                          label="cost/item"
+                          value={`$${(stats.agent_cost / accomplishments.length).toFixed(2)}`}
+                          color={AMBER}
+                        />
+                      )}
+                    </>
+                  )}
 
-                {/* ---- TOKEN USAGE section header ---- */}
-                <div
-                  style={{
-                    marginTop: '14px',
-                    paddingTop: '10px',
-                    borderTop: '1px solid var(--border)',
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.05em',
-                    marginBottom: '8px',
-                    fontWeight: 600,
-                  }}
-                >
-                  TOKEN USAGE
-                </div>
-              </>
-            )}
-            <TokenUsagePanel entries={token_usage} />
-          </Panel>
+                  {/* ---- TOKEN USAGE section header ---- */}
+                  <SectionDivider label="TOKEN USAGE" />
+                </>
+              )}
+              <TokenUsagePanel entries={token_usage} />
+            </Panel>
+          )}
         </div>
 
         {/* ============ SUMMARY LINE ============ */}
-        {stats.agent_cost != null && (
+        {isV4 ? (
+          <div
+            style={{
+              marginTop: '18px',
+              padding: '10px 14px',
+              background: 'var(--canvas-subtle)',
+              border: '1px solid var(--border)',
+              borderRadius: '6px',
+              fontSize: '12px',
+              fontWeight: 600,
+              color: 'var(--text-secondary)',
+              textAlign: 'center',
+              letterSpacing: '0.02em',
+            }}
+          >
+            <span style={{ color: gc }}>
+              {stats.output_score} pts
+            </span>
+            {' from '}
+            <span style={{ color: GREEN }}>
+              {commits.length} commits
+            </span>
+            {' | '}
+            <span style={{ color: CYAN }}>
+              {netLines.toLocaleString()} net lines
+            </span>
+            {' | '}
+            <span style={{ color: GREEN }}>
+              ${costSection?.actual_cost.toFixed(2) ?? '0.00'} actual
+            </span>
+            {' ('}
+            <span style={{ color: PURPLE }}>
+              ${costSection?.api_equivalent.toFixed(2) ?? totalCost.toFixed(2)} API equiv
+            </span>
+            {')'}
+            {devEq && devEq.cost_estimate > 0 && (
+              <>
+                {' | dev equiv: '}
+                <span style={{ color: GOLD }}>
+                  ${devEq.cost_estimate.toLocaleString()}
+                </span>
+              </>
+            )}
+          </div>
+        ) : stats.agent_cost != null ? (
           <div
             style={{
               marginTop: '18px',
@@ -1020,7 +1451,7 @@ export function DailyLogView({
               </>
             )}
           </div>
-        )}
+        ) : null}
 
         {/* ============ FOOTER ============ */}
         <div

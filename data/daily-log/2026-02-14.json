@@ -1,204 +1,258 @@
 {
   "date": "2026-02-14",
-  "generated_at": "2026-02-15T05:51:24.589911+00:00",
-  "version": 3,
+  "generated_at": "2026-02-22T05:38:38.596821+00:00",
+  "version": 4,
   "accomplishments": [
     {
-      "type": "skill_updated",
-      "title": "website-feature",
-      "path": ".cursor/skills/website-feature/SKILL.md",
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
       "source": "auto",
-      "timestamp": "15:05",
-      "words": 1260,
-      "value_score": 5,
+      "timestamp": "00:27",
+      "value_score": 0,
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "deploy",
-      "path": ".cursor/skills/deploy/SKILL.md",
-      "source": "auto",
-      "timestamp": "01:49",
-      "words": 917,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg.server",
-      "path": "website/packages/shared/lib/rpg.server.ts",
-      "source": "auto",
-      "timestamp": "18:08",
-      "words": 388,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log page",
-      "path": "website/apps/contentos/app/log/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 319,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "LogHero",
-      "path": "website/packages/shared/components/LogHero.tsx",
-      "source": "auto",
-      "timestamp": "19:36",
-      "words": 649,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log skill-guide page",
-      "path": "website/apps/gtmos/app/log/skill-guide/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 155,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log build-your-own page",
-      "path": "website/apps/gtmos/app/log/build-your-own/page.tsx",
-      "source": "auto",
-      "timestamp": "19:26",
-      "words": 1715,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/index.ts",
-      "source": "auto",
-      "timestamp": "22:12",
-      "words": 96,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "edit",
-      "path": ".cursor/skills/edit/SKILL.md",
-      "source": "auto",
-      "timestamp": "01:50",
-      "words": 1260,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "linkedin_final",
-      "title": "screen teaser",
-      "path": "content/linkedin/final/2026-02-13_screen-teaser.txt",
-      "source": "auto",
-      "timestamp": "22:04",
-      "words": 85,
-      "value_score": 10,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared posts",
-      "path": "website/packages/shared/lib/posts.ts",
-      "source": "auto",
-      "timestamp": "18:53",
-      "words": 197,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 1411,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "TypewriterHero",
-      "path": "website/packages/shared/components/TypewriterHero.tsx",
-      "source": "auto",
-      "timestamp": "12:34",
-      "words": 772,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/components/index.ts",
-      "source": "auto",
-      "timestamp": "14:34",
-      "words": 72,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg",
-      "path": "website/packages/shared/lib/rpg.ts",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-advanced-512.gif",
       "source": "auto",
       "timestamp": "22:29",
-      "words": 947,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "monorepo_build",
-      "title": "Turborepo monorepo scaffold",
-      "path": "website/turbo.json",
-      "source": "auto",
-      "timestamp": "11:59",
-      "value_score": 50,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos about page",
-      "path": "website/apps/shawnos/app/about/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 777,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "linkedin_draft",
-      "title": "screen teaser",
-      "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle.gif",
       "source": "auto",
-      "timestamp": "22:47",
-      "words": 295,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "website_component",
-      "title": "ScrambleCycler",
-      "path": "website/packages/shared/components/ScrambleCycler.tsx",
-      "source": "auto",
-      "timestamp": "05:42",
-      "words": 715,
+      "timestamp": "22:29",
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-advanced-128.png",
       "source": "auto",
-      "timestamp": "23:43",
-      "words": 286,
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-advanced-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-advanced-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "SkillGuidePage",
+      "path": "website/packages/shared/pages/SkillGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "15:44",
+      "words": 1942,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-advanced-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-advanced-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
       "value_score": 5,
       "shipped": true
     },
@@ -213,13 +267,1253 @@
       "shipped": true
     },
     {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "website-feature",
+      "path": ".cursor/skills/website-feature/SKILL.md",
+      "source": "auto",
+      "timestamp": "15:05",
+      "words": 1260,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg",
+      "path": "website/packages/shared/lib/rpg.ts",
+      "source": "auto",
+      "timestamp": "04:37",
+      "words": 1017,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "deploy",
+      "path": ".cursor/skills/deploy/SKILL.md",
+      "source": "auto",
+      "timestamp": "01:49",
+      "words": 917,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "18:21",
+      "words": 572,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "00:33",
+      "words": 233,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-advanced.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "DailyLogView",
+      "path": "website/packages/shared/components/DailyLogView.tsx",
+      "source": "auto",
+      "timestamp": "00:36",
+      "words": 3633,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "screen teaser",
+      "path": "content/linkedin/final/2026-02-13_screen-teaser.txt",
+      "source": "auto",
+      "timestamp": "22:04",
+      "words": 85,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "edit",
+      "path": ".cursor/skills/edit/SKILL.md",
+      "source": "auto",
+      "timestamp": "01:50",
+      "words": 1260,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "screen teaser",
+      "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+      "source": "auto",
+      "timestamp": "22:42",
+      "words": 232,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-advanced-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "daily-tracker",
+      "path": ".cursor/skills/daily-tracker/SKILL.md",
+      "source": "auto",
+      "timestamp": "00:49",
+      "words": 2976,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/current-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-advanced-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos about page",
+      "path": "website/apps/shawnos/app/about/page.tsx",
+      "source": "auto",
+      "timestamp": "18:21",
+      "words": 801,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "LogHero",
+      "path": "website/packages/shared/components/LogHero.tsx",
+      "source": "auto",
+      "timestamp": "21:07",
+      "words": 675,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/components/index.ts",
+      "source": "auto",
+      "timestamp": "02:49",
+      "words": 108,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
       "type": "feature_system",
       "title": "AvatarBadge",
       "path": "website/packages/shared/components/AvatarBadge.tsx",
       "source": "auto",
-      "timestamp": "20:54",
-      "words": 959,
+      "timestamp": "21:07",
+      "words": 985,
       "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-advanced-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-advanced-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log skill-guide page",
+      "path": "website/apps/gtmos/app/log/skill-guide/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 155,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log date page",
+      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "00:36",
+      "words": 983,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/current-action.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "root package",
+      "path": "website/package.json",
+      "source": "auto",
+      "timestamp": "02:08",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log build-your-own page",
+      "path": "website/apps/gtmos/app/log/build-your-own/page.tsx",
+      "source": "auto",
+      "timestamp": "19:26",
+      "words": 1715,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log build-your-own page",
+      "path": "website/apps/shawnos/app/log/build-your-own/page.tsx",
+      "source": "auto",
+      "timestamp": "02:52",
+      "words": 1741,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 1525,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-advanced.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log build-your-own page",
+      "path": "website/apps/contentos/app/log/build-your-own/page.tsx",
+      "source": "auto",
+      "timestamp": "19:26",
+      "words": 1715,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "shawnos progression avatars [[...path]] route",
+      "path": "website/apps/shawnos/app/progression/avatars/[[...path]]/route.ts",
+      "source": "auto",
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-advanced-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg.server",
+      "path": "website/packages/shared/lib/rpg.server.ts",
+      "source": "auto",
+      "timestamp": "18:08",
+      "words": 388,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-advanced-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-advanced-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-advanced-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared posts",
+      "path": "website/packages/shared/lib/posts.ts",
+      "source": "auto",
+      "timestamp": "18:28",
+      "words": 170,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-advanced-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-advanced-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-advanced.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "LogDetailIntro",
+      "path": "website/packages/shared/components/LogDetailIntro.tsx",
+      "source": "auto",
+      "timestamp": "15:41",
+      "words": 142,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "19:23",
+      "words": 1090,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log page",
+      "path": "website/apps/shawnos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "15:14",
+      "words": 276,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-advanced.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "taxonomy",
+      "path": "website/taxonomy.yaml",
+      "source": "auto",
+      "timestamp": "00:41",
+      "words": 535,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log page",
+      "path": "website/apps/contentos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 319,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -227,18 +1521,201 @@
       "title": "gtmos home page",
       "path": "website/apps/gtmos/app/page.tsx",
       "source": "auto",
-      "timestamp": "15:41",
-      "words": 984,
+      "timestamp": "20:57",
+      "words": 1020,
       "value_score": 25,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "gtmos log page",
-      "path": "website/apps/gtmos/app/log/page.tsx",
+      "title": "gtmos log date page",
+      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
       "source": "auto",
-      "timestamp": "15:41",
-      "words": 319,
+      "timestamp": "00:36",
+      "words": 525,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-advanced-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-advanced-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos blog page",
+      "path": "website/apps/shawnos/app/blog/page.tsx",
+      "source": "auto",
+      "timestamp": "02:50",
+      "words": 199,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-advanced-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "monorepo_build",
+      "title": "Turborepo monorepo scaffold",
+      "path": "website/turbo.json",
+      "source": "auto",
+      "timestamp": "11:59",
+      "value_score": 50,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared dataRoot",
+      "path": "website/packages/shared/lib/dataRoot.ts",
+      "source": "auto",
+      "timestamp": "22:11",
+      "words": 87,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared logs",
+      "path": "website/packages/shared/lib/logs.ts",
+      "source": "auto",
+      "timestamp": "00:33",
+      "words": 1292,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
       "value_score": 5,
       "shipped": true
     },
@@ -253,13 +1730,421 @@
       "shipped": true
     },
     {
-      "type": "feature_system",
-      "title": "LogDetailIntro",
-      "path": "website/packages/shared/components/LogDetailIntro.tsx",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-advanced-128.gif",
       "source": "auto",
-      "timestamp": "15:41",
-      "words": 142,
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-advanced-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-advanced-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "TypewriterHero",
+      "path": "website/packages/shared/components/TypewriterHero.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 798,
       "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log skill-guide page",
+      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 155,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "screen teaser",
+      "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+      "source": "auto",
+      "timestamp": "22:47",
+      "words": 295,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-advanced-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-advanced-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log date page",
+      "path": "website/apps/contentos/app/log/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "00:36",
+      "words": 525,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-static-128.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-static-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-advanced.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-action.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-action-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -269,6 +2154,335 @@
       "source": "auto",
       "timestamp": "05:04",
       "words": 174,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-static-advanced-256.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log skill-guide page",
+      "path": "website/apps/shawnos/app/log/skill-guide/page.tsx",
+      "source": "auto",
+      "timestamp": "02:52",
+      "words": 181,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-idle-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-static-64.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-idle.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos rpg-preview page",
+      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 667,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-strategist-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-builder-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log page",
+      "path": "website/apps/gtmos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 319,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-action.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-static-advanced-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-1-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/idle-sprite-sheet.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "ScrambleCycler",
+      "path": "website/packages/shared/components/ScrambleCycler.tsx",
+      "source": "auto",
+      "timestamp": "05:42",
+      "words": 715,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-3-idle-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-advanced-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-advanced-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "15:31",
+      "words": 231,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-static-advanced.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-scribe-idle-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-5-action-64.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-alchemist-static.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-4-idle-advanced-512.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-6-idle-128.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/class-polymath-idle-256.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-static-advanced-512.png",
+      "source": "auto",
+      "timestamp": "22:29",
       "value_score": 5,
       "shipped": true
     },
@@ -284,278 +2498,39 @@
     },
     {
       "type": "website_page",
-      "title": "shawnos log date page",
-      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "22:12",
-      "words": 517,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos blog page",
-      "path": "website/apps/shawnos/app/blog/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 188,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "23:44",
-      "words": 159,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log skill-guide page",
-      "path": "website/apps/shawnos/app/log/skill-guide/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 154,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "taxonomy",
-      "path": "website/taxonomy.yaml",
-      "source": "auto",
-      "timestamp": "00:41",
-      "words": 535,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "x_draft",
-      "title": "screen teaser",
-      "path": "content/x/drafts/2026-02-13_screen-teaser.md",
-      "source": "auto",
-      "timestamp": "22:42",
-      "words": 232,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "feature_system",
-      "title": "DailyLogView",
-      "path": "website/packages/shared/components/DailyLogView.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 2573,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log date page",
-      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 516,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared dataRoot",
-      "path": "website/packages/shared/lib/dataRoot.ts",
-      "source": "auto",
-      "timestamp": "22:11",
-      "words": 87,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "root package",
-      "path": "website/package.json",
-      "source": "auto",
-      "timestamp": "15:09",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "shawnos progression avatars [[...path]] route",
-      "path": "website/apps/shawnos/app/progression/avatars/[[...path]]/route.ts",
-      "source": "auto",
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared logs",
-      "path": "website/packages/shared/lib/logs.ts",
-      "source": "auto",
-      "timestamp": "18:53",
-      "words": 933,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log build-your-own page",
-      "path": "website/apps/contentos/app/log/build-your-own/page.tsx",
-      "source": "auto",
-      "timestamp": "19:26",
-      "words": 1715,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "21:45",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log page",
-      "path": "website/apps/shawnos/app/log/page.tsx",
-      "source": "auto",
-      "timestamp": "22:12",
-      "words": 363,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log build-your-own page",
-      "path": "website/apps/shawnos/app/log/build-your-own/page.tsx",
-      "source": "auto",
-      "timestamp": "19:26",
-      "words": 1715,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "SkillGuidePage",
-      "path": "website/packages/shared/pages/SkillGuidePage.tsx",
-      "source": "auto",
-      "timestamp": "20:51",
-      "words": 1942,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "daily-tracker",
-      "path": ".cursor/skills/daily-tracker/SKILL.md",
-      "source": "auto",
-      "timestamp": "00:49",
-      "words": 2976,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log skill-guide page",
-      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 155,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "shawnos home page",
-      "path": "website/apps/shawnos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "22:12",
-      "words": 906,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos rpg-preview page",
-      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
-      "source": "auto",
-      "timestamp": "22:12",
-      "words": 536,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log date page",
-      "path": "website/apps/contentos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:41",
-      "words": 516,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
       "title": "contentos layout",
       "path": "website/apps/contentos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "23:44",
-      "words": 159,
+      "timestamp": "15:32",
+      "words": 223,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "feature_script",
-      "title": "progression_engine",
-      "path": "scripts/progression_engine.py",
-      "source": "auto-mtime",
-      "timestamp": "16:58",
-      "words": 1855,
-      "value_score": 30,
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/current.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/gtmos/app/globals.css",
-      "source": "auto-mtime",
-      "timestamp": "23:44",
-      "words": 41,
-      "value_score": 2,
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tier-2-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/shawnos/app/globals.css",
-      "source": "auto-mtime",
-      "timestamp": "23:44",
-      "words": 159,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "rescore_logs",
-      "path": "scripts/rescore_logs.py",
-      "source": "auto-mtime",
-      "timestamp": "18:16",
-      "words": 319,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "avatar_generator",
-      "path": "scripts/avatar_generator.py",
-      "source": "auto-mtime",
-      "timestamp": "20:32",
-      "words": 1854,
-      "value_score": 30,
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/sprite-sheet.png",
+      "source": "auto",
+      "timestamp": "22:29",
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -565,18 +2540,242 @@
       "source": "auto-mtime",
       "timestamp": "23:44",
       "words": 41,
-      "value_score": 2,
-      "shipped": true
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
     },
     {
-      "type": "system_engine",
-      "title": "rpg_sprites",
-      "path": "scripts/rpg_sprites.py",
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/gtmos/app/globals.css",
       "source": "auto-mtime",
-      "timestamp": "20:29",
-      "words": 8627,
-      "value_score": 50,
-      "shipped": true
+      "timestamp": "23:44",
+      "words": 41,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "commits": [
+    {
+      "hash": "d0b3ea0",
+      "message": "Add daily log routes and go-live homepages for all three sites",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 19,
+      "lines_added": 2541,
+      "lines_removed": 63,
+      "lines_net": 2478,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "01:11"
+    },
+    {
+      "hash": "8041218",
+      "message": "feat: add LogHero + LogDetailIntro to all log pages, new deploy and edit skills",
+      "type": "monorepo_scaffold",
+      "score": 80,
+      "files_changed": 21,
+      "lines_added": 1365,
+      "lines_removed": 44,
+      "lines_net": 1321,
+      "directories": [
+        ".cursor/",
+        "content/",
+        "skills/",
+        "website/"
+      ],
+      "timestamp": "01:53"
+    },
+    {
+      "hash": "b833296",
+      "message": "feat: track daily-log JSON files for Vercel builds",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 5,
+      "lines_added": 2549,
+      "lines_removed": 1,
+      "lines_net": 2548,
+      "directories": [
+        ".gitignore/",
+        "data/"
+      ],
+      "timestamp": "02:09"
+    },
+    {
+      "hash": "4a2b818",
+      "message": "Sanitize repo for public GitHub",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 2,
+      "lines_added": 793,
+      "lines_removed": 48,
+      "lines_net": 745,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "02:55"
+    },
+    {
+      "hash": "697ea96",
+      "message": "fix: correct dev equivalent calc + rescan Feb 11-14",
+      "type": "bug_fix",
+      "score": 8,
+      "files_changed": 4,
+      "lines_added": 4715,
+      "lines_removed": 1140,
+      "lines_net": 3575,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "03:54"
+    },
+    {
+      "hash": "389613d",
+      "message": "feat: add TypewriterHero animation + capitalization updates across all sites",
+      "type": "feature_build",
+      "score": 30,
+      "files_changed": 13,
+      "lines_added": 330,
+      "lines_removed": 124,
+      "lines_net": 206,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "05:15"
+    },
+    {
+      "hash": "1887d84",
+      "message": "feat: add ScrambleCycler component + hero layout updates on gtmos and contentos",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 6,
+      "lines_added": 375,
+      "lines_removed": 49,
+      "lines_net": 326,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "12:11"
+    },
+    {
+      "hash": "b8f5fce",
+      "message": "feat: add economics panel, colored stats, and footer summary to daily log",
+      "type": "component",
+      "score": 15,
+      "files_changed": 2,
+      "lines_added": 260,
+      "lines_removed": 9,
+      "lines_net": 251,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "12:36"
+    },
+    {
+      "hash": "cb50e40",
+      "message": "feat: add build-your-own daily tracker page + CTA on log page",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 3,
+      "lines_added": 515,
+      "lines_removed": 0,
+      "lines_net": 515,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "13:00"
+    },
+    {
+      "hash": "ccb4233",
+      "message": "fix: add timer cleanup to CopyButton to prevent memory leaks",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 17,
+      "lines_removed": 5,
+      "lines_net": 12,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "13:04"
+    },
+    {
+      "hash": "6c85af8",
+      "message": "feat: deploy build-your-own tracker page to gtmos + contentos",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 6,
+      "lines_added": 1054,
+      "lines_removed": 0,
+      "lines_net": 1054,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "13:31"
+    },
+    {
+      "hash": "ba5d4b7",
+      "message": "chore: update .gitignore to include progression data directories",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 142,
+      "lines_added": 3801,
+      "lines_removed": 505,
+      "lines_net": 3296,
+      "directories": [
+        ".cursor/",
+        ".gitignore/",
+        "data/",
+        "website/"
+      ],
+      "timestamp": "18:58"
+    },
+    {
+      "hash": "272ac27",
+      "message": "feat: add advanced avatar assets and rpg preview page",
+      "type": "monorepo_scaffold",
+      "score": 80,
+      "files_changed": 148,
+      "lines_added": 973,
+      "lines_removed": 67,
+      "lines_net": 906,
+      "directories": [
+        ".cursor/",
+        "data/",
+        "website/"
+      ],
+      "timestamp": "20:56"
+    },
+    {
+      "hash": "aa588cb",
+      "message": "fix: add resolveDataRoot helper for robust data path resolution",
+      "type": "bug_fix",
+      "score": 8,
+      "files_changed": 14,
+      "lines_added": 1034,
+      "lines_removed": 136,
+      "lines_net": 898,
+      "directories": [
+        ".cursor/",
+        "website/"
+      ],
+      "timestamp": "22:18"
+    },
+    {
+      "hash": "b0217c6",
+      "message": "fix: serve avatar images from public instead of dynamic route",
+      "type": "bug_fix",
+      "score": 8,
+      "files_changed": 228,
+      "lines_added": 13,
+      "lines_removed": 51,
+      "lines_net": -38,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "22:30"
     }
   ],
   "pipeline": {
@@ -716,10 +2915,52 @@
       },
       {
         "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
         "title": "build your own os",
         "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 1064
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "linkedin",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+        "target_date": "2026-02-23",
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
       },
       {
         "platform": "x",
@@ -849,10 +3090,59 @@
       },
       {
         "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
         "title": "build your own os",
         "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
         "target_date": "2026-02-17",
         "words": 465
+      },
+      {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "x",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+        "target_date": "2026-02-23",
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
       },
       {
         "platform": "substack",
@@ -898,10 +3188,17 @@
       },
       {
         "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
         "title": "start at level one",
         "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
         "target_date": "2026-02-24",
-        "words": 1013
+        "words": 1543
       },
       {
         "platform": "reddit",
@@ -943,7 +3240,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 33,
-      "logged_at": "00:51",
+      "logged_at": "00:38",
       "cost": 3.6023,
       "context": "claude-code 00:31"
     },
@@ -956,7 +3253,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 7,
-      "logged_at": "00:51",
+      "logged_at": "00:38",
       "cost": 1.5457,
       "context": "claude-code 23:18"
     },
@@ -969,334 +3266,185 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 60,
-      "logged_at": "00:51",
+      "logged_at": "00:38",
       "cost": 6.8125,
       "context": "claude-code 07:31"
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 10125,
+      "output_tokens": 3375,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "sonnet",
+      "source": "cursor-db",
+      "messages": 90,
+      "conversations": 1,
+      "logged_at": "00:38",
+      "context": "cursor-ide 23:43-23:44",
+      "cost": 0.081,
+      "estimated": true
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 882225,
+      "output_tokens": 294075,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "opus",
+      "source": "cursor-db",
+      "messages": 7842,
+      "conversations": 64,
+      "logged_at": "00:38",
+      "context": "cursor-ide 00:00-23:14",
+      "cost": 35.289,
+      "estimated": true
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 157050,
+      "output_tokens": 52350,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "cursor",
+      "source": "cursor-db",
+      "messages": 1396,
+      "conversations": 19,
+      "logged_at": "00:38",
+      "context": "cursor-ide 17:13-22:29",
+      "cost": 0.0,
+      "estimated": true
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 7650,
+      "output_tokens": 2550,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "gemini",
+      "source": "cursor-db",
+      "messages": 68,
+      "conversations": 3,
+      "logged_at": "00:38",
+      "context": "cursor-ide 20:31-20:50",
+      "cost": 0.0223,
+      "estimated": true
+    },
+    {
+      "session_id": "cursor-aggregate",
+      "input_tokens": 25537,
+      "output_tokens": 8513,
+      "cache_read_tokens": 0,
+      "cache_write_tokens": 0,
+      "model": "gpt4o",
+      "source": "cursor-db",
+      "messages": 227,
+      "conversations": 1,
+      "logged_at": "00:38",
+      "context": "cursor-ide 21:36-21:38",
+      "cost": 0.149,
+      "estimated": true
     }
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 24,
-      "website": 31,
+      "other": 245,
+      "website": 30,
       "linkedin": 2,
       "x": 1
     },
-    "words_today": 46901,
-    "pipeline_words": 36584,
+    "words_in_touched_files": 37172,
+    "pipeline_words": 46861,
     "finals_count": 1,
-    "first_activity": "00:41",
+    "first_activity": "00:27",
     "last_activity": "23:44",
-    "output_score": 679,
-    "letter_grade": "S+",
+    "output_score": 325,
+    "letter_grade": "S",
     "score_breakdown": [
       {
-        "type": "skill_updated",
-        "title": "website-feature",
-        "points": 5
+        "type": "chore",
+        "title": "Add daily log routes and go-live homepages for all three sit",
+        "points": 1
       },
       {
-        "type": "skill_updated",
-        "title": "deploy",
-        "points": 5
+        "type": "monorepo_scaffold",
+        "title": "feat: add LogHero + LogDetailIntro to all log pages, new dep",
+        "points": 80
       },
       {
-        "type": "website_lib",
-        "title": "shared rpg.server",
-        "points": 3
+        "type": "infra_build",
+        "title": "feat: track daily-log JSON files for Vercel builds",
+        "points": 15
       },
       {
-        "type": "website_page",
-        "title": "contentos log page",
-        "points": 5
+        "type": "chore",
+        "title": "Sanitize repo for public GitHub",
+        "points": 1
       },
       {
-        "type": "feature_system",
-        "title": "LogHero",
+        "type": "bug_fix",
+        "title": "fix: correct dev equivalent calc + rescan Feb 11-14",
+        "points": 8
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: add TypewriterHero animation + capitalization updates ",
         "points": 30
       },
       {
-        "type": "website_page",
-        "title": "gtmos log skill-guide page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log build-your-own page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared index",
-        "points": 3
-      },
-      {
-        "type": "skill_updated",
-        "title": "edit",
-        "points": 5
-      },
-      {
-        "type": "linkedin_final",
-        "title": "screen teaser",
-        "points": 10
-      },
-      {
-        "type": "website_lib",
-        "title": "shared posts",
-        "points": 3
-      },
-      {
-        "type": "landing_page",
-        "title": "contentos home page",
+        "type": "feature_build",
+        "title": "feat: add ScrambleCycler component + hero layout updates on ",
         "points": 25
       },
       {
-        "type": "feature_system",
-        "title": "TypewriterHero",
-        "points": 30
+        "type": "component",
+        "title": "feat: add economics panel, colored stats, and footer summary",
+        "points": 15
       },
       {
-        "type": "website_lib",
-        "title": "shared index",
-        "points": 3
-      },
-      {
-        "type": "website_lib",
-        "title": "shared rpg",
-        "points": 3
-      },
-      {
-        "type": "monorepo_build",
-        "title": "Turborepo monorepo scaffold",
-        "points": 50
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos about page",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "screen teaser",
-        "points": 2
-      },
-      {
-        "type": "website_component",
-        "title": "ScrambleCycler",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos layout",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "avatar-develop",
-        "points": 5
-      },
-      {
-        "type": "feature_system",
-        "title": "AvatarBadge",
-        "points": 30
-      },
-      {
-        "type": "landing_page",
-        "title": "gtmos home page",
+        "type": "feature_build",
+        "title": "feat: add build-your-own daily tracker page + CTA on log pag",
         "points": 25
       },
       {
-        "type": "website_page",
-        "title": "gtmos log page",
-        "points": 5
-      },
-      {
-        "type": "feature_system",
-        "title": "LogCard",
-        "points": 30
-      },
-      {
-        "type": "feature_system",
-        "title": "LogDetailIntro",
-        "points": 30
-      },
-      {
-        "type": "website_component",
-        "title": "NetworkBanner",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "plan-format",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log date page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos blog page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos layout",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log skill-guide page",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "taxonomy",
-        "points": 15
-      },
-      {
-        "type": "x_draft",
-        "title": "screen teaser",
-        "points": 2
-      },
-      {
-        "type": "feature_system",
-        "title": "DailyLogView",
-        "points": 30
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log date page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared dataRoot",
+        "type": "bug_fix",
+        "title": "fix: add timer cleanup to CopyButton to prevent memory leaks",
         "points": 3
       },
       {
-        "type": "code_infra",
-        "title": "root package",
-        "points": 15
-      },
-      {
-        "type": "website_route",
-        "title": "shawnos progression avatars [[...path]] route",
-        "points": 3
-      },
-      {
-        "type": "website_lib",
-        "title": "shared logs",
-        "points": 3
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log build-your-own page",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "shared package",
-        "points": 15
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log build-your-own page",
-        "points": 5
-      },
-      {
-        "type": "feature_system",
-        "title": "SkillGuidePage",
-        "points": 30
-      },
-      {
-        "type": "skill_updated",
-        "title": "daily-tracker",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log skill-guide page",
-        "points": 5
-      },
-      {
-        "type": "landing_page",
-        "title": "shawnos home page",
+        "type": "feature_build",
+        "title": "feat: deploy build-your-own tracker page to gtmos + contento",
         "points": 25
       },
       {
-        "type": "website_page",
-        "title": "shawnos rpg-preview page",
-        "points": 5
+        "type": "chore",
+        "title": "chore: update .gitignore to include progression data directo",
+        "points": 1
       },
       {
-        "type": "website_page",
-        "title": "contentos log date page",
-        "points": 5
+        "type": "monorepo_scaffold",
+        "title": "feat: add advanced avatar assets and rpg preview page",
+        "points": 80
       },
       {
-        "type": "website_page",
-        "title": "contentos layout",
-        "points": 5
+        "type": "bug_fix",
+        "title": "fix: add resolveDataRoot helper for robust data path resolut",
+        "points": 8
       },
       {
-        "type": "feature_script",
-        "title": "progression_engine",
-        "points": 30
-      },
-      {
-        "type": "website_style",
-        "title": "globals styles",
-        "points": 2
-      },
-      {
-        "type": "website_style",
-        "title": "globals styles",
-        "points": 2
-      },
-      {
-        "type": "code_infra",
-        "title": "rescore_logs",
-        "points": 15
-      },
-      {
-        "type": "feature_script",
-        "title": "avatar_generator",
-        "points": 30
-      },
-      {
-        "type": "website_style",
-        "title": "globals styles",
-        "points": 2
-      },
-      {
-        "type": "system_engine",
-        "title": "rpg_sprites",
-        "points": 50
+        "type": "bug_fix",
+        "title": "fix: serve avatar images from public instead of dynamic rout",
+        "points": 8
       }
     ],
-    "efficiency_rating": 56.77,
-    "shipped_count": 56,
-    "draft_count": 2,
-    "ship_rate": 0.97,
-    "agent_cost": 11.96,
-    "dev_equivalent_cost": 17644.0,
-    "dev_equivalent_breakdown": {
-      "code_loc": 8636,
-      "code_hours": 172.72,
-      "code_cost": 12954.0,
-      "content_words": 46901,
-      "content_hours": 93.8,
-      "content_cost": 4690.0,
-      "total": 17644.0
-    },
-    "cost_savings": 17632.04,
-    "roi_multiplier": 1475.2,
+    "efficiency_rating": 6.84,
+    "shipped_count": 274,
+    "draft_count": 4,
+    "ship_rate": 0.99,
+    "agent_cost": 47.5,
+    "cost_per_point": 0.15,
+    "efficiency_ratio": 6.84,
+    "words_today": 37172,
     "lines_added": 20335,
     "lines_removed": 2242,
     "lines_net": 18093,
@@ -1875,5 +4023,32 @@
     "code_loc": 8636,
     "content_loc": 2756,
     "data_loc": 8943
+  },
+  "dev_equivalent": {
+    "net_lines": 18093,
+    "dev_days": 120.6,
+    "cost_estimate": 60300,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 18,093 net lines represent approximately 121 developer-days of output \u2014 what a small team would produce in 5+ months.",
+    "assumptions": {
+      "lines_per_day": 150,
+      "cost_per_day": 500,
+      "basis": "Industry average for meaningful, reviewed, production-quality code"
+    }
+  },
+  "cost": {
+    "api_equivalent": 47.5,
+    "actual_cost": 0.0,
+    "pricing_mode": "max"
+  },
+  "token_efficiency": {
+    "total_tokens": 5174121,
+    "total_sessions": 8,
+    "tokens_per_point": 15920,
+    "tokens_per_commit": 344941,
+    "tokens_per_loc": 286,
+    "avg_context_utilization": 0.58,
+    "pricing_mode": "max",
+    "api_equivalent_cost": 47.5,
+    "actual_cost": 0.0
   }
 }

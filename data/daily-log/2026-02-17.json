@@ -1,58 +1,8 @@
 {
   "date": "2026-02-17",
-  "generated_at": "2026-02-18T05:03:04.754384+00:00",
-  "version": 3,
+  "generated_at": "2026-02-22T05:38:43.678561+00:00",
+  "version": 4,
   "accomplishments": [
-    {
-      "type": "website_page",
-      "title": "EmailInfrastructureGuidePage",
-      "path": "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx",
-      "source": "auto",
-      "timestamp": "20:16",
-      "words": 1694,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge term page",
-      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
-      "source": "auto",
-      "timestamp": "20:16",
-      "words": 1430,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge email page",
-      "path": "website/apps/gtmos/app/knowledge/email/page.tsx",
-      "source": "auto",
-      "timestamp": "20:16",
-      "words": 230,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos method page",
-      "path": "website/apps/shawnos/app/method/page.tsx",
-      "source": "auto",
-      "timestamp": "20:16",
-      "words": 2114,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "22:46",
-      "words": 1489,
-      "value_score": 25,
-      "shipped": true
-    },
     {
       "type": "code_infra",
       "title": "write_mx_and_bodies",
@@ -60,75 +10,6 @@
       "source": "auto",
       "timestamp": "19:00",
       "words": 640,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "progression_engine",
-      "path": "scripts/progression_engine.py",
-      "source": "auto",
-      "timestamp": "16:47",
-      "words": 1855,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "complex_script",
-      "title": "website_scanner",
-      "path": "scripts/website_scanner.py",
-      "source": "auto",
-      "timestamp": "16:47",
-      "words": 2193,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "view_sprite",
-      "path": "scripts/view_sprite.py",
-      "source": "auto",
-      "timestamp": "16:47",
-      "words": 483,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "session_cost_tracker",
-      "path": "scripts/session_cost_tracker.py",
-      "source": "auto",
-      "timestamp": "22:58",
-      "words": 812,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "20:16",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "mx_check",
-      "path": "scripts/mx_check.py",
-      "source": "auto",
-      "timestamp": "18:59",
-      "words": 517,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "gen_touch2_updates",
-      "path": "scripts/gen_touch2_updates.py",
-      "source": "auto",
-      "timestamp": "23:41",
-      "words": 712,
       "value_score": 15,
       "shipped": true
     },
@@ -143,6 +24,55 @@
       "shipped": true
     },
     {
+      "type": "skill_updated",
+      "title": "clickup-time-track",
+      "path": ".cursor/skills/clickup-time-track/SKILL.md",
+      "source": "auto",
+      "timestamp": "14:56",
+      "words": 302,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "progression_engine",
+      "path": "scripts/progression_engine.py",
+      "source": "auto",
+      "timestamp": "22:52",
+      "words": 1887,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "session_cost_tracker",
+      "path": "scripts/session_cost_tracker.py",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 812,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tool-ouroboros-static.png",
+      "source": "auto",
+      "timestamp": "02:01",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
+      "source": "auto",
+      "timestamp": "00:04",
+      "words": 6111,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
       "type": "feature_script",
       "title": "daily_dashboard",
       "path": "scripts/daily_dashboard.py",
@@ -153,33 +83,33 @@
       "shipped": true
     },
     {
-      "type": "system_engine",
-      "title": "rpg_sprites",
-      "path": "scripts/rpg_sprites.py",
+      "type": "website_page",
+      "title": "EmailInfrastructureGuidePage",
+      "path": "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx",
       "source": "auto",
-      "timestamp": "04:36",
-      "words": 12575,
-      "value_score": 50,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
-      "source": "auto",
-      "timestamp": "16:47",
-      "words": 4668,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "clickup-time-track",
-      "path": ".cursor/skills/clickup-time-track/SKILL.md",
-      "source": "auto",
-      "timestamp": "20:16",
-      "words": 302,
+      "timestamp": "12:10",
+      "words": 1694,
       "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "gen_touch2_updates",
+      "path": "scripts/gen_touch2_updates.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 712,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "rescore_logs",
+      "path": "scripts/rescore_logs.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 319,
+      "value_score": 15,
       "shipped": true
     },
     {
@@ -190,6 +120,115 @@
       "timestamp": "23:41",
       "words": 267,
       "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge email page",
+      "path": "website/apps/gtmos/app/knowledge/email/page.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 230,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "repo_stats",
+      "path": "scripts/repo_stats.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 510,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge term page",
+      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 1430,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "enrich_vector_leads",
+      "path": "scripts/enrich_vector_leads.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 1568,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "view_sprite",
+      "path": "scripts/view_sprite.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 483,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 1525,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mx_check",
+      "path": "scripts/mx_check.py",
+      "source": "auto",
+      "timestamp": "18:59",
+      "words": 517,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 12575,
+      "value_score": 50,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "avatar_generator",
+      "path": "scripts/avatar_generator.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 1854,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos method page",
+      "path": "website/apps/shawnos/app/method/page.tsx",
+      "source": "auto",
+      "timestamp": "18:10",
+      "words": 2131,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -207,19 +246,9 @@
       "title": "GTMKnowledgeGuidePage",
       "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
       "source": "auto",
-      "timestamp": "20:16",
+      "timestamp": "12:10",
       "words": 7206,
       "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "rescore_logs",
-      "path": "scripts/rescore_logs.py",
-      "source": "auto",
-      "timestamp": "16:47",
-      "words": 319,
-      "value_score": 15,
       "shipped": true
     },
     {
@@ -227,50 +256,293 @@
       "title": "sync-machines",
       "path": ".cursor/skills/sync-machines/SKILL.md",
       "source": "auto",
-      "timestamp": "20:25",
-      "words": 940,
+      "timestamp": "12:54",
+      "words": 994,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "code_infra",
-      "title": "enrich_vector_leads",
-      "path": "scripts/enrich_vector_leads.py",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tool-ouroboros-idle.gif",
       "source": "auto",
-      "timestamp": "23:41",
-      "words": 1568,
-      "value_score": 15,
+      "timestamp": "02:01",
+      "value_score": 5,
       "shipped": true
     },
     {
-      "type": "feature_script",
-      "title": "avatar_generator",
-      "path": "scripts/avatar_generator.py",
+      "type": "complex_script",
+      "title": "website_scanner",
+      "path": "scripts/website_scanner.py",
       "source": "auto",
-      "timestamp": "16:47",
-      "words": 1854,
-      "value_score": 30,
+      "timestamp": "14:02",
+      "words": 2193,
+      "value_score": 25,
       "shipped": true
     },
     {
-      "type": "code_infra",
-      "title": "repo_stats",
-      "path": "scripts/repo_stats.py",
-      "source": "auto",
-      "timestamp": "23:41",
-      "words": 510,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "shawnos next config",
-      "path": "website/apps/shawnos/next.config.ts",
+      "type": "partner_resource",
+      "title": "partner session 02 2026 02 16",
+      "path": "clients/partner/[redacted]/resources/transcripts/session-02-2026-02-16.md",
       "source": "auto-mtime",
-      "timestamp": "20:16",
-      "words": 51,
-      "value_score": 15,
-      "shipped": true
+      "timestamp": "12:43",
+      "words": 1846,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner handoff 2026 02 17",
+      "path": "clients/partner/[redacted]/resources/handoff-2026-02-17.md",
+      "source": "auto-mtime",
+      "timestamp": "13:11",
+      "words": 748,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner plan 2026 02 17",
+      "path": "clients/partner/[redacted]/resources/plan-2026-02-17.md",
+      "source": "auto-mtime",
+      "timestamp": "12:43",
+      "words": 1669,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner enrichment map",
+      "path": "clients/partner/[redacted]/resources/enrichment-map.md",
+      "source": "auto-mtime",
+      "timestamp": "13:10",
+      "words": 2342,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner plan 2026 02 17",
+      "path": "clients/partner/[redacted]/resources/plan-2026-02-17.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 818,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "commits": [
+    {
+      "hash": "ad3bd41",
+      "message": "chore: daily tracker scan 2026-02-16",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 1791,
+      "lines_removed": 0,
+      "lines_net": 1791,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "00:00"
+    },
+    {
+      "hash": "287009e",
+      "message": "chore: daily tracker scan 2026-02-16",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 2,
+      "lines_added": 682,
+      "lines_removed": 523,
+      "lines_net": 159,
+      "directories": [
+        ".cursor/",
+        "data/"
+      ],
+      "timestamp": "00:37"
+    },
+    {
+      "hash": "4b6626f",
+      "message": "fix: catch up progression profile \u2014 2,968 XP / Level 11 / Tier 2",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 29,
+      "lines_removed": 17,
+      "lines_net": 12,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "00:46"
+    },
+    {
+      "hash": "4259867",
+      "message": "fix: refresh Nio vitals \u2014 8,861 pts / 88.6% to Tier 2",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 48,
+      "lines_removed": 31,
+      "lines_net": 17,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "00:55"
+    },
+    {
+      "hash": "8e9c642",
+      "message": "fix: replace 6-provider waterfall with single-provider philosophy across knowledge + clay wiki",
+      "type": "bug_fix",
+      "score": 5,
+      "files_changed": 3,
+      "lines_added": 43,
+      "lines_removed": 43,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "01:56"
+    },
+    {
+      "hash": "dba3bb1",
+      "message": "feat: add ouroboros infinity dragon avatar to method page",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 5,
+      "lines_added": 16,
+      "lines_removed": 0,
+      "lines_net": 16,
+      "directories": [
+        "data/",
+        "website/"
+      ],
+      "timestamp": "02:04"
+    },
+    {
+      "hash": "4059cb0",
+      "message": "feat: add email infrastructure guide at /knowledge/email",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 7,
+      "lines_added": 1384,
+      "lines_removed": 16,
+      "lines_net": 1368,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "02:30"
+    },
+    {
+      "hash": "9d77391",
+      "message": "feat: track scripts/ in git + add bootstrap for new machine setup",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 23,
+      "lines_added": 9580,
+      "lines_removed": 1,
+      "lines_net": 9579,
+      "directories": [
+        ".cursor/",
+        ".gitignore/",
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "20:13"
+    },
+    {
+      "hash": "e8d2e19",
+      "message": "sync: pending local changes from Mac Mini setup",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 9,
+      "lines_added": 814,
+      "lines_removed": 125,
+      "lines_net": 689,
+      "directories": [
+        ".cursor/",
+        ".vscode/",
+        "content/",
+        "requirements.txt/",
+        "setup.sh/",
+        "website/"
+      ],
+      "timestamp": "20:26"
+    },
+    {
+      "hash": "2027235",
+      "message": "feat(contentos): link platform playbooks to content-wiki, recursive loop to shawnos.ai/method",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 1,
+      "lines_added": 47,
+      "lines_removed": 7,
+      "lines_net": 40,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "22:47"
+    },
+    {
+      "hash": "9f02704",
+      "message": "feat(scripts): add session_cost_tracker.py \u2014 tracks OpenClaw token usage and cost per day",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 2,
+      "lines_added": 1215,
+      "lines_removed": 0,
+      "lines_net": 1215,
+      "directories": [
+        "data/",
+        "scripts/"
+      ],
+      "timestamp": "22:58"
+    },
+    {
+      "hash": "5cf730d",
+      "message": "feat(cron): add session_cost_tracker to nightly cron pipeline",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 1,
+      "lines_added": 11,
+      "lines_removed": 18,
+      "lines_net": -7,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "22:58"
+    },
+    {
+      "hash": "e95b640",
+      "message": "feat(cron): add progression_engine.py to nightly pipeline",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 1,
+      "lines_added": 9,
+      "lines_removed": 0,
+      "lines_net": 9,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "23:08"
+    },
+    {
+      "hash": "6d9168f",
+      "message": "docs(v2): add progression engine v2 spec \u2014 agent attribution, streaks, quests, LOC scoring",
+      "type": "infra_build",
+      "score": 25,
+      "files_changed": 1,
+      "lines_added": 520,
+      "lines_removed": 0,
+      "lines_net": 520,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "23:16"
     }
   ],
   "pipeline": {
@@ -423,6 +695,41 @@
         "words": 1064
       },
       {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "linkedin",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+        "target_date": "2026-02-23",
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
+      },
+      {
         "platform": "x",
         "title": "skill tree repo",
         "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
@@ -570,6 +877,41 @@
         "words": 465
       },
       {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "x",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+        "target_date": "2026-02-23",
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
+      },
+      {
         "platform": "substack",
         "title": "content os reveal",
         "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
@@ -613,10 +955,17 @@
       },
       {
         "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
         "title": "start at level one",
         "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
         "target_date": "2026-02-24",
-        "words": 1013
+        "words": 1543
       },
       {
         "platform": "reddit",
@@ -639,186 +988,113 @@
   "token_usage": [
     {
       "session_id": "cursor-aggregate",
-      "input_tokens": 78637,
-      "output_tokens": 26213,
+      "input_tokens": 244350,
+      "output_tokens": 81450,
       "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "model": "opus",
       "source": "cursor-db",
-      "messages": 699,
-      "conversations": 5,
-      "logged_at": "00:03",
-      "context": "cursor-ide 18:41-20:00",
-      "cost": 3.1455,
+      "messages": 2172,
+      "conversations": 15,
+      "logged_at": "00:38",
+      "context": "cursor-ide 00:45-20:50",
+      "cost": 9.774,
       "estimated": true
     }
   ],
   "stats": {
     "platform_breakdown": {
+      "other": 23,
       "website": 5,
-      "other": 22
+      "ops": 5
     },
-    "words_today": 48703,
-    "pipeline_words": 36965,
+    "words_in_touched_files": 57657,
+    "pipeline_words": 46861,
     "finals_count": 0,
-    "first_activity": "01:10",
+    "first_activity": "00:00",
     "last_activity": "23:41",
-    "output_score": 450,
-    "letter_grade": "S",
+    "output_score": 264,
+    "letter_grade": "A+",
     "score_breakdown": [
       {
-        "type": "website_page",
-        "title": "EmailInfrastructureGuidePage",
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-16",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-16",
+        "points": 1
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: catch up progression profile \u2014 2,968 XP / Level 11 / Ti",
+        "points": 3
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: refresh Nio vitals \u2014 8,861 pts / 88.6% to Tier 2",
+        "points": 3
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: replace 6-provider waterfall with single-provider philo",
         "points": 5
       },
       {
-        "type": "website_page",
-        "title": "gtmos knowledge term page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos knowledge email page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos method page",
-        "points": 5
-      },
-      {
-        "type": "landing_page",
-        "title": "contentos home page",
+        "type": "feature_build",
+        "title": "feat: add ouroboros infinity dragon avatar to method page",
         "points": 25
       },
       {
-        "type": "code_infra",
-        "title": "write_mx_and_bodies",
-        "points": 15
-      },
-      {
-        "type": "feature_script",
-        "title": "progression_engine",
-        "points": 30
-      },
-      {
-        "type": "complex_script",
-        "title": "website_scanner",
+        "type": "feature_build",
+        "title": "feat: add email infrastructure guide at /knowledge/email",
         "points": 25
-      },
-      {
-        "type": "code_infra",
-        "title": "view_sprite",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "session_cost_tracker",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "shared package",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "mx_check",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "gen_touch2_updates",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "push_remaining_enrichment",
-        "points": 15
-      },
-      {
-        "type": "feature_script",
-        "title": "daily_dashboard",
-        "points": 30
       },
       {
         "type": "system_engine",
-        "title": "rpg_sprites",
-        "points": 50
+        "title": "feat: track scripts/ in git + add bootstrap for new machine ",
+        "points": 60
       },
       {
-        "type": "feature_script",
-        "title": "daily_scan",
-        "points": 30
+        "type": "chore",
+        "title": "sync: pending local changes from Mac Mini setup",
+        "points": 1
       },
       {
-        "type": "skill_updated",
-        "title": "clickup-time-track",
-        "points": 5
+        "type": "feature_build",
+        "title": "feat(contentos): link platform playbooks to content-wiki, re",
+        "points": 25
       },
       {
-        "type": "code_infra",
-        "title": "find_missing_touch2",
+        "type": "system_engine",
+        "title": "feat(scripts): add session_cost_tracker.py \u2014 tracks OpenClaw",
+        "points": 60
+      },
+      {
+        "type": "infra_build",
+        "title": "feat(cron): add session_cost_tracker to nightly cron pipelin",
         "points": 15
       },
       {
-        "type": "code_infra",
-        "title": "push_enrichment_to_sheet",
+        "type": "infra_build",
+        "title": "feat(cron): add progression_engine.py to nightly pipeline",
         "points": 15
       },
       {
-        "type": "website_page",
-        "title": "GTMKnowledgeGuidePage",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "rescore_logs",
-        "points": 15
-      },
-      {
-        "type": "skill_updated",
-        "title": "sync-machines",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "enrich_vector_leads",
-        "points": 15
-      },
-      {
-        "type": "feature_script",
-        "title": "avatar_generator",
-        "points": 30
-      },
-      {
-        "type": "code_infra",
-        "title": "repo_stats",
-        "points": 15
-      },
-      {
-        "type": "code_infra",
-        "title": "shawnos next config",
-        "points": 15
+        "type": "infra_build",
+        "title": "docs(v2): add progression engine v2 spec \u2014 agent attribution",
+        "points": 25
       }
     ],
-    "efficiency_rating": 143.06,
-    "shipped_count": 27,
-    "draft_count": 0,
-    "ship_rate": 1.0,
-    "agent_cost": 3.15,
-    "dev_equivalent_cost": 22104.0,
-    "dev_equivalent_breakdown": {
-      "code_loc": 11489,
-      "code_hours": 229.78,
-      "code_cost": 17233.5,
-      "content_words": 48703,
-      "content_hours": 97.41,
-      "content_cost": 4870.5,
-      "total": 22104.0
-    },
-    "cost_savings": 22100.85,
-    "roi_multiplier": 7027.2,
+    "efficiency_rating": 27.01,
+    "shipped_count": 28,
+    "draft_count": 5,
+    "ship_rate": 0.85,
+    "agent_cost": 9.77,
+    "cost_per_point": 0.04,
+    "efficiency_ratio": 27.01,
+    "words_today": 57657,
     "lines_added": 16189,
     "lines_removed": 781,
     "lines_net": 15408,
@@ -855,7 +1131,7 @@
       "scripts/push_remaining_enrichment.py",
       "scripts/repo_stats.py",
       "scripts/rescore_logs.py",
-      "scripts/reword_partner_commit_msg.sh",
+      "scripts/reword_[redacted]_commit_msg.sh",
       "scripts/rpg_sprites.py",
       "scripts/session_cost_tracker.py",
       "scripts/v2/SPEC.md",
@@ -893,5 +1169,32 @@
     "code_loc": 11489,
     "content_loc": 1225,
     "data_loc": 3475
+  },
+  "dev_equivalent": {
+    "net_lines": 15408,
+    "dev_days": 102.7,
+    "cost_estimate": 51350,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 15,408 net lines represent approximately 103 developer-days of output \u2014 what a small team would produce in 5+ months.",
+    "assumptions": {
+      "lines_per_day": 150,
+      "cost_per_day": 500,
+      "basis": "Industry average for meaningful, reviewed, production-quality code"
+    }
+  },
+  "cost": {
+    "api_equivalent": 9.77,
+    "actual_cost": 0.0,
+    "pricing_mode": "max"
+  },
+  "token_efficiency": {
+    "total_tokens": 325800,
+    "total_sessions": 1,
+    "tokens_per_point": 1234,
+    "tokens_per_commit": 23271,
+    "tokens_per_loc": 21,
+    "avg_context_utilization": 1.0,
+    "pricing_mode": "max",
+    "api_equivalent_cost": 9.77,
+    "actual_cost": 0.0
   }
 }

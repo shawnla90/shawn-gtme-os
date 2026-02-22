@@ -4,6 +4,7 @@ import Link from 'next/link'
 import {
   getLogDates,
   getLogByDate,
+  getWeeklyContext,
   resolveDataRoot,
   getRPGProfileV3,
   getRPGProfileV2,
@@ -337,6 +338,7 @@ export default async function LogPage({
         prevDate={prevDate}
         nextDate={nextDate}
         basePath="/log"
+        weeklyContext={log.version >= 4 ? getWeeklyContext(date, LOG_DIR) : undefined}
       />
 
       {v3Entry && <V3ScoringPanel entry={v3Entry} />}

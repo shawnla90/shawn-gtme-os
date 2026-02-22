@@ -1,127 +1,8 @@
 {
   "date": "2026-02-18",
-  "generated_at": "2026-02-19T05:00:01.832196+00:00",
-  "version": 3,
+  "generated_at": "2026-02-22T05:38:45.219965+00:00",
+  "version": 4,
   "accomplishments": [
-    {
-      "type": "script",
-      "title": "__init__",
-      "path": ".cursor/skills/xlsx/scripts/office/validators/__init__.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 32,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos layout",
-      "path": "website/apps/contentos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 199,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "x_draft",
-      "title": "parallel agents plan mode",
-      "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 462,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "script",
-      "title": "simplify_redlines",
-      "path": ".cursor/skills/xlsx/scripts/office/helpers/simplify_redlines.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 555,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos how-to slug page",
-      "path": "website/apps/shawnos/app/how-to/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 1230,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "parallel agents plan mode",
-      "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 1437,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "script",
-      "title": "soffice",
-      "path": ".cursor/skills/xlsx/scripts/office/soffice.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 586,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos how-to page",
-      "path": "website/apps/contentos/app/how-to/page.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 433,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "play-draft",
-      "path": ".cursor/skills/play-draft/SKILL.md",
-      "source": "auto",
-      "timestamp": "15:00",
-      "words": 2029,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "mux_audio",
-      "path": "content/tiktok/faceless/mux_audio.py",
-      "source": "auto",
-      "timestamp": "16:41",
-      "words": 100,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "__init__",
-      "path": ".cursor/skills/xlsx/scripts/office/helpers/__init__.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 199,
-      "value_score": 5,
-      "shipped": true
-    },
     {
       "type": "script",
       "title": "validate",
@@ -133,51 +14,12 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "HowToWikiPage",
-      "path": "website/packages/shared/pages/HowToWikiPage.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 1560,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "15:42",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
       "type": "workflow_updated",
       "title": "tiktok-index",
       "path": "workflows/tiktok-index.md",
       "source": "auto",
       "timestamp": "15:42",
       "words": 997,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos how-to slug page",
-      "path": "website/apps/contentos/app/how-to/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:46",
-      "words": 1082,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos how-to page",
-      "path": "website/apps/gtmos/app/how-to/page.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 546,
       "value_score": 5,
       "shipped": true
     },
@@ -192,56 +34,6 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "gtmos how-to slug page",
-      "path": "website/apps/gtmos/app/how-to/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:46",
-      "words": 1176,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "unpack",
-      "path": ".cursor/skills/xlsx/scripts/office/unpack.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 359,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "pptx",
-      "path": ".cursor/skills/xlsx/scripts/office/validators/pptx.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 679,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "redlining",
-      "path": ".cursor/skills/xlsx/scripts/office/validators/redlining.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 610,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "docx",
-      "path": ".cursor/skills/xlsx/scripts/office/validators/docx.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 1099,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
       "type": "script",
       "title": "merge_runs",
       "path": ".cursor/skills/xlsx/scripts/office/helpers/merge_runs.py",
@@ -249,6 +41,16 @@
       "timestamp": "01:14",
       "words": 503,
       "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 12575,
+      "value_score": 50,
       "shipped": true
     },
     {
@@ -262,12 +64,51 @@
       "shipped": true
     },
     {
+      "type": "linkedin_draft",
+      "title": "parallel agents plan mode",
+      "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 1437,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "15:31",
+      "words": 231,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
       "type": "script",
-      "title": "pack",
-      "path": ".cursor/skills/xlsx/scripts/office/pack.py",
+      "title": "__init__",
+      "path": ".cursor/skills/xlsx/scripts/office/validators/__init__.py",
       "source": "auto",
       "timestamp": "01:14",
-      "words": 426,
+      "words": 32,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "unpack",
+      "path": ".cursor/skills/xlsx/scripts/office/unpack.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 359,
       "value_score": 2,
       "shipped": true
     },
@@ -276,8 +117,8 @@
       "title": "shawnos layout",
       "path": "website/apps/shawnos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "15:42",
-      "words": 497,
+      "timestamp": "18:21",
+      "words": 572,
       "value_score": 5,
       "shipped": true
     },
@@ -293,6 +134,165 @@
     },
     {
       "type": "script",
+      "title": "docx",
+      "path": ".cursor/skills/xlsx/scripts/office/validators/docx.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 1099,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos how-to slug page",
+      "path": "website/apps/contentos/app/how-to/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "15:46",
+      "words": 1082,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "sync-main",
+      "path": ".claude/skills/sync-main/SKILL.md",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 347,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos how-to page",
+      "path": "website/apps/contentos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 433,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos how-to slug page",
+      "path": "website/apps/gtmos/app/how-to/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "15:46",
+      "words": 1176,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "parallel agents plan mode",
+      "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 462,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "15:32",
+      "words": 223,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "mux_audio",
+      "path": "content/tiktok/faceless/mux_audio.py",
+      "source": "auto",
+      "timestamp": "16:41",
+      "words": 100,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "play-draft",
+      "path": ".cursor/skills/play-draft/SKILL.md",
+      "source": "auto",
+      "timestamp": "15:00",
+      "words": 2029,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos how-to slug page",
+      "path": "website/apps/shawnos/app/how-to/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 1230,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "pptx",
+      "path": ".cursor/skills/xlsx/scripts/office/validators/pptx.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 679,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "pack",
+      "path": ".cursor/skills/xlsx/scripts/office/pack.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 426,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "redlining",
+      "path": ".cursor/skills/xlsx/scripts/office/validators/redlining.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 610,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "restart-openclaw",
+      "path": ".claude/skills/restart-openclaw/SKILL.md",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 273,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "HowToWikiPage",
+      "path": "website/packages/shared/pages/HowToWikiPage.tsx",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 1560,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "__init__",
+      "path": ".cursor/skills/xlsx/scripts/office/helpers/__init__.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "script",
       "title": "recalc",
       "path": ".cursor/skills/xlsx/scripts/recalc.py",
       "source": "auto",
@@ -302,23 +302,33 @@
       "shipped": true
     },
     {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:00",
-      "words": 1489,
-      "value_score": 25,
+      "type": "website_page",
+      "title": "gtmos how-to page",
+      "path": "website/apps/gtmos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "16:13",
+      "words": 577,
+      "value_score": 5,
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "sync-machines",
-      "path": ".cursor/skills/sync-machines/SKILL.md",
-      "source": "auto-mtime",
-      "timestamp": "00:00",
-      "words": 940,
-      "value_score": 5,
+      "type": "script",
+      "title": "soffice",
+      "path": ".cursor/skills/xlsx/scripts/office/soffice.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 586,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "simplify_redlines",
+      "path": ".cursor/skills/xlsx/scripts/office/helpers/simplify_redlines.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 555,
+      "value_score": 2,
       "shipped": true
     },
     {
@@ -328,8 +338,155 @@
       "source": "auto-mtime",
       "timestamp": "00:00",
       "words": 812,
-      "value_score": 15,
-      "shipped": true
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "commits": [
+    {
+      "hash": "7c4981f",
+      "message": "chore: daily tracker + progression + vitals 2026-02-17",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 3,
+      "lines_added": 1086,
+      "lines_removed": 322,
+      "lines_net": 764,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "00:00"
+    },
+    {
+      "hash": "85c28d5",
+      "message": "Update README.md",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 2,
+      "lines_removed": 2,
+      "lines_net": 0,
+      "directories": [
+        "README.md/"
+      ],
+      "timestamp": "13:58"
+    },
+    {
+      "hash": "c5d85d1",
+      "message": "refactor(skill): update play-draft X format from 10-post arc to 4-5 post thread",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 26,
+      "lines_removed": 47,
+      "lines_net": -21,
+      "directories": [
+        ".cursor/"
+      ],
+      "timestamp": "15:02"
+    },
+    {
+      "hash": "f14f359",
+      "message": "feat: add how-to wiki across all three sites",
+      "type": "monorepo_scaffold",
+      "score": 80,
+      "files_changed": 95,
+      "lines_added": 28820,
+      "lines_removed": 0,
+      "lines_net": 28820,
+      "directories": [
+        ".cursor/",
+        "content/",
+        "website/",
+        "workflows/"
+      ],
+      "timestamp": "15:31"
+    },
+    {
+      "hash": "bfb70ab",
+      "message": "Merge branch 'main' of github.com:shawnla90/shawn-gtme-os",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 2,
+      "lines_removed": 2,
+      "lines_net": 0,
+      "directories": [
+        "README.md/"
+      ],
+      "timestamp": "15:42"
+    },
+    {
+      "hash": "4112c34",
+      "message": "fix: resolve CanonicalSite type predicate error on gtmos and contentos builds",
+      "type": "bug_fix",
+      "score": 5,
+      "files_changed": 2,
+      "lines_added": 2,
+      "lines_removed": 8,
+      "lines_net": -6,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:49"
+    },
+    {
+      "hash": "b2ead8f",
+      "message": "feat: add lip-synced video with muxed audio and mux helper script",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 3,
+      "lines_added": 31,
+      "lines_removed": 0,
+      "lines_net": 31,
+      "directories": [
+        "content/"
+      ],
+      "timestamp": "19:12"
+    },
+    {
+      "hash": "b7db429",
+      "message": "chore: daily tracker scan 2026-02-17",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 3,
+      "lines_added": 1524,
+      "lines_removed": 416,
+      "lines_net": 1108,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "19:17"
+    },
+    {
+      "hash": "741f320",
+      "message": "feat(skills): add sync-main and restart-openclaw skills + sync_main.sh cron script",
+      "type": "infra_build",
+      "score": 25,
+      "files_changed": 4,
+      "lines_added": 266,
+      "lines_removed": 124,
+      "lines_net": 142,
+      "directories": [
+        ".claude/",
+        "scripts/"
+      ],
+      "timestamp": "23:42"
+    },
+    {
+      "hash": "31b98b4",
+      "message": "chore(launchd): add sync-main LaunchAgent plist to repo",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 41,
+      "lines_removed": 0,
+      "lines_net": 41,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "23:43"
     }
   ],
   "pipeline": {
@@ -489,6 +646,34 @@
         "words": 1437
       },
       {
+        "platform": "linkedin",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+        "target_date": "2026-02-23",
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
+      },
+      {
         "platform": "x",
         "title": "skill tree repo",
         "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
@@ -643,6 +828,34 @@
         "words": 462
       },
       {
+        "platform": "x",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+        "target_date": "2026-02-23",
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
+      },
+      {
         "platform": "substack",
         "title": "content os reveal",
         "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
@@ -686,10 +899,17 @@
       },
       {
         "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
         "title": "start at level one",
         "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
         "target_date": "2026-02-24",
-        "words": 1013
+        "words": 1543
       },
       {
         "platform": "reddit",
@@ -720,7 +940,7 @@
       "source": "cursor-db",
       "messages": 3650,
       "conversations": 12,
-      "logged_at": "00:00",
+      "logged_at": "00:38",
       "context": "cursor-ide 01:31-15:46",
       "cost": 16.425,
       "estimated": true
@@ -735,7 +955,7 @@
       "source": "cursor-db",
       "messages": 38,
       "conversations": 1,
-      "logged_at": "00:00",
+      "logged_at": "00:38",
       "context": "cursor-ide 16:34-16:41",
       "cost": 0.0,
       "estimated": true
@@ -743,212 +963,90 @@
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 21,
+      "other": 22,
+      "linkedin": 1,
       "website": 10,
-      "x": 1,
-      "linkedin": 1
+      "x": 1
     },
-    "words_today": 25085,
-    "pipeline_words": 38864,
+    "words_in_touched_files": 36013,
+    "pipeline_words": 46861,
     "finals_count": 0,
     "first_activity": "00:00",
-    "last_activity": "16:41",
-    "output_score": 157,
-    "letter_grade": "A+",
+    "last_activity": "18:21",
+    "output_score": 131,
+    "letter_grade": "A",
     "score_breakdown": [
       {
-        "type": "script",
-        "title": "__init__",
-        "points": 2
+        "type": "chore",
+        "title": "chore: daily tracker + progression + vitals 2026-02-17",
+        "points": 1
       },
       {
-        "type": "website_page",
-        "title": "contentos layout",
+        "type": "chore",
+        "title": "Update README.md",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "refactor(skill): update play-draft X format from 10-post arc",
+        "points": 1
+      },
+      {
+        "type": "monorepo_scaffold",
+        "title": "feat: add how-to wiki across all three sites",
+        "points": 80
+      },
+      {
+        "type": "chore",
+        "title": "Merge branch 'main' of github.com:shawnla90/shawn-gtme-os",
+        "points": 1
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: resolve CanonicalSite type predicate error on gtmos and",
         "points": 5
       },
       {
-        "type": "x_draft",
-        "title": "parallel agents plan mode",
-        "points": 2
-      },
-      {
-        "type": "script",
-        "title": "simplify_redlines",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos how-to slug page",
-        "points": 5
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "parallel agents plan mode",
-        "points": 2
-      },
-      {
-        "type": "script",
-        "title": "soffice",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "contentos how-to page",
-        "points": 5
-      },
-      {
-        "type": "skill_updated",
-        "title": "play-draft",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "mux_audio",
-        "points": 2
-      },
-      {
-        "type": "script",
-        "title": "__init__",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos layout",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "validate",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "HowToWikiPage",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "shared package",
+        "type": "infra_build",
+        "title": "feat: add lip-synced video with muxed audio and mux helper s",
         "points": 15
       },
       {
-        "type": "workflow_updated",
-        "title": "tiktok-index",
-        "points": 5
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-17",
+        "points": 1
       },
       {
-        "type": "website_page",
-        "title": "contentos how-to slug page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos how-to page",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "base",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos how-to slug page",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "unpack",
-        "points": 2
-      },
-      {
-        "type": "script",
-        "title": "pptx",
-        "points": 2
-      },
-      {
-        "type": "script",
-        "title": "redlining",
-        "points": 2
-      },
-      {
-        "type": "script",
-        "title": "docx",
-        "points": 2
-      },
-      {
-        "type": "script",
-        "title": "merge_runs",
-        "points": 2
-      },
-      {
-        "type": "skill_updated",
-        "title": "faceless-script",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "pack",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos layout",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos how-to page",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "recalc",
-        "points": 2
-      },
-      {
-        "type": "landing_page",
-        "title": "contentos home page",
+        "type": "infra_build",
+        "title": "feat(skills): add sync-main and restart-openclaw skills + sy",
         "points": 25
       },
       {
-        "type": "skill_updated",
-        "title": "sync-machines",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "session_cost_tracker",
-        "points": 15
+        "type": "chore",
+        "title": "chore(launchd): add sync-main LaunchAgent plist to repo",
+        "points": 1
       }
     ],
-    "efficiency_rating": 9.56,
+    "efficiency_rating": 7.98,
     "shipped_count": 31,
-    "draft_count": 2,
-    "ship_rate": 0.94,
+    "draft_count": 3,
+    "ship_rate": 0.91,
     "agent_cost": 16.43,
-    "dev_equivalent_cost": 12386.0,
-    "dev_equivalent_breakdown": {
-      "code_loc": 6585,
-      "code_hours": 131.7,
-      "code_cost": 9877.5,
-      "content_words": 25085,
-      "content_hours": 50.17,
-      "content_cost": 2508.5,
-      "total": 12386.0
-    },
-    "cost_savings": 12369.58,
-    "roi_multiplier": 754.1,
-    "lines_added": 29967,
-    "lines_removed": 379,
-    "lines_net": 29588,
-    "code_loc": 6585,
-    "content_loc": 2564,
-    "data_loc": 20818
+    "cost_per_point": 0.13,
+    "efficiency_ratio": 7.98,
+    "words_today": 36013,
+    "lines_added": 31798,
+    "lines_removed": 919,
+    "lines_net": 30879,
+    "code_loc": 6674,
+    "content_loc": 2741,
+    "data_loc": 22383
   },
   "git_summary": {
-    "commits_today": 7,
+    "commits_today": 10,
     "files_added": [
+      ".claude/skills/restart-openclaw/SKILL.md",
+      ".claude/skills/sync-main/SKILL.md",
       ".cursor/skills/faceless-script/SKILL.md",
       ".cursor/skills/xlsx/scripts/office/helpers/__init__.py",
       ".cursor/skills/xlsx/scripts/office/helpers/merge_runs.py",
@@ -1035,6 +1133,9 @@
       "content/tiktok/faceless/voice-tests/roger-laid-back-casual.mp3",
       "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
       "data/daily-log/2026-02-17.json",
+      "data/daily-log/cost-tracker/2026-02-17.json",
+      "scripts/com.shawnos.sync-main.plist",
+      "scripts/sync_main.sh",
       "website/apps/contentos/app/how-to/[slug]/page.tsx",
       "website/apps/contentos/app/how-to/page.tsx",
       "website/apps/gtmos/app/how-to/[slug]/page.tsx",
@@ -1047,8 +1148,10 @@
     "files_modified": [
       ".cursor/skills/play-draft/SKILL.md",
       "README.md",
+      "data/daily-log/2026-02-17.json",
       "data/progression/profile.json",
       "data/website-stats.json",
+      "scripts/rpg_sprites.py",
       "website/apps/contentos/app/how-to/[slug]/page.tsx",
       "website/apps/contentos/app/layout.tsx",
       "website/apps/gtmos/app/how-to/[slug]/page.tsx",
@@ -1057,11 +1160,38 @@
       "website/packages/shared/package.json",
       "workflows/tiktok-index.md"
     ],
-    "lines_added_count": 29967,
-    "lines_removed_count": 379,
-    "lines_net": 29588,
-    "code_loc": 6585,
-    "content_loc": 2564,
-    "data_loc": 20818
+    "lines_added_count": 31798,
+    "lines_removed_count": 919,
+    "lines_net": 30879,
+    "code_loc": 6674,
+    "content_loc": 2741,
+    "data_loc": 22383
+  },
+  "dev_equivalent": {
+    "net_lines": 30879,
+    "dev_days": 205.9,
+    "cost_estimate": 102950,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 30,879 net lines represent approximately 206 developer-days of output \u2014 what a small team would produce in 9+ months.",
+    "assumptions": {
+      "lines_per_day": 150,
+      "cost_per_day": 500,
+      "basis": "Industry average for meaningful, reviewed, production-quality code"
+    }
+  },
+  "cost": {
+    "api_equivalent": 16.43,
+    "actual_cost": 0.0,
+    "pricing_mode": "max"
+  },
+  "token_efficiency": {
+    "total_tokens": 553200,
+    "total_sessions": 2,
+    "tokens_per_point": 4223,
+    "tokens_per_commit": 55320,
+    "tokens_per_loc": 18,
+    "avg_context_utilization": 0.51,
+    "pricing_mode": "max",
+    "api_equivalent_cost": 16.43,
+    "actual_cost": 0.0
   }
 }

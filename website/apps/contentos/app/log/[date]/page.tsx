@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import path from 'path'
-import { getLogDates, getLogByDate } from '@shawnos/shared/lib'
+import { getLogDates, getLogByDate, getWeeklyContext } from '@shawnos/shared/lib'
 import { DailyLogView, LogDetailIntro } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://thecontentos.ai'
@@ -169,6 +169,7 @@ export default async function LogPage({
         prevDate={prevDate}
         nextDate={nextDate}
         basePath="/log"
+        weeklyContext={log.version >= 4 ? getWeeklyContext(date, LOG_DIR) : undefined}
       />
     </div>
   )

@@ -1,15 +1,80 @@
 {
   "date": "2026-02-22",
-  "generated_at": "2026-02-22T05:07:36.514008+00:00",
+  "generated_at": "2026-02-22T05:38:52.900106+00:00",
   "version": 4,
   "accomplishments": [
     {
       "type": "feature_script",
       "title": "daily_scan",
       "path": "scripts/daily_scan.py",
-      "source": "auto-mtime",
+      "source": "auto",
       "timestamp": "00:04",
       "words": 6111,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "DailyLogView",
+      "path": "website/packages/shared/components/DailyLogView.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:36",
+      "words": 3633,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared logs",
+      "path": "website/packages/shared/lib/logs.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:33",
+      "words": 1292,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log date page",
+      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:36",
+      "words": 525,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log date page",
+      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:36",
+      "words": 983,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log date page",
+      "path": "website/apps/contentos/app/log/[date]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "00:36",
+      "words": 525,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:33",
+      "words": 233,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -45,6 +110,22 @@
         "website/"
       ],
       "timestamp": "00:02"
+    },
+    {
+      "hash": "4e4e5a5",
+      "message": "feat: scoring engine V4 \u2014 commit-based classification and dev equivalent",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 4,
+      "lines_added": 2002,
+      "lines_removed": 637,
+      "lines_net": 1365,
+      "directories": [
+        ".claude/",
+        "data/",
+        "scripts/"
+      ],
+      "timestamp": "00:16"
     }
   ],
   "pipeline": {
@@ -497,7 +578,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 55,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 6.4341,
       "context": "claude-code 00:04"
     },
@@ -510,7 +591,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 126,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 18.3913,
       "context": "claude-code 03:05"
     },
@@ -523,7 +604,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 195,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 29.6205,
       "context": "claude-code 02:50"
     },
@@ -536,21 +617,21 @@
       "model": "<synthetic>,opus",
       "source": "claude-code",
       "messages": 99,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 3.2642,
       "context": "claude-code 03:36"
     },
     {
       "session_id": "5c9b947e-6f1e-4dab-8f8a-b21c50cd708a",
-      "input_tokens": 44,
-      "output_tokens": 3786,
-      "cache_read_tokens": 2483684,
-      "cache_write_tokens": 584333,
+      "input_tokens": 83,
+      "output_tokens": 5811,
+      "cache_read_tokens": 6273613,
+      "cache_write_tokens": 661019,
       "model": "opus",
       "source": "claude-code",
-      "messages": 34,
-      "logged_at": "00:07",
-      "cost": 14.9664,
+      "messages": 63,
+      "logged_at": "00:38",
+      "cost": 22.2416,
       "context": "claude-code 04:23"
     },
     {
@@ -562,7 +643,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 21,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 3.0319,
       "context": "claude-code 01:20"
     },
@@ -575,7 +656,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 73,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 16.5925,
       "context": "claude-code 01:38"
     },
@@ -588,7 +669,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 86,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 14.0891,
       "context": "claude-code 02:10"
     },
@@ -601,7 +682,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 28,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 4.4726,
       "context": "claude-code 01:15"
     },
@@ -614,7 +695,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 10,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 1.8354,
       "context": "claude-code 00:00"
     },
@@ -627,22 +708,49 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 34,
-      "logged_at": "00:07",
+      "logged_at": "00:38",
       "cost": 8.0062,
       "context": "claude-code 00:00"
+    },
+    {
+      "session_id": "e643b412-50ca-4aa3-aa80-fb62824db623",
+      "input_tokens": 50,
+      "output_tokens": 398,
+      "cache_read_tokens": 1777962,
+      "cache_write_tokens": 159747,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 34,
+      "logged_at": "00:38",
+      "cost": 5.6928,
+      "context": "claude-code 05:17"
+    },
+    {
+      "session_id": "fb4ec545-ec2e-49f3-84a6-9667fb291fbd",
+      "input_tokens": 72,
+      "output_tokens": 1974,
+      "cache_read_tokens": 4046664,
+      "cache_write_tokens": 338457,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 56,
+      "logged_at": "00:38",
+      "cost": 12.5652,
+      "context": "claude-code 05:31"
     }
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 1
+      "other": 2,
+      "website": 5
     },
-    "words_in_touched_files": 6111,
+    "words_in_touched_files": 13302,
     "pipeline_words": 46861,
     "finals_count": 0,
     "first_activity": "00:04",
-    "last_activity": "00:04",
-    "output_score": 31,
-    "letter_grade": "B",
+    "last_activity": "00:36",
+    "output_score": 91,
+    "letter_grade": "A",
     "score_breakdown": [
       {
         "type": "chore",
@@ -653,52 +761,61 @@
         "type": "video_build",
         "title": "feat: improve carousel thumbnails \u2014 capitalization, density,",
         "points": 30
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: scoring engine V4 \u2014 commit-based classification and de",
+        "points": 60
       }
     ],
-    "efficiency_rating": 0.26,
-    "shipped_count": 0,
-    "draft_count": 1,
-    "ship_rate": 0.0,
-    "agent_cost": 120.7,
-    "cost_per_point": 3.89,
-    "efficiency_ratio": 0.26,
-    "words_today": 6111,
-    "lines_added": 2809,
-    "lines_removed": 19,
-    "lines_net": 2790,
-    "code_loc": 1019,
-    "content_loc": 0,
-    "data_loc": 1790
+    "efficiency_rating": 0.62,
+    "shipped_count": 1,
+    "draft_count": 6,
+    "ship_rate": 0.14,
+    "agent_cost": 146.24,
+    "cost_per_point": 1.61,
+    "efficiency_ratio": 0.62,
+    "words_today": 13302,
+    "lines_added": 4811,
+    "lines_removed": 656,
+    "lines_net": 4155,
+    "code_loc": 1384,
+    "content_loc": 129,
+    "data_loc": 3298
   },
   "git_summary": {
-    "commits_today": 2,
+    "commits_today": 3,
     "files_added": [
       "content/video/all/contentos-carousel-platforms.png",
       "content/video/all/gtmos-carousel-stack.png",
       "content/video/all/shawnos-carousel-ecosystem.png",
       "data/daily-log/2026-02-21.json",
+      "data/daily-log/2026-02-22.json",
       "data/daily-log/cost-tracker/2026-02-21.json",
       "website/apps/video/src/Thumbnails.tsx"
     ],
     "files_modified": [
+      ".claude/context-handoff.md",
+      "data/daily-log/2026-02-21.json",
       "data/progression/profile.json",
       "data/website-stats.json",
+      "scripts/daily_scan.py",
       "website/apps/mission-control/public/data/content.json",
       "website/apps/mission-control/public/metrics.json",
       "website/apps/video/src/Root.tsx"
     ],
-    "lines_added_count": 2809,
-    "lines_removed_count": 19,
-    "lines_net": 2790,
-    "code_loc": 1019,
-    "content_loc": 0,
-    "data_loc": 1790
+    "lines_added_count": 4811,
+    "lines_removed_count": 656,
+    "lines_net": 4155,
+    "code_loc": 1384,
+    "content_loc": 129,
+    "data_loc": 3298
   },
   "dev_equivalent": {
-    "net_lines": 2790,
-    "dev_days": 18.6,
-    "cost_estimate": 9300,
-    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 2,790 net lines represent approximately 19 developer-days of output \u2014 what a small team would produce in 4+ weeks.",
+    "net_lines": 4155,
+    "dev_days": 27.7,
+    "cost_estimate": 13850,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 4,155 net lines represent approximately 28 developer-days of output \u2014 what a small team would produce in 1+ month.",
     "assumptions": {
       "lines_per_day": 150,
       "cost_per_day": 500,
@@ -706,19 +823,19 @@
     }
   },
   "cost": {
-    "api_equivalent": 120.7,
+    "api_equivalent": 146.24,
     "actual_cost": 0.0,
     "pricing_mode": "max"
   },
   "token_efficiency": {
-    "total_tokens": 49488609,
-    "total_sessions": 11,
-    "tokens_per_point": 1596407,
-    "tokens_per_commit": 24744304,
-    "tokens_per_loc": 17738,
+    "total_tokens": 59682612,
+    "total_sessions": 13,
+    "tokens_per_point": 655853,
+    "tokens_per_commit": 19894204,
+    "tokens_per_loc": 14364,
     "avg_context_utilization": 1.0,
     "pricing_mode": "max",
-    "api_equivalent_cost": 120.7,
+    "api_equivalent_cost": 146.24,
     "actual_cost": 0.0
   }
 }

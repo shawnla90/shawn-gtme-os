@@ -2,7 +2,7 @@ export { getPostSlugs, getPostBySlug, getAllPosts } from './posts'
 export type { Post } from './posts'
 export { markdownToHtml } from './markdown'
 export { getSiteUrl } from './related'
-export { getLogDates, getLogByDate, getAllLogs, getLogAggregates } from './logs'
+export { getLogDates, getLogByDate, getAllLogs, getLogAggregates, getWeeklyContext } from './logs'
 export type {
   DailyLog,
   DailyLogSummary,
@@ -16,6 +16,11 @@ export type {
   PlatformBreakdown,
   Stats,
   GitSummary,
+  Commit,
+  DevEquivalent,
+  CostSection,
+  TokenEfficiency,
+  WeekDaySummary,
 } from './logs'
 export { TITLE_TABLE, DEFAULT_PROFILE, tierColor } from './rpg'
 export type { RPGProfile, RPGClass, Milestone, TitleTier } from './rpg'

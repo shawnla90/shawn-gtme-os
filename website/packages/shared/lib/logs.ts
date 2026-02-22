@@ -62,6 +62,58 @@ export interface ScoreBreakdownItem {
   points: number
 }
 
+/* ---- V4 types ---- */
+
+export interface Commit {
+  hash: string
+  message: string
+  type: string
+  score: number
+  files_changed: number
+  lines_added: number
+  lines_removed: number
+  lines_net: number
+  directories: string[]
+  timestamp: string
+}
+
+export interface DevEquivalent {
+  net_lines: number
+  dev_days: number
+  cost_estimate: number
+  explanation: string
+  assumptions: {
+    lines_per_day: number
+    cost_per_day: number
+    basis: string
+  }
+}
+
+export interface CostSection {
+  api_equivalent: number
+  actual_cost: number
+  pricing_mode: string
+}
+
+export interface TokenEfficiency {
+  total_tokens: number
+  total_sessions: number
+  tokens_per_point: number | null
+  tokens_per_commit: number | null
+  tokens_per_loc: number | null
+  avg_context_utilization: number
+  pricing_mode: string
+  api_equivalent_cost: number
+  actual_cost: number
+}
+
+export interface WeekDaySummary {
+  date: string
+  commits: number
+  score: number
+  grade: string
+}
+
 export interface PlatformBreakdown {
   [key: string]: number
 }
@@ -117,6 +169,11 @@ export interface DailyLog {
   token_usage: TokenEntry[]
   stats: Stats
   git_summary: GitSummary
+  // V4 fields
+  commits?: Commit[]
+  dev_equivalent?: DevEquivalent
+  cost?: CostSection
+  token_efficiency?: TokenEfficiency
 }
 
 /** Lightweight summary used on the /log index page. */
@@ -190,6 +247,28 @@ function scrubLog(raw: Record<string, unknown>): DailyLog {
                    (data.git_summary?.files_modified?.length ?? 0),
   }
 
+  // Scrub V4 commits — strip paths from messages, pass through safe fields
+  const BLOCKLIST = /\/(Users|home|clients|partner|client)\b[^\s]*/gi
+  const commits: Commit[] | undefined = data.commits
+    ? (data.commits as Record<string, any>[]).map((c) => ({
+        hash: c.hash,
+        message: (c.message ?? '').replace(BLOCKLIST, '<path>'),
+        type: c.type,
+        score: c.score ?? 0,
+        files_changed: c.files_changed ?? 0,
+        lines_added: c.lines_added ?? 0,
+        lines_removed: c.lines_removed ?? 0,
+        lines_net: c.lines_net ?? 0,
+        directories: c.directories ?? [],
+        timestamp: c.timestamp ?? '',
+      }))
+    : undefined
+
+  // V4 passthrough fields (no sensitive data)
+  const dev_equivalent: DevEquivalent | undefined = data.dev_equivalent ?? undefined
+  const cost: CostSection | undefined = data.cost ?? undefined
+  const token_efficiency: TokenEfficiency | undefined = data.token_efficiency ?? undefined
+
   return {
     date: data.date,
     generated_at: data.generated_at,
@@ -211,6 +290,10 @@ function scrubLog(raw: Record<string, unknown>): DailyLog {
       efficiency_rating: null,
     },
     git_summary,
+    ...(commits ? { commits } : {}),
+    ...(dev_equivalent ? { dev_equivalent } : {}),
+    ...(cost ? { cost } : {}),
+    ...(token_efficiency ? { token_efficiency } : {}),
   }
 }
 
@@ -282,6 +365,40 @@ export function getLogAggregates(logDir: string): LogAggregates {
     totalCommits,
     totalFinals,
   }
+}
+
+/**
+ * Returns a 7-day Mon–Sun window of WeekDaySummary[] centered on `centerDate`.
+ * Used by the "This Week" panel in DailyLogView.
+ */
+export function getWeeklyContext(centerDate: string, logDir: string): WeekDaySummary[] {
+  const [y, m, d] = centerDate.split('-').map(Number)
+  const dt = new Date(y, m - 1, d)
+  // Find Monday of this week (JS: 0=Sun)
+  const dow = dt.getDay()
+  const monOffset = dow === 0 ? -6 : 1 - dow
+  const monday = new Date(dt)
+  monday.setDate(monday.getDate() + monOffset)
+
+  const result: WeekDaySummary[] = []
+  for (let i = 0; i < 7; i++) {
+    const day = new Date(monday)
+    day.setDate(monday.getDate() + i)
+    const dateStr = [
+      day.getFullYear(),
+      String(day.getMonth() + 1).padStart(2, '0'),
+      String(day.getDate()).padStart(2, '0'),
+    ].join('-')
+
+    const log = getLogByDate(dateStr, logDir)
+    result.push({
+      date: dateStr,
+      commits: log?.git_summary.commits_today ?? 0,
+      score: log?.stats.output_score ?? 0,
+      grade: log?.stats.letter_grade ?? '-',
+    })
+  }
+  return result
 }
 
 /**
