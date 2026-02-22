@@ -68,6 +68,7 @@ export default function RootLayout({
             { href: 'https://thecontentos.ai/content-wiki', label: 'Content Wiki' },
             { href: '/log', label: 'Log' },
             { href: '/vitals', label: 'Vitals' },
+            { href: '/updates', label: 'Updates' },
           ]}
         />
         <main>{children}</main>

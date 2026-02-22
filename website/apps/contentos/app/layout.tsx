@@ -67,6 +67,7 @@ export default function RootLayout({
             { href: 'https://thegtmos.ai/clay-wiki', label: 'Clay Wiki' },
             { href: '/log', label: 'Log' },
             { href: '/vitals', label: 'Vitals' },
+            { href: '/updates', label: 'Updates' },
           ]}
         />
         <main>{children}</main>

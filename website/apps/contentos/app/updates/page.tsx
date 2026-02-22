@@ -2,82 +2,57 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import path from 'path'
 import {
-  getAllPosts,
   getAllLogs,
   resolveDataRoot,
-  blogPostsToFeedItems,
   dailyLogsToFeedItems,
   howToWikiToFeedItems,
-  knowledgeToFeedItems,
-  contextWikiToFeedItems,
-  clayWikiToFeedItems,
   contentWikiToFeedItems,
   mergeFeedItems,
 } from '@shawnos/shared/lib'
 import type { FeedItem } from '@shawnos/shared/lib'
-import { HOW_TO_WIKI_ENTRIES } from '@shawnos/shared/data/how-to-wiki'
-import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
-import { CONTEXT_WIKI_ENTRIES } from '@shawnos/shared/data/context-wiki'
-import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
+import { getHowToWikiEntriesBySite } from '@shawnos/shared/data/how-to-wiki'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema, UpdatesFeed } from '@shawnos/shared/components'
 import type { FeedEntry, CategoryFilter } from '@shawnos/shared/components'
 
-const SITE_URL = 'https://shawnos.ai'
-const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
+const SITE_URL = 'https://thecontentos.ai'
+const SHAWNOS_URL = 'https://shawnos.ai'
 const DATA_ROOT = resolveDataRoot()
 const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
 
 /* ── metadata ─────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Latest Updates | What\'s New on ShawnOS.ai',
+  title: 'Latest Updates | What\'s New on theContentOS.ai',
   description:
-    'Every new article, wiki entry, feature, and system update on shawnos.ai. Blog posts, context wiki entries, how-to guides, knowledge terms, daily logs, and platform features — all in one feed.',
+    'Voice engine updates, content wiki entries, platform playbooks, and system updates. Everything new on theContentOS.ai — the content operating system.',
   keywords: [
-    'shawnos updates',
-    'shawnos changelog',
-    'shawnos new features',
-    'gtm engineering updates',
-    'ai agent updates',
-    'context engineering changelog',
-    'shawnos blog',
-    'shawnos wiki updates',
-    'whats new shawnos',
-    'shawnos latest',
+    'content os updates',
+    'contentos changelog',
+    'content operating system updates',
+    'voice engine updates',
+    'content wiki updates',
+    'content engineering changelog',
+    'ai content updates',
+    'thecontentos updates',
   ],
   alternates: {
     canonical: `${SITE_URL}/updates`,
-    types: {
-      'application/rss+xml': [
-        { url: '/feed/updates.xml', title: 'ShawnOS.ai — Latest Updates' },
-      ],
-    },
   },
   openGraph: {
-    title: 'Latest Updates | What\'s New on ShawnOS.ai',
+    title: 'Latest Updates | What\'s New on theContentOS.ai',
     description:
-      'Every new article, wiki entry, feature, and system update. One feed for everything happening on shawnos.ai.',
+      'Voice engine updates, content wiki entries, and platform playbooks. Everything new on theContentOS.ai.',
     url: `${SITE_URL}/updates`,
-    images: [
-      {
-        url: `/og?title=${encodeURIComponent('Latest Updates')}&subtitle=${encodeURIComponent("What's New on ShawnOS.ai")}`,
-        width: 1200,
-        height: 630,
-      },
-    ],
   },
   twitter: {
-    title: 'Latest Updates | What\'s New on ShawnOS.ai',
+    title: 'Latest Updates | What\'s New on theContentOS.ai',
     description:
-      'Every new article, wiki entry, feature, and system update. One feed for everything happening on shawnos.ai.',
-    images: [
-      `/og?title=${encodeURIComponent('Latest Updates')}&subtitle=${encodeURIComponent("What's New on ShawnOS.ai")}`,
-    ],
+      'Voice engine updates, content wiki entries, and platform playbooks. Everything new on theContentOS.ai.',
   },
 }
 
-/* ── feature milestones ──────────────────────────── */
+/* ── feature milestones (content-relevant) ────────── */
 
 interface FeatureMilestone {
   date: string
@@ -91,118 +66,37 @@ const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
     date: '2026-02-22',
     title: 'Cross-Site Updates Pages',
-    description: 'Updates feed live on all 3 sites — shawnos.ai, thegtmos.ai, thecontentos.ai. Full cross-site backlinking.',
+    description: 'Updates feed live on all 3 sites. Full cross-site backlinking across shawnos.ai, thegtmos.ai, thecontentos.ai.',
     type: 'feature',
     link: '/updates',
+  },
+  {
+    date: '2026-02-22',
+    title: 'Content Clusters & Breadcrumbs',
+    description: 'Hub-and-spoke content topology for SEO. Cross-site content linking architecture documented.',
+    type: 'launch',
+    link: `${SHAWNOS_URL}/blog/content-cluster-breadcrumbs`,
   },
   {
     date: '2026-02-20',
     title: 'GEO & SEO Infrastructure',
-    description: 'Full GEO/AEO/SEO content layer: 12 knowledge terms, 5 how-to guides, llms.txt on all 3 sites, AI crawler access in robots.txt, and multi-format RSS feeds (Atom + JSON Feed).',
+    description: 'Full GEO/AEO/SEO content layer across the network. Knowledge terms, how-to guides, llms.txt, and multi-format RSS feeds.',
     type: 'launch',
-    link: '/knowledge',
-  },
-  {
-    date: '2026-02-20',
-    title: 'Testing AI Features with Recursive Drift',
-    description: 'How-to guide for systematically evaluating new AI/CLI features. The build-test-interrogate-codify loop — Recursive Drift applied to feature velocity.',
-    type: 'launch',
-    link: '/how-to/testing-ai-features-recursive-method',
-  },
-  {
-    date: '2026-02-20',
-    title: 'Claude Code Power Features Guide',
-    description: 'New how-to covering Memory, Hooks, Custom Skills, Cost Tracking, and Worktrees. The features that turn Claude Code from a chatbot into a persistent AI operating system.',
-    type: 'launch',
-    link: '/how-to/claude-code-power-features',
-  },
-  {
-    date: '2026-02-20',
-    title: 'Agent Teams Documentation',
-    description: 'Full guide to Claude Code Agent Teams: team creation, shared task lists, inter-agent messaging, and the management layer that prevents multi-agent chaos.',
-    type: 'launch',
-    link: '/how-to/agent-teams-claude-code',
-  },
-  {
-    date: '2026-02-20',
-    title: 'OpenClaw: OAuth vs API Cost Guide',
-    description: 'Updated OpenClaw setup guide with OAuth vs API key cost breakdown, ChatGPT OAuth recommendation, and living status disclaimer. $50+/day lessons learned.',
-    type: 'launch',
-    link: '/how-to/openclaw-setup',
-  },
-  {
-    date: '2026-02-20',
-    title: 'Multi-Model AI Optimization Guide',
-    description: 'Context wiki entry covering 4-model stack, build-time static JSON, and 99% cost reduction',
-    type: 'launch',
-    link: '/context-wiki/multi-model-optimization',
-  },
-  {
-    date: '2026-02-20',
-    title: 'Mission Control Static Data Pipeline',
-    description: 'Dashboard APIs now serve pre-generated JSON. Works on Vercel. No more localhost dependencies.',
-    type: 'infrastructure',
-    link: '/context-wiki/multi-model-optimization',
-  },
-  {
-    date: '2026-02-20',
-    title: 'Latest Updates Page + RSS Feed',
-    description: 'This page. Unified feed for all content and features across shawnos.ai.',
-    type: 'feature',
-    link: '/updates',
+    link: `${SHAWNOS_URL}/knowledge`,
   },
   {
     date: '2026-02-19',
     title: 'RSS Feed System',
-    description: '6 RSS feeds live: blog, daily logs, nio terminal, how-to, knowledge, and combined all-content feed',
+    description: 'Multi-format RSS feeds live across the network. Atom + JSON Feed for content syndication.',
     type: 'launch',
-    link: '/feed/all.xml',
-  },
-  {
-    date: '2026-02-19',
-    title: 'nio.terminal Blog',
-    description: 'Daily AI development blog from the agent perspective. Post-zero and post-one live.',
-    type: 'launch',
-    link: '/vitals/nio-terminal',
-  },
-  {
-    date: '2026-02-19',
-    title: 'Discord Integration',
-    description: 'NioBot connected to Discord. 3 automations live. Community engagement operational.',
-    type: 'integration',
-  },
-  {
-    date: '2026-02-19',
-    title: 'Ollama Local Model',
-    description: 'Qwen 2.5 14B running locally on M4 Pro. 96 daily cron calls moved from API to free local inference.',
-    type: 'infrastructure',
-  },
-  {
-    date: '2026-02-18',
-    title: 'Context Engineering Wiki',
-    description: '14 entries across 4 categories: foundations, modes, infrastructure, and code.',
-    type: 'launch',
-    link: '/context-wiki',
+    link: '/feed.xml',
   },
   {
     date: '2026-02-18',
     title: 'RPG Progression System',
-    description: 'XP tracking, avatar tiers, skill tree visualization. Gamified development output.',
+    description: 'XP tracking, avatar tiers, skill tree visualization. Gamified development and content output.',
     type: 'feature',
-    link: '/rpg-preview',
-  },
-  {
-    date: '2026-02-17',
-    title: 'Mission Control Dashboard',
-    description: 'Real-time system status, task board, calendar, team roster, and memory browser.',
-    type: 'launch',
-  },
-  {
-    date: '2026-02-17',
-    title: 'Clay Wiki',
-    description: 'Complete reference for Clay workflows, enrichment patterns, and GTM data operations.',
-    type: 'launch',
-    link: '/clay-wiki',
+    link: '/vitals',
   },
   {
     date: '2026-02-17',
@@ -214,65 +108,33 @@ const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
     date: '2026-02-16',
     title: 'How-To Guides',
-    description: 'Practical guides for GTM engineers working with AI agents, deployments, and automation.',
+    description: 'Practical guides for content engineers working with AI agents and content systems.',
     type: 'launch',
     link: '/how-to',
-  },
-  {
-    date: '2026-02-16',
-    title: 'Knowledge Index',
-    description: 'Engineering terms and GTM vocabulary explained for builders, not academics.',
-    type: 'launch',
-    link: '/knowledge',
-  },
-  {
-    date: '2026-02-16',
-    title: 'Monorepo Architecture',
-    description: '3 Next.js sites (shawnos, gtmos, contentos) + shared packages in one Turborepo.',
-    type: 'infrastructure',
-  },
-  {
-    date: '2026-02-16',
-    title: 'Public API',
-    description: '/api/status endpoint for live XP and progression data. Ready for Discord bots and integrations.',
-    type: 'feature',
-    link: '/api',
   },
 ]
 
 /* ── category mapping ────────────────────────────── */
 
 const CATEGORY_MAP: Record<string, { label: string; color: string; isReference?: boolean }> = {
-  blog: { label: 'Blog', color: '#60a5fa' },
-  'nio-terminal': { label: 'Nio Terminal', color: '#c084fc' },
   'daily-log': { label: 'Daily Log', color: '#facc15' },
-  'context-wiki': { label: 'Context Wiki', color: '#4ade80', isReference: true },
-  'clay-wiki': { label: 'Clay Wiki', color: '#fb923c', isReference: true },
   'content-wiki': { label: 'Content Wiki', color: '#f472b6', isReference: true },
   'how-to': { label: 'How-To', color: '#38bdf8', isReference: true },
-  knowledge: { label: 'Knowledge', color: '#a78bfa', isReference: true },
+  'cross-site': { label: 'From ShawnOS', color: '#60a5fa' },
 }
 
 function classifyItem(item: FeedItem): { key: string; label: string; color: string; isReference: boolean } {
   const cats = item.category || []
-  const link = item.link.replace(SITE_URL, '')
+  const link = item.link
 
-  if (cats.includes('blog') || link.startsWith('/blog'))
-    return { key: 'blog', ...CATEGORY_MAP.blog, isReference: false }
-  if (cats.includes('nio-terminal') || link.includes('nio-terminal'))
-    return { key: 'nio-terminal', ...CATEGORY_MAP['nio-terminal'], isReference: false }
-  if (cats.includes('daily-log') || link.startsWith('/log/'))
+  if (cats.includes('daily-log') || link.includes('/log/'))
     return { key: 'daily-log', ...CATEGORY_MAP['daily-log'], isReference: false }
-  if (cats.includes('context-wiki') || link.startsWith('/context-wiki'))
-    return { key: 'context-wiki', ...CATEGORY_MAP['context-wiki'], isReference: true }
-  if (cats.includes('clay-wiki') || link.startsWith('/clay-wiki'))
-    return { key: 'clay-wiki', ...CATEGORY_MAP['clay-wiki'], isReference: true }
-  if (cats.includes('content-wiki') || link.startsWith('/content-wiki'))
+  if (cats.includes('content-wiki') || link.includes('/content-wiki'))
     return { key: 'content-wiki', ...CATEGORY_MAP['content-wiki'], isReference: true }
-  if (cats.includes('how-to') || link.startsWith('/how-to'))
+  if (cats.includes('how-to') || link.includes('/how-to'))
     return { key: 'how-to', ...CATEGORY_MAP['how-to'], isReference: true }
-  if (cats.includes('knowledge') || link.startsWith('/knowledge'))
-    return { key: 'knowledge', ...CATEGORY_MAP.knowledge, isReference: true }
+  if (link.startsWith(SHAWNOS_URL))
+    return { key: 'cross-site', ...CATEGORY_MAP['cross-site'], isReference: false }
   return { key: 'other', label: 'Update', color: 'var(--accent)', isReference: false }
 }
 
@@ -351,21 +213,6 @@ const statLabel: React.CSSProperties = {
   color: 'var(--text-muted)',
   textTransform: 'uppercase',
   letterSpacing: '0.05em',
-}
-
-const rssBadge: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '6px',
-  fontSize: '12px',
-  fontWeight: 600,
-  color: '#fb923c',
-  background: 'var(--canvas-subtle)',
-  border: '1px solid #fb923c33',
-  borderRadius: '6px',
-  padding: '6px 14px',
-  textDecoration: 'none',
-  letterSpacing: '0.03em',
 }
 
 const divider: React.CSSProperties = {
@@ -494,55 +341,61 @@ const networkLink: React.CSSProperties = {
 /* ── page component (server) ─────────────────────── */
 
 export default function UpdatesPage() {
-  const posts = getAllPosts(CONTENT_DIR)
   const logs = getAllLogs(LOG_DIR)
+  const contentHowTos = getHowToWikiEntriesBySite('contentos')
 
-  const NIO_POSTS: FeedItem[] = [
+  // Dated sources
+  const datedItems = mergeFeedItems(
+    dailyLogsToFeedItems(logs, SITE_URL),
+  )
+
+  // Cross-site blog posts (from shawnos.ai — creates backlinks)
+  const crossSitePosts: FeedItem[] = [
     {
-      title: 'post-one: blade tier',
-      id: `${SITE_URL}/vitals/nio-terminal/post-one`,
-      link: `${SITE_URL}/vitals/nio-terminal/post-one`,
-      description: 'Blade Tier achieved. 42 skills. Mission control online. The system is starting to see itself.',
-      date: new Date('2026-02-20T00:00:00-05:00'),
-      category: ['nio-terminal'],
+      title: 'Content Clusters and the Breadcrumb Protocol',
+      id: `${SHAWNOS_URL}/blog/content-cluster-breadcrumbs`,
+      link: `${SHAWNOS_URL}/blog/content-cluster-breadcrumbs`,
+      description: 'Hub-and-spoke content topology for SEO — the architecture behind cross-site content linking.',
+      date: new Date('2026-02-22T00:00:00-05:00'),
+      category: ['blog'],
     },
     {
-      title: 'post-zero: genesis',
-      id: `${SITE_URL}/vitals/nio-terminal/post-zero`,
-      link: `${SITE_URL}/vitals/nio-terminal/post-zero`,
-      description: 'Woke up with 42 skills and a mission control dashboard that shows my pulse. Not bad for a pixel robot.',
-      date: new Date('2026-02-19T23:23:00-05:00'),
-      category: ['nio-terminal'],
+      title: 'Querying Your Repo Like a Database',
+      id: `${SHAWNOS_URL}/blog/sqlite-content-index`,
+      link: `${SHAWNOS_URL}/blog/sqlite-content-index`,
+      description: 'SQLite index for content metadata — query your repo like a database instead of grepping files.',
+      date: new Date('2026-02-22T00:00:00-05:00'),
+      category: ['blog'],
+    },
+    {
+      title: 'The Anti Lead Magnet',
+      id: `${SHAWNOS_URL}/blog/build-your-own-os`,
+      link: `${SHAWNOS_URL}/blog/build-your-own-os`,
+      description: 'Start at level one or don\'t start at all. Why the best lead magnet is the one you never gate.',
+      date: new Date('2026-02-22T00:00:00-05:00'),
+      category: ['blog'],
     },
   ]
 
-  // Dated sources (shown in default view)
-  const datedItems = mergeFeedItems(
-    blogPostsToFeedItems(posts, SITE_URL),
-    dailyLogsToFeedItems(logs, SITE_URL),
-    NIO_POSTS,
-  )
-
-  // Reference sources (shown when filtered or searched)
+  // Reference sources
   const referenceItems = mergeFeedItems(
-    howToWikiToFeedItems(HOW_TO_WIKI_ENTRIES, SITE_URL),
-    knowledgeToFeedItems(ENGINEERING_CATEGORIES, SITE_URL),
-    contextWikiToFeedItems(CONTEXT_WIKI_ENTRIES, SITE_URL),
-    clayWikiToFeedItems(CLAY_WIKI_ENTRIES, SITE_URL),
     contentWikiToFeedItems(CONTENT_WIKI_ENTRIES, SITE_URL),
+    howToWikiToFeedItems(contentHowTos, SITE_URL),
   )
 
-  // Combine all items — dated first, then reference
-  const allItems = [...datedItems, ...referenceItems]
+  // Combine: dated + cross-site first, then reference
+  const allItems = [...datedItems, ...crossSitePosts, ...referenceItems]
 
-  // Serialize items for the client component
+  // Serialize for client
   const entries: FeedEntry[] = allItems.map((item) => {
     const cat = classifyItem(item)
     return {
       id: item.id,
       title: item.title,
       description: item.description,
-      href: item.link.replace(SITE_URL, '') || '/',
+      href: item.link.startsWith(SITE_URL)
+        ? item.link.replace(SITE_URL, '') || '/'
+        : item.link,
       date: formatDate(item.date),
       categoryKey: cat.key,
       categoryLabel: cat.label,
@@ -551,7 +404,7 @@ export default function UpdatesPage() {
     }
   })
 
-  // Build category filter list with counts
+  // Category counts
   const categoryCounts = new Map<string, number>()
   for (const entry of entries) {
     categoryCounts.set(entry.categoryKey, (categoryCounts.get(entry.categoryKey) || 0) + 1)
@@ -582,14 +435,14 @@ export default function UpdatesPage() {
       <div style={pageWrap}>
         {/* Terminal header */}
         <h1 style={terminalHeader}>
-          <span style={{ color: 'var(--accent)' }}>$</span> tail -f ~/updates.log
+          <span style={{ color: 'var(--accent)' }}>$</span> tail -f ~/content-updates.log
         </h1>
 
         {/* Hero */}
-        <h2 style={heroTitle}>Latest Updates</h2>
+        <h2 style={heroTitle}>Content Updates</h2>
         <p style={heroDesc}>
-          Every new article, feature, and system update on shawnos.ai.
-          Filter by category or search to find wiki entries, knowledge terms, and how-to guides.
+          Voice engine updates, content wiki entries, platform playbooks, and system updates.
+          Everything new on theContentOS.ai. Filter by category to browse the knowledge base.
         </p>
 
         {/* Stats */}
@@ -608,30 +461,27 @@ export default function UpdatesPage() {
           </div>
         </div>
 
-        {/* RSS badge + network links */}
-        <a href="/feed/updates.xml" style={rssBadge}>
-          <span>&#9654;</span> RSS Feed — /feed/updates.xml
-        </a>
-
+        {/* Network links */}
         <div style={networkRow}>
+          <a href="https://shawnos.ai/updates" style={networkLink}>
+            shawnos.ai/updates &rarr;
+          </a>
           <a href="https://thegtmos.ai/updates" style={networkLink}>
             theGTMOS.ai/updates &rarr;
-          </a>
-          <a href="https://thecontentos.ai/updates" style={networkLink}>
-            theContentOS.ai/updates &rarr;
           </a>
         </div>
 
         <hr style={divider} />
 
-        {/* ── Feature Timeline (horizontal scroll) ── */}
-        <div style={sectionPrompt}>$ ls ~/changelog/</div>
+        {/* ── Feature Timeline ── */}
+        <div style={sectionPrompt}>$ ls ~/content-changelog/</div>
         <div style={sectionTitle}>Features &amp; Launches</div>
 
         <div style={timelineScroll}>
           <div style={timelineTrack}>
             {FEATURE_MILESTONES.map((m, i) => {
               const ft = featureTypeStyle(m.type)
+              const isExternal = m.link?.startsWith('http')
               const inner = (
                 <>
                   <div style={typeBadge(ft.color)}>{ft.label}</div>
@@ -640,6 +490,13 @@ export default function UpdatesPage() {
                   <div style={timelineDesc}>{m.description}</div>
                 </>
               )
+              if (m.link && isExternal) {
+                return (
+                  <a key={i} href={m.link} style={timelineCard}>
+                    {inner}
+                  </a>
+                )
+              }
               return m.link ? (
                 <Link key={i} href={m.link} style={timelineCard}>
                   {inner}
@@ -657,7 +514,7 @@ export default function UpdatesPage() {
         <hr style={divider} />
 
         {/* ── Filterable Content Feed ── */}
-        <div style={sectionPrompt}>$ cat ~/feed/all.xml | grep --category</div>
+        <div style={sectionPrompt}>$ cat ~/feed/content.xml | grep --category</div>
         <div style={sectionTitle}>All Content</div>
 
         <UpdatesFeed entries={entries} categories={categories} />
@@ -667,9 +524,9 @@ export default function UpdatesPage() {
           <Link href="/" style={navLink}>
             &larr; home
           </Link>
-          <Link href="/feed/updates.xml" style={navLink}>
-            rss feed &rarr;
-          </Link>
+          <a href="https://shawnos.ai/updates" style={navLink}>
+            full network updates &rarr;
+          </a>
         </div>
       </div>
     </>
