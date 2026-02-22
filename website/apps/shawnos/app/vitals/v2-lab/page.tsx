@@ -8,12 +8,12 @@
 import type { Metadata } from 'next'
 import {
   getRPGProfile,
-  getRPGProfileV2,
   resolveDataRoot,
   TITLE_TABLE,
   tierColor,
 } from '@shawnos/shared/lib'
-import type { RPGProfileV2, V2ScoringEntry } from '@shawnos/shared/lib'
+import { getRPGProfileV2 } from '@shawnos/shared/lib/rpg-v2.server'
+import type { RPGProfileV2, V2ScoringEntry } from '@shawnos/shared/lib/rpg-v2'
 
 const DATA_ROOT = resolveDataRoot()
 

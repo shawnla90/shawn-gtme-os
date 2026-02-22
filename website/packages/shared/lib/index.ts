@@ -53,13 +53,8 @@ export type {
 } from './vitals'
 export { getWebsiteStats } from './vitals.server'
 
-// V2 progression
-export type { V2ScoringEntry, V2Meta, RPGProfileV2 } from './rpg-v2'
-export { getRPGProfileV2 } from './rpg-v2.server'
-
-// V3 progression
-export type { V3ScoringEntry, V3Meta, RPGProfileV3 } from './rpg-v3'
-export { getRPGProfileV3 } from './rpg-v3.server'
+// V2/V3 progression — removed from barrel exports (V4 migration)
+// Files retained for reference but no longer re-exported.
 
 // Cost analytics
 export type { CostBreakdown, CostAnalytics } from './costs'

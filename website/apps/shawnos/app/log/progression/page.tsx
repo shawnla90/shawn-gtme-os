@@ -5,8 +5,6 @@ import {
   getAllLogs,
   getLogByDate,
   resolveDataRoot,
-  getRPGProfileV3,
-  getRPGProfileV2,
   getRPGProfile,
   getAvatarUrlsForProfile,
   tierColor,
@@ -21,15 +19,15 @@ const SITE_URL = 'https://shawnos.ai'
 export const metadata: Metadata = {
   title: 'Character Progression',
   description:
-    'XP growth, grade trends, momentum chains, milestones, and token efficiency. Character progression from the daily build log.',
+    'XP growth, grade trends, milestones, and token efficiency. Character progression from the daily build log.',
   alternates: { canonical: `${SITE_URL}/log/progression` },
   openGraph: {
     title: 'Character Progression | shawnos.ai',
-    description: 'XP growth, grade trends, momentum chains, and milestones.',
+    description: 'XP growth, grade trends, and milestones.',
     url: `${SITE_URL}/log/progression`,
     images: [
       {
-        url: '/og?title=Character+Progression&subtitle=XP+growth%2C+grades%2C+chains%2C+milestones',
+        url: '/og?title=Character+Progression&subtitle=XP+growth%2C+grades%2C+milestones',
         width: 1200,
         height: 630,
       },
@@ -38,9 +36,7 @@ export const metadata: Metadata = {
 }
 
 export default function ProgressionPage() {
-  const profileV3 = getRPGProfileV3(DATA_ROOT)
-  const profileV2 = getRPGProfileV2(DATA_ROOT)
-  const profile = profileV3 ?? profileV2 ?? getRPGProfile(DATA_ROOT)
+  const profile = getRPGProfile(DATA_ROOT)
 
   if (!profile) {
     return (
@@ -65,19 +61,23 @@ export default function ProgressionPage() {
     )
   }
 
-  const isV3 = !!profileV3
-  const meta = isV3 ? profileV3!.v3_meta : null
-  const scoringLog = meta?.scoring_log ?? []
   const avatarUrls = getAvatarUrlsForProfile(profile)
   const tc = tierColor(profile.avatar_tier)
 
-  // Build cost map from daily logs
+  // Build per-day scoring data + cost map from daily logs
   const logs = getAllLogs(LOG_DIR)
+  const dayScoring: { date: string; output_score: number; letter_grade: string; commits_count: number }[] = []
   const costMap: Record<string, number> = {}
   for (const summary of logs) {
     const log = getLogByDate(summary.date, LOG_DIR)
     if (log) {
       costMap[summary.date] = log.token_usage.reduce((s, t) => s + (t.cost ?? 0), 0)
+      dayScoring.push({
+        date: summary.date,
+        output_score: log.stats.output_score,
+        letter_grade: log.stats.letter_grade,
+        commits_count: log.git_summary.commits_today,
+      })
     }
   }
 
@@ -112,19 +112,6 @@ export default function ProgressionPage() {
           >
             &larr; back to logs
           </Link>
-          {isV3 && (
-            <span
-              style={{
-                fontSize: '11px',
-                color: 'var(--text-muted)',
-                background: 'var(--canvas-subtle)',
-                padding: '3px 8px',
-                borderRadius: '4px',
-              }}
-            >
-              Engine v3
-            </span>
-          )}
         </div>
 
         {/* Header */}
@@ -146,21 +133,13 @@ export default function ProgressionPage() {
           </p>
         </div>
 
-        {meta ? (
-          <ProgressionClient
-            profile={profile}
-            avatarSrc={avatarUrls.idle}
-            tierColor={tc}
-            scoringLog={scoringLog}
-            meta={meta}
-            costMap={costMap}
-            logs={logs}
-          />
-        ) : (
-          <p style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
-            V3 scoring data not available. Only V2/V1 profile loaded.
-          </p>
-        )}
+        <ProgressionClient
+          profile={profile}
+          avatarSrc={avatarUrls.idle}
+          tierColor={tc}
+          dayScoring={dayScoring}
+          costMap={costMap}
+        />
       </div>
     </>
   )

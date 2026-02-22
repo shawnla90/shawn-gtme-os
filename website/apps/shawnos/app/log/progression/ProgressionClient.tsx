@@ -1,9 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import type { V3ScoringEntry, V3Meta } from '@shawnos/shared/lib/rpg-v3'
 import type { RPGProfile, Milestone } from '@shawnos/shared/lib/rpg'
-import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
 
 /* ------------------------------------------------------------------ */
 /*  Color constants                                                     */
@@ -36,6 +34,17 @@ const TARGET_MILESTONES = [
 ]
 
 /* ------------------------------------------------------------------ */
+/*  Types                                                               */
+/* ------------------------------------------------------------------ */
+
+interface DayScoringEntry {
+  date: string
+  output_score: number
+  letter_grade: string
+  commits_count: number
+}
+
+/* ------------------------------------------------------------------ */
 /*  Props                                                               */
 /* ------------------------------------------------------------------ */
 
@@ -43,10 +52,8 @@ interface ProgressionClientProps {
   profile: RPGProfile
   avatarSrc: string | null
   tierColor: string
-  scoringLog: V3ScoringEntry[]
-  meta: V3Meta
+  dayScoring: DayScoringEntry[]
   costMap: Record<string, number>
-  logs: DailyLogSummary[]
 }
 
 /* ------------------------------------------------------------------ */
@@ -166,20 +173,20 @@ function ProfileHero({
 }
 
 /* ------------------------------------------------------------------ */
-/*  XP Graph                                                            */
+/*  Score Graph (replaces XP Graph)                                     */
 /* ------------------------------------------------------------------ */
 
-function XPGraph({ scoringLog }: { scoringLog: V3ScoringEntry[] }) {
-  if (scoringLog.length === 0) return null
-  const maxXP = Math.max(...scoringLog.map((e) => e.v3_xp))
+function ScoreGraph({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
+  if (dayScoring.length === 0) return null
+  const maxScore = Math.max(...dayScoring.map((e) => e.output_score))
 
   return (
     <Card>
-      <SectionTitle>XP Earned Per Day</SectionTitle>
+      <SectionTitle>Score Per Day</SectionTitle>
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '160px' }}>
-        {scoringLog.map((entry) => {
-          const heightPct = maxXP > 0 ? (entry.v3_xp / maxXP) * 100 : 0
-          const color = gradeColor(entry.v3_grade)
+        {dayScoring.map((entry) => {
+          const heightPct = maxScore > 0 ? (entry.output_score / maxScore) * 100 : 0
+          const color = gradeColor(entry.letter_grade)
           return (
             <Link
               key={entry.date}
@@ -222,9 +229,9 @@ function XPGraph({ scoringLog }: { scoringLog: V3ScoringEntry[] }) {
       </div>
       {/* Legend */}
       <div style={{ display: 'flex', gap: '12px', marginTop: '28px', fontSize: '10px', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
-        {scoringLog.map((e) => (
-          <span key={e.date} style={{ color: gradeColor(e.v3_grade) }}>
-            {e.date.slice(8)}: {e.v3_xp} XP
+        {dayScoring.map((e) => (
+          <span key={e.date} style={{ color: gradeColor(e.letter_grade) }}>
+            {e.date.slice(8)}: {e.output_score} pts
           </span>
         ))}
       </div>
@@ -233,11 +240,11 @@ function XPGraph({ scoringLog }: { scoringLog: V3ScoringEntry[] }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Grade Table                                                         */
+/*  Grade Table (V4: Date, Score, Grade, Commits)                       */
 /* ------------------------------------------------------------------ */
 
-function GradeTable({ scoringLog }: { scoringLog: V3ScoringEntry[] }) {
-  if (scoringLog.length === 0) return null
+function GradeTable({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
+  if (dayScoring.length === 0) return null
 
   const th: React.CSSProperties = {
     padding: '8px 6px',
@@ -258,8 +265,6 @@ function GradeTable({ scoringLog }: { scoringLog: V3ScoringEntry[] }) {
     whiteSpace: 'nowrap',
   }
 
-  const fmtBonus = (v: number) => (v > 0 ? `+${(v * 100).toFixed(1)}%` : '—')
-
   return (
     <Card>
       <SectionTitle>Scoring Log</SectionTitle>
@@ -268,46 +273,24 @@ function GradeTable({ scoringLog }: { scoringLog: V3ScoringEntry[] }) {
           <thead>
             <tr>
               <th style={{ ...th, textAlign: 'left' }}>Date</th>
-              <th style={{ ...th, textAlign: 'right' }}>Raw</th>
-              <th style={{ ...th, textAlign: 'right' }}>Base</th>
+              <th style={{ ...th, textAlign: 'right' }}>Score</th>
               <th style={{ ...th, textAlign: 'center' }}>Grade</th>
-              <th style={{ ...th, textAlign: 'center' }}>Mom</th>
-              <th style={{ ...th, textAlign: 'right' }}>Strk</th>
-              <th style={{ ...th, textAlign: 'right' }}>Qual</th>
-              <th style={{ ...th, textAlign: 'right' }}>Eff</th>
-              <th style={{ ...th, textAlign: 'right' }}>Vel</th>
-              <th style={{ ...th, textAlign: 'right' }}>Ship</th>
-              <th style={{ ...th, textAlign: 'right' }}>Mult</th>
-              <th style={{ ...th, textAlign: 'right' }}>XP</th>
+              <th style={{ ...th, textAlign: 'right' }}>Commits</th>
             </tr>
           </thead>
           <tbody>
-            {scoringLog.map((e) => (
+            {dayScoring.map((e) => (
               <tr key={e.date}>
                 <td style={{ ...td, textAlign: 'left' }}>
                   <Link href={`/log/${e.date}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>
                     {e.date}
                   </Link>
                 </td>
-                <td style={{ ...td, textAlign: 'right' }}>{e.raw_score}</td>
-                <td style={{ ...td, textAlign: 'right' }}>{e.base_score.toFixed(0)}</td>
-                <td style={{ ...td, textAlign: 'center', fontWeight: 700, color: gradeColor(e.v3_grade) }}>
-                  {e.v3_grade}
+                <td style={{ ...td, textAlign: 'right', fontWeight: 700 }}>{e.output_score}</td>
+                <td style={{ ...td, textAlign: 'center', fontWeight: 700, color: gradeColor(e.letter_grade) }}>
+                  {e.letter_grade}
                 </td>
-                <td style={{ ...td, textAlign: 'center', color: 'var(--accent)' }}>
-                  {e.momentum_mult.toFixed(2)}x
-                </td>
-                <td style={{ ...td, textAlign: 'right' }}>{e.streak_days}d</td>
-                <td style={{ ...td, textAlign: 'right' }}>{fmtBonus(e.quality_bonus)}</td>
-                <td style={{ ...td, textAlign: 'right' }}>{fmtBonus(e.efficiency_bonus)}</td>
-                <td style={{ ...td, textAlign: 'right' }}>{fmtBonus(e.velocity_bonus)}</td>
-                <td style={{ ...td, textAlign: 'right' }}>{fmtBonus(e.ship_bonus)}</td>
-                <td style={{ ...td, textAlign: 'right', color: 'var(--accent)', fontWeight: 600 }}>
-                  {e.total_mult.toFixed(2)}x
-                </td>
-                <td style={{ ...td, textAlign: 'right', fontWeight: 700, color: gradeColor(e.v3_grade) }}>
-                  {e.v3_xp}
-                </td>
+                <td style={{ ...td, textAlign: 'right' }}>{e.commits_count}</td>
               </tr>
             ))}
           </tbody>
@@ -318,100 +301,15 @@ function GradeTable({ scoringLog }: { scoringLog: V3ScoringEntry[] }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Chain / Momentum Viz                                                */
+/*  Class Display (simplified — no V3 breakdown)                        */
 /* ------------------------------------------------------------------ */
 
-function ChainViz({ meta, scoringLog }: { meta: V3Meta; scoringLog: V3ScoringEntry[] }) {
-  const maxChain = Math.max(...scoringLog.map((e) => e.ascending_chain), 1)
-
+function ClassDisplay({ currentClass }: { currentClass: string }) {
   return (
     <Card>
-      <SectionTitle>Momentum</SectionTitle>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '16px' }}>
-        <StatNum label="Chain" value={meta.current_ascending_chain} />
-        <StatNum label="Streak" value={`${meta.current_streak}d`} />
-        <StatNum label="Momentum" value={`${meta.momentum_mult.toFixed(2)}x`} />
-        <StatNum label="Best Chain" value={meta.longest_chain} />
-      </div>
-      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '80px' }}>
-        {scoringLog.map((e) => {
-          const heightPct = (e.ascending_chain / maxChain) * 100
-          return (
-            <div
-              key={e.date}
-              style={{
-                flex: '1 1 0',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'flex-end',
-                height: '100%',
-              }}
-            >
-              <div
-                style={{
-                  width: '100%',
-                  borderRadius: '3px 3px 0 0',
-                  backgroundColor: e.ascending_chain > 1 ? 'var(--accent)' : 'var(--border)',
-                  height: `${heightPct}%`,
-                  minHeight: '4px',
-                }}
-              />
-              <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '4px' }}>
-                {e.date.slice(8)}
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </Card>
-  )
-}
-
-/* ------------------------------------------------------------------ */
-/*  Class Breakdown                                                     */
-/* ------------------------------------------------------------------ */
-
-function ClassBreakdown({ currentClass, meta }: { currentClass: string; meta: V3Meta }) {
-  const breakdown = meta.class_breakdown
-
-  return (
-    <Card>
-      <SectionTitle>Class Distribution ({meta.class_window} window)</SectionTitle>
-      <div style={{ fontSize: '22px', fontWeight: 700, color: CLASS_COLORS[currentClass.toLowerCase()] ?? 'var(--accent)', marginBottom: '12px' }}>
+      <SectionTitle>Current Class</SectionTitle>
+      <div style={{ fontSize: '22px', fontWeight: 700, color: CLASS_COLORS[currentClass.toLowerCase()] ?? 'var(--accent)' }}>
         {currentClass}
-      </div>
-      {/* Stacked bar */}
-      <div style={{ display: 'flex', height: '20px', borderRadius: '4px', overflow: 'hidden', marginBottom: '12px' }}>
-        {Object.entries(breakdown)
-          .filter(([, pct]) => pct > 0)
-          .map(([cls, pct]) => (
-            <div
-              key={cls}
-              style={{
-                width: `${pct * 100}%`,
-                backgroundColor: CLASS_COLORS[cls] ?? '#64748B',
-              }}
-              title={`${cls}: ${(pct * 100).toFixed(0)}%`}
-            />
-          ))}
-      </div>
-      {/* Legend */}
-      <div style={{ display: 'flex', gap: '16px', fontSize: '11px', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
-        {Object.entries(breakdown).map(([cls, pct]) => (
-          <span key={cls} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <span
-              style={{
-                display: 'inline-block',
-                width: '8px',
-                height: '8px',
-                borderRadius: '50%',
-                backgroundColor: CLASS_COLORS[cls] ?? '#64748B',
-              }}
-            />
-            <span style={{ textTransform: 'capitalize' }}>{cls}</span>: {(pct * 100).toFixed(0)}%
-          </span>
-        ))}
       </div>
     </Card>
   )
@@ -480,16 +378,16 @@ function Milestones({ milestones }: { milestones: Milestone[] }) {
 /* ------------------------------------------------------------------ */
 
 function TokenEfficiency({
-  scoringLog,
+  dayScoring,
   costMap,
 }: {
-  scoringLog: V3ScoringEntry[]
+  dayScoring: DayScoringEntry[]
   costMap: Record<string, number>
 }) {
-  const effData = scoringLog.map((e) => {
+  const effData = dayScoring.map((e) => {
     const cost = costMap[e.date] ?? 0
-    const ptsDollar = cost > 0 ? e.raw_score / cost : 0
-    return { date: e.date, ptsDollar, cost, score: e.raw_score, xp: e.v3_xp }
+    const ptsDollar = cost > 0 ? e.output_score / cost : 0
+    return { date: e.date, ptsDollar, cost, score: e.output_score }
   })
 
   const totalCost = effData.reduce((s, d) => s + d.cost, 0)
@@ -592,28 +490,17 @@ export default function ProgressionClient({
   profile,
   avatarSrc,
   tierColor: tc,
-  scoringLog,
-  meta,
+  dayScoring,
   costMap,
-  logs,
 }: ProgressionClientProps) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       <ProfileHero profile={profile} avatarSrc={avatarSrc} tierColor={tc} />
-      <XPGraph scoringLog={scoringLog} />
-      <GradeTable scoringLog={scoringLog} />
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '20px',
-        }}
-      >
-        <ChainViz meta={meta} scoringLog={scoringLog} />
-        <ClassBreakdown currentClass={profile.class} meta={meta} />
-      </div>
+      <ScoreGraph dayScoring={dayScoring} />
+      <GradeTable dayScoring={dayScoring} />
+      <ClassDisplay currentClass={profile.class} />
       <Milestones milestones={profile.milestones} />
-      <TokenEfficiency scoringLog={scoringLog} costMap={costMap} />
+      <TokenEfficiency dayScoring={dayScoring} costMap={costMap} />
     </div>
   )
 }

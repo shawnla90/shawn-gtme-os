@@ -3,8 +3,6 @@ import path from 'path'
 import {
   getAllLogs,
   getLogAggregates,
-  getRPGProfileV3,
-  getRPGProfileV2,
   getRPGProfile,
   getAvatarUrlsForProfile,
   resolveDataRoot,
@@ -54,23 +52,8 @@ export default function LogIndex() {
   const logs = getAllLogs(LOG_DIR)
   const aggregates = getLogAggregates(LOG_DIR)
 
-  // V3 first, V2 fallback, V1 last resort
-  const profileV3 = getRPGProfileV3(DATA_ROOT)
-  const profileV2 = getRPGProfileV2(DATA_ROOT)
-  const profile = profileV3 ?? profileV2 ?? getRPGProfile(DATA_ROOT)
+  const profile = getRPGProfile(DATA_ROOT)
   const urls = profile && profile.level > 0 ? getAvatarUrlsForProfile(profile) : null
-
-  // Build V3 grade overrides from scoring log
-  const v3Grades: Record<string, string> = {}
-  if (profileV3?.v3_meta?.scoring_log) {
-    for (const entry of profileV3.v3_meta.scoring_log) {
-      v3Grades[entry.date] = entry.v3_grade
-    }
-  } else if (profileV2?.v2_meta?.scoring_log) {
-    for (const entry of profileV2.v2_meta.scoring_log) {
-      v3Grades[entry.date] = entry.v2_grade
-    }
-  }
 
   return (
     <>
@@ -80,7 +63,6 @@ export default function LogIndex() {
         aggregates={aggregates}
         profile={profile}
         avatarUrls={urls}
-        v3Grades={v3Grades}
       />
     </>
   )

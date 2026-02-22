@@ -55,11 +55,12 @@ interface LogDetailProps {
   prevDate: string | null
   nextDate: string | null
   profile: RPGProfile | null
-  v2Grade: string | null
+  /** @deprecated V3 migration — always null, kept for API compat */
+  v2Grade?: string | null
 }
 
-export default function LogDetail({ log, prevDate, nextDate, profile, v2Grade }: LogDetailProps) {
-  const grade = v2Grade ?? log.stats.letter_grade
+export default function LogDetail({ log, prevDate, nextDate, profile }: LogDetailProps) {
+  const grade = log.stats.letter_grade
   const gc = gradeClass(grade)
   const totalCost = log.token_usage.reduce((s, t) => s + (t.cost ?? 0), 0)
 

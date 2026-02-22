@@ -3,34 +3,27 @@
 import Link from 'next/link'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
 
-interface ScoringEntry {
+interface DayScoringEntry {
   date: string
-  raw_score: number
-  v2_xp?: number
-  v3_xp?: number
+  output_score: number
+  letter_grade: string
+  commits_count: number
 }
 
 interface ProgressionTokenEfficiencyProps {
-  scoringLog: ScoringEntry[]
+  dayScoring: DayScoringEntry[]
   logs: DailyLogSummary[]
-  /** Map of date -> total cost for that day */
   costMap: Record<string, number>
-  isV3?: boolean
 }
 
 export default function ProgressionTokenEfficiency({
-  scoringLog,
+  dayScoring,
   costMap,
-  isV3,
 }: ProgressionTokenEfficiencyProps) {
-  // Build efficiency data (pts/$ per day)
-  const getXP = (e: ScoringEntry) => (isV3 ? e.v3_xp : e.v2_xp) ?? e.raw_score
-  const efficiencyData = scoringLog.map((entry) => {
+  const efficiencyData = dayScoring.map((entry) => {
     const cost = costMap[entry.date] ?? 0
-    const xp = getXP(entry)
-    const ptsDollar = cost > 0 ? entry.raw_score / cost : 0
-    const costPerXP = xp > 0 ? cost / xp : 0
-    return { date: entry.date, ptsDollar, cost, score: entry.raw_score, xp, costPerXP }
+    const ptsDollar = cost > 0 ? entry.output_score / cost : 0
+    return { date: entry.date, ptsDollar, cost, score: entry.output_score }
   })
 
   const totalCost = efficiencyData.reduce((s, d) => s + d.cost, 0)

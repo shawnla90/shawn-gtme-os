@@ -11,34 +11,28 @@ function gradeBarColor(grade: string): string {
   return 'bg-red-500'
 }
 
-interface ScoringEntry {
+interface DayScoringEntry {
   date: string
-  v2_xp?: number
-  v3_xp?: number
-  v2_grade?: string
-  v3_grade?: string
+  output_score: number
+  letter_grade: string
+  commits_count: number
 }
 
 interface ProgressionXPGraphProps {
-  scoringLog: ScoringEntry[]
-  isV3?: boolean
+  dayScoring: DayScoringEntry[]
 }
 
-export default function ProgressionXPGraph({ scoringLog, isV3 }: ProgressionXPGraphProps) {
-  if (scoringLog.length === 0) return null
+export default function ProgressionXPGraph({ dayScoring }: ProgressionXPGraphProps) {
+  if (dayScoring.length === 0) return null
 
-  const getXP = (e: ScoringEntry) => (isV3 ? e.v3_xp : e.v2_xp) ?? 0
-  const getGrade = (e: ScoringEntry) => (isV3 ? e.v3_grade : e.v2_grade) ?? 'D'
-  const maxXP = Math.max(...scoringLog.map(getXP))
+  const maxScore = Math.max(...dayScoring.map((e) => e.output_score))
 
   return (
     <div className="card">
-      <h3 className="text-xs font-bold text-green-500 uppercase tracking-wider mb-4">XP Earned Per Day</h3>
+      <h3 className="text-xs font-bold text-green-500 uppercase tracking-wider mb-4">Score Per Day</h3>
       <div className="flex items-end gap-1" style={{ height: '160px' }}>
-        {scoringLog.map((entry) => {
-          const xp = getXP(entry)
-          const grade = getGrade(entry)
-          const heightPct = maxXP > 0 ? (xp / maxXP) * 100 : 0
+        {dayScoring.map((entry) => {
+          const heightPct = maxScore > 0 ? (entry.output_score / maxScore) * 100 : 0
           return (
             <Link
               key={entry.date}
@@ -47,10 +41,10 @@ export default function ProgressionXPGraph({ scoringLog, isV3 }: ProgressionXPGr
               style={{ height: '100%' }}
             >
               <div className="text-[11px] text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity mb-1">
-                {xp}
+                {entry.output_score}
               </div>
               <div
-                className={`w-full rounded-t ${gradeBarColor(grade)} group-hover:opacity-80 transition-opacity`}
+                className={`w-full rounded-t ${gradeBarColor(entry.letter_grade)} group-hover:opacity-80 transition-opacity`}
                 style={{ height: `${heightPct}%`, minHeight: '4px' }}
               />
               <div className="text-[11px] text-gray-600 mt-1 rotate-[-45deg] origin-top-left whitespace-nowrap">

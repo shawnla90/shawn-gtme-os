@@ -46,16 +46,17 @@ interface LogIndexProps {
   logs: DailyLogSummary[]
   aggregates: LogAggregates
   profile: RPGProfile | null
-  v2Grades: Record<string, string>
+  /** @deprecated V3 migration — always empty, kept for API compat */
+  v2Grades?: Record<string, string>
 }
 
-export default function LogIndex({ logs, aggregates, profile, v2Grades }: LogIndexProps) {
+export default function LogIndex({ logs, aggregates, profile }: LogIndexProps) {
   const [search, setSearch] = useState('')
   const [gradeFilter, setGradeFilter] = useState('All')
 
   // Client-side filtering
   const filtered = logs.filter((log) => {
-    const grade = v2Grades[log.date] ?? log.letter_grade
+    const grade = log.letter_grade
     if (gradeFilter !== 'All' && grade !== gradeFilter) return false
     if (search && !log.date.includes(search) && !formatDate(log.date).toLowerCase().includes(search.toLowerCase())) return false
     return true
@@ -140,7 +141,7 @@ export default function LogIndex({ logs, aggregates, profile, v2Grades }: LogInd
       {/* Log list */}
       <div className="space-y-2">
         {filtered.map((log) => {
-          const grade = v2Grades[log.date] ?? log.letter_grade
+          const grade = log.letter_grade
           const gc = gradeClass(grade)
           return (
             <Link key={log.date} href={`/logs/${log.date}`} className="block group">

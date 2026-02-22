@@ -40,7 +40,6 @@ interface LogIndexClientProps {
     idle?: string | null
     action?: string | null
   } | null
-  v3Grades: Record<string, string>
 }
 
 export default function LogIndexClient({
@@ -48,13 +47,12 @@ export default function LogIndexClient({
   aggregates,
   profile,
   avatarUrls,
-  v3Grades,
 }: LogIndexClientProps) {
   const [search, setSearch] = useState('')
   const [gradeFilter, setGradeFilter] = useState('All')
 
   const filtered = logs.filter((log) => {
-    const grade = v3Grades[log.date] ?? log.letter_grade
+    const grade = log.letter_grade
     if (gradeFilter !== 'All' && grade !== gradeFilter) return false
     if (
       search &&
@@ -258,17 +256,13 @@ export default function LogIndexClient({
         </p>
       ) : (
         <div>
-          {filtered.map((log) => {
-            const grade = v3Grades[log.date] ?? log.letter_grade
-            return (
-              <LogCard
-                key={log.date}
-                {...log}
-                letter_grade={grade}
-                basePath="/log"
-              />
-            )
-          })}
+          {filtered.map((log) => (
+            <LogCard
+              key={log.date}
+              {...log}
+              basePath="/log"
+            />
+          ))}
         </div>
       )}
     </section>
