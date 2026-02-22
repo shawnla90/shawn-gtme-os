@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-22T03:55:05.000Z",
+  "generated": "2026-02-22T05:00:05.000Z",
   "system": {
     "status": "degraded",
     "uptime": "live",
@@ -25,46 +25,11 @@
   ],
   "drafts": [
     {
-      "type": "linkedin",
-      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "Building & Sharing (capstone)"
-    },
-    {
-      "type": "x",
-      "title": "Full Ecosystem X Threads -- Day 4",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": null
-    },
-    {
-      "type": "linkedin",
-      "title": "Content OS: The Content Machine -- Day 3",
-      "status": "draft",
-      "date": "2026-02-25",
-      "pillar": "Skill/System Share"
-    },
-    {
       "type": "substack",
       "title": "Start at Level One",
       "status": "draft",
-      "date": "2026-02-25",
+      "date": "2026-03-03",
       "pillar": null
-    },
-    {
-      "type": "x",
-      "title": "Content OS X Threads -- Day 3",
-      "status": "draft",
-      "date": "2026-02-25",
-      "pillar": null
-    },
-    {
-      "type": "linkedin",
-      "title": "GTM OS: The Infrastructure -- Day 2",
-      "status": "draft",
-      "date": "2026-02-24",
-      "pillar": "Skill/System Share"
     },
     {
       "type": "substack",
@@ -74,31 +39,66 @@
       "pillar": null
     },
     {
-      "type": "x",
-      "title": "GTM OS X Threads -- Day 2",
+      "type": "substack",
+      "title": "recursive drift",
       "status": "draft",
-      "date": "2026-02-24",
+      "date": "2026-02-19",
       "pillar": null
     },
     {
       "type": "linkedin",
-      "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
+      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
       "status": "draft",
-      "date": "2026-02-23",
-      "pillar": "Building & Sharing"
+      "date": "2026-02-18",
+      "pillar": "Skill/System Shares"
     },
     {
       "type": "x",
-      "title": "ShawnOS X Threads -- Day 1",
+      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
       "status": "draft",
-      "date": "2026-02-23",
+      "date": "2026-02-18",
+      "pillar": "Skill/System Shares"
+    },
+    {
+      "type": "linkedin",
+      "title": "Build Your Own OS -- LinkedIn Cross-Promo",
+      "status": "draft",
+      "date": "2026-02-17",
       "pillar": null
+    },
+    {
+      "type": "reddit",
+      "title": "Build Your Own OS -- Reddit Post",
+      "status": "draft",
+      "date": "2026-02-17",
+      "pillar": null
+    },
+    {
+      "type": "substack",
+      "title": "OS.AI Labs, Post 4 -- The Cursor Discovery",
+      "status": "draft",
+      "date": "2026-02-17",
+      "pillar": null
+    },
+    {
+      "type": "x",
+      "title": "Build Your Own OS -- X Thread Cross-Promo",
+      "status": "draft",
+      "date": "2026-02-17",
+      "pillar": null
+    },
+    {
+      "type": "linkedin",
+      "title": "substack build weekend crosspromo",
+      "status": "draft",
+      "date": "2026-02-16",
+      "pillar": "building & sharing"
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
     "teamMembers": 4,
-    "draftsTracked": 63
+    "draftsTracked": 55
   }
 }

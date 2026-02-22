@@ -1,0 +1,870 @@
+{
+  "date": "2026-02-21",
+  "generated_at": "2026-02-22T05:00:02.423806+00:00",
+  "version": 3,
+  "accomplishments": [
+    {
+      "type": "config_file",
+      "title": "gtmos package",
+      "path": "website/apps/gtmos/package.json",
+      "source": "auto",
+      "timestamp": "23:58",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "generate_content_json",
+      "path": "scripts/generate_content_json.py",
+      "source": "auto",
+      "timestamp": "23:58",
+      "words": 738,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log page",
+      "path": "website/apps/shawnos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "01:01",
+      "words": 276,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api openclaw-status route",
+      "path": "website/apps/mission-control/app/api/openclaw-status/route.ts",
+      "source": "auto",
+      "timestamp": "14:01",
+      "words": 303,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
+      "source": "auto",
+      "timestamp": "23:58",
+      "words": 4832,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api recent-memories route",
+      "path": "website/apps/mission-control/app/api/recent-memories/route.ts",
+      "source": "auto",
+      "timestamp": "15:10",
+      "words": 471,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api tasks route",
+      "path": "website/apps/mission-control/app/api/tasks/route.ts",
+      "source": "auto",
+      "timestamp": "16:07",
+      "words": 605,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "build_index",
+      "path": "scripts/build_index.py",
+      "source": "auto",
+      "timestamp": "23:58",
+      "words": 3405,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal slug page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "08:01",
+      "words": 142,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "gtmos home page",
+      "path": "website/apps/gtmos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:01",
+      "words": 1020,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
+      "source": "auto",
+      "timestamp": "15:19",
+      "words": 236,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "query_index",
+      "path": "scripts/query_index.py",
+      "source": "auto",
+      "timestamp": "23:58",
+      "words": 1762,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "15:25",
+      "words": 1884,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api system-metrics route",
+      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "source": "auto",
+      "timestamp": "01:59",
+      "words": 499,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "contentos package",
+      "path": "website/apps/contentos/package.json",
+      "source": "auto",
+      "timestamp": "23:58",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "08:02",
+      "words": 817,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos how-to page",
+      "path": "website/apps/gtmos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "15:56",
+      "words": 577,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api ops pipeline route",
+      "path": "website/apps/mission-control/app/api/ops/pipeline/route.ts",
+      "source": "auto",
+      "timestamp": "02:06",
+      "words": 80,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log date page",
+      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "01:01",
+      "words": 974,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "01:01",
+      "words": 1525,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
+      "source": "auto",
+      "timestamp": "02:06",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "progression_engine",
+      "path": "scripts/progression_engine.py",
+      "source": "auto",
+      "timestamp": "23:58",
+      "words": 1887,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log progression page",
+      "path": "website/apps/shawnos/app/log/progression/page.tsx",
+      "source": "auto",
+      "timestamp": "01:01",
+      "words": 432,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "client_workflow",
+      "title": "client candidate email marketing proposal 2026 02 18",
+      "path": "clients/client/steves-recruiting/workflows/candidate-email-marketing-proposal-2026-02-18.md",
+      "source": "auto-mtime",
+      "timestamp": "14:11",
+      "words": 1590,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+        "target_date": "2026-02-14",
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
+      },
+      {
+        "platform": "substack",
+        "title": "build your own os",
+        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1541
+      },
+      {
+        "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1013
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1119
+      }
+    ],
+    "finalized_today": []
+  },
+  "todos": [],
+  "token_usage": [],
+  "stats": {
+    "platform_breakdown": {
+      "other": 11,
+      "website": 12,
+      "ops": 1
+    },
+    "words_in_touched_files": 24055,
+    "pipeline_words": 40505,
+    "finals_count": 0,
+    "first_activity": "01:01",
+    "last_activity": "23:58",
+    "output_score": 255,
+    "letter_grade": "S",
+    "score_breakdown": [
+      {
+        "type": "code_infra",
+        "title": "generate_content_json",
+        "points": 15
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log page",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api openclaw-status route",
+        "points": 3
+      },
+      {
+        "type": "feature_script",
+        "title": "daily_scan",
+        "points": 30
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api recent-memories route",
+        "points": 3
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api tasks route",
+        "points": 3
+      },
+      {
+        "type": "complex_script",
+        "title": "build_index",
+        "points": 25
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos vitals nio-terminal slug page",
+        "points": 5
+      },
+      {
+        "type": "landing_page",
+        "title": "gtmos home page",
+        "points": 25
+      },
+      {
+        "type": "landing_page",
+        "title": "mission-control home page",
+        "points": 25
+      },
+      {
+        "type": "complex_script",
+        "title": "query_index",
+        "points": 25
+      },
+      {
+        "type": "website_page",
+        "title": "NioPostPage",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api system-metrics route",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "NioTerminalPage",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos how-to page",
+        "points": 5
+      },
+      {
+        "type": "website_route",
+        "title": "mission-control api ops pipeline route",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log date page",
+        "points": 5
+      },
+      {
+        "type": "landing_page",
+        "title": "contentos home page",
+        "points": 25
+      },
+      {
+        "type": "feature_script",
+        "title": "progression_engine",
+        "points": 30
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log progression page",
+        "points": 5
+      },
+      {
+        "type": "client_workflow",
+        "title": "client candidate email marketing proposal 2026 02 18",
+        "points": 5
+      }
+    ],
+    "efficiency_rating": null,
+    "shipped_count": 23,
+    "draft_count": 1,
+    "ship_rate": 0.96,
+    "agent_cost": 0,
+    "cost_per_point": 0.0,
+    "efficiency_ratio": null,
+    "words_today": 24055,
+    "lines_added": 14890,
+    "lines_removed": 4518,
+    "lines_net": 10372,
+    "code_loc": 7960,
+    "content_loc": 82,
+    "data_loc": 6848
+  },
+  "git_summary": {
+    "commits_today": 26,
+    "files_added": [
+      "data/daily-log/2026-02-20.json",
+      "data/daily-log/cost-tracker/2026-02-20.json",
+      "scripts/build_index.py",
+      "scripts/generate_content_json.py",
+      "scripts/query_index.py",
+      "website/apps/contentos/app/VideoShowcase.tsx",
+      "website/apps/contentos/next-sitemap.config.js",
+      "website/apps/contentos/public/sitemap-0.xml",
+      "website/apps/contentos/public/sitemap.xml",
+      "website/apps/contentos/public/video/highlight-reel.mp4",
+      "website/apps/gtmos/app/VideoShowcase.tsx",
+      "website/apps/gtmos/next-sitemap.config.js",
+      "website/apps/gtmos/public/sitemap-0.xml",
+      "website/apps/gtmos/public/sitemap.xml",
+      "website/apps/gtmos/public/video/highlight-reel.mp4",
+      "website/apps/mission-control/app/api/openclaw-status/route.ts",
+      "website/apps/mission-control/app/api/ops/pipeline/route.ts",
+      "website/apps/mission-control/app/api/recent-memories/route.ts",
+      "website/apps/mission-control/app/components/SessionStatus.tsx",
+      "website/apps/mission-control/app/components/TodayFocus.tsx",
+      "website/apps/mission-control/public/data/content.json",
+      "website/apps/mission-control/scripts/validate-mission-control-data.js",
+      "website/apps/shawnos/app/log/LogIndexClient.tsx",
+      "website/apps/shawnos/app/log/progression/ProgressionClient.tsx",
+      "website/apps/shawnos/app/log/progression/page.tsx",
+      "website/apps/video/src/ContentOsVideo.tsx",
+      "website/apps/video/src/GtmOsVideo.tsx",
+      "website/apps/video/src/scenes/SiteBootBlitz.tsx",
+      "website/apps/video/src/scenes/SiteCta.tsx",
+      "website/apps/video/src/scenes/SiteHook.tsx",
+      "website/apps/video/src/scenes/SiteShowcase.tsx",
+      "website/apps/video/src/scenes/ToolPlatformBlitz.tsx"
+    ],
+    "files_modified": [
+      ".gitignore",
+      "data/daily-log/2026-02-16.json",
+      "data/daily-log/2026-02-20.json",
+      "data/progression/profile-v3.json",
+      "data/progression/profile.json",
+      "data/website-stats.json",
+      "docs/_generated/skill-manifest.md",
+      "scripts/build_index.py",
+      "scripts/daily_cron.sh",
+      "scripts/daily_scan.py",
+      "scripts/progression_engine.py",
+      "scripts/query_index.py",
+      "website/apps/contentos/app/VideoShowcase.tsx",
+      "website/apps/contentos/app/page.tsx",
+      "website/apps/contentos/package.json",
+      "website/apps/contentos/public/video/highlight-reel.mp4",
+      "website/apps/gtmos/app/VideoShowcase.tsx",
+      "website/apps/gtmos/app/how-to/page.tsx",
+      "website/apps/gtmos/app/page.tsx",
+      "website/apps/gtmos/package.json",
+      "website/apps/gtmos/public/video/highlight-reel.mp4",
+      "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "website/apps/mission-control/app/api/tasks/route.ts",
+      "website/apps/mission-control/app/components/NioStatus.tsx",
+      "website/apps/mission-control/app/components/RecentMemories.tsx",
+      "website/apps/mission-control/app/components/SystemStatus.tsx",
+      "website/apps/mission-control/app/page.tsx",
+      "website/apps/mission-control/package.json",
+      "website/apps/mission-control/public/data/calendar.json",
+      "website/apps/mission-control/public/data/content.json",
+      "website/apps/mission-control/public/data/memories.json",
+      "website/apps/mission-control/public/data/status.json",
+      "website/apps/mission-control/public/data/tasks.json",
+      "website/apps/mission-control/public/data/team.json",
+      "website/apps/mission-control/public/metrics.json",
+      "website/apps/mission-control/scripts/generate-metrics.js",
+      "website/apps/shawnos/app/VideoShowcase.tsx",
+      "website/apps/shawnos/app/log/[date]/page.tsx",
+      "website/apps/shawnos/app/log/page.tsx",
+      "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
+      "website/apps/shawnos/next-sitemap.config.js",
+      "website/apps/shawnos/public/robots.txt",
+      "website/apps/shawnos/public/sitemap-0.xml",
+      "website/apps/shawnos/public/sitemap.xml",
+      "website/apps/shawnos/public/video/lead-magnet.mp4",
+      "website/apps/video/src/GtmOsVideo.tsx",
+      "website/apps/video/src/LeadMagnetV2.tsx",
+      "website/apps/video/src/Root.tsx",
+      "website/apps/video/src/lib/data.ts",
+      "website/apps/video/src/scenes/BootWikiBlitz.tsx",
+      "website/apps/video/src/scenes/CtaNetwork.tsx",
+      "website/apps/video/src/scenes/ProgressionV2.tsx",
+      "website/apps/video/src/scenes/SiteBootBlitz.tsx",
+      "website/apps/video/src/scenes/SiteCta.tsx",
+      "website/apps/video/src/scenes/SiteShowcase.tsx",
+      "website/apps/video/src/scenes/ToolPlatformBlitz.tsx",
+      "website/package-lock.json",
+      "website/packages/shared/data/how-to-wiki.ts",
+      "website/packages/shared/pages/NioPostPage.tsx",
+      "website/packages/shared/pages/NioTerminalPage.tsx"
+    ],
+    "lines_added_count": 14890,
+    "lines_removed_count": 4518,
+    "lines_net": 10372,
+    "code_loc": 7960,
+    "content_loc": 82,
+    "data_loc": 6848
+  }
+}
