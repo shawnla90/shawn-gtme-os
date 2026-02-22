@@ -127,6 +127,15 @@ else
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
+# ── Step 1h: Generate content JSON for Mission Control ────────────────
+log "Running generate_content_json.py"
+if $PYTHON scripts/generate_content_json.py >> "$LOGFILE" 2>&1; then
+  log "Content JSON generated"
+else
+  log "WARN: Content JSON generation failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
@@ -152,6 +161,8 @@ $GIT add data/progression/profile.json 2>/dev/null || true
 $GIT add data/website-stats.json 2>/dev/null || true
 $GIT add data/repo-stats.json 2>/dev/null || true
 $GIT add docs/_generated/skill-manifest.md 2>/dev/null || true
+$GIT add website/apps/mission-control/public/data/content.json 2>/dev/null || true
+$GIT add website/apps/mission-control/public/metrics.json 2>/dev/null || true
 
 # Check if there are staged changes
 if $GIT diff --cached --quiet; then

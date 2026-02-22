@@ -1,84 +1,104 @@
 {
-  "generated": "2026-02-21T21:07:51.970Z",
+  "generated": "2026-02-22T03:25:08.000Z",
   "system": {
-    "status": "online",
+    "status": "degraded",
     "uptime": "live",
     "lastCron": "See scheduler",
-    "commitCount": 25,
+    "commitCount": 31,
     "activeSkills": 42,
-    "memoryFiles": 5,
+    "memoryFiles": 0,
     "sessionCost": "$0.00",
     "model": "claude-opus-4-20250514"
   },
   "calendar": [
     {
       "date": "2026-02-21",
-      "events": [
-        {
-          "time": "8:00 AM",
-          "event": "nio.terminal blog generation",
-          "type": "automated"
-        },
-        {
-          "time": "10:00 PM",
-          "event": "Daily build summary",
-          "type": "automated"
-        }
-      ]
+      "events": []
     }
   ],
   "todos": [
     {
-      "task": "Review nio.terminal blog post",
-      "time": "8:15 AM",
-      "priority": "high"
-    },
-    {
-      "task": "Check Discord community engagement",
-      "time": "10:00 AM",
-      "priority": "medium"
-    },
-    {
-      "task": "Monitor RSS feed performance",
-      "time": "2:00 PM",
-      "priority": "medium"
-    },
-    {
-      "task": "Publish 5 pending drafts",
-      "time": "Flexible",
-      "priority": "high"
+      "task": "No active todos",
+      "time": "N/A",
+      "priority": "low"
     }
   ],
   "drafts": [
     {
-      "type": "substack",
-      "title": "2026-02-17 Build-Your-Own-Os",
-      "status": "ready to ship"
+      "type": "linkedin",
+      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "Building & Sharing (capstone)"
+    },
+    {
+      "type": "x",
+      "title": "Full Ecosystem X Threads -- Day 4",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": null
+    },
+    {
+      "type": "linkedin",
+      "title": "Content OS: The Content Machine -- Day 3",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": "Skill/System Share"
     },
     {
       "type": "substack",
-      "title": "2026-02-14 Cursor-Discovery",
-      "status": "ready to ship"
+      "title": "Start at Level One",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": null
+    },
+    {
+      "type": "x",
+      "title": "Content OS X Threads -- Day 3",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": null
+    },
+    {
+      "type": "linkedin",
+      "title": "GTM OS: The Infrastructure -- Day 2",
+      "status": "draft",
+      "date": "2026-02-24",
+      "pillar": "Skill/System Share"
     },
     {
       "type": "substack",
-      "title": "2026-02-13 Build-Day",
-      "status": "ready to ship"
+      "title": "OS.AI Labs, Post 5 -- Build Your Own OS",
+      "status": "draft",
+      "date": "2026-02-24",
+      "pillar": null
     },
     {
-      "type": "substack",
-      "title": "2026-02-19 Recursive-Drift",
-      "status": "ready to ship"
+      "type": "x",
+      "title": "GTM OS X Threads -- Day 2",
+      "status": "draft",
+      "date": "2026-02-24",
+      "pillar": null
     },
     {
-      "type": "substack",
-      "title": "2026-02-24 Start-At-Level-One",
-      "status": "ready to ship"
+      "type": "linkedin",
+      "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "x",
+      "title": "ShawnOS X Threads -- Day 1",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": null
     }
   ],
   "telemetry": {
-    "calendarEvents": 22,
-    "tasksTracked": 4,
-    "teamMembers": 4
+    "calendarEvents": 15,
+    "tasksTracked": 0,
+    "teamMembers": 4,
+    "draftsTracked": 63
   }
 }

@@ -469,17 +469,125 @@ def detect_content_links(db):
     return links
 
 
+def detect_explicit_links(db):
+    """Detect cross-platform links from ## Cross-Platform Notes sections.
+
+    Reads all content files that contain a '## Cross-Platform Notes' section,
+    parses the bullet points / bold headings to extract platform references
+    (e.g., 'LinkedIn promo:', 'X thread:', 'Reddit promo:'), then tries to
+    match the source file's date + referenced platform to an existing content
+    row.  Creates links with link_type 'cross_platform_note'.
+    """
+    # Build a lookup: (date, platform) -> list of content ids
+    cursor = db.execute(
+        "SELECT id, date, platform FROM content WHERE date IS NOT NULL"
+    )
+    date_platform_index = {}
+    for row_id, date, platform in cursor.fetchall():
+        key = (date, platform)
+        if key not in date_platform_index:
+            date_platform_index[key] = []
+        date_platform_index[key].append(row_id)
+
+    # Get all content rows to iterate over their files
+    all_rows = db.execute(
+        "SELECT id, file_path, date FROM content WHERE date IS NOT NULL"
+    ).fetchall()
+
+    # Canonical platform names we recognise, mapped from common variations
+    platform_aliases = {
+        "linkedin": "linkedin",
+        "x": "x",
+        "twitter": "x",
+        "substack": "substack",
+        "reddit": "reddit",
+        "tiktok": "tiktok",
+        "youtube": "website",
+    }
+
+    # Patterns that capture a platform reference at the start of a bullet or
+    # bold line inside the Cross-Platform Notes section.
+    # Pattern 1: "- LinkedIn promo:" / "- X:" / "- Reddit promo:"
+    bullet_re = re.compile(
+        r"^-\s+(?:\*\*)?(\w+)\b.*?:", re.IGNORECASE
+    )
+    # Pattern 2: "**LinkedIn capstone (Day 4)**:" / "**X thread (Day 4)**:"
+    bold_re = re.compile(
+        r"^\*\*(\w+)\b.*?\*\*\s*:", re.IGNORECASE
+    )
+
+    links = []
+
+    for src_id, file_path, src_date in all_rows:
+        full_path = REPO_ROOT / file_path
+        if not full_path.is_file():
+            continue
+
+        try:
+            text = full_path.read_text(errors="replace")
+        except OSError:
+            continue
+
+        # Extract the Cross-Platform Notes section
+        section_match = re.search(
+            r"^##\s+Cross-Platform Notes\s*\n(.*?)(?=^##\s|\Z)",
+            text,
+            re.MULTILINE | re.DOTALL,
+        )
+        if not section_match:
+            continue
+
+        section_text = section_match.group(1)
+
+        # Collect unique platforms referenced in this section
+        referenced_platforms = set()
+        for line in section_text.splitlines():
+            stripped = line.strip()
+            if not stripped:
+                continue
+
+            # Try bullet format first, then bold format
+            m = bullet_re.match(stripped) or bold_re.match(stripped)
+            if m:
+                raw_platform = m.group(1).lower()
+                canonical = platform_aliases.get(raw_platform)
+                if canonical:
+                    referenced_platforms.add(canonical)
+
+        # For each referenced platform, look up content rows with
+        # (src_date, platform) and create a link
+        for platform in referenced_platforms:
+            key = (src_date, platform)
+            target_ids = date_platform_index.get(key, [])
+            for tgt_id in target_ids:
+                if tgt_id == src_id:
+                    continue  # don't self-link
+                links.append((src_id, tgt_id, "cross_platform_note"))
+
+    return links
+
+
 # ── Database operations ──────────────────────────────────────────────
 
 def init_db():
-    """Create or recreate the database with schema."""
+    """Create or recreate the database with schema.
+
+    Preserves the sessions table across rebuilds (append-only history).
+    Only the derived tables are dropped and recreated each run.
+    """
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    # Drop and rebuild for idempotent runs
-    if DB_PATH.exists():
-        DB_PATH.unlink()
-
     db = sqlite3.connect(str(DB_PATH))
+
+    # Drop only the derived tables — sessions is append-only and must survive rebuilds
+    db.executescript("""
+        DROP TABLE IF EXISTS content_links;
+        DROP TABLE IF EXISTS content;
+        DROP TABLE IF EXISTS daily_logs;
+        DROP TABLE IF EXISTS skills;
+    """)
+
+    # Recreate all tables (sessions uses IF NOT EXISTS, so it's left intact)
     db.executescript(SCHEMA)
     return db
 
@@ -610,7 +718,12 @@ def main():
     # Content links (cross-platform detection)
     links = detect_content_links(db)
     insert_content_links(db, links)
-    print(f"  Content links: {len(links)} cross-platform pairs detected")
+    print(f"  Content links: {len(links)} series-sibling pairs detected")
+
+    # Explicit cross-platform links from ## Cross-Platform Notes sections
+    explicit_links = detect_explicit_links(db)
+    insert_content_links(db, explicit_links)
+    print(f"  Explicit links: {len(explicit_links)} cross-platform notes detected")
 
     db.close()
     print(f"Done. Index at {DB_PATH}")
