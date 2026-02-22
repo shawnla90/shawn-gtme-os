@@ -498,6 +498,7 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
           'The Keyword Nugget Pattern',
           'Content Engineering',
           'Entity Authority',
+          'Content Cluster Topology',
         ],
       },
       {
@@ -513,6 +514,8 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
           'Topic Clusters',
           'Content Freshness Scoring',
           'Monorepo',
+          'SQLite Content Index',
+          'Remotion',
         ],
       },
       {
@@ -569,6 +572,45 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
           'Content Engineering',
           'Content Extractability',
           'Cron Jobs',
+        ],
+      },
+      {
+        name: 'Remotion',
+        definition:
+          'A React framework that renders video frame by frame — write JSX components, render at target FPS, encode to MP4. No GPU, no timeline editor, no After Effects.',
+        whyItMatters:
+          'Video is a content type that was always disconnected from the rest of the system. After Effects exports live on a hard drive. Canva projects live in a SaaS database. Neither shares design tokens, data, or deploy pipelines with your websites. Remotion changes that by making video a React component that lives in your codebase. Same shared package, same color palette, same monorepo CI. When I change a brand color, the websites and the videos all update on the next build. Video stopped being a separate workflow and became another content type in the system.',
+        howYouUseIt:
+          'The video app lives at website/apps/video/ inside the Turborepo monorepo. Nine compositions in Root.tsx — three brands times three aspect ratios. A useScale() hook handles responsive sizing. Scenes use Perlin noise from @remotion/noise for deterministic animation. npm run render:all generates all variants. The SQLite content index tracks every video file with brand, format, and deployment status.',
+        related: ['Content Engineering', 'Monorepo'],
+      },
+      {
+        name: 'SQLite Content Index',
+        definition:
+          'A derived SQLite database that makes your entire content repo queryable — multi-platform content parsing, cross-reference detection, asset inventory, and dead page detection, built with zero external dependencies.',
+        whyItMatters:
+          'Once the repo passed 100 content files across 6 platforms, the file system became opaque. I could not answer basic questions: how many LinkedIn posts went final this week? Which content has cross-platform siblings? What is the total word count for February? A SQLite index sitting alongside the repo gives you SQL queries over your content. The index is derived data — rebuilt from git-tracked files on every run. Delete the database, run the script, same result. It revealed its own gap: three major systems had shipped with zero blog coverage. The tool that finds content gaps found content gaps about the tool.',
+        howYouUseIt:
+          'python3 scripts/build_index.py walks the repo and loads 9 tables into data/index.db. python3 scripts/query_index.py provides 8 subcommands for filtering by platform, stage, date, pillar, series, and more. Output modes include table, JSON, and count. Cross-platform link detection finds sibling content automatically by matching date and slug across platforms. Run it weekly to audit content coverage and find gaps.',
+        related: [
+          'Content Engineering',
+          'Topic Clusters',
+          'Content Freshness Scoring',
+        ],
+      },
+      {
+        name: 'Content Cluster Topology',
+        definition:
+          'The deliberate architecture of how content connects within and across websites — hub-and-spoke model, taxonomy-driven routing, canonical site designation, and bidirectional cross-linking that compounds topical authority.',
+        whyItMatters:
+          'Individual pages are nodes. Internal links are edges. AI engines evaluate topical authority by measuring the graph, not just individual pages. A flat blog with no internal links means every page starts from zero. A cluster topology with bidirectional links creates a graph where every new page strengthens every existing page. The three-site architecture amplifies this — shawnos, gtmos, and contentos each build authority in their vertical, and cross-site links connect the verticals. sameAs schema markup tells search engines these three sites represent one entity. Sites with 15 or more recognized entities have a 4.8x higher citation probability.',
+        howYouUseIt:
+          'The topology is defined in website/taxonomy.yaml. Every content pillar maps to a domain. How-to entries have a canonicalSite field that determines which site renders the page and which sites redirect. Bidirectional related arrays on every data object create the cross-links. Breadcrumb schema markup communicates the hierarchy to AI engines. The system compounds: every new entry creates new edges, every new edge strengthens every connected node.',
+        related: [
+          'Topic Clusters',
+          'Entity Authority',
+          'Content Engineering',
+          'The Keyword Nugget Pattern',
         ],
       },
     ],

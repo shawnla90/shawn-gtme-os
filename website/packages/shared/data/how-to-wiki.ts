@@ -1649,6 +1649,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'schema-markup-for-geo',
       'create-llms-txt',
       'build-content-engineering-system',
+      'content-cluster-strategy',
     ],
     sections: [
       {
@@ -1700,6 +1701,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'optimize-for-ai-citations',
       'build-content-engineering-system',
       'schema-markup-for-geo',
+      'content-cluster-strategy',
     ],
     sections: [
       {
@@ -1850,6 +1852,8 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'optimize-for-ai-citations',
       'schema-markup-for-geo',
       'create-llms-txt',
+      'build-sqlite-content-index',
+      'build-remotion-video-system',
     ],
     sections: [
       {
@@ -1881,6 +1885,204 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
         type: 'pro-tip',
         content:
           'The end state is a system where adding content is adding data, not navigating a CMS. I open engineering-terms.ts, add a new term object, save the file, and push. On deploy, that term appears on the knowledge page, gets its own anchor link, appears in the RSS feed, gets schema markup, shows up in the sitemap, and is available for programmatic internal linking from every page that mentions it. Total time: under two minutes.\n\nThis is the competitive advantage tools like AirOps complement but cannot replace. AirOps is excellent for competitive intelligence, citation monitoring, and share-of-voice tracking. Use it for visibility into how your content performs across AI engines. But the system itself — the content graph, the templates, the automation, the feeds, the schema pipeline — that is yours. Own the system. Use tools to monitor it. The system is the moat.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  CLI TOOLS — VIDEO + INDEX                                          */
+  /* ================================================================== */
+
+  {
+    id: 'build-remotion-video-system',
+    title: 'How to Build a React Video Rendering System with Remotion',
+    subtitle:
+      'No GPU, no After Effects — React components that render to MP4 inside your monorepo',
+    category: 'cli-tools',
+    description:
+      'How to build a programmatic video rendering pipeline using Remotion and React. Scene-based architecture, multi-aspect-ratio output, deterministic animation with Perlin noise, and monorepo integration with shared design tokens.',
+    keywords: [
+      'remotion react video',
+      'programmatic video rendering',
+      'react video system',
+      'remotion monorepo',
+      'multi-aspect-ratio video',
+      'deterministic animation',
+      'react video pipeline',
+      'remotion tutorial',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'build-content-engineering-system',
+      'build-sqlite-content-index',
+    ],
+    sections: [
+      {
+        heading: 'What Remotion Is and Why It Fits',
+        type: 'prose',
+        content:
+          'Remotion is a React framework that renders video frame by frame. You write JSX components. Remotion evaluates each frame at your target FPS and encodes the result to MP4, WebM, or GIF. No GPU required. No timeline editor. No After Effects. The entire pipeline runs in Node.js on a standard laptop. The key advantage for a monorepo setup is that video components can import the same shared packages as your websites. Design tokens, data objects, color palettes, and type definitions are shared across the entire codebase. Change a hex value in the shared package and the websites and videos all update on the next build.',
+      },
+      {
+        heading: 'Multi-Aspect-Ratio Architecture',
+        type: 'pattern',
+        content:
+          'Define aspect ratio presets as a constant object: linkedin (1080x1350, 4:5), reels (1080x1920, 9:16), landscape (1920x1080, 16:9). Create a useScale() hook that normalizes all rendering to a base resolution (1080x1350) and scales proportionally. Each brand gets three compositions in Root.tsx — one per aspect ratio — sharing the same component tree. Nine total compositions from one codebase: three brands times three formats. The composition registry is the single source of truth for what gets rendered. Adding a new brand means adding three lines to Root.tsx, not rebuilding any components.',
+      },
+      {
+        heading: 'Scene-Based Composition with TransitionSeries',
+        type: 'code',
+        content:
+          'Each video is a sequence of scenes connected by TransitionSeries from @remotion/transitions. Each scene is a React component with a fixed frame count defined in a central timing config file. The V3 timing config defines four scenes totaling 310 frames at 30fps (roughly 10 seconds): Hook (36 frames), BootWikiBlitz (110 frames), Progression (100 frames), CtaNetwork (94 frames), with 10-frame overlaps between scenes for smooth transitions. The timing file is the single control point for video rhythm. Changing one number changes the entire pacing without touching any component code.',
+      },
+      {
+        heading: 'Deterministic Animation with Perlin Noise',
+        type: 'pattern',
+        content:
+          'Remotion requires deterministic rendering. Math.random() produces different values per frame and breaks the render. The solution is Perlin noise from @remotion/noise. The noise2D function takes a seed string, x, and y coordinates and returns a deterministic float. Seed the noise by component instance (column index, particle index) and drive it with the frame number. MatrixRain uses noise for character selection, column drift, and opacity shimmer. ParticleField uses two independent noise streams for x and y drift plus a third for pulse. TypewriterText uses simple frame math for character reveal. Same seed, same output, every render. Organic animation that is fully reproducible.',
+      },
+      {
+        heading: 'SceneWrapper and Visual Treatment',
+        type: 'pattern',
+        content:
+          'A SceneWrapper component applies consistent visual treatment to every scene: dark canvas background, radial vignette for edge darkening, accent color wash at low opacity, ambient particle field, film grain via SVG feTurbulence, and scanline overlay for a CRT aesthetic. The wrapper accepts an accent color prop that tints the entire scene. The BootWikiBlitz scene cycles through the brand palette as wiki cards flip — green, teal, amber, purple — giving each card a distinct feel while maintaining visual consistency. Design tokens live in a tokens.ts file that maps brand names to colors and defines the shared font stack.',
+      },
+      {
+        heading: 'Rendering and Deployment Pipeline',
+        type: 'pro-tip',
+        content:
+          'Run npm run render:all to generate all nine variants. Remotion renders each composition to frames then encodes to MP4. Outputs go to website/apps/video/out/ and get deployed to each site public/video/ directory. The SQLite content index tracks all video files with their brand, aspect ratio, format, and deployment status. The entire pipeline runs locally on a MacBook. No cloud render farm. No external service. The monorepo CI can trigger renders on push if needed, but for iteration speed, local rendering at 30fps for 10-second videos takes seconds, not minutes.',
+      },
+    ],
+  },
+
+  {
+    id: 'build-sqlite-content-index',
+    title: 'How to Build a SQLite Content Index for Your Repo',
+    subtitle:
+      'Turn your file system into a queryable database with zero external dependencies',
+    category: 'cli-tools',
+    description:
+      'How to build a SQLite content index that makes your entire repo queryable. Multi-platform content parsing, cross-reference detection, asset inventory, and a CLI query interface — all with Python stdlib only.',
+    keywords: [
+      'sqlite content index',
+      'repo content database',
+      'content management sqlite',
+      'query content files',
+      'content index cli',
+      'cross-platform content links',
+      'dead page detection',
+      'content audit tool',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'build-content-engineering-system',
+      'build-remotion-video-system',
+      'content-cluster-strategy',
+    ],
+    sections: [
+      {
+        heading: 'Why a SQLite Index for Content',
+        type: 'prose',
+        content:
+          'A repo with 100+ content files across 6 platforms becomes opaque. The file system organizes files by path but cannot answer questions like: how many posts went final this week, which content has cross-platform siblings, or what is the total word count for February. A SQLite database sitting alongside the repo gives you SQL queries over your content without changing the source of truth. The index is derived data — rebuilt from git-tracked files on every run. Delete the database, run the script, get the same result. Zero external dependencies. Python stdlib only: json, sqlite3, pathlib, re.',
+      },
+      {
+        heading: 'Schema Design — Nine Tables',
+        type: 'code',
+        content:
+          'The schema covers every content type in the repo. The content table holds every draft and final across all platforms with fields for platform, stage, title, slug, date, pillar, arc, series, and word count. daily_logs tracks performance metrics. sessions is append-only and survives index rebuilds — historical records, not derived data. skills indexes the Claude and Cursor skill registry. content_links stores the relationship graph with two link types: series_sibling (auto-detected) and cross_platform_note (parsed from content). assets catalogs visual assets with structured metadata parsed from filenames. videos and thumbnails track the video pipeline. The schema design principle: every table maps to a content type, every row is derived from a file, every rebuild is idempotent.',
+      },
+      {
+        heading: 'Metadata Parsing — Two Formats',
+        type: 'pattern',
+        content:
+          'Content files use two metadata formats. Most platforms use blockquote syntax: > **Key**: Value at the top of the file. Website posts use YAML frontmatter between --- delimiters. The parser detects the format automatically and extracts structured fields. Title is extracted from metadata or falls back to the first # heading. Word count strips frontmatter before counting. The dual-format parser means you do not need to standardize your entire content repo to one format. Meet the content where it is.',
+      },
+      {
+        heading: 'Cross-Platform Link Detection',
+        type: 'pattern',
+        content:
+          'The index discovers relationships between content files automatically. Implicit sibling detection matches files with identical (date, slug) across platforms and creates series_sibling links. If you have linkedin/final/2026-02-17_build-your-own-os.md and substack/final/2026-02-17_build-your-own-os.md, the index links them without manual annotation. Explicit cross-reference detection parses Cross-Platform Notes sections, looks for platform keywords with aliases, and matches to existing content by date and platform. This creates a queryable content graph showing how pieces relate across your publishing pipeline.',
+      },
+      {
+        heading: 'Asset and Video Inventory',
+        type: 'code',
+        content:
+          'Filename patterns encode structured metadata. The asset parser extracts type, tier, class, variant, and size from filenames like tier-3-idle-256.gif or class-alchemist-static.png. The video parser extracts brand, aspect ratio, and format from filenames like contentos-landscape or gtmos-linkedin-4x5. Brand aliases handle variations — lead-magnet maps to shawnos, for example. The result is a queryable inventory of every visual asset in the repo without manual cataloging. Run a query to find all tier-3 idle animations for shawnos. Run another to find deployed videos missing from a specific site.',
+      },
+      {
+        heading: 'Dead Page Detection and Content Gaps',
+        type: 'pro-tip',
+        content:
+          'Query the content table for files with zero inbound links from content_links — those are orphans, content that exists but nothing points to. Query for files with zero outbound links — those are dead ends that do not connect forward. The most powerful use is gap detection: query for expected topics that have zero coverage. This is how the index revealed its own gap. Three major systems shipped with no blog coverage. The tool that finds content gaps found content gaps about the tool. Use the index as a content audit instrument, not just a catalog. Run it weekly. Let the queries tell you what to write next.',
+      },
+    ],
+  },
+
+  {
+    id: 'content-cluster-strategy',
+    title: 'How to Design a Content Cluster Strategy Across Multiple Sites',
+    subtitle:
+      'Hub-and-spoke topology, canonical routing, and cross-site linking that compounds authority',
+    category: 'geo-seo',
+    description:
+      'How to design a content cluster strategy that spans multiple websites. Hub-and-spoke topology, taxonomy-driven routing, canonical site designation, bidirectional cross-linking, and breadcrumb schema that tells AI engines exactly how your content connects.',
+    keywords: [
+      'content cluster strategy',
+      'hub and spoke content',
+      'multi-site content architecture',
+      'cross-site linking SEO',
+      'content topology',
+      'canonical site routing',
+      'breadcrumb schema markup',
+      'topic cluster architecture',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'gtmos',
+    related: [
+      'build-content-knowledge-graph',
+      'build-content-engineering-system',
+      'optimize-for-ai-citations',
+    ],
+    sections: [
+      {
+        heading: 'What a Content Cluster Topology Is',
+        type: 'prose',
+        content:
+          'A content cluster topology is the deliberate architecture of how content connects within and across websites. Individual pages are nodes. Cross-references and internal links are edges. The topology determines how authority flows through the graph. A flat blog with no internal links is a collection of disconnected nodes — each page starts from zero. A cluster topology with bidirectional links, shared vocabulary, and explicit hierarchy creates a graph where every new page strengthens every existing page. AI engines evaluate topical authority by measuring this graph. Sites with comprehensive, interconnected coverage of a topic get preferential citation.',
+      },
+      {
+        heading: 'Hub-and-Spoke Model',
+        type: 'pattern',
+        content:
+          'Define one parent concept as the hub. Branch specialized verticals as spokes. The hub site covers the meta-narrative — the process of building. Spoke sites cover the outputs — what the process produces. In a three-site architecture: the hub (shawnos.ai) covers building with AI and the system-building journey. Spoke one (thegtmos.ai) covers the GTM workflows the system produces. Spoke two (thecontentos.ai) covers the content methodology the system demonstrates. The recursive structure is the point. Each site content proves the other two sites thesis. The act of building IS the hub content. The workflows produced ARE spoke one content. The methodology of creating content IS spoke two content.',
+      },
+      {
+        heading: 'Taxonomy-Driven Routing',
+        type: 'code',
+        content:
+          'Define the topology in a version-controlled taxonomy file, not in someone head. Map every content pillar to a domain. Map routing rules explicitly: personal stories route to the hub, GTM systems route to spoke one, content strategy routes to spoke two. Cross-domain posts get a primary domain plus cross-links to siblings. The taxonomy file becomes the single source of truth for content placement. Any team member, any AI agent, any automation skill can read the file and know where content belongs. Status lifecycle (draft, review, final, published, archived) applies uniformly across all domains.',
+      },
+      {
+        heading: 'Canonical Site Designation',
+        type: 'pattern',
+        content:
+          'Every shared content entry gets a canonicalSite field designating which domain renders it natively. When a how-to guide has canonicalSite set to gtmos, it renders on thegtmos.ai and generates a redirect from shawnos.ai. The hub does not duplicate spoke content — it routes to it. This prevents duplicate content penalties while maintaining the cross-site graph. All three sites import the same TypeScript data package. The canonical designation is a field on the data object, not a DNS or CMS configuration. Adding a new cross-site entry means setting one field. The monorepo handles the rest.',
+      },
+      {
+        heading: 'Bidirectional Cross-Linking',
+        type: 'pattern',
+        content:
+          'Every new entry must link to existing related entries. Every existing entry that relates to the new one must link back. This creates bidirectional edges in the content graph. No dead ends, no orphans. The implementation is simple: related arrays on every data object. When you add a new how-to guide, populate its related array with existing guide IDs. Then update those existing guides to include the new ID in their related arrays. The template pages render these arrays as clickable links. Programmatic internal linking handles mention-level connections. The result is a graph where you can reach any node from any other node within two or three clicks.',
+      },
+      {
+        heading: 'Breadcrumb Schema for AI Engines',
+        type: 'pro-tip',
+        content:
+          'Breadcrumbs are not just navigation — they are topology signals. BreadcrumbList schema markup in JSON-LD tells search engines and AI engines exactly where a page sits in your hierarchy. A how-to guide on gtmos gets breadcrumbs: GTMOS, How-To, Content Cluster Strategy. This communicates that gtmos is the authority site for this topic. Cross-site breadcrumbs tell AI engines that the hub and spokes are part of one entity. Combined with sameAs schema connecting the three domains, the breadcrumb hierarchy signals a multi-site cluster, not three independent blogs. AI engines with 15 or more recognized entities have 4.8x higher citation probability. The cluster architecture is how you build entity count.',
       },
     ],
   },

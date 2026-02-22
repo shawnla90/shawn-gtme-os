@@ -1145,6 +1145,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'voice-system',
       'content-mcps',
       'recursive-content-flow',
+      'programmatic-video-content',
     ],
     sections: [
       {
@@ -1257,6 +1258,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'recursive-content-flow',
       'content-skills',
       'repo-content-system',
+      'content-clustering-architecture',
     ],
     sections: [
       {
@@ -1350,6 +1352,134 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         type: 'formula',
         content:
           "The fastest anti-slop check: (1) Search for em-dashes (the long dash character) — delete all. (2) Search for here is the thing and here is where — delete. (3) Check opening and closing — if they say the same thing, rewrite the closing. (4) Count parallel sentence structures — three in a row with the same rhythm means two need cutting. (5) Check for colon-listed statements — rewrite as natural sentences. (6) Look for three-example patterns — AI loves groups of three. Two specific examples hit harder than three generic ones.\n\nThis scan takes 2 minutes and catches the most visible AI writing tells. Combined with the full pre-publish checklist, it ensures every published post passes the does this sound like a real person wrote it test.",
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  WORKFLOWS — CLUSTERING + VIDEO                                     */
+  /* ================================================================== */
+
+  {
+    id: 'content-clustering-architecture',
+    title: 'Content Clustering Architecture',
+    subtitle:
+      'Hub-and-spoke topology for multi-site content that compounds authority',
+    category: 'workflows',
+    description:
+      'Content clustering architecture — hub-and-spoke topology, taxonomy-driven routing, canonical site designation, bidirectional cross-linking, and breadcrumb schema that tells AI engines exactly how your content connects across multiple websites.',
+    keywords: [
+      'content clustering',
+      'hub and spoke content',
+      'multi-site content strategy',
+      'content topology',
+      'cross-site linking',
+      'content architecture workflow',
+    ],
+    difficulty: 'advanced',
+    related: [
+      'content-pillars',
+      'repo-content-system',
+      'recursive-content-flow',
+    ],
+    sections: [
+      {
+        heading: 'What Content Clustering Is',
+        type: 'prose',
+        content:
+          'Content clustering is the deliberate architecture of how content connects within and across websites. Individual pages are nodes. Internal links and cross-references are edges. The topology determines how authority flows through the graph. A flat blog with no internal linking means every page starts from zero — no authority passes between pieces. A cluster topology with bidirectional links and explicit hierarchy creates a graph where every new page strengthens every existing page. AI engines evaluate topical authority by measuring this graph. Sites with comprehensive, interconnected coverage of a topic get preferential citation over sites with isolated content.',
+      },
+      {
+        heading: 'Hub-and-Spoke Model',
+        type: 'pattern',
+        content:
+          'One parent concept serves as the hub. Specialized verticals branch as spokes. The hub covers the meta-narrative — the process of building. The spokes cover the outputs — what the process produces. Each spoke builds deep authority in one vertical. The hub connects the verticals into a unified graph. Cross-site links between hub and spokes signal to search engines that these sites are one entity covering different facets of the same expertise. The key is that each site content proves the other sites thesis. The building process IS hub content. The workflows produced ARE spoke content. The methodology of creating content IS the other spoke. The recursion is structural, not accidental.',
+      },
+      {
+        heading: 'Taxonomy-Driven Routing',
+        type: 'code',
+        content:
+          'Define the topology in a version-controlled taxonomy file. Map every content pillar to a domain. Map routing rules explicitly: personal stories go to the hub, GTM systems go to spoke one, content strategy goes to spoke two. Cross-domain posts get a primary domain plus cross-links to siblings. The taxonomy file becomes the single source of truth for content placement. Any team member, any AI agent, any automation skill can read the file and know where content belongs. The lifecycle — draft, review, final, published, archived — applies uniformly across all domains. The taxonomy routes by pillar, not by platform or format.',
+      },
+      {
+        heading: 'Canonical Site Designation',
+        type: 'pattern',
+        content:
+          'Every shared content entry gets a canonical site field designating which domain renders it natively. When a how-to guide has its canonical set to a spoke site, it renders on that spoke and generates a redirect from the hub. The hub does not duplicate spoke content — it routes to it. This prevents duplicate content penalties while maintaining the cross-site graph. In a monorepo setup, all sites import the same data package. The canonical designation is a field on the data object, not a DNS or CMS configuration. Changing which site owns a piece of content means changing one field value.',
+      },
+      {
+        heading: 'Bidirectional Cross-Linking Protocol',
+        type: 'pattern',
+        content:
+          'Every new entry must link to existing related entries. Every existing entry that relates to the new one must link back. This creates bidirectional edges in the content graph. No dead ends, no orphans. The implementation is simple: related arrays on every data object. When you add a new entry, populate its related array with existing entry IDs. Then update those existing entries to include the new ID in their related arrays. The template pages render these arrays as clickable links. Programmatic internal linking handles mention-level connections automatically. The result is a graph where you can reach any node from any other node within two or three clicks.',
+      },
+      {
+        heading: 'Breadcrumb Schema as Topology Signal',
+        type: 'pro-tip',
+        content:
+          'Breadcrumbs are not just navigation. BreadcrumbList schema markup in JSON-LD tells AI engines exactly where a page sits in your hierarchy. A guide on a spoke site gets breadcrumbs that communicate the spoke is the authority for that topic. Cross-site breadcrumbs combined with sameAs schema connecting the domains signal a multi-site cluster, not three independent blogs. This is how you build entity count. The breadcrumb protocol becomes a forward-referencing navigation system where each page knows its position in the topology and signals that position to machines.',
+      },
+    ],
+  },
+
+  {
+    id: 'programmatic-video-content',
+    title: 'Programmatic Video as Content',
+    subtitle:
+      'React components that render to MP4 — video as a first-class content type',
+    category: 'tools',
+    description:
+      'Programmatic video rendering using Remotion and React — turning video from a separate creative workflow into a first-class content type that shares design tokens, data, and deploy pipelines with your websites.',
+    keywords: [
+      'programmatic video',
+      'remotion video content',
+      'react video rendering',
+      'video content pipeline',
+      'video as code',
+      'automated video creation',
+    ],
+    difficulty: 'advanced',
+    related: [
+      'repo-content-system',
+      'content-skills',
+      'content-mcps',
+    ],
+    sections: [
+      {
+        heading: 'Why Video Belongs in the Repo',
+        type: 'prose',
+        content:
+          'Video has traditionally been a separate creative workflow. After Effects exports sit on hard drives. Canva projects live in a SaaS database. Neither shares design tokens, data, or deploy pipelines with your content system. Programmatic video changes this. When video is a React component in your monorepo, it imports the same shared package as your websites. Same color palette. Same type definitions. Same build pipeline. Change a brand color in the shared tokens and the websites and videos all update on the next build. Video stops being a separate content silo and becomes another node in the content graph.',
+      },
+      {
+        heading: 'The Remotion Model',
+        type: 'code',
+        content:
+          'Remotion evaluates React components frame by frame at your target FPS and encodes the result to video. You write JSX. It renders pixels. No GPU required. No timeline editor. The video app lives inside the monorepo alongside the website apps. It imports the shared data package for design tokens, colors, and brand configuration. Compositions in a root file define what gets rendered — each composition specifies dimensions, FPS, duration, and the component tree. A render script generates all variants in one command.',
+      },
+      {
+        heading: 'Multi-Format Output',
+        type: 'pattern',
+        content:
+          'Define aspect ratio presets as constants: LinkedIn 4:5, Reels 9:16, landscape 16:9. A responsive scaling hook normalizes rendering to a base resolution and scales proportionally. Each brand gets one composition per aspect ratio. Three brands times three formats equals nine compositions from one component tree. Adding a new brand or format means adding entries to the preset constants and the composition registry. No component code changes. The multi-format approach means one design session produces all social media variants automatically.',
+      },
+      {
+        heading: 'Deterministic Animation',
+        type: 'pattern',
+        content:
+          'Programmatic video requires deterministic rendering. Random values change between frames and break the output. The solution is seeded noise functions. Perlin noise driven by frame number produces organic animation — particle drift, character rain, opacity shimmer — that is fully reproducible. Same seed, same output, every render. This is critical for iteration: you can change one parameter and re-render knowing exactly which frames changed and why. It also enables caching — unchanged compositions skip rendering entirely.',
+      },
+      {
+        heading: 'Video in the Content Index',
+        type: 'code',
+        content:
+          'A content index that tracks your repo should also track video files. Parse filenames for brand, aspect ratio, and format. Track source files (render output) separately from deployed files (copied to site public directories). The index tells you which videos are rendered, which are deployed, and which are missing. Combined with the content graph, you can query for brands without video coverage or formats that need updating. Video becomes queryable, auditable, and integrated into the same content operations as blog posts and wiki entries.',
+      },
+      {
+        heading: 'The Monorepo Advantage',
+        type: 'pro-tip',
+        content:
+          'The real win is not Remotion itself. It is video living in the same codebase as everything else. Design tokens are shared, not duplicated. Brand updates propagate automatically. The deploy pipeline handles video alongside web content. The content index tracks video files alongside blog posts. The knowledge graph can reference video compositions. The same CI that builds the websites can render the videos. Video is no longer a creative island — it is part of the system. That integration is the competitive advantage. Any tool can render video. Only a monorepo can integrate video into every other content type seamlessly.',
       },
     ],
   },
