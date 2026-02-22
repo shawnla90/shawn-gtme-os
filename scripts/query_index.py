@@ -337,6 +337,164 @@ def cmd_links(args):
     print_table(columns, display)
 
 
+def cmd_assets(args):
+    """List/filter visual assets."""
+    db = connect()
+    query = "SELECT file_path, site, asset_type, name, tier, class_name, variant, size_px, file_size_bytes FROM assets WHERE 1=1"
+    params = []
+
+    if args.site:
+        query += " AND site = ?"
+        params.append(args.site)
+    if args.type:
+        query += " AND asset_type = ?"
+        params.append(args.type)
+    if args.tier:
+        query += " AND tier = ?"
+        params.append(args.tier)
+    if args.class_name:
+        query += " AND class_name = ?"
+        params.append(args.class_name)
+    if args.name:
+        query += " AND name LIKE ?"
+        params.append(f"%{args.name}%")
+
+    query += " ORDER BY site ASC, asset_type ASC, file_path ASC"
+
+    rows = db.execute(query, params).fetchall()
+    db.close()
+
+    if args.count:
+        print(len(rows))
+        return
+
+    if args.json:
+        output_json(rows)
+        return
+
+    display = []
+    for row in rows:
+        display.append({
+            "site": row["site"],
+            "type": row["asset_type"],
+            "name": row["name"] or row["class_name"] or "-",
+            "tier": fmt_value(row["tier"]),
+            "variant": row["variant"] or "-",
+            "size": fmt_value(row["size_px"]),
+            "bytes": fmt_number(row["file_size_bytes"]),
+        })
+
+    columns = [
+        ("SITE", "site", 14),
+        ("TYPE", "type", 12),
+        ("NAME", "name", 15),
+        ("TIER", "tier", 4),
+        ("VARIANT", "variant", 16),
+        ("SIZE", "size", 5),
+        ("BYTES", "bytes", 10),
+    ]
+    print_table(columns, display)
+
+
+def cmd_videos(args):
+    """List/filter video files."""
+    db = connect()
+    query = "SELECT file_path, site, brand, aspect_ratio, format, file_size_bytes, deployed_to FROM videos WHERE 1=1"
+    params = []
+
+    if args.brand:
+        query += " AND brand = ?"
+        params.append(args.brand)
+    if args.format:
+        query += " AND format = ?"
+        params.append(args.format)
+    if args.deployed:
+        query += " AND deployed_to = ?"
+        params.append(args.deployed)
+    if args.source_only:
+        query += " AND deployed_to IS NULL"
+    if args.deployed_only:
+        query += " AND deployed_to IS NOT NULL"
+
+    query += " ORDER BY brand ASC, file_path ASC"
+
+    rows = db.execute(query, params).fetchall()
+    db.close()
+
+    if args.count:
+        print(len(rows))
+        return
+
+    if args.json:
+        output_json(rows)
+        return
+
+    display = []
+    for row in rows:
+        display.append({
+            "brand": row["brand"],
+            "ratio": row["aspect_ratio"] or "-",
+            "format": row["format"] or "-",
+            "deployed": row["deployed_to"] or "-",
+            "size": fmt_number(row["file_size_bytes"]),
+            "path": truncate(row["file_path"], 55),
+        })
+
+    columns = [
+        ("BRAND", "brand", 10),
+        ("RATIO", "ratio", 5),
+        ("FORMAT", "format", 10),
+        ("DEPLOYED", "deployed", 12),
+        ("SIZE", "size", 12),
+        ("PATH", "path", 40),
+    ]
+    print_table(columns, display)
+
+
+def cmd_thumbnails(args):
+    """List/filter thumbnail files."""
+    db = connect()
+    query = "SELECT file_path, brand, variant, file_size_bytes FROM thumbnails WHERE 1=1"
+    params = []
+
+    if args.brand:
+        query += " AND brand = ?"
+        params.append(args.brand)
+    if args.variant:
+        query += " AND variant LIKE ?"
+        params.append(f"%{args.variant}%")
+
+    query += " ORDER BY brand ASC, variant ASC"
+
+    rows = db.execute(query, params).fetchall()
+    db.close()
+
+    if args.count:
+        print(len(rows))
+        return
+
+    if args.json:
+        output_json(rows)
+        return
+
+    display = []
+    for row in rows:
+        display.append({
+            "brand": row["brand"],
+            "variant": row["variant"] or "-",
+            "size": fmt_number(row["file_size_bytes"]),
+            "path": truncate(row["file_path"], 55),
+        })
+
+    columns = [
+        ("BRAND", "brand", 10),
+        ("VARIANT", "variant", 25),
+        ("SIZE", "size", 12),
+        ("PATH", "path", 40),
+    ]
+    print_table(columns, display)
+
+
 def cmd_sessions(args):
     """Session history."""
     db = connect()
@@ -424,6 +582,27 @@ def build_parser():
     p_sessions.add_argument("--latest", type=int, default=5, help="Show most recent N sessions (default: 5)")
     p_sessions.add_argument("--machine", help="Filter by machine name")
 
+    # assets
+    p_assets = subparsers.add_parser("assets", help="List/filter visual assets (avatars, sprites)")
+    p_assets.add_argument("--site", choices=["shawnos", "gtmos", "contentos", "mission-control", "canonical", "video-source"])
+    p_assets.add_argument("--type", choices=["tier", "class", "tool", "nio", "sprite-sheet", "current", "other"])
+    p_assets.add_argument("--tier", type=int, help="Filter by tier number")
+    p_assets.add_argument("--class-name", dest="class_name", help="Filter by class name (e.g. alchemist)")
+    p_assets.add_argument("--name", help="Filter by name (substring)")
+
+    # videos
+    p_videos = subparsers.add_parser("videos", help="List/filter video files")
+    p_videos.add_argument("--brand", choices=["shawnos", "gtmos", "contentos"])
+    p_videos.add_argument("--format", help="Filter by format (landscape, linkedin, reels, etc.)")
+    p_videos.add_argument("--deployed", help="Filter by deployment site")
+    p_videos.add_argument("--source-only", action="store_true", help="Show only source videos (not deployed)")
+    p_videos.add_argument("--deployed-only", action="store_true", help="Show only deployed copies")
+
+    # thumbnails
+    p_thumbnails = subparsers.add_parser("thumbnails", help="List/filter thumbnail images")
+    p_thumbnails.add_argument("--brand", choices=["shawnos", "gtmos", "contentos"])
+    p_thumbnails.add_argument("--variant", help="Filter by variant (substring)")
+
     return parser
 
 
@@ -441,6 +620,9 @@ def main():
         "stats": cmd_stats,
         "links": cmd_links,
         "sessions": cmd_sessions,
+        "assets": cmd_assets,
+        "videos": cmd_videos,
+        "thumbnails": cmd_thumbnails,
     }
 
     commands[args.command](args)

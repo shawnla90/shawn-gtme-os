@@ -102,6 +102,41 @@ CREATE TABLE IF NOT EXISTS content_links (
     link_type TEXT NOT NULL,
     UNIQUE(source_id, target_id, link_type)
 );
+
+CREATE TABLE IF NOT EXISTS assets (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file_path TEXT UNIQUE NOT NULL,
+    site TEXT NOT NULL,
+    asset_type TEXT NOT NULL,
+    name TEXT,
+    tier INTEGER,
+    class_name TEXT,
+    variant TEXT,
+    size_px INTEGER,
+    file_size_bytes INTEGER,
+    indexed_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS videos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file_path TEXT UNIQUE NOT NULL,
+    site TEXT NOT NULL,
+    brand TEXT NOT NULL,
+    aspect_ratio TEXT,
+    format TEXT,
+    file_size_bytes INTEGER,
+    deployed_to TEXT,
+    indexed_at TEXT DEFAULT (datetime('now'))
+);
+
+CREATE TABLE IF NOT EXISTS thumbnails (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file_path TEXT UNIQUE NOT NULL,
+    brand TEXT NOT NULL,
+    variant TEXT,
+    file_size_bytes INTEGER,
+    indexed_at TEXT DEFAULT (datetime('now'))
+);
 """
 
 # ── Helpers ───────────────────────────────────────────────────────────
@@ -444,6 +479,279 @@ def _extract_skill_frontmatter(filepath):
     return name, desc
 
 
+def scan_assets():
+    """Scan progression avatar directories for .gif and .png visual assets."""
+    asset_dirs = [
+        (REPO_ROOT / "website" / "apps" / "shawnos" / "public" / "progression" / "avatars", "shawnos"),
+        (REPO_ROOT / "website" / "apps" / "gtmos" / "public" / "progression" / "avatars", "gtmos"),
+        (REPO_ROOT / "website" / "apps" / "contentos" / "public" / "progression" / "avatars", "contentos"),
+        (REPO_ROOT / "website" / "apps" / "mission-control" / "public" / "progression" / "avatars", "mission-control"),
+        (REPO_ROOT / "data" / "progression" / "avatars", "canonical"),
+        (REPO_ROOT / "website" / "apps" / "video" / "public" / "progression" / "avatars", "video-source"),
+    ]
+
+    items = []
+    for dir_path, site in asset_dirs:
+        if not dir_path.exists():
+            continue
+        for f in sorted(dir_path.iterdir()):
+            if not f.is_file():
+                continue
+            if f.suffix.lower() not in (".gif", ".png"):
+                continue
+
+            rel_path = str(f.relative_to(REPO_ROOT))
+            stem = f.stem  # filename without extension
+
+            asset_type = None
+            name = None
+            tier = None
+            class_name = None
+            variant = None
+            size_px = None
+
+            # Parse filename patterns
+            # tier-3-idle-advanced-256.gif -> tier=3, variant="idle-advanced", size_px=256
+            tier_match = re.match(r"^tier-(\d+)-(.+?)(?:-(\d+))?$", stem)
+            # class-alchemist-static.png -> class_name="alchemist", variant="static"
+            class_match = re.match(r"^class-(\w+)-(.+)$", stem)
+            # tool-clay-idle.gif -> name="clay", variant="idle"
+            tool_match = re.match(r"^tool-(\w+)-(.+)$", stem)
+            # nio-tier-2-static.png -> name="nio", tier=2, variant="static"
+            nio_match = re.match(r"^nio-tier-(\d+)-(.+)$", stem)
+            # sprite-sheet.png -> asset_type="sprite-sheet"
+            sprite_match = re.match(r"^sprite-sheet$", stem)
+            # current-idle.gif -> asset_type="current", variant="idle"
+            current_match = re.match(r"^current-(.+)$", stem)
+
+            if tier_match:
+                asset_type = "tier"
+                tier = int(tier_match.group(1))
+                rest = tier_match.group(2)
+                size_str = tier_match.group(3)
+                if size_str:
+                    size_px = int(size_str)
+                    variant = rest
+                else:
+                    # Check if the last segment is a number (size)
+                    parts = rest.rsplit("-", 1)
+                    if len(parts) == 2 and parts[1].isdigit():
+                        variant = parts[0]
+                        size_px = int(parts[1])
+                    else:
+                        variant = rest
+            elif class_match:
+                asset_type = "class"
+                class_name = class_match.group(1)
+                variant = class_match.group(2)
+            elif tool_match:
+                asset_type = "tool"
+                name = tool_match.group(1)
+                variant = tool_match.group(2)
+            elif nio_match:
+                asset_type = "nio"
+                name = "nio"
+                tier = int(nio_match.group(1))
+                variant = nio_match.group(2)
+            elif sprite_match:
+                asset_type = "sprite-sheet"
+                variant = "main"
+            elif current_match:
+                asset_type = "current"
+                variant = current_match.group(1)
+            else:
+                # Fallback: unknown asset type
+                asset_type = "other"
+                name = stem
+
+            try:
+                file_size = os.path.getsize(f)
+            except OSError:
+                file_size = None
+
+            items.append({
+                "file_path": rel_path,
+                "site": site,
+                "asset_type": asset_type,
+                "name": name,
+                "tier": tier,
+                "class_name": class_name,
+                "variant": variant,
+                "size_px": size_px,
+                "file_size_bytes": file_size,
+            })
+
+    return items
+
+
+def _parse_video_source(stem):
+    """Parse a video source filename from website/apps/video/out/.
+
+    Returns (brand, aspect_ratio, format) tuple.
+    Examples:
+        contentos-landscape    -> ("contentos", "16:9", "landscape")
+        gtmos-linkedin-4x5     -> ("gtmos", "4:5", "linkedin")
+        lead-magnet-v3-reels   -> ("shawnos", "9:16", "reels")
+        shawnos-landscape      -> ("shawnos", "16:9", "landscape")
+    """
+    known_brands = ["shawnos", "gtmos", "contentos"]
+
+    # Map non-brand prefixes to their brand (e.g., lead-magnet -> shawnos)
+    brand_aliases = {
+        "lead-magnet": "shawnos",
+    }
+
+    format_map = {
+        "landscape": ("16:9", "landscape"),
+        "reels": ("9:16", "reels"),
+        "reel": ("9:16", "reel"),
+        "stories": ("9:16", "stories"),
+        "linkedin": ("4:5", "linkedin"),
+    }
+
+    # Resolve brand from known prefixes or aliases
+    brand = None
+    rest = stem
+    for b in known_brands:
+        if stem.startswith(f"{b}-"):
+            brand = b
+            rest = stem[len(b) + 1:]
+            break
+
+    if brand is None:
+        for alias, mapped_brand in brand_aliases.items():
+            if stem.startswith(f"{alias}"):
+                brand = mapped_brand
+                # Strip alias prefix, handle optional version suffix like "-v3"
+                rest = stem[len(alias):]
+                if rest.startswith("-"):
+                    rest = rest[1:]
+                # Skip version tag (e.g., "v3-reels" -> "reels")
+                ver_match = re.match(r"v\d+(?:-(.+))?$", rest)
+                if ver_match:
+                    rest = ver_match.group(1) or ""
+                break
+
+    if brand is None:
+        brand = "shawnos"  # fallback
+
+    # Check for explicit aspect ratio patterns like 4x5, 16x9, 9x16
+    ratio_match = re.search(r"-(\d+)x(\d+)$", rest)
+    if ratio_match:
+        w, h = ratio_match.group(1), ratio_match.group(2)
+        aspect_ratio = f"{w}:{h}"
+        fmt = rest[: ratio_match.start()]
+        return brand, aspect_ratio, fmt if fmt else None
+
+    # Check for known format suffixes
+    for fmt_key, (ratio, fmt_val) in format_map.items():
+        if rest == fmt_key or rest.endswith(f"-{fmt_key}"):
+            return brand, ratio, fmt_val
+
+    # Fallback: rest is the format name
+    return brand, None, rest if rest else None
+
+
+def scan_videos():
+    """Scan video output and deployed directories for .mp4 files."""
+    items = []
+
+    # Source videos: website/apps/video/out/*.mp4
+    video_out_dir = REPO_ROOT / "website" / "apps" / "video" / "out"
+    if video_out_dir.exists():
+        for f in sorted(video_out_dir.glob("*.mp4")):
+            rel_path = str(f.relative_to(REPO_ROOT))
+            brand, aspect_ratio, fmt = _parse_video_source(f.stem)
+            try:
+                file_size = os.path.getsize(f)
+            except OSError:
+                file_size = None
+            items.append({
+                "file_path": rel_path,
+                "site": "video-source",
+                "brand": brand,
+                "aspect_ratio": aspect_ratio,
+                "format": fmt,
+                "file_size_bytes": file_size,
+                "deployed_to": None,
+            })
+
+    # Deployed videos: website/apps/*/public/video/*.mp4
+    apps_dir = REPO_ROOT / "website" / "apps"
+    if apps_dir.exists():
+        for app_dir in sorted(apps_dir.iterdir()):
+            if not app_dir.is_dir():
+                continue
+            if app_dir.name == "video":
+                continue  # skip the source dir
+            video_dir = app_dir / "public" / "video"
+            if not video_dir.exists():
+                continue
+            for f in sorted(video_dir.glob("*.mp4")):
+                rel_path = str(f.relative_to(REPO_ROOT))
+                deployed_to = app_dir.name
+                # Infer brand from filename or deployed location
+                stem = f.stem
+                known_brands = ["shawnos", "gtmos", "contentos"]
+                brand = deployed_to  # default to the app name
+                for b in known_brands:
+                    if stem.startswith(b):
+                        brand = b
+                        break
+                try:
+                    file_size = os.path.getsize(f)
+                except OSError:
+                    file_size = None
+                items.append({
+                    "file_path": rel_path,
+                    "site": deployed_to,
+                    "brand": brand,
+                    "aspect_ratio": None,
+                    "format": None,
+                    "file_size_bytes": file_size,
+                    "deployed_to": deployed_to,
+                })
+
+    return items
+
+
+def scan_thumbnails():
+    """Scan video output directory for .png thumbnail files."""
+    items = []
+    video_out_dir = REPO_ROOT / "website" / "apps" / "video" / "out"
+    if not video_out_dir.exists():
+        return items
+
+    known_brands = ["shawnos", "gtmos", "contentos"]
+
+    for f in sorted(video_out_dir.glob("*.png")):
+        rel_path = str(f.relative_to(REPO_ROOT))
+        stem = f.stem
+
+        # Parse brand from prefix
+        brand = "shawnos"  # default
+        variant = stem
+        for b in known_brands:
+            if stem.startswith(f"{b}-"):
+                brand = b
+                variant = stem[len(b) + 1:]
+                break
+
+        try:
+            file_size = os.path.getsize(f)
+        except OSError:
+            file_size = None
+
+        items.append({
+            "file_path": rel_path,
+            "brand": brand,
+            "variant": variant,
+            "file_size_bytes": file_size,
+        })
+
+    return items
+
+
 def detect_content_links(db):
     """Detect cross-platform links by matching date+slug patterns."""
     cursor = db.execute("SELECT id, slug, date, platform FROM content WHERE slug IS NOT NULL AND date IS NOT NULL")
@@ -585,6 +893,9 @@ def init_db():
         DROP TABLE IF EXISTS content;
         DROP TABLE IF EXISTS daily_logs;
         DROP TABLE IF EXISTS skills;
+        DROP TABLE IF EXISTS assets;
+        DROP TABLE IF EXISTS videos;
+        DROP TABLE IF EXISTS thumbnails;
     """)
 
     # Recreate all tables (sessions uses IF NOT EXISTS, so it's left intact)
@@ -670,6 +981,50 @@ def insert_skills(db, skills):
     db.commit()
 
 
+def insert_assets(db, items):
+    """Insert asset records."""
+    for item in items:
+        db.execute("""
+            INSERT OR REPLACE INTO assets
+            (file_path, site, asset_type, name, tier, class_name, variant, size_px, file_size_bytes)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """, (
+            item["file_path"], item["site"], item["asset_type"],
+            item["name"], item["tier"], item["class_name"],
+            item["variant"], item["size_px"], item["file_size_bytes"],
+        ))
+    db.commit()
+
+
+def insert_videos(db, items):
+    """Insert video records."""
+    for item in items:
+        db.execute("""
+            INSERT OR REPLACE INTO videos
+            (file_path, site, brand, aspect_ratio, format, file_size_bytes, deployed_to)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        """, (
+            item["file_path"], item["site"], item["brand"],
+            item["aspect_ratio"], item["format"],
+            item["file_size_bytes"], item["deployed_to"],
+        ))
+    db.commit()
+
+
+def insert_thumbnails(db, items):
+    """Insert thumbnail records."""
+    for item in items:
+        db.execute("""
+            INSERT OR REPLACE INTO thumbnails
+            (file_path, brand, variant, file_size_bytes)
+            VALUES (?, ?, ?, ?)
+        """, (
+            item["file_path"], item["brand"],
+            item["variant"], item["file_size_bytes"],
+        ))
+    db.commit()
+
+
 def insert_content_links(db, links):
     """Insert content link records."""
     for src_id, dst_id, link_type in links:
@@ -714,6 +1069,21 @@ def main():
     skills = scan_skills()
     insert_skills(db, skills)
     print(f"  Skills:       {len(skills)} indexed")
+
+    # Visual assets
+    assets = scan_assets()
+    insert_assets(db, assets)
+    print(f"  Assets:       {len(assets)} visual assets indexed")
+
+    # Videos
+    videos = scan_videos()
+    insert_videos(db, videos)
+    print(f"  Videos:       {len(videos)} video files indexed")
+
+    # Thumbnails
+    thumbnails = scan_thumbnails()
+    insert_thumbnails(db, thumbnails)
+    print(f"  Thumbnails:   {len(thumbnails)} thumbnail files indexed")
 
     # Content links (cross-platform detection)
     links = detect_content_links(db)

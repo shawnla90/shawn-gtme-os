@@ -1,28 +1,8 @@
 {
   "date": "2026-02-16",
-  "generated_at": "2026-02-17T05:37:29.808178+00:00",
+  "generated_at": "2026-02-22T03:52:17.351448+00:00",
   "version": 3,
   "accomplishments": [
-    {
-      "type": "landing_page",
-      "title": "shawnos home page",
-      "path": "website/apps/shawnos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "02:50",
-      "words": 1031,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos clay-wiki slug page",
-      "path": "website/apps/gtmos/app/clay-wiki/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "20:47",
-      "words": 1058,
-      "value_score": 5,
-      "shipped": true
-    },
     {
       "type": "website_page",
       "title": "gtmos content-wiki page",
@@ -32,157 +12,50 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos clay-wiki page",
-      "path": "website/apps/shawnos/app/clay-wiki/page.tsx",
-      "source": "auto",
-      "timestamp": "14:04",
-      "words": 1092,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos knowledge page",
-      "path": "website/apps/shawnos/app/knowledge/page.tsx",
-      "source": "auto",
-      "timestamp": "03:12",
-      "words": 213,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log date page",
-      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "02:51",
-      "words": 536,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos context-wiki page",
-      "path": "website/apps/shawnos/app/context-wiki/page.tsx",
-      "source": "auto",
-      "timestamp": "16:06",
-      "words": 1098,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge page",
-      "path": "website/apps/gtmos/app/knowledge/page.tsx",
-      "source": "auto",
-      "timestamp": "20:46",
-      "words": 191,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "website_component",
-      "title": "BreadcrumbSchema",
-      "path": "website/packages/shared/components/BreadcrumbSchema.tsx",
+      "title": "Navigation",
+      "path": "website/packages/shared/components/Navigation.tsx",
       "source": "auto",
-      "timestamp": "02:49",
-      "words": 100,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "_gen_build_weekend_substack",
-      "path": "content/images/_gen_build_weekend_substack.py",
-      "source": "auto",
-      "timestamp": "23:50",
-      "words": 1509,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "root package",
-      "path": "website/package.json",
-      "source": "auto",
-      "timestamp": "02:08",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "SkillGuidePage",
-      "path": "website/packages/shared/pages/SkillGuidePage.tsx",
-      "source": "auto",
-      "timestamp": "15:44",
-      "words": 1942,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "17:27",
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos content-wiki slug page",
-      "path": "website/apps/gtmos/app/content-wiki/[slug]/page.tsx",
-      "source": "auto",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/index.ts",
-      "source": "auto",
-      "timestamp": "04:37",
-      "words": 128,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_component",
-      "title": "SiteCard",
-      "path": "website/packages/shared/components/SiteCard.tsx",
-      "source": "auto",
-      "timestamp": "01:42",
-      "words": 432,
+      "timestamp": "01:44",
+      "words": 154,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos content-wiki page",
-      "path": "website/apps/shawnos/app/content-wiki/page.tsx",
+      "title": "shawnos content-wiki slug page",
+      "path": "website/apps/shawnos/app/content-wiki/[slug]/page.tsx",
       "source": "auto",
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/components/index.ts",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/nio-tier-1-static.png",
       "source": "auto",
-      "timestamp": "02:49",
-      "words": 108,
-      "value_score": 3,
+      "timestamp": "01:45",
+      "value_score": 5,
       "shipped": true
     },
     {
-      "type": "feature_system",
-      "title": "DailyLogView",
-      "path": "website/packages/shared/components/DailyLogView.tsx",
+      "type": "website_page",
+      "title": "shawnos about page",
+      "path": "website/apps/shawnos/app/about/page.tsx",
       "source": "auto",
-      "timestamp": "01:04",
-      "words": 2587,
-      "value_score": 30,
+      "timestamp": "18:21",
+      "words": 801,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos method page",
+      "path": "website/apps/shawnos/app/method/page.tsx",
+      "source": "auto",
+      "timestamp": "18:10",
+      "words": 2131,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -196,12 +69,41 @@
       "shipped": true
     },
     {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/nio-tier-1-idle.gif",
+      "source": "auto",
+      "timestamp": "01:45",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
       "type": "website_page",
-      "title": "shawnos vitals page",
-      "path": "website/apps/shawnos/app/vitals/page.tsx",
+      "title": "shawnos api page",
+      "path": "website/apps/shawnos/app/api/page.tsx",
       "source": "auto",
       "timestamp": "02:51",
-      "words": 241,
+      "words": 1463,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log skill-guide page",
+      "path": "website/apps/shawnos/app/log/skill-guide/page.tsx",
+      "source": "auto",
+      "timestamp": "02:52",
+      "words": 181,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "FeatureShowcase",
+      "path": "website/packages/shared/components/FeatureShowcase.tsx",
+      "source": "auto",
+      "timestamp": "01:43",
+      "words": 313,
       "value_score": 5,
       "shipped": true
     },
@@ -220,89 +122,35 @@
       "title": "shawnos layout",
       "path": "website/apps/shawnos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "17:27",
-      "words": 491,
+      "timestamp": "18:21",
+      "words": 572,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos about page",
-      "path": "website/apps/shawnos/app/about/page.tsx",
-      "source": "auto",
-      "timestamp": "02:50",
-      "words": 801,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log skill-guide page",
-      "path": "website/apps/shawnos/app/log/skill-guide/page.tsx",
-      "source": "auto",
-      "timestamp": "02:52",
-      "words": 181,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos method page",
-      "path": "website/apps/shawnos/app/method/page.tsx",
-      "source": "auto",
-      "timestamp": "13:49",
-      "words": 2082,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "20:57",
-      "words": 193,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos rpg-preview page",
-      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "title": "shawnos vitals page",
+      "path": "website/apps/shawnos/app/vitals/page.tsx",
       "source": "auto",
       "timestamp": "02:51",
-      "words": 660,
+      "words": 241,
       "value_score": 5,
       "shipped": true
-    },
-    {
-      "type": "x_draft",
-      "title": "build trio",
-      "path": "content/x/drafts/2026-02-16_build-trio.md",
-      "source": "auto",
-      "timestamp": "22:45",
-      "words": 186,
-      "value_score": 2,
-      "shipped": false
     },
     {
       "type": "website_page",
-      "title": "shawnos api page",
-      "path": "website/apps/shawnos/app/api/page.tsx",
+      "title": "shawnos knowledge gtm page",
+      "path": "website/apps/shawnos/app/knowledge/gtm/page.tsx",
       "source": "auto",
-      "timestamp": "02:51",
-      "words": 1463,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared rpg",
-      "path": "website/packages/shared/lib/rpg.ts",
+      "type": "website_page",
+      "title": "shawnos arc page",
+      "path": "website/apps/shawnos/app/arc/page.tsx",
       "source": "auto",
-      "timestamp": "04:37",
-      "words": 1017,
-      "value_score": 3,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -317,29 +165,50 @@
     },
     {
       "type": "website_page",
+      "title": "shawnos rpg-preview page",
+      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 667,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "15:31",
+      "words": 231,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos clay-wiki slug page",
+      "path": "website/apps/gtmos/app/clay-wiki/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "20:47",
+      "words": 1058,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/contentos/public/progression/avatars/nio-tier-2-idle.gif",
+      "source": "auto",
+      "timestamp": "01:45",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
       "title": "contentos layout",
       "path": "website/apps/contentos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "20:59",
-      "words": 193,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge gtm page",
-      "path": "website/apps/gtmos/app/knowledge/gtm/page.tsx",
-      "source": "auto",
-      "timestamp": "20:46",
-      "words": 213,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos knowledge gtm page",
-      "path": "website/apps/shawnos/app/knowledge/gtm/page.tsx",
-      "source": "auto",
+      "timestamp": "15:32",
+      "words": 223,
       "value_score": 5,
       "shipped": true
     },
@@ -355,71 +224,49 @@
     },
     {
       "type": "website_page",
-      "title": "gtmos clay-wiki page",
-      "path": "website/apps/gtmos/app/clay-wiki/page.tsx",
+      "title": "shawnos log date page",
+      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
       "source": "auto",
-      "timestamp": "20:47",
-      "words": 1071,
+      "timestamp": "15:14",
+      "words": 974,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/gtmos/public/progression/avatars/tool-clay-idle.gif",
+      "source": "auto",
+      "timestamp": "16:04",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/gtmos/public/progression/avatars/nio-tier-2-idle.gif",
+      "source": "auto",
+      "timestamp": "01:45",
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "gtmos knowledge term page",
-      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "title": "VitalsPage",
+      "path": "website/packages/shared/pages/VitalsPage.tsx",
+      "source": "auto",
+      "timestamp": "14:21",
+      "words": 803,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge page",
+      "path": "website/apps/gtmos/app/knowledge/page.tsx",
       "source": "auto",
       "timestamp": "20:46",
-      "words": 1234,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_component",
-      "title": "Navigation",
-      "path": "website/packages/shared/components/Navigation.tsx",
-      "source": "auto",
-      "timestamp": "01:44",
-      "words": 154,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos knowledge term page",
-      "path": "website/apps/shawnos/app/knowledge/[term]/page.tsx",
-      "source": "auto",
-      "timestamp": "17:28",
-      "words": 1481,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log quests page",
-      "path": "website/apps/shawnos/app/log/quests/page.tsx",
-      "source": "auto",
-      "timestamp": "02:52",
-      "words": 173,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "gtmos next config",
-      "path": "website/apps/gtmos/next.config.ts",
-      "source": "auto",
-      "timestamp": "20:53",
-      "words": 43,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos arc page",
-      "path": "website/apps/shawnos/app/arc/page.tsx",
-      "source": "auto",
-      "timestamp": "02:50",
-      "words": 1428,
+      "words": 191,
       "value_score": 5,
       "shipped": true
     },
@@ -434,22 +281,50 @@
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared vitals.server",
-      "path": "website/packages/shared/lib/vitals.server.ts",
+      "type": "website_page",
+      "title": "gtmos knowledge term page",
+      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
       "source": "auto",
-      "timestamp": "01:42",
-      "words": 112,
-      "value_score": 3,
+      "timestamp": "12:10",
+      "words": 1430,
+      "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos clay-wiki slug page",
-      "path": "website/apps/shawnos/app/clay-wiki/[slug]/page.tsx",
+      "title": "gtmos knowledge gtm page",
+      "path": "website/apps/gtmos/app/knowledge/gtm/page.tsx",
       "source": "auto",
-      "timestamp": "14:04",
-      "words": 1203,
+      "timestamp": "20:46",
+      "words": 213,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/nio-tier-2-idle.gif",
+      "source": "auto",
+      "timestamp": "01:45",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "build trio",
+      "path": "content/x/drafts/2026-02-16_build-trio.md",
+      "source": "auto",
+      "timestamp": "22:45",
+      "words": 186,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/contentos/public/progression/avatars/nio-tier-1-static.png",
+      "source": "auto",
+      "timestamp": "01:45",
       "value_score": 5,
       "shipped": true
     },
@@ -464,20 +339,129 @@
       "shipped": true
     },
     {
-      "type": "website_component",
-      "title": "NioAvatar",
-      "path": "website/packages/shared/components/NioAvatar.tsx",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/contentos/public/progression/avatars/nio-tier-2-static.png",
+      "source": "auto",
+      "timestamp": "01:45",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 227,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shawnos next config",
+      "path": "website/apps/shawnos/next.config.ts",
+      "source": "auto",
+      "timestamp": "18:27",
+      "words": 59,
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared vitals",
+      "path": "website/packages/shared/lib/vitals.ts",
+      "source": "auto",
+      "timestamp": "02:07",
+      "words": 468,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "gtmos next config",
+      "path": "website/apps/gtmos/next.config.ts",
+      "source": "auto",
+      "timestamp": "20:53",
+      "words": 43,
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared vitals.server",
+      "path": "website/packages/shared/lib/vitals.server.ts",
       "source": "auto",
       "timestamp": "01:42",
-      "words": 441,
+      "words": 112,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "BreadcrumbSchema",
+      "path": "website/packages/shared/components/BreadcrumbSchema.tsx",
+      "source": "auto",
+      "timestamp": "02:49",
+      "words": 100,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "DailyLogView",
+      "path": "website/packages/shared/components/DailyLogView.tsx",
+      "source": "auto",
+      "timestamp": "01:04",
+      "words": 2587,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos context-wiki slug page",
+      "path": "website/apps/shawnos/app/context-wiki/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "15:57",
+      "words": 1211,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tool-clay-idle.gif",
+      "source": "auto",
+      "timestamp": "16:04",
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos content-wiki slug page",
-      "path": "website/apps/shawnos/app/content-wiki/[slug]/page.tsx",
+      "title": "shawnos clay-wiki page",
+      "path": "website/apps/shawnos/app/clay-wiki/page.tsx",
       "source": "auto",
+      "timestamp": "14:04",
+      "words": 1092,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tool-clay-static.png",
+      "source": "auto",
+      "timestamp": "16:04",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos vitals page",
+      "path": "website/apps/gtmos/app/vitals/page.tsx",
+      "source": "auto",
+      "timestamp": "01:44",
+      "words": 169,
       "value_score": 5,
       "shipped": true
     },
@@ -492,72 +476,80 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos blog page",
-      "path": "website/apps/shawnos/app/blog/page.tsx",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/gtmos/public/progression/avatars/nio-tier-1-idle.gif",
       "source": "auto",
-      "timestamp": "02:50",
-      "words": 199,
+      "timestamp": "01:45",
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared vitals",
-      "path": "website/packages/shared/lib/vitals.ts",
+      "type": "feature_system",
+      "title": "SkillGuidePage",
+      "path": "website/packages/shared/pages/SkillGuidePage.tsx",
       "source": "auto",
-      "timestamp": "02:07",
-      "words": 468,
-      "value_score": 3,
+      "timestamp": "15:44",
+      "words": 1942,
+      "value_score": 30,
       "shipped": true
     },
     {
       "type": "website_component",
-      "title": "FeatureShowcase",
-      "path": "website/packages/shared/components/FeatureShowcase.tsx",
+      "title": "SiteCard",
+      "path": "website/packages/shared/components/SiteCard.tsx",
       "source": "auto",
-      "timestamp": "01:43",
-      "words": 313,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "x_draft",
-      "title": "substack build weekend crosspromo",
-      "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
-      "source": "auto",
-      "timestamp": "22:33",
-      "words": 55,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos vitals page",
-      "path": "website/apps/gtmos/app/vitals/page.tsx",
-      "source": "auto",
-      "timestamp": "01:44",
-      "words": 169,
+      "timestamp": "01:42",
+      "words": 432,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos context-wiki slug page",
-      "path": "website/apps/shawnos/app/context-wiki/[slug]/page.tsx",
+      "title": "shawnos context-wiki page",
+      "path": "website/apps/shawnos/app/context-wiki/page.tsx",
       "source": "auto",
-      "timestamp": "15:57",
-      "words": 1211,
+      "timestamp": "16:06",
+      "words": 1098,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "VitalsPage",
-      "path": "website/packages/shared/pages/VitalsPage.tsx",
+      "title": "shawnos clay-wiki slug page",
+      "path": "website/apps/shawnos/app/clay-wiki/[slug]/page.tsx",
       "source": "auto",
-      "timestamp": "02:13",
-      "words": 751,
+      "timestamp": "14:04",
+      "words": 1203,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "NioAvatar",
+      "path": "website/packages/shared/components/NioAvatar.tsx",
+      "source": "auto",
+      "timestamp": "01:42",
+      "words": 441,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log quests page",
+      "path": "website/apps/shawnos/app/log/quests/page.tsx",
+      "source": "auto",
+      "timestamp": "02:52",
+      "words": 173,
       "value_score": 5,
       "shipped": true
     },
@@ -572,33 +564,77 @@
       "shipped": true
     },
     {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/gtmos/public/progression/avatars/tool-clay-static.png",
+      "source": "auto",
+      "timestamp": "16:04",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
       "type": "website_page",
       "title": "shawnos log page",
       "path": "website/apps/shawnos/app/log/page.tsx",
       "source": "auto",
-      "timestamp": "02:51",
-      "words": 374,
+      "timestamp": "15:14",
+      "words": 276,
       "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "19:23",
+      "words": 1090,
+      "value_score": 25,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "GTMKnowledgeGuidePage",
-      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
+      "title": "gtmos content-wiki slug page",
+      "path": "website/apps/gtmos/app/content-wiki/[slug]/page.tsx",
       "source": "auto",
-      "timestamp": "03:20",
-      "words": 7082,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "code_infra",
-      "title": "shawnos next config",
-      "path": "website/apps/shawnos/next.config.ts",
+      "type": "config_file",
+      "title": "root package",
+      "path": "website/package.json",
       "source": "auto",
-      "timestamp": "21:37",
-      "words": 51,
-      "value_score": 15,
+      "timestamp": "02:08",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos knowledge page",
+      "path": "website/apps/shawnos/app/knowledge/page.tsx",
+      "source": "auto",
+      "timestamp": "03:12",
+      "words": 213,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/gtmos/public/progression/avatars/nio-tier-1-static.png",
+      "source": "auto",
+      "timestamp": "01:45",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/gtmos/public/progression/avatars/nio-tier-2-static.png",
+      "source": "auto",
+      "timestamp": "01:45",
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -612,12 +648,108 @@
       "shipped": true
     },
     {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/components/index.ts",
+      "source": "auto",
+      "timestamp": "02:49",
+      "words": 108,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
       "type": "website_page",
-      "title": "gtmos log date page",
-      "path": "website/apps/gtmos/app/log/[date]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 516,
+      "title": "shawnos content-wiki page",
+      "path": "website/apps/shawnos/app/content-wiki/page.tsx",
+      "source": "auto",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos knowledge term page",
+      "path": "website/apps/shawnos/app/knowledge/[term]/page.tsx",
+      "source": "auto",
+      "timestamp": "17:28",
+      "words": 1481,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/nio-tier-2-static.png",
+      "source": "auto",
+      "timestamp": "01:45",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos clay-wiki page",
+      "path": "website/apps/gtmos/app/clay-wiki/page.tsx",
+      "source": "auto",
+      "timestamp": "20:47",
+      "words": 1071,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "substack build weekend crosspromo",
+      "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+      "source": "auto",
+      "timestamp": "22:33",
+      "words": 55,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg",
+      "path": "website/packages/shared/lib/rpg.ts",
+      "source": "auto",
+      "timestamp": "04:37",
+      "words": 1017,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "GTMKnowledgeGuidePage",
+      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 7206,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos blog page",
+      "path": "website/apps/shawnos/app/blog/page.tsx",
+      "source": "auto",
+      "timestamp": "02:50",
+      "words": 199,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "_gen_build_weekend_substack",
+      "path": "content/images/_gen_build_weekend_substack.py",
+      "source": "auto",
+      "timestamp": "23:50",
+      "words": 1509,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/contentos/public/progression/avatars/nio-tier-1-idle.gif",
+      "source": "auto",
+      "timestamp": "01:45",
       "value_score": 5,
       "shipped": true
     },
@@ -628,18 +760,9 @@
       "source": "auto-mtime",
       "timestamp": "20:53",
       "words": 1002,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "TypewriterHero",
-      "path": "website/packages/shared/components/TypewriterHero.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 798,
-      "value_score": 30,
-      "shipped": true
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
     },
     {
       "type": "website_page",
@@ -648,148 +771,9 @@
       "source": "auto-mtime",
       "timestamp": "20:52",
       "words": 943,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "complex_script",
-      "title": "website_scanner",
-      "path": "scripts/website_scanner.py",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 2193,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 4668,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "rescore_logs",
-      "path": "scripts/rescore_logs.py",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 319,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "gtmos home page",
-      "path": "website/apps/gtmos/app/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 984,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log page",
-      "path": "website/apps/contentos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 319,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 1411,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "avatar_generator",
-      "path": "scripts/avatar_generator.py",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 1854,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "view_sprite",
-      "path": "scripts/view_sprite.py",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 483,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "progression_engine",
-      "path": "scripts/progression_engine.py",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 1855,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log skill-guide page",
-      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 155,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log page",
-      "path": "website/apps/gtmos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 319,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos log skill-guide page",
-      "path": "website/apps/gtmos/app/log/skill-guide/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 155,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log date page",
-      "path": "website/apps/contentos/app/log/[date]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "16:47",
-      "words": 516,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "system_engine",
-      "title": "rpg_sprites",
-      "path": "scripts/rpg_sprites.py",
-      "source": "auto-mtime",
-      "timestamp": "04:36",
-      "words": 12575,
-      "value_score": 50,
-      "shipped": true
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
     }
   ],
   "pipeline": {
@@ -942,6 +926,41 @@
         "words": 1064
       },
       {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "linkedin",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+        "target_date": "2026-02-23",
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
+      },
+      {
         "platform": "x",
         "title": "skill tree repo",
         "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
@@ -1089,6 +1108,41 @@
         "words": 465
       },
       {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "x",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+        "target_date": "2026-02-23",
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
+      },
+      {
         "platform": "substack",
         "title": "content os reveal",
         "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
@@ -1132,10 +1186,17 @@
       },
       {
         "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
         "title": "start at level one",
         "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
         "target_date": "2026-02-24",
-        "words": 1013
+        "words": 1543
       },
       {
         "platform": "reddit",
@@ -1163,160 +1224,95 @@
   "token_usage": [
     {
       "session_id": "cursor-aggregate",
-      "input_tokens": 811350,
-      "output_tokens": 270450,
+      "input_tokens": 805275,
+      "output_tokens": 268425,
       "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "model": "opus",
       "source": "cursor-db",
-      "messages": 7212,
-      "conversations": 33,
-      "logged_at": "00:37",
-      "context": "cursor-ide 00:39-21:42",
-      "cost": 32.454,
+      "messages": 7158,
+      "conversations": 32,
+      "logged_at": "22:52",
+      "context": "cursor-ide 00:39-17:00",
+      "cost": 32.211,
       "estimated": true
     },
     {
       "session_id": "cursor-aggregate",
-      "input_tokens": 293512,
-      "output_tokens": 97838,
+      "input_tokens": 284625,
+      "output_tokens": 94875,
       "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "model": "cursor",
       "source": "cursor-db",
-      "messages": 2609,
-      "conversations": 6,
-      "logged_at": "00:37",
-      "context": "cursor-ide 01:04-22:01",
+      "messages": 2530,
+      "conversations": 5,
+      "logged_at": "22:52",
+      "context": "cursor-ide 01:04-21:04",
       "cost": 0.0,
       "estimated": true
     },
     {
       "session_id": "cursor-aggregate",
-      "input_tokens": 27450,
-      "output_tokens": 9150,
+      "input_tokens": 26662,
+      "output_tokens": 8888,
       "cache_read_tokens": 0,
       "cache_write_tokens": 0,
       "model": "gemini",
       "source": "cursor-db",
-      "messages": 244,
+      "messages": 237,
       "conversations": 1,
-      "logged_at": "00:37",
+      "logged_at": "22:52",
       "context": "cursor-ide 04:35-04:38",
-      "cost": 0.0801,
+      "cost": 0.0778,
       "estimated": true
     }
   ],
   "stats": {
     "platform_breakdown": {
-      "other": 20,
-      "website": 56,
-      "x": 2,
+      "website": 50,
+      "other": 26,
       "linkedin": 1,
+      "x": 2,
       "substack": 1
     },
-    "words_today": 79332,
-    "pipeline_words": 36965,
+    "words_in_touched_files": 49867,
+    "pipeline_words": 46861,
     "finals_count": 1,
-    "first_activity": "00:40",
+    "first_activity": "00:27",
     "last_activity": "23:50",
-    "output_score": 712,
+    "output_score": 427,
     "letter_grade": "S+",
     "score_breakdown": [
-      {
-        "type": "landing_page",
-        "title": "shawnos home page",
-        "points": 25
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos clay-wiki slug page",
-        "points": 5
-      },
       {
         "type": "website_page",
         "title": "gtmos content-wiki page",
         "points": 5
       },
       {
-        "type": "website_page",
-        "title": "shawnos clay-wiki page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos knowledge page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log date page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos context-wiki page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos knowledge page",
-        "points": 5
-      },
-      {
         "type": "website_component",
-        "title": "BreadcrumbSchema",
-        "points": 5
-      },
-      {
-        "type": "script",
-        "title": "_gen_build_weekend_substack",
-        "points": 2
-      },
-      {
-        "type": "code_infra",
-        "title": "root package",
-        "points": 15
-      },
-      {
-        "type": "feature_system",
-        "title": "SkillGuidePage",
-        "points": 30
-      },
-      {
-        "type": "code_infra",
-        "title": "shared package",
-        "points": 15
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos content-wiki slug page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared index",
-        "points": 3
-      },
-      {
-        "type": "website_component",
-        "title": "SiteCard",
+        "title": "Navigation",
         "points": 5
       },
       {
         "type": "website_page",
-        "title": "shawnos content-wiki page",
+        "title": "shawnos content-wiki slug page",
         "points": 5
       },
       {
-        "type": "website_lib",
-        "title": "shared index",
-        "points": 3
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
       },
       {
-        "type": "feature_system",
-        "title": "DailyLogView",
-        "points": 30
+        "type": "website_page",
+        "title": "shawnos about page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos method page",
+        "points": 5
       },
       {
         "type": "website_component",
@@ -1324,8 +1320,23 @@
         "points": 5
       },
       {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
         "type": "website_page",
-        "title": "shawnos vitals page",
+        "title": "shawnos api page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log skill-guide page",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "FeatureShowcase",
         "points": 5
       },
       {
@@ -1340,17 +1351,27 @@
       },
       {
         "type": "website_page",
-        "title": "shawnos about page",
+        "title": "shawnos vitals page",
         "points": 5
       },
       {
         "type": "website_page",
-        "title": "shawnos log skill-guide page",
+        "title": "shawnos knowledge gtm page",
         "points": 5
       },
       {
         "type": "website_page",
-        "title": "shawnos method page",
+        "title": "shawnos arc page",
+        "points": 5
+      },
+      {
+        "type": "linkedin_draft",
+        "title": "substack build weekend crosspromo",
+        "points": 2
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos rpg-preview page",
         "points": 5
       },
       {
@@ -1360,42 +1381,17 @@
       },
       {
         "type": "website_page",
-        "title": "shawnos rpg-preview page",
+        "title": "gtmos clay-wiki slug page",
         "points": 5
       },
       {
-        "type": "x_draft",
-        "title": "build trio",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos api page",
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
         "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared rpg",
-        "points": 3
-      },
-      {
-        "type": "linkedin_draft",
-        "title": "substack build weekend crosspromo",
-        "points": 2
       },
       {
         "type": "website_page",
         "title": "contentos layout",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos knowledge gtm page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos knowledge gtm page",
         "points": 5
       },
       {
@@ -1405,102 +1401,17 @@
       },
       {
         "type": "website_page",
-        "title": "gtmos clay-wiki page",
+        "title": "shawnos log date page",
         "points": 5
       },
       {
-        "type": "website_page",
-        "title": "gtmos knowledge term page",
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
         "points": 5
       },
       {
-        "type": "website_component",
-        "title": "Navigation",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos knowledge term page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log quests page",
-        "points": 5
-      },
-      {
-        "type": "code_infra",
-        "title": "gtmos next config",
-        "points": 15
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos arc page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos vitals page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared vitals.server",
-        "points": 3
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos clay-wiki slug page",
-        "points": 5
-      },
-      {
-        "type": "substack_final",
-        "title": "build weekend",
-        "points": 10
-      },
-      {
-        "type": "website_component",
-        "title": "NioAvatar",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos content-wiki slug page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos log build-your-own page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos blog page",
-        "points": 5
-      },
-      {
-        "type": "website_lib",
-        "title": "shared vitals",
-        "points": 3
-      },
-      {
-        "type": "website_component",
-        "title": "FeatureShowcase",
-        "points": 5
-      },
-      {
-        "type": "x_draft",
-        "title": "substack build weekend crosspromo",
-        "points": 2
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos vitals page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "shawnos context-wiki slug page",
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
         "points": 5
       },
       {
@@ -1509,9 +1420,149 @@
         "points": 5
       },
       {
+        "type": "website_page",
+        "title": "gtmos knowledge page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "contentos vitals page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos knowledge term page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos knowledge gtm page",
+        "points": 5
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "build trio",
+        "points": 2
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "substack_final",
+        "title": "build weekend",
+        "points": 10
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared vitals",
+        "points": 3
+      },
+      {
+        "type": "website_lib",
+        "title": "shared vitals.server",
+        "points": 3
+      },
+      {
+        "type": "website_component",
+        "title": "BreadcrumbSchema",
+        "points": 5
+      },
+      {
+        "type": "feature_system",
+        "title": "DailyLogView",
+        "points": 30
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos context-wiki slug page",
+        "points": 5
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos clay-wiki page",
+        "points": 5
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos vitals page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log build-your-own page",
+        "points": 5
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "feature_system",
+        "title": "SkillGuidePage",
+        "points": 30
+      },
+      {
+        "type": "website_component",
+        "title": "SiteCard",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos context-wiki page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos clay-wiki slug page",
+        "points": 5
+      },
+      {
+        "type": "website_component",
+        "title": "NioAvatar",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos log quests page",
+        "points": 5
+      },
+      {
         "type": "script",
         "title": "_gen_build_weekend_x",
         "points": 2
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
       },
       {
         "type": "website_page",
@@ -1519,14 +1570,29 @@
         "points": 5
       },
       {
+        "type": "landing_page",
+        "title": "shawnos home page",
+        "points": 25
+      },
+      {
         "type": "website_page",
-        "title": "GTMKnowledgeGuidePage",
+        "title": "gtmos content-wiki slug page",
         "points": 5
       },
       {
-        "type": "code_infra",
-        "title": "shawnos next config",
-        "points": 15
+        "type": "website_page",
+        "title": "shawnos knowledge page",
+        "points": 5
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
       },
       {
         "type": "website_page",
@@ -1534,8 +1600,58 @@
         "points": 5
       },
       {
+        "type": "website_lib",
+        "title": "shared index",
+        "points": 3
+      },
+      {
         "type": "website_page",
-        "title": "gtmos log date page",
+        "title": "shawnos content-wiki page",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos knowledge term page",
+        "points": 5
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "gtmos clay-wiki page",
+        "points": 5
+      },
+      {
+        "type": "x_draft",
+        "title": "substack build weekend crosspromo",
+        "points": 2
+      },
+      {
+        "type": "website_lib",
+        "title": "shared rpg",
+        "points": 3
+      },
+      {
+        "type": "website_page",
+        "title": "GTMKnowledgeGuidePage",
+        "points": 5
+      },
+      {
+        "type": "website_page",
+        "title": "shawnos blog page",
+        "points": 5
+      },
+      {
+        "type": "script",
+        "title": "_gen_build_weekend_substack",
+        "points": 2
+      },
+      {
+        "type": "avatar_generated",
+        "title": "tier/class avatar",
         "points": 5
       },
       {
@@ -1544,103 +1660,19 @@
         "points": 5
       },
       {
-        "type": "feature_system",
-        "title": "TypewriterHero",
-        "points": 30
-      },
-      {
         "type": "website_page",
         "title": "contentos content-wiki page",
         "points": 5
-      },
-      {
-        "type": "complex_script",
-        "title": "website_scanner",
-        "points": 25
-      },
-      {
-        "type": "feature_script",
-        "title": "daily_scan",
-        "points": 30
-      },
-      {
-        "type": "code_infra",
-        "title": "rescore_logs",
-        "points": 15
-      },
-      {
-        "type": "landing_page",
-        "title": "gtmos home page",
-        "points": 25
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log page",
-        "points": 5
-      },
-      {
-        "type": "landing_page",
-        "title": "contentos home page",
-        "points": 25
-      },
-      {
-        "type": "feature_script",
-        "title": "avatar_generator",
-        "points": 30
-      },
-      {
-        "type": "code_infra",
-        "title": "view_sprite",
-        "points": 15
-      },
-      {
-        "type": "feature_script",
-        "title": "progression_engine",
-        "points": 30
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log skill-guide page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "gtmos log skill-guide page",
-        "points": 5
-      },
-      {
-        "type": "website_page",
-        "title": "contentos log date page",
-        "points": 5
-      },
-      {
-        "type": "system_engine",
-        "title": "rpg_sprites",
-        "points": 50
       }
     ],
-    "efficiency_rating": 21.88,
-    "shipped_count": 77,
-    "draft_count": 3,
-    "ship_rate": 0.96,
-    "agent_cost": 32.53,
-    "dev_equivalent_cost": 28226.5,
-    "dev_equivalent_breakdown": {
-      "code_loc": 13529,
-      "code_hours": 270.58,
-      "code_cost": 20293.5,
-      "content_words": 79332,
-      "content_hours": 158.66,
-      "content_cost": 7933.0,
-      "total": 28226.5
-    },
-    "cost_savings": 28193.97,
-    "roi_multiplier": 867.6,
+    "efficiency_rating": 13.22,
+    "shipped_count": 75,
+    "draft_count": 5,
+    "ship_rate": 0.94,
+    "agent_cost": 32.29,
+    "cost_per_point": 0.08,
+    "efficiency_ratio": 13.22,
+    "words_today": 49867,
     "lines_added": 16076,
     "lines_removed": 1804,
     "lines_net": 14272,

@@ -86,7 +86,8 @@ SCORE_WEIGHTS = {
     "system_engine":       50,  # rpg_sprites.py — multi-layered animation/timer/unlock system
     "feature_script":      30,  # Named complex scripts (FEATURE_SCRIPTS set)
     "complex_script":      25,  # Auto-detected: 400+ lines, not in named sets
-    "code_infra":          15,  # Scripts, tsconfig, next.config, CI
+    "code_infra":          15,  # Real infrastructure scripts (scripts/*.py, custom configs)
+    "config_file":          0,  # Boilerplate config (package.json, tsconfig.json, vercel.json, next.config.ts)
     "final":               10,  # *_final
     "manual":               5,
     "skill_updated":       5,
@@ -114,6 +115,10 @@ SCORE_WEIGHTS = {
     "cursor_rule":         3,  # .cursor/rules/*.md
     "draft":               2,  # *_draft
     "script":              2,  # Fallback when not upgraded to code_infra
+    # Video / design assets
+    "video_rendered":     20,  # New video output
+    "thumbnail_rendered": 10,  # New thumbnail/carousel image
+    "avatar_generated":    5,  # New avatar/sprite asset
 }
 
 # Components that count as feature_system (RPG, dashboard, complex UI)
@@ -129,10 +134,10 @@ FEATURE_SCRIPTS = frozenset({
 })
 
 GRADE_THRESHOLDS = [
-    (500, "S+"),   # Legendary session
-    (350, "S"),
-    (150, "A+"),
-    (50,  "A"),
+    (300, "S+"),   # Legendary session
+    (200, "S"),
+    (100, "A+"),
+    (40,  "A"),
     (15,  "B"),
     (5,   "C"),
     (0,   "D"),
@@ -249,6 +254,18 @@ def classify_file(path_str):
         if "turbo.json" in p and p.startswith("website/"):
             return ("monorepo_build", None, "Turborepo monorepo scaffold")
 
+        # Video renders — website/apps/video/out/*.mp4
+        if re.match(r"website/apps/video/out/.*\.mp4$", p):
+            return ("video_rendered", None, "brand format video")
+
+        # Thumbnail renders — website/apps/video/out/*.png
+        if re.match(r"website/apps/video/out/.*\.png$", p):
+            return ("thumbnail_rendered", None, "brand variant thumbnail")
+
+        # Avatar/sprite assets — website/apps/*/public/progression/avatars/*.gif or *.png
+        if re.match(r"website/apps/[^/]+/public/progression/avatars/.*\.(gif|png)$", p):
+            return ("avatar_generated", None, "tier/class avatar")
+
         # Pages — website/apps/<app>/app/**/page.tsx
         page_match = re.match(r"website/apps/([^/]+)/app/(.+/)?page\.tsx$", p)
         if page_match:
@@ -304,14 +321,14 @@ def classify_file(path_str):
             app_name = layout_match.group(1)
             return ("website_page", None, f"{app_name} layout")
 
-        # Next.js config — next.config.ts (code infra)
+        # Next.js config — next.config.ts (boilerplate config, 0 pts)
         if basename == "next.config.ts":
             app_match = re.match(r"website/apps/([^/]+)/", p)
             app_name = app_match.group(1) if app_match else "root"
-            return ("code_infra", None, f"{app_name} next config")
+            return ("config_file", None, f"{app_name} next config")
 
-        # Other config — tsconfig.json, vercel.json, package.json (code infra)
-        # turbo.json handled earlier as monorepo_build
+        # Other config — tsconfig.json, vercel.json, package.json (boilerplate, 0 pts)
+        # turbo.json handled earlier as monorepo_build (50 pts)
         if basename in ("tsconfig.json", "turbo.json", "vercel.json", "package.json"):
             if basename == "turbo.json":
                 return ("monorepo_build", None, "Turborepo monorepo scaffold")
@@ -320,7 +337,7 @@ def classify_file(path_str):
                 context = parts_list[-2]  # e.g., "shawnos", "shared", "website"
             else:
                 context = "root"
-            return ("code_infra", None, f"{context} {stem}")
+            return ("config_file", None, f"{context} {stem}")
 
     # Skills (.cursor/skills/)
     if p.startswith(".cursor/skills/") and p.endswith("SKILL.md"):
@@ -758,44 +775,17 @@ def compute_efficiency(output_score, token_usage):
     return round(output_score / total_cost, 2)
 
 
-def compute_dev_equivalent(stats, git_summary):
-    """Estimate what a human dev/writer would cost for the same output.
+def compute_cost_metrics(output_score, total_cost):
+    """Compute honest cost metrics based on actual point output vs agent cost.
 
-    Uses conservative rates:
-    - Dev: $75/hr at 50 LOC/hr (net new production code only)
-    - Writer: $50/hr at 500 words/hr
-
-    Only counts code_loc (actual .ts/.tsx/.py/etc.) — content LOC and
-    data LOC are excluded from the dev cost calculation.
-
-    Returns (total_cost, breakdown_dict).
+    Returns dict with:
+    - cost_per_point: how much each point of real work cost ($/pt)
+    - efficiency_ratio: points per dollar (pts/$)
     """
-    DEV_RATE = 75
-    DEV_LOC_PER_HOUR = 50
-    WRITER_RATE = 50
-    WRITER_WORDS_PER_HOUR = 500
-
-    code_loc = git_summary.get("code_loc", 0)
-    words = stats.get("words_today", 0)
-
-    code_hours = round(code_loc / DEV_LOC_PER_HOUR, 2) if code_loc > 0 else 0
-    content_hours = round(words / WRITER_WORDS_PER_HOUR, 2) if words > 0 else 0
-
-    code_cost = round(code_hours * DEV_RATE, 2)
-    content_cost = round(content_hours * WRITER_RATE, 2)
-    total = round(code_cost + content_cost, 2)
-
-    breakdown = {
-        "code_loc": code_loc,
-        "code_hours": code_hours,
-        "code_cost": code_cost,
-        "content_words": words,
-        "content_hours": content_hours,
-        "content_cost": content_cost,
-        "total": total,
+    return {
+        "cost_per_point": round(total_cost / output_score, 2) if output_score > 0 else None,
+        "efficiency_ratio": round(output_score / total_cost, 2) if total_cost > 0 else None,
     }
-
-    return total, breakdown
 
 
 # ── Git scanning ─────────────────────────────────────────────────────
@@ -1024,6 +1014,9 @@ def build_accomplishments(added, modified, untracked, mtime_files, target_date):
     accomplishments = []
     seen_paths = set()
 
+    # Set of files confirmed in git (added, modified, or untracked with today's date)
+    git_confirmed = added | modified | untracked
+
     # Process added + modified files from git
     all_files = [(f, "auto") for f in added | modified]
     # Process untracked files with today's date
@@ -1063,6 +1056,14 @@ def build_accomplishments(added, modified, untracked, mtime_files, target_date):
         # Per-item value score + shipped flag
         entry["value_score"] = _get_score_for_type(type_code)
         entry["shipped"] = is_shipped(type_code)
+
+        # mtime-only penalty: if detected via mtime but NOT confirmed in git,
+        # the file was likely touched by a build process or git checkout — not
+        # real work.  Record it for visibility but zero out the score.
+        if source == "auto-mtime" and filepath not in git_confirmed:
+            entry["value_score"] = 0
+            entry["shipped"] = False
+            entry["mtime_only"] = True
 
         accomplishments.append(entry)
 
@@ -1112,7 +1113,8 @@ def compute_stats(accomplishments, drafts_active, finalized_today, git_summary):
         else:
             platform_counts["other"] = platform_counts.get("other", 0) + 1
 
-    # Total words written today (from accomplishments)
+    # Total words in touched files (upper bound — includes full file content of
+    # existing files that may have been only slightly modified, not net new words)
     total_words = sum(a.get("words", 0) for a in accomplishments)
 
     # Draft words (pipeline total)
@@ -1128,7 +1130,7 @@ def compute_stats(accomplishments, drafts_active, finalized_today, git_summary):
 
     return {
         "platform_breakdown": platform_counts,
-        "words_today": total_words,
+        "words_in_touched_files": total_words,
         "pipeline_words": pipeline_words,
         "finals_count": finals_count,
         "first_activity": first_activity,
@@ -1281,12 +1283,14 @@ def main():
     # Agent cost (total across all token sessions)
     merged["stats"]["agent_cost"] = round(total_cost, 2)
 
-    # Dev equivalent + ROI
-    dev_eq, dev_eq_breakdown = compute_dev_equivalent(merged["stats"], merged.get("git_summary", {}))
-    merged["stats"]["dev_equivalent_cost"] = dev_eq
-    merged["stats"]["dev_equivalent_breakdown"] = dev_eq_breakdown
-    merged["stats"]["cost_savings"] = round(dev_eq - total_cost, 2) if total_cost > 0 else dev_eq
-    merged["stats"]["roi_multiplier"] = round(dev_eq / total_cost, 1) if total_cost > 0 else 0.0
+    # Cost metrics — honest $/pt and pts/$
+    cost_metrics = compute_cost_metrics(stats["output_score"], total_cost)
+    merged["stats"]["cost_per_point"] = cost_metrics["cost_per_point"]
+    merged["stats"]["efficiency_ratio"] = cost_metrics["efficiency_ratio"]
+
+    # Backward-compat alias — downstream consumers (website, dashboard, progression)
+    # still reference "words_today".  Emit both keys until those are migrated.
+    merged["stats"]["words_today"] = merged["stats"].get("words_in_touched_files", 0)
 
     # LOC in stats for easy dashboard access
     merged["stats"]["lines_added"] = merged.get("git_summary", {}).get("lines_added_count", 0)
@@ -1295,6 +1299,16 @@ def main():
     merged["stats"]["code_loc"] = merged.get("git_summary", {}).get("code_loc", 0)
     merged["stats"]["content_loc"] = merged.get("git_summary", {}).get("content_loc", 0)
     merged["stats"]["data_loc"] = merged.get("git_summary", {}).get("data_loc", 0)
+
+    # Sanitize partner names from paths before writing (pre-push blocklist)
+    blocklist_path = REPO_ROOT / ".claude" / "blocklist.txt"
+    if blocklist_path.exists():
+        terms = [t.strip().lower() for t in blocklist_path.read_text().splitlines() if t.strip()]
+        raw = json.dumps(merged, indent=2)
+        for term in terms:
+            # Replace partner names in file paths (case-insensitive)
+            raw = re.sub(re.escape(term), "[redacted]", raw, flags=re.IGNORECASE)
+        merged = json.loads(raw)
 
     # Write
     log_path.write_text(json.dumps(merged, indent=2) + "\n")
@@ -1313,17 +1327,16 @@ def main():
     print(f"  TODOs pending:   {todo_pending}")
     print(f"  Git commits:     {commit_count}")
     print(f"  LOC:             +{lines_added_total} / -{lines_removed_total} (net {lines_added_total - lines_removed_total})")
-    print(f"  Words today:     {stats['words_today']}")
+    print(f"  Words (touched):  {stats['words_in_touched_files']}")
     print(f"  Pipeline words:  {stats['pipeline_words']}")
     print(f"  Token sessions:  {token_count} (auto-detected)")
     print(f"  Agent cost:      ${total_cost:.2f}")
-    print(f"  Dev equivalent:  ${dev_eq:,.2f}")
-    print(f"  Cost savings:    ${merged['stats']['cost_savings']:,.2f}")
-    print(f"  ROI:             {merged['stats']['roi_multiplier']:,.1f}x")
+    cpp = cost_metrics['cost_per_point']
+    er = cost_metrics['efficiency_ratio']
+    print(f"  Cost/point:      {f'${cpp:.2f}/pt' if cpp is not None else 'N/A'}")
+    print(f"  Efficiency:      {f'{er:.2f} pts/$' if er is not None else 'N/A'}")
     print(f"  Ship rate:       {merged['stats']['ship_rate']*100:.0f}% ({merged['stats']['shipped_count']}/{total_acc})")
     print(f"  Score:           {stats['output_score']} pts ({stats['letter_grade']})")
-    if efficiency is not None:
-        print(f"  Efficiency:      {efficiency} pts/$")
     print(f"  Output: {log_path.relative_to(REPO_ROOT)}")
 
 

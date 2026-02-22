@@ -42,16 +42,16 @@ AVATAR_DIR = PROGRESSION_DIR / "avatars"
 
 TITLE_TABLE: List[Dict[str, Any]] = [
     {"level": 1,  "title": "Terminal Initiate",          "xp_required": 0,      "avatar_tier": 1},
-    {"level": 5,  "title": "Prompt Apprentice",          "xp_required": 500,    "avatar_tier": 1},
-    {"level": 10, "title": "Repo Architect",             "xp_required": 2000,   "avatar_tier": 2},
-    {"level": 15, "title": "Pipeline Runner",            "xp_required": 5000,   "avatar_tier": 2},
-    {"level": 20, "title": "Context Weaver",             "xp_required": 10000,  "avatar_tier": 3},
-    {"level": 25, "title": "Skill Forger",               "xp_required": 18000,  "avatar_tier": 3},
-    {"level": 30, "title": "Voice Alchemist",            "xp_required": 30000,  "avatar_tier": 4},
-    {"level": 35, "title": "System Sovereign",           "xp_required": 50000,  "avatar_tier": 4},
-    {"level": 40, "title": "OS Architect",               "xp_required": 80000,  "avatar_tier": 5},
-    {"level": 45, "title": "Cursor Slayer",              "xp_required": 120000, "avatar_tier": 5},
-    {"level": 50, "title": "Grand Master Cursor Slayer", "xp_required": 200000, "avatar_tier": 6},
+    {"level": 5,  "title": "Prompt Apprentice",          "xp_required": 300,    "avatar_tier": 1},
+    {"level": 10, "title": "Repo Architect",             "xp_required": 1200,   "avatar_tier": 2},
+    {"level": 15, "title": "Pipeline Runner",            "xp_required": 3000,   "avatar_tier": 2},
+    {"level": 20, "title": "Context Weaver",             "xp_required": 6000,   "avatar_tier": 3},
+    {"level": 25, "title": "Skill Forger",               "xp_required": 11000,  "avatar_tier": 3},
+    {"level": 30, "title": "Voice Alchemist",            "xp_required": 18000,  "avatar_tier": 4},
+    {"level": 35, "title": "System Sovereign",           "xp_required": 30000,  "avatar_tier": 4},
+    {"level": 40, "title": "OS Architect",               "xp_required": 50000,  "avatar_tier": 5},
+    {"level": 45, "title": "Cursor Slayer",              "xp_required": 75000,  "avatar_tier": 5},
+    {"level": 50, "title": "Grand Master Cursor Slayer", "xp_required": 120000, "avatar_tier": 6},
 ]
 
 
@@ -72,6 +72,12 @@ CLASS_CATEGORIES: Dict[str, str] = {
     "skill_updated":     "builder",
     "workflow_updated":  "builder",
     "cursor_rule":       "builder",
+    "config_file":       "builder",   # 0 pts — boilerplate config, won't affect class
+    "mtime_only":        "builder",   # 0 pts — mtime-touched but not in git
+    # Video / design assets
+    "video_rendered":    "builder",
+    "thumbnail_rendered":"builder",
+    "avatar_generated":  "builder",
     # Scribe — content creation
     "linkedin_draft":    "scribe",
     "linkedin_final":    "scribe",
