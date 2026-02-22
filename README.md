@@ -14,12 +14,21 @@ ShawnOS is a personal productivity and content operating system that gamifies da
 - **Letter Grades**: Daily output scored with efficiency ratings (S, A, B, C, D, F)
 
 ### Mono-Repo Architecture
-Three-domain publishing system powered by Turborepo:
+Three-domain publishing system + mobile chat interface, powered by Turborepo:
 - **shawnos.ai** — Main landing page and RPG dashboard
 - **thegtmos.ai** — GTM operations showcase
 - **thecontentos.ai** — Content portfolio and writing samples
+- **nio-chat** — Mobile PWA for chatting with Nio (AI ops layer) from your phone
 
 All domains share a unified component library, design system, and terminal-inspired aesthetic.
+
+### Nio Chat (Mobile AI Ops)
+A Next.js PWA that wraps the Claude CLI (`claude -p`) in an SSE API route, giving full system access to Nio from your phone. Zero API cost (Max subscription).
+- **iMessage-style chat UI** with streaming responses
+- **Full tool access**: Bash, file ops, web search, Playwright browser control, MCP integrations
+- **Session memory** via Claude CLI `--resume` flag
+- **Password-gated** with Cloudflare Tunnel for secure remote access
+- **Nio personality** injected via `nio-soul.md` system prompt
 
 ### Agent Skills Library
 42+ invokable skills for Claude/Cursor IDE automation:
@@ -75,10 +84,10 @@ See [IP_REGISTRY.md](IP_REGISTRY.md) for a full asset inventory and protection s
 
 - **Frontend**: Next.js 15, React 19, TailwindCSS
 - **Build**: Turborepo (mono-repo orchestration)
-- **Deployment**: Vercel (3 domains)
+- **Deployment**: Vercel (3 domains), Cloudflare Tunnel (nio-chat)
 - **Automation**: Python 3.x (proprietary scripts)
-- **AI/Agentic**: Claude Sonnet, Cursor IDE, MCP servers
-- **Infrastructure**: GitHub Actions, Vercel CLI
+- **AI/Agentic**: Claude Opus 4.6, Claude CLI (Max), Playwright MCP, MCP servers
+- **Infrastructure**: GitHub Actions, Vercel CLI, Cloudflare Tunnel
 
 ## 📝 Philosophy
 
