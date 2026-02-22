@@ -1,101 +1,156 @@
 {
-  "generated": "2026-02-22T06:12:41.000Z",
+  "generated": "2026-02-22T05:00:08.000Z",
   "totals": {
-    "total_content": 81,
-    "total_drafts": 53,
-    "total_final": 28,
-    "total_words": 52839,
+    "total_content": 86,
+    "total_drafts": 63,
+    "total_final": 23,
+    "total_words": 57961,
     "platforms_active": 5,
-    "cross_platform_groups": 22,
-    "series_count": 0
+    "cross_platform_groups": 24,
+    "series_count": 4
   },
   "pipeline": {
-    "substack": {
-      "draft": 6,
-      "final": 4,
-      "total": 10,
-      "words": 12409
-    },
-    "website": {
-      "draft": 1,
-      "final": 5,
-      "total": 6,
-      "words": 4219
-    },
     "linkedin": {
-      "draft": 22,
+      "draft": 26,
       "final": 11,
-      "total": 33,
-      "words": 22682
+      "total": 37,
+      "words": 26125
     },
     "x": {
-      "draft": 22,
+      "draft": 26,
       "final": 8,
-      "total": 30,
-      "words": 11087
+      "total": 34,
+      "words": 13470
+    },
+    "substack": {
+      "draft": 8,
+      "final": 3,
+      "total": 11,
+      "words": 14817
     },
     "reddit": {
       "draft": 2,
       "final": 0,
       "total": 2,
       "words": 2442
+    },
+    "website": {
+      "draft": 1,
+      "final": 1,
+      "total": 2,
+      "words": 1107
     }
   },
   "recent": [
     {
+      "platform": "linkedin",
+      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+      "slug": "ecosystem-capstone",
+      "date": "2026-02-26",
+      "stage": "draft",
+      "pillar": "Building & Sharing (capstone)",
+      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
+      "word_count": 961,
+      "file_path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md"
+    },
+    {
+      "platform": "x",
+      "title": "Full Ecosystem X Threads -- Day 4",
+      "slug": "ecosystem-threads",
+      "date": "2026-02-26",
+      "stage": "draft",
+      "pillar": null,
+      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
+      "word_count": 626,
+      "file_path": "content/x/drafts/2026-02-26_ecosystem-threads.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "Content OS: The Content Machine -- Day 3",
+      "slug": "contentos-machine",
+      "date": "2026-02-25",
+      "stage": "draft",
+      "pillar": "Skill/System Share",
+      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
+      "word_count": 896,
+      "file_path": "content/linkedin/drafts/2026-02-25_contentos-machine.md"
+    },
+    {
       "platform": "substack",
-      "title": "The Anti Lead Magnet: Start at Level One or Don't Start at All",
-      "slug": "anti-lead-magnet",
-      "date": "2026-02-22",
-      "stage": "final",
+      "title": "Start at Level One",
+      "slug": "start-at-level-one",
+      "date": "2026-02-25",
+      "stage": "draft",
       "pillar": null,
       "arc": null,
-      "word_count": 676,
-      "file_path": "content/substack/final/2026-02-22_anti-lead-magnet.md"
+      "word_count": 1543,
+      "file_path": "content/substack/drafts/2026-02-24_start-at-level-one.md"
     },
     {
-      "platform": "website",
-      "title": "The Anti Lead Magnet",
+      "platform": "x",
+      "title": "Content OS X Threads -- Day 3",
+      "slug": "contentos-threads",
+      "date": "2026-02-25",
+      "stage": "draft",
+      "pillar": null,
+      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
+      "word_count": 567,
+      "file_path": "content/x/drafts/2026-02-25_contentos-threads.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "GTM OS: The Infrastructure -- Day 2",
+      "slug": "gtmos-infrastructure",
+      "date": "2026-02-24",
+      "stage": "draft",
+      "pillar": "Skill/System Share",
+      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
+      "word_count": 821,
+      "file_path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md"
+    },
+    {
+      "platform": "substack",
+      "title": "OS.AI Labs, Post 5 -- Build Your Own OS",
       "slug": "build-your-own-os",
-      "date": "2026-02-22",
-      "stage": "final",
+      "date": "2026-02-24",
+      "stage": "draft",
       "pillar": null,
       "arc": null,
-      "word_count": 689,
-      "file_path": "content/website/final/build-your-own-os.md"
+      "word_count": 1541,
+      "file_path": "content/substack/drafts/2026-02-17_build-your-own-os.md"
     },
     {
-      "platform": "website",
-      "title": "Content Clusters and the Breadcrumb Protocol",
-      "slug": "content-cluster-breadcrumbs",
-      "date": "2026-02-22",
-      "stage": "final",
+      "platform": "x",
+      "title": "GTM OS X Threads -- Day 2",
+      "slug": "gtmos-threads",
+      "date": "2026-02-24",
+      "stage": "draft",
       "pillar": null,
-      "arc": null,
-      "word_count": 858,
-      "file_path": "content/website/final/content-cluster-breadcrumbs.md"
+      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
+      "word_count": 596,
+      "file_path": "content/x/drafts/2026-02-24_gtmos-threads.md"
     },
     {
-      "platform": "website",
-      "title": "How I Built a Video Rendering System in React",
-      "slug": "remotion-video-system",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 783,
-      "file_path": "content/website/final/remotion-video-system.md"
+      "platform": "linkedin",
+      "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
+      "slug": "shawnos-anti-lead-magnet",
+      "date": "2026-02-23",
+      "stage": "draft",
+      "pillar": "Building & Sharing",
+      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
+      "word_count": 765,
+      "file_path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md"
     },
     {
-      "platform": "website",
-      "title": "Querying Your Repo Like a Database",
-      "slug": "sqlite-content-index",
-      "date": "2026-02-22",
-      "stage": "final",
+      "platform": "x",
+      "title": "ShawnOS X Threads -- Day 1",
+      "slug": "shawnos-threads",
+      "date": "2026-02-23",
+      "stage": "draft",
       "pillar": null,
-      "arc": null,
-      "word_count": 782,
-      "file_path": "content/website/final/sqlite-content-index.md"
+      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
+      "word_count": 594,
+      "file_path": "content/x/drafts/2026-02-23_shawnos-threads.md"
     },
     {
       "platform": "substack",
@@ -536,65 +591,133 @@
       "arc": null,
       "word_count": 678,
       "file_path": "content/linkedin/drafts/2026-02-10_content-os-meta.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Content OS Schematic \u2014 Visualize Your Repo",
-      "slug": "content-os-schematic",
-      "date": "2026-02-10",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 1263,
-      "file_path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "GitHub Safety Workflow \u2014 Learning Git Right",
-      "slug": "github-safety-workflow",
-      "date": "2026-02-10",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 784,
-      "file_path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "HeyReach Partner Handoff \u2014 GTM Play 16 (v2)",
-      "slug": "heyreach-partner-handoff-v2",
-      "date": "2026-02-10",
-      "stage": "draft",
-      "pillar": "Plays Series",
-      "arc": null,
-      "word_count": 629,
-      "file_path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Skill Play \u2014 The Command That Documents Itself",
-      "slug": "skill-play",
-      "date": "2026-02-10",
-      "stage": "draft",
-      "pillar": "Skill/System Shares",
-      "arc": null,
-      "word_count": 740,
-      "file_path": "content/linkedin/drafts/2026-02-10_skill-play.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Voice Modularity \u2014 Write WITH the System, Not AI Writing FOR You",
-      "slug": "voice-modularity",
-      "date": "2026-02-10",
-      "stage": "draft",
-      "pillar": "Skill/System Shares",
-      "arc": null,
-      "word_count": 795,
-      "file_path": "content/linkedin/drafts/2026-02-10_voice-modularity.md"
     }
   ],
-  "series": [],
+  "series": [
+    {
+      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
+      "pillar": "Building & Sharing (capstone)",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+          "slug": "ecosystem-capstone",
+          "date": "2026-02-26",
+          "stage": "draft",
+          "series_position": 4,
+          "word_count": 961
+        },
+        {
+          "platform": "x",
+          "title": "Full Ecosystem X Threads -- Day 4",
+          "slug": "ecosystem-threads",
+          "date": "2026-02-26",
+          "stage": "draft",
+          "series_position": 4,
+          "word_count": 626
+        }
+      ]
+    },
+    {
+      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
+      "pillar": "Skill/System Share",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "Content OS: The Content Machine -- Day 3",
+          "slug": "contentos-machine",
+          "date": "2026-02-25",
+          "stage": "draft",
+          "series_position": 3,
+          "word_count": 896
+        },
+        {
+          "platform": "x",
+          "title": "Content OS X Threads -- Day 3",
+          "slug": "contentos-threads",
+          "date": "2026-02-25",
+          "stage": "draft",
+          "series_position": 3,
+          "word_count": 567
+        }
+      ]
+    },
+    {
+      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
+      "pillar": "Skill/System Share",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "GTM OS: The Infrastructure -- Day 2",
+          "slug": "gtmos-infrastructure",
+          "date": "2026-02-24",
+          "stage": "draft",
+          "series_position": 2,
+          "word_count": 821
+        },
+        {
+          "platform": "x",
+          "title": "GTM OS X Threads -- Day 2",
+          "slug": "gtmos-threads",
+          "date": "2026-02-24",
+          "stage": "draft",
+          "series_position": 2,
+          "word_count": 596
+        }
+      ]
+    },
+    {
+      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
+      "pillar": "Building & Sharing",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
+          "slug": "shawnos-anti-lead-magnet",
+          "date": "2026-02-23",
+          "stage": "draft",
+          "series_position": 1,
+          "word_count": 765
+        },
+        {
+          "platform": "x",
+          "title": "ShawnOS X Threads -- Day 1",
+          "slug": "shawnos-threads",
+          "date": "2026-02-23",
+          "stage": "draft",
+          "series_position": 1,
+          "word_count": 594
+        }
+      ]
+    }
+  ],
   "crossPlatform": [
+    {
+      "date": "2026-02-25",
+      "slug": "start-at-level-one",
+      "platforms": [
+        "linkedin",
+        "substack",
+        "x"
+      ],
+      "link_types": [
+        "cross_platform_note"
+      ],
+      "platform_count": 3
+    },
+    {
+      "date": "2026-02-24",
+      "slug": "build-your-own-os",
+      "platforms": [
+        "linkedin",
+        "substack",
+        "x"
+      ],
+      "link_types": [
+        "cross_platform_note"
+      ],
+      "platform_count": 3
+    },
     {
       "date": "2026-02-18",
       "slug": "parallel-agents-plan-mode",
@@ -865,11 +988,11 @@
   "dailyStats": [
     {
       "date": "2026-02-21",
-      "grade": "S",
-      "score": 255,
-      "words": 24055,
+      "grade": "S+",
+      "score": 491,
+      "words": 50531,
       "shipped": 23,
-      "cost": 0.0
+      "cost": 229.42
     },
     {
       "date": "2026-02-20",

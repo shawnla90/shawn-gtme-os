@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-22T06:12:41.000Z",
+  "generated": "2026-02-22T05:00:08.000Z",
   "system": {
     "status": "degraded",
     "uptime": "live",
@@ -25,80 +25,80 @@
   ],
   "drafts": [
     {
-      "type": "substack",
-      "title": "recursive drift",
-      "status": "draft",
-      "date": "2026-02-19",
-      "pillar": null
-    },
-    {
       "type": "linkedin",
-      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
+      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
       "status": "draft",
-      "date": "2026-02-18",
-      "pillar": "Skill/System Shares"
+      "date": "2026-02-26",
+      "pillar": "Building & Sharing (capstone)"
     },
     {
       "type": "x",
-      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
+      "title": "Full Ecosystem X Threads -- Day 4",
       "status": "draft",
-      "date": "2026-02-18",
-      "pillar": "Skill/System Shares"
+      "date": "2026-02-26",
+      "pillar": null
     },
     {
       "type": "linkedin",
-      "title": "Build Your Own OS -- LinkedIn Cross-Promo",
+      "title": "Content OS: The Content Machine -- Day 3",
       "status": "draft",
-      "date": "2026-02-17",
-      "pillar": null
-    },
-    {
-      "type": "reddit",
-      "title": "Build Your Own OS -- Reddit Post",
-      "status": "draft",
-      "date": "2026-02-17",
-      "pillar": null
+      "date": "2026-02-25",
+      "pillar": "Skill/System Share"
     },
     {
       "type": "substack",
-      "title": "OS.AI Labs, Post 4 -- The Cursor Discovery",
+      "title": "Start at Level One",
       "status": "draft",
-      "date": "2026-02-17",
+      "date": "2026-02-25",
       "pillar": null
     },
     {
       "type": "x",
-      "title": "Build Your Own OS -- X Thread Cross-Promo",
+      "title": "Content OS X Threads -- Day 3",
       "status": "draft",
-      "date": "2026-02-17",
+      "date": "2026-02-25",
       "pillar": null
     },
     {
       "type": "linkedin",
-      "title": "substack build weekend crosspromo",
+      "title": "GTM OS: The Infrastructure -- Day 2",
       "status": "draft",
-      "date": "2026-02-16",
-      "pillar": "building & sharing"
+      "date": "2026-02-24",
+      "pillar": "Skill/System Share"
     },
     {
-      "type": "website",
-      "title": "Nothing Stays the Same",
+      "type": "substack",
+      "title": "OS.AI Labs, Post 5 -- Build Your Own OS",
       "status": "draft",
-      "date": "2026-02-16",
+      "date": "2026-02-24",
       "pillar": null
     },
     {
       "type": "x",
-      "title": "build trio",
+      "title": "GTM OS X Threads -- Day 2",
       "status": "draft",
-      "date": "2026-02-16",
-      "pillar": "building & sharing"
+      "date": "2026-02-24",
+      "pillar": null
+    },
+    {
+      "type": "linkedin",
+      "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "x",
+      "title": "ShawnOS X Threads -- Day 1",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": null
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
     "teamMembers": 4,
-    "draftsTracked": 53
+    "draftsTracked": 63
   }
 }
