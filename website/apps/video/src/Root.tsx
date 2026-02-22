@@ -3,6 +3,7 @@ import { LeadMagnet } from './LeadMagnet';
 import { LeadMagnetV2, SHAWNOS_TOTAL_FRAMES } from './LeadMagnetV2';
 import { GtmOsVideo, GTM_OS_TOTAL_FRAMES } from './GtmOsVideo';
 import { ContentOsVideo } from './ContentOsVideo';
+import { ShawnOsThumbnail, GtmOsThumbnail, ContentOsThumbnail } from './Thumbnails';
 import { FPS, TOTAL_FRAMES, PRESETS } from './lib/timing';
 import { FPS_V2, TOTAL_FRAMES_V2 } from './lib/timing-v2';
 
@@ -94,6 +95,35 @@ export const Root: React.FC = () => {
         fps={FPS_V2}
         width={PRESETS.reels.width}
         height={PRESETS.reels.height}
+      />
+
+      {/* ── Static Thumbnails (LinkedIn carousel images) ── */}
+
+      <Composition
+        id="ShawnOsThumb"
+        component={ShawnOsThumbnail}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="GtmOsThumb"
+        component={GtmOsThumbnail}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="ContentOsThumb"
+        component={ContentOsThumbnail}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
       />
 
       {/* ── V1 Compositions (60s, silent — kept for reference) ── */}
