@@ -150,12 +150,11 @@ GRADE_THRESHOLDS = [
 
 V4_GRADE_THRESHOLDS = [
     (500, "S+"),   # Historic day — multiple systems built
-    (300, "S"),    # Monster day — major feature + supporting work
-    (150, "A+"),   # Strong day — a real feature shipped
-    (75,  "A"),    # Solid day — meaningful progress
-    (30,  "B"),    # Light day — fixes, content, small adds
-    (10,  "C"),    # Maintenance — chores, minor edits
-    (0,   "D"),    # Rest day
+    (400, "S"),    # Monster day — major feature + supporting work
+    (350, "A+"),   # Strong day — a real feature shipped
+    (300, "A"),    # Solid day — meaningful progress
+    (250, "B"),    # Decent day — real work shipped
+    (0,   "C"),    # Light day — maintenance, chores, rest
 ]
 
 # Dev equivalent constants
@@ -873,7 +872,7 @@ def classify_commit(commit_hash):
             commit_hash, message, "revert", 0,
             files, total_added, total_removed, directories, timestamp)
 
-    # Chore
+    # Chore (explicit prefix only)
     if msg_lower.startswith("chore"):
         return _build_commit_entry(
             commit_hash, message, "chore", 1,
@@ -899,7 +898,18 @@ def classify_commit(commit_hash):
             commit_hash, message, commit_type, score,
             files, total_added, total_removed, directories, timestamp)
 
-    # Unknown prefix — default to chore
+    # Unknown prefix — analyze content instead of defaulting to chore.
+    # Early commits don't use conventional prefixes (e.g. "Add three-site
+    # website monorepo") but still represent real work.  Fall through to
+    # the same content-based classification used for feat commits.
+    if file_count > 0:
+        commit_type, score = _classify_feat_commit(
+            msg_lower, files, file_count, total_added, directories)
+        return _build_commit_entry(
+            commit_hash, message, commit_type, score,
+            files, total_added, total_removed, directories, timestamp)
+
+    # Truly empty or trivial commit
     return _build_commit_entry(
         commit_hash, message, "chore", 1,
         files, total_added, total_removed, directories, timestamp)

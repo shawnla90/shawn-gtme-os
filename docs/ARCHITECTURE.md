@@ -4,7 +4,7 @@
 > Last updated: 2026-02-20
 
 ## System Overview
-
+Okay, so now I wanna build a new, so I set up teams or agent teams on the other CLI Claude Code. Do I have it on here as well with the push to me, and do you have that data?
 ShawnOS is a personal AI operating system that gamifies daily engineering output with RPG progression mechanics. It spans 2 machines, 4 websites, 50 skills, 17 MCP servers, and a nightly automation pipeline that scans work, scores it, and deploys fresh data. A Husky pre-push hook enforces blocklist scans on every `git push`, and Slack notifications alert on cron success/failure.
 
 ```

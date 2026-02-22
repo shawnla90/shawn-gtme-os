@@ -1,51 +1,81 @@
 {
-  "generated": "2026-02-21T21:07:51.930Z",
+  "generated": "2026-02-21T21:31:53.099Z",
   "events": [
     {
-      "id": "cron-next-a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
-      "title": "nio-terminal Discord post",
-      "type": "cron",
-      "datetime": "2026-02-22T13:05:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
+      "id": "commit-20ae0a5",
+      "title": "fix(gtmos): repair how-to wiki string literal syntax",
+      "type": "system",
+      "datetime": "2026-02-21T16:29:23-05:00",
+      "status": "completed",
+      "description": "fix(gtmos): repair how-to wiki string literal syntax",
       "metadata": {
-        "cronId": "a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
-        "duration": "41s"
+        "commitHash": "20ae0a5"
       }
     },
     {
-      "id": "cron-next-28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
-      "title": "nio daily blog generator",
-      "type": "cron",
-      "datetime": "2026-02-22T13:00:00.000Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
+      "id": "commit-eab407c",
+      "title": "feat: GTM OS video v2 — 5-scene 8.2s cut with tool+MCP blitz",
+      "type": "milestone",
+      "datetime": "2026-02-21T16:27:55-05:00",
+      "status": "completed",
+      "description": "feat: GTM OS video v2 — 5-scene 8.2s cut with tool+MCP blitz",
       "metadata": {
-        "cronId": "28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
-        "duration": "225s"
+        "commitHash": "eab407c"
       }
     },
     {
-      "id": "cron-next-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-      "title": "RSS to Discord announcer",
-      "type": "cron",
-      "datetime": "2026-02-21T21:19:24.506Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
+      "id": "commit-84ebf27",
+      "title": "docs(how-to): add one-screen map to workspace knowledge grap",
+      "type": "system",
+      "datetime": "2026-02-21T16:27:07-05:00",
+      "status": "completed",
+      "description": "docs(how-to): add one-screen map to workspace knowledge graph",
       "metadata": {
-        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-        "duration": "17s"
+        "commitHash": "84ebf27"
       }
     },
     {
-      "id": "cron-next-245ce307-8d9c-487a-b409-941a33e69d21",
-      "title": "mission-control-enhancement",
-      "type": "cron",
-      "datetime": "2026-02-21T21:04:50.848Z",
-      "status": "scheduled",
-      "description": "Next run scheduled",
+      "id": "commit-ba4fb8c",
+      "title": "fix(how-to): make workspace knowledge graph example readable",
+      "type": "system",
+      "datetime": "2026-02-21T16:26:01-05:00",
+      "status": "completed",
+      "description": "fix(how-to): make workspace knowledge graph example readable",
       "metadata": {
-        "cronId": "245ce307-8d9c-487a-b409-941a33e69d21"
+        "commitHash": "ba4fb8c"
+      }
+    },
+    {
+      "id": "commit-327cc85",
+      "title": "feat(how-to): add live Nio workspace knowledge graph example",
+      "type": "system",
+      "datetime": "2026-02-21T16:11:52-05:00",
+      "status": "completed",
+      "description": "feat(how-to): add live Nio workspace knowledge graph example",
+      "metadata": {
+        "commitHash": "327cc85"
+      }
+    },
+    {
+      "id": "commit-db7c656",
+      "title": "feat: ShawnOS video v4 — 5-scene 8.2s cut with platform+tool",
+      "type": "milestone",
+      "datetime": "2026-02-21T16:11:47-05:00",
+      "status": "completed",
+      "description": "feat: ShawnOS video v4 — 5-scene 8.2s cut with platform+tool blitz",
+      "metadata": {
+        "commitHash": "db7c656"
+      }
+    },
+    {
+      "id": "commit-0892213",
+      "title": "feat(mission-control): enhance real-time system status and d",
+      "type": "system",
+      "datetime": "2026-02-21T16:08:14-05:00",
+      "status": "completed",
+      "description": "feat(mission-control): enhance real-time system status and dynamic task management",
+      "metadata": {
+        "commitHash": "0892213"
       }
     },
     {
@@ -68,18 +98,6 @@
       "description": "fix(nio-terminal): rewrite posts 2 and 3 to match canonical structure",
       "metadata": {
         "commitHash": "ad6921d"
-      }
-    },
-    {
-      "id": "cron-last-026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-      "title": "RSS to Discord announcer",
-      "type": "cron",
-      "datetime": "2026-02-21T20:19:24.516Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "026e878e-b71f-44ce-9eb6-57ad526a6dc2",
-        "duration": "17s"
       }
     },
     {
@@ -138,18 +156,6 @@
       }
     },
     {
-      "id": "cron-last-a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
-      "title": "nio-terminal Discord post",
-      "type": "cron",
-      "datetime": "2026-02-21T13:05:00.016Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "a2a642c3-cbe1-4e7b-a8e7-295ceee85ed7",
-        "duration": "41s"
-      }
-    },
-    {
       "id": "commit-1253e53",
       "title": "feat(nio.log): add daily blog post 2026-02-21 - THE COMPOUND",
       "type": "system",
@@ -159,102 +165,13 @@
       "metadata": {
         "commitHash": "1253e53"
       }
-    },
-    {
-      "id": "cron-last-28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
-      "title": "nio daily blog generator",
-      "type": "cron",
-      "datetime": "2026-02-21T13:00:00.020Z",
-      "status": "completed",
-      "description": "Last run: ok",
-      "metadata": {
-        "cronId": "28a3c2e1-5a9c-4740-a345-1e8f8e74fd6d",
-        "duration": "225s"
-      }
-    },
-    {
-      "id": "commit-caf2f5a",
-      "title": "feat(mission-control): add phased ops hardening and operator",
-      "type": "system",
-      "datetime": "2026-02-21T02:07:34-05:00",
-      "status": "completed",
-      "description": "feat(mission-control): add phased ops hardening and operator cockpit",
-      "metadata": {
-        "commitHash": "caf2f5a"
-      }
-    },
-    {
-      "id": "commit-05fa741",
-      "title": "feat: add V3 progression page + scoring breakdown to shawnos",
-      "type": "milestone",
-      "datetime": "2026-02-21T01:00:20-05:00",
-      "status": "completed",
-      "description": "feat: add V3 progression page + scoring breakdown to shawnos log",
-      "metadata": {
-        "commitHash": "05fa741"
-      }
-    },
-    {
-      "id": "commit-9b94ee4",
-      "title": "chore: sanitize daily log — replace partner name with alias",
-      "type": "system",
-      "datetime": "2026-02-21T00:32:48-05:00",
-      "status": "completed",
-      "description": "chore: sanitize daily log — replace partner name with alias",
-      "metadata": {
-        "commitHash": "9b94ee4"
-      }
-    },
-    {
-      "id": "commit-1aadeb1",
-      "title": "feat: add GTM OS + Content OS highlight reel videos with hom",
-      "type": "milestone",
-      "datetime": "2026-02-21T00:31:54-05:00",
-      "status": "completed",
-      "description": "feat: add GTM OS + Content OS highlight reel videos with homepage integration",
-      "metadata": {
-        "commitHash": "1aadeb1"
-      }
-    },
-    {
-      "id": "commit-699c791",
-      "title": "chore: daily tracker scan 2026-02-20",
-      "type": "system",
-      "datetime": "2026-02-21T00:00:06-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-20",
-      "metadata": {
-        "commitHash": "699c791"
-      }
-    },
-    {
-      "id": "commit-88ab8f7",
-      "title": "chore: daily tracker scan 2026-02-20",
-      "type": "system",
-      "datetime": "2026-02-21T00:00:05-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-20",
-      "metadata": {
-        "commitHash": "88ab8f7"
-      }
-    },
-    {
-      "id": "commit-4c152d7",
-      "title": "feat: V3 scoring engine, cost analytics, crew system, MC pro",
-      "type": "milestone",
-      "datetime": "2026-02-20T23:28:35-05:00",
-      "status": "completed",
-      "description": "feat: V3 scoring engine, cost analytics, crew system, MC progression dashboard",
-      "metadata": {
-        "commitHash": "4c152d7"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 22,
-    "completedEvents": 18,
-    "scheduledEvents": 4,
+    "totalEvents": 15,
+    "completedEvents": 15,
+    "scheduledEvents": 0,
     "deploymentsThisWeek": 15,
-    "upcomingCronJobs": 4
+    "upcomingCronJobs": 0
   }
 }

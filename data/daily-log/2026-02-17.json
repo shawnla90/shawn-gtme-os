@@ -1,194 +1,16 @@
 {
   "date": "2026-02-17",
-  "generated_at": "2026-02-22T05:38:43.678561+00:00",
+  "generated_at": "2026-02-22T21:29:21.274743+00:00",
   "version": 4,
   "accomplishments": [
     {
       "type": "code_infra",
-      "title": "write_mx_and_bodies",
-      "path": "scripts/write_mx_and_bodies.py",
-      "source": "auto",
-      "timestamp": "19:00",
-      "words": 640,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "push_remaining_enrichment",
-      "path": "scripts/push_remaining_enrichment.py",
+      "title": "push_enrichment_to_sheet",
+      "path": "scripts/push_enrichment_to_sheet.py",
       "source": "auto",
       "timestamp": "23:41",
-      "words": 152,
+      "words": 149,
       "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "clickup-time-track",
-      "path": ".cursor/skills/clickup-time-track/SKILL.md",
-      "source": "auto",
-      "timestamp": "14:56",
-      "words": 302,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "progression_engine",
-      "path": "scripts/progression_engine.py",
-      "source": "auto",
-      "timestamp": "22:52",
-      "words": 1887,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "session_cost_tracker",
-      "path": "scripts/session_cost_tracker.py",
-      "source": "auto",
-      "timestamp": "00:00",
-      "words": 812,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/shawnos/public/progression/avatars/tool-ouroboros-static.png",
-      "source": "auto",
-      "timestamp": "02:01",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
-      "source": "auto",
-      "timestamp": "00:04",
-      "words": 6111,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "daily_dashboard",
-      "path": "scripts/daily_dashboard.py",
-      "source": "auto",
-      "timestamp": "01:10",
-      "words": 3973,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "EmailInfrastructureGuidePage",
-      "path": "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx",
-      "source": "auto",
-      "timestamp": "12:10",
-      "words": 1694,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "gen_touch2_updates",
-      "path": "scripts/gen_touch2_updates.py",
-      "source": "auto",
-      "timestamp": "23:41",
-      "words": 712,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "rescore_logs",
-      "path": "scripts/rescore_logs.py",
-      "source": "auto",
-      "timestamp": "14:02",
-      "words": 319,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "find_missing_touch2",
-      "path": "scripts/find_missing_touch2.py",
-      "source": "auto",
-      "timestamp": "23:41",
-      "words": 267,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge email page",
-      "path": "website/apps/gtmos/app/knowledge/email/page.tsx",
-      "source": "auto",
-      "timestamp": "12:10",
-      "words": 230,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "repo_stats",
-      "path": "scripts/repo_stats.py",
-      "source": "auto",
-      "timestamp": "23:41",
-      "words": 510,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge term page",
-      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
-      "source": "auto",
-      "timestamp": "12:10",
-      "words": 1430,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "enrich_vector_leads",
-      "path": "scripts/enrich_vector_leads.py",
-      "source": "auto",
-      "timestamp": "23:41",
-      "words": 1568,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "view_sprite",
-      "path": "scripts/view_sprite.py",
-      "source": "auto",
-      "timestamp": "14:02",
-      "words": 483,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "20:57",
-      "words": 1525,
-      "value_score": 25,
       "shipped": true
     },
     {
@@ -199,16 +21,6 @@
       "timestamp": "18:59",
       "words": 517,
       "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "system_engine",
-      "title": "rpg_sprites",
-      "path": "scripts/rpg_sprites.py",
-      "source": "auto",
-      "timestamp": "00:00",
-      "words": 12575,
-      "value_score": 50,
       "shipped": true
     },
     {
@@ -232,23 +44,93 @@
       "shipped": true
     },
     {
+      "type": "skill_updated",
+      "title": "clickup-time-track",
+      "path": ".cursor/skills/clickup-time-track/SKILL.md",
+      "source": "auto",
+      "timestamp": "14:56",
+      "words": 302,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "website_scanner",
+      "path": "scripts/website_scanner.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 2193,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
       "type": "code_infra",
-      "title": "push_enrichment_to_sheet",
-      "path": "scripts/push_enrichment_to_sheet.py",
+      "title": "enrich_vector_leads",
+      "path": "scripts/enrich_vector_leads.py",
       "source": "auto",
       "timestamp": "23:41",
-      "words": 149,
+      "words": 1568,
       "value_score": 15,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "GTMKnowledgeGuidePage",
-      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
+      "type": "feature_script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
       "source": "auto",
-      "timestamp": "12:10",
-      "words": 7206,
-      "value_score": 5,
+      "timestamp": "16:27",
+      "words": 6173,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "20:57",
+      "words": 1525,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "progression_engine",
+      "path": "scripts/progression_engine.py",
+      "source": "auto",
+      "timestamp": "22:52",
+      "words": 1887,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "session_cost_tracker",
+      "path": "scripts/session_cost_tracker.py",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 812,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "view_sprite",
+      "path": "scripts/view_sprite.py",
+      "source": "auto",
+      "timestamp": "14:02",
+      "words": 483,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "gen_touch2_updates",
+      "path": "scripts/gen_touch2_updates.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 712,
+      "value_score": 15,
       "shipped": true
     },
     {
@@ -262,6 +144,16 @@
       "shipped": true
     },
     {
+      "type": "website_page",
+      "title": "EmailInfrastructureGuidePage",
+      "path": "website/packages/shared/pages/EmailInfrastructureGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 1694,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
       "type": "avatar_generated",
       "title": "tier/class avatar",
       "path": "website/apps/shawnos/public/progression/avatars/tool-ouroboros-idle.gif",
@@ -271,14 +163,133 @@
       "shipped": true
     },
     {
-      "type": "complex_script",
-      "title": "website_scanner",
-      "path": "scripts/website_scanner.py",
+      "type": "code_infra",
+      "title": "write_mx_and_bodies",
+      "path": "scripts/write_mx_and_bodies.py",
+      "source": "auto",
+      "timestamp": "19:00",
+      "words": 640,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_dashboard",
+      "path": "scripts/daily_dashboard.py",
+      "source": "auto",
+      "timestamp": "01:10",
+      "words": 3973,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "repo_stats",
+      "path": "scripts/repo_stats.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 510,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "rescore_logs",
+      "path": "scripts/rescore_logs.py",
       "source": "auto",
       "timestamp": "14:02",
-      "words": 2193,
-      "value_score": 25,
+      "words": 319,
+      "value_score": 15,
       "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "find_missing_touch2",
+      "path": "scripts/find_missing_touch2.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 267,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 12575,
+      "value_score": 50,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "GTMKnowledgeGuidePage",
+      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 7206,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge email page",
+      "path": "website/apps/gtmos/app/knowledge/email/page.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 230,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "push_remaining_enrichment",
+      "path": "scripts/push_remaining_enrichment.py",
+      "source": "auto",
+      "timestamp": "23:41",
+      "words": 152,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge term page",
+      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "source": "auto",
+      "timestamp": "12:10",
+      "words": 1430,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/shawnos/public/progression/avatars/tool-ouroboros-static.png",
+      "source": "auto",
+      "timestamp": "02:01",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "partner_resource",
+      "title": "partner plan 2026 02 17",
+      "path": "clients/partner/[redacted]/resources/plan-2026-02-17.md",
+      "source": "auto-mtime",
+      "timestamp": "15:43",
+      "words": 818,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
     },
     {
       "type": "partner_resource",
@@ -304,17 +315,6 @@
     },
     {
       "type": "partner_resource",
-      "title": "partner plan 2026 02 17",
-      "path": "clients/partner/[redacted]/resources/plan-2026-02-17.md",
-      "source": "auto-mtime",
-      "timestamp": "12:43",
-      "words": 1669,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "partner_resource",
       "title": "partner enrichment map",
       "path": "clients/partner/[redacted]/resources/enrichment-map.md",
       "source": "auto-mtime",
@@ -329,8 +329,8 @@
       "title": "partner plan 2026 02 17",
       "path": "clients/partner/[redacted]/resources/plan-2026-02-17.md",
       "source": "auto-mtime",
-      "timestamp": "15:43",
-      "words": 818,
+      "timestamp": "12:43",
+      "words": 1669,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -457,8 +457,8 @@
     {
       "hash": "e8d2e19",
       "message": "sync: pending local changes from Mac Mini setup",
-      "type": "chore",
-      "score": 1,
+      "type": "feature_build",
+      "score": 25,
       "files_changed": 9,
       "lines_added": 814,
       "lines_removed": 125,
@@ -948,13 +948,6 @@
       },
       {
         "platform": "substack",
-        "title": "build your own os",
-        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
-        "target_date": "2026-02-17",
-        "words": 1541
-      },
-      {
-        "platform": "substack",
         "title": "recursive drift",
         "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
         "target_date": "2026-02-19",
@@ -996,7 +989,7 @@
       "source": "cursor-db",
       "messages": 2172,
       "conversations": 15,
-      "logged_at": "00:38",
+      "logged_at": "16:29",
       "context": "cursor-ide 00:45-20:50",
       "cost": 9.774,
       "estimated": true
@@ -1008,13 +1001,13 @@
       "website": 5,
       "ops": 5
     },
-    "words_in_touched_files": 57657,
-    "pipeline_words": 46861,
+    "words_in_touched_files": 57719,
+    "pipeline_words": 45320,
     "finals_count": 0,
     "first_activity": "00:00",
     "last_activity": "23:41",
-    "output_score": 264,
-    "letter_grade": "A+",
+    "output_score": 288,
+    "letter_grade": "B",
     "score_breakdown": [
       {
         "type": "chore",
@@ -1057,9 +1050,9 @@
         "points": 60
       },
       {
-        "type": "chore",
+        "type": "feature_build",
         "title": "sync: pending local changes from Mac Mini setup",
-        "points": 1
+        "points": 25
       },
       {
         "type": "feature_build",
@@ -1087,14 +1080,14 @@
         "points": 25
       }
     ],
-    "efficiency_rating": 27.01,
+    "efficiency_rating": 29.47,
     "shipped_count": 28,
     "draft_count": 5,
     "ship_rate": 0.85,
     "agent_cost": 9.77,
-    "cost_per_point": 0.04,
-    "efficiency_ratio": 27.01,
-    "words_today": 57657,
+    "cost_per_point": 0.03,
+    "efficiency_ratio": 29.47,
+    "words_today": 57719,
     "lines_added": 16189,
     "lines_removed": 781,
     "lines_net": 15408,
@@ -1189,7 +1182,7 @@
   "token_efficiency": {
     "total_tokens": 325800,
     "total_sessions": 1,
-    "tokens_per_point": 1234,
+    "tokens_per_point": 1131,
     "tokens_per_commit": 23271,
     "tokens_per_loc": 21,
     "avg_context_utilization": 1.0,

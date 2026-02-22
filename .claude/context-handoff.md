@@ -1,135 +1,54 @@
 # Context Handoff
-> Generated: 2026-02-22 | Machine: MacBook | Session: Scoring V4 Engine Build
+> Generated: 2026-02-22 23:00 | Machine: MacBook | Session: V4 Daily Log Visual Redesign + Sync
 
 ## What Was Done This Session
 
-### Scoring Engine V4 — BUILT & TESTED
-Rewrote `scripts/daily_scan.py` from file-based scoring (V3) to **commit-based scoring (V4)**.
-
-Changes to `daily_scan.py`:
-- Added `classify_commit(hash)` — reads commit message, numstat, files to classify each commit into a type (system_engine, video_build, feature_build, etc.)
-- Added `score_commits(commits)` — sums commit scores, applies V4 grade thresholds
-- Added `compute_dev_equivalent(git_summary)` — dev-days + cost estimate + human-readable explainer
-- Added `compute_token_efficiency(...)` — tokens/point, tokens/commit, tokens/LOC, context utilization
-- Added `"max"` to TOKEN_PRICING (all zeros — Max subscription = $0 actual)
-- New JSON sections: `commits[]`, `dev_equivalent{}`, `cost{}`, `token_efficiency{}`
-- `accomplishments[]` kept for backward compat (still file-level)
-- Version bumped to 4
-
-### V4 Grade Thresholds (raised bar)
-```
-S+  500+    Historic day
-S   300-499  Monster day
-A+  150-299  Strong day
-A    75-149  Solid day
-B    30-74   Light day
-C    10-29   Maintenance
-D     0-9    Rest day
-```
-
-### Test Results
-- Feb 21: V3 scored 486 → V4 scores **641 (S+)** — 3 system_engine commits (SQLite phases) drove the score
-- Feb 22: 31 pts (B) with 2 commits so far today
+- **V4 TypeScript types** — Added `Commit`, `DevEquivalent`, `CostSection`, `TokenEfficiency`, `WeekDaySummary` to `website/packages/shared/lib/logs.ts`
+- **DailyLog interface** — Added 4 optional V4 fields: `commits?`, `dev_equivalent?`, `cost?`, `token_efficiency?`
+- **scrubLog()** — Pass V4 fields with commit message path sanitization (regex blocklist)
+- **getWeeklyContext()** — New server-side function returning 7-day Mon-Sun `WeekDaySummary[]`
+- **Barrel exports** — Updated `website/packages/shared/lib/index.ts` with new types + function
+- **DailyLogView.tsx full rewrite** — V4 commit-based layout with complete V3 fallback:
+  - Left: Commits with color-coded `CommitTypeTag` (FEAT, FIX, ENGINE, SCAFFOLD, VIDEO, etc.)
+  - Middle: This Week 7-day panel with grade badges
+  - Right: Dev Equivalent + Cost + Token Efficiency + Token Usage
+  - V4 stat boxes: commits, score, net lines, dirs, tokens, actual cost, API equiv
+  - V4 summary line with actual vs API cost + dev equivalent
+- **3 page files** — `shawnos`, `gtmos`, `contentos` log pages pass `weeklyContext` prop
+- **Backfilled all 12 daily logs** (Feb 11-22) to V4 via `daily_scan.py`
+- **Synced with origin/main** — Resolved 5 rebase conflicts (remote wins) + 1 stash conflict (kept local substack draft). Pushed to origin.
 
 ## Current State
-- **Git**: main, uncommitted changes in `scripts/daily_scan.py` + `data/daily-log/` (rescored)
-- **daily_scan.py**: V4 engine complete, tested, ready to commit
-- **Daily logs**: Feb 21 and Feb 22 rescored with V4. All other dates still V3.
-- **Website components**: NOT updated yet — still render V3 schema (accomplishments panel, old pipeline view)
-- **Progression engine**: NOT changed — still reads `stats.output_score` from daily logs (will get V4 scores after backfill)
 
-## WHAT'S NEXT — Approved Scope for Next Session
+- **Git**: `main`, up to date with `origin/main`
+- **Last commit**: `c641978 feat: V4 daily log visual redesign — commit-based UI, weekly panel, analytics`
+- **Uncommitted modified**: `.claude/context-handoff.md`, `docs/ARCHITECTURE.md`, 5 mission-control data files
+- **Untracked**: `.mcp.json`, `2026-02-21.md`, `Untitled.canvas`, linkedin/x/substack drafts, video assets in `content/video/all/`
+- **Blocked on**: nothing
 
-### Phase 1: Visual Redesign (DailyLogView.tsx)
-The daily log detail page needs to reflect V4 data. Current issues:
+## Next Steps
 
-1. **Left panel ("Accomplishments")** → Should become **"Commits"** showing the classified commits with type tags, scores, and file counts. The file-level accomplishment list is noise.
+1. **Everything is live and automated.** The midnight cron (`com.shawnos.daily-tracker.plist` → `scripts/daily_cron.sh` → `scripts/daily_scan.py`) already produces V4 logs. The UI auto-detects V4 via `log.version >= 4 && log.commits != null`. No config changes needed.
 
-2. **Middle panel ("Next Up" / Pipeline)** → Shows **62 drafts going back to Feb 9**. This is useless. Options:
-   - Only show drafts from the last 3 days or drafts with today's target_date
-   - Or replace entirely with something more useful (recent commits across the week? upcoming due dates?)
-   - User wants this refined — ask for preference before building
+2. **Tonight's cron at 00:00** will scan today (Feb 22), produce a V4 log, commit, and push to Vercel. To trigger manually: `./scripts/daily_cron.sh 2026-02-22`
 
-3. **Right panel ("Analytics")** → Add V4 fields:
-   - Dev equivalent explainer (from `dev_equivalent.explanation`)
-   - Cost: show "$0.00 actual (Max sub)" vs "$X API equivalent"
-   - Token efficiency metrics (tokens/point, tokens/commit, context utilization)
-   - Remove old V2 fields (roi_multiplier, cost_savings) that are no longer computed
+3. **Optional: Progression engine recalibration** — V4 scores are higher than V3 (e.g. Feb 21: 486→641). After a week of V4 data, evaluate whether `TITLE_TABLE` thresholds in `scripts/progression_engine.py` need adjustment.
 
-4. **Summary line** at bottom → Update to show actual vs API equivalent cost
+4. **Untracked content drafts** — linkedin, x, substack drafts and video assets sitting untracked. Content pipeline work, not code.
 
-5. **Score breakdown** → Currently shows file-level. Should show commit-level (type + message + points)
+## Key Decisions Made
 
-### Phase 2: TypeScript Types Update (logs.ts)
-Add new interfaces to `website/packages/shared/lib/logs.ts`:
-```typescript
-interface Commit {
-  hash: string
-  message: string
-  type: string
-  score: number
-  files_changed: number
-  lines_added: number
-  lines_removed: number
-  lines_net: number
-  directories: string[]
-  timestamp: string
-}
+- **V4 detection**: `isV4 = log.version >= 4 && log.commits != null` — dual check for graceful V3 fallback
+- **Weekly context computed server-side** in each page file, not in the shared component
+- **Commit message sanitization** uses regex blocklist (`/Users|home|clients|partner|client/`)
+- **V3 fallback fully preserved** — every panel, stat box, summary line has V3 code path
+- **All 12 existing logs backfilled** — no V3-only logs remain
+- **Sync strategy**: rebase conflicts resolved to remote; substack draft kept local
 
-interface DevEquivalent {
-  net_lines: number
-  dev_days: number
-  cost_estimate: number
-  explanation: string
-  assumptions: { lines_per_day: number; cost_per_day: number; basis: string }
-}
+## Files to Read First
 
-interface CostSection {
-  api_equivalent: number
-  actual_cost: number
-  pricing_mode: string
-}
-
-interface TokenEfficiency {
-  total_tokens: number
-  total_sessions: number
-  tokens_per_point: number | null
-  tokens_per_commit: number | null
-  tokens_per_loc: number | null
-  avg_context_utilization: number
-  pricing_mode: string
-  api_equivalent_cost: number
-  actual_cost: number
-}
-```
-
-Update `DailyLog` interface to include `commits`, `dev_equivalent`, `cost`, `token_efficiency`.
-Update `scrubLog()` to pass through new fields (commits need path sanitization via message field).
-
-### Phase 3: Backfill All Daily Logs
-Run `python3 scripts/daily_scan.py --date YYYY-MM-DD` for every existing daily log date. This will:
-- Add commits array to each log
-- Rescore with V4 commit-based weights
-- Add dev_equivalent, cost, token_efficiency sections
-- Output scores will change → progression engine XP totals will shift
-
-### Phase 4: Progression Engine Adjustment
-After backfill, total XP across all days will be different. The progression engine reads `stats.output_score` from each daily log. If V4 scores are generally higher (as Feb 21 shows: 486 → 641), total XP goes up, which may push past title thresholds faster. May need to:
-- Adjust XP thresholds in TITLE_TABLE
-- Or accept the recalibration (the higher scores are more honest)
-- User wants to evaluate this AFTER seeing the visual + backfill, not preemptively
-
-## Key Files
-1. `scripts/daily_scan.py` — V4 engine (the work from this session)
-2. `website/packages/shared/lib/logs.ts` — TypeScript types (needs V4 update)
-3. `website/packages/shared/components/DailyLogView.tsx` — Main visual (needs redesign)
-4. `website/packages/shared/components/LogCard.tsx` — Index card (may need commit count)
-5. `scripts/progression_engine.py` — RPG system (Phase 4, don't touch until approved)
-
-## Key Context
-- User is NOT a coder — explain things in plain English
-- User is on Claude Code Max subscription — $0 actual cost
-- Dev equivalent explainer is STRATEGIC for demos and content
-- Path sanitization via `.claude/blocklist.txt` must apply to all output including commit messages
-- The scoring weights are starting points — user wants to iterate
-- Don't change progression engine until Phases 1-3 are complete and approved
+1. `website/packages/shared/lib/logs.ts` — V4 types, scrubLog, getWeeklyContext
+2. `website/packages/shared/components/DailyLogView.tsx` — Full visual component with V4/V3 branching
+3. `scripts/daily_scan.py` — V4 scoring engine
+4. `scripts/daily_cron.sh` — Nightly automation pipeline
+5. `data/daily-log/2026-02-21.json` — Reference V4 log with all fields populated

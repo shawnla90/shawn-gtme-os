@@ -1,16 +1,26 @@
 {
   "date": "2026-02-15",
-  "generated_at": "2026-02-22T05:38:40.337399+00:00",
+  "generated_at": "2026-02-22T21:29:18.145443+00:00",
   "version": 4,
   "accomplishments": [
     {
-      "type": "website_component",
-      "title": "NewsletterSignup",
-      "path": "website/packages/shared/components/NewsletterSignup.tsx",
+      "type": "website_lib",
+      "title": "shared logs",
+      "path": "website/packages/shared/lib/logs.ts",
       "source": "auto",
-      "timestamp": "20:49",
-      "words": 531,
-      "value_score": 5,
+      "timestamp": "16:07",
+      "words": 1292,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/contentos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:44",
+      "words": 41,
+      "value_score": 2,
       "shipped": true
     },
     {
@@ -24,13 +34,33 @@
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/components/index.ts",
+      "type": "website_page",
+      "title": "KnowledgeGuidePage",
+      "path": "website/packages/shared/pages/KnowledgeGuidePage.tsx",
       "source": "auto",
-      "timestamp": "02:49",
-      "words": 108,
-      "value_score": 3,
+      "timestamp": "03:20",
+      "words": 4072,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "19:23",
+      "words": 1090,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "NewsletterSignup",
+      "path": "website/packages/shared/components/NewsletterSignup.tsx",
+      "source": "auto",
+      "timestamp": "20:49",
+      "words": 531,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -43,11 +73,9 @@
     },
     {
       "type": "website_page",
-      "title": "gtmos log quests page",
-      "path": "website/apps/gtmos/app/log/quests/page.tsx",
+      "title": "shawnos knowledge gtm page",
+      "path": "website/apps/shawnos/app/knowledge/gtm/page.tsx",
       "source": "auto",
-      "timestamp": "18:08",
-      "words": 146,
       "value_score": 5,
       "shipped": true
     },
@@ -63,61 +91,42 @@
     },
     {
       "type": "website_page",
-      "title": "shawnos rpg-preview page",
-      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "title": "QuestBoardPage",
+      "path": "website/packages/shared/pages/QuestBoardPage.tsx",
       "source": "auto",
-      "timestamp": "00:27",
-      "words": 667,
+      "timestamp": "18:08",
+      "words": 1555,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "GTMKnowledgeGuidePage",
-      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/components/index.ts",
       "source": "auto",
-      "timestamp": "12:10",
-      "words": 7206,
-      "value_score": 5,
+      "timestamp": "16:07",
+      "words": 122,
+      "value_score": 3,
       "shipped": true
     },
     {
-      "type": "config_file",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
+      "type": "feature_system",
+      "title": "AvatarBadge",
+      "path": "website/packages/shared/components/AvatarBadge.tsx",
       "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 0,
+      "timestamp": "21:07",
+      "words": 985,
+      "value_score": 30,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "contentos layout",
-      "path": "website/apps/contentos/app/layout.tsx",
+      "type": "website_lib",
+      "title": "shared rpg",
+      "path": "website/packages/shared/lib/rpg.ts",
       "source": "auto",
-      "timestamp": "15:32",
-      "words": 223,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "15:31",
-      "words": 231,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/shawnos/app/globals.css",
-      "source": "auto",
-      "timestamp": "14:27",
-      "words": 165,
-      "value_score": 2,
+      "timestamp": "04:37",
+      "words": 1017,
+      "value_score": 3,
       "shipped": true
     },
     {
@@ -131,14 +140,6 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos knowledge gtm page",
-      "path": "website/apps/shawnos/app/knowledge/gtm/page.tsx",
-      "source": "auto",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "skill_updated",
       "title": "daily-tracker",
       "path": ".cursor/skills/daily-tracker/SKILL.md",
@@ -146,6 +147,95 @@
       "timestamp": "00:49",
       "words": 2976,
       "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log quests page",
+      "path": "website/apps/gtmos/app/log/quests/page.tsx",
+      "source": "auto",
+      "timestamp": "18:08",
+      "words": 146,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "18:21",
+      "words": 572,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos api page",
+      "path": "website/apps/shawnos/app/api/page.tsx",
+      "source": "auto",
+      "timestamp": "02:51",
+      "words": 1463,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log quests page",
+      "path": "website/apps/shawnos/app/log/quests/page.tsx",
+      "source": "auto",
+      "timestamp": "02:52",
+      "words": 173,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "Navigation",
+      "path": "website/packages/shared/components/Navigation.tsx",
+      "source": "auto",
+      "timestamp": "01:44",
+      "words": 154,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "webfix",
+      "path": ".cursor/skills/webfix/SKILL.md",
+      "source": "auto",
+      "timestamp": "15:37",
+      "words": 1569,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos log quests page",
+      "path": "website/apps/contentos/app/log/quests/page.tsx",
+      "source": "auto",
+      "timestamp": "18:09",
+      "words": 146,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "update-github",
+      "path": ".claude/skills/update-github/SKILL.md",
+      "source": "auto",
+      "timestamp": "15:38",
+      "words": 1137,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 0,
       "shipped": true
     },
     {
@@ -161,80 +251,50 @@
     {
       "type": "website_style",
       "title": "globals styles",
-      "path": "website/apps/contentos/app/globals.css",
+      "path": "website/apps/shawnos/app/globals.css",
       "source": "auto",
-      "timestamp": "23:44",
-      "words": 41,
+      "timestamp": "14:27",
+      "words": 165,
       "value_score": 2,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared rpg",
-      "path": "website/packages/shared/lib/rpg.ts",
-      "source": "auto",
-      "timestamp": "04:37",
-      "words": 1017,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "feature_system",
-      "title": "AvatarBadge",
-      "path": "website/packages/shared/components/AvatarBadge.tsx",
-      "source": "auto",
-      "timestamp": "21:07",
-      "words": 985,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
       "type": "website_page",
-      "title": "shawnos api page",
-      "path": "website/apps/shawnos/app/api/page.tsx",
+      "title": "GTMKnowledgeGuidePage",
+      "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
       "source": "auto",
-      "timestamp": "02:51",
-      "words": 1463,
+      "timestamp": "12:10",
+      "words": 7206,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos about page",
-      "path": "website/apps/shawnos/app/about/page.tsx",
+      "title": "shawnos rpg-preview page",
+      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
       "source": "auto",
-      "timestamp": "18:21",
-      "words": 801,
+      "timestamp": "00:27",
+      "words": 667,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos log quests page",
-      "path": "website/apps/shawnos/app/log/quests/page.tsx",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "02:52",
-      "words": 173,
+      "timestamp": "16:07",
+      "words": 229,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared logs",
-      "path": "website/packages/shared/lib/logs.ts",
-      "source": "auto",
-      "timestamp": "00:33",
-      "words": 1292,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
       "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "18:21",
-      "words": 572,
+      "timestamp": "16:07",
+      "words": 237,
       "value_score": 5,
       "shipped": true
     },
@@ -249,72 +309,12 @@
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "webfix",
-      "path": ".cursor/skills/webfix/SKILL.md",
-      "source": "auto",
-      "timestamp": "15:37",
-      "words": 1569,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_component",
-      "title": "Navigation",
-      "path": "website/packages/shared/components/Navigation.tsx",
-      "source": "auto",
-      "timestamp": "01:44",
-      "words": 154,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "website_page",
-      "title": "contentos log quests page",
-      "path": "website/apps/contentos/app/log/quests/page.tsx",
+      "title": "shawnos about page",
+      "path": "website/apps/shawnos/app/about/page.tsx",
       "source": "auto",
-      "timestamp": "18:09",
-      "words": 146,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "KnowledgeGuidePage",
-      "path": "website/packages/shared/pages/KnowledgeGuidePage.tsx",
-      "source": "auto",
-      "timestamp": "03:20",
-      "words": 4072,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "QuestBoardPage",
-      "path": "website/packages/shared/pages/QuestBoardPage.tsx",
-      "source": "auto",
-      "timestamp": "18:08",
-      "words": 1555,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "shawnos home page",
-      "path": "website/apps/shawnos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "19:23",
-      "words": 1090,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "update-github",
-      "path": ".claude/skills/update-github/SKILL.md",
-      "source": "auto",
-      "timestamp": "15:38",
-      "words": 1137,
+      "timestamp": "18:21",
+      "words": 801,
       "value_score": 5,
       "shipped": true
     },
@@ -339,23 +339,23 @@
       "shipped": true
     },
     {
-      "type": "linkedin_draft",
-      "title": "substack build weekend crosspromo",
-      "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
-      "source": "auto-mtime",
-      "timestamp": "21:35",
-      "words": 140,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
       "type": "x_draft",
       "title": "build trio",
       "path": "content/x/drafts/2026-02-16_build-trio.md",
       "source": "auto-mtime",
       "timestamp": "22:45",
       "words": 186,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "feature_script",
+      "title": "daily_dashboard",
+      "path": "scripts/daily_dashboard.py",
+      "source": "auto-mtime",
+      "timestamp": "01:10",
+      "words": 3973,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -372,12 +372,12 @@
       "mtime_only": true
     },
     {
-      "type": "feature_script",
-      "title": "daily_dashboard",
-      "path": "scripts/daily_dashboard.py",
+      "type": "linkedin_draft",
+      "title": "substack build weekend crosspromo",
+      "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
       "source": "auto-mtime",
-      "timestamp": "01:10",
-      "words": 3973,
+      "timestamp": "21:35",
+      "words": 140,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -387,8 +387,8 @@
     {
       "hash": "e12b8ef",
       "message": "refactor: remove TerminalChrome wrapper from all layouts",
-      "type": "chore",
-      "score": 1,
+      "type": "feature_build",
+      "score": 25,
       "files_changed": 6,
       "lines_added": 42,
       "lines_removed": 48,
@@ -416,8 +416,8 @@
     {
       "hash": "ef04f2c",
       "message": "content: refine blog post 0 terminology and flow",
-      "type": "chore",
-      "score": 1,
+      "type": "feature_build",
+      "score": 25,
       "files_changed": 4,
       "lines_added": 93,
       "lines_removed": 25,
@@ -431,8 +431,8 @@
     {
       "hash": "88340fe",
       "message": "Sanitize repo for public GitHub",
-      "type": "chore",
-      "score": 1,
+      "type": "feature_build",
+      "score": 25,
       "files_changed": 11,
       "lines_added": 574,
       "lines_removed": 0,
@@ -521,8 +521,8 @@
     {
       "hash": "67b4329",
       "message": "Sanitize repo for public GitHub",
-      "type": "chore",
-      "score": 1,
+      "type": "feature_build",
+      "score": 25,
       "files_changed": 5,
       "lines_added": 79,
       "lines_removed": 64,
@@ -1073,13 +1073,6 @@
       },
       {
         "platform": "substack",
-        "title": "build your own os",
-        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
-        "target_date": "2026-02-17",
-        "words": 1541
-      },
-      {
-        "platform": "substack",
         "title": "recursive drift",
         "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
         "target_date": "2026-02-19",
@@ -1121,7 +1114,7 @@
       "source": "cursor-db",
       "messages": 1916,
       "conversations": 15,
-      "logged_at": "00:38",
+      "logged_at": "16:29",
       "context": "cursor-ide 00:12-22:43",
       "cost": 1.7244,
       "estimated": true
@@ -1136,7 +1129,7 @@
       "source": "cursor-db",
       "messages": 5107,
       "conversations": 20,
-      "logged_at": "00:38",
+      "logged_at": "16:29",
       "context": "cursor-ide 00:32-23:52",
       "cost": 22.9815,
       "estimated": true
@@ -1151,7 +1144,7 @@
       "source": "cursor-db",
       "messages": 29,
       "conversations": 2,
-      "logged_at": "00:38",
+      "logged_at": "16:29",
       "context": "cursor-ide 17:04-17:24",
       "cost": 0.0,
       "estimated": true
@@ -1161,21 +1154,21 @@
     "platform_breakdown": {
       "website": 25,
       "other": 10,
-      "linkedin": 1,
-      "x": 2
+      "x": 2,
+      "linkedin": 1
     },
-    "words_in_touched_files": 36762,
-    "pipeline_words": 46861,
+    "words_in_touched_files": 36788,
+    "pipeline_words": 45320,
     "finals_count": 0,
     "first_activity": "00:27",
     "last_activity": "23:44",
-    "output_score": 218,
-    "letter_grade": "A+",
+    "output_score": 314,
+    "letter_grade": "A",
     "score_breakdown": [
       {
-        "type": "chore",
+        "type": "feature_build",
         "title": "refactor: remove TerminalChrome wrapper from all layouts",
-        "points": 1
+        "points": 25
       },
       {
         "type": "chore",
@@ -1183,14 +1176,14 @@
         "points": 1
       },
       {
-        "type": "chore",
+        "type": "feature_build",
         "title": "content: refine blog post 0 terminology and flow",
-        "points": 1
+        "points": 25
       },
       {
-        "type": "chore",
+        "type": "feature_build",
         "title": "Sanitize repo for public GitHub",
-        "points": 1
+        "points": 25
       },
       {
         "type": "feature_build",
@@ -1218,9 +1211,9 @@
         "points": 3
       },
       {
-        "type": "chore",
+        "type": "feature_build",
         "title": "Sanitize repo for public GitHub",
-        "points": 1
+        "points": 25
       },
       {
         "type": "monorepo_scaffold",
@@ -1268,14 +1261,14 @@
         "points": 25
       }
     ],
-    "efficiency_rating": 8.82,
+    "efficiency_rating": 12.71,
     "shipped_count": 34,
     "draft_count": 4,
     "ship_rate": 0.89,
     "agent_cost": 24.71,
-    "cost_per_point": 0.11,
-    "efficiency_ratio": 8.82,
-    "words_today": 36762,
+    "cost_per_point": 0.08,
+    "efficiency_ratio": 12.71,
+    "words_today": 36788,
     "lines_added": 9891,
     "lines_removed": 1326,
     "lines_net": 8565,
@@ -1378,7 +1371,7 @@
   "token_efficiency": {
     "total_tokens": 1057800,
     "total_sessions": 3,
-    "tokens_per_point": 4852,
+    "tokens_per_point": 3369,
     "tokens_per_commit": 55674,
     "tokens_per_loc": 124,
     "avg_context_utilization": 0.67,

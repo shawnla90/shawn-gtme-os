@@ -1,18 +1,8 @@
 {
   "date": "2026-02-18",
-  "generated_at": "2026-02-22T05:38:45.219965+00:00",
+  "generated_at": "2026-02-22T21:29:22.712861+00:00",
   "version": 4,
   "accomplishments": [
-    {
-      "type": "script",
-      "title": "validate",
-      "path": ".cursor/skills/xlsx/scripts/office/validate.py",
-      "source": "auto",
-      "timestamp": "01:14",
-      "words": 349,
-      "value_score": 2,
-      "shipped": true
-    },
     {
       "type": "workflow_updated",
       "title": "tiktok-index",
@@ -25,71 +15,22 @@
     },
     {
       "type": "script",
-      "title": "base",
-      "path": ".cursor/skills/xlsx/scripts/office/validators/base.py",
+      "title": "soffice",
+      "path": ".cursor/skills/xlsx/scripts/office/soffice.py",
       "source": "auto",
       "timestamp": "01:14",
-      "words": 2140,
+      "words": 586,
       "value_score": 2,
       "shipped": true
     },
     {
       "type": "script",
-      "title": "merge_runs",
-      "path": ".cursor/skills/xlsx/scripts/office/helpers/merge_runs.py",
+      "title": "validate",
+      "path": ".cursor/skills/xlsx/scripts/office/validate.py",
       "source": "auto",
       "timestamp": "01:14",
-      "words": 503,
+      "words": 349,
       "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "system_engine",
-      "title": "rpg_sprites",
-      "path": "scripts/rpg_sprites.py",
-      "source": "auto",
-      "timestamp": "00:00",
-      "words": 12575,
-      "value_score": 50,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "faceless-script",
-      "path": ".cursor/skills/faceless-script/SKILL.md",
-      "source": "auto",
-      "timestamp": "14:57",
-      "words": 1407,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "linkedin_draft",
-      "title": "parallel agents plan mode",
-      "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 1437,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "15:31",
-      "words": 231,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 0,
       "shipped": true
     },
     {
@@ -104,51 +45,80 @@
     },
     {
       "type": "script",
-      "title": "unpack",
-      "path": ".cursor/skills/xlsx/scripts/office/unpack.py",
+      "title": "merge_runs",
+      "path": ".cursor/skills/xlsx/scripts/office/helpers/merge_runs.py",
       "source": "auto",
       "timestamp": "01:14",
-      "words": 359,
+      "words": 503,
       "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "18:21",
-      "words": 572,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos how-to page",
-      "path": "website/apps/shawnos/app/how-to/page.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 682,
-      "value_score": 5,
       "shipped": true
     },
     {
       "type": "script",
-      "title": "docx",
-      "path": ".cursor/skills/xlsx/scripts/office/validators/docx.py",
+      "title": "mux_audio",
+      "path": "content/tiktok/faceless/mux_audio.py",
       "source": "auto",
-      "timestamp": "01:14",
-      "words": 1099,
+      "timestamp": "16:41",
+      "words": 100,
       "value_score": 2,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "contentos how-to slug page",
-      "path": "website/apps/contentos/app/how-to/[slug]/page.tsx",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "15:46",
-      "words": 1082,
+      "timestamp": "16:07",
+      "words": 229,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos how-to slug page",
+      "path": "website/apps/shawnos/app/how-to/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 1230,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos how-to page",
+      "path": "website/apps/gtmos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "16:13",
+      "words": 577,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "script",
+      "title": "pack",
+      "path": ".cursor/skills/xlsx/scripts/office/pack.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 426,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "HowToWikiPage",
+      "path": "website/packages/shared/pages/HowToWikiPage.tsx",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 1560,
       "value_score": 5,
       "shipped": true
     },
@@ -164,11 +134,61 @@
     },
     {
       "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "18:21",
+      "words": 572,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "parallel agents plan mode",
+      "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 1437,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "script",
+      "title": "pptx",
+      "path": ".cursor/skills/xlsx/scripts/office/validators/pptx.py",
+      "source": "auto",
+      "timestamp": "01:14",
+      "words": 679,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
       "title": "contentos how-to page",
       "path": "website/apps/contentos/app/how-to/page.tsx",
       "source": "auto",
       "timestamp": "15:42",
       "words": 433,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos how-to page",
+      "path": "website/apps/shawnos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 682,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos how-to slug page",
+      "path": "website/apps/contentos/app/how-to/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "15:46",
+      "words": 1082,
       "value_score": 5,
       "shipped": true
     },
@@ -183,72 +203,22 @@
       "shipped": true
     },
     {
-      "type": "x_draft",
-      "title": "parallel agents plan mode",
-      "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 462,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "website_page",
-      "title": "contentos layout",
-      "path": "website/apps/contentos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "15:32",
-      "words": 223,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "script",
-      "title": "mux_audio",
-      "path": "content/tiktok/faceless/mux_audio.py",
-      "source": "auto",
-      "timestamp": "16:41",
-      "words": 100,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "play-draft",
-      "path": ".cursor/skills/play-draft/SKILL.md",
-      "source": "auto",
-      "timestamp": "15:00",
-      "words": 2029,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos how-to slug page",
-      "path": "website/apps/shawnos/app/how-to/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:42",
-      "words": 1230,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "script",
-      "title": "pptx",
-      "path": ".cursor/skills/xlsx/scripts/office/validators/pptx.py",
+      "title": "simplify_redlines",
+      "path": ".cursor/skills/xlsx/scripts/office/helpers/simplify_redlines.py",
       "source": "auto",
       "timestamp": "01:14",
-      "words": 679,
+      "words": 555,
       "value_score": 2,
       "shipped": true
     },
     {
       "type": "script",
-      "title": "pack",
-      "path": ".cursor/skills/xlsx/scripts/office/pack.py",
+      "title": "unpack",
+      "path": ".cursor/skills/xlsx/scripts/office/unpack.py",
       "source": "auto",
       "timestamp": "01:14",
-      "words": 426,
+      "words": 359,
       "value_score": 2,
       "shipped": true
     },
@@ -263,24 +233,34 @@
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "restart-openclaw",
-      "path": ".claude/skills/restart-openclaw/SKILL.md",
+      "type": "script",
+      "title": "base",
+      "path": ".cursor/skills/xlsx/scripts/office/validators/base.py",
       "source": "auto",
-      "timestamp": "00:00",
-      "words": 273,
+      "timestamp": "01:14",
+      "words": 2140,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "faceless-script",
+      "path": ".cursor/skills/faceless-script/SKILL.md",
+      "source": "auto",
+      "timestamp": "14:57",
+      "words": 1407,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "HowToWikiPage",
-      "path": "website/packages/shared/pages/HowToWikiPage.tsx",
+      "type": "x_draft",
+      "title": "parallel agents plan mode",
+      "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
       "source": "auto",
       "timestamp": "15:42",
-      "words": 1560,
-      "value_score": 5,
-      "shipped": true
+      "words": 462,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "script",
@@ -303,32 +283,52 @@
     },
     {
       "type": "website_page",
-      "title": "gtmos how-to page",
-      "path": "website/apps/gtmos/app/how-to/page.tsx",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "16:13",
-      "words": 577,
+      "timestamp": "16:07",
+      "words": 237,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "script",
-      "title": "soffice",
-      "path": ".cursor/skills/xlsx/scripts/office/soffice.py",
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
       "source": "auto",
-      "timestamp": "01:14",
-      "words": 586,
-      "value_score": 2,
+      "timestamp": "00:00",
+      "words": 12575,
+      "value_score": 50,
       "shipped": true
     },
     {
       "type": "script",
-      "title": "simplify_redlines",
-      "path": ".cursor/skills/xlsx/scripts/office/helpers/simplify_redlines.py",
+      "title": "docx",
+      "path": ".cursor/skills/xlsx/scripts/office/validators/docx.py",
       "source": "auto",
       "timestamp": "01:14",
-      "words": 555,
+      "words": 1099,
       "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "restart-openclaw",
+      "path": ".claude/skills/restart-openclaw/SKILL.md",
+      "source": "auto",
+      "timestamp": "00:00",
+      "words": 273,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "play-draft",
+      "path": ".cursor/skills/play-draft/SKILL.md",
+      "source": "auto",
+      "timestamp": "15:00",
+      "words": 2029,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -361,8 +361,8 @@
     {
       "hash": "85c28d5",
       "message": "Update README.md",
-      "type": "chore",
-      "score": 1,
+      "type": "infra_build",
+      "score": 15,
       "files_changed": 1,
       "lines_added": 2,
       "lines_removed": 2,
@@ -375,8 +375,8 @@
     {
       "hash": "c5d85d1",
       "message": "refactor(skill): update play-draft X format from 10-post arc to 4-5 post thread",
-      "type": "chore",
-      "score": 1,
+      "type": "infra_build",
+      "score": 15,
       "files_changed": 1,
       "lines_added": 26,
       "lines_removed": 47,
@@ -406,8 +406,8 @@
     {
       "hash": "bfb70ab",
       "message": "Merge branch 'main' of github.com:shawnla90/shawn-gtme-os",
-      "type": "chore",
-      "score": 1,
+      "type": "infra_build",
+      "score": 15,
       "files_changed": 1,
       "lines_added": 2,
       "lines_removed": 2,
@@ -892,13 +892,6 @@
       },
       {
         "platform": "substack",
-        "title": "build your own os",
-        "path": "content/substack/drafts/2026-02-17_build-your-own-os.md",
-        "target_date": "2026-02-17",
-        "words": 1541
-      },
-      {
-        "platform": "substack",
         "title": "recursive drift",
         "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
         "target_date": "2026-02-19",
@@ -940,7 +933,7 @@
       "source": "cursor-db",
       "messages": 3650,
       "conversations": 12,
-      "logged_at": "00:38",
+      "logged_at": "16:29",
       "context": "cursor-ide 01:31-15:46",
       "cost": 16.425,
       "estimated": true
@@ -955,7 +948,7 @@
       "source": "cursor-db",
       "messages": 38,
       "conversations": 1,
-      "logged_at": "00:38",
+      "logged_at": "16:29",
       "context": "cursor-ide 16:34-16:41",
       "cost": 0.0,
       "estimated": true
@@ -964,17 +957,17 @@
   "stats": {
     "platform_breakdown": {
       "other": 22,
-      "linkedin": 1,
       "website": 10,
+      "linkedin": 1,
       "x": 1
     },
-    "words_in_touched_files": 36013,
-    "pipeline_words": 46861,
+    "words_in_touched_files": 36025,
+    "pipeline_words": 45320,
     "finals_count": 0,
     "first_activity": "00:00",
     "last_activity": "18:21",
-    "output_score": 131,
-    "letter_grade": "A",
+    "output_score": 173,
+    "letter_grade": "C",
     "score_breakdown": [
       {
         "type": "chore",
@@ -982,14 +975,14 @@
         "points": 1
       },
       {
-        "type": "chore",
+        "type": "infra_build",
         "title": "Update README.md",
-        "points": 1
+        "points": 15
       },
       {
-        "type": "chore",
+        "type": "infra_build",
         "title": "refactor(skill): update play-draft X format from 10-post arc",
-        "points": 1
+        "points": 15
       },
       {
         "type": "monorepo_scaffold",
@@ -997,9 +990,9 @@
         "points": 80
       },
       {
-        "type": "chore",
+        "type": "infra_build",
         "title": "Merge branch 'main' of github.com:shawnla90/shawn-gtme-os",
-        "points": 1
+        "points": 15
       },
       {
         "type": "bug_fix",
@@ -1027,14 +1020,14 @@
         "points": 1
       }
     ],
-    "efficiency_rating": 7.98,
+    "efficiency_rating": 10.53,
     "shipped_count": 31,
     "draft_count": 3,
     "ship_rate": 0.91,
     "agent_cost": 16.43,
-    "cost_per_point": 0.13,
-    "efficiency_ratio": 7.98,
-    "words_today": 36013,
+    "cost_per_point": 0.09,
+    "efficiency_ratio": 10.53,
+    "words_today": 36025,
     "lines_added": 31798,
     "lines_removed": 919,
     "lines_net": 30879,
@@ -1186,7 +1179,7 @@
   "token_efficiency": {
     "total_tokens": 553200,
     "total_sessions": 2,
-    "tokens_per_point": 4223,
+    "tokens_per_point": 3198,
     "tokens_per_commit": 55320,
     "tokens_per_loc": 18,
     "avg_context_utilization": 0.51,
