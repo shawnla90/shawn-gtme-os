@@ -118,6 +118,15 @@ else
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
+# ── Step 1g: Build content/data index ─────────────────────────────────
+log "Running build_index.py"
+if $PYTHON scripts/build_index.py >> "$LOGFILE" 2>&1; then
+  log "Content index built"
+else
+  log "WARN: Content index build failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
