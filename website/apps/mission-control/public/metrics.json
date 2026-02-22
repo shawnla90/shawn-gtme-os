@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-22T05:00:05.000Z",
+  "generated": "2026-02-22T06:12:41.000Z",
   "system": {
     "status": "degraded",
     "uptime": "live",
@@ -24,20 +24,6 @@
     }
   ],
   "drafts": [
-    {
-      "type": "substack",
-      "title": "Start at Level One",
-      "status": "draft",
-      "date": "2026-03-03",
-      "pillar": null
-    },
-    {
-      "type": "substack",
-      "title": "OS.AI Labs, Post 5 -- Build Your Own OS",
-      "status": "draft",
-      "date": "2026-02-24",
-      "pillar": null
-    },
     {
       "type": "substack",
       "title": "recursive drift",
@@ -93,12 +79,26 @@
       "status": "draft",
       "date": "2026-02-16",
       "pillar": "building & sharing"
+    },
+    {
+      "type": "website",
+      "title": "Nothing Stays the Same",
+      "status": "draft",
+      "date": "2026-02-16",
+      "pillar": null
+    },
+    {
+      "type": "x",
+      "title": "build trio",
+      "status": "draft",
+      "date": "2026-02-16",
+      "pillar": "building & sharing"
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
     "teamMembers": 4,
-    "draftsTracked": 55
+    "draftsTracked": 53
   }
 }

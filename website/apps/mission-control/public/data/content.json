@@ -1,20 +1,26 @@
 {
-  "generated": "2026-02-22T05:00:05.000Z",
+  "generated": "2026-02-22T06:12:41.000Z",
   "totals": {
-    "total_content": 78,
-    "total_drafts": 55,
-    "total_final": 23,
-    "total_words": 51605,
+    "total_content": 81,
+    "total_drafts": 53,
+    "total_final": 28,
+    "total_words": 52839,
     "platforms_active": 5,
     "cross_platform_groups": 22,
     "series_count": 0
   },
   "pipeline": {
     "substack": {
-      "draft": 8,
-      "final": 3,
-      "total": 11,
-      "words": 14287
+      "draft": 6,
+      "final": 4,
+      "total": 10,
+      "words": 12409
+    },
+    "website": {
+      "draft": 1,
+      "final": 5,
+      "total": 6,
+      "words": 4219
     },
     "linkedin": {
       "draft": 22,
@@ -33,36 +39,63 @@
       "final": 0,
       "total": 2,
       "words": 2442
-    },
-    "website": {
-      "draft": 1,
-      "final": 1,
-      "total": 2,
-      "words": 1107
     }
   },
   "recent": [
     {
       "platform": "substack",
-      "title": "Start at Level One",
-      "slug": "start-at-level-one",
-      "date": "2026-03-03",
-      "stage": "draft",
+      "title": "The Anti Lead Magnet: Start at Level One or Don't Start at All",
+      "slug": "anti-lead-magnet",
+      "date": "2026-02-22",
+      "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1013,
-      "file_path": "content/substack/drafts/2026-02-24_start-at-level-one.md"
+      "word_count": 676,
+      "file_path": "content/substack/final/2026-02-22_anti-lead-magnet.md"
     },
     {
-      "platform": "substack",
-      "title": "OS.AI Labs, Post 5 -- Build Your Own OS",
+      "platform": "website",
+      "title": "The Anti Lead Magnet",
       "slug": "build-your-own-os",
-      "date": "2026-02-24",
-      "stage": "draft",
+      "date": "2026-02-22",
+      "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1541,
-      "file_path": "content/substack/drafts/2026-02-17_build-your-own-os.md"
+      "word_count": 689,
+      "file_path": "content/website/final/build-your-own-os.md"
+    },
+    {
+      "platform": "website",
+      "title": "Content Clusters and the Breadcrumb Protocol",
+      "slug": "content-cluster-breadcrumbs",
+      "date": "2026-02-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 858,
+      "file_path": "content/website/final/content-cluster-breadcrumbs.md"
+    },
+    {
+      "platform": "website",
+      "title": "How I Built a Video Rendering System in React",
+      "slug": "remotion-video-system",
+      "date": "2026-02-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 783,
+      "file_path": "content/website/final/remotion-video-system.md"
+    },
+    {
+      "platform": "website",
+      "title": "Querying Your Repo Like a Database",
+      "slug": "sqlite-content-index",
+      "date": "2026-02-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 782,
+      "file_path": "content/website/final/sqlite-content-index.md"
     },
     {
       "platform": "substack",
@@ -558,39 +591,6 @@
       "arc": null,
       "word_count": 795,
       "file_path": "content/linkedin/drafts/2026-02-10_voice-modularity.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "content os meta",
-      "slug": "content-os-meta",
-      "date": "2026-02-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 296,
-      "file_path": "content/linkedin/final/2026-02-10_content-os-meta.txt"
-    },
-    {
-      "platform": "linkedin",
-      "title": "content os schematic",
-      "slug": "content-os-schematic",
-      "date": "2026-02-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 412,
-      "file_path": "content/linkedin/final/2026-02-10_content-os-schematic.txt"
-    },
-    {
-      "platform": "linkedin",
-      "title": "github safety workflow",
-      "slug": "github-safety-workflow",
-      "date": "2026-02-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 295,
-      "file_path": "content/linkedin/final/2026-02-10_github-safety-workflow.txt"
     }
   ],
   "series": [],
