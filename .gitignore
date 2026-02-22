@@ -32,3 +32,4 @@ node_modules/
 .cursor/debug.log
 .vercel
 .obsidian/
+.mcp.json
