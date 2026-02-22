@@ -2,8 +2,37 @@
 User-agent: *
 Allow: /
 
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# ChatGPT-User
+User-agent: ChatGPT-User
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
+# Applebot-Extended
+User-agent: Applebot-Extended
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# OAI-SearchBot
+User-agent: OAI-SearchBot
+Allow: /
+
 # Host
 Host: https://shawnos.ai
 
 # Sitemaps
 Sitemap: https://shawnos.ai/sitemap.xml
+Sitemap: https://shawnos.ai/feed.xml
