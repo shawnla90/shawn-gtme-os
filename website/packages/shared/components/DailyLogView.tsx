@@ -1,4 +1,6 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import type {
   DailyLog,
   Accomplishment,
@@ -318,77 +320,247 @@ function CommitTypeTag({ type }: { type: string }) {
   )
 }
 
-function CommitRow({ item }: { item: Commit }) {
-  const msg = item.message.length > 60
+function CommitRow({
+  item,
+  expanded,
+  onToggle,
+}: {
+  item: Commit
+  expanded?: boolean
+  onToggle?: () => void
+}) {
+  const [showTooltip, setShowTooltip] = useState(false)
+  const isTruncated = item.message.length > 60
+  const msg = isTruncated
     ? item.message.slice(0, 57) + '...'
     : item.message
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'baseline',
-        gap: '8px',
-        padding: '4px 0',
-        fontSize: '13px',
-        lineHeight: 1.5,
-      }}
-    >
-      <span
+    <div>
+      <div
+        className="dlv-commit-row"
+        onClick={onToggle}
         style={{
-          color: 'var(--text-muted)',
-          fontSize: '11px',
-          flexShrink: 0,
-          width: '42px',
-          textAlign: 'right',
+          display: 'flex',
+          alignItems: 'baseline',
+          gap: '8px',
+          padding: '4px 4px',
+          fontSize: '13px',
+          lineHeight: 1.5,
         }}
       >
-        {item.timestamp}
-      </span>
-      <CommitTypeTag type={item.type} />
-      <span
-        style={{
-          color: 'var(--text-primary)',
-          flexShrink: 1,
-          minWidth: 0,
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
-        }}
+        {/* Chevron */}
+        <span
+          className="dlv-chevron"
+          style={{
+            fontSize: '10px',
+            color: 'var(--text-muted)',
+            flexShrink: 0,
+            width: '12px',
+            transform: expanded ? 'rotate(90deg)' : 'rotate(0deg)',
+          }}
+        >
+          &#9656;
+        </span>
+        <span
+          style={{
+            color: 'var(--text-muted)',
+            fontSize: '11px',
+            flexShrink: 0,
+            width: '42px',
+            textAlign: 'right',
+          }}
+        >
+          {item.timestamp}
+        </span>
+        <CommitTypeTag type={item.type} />
+        <span
+          style={{
+            color: 'var(--text-primary)',
+            flexShrink: 1,
+            minWidth: 0,
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            whiteSpace: 'nowrap',
+            position: 'relative',
+          }}
+          onMouseEnter={() => { if (isTruncated) setShowTooltip(true) }}
+          onMouseLeave={() => setShowTooltip(false)}
+        >
+          {msg}
+          {showTooltip && isTruncated && (
+            <div
+              className="dlv-commit-tooltip"
+              style={{
+                position: 'absolute',
+                bottom: '100%',
+                left: 0,
+                marginBottom: '8px',
+                background: 'var(--canvas)',
+                border: '1px solid var(--border)',
+                padding: '8px 12px',
+                borderRadius: '6px',
+                fontSize: '12px',
+                color: 'var(--text-primary)',
+                maxWidth: '400px',
+                wordWrap: 'break-word',
+                whiteSpace: 'normal',
+                zIndex: 10,
+                pointerEvents: 'none',
+                lineHeight: 1.4,
+                boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
+              }}
+            >
+              {item.message}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '20px',
+                  width: 0,
+                  height: 0,
+                  borderLeft: '6px solid transparent',
+                  borderRight: '6px solid transparent',
+                  borderTop: '6px solid var(--border)',
+                }}
+              />
+            </div>
+          )}
+        </span>
+        <span
+          style={{
+            color: item.score > 0 ? GREEN : 'var(--text-muted)',
+            fontSize: '11px',
+            flexShrink: 0,
+            marginLeft: 'auto',
+            fontWeight: 600,
+          }}
+        >
+          +{item.score}
+        </span>
+      </div>
+
+      {/* Expanded detail panel */}
+      <div
+        className="dlv-expand-panel"
+        style={{ maxHeight: expanded ? '200px' : '0px' }}
       >
-        {msg}
-      </span>
-      <span
-        style={{
-          color: item.score > 0 ? GREEN : 'var(--text-muted)',
-          fontSize: '11px',
-          flexShrink: 0,
-          marginLeft: 'auto',
-          fontWeight: 600,
-        }}
-      >
-        +{item.score}
-      </span>
+        <div
+          style={{
+            margin: '2px 0 8px 24px',
+            padding: '10px 14px',
+            background: 'var(--canvas)',
+            border: '1px solid var(--border)',
+            borderRadius: '6px',
+            fontSize: '12px',
+            lineHeight: 1.5,
+          }}
+        >
+          <div
+            style={{
+              color: 'var(--text-primary)',
+              whiteSpace: 'pre-wrap',
+              wordWrap: 'break-word',
+              marginBottom: '8px',
+            }}
+          >
+            {item.message}
+          </div>
+          <div style={{ color: 'var(--text-muted)', fontSize: '11px' }}>
+            {item.files_changed} file{item.files_changed !== 1 ? 's' : ''} changed{' \u00A0'}
+            <span style={{ color: GREEN }}>+{item.lines_added}</span>{' '}
+            <span style={{ color: RED }}>-{item.lines_removed}</span>{' '}
+            <span style={{ color: CYAN }}>
+              net {item.lines_net >= 0 ? '+' : ''}{item.lines_net}
+            </span>
+          </div>
+          {item.directories.length > 0 && (
+            <div style={{ color: 'var(--text-muted)', fontSize: '11px', marginTop: '2px' }}>
+              dirs: {item.directories.join(', ')}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   )
 }
 
-function WeeklyPanel({ days, currentDate }: { days: WeekDaySummary[]; currentDate: string }) {
+function WeeklyBarChart({ days }: { days: WeekDaySummary[] }) {
+  const maxScore = Math.max(...days.map((d) => d.score), 1)
   return (
-    <div>
-      {days.map((d) => {
-        const isCurrent = d.date === currentDate
-        return (
+    <div style={{ marginBottom: '12px', paddingBottom: '8px', borderBottom: '1px solid var(--border)' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'flex-end',
+          gap: '4px',
+          height: '40px',
+          marginBottom: '4px',
+        }}
+      >
+        {days.map((d) => {
+          const barHeight = d.score > 0 ? Math.max((d.score / maxScore) * 40, 4) : 2
+          const color = d.score > 0 ? gradeColor(d.grade) : MUTED
+          return (
+            <div
+              key={d.date}
+              style={{
+                flex: '1 1 0',
+                height: `${barHeight}px`,
+                background: color,
+                borderRadius: '2px 2px 0 0',
+                opacity: d.score > 0 ? 1 : 0.3,
+              }}
+            />
+          )
+        })}
+      </div>
+      <div style={{ display: 'flex', gap: '4px' }}>
+        {days.map((d) => (
           <div
             key={d.date}
+            style={{
+              flex: '1 1 0',
+              fontSize: '9px',
+              color: 'var(--text-muted)',
+              textAlign: 'center',
+            }}
+          >
+            {dayName(d.date).slice(0, 2)}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+function WeeklyPanel({
+  days,
+  currentDate,
+  basePath,
+}: {
+  days: WeekDaySummary[]
+  currentDate: string
+  basePath: string
+}) {
+  return (
+    <div>
+      <WeeklyBarChart days={days} />
+      {days.map((d) => {
+        const isCurrent = d.date === currentDate
+        const hasData = d.score > 0
+        const rowContent = (
+          <div
+            className={`dlv-week-row${hasData && !isCurrent ? ' dlv-week-row-clickable' : ''}`}
             style={{
               display: 'flex',
               alignItems: 'center',
               gap: '10px',
-              padding: '5px 0',
+              padding: '5px 8px',
               fontSize: '12px',
               opacity: d.score === 0 && !isCurrent ? 0.5 : 1,
-              borderLeft: isCurrent ? `2px solid var(--accent)` : '2px solid transparent',
-              paddingLeft: '8px',
+              borderLeft: isCurrent ? '2px solid var(--accent)' : '2px solid transparent',
+              cursor: hasData && !isCurrent ? 'pointer' : 'default',
             }}
           >
             <span
@@ -436,6 +608,19 @@ function WeeklyPanel({ days, currentDate }: { days: WeekDaySummary[]; currentDat
             )}
           </div>
         )
+
+        if (hasData && !isCurrent) {
+          return (
+            <a
+              key={d.date}
+              href={`${basePath}/${d.date}`}
+              className="dlv-week-link"
+            >
+              {rowContent}
+            </a>
+          )
+        }
+        return <React.Fragment key={d.date}>{rowContent}</React.Fragment>
       })}
     </div>
   )
@@ -854,6 +1039,18 @@ export function DailyLogView({
   const costSection = log.cost
   const tokenEff = log.token_efficiency
 
+  // UX state
+  const [expandedCommit, setExpandedCommit] = useState<number | null>(null)
+  const [commitFilter, setCommitFilter] = useState<string | null>(null)
+
+  // Compute unique commit types for filter chips
+  const commitTypes = isV4
+    ? Array.from(new Set(commits.map((c) => c.type)))
+    : []
+  const filteredCommits = commitFilter
+    ? commits.filter((c) => c.type === commitFilter)
+    : commits
+
   // Compute derived stats
   const totalTokens =
     token_usage.reduce(
@@ -897,6 +1094,57 @@ export function DailyLogView({
           display: flex;
           gap: 10px;
           flex-wrap: wrap;
+        }
+        .dlv-commit-row {
+          cursor: pointer;
+          border-radius: 4px;
+          transition: background 0.1s ease;
+        }
+        .dlv-commit-row:hover {
+          background: var(--canvas);
+        }
+        .dlv-expand-panel {
+          overflow: hidden;
+          transition: max-height 0.2s ease;
+        }
+        .dlv-chevron {
+          transition: transform 0.15s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+        @media (hover: none) {
+          .dlv-commit-tooltip { display: none !important; }
+        }
+        .dlv-filter-chip {
+          cursor: pointer;
+          border: 1px solid var(--border);
+          background: transparent;
+          color: var(--text-secondary);
+          padding: 2px 8px;
+          border-radius: 12px;
+          font-size: 11px;
+          font-weight: 600;
+          font-family: var(--font-mono);
+          transition: border-color 0.1s ease, color 0.1s ease;
+        }
+        .dlv-filter-chip:hover {
+          border-color: var(--text-muted);
+        }
+        .dlv-filter-chip-active {
+          border-color: var(--accent);
+          color: var(--text-primary);
+        }
+        .dlv-week-row {
+          border-radius: 4px;
+          transition: background 0.1s ease;
+        }
+        .dlv-week-link {
+          text-decoration: none;
+          color: inherit;
+        }
+        .dlv-week-row-clickable:hover {
+          background: var(--canvas);
         }
       `}</style>
 
@@ -1033,10 +1281,52 @@ export function DailyLogView({
           {/* --- Left Panel: Commits (V4) / Accomplishments (V3) --- */}
           {isV4 ? (
             <Panel title="Commits" count={commits.length}>
+              {/* Filter chips */}
+              {commitTypes.length > 1 && (
+                <div
+                  style={{
+                    display: 'flex',
+                    gap: '6px',
+                    flexWrap: 'wrap',
+                    marginBottom: '10px',
+                  }}
+                >
+                  <button
+                    className={`dlv-filter-chip${commitFilter === null ? ' dlv-filter-chip-active' : ''}`}
+                    onClick={() => setCommitFilter(null)}
+                  >
+                    ALL
+                  </button>
+                  {commitTypes.map((t) => {
+                    const count = commits.filter((c) => c.type === t).length
+                    return (
+                      <button
+                        key={t}
+                        className={`dlv-filter-chip${commitFilter === t ? ' dlv-filter-chip-active' : ''}`}
+                        onClick={() => setCommitFilter(commitFilter === t ? null : t)}
+                      >
+                        {commitTypeLabel(t)} ({count})
+                      </button>
+                    )
+                  })}
+                </div>
+              )}
               <div style={{ maxHeight: '500px', overflowY: 'auto' }}>
-                {commits.map((c, i) => (
-                  <CommitRow key={i} item={c} />
-                ))}
+                {filteredCommits.map((c, i) => {
+                  const globalIndex = commits.indexOf(c)
+                  return (
+                    <CommitRow
+                      key={globalIndex}
+                      item={c}
+                      expanded={expandedCommit === globalIndex}
+                      onToggle={() =>
+                        setExpandedCommit(
+                          expandedCommit === globalIndex ? null : globalIndex,
+                        )
+                      }
+                    />
+                  )
+                })}
               </div>
             </Panel>
           ) : (
@@ -1052,7 +1342,7 @@ export function DailyLogView({
           {/* --- Middle Panel: This Week (V4) / Next Up (V3) --- */}
           {isV4 && weeklyContext ? (
             <Panel title="This Week">
-              <WeeklyPanel days={weeklyContext} currentDate={log.date} />
+              <WeeklyPanel days={weeklyContext} currentDate={log.date} basePath={basePath} />
               {/* Weekly totals */}
               <div
                 style={{
