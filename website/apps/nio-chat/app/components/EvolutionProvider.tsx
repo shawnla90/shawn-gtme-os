@@ -1,8 +1,9 @@
-// NioBot V3 — Evolution context: XP state, skill tracking, streak management, localStorage persistence
+// NioBot V3 — Evolution context: server-first init, optimistic XP, localStorage cache
+// DNA Phase 5: fetches from /api/dna on init, POSTs XP to /api/dna/xp
 
 'use client'
 
-import { createContext, useContext, useReducer, useEffect, useCallback, type ReactNode } from 'react'
+import { createContext, useContext, useReducer, useEffect, useCallback, useRef, type ReactNode } from 'react'
 import { getToday, getLevelProgress } from '../../lib/evolution'
 
 // --- State ---
@@ -12,10 +13,11 @@ export interface EvolutionState {
   skillXP: Record<string, number>  // skillId → accumulated XP
   streak: number
   lastActiveDate: string | null
-  dailyBonusClaimed: boolean       // has first-message-of-day bonus been given today
-  deepConvoClaimed: boolean        // 5+ turns bonus this session
-  veryDeepConvoClaimed: boolean    // 10+ turns bonus this session
+  dailyBonusClaimed: boolean       // from server via dna_daily_flags
+  deepConvoClaimed: boolean        // client-side per-session
+  veryDeepConvoClaimed: boolean    // client-side per-session
   initialized: boolean
+  serverSynced: boolean            // true once server response received
 }
 
 export interface XPGain {
@@ -25,7 +27,9 @@ export interface XPGain {
 
 export type EvolutionAction =
   | { type: 'INIT'; state: Partial<EvolutionState> }
+  | { type: 'SERVER_SYNC'; state: Partial<EvolutionState> }
   | { type: 'ADD_XP'; amount: number; source: string; skillId?: string }
+  | { type: 'RECONCILE_XP'; serverState: { xp: number; tier: number; level: number; skillXP: Record<string, number> } }
   | { type: 'CLAIM_DAILY_BONUS' }
   | { type: 'CLAIM_DEEP_CONVO' }
   | { type: 'CLAIM_VERY_DEEP_CONVO' }
@@ -36,6 +40,9 @@ function evolutionReducer(state: EvolutionState, action: EvolutionAction): Evolu
     case 'INIT':
       return { ...state, ...action.state, initialized: true }
 
+    case 'SERVER_SYNC':
+      return { ...state, ...action.state, initialized: true, serverSynced: true }
+
     case 'ADD_XP': {
       const newXP = state.xp + action.amount
       const skillXP = { ...state.skillXP }
@@ -44,6 +51,14 @@ function evolutionReducer(state: EvolutionState, action: EvolutionAction): Evolu
       }
       return { ...state, xp: newXP, skillXP }
     }
+
+    case 'RECONCILE_XP':
+      // Server response is truth — replace XP/tier/level
+      return {
+        ...state,
+        xp: action.serverState.xp,
+        skillXP: action.serverState.skillXP,
+      }
 
     case 'CLAIM_DAILY_BONUS':
       return { ...state, dailyBonusClaimed: true }
@@ -149,14 +164,17 @@ export function EvolutionProvider({ children }: { children: ReactNode }) {
     deepConvoClaimed: false,
     veryDeepConvoClaimed: false,
     initialized: false,
+    serverSynced: false,
   })
 
-  // Initialize from localStorage
+  const bootstrapAttempted = useRef(false)
+
+  // Step 1: Show localStorage cache instantly (stale but fast)
   useEffect(() => {
     const saved = loadEvolution()
     const today = getToday()
 
-    // Check streak
+    // Recalculate streak from cache
     let streak = saved.streak || 0
     let dailyBonusClaimed = saved.dailyBonusClaimed || false
 
@@ -169,11 +187,9 @@ export function EvolutionProvider({ children }: { children: ReactNode }) {
       if (diffDays === 0) {
         // Same day, keep everything
       } else if (diffDays === 1) {
-        // Consecutive day, increment streak
         streak += 1
         dailyBonusClaimed = false
       } else {
-        // Streak broken
         streak = 1
         dailyBonusClaimed = false
       }
@@ -191,21 +207,87 @@ export function EvolutionProvider({ children }: { children: ReactNode }) {
         veryDeepConvoClaimed: false,
       },
     })
+
+    // Step 2: Fetch server truth from GET /api/dna
+    const token = localStorage.getItem('shawnos-chat-token')
+    const headers: Record<string, string> = {}
+    if (token && token !== 'no-auth') {
+      headers['Authorization'] = `Bearer ${token}`
+    }
+
+    fetch('/api/dna', { headers })
+      .then(res => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        return res.json()
+      })
+      .then(data => {
+        // Step 3: Dispatch SERVER_SYNC with server state
+        dispatch({
+          type: 'SERVER_SYNC',
+          state: {
+            xp: data.xp,
+            skillXP: data.skillXP,
+            streak: data.streak,
+            lastActiveDate: data.lastActiveDate,
+            dailyBonusClaimed: data.dailyBonusClaimed,
+          },
+        })
+
+        // Bootstrap: if server has 0 XP but localStorage has XP, migrate
+        if (data.xp === 0 && saved.xp && (saved.xp as number) > 0 && !bootstrapAttempted.current) {
+          bootstrapAttempted.current = true
+          fetch('/api/dna/bootstrap', {
+            method: 'POST',
+            headers: { ...headers, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              xp: saved.xp,
+              skillXP: saved.skillXP || {},
+              streak: saved.streak || 0,
+              lastActiveDate: saved.lastActiveDate || null,
+            }),
+          }).then(res => res.json()).then(result => {
+            if (result.migrated) {
+              // Re-fetch to get the migrated state
+              fetch('/api/dna', { headers })
+                .then(r => r.json())
+                .then(refreshed => {
+                  dispatch({
+                    type: 'SERVER_SYNC',
+                    state: {
+                      xp: refreshed.xp,
+                      skillXP: refreshed.skillXP,
+                      streak: refreshed.streak,
+                      lastActiveDate: refreshed.lastActiveDate,
+                      dailyBonusClaimed: refreshed.dailyBonusClaimed,
+                    },
+                  })
+                })
+                .catch(() => { /* already have cached state */ })
+            }
+          }).catch(() => { /* bootstrap failed, cached state is fine */ })
+        }
+      })
+      .catch(() => {
+        // Step 4: On error, fall back to cached data (already loaded above)
+        console.warn('[evolution] Server sync failed, using cached state')
+      })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Persist state
+  // Persist state to localStorage cache
   useEffect(() => {
     if (state.initialized) saveEvolution(state)
   }, [state])
 
   const addXP = useCallback((amount: number, source: string, skillId?: string) => {
+    // Step 1: Dispatch local ADD_XP optimistically (UI updates instantly)
     const beforeProgress = getLevelProgress(state.xp)
     const afterProgress = getLevelProgress(state.xp + amount)
 
     dispatch({ type: 'ADD_XP', amount, source, skillId })
     emitXPGain({ amount, source })
 
-    // Check for level up
+    // Check for level up from optimistic state
     if (afterProgress.totalLevel > beforeProgress.totalLevel) {
       emitLevelUp({
         newTier: afterProgress.tier,
@@ -214,7 +296,50 @@ export function EvolutionProvider({ children }: { children: ReactNode }) {
         isTierUp: afterProgress.tier > beforeProgress.tier,
       })
     }
-  }, [state.xp])
+
+    // Step 2: POST /api/dna/xp with base amount + source + skillId
+    const token = localStorage.getItem('shawnos-chat-token')
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+    if (token && token !== 'no-auth') {
+      headers['Authorization'] = `Bearer ${token}`
+    }
+
+    fetch('/api/dna/xp', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ amount, source, skillId }),
+    })
+      .then(res => {
+        if (!res.ok) return // 409 for already-claimed bonuses is fine
+        return res.json()
+      })
+      .then(result => {
+        if (!result) return
+        // Step 3: Reconcile state from server response
+        dispatch({
+          type: 'RECONCILE_XP',
+          serverState: {
+            xp: result.newXP,
+            tier: result.tier,
+            level: result.level,
+            skillXP: state.skillXP, // keep local for now, server handles it
+          },
+        })
+
+        // Step 4: Check leveledUp/tieredUp from server for authoritative level-up
+        if (result.tieredUp || result.leveledUp) {
+          emitLevelUp({
+            newTier: result.tier,
+            newLevel: result.level,
+            tierName: result.tierName,
+            isTierUp: result.tieredUp,
+          })
+        }
+      })
+      .catch(() => {
+        // Optimistic state stands — server will catch up next sync
+      })
+  }, [state.xp, state.skillXP])
 
   return (
     <EvolutionContext.Provider value={{ state, dispatch, addXP }}>

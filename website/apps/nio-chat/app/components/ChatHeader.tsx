@@ -83,7 +83,7 @@ export default function ChatHeader({ onNewChat, isStreaming, agents, activeAgent
                 />
               </NioXPRing>
               <div className="text-left">
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-baseline gap-1.5">
                   <h1 className="text-sm font-bold text-[var(--text-primary)]">{activeAgent.name}</h1>
                   <span className="text-[10px] text-[var(--text-muted)]">
                     {getTierName(progress.tier)} lv.{progress.level}

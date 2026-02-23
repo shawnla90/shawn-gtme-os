@@ -87,6 +87,10 @@ export default function ChimeProvider({ children }: { children: ReactNode }) {
   // Initialize from localStorage
   useEffect(() => {
     const saved = loadSettings()
+    // Validate saved packId still exists in the trimmed pack list
+    if (saved.packId && !chimePacks.some(p => p.id === saved.packId)) {
+      saved.packId = '8bit'
+    }
     dispatch({ type: 'INIT', state: saved })
 
     // Register unlock listener for iOS Safari

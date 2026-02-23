@@ -31,7 +31,7 @@ export default function XPFloat() {
   if (floats.length === 0) return null
 
   return (
-    <div className="fixed top-16 right-4 z-[90] pointer-events-none">
+    <div className="fixed top-14 right-3 z-[60] pointer-events-none">
       {floats.map((f, i) => (
         <div
           key={f.id}

@@ -14,7 +14,7 @@ export default function SessionSidebar() {
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-black/50 z-40"
+        className="fixed inset-0 bg-black/40 z-40"
         onClick={() => dispatch({ type: 'TOGGLE_SIDEBAR' })}
       />
 

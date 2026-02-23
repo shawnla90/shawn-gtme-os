@@ -43,7 +43,7 @@ export default function EvolutionPanel({ open, onClose }: EvolutionPanelProps) {
 
       {/* Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-72 bg-[var(--canvas-overlay)] border-l border-[var(--border)] z-50 transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-[var(--canvas-overlay)] border-l border-[var(--border)] z-50 transition-transform duration-300 ${
           open ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

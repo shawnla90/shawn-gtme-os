@@ -77,10 +77,10 @@ export function playChime(sound: ChimeSound, volume: number): void {
       audio.volume = Math.min(1, Math.max(0, volume))
       audio.currentTime = 0
       audio.play().catch(() => {
-        // autoplay blocked, silent fail
+        console.warn('chime: autoplay blocked')
       })
     }
-  } catch {
-    // audio not available, silent fail
+  } catch (err) {
+    console.warn('chime: audio not available', err)
   }
 }

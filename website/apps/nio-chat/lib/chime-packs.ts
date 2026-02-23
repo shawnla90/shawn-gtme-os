@@ -1,4 +1,4 @@
-// NioBot V3 — Chime pack registry: 8-bit synth + 5 MP3 packs
+// NioBot V3 — Chime pack registry: 8-bit synth + 2 MP3 packs
 
 import type { ChimeEvent, ChimeSound, SynthSound, MP3Sound } from './chime-engine'
 
@@ -184,30 +184,12 @@ function mp3Sound(src: string): MP3Sound {
   return { type: 'mp3', src }
 }
 
-const eldenRingPack: ChimePack = {
-  id: 'elden-ring',
-  name: 'Elden Ring',
-  description: 'Grace restored',
-  sounds: {
-    messageReceived: mp3Sound('/chimes/elden-ring.mp3'),
-  },
-}
-
 const haloPack: ChimePack = {
   id: 'halo',
   name: 'Halo',
   description: 'Shield recharge',
   sounds: {
     messageReceived: mp3Sound('/chimes/halo-shield-recharge.mp3'),
-  },
-}
-
-const sithPack: ChimePack = {
-  id: 'sith',
-  name: 'Sith',
-  description: 'Lightsaber ignition',
-  sounds: {
-    messageReceived: mp3Sound('/chimes/sith-ignition.mp3'),
   },
 }
 
@@ -220,24 +202,12 @@ const fmaPack: ChimePack = {
   },
 }
 
-const onePiecePack: ChimePack = {
-  id: 'one-piece',
-  name: 'One Piece',
-  description: 'Overtaken',
-  sounds: {
-    messageReceived: mp3Sound('/chimes/one-piece-overtaken.mp3'),
-  },
-}
-
 // --- Registry ---
 
 export const chimePacks: ChimePack[] = [
   eightBitPack,
-  eldenRingPack,
   haloPack,
-  sithPack,
   fmaPack,
-  onePiecePack,
 ]
 
 export function getChimePack(id: string): ChimePack | undefined {

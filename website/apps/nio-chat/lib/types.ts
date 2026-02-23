@@ -8,12 +8,11 @@ export interface Message {
   agentId?: string
 }
 
+// V3 DNA: evolutionTier/skillLevels removed — server reads DNA directly
 export interface ChatRequest {
   message: string
   sessionId?: string
   agentId: string
-  evolutionTier?: number
-  skillLevels?: Record<string, number>
 }
 
 export interface AgentChatState {
@@ -38,4 +37,43 @@ export interface EvolutionState {
   deepConvoClaimed: boolean
   veryDeepConvoClaimed: boolean
   initialized: boolean
+}
+
+// DNA Snapshot — shared client/server type
+export interface DNASnapshot {
+  userId: string
+  xp: number
+  tier: number
+  level: number
+  streak: number
+  lastActiveDate: string | null
+  dailyBonusClaimed: boolean
+  skillXP: Record<string, number>
+  activeSoulTraits: string[]
+  personalityFlags: Record<string, unknown>
+  totalMessages: number
+  totalConversations: number
+  totalCostCents: number
+  createdAt: number
+  updatedAt: number
+  // Computed fields (from enrichSnapshot)
+  xpLast24h: number
+  memoryCount: number
+  conversationsToday: number
+  costTodayCents: number
+  levelProgress: number
+  xpForNextLevel: number
+  xpForCurrentLevel: number
+  totalLevel: number
+  tierName: string
+  isMaxTier: boolean
+  isMaxLevel: boolean
+  streakMultiplier: number
+  skillProgress: Record<string, {
+    skillId: string
+    level: number
+    xp: number
+    xpForNextLevel: number
+    progress: number
+  }>
 }

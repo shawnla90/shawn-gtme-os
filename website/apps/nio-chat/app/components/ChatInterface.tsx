@@ -10,7 +10,6 @@ import { useEvolutionXP } from './useEvolutionXP'
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
 import InputBar from './InputBar'
-import UsagePill from './UsagePill'
 import SessionSidebar from './SessionSidebar'
 import AuthGate from './AuthGate'
 import LevelUpNotification from './LevelUpNotification'
@@ -37,7 +36,6 @@ function ChatLayout() {
         usage={state.usage}
       />
       <MessageList />
-      <UsagePill />
       <InputBar />
       <SessionSidebar />
       <LevelUpNotification />

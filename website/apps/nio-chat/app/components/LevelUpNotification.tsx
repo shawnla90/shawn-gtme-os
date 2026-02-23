@@ -27,7 +27,7 @@ export default function LevelUpNotification() {
 
   return (
     <div
-      className={`fixed top-20 left-1/2 -translate-x-1/2 z-[100] pointer-events-none transition-all duration-500 ${
+      className={`fixed top-20 left-1/2 -translate-x-1/2 z-[70] pointer-events-none transition-all duration-500 ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
       }`}
     >

@@ -61,7 +61,7 @@ export default function MessageList() {
       {showScrollBtn && (
         <button
           onClick={() => scrollToBottom()}
-          className="fixed bottom-20 right-6 w-8 h-8 rounded-full bg-[var(--canvas-overlay)] border border-[var(--border)] flex items-center justify-center shadow-lg hover:border-[var(--accent)] transition-colors z-10"
+          className="absolute bottom-4 right-4 w-8 h-8 rounded-full bg-[var(--canvas-overlay)] border border-[var(--border)] flex items-center justify-center shadow-lg hover:border-[var(--accent)] transition-colors z-10"
           aria-label="Scroll to bottom"
         >
           <svg className="w-4 h-4 text-[var(--text-secondary)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

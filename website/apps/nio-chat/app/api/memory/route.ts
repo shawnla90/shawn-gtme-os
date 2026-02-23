@@ -1,9 +1,11 @@
-// ShawnOS Chat - (c) 2026 Shawn Tenam - See /LICENSE
+// NioBot V3 — Memory API route
+// DNA Phase 6: uses DNA query layer for structured memory, keeps flat-file dual-write
 
 import { NextRequest, NextResponse } from 'next/server'
 import { validateToken } from '../../../lib/auth'
 import { readMemory, writeMemorySnapshot } from '../../../lib/memory'
 import { getAgent } from '../../../lib/agents'
+import { insertMemory, getMemories, searchMemory } from '../../../lib/db/queries/dna'
 
 export async function GET(request: NextRequest) {
   if (!validateToken(request)) {
@@ -20,8 +22,37 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: `Unknown agent: ${agentId}` }, { status: 400 })
   }
 
-  const memory = await readMemory(agentId)
-  return NextResponse.json({ agent: agentId, memory: memory || null })
+  const query = request.nextUrl.searchParams.get('q')
+
+  // If search query, use FTS5
+  if (query) {
+    try {
+      const memories = searchMemory(query, 20)
+      return NextResponse.json({ agent: agentId, memories, count: memories.length })
+    } catch (err) {
+      console.error('[memory] search error:', err)
+      // Fall back to flat file
+      const memory = await readMemory(agentId)
+      return NextResponse.json({ agent: agentId, memory: memory || null })
+    }
+  }
+
+  // Default: return structured memories from DB + flat file
+  try {
+    const memories = getMemories({ agentId, limit: 50 })
+    const flatMemory = await readMemory(agentId)
+    return NextResponse.json({
+      agent: agentId,
+      memory: flatMemory || null,
+      memories,
+      count: memories.length,
+    })
+  } catch (err) {
+    console.error('[memory] DB read error:', err)
+    // Fall back to flat file only
+    const memory = await readMemory(agentId)
+    return NextResponse.json({ agent: agentId, memory: memory || null })
+  }
 }
 
 export async function POST(request: NextRequest) {
@@ -29,7 +60,7 @@ export async function POST(request: NextRequest) {
     return new Response('Unauthorized', { status: 401 })
   }
 
-  let body: { agentId: string; content: string }
+  let body: { agentId: string; content: string; type?: string; tags?: string[]; importance?: number }
   try {
     body = await request.json()
   } catch {
@@ -45,6 +76,26 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: `Unknown agent: ${body.agentId}` }, { status: 400 })
   }
 
-  await writeMemorySnapshot(body.agentId, body.content)
+  // Dual-write: flat file + SQLite
+  try {
+    await writeMemorySnapshot(body.agentId, body.content)
+  } catch (err) {
+    console.error('[memory] flat file write error:', err)
+  }
+
+  try {
+    insertMemory({
+      id: crypto.randomUUID(),
+      agentId: body.agentId,
+      type: body.type || 'summary',
+      content: body.content,
+      tags: body.tags,
+      importance: body.importance,
+      source: 'api',
+    })
+  } catch (err) {
+    console.error('[memory] DB insert error:', err)
+  }
+
   return NextResponse.json({ ok: true })
 }

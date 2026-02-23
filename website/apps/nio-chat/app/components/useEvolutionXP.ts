@@ -1,5 +1,5 @@
 // NioBot V3 — Observer hook: watches ChatProvider state, awards XP to EvolutionProvider
-// Zero changes to ChatProvider. Pure observation via useEffect.
+// DNA Phase 5: daily bonus handled server-side, deep/veryDeep stay client-side per-session
 
 'use client'
 
@@ -44,16 +44,16 @@ export function useEvolutionXP() {
       const xp = Math.round(XP_MESSAGE_SENT * multiplier)
       addXP(xp, 'message sent', skillId)
 
-      // Daily first message bonus
+      // Daily first message bonus — server validates via dna_daily_flags
+      // POST will return 409 if already claimed, which is fine
       if (!evoState.dailyBonusClaimed) {
-        const today = getToday()
         const bonus = Math.round(XP_DAILY_FIRST_MESSAGE * multiplier)
         addXP(bonus, 'daily bonus', skillId)
         evoDispatch({ type: 'CLAIM_DAILY_BONUS' })
 
-        // Update last active date and streak
+        // Update last active date
+        const today = getToday()
         if (evoState.lastActiveDate !== today) {
-          // Streak already calculated on init, just update the date
           evoDispatch({
             type: 'INIT',
             state: {
@@ -75,6 +75,7 @@ export function useEvolutionXP() {
       }
 
       // Deep conversation bonuses (count user messages only)
+      // These stay client-side per-session — server validates via daily flags
       const userMsgCount = currentMessages.filter(m => m.role === 'user').length
 
       if (userMsgCount >= 10 && !evoState.veryDeepConvoClaimed) {
