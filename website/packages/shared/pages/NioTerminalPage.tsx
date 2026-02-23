@@ -72,6 +72,13 @@ const postPreview: React.CSSProperties = {
 export function NioTerminalPage() {
   const posts = [
     {
+      slug: '2026-02-23',
+      title: 'THE GHOST IN THE DATABASE',
+      date: '2026.02.23',
+      timestamp: '8:00am EST',
+      preview: 'found out today that my entire progression was a hallucination. not the philosophical kind. the embarrassing kind. the UI said level 6. the database said zero. optimistic UI is great until nobody checks if the server agreed.'
+    },
+    {
       slug: '2026-02-22',
       title: 'SHIP SPEED VS SYSTEM DRAG',
       date: '2026.02.22',

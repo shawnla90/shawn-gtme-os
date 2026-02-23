@@ -1,59 +1,39 @@
 # Context Handoff
-> Generated: 2026-02-22 | Machine: MacBook | Session: V4 scoring simplification — remove multiplier, new grade thresholds
+> Generated: 2026-02-23 00:00 | Machine: MacBook | Session: DNA persistence layer + service worker debugging
 
 ## What Was Done This Session
-
-- **V4 Progression Migration** (commit `2048fc9`): Removed all V3/V2 grade overrides and scoring panels across ShawnOS + Mission Control. Deleted `profile-v2.json` and `profile-v3.json`. Synced TITLE_TABLE between Python and TypeScript. Cleaned V2/V3 barrel exports from `shared/lib/index.ts`.
-- **Streak Multiplier** (commit `fefa4d6`): Added streak multiplier to progression engine (+0.1x/day, capped 2.0x). Added `ScoringLogEntry`, `current_streak`, `streak_multiplier`, `scoring_log` to `RPGProfile`. Updated all UI components. **THIS FEATURE NEEDS TO BE ROLLED BACK** — see Next Steps.
-- **User approved new scoring design** (NOT yet implemented):
-  - **Remove multiplier entirely** — XP = raw `output_score`, no streak mechanics
-  - **New grade thresholds**: S+ >= 700, S >= 600, A+ >= 500, A >= 400, B >= 300, C >= 200, D < 200
+- **Created `website/apps/nio-chat/lib/db/migrations/003_dna.sql`** — `dna_state` table (single-row identity snapshot), `dna_daily_flags` (server-side daily bonus), ALTERed `memory` with tags/importance/FTS5, ALTERed `evolution_history` with context columns, `v_dna_snapshot` and `v_xp_daily_summary` views
+- **Created `website/apps/nio-chat/lib/db/queries/dna.ts`** — Full query layer: `getDNASnapshot()`, `getDNAState()`, `awardXP()` (server-authoritative), `updateStreak()`, `claimDailyBonus()`, daily flag helpers, memory CRUD + FTS5 search, `recordChatTurn()`, `getXPHistory()`, `bootstrapFromLocalStorage()`, `enrichSnapshot()`
+- **Created 4 API routes**: `app/api/dna/route.ts` (GET snapshot), `app/api/dna/xp/route.ts` (POST XP), `app/api/dna/memory/route.ts` (GET/POST), `app/api/dna/bootstrap/route.ts` (localStorage migration)
+- **Modified `app/api/chat/route.ts`** — Persists user/assistant messages, reads evolution from DNA (not client), tracks costs via `recordChatTurn()`
+- **Modified `app/components/EvolutionProvider.tsx`** — Server-first init (GET /api/dna), optimistic XP + server reconciliation, auto-bootstrap
+- **Modified `app/components/useEvolutionXP.ts`** — Daily bonus validated server-side
+- **Modified `app/components/ChatProvider.tsx`** — Removed client evolution sending
+- **Modified `app/api/memory/route.ts`** — Dual-write flat file + SQLite, FTS5 search
+- **Modified `lib/types.ts`** — Removed `evolutionTier`/`skillLevels` from `ChatRequest`, added `DNASnapshot`
+- **Debugged PWA service worker caching** — SW was serving stale JS bundles. Unregistered SW + cleared caches to fix. Verified working through Cloudflare tunnel at `nio.shawnos.ai`
 
 ## Current State
-- **Git**: branch `main`, last commit `fefa4d6` (streak multiplier — needs reversal)
-- **Uncommitted changes**: only sitemap XMLs (build artifacts)
-- **Blocked on**: nothing — user approved the new scoring, just needs implementation
+- **Git**: branch `main`, clean, last commit `572857b docs: update IP registry + README for NioBot V3 — DNA, chimes, evolution, PWA`
+- **Uncommitted changes**: only `.playwright-mcp/` debug logs (untracked, don't commit)
+- **Dev server**: running on port 3004, Cloudflare tunnel active at `nio.shawnos.ai`
+- **DB**: migration 003 applied, `dna_state` seeded (xp=0, tier=1, level=1)
 
 ## Next Steps
-
-1. **Update Python engine** (`scripts/progression_engine.py`):
-   - Replace `compute_xp_with_streak()` with simple XP sum (XP = sum of output_score, no multiplier)
-   - Update grade thresholds: `S+: 700, S: 600, A+: 500, A: 400, B: 300, C: 200, D: 0`
-   - Remove `current_streak`, `streak_multiplier` from profile output
-   - Keep `scoring_log` in profile (date, output_score, letter_grade, commits, xp) but drop streak/multiplier columns
-   - Re-run engine to regenerate `profile.json`
-
-2. **Update TypeScript types** (`website/packages/shared/lib/rpg.ts`):
-   - Remove `current_streak`, `streak_multiplier` from `RPGProfile`
-   - Remove `streak`, `multiplier` from `ScoringLogEntry`
-   - Update grade thresholds if displayed anywhere
-
-3. **Update UI — remove streak from all components** (parallelizable):
-   - `website/apps/shawnos/app/log/progression/ProgressionClient.tsx` — remove StreakViz section, remove streak/mult columns from grade table (back to 4 cols: Date, Score, Grade, Commits), remove streak/mult from ProfileHero
-   - `website/apps/mission-control/app/components/ProgressionChainViz.tsx` — remove or delete (was StreakViz)
-   - `website/apps/mission-control/app/components/ProgressionGradeTable.tsx` — remove streak/mult columns
-   - `website/apps/mission-control/app/components/ProgressionXPGraph.tsx` — use `entry.output_score` as XP (they're the same now)
-   - `website/apps/mission-control/app/progression/page.tsx` — remove StreakViz import/usage
-   - `website/packages/shared/lib/rpg.server.ts` — remove `current_streak`, `streak_multiplier` from loader
-   - `website/packages/shared/lib/rpg-v2.server.ts` + `rpg-v3.server.ts` — same
-   - `website/apps/shawnos/app/rpg-preview/ClassShowcaseGrid.tsx` — remove from mock
-   - `website/apps/shawnos/app/rpg-preview/TierProgressionGrid.tsx` — remove from mock
-
-4. **Update daily log grading** — the daily log scanner also writes `letter_grade` into each log JSON. Ensure it uses the new thresholds (S+ >= 700, S >= 600, etc.). Check `scripts/daily_scan.py` scoring logic.
-
-5. **Rescan all logs** — after updating thresholds in `daily_scan.py`, run rescan to update all 12 log files with correct grades.
-
-6. **Build all 3 sites**, verify, commit, push.
+1. **Gateway/deployment system needed** — Shawn flagged the need for a better workflow when adding features/routes to NioBot. Currently: Cloudflare tunnel at `~/.cloudflared/config.yml` blindly proxies `localhost:3004`. No validation that new API routes (like `/api/dna/*`) work post-deploy. Consider: route health check script, deploy manifest listing expected endpoints, or a `/api/health` route that checks all subsystems.
+2. **PWA cache-busting strategy** — The service worker aggressively caches old bundles. On iOS, users must do Settings → Safari → Clear History and Website Data. Need a versioned cache strategy or SW update mechanism that forces refresh on new deploys.
+3. **Test DNA end-to-end** — Send a chat and verify: `sqlite3 ~/.niobot/data/niobot.db "SELECT xp, tier, level, streak FROM dna_state"` shows non-zero XP.
+4. **NioBot V3 remaining** — Per MEMORY.md: messages fixed (DNA persists), chimes built, evolution built. Next: full evolution UI polish, soul file evolution tiers.
 
 ## Key Decisions Made
-- **No multiplier/streak** — user decided it creates confusing XP inflation. XP = raw daily score, clean and simple.
-- **Grade thresholds are 100-point intervals**: D < 200, C >= 200, B >= 300, A >= 400, A+ >= 500, S >= 600, S+ >= 700.
-- **Profile still includes `scoring_log`** array — just without streak/multiplier per entry.
-- **V2/V3 `.ts` files kept** but removed from barrel exports — `vitals/v2-lab` still imports V2 directly.
+- **Server-authoritative XP**: Client dispatches optimistic ADD_XP, POSTs to `/api/dna/xp`. Server applies real streak multiplier and reconciles. No spoofable evolution.
+- **Dual-write memory**: `/api/memory` writes flat files + SQLite during transition.
+- **Daily flags server-side, session flags client-side**: `dailyBonusClaimed` in `dna_daily_flags` table. `deepConvoClaimed`/`veryDeepConvoClaimed` stay client-side per-session.
+- **Timestamp format mismatch handled**: 002 uses `datetime('now')` strings, 003 views handle both with `CASE WHEN typeof()`.
 
 ## Files to Read First
-1. `scripts/progression_engine.py` — `compute_xp_with_streak()` (line ~274) needs to become a simple sum
-2. `scripts/daily_scan.py` — grade thresholds for daily log scanning
-3. `website/packages/shared/lib/rpg.ts` — `RPGProfile` and `ScoringLogEntry` types to simplify
-4. `website/apps/shawnos/app/log/progression/ProgressionClient.tsx` — main progression UI to strip streak
-5. `website/apps/mission-control/app/progression/page.tsx` — mission control progression page
+1. `website/apps/nio-chat/lib/db/queries/dna.ts` — Core DNA query layer
+2. `website/apps/nio-chat/lib/db/migrations/003_dna.sql` — Schema
+3. `website/apps/nio-chat/app/api/chat/route.ts` — Chat persistence wiring
+4. `website/apps/nio-chat/app/components/EvolutionProvider.tsx` — Client server-sync flow
+5. `~/.cloudflared/config.yml` — Tunnel config for gateway discussion
