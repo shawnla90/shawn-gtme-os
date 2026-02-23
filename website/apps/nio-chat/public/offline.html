@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0D1117" />
+  <title>NioBot — Offline</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: #0D1117;
+      color: #c9d1d9;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      text-align: center;
+      max-width: 280px;
+    }
+    .icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      opacity: 0.6;
+    }
+    h1 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #e6edf3;
+    }
+    p {
+      font-size: 13px;
+      color: #8b949e;
+      line-height: 1.5;
+      margin-bottom: 24px;
+    }
+    button {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 10px 24px;
+      border-radius: 8px;
+      border: 1px solid #30363d;
+      background: #161b22;
+      color: #c9d1d9;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    button:hover {
+      border-color: #4EC373;
+    }
+    .pulse {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #f85149;
+      margin-right: 8px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">📡</div>
+    <h1>offline</h1>
+    <p>
+      <span class="pulse"></span>
+      no connection. your messages are safe in local storage.
+      nio will be back when you reconnect.
+    </p>
+    <button onclick="window.location.reload()">retry</button>
+  </div>
+</body>
+</html>

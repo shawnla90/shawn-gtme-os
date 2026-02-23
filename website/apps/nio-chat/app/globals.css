@@ -201,6 +201,31 @@ body {
   accent-color: var(--accent);
 }
 
+/* Standalone PWA mode adjustments */
+@media (display-mode: standalone) {
+  body {
+    /* Extra top padding in standalone to account for status bar */
+    padding-top: env(safe-area-inset-top);
+  }
+
+  /* Prevent overscroll/bounce in standalone */
+  html {
+    overscroll-behavior: none;
+  }
+
+  /* Disable text selection on non-input elements for app-like feel */
+  *:not(input):not(textarea):not([contenteditable="true"]) {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  /* Re-enable selection for message content */
+  .nio-prose, .nio-prose * {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 4px;

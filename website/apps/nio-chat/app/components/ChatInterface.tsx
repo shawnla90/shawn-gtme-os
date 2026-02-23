@@ -18,7 +18,7 @@ function ChatLayout() {
   }
 
   return (
-    <div className="h-screen flex flex-col bg-[var(--canvas)]">
+    <div className="flex flex-col bg-[var(--canvas)]" style={{ height: '100dvh' }}>
       <ChatHeader
         onNewChat={handleNewChat}
         isStreaming={state.isStreaming}

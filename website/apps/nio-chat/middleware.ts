@@ -6,6 +6,12 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const response = NextResponse.next()
 
+  // Prevent stale HTML cache — force revalidation on every navigation
+  const accept = request.headers.get('accept') || ''
+  if (accept.includes('text/html') || request.headers.get('sec-fetch-dest') === 'document') {
+    response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate')
+  }
+
   // Security headers
   response.headers.set(
     'Content-Security-Policy',
@@ -21,7 +27,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Apply to all routes except static files
-    '/((?!_next/static|_next/image|favicon.ico|icons|avatars).*)',
+    // Apply to all routes except static files and service worker
+    '/((?!_next/static|_next/image|favicon.ico|icons|avatars|sw\\.js|offline\\.html|manifest\\.json).*)',
   ],
 }
