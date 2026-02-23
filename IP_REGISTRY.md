@@ -1,6 +1,6 @@
 # ShawnOS — IP Asset Registry
 
-Last Updated: 2026-02-22
+Last Updated: 2026-02-23
 
 ## Tier 1: Core Proprietary Algorithms (All Rights Reserved)
 
@@ -25,12 +25,17 @@ Last Updated: 2026-02-22
 | RPG data model & types | website/packages/shared/lib/rpg.ts | Public + licensed | Game state management |
 | Log & progression API | website/packages/shared/lib/logs.ts | Public + licensed | Analytics backend |
 | Server-side RPG loader | website/packages/shared/lib/rpg.server.ts | Public + licensed | SSR state hydration |
-| ShawnOS Chat — CLI-to-chat bridge | website/apps/nio-chat/ | Public + licensed | Zero-API-cost multi-agent chat platform |
+| ShawnOS Chat (NioBot V3) — Multi-agent mobile AI | website/apps/nio-chat/ | Public + licensed | Zero-API-cost multi-agent chat platform with evolution |
+| DNA system — server-authoritative evolution | website/apps/nio-chat/lib/db/queries/dna.ts | Public + licensed | SQLite-backed XP, skills, streaks, memory persistence |
+| DNA API routes | website/apps/nio-chat/app/api/dna/ | Public + licensed | Server-side XP award, snapshot, memory, bootstrap endpoints |
+| Tamagotchi evolution engine | website/apps/nio-chat/lib/evolution.ts | Public + licensed | 5-tier progression, skill leveling, streak multipliers |
+| Chime sound system | website/apps/nio-chat/lib/chime-engine.ts, chime-packs.ts | Public + licensed | 8-bit synth + MP3 packs, event-driven playback |
 | Recursive flywheel architecture | website/apps/nio-chat/lib/ | Public + licensed | Model builds system it powers |
 | Agent config registry | website/apps/nio-chat/lib/agents.ts | Public + licensed | Declarative multi-agent definitions |
-| Soul file system | website/apps/nio-chat/souls/ | Public + licensed | Per-agent personality injection |
+| Soul file system | website/apps/nio-chat/souls/ | Public + licensed | Per-agent personality injection + tier evolution |
 | HMAC session auth + rate limiting | website/apps/nio-chat/lib/auth.ts, rate-limit.ts | Public + licensed | Security hardening pattern |
 | File-based agent memory | website/apps/nio-chat/lib/memory.ts | Public + licensed | Per-agent memory snapshots |
+| PWA manifest + service worker | website/apps/nio-chat/public/ | Public + licensed | Offline support, iOS installability |
 | Skill framework | .cursor/skills/ (42 skills) | Public + licensed | Agentic workflow library |
 | Voice modularity system | skills/tier-1-voice-dna/ (4 playbooks) | Public + licensed | Brand voice architecture |
 | Plan formatting framework | .cursor/skills/plan-format/ | Public + licensed | Structured planning methodology |

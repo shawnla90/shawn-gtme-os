@@ -1,4 +1,4 @@
-// NioBot V2 — Root configuration
+// NioBot V3 — Root configuration
 // This is the ShawnOS instance config. Productized version ships niobot.config.example.ts.
 
 import type { NioBotConfig } from './lib/config'

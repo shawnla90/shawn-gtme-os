@@ -18,16 +18,20 @@ Three-domain publishing system + mobile chat interface, powered by Turborepo:
 - **shawnos.ai** — Main landing page and RPG dashboard
 - **thegtmos.ai** — GTM operations showcase
 - **thecontentos.ai** — Content portfolio and writing samples
-- **ShawnOS Chat** — Multi-agent mobile PWA: CLI-to-chat bridge, per-agent soul files, zero API cost
+- **ShawnOS Chat (NioBot V3)** — Multi-agent mobile PWA: DNA evolution system, chime packs, tamagotchi progression, zero API cost
 
 All domains share a unified component library, design system, and terminal-inspired aesthetic.
 
-### ShawnOS Chat (Multi-Agent Mobile AI)
+### ShawnOS Chat — NioBot V3 (Multi-Agent Mobile AI)
 A Next.js PWA that wraps the Claude CLI (`claude -p`) in an SSE API route. The recursive flywheel: Claude builds the system that Claude powers. Zero API cost (Max subscription).
-- **Multi-agent platform**: agent config registry with per-agent soul files, accent themes, session isolation
-- **iMessage-style chat UI** with streaming responses and per-agent bubble colors
+- **Multi-agent platform**: 3 agents (Nio/Architect/Writer) with per-agent soul files, accent themes, session isolation
+- **DNA system**: Server-authoritative evolution with SQLite persistence — XP, skills, streaks, and memory tracked server-side via `/api/dna` endpoints, with optimistic client-side updates and server reconciliation
+- **Tamagotchi evolution**: 5 tiers (Spark → Ascended), 3 agent-mapped skills, XP from real usage, streak multipliers, avatar evolution, level-up notifications with floating +XP animations
+- **Chime system**: 8-bit synth + MP3 sound packs (8-Bit, Halo, FMA), toggleable with volume control, event-driven playback from chat state transitions, iOS Safari audio unlock
+- **iMessage-style chat UI** with markdown rendering, streaming responses, and per-agent bubble colors
 - **Full tool access**: Bash, file ops, web search, Playwright browser control, MCP integrations
 - **Session memory** via Claude CLI `--resume` flag with file-based memory snapshots
+- **PWA**: Installable on iOS/Android, service worker with offline support, safe area handling
 - **Security hardened**: HMAC-signed session tokens (24h TTL), sliding-window rate limiting, JSONL audit logging, CSP middleware
 - **Cloudflare Tunnel** for secure remote access from any device
 
