@@ -31,8 +31,6 @@ export function getRPGProfileV3(dataRoot: string): RPGProfileV3 | null {
       xp_next_level: raw.xp_next_level ?? DEFAULT_PROFILE.xp_next_level,
       class: raw.class ?? DEFAULT_PROFILE.class,
       avatar_tier: raw.avatar_tier ?? DEFAULT_PROFILE.avatar_tier,
-      current_streak: raw.current_streak ?? 0,
-      streak_multiplier: raw.streak_multiplier ?? 1.0,
       scoring_log: Array.isArray(raw.scoring_log) ? raw.scoring_log : [],
       milestones: Array.isArray(raw.milestones) ? raw.milestones : [],
       updated_at: raw.updated_at ?? '',

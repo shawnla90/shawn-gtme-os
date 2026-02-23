@@ -1,54 +1,59 @@
 # Context Handoff
-> Generated: 2026-02-22 23:00 | Machine: MacBook | Session: V4 Daily Log Visual Redesign + Sync
+> Generated: 2026-02-22 | Machine: MacBook | Session: V4 scoring simplification — remove multiplier, new grade thresholds
 
 ## What Was Done This Session
 
-- **V4 TypeScript types** — Added `Commit`, `DevEquivalent`, `CostSection`, `TokenEfficiency`, `WeekDaySummary` to `website/packages/shared/lib/logs.ts`
-- **DailyLog interface** — Added 4 optional V4 fields: `commits?`, `dev_equivalent?`, `cost?`, `token_efficiency?`
-- **scrubLog()** — Pass V4 fields with commit message path sanitization (regex blocklist)
-- **getWeeklyContext()** — New server-side function returning 7-day Mon-Sun `WeekDaySummary[]`
-- **Barrel exports** — Updated `website/packages/shared/lib/index.ts` with new types + function
-- **DailyLogView.tsx full rewrite** — V4 commit-based layout with complete V3 fallback:
-  - Left: Commits with color-coded `CommitTypeTag` (FEAT, FIX, ENGINE, SCAFFOLD, VIDEO, etc.)
-  - Middle: This Week 7-day panel with grade badges
-  - Right: Dev Equivalent + Cost + Token Efficiency + Token Usage
-  - V4 stat boxes: commits, score, net lines, dirs, tokens, actual cost, API equiv
-  - V4 summary line with actual vs API cost + dev equivalent
-- **3 page files** — `shawnos`, `gtmos`, `contentos` log pages pass `weeklyContext` prop
-- **Backfilled all 12 daily logs** (Feb 11-22) to V4 via `daily_scan.py`
-- **Synced with origin/main** — Resolved 5 rebase conflicts (remote wins) + 1 stash conflict (kept local substack draft). Pushed to origin.
+- **V4 Progression Migration** (commit `2048fc9`): Removed all V3/V2 grade overrides and scoring panels across ShawnOS + Mission Control. Deleted `profile-v2.json` and `profile-v3.json`. Synced TITLE_TABLE between Python and TypeScript. Cleaned V2/V3 barrel exports from `shared/lib/index.ts`.
+- **Streak Multiplier** (commit `fefa4d6`): Added streak multiplier to progression engine (+0.1x/day, capped 2.0x). Added `ScoringLogEntry`, `current_streak`, `streak_multiplier`, `scoring_log` to `RPGProfile`. Updated all UI components. **THIS FEATURE NEEDS TO BE ROLLED BACK** — see Next Steps.
+- **User approved new scoring design** (NOT yet implemented):
+  - **Remove multiplier entirely** — XP = raw `output_score`, no streak mechanics
+  - **New grade thresholds**: S+ >= 700, S >= 600, A+ >= 500, A >= 400, B >= 300, C >= 200, D < 200
 
 ## Current State
-
-- **Git**: `main`, up to date with `origin/main`
-- **Last commit**: `c641978 feat: V4 daily log visual redesign — commit-based UI, weekly panel, analytics`
-- **Uncommitted modified**: `.claude/context-handoff.md`, `docs/ARCHITECTURE.md`, 5 mission-control data files
-- **Untracked**: `.mcp.json`, `2026-02-21.md`, `Untitled.canvas`, linkedin/x/substack drafts, video assets in `content/video/all/`
-- **Blocked on**: nothing
+- **Git**: branch `main`, last commit `fefa4d6` (streak multiplier — needs reversal)
+- **Uncommitted changes**: only sitemap XMLs (build artifacts)
+- **Blocked on**: nothing — user approved the new scoring, just needs implementation
 
 ## Next Steps
 
-1. **Everything is live and automated.** The midnight cron (`com.shawnos.daily-tracker.plist` → `scripts/daily_cron.sh` → `scripts/daily_scan.py`) already produces V4 logs. The UI auto-detects V4 via `log.version >= 4 && log.commits != null`. No config changes needed.
+1. **Update Python engine** (`scripts/progression_engine.py`):
+   - Replace `compute_xp_with_streak()` with simple XP sum (XP = sum of output_score, no multiplier)
+   - Update grade thresholds: `S+: 700, S: 600, A+: 500, A: 400, B: 300, C: 200, D: 0`
+   - Remove `current_streak`, `streak_multiplier` from profile output
+   - Keep `scoring_log` in profile (date, output_score, letter_grade, commits, xp) but drop streak/multiplier columns
+   - Re-run engine to regenerate `profile.json`
 
-2. **Tonight's cron at 00:00** will scan today (Feb 22), produce a V4 log, commit, and push to Vercel. To trigger manually: `./scripts/daily_cron.sh 2026-02-22`
+2. **Update TypeScript types** (`website/packages/shared/lib/rpg.ts`):
+   - Remove `current_streak`, `streak_multiplier` from `RPGProfile`
+   - Remove `streak`, `multiplier` from `ScoringLogEntry`
+   - Update grade thresholds if displayed anywhere
 
-3. **Optional: Progression engine recalibration** — V4 scores are higher than V3 (e.g. Feb 21: 486→641). After a week of V4 data, evaluate whether `TITLE_TABLE` thresholds in `scripts/progression_engine.py` need adjustment.
+3. **Update UI — remove streak from all components** (parallelizable):
+   - `website/apps/shawnos/app/log/progression/ProgressionClient.tsx` — remove StreakViz section, remove streak/mult columns from grade table (back to 4 cols: Date, Score, Grade, Commits), remove streak/mult from ProfileHero
+   - `website/apps/mission-control/app/components/ProgressionChainViz.tsx` — remove or delete (was StreakViz)
+   - `website/apps/mission-control/app/components/ProgressionGradeTable.tsx` — remove streak/mult columns
+   - `website/apps/mission-control/app/components/ProgressionXPGraph.tsx` — use `entry.output_score` as XP (they're the same now)
+   - `website/apps/mission-control/app/progression/page.tsx` — remove StreakViz import/usage
+   - `website/packages/shared/lib/rpg.server.ts` — remove `current_streak`, `streak_multiplier` from loader
+   - `website/packages/shared/lib/rpg-v2.server.ts` + `rpg-v3.server.ts` — same
+   - `website/apps/shawnos/app/rpg-preview/ClassShowcaseGrid.tsx` — remove from mock
+   - `website/apps/shawnos/app/rpg-preview/TierProgressionGrid.tsx` — remove from mock
 
-4. **Untracked content drafts** — linkedin, x, substack drafts and video assets sitting untracked. Content pipeline work, not code.
+4. **Update daily log grading** — the daily log scanner also writes `letter_grade` into each log JSON. Ensure it uses the new thresholds (S+ >= 700, S >= 600, etc.). Check `scripts/daily_scan.py` scoring logic.
+
+5. **Rescan all logs** — after updating thresholds in `daily_scan.py`, run rescan to update all 12 log files with correct grades.
+
+6. **Build all 3 sites**, verify, commit, push.
 
 ## Key Decisions Made
-
-- **V4 detection**: `isV4 = log.version >= 4 && log.commits != null` — dual check for graceful V3 fallback
-- **Weekly context computed server-side** in each page file, not in the shared component
-- **Commit message sanitization** uses regex blocklist (`/Users|home|clients|partner|client/`)
-- **V3 fallback fully preserved** — every panel, stat box, summary line has V3 code path
-- **All 12 existing logs backfilled** — no V3-only logs remain
-- **Sync strategy**: rebase conflicts resolved to remote; substack draft kept local
+- **No multiplier/streak** — user decided it creates confusing XP inflation. XP = raw daily score, clean and simple.
+- **Grade thresholds are 100-point intervals**: D < 200, C >= 200, B >= 300, A >= 400, A+ >= 500, S >= 600, S+ >= 700.
+- **Profile still includes `scoring_log`** array — just without streak/multiplier per entry.
+- **V2/V3 `.ts` files kept** but removed from barrel exports — `vitals/v2-lab` still imports V2 directly.
 
 ## Files to Read First
-
-1. `website/packages/shared/lib/logs.ts` — V4 types, scrubLog, getWeeklyContext
-2. `website/packages/shared/components/DailyLogView.tsx` — Full visual component with V4/V3 branching
-3. `scripts/daily_scan.py` — V4 scoring engine
-4. `scripts/daily_cron.sh` — Nightly automation pipeline
-5. `data/daily-log/2026-02-21.json` — Reference V4 log with all fields populated
+1. `scripts/progression_engine.py` — `compute_xp_with_streak()` (line ~274) needs to become a simple sum
+2. `scripts/daily_scan.py` — grade thresholds for daily log scanning
+3. `website/packages/shared/lib/rpg.ts` — `RPGProfile` and `ScoringLogEntry` types to simplify
+4. `website/apps/shawnos/app/log/progression/ProgressionClient.tsx` — main progression UI to strip streak
+5. `website/apps/mission-control/app/progression/page.tsx` — mission control progression page

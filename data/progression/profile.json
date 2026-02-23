@@ -1,121 +1,83 @@
 {
   "name": "Operator",
-  "title": "Context Weaver",
-  "level": 20,
-  "xp_total": 6959,
-  "xp_next_level": 11000,
+  "title": "Pipeline Runner",
+  "level": 16,
+  "xp_total": 4093,
+  "xp_next_level": 6000,
   "class": "Builder",
-  "avatar_tier": 3,
-  "current_streak": 12,
-  "streak_multiplier": 2.0,
+  "avatar_tier": 2,
   "scoring_log": [
     {
       "date": "2026-02-11",
       "output_score": 5,
-      "letter_grade": "C",
-      "commits": 1,
-      "streak": 1,
-      "multiplier": 1.1,
-      "xp": 5
+      "letter_grade": "D",
+      "commits": 1
     },
     {
       "date": "2026-02-12",
       "output_score": 15,
-      "letter_grade": "C",
-      "commits": 3,
-      "streak": 2,
-      "multiplier": 1.2,
-      "xp": 18
+      "letter_grade": "D",
+      "commits": 3
     },
     {
       "date": "2026-02-13",
       "output_score": 96,
-      "letter_grade": "C",
-      "commits": 3,
-      "streak": 3,
-      "multiplier": 1.3,
-      "xp": 124
+      "letter_grade": "D",
+      "commits": 3
     },
     {
       "date": "2026-02-14",
       "output_score": 418,
-      "letter_grade": "S",
-      "commits": 15,
-      "streak": 4,
-      "multiplier": 1.4,
-      "xp": 585
+      "letter_grade": "A",
+      "commits": 15
     },
     {
       "date": "2026-02-15",
       "output_score": 314,
-      "letter_grade": "A",
-      "commits": 19,
-      "streak": 5,
-      "multiplier": 1.5,
-      "xp": 471
+      "letter_grade": "B",
+      "commits": 19
     },
     {
       "date": "2026-02-16",
       "output_score": 333,
-      "letter_grade": "A",
-      "commits": 17,
-      "streak": 6,
-      "multiplier": 1.6,
-      "xp": 532
+      "letter_grade": "B",
+      "commits": 17
     },
     {
       "date": "2026-02-17",
       "output_score": 288,
-      "letter_grade": "B",
-      "commits": 14,
-      "streak": 7,
-      "multiplier": 1.7,
-      "xp": 489
+      "letter_grade": "C",
+      "commits": 14
     },
     {
       "date": "2026-02-18",
       "output_score": 173,
-      "letter_grade": "C",
-      "commits": 10,
-      "streak": 8,
-      "multiplier": 1.8,
-      "xp": 311
+      "letter_grade": "D",
+      "commits": 10
     },
     {
       "date": "2026-02-19",
       "output_score": 558,
-      "letter_grade": "S+",
-      "commits": 29,
-      "streak": 9,
-      "multiplier": 1.9,
-      "xp": 1060
+      "letter_grade": "A+",
+      "commits": 29
     },
     {
       "date": "2026-02-20",
       "output_score": 706,
       "letter_grade": "S+",
-      "commits": 35,
-      "streak": 10,
-      "multiplier": 2.0,
-      "xp": 1412
+      "commits": 35
     },
     {
       "date": "2026-02-21",
       "output_score": 641,
-      "letter_grade": "S+",
-      "commits": 26,
-      "streak": 11,
-      "multiplier": 2.0,
-      "xp": 1282
+      "letter_grade": "S",
+      "commits": 26
     },
     {
       "date": "2026-02-22",
-      "output_score": 335,
-      "letter_grade": "A",
-      "commits": 10,
-      "streak": 12,
-      "multiplier": 2.0,
-      "xp": 670
+      "output_score": 546,
+      "letter_grade": "A+",
+      "commits": 16
     }
   ],
   "milestones": [
@@ -129,80 +91,74 @@
       "id": "first_100xp",
       "title": "Spark Plug",
       "description": "Earned 100 XP",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "first_500xp",
       "title": "Warm Boot",
       "description": "Earned 500 XP",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "first_1000xp",
       "title": "Kilobyte Club",
       "description": "Earned 1,000 XP",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "first_2000xp",
       "title": "Repo Unlocked",
       "description": "Earned 2,000 XP",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
-    },
-    {
-      "id": "first_5000xp",
-      "title": "Pipeline Active",
-      "description": "Earned 5,000 XP",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "shipped_10",
       "title": "Shipping Container",
       "description": "Shipped 10+ items across all days",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "shipped_50",
       "title": "Cargo Fleet",
       "description": "Shipped 50+ items across all days",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "shipped_100",
       "title": "Assembly Line",
       "description": "Shipped 100+ items across all days",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "first_s_grade",
       "title": "S-Rank Day",
       "description": "Achieved S letter grade on a daily log",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "streak_3",
       "title": "Three-Day March",
       "description": "Logged activity for 3+ consecutive days",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "streak_7",
       "title": "Week Warrior",
       "description": "Logged activity for 7+ days",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "words_50k",
       "title": "Fifty Thousand Words",
       "description": "Wrote 50,000+ words across all days",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     },
     {
       "id": "words_100k",
       "title": "Novelist",
       "description": "Wrote 100,000+ words across all days",
-      "unlocked_at": "2026-02-22T22:38:57.917199+00:00"
+      "unlocked_at": "2026-02-23T01:34:11.705045+00:00"
     }
   ],
-  "updated_at": "2026-02-22T22:38:57.917593+00:00"
+  "updated_at": "2026-02-23T01:34:11.705209+00:00"
 }

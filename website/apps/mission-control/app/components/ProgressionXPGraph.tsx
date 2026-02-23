@@ -19,14 +19,14 @@ interface ProgressionXPGraphProps {
 export default function ProgressionXPGraph({ scoringLog }: ProgressionXPGraphProps) {
   if (scoringLog.length === 0) return null
 
-  const maxXP = Math.max(...scoringLog.map((e) => e.xp))
+  const maxXP = Math.max(...scoringLog.map((e) => e.output_score))
 
   return (
     <div className="card">
       <h3 className="text-xs font-bold text-green-500 uppercase tracking-wider mb-4">XP Earned Per Day</h3>
       <div className="flex items-end gap-1" style={{ height: '160px' }}>
         {scoringLog.map((entry) => {
-          const heightPct = maxXP > 0 ? (entry.xp / maxXP) * 100 : 0
+          const heightPct = maxXP > 0 ? (entry.output_score / maxXP) * 100 : 0
           return (
             <Link
               key={entry.date}
@@ -35,7 +35,7 @@ export default function ProgressionXPGraph({ scoringLog }: ProgressionXPGraphPro
               style={{ height: '100%' }}
             >
               <div className="text-[11px] text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity mb-1">
-                {entry.xp}
+                {entry.output_score}
               </div>
               <div
                 className={`w-full rounded-t ${gradeBarColor(entry.letter_grade)} group-hover:opacity-80 transition-opacity`}

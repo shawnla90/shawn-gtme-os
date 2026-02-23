@@ -38,9 +38,6 @@ export interface ScoringLogEntry {
   output_score: number
   letter_grade: string
   commits: number
-  streak: number
-  multiplier: number
-  xp: number
 }
 
 /** Full RPG profile as written by progression_engine.py. */
@@ -59,11 +56,7 @@ export interface RPGProfile {
   class: RPGClass
   /** Avatar tier (1-6) — determines which visual tier the avatar renders */
   avatar_tier: number
-  /** Current consecutive-day streak */
-  current_streak: number
-  /** Current streak multiplier (1.0 + streak * 0.1, capped at 2.0) */
-  streak_multiplier: number
-  /** Per-day scoring data with streak/multiplier/XP */
+  /** Per-day scoring data */
   scoring_log: ScoringLogEntry[]
   /** Unlocked milestones */
   milestones: Milestone[]
@@ -256,8 +249,6 @@ export const DEFAULT_PROFILE: RPGProfile = {
   xp_next_level: 100,
   class: 'Builder',
   avatar_tier: 0,
-  current_streak: 0,
-  streak_multiplier: 1.0,
   scoring_log: [],
   milestones: [],
   updated_at: '',

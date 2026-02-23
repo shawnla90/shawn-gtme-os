@@ -1,16 +1,34 @@
 {
   "date": "2026-02-21",
-  "generated_at": "2026-02-22T21:29:29.324706+00:00",
+  "generated_at": "2026-02-23T01:34:03.463069+00:00",
   "version": 4,
   "accomplishments": [
     {
-      "type": "landing_page",
-      "title": "gtmos home page",
-      "path": "website/apps/gtmos/app/page.tsx",
+      "type": "feature_script",
+      "title": "progression_engine",
+      "path": "scripts/progression_engine.py",
       "source": "auto",
-      "timestamp": "20:57",
-      "words": 1020,
-      "value_score": 25,
+      "timestamp": "20:08",
+      "words": 1985,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal slug page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
+      "source": "auto",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "16:38",
+      "words": 862,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -24,13 +42,33 @@
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "gtmos how-to page",
-      "path": "website/apps/gtmos/app/how-to/page.tsx",
+      "type": "feature_script",
+      "title": "daily_scan",
+      "path": "scripts/daily_scan.py",
+      "source": "auto",
+      "timestamp": "20:08",
+      "words": 6182,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "query_index",
+      "path": "scripts/query_index.py",
+      "source": "auto",
+      "timestamp": "22:51",
+      "words": 1762,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
       "source": "auto",
       "timestamp": "16:13",
-      "words": 577,
-      "value_score": 5,
+      "words": 236,
+      "value_score": 25,
       "shipped": true
     },
     {
@@ -54,71 +92,52 @@
       "shipped": true
     },
     {
-      "type": "complex_script",
-      "title": "build_index",
-      "path": "scripts/build_index.py",
-      "source": "auto",
-      "timestamp": "22:52",
-      "words": 3405,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioTerminalPage",
-      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 817,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "contentos package",
-      "path": "website/apps/contentos/package.json",
-      "source": "auto",
-      "timestamp": "20:17",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "feature_script",
-      "title": "progression_engine",
-      "path": "scripts/progression_engine.py",
-      "source": "auto",
-      "timestamp": "22:52",
-      "words": 1887,
-      "value_score": 30,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log date page",
-      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "16:07",
-      "words": 983,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "website_route",
-      "title": "mission-control api system-metrics route",
-      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "title": "mission-control api ops pipeline route",
+      "path": "website/apps/mission-control/app/api/ops/pipeline/route.ts",
       "source": "auto",
       "timestamp": "15:14",
-      "words": 499,
+      "words": 80,
       "value_score": 3,
       "shipped": true
     },
     {
       "type": "config_file",
-      "title": "gtmos package",
-      "path": "website/apps/gtmos/package.json",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
       "source": "auto",
-      "timestamp": "20:17",
+      "timestamp": "15:14",
       "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos how-to page",
+      "path": "website/apps/gtmos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "16:13",
+      "words": 577,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "16:38",
+      "words": 896,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api recent-memories route",
+      "path": "website/apps/mission-control/app/api/recent-memories/route.ts",
+      "source": "auto",
+      "timestamp": "15:14",
+      "words": 471,
+      "value_score": 3,
       "shipped": true
     },
     {
@@ -136,19 +155,38 @@
       "title": "shawnos log progression page",
       "path": "website/apps/shawnos/app/log/progression/page.tsx",
       "source": "auto",
-      "timestamp": "15:14",
-      "words": 432,
+      "timestamp": "17:39",
+      "words": 351,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "mission-control api recent-memories route",
-      "path": "website/apps/mission-control/app/api/recent-memories/route.ts",
+      "title": "mission-control api system-metrics route",
+      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
       "source": "auto",
       "timestamp": "15:14",
-      "words": 471,
+      "words": 499,
       "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log date page",
+      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "17:35",
+      "words": 553,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "gtmos package",
+      "path": "website/apps/gtmos/package.json",
+      "source": "auto",
+      "timestamp": "20:17",
+      "value_score": 0,
       "shipped": true
     },
     {
@@ -156,79 +194,50 @@
       "title": "shawnos log page",
       "path": "website/apps/shawnos/app/log/page.tsx",
       "source": "auto",
-      "timestamp": "15:14",
-      "words": 276,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "mission-control home page",
-      "path": "website/apps/mission-control/app/page.tsx",
-      "source": "auto",
-      "timestamp": "16:13",
-      "words": 236,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals nio-terminal slug page",
-      "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 142,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "complex_script",
-      "title": "query_index",
-      "path": "scripts/query_index.py",
-      "source": "auto",
-      "timestamp": "22:51",
-      "words": 1762,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioPostPage",
-      "path": "website/packages/shared/pages/NioPostPage.tsx",
-      "source": "auto",
-      "timestamp": "16:13",
-      "words": 1884,
+      "timestamp": "17:35",
+      "words": 210,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "config_file",
-      "title": "mission-control package",
-      "path": "website/apps/mission-control/package.json",
+      "title": "contentos package",
+      "path": "website/apps/contentos/package.json",
       "source": "auto",
-      "timestamp": "15:14",
+      "timestamp": "20:17",
       "value_score": 0,
       "shipped": true
     },
     {
-      "type": "feature_script",
-      "title": "daily_scan",
-      "path": "scripts/daily_scan.py",
+      "type": "complex_script",
+      "title": "build_index",
+      "path": "scripts/build_index.py",
       "source": "auto",
-      "timestamp": "16:27",
-      "words": 6173,
-      "value_score": 30,
+      "timestamp": "22:52",
+      "words": 3405,
+      "value_score": 25,
       "shipped": true
     },
     {
-      "type": "website_route",
-      "title": "mission-control api ops pipeline route",
-      "path": "website/apps/mission-control/app/api/ops/pipeline/route.ts",
+      "type": "landing_page",
+      "title": "gtmos home page",
+      "path": "website/apps/gtmos/app/page.tsx",
       "source": "auto",
-      "timestamp": "15:14",
-      "words": 80,
-      "value_score": 3,
+      "timestamp": "20:57",
+      "words": 1020,
+      "value_score": 25,
       "shipped": true
+    },
+    {
+      "type": "x_draft",
+      "title": "gtmos threads",
+      "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+      "source": "auto-mtime",
+      "timestamp": "19:07",
+      "words": 596,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
     },
     {
       "type": "config_file",
@@ -241,23 +250,56 @@
       "mtime_only": true
     },
     {
-      "type": "linkedin_draft",
-      "title": "shawnos anti lead magnet",
-      "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+      "type": "x_draft",
+      "title": "ecosystem threads",
+      "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
       "source": "auto-mtime",
-      "timestamp": "19:05",
-      "words": 765,
+      "timestamp": "19:08",
+      "words": 626,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
       "type": "website_lib",
-      "title": "shared config",
-      "path": "website/packages/shared/lib/rss/config.ts",
+      "title": "shared generator",
+      "path": "website/packages/shared/lib/rss/generator.ts",
       "source": "auto-mtime",
       "timestamp": "00:27",
-      "words": 174,
+      "words": 331,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "ecosystem capstone",
+      "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+      "source": "auto-mtime",
+      "timestamp": "19:06",
+      "words": 961,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "complex_script",
+      "title": "progression_engine_v2",
+      "path": "scripts/progression_engine_v2.py",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 2272,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared costs",
+      "path": "website/packages/shared/lib/costs.ts",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 102,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -274,23 +316,23 @@
       "mtime_only": true
     },
     {
-      "type": "partner_resource",
-      "title": "partner session 02 2026 02 13",
-      "path": "clients/partner/[redacted]/resources/transcripts/session-02-2026-02-13.md",
+      "type": "website_lib",
+      "title": "shared config",
+      "path": "website/packages/shared/lib/rss/config.ts",
       "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 330,
+      "timestamp": "00:27",
+      "words": 174,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "website_page",
-      "title": "contentos log skill-guide page",
-      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
+      "type": "website_lib",
+      "title": "shared crews",
+      "path": "website/packages/shared/lib/crews.ts",
       "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 155,
+      "timestamp": "00:27",
+      "words": 161,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -307,12 +349,12 @@
       "mtime_only": true
     },
     {
-      "type": "linkedin_draft",
-      "title": "gtmos infrastructure",
-      "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+      "type": "website_page",
+      "title": "contentos log skill-guide page",
+      "path": "website/apps/contentos/app/log/skill-guide/page.tsx",
       "source": "auto-mtime",
-      "timestamp": "19:05",
-      "words": 821,
+      "timestamp": "20:57",
+      "words": 155,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -340,23 +382,23 @@
       "mtime_only": true
     },
     {
-      "type": "complex_script",
-      "title": "progression_engine_v2",
-      "path": "scripts/progression_engine_v2.py",
+      "type": "partner_resource",
+      "title": "partner session 02 2026 02 13",
+      "path": "clients/partner/[redacted]/resources/transcripts/session-02-2026-02-13.md",
       "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 2272,
+      "timestamp": "20:57",
+      "words": 330,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos rpg-preview page",
-      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "type": "linkedin_draft",
+      "title": "shawnos anti lead magnet",
+      "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
       "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 667,
+      "timestamp": "19:05",
+      "words": 765,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -373,56 +415,12 @@
       "mtime_only": true
     },
     {
-      "type": "website_page",
-      "title": "mission-control analytics page",
-      "path": "website/apps/mission-control/app/analytics/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 166,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "code_infra",
-      "title": "cost_aggregator",
-      "path": "scripts/cost_aggregator.py",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 652,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
       "type": "website_lib",
-      "title": "shared costs",
-      "path": "website/packages/shared/lib/costs.ts",
+      "title": "shared costs.server",
+      "path": "website/packages/shared/lib/costs.server.ts",
       "source": "auto-mtime",
       "timestamp": "00:27",
-      "words": 102,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared crews",
-      "path": "website/packages/shared/lib/crews.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 161,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "partner_workflow",
-      "title": "partner on demand enrichment spec",
-      "path": "clients/partner/[redacted]/workflows/on-demand-enrichment-spec.md",
-      "source": "auto-mtime",
-      "timestamp": "23:27",
-      "words": 2912,
+      "words": 207,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -439,6 +437,17 @@
       "mtime_only": true
     },
     {
+      "type": "code_infra",
+      "title": "crew_orchestrator",
+      "path": "scripts/crew_orchestrator.py",
+      "source": "auto-mtime",
+      "timestamp": "00:27",
+      "words": 820,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
       "type": "complex_script",
       "title": "progression_engine_v3",
       "path": "scripts/progression_engine_v3.py",
@@ -450,111 +459,12 @@
       "mtime_only": true
     },
     {
-      "type": "partner_onboard",
-      "title": "partner onboard skill",
-      "path": "clients/partner/[redacted]/SKILL.md",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 455,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg-v2.server",
-      "path": "website/packages/shared/lib/rpg-v2.server.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 167,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
       "type": "website_page",
-      "title": "gtmos log page",
-      "path": "website/apps/gtmos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 319,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control logs date page",
-      "path": "website/apps/mission-control/app/logs/[date]/page.tsx",
+      "title": "mission-control analytics page",
+      "path": "website/apps/mission-control/app/analytics/page.tsx",
       "source": "auto-mtime",
       "timestamp": "00:27",
-      "words": 202,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared generator",
-      "path": "website/packages/shared/lib/rss/generator.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 331,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "x_draft",
-      "title": "gtmos threads",
-      "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
-      "source": "auto-mtime",
-      "timestamp": "19:07",
-      "words": 596,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos log page",
-      "path": "website/apps/contentos/app/log/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "20:57",
-      "words": 319,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control logs page",
-      "path": "website/apps/mission-control/app/logs/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 123,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg-v3",
-      "path": "website/packages/shared/lib/rpg-v3.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 260,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg-v3.server",
-      "path": "website/packages/shared/lib/rpg-v3.server.ts",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 167,
+      "words": 166,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -571,67 +481,78 @@
       "mtime_only": true
     },
     {
-      "type": "website_page",
-      "title": "mission-control progression page",
-      "path": "website/apps/mission-control/app/progression/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 355,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
       "type": "website_lib",
-      "title": "shared costs.server",
-      "path": "website/packages/shared/lib/costs.server.ts",
+      "title": "shared rpg-v3",
+      "path": "website/packages/shared/lib/rpg-v3.ts",
       "source": "auto-mtime",
       "timestamp": "00:27",
-      "words": 207,
+      "words": 260,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "code_infra",
-      "title": "crew_orchestrator",
-      "path": "scripts/crew_orchestrator.py",
+      "type": "partner_workflow",
+      "title": "partner on demand enrichment spec",
+      "path": "clients/partner/[redacted]/workflows/on-demand-enrichment-spec.md",
       "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 820,
+      "timestamp": "23:27",
+      "words": 2912,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
       "type": "linkedin_draft",
-      "title": "ecosystem capstone",
-      "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+      "title": "gtmos infrastructure",
+      "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
       "source": "auto-mtime",
-      "timestamp": "19:06",
-      "words": 961,
+      "timestamp": "19:05",
+      "words": 821,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_onboard",
+      "title": "partner onboard skill",
+      "path": "clients/partner/[redacted]/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 455,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
       "type": "website_page",
-      "title": "shawnos vitals v2-lab page",
-      "path": "website/apps/shawnos/app/vitals/v2-lab/page.tsx",
+      "title": "contentos log page",
+      "path": "website/apps/contentos/app/log/page.tsx",
       "source": "auto-mtime",
-      "timestamp": "00:27",
-      "words": 2045,
+      "timestamp": "20:57",
+      "words": 319,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "x_draft",
-      "title": "ecosystem threads",
-      "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+      "type": "code_infra",
+      "title": "cost_aggregator",
+      "path": "scripts/cost_aggregator.py",
       "source": "auto-mtime",
-      "timestamp": "19:08",
-      "words": 626,
+      "timestamp": "00:27",
+      "words": 652,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos log page",
+      "path": "website/apps/gtmos/app/log/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:57",
+      "words": 319,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -1188,6 +1109,13 @@
       },
       {
         "platform": "linkedin",
+        "title": "how to ai assistant claude code",
+        "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 437
+      },
+      {
+        "platform": "linkedin",
         "title": "ecosystem capstone",
         "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
         "target_date": "2026-02-26",
@@ -1370,6 +1298,13 @@
       },
       {
         "platform": "x",
+        "title": "how to ai assistant claude code",
+        "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 259
+      },
+      {
+        "platform": "x",
         "title": "ecosystem threads",
         "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
         "target_date": "2026-02-26",
@@ -1425,6 +1360,13 @@
         "words": 1543
       },
       {
+        "platform": "substack",
+        "title": "how to setup ai assistant",
+        "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+        "target_date": "2026-02-25",
+        "words": 1075
+      },
+      {
         "platform": "reddit",
         "title": "content os reddit",
         "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
@@ -1452,7 +1394,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 47,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 10.7524,
       "context": "claude-code 02:07"
     },
@@ -1465,7 +1407,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 22,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 4.9708,
       "context": "claude-code 00:43"
     },
@@ -1478,7 +1420,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 127,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 35.1677,
       "context": "claude-code 04:27"
     },
@@ -1491,7 +1433,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 257,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 61.8005,
       "context": "claude-code 19:39"
     },
@@ -1504,7 +1446,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 138,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 26.8105,
       "context": "claude-code 01:13"
     },
@@ -1517,7 +1459,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 105,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 25.5948,
       "context": "claude-code 00:01"
     },
@@ -1530,7 +1472,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 15,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 2.0272,
       "context": "claude-code 02:33"
     },
@@ -1543,7 +1485,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 31,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 4.598,
       "context": "claude-code 23:47"
     },
@@ -1556,7 +1498,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 168,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 34.4159,
       "context": "claude-code 03:33"
     },
@@ -1569,7 +1511,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 11,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 1.1527,
       "context": "claude-code 23:51"
     },
@@ -1582,7 +1524,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 25,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 3.7252,
       "context": "claude-code 23:55"
     },
@@ -1595,7 +1537,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 58,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 10.2955,
       "context": "claude-code 02:19"
     },
@@ -1608,7 +1550,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 74,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 7.9261,
       "context": "claude-code 02:41"
     },
@@ -1621,7 +1563,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 2,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 0.1835,
       "context": "claude-code 00:00"
     }
@@ -1629,18 +1571,18 @@
   "stats": {
     "platform_breakdown": {
       "other": 17,
-      "website": 32,
-      "linkedin": 4,
+      "website": 25,
       "x": 4,
+      "linkedin": 4,
       "ops": 3
     },
-    "words_in_touched_files": 47075,
-    "pipeline_words": 45320,
+    "words_in_touched_files": 41794,
+    "pipeline_words": 47091,
     "finals_count": 0,
     "first_activity": "00:27",
     "last_activity": "23:27",
     "output_score": 641,
-    "letter_grade": "S+",
+    "letter_grade": "S",
     "score_breakdown": [
       {
         "type": "chore",
@@ -1775,12 +1717,12 @@
     ],
     "efficiency_rating": 2.79,
     "shipped_count": 23,
-    "draft_count": 37,
-    "ship_rate": 0.38,
+    "draft_count": 30,
+    "ship_rate": 0.43,
     "agent_cost": 229.42,
     "cost_per_point": 0.36,
     "efficiency_ratio": 2.79,
-    "words_today": 47075,
+    "words_today": 41794,
     "lines_added": 14890,
     "lines_removed": 4518,
     "lines_net": 10372,

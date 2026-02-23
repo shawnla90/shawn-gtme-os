@@ -21,6 +21,7 @@ export default function ProgressionTokenEfficiency({
   })
 
   const totalCost = efficiencyData.reduce((s, d) => s + d.cost, 0)
+  const totalScore = efficiencyData.reduce((s, d) => s + d.score, 0)
   const maxPtsDollar = Math.max(...efficiencyData.map((d) => d.ptsDollar), 1)
   const maxCost = Math.max(...efficiencyData.map((d) => d.cost), 1)
 

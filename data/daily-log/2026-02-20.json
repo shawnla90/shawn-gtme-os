@@ -1,8 +1,35 @@
 {
   "date": "2026-02-20",
-  "generated_at": "2026-02-22T21:29:27.152942+00:00",
+  "generated_at": "2026-02-23T01:34:01.196789+00:00",
   "version": 4,
   "accomplishments": [
+    {
+      "type": "config_file",
+      "title": "video tsconfig",
+      "path": "website/apps/video/tsconfig.json",
+      "source": "auto",
+      "timestamp": "19:11",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-3-static.png",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-5-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
     {
       "type": "code_infra",
       "title": "crew_orchestrator",
@@ -14,135 +41,88 @@
       "shipped": true
     },
     {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/class-strategist-static.png",
-      "source": "auto",
-      "timestamp": "21:21",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-3-action.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-4-idle.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "website_page",
-      "title": "shawnos rpg-preview page",
-      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "title": "shawnos search page",
+      "path": "website/apps/shawnos/app/search/page.tsx",
       "source": "auto",
-      "timestamp": "00:27",
-      "words": 667,
+      "timestamp": "18:23",
+      "words": 369,
       "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos about page",
-      "path": "website/apps/shawnos/app/about/page.tsx",
-      "source": "auto",
-      "timestamp": "18:21",
-      "words": 801,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared logs",
-      "path": "website/packages/shared/lib/logs.ts",
-      "source": "auto",
-      "timestamp": "16:07",
-      "words": 1292,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "18:21",
-      "words": 572,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shawnos next config",
-      "path": "website/apps/shawnos/next.config.ts",
-      "source": "auto",
-      "timestamp": "18:27",
-      "words": 59,
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "video package",
-      "path": "website/apps/video/package.json",
-      "source": "auto",
-      "timestamp": "21:25",
-      "value_score": 0,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "shawnos feed updates.xml route",
-      "path": "website/apps/shawnos/app/feed/updates.xml/route.ts",
+      "title": "mission-control api team route",
+      "path": "website/apps/mission-control/app/api/team/route.ts",
       "source": "auto",
       "timestamp": "12:54",
-      "words": 214,
+      "words": 172,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "skill_updated",
-      "title": "morning",
-      "path": ".claude/skills/morning/SKILL.md",
-      "source": "auto",
-      "timestamp": "21:03",
-      "words": 580,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "avatar_generated",
       "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-5-static.png",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-6-action-advanced.gif",
       "source": "auto",
       "timestamp": "00:27",
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-2-static.png",
+      "type": "website_page",
+      "title": "shawnos method page",
+      "path": "website/apps/shawnos/app/method/page.tsx",
       "source": "auto",
-      "timestamp": "00:27",
+      "timestamp": "18:10",
+      "words": 2131,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "avatar_generated",
       "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-6-static.png",
+      "path": "website/apps/video/public/progression/avatars/tier-3-static.png",
       "source": "auto",
-      "timestamp": "00:27",
+      "timestamp": "19:17",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/video/public/progression/avatars/tier-4-static.png",
+      "source": "auto",
+      "timestamp": "19:17",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api calendar route",
+      "path": "website/apps/mission-control/app/api/calendar/route.ts",
+      "source": "auto",
+      "timestamp": "12:54",
+      "words": 183,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/video/public/progression/avatars/tier-6-static.png",
+      "source": "auto",
+      "timestamp": "22:28",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal post-one page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/post-one/page.tsx",
+      "source": "auto",
+      "timestamp": "12:54",
+      "words": 186,
       "value_score": 5,
       "shipped": true
     },
@@ -153,6 +133,16 @@
       "source": "auto",
       "timestamp": "00:27",
       "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "19:23",
+      "words": 1090,
+      "value_score": 25,
       "shipped": true
     },
     {
@@ -178,66 +168,10 @@
     {
       "type": "avatar_generated",
       "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-6-action-advanced.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/tier-6-static.png",
-      "source": "auto",
-      "timestamp": "22:28",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-6-idle.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "shawnos home page",
-      "path": "website/apps/shawnos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "19:23",
-      "words": 1090,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg-v3",
-      "path": "website/packages/shared/lib/rpg-v3.ts",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 260,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/class-builder-static.png",
+      "path": "website/apps/video/public/progression/avatars/class-strategist-static.png",
       "source": "auto",
       "timestamp": "21:21",
       "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "mission-control package",
-      "path": "website/apps/mission-control/package.json",
-      "source": "auto",
-      "timestamp": "15:14",
-      "value_score": 0,
       "shipped": true
     },
     {
@@ -252,12 +186,147 @@
     },
     {
       "type": "website_page",
-      "title": "shawnos method page",
-      "path": "website/apps/shawnos/app/method/page.tsx",
+      "title": "shawnos vitals v2-lab page",
+      "path": "website/apps/shawnos/app/vitals/v2-lab/page.tsx",
       "source": "auto",
-      "timestamp": "18:10",
-      "words": 2131,
+      "timestamp": "17:35",
+      "words": 2050,
       "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/video/public/progression/avatars/class-polymath-static.png",
+      "source": "auto",
+      "timestamp": "21:21",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-5-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "video",
+      "path": ".claude/skills/video/SKILL.md",
+      "source": "auto",
+      "timestamp": "23:23",
+      "words": 1112,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v3.server",
+      "path": "website/packages/shared/lib/rpg-v3.server.ts",
+      "source": "auto",
+      "timestamp": "20:08",
+      "words": 173,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-3-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "skill_inventory",
+      "path": "scripts/skill_inventory.py",
+      "source": "auto",
+      "timestamp": "13:08",
+      "words": 395,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-6-static.png",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared config",
+      "path": "website/packages/shared/lib/rss/config.ts",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 174,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control progression page",
+      "path": "website/apps/mission-control/app/progression/page.tsx",
+      "source": "auto",
+      "timestamp": "20:10",
+      "words": 246,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared posts",
+      "path": "website/packages/shared/lib/posts.ts",
+      "source": "auto",
+      "timestamp": "18:28",
+      "words": 170,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "agent-routing",
+      "path": ".claude/skills/agent-routing/SKILL.md",
+      "source": "auto",
+      "timestamp": "17:52",
+      "words": 1127,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api tasks route",
+      "path": "website/apps/mission-control/app/api/tasks/route.ts",
+      "source": "auto",
+      "timestamp": "16:13",
+      "words": 605,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-4-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api enhanced-data route",
+      "path": "website/apps/mission-control/app/api/enhanced-data/route.ts",
+      "source": "auto",
+      "timestamp": "12:54",
+      "words": 163,
+      "value_score": 3,
       "shipped": true
     },
     {
@@ -266,6 +335,141 @@
       "path": "website/apps/mission-control/public/progression/avatars/tier-6-action.gif",
       "source": "auto",
       "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v3",
+      "path": "website/packages/shared/lib/rpg-v3.ts",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 260,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared crews",
+      "path": "website/packages/shared/lib/crews.ts",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 161,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "16:38",
+      "words": 862,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "morning",
+      "path": ".claude/skills/morning/SKILL.md",
+      "source": "auto",
+      "timestamp": "21:03",
+      "words": 580,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-6-idle-advanced.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/video/public/progression/avatars/class-alchemist-static.png",
+      "source": "auto",
+      "timestamp": "21:21",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-5-action.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control logs page",
+      "path": "website/apps/mission-control/app/logs/page.tsx",
+      "source": "auto",
+      "timestamp": "17:35",
+      "words": 52,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos rpg-preview page",
+      "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
+      "source": "auto",
+      "timestamp": "17:35",
+      "words": 660,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos updates page",
+      "path": "website/apps/shawnos/app/updates/page.tsx",
+      "source": "auto",
+      "timestamp": "16:07",
+      "words": 2141,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/video/public/progression/avatars/class-scribe-static.png",
+      "source": "auto",
+      "timestamp": "21:21",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "16:38",
+      "words": 896,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-4-action-advanced.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "sync-machines",
+      "path": ".cursor/skills/sync-machines/SKILL.md",
+      "source": "auto",
+      "timestamp": "12:54",
+      "words": 994,
       "value_score": 5,
       "shipped": true
     },
@@ -279,11 +483,191 @@
       "shipped": true
     },
     {
+      "type": "complex_script",
+      "title": "progression_engine_v2",
+      "path": "scripts/progression_engine_v2.py",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 2272,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared rpg-v2",
+      "path": "website/packages/shared/lib/rpg-v2.ts",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 235,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
       "type": "avatar_generated",
       "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/tier-3-static.png",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-2-idle.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-4-action.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-3-action.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "18:21",
+      "words": 572,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/video/public/progression/avatars/class-builder-static.png",
+      "source": "auto",
+      "timestamp": "21:21",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-3-idle.gif",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/video/public/progression/avatars/tier-5-static.png",
       "source": "auto",
       "timestamp": "19:17",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto",
+      "timestamp": "17:39",
+      "words": 217,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "domain-calc",
+      "path": ".cursor/skills/domain-calc/SKILL.md",
+      "source": "auto",
+      "timestamp": "12:54",
+      "words": 1070,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shawnos next config",
+      "path": "website/apps/shawnos/next.config.ts",
+      "source": "auto",
+      "timestamp": "18:27",
+      "words": 59,
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log page",
+      "path": "website/apps/shawnos/app/log/page.tsx",
+      "source": "auto",
+      "timestamp": "17:35",
+      "words": 210,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/rss/index.ts",
+      "source": "auto",
+      "timestamp": "00:27",
+      "words": 42,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control logs date page",
+      "path": "website/apps/mission-control/app/logs/[date]/page.tsx",
+      "source": "auto",
+      "timestamp": "17:35",
+      "words": 133,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "video package",
+      "path": "website/apps/video/package.json",
+      "source": "auto",
+      "timestamp": "21:25",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-5-static.png",
+      "source": "auto",
+      "timestamp": "00:27",
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shawnos package",
+      "path": "website/apps/shawnos/package.json",
+      "source": "auto",
+      "timestamp": "12:54",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-4-idle.gif",
+      "source": "auto",
+      "timestamp": "00:27",
       "value_score": 5,
       "shipped": true
     },
@@ -294,36 +678,6 @@
       "source": "auto",
       "timestamp": "00:27",
       "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioPostPage",
-      "path": "website/packages/shared/pages/NioPostPage.tsx",
-      "source": "auto",
-      "timestamp": "16:13",
-      "words": 1884,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared generator",
-      "path": "website/packages/shared/lib/rss/generator.ts",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 331,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared config",
-      "path": "website/packages/shared/lib/rss/config.ts",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 174,
-      "value_score": 3,
       "shipped": true
     },
     {
@@ -346,119 +700,31 @@
       "shipped": true
     },
     {
-      "type": "website_route",
-      "title": "mission-control api enhanced-data route",
-      "path": "website/apps/mission-control/app/api/enhanced-data/route.ts",
-      "source": "auto",
-      "timestamp": "12:54",
-      "words": 163,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
       "type": "config_file",
-      "title": "video tsconfig",
-      "path": "website/apps/video/tsconfig.json",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
       "source": "auto",
-      "timestamp": "19:11",
+      "timestamp": "15:14",
       "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/class-polymath-static.png",
-      "source": "auto",
-      "timestamp": "21:21",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos search page",
-      "path": "website/apps/shawnos/app/search/page.tsx",
-      "source": "auto",
-      "timestamp": "18:23",
-      "words": 369,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos updates page",
-      "path": "website/apps/shawnos/app/updates/page.tsx",
-      "source": "auto",
-      "timestamp": "16:07",
-      "words": 2141,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "sync-machines",
-      "path": ".cursor/skills/sync-machines/SKILL.md",
-      "source": "auto",
-      "timestamp": "12:54",
-      "words": 994,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control progression page",
-      "path": "website/apps/mission-control/app/progression/page.tsx",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 355,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/tier-5-static.png",
-      "source": "auto",
-      "timestamp": "19:17",
-      "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_lib",
-      "title": "shared posts",
-      "path": "website/packages/shared/lib/posts.ts",
+      "title": "shared rpg-v2.server",
+      "path": "website/packages/shared/lib/rpg-v2.server.ts",
       "source": "auto",
-      "timestamp": "18:28",
-      "words": 170,
+      "timestamp": "20:08",
+      "words": 173,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "complex_script",
-      "title": "progression_engine_v2",
-      "path": "scripts/progression_engine_v2.py",
+      "type": "avatar_generated",
+      "title": "tier/class avatar",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-6-idle.gif",
       "source": "auto",
       "timestamp": "00:27",
-      "words": 2272,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api tasks route",
-      "path": "website/apps/mission-control/app/api/tasks/route.ts",
-      "source": "auto",
-      "timestamp": "16:13",
-      "words": 605,
-      "value_score": 3,
+      "value_score": 5,
       "shipped": true
     },
     {
@@ -472,60 +738,23 @@
       "shipped": true
     },
     {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-5-action-advanced.gif",
+      "type": "website_page",
+      "title": "shawnos about page",
+      "path": "website/apps/shawnos/app/about/page.tsx",
       "source": "auto",
-      "timestamp": "00:27",
+      "timestamp": "18:21",
+      "words": 801,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/rss/index.ts",
+      "title": "shared generator",
+      "path": "website/packages/shared/lib/rss/generator.ts",
       "source": "auto",
       "timestamp": "00:27",
-      "words": 42,
+      "words": 331,
       "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals nio-terminal slug page",
-      "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 142,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-4-idle-advanced.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioTerminalPage",
-      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 817,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-3-idle-advanced.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
       "shipped": true
     },
     {
@@ -541,289 +770,47 @@
     {
       "type": "avatar_generated",
       "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-2-idle.gif",
+      "path": "website/apps/mission-control/public/progression/avatars/tier-2-static.png",
       "source": "auto",
       "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals nio-terminal post-one page",
-      "path": "website/apps/shawnos/app/vitals/nio-terminal/post-one/page.tsx",
-      "source": "auto",
-      "timestamp": "12:54",
-      "words": 186,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log page",
-      "path": "website/apps/shawnos/app/log/page.tsx",
-      "source": "auto",
-      "timestamp": "15:14",
-      "words": 276,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-5-idle-advanced.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/tier-4-static.png",
-      "source": "auto",
-      "timestamp": "19:17",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control logs date page",
-      "path": "website/apps/mission-control/app/logs/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 202,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals v2-lab page",
-      "path": "website/apps/shawnos/app/vitals/v2-lab/page.tsx",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 2045,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared rpg-v2",
-      "path": "website/packages/shared/lib/rpg-v2.ts",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 235,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "video",
-      "path": ".claude/skills/video/SKILL.md",
-      "source": "auto",
-      "timestamp": "23:23",
-      "words": 1112,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "mission-control api team route",
-      "path": "website/apps/mission-control/app/api/team/route.ts",
+      "title": "shawnos feed updates.xml route",
+      "path": "website/apps/shawnos/app/feed/updates.xml/route.ts",
       "source": "auto",
       "timestamp": "12:54",
-      "words": 172,
+      "words": 214,
       "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shawnos package",
-      "path": "website/apps/shawnos/package.json",
-      "source": "auto",
-      "timestamp": "12:54",
-      "value_score": 0,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "mission-control logs page",
-      "path": "website/apps/mission-control/app/logs/page.tsx",
+      "title": "shawnos vitals nio-terminal slug page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/[slug]/page.tsx",
       "source": "auto",
-      "timestamp": "00:27",
-      "words": 123,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_lib",
-      "title": "shared rpg-v2.server",
-      "path": "website/packages/shared/lib/rpg-v2.server.ts",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 167,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/class-scribe-static.png",
-      "source": "auto",
-      "timestamp": "21:21",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/lib/index.ts",
+      "title": "shared logs",
+      "path": "website/packages/shared/lib/logs.ts",
       "source": "auto",
       "timestamp": "16:07",
-      "words": 233,
+      "words": 1292,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "website_lib",
-      "title": "shared rpg-v3.server",
-      "path": "website/packages/shared/lib/rpg-v3.server.ts",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 167,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-3-idle.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-3-static.png",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-6-idle-advanced.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api calendar route",
-      "path": "website/apps/mission-control/app/api/calendar/route.ts",
-      "source": "auto",
-      "timestamp": "12:54",
-      "words": 183,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-5-action.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/video/public/progression/avatars/class-alchemist-static.png",
-      "source": "auto",
-      "timestamp": "21:21",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "domain-calc",
-      "path": ".cursor/skills/domain-calc/SKILL.md",
-      "source": "auto",
-      "timestamp": "12:54",
-      "words": 1070,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "skill_inventory",
-      "path": "scripts/skill_inventory.py",
-      "source": "auto",
-      "timestamp": "13:08",
-      "words": 395,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "agent-routing",
-      "path": ".claude/skills/agent-routing/SKILL.md",
-      "source": "auto",
-      "timestamp": "17:52",
-      "words": 1127,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-4-action.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "avatar_generated",
-      "title": "tier/class avatar",
-      "path": "website/apps/mission-control/public/progression/avatars/tier-4-action-advanced.gif",
-      "source": "auto",
-      "timestamp": "00:27",
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared crews",
-      "path": "website/packages/shared/lib/crews.ts",
-      "source": "auto",
-      "timestamp": "00:27",
-      "words": 161,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "substack_draft",
-      "title": "recursive drift",
-      "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+      "type": "website_page",
+      "title": "shawnos about arc page",
+      "path": "website/apps/shawnos/app/about/arc/page.tsx",
       "source": "auto-mtime",
-      "timestamp": "00:00",
-      "words": 1641,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "code_infra",
-      "title": "nio_commit_tracker",
-      "path": "scripts/nio_commit_tracker.py",
-      "source": "auto-mtime",
-      "timestamp": "00:00",
-      "words": 532,
+      "timestamp": "18:21",
+      "words": 1434,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -850,12 +837,23 @@
       "mtime_only": true
     },
     {
-      "type": "website_page",
-      "title": "shawnos about arc page",
-      "path": "website/apps/shawnos/app/about/arc/page.tsx",
+      "type": "code_infra",
+      "title": "nio_commit_tracker",
+      "path": "scripts/nio_commit_tracker.py",
       "source": "auto-mtime",
-      "timestamp": "18:21",
-      "words": 1434,
+      "timestamp": "00:00",
+      "words": 532,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "recursive drift",
+      "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+      "source": "auto-mtime",
+      "timestamp": "00:00",
+      "words": 1641,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -1553,6 +1551,13 @@
       },
       {
         "platform": "linkedin",
+        "title": "how to ai assistant claude code",
+        "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 437
+      },
+      {
+        "platform": "linkedin",
         "title": "ecosystem capstone",
         "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
         "target_date": "2026-02-26",
@@ -1735,6 +1740,13 @@
       },
       {
         "platform": "x",
+        "title": "how to ai assistant claude code",
+        "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 259
+      },
+      {
+        "platform": "x",
         "title": "ecosystem threads",
         "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
         "target_date": "2026-02-26",
@@ -1790,6 +1802,13 @@
         "words": 1543
       },
       {
+        "platform": "substack",
+        "title": "how to setup ai assistant",
+        "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+        "target_date": "2026-02-25",
+        "words": 1075
+      },
+      {
         "platform": "reddit",
         "title": "content os reddit",
         "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
@@ -1817,7 +1836,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 175,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 31.9706,
       "context": "claude-code 22:06"
     },
@@ -1830,7 +1849,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 91,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 19.2765,
       "context": "claude-code 23:02"
     },
@@ -1843,7 +1862,7 @@
       "model": "sonnet",
       "source": "claude-code",
       "messages": 18,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 0.6704,
       "context": "claude-code 06:59"
     },
@@ -1856,7 +1875,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 192,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 27.777,
       "context": "claude-code 18:04"
     },
@@ -1869,7 +1888,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 11,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 1.079,
       "context": "claude-code 18:49"
     },
@@ -1882,7 +1901,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 7,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 1.9245,
       "context": "claude-code 23:58"
     },
@@ -1895,7 +1914,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 117,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 27.5278,
       "context": "claude-code 15:33"
     },
@@ -1908,7 +1927,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 125,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 37.6716,
       "context": "claude-code 21:26"
     },
@@ -1921,7 +1940,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 42,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 5.0094,
       "context": "claude-code 23:51"
     },
@@ -1934,7 +1953,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 107,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 10.5643,
       "context": "claude-code 23:26"
     },
@@ -1947,7 +1966,7 @@
       "model": "opus",
       "source": "claude-code",
       "messages": 23,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "cost": 3.7865,
       "context": "claude-code 18:00"
     },
@@ -1961,7 +1980,7 @@
       "source": "cursor-db",
       "messages": 335,
       "conversations": 1,
-      "logged_at": "16:29",
+      "logged_at": "20:34",
       "context": "cursor-ide 01:59-01:59",
       "cost": 0.3015,
       "estimated": true
@@ -1973,8 +1992,8 @@
       "website": 35,
       "substack": 1
     },
-    "words_in_touched_files": 35143,
-    "pipeline_words": 45320,
+    "words_in_touched_files": 33737,
+    "pipeline_words": 47091,
     "finals_count": 0,
     "first_activity": "00:00",
     "last_activity": "23:23",
@@ -2164,7 +2183,7 @@
     "agent_cost": 167.56,
     "cost_per_point": 0.24,
     "efficiency_ratio": 4.21,
-    "words_today": 35143,
+    "words_today": 33737,
     "lines_added": 24805,
     "lines_removed": 6389,
     "lines_net": 18416,

@@ -28,9 +28,7 @@ export default function ProgressionGradeTable({ scoringLog }: ProgressionGradeTa
             <th className="text-left py-2 pr-3">Date</th>
             <th className="text-right py-2 px-2">Score</th>
             <th className="text-center py-2 px-2">Grade</th>
-            <th className="text-right py-2 px-2">Streak</th>
-            <th className="text-right py-2 px-2">Mult</th>
-            <th className="text-right py-2 pl-2">XP</th>
+            <th className="text-right py-2 pl-2">Commits</th>
           </tr>
         </thead>
         <tbody>
@@ -45,9 +43,7 @@ export default function ProgressionGradeTable({ scoringLog }: ProgressionGradeTa
               <td className={`text-center py-1.5 px-2 font-bold ${gradeTextColor(entry.letter_grade)}`}>
                 {entry.letter_grade}
               </td>
-              <td className="text-right py-1.5 px-2 text-gray-400">{entry.streak}d</td>
-              <td className="text-right py-1.5 px-2 text-green-400 font-medium">{entry.multiplier}x</td>
-              <td className="text-right py-1.5 pl-2 text-green-300 font-bold">{entry.xp}</td>
+              <td className="text-right py-1.5 pl-2 text-gray-400">{entry.commits}</td>
             </tr>
           ))}
         </tbody>

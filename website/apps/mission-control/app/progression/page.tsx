@@ -4,7 +4,6 @@ import Link from 'next/link'
 import ProgressionProfile from '../components/ProgressionProfile'
 import ProgressionXPGraph from '../components/ProgressionXPGraph'
 import ProgressionGradeTable from '../components/ProgressionGradeTable'
-import ProgressionStreakViz from '../components/ProgressionChainViz'
 import ProgressionClassBreakdown from '../components/ProgressionClassBreakdown'
 import ProgressionMilestones from '../components/ProgressionMilestones'
 import ProgressionTokenEfficiency from '../components/ProgressionTokenEfficiency'
@@ -68,11 +67,8 @@ export default async function ProgressionPage() {
       {/* Grade table */}
       <ProgressionGradeTable scoringLog={scoringLog} />
 
-      {/* Streak viz + Class display side by side */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <ProgressionStreakViz scoringLog={scoringLog} profile={profile} />
-        <ProgressionClassBreakdown currentClass={profile.class} />
-      </div>
+      {/* Class display */}
+      <ProgressionClassBreakdown currentClass={profile.class} />
 
       {/* Milestones */}
       <ProgressionMilestones milestones={profile.milestones} />

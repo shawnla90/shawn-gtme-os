@@ -149,12 +149,13 @@ GRADE_THRESHOLDS = [
 # ── V4 Commit-Based Scoring ─────────────────────────────────────────
 
 V4_GRADE_THRESHOLDS = [
-    (500, "S+"),   # Historic day — multiple systems built
-    (400, "S"),    # Monster day — major feature + supporting work
-    (350, "A+"),   # Strong day — a real feature shipped
-    (300, "A"),    # Solid day — meaningful progress
-    (250, "B"),    # Decent day — real work shipped
-    (0,   "C"),    # Light day — maintenance, chores, rest
+    (700, "S+"),   # Historic day — multiple systems built
+    (600, "S"),    # Monster day — major feature + supporting work
+    (500, "A+"),   # Strong day — a real feature shipped
+    (400, "A"),    # Solid day — meaningful progress
+    (300, "B"),    # Decent day — real work shipped
+    (200, "C"),    # Light day — some progress
+    (0,   "D"),    # Rest day — minimal or no output
 ]
 
 # Dev equivalent constants
