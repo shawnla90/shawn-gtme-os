@@ -23,7 +23,7 @@ export type {
   WeekDaySummary,
 } from './logs'
 export { TITLE_TABLE, DEFAULT_PROFILE, tierColor } from './rpg'
-export type { RPGProfile, RPGClass, Milestone, TitleTier } from './rpg'
+export type { RPGProfile, RPGClass, Milestone, TitleTier, ScoringLogEntry } from './rpg'
 export {
   getTierAvatarUrls,
   getAvatarUrlsForProfile,

@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import type { ScoringLogEntry } from '@shawnos/shared/lib/rpg'
 
 function gradeBarColor(grade: string): string {
   if (grade === 'S+') return 'bg-yellow-400'
@@ -11,28 +12,21 @@ function gradeBarColor(grade: string): string {
   return 'bg-red-500'
 }
 
-interface DayScoringEntry {
-  date: string
-  output_score: number
-  letter_grade: string
-  commits_count: number
-}
-
 interface ProgressionXPGraphProps {
-  dayScoring: DayScoringEntry[]
+  scoringLog: ScoringLogEntry[]
 }
 
-export default function ProgressionXPGraph({ dayScoring }: ProgressionXPGraphProps) {
-  if (dayScoring.length === 0) return null
+export default function ProgressionXPGraph({ scoringLog }: ProgressionXPGraphProps) {
+  if (scoringLog.length === 0) return null
 
-  const maxScore = Math.max(...dayScoring.map((e) => e.output_score))
+  const maxXP = Math.max(...scoringLog.map((e) => e.xp))
 
   return (
     <div className="card">
-      <h3 className="text-xs font-bold text-green-500 uppercase tracking-wider mb-4">Score Per Day</h3>
+      <h3 className="text-xs font-bold text-green-500 uppercase tracking-wider mb-4">XP Earned Per Day</h3>
       <div className="flex items-end gap-1" style={{ height: '160px' }}>
-        {dayScoring.map((entry) => {
-          const heightPct = maxScore > 0 ? (entry.output_score / maxScore) * 100 : 0
+        {scoringLog.map((entry) => {
+          const heightPct = maxXP > 0 ? (entry.xp / maxXP) * 100 : 0
           return (
             <Link
               key={entry.date}
@@ -41,7 +35,7 @@ export default function ProgressionXPGraph({ dayScoring }: ProgressionXPGraphPro
               style={{ height: '100%' }}
             >
               <div className="text-[11px] text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity mb-1">
-                {entry.output_score}
+                {entry.xp}
               </div>
               <div
                 className={`w-full rounded-t ${gradeBarColor(entry.letter_grade)} group-hover:opacity-80 transition-opacity`}

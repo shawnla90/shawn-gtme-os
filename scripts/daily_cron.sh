@@ -187,6 +187,15 @@ else
   log "Retry push completed"
 fi
 
+# ── Step 5b: Post daily discussion to GitHub ──────────────────────
+log "Posting daily discussion for $TARGET_DATE"
+if $PYTHON scripts/post_daily_discussion.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
+  log "Daily discussion posted"
+else
+  log "WARN: Daily discussion post failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
 # ── Step 6: Validate RSS feeds (post-deploy smoke test) ───────────
 log "Running RSS feed validation (production)"
 if bash "$REPO_ROOT/scripts/validate_feeds.sh" --quiet >> "$LOGFILE" 2>&1; then

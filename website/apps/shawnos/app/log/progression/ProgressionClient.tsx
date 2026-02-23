@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import type { RPGProfile, Milestone } from '@shawnos/shared/lib/rpg'
+import type { RPGProfile, Milestone, ScoringLogEntry } from '@shawnos/shared/lib/rpg'
 
 /* ------------------------------------------------------------------ */
 /*  Color constants                                                     */
@@ -34,17 +34,6 @@ const TARGET_MILESTONES = [
 ]
 
 /* ------------------------------------------------------------------ */
-/*  Types                                                               */
-/* ------------------------------------------------------------------ */
-
-interface DayScoringEntry {
-  date: string
-  output_score: number
-  letter_grade: string
-  commits_count: number
-}
-
-/* ------------------------------------------------------------------ */
 /*  Props                                                               */
 /* ------------------------------------------------------------------ */
 
@@ -52,7 +41,6 @@ interface ProgressionClientProps {
   profile: RPGProfile
   avatarSrc: string | null
   tierColor: string
-  dayScoring: DayScoringEntry[]
   costMap: Record<string, number>
 }
 
@@ -147,8 +135,10 @@ function ProfileHero({
               LVL {profile.level}
             </span>
           </div>
-          <div style={{ fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
-            Class: <span style={{ color: 'var(--accent)', fontWeight: 600 }}>{profile.class}</span>
+          <div style={{ display: 'flex', gap: '16px', fontSize: '13px', color: 'var(--text-secondary)', marginBottom: '12px' }}>
+            <span>Class: <span style={{ color: 'var(--accent)', fontWeight: 600 }}>{profile.class}</span></span>
+            <span>Streak: <span style={{ color: 'var(--accent)', fontWeight: 600 }}>{profile.current_streak}d</span></span>
+            <span>Mult: <span style={{ color: 'var(--accent)', fontWeight: 600 }}>{profile.streak_multiplier}x</span></span>
           </div>
           {/* XP bar */}
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: 'var(--text-muted)', marginBottom: '4px' }}>
@@ -173,19 +163,19 @@ function ProfileHero({
 }
 
 /* ------------------------------------------------------------------ */
-/*  Score Graph (replaces XP Graph)                                     */
+/*  XP Graph (uses multiplied XP per day)                               */
 /* ------------------------------------------------------------------ */
 
-function ScoreGraph({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
-  if (dayScoring.length === 0) return null
-  const maxScore = Math.max(...dayScoring.map((e) => e.output_score))
+function XPGraph({ scoringLog }: { scoringLog: ScoringLogEntry[] }) {
+  if (scoringLog.length === 0) return null
+  const maxXP = Math.max(...scoringLog.map((e) => e.xp))
 
   return (
     <Card>
-      <SectionTitle>Score Per Day</SectionTitle>
+      <SectionTitle>XP Earned Per Day</SectionTitle>
       <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '160px' }}>
-        {dayScoring.map((entry) => {
-          const heightPct = maxScore > 0 ? (entry.output_score / maxScore) * 100 : 0
+        {scoringLog.map((entry) => {
+          const heightPct = maxXP > 0 ? (entry.xp / maxXP) * 100 : 0
           const color = gradeColor(entry.letter_grade)
           return (
             <Link
@@ -229,9 +219,9 @@ function ScoreGraph({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
       </div>
       {/* Legend */}
       <div style={{ display: 'flex', gap: '12px', marginTop: '28px', fontSize: '10px', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
-        {dayScoring.map((e) => (
+        {scoringLog.map((e) => (
           <span key={e.date} style={{ color: gradeColor(e.letter_grade) }}>
-            {e.date.slice(8)}: {e.output_score} pts
+            {e.date.slice(8)}: {e.xp} XP
           </span>
         ))}
       </div>
@@ -240,11 +230,11 @@ function ScoreGraph({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Grade Table (V4: Date, Score, Grade, Commits)                       */
+/*  Grade Table (Date, Score, Grade, Streak, Mult, XP)                  */
 /* ------------------------------------------------------------------ */
 
-function GradeTable({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
-  if (dayScoring.length === 0) return null
+function GradeTable({ scoringLog }: { scoringLog: ScoringLogEntry[] }) {
+  if (scoringLog.length === 0) return null
 
   const th: React.CSSProperties = {
     padding: '8px 6px',
@@ -275,22 +265,30 @@ function GradeTable({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
               <th style={{ ...th, textAlign: 'left' }}>Date</th>
               <th style={{ ...th, textAlign: 'right' }}>Score</th>
               <th style={{ ...th, textAlign: 'center' }}>Grade</th>
-              <th style={{ ...th, textAlign: 'right' }}>Commits</th>
+              <th style={{ ...th, textAlign: 'right' }}>Streak</th>
+              <th style={{ ...th, textAlign: 'right' }}>Mult</th>
+              <th style={{ ...th, textAlign: 'right' }}>XP</th>
             </tr>
           </thead>
           <tbody>
-            {dayScoring.map((e) => (
+            {scoringLog.map((e) => (
               <tr key={e.date}>
                 <td style={{ ...td, textAlign: 'left' }}>
                   <Link href={`/log/${e.date}`} style={{ color: 'var(--accent)', textDecoration: 'none' }}>
                     {e.date}
                   </Link>
                 </td>
-                <td style={{ ...td, textAlign: 'right', fontWeight: 700 }}>{e.output_score}</td>
+                <td style={{ ...td, textAlign: 'right' }}>{e.output_score}</td>
                 <td style={{ ...td, textAlign: 'center', fontWeight: 700, color: gradeColor(e.letter_grade) }}>
                   {e.letter_grade}
                 </td>
-                <td style={{ ...td, textAlign: 'right' }}>{e.commits_count}</td>
+                <td style={{ ...td, textAlign: 'right' }}>{e.streak}d</td>
+                <td style={{ ...td, textAlign: 'right', color: 'var(--accent)', fontWeight: 600 }}>
+                  {e.multiplier}x
+                </td>
+                <td style={{ ...td, textAlign: 'right', fontWeight: 700, color: gradeColor(e.letter_grade) }}>
+                  {e.xp}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -301,7 +299,57 @@ function GradeTable({ dayScoring }: { dayScoring: DayScoringEntry[] }) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Class Display (simplified — no V3 breakdown)                        */
+/*  Streak Viz                                                          */
+/* ------------------------------------------------------------------ */
+
+function StreakViz({ scoringLog, profile }: { scoringLog: ScoringLogEntry[]; profile: RPGProfile }) {
+  const maxStreak = Math.max(...scoringLog.map((e) => e.streak), 1)
+
+  return (
+    <Card>
+      <SectionTitle>Streak</SectionTitle>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '16px' }}>
+        <StatNum label="Current" value={`${profile.current_streak}d`} />
+        <StatNum label="Multiplier" value={`${profile.streak_multiplier}x`} />
+        <StatNum label="Best" value={`${maxStreak}d`} />
+      </div>
+      <div style={{ display: 'flex', alignItems: 'flex-end', gap: '3px', height: '80px' }}>
+        {scoringLog.map((e) => {
+          const heightPct = (e.streak / maxStreak) * 100
+          return (
+            <div
+              key={e.date}
+              style={{
+                flex: '1 1 0',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                height: '100%',
+              }}
+            >
+              <div
+                style={{
+                  width: '100%',
+                  borderRadius: '3px 3px 0 0',
+                  backgroundColor: e.streak > 1 ? 'var(--accent)' : 'var(--border)',
+                  height: `${heightPct}%`,
+                  minHeight: '4px',
+                }}
+              />
+              <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginTop: '4px' }}>
+                {e.date.slice(8)}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </Card>
+  )
+}
+
+/* ------------------------------------------------------------------ */
+/*  Class Display                                                       */
 /* ------------------------------------------------------------------ */
 
 function ClassDisplay({ currentClass }: { currentClass: string }) {
@@ -378,13 +426,13 @@ function Milestones({ milestones }: { milestones: Milestone[] }) {
 /* ------------------------------------------------------------------ */
 
 function TokenEfficiency({
-  dayScoring,
+  scoringLog,
   costMap,
 }: {
-  dayScoring: DayScoringEntry[]
+  scoringLog: ScoringLogEntry[]
   costMap: Record<string, number>
 }) {
-  const effData = dayScoring.map((e) => {
+  const effData = scoringLog.map((e) => {
     const cost = costMap[e.date] ?? 0
     const ptsDollar = cost > 0 ? e.output_score / cost : 0
     return { date: e.date, ptsDollar, cost, score: e.output_score }
@@ -490,17 +538,27 @@ export default function ProgressionClient({
   profile,
   avatarSrc,
   tierColor: tc,
-  dayScoring,
   costMap,
 }: ProgressionClientProps) {
+  const scoringLog = profile.scoring_log ?? []
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
       <ProfileHero profile={profile} avatarSrc={avatarSrc} tierColor={tc} />
-      <ScoreGraph dayScoring={dayScoring} />
-      <GradeTable dayScoring={dayScoring} />
-      <ClassDisplay currentClass={profile.class} />
+      <XPGraph scoringLog={scoringLog} />
+      <GradeTable scoringLog={scoringLog} />
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '20px',
+        }}
+      >
+        <StreakViz scoringLog={scoringLog} profile={profile} />
+        <ClassDisplay currentClass={profile.class} />
+      </div>
       <Milestones milestones={profile.milestones} />
-      <TokenEfficiency dayScoring={dayScoring} costMap={costMap} />
+      <TokenEfficiency scoringLog={scoringLog} costMap={costMap} />
     </div>
   )
 }

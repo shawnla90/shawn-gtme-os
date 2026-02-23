@@ -42,6 +42,9 @@ function mockProfileForClass(rpgClass: RPGClass): RPGProfile {
     xp_next_level: 500,
     class: rpgClass,
     avatar_tier: 1,
+    current_streak: 0,
+    streak_multiplier: 1.0,
+    scoring_log: [],
     milestones: [],
     updated_at: new Date().toISOString(),
   }

@@ -19,6 +19,9 @@ function mockProfileForTier(tierIdx: number): RPGProfile {
     xp_next_level: nextTier ? nextTier.xp_required : 999999,
     class: ALL_CLASSES[tierIdx % ALL_CLASSES.length]!,
     avatar_tier: tier.avatar_tier,
+    current_streak: 0,
+    streak_multiplier: 1.0,
+    scoring_log: [],
     milestones: [],
     updated_at: new Date().toISOString(),
   }

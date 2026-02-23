@@ -4,6 +4,7 @@ import Link from 'next/link'
 import ProgressionProfile from '../components/ProgressionProfile'
 import ProgressionXPGraph from '../components/ProgressionXPGraph'
 import ProgressionGradeTable from '../components/ProgressionGradeTable'
+import ProgressionStreakViz from '../components/ProgressionChainViz'
 import ProgressionClassBreakdown from '../components/ProgressionClassBreakdown'
 import ProgressionMilestones from '../components/ProgressionMilestones'
 import ProgressionTokenEfficiency from '../components/ProgressionTokenEfficiency'
@@ -29,19 +30,14 @@ export default async function ProgressionPage() {
     )
   }
 
-  // Build per-day scoring from daily logs (V4 data)
-  const dayScoring: { date: string; output_score: number; letter_grade: string; commits_count: number }[] = []
+  const scoringLog = profile.scoring_log ?? []
+
+  // Build cost map from daily logs
   const costMap: Record<string, number> = {}
   for (const summary of logs) {
     const log = getLogByDate(summary.date, LOG_DIR)
     if (log) {
       costMap[summary.date] = log.token_usage.reduce((s, t) => s + (t.cost ?? 0), 0)
-      dayScoring.push({
-        date: summary.date,
-        output_score: log.stats.output_score,
-        letter_grade: log.stats.letter_grade,
-        commits_count: log.git_summary.commits_today,
-      })
     }
   }
 
@@ -66,21 +62,24 @@ export default async function ProgressionPage() {
       {/* Profile hero */}
       <ProgressionProfile profile={profile} />
 
-      {/* Score graph */}
-      <ProgressionXPGraph dayScoring={dayScoring} />
+      {/* XP graph */}
+      <ProgressionXPGraph scoringLog={scoringLog} />
 
       {/* Grade table */}
-      <ProgressionGradeTable dayScoring={dayScoring} />
+      <ProgressionGradeTable scoringLog={scoringLog} />
 
-      {/* Class display */}
-      <ProgressionClassBreakdown currentClass={profile.class} />
+      {/* Streak viz + Class display side by side */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <ProgressionStreakViz scoringLog={scoringLog} profile={profile} />
+        <ProgressionClassBreakdown currentClass={profile.class} />
+      </div>
 
       {/* Milestones */}
       <ProgressionMilestones milestones={profile.milestones} />
 
       {/* Token efficiency */}
       <ProgressionTokenEfficiency
-        dayScoring={dayScoring}
+        scoringLog={scoringLog}
         logs={logs}
         costMap={costMap}
       />

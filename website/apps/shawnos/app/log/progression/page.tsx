@@ -19,15 +19,15 @@ const SITE_URL = 'https://shawnos.ai'
 export const metadata: Metadata = {
   title: 'Character Progression',
   description:
-    'XP growth, grade trends, milestones, and token efficiency. Character progression from the daily build log.',
+    'XP growth, grade trends, streak multiplier, milestones, and token efficiency. Character progression from the daily build log.',
   alternates: { canonical: `${SITE_URL}/log/progression` },
   openGraph: {
     title: 'Character Progression | shawnos.ai',
-    description: 'XP growth, grade trends, and milestones.',
+    description: 'XP growth, grade trends, streak multiplier, and milestones.',
     url: `${SITE_URL}/log/progression`,
     images: [
       {
-        url: '/og?title=Character+Progression&subtitle=XP+growth%2C+grades%2C+milestones',
+        url: '/og?title=Character+Progression&subtitle=XP+growth%2C+grades%2C+streaks%2C+milestones',
         width: 1200,
         height: 630,
       },
@@ -64,20 +64,13 @@ export default function ProgressionPage() {
   const avatarUrls = getAvatarUrlsForProfile(profile)
   const tc = tierColor(profile.avatar_tier)
 
-  // Build per-day scoring data + cost map from daily logs
+  // Build cost map from daily logs
   const logs = getAllLogs(LOG_DIR)
-  const dayScoring: { date: string; output_score: number; letter_grade: string; commits_count: number }[] = []
   const costMap: Record<string, number> = {}
   for (const summary of logs) {
     const log = getLogByDate(summary.date, LOG_DIR)
     if (log) {
       costMap[summary.date] = log.token_usage.reduce((s, t) => s + (t.cost ?? 0), 0)
-      dayScoring.push({
-        date: summary.date,
-        output_score: log.stats.output_score,
-        letter_grade: log.stats.letter_grade,
-        commits_count: log.git_summary.commits_today,
-      })
     }
   }
 
@@ -137,7 +130,6 @@ export default function ProgressionPage() {
           profile={profile}
           avatarSrc={avatarUrls.idle}
           tierColor={tc}
-          dayScoring={dayScoring}
           costMap={costMap}
         />
       </div>

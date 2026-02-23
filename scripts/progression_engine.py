@@ -267,15 +267,75 @@ def load_daily_logs() -> List[Dict[str, Any]]:
     return logs
 
 
-def compute_total_xp(logs: List[Dict[str, Any]]) -> int:
-    """Sum output_score from all daily logs as total XP."""
-    total = 0
-    for log in logs:
+STREAK_MULT_PER_DAY = 0.1   # +0.1x per consecutive day
+STREAK_MULT_CAP     = 2.0   # max 2.0x (10-day streak)
+
+
+def compute_xp_with_streak(
+    logs: List[Dict[str, Any]],
+) -> Tuple[int, int, float, List[Dict[str, Any]]]:
+    """Compute total XP with streak multiplier.
+
+    Each consecutive day logged increases the multiplier by 0.1x.
+    Day 1 = 1.1x, Day 5 = 1.5x, capped at 2.0x (10-day streak).
+    A gap resets the streak to 0.
+
+    Returns (total_xp, current_streak, current_multiplier, scoring_log).
+    """
+    from datetime import date as date_type
+
+    sorted_logs = sorted(logs, key=lambda l: l.get("date", ""))
+    scoring_log: List[Dict[str, Any]] = []
+    total_xp = 0
+    current_streak = 0
+    prev_date: Optional[date_type] = None
+
+    for log in sorted_logs:
+        date_str = log.get("date", "")
         stats = log.get("stats", {})
         score = stats.get("output_score", 0)
-        if isinstance(score, (int, float)):
-            total += int(score)
-    return total
+        grade = stats.get("letter_grade", "D")
+        commits = log.get("git_summary", {}).get("commits_today", 0)
+
+        if not isinstance(score, (int, float)):
+            score = 0
+
+        # Compute streak
+        try:
+            parts = date_str.split("-")
+            curr_date = date_type(int(parts[0]), int(parts[1]), int(parts[2]))
+        except (ValueError, IndexError):
+            curr_date = None
+
+        if curr_date and prev_date:
+            diff = (curr_date - prev_date).days
+            if diff == 1:
+                current_streak += 1
+            else:
+                current_streak = 1
+        else:
+            current_streak = 1
+
+        multiplier = min(1.0 + current_streak * STREAK_MULT_PER_DAY, STREAK_MULT_CAP)
+        day_xp = int(score * multiplier)
+        total_xp += day_xp
+
+        scoring_log.append({
+            "date": date_str,
+            "output_score": int(score),
+            "letter_grade": grade,
+            "commits": commits,
+            "streak": current_streak,
+            "multiplier": round(multiplier, 1),
+            "xp": day_xp,
+        })
+
+        if curr_date:
+            prev_date = curr_date
+
+    return total_xp, current_streak, round(
+        min(1.0 + current_streak * STREAK_MULT_PER_DAY, STREAK_MULT_CAP), 1
+    ), scoring_log
 
 
 def resolve_title_and_tier(xp: int) -> Tuple[str, int, int]:
@@ -389,7 +449,7 @@ def build_profile(
     verbose: bool = False,
 ) -> Dict[str, Any]:
     """Build the full RPGProfile dict from daily log data."""
-    total_xp = compute_total_xp(logs)
+    total_xp, current_streak, streak_mult, scoring_log = compute_xp_with_streak(logs)
     title, level, avatar_tier = resolve_title_and_tier(total_xp)
     xp_next = compute_xp_next_level(total_xp)
     rpg_class = determine_class(logs)
@@ -403,6 +463,9 @@ def build_profile(
         "xp_next_level": xp_next,
         "class": rpg_class,
         "avatar_tier": avatar_tier,
+        "current_streak": current_streak,
+        "streak_multiplier": streak_mult,
+        "scoring_log": scoring_log,
         "milestones": milestones,
         "updated_at": datetime.now(timezone.utc).isoformat(),
     }
@@ -414,6 +477,7 @@ def build_profile(
         print(f"  Title:       {title}")
         print(f"  Avatar Tier: {avatar_tier}")
         print(f"  Class:       {rpg_class}")
+        print(f"  Streak:      {current_streak}d ({streak_mult}x)")
         print(f"  Next Title:  {xp_next:,} XP")
         print(f"  Milestones:  {len(milestones)}")
         print(f"  Days Logged: {len(logs)}")
@@ -523,11 +587,13 @@ def main() -> None:
     profile = build_profile(logs, verbose=verbose)
 
     if not quiet:
+        streak_str = f"{profile['current_streak']}d ({profile['streak_multiplier']}x)"
         print(f"  ║  XP Total:        {profile['xp_total']:>25,}    ║")
         print(f"  ║  Level:           {profile['level']:>25d}    ║")
         print(f"  ║  Title:  {profile['title']:>36s}    ║")
         print(f"  ║  Tier:            {profile['avatar_tier']:>25d}    ║")
         print(f"  ║  Class:           {profile['class']:>25s}    ║")
+        print(f"  ║  Streak:          {streak_str:>25s}    ║")
         print(f"  ║  Milestones:      {len(profile['milestones']):>25d}    ║")
         print(f"  ╚═════════════════════════════════════════════════╝")
 

@@ -2,25 +2,19 @@
 
 import Link from 'next/link'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
-
-interface DayScoringEntry {
-  date: string
-  output_score: number
-  letter_grade: string
-  commits_count: number
-}
+import type { ScoringLogEntry } from '@shawnos/shared/lib/rpg'
 
 interface ProgressionTokenEfficiencyProps {
-  dayScoring: DayScoringEntry[]
+  scoringLog: ScoringLogEntry[]
   logs: DailyLogSummary[]
   costMap: Record<string, number>
 }
 
 export default function ProgressionTokenEfficiency({
-  dayScoring,
+  scoringLog,
   costMap,
 }: ProgressionTokenEfficiencyProps) {
-  const efficiencyData = dayScoring.map((entry) => {
+  const efficiencyData = scoringLog.map((entry) => {
     const cost = costMap[entry.date] ?? 0
     const ptsDollar = cost > 0 ? entry.output_score / cost : 0
     return { date: entry.date, ptsDollar, cost, score: entry.output_score }
