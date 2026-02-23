@@ -1,4 +1,4 @@
-// NioBot V2 — Shared TypeScript interfaces
+// NioBot V3 — Shared TypeScript interfaces
 
 export interface Message {
   id: string
@@ -12,6 +12,8 @@ export interface ChatRequest {
   message: string
   sessionId?: string
   agentId: string
+  evolutionTier?: number
+  skillLevels?: Record<string, number>
 }
 
 export interface AgentChatState {
@@ -24,4 +26,16 @@ export type ChatSSEEventType = 'text' | 'session' | 'done' | 'error' | 'usage' |
 export interface ChatSSEEvent {
   type: ChatSSEEventType
   data: string
+}
+
+// Evolution types
+export interface EvolutionState {
+  xp: number
+  skillXP: Record<string, number>
+  streak: number
+  lastActiveDate: string | null
+  dailyBonusClaimed: boolean
+  deepConvoClaimed: boolean
+  veryDeepConvoClaimed: boolean
+  initialized: boolean
 }

@@ -1,8 +1,8 @@
-// NioBot V2 — Chat API route with SSE streaming, usage tracking, and persistence
+// NioBot V3 — Chat API route with SSE streaming, usage tracking, and evolution-aware prompts
 
 import { NextRequest } from 'next/server'
 import { validateToken } from '../../../lib/auth'
-import { spawnClaude } from '../../../lib/claude'
+import { spawnClaude, type EvolutionContext } from '../../../lib/claude'
 import { getAgent } from '../../../lib/agents'
 import { checkRateLimit, getClientIP } from '../../../lib/rate-limit'
 import { logChatRequest } from '../../../lib/audit'
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
     return new Response('Too many requests. Slow down.', { status: 429 })
   }
 
-  let body: ChatRequest
+  let body: ChatRequest & { evolutionTier?: number; skillLevels?: Record<string, number> }
   try {
     body = await request.json()
   } catch {
@@ -50,6 +50,15 @@ export async function POST(request: NextRequest) {
 
   if (!agent.enabled) {
     return new Response(`Agent ${agentId} is not enabled`, { status: 400 })
+  }
+
+  // Build evolution context if provided
+  let evolution: EvolutionContext | undefined
+  if (body.evolutionTier && body.evolutionTier >= 1 && body.evolutionTier <= 5) {
+    evolution = {
+      tier: body.evolutionTier,
+      skillLevels: body.skillLevels || {},
+    }
   }
 
   // Audit log (fire-and-forget)
@@ -113,7 +122,7 @@ export async function POST(request: NextRequest) {
           send(JSON.stringify({ type: 'error', data: msg }))
           close()
         },
-      })
+      }, undefined, evolution)
 
       // Kill child process on client abort
       request.signal.addEventListener('abort', () => {

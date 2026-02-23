@@ -15,6 +15,7 @@ export interface AgentConfig {
   }
   maxTurns: number
   enabled: boolean
+  skillId: string  // V3: maps to evolution skill
 }
 
 const agents: AgentConfig[] = [
@@ -33,6 +34,7 @@ const agents: AgentConfig[] = [
     },
     maxTurns: 10,
     enabled: true,
+    skillId: 'ops',
   },
   {
     id: 'architect',
@@ -49,6 +51,7 @@ const agents: AgentConfig[] = [
     },
     maxTurns: 15,
     enabled: true,
+    skillId: 'architecture',
   },
   {
     id: 'writer',
@@ -65,6 +68,7 @@ const agents: AgentConfig[] = [
     },
     maxTurns: 10,
     enabled: true,
+    skillId: 'writing',
   },
 ]
 

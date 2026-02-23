@@ -1,17 +1,25 @@
-// NioBot V2 — Thin layout shell composing all chat sub-components
+// NioBot V3 — Thin layout shell composing all chat sub-components
 
 'use client'
 
 import ChatProvider, { useChatContext } from './ChatProvider'
+import ChimeProvider from './ChimeProvider'
+import { EvolutionProvider } from './EvolutionProvider'
+import { useChatChimes } from './useChatChimes'
+import { useEvolutionXP } from './useEvolutionXP'
 import ChatHeader from './ChatHeader'
 import MessageList from './MessageList'
 import InputBar from './InputBar'
 import UsagePill from './UsagePill'
 import SessionSidebar from './SessionSidebar'
 import AuthGate from './AuthGate'
+import LevelUpNotification from './LevelUpNotification'
+import XPFloat from './XPFloat'
 
 function ChatLayout() {
   const { state, enabledAgents, activeAgent, handleNewChat, handleSwitchAgent, dispatch } = useChatContext()
+  useChatChimes()
+  useEvolutionXP()
 
   if (!state.authed) {
     return <AuthGate />
@@ -32,6 +40,8 @@ function ChatLayout() {
       <UsagePill />
       <InputBar />
       <SessionSidebar />
+      <LevelUpNotification />
+      <XPFloat />
     </div>
   )
 }
@@ -39,7 +49,11 @@ function ChatLayout() {
 export default function ChatInterface() {
   return (
     <ChatProvider>
-      <ChatLayout />
+      <ChimeProvider>
+        <EvolutionProvider>
+          <ChatLayout />
+        </EvolutionProvider>
+      </ChimeProvider>
     </ChatProvider>
   )
 }

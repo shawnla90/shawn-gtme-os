@@ -1,6 +1,7 @@
-// NioBot V2 — Claude CLI subprocess spawner with usage tracking
+// NioBot V3 — Claude CLI subprocess spawner with usage tracking + evolution-aware prompts
 
 import { spawn, ChildProcess } from 'child_process'
+import { readFileSync, existsSync } from 'fs'
 import path from 'path'
 import type { AgentConfig } from './agents'
 
@@ -20,20 +21,85 @@ interface ClaudeCallbacks {
   onError: (error: string) => void
 }
 
+export interface EvolutionContext {
+  tier: number
+  skillLevels: Record<string, number>
+}
+
+// Compose the system prompt by combining base soul + tier fragment + skill mastery
+function composeSoulPrompt(agent: AgentConfig, evolution?: EvolutionContext): string {
+  const baseSoulPath = path.resolve(process.cwd(), agent.soulFile)
+  let soul = ''
+
+  try {
+    soul = readFileSync(baseSoulPath, 'utf-8')
+  } catch {
+    console.error(`[claude:${agent.id}] failed to read soul file: ${baseSoulPath}`)
+    return ''
+  }
+
+  if (!evolution) return soul
+
+  // Append tier evolution fragment
+  const tierFiles: Record<number, string> = {
+    1: 'tier-1-spark.md',
+    2: 'tier-2-blade.md',
+    3: 'tier-3-warden.md',
+    4: 'tier-4-sentinel.md',
+    5: 'tier-5-ascended.md',
+  }
+
+  const tierFile = tierFiles[evolution.tier]
+  if (tierFile) {
+    const tierPath = path.resolve(process.cwd(), 'souls/evolution', tierFile)
+    if (existsSync(tierPath)) {
+      try {
+        const fragment = readFileSync(tierPath, 'utf-8')
+        soul += '\n\n' + fragment
+      } catch {
+        console.error(`[claude:${agent.id}] failed to read tier fragment: ${tierPath}`)
+      }
+    }
+  }
+
+  // Append skill mastery fragments for high-level skills (5+)
+  for (const [skillId, level] of Object.entries(evolution.skillLevels)) {
+    if (level >= 5) {
+      soul += `\n\n## Skill Mastery: ${skillId} (lv.${level})\nYou have deep expertise in ${skillId}. Apply domain knowledge confidently. Suggest advanced patterns and optimizations in this area.`
+    }
+  }
+
+  return soul
+}
+
 export function spawnClaude(
   message: string,
   sessionId: string | undefined,
   agent: AgentConfig,
   callbacks: ClaudeCallbacks,
-  modelOverride?: string
+  modelOverride?: string,
+  evolution?: EvolutionContext
 ): ChildProcess {
-  const soulPath = path.resolve(process.cwd(), agent.soulFile)
+  // Compose the full soul prompt with evolution fragments
+  const composedSoul = composeSoulPrompt(agent, evolution)
+
+  // Write composed soul to a temp file for --append-system-prompt-file
+  const tmpDir = path.resolve(process.cwd(), '.tmp')
+  const tmpSoulPath = path.resolve(tmpDir, `soul-${agent.id}-${Date.now()}.md`)
+
+  try {
+    const { mkdirSync, writeFileSync } = require('fs')
+    mkdirSync(tmpDir, { recursive: true })
+    writeFileSync(tmpSoulPath, composedSoul, 'utf-8')
+  } catch (err) {
+    console.error(`[claude:${agent.id}] failed to write temp soul file:`, err)
+  }
 
   const args = [
     '-p', message,
     '--output-format', 'stream-json',
     '--verbose',
-    '--append-system-prompt-file', soulPath,
+    '--append-system-prompt-file', tmpSoulPath,
     '--max-turns', String(agent.maxTurns),
     '--permission-mode', 'bypassPermissions',
   ]
@@ -51,7 +117,8 @@ export function spawnClaude(
   delete env.CLAUDECODE
 
   console.log(`[claude:${agent.id}] cwd:`, process.cwd())
-  console.log(`[claude:${agent.id}] soul path:`, soulPath)
+  console.log(`[claude:${agent.id}] soul path:`, tmpSoulPath)
+  console.log(`[claude:${agent.id}] evolution:`, evolution ? `tier=${evolution.tier}` : 'none')
   console.log(`[claude:${agent.id}] args:`, args.join(' '))
 
   const child = spawn('/opt/homebrew/bin/claude', args, {
@@ -177,6 +244,12 @@ export function spawnClaude(
       callbacks.onError(errMsg)
     }
     callbacks.onDone()
+
+    // Clean up temp soul file
+    try {
+      const { unlinkSync } = require('fs')
+      unlinkSync(tmpSoulPath)
+    } catch { /* ignore */ }
   })
 
   child.on('error', (err) => {

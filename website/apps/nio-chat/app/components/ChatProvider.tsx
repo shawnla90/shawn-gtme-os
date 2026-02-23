@@ -355,10 +355,41 @@ export default function ChatProvider({ children }: { children: ReactNode }) {
 
     try {
       const sessionId = state.agentStates[state.activeAgentId]?.sessionId
+
+      // V3: Read evolution state for soul prompt composition
+      let evolutionTier: number | undefined
+      let skillLevels: Record<string, number> | undefined
+      try {
+        const evoRaw = localStorage.getItem('shawnos-evolution')
+        if (evoRaw) {
+          const evo = JSON.parse(evoRaw)
+          if (evo.xp != null) {
+            // Quick tier calculation (mirrors lib/evolution.ts logic)
+            const thresholds = [0, 500, 2000, 6000, 15000]
+            evolutionTier = 1
+            for (let i = thresholds.length - 1; i >= 0; i--) {
+              if (evo.xp >= thresholds[i]) { evolutionTier = i + 1; break }
+            }
+            // Build skill levels from skillXP
+            if (evo.skillXP && typeof evo.skillXP === 'object') {
+              skillLevels = {}
+              for (const [id, xp] of Object.entries(evo.skillXP)) {
+                let level = 1
+                let acc = 0
+                for (let l = 1; l <= 10; l++) {
+                  if ((xp as number) >= acc + 100 * l) { acc += 100 * l; level = l + 1 } else break
+                }
+                skillLevels[id] = Math.min(level, 10)
+              }
+            }
+          }
+        }
+      } catch { /* evolution state unavailable */ }
+
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers,
-        body: JSON.stringify({ message: trimmed, sessionId, agentId: state.activeAgentId }),
+        body: JSON.stringify({ message: trimmed, sessionId, agentId: state.activeAgentId, evolutionTier, skillLevels }),
         signal: abortRef.current.signal,
       })
 

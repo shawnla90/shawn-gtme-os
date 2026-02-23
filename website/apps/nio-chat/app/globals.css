@@ -226,6 +226,62 @@ body {
   }
 }
 
+/* --- NioBot V3: Level-up & XP animations --- */
+
+/* XP float: rises and fades out */
+@keyframes xp-float-up {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+.xp-float {
+  animation: xp-float-up 1.2s ease-out forwards;
+  white-space: nowrap;
+}
+
+/* Level-up glow pulse */
+@keyframes level-up-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px 2px rgba(78, 195, 115, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 16px 4px rgba(78, 195, 115, 0.6);
+  }
+}
+
+.level-up-glow {
+  animation: level-up-pulse 0.8s ease-in-out 3;
+}
+
+/* Tier-up particle burst (used on avatar) */
+@keyframes tier-up-burst {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tier-up-burst {
+  animation: tier-up-burst 0.6s ease-out;
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 4px;
