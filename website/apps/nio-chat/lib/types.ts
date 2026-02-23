@@ -1,4 +1,4 @@
-// ShawnOS Chat - (c) 2026 Shawn Tenam - See /LICENSE
+// NioBot V2 — Shared TypeScript interfaces
 
 export interface Message {
   id: string
@@ -19,7 +19,7 @@ export interface AgentChatState {
   messages: Message[]
 }
 
-export type ChatSSEEventType = 'text' | 'session' | 'done' | 'error'
+export type ChatSSEEventType = 'text' | 'session' | 'done' | 'error' | 'usage' | 'model' | 'memory_flush' | 'confirm'
 
 export interface ChatSSEEvent {
   type: ChatSSEEventType

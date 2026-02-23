@@ -48,7 +48,7 @@ const agents: AgentConfig[] = [
       userText: '#c9d1d9',
     },
     maxTurns: 15,
-    enabled: false,
+    enabled: true,
   },
   {
     id: 'writer',
@@ -64,7 +64,7 @@ const agents: AgentConfig[] = [
       userText: '#c9d1d9',
     },
     maxTurns: 10,
-    enabled: false,
+    enabled: true,
   },
 ]
 

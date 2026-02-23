@@ -45,6 +45,162 @@ body {
 .typing-dot:nth-child(2) { animation: typing-dot 1.4s infinite 0.2s; }
 .typing-dot:nth-child(3) { animation: typing-dot 1.4s infinite 0.4s; }
 
+/* Markdown prose styles for dark theme */
+.nio-prose {
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.nio-prose > *:first-child {
+  margin-top: 0;
+}
+
+.nio-prose > *:last-child {
+  margin-bottom: 0;
+}
+
+.nio-prose p {
+  margin: 0.5em 0;
+}
+
+.nio-prose p:first-child {
+  margin-top: 0;
+}
+
+.nio-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.nio-prose strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.nio-prose em {
+  font-style: italic;
+}
+
+/* Headings */
+.nio-prose h1, .nio-prose h2, .nio-prose h3, .nio-prose h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  margin: 1em 0 0.5em;
+  line-height: 1.3;
+}
+
+.nio-prose h1 { font-size: 1.25em; }
+.nio-prose h2 { font-size: 1.125em; }
+.nio-prose h3 { font-size: 1em; }
+
+/* Code blocks */
+.nio-code-block {
+  margin: 0.75em 0;
+  border-radius: 8px;
+  background: var(--canvas);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.nio-code-block pre {
+  margin: 0;
+  background: transparent;
+}
+
+.nio-code-block code {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+/* Inline code */
+.nio-inline-code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  background: var(--canvas);
+  color: var(--accent);
+  border: 1px solid var(--border);
+}
+
+/* Lists */
+.nio-prose ul, .nio-prose ol {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.nio-prose ul {
+  list-style-type: disc;
+}
+
+.nio-prose ol {
+  list-style-type: decimal;
+}
+
+.nio-prose li {
+  margin: 0.25em 0;
+}
+
+.nio-prose li > ul, .nio-prose li > ol {
+  margin: 0.25em 0;
+}
+
+/* Blockquotes */
+.nio-prose blockquote {
+  margin: 0.75em 0;
+  padding: 0.5em 1em;
+  border-left: 3px solid var(--accent);
+  background: var(--canvas);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-secondary);
+}
+
+.nio-prose blockquote p {
+  margin: 0;
+}
+
+/* Tables */
+.nio-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875em;
+  margin: 0.5em 0;
+}
+
+.nio-table th, .nio-table td {
+  padding: 0.5em 0.75em;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.nio-table th {
+  background: var(--canvas);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.nio-table td {
+  color: var(--text-secondary);
+}
+
+.nio-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Horizontal rules */
+.nio-prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1em 0;
+}
+
+/* Task lists (GFM) */
+.nio-prose input[type="checkbox"] {
+  margin-right: 0.5em;
+  accent-color: var(--accent);
+}
+
 /* Scrollbar styling */
 ::-webkit-scrollbar {
   width: 4px;

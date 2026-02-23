@@ -1,4 +1,4 @@
-// ShawnOS Chat - (c) 2026 Shawn Tenam - See /LICENSE
+// NioBot V2 — Chat API route with SSE streaming, usage tracking, and persistence
 
 import { NextRequest } from 'next/server'
 import { validateToken } from '../../../lib/auth'
@@ -6,6 +6,7 @@ import { spawnClaude } from '../../../lib/claude'
 import { getAgent } from '../../../lib/agents'
 import { checkRateLimit, getClientIP } from '../../../lib/rate-limit'
 import { logChatRequest } from '../../../lib/audit'
+import { calculateCost } from '../../../lib/pricing'
 import type { ChatRequest } from '../../../lib/types'
 
 const MAX_MESSAGE_LENGTH = 10_000
@@ -85,6 +86,24 @@ export async function POST(request: NextRequest) {
         },
         onSessionId(id) {
           send(JSON.stringify({ type: 'session', data: id }))
+        },
+        onUsage(usage) {
+          const cost = calculateCost(
+            usage.model || 'claude-opus-4-6',
+            usage.inputTokens,
+            usage.outputTokens
+          )
+          send(JSON.stringify({
+            type: 'usage',
+            data: JSON.stringify({
+              inputTokens: usage.inputTokens,
+              outputTokens: usage.outputTokens,
+              cacheReadTokens: usage.cacheReadTokens,
+              cacheWriteTokens: usage.cacheWriteTokens,
+              cost,
+              model: usage.model,
+            }),
+          }))
         },
         onDone() {
           send(JSON.stringify({ type: 'done', data: '' }))
