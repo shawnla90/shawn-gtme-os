@@ -1,10 +1,16 @@
 import type { Metadata } from 'next'
 import { NioPostPage } from '@shawnos/shared/pages/NioPostPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { getNioBlogSlugs } from '@shawnos/shared/lib/nio-blog'
 import { notFound } from 'next/navigation'
 
 interface NioPostRouteProps {
   params: Promise<{ 'date-slug': string }>
+}
+
+export async function generateStaticParams() {
+  const slugs = getNioBlogSlugs()
+  return slugs.map((slug) => ({ 'date-slug': slug }))
 }
 
 export async function generateMetadata({ params }: NioPostRouteProps): Promise<Metadata> {
@@ -20,11 +26,8 @@ export async function generateMetadata({ params }: NioPostRouteProps): Promise<M
 export default async function NioPostRoute({ params }: NioPostRouteProps) {
   const { 'date-slug': dateSlug } = await params
 
-  // Support legacy slugs and date-based slugs (YYYY-MM-DD)
-  const validLegacyPosts = ['post-zero', 'post-one']
-  const datePattern = /^\d{4}-\d{2}-\d{2}$/
-
-  if (!validLegacyPosts.includes(dateSlug) && !datePattern.test(dateSlug)) {
+  const allSlugs = getNioBlogSlugs()
+  if (!allSlugs.includes(dateSlug)) {
     notFound()
   }
 

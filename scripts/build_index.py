@@ -32,6 +32,7 @@ SKILL_DIRS = [
 ]
 
 PLATFORMS = ["linkedin", "x", "substack", "tiktok", "reddit", "website"]
+FLAT_PLATFORMS = ["nio-log"]  # no drafts/final subdirs — posts live flat in content/{platform}/
 
 # ── Schema ────────────────────────────────────────────────────────────
 
@@ -54,6 +55,7 @@ CREATE TABLE IF NOT EXISTS content (
     structure TEXT,
     source TEXT,
     word_count INTEGER,
+    body TEXT,
     created_at TEXT,
     updated_at TEXT,
     indexed_at TEXT DEFAULT (datetime('now'))
@@ -137,6 +139,50 @@ CREATE TABLE IF NOT EXISTS thumbnails (
     file_size_bytes INTEGER,
     indexed_at TEXT DEFAULT (datetime('now'))
 );
+
+-- Blog generation audit trail (append-only, survives rebuilds)
+CREATE TABLE IF NOT EXISTS blog_generations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL,
+    slug TEXT NOT NULL,
+    model TEXT NOT NULL,
+    input_tokens INTEGER,
+    output_tokens INTEGER,
+    cost_cents REAL,
+    anti_slop_score REAL,
+    anti_slop_violations TEXT,
+    retries INTEGER DEFAULT 0,
+    seo_keyword TEXT,
+    daily_log_date TEXT,
+    generation_time_ms INTEGER,
+    created_at TEXT DEFAULT (datetime('now')),
+    UNIQUE(date, slug)
+);
+
+-- FTS5 for content search (topic overlap, voice matching)
+CREATE VIRTUAL TABLE IF NOT EXISTS content_fts USING fts5(
+    title, body, content=content, content_rowid=rowid
+);
+"""
+
+# FTS5 sync triggers — applied after schema creation
+FTS_TRIGGERS = """
+CREATE TRIGGER IF NOT EXISTS content_fts_insert AFTER INSERT ON content BEGIN
+    INSERT INTO content_fts(rowid, title, body)
+    VALUES (new.rowid, new.title, new.body);
+END;
+
+CREATE TRIGGER IF NOT EXISTS content_fts_delete AFTER DELETE ON content BEGIN
+    INSERT INTO content_fts(content_fts, rowid, title, body)
+    VALUES ('delete', old.rowid, old.title, old.body);
+END;
+
+CREATE TRIGGER IF NOT EXISTS content_fts_update AFTER UPDATE ON content BEGIN
+    INSERT INTO content_fts(content_fts, rowid, title, body)
+    VALUES ('delete', old.rowid, old.title, old.body);
+    INSERT INTO content_fts(rowid, title, body)
+    VALUES (new.rowid, new.title, new.body);
+END;
 """
 
 # ── Helpers ───────────────────────────────────────────────────────────
@@ -269,6 +315,11 @@ def parse_content_file(filepath, platform, stage):
     created = get_git_date(rel_path)
     updated = created  # same query — git log -1 gives latest
 
+    # Extract body (strip frontmatter)
+    body = re.sub(r"^---.*?---\s*", "", text, count=1, flags=re.DOTALL).strip()
+    # Also strip blockquote metadata header if present
+    body = re.sub(r"^(>\s*\*\*.+\n)+", "", body).strip()
+
     return {
         "file_path": rel_path,
         "platform": platform,
@@ -286,6 +337,7 @@ def parse_content_file(filepath, platform, stage):
         "structure": meta.get("structure"),
         "source": meta.get("source"),
         "word_count": count_words(filepath),
+        "body": body,
         "created_at": created,
         "updated_at": updated,
     }
@@ -327,6 +379,22 @@ def scan_content():
                 item = parse_content_file(f, platform, "final")
                 if item:
                     items.append(item)
+
+    # Flat platforms (no drafts/final subdirs — posts live directly in content/{platform}/)
+    for platform in FLAT_PLATFORMS:
+        platform_dir = CONTENT_DIR / platform
+        if not platform_dir.exists():
+            continue
+        for f in sorted(platform_dir.iterdir()):
+            if not f.is_file():
+                continue
+            if f.name.startswith(("_", ".", "README")):
+                continue
+            if f.suffix not in (".md", ".txt"):
+                continue
+            item = parse_content_file(f, platform, "final")
+            if item:
+                items.append(item)
 
     return items
 
@@ -880,16 +948,20 @@ def detect_explicit_links(db):
 def init_db():
     """Create or recreate the database with schema.
 
-    Preserves the sessions table across rebuilds (append-only history).
+    Preserves append-only tables (sessions, blog_generations) across rebuilds.
     Only the derived tables are dropped and recreated each run.
     """
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     db = sqlite3.connect(str(DB_PATH))
 
-    # Drop only the derived tables — sessions is append-only and must survive rebuilds
+    # Drop only the derived tables — sessions + blog_generations are append-only
     db.executescript("""
         DROP TABLE IF EXISTS content_links;
+        DROP TRIGGER IF EXISTS content_fts_insert;
+        DROP TRIGGER IF EXISTS content_fts_delete;
+        DROP TRIGGER IF EXISTS content_fts_update;
+        DROP TABLE IF EXISTS content_fts;
         DROP TABLE IF EXISTS content;
         DROP TABLE IF EXISTS daily_logs;
         DROP TABLE IF EXISTS skills;
@@ -898,8 +970,10 @@ def init_db():
         DROP TABLE IF EXISTS thumbnails;
     """)
 
-    # Recreate all tables (sessions uses IF NOT EXISTS, so it's left intact)
+    # Recreate all tables (sessions + blog_generations use IF NOT EXISTS)
     db.executescript(SCHEMA)
+    # Apply FTS5 sync triggers
+    db.executescript(FTS_TRIGGERS)
     return db
 
 
@@ -910,15 +984,15 @@ def insert_content(db, items):
             INSERT OR REPLACE INTO content
             (file_path, platform, stage, title, slug, date, pillar, arc, series,
              series_position, status_text, energy, cta, structure, source,
-             word_count, created_at, updated_at)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+             word_count, body, created_at, updated_at)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (
             item["file_path"], item["platform"], item["stage"],
             item["title"], item["slug"], item["date"],
             item["pillar"], item["arc"], item["series"],
             item["series_position"], item["status_text"],
             item["energy"], item["cta"], item["structure"],
-            item["source"], item["word_count"],
+            item["source"], item["word_count"], item.get("body"),
             item["created_at"], item["updated_at"],
         ))
     db.commit()

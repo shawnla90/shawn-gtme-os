@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { NioTerminalPage } from '@shawnos/shared/pages/NioTerminalPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { getAllNioBlogPosts } from '@shawnos/shared/lib/nio-blog'
 
 export const metadata: Metadata = {
   title: 'nio.terminal - AI Development Log',
@@ -41,15 +42,17 @@ export const metadata: Metadata = {
 }
 
 export default function NioTerminalRoute() {
+  const posts = getAllNioBlogPosts()
+
   return (
     <>
-      <BreadcrumbSchema 
+      <BreadcrumbSchema
         items={[
           { name: 'Vitals', url: 'https://shawnos.ai/vitals' },
           { name: 'nio.terminal', url: 'https://shawnos.ai/vitals/nio-terminal' }
-        ]} 
+        ]}
       />
-      <NioTerminalPage />
+      <NioTerminalPage posts={posts} />
     </>
   )
 }

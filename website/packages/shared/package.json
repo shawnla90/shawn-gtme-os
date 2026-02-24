@@ -32,6 +32,7 @@
     "./lib/costs.server": "./lib/costs.server.ts",
     "./lib/crews": "./lib/crews.ts",
     "./lib/logs": "./lib/logs.ts",
+    "./lib/nio-blog": "./lib/nio-blog.ts",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {
