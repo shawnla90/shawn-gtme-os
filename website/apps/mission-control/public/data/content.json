@@ -1,38 +1,38 @@
 {
-  "generated": "2026-02-23T05:00:06.000Z",
+  "generated": "2026-02-24T05:00:05.000Z",
   "totals": {
-    "total_content": 88,
-    "total_drafts": 56,
+    "total_content": 90,
+    "total_drafts": 58,
     "total_final": 32,
-    "total_words": 57447,
+    "total_words": 59201,
     "platforms_active": 5,
-    "cross_platform_groups": 23,
+    "cross_platform_groups": 24,
     "series_count": 0
   },
   "pipeline": {
     "linkedin": {
-      "draft": 23,
+      "draft": 24,
       "final": 12,
-      "total": 35,
-      "words": 23415
+      "total": 36,
+      "words": 23957
     },
     "substack": {
       "draft": 7,
       "final": 4,
       "total": 11,
-      "words": 13484
+      "words": 13742
     },
     "x": {
-      "draft": 23,
+      "draft": 24,
       "final": 9,
-      "total": 32,
-      "words": 11569
+      "total": 33,
+      "words": 11739
     },
     "website": {
       "draft": 1,
       "final": 7,
       "total": 8,
-      "words": 6537
+      "words": 7321
     },
     "reddit": {
       "draft": 2,
@@ -61,7 +61,7 @@
       "stage": "draft",
       "pillar": null,
       "arc": null,
-      "word_count": 1075,
+      "word_count": 1333,
       "file_path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md"
     },
     {
@@ -74,6 +74,39 @@
       "arc": null,
       "word_count": 259,
       "file_path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "openclaw honest opinion",
+      "slug": "openclaw-honest-opinion",
+      "date": "2026-02-23",
+      "stage": "draft",
+      "pillar": "building-sharing + skill-system-shares",
+      "arc": null,
+      "word_count": 542,
+      "file_path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md"
+    },
+    {
+      "platform": "website",
+      "title": "How to Set Up Your Own AI Assistant Through Claude Code",
+      "slug": "how-to-setup-your-own-ai-assistant",
+      "date": "2026-02-23",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 2261,
+      "file_path": "content/website/final/how-to-setup-your-own-ai-assistant.md"
+    },
+    {
+      "platform": "x",
+      "title": "openclaw honest opinion",
+      "slug": "openclaw-honest-opinion",
+      "date": "2026-02-23",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 170,
+      "file_path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md"
     },
     {
       "platform": "linkedin",
@@ -118,17 +151,6 @@
       "arc": null,
       "word_count": 858,
       "file_path": "content/website/final/content-cluster-breadcrumbs.md"
-    },
-    {
-      "platform": "website",
-      "title": "How to Set Up Your Own AI Assistant Through Claude Code",
-      "slug": "how-to-setup-your-own-ai-assistant",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1477,
-      "file_path": "content/website/final/how-to-setup-your-own-ai-assistant.md"
     },
     {
       "platform": "website",
@@ -569,28 +591,6 @@
       "arc": null,
       "word_count": 381,
       "file_path": "content/x/drafts/2026-02-11_identity-not-tools.md"
-    },
-    {
-      "platform": "x",
-      "title": "substack identity crosspromo",
-      "slug": "substack-identity-crosspromo",
-      "date": "2026-02-11",
-      "stage": "draft",
-      "pillar": "building & sharing",
-      "arc": null,
-      "word_count": 55,
-      "file_path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md"
-    },
-    {
-      "platform": "x",
-      "title": "cursor tip plan mode",
-      "slug": "cursor-tip-plan-mode",
-      "date": "2026-02-11",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 62,
-      "file_path": "content/x/final/2026-02-11_cursor-tip-plan-mode.txt"
     }
   ],
   "series": [],
@@ -598,6 +598,18 @@
     {
       "date": "2026-02-25",
       "slug": "how-to-ai-assistant-claude-code",
+      "platforms": [
+        "linkedin",
+        "x"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 2
+    },
+    {
+      "date": "2026-02-23",
+      "slug": "openclaw-honest-opinion",
       "platforms": [
         "linkedin",
         "x"
@@ -875,6 +887,14 @@
     }
   ],
   "dailyStats": [
+    {
+      "date": "2026-02-23",
+      "grade": "D",
+      "score": 131,
+      "words": 9395,
+      "shipped": 9,
+      "cost": 0.0
+    },
     {
       "date": "2026-02-22",
       "grade": "S+",

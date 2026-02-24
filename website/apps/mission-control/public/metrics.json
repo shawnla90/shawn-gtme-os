@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-23T05:00:06.000Z",
+  "generated": "2026-02-24T05:00:05.000Z",
   "system": {
     "status": "degraded",
     "uptime": "live",
@@ -46,6 +46,20 @@
       "pillar": "Building & Sharing"
     },
     {
+      "type": "linkedin",
+      "title": "openclaw honest opinion",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": "building-sharing + skill-system-shares"
+    },
+    {
+      "type": "x",
+      "title": "openclaw honest opinion",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": null
+    },
+    {
       "type": "substack",
       "title": "recursive drift",
       "status": "draft",
@@ -79,26 +93,12 @@
       "status": "draft",
       "date": "2026-02-17",
       "pillar": null
-    },
-    {
-      "type": "substack",
-      "title": "OS.AI Labs, Post 4 -- The Cursor Discovery",
-      "status": "draft",
-      "date": "2026-02-17",
-      "pillar": null
-    },
-    {
-      "type": "x",
-      "title": "Build Your Own OS -- X Thread Cross-Promo",
-      "status": "draft",
-      "date": "2026-02-17",
-      "pillar": null
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
     "teamMembers": 4,
-    "draftsTracked": 56
+    "draftsTracked": 58
   }
 }
