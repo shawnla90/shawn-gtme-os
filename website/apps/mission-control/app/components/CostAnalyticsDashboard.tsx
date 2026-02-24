@@ -15,7 +15,6 @@ const MODEL_COLORS: Record<string, string> = {
 const SOURCE_COLORS: Record<string, string> = {
   'claude-code': '#10B981',
   cursor: '#8B5CF6',
-  openclaw: '#F59E0B',
   unknown: '#64748B',
 }
 

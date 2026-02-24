@@ -97,8 +97,6 @@ def normalize_source(source: str) -> str:
         return "claude-code"
     if "cursor" in s:
         return "cursor"
-    if "openclaw" in s:
-        return "openclaw"
     return s or "unknown"
 
 

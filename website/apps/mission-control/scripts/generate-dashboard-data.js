@@ -5,25 +5,10 @@ const { execSync } = require('child_process')
 const REPO_ROOT = path.join(__dirname, '../../../..')
 const OUTPUT_DIR = path.join(__dirname, '../public/data')
 
-// Local paths — these exist on the Mac Mini but NOT on Vercel.
-// The script runs locally (or in CI with data pre-committed),
-// and the resulting JSON is committed to the repo so Vercel can serve it.
-const HEARTBEAT_PATH = path.join(
-  process.env.OPENCLAW_WORKSPACE || '/Users/shawnos.ai/.openclaw/workspace',
-  'HEARTBEAT.md'
-)
-const MEMORY_DIR = path.join(
-  process.env.OPENCLAW_WORKSPACE || '/Users/shawnos.ai/.openclaw/workspace',
-  'memory'
-)
-const WORKSPACE_MEMORY = path.join(
-  process.env.OPENCLAW_WORKSPACE || '/Users/shawnos.ai/.openclaw/workspace',
-  'MEMORY.md'
-)
-const CRON_JOBS_PATH = path.join(
-  process.env.OPENCLAW_CRON || '/Users/shawnos.ai/.openclaw/cron',
-  'jobs.json'
-)
+// Local paths — repo-based data sources
+const HEARTBEAT_PATH = path.join(REPO_ROOT, 'data', 'mission-control', 'HEARTBEAT.md')
+const MEMORY_DIR = path.join(REPO_ROOT, 'data', 'nio-memory', 'daily')
+const WORKSPACE_MEMORY = path.join(REPO_ROOT, 'data', 'nio-memory', 'MEMORY.md')
 
 function ensureOutputDir() {
   fs.mkdirSync(OUTPUT_DIR, { recursive: true })
@@ -159,47 +144,7 @@ function generateCalendar() {
     console.error('  Git log failed:', e.message)
   }
 
-  // Cron schedule
-  try {
-    if (fs.existsSync(CRON_JOBS_PATH)) {
-      const jobs = JSON.parse(fs.readFileSync(CRON_JOBS_PATH, 'utf8'))
-      const jobList = Array.isArray(jobs) ? jobs : jobs.jobs || []
-      for (const job of jobList) {
-        if (!job.enabled) continue
-        const nextRun = job.state?.nextRunAtMs
-        const lastRun = job.state?.lastRunAtMs
-        const lastStatus = job.state?.lastStatus
-        const duration = job.state?.lastDurationMs
-          ? `${Math.round(job.state.lastDurationMs / 1000)}s`
-          : undefined
-
-        if (nextRun) {
-          events.push({
-            id: `cron-next-${job.id}`,
-            title: job.name || 'Cron Job',
-            type: 'cron',
-            datetime: new Date(nextRun).toISOString(),
-            status: 'scheduled',
-            description: 'Next run scheduled',
-            metadata: { cronId: job.id, duration }
-          })
-        }
-        if (lastRun) {
-          events.push({
-            id: `cron-last-${job.id}`,
-            title: job.name || 'Cron Job',
-            type: 'cron',
-            datetime: new Date(lastRun).toISOString(),
-            status: lastStatus === 'ok' ? 'completed' : lastStatus === 'error' ? 'failed' : 'completed',
-            description: `Last run: ${lastStatus}`,
-            metadata: { cronId: job.id, duration }
-          })
-        }
-      }
-    }
-  } catch (e) {
-    console.error('  Cron schedule scan failed:', e.message)
-  }
+  // Crons are now managed via launchd, not tracked here
 
   events.sort((a, b) => new Date(b.datetime).getTime() - new Date(a.datetime).getTime())
 
@@ -298,38 +243,7 @@ function generateMemories() {
 // ─── Team ───────────────────────────────────────────────────────────────────
 
 function generateTeam() {
-  let cronJobs = []
-  try {
-    if (fs.existsSync(CRON_JOBS_PATH)) {
-      const jobs = JSON.parse(fs.readFileSync(CRON_JOBS_PATH, 'utf8'))
-      cronJobs = Array.isArray(jobs) ? jobs : jobs.jobs || []
-    }
-  } catch (e) {
-    console.error('  Cron jobs read failed:', e.message)
-  }
-
-  const getModelCronStats = (modelMatch) => {
-    const jobs = cronJobs.filter(j => {
-      const m = j.payload?.model || 'default'
-      return m.includes(modelMatch)
-    })
-    const okJobs = jobs.filter(j => j.state?.lastStatus === 'ok')
-    const totalDuration = jobs.reduce((sum, j) => sum + (j.state?.lastDurationMs || 0), 0)
-    return {
-      assignedCrons: jobs.length,
-      activeCrons: jobs.filter(j => j.enabled).length,
-      successCount: okJobs.length,
-      totalJobs: jobs.length,
-      avgDuration: jobs.length > 0 ? `${(totalDuration / jobs.length / 1000).toFixed(1)}s` : 'n/a',
-      jobNames: jobs.map(j => j.name).filter(Boolean)
-    }
-  }
-
-  const sonnetCrons = getModelCronStats('sonnet')
-  const defaultCrons = cronJobs.filter(j => !j.payload?.model || j.payload.model.includes('sonnet'))
-  const ollamaCrons = getModelCronStats('ollama')
-  const opusCrons = getModelCronStats('opus')
-
+  // Crons are now managed via launchd, team stats are static
   const members = [
     {
       id: 'nio',
@@ -342,12 +256,12 @@ function generateTeam() {
       currentAssignment: 'Handling all conversations and agent coordination',
       skills: ['Chat', 'WhatsApp', 'Discord', 'Orchestration', 'Memory Management'],
       level: 6,
-      experience: sonnetCrons.successCount * 100,
+      experience: 600,
       performance: {
-        tasksCompleted: sonnetCrons.successCount,
-        assignedCrons: defaultCrons.length,
-        successRate: sonnetCrons.totalJobs > 0 ? Math.round((sonnetCrons.successCount / sonnetCrons.totalJobs) * 100) : 100,
-        avgResponseTime: sonnetCrons.avgDuration,
+        tasksCompleted: 0,
+        assignedCrons: 0,
+        successRate: 100,
+        avgResponseTime: 'n/a',
         cost: 'API pay-per-use'
       }
     },
@@ -358,16 +272,16 @@ function generateTeam() {
       model: 'qwen2.5:14b',
       provider: 'Ollama (local)',
       specialization: 'High-frequency cron jobs — commit tracking, RSS, mission control, status updates',
-      status: ollamaCrons.activeCrons > 0 ? 'active' : 'idle',
-      currentAssignment: ollamaCrons.jobNames.join(', ') || 'Awaiting cron schedule',
+      status: 'active',
+      currentAssignment: 'launchd-managed cron jobs',
       skills: ['Commit Tracking', 'RSS Monitoring', 'Mission Control Updates', 'Status Reports'],
       level: 4,
-      experience: ollamaCrons.successCount * 50,
+      experience: 400,
       performance: {
-        tasksCompleted: ollamaCrons.successCount,
-        assignedCrons: ollamaCrons.assignedCrons,
-        successRate: ollamaCrons.totalJobs > 0 ? Math.round((ollamaCrons.successCount / ollamaCrons.totalJobs) * 100) : 100,
-        avgResponseTime: ollamaCrons.avgDuration,
+        tasksCompleted: 0,
+        assignedCrons: 0,
+        successRate: 100,
+        avgResponseTime: 'n/a',
         cost: 'FREE (local)'
       }
     },
@@ -378,16 +292,16 @@ function generateTeam() {
       model: 'claude-opus-4-20250514',
       provider: 'Anthropic API',
       specialization: 'Content creation — blog posts, Substack essays, LinkedIn, deep thinking',
-      status: opusCrons.activeCrons > 0 ? 'active' : 'standby',
-      currentAssignment: opusCrons.jobNames.join(', ') || 'On-demand content creation',
+      status: 'active',
+      currentAssignment: 'Daily blog generation via launchd cron',
       skills: ['Blog Writing', 'Substack Essays', 'LinkedIn Posts', 'Deep Analysis', 'Voice DNA'],
       level: 7,
-      experience: opusCrons.successCount * 200,
+      experience: 700,
       performance: {
-        tasksCompleted: opusCrons.successCount,
-        assignedCrons: opusCrons.assignedCrons,
-        successRate: opusCrons.totalJobs > 0 ? Math.round((opusCrons.successCount / opusCrons.totalJobs) * 100) : 100,
-        avgResponseTime: opusCrons.avgDuration,
+        tasksCompleted: 0,
+        assignedCrons: 0,
+        successRate: 100,
+        avgResponseTime: 'n/a',
         cost: 'API pay-per-use (premium)'
       }
     },

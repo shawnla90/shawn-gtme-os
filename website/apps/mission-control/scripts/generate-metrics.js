@@ -76,8 +76,8 @@ function generateMetrics() {
     events: []
   }
 
-  const workspaceRoot = process.env.OPENCLAW_WORKSPACE || '/Users/shawnos.ai/.openclaw/workspace'
-  const memoryDir = path.join(workspaceRoot, 'memory')
+  const repoRoot = path.join(__dirname, '../../../..')
+  const memoryDir = path.join(repoRoot, 'data', 'nio-memory', 'daily')
   const memoryFiles = fs.existsSync(memoryDir)
     ? fs.readdirSync(memoryDir).filter((f) => f.endsWith('.md')).length
     : 0

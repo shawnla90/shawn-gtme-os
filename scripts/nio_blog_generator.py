@@ -31,8 +31,8 @@ SOUL_PATH = REPO_ROOT / "website" / "apps" / "nio-chat" / "souls" / "nio-soul.md
 WRITER_SOUL_PATH = REPO_ROOT / "website" / "apps" / "nio-chat" / "souls" / "writer-soul.md"
 ANTI_SLOP_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "anti-slop.md"
 CORE_VOICE_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "core-voice.md"
-CANONICAL_SOUL_PATH = Path.home() / ".openclaw" / "workspace" / "SOUL.md"
-SEO_BRIEF_PATH = Path.home() / ".openclaw" / "workspace" / "seo" / "daily-brief.json"
+CANONICAL_SOUL_PATH = REPO_ROOT / "website" / "apps" / "nio-chat" / "souls" / "SOUL.md"
+SEO_BRIEF_PATH = REPO_ROOT / "data" / "seo" / "daily-brief.json"
 CLAUDE_CLI = "/opt/homebrew/bin/claude"
 
 # ── Anti-Slop Patterns ───────────────────────────────────────────────

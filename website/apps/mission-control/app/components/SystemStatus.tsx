@@ -14,22 +14,6 @@ interface SystemMetrics {
   model: string
 }
 
-type OpenClawStatus = {
-  updatedAt: string
-  version: string
-  channel: string
-  gatewayMode?: string
-  defaultModel?: string
-  activeSession?: {
-    key: string
-    kind: string
-    model: string
-    percentUsed?: number | null
-    totalTokens?: number | null
-    contextTokens?: number | null
-  }
-}
-
 interface CronHealth {
   id: string
   name: string
@@ -68,7 +52,6 @@ export default function SystemStatus() {
   const [metrics, setMetrics] = useState<SystemMetrics>(DEFAULT_METRICS)
   const [cronHealth, setCronHealth] = useState<CronHealth[]>([])
   const [incidents, setIncidents] = useState<Incident[]>([])
-  const [openclaw, setOpenclaw] = useState<OpenClawStatus | null>(null)
   const [currentTime, setCurrentTime] = useState(new Date())
 
   const fetchMetrics = async () => {
@@ -80,22 +63,15 @@ export default function SystemStatus() {
       }
       setCronHealth(data.cronHealth || [])
       setIncidents(data.incidents || [])
-
-      const oc = await fetch('/api/openclaw-status').then((r) => r.json())
-      if (oc?.success && oc?.data) {
-        setOpenclaw(oc.data)
-      }
     } catch (error) {
       console.error('Failed to fetch system metrics:', error)
-      // Set degraded status on fetch error
       setMetrics(prev => ({ ...prev, status: 'degraded' as 'degraded' }))
     }
   }
 
   useEffect(() => {
     fetchMetrics()
-    // Reduced refresh interval for more real-time updates
-    const interval = setInterval(fetchMetrics, 2 * 60 * 1000) // Every 2 minutes
+    const interval = setInterval(fetchMetrics, 2 * 60 * 1000)
     return () => clearInterval(interval)
   }, [])
 
@@ -185,43 +161,6 @@ export default function SystemStatus() {
             <span className="text-green-400 font-mono">{metrics.sessionCost}</span>
           </div>
         </div>
-
-        <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-          <div className="flex items-center gap-2">
-            <span className="text-gray-300">OpenClaw:</span>
-            <span className="text-green-400 font-mono">{openclaw?.version || 'loading...'}</span>
-            {openclaw && (
-              <div className="status-indicator status-active ml-1" title="OpenClaw Active"></div>
-            )}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="text-gray-300">Default model:</span>
-            <span className="text-green-400 font-mono">{openclaw?.defaultModel || '...'}</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="text-gray-300">Session:</span>
-            <span className="text-green-400 font-mono">
-              {openclaw?.activeSession
-                ? `${openclaw.activeSession.model}${
-                    openclaw.activeSession.percentUsed != null ? ` (${openclaw.activeSession.percentUsed}%)` : ''
-                  }`
-                : '...'}
-            </span>
-            {openclaw?.activeSession?.percentUsed != null && openclaw.activeSession.percentUsed > 80 && (
-              <span className="text-yellow-400 text-xs">HIGH</span>
-            )}
-          </div>
-        </div>
-
-        <div className="mt-2 flex items-center justify-between text-xs text-gray-500">
-          <span>status snapshot refreshes every 2 hours. last updated {openclaw?.updatedAt ? new Date(openclaw.updatedAt).toLocaleString() : '...'}</span>
-          <div className="flex items-center gap-2">
-            <div className="status-indicator status-active"></div>
-            <span className="text-green-500">LIVE</span>
-          </div>
-        </div>
       </div>
 
       <div className="mt-6 pt-4 border-t border-green-800">
@@ -239,7 +178,7 @@ export default function SystemStatus() {
               {job.name}
             </span>
           ))}
-          {cronHealth.length === 0 && <span className="text-xs text-gray-500">No cron data</span>}
+          {cronHealth.length === 0 && <span className="text-xs text-gray-500">Crons managed via launchd</span>}
         </div>
       </div>
 
@@ -248,20 +187,19 @@ export default function SystemStatus() {
           <AlertTriangle className="w-4 h-4 text-yellow-400" />
           <h3 className="text-sm font-semibold text-green-300">System Health</h3>
         </div>
-        
-        {/* System Health Summary */}
+
         <div className="mb-3 p-2 bg-gray-800 rounded text-xs">
           <div className="flex items-center justify-between mb-1">
             <span className="text-gray-300">Overall System Health:</span>
             <span className={`font-semibold ${
-              incidents.length === 0 ? 'text-green-400' : 
+              incidents.length === 0 ? 'text-green-400' :
               incidents.filter(i => i.severity === 'red').length > 0 ? 'text-red-400' : 'text-yellow-400'
             }`}>
-              {incidents.length === 0 ? 'OPTIMAL' : 
+              {incidents.length === 0 ? 'OPTIMAL' :
                incidents.filter(i => i.severity === 'red').length > 0 ? 'DEGRADED' : 'WARNING'}
             </span>
           </div>
-          
+
           <div className="grid grid-cols-3 gap-2 text-center">
             <div>
               <div className="text-green-400 font-bold">{cronHealth.filter(j => j.status === 'green').length}</div>
@@ -278,10 +216,9 @@ export default function SystemStatus() {
           </div>
         </div>
 
-        {/* Incidents */}
         <h4 className="text-xs font-semibold text-green-300 mb-2">Active Incidents</h4>
         {incidents.length === 0 ? (
-          <p className="text-xs text-green-400">✅ No active incidents - all systems operational</p>
+          <p className="text-xs text-green-400">No active incidents - all systems operational</p>
         ) : (
           <ul className="space-y-1">
             {incidents.map((incident) => (

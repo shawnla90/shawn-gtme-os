@@ -1,85 +1,5 @@
 import { NextResponse } from 'next/server'
 import fs from 'fs'
-import path from 'path'
-
-interface CronHealth {
-  id: string
-  name: string
-  status: 'green' | 'yellow' | 'red'
-  lastStatus: 'ok' | 'error' | 'unknown'
-  consecutiveErrors: number
-  model: string
-  lastRunAt?: string
-}
-
-interface Incident {
-  id: string
-  jobName: string
-  severity: 'yellow' | 'red'
-  message: string
-  timestamp?: string
-}
-
-function getCronJobsPath() {
-  const cronRoot = process.env.OPENCLAW_CRON || '/Users/shawnos.ai/.openclaw/cron'
-  return path.join(cronRoot, 'jobs.json')
-}
-
-function getCronHealth(): { health: CronHealth[]; incidents: Incident[] } {
-  try {
-    const cronPath = getCronJobsPath()
-    if (!fs.existsSync(cronPath)) {
-      return { health: [], incidents: [] }
-    }
-
-    const raw = JSON.parse(fs.readFileSync(cronPath, 'utf8'))
-    const jobs = Array.isArray(raw) ? raw : raw.jobs || []
-
-    const health: CronHealth[] = []
-    const incidents: Incident[] = []
-
-    for (const job of jobs) {
-      if (!job.enabled) continue
-
-      const state = job.state || {}
-      const lastStatus: 'ok' | 'error' | 'unknown' =
-        state.lastStatus === 'ok' ? 'ok' : state.lastStatus === 'error' ? 'error' : 'unknown'
-
-      const consecutiveErrors = Number(state.consecutiveErrors || 0)
-
-      let status: 'green' | 'yellow' | 'red' = 'green'
-      if (lastStatus === 'error' && consecutiveErrors >= 2) status = 'red'
-      else if (lastStatus === 'error' || consecutiveErrors === 1) status = 'yellow'
-
-      const item: CronHealth = {
-        id: job.id,
-        name: job.name || 'Unnamed cron',
-        status,
-        lastStatus,
-        consecutiveErrors,
-        model: job.payload?.model || 'default',
-        lastRunAt: state.lastRunAtMs ? new Date(state.lastRunAtMs).toISOString() : undefined
-      }
-
-      health.push(item)
-
-      if (status !== 'green') {
-        incidents.push({
-          id: `incident-${job.id}`,
-          jobName: item.name,
-          severity: status,
-          message: state.lastError || `Cron returned ${lastStatus}`,
-          timestamp: item.lastRunAt
-        })
-      }
-    }
-
-    return { health, incidents }
-  } catch (error) {
-    console.error('Error reading cron health:', error)
-    return { health: [], incidents: [] }
-  }
-}
 
 // Read real metrics from our tracking systems
 async function getRealMetrics() {
@@ -110,7 +30,7 @@ async function getRealMetrics() {
       commitCount: 25,
       activeSkills: 42,
       memoryFiles: 24,
-      sessionCost: '$3.45',
+      sessionCost: '$0.00',
       model: 'opus-4.6',
       dailyScore: 0,
       grade: 'A',
@@ -126,7 +46,7 @@ async function getRealMetrics() {
       commitCount: 25,
       activeSkills: 42,
       memoryFiles: 24,
-      sessionCost: '$3.45',
+      sessionCost: '$0.00',
       model: 'opus-4.6',
       dailyScore: 0,
       grade: 'A',
@@ -150,13 +70,12 @@ function calculateUptime() {
 
 export async function GET() {
   const metrics = await getRealMetrics()
-  const { health, incidents } = getCronHealth()
 
   return NextResponse.json({
     success: true,
     metrics,
-    cronHealth: health,
-    incidents: incidents.slice(0, 5),
+    cronHealth: [],
+    incidents: [],
     timestamp: new Date().toISOString()
   })
 }

@@ -14,11 +14,6 @@ interface Task {
   sessionId?: string
 }
 
-function getCronJobsPath() {
-  const cronRoot = process.env.OPENCLAW_CRON || '/Users/shawnos.ai/.openclaw/cron'
-  return path.join(cronRoot, 'jobs.json')
-}
-
 function getMetricsData() {
   try {
     const metricsPath = './public/metrics.json'
@@ -31,73 +26,12 @@ function getMetricsData() {
   }
 }
 
-function getMemoryFileCount() {
-  try {
-    const memoryDir = path.join(process.env.OPENCLAW_WORKSPACE_DIR || '/Users/shawnos.ai/.openclaw/workspace', 'memory')
-    if (fs.existsSync(memoryDir)) {
-      return fs.readdirSync(memoryDir).filter(f => f.endsWith('.md')).length
-    }
-    return 0
-  } catch {
-    return 0
-  }
-}
-
 function getCurrentTasks(): Task[] {
   const now = new Date().toISOString()
   const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString()
   const tasks: Task[] = []
 
-  // Get real system data
   const metrics = getMetricsData()
-  const memoryFileCount = getMemoryFileCount()
-  
-  // Check cron job health
-  try {
-    const cronPath = getCronJobsPath()
-    if (fs.existsSync(cronPath)) {
-      const cronData = JSON.parse(fs.readFileSync(cronPath, 'utf8'))
-      const jobs = Array.isArray(cronData) ? cronData : cronData.jobs || []
-      
-      const failedJobs = jobs.filter((job: any) => 
-        job.enabled && 
-        job.state?.lastStatus === 'error' && 
-        (job.state?.consecutiveErrors || 0) >= 2
-      )
-
-      if (failedJobs.length > 0) {
-        tasks.push({
-          id: 'cron-health-critical',
-          title: `Critical: ${failedJobs.length} Cron Jobs Failing`,
-          description: `Failed jobs: ${failedJobs.map((j: any) => j.name || j.id).join(', ')}. Check logs and restart systems as needed.`,
-          assignee: 'nio',
-          status: 'blocked',
-          priority: 'high',
-          createdAt: yesterday,
-          updatedAt: now,
-          sessionId: 'system-generated'
-        })
-      }
-
-      const enabledJobs = jobs.filter((job: any) => job.enabled).length
-      const disabledJobs = jobs.filter((job: any) => !job.enabled).length
-      
-      if (disabledJobs > enabledJobs) {
-        tasks.push({
-          id: 'cron-disabled-review',
-          title: 'Review Disabled Cron Jobs',
-          description: `${disabledJobs} disabled vs ${enabledJobs} enabled jobs. Review disabled jobs for potential re-enablement.`,
-          assignee: 'shawn',
-          status: 'todo',
-          priority: 'medium',
-          createdAt: yesterday,
-          updatedAt: now
-        })
-      }
-    }
-  } catch (error) {
-    console.error('Error reading cron data:', error)
-  }
 
   // Check metrics and drafts
   if (metrics) {
@@ -109,20 +43,6 @@ function getCurrentTasks(): Task[] {
         assignee: 'shawn',
         status: 'todo',
         priority: 'high',
-        createdAt: yesterday,
-        updatedAt: now
-      })
-    }
-
-    // Check memory file growth
-    if (memoryFileCount > 7) {
-      tasks.push({
-        id: 'memory-consolidation',
-        title: 'Memory System Consolidation',
-        description: `${memoryFileCount} memory files detected. Review and consolidate key insights to MEMORY.md.`,
-        assignee: 'nio',
-        status: 'todo',
-        priority: 'medium',
         createdAt: yesterday,
         updatedAt: now
       })
@@ -144,7 +64,7 @@ function getCurrentTasks(): Task[] {
 
   // Add system maintenance tasks
   const dayOfWeek = new Date().getDay()
-  if (dayOfWeek === 0 || dayOfWeek === 6) { // Weekend
+  if (dayOfWeek === 0 || dayOfWeek === 6) {
     tasks.push({
       id: 'weekend-system-review',
       title: 'Weekend System Health Review',
@@ -161,7 +81,7 @@ function getCurrentTasks(): Task[] {
   tasks.push({
     id: 'system-monitoring',
     title: 'System Monitoring & Health',
-    description: 'Continuous monitoring of OpenClaw status, cron jobs, and system metrics. Auto-refreshed every 5 minutes.',
+    description: 'Continuous monitoring of cron jobs and system metrics via launchd. Auto-refreshed every 5 minutes.',
     assignee: 'nio',
     status: 'in_progress',
     priority: 'medium',
@@ -175,7 +95,7 @@ function getCurrentTasks(): Task[] {
 export async function GET() {
   try {
     const tasks = getCurrentTasks()
-    
+
     return NextResponse.json({
       success: true,
       tasks,
