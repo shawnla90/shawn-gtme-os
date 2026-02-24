@@ -9,6 +9,8 @@ data/*
 !data/daily-log/
 !data/progression/
 !data/progression/avatars/
+!data/seo/
+!data/nio-memory/
 !data/website-stats.json
 data/daily-log/*.png
 data/daily-log/*.log
