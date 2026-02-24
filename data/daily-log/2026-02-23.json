@@ -1,190 +1,46 @@
 {
   "date": "2026-02-23",
-  "generated_at": "2026-02-24T05:00:02.144782+00:00",
+  "generated_at": "2026-02-24T05:00:05.597046+00:00",
   "version": 4,
   "accomplishments": [
     {
-      "type": "website_route",
-      "title": "nio-chat api dna route",
-      "path": "website/apps/nio-chat/app/api/dna/route.ts",
+      "type": "x_draft",
+      "title": "shawnos threads",
+      "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
       "source": "auto",
-      "timestamp": "23:48",
-      "words": 130,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/nio-chat/app/globals.css",
-      "source": "auto",
-      "timestamp": "23:59",
-      "words": 667,
+      "timestamp": "19:07",
+      "words": 594,
       "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "nio-chat api dna bootstrap route",
-      "path": "website/apps/nio-chat/app/api/dna/bootstrap/route.ts",
-      "source": "auto",
-      "timestamp": "23:48",
-      "words": 179,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "nio-chat api dna xp route",
-      "path": "website/apps/nio-chat/app/api/dna/xp/route.ts",
-      "source": "auto",
-      "timestamp": "23:48",
-      "words": 309,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "nio-chat api memory route",
-      "path": "website/apps/nio-chat/app/api/memory/route.ts",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 384,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos lab nio-dna page",
-      "path": "website/apps/shawnos/app/lab/nio-dna/page.tsx",
-      "source": "auto",
-      "timestamp": "17:02",
-      "words": 177,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "nio-chat api dna memory route",
-      "path": "website/apps/nio-chat/app/api/dna/memory/route.ts",
-      "source": "auto",
-      "timestamp": "23:48",
-      "words": 290,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "nio-chat api chat route",
-      "path": "website/apps/nio-chat/app/api/chat/route.ts",
-      "source": "auto",
-      "timestamp": "00:01",
-      "words": 780,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioTerminalPage",
-      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 911,
-      "value_score": 5,
-      "shipped": true
+      "shipped": false
     },
     {
       "type": "linkedin_draft",
-      "title": "openclaw honest opinion",
-      "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
+      "title": "shawnos anti lead magnet",
+      "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
       "source": "auto",
-      "timestamp": "17:55",
-      "words": 542,
+      "timestamp": "19:05",
+      "words": 765,
       "value_score": 2,
       "shipped": false
     },
     {
-      "type": "x_draft",
-      "title": "openclaw honest opinion",
-      "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
-      "source": "auto",
-      "timestamp": "18:14",
-      "words": 170,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "config_file",
-      "title": "video package",
-      "path": "website/apps/video/package.json",
+      "type": "partner_workflow",
+      "title": "partner hubspot setup guide",
+      "path": "clients/partner/[redacted]/workflows/hubspot-setup-guide.md",
       "source": "auto-mtime",
-      "timestamp": "23:59",
+      "timestamp": "13:58",
+      "words": 1669,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "code_infra",
-      "title": "seo_keyword_pipeline",
-      "path": "scripts/seo_keyword_pipeline.py",
+      "type": "complex_script",
+      "title": "shoptalk_csv",
+      "path": "scripts/shoptalk_csv.py",
       "source": "auto-mtime",
-      "timestamp": "22:09",
-      "words": 935,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "substack_draft",
-      "title": "how to setup ai assistant",
-      "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 1333,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals nio-terminal date-slug page",
-      "path": "website/apps/shawnos/app/vitals/nio-terminal/[date-slug]/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 208,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "phase-report",
-      "path": ".claude/skills/phase-report/SKILL.md",
-      "source": "auto-mtime",
-      "timestamp": "22:44",
-      "words": 515,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioPostPage",
-      "path": "website/packages/shared/pages/NioPostPage.tsx",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 897,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "code_infra",
-      "title": "x_auto_poster",
-      "path": "scripts/x_auto_poster.py",
-      "source": "auto-mtime",
-      "timestamp": "22:30",
-      "words": 968,
+      "timestamp": "17:01",
+      "words": 4304,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -192,94 +48,20 @@
   ],
   "commits": [
     {
-      "hash": "0ebc4d8",
+      "hash": "75ea397",
       "message": "chore: daily tracker scan 2026-02-22",
       "type": "chore",
       "score": 1,
-      "files_changed": 6,
-      "lines_added": 803,
-      "lines_removed": 941,
-      "lines_net": -138,
+      "files_changed": 7,
+      "lines_added": 631,
+      "lines_removed": 562,
+      "lines_net": 69,
       "directories": [
         "data/",
         "docs/",
         "website/"
       ],
       "timestamp": "00:00"
-    },
-    {
-      "hash": "8be4be2",
-      "message": "feat: NioBot V3 \u2014 DNA system + UI/UX fix + chime cleanup",
-      "type": "feature_build",
-      "score": 40,
-      "files_changed": 27,
-      "lines_added": 1483,
-      "lines_removed": 106,
-      "lines_net": 1377,
-      "directories": [
-        "website/"
-      ],
-      "timestamp": "00:08"
-    },
-    {
-      "hash": "572857b",
-      "message": "docs: update IP registry + README for NioBot V3 \u2014 DNA, chimes, evolution, PWA",
-      "type": "feature_build",
-      "score": 25,
-      "files_changed": 3,
-      "lines_added": 17,
-      "lines_removed": 8,
-      "lines_net": 9,
-      "directories": [
-        "IP_REGISTRY.md/",
-        "README.md/",
-        "website/"
-      ],
-      "timestamp": "00:20"
-    },
-    {
-      "hash": "5e02ffc",
-      "message": "feat: nio.log 2026-02-23 \u2014 THE GHOST IN THE DATABASE + NIO-STATE.md",
-      "type": "feature_build",
-      "score": 25,
-      "files_changed": 3,
-      "lines_added": 153,
-      "lines_removed": 48,
-      "lines_net": 105,
-      "directories": [
-        ".claude/",
-        "website/"
-      ],
-      "timestamp": "01:30"
-    },
-    {
-      "hash": "a5cb5c9",
-      "message": "feat: Nio DNA Lab \u2014 interactive LinkedIn showcase page at /lab/nio-dna",
-      "type": "feature_build",
-      "score": 25,
-      "files_changed": 2,
-      "lines_added": 1250,
-      "lines_removed": 0,
-      "lines_net": 1250,
-      "directories": [
-        "website/"
-      ],
-      "timestamp": "18:15"
-    },
-    {
-      "hash": "fec96b1",
-      "message": "feat: Wave 3 \u2014 Command Center with commits, leveling, projects, showcase (17 new files)",
-      "type": "infra_build",
-      "score": 15,
-      "files_changed": 23,
-      "lines_added": 3223,
-      "lines_removed": 0,
-      "lines_net": 3223,
-      "directories": [
-        ".gitignore/",
-        "ShawnOSCommandCenter/"
-      ],
-      "timestamp": "23:26"
     }
   ],
   "pipeline": {
@@ -440,10 +222,24 @@
       },
       {
         "platform": "linkedin",
-        "title": "openclaw honest opinion",
-        "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
         "target_date": "2026-02-23",
-        "words": 542
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
       },
       {
         "platform": "linkedin",
@@ -451,6 +247,13 @@
         "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
         "target_date": "2026-02-25",
         "words": 437
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
       },
       {
         "platform": "x",
@@ -608,10 +411,24 @@
       },
       {
         "platform": "x",
-        "title": "openclaw honest opinion",
-        "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
         "target_date": "2026-02-23",
-        "words": 170
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
       },
       {
         "platform": "x",
@@ -619,6 +436,13 @@
         "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
         "target_date": "2026-02-25",
         "words": 259
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
       },
       {
         "platform": "substack",
@@ -664,10 +488,17 @@
       },
       {
         "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1543
+      },
+      {
+        "platform": "substack",
         "title": "how to setup ai assistant",
         "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
         "target_date": "2026-02-25",
-        "words": 1333
+        "words": 1075
       },
       {
         "platform": "reddit",
@@ -687,148 +518,173 @@
     "finalized_today": []
   },
   "todos": [],
-  "token_usage": [],
+  "token_usage": [
+    {
+      "session_id": "10a83c18-2962-4550-926f-5142781f9fbf",
+      "input_tokens": 32,
+      "output_tokens": 4300,
+      "cache_read_tokens": 724210,
+      "cache_write_tokens": 79197,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 18,
+      "logged_at": "00:00",
+      "cost": 2.8942,
+      "context": "claude-code 18:57"
+    },
+    {
+      "session_id": "271e4c6f-fa3b-45c8-8eb9-07bf82e61569",
+      "input_tokens": 2312,
+      "output_tokens": 1024,
+      "cache_read_tokens": 1680443,
+      "cache_write_tokens": 92200,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 42,
+      "logged_at": "00:00",
+      "cost": 4.3609,
+      "context": "claude-code 20:52"
+    },
+    {
+      "session_id": "5542ec67-07bd-4b07-b112-5dfaefe24cc9",
+      "input_tokens": 91,
+      "output_tokens": 1056,
+      "cache_read_tokens": 4638050,
+      "cache_write_tokens": 118429,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 67,
+      "logged_at": "00:00",
+      "cost": 9.2582,
+      "context": "claude-code 02:38"
+    },
+    {
+      "session_id": "ae1b8a5e-b590-43ad-ab19-915bd7d14cca",
+      "input_tokens": 170,
+      "output_tokens": 3330,
+      "cache_read_tokens": 12075656,
+      "cache_write_tokens": 379899,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 122,
+      "logged_at": "00:00",
+      "cost": 25.4889,
+      "context": "claude-code 00:13"
+    },
+    {
+      "session_id": "ca6ae44b-6e75-4de7-aeb8-e0274c2d2c8a",
+      "input_tokens": 19,
+      "output_tokens": 1144,
+      "cache_read_tokens": 1196066,
+      "cache_write_tokens": 15512,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 19,
+      "logged_at": "00:00",
+      "cost": 2.171,
+      "context": "claude-code 00:02"
+    },
+    {
+      "session_id": "d61b9a52-dea8-4388-afb5-59a7483d3ddf",
+      "input_tokens": 17531,
+      "output_tokens": 116,
+      "cache_read_tokens": 651809,
+      "cache_write_tokens": 53034,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 17,
+      "logged_at": "00:00",
+      "cost": 2.2438,
+      "context": "claude-code 01:57"
+    },
+    {
+      "session_id": "e912bdcd-8613-45ec-9fe5-fc455e1bd6b9",
+      "input_tokens": 11024,
+      "output_tokens": 1074,
+      "cache_read_tokens": 943885,
+      "cache_write_tokens": 35753,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 26,
+      "logged_at": "00:00",
+      "cost": 2.3321,
+      "context": "claude-code 20:48"
+    },
+    {
+      "session_id": "fb1e4d9a-779f-4d4e-81c6-9baddb8d87bd",
+      "input_tokens": 66,
+      "output_tokens": 2197,
+      "cache_read_tokens": 2809279,
+      "cache_write_tokens": 122513,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 50,
+      "logged_at": "00:00",
+      "cost": 6.6768,
+      "context": "claude-code 21:40"
+    }
+  ],
   "stats": {
     "platform_breakdown": {
-      "website": 11,
-      "linkedin": 1,
       "x": 1,
-      "other": 4,
-      "substack": 1
+      "linkedin": 1,
+      "ops": 1,
+      "other": 1
     },
-    "words_in_touched_files": 9395,
-    "pipeline_words": 40692,
+    "words_in_touched_files": 7332,
+    "pipeline_words": 47091,
     "finals_count": 0,
-    "first_activity": "00:01",
-    "last_activity": "23:59",
-    "output_score": 131,
+    "first_activity": "13:58",
+    "last_activity": "19:07",
+    "output_score": 1,
     "letter_grade": "D",
     "score_breakdown": [
       {
         "type": "chore",
         "title": "chore: daily tracker scan 2026-02-22",
         "points": 1
-      },
-      {
-        "type": "feature_build",
-        "title": "feat: NioBot V3 \u2014 DNA system + UI/UX fix + chime cleanup",
-        "points": 40
-      },
-      {
-        "type": "feature_build",
-        "title": "docs: update IP registry + README for NioBot V3 \u2014 DNA, chime",
-        "points": 25
-      },
-      {
-        "type": "feature_build",
-        "title": "feat: nio.log 2026-02-23 \u2014 THE GHOST IN THE DATABASE + NIO-S",
-        "points": 25
-      },
-      {
-        "type": "feature_build",
-        "title": "feat: Nio DNA Lab \u2014 interactive LinkedIn showcase page at /l",
-        "points": 25
-      },
-      {
-        "type": "infra_build",
-        "title": "feat: Wave 3 \u2014 Command Center with commits, leveling, projec",
-        "points": 15
       }
     ],
-    "efficiency_rating": null,
-    "shipped_count": 9,
-    "draft_count": 9,
-    "ship_rate": 0.5,
-    "agent_cost": 0,
-    "cost_per_point": 0.0,
-    "efficiency_ratio": null,
-    "words_today": 9395,
-    "lines_added": 6929,
-    "lines_removed": 1103,
-    "lines_net": 5826,
-    "code_loc": 2741,
-    "content_loc": 186,
-    "data_loc": 4002
+    "efficiency_rating": 0.02,
+    "shipped_count": 0,
+    "draft_count": 4,
+    "ship_rate": 0.0,
+    "agent_cost": 55.43,
+    "cost_per_point": 55.43,
+    "efficiency_ratio": 0.02,
+    "words_today": 7332,
+    "lines_added": 631,
+    "lines_removed": 562,
+    "lines_net": 69,
+    "code_loc": 0,
+    "content_loc": 24,
+    "data_loc": 607
   },
   "git_summary": {
-    "commits_today": 6,
+    "commits_today": 1,
     "files_added": [
-      "ShawnOSCommandCenter/Sources/App/AppState.swift",
-      "ShawnOSCommandCenter/Sources/App/RepoConfig.swift",
-      "ShawnOSCommandCenter/Sources/Models/GitCommit.swift",
-      "ShawnOSCommandCenter/Sources/Models/NioDNA.swift",
-      "ShawnOSCommandCenter/Sources/Models/Project.swift",
-      "ShawnOSCommandCenter/Sources/Stores/FileSystemStore.swift",
-      "ShawnOSCommandCenter/Sources/Stores/GitStore.swift",
-      "ShawnOSCommandCenter/Sources/Stores/NioBotStore.swift",
-      "ShawnOSCommandCenter/Sources/Views/CommitTracker/CommitDetailView.swift",
-      "ShawnOSCommandCenter/Sources/Views/CommitTracker/CommitTrackerView.swift",
-      "ShawnOSCommandCenter/Sources/Views/ContentView.swift",
-      "ShawnOSCommandCenter/Sources/Views/DailyOps/DailyOpsView.swift",
-      "ShawnOSCommandCenter/Sources/Views/DailyOps/RecentFilesView.swift",
-      "ShawnOSCommandCenter/Sources/Views/Leveling/DailyLevelCard.swift",
-      "ShawnOSCommandCenter/Sources/Views/Leveling/LevelingView.swift",
-      "ShawnOSCommandCenter/Sources/Views/Leveling/NioLevelCard.swift",
-      "ShawnOSCommandCenter/Sources/Views/Leveling/WebsiteLevelCard.swift",
-      "ShawnOSCommandCenter/Sources/Views/NioConsole/NioConsoleView.swift",
-      "ShawnOSCommandCenter/Sources/Views/NioConsole/PlansBrowserView.swift",
-      "ShawnOSCommandCenter/Sources/Views/Projects/ProjectDetailView.swift",
-      "ShawnOSCommandCenter/Sources/Views/Projects/ProjectsView.swift",
-      "ShawnOSCommandCenter/Sources/Views/Showcase/ShowcaseView.swift",
-      "website/apps/nio-chat/NIO-STATE.md",
-      "website/apps/nio-chat/app/api/dna/bootstrap/route.ts",
-      "website/apps/nio-chat/app/api/dna/memory/route.ts",
-      "website/apps/nio-chat/app/api/dna/route.ts",
-      "website/apps/nio-chat/app/api/dna/xp/route.ts",
-      "website/apps/nio-chat/lib/db/migrations/003_dna.sql",
-      "website/apps/nio-chat/lib/db/queries/dna.ts",
-      "website/apps/shawnos/app/lab/nio-dna/NioDnaLab.tsx",
-      "website/apps/shawnos/app/lab/nio-dna/page.tsx"
+      "data/daily-log/cost-tracker/2026-02-22.json"
     ],
     "files_modified": [
-      ".claude/context-handoff.md",
-      ".gitignore",
-      "IP_REGISTRY.md",
-      "README.md",
       "data/daily-log/2026-02-22.json",
       "data/progression/profile.json",
       "data/website-stats.json",
       "docs/_generated/skill-manifest.md",
       "website/apps/mission-control/public/data/content.json",
-      "website/apps/mission-control/public/metrics.json",
-      "website/apps/nio-chat/app/api/chat/route.ts",
-      "website/apps/nio-chat/app/api/memory/route.ts",
-      "website/apps/nio-chat/app/components/ChatHeader.tsx",
-      "website/apps/nio-chat/app/components/ChatInterface.tsx",
-      "website/apps/nio-chat/app/components/ChatProvider.tsx",
-      "website/apps/nio-chat/app/components/ChimeProvider.tsx",
-      "website/apps/nio-chat/app/components/EvolutionPanel.tsx",
-      "website/apps/nio-chat/app/components/EvolutionProvider.tsx",
-      "website/apps/nio-chat/app/components/LevelUpNotification.tsx",
-      "website/apps/nio-chat/app/components/MessageBubble.tsx",
-      "website/apps/nio-chat/app/components/MessageList.tsx",
-      "website/apps/nio-chat/app/components/SessionSidebar.tsx",
-      "website/apps/nio-chat/app/components/XPFloat.tsx",
-      "website/apps/nio-chat/app/components/useEvolutionXP.ts",
-      "website/apps/nio-chat/app/globals.css",
-      "website/apps/nio-chat/lib/chime-engine.ts",
-      "website/apps/nio-chat/lib/chime-packs.ts",
-      "website/apps/nio-chat/lib/types.ts",
-      "website/apps/nio-chat/niobot.config.ts",
-      "website/packages/shared/pages/NioTerminalPage.tsx"
+      "website/apps/mission-control/public/metrics.json"
     ],
-    "lines_added_count": 6929,
-    "lines_removed_count": 1103,
-    "lines_net": 5826,
-    "code_loc": 2741,
-    "content_loc": 186,
-    "data_loc": 4002
+    "lines_added_count": 631,
+    "lines_removed_count": 562,
+    "lines_net": 69,
+    "code_loc": 0,
+    "content_loc": 24,
+    "data_loc": 607
   },
   "dev_equivalent": {
-    "net_lines": 5826,
-    "dev_days": 38.8,
-    "cost_estimate": 19400,
-    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 5,826 net lines represent approximately 39 developer-days of output \u2014 what a small team would produce in 2+ month.",
+    "net_lines": 69,
+    "dev_days": 0.5,
+    "cost_estimate": 250,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 69 net lines represent approximately 0 developer-days of output \u2014 what a small team would produce in 0+ week.",
     "assumptions": {
       "lines_per_day": 150,
       "cost_per_day": 500,
@@ -836,19 +692,19 @@
     }
   },
   "cost": {
-    "api_equivalent": 0,
+    "api_equivalent": 55.43,
     "actual_cost": 0.0,
     "pricing_mode": "max"
   },
   "token_efficiency": {
-    "total_tokens": 0,
-    "total_sessions": 0,
-    "tokens_per_point": 0,
-    "tokens_per_commit": 0,
-    "tokens_per_loc": 0,
-    "avg_context_utilization": 0,
+    "total_tokens": 25661421,
+    "total_sessions": 8,
+    "tokens_per_point": 25661421,
+    "tokens_per_commit": 25661421,
+    "tokens_per_loc": 371905,
+    "avg_context_utilization": 1.0,
     "pricing_mode": "max",
-    "api_equivalent_cost": 0,
+    "api_equivalent_cost": 55.43,
     "actual_cost": 0.0
   }
 }
