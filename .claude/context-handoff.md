@@ -1,39 +1,43 @@
 # Context Handoff
-> Generated: 2026-02-23 00:00 | Machine: MacBook | Session: DNA persistence layer + service worker debugging
+> Generated: 2026-02-25 01:30 | Machine: MacBook | Session: Exol Partner Play — Exa MCP contact sourcing
 
 ## What Was Done This Session
-- **Created `website/apps/nio-chat/lib/db/migrations/003_dna.sql`** — `dna_state` table (single-row identity snapshot), `dna_daily_flags` (server-side daily bonus), ALTERed `memory` with tags/importance/FTS5, ALTERed `evolution_history` with context columns, `v_dna_snapshot` and `v_xp_daily_summary` views
-- **Created `website/apps/nio-chat/lib/db/queries/dna.ts`** — Full query layer: `getDNASnapshot()`, `getDNAState()`, `awardXP()` (server-authoritative), `updateStreak()`, `claimDailyBonus()`, daily flag helpers, memory CRUD + FTS5 search, `recordChatTurn()`, `getXPHistory()`, `bootstrapFromLocalStorage()`, `enrichSnapshot()`
-- **Created 4 API routes**: `app/api/dna/route.ts` (GET snapshot), `app/api/dna/xp/route.ts` (POST XP), `app/api/dna/memory/route.ts` (GET/POST), `app/api/dna/bootstrap/route.ts` (localStorage migration)
-- **Modified `app/api/chat/route.ts`** — Persists user/assistant messages, reads evolution from DNA (not client), tracks costs via `recordChatTurn()`
-- **Modified `app/components/EvolutionProvider.tsx`** — Server-first init (GET /api/dna), optimistic XP + server reconciliation, auto-bootstrap
-- **Modified `app/components/useEvolutionXP.ts`** — Daily bonus validated server-side
-- **Modified `app/components/ChatProvider.tsx`** — Removed client evolution sending
-- **Modified `app/api/memory/route.ts`** — Dual-write flat file + SQLite, FTS5 search
-- **Modified `lib/types.ts`** — Removed `evolutionTier`/`skillLevels` from `ChatRequest`, added `DNASnapshot`
-- **Debugged PWA service worker caching** — SW was serving stale JS bundles. Unregistered SW + cleared caches to fix. Verified working through Cloudflare tunnel at `nio.shawnos.ai`
+
+- **Ran Exa MCP people search across all 73 partner play companies** — Used `mcp__exa__web_search_exa` with LinkedIn-targeted queries (`site:linkedin.com/in`) to find people matching Diana's 3 buyer personas at each consulting firm.
+- **Sourced 158 contacts across 60 companies** — Each contact tagged with Persona (Champion / Decision Maker / Influencer), Tier (A/B/C), Segment, and LinkedIn URL.
+- **Created CSV**: `clients/partner/exol/resources/partner-play-contacts.csv` — columns: Name, Title, Company, Domain, Segment, Tier, Persona, LinkedIn URL
+- **Breakdown**:
+  - Tier A: 90 contacts | Tier B: 44 | Tier C: 24
+  - Champion: 107 | Decision Maker: 47 | Influencer: 4
+  - 3PL Consultants: 84 | Food CPG: 22 | Growth Stage: 22 | Large Consultants: 15 | Amazon: 9 | RFP Managers: 6
+- **13 companies returned no usable contacts**: 3PL Bridge, Corra (merged into Publicis Sapient), Data2Logistics (merged into Loop), EquiBrand Consulting, F. Curtis Barry & Company, Incrementum Digital, Integration Consulting, Logistics Bureau (Australian), PwC, RFP Lab, ScienceSoft, SupplyKick, Translogistics Inc.
 
 ## Current State
-- **Git**: branch `main`, clean, last commit `572857b docs: update IP registry + README for NioBot V3 — DNA, chimes, evolution, PWA`
-- **Uncommitted changes**: only `.playwright-mcp/` debug logs (untracked, don't commit)
-- **Dev server**: running on port 3004, Cloudflare tunnel active at `nio.shawnos.ai`
-- **DB**: migration 003 applied, `dna_state` seeded (xp=0, tier=1, level=1)
+
+- **Git**: branch `main`, diverged from origin by 1 commit each (needs `git pull --rebase` or `/sync-main`)
+- **Local untracked files (gitignored)**: Both partner play CSVs live in `clients/partner/exol/resources/` — gitignored by `clients/` and `*.csv` rules, which is correct for the public repo
+- **Handoff committed**: `.claude/context-handoff.md` updated and committed
 
 ## Next Steps
-1. **Gateway/deployment system needed** — Shawn flagged the need for a better workflow when adding features/routes to NioBot. Currently: Cloudflare tunnel at `~/.cloudflared/config.yml` blindly proxies `localhost:3004`. No validation that new API routes (like `/api/dna/*`) work post-deploy. Consider: route health check script, deploy manifest listing expected endpoints, or a `/api/health` route that checks all subsystems.
-2. **PWA cache-busting strategy** — The service worker aggressively caches old bundles. On iOS, users must do Settings → Safari → Clear History and Website Data. Need a versioned cache strategy or SW update mechanism that forces refresh on new deploys.
-3. **Test DNA end-to-end** — Send a chat and verify: `sqlite3 ~/.niobot/data/niobot.db "SELECT xp, tier, level, streak FROM dna_state"` shows non-zero XP.
-4. **NioBot V3 remaining** — Per MEMORY.md: messages fixed (DNA persists), chimes built, evolution built. Next: full evolution UI polish, soul file evolution tiers.
+
+1. **Email enrichment** — 158 contacts have LinkedIn URLs but NO emails yet. Import to Clay or Apollo to append work emails + direct phones. This is the critical gap before outreach.
+2. **Fill 13 company gaps** — Manual LinkedIn search or alternate Exa queries for the sparse companies (3PL Bridge, SupplyKick, Incrementum Digital, etc.)
+3. **Widen Influencer persona** — Only 4 tagged Influencer. Diana's persona titles ("Practice Lead", "Practice Director") are rare. Consider widening to "Head of", "Lead Consultant", "Senior Advisor" to capture more.
+4. **Contextual icebreaker layer** — Diana's Phase 3 calls for "recent wins, case studies, published articles" per company. Use `mcp__exa__company_research_exa` to crawl each company's site for this.
+5. **Sync with origin** — Branch has diverged, run `/sync-main` before next major commit.
+6. **Tier/persona validation** — Some contacts at large firms (Accenture, McKinsey, Deloitte) may be tangential to supply chain consulting. Manual review recommended before campaign load.
 
 ## Key Decisions Made
-- **Server-authoritative XP**: Client dispatches optimistic ADD_XP, POSTs to `/api/dna/xp`. Server applies real streak multiplier and reconciles. No spoofable evolution.
-- **Dual-write memory**: `/api/memory` writes flat files + SQLite during transition.
-- **Daily flags server-side, session flags client-side**: `dailyBonusClaimed` in `dna_daily_flags` table. `deepConvoClaimed`/`veryDeepConvoClaimed` stay client-side per-session.
-- **Timestamp format mismatch handled**: 002 uses `datetime('now')` strings, 003 views handle both with `CASE WHEN typeof()`.
+
+- **Exa MCP used for all searches directly** — Background subagents failed (MCP permission can't be approved in background), so all 73 searches ran in main session via parallel batches of 5.
+- **One search per company, all 3 personas combined** — More efficient than 3 separate searches per company. Title filters covered all personas in each query.
+- **CSVs stay gitignored** — Partner data with LinkedIn URLs + names doesn't go to the public repo. Lives only on local machine.
+- **Sparse results accepted for small firms** — Some niche consultancies (F. Curtis Barry, 3PL Bridge, RFP Lab) have minimal LinkedIn presence. Not worth chasing; can backfill manually.
 
 ## Files to Read First
-1. `website/apps/nio-chat/lib/db/queries/dna.ts` — Core DNA query layer
-2. `website/apps/nio-chat/lib/db/migrations/003_dna.sql` — Schema
-3. `website/apps/nio-chat/app/api/chat/route.ts` — Chat persistence wiring
-4. `website/apps/nio-chat/app/components/EvolutionProvider.tsx` — Client server-sync flow
-5. `~/.cloudflared/config.yml` — Tunnel config for gateway discussion
+
+1. `clients/partner/exol/resources/partner-play-contacts.csv` — The 158-contact output (LOCAL ONLY, gitignored)
+2. `clients/partner/exol/resources/partner-play-accounts.csv` — The 73-company account list (LOCAL ONLY, gitignored)
+3. `clients/partner/exol/SKILL.md` — Exol skill tree entry point
+4. `clients/partner/exol/resources/enrichment-map.md` — Data fields needed per contact/company
+5. `.mcp.json` — Exa MCP config (gitignored)
