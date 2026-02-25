@@ -66,8 +66,6 @@ export function StatsStrip() {
           gridTemplateColumns: 'repeat(5, 1fr)',
           gap: '1px',
           background: 'var(--border)',
-          border: '1px solid var(--border)',
-          borderRadius: 6,
           overflow: 'hidden',
         }}
         className="stats-strip"
@@ -88,7 +86,7 @@ export function StatsStrip() {
             key={stat.label}
             className={`stats-item${visible ? ' visible' : ''}`}
             style={{
-              padding: '20px 16px',
+              padding: '32px 24px',
               background: 'var(--canvas-subtle)',
               textAlign: 'center',
               fontFamily: 'var(--font-mono)',
@@ -96,7 +94,7 @@ export function StatsStrip() {
           >
             <div
               style={{
-                fontSize: '26px',
+                fontSize: 'clamp(32px, 5vw, 48px)',
                 fontWeight: 700,
                 color: 'var(--accent)',
                 letterSpacing: '-0.02em',
@@ -108,9 +106,9 @@ export function StatsStrip() {
             </div>
             <div
               style={{
-                fontSize: '11px',
+                fontSize: '13px',
                 color: 'var(--text-secondary)',
-                marginTop: 6,
+                marginTop: 8,
                 textTransform: 'uppercase',
                 letterSpacing: '0.05em',
               }}

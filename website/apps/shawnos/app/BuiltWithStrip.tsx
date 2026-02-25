@@ -62,8 +62,8 @@ function MiniLogo({ logo }: { logo: BuiltWithLogo }) {
         viewBox="0 0 24 24"
         fill="currentColor"
         xmlns="http://www.w3.org/2000/svg"
-        width={22}
-        height={22}
+        width={28}
+        height={28}
         role="img"
         aria-label={logo.name}
       >
@@ -106,7 +106,7 @@ export function BuiltWithStrip() {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '18px',
+          gap: '24px',
           flexWrap: 'wrap',
         }}
       >
