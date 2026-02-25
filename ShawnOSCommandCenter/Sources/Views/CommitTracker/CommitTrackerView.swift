@@ -93,6 +93,9 @@ struct CommitTrackerView: View {
         .background(Theme.background)
         .navigationTitle("Commits")
         .task { await loadDataAsync() }
+        .onChange(of: appState.fileWatcher.lastChange) { _, _ in
+            Task { await loadDataAsync() }
+        }
     }
 
     // MARK: - Stats Header

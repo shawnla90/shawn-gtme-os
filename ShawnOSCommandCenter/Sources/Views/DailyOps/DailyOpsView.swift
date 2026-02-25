@@ -54,6 +54,7 @@ struct DailyOpsView: View {
         .background(Theme.background)
         .navigationTitle("Daily Ops")
         .onAppear { loadData() }
+        .onChange(of: appState.fileWatcher.lastChange) { _, _ in loadData() }
     }
 
     private var dateSelector: some View {

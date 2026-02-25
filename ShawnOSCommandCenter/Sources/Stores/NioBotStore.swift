@@ -100,6 +100,76 @@ final class NioBotStore: Sendable {
         }
     }
 
+    // MARK: - Heartbeat
+
+    struct Heartbeat {
+        let xp: Int
+        let tier: Int
+        let level: Int
+        let streak: Int
+        let totalMessages: Int
+        let lastActiveDate: String?
+        let updatedAt: Int64
+        let lastMessage: String?
+        let lastMessageTime: Int64?
+
+        var lastActiveAgo: String {
+            guard updatedAt > 0 else { return "unknown" }
+            let date = Date(timeIntervalSince1970: Double(updatedAt) / 1000.0)
+            let formatter = RelativeDateTimeFormatter()
+            formatter.unitsStyle = .abbreviated
+            return formatter.localizedString(for: date, relativeTo: Date())
+        }
+
+        var isActive: Bool {
+            guard updatedAt > 0 else { return false }
+            let date = Date(timeIntervalSince1970: Double(updatedAt) / 1000.0)
+            return Date().timeIntervalSince(date) < 300 // active within 5 min
+        }
+
+        static let empty = Heartbeat(
+            xp: 0, tier: 1, level: 1, streak: 0,
+            totalMessages: 0, lastActiveDate: nil, updatedAt: 0,
+            lastMessage: nil, lastMessageTime: nil
+        )
+    }
+
+    func loadHeartbeat() -> Heartbeat {
+        guard let db = dbPool else { return .empty }
+        do {
+            return try db.read { db in
+                let dna = try Row.fetchOne(db, sql: """
+                    SELECT xp, tier, level, streak, total_messages,
+                           last_active_date, updated_at
+                    FROM dna_state WHERE user_id = 'default'
+                """)
+
+                let lastMsg = try Row.fetchOne(db, sql: """
+                    SELECT content, created_at FROM messages
+                    WHERE role = 'assistant'
+                    ORDER BY created_at DESC LIMIT 1
+                """)
+
+                return Heartbeat(
+                    xp: dna?["xp"] as? Int ?? 0,
+                    tier: dna?["tier"] as? Int ?? 1,
+                    level: dna?["level"] as? Int ?? 1,
+                    streak: dna?["streak"] as? Int ?? 0,
+                    totalMessages: dna?["total_messages"] as? Int ?? 0,
+                    lastActiveDate: dna?["last_active_date"] as? String,
+                    updatedAt: dna?["updated_at"] as? Int64 ?? 0,
+                    lastMessage: (lastMsg?["content"] as? String).map {
+                        String($0.prefix(80))
+                    },
+                    lastMessageTime: lastMsg?["created_at"] as? Int64
+                )
+            }
+        } catch {
+            print("[NioBotStore] Heartbeat error: \(error)")
+            return .empty
+        }
+    }
+
     // MARK: - Helpers
 
     private func parseSkillXP(_ json: String) -> [String: Int] {

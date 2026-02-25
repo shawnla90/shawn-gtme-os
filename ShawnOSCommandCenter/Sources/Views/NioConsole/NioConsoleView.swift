@@ -112,6 +112,12 @@ struct SoulFilesView: View {
             }
         }
         .onAppear { files = appState.fileStore.nioWorkspaceFiles() }
+        .onChange(of: appState.fileWatcher.lastChange) { _, _ in
+            files = appState.fileStore.nioWorkspaceFiles()
+            if let path = selectedFile {
+                content = appState.fileStore.readMarkdown(at: path) ?? "File not found"
+            }
+        }
         .onChange(of: selectedFile) { _, path in
             if let path = path {
                 content = appState.fileStore.readMarkdown(at: path) ?? "File not found"

@@ -4,6 +4,10 @@ enum RepoConfig {
     static let repoRoot = "/Users/shawnos.ai/shawn-gtme-os"
     static let contentDir = "\(repoRoot)/content"
     static let dataDir = "\(repoRoot)/data"
+    static let reportsDir = "\(repoRoot)/reports"
+    static let soulsDir = "\(repoRoot)/souls"
+    static let nioMemoryDir = "\(dataDir)/nio-memory"
+    static let gitHeadRef = "\(repoRoot)/.git/refs/heads/main"
     static let indexDB = "\(dataDir)/index.db"
     static let dailyLogDir = "\(dataDir)/daily-log"
     static let progressionProfile = "\(dataDir)/progression/profile.json"
@@ -11,9 +15,9 @@ enum RepoConfig {
     static let websiteStats = "\(dataDir)/website-stats.json"
     static let repoStats = "\(dataDir)/repo-stats.json"
 
-    // Nio paths (workspace data lives here)
-    static let nioWorkspace = NSHomeDirectory() + "/.openclaw/workspace"
-    static let nioCronJobs = NSHomeDirectory() + "/.openclaw/cron/jobs.json"
+    // Nio paths (souls and memory now live in repo)
+    static let nioWorkspace = "\(repoRoot)/souls"
+    static let nioCronJobs = "\(dataDir)/cron/jobs.json"
     static let soulFile = "\(nioWorkspace)/SOUL.md"
     static let memoryFile = "\(nioWorkspace)/MEMORY.md"
     static let identityFile = "\(nioWorkspace)/IDENTITY.md"

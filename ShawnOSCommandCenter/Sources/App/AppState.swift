@@ -78,6 +78,9 @@ class AppState: ObservableObject {
         self.fileWatcher = FileWatcher(paths: [
             RepoConfig.contentDir,
             RepoConfig.dataDir,
+            RepoConfig.reportsDir,
+            RepoConfig.soulsDir,
+            RepoConfig.gitHeadRef,
         ])
         self.gitStore = GitStore()
         self.nioBotStore = NioBotStore()

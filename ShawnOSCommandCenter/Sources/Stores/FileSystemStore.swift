@@ -89,6 +89,42 @@ final class FileSystemStore: Sendable {
         listMarkdownFiles(in: RepoConfig.nioMarOpsDir)
     }
 
+    // MARK: - Write (restricted directories)
+
+    private static let editablePrefixes = [
+        RepoConfig.contentDir,
+        RepoConfig.soulsDir,
+        RepoConfig.nioMemoryDir,
+    ]
+
+    func isEditable(_ path: String) -> Bool {
+        Self.editablePrefixes.contains { path.hasPrefix($0) }
+    }
+
+    func saveMarkdown(at path: String, content: String) -> Result<Void, FileStoreError> {
+        guard isEditable(path) else {
+            return .failure(.notEditable(path))
+        }
+        do {
+            try content.write(toFile: path, atomically: true, encoding: .utf8)
+            return .success(())
+        } catch {
+            return .failure(.writeFailed(error.localizedDescription))
+        }
+    }
+
+    enum FileStoreError: LocalizedError {
+        case notEditable(String)
+        case writeFailed(String)
+
+        var errorDescription: String? {
+            switch self {
+            case .notEditable(let path): return "File not in editable directory: \(path)"
+            case .writeFailed(let msg): return "Write failed: \(msg)"
+            }
+        }
+    }
+
     // MARK: - Helpers
 
     private func decodeJSON<T: Decodable>(at path: String) -> T? {
