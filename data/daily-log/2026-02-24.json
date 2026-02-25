@@ -1,0 +1,1462 @@
+{
+  "date": "2026-02-24",
+  "generated_at": "2026-02-25T05:00:02.356511+00:00",
+  "version": 4,
+  "accomplishments": [
+    {
+      "type": "website_route",
+      "title": "mission-control api crm contacts [id] route",
+      "path": "website/apps/mission-control/app/api/crm/contacts/[id]/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 253,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api content [id] route",
+      "path": "website/apps/mission-control/app/api/content/[id]/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 114,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "01:35",
+      "words": 662,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "seo_keyword_pipeline",
+      "path": "scripts/seo_keyword_pipeline.py",
+      "source": "auto",
+      "timestamp": "04:56",
+      "words": 929,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "nio_blog_generator",
+      "path": "scripts/nio_blog_generator.py",
+      "source": "auto",
+      "timestamp": "04:56",
+      "words": 2276,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "01:36",
+      "words": 531,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm accounts route",
+      "path": "website/apps/mission-control/app/api/crm/accounts/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 232,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm import page",
+      "path": "website/apps/mission-control/app/crm/import/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 267,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm import route",
+      "path": "website/apps/mission-control/app/api/crm/import/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 413,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "cost_aggregator",
+      "path": "scripts/cost_aggregator.py",
+      "source": "auto",
+      "timestamp": "04:56",
+      "words": 646,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control content page",
+      "path": "website/apps/mission-control/app/content/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 32,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm page",
+      "path": "website/apps/mission-control/app/crm/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 398,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
+      "source": "auto",
+      "timestamp": "23:12",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/gtmos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 63,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal date-slug page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/[date-slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "01:36",
+      "words": 150,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api db [database] route",
+      "path": "website/apps/mission-control/app/api/db/[database]/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 132,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm contacts route",
+      "path": "website/apps/mission-control/app/api/crm/contacts/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 214,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm accounts page",
+      "path": "website/apps/mission-control/app/crm/accounts/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 440,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api system-metrics route",
+      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "source": "auto",
+      "timestamp": "04:57",
+      "words": 233,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control layout",
+      "path": "website/apps/mission-control/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 72,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control content id page",
+      "path": "website/apps/mission-control/app/content/[id]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 279,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
+      "source": "auto",
+      "timestamp": "01:36",
+      "words": 194,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control projects slug page",
+      "path": "website/apps/mission-control/app/projects/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 366,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/mission-control/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 261,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/shawnos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 187,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm stats route",
+      "path": "website/apps/mission-control/app/api/crm/stats/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 185,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm activities route",
+      "path": "website/apps/mission-control/app/api/crm/activities/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 187,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm deals route",
+      "path": "website/apps/mission-control/app/api/crm/deals/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 204,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared nio-blog",
+      "path": "website/packages/shared/lib/nio-blog.ts",
+      "source": "auto",
+      "timestamp": "01:34",
+      "words": 366,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api projects route",
+      "path": "website/apps/mission-control/app/api/projects/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 170,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "01:36",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "Navigation",
+      "path": "website/packages/shared/components/Navigation.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 633,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control databases page",
+      "path": "website/apps/mission-control/app/databases/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 604,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm deals [id] route",
+      "path": "website/apps/mission-control/app/api/crm/deals/[id]/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 254,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control projects page",
+      "path": "website/apps/mission-control/app/projects/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 116,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 740,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm contacts page",
+      "path": "website/apps/mission-control/app/crm/contacts/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 191,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/contentos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 63,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 15165,
+      "value_score": 50,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm accounts [id] route",
+      "path": "website/apps/mission-control/app/api/crm/accounts/[id]/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 301,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "build_index",
+      "path": "scripts/build_index.py",
+      "source": "auto",
+      "timestamp": "01:34",
+      "words": 3695,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api db [database] [table] route",
+      "path": "website/apps/mission-control/app/api/db/[database]/[table]/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 142,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api tasks route",
+      "path": "website/apps/mission-control/app/api/tasks/route.ts",
+      "source": "auto",
+      "timestamp": "04:57",
+      "words": 356,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api content route",
+      "path": "website/apps/mission-control/app/api/content/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 205,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm deals page",
+      "path": "website/apps/mission-control/app/crm/deals/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 31,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "feature_system",
+      "title": "DailyLogView",
+      "path": "website/packages/shared/components/DailyLogView.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 4438,
+      "value_score": 30,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm accounts id page",
+      "path": "website/apps/mission-control/app/crm/accounts/[id]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 860,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control databases db page",
+      "path": "website/apps/mission-control/app/databases/[db]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 253,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api db [database] schema route",
+      "path": "website/apps/mission-control/app/api/db/[database]/schema/route.ts",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 131,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control databases db table page",
+      "path": "website/apps/mission-control/app/databases/[db]/[table]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:12",
+      "words": 102,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "video package",
+      "path": "website/apps/video/package.json",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "how to setup ai assistant",
+      "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 1333,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "commits": [
+    {
+      "hash": "5ef626a",
+      "message": "chore: daily tracker scan 2026-02-23",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 6,
+      "lines_added": 985,
+      "lines_removed": 104,
+      "lines_net": 881,
+      "directories": [
+        "data/",
+        "docs/",
+        "website/"
+      ],
+      "timestamp": "00:00"
+    },
+    {
+      "hash": "1450986",
+      "message": "feat: nio blog generator \u2014 off OpenClaw, into the repo + SQLite",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 16,
+      "lines_added": 1253,
+      "lines_removed": 172,
+      "lines_net": 1081,
+      "directories": [
+        "content/",
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "02:38"
+    },
+    {
+      "hash": "e59d90a",
+      "message": "feat: nio.log 2026-02-24 \u2014 automated daily post",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 17,
+      "lines_added": 511,
+      "lines_removed": 1393,
+      "lines_net": -882,
+      "directories": [
+        ".claude/",
+        "content/",
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "08:01"
+    },
+    {
+      "hash": "58ba6f3",
+      "message": "chore: complete OpenClaw removal \u2014 migrate data to repo",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 11,
+      "lines_added": 420,
+      "lines_removed": 0,
+      "lines_net": 420,
+      "directories": [
+        ".gitignore/",
+        "data/"
+      ],
+      "timestamp": "15:22"
+    },
+    {
+      "hash": "72350cd",
+      "message": "chore: daily tracker scan 2026-02-22",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 7,
+      "lines_added": 900,
+      "lines_removed": 720,
+      "lines_net": 180,
+      "directories": [
+        "data/",
+        "docs/",
+        "website/"
+      ],
+      "timestamp": "20:41"
+    },
+    {
+      "hash": "f5b9625",
+      "message": "chore: daily tracker scan 2026-02-23",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 6,
+      "lines_added": 263,
+      "lines_removed": 392,
+      "lines_net": -129,
+      "directories": [
+        "data/",
+        "website/"
+      ],
+      "timestamp": "20:42"
+    },
+    {
+      "hash": "7324fcb",
+      "message": "feat: mobile UX overhaul \u2014 hamburger nav, responsive padding, mobile build log",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 7,
+      "lines_added": 681,
+      "lines_removed": 15,
+      "lines_net": 666,
+      "directories": [
+        "docs/",
+        "website/"
+      ],
+      "timestamp": "20:42"
+    },
+    {
+      "hash": "ba8e903",
+      "message": "feat: sprite sheet animation system + reel clip upgrade + standalone compositions",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 116,
+      "lines_added": 3232,
+      "lines_removed": 11,
+      "lines_net": 3221,
+      "directories": [
+        "data/",
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "23:12"
+    },
+    {
+      "hash": "ab82a1d",
+      "message": "feat: Command Center Phase 2 \u2014 SQLite explorer, content browser, CRM, projects",
+      "type": "feature_build",
+      "score": 40,
+      "files_changed": 50,
+      "lines_added": 3607,
+      "lines_removed": 39,
+      "lines_net": 3568,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "23:12"
+    },
+    {
+      "hash": "75cb947",
+      "message": "feat: portable Nio avatars \u2014 transparent render mode, agent sprites, dynamic tier avatar",
+      "type": "video_build",
+      "score": 30,
+      "files_changed": 31,
+      "lines_added": 376,
+      "lines_removed": 56,
+      "lines_net": 320,
+      "directories": [
+        "data/",
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "23:12"
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "linkedin",
+        "title": "openclaw honest opinion",
+        "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "target_date": "2026-02-23",
+        "words": 542
+      },
+      {
+        "platform": "linkedin",
+        "title": "how to ai assistant claude code",
+        "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 437
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "x",
+        "title": "openclaw honest opinion",
+        "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "target_date": "2026-02-23",
+        "words": 170
+      },
+      {
+        "platform": "x",
+        "title": "how to ai assistant claude code",
+        "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 259
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+        "target_date": "2026-02-14",
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
+      },
+      {
+        "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
+        "title": "how to setup ai assistant",
+        "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+        "target_date": "2026-02-25",
+        "words": 1333
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1119
+      }
+    ],
+    "finalized_today": []
+  },
+  "todos": [],
+  "token_usage": [],
+  "stats": {
+    "platform_breakdown": {
+      "website": 41,
+      "other": 10,
+      "substack": 1
+    },
+    "words_in_touched_files": 40069,
+    "pipeline_words": 40692,
+    "finals_count": 0,
+    "first_activity": "01:34",
+    "last_activity": "23:58",
+    "output_score": 279,
+    "letter_grade": "C",
+    "score_breakdown": [
+      {
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-23",
+        "points": 1
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: nio blog generator \u2014 off OpenClaw, into the repo + SQL",
+        "points": 60
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: nio.log 2026-02-24 \u2014 automated daily post",
+        "points": 60
+      },
+      {
+        "type": "chore",
+        "title": "chore: complete OpenClaw removal \u2014 migrate data to repo",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-22",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-23",
+        "points": 1
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: mobile UX overhaul \u2014 hamburger nav, responsive padding",
+        "points": 25
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: sprite sheet animation system + reel clip upgrade + st",
+        "points": 60
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: Command Center Phase 2 \u2014 SQLite explorer, content brow",
+        "points": 40
+      },
+      {
+        "type": "video_build",
+        "title": "feat: portable Nio avatars \u2014 transparent render mode, agent ",
+        "points": 30
+      }
+    ],
+    "efficiency_rating": null,
+    "shipped_count": 50,
+    "draft_count": 2,
+    "ship_rate": 0.96,
+    "agent_cost": 0,
+    "cost_per_point": 0.0,
+    "efficiency_ratio": null,
+    "words_today": 40069,
+    "lines_added": 12228,
+    "lines_removed": 2902,
+    "lines_net": 9326,
+    "code_loc": 8722,
+    "content_loc": 1296,
+    "data_loc": 2210
+  },
+  "git_summary": {
+    "commits_today": 10,
+    "files_added": [
+      "content/nio-log/2026-02-19.md",
+      "content/nio-log/2026-02-20.md",
+      "content/nio-log/2026-02-21.md",
+      "content/nio-log/2026-02-22.md",
+      "content/nio-log/2026-02-23.md",
+      "content/nio-log/2026-02-24.md",
+      "content/nio-log/post-one.md",
+      "content/nio-log/post-zero.md",
+      "data/daily-log/2026-02-23.json",
+      "data/daily-log/cost-tracker/2026-02-22.json",
+      "data/daily-log/cost-tracker/2026-02-23.json",
+      "data/nio-memory/MEMORY.md",
+      "data/nio-memory/daily/2026-02-17.md",
+      "data/nio-memory/daily/2026-02-18.md",
+      "data/nio-memory/daily/2026-02-19.md",
+      "data/nio-memory/daily/2026-02-20.md",
+      "data/nio-memory/daily/2026-02-21.md",
+      "data/nio-memory/daily/nio-status-updates.log",
+      "data/progression/avatars/architect-idle.gif",
+      "data/progression/avatars/architect-static.png",
+      "data/progression/avatars/nio-evolve-1-to-2-sheet-256.png",
+      "data/progression/avatars/nio-evolve-2-to-3-sheet-256.png",
+      "data/progression/avatars/nio-evolve-3-to-4-sheet-256.png",
+      "data/progression/avatars/nio-evolve-4-to-5-sheet-256.png",
+      "data/progression/avatars/nio-tier-1-backflip-sheet-256.png",
+      "data/progression/avatars/nio-tier-1-backflip.gif",
+      "data/progression/avatars/nio-tier-1-blink-sheet-256.png",
+      "data/progression/avatars/nio-tier-1-blink.gif",
+      "data/progression/avatars/nio-tier-1-chat-sheet-256.png",
+      "data/progression/avatars/nio-tier-1-chat.gif",
+      "data/progression/avatars/nio-tier-1-idle-sheet-256-transparent.png",
+      "data/progression/avatars/nio-tier-1-idle-sheet-256.png",
+      "data/progression/avatars/nio-tier-1-idle-transparent.gif",
+      "data/progression/avatars/nio-tier-1-static-transparent.png",
+      "data/progression/avatars/nio-tier-1-think-sheet-256.png",
+      "data/progression/avatars/nio-tier-1-think.gif",
+      "data/progression/avatars/nio-tier-2-backflip-sheet-256.png",
+      "data/progression/avatars/nio-tier-2-backflip.gif",
+      "data/progression/avatars/nio-tier-2-blink-sheet-256.png",
+      "data/progression/avatars/nio-tier-2-blink.gif",
+      "data/progression/avatars/nio-tier-2-chat-sheet-256.png",
+      "data/progression/avatars/nio-tier-2-chat.gif",
+      "data/progression/avatars/nio-tier-2-idle-sheet-256-transparent.png",
+      "data/progression/avatars/nio-tier-2-idle-sheet-256.png",
+      "data/progression/avatars/nio-tier-2-idle-transparent.gif",
+      "data/progression/avatars/nio-tier-2-static-transparent.png",
+      "data/progression/avatars/nio-tier-2-think-sheet-256.png",
+      "data/progression/avatars/nio-tier-2-think.gif",
+      "data/progression/avatars/nio-tier-3-backflip-sheet-256.png",
+      "data/progression/avatars/nio-tier-3-backflip.gif",
+      "data/progression/avatars/nio-tier-3-blink-sheet-256.png",
+      "data/progression/avatars/nio-tier-3-blink.gif",
+      "data/progression/avatars/nio-tier-3-chat-sheet-256.png",
+      "data/progression/avatars/nio-tier-3-chat.gif",
+      "data/progression/avatars/nio-tier-3-idle-sheet-256-transparent.png",
+      "data/progression/avatars/nio-tier-3-idle-sheet-256.png",
+      "data/progression/avatars/nio-tier-3-idle-transparent.gif",
+      "data/progression/avatars/nio-tier-3-idle.gif",
+      "data/progression/avatars/nio-tier-3-static-transparent.png",
+      "data/progression/avatars/nio-tier-3-static.png",
+      "data/progression/avatars/nio-tier-3-think-sheet-256.png",
+      "data/progression/avatars/nio-tier-3-think.gif",
+      "data/progression/avatars/nio-tier-4-backflip-sheet-256.png",
+      "data/progression/avatars/nio-tier-4-backflip.gif",
+      "data/progression/avatars/nio-tier-4-blink-sheet-256.png",
+      "data/progression/avatars/nio-tier-4-blink.gif",
+      "data/progression/avatars/nio-tier-4-chat-sheet-256.png",
+      "data/progression/avatars/nio-tier-4-chat.gif",
+      "data/progression/avatars/nio-tier-4-idle-sheet-256-transparent.png",
+      "data/progression/avatars/nio-tier-4-idle-sheet-256.png",
+      "data/progression/avatars/nio-tier-4-idle-transparent.gif",
+      "data/progression/avatars/nio-tier-4-idle.gif",
+      "data/progression/avatars/nio-tier-4-static-transparent.png",
+      "data/progression/avatars/nio-tier-4-static.png",
+      "data/progression/avatars/nio-tier-4-think-sheet-256.png",
+      "data/progression/avatars/nio-tier-4-think.gif",
+      "data/progression/avatars/nio-tier-5-backflip-sheet-256.png",
+      "data/progression/avatars/nio-tier-5-backflip.gif",
+      "data/progression/avatars/nio-tier-5-blink-sheet-256.png",
+      "data/progression/avatars/nio-tier-5-blink.gif",
+      "data/progression/avatars/nio-tier-5-chat-sheet-256.png",
+      "data/progression/avatars/nio-tier-5-chat.gif",
+      "data/progression/avatars/nio-tier-5-idle-sheet-256-transparent.png",
+      "data/progression/avatars/nio-tier-5-idle-sheet-256.png",
+      "data/progression/avatars/nio-tier-5-idle-transparent.gif",
+      "data/progression/avatars/nio-tier-5-idle.gif",
+      "data/progression/avatars/nio-tier-5-static-transparent.png",
+      "data/progression/avatars/nio-tier-5-static.png",
+      "data/progression/avatars/nio-tier-5-think-sheet-256.png",
+      "data/progression/avatars/nio-tier-5-think.gif",
+      "data/progression/avatars/writer-idle.gif",
+      "data/progression/avatars/writer-static.png",
+      "data/seo/daily-brief.json",
+      "data/seo/keyword-log.json",
+      "data/seo/used-keywords.json",
+      "docs/MOBILE-UX-PLAN.md",
+      "scripts/nio_blog_generator.py",
+      "scripts/run_nio_blog.sh",
+      "scripts/seo_keyword_pipeline.py",
+      "website/apps/mission-control/app/api/content/[id]/route.ts",
+      "website/apps/mission-control/app/api/content/route.ts",
+      "website/apps/mission-control/app/api/crm/accounts/[id]/route.ts",
+      "website/apps/mission-control/app/api/crm/accounts/route.ts",
+      "website/apps/mission-control/app/api/crm/activities/route.ts",
+      "website/apps/mission-control/app/api/crm/contacts/[id]/route.ts",
+      "website/apps/mission-control/app/api/crm/contacts/route.ts",
+      "website/apps/mission-control/app/api/crm/deals/[id]/route.ts",
+      "website/apps/mission-control/app/api/crm/deals/route.ts",
+      "website/apps/mission-control/app/api/crm/import/route.ts",
+      "website/apps/mission-control/app/api/crm/stats/route.ts",
+      "website/apps/mission-control/app/api/db/[database]/[table]/route.ts",
+      "website/apps/mission-control/app/api/db/[database]/route.ts",
+      "website/apps/mission-control/app/api/db/[database]/schema/route.ts",
+      "website/apps/mission-control/app/api/projects/route.ts",
+      "website/apps/mission-control/app/components/CommitLog.tsx",
+      "website/apps/mission-control/app/components/ContentList.tsx",
+      "website/apps/mission-control/app/components/MarkdownViewer.tsx",
+      "website/apps/mission-control/app/components/ProjectCard.tsx",
+      "website/apps/mission-control/app/components/SchemaViewer.tsx",
+      "website/apps/mission-control/app/components/Sidebar.tsx",
+      "website/apps/mission-control/app/components/TableBrowser.tsx",
+      "website/apps/mission-control/app/components/crm/AccountCard.tsx",
+      "website/apps/mission-control/app/components/crm/ActivityTimeline.tsx",
+      "website/apps/mission-control/app/components/crm/ContactCard.tsx",
+      "website/apps/mission-control/app/components/crm/CrmForm.tsx",
+      "website/apps/mission-control/app/components/crm/DealCard.tsx",
+      "website/apps/mission-control/app/components/crm/PipelineBoard.tsx",
+      "website/apps/mission-control/app/content/[id]/page.tsx",
+      "website/apps/mission-control/app/content/page.tsx",
+      "website/apps/mission-control/app/crm/accounts/[id]/page.tsx",
+      "website/apps/mission-control/app/crm/accounts/page.tsx",
+      "website/apps/mission-control/app/crm/contacts/page.tsx",
+      "website/apps/mission-control/app/crm/deals/page.tsx",
+      "website/apps/mission-control/app/crm/import/page.tsx",
+      "website/apps/mission-control/app/crm/page.tsx",
+      "website/apps/mission-control/app/databases/[db]/[table]/page.tsx",
+      "website/apps/mission-control/app/databases/[db]/page.tsx",
+      "website/apps/mission-control/app/databases/page.tsx",
+      "website/apps/mission-control/app/lib/db.ts",
+      "website/apps/mission-control/app/lib/projects.ts",
+      "website/apps/mission-control/app/projects/[slug]/page.tsx",
+      "website/apps/mission-control/app/projects/page.tsx",
+      "website/apps/mission-control/scripts/init-crm-db.js",
+      "website/apps/nio-chat/public/avatars/architect-idle.gif",
+      "website/apps/nio-chat/public/avatars/architect-static.png",
+      "website/apps/nio-chat/public/avatars/writer-idle.gif",
+      "website/apps/nio-chat/public/avatars/writer-static.png",
+      "website/apps/nio-chat/souls/SOUL.md",
+      "website/apps/video/public/avatars/claude-sprite.png",
+      "website/apps/video/public/avatars/nio-evolve-1-to-2-sheet-256.png",
+      "website/apps/video/public/avatars/nio-evolve-2-to-3-sheet-256.png",
+      "website/apps/video/public/avatars/nio-evolve-3-to-4-sheet-256.png",
+      "website/apps/video/public/avatars/nio-evolve-4-to-5-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-1-backflip-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-1-blink-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-1-chat-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-1-idle-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-1-static.png",
+      "website/apps/video/public/avatars/nio-tier-1-think-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-2-backflip-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-2-blink-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-2-chat-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-2-idle-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-2-idle.gif",
+      "website/apps/video/public/avatars/nio-tier-2-static.png",
+      "website/apps/video/public/avatars/nio-tier-2-think-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-3-backflip-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-3-blink-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-3-chat-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-3-idle-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-3-static.png",
+      "website/apps/video/public/avatars/nio-tier-3-think-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-4-backflip-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-4-blink-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-4-chat-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-4-idle-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-4-static.png",
+      "website/apps/video/public/avatars/nio-tier-4-think-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-5-backflip-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-5-blink-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-5-chat-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-5-idle-sheet-256.png",
+      "website/apps/video/public/avatars/nio-tier-5-static.png",
+      "website/apps/video/public/avatars/nio-tier-5-think-sheet-256.png",
+      "website/apps/video/public/avatars/tier-1-static-256.png",
+      "website/apps/video/public/avatars/tier-2-static-256.png",
+      "website/apps/video/public/avatars/tier-3-static-256.png",
+      "website/apps/video/src/NioReelClip.tsx",
+      "website/apps/video/src/components/EvolutionFlash.tsx",
+      "website/apps/video/src/components/NioEvolution.tsx",
+      "website/apps/video/src/components/NioReelMascot.tsx",
+      "website/apps/video/src/components/NioSprite.tsx",
+      "website/apps/video/src/components/NioSpriteSheet.tsx",
+      "website/apps/video/src/lib/nio-animation-state.ts",
+      "website/apps/video/src/lib/reel-data.ts",
+      "website/apps/video/src/lib/timing-reel.ts",
+      "website/apps/video/src/scenes/NioAnimClip.tsx",
+      "website/apps/video/src/scenes/NioSpritePreview.tsx",
+      "website/apps/video/src/scenes/reel/ReelApiCosts.tsx",
+      "website/apps/video/src/scenes/reel/ReelApiWrappers.tsx",
+      "website/apps/video/src/scenes/reel/ReelClaudeCodeWrong.tsx",
+      "website/apps/video/src/scenes/reel/ReelMcpServers.tsx",
+      "website/apps/video/src/scenes/reel/ReelRemotionMeta.tsx",
+      "website/packages/shared/lib/nio-blog.ts"
+    ],
+    "files_modified": [
+      ".gitignore",
+      "data/daily-log/2026-02-22.json",
+      "data/daily-log/2026-02-23.json",
+      "data/progression/avatars/nio-tier-1-static.png",
+      "data/progression/avatars/nio-tier-2-static.png",
+      "data/progression/profile.json",
+      "data/website-stats.json",
+      "docs/_generated/skill-manifest.md",
+      "scripts/build_index.py",
+      "scripts/cost_aggregator.py",
+      "scripts/nio_blog_generator.py",
+      "scripts/rpg_sprites.py",
+      "website/apps/contentos/app/globals.css",
+      "website/apps/gtmos/app/globals.css",
+      "website/apps/mission-control/app/api/system-metrics/route.ts",
+      "website/apps/mission-control/app/api/tasks/route.ts",
+      "website/apps/mission-control/app/components/CostAnalyticsDashboard.tsx",
+      "website/apps/mission-control/app/components/SessionStatus.tsx",
+      "website/apps/mission-control/app/components/SystemStatus.tsx",
+      "website/apps/mission-control/app/globals.css",
+      "website/apps/mission-control/app/layout.tsx",
+      "website/apps/mission-control/app/page.tsx",
+      "website/apps/mission-control/next.config.js",
+      "website/apps/mission-control/package.json",
+      "website/apps/mission-control/public/data/content.json",
+      "website/apps/mission-control/public/metrics.json",
+      "website/apps/mission-control/scripts/generate-dashboard-data.js",
+      "website/apps/mission-control/scripts/generate-metrics.js",
+      "website/apps/nio-chat/app/components/ChatHeader.tsx",
+      "website/apps/nio-chat/app/components/EvolutionProvider.tsx",
+      "website/apps/nio-chat/lib/agents.ts",
+      "website/apps/nio-chat/public/avatars/nio-tier-3-idle.gif",
+      "website/apps/nio-chat/public/avatars/nio-tier-4-idle.gif",
+      "website/apps/nio-chat/public/avatars/nio-tier-5-idle.gif",
+      "website/apps/shawnos/app/globals.css",
+      "website/apps/shawnos/app/log/progression/ProgressionClient.tsx",
+      "website/apps/shawnos/app/vitals/nio-terminal/[date-slug]/page.tsx",
+      "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
+      "website/apps/video/src/Root.tsx",
+      "website/apps/video/src/lib/timing.ts",
+      "website/apps/video/src/lib/tokens.ts",
+      "website/apps/video/src/scenes/NioAnimClip.tsx",
+      "website/package-lock.json",
+      "website/packages/shared/components/DailyLogView.tsx",
+      "website/packages/shared/components/Navigation.tsx",
+      "website/packages/shared/package.json",
+      "website/packages/shared/pages/NioPostPage.tsx",
+      "website/packages/shared/pages/NioTerminalPage.tsx"
+    ],
+    "lines_added_count": 12228,
+    "lines_removed_count": 2902,
+    "lines_net": 9326,
+    "code_loc": 8722,
+    "content_loc": 1296,
+    "data_loc": 2210
+  },
+  "dev_equivalent": {
+    "net_lines": 9326,
+    "dev_days": 62.2,
+    "cost_estimate": 31100,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 9,326 net lines represent approximately 62 developer-days of output \u2014 what a small team would produce in 3+ months.",
+    "assumptions": {
+      "lines_per_day": 150,
+      "cost_per_day": 500,
+      "basis": "Industry average for meaningful, reviewed, production-quality code"
+    }
+  },
+  "cost": {
+    "api_equivalent": 0,
+    "actual_cost": 0.0,
+    "pricing_mode": "max"
+  },
+  "token_efficiency": {
+    "total_tokens": 0,
+    "total_sessions": 0,
+    "tokens_per_point": 0,
+    "tokens_per_commit": 0,
+    "tokens_per_loc": 0,
+    "avg_context_utilization": 0,
+    "pricing_mode": "max",
+    "api_equivalent_cost": 0,
+    "actual_cost": 0.0
+  }
+}

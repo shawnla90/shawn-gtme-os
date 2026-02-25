@@ -34,11 +34,11 @@
 | 27 | notion-sync | Sync repository content (branding, clients, partners, workflows, skills) to N... | .cursor/skills/ | 2026-02-09 |
 | 28 | partner-comms | Generate formatted partner update messages for Slack or email from conversati... | .cursor/skills/ | 2026-02-12 |
 | 29 | partner-onboard | Scaffold a new GTM partner in the repo by extracting data from ClickUp MCP an... | .cursor/skills/ | 2026-02-13 |
-| 30 | plan-format | Produces structured plans with model recommendations, execution order, parall... | .cursor/skills/ | 2026-02-14 |
-| 31 | play-draft | Turn a screenshot of something you built, shipped, or accomplished into Linke... | .cursor/skills/ | 2026-02-18 |
-| 32 | publish-blog | Convert a finalized Substack post into a blog post for shawnos.ai. Strips new... | .claude/skills/ | 2026-02-22 |
-| 33 | repo-stats | Computes repo size, file counts, and value-oriented stats (skills, content, s... | .cursor/skills/ | 2026-02-10 |
-| 34 | restart-openclaw | Diagnose and restart the OpenClaw gateway. Checks if the LaunchAgent is loade... | .claude/skills/ | 2026-02-18 |
+| 30 | phase-report | Generate a phase report when building multi-session features. Creates both a ... | .claude/skills/ | unknown |
+| 31 | plan-format | Produces structured plans with model recommendations, execution order, parall... | .cursor/skills/ | 2026-02-14 |
+| 32 | play-draft | Turn a screenshot of something you built, shipped, or accomplished into Linke... | .cursor/skills/ | 2026-02-18 |
+| 33 | publish-blog | Convert a finalized Substack post into a blog post for shawnos.ai. Strips new... | .claude/skills/ | 2026-02-22 |
+| 34 | repo-stats | Computes repo size, file counts, and value-oriented stats (skills, content, s... | .cursor/skills/ | 2026-02-10 |
 | 35 | skill-play | Turn a Cursor skill you use into LinkedIn and X content drafts for the "Skill... | .cursor/skills/ | 2026-02-10 |
 | 36 | skill-tree | Generate an RPG-style skill tree visualization of the full GTM OS ecosystem. ... | .cursor/skills/ | 2026-02-12 |
 | 37 | slack-mcp | Access and interact with Slack workspaces using MCP tools. Use when the user ... | .cursor/skills/ | 2026-02-10 |
