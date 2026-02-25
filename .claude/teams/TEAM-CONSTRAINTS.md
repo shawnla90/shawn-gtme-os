@@ -275,6 +275,20 @@ Writer and Reviewer should both be aware of:
 
 ---
 
+## Rule 9: Query-First
+
+Before answering questions about project state, backlog, evolution data, or cost, agents MUST query the database rather than answering from training data or assumptions.
+
+**DB path:** `~/.niobot/data/niobot.db`
+**CLI:** `sqlite3 ~/.niobot/data/niobot.db "<query>"`
+
+Key tables: `initiatives`, `dna_state`, `daily_costs`, `conversations`, `memory`
+Key views: `v_initiatives_unblocked`, `v_initiatives_active`, `v_dna_snapshot`, `v_xp_daily_summary`
+
+If a table doesn't exist (migration hasn't run), note it and continue — never block on a missing table.
+
+---
+
 ## Anti-Patterns (What NOT To Do)
 
 1. **Two agents editing the same data file** — even different entries. One agent owns the file per wave.
@@ -285,3 +299,4 @@ Writer and Reviewer should both be aware of:
 6. **Adding content without updating the updates page** — every new feature/article gets a milestone entry.
 7. **Writing content without loading the voice system** — generic Claude output gets rejected. Read Rule 0.
 8. **Duplicating voice rules into agent skill files** — the voice system lives in `skills/`. Point to it, don't copy it.
+9. **Answering from memory when a database exists** — if the data lives in `niobot.db`, query it. Don't guess XP, cost, initiative status, or memory content.

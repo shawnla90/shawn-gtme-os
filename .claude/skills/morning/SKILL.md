@@ -47,6 +47,36 @@ Query ClickUp for actionable tasks across all partner workspaces.
 
 **If ClickUp auth fails or MCP is unavailable**: Print "ClickUp: unavailable (skipped)" and continue — do NOT block the dashboard.
 
+### Step 3.5: Initiatives Pulse
+
+Query the initiatives database for active work and recommendations.
+
+**Guard:** First check the table exists:
+```bash
+sqlite3 ~/.niobot/data/niobot.db "SELECT 1 FROM initiatives LIMIT 1" 2>/dev/null
+```
+
+If this fails, print "Initiatives: not yet initialized (run nio-chat dev server to apply migration 004)" and skip to Step 4.
+
+**If table exists, run these queries:**
+
+1. **Active initiatives** (in progress or blocked):
+```bash
+sqlite3 -header -column ~/.niobot/data/niobot.db "SELECT id, title, status, pillar, priority FROM v_initiatives_active;"
+```
+
+2. **Unblocked work** (top 5 ready to start):
+```bash
+sqlite3 -header -column ~/.niobot/data/niobot.db "SELECT id, title, pillar, priority FROM v_initiatives_unblocked LIMIT 5;"
+```
+
+3. **Recent evaluations** (last 7 days):
+```bash
+sqlite3 -header -column ~/.niobot/data/niobot.db "SELECT id, title, status, priority FROM initiatives WHERE source = 'evaluate' AND created_at > (unixepoch('now') - 604800) * 1000 ORDER BY created_at DESC LIMIT 5;"
+```
+
+4. **Top 3 recommendations:** Cross-reference unblocked initiatives with recent git commits (`git log --oneline -20`) to find topic overlap. Recommend initiatives that align with recent work momentum.
+
 ### Step 4: Partner Pulse
 
 Read the "Current Status" section from each partner SKILL.md. Discover partners dynamically:
@@ -90,6 +120,16 @@ Format the output as markdown using the template below. **Omit any section that 
 ## Blocked / Waiting
 - [Partner] [description of blocked/waiting item]
 
+## Active Initiatives
+| ID | Initiative | Status | Pillar | Priority |
+|----|-----------|--------|--------|----------|
+| [id] | [title] | [status] | [pillar] | [priority] |
+
+## Suggested Next
+1. [Top recommendation with rationale]
+2. [Second recommendation]
+3. [Third recommendation]
+
 ---
 What do you want to work on?
 ```
@@ -101,3 +141,4 @@ What do you want to work on?
 3. **No git changes** — this is a read-only dashboard. Do not stage, commit, stash, or modify anything.
 4. **Keep it scannable** — no paragraphs, no explanations. Bullets and tables only.
 5. **End with the prompt** — always close with "What do you want to work on?" to hand control back to the user.
+6. **If initiatives query fails, skip and note** — same as ClickUp. Print "Initiatives: unavailable (skipped)" and continue with the rest of the dashboard.
