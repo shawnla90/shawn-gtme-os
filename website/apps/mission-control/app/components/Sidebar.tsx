@@ -22,6 +22,7 @@ interface NavItem {
   label: string
   href: string
   icon: React.ElementType
+  private?: boolean
 }
 
 interface NavSection {
@@ -29,28 +30,30 @@ interface NavSection {
   items: NavItem[]
 }
 
+const isPublic = process.env.NEXT_PUBLIC_MODE === 'public'
+
 const NAV_SECTIONS: NavSection[] = [
   {
     title: 'OPS',
     items: [
       { label: 'Dashboard', href: '/', icon: LayoutDashboard },
-      { label: 'Logs', href: '/logs', icon: FileText },
+      { label: 'Logs', href: '/logs', icon: FileText, private: true },
       { label: 'Calendar', href: '/calendar', icon: Calendar },
-      { label: 'Office', href: '/office', icon: Building2 },
+      { label: 'Office', href: '/office', icon: Building2, private: true },
     ],
   },
   {
     title: 'INTEL',
     items: [
       { label: 'Content', href: '/content', icon: FileText },
-      { label: 'Databases', href: '/databases', icon: Database },
-      { label: 'Analytics', href: '/analytics', icon: BarChart3 },
+      { label: 'Databases', href: '/databases', icon: Database, private: true },
+      { label: 'Analytics', href: '/analytics', icon: BarChart3, private: true },
     ],
   },
   {
     title: 'GTM',
     items: [
-      { label: 'CRM', href: '/crm', icon: Briefcase },
+      { label: 'CRM', href: '/crm', icon: Briefcase, private: true },
       { label: 'Projects', href: '/projects', icon: FolderKanban },
       { label: 'Team', href: '/team', icon: Users },
       { label: 'Progression', href: '/progression', icon: Crown },
@@ -69,13 +72,16 @@ export default function Sidebar() {
 
   const nav = (
     <nav className="flex flex-col gap-6 py-4">
-      {NAV_SECTIONS.map((section) => (
+      {NAV_SECTIONS.map((section) => {
+        const visibleItems = isPublic ? section.items.filter((i) => !i.private) : section.items
+        if (visibleItems.length === 0) return null
+        return (
         <div key={section.title}>
           <div className="px-4 mb-2 text-[10px] font-bold text-green-700 tracking-widest uppercase">
             {section.title}
           </div>
           <div className="space-y-0.5">
-            {section.items.map((item) => {
+            {visibleItems.map((item) => {
               const Icon = item.icon
               const active = isActive(item.href)
               return (
@@ -96,7 +102,8 @@ export default function Sidebar() {
             })}
           </div>
         </div>
-      ))}
+        )
+      })}
     </nav>
   )
 
