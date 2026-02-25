@@ -33,7 +33,7 @@ export default function ImportPage() {
       <div className="card">
         <h2 className="text-sm font-bold text-green-400 mb-3">Partner-Alpha Import</h2>
         <p className="text-xs text-gray-400 mb-4">
-          Imports email replies and research documents from <code className="bg-gray-800 px-1 rounded">clients/partner/elauwit/resources/</code> into the CRM.
+          Imports email replies and research documents from <code className="bg-gray-800 px-1 rounded">clients/partner/partner-alpha/resources/</code> into the CRM.
           Creates an Partner-Alpha account, contacts from email addresses, and activity entries for each reply.
         </p>
 
