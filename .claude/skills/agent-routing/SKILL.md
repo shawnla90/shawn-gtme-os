@@ -9,6 +9,21 @@ Before spinning up agents or teams, run this decision framework. The goal is to 
 
 ---
 
+## Step 0: Decision-Lock Check
+
+Before analyzing execution pattern, check for an existing CONTEXT.md:
+
+1. **CONTEXT.md exists** (in `reports/YYYY-MM-DD_slug/` or feature working directory) → Read the `## Decisions` section. Use locked decisions to inform the 5-dimension analysis below. Do not re-ask anything already decided.
+
+2. **No CONTEXT.md AND task is complex** (3+ files across 2+ concerns) → Recommend `/discuss` first:
+   > This task touches [N] files across [concerns]. Recommend running `/discuss` to lock decisions before routing.
+
+   If the user says "skip" or "just go", proceed to Step 1 without a CONTEXT.md.
+
+3. **Task is small** (1-2 files, single concern) → Skip directly to Step 1. No discussion needed.
+
+---
+
 ## Step 1: Task Analysis
 
 Evaluate the task against these 5 dimensions. Be honest — do not inflate complexity to justify a team.
@@ -103,6 +118,7 @@ Launch independent subagents via the Task tool. Each gets a specific prompt, wor
 Before executing, state the routing decision to the user:
 
 > **Routing: [Pattern A/B/C]**
+> - Decisions: [CONTEXT.md path, or "none — inline decisions"]
 > - Files to edit: [count]
 > - Concerns: [list]
 > - Handoffs needed: [yes/no]

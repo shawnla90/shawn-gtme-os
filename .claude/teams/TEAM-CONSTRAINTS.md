@@ -93,6 +93,22 @@ This prevents pattern drift. The existing code IS the style guide.
 
 Work is organized in sequential waves. Each wave contains parallel tasks.
 
+### Preferred: Dependency-Based Waves
+
+When the team lead has a concrete task list, use this algorithm for optimal parallelism:
+
+1. **List all tasks** with their inputs (files read) and outputs (files written)
+2. A task is **BLOCKED** if any of its input files are written by an incomplete task
+3. **Wave 1** = all tasks with zero blocked inputs
+4. **Wave 2** = tasks that become unblocked when Wave 1 completes
+5. Continue until all tasks are assigned to a wave
+
+This produces tighter waves than the generic tiers below — tasks run as early as their actual dependencies allow.
+
+### Fallback: Generic 4-Tier Structure
+
+When task dependencies aren't clear upfront, use this default:
+
 ```
 Wave 1: Foundation (data files, types, shared code)
   ↓ VERIFY before proceeding
@@ -103,7 +119,7 @@ Wave 3: Integration (navigation, cross-links, exports, sitemap)
 Wave 4: Validation (build, test, deploy)
 ```
 
-**Rules:**
+### Wave Rules
 - Agents in the same wave CAN run in parallel (they touch different files)
 - Agents in different waves MUST run sequentially (later waves depend on earlier ones)
 - Between waves, the team lead verifies output before launching the next wave
@@ -129,6 +145,61 @@ Every teammate receives:
 4. Clear ownership boundaries (what files this agent owns)
 
 If any of these are missing, the agent MUST ask the team lead before proceeding.
+
+---
+
+## Rule 7: Scope Isolation
+
+Agents fix ONLY issues caused by their own work in the current task.
+
+- **Pre-existing bugs:** If you discover a bug that existed before your task started, log it with `[PRE-EXISTING]` in a message to the team lead. Do NOT fix it — it's out of scope and risks breaking unrelated code.
+- **3-attempt limit:** If an auto-fix for your own work fails 3 times, document the issue with `[STUCK]` tag (include what you tried and the error), then move on to your next task. The team lead will reassign or escalate.
+- **No scope creep:** "While I'm in here, I'll also fix..." is how agents spend 80% of their time on 20% of the value. Stay in your lane.
+
+---
+
+## Rule 8: Fresh Context per Executor
+
+Every executor (subagent or team member) starts with a clean context. No inherited assumptions.
+
+### Load Order (mandatory, in this sequence):
+1. `TEAM-CONSTRAINTS.md` — these rules
+2. `CONTEXT.md` — locked decisions for this feature (if one exists)
+3. `files_to_read` — 3-5 specific files listed in the task description
+4. Task description — what to do
+
+### Task Description Format
+
+Team leads MUST use this format when assigning tasks:
+
+```
+## Task: [Short title]
+
+**files_to_read:**
+- [path/to/file1.ts] — [why: "pattern to follow"]
+- [path/to/file2.ts] — [why: "data structure to match"]
+- [path/to/file3.md] — [why: "constraints to respect"]
+
+**files_to_write:**
+- [path/to/output1.ts]
+- [path/to/output2.tsx]
+
+**Acceptance criteria:**
+- [ ] [Specific, testable criterion]
+- [ ] [Another criterion]
+- [ ] Builds clean (`npx turbo build` passes)
+```
+
+### Atomic Commits
+
+Each executor commits only its own files with a semantic prefix:
+- `feat:` — new functionality
+- `fix:` — bug fix
+- `refactor:` — restructure without behavior change
+- `docs:` — documentation only
+- `chore:` — tooling, config, maintenance
+
+Do NOT stage files owned by other agents. Do NOT use `git add -A`.
 
 ---
 
