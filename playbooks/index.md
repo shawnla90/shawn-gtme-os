@@ -15,13 +15,13 @@
 | 3 | Exa SDK: Signal Detection | `scripts/exa_signal_detection.py` | P1 | GTMLS "Exa" + tutorial |
 | 4 | Exa SDK: Persona Widening | `scripts/exa_influencer_widening.py` | P1 | GTMLS "Exa" + tutorial |
 | 5 | Exa SDK: TAM Expansion | `scripts/exa_find_similar.py` | P1 | GTMLS "Exa" + tutorial |
-| 6 | Executive Authority Play | Elauwit campaign-copy.md | P2 | Campaign Patterns guide |
-| 7 | Gatekeeper Referral Play | Elauwit campaign-copy.md | P2 | Campaign Patterns guide |
-| 8 | Signal-Triggered Play | Exol campaign-patterns.md | P2 | Campaign Patterns guide |
-| 9 | Lead Scoring (200-pt composite) | Exol lead-scoring.md | P2 | GTMLS "Scoring" expansion |
+| 6 | Executive Authority Play | Partner Alpha campaign-copy.md | P2 | Campaign Patterns guide |
+| 7 | Gatekeeper Referral Play | Partner Alpha campaign-copy.md | P2 | Campaign Patterns guide |
+| 8 | Signal-Triggered Play | Partner Gamma campaign-patterns.md | P2 | Campaign Patterns guide |
+| 9 | Lead Scoring (200-pt composite) | Partner Gamma lead-scoring.md | P2 | GTMLS "Scoring" expansion |
 | 10 | ICP Definition Framework | Multiple partner icp.md files | P2 | GTMLS "ICP" expansion |
-| 11 | Mailbox Rotation Strategy | Elauwit domain-management.md | P3 | How-To guide |
-| 12 | MCP Orchestration Pattern | Elauwit slack-mcp-setup.md + Exa | P1 | GTMLS new "MCP" term |
+| 11 | Mailbox Rotation Strategy | Partner Alpha domain-management.md | P3 | How-To guide |
+| 12 | MCP Orchestration Pattern | Partner Alpha slack-mcp-setup.md + Exa | P1 | GTMLS new "MCP" term |
 
 ## Backlog
 

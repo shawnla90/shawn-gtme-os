@@ -46,13 +46,13 @@ The opening line of a cold email that proves you researched the person. A specif
 
 ### Examples (By Partner)
 
-**Exol (ShopTalk event context)**:
+**Partner Gamma (ShopTalk event context)**:
 > "Saw you're heading to ShopTalk — and that you just expanded into Target doors last quarter. That kind of retail velocity usually breaks a 3PL relationship before the first OTIF review."
 
 **Praecipio (web reveal context)**:
 > "Noticed you've been scaling an Atlassian footprint since the Zendesk migration last year — that kind of transition usually surfaces some ugly workflow gaps by month six."
 
-**Connext (account research context)**:
+**Partner Beta (account research context)**:
 > "Saw you just announced 200 new locations by Q3 — that's a lot of site readiness to coordinate with a lean IT team."
 
 ### Data Sources (Priority Order)
@@ -93,19 +93,19 @@ A provocative, uncomfortable observation that challenges how the company is prob
 
 ### Examples (By Partner)
 
-**Exol — CPG brand**:
+**Partner Gamma — CPG brand**:
 > "Most $200M CPG brands are still paying 2019 3PL rates on 2026 volume — and calling it a logistics strategy."
 
-**Exol — F&B brand**:
+**Partner Gamma — F&B brand**:
 > "Scaling frozen meal fulfillment through a manual 3PL while keeping OTIF above 95% for Walmart is a math problem that gets worse every quarter."
 
-**Exol — Retail brand**:
+**Partner Gamma — Retail brand**:
 > "Running omni-channel fulfillment from three separate inventory pools and calling it 'operational flexibility' is just a polite way of saying nobody has the budget to fix it."
 
 **Praecipio (Email 1 body — "poke the bear" style)**:
 > "Here's what I keep seeing at orgs your size — everyone knows the tooling is creating drag, but nobody wants to be the one to say it out loud. The workarounds become the process, and the process becomes 'how we've always done it.'"
 
-**Connext (hypothetical — built from pain points)**:
+**Partner Beta (hypothetical — built from pain points)**:
 > "Most enterprise IT teams running 500+ site refreshes are still coordinating it the same way they did when they had 50 locations — spreadsheets, regional vendors, and a prayer that site 400 looks like site 1."
 
 ### How to Write One
@@ -144,7 +144,7 @@ A data point or observation that identifies a specific problem the company is fa
 
 ### Examples (By Partner)
 
-**Exol — mapped to pain point library**:
+**Partner Gamma — mapped to pain point library**:
 
 | Pain Point | Example Variable Output |
 |------------|----------------------|
@@ -161,7 +161,7 @@ A data point or observation that identifies a specific problem the company is fa
 | ITSM | "When your Jira Service Management instance has 47 custom workflows and nobody remembers why half of them exist, the problem isn't Jira — it's that nobody's had time to untangle it." |
 | Tool sprawl | "Three project management tools across four teams isn't a 'best of breed' strategy — it's a sign that nobody had time to consolidate after the last reorg." |
 
-**Connext — mapped to pain points**:
+**Partner Beta — mapped to pain points**:
 
 | Pain Point | Example Variable Output |
 |------------|----------------------|
@@ -234,7 +234,7 @@ Circling back — no pressure either way.
 — {sender}
 ```
 
-### Event-Based Sequence (Exol/ShopTalk Model)
+### Event-Based Sequence (Partner Gamma/ShopTalk Model)
 
 ```
 EMAIL 1 — Pre-Event
@@ -346,7 +346,7 @@ Before deploying any batch of generated variables, spot-check 20-30 outputs:
 
 Use these when building prompts for specific partners. Map your poke-the-bear and pain-point outputs to these known pressures.
 
-### Exol (GreenBox) — Warehouse-as-a-Service
+### Partner Gamma (WaaS Brand) — Warehouse-as-a-Service
 
 | Pain Point | Bucket | Signal to Look For |
 |------------|--------|-------------------|
@@ -366,7 +366,7 @@ Use these when building prompts for specific partners. Map your poke-the-bear an
 | ServiceNow contract renewal window | ITSM | ServiceNow in tech stack + renewal timing |
 | New CIO/CTO in first 90 days | Multiple | Recent leadership hire visible on LinkedIn |
 
-### Connext — Multi-Site Tech Deployment
+### Partner Beta — Multi-Site Tech Deployment
 
 | Pain Point | Solution Play | Signal to Look For |
 |------------|--------------|-------------------|
@@ -376,7 +376,7 @@ Use these when building prompts for specific partners. Map your poke-the-bear an
 | Failed installs causing revenue-impacting downtime | First-Visit Success | Negative reviews mentioning outages, POS failures |
 | Inconsistent site experiences, rework, second truck rolls | Staging & Logistics | Multiple vendor contracts, standardization complaints |
 
-### Elauwit — Multifamily WiFi/NaaS
+### Partner Alpha — Multifamily WiFi/NaaS
 
 | Pain Point | Campaign Type | Signal to Look For |
 |------------|--------------|-------------------|

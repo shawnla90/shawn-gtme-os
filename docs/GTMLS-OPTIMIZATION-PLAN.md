@@ -29,7 +29,7 @@ New category in `gtm-terms.ts`:
 |---------|------|--------------------------|
 | `mcp-server` | MCP Server | Core concept — connects AI agents to tools. Every GTM workflow runs through MCPs. |
 | `exa` | Exa | People search, company research, TAM expansion. We just saved hours with SDK scripts. |
-| `smartlead` | Smartlead | Missing entirely — it's Exol's email tool, different from Instantly. |
+| `smartlead` | Smartlead | Missing entirely — it's Partner Gamma's email tool, different from Instantly. |
 | `parallel-agents` | Parallel Agents | Running multiple AI tasks simultaneously. Key to the "hours saved" story. |
 | `orchestration` | Orchestration | How Clay, Exa, MCPs, and email tools chain together. The meta-pattern. |
 

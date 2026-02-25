@@ -84,9 +84,9 @@ When converting a partner workflow to a playbook:
 | Exa Signal Detection | `scripts/exa_signal_detection.py` | Source ready | GTMLS "Exa" term + tutorial |
 | Exa Persona Widening | `scripts/exa_influencer_widening.py` | Source ready | GTMLS "Exa" term + tutorial |
 | Exa TAM Expansion | `scripts/exa_find_similar.py` | Source ready | GTMLS "Exa" term + tutorial |
-| Executive Authority Play | `clients/partner/elauwit/prompts/campaign-copy.md` | Needs extraction | Campaign Patterns guide |
-| Gatekeeper Referral Play | `clients/partner/elauwit/prompts/campaign-copy.md` | Needs extraction | Campaign Patterns guide |
-| Signal-Triggered Play | `clients/partner/exol/workflows/campaign-patterns.md` | Needs extraction | Campaign Patterns guide |
-| Lead Scoring (200-pt) | `clients/partner/exol/prompts/lead-scoring.md` | Needs extraction | GTMLS "Scoring" term expansion |
+| Executive Authority Play | `clients/partner/partner-alpha/prompts/campaign-copy.md` | Needs extraction | Campaign Patterns guide |
+| Gatekeeper Referral Play | `clients/partner/partner-alpha/prompts/campaign-copy.md` | Needs extraction | Campaign Patterns guide |
+| Signal-Triggered Play | `clients/partner/partner-gamma/workflows/campaign-patterns.md` | Needs extraction | Campaign Patterns guide |
+| Lead Scoring (200-pt) | `clients/partner/partner-gamma/prompts/lead-scoring.md` | Needs extraction | GTMLS "Scoring" term expansion |
 | ICP Framework | Multiple partner `icp.md` files | Needs extraction | GTMLS "ICP" term expansion |
-| Mailbox Rotation | `clients/partner/elauwit/workflows/domain-management.md` | Needs extraction | How-To guide |
+| Mailbox Rotation | `clients/partner/partner-alpha/workflows/domain-management.md` | Needs extraction | How-To guide |

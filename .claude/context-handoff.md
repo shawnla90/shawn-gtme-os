@@ -5,7 +5,7 @@
 
 ### 1. Icebreaker/Pain Point How-To Guide
 - Created `docs/HOW-TO-ICEBREAKER-PAIN-POINT-PROMPTS.md` — full instructional doc on the 3-variable personalization model ({icebreaker}, {poke_the_bear}, {pain_point})
-- Rules, real examples from all 4 partners (Exol, Praecipio, Connext, Elauwit), prompt templates, QC checklist
+- Rules, real examples from all 4 partners (Partner Gamma, Praecipio, Partner Beta, Partner Alpha), prompt templates, QC checklist
 - Team-ready — can be handed to anyone or fed to an AI system
 
 ### 2. Playbooks Folder + Extraction Skill
@@ -50,7 +50,7 @@
 4. **GTMLS Sprint 4** — build `MCPShowcase` and `ToolIntegrationMap` components. Visual tool chain diagrams.
 5. **GTMLS Sprint 5** — SEO cross-linking, playbook backlinks on term pages, `/playbooks` website route, HowTo structured data.
 6. **Playbook extraction** — run `playbooks/extraction-prompt.md` against the repo to identify additional workflows worth publishing.
-7. **Exol email enrichment** — 280 contacts still need work emails (from previous session handoff).
+7. **Partner Gamma email enrichment** — 280 contacts still need work emails (from previous session handoff).
 
 ## Key Decisions Made
 
