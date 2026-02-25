@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { TechStackGrid } from './TechStackGrid'
 
 export const metadata: Metadata = {
   title: 'About',
@@ -35,18 +36,6 @@ export const metadata: Metadata = {
 }
 
 /* ── data ─────────────────────────────────────────── */
-
-const tools: { name: string; note: string }[] = [
-  { name: 'Cursor IDE', note: 'AI-native development' },
-  { name: 'Claude', note: 'reasoning engine' },
-  { name: 'Vercel', note: 'deployment' },
-  { name: 'Turborepo', note: 'monorepo' },
-  { name: 'Next.js', note: 'framework' },
-  { name: 'Python + Pillow', note: 'content images' },
-  { name: 'HeyReach', note: 'LinkedIn automation' },
-  { name: 'Instantly', note: 'email sequencing' },
-  { name: 'Clay', note: 'data enrichment' },
-]
 
 const network: { label: string; url: string; accent: string; desc: string }[] = [
   {
@@ -139,44 +128,10 @@ export default function AboutPage() {
         </p>
       </div>
 
-      {/* ── Tool Stack ── */}
+      {/* ── Tech Stack (logo grid) ── */}
       <div style={section}>
-        <h2 style={sectionTitle}>tool stack</h2>
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
-            gap: '12px',
-          }}
-        >
-          {tools.map((t) => (
-            <div
-              key={t.name}
-              style={{
-                padding: '14px 16px',
-                background: 'var(--canvas-subtle)',
-                border: '1px solid var(--border)',
-                borderRadius: '6px',
-              }}
-            >
-              <span
-                style={{
-                  display: 'block',
-                  fontSize: '14px',
-                  fontWeight: 600,
-                  color: 'var(--text-primary)',
-                  marginBottom: '4px',
-                }}
-              >
-                {t.name}
-              </span>
-              <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-                {t.note}
-              </span>
-            </div>
-          ))}
-        </div>
+        <h2 style={sectionTitle}>tech stack</h2>
+        <TechStackGrid />
       </div>
 
       {/* ── The Network ── */}
@@ -249,6 +204,56 @@ export default function AboutPage() {
             </a>
           ))}
         </div>
+      </div>
+
+      {/* ── Showcase CTA ── */}
+      <div
+        style={{
+          background: 'var(--canvas-subtle)',
+          border: '1px solid var(--border)',
+          borderRadius: '8px',
+          padding: '20px 24px',
+          marginBottom: '16px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          flexWrap: 'wrap',
+          gap: '12px',
+        }}
+      >
+        <div>
+          <div
+            style={{
+              fontSize: '13px',
+              fontWeight: 600,
+              color: 'var(--text-primary)',
+              marginBottom: '4px',
+            }}
+          >
+            see the components in action
+          </div>
+          <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+            live demos of every system — terminal UI, animations, RPG engine, video gen.
+          </div>
+        </div>
+        <Link
+          href="/showcase"
+          style={{
+            display: 'inline-block',
+            padding: '8px 18px',
+            fontSize: '12px',
+            fontWeight: 600,
+            fontFamily: 'var(--font-mono)',
+            color: 'var(--accent)',
+            background: 'transparent',
+            border: '1px solid var(--accent)',
+            borderRadius: 6,
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          component showcase &rarr;
+        </Link>
       </div>
 
       {/* ── Arc CTA ── */}

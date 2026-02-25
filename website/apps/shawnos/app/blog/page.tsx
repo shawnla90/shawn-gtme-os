@@ -66,6 +66,8 @@ export default function BlogIndex() {
               date={post.date}
               excerpt={post.excerpt}
               slug={post.slug}
+              readingTime={post.readingTime}
+              category={post.category}
             />
           ))}
         </div>

@@ -4,6 +4,9 @@ import Link from 'next/link'
 import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
 import { PostCard, LogCard, TypewriterHero, AvatarBadge, BreadcrumbSchema } from '@shawnos/shared/components'
 import { VideoShowcase } from './VideoShowcase'
+import { StatsStrip } from './StatsStrip'
+import { AnimateOnScroll } from './AnimateOnScroll'
+import { BuiltWithStrip } from './BuiltWithStrip'
 
 export const metadata: Metadata = {
   title: 'ShawnOS.ai | GTM engineering, built in public',
@@ -52,7 +55,7 @@ const page: React.CSSProperties = {
 }
 
 const heroSection: React.CSSProperties = {
-  marginBottom: 56,
+  marginBottom: 48,
 }
 
 const heroRow: React.CSSProperties = {
@@ -152,10 +155,46 @@ const bootStatus: React.CSSProperties = {
   fontWeight: 600,
 }
 
-const divider: React.CSSProperties = {
-  border: 'none',
-  borderTop: '1px solid var(--border)',
-  margin: '48px 0',
+/* ── section separator ──────────────────────────────
+   Gradient line that fades from accent → transparent,
+   with a centered "· · ·" terminal divider.
+─────────────────────────────────────────────────── */
+
+function SectionDivider() {
+  return (
+    <div
+      style={{
+        margin: '48px 0',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 10,
+      }}
+    >
+      {/* gradient line */}
+      <div
+        style={{
+          width: '100%',
+          height: 1,
+          background:
+            'linear-gradient(to right, transparent 0%, var(--accent) 30%, var(--accent) 70%, transparent 100%)',
+          opacity: 0.25,
+        }}
+      />
+      {/* terminal dots */}
+      <span
+        style={{
+          fontSize: '12px',
+          color: 'var(--text-muted)',
+          letterSpacing: '0.3em',
+          fontFamily: 'var(--font-mono)',
+          userSelect: 'none',
+        }}
+      >
+        · · ·
+      </span>
+    </div>
+  )
 }
 
 /* ── page ────────────────────────────────────────── */
@@ -174,7 +213,7 @@ export default function HomePage() {
     <>
     <BreadcrumbSchema items={[]} />
     <div style={page}>
-      {/* ── Hero ── */}
+      {/* ── Hero (no AnimateOnScroll — immediately visible) ── */}
       <section style={heroSection}>
         <p style={prompt}>
           <span style={promptChar}>$</span> ./boot ShawnOS.ai
@@ -235,77 +274,54 @@ export default function HomePage() {
         </div>
       </section>
 
-      <hr style={divider} />
+      {/* ── Stats Strip ── */}
+      <AnimateOnScroll style={{ marginBottom: 48 }}>
+        <StatsStrip />
+      </AnimateOnScroll>
+
+      <SectionDivider />
 
       {/* ── Highlight Reel ── */}
-      <section style={section}>
-        <h2 style={sectionTitle}>
-          <span style={promptChar}>$</span>{' '}
-          <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-            play ./highlight-reel
-          </span>
-        </h2>
-        <VideoShowcase />
-      </section>
-
-      <hr style={divider} />
-
-      {/* ── Latest Posts ── */}
-      {latestPosts.length > 0 && (
+      <AnimateOnScroll>
         <section style={section}>
           <h2 style={sectionTitle}>
             <span style={promptChar}>$</span>{' '}
             <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-              ls ~/blog --recent -n 3
+              play ./highlight-reel
             </span>
           </h2>
-
-          <div>
-            {latestPosts.map((post) => (
-              <PostCard
-                key={post.slug}
-                title={post.title}
-                date={post.date}
-                excerpt={post.excerpt}
-                slug={post.slug}
-              />
-            ))}
-          </div>
-
-          <div style={{ marginTop: 24 }}>
-            <Link
-              href="/blog"
-              style={{
-                fontSize: '13px',
-                color: 'var(--accent)',
-                textDecoration: 'none',
-                fontWeight: 600,
-              }}
-            >
-              view all posts &rarr;
-            </Link>
-          </div>
+          <VideoShowcase />
         </section>
-      )}
+      </AnimateOnScroll>
 
-      {/* ── Latest Log ── */}
-      {latestLog && (
-        <>
-          <hr style={divider} />
+      <SectionDivider />
 
+      {/* ── Latest Posts ── */}
+      {latestPosts.length > 0 && (
+        <AnimateOnScroll>
           <section style={section}>
             <h2 style={sectionTitle}>
               <span style={promptChar}>$</span>{' '}
               <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-                cat ~/log --latest
+                ls ~/blog --recent -n 3
               </span>
             </h2>
 
-            <LogCard {...latestLog} basePath="/log" />
+            <div>
+              {latestPosts.map((post) => (
+                <PostCard
+                  key={post.slug}
+                  title={post.title}
+                  date={post.date}
+                  excerpt={post.excerpt}
+                  slug={post.slug}
+                />
+              ))}
+            </div>
 
             <div style={{ marginTop: 24 }}>
               <Link
-                href="/log"
+                href="/blog"
                 style={{
                   fontSize: '13px',
                   color: 'var(--accent)',
@@ -313,101 +329,146 @@ export default function HomePage() {
                   fontWeight: 600,
                 }}
               >
-                view all logs &rarr;
+                view all posts &rarr;
               </Link>
             </div>
           </section>
+        </AnimateOnScroll>
+      )}
+
+      {/* ── Latest Log ── */}
+      {latestLog && (
+        <>
+          <SectionDivider />
+
+          <AnimateOnScroll>
+            <section style={section}>
+              <h2 style={sectionTitle}>
+                <span style={promptChar}>$</span>{' '}
+                <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
+                  cat ~/log --latest
+                </span>
+              </h2>
+
+              <LogCard {...latestLog} basePath="/log" />
+
+              <div style={{ marginTop: 24 }}>
+                <Link
+                  href="/log"
+                  style={{
+                    fontSize: '13px',
+                    color: 'var(--accent)',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                  }}
+                >
+                  view all logs &rarr;
+                </Link>
+              </div>
+            </section>
+          </AnimateOnScroll>
         </>
       )}
 
-      <hr style={divider} />
+      <SectionDivider />
 
       {/* ── Boot Log ── */}
-      <section style={{ ...section, marginBottom: 24 }}>
-        <h2 style={sectionTitle}>system status</h2>
+      <AnimateOnScroll>
+        <section style={{ ...section, marginBottom: 24 }}>
+          <h2 style={sectionTitle}>system status</h2>
 
-        <div
+          <div
+            style={{
+              padding: '20px 24px',
+              background: 'var(--canvas-subtle)',
+              border: '1px solid var(--border)',
+              borderRadius: 6,
+            }}
+          >
+            {bootLines.map((line) => (
+              <div key={line.label} style={bootLine}>
+                [<span style={bootStatus}>{line.status}</span>] {line.label}
+              </div>
+            ))}
+            <div
+              style={{
+                marginTop: 16,
+                paddingTop: 12,
+                borderTop: '1px solid var(--border)',
+                fontSize: '13px',
+                color: 'var(--accent)',
+                fontWeight: 600,
+              }}
+            >
+              &gt; all systems operational_
+            </div>
+          </div>
+        </section>
+      </AnimateOnScroll>
+
+      {/* ── Built With ── */}
+      <AnimateOnScroll style={{ marginBottom: 0 }}>
+        <BuiltWithStrip />
+      </AnimateOnScroll>
+
+      <SectionDivider />
+
+      {/* ── Choose Your Path ── */}
+      <AnimateOnScroll>
+        <section
           style={{
+            marginTop: 32,
             padding: '20px 24px',
             background: 'var(--canvas-subtle)',
             border: '1px solid var(--border)',
             borderRadius: 6,
+            fontSize: '13px',
+            lineHeight: 2,
           }}
         >
-          {bootLines.map((line) => (
-            <div key={line.label} style={bootLine}>
-              [<span style={bootStatus}>{line.status}</span>] {line.label}
-            </div>
-          ))}
-          <div
-            style={{
-              marginTop: 16,
-              paddingTop: 12,
-              borderTop: '1px solid var(--border)',
-              fontSize: '13px',
-              color: 'var(--accent)',
-              fontWeight: 600,
-            }}
-          >
-            &gt; all systems operational_
+          <div style={{ color: 'var(--text-muted)', marginBottom: 8 }}>
+            <span style={promptChar}>$</span> ls ~/paths
           </div>
-        </div>
-      </section>
-
-      {/* ── Choose Your Path ── */}
-      <section
-        style={{
-          marginTop: 32,
-          padding: '20px 24px',
-          background: 'var(--canvas-subtle)',
-          border: '1px solid var(--border)',
-          borderRadius: 6,
-          fontSize: '13px',
-          lineHeight: 2,
-        }}
-      >
-        <div style={{ color: 'var(--text-muted)', marginBottom: 8 }}>
-          <span style={promptChar}>$</span> ls ~/paths
-        </div>
-        <div>
-          <span style={{ color: 'var(--text-secondary)' }}>building content systems?</span>{' '}
-          <a
-            href="https://thecontentos.ai"
-            style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
-          >
-            theContentOS.ai &rarr;
-          </a>
-        </div>
-        <div>
-          <span style={{ color: 'var(--text-secondary)' }}>building GTM pipelines?</span>{' '}
-          <a
-            href="https://thegtmos.ai"
-            style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
-          >
-            theGTMOS.ai &rarr;
-          </a>
-        </div>
-        <div>
-          <span style={{ color: 'var(--text-secondary)' }}>want to see how it all works?</span>{' '}
-          <Link
-            href="/blog"
-            style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
-          >
-            read the blog &rarr;
-          </Link>
-        </div>
-        <div>
-          <span style={{ color: 'var(--text-secondary)' }}>curious what an openclaw/nio bot looks like?</span>{' '}
-          <a
-            href="https://mission-control-six-smoky.vercel.app"
-            style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            mission control &rarr;
-          </a>
-        </div>
-      </section>
+          <div>
+            <span style={{ color: 'var(--text-secondary)' }}>building content systems?</span>{' '}
+            <a
+              href="https://thecontentos.ai"
+              style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
+            >
+              theContentOS.ai &rarr;
+            </a>
+          </div>
+          <div>
+            <span style={{ color: 'var(--text-secondary)' }}>building GTM pipelines?</span>{' '}
+            <a
+              href="https://thegtmos.ai"
+              style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
+            >
+              theGTMOS.ai &rarr;
+            </a>
+          </div>
+          <div>
+            <span style={{ color: 'var(--text-secondary)' }}>want to see how it all works?</span>{' '}
+            <Link
+              href="/blog"
+              style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
+            >
+              read the blog &rarr;
+            </Link>
+          </div>
+          <div>
+            <span style={{ color: 'var(--text-secondary)' }}>curious what an openclaw/nio bot looks like?</span>{' '}
+            <a
+              href="https://mission-control-six-smoky.vercel.app"
+              style={{ color: 'var(--accent)', textDecoration: 'none', fontWeight: 600 }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              mission control &rarr;
+            </a>
+          </div>
+        </section>
+      </AnimateOnScroll>
     </div>
     </>
   )

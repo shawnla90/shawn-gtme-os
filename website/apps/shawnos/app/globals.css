@@ -92,3 +92,47 @@ html body {
 .prose li {
   margin-bottom: 8px;
 }
+
+/* === Table of Contents responsive visibility === */
+.toc-mobile {
+  display: block;
+}
+
+.toc-desktop {
+  display: none !important;
+}
+
+@media (min-width: 900px) {
+  .toc-mobile {
+    display: none !important;
+  }
+
+  .toc-desktop {
+    display: block !important;
+  }
+}
+
+/* === Blog post layout with TOC sidebar === */
+.blog-post-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: var(--font-mono);
+}
+
+@media (min-width: 900px) {
+  .blog-post-layout {
+    flex-direction: row;
+    gap: 48px;
+    align-items: flex-start;
+  }
+
+  .blog-post-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 720px;
+  }
+}

@@ -5,9 +5,11 @@ interface PostCardProps {
   date: string
   excerpt: string
   slug: string
+  readingTime?: number
+  category?: string
 }
 
-export function PostCard({ title, date, excerpt, slug }: PostCardProps) {
+export function PostCard({ title, date, excerpt, slug, readingTime, category }: PostCardProps) {
   return (
     <article
       style={{
@@ -28,17 +30,52 @@ export function PostCard({ title, date, excerpt, slug }: PostCardProps) {
       >
         {title}
       </a>
-      <time
-        dateTime={date}
+
+      <div
         style={{
-          display: 'block',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
           marginTop: '6px',
-          fontSize: '12px',
-          color: 'var(--text-muted)',
+          flexWrap: 'wrap',
         }}
       >
-        {date}
-      </time>
+        <time
+          dateTime={date}
+          style={{
+            fontSize: '12px',
+            color: 'var(--text-muted)',
+          }}
+        >
+          {date}
+        </time>
+
+        {readingTime !== undefined && (
+          <>
+            <span style={{ fontSize: '12px', color: '#484F58' }}>·</span>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+              {readingTime} min read
+            </span>
+          </>
+        )}
+
+        {category && (
+          <span
+            style={{
+              fontSize: '11px',
+              color: '#4EC373',
+              border: '1px solid #4EC373',
+              borderRadius: '3px',
+              padding: '1px 6px',
+              letterSpacing: '0.4px',
+              opacity: 0.75,
+            }}
+          >
+            {category}
+          </span>
+        )}
+      </div>
+
       <p
         style={{
           marginTop: '8px',

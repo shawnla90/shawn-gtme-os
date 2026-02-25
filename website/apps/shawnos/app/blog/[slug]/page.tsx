@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { TableOfContents } from './TableOfContents'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -43,6 +44,17 @@ export async function generateMetadata({
   }
 }
 
+function formatDate(dateStr: string): string {
+  if (!dateStr) return dateStr
+  const d = new Date(dateStr)
+  if (isNaN(d.getTime())) return dateStr
+  return d.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+  })
+}
+
 export default async function BlogPost({
   params,
 }: {
@@ -66,87 +78,134 @@ export default async function BlogPost({
 
   return (
     <>
-    <BreadcrumbSchema
-      items={[
-        { name: 'Blog', url: `${SITE_URL}/blog` },
-        { name: post.title, url: `${SITE_URL}/blog/${slug}` },
-      ]}
-    />
-    <article
-      style={{
-        maxWidth: 720,
-        margin: '0 auto',
-        padding: '40px 20px',
-        fontFamily: 'var(--font-mono)',
-      }}
-    >
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      <BreadcrumbSchema
+        items={[
+          { name: 'Blog', url: `${SITE_URL}/blog` },
+          { name: post.title, url: `${SITE_URL}/blog/${slug}` },
+        ]}
       />
 
-      <a
-        href="/blog"
-        style={{
-          fontSize: '13px',
-          color: 'var(--accent)',
-          textDecoration: 'none',
-          display: 'inline-block',
-          marginBottom: 24,
-        }}
-      >
-        &larr; back to blog
-      </a>
+      {/*
+        Outer wrapper: on desktop becomes a flex row (content + toc sidebar).
+        The TableOfContents component renders BOTH a .toc-mobile and .toc-desktop
+        element internally; CSS shows only the appropriate one per breakpoint.
+        We position it as the second flex child so it appears on the right.
+      */}
+      <div className="blog-post-layout">
+        {/* Main content column */}
+        <article className="blog-post-content" style={{ fontFamily: 'var(--font-mono)' }}>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
 
-      <header style={{ marginBottom: 32 }}>
-        <h1
-          style={{
-            fontSize: '28px',
-            fontWeight: 700,
-            color: 'var(--accent)',
-            lineHeight: 1.3,
-            margin: 0,
-          }}
-        >
-          {post.title}
-        </h1>
-        <time
-          dateTime={post.date}
-          style={{
-            display: 'block',
-            marginTop: 8,
-            fontSize: '13px',
-            color: 'var(--text-muted)',
-          }}
-        >
-          {post.date}
-        </time>
-      </header>
+          <a
+            href="/blog"
+            style={{
+              fontSize: '13px',
+              color: 'var(--accent)',
+              textDecoration: 'none',
+              display: 'inline-block',
+              marginBottom: 24,
+            }}
+          >
+            &larr; back to blog
+          </a>
 
-      <div
-        className="prose"
-        dangerouslySetInnerHTML={{ __html: htmlContent }}
-      />
+          {/*
+            Mobile TOC strip lives here inside the article column, above the
+            header. On desktop this element is hidden by CSS and the sidebar
+            aside (below) is shown instead.
+          */}
+          <TableOfContents html={htmlContent} mobileOnly />
 
-      <footer
-        style={{
-          marginTop: 48,
-          paddingTop: 24,
-          borderTop: '1px solid var(--border)',
-        }}
-      >
-        <a
-          href="/blog"
-          style={{
-            fontSize: '13px',
-            color: 'var(--accent)',
-            textDecoration: 'none',
-          }}
-        >
-          &larr; back to blog
-        </a>
-      </footer>
-    </article>
+          <header style={{ marginBottom: 32 }}>
+            <h1
+              style={{
+                fontSize: '28px',
+                fontWeight: 700,
+                color: 'var(--accent)',
+                lineHeight: 1.3,
+                margin: 0,
+              }}
+            >
+              {post.title}
+            </h1>
+
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '8px',
+                flexWrap: 'wrap',
+                marginTop: 8,
+              }}
+            >
+              <time
+                dateTime={post.date}
+                style={{
+                  fontSize: '13px',
+                  color: 'var(--text-muted)',
+                }}
+              >
+                {formatDate(post.date)}
+              </time>
+
+              <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
+
+              <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+                {post.readingTime} min read
+              </span>
+
+              {post.category && (
+                <>
+                  <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
+                  <span
+                    style={{
+                      fontSize: '11px',
+                      color: '#4EC373',
+                      border: '1px solid #4EC373',
+                      borderRadius: '3px',
+                      padding: '1px 6px',
+                      letterSpacing: '0.4px',
+                      opacity: 0.75,
+                    }}
+                  >
+                    {post.category}
+                  </span>
+                </>
+              )}
+            </div>
+          </header>
+
+          <div
+            className="prose"
+            dangerouslySetInnerHTML={{ __html: htmlContent }}
+          />
+
+          <footer
+            style={{
+              marginTop: 48,
+              paddingTop: 24,
+              borderTop: '1px solid var(--border)',
+            }}
+          >
+            <a
+              href="/blog"
+              style={{
+                fontSize: '13px',
+                color: 'var(--accent)',
+                textDecoration: 'none',
+              }}
+            >
+              &larr; back to blog
+            </a>
+          </footer>
+        </article>
+
+        {/* Desktop sidebar TOC — hidden on mobile via CSS */}
+        <TableOfContents html={htmlContent} desktopOnly />
+      </div>
     </>
   )
 }

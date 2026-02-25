@@ -8,6 +8,25 @@ export interface Post {
   date: string
   excerpt: string
   content: string
+  readingTime: number
+  category?: string
+}
+
+/**
+ * Calculates reading time in minutes from a markdown string.
+ * Strips markdown syntax before counting words. Uses 200 wpm.
+ */
+function calcReadingTime(content: string): number {
+  const stripped = content
+    .replace(/```[\s\S]*?```/g, '')   // remove code blocks
+    .replace(/`[^`]+`/g, '')           // remove inline code
+    .replace(/!\[.*?\]\(.*?\)/g, '')   // remove images
+    .replace(/\[.*?\]\(.*?\)/g, '')    // remove links
+    .replace(/[#*_~>|]/g, '')          // remove markdown symbols
+    .replace(/\s+/g, ' ')
+    .trim()
+  const wordCount = stripped.split(' ').filter(Boolean).length
+  return Math.max(1, Math.round(wordCount / 200))
 }
 
 /**
@@ -36,6 +55,8 @@ export function getPostBySlug(slug: string, contentDir: string): Post {
     date: (data.date as string) ?? '',
     excerpt: (data.excerpt as string) ?? content.slice(0, 160).replace(/\n/g, ' '),
     content,
+    readingTime: calcReadingTime(content),
+    category: (data.category as string) ?? undefined,
   }
 }
 

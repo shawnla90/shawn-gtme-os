@@ -3,6 +3,7 @@ import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { FooterCredit } from './FooterCredit'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -161,6 +162,7 @@ export default function RootLayout({
             { href: '/vitals', label: 'Vitals' },
             { href: '/updates', label: 'Updates' },
             { href: '/about', label: 'About' },
+            { href: '/showcase', label: 'Showcase' },
             { href: '/search', label: 'Search' },
             { href: '/method', label: 'Method' },
             { href: '/api', label: 'API' },
@@ -169,6 +171,7 @@ export default function RootLayout({
         <main>{children}</main>
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
+        <FooterCredit />
         <Analytics />
         <SpeedInsights />
       </body>
