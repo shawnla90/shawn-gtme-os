@@ -6,13 +6,14 @@ import { BreadcrumbSchema } from '@shawnos/shared/components'
 const SITE_URL = 'https://thegtmos.ai'
 
 export const metadata: Metadata = {
-  title: 'GTM OS Knowledge Guide | Email Campaigns & Outreach Terms',
+  title: 'GTM OS Knowledge Guide | Email Campaigns, MCP Servers & Outreach Terms',
   description:
-    'Clay, HeyReach, Instantly, email deliverability, ICP, persona scoring, and the GTM terms you need to build outbound systems in 2026.',
+    'Clay, Exa, MCP servers, HeyReach, Instantly, Smartlead, email deliverability, ICP scoring, enrichment pipelines, and the GTM terms you need to build outbound systems in 2026. Real use cases, not theory.',
   keywords: [
     'clay',
     'heyreach',
     'instantly',
+    'smartlead',
     'email deliverability',
     'icp',
     'persona',
@@ -20,18 +21,30 @@ export const metadata: Metadata = {
     'outbound sales',
     'email campaigns',
     'data enrichment',
+    'exa api',
+    'exa sdk',
+    'mcp server',
+    'model context protocol',
+    'ai enrichment',
+    'parallel agents',
+    'lead scoring model',
+    'icebreaker prompt',
+    'poke the bear email',
+    'signal based outbound',
+    'tam expansion',
+    'enrichment pipeline',
   ],
   alternates: { canonical: `${SITE_URL}/knowledge/gtm` },
   openGraph: {
     title: 'GTM OS Knowledge Guide | theGTMOS.ai',
     description:
-      'Email campaigns, outreach platforms, data operations, and the GTM terms explained from the builder side.',
+      'Email campaigns, MCP servers, Exa enrichment, AI automation, and the GTM terms explained from the builder side — with real use cases and code.',
     url: `${SITE_URL}/knowledge/gtm`,
   },
   twitter: {
     title: 'GTM OS Knowledge Guide | theGTMOS.ai',
     description:
-      'Email campaigns, outreach platforms, data operations, and the GTM terms explained from the builder side.',
+      'Email campaigns, MCP servers, Exa enrichment, AI automation, and the GTM terms explained from the builder side — with real use cases and code.',
   },
 }
 
