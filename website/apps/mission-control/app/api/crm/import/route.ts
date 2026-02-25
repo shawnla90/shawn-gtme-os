@@ -7,18 +7,18 @@ export const dynamic = 'force-dynamic'
 
 export async function POST() {
   const db = getDb('crm')
-  const repliesDir = path.join(process.cwd(), '..', '..', '..', 'clients', 'partner', 'elauwit', 'resources', 'replies')
-  const researchDir = path.join(process.cwd(), '..', '..', '..', 'clients', 'partner', 'elauwit', 'research')
+  const repliesDir = path.join(process.cwd(), '..', '..', '..', 'clients', 'partner', 'partner-alpha', 'resources', 'replies')
+  const researchDir = path.join(process.cwd(), '..', '..', '..', 'clients', 'partner', 'partner-alpha', 'research')
 
   const results = { accounts: 0, contacts: 0, activities: 0, errors: [] as string[] }
 
-  // Create or get Elauwit account
-  let account = db.prepare('SELECT id FROM accounts WHERE name = ?').get('Elauwit') as { id: number } | undefined
+  // Create or get Partner-Alpha account
+  let account = db.prepare('SELECT id FROM accounts WHERE name = ?').get('Partner-Alpha') as { id: number } | undefined
 
   if (!account) {
     const r = db.prepare(`
       INSERT INTO accounts (name, domain, industry, source, stage, notes)
-      VALUES ('Elauwit', 'elauwit.com', 'PropTech', 'partner', 'customer', 'Primary GTM partner')
+      VALUES ('Partner-Alpha', 'partner-alpha.com', 'PropTech', 'partner', 'customer', 'Primary GTM partner')
     `).run()
     account = { id: Number(r.lastInsertRowid) }
     results.accounts++
