@@ -13,8 +13,18 @@ export default function PWARegistration() {
     // --- Service Worker registration ---
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').then(reg => {
-        // Check for updates every 30 min
-        setInterval(() => reg.update(), 30 * 60 * 1000)
+        // Check for updates every 5 min (was 30 — too slow for active dev)
+        setInterval(() => reg.update(), 5 * 60 * 1000)
+
+        // Also check immediately on page focus (user switches back to Nio)
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') reg.update()
+        })
+
+        // If there's already a waiting worker on load, activate it immediately
+        if (reg.waiting) {
+          reg.waiting.postMessage({ type: 'SKIP_WAITING' })
+        }
 
         // Detect new SW waiting
         reg.addEventListener('updatefound', () => {
@@ -22,7 +32,8 @@ export default function PWARegistration() {
           if (!newWorker) return
           newWorker.addEventListener('statechange', () => {
             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              setUpdateAvailable(true)
+              // Auto-activate immediately instead of showing a toast
+              newWorker.postMessage({ type: 'SKIP_WAITING' })
             }
           })
         })
