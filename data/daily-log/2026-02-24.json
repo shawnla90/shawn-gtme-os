@@ -1,243 +1,14 @@
 {
   "date": "2026-02-24",
-  "generated_at": "2026-02-25T05:00:02.356511+00:00",
+  "generated_at": "2026-02-25T05:00:05.966604+00:00",
   "version": 4,
   "accomplishments": [
-    {
-      "type": "website_route",
-      "title": "mission-control api crm contacts [id] route",
-      "path": "website/apps/mission-control/app/api/crm/contacts/[id]/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 253,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api content [id] route",
-      "path": "website/apps/mission-control/app/api/content/[id]/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 114,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioTerminalPage",
-      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
-      "source": "auto",
-      "timestamp": "01:35",
-      "words": 662,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "seo_keyword_pipeline",
-      "path": "scripts/seo_keyword_pipeline.py",
-      "source": "auto",
-      "timestamp": "04:56",
-      "words": 929,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "complex_script",
-      "title": "nio_blog_generator",
-      "path": "scripts/nio_blog_generator.py",
-      "source": "auto",
-      "timestamp": "04:56",
-      "words": 2276,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "NioPostPage",
-      "path": "website/packages/shared/pages/NioPostPage.tsx",
-      "source": "auto",
-      "timestamp": "01:36",
-      "words": 531,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api crm accounts route",
-      "path": "website/apps/mission-control/app/api/crm/accounts/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 232,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control crm import page",
-      "path": "website/apps/mission-control/app/crm/import/page.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 267,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api crm import route",
-      "path": "website/apps/mission-control/app/api/crm/import/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 413,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "cost_aggregator",
-      "path": "scripts/cost_aggregator.py",
-      "source": "auto",
-      "timestamp": "04:56",
-      "words": 646,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control content page",
-      "path": "website/apps/mission-control/app/content/page.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 32,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control crm page",
-      "path": "website/apps/mission-control/app/crm/page.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 398,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "mission-control package",
-      "path": "website/apps/mission-control/package.json",
-      "source": "auto",
-      "timestamp": "23:12",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/gtmos/app/globals.css",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 63,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals nio-terminal date-slug page",
-      "path": "website/apps/shawnos/app/vitals/nio-terminal/[date-slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "01:36",
-      "words": 150,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api db [database] route",
-      "path": "website/apps/mission-control/app/api/db/[database]/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 132,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api crm contacts route",
-      "path": "website/apps/mission-control/app/api/crm/contacts/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 214,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control crm accounts page",
-      "path": "website/apps/mission-control/app/crm/accounts/page.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 440,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api system-metrics route",
-      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
-      "source": "auto",
-      "timestamp": "04:57",
-      "words": 233,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control layout",
-      "path": "website/apps/mission-control/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 72,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control content id page",
-      "path": "website/apps/mission-control/app/content/[id]/page.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 279,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos vitals nio-terminal page",
-      "path": "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
-      "source": "auto",
-      "timestamp": "01:36",
-      "words": 194,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "mission-control projects slug page",
-      "path": "website/apps/mission-control/app/projects/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 366,
-      "value_score": 5,
-      "shipped": true
-    },
     {
       "type": "website_style",
       "title": "globals styles",
       "path": "website/apps/mission-control/app/globals.css",
       "source": "auto",
-      "timestamp": "23:12",
+      "timestamp": "23:42",
       "words": 261,
       "value_score": 2,
       "shipped": true
@@ -247,127 +18,98 @@
       "title": "globals styles",
       "path": "website/apps/shawnos/app/globals.css",
       "source": "auto",
-      "timestamp": "23:12",
+      "timestamp": "20:42",
       "words": 187,
       "value_score": 2,
       "shipped": true
     },
     {
-      "type": "website_route",
-      "title": "mission-control api crm stats route",
-      "path": "website/apps/mission-control/app/api/crm/stats/route.ts",
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal date-slug page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/[date-slug]/page.tsx",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 185,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api crm activities route",
-      "path": "website/apps/mission-control/app/api/crm/activities/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 187,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api crm deals route",
-      "path": "website/apps/mission-control/app/api/crm/deals/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 204,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared nio-blog",
-      "path": "website/packages/shared/lib/nio-blog.ts",
-      "source": "auto",
-      "timestamp": "01:34",
-      "words": 366,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api projects route",
-      "path": "website/apps/mission-control/app/api/projects/route.ts",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 170,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shared package",
-      "path": "website/packages/shared/package.json",
-      "source": "auto",
-      "timestamp": "01:36",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "website_component",
-      "title": "Navigation",
-      "path": "website/packages/shared/components/Navigation.tsx",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 633,
+      "timestamp": "20:41",
+      "words": 150,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "mission-control databases page",
-      "path": "website/apps/mission-control/app/databases/page.tsx",
+      "title": "mission-control content page",
+      "path": "website/apps/mission-control/app/content/page.tsx",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 604,
+      "timestamp": "23:42",
+      "words": 32,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "mission-control api crm deals [id] route",
-      "path": "website/apps/mission-control/app/api/crm/deals/[id]/route.ts",
+      "title": "mission-control api crm accounts [id] route",
+      "path": "website/apps/mission-control/app/api/crm/accounts/[id]/route.ts",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 254,
+      "timestamp": "23:42",
+      "words": 301,
       "value_score": 3,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "mission-control projects page",
-      "path": "website/apps/mission-control/app/projects/page.tsx",
+      "title": "mission-control databases db page",
+      "path": "website/apps/mission-control/app/databases/[db]/page.tsx",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 116,
+      "timestamp": "23:42",
+      "words": 253,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "landing_page",
-      "title": "mission-control home page",
-      "path": "website/apps/mission-control/app/page.tsx",
+      "type": "code_infra",
+      "title": "seo_keyword_pipeline",
+      "path": "scripts/seo_keyword_pipeline.py",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 740,
+      "timestamp": "20:41",
+      "words": 929,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "nio_blog_generator",
+      "path": "scripts/nio_blog_generator.py",
+      "source": "auto",
+      "timestamp": "20:41",
+      "words": 2276,
       "value_score": 25,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "mission-control crm contacts page",
-      "path": "website/apps/mission-control/app/crm/contacts/page.tsx",
+      "type": "code_infra",
+      "title": "cost_aggregator",
+      "path": "scripts/cost_aggregator.py",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 191,
+      "timestamp": "20:41",
+      "words": 646,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api content [id] route",
+      "path": "website/apps/mission-control/app/api/content/[id]/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 114,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioTerminalPage",
+      "path": "website/packages/shared/pages/NioTerminalPage.tsx",
+      "source": "auto",
+      "timestamp": "20:41",
+      "words": 662,
       "value_score": 5,
       "shipped": true
     },
@@ -376,68 +118,118 @@
       "title": "globals styles",
       "path": "website/apps/contentos/app/globals.css",
       "source": "auto",
-      "timestamp": "23:12",
+      "timestamp": "20:42",
       "words": 63,
       "value_score": 2,
       "shipped": true
     },
     {
-      "type": "system_engine",
-      "title": "rpg_sprites",
-      "path": "scripts/rpg_sprites.py",
-      "source": "auto",
-      "timestamp": "23:12",
-      "words": 15165,
-      "value_score": 50,
-      "shipped": true
-    },
-    {
       "type": "website_route",
-      "title": "mission-control api crm accounts [id] route",
-      "path": "website/apps/mission-control/app/api/crm/accounts/[id]/route.ts",
+      "title": "mission-control api crm activities route",
+      "path": "website/apps/mission-control/app/api/crm/activities/route.ts",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 301,
+      "timestamp": "23:42",
+      "words": 187,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "complex_script",
-      "title": "build_index",
-      "path": "scripts/build_index.py",
+      "type": "website_page",
+      "title": "mission-control crm contacts page",
+      "path": "website/apps/mission-control/app/crm/contacts/page.tsx",
       "source": "auto",
-      "timestamp": "01:34",
-      "words": 3695,
-      "value_score": 25,
+      "timestamp": "23:42",
+      "words": 191,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "Navigation",
+      "path": "website/packages/shared/components/Navigation.tsx",
+      "source": "auto",
+      "timestamp": "20:42",
+      "words": 633,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals nio-terminal page",
+      "path": "website/apps/shawnos/app/vitals/nio-terminal/page.tsx",
+      "source": "auto",
+      "timestamp": "20:41",
+      "words": 194,
+      "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "mission-control api db [database] [table] route",
-      "path": "website/apps/mission-control/app/api/db/[database]/[table]/route.ts",
+      "title": "mission-control api crm stats route",
+      "path": "website/apps/mission-control/app/api/crm/stats/route.ts",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 142,
+      "timestamp": "23:42",
+      "words": 185,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "website_route",
-      "title": "mission-control api tasks route",
-      "path": "website/apps/mission-control/app/api/tasks/route.ts",
+      "type": "website_page",
+      "title": "mission-control crm accounts id page",
+      "path": "website/apps/mission-control/app/crm/accounts/[id]/page.tsx",
       "source": "auto",
-      "timestamp": "04:57",
-      "words": 356,
-      "value_score": 3,
+      "timestamp": "23:42",
+      "words": 860,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control databases db table page",
+      "path": "website/apps/mission-control/app/databases/[db]/[table]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 102,
+      "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_route",
-      "title": "mission-control api content route",
-      "path": "website/apps/mission-control/app/api/content/route.ts",
+      "title": "mission-control api crm contacts [id] route",
+      "path": "website/apps/mission-control/app/api/crm/contacts/[id]/route.ts",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 205,
+      "timestamp": "23:42",
+      "words": 253,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control databases page",
+      "path": "website/apps/mission-control/app/databases/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 604,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control content id page",
+      "path": "website/apps/mission-control/app/content/[id]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 279,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm deals route",
+      "path": "website/apps/mission-control/app/api/crm/deals/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 204,
       "value_score": 3,
       "shipped": true
     },
@@ -446,9 +238,67 @@
       "title": "mission-control crm deals page",
       "path": "website/apps/mission-control/app/crm/deals/page.tsx",
       "source": "auto",
-      "timestamp": "23:12",
+      "timestamp": "23:42",
       "words": 31,
       "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm import route",
+      "path": "website/apps/mission-control/app/api/crm/import/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 413,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control projects slug page",
+      "path": "website/apps/mission-control/app/projects/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 366,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm import page",
+      "path": "website/apps/mission-control/app/crm/import/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 267,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api db [database] [table] route",
+      "path": "website/apps/mission-control/app/api/db/[database]/[table]/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 142,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "20:41",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "mission-control package",
+      "path": "website/apps/mission-control/package.json",
+      "source": "auto",
+      "timestamp": "23:42",
+      "value_score": 0,
       "shipped": true
     },
     {
@@ -456,28 +306,188 @@
       "title": "DailyLogView",
       "path": "website/packages/shared/components/DailyLogView.tsx",
       "source": "auto",
-      "timestamp": "23:12",
+      "timestamp": "20:42",
       "words": 4438,
       "value_score": 30,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "mission-control crm accounts id page",
-      "path": "website/apps/mission-control/app/crm/accounts/[id]/page.tsx",
+      "type": "website_route",
+      "title": "mission-control api system-metrics route",
+      "path": "website/apps/mission-control/app/api/system-metrics/route.ts",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 860,
+      "timestamp": "20:41",
+      "words": 233,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control layout",
+      "path": "website/apps/mission-control/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 72,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "mission-control databases db page",
-      "path": "website/apps/mission-control/app/databases/[db]/page.tsx",
+      "title": "mission-control crm accounts page",
+      "path": "website/apps/mission-control/app/crm/accounts/page.tsx",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 253,
+      "timestamp": "23:42",
+      "words": 440,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/gtmos/app/globals.css",
+      "source": "auto",
+      "timestamp": "20:42",
+      "words": 63,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api content route",
+      "path": "website/apps/mission-control/app/api/content/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 205,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "system_engine",
+      "title": "rpg_sprites",
+      "path": "scripts/rpg_sprites.py",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 15165,
+      "value_score": 50,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm accounts route",
+      "path": "website/apps/mission-control/app/api/crm/accounts/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 232,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control projects page",
+      "path": "website/apps/mission-control/app/projects/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 116,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm deals [id] route",
+      "path": "website/apps/mission-control/app/api/crm/deals/[id]/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 254,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api projects route",
+      "path": "website/apps/mission-control/app/api/projects/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 170,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "build_index",
+      "path": "scripts/build_index.py",
+      "source": "auto",
+      "timestamp": "20:41",
+      "words": 3695,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm contacts route",
+      "path": "website/apps/mission-control/app/api/crm/contacts/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 214,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "mission-control crm page",
+      "path": "website/apps/mission-control/app/crm/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 398,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api db [database] route",
+      "path": "website/apps/mission-control/app/api/db/[database]/route.ts",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 132,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared nio-blog",
+      "path": "website/packages/shared/lib/nio-blog.ts",
+      "source": "auto",
+      "timestamp": "20:41",
+      "words": 366,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
+      "source": "auto",
+      "timestamp": "23:42",
+      "words": 740,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api tasks route",
+      "path": "website/apps/mission-control/app/api/tasks/route.ts",
+      "source": "auto",
+      "timestamp": "20:41",
+      "words": 356,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "NioPostPage",
+      "path": "website/packages/shared/pages/NioPostPage.tsx",
+      "source": "auto",
+      "timestamp": "20:41",
+      "words": 531,
       "value_score": 5,
       "shipped": true
     },
@@ -486,38 +496,190 @@
       "title": "mission-control api db [database] schema route",
       "path": "website/apps/mission-control/app/api/db/[database]/schema/route.ts",
       "source": "auto",
-      "timestamp": "23:12",
+      "timestamp": "23:42",
       "words": 131,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "mission-control databases db table page",
-      "path": "website/apps/mission-control/app/databases/[db]/[table]/page.tsx",
+      "type": "linkedin_draft",
+      "title": "gtmos infrastructure",
+      "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
       "source": "auto",
-      "timestamp": "23:12",
-      "words": 102,
-      "value_score": 5,
-      "shipped": true
+      "timestamp": "19:05",
+      "words": 821,
+      "value_score": 2,
+      "shipped": false
     },
     {
-      "type": "config_file",
-      "title": "video package",
-      "path": "website/apps/video/package.json",
+      "type": "substack_draft",
+      "title": "start at level one",
+      "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+      "source": "auto",
+      "timestamp": "16:07",
+      "words": 1543,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "gtmos threads",
+      "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+      "source": "auto",
+      "timestamp": "19:07",
+      "words": 596,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "website_route",
+      "title": "nio-chat api memory route",
+      "path": "website/apps/nio-chat/app/api/memory/route.ts",
       "source": "auto-mtime",
-      "timestamp": "23:58",
+      "timestamp": "20:41",
+      "words": 384,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "substack_draft",
-      "title": "how to setup ai assistant",
-      "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+      "type": "website_route",
+      "title": "nio-chat api dna xp route",
+      "path": "website/apps/nio-chat/app/api/dna/xp/route.ts",
       "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 1333,
+      "timestamp": "20:41",
+      "words": 309,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_route",
+      "title": "nio-chat api dna bootstrap route",
+      "path": "website/apps/nio-chat/app/api/dna/bootstrap/route.ts",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 179,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos lab nio-dna page",
+      "path": "website/apps/shawnos/app/lab/nio-dna/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 177,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "config_file",
+      "title": "nio-chat next config",
+      "path": "website/apps/nio-chat/next.config.ts",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 25,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/nio-chat/app/globals.css",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 667,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner shoptalk company research",
+      "path": "clients/partner/[redacted]/prompts/shoptalk-company-research.md",
+      "source": "auto-mtime",
+      "timestamp": "05:24",
+      "words": 1023,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "config_file",
+      "title": "nio-chat package",
+      "path": "website/apps/nio-chat/package.json",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner shoptalk buyer categorization",
+      "path": "clients/partner/[redacted]/prompts/shoptalk-buyer-categorization.md",
+      "source": "auto-mtime",
+      "timestamp": "05:04",
+      "words": 575,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_route",
+      "title": "nio-chat api chat route",
+      "path": "website/apps/nio-chat/app/api/chat/route.ts",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 780,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_route",
+      "title": "nio-chat api dna memory route",
+      "path": "website/apps/nio-chat/app/api/dna/memory/route.ts",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 290,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "partner_prompt",
+      "title": "partner account research",
+      "path": "clients/partner/[redacted]/prompts/account-research.md",
+      "source": "auto-mtime",
+      "timestamp": "22:07",
+      "words": 253,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "nio-chat layout",
+      "path": "website/apps/nio-chat/app/layout.tsx",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 136,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_route",
+      "title": "nio-chat api dna route",
+      "path": "website/apps/nio-chat/app/api/dna/route.ts",
+      "source": "auto-mtime",
+      "timestamp": "20:41",
+      "words": 130,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -839,10 +1001,24 @@
       },
       {
         "platform": "linkedin",
-        "title": "openclaw honest opinion",
-        "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
         "target_date": "2026-02-23",
-        "words": 542
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
       },
       {
         "platform": "linkedin",
@@ -850,6 +1026,13 @@
         "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
         "target_date": "2026-02-25",
         "words": 437
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
       },
       {
         "platform": "x",
@@ -1007,10 +1190,24 @@
       },
       {
         "platform": "x",
-        "title": "openclaw honest opinion",
-        "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
         "target_date": "2026-02-23",
-        "words": 170
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
       },
       {
         "platform": "x",
@@ -1018,6 +1215,13 @@
         "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
         "target_date": "2026-02-25",
         "words": 259
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
       },
       {
         "platform": "substack",
@@ -1063,10 +1267,17 @@
       },
       {
         "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1543
+      },
+      {
+        "platform": "substack",
         "title": "how to setup ai assistant",
         "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
         "target_date": "2026-02-25",
-        "words": 1333
+        "words": 1075
       },
       {
         "platform": "reddit",
@@ -1086,18 +1297,74 @@
     "finalized_today": []
   },
   "todos": [],
-  "token_usage": [],
+  "token_usage": [
+    {
+      "session_id": "0aacceed-a317-4352-aaf5-bcbf6886cff0",
+      "input_tokens": 33,
+      "output_tokens": 172,
+      "cache_read_tokens": 394057,
+      "cache_write_tokens": 145791,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 19,
+      "logged_at": "00:00",
+      "cost": 3.3381,
+      "context": "claude-code 07:03"
+    },
+    {
+      "session_id": "22369e4e-8d37-4b4b-a6eb-505309952cee",
+      "input_tokens": 65,
+      "output_tokens": 375,
+      "cache_read_tokens": 2429490,
+      "cache_write_tokens": 280804,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 59,
+      "logged_at": "00:00",
+      "cost": 8.9384,
+      "context": "claude-code 07:56"
+    },
+    {
+      "session_id": "271e4c6f-fa3b-45c8-8eb9-07bf82e61569",
+      "input_tokens": 13,
+      "output_tokens": 123,
+      "cache_read_tokens": 661416,
+      "cache_write_tokens": 52060,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 13,
+      "logged_at": "00:00",
+      "cost": 1.9777,
+      "context": "claude-code 01:35"
+    },
+    {
+      "session_id": "5d035c54-ab2b-4e89-91cb-1632ade2871c",
+      "input_tokens": 101,
+      "output_tokens": 4143,
+      "cache_read_tokens": 2407469,
+      "cache_write_tokens": 256619,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 67,
+      "logged_at": "00:00",
+      "cost": 8.735,
+      "context": "claude-code 10:02"
+    }
+  ],
   "stats": {
     "platform_breakdown": {
-      "website": 41,
-      "other": 10,
-      "substack": 1
+      "website": 50,
+      "other": 11,
+      "linkedin": 1,
+      "substack": 1,
+      "x": 1,
+      "ops": 3
     },
-    "words_in_touched_files": 40069,
-    "pipeline_words": 40692,
+    "words_in_touched_files": 46624,
+    "pipeline_words": 47091,
     "finals_count": 0,
-    "first_activity": "01:34",
-    "last_activity": "23:58",
+    "first_activity": "05:04",
+    "last_activity": "23:42",
     "output_score": 279,
     "letter_grade": "C",
     "score_breakdown": [
@@ -1152,14 +1419,14 @@
         "points": 30
       }
     ],
-    "efficiency_rating": null,
+    "efficiency_rating": 12.14,
     "shipped_count": 50,
-    "draft_count": 2,
-    "ship_rate": 0.96,
-    "agent_cost": 0,
-    "cost_per_point": 0.0,
-    "efficiency_ratio": null,
-    "words_today": 40069,
+    "draft_count": 17,
+    "ship_rate": 0.75,
+    "agent_cost": 22.99,
+    "cost_per_point": 0.08,
+    "efficiency_ratio": 12.14,
+    "words_today": 46624,
     "lines_added": 12228,
     "lines_removed": 2902,
     "lines_net": 9326,
@@ -1444,19 +1711,19 @@
     }
   },
   "cost": {
-    "api_equivalent": 0,
+    "api_equivalent": 22.99,
     "actual_cost": 0.0,
     "pricing_mode": "max"
   },
   "token_efficiency": {
-    "total_tokens": 0,
-    "total_sessions": 0,
-    "tokens_per_point": 0,
-    "tokens_per_commit": 0,
-    "tokens_per_loc": 0,
-    "avg_context_utilization": 0,
+    "total_tokens": 6632731,
+    "total_sessions": 4,
+    "tokens_per_point": 23773,
+    "tokens_per_commit": 663273,
+    "tokens_per_loc": 711,
+    "avg_context_utilization": 1.0,
     "pricing_mode": "max",
-    "api_equivalent_cost": 0,
+    "api_equivalent_cost": 22.99,
     "actual_cost": 0.0
   }
 }
