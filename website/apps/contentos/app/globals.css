@@ -16,3 +16,11 @@ html body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@media (max-width: 768px) {
+  html body { padding: 12px; }
+}
+
+@media (max-width: 480px) {
+  html body { padding: 8px; }
+}

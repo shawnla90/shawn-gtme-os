@@ -363,6 +363,7 @@ function CommitRow({
           &#9656;
         </span>
         <span
+          className="dlv-commit-timestamp"
           style={{
             color: 'var(--text-muted)',
             fontSize: '11px',
@@ -375,6 +376,7 @@ function CommitRow({
         </span>
         <CommitTypeTag type={item.type} />
         <span
+          className="dlv-commit-msg"
           style={{
             color: 'var(--text-primary)',
             flexShrink: 1,
@@ -475,7 +477,7 @@ function CommitRow({
             </span>
           </div>
           {item.directories.length > 0 && (
-            <div style={{ color: 'var(--text-muted)', fontSize: '11px', marginTop: '2px' }}>
+            <div className="dlv-expand-detail-dirs" style={{ color: 'var(--text-muted)', fontSize: '11px', marginTop: '2px' }}>
               dirs: {item.directories.join(', ')}
             </div>
           )}
@@ -1115,6 +1117,47 @@ export function DailyLogView({
         }
         @media (hover: none) {
           .dlv-commit-tooltip { display: none !important; }
+        }
+        @media (max-width: 768px) {
+          .dlv-commit-row {
+            padding: 8px 4px !important;
+            min-height: 44px;
+            align-items: center !important;
+          }
+          .dlv-commit-msg {
+            white-space: normal !important;
+            text-overflow: unset !important;
+            -webkit-line-clamp: 2;
+            display: -webkit-box !important;
+            -webkit-box-orient: vertical;
+            overflow: hidden !important;
+            line-height: 1.4;
+          }
+          .dlv-expand-detail-dirs {
+            word-break: break-all;
+          }
+        }
+        @media (max-width: 480px) {
+          .dlv-stat-row {
+            gap: 6px !important;
+          }
+          .dlv-stat-row > div {
+            min-width: 70px !important;
+            padding: 8px 10px !important;
+          }
+          .dlv-stat-row > div > div:first-child {
+            font-size: 18px !important;
+          }
+          .dlv-stat-row > div > div:last-child {
+            font-size: 10px !important;
+          }
+          .dlv-commit-row {
+            gap: 6px !important;
+            font-size: 12px !important;
+          }
+          .dlv-commit-timestamp {
+            display: none !important;
+          }
         }
         .dlv-filter-chip {
           cursor: pointer;

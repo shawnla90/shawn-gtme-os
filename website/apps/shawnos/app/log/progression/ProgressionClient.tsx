@@ -113,7 +113,7 @@ function ProfileHero({
 
   return (
     <Card style={{ borderColor: tc }}>
-      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
+      <div className="prog-hero-row" style={{ display: 'flex', alignItems: 'flex-start', gap: '20px' }}>
         {avatarSrc && (
           <div style={{ flexShrink: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -200,6 +200,7 @@ function XPGraph({ scoringLog }: { scoringLog: ScoringLogEntry[] }) {
                 }}
               />
               <div
+                className="prog-xp-label"
                 style={{
                   fontSize: '10px',
                   color: 'var(--text-muted)',
@@ -386,7 +387,7 @@ function TokenEfficiency({
   return (
     <Card>
       <SectionTitle>Token Efficiency</SectionTitle>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '20px' }}>
+      <div className="prog-token-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '20px' }}>
         <StatNum label="Total Spend" value={`$${totalCost.toFixed(2)}`} />
         <StatNum
           label="Avg Pts/$"
@@ -483,13 +484,39 @@ export default function ProgressionClient({
   const scoringLog = profile.scoring_log ?? []
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-      <ProfileHero profile={profile} avatarSrc={avatarSrc} tierColor={tc} />
-      <XPGraph scoringLog={scoringLog} />
-      <GradeTable scoringLog={scoringLog} />
-      <ClassDisplay currentClass={profile.class} />
-      <Milestones milestones={profile.milestones} />
-      <TokenEfficiency scoringLog={scoringLog} costMap={costMap} />
-    </div>
+    <>
+      <style>{`
+        @media (max-width: 640px) {
+          .prog-token-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .prog-hero-row {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center;
+          }
+          .prog-hero-row img {
+            width: 60px !important;
+            height: 60px !important;
+          }
+          .prog-xp-label {
+            font-size: 9px !important;
+          }
+        }
+        @media (max-width: 400px) {
+          .prog-token-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <ProfileHero profile={profile} avatarSrc={avatarSrc} tierColor={tc} />
+        <XPGraph scoringLog={scoringLog} />
+        <GradeTable scoringLog={scoringLog} />
+        <ClassDisplay currentClass={profile.class} />
+        <Milestones milestones={profile.milestones} />
+        <TokenEfficiency scoringLog={scoringLog} costMap={costMap} />
+      </div>
+    </>
   )
 }
