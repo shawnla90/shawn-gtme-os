@@ -2300,6 +2300,180 @@ def nio_tier5_idle(sprite: Sprite, frame: int, total: int = 12) -> Sprite:
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  Nio Shared Animation Transforms (blink, think, chat, backflip, evolve)
+# ══════════════════════════════════════════════════════════════════════
+
+def _flip_sprite_vertical(sprite: Sprite) -> Sprite:
+    """Mirror all primitives around grid center y = 15.5 (vertical flip)."""
+    s = deep_copy_sprite(sprite)
+    for part in s.values():
+        new_prims: list = []
+        for pr in part.primitives:
+            if isinstance(pr, Rect):
+                ny1 = GRID - 1 - pr.y2
+                ny2 = GRID - 1 - pr.y1
+                new_prims.append(Rect(pr.x1, ny1, pr.x2, ny2, pr.color))
+            elif isinstance(pr, Pixel):
+                new_prims.append(Pixel(pr.x, GRID - 1 - pr.y, pr.color))
+        part.primitives = new_prims
+    return s
+
+
+def nio_blink(sprite: Sprite, frame: int, total: int = 6) -> Sprite:
+    """6 frames: open → half-close → closed → closed → half-open → open.
+    Dims the visor glow to simulate eye closing."""
+    # Visor dim amounts: 0=open, -100=half, -200=closed
+    dim_sequence = [0, -100, -200, -200, -100, 0]
+    s = deep_copy_sprite(sprite)
+    dim = dim_sequence[frame % total]
+    if dim != 0:
+        s = brighten_part(s, "visor", dim)
+    return s
+
+
+def nio_think(sprite: Sprite, frame: int, total: int = 10) -> Sprite:
+    """10 frames: head tilts right 1px, three thought dots appear one-by-one
+    above head, pulsing between highlight/secondary colors."""
+    p = NIO_PALETTE
+    s = deep_copy_sprite(sprite)
+
+    # Tilt head right 1px for duration of thinking
+    if frame > 0:
+        s = shift_part(s, "head", dx=1)
+        s = shift_part(s, "visor", dx=1)
+
+    # Thought dots appear one-by-one: dot1 at frame 2, dot2 at 4, dot3 at 6
+    dots: List[Tuple[int, int, tuple]] = []
+    dot_positions = [(13, 1), (15, 0), (17, 1)]  # arc above head
+    for i, (dx, dy) in enumerate(dot_positions):
+        appear_frame = 2 + i * 2
+        if frame >= appear_frame:
+            # Pulse between highlight and secondary
+            pulse = math.sin(2 * math.pi * (frame - appear_frame) / 4)
+            c = p["highlight"] if pulse > 0 else p["secondary"]
+            dots.append((dx, dy, c))
+
+    if dots:
+        s = add_pixels(s, "thought_dots", dots, z_order=35)
+    return s
+
+
+def nio_chat(sprite: Sprite, frame: int, total: int = 8) -> Sprite:
+    """8 frames: pixel-art speech bubble materializes upper-right of head.
+    Tail → partial box → full box with '...' dots inside."""
+    p = NIO_PALETTE
+    s = deep_copy_sprite(sprite)
+    white = (240, 240, 245)
+    dark = (60, 65, 75)
+
+    pixels: List[Tuple[int, int, tuple]] = []
+
+    # Frame 0-1: tail appears (triangle pointing at head)
+    if frame >= 0:
+        pixels.append((20, 7, white))  # tail base
+
+    # Frame 2-3: partial box outline
+    if frame >= 2:
+        pixels.append((21, 6, white))
+        pixels.append((22, 5, white))
+        pixels.append((22, 6, white))
+
+    # Frame 4+: full box
+    if frame >= 4:
+        for x in range(22, 29):
+            pixels.append((x, 3, white))  # top edge
+            pixels.append((x, 7, white))  # bottom edge
+        for y in range(3, 8):
+            pixels.append((22, y, white))  # left edge
+            pixels.append((28, y, white))  # right edge
+        # Fill interior
+        for x in range(23, 28):
+            for y in range(4, 7):
+                pixels.append((x, y, white))
+
+    # Frame 6+: dots inside bubble
+    if frame >= 6:
+        pixels.append((24, 5, dark))
+        pixels.append((25, 5, dark))
+        pixels.append((26, 5, dark))
+
+    if pixels:
+        s = add_pixels(s, "speech_bubble", pixels, z_order=40)
+    return s
+
+
+def nio_backflip(sprite: Sprite, frame: int, total: int = 12) -> Sprite:
+    """12 frames: crouch → launch up → flip (vertical mirror at apex) → descend → land with overshoot → settle."""
+    s = deep_copy_sprite(sprite)
+
+    # Y offset trajectory: crouch(+1), launch(-2,-4,-5,-6), apex(-6), descend(-4,-2), overshoot(+1), settle(0)
+    y_offsets = [1, 0, -2, -4, -5, -6, -6, -4, -2, 0, 1, 0]
+    dy = y_offsets[frame % total]
+
+    # Flip at apex (frames 4-7)
+    if 4 <= frame <= 7:
+        s = _flip_sprite_vertical(s)
+
+    s = shift_all(s, dy=dy)
+    return s
+
+
+def nio_evolve_out(sprite: Sprite, frame: int, total: int = 8) -> Sprite:
+    """8 frames: progressive whole-sprite brightening to white + particle burst at apex."""
+    p = NIO_PALETTE
+    s = deep_copy_sprite(sprite)
+
+    # Progressive brightening: 0 → 255 over 8 frames
+    bright_amount = int((frame / (total - 1)) * 255)
+    for part_name in list(s.keys()):
+        s = brighten_part(s, part_name, bright_amount)
+
+    # Particle burst in later frames (5-7)
+    if frame >= 5:
+        particles: List[Tuple[int, int, tuple]] = []
+        count = (frame - 4) * 4
+        for i in range(count):
+            angle = 2 * math.pi * i / count + frame * 0.3
+            radius = 3 + (frame - 4) * 3
+            px = 16 + int(radius * math.cos(angle))
+            py = 13 + int(radius * math.sin(angle))
+            if 0 <= px < GRID and 0 <= py < GRID:
+                particles.append((px, py, (255, 255, 255)))
+        if particles:
+            s = add_pixels(s, "evolve_particles", particles, z_order=50)
+
+    return s
+
+
+def nio_evolve_in(sprite: Sprite, frame: int, total: int = 8) -> Sprite:
+    """8 frames: starts bright white, dims to normal + contracting particle ring."""
+    p = NIO_PALETTE
+    s = deep_copy_sprite(sprite)
+
+    # Inverse brightening: 255 → 0 over 8 frames
+    bright_amount = int(((total - 1 - frame) / (total - 1)) * 255)
+    for part_name in list(s.keys()):
+        s = brighten_part(s, part_name, bright_amount)
+
+    # Contracting particle ring in early frames (0-3)
+    if frame <= 3:
+        particles: List[Tuple[int, int, tuple]] = []
+        radius = 12 - frame * 3
+        count = 8
+        for i in range(count):
+            angle = 2 * math.pi * i / count + frame * 0.5
+            px = 16 + int(radius * math.cos(angle))
+            py = 13 + int(radius * math.sin(angle))
+            if 0 <= px < GRID and 0 <= py < GRID:
+                fade = int(200 * (1 - frame / 4))
+                particles.append((px, py, (255, 255, fade)))
+        if particles:
+            s = add_pixels(s, "evolve_ring", particles, z_order=50)
+
+    return s
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  Partner Tool Animations
 # ══════════════════════════════════════════════════════════════════════
 
@@ -2734,11 +2908,51 @@ def get_class_animation(class_name: str) -> Dict[str, AnimationSpec]:
 
 
 NIO_ANIMATIONS: Dict[int, Dict[str, AnimationSpec]] = {
-    1: {"idle": AnimationSpec(nio_tier1_idle, frames=8,  duration_ms=150)},
-    2: {"idle": AnimationSpec(nio_tier2_idle, frames=8,  duration_ms=150)},
-    3: {"idle": AnimationSpec(nio_tier3_idle, frames=10, duration_ms=150)},
-    4: {"idle": AnimationSpec(nio_tier4_idle, frames=10, duration_ms=150)},
-    5: {"idle": AnimationSpec(nio_tier5_idle, frames=12, duration_ms=150)},
+    1: {
+        "idle":       AnimationSpec(nio_tier1_idle,  frames=8,  duration_ms=150),
+        "blink":      AnimationSpec(nio_blink,       frames=6,  duration_ms=100),
+        "think":      AnimationSpec(nio_think,       frames=10, duration_ms=120),
+        "chat":       AnimationSpec(nio_chat,        frames=8,  duration_ms=120),
+        "backflip":   AnimationSpec(nio_backflip,    frames=12, duration_ms=80),
+        "evolve_out": AnimationSpec(nio_evolve_out,  frames=8,  duration_ms=100),
+        "evolve_in":  AnimationSpec(nio_evolve_in,   frames=8,  duration_ms=100),
+    },
+    2: {
+        "idle":       AnimationSpec(nio_tier2_idle,  frames=8,  duration_ms=150),
+        "blink":      AnimationSpec(nio_blink,       frames=6,  duration_ms=100),
+        "think":      AnimationSpec(nio_think,       frames=10, duration_ms=120),
+        "chat":       AnimationSpec(nio_chat,        frames=8,  duration_ms=120),
+        "backflip":   AnimationSpec(nio_backflip,    frames=12, duration_ms=80),
+        "evolve_out": AnimationSpec(nio_evolve_out,  frames=8,  duration_ms=100),
+        "evolve_in":  AnimationSpec(nio_evolve_in,   frames=8,  duration_ms=100),
+    },
+    3: {
+        "idle":       AnimationSpec(nio_tier3_idle,  frames=10, duration_ms=150),
+        "blink":      AnimationSpec(nio_blink,       frames=6,  duration_ms=100),
+        "think":      AnimationSpec(nio_think,       frames=10, duration_ms=120),
+        "chat":       AnimationSpec(nio_chat,        frames=8,  duration_ms=120),
+        "backflip":   AnimationSpec(nio_backflip,    frames=12, duration_ms=80),
+        "evolve_out": AnimationSpec(nio_evolve_out,  frames=8,  duration_ms=100),
+        "evolve_in":  AnimationSpec(nio_evolve_in,   frames=8,  duration_ms=100),
+    },
+    4: {
+        "idle":       AnimationSpec(nio_tier4_idle,  frames=10, duration_ms=150),
+        "blink":      AnimationSpec(nio_blink,       frames=6,  duration_ms=100),
+        "think":      AnimationSpec(nio_think,       frames=10, duration_ms=120),
+        "chat":       AnimationSpec(nio_chat,        frames=8,  duration_ms=120),
+        "backflip":   AnimationSpec(nio_backflip,    frames=12, duration_ms=80),
+        "evolve_out": AnimationSpec(nio_evolve_out,  frames=8,  duration_ms=100),
+        "evolve_in":  AnimationSpec(nio_evolve_in,   frames=8,  duration_ms=100),
+    },
+    5: {
+        "idle":       AnimationSpec(nio_tier5_idle,  frames=12, duration_ms=150),
+        "blink":      AnimationSpec(nio_blink,       frames=6,  duration_ms=100),
+        "think":      AnimationSpec(nio_think,       frames=10, duration_ms=120),
+        "chat":       AnimationSpec(nio_chat,        frames=8,  duration_ms=120),
+        "backflip":   AnimationSpec(nio_backflip,    frames=12, duration_ms=80),
+        "evolve_out": AnimationSpec(nio_evolve_out,  frames=8,  duration_ms=100),
+        "evolve_in":  AnimationSpec(nio_evolve_in,   frames=8,  duration_ms=100),
+    },
 }
 
 
@@ -2830,9 +3044,70 @@ def _render_sprite_sheet(size_per: int = 128) -> Image.Image:
     return sheet
 
 
+def render_nio_sprite_sheet(
+    sprite: Sprite,
+    spec: AnimationSpec,
+    output: Path,
+    size: int = 256,
+    bg: tuple = BG,
+) -> None:
+    """Render a horizontal PNG sprite sheet (all frames side-by-side).
+    Each frame is *size* x *size* pixels. Used by Remotion NioSpriteSheet."""
+    frame_images: List[Image.Image] = []
+    for f in range(spec.frames):
+        transformed = spec.transform(sprite, f, spec.frames)
+        base = render_sprite(transformed, bg)
+        frame_images.append(upscale(base, size))
+
+    sheet_w = size * spec.frames
+    sheet = Image.new("RGB", (sheet_w, size), bg[:3])
+    for i, img in enumerate(frame_images):
+        sheet.paste(img, (i * size, 0))
+    sheet.save(str(output))
+
+
+def render_nio_evolve_sheet(
+    tier_from: int,
+    tier_to: int,
+    output: Path,
+    size: int = 256,
+    bg: tuple = BG,
+) -> None:
+    """Render a cross-tier evolution sheet: 8 frames evolve_out of tier_from +
+    8 frames evolve_in of tier_to = 16-frame horizontal strip."""
+    sprite_from = get_nio_sprite(tier_from)
+    sprite_to = get_nio_sprite(tier_to)
+    anims = NIO_ANIMATIONS[tier_from]
+
+    frame_images: List[Image.Image] = []
+
+    # Evolve out (old tier brightening to white)
+    spec_out = anims["evolve_out"]
+    for f in range(spec_out.frames):
+        transformed = spec_out.transform(sprite_from, f, spec_out.frames)
+        base = render_sprite(transformed, bg)
+        frame_images.append(upscale(base, size))
+
+    # Evolve in (new tier emerging from white)
+    spec_in = NIO_ANIMATIONS[tier_to]["evolve_in"]
+    for f in range(spec_in.frames):
+        transformed = spec_in.transform(sprite_to, f, spec_in.frames)
+        base = render_sprite(transformed, bg)
+        frame_images.append(upscale(base, size))
+
+    total_frames = len(frame_images)
+    sheet_w = size * total_frames
+    sheet = Image.new("RGB", (sheet_w, size), bg[:3])
+    for i, img in enumerate(frame_images):
+        sheet.paste(img, (i * size, 0))
+    sheet.save(str(output))
+
+
 def _render_nio_assets(tiers: List[int], size: int = 256) -> None:
-    """Render Nio static PNGs and idle GIFs for the given tiers."""
+    """Render Nio static PNGs, animation GIFs, and sprite sheets for the given tiers."""
     AVATAR_DIR.mkdir(parents=True, exist_ok=True)
+
+    anim_names = ["idle", "blink", "think", "chat", "backflip"]
 
     for tier in tiers:
         sprite = get_nio_sprite(tier)
@@ -2844,11 +3119,30 @@ def _render_nio_assets(tiers: List[int], size: int = 256) -> None:
         img.save(str(static_path))
         print(f"  ✓ nio tier {tier} static  → {static_path}  ({size}×{size})")
 
-        # Idle GIF
-        spec = get_nio_animation(tier)["idle"]
-        gif_path = AVATAR_DIR / f"nio-tier-{tier}-idle.gif"
-        render_animated_gif(sprite, spec, gif_path, size=size)
-        print(f"  ✓ nio tier {tier} idle    → {gif_path}  ({spec.frames} frames)")
+        # Animation GIFs + sprite sheets
+        anims = get_nio_animation(tier)
+        for anim_name in anim_names:
+            spec = anims[anim_name]
+
+            # GIF
+            gif_path = AVATAR_DIR / f"nio-tier-{tier}-{anim_name}.gif"
+            render_animated_gif(sprite, spec, gif_path, size=size)
+            print(f"  ✓ nio tier {tier} {anim_name:<9} gif   → {gif_path}  ({spec.frames} frames)")
+
+            # Sprite sheet
+            sheet_path = AVATAR_DIR / f"nio-tier-{tier}-{anim_name}-sheet-{size}.png"
+            render_nio_sprite_sheet(sprite, spec, sheet_path, size=size)
+            print(f"  ✓ nio tier {tier} {anim_name:<9} sheet → {sheet_path}  ({spec.frames} frames)")
+
+    # Evolve sheets (tier N → tier N+1)
+    sorted_tiers = sorted(tiers)
+    for i in range(len(sorted_tiers) - 1):
+        t_from = sorted_tiers[i]
+        t_to = sorted_tiers[i + 1]
+        if t_to == t_from + 1:  # only adjacent tiers
+            evolve_path = AVATAR_DIR / f"nio-evolve-{t_from}-to-{t_to}-sheet-{size}.png"
+            render_nio_evolve_sheet(t_from, t_to, evolve_path, size=size)
+            print(f"  ✓ evolve {t_from}→{t_to} sheet → {evolve_path}  (16 frames)")
 
 
 def _render_tool_assets(tool_names: List[str], size: int = 256) -> None:

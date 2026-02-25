@@ -20,6 +20,10 @@ export const COLORS = {
   teal: '#3DBFA0',
   red: '#E05555',
 
+  // Nio palette
+  nioBlue: '#6B8AFF',
+  nioAmber: '#F59E0B',
+
   // Traffic lights
   trafficRed: '#E05555',
   trafficYellow: '#D2A53C',
@@ -35,4 +39,5 @@ export const SITE_ACCENTS = {
   shawnos: COLORS.green,
   gtmos: COLORS.teal,
   contentos: COLORS.purple,
+  nio: COLORS.nioBlue,
 } as const;

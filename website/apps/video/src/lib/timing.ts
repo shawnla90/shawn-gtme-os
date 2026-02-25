@@ -20,4 +20,5 @@ export const PRESETS = {
   linkedin:  { width: 1080, height: 1350, fps: FPS }, // 4:5 — max LinkedIn feed real estate
   reels:     { width: 1080, height: 1920, fps: FPS }, // 9:16 — IG Reels / TikTok / Shorts
   landscape: { width: 1920, height: 1080, fps: FPS }, // 16:9 — YouTube / website embed
+  reelClip:  { width: 1080, height: 960,  fps: FPS }, // Bottom half of 9:16 — TikTok talking-head overlay
 } as const;
