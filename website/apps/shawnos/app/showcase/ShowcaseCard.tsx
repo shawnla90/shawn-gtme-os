@@ -1,19 +1,14 @@
-import React from 'react'
+'use client'
 
-/* ── types ─────────────────────────────────────────── */
+import React from 'react'
+import { motion } from 'framer-motion'
 
 export interface ShowcaseCardProps {
-  /** Section header — rendered as `## title` terminal style */
   title: string
-  /** Subtitle shown below the title in secondary text */
   description: string
-  /** The live demo content rendered inside the card */
   children: React.ReactNode
-  /** Optional stat badges rendered bottom-right */
   stats?: string[]
 }
-
-/* ── component ─────────────────────────────────────── */
 
 export function ShowcaseCard({
   title,
@@ -22,7 +17,12 @@ export function ShowcaseCard({
   stats,
 }: ShowcaseCardProps) {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.1 }}
+      transition={{ duration: 0.5, ease: 'easeOut' }}
+      whileHover={{ scale: 1.005, borderColor: 'var(--accent)' }}
       style={{
         padding: '24px',
         background: 'var(--canvas-subtle)',
@@ -30,9 +30,9 @@ export function ShowcaseCard({
         borderRadius: '8px',
         fontFamily: 'var(--font-mono)',
         position: 'relative',
+        transition: 'border-color 0.2s ease',
       }}
     >
-      {/* Section header */}
       <div style={{ marginBottom: '16px' }}>
         <h2
           style={{
@@ -42,8 +42,7 @@ export function ShowcaseCard({
             margin: '0 0 6px 0',
           }}
         >
-          <span style={{ color: 'var(--accent)' }}>##</span>{' '}
-          {title}
+          <span style={{ color: 'var(--accent)' }}>##</span> {title}
         </h2>
         <p
           style={{
@@ -57,18 +56,10 @@ export function ShowcaseCard({
         </p>
       </div>
 
-      {/* Divider */}
-      <div
-        style={{
-          borderTop: '1px solid var(--border)',
-          marginBottom: '20px',
-        }}
-      />
+      <div style={{ borderTop: '1px solid var(--border)', marginBottom: '20px' }} />
 
-      {/* Live demo area */}
       <div>{children}</div>
 
-      {/* Stats badges */}
       {stats && stats.length > 0 && (
         <div
           style={{
@@ -101,6 +92,6 @@ export function ShowcaseCard({
           ))}
         </div>
       )}
-    </div>
+    </motion.div>
   )
 }

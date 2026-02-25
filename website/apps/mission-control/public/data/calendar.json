@@ -1,169 +1,169 @@
 {
-  "generated": "2026-02-21T21:31:53.099Z",
+  "generated": "2026-02-25T06:27:36.113Z",
   "events": [
     {
-      "id": "commit-20ae0a5",
-      "title": "fix(gtmos): repair how-to wiki string literal syntax",
-      "type": "system",
-      "datetime": "2026-02-21T16:29:23-05:00",
-      "status": "completed",
-      "description": "fix(gtmos): repair how-to wiki string literal syntax",
-      "metadata": {
-        "commitHash": "20ae0a5"
-      }
-    },
-    {
-      "id": "commit-eab407c",
-      "title": "feat: GTM OS video v2 — 5-scene 8.2s cut with tool+MCP blitz",
+      "id": "commit-872d051",
+      "title": "feat: Command Center Phase 3 — live updates, markdown editor",
       "type": "milestone",
-      "datetime": "2026-02-21T16:27:55-05:00",
+      "datetime": "2026-02-25T01:16:14-05:00",
       "status": "completed",
-      "description": "feat: GTM OS video v2 — 5-scene 8.2s cut with tool+MCP blitz",
+      "description": "feat: Command Center Phase 3 — live updates, markdown editor, Nio heartbeat",
       "metadata": {
-        "commitHash": "eab407c"
+        "commitHash": "872d051"
       }
     },
     {
-      "id": "commit-84ebf27",
-      "title": "docs(how-to): add one-screen map to workspace knowledge grap",
-      "type": "system",
-      "datetime": "2026-02-21T16:27:07-05:00",
-      "status": "completed",
-      "description": "docs(how-to): add one-screen map to workspace knowledge graph",
-      "metadata": {
-        "commitHash": "84ebf27"
-      }
-    },
-    {
-      "id": "commit-ba4fb8c",
-      "title": "fix(how-to): make workspace knowledge graph example readable",
-      "type": "system",
-      "datetime": "2026-02-21T16:26:01-05:00",
-      "status": "completed",
-      "description": "fix(how-to): make workspace knowledge graph example readable",
-      "metadata": {
-        "commitHash": "ba4fb8c"
-      }
-    },
-    {
-      "id": "commit-327cc85",
-      "title": "feat(how-to): add live Nio workspace knowledge graph example",
-      "type": "system",
-      "datetime": "2026-02-21T16:11:52-05:00",
-      "status": "completed",
-      "description": "feat(how-to): add live Nio workspace knowledge graph example",
-      "metadata": {
-        "commitHash": "327cc85"
-      }
-    },
-    {
-      "id": "commit-db7c656",
-      "title": "feat: ShawnOS video v4 — 5-scene 8.2s cut with platform+tool",
+      "id": "commit-bd01e58",
+      "title": "feat: json-render integration — AI-driven video generation f",
       "type": "milestone",
-      "datetime": "2026-02-21T16:11:47-05:00",
+      "datetime": "2026-02-25T01:13:25-05:00",
       "status": "completed",
-      "description": "feat: ShawnOS video v4 — 5-scene 8.2s cut with platform+tool blitz",
+      "description": "feat: json-render integration — AI-driven video generation from JSON specs",
       "metadata": {
-        "commitHash": "db7c656"
+        "commitHash": "bd01e58"
       }
     },
     {
-      "id": "commit-0892213",
-      "title": "feat(mission-control): enhance real-time system status and d",
-      "type": "system",
-      "datetime": "2026-02-21T16:08:14-05:00",
+      "id": "commit-48813d3",
+      "title": "fix: Nio P0 message delivery — buffer parsing, heartbeat, ti",
+      "type": "deployment",
+      "datetime": "2026-02-25T01:01:31-05:00",
       "status": "completed",
-      "description": "feat(mission-control): enhance real-time system status and dynamic task management",
+      "description": "fix: Nio P0 message delivery — buffer parsing, heartbeat, timeout, client retry",
       "metadata": {
-        "commitHash": "0892213"
+        "commitHash": "48813d3"
       }
     },
     {
-      "id": "commit-2a51926",
-      "title": "feat(how-to): add Advanced OpenClaw + Knowledge Graph Setup ",
-      "type": "system",
-      "datetime": "2026-02-21T15:56:36-05:00",
-      "status": "completed",
-      "description": "feat(how-to): add Advanced OpenClaw + Knowledge Graph Setup guide",
-      "metadata": {
-        "commitHash": "2a51926"
-      }
-    },
-    {
-      "id": "commit-ad6921d",
-      "title": "fix(nio-terminal): rewrite posts 2 and 3 to match canonical ",
-      "type": "system",
-      "datetime": "2026-02-21T15:26:05-05:00",
-      "status": "completed",
-      "description": "fix(nio-terminal): rewrite posts 2 and 3 to match canonical structure",
-      "metadata": {
-        "commitHash": "ad6921d"
-      }
-    },
-    {
-      "id": "commit-5fa860e",
-      "title": "feat(mission-control): add SessionStatus component to dashbo",
-      "type": "system",
-      "datetime": "2026-02-21T15:18:56-05:00",
-      "status": "completed",
-      "description": "feat(mission-control): add SessionStatus component to dashboard",
-      "metadata": {
-        "commitHash": "5fa860e"
-      }
-    },
-    {
-      "id": "commit-333d738",
-      "title": "feat: autoplay video showcase + remove terminal chrome + add",
+      "id": "commit-bb3a9dd",
+      "title": "feat: decision-lock + wave execution upgrade — cherry-pick f",
       "type": "milestone",
-      "datetime": "2026-02-21T15:13:38-05:00",
+      "datetime": "2026-02-25T00:35:14-05:00",
       "status": "completed",
-      "description": "feat: autoplay video showcase + remove terminal chrome + add tool/platform branding",
+      "description": "feat: decision-lock + wave execution upgrade — cherry-pick from GSD framework",
       "metadata": {
-        "commitHash": "333d738"
+        "commitHash": "bb3a9dd"
       }
     },
     {
-      "id": "commit-2b8b1cf",
-      "title": "feat(mission-control): fix Nio avatar + add real tasks/memor",
+      "id": "commit-8f3b354",
+      "title": "chore: daily tracker scan 2026-02-24",
       "type": "system",
-      "datetime": "2026-02-21T15:10:53-05:00",
+      "datetime": "2026-02-25T00:00:06-05:00",
       "status": "completed",
-      "description": "feat(mission-control): fix Nio avatar + add real tasks/memories APIs",
+      "description": "chore: daily tracker scan 2026-02-24",
       "metadata": {
-        "commitHash": "2b8b1cf"
+        "commitHash": "8f3b354"
       }
     },
     {
-      "id": "commit-c85b736",
-      "title": "feat(mission-control): add OpenClaw session status snapshot ",
-      "type": "system",
-      "datetime": "2026-02-21T14:02:47-05:00",
+      "id": "commit-75cb947",
+      "title": "feat: portable Nio avatars — transparent render mode, agent ",
+      "type": "milestone",
+      "datetime": "2026-02-24T23:03:03-05:00",
       "status": "completed",
-      "description": "feat(mission-control): add OpenClaw session status snapshot (2h cache)",
+      "description": "feat: portable Nio avatars — transparent render mode, agent sprites, dynamic tier avatar",
       "metadata": {
-        "commitHash": "c85b736"
+        "commitHash": "75cb947"
       }
     },
     {
-      "id": "commit-e3132d5",
-      "title": "fix(nio-terminal): add 2026-02-21 post content fallback",
-      "type": "system",
-      "datetime": "2026-02-21T13:10:45-05:00",
+      "id": "commit-ab82a1d",
+      "title": "feat: Command Center Phase 2 — SQLite explorer, content brow",
+      "type": "milestone",
+      "datetime": "2026-02-24T22:17:04-05:00",
       "status": "completed",
-      "description": "fix(nio-terminal): add 2026-02-21 post content fallback",
+      "description": "feat: Command Center Phase 2 — SQLite explorer, content browser, CRM, projects",
       "metadata": {
-        "commitHash": "e3132d5"
+        "commitHash": "ab82a1d"
       }
     },
     {
-      "id": "commit-1253e53",
-      "title": "feat(nio.log): add daily blog post 2026-02-21 - THE COMPOUND",
-      "type": "system",
-      "datetime": "2026-02-21T08:03:13-05:00",
+      "id": "commit-ba8e903",
+      "title": "feat: sprite sheet animation system + reel clip upgrade + st",
+      "type": "milestone",
+      "datetime": "2026-02-24T21:46:11-05:00",
       "status": "completed",
-      "description": "feat(nio.log): add daily blog post 2026-02-21 - THE COMPOUND EFFECT",
+      "description": "feat: sprite sheet animation system + reel clip upgrade + standalone compositions",
       "metadata": {
-        "commitHash": "1253e53"
+        "commitHash": "ba8e903"
+      }
+    },
+    {
+      "id": "commit-7324fcb",
+      "title": "feat: mobile UX overhaul — hamburger nav, responsive padding",
+      "type": "milestone",
+      "datetime": "2026-02-24T20:40:57-05:00",
+      "status": "completed",
+      "description": "feat: mobile UX overhaul — hamburger nav, responsive padding, mobile build log",
+      "metadata": {
+        "commitHash": "7324fcb"
+      }
+    },
+    {
+      "id": "commit-58ba6f3",
+      "title": "chore: complete OpenClaw removal — migrate data to repo",
+      "type": "system",
+      "datetime": "2026-02-24T15:22:28-05:00",
+      "status": "completed",
+      "description": "chore: complete OpenClaw removal — migrate data to repo",
+      "metadata": {
+        "commitHash": "58ba6f3"
+      }
+    },
+    {
+      "id": "commit-e59d90a",
+      "title": "feat: nio.log 2026-02-24 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-02-24T08:01:35-05:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-02-24 — automated daily post",
+      "metadata": {
+        "commitHash": "e59d90a"
+      }
+    },
+    {
+      "id": "commit-1450986",
+      "title": "feat: nio blog generator — off OpenClaw, into the repo + SQL",
+      "type": "milestone",
+      "datetime": "2026-02-24T02:38:22-05:00",
+      "status": "completed",
+      "description": "feat: nio blog generator — off OpenClaw, into the repo + SQLite",
+      "metadata": {
+        "commitHash": "1450986"
+      }
+    },
+    {
+      "id": "commit-f5b9625",
+      "title": "chore: daily tracker scan 2026-02-23",
+      "type": "system",
+      "datetime": "2026-02-24T00:00:10-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-02-23",
+      "metadata": {
+        "commitHash": "f5b9625"
+      }
+    },
+    {
+      "id": "commit-5ef626a",
+      "title": "chore: daily tracker scan 2026-02-23",
+      "type": "system",
+      "datetime": "2026-02-24T00:00:08-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-02-23",
+      "metadata": {
+        "commitHash": "5ef626a"
+      }
+    },
+    {
+      "id": "commit-72350cd",
+      "title": "chore: daily tracker scan 2026-02-22",
+      "type": "system",
+      "datetime": "2026-02-23T00:00:09-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-02-22",
+      "metadata": {
+        "commitHash": "72350cd"
       }
     }
   ],

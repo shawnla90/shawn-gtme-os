@@ -9,11 +9,19 @@ Generate structured reports for any multi-session, multi-phase, or significant f
 
 ## When to Auto-Invoke
 
-- After completing a planning session that maps out multiple phases
+**This skill is MANDATORY after big initiatives.** Do not wait for the user to ask — fire it automatically when any of these are true:
+
+- After completing a build session that created a new system, integration, or pipeline (this session = json-render, previous = sprite system, etc.)
 - After finishing a significant build session (3+ files created/modified)
+- After completing a planning session that maps out multiple phases
 - When a feature involves multiple tools, scripts, or systems wired together
 - When the user explicitly says to plan in phases or mentions "phase 1", "phase 2", etc.
 - User says `/phase-report`, "write a report", "document this", or "save this output"
+- After any commit with a `feat:` prefix that touches 5+ files
+
+## Inline Summary Rule
+
+**Before writing reports to disk, ALWAYS present the plain-English breakdown directly in the conversation.** Shawn should see the non-technical summary immediately without having to open a file. Then write both reports to `reports/`. The inline summary replaces nothing — it's in addition to the files.
 
 ## Output Location
 

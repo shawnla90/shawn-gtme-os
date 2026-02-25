@@ -1,46 +1,74 @@
 # Context Handoff
-> Generated: 2026-02-25 evening | Machine: MacBook | Session: GTM OS SEO/RSS/Search parity
+> Generated: 2026-02-25 ~evening | Machine: MacBook | Session: ShawnOS.ai Interactive Upgrade — Framer Motion
+
+## METHODOLOGY: GET SHIT DONE
+Do not over-explore. Do not spend sessions just reading code. Build, test, ship. If something takes more than 2-3 minutes to plan, show an outline and ask before deep-diving. Deliver working code every session.
+
+---
 
 ## What Was Done This Session
 
-### 1. GTM OS — Search, RSS & SEO Parity (commit `328c13a`)
-- Created `website/apps/gtmos/app/search/page.tsx` — server page aggregating GTM terms, engineering terms, Clay wiki, how-to entries (gtmos-filtered), daily logs
-- Created `website/apps/gtmos/app/search/SearchContent.tsx` — client component with live filtering, grouped results by type
-- Created `website/apps/gtmos/app/feed/how-to.xml/route.ts` — How-To wiki RSS feed
-- Created `website/apps/gtmos/app/feed/daily-logs.xml/route.ts` — Daily logs RSS feed
-- Created `website/apps/gtmos/app/feed/updates.xml/route.ts` — Combined updates feed (all GTM content sources)
-- Modified `website/apps/gtmos/app/layout.tsx` — updated description from "Launching soon." to real description, added JSON-LD WebSite schema, added Search nav link, added 3 new RSS feed declarations
-- Modified `website/apps/gtmos/next-sitemap.config.js` — enabled `generateRobotsTxt: true` with AI crawler policies matching ShawnOS
-- Modified `website/apps/gtmos/app/updates/page.tsx` — added orange RSS badge linking to `/feed/updates.xml`
-- Build verified clean: 186 pages, all feed routes present
+### Framer Motion Interactive Upgrade (5 waves, all complete)
 
-### 2. Blocklist Sanitization (commit `53438ff`)
-- Sanitized 6 files with partner names that were blocking `git push`
-- Replacements: real partner names → codenames (Alpha, Beta, Gamma/WaaS Brand)
-- Files: `.claude/context-handoff.md`, `docs/HOW-TO-ICEBREAKER-PAIN-POINT-PROMPTS.md`, `docs/GTMLS-OPTIMIZATION-PLAN.md`, `playbooks/SKILL.md`, `playbooks/index.md`, `playbooks/personalization/3-variable-model.md`
+**Wave 1: Motion Primitives** — 6 reusable components in `app/components/motion/`:
+- `MotionReveal.tsx` — 5 variants (fadeUp, fadeIn, slideLeft, slideRight, scale), whileInView
+- `StaggerContainer.tsx` + `StaggerItem.tsx` — orchestrated stagger reveals
+- `MagneticHover.tsx` — mouse-tracking translate with spring-back
+- `ParallaxSection.tsx` — mouse parallax, auto-disables on touch via `(hover: hover)`
+- `PageTransition.tsx` — enter-only fade+slide on mount
+- `index.ts` — barrel export
 
-## Current State
-- **Git**: branch `main`, clean, commit `53438ff` (fix: sanitize partner names for public repo blocklist compliance)
-- **Remote**: pushed to `origin/main`, up to date
-- **Uncommitted changes**: only untracked files (content drafts, video assets, scripts — all pre-existing)
-- **Blocked on**: nothing
+**Wave 2: New Section Components** — 3 new components in `app/components/`:
+- `FAQAccordion.tsx` — terminal-styled (`$` prefix), AnimatePresence height animation, one-open-at-a-time
+- `ProcessSteps.tsx` — vertical timeline, numbered accent circles, staggered reveal
+- `CaseStudyCard.tsx` — grid layout, hover scale + accent border glow
+
+**Wave 3: Homepage Overhaul**:
+- Created `app/HomeContent.tsx` — client wrapper with all interactive content
+- Rewrote `app/page.tsx` — server component passes data props to HomeContent
+- New sections: Process (5 steps), FAQ (6 Qs), Case Studies (4 projects)
+- Parallax hero, magnetic CTAs, staggered blog cards + boot log
+- Updated "Choose Your Path" — removed stale openclaw line, added showcase link
+
+**Wave 4: All Pages Upgraded**:
+- `app/layout.tsx` — PageTransitionWrapper around `{children}`
+- `app/about/` — `AboutContent.tsx` client wrapper. MotionReveal, StaggerContainer, MagneticHover
+- `app/blog/page.tsx` — `BlogContent.tsx` wrapper. StaggerContainer on post list
+- `app/blog/[slug]/page.tsx` — `ArticleReveal.tsx` wraps prose content
+- `app/showcase/ShowcaseCard.tsx` — client component with whileHover scale
+- `app/showcase/page.tsx` — `ShowcaseReveal.tsx`, updated stats ("Framer Motion")
+- `app/updates/page.tsx` — `UpdatesReveal.tsx`. Hero + stats reveals
+- `app/method/page.tsx` — `MethodReveal.tsx`. Section reveals, card stagger, scale on principle box
+- `app/log/LogIndexClient.tsx` — MotionReveal on LogHero, StaggerContainer on log cards
+- `app/log/progression/ProgressionClient.tsx` — StaggerContainer on chart sections
+
+**Wave 5: QA** — `npx next build` passes clean (213 pages). All 8 key pages return HTTP 200. Shawn approved in Safari.
+
+---
+
+## Git State
+- **Branch**: `main`
+- **Last commit**: `6f099f2 feat: shawnos.ai site upgrade — logos, showcase, blog UX, visual polish`
+- **Uncommitted changes**: ALL the Framer Motion work (13 new files, 14 modified in `website/apps/shawnos/`)
+- **Pushed**: NO — needs commit + push + deploy
 
 ## Next Steps
-1. **GTMLS Sprint 2** — build `UseCaseBlock` React component in `website/packages/shared/components/UseCaseBlock.tsx`. Add `useCases` optional field to `GTMTerm` interface. See `docs/GTMLS-OPTIMIZATION-PLAN.md` Phase 2A.
-2. **GTMLS Sprint 3** — build `CodeShowcase` component with terminal-styled code blocks. See plan Phase 2B.
-3. **ContentOS parity** — ContentOS may need the same search/RSS/SEO treatment that GTM OS just got.
-4. **Untracked content** — LinkedIn drafts, X threads, Substack drafts, and video assets in working directory are untracked. Decide if/when to commit.
-5. **Untracked scripts** — `scripts/agents/`, `scripts/exa_*.py`, `scripts/partner_gamma_clay_prep.py` etc. still untracked.
+1. **Commit** — suggested: `feat: interactive upgrade — Framer Motion, scroll reveals, FAQ, process steps, case studies`
+2. **Deploy** — push to main, verify Vercel build
+3. **Content review** — FAQ answers, process steps, case study blurbs in `app/HomeContent.tsx` lines 35-135
+4. **Mobile QA** — Safari responsive design mode. Parallax auto-disables on touch. Check horizontal overflow
+5. **Optional cleanup** — delete unused `app/AnimateOnScroll.tsx` (nothing imports it anymore)
+6. **Performance** — run Lighthouse. First Load JS ~174KB on homepage. Should score 90+
 
 ## Key Decisions Made
-- GTM OS search page indexes: GTM terms, engineering terms, Clay wiki, how-to (gtmos-filtered), daily logs. No blog posts (GTM OS doesn't have a blog).
-- RSS feeds use `@shawnos/shared/lib/rss` shared utilities — same pattern as ShawnOS.
-- `next-sitemap.config.js` now generates `robots.txt` programmatically — supersedes the old manual `/public/robots.txt`.
-- Partner codenames for sanitization: Alpha = WiFi/NaaS partner, Beta = multi-site deployment partner, Gamma = WaaS partner.
+- **Client wrapper pattern**: Server components stay server (data fetching + metadata). Interactive parts extracted to `'use client'` wrappers. This avoids converting entire pages to client components.
+- **framer-motion at app level only**: In `website/apps/shawnos/package.json`, not shared package
+- **AnimateOnScroll kept but unused**: Old component still exists, nothing imports it. Safe to delete.
+- **FAQ/Process/CaseStudy content is draft**: Hardcoded in `HomeContent.tsx`. Shawn should review for voice/accuracy.
 
 ## Files to Read First
-1. `docs/GTMLS-OPTIMIZATION-PLAN.md` — full 5-sprint plan, Sprint 1 done, Sprint 2 next
-2. `website/apps/gtmos/app/layout.tsx` — updated root layout with JSON-LD and all RSS feeds
-3. `website/apps/gtmos/app/search/page.tsx` — new search page (reference for ContentOS parity)
-4. `website/apps/gtmos/app/feed/updates.xml/route.ts` — combined feed pattern
-5. `playbooks/SKILL.md` — playbook extraction skill entry point (sanitized)
+1. `website/apps/shawnos/app/components/motion/index.ts` — all motion primitives
+2. `website/apps/shawnos/app/HomeContent.tsx` — homepage with all new sections + draft content
+3. `website/apps/shawnos/app/components/FAQAccordion.tsx` — FAQ component pattern
+4. `website/apps/shawnos/app/about/AboutContent.tsx` — example of client wrapper pattern
+5. `website/apps/shawnos/app/layout.tsx` — PageTransition wrapper location

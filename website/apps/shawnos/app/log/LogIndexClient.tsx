@@ -5,6 +5,7 @@ import Link from 'next/link'
 import type { DailyLogSummary, LogAggregates } from '@shawnos/shared/lib/logs'
 import type { RPGProfile } from '@shawnos/shared/lib/rpg'
 import { LogCard, LogHero } from '@shawnos/shared/components'
+import { MotionReveal, StaggerContainer, StaggerItem } from '../components/motion'
 
 const GRADE_OPTIONS = ['All', 'S+', 'S', 'A+', 'A', 'B', 'C', 'D']
 
@@ -72,14 +73,16 @@ export default function LogIndexClient({
         fontFamily: 'var(--font-mono)',
       }}
     >
-      <LogHero
-        aggregates={aggregates}
-        showAvatar
-        profile={profile ?? undefined}
-        avatarSrc={avatarUrls?.static ?? undefined}
-        avatarIdleSrc={avatarUrls?.idle ?? undefined}
-        avatarActionSrc={avatarUrls?.action ?? undefined}
-      />
+      <MotionReveal variant="fadeIn">
+        <LogHero
+          aggregates={aggregates}
+          showAvatar
+          profile={profile ?? undefined}
+          avatarSrc={avatarUrls?.static ?? undefined}
+          avatarIdleSrc={avatarUrls?.idle ?? undefined}
+          avatarActionSrc={avatarUrls?.action ?? undefined}
+        />
+      </MotionReveal>
 
       {/* CTA — character progression */}
       {profile && (
@@ -255,15 +258,16 @@ export default function LogIndexClient({
             : 'No logs match the current filter.'}
         </p>
       ) : (
-        <div>
+        <StaggerContainer stagger={0.06}>
           {filtered.map((log) => (
-            <LogCard
-              key={log.date}
-              {...log}
-              basePath="/log"
-            />
+            <StaggerItem key={log.date}>
+              <LogCard
+                {...log}
+                basePath="/log"
+              />
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       )}
     </section>
   )

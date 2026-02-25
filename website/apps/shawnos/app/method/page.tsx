@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
+import { MethodReveal, CardStagger, CardItem } from './MethodReveal'
 
 export const metadata: Metadata = {
   title: 'The Method',
@@ -209,18 +210,21 @@ export default function MethodPage() {
         }}
       >
         {/* ── Terminal header ── */}
-        <h1
-          style={{
-            fontSize: '16px',
-            fontWeight: 400,
-            color: 'var(--text-muted)',
-            marginBottom: '32px',
-          }}
-        >
-          <span style={{ color: 'var(--accent)' }}>$</span> cat ~/method.md
-        </h1>
+        <MethodReveal variant="fadeIn">
+          <h1
+            style={{
+              fontSize: '16px',
+              fontWeight: 400,
+              color: 'var(--text-muted)',
+              marginBottom: '32px',
+            }}
+          >
+            <span style={{ color: 'var(--accent)' }}>$</span> cat ~/method.md
+          </h1>
+        </MethodReveal>
 
         {/* ── Opening ── */}
+        <MethodReveal>
         <div style={section}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -270,10 +274,12 @@ export default function MethodPage() {
             context for the next.
           </p>
         </div>
+        </MethodReveal>
 
         <hr style={divider} />
 
         {/* ── The States ── */}
+        <MethodReveal>
         <div style={section}>
           <h2 style={sectionTitle}>the states</h2>
 
@@ -282,8 +288,10 @@ export default function MethodPage() {
             demands. leave when the state&apos;s job is done.
           </p>
 
+          <CardStagger>
           {states.map((state) => (
-            <div key={state.name} style={card}>
+            <CardItem key={state.name}>
+            <div style={card}>
               <div
                 style={{
                   display: 'flex',
@@ -349,12 +357,16 @@ export default function MethodPage() {
                 </span>
               </div>
             </div>
+            </CardItem>
           ))}
+          </CardStagger>
         </div>
+        </MethodReveal>
 
         <hr style={divider} />
 
         {/* ── Recursive ── */}
+        <MethodReveal>
         <div style={section}>
           <h2 style={sectionTitle}>recursive</h2>
 
@@ -406,10 +418,12 @@ export default function MethodPage() {
             already exist as input.
           </p>
         </div>
+        </MethodReveal>
 
         <hr style={divider} />
 
         {/* ── Anti-patterns ── */}
+        <MethodReveal>
         <div style={section}>
           <h2 style={sectionTitle}>what this is not</h2>
 
@@ -445,6 +459,7 @@ export default function MethodPage() {
             ))}
           </div>
         </div>
+        </MethodReveal>
 
         <hr style={divider} />
 
@@ -516,6 +531,7 @@ export default function MethodPage() {
         <hr style={divider} />
 
         {/* ── The Principle ── */}
+        <MethodReveal variant="scale">
         <div style={section}>
           <div
             style={{
@@ -553,6 +569,7 @@ export default function MethodPage() {
             </p>
           </div>
         </div>
+        </MethodReveal>
 
         {/* ── See It Running ── */}
         <div style={section}>

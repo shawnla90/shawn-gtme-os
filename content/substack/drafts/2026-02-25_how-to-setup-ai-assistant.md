@@ -11,7 +11,7 @@ date: 2026-02-25
 how I set up my own AI assistant through Claude Code
 
 ## Preview Text
-the full setup. soul files, memory systems, context handoffs, multi-agent architecture. documented while building it.
+the full setup. soul files, SQLite persistence, XP evolution, multi-agent architecture. a real database you can query from anywhere. documented while building it.
 
 ---
 
@@ -79,6 +79,26 @@ SQLite MCP for querying my content index. GitHub integration. filesystem access.
 
 config is JSON. project-level `.mcp.json` or global `~/.claude/settings.json`. add a server, restart Claude Code, the capability is available.
 
+## the real unlock: a queryable database
+
+this is the part most people skip and it's the part that matters most.
+
+Nio doesn't store state in localStorage or flat files. it writes to SQLite. a real database. server-authoritative. every message, every conversation, every token cost, every XP event — tracked in tables you can query from anywhere.
+
+```sql
+SELECT xp, tier, streak, skill_xp FROM dna_state;
+```
+
+that's freedom. your agent's entire evolution — XP, skill trees, memory, conversation history — sitting in a database you own. not locked in some platform's cloud. not hidden behind an API. on your machine. queryable from Claude Code, from an MCP server, from a cron job, from a browser.
+
+the XP system is the key. every conversation writes XP. the agent evolves through 5 tiers — Spark to Ascended. 3 skill trees (Ops, Architecture, Writing) level independently based on which agent you're talking to. streak multipliers reward daily usage. the agent you talk to on day 1 is not the same agent on day 30.
+
+but the XP isn't the point. the database is the point. once your agent has a real persistence layer, everything else becomes possible. memory with full-text search. cost tracking. evolution history. daily analytics. you can query your own system the way you'd query any production database. because it is one.
+
+I built a landing page where you can see the DNA system in action:
+
+👉 [meet Nio — shawnos.ai/nio](https://shawnos.ai/nio)
+
 ## the cost math after consolidating
 
 **before:**
@@ -102,9 +122,11 @@ this post was written in Claude Code. the system it describes is the system that
 
 that's not a flex. that's the architecture working as designed. the system produces the content that describes the system. the loop compounds.
 
-I published the full technical walkthrough on the blog with step-by-step setup instructions, code examples, and config snippets. if you want the complete how-to with copy-paste commands, it's there.
+I published the full technical walkthrough on the blog — step-by-step setup instructions, SQL migrations, config snippets, the whole evolution system. if you want the complete how-to with copy-paste commands, it's there.
 
 👉 [full how-to: set up your own AI assistant through Claude Code](https://shawnos.ai/blog/how-to-setup-your-own-ai-assistant)
+
+👉 [meet Nio — the landing page](https://shawnos.ai/nio)
 
 this how-to will update. if something here is wrong next month, it's because I found something better. the repo is the source of truth. the commit history is the changelog.
 

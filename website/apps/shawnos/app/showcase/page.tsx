@@ -7,6 +7,7 @@ import {
   AvatarBadge,
 } from '@shawnos/shared/components'
 import { ShowcaseCard } from './ShowcaseCard'
+import { ShowcaseReveal } from './ShowcaseReveal'
 
 /* ── metadata ──────────────────────────────────────── */
 
@@ -133,30 +134,32 @@ export default function ShowcasePage() {
   return (
     <div style={pagePad}>
       {/* ── Terminal page header ── */}
-      <h1
-        style={{
-          fontSize: '16px',
-          fontWeight: 400,
-          color: 'var(--text-muted)',
-          marginBottom: '32px',
-        }}
-      >
-        <span style={{ color: 'var(--accent)' }}>$</span> ls ~/components
-      </h1>
+      <ShowcaseReveal>
+        <h1
+          style={{
+            fontSize: '16px',
+            fontWeight: 400,
+            color: 'var(--text-muted)',
+            marginBottom: '32px',
+          }}
+        >
+          <span style={{ color: 'var(--accent)' }}>$</span> ls ~/components
+        </h1>
 
-      <p
-        style={{
-          fontSize: '13px',
-          color: 'var(--text-secondary)',
-          lineHeight: 1.7,
-          marginBottom: '40px',
-          maxWidth: '580px',
-        }}
-      >
-        live demos of every system in the monorepo. components render here —
-        click, hover, watch them run. built from scratch, no animation
-        libraries.
-      </p>
+        <p
+          style={{
+            fontSize: '13px',
+            color: 'var(--text-secondary)',
+            lineHeight: 1.7,
+            marginBottom: '40px',
+            maxWidth: '580px',
+          }}
+        >
+          live demos of every system in the monorepo. components render here —
+          click, hover, watch them run. built from scratch with Framer Motion
+          for scroll reveals and interaction polish.
+        </p>
+      </ShowcaseReveal>
 
       {/* ───────────────────────────────────────────── */}
       {/* Section 1: Terminal UI System                 */}
@@ -214,7 +217,7 @@ export default function ShowcasePage() {
         <ShowcaseCard
           title="animation-system"
           description="Two pure-React animation primitives. TypewriterHero types and erases sequences at configurable speeds. ScrambleCycler scrambles text into noise then resolves it left-to-right into the next phrase."
-          stats={['TypewriterHero', 'ScrambleCycler', 'CSS only', 'SSR-safe']}
+          stats={['TypewriterHero', 'ScrambleCycler', 'Framer Motion', 'SSR-safe']}
         >
           <div
             style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}

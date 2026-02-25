@@ -234,3 +234,47 @@ export const CONTENT_OS_REVEAL = [
   { value: '6', label: 'platforms' },
   { value: '1', label: 'voice' },
 ] as const;
+
+/* ═══════════════════════════════════════════════════
+   Nio Video Data
+   ═══════════════════════════════════════════════════ */
+
+/** Domain nodes with their leaf children */
+export const NIO_DOMAINS = [
+  {
+    name: 'Ops',
+    color: '#4EC373' as const,
+    leaves: ['Cron Jobs', 'Deployments', 'Monitoring', 'OpenClaw'],
+  },
+  {
+    name: 'Architecture',
+    color: '#6B8AFF' as const,
+    leaves: ['APIs', 'Infrastructure', 'ShawnOS', 'GTMe OS'],
+  },
+  {
+    name: 'Writing',
+    color: '#F59E0B' as const,
+    leaves: ['Content', 'Voice', 'Blog', 'Social'],
+  },
+] as const;
+
+/** Cross-domain connections (leaf → leaf) */
+export const NIO_CROSS_LINKS = [
+  { from: 'Content', to: 'Blog' },
+  { from: 'Deployments', to: 'ShawnOS' },
+] as const;
+
+/** Chat reveal exchanges */
+export const NIO_CHAT_EXCHANGES = [
+  {
+    user: 'deploy the blog',
+    nio: 'On it. Building, indexing, pushing. Done.',
+  },
+  {
+    user: 'how many blog posts this week?',
+    nio: '14 published. 3 in queue.',
+  },
+] as const;
+
+/** Total node count: 1 core + 3 domains + 12 leaves = 16 */
+export const NIO_TOTAL_NODES = 16;

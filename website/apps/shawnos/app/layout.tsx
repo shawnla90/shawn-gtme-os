@@ -4,6 +4,7 @@ import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
+import { PageTransitionWrapper } from './PageTransitionWrapper'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -168,7 +169,9 @@ export default function RootLayout({
             { href: '/api', label: 'API' },
           ]}
         />
-        <main>{children}</main>
+        <main>
+          <PageTransitionWrapper>{children}</PageTransitionWrapper>
+        </main>
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
         <FooterCredit />

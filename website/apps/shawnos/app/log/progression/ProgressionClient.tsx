@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import type { RPGProfile, Milestone, ScoringLogEntry } from '@shawnos/shared/lib/rpg'
+import { StaggerContainer, StaggerItem } from '../../components/motion'
 
 /* ------------------------------------------------------------------ */
 /*  Color constants                                                     */
@@ -509,14 +510,14 @@ export default function ProgressionClient({
           }
         }
       `}</style>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-        <ProfileHero profile={profile} avatarSrc={avatarSrc} tierColor={tc} />
-        <XPGraph scoringLog={scoringLog} />
-        <GradeTable scoringLog={scoringLog} />
-        <ClassDisplay currentClass={profile.class} />
-        <Milestones milestones={profile.milestones} />
-        <TokenEfficiency scoringLog={scoringLog} costMap={costMap} />
-      </div>
+      <StaggerContainer stagger={0.1} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <StaggerItem><ProfileHero profile={profile} avatarSrc={avatarSrc} tierColor={tc} /></StaggerItem>
+        <StaggerItem><XPGraph scoringLog={scoringLog} /></StaggerItem>
+        <StaggerItem><GradeTable scoringLog={scoringLog} /></StaggerItem>
+        <StaggerItem><ClassDisplay currentClass={profile.class} /></StaggerItem>
+        <StaggerItem><Milestones milestones={profile.milestones} /></StaggerItem>
+        <StaggerItem><TokenEfficiency scoringLog={scoringLog} costMap={costMap} /></StaggerItem>
+      </StaggerContainer>
     </>
   )
 }

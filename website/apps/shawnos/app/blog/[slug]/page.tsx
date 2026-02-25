@@ -3,6 +3,7 @@ import path from 'path'
 import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { TableOfContents } from './TableOfContents'
+import { ArticleReveal } from './ArticleReveal'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -178,10 +179,12 @@ export default async function BlogPost({
             </div>
           </header>
 
-          <div
-            className="prose"
-            dangerouslySetInnerHTML={{ __html: htmlContent }}
-          />
+          <ArticleReveal>
+            <div
+              className="prose"
+              dangerouslySetInnerHTML={{ __html: htmlContent }}
+            />
+          </ArticleReveal>
 
           <footer
             style={{

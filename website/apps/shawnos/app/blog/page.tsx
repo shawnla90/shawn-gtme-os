@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getAllPosts } from '@shawnos/shared/lib'
-import { PostCard, BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BlogContent } from './BlogContent'
 
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
 
@@ -27,52 +28,8 @@ export default function BlogIndex() {
 
   return (
     <>
-    <BreadcrumbSchema items={[{ name: 'Blog', url: 'https://shawnos.ai/blog' }]} />
-    <section
-      style={{
-        maxWidth: 720,
-        margin: '0 auto',
-        padding: '40px 20px',
-        fontFamily: 'var(--font-mono)',
-      }}
-    >
-      <h1
-        style={{
-          fontSize: '14px',
-          color: 'var(--accent)',
-          fontWeight: 400,
-          marginBottom: 32,
-          letterSpacing: '0.5px',
-        }}
-      >
-        $ ls ~/blog
-      </h1>
-
-      {posts.length === 0 ? (
-        <p
-          style={{
-            color: 'var(--text-muted)',
-            fontSize: '14px',
-          }}
-        >
-          No posts found. Check back soon.
-        </p>
-      ) : (
-        <div>
-          {posts.map((post) => (
-            <PostCard
-              key={post.slug}
-              title={post.title}
-              date={post.date}
-              excerpt={post.excerpt}
-              slug={post.slug}
-              readingTime={post.readingTime}
-              category={post.category}
-            />
-          ))}
-        </div>
-      )}
-    </section>
+      <BreadcrumbSchema items={[{ name: 'Blog', url: 'https://shawnos.ai/blog' }]} />
+      <BlogContent posts={posts} />
     </>
   )
 }

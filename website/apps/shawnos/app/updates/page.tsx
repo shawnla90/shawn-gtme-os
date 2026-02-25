@@ -22,6 +22,7 @@ import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema, UpdatesFeed } from '@shawnos/shared/components'
 import type { FeedEntry, CategoryFilter } from '@shawnos/shared/components'
+import { RevealSection, StatsStagger, StatItem } from './UpdatesReveal'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -581,32 +582,40 @@ export default function UpdatesPage() {
 
       <div style={pageWrap}>
         {/* Terminal header */}
-        <h1 style={terminalHeader}>
-          <span style={{ color: 'var(--accent)' }}>$</span> tail -f ~/updates.log
-        </h1>
+        <RevealSection>
+          <h1 style={terminalHeader}>
+            <span style={{ color: 'var(--accent)' }}>$</span> tail -f ~/updates.log
+          </h1>
 
-        {/* Hero */}
-        <h2 style={heroTitle}>Latest Updates</h2>
-        <p style={heroDesc}>
-          Every new article, feature, and system update on shawnos.ai.
-          Filter by category or search to find wiki entries, knowledge terms, and how-to guides.
-        </p>
+          {/* Hero */}
+          <h2 style={heroTitle}>Latest Updates</h2>
+          <p style={heroDesc}>
+            Every new article, feature, and system update on shawnos.ai.
+            Filter by category or search to find wiki entries, knowledge terms, and how-to guides.
+          </p>
+        </RevealSection>
 
         {/* Stats */}
-        <div style={statsRow}>
-          <div style={statBox}>
-            <span style={statNum}>{datedCount}</span>
-            <span style={statLabel}>Recent Updates</span>
-          </div>
-          <div style={statBox}>
-            <span style={statNum}>{totalFeatures}</span>
-            <span style={statLabel}>Features Shipped</span>
-          </div>
-          <div style={statBox}>
-            <span style={statNum}>{categories.length}</span>
-            <span style={statLabel}>Categories</span>
-          </div>
-        </div>
+        <StatsStagger>
+          <StatItem>
+            <div style={statBox}>
+              <span style={statNum}>{datedCount}</span>
+              <span style={statLabel}>Recent Updates</span>
+            </div>
+          </StatItem>
+          <StatItem>
+            <div style={statBox}>
+              <span style={statNum}>{totalFeatures}</span>
+              <span style={statLabel}>Features Shipped</span>
+            </div>
+          </StatItem>
+          <StatItem>
+            <div style={statBox}>
+              <span style={statNum}>{categories.length}</span>
+              <span style={statLabel}>Categories</span>
+            </div>
+          </StatItem>
+        </StatsStagger>
 
         {/* RSS badge + network links */}
         <a href="/feed/updates.xml" style={rssBadge}>
@@ -625,8 +634,10 @@ export default function UpdatesPage() {
         <hr style={divider} />
 
         {/* ── Feature Timeline (horizontal scroll) ── */}
-        <div style={sectionPrompt}>$ ls ~/changelog/</div>
-        <div style={sectionTitle}>Features &amp; Launches</div>
+        <RevealSection>
+          <div style={sectionPrompt}>$ ls ~/changelog/</div>
+          <div style={sectionTitle}>Features &amp; Launches</div>
+        </RevealSection>
 
         <div style={timelineScroll}>
           <div style={timelineTrack}>

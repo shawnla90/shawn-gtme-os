@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-21T21:31:53.100Z",
+  "generated": "2026-02-25T06:27:36.114Z",
   "members": [
     {
       "id": "nio",
@@ -18,7 +18,7 @@
         "Memory Management"
       ],
       "level": 6,
-      "experience": 0,
+      "experience": 600,
       "performance": {
         "tasksCompleted": 0,
         "assignedCrons": 0,
@@ -34,8 +34,8 @@
       "model": "qwen2.5:14b",
       "provider": "Ollama (local)",
       "specialization": "High-frequency cron jobs — commit tracking, RSS, mission control, status updates",
-      "status": "idle",
-      "currentAssignment": "Awaiting cron schedule",
+      "status": "active",
+      "currentAssignment": "launchd-managed cron jobs",
       "skills": [
         "Commit Tracking",
         "RSS Monitoring",
@@ -43,7 +43,7 @@
         "Status Reports"
       ],
       "level": 4,
-      "experience": 0,
+      "experience": 400,
       "performance": {
         "tasksCompleted": 0,
         "assignedCrons": 0,
@@ -59,8 +59,8 @@
       "model": "claude-opus-4-20250514",
       "provider": "Anthropic API",
       "specialization": "Content creation — blog posts, Substack essays, LinkedIn, deep thinking",
-      "status": "standby",
-      "currentAssignment": "On-demand content creation",
+      "status": "active",
+      "currentAssignment": "Daily blog generation via launchd cron",
       "skills": [
         "Blog Writing",
         "Substack Essays",
@@ -69,7 +69,7 @@
         "Voice DNA"
       ],
       "level": 7,
-      "experience": 0,
+      "experience": 700,
       "performance": {
         "tasksCompleted": 0,
         "assignedCrons": 0,
@@ -107,8 +107,8 @@
   ],
   "stats": {
     "totalMembers": 4,
-    "activeMembers": 2,
-    "idleMembers": 2,
+    "activeMembers": 4,
+    "idleMembers": 0,
     "totalCrons": 0,
     "totalTasksCompleted": 0,
     "avgSuccessRate": 100
