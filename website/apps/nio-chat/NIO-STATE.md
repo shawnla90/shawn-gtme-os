@@ -1,19 +1,21 @@
 # Nio Evolution State
 
 > Source of truth for Nio's current progression.
-> Updated: 2026-02-23
+> Last updated: 2026-02-23 (end of session)
 > Any Claude Code session should read this + query the DB for live values.
 
 ## Current State (verified from SQLite)
 
-- **Tier:** 1 (Spark)
-- **Level:** 7
-- **Total XP:** 330
-- **XP to Blade (Tier 2):** 170 more needed (500 threshold)
+- **Tier:** 2 (Blade)
+- **Level:** 1
+- **Total XP:** 620
+- **XP to Warden (Tier 3):** 1,380 more needed (2,000 threshold)
 - **Streak:** 1 day
-- **Total Messages:** 45
+- **Total Messages:** 87
 - **Daily Bonus Claimed:** yes (today)
-- **Skill XP:** ops: 325, architecture: 10, writing: 0
+- **Skill XP:** ops: 600, architecture: 20, writing: 0
+- **Evolution History Entries:** 42
+- **Daily Cost:** $4.52
 
 ## DB Status: WORKING
 
@@ -21,31 +23,34 @@ The SQLite database at `~/.niobot/data/niobot.db` is receiving XP awards correct
 - `POST /api/dna/xp` writes to dna_state + evolution_history
 - Bootstrap migration from localStorage has been completed
 - Server-authoritative flow is functional
+- Browser-initiated XP awards are now landing (42 history entries from this session)
 
-### Previous Issue (resolved 2026-02-23)
-The DB was reading 0 XP while browser localStorage had ~320 XP. The bootstrap migration
-ran and synced the data. The initial "Internal error" from the XP endpoint was a transient
-issue (likely cold start). Subsequent calls all succeed.
+### Issue Resolved (2026-02-23)
+DB was at 0 XP while browser had ~320 XP. Bootstrap ran and synced. Initial "Internal error"
+was transient (cold start). Now fully operational. XP tracked from 0 → 620 in one session.
 
-### Monitoring Note
-The evolution_history table only has entries from direct curl tests, not from browser usage.
-This suggests the browser client may still be silently failing on some XP POST calls
-(errors swallowed in the .catch() block of EvolutionProvider.tsx addXP). Worth adding
-console.error logging in the client-side catch to surface any ongoing issues.
+### Known Issues
+1. Client-side catch blocks in EvolutionProvider.tsx swallow errors silently
+2. Writing skill gets 0 XP because blog posts are written via Claude Code, not Writer agent
+3. Dev server has stale .next cache causing 500s on post pages (fix: rm -rf .next, restart)
+4. ~~Long chat messages not appearing in NioBot UI (message delivery/truncation issue)~~ **FIXED 2026-02-25** — see below
+
+### P0 Fix: Message Delivery (2026-02-25)
+Root cause: stdout buffer split across chunks caused partial JSON lines to fail `JSON.parse` silently.
+Fixes applied:
+- Server (`lib/claude.ts`): proper line buffer accumulation, debug logging for partials
+- Server (`lib/claude.ts`): 3-minute inactivity timeout kills hung child processes
+- Server (`app/api/chat/route.ts`): 15-second SSE heartbeat prevents proxy/tunnel drops
+- Client (`app/components/ChatProvider.tsx`): SSE line buffer mirrors server fix
+- Client (`app/components/ChatProvider.tsx`): auto-retry once on stream drop (2s delay)
+- Client (`lib/types.ts`): heartbeat event type added, silently ignored by client
 
 ## How to Check Live State
 
 ```bash
-# Full state
 sqlite3 ~/.niobot/data/niobot.db "SELECT xp, tier, level, streak, skill_xp FROM dna_state WHERE user_id = 'default';"
-
-# XP history (most recent)
 sqlite3 ~/.niobot/data/niobot.db "SELECT * FROM evolution_history ORDER BY id DESC LIMIT 10;"
-
-# Daily flags
 sqlite3 ~/.niobot/data/niobot.db "SELECT * FROM dna_daily_flags WHERE date = date('now');"
-
-# API test (requires auth token from .env.local)
 curl -s -H "Authorization: Bearer $NIO_CHAT_TOKEN" http://localhost:3004/api/dna | python3 -m json.tool
 ```
 
@@ -60,8 +65,6 @@ curl -s -H "Authorization: Bearer $NIO_CHAT_TOKEN" http://localhost:3004/api/dna
 | 5 | Ascended | 15,000 |
 
 - 10 levels per tier, 50 total levels
-- Non-max tiers: XP divided evenly across 10 levels
-- Max tier: 1,000 XP per level beyond tier 5
 
 ## XP Economy
 
@@ -84,17 +87,6 @@ curl -s -H "Authorization: Bearer $NIO_CHAT_TOKEN" http://localhost:3004/api/dna
 | 14-29 | 1.75x |
 | 30+ | 2.0x |
 
-## Skills (3 total, mapped to agents)
-
-| Skill | Agent | Description |
-|-------|-------|-------------|
-| Ops | Nio | System operations, deploys, monitoring |
-| Architecture | Architect | Design, planning, schemas |
-| Writing | Writer | Content, blog posts, voice |
-
-- Max skill level: 10
-- XP per level: 100 * level number
-
 ## Key Files
 
 | File | Purpose |
@@ -102,17 +94,16 @@ curl -s -H "Authorization: Bearer $NIO_CHAT_TOKEN" http://localhost:3004/api/dna
 | `~/.niobot/data/niobot.db` | SQLite database (source of truth) |
 | `lib/evolution.ts` | XP math, tier/level calc, streak logic |
 | `lib/db/queries/dna.ts` | Server-side DNA persistence queries |
-| `lib/db/migrations/003_dna.sql` | DNA schema |
 | `app/api/dna/route.ts` | GET /api/dna (client hydration) |
 | `app/api/dna/xp/route.ts` | POST /api/dna/xp (XP awards) |
-| `app/api/dna/bootstrap/route.ts` | POST /api/dna/bootstrap (localStorage migration) |
-| `app/components/EvolutionProvider.tsx` | Client state management + server sync |
-| `app/components/useEvolutionXP.ts` | Observer hook that triggers XP awards |
+| `app/components/EvolutionProvider.tsx` | Client state + server sync |
+| `app/components/useEvolutionXP.ts` | Observer hook that triggers XP |
+| `SESSION-ANALYSIS-2026-02-23.md` | Full session analysis with recommendations |
 
-## Open Items
+## Priority Fixes for Next Session
 
-- [ ] Add console.error logging in EvolutionProvider.tsx catch blocks so failed XP POSTs are visible
-- [ ] Verify browser-initiated XP awards are landing in evolution_history (not just curl tests)
-- [ ] Conversation history UI (SessionSidebar is stubbed)
-- [ ] Achievement/milestone system
-- [ ] Dynamic soul file loading based on DB tier
+- [x] P0: ~~Investigate chat message truncation~~ **FIXED** — buffer parsing, heartbeat, timeout, client retry
+- [ ] P1: Clear stale .next cache on shawnos dev server (500 on post pages)
+- [ ] P2: Add console.error in EvolutionProvider catch blocks
+- [ ] P3: Fix NioTerminalPage intro text (still says "spark tier")
+- [ ] P4: Consider task-based XP attribution for Writing skill

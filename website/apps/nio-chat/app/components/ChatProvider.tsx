@@ -330,6 +330,108 @@ export default function ChatProvider({ children }: { children: ReactNode }) {
     localStorage.removeItem(storageKey(state.activeAgentId, 'messages'))
   }, [state.isStreaming, state.activeAgentId])
 
+  // Stream SSE response from the chat API, with line buffering and event dispatch
+  const streamResponse = useCallback(async (
+    res: Response,
+    assistantMsgId: string,
+  ): Promise<boolean> => {
+    const reader = res.body?.getReader()
+    if (!reader) return true // no body = done
+
+    const decoder = new TextDecoder()
+    let sseBuffer = '' // Accumulates partial SSE lines across chunks
+
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+
+      sseBuffer += decoder.decode(value, { stream: true })
+      const lines = sseBuffer.split('\n')
+      sseBuffer = lines.pop() || '' // Keep incomplete last line in buffer
+
+      for (const line of lines) {
+        if (!line.startsWith('data: ')) continue
+        try {
+          const event: ChatSSEEvent = JSON.parse(line.slice(6))
+
+          if (event.type === 'heartbeat') continue // Ignore keepalive
+
+          if (event.type === 'text') {
+            dispatch({ type: 'RECEIVE_CHUNK', text: event.data, msgId: assistantMsgId })
+          }
+
+          if (event.type === 'session') {
+            dispatch({ type: 'SET_SESSION', sessionId: event.data })
+          }
+
+          if (event.type === 'usage') {
+            try {
+              const usage = JSON.parse(event.data) as UsageInfo
+              dispatch({ type: 'SET_USAGE', usage })
+            } catch { /* ignore */ }
+          }
+
+          if (event.type === 'error') {
+            dispatch({ type: 'STREAM_ERROR', error: event.data, msgId: assistantMsgId })
+          }
+        } catch { /* skip unparseable */ }
+      }
+    }
+
+    // Process any remaining buffer
+    if (sseBuffer.startsWith('data: ')) {
+      try {
+        const event: ChatSSEEvent = JSON.parse(sseBuffer.slice(6))
+        if (event.type === 'text') {
+          dispatch({ type: 'RECEIVE_CHUNK', text: event.data, msgId: assistantMsgId })
+        }
+      } catch { /* ignore */ }
+    }
+
+    return true
+  }, [])
+
+  // Fire a chat request — returns the Response or null on failure
+  const fireChatRequest = useCallback(async (
+    trimmed: string,
+    sessionId: string | undefined,
+    agentId: string,
+    signal: AbortSignal,
+    assistantMsgId: string,
+  ): Promise<Response | null> => {
+    const token = localStorage.getItem('shawnos-chat-token')
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+    if (token && token !== 'no-auth') {
+      headers['Authorization'] = `Bearer ${token}`
+    }
+
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ message: trimmed, sessionId, agentId }),
+      signal,
+    })
+
+    if (res.status === 429) {
+      dispatch({ type: 'STREAM_ERROR', error: 'slow down. too many requests.', msgId: assistantMsgId })
+      return null
+    }
+
+    if (res.status === 401) {
+      localStorage.removeItem('shawnos-chat-token')
+      dispatch({ type: 'LOGOUT' })
+      return null
+    }
+
+    if (!res.ok) {
+      const errText = await res.text()
+      dispatch({ type: 'STREAM_ERROR', error: `${res.status} ${errText}`, msgId: assistantMsgId })
+      return null
+    }
+
+    return res
+  }, [])
+
   const sendMessage = useCallback(async (text: string) => {
     const trimmed = text.trim()
     if (!trimmed || state.isStreaming) return
@@ -345,93 +447,34 @@ export default function ChatProvider({ children }: { children: ReactNode }) {
     dispatch({ type: 'SEND_MESSAGE', message: userMsg })
 
     const assistantMsgId = crypto.randomUUID()
-
-    const token = localStorage.getItem('shawnos-chat-token')
-    const headers: Record<string, string> = { 'Content-Type': 'application/json' }
-    if (token && token !== 'no-auth') {
-      headers['Authorization'] = `Bearer ${token}`
-    }
-
     abortRef.current = new AbortController()
 
+    const sessionId = state.agentStates[state.activeAgentId]?.sessionId
+
     try {
-      const sessionId = state.agentStates[state.activeAgentId]?.sessionId
-
-      // V3 DNA: Server reads evolution from DNA directly — no client-sent evolution
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers,
-        body: JSON.stringify({ message: trimmed, sessionId, agentId: state.activeAgentId }),
-        signal: abortRef.current.signal,
-      })
-
-      if (res.status === 429) {
-        dispatch({ type: 'STREAM_ERROR', error: 'slow down. too many requests.', msgId: assistantMsgId })
-        return
-      }
-
-      if (res.status === 401) {
-        localStorage.removeItem('shawnos-chat-token')
-        dispatch({ type: 'LOGOUT' })
-        return
-      }
-
-      if (!res.ok) {
-        const errText = await res.text()
-        dispatch({ type: 'STREAM_ERROR', error: `${res.status} ${errText}`, msgId: assistantMsgId })
-        return
-      }
-
-      const reader = res.body?.getReader()
-      if (!reader) {
-        dispatch({ type: 'STREAM_DONE' })
-        return
-      }
-
-      const decoder = new TextDecoder()
-
-      while (true) {
-        const { done, value } = await reader.read()
-        if (done) break
-
-        const chunk = decoder.decode(value, { stream: true })
-        const lines = chunk.split('\n')
-
-        for (const line of lines) {
-          if (!line.startsWith('data: ')) continue
-          try {
-            const event: ChatSSEEvent = JSON.parse(line.slice(6))
-
-            if (event.type === 'text') {
-              dispatch({ type: 'RECEIVE_CHUNK', text: event.data, msgId: assistantMsgId })
-            }
-
-            if (event.type === 'session') {
-              dispatch({ type: 'SET_SESSION', sessionId: event.data })
-            }
-
-            if (event.type === 'usage') {
-              try {
-                const usage = JSON.parse(event.data) as UsageInfo
-                dispatch({ type: 'SET_USAGE', usage })
-              } catch { /* ignore */ }
-            }
-
-            if (event.type === 'error') {
-              dispatch({ type: 'STREAM_ERROR', error: event.data, msgId: assistantMsgId })
-            }
-          } catch { /* skip unparseable */ }
-        }
-      }
+      const res = await fireChatRequest(trimmed, sessionId, state.activeAgentId, abortRef.current.signal, assistantMsgId)
+      if (res) await streamResponse(res, assistantMsgId)
     } catch (err) {
-      if (!(err instanceof DOMException && err.name === 'AbortError')) {
-        dispatch({ type: 'STREAM_ERROR', error: 'connection error. try again.', msgId: assistantMsgId })
+      if (err instanceof DOMException && err.name === 'AbortError') {
+        // User cancelled — don't retry
+      } else {
+        // Auto-retry once after 2s delay
+        try {
+          await new Promise(r => setTimeout(r, 2000))
+          if (abortRef.current?.signal.aborted) throw new DOMException('Aborted', 'AbortError')
+          const retryRes = await fireChatRequest(trimmed, sessionId, state.activeAgentId, abortRef.current!.signal, assistantMsgId)
+          if (retryRes) await streamResponse(retryRes, assistantMsgId)
+        } catch (retryErr) {
+          if (!(retryErr instanceof DOMException && retryErr.name === 'AbortError')) {
+            dispatch({ type: 'STREAM_ERROR', error: 'connection lost. please try again.', msgId: assistantMsgId })
+          }
+        }
       }
     }
 
     dispatch({ type: 'STREAM_DONE' })
     abortRef.current = null
-  }, [state.isStreaming, state.activeAgentId, state.agentStates])
+  }, [state.isStreaming, state.activeAgentId, state.agentStates, fireChatRequest, streamResponse])
 
   return (
     <ChatContext.Provider value={{

@@ -72,6 +72,8 @@ function composeSoulPrompt(agent: AgentConfig, evolution?: EvolutionContext): st
   return soul
 }
 
+const INACTIVITY_TIMEOUT_MS = 180_000 // 3 minutes — kill child if no stdout activity
+
 export function spawnClaude(
   message: string,
   sessionId: string | undefined,
@@ -198,17 +200,45 @@ export function spawnClaude(
     }
   }
 
+  // Inactivity timeout — kill child if no stdout for 3 minutes
+  let inactivityTimer: ReturnType<typeof setTimeout> | null = null
+
+  function resetInactivityTimer() {
+    if (inactivityTimer) clearTimeout(inactivityTimer)
+    inactivityTimer = setTimeout(() => {
+      console.error(`[claude:${agent.id}] inactivity timeout (${INACTIVITY_TIMEOUT_MS / 1000}s no output) — killing process`)
+      child.kill('SIGTERM')
+      // Give it 5s to clean up, then force kill
+      setTimeout(() => {
+        if (!child.killed) child.kill('SIGKILL')
+      }, 5000)
+    }, INACTIVITY_TIMEOUT_MS)
+  }
+
+  function clearInactivityTimer() {
+    if (inactivityTimer) {
+      clearTimeout(inactivityTimer)
+      inactivityTimer = null
+    }
+  }
+
+  // Start the timer immediately
+  resetInactivityTimer()
+
   child.stdout?.on('data', (chunk: Buffer) => {
+    resetInactivityTimer() // Reset on every chunk
+
     buffer += chunk.toString()
     const lines = buffer.split('\n')
-    buffer = lines.pop() || ''
+    buffer = lines.pop() || '' // Keep incomplete last line in buffer
 
     for (const line of lines) {
       if (!line.trim()) continue
       try {
         processEvent(JSON.parse(line))
       } catch {
-        console.log(`[claude:${agent.id}] non-JSON stdout line:`, line.substring(0, 200))
+        // Debug log for partial/non-JSON lines — helps diagnose future truncation issues
+        console.log(`[claude:${agent.id}] non-JSON stdout line (${line.length} chars):`, line.substring(0, 200))
       }
     }
   })
@@ -220,17 +250,18 @@ export function spawnClaude(
   })
 
   child.on('close', (code) => {
+    clearInactivityTimer()
     console.log(`[claude:${agent.id}] process closed with code:`, code)
     if (stderrBuffer.trim()) {
       console.error(`[claude:${agent.id}] full stderr:`, stderrBuffer.trim())
     }
 
-    // Process remaining buffer
+    // Process remaining buffer — this catches the last line if it didn't end with \n
     if (buffer.trim()) {
       try {
         processEvent(JSON.parse(buffer))
       } catch {
-        console.log(`[claude:${agent.id}] unparseable remaining buffer:`, buffer.substring(0, 200))
+        console.log(`[claude:${agent.id}] unparseable remaining buffer (${buffer.length} chars):`, buffer.substring(0, 200))
       }
     }
 
@@ -253,6 +284,7 @@ export function spawnClaude(
   })
 
   child.on('error', (err) => {
+    clearInactivityTimer()
     console.error(`[claude:${agent.id}] spawn error:`, err.message)
     callbacks.onError(err.message)
   })

@@ -20,7 +20,7 @@ export interface AgentChatState {
   messages: Message[]
 }
 
-export type ChatSSEEventType = 'text' | 'session' | 'done' | 'error' | 'usage' | 'model' | 'memory_flush' | 'confirm'
+export type ChatSSEEventType = 'text' | 'session' | 'done' | 'error' | 'usage' | 'model' | 'memory_flush' | 'confirm' | 'heartbeat'
 
 export interface ChatSSEEvent {
   type: ChatSSEEventType

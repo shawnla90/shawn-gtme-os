@@ -123,6 +123,8 @@ export async function POST(request: NextRequest) {
   // Accumulate full response text for persistence
   let fullResponseText = ''
 
+  const HEARTBEAT_INTERVAL_MS = 15_000 // 15 seconds — keeps proxies from closing idle SSE
+
   const stream = new ReadableStream({
     start(controller) {
       let closed = false
@@ -139,12 +141,18 @@ export async function POST(request: NextRequest) {
       function close() {
         if (closed) return
         closed = true
+        clearInterval(heartbeatInterval)
         try {
           controller.close()
         } catch {
           // already closed
         }
       }
+
+      // Heartbeat: prevent Cloudflare Tunnel / browser proxies from closing idle connections
+      const heartbeatInterval = setInterval(() => {
+        send(JSON.stringify({ type: 'heartbeat' }))
+      }, HEARTBEAT_INTERVAL_MS)
 
       const child = spawnClaude(body.message, body.sessionId, agent, {
         onText(text) {
@@ -234,6 +242,7 @@ export async function POST(request: NextRequest) {
 
       // Kill child process on client abort
       request.signal.addEventListener('abort', () => {
+        clearInterval(heartbeatInterval)
         child.kill('SIGTERM')
       })
     },
