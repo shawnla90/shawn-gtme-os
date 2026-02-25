@@ -1,26 +1,32 @@
-# All crawlers
+# *
 User-agent: *
 Allow: /
 
-# AI Engine Crawlers — explicitly allowed
+# GPTBot
 User-agent: GPTBot
 Allow: /
 
+# ChatGPT-User
 User-agent: ChatGPT-User
 Allow: /
 
+# PerplexityBot
 User-agent: PerplexityBot
 Allow: /
 
+# ClaudeBot
 User-agent: ClaudeBot
 Allow: /
 
+# Applebot-Extended
 User-agent: Applebot-Extended
 Allow: /
 
+# Google-Extended
 User-agent: Google-Extended
 Allow: /
 
+# OAI-SearchBot
 User-agent: OAI-SearchBot
 Allow: /
 
@@ -29,4 +35,4 @@ Host: https://thegtmos.ai
 
 # Sitemaps
 Sitemap: https://thegtmos.ai/sitemap.xml
-Sitemap: https://thegtmos.ai/feed.xml
+Sitemap: https://thegtmos.ai/feed/updates.xml

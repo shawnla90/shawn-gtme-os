@@ -18,21 +18,21 @@ export const metadata: Metadata = {
     default: 'theGTMOS.ai',
     template: '%s | theGTMOS.ai',
   },
-  description: 'The GTM operating system. Launching soon.',
+  description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'theGTMOS.ai',
     title: 'theGTMOS.ai',
-    description: 'The GTM operating system. Launching soon.',
+    description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
     title: 'theGTMOS.ai',
-    description: 'The GTM operating system. Launching soon.',
+    description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
   },
   alternates: {
     canonical: SITE_URL,
@@ -41,6 +41,9 @@ export const metadata: Metadata = {
         { url: '/feed.xml', title: 'theGTMOS.ai — All Content' },
         { url: '/feed/knowledge.xml', title: 'theGTMOS.ai — Knowledge' },
         { url: '/feed/clay-wiki.xml', title: 'theGTMOS.ai — Clay Wiki' },
+        { url: '/feed/how-to.xml', title: 'theGTMOS.ai — How-To' },
+        { url: '/feed/daily-logs.xml', title: 'theGTMOS.ai — Daily Logs' },
+        { url: '/feed/updates.xml', title: 'theGTMOS.ai — Latest Updates' },
       ],
     },
   },
@@ -48,6 +51,17 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+}
+
+/* ── JSON-LD Structured Data ── */
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'theGTMOS.ai',
+  url: SITE_URL,
+  description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
+  author: { '@type': 'Person', name: 'Shawn Tenam' },
 }
 
 export default function RootLayout({
@@ -58,6 +72,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <Navigation
           siteName="theGTMOS.ai"
           links={[
@@ -69,6 +87,7 @@ export default function RootLayout({
             { href: '/log', label: 'Log' },
             { href: '/vitals', label: 'Vitals' },
             { href: '/updates', label: 'Updates' },
+            { href: '/search', label: 'Search' },
           ]}
         />
         <main>{children}</main>

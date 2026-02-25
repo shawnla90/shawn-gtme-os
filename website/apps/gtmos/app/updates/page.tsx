@@ -326,6 +326,21 @@ const navLink: React.CSSProperties = {
   textDecoration: 'none',
 }
 
+const rssBadge: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '6px',
+  fontSize: '12px',
+  fontWeight: 600,
+  color: '#fb923c',
+  background: 'var(--canvas-subtle)',
+  border: '1px solid #fb923c33',
+  borderRadius: '6px',
+  padding: '6px 14px',
+  textDecoration: 'none',
+  letterSpacing: '0.03em',
+}
+
 const networkRow: React.CSSProperties = {
   display: 'flex',
   gap: '12px',
@@ -473,7 +488,11 @@ export default function UpdatesPage() {
           </div>
         </div>
 
-        {/* Network links */}
+        {/* RSS badge + network links */}
+        <a href="/feed/updates.xml" style={rssBadge}>
+          <span>&#9654;</span> RSS Feed — /feed/updates.xml
+        </a>
+
         <div style={networkRow}>
           <a href="https://shawnos.ai/updates" style={networkLink}>
             shawnos.ai/updates &rarr;
