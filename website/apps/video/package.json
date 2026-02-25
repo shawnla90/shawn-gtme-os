@@ -10,9 +10,22 @@
     "render:landscape": "remotion render src/index.ts LeadMagnetV3Landscape out/lead-magnet-v3-landscape.mp4",
     "render:all": "npm run render:linkedin && npm run render:reels && npm run render:landscape",
     "render:v1": "remotion render src/index.ts LeadMagnet out/lead-magnet-linkedin.mp4",
+    "render:nio-landscape": "remotion render src/index.ts NioLandscape out/nio-landscape.mp4",
+    "render:nio-linkedin": "remotion render src/index.ts NioLinkedIn out/nio-linkedin.mp4",
+    "render:nio-reels": "remotion render src/index.ts NioReels out/nio-reels.mp4",
+    "render:nio-all": "npm run render:nio-landscape && npm run render:nio-linkedin && npm run render:nio-reels",
+    "render:tiktok": "remotion render src/index.ts TikTok-nio-intro out/tiktok-nio-intro.mp4",
+    "render:tiktok-all": "npm run render:tiktok && remotion render src/index.ts TikTok-ai-setup out/tiktok-ai-setup.mp4 && remotion render src/index.ts TikTok-api-costs out/tiktok-api-costs.mp4 && remotion render src/index.ts TikTok-mcp-servers out/tiktok-mcp-servers.mp4 && remotion render src/index.ts TikTok-sqlite-repo out/tiktok-sqlite-repo.mp4 && remotion render src/index.ts TikTok-remotion-videos out/tiktok-remotion-videos.mp4",
+    "render:reel-1": "remotion render src/index.ts NioReel-ApiCosts out/nio-reel-api-costs.mp4",
+    "render:reel-2": "remotion render src/index.ts NioReel-ClaudeCodeWrong out/nio-reel-claude-code-wrong.mp4",
+    "render:reel-3": "remotion render src/index.ts NioReel-ApiWrappers out/nio-reel-api-wrappers.mp4",
+    "render:reel-4": "remotion render src/index.ts NioReel-McpServers out/nio-reel-mcp-servers.mp4",
+    "render:reel-5": "remotion render src/index.ts NioReel-RemotionMeta out/nio-reel-remotion-meta.mp4",
+    "render:reel-all": "npm run render:reel-1 && npm run render:reel-2 && npm run render:reel-3 && npm run render:reel-4 && npm run render:reel-5",
     "build": "echo 'Video app — use render scripts instead'"
   },
   "dependencies": {
+    "@json-render/remotion": "^0.9.1",
     "@remotion/animation-utils": "^4.0.427",
     "@remotion/cli": "^4.0.0",
     "@remotion/gif": "^4.0.0",
@@ -26,7 +39,8 @@
     "@shawnos/shared": "*",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "remotion": "^4.0.0"
+    "remotion": "^4.0.0",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@types/react": "^19.0.0",

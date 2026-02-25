@@ -27,6 +27,8 @@ import {
   STANDALONE_ANIMS,
   EVOLVE_PAIRS,
 } from './scenes/NioAnimClip';
+import { JsonVideo } from './json-video';
+import { CHAT_DEMO_SPEC } from './json-video';
 
 export const Root: React.FC = () => {
   return (
@@ -282,6 +284,27 @@ export const Root: React.FC = () => {
           />
         );
       })}
+
+      {/* ── JSON Video (AI-driven compositions) ── */}
+
+      <Composition
+        id="JsonVideo"
+        component={JsonVideo}
+        defaultProps={{ spec: CHAT_DEMO_SPEC }}
+        durationInFrames={CHAT_DEMO_SPEC.composition!.durationInFrames}
+        fps={CHAT_DEMO_SPEC.composition!.fps}
+        width={CHAT_DEMO_SPEC.composition!.width}
+        height={CHAT_DEMO_SPEC.composition!.height}
+        calculateMetadata={({ props }) => {
+          const spec = (props as { spec: typeof CHAT_DEMO_SPEC }).spec;
+          return {
+            durationInFrames: spec.composition!.durationInFrames,
+            fps: spec.composition!.fps,
+            width: spec.composition!.width,
+            height: spec.composition!.height,
+          };
+        }}
+      />
 
       {/* ── V1 Compositions (60s, silent — kept for reference) ── */}
 
