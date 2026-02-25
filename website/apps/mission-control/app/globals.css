@@ -37,3 +37,68 @@
     @apply bg-red-500;
   }
 }
+
+/* Terminal-styled prose for rendered markdown */
+.prose-terminal {
+  @apply text-gray-300 text-sm leading-relaxed;
+}
+.prose-terminal h1 {
+  @apply text-xl font-bold text-green-300 mt-6 mb-3;
+}
+.prose-terminal h2 {
+  @apply text-lg font-bold text-green-300 mt-5 mb-2;
+}
+.prose-terminal h3 {
+  @apply text-base font-bold text-green-400 mt-4 mb-2;
+}
+.prose-terminal p {
+  @apply mb-3;
+}
+.prose-terminal a {
+  @apply text-green-400 underline hover:text-green-300;
+}
+.prose-terminal ul, .prose-terminal ol {
+  @apply ml-5 mb-3 space-y-1;
+}
+.prose-terminal ul {
+  @apply list-disc;
+}
+.prose-terminal ol {
+  @apply list-decimal;
+}
+.prose-terminal li {
+  @apply text-gray-300;
+}
+.prose-terminal code {
+  @apply bg-gray-800 text-green-400 px-1.5 py-0.5 rounded text-xs;
+}
+.prose-terminal pre {
+  @apply bg-gray-900 border border-green-800 rounded-lg p-4 mb-4 overflow-x-auto;
+}
+.prose-terminal pre code {
+  @apply bg-transparent p-0 rounded-none;
+}
+.prose-terminal blockquote {
+  @apply border-l-2 border-green-700 pl-4 italic text-gray-400 my-3;
+}
+.prose-terminal hr {
+  @apply border-green-800 my-6;
+}
+.prose-terminal table {
+  @apply w-full border-collapse mb-4;
+}
+.prose-terminal th {
+  @apply bg-gray-800 text-green-300 text-left px-3 py-2 text-xs font-bold border border-green-800;
+}
+.prose-terminal td {
+  @apply px-3 py-2 text-xs border border-green-800;
+}
+.prose-terminal strong {
+  @apply text-green-300 font-bold;
+}
+.prose-terminal em {
+  @apply text-gray-400;
+}
+.prose-terminal img {
+  @apply rounded-lg border border-green-800 my-4;
+}
