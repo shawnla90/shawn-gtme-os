@@ -83,7 +83,7 @@ function loadEvolution(): Partial<EvolutionState> {
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
     if (saved) return JSON.parse(saved)
-  } catch { /* corrupted */ }
+  } catch (e) { console.error('[evolution] Failed to load cached state:', e) }
   return {}
 }
 
@@ -262,9 +262,9 @@ export function EvolutionProvider({ children }: { children: ReactNode }) {
                     },
                   })
                 })
-                .catch(() => { /* already have cached state */ })
+                .catch((e) => { console.error('[evolution] Failed to refresh after bootstrap:', e) })
             }
-          }).catch(() => { /* bootstrap failed, cached state is fine */ })
+          }).catch((e) => { console.error('[evolution] Bootstrap migration failed:', e) })
         }
       })
       .catch(() => {
@@ -336,8 +336,8 @@ export function EvolutionProvider({ children }: { children: ReactNode }) {
           })
         }
       })
-      .catch(() => {
-        // Optimistic state stands — server will catch up next sync
+      .catch((e) => {
+        console.error('[evolution] XP sync failed, optimistic state stands:', e)
       })
   }, [state.xp, state.skillXP])
 

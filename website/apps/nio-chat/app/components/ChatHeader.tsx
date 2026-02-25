@@ -74,7 +74,7 @@ export default function ChatHeader({ onNewChat, isStreaming, agents, activeAgent
             >
               <NioXPRing progress={progress.levelProgress} tier={progress.tier}>
                 <Image
-                  src={activeAgent.avatar}
+                  src={activeAgent.id === 'nio' ? `/avatars/nio-tier-${progress.tier}-idle.gif` : activeAgent.avatar}
                   alt={activeAgent.name}
                   width={40}
                   height={40}
@@ -120,7 +120,7 @@ export default function ChatHeader({ onNewChat, isStreaming, agents, activeAgent
                   >
                     <div className="relative shrink-0">
                       <Image
-                        src={agent.avatar}
+                        src={agent.id === 'nio' ? `/avatars/nio-tier-${progress.tier}-idle.gif` : agent.avatar}
                         alt={agent.name}
                         width={28}
                         height={28}

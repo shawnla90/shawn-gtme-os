@@ -41,7 +41,7 @@ const agents: AgentConfig[] = [
     name: 'Architect',
     description: 'system design & planning',
     soulFile: 'souls/architect-soul.md',
-    avatar: '/avatars/nio-tier-2-idle.gif',
+    avatar: '/avatars/architect-idle.gif',
     accentColor: '#6B8AFF',
     bubbleColors: {
       agent: '#1e2230',
@@ -58,7 +58,7 @@ const agents: AgentConfig[] = [
     name: 'Writer',
     description: 'content, voice & blog drafting',
     soulFile: 'souls/writer-soul.md',
-    avatar: '/avatars/nio-tier-2-idle.gif',
+    avatar: '/avatars/writer-idle.gif',
     accentColor: '#FF8A6B',
     bubbleColors: {
       agent: '#2a1e1e',

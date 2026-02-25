@@ -34,7 +34,7 @@ export const NioAnimClip: React.FC<NioAnimClipProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: COLORS.canvas,
+        backgroundColor: 'transparent',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -61,7 +61,7 @@ export const NioEvolveClip: React.FC<NioEvolveClipProps> = ({
   return (
     <AbsoluteFill
       style={{
-        backgroundColor: COLORS.canvas,
+        backgroundColor: 'transparent',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',

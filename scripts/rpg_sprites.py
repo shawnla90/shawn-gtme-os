@@ -226,6 +226,38 @@ HEYREACH_PALETTE: Dict[str, tuple] = {
 }
 
 # ══════════════════════════════════════════════════════════════════════
+#  Agent Persona Palettes (blue Architect, orange Writer)
+# ══════════════════════════════════════════════════════════════════════
+
+ARCHITECT_PALETTE: Dict[str, tuple] = {
+    "primary":     (107, 138, 255),   # #6B8AFF main blue plating
+    "secondary":   (70,  100, 200),   # darker blue
+    "dark":        (35,  55,  130),   # deep blue joints
+    "highlight":   (160, 190, 255),   # bright ice-blue glow
+    "glow":        (107, 138, 255),   # energy glow
+    "visor_bg":    (15,  20,  30),    # dark visor glass
+    "visor_glow":  (130, 170, 255),   # bright blue eye glow
+    "metal":       (55,  65,  75),    # dark metal frame
+    "metal_light": (90,  105, 120),   # lighter metal accents
+    "energy":      (150, 180, 255),   # energy effects
+    "core":        (200, 215, 255),   # core power light
+}
+
+WRITER_PALETTE: Dict[str, tuple] = {
+    "primary":     (255, 138, 107),   # #FF8A6B main orange plating
+    "secondary":   (200, 100, 70),    # darker orange
+    "dark":        (130, 55,  35),    # deep burnt orange joints
+    "highlight":   (255, 190, 160),   # bright warm glow
+    "glow":        (255, 138, 107),   # energy glow
+    "visor_bg":    (15,  20,  30),    # dark visor glass
+    "visor_glow":  (255, 170, 130),   # warm amber eye glow
+    "metal":       (55,  65,  75),    # dark metal frame
+    "metal_light": (90,  105, 120),   # lighter metal accents
+    "energy":      (255, 200, 150),   # energy effects
+    "core":        (255, 230, 200),   # core power light
+}
+
+# ══════════════════════════════════════════════════════════════════════
 #  Drawing Primitives & Types
 # ══════════════════════════════════════════════════════════════════════
 
@@ -257,8 +289,10 @@ Sprite = Dict[str, BodyPart]
 
 def draw_sprite(img: Image.Image, sprite: Sprite,
                 ox: int = 0, oy: int = 0) -> None:
-    """Render every body part onto *img*, respecting z-order."""
+    """Render every body part onto *img*, respecting z-order.
+    Supports both RGB and RGBA images — writes 3 or 4 channel tuples."""
     w, h = img.size
+    rgba = img.mode == "RGBA"
     for part in sorted(sprite.values(), key=lambda p: p.z_order):
         for prim in part.primitives:
             if isinstance(prim, Rect):
@@ -266,16 +300,23 @@ def draw_sprite(img: Image.Image, sprite: Sprite,
                     for x in range(prim.x1, prim.x2 + 1):
                         px, py = x + ox, y + oy
                         if 0 <= px < w and 0 <= py < h:
-                            img.putpixel((px, py), prim.color[:3])
+                            c = (*prim.color[:3], 255) if rgba else prim.color[:3]
+                            img.putpixel((px, py), c)
             elif isinstance(prim, Pixel):
                 px, py = prim.x + ox, prim.y + oy
                 if 0 <= px < w and 0 <= py < h:
-                    img.putpixel((px, py), prim.color[:3])
+                    c = (*prim.color[:3], 255) if rgba else prim.color[:3]
+                    img.putpixel((px, py), c)
 
 
-def render_sprite(sprite: Sprite, bg: tuple = BG) -> Image.Image:
-    """Render a 32×32 sprite to an RGB PIL Image."""
-    img = Image.new("RGB", (GRID, GRID), bg[:3])
+def render_sprite(sprite: Sprite, bg: tuple = BG,
+                  transparent: bool = False) -> Image.Image:
+    """Render a 32×32 sprite to a PIL Image.
+    When *transparent* is True, creates an RGBA image with transparent background."""
+    if transparent:
+        img = Image.new("RGBA", (GRID, GRID), (0, 0, 0, 0))
+    else:
+        img = Image.new("RGB", (GRID, GRID), bg[:3])
     draw_sprite(img, sprite)
     return img
 
@@ -1710,6 +1751,165 @@ def get_nio_sprite(tier: int) -> Sprite:
         raise ValueError(f"Invalid Nio tier {tier}, must be 1-5")
     return builder()
 
+
+# ══════════════════════════════════════════════════════════════════════
+#  Agent Persona Sprites (Architect = blue, Writer = orange)
+#  Reuse tier-2 structure with palette swap + persona-specific details
+# ══════════════════════════════════════════════════════════════════════
+
+def _architect_sprite() -> Sprite:
+    """Architect agent — blue-tinted Nio variant with blueprint grid overlay."""
+    p = ARCHITECT_PALETTE
+    return {
+        "antenna": BodyPart("antenna", [
+            Pixel(15, 2, p["highlight"]),
+            Pixel(16, 2, p["highlight"]),
+            Pixel(15, 3, p["primary"]),
+            Pixel(16, 3, p["primary"]),
+        ], z_order=26),
+
+        "head": BodyPart("head", [
+            Rect(13, 4, 18, 4, p["metal"]),
+            Rect(12, 5, 19, 9, p["primary"]),
+            Rect(12, 5, 12, 9, p["metal"]),
+            Rect(19, 5, 19, 9, p["metal"]),
+            Rect(13, 9, 18, 9, p["metal"]),
+        ], z_order=10),
+
+        "visor": BodyPart("visor", [
+            Rect(13, 6, 18, 7, p["visor_bg"]),
+            Pixel(14, 6, p["visor_glow"]),
+            Pixel(14, 7, p["visor_glow"]),
+            Pixel(17, 6, p["visor_glow"]),
+            Pixel(17, 7, p["visor_glow"]),
+        ], z_order=20),
+
+        "body": BodyPart("body", [
+            Rect(15, 10, 16, 10, p["metal"]),
+            Rect(13, 11, 18, 16, p["primary"]),
+            Rect(14, 12, 17, 14, p["secondary"]),
+            Pixel(15, 15, p["core"]),
+            Pixel(16, 15, p["core"]),
+            Rect(13, 16, 18, 16, p["metal"]),
+        ], z_order=8),
+
+        "shoulders": BodyPart("shoulders", [
+            Rect(10, 10, 12, 12, p["primary"]),
+            Rect(19, 10, 21, 12, p["primary"]),
+            Pixel(10, 10, p["highlight"]),
+            Pixel(21, 10, p["highlight"]),
+        ], z_order=14),
+
+        "arms": BodyPart("arms", [
+            Rect(11, 11, 12, 15, p["secondary"]),
+            Rect(19, 11, 20, 15, p["secondary"]),
+            Pixel(11, 16, p["metal"]),
+            Pixel(20, 16, p["metal"]),
+        ], z_order=12),
+
+        # Blueprint grid (held in right hand)
+        "blueprint": BodyPart("blueprint", [
+            Rect(22, 8, 27, 15, p["highlight"]),          # grid background
+            # Grid lines
+            Pixel(24, 8, p["visor_glow"]),
+            Pixel(24, 10, p["visor_glow"]),
+            Pixel(24, 12, p["visor_glow"]),
+            Pixel(24, 14, p["visor_glow"]),
+            Pixel(22, 11, p["visor_glow"]),
+            Pixel(25, 11, p["visor_glow"]),
+            Pixel(27, 11, p["visor_glow"]),
+        ], z_order=22),
+
+        "legs": BodyPart("legs", [
+            Rect(13, 17, 14, 22, p["secondary"]),
+            Rect(17, 17, 18, 22, p["secondary"]),
+            Rect(12, 23, 14, 23, p["dark"]),
+            Rect(17, 23, 19, 23, p["dark"]),
+        ], z_order=5),
+    }
+
+
+def _writer_sprite() -> Sprite:
+    """Writer agent — orange-tinted Nio variant with quill/pen pixel detail."""
+    p = WRITER_PALETTE
+    return {
+        "antenna": BodyPart("antenna", [
+            Pixel(15, 2, p["highlight"]),
+            Pixel(16, 2, p["highlight"]),
+            Pixel(15, 3, p["primary"]),
+            Pixel(16, 3, p["primary"]),
+        ], z_order=26),
+
+        "head": BodyPart("head", [
+            Rect(13, 4, 18, 4, p["metal"]),
+            Rect(12, 5, 19, 9, p["primary"]),
+            Rect(12, 5, 12, 9, p["metal"]),
+            Rect(19, 5, 19, 9, p["metal"]),
+            Rect(13, 9, 18, 9, p["metal"]),
+        ], z_order=10),
+
+        "visor": BodyPart("visor", [
+            Rect(13, 6, 18, 7, p["visor_bg"]),
+            Pixel(14, 6, p["visor_glow"]),
+            Pixel(14, 7, p["visor_glow"]),
+            Pixel(17, 6, p["visor_glow"]),
+            Pixel(17, 7, p["visor_glow"]),
+        ], z_order=20),
+
+        "body": BodyPart("body", [
+            Rect(15, 10, 16, 10, p["metal"]),
+            Rect(13, 11, 18, 16, p["primary"]),
+            Rect(14, 12, 17, 14, p["secondary"]),
+            Pixel(15, 15, p["core"]),
+            Pixel(16, 15, p["core"]),
+            Rect(13, 16, 18, 16, p["metal"]),
+        ], z_order=8),
+
+        "shoulders": BodyPart("shoulders", [
+            Rect(10, 10, 12, 12, p["primary"]),
+            Rect(19, 10, 21, 12, p["primary"]),
+            Pixel(10, 10, p["highlight"]),
+            Pixel(21, 10, p["highlight"]),
+        ], z_order=14),
+
+        "arms": BodyPart("arms", [
+            Rect(11, 11, 12, 15, p["secondary"]),
+            Rect(19, 11, 20, 15, p["secondary"]),
+            Pixel(11, 16, p["metal"]),
+            Pixel(20, 16, p["metal"]),
+        ], z_order=12),
+
+        # Quill pen (held in right hand)
+        "quill": BodyPart("quill", [
+            Pixel(22, 5, p["highlight"]),                  # feather tip
+            Pixel(22, 6, p["highlight"]),
+            Pixel(21, 7, p["energy"]),                     # feather plume
+            Pixel(23, 7, p["energy"]),
+            Pixel(22, 8, p["metal_light"]),                # shaft
+            Pixel(22, 9, p["metal_light"]),
+            Pixel(22, 10, p["metal"]),
+            Pixel(22, 11, p["metal"]),
+            Pixel(22, 12, (60, 50, 40)),                   # nib (dark)
+            Pixel(22, 13, p["core"]),                      # ink glow
+        ], z_order=22),
+
+        "legs": BodyPart("legs", [
+            Rect(13, 17, 14, 22, p["secondary"]),
+            Rect(17, 17, 18, 22, p["secondary"]),
+            Rect(12, 23, 14, 23, p["dark"]),
+            Rect(17, 23, 19, 23, p["dark"]),
+        ], z_order=5),
+    }
+
+
+def get_agent_sprite(agent_name: str) -> Sprite:
+    """Build and return the sprite for the given agent persona."""
+    builders = {"architect": _architect_sprite, "writer": _writer_sprite}
+    builder = builders.get(agent_name.lower())
+    if builder is None:
+        raise ValueError(f"Invalid agent '{agent_name}', must be one of: {', '.join(builders)}")
+    return builder()
+
 # ══════════════════════════════════════════════════════════════════════
 #  Partner Tool Sprites
 # ══════════════════════════════════════════════════════════════════════
@@ -2962,6 +3162,51 @@ def get_nio_animation(tier: int) -> Dict[str, AnimationSpec]:
     return specs
 
 # ══════════════════════════════════════════════════════════════════════
+#  Agent Persona Animations
+# ══════════════════════════════════════════════════════════════════════
+
+def architect_idle(sprite: Sprite, frame: int, total: int = 8) -> Sprite:
+    """Head bob + blueprint pulse + shoulder gleam (blue variant of tier-2 idle)."""
+    dy = _BOB_8[frame % 8]
+    s = shift_part(sprite, "head", dy=dy)
+    s = shift_part(s, "antenna", dy=dy)
+    amt = int(30 * math.sin(2 * math.pi * frame / total))
+    s = brighten_part(s, "blueprint", amt)
+    if (frame // 2) % 2 == 0:
+        s = brighten_part(s, "shoulders", 20)
+    return s
+
+
+def writer_idle(sprite: Sprite, frame: int, total: int = 8) -> Sprite:
+    """Head bob + quill glow pulse + shoulder gleam (orange variant of tier-2 idle)."""
+    dy = _BOB_8[frame % 8]
+    s = shift_part(sprite, "head", dy=dy)
+    s = shift_part(s, "antenna", dy=dy)
+    amt = int(35 * math.sin(2 * math.pi * frame / total))
+    s = brighten_part(s, "quill", amt)
+    if (frame // 2) % 2 == 0:
+        s = brighten_part(s, "shoulders", 15)
+    return s
+
+
+AGENT_ANIMATIONS: Dict[str, Dict[str, AnimationSpec]] = {
+    "architect": {
+        "idle": AnimationSpec(architect_idle, frames=8, duration_ms=150),
+    },
+    "writer": {
+        "idle": AnimationSpec(writer_idle, frames=8, duration_ms=150),
+    },
+}
+
+
+def get_agent_animation(agent_name: str) -> Dict[str, AnimationSpec]:
+    """Return animation specs dict for the given agent persona."""
+    specs = AGENT_ANIMATIONS.get(agent_name.lower())
+    if specs is None:
+        raise ValueError(f"Invalid agent '{agent_name}', must be one of: {', '.join(AGENT_ANIMATIONS)}")
+    return specs
+
+# ══════════════════════════════════════════════════════════════════════
 #  Partner Tool Lookups
 # ══════════════════════════════════════════════════════════════════════
 
@@ -3004,21 +3249,47 @@ def render_animated_gif(
     output: Path,
     size: int = 256,
     bg: tuple = BG,
+    transparent: bool = False,
 ) -> None:
-    """Render an animated GIF from a sprite + animation spec."""
+    """Render an animated GIF from a sprite + animation spec.
+    When *transparent* is True, output uses RGBA→palette with transparency index."""
     frames_img: List[Image.Image] = []
     for f in range(spec.frames):
         transformed = spec.transform(sprite, f, spec.frames)
-        base = render_sprite(transformed, bg)
+        base = render_sprite(transformed, bg, transparent=transparent)
         frames_img.append(upscale(base, size))
-    frames_img[0].save(
-        str(output),
-        save_all=True,
-        append_images=frames_img[1:],
-        duration=spec.duration_ms,
-        loop=0,
-        disposal=2,
-    )
+
+    if transparent:
+        # Convert RGBA frames to palette-mode with transparency
+        palette_frames: List[Image.Image] = []
+        for frame in frames_img:
+            # Use alpha channel to set transparency
+            alpha = frame.getchannel("A")
+            p_frame = frame.convert("RGB").quantize(colors=255, method=2)
+            # Create mask: 0 where transparent, 255 where opaque
+            mask = alpha.point(lambda a: 0 if a < 128 else 255)
+            # Add transparency: index 255 is transparent
+            p_frame.paste(255, mask=mask.point(lambda m: 255 if m == 0 else 0))
+            p_frame.info["transparency"] = 255
+            palette_frames.append(p_frame)
+        palette_frames[0].save(
+            str(output),
+            save_all=True,
+            append_images=palette_frames[1:],
+            duration=spec.duration_ms,
+            loop=0,
+            disposal=2,
+            transparency=255,
+        )
+    else:
+        frames_img[0].save(
+            str(output),
+            save_all=True,
+            append_images=frames_img[1:],
+            duration=spec.duration_ms,
+            loop=0,
+            disposal=2,
+        )
 
 # ══════════════════════════════════════════════════════════════════════
 #  CLI — standalone test render
@@ -3050,17 +3321,21 @@ def render_nio_sprite_sheet(
     output: Path,
     size: int = 256,
     bg: tuple = BG,
+    transparent: bool = False,
 ) -> None:
     """Render a horizontal PNG sprite sheet (all frames side-by-side).
     Each frame is *size* x *size* pixels. Used by Remotion NioSpriteSheet."""
     frame_images: List[Image.Image] = []
     for f in range(spec.frames):
         transformed = spec.transform(sprite, f, spec.frames)
-        base = render_sprite(transformed, bg)
+        base = render_sprite(transformed, bg, transparent=transparent)
         frame_images.append(upscale(base, size))
 
     sheet_w = size * spec.frames
-    sheet = Image.new("RGB", (sheet_w, size), bg[:3])
+    if transparent:
+        sheet = Image.new("RGBA", (sheet_w, size), (0, 0, 0, 0))
+    else:
+        sheet = Image.new("RGB", (sheet_w, size), bg[:3])
     for i, img in enumerate(frame_images):
         sheet.paste(img, (i * size, 0))
     sheet.save(str(output))
@@ -3072,6 +3347,7 @@ def render_nio_evolve_sheet(
     output: Path,
     size: int = 256,
     bg: tuple = BG,
+    transparent: bool = False,
 ) -> None:
     """Render a cross-tier evolution sheet: 8 frames evolve_out of tier_from +
     8 frames evolve_in of tier_to = 16-frame horizontal strip."""
@@ -3085,54 +3361,65 @@ def render_nio_evolve_sheet(
     spec_out = anims["evolve_out"]
     for f in range(spec_out.frames):
         transformed = spec_out.transform(sprite_from, f, spec_out.frames)
-        base = render_sprite(transformed, bg)
+        base = render_sprite(transformed, bg, transparent=transparent)
         frame_images.append(upscale(base, size))
 
     # Evolve in (new tier emerging from white)
     spec_in = NIO_ANIMATIONS[tier_to]["evolve_in"]
     for f in range(spec_in.frames):
         transformed = spec_in.transform(sprite_to, f, spec_in.frames)
-        base = render_sprite(transformed, bg)
+        base = render_sprite(transformed, bg, transparent=transparent)
         frame_images.append(upscale(base, size))
 
     total_frames = len(frame_images)
     sheet_w = size * total_frames
-    sheet = Image.new("RGB", (sheet_w, size), bg[:3])
+    if transparent:
+        sheet = Image.new("RGBA", (sheet_w, size), (0, 0, 0, 0))
+    else:
+        sheet = Image.new("RGB", (sheet_w, size), bg[:3])
     for i, img in enumerate(frame_images):
         sheet.paste(img, (i * size, 0))
     sheet.save(str(output))
 
 
-def _render_nio_assets(tiers: List[int], size: int = 256) -> None:
-    """Render Nio static PNGs, animation GIFs, and sprite sheets for the given tiers."""
+def _render_nio_assets(tiers: List[int], size: int = 256,
+                       transparent: bool = False) -> None:
+    """Render Nio static PNGs, animation GIFs, and sprite sheets for the given tiers.
+    When *transparent* is True, also outputs transparent variants with '-transparent' suffix."""
     AVATAR_DIR.mkdir(parents=True, exist_ok=True)
 
     anim_names = ["idle", "blink", "think", "chat", "backflip"]
+    modes = [False]
+    if transparent:
+        modes.append(True)
 
     for tier in tiers:
         sprite = get_nio_sprite(tier)
 
-        # Static PNG
-        base = render_sprite(sprite)
-        img = upscale(base, size)
-        static_path = AVATAR_DIR / f"nio-tier-{tier}-static.png"
-        img.save(str(static_path))
-        print(f"  ✓ nio tier {tier} static  → {static_path}  ({size}×{size})")
+        for t_mode in modes:
+            suffix = "-transparent" if t_mode else ""
 
-        # Animation GIFs + sprite sheets
-        anims = get_nio_animation(tier)
-        for anim_name in anim_names:
-            spec = anims[anim_name]
+            # Static PNG
+            base = render_sprite(sprite, transparent=t_mode)
+            img = upscale(base, size)
+            static_path = AVATAR_DIR / f"nio-tier-{tier}-static{suffix}.png"
+            img.save(str(static_path))
+            print(f"  ✓ nio tier {tier} static{suffix}  → {static_path}  ({size}×{size})")
 
-            # GIF
-            gif_path = AVATAR_DIR / f"nio-tier-{tier}-{anim_name}.gif"
-            render_animated_gif(sprite, spec, gif_path, size=size)
-            print(f"  ✓ nio tier {tier} {anim_name:<9} gif   → {gif_path}  ({spec.frames} frames)")
+            # Animation GIFs + sprite sheets
+            anims = get_nio_animation(tier)
+            for anim_name in anim_names:
+                spec = anims[anim_name]
 
-            # Sprite sheet
-            sheet_path = AVATAR_DIR / f"nio-tier-{tier}-{anim_name}-sheet-{size}.png"
-            render_nio_sprite_sheet(sprite, spec, sheet_path, size=size)
-            print(f"  ✓ nio tier {tier} {anim_name:<9} sheet → {sheet_path}  ({spec.frames} frames)")
+                # GIF
+                gif_path = AVATAR_DIR / f"nio-tier-{tier}-{anim_name}{suffix}.gif"
+                render_animated_gif(sprite, spec, gif_path, size=size, transparent=t_mode)
+                print(f"  ✓ nio tier {tier} {anim_name:<9} gif{suffix}   → {gif_path}  ({spec.frames} frames)")
+
+                # Sprite sheet
+                sheet_path = AVATAR_DIR / f"nio-tier-{tier}-{anim_name}-sheet-{size}{suffix}.png"
+                render_nio_sprite_sheet(sprite, spec, sheet_path, size=size, transparent=t_mode)
+                print(f"  ✓ nio tier {tier} {anim_name:<9} sheet{suffix} → {sheet_path}  ({spec.frames} frames)")
 
     # Evolve sheets (tier N → tier N+1)
     sorted_tiers = sorted(tiers)
@@ -3140,9 +3427,32 @@ def _render_nio_assets(tiers: List[int], size: int = 256) -> None:
         t_from = sorted_tiers[i]
         t_to = sorted_tiers[i + 1]
         if t_to == t_from + 1:  # only adjacent tiers
-            evolve_path = AVATAR_DIR / f"nio-evolve-{t_from}-to-{t_to}-sheet-{size}.png"
-            render_nio_evolve_sheet(t_from, t_to, evolve_path, size=size)
-            print(f"  ✓ evolve {t_from}→{t_to} sheet → {evolve_path}  (16 frames)")
+            for t_mode in modes:
+                suffix = "-transparent" if t_mode else ""
+                evolve_path = AVATAR_DIR / f"nio-evolve-{t_from}-to-{t_to}-sheet-{size}{suffix}.png"
+                render_nio_evolve_sheet(t_from, t_to, evolve_path, size=size, transparent=t_mode)
+                print(f"  ✓ evolve {t_from}→{t_to} sheet{suffix} → {evolve_path}  (16 frames)")
+
+
+def _render_agent_assets(size: int = 256) -> None:
+    """Render agent persona static PNGs and idle GIFs (architect, writer)."""
+    AVATAR_DIR.mkdir(parents=True, exist_ok=True)
+
+    for agent_name in ["architect", "writer"]:
+        sprite = get_agent_sprite(agent_name)
+
+        # Static PNG
+        base = render_sprite(sprite)
+        img = upscale(base, size)
+        static_path = AVATAR_DIR / f"{agent_name}-static.png"
+        img.save(str(static_path))
+        print(f"  ✓ agent {agent_name} static → {static_path} ({size}×{size})")
+
+        # Idle GIF
+        spec = get_agent_animation(agent_name)["idle"]
+        gif_path = AVATAR_DIR / f"{agent_name}-idle.gif"
+        render_animated_gif(sprite, spec, gif_path, size=size)
+        print(f"  ✓ agent {agent_name} idle   → {gif_path} ({spec.frames} frames)")
 
 
 def _render_tool_assets(tool_names: List[str], size: int = 256) -> None:
@@ -3182,9 +3492,19 @@ def main() -> None:
                         help="Render all partner tool avatars (Clay, Instantly, HeyReach).")
     parser.add_argument("--tool", type=str, choices=["clay", "instantly", "heyreach"],
                         help="Render a specific partner tool avatar.")
+    parser.add_argument("--transparent", action="store_true",
+                        help="Also generate transparent-background variants (RGBA PNGs, transparent GIFs).")
+    parser.add_argument("--agents", action="store_true",
+                        help="Render agent persona avatars (architect, writer).")
     args = parser.parse_args()
 
     AVATAR_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Agent persona rendering mode
+    if args.agents:
+        _render_agent_assets(args.size)
+        print(f"\n  Done — agent avatars rendered to {AVATAR_DIR}/")
+        return
 
     # Tool rendering mode
     if args.tools or args.tool:
@@ -3196,7 +3516,7 @@ def main() -> None:
     # Nio rendering mode
     if args.nio or args.nio_tier:
         nio_tiers = [args.nio_tier] if args.nio_tier else list(range(1, 6))
-        _render_nio_assets(nio_tiers, args.size)
+        _render_nio_assets(nio_tiers, args.size, transparent=args.transparent)
         print(f"\n  Done — {len(nio_tiers)} Nio tier(s) rendered to {AVATAR_DIR}/")
         return
 
