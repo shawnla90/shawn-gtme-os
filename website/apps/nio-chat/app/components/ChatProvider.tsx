@@ -81,6 +81,7 @@ interface ChatState {
   initialized: boolean
   sidebarOpen: boolean
   usage: UsageInfo | null
+  sessionTokens: number // Cumulative input tokens this session (context window usage)
 }
 
 type ChatAction =
@@ -123,7 +124,7 @@ function chatReducer(state: ChatState, action: ChatAction): ChatState {
 
     case 'NEW_CHAT': {
       const updated = { ...state.agentStates, [state.activeAgentId]: { sessionId: undefined, messages: [] } }
-      return { ...state, agentStates: updated, isStreaming: false, isWaiting: false, usage: null }
+      return { ...state, agentStates: updated, isStreaming: false, isWaiting: false, usage: null, sessionTokens: 0 }
     }
 
     case 'SEND_MESSAGE': {
@@ -185,7 +186,7 @@ function chatReducer(state: ChatState, action: ChatAction): ChatState {
       return { ...state, sidebarOpen: !state.sidebarOpen }
 
     case 'SET_USAGE':
-      return { ...state, usage: action.usage }
+      return { ...state, usage: action.usage, sessionTokens: state.sessionTokens + action.usage.inputTokens }
 
     case 'LOAD_HISTORY': {
       const cs = currentState()
@@ -242,6 +243,7 @@ export default function ChatProvider({ children }: { children: ReactNode }) {
     initialized: false,
     sidebarOpen: false,
     usage: null,
+    sessionTokens: 0,
   })
 
   const abortRef = useRef<AbortController | null>(null)
@@ -325,10 +327,32 @@ export default function ChatProvider({ children }: { children: ReactNode }) {
     if (state.isStreaming && abortRef.current) {
       abortRef.current.abort()
     }
+
+    // Auto-summarize: save conversation memory before wiping (fire-and-forget)
+    const agentState = state.agentStates[state.activeAgentId]
+    if (agentState?.messages && agentState.messages.length >= 4) {
+      const last10 = agentState.messages.slice(-10)
+      const summary = last10.map(m => `${m.role}: ${m.content.substring(0, 300)}`).join('\n')
+      const token = localStorage.getItem('shawnos-chat-token')
+      const headers: Record<string, string> = { 'Content-Type': 'application/json' }
+      if (token && token !== 'no-auth') headers['Authorization'] = `Bearer ${token}`
+
+      fetch('/api/memory', {
+        method: 'POST',
+        headers,
+        body: JSON.stringify({
+          agentId: state.activeAgentId,
+          content: `## Session Summary (${new Date().toISOString().split('T')[0]})\n\n${summary}`,
+          type: 'session_summary',
+          importance: 3,
+        }),
+      }).catch(() => { /* non-fatal */ })
+    }
+
     dispatch({ type: 'NEW_CHAT' })
     localStorage.removeItem(storageKey(state.activeAgentId, 'session-id'))
     localStorage.removeItem(storageKey(state.activeAgentId, 'messages'))
-  }, [state.isStreaming, state.activeAgentId])
+  }, [state.isStreaming, state.activeAgentId, state.agentStates])
 
   // Stream SSE response from the chat API, with line buffering and event dispatch
   const streamResponse = useCallback(async (

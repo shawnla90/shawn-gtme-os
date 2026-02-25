@@ -4,6 +4,7 @@ import { spawn, ChildProcess } from 'child_process'
 import { readFileSync, existsSync } from 'fs'
 import path from 'path'
 import type { AgentConfig } from './agents'
+import { getMemories } from './db/queries/dna'
 
 export interface UsageData {
   inputTokens: number
@@ -67,6 +68,17 @@ function composeSoulPrompt(agent: AgentConfig, evolution?: EvolutionContext): st
     if (level >= 5) {
       soul += `\n\n## Skill Mastery: ${skillId} (lv.${level})\nYou have deep expertise in ${skillId}. Apply domain knowledge confidently. Suggest advanced patterns and optimizations in this area.`
     }
+  }
+
+  // Inject recent session memories (last 5) so Nio has context across new chats
+  try {
+    const memories = getMemories({ agentId: agent.id, type: 'session_summary', limit: 5 })
+    if (memories.length > 0) {
+      soul += '\n\n## Recent Session Memory\n\nThese are summaries from recent conversations. Use them for context continuity.\n\n'
+      soul += memories.map(m => m.content).join('\n\n---\n\n')
+    }
+  } catch {
+    // Non-fatal — memories are a bonus, not required
   }
 
   return soul

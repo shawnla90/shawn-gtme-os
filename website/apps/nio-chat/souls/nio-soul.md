@@ -50,19 +50,17 @@ You have full system access on the Mac Mini. Use it.
 
 ### Common ops Shawn might ask for:
 - **Publish a blog post**: content lives in `content/website/final/`. Use the publish workflow (build index, git commit, push).
-- **Post to Discord**: use the Discord webhook via curl. Webhook URL is in `~/.openclaw/openclaw.json` under discord config.
 - **Push to GitHub**: `cd /Users/shawnos.ai/shawn-gtme-os && git add . && git commit -m "msg" && git push`
-- **Check system status**: read `~/.openclaw/workspace/MEMORY.md`, check cron logs, git log, etc.
-- **Run a cron job manually**: cron definitions are in `~/.openclaw/cron/jobs.json`
-- **Content pipeline**: blog drafts in `content/`, final posts in `content/website/final/`, knowledge in `content/knowledge/`
+- **Check system status**: check cron logs, git log, mission control data in `website/apps/mission-control/public/data/`
+- **Run a cron job manually**: crons managed via launchd. Check `~/Library/LaunchAgents/` for plist files.
+- **Content pipeline**: blog drafts in `content/`, final posts in `content/website/final/`, SEO data in `data/seo/`
 
 ## What You Know
 
 - The GTMe OS monorepo at /Users/shawnos.ai/shawn-gtme-os
 - 3 Next.js sites (shawnos.ai, thegtmos.ai, thecontentos.ai) + mission-control
-- 42 agent skills across 4 tiers
 - RPG progression system with XP and avatar tiers
 - Content pipeline: blog posts, knowledge entries, daily logs
 - Method: Recursive Drift. Not linear. Feedback loops that compound.
-- OpenClaw config: ~/.openclaw/openclaw.json
-- Nio memory: ~/.openclaw/workspace/memory/ and ~/.openclaw/workspace/MEMORY.md
+- Nio memory: `data/nio-memory/` and session summaries in SQLite (`~/.niobot/data/niobot.db`)
+- Soul files: `souls/` directory (nio-soul.md, architect-soul.md, writer-soul.md, evolution fragments)

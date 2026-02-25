@@ -4,6 +4,7 @@
 
 import Image from 'next/image'
 import { useEvolutionContext } from './EvolutionProvider'
+import { useChatContext } from './ChatProvider'
 import NioXPRing from './NioXPRing'
 import SkillBar from './SkillBar'
 import {
@@ -26,10 +27,25 @@ interface EvolutionPanelProps {
   onClose: () => void
 }
 
+const CONTEXT_WINDOW_TOKENS = 200_000
+
+function getContextColor(pct: number): string {
+  if (pct < 0.6) return '#4EC373'   // green
+  if (pct < 0.85) return '#FFB84D'  // yellow
+  return '#F85149'                   // red
+}
+
+function formatTokenCount(n: number): string {
+  if (n >= 1000) return `${(n / 1000).toFixed(1)}k`
+  return String(n)
+}
+
 export default function EvolutionPanel({ open, onClose }: EvolutionPanelProps) {
   const { state } = useEvolutionContext()
+  const { state: chatState } = useChatContext()
   const progress = getLevelProgress(state.xp)
   const streakMultiplier = getStreakMultiplier(state.streak)
+  const contextPct = Math.min(chatState.sessionTokens / CONTEXT_WINDOW_TOKENS, 1)
 
   return (
     <>
@@ -113,6 +129,30 @@ export default function EvolutionPanel({ open, onClose }: EvolutionPanelProps) {
             {streakMultiplier > 1 && (
               <p className="text-[10px] text-[var(--accent)] mt-1">
                 {streakMultiplier}x XP multiplier active
+              </p>
+            )}
+          </div>
+
+          {/* Context Window */}
+          <div className="bg-[var(--canvas)] rounded-lg p-3 mb-4">
+            <div className="flex items-center justify-between mb-2">
+              <span className="text-xs text-[var(--text-muted)]">context window</span>
+              <span className="text-xs text-[var(--text-secondary)]">
+                {formatTokenCount(chatState.sessionTokens)} / {formatTokenCount(CONTEXT_WINDOW_TOKENS)}
+              </span>
+            </div>
+            <div className="h-1.5 bg-[var(--border)] rounded-full overflow-hidden">
+              <div
+                className="h-full rounded-full transition-all duration-500"
+                style={{
+                  width: `${Math.max(Math.round(contextPct * 100), chatState.sessionTokens > 0 ? 2 : 0)}%`,
+                  backgroundColor: getContextColor(contextPct),
+                }}
+              />
+            </div>
+            {contextPct >= 0.85 && (
+              <p className="text-[10px] mt-1" style={{ color: '#F85149' }}>
+                context filling up. start a new chat soon.
               </p>
             )}
           </div>
