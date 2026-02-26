@@ -1,6 +1,6 @@
 'use client'
 
-import { MotionReveal } from './motion/MotionReveal'
+import { MotionReveal } from '@shawnos/shared/components'
 
 interface PageHeroProps {
   title: string

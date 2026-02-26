@@ -4,7 +4,7 @@ import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
-import { CursorGlow } from './components/CursorGlow'
+import { CursorGlow } from '@shawnos/shared/components'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'

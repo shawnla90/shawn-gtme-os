@@ -1,20 +1,21 @@
 import Link from 'next/link'
-import { PostCard, LogCard } from '@shawnos/shared/components'
-import type { RPGProfile } from '@shawnos/shared/lib/rpg'
-import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
-import { VideoShowcase } from './VideoShowcase'
-import { StatsStrip } from './StatsStrip'
-import { BuiltWithStrip } from './BuiltWithStrip'
 import {
+  PostCard,
+  LogCard,
+  SectionHeadline,
+  FAQAccordion,
+  ProcessSteps,
   MotionReveal,
   StaggerContainer,
   StaggerItem,
   MagneticHover,
   ScrollRevealSection,
-} from './components/motion'
-import { SectionHeadline } from './components/SectionHeadline'
-import { FAQAccordion } from './components/FAQAccordion'
-import { ProcessSteps } from './components/ProcessSteps'
+} from '@shawnos/shared/components'
+import type { RPGProfile } from '@shawnos/shared/lib/rpg'
+import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
+import { VideoShowcase } from './VideoShowcase'
+import { StatsStrip } from './StatsStrip'
+import { BuiltWithStrip } from './BuiltWithStrip'
 import { CaseStudyGrid } from './components/CaseStudyCard'
 
 /* ── data ────────────────────────────────────────── */

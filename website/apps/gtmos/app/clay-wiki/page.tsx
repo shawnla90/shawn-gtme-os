@@ -9,13 +9,15 @@ import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 
 const SITE_URL = 'https://thegtmos.ai'
+const CLAY_BLUE = '#4B5CFA'
+const CLAY_AFFILIATE = 'https://clay.com/?via=f57c60'
 
 /* ── metadata ─────────────────────────────────────── */
 
 export const metadata: Metadata = {
   title: 'Clay Wiki | The Practitioner\'s Guide to Clay',
   description:
-    'Everything you need to know about Clay — enrichment patterns, scoring systems, Claygent prompts, formulas, certification tips, and real-world plays from a certified Clay practitioner.',
+    'Everything you need to know about Clay - enrichment patterns, scoring systems, Claygent prompts, formulas, certification tips, and real-world plays from a certified Clay practitioner.',
   keywords: [
     'clay wiki',
     'learn clay',
@@ -76,6 +78,31 @@ const faqSchema = {
   ],
 }
 
+/* ── workflow data ─────────────────────────────────── */
+
+const WORKFLOWS = [
+  {
+    title: 'Landing Page Generation',
+    description:
+      'Generate personalized landing pages from Clay enrichment data. Account research flows directly into page copy.',
+  },
+  {
+    title: 'HubSpot CRM Sync',
+    description:
+      'Bi-directional Clay-to-HubSpot sync. Enriched contacts push to CRM with scoring, routing, and lifecycle stage automation.',
+  },
+  {
+    title: 'Exa Research Enrichment',
+    description:
+      'Deep prospect intelligence using Exa API. Company research, news monitoring, and competitive intel - all inside Clay.',
+  },
+  {
+    title: 'Account Scoring Formulas',
+    description:
+      'Multi-signal scoring using Clay formulas. Combine firmographic, technographic, and intent data for ICP fit scores.',
+  },
+]
+
 /* ── difficulty badge colors ──────────────────────── */
 
 function difficultyColor(d: 'beginner' | 'intermediate' | 'advanced'): string {
@@ -94,8 +121,15 @@ function difficultyColor(d: 'beginner' | 'intermediate' | 'advanced'): string {
 const pageWrap: React.CSSProperties = {
   maxWidth: 1080,
   margin: '0 auto',
-  padding: '40px 20px 80px',
+  padding: '0 20px 80px',
   fontFamily: 'var(--font-mono)',
+}
+
+const clayStripe: React.CSSProperties = {
+  height: '3px',
+  background: `linear-gradient(90deg, ${CLAY_BLUE}, ${CLAY_BLUE}88, transparent)`,
+  marginBottom: '40px',
+  borderRadius: '0 0 2px 2px',
 }
 
 const heroSection: React.CSSProperties = {
@@ -147,6 +181,34 @@ const certBadge: React.CSSProperties = {
   letterSpacing: '0.03em',
 }
 
+const certifiedCallout: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '8px',
+  fontSize: '11px',
+  fontWeight: 700,
+  color: CLAY_BLUE,
+  background: `${CLAY_BLUE}12`,
+  border: `1px solid ${CLAY_BLUE}33`,
+  borderRadius: '6px',
+  padding: '8px 16px',
+  letterSpacing: '0.06em',
+  textTransform: 'uppercase' as const,
+}
+
+const tryClayButton: React.CSSProperties = {
+  display: 'inline-block',
+  fontSize: '13px',
+  fontWeight: 700,
+  color: '#ffffff',
+  background: CLAY_BLUE,
+  borderRadius: '6px',
+  padding: '10px 20px',
+  textDecoration: 'none',
+  letterSpacing: '0.02em',
+  transition: 'opacity 0.15s ease, transform 0.1s ease',
+}
+
 const spriteWrap: React.CSSProperties = {
   flexShrink: 0,
 }
@@ -156,6 +218,107 @@ const divider: React.CSSProperties = {
   borderTop: '1px solid var(--border)',
   margin: '40px 0',
 }
+
+/* ── workflow section styles ──────────────────────── */
+
+const workflowSection: React.CSSProperties = {
+  marginBottom: '48px',
+}
+
+const workflowHeader: React.CSSProperties = {
+  fontSize: '13px',
+  fontWeight: 400,
+  color: 'var(--text-muted)',
+  marginBottom: '8px',
+}
+
+const workflowTitle: React.CSSProperties = {
+  fontSize: '20px',
+  fontWeight: 700,
+  color: 'var(--text-primary)',
+  marginBottom: '20px',
+}
+
+const workflowGrid: React.CSSProperties = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+  gap: '16px',
+}
+
+const workflowCard: React.CSSProperties = {
+  padding: '20px',
+  background: 'var(--canvas-subtle)',
+  border: '1px solid var(--border)',
+  borderLeft: `3px solid ${CLAY_BLUE}`,
+  borderRadius: '8px',
+}
+
+const workflowCardTitle: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+  fontSize: '14px',
+  fontWeight: 700,
+  color: 'var(--text-primary)',
+  marginBottom: '8px',
+}
+
+const workflowCardDesc: React.CSSProperties = {
+  fontSize: '12px',
+  lineHeight: 1.6,
+  color: 'var(--text-secondary)',
+}
+
+const greenDot: React.CSSProperties = {
+  display: 'inline-block',
+  width: '8px',
+  height: '8px',
+  borderRadius: '50%',
+  background: '#4ade80',
+  flexShrink: 0,
+}
+
+/* ── affiliate CTA banner styles ─────────────────── */
+
+const ctaBanner: React.CSSProperties = {
+  padding: '40px 32px',
+  background: `linear-gradient(135deg, ${CLAY_BLUE}0a, ${CLAY_BLUE}18, ${CLAY_BLUE}0a)`,
+  border: `1px solid ${CLAY_BLUE}22`,
+  borderRadius: '12px',
+  textAlign: 'center' as const,
+  marginBottom: '48px',
+}
+
+const ctaHeading: React.CSSProperties = {
+  fontSize: '20px',
+  fontWeight: 700,
+  color: 'var(--text-primary)',
+  marginBottom: '8px',
+}
+
+const ctaSubtext: React.CSSProperties = {
+  fontSize: '13px',
+  lineHeight: 1.6,
+  color: 'var(--text-secondary)',
+  marginBottom: '20px',
+  maxWidth: 520,
+  margin: '0 auto 20px',
+}
+
+const ctaButton: React.CSSProperties = {
+  display: 'inline-block',
+  fontSize: '14px',
+  fontWeight: 700,
+  color: '#ffffff',
+  background: CLAY_BLUE,
+  borderRadius: '6px',
+  padding: '12px 24px',
+  textDecoration: 'none',
+  letterSpacing: '0.02em',
+  transition: 'opacity 0.15s ease, transform 0.1s ease',
+}
+
+/* ── category section styles ─────────────────────── */
 
 const categorySection: React.CSSProperties = {
   marginBottom: '48px',
@@ -274,6 +437,14 @@ const navLink: React.CSSProperties = {
   textDecoration: 'none',
 }
 
+const navLinkClay: React.CSSProperties = {
+  display: 'inline-block',
+  fontSize: '13px',
+  fontWeight: 600,
+  color: CLAY_BLUE,
+  textDecoration: 'none',
+}
+
 /* ── page component ───────────────────────────────── */
 
 export default function ClayWikiPage() {
@@ -295,6 +466,9 @@ export default function ClayWikiPage() {
       />
 
       <div style={pageWrap}>
+        {/* Clay-blue gradient stripe */}
+        <div style={clayStripe} />
+
         {/* Terminal header */}
         <h1 style={terminalHeader}>
           <span style={{ color: 'var(--accent)' }}>$</span> cd ~/clay-wiki
@@ -305,7 +479,7 @@ export default function ClayWikiPage() {
           <div style={heroText}>
             <h2 style={heroTitle}>Clay Wiki</h2>
             <p style={heroDesc}>
-              The practitioner&apos;s guide to Clay. Not the docs — the patterns, plays, and
+              The practitioner&apos;s guide to Clay. Not the docs - the patterns, plays, and
               hard-won opinions from building real GTM pipelines. Enrichment architecture,
               scoring systems, Claygent prompt engineering, formulas, and every workflow
               pattern I use in production.
@@ -327,21 +501,35 @@ export default function ClayWikiPage() {
               </div>
             </div>
 
-            {/* Certification badge + Clay Creator badge */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={certBadge}>
-                <span style={{ fontSize: '16px' }}>&#9670;</span>
-                Clay Certified Practitioner &middot; 98/100
-              </div>
+            {/* Certification badge + Clay Creator badge + Certified callout */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '20px' }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/brands/clay-creator-full.png"
                 alt="Clay Creator badge"
-                width={80}
-                height={80}
+                width={100}
+                height={100}
                 style={{ borderRadius: 8, objectFit: 'contain' }}
               />
+              <div style={certBadge}>
+                <span style={{ fontSize: '16px' }}>&#9670;</span>
+                Clay Certified Practitioner &middot; 98/100
+              </div>
+              <div style={certifiedCallout}>
+                <span style={{ fontSize: '14px' }}>&#10003;</span>
+                Certified Clay Creator
+              </div>
             </div>
+
+            {/* Try Clay CTA */}
+            <a
+              href={CLAY_AFFILIATE}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={tryClayButton}
+            >
+              Try Clay &rarr;
+            </a>
           </div>
 
           {/* Clay sprite */}
@@ -359,7 +547,46 @@ export default function ClayWikiPage() {
 
         <hr style={divider} />
 
-        {/* Category sections */}
+        {/* ── Real Workflows Section ──────────────────── */}
+        <div style={workflowSection}>
+          <div style={workflowHeader}>
+            <span style={{ color: 'var(--accent)' }}>$</span> ls ~/clay-wiki/workflows/
+          </div>
+          <h3 style={workflowTitle}>Real Workflows</h3>
+          <div style={workflowGrid}>
+            {WORKFLOWS.map((wf) => (
+              <div key={wf.title} style={workflowCard}>
+                <div style={workflowCardTitle}>
+                  <span style={greenDot} />
+                  {wf.title}
+                </div>
+                <div style={workflowCardDesc}>{wf.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <hr style={divider} />
+
+        {/* ── Affiliate CTA Banner ────────────────────── */}
+        <div style={ctaBanner}>
+          <div style={ctaHeading}>Ready to build your own GTM workflows?</div>
+          <div style={ctaSubtext}>
+            Clay is the data enrichment and automation platform powering modern go-to-market teams.
+          </div>
+          <a
+            href={CLAY_AFFILIATE}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={ctaButton}
+          >
+            Start with Clay
+          </a>
+        </div>
+
+        <hr style={divider} />
+
+        {/* ── Category Sections ───────────────────────── */}
         {CLAY_WIKI_CATEGORIES.map((cat) => {
           const entries = CLAY_WIKI_ENTRIES.filter((e) => e.category === cat.id)
           return (
@@ -388,14 +615,24 @@ export default function ClayWikiPage() {
           )
         })}
 
-        {/* Navigation */}
+        {/* ── Bottom Navigation ───────────────────────── */}
         <div style={navRow}>
           <Link href="/knowledge" style={navLink}>
             &larr; knowledge guide
           </Link>
-          <Link href="/content-wiki" style={navLink}>
-            content wiki &rarr;
-          </Link>
+          <div style={{ display: 'flex', gap: '20px' }}>
+            <a
+              href={CLAY_AFFILIATE}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={navLinkClay}
+            >
+              try clay &rarr;
+            </a>
+            <Link href="/content-wiki" style={navLink}>
+              content wiki &rarr;
+            </Link>
+          </div>
         </div>
       </div>
     </>

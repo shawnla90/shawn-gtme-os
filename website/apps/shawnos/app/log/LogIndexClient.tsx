@@ -4,8 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import type { DailyLogSummary, LogAggregates } from '@shawnos/shared/lib/logs'
 import type { RPGProfile } from '@shawnos/shared/lib/rpg'
-import { LogCard, LogHero } from '@shawnos/shared/components'
-import { MotionReveal, StaggerContainer, StaggerItem, ScrollRevealSection } from '../components/motion'
+import { LogCard, LogHero, MotionReveal, StaggerContainer, StaggerItem, ScrollRevealSection } from '@shawnos/shared/components'
 import { PageHero } from '../components/PageHero'
 
 const GRADE_OPTIONS = ['All', 'S+', 'S', 'A+', 'A', 'B', 'C', 'D']

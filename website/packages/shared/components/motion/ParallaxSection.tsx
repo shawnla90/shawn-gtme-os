@@ -23,7 +23,6 @@ export function ParallaxSection({
   const springY = useSpring(y, { stiffness: 100, damping: 30 })
 
   useEffect(() => {
-    // Only enable on devices with a hover pointer (no touch-only)
     const mq = window.matchMedia('(hover: hover)')
     setCanHover(mq.matches)
     const handler = (e: MediaQueryListEvent) => setCanHover(e.matches)

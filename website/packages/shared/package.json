@@ -33,9 +33,11 @@
     "./lib/crews": "./lib/crews.ts",
     "./lib/logs": "./lib/logs.ts",
     "./lib/nio-blog": "./lib/nio-blog.ts",
+    "./components/motion": "./components/motion/index.ts",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {
+    "framer-motion": "^12.34.3",
     "feed": "^5.2.0",
     "gray-matter": "latest",
     "rehype-highlight": "latest",

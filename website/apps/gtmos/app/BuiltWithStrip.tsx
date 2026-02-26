@@ -20,24 +20,29 @@ const logos: BuiltWithLogo[] = [
     imageSrc: '/brands/clay-creator-badge.png',
   },
   {
+    name: 'Grow with Clay',
+    brandColor: '#4B5CFA',
+    imageSrc: '/brands/grow_with_clay_logo.jpeg',
+  },
+  {
     name: 'Instantly',
     brandColor: '#5B7FFF',
-    letter: 'I',
+    imageSrc: '/brands/instantlyapp_logo.jpeg',
   },
   {
     name: 'HeyReach',
     brandColor: '#7C3AED',
-    letter: 'H',
+    imageSrc: '/brands/heyreachio_logo.jpeg',
   },
   {
     name: 'Firecrawl',
     brandColor: '#FF6B35',
-    letter: 'F',
+    imageSrc: '/brands/firecrawl_logo.jpeg',
   },
   {
     name: 'Exa',
     brandColor: '#7C3AED',
-    letter: 'E',
+    imageSrc: '/brands/exa_ai_logo.jpeg',
   },
   {
     name: 'HubSpot',
@@ -52,12 +57,12 @@ const logos: BuiltWithLogo[] = [
   {
     name: 'InboxKit',
     brandColor: '#FF4F64',
-    letter: 'IK',
+    imageSrc: '/brands/inbox_automate_mail_logo.jpeg',
   },
   {
     name: 'Supabase',
     brandColor: '#3ECF8E',
-    path: 'M21.362 9.354H12V.396a.396.396 0 0 0-.716-.233L2.203 12.424l-.401.562a1.04 1.04 0 0 0 .836 1.66H12v8.958a.396.396 0 0 0 .716.233l9.081-12.261.401-.562a1.04 1.04 0 0 0-.836-1.66z',
+    imageSrc: '/brands/supabase_logo.jpeg',
   },
   {
     name: 'Next.js',

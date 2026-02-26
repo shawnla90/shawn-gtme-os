@@ -5,8 +5,8 @@ import {
   StaggerItem,
   MagneticHover,
   ScrollRevealSection,
-} from '../components/motion'
-import { ProcessSteps } from '../components/ProcessSteps'
+  ProcessSteps,
+} from '@shawnos/shared/components'
 
 /* ── data ─────────────────────────────────────────── */
 

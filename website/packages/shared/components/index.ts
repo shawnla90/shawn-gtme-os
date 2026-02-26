@@ -20,3 +20,16 @@ export { UpdatesFeed } from './UpdatesFeed'
 export type { FeedEntry, CategoryFilter } from './UpdatesFeed'
 export { UseCaseBlock } from './UseCaseBlock'
 export type { UseCase } from './UseCaseBlock'
+export { CursorGlow } from './CursorGlow'
+export { SectionHeadline } from './SectionHeadline'
+export { FAQAccordion } from './FAQAccordion'
+export { ProcessSteps } from './ProcessSteps'
+export {
+  MotionReveal,
+  StaggerContainer,
+  StaggerItem,
+  MagneticHover,
+  ScrollRevealSection,
+  ParallaxSection,
+  PageTransition,
+} from './motion'

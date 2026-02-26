@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import type { RPGProfile, Milestone, ScoringLogEntry } from '@shawnos/shared/lib/rpg'
-import { StaggerContainer, StaggerItem } from '../../components/motion'
+import { StaggerContainer, StaggerItem } from '@shawnos/shared/components'
 
 /* ------------------------------------------------------------------ */
 /*  Color constants                                                     */

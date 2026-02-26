@@ -7,7 +7,7 @@ import {
   StaggerContainer,
   StaggerItem,
   MagneticHover,
-} from '../../components/motion'
+} from '@shawnos/shared/components'
 
 /* ── BuildOps theme ─────────────────────────────── */
 

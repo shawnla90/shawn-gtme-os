@@ -1,8 +1,7 @@
 'use client'
 
-import { MotionReveal, StaggerContainer, StaggerItem, ScrollRevealSection as SRS } from '../components/motion'
+import { MotionReveal, StaggerContainer, StaggerItem, ScrollRevealSection as SRS, SectionHeadline as SH } from '@shawnos/shared/components'
 import { PageHero as PH } from '../components/PageHero'
-import { SectionHeadline as SH } from '../components/SectionHeadline'
 
 export function MethodReveal({ children, variant, delay }: { children: React.ReactNode; variant?: 'fadeUp' | 'fadeIn' | 'scale'; delay?: number }) {
   return <MotionReveal variant={variant} delay={delay}>{children}</MotionReveal>

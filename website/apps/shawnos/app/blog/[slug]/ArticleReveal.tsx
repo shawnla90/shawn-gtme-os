@@ -1,6 +1,6 @@
 'use client'
 
-import { MotionReveal } from '../../components/motion'
+import { MotionReveal } from '@shawnos/shared/components'
 
 export function ArticleReveal({ children }: { children: React.ReactNode }) {
   return (

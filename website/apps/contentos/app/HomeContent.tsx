@@ -1,19 +1,21 @@
 'use client'
 
 import Link from 'next/link'
-import { LogCard, ScrambleCycler, AvatarBadge } from '@shawnos/shared/components'
-import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
-import { VideoShowcase } from './VideoShowcase'
-import { SectionHeadline } from './components/SectionHeadline'
-import { FAQAccordion } from './components/FAQAccordion'
-import { BuiltWithStrip } from './components/BuiltWithStrip'
 import {
+  LogCard,
+  ScrambleCycler,
+  AvatarBadge,
+  SectionHeadline,
+  FAQAccordion,
   MotionReveal,
   StaggerContainer,
   StaggerItem,
   MagneticHover,
   ScrollRevealSection,
-} from './components/motion'
+} from '@shawnos/shared/components'
+import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
+import { VideoShowcase } from './VideoShowcase'
+import { BuiltWithStrip } from './components/BuiltWithStrip'
 
 /* ── data ────────────────────────────────────────── */
 

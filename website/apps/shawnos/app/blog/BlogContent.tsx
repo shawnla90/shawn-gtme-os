@@ -1,7 +1,6 @@
 'use client'
 
-import { PostCard } from '@shawnos/shared/components'
-import { StaggerContainer, StaggerItem, ScrollRevealSection } from '../components/motion'
+import { PostCard, StaggerContainer, StaggerItem, ScrollRevealSection } from '@shawnos/shared/components'
 import { PageHero } from '../components/PageHero'
 
 interface Post {

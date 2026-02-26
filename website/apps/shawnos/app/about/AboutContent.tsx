@@ -7,9 +7,9 @@ import {
   StaggerItem,
   MagneticHover,
   ScrollRevealSection,
-} from '../components/motion'
+  SectionHeadline,
+} from '@shawnos/shared/components'
 import { PageHero } from '../components/PageHero'
-import { SectionHeadline } from '../components/SectionHeadline'
 import { TechStackGrid } from './TechStackGrid'
 
 const network = [

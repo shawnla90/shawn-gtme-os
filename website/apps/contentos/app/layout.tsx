@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer, CursorGlow } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -81,6 +81,7 @@ export default function RootLayout({
             { href: '/updates', label: 'Updates' },
           ]}
         />
+        <CursorGlow />
         <main>{children}</main>
         <NetworkBanner currentSite="contentos" />
         <Footer siteName="theContentOS.ai" />

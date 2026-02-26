@@ -23,7 +23,6 @@ export function CursorGlow() {
   const resizeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const isMobileRef = useRef(false)
 
-  // Hydration-safe mount
   useEffect(() => {
     setMounted(true)
   }, [])
@@ -33,20 +32,17 @@ export function CursorGlow() {
     const canvas = dotsRef.current
     if (!glow || !canvas) return
 
-    // Lerp toward mouse
     posRef.current.x += (mouseRef.current.x - posRef.current.x) * 0.15
     posRef.current.y += (mouseRef.current.y - posRef.current.y) * 0.15
 
     glow.style.transform = `translate(${posRef.current.x - 100}px, ${posRef.current.y - 100}px)`
 
-    // Draw trailing dots
     const ctx = canvas.getContext('2d')
     if (ctx) {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
       const now = Date.now()
       const dots = dotsArrayRef.current
 
-      // Remove expired dots
       while (dots.length > 0 && now - dots[0].birth > 400) {
         dots.shift()
       }
@@ -57,7 +53,7 @@ export function CursorGlow() {
         if (alpha <= 0) continue
         ctx.beginPath()
         ctx.arc(dot.x, dot.y, 3, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(78, 195, 115, ${alpha})`
+        ctx.fillStyle = `rgba(155, 114, 207, ${alpha})`
         ctx.fill()
       }
     }
@@ -68,7 +64,6 @@ export function CursorGlow() {
   useEffect(() => {
     if (!mounted) return
 
-    // Detect touch/mobile devices — skip entirely
     if (window.matchMedia('(hover: none)').matches) {
       isMobileRef.current = true
       return
@@ -80,7 +75,6 @@ export function CursorGlow() {
       canvas.height = window.innerHeight
     }
 
-    // Debounced resize handler (200ms)
     const onResize = () => {
       if (resizeTimerRef.current) clearTimeout(resizeTimerRef.current)
       resizeTimerRef.current = setTimeout(() => {
@@ -110,12 +104,9 @@ export function CursorGlow() {
       mouseRef.current.x = e.clientX
       mouseRef.current.y = e.clientY
 
-      // Restart RAF loop if idle
       startLoop()
-      // Reset idle timer
       scheduleIdle()
 
-      // Spawn trail dot (cap at ~20, throttle by distance)
       const now = Date.now()
       if (now - lastDotRef.current > 20 && dotsArrayRef.current.length < 20) {
         dotsArrayRef.current.push({ x: e.clientX, y: e.clientY, opacity: 1, birth: now })
@@ -127,7 +118,6 @@ export function CursorGlow() {
     window.addEventListener('resize', onResize)
     rafRef.current = requestAnimationFrame(animate)
 
-    // Start idle timer immediately (stop loop if no mouse activity within 500ms)
     scheduleIdle()
 
     return () => {
@@ -139,15 +129,11 @@ export function CursorGlow() {
     }
   }, [mounted, animate])
 
-  // Don't render anything until mounted (avoids SSR hydration mismatch)
   if (!mounted) return null
-
-  // Don't render on mobile/touch devices
   if (isMobileRef.current) return null
 
   return (
     <>
-      {/* Radial glow */}
       <div
         ref={glowRef}
         style={{
@@ -164,7 +150,6 @@ export function CursorGlow() {
           willChange: 'transform',
         }}
       />
-      {/* Trail dots canvas */}
       <canvas
         ref={dotsRef}
         style={{
