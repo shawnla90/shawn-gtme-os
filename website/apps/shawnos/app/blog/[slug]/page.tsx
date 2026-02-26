@@ -3,7 +3,7 @@ import path from 'path'
 import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { TableOfContents } from './TableOfContents'
-import { ArticleReveal } from './ArticleReveal'
+import { ArticleReveal, HeaderReveal } from './ArticleReveal'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -120,64 +120,66 @@ export default async function BlogPost({
           */}
           <TableOfContents html={htmlContent} mobileOnly />
 
-          <header style={{ marginBottom: 32 }}>
-            <h1
-              style={{
-                fontSize: '28px',
-                fontWeight: 700,
-                color: 'var(--accent)',
-                lineHeight: 1.3,
-                margin: 0,
-              }}
-            >
-              {post.title}
-            </h1>
-
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px',
-                flexWrap: 'wrap',
-                marginTop: 8,
-              }}
-            >
-              <time
-                dateTime={post.date}
+          <HeaderReveal>
+            <header style={{ marginBottom: 32 }}>
+              <h1
                 style={{
-                  fontSize: '13px',
-                  color: 'var(--text-muted)',
+                  fontSize: 'clamp(24px, 4vw, 32px)',
+                  fontWeight: 700,
+                  color: 'var(--accent)',
+                  lineHeight: 1.3,
+                  margin: 0,
                 }}
               >
-                {formatDate(post.date)}
-              </time>
+                {post.title}
+              </h1>
 
-              <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  flexWrap: 'wrap',
+                  marginTop: 8,
+                }}
+              >
+                <time
+                  dateTime={post.date}
+                  style={{
+                    fontSize: '13px',
+                    color: 'var(--text-muted)',
+                  }}
+                >
+                  {formatDate(post.date)}
+                </time>
 
-              <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-                {post.readingTime} min read
-              </span>
+                <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
 
-              {post.category && (
-                <>
-                  <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
-                  <span
-                    style={{
-                      fontSize: '11px',
-                      color: '#4EC373',
-                      border: '1px solid #4EC373',
-                      borderRadius: '3px',
-                      padding: '1px 6px',
-                      letterSpacing: '0.4px',
-                      opacity: 0.75,
-                    }}
-                  >
-                    {post.category}
-                  </span>
-                </>
-              )}
-            </div>
-          </header>
+                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+                  {post.readingTime} min read
+                </span>
+
+                {post.category && (
+                  <>
+                    <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
+                    <span
+                      style={{
+                        fontSize: '11px',
+                        color: '#4EC373',
+                        border: '1px solid #4EC373',
+                        borderRadius: '3px',
+                        padding: '1px 6px',
+                        letterSpacing: '0.4px',
+                        opacity: 0.75,
+                      }}
+                    >
+                      {post.category}
+                    </span>
+                  </>
+                )}
+              </div>
+            </header>
+          </HeaderReveal>
 
           <ArticleReveal>
             <div

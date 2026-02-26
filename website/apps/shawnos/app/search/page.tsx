@@ -9,6 +9,7 @@ import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import SearchContent from './SearchContent'
 import type { SearchItem } from './SearchContent'
+import { PageHero, ScrollRevealSection } from './SearchReveal'
 
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
 const DATA_ROOT = resolveDataRoot()
@@ -111,28 +112,14 @@ export default function SearchPage() {
       <BreadcrumbSchema
         items={[{ name: 'Search', url: 'https://shawnos.ai/search' }]}
       />
-      <div
-        style={{
-          maxWidth: '680px',
-          margin: '0 auto',
-          fontFamily: 'var(--font-mono)',
-        }}
-      >
-        {/* ── Terminal header ── */}
-        <h1
-          style={{
-            fontSize: '16px',
-            fontWeight: 400,
-            color: 'var(--text-muted)',
-            marginBottom: '32px',
-          }}
-        >
-          <span style={{ color: 'var(--accent)' }}>$</span> grep -r
-          &quot;&quot; ~/
-        </h1>
-
+      <PageHero
+        compact
+        title="Search"
+        subtitle="Find anything on shawnos.ai."
+      />
+      <ScrollRevealSection background="var(--canvas)">
         <SearchContent items={items} />
-      </div>
+      </ScrollRevealSection>
     </>
   )
 }

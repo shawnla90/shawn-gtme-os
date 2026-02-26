@@ -9,3 +9,11 @@ export function ArticleReveal({ children }: { children: React.ReactNode }) {
     </MotionReveal>
   )
 }
+
+export function HeaderReveal({ children }: { children: React.ReactNode }) {
+  return (
+    <MotionReveal variant="fadeUp" duration={0.5}>
+      {children}
+    </MotionReveal>
+  )
+}

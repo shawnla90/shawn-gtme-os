@@ -22,7 +22,7 @@ import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema, UpdatesFeed } from '@shawnos/shared/components'
 import type { FeedEntry, CategoryFilter } from '@shawnos/shared/components'
-import { RevealSection, StatsStagger, StatItem } from './UpdatesReveal'
+import { RevealSection, StatsStagger, StatItem, PageHero, ScrollRevealSection } from './UpdatesReveal'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -297,35 +297,7 @@ function featureTypeStyle(type: FeatureMilestone['type']): { color: string; labe
 
 /* ── styles ────────────────────────────────────────── */
 
-const pageWrap: React.CSSProperties = {
-  maxWidth: 900,
-  margin: '0 auto',
-  padding: '40px 20px 80px',
-  fontFamily: 'var(--font-mono)',
-}
-
-const terminalHeader: React.CSSProperties = {
-  fontSize: '16px',
-  fontWeight: 400,
-  color: 'var(--text-muted)',
-  marginBottom: '24px',
-}
-
-const heroTitle: React.CSSProperties = {
-  fontSize: '28px',
-  fontWeight: 700,
-  color: 'var(--text-primary)',
-  lineHeight: 1.2,
-  marginBottom: '12px',
-}
-
-const heroDesc: React.CSSProperties = {
-  fontSize: '14px',
-  lineHeight: 1.75,
-  color: 'var(--text-secondary)',
-  marginBottom: '24px',
-  maxWidth: 640,
-}
+/* (pageWrap, terminalHeader, heroTitle, heroDesc removed — replaced by PageHero + ScrollRevealSection) */
 
 const statsRow: React.CSSProperties = {
   display: 'flex',
@@ -369,12 +341,6 @@ const rssBadge: React.CSSProperties = {
   letterSpacing: '0.03em',
 }
 
-const divider: React.CSSProperties = {
-  border: 'none',
-  borderTop: '1px solid var(--border)',
-  margin: '32px 0',
-}
-
 const sectionTitle: React.CSSProperties = {
   fontSize: '14px',
   fontWeight: 600,
@@ -382,13 +348,6 @@ const sectionTitle: React.CSSProperties = {
   marginBottom: 16,
   textTransform: 'uppercase',
   letterSpacing: '0.06em',
-}
-
-const sectionPrompt: React.CSSProperties = {
-  fontSize: '13px',
-  fontWeight: 400,
-  color: 'var(--text-muted)',
-  marginBottom: '8px',
 }
 
 const timelineScroll: React.CSSProperties = {
@@ -580,22 +539,14 @@ export default function UpdatesPage() {
         ]}
       />
 
-      <div style={pageWrap}>
-        {/* Terminal header */}
-        <RevealSection>
-          <h1 style={terminalHeader}>
-            <span style={{ color: 'var(--accent)' }}>$</span> tail -f ~/updates.log
-          </h1>
+      <PageHero
+        compact
+        title="Updates"
+        subtitle="Everything shipped, in one feed."
+      />
 
-          {/* Hero */}
-          <h2 style={heroTitle}>Latest Updates</h2>
-          <p style={heroDesc}>
-            Every new article, feature, and system update on shawnos.ai.
-            Filter by category or search to find wiki entries, knowledge terms, and how-to guides.
-          </p>
-        </RevealSection>
-
-        {/* Stats */}
+      {/* Stats + RSS */}
+      <ScrollRevealSection background="var(--canvas)">
         <StatsStagger>
           <StatItem>
             <div style={statBox}>
@@ -617,7 +568,6 @@ export default function UpdatesPage() {
           </StatItem>
         </StatsStagger>
 
-        {/* RSS badge + network links */}
         <a href="/feed/updates.xml" style={rssBadge}>
           <span>&#9654;</span> RSS Feed — /feed/updates.xml
         </a>
@@ -630,14 +580,11 @@ export default function UpdatesPage() {
             theContentOS.ai/updates &rarr;
           </a>
         </div>
+      </ScrollRevealSection>
 
-        <hr style={divider} />
-
-        {/* ── Feature Timeline (horizontal scroll) ── */}
-        <RevealSection>
-          <div style={sectionPrompt}>$ ls ~/changelog/</div>
-          <div style={sectionTitle}>Features &amp; Launches</div>
-        </RevealSection>
+      {/* ── Feature Timeline (horizontal scroll) ── */}
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <div style={sectionTitle}>Features &amp; Launches</div>
 
         <div style={timelineScroll}>
           <div style={timelineTrack}>
@@ -664,16 +611,16 @@ export default function UpdatesPage() {
           </div>
         </div>
         <div style={scrollHint}>scroll &rarr;</div>
+      </ScrollRevealSection>
 
-        <hr style={divider} />
-
-        {/* ── Filterable Content Feed ── */}
-        <div style={sectionPrompt}>$ cat ~/feed/all.xml | grep --category</div>
+      {/* ── Filterable Content Feed ── */}
+      <ScrollRevealSection background="var(--canvas)">
         <div style={sectionTitle}>All Content</div>
-
         <UpdatesFeed entries={entries} categories={categories} />
+      </ScrollRevealSection>
 
-        {/* Navigation */}
+      {/* Navigation */}
+      <ScrollRevealSection background="var(--canvas-subtle)">
         <div style={navRow}>
           <Link href="/" style={navLink}>
             &larr; home
@@ -682,7 +629,7 @@ export default function UpdatesPage() {
             rss feed &rarr;
           </Link>
         </div>
-      </div>
+      </ScrollRevealSection>
     </>
   )
 }
