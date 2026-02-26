@@ -4,6 +4,7 @@ import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
+import { CursorGlow } from './components/CursorGlow'
 import { PageTransitionWrapper } from './PageTransitionWrapper'
 import './globals.css'
 
@@ -175,6 +176,7 @@ export default function RootLayout({
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
         <FooterCredit />
+        <CursorGlow />
         <Analytics />
         <SpeedInsights />
       </body>

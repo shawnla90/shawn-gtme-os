@@ -7,7 +7,7 @@ import {
   AvatarBadge,
 } from '@shawnos/shared/components'
 import { ShowcaseCard } from './ShowcaseCard'
-import { ShowcaseReveal } from './ShowcaseReveal'
+import { ShowcaseReveal, ScrollRevealSection, PageHero, SectionHeadline } from './ShowcaseReveal'
 
 /* ── metadata ──────────────────────────────────────── */
 
@@ -132,39 +132,17 @@ const monoCode: React.CSSProperties = {
 
 export default function ShowcasePage() {
   return (
-    <div style={pagePad}>
-      {/* ── Terminal page header ── */}
-      <ShowcaseReveal>
-        <h1
-          style={{
-            fontSize: '16px',
-            fontWeight: 400,
-            color: 'var(--text-muted)',
-            marginBottom: '32px',
-          }}
-        >
-          <span style={{ color: 'var(--accent)' }}>$</span> ls ~/components
-        </h1>
-
-        <p
-          style={{
-            fontSize: '13px',
-            color: 'var(--text-secondary)',
-            lineHeight: 1.7,
-            marginBottom: '40px',
-            maxWidth: '580px',
-          }}
-        >
-          live demos of every system in the monorepo. components render here —
-          click, hover, watch them run. built from scratch with Framer Motion
-          for scroll reveals and interaction polish.
-        </p>
-      </ShowcaseReveal>
+    <>
+      <PageHero
+        compact
+        title="Showcase"
+        subtitle="Live demos of every system."
+      />
 
       {/* ───────────────────────────────────────────── */}
       {/* Section 1: Terminal UI System                 */}
       {/* ───────────────────────────────────────────── */}
-      <div style={sectionGap}>
+      <ScrollRevealSection background="var(--canvas)">
         <ShowcaseCard
           title="terminal-ui"
           description="Custom terminal chrome used across all pages. macOS traffic-lights titlebar, dark canvas background, monospace content area."
@@ -206,14 +184,12 @@ export default function ShowcasePage() {
             </div>
           </TerminalChrome>
         </ShowcaseCard>
-      </div>
-
-      <hr style={divider} />
+      </ScrollRevealSection>
 
       {/* ───────────────────────────────────────────── */}
       {/* Section 2: Animation System                   */}
       {/* ───────────────────────────────────────────── */}
-      <div style={sectionGap}>
+      <ScrollRevealSection background="var(--canvas-subtle)">
         <ShowcaseCard
           title="animation-system"
           description="Two pure-React animation primitives. TypewriterHero types and erases sequences at configurable speeds. ScrambleCycler scrambles text into noise then resolves it left-to-right into the next phrase."
@@ -309,14 +285,12 @@ export default function ShowcasePage() {
             </div>
           </div>
         </ShowcaseCard>
-      </div>
-
-      <hr style={divider} />
+      </ScrollRevealSection>
 
       {/* ───────────────────────────────────────────── */}
       {/* Section 3: RPG Progression Engine             */}
       {/* ───────────────────────────────────────────── */}
-      <div style={sectionGap}>
+      <ScrollRevealSection background="var(--canvas)">
         <ShowcaseCard
           title="rpg-progression-engine"
           description="XP accrues from real daily work — commits, content, deployments. Python engine scores each day and evolves the avatar. Hover any sprite to trigger the action animation."
@@ -430,14 +404,12 @@ export default function ShowcasePage() {
             </div>
           </div>
         </ShowcaseCard>
-      </div>
-
-      <hr style={divider} />
+      </ScrollRevealSection>
 
       {/* ───────────────────────────────────────────── */}
       {/* Section 4: Video Generation                   */}
       {/* ───────────────────────────────────────────── */}
-      <div style={sectionGap}>
+      <ScrollRevealSection background="var(--canvas-subtle)">
         <ShowcaseCard
           title="video-generation"
           description="40+ Remotion compositions. AI generates videos from a JSON TimelineSpec — pass a spec, get back an MP4. Scenes are composable React components with frame-accurate timing."
@@ -503,14 +475,12 @@ export default function ShowcasePage() {
             </div>
           </div>
         </ShowcaseCard>
-      </div>
-
-      <hr style={divider} />
+      </ScrollRevealSection>
 
       {/* ───────────────────────────────────────────── */}
       {/* Section 5: Content Pipeline                   */}
       {/* ───────────────────────────────────────────── */}
-      <div style={{ ...sectionGap, marginBottom: '48px' }}>
+      <ScrollRevealSection background="var(--canvas)">
         <ShowcaseCard
           title="content-pipeline"
           description="Markdown files checked into the repo become blog posts, wiki pages, how-to guides, and 7 RSS feeds — all at build time. No CMS. No database. Git is the source of truth."
@@ -625,9 +595,10 @@ export default function ShowcasePage() {
             </div>
           </div>
         </ShowcaseCard>
-      </div>
+      </ScrollRevealSection>
 
       {/* ── CTA footer ── */}
+      <ScrollRevealSection background="var(--canvas-subtle)" variant="scale">
       <div
         style={{
           padding: '24px',
@@ -698,7 +669,8 @@ export default function ShowcasePage() {
           </Link>
         </div>
       </div>
-    </div>
+      </ScrollRevealSection>
+    </>
   )
 }
 

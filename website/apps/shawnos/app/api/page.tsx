@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { CopyButton, CodeBlock } from './components'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { PageHero, ScrollRevealSection, SectionHeadline } from './ApiHero'
 
 export const metadata: Metadata = {
   title: 'Public API | ShawnOS.ai — Real-Time RPG Progression Feed',
@@ -48,45 +49,33 @@ export default function APIPage() {
   return (
     <>
     <BreadcrumbSchema items={[{ name: 'API', url: 'https://shawnos.ai/api' }]} />
-    <div className="min-h-screen bg-black text-gray-100">
-      {/* Hero Section */}
-      <section className="border-b border-gray-800 bg-gradient-to-b from-gray-900 to-black py-16">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="mb-6 inline-block rounded border border-green-500/30 bg-green-500/10 px-3 py-1 font-mono text-xs text-green-400">
-            API v1.0
+    <PageHero
+      compact
+      title="Public API"
+      subtitle="Real-time progression feed. Track live XP, level, and milestones via JSON."
+    />
+    <div className="min-h-0 text-gray-100" style={{ background: 'var(--canvas)' }}>
+      {/* Quick example */}
+      <ScrollRevealSection background="var(--canvas)">
+        <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-6">
+          <div className="mb-3 flex items-center justify-between">
+            <span className="font-mono text-sm text-gray-500">
+              GET /api/status
+            </span>
+            <CopyButton
+              text="curl https://shawnos.ai/api/status"
+              label="Copy"
+            />
           </div>
-          <h1 className="mb-4 font-mono text-4xl font-bold text-green-400 md:text-5xl">
-            Public API
-          </h1>
-          <p className="mb-8 text-xl text-gray-300">
-            Real-Time Progression Feed
-          </p>
-          <p className="mb-8 max-w-2xl text-lg text-gray-400">
-            Track my live XP, level, and milestones via JSON. This public API
-            exposes real-time stats from the ShawnOS RPG progression system.
-          </p>
-
-          {/* Quick example */}
-          <div className="rounded-lg border border-gray-800 bg-gray-900/50 p-6">
-            <div className="mb-3 flex items-center justify-between">
-              <span className="font-mono text-sm text-gray-500">
-                GET /api/status
-              </span>
-              <CopyButton
-                text="curl https://shawnos.ai/api/status"
-                label="Copy"
-              />
-            </div>
-            <pre className="overflow-x-auto font-mono text-sm text-green-400">
-              <code>curl https://shawnos.ai/api/status</code>
-            </pre>
-          </div>
+          <pre className="overflow-x-auto font-mono text-sm text-green-400">
+            <code>curl https://shawnos.ai/api/status</code>
+          </pre>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* Quick Start */}
-      <section className="border-b border-gray-800 py-12">
-        <div className="mx-auto max-w-4xl px-6">
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <div>
           <h2 className="mb-6 font-mono text-2xl font-bold text-green-400">
             Quick Start
           </h2>
@@ -133,11 +122,11 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             </div>
           </div>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* Response Schema */}
-      <section className="border-b border-gray-800 py-12">
-        <div className="mx-auto max-w-4xl px-6">
+      <ScrollRevealSection background="var(--canvas)">
+        <div>
           <h2 className="mb-6 font-mono text-2xl font-bold text-green-400">
             Response Schema
           </h2>
@@ -224,11 +213,11 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             />
           </div>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* Use Cases */}
-      <section className="border-b border-gray-800 py-12">
-        <div className="mx-auto max-w-4xl px-6">
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <div>
           <h2 className="mb-6 font-mono text-2xl font-bold text-green-400">
             Use Cases
           </h2>
@@ -256,11 +245,11 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             />
           </div>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* How This System Works */}
-      <section className="border-b border-gray-800 py-12">
-        <div className="mx-auto max-w-4xl px-6">
+      <ScrollRevealSection background="var(--canvas)">
+        <div>
           <h2 className="mb-6 font-mono text-2xl font-bold text-green-400">
             How This System Works
           </h2>
@@ -301,11 +290,11 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             </p>
           </div>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* Build Your Own */}
-      <section className="border-b border-gray-800 py-12">
-        <div className="mx-auto max-w-4xl px-6">
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <div>
           <h2 className="mb-6 font-mono text-2xl font-bold text-green-400">
             Build Your Own
           </h2>
@@ -389,11 +378,11 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             .
           </p>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* About ShawnOS */}
-      <section className="border-b border-gray-800 py-12">
-        <div className="mx-auto max-w-4xl px-6">
+      <ScrollRevealSection background="var(--canvas)">
+        <div>
           <h2 className="mb-6 font-mono text-2xl font-bold text-green-400">
             About ShawnOS
           </h2>
@@ -418,11 +407,11 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             </p>
           </div>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* Related Resources */}
-      <section className="py-12">
-        <div className="mx-auto max-w-4xl px-6">
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <div>
           <h2 className="mb-6 font-mono text-2xl font-bold text-green-400">
             Related Resources
           </h2>
@@ -452,15 +441,7 @@ print(f"XP: {data['xp_total']} / {data['xp_next_level']}")`}
             />
           </div>
         </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-gray-800 py-8">
-        <div className="mx-auto max-w-4xl px-6 text-center text-sm text-gray-500">
-          <p className="mb-2">Built by Shawn Tenam with Claude Code and Cursor IDE</p>
-          <p>Deployed on Vercel · Updated in real-time</p>
-        </div>
-      </footer>
+      </ScrollRevealSection>
     </div>
     </>
   )

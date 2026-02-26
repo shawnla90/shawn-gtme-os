@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
-import { MethodReveal, CardStagger, CardItem } from './MethodReveal'
+import { MethodReveal, CardStagger, CardItem, ScrollRevealSection, PageHero, SectionHeadline } from './MethodReveal'
 
 export const metadata: Metadata = {
   title: 'The Method',
@@ -202,29 +202,13 @@ export default function MethodPage() {
       <BreadcrumbSchema
         items={[{ name: 'The Method', url: 'https://shawnos.ai/method' }]}
       />
-      <div
-        style={{
-          maxWidth: '680px',
-          margin: '0 auto',
-          fontFamily: 'var(--font-mono)',
-        }}
-      >
-        {/* ── Terminal header ── */}
-        <MethodReveal variant="fadeIn">
-          <h1
-            style={{
-              fontSize: '16px',
-              fontWeight: 400,
-              color: 'var(--text-muted)',
-              marginBottom: '32px',
-            }}
-          >
-            <span style={{ color: 'var(--accent)' }}>$</span> cat ~/method.md
-          </h1>
-        </MethodReveal>
+      <PageHero
+        compact
+        title="Recursive Drift"
+        subtitle="The non-linear method for building with AI."
+      />
 
-        {/* ── Opening ── */}
-        <MethodReveal>
+      <ScrollRevealSection background="var(--canvas)">
         <div style={section}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -274,14 +258,12 @@ export default function MethodPage() {
             context for the next.
           </p>
         </div>
-        </MethodReveal>
-
-        <hr style={divider} />
+      </ScrollRevealSection>
 
         {/* ── The States ── */}
-        <MethodReveal>
+      <ScrollRevealSection background="var(--canvas-subtle)">
         <div style={section}>
-          <h2 style={sectionTitle}>the states</h2>
+          <SectionHeadline subtitle="A state machine with feedback loops">The States</SectionHeadline>
 
           <p style={{ ...mutedText, marginBottom: '20px' }}>
             a state machine with feedback loops. enter any state the work
@@ -361,14 +343,12 @@ export default function MethodPage() {
           ))}
           </CardStagger>
         </div>
-        </MethodReveal>
-
-        <hr style={divider} />
+      </ScrollRevealSection>
 
         {/* ── Recursive ── */}
-        <MethodReveal>
+      <ScrollRevealSection background="var(--canvas)">
         <div style={section}>
-          <h2 style={sectionTitle}>recursive</h2>
+          <SectionHeadline subtitle="Output feeds back as input">Recursive</SectionHeadline>
 
           <p
             style={{
@@ -418,14 +398,12 @@ export default function MethodPage() {
             already exist as input.
           </p>
         </div>
-        </MethodReveal>
-
-        <hr style={divider} />
+      </ScrollRevealSection>
 
         {/* ── Anti-patterns ── */}
-        <MethodReveal>
+      <ScrollRevealSection background="var(--canvas-subtle)">
         <div style={section}>
-          <h2 style={sectionTitle}>what this is not</h2>
+          <SectionHeadline>What This Is Not</SectionHeadline>
 
           <div
             style={{
@@ -459,13 +437,12 @@ export default function MethodPage() {
             ))}
           </div>
         </div>
-        </MethodReveal>
-
-        <hr style={divider} />
+      </ScrollRevealSection>
 
         {/* ── How It Differs ── */}
+      <ScrollRevealSection background="var(--canvas)">
         <div style={section}>
-          <h2 style={sectionTitle}>how it differs</h2>
+          <SectionHeadline>How It Differs</SectionHeadline>
 
           {contrasts.map((c) => (
             <div key={c.from} style={{ marginBottom: '16px' }}>
@@ -484,12 +461,12 @@ export default function MethodPage() {
             </div>
           ))}
         </div>
-
-        <hr style={divider} />
+      </ScrollRevealSection>
 
         {/* ── The Paradox ── */}
+      <ScrollRevealSection background="var(--canvas-subtle)">
         <div style={section}>
-          <h2 style={sectionTitle}>the paradox</h2>
+          <SectionHeadline>The Paradox</SectionHeadline>
 
           <p
             style={{
@@ -527,11 +504,10 @@ export default function MethodPage() {
             because the process was.
           </p>
         </div>
-
-        <hr style={divider} />
+      </ScrollRevealSection>
 
         {/* ── The Principle ── */}
-        <MethodReveal variant="scale">
+      <ScrollRevealSection background="var(--canvas)" variant="scale">
         <div style={section}>
           <div
             style={{
@@ -569,11 +545,12 @@ export default function MethodPage() {
             </p>
           </div>
         </div>
-        </MethodReveal>
+      </ScrollRevealSection>
 
         {/* ── See It Running ── */}
+      <ScrollRevealSection background="var(--canvas-subtle)">
         <div style={section}>
-          <h2 style={sectionTitle}>see it running</h2>
+          <SectionHeadline>See It Running</SectionHeadline>
 
           <div
             style={{
@@ -643,9 +620,10 @@ export default function MethodPage() {
             ))}
           </div>
         </div>
+      </ScrollRevealSection>
 
         {/* ── Back to About ── */}
-        <div style={{ marginTop: '48px' }}>
+      <ScrollRevealSection background="var(--canvas)">
           <Link
             href="/about"
             style={{
@@ -658,8 +636,7 @@ export default function MethodPage() {
           >
             &larr; back to about
           </Link>
-        </div>
-      </div>
+      </ScrollRevealSection>
     </>
   )
 }
