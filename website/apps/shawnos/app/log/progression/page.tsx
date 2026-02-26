@@ -11,6 +11,7 @@ import {
 } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import ProgressionClient from './ProgressionClient'
+import { PageHero, ScrollRevealSection } from '../LogReveal'
 
 const DATA_ROOT = resolveDataRoot()
 const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
@@ -82,49 +83,18 @@ export default function ProgressionPage() {
           { name: 'Progression', url: `${SITE_URL}/log/progression` },
         ]}
       />
-      <div
-        style={{
-          maxWidth: 900,
-          margin: '0 auto',
-          padding: '40px 20px',
-          fontFamily: 'var(--font-mono)',
-        }}
-      >
-        {/* Nav */}
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginBottom: '24px',
-          }}
+      <PageHero
+        compact
+        title="Progression"
+        subtitle="XP, grades & leveling."
+      />
+      <ScrollRevealSection background="var(--canvas)">
+        <Link
+          href="/log"
+          style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none', display: 'inline-block', marginBottom: 24 }}
         >
-          <Link
-            href="/log"
-            style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}
-          >
-            &larr; back to logs
-          </Link>
-        </div>
-
-        {/* Header */}
-        <div style={{ marginBottom: '24px' }}>
-          <h1
-            style={{
-              margin: '0 0 4px',
-              fontSize: '20px',
-              fontWeight: 700,
-              letterSpacing: '0.04em',
-              textTransform: 'uppercase',
-              color: 'var(--text-primary)',
-            }}
-          >
-            PROGRESSION
-          </h1>
-          <p style={{ margin: 0, fontSize: '13px', color: 'var(--text-muted)' }}>
-            XP, grades &amp; leveling
-          </p>
-        </div>
+          &larr; back to logs
+        </Link>
 
         <ProgressionClient
           profile={profile}
@@ -132,7 +102,7 @@ export default function ProgressionPage() {
           tierColor={tc}
           costMap={costMap}
         />
-      </div>
+      </ScrollRevealSection>
     </>
   )
 }

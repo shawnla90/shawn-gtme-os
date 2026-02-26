@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { SkillGuidePage } from '@shawnos/shared/pages/SkillGuidePage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { PageHero } from '../LogReveal'
 
 export const metadata: Metadata = {
   title: 'Skill Guide | How the Daily Tracker Works',
@@ -49,6 +50,7 @@ export default function Page() {
           { name: 'Skill Guide', url: 'https://shawnos.ai/log/skill-guide' },
         ]}
       />
+      <PageHero compact title="Skill Guide" subtitle="How the daily tracker works." />
       <SkillGuidePage />
     </>
   )

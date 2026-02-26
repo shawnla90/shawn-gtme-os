@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import CopyButton from './CopyButton'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { PageHero, ScrollRevealSection } from '../LogReveal'
 
 /* ── Metadata & SEO ── */
 
@@ -399,14 +400,13 @@ export default function BuildYourOwnPage() {
         { name: 'Build Your Own', url: 'https://shawnos.ai/log/build-your-own' },
       ]}
     />
-    <div style={container}>
-      {/* Terminal header */}
-      <h1 style={terminalHeader}>
-        <span style={{ color: 'var(--accent)' }}>$</span> ./build-your-own-tracker.sh
-      </h1>
+    <PageHero
+      compact
+      title="Build Your Own"
+      subtitle="The prompt behind the daily receipts."
+    />
 
-      {/* Hero */}
-      <h2 style={heroTitle}>Build Your Own Daily Tracker</h2>
+    <ScrollRevealSection background="var(--canvas)">
       <p style={heroSub}>
         The daily receipts you see on{' '}
         <Link
@@ -425,7 +425,6 @@ export default function BuildYourOwnPage() {
         you can drop into Cursor, Claude, or any AI IDE to build your own.
       </p>
 
-      {/* Living document notice */}
       <div style={calloutBox}>
         <div style={calloutTitle}>Living Document</div>
         <p style={calloutText}>
@@ -435,8 +434,9 @@ export default function BuildYourOwnPage() {
           latest version.
         </p>
       </div>
+    </ScrollRevealSection>
 
-      {/* The prompt */}
+    <ScrollRevealSection background="var(--canvas-subtle)">
       <div style={{ marginBottom: '12px' }}>
         <h3 style={sectionLabel}>the prompt</h3>
       </div>
@@ -446,11 +446,10 @@ export default function BuildYourOwnPage() {
         <pre style={promptBlock}>{TRACKER_PROMPT}</pre>
       </div>
 
-      {/* Back link */}
       <Link href="/log" style={backLink}>
         &larr; Back to the log
       </Link>
-    </div>
+    </ScrollRevealSection>
     </>
   )
 }

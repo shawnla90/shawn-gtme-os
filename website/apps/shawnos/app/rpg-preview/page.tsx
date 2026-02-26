@@ -5,6 +5,7 @@ import { TierProgressionGrid } from './TierProgressionGrid'
 import { ClassShowcaseGrid } from './ClassShowcaseGrid'
 import { ALL_CLASSES } from './constants'
 import { RPGPageShell } from './RPGPageShell'
+import { PageHero, ScrollRevealSection } from './RPGReveal'
 
 const DATA_ROOT = resolveDataRoot()
 
@@ -120,66 +121,27 @@ export default function RPGPreviewPage() {
     <>
     <BreadcrumbSchema items={[{ name: 'RPG', url: 'https://shawnos.ai/rpg-preview' }]} />
     <RPGPageShell>
-    <div style={page}>
-      {/* ── Header ── */}
-      <p style={{ fontSize: '14px', color: 'var(--text-muted)', marginBottom: 8 }}>
-        <span style={promptChar}>$</span> ./rpg-preview --render-all
-      </p>
-      <h1
-        style={{
-          fontSize: '22px',
-          fontWeight: 700,
-          color: 'var(--accent)',
-          marginBottom: 8,
-          fontFamily: 'var(--font-mono)',
-        }}
-      >
-        The Progression Engine
-      </h1>
-      <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: 0, lineHeight: 1.6 }}>
-        11 tiers. 5 classes. every title earned through daily output, tracked in the{' '}
-        <a href="/log" style={{ color: 'var(--accent)', textDecoration: 'none' }}>build log</a>.
-      </p>
+      <PageHero
+        compact
+        title="Progression Engine"
+        subtitle="XP from real work. 11 tiers. 5 classes."
+      />
 
-      <hr style={divider} />
-
-      {/* ── Section 1: Full Title Progression (client component with click-to-reveal) ── */}
-      <section>
-        <h2 style={sectionHeading}>
-          <span style={promptChar}>$</span>{' '}
-          <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-            ls ~/progression --all-tiers
-          </span>
-        </h2>
-
+      {/* ── Section 1: Full Title Progression ── */}
+      <ScrollRevealSection background="var(--canvas)">
+        <h2 style={sectionHeading}>Tier Progression</h2>
         <TierProgressionGrid currentAvatarTier={currentAvatarTier} />
-      </section>
-
-      <hr style={divider} />
+      </ScrollRevealSection>
 
       {/* ── Section 2: Class Showcase ── */}
-      <section>
-        <h2 style={sectionHeading}>
-          <span style={promptChar}>$</span>{' '}
-          <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-            ls ~/classes --showcase
-          </span>
-        </h2>
-
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <h2 style={sectionHeading}>Classes</h2>
         <ClassShowcaseGrid currentClass={profile?.class ?? 'Polymath'} />
-      </section>
-
-      <hr style={divider} />
+      </ScrollRevealSection>
 
       {/* ── Section 3: Raw Data Table ── */}
-      <section>
-        <h2 style={sectionHeading}>
-          <span style={promptChar}>$</span>{' '}
-          <span style={{ color: 'var(--text-muted)', fontWeight: 400 }}>
-            cat ~/progression/title_table.json
-          </span>
-        </h2>
-
+      <ScrollRevealSection background="var(--canvas)">
+        <h2 style={sectionHeading}>Title Table</h2>
         <div style={tableWrapper}>
           <table style={table}>
             <thead>
@@ -210,23 +172,21 @@ export default function RPGPreviewPage() {
             </tbody>
           </table>
         </div>
-      </section>
+      </ScrollRevealSection>
 
       {/* ── Footer ── */}
-      <div
-        style={{
-          marginTop: 48,
-          paddingTop: 16,
-          borderTop: '1px solid var(--border)',
-          fontSize: '12px',
-          color: 'var(--text-muted)',
-          opacity: 0.6,
-        }}
-      >
-        &gt; {TITLE_TABLE.length} tiers · {ALL_CLASSES.length} classes ·{' '}
-        <a href="/log" style={{ color: 'var(--accent)', textDecoration: 'none' }}>see how this score is earned</a>_
-      </div>
-    </div>
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <div
+          style={{
+            fontSize: '12px',
+            color: 'var(--text-muted)',
+            opacity: 0.6,
+          }}
+        >
+          &gt; {TITLE_TABLE.length} tiers · {ALL_CLASSES.length} classes ·{' '}
+          <a href="/log" style={{ color: 'var(--accent)', textDecoration: 'none' }}>see how this score is earned</a>_
+        </div>
+      </ScrollRevealSection>
     </RPGPageShell>
     </>
   )

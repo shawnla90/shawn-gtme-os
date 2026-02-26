@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { QuestBoardPage } from '@shawnos/shared/pages/QuestBoardPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { PageHero } from '../LogReveal'
 
 export const metadata: Metadata = {
   title: 'Quest Board | Challenges for Builders',
@@ -50,6 +51,7 @@ export default function Page() {
           { name: 'Quests', url: 'https://shawnos.ai/log/quests' },
         ]}
       />
+      <PageHero compact title="Quest Board" subtitle="Challenges for builders." />
       <QuestBoardPage />
     </>
   )

@@ -5,7 +5,8 @@ import Link from 'next/link'
 import type { DailyLogSummary, LogAggregates } from '@shawnos/shared/lib/logs'
 import type { RPGProfile } from '@shawnos/shared/lib/rpg'
 import { LogCard, LogHero } from '@shawnos/shared/components'
-import { MotionReveal, StaggerContainer, StaggerItem } from '../components/motion'
+import { MotionReveal, StaggerContainer, StaggerItem, ScrollRevealSection } from '../components/motion'
+import { PageHero } from '../components/PageHero'
 
 const GRADE_OPTIONS = ['All', 'S+', 'S', 'A+', 'A', 'B', 'C', 'D']
 
@@ -65,16 +66,16 @@ export default function LogIndexClient({
   })
 
   return (
-    <section
-      style={{
-        maxWidth: 720,
-        margin: '0 auto',
-        padding: '40px 20px',
-        fontFamily: 'var(--font-mono)',
-      }}
-    >
-      <MotionReveal variant="fadeIn">
-        <LogHero
+    <>
+      <PageHero
+        compact
+        title="Build Log"
+        subtitle="Daily proof of work."
+      />
+
+      <ScrollRevealSection background="var(--canvas)">
+        <MotionReveal variant="fadeIn">
+          <LogHero
           aggregates={aggregates}
           showAvatar
           profile={profile ?? undefined}
@@ -172,8 +173,10 @@ export default function LogIndexClient({
       >
         Want to build your own? Grab the prompt. &rarr;
       </Link>
+      </ScrollRevealSection>
 
       {/* Search + Grade filter */}
+      <ScrollRevealSection background="var(--canvas-subtle)">
       <div
         style={{
           display: 'flex',
@@ -269,6 +272,7 @@ export default function LogIndexClient({
           ))}
         </StaggerContainer>
       )}
-    </section>
+      </ScrollRevealSection>
+    </>
   )
 }

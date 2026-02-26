@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getWebsiteStats, resolveDataRoot } from '@shawnos/shared/lib'
 import { VitalsPage } from '@shawnos/shared/pages/VitalsPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { PageHero, ScrollRevealSection } from './VitalsReveal'
 
 const DATA_ROOT = resolveDataRoot()
 
@@ -48,35 +49,21 @@ export default function VitalsRoute() {
 
   if (!stats) {
     return (
-      <div
-        style={{
-          maxWidth: 680,
-          margin: '0 auto',
-          padding: '80px 20px',
-          fontFamily: 'var(--font-mono)',
-          textAlign: 'center',
-        }}
-      >
-        <div style={{ fontSize: '14px', color: 'var(--text-muted)' }}>
-          <span style={{ color: 'var(--accent)' }}>$</span> ./vitals --scan-all
-        </div>
-        <div
-          style={{
-            marginTop: 16,
-            fontSize: '13px',
-            color: 'var(--text-muted)',
-            opacity: 0.7,
-          }}
-        >
-          {'> scanner not initialized. run website_scanner.py first.'}
-        </div>
-      </div>
+      <>
+        <PageHero compact title="System Vitals" subtitle="Live ecosystem scan." />
+        <ScrollRevealSection background="var(--canvas)">
+          <p style={{ fontSize: '13px', color: 'var(--text-muted)', textAlign: 'center' }}>
+            Scanner not initialized. Run website_scanner.py first.
+          </p>
+        </ScrollRevealSection>
+      </>
     )
   }
 
   return (
     <>
       <BreadcrumbSchema items={[{ name: 'Vitals', url: 'https://shawnos.ai/vitals' }]} />
+      <PageHero compact title="System Vitals" subtitle="Live ecosystem scan." />
       <VitalsPage stats={stats} />
     </>
   )

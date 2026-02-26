@@ -7,6 +7,7 @@ import {
   resolveDataRoot,
 } from '@shawnos/shared/lib'
 import { DailyLogView, LogDetailIntro, BreadcrumbSchema } from '@shawnos/shared/components'
+import { ScrollRevealSection } from '../LogReveal'
 
 const SITE_URL = 'https://shawnos.ai'
 const DATA_ROOT = resolveDataRoot()
@@ -150,14 +151,7 @@ export default async function LogPage({
         { name: formatted, url: `${SITE_URL}/log/${date}` },
       ]}
     />
-    <div
-      style={{
-        maxWidth: 1200,
-        margin: '0 auto',
-        padding: '40px 20px',
-        fontFamily: 'var(--font-mono)',
-      }}
-    >
+    <ScrollRevealSection background="var(--canvas)">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -185,7 +179,7 @@ export default async function LogPage({
         basePath="/log"
         weeklyContext={log.version >= 4 ? getWeeklyContext(date, LOG_DIR) : undefined}
       />
-    </div>
+    </ScrollRevealSection>
     </>
   )
 }
