@@ -279,7 +279,6 @@ export default function MethodPage() {
         style={{
           maxWidth: '760px',
           margin: '0 auto',
-          fontFamily: 'var(--font-mono)',
         }}
       >
         {/* ── Terminal header ── */}

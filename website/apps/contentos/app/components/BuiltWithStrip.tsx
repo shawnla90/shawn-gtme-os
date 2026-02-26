@@ -46,7 +46,7 @@ const logos: BuiltWithLogo[] = [
   {
     name: 'Typefully',
     brandColor: '#3B82F6',
-    letter: 'T',
+    path: 'M3.063 7.712h17.874v2.427H3.063V7.712ZM3.063 13.861h17.874v2.427H3.063v-2.427ZM3.063 1.563h17.874V3.99H3.063V1.563Zm0 18.447h17.874v2.427H3.063V20.01Z',
   },
   {
     name: 'Canva',
