@@ -42,7 +42,7 @@ const challenges = [
   {
     icon: '01',
     title: 'Scaling SDR Operations at Hypergrowth Speed',
-    desc: 'Onboarding, ramping, and coaching SDRs faster than traditional methods allow — across multiple geographies and languages.',
+    desc: 'Onboarding, ramping, and coaching SDRs faster than traditional methods allow  - across multiple geographies and languages.',
   },
   {
     icon: '02',
@@ -52,24 +52,24 @@ const challenges = [
   {
     icon: '03',
     title: 'Processing High-Volume Inbound at Speed',
-    desc: 'Leads from manufacturing, F&B, chemicals, mining — all with different qualification criteria. Routing and scoring need to happen in seconds, not hours.',
+    desc: 'Leads from manufacturing, F&B, chemicals, mining  - all with different qualification criteria. Routing and scoring need to happen in seconds, not hours.',
   },
   {
     icon: '04',
     title: 'Making Outbound Match the Product',
-    desc: 'MaintainX sells AI-powered intelligence. Your outbound should feel equally intelligent — signal-driven, deeply personalized, not templated.',
+    desc: 'MaintainX sells AI-powered intelligence. Your outbound should feel equally intelligent  - signal-driven, deeply personalized, not templated.',
   },
 ]
 
 const deliverables = [
   {
     title: 'Signal Engine',
-    desc: 'Trigger events — plant expansions, compliance changes, equipment failures, leadership hires — automatically feed personalized Outreach sequences. No manual research.',
+    desc: 'Trigger events  - plant expansions, compliance changes, equipment failures, leadership hires  - automatically feed personalized Outreach sequences. No manual research.',
     tags: ['Outreach', 'Signals', 'Automation'],
   },
   {
     title: 'AI Enrichment Layer',
-    desc: 'ZoomInfo data + custom AI research. Deep account intelligence before an SDR touches a lead — industry context, tech stack, recent news, pain indicators.',
+    desc: 'ZoomInfo data + custom AI research. Deep account intelligence before an SDR touches a lead  - industry context, tech stack, recent news, pain indicators.',
     tags: ['ZoomInfo', 'AI Research', 'Enrichment'],
   },
   {
@@ -79,7 +79,7 @@ const deliverables = [
   },
   {
     title: 'SDR Enablement System',
-    desc: 'AI-assisted persona playbooks, objection handling, and ramp acceleration. New SDRs performing at target in weeks — not quarters.',
+    desc: 'AI-assisted persona playbooks, objection handling, and ramp acceleration. New SDRs performing at target in weeks  - not quarters.',
     tags: ['Playbooks', 'Training', 'AI Coaching'],
   },
 ]
@@ -93,7 +93,7 @@ const engagementSteps = [
   {
     title: 'Build & Deploy',
     subtitle: 'Month 2',
-    desc: 'Custom AI infrastructure goes live. Signal detection, enrichment pipelines, Outreach automation, Salesforce workflows — all wired together and tested.',
+    desc: 'Custom AI infrastructure goes live. Signal detection, enrichment pipelines, Outreach automation, Salesforce workflows  - all wired together and tested.',
   },
   {
     title: 'Enable & Transfer',
@@ -105,7 +105,7 @@ const engagementSteps = [
 const faqItems = [
   {
     question: 'How does the engagement start?',
-    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research — the goal is to identify the highest-leverage automations within the first week.',
+    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research  - the goal is to identify the highest-leverage automations within the first week.',
   },
   {
     question: 'What access do you need?',
@@ -113,7 +113,7 @@ const faqItems = [
   },
   {
     question: 'How does pricing work?',
-    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds — not hours logged.',
+    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds  - not hours logged.',
   },
   {
     question: 'Can I manage this independently after?',
@@ -121,11 +121,11 @@ const faqItems = [
   },
   {
     question: 'What makes this different from hiring an agency?',
-    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns — once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one campaign.',
+    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns  - once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one campaign.',
   },
   {
     question: 'What if we need to extend beyond 3 months?',
-    answer: 'The system is designed to be self-sustaining. But if you want to expand scope — new channels, new markets, deeper automation — we can discuss a follow-on engagement. No lock-in.',
+    answer: 'The system is designed to be self-sustaining. But if you want to expand scope  - new channels, new markets, deeper automation  - we can discuss a follow-on engagement. No lock-in.',
   },
 ]
 
@@ -602,7 +602,7 @@ export function MaintainXContent() {
       <MXSection background={MX.darkSubtle} style={{ scrollMarginTop: 80 }}>
         <div id="deliverables" style={{ position: 'absolute', marginTop: -100 }} />
         <SectionLabel>The Solution</SectionLabel>
-        <SectionTitle subtitle="Four systems that integrate with your existing stack — Salesforce, Outreach, ZoomInfo — and make every SDR 10x more effective.">
+        <SectionTitle subtitle="Four systems that integrate with your existing stack  - Salesforce, Outreach, ZoomInfo  - and make every SDR 10x more effective.">
           What I Build for You
         </SectionTitle>
 
@@ -824,7 +824,7 @@ export function MaintainXContent() {
                 margin: '0 0 12px',
               }}
             >
-              Custom-branded to your company. Deeply researched — your valuation, your stack,
+              Custom-branded to your company. Deeply researched  - your valuation, your stack,
               your G2 ranking, your growth trajectory. Built and deployed in a single session
               using the same AI infrastructure I&apos;d build for your team.
             </p>
@@ -995,7 +995,7 @@ export function MaintainXContent() {
           >
             theGTMOS.ai
           </a>{' '}
-          — the go-to-market operating system
+           - the go-to-market operating system
         </div>
       </MXSection>
     </div>

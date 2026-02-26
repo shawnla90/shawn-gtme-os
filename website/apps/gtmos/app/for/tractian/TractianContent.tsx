@@ -42,29 +42,29 @@ const challenges = [
   {
     icon: '01',
     title: 'Building a US Sales Machine from Scratch',
-    desc: 'New CRO (Jan 2026), four new Regional Sales Directors in two months. The US org is being built in real-time — they need pipeline infrastructure on day one, not month six.',
+    desc: 'New CRO (Jan 2026), four new Regional Sales Directors in two months. The US org is being built in real-time  - they need pipeline infrastructure on day one, not month six.',
   },
   {
     icon: '02',
     title: 'Selling Hardware + Software to the Factory Floor',
-    desc: 'IoT sensors + AI platform + asset management. Tractian\'s sale is multi-product and multi-persona — maintenance managers, reliability engineers, plant directors. Each needs different messaging at different stages.',
+    desc: 'IoT sensors + AI platform + asset management. Tractian\'s sale is multi-product and multi-persona  - maintenance managers, reliability engineers, plant directors. Each needs different messaging at different stages.',
   },
   {
     icon: '03',
     title: 'Scaling Outbound to Match 5,548% Revenue Growth',
-    desc: 'The product has proven market fit with John Deere, P&G, Caterpillar, and Goodyear. Now the outbound motion needs to match the inbound momentum — systematically reaching every manufacturing plant in North America.',
+    desc: 'The product has proven market fit with John Deere, P&G, Caterpillar, and Goodyear. Now the outbound motion needs to match the inbound momentum  - systematically reaching every manufacturing plant in North America.',
   },
   {
     icon: '04',
     title: 'Competing in the AI-Powered Maintenance Race',
-    desc: 'MaintainX, UpKeep, Limble — all going after the same maintenance budget. Tractian\'s hardware moat is real, but winning deals requires reaching decision-makers first with the right signal at the right time.',
+    desc: 'MaintainX, UpKeep, Limble  - all going after the same maintenance budget. Tractian\'s hardware moat is real, but winning deals requires reaching decision-makers first with the right signal at the right time.',
   },
 ]
 
 const deliverables = [
   {
     title: 'Manufacturing Signal Engine',
-    desc: 'Detect buying triggers — plant expansions, equipment failures, compliance changes, new facility announcements — and auto-route them into personalized sequences for maintenance and reliability personas.',
+    desc: 'Detect buying triggers  - plant expansions, equipment failures, compliance changes, new facility announcements  - and auto-route them into personalized sequences for maintenance and reliability personas.',
     tags: ['Signals', 'Manufacturing', 'Automation'],
   },
   {
@@ -74,12 +74,12 @@ const deliverables = [
   },
   {
     title: 'Multi-Persona Pipeline System',
-    desc: 'Salesforce routing for maintenance managers, reliability engineers, and plant directors. Different scoring models, different sequences, different nurture tracks — all automated.',
+    desc: 'Salesforce routing for maintenance managers, reliability engineers, and plant directors. Different scoring models, different sequences, different nurture tracks  - all automated.',
     tags: ['Salesforce', 'HubSpot', 'Routing'],
   },
   {
     title: 'ADR Enablement & Ramp',
-    desc: 'AI-powered playbooks for each industry vertical — food & beverage, chemicals, automotive, mining. Hardware + software objection handling. New ADRs ramped in weeks, not quarters.',
+    desc: 'AI-powered playbooks for each industry vertical  - food & beverage, chemicals, automotive, mining. Hardware + software objection handling. New ADRs ramped in weeks, not quarters.',
     tags: ['Playbooks', 'Training', 'AI Coaching'],
   },
 ]
@@ -93,7 +93,7 @@ const engagementSteps = [
   {
     title: 'Build & Deploy',
     subtitle: 'Month 2',
-    desc: 'Manufacturing signal engine goes live. AI enrichment pipelines, outbound automation, Salesforce workflows — all wired together. Industry-specific playbooks for every vertical Tractian sells into.',
+    desc: 'Manufacturing signal engine goes live. AI enrichment pipelines, outbound automation, Salesforce workflows  - all wired together. Industry-specific playbooks for every vertical Tractian sells into.',
   },
   {
     title: 'Enable & Transfer',
@@ -105,7 +105,7 @@ const engagementSteps = [
 const faqItems = [
   {
     question: 'How does the engagement start?',
-    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research on Tractian\'s go-to-market, your competitive landscape, and manufacturing vertical dynamics — the goal is to identify the highest-leverage automations within the first week.',
+    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research on Tractian\'s go-to-market, your competitive landscape, and manufacturing vertical dynamics  - the goal is to identify the highest-leverage automations within the first week.',
   },
   {
     question: 'What access do you need?',
@@ -113,7 +113,7 @@ const faqItems = [
   },
   {
     question: 'How does pricing work?',
-    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds — not hours logged.',
+    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds  - not hours logged.',
   },
   {
     question: 'Can we manage this independently after?',
@@ -121,11 +121,11 @@ const faqItems = [
   },
   {
     question: 'What makes this different from hiring an agency?',
-    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns — once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one campaign.',
+    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns  - once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one campaign.',
   },
   {
     question: 'Does this work for our hardware + software sales motion?',
-    answer: 'Specifically designed for it. Multi-product sales require multi-persona routing, different qualification criteria, and industry-specific messaging. The infrastructure handles all of it — sensors, platform, and asset management as one coordinated motion.',
+    answer: 'Specifically designed for it. Multi-product sales require multi-persona routing, different qualification criteria, and industry-specific messaging. The infrastructure handles all of it  - sensors, platform, and asset management as one coordinated motion.',
   },
 ]
 
@@ -601,7 +601,7 @@ export function TractianContent() {
       <TRSection background={TR.darkSubtle} style={{ scrollMarginTop: 80 }}>
         <div id="deliverables" style={{ position: 'absolute', marginTop: -100 }} />
         <SectionLabel>The Solution</SectionLabel>
-        <SectionTitle subtitle="Four systems that integrate with your existing stack — Salesforce, HubSpot, ZoomInfo — and make every ADR across every manufacturing vertical 10x more effective.">
+        <SectionTitle subtitle="Four systems that integrate with your existing stack  - Salesforce, HubSpot, ZoomInfo  - and make every ADR across every manufacturing vertical 10x more effective.">
           What I Build for You
         </SectionTitle>
 
@@ -820,7 +820,7 @@ export function TractianContent() {
                 margin: '0 0 12px',
               }}
             >
-              Custom-branded to Tractian. Deeply researched — your 5,548% revenue growth, your new US CRO,
+              Custom-branded to Tractian. Deeply researched  - your 5,548% revenue growth, your new US CRO,
               your Series C, your Oracle partnership, your Deloitte Fast 500 ranking. Built and deployed in a
               single session using the same AI infrastructure I&apos;d build for your team.
             </p>
@@ -991,7 +991,7 @@ export function TractianContent() {
           >
             theGTMOS.ai
           </a>{' '}
-          — the go-to-market operating system
+           - the go-to-market operating system
         </div>
       </TRSection>
     </div>

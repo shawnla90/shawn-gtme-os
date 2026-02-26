@@ -42,7 +42,7 @@ const challenges = [
   {
     icon: '01',
     title: 'Scaling a Brand-New Revenue Org Post-Unicorn',
-    desc: 'New CRO (Nov 2025), new CMO (Oct 2025), new Chief AI Officer (Jan 2026). The entire go-to-market leadership team is fresh — they need infrastructure that accelerates ramp, not slows it down.',
+    desc: 'New CRO (Nov 2025), new CMO (Oct 2025), new Chief AI Officer (Jan 2026). The entire go-to-market leadership team is fresh  - they need infrastructure that accelerates ramp, not slows it down.',
   },
   {
     icon: '02',
@@ -52,7 +52,7 @@ const challenges = [
   {
     icon: '03',
     title: 'Selling an All-in-One Platform vs. Point Solutions',
-    desc: 'Invoicing, scheduling, estimates, project management, dispatching — all in one. The value prop is massive, but it requires multi-stakeholder selling and deeper account intelligence than single-product pitches.',
+    desc: 'Invoicing, scheduling, estimates, project management, dispatching  - all in one. The value prop is massive, but it requires multi-stakeholder selling and deeper account intelligence than single-product pitches.',
   },
   {
     icon: '04',
@@ -64,7 +64,7 @@ const challenges = [
 const deliverables = [
   {
     title: 'Contractor Signal Engine',
-    desc: 'Detect commercial contractor buying signals — new construction permits, HVAC code changes, fleet expansions, equipment upgrades — and auto-route them into personalized Outreach sequences.',
+    desc: 'Detect commercial contractor buying signals  - new construction permits, HVAC code changes, fleet expansions, equipment upgrades  - and auto-route them into personalized Outreach sequences.',
     tags: ['Outreach', 'Signals', 'Permitting Data'],
   },
   {
@@ -93,19 +93,19 @@ const engagementSteps = [
   {
     title: 'Build & Deploy',
     subtitle: 'Month 2',
-    desc: 'Contractor signal engine goes live. AI enrichment pipelines, Outreach automation, Salesforce workflows — all wired together. Vertical-specific playbooks for HVAC, plumbing, electrical, and fire protection.',
+    desc: 'Contractor signal engine goes live. AI enrichment pipelines, Outreach automation, Salesforce workflows  - all wired together. Vertical-specific playbooks for HVAC, plumbing, electrical, and fire protection.',
   },
   {
     title: 'Enable & Transfer',
     subtitle: 'Month 3',
-    desc: 'Train Greg, Colin, and the leadership team to own the system. Documentation, runbooks, and hands-on coaching. The infrastructure runs independently — built to scale with every new hire.',
+    desc: 'Train Greg, Colin, and the leadership team to own the system. Documentation, runbooks, and hands-on coaching. The infrastructure runs independently  - built to scale with every new hire.',
   },
 ]
 
 const faqItems = [
   {
     question: 'How does the engagement start?',
-    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research on BuildOps, your competitive landscape, and contractor vertical dynamics — the goal is to identify the highest-leverage automations within the first week.',
+    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research on BuildOps, your competitive landscape, and contractor vertical dynamics  - the goal is to identify the highest-leverage automations within the first week.',
   },
   {
     question: 'What access do you need?',
@@ -113,7 +113,7 @@ const faqItems = [
   },
   {
     question: 'How does pricing work?',
-    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds — not hours logged.',
+    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds  - not hours logged.',
   },
   {
     question: 'Can we manage this independently after?',
@@ -121,7 +121,7 @@ const faqItems = [
   },
   {
     question: 'What makes this different from hiring a RevOps agency?',
-    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns — once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one quarter.',
+    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns  - once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one quarter.',
   },
   {
     question: 'Can this scale across the Raleigh hub and international teams?',
@@ -531,7 +531,7 @@ export function BuildOpsContent() {
       {/* ── Your Challenge ── */}
       <BOSection background={BO.dark}>
         <SectionLabel>The Challenge</SectionLabel>
-        <SectionTitle subtitle="Fresh unicorn status, new GTM leadership, 73.5% headcount growth — BuildOps needs sales infrastructure that scales as fast as the team.">
+        <SectionTitle subtitle="Fresh unicorn status, new GTM leadership, 73.5% headcount growth  - BuildOps needs sales infrastructure that scales as fast as the team.">
           What Keeps Revenue Leaders Up at Night
         </SectionTitle>
 
@@ -601,7 +601,7 @@ export function BuildOpsContent() {
       <BOSection background={BO.darkSubtle} style={{ scrollMarginTop: 80 }}>
         <div id="deliverables" style={{ position: 'absolute', marginTop: -100 }} />
         <SectionLabel>The Solution</SectionLabel>
-        <SectionTitle subtitle="Four systems that integrate with your existing stack — Salesforce, Outreach, ZoomInfo, LeanData — and make every SDR across every vertical 10x more effective.">
+        <SectionTitle subtitle="Four systems that integrate with your existing stack  - Salesforce, Outreach, ZoomInfo, LeanData  - and make every SDR across every vertical 10x more effective.">
           What I Build for You
         </SectionTitle>
 
@@ -820,7 +820,7 @@ export function BuildOpsContent() {
                 margin: '0 0 12px',
               }}
             >
-              Custom-branded to BuildOps. Deeply researched — your $1B valuation, your new CRO and CMO,
+              Custom-branded to BuildOps. Deeply researched  - your $1B valuation, your new CRO and CMO,
               your Raleigh expansion, your 73.5% headcount growth. Built and deployed in a single session
               using the same AI infrastructure I&apos;d build for your team.
             </p>
@@ -991,7 +991,7 @@ export function BuildOpsContent() {
           >
             theGTMOS.ai
           </a>{' '}
-          — the go-to-market operating system
+           - the go-to-market operating system
         </div>
       </BOSection>
     </div>

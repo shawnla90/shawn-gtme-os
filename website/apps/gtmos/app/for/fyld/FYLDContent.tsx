@@ -42,7 +42,7 @@ const challenges = [
   {
     icon: '01',
     title: 'Breaking Into the US Market at Scale',
-    desc: 'New VP of US Utilities (Brett Stein), new Houston presence. FYLD\'s UK traction is proven — now the challenge is replicating that growth in a completely different regulatory and utility landscape.',
+    desc: 'New VP of US Utilities (Brett Stein), new Houston presence. FYLD\'s UK traction is proven  - now the challenge is replicating that growth in a completely different regulatory and utility landscape.',
   },
   {
     icon: '02',
@@ -52,24 +52,24 @@ const challenges = [
   {
     icon: '03',
     title: 'Scaling Beyond 51 People Without Losing Quality',
-    desc: 'FYLD\'s Glassdoor rating is 4.6/5. That\'s rare. As you scale with fresh Series B capital, every new hire — especially in sales — needs to match the culture and quality bar while moving fast.',
+    desc: 'FYLD\'s Glassdoor rating is 4.6/5. That\'s rare. As you scale with fresh Series B capital, every new hire  - especially in sales  - needs to match the culture and quality bar while moving fast.',
   },
   {
     icon: '04',
     title: 'Competing Against Larger Incumbents',
-    desc: 'TotalMobile, Samsara, even ServiceTitan are adjacent. FYLD\'s AI-powered frontline intelligence is differentiated — but only if prospects understand the difference before they default to the bigger brand.',
+    desc: 'TotalMobile, Samsara, even ServiceTitan are adjacent. FYLD\'s AI-powered frontline intelligence is differentiated  - but only if prospects understand the difference before they default to the bigger brand.',
   },
 ]
 
 const deliverables = [
   {
     title: 'Infrastructure Signal Engine',
-    desc: 'Detect buying triggers — new utility capital projects, grid modernization RFPs, safety incidents, regulatory changes — and auto-route them into personalized sequences for operations and safety personas.',
+    desc: 'Detect buying triggers  - new utility capital projects, grid modernization RFPs, safety incidents, regulatory changes  - and auto-route them into personalized sequences for operations and safety personas.',
     tags: ['Signals', 'Utilities', 'Automation'],
   },
   {
     title: 'AI Account Intelligence',
-    desc: 'Enrich every target account with utility-specific data — service territory, regulatory environment, workforce size, current field tech stack, recent capital plans, and safety record.',
+    desc: 'Enrich every target account with utility-specific data  - service territory, regulatory environment, workforce size, current field tech stack, recent capital plans, and safety record.',
     tags: ['AI Research', 'Enrichment', 'Utilities'],
   },
   {
@@ -79,7 +79,7 @@ const deliverables = [
   },
   {
     title: 'Sales Enablement & Playbooks',
-    desc: 'AI-powered playbooks for utilities, heavy civils, and energy verticals. US-market objection handling, compliance-aware messaging, and ROI frameworks based on FYLD\'s proven metrics — 10,400 fieldworker hours saved, 20% incident reduction.',
+    desc: 'AI-powered playbooks for utilities, heavy civils, and energy verticals. US-market objection handling, compliance-aware messaging, and ROI frameworks based on FYLD\'s proven metrics  - 10,400 fieldworker hours saved, 20% incident reduction.',
     tags: ['Playbooks', 'Training', 'AI Coaching'],
   },
 ]
@@ -93,7 +93,7 @@ const engagementSteps = [
   {
     title: 'Build & Deploy',
     subtitle: 'Month 2',
-    desc: 'Infrastructure signal engine goes live. AI enrichment pipelines, outbound automation, HubSpot workflows — all wired together. US-specific playbooks for utilities, heavy civils, and energy.',
+    desc: 'Infrastructure signal engine goes live. AI enrichment pipelines, outbound automation, HubSpot workflows  - all wired together. US-specific playbooks for utilities, heavy civils, and energy.',
   },
   {
     title: 'Enable & Transfer',
@@ -105,7 +105,7 @@ const engagementSteps = [
 const faqItems = [
   {
     question: 'How does the engagement start?',
-    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research on FYLD\'s go-to-market, the US utility landscape, and your competitive positioning — the goal is to identify the highest-leverage automations within the first week.',
+    answer: 'A focused discovery session to map your current stack, workflows, and bottlenecks. I come prepared with research on FYLD\'s go-to-market, the US utility landscape, and your competitive positioning  - the goal is to identify the highest-leverage automations within the first week.',
   },
   {
     question: 'What access do you need?',
@@ -113,7 +113,7 @@ const faqItems = [
   },
   {
     question: 'How does pricing work?',
-    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds — not hours logged.',
+    answer: 'Fixed monthly rate for the 3-month engagement. No hourly billing, no scope creep surprises. The price reflects the value of infrastructure that compounds  - not hours logged.',
   },
   {
     question: 'Can we manage this independently after?',
@@ -121,11 +121,11 @@ const faqItems = [
   },
   {
     question: 'What makes this different from hiring an agency?',
-    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns — once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one campaign.',
+    answer: 'Agencies optimize campaigns. I build infrastructure. The difference is compounding returns  - once the signal engine and enrichment layer are running, they improve your entire pipeline permanently, not just one campaign.',
   },
   {
     question: 'Can this support both UK and US markets?',
-    answer: 'The infrastructure is designed for multi-market scale. Signal routing, playbooks, and enrichment work across geographies — with market-specific customization for regulatory environments, buyer personas, and competitive landscapes.',
+    answer: 'The infrastructure is designed for multi-market scale. Signal routing, playbooks, and enrichment work across geographies  - with market-specific customization for regulatory environments, buyer personas, and competitive landscapes.',
   },
 ]
 
@@ -601,7 +601,7 @@ export function FYLDContent() {
       <FYSection background={FY.darkSubtle} style={{ scrollMarginTop: 80 }}>
         <div id="deliverables" style={{ position: 'absolute', marginTop: -100 }} />
         <SectionLabel>The Solution</SectionLabel>
-        <SectionTitle subtitle="Four systems that integrate with your existing stack — HubSpot, Snowflake, Tableau — and give every sales rep utility-grade intelligence on every account.">
+        <SectionTitle subtitle="Four systems that integrate with your existing stack  - HubSpot, Snowflake, Tableau  - and give every sales rep utility-grade intelligence on every account.">
           What I Build for You
         </SectionTitle>
 
@@ -820,7 +820,7 @@ export function FYLDContent() {
                 margin: '0 0 12px',
               }}
             >
-              Custom-branded to FYLD. Deeply researched — your $41M Series B, your US expansion,
+              Custom-branded to FYLD. Deeply researched  - your $41M Series B, your US expansion,
               your 10,400 fieldworker hours saved metric, your 20% incident reduction. Built and deployed
               in a single session using the same AI infrastructure I&apos;d build for your team.
             </p>
@@ -991,7 +991,7 @@ export function FYLDContent() {
           >
             theGTMOS.ai
           </a>{' '}
-          — the go-to-market operating system
+           - the go-to-market operating system
         </div>
       </FYSection>
     </div>
