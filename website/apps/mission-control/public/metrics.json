@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-26T05:00:06.000Z",
+  "generated": "2026-02-26T05:00:47.000Z",
   "system": {
     "status": "online",
     "uptime": "live",
@@ -52,10 +52,45 @@
   "drafts": [
     {
       "type": "linkedin",
+      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "Building & Sharing (capstone)"
+    },
+    {
+      "type": "x",
+      "title": "Full Ecosystem X Threads -- Day 4",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": null
+    },
+    {
+      "type": "linkedin",
+      "title": "Content OS: The Content Machine -- Day 3",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": "Skill/System Share"
+    },
+    {
+      "type": "linkedin",
+      "title": "LinkedIn Draft: Exa MCP Pre-Enrichment",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": null
+    },
+    {
+      "type": "linkedin",
       "title": "how to ai assistant claude code",
       "status": "draft",
       "date": "2026-02-25",
       "pillar": "Building & Sharing"
+    },
+    {
+      "type": "substack",
+      "title": "Start at Level One",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": null
     },
     {
       "type": "substack",
@@ -66,6 +101,13 @@
     },
     {
       "type": "x",
+      "title": "Content OS X Threads -- Day 3",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": null
+    },
+    {
+      "type": "x",
       "title": "how to ai assistant claude code",
       "status": "draft",
       "date": "2026-02-25",
@@ -73,58 +115,16 @@
     },
     {
       "type": "linkedin",
-      "title": "openclaw honest opinion",
+      "title": "GTM OS: The Infrastructure -- Day 2",
       "status": "draft",
-      "date": "2026-02-23",
-      "pillar": "building-sharing + skill-system-shares"
-    },
-    {
-      "type": "x",
-      "title": "openclaw honest opinion",
-      "status": "draft",
-      "date": "2026-02-23",
-      "pillar": null
-    },
-    {
-      "type": "substack",
-      "title": "recursive drift",
-      "status": "draft",
-      "date": "2026-02-19",
-      "pillar": null
-    },
-    {
-      "type": "linkedin",
-      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
-      "status": "draft",
-      "date": "2026-02-18",
-      "pillar": "Skill/System Shares"
-    },
-    {
-      "type": "x",
-      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
-      "status": "draft",
-      "date": "2026-02-18",
-      "pillar": "Skill/System Shares"
-    },
-    {
-      "type": "linkedin",
-      "title": "Build Your Own OS -- LinkedIn Cross-Promo",
-      "status": "draft",
-      "date": "2026-02-17",
-      "pillar": null
-    },
-    {
-      "type": "reddit",
-      "title": "Build Your Own OS -- Reddit Post",
-      "status": "draft",
-      "date": "2026-02-17",
-      "pillar": null
+      "date": "2026-02-24",
+      "pillar": "Skill/System Share"
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
     "teamMembers": 4,
-    "draftsTracked": 58
+    "draftsTracked": 66
   }
 }

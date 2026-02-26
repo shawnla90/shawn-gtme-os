@@ -1,185 +1,15 @@
 {
   "date": "2026-02-25",
-  "generated_at": "2026-02-26T05:00:02.941168+00:00",
+  "generated_at": "2026-02-26T05:00:19.962217+00:00",
   "version": 4,
   "accomplishments": [
     {
-      "type": "website_page",
-      "title": "shawnos about arc page",
-      "path": "website/apps/shawnos/app/about/arc/page.tsx",
-      "source": "auto",
-      "timestamp": "21:11",
-      "words": 1331,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "contentos home page",
-      "path": "website/apps/contentos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "23:09",
-      "words": 149,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "website_component",
-      "title": "PostCard",
-      "path": "website/packages/shared/components/PostCard.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 175,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log quests page",
-      "path": "website/apps/shawnos/app/log/quests/page.tsx",
-      "source": "auto",
-      "timestamp": "21:05",
-      "words": 187,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos showcase page",
-      "path": "website/apps/shawnos/app/showcase/page.tsx",
-      "source": "auto",
-      "timestamp": "20:44",
-      "words": 1686,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos about page",
-      "path": "website/apps/shawnos/app/about/page.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 139,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos method page",
-      "path": "website/apps/contentos/app/method/page.tsx",
-      "source": "auto",
-      "timestamp": "23:09",
-      "words": 3502,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos for fyld page",
-      "path": "website/apps/gtmos/app/for/fyld/page.tsx",
-      "source": "auto",
-      "timestamp": "23:47",
-      "words": 67,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log date page",
-      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
-      "source": "auto",
-      "timestamp": "21:04",
-      "words": 547,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared posts",
-      "path": "website/packages/shared/lib/posts.ts",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 256,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos search page",
-      "path": "website/apps/contentos/app/search/page.tsx",
-      "source": "auto",
-      "timestamp": "23:09",
-      "words": 296,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos how-to page",
-      "path": "website/apps/shawnos/app/how-to/page.tsx",
-      "source": "auto",
-      "timestamp": "21:28",
-      "words": 682,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos search page",
-      "path": "website/apps/gtmos/app/search/page.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 327,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos for buildops page",
-      "path": "website/apps/gtmos/app/for/buildops/page.tsx",
-      "source": "auto",
-      "timestamp": "23:47",
-      "words": 67,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "mission-control api crm import route",
-      "path": "website/apps/mission-control/app/api/crm/import/route.ts",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 413,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log build-your-own page",
-      "path": "website/apps/shawnos/app/log/build-your-own/page.tsx",
-      "source": "auto",
-      "timestamp": "21:05",
-      "words": 1728,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos blog slug page",
-      "path": "website/apps/shawnos/app/blog/[slug]/page.tsx",
-      "source": "auto",
-      "timestamp": "20:56",
-      "words": 552,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
       "type": "skill_updated",
-      "title": "evaluate",
-      "path": ".claude/skills/evaluate/SKILL.md",
+      "title": "phase-report",
+      "path": ".claude/skills/phase-report/SKILL.md",
       "source": "auto",
-      "timestamp": "18:43",
-      "words": 585,
+      "timestamp": "19:02",
+      "words": 760,
       "value_score": 5,
       "shipped": true
     },
@@ -188,206 +18,38 @@
       "title": "gtmos feed daily-logs.xml route",
       "path": "website/apps/gtmos/app/feed/daily-logs.xml/route.ts",
       "source": "auto",
-      "timestamp": "18:43",
+      "timestamp": "16:50",
       "words": 64,
       "value_score": 3,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos api page",
-      "path": "website/apps/shawnos/app/api/page.tsx",
+      "title": "shawnos context-wiki page",
+      "path": "website/apps/shawnos/app/context-wiki/page.tsx",
       "source": "auto",
-      "timestamp": "20:44",
-      "words": 1349,
+      "timestamp": "23:02",
+      "words": 1053,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos vitals page",
-      "path": "website/apps/shawnos/app/vitals/page.tsx",
+      "title": "shawnos log date page",
+      "path": "website/apps/shawnos/app/log/[date]/page.tsx",
       "source": "auto",
-      "timestamp": "21:04",
-      "words": 233,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "gtmos feed updates.xml route",
-      "path": "website/apps/gtmos/app/feed/updates.xml/route.ts",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 121,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "morning",
-      "path": ".claude/skills/morning/SKILL.md",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 810,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/gtmos/app/globals.css",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 642,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "gtmos feed how-to.xml route",
-      "path": "website/apps/gtmos/app/feed/how-to.xml/route.ts",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 60,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "complex_script",
-      "title": "scout",
-      "path": "scripts/agents/scout.py",
-      "source": "auto",
-      "timestamp": "20:44",
-      "words": 1620,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "contentos package",
-      "path": "website/apps/contentos/package.json",
-      "source": "auto",
-      "timestamp": "23:09",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge gtm page",
-      "path": "website/apps/gtmos/app/knowledge/gtm/page.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 273,
+      "timestamp": "23:02",
+      "words": 547,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos search page",
-      "path": "website/apps/shawnos/app/search/page.tsx",
+      "title": "gtmos for tractian page",
+      "path": "website/apps/gtmos/app/for/tractian/page.tsx",
       "source": "auto",
-      "timestamp": "20:56",
-      "words": 347,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos clay-wiki page",
-      "path": "website/apps/shawnos/app/clay-wiki/page.tsx",
-      "source": "auto",
-      "timestamp": "21:10",
-      "words": 1049,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 355,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos build page",
-      "path": "website/apps/shawnos/app/build/page.tsx",
-      "source": "auto",
-      "timestamp": "20:44",
-      "words": 180,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "substack_draft",
-      "title": "how to setup ai assistant",
-      "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 1333,
-      "value_score": 2,
-      "shipped": false
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos knowledge page",
-      "path": "website/apps/shawnos/app/knowledge/page.tsx",
-      "source": "auto",
-      "timestamp": "21:28",
-      "words": 213,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos method page",
-      "path": "website/apps/shawnos/app/method/page.tsx",
-      "source": "auto",
-      "timestamp": "20:44",
-      "words": 2124,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "mission-control home page",
-      "path": "website/apps/mission-control/app/page.tsx",
-      "source": "auto",
-      "timestamp": "01:27",
-      "words": 819,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "gtmos package",
-      "path": "website/apps/gtmos/package.json",
-      "source": "auto",
-      "timestamp": "20:44",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos blog page",
-      "path": "website/apps/shawnos/app/blog/page.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 137,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos updates page",
-      "path": "website/apps/shawnos/app/updates/page.tsx",
-      "source": "auto",
-      "timestamp": "20:55",
-      "words": 2026,
+      "timestamp": "23:48",
+      "words": 67,
       "value_score": 5,
       "shipped": true
     },
@@ -396,38 +58,18 @@
       "title": "shawnos rpg-preview page",
       "path": "website/apps/shawnos/app/rpg-preview/page.tsx",
       "source": "auto",
-      "timestamp": "21:03",
+      "timestamp": "23:02",
       "words": 548,
       "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "shawnos log progression page",
-      "path": "website/apps/shawnos/app/log/progression/page.tsx",
+      "title": "shawnos clay-wiki page",
+      "path": "website/apps/shawnos/app/clay-wiki/page.tsx",
       "source": "auto",
-      "timestamp": "21:04",
-      "words": 299,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos updates page",
-      "path": "website/apps/gtmos/app/updates/page.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 1634,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos log skill-guide page",
-      "path": "website/apps/shawnos/app/log/skill-guide/page.tsx",
-      "source": "auto",
-      "timestamp": "21:05",
-      "words": 197,
+      "timestamp": "23:02",
+      "words": 1049,
       "value_score": 5,
       "shipped": true
     },
@@ -436,97 +78,48 @@
       "title": "shawnos next config",
       "path": "website/apps/shawnos/next.config.ts",
       "source": "auto",
-      "timestamp": "22:38",
+      "timestamp": "23:02",
       "words": 65,
       "value_score": 0,
       "shipped": true
     },
     {
-      "type": "website_route",
-      "title": "nio-chat api chat route",
-      "path": "website/apps/nio-chat/app/api/chat/route.ts",
+      "type": "website_page",
+      "title": "shawnos updates page",
+      "path": "website/apps/shawnos/app/updates/page.tsx",
       "source": "auto",
-      "timestamp": "00:55",
-      "words": 820,
+      "timestamp": "23:02",
+      "words": 2026,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed how-to.xml route",
+      "path": "website/apps/gtmos/app/feed/how-to.xml/route.ts",
+      "source": "auto",
+      "timestamp": "16:50",
+      "words": 60,
       "value_score": 3,
       "shipped": true
     },
     {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/contentos/app/globals.css",
+      "type": "landing_page",
+      "title": "mission-control home page",
+      "path": "website/apps/mission-control/app/page.tsx",
       "source": "auto",
-      "timestamp": "23:09",
-      "words": 185,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "phase-report",
-      "path": ".claude/skills/phase-report/SKILL.md",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 760,
-      "value_score": 5,
+      "timestamp": "01:33",
+      "words": 819,
+      "value_score": 25,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "contentos react-lab page",
-      "path": "website/apps/contentos/app/react-lab/page.tsx",
+      "title": "shawnos about arc page",
+      "path": "website/apps/shawnos/app/about/arc/page.tsx",
       "source": "auto",
-      "timestamp": "20:44",
-      "words": 413,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "agent-routing",
-      "path": ".claude/skills/agent-routing/SKILL.md",
-      "source": "auto",
-      "timestamp": "00:24",
-      "words": 1246,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos showcase page",
-      "path": "website/apps/contentos/app/showcase/page.tsx",
-      "source": "auto",
-      "timestamp": "23:09",
-      "words": 438,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shawnos package",
-      "path": "website/apps/shawnos/package.json",
-      "source": "auto",
-      "timestamp": "18:43",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/shawnos/app/globals.css",
-      "source": "auto",
-      "timestamp": "22:41",
-      "words": 891,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "22:38",
-      "words": 602,
+      "timestamp": "23:02",
+      "words": 1331,
       "value_score": 5,
       "shipped": true
     },
@@ -535,28 +128,8 @@
       "title": "contentos layout",
       "path": "website/apps/contentos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "23:09",
+      "timestamp": "23:02",
       "words": 247,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos context-wiki page",
-      "path": "website/apps/shawnos/app/context-wiki/page.tsx",
-      "source": "auto",
-      "timestamp": "21:10",
-      "words": 1053,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "discuss",
-      "path": ".claude/skills/discuss/SKILL.md",
-      "source": "auto",
-      "timestamp": "00:24",
-      "words": 828,
       "value_score": 5,
       "shipped": true
     },
@@ -565,37 +138,77 @@
       "title": "gtmos for maintainx page",
       "path": "website/apps/gtmos/app/for/maintainx/page.tsx",
       "source": "auto",
-      "timestamp": "23:47",
+      "timestamp": "23:48",
       "words": 67,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "config_file",
-      "title": "video package",
-      "path": "website/apps/video/package.json",
+      "type": "website_page",
+      "title": "shawnos search page",
+      "path": "website/apps/shawnos/app/search/page.tsx",
       "source": "auto",
-      "timestamp": "00:15",
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "shawnos home page",
-      "path": "website/apps/shawnos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "18:43",
-      "words": 209,
-      "value_score": 25,
+      "timestamp": "23:02",
+      "words": 347,
+      "value_score": 5,
       "shipped": true
     },
     {
       "type": "website_page",
-      "title": "gtmos for tractian page",
-      "path": "website/apps/gtmos/app/for/tractian/page.tsx",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "23:47",
-      "words": 67,
+      "timestamp": "23:02",
+      "words": 602,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "scout",
+      "path": "scripts/agents/scout.py",
+      "source": "auto",
+      "timestamp": "18:25",
+      "words": 1620,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "substack_draft",
+      "title": "how to setup ai assistant",
+      "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 1333,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "config_file",
+      "title": "gtmos package",
+      "path": "website/apps/gtmos/package.json",
+      "source": "auto",
+      "timestamp": "19:30",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos method page",
+      "path": "website/apps/contentos/app/method/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 3502,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos react-lab page",
+      "path": "website/apps/contentos/app/react-lab/page.tsx",
+      "source": "auto",
+      "timestamp": "19:30",
+      "words": 413,
       "value_score": 5,
       "shipped": true
     },
@@ -604,10 +217,504 @@
       "title": "mission-control crm import page",
       "path": "website/apps/mission-control/app/crm/import/page.tsx",
       "source": "auto",
-      "timestamp": "18:43",
+      "timestamp": "15:42",
       "words": 267,
       "value_score": 5,
       "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api crm import route",
+      "path": "website/apps/mission-control/app/api/crm/import/route.ts",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 413,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed updates.xml route",
+      "path": "website/apps/gtmos/app/feed/updates.xml/route.ts",
+      "source": "auto",
+      "timestamp": "16:50",
+      "words": 121,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log progression page",
+      "path": "website/apps/shawnos/app/log/progression/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 299,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shawnos package",
+      "path": "website/apps/shawnos/package.json",
+      "source": "auto",
+      "timestamp": "19:02",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "evaluate",
+      "path": ".claude/skills/evaluate/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 585,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos for fyld page",
+      "path": "website/apps/gtmos/app/for/fyld/page.tsx",
+      "source": "auto",
+      "timestamp": "23:48",
+      "words": 67,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos showcase page",
+      "path": "website/apps/shawnos/app/showcase/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 1686,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "contentos package",
+      "path": "website/apps/contentos/package.json",
+      "source": "auto",
+      "timestamp": "23:02",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos blog page",
+      "path": "website/apps/shawnos/app/blog/page.tsx",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 137,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "shawnos home page",
+      "path": "website/apps/shawnos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 209,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log skill-guide page",
+      "path": "website/apps/shawnos/app/log/skill-guide/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 197,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge gtm page",
+      "path": "website/apps/gtmos/app/knowledge/gtm/page.tsx",
+      "source": "auto",
+      "timestamp": "15:51",
+      "words": 273,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log quests page",
+      "path": "website/apps/shawnos/app/log/quests/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 187,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos method page",
+      "path": "website/apps/shawnos/app/method/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 2124,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos showcase page",
+      "path": "website/apps/contentos/app/showcase/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 438,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "PostCard",
+      "path": "website/packages/shared/components/PostCard.tsx",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 175,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared posts",
+      "path": "website/packages/shared/lib/posts.ts",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 256,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/gtmos/app/globals.css",
+      "source": "auto",
+      "timestamp": "19:30",
+      "words": 169,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "video package",
+      "path": "website/apps/video/package.json",
+      "source": "auto",
+      "timestamp": "01:33",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos search page",
+      "path": "website/apps/gtmos/app/search/page.tsx",
+      "source": "auto",
+      "timestamp": "16:50",
+      "words": 327,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "agent-routing",
+      "path": ".claude/skills/agent-routing/SKILL.md",
+      "source": "auto",
+      "timestamp": "01:33",
+      "words": 1246,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos knowledge page",
+      "path": "website/apps/shawnos/app/knowledge/page.tsx",
+      "source": "auto",
+      "timestamp": "03:12",
+      "words": 213,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos build page",
+      "path": "website/apps/shawnos/app/build/page.tsx",
+      "source": "auto",
+      "timestamp": "19:38",
+      "words": 180,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos api page",
+      "path": "website/apps/shawnos/app/api/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 1349,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "16:51",
+      "words": 355,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos updates page",
+      "path": "website/apps/gtmos/app/updates/page.tsx",
+      "source": "auto",
+      "timestamp": "16:51",
+      "words": 1634,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos search page",
+      "path": "website/apps/contentos/app/search/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 296,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos about page",
+      "path": "website/apps/shawnos/app/about/page.tsx",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 139,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "contentos home page",
+      "path": "website/apps/contentos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 149,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/contentos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 185,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos log build-your-own page",
+      "path": "website/apps/shawnos/app/log/build-your-own/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 1728,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "nio-chat api chat route",
+      "path": "website/apps/nio-chat/app/api/chat/route.ts",
+      "source": "auto",
+      "timestamp": "01:33",
+      "words": 820,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "morning",
+      "path": ".claude/skills/morning/SKILL.md",
+      "source": "auto",
+      "timestamp": "19:02",
+      "words": 810,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "discuss",
+      "path": ".claude/skills/discuss/SKILL.md",
+      "source": "auto",
+      "timestamp": "01:33",
+      "words": 828,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/shawnos/app/globals.css",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 891,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos how-to page",
+      "path": "website/apps/shawnos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "15:42",
+      "words": 682,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos blog slug page",
+      "path": "website/apps/shawnos/app/blog/[slug]/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 552,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos for buildops page",
+      "path": "website/apps/gtmos/app/for/buildops/page.tsx",
+      "source": "auto",
+      "timestamp": "23:48",
+      "words": 67,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos vitals page",
+      "path": "website/apps/shawnos/app/vitals/page.tsx",
+      "source": "auto",
+      "timestamp": "23:02",
+      "words": 233,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "contentos machine",
+      "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+      "source": "auto",
+      "timestamp": "19:06",
+      "words": 896,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "linkedin_draft",
+      "title": "exa mcp pre enrichment",
+      "path": "content/linkedin/drafts/2026-02-25_exa-mcp-pre-enrichment.md",
+      "source": "auto",
+      "timestamp": "02:46",
+      "words": 336,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "contentos threads",
+      "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+      "source": "auto",
+      "timestamp": "19:08",
+      "words": 567,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "code_infra",
+      "title": "exa_icebreaker_enrichment",
+      "path": "scripts/exa_icebreaker_enrichment.py",
+      "source": "auto-mtime",
+      "timestamp": "00:54",
+      "words": 840,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "code_infra",
+      "title": "exa_signal_detection",
+      "path": "scripts/exa_signal_detection.py",
+      "source": "auto-mtime",
+      "timestamp": "01:04",
+      "words": 933,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "code_infra",
+      "title": "exa_influencer_widening",
+      "path": "scripts/exa_influencer_widening.py",
+      "source": "auto-mtime",
+      "timestamp": "01:20",
+      "words": 753,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "landing-page",
+      "path": ".claude/skills/landing-page/SKILL.md",
+      "source": "auto-mtime",
+      "timestamp": "20:15",
+      "words": 1458,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "code_infra",
+      "title": "exa_find_similar",
+      "path": "scripts/exa_find_similar.py",
+      "source": "auto-mtime",
+      "timestamp": "01:21",
+      "words": 579,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "code_infra",
+      "title": "sentinel",
+      "path": "scripts/agents/sentinel.py",
+      "source": "auto-mtime",
+      "timestamp": "14:47",
+      "words": 753,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "complex_script",
+      "title": "[redacted]_clay_prep",
+      "path": "scripts/[redacted]_clay_prep.py",
+      "source": "auto-mtime",
+      "timestamp": "01:52",
+      "words": 2147,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
     }
   ],
   "commits": [
@@ -1304,10 +1411,31 @@
       },
       {
         "platform": "linkedin",
-        "title": "openclaw honest opinion",
-        "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
         "target_date": "2026-02-23",
-        "words": 542
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
+      },
+      {
+        "platform": "linkedin",
+        "title": "exa mcp pre enrichment",
+        "path": "content/linkedin/drafts/2026-02-25_exa-mcp-pre-enrichment.md",
+        "target_date": "2026-02-25",
+        "words": 336
       },
       {
         "platform": "linkedin",
@@ -1315,6 +1443,13 @@
         "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
         "target_date": "2026-02-25",
         "words": 437
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
       },
       {
         "platform": "x",
@@ -1472,10 +1607,24 @@
       },
       {
         "platform": "x",
-        "title": "openclaw honest opinion",
-        "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
         "target_date": "2026-02-23",
-        "words": 170
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
       },
       {
         "platform": "x",
@@ -1483,6 +1632,13 @@
         "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
         "target_date": "2026-02-25",
         "words": 259
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
       },
       {
         "platform": "substack",
@@ -1528,6 +1684,13 @@
       },
       {
         "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1543
+      },
+      {
+        "platform": "substack",
         "title": "how to setup ai assistant",
         "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
         "target_date": "2026-02-25",
@@ -1551,18 +1714,229 @@
     "finalized_today": []
   },
   "todos": [],
-  "token_usage": [],
+  "token_usage": [
+    {
+      "session_id": "22369e4e-8d37-4b4b-a6eb-505309952cee",
+      "input_tokens": 68,
+      "output_tokens": 1549,
+      "cache_read_tokens": 3901734,
+      "cache_write_tokens": 110682,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 52,
+      "logged_at": "00:00",
+      "cost": 8.0451,
+      "context": "claude-code 01:23"
+    },
+    {
+      "session_id": "3dce4af3-a0c1-4898-8cd7-9be35deb67a6",
+      "input_tokens": 68,
+      "output_tokens": 2854,
+      "cache_read_tokens": 1861272,
+      "cache_write_tokens": 195958,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 52,
+      "logged_at": "00:00",
+      "cost": 6.6812,
+      "context": "claude-code 21:27"
+    },
+    {
+      "session_id": "3f309b7e-c004-4081-a80c-e6d89b9097f0",
+      "input_tokens": 138,
+      "output_tokens": 6797,
+      "cache_read_tokens": 7160156,
+      "cache_write_tokens": 374753,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 98,
+      "logged_at": "00:00",
+      "cost": 18.2787,
+      "context": "claude-code 18:31"
+    },
+    {
+      "session_id": "44b05895-d201-4abd-9f9a-4a40c04c4e82",
+      "input_tokens": 27,
+      "output_tokens": 585,
+      "cache_read_tokens": 450553,
+      "cache_write_tokens": 96849,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 19,
+      "logged_at": "00:00",
+      "cost": 2.536,
+      "context": "claude-code 23:10"
+    },
+    {
+      "session_id": "5d035c54-ab2b-4e89-91cb-1632ade2871c",
+      "input_tokens": 19,
+      "output_tokens": 2311,
+      "cache_read_tokens": 440756,
+      "cache_write_tokens": 60525,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 7,
+      "logged_at": "00:00",
+      "cost": 1.9696,
+      "context": "claude-code 02:47"
+    },
+    {
+      "session_id": "7937d0b9-e936-468c-b502-9d790e4035af",
+      "input_tokens": 3430,
+      "output_tokens": 583,
+      "cache_read_tokens": 982054,
+      "cache_write_tokens": 70713,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 38,
+      "logged_at": "00:00",
+      "cost": 2.8941,
+      "context": "claude-code 07:53"
+    },
+    {
+      "session_id": "7c7d37cb-dbe8-48c7-8a29-af8c4d227a17",
+      "input_tokens": 2781,
+      "output_tokens": 18956,
+      "cache_read_tokens": 12113475,
+      "cache_write_tokens": 326736,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 139,
+      "logged_at": "00:00",
+      "cost": 25.7599,
+      "context": "claude-code 19:03"
+    },
+    {
+      "session_id": "875ed3f1-b3ab-4519-bfe7-737665f93bce",
+      "input_tokens": 28,
+      "output_tokens": 522,
+      "cache_read_tokens": 359244,
+      "cache_write_tokens": 83422,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 16,
+      "logged_at": "00:00",
+      "cost": 2.1426,
+      "context": "claude-code 07:58"
+    },
+    {
+      "session_id": "8888ded0-b4a2-49aa-b945-a3a9ce00ac2e",
+      "input_tokens": 3930,
+      "output_tokens": 3895,
+      "cache_read_tokens": 11478350,
+      "cache_write_tokens": 893134,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 157,
+      "logged_at": "00:00",
+      "cost": 34.3149,
+      "context": "claude-code 04:44"
+    },
+    {
+      "session_id": "a232e111-37a0-408d-bbc1-442c03202d72",
+      "input_tokens": 18,
+      "output_tokens": 1959,
+      "cache_read_tokens": 260285,
+      "cache_write_tokens": 118798,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 13,
+      "logged_at": "00:00",
+      "cost": 2.7651,
+      "context": "claude-code 22:12"
+    },
+    {
+      "session_id": "a33b20ff-1ce8-4f63-a191-8ae97f2c28ba",
+      "input_tokens": 101,
+      "output_tokens": 17421,
+      "cache_read_tokens": 3760894,
+      "cache_write_tokens": 268111,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 67,
+      "logged_at": "00:00",
+      "cost": 11.9765,
+      "context": "claude-code 06:34"
+    },
+    {
+      "session_id": "a3d2a109-bde4-4b02-aaf8-c0b8732c0aac",
+      "input_tokens": 56,
+      "output_tokens": 3607,
+      "cache_read_tokens": 1169668,
+      "cache_write_tokens": 69360,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 36,
+      "logged_at": "00:00",
+      "cost": 3.3264,
+      "context": "claude-code 21:48"
+    },
+    {
+      "session_id": "b8ce2a0b-9818-4791-995b-09c3a55d0e91",
+      "input_tokens": 14,
+      "output_tokens": 52,
+      "cache_read_tokens": 102950,
+      "cache_write_tokens": 13670,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 6,
+      "logged_at": "00:00",
+      "cost": 0.4148,
+      "context": "claude-code 04:13"
+    },
+    {
+      "session_id": "bb4b60dd-0274-461c-b5b8-dda0958d20a9",
+      "input_tokens": 1429,
+      "output_tokens": 4386,
+      "cache_read_tokens": 2929563,
+      "cache_write_tokens": 139903,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 72,
+      "logged_at": "00:00",
+      "cost": 7.3679,
+      "context": "claude-code 03:41"
+    },
+    {
+      "session_id": "c09fa282-5902-4013-8a87-b1f6e32fc657",
+      "input_tokens": 4324,
+      "output_tokens": 13797,
+      "cache_read_tokens": 9044488,
+      "cache_write_tokens": 299822,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 121,
+      "logged_at": "00:00",
+      "cost": 20.288,
+      "context": "claude-code 05:32"
+    },
+    {
+      "session_id": "d31fda47-0fb7-46f1-b78c-9faf6fabd2fa",
+      "input_tokens": 177381,
+      "output_tokens": 4729,
+      "cache_read_tokens": 9431203,
+      "cache_write_tokens": 331771,
+      "model": "opus",
+      "source": "claude-code",
+      "messages": 149,
+      "logged_at": "00:00",
+      "cost": 23.3829,
+      "context": "claude-code 21:49"
+    }
+  ],
   "stats": {
     "platform_breakdown": {
+      "other": 21,
       "website": 46,
-      "other": 14,
-      "substack": 1
+      "substack": 1,
+      "linkedin": 2,
+      "x": 1
     },
-    "words_in_touched_files": 37280,
-    "pipeline_words": 40692,
+    "words_in_touched_files": 46069,
+    "pipeline_words": 47685,
     "finals_count": 0,
-    "first_activity": "00:15",
-    "last_activity": "23:58",
+    "first_activity": "00:54",
+    "last_activity": "23:48",
     "output_score": 678,
     "letter_grade": "S",
     "score_breakdown": [
@@ -1752,14 +2126,14 @@
         "points": 8
       }
     ],
-    "efficiency_rating": null,
+    "efficiency_rating": 3.94,
     "shipped_count": 60,
-    "draft_count": 1,
-    "ship_rate": 0.98,
-    "agent_cost": 0,
-    "cost_per_point": 0.0,
-    "efficiency_ratio": null,
-    "words_today": 37280,
+    "draft_count": 11,
+    "ship_rate": 0.85,
+    "agent_cost": 172.14,
+    "cost_per_point": 0.25,
+    "efficiency_ratio": 3.94,
+    "words_today": 46069,
     "lines_added": 28686,
     "lines_removed": 6559,
     "lines_net": 22127,
@@ -2076,19 +2450,19 @@
     }
   },
   "cost": {
-    "api_equivalent": 0,
+    "api_equivalent": 172.14,
     "actual_cost": 0.0,
     "pricing_mode": "max"
   },
   "token_efficiency": {
-    "total_tokens": 0,
-    "total_sessions": 0,
-    "tokens_per_point": 0,
-    "tokens_per_commit": 0,
-    "tokens_per_loc": 0,
-    "avg_context_utilization": 0,
+    "total_tokens": 69178667,
+    "total_sessions": 16,
+    "tokens_per_point": 102033,
+    "tokens_per_commit": 1869694,
+    "tokens_per_loc": 3126,
+    "avg_context_utilization": 0.97,
     "pricing_mode": "max",
-    "api_equivalent_cost": 0,
+    "api_equivalent_cost": 172.14,
     "actual_cost": 0.0
   }
 }
