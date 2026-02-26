@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-25T06:27:36.156Z",
+  "generated": "2026-02-26T05:00:06.000Z",
   "system": {
     "status": "online",
     "uptime": "live",
@@ -51,34 +51,80 @@
   ],
   "drafts": [
     {
-      "type": "substack",
-      "title": "2026-02-17 Build-Your-Own-Os",
-      "status": "ready to ship"
+      "type": "linkedin",
+      "title": "how to ai assistant claude code",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": "Building & Sharing"
     },
     {
       "type": "substack",
-      "title": "2026-02-14 Cursor-Discovery",
-      "status": "ready to ship"
+      "title": "how to setup ai assistant",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": null
+    },
+    {
+      "type": "x",
+      "title": "how to ai assistant claude code",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "linkedin",
+      "title": "openclaw honest opinion",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": "building-sharing + skill-system-shares"
+    },
+    {
+      "type": "x",
+      "title": "openclaw honest opinion",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": null
     },
     {
       "type": "substack",
-      "title": "2026-02-13 Build-Day",
-      "status": "ready to ship"
+      "title": "recursive drift",
+      "status": "draft",
+      "date": "2026-02-19",
+      "pillar": null
     },
     {
-      "type": "substack",
-      "title": "2026-02-19 Recursive-Drift",
-      "status": "ready to ship"
+      "type": "linkedin",
+      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
+      "status": "draft",
+      "date": "2026-02-18",
+      "pillar": "Skill/System Shares"
     },
     {
-      "type": "substack",
-      "title": "2026-02-24 Start-At-Level-One",
-      "status": "ready to ship"
+      "type": "x",
+      "title": "Parallel Agents + Plan Mode \u2014 The Master Unlock",
+      "status": "draft",
+      "date": "2026-02-18",
+      "pillar": "Skill/System Shares"
+    },
+    {
+      "type": "linkedin",
+      "title": "Build Your Own OS -- LinkedIn Cross-Promo",
+      "status": "draft",
+      "date": "2026-02-17",
+      "pillar": null
+    },
+    {
+      "type": "reddit",
+      "title": "Build Your Own OS -- Reddit Post",
+      "status": "draft",
+      "date": "2026-02-17",
+      "pillar": null
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
-    "teamMembers": 4
+    "teamMembers": 4,
+    "draftsTracked": 58
   }
 }
