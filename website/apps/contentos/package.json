@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@shawnos/shared": "*",
+    "framer-motion": "^12.34.3",
     "next": "^15",
     "react": "^19",
     "react-dom": "^19",

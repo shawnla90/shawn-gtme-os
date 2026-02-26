@@ -65,8 +65,10 @@ export default function RootLayout({
             { href: '/content-wiki', label: 'Content Wiki' },
             { href: 'https://shawnos.ai/knowledge', label: 'Knowledge' },
             { href: 'https://thegtmos.ai/clay-wiki', label: 'Clay Wiki' },
+            { href: '/method', label: 'Method' },
+            { href: '/showcase', label: 'Showcase' },
+            { href: '/search', label: 'Search' },
             { href: '/log', label: 'Log' },
-            { href: '/react-lab', label: 'React Lab' },
             { href: '/vitals', label: 'Vitals' },
             { href: '/updates', label: 'Updates' },
           ]}
