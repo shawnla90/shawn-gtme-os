@@ -7,6 +7,7 @@ import {
 import type { ClayWikiCategory } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
+import { PageHero, ScrollRevealSection } from '../WikiReveal'
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -304,24 +305,16 @@ export default function ClayWikiPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div style={pageWrap}>
-        {/* Terminal header */}
-        <h1 style={terminalHeader}>
-          <span style={{ color: 'var(--accent)' }}>$</span> cd ~/clay-wiki
-        </h1>
+      <PageHero
+        compact
+        title="Clay Wiki"
+        subtitle="The practitioner's guide to Clay."
+      />
 
-        {/* Hero section with sprite */}
+      {/* Hero stats + sprite */}
+      <ScrollRevealSection background="var(--canvas)">
         <div style={heroSection}>
           <div style={heroText}>
-            <h2 style={heroTitle}>Clay Wiki</h2>
-            <p style={heroDesc}>
-              The practitioner&apos;s guide to Clay. Not the docs — the patterns, plays, and
-              hard-won opinions from building real GTM pipelines. Enrichment architecture,
-              scoring systems, Claygent prompt engineering, formulas, and every workflow
-              pattern I use in production.
-            </p>
-
-            {/* Stats */}
             <div style={statsRow}>
               <div style={statBox}>
                 <span style={statNum}>{entryCount}</span>
@@ -337,14 +330,12 @@ export default function ClayWikiPage() {
               </div>
             </div>
 
-            {/* Certification badge */}
             <div style={certBadge}>
               <span style={{ fontSize: '16px' }}>&#9670;</span>
               Clay Certified Practitioner &middot; 98/100
             </div>
           </div>
 
-          {/* Clay sprite */}
           <div style={spriteWrap}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -356,39 +347,38 @@ export default function ClayWikiPage() {
             />
           </div>
         </div>
+      </ScrollRevealSection>
 
-        <hr style={divider} />
-
-        {/* Category sections */}
-        {CLAY_WIKI_CATEGORIES.map((cat) => {
-          const entries = CLAY_WIKI_ENTRIES.filter((e) => e.category === cat.id)
-          return (
-            <div key={cat.id} style={categorySection}>
-              <div style={categoryHeader}>{cat.prompt}</div>
-              <h3 style={categoryTitle}>{cat.label}</h3>
-              <p style={categoryDesc}>{cat.description}</p>
-              <div style={cardGrid}>
-                {entries.map((entry) => (
-                  <Link
-                    key={entry.id}
-                    href={`/clay-wiki/${entry.id}`}
-                    style={card}
-                  >
-                    <div style={cardTitle}>{entry.title}</div>
-                    <div style={cardSubtitle}>{entry.subtitle}</div>
-                    <div style={cardMeta}>
-                      <span style={diffBadge(entry.difficulty)}>
-                        {entry.difficulty}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+      {/* Category sections */}
+      {CLAY_WIKI_CATEGORIES.map((cat, idx) => {
+        const entries = CLAY_WIKI_ENTRIES.filter((e) => e.category === cat.id)
+        return (
+          <ScrollRevealSection key={cat.id} background={idx % 2 === 0 ? 'var(--canvas-subtle)' : 'var(--canvas)'}>
+            <h3 style={categoryTitle}>{cat.label}</h3>
+            <p style={categoryDesc}>{cat.description}</p>
+            <div style={cardGrid}>
+              {entries.map((entry) => (
+                <Link
+                  key={entry.id}
+                  href={`/clay-wiki/${entry.id}`}
+                  style={card}
+                >
+                  <div style={cardTitle}>{entry.title}</div>
+                  <div style={cardSubtitle}>{entry.subtitle}</div>
+                  <div style={cardMeta}>
+                    <span style={diffBadge(entry.difficulty)}>
+                      {entry.difficulty}
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
-          )
-        })}
+          </ScrollRevealSection>
+        )
+      })}
 
-        {/* Navigation */}
+      {/* Navigation */}
+      <ScrollRevealSection background="var(--canvas)">
         <div style={navRow}>
           <Link href="/knowledge" style={navLink}>
             &larr; knowledge guide
@@ -397,7 +387,7 @@ export default function ClayWikiPage() {
             gtm terms &rarr;
           </Link>
         </div>
-      </div>
+      </ScrollRevealSection>
     </>
   )
 }

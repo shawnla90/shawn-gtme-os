@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { KnowledgeGuidePage } from '@shawnos/shared/pages/KnowledgeGuidePage'
 import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { PageHero } from '../WikiReveal'
 
 export const metadata: Metadata = {
   title: 'Knowledge Guide | Engineering & AI Terms You Actually Need',
@@ -66,6 +67,7 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
+      <PageHero compact title="Knowledge Guide" subtitle="Engineering & AI terms you actually need." />
       <KnowledgeGuidePage />
     </>
   )

@@ -6,6 +6,7 @@ import {
 } from '@shawnos/shared/data/context-wiki'
 import type { ContextWikiCategory } from '@shawnos/shared/data/context-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { PageHero, ScrollRevealSection } from '../WikiReveal'
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -296,79 +297,65 @@ export default function ContextWikiPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <div style={pageWrap}>
-        {/* Terminal header */}
-        <h1 style={terminalHeader}>
-          <span style={{ color: 'var(--accent)' }}>$</span> cd ~/context-wiki
-        </h1>
+      <PageHero
+        compact
+        title="Context Engineering"
+        subtitle="Give AI the right context. Stop guessing."
+      />
 
-        {/* Hero section */}
-        <div style={heroSection}>
-          <div style={heroText}>
-            <h2 style={heroTitle}>Context Engineering Wiki</h2>
-            <p style={heroDesc}>
-              The practitioner&apos;s guide to context engineering. Not theory. The
-              patterns, workflows, and infrastructure I use every day to build GTM
-              systems with AI agents. How to give AI the right context so it stops
-              guessing and starts executing.
-            </p>
-
-            {/* Stats */}
-            <div style={statsRow}>
-              <div style={statBox}>
-                <span style={statNum}>{entryCount}</span>
-                <span style={statLabel}>Wiki Entries</span>
-              </div>
-              <div style={statBox}>
-                <span style={statNum}>{categoryCount}</span>
-                <span style={statLabel}>Categories</span>
-              </div>
-              <div style={statBox}>
-                <span style={statNum}>40+</span>
-                <span style={statLabel}>Skills Built</span>
-              </div>
-            </div>
-
-            {/* Badge */}
-            <div style={certBadge}>
-              <span style={{ fontSize: '16px' }}>&#9670;</span>
-              Context Engineer
-            </div>
+      {/* Hero stats */}
+      <ScrollRevealSection background="var(--canvas)">
+        <div style={statsRow}>
+          <div style={statBox}>
+            <span style={statNum}>{entryCount}</span>
+            <span style={statLabel}>Wiki Entries</span>
+          </div>
+          <div style={statBox}>
+            <span style={statNum}>{categoryCount}</span>
+            <span style={statLabel}>Categories</span>
+          </div>
+          <div style={statBox}>
+            <span style={statNum}>40+</span>
+            <span style={statLabel}>Skills Built</span>
           </div>
         </div>
 
-        <hr style={divider} />
+        <div style={certBadge}>
+          <span style={{ fontSize: '16px' }}>&#9670;</span>
+          Context Engineer
+        </div>
+      </ScrollRevealSection>
 
-        {/* Category sections */}
-        {CONTEXT_WIKI_CATEGORIES.map((cat) => {
-          const entries = CONTEXT_WIKI_ENTRIES.filter((e) => e.category === cat.id)
-          return (
-            <div key={cat.id} style={categorySection}>
-              <div style={categoryHeader}>{cat.prompt}</div>
-              <h3 style={categoryTitle}>{cat.label}</h3>
-              <p style={categoryDesc}>{cat.description}</p>
-              <div style={cardGrid}>
-                {entries.map((entry) => (
-                  <Link
-                    key={entry.id}
-                    href={`/context-wiki/${entry.id}`}
-                    style={card}
-                  >
-                    <div style={cardTitle}>{entry.title}</div>
-                    <div style={cardSubtitle}>{entry.subtitle}</div>
-                    <div style={cardMeta}>
-                      <span style={diffBadge(entry.difficulty)}>
-                        {entry.difficulty}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+      {/* Category sections */}
+      {CONTEXT_WIKI_CATEGORIES.map((cat, idx) => {
+        const entries = CONTEXT_WIKI_ENTRIES.filter((e) => e.category === cat.id)
+        return (
+          <ScrollRevealSection key={cat.id} background={idx % 2 === 0 ? 'var(--canvas-subtle)' : 'var(--canvas)'}>
+            <h3 style={categoryTitle}>{cat.label}</h3>
+            <p style={categoryDesc}>{cat.description}</p>
+            <div style={cardGrid}>
+              {entries.map((entry) => (
+                <Link
+                  key={entry.id}
+                  href={`/context-wiki/${entry.id}`}
+                  style={card}
+                >
+                  <div style={cardTitle}>{entry.title}</div>
+                  <div style={cardSubtitle}>{entry.subtitle}</div>
+                  <div style={cardMeta}>
+                    <span style={diffBadge(entry.difficulty)}>
+                      {entry.difficulty}
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
-          )
-        })}
+          </ScrollRevealSection>
+        )
+      })}
 
-        {/* Navigation */}
+      {/* Navigation */}
+      <ScrollRevealSection background="var(--canvas)">
         <div style={navRow}>
           <Link href="/knowledge" style={navLink}>
             &larr; knowledge guide
@@ -377,7 +364,7 @@ export default function ContextWikiPage() {
             clay wiki &rarr;
           </Link>
         </div>
-      </div>
+      </ScrollRevealSection>
     </>
   )
 }
