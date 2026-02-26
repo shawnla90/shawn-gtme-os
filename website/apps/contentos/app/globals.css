@@ -4,25 +4,31 @@
 /* === thecontentos.ai accent override === */
 :root {
   --accent: #9B72CF;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* === Base body styles === */
 html body {
   margin: 0;
-  padding: 24px;
+  padding: 0;
   background: var(--canvas);
   color: var(--text-primary);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Main gutters */
+main {
+  padding: 0 24px;
+}
+
 @media (max-width: 768px) {
-  html body { padding: 12px; }
+  main { padding: 0 16px; }
 }
 
 @media (max-width: 480px) {
-  html body { padding: 8px; }
+  main { padding: 0 12px; }
 }
 
 /* === Layout utilities === */
@@ -35,19 +41,19 @@ html body {
 
 @media (max-width: 768px) {
   .full-bleed {
-    margin-left: -12px;
-    margin-right: -12px;
-    padding-left: 12px;
-    padding-right: 12px;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 
 @media (max-width: 480px) {
   .full-bleed {
-    margin-left: -8px;
-    margin-right: -8px;
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
 
@@ -83,4 +89,89 @@ html body {
 
 .scroll-indicator {
   animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+/* === Smooth scrolling === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Built-with logo hover (pure CSS) === */
+.builtwith-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #8B949E;
+  transition: color 0.15s ease, transform 0.15s ease;
+  cursor: default;
+  position: relative;
+}
+.builtwith-logo:hover {
+  color: var(--brand-color, #8B949E);
+  transform: scale(1.15);
+}
+.builtwith-logo .builtwith-label {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: transparent;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.builtwith-logo:hover .builtwith-label {
+  color: currentColor;
+}
+
+/* === FAQ accordion (CSS transitions) === */
+.faq-chevron {
+  color: var(--accent);
+  font-size: 14px;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.faq-chevron.open {
+  transform: rotate(90deg);
+}
+.faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  opacity: 0;
+}
+.faq-answer-wrapper.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+/* === CTA primary hover === */
+.cta-primary {
+  transition: opacity 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.cta-primary:hover {
+  box-shadow: 0 8px 24px rgba(155, 114, 207, 0.3);
+  transform: translateY(-1px);
+}
+
+/* === CTA secondary hover === */
+.cta-secondary {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.cta-secondary:hover {
+  background: rgba(155, 114, 207, 0.05);
+}
+
+/* === Content card hover === */
+.content-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.content-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(155, 114, 207, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }

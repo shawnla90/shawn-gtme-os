@@ -1,9 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { LogCard, TypewriterHero, ScrambleCycler, AvatarBadge } from '@shawnos/shared/components'
+import { LogCard, ScrambleCycler, AvatarBadge } from '@shawnos/shared/components'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
 import { VideoShowcase } from './VideoShowcase'
+import { SectionHeadline } from './components/SectionHeadline'
+import { FAQAccordion } from './components/FAQAccordion'
+import { BuiltWithStrip } from './components/BuiltWithStrip'
 import {
   MotionReveal,
   StaggerContainer,
@@ -30,7 +33,7 @@ const featuredSections = [
   },
   {
     title: 'How-To Guides',
-    desc: '38 step-by-step playbooks for real content tasks. From writing a first LinkedIn post to building recursive content loops. No theory -- just execution.',
+    desc: '38 step-by-step playbooks for real content tasks. From writing a first LinkedIn post to building recursive content loops. No theory - just execution.',
     href: '/how-to',
     command: 'ls ~/how-to --all',
   },
@@ -67,7 +70,7 @@ const painPoints: string[] = [
   'You want to grow. But every platform rewrites your voice.',
   'LinkedIn has its rules. X has its rules. Substack, TikTok, Reddit. All different.',
   'People make it look easy. It\'s not. It takes real work.',
-  'The energy it takes to adapt, engage, and thread across platforms -- that\'s the hidden cost nobody talks about.',
+  'The energy it takes to adapt, engage, and thread across platforms - that\'s the hidden cost nobody talks about.',
   'You shouldn\'t have to navigate a million tabs to be yourself everywhere.',
 ]
 
@@ -80,47 +83,66 @@ const bootLines = [
   { status: 'OK', label: 'network link ... theGTMOS.ai' },
 ]
 
+const faqLinkStyle: React.CSSProperties = {
+  color: 'var(--accent)',
+  textDecoration: 'none',
+  fontWeight: 600,
+}
+
+const faqItems: { question: string; answer: React.ReactNode }[] = [
+  {
+    question: 'What is a content operating system?',
+    answer: (
+      <>
+        A content operating system is a code-based infrastructure for creating, distributing, and compounding content across platforms. Instead of a content calendar or spreadsheet, you build voice rules, platform playbooks, and production pipelines in version-controlled files.{' '}
+        <Link href="/method" style={faqLinkStyle}>read the full method &rarr;</Link>
+      </>
+    ),
+  },
+  {
+    question: 'What is Voice DNA?',
+    answer: (
+      <>
+        Voice DNA is the foundational layer of the 3-tier system. It encodes your cadence, vocabulary, anti-patterns, and identity markers into files that AI agents read before generating any content. Same voice, every platform, every time.{' '}
+        <Link href="/content-wiki" style={faqLinkStyle}>explore the wiki &rarr;</Link>
+      </>
+    ),
+  },
+  {
+    question: 'How do platform playbooks work?',
+    answer: (
+      <>
+        Each platform gets its own playbook that inherits from your Voice DNA. The LinkedIn playbook knows paragraph structure, emoji usage, and CTA patterns. The TikTok playbook knows 16-second structures and hook formats. Same voice, different container.{' '}
+        <Link href="/how-to" style={faqLinkStyle}>see the playbooks &rarr;</Link>
+      </>
+    ),
+  },
+  {
+    question: 'How does the recursive feedback loop work?',
+    answer: (
+      <>
+        Every published post teaches the system. Performance data feeds back into voice rules. When the anti-slop guide catches a new pattern, it gets added. When a hook style outperforms, it gets documented. The 100th post is easier than the 1st.{' '}
+        <Link href="/method" style={faqLinkStyle}>see the architecture &rarr;</Link>
+      </>
+    ),
+  },
+  {
+    question: 'Can I build my own Content OS?',
+    answer: (
+      <>
+        Absolutely. The wiki, how-to guides, and method page document the entire system. Start with Voice DNA (who you are), add platform playbooks (how you adapt), then build content ops (how you ship). Everything here is public.{' '}
+        <Link href="/how-to" style={faqLinkStyle}>start with the guides &rarr;</Link>
+      </>
+    ),
+  },
+]
+
 const ctaLinks = [
   { label: 'Browse the wiki', href: '/content-wiki', internal: true },
   { label: 'Read how-to guides', href: '/how-to', internal: true },
   { label: 'Explore the lab', href: '/react-lab', internal: true },
   { label: 'View GTM OS', href: 'https://thegtmos.ai', internal: false },
 ]
-
-/* ── section headline helper ─────────────────────── */
-
-function SectionHeadline({ children, subtitle }: { children: React.ReactNode; subtitle?: string }) {
-  return (
-    <div style={{ marginBottom: 32 }}>
-      <h2
-        style={{
-          fontSize: 'clamp(28px, 4vw, 42px)',
-          fontWeight: 700,
-          color: 'var(--text-primary)',
-          fontFamily: 'var(--font-mono)',
-          lineHeight: 1.2,
-          margin: 0,
-        }}
-      >
-        {children}
-      </h2>
-      {subtitle && (
-        <p
-          style={{
-            fontSize: 'clamp(14px, 1.5vw, 16px)',
-            color: 'var(--text-secondary)',
-            fontFamily: 'var(--font-mono)',
-            marginTop: 8,
-            margin: '8px 0 0',
-            lineHeight: 1.5,
-          }}
-        >
-          {subtitle}
-        </p>
-      )}
-    </div>
-  )
-}
 
 /* ── types ────────────────────────────────────────── */
 
@@ -133,7 +155,7 @@ interface HomeContentProps {
 export function HomeContent({ latestLog }: HomeContentProps) {
   return (
     <>
-      {/* ── Hero -- 100dvh, centered, bold ── */}
+      {/* ── 1. Hero - 100dvh, centered, purple glow ── */}
       <section
         className="full-bleed"
         style={{
@@ -142,19 +164,39 @@ export function HomeContent({ latestLog }: HomeContentProps) {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          background: 'var(--canvas)',
+          background: 'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(155, 114, 207, 0.15), transparent 60%), radial-gradient(ellipse 1200px 800px at 50% 60%, rgba(155, 114, 207, 0.06), transparent 70%), var(--canvas)',
           position: 'relative',
           textAlign: 'center',
           padding: '0 24px',
         }}
       >
+        <MotionReveal variant="fadeUp" delay={0.05}>
+          <div
+            style={{
+              display: 'inline-block',
+              padding: '6px 16px',
+              fontSize: '12px',
+              fontWeight: 600,
+              color: 'var(--accent)',
+              background: 'rgba(155, 114, 207, 0.08)',
+              border: '1px solid rgba(155, 114, 207, 0.2)',
+              borderRadius: 999,
+              marginBottom: 20,
+              letterSpacing: '0.04em',
+              textTransform: 'uppercase',
+            }}
+          >
+            Content Operating System
+          </div>
+        </MotionReveal>
+
         <MotionReveal variant="fadeUp" delay={0.1}>
           <p
             style={{
               fontSize: '14px',
               color: 'var(--text-muted)',
               fontFamily: 'var(--font-mono)',
-              marginBottom: 24,
+              marginBottom: 16,
             }}
           >
             <span style={{ color: 'var(--accent)' }}>$</span> ./boot theContentOS.ai
@@ -177,12 +219,11 @@ export function HomeContent({ latestLog }: HomeContentProps) {
           </h1>
         </MotionReveal>
 
-        <MotionReveal variant="fadeUp" delay={0.35}>
+        <MotionReveal variant="fadeUp" delay={0.3}>
           <p
             style={{
               fontSize: 'clamp(16px, 2vw, 20px)',
               color: 'var(--text-secondary)',
-              fontFamily: 'var(--font-mono)',
               lineHeight: 1.6,
               maxWidth: 640,
               margin: '0 auto 16px',
@@ -192,8 +233,17 @@ export function HomeContent({ latestLog }: HomeContentProps) {
           </p>
         </MotionReveal>
 
-        <MotionReveal variant="fadeUp" delay={0.45}>
-          <div style={{ marginBottom: 40 }}>
+        <MotionReveal variant="fadeUp" delay={0.4}>
+          <div
+            style={{
+              fontSize: '20px',
+              fontWeight: 700,
+              color: 'var(--accent)',
+              letterSpacing: '0.08em',
+              fontFamily: 'var(--font-mono)',
+              marginBottom: 32,
+            }}
+          >
             <ScrambleCycler
               phrases={[
                 'Create. Orchestrate. Ship.',
@@ -208,23 +258,22 @@ export function HomeContent({ latestLog }: HomeContentProps) {
           </div>
         </MotionReveal>
 
-        <MotionReveal variant="fadeUp" delay={0.55}>
+        <MotionReveal variant="fadeUp" delay={0.5}>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
             <MagneticHover>
               <Link
                 href="/content-wiki"
+                className="cta-primary"
                 style={{
                   display: 'inline-block',
                   padding: '14px 32px',
                   fontSize: '15px',
                   fontWeight: 600,
-                  fontFamily: 'var(--font-mono)',
                   color: 'var(--canvas)',
                   background: 'var(--accent)',
                   border: '1px solid var(--accent)',
                   borderRadius: 6,
                   textDecoration: 'none',
-                  transition: 'opacity 0.15s ease',
                 }}
               >
                 explore the wiki &rarr;
@@ -233,18 +282,17 @@ export function HomeContent({ latestLog }: HomeContentProps) {
             <MagneticHover>
               <Link
                 href="/how-to"
+                className="cta-secondary"
                 style={{
                   display: 'inline-block',
                   padding: '14px 32px',
                   fontSize: '15px',
                   fontWeight: 600,
-                  fontFamily: 'var(--font-mono)',
                   color: 'var(--accent)',
                   background: 'transparent',
                   border: '1px solid var(--accent)',
                   borderRadius: 6,
                   textDecoration: 'none',
-                  transition: 'background 0.15s ease, color 0.15s ease',
                 }}
               >
                 how-to guides
@@ -271,7 +319,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         </div>
       </section>
 
-      {/* ── Stats Strip ── */}
+      {/* ── 2. Stats Strip ── */}
       <ScrollRevealSection
         background="var(--canvas-subtle)"
         style={{
@@ -284,15 +332,15 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         <StatsStrip />
       </ScrollRevealSection>
 
-      {/* ── Highlight Reel ── */}
+      {/* ── 3. Highlight Reel ── */}
       <ScrollRevealSection background="var(--canvas)">
-        <SectionHeadline subtitle="Recent builds, shipped live">Highlight Reel</SectionHeadline>
+        <SectionHeadline label="SHOWCASE" subtitle="Recent builds, shipped live">Highlight Reel</SectionHeadline>
         <VideoShowcase />
       </ScrollRevealSection>
 
-      {/* ── The Problem ── */}
+      {/* ── 4. The Problem ── */}
       <ScrollRevealSection background="var(--canvas-subtle)">
-        <SectionHeadline subtitle="The hidden cost of multi-platform content">The Problem</SectionHeadline>
+        <SectionHeadline label="THE PROBLEM" subtitle="The hidden cost of multi-platform content">The Problem</SectionHeadline>
         <div
           style={{
             padding: '24px',
@@ -310,10 +358,9 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                     lineHeight: 2,
                     color: 'var(--text-secondary)',
                     margin: 0,
-                    fontFamily: 'var(--font-mono)',
                   }}
                 >
-                  <span style={{ color: 'var(--text-muted)' }}>&gt;</span> {point}
+                  <span style={{ color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>&gt;</span> {point}
                 </p>
               </StaggerItem>
             ))}
@@ -326,7 +373,6 @@ export function HomeContent({ latestLog }: HomeContentProps) {
               fontSize: '14px',
               color: 'var(--accent)',
               fontWeight: 600,
-              fontFamily: 'var(--font-mono)',
             }}
           >
             there has to be a better way.
@@ -334,9 +380,9 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         </div>
       </ScrollRevealSection>
 
-      {/* ── Featured Sections ── */}
+      {/* ── 5. Featured Sections ── */}
       <ScrollRevealSection background="var(--canvas)">
-        <SectionHeadline subtitle="The core modules of the content operating system">Explore the System</SectionHeadline>
+        <SectionHeadline label="EXPLORE" subtitle="The core modules of the content operating system">Explore the System</SectionHeadline>
 
         <StaggerContainer stagger={0.12}>
           <div
@@ -350,15 +396,16 @@ export function HomeContent({ latestLog }: HomeContentProps) {
               <StaggerItem key={section.title}>
                 <Link
                   href={section.href}
+                  className="content-card"
                   style={{
                     display: 'block',
                     padding: '24px',
-                    background: 'var(--canvas-subtle)',
+                    background: 'linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0)), var(--canvas-subtle)',
                     border: '1px solid var(--border)',
                     borderRadius: 6,
                     textDecoration: 'none',
-                    transition: 'border-color 0.15s ease',
                     height: '100%',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
                   }}
                 >
                   <div
@@ -390,7 +437,6 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                       lineHeight: 1.7,
                       color: 'var(--text-secondary)',
                       margin: 0,
-                      fontFamily: 'var(--font-mono)',
                     }}
                   >
                     {section.desc}
@@ -402,9 +448,9 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         </StaggerContainer>
       </ScrollRevealSection>
 
-      {/* ── System Architecture -- 3-Tier Breakdown ── */}
+      {/* ── 6. System Architecture - 3-Tier Breakdown ── */}
       <ScrollRevealSection background="var(--canvas-subtle)">
-        <SectionHeadline subtitle="Three tiers that compound">System Architecture</SectionHeadline>
+        <SectionHeadline label="ARCHITECTURE" subtitle="Three tiers that compound">System Architecture</SectionHeadline>
 
         <StaggerContainer stagger={0.15}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -457,7 +503,6 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                         lineHeight: 1.7,
                         color: 'var(--text-secondary)',
                         margin: 0,
-                        fontFamily: 'var(--font-mono)',
                       }}
                     >
                       {tier.desc}
@@ -503,10 +548,16 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         </MotionReveal>
       </ScrollRevealSection>
 
-      {/* ── Latest Log ── */}
+      {/* ── 7. FAQ ── */}
+      <ScrollRevealSection background="var(--canvas)">
+        <SectionHeadline label="FAQ" subtitle="Common questions answered">FAQ</SectionHeadline>
+        <FAQAccordion items={faqItems} />
+      </ScrollRevealSection>
+
+      {/* ── 8. Latest Log ── */}
       {latestLog && (
-        <ScrollRevealSection background="var(--canvas)">
-          <SectionHeadline subtitle="Today's build log">Latest Log</SectionHeadline>
+        <ScrollRevealSection background="var(--canvas-subtle)">
+          <SectionHeadline label="BUILD LOG" subtitle="Today's build log">Latest Log</SectionHeadline>
 
           <LogCard {...latestLog} basePath="/log" />
 
@@ -526,8 +577,8 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         </ScrollRevealSection>
       )}
 
-      {/* ── Boot Log -- terminal flavor ── */}
-      <ScrollRevealSection background="var(--canvas-subtle)">
+      {/* ── 9. Boot Log - terminal flavor ── */}
+      <ScrollRevealSection background="var(--canvas)">
         <h2
           style={{
             fontSize: '14px',
@@ -536,6 +587,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
             marginBottom: 16,
             textTransform: 'uppercase',
             letterSpacing: '0.06em',
+            fontFamily: 'var(--font-mono)',
           }}
         >
           system status
@@ -544,7 +596,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         <div
           style={{
             padding: '20px 24px',
-            background: 'var(--canvas)',
+            background: 'var(--canvas-subtle)',
             border: '1px solid var(--border)',
             borderRadius: 6,
           }}
@@ -581,15 +633,24 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         </div>
       </ScrollRevealSection>
 
-      {/* ── CTA -- Explore the System ── */}
+      {/* ── 10. Built With / Platforms ── */}
+      <ScrollRevealSection
+        background="var(--canvas-subtle)"
+        style={{ paddingTop: 48, paddingBottom: 48 }}
+      >
+        <BuiltWithStrip />
+      </ScrollRevealSection>
+
+      {/* ── 11. Choose Your Path CTA ── */}
       <ScrollRevealSection background="var(--canvas)" variant="scale">
         <div
           style={{
             padding: '40px 32px',
-            background: 'var(--canvas-subtle)',
+            background: 'linear-gradient(135deg, rgba(155, 114, 207, 0.04), transparent), var(--canvas-subtle)',
             border: '1px solid var(--border)',
             borderRadius: 8,
             textAlign: 'center',
+            boxShadow: '0 8px 32px rgba(155, 114, 207, 0.08)',
           }}
         >
           <h2
@@ -607,7 +668,6 @@ export function HomeContent({ latestLog }: HomeContentProps) {
             style={{
               fontSize: '14px',
               color: 'var(--text-secondary)',
-              fontFamily: 'var(--font-mono)',
               margin: '0 0 32px',
             }}
           >
@@ -693,7 +753,6 @@ function StatsStrip() {
                   padding: '32px 24px',
                   background: 'var(--canvas-subtle)',
                   textAlign: 'center',
-                  fontFamily: 'var(--font-mono)',
                 }}
               >
                 <div
@@ -704,6 +763,7 @@ function StatsStrip() {
                     letterSpacing: '-0.02em',
                     lineHeight: 1.1,
                     fontVariantNumeric: 'tabular-nums',
+                    fontFamily: 'var(--font-mono)',
                   }}
                 >
                   {stat.value}

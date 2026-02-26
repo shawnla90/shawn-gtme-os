@@ -1,10 +1,16 @@
 import type { Metadata } from 'next'
-import { JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const SITE_URL = 'https://thecontentos.ai'
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
@@ -55,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={jetbrains.variable}>
+    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
       <body>
         <Navigation
           siteName="theContentOS.ai"
