@@ -60,30 +60,67 @@ const processSteps = [
   },
 ]
 
-const faqItems = [
+const faqLinkStyle: React.CSSProperties = {
+  color: 'var(--accent)',
+  textDecoration: 'none',
+  fontWeight: 600,
+}
+
+const faqItems: { question: string; answer: React.ReactNode }[] = [
   {
     question: 'What is GTM engineering?',
-    answer: 'GTM engineering is the practice of building go-to-market systems with code. Instead of clicking through CRMs and spreadsheets, you write pipelines, automate outbound, build enrichment workflows, and ship content systems — all version-controlled and composable.',
+    answer: (
+      <>
+        GTM engineering is the practice of building go-to-market systems with code. Instead of clicking through CRMs and spreadsheets, you write pipelines, automate outbound, build enrichment workflows, and ship content systems — all version-controlled and composable.{' '}
+        <Link href="https://thegtmos.ai" style={faqLinkStyle}>explore the GTM playbook &rarr;</Link>
+      </>
+    ),
   },
   {
     question: 'What is ShawnOS?',
-    answer: 'ShawnOS is a monorepo that runs my entire professional operating system. Three websites, a progression engine, AI agents, content pipelines, and GTM tools — all in one codebase. It\'s an experiment in running your career like a software product.',
+    answer: (
+      <>
+        ShawnOS is a monorepo that runs my entire professional operating system.{' '}
+        <Link href="/showcase" style={faqLinkStyle}>Three websites</Link>, a{' '}
+        <Link href="/rpg-preview" style={faqLinkStyle}>progression engine</Link>, AI agents, content pipelines, and GTM tools — all in one codebase. It&apos;s an experiment in running your career like a software product.
+      </>
+    ),
   },
   {
     question: 'Why build in public?',
-    answer: 'Building in public turns your learning process into content, your commits into proof of work, and your failures into lessons others can learn from. It compounds — every post, every update, every shipped feature is a permanent artifact that builds trust over time.',
+    answer: (
+      <>
+        Building in public turns your learning process into content, your commits into proof of work, and your failures into lessons others can learn from. It compounds — every post, every update, every shipped feature is a permanent artifact that builds trust over time.{' '}
+        <Link href="/log" style={faqLinkStyle}>see the build log &rarr;</Link>
+      </>
+    ),
   },
   {
     question: 'What stack does this run on?',
-    answer: 'TypeScript monorepo with Next.js (3 sites on Vercel), Python for scripting and content generation, Claude AI for the agent layer, and launchd crons for automation. Everything ships from one git repo.',
+    answer: (
+      <>
+        TypeScript monorepo with Next.js (3 sites on Vercel), Python for scripting and content generation, Claude AI for the agent layer, and launchd crons for automation. Everything ships from one git repo.{' '}
+        <Link href="/about" style={faqLinkStyle}>see the full stack &rarr;</Link>
+      </>
+    ),
   },
   {
     question: 'Can I use this approach for my own career?',
-    answer: 'Absolutely. The core idea — treat your career like a product, ship artifacts daily, automate what you can, and let everything compound — works for any discipline. You don\'t need this exact stack. You need the mindset of systematic, visible output.',
+    answer: (
+      <>
+        Absolutely. The core idea — treat your career like a product, ship artifacts daily, automate what you can, and let everything compound — works for any discipline. You don&apos;t need this exact stack. You need the mindset of systematic, visible output.{' '}
+        <Link href="/log/build-your-own" style={faqLinkStyle}>start building &rarr;</Link>
+      </>
+    ),
   },
   {
     question: 'What\'s the progression engine?',
-    answer: 'A gamification layer that tracks real daily output — blog posts, code commits, shipped features — and converts them to XP. You level up through 11 tiers with evolving pixel art avatars. It\'s not decorative; it reflects actual work done.',
+    answer: (
+      <>
+        A gamification layer that tracks real daily output — blog posts, code commits, shipped features — and converts them to XP. You level up through 11 tiers with evolving pixel art avatars. It&apos;s not decorative; it reflects actual work done.{' '}
+        <Link href="/rpg-preview" style={faqLinkStyle}>see the tiers &rarr;</Link>
+      </>
+    ),
   },
 ]
 

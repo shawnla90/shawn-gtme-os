@@ -6,7 +6,7 @@ import { MotionReveal } from './motion'
 
 interface FAQItem {
   question: string
-  answer: string
+  answer: React.ReactNode
 }
 
 interface FAQAccordionProps {

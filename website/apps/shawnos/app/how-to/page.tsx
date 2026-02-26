@@ -5,7 +5,6 @@ import {
 } from '@shawnos/shared/data/how-to-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { HowToWikiPage } from '@shawnos/shared/pages/HowToWikiPage'
-import { PageHero } from '../WikiReveal'
 import type { HowToWikiPageConfig } from '@shawnos/shared/pages/HowToWikiPage'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -142,7 +141,6 @@ export default function HowToPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <PageHero compact title="How-To Wiki" subtitle="The practitioner's guide to AI tools." />
       <HowToWikiPage config={config} />
     </>
   )
