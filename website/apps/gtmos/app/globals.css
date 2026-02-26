@@ -3,30 +3,45 @@
 
 /* === thegtmos.ai accent override === */
 :root {
-  --accent: #D2A53C;
+  --accent: #F97316;
 }
 
 /* === Base body styles === */
 html body {
   margin: 0;
-  padding: 24px;
+  padding: 0;
   background: var(--canvas);
   color: var(--text-primary);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Main gutters — pages keep padding, homepage sections break out */
+main {
+  padding: 0 24px;
+}
+
 @media (max-width: 768px) {
-  html body { padding: 12px; }
+  main { padding: 0 16px; }
 }
 
 @media (max-width: 480px) {
-  html body { padding: 8px; }
+  main { padding: 0 12px; }
 }
 
-/* === Layout utilities (for full-bleed section pages) === */
+/* === Sticky nav === */
+body > nav,
+nav[class*="nav"] {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(13, 17, 23, 0.85);
+}
 
+/* === Layout utilities === */
 .full-bleed {
   margin-left: -24px;
   margin-right: -24px;
@@ -35,11 +50,21 @@ html body {
 }
 
 @media (max-width: 768px) {
-  .full-bleed { margin-left: -12px; margin-right: -12px; padding-left: 12px; padding-right: 12px; }
+  .full-bleed {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 @media (max-width: 480px) {
-  .full-bleed { margin-left: -8px; margin-right: -8px; padding-left: 8px; padding-right: 8px; }
+  .full-bleed {
+    margin-left: -12px;
+    margin-right: -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
 .inner-container {
@@ -48,15 +73,140 @@ html body {
   padding: 0 24px;
 }
 
+@media (max-width: 768px) {
+  .inner-container {
+    padding: 0 16px;
+  }
+}
+
 .section-pad {
   padding-top: 80px;
   padding-bottom: 80px;
 }
 
 @media (max-width: 768px) {
-  .section-pad { padding-top: 48px; padding-bottom: 48px; }
+  .section-pad {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 
+/* === Smooth scrolling === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Page enter animation === */
+.page-enter {
+  animation: page-enter 0.35s ease-out;
+}
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Stats strip animations === */
+@keyframes stats-count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stats-item {
+  opacity: 0;
+}
+.stats-item.visible {
+  animation: stats-count-up 0.5s ease forwards;
+}
+.stats-item.visible:nth-child(1) { animation-delay: 0.05s; }
+.stats-item.visible:nth-child(2) { animation-delay: 0.13s; }
+.stats-item.visible:nth-child(3) { animation-delay: 0.21s; }
+.stats-item.visible:nth-child(4) { animation-delay: 0.29s; }
+.stats-item.visible:nth-child(5) { animation-delay: 0.37s; }
+
+@media (max-width: 600px) {
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .stats-strip .stats-item:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* === Case study card hover === */
+.case-study-card {
+  background: var(--canvas-subtle);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.case-study-card:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+}
+
+/* === Built-with logo hover (pure CSS) === */
+.builtwith-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #8B949E;
+  transition: color 0.15s ease, transform 0.15s ease;
+  cursor: default;
+  position: relative;
+}
+.builtwith-logo:hover {
+  color: var(--brand-color, #8B949E);
+  transform: scale(1.15);
+}
+.builtwith-logo .builtwith-label {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: transparent;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.builtwith-logo:hover .builtwith-label {
+  color: currentColor;
+}
+
+/* === FAQ accordion (CSS transitions) === */
+.faq-chevron {
+  color: var(--accent);
+  font-size: 14px;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.faq-chevron.open {
+  transform: rotate(90deg);
+}
+.faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  opacity: 0;
+}
+.faq-answer-wrapper.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+/* === Scroll indicator bounce === */
 @keyframes bounce-down {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(8px); }
@@ -64,4 +214,104 @@ html body {
 
 .scroll-indicator {
   animation: bounce-down 2s ease-in-out infinite;
+}
+
+/* === Prose styling for content pages === */
+.prose {
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.prose h1,
+.prose h2,
+.prose h3 {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.prose a {
+  color: var(--link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose a:hover {
+  color: var(--link-hover);
+}
+
+.prose code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.prose pre {
+  background: var(--code-bg);
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 16px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.prose img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 24px;
+}
+
+.prose li {
+  margin-bottom: 8px;
+}
+
+/* === SaaS polish: sans-serif body font === */
+.saas-body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+}
+
+/* === GTM stack card hover === */
+.gtm-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.gtm-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(249, 115, 22, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* === CTA primary hover === */
+.cta-primary {
+  transition: opacity 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.cta-primary:hover {
+  box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3);
+  transform: translateY(-1px);
+}
+
+/* === CTA secondary hover === */
+.cta-secondary {
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.cta-secondary:hover {
+  background: rgba(249, 115, 22, 0.05);
 }
