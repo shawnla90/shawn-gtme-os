@@ -9,6 +9,7 @@ interface BuiltWithLogo {
   name: string
   path?: string
   letter?: string
+  imageSrc?: string
   brandColor: string
 }
 
@@ -16,7 +17,7 @@ const logos: BuiltWithLogo[] = [
   {
     name: 'Clay',
     brandColor: '#4B5CFA',
-    letter: 'C',
+    imageSrc: '/brands/clay-creator-badge.png',
   },
   {
     name: 'Instantly',
@@ -81,7 +82,16 @@ function MiniLogo({ logo }: { logo: BuiltWithLogo }) {
       className="builtwith-logo"
       style={{ '--brand-color': logo.brandColor } as React.CSSProperties}
     >
-      {logo.path ? (
+      {logo.imageSrc ? (
+        /* eslint-disable-next-line @next/next/no-img-element */
+        <img
+          src={logo.imageSrc}
+          alt={logo.name}
+          width={40}
+          height={40}
+          style={{ borderRadius: 8, objectFit: 'contain' }}
+        />
+      ) : logo.path ? (
         <svg
           viewBox="0 0 24 24"
           fill="currentColor"

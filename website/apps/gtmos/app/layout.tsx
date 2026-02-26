@@ -18,21 +18,21 @@ export const metadata: Metadata = {
     default: 'theGTMOS.ai',
     template: '%s | theGTMOS.ai',
   },
-  description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
+  description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides - built in public.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'theGTMOS.ai',
     title: 'theGTMOS.ai',
-    description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
+    description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides - built in public.',
   },
   twitter: {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
     title: 'theGTMOS.ai',
-    description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
+    description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides - built in public.',
   },
   alternates: {
     canonical: SITE_URL,
@@ -60,7 +60,7 @@ const websiteSchema = {
   '@type': 'WebSite',
   name: 'theGTMOS.ai',
   url: SITE_URL,
-  description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides — built in public.',
+  description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides - built in public.',
   author: { '@type': 'Person', name: 'Shawn Tenam' },
 }
 

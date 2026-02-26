@@ -327,10 +327,20 @@ export default function ClayWikiPage() {
               </div>
             </div>
 
-            {/* Certification badge */}
-            <div style={certBadge}>
-              <span style={{ fontSize: '16px' }}>&#9670;</span>
-              Clay Certified Practitioner &middot; 98/100
+            {/* Certification badge + Clay Creator badge */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <div style={certBadge}>
+                <span style={{ fontSize: '16px' }}>&#9670;</span>
+                Clay Certified Practitioner &middot; 98/100
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brands/clay-creator-full.png"
+                alt="Clay Creator badge"
+                width={80}
+                height={80}
+                style={{ borderRadius: 8, objectFit: 'contain' }}
+              />
             </div>
           </div>
 

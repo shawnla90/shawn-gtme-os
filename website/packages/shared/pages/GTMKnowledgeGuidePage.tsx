@@ -2,6 +2,8 @@
 
 import React, { useEffect, useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import { UseCaseBlock } from '../components/UseCaseBlock'
+import type { UseCase } from '../components/UseCaseBlock'
 
 /* ── types ───────────────────────────────────────── */
 
@@ -12,6 +14,7 @@ export interface GTMTerm {
   whyItMatters: string
   howYouUseIt: string
   related: string[]
+  useCases?: UseCase[]
 }
 
 export interface GTMCategory {
@@ -236,6 +239,15 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         howYouUseIt:
           "every campaign I build has an {icebreaker} merge field in email 1. I don't write the icebreakers manually anymore. I write a Clay research prompt that pulls LinkedIn profiles, recent posts, and headline data, then generates 1-2 sentence icebreakers that reference something specific. the prompt embeds the full email body so the AI knows where the icebreaker lands and writes it to flow naturally. if the profile is thin, the prompt falls back to company-level signals instead of making things up. I learned to automate the research I used to skip when I was rushing to hit quota.",
         related: ['personalization', 'research-prompt', 'merge-fields', 'variable'],
+        useCases: [
+          {
+            title: 'Automated Icebreaker Generation at Scale',
+            problem: 'Needed personalized icebreakers for 73 companies before a major trade show. Manual research was not feasible at that volume.',
+            solution: 'Built two parallel paths - a Clay research prompt for LinkedIn-based icebreakers and an Exa SDK script that crawls each company domain for case studies, news, and thought leadership.',
+            result: '73 companies got unique, contextual icebreakers. Zero manual research. The Exa script produced 150KB of contextual intel in one afternoon.',
+            tools: ['Clay', 'Exa SDK', 'Python', 'CSV pipeline'],
+          },
+        ],
       },
       {
         id: 'variable',
@@ -291,6 +303,15 @@ export const GTM_CATEGORIES: GTMCategory[] = [
         howYouUseIt:
           'I have three favorite custom variables — {icebreaker}, {poke_the_bear}, and {pain_point}. I split them across a three-email sequence. email 1 gets the icebreaker (observational, personal). email 2 gets the poke the bear (challenging, thought-provoking). email 3 gets the pain point (problem-focused, specific). this works especially well for low-hanging fruit — leads that fit ICP but aren\'t high priority.',
         related: ['icebreaker', 'pain-point-signal', 'variable', 'sequence'],
+        useCases: [
+          {
+            title: '3-Variable Personalization Model',
+            problem: 'Standard 1-variable emails (just an icebreaker) were getting replies but not enough pattern interrupts to stand out in crowded inboxes.',
+            solution: 'Built a 3-variable model that splits personalization across a sequence - {icebreaker} in email 1, {poke_the_bear} in email 2, {pain_point} in email 3. Each variable maps to industry-specific buckets.',
+            result: 'Higher reply rates on email 2 (the poke). Bucket-specific pain mapping makes the poke feel personal instead of generic.',
+            tools: ['Clay', 'Research Prompts', 'Industry bucket mapping'],
+          },
+        ],
       },
       {
         id: 'signals',
@@ -959,6 +980,14 @@ export function GTMKnowledgeGuidePage() {
                               </a>
                             )
                           })}
+                        </div>
+                      )}
+
+                      {term.useCases && term.useCases.length > 0 && (
+                        <div style={{ marginTop: '16px' }}>
+                          {term.useCases.map((uc) => (
+                            <UseCaseBlock key={uc.title} useCase={uc} />
+                          ))}
                         </div>
                       )}
                     </div>

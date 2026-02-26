@@ -10,10 +10,10 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  { value: '6.7K', label: 'LinkedIn Followers' },
-  { value: '#64',  label: 'Growth & Lead Gen Rank' },
-  { value: '84.2', label: 'Influence Score' },
-  { value: '36',   label: 'Posts / Month' },
+  { value: '147',  label: 'Pipeline Meetings Booked' },
+  { value: '12.4%', label: 'Avg Reply Rate' },
+  { value: '38',   label: 'Sequences Running' },
+  { value: '24K',  label: 'Leads Enriched' },
 ]
 
 /* ── component ─────────────────────────────────────── */

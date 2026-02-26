@@ -5,8 +5,9 @@ import {
   toSlug,
 } from '@shawnos/shared/data/engineering-terms'
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
+import type { UseCase } from '@shawnos/shared/data/gtm-terms'
 import { EMAIL_CATEGORIES } from '@shawnos/shared/data/email-infrastructure'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, UseCaseBlock } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 
@@ -23,6 +24,7 @@ interface UnifiedTerm {
   relatedRaw: string[]
   category: string
   source: 'engineering' | 'gtm' | 'email'
+  useCases?: UseCase[]
 }
 
 /* ── build lookup tables ────────────────────────── */
@@ -79,6 +81,7 @@ for (const cat of GTM_CATEGORIES) {
       relatedRaw: term.related,
       category: cat.name,
       source: 'gtm',
+      useCases: term.useCases,
     })
   }
 }
@@ -408,6 +411,16 @@ export default async function TermPage({
             : 'how you use it'}
         </div>
         <p style={sectionBody}>{t.howYouUseIt}</p>
+
+        {t.useCases && t.useCases.length > 0 && (
+          <>
+            <hr style={divider} />
+            <div style={sectionLabel}>real use cases</div>
+            {t.useCases.map((uc) => (
+              <UseCaseBlock key={uc.title} useCase={uc} />
+            ))}
+          </>
+        )}
 
         {related.length > 0 && (
           <>
