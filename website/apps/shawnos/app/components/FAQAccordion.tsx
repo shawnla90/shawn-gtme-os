@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { MotionReveal } from './motion'
 
 interface FAQItem {
@@ -57,45 +56,28 @@ export function FAQAccordion({ items, style }: FAQAccordionProps) {
                   $
                 </span>
                 <span style={{ flex: 1 }}>{item.question}</span>
-                <motion.span
-                  animate={{ rotate: isOpen ? 90 : 0 }}
-                  transition={{ duration: 0.2 }}
-                  style={{
-                    color: 'var(--accent)',
-                    fontSize: '14px',
-                    flexShrink: 0,
-                    display: 'inline-block',
-                  }}
-                >
+                <span className={`faq-chevron${isOpen ? ' open' : ''}`}>
                   &gt;
-                </motion.span>
+                </span>
               </button>
 
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.25, ease: 'easeInOut' }}
-                    style={{ overflow: 'hidden' }}
+              <div className={`faq-answer-wrapper${isOpen ? ' open' : ''}`}>
+                <div className="faq-answer-inner">
+                  <div
+                    style={{
+                      padding: '0 0 20px 24px',
+                      borderLeft: '2px solid var(--accent)',
+                      marginLeft: 6,
+                      fontSize: '14px',
+                      lineHeight: 1.7,
+                      color: 'var(--text-secondary)',
+                      fontFamily: 'var(--font-mono)',
+                    }}
                   >
-                    <div
-                      style={{
-                        padding: '0 0 20px 24px',
-                        borderLeft: '2px solid var(--accent)',
-                        marginLeft: 6,
-                        fontSize: '14px',
-                        lineHeight: 1.7,
-                        color: 'var(--text-secondary)',
-                        fontFamily: 'var(--font-mono)',
-                      }}
-                    >
-                      {item.answer}
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+                    {item.answer}
+                  </div>
+                </div>
+              </div>
             </div>
           </MotionReveal>
         )

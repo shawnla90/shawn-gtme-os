@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef, useCallback, useState } from 'react'
 
 interface Dot {
   x: number
@@ -10,6 +10,7 @@ interface Dot {
 }
 
 export function CursorGlow() {
+  const [mounted, setMounted] = useState(false)
   const glowRef = useRef<HTMLDivElement>(null)
   const dotsRef = useRef<HTMLCanvasElement>(null)
   const mouseRef = useRef({ x: -999, y: -999 })
@@ -17,7 +18,15 @@ export function CursorGlow() {
   const dotsArrayRef = useRef<Dot[]>([])
   const rafRef = useRef<number>(0)
   const lastDotRef = useRef(0)
-  const isTouchRef = useRef(false)
+  const idleRef = useRef(false)
+  const idleTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const resizeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const isMobileRef = useRef(false)
+
+  // Hydration-safe mount
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const animate = useCallback(() => {
     const glow = glowRef.current
@@ -57,9 +66,11 @@ export function CursorGlow() {
   }, [])
 
   useEffect(() => {
-    // Detect touch devices
+    if (!mounted) return
+
+    // Detect touch/mobile devices — skip entirely
     if (window.matchMedia('(hover: none)').matches) {
-      isTouchRef.current = true
+      isMobileRef.current = true
       return
     }
 
@@ -69,16 +80,40 @@ export function CursorGlow() {
       canvas.height = window.innerHeight
     }
 
+    // Debounced resize handler (200ms)
     const onResize = () => {
-      if (canvas) {
-        canvas.width = window.innerWidth
-        canvas.height = window.innerHeight
+      if (resizeTimerRef.current) clearTimeout(resizeTimerRef.current)
+      resizeTimerRef.current = setTimeout(() => {
+        if (canvas) {
+          canvas.width = window.innerWidth
+          canvas.height = window.innerHeight
+        }
+      }, 200)
+    }
+
+    const startLoop = () => {
+      if (idleRef.current) {
+        idleRef.current = false
+        rafRef.current = requestAnimationFrame(animate)
       }
+    }
+
+    const scheduleIdle = () => {
+      if (idleTimerRef.current) clearTimeout(idleTimerRef.current)
+      idleTimerRef.current = setTimeout(() => {
+        idleRef.current = true
+        cancelAnimationFrame(rafRef.current)
+      }, 500)
     }
 
     const onMove = (e: MouseEvent) => {
       mouseRef.current.x = e.clientX
       mouseRef.current.y = e.clientY
+
+      // Restart RAF loop if idle
+      startLoop()
+      // Reset idle timer
+      scheduleIdle()
 
       // Spawn trail dot (cap at ~20, throttle by distance)
       const now = Date.now()
@@ -92,16 +127,23 @@ export function CursorGlow() {
     window.addEventListener('resize', onResize)
     rafRef.current = requestAnimationFrame(animate)
 
+    // Start idle timer immediately (stop loop if no mouse activity within 500ms)
+    scheduleIdle()
+
     return () => {
       window.removeEventListener('mousemove', onMove)
       window.removeEventListener('resize', onResize)
       cancelAnimationFrame(rafRef.current)
+      if (idleTimerRef.current) clearTimeout(idleTimerRef.current)
+      if (resizeTimerRef.current) clearTimeout(resizeTimerRef.current)
     }
-  }, [animate])
+  }, [mounted, animate])
 
-  if (typeof window !== 'undefined' && window.matchMedia?.('(hover: none)').matches) {
-    return null
-  }
+  // Don't render anything until mounted (avoids SSR hydration mismatch)
+  if (!mounted) return null
+
+  // Don't render on mobile/touch devices
+  if (isMobileRef.current) return null
 
   return (
     <>

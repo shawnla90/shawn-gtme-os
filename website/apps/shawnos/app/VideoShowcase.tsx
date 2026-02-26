@@ -41,11 +41,10 @@ export function VideoShowcase() {
       <video
         ref={videoRef}
         style={videoEl}
-        autoPlay
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
       >
         <source src="/video/lead-magnet.mp4" type="video/mp4" />
       </video>

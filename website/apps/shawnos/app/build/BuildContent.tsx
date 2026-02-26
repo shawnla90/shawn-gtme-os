@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import {
   MotionReveal,
@@ -366,6 +364,7 @@ export function BuildContent() {
           {packages.map((pkg) => (
             <StaggerItem key={pkg.name}>
               <div
+                className="package-card"
                 style={{
                   background: 'var(--canvas)',
                   border: '1px solid var(--border)',
@@ -718,6 +717,7 @@ export function BuildContent() {
             <StaggerItem key={link.href}>
               <Link
                 href={link.href}
+                className="system-link-card"
                 style={{
                   display: 'flex',
                   alignItems: 'baseline',

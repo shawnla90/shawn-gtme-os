@@ -1,6 +1,3 @@
-'use client'
-
-import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 interface CaseStudy {
@@ -37,19 +34,7 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
   const Wrapper = study.external ? 'a' : Link
 
   return (
-    <motion.div
-      whileHover={{ scale: 1.02, borderColor: 'var(--accent)' }}
-      transition={{ duration: 0.2 }}
-      style={{
-        background: 'var(--canvas-subtle)',
-        border: '1px solid var(--border)',
-        borderRadius: 6,
-        padding: '24px',
-        cursor: 'pointer',
-        position: 'relative',
-        overflow: 'hidden',
-      }}
-    >
+    <div className="case-study-card">
       <Wrapper
         href={study.href}
         style={{
@@ -101,6 +86,6 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
           ))}
         </div>
       </Wrapper>
-    </motion.div>
+    </div>
   )
 }

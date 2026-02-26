@@ -1,12 +1,9 @@
-'use client'
-
 /* ── BuiltWithStrip ────────────────────────────────────────────────────────
  * Horizontal logo strip for the homepage.
  * Shows key stack logos at 40px with brand-color hover and name labels.
- * SVG paths from SimpleIcons (CC0) – viewBox="0 0 24 24"
+ * SVG paths from SimpleIcons (CC0) - viewBox="0 0 24 24"
+ * Pure CSS hover - no client-side JS required.
  * ────────────────────────────────────────────────────────────────────── */
-
-import { useState } from 'react'
 
 interface BuiltWithLogo {
   name: string
@@ -73,24 +70,10 @@ const logos: BuiltWithLogo[] = [
 ]
 
 function MiniLogo({ logo }: { logo: BuiltWithLogo }) {
-  const [hovered, setHovered] = useState(false)
-
   return (
     <div
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: 6,
-        color: hovered ? logo.brandColor : '#8B949E',
-        transition: 'color 0.15s ease, transform 0.15s ease',
-        transform: hovered ? 'scale(1.15)' : 'none',
-        cursor: 'default',
-        position: 'relative',
-      }}
+      className="builtwith-logo"
+      style={{ '--brand-color': logo.brandColor } as React.CSSProperties}
     >
       <svg
         viewBox="0 0 24 24"
@@ -103,16 +86,7 @@ function MiniLogo({ logo }: { logo: BuiltWithLogo }) {
       >
         <path d={logo.path} />
       </svg>
-      <span
-        style={{
-          fontSize: '9px',
-          fontFamily: 'var(--font-mono)',
-          color: hovered ? logo.brandColor : 'transparent',
-          transition: 'color 0.15s ease',
-          whiteSpace: 'nowrap',
-          letterSpacing: '0.02em',
-        }}
-      >
+      <span className="builtwith-label">
         {logo.name}
       </span>
     </div>

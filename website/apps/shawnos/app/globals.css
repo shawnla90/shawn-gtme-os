@@ -203,6 +203,199 @@ nav[class*="nav"] {
   }
 }
 
+/* === Smooth scrolling === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Build page – card hover accents === */
+.package-card:hover {
+  border-color: var(--accent) !important;
+}
+
+.system-link-card:hover {
+  border-color: var(--accent) !important;
+}
+
+/* === Tech stack description reveal === */
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 6px;
+  cursor: default;
+  transition: transform 0.15s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-3px) scale(1.1);
+}
+
+.tech-card .tech-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #C9D1D9;
+  transition: color 0.15s ease, filter 0.15s ease;
+}
+
+.tech-card:hover .tech-icon {
+  color: #4EC373;
+  filter: drop-shadow(0 0 8px rgba(78, 195, 115, 0.45));
+}
+
+.tech-card .tech-label {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  color: #8B949E;
+  text-align: center;
+  line-height: 1.3;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.15s ease;
+}
+
+.tech-card:hover .tech-label {
+  color: #C9D1D9;
+}
+
+.tech-desc-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+  width: 100%;
+}
+
+.tech-card:hover .tech-desc-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.tech-desc-inner {
+  overflow: hidden;
+}
+
+.tech-desc-text {
+  font-size: 10px;
+  font-family: var(--font-mono);
+  color: #8B949E;
+  text-align: center;
+  line-height: 1.4;
+  padding-top: 4px;
+}
+
+/* === Page enter animation === */
+.page-enter {
+  animation: page-enter 0.35s ease-out;
+}
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Stats strip animations === */
+@keyframes stats-count-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stats-item {
+  opacity: 0;
+}
+.stats-item.visible {
+  animation: stats-count-up 0.5s ease forwards;
+}
+.stats-item.visible:nth-child(1) { animation-delay: 0.05s; }
+.stats-item.visible:nth-child(2) { animation-delay: 0.13s; }
+.stats-item.visible:nth-child(3) { animation-delay: 0.21s; }
+.stats-item.visible:nth-child(4) { animation-delay: 0.29s; }
+.stats-item.visible:nth-child(5) { animation-delay: 0.37s; }
+
+@media (max-width: 600px) {
+  .stats-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .stats-strip .stats-item:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* === Case study card hover === */
+.case-study-card {
+  background: var(--canvas-subtle);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.case-study-card:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+}
+
+/* === Built-with logo hover (pure CSS) === */
+.builtwith-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #8B949E;
+  transition: color 0.15s ease, transform 0.15s ease;
+  cursor: default;
+  position: relative;
+}
+.builtwith-logo:hover {
+  color: var(--brand-color, #8B949E);
+  transform: scale(1.15);
+}
+.builtwith-logo .builtwith-label {
+  font-size: 9px;
+  font-family: var(--font-mono);
+  color: transparent;
+  transition: color 0.15s ease;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.builtwith-logo:hover .builtwith-label {
+  color: currentColor;
+}
+
+/* === FAQ accordion (CSS transitions) === */
+.faq-chevron {
+  color: var(--accent);
+  font-size: 14px;
+  flex-shrink: 0;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.faq-chevron.open {
+  transform: rotate(90deg);
+}
+.faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  opacity: 0;
+}
+.faq-answer-wrapper.open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+.faq-answer-inner {
+  overflow: hidden;
+}
+
 /* === Scroll indicator bounce === */
 @keyframes bounce-down {
   0%, 100% { transform: translateY(0); }

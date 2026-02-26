@@ -5,13 +5,13 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
 import { CursorGlow } from './components/CursorGlow'
-import { PageTransitionWrapper } from './PageTransitionWrapper'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
 
 const jetbrains = JetBrains_Mono({
   subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
   variable: '--font-mono',
   display: 'swap',
 })
@@ -171,7 +171,7 @@ export default function RootLayout({
           ]}
         />
         <main>
-          <PageTransitionWrapper>{children}</PageTransitionWrapper>
+          <div className="page-enter">{children}</div>
         </main>
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />

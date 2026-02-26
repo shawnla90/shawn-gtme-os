@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { PostCard, LogCard } from '@shawnos/shared/components'
 import type { RPGProfile } from '@shawnos/shared/lib/rpg'
