@@ -123,6 +123,77 @@ def grok_tool_loop(api_key, messages, tools, max_rounds=5):
 
     return ""
 
+# ── URL validation & search URL fallback ─────────────────────────────────
+
+def validate_reddit_url(url):
+    """Check if a Reddit post URL is real using Reddit's public JSON API."""
+    if not url or "reddit.com" not in url:
+        return False
+    try:
+        json_url = url.rstrip("/") + ".json"
+        resp = requests.get(
+            json_url,
+            headers={"User-Agent": "ShawnOS Reddit Scout/1.0"},
+            timeout=10,
+            allow_redirects=True,
+        )
+        return resp.status_code == 200
+    except requests.RequestException:
+        return False
+
+
+def build_reddit_search_url(sub_name, item):
+    """Build a Reddit search URL scoped to a subreddit + keywords."""
+    tags = item.get("relevance_tags", [])
+    title = item.get("post_title", "")
+
+    # Use first few words of title + tags for a targeted search
+    query_parts = []
+    if title:
+        words = [w for w in title.split()[:6] if len(w) > 2]
+        query_parts.extend(words[:4])
+    for tag in tags[:2]:
+        if tag.lower() not in " ".join(query_parts).lower():
+            query_parts.append(tag)
+
+    query = " ".join(query_parts)
+    encoded = requests.utils.quote(query)
+    return f"https://www.reddit.com/r/{sub_name}/search/?q={encoded}&restrict_sr=1&sort=new&t=week"
+
+
+def validate_and_fix_urls(sub_name, opportunities):
+    """Validate Reddit URLs. Replace bad ones with search links."""
+    for opp in opportunities:
+        url = opp.get("post_url", "")
+        if url and validate_reddit_url(url):
+            # URL is real - extract actual metadata from JSON API
+            try:
+                resp = requests.get(
+                    url.rstrip("/") + ".json",
+                    headers={"User-Agent": "ShawnOS Reddit Scout/1.0"},
+                    timeout=10,
+                )
+                if resp.status_code == 200:
+                    data = resp.json()
+                    if isinstance(data, list) and data:
+                        post = data[0]["data"]["children"][0]["data"]
+                        opp["post_score"] = post.get("score")
+                        opp["post_comments"] = post.get("num_comments")
+                        opp["post_title"] = post.get("title", opp["post_title"])
+                        opp["post_id"] = post.get("id", opp["post_id"])
+                        opp["id"] = post.get("id", opp["id"])
+            except Exception:
+                pass
+        else:
+            # URL is fake - replace with search link
+            search_url = build_reddit_search_url(sub_name, opp)
+            opp["post_url_unverified"] = url
+            opp["post_url"] = search_url
+            opp["url_verified"] = False
+            print(f"    replaced (fake URL): {url[:60]}...")
+
+    return opportunities
+
 # ── Grok-powered Reddit discovery ───────────────────────────────────────
 
 def grok_scout_subreddit(api_key, sub_name, config, existing_ids):
@@ -219,6 +290,10 @@ Only include posts from the last 48 hours with real engagement (5+ upvotes or 3+
             "approved_at": None,
             "posted_at": None,
         })
+
+    # Validate URLs and replace fakes with search links
+    if opportunities:
+        opportunities = validate_and_fix_urls(sub_name, opportunities)
 
     return opportunities
 

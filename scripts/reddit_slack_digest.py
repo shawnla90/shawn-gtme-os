@@ -90,8 +90,13 @@ def format_digest(items):
         if comments is not None:
             stats += f" :speech_balloon: {comments}"
 
+        verified = item.get("url_verified", True)  # default True for PRAW-scouted
+        link_label = title if verified else f":mag: Search r/{sub}"
+
         lines.append(f"*{i}.* [{score}] r/{sub}{stats}")
-        lines.append(f"    <{url}|{title}>")
+        if not verified:
+            lines.append(f"    {title}")
+        lines.append(f"    <{url}|{link_label}>")
         if reason:
             lines.append(f"    _{reason}_")
         lines.append("")
