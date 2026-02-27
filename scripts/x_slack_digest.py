@@ -95,7 +95,8 @@ def format_digest(items):
             stats += f" :repeat: {retweets}"
 
         lines.append(f"*{i}.* [{score}] {author} ({topic}){stats}")
-        lines.append(f"    <{url}|{text}>")
+        lines.append(f"    {text}")
+        lines.append(f"    <{url}|:mag: Search on X>")
         if reason:
             lines.append(f"    _{reason}_")
         lines.append("")

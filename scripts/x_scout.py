@@ -121,6 +121,35 @@ def grok_tool_loop(api_key, messages, tools, max_rounds=5):
 
     return ""
 
+# ── URL validation via Grok ──────────────────────────────────────────────
+
+def build_search_url(item):
+    """Build an X search URL that will find the conversation.
+
+    Since Grok fabricates tweet URLs, we generate a search link instead.
+    The user clicks this to find the actual thread on X.
+    """
+    # Build a search query from the most specific terms
+    author = item.get("author_handle", "").lstrip("@")
+    tags = item.get("relevance_tags", [])
+    text = item.get("tweet_text", "")
+
+    # Use author + first two keywords for a targeted search
+    parts = []
+    if author:
+        parts.append(f"from:{author}")
+    for tag in tags[:2]:
+        parts.append(tag)
+
+    if not parts:
+        # Fall back to first few meaningful words from tweet text
+        words = [w for w in text.split()[:5] if len(w) > 3]
+        parts = words[:3]
+
+    query = " ".join(parts)
+    encoded = requests.utils.quote(query)
+    return f"https://x.com/search?q={encoded}&f=live"
+
 # ── Grok-powered X discovery ────────────────────────────────────────────
 
 def grok_scout_topic(api_key, topic, config, existing_ids):
@@ -201,12 +230,14 @@ Only include tweets from the last 48 hours with real engagement (5+ likes or 3+ 
     if not isinstance(items, list):
         return []
 
-    # Convert to queue format, skipping already-queued items
+    # Convert to queue format, skipping already-queued and dead-link items
     opportunities = []
     for item in items:
         tweet_id = str(item.get("tweet_id", ""))
         if not tweet_id or tweet_id in existing_ids:
             continue
+
+        tweet_url = item.get("tweet_url", "")
 
         opportunities.append({
             "id": tweet_id,
@@ -216,7 +247,7 @@ Only include tweets from the last 48 hours with real engagement (5+ likes or 3+ 
             "tweet_id": tweet_id,
             "author_handle": item.get("author_handle", ""),
             "tweet_text": item.get("tweet_text", ""),
-            "tweet_url": item.get("tweet_url", ""),
+            "tweet_url": tweet_url,
             "engagement": item.get("engagement", {}),
             "relevance_score": item.get("relevance_score", 50),
             "relevance_tags": item.get("relevance_tags", []),
@@ -231,6 +262,12 @@ Only include tweets from the last 48 hours with real engagement (5+ likes or 3+ 
             "approved_at": None,
             "posted_at": None,
         })
+
+    # Replace fabricated URLs with X search links
+    for opp in opportunities:
+        opp["search_url"] = build_search_url(opp)
+        opp["tweet_url_unverified"] = opp.get("tweet_url", "")
+        opp["tweet_url"] = opp["search_url"]
 
     return opportunities
 
