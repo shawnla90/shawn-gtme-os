@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
+import Link from 'next/link'
 import { ReactLabDemos } from '../react-lab/demos'
 
 /* ── shared styles (match react-lab) ── */
@@ -1105,7 +1106,7 @@ function AntiSlopDetectorDemo() {
       </div>
 
       {/* action buttons */}
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
         <button
           onClick={() => setText(SLOP_EXAMPLE)}
           style={smallBtn(false)}
@@ -1127,6 +1128,20 @@ function AntiSlopDetectorDemo() {
         >
           clear
         </button>
+        <Link
+          href="/anti-slop"
+          style={{
+            padding: '6px 16px',
+            fontSize: 12,
+            fontFamily: 'var(--font-mono)',
+            color: 'var(--accent)',
+            textDecoration: 'none',
+            border: '1px solid var(--accent)',
+            borderRadius: 4,
+          }}
+        >
+          try the full version &rarr;
+        </Link>
       </div>
     </div>
   )

@@ -32,4 +32,6 @@ export {
   ScrollRevealSection,
   ParallaxSection,
   PageTransition,
+  HorizontalScrollSection,
+  HorizontalPanel,
 } from './motion'
