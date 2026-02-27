@@ -1,34 +1,14 @@
 {
   "date": "2026-02-26",
-  "generated_at": "2026-02-27T05:00:07.088908+00:00",
+  "generated_at": "2026-02-27T05:00:03.308793+00:00",
   "version": 4,
   "accomplishments": [
-    {
-      "type": "code_infra",
-      "title": "reddit_post",
-      "path": "scripts/reddit_post.py",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 747,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "shawnos layout",
-      "path": "website/apps/shawnos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 602,
-      "value_score": 5,
-      "shipped": true
-    },
     {
       "type": "website_lib",
       "title": "shared index",
       "path": "website/packages/shared/components/index.ts",
       "source": "auto",
-      "timestamp": "23:58",
+      "timestamp": "21:04",
       "words": 173,
       "value_score": 3,
       "shipped": true
@@ -38,118 +18,8 @@
       "title": "contentos method page",
       "path": "website/apps/contentos/app/method/page.tsx",
       "source": "auto",
-      "timestamp": "23:58",
+      "timestamp": "21:05",
       "words": 196,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "code_infra",
-      "title": "reddit_slack_digest",
-      "path": "scripts/reddit_slack_digest.py",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 546,
-      "value_score": 15,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos features page",
-      "path": "website/apps/gtmos/app/features/page.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 117,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos knowledge term page",
-      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 1467,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "reddit-engage",
-      "path": ".claude/skills/reddit-engage/SKILL.md",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 589,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "landing_page",
-      "title": "gtmos home page",
-      "path": "website/apps/gtmos/app/page.tsx",
-      "source": "auto",
-      "timestamp": "03:05",
-      "words": 136,
-      "value_score": 25,
-      "shipped": true
-    },
-    {
-      "type": "config_file",
-      "title": "shawnos next config",
-      "path": "website/apps/shawnos/next.config.ts",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 81,
-      "value_score": 0,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos layout",
-      "path": "website/apps/gtmos/app/layout.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 367,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_component",
-      "title": "UseCaseBlock",
-      "path": "website/packages/shared/components/UseCaseBlock.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 332,
-      "value_score": 5,
-      "shipped": true
-    },
-    {
-      "type": "website_lib",
-      "title": "shared index",
-      "path": "website/packages/shared/components/motion/index.ts",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 54,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/contentos/app/globals.css",
-      "source": "auto",
-      "timestamp": "03:05",
-      "words": 433,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_page",
-      "title": "contentos anti-slop page",
-      "path": "website/apps/contentos/app/anti-slop/page.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 202,
       "value_score": 5,
       "shipped": true
     },
@@ -158,8 +28,108 @@
       "title": "HorizontalPanel",
       "path": "website/packages/shared/components/motion/HorizontalPanel.tsx",
       "source": "auto",
-      "timestamp": "23:58",
+      "timestamp": "21:04",
       "words": 66,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "contentos og route",
+      "path": "website/apps/contentos/app/og/route.tsx",
+      "source": "auto",
+      "timestamp": "03:45",
+      "words": 212,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "04:33",
+      "words": 367,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos features page",
+      "path": "website/apps/gtmos/app/features/page.tsx",
+      "source": "auto",
+      "timestamp": "04:07",
+      "words": 117,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/gtmos/app/globals.css",
+      "source": "auto",
+      "timestamp": "03:45",
+      "words": 759,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "UseCaseBlock",
+      "path": "website/packages/shared/components/UseCaseBlock.tsx",
+      "source": "auto",
+      "timestamp": "03:45",
+      "words": 332,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/contentos/app/globals.css",
+      "source": "auto",
+      "timestamp": "02:25",
+      "words": 433,
+      "value_score": 2,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/components/motion/index.ts",
+      "source": "auto",
+      "timestamp": "21:04",
+      "words": 54,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos knowledge term page",
+      "path": "website/apps/gtmos/app/knowledge/[term]/page.tsx",
+      "source": "auto",
+      "timestamp": "03:45",
+      "words": 1467,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "03:55",
+      "words": 602,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos anti-slop page",
+      "path": "website/apps/contentos/app/anti-slop/page.tsx",
+      "source": "auto",
+      "timestamp": "21:07",
+      "words": 202,
       "value_score": 5,
       "shipped": true
     },
@@ -168,19 +138,19 @@
       "title": "GTMKnowledgeGuidePage",
       "path": "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx",
       "source": "auto",
-      "timestamp": "23:58",
+      "timestamp": "03:45",
       "words": 7419,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_page",
-      "title": "gtmos clay-wiki page",
-      "path": "website/apps/gtmos/app/clay-wiki/page.tsx",
+      "type": "config_file",
+      "title": "shawnos next config",
+      "path": "website/apps/shawnos/next.config.ts",
       "source": "auto",
-      "timestamp": "23:58",
-      "words": 1708,
-      "value_score": 5,
+      "timestamp": "21:03",
+      "words": 81,
+      "value_score": 0,
       "shipped": true
     },
     {
@@ -188,18 +158,18 @@
       "title": "contentos showcase page",
       "path": "website/apps/contentos/app/showcase/page.tsx",
       "source": "auto",
-      "timestamp": "23:58",
+      "timestamp": "21:09",
       "words": 176,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "website_component",
-      "title": "HorizontalScrollSection",
-      "path": "website/packages/shared/components/motion/HorizontalScrollSection.tsx",
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
       "source": "auto",
-      "timestamp": "23:58",
-      "words": 333,
+      "timestamp": "21:09",
+      "words": 325,
       "value_score": 5,
       "shipped": true
     },
@@ -208,37 +178,37 @@
       "title": "shared package",
       "path": "website/packages/shared/package.json",
       "source": "auto",
-      "timestamp": "23:58",
+      "timestamp": "03:54",
       "value_score": 0,
       "shipped": true
     },
     {
-      "type": "website_style",
-      "title": "globals styles",
-      "path": "website/apps/gtmos/app/globals.css",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 759,
-      "value_score": 2,
-      "shipped": true
-    },
-    {
-      "type": "website_route",
-      "title": "contentos og route",
-      "path": "website/apps/contentos/app/og/route.tsx",
-      "source": "auto",
-      "timestamp": "23:58",
-      "words": 212,
-      "value_score": 3,
-      "shipped": true
-    },
-    {
       "type": "website_page",
-      "title": "contentos layout",
-      "path": "website/apps/contentos/app/layout.tsx",
+      "title": "gtmos clay-wiki page",
+      "path": "website/apps/gtmos/app/clay-wiki/page.tsx",
       "source": "auto",
-      "timestamp": "23:58",
-      "words": 325,
+      "timestamp": "04:08",
+      "words": 1708,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "landing_page",
+      "title": "gtmos home page",
+      "path": "website/apps/gtmos/app/page.tsx",
+      "source": "auto",
+      "timestamp": "00:01",
+      "words": 136,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "HorizontalScrollSection",
+      "path": "website/packages/shared/components/motion/HorizontalScrollSection.tsx",
+      "source": "auto",
+      "timestamp": "21:04",
+      "words": 333,
       "value_score": 5,
       "shipped": true
     },
@@ -247,92 +217,58 @@
       "title": "gtmos mcp page",
       "path": "website/apps/gtmos/app/mcp/page.tsx",
       "source": "auto",
-      "timestamp": "23:58",
+      "timestamp": "04:10",
       "words": 1656,
       "value_score": 5,
       "shipped": true
     },
     {
-      "type": "complex_script",
-      "title": "reddit_scout",
-      "path": "scripts/reddit_scout.py",
+      "type": "linkedin_draft",
+      "title": "claude code mobile",
+      "path": "content/linkedin/drafts/2026-02-26_claude-code-mobile.md",
       "source": "auto",
-      "timestamp": "23:58",
-      "words": 1392,
-      "value_score": 25,
-      "shipped": true
+      "timestamp": "19:55",
+      "words": 473,
+      "value_score": 2,
+      "shipped": false
     },
     {
       "type": "x_draft",
-      "title": "ecosystem threads",
-      "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+      "title": "exa grok hubspot landing pages",
+      "path": "content/x/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
       "source": "auto",
-      "timestamp": "19:08",
-      "words": 626,
+      "timestamp": "18:32",
+      "words": 284,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "x_draft",
+      "title": "claude code mobile",
+      "path": "content/x/drafts/2026-02-26_claude-code-mobile.md",
+      "source": "auto",
+      "timestamp": "20:30",
+      "words": 254,
       "value_score": 2,
       "shipped": false
     },
     {
       "type": "linkedin_draft",
-      "title": "ecosystem capstone",
-      "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+      "title": "exa grok hubspot landing pages",
+      "path": "content/linkedin/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
       "source": "auto",
-      "timestamp": "19:06",
-      "words": 961,
+      "timestamp": "18:31",
+      "words": 499,
       "value_score": 2,
       "shipped": false
     },
     {
-      "type": "partner_research",
-      "title": "partner hubspot landing page proposal",
-      "path": "clients/partner/[redacted]/research/hubspot-landing-page-proposal.md",
-      "source": "auto-mtime",
-      "timestamp": "00:45",
-      "words": 1924,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
       "type": "website_component",
-      "title": "MagneticHover",
-      "path": "website/packages/shared/components/motion/MagneticHover.tsx",
+      "title": "ScrollRevealSection",
+      "path": "website/packages/shared/components/motion/ScrollRevealSection.tsx",
       "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 159,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "code_infra",
-      "title": "[redacted]_merge_lists",
-      "path": "scripts/[redacted]_merge_lists.py",
-      "source": "auto-mtime",
-      "timestamp": "16:11",
-      "words": 960,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_component",
-      "title": "FAQAccordion",
-      "path": "website/packages/shared/components/FAQAccordion.tsx",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 195,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "bulk-enrich",
-      "path": ".claude/skills/bulk-enrich/SKILL.md",
-      "source": "auto-mtime",
-      "timestamp": "02:23",
-      "words": 1111,
+      "timestamp": "03:50",
+      "words": 80,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -342,96 +278,8 @@
       "title": "MotionReveal",
       "path": "website/packages/shared/components/motion/MotionReveal.tsx",
       "source": "auto-mtime",
-      "timestamp": "23:58",
+      "timestamp": "03:50",
       "words": 171,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos for hines page",
-      "path": "website/apps/gtmos/app/for/hines/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "01:16",
-      "words": 68,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_component",
-      "title": "ProcessSteps",
-      "path": "website/packages/shared/components/ProcessSteps.tsx",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 179,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "complex_script",
-      "title": "[redacted]_apollo_tier2",
-      "path": "scripts/[redacted]_apollo_tier2.py",
-      "source": "auto-mtime",
-      "timestamp": "16:15",
-      "words": 1806,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_component",
-      "title": "ScrollRevealSection",
-      "path": "website/packages/shared/components/motion/ScrollRevealSection.tsx",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 80,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_page",
-      "title": "gtmos for ovation page",
-      "path": "website/apps/gtmos/app/for/ovation/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "01:16",
-      "words": 68,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_component",
-      "title": "PageTransition",
-      "path": "website/packages/shared/components/motion/PageTransition.tsx",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 63,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "skill_updated",
-      "title": "hubspot-landing-page",
-      "path": ".claude/skills/hubspot-landing-page/SKILL.md",
-      "source": "auto-mtime",
-      "timestamp": "02:58",
-      "words": 1849,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "code_infra",
-      "title": "[redacted]_prep_costar",
-      "path": "scripts/[redacted]_prep_costar.py",
-      "source": "auto-mtime",
-      "timestamp": "00:35",
-      "words": 1066,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -441,52 +289,30 @@
       "title": "StaggerItem",
       "path": "website/packages/shared/components/motion/StaggerItem.tsx",
       "source": "auto-mtime",
-      "timestamp": "23:58",
+      "timestamp": "03:50",
       "words": 73,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "website_page",
-      "title": "gtmos for eastman page",
-      "path": "website/apps/gtmos/app/for/eastman/page.tsx",
-      "source": "auto-mtime",
-      "timestamp": "01:16",
-      "words": 67,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "complex_script",
-      "title": "[redacted]_apollo_chain",
-      "path": "scripts/[redacted]_apollo_chain.py",
-      "source": "auto-mtime",
-      "timestamp": "18:12",
-      "words": 2202,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
       "type": "website_component",
-      "title": "StaggerContainer",
-      "path": "website/packages/shared/components/motion/StaggerContainer.tsx",
+      "title": "ProcessSteps",
+      "path": "website/packages/shared/components/ProcessSteps.tsx",
       "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 81,
+      "timestamp": "03:53",
+      "words": 179,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
     },
     {
-      "type": "code_infra",
-      "title": "[redacted]_property_ranking",
-      "path": "scripts/[redacted]_property_ranking.py",
+      "type": "website_style",
+      "title": "tokens styles",
+      "path": "website/packages/shared/styles/tokens.css",
       "source": "auto-mtime",
-      "timestamp": "16:49",
-      "words": 998,
+      "timestamp": "02:11",
+      "words": 112,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -496,41 +322,8 @@
       "title": "CursorGlow",
       "path": "website/packages/shared/components/CursorGlow.tsx",
       "source": "auto-mtime",
-      "timestamp": "23:58",
+      "timestamp": "03:53",
       "words": 450,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "complex_script",
-      "title": "[redacted]_bulk_enrichment",
-      "path": "scripts/[redacted]_bulk_enrichment.py",
-      "source": "auto-mtime",
-      "timestamp": "00:37",
-      "words": 1917,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "complex_script",
-      "title": "[redacted]_apollo_people",
-      "path": "scripts/[redacted]_apollo_people.py",
-      "source": "auto-mtime",
-      "timestamp": "02:50",
-      "words": 1665,
-      "value_score": 0,
-      "shipped": false,
-      "mtime_only": true
-    },
-    {
-      "type": "website_component",
-      "title": "SectionHeadline",
-      "path": "website/packages/shared/components/SectionHeadline.tsx",
-      "source": "auto-mtime",
-      "timestamp": "23:58",
-      "words": 100,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -540,8 +333,63 @@
       "title": "ParallaxSection",
       "path": "website/packages/shared/components/motion/ParallaxSection.tsx",
       "source": "auto-mtime",
-      "timestamp": "23:58",
+      "timestamp": "03:50",
       "words": 182,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_component",
+      "title": "FAQAccordion",
+      "path": "website/packages/shared/components/FAQAccordion.tsx",
+      "source": "auto-mtime",
+      "timestamp": "03:53",
+      "words": 195,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_component",
+      "title": "PageTransition",
+      "path": "website/packages/shared/components/motion/PageTransition.tsx",
+      "source": "auto-mtime",
+      "timestamp": "03:50",
+      "words": 63,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_component",
+      "title": "StaggerContainer",
+      "path": "website/packages/shared/components/motion/StaggerContainer.tsx",
+      "source": "auto-mtime",
+      "timestamp": "03:50",
+      "words": 81,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_component",
+      "title": "SectionHeadline",
+      "path": "website/packages/shared/components/SectionHeadline.tsx",
+      "source": "auto-mtime",
+      "timestamp": "03:56",
+      "words": 100,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_component",
+      "title": "MagneticHover",
+      "path": "website/packages/shared/components/motion/MagneticHover.tsx",
+      "source": "auto-mtime",
+      "timestamp": "03:50",
+      "words": 159,
       "value_score": 0,
       "shipped": false,
       "mtime_only": true
@@ -734,37 +582,6 @@
         "website/"
       ],
       "timestamp": "21:56"
-    },
-    {
-      "hash": "20e6959",
-      "message": "feat: Reddit engagement pipeline \u2014 Grok-powered scout, Slack digest, posting flow",
-      "type": "system_engine",
-      "score": 60,
-      "files_changed": 8,
-      "lines_added": 999,
-      "lines_removed": 1,
-      "lines_net": 998,
-      "directories": [
-        ".claude/",
-        "requirements.txt/",
-        "scripts/",
-        "skills/"
-      ],
-      "timestamp": "23:58"
-    },
-    {
-      "hash": "5d00045",
-      "message": "chore: update context handoff for Reddit pipeline session",
-      "type": "chore",
-      "score": 1,
-      "files_changed": 1,
-      "lines_added": 42,
-      "lines_removed": 40,
-      "lines_net": 2,
-      "directories": [
-        ".claude/"
-      ],
-      "timestamp": "23:58"
     }
   ],
   "pipeline": {
@@ -925,31 +742,10 @@
       },
       {
         "platform": "linkedin",
-        "title": "shawnos anti lead magnet",
-        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+        "title": "openclaw honest opinion",
+        "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
         "target_date": "2026-02-23",
-        "words": 765
-      },
-      {
-        "platform": "linkedin",
-        "title": "gtmos infrastructure",
-        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
-        "target_date": "2026-02-24",
-        "words": 821
-      },
-      {
-        "platform": "linkedin",
-        "title": "contentos machine",
-        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
-        "target_date": "2026-02-25",
-        "words": 896
-      },
-      {
-        "platform": "linkedin",
-        "title": "exa mcp pre enrichment",
-        "path": "content/linkedin/drafts/2026-02-25_exa-mcp-pre-enrichment.md",
-        "target_date": "2026-02-25",
-        "words": 336
+        "words": 542
       },
       {
         "platform": "linkedin",
@@ -960,10 +756,17 @@
       },
       {
         "platform": "linkedin",
-        "title": "ecosystem capstone",
-        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "title": "claude code mobile",
+        "path": "content/linkedin/drafts/2026-02-26_claude-code-mobile.md",
         "target_date": "2026-02-26",
-        "words": 961
+        "words": 473
+      },
+      {
+        "platform": "linkedin",
+        "title": "exa grok hubspot landing pages",
+        "path": "content/linkedin/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
+        "target_date": "2026-02-26",
+        "words": 499
       },
       {
         "platform": "x",
@@ -1121,24 +924,10 @@
       },
       {
         "platform": "x",
-        "title": "shawnos threads",
-        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+        "title": "openclaw honest opinion",
+        "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
         "target_date": "2026-02-23",
-        "words": 594
-      },
-      {
-        "platform": "x",
-        "title": "gtmos threads",
-        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
-        "target_date": "2026-02-24",
-        "words": 596
-      },
-      {
-        "platform": "x",
-        "title": "contentos threads",
-        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
-        "target_date": "2026-02-25",
-        "words": 567
+        "words": 170
       },
       {
         "platform": "x",
@@ -1149,10 +938,17 @@
       },
       {
         "platform": "x",
-        "title": "ecosystem threads",
-        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "title": "claude code mobile",
+        "path": "content/x/drafts/2026-02-26_claude-code-mobile.md",
         "target_date": "2026-02-26",
-        "words": 626
+        "words": 254
+      },
+      {
+        "platform": "x",
+        "title": "exa grok hubspot landing pages",
+        "path": "content/x/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
+        "target_date": "2026-02-26",
+        "words": 284
       },
       {
         "platform": "substack",
@@ -1198,13 +994,6 @@
       },
       {
         "platform": "substack",
-        "title": "start at level one",
-        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
-        "target_date": "2026-02-24",
-        "words": 1543
-      },
-      {
-        "platform": "substack",
         "title": "how to setup ai assistant",
         "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
         "target_date": "2026-02-25",
@@ -1228,152 +1017,20 @@
     "finalized_today": []
   },
   "todos": [],
-  "token_usage": [
-    {
-      "session_id": "1ef7f430-3615-4fcb-9cc9-133deb041dfb",
-      "input_tokens": 81,
-      "output_tokens": 2689,
-      "cache_read_tokens": 2512135,
-      "cache_write_tokens": 268742,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 53,
-      "logged_at": "00:00",
-      "cost": 9.01,
-      "context": "claude-code 00:35"
-    },
-    {
-      "session_id": "3ee53b2f-8cc4-4e30-8edc-f823f284df37",
-      "input_tokens": 3003,
-      "output_tokens": 81332,
-      "cache_read_tokens": 23604439,
-      "cache_write_tokens": 1166090,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 265,
-      "logged_at": "00:00",
-      "cost": 63.4158,
-      "context": "claude-code 04:52"
-    },
-    {
-      "session_id": "4291d016-e289-4fa2-b506-8c9a29673151",
-      "input_tokens": 350,
-      "output_tokens": 105791,
-      "cache_read_tokens": 19043648,
-      "cache_write_tokens": 624880,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 242,
-      "logged_at": "00:00",
-      "cost": 48.2215,
-      "context": "claude-code 05:36"
-    },
-    {
-      "session_id": "44b05895-d201-4abd-9f9a-4a40c04c4e82",
-      "input_tokens": 2564,
-      "output_tokens": 16538,
-      "cache_read_tokens": 9259066,
-      "cache_write_tokens": 561051,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 112,
-      "logged_at": "00:00",
-      "cost": 25.6871,
-      "context": "claude-code 00:13"
-    },
-    {
-      "session_id": "9a6f8286-5a5e-410a-a6cb-cbbc7397ece7",
-      "input_tokens": 102,
-      "output_tokens": 8343,
-      "cache_read_tokens": 2728465,
-      "cache_write_tokens": 237889,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 68,
-      "logged_at": "00:00",
-      "cost": 9.1804,
-      "context": "claude-code 01:39"
-    },
-    {
-      "session_id": "a043bce6-5221-416e-b0e8-a4f3afd51ac6",
-      "input_tokens": 17976,
-      "output_tokens": 247,
-      "cache_read_tokens": 888128,
-      "cache_write_tokens": 233353,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 26,
-      "logged_at": "00:00",
-      "cost": 5.9957,
-      "context": "claude-code 00:14"
-    },
-    {
-      "session_id": "a232e111-37a0-408d-bbc1-442c03202d72",
-      "input_tokens": 121,
-      "output_tokens": 17162,
-      "cache_read_tokens": 7230156,
-      "cache_write_tokens": 192948,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 95,
-      "logged_at": "00:00",
-      "cost": 15.752,
-      "context": "claude-code 00:11"
-    },
-    {
-      "session_id": "a3d2a109-bde4-4b02-aaf8-c0b8732c0aac",
-      "input_tokens": 17,
-      "output_tokens": 201,
-      "cache_read_tokens": 627063,
-      "cache_write_tokens": 8139,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 11,
-      "logged_at": "00:00",
-      "cost": 1.1085,
-      "context": "claude-code 00:11"
-    },
-    {
-      "session_id": "d31fda47-0fb7-46f1-b78c-9faf6fabd2fa",
-      "input_tokens": 13,
-      "output_tokens": 1455,
-      "cache_read_tokens": 1434250,
-      "cache_write_tokens": 15656,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 13,
-      "logged_at": "00:00",
-      "cost": 2.5542,
-      "context": "claude-code 00:01"
-    },
-    {
-      "session_id": "d53961ae-5f82-4cc6-9527-1313ce921608",
-      "input_tokens": 198,
-      "output_tokens": 31428,
-      "cache_read_tokens": 10819945,
-      "cache_write_tokens": 248158,
-      "model": "opus",
-      "source": "claude-code",
-      "messages": 147,
-      "logged_at": "00:00",
-      "cost": 23.243,
-      "context": "claude-code 02:04"
-    }
-  ],
+  "token_usage": [],
   "stats": {
     "platform_breakdown": {
-      "other": 16,
-      "website": 33,
-      "x": 1,
-      "linkedin": 1,
-      "ops": 1
+      "website": 31,
+      "other": 3,
+      "linkedin": 2,
+      "x": 2
     },
-    "words_in_touched_files": 39109,
-    "pipeline_words": 47685,
+    "words_in_touched_files": 20169,
+    "pipeline_words": 42202,
     "finals_count": 0,
-    "first_activity": "00:35",
-    "last_activity": "23:58",
-    "output_score": 369,
+    "first_activity": "00:01",
+    "last_activity": "21:09",
+    "output_score": 308,
     "letter_grade": "B",
     "score_breakdown": [
       {
@@ -1440,43 +1097,28 @@
         "type": "feature_build",
         "title": "feat: ContentOS immersive overhaul - Method, Anti-Slop, Show",
         "points": 30
-      },
-      {
-        "type": "system_engine",
-        "title": "feat: Reddit engagement pipeline \u2014 Grok-powered scout, Slack",
-        "points": 60
-      },
-      {
-        "type": "chore",
-        "title": "chore: update context handoff for Reddit pipeline session",
-        "points": 1
       }
     ],
-    "efficiency_rating": 1.81,
-    "shipped_count": 26,
-    "draft_count": 26,
-    "ship_rate": 0.5,
-    "agent_cost": 204.17,
-    "cost_per_point": 0.55,
-    "efficiency_ratio": 1.81,
-    "words_today": 39109,
-    "lines_added": 14743,
-    "lines_removed": 5230,
-    "lines_net": 9513,
-    "code_loc": 10295,
-    "content_loc": 301,
-    "data_loc": 4147
+    "efficiency_rating": null,
+    "shipped_count": 22,
+    "draft_count": 16,
+    "ship_rate": 0.58,
+    "agent_cost": 0,
+    "cost_per_point": 0.0,
+    "efficiency_ratio": null,
+    "words_today": 20169,
+    "lines_added": 13702,
+    "lines_removed": 5189,
+    "lines_net": 8513,
+    "code_loc": 9454,
+    "content_loc": 142,
+    "data_loc": 4106
   },
   "git_summary": {
-    "commits_today": 15,
+    "commits_today": 13,
     "files_added": [
-      ".claude/skills/reddit-engage/SKILL.md",
       "content/nio-log/2026-02-26.md",
       "data/daily-log/2026-02-25.json",
-      "scripts/launchd/com.shawnos.reddit-digest.plist",
-      "scripts/reddit_post.py",
-      "scripts/reddit_scout.py",
-      "scripts/reddit_slack_digest.py",
       "website/apps/contentos/app/anti-slop/AntiSlopClient.tsx",
       "website/apps/contentos/app/anti-slop/page.tsx",
       "website/apps/contentos/app/components/BuiltWithStrip.tsx",
@@ -1514,7 +1156,6 @@
       "website/packages/shared/components/motion/HorizontalScrollSection.tsx"
     ],
     "files_modified": [
-      ".claude/context-handoff.md",
       "data/daily-log/2026-02-25.json",
       "data/progression/profile.json",
       "data/seo/daily-brief.json",
@@ -1522,9 +1163,6 @@
       "data/seo/used-keywords.json",
       "data/website-stats.json",
       "docs/_generated/skill-manifest.md",
-      "requirements.txt",
-      "scripts/daily_cron.sh",
-      "skills/tier-3-content-ops/pillars/reddit-growth-seo.md",
       "website/apps/contentos/app/HomeContent.tsx",
       "website/apps/contentos/app/components/BuiltWithStrip.tsx",
       "website/apps/contentos/app/globals.css",
@@ -1578,18 +1216,18 @@
       "website/packages/shared/package.json",
       "website/packages/shared/pages/GTMKnowledgeGuidePage.tsx"
     ],
-    "lines_added_count": 14743,
-    "lines_removed_count": 5230,
-    "lines_net": 9513,
-    "code_loc": 10295,
-    "content_loc": 301,
-    "data_loc": 4147
+    "lines_added_count": 13702,
+    "lines_removed_count": 5189,
+    "lines_net": 8513,
+    "code_loc": 9454,
+    "content_loc": 142,
+    "data_loc": 4106
   },
   "dev_equivalent": {
-    "net_lines": 9513,
-    "dev_days": 63.4,
-    "cost_estimate": 31700,
-    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 9,513 net lines represent approximately 63 developer-days of output \u2014 what a small team would produce in 3+ months.",
+    "net_lines": 8513,
+    "dev_days": 56.8,
+    "cost_estimate": 28400,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 8,513 net lines represent approximately 57 developer-days of output \u2014 what a small team would produce in 3+ months.",
     "assumptions": {
       "lines_per_day": 150,
       "cost_per_day": 500,
@@ -1597,19 +1235,19 @@
     }
   },
   "cost": {
-    "api_equivalent": 204.17,
+    "api_equivalent": 0,
     "actual_cost": 0.0,
     "pricing_mode": "max"
   },
   "token_efficiency": {
-    "total_tokens": 81993812,
-    "total_sessions": 10,
-    "tokens_per_point": 222205,
-    "tokens_per_commit": 5466254,
-    "tokens_per_loc": 8619,
-    "avg_context_utilization": 1.0,
+    "total_tokens": 0,
+    "total_sessions": 0,
+    "tokens_per_point": 0,
+    "tokens_per_commit": 0,
+    "tokens_per_loc": 0,
+    "avg_context_utilization": 0,
     "pricing_mode": "max",
-    "api_equivalent_cost": 204.17,
+    "api_equivalent_cost": 0,
     "actual_cost": 0.0
   }
 }

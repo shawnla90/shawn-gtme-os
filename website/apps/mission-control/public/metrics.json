@@ -1,10 +1,10 @@
 {
-  "generated": "2026-02-27T05:00:17.000Z",
+  "generated": "2026-02-27T05:00:07.000Z",
   "system": {
-    "status": "online",
+    "status": "degraded",
     "uptime": "live",
     "lastCron": "See scheduler",
-    "commitCount": 14,
+    "commitCount": 17,
     "activeSkills": 42,
     "memoryFiles": 5,
     "sessionCost": "$0.00",
@@ -12,71 +12,45 @@
   },
   "calendar": [
     {
-      "date": "2026-02-21",
-      "events": [
-        {
-          "time": "8:00 AM",
-          "event": "nio.terminal blog generation",
-          "type": "automated"
-        },
-        {
-          "time": "10:00 PM",
-          "event": "Daily build summary",
-          "type": "automated"
-        }
-      ]
+      "date": "2026-02-27",
+      "events": []
     }
   ],
   "todos": [
     {
-      "task": "Review nio.terminal blog post",
-      "time": "8:15 AM",
-      "priority": "high"
-    },
-    {
-      "task": "Check Discord community engagement",
-      "time": "10:00 AM",
-      "priority": "medium"
-    },
-    {
-      "task": "Monitor RSS feed performance",
-      "time": "2:00 PM",
-      "priority": "medium"
-    },
-    {
-      "task": "Publish 5 pending drafts",
-      "time": "Flexible",
-      "priority": "high"
+      "task": "No active todos",
+      "time": "N/A",
+      "priority": "low"
     }
   ],
   "drafts": [
     {
       "type": "linkedin",
-      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+      "title": "claude code mobile",
       "status": "draft",
       "date": "2026-02-26",
-      "pillar": "Building & Sharing (capstone)"
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "linkedin",
+      "title": "exa grok hubspot landing pages",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "GTM Workflow / Building & Sharing"
     },
     {
       "type": "x",
-      "title": "Full Ecosystem X Threads -- Day 4",
+      "title": "claude code mobile",
       "status": "draft",
       "date": "2026-02-26",
-      "pillar": null
+      "pillar": "Building & Sharing"
     },
     {
-      "type": "linkedin",
-      "title": "Content OS: The Content Machine -- Day 3",
+      "type": "x",
+      "title": "exa grok hubspot landing pages",
       "status": "draft",
-      "date": "2026-02-25",
-      "pillar": "Skill/System Share"
-    },
-    {
-      "type": "linkedin",
-      "title": "LinkedIn Draft: Exa MCP Pre-Enrichment",
-      "status": "draft",
-      "date": "2026-02-25",
-      "pillar": null
+      "date": "2026-02-26",
+      "pillar": "GTM Workflow / Building & Sharing"
     },
     {
       "type": "linkedin",
@@ -84,13 +58,6 @@
       "status": "draft",
       "date": "2026-02-25",
       "pillar": "Building & Sharing"
-    },
-    {
-      "type": "substack",
-      "title": "Start at Level One",
-      "status": "draft",
-      "date": "2026-02-25",
-      "pillar": null
     },
     {
       "type": "substack",
@@ -101,13 +68,6 @@
     },
     {
       "type": "x",
-      "title": "Content OS X Threads -- Day 3",
-      "status": "draft",
-      "date": "2026-02-25",
-      "pillar": null
-    },
-    {
-      "type": "x",
       "title": "how to ai assistant claude code",
       "status": "draft",
       "date": "2026-02-25",
@@ -115,16 +75,30 @@
     },
     {
       "type": "linkedin",
-      "title": "GTM OS: The Infrastructure -- Day 2",
+      "title": "openclaw honest opinion",
       "status": "draft",
-      "date": "2026-02-24",
-      "pillar": "Skill/System Share"
+      "date": "2026-02-23",
+      "pillar": "building-sharing + skill-system-shares"
+    },
+    {
+      "type": "x",
+      "title": "openclaw honest opinion",
+      "status": "draft",
+      "date": "2026-02-23",
+      "pillar": null
+    },
+    {
+      "type": "substack",
+      "title": "recursive drift",
+      "status": "draft",
+      "date": "2026-02-19",
+      "pillar": null
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
     "teamMembers": 4,
-    "draftsTracked": 66
+    "draftsTracked": 62
   }
 }
