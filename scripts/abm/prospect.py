@@ -8,7 +8,6 @@ import time
 import requests
 
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'crm.db')
-APOLLO_API_KEY = os.environ.get('APOLLO_API_KEY', '')
 APOLLO_BASE_URL = 'https://api.apollo.io/api/v1'
 
 # Target titles for prospecting
@@ -33,18 +32,18 @@ def get_db():
 
 def apollo_search(domain, page=1):
     """Search Apollo for contacts at a given domain."""
+    APOLLO_API_KEY = os.environ.get('APOLLO_API_KEY', '')
     if not APOLLO_API_KEY:
         raise ValueError("APOLLO_API_KEY not set. Export it or add to .env")
 
     headers = {
         'Content-Type': 'application/json',
         'Cache-Control': 'no-cache',
+        'X-Api-Key': APOLLO_API_KEY,
     }
 
     payload = {
-        'api_key': APOLLO_API_KEY,
         'q_organization_domains': domain,
-        'person_titles': TARGET_TITLES,
         'person_seniorities': TARGET_SENIORITY,
         'page': page,
         'per_page': 10,
@@ -53,7 +52,7 @@ def apollo_search(domain, page=1):
     for attempt in range(3):
         try:
             resp = requests.post(
-                f'{APOLLO_BASE_URL}/mixed_people/search',
+                f'{APOLLO_BASE_URL}/mixed_people/api_search',
                 json=payload,
                 headers=headers,
                 timeout=30,

@@ -10,8 +10,6 @@ import requests
 
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'crm.db')
 PAGES_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'abm', 'pages')
-XAI_API_KEY = os.environ.get('XAI_API_KEY', '')
-EXA_API_KEY = os.environ.get('EXA_API_KEY', '')
 
 # Voice rules injected into Grok prompts
 VOICE_RULES = """
@@ -72,6 +70,7 @@ def get_db():
 
 def grok_call(system_prompt, user_prompt, temperature=0.7):
     """Call Grok (xAI) API."""
+    XAI_API_KEY = os.environ.get('XAI_API_KEY', '')
     if not XAI_API_KEY:
         raise ValueError("XAI_API_KEY not set")
 
@@ -99,7 +98,7 @@ def exa_deep_dive(company_name, domain):
     """Additional deep research for page generation."""
     from exa_py import Exa
 
-    exa = Exa(api_key=EXA_API_KEY)
+    exa = Exa(api_key=os.environ.get('EXA_API_KEY', ''))
     research = []
 
     queries = [
@@ -111,14 +110,13 @@ def exa_deep_dive(company_name, domain):
 
     for query in queries:
         try:
-            results = exa.search_and_contents(
-                query, num_results=2, text={"max_characters": 800},
-                use_autoprompt=True,
+            results = exa.search(
+                query, num_results=2,
             )
             for r in results.results:
                 research.append({
                     'title': getattr(r, 'title', ''),
-                    'text': getattr(r, 'text', '')[:800] if hasattr(r, 'text') else '',
+                    'text': (getattr(r, 'text', '') or '')[:800],
                     'url': getattr(r, 'url', ''),
                 })
             time.sleep(1)
@@ -150,7 +148,7 @@ def generate_page_copy(company, contact, research_data, deep_research, vibe):
     # Compile all research into context
     research_text = json.dumps(research_data, indent=2)[:3000] if research_data else "No prior research available."
     deep_text = "\n".join([
-        f"- {r.get('title', '')}: {r.get('text', '')[:300]}"
+        f"- {r.get('title', '')}: {(r.get('text', '') or '')[:300]}"
         for r in deep_research
     ])[:2000]
 

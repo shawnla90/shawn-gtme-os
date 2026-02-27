@@ -8,7 +8,6 @@ import time
 from exa_py import Exa
 
 DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'crm.db')
-EXA_API_KEY = os.environ.get('EXA_API_KEY', '')
 
 # ICP search queries - rotate through these for variety
 SEARCH_QUERIES = [
@@ -29,9 +28,10 @@ DEEP_QUERIES = [
 
 
 def get_exa():
-    if not EXA_API_KEY:
+    key = os.environ.get('EXA_API_KEY', '')
+    if not key:
         raise ValueError("EXA_API_KEY not set. Export it or add to .env")
-    return Exa(api_key=EXA_API_KEY)
+    return Exa(api_key=key)
 
 
 def get_db():
@@ -59,8 +59,8 @@ def find_companies(exa, limit=100):
             results = exa.search(
                 query,
                 num_results=per_query,
-                type="company",
-                use_autoprompt=True,
+                category="company",
+                contents=False,
             )
 
             for r in results.results:
@@ -73,12 +73,14 @@ def find_companies(exa, limit=100):
                         'title': getattr(r, 'title', '') or domain,
                         'domain': domain,
                         'url': getattr(r, 'url', ''),
-                        'snippet': getattr(r, 'text', '')[:500] if hasattr(r, 'text') else '',
+                        'snippet': (getattr(r, 'text', '') or '')[:500],
                     })
 
             time.sleep(1)  # Rate limit
         except Exception as e:
+            import traceback
             print(f"  [!] Search failed: {e}")
+            traceback.print_exc()
             time.sleep(2)
 
     return companies[:limit]
@@ -100,11 +102,9 @@ def research_company(exa, company):
         )
 
         try:
-            results = exa.search_and_contents(
+            results = exa.search(
                 query,
                 num_results=3,
-                text={"max_characters": 1000},
-                use_autoprompt=True,
             )
 
             for r in results.results:
@@ -112,7 +112,7 @@ def research_company(exa, company):
                     'query': query,
                     'title': getattr(r, 'title', ''),
                     'url': getattr(r, 'url', ''),
-                    'text': getattr(r, 'text', '')[:1000] if hasattr(r, 'text') else '',
+                    'text': (getattr(r, 'text', '') or '')[:1000],
                 })
 
             time.sleep(1)  # Rate limit
