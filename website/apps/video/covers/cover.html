@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --canvas: #0D1117;
+    --canvas-subtle: #161B22;
+    --border: #30363D;
+    --text-primary: #C9D1D9;
+    --text-secondary: #8B949E;
+    --text-muted: #484F58;
+    --nio-blue: #6B8AFF;
+    --green: #4EC373;
+    --amber: #F59E0B;
+    --red: #E05555;
+    --font: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font);
+    background: var(--canvas);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ═══════════════════════════════════════
+     COVER 1: Hero (1456 x 816) — Combined
+     ═══════════════════════════════════════ */
+  #cover1 {
+    width: 1456px;
+    height: 816px;
+    background: var(--canvas);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+  }
+
+  #cover1 .graph-side {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #cover1 .chat-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  /* Vignette */
+  .vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%);
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  /* Accent wash */
+  .accent-wash {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(107,138,255,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Chat Window Component */
+  .chat-window {
+    width: 520px;
+    background: var(--canvas-subtle);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 60px rgba(107,138,255,0.08), 0 20px 40px rgba(0,0,0,0.4);
+  }
+
+  .chat-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .avatar-ring {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: conic-gradient(var(--nio-blue) 0deg, var(--nio-blue) 198deg, var(--border) 198deg, var(--border) 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+  }
+
+  .avatar-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: var(--canvas);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .header-info {
+    flex: 1;
+  }
+
+  .header-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .header-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .header-meta .tier { color: var(--nio-blue); }
+
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+  }
+
+  .chat-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .msg {
+    max-width: 85%;
+    padding: 10px 16px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .msg.user {
+    align-self: flex-end;
+    background: var(--nio-blue);
+    color: #fff;
+    border-bottom-right-radius: 4px;
+    font-weight: 500;
+  }
+
+  .msg.nio {
+    align-self: flex-start;
+    background: var(--canvas);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-bottom-left-radius: 4px;
+  }
+
+  /* XP Float */
+  .xp-float {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--green);
+    text-shadow: 0 0 12px rgba(78,195,115,0.5);
+    letter-spacing: 1px;
+  }
+
+  /* Meet Nio Title */
+  .meet-nio {
+    text-align: center;
+  }
+
+  .meet-nio h1 {
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -1px;
+  }
+
+  .meet-nio h1 .cursor {
+    display: inline-block;
+    width: 4px;
+    height: 44px;
+    background: var(--nio-blue);
+    margin-left: 4px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+
+  .meet-nio .subtitle {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-top: 12px;
+  }
+
+  .meet-nio .url {
+    font-size: 15px;
+    color: var(--nio-blue);
+    margin-top: 20px;
+    opacity: 0.8;
+  }
+
+  /* Graph Nodes (simplified SVG-like) */
+  .node {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .node .glow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  .node .circle {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .node .label {
+    position: absolute;
+    bottom: -22px;
+    white-space: nowrap;
+    font-size: 10px;
+    color: var(--text-primary);
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .node.core .label { font-size: 14px; bottom: -28px; }
+  .node.domain .label { font-size: 11px; bottom: -24px; }
+
+  /* Divider line */
+  .divider {
+    width: 1px;
+    height: 70%;
+    background: linear-gradient(to bottom, transparent, var(--border), transparent);
+    align-self: center;
+  }
+
+  /* SQL overlay */
+  .sql-overlay {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: var(--text-muted);
+    opacity: 0.6;
+    white-space: nowrap;
+  }
+
+  /* ═══════════════════════════════════════
+     COVER 2: Social Share (1200 x 630)
+     ═══════════════════════════════════════ */
+  #cover2 {
+    width: 1200px;
+    height: 630px;
+    background: var(--canvas);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  #cover2 .chat-window {
+    width: 480px;
+    transform: scale(1.05);
+  }
+
+  #cover2 .cta-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  #cover2 .cta-block h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  #cover2 .cta-block h2 .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 34px;
+    background: var(--nio-blue);
+    margin-left: 3px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+
+  #cover2 .cta-block .sub {
+    font-size: 16px;
+    color: var(--text-secondary);
+  }
+
+  #cover2 .cta-block .url {
+    font-size: 14px;
+    color: var(--nio-blue);
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  /* ═══════════════════════════════════════
+     COVER 3: Square (1080 x 1080) — Stacked
+     ═══════════════════════════════════════ */
+  #cover3 {
+    width: 1080px;
+    height: 1080px;
+    background: var(--canvas);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  #cover3 .top-text {
+    text-align: center;
+  }
+
+  #cover3 .top-text h2 {
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  #cover3 .top-text h2 .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 36px;
+    background: var(--nio-blue);
+    margin-left: 3px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+
+  #cover3 .top-text .sub {
+    font-size: 17px;
+    color: var(--text-secondary);
+    margin-top: 10px;
+  }
+
+  #cover3 .chat-window {
+    width: 600px;
+  }
+
+  #cover3 .bottom-row {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .stat-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 13px;
+  }
+
+  .stat-pill .val {
+    color: var(--nio-blue);
+    font-weight: 600;
+  }
+
+  .stat-pill .lbl {
+    color: var(--text-muted);
+  }
+
+  /* ═══════════════════════════════════════
+     COVER 4: Banner (1456 x 400) — Clean
+     ═══════════════════════════════════════ */
+  #cover4 {
+    width: 1456px;
+    height: 400px;
+    background: var(--canvas);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+  }
+
+  #cover4 .left-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #cover4 .left-block h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  #cover4 .left-block h2 .cursor {
+    display: inline-block;
+    width: 4px;
+    height: 40px;
+    background: var(--nio-blue);
+    margin-left: 3px;
+    vertical-align: middle;
+    border-radius: 2px;
+  }
+
+  #cover4 .left-block .sub {
+    font-size: 18px;
+    color: var(--text-secondary);
+  }
+
+  #cover4 .left-block .url {
+    font-size: 14px;
+    color: var(--nio-blue);
+    opacity: 0.7;
+    margin-top: 4px;
+  }
+
+  #cover4 .mini-chat {
+    width: 440px;
+    background: var(--canvas-subtle);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 0 40px rgba(107,138,255,0.06);
+  }
+
+  #cover4 .xp-badge {
+    position: absolute;
+    top: 24px;
+    right: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green);
+    text-shadow: 0 0 8px rgba(78,195,115,0.4);
+  }
+
+  /* Spacer between covers */
+  .spacer {
+    height: 60px;
+    background: #000;
+  }
+
+  /* SQL code block */
+  .sql-block {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: rgba(13,17,23,0.8);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    opacity: 0.7;
+  }
+  .sql-block .kw { color: var(--nio-blue); }
+  .sql-block .col { color: var(--amber); }
+  .sql-block .tbl { color: var(--green); }
+
+  /* ═══════════════════════════════════════
+     MASCOT DUO — Nio + Claude pixel art
+     ═══════════════════════════════════════ */
+  .mascot-duo {
+    position: absolute;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    z-index: 10;
+  }
+
+  .mascot-duo.banner-pos {
+    bottom: 16px;
+    gap: 16px;
+  }
+
+  .mascot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mascot .sprite {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  .mascot .name {
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+  }
+
+  /* Nio avatar */
+  .mascot .nio-sprite {
+    width: 120px;
+    height: 120px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+
+  .mascot.sm .nio-sprite {
+    width: 80px;
+    height: 80px;
+  }
+
+  .mascot.sm .name {
+    font-size: 11px;
+  }
+
+  /* Claude mascot — CSS pixel art */
+  .claude-pixel {
+    width: 48px;
+    height: 40px;
+    position: relative;
+  }
+
+  .mascot.sm .claude-pixel {
+    width: 36px;
+    height: 30px;
+  }
+
+  .claude-pixel-inner {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+  }
+
+  .claude-pixel-inner .p {
+    background: #C4704A;
+  }
+  .claude-pixel-inner .d {
+    background: #A85A3A;
+  }
+  .claude-pixel-inner .e {
+    background: #1A1E24;
+  }
+
+  /* Powered by line */
+  .powered-by {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    color: var(--text-muted);
+    opacity: 0.5;
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  .powered-by.banner-pos {
+    bottom: 4px;
+    font-size: 9px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ COVER 1: Hero (1456 x 816) ═══ -->
+<div id="cover1">
+  <div class="vignette"></div>
+  <div class="accent-wash"></div>
+
+  <!-- Left: Title + SQL -->
+  <div class="graph-side" style="flex-direction: column; gap: 24px;">
+    <div class="meet-nio">
+      <h1>Meet Nio<span class="cursor"></span></h1>
+      <div class="subtitle">Your AI ops layer</div>
+      <div class="url" style="margin-top: 16px;">shawnos.ai/nio</div>
+    </div>
+    <div class="sql-block" style="margin-top: 20px;">
+      <span class="kw">SELECT</span> <span class="col">xp</span>, <span class="col">tier</span>, <span class="col">streak</span>, <span class="col">skill_xp</span> <span class="kw">FROM</span> <span class="tbl">dna_state</span>;
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Right: Chat -->
+  <div class="chat-side" style="flex-direction: column; gap: 16px;">
+    <div class="xp-float">+10 XP</div>
+    <div class="chat-window">
+      <div class="chat-header">
+        <div class="avatar-ring">
+          <div class="avatar-inner">🤖</div>
+        </div>
+        <div class="header-info">
+          <div class="header-name">Nio</div>
+          <div class="header-meta"><span class="tier">Blade Tier</span> · 620 XP</div>
+        </div>
+        <div class="status-dot"></div>
+      </div>
+      <div class="chat-body">
+        <div class="msg user">deploy the blog</div>
+        <div class="msg nio">On it. Building, indexing, pushing. Done.</div>
+        <div class="msg user">how many blog posts this week?</div>
+        <div class="msg nio">14 published. 3 in queue.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mascot duo -->
+  <div class="mascot-duo">
+    <div class="mascot">
+      <img class="nio-sprite" src="nio-avatar.png" alt="Nio">
+      <span class="name">Nio</span>
+    </div>
+    <div style="font-size: 32px; color: var(--text-muted); margin-bottom: 30px;">×</div>
+    <div class="mascot">
+      <svg class="sprite" width="120" height="110" viewBox="0 0 48 44" fill="none" style="image-rendering: pixelated;">
+        <rect x="12" y="0" width="24" height="4" fill="#C4704A"/>
+        <rect x="8" y="4" width="32" height="4" fill="#C4704A"/>
+        <rect x="4" y="8" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="12" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="16" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="12" y="16" width="4" height="4" fill="#C4704A"/>
+        <rect x="20" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="28" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="32" y="16" width="12" height="4" fill="#C4704A"/>
+        <rect x="4" y="20" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="24" width="40" height="4" fill="#C4704A"/>
+        <rect x="8" y="28" width="32" height="4" fill="#C4704A"/>
+        <rect x="8" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="20" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="8" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="4" y="40" width="8" height="4" fill="#A85A3A"/>
+        <rect x="36" y="40" width="8" height="4" fill="#A85A3A"/>
+      </svg>
+      <span class="name">Claude</span>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<!-- ═══ COVER 2: Social Share (1200 x 630) ═══ -->
+<div id="cover2">
+  <div class="vignette"></div>
+  <div class="accent-wash"></div>
+
+  <div class="chat-window">
+    <div class="chat-header">
+      <div class="avatar-ring">
+        <div class="avatar-inner">🤖</div>
+      </div>
+      <div class="header-info">
+        <div class="header-name">Nio</div>
+        <div class="header-meta"><span class="tier">Blade Tier</span> · 620 XP</div>
+      </div>
+      <div class="status-dot"></div>
+    </div>
+    <div class="chat-body">
+      <div class="msg user">deploy the blog</div>
+      <div class="msg nio">On it. Building, indexing, pushing. Done.</div>
+      <div class="msg user">how many blog posts this week?</div>
+      <div class="msg nio">14 published. 3 in queue.</div>
+    </div>
+  </div>
+
+  <div class="cta-block">
+    <h2>Meet Nio<span class="cursor"></span></h2>
+    <div class="sub">Your AI ops layer</div>
+    <div class="xp-float" style="font-size: 15px;">+10 XP per conversation</div>
+    <div class="sql-block" style="margin-top: 8px;">
+      <span class="kw">SELECT</span> <span class="col">xp</span>, <span class="col">tier</span> <span class="kw">FROM</span> <span class="tbl">dna_state</span>;
+    </div>
+    <div class="url">shawnos.ai/nio</div>
+  </div>
+
+  <!-- Mascot duo -->
+  <div class="mascot-duo">
+    <div class="mascot">
+      <img class="nio-sprite" src="nio-avatar.png" alt="Nio">
+      <span class="name">Nio</span>
+    </div>
+    <div style="font-size: 32px; color: var(--text-muted); margin-bottom: 30px;">×</div>
+    <div class="mascot">
+      <svg class="sprite" width="120" height="110" viewBox="0 0 48 44" fill="none" style="image-rendering: pixelated;">
+        <rect x="12" y="0" width="24" height="4" fill="#C4704A"/>
+        <rect x="8" y="4" width="32" height="4" fill="#C4704A"/>
+        <rect x="4" y="8" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="12" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="16" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="12" y="16" width="4" height="4" fill="#C4704A"/>
+        <rect x="20" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="28" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="32" y="16" width="12" height="4" fill="#C4704A"/>
+        <rect x="4" y="20" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="24" width="40" height="4" fill="#C4704A"/>
+        <rect x="8" y="28" width="32" height="4" fill="#C4704A"/>
+        <rect x="8" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="20" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="8" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="4" y="40" width="8" height="4" fill="#A85A3A"/>
+        <rect x="36" y="40" width="8" height="4" fill="#A85A3A"/>
+      </svg>
+      <span class="name">Claude</span>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<!-- ═══ COVER 3: Square (1080 x 1080) ═══ -->
+<div id="cover3">
+  <div class="vignette"></div>
+  <div class="accent-wash"></div>
+
+  <div class="top-text">
+    <h2>Meet Nio<span class="cursor"></span></h2>
+    <div class="sub">Your AI ops layer · queryable from anywhere</div>
+  </div>
+
+  <div class="chat-window">
+    <div class="chat-header">
+      <div class="avatar-ring">
+        <div class="avatar-inner">🤖</div>
+      </div>
+      <div class="header-info">
+        <div class="header-name">Nio</div>
+        <div class="header-meta"><span class="tier">Blade Tier</span> · 620 XP</div>
+      </div>
+      <div class="status-dot"></div>
+    </div>
+    <div class="chat-body">
+      <div class="msg user">deploy the blog</div>
+      <div class="msg nio">On it. Building, indexing, pushing. Done.</div>
+      <div class="msg user">how many blog posts this week?</div>
+      <div class="msg nio">14 published. 3 in queue.</div>
+    </div>
+  </div>
+
+  <div class="bottom-row">
+    <div class="stat-pill"><span class="val">620</span><span class="lbl">XP</span></div>
+    <div class="stat-pill"><span class="val">Blade</span><span class="lbl">Tier</span></div>
+    <div class="stat-pill"><span class="val">SQLite</span><span class="lbl">persistence</span></div>
+    <div class="stat-pill"><span class="val">50+</span><span class="lbl">skills</span></div>
+  </div>
+
+  <div class="sql-block" style="margin-top: 4px;">
+    <span class="kw">SELECT</span> <span class="col">xp</span>, <span class="col">tier</span>, <span class="col">streak</span>, <span class="col">skill_xp</span> <span class="kw">FROM</span> <span class="tbl">dna_state</span>;
+  </div>
+
+  <!-- Mascot duo -->
+  <div class="mascot-duo" style="bottom: 36px;">
+    <div class="mascot">
+      <img class="nio-sprite" src="nio-avatar.png" alt="Nio">
+      <span class="name">Nio</span>
+    </div>
+    <div style="font-size: 32px; color: var(--text-muted); margin-bottom: 30px;">×</div>
+    <div class="mascot">
+      <svg class="sprite" width="120" height="110" viewBox="0 0 48 44" fill="none" style="image-rendering: pixelated;">
+        <rect x="12" y="0" width="24" height="4" fill="#C4704A"/>
+        <rect x="8" y="4" width="32" height="4" fill="#C4704A"/>
+        <rect x="4" y="8" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="12" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="16" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="12" y="16" width="4" height="4" fill="#C4704A"/>
+        <rect x="20" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="28" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="32" y="16" width="12" height="4" fill="#C4704A"/>
+        <rect x="4" y="20" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="24" width="40" height="4" fill="#C4704A"/>
+        <rect x="8" y="28" width="32" height="4" fill="#C4704A"/>
+        <rect x="8" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="20" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="8" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="4" y="40" width="8" height="4" fill="#A85A3A"/>
+        <rect x="36" y="40" width="8" height="4" fill="#A85A3A"/>
+      </svg>
+      <span class="name">Claude</span>
+    </div>
+  </div>
+</div>
+
+<div class="spacer"></div>
+
+<!-- ═══ COVER 4: Wide Banner (1456 x 400) ═══ -->
+<div id="cover4">
+  <div class="vignette"></div>
+  <div class="accent-wash"></div>
+
+  <div class="left-block">
+    <h2>Meet Nio<span class="cursor"></span></h2>
+    <div class="sub">Your AI ops layer</div>
+    <div class="sql-block" style="margin-top: 8px;">
+      <span class="kw">SELECT</span> <span class="col">xp</span>, <span class="col">tier</span>, <span class="col">streak</span> <span class="kw">FROM</span> <span class="tbl">dna_state</span>;
+    </div>
+    <div class="url">shawnos.ai/nio</div>
+  </div>
+
+  <div class="mini-chat">
+    <div class="msg user" style="align-self: flex-end;">deploy the blog</div>
+    <div class="msg nio" style="align-self: flex-start;">On it. Building, indexing, pushing. Done.</div>
+    <div class="msg user" style="align-self: flex-end;">how many blog posts this week?</div>
+    <div class="msg nio" style="align-self: flex-start;">14 published. 3 in queue.</div>
+  </div>
+
+  <div class="xp-badge">+10 XP ↑</div>
+
+  <!-- Mascot duo (smaller for banner) -->
+  <div class="mascot-duo banner-pos">
+    <div class="mascot sm">
+      <img class="nio-sprite" src="nio-avatar.png" alt="Nio">
+      <span class="name">Nio</span>
+    </div>
+    <div style="font-size: 24px; color: var(--text-muted); margin-bottom: 20px;">×</div>
+    <div class="mascot sm">
+      <svg class="sprite" width="80" height="73" viewBox="0 0 48 44" fill="none" style="image-rendering: pixelated;">
+        <rect x="12" y="0" width="24" height="4" fill="#C4704A"/>
+        <rect x="8" y="4" width="32" height="4" fill="#C4704A"/>
+        <rect x="4" y="8" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="12" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="16" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="12" y="16" width="4" height="4" fill="#C4704A"/>
+        <rect x="20" y="16" width="8" height="4" fill="#C4704A"/>
+        <rect x="28" y="16" width="4" height="4" fill="#1A1E24"/>
+        <rect x="32" y="16" width="12" height="4" fill="#C4704A"/>
+        <rect x="4" y="20" width="40" height="4" fill="#C4704A"/>
+        <rect x="4" y="24" width="40" height="4" fill="#C4704A"/>
+        <rect x="8" y="28" width="32" height="4" fill="#C4704A"/>
+        <rect x="8" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="20" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="32" width="8" height="4" fill="#A85A3A"/>
+        <rect x="8" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="32" y="36" width="8" height="4" fill="#A85A3A"/>
+        <rect x="4" y="40" width="8" height="4" fill="#A85A3A"/>
+        <rect x="36" y="40" width="8" height="4" fill="#A85A3A"/>
+      </svg>
+      <span class="name">Claude</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

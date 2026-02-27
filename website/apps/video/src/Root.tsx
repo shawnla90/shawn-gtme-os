@@ -35,6 +35,11 @@ import {
   GtmFlowThumb3,
   GtmFlowAnimated,
 } from './GtmFlowCarousel';
+import {
+  ClaudeCodeMobile,
+  CLAUDE_MOBILE_FRAMES,
+  CLAUDE_MOBILE_FPS,
+} from './scenes/ClaudeCodeMobile';
 
 export const Root: React.FC = () => {
   return (
@@ -348,6 +353,17 @@ export const Root: React.FC = () => {
             height: spec.composition!.height,
           };
         }}
+      />
+
+      {/* ── Claude Code Mobile GIF (LinkedIn horizontal + X) ── */}
+
+      <Composition
+        id="ClaudeCodeMobile"
+        component={ClaudeCodeMobile}
+        durationInFrames={CLAUDE_MOBILE_FRAMES}
+        fps={CLAUDE_MOBILE_FPS}
+        width={1200}
+        height={628}
       />
 
       {/* ── V1 Compositions (60s, silent — kept for reference) ── */}

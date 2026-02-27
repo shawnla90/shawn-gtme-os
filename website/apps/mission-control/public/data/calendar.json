@@ -1,169 +1,169 @@
 {
-  "generated": "2026-02-25T06:27:36.113Z",
+  "generated": "2026-02-27T07:19:10.641Z",
   "events": [
     {
-      "id": "commit-872d051",
-      "title": "feat: Command Center Phase 3 — live updates, markdown editor",
+      "id": "commit-4f8688e",
+      "title": "feat: ABM pipeline - 100 personalized landing pages at scale",
       "type": "milestone",
-      "datetime": "2026-02-25T01:16:14-05:00",
+      "datetime": "2026-02-27T02:11:07-05:00",
       "status": "completed",
-      "description": "feat: Command Center Phase 3 — live updates, markdown editor, Nio heartbeat",
+      "description": "feat: ABM pipeline - 100 personalized landing pages at scale",
       "metadata": {
-        "commitHash": "872d051"
+        "commitHash": "4f8688e"
       }
     },
     {
-      "id": "commit-bd01e58",
-      "title": "feat: json-render integration — AI-driven video generation f",
+      "id": "commit-195d1b0",
+      "title": "feat: X/Twitter engagement pipeline - Grok-powered scout, Sl",
       "type": "milestone",
-      "datetime": "2026-02-25T01:13:25-05:00",
+      "datetime": "2026-02-27T00:48:39-05:00",
       "status": "completed",
-      "description": "feat: json-render integration — AI-driven video generation from JSON specs",
+      "description": "feat: X/Twitter engagement pipeline - Grok-powered scout, Slack digest, reply flow",
       "metadata": {
-        "commitHash": "bd01e58"
+        "commitHash": "195d1b0"
       }
     },
     {
-      "id": "commit-48813d3",
-      "title": "fix: Nio P0 message delivery — buffer parsing, heartbeat, ti",
+      "id": "commit-d0bcd39",
+      "title": "chore: daily tracker scan 2026-02-26",
+      "type": "system",
+      "datetime": "2026-02-27T00:01:21-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-02-26",
+      "metadata": {
+        "commitHash": "d0bcd39"
+      }
+    },
+    {
+      "id": "commit-e8f5b8c",
+      "title": "chore: daily tracker scan 2026-02-26",
+      "type": "system",
+      "datetime": "2026-02-27T00:00:07-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-02-26",
+      "metadata": {
+        "commitHash": "e8f5b8c"
+      }
+    },
+    {
+      "id": "commit-5d00045",
+      "title": "chore: update context handoff for Reddit pipeline session",
+      "type": "system",
+      "datetime": "2026-02-26T23:57:28-05:00",
+      "status": "completed",
+      "description": "chore: update context handoff for Reddit pipeline session",
+      "metadata": {
+        "commitHash": "5d00045"
+      }
+    },
+    {
+      "id": "commit-20e6959",
+      "title": "feat: Reddit engagement pipeline — Grok-powered scout, Slack",
+      "type": "milestone",
+      "datetime": "2026-02-26T23:53:33-05:00",
+      "status": "completed",
+      "description": "feat: Reddit engagement pipeline — Grok-powered scout, Slack digest, posting flow",
+      "metadata": {
+        "commitHash": "20e6959"
+      }
+    },
+    {
+      "id": "commit-58f3197",
+      "title": "feat: ContentOS immersive overhaul - Method, Anti-Slop, Show",
+      "type": "milestone",
+      "datetime": "2026-02-26T21:56:29-05:00",
+      "status": "completed",
+      "description": "feat: ContentOS immersive overhaul - Method, Anti-Slop, Showcase pages",
+      "metadata": {
+        "commitHash": "58f3197"
+      }
+    },
+    {
+      "id": "commit-d15fbda",
+      "title": "feat: redirect shawnos.ai/clay-wiki to thegtmos.ai/clay-wiki",
+      "type": "milestone",
+      "datetime": "2026-02-26T21:24:35-05:00",
+      "status": "completed",
+      "description": "feat: redirect shawnos.ai/clay-wiki to thegtmos.ai/clay-wiki",
+      "metadata": {
+        "commitHash": "d15fbda"
+      }
+    },
+    {
+      "id": "commit-5452c3b",
+      "title": "feat: 4 new TikTok reels + sprite animation support for slid",
+      "type": "milestone",
+      "datetime": "2026-02-26T19:29:46-05:00",
+      "status": "completed",
+      "description": "feat: 4 new TikTok reels + sprite animation support for slides",
+      "metadata": {
+        "commitHash": "5452c3b"
+      }
+    },
+    {
+      "id": "commit-702ce80",
+      "title": "fix: GTM carousel - orange accent, remove HeyReach badge, GI",
       "type": "deployment",
-      "datetime": "2026-02-25T01:01:31-05:00",
+      "datetime": "2026-02-26T19:19:28-05:00",
       "status": "completed",
-      "description": "fix: Nio P0 message delivery — buffer parsing, heartbeat, timeout, client retry",
+      "description": "fix: GTM carousel - orange accent, remove HeyReach badge, GIF output",
       "metadata": {
-        "commitHash": "48813d3"
+        "commitHash": "702ce80"
       }
     },
     {
-      "id": "commit-bb3a9dd",
-      "title": "feat: decision-lock + wave execution upgrade — cherry-pick f",
+      "id": "commit-6606e4c",
+      "title": "feat: GTM automation flow LinkedIn carousel - 3 static image",
       "type": "milestone",
-      "datetime": "2026-02-25T00:35:14-05:00",
+      "datetime": "2026-02-26T19:07:42-05:00",
       "status": "completed",
-      "description": "feat: decision-lock + wave execution upgrade — cherry-pick from GSD framework",
+      "description": "feat: GTM automation flow LinkedIn carousel - 3 static images + 1 animated video",
       "metadata": {
-        "commitHash": "bb3a9dd"
+        "commitHash": "6606e4c"
       }
     },
     {
-      "id": "commit-8f3b354",
-      "title": "chore: daily tracker scan 2026-02-24",
-      "type": "system",
-      "datetime": "2026-02-25T00:00:06-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-24",
-      "metadata": {
-        "commitHash": "8f3b354"
-      }
-    },
-    {
-      "id": "commit-75cb947",
-      "title": "feat: portable Nio avatars — transparent render mode, agent ",
+      "id": "commit-2e6261f",
+      "title": "feat: GTMOS major expansion - features page, MCP showcase, C",
       "type": "milestone",
-      "datetime": "2026-02-24T23:03:03-05:00",
+      "datetime": "2026-02-26T14:10:09-05:00",
       "status": "completed",
-      "description": "feat: portable Nio avatars — transparent render mode, agent sprites, dynamic tier avatar",
+      "description": "feat: GTMOS major expansion - features page, MCP showcase, Clay Wiki redesign, brand logos",
       "metadata": {
-        "commitHash": "75cb947"
+        "commitHash": "2e6261f"
       }
     },
     {
-      "id": "commit-ab82a1d",
-      "title": "feat: Command Center Phase 2 — SQLite explorer, content brow",
+      "id": "commit-75d76be",
+      "title": "feat: nio.log 2026-02-26 — automated daily post",
       "type": "milestone",
-      "datetime": "2026-02-24T22:17:04-05:00",
+      "datetime": "2026-02-26T08:01:14-05:00",
       "status": "completed",
-      "description": "feat: Command Center Phase 2 — SQLite explorer, content browser, CRM, projects",
+      "description": "feat: nio.log 2026-02-26 — automated daily post",
       "metadata": {
-        "commitHash": "ab82a1d"
+        "commitHash": "75d76be"
       }
     },
     {
-      "id": "commit-ba8e903",
-      "title": "feat: sprite sheet animation system + reel clip upgrade + st",
+      "id": "commit-767d69d",
+      "title": "fix: ContentOS critical gaps - favicon, OG images, metadata,",
+      "type": "deployment",
+      "datetime": "2026-02-26T03:45:30-05:00",
+      "status": "completed",
+      "description": "fix: ContentOS critical gaps - favicon, OG images, metadata, method font, Typefully logo",
+      "metadata": {
+        "commitHash": "767d69d"
+      }
+    },
+    {
+      "id": "commit-87c09a6",
+      "title": "feat: GTMOS recalibration - revert cross-contamination, Clay",
       "type": "milestone",
-      "datetime": "2026-02-24T21:46:11-05:00",
+      "datetime": "2026-02-26T03:40:08-05:00",
       "status": "completed",
-      "description": "feat: sprite sheet animation system + reel clip upgrade + standalone compositions",
+      "description": "feat: GTMOS recalibration - revert cross-contamination, Clay brand assets, GTMLS Sprint 2",
       "metadata": {
-        "commitHash": "ba8e903"
-      }
-    },
-    {
-      "id": "commit-7324fcb",
-      "title": "feat: mobile UX overhaul — hamburger nav, responsive padding",
-      "type": "milestone",
-      "datetime": "2026-02-24T20:40:57-05:00",
-      "status": "completed",
-      "description": "feat: mobile UX overhaul — hamburger nav, responsive padding, mobile build log",
-      "metadata": {
-        "commitHash": "7324fcb"
-      }
-    },
-    {
-      "id": "commit-58ba6f3",
-      "title": "chore: complete OpenClaw removal — migrate data to repo",
-      "type": "system",
-      "datetime": "2026-02-24T15:22:28-05:00",
-      "status": "completed",
-      "description": "chore: complete OpenClaw removal — migrate data to repo",
-      "metadata": {
-        "commitHash": "58ba6f3"
-      }
-    },
-    {
-      "id": "commit-e59d90a",
-      "title": "feat: nio.log 2026-02-24 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-02-24T08:01:35-05:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-02-24 — automated daily post",
-      "metadata": {
-        "commitHash": "e59d90a"
-      }
-    },
-    {
-      "id": "commit-1450986",
-      "title": "feat: nio blog generator — off OpenClaw, into the repo + SQL",
-      "type": "milestone",
-      "datetime": "2026-02-24T02:38:22-05:00",
-      "status": "completed",
-      "description": "feat: nio blog generator — off OpenClaw, into the repo + SQLite",
-      "metadata": {
-        "commitHash": "1450986"
-      }
-    },
-    {
-      "id": "commit-f5b9625",
-      "title": "chore: daily tracker scan 2026-02-23",
-      "type": "system",
-      "datetime": "2026-02-24T00:00:10-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-23",
-      "metadata": {
-        "commitHash": "f5b9625"
-      }
-    },
-    {
-      "id": "commit-5ef626a",
-      "title": "chore: daily tracker scan 2026-02-23",
-      "type": "system",
-      "datetime": "2026-02-24T00:00:08-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-23",
-      "metadata": {
-        "commitHash": "5ef626a"
-      }
-    },
-    {
-      "id": "commit-72350cd",
-      "title": "chore: daily tracker scan 2026-02-22",
-      "type": "system",
-      "datetime": "2026-02-23T00:00:09-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-22",
-      "metadata": {
-        "commitHash": "72350cd"
+        "commitHash": "87c09a6"
       }
     }
   ],
