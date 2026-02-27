@@ -29,6 +29,12 @@ import {
 } from './scenes/NioAnimClip';
 import { JsonVideo } from './json-video';
 import { CHAT_DEMO_SPEC } from './json-video';
+import {
+  GtmFlowThumb1,
+  GtmFlowThumb2,
+  GtmFlowThumb3,
+  GtmFlowAnimated,
+} from './GtmFlowCarousel';
 
 export const Root: React.FC = () => {
   return (
@@ -174,6 +180,44 @@ export const Root: React.FC = () => {
         component={ContentOsThumbnail}
         durationInFrames={1}
         fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      {/* ── GTM Automation Flow Carousel (LinkedIn 4:5) ── */}
+
+      <Composition
+        id="GtmFlowThumb1"
+        component={GtmFlowThumb1}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="GtmFlowThumb2"
+        component={GtmFlowThumb2}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="GtmFlowThumb3"
+        component={GtmFlowThumb3}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="GtmFlowAnimated"
+        component={GtmFlowAnimated}
+        durationInFrames={150}
+        fps={30}
         width={PRESETS.linkedin.width}
         height={PRESETS.linkedin.height}
       />
