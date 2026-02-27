@@ -147,4 +147,4 @@ the recursive insight is worth naming. context engineering infrastructure needs 
 
 ---
 
-*related: [context handoffs wiki](/wiki/context-handoffs) - [parallel session handoffs how-to](/how-to/parallel-session-handoffs) - [how to set up your own AI assistant](/blog/how-to-setup-your-own-ai-assistant)*
+*related: [context handoffs wiki](/context-wiki/context-handoffs) - [parallel session handoffs how-to](/how-to/parallel-session-handoffs) - [how to set up your own AI assistant](/blog/how-to-setup-your-own-ai-assistant)*

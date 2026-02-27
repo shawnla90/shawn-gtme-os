@@ -159,6 +159,36 @@ nav[class*="nav"] {
   margin-bottom: 8px;
 }
 
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.925em;
+  overflow-x: auto;
+  display: block;
+}
+
+.prose thead {
+  border-bottom: 2px solid var(--accent);
+}
+
+.prose th {
+  text-align: left;
+  padding: 10px 14px;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.prose td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
 /* === Table of Contents responsive visibility === */
 .toc-mobile {
   display: block;
