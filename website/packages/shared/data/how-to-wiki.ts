@@ -2086,4 +2086,60 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       },
     ],
   },
+
+  {
+    id: 'parallel-session-handoffs',
+    title: 'Parallel-Safe Session Handoffs',
+    subtitle: 'Stop losing context when multiple terminals write at the same time',
+    category: 'parallel-agents',
+    description:
+      'How to upgrade from a single context handoff file to a parallel-safe directory-based system. Timestamped writes, read-all-on-start, mark-done consumption, and auto-cleanup. The pattern that makes 6 simultaneous Claude Code sessions stop overwriting each other.',
+    keywords: [
+      'parallel context handoffs',
+      'claude code handoff system',
+      'parallel agent context',
+      'session handoff architecture',
+      'context handoff race condition',
+      'multi-terminal claude code',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'parallel-agent-patterns',
+      'orchestrating-multi-agent-workflows',
+      'agent-teams-claude-code',
+    ],
+    sections: [
+      {
+        heading: 'The Problem with One Handoff File',
+        type: 'prose',
+        content:
+          'The default context handoff pattern is a single file at a known path. ~/.claude/context-handoff.md or similar. Every session reads it on start and writes it on end. This works when you run one terminal at a time. It silently breaks the moment you run two. Terminal A writes its handoff. Terminal B overwrites it 30 seconds later. Terminal A\'s context is gone and you never notice because the file still exists. It just has the wrong content. This is a last-write-wins race condition. If you run 4 to 6 terminals like I do, you lose 3 to 5 sessions of context every day. The system looks healthy because a handoff file is always there. The damage is invisible until a morning session picks up with half the context missing.',
+      },
+      {
+        heading: 'Setting Up the Handoffs Directory',
+        type: 'code',
+        content:
+          'Step 1: Create the directory.\n\nmkdir -p ~/.claude/handoffs\n\nStep 2: Add the naming convention. Every handoff file uses this format:\n\n~/.claude/handoffs/YYYY-MM-DD_HHMMSS_slug.md\n\nThe timestamp is second-precise. The slug is a short description of the session work. Examples:\n\n2026-02-27_143022_blog-pipeline-fix.md\n2026-02-27_143055_wiki-entry-batch.md\n2026-02-27_144501_deploy-verification.md\n\nStep 3: Update your CLAUDE.md with the new instructions. Add these rules to the session workflow section:\n\nOn session start: read all unconsumed handoffs from ~/.claude/handoffs/. Skip any file ending in _done.md. After reading, rename each file from .md to _done.md.\n\nOn session end: write a new handoff to ~/.claude/handoffs/ using the timestamp naming convention. Never overwrite another file.',
+      },
+      {
+        heading: 'Reading and Consuming Handoffs',
+        type: 'pattern',
+        content:
+          'On session start, the agent does three things in order.\n\nFirst, list all unconsumed handoffs:\nls ~/.claude/handoffs/*.md 2>/dev/null | grep -v \'_done.md$\'\n\nSecond, read each file and merge the context. If there are three unconsumed handoffs from three different terminals, the new session gets all three. Nothing is lost.\n\nThird, mark each file as consumed by renaming it:\nmv file.md file_done.md\n\nThe _done.md suffix is the consumption marker. Future sessions skip these files. The original content stays on disk for reference. No data is deleted during consumption, only renamed.\n\nThis pattern means it does not matter how many terminals wrote handoffs overnight. The morning session reads every single one. Context from all parallel sessions merges into one starting point.',
+      },
+      {
+        heading: 'Auto-Cleanup',
+        type: 'code',
+        content:
+          'Consumed handoffs accumulate. Without cleanup, the directory grows forever. Add a cleanup step that runs on session start, after reading and consuming:\n\nfind ~/.claude/handoffs -name \'*_done.md\' -mtime +7 -delete 2>/dev/null\n\nThis deletes consumed handoffs older than 7 days. Unconsumed handoffs are never deleted. The 7-day window gives you enough history to debug if something went wrong. Adjust the window based on how often you reference old handoffs.\n\nThe full CLAUDE.md instruction block:\n\nOn Session Start:\n1. Read all unconsumed handoffs: ls ~/.claude/handoffs/*.md 2>/dev/null | grep -v \'_done.md$\'\n2. Also check legacy location: ~/.claude/context-handoff.md\n3. After reading, mark each consumed: rename file.md to file_done.md\n4. Clean up old consumed handoffs: find ~/.claude/handoffs -name \'*_done.md\' -mtime +7 -delete\n\nOn Session End:\nWrite handoff to ~/.claude/handoffs/YYYY-MM-DD_HHMMSS_slug.md. Never overwrite another session\'s handoff.',
+      },
+      {
+        heading: 'Upgrading Your Memory Files',
+        type: 'pro-tip',
+        content:
+          'While upgrading handoffs, upgrade your memory files too. The same flat-file problem applies. A single MEMORY.md that every session reads and writes will grow until it hits the context window limit. At 200+ lines, the model starts ignoring the bottom half.\n\nThe fix is an index pattern. Keep MEMORY.md as a lean index under 200 lines. It has section headers and one-line summaries. Detailed notes live in topic files: identity.md, voice-rules.md, infrastructure.md, completed-work.md. MEMORY.md links to them. Sessions only load a topic file when the current task is relevant.\n\nThis mirrors how the handoff directory works. Instead of one file that does everything, you have structured files that load on demand. The index is always in context. The details load when needed. Both upgrades follow the same principle: stop putting everything in one file and start using structure to manage scale.',
+      },
+    ],
+  },
 ]

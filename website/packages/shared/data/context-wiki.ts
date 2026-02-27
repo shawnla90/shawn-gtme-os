@@ -434,6 +434,58 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
   },
 
   {
+    id: 'context-handoffs',
+    title: 'Context Handoffs',
+    subtitle:
+      'How to pass context between sessions so agents never start from zero',
+    category: 'modes',
+    description:
+      'Parallel-safe context handoff architecture for Claude Code. How to move from a single handoff file to timestamped parallel writes that survive 6 terminals running at once. The pattern that makes sessions compound instead of reset.',
+    keywords: [
+      'context handoffs claude code',
+      'claude code session handoff',
+      'parallel context handoffs',
+      'agent memory between sessions',
+      'context engineering handoffs',
+      'claude code session persistence',
+    ],
+    difficulty: 'intermediate',
+    related: ['parallel-agents', 'context-engineering', 'context-repository', 'claude-md'],
+    sections: [
+      {
+        heading: 'What Context Handoffs Are',
+        type: 'prose',
+        content:
+          'Claude Code sessions are stateless. Close the terminal and the context is gone. Every new session starts from zero. No memory of what you just built, what broke, what decisions you made, what is half-finished. Context handoffs fix this. At the end of every session, write a structured document that captures what happened, what changed, what still needs work, and what decisions were made. At the start of the next session, read that document first. Now the new session has full context of what just happened. Sessions stop resetting and start compounding. The handoff is not a nice-to-have. It is the difference between an AI that forgets everything and an AI that builds on yesterday.',
+      },
+      {
+        heading: 'The Single-File Problem',
+        type: 'anti-pattern',
+        content:
+          'The first version of context handoffs is always a single file. Something like ~/.claude/context-handoff.md. One file. Every session reads it on start, writes it on end. This works perfectly when you run one terminal at a time. It breaks the moment you open a second one. Terminal A finishes and writes its handoff. Terminal B finishes 30 seconds later and overwrites Terminal A. Terminal A\'s context is gone. You never notice until the next morning when a session picks up with half the context missing. This is a classic last-write-wins race condition. And it gets worse as you scale. I run 4 to 6 Claude Code terminals simultaneously. With a single handoff file, 3 to 5 sessions worth of context get silently destroyed every day. The system looks like it is working because you always see a handoff file. You just do not see what is missing from it.',
+      },
+      {
+        heading: 'The Parallel-Safe Architecture',
+        type: 'pattern',
+        content:
+          'The fix is simple. Stop overwriting one file. Write timestamped files to a directory instead. Each session writes to ~/.claude/handoffs/YYYY-MM-DD_HHMMSS_slug.md. The timestamp guarantees uniqueness. No two sessions can collide. On session start, read ALL unconsumed handoffs in the directory. Merge the context from every file. After reading, rename each file from file.md to file_done.md so it does not get read again. A cleanup job deletes consumed handoffs older than 7 days. The entire architecture is 4 operations: write a uniquely-named file, read all unread files, mark files as consumed, clean up old files. No database. No lock files. No coordination between sessions. Each session operates independently and the directory handles the merge.',
+      },
+      {
+        heading: 'The Flow',
+        type: 'code',
+        content:
+          'Session lifecycle with parallel-safe handoffs:\n\nSession Start:\n  ls ~/.claude/handoffs/*.md (skip *_done.md)\n  --> read each unconsumed handoff\n  --> rename file.md to file_done.md\n  --> merge all context into current session\n\nSession End:\n  --> write ~/.claude/handoffs/YYYY-MM-DD_HHMMSS_slug.md\n  --> never overwrite another session\'s file\n\nCleanup (periodic):\n  find ~/.claude/handoffs -name \'*_done.md\' -mtime +7 -delete\n\nParallel safety comes from the naming convention. Two sessions ending at the same second would need the same slug to collide. In practice this never happens because the slug describes the work and the timestamp is second-precise.',
+      },
+      {
+        heading: 'Structuring the Handoff Document',
+        type: 'formula',
+        content:
+          'Every handoff document needs five sections:\n\n1. Session summary. One paragraph. What was the goal and what happened.\n2. What changed. Files created, modified, deleted. Specific paths.\n3. What still needs work. Unfinished tasks, known bugs, next steps.\n4. Key decisions. Architectural choices, tradeoffs, things the next session should not revisit.\n5. Active context. Branch name, running processes, environment state, anything the next session needs to know about the current machine state.\n\nKeep it factual. No commentary, no opinions, no narrative. The handoff is a status report, not a blog post. A session reading it at 6 AM does not need your feelings about the refactor. It needs to know which files changed and what broke.',
+      },
+    ],
+  },
+
+  {
     id: 'skills',
     title: 'Skills',
     subtitle:
