@@ -11,6 +11,8 @@ data/*
 !data/progression/avatars/
 !data/seo/
 !data/nio-memory/
+!data/abm/
+!data/abm/pages/
 !data/website-stats.json
 data/daily-log/*.png
 data/daily-log/*.log

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.shawnos.abm-pipeline</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/shawnos.ai/shawn-gtme-os/scripts/abm/pipeline.py</string>
+        <string>--step</string>
+        <string>all</string>
+        <string>--limit</string>
+        <string>100</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/shawnos.ai/shawn-gtme-os</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+        <key>HOME</key>
+        <string>/Users/shawnos.ai</string>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/shawnos.ai/Library/Logs/abm-pipeline.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/shawnos.ai/Library/Logs/abm-pipeline.log</string>
+</dict>
+</plist>
