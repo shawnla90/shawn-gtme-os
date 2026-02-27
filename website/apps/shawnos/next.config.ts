@@ -24,6 +24,16 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/clay-wiki',
+        destination: 'https://thegtmos.ai/clay-wiki',
+        permanent: true,
+      },
+      {
+        source: '/clay-wiki/:path*',
+        destination: 'https://thegtmos.ai/clay-wiki/:path*',
+        permanent: true,
+      },
+      {
         source: '/arc',
         destination: '/about/arc',
         permanent: true,
