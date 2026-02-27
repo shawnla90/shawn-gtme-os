@@ -24,7 +24,7 @@ import { SceneWrapper } from './components/SceneWrapper';
 
 /* ─── Design tokens ──────────────────────────────── */
 
-const TEAL = '#3DBFA0';
+const ACCENT = '#F97316';
 
 const TOOL_COLORS = {
   exa: '#3B82F6',
@@ -32,7 +32,6 @@ const TOOL_COLORS = {
   grok: '#E7E9EA',
   hubspot: '#FF7A59',
   claude: '#D97757',
-  heyreach: '#7C3AED',
 } as const;
 
 /** SVG paths from BuiltWithStrip.tsx (SimpleIcons, CC0) */
@@ -68,7 +67,7 @@ const CONNECTION_PATHS = [
 
 /* ─── Shared components ──────────────────────────── */
 
-type ToolKey = 'exa' | 'python' | 'grok' | 'hubspot' | 'claude' | 'heyreach';
+type ToolKey = 'exa' | 'python' | 'grok' | 'hubspot' | 'claude';
 
 interface ToolDef {
   name: string;
@@ -86,7 +85,6 @@ const TOOL_DEFS: Record<ToolKey, ToolDef> = {
   grok: { name: 'Grok', color: TOOL_COLORS.grok, render: 'letter', letter: 'G' },
   hubspot: { name: 'HubSpot CLI', color: TOOL_COLORS.hubspot, render: 'svg', path: SVG_PATHS.hubspot, viewBox: '-2 -2 28 26' },
   claude: { name: 'Claude Code', color: TOOL_COLORS.claude, render: 'svg', path: SVG_PATHS.claude, viewBox: '0 0 24 24' },
-  heyreach: { name: 'HeyReach', color: TOOL_COLORS.heyreach, render: 'image', src: staticFile('brands/heyreachio_logo.jpeg') },
 };
 
 /** Circular tool node with glow ring, logo, and label */
@@ -289,36 +287,6 @@ const Divider: React.FC = () => (
   <span style={{ color: COLORS.border, fontSize: 28 }}>|</span>
 );
 
-/** HeyReach partner badge */
-const HeyReachBadge: React.FC = () => (
-  <div
-    style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: 10,
-      padding: '8px 16px',
-      borderRadius: 8,
-      border: `1px solid ${TOOL_COLORS.heyreach}33`,
-      backgroundColor: `${TOOL_COLORS.heyreach}08`,
-    }}
-  >
-    <Img
-      src={staticFile('brands/heyreachio_logo.jpeg')}
-      style={{ width: 28, height: 28, borderRadius: 6, objectFit: 'cover' }}
-    />
-    <span
-      style={{
-        fontSize: 13,
-        fontWeight: 600,
-        color: TOOL_COLORS.heyreach,
-        fontFamily: FONTS.mono,
-      }}
-    >
-      HeyReach Expert
-    </span>
-  </div>
-);
-
 /** Bottom attribution block */
 const Attribution: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => (
   <div
@@ -337,9 +305,9 @@ const Attribution: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => (
       style={{
         fontSize: 28,
         fontWeight: 800,
-        color: TEAL,
+        color: ACCENT,
         fontFamily: FONTS.mono,
-        textShadow: `0 0 16px ${TEAL}33`,
+        textShadow: `0 0 16px ${ACCENT}33`,
       }}
     >
       thegtmos.ai
@@ -365,7 +333,7 @@ const FlowConnectionsSVG: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => 
       <path
         key={i}
         d={d}
-        stroke={TEAL}
+        stroke={ACCENT}
         strokeWidth={2}
         fill="none"
         strokeDasharray="8,5"
@@ -380,7 +348,7 @@ const FlowConnectionsSVG: React.FC<{ opacity?: number }> = ({ opacity = 1 }) => 
    ═══════════════════════════════════════════════════════ */
 
 export const GtmFlowThumb1: React.FC = () => (
-  <SceneWrapper accentColor={TEAL} particleCount={20}>
+  <SceneWrapper accentColor={ACCENT} particleCount={20}>
     {/* ── Headline ── */}
     <div
       style={{
@@ -398,9 +366,9 @@ export const GtmFlowThumb1: React.FC = () => (
         style={{
           fontSize: 48,
           fontWeight: 800,
-          color: TEAL,
+          color: ACCENT,
           fontFamily: FONTS.mono,
-          textShadow: `0 0 20px ${TEAL}44`,
+          textShadow: `0 0 20px ${ACCENT}44`,
         }}
       >
         Landing Pages in {'<'}2 mins
@@ -458,7 +426,7 @@ export const GtmFlowThumb1: React.FC = () => (
       }}
     >
       <span>INPUT</span>
-      <span style={{ color: TEAL }}>ORCHESTRATE</span>
+      <span style={{ color: ACCENT }}>ORCHESTRATE</span>
       <span>OUTPUT</span>
     </div>
 
@@ -467,19 +435,19 @@ export const GtmFlowThumb1: React.FC = () => (
       <TerminalChrome title="gtmos-pipeline">
         <TLine color={COLORS.textPrimary}>$ gtmos pipeline run --target acme-corp</TLine>
         <TLine>
-          <span style={{ color: TEAL }}>{'[1/4]'}</span> Exa MCP → semantic search...{' '}
+          <span style={{ color: ACCENT }}>{'[1/4]'}</span> Exa MCP → semantic search...{' '}
           <span style={{ color: '#4EC373' }}>done</span>
         </TLine>
         <TLine>
-          <span style={{ color: TEAL }}>{'[2/4]'}</span> Python SDK → scoring 23 signals...{' '}
+          <span style={{ color: ACCENT }}>{'[2/4]'}</span> Python SDK → scoring 23 signals...{' '}
           <span style={{ color: '#4EC373' }}>done</span>
         </TLine>
         <TLine>
-          <span style={{ color: TEAL }}>{'[3/4]'}</span> Grok → generating landing copy...{' '}
+          <span style={{ color: ACCENT }}>{'[3/4]'}</span> Grok → generating landing copy...{' '}
           <span style={{ color: '#4EC373' }}>done</span>
         </TLine>
         <TLine>
-          <span style={{ color: TEAL }}>{'[4/4]'}</span> HubSpot CLI → deploying page...{' '}
+          <span style={{ color: ACCENT }}>{'[4/4]'}</span> HubSpot CLI → deploying page...{' '}
           <span style={{ color: '#4EC373' }}>done</span>
         </TLine>
         <div style={{ height: 4 }} />
@@ -510,33 +478,19 @@ export const GtmFlowThumb1: React.FC = () => (
           fontFamily: FONTS.mono,
         }}
       >
-        <StatBlock value="<2m" label="total time" color={TEAL} />
+        <StatBlock value="<2m" label="total time" color={ACCENT} />
         <Divider />
-        <StatBlock value="4" label="tools" color={TEAL} />
+        <StatBlock value="4" label="tools" color={ACCENT} />
         <Divider />
-        <StatBlock value="0" label="manual steps" color={TEAL} />
+        <StatBlock value="0" label="manual steps" color={ACCENT} />
       </div>
-    </div>
-
-    {/* ── HeyReach Badge ── */}
-    <div
-      style={{
-        position: 'absolute',
-        top: 1055,
-        left: 0,
-        width: '100%',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-    >
-      <HeyReachBadge />
     </div>
 
     {/* ── Attribution + CTA ── */}
     <div
       style={{
         position: 'absolute',
-        top: 1140,
+        top: 1080,
         left: 0,
         width: '100%',
         display: 'flex',
@@ -572,7 +526,7 @@ export const GtmFlowThumb2: React.FC = () => {
   const STEP_HEIGHT = 175;
 
   return (
-    <SceneWrapper accentColor={TEAL} particleCount={20}>
+    <SceneWrapper accentColor={ACCENT} particleCount={20}>
       {/* ── Headline ── */}
       <div
         style={{
@@ -590,9 +544,9 @@ export const GtmFlowThumb2: React.FC = () => {
           style={{
             fontSize: 48,
             fontWeight: 800,
-            color: TEAL,
+            color: ACCENT,
             fontFamily: FONTS.mono,
-            textShadow: `0 0 20px ${TEAL}44`,
+            textShadow: `0 0 20px ${ACCENT}44`,
           }}
         >
           The 4-Step Pipeline
@@ -619,7 +573,7 @@ export const GtmFlowThumb2: React.FC = () => {
           y1={STEP_START_Y}
           x2={TIMELINE_X}
           y2={STEP_START_Y + STEP_HEIGHT * 3 + 40}
-          stroke={TEAL}
+          stroke={ACCENT}
           strokeWidth={2}
           strokeDasharray="6,4"
           opacity={0.4}
@@ -642,7 +596,7 @@ export const GtmFlowThumb2: React.FC = () => {
                 width: 36,
                 height: 36,
                 borderRadius: '50%',
-                backgroundColor: TEAL,
+                backgroundColor: ACCENT,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -650,7 +604,7 @@ export const GtmFlowThumb2: React.FC = () => {
                 fontWeight: 800,
                 color: COLORS.canvas,
                 fontFamily: FONTS.mono,
-                boxShadow: `0 0 12px ${TEAL}44`,
+                boxShadow: `0 0 12px ${ACCENT}44`,
                 zIndex: 10,
               }}
             >
@@ -722,13 +676,13 @@ export const GtmFlowThumb2: React.FC = () => {
                     style={{
                       fontSize: 11,
                       fontWeight: 700,
-                      color: TEAL,
+                      color: ACCENT,
                       fontFamily: FONTS.mono,
                       letterSpacing: 2,
                       padding: '2px 8px',
                       borderRadius: 4,
-                      backgroundColor: `${TEAL}15`,
-                      border: `1px solid ${TEAL}33`,
+                      backgroundColor: `${ACCENT}15`,
+                      border: `1px solid ${ACCENT}33`,
                     }}
                   >
                     {step.action}
@@ -823,8 +777,8 @@ export const GtmFlowThumb2: React.FC = () => {
             style={{
               fontSize: 36,
               fontWeight: 800,
-              color: TEAL,
-              textShadow: `0 0 12px ${TEAL}33`,
+              color: ACCENT,
+              textShadow: `0 0 12px ${ACCENT}33`,
             }}
           >
             {'<'}2 minutes
@@ -846,7 +800,6 @@ export const GtmFlowThumb2: React.FC = () => {
           gap: 14,
         }}
       >
-        <HeyReachBadge />
         <Attribution />
       </div>
     </SceneWrapper>
@@ -858,7 +811,7 @@ export const GtmFlowThumb2: React.FC = () => {
    ═══════════════════════════════════════════════════════ */
 
 export const GtmFlowThumb3: React.FC = () => (
-  <SceneWrapper accentColor={TEAL} particleCount={20}>
+  <SceneWrapper accentColor={ACCENT} particleCount={20}>
     {/* ── Headline ── */}
     <div
       style={{
@@ -876,9 +829,9 @@ export const GtmFlowThumb3: React.FC = () => (
         style={{
           fontSize: 48,
           fontWeight: 800,
-          color: TEAL,
+          color: ACCENT,
           fontFamily: FONTS.mono,
-          textShadow: `0 0 20px ${TEAL}44`,
+          textShadow: `0 0 20px ${ACCENT}44`,
         }}
       >
         One Command. Done.
@@ -891,7 +844,7 @@ export const GtmFlowThumb3: React.FC = () => (
         <TLine color={COLORS.textPrimary}>$ gtmos pipeline run --target acme-corp</TLine>
         <div style={{ height: 6 }} />
         <TLine>
-          <span style={{ color: TEAL, fontWeight: 700 }}>{'[1/4]'}</span>{' '}
+          <span style={{ color: ACCENT, fontWeight: 700 }}>{'[1/4]'}</span>{' '}
           <span style={{ color: TOOL_COLORS.exa }}>Exa MCP</span>
         </TLine>
         <TLine>{'  '}→ Searching &quot;acme-corp B2B SaaS signals&quot;...</TLine>
@@ -899,7 +852,7 @@ export const GtmFlowThumb3: React.FC = () => (
         <TLine color="#4EC373">{'  '}● complete (12.3s)</TLine>
         <div style={{ height: 4 }} />
         <TLine>
-          <span style={{ color: TEAL, fontWeight: 700 }}>{'[2/4]'}</span>{' '}
+          <span style={{ color: ACCENT, fontWeight: 700 }}>{'[2/4]'}</span>{' '}
           <span style={{ color: TOOL_COLORS.python }}>Python SDK</span>
         </TLine>
         <TLine>{'  '}→ Parsing 23 signals...</TLine>
@@ -908,7 +861,7 @@ export const GtmFlowThumb3: React.FC = () => (
         <TLine color="#4EC373">{'  '}● complete (8.1s)</TLine>
         <div style={{ height: 4 }} />
         <TLine>
-          <span style={{ color: TEAL, fontWeight: 700 }}>{'[3/4]'}</span>{' '}
+          <span style={{ color: ACCENT, fontWeight: 700 }}>{'[3/4]'}</span>{' '}
           <span style={{ color: TOOL_COLORS.grok }}>Grok</span>
         </TLine>
         <TLine>{'  '}→ Generating personalized landing copy...</TLine>
@@ -916,7 +869,7 @@ export const GtmFlowThumb3: React.FC = () => (
         <TLine color="#4EC373">{'  '}● complete (15.4s)</TLine>
         <div style={{ height: 4 }} />
         <TLine>
-          <span style={{ color: TEAL, fontWeight: 700 }}>{'[4/4]'}</span>{' '}
+          <span style={{ color: ACCENT, fontWeight: 700 }}>{'[4/4]'}</span>{' '}
           <span style={{ color: TOOL_COLORS.hubspot }}>HubSpot CLI</span>
         </TLine>
         <TLine>{'  '}→ Creating landing page...</TLine>
@@ -950,11 +903,11 @@ export const GtmFlowThumb3: React.FC = () => (
           fontFamily: FONTS.mono,
         }}
       >
-        <StatBlock value="1m 48s" label="total time" color={TEAL} valueFontSize={36} />
+        <StatBlock value="1m 48s" label="total time" color={ACCENT} valueFontSize={36} />
         <Divider />
-        <StatBlock value="0" label="manual steps" color={TEAL} valueFontSize={36} />
+        <StatBlock value="0" label="manual steps" color={ACCENT} valueFontSize={36} />
         <Divider />
-        <StatBlock value="23" label="pages deployed" color={TEAL} valueFontSize={36} />
+        <StatBlock value="23" label="pages deployed" color={ACCENT} valueFontSize={36} />
       </div>
     </div>
 
@@ -999,25 +952,25 @@ export const GtmFlowThumb3: React.FC = () => (
           flex: 1,
           padding: '20px 22px',
           borderRadius: 10,
-          border: `1px solid ${TEAL}33`,
-          backgroundColor: `${TEAL}08`,
+          border: `1px solid ${ACCENT}33`,
+          backgroundColor: `${ACCENT}08`,
           fontFamily: FONTS.mono,
           display: 'flex',
           flexDirection: 'column',
           gap: 10,
         }}
       >
-        <span style={{ fontSize: 18, fontWeight: 700, color: TEAL }}>With GTMOS</span>
+        <span style={{ fontSize: 18, fontWeight: 700, color: ACCENT }}>With GTMOS</span>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6, fontSize: 13, color: COLORS.textSecondary }}>
-          <div><span style={{ color: TEAL }}>{'>'}</span> {'<'}2 minutes per page</div>
-          <div><span style={{ color: TEAL }}>{'>'}</span> Automated research</div>
-          <div><span style={{ color: TEAL }}>{'>'}</span> One CLI command</div>
-          <div><span style={{ color: TEAL }}>{'>'}</span> Consistent, personalized</div>
+          <div><span style={{ color: ACCENT }}>{'>'}</span> {'<'}2 minutes per page</div>
+          <div><span style={{ color: ACCENT }}>{'>'}</span> Automated research</div>
+          <div><span style={{ color: ACCENT }}>{'>'}</span> One CLI command</div>
+          <div><span style={{ color: ACCENT }}>{'>'}</span> Consistent, personalized</div>
         </div>
       </div>
     </div>
 
-    {/* ── HeyReach + Attribution + CTA ── */}
+    {/* ── Attribution + CTA ── */}
     <div
       style={{
         position: 'absolute',
@@ -1030,7 +983,6 @@ export const GtmFlowThumb3: React.FC = () => (
         gap: 14,
       }}
     >
-      <HeyReachBadge />
       <Attribution />
     </div>
   </SceneWrapper>
@@ -1102,7 +1054,7 @@ export const GtmFlowAnimated: React.FC = () => {
     return (
       <path
         d={pathD}
-        stroke={TEAL}
+        stroke={ACCENT}
         strokeWidth={2}
         fill="none"
         opacity={frame >= 100 ? lineGlow : 0.5}
@@ -1121,7 +1073,7 @@ export const GtmFlowAnimated: React.FC = () => {
   });
 
   return (
-    <SceneWrapper accentColor={TEAL} particleCount={20}>
+    <SceneWrapper accentColor={ACCENT} particleCount={20}>
       {/* ── Headline ── */}
       <div
         style={{
@@ -1141,9 +1093,9 @@ export const GtmFlowAnimated: React.FC = () => {
           style={{
             fontSize: 48,
             fontWeight: 800,
-            color: TEAL,
+            color: ACCENT,
             fontFamily: FONTS.mono,
-            textShadow: `0 0 20px ${TEAL}44`,
+            textShadow: `0 0 20px ${ACCENT}44`,
           }}
         >
           Landing Pages in {'<'}2 mins
@@ -1216,7 +1168,7 @@ export const GtmFlowAnimated: React.FC = () => {
         }}
       >
         <span>INPUT</span>
-        <span style={{ color: TEAL }}>ORCHESTRATE</span>
+        <span style={{ color: ACCENT }}>ORCHESTRATE</span>
         <span>OUTPUT</span>
       </div>
 
@@ -1225,19 +1177,19 @@ export const GtmFlowAnimated: React.FC = () => {
         <TerminalChrome title="gtmos-pipeline">
           <TLine color={COLORS.textPrimary}>$ gtmos pipeline run --target acme-corp</TLine>
           <TLine>
-            <span style={{ color: TEAL }}>{'[1/4]'}</span> Exa MCP → semantic search...{' '}
+            <span style={{ color: ACCENT }}>{'[1/4]'}</span> Exa MCP → semantic search...{' '}
             <span style={{ color: '#4EC373' }}>done</span>
           </TLine>
           <TLine>
-            <span style={{ color: TEAL }}>{'[2/4]'}</span> Python SDK → scoring 23 signals...{' '}
+            <span style={{ color: ACCENT }}>{'[2/4]'}</span> Python SDK → scoring 23 signals...{' '}
             <span style={{ color: '#4EC373' }}>done</span>
           </TLine>
           <TLine>
-            <span style={{ color: TEAL }}>{'[3/4]'}</span> Grok → generating landing copy...{' '}
+            <span style={{ color: ACCENT }}>{'[3/4]'}</span> Grok → generating landing copy...{' '}
             <span style={{ color: '#4EC373' }}>done</span>
           </TLine>
           <TLine>
-            <span style={{ color: TEAL }}>{'[4/4]'}</span> HubSpot CLI → deploying page...{' '}
+            <span style={{ color: ACCENT }}>{'[4/4]'}</span> HubSpot CLI → deploying page...{' '}
             <span style={{ color: '#4EC373' }}>done</span>
           </TLine>
           <div style={{ height: 4 }} />
@@ -1269,34 +1221,19 @@ export const GtmFlowAnimated: React.FC = () => {
             fontFamily: FONTS.mono,
           }}
         >
-          <StatBlock value="<2m" label="total time" color={TEAL} />
+          <StatBlock value="<2m" label="total time" color={ACCENT} />
           <Divider />
-          <StatBlock value="4" label="tools" color={TEAL} />
+          <StatBlock value="4" label="tools" color={ACCENT} />
           <Divider />
-          <StatBlock value="0" label="manual steps" color={TEAL} />
+          <StatBlock value="0" label="manual steps" color={ACCENT} />
         </div>
-      </div>
-
-      {/* ── HeyReach Badge ── */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 1055,
-          left: 0,
-          width: '100%',
-          display: 'flex',
-          justifyContent: 'center',
-          opacity: attrOpacity,
-        }}
-      >
-        <HeyReachBadge />
       </div>
 
       {/* ── Attribution + CTA ── */}
       <div
         style={{
           position: 'absolute',
-          top: 1140,
+          top: 1080,
           left: 0,
           width: '100%',
           display: 'flex',
