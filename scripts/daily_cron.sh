@@ -147,6 +147,17 @@ else
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
+# ── Step 1j: X/Twitter scout ──────────────────────────────────────────
+log "Running x_scout.py"
+if $PYTHON scripts/x_scout.py >> "$LOGFILE" 2>&1; then
+  X_COUNT=$($PYTHON -c "import json; q=json.load(open('data/x/queue.json')); print(sum(1 for i in q if i['status']=='scouted'))" 2>/dev/null || echo "?")
+  log "X scout completed ($X_COUNT scouted opportunities)"
+  send_slack "X" "X scout: $X_COUNT new opportunities found"
+else
+  log "WARN: X scout failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
