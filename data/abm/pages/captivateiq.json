@@ -1,0 +1,162 @@
+{
+  "slug": "captivateiq",
+  "company": "CaptivateIQ",
+  "domain": "captivateiq.com",
+  "contactName": "Johnathan ",
+  "contactRole": "Director of Revenue Operations",
+  "theme": {
+    "primary": "#00AEEF",
+    "primaryLight": "#66C2E8",
+    "primaryGlow": "rgba(0, 174, 239, 0.12)"
+  },
+  "headline": "Built for CaptivateIQ",
+  "subheadline": "Custom AI infrastructure to automate commission calculations and integrate data sources for efficient sales operations.",
+  "stats": [
+    {
+      "value": "$165M",
+      "label": "Total funding raised"
+    },
+    {
+      "value": "255",
+      "label": "Employees"
+    },
+    {
+      "value": "26",
+      "label": "Investors"
+    },
+    {
+      "value": "2017",
+      "label": "Year founded"
+    },
+    {
+      "value": "$60M",
+      "label": "Recent funding round"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Scaling Commissions",
+      "desc": "CaptivateIQ faces rapid growth with 255 employees, making manual commission processes inefficient. This leads to delays in payouts and errors in calculations. Automating these workflows is essential to maintain accuracy as the company expands."
+    },
+    {
+      "icon": "02",
+      "title": "Data Integration",
+      "desc": "Integrating various data sources for commission tracking is a core issue for CaptivateIQ. Without seamless connections, teams waste time on manual entries and reconciliation. This hinders operational efficiency in a VC-funded environment."
+    },
+    {
+      "icon": "03",
+      "title": "Operational Efficiency",
+      "desc": "As a fast-growing SaaS company, CaptivateIQ struggles with legacy tools that slow down incentive management. This results in reduced productivity for revenue operations. Streamlining these processes is key to supporting their sales teams."
+    },
+    {
+      "icon": "04",
+      "title": "Error-Prone Spreadsheets",
+      "desc": "CaptivateIQ relies on spreadsheets for some commission tasks, leading to frequent mistakes and disputes. This affects trust in payouts and team morale. Replacing these with reliable systems is vital for their automated platform."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Commission Automation System",
+      "desc": "Builds a tailored AI system to handle payout calculations and reduce errors, integrating directly with CaptivateIQ's existing platform for seamless data flow.",
+      "tags": [
+        "AI Automation",
+        "Data Integration",
+        "Efficiency Boost"
+      ]
+    },
+    {
+      "title": "Data Integration Hub",
+      "desc": "Creates a centralized hub to connect multiple data sources, ensuring real-time accuracy in commission tracking and reporting for CaptivateIQ's sales operations.",
+      "tags": [
+        "Real-Time Sync",
+        "API Connections",
+        "Scalable Architecture"
+      ]
+    },
+    {
+      "title": "Scalability Framework",
+      "desc": "Develops a framework to scale commission processes as CaptivateIQ grows, incorporating AI for predictive analytics and easy integration with their current tools.",
+      "tags": [
+        "Growth Support",
+        "AI Analytics",
+        "Custom Workflows"
+      ]
+    },
+    {
+      "title": "Error Reduction Tool",
+      "desc": "Implements tools to eliminate spreadsheet errors by automating calculations and providing audit trails, fitting into CaptivateIQ's operational workflow.",
+      "tags": [
+        "Audit Features",
+        "Automation",
+        "Compliance"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Initial Assessment",
+      "subtitle": "Month 1",
+      "desc": "Review CaptivateIQ's current commission systems and identify key pain points through data analysis and stakeholder interviews."
+    },
+    {
+      "title": "System Development",
+      "subtitle": "Month 2",
+      "desc": "Design and build the AI infrastructure, integrating it with CaptivateIQ's data sources for initial testing and refinements."
+    },
+    {
+      "title": "Deployment and Optimization",
+      "subtitle": "Month 3",
+      "desc": "Launch the system, train the team, and optimize based on feedback to ensure smooth operations in their sales environment."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It is a system that uses AI to automate and optimize sales processes like commission management."
+    },
+    {
+      "question": "How does it integrate with our platform?",
+      "answer": "The infrastructure connects via APIs to CaptivateIQ's existing tools for seamless data flow."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs vary based on scope, but we focus on delivering value through efficient, tailored solutions."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Implementation typically spans 3 months, depending on the complexity of your needs."
+    },
+    {
+      "question": "Is our data secure?",
+      "answer": "Yes, we use industry-standard security protocols to protect all integrated data sources."
+    },
+    {
+      "question": "Can we customize the system?",
+      "answer": "Absolutely, the system is built to address CaptivateIQ's specific challenges in commission management."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Salesforce",
+      "role": "Handles CRM integration for tracking sales data in real-time."
+    },
+    {
+      "name": "Python",
+      "role": "Powers AI models for commission calculations and automation."
+    },
+    {
+      "name": "AWS",
+      "role": "Provides cloud infrastructure for scalable data processing."
+    },
+    {
+      "name": "Tableau",
+      "role": "Generates insightful reports on commission performance."
+    },
+    {
+      "name": "Zapier",
+      "role": "Facilitates easy connections between various data sources."
+    }
+  ],
+  "generatedAt": "2026-02-27T08:08:38Z"
+}

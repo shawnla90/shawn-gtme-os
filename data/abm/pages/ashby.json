@@ -1,0 +1,162 @@
+{
+  "slug": "ashby",
+  "company": "Ashby",
+  "domain": "ashbyhq.com",
+  "contactName": "Kayla ",
+  "contactRole": "TA Expert & Community Lead",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#85C1F7",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Ashby",
+  "subheadline": "AI-driven tools to optimize recruitment processes and enhance community engagement for high-value companies.",
+  "stats": [
+    {
+      "value": "$77.5M",
+      "label": "Total funding raised"
+    },
+    {
+      "value": "$50M",
+      "label": "Series D funding"
+    },
+    {
+      "value": "$30M",
+      "label": "Series C funding"
+    },
+    {
+      "value": "135%",
+      "label": "Revenue growth"
+    },
+    {
+      "value": "130",
+      "label": "Employees"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Scalable Hiring",
+      "desc": "Ashby serves high-value companies that need efficient recruitment tools. Managing growth from 1,300 to 2,700 customers strains existing processes. This leads to productivity gaps in achieving targets."
+    },
+    {
+      "icon": "02",
+      "title": "AI Integration",
+      "desc": "With recent funding for AI-native infrastructure, Ashby must incorporate these tools smoothly. Balancing AI adoption with user needs can create inefficiencies. Poor integration risks diminishing ROI on hiring efforts."
+    },
+    {
+      "icon": "03",
+      "title": "Feedback Management",
+      "desc": "Ashby's platform requires precise feedback visibility settings for admins and users. Handling access in a collaborative environment is complex. Missteps can result in privacy issues or lost insights for community engagement."
+    },
+    {
+      "icon": "04",
+      "title": "Community Engagement",
+      "desc": "As a TA expert, Kayla focuses on fostering interactions for productivity. Scaling these efforts with increasing customers is challenging. Ineffective tools can hinder teams from meeting their goals."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Recruitment System",
+      "desc": "Builds an AI tool to automate candidate screening and integrate with Ashby's ATS for seamless data flow. This addresses scaling hiring processes by enhancing efficiency in talent acquisition.",
+      "tags": [
+        "AI",
+        "Integration",
+        "Automation"
+      ]
+    },
+    {
+      "title": "Community Tools Platform",
+      "desc": "Develops features for managing newsletters and tracking engagement ROI, integrating with Ashby's marketing systems. This boosts community interactions and supports productivity goals for high-value companies.",
+      "tags": [
+        "Community",
+        "Analytics",
+        "ROI"
+      ]
+    },
+    {
+      "title": "Analytics Dashboard",
+      "desc": "Creates a dashboard to monitor hiring metrics and revenue growth, pulling data from Ashby's tools. This helps in making data-driven decisions for enterprise-grade recruitment processes.",
+      "tags": [
+        "Dashboard",
+        "Data",
+        "Metrics"
+      ]
+    },
+    {
+      "title": "Feedback Integration System",
+      "desc": "Implements role-based feedback mechanisms that connect with Ashby's user management. This ensures secure and efficient handling of insights, improving collaboration in recruitment efforts.",
+      "tags": [
+        "Feedback",
+        "Security",
+        "User"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Ashby's current sales infrastructure and identify specific recruitment pain points."
+    },
+    {
+      "title": "Design Phase",
+      "subtitle": "Month 2",
+      "desc": "Prototype AI solutions tailored to Ashby's needs for hiring and community engagement."
+    },
+    {
+      "title": "Implementation Phase",
+      "subtitle": "Month 3",
+      "desc": "Integrate and launch the new systems with initial testing for Ashby's operations."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It optimizes sales processes using AI for B2B SaaS companies."
+    },
+    {
+      "question": "How does it help Ashby?",
+      "answer": "It streamlines recruitment and community engagement specific to Ashby's tools."
+    },
+    {
+      "question": "What are the integration options?",
+      "answer": "It connects with Ashby's ATS and analytics for seamless operations."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "It spans three months as per the outlined steps."
+    },
+    {
+      "question": "Is customization available?",
+      "answer": "Yes, it's tailored to Ashby's business context."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Expect improved efficiency in hiring and better productivity outcomes."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "AWS",
+      "role": "Provides cloud hosting for scalable recruitment software"
+    },
+    {
+      "name": "AI Frameworks",
+      "role": "Enables AI-native features for hiring infrastructure"
+    },
+    {
+      "name": "Applicant Tracking Systems",
+      "role": "Manages core recruitment processes"
+    },
+    {
+      "name": "Analytics Tools",
+      "role": "Tracks metrics and supports data-driven decisions"
+    },
+    {
+      "name": "Newsletter Platforms",
+      "role": "Facilitates community engagement and marketing efforts"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:37:43Z"
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "copy-ai",
+  "company": "Copy.ai",
+  "domain": "fullcast.com",
+  "contactName": "Sam ",
+  "contactRole": "General Manager, Datajoin",
+  "theme": {
+    "primary": "#00A1E4",
+    "primaryLight": "#66C2E4",
+    "primaryGlow": "rgba(0, 161, 228, 0.12)"
+  },
+  "headline": "Built for Copy.ai",
+  "subheadline": "Custom AI infrastructure to streamline copywriting tools and scale GTM strategies for targeted sales content generation",
+  "stats": [
+    {
+      "value": "$63M",
+      "label": "Series C Funding"
+    },
+    {
+      "value": "55",
+      "label": "Employees"
+    },
+    {
+      "value": "18",
+      "label": "Investors"
+    },
+    {
+      "value": "2020",
+      "label": "Year Founded"
+    },
+    {
+      "value": "15M",
+      "label": "Users Worldwide"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Scaling Operations",
+      "desc": "Copy.ai must grow from 55 employees in a competitive AI market while managing early-stage VC demands. This involves balancing team expansion and resource allocation for AI tool development. Their focus on targeted sales copy adds pressure to innovate efficiently."
+    },
+    {
+      "icon": "02",
+      "title": "Content Creation Bottlenecks",
+      "desc": "Generating custom workflows for sales copy takes time amidst high user demand from over 15 million users. Copy.ai needs to address inefficiencies in content personalization for specific customer segments. This directly impacts their ability to scale without increasing headcount."
+    },
+    {
+      "icon": "03",
+      "title": "GTM Strategy Integration",
+      "desc": "Copy.ai's platform relies on AI for go-to-market engines, but integrating these with existing tools can be complex. They face challenges in ensuring seamless workflows that drive efficiency and growth. This requires overcoming compatibility issues in a fast-evolving AI landscape."
+    },
+    {
+      "icon": "04",
+      "title": "Funding and Innovation Pressures",
+      "desc": "With $63M from Series C, Copy.ai must innovate AI-powered copywriting while meeting investor expectations. This includes accelerating development without overextending resources. Their early-stage status heightens the need for strategic scaling."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Copy Optimization System",
+      "desc": "Builds automated tools to enhance copywriting efficiency by integrating with Copy.ai's existing platform for targeted content generation",
+      "tags": [
+        "AI",
+        "Optimization",
+        "Integration"
+      ]
+    },
+    {
+      "title": "Scalable GTM Infrastructure",
+      "desc": "Creates workflows that scale operations from 55 employees by linking AI tools with sales strategies, reducing bottlenecks in content creation",
+      "tags": [
+        "Scaling",
+        "Workflows",
+        "Sales"
+      ]
+    },
+    {
+      "title": "Data-Driven Analytics Suite",
+      "desc": "Develops analytics to track user engagement from 15M users, integrating with Copy.ai's systems for better decision-making on AI features",
+      "tags": [
+        "Analytics",
+        "Data",
+        "Insights"
+      ]
+    },
+    {
+      "title": "VC-Backed Growth Framework",
+      "desc": "Establishes a framework to manage $63M funding impacts, building infrastructure that supports innovation and team growth without added complexity",
+      "tags": [
+        "Growth",
+        "Funding",
+        "Framework"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Copy.ai's current AI tools and identify key pain points in scaling operations."
+    },
+    {
+      "title": "Design and Planning",
+      "subtitle": "Month 2",
+      "desc": "Develop customized infrastructure blueprints that integrate with their copywriting platform."
+    },
+    {
+      "title": "Implementation and Testing",
+      "subtitle": "Month 3",
+      "desc": "Roll out the new systems and test for efficiency in content generation and GTM strategies."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is sales infrastructure?",
+      "answer": "Sales infrastructure refers to the systems and tools that support go-to-market strategies for B2B SaaS companies like Copy.ai."
+    },
+    {
+      "question": "How does this help Copy.ai?",
+      "answer": "It streamlines AI-powered copywriting tools, making content creation more efficient for their user base."
+    },
+    {
+      "question": "What tech stack do you use?",
+      "answer": "We build on tools compatible with Copy.ai's AI ecosystem, including language models like GPT-3."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "Engagements typically span three months, with ongoing support as needed."
+    },
+    {
+      "question": "Is this customizable?",
+      "answer": "Yes, all deliverables are tailored to Copy.ai's specific challenges in AI and sales."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Expect improved efficiency in content generation and better scaling of operations based on your funding and user growth."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "GPT-3",
+      "role": "Handles language generation for copywriting tools"
+    },
+    {
+      "name": "OpenAI API",
+      "role": "Powers AI workflows in content creation"
+    },
+    {
+      "name": "AWS Cloud",
+      "role": "Supports scalable infrastructure for AI operations"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Integrates with CRM for targeted sales strategies"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks user engagement and performance metrics"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:09:34Z"
+}

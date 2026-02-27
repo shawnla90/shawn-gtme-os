@@ -1,0 +1,162 @@
+{
+  "slug": "insidescale",
+  "company": "InsideScale",
+  "domain": "insidescale.com",
+  "contactName": "Alejandra ",
+  "contactRole": "IT Manager",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for InsideScale",
+  "subheadline": "AI-powered sales infrastructure to help scale sales development for B2B SaaS leaders and manage distributed teams across regions",
+  "stats": [
+    {
+      "value": "66.7%",
+      "label": "YoY Growth"
+    },
+    {
+      "value": "12",
+      "label": "Employees"
+    },
+    {
+      "value": "6",
+      "label": "Employee Increase YoY"
+    },
+    {
+      "value": "75+",
+      "label": "Clients Served"
+    },
+    {
+      "value": "2016",
+      "label": "Year Founded"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Distributed Team Management",
+      "desc": "InsideScale's teams span San Francisco and Mexico, making coordination complex. Rapid growth adds pressure on communication tools. Secure data sharing across borders is essential for client trust."
+    },
+    {
+      "icon": "02",
+      "title": "Scaling Sales Operations",
+      "desc": "With 66.7% YoY growth, InsideScale must de-risk GTM for 75+ clients. Handling sales development across regions strains resources. Interim leadership gaps can slow pipeline generation."
+    },
+    {
+      "icon": "03",
+      "title": "Client Data Security",
+      "desc": "As a SaaS consulting firm, InsideScale deals with sensitive data from multiple clients. Rapid scaling increases risks of breaches in distributed setups. Maintaining compliance while growing operations is a key concern."
+    },
+    {
+      "icon": "04",
+      "title": "Talent Acquisition",
+      "desc": "InsideScale's small team of 12 employees needs market-ready sales talent quickly. Managing remote hiring from San Francisco and Mexico limits options. Integrating new hires into sales functions without disrupting services is challenging."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Sales Dev AI System",
+      "desc": "Builds automated lead generation and pipeline tools that integrate with existing sales operations to de-risk GTM for 75+ clients",
+      "tags": [
+        "AI Automation",
+        "Lead Gen",
+        "Pipeline Scaling"
+      ]
+    },
+    {
+      "title": "Data Operations Framework",
+      "desc": "Creates secure data handling systems that connect with distributed teams in San Francisco and Mexico, ensuring compliance and efficient client data management",
+      "tags": [
+        "Data Security",
+        "Operations Integration",
+        "Remote Collaboration"
+      ]
+    },
+    {
+      "title": "Interim Leadership Platform",
+      "desc": "Develops a leadership support structure using AI to fill gaps in sales development, allowing InsideScale to scale faster without hiring delays",
+      "tags": [
+        "Talent Management",
+        "Leadership AI",
+        "Growth Support"
+      ]
+    },
+    {
+      "title": "GTM Engineering Tool",
+      "desc": "Constructs a customized GTM system that fast-tracks sales processes and integrates with InsideScale's current workflows for better regional team alignment",
+      "tags": [
+        "GTM Optimization",
+        "Workflow Integration",
+        "Regional Scaling"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Initial Assessment",
+      "subtitle": "Month 1",
+      "desc": "Review InsideScale's current sales infrastructure and identify key pain points like distributed team challenges."
+    },
+    {
+      "title": "System Design",
+      "subtitle": "Month 2",
+      "desc": "Design AI-powered solutions tailored to sales scaling and data security needs."
+    },
+    {
+      "title": "Implementation",
+      "subtitle": "Month 3",
+      "desc": "Roll out the new systems and integrate them with existing operations for immediate impact."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to automate sales processes like lead generation and data analysis for B2B SaaS firms."
+    },
+    {
+      "question": "How does this integrate with our teams?",
+      "answer": "The system connects with your distributed teams in San Francisco and Mexico for seamless collaboration."
+    },
+    {
+      "question": "Is our data secure?",
+      "answer": "Yes, we build with strict security measures to handle client data for 75+ companies."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically 3 months, starting with assessment and ending with full integration."
+    },
+    {
+      "question": "What tech stack do you use?",
+      "answer": "We base it on tools like Gong and Clearbit, tailored to your needs."
+    },
+    {
+      "question": "Can this scale with our growth?",
+      "answer": "Yes, designed for rapid growth like your 66.7% YoY increase."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Gong",
+      "role": "Analyzes sales calls to improve development strategies"
+    },
+    {
+      "name": "Clearbit",
+      "role": "Enriches lead data for better GTM execution"
+    },
+    {
+      "name": "Front",
+      "role": "Manages team communications across distributed locations"
+    },
+    {
+      "name": "Semgrep",
+      "role": "Secures code in sales operations for risk-free scaling"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Integrates CRM to track client interactions for 75+ companies"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:33:10Z"
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "chargebee",
+  "company": "Chargebee",
+  "domain": "chargebee.com",
+  "contactName": "Vinothini ",
+  "contactRole": "Talent Acquisition Manager",
+  "theme": {
+    "primary": "#0F6EF7",
+    "primaryLight": "#A6C9F0",
+    "primaryGlow": "rgba(15, 110, 247, 0.12)"
+  },
+  "headline": "Built for Chargebee",
+  "subheadline": "Custom AI-powered sales infrastructure to optimize subscription management and talent acquisition for rapid SaaS growth",
+  "stats": [
+    {
+      "value": "$475M",
+      "label": "Funding raised"
+    },
+    {
+      "value": "$5B",
+      "label": "Pledged fund for startups"
+    },
+    {
+      "value": "60+",
+      "label": "Integrations supported"
+    },
+    {
+      "value": "30+",
+      "label": "Payment gateways"
+    },
+    {
+      "value": "2011",
+      "label": "Year founded"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Talent Retention",
+      "desc": "Chargebee faces high turnover in the competitive SaaS market due to rapid growth demands. This impacts team stability and innovation in subscription solutions. Recruiting skilled professionals like Vinothini requires streamlined processes to align with scaling needs."
+    },
+    {
+      "icon": "02",
+      "title": "Billing Complexity",
+      "desc": "Chargebee's usage-based pricing for AI features adds layers to revenue management. Inaccurate billing can lead to customer dissatisfaction and lost revenue. Integrating these with global payment systems is essential for seamless operations."
+    },
+    {
+      "icon": "03",
+      "title": "Global Scaling",
+      "desc": "As a unicorn company, Chargebee must handle worldwide customer expansion. This involves managing diverse regulatory requirements for subscriptions. Overlooking these can hinder market entry and growth."
+    },
+    {
+      "icon": "04",
+      "title": "AI Integration",
+      "desc": "Chargebee needs to incorporate AI into billing without disrupting existing systems. Poor integration risks inefficiencies in monetization. This challenge affects their ability to innovate in a fast-evolving SaaS landscape."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Subscription Optimizer",
+      "desc": "Builds an AI system to automate pricing and billing for Chargebee's products, integrating with their existing catalog and payment gateways for real-time adjustments",
+      "tags": [
+        "AI Automation",
+        "Billing Integration",
+        "Revenue Management"
+      ]
+    },
+    {
+      "title": "Talent Acquisition Platform",
+      "desc": "Creates a customized recruitment tool using AI to match candidates with Chargebee's needs, integrating with their HR systems for efficient hiring processes",
+      "tags": [
+        "Recruitment AI",
+        "Talent Pipeline",
+        "SaaS Scaling"
+      ]
+    },
+    {
+      "title": "Sales Analytics Dashboard",
+      "desc": "Develops a dashboard that analyzes sales data from Chargebee's subscriptions, integrating with reporting tools to predict churn and optimize retention",
+      "tags": [
+        "Data Analytics",
+        "Churn Prediction",
+        "Customer Insights"
+      ]
+    },
+    {
+      "title": "Global Payment Integrator",
+      "desc": "Constructs an AI-enhanced system for handling international payments, integrating with Chargebee's 30+ gateways to ensure compliance and reduce errors",
+      "tags": [
+        "Payment Processing",
+        "Global Compliance",
+        "AI Optimization"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Initial Assessment",
+      "subtitle": "Month 1",
+      "desc": "Review Chargebee's current sales infrastructure and identify key pain points in subscription management and talent acquisition."
+    },
+    {
+      "title": "System Design",
+      "subtitle": "Month 2",
+      "desc": "Design AI-powered solutions tailored to Chargebee's needs, including blueprints for integration with existing billing systems."
+    },
+    {
+      "title": "Implementation",
+      "subtitle": "Month 3",
+      "desc": "Deploy the new infrastructure and train teams on usage for ongoing SaaS operations."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to automate and optimize sales processes like billing and lead generation."
+    },
+    {
+      "question": "How does it integrate with Chargebee's systems?",
+      "answer": "We ensure seamless integration with your 60+ existing tools for minimal disruption."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs vary based on scope; we tailor proposals to Chargebee's specific needs and budget."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically 3 months, depending on the complexity of your subscription management setup."
+    },
+    {
+      "question": "Is this customizable for our growth stage?",
+      "answer": "Yes, it's designed for unicorns like Chargebee to scale with your rapid expansion."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Improved efficiency in billing and talent acquisition, potentially reducing churn as seen in similar SaaS companies."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Chargebee API",
+      "role": "Handles subscription and billing integrations for seamless data flow"
+    },
+    {
+      "name": "OpenAI",
+      "role": "Powers AI models for predictive analytics in sales forecasting"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Manages CRM to track customer interactions and sales pipelines"
+    },
+    {
+      "name": "Stripe",
+      "role": "Processes payments and integrates with Chargebee's gateways"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Analyzes user data to optimize sales strategies and reporting"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:07:32Z"
+}

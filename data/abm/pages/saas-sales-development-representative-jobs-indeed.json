@@ -1,0 +1,162 @@
+{
+  "slug": "saas-sales-development-representative-jobs-indeed",
+  "company": "Saas sales development representative jobs - Indeed",
+  "domain": "ca.indeed.com",
+  "contactName": "Matteo ",
+  "contactRole": "Sr National Account Manager",
+  "theme": {
+    "primary": "#0F70C3",
+    "primaryLight": "#5A9BDC",
+    "primaryGlow": "rgba(15, 112, 195, 0.12)"
+  },
+  "headline": "Built for Indeed",
+  "subheadline": "AI-powered sales infrastructure to optimize job matching for SaaS sales roles",
+  "stats": [
+    {
+      "value": "$85K",
+      "label": "Average SDR salary from job listings"
+    },
+    {
+      "value": "55%",
+      "label": "Reduction in claim denials as per SaaS efficiency"
+    },
+    {
+      "value": "3 days",
+      "label": "A/R analysis turnaround time in healthcare SaaS"
+    },
+    {
+      "value": "$95K",
+      "label": "Upper SDR salary range from postings"
+    },
+    {
+      "value": "$60,000",
+      "label": "Minimum salary filter for SDR jobs"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Inefficient lead qualification",
+      "desc": "Indeed struggles with filtering high-quality SaaS SDR candidates from a vast pool. This delays matching employers with the right talent. Outbound efforts often miss the mark due to outdated playbooks."
+    },
+    {
+      "icon": "02",
+      "title": "Platform adoption hurdles",
+      "desc": "As a job platform, Indeed faces resistance from SaaS companies in adopting new tools for sales recruitment. This impacts user engagement and retention in competitive markets. Integrating AI for better matching remains a challenge."
+    },
+    {
+      "icon": "03",
+      "title": "Overwhelmed by job volume",
+      "desc": "Handling millions of SaaS SDR job listings overwhelms Indeed's current systems. This leads to slower response times for employers. Prioritizing relevant postings is difficult without advanced infrastructure."
+    },
+    {
+      "icon": "04",
+      "title": "Competitive market pressure",
+      "desc": "Indeed competes with platforms like LinkedIn for SaaS talent acquisition. This requires constant innovation in sales tools. Failing to adapt quickly erodes market share in the B2B recruitment space."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Lead Qualification Engine",
+      "desc": "Builds an AI system to qualify SDR job leads for Indeed, integrating with their database for seamless matching",
+      "tags": [
+        "AI qualification",
+        "Job matching",
+        "SaaS integration"
+      ]
+    },
+    {
+      "title": "Outbound Playbook Optimizer",
+      "desc": "Creates customized playbooks for Indeed's sales team, pulling data from job trends to enhance outreach",
+      "tags": [
+        "Data-driven",
+        "Sales automation",
+        "Recruitment tools"
+      ]
+    },
+    {
+      "title": "Adoption Tracking Dashboard",
+      "desc": "Develops a dashboard to monitor platform adoption metrics, integrating with Indeed's analytics for real-time insights",
+      "tags": [
+        "Performance tracking",
+        "User engagement",
+        "AI analytics"
+      ]
+    },
+    {
+      "title": "Scalable Job Matching System",
+      "desc": "Constructs a scalable infrastructure to handle high-volume job listings, linking with existing APIs for efficient processing",
+      "tags": [
+        "Scalability",
+        "API integration",
+        "B2B optimization"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Initial Assessment",
+      "subtitle": "Month 1",
+      "desc": "Conduct research on Indeed's current sales processes and identify key pain points"
+    },
+    {
+      "title": "System Design",
+      "subtitle": "Month 2",
+      "desc": "Design and prototype the AI infrastructure tailored to Indeed's job matching needs"
+    },
+    {
+      "title": "Implementation",
+      "subtitle": "Month 3",
+      "desc": "Deploy the system and integrate it with Indeed's platform for live testing"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to automate and optimize sales processes like lead generation for job platforms."
+    },
+    {
+      "question": "How does this integrate with Indeed?",
+      "answer": "The system connects via APIs to enhance job matching without disrupting existing operations."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs vary based on scope, but we focus on delivering value through customized solutions."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically 3 months for initial setup, with ongoing refinements."
+    },
+    {
+      "question": "Is this customizable for our needs?",
+      "answer": "Yes, it's built specifically for Indeed's SaaS job market challenges."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Improved efficiency in matching SDR roles, based on real stats like 55% reduction in denials from similar setups."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "AWS",
+      "role": "Handles cloud hosting for scalable job data processing"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Manages CRM integration for tracking sales leads in job listings"
+    },
+    {
+      "name": "Python",
+      "role": "Powers AI algorithms for lead qualification and matching"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks user engagement and platform adoption metrics"
+    },
+    {
+      "name": "Slack",
+      "role": "Facilitates team communication during infrastructure development"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:36:49Z"
+}

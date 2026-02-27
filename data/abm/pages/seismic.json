@@ -1,0 +1,162 @@
+{
+  "slug": "seismic",
+  "company": "Seismic",
+  "domain": "seismic.com",
+  "contactName": "Gemma ",
+  "contactRole": "International FS Marketing Lead",
+  "theme": {
+    "primary": "#00AEEF",
+    "primaryLight": "#66C7F4",
+    "primaryGlow": "rgba(0, 174, 239, 0.12)"
+  },
+  "headline": "Built for Seismic",
+  "subheadline": "AI-powered sales infrastructure to enhance global partnerships and address regulatory compliance in blockchain financial services",
+  "stats": [
+    {
+      "value": "$92M",
+      "label": "Series F Funding"
+    },
+    {
+      "value": "$1.6B",
+      "label": "Company Valuation"
+    },
+    {
+      "value": "$10M",
+      "label": "Recent Funding Round"
+    },
+    {
+      "value": "52%",
+      "label": "Expected Revenue Increase from AI"
+    },
+    {
+      "value": "$9M",
+      "label": "Oversubscribed Seed for Similar Tech"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Regulatory Compliance",
+      "desc": "Seismic faces strict international regulations for blockchain adoption. This slows global partnerships and increases compliance costs. Their encrypted platforms must balance privacy and legal standards."
+    },
+    {
+      "icon": "02",
+      "title": "Partnership Building",
+      "desc": "Forging financial services partnerships is tough with 16 employees. Competition in blockchain makes trust-building essential. Global promotion requires targeted strategies to stand out."
+    },
+    {
+      "icon": "03",
+      "title": "Data Security",
+      "desc": "Encrypted data on Seismic's platform risks transparency issues. Developers need secure on-chain solutions without bottlenecks. This affects novel financial product launches."
+    },
+    {
+      "icon": "04",
+      "title": "Market Expansion",
+      "desc": "As a 2023 startup, Seismic must scale quickly in competitive sectors. International adoption involves cultural and regulatory barriers. AI integration is key to driving revenue growth."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Compliance AI System",
+      "desc": "Builds automated tools for regulatory checks and integrates with Seismic's blockchain for real-time compliance monitoring",
+      "tags": [
+        "AI Compliance",
+        "Blockchain Integration",
+        "Data Security"
+      ]
+    },
+    {
+      "title": "Partnership Network",
+      "desc": "Creates a CRM system for managing global partnerships and integrates with existing encrypted platforms to streamline collaborations",
+      "tags": [
+        "Partnership Management",
+        "AI Analytics",
+        "Financial Tools"
+      ]
+    },
+    {
+      "title": "Sales Enablement Platform",
+      "desc": "Develops AI-driven content for marketing encrypted solutions and integrates with Seismic's app layer for targeted promotions",
+      "tags": [
+        "Content Automation",
+        "AI Marketing",
+        "Blockchain Apps"
+      ]
+    },
+    {
+      "title": "Growth Analytics Dashboard",
+      "desc": "Constructs dashboards for tracking revenue and AI impact, integrating with Seismic's data systems for actionable insights",
+      "tags": [
+        "Analytics",
+        "Revenue Tracking",
+        "AI Insights"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Initial Assessment",
+      "subtitle": "Month 1",
+      "desc": "Research Seismic's blockchain operations and identify key pain points for sales infrastructure."
+    },
+    {
+      "title": "System Development",
+      "subtitle": "Month 2",
+      "desc": "Build and prototype AI tools tailored to regulatory and partnership needs."
+    },
+    {
+      "title": "Integration and Launch",
+      "subtitle": "Month 3",
+      "desc": "Integrate the new systems with Seismic's platform and launch for immediate use."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to optimize sales processes for blockchain companies like Seismic."
+    },
+    {
+      "question": "How does it address regulatory challenges?",
+      "answer": "The system automates compliance checks specific to international blockchain standards."
+    },
+    {
+      "question": "Is this customizable for our team size?",
+      "answer": "Yes, it's designed for small teams like Seismic's 16 employees."
+    },
+    {
+      "question": "What tools will be integrated?",
+      "answer": "It integrates with Seismic's existing blockchain and AI tools for seamless operation."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "Typically three months, with ongoing support available."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Improved partnerships and revenue growth based on AI-driven insights."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Blockchain Platforms",
+      "role": "Secures data for financial transactions on Seismic's base layer"
+    },
+    {
+      "name": "AI Analytics Tools",
+      "role": "Analyzes market trends to support global promotion efforts"
+    },
+    {
+      "name": "CRM Systems",
+      "role": "Manages partnerships and tracks interactions in financial services"
+    },
+    {
+      "name": "Encryption Software",
+      "role": "Ensures on-chain privacy for app-level developments"
+    },
+    {
+      "name": "Data Dashboards",
+      "role": "Monitors revenue and compliance metrics in real-time"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:28:35Z"
+}

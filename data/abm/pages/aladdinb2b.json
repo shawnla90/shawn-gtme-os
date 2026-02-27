@@ -1,0 +1,162 @@
+{
+  "slug": "aladdinb2b",
+  "company": "AladdinB2B",
+  "domain": "aladdinb2b.com",
+  "contactName": "Fadwa ",
+  "contactRole": "Product Manager",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for AladdinB2B",
+  "subheadline": "AI systems to optimize B2B meetings and supply chain connections in 11 countries",
+  "stats": [
+    {
+      "value": "21",
+      "label": "Employees"
+    },
+    {
+      "value": "10.8%",
+      "label": "YoY Employee Growth"
+    },
+    {
+      "value": "11",
+      "label": "Countries Operated"
+    },
+    {
+      "value": "10M",
+      "label": "Company Profiles"
+    },
+    {
+      "value": "500K",
+      "label": "Investment Opportunity in Competitions"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Market Integration",
+      "desc": "AladdinB2B operates in 11 countries but faces hurdles in seamless data integration across regions. This leads to delays in B2B meetings and potential mismatches in supply chain technologies. Their growth requires addressing these to maintain user trust in global trade platforms."
+    },
+    {
+      "icon": "02",
+      "title": "Expansion Barriers",
+      "desc": "As a platform for B2B meetings, AladdinB2B struggles with scaling services in diverse markets like GCC and MENA. This impacts their ability to qualify high-potential connections efficiently. Their employee growth of 10.8% YoY adds pressure to align resources with international demands."
+    },
+    {
+      "icon": "03",
+      "title": "Data Management",
+      "desc": "Handling over 10 million company profiles means AladdinB2B deals with verification challenges in real-time. Inaccurate data can hinder matchmaking and transaction outcomes in supply chain tech. This affects their focus on fintech solutions for global trade."
+    },
+    {
+      "icon": "04",
+      "title": "User Alignment",
+      "desc": "AladdinB2B's product managers prioritize features based on user feedback but face issues in aligning with global trade needs. This can slow innovation in B2B meetings and big data analytics. Their collaborative style demands tools that integrate metrics for better decision-making."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Matchmaking System",
+      "desc": "Builds an AI tool for pre-qualified B2B meetings that integrates with AladdinB2B's database, enhancing connection accuracy and reducing manual efforts",
+      "tags": [
+        "AI Integration",
+        "B2B Optimization",
+        "Data Matching"
+      ]
+    },
+    {
+      "title": "Supply Chain Analytics Platform",
+      "desc": "Creates analytics for supply chain technologies that plug into existing systems, providing insights on global trade patterns and improving decision-making",
+      "tags": [
+        "Big Data",
+        "Fintech Solutions",
+        "Global Insights"
+      ]
+    },
+    {
+      "title": "International Expansion Framework",
+      "desc": "Develops a framework for seamless market integration across 11 countries, connecting with AladdinB2B's current infrastructure to support employee growth and user alignment",
+      "tags": [
+        "Scalability",
+        "Market Tools",
+        "Growth Metrics"
+      ]
+    },
+    {
+      "title": "Lead Generation Engine",
+      "desc": "Constructs an engine for targeted lead generation that works with AladdinB2B's matchmaking programs, boosting transaction rates through AI-driven appointments",
+      "tags": [
+        "Lead Tools",
+        "Appointment Setting",
+        "RFQ Management"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Conduct research on AladdinB2B's current B2B systems and identify key integration points for AI enhancements."
+    },
+    {
+      "title": "Development Phase",
+      "subtitle": "Month 2",
+      "desc": "Build and prototype the AI systems tailored to their supply chain and global trade needs."
+    },
+    {
+      "title": "Integration Phase",
+      "subtitle": "Month 3",
+      "desc": "Test and deploy the new infrastructure, ensuring it aligns with AladdinB2B's operations in 11 countries."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AladdinB2B's main focus?",
+      "answer": "AladdinB2B specializes in B2B meetings and supply chain technologies for global trade."
+    },
+    {
+      "question": "How does AI help with our operations?",
+      "answer": "AI optimizes matchmaking and data analytics to improve B2B connections and efficiency."
+    },
+    {
+      "question": "Can you integrate with our existing tools?",
+      "answer": "Yes, the systems are designed to integrate with your database and platforms."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Expect better B2B meeting outcomes and streamlined supply chain processes based on your growth metrics."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "The core engagement spans three months with options for ongoing support."
+    },
+    {
+      "question": "Is this customizable for our markets?",
+      "answer": "Yes, solutions are tailored to your operations in 11 countries."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Python",
+      "role": "Handles AI algorithms for B2B matchmaking"
+    },
+    {
+      "name": "TensorFlow",
+      "role": "Powers machine learning models for data analytics"
+    },
+    {
+      "name": "AWS",
+      "role": "Manages cloud infrastructure for global scalability"
+    },
+    {
+      "name": "SQL Databases",
+      "role": "Stores and queries the 10 million company profiles"
+    },
+    {
+      "name": "HubSpot",
+      "role": "Facilitates lead generation and CRM integration"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:17:25Z"
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "bettercloud",
+  "company": "BetterCloud",
+  "domain": "bettercloud.com",
+  "contactName": "Aleeph ",
+  "contactRole": "Director of Revenue Operations",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#85C1F7",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for BetterCloud",
+  "subheadline": "AI infrastructure to streamline multi-SaaS management and boost operational efficiency across global teams",
+  "stats": [
+    {
+      "value": "$31.4M",
+      "label": "Annual Revenue"
+    },
+    {
+      "value": "$195.4M",
+      "label": "Total Funding"
+    },
+    {
+      "value": "$500MM",
+      "label": "Strategic Investment"
+    },
+    {
+      "value": "219",
+      "label": "Employees"
+    },
+    {
+      "value": "6",
+      "label": "Countries Operated In"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Employee Decline",
+      "desc": "BetterCloud faced a 24.9% YoY drop in employees, straining team capacity. This impacts daily operations in multi-country setups. It requires tools to automate workflows and retain talent."
+    },
+    {
+      "icon": "02",
+      "title": "Global Operations",
+      "desc": "Managing teams across six countries adds complexity to communication and compliance. BetterCloud must align processes to avoid inefficiencies. This demands integrated systems for seamless collaboration."
+    },
+    {
+      "icon": "03",
+      "title": "SaaS Management",
+      "desc": "BetterCloud's platform handles multi-SaaS environments, but monitoring changes is challenging. IT teams need to remediate issues quickly to maintain security. Automation is key to enforcing policies effectively."
+    },
+    {
+      "icon": "04",
+      "title": "Revenue Optimization",
+      "desc": "With $31.4M in annual revenue, BetterCloud must streamline revenue operations amid growth pressures. Cross-team alignment is crucial to maximize efficiency. This involves data-driven tools to track and improve streams."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "SaaS Automation System",
+      "desc": "Builds automated workflows for BetterCloud's multi-SaaS platform to detect and remediate changes, integrating with existing IT tools for real-time monitoring",
+      "tags": [
+        "Automation",
+        "SaaS",
+        "Integration"
+      ]
+    },
+    {
+      "title": "Global Ops Framework",
+      "desc": "Develops a framework to manage operations across six countries, integrating with BetterCloud's systems to enhance collaboration and compliance",
+      "tags": [
+        "Global",
+        "Efficiency",
+        "Compliance"
+      ]
+    },
+    {
+      "title": "Workforce Analytics Tool",
+      "desc": "Creates AI analytics to address the 24.9% employee decline, integrating with HR systems to track retention and productivity metrics",
+      "tags": [
+        "AI",
+        "Analytics",
+        "HR"
+      ]
+    },
+    {
+      "title": "Revenue Stream Optimizer",
+      "desc": "Designs a system to optimize $31.4M annual revenue by aligning teams and automating processes, integrating with sales infrastructure for better forecasting",
+      "tags": [
+        "Revenue",
+        "Optimization",
+        "Data"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Research BetterCloud's current setup and identify key pain points like employee decline and global operations."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop tailored AI infrastructure based on findings, focusing on SaaS management and revenue optimization."
+    },
+    {
+      "title": "Deployment and Review",
+      "subtitle": "Month 3",
+      "desc": "Implement the systems and conduct initial reviews to ensure integration and performance improvements."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is this service?",
+      "answer": "It's customized AI sales infrastructure for BetterCloud to manage multi-SaaS environments."
+    },
+    {
+      "question": "How does it address employee decline?",
+      "answer": "It builds analytics tools to track and improve retention amid BetterCloud's 24.9% YoY drop."
+    },
+    {
+      "question": "Will it integrate with our platform?",
+      "answer": "Yes, it integrates seamlessly with BetterCloud's SaaS management systems for real-time operations."
+    },
+    {
+      "question": "What are the costs?",
+      "answer": "Costs are based on BetterCloud's $31.4M revenue scale, with flexible pricing for global implementation."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "The initial phase spans three months, covering assessment, build, and deployment."
+    },
+    {
+      "question": "Is this secure for multi-country operations?",
+      "answer": "Yes, it ensures compliance and security across BetterCloud's six countries."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "BetterCloud Platform",
+      "role": "Manages multi-SaaS environments and automates IT workflows"
+    },
+    {
+      "name": "AWS",
+      "role": "Hosts and scales BetterCloud's infrastructure for global operations"
+    },
+    {
+      "name": "Google Workspace",
+      "role": "Facilitates collaboration across BetterCloud's teams in six countries"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Tracks revenue operations and customer data for BetterCloud's sales processes"
+    },
+    {
+      "name": "Slack",
+      "role": "Enables real-time communication to address operational challenges at BetterCloud"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:04:41Z"
+}

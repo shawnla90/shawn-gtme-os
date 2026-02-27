@@ -1,0 +1,162 @@
+{
+  "slug": "veles",
+  "company": "Veles",
+  "domain": "getveles.com",
+  "contactName": "Irina ",
+  "contactRole": "Director",
+  "theme": {
+    "primary": "#0056b3",
+    "primaryLight": "#cce5ff",
+    "primaryGlow": "rgba(0, 86, 179, 0.12)"
+  },
+  "headline": "Built for Veles",
+  "subheadline": "AI-powered systems to streamline B2B sales negotiations and boost revenue for a growing 6-employee startup",
+  "stats": [
+    {
+      "value": "$2.15M",
+      "label": "Seed Funding"
+    },
+    {
+      "value": "6",
+      "label": "Employees"
+    },
+    {
+      "value": "2021",
+      "label": "Year Founded"
+    },
+    {
+      "value": "Seed",
+      "label": "Latest Deal Type"
+    },
+    {
+      "value": "Private",
+      "label": "Company Status"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Team Scaling",
+      "desc": "With only 6 employees, Veles struggles to handle growing demand for AI sales tools. This limits rapid feature development and client support in a competitive market. Post-seed funding adds pressure to deliver results quickly."
+    },
+    {
+      "icon": "02",
+      "title": "Deal Streamlining",
+      "desc": "Veles faces delays in B2B negotiations due to manual processes. Sales teams need real-time coaching to close deals faster, but current tools fall short. This impacts revenue acceleration in a crowded AI landscape."
+    },
+    {
+      "icon": "03",
+      "title": "Revenue Growth",
+      "desc": "As a startup, Veles must maximize ASP from deals, but inconsistent strategies hinder progress. Limited resources make it hard to test and refine negotiation tactics. This slows overall business expansion post-funding."
+    },
+    {
+      "icon": "04",
+      "title": "Market Competition",
+      "desc": "Veles operates in a saturated AI sales platform space, making differentiation tough. Building trust with B2B clients requires proven tools, yet their small size limits marketing reach. This affects user adoption and long-term growth."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Negotiation AI System",
+      "desc": "Builds real-time coaching tools that integrate with Veles' platform to optimize deal strategies and increase ASP. This connects with existing sales workflows for seamless use.",
+      "tags": [
+        "AI Integration",
+        "Sales Automation",
+        "Revenue Boost"
+      ]
+    },
+    {
+      "title": "Deal Desk Framework",
+      "desc": "Creates standardized deal terms and proposal builders that plug into Veles' current systems to speed up closures. This ensures efficient operations without disrupting ongoing negotiations.",
+      "tags": [
+        "Process Streamlining",
+        "B2B Tools",
+        "Data-Driven"
+      ]
+    },
+    {
+      "title": "Growth Analytics Dashboard",
+      "desc": "Develops dashboards that track weekly growth metrics and integrate with Veles' data sources for better decision-making. This helps monitor post-seed funding progress and adjust strategies.",
+      "tags": [
+        "Analytics",
+        "Performance Tracking",
+        "Scaling"
+      ]
+    },
+    {
+      "title": "Client Onboarding Module",
+      "desc": "Constructs automated onboarding for B2B clients that links to Veles' platform to reduce support workload. This scales the team's capacity and enhances user experience in a competitive market.",
+      "tags": [
+        "User Efficiency",
+        "Automation",
+        "Client Management"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Veles' current sales infrastructure and identify key pain points from their B2B operations."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop and integrate AI systems tailored to Veles' negotiation tools, focusing on revenue acceleration."
+    },
+    {
+      "title": "Deployment and Optimization",
+      "subtitle": "Month 3",
+      "desc": "Launch the new infrastructure and refine based on initial usage data from Veles' platform."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI sales infrastructure?",
+      "answer": "It includes tools that automate B2B negotiations and provide data-driven insights for Veles."
+    },
+    {
+      "question": "How does this integrate with Veles?",
+      "answer": "Systems plug directly into Veles' platform to streamline deals without major overhauls."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Pricing aligns with Veles' seed funding stage, focusing on scalable, value-based investments."
+    },
+    {
+      "question": "How long is the implementation?",
+      "answer": "Typically 3 months, customized to Veles' 6-employee team's needs."
+    },
+    {
+      "question": "Will this help with revenue growth?",
+      "answer": "Yes, by optimizing deal strategies based on Veles' specific B2B challenges."
+    },
+    {
+      "question": "Is data security ensured?",
+      "answer": "All integrations follow Veles' privacy policies to protect sensitive sales information."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Python",
+      "role": "Handles AI model development for Veles' negotiation tools"
+    },
+    {
+      "name": "TensorFlow",
+      "role": "Powers machine learning algorithms in Veles' sales platform"
+    },
+    {
+      "name": "AWS",
+      "role": "Manages cloud hosting and scalability for Veles' infrastructure"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Integrates CRM functions to track Veles' B2B deals"
+    },
+    {
+      "name": "Slack",
+      "role": "Facilitates team communication during Veles' project implementations"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:30:05Z"
+}

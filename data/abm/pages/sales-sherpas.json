@@ -1,0 +1,162 @@
+{
+  "slug": "sales-sherpas",
+  "company": "Sales Sherpas",
+  "domain": "sales-sherpas.com",
+  "contactName": "Veronica ",
+  "contactRole": "Marketing Manager",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Sales Sherpas",
+  "subheadline": "AI infrastructure to automate wealth management advice and integrate with advisory tools for faster client delivery",
+  "stats": [
+    {
+      "value": "$3.2M",
+      "label": "Seed funding raised"
+    },
+    {
+      "value": "90%",
+      "label": "Sales teams using AI agents"
+    },
+    {
+      "value": "50%",
+      "label": "With data problems"
+    },
+    {
+      "value": "2026",
+      "label": "Year of funding announcement"
+    },
+    {
+      "value": "4",
+      "label": "Major investors in round"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Expensive Sales Teams",
+      "desc": "Sales Sherpas faces high costs in building sales teams for wealth management. This strains budgets during growth phases after funding. Advisors need efficient tools to reduce these expenses without cutting performance."
+    },
+    {
+      "icon": "02",
+      "title": "Data Integration Issues",
+      "desc": "Many AI agents in wealth management have inconsistent data problems. Sales Sherpas struggles with unifying client data across platforms. This slows down advice delivery and risks inaccurate recommendations."
+    },
+    {
+      "icon": "03",
+      "title": "Rising Client Expectations",
+      "desc": "Wealth management clients demand faster personalized advice. Sales Sherpas deals with increasing complexity in planning. Advisors face pressure to scale without compromising quality."
+    },
+    {
+      "icon": "04",
+      "title": "AI Adoption Gaps",
+      "desc": "Not all advisory firms fully leverage AI for operations. Sales Sherpas encounters gaps in standardizing financial advice processes. This leads to inconsistent decision-making across teams and clients."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Advice Automation",
+      "desc": "Builds automated systems for analyzing and delivering financial advice, integrating with existing wealth management tools to streamline operations",
+      "tags": [
+        "AI Integration",
+        "Wealth Tools",
+        "Automation"
+      ]
+    },
+    {
+      "title": "Data Unification Platform",
+      "desc": "Creates a centralized data layer to solve AI agent problems, integrating with Sales Sherpas' current systems for seamless data flow and accuracy",
+      "tags": [
+        "Data Management",
+        "Integration",
+        "AI Optimization"
+      ]
+    },
+    {
+      "title": "Scalable Sales Framework",
+      "desc": "Develops a framework to reduce sales team costs by automating lead generation and client interactions, tailored to Sales Sherpas' B2B SaaS model",
+      "tags": [
+        "Sales Automation",
+        "Cost Reduction",
+        "B2B Tools"
+      ]
+    },
+    {
+      "title": "Personalized Client Engine",
+      "desc": "Constructs an engine for personalized advice delivery, integrating with Sales Sherpas' AI operating layer to handle rising client expectations",
+      "tags": [
+        "Personalization",
+        "Client Engagement",
+        "AI Layer"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Conduct research on Sales Sherpas' current AI infrastructure and identify key pain points in wealth management operations"
+    },
+    {
+      "title": "Design Phase",
+      "subtitle": "Month 2",
+      "desc": "Develop customized blueprints for AI systems based on the assessment, ensuring integration with existing tools"
+    },
+    {
+      "title": "Implementation Phase",
+      "subtitle": "Month 3",
+      "desc": "Deploy the new infrastructure and train teams on usage to enhance advice delivery and efficiency"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI infrastructure for Sales Sherpas?",
+      "answer": "It automates wealth management processes using AI tools."
+    },
+    {
+      "question": "How does it integrate with our systems?",
+      "answer": "The infrastructure connects seamlessly with your AI operating layer for wealth advice."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs align with your $3.2M funding scale and focus on efficient growth."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typical rollout spans three months based on standard projects."
+    },
+    {
+      "question": "Is this customizable for wealth management?",
+      "answer": "Yes, it targets specific challenges in financial advice delivery."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Expect reduced data problems and faster advice, as seen in 90% AI adoption rates."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Python",
+      "role": "Handles AI modeling for wealth management data analysis"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Manages CRM integration for B2B sales tracking"
+    },
+    {
+      "name": "AWS",
+      "role": "Provides cloud infrastructure for scalable AI operations"
+    },
+    {
+      "name": "TensorFlow",
+      "role": "Powers machine learning algorithms in advice automation"
+    },
+    {
+      "name": "Zapier",
+      "role": "Facilitates integrations between tools for seamless workflows"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:00:39Z"
+}

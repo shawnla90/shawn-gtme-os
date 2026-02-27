@@ -1,0 +1,162 @@
+{
+  "slug": "ascendo",
+  "company": "Ascendo",
+  "domain": "ascendosr.com",
+  "contactName": "Eleni ",
+  "contactRole": "Talent Director, Continental Europe",
+  "theme": {
+    "primary": "#0F9D58",
+    "primaryLight": "#A8DADC",
+    "primaryGlow": "rgba(15, 157, 88, 0.12)"
+  },
+  "headline": "Built for Ascendo",
+  "subheadline": "Tailored AI sales infrastructure to optimize talent recruitment and generative CRM workflows for your small team.",
+  "stats": [
+    {
+      "value": "$50M",
+      "label": "Fund raise target"
+    },
+    {
+      "value": "11",
+      "label": "Employees"
+    },
+    {
+      "value": "-12.9%",
+      "label": "YoY employee decline"
+    },
+    {
+      "value": "2020",
+      "label": "Year founded"
+    },
+    {
+      "value": "$60M",
+      "label": "Related AI sector investment"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Talent Shortages",
+      "desc": "Ascendo's small team struggles with hiring AI experts amid a 12.9% employee decline. This limits expansion in generative CRM solutions. Recruiting for global operations in Palo Alto and India adds complexity."
+    },
+    {
+      "icon": "02",
+      "title": "Retention Issues",
+      "desc": "With only 11 employees, Ascendo faces high turnover in specialized roles. This disrupts CRM co-pilot development and knowledge management. Retaining talent is key to maintaining service workflows."
+    },
+    {
+      "icon": "03",
+      "title": "Workflow Inefficiencies",
+      "desc": "Ascendo's AI agents handle 1800 workflows but lack integration. This causes delays in anomaly detection and backlog management. Streamlining is essential for proactive service operations."
+    },
+    {
+      "icon": "04",
+      "title": "Expansion Barriers",
+      "desc": "Growing generative CRM solutions requires more staff in Continental Europe. Ascendo's funding and team size hinder global scaling. Strategic hires are needed to support Palo Alto and India teams."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Talent AI Pipeline",
+      "desc": "Builds a recruitment system using AI to source and qualify candidates, integrating with Ascendo's CRM for seamless hiring tracking.",
+      "tags": [
+        "AI Recruitment",
+        "CRM Integration",
+        "Talent Tracking"
+      ]
+    },
+    {
+      "title": "CRM Workflow Optimizer",
+      "desc": "Creates automated workflows for Ascendo's AI agents, integrating with existing tools to reduce resolution times and escalations.",
+      "tags": [
+        "Workflow Automation",
+        "Anomaly Detection",
+        "Knowledge Management"
+      ]
+    },
+    {
+      "title": "Retention Analytics Hub",
+      "desc": "Develops a dashboard to analyze employee data and predict turnover, integrating with HR systems to inform retention strategies.",
+      "tags": [
+        "Data Analytics",
+        "Employee Insights",
+        "HR Integration"
+      ]
+    },
+    {
+      "title": "Global Scaling Framework",
+      "desc": "Establishes a scalable infrastructure for team expansion, integrating with Ascendo's operations in multiple regions to support growth.",
+      "tags": [
+        "Global Operations",
+        "Team Scaling",
+        "AI Infrastructure"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Ascendo's current sales infrastructure and identify key pain points in talent and CRM workflows."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop customized AI solutions and integrate them with Ascendo's existing systems for immediate impact."
+    },
+    {
+      "title": "Implementation and Optimization",
+      "subtitle": "Month 3",
+      "desc": "Launch the new infrastructure and refine based on feedback to ensure smooth operations."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI sales infrastructure?",
+      "answer": "It is a system that automates sales processes using AI tools."
+    },
+    {
+      "question": "How does it integrate with CRM?",
+      "answer": "It connects directly with Ascendo's generative CRM to enhance workflows."
+    },
+    {
+      "question": "Will this help with hiring?",
+      "answer": "Yes, it streamlines talent recruitment for Ascendo's AI roles."
+    },
+    {
+      "question": "What is the cost?",
+      "answer": "Costs vary based on Ascendo's specific needs and scale."
+    },
+    {
+      "question": "How long is implementation?",
+      "answer": "Typically 3 months for initial setup."
+    },
+    {
+      "question": "Is it customizable?",
+      "answer": "Yes, it is tailored to Ascendo's business challenges."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Google Cloud",
+      "role": "Hosts AI agents and supports production workflows"
+    },
+    {
+      "name": "CRM Software",
+      "role": "Manages customer interactions and data integration"
+    },
+    {
+      "name": "AI Platforms",
+      "role": "Automates workflows and anomaly detection"
+    },
+    {
+      "name": "HR Tools",
+      "role": "Handles recruitment and employee analytics"
+    },
+    {
+      "name": "Data Analytics",
+      "role": "Provides insights for retention and scaling"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:29:15Z"
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "outbound-catalyst",
+  "company": "Outbound Catalyst",
+  "domain": "outboundcatalyst.com",
+  "contactName": "Alejandra ",
+  "contactRole": "Operations Manager",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Outbound Catalyst",
+  "subheadline": "Custom AI systems to validate and scale outbound sales motions for early-stage B2B SaaS startups",
+  "stats": [
+    {
+      "value": "$16.6M",
+      "label": "Latest Deal Amount"
+    },
+    {
+      "value": "2",
+      "label": "Employees"
+    },
+    {
+      "value": "2019",
+      "label": "Year Founded"
+    },
+    {
+      "value": "50.0%",
+      "label": "YoY Employee Change"
+    },
+    {
+      "value": "2013",
+      "label": "Alternative Founding Year from Records"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Small Team Constraints",
+      "desc": "With only 2 employees, Outbound Catalyst faces challenges in managing AI prospecting workloads. This slows down iteration on sales motions for clients. Rapid validation becomes difficult in a competitive B2B market."
+    },
+    {
+      "icon": "02",
+      "title": "Rapid Validation Needs",
+      "desc": "Early-stage startups demand quick feedback on outbound strategies. Outbound Catalyst struggles to test and refine messaging efficiently with limited resources. This delays building predictable growth systems."
+    },
+    {
+      "icon": "03",
+      "title": "Scaling Outbound Operations",
+      "desc": "As a small consulting firm, scaling AI-based sales processes is tough amid competition. Their operations lack robust systems for high-volume prospecting. This hinders helping clients expand across channels."
+    },
+    {
+      "icon": "04",
+      "title": "Predictable Growth Systems",
+      "desc": "Outbound Catalyst must engineer reliable growth frameworks for B2B SaaS. Their small team limits integration of feedback loops. This affects scaling from validation to full operations."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Prospecting Engine",
+      "desc": "Builds automated AI tools to validate sales leads and integrate with existing CRM for early-stage startups",
+      "tags": [
+        "AI Validation",
+        "CRM Integration",
+        "Lead Automation"
+      ]
+    },
+    {
+      "title": "Outbound Scaling System",
+      "desc": "Develops processes to scale sales motions and connect with email platforms for efficient growth",
+      "tags": [
+        "Process Scaling",
+        "Email Tools",
+        "Growth Optimization"
+      ]
+    },
+    {
+      "title": "GTM Validation Framework",
+      "desc": "Creates a framework to test and iterate messaging, linking it to revenue operations for predictable results",
+      "tags": [
+        "Messaging Iteration",
+        "Revenue Integration",
+        "Validation Engine"
+      ]
+    },
+    {
+      "title": "Revenue Machine",
+      "desc": "Constructs systems for optimizing revenue across channels and embedding into current workflows for B2B SaaS",
+      "tags": [
+        "Revenue Optimization",
+        "Channel Scaling",
+        "Workflow Embedding"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Audit current outbound processes and define custom AI strategies"
+    },
+    {
+      "title": "Build and Integrate",
+      "subtitle": "Month 2",
+      "desc": "Develop and integrate AI systems into existing tools for validation"
+    },
+    {
+      "title": "Scale and Optimize",
+      "subtitle": "Month 3",
+      "desc": "Refine systems for scaling and measure growth outcomes"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is Outbound Catalyst?",
+      "answer": "Outbound Catalyst is a consulting firm that helps B2B SaaS companies build and scale AI-based sales prospecting."
+    },
+    {
+      "question": "How does AI improve outbound sales?",
+      "answer": "AI speeds up lead validation and messaging refinement for predictable growth."
+    },
+    {
+      "question": "What challenges do you address?",
+      "answer": "We tackle issues like small team limitations and rapid validation in competitive markets."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "Engagements typically span 3 months with ongoing optimization."
+    },
+    {
+      "question": "What tools do you use?",
+      "answer": "We integrate tools like CRM systems and AI platforms based on your needs."
+    },
+    {
+      "question": "How do you ensure results?",
+      "answer": "We focus on measurable outcomes like lead conversion rates through iterative processes."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Clay",
+      "role": "Handles AI-driven prospecting and lead enrichment"
+    },
+    {
+      "name": "Outreach",
+      "role": "Manages email sequences and sales automation"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Integrates CRM for tracking customer interactions"
+    },
+    {
+      "name": "HubSpot",
+      "role": "Supports marketing automation and lead nurturing"
+    },
+    {
+      "name": "Intercom",
+      "role": "Facilitates communication and feedback loops"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:20:05Z"
+}

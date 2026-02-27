@@ -1,0 +1,162 @@
+{
+  "slug": "techsales",
+  "company": "TechSales",
+  "domain": "techsalestr.com",
+  "contactName": "Joao ",
+  "contactRole": "Executive Director",
+  "theme": {
+    "primary": "#0A66C2",
+    "primaryLight": "#E7F3FE",
+    "primaryGlow": "rgba(10, 102, 194, 0.12)"
+  },
+  "headline": "Built for TechSales",
+  "subheadline": "AI-powered sales infrastructure to accelerate go-to-market strategies for B2B SaaS startups",
+  "stats": [
+    {
+      "value": "3",
+      "label": "Employees"
+    },
+    {
+      "value": "-80%",
+      "label": "YoY Growth"
+    },
+    {
+      "value": "1,168",
+      "label": "LinkedIn Followers"
+    },
+    {
+      "value": "$337K",
+      "label": "Latest Deal Amount"
+    },
+    {
+      "value": "2023",
+      "label": "Founded Year"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Team Scaling Issues",
+      "desc": "With only 3 employees and an 80% YoY decline, TechSales struggles to handle growing client demands in B2B SaaS. This limits rapid response to market changes in Portugal. Recruiting talent in a startup environment adds pressure."
+    },
+    {
+      "icon": "02",
+      "title": "Go-to-Market Strategies",
+      "desc": "As a firm founded in 2023, TechSales faces hurdles in designing effective GTM plans for clients. Competition from larger firms demands precise execution. Adapting to B2B SaaS trends is essential for survival."
+    },
+    {
+      "icon": "03",
+      "title": "Sales Acceleration",
+      "desc": "TechSales needs to boost sales for clients but lacks scalable tools. An 80% employee decline hampers consistent lead generation efforts. Integrating modern tech is key to sustaining growth."
+    },
+    {
+      "icon": "04",
+      "title": "Market Expansion",
+      "desc": "Headquartered in Porto with a presence in Turkey, TechSales must navigate international markets. Cultural differences affect sales strategies for B2B SaaS. Building partner networks is vital for broader reach."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Lead Generation System",
+      "desc": "Builds automated lead prioritization integrated with HubSpot to target B2B SaaS prospects. It connects with LinkedIn for outreach and tracks performance metrics.",
+      "tags": [
+        "AI",
+        "HubSpot",
+        "Lead Gen"
+      ]
+    },
+    {
+      "title": "Sales Enablement Platform",
+      "desc": "Creates a centralized hub for sales content that personalizes pitches for clients. It integrates with existing CRM to monitor usage and improve team efficiency.",
+      "tags": [
+        "CRM",
+        "Content Management",
+        "Analytics"
+      ]
+    },
+    {
+      "title": "Go-to-Market Framework",
+      "desc": "Develops custom strategies using AI to refine GTM plans for B2B SaaS startups. It links with partner networks for broader exposure and scales with team growth.",
+      "tags": [
+        "Strategy",
+        "AI Planning",
+        "Partnerships"
+      ]
+    },
+    {
+      "title": "Growth Analytics Dashboard",
+      "desc": "Constructs a dashboard that analyzes sales data to identify trends and opportunities. It integrates with tools like LinkedIn to forecast and optimize client outcomes.",
+      "tags": [
+        "Data Analytics",
+        "Forecasting",
+        "Integration"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review TechSales' current sales tools and identify key pain points in B2B SaaS operations."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop AI infrastructure tailored to go-to-market strategies and integrate with existing systems."
+    },
+    {
+      "title": "Launch and Optimize",
+      "subtitle": "Month 3",
+      "desc": "Deploy the system and monitor performance to ensure sustainable growth for TechSales clients."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It is a set of tools that use AI to automate and optimize sales processes for B2B SaaS companies."
+    },
+    {
+      "question": "How does it integrate with HubSpot?",
+      "answer": "The system connects directly with HubSpot to manage leads and track interactions seamlessly."
+    },
+    {
+      "question": "Can it help with team scaling?",
+      "answer": "Yes, it automates routine tasks to allow your small team to handle more clients efficiently."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs vary based on customization, but we focus on ROI through improved sales acceleration."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typical implementation spans 3 months, aligned with our engagement steps."
+    },
+    {
+      "question": "Is it suitable for startups?",
+      "answer": "Yes, it is designed for B2B SaaS startups like TechSales to drive growth from the ground up."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "HubSpot",
+      "role": "Manages CRM and lead generation for sales teams"
+    },
+    {
+      "name": "LinkedIn",
+      "role": "Handles networking and prospecting for B2B outreach"
+    },
+    {
+      "name": "Gong",
+      "role": "Analyzes sales calls to improve enablement strategies"
+    },
+    {
+      "name": "VoiceLine",
+      "role": "Automates CRM updates via voice AI for field sales"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Provides additional CRM integration for scaling operations"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:25:34Z"
+}

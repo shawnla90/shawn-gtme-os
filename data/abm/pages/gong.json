@@ -1,0 +1,162 @@
+{
+  "slug": "gong",
+  "company": "Gong",
+  "domain": "gong.io",
+  "contactName": "Jc ",
+  "contactRole": "Mid Market AE Manager",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#85C1F7",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Gong",
+  "subheadline": "AI infrastructure to optimize deal closures and retention in your revenue intelligence platform",
+  "stats": [
+    {
+      "value": "$298M",
+      "label": "Annual Revenue 2024"
+    },
+    {
+      "value": "$7.50B",
+      "label": "Valuation 2024"
+    },
+    {
+      "value": "$583M",
+      "label": "Total Funding 2024"
+    },
+    {
+      "value": "28%",
+      "label": "Year-over-Year Growth Rate 2024"
+    },
+    {
+      "value": "$250M",
+      "label": "Series F Funding"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Deal Closure Rates",
+      "desc": "Mid-market AEs at Gong struggle with inconsistent closure rates due to competitive pressures. This impacts revenue targets in a fast-growing SaaS environment. Data from sales interactions often lacks real-time insights for adjustments."
+    },
+    {
+      "icon": "02",
+      "title": "Customer Retention",
+      "desc": "Gong faces retention challenges in the SaaS market as customers demand more personalized experiences. Expanding as a unicorn increases churn risks if insights are not acted on quickly. Teams need better tools to predict and address dissatisfaction early."
+    },
+    {
+      "icon": "03",
+      "title": "AI Integration",
+      "desc": "Gong's revenue AI OS requires seamless integration for automated guidance, but scaling creates compatibility issues. This slows down enablement efforts for sales teams. Internal systems must handle growing data volumes without disruptions."
+    },
+    {
+      "icon": "04",
+      "title": "Team Performance",
+      "desc": "As a mid-market AE manager, Jc deals with varying team performance in driving revenue. Metrics from sales calls need better analysis to identify gaps. Expansion demands efficient training and visibility into account interactions."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Pipeline Optimizer",
+      "desc": "Builds automated lead scoring system that integrates with Gong's revenue intelligence platform to enhance deal flow",
+      "tags": [
+        "AI",
+        "Sales",
+        "Integration"
+      ]
+    },
+    {
+      "title": "Retention Analytics Hub",
+      "desc": "Creates predictive analytics for customer retention, linking to Gong's AI OS for real-time insights and alerts",
+      "tags": [
+        "Analytics",
+        "Retention",
+        "Data"
+      ]
+    },
+    {
+      "title": "Sales Enablement Framework",
+      "desc": "Develops scalable training modules that plug into Gong's existing tools for better AE performance tracking",
+      "tags": [
+        "Training",
+        "Performance",
+        "SaaS"
+      ]
+    },
+    {
+      "title": "Interaction Insight System",
+      "desc": "Establishes a unified dashboard for sales call data, integrating with Gong's platform to improve decision-making",
+      "tags": [
+        "Insights",
+        "Dashboard",
+        "Revenue"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Audit Gong's current sales infrastructure and identify key pain points in deal closures and retention."
+    },
+    {
+      "title": "Design Phase",
+      "subtitle": "Month 2",
+      "desc": "Prototype AI systems tailored to Gong's revenue AI OS and map integrations for mid-market needs."
+    },
+    {
+      "title": "Implementation Phase",
+      "subtitle": "Month 3",
+      "desc": "Deploy and test the infrastructure, ensuring it boosts AE performance metrics in a live environment."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is this AI infrastructure for?",
+      "answer": "It optimizes sales processes for Gong's revenue intelligence platform."
+    },
+    {
+      "question": "How does it integrate with Gong?",
+      "answer": "It links directly to Gong's AI OS for seamless data flow and insights."
+    },
+    {
+      "question": "Is this customized for mid-market?",
+      "answer": "Yes, it focuses on mid-market deal closures and retention challenges."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Improved deal rates and retention based on real data from similar setups."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "Typically three months, with ongoing support available."
+    },
+    {
+      "question": "What tech do you use?",
+      "answer": "Tools compatible with Gong's stack, ensuring minimal disruption."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "AWS",
+      "role": "Handles cloud storage and scaling for Gong's data needs"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Integrates CRM functions with Gong's sales intelligence"
+    },
+    {
+      "name": "Python ML Libraries",
+      "role": "Powers AI models for analyzing sales interactions"
+    },
+    {
+      "name": "React",
+      "role": "Builds user interfaces for dashboards in Gong's ecosystem"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks performance metrics in Gong's revenue operations"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:15:51Z"
+}

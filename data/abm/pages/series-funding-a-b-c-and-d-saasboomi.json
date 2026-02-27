@@ -1,0 +1,162 @@
+{
+  "slug": "series-funding-a-b-c-and-d-saasboomi",
+  "company": "Series Funding A, B, C and D - SaaSBoomi",
+  "domain": "saasboomi.org",
+  "contactName": "Varun ",
+  "contactRole": "Lead - Digital Marketing & Brand Communications",
+  "theme": {
+    "primary": "#4CAF50",
+    "primaryLight": "#C8E6C9",
+    "primaryGlow": "rgba(76, 175, 80, 0.12)"
+  },
+  "headline": "Built for SaaSBoomi",
+  "subheadline": "AI tools to streamline funding education and community growth for SaaS founders.",
+  "stats": [
+    {
+      "value": "$100B",
+      "label": "Projected Indian software market by 2035"
+    },
+    {
+      "value": "19",
+      "label": "SaaSBoomi employees"
+    },
+    {
+      "value": "2019",
+      "label": "Founding year"
+    },
+    {
+      "value": "11-20",
+      "label": "Employee range"
+    },
+    {
+      "value": "+5",
+      "label": "Recent employee growth"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Funding Navigation",
+      "desc": "SaaSBoomi founders face confusion with Series A to D differences. This slows investment decisions and partnership formations. It limits rapid scaling in the Indian SaaS ecosystem."
+    },
+    {
+      "icon": "02",
+      "title": "Community Growth",
+      "desc": "SaaSBoomi struggles to engage members through events and online platforms. This reduces knowledge sharing among founders. It hinders collective progress in competitive markets."
+    },
+    {
+      "icon": "03",
+      "title": "PLG Education",
+      "desc": "SaaSBoomi needs better resources for product-led growth strategies. Founders often overlook marketing tactics for user acquisition. This affects long-term sustainability in startup environments."
+    },
+    {
+      "icon": "04",
+      "title": "Market Competition",
+      "desc": "SaaSBoomi operates in a crowded Indian SaaS space with limited differentiation. This challenges attracting investors and talent. It impacts overall community expansion efforts."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Funding Advisor",
+      "desc": "Builds an AI system to guide founders through Series A-D funding, integrating with SaaSBoomi's glossary for seamless education",
+      "tags": [
+        "AI",
+        "Funding",
+        "Education"
+      ]
+    },
+    {
+      "title": "Community Engagement Engine",
+      "desc": "Creates AI-driven tools for event management and member interactions, linking to SaaSBoomi's online platforms for better growth",
+      "tags": [
+        "Community",
+        "Engagement",
+        "Events"
+      ]
+    },
+    {
+      "title": "PLG Optimization System",
+      "desc": "Develops AI analytics for product-led growth, tailored to SaaSBoomi's founder resources to enhance user acquisition",
+      "tags": [
+        "Growth",
+        "Analytics",
+        "PLG"
+      ]
+    },
+    {
+      "title": "Market Insight Dashboard",
+      "desc": "Constructs a dashboard for competitive analysis, integrating with SaaSBoomi's tracking tools to support strategic decisions",
+      "tags": [
+        "Insights",
+        "Dashboard",
+        "Strategy"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review SaaSBoomi's current funding and community tools."
+    },
+    {
+      "title": "Development Phase",
+      "subtitle": "Month 2",
+      "desc": "Design and prototype AI infrastructure based on identified needs."
+    },
+    {
+      "title": "Launch Phase",
+      "subtitle": "Month 3",
+      "desc": "Deploy systems and integrate with existing platforms."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What does this service offer?",
+      "answer": "AI-powered infrastructure for SaaSBoomi's funding education."
+    },
+    {
+      "question": "How does it integrate with our tools?",
+      "answer": "It connects seamlessly with SaaSBoomi's glossary and event platforms."
+    },
+    {
+      "question": "Is this customized for SaaS founders?",
+      "answer": "Yes, it focuses on Series A-D challenges specific to Indian SaaS ecosystems."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs vary based on scope, starting with an initial assessment."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically three months, as outlined in our steps."
+    },
+    {
+      "question": "Can we scale this later?",
+      "answer": "Yes, the system is designed for future growth and updates."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Slack",
+      "role": "Handles community communication and founder interactions"
+    },
+    {
+      "name": "Zoom",
+      "role": "Supports virtual events and knowledge-sharing sessions"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks website traffic and user engagement metrics"
+    },
+    {
+      "name": "HubSpot",
+      "role": "Manages CRM for founder relationships and marketing"
+    },
+    {
+      "name": "Custom AI Framework",
+      "role": "Powers funding advice and growth analytics"
+    }
+  ],
+  "generatedAt": "2026-02-27T07:56:31Z"
+}

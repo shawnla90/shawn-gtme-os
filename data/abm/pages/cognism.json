@@ -1,0 +1,162 @@
+{
+  "slug": "cognism",
+  "company": "Cognism",
+  "domain": "cognism.com",
+  "contactName": "Fran ",
+  "contactRole": "Director of Demand Generation",
+  "theme": {
+    "primary": "#0F6CBD",
+    "primaryLight": "#5A9BDC",
+    "primaryGlow": "rgba(15, 108, 189, 0.12)"
+  },
+  "headline": "Built for Cognism",
+  "subheadline": "Enhance AI-driven lead prospecting and data enrichment to support your sales intelligence platform for 549 employees",
+  "stats": [
+    {
+      "value": "$83M",
+      "label": "Annual Revenue"
+    },
+    {
+      "value": "$130M",
+      "label": "Funding Raised"
+    },
+    {
+      "value": "549",
+      "label": "Employees"
+    },
+    {
+      "value": "6.4K",
+      "label": "Customers"
+    },
+    {
+      "value": "25",
+      "label": "Investors"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Funding Uncertainty",
+      "desc": "The cancelled VC deal limits cash flow for Cognism. This slows new feature development. It forces strategic shifts to maintain revenue growth."
+    },
+    {
+      "icon": "02",
+      "title": "Lead Prospecting Scale",
+      "desc": "Scaling prospecting for 549 employees requires robust AI tools. Inaccurate data hampers lead quality. Competition demands faster innovation."
+    },
+    {
+      "icon": "03",
+      "title": "Data Compliance Issues",
+      "desc": "Global operations at Cognism face varying regulations. Non-compliance risks fines and trust. Data enrichment processes must adapt quickly."
+    },
+    {
+      "icon": "04",
+      "title": "Revenue Growth Pressures",
+      "desc": "Hitting $83M revenue means sustaining customer acquisition. Economic shifts affect sales intelligence demand. Internal teams need better tools to adapt."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Prospecting System",
+      "desc": "Builds an AI system for lead generation that integrates with Cognism's CRM to enrich data in real-time",
+      "tags": [
+        "AI",
+        "CRM",
+        "Lead Gen"
+      ]
+    },
+    {
+      "title": "Data Enrichment Framework",
+      "desc": "Creates a framework for AI-driven data enrichment that connects with HubSpot for seamless syncing and trend analysis",
+      "tags": [
+        "Data",
+        "Integration",
+        "Analytics"
+      ]
+    },
+    {
+      "title": "Compliance Toolset",
+      "desc": "Develops tools to ensure data compliance in sales operations, integrating with existing platforms to mitigate regulatory risks",
+      "tags": [
+        "Compliance",
+        "Security",
+        "Regulations"
+      ]
+    },
+    {
+      "title": "Sales Analytics Dashboard",
+      "desc": "Constructs a dashboard for visualizing customer trends, integrating with Cognism's infrastructure to boost revenue decisions",
+      "tags": [
+        "Dashboard",
+        "Analytics",
+        "Insights"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Cognism's current sales infrastructure and identify pain points"
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop AI systems and integrate them with existing tools"
+    },
+    {
+      "title": "Deployment",
+      "subtitle": "Month 3",
+      "desc": "Launch the infrastructure and optimize based on initial performance data"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to improve lead prospecting and data enrichment for B2B SaaS."
+    },
+    {
+      "question": "How does it help Cognism?",
+      "answer": "It scales lead generation and ensures data compliance for your sales platform."
+    },
+    {
+      "question": "What are the implementation costs?",
+      "answer": "Costs depend on scope and are tailored to Cognism's needs."
+    },
+    {
+      "question": "How long will it take?",
+      "answer": "Typically three months for full deployment."
+    },
+    {
+      "question": "Is it compatible with our tools?",
+      "answer": "Yes, it integrates with HubSpot and other Cognism systems."
+    },
+    {
+      "question": "Who manages the project?",
+      "answer": "A team with B2B SaaS experience handles the work."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "HubSpot",
+      "role": "Handles CRM integration for sales data syncing"
+    },
+    {
+      "name": "Zendesk",
+      "role": "Manages customer support and ticketing systems"
+    },
+    {
+      "name": "Pardot",
+      "role": "Supports marketing automation for lead nurturing"
+    },
+    {
+      "name": "AI/ML Tools",
+      "role": "Enables data enrichment and predictive analytics"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Provides alternative CRM options for sales operations"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:10:39Z"
+}

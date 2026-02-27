@@ -1,0 +1,162 @@
+{
+  "slug": "saas-growth",
+  "company": "SaaS Growth",
+  "domain": "saasgrowth.eu",
+  "contactName": "Omar ",
+  "contactRole": "Director de Consultoría",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for SaaS Growth",
+  "subheadline": "AI infrastructure to analyze SaaS valuations and optimize growth strategies using historical data",
+  "stats": [
+    {
+      "value": "$34B",
+      "label": "SaaS spend managed"
+    },
+    {
+      "value": "30M",
+      "label": "Licenses under management"
+    },
+    {
+      "value": "$13.5M",
+      "label": "Series A funding raised"
+    },
+    {
+      "value": "2025",
+      "label": "Year of valuation analysis"
+    },
+    {
+      "value": "2016-2017",
+      "label": "Baseline valuation years"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Fluctuating Multiples",
+      "desc": "SaaS Growth faces varying ARR multiples that impact company valuations. This requires constant monitoring of market cycles using historical datasets. It complicates advising clients on growth paths."
+    },
+    {
+      "icon": "02",
+      "title": "Market Cycles",
+      "desc": "Industry lifecycle phases shift, affecting ARR multiple spreads for SaaS companies. SaaS Growth must adapt strategies based on data from sources like the SaaS Capital Index. This demands precise, timely recommendations to clients."
+    },
+    {
+      "icon": "03",
+      "title": "Data Analysis",
+      "desc": "Relying on historical datasets for valuations means dealing with incomplete or outdated information. SaaS Growth needs tools to integrate this data effectively for accurate insights. Poor integration leads to misguided growth advice."
+    },
+    {
+      "icon": "04",
+      "title": "Valuation Spreads",
+      "desc": "The gap between high and low valuations widens in certain phases, challenging SaaS Growth's advisory role. This requires tools to handle the 'rich get richer' environment. Failing to address it risks suboptimal strategies for clients."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Valuation AI System",
+      "desc": "Builds a predictive model for SaaS valuations using historical ARR data and integrates with existing analytics tools",
+      "tags": [
+        "Valuation",
+        "AI Modeling",
+        "Data Integration"
+      ]
+    },
+    {
+      "title": "Growth Strategy Platform",
+      "desc": "Creates automated growth recommendations based on market cycles and integrates with CRM systems for real-time insights",
+      "tags": [
+        "Strategy",
+        "Automation",
+        "CRM Integration"
+      ]
+    },
+    {
+      "title": "SaaS Spend Optimizer",
+      "desc": "Develops tools to manage and optimize SaaS expenditures, integrating with financial software for cost control",
+      "tags": [
+        "Spend Management",
+        "Optimization",
+        "Finance Tools"
+      ]
+    },
+    {
+      "title": "Data Insights Dashboard",
+      "desc": "Constructs a dashboard for visualizing industry lifecycle phases and integrates with data sources like SaaS Capital Index",
+      "tags": [
+        "Dashboard",
+        "Data Visualization",
+        "Insights"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Initial Assessment",
+      "subtitle": "Month 1",
+      "desc": "Review SaaS Growth's current data and challenges to define key priorities"
+    },
+    {
+      "title": "System Design",
+      "subtitle": "Month 2",
+      "desc": "Develop and prototype AI infrastructure tailored to valuation and growth needs"
+    },
+    {
+      "title": "Implementation",
+      "subtitle": "Month 3",
+      "desc": "Deploy the system and integrate it with existing tools for ongoing use"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is this service?",
+      "answer": "It's customized AI infrastructure for SaaS Growth to handle valuations and strategies."
+    },
+    {
+      "question": "How does it address our challenges?",
+      "answer": "It uses historical data to stabilize fluctuating multiples and market cycles."
+    },
+    {
+      "question": "What tools will we use?",
+      "answer": "We integrate with your existing tech stack for seamless operations."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "It starts with a three-month plan and scales as needed."
+    },
+    {
+      "question": "Is this based on real data?",
+      "answer": "Yes, it draws from verified sources like the SaaS Capital Index."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Improved accuracy in valuations and better growth strategies for clients."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "SaaS Capital Index",
+      "role": "Provides historical datasets for valuation analysis"
+    },
+    {
+      "name": "HubSpot",
+      "role": "Manages CRM and customer interactions for growth campaigns"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks user data and website performance for strategy insights"
+    },
+    {
+      "name": "Zylo",
+      "role": "Optimizes SaaS spend and license management"
+    },
+    {
+      "name": "Tableau",
+      "role": "Visualizes data dashboards for market cycle reporting"
+    }
+  ],
+  "generatedAt": "2026-02-27T07:58:25Z"
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "salesloft",
+  "company": "Salesloft",
+  "domain": "salesloft.com",
+  "contactName": "Jack ",
+  "contactRole": "Senior Customer Success Manager, Key Accounts",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Salesloft",
+  "subheadline": "AI-powered infrastructure to streamline CRM integrations and boost revenue for sales engagement platforms",
+  "stats": [
+    {
+      "value": "$246M",
+      "label": "Funding raised"
+    },
+    {
+      "value": "$110.0M",
+      "label": "Annual revenue"
+    },
+    {
+      "value": "$2.3B",
+      "label": "Valuation"
+    },
+    {
+      "value": "$50M",
+      "label": "Revenue run rate"
+    },
+    {
+      "value": "$245.7M",
+      "label": "Total funding"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "CRM Integration",
+      "desc": "Salesloft faces hurdles in syncing with various CRM systems, leading to data silos that slow sales cycles. This impacts client retention as teams struggle with inconsistent data. In a competitive market, these issues hinder account growth for key clients."
+    },
+    {
+      "icon": "02",
+      "title": "Client Retention",
+      "desc": "As a sales engagement platform, Salesloft must address high churn rates among key accounts due to ineffective engagement strategies. This stems from challenges in personalizing interactions at scale. Poor retention directly affects long-term revenue stability."
+    },
+    {
+      "icon": "03",
+      "title": "Market Competition",
+      "desc": "Salesloft operates in a crowded B2B SaaS space, making it hard to differentiate through innovative features. This requires constant updates to stay ahead, but integration delays limit agility. Competitive pressures reduce market share over time."
+    },
+    {
+      "icon": "04",
+      "title": "Sales Pipeline Management",
+      "desc": "Building and nurturing pipelines is core for Salesloft, yet inefficiencies in cadence automation lead to missed opportunities. Teams waste time on manual tasks, impacting productivity. This challenge slows revenue growth in dynamic sales environments."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI CRM Integrator",
+      "desc": "Builds seamless connections between Salesloft and various CRM systems to eliminate data silos, integrating real-time data flows for enhanced sales insights",
+      "tags": [
+        "AI Integration",
+        "Data Sync",
+        "CRM Optimization"
+      ]
+    },
+    {
+      "title": "Revenue Predictor",
+      "desc": "Develops a predictive model using Salesloft's engagement data to forecast revenue trends, integrating with existing pipelines for proactive account management",
+      "tags": [
+        "Forecasting",
+        "AI Analytics",
+        "Revenue Tracking"
+      ]
+    },
+    {
+      "title": "Cadence Automator",
+      "desc": "Creates automated sequences for sales activities based on Salesloft's platform, integrating with Rhythm tools to optimize actions and improve efficiency",
+      "tags": [
+        "Automation",
+        "Sales Workflow",
+        "Engagement Boost"
+      ]
+    },
+    {
+      "title": "Account Growth Dashboard",
+      "desc": "Designs a dashboard that analyzes key account data from Salesloft, integrating AI insights to drive retention and growth strategies",
+      "tags": [
+        "Dashboard",
+        "Analytics",
+        "Growth Strategy"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Conduct in-depth analysis of Salesloft's current sales infrastructure and identify key integration points"
+    },
+    {
+      "title": "Design Phase",
+      "subtitle": "Month 2",
+      "desc": "Develop customized AI blueprints tailored to Salesloft's CRM challenges and revenue goals"
+    },
+    {
+      "title": "Implementation Phase",
+      "subtitle": "Month 3",
+      "desc": "Deploy the new systems and integrate them with Salesloft's platform for immediate use"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is this service?",
+      "answer": "It's a tailored AI infrastructure for Salesloft to enhance sales engagement."
+    },
+    {
+      "question": "How does it integrate with our tools?",
+      "answer": "It connects directly with Salesloft's platform and CRM systems for seamless data flow."
+    },
+    {
+      "question": "What are the costs?",
+      "answer": "Costs vary based on Salesloft's specific needs and scale of implementation."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically 3 months, aligned with our structured engagement steps."
+    },
+    {
+      "question": "Is this customizable?",
+      "answer": "Yes, it's built specifically for Salesloft's B2B SaaS challenges."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Improved CRM integration and revenue growth based on real data from similar implementations."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Salesloft Platform",
+      "role": "Handles sales engagement and pipeline management"
+    },
+    {
+      "name": "Salesforce CRM",
+      "role": "Integrates for data synchronization and customer insights"
+    },
+    {
+      "name": "Python AI Libraries",
+      "role": "Powers predictive models and automation scripts"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks user behavior and performance metrics"
+    },
+    {
+      "name": "Slack",
+      "role": "Facilitates team communication and updates during implementation"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:11:39Z"
+}

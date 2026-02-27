@@ -1,0 +1,162 @@
+{
+  "slug": "6sense",
+  "company": "6sense",
+  "domain": "6sense.com",
+  "contactName": "Smriti ",
+  "contactRole": "Manager, Talent Acquisition - APAC",
+  "theme": {
+    "primary": "#008080",
+    "primaryLight": "#40E0D0",
+    "primaryGlow": "rgba(0,128,128,0.12)"
+  },
+  "headline": "Built for 6sense",
+  "subheadline": "AI-powered talent acquisition infrastructure to streamline hiring in APAC for your ABM platform",
+  "stats": [
+    {
+      "value": "$155M",
+      "label": "Annual Revenue"
+    },
+    {
+      "value": "$526M",
+      "label": "Total Funding"
+    },
+    {
+      "value": "$5.2B",
+      "label": "Valuation"
+    },
+    {
+      "value": "$125M",
+      "label": "Series D Funding"
+    },
+    {
+      "value": "$30M",
+      "label": "Recent Founder Investment"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Talent Shortages in APAC",
+      "desc": "6sense faces competition for skilled professionals in India and Singapore. Your workforce of 768 has declined by 3.3% YoY, making retention harder. This impacts your ability to support ABM platform operations across 14 countries."
+    },
+    {
+      "icon": "02",
+      "title": "Employee Retention",
+      "desc": "With a 3.3% YoY decline in staff, 6sense struggles to maintain expertise in predictive analytics. This affects demand generation and sales workflows. Recruiting in competitive tech markets adds pressure on talent acquisition teams."
+    },
+    {
+      "icon": "03",
+      "title": "ABM Pipeline Management",
+      "desc": "6sense's ABM platform relies on intent data and predictive models, but integrating these with workflows is complex. Recent funding rounds highlight the need for efficient revenue conversion. Employee reductions slow down account identification efforts."
+    },
+    {
+      "icon": "04",
+      "title": "AI Integration",
+      "desc": "6sense uses AI for sales and marketing, but scaling it amid a declining workforce is challenging. Operations in multiple countries require seamless data enrichment. This can lead to gaps in audience building and conversational email strategies."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Hiring Optimizer",
+      "desc": "Builds a system to predict and source top talent in APAC, integrating with your HR tools for faster recruitment",
+      "tags": [
+        "AI",
+        "Talent",
+        "Integration"
+      ]
+    },
+    {
+      "title": "ABM Workflow Enhancer",
+      "desc": "Creates automated workflows for account identification and intent data, linking with your existing sales platforms to boost pipeline conversion",
+      "tags": [
+        "Workflows",
+        "ABM",
+        "Analytics"
+      ]
+    },
+    {
+      "title": "Revenue Prediction System",
+      "desc": "Develops predictive models for revenue forecasting, integrating with 6sense's data enrichment tools to refine marketing strategies",
+      "tags": [
+        "Prediction",
+        "Revenue",
+        "Data"
+      ]
+    },
+    {
+      "title": "Talent Retention Tracker",
+      "desc": "Constructs a monitoring system to track employee engagement and retention metrics, connecting with your internal databases to address YoY declines",
+      "tags": [
+        "Retention",
+        "Tracking",
+        "HR"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Initial Assessment",
+      "subtitle": "Month 1",
+      "desc": "Analyze 6sense's current talent and sales infrastructure needs based on your APAC operations and employee data."
+    },
+    {
+      "title": "System Design",
+      "subtitle": "Month 2",
+      "desc": "Design AI-driven solutions tailored to your ABM platform, incorporating predictive analytics for hiring and revenue."
+    },
+    {
+      "title": "Implementation and Launch",
+      "subtitle": "Month 3",
+      "desc": "Integrate the new systems with your existing tools and launch for immediate use in APAC markets."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to optimize sales processes like talent acquisition and pipeline management for B2B SaaS companies."
+    },
+    {
+      "question": "How does this integrate with 6sense?",
+      "answer": "The system links with your ABM tools for seamless data flow and workflow enhancements."
+    },
+    {
+      "question": "Is this customized for APAC?",
+      "answer": "Yes, it focuses on regions like India and Singapore to address your specific talent needs."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs vary based on scope, but we base them on your $155M revenue scale for affordability."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically three months, aligned with our engagement steps for quick results."
+    },
+    {
+      "question": "Can it handle employee declines?",
+      "answer": "Yes, it includes retention tracking to mitigate issues like your 3.3% YoY staff reduction."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "6AI",
+      "role": "Handles predictive modeling for sales and hiring decisions"
+    },
+    {
+      "name": "Intent Data Tool",
+      "role": "Monitors buyer intent to enhance ABM strategies"
+    },
+    {
+      "name": "CRM Integration",
+      "role": "Connects with sales platforms for data enrichment and workflows"
+    },
+    {
+      "name": "Predictive Analytics",
+      "role": "Analyzes trends to forecast revenue and talent needs"
+    },
+    {
+      "name": "Workflow Orchestrator",
+      "role": "Automates tasks in marketing and sales operations"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:02:42Z"
+}

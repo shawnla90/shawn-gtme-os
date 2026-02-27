@@ -1,0 +1,162 @@
+{
+  "slug": "quixcel",
+  "company": "Quixcel",
+  "domain": "quixcel.net",
+  "contactName": "Keval ",
+  "contactRole": "Lead Generation Specialist",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#ADD8E6",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Quixcel",
+  "subheadline": "An AI system to automate LinkedIn and email outreach for scaling B2B lead generation with real-time analytics.",
+  "stats": [
+    {
+      "value": "2",
+      "label": "Employees"
+    },
+    {
+      "value": "500%",
+      "label": "YoY Growth"
+    },
+    {
+      "value": "2025",
+      "label": "Founded Year"
+    },
+    {
+      "value": "2905",
+      "label": "Competitors"
+    },
+    {
+      "value": "114",
+      "label": "Funded Competitors"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Small Team Limits",
+      "desc": "With only 2 employees, managing LinkedIn and email campaigns is overwhelming. Real-time analytics are hard to implement for tracking performance. This slows down lead generation scaling."
+    },
+    {
+      "icon": "02",
+      "title": "Deliverability Issues",
+      "desc": "Maintaining email deliverability is tough with a small team. Automated outreach often leads to spam flags. This impacts B2B pipeline acceleration."
+    },
+    {
+      "icon": "03",
+      "title": "Outreach Scaling",
+      "desc": "Automating LinkedIn connections and messaging is complex for a startup. Personalized campaigns require manual tweaks. This delays sales pipeline growth."
+    },
+    {
+      "icon": "04",
+      "title": "Analytics Gaps",
+      "desc": "Real-time reporting is inconsistent in current tools. Tracking touchpoints across channels is inefficient. This hinders data-driven decisions for B2B teams."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Outreach Automation Engine",
+      "desc": "Builds AI tools for LinkedIn and email sequencing, integrating with your platform to boost campaign efficiency.",
+      "tags": [
+        "AI",
+        "Automation",
+        "LinkedIn"
+      ]
+    },
+    {
+      "title": "Lead Generation Framework",
+      "desc": "Creates systems for contact enrichment and omnichannel engagement, connecting with existing analytics to scale prospects.",
+      "tags": [
+        "Lead Gen",
+        "Analytics",
+        "Email"
+      ]
+    },
+    {
+      "title": "Deliverability Optimizer",
+      "desc": "Develops tools to monitor and improve email deliverability, integrating with your outreach setup for reliable performance.",
+      "tags": [
+        "Deliverability",
+        "Monitoring",
+        "B2B"
+      ]
+    },
+    {
+      "title": "Analytics Dashboard",
+      "desc": "Constructs real-time reporting systems that track touchpoints, fitting into your sales infrastructure for better insights.",
+      "tags": [
+        "Reporting",
+        "Data",
+        "Insights"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Quixcel's current outreach tools and identify automation gaps."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop AI integrations for LinkedIn and email based on your needs."
+    },
+    {
+      "title": "Deployment and Optimization",
+      "subtitle": "Month 3",
+      "desc": "Launch the system and refine it for lead generation efficiency."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What does this system do?",
+      "answer": "It automates LinkedIn and email outreach for B2B teams."
+    },
+    {
+      "question": "How does it integrate with Quixcel?",
+      "answer": "It connects with your platform for seamless campaign sequencing."
+    },
+    {
+      "question": "Is it suitable for small teams?",
+      "answer": "Yes, it handles scaling with minimal staff like your 2 employees."
+    },
+    {
+      "question": "What about deliverability?",
+      "answer": "The system includes tools to maintain email deliverability rates."
+    },
+    {
+      "question": "How fast is implementation?",
+      "answer": "It follows a 3-month plan starting with assessment."
+    },
+    {
+      "question": "Does it use real-time analytics?",
+      "answer": "Yes, it builds in reporting for tracking outreach performance."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "LinkedIn API",
+      "role": "Automates connections and messaging for outreach"
+    },
+    {
+      "name": "Email Service Providers",
+      "role": "Manages campaign sequencing and deliverability"
+    },
+    {
+      "name": "AI Frameworks",
+      "role": "Powers personalization in lead generation"
+    },
+    {
+      "name": "Analytics Tools",
+      "role": "Tracks real-time performance metrics"
+    },
+    {
+      "name": "Integration Platforms",
+      "role": "Connects with existing Quixcel systems for efficiency"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:26:29Z"
+}

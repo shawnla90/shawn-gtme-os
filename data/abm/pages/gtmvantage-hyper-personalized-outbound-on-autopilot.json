@@ -1,0 +1,162 @@
+{
+  "slug": "gtmvantage-hyper-personalized-outbound-on-autopilot",
+  "company": "GTMVantage - Hyper-Personalized Outbound on Autopilot",
+  "domain": "gtmvantage.com",
+  "contactName": "Aarti ",
+  "contactRole": "Director - Program Management",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for GTMVantage",
+  "subheadline": "Custom AI sales infrastructure to automate hyper-personalized outbound campaigns for B2B SaaS scaling",
+  "stats": [
+    {
+      "value": "7",
+      "label": "Employees"
+    },
+    {
+      "value": "-33.3%",
+      "label": "YoY Workforce Change"
+    },
+    {
+      "value": "-4",
+      "label": "People Reduction"
+    },
+    {
+      "value": "10",
+      "label": "Minutes to Execute Campaigns"
+    },
+    {
+      "value": "B2B",
+      "label": "Focus Market"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Team Scaling",
+      "desc": "With only 7 employees, GTMVantage struggles to scale AI-driven outbound programs quickly. Recent workforce reductions of 33.3% limit operational capacity for rapid market expansion. This hampers efficient campaign execution in competitive B2B environments."
+    },
+    {
+      "icon": "02",
+      "title": "Personalization Efficiency",
+      "desc": "GTMVantage needs to maintain hyper-personalized outbound strategies but faces delays in identifying ICPs and segments. A small team makes it hard to analyze market data in real-time. This leads to slower campaign launches amid B2B SaaS demands."
+    },
+    {
+      "icon": "03",
+      "title": "Operational Coordination",
+      "desc": "As a New Delhi-based company, coordinating cross-functional teams for AI program management is challenging with limited resources. Recent reductions exacerbate bottlenecks in strategy-to-execution workflows. This affects overall B2B sales machinery building."
+    },
+    {
+      "icon": "04",
+      "title": "Market Competition",
+      "desc": "GTMVantage must compete in a crowded B2B SaaS space while managing workforce cuts. Building complete sales infrastructure from scratch is resource-intensive. This puts pressure on delivering seamless outbound automation."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Outbound Engine",
+      "desc": "Builds automated campaign systems that integrate with GTMVantage's platform for quick ICP identification and execution",
+      "tags": [
+        "AI Automation",
+        "Outbound Integration",
+        "B2B Scaling"
+      ]
+    },
+    {
+      "title": "Sales Scaling Framework",
+      "desc": "Develops a step-by-step model to expand sales machinery, addressing GTMVantage's small team constraints by incorporating efficient tools",
+      "tags": [
+        "Team Efficiency",
+        "Rapid Scaling",
+        "Resource Optimization"
+      ]
+    },
+    {
+      "title": "Personalization Analyzer",
+      "desc": "Creates AI tools for in-depth market segment analysis that plug into existing workflows, reducing GTMVantage's operational delays",
+      "tags": [
+        "Data Analysis",
+        "ICPs",
+        "Campaign Personalization"
+      ]
+    },
+    {
+      "title": "Integration Hub",
+      "desc": "Establishes connections with CRM and AI platforms to streamline GTMVantage's outbound processes, minimizing coordination challenges",
+      "tags": [
+        "CRM Sync",
+        "AI Layer",
+        "Workflow Automation"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Conduct in-depth review of GTMVantage's current sales infrastructure and identify key pain points for AI outbound."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop customized AI systems based on the assessment, integrating them into GTMVantage's existing processes."
+    },
+    {
+      "title": "Implementation",
+      "subtitle": "Month 3",
+      "desc": "Roll out the new infrastructure, train the team, and optimize for B2B SaaS scaling needs."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is sales infrastructure?",
+      "answer": "It's the backbone of B2B sales operations, including tools and processes for efficient outbound campaigns."
+    },
+    {
+      "question": "How does this help GTMVantage?",
+      "answer": "It automates personalized outbound to address team size limits and improve scaling."
+    },
+    {
+      "question": "Is this AI-based?",
+      "answer": "Yes, it uses AI to enhance campaign planning and execution for B2B SaaS companies."
+    },
+    {
+      "question": "What are the costs?",
+      "answer": "Costs vary based on GTMVantage's specific needs; we tailor packages during engagement."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically 3 months, aligned with our structured steps for quick results."
+    },
+    {
+      "question": "Can it integrate with existing tools?",
+      "answer": "Yes, we design integrations with platforms like CRMs to fit GTMVantage's workflow."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "OpenAI",
+      "role": "Powers AI-driven personalization for outbound campaigns"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Manages CRM integration for tracking B2B interactions"
+    },
+    {
+      "name": "HubSpot",
+      "role": "Handles marketing automation to support GTMVantage's scaling efforts"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Analyzes campaign data for performance insights"
+    },
+    {
+      "name": "Zapier",
+      "role": "Automates workflows between tools in GTMVantage's tech stack"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:21:02Z"
+}

@@ -1,0 +1,162 @@
+{
+  "slug": "hungry-baboons",
+  "company": "Hungry Baboons",
+  "domain": "hungrybaboons.com",
+  "contactName": "Miia ",
+  "contactRole": "Office Manager",
+  "theme": {
+    "primary": "#4CAF50",
+    "primaryLight": "#C8E6C9",
+    "primaryGlow": "rgba(76, 175, 80, 0.12)"
+  },
+  "headline": "Built for Hungry Baboons",
+  "subheadline": "AI-powered sales tools to streamline cold-calling and commission-based B2B growth for software startups",
+  "stats": [
+    {
+      "value": "2",
+      "label": "Employees"
+    },
+    {
+      "value": "2014",
+      "label": "Founded"
+    },
+    {
+      "value": "20",
+      "label": "LinkedIn Followers"
+    },
+    {
+      "value": "100%",
+      "label": "Finland-based Employees"
+    },
+    {
+      "value": "$21MM",
+      "label": "Series C Funding"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Limited Team Size",
+      "desc": "With only two employees, Hungry Baboons struggles to handle daily operations and sales outreach. This creates bottlenecks in cold-calling efforts for software startups. Resource allocation suffers in a commission-based model."
+    },
+    {
+      "icon": "02",
+      "title": "Sales Scalability",
+      "desc": "As a small Finland-based firm, expanding B2B sales without fixed costs is challenging. Cold-calling campaigns often lack tools for tracking leads. This hinders reaching the tipping point for client growth."
+    },
+    {
+      "icon": "03",
+      "title": "Operational Efficiency",
+      "desc": "Managing administrative and sales tasks with a tiny team slows down processes. In a public company context, coordinating customer development is tough. This impacts overall productivity in advertising services."
+    },
+    {
+      "icon": "04",
+      "title": "Commission Tracking",
+      "desc": "Tracking hefty commissions from B2B deals is complex with limited staff. Errors in monitoring profits can lead to disputes with startups. This affects the omnisales model reliability in Finland."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Sales Automation System",
+      "desc": "Builds automated lead tracking integrated with cold-calling workflows to boost B2B efficiency",
+      "tags": [
+        "AI Tracking",
+        "Lead Management",
+        "Cold-Calling"
+      ]
+    },
+    {
+      "title": "Commission Calculator",
+      "desc": "Creates a tool for accurate commission tracking that integrates with sales data to reduce errors",
+      "tags": [
+        "Finance Integration",
+        "B2B Sales",
+        "Profit Sharing"
+      ]
+    },
+    {
+      "title": "Customer Development Platform",
+      "desc": "Develops a platform for managing customer interactions that links with existing tools for startup growth",
+      "tags": [
+        "CRM Integration",
+        "Omnisales",
+        "Finland Operations"
+      ]
+    },
+    {
+      "title": "Resource Optimization Dashboard",
+      "desc": "Designs a dashboard to allocate tasks efficiently for small teams, reducing operational bottlenecks",
+      "tags": [
+        "Team Management",
+        "Efficiency Tools",
+        "Administrative Support"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review current sales processes and identify key pain points for Hungry Baboons."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop and customize AI tools based on the assessment for B2B sales optimization."
+    },
+    {
+      "title": "Implementation and Training",
+      "subtitle": "Month 3",
+      "desc": "Integrate the new system and train the team on usage for ongoing operations."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to automate and optimize sales processes like lead generation and tracking."
+    },
+    {
+      "question": "How does this fit our small team?",
+      "answer": "Tools are designed for efficiency with minimal staff, focusing on Finland-based operations."
+    },
+    {
+      "question": "Will this integrate with our current tools?",
+      "answer": "Yes, it integrates with systems like LinkedIn for B2B sales and cold-calling workflows."
+    },
+    {
+      "question": "What are the costs involved?",
+      "answer": "Costs are tailored to your commission-based model with no fixed fees for Hungry Baboons."
+    },
+    {
+      "question": "How long until we see results?",
+      "answer": "Results typically appear within three months as we build and implement the infrastructure."
+    },
+    {
+      "question": "Is this customizable for our needs?",
+      "answer": "Absolutely, it's specifically adapted for advertising services and software startup growth."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Python",
+      "role": "Handles AI logic for converting Excel to production-ready code"
+    },
+    {
+      "name": "LinkedIn",
+      "role": "Manages networking and lead generation for B2B sales"
+    },
+    {
+      "name": "CRM Software",
+      "role": "Tracks customer interactions and cold-calling efforts"
+    },
+    {
+      "name": "Google Sheets",
+      "role": "Supports data management and commission tracking"
+    },
+    {
+      "name": "Slack",
+      "role": "Facilitates team communication in a small, remote Finland-based setup"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:15:01Z"
+}

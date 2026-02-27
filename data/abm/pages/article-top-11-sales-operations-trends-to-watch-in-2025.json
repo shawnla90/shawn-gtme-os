@@ -1,0 +1,162 @@
+{
+  "slug": "article-top-11-sales-operations-trends-to-watch-in-2025",
+  "company": "Article | Top 11 Sales Operations Trends to Watch in 2025",
+  "domain": "revenue.io",
+  "contactName": "Ryan ",
+  "contactRole": "VP of Sales",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Revenue.io",
+  "subheadline": "AI infrastructure to enhance sales operations with data strategy and automation for revenue growth.",
+  "stats": [
+    {
+      "value": "15%",
+      "label": "Higher quota attainment from data-driven operations"
+    },
+    {
+      "value": "20%",
+      "label": "Faster sales cycles through investments"
+    },
+    {
+      "value": "11",
+      "label": "Emerging trends shaping revenue teams"
+    },
+    {
+      "value": "8",
+      "label": "Minutes for key insights read"
+    },
+    {
+      "value": "2025",
+      "label": "Year focusing on sales operations evolution"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Evolving Sales Roles",
+      "desc": "Revenue.io faces shifts from basic CRM management to strategic revenue decisions. This demands better data strategy integration amid AI advancements. Without proper tools, teams risk slower cycles as noted in Gartner research."
+    },
+    {
+      "icon": "02",
+      "title": "Data Strategy Gaps",
+      "desc": "As a sales tech company, Revenue.io must handle growing data volumes for revenue intelligence. Ineffective strategies lead to missed opportunities in quota attainment. Automation investments could address this per industry trends."
+    },
+    {
+      "icon": "03",
+      "title": "Tech Consolidation Needs",
+      "desc": "Revenue.io deals with fragmented sales tools that hinder efficiency. Consolidating tech stacks is essential for RevOps but poses integration challenges. This can result in 20% slower cycles without streamlined approaches."
+    },
+    {
+      "icon": "04",
+      "title": "AI Adoption Barriers",
+      "desc": "Rapid AI changes require Revenue.io to adapt quickly for sales ops. Lagging adoption means less effective automation and decision-making. Companies like yours see benefits in higher attainment with proactive measures."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Data Strategy Platform",
+      "desc": "Builds a system for centralized data analysis and insights, integrating with CRM to enhance revenue decisions.",
+      "tags": [
+        "Data Strategy",
+        "AI Integration",
+        "CRM Enhancement"
+      ]
+    },
+    {
+      "title": "Automation Workflow Engine",
+      "desc": "Creates automated processes for sales operations, linking with existing tools to reduce manual tasks and speed cycles.",
+      "tags": [
+        "Automation",
+        "Efficiency",
+        "RevOps"
+      ]
+    },
+    {
+      "title": "Revenue Intelligence Hub",
+      "desc": "Develops a hub for real-time analytics, connecting to sales tech to support strategic planning and trend monitoring.",
+      "tags": [
+        "Analytics",
+        "Intelligence",
+        "Trend Tracking"
+      ]
+    },
+    {
+      "title": "Tech Consolidation Framework",
+      "desc": "Designs a unified framework to merge sales tools, ensuring seamless integration and scalability for Revenue.io's growth.",
+      "tags": [
+        "Consolidation",
+        "Scalability",
+        "Tool Integration"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Revenue.io's current sales operations and identify key pain points in data and automation."
+    },
+    {
+      "title": "Design Phase",
+      "subtitle": "Month 2",
+      "desc": "Create customized AI infrastructure blueprints tailored to Revenue.io's needs for strategy and integration."
+    },
+    {
+      "title": "Implementation Phase",
+      "subtitle": "Month 3",
+      "desc": "Deploy the systems and provide training to ensure smooth adoption in sales operations."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It is a setup using AI to optimize sales operations like data analysis and automation."
+    },
+    {
+      "question": "How does it integrate with our CRM?",
+      "answer": "The system connects seamlessly with existing CRM tools to enhance data flow and decision-making."
+    },
+    {
+      "question": "What benefits can we expect?",
+      "answer": "Expect higher quota attainment and faster sales cycles based on Gartner research."
+    },
+    {
+      "question": "Is this customizable for Revenue.io?",
+      "answer": "Yes, it is tailored to your specific challenges in sales ops evolution and tech consolidation."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically three months, covering assessment, design, and rollout."
+    },
+    {
+      "question": "What tools will we need?",
+      "answer": "It builds on your existing stack, adding AI elements for better efficiency."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "CRM Systems",
+      "role": "Manages customer data and sales pipelines for Revenue.io"
+    },
+    {
+      "name": "AI Analytics Tools",
+      "role": "Provides insights and automates data processing in sales operations"
+    },
+    {
+      "name": "Gartner Platforms",
+      "role": "Delivers research-backed recommendations for revenue strategies"
+    },
+    {
+      "name": "Automation Software",
+      "role": "Streamlines workflows and reduces manual tasks in RevOps"
+    },
+    {
+      "name": "RevOps Dashboards",
+      "role": "Monitors trends and performance metrics for better decision-making"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:27:44Z"
+}

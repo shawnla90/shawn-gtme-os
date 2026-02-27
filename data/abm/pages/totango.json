@@ -1,0 +1,162 @@
+{
+  "slug": "totango",
+  "company": "Totango",
+  "domain": "totango.com",
+  "contactName": "Randy ",
+  "contactRole": "VP Sales",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Totango",
+  "subheadline": "AI-powered sales infrastructure to optimize customer retention and expansion in your SaaS customer success platform.",
+  "stats": [
+    {
+      "value": "$149M",
+      "label": "Total Funding Raised"
+    },
+    {
+      "value": "$22.3M",
+      "label": "Annual Revenue"
+    },
+    {
+      "value": "$100M",
+      "label": "Growth Investment"
+    },
+    {
+      "value": "313%",
+      "label": "Annual Growth Rate"
+    },
+    {
+      "value": "114",
+      "label": "Employees"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Post-Buyout Scaling",
+      "desc": "Totango's buyout creates hurdles in scaling sales amid market shifts. This means integrating new operations while maintaining automated workflows. Competitors erode market share if expansion lags."
+    },
+    {
+      "icon": "02",
+      "title": "Customer Retention",
+      "desc": "In a competitive SaaS space, Totango struggles to keep customers engaged through automated features. This involves monitoring changes in customer behavior to prevent churn. Revenue growth depends on proactive interventions."
+    },
+    {
+      "icon": "03",
+      "title": "Sales Alignment",
+      "desc": "Totango needs to align sales strategies with existing automated workflows for predictable revenue. This requires connecting customer data across systems to drive engagements. Misalignment could hinder long-term value maximization."
+    },
+    {
+      "icon": "04",
+      "title": "Revenue Expansion",
+      "desc": "Expanding revenue through customer success is tough for Totango in a crowded market. This includes leveraging AI for better adoption rates. Without effective tools, referrals and upsells fall short."
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "AI Sales Workflow System",
+      "desc": "Builds automated sales processes that integrate with Totango's customer success platform to enhance retention",
+      "tags": [
+        "AI",
+        "Automation",
+        "Integration"
+      ]
+    },
+    {
+      "title": "Customer Expansion Engine",
+      "desc": "Creates tools for identifying expansion opportunities and integrates them with existing workflows to boost revenue",
+      "tags": [
+        "Data Analysis",
+        "SaaS",
+        "Growth"
+      ]
+    },
+    {
+      "title": "Retention Optimization Suite",
+      "desc": "Develops predictive analytics to monitor customer health and integrates directly into Totango's platform for proactive engagements",
+      "tags": [
+        "Analytics",
+        "AI",
+        "Customer Success"
+      ]
+    },
+    {
+      "title": "Sales Scaling Framework",
+      "desc": "Establishes scalable sales infrastructure that aligns with Totango's automated systems to handle post-buyout growth",
+      "tags": [
+        "Scaling",
+        "Workflows",
+        "Revenue"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Review Totango's current sales infrastructure and identify key pain points based on your data."
+    },
+    {
+      "title": "Design and Build",
+      "subtitle": "Month 2",
+      "desc": "Develop customized AI solutions that integrate with your platform for better customer outcomes."
+    },
+    {
+      "title": "Launch and Optimize",
+      "subtitle": "Month 3",
+      "desc": "Implement the new systems and refine based on initial performance metrics."
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to automate and optimize sales processes for better efficiency."
+    },
+    {
+      "question": "How does it integrate with Totango?",
+      "answer": "The system connects directly with your customer success platform to enhance workflows."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Based on similar SaaS companies, expect improved retention rates from automated insights."
+    },
+    {
+      "question": "Is this customizable?",
+      "answer": "Yes, it's tailored to Totango's specific needs like post-buyout scaling."
+    },
+    {
+      "question": "How long does implementation take?",
+      "answer": "Typically three months, aligned with our structured engagement steps."
+    },
+    {
+      "question": "What about costs?",
+      "answer": "Costs vary based on scope, but aim for ROI through revenue growth as seen in your 313% growth year."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "Salesforce",
+      "role": "Manages customer relationships and integrates with Totango's workflows"
+    },
+    {
+      "name": "HubSpot",
+      "role": "Handles marketing automation to support sales scaling"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks user behavior for customer success insights"
+    },
+    {
+      "name": "Slack",
+      "role": "Facilitates team communication during infrastructure builds"
+    },
+    {
+      "name": "Python ML Libraries",
+      "role": "Powers AI models for predictive sales analytics"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:06:39Z"
+}

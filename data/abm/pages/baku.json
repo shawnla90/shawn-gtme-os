@@ -1,0 +1,162 @@
+{
+  "slug": "baku",
+  "company": "Baku",
+  "domain": "projectbaku.com",
+  "contactName": "Nigar ",
+  "contactRole": "Social Media Manager",
+  "theme": {
+    "primary": "#007BFF",
+    "primaryLight": "#66B2FF",
+    "primaryGlow": "rgba(0, 123, 255, 0.12)"
+  },
+  "headline": "Built for Baku",
+  "subheadline": "Custom AI systems to help small B2B sales consulting firms like Baku streamline repeatable sales processes for product-led companies",
+  "stats": [
+    {
+      "value": "$100M",
+      "label": "AI Fund Investment"
+    },
+    {
+      "value": "10",
+      "label": "Employees"
+    },
+    {
+      "value": "297",
+      "label": "Global Startup Rank"
+    },
+    {
+      "value": "918,000",
+      "label": "Sales Jobs Available"
+    },
+    {
+      "value": "1,184,789",
+      "label": "Profile Views"
+    }
+  ],
+  "challenges": [
+    {
+      "icon": "01",
+      "title": "Brand Visibility",
+      "desc": "As a small firm with 1-10 employees, Baku struggles to stand out against larger competitors in B2B consulting - This limits lead generation on platforms like LinkedIn - Focusing on professional networking is key to building audience trust"
+    },
+    {
+      "icon": "02",
+      "title": "Sales Process Discovery",
+      "desc": "Baku helps product-led companies find repeatable sales but faces internal challenges in scaling these for their own operations - This creates inefficiencies in client delivery - Their Brooklyn base adds pressure to compete nationally"
+    },
+    {
+      "icon": "03",
+      "title": "Resource Constraints",
+      "desc": "With a small team, Baku deals with limited resources for AI tools in SaaS consulting - This slows down innovation in sales infrastructure - They must prioritize strategic networking to offset these gaps"
+    },
+    {
+      "icon": "04",
+      "title": "Founder-Led Sales",
+      "desc": "Baku supports pre-revenue founder-led sales but encounters difficulties in applying this internally - This affects their ability to qualify leads effectively - Competing in a crowded market demands better predictive tools"
+    }
+  ],
+  "deliverables": [
+    {
+      "title": "Sales Process AI System",
+      "desc": "Builds automated workflows for discovering repeatable sales processes and integrates with existing CRM tools to enhance efficiency for B2B consulting",
+      "tags": [
+        "AI Automation",
+        "CRM Integration",
+        "Sales Workflow"
+      ]
+    },
+    {
+      "title": "Lead Qualification Engine",
+      "desc": "Creates predictive models for lead scoring and qualification, integrating with LinkedIn for better networking and targeting product-led companies",
+      "tags": [
+        "Lead Scoring",
+        "Social Integration",
+        "B2B Targeting"
+      ]
+    },
+    {
+      "title": "Branding Visibility Platform",
+      "desc": "Develops tools to boost brand presence on professional platforms and integrates with content systems for consistent messaging in sales consulting",
+      "tags": [
+        "Brand Tools",
+        "Content Integration",
+        "Networking"
+      ]
+    },
+    {
+      "title": "Scalable Resource Hub",
+      "desc": "Constructs a centralized hub for managing team resources and AI tools, integrating with SaaS platforms to address small-team constraints",
+      "tags": [
+        "Resource Management",
+        "SaaS Tools",
+        "Efficiency Boost"
+      ]
+    }
+  ],
+  "engagementSteps": [
+    {
+      "title": "Assessment Phase",
+      "subtitle": "Month 1",
+      "desc": "Conduct initial audit of Baku's sales processes and identify key pain points"
+    },
+    {
+      "title": "Design Phase",
+      "subtitle": "Month 2",
+      "desc": "Develop customized AI blueprints and plan integrations with their tech stack"
+    },
+    {
+      "title": "Implementation Phase",
+      "subtitle": "Month 3",
+      "desc": "Roll out the new systems and train the team for ongoing optimization"
+    }
+  ],
+  "faqItems": [
+    {
+      "question": "What is AI-powered sales infrastructure?",
+      "answer": "It uses AI to automate and optimize sales processes for B2B firms."
+    },
+    {
+      "question": "How does this integrate with our tools?",
+      "answer": "We tailor integrations to your existing CRM and social platforms."
+    },
+    {
+      "question": "Is this suitable for small teams?",
+      "answer": "Yes, it's designed for firms with 1-10 employees to scale efficiently."
+    },
+    {
+      "question": "What results can we expect?",
+      "answer": "Improved lead qualification and repeatable sales processes based on real data."
+    },
+    {
+      "question": "How long is the engagement?",
+      "answer": "Typically three months, with ongoing support options."
+    },
+    {
+      "question": "What about costs?",
+      "answer": "Costs vary by needs; we base them on your specific business context."
+    }
+  ],
+  "stackItems": [
+    {
+      "name": "HubSpot",
+      "role": "Manages CRM and lead tracking for sales consulting"
+    },
+    {
+      "name": "LinkedIn Sales Navigator",
+      "role": "Handles professional networking and lead generation"
+    },
+    {
+      "name": "Salesforce",
+      "role": "Integrates for advanced SaaS sales automation"
+    },
+    {
+      "name": "Google Analytics",
+      "role": "Tracks website traffic and user behavior for optimization"
+    },
+    {
+      "name": "Zapier",
+      "role": "Automates workflows between tools for efficiency"
+    }
+  ],
+  "generatedAt": "2026-02-27T08:24:40Z"
+}
