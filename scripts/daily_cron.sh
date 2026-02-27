@@ -136,6 +136,17 @@ else
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
+# ── Step 1i: Reddit scout ──────────────────────────────────────────────
+log "Running reddit_scout.py"
+if $PYTHON scripts/reddit_scout.py >> "$LOGFILE" 2>&1; then
+  REDDIT_COUNT=$($PYTHON -c "import json; q=json.load(open('data/reddit/queue.json')); print(sum(1 for i in q if i['status']=='scouted'))" 2>/dev/null || echo "?")
+  log "Reddit scout completed ($REDDIT_COUNT scouted opportunities)"
+  send_slack "REDDIT" "Reddit scout: $REDDIT_COUNT new opportunities found"
+else
+  log "WARN: Reddit scout failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then

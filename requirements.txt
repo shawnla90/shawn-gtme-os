@@ -1,3 +1,4 @@
 # Python dependencies for image generation and content skills
 # Install: python3 -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
 Pillow>=12.0.0
+praw>=7.7.0

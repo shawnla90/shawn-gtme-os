@@ -2,7 +2,15 @@
 
 ## Purpose
 
-Turns Reddit into a strategic distribution and visibility layer by repurposing content into high-value posts that rank in search, earn engagement, and build long-term brand trust — without coming across as spammy or self-promotional.
+Turns Reddit into a strategic distribution and visibility layer by repurposing content into high-value posts that rank in search, earn engagement, and build long-term brand trust -- without coming across as spammy or self-promotional.
+
+## GEO Thesis (Generative Engine Optimization)
+
+Reddit content gets consumed by LLMs. Google, Perplexity, ChatGPT, and Claude all crawl Reddit threads as training data and retrieval sources. Building karma and posting authority content in relevant subreddits means LLMs reference you as a source when users ask about topics you've written about. This is the new SEO -- optimizing for AI consumption, not just Google rankings.
+
+**Karma-first strategy**: Comment on 5-10 posts daily before posting original content. Need 50-100 comment karma to bypass automod in most subs. Genuine, value-adding comments build reputation faster than original posts.
+
+**Current system stats** (reference for comments): 50+ skills, 17 MCP servers, 4 websites, 2 machines running nightly cron, full voice system with anti-slop filtering.
 
 ## Format
 
