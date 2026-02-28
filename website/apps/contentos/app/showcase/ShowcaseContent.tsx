@@ -8,6 +8,7 @@ import {
   StaggerItem,
   SectionHeadline,
 } from '@shawnos/shared/components'
+import { useIsMobile } from '@shawnos/shared/hooks'
 import { ShowcaseDemos } from './demos'
 
 /* ── data ─────────────────────────────────────────── */
@@ -20,6 +21,7 @@ const stats = [
 ]
 
 export function ShowcaseContent() {
+  const isMobile = useIsMobile()
   return (
     <>
       {/* ── Hero ── */}
@@ -32,7 +34,7 @@ export function ShowcaseContent() {
           justifyContent: 'center',
           alignItems: 'center',
           background:
-            'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(155, 114, 207, 0.12), transparent 60%), var(--canvas)',
+            'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(232, 114, 92, 0.12), transparent 60%), var(--canvas)',
           textAlign: 'center',
           padding: '80px 24px 60px',
         }}
@@ -45,8 +47,8 @@ export function ShowcaseContent() {
               fontSize: '12px',
               fontWeight: 600,
               color: 'var(--accent)',
-              background: 'rgba(155, 114, 207, 0.08)',
-              border: '1px solid rgba(155, 114, 207, 0.2)',
+              background: 'rgba(232, 114, 92, 0.08)',
+              border: '1px solid rgba(232, 114, 92, 0.2)',
               borderRadius: 999,
               marginBottom: 20,
               letterSpacing: '0.04em',
@@ -139,11 +141,11 @@ export function ShowcaseContent() {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 32,
+            gap: isMobile ? 16 : 32,
             flexWrap: 'wrap',
           }}
         >
-          <div style={{ flex: '1 1 320px' }}>
+          <div style={{ flex: isMobile ? '1 1 100%' : '1 1 320px' }}>
             <div
               style={{
                 display: 'inline-block',
@@ -203,7 +205,7 @@ export function ShowcaseContent() {
           </div>
           <div
             style={{
-              flex: '1 1 280px',
+              flex: isMobile ? '1 1 100%' : '1 1 280px',
               padding: '24px',
               background: 'var(--canvas)',
               border: '1px solid var(--border)',

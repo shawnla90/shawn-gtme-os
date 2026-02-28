@@ -60,6 +60,8 @@ const container: React.CSSProperties = {
   border: '1px solid var(--border)',
   overflow: 'hidden',
   fontFamily: 'var(--font-mono)',
+  maxWidth: '100%',
+  width: '100%',
 }
 
 const videoEl: React.CSSProperties = {

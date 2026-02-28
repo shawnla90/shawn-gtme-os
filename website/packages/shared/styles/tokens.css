@@ -19,7 +19,8 @@
   --gtmos-red: #E05555;
 
   /* === thecontentos.ai palette === */
-  --contentos-purple: #9B72CF;
+  --contentos-coral: #E8725C;
+  --contentos-hover: #F09080;
   --contentos-green: #4EC373;
 
   /* === Per-app accent (overridden by each app's tailwind/globals) === */

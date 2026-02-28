@@ -18,7 +18,7 @@ export function GET(req: NextRequest) {
           flexDirection: 'column',
           justifyContent: 'center',
           padding: '60px 80px',
-          background: 'linear-gradient(135deg, #0D1117 0%, #1a1028 50%, #0D1117 100%)',
+          background: 'linear-gradient(135deg, #0D1117 0%, #1a1412 50%, #0D1117 100%)',
           fontFamily: 'monospace',
         }}
       >
@@ -31,7 +31,7 @@ export function GET(req: NextRequest) {
             left: 0,
             right: 0,
             height: 4,
-            background: 'linear-gradient(90deg, #9B72CF, #c4a0e8)',
+            background: 'linear-gradient(90deg, #E8725C, #F09080)',
           }}
         />
 
@@ -41,7 +41,7 @@ export function GET(req: NextRequest) {
             display: 'flex',
             fontSize: 48,
             fontWeight: 700,
-            color: '#9B72CF',
+            color: '#E8725C',
             lineHeight: 1.2,
             marginBottom: 20,
             maxWidth: '90%',
@@ -80,7 +80,7 @@ export function GET(req: NextRequest) {
               display: 'flex',
               fontSize: 18,
               fontWeight: 600,
-              color: '#9B72CF',
+              color: '#E8725C',
             }}
           >
             theContentOS.ai

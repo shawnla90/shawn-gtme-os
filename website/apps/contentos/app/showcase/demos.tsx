@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
+import { useIsMobile } from '@shawnos/shared/hooks'
 import { ReactLabDemos } from '../react-lab/demos'
 
 /* ── shared styles (match react-lab) ── */
@@ -56,7 +57,7 @@ const PILLARS = [
   {
     name: 'Building + Sharing',
     tag: 'primary',
-    color: '#9B72CF',
+    color: '#E8725C',
     description:
       'The core pillar. Document what you build as you build it. Every commit, every system, every deployment becomes content. The process is the product.',
     exampleFormat:
@@ -138,7 +139,7 @@ function ContentPillarMapDemo() {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(200px, 100%), 1fr))',
           gap: 12,
           marginBottom: activePillar !== null ? 20 : 0,
         }}
@@ -634,6 +635,7 @@ const CLEAN_EXAMPLE =
   "I built a content system that runs on three files and zero manual steps. it takes one draft, checks it against 20 anti-slop rules, and reformats for LinkedIn, X, and Substack. same voice, different shape. the whole thing deploys from a git push. no dashboards, no \"content calendars\" — just a repo that does the work."
 
 function AntiSlopDetectorDemo() {
+  const isMobile = useIsMobile()
   const [text, setText] = useState(SLOP_EXAMPLE)
   const [analyzed, setAnalyzed] = useState(true)
 
@@ -789,21 +791,22 @@ function AntiSlopDetectorDemo() {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 16,
+          gap: isMobile ? 12 : 16,
           marginBottom: 16,
           padding: '12px 16px',
           background: '#0D1117',
           borderRadius: 6,
+          flexWrap: 'wrap',
         }}
       >
         <div
           style={{
-            fontSize: 36,
+            fontSize: isMobile ? 28 : 36,
             fontFamily: 'var(--font-mono)',
             fontWeight: 700,
             color: getScoreColor(result.score),
             lineHeight: 1,
-            minWidth: 60,
+            minWidth: isMobile ? 48 : 60,
           }}
         >
           {result.score}
@@ -834,12 +837,12 @@ function AntiSlopDetectorDemo() {
         {/* score bar */}
         <div
           style={{
-            flex: 1,
+            flex: '1 1 80px',
             height: 6,
             background: 'var(--border)',
             borderRadius: 3,
             overflow: 'hidden',
-            minWidth: 80,
+            minWidth: isMobile ? 0 : 80,
           }}
         >
           <div
@@ -1317,6 +1320,7 @@ STYLE: screen recording + face cam overlay`
 }
 
 function PlatformFormatterDemo() {
+  const isMobile = useIsMobile()
   const [activeTab, setActiveTab] = useState<PlatformKey>('linkedin')
   const [rawText, setRawText] = useState(SAMPLE_CONTENT)
   const [showRaw, setShowRaw] = useState(false)
@@ -1402,8 +1406,8 @@ function PlatformFormatterDemo() {
                   key={key}
                   onClick={() => setActiveTab(key)}
                   style={{
-                    padding: '8px 16px',
-                    fontSize: 12,
+                    padding: isMobile ? '6px 10px' : '8px 16px',
+                    fontSize: isMobile ? 11 : 12,
                     fontFamily: 'var(--font-mono)',
                     color: isActive ? p.color : 'var(--text-secondary)',
                     background: 'transparent',

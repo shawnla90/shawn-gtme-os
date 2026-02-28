@@ -58,7 +58,7 @@ const BOOT_LINES = [
   { text: '[PHASE 4] publish + distribute', color: '#4EC373', delay: 3100 },
   { text: '', color: '', delay: 3400 },
   { text: '> content OS operational.', color: '#4EC373', delay: 3500 },
-  { text: '> the system is the content.', color: '#9B72CF', delay: 3900 },
+  { text: '> the system is the content.', color: '#E8725C', delay: 3900 },
 ]
 
 function TerminalBootDemo() {
@@ -274,7 +274,7 @@ const PIPELINE_STAGES = [
   { name: 'Idea', icon: '◇', color: '#E05555', output: 'raw thought captured in daily log' },
   { name: 'Draft', icon: '◆', color: '#D2A53C', output: 'structured post with hook + body + CTA' },
   { name: 'Voice', icon: '◈', color: '#50BED2', output: 'voice-normalized: slop removed, DNA applied' },
-  { name: 'Format', icon: '▣', color: '#9B72CF', output: 'platform-specific: LinkedIn / X / Substack' },
+  { name: 'Format', icon: '▣', color: '#E8725C', output: 'platform-specific: LinkedIn / X / Substack' },
   { name: 'Publish', icon: '✦', color: '#4EC373', output: 'live on platform + indexed in content OS' },
 ]
 
@@ -438,7 +438,7 @@ const PALETTES = [
     bg: '#1C1C1E',
     primary: '#FFFFFF',
     secondary: '#A0A0A0',
-    accent: '#9B72CF',
+    accent: '#E8725C',
     muted: '#505050',
     use: 'Professional content, LinkedIn carousels, article headers',
   },
@@ -673,8 +673,8 @@ function VoiceBeforeAfterDemo() {
               fontSize: 11,
               fontFamily: 'var(--font-mono)',
               color: 'var(--accent)',
-              background: 'rgba(155, 114, 207, 0.08)',
-              border: '1px solid rgba(155, 114, 207, 0.2)',
+              background: 'rgba(232, 114, 92, 0.08)',
+              border: '1px solid rgba(232, 114, 92, 0.2)',
               borderRadius: 3,
             }}
           >
@@ -715,7 +715,7 @@ const POST_SECTIONS = [
   {
     id: 'proof',
     label: 'PROOF',
-    color: '#9B72CF',
+    color: '#E8725C',
     text: 'after the purge:\n\u2022 reply rate went from 2% to 11%\n\u2022 booked meetings doubled\n\u2022 pipeline value actually went up\n\nfewer leads. better leads. same effort.',
     note: 'Concrete results with numbers. The paradox (fewer = better) is the memorable takeaway. Last line is quotable.',
   },

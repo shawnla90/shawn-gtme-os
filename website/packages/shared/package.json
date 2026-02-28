@@ -34,6 +34,7 @@
     "./lib/logs": "./lib/logs.ts",
     "./lib/nio-blog": "./lib/nio-blog.ts",
     "./components/motion": "./components/motion/index.ts",
+    "./hooks": "./hooks/useIsMobile.ts",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {

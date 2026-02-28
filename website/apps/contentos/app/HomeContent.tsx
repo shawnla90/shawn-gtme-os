@@ -13,6 +13,7 @@ import {
   MagneticHover,
   ScrollRevealSection,
 } from '@shawnos/shared/components'
+import { useIsMobile } from '@shawnos/shared/hooks'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
 import { VideoShowcase } from './VideoShowcase'
 import { BuiltWithStrip } from './components/BuiltWithStrip'
@@ -155,6 +156,7 @@ interface HomeContentProps {
 /* ── component ───────────────────────────────────── */
 
 export function HomeContent({ latestLog }: HomeContentProps) {
+  const isMobile = useIsMobile()
   return (
     <>
       {/* ── 1. Hero - 100dvh, centered, purple glow ── */}
@@ -166,7 +168,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          background: 'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(155, 114, 207, 0.15), transparent 60%), radial-gradient(ellipse 1200px 800px at 50% 60%, rgba(155, 114, 207, 0.06), transparent 70%), var(--canvas)',
+          background: 'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(232, 114, 92, 0.15), transparent 60%), radial-gradient(ellipse 1200px 800px at 50% 60%, rgba(232, 114, 92, 0.06), transparent 70%), var(--canvas)',
           position: 'relative',
           textAlign: 'center',
           padding: '0 24px',
@@ -180,8 +182,8 @@ export function HomeContent({ latestLog }: HomeContentProps) {
               fontSize: '12px',
               fontWeight: 600,
               color: 'var(--accent)',
-              background: 'rgba(155, 114, 207, 0.08)',
-              border: '1px solid rgba(155, 114, 207, 0.2)',
+              background: 'rgba(232, 114, 92, 0.08)',
+              border: '1px solid rgba(232, 114, 92, 0.2)',
               borderRadius: 999,
               marginBottom: 20,
               letterSpacing: '0.04em',
@@ -461,10 +463,10 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: '56px 1fr auto',
-                    gap: 20,
+                    gridTemplateColumns: isMobile ? '1fr' : '56px 1fr auto',
+                    gap: isMobile ? 12 : 20,
                     alignItems: 'start',
-                    padding: '24px',
+                    padding: isMobile ? '16px' : '24px',
                     background: 'var(--canvas)',
                     border: '1px solid var(--border)',
                     borderRadius: i === 0 ? '6px 6px 0 0' : i === tiers.length - 1 ? '0 0 6px 6px' : 0,
@@ -648,11 +650,11 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         <div
           style={{
             padding: '40px 32px',
-            background: 'linear-gradient(135deg, rgba(155, 114, 207, 0.04), transparent), var(--canvas-subtle)',
+            background: 'linear-gradient(135deg, rgba(232, 114, 92, 0.04), transparent), var(--canvas-subtle)',
             border: '1px solid var(--border)',
             borderRadius: 8,
             textAlign: 'center',
-            boxShadow: '0 8px 32px rgba(155, 114, 207, 0.08)',
+            boxShadow: '0 8px 32px rgba(232, 114, 92, 0.08)',
           }}
         >
           <h2
