@@ -1,7 +1,7 @@
 'use client'
 
 import { motion, type Variants } from 'framer-motion'
-import type { CSSProperties, ReactNode } from 'react'
+import { type CSSProperties, type ReactNode, useEffect, useState } from 'react'
 
 const presets: Record<string, Variants> = {
   fadeUp: {
@@ -45,9 +45,15 @@ export function MotionReveal({
   style,
   className,
 }: MotionRevealProps) {
+  const [hydrated, setHydrated] = useState(false)
+
+  useEffect(() => {
+    setHydrated(true)
+  }, [])
+
   return (
     <motion.div
-      initial="hidden"
+      initial={hydrated ? 'hidden' : false}
       whileInView="visible"
       viewport={{ once, amount: 0.1 }}
       variants={presets[variant]}

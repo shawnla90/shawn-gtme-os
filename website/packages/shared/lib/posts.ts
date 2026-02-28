@@ -10,6 +10,7 @@ export interface Post {
   content: string
   readingTime: number
   category?: string
+  featured?: boolean
 }
 
 /**
@@ -57,6 +58,7 @@ export function getPostBySlug(slug: string, contentDir: string): Post {
     content,
     readingTime: calcReadingTime(content),
     category: (data.category as string) ?? undefined,
+    featured: (data.featured as boolean) ?? undefined,
   }
 }
 

@@ -30,6 +30,8 @@ qualified_leads_to_process.json
 data/daily-log/briefings/
 screenshots/
 content/internal/
+content/video/all/*.mp4
+content/video/all/*.png
 .internal/
 *.csv
 node_modules/
