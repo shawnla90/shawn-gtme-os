@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import Script from 'next/script'
 import {
@@ -223,11 +224,20 @@ function Accordion({
 
 /* ── main template ───────────────────────────────── */
 
-export function LandingPageTemplate({ data }: { data: PageData }) {
+export function LandingPageTemplate({ data, depersonalized = false }: { data: PageData; depersonalized?: boolean }) {
   const T = buildTheme(data.theme)
   const slug = data.slug
   const posthogKey = process.env.NEXT_PUBLIC_POSTHOG_KEY
   const posthogHost = process.env.NEXT_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
+
+  // Resolve active contact from ?c= query param (ignored when depersonalized)
+  const searchParams = useSearchParams()
+  const contactParam = depersonalized ? null : searchParams.get('c')
+  const activeContact = contactParam && data.contacts?.length
+    ? data.contacts.find((c) => c.id === contactParam) ?? null
+    : null
+  const contactName = depersonalized ? '' : (activeContact?.name || data.contactName)
+  const contactRole = depersonalized ? '' : (activeContact?.role || data.contactRole)
 
   const scopedCSS = `
     .abm-page-${slug} * {
@@ -276,7 +286,7 @@ export function LandingPageTemplate({ data }: { data: PageData }) {
 
   const calUrl = `https://cal.com/shawn-lead-alchemy/30min?overlayCalendar=true`
   const packagesUrl = `https://shawnos.ai/build#packages`
-  const firstName = data.contactName.split(' ')[0]
+  const firstName = contactName.split(' ')[0]
 
   return (
     <div className={`abm-page-${slug}`} style={{ fontFamily: T.font }}>
@@ -297,7 +307,9 @@ export function LandingPageTemplate({ data }: { data: PageData }) {
               posthog.capture('abm_page_viewed', {
                 company_slug: '${data.slug}',
                 company_name: '${data.company}',
-                contact_name: '${data.contactName}',
+                ${depersonalized ? '' : `contact_name: '${contactName}',`}
+                ${depersonalized ? '' : `contact_id: '${contactParam || 'default'}',`}
+                depersonalized: ${depersonalized},
               });
             `,
           }}
@@ -337,7 +349,7 @@ export function LandingPageTemplate({ data }: { data: PageData }) {
             }}
           >
             <span style={{ width: 6, height: 6, borderRadius: '50%', background: T.color }} />
-            Custom Proposal
+            {depersonalized ? 'Company Brief' : 'Custom Proposal'}
           </div>
         </MotionReveal>
 
@@ -380,7 +392,7 @@ export function LandingPageTemplate({ data }: { data: PageData }) {
               margin: '0 auto 48px',
             }}
           >
-            {firstName}, here&apos;s what we&apos;d build.
+            {firstName ? `${firstName}, here's what we'd build.` : "Here's what we'd build."}
           </p>
         </MotionReveal>
 

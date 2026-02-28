@@ -66,30 +66,54 @@ export interface PageData {
   generatedAt: string
 }
 
+/* -- result types ------------------------------------------- */
+
+export interface PageResult {
+  pageData: PageData
+  depersonalized: boolean
+  deprecated: boolean
+}
+
+export interface PageListItem {
+  pageData: PageData
+  depersonalized: boolean
+  deprecated: boolean
+}
+
 /* -- helpers ------------------------------------------------ */
 
 export async function getAllSlugs(): Promise<string[]> {
   const { data, error } = await supabase
     .from('landing_pages')
     .select('slug')
+    .eq('deprecated', false)
   if (error || !data) return []
   return data.map((row) => row.slug)
 }
 
-export async function getPageData(slug: string): Promise<PageData | null> {
+export async function getPageData(slug: string): Promise<PageResult | null> {
   const { data, error } = await supabase
     .from('landing_pages')
-    .select('page_data')
+    .select('page_data, depersonalized, deprecated')
     .eq('slug', slug)
     .single()
   if (error || !data) return null
-  return data.page_data as PageData
+  return {
+    pageData: data.page_data as PageData,
+    depersonalized: data.depersonalized ?? false,
+    deprecated: data.deprecated ?? false,
+  }
 }
 
-export async function getAllPages(): Promise<PageData[]> {
+export async function getAllPages(): Promise<PageListItem[]> {
   const { data, error } = await supabase
     .from('landing_pages')
-    .select('page_data')
+    .select('page_data, depersonalized, deprecated')
+    .eq('deprecated', false)
   if (error || !data) return []
-  return data.map((row) => row.page_data as PageData)
+  return data.map((row) => ({
+    pageData: row.page_data as PageData,
+    depersonalized: row.depersonalized ?? false,
+    deprecated: row.deprecated ?? false,
+  }))
 }

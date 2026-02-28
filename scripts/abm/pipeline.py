@@ -58,7 +58,7 @@ def check_keys(step):
 
 def main():
     parser = argparse.ArgumentParser(description='ABM Pipeline - Find, Research, Generate')
-    parser.add_argument('--step', choices=['research', 'prospect', 'generate', 'sync', 'all'],
+    parser.add_argument('--step', choices=['research', 'prospect', 'generate', 'sync', 'depersonalize', 'all'],
                         default='all', help='Pipeline step to run')
     parser.add_argument('--limit', type=int, default=100,
                         help='Max number of companies to process')
@@ -100,6 +100,10 @@ def main():
     if step in ('sync', 'all'):
         import sync_attio
         sync_attio.run(limit=limit)
+
+    if step in ('depersonalize', 'all'):
+        import depersonalize
+        depersonalize.run()
 
     elapsed = time.time() - start
     minutes = int(elapsed // 60)

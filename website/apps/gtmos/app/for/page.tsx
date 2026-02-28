@@ -153,9 +153,10 @@ const navLink: React.CSSProperties = {
 /* ── page ────────────────────────────────────────────── */
 
 export default async function ForDirectoryPage() {
-  const allPages = await getAllPages()
-  const pages = allPages
+  const allItems = await getAllPages()
+  const pages = allItems
     .filter(Boolean)
+    .map((item) => item.pageData)
     .sort((a, b) => a.company.localeCompare(b.company))
 
   return (
