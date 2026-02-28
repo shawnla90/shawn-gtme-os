@@ -1,0 +1,19 @@
+{
+  "name": "@hypernovum/core",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "three": "^0.170.0",
+    "zustand": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "devDependencies": {
+    "@types/three": "^0.170.0",
+    "typescript": "^5"
+  }
+}

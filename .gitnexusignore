@@ -1,0 +1,9 @@
+ShawnOSCommandCenter/
+node_modules/
+.next/
+dist/
+.git/
+data/
+content/
+.obsidian/
+.claude/
