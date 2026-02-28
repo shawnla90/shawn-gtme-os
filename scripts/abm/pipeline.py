@@ -50,6 +50,12 @@ def check_keys(step):
         if not os.environ.get('ATTIO_API_TOKEN'):
             missing.append('ATTIO_API_TOKEN')
 
+    # Outreach requires SMTP creds (NOT included in 'all')
+    if step == 'outreach':
+        for key in ('SMTP_HOST', 'SMTP_USER', 'SMTP_PASS'):
+            if not os.environ.get(key):
+                missing.append(key)
+
     if missing:
         print(f"[!] Missing API keys: {', '.join(missing)}")
         print("    Export them or add to .env before running.")
@@ -58,10 +64,12 @@ def check_keys(step):
 
 def main():
     parser = argparse.ArgumentParser(description='ABM Pipeline - Find, Research, Generate')
-    parser.add_argument('--step', choices=['research', 'prospect', 'generate', 'sync', 'depersonalize', 'all'],
-                        default='all', help='Pipeline step to run')
+    parser.add_argument('--step', choices=['research', 'prospect', 'generate', 'sync', 'depersonalize', 'outreach', 'all'],
+                        default='all', help='Pipeline step to run (outreach must be called explicitly)')
     parser.add_argument('--limit', type=int, default=100,
                         help='Max number of companies to process')
+    parser.add_argument('--dry-run', action='store_true',
+                        help='Preview without making changes (outreach step)')
     parser.add_argument('--resume', action='store_true', default=True,
                         help='Resume from where we left off (default: true)')
     parser.add_argument('--no-resume', action='store_true',
@@ -104,6 +112,11 @@ def main():
     if step in ('depersonalize', 'all'):
         import depersonalize
         depersonalize.run()
+
+    # Outreach is NEVER included in 'all' - must be explicitly called
+    if step == 'outreach':
+        import outreach
+        outreach.run(limit=limit, dry_run=args.dry_run)
 
     elapsed = time.time() - start
     minutes = int(elapsed // 60)

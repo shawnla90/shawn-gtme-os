@@ -94,6 +94,37 @@ def upsert_company(token, account, dry_run=False):
     return None
 
 
+def link_person_to_company(token, person_record_id, company_record_id, dry_run=False):
+    """Link a person record to a company record in Attio via record associations."""
+    if dry_run:
+        print(f"    [DRY RUN] Would link person {person_record_id} -> company {company_record_id}")
+        return True
+
+    url = f'{ATTIO_BASE}/objects/people/records/{person_record_id}/attributes/company/values'
+    payload = {'data': [{'target_record_id': company_record_id}]}
+
+    for attempt in range(3):
+        try:
+            resp = requests.patch(url, json=payload, headers=attio_headers(token), timeout=30)
+
+            if resp.status_code == 429:
+                wait = min(2 ** (attempt + 1), 30)
+                print(f"    Rate limited on link. Waiting {wait}s...")
+                time.sleep(wait)
+                continue
+
+            resp.raise_for_status()
+            return True
+
+        except requests.exceptions.RequestException as e:
+            print(f"    [!] Attio person-company link failed (attempt {attempt+1}): {e}")
+            if hasattr(e, 'response') and e.response is not None:
+                print(f"        Response: {e.response.text[:300]}")
+            time.sleep(2 ** attempt)
+
+    return False
+
+
 def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry_run=False):
     """Upsert a person in Attio using email as matching attribute."""
     values = {}
@@ -158,7 +189,15 @@ def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry
 
             resp.raise_for_status()
             data = resp.json().get('data', {})
-            return data.get('id', {})
+            person_id = data.get('id', {})
+
+            # Link person to company if both IDs are available
+            if person_id and company_record_id:
+                person_record_id = person_id.get('record_id') if isinstance(person_id, dict) else None
+                if person_record_id:
+                    link_person_to_company(token, person_record_id, company_record_id, dry_run=dry_run)
+
+            return person_id
 
         except requests.exceptions.RequestException as e:
             print(f"    [!] Attio person upsert failed (attempt {attempt+1}): {e}")
@@ -169,6 +208,76 @@ def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry
     return None
 
 
+def add_company_note(token, company_record_id, title, body, dry_run=False):
+    """Add a note to a company record in Attio."""
+    if dry_run:
+        print(f"    [DRY RUN] Would add note: {title}")
+        return True
+
+    payload = {
+        'data': {
+            'title': title,
+            'content': [{'type': 'paragraph', 'children': [{'text': body}]}],
+            'parent_object': 'companies',
+            'parent_record_id': company_record_id,
+        }
+    }
+
+    try:
+        resp = requests.post(
+            f'{ATTIO_BASE}/notes',
+            json=payload,
+            headers=attio_headers(token),
+            timeout=30,
+        )
+        resp.raise_for_status()
+        return True
+    except requests.exceptions.RequestException as e:
+        print(f"    [!] Note creation failed: {e}")
+        return False
+
+
+def sync_engagement(token, sb, account, company_record_id, dry_run=False):
+    """Push outreach engagement data to Attio for a single account."""
+    outreach_status = account.get('outreach_status', 'new')
+    if outreach_status == 'new':
+        return  # Nothing to sync
+
+    # Get latest email sends for this account
+    sends_result = sb.table('email_sends').select(
+        'status, sent_at, replied_at, to_email'
+    ).eq('account_id', account['id']).order('created_at', desc=True).limit(5).execute()
+
+    sends = sends_result.data or []
+    if not sends:
+        return
+
+    # Build a summary for Attio
+    sent_count = sum(1 for s in sends if s['status'] in ('sent', 'replied'))
+    replied = [s for s in sends if s['status'] == 'replied']
+    opted_out = any(s['status'] == 'opted_out' for s in sends)
+
+    status_label = f"Outreach: {outreach_status}"
+    if sent_count:
+        status_label += f" ({sent_count} sent"
+        if replied:
+            status_label += f", {len(replied)} replied"
+        status_label += ")"
+
+    # Add note for new replies (only if replied and we haven't noted it before)
+    if replied and not dry_run:
+        # Check if we already created a reply note (avoid duplicates)
+        for r in replied:
+            note_title = f"Reply received from {r['to_email']}"
+            note_body = f"Reply detected at {r['replied_at']}. Account status: {outreach_status}."
+            if opted_out:
+                note_body += " Contact has opted out of future emails."
+            add_company_note(token, company_record_id, note_title, note_body, dry_run=dry_run)
+
+    if dry_run:
+        print(f"    [DRY RUN] Engagement: {status_label}")
+
+
 def run(limit=100, dry_run=False):
     """Sync accounts and contacts to Attio (reads from Supabase)."""
     print(f"\n[Attio Sync] {'DRY RUN - ' if dry_run else ''}Syncing up to {limit} accounts\n")
@@ -176,8 +285,8 @@ def run(limit=100, dry_run=False):
     token = get_token()
     sb = get_supabase()
 
-    # Get accounts from Supabase
-    result = sb.table('accounts').select('id, name, domain, exa_research').not_.is_('domain', 'null').order('id').limit(limit).execute()
+    # Get accounts from Supabase (include outreach_status for engagement sync)
+    result = sb.table('accounts').select('id, name, domain, exa_research, outreach_status').not_.is_('domain', 'null').order('id').limit(limit).execute()
     accounts = result.data or []
 
     print(f"  Found {len(accounts)} accounts to sync\n")
@@ -223,6 +332,10 @@ def run(limit=100, dry_run=False):
             if person_id:
                 synced_contacts += 1
                 print(f"    + {contact.get('first_name', '')} {contact.get('last_name', '')} - {contact.get('title', '')}")
+
+        # Sync engagement data (outreach status, reply notes)
+        if company_record_id:
+            sync_engagement(token, sb, account, company_record_id, dry_run=dry_run)
 
         time.sleep(0.5)  # Be nice to Attio
 

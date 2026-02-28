@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.shawnos.check-replies</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/usr/bin/python3</string>
+        <string>/Users/shawnos.ai/shawn-gtme-os/scripts/abm/check_replies.py</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/shawnos.ai/shawn-gtme-os</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>StartInterval</key>
+    <integer>1800</integer>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+        <key>HOME</key>
+        <string>/Users/shawnos.ai</string>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/shawnos.ai/Library/Logs/check-replies.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/shawnos.ai/Library/Logs/check-replies.log</string>
+</dict>
+</plist>
