@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """Apollo contact prospecting module - finds 3 contacts per company."""
 
-import json
 import os
-import sqlite3
 import time
 import requests
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'crm.db')
+from db_supabase import get_supabase
+
 APOLLO_BASE_URL = 'https://api.apollo.io/api/v1'
 
 # Target titles for prospecting
@@ -24,10 +23,6 @@ TARGET_TITLES = [
 
 TARGET_SENIORITY = ["vp", "director", "manager"]
 CONTACTS_PER_COMPANY = 3
-
-
-def get_db():
-    return sqlite3.connect(os.path.abspath(DB_PATH))
 
 
 def apollo_search(domain, page=1):
@@ -74,15 +69,13 @@ def apollo_search(domain, page=1):
     return None
 
 
-def contacts_for_account(conn, account_id):
+def contacts_for_account(sb, account_id):
     """Count existing contacts for an account."""
-    cur = conn.execute(
-        "SELECT COUNT(*) FROM contacts WHERE account_id = ?", (account_id,)
-    )
-    return cur.fetchone()[0]
+    result = sb.table('contacts').select('id', count='exact').eq('account_id', account_id).execute()
+    return result.count or 0
 
 
-def save_contact(conn, account_id, person, domain=None):
+def save_contact(sb, account_id, person):
     """Save a contact from Apollo response."""
     apollo_id = person.get('id', '')
     first_name = person.get('first_name', '')
@@ -91,45 +84,25 @@ def save_contact(conn, account_id, person, domain=None):
     title = person.get('title', '')
     linkedin_url = person.get('linkedin_url', '')
 
-    # Check if already exists
-    existing = conn.execute(
-        "SELECT id FROM contacts WHERE account_id = ? AND (apollo_id = ? OR (first_name = ? AND last_name = ?))",
-        (account_id, apollo_id, first_name, last_name),
-    ).fetchone()
+    # Check if already exists by apollo_id or name
+    existing = sb.table('contacts').select('id').eq('account_id', account_id).or_(
+        f"apollo_id.eq.{apollo_id},and(first_name.eq.{first_name},last_name.eq.{last_name})"
+    ).execute()
 
-    if existing:
+    if existing.data:
         return False
 
-    conn.execute(
-        """INSERT INTO contacts
-           (account_id, first_name, last_name, email, title, linkedin_url, apollo_id, source, is_primary, created_at, updated_at)
-           VALUES (?, ?, ?, ?, ?, ?, ?, 'apollo', 0, datetime('now'), datetime('now'))""",
-        (account_id, first_name, last_name, email, title, linkedin_url, apollo_id),
-    )
-
-    conn.commit()
-
-    # Dual-write to Supabase
-    if domain:
-        try:
-            from db_supabase import get_supabase
-            sb = get_supabase()
-            # Look up Supabase account by domain
-            acct = sb.table('accounts').select('id').eq('domain', domain).single().execute()
-            if acct.data:
-                sb.table('contacts').insert({
-                    'account_id': acct.data['id'],
-                    'first_name': first_name,
-                    'last_name': last_name,
-                    'email': email,
-                    'title': title,
-                    'linkedin_url': linkedin_url,
-                    'apollo_id': apollo_id,
-                    'source': 'apollo',
-                    'is_primary': False,
-                }).execute()
-        except Exception as e:
-            print(f"    [supabase] Warning: {e}")
+    sb.table('contacts').insert({
+        'account_id': account_id,
+        'first_name': first_name,
+        'last_name': last_name,
+        'email': email,
+        'title': title,
+        'linkedin_url': linkedin_url,
+        'apollo_id': apollo_id,
+        'source': 'apollo',
+        'is_primary': False,
+    }).execute()
 
     return True
 
@@ -138,15 +111,11 @@ def run(limit=100, resume=True):
     """Main entry point for prospect step."""
     print(f"\n[Step 2] Contact Prospecting via Apollo (limit={limit})")
 
-    conn = get_db()
+    sb = get_supabase()
 
     # Get accounts that need contacts
-    accounts = conn.execute(
-        """SELECT id, name, domain FROM accounts
-           WHERE domain IS NOT NULL AND domain != ''
-           ORDER BY id LIMIT ?""",
-        (limit,),
-    ).fetchall()
+    result = sb.table('accounts').select('id, name, domain').not_.is_('domain', 'null').order('id').limit(limit).execute()
+    accounts = result.data or []
 
     if not accounts:
         print("  No accounts found. Run research step first.")
@@ -155,8 +124,12 @@ def run(limit=100, resume=True):
     print(f"  Found {len(accounts)} accounts to prospect\n")
 
     total_contacts = 0
-    for i, (account_id, name, domain) in enumerate(accounts):
-        existing = contacts_for_account(conn, account_id)
+    for i, account in enumerate(accounts):
+        account_id = account['id']
+        name = account['name']
+        domain = account['domain']
+
+        existing = contacts_for_account(sb, account_id)
         if resume and existing >= CONTACTS_PER_COMPANY:
             print(f"  [{i+1}/{len(accounts)}] {name} - already has {existing} contacts, skipping")
             continue
@@ -174,24 +147,23 @@ def run(limit=100, resume=True):
         for person in result.get('people', []):
             if added >= needed:
                 break
-            if save_contact(conn, account_id, person, domain=domain):
+            if save_contact(sb, account_id, person):
                 added += 1
                 print(f"    + {person.get('first_name', '')} {person.get('last_name', '')} - {person.get('title', '')}")
 
-        # Mark first contact as primary
+        # Mark first contact as primary if it's the first batch
         if added > 0 and existing == 0:
-            first_contact = conn.execute(
-                "SELECT id FROM contacts WHERE account_id = ? ORDER BY id LIMIT 1",
-                (account_id,),
-            ).fetchone()
-            if first_contact:
-                conn.execute("UPDATE contacts SET is_primary = 1 WHERE id = ?", (first_contact[0],))
-                conn.commit()
+            first_contact = sb.table('contacts').select('id').eq(
+                'account_id', account_id
+            ).order('id').limit(1).execute()
+            if first_contact.data:
+                sb.table('contacts').update({'is_primary': True}).eq(
+                    'id', first_contact.data[0]['id']
+                ).execute()
 
         total_contacts += added
         time.sleep(1)  # Rate limit between companies
 
-    conn.close()
     print(f"\n  Prospecting complete. {total_contacts} contacts added.")
     return total_contacts
 

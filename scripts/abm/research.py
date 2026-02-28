@@ -3,11 +3,10 @@
 
 import json
 import os
-import sqlite3
 import time
 from exa_py import Exa
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'crm.db')
+from db_supabase import get_supabase
 
 # ICP search queries - rotate through these for variety
 SEARCH_QUERIES = [
@@ -49,14 +48,10 @@ def get_exa():
     return Exa(api_key=key)
 
 
-def get_db():
-    return sqlite3.connect(os.path.abspath(DB_PATH))
-
-
-def already_researched(conn):
+def already_researched(sb):
     """Return set of domains that already have exa_research."""
-    cur = conn.execute("SELECT domain FROM accounts WHERE exa_research IS NOT NULL AND exa_research != ''")
-    return {row[0] for row in cur.fetchall()}
+    result = sb.table('accounts').select('domain').not_.is_('exa_research', 'null').execute()
+    return {row['domain'] for row in (result.data or [])}
 
 
 def is_junk(title, domain):
@@ -176,42 +171,15 @@ def research_company(exa, company):
     return research
 
 
-def save_account(conn, company, research):
-    """Upsert account into CRM."""
-    # Check if account exists by domain
-    existing = conn.execute(
-        "SELECT id FROM accounts WHERE domain = ?", (company['domain'],)
-    ).fetchone()
-
-    research_json = json.dumps(research, ensure_ascii=False)
-
-    if existing:
-        conn.execute(
-            "UPDATE accounts SET exa_research = ?, name = ? WHERE id = ?",
-            (research_json, company['title'], existing[0]),
-        )
-    else:
-        conn.execute(
-            """INSERT INTO accounts (name, domain, source, stage, exa_research, created_at, updated_at)
-               VALUES (?, ?, 'exa_research', 'prospect', ?, datetime('now'), datetime('now'))""",
-            (company['title'], company['domain'], research_json),
-        )
-
-    conn.commit()
-
-    # Dual-write to Supabase
-    try:
-        from db_supabase import get_supabase
-        sb = get_supabase()
-        sb.table('accounts').upsert({
-            'name': company['title'],
-            'domain': company['domain'],
-            'source': 'exa_research',
-            'stage': 'prospect',
-            'exa_research': research,
-        }, on_conflict='domain').execute()
-    except Exception as e:
-        print(f"    [supabase] Warning: {e}")
+def save_account(sb, company, research):
+    """Upsert account into Supabase."""
+    sb.table('accounts').upsert({
+        'name': company['title'],
+        'domain': company['domain'],
+        'source': 'exa_research',
+        'stage': 'prospect',
+        'exa_research': research,
+    }, on_conflict='domain').execute()
 
 
 def run(limit=100, resume=True):
@@ -219,10 +187,10 @@ def run(limit=100, resume=True):
     print(f"\n[Step 1] Company Research via Exa (limit={limit})")
 
     exa = get_exa()
-    conn = get_db()
+    sb = get_supabase()
 
     # Check what's already done
-    done_domains = already_researched(conn) if resume else set()
+    done_domains = already_researched(sb) if resume else set()
     if done_domains:
         print(f"  Resuming - {len(done_domains)} accounts already researched")
 
@@ -238,10 +206,9 @@ def run(limit=100, resume=True):
     for i, company in enumerate(companies):
         print(f"  [{i+1}/{len(companies)}] Researching {company['title']} ({company['domain']})")
         research = research_company(exa, company)
-        save_account(conn, company, research)
+        save_account(sb, company, research)
         print(f"    Saved. {len(research['deep_research'])} research entries.")
 
-    conn.close()
     print(f"\n  Research complete. {len(companies)} accounts processed.")
     return len(companies)
 

@@ -4,12 +4,10 @@
 import json
 import os
 import re
-import sqlite3
 import time
 import requests
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'crm.db')
-PAGES_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'abm', 'pages')
+from db_supabase import get_supabase
 
 # Voice rules injected into Grok prompts
 VOICE_RULES = """
@@ -62,10 +60,6 @@ Requirements:
 - 5 stack items (based on their likely tech stack)
 - Theme color should match their brand. Look at their website for brand color.
 """
-
-
-def get_db():
-    return sqlite3.connect(os.path.abspath(DB_PATH))
 
 
 def grok_call(system_prompt, user_prompt, temperature=0.7):
@@ -201,78 +195,62 @@ def slugify(name):
     return slug
 
 
-def page_exists(slug):
-    """Check if a page JSON already exists."""
-    return os.path.exists(os.path.join(PAGES_DIR, f'{slug}.json'))
-
-
-def save_page(slug, page_data):
-    """Save PageData JSON to disk."""
-    os.makedirs(PAGES_DIR, exist_ok=True)
-    filepath = os.path.join(PAGES_DIR, f'{slug}.json')
-    with open(filepath, 'w') as f:
-        json.dump(page_data, f, indent=2, ensure_ascii=False)
-    return filepath
+def page_exists(sb, slug):
+    """Check if a landing page already exists in Supabase."""
+    result = sb.table('landing_pages').select('id').eq('slug', slug).execute()
+    return bool(result.data)
 
 
 def run(limit=100, resume=True):
     """Main entry point for generate step."""
     print(f"\n[Step 3] Page Generation via Exa + Grok (limit={limit})")
 
-    conn = get_db()
+    sb = get_supabase()
 
     # Get accounts with contacts
-    accounts = conn.execute(
-        """SELECT a.id, a.name, a.domain, a.exa_research
-           FROM accounts a
-           WHERE EXISTS (SELECT 1 FROM contacts c WHERE c.account_id = a.id)
-           ORDER BY a.id LIMIT ?""",
-        (limit,),
-    ).fetchall()
+    accounts_result = sb.table('accounts').select('id, name, domain, exa_research').order('id').limit(limit).execute()
+    accounts = accounts_result.data or []
 
-    if not accounts:
+    # Filter to accounts that have contacts
+    accounts_with_contacts = []
+    for account in accounts:
+        count_result = sb.table('contacts').select('id', count='exact').eq('account_id', account['id']).execute()
+        if count_result.count and count_result.count > 0:
+            accounts_with_contacts.append(account)
+
+    if not accounts_with_contacts:
         print("  No accounts with contacts. Run research + prospect steps first.")
         return 0
 
-    print(f"  Found {len(accounts)} accounts with contacts\n")
+    print(f"  Found {len(accounts_with_contacts)} accounts with contacts\n")
 
     generated = 0
-    for i, (account_id, name, domain, exa_research) in enumerate(accounts):
+    for i, account in enumerate(accounts_with_contacts):
+        account_id = account['id']
+        name = account['name']
+        domain = account['domain']
+        exa_research = account.get('exa_research')
         slug = slugify(name)
 
-        if resume and page_exists(slug):
-            print(f"  [{i+1}/{len(accounts)}] {name} - page exists, skipping")
+        if resume and page_exists(sb, slug):
+            print(f"  [{i+1}/{len(accounts_with_contacts)}] {name} - page exists, skipping")
             continue
 
-        print(f"  [{i+1}/{len(accounts)}] {name} ({domain})")
+        print(f"  [{i+1}/{len(accounts_with_contacts)}] {name} ({domain})")
 
         # Get primary contact
-        contact_row = conn.execute(
-            """SELECT id, first_name, last_name, email, title, linkedin_url
-               FROM contacts WHERE account_id = ? ORDER BY is_primary DESC, id LIMIT 1""",
-            (account_id,),
-        ).fetchone()
+        contact_result = sb.table('contacts').select(
+            'id, first_name, last_name, email, title, linkedin_url'
+        ).eq('account_id', account_id).order('is_primary', desc=True).order('id').limit(1).execute()
 
-        if not contact_row:
+        if not contact_result.data:
             print(f"    [!] No contacts found, skipping")
             continue
 
-        contact = {
-            'id': contact_row[0],
-            'first_name': contact_row[1],
-            'last_name': contact_row[2],
-            'email': contact_row[3],
-            'title': contact_row[4],
-            'linkedin_url': contact_row[5],
-        }
+        contact = contact_result.data[0]
 
-        # Parse existing research
-        research_data = {}
-        if exa_research:
-            try:
-                research_data = json.loads(exa_research)
-            except json.JSONDecodeError:
-                pass
+        # Parse existing research (already a dict from JSONB)
+        research_data = exa_research if isinstance(exa_research, dict) else {}
 
         # Exa deep dive
         print(f"    Deep researching...")
@@ -284,22 +262,8 @@ def run(limit=100, resume=True):
         research_context = json.dumps(research_data)[:1000] if research_data else name
         vibe = generate_contact_vibe(contact, research_context)
 
-        # Save vibe to contacts table
-        conn.execute("UPDATE contacts SET vibe = ? WHERE id = ?", (vibe, contact['id']))
-        conn.commit()
-
-        # Dual-write vibe to Supabase
-        try:
-            from db_supabase import get_supabase
-            sb = get_supabase()
-            acct = sb.table('accounts').select('id').eq('domain', domain).single().execute()
-            if acct.data:
-                sb.table('contacts').update({'vibe': vibe}).eq(
-                    'account_id', acct.data['id']
-                ).eq('first_name', contact['first_name']).execute()
-        except Exception as e:
-            print(f"    [supabase] vibe warning: {e}")
-
+        # Save vibe to Supabase
+        sb.table('contacts').update({'vibe': vibe}).eq('id', contact['id']).execute()
         time.sleep(1)
 
         # Generate page copy
@@ -314,17 +278,15 @@ def run(limit=100, resume=True):
             continue
 
         # Build contacts array from all contacts for this account
-        all_contacts_rows = conn.execute(
-            """SELECT first_name, last_name, title
-               FROM contacts WHERE account_id = ?
-               ORDER BY is_primary DESC, id""",
-            (account_id,),
-        ).fetchall()
+        all_contacts_result = sb.table('contacts').select(
+            'first_name, last_name, title'
+        ).eq('account_id', account_id).order('is_primary', desc=True).order('id').execute()
+
         contacts_array = []
         seen_ids = set()
-        for cr in all_contacts_rows:
-            fname = (cr[0] or '').strip()
-            lname = (cr[1] or '').strip()
+        for cr in (all_contacts_result.data or []):
+            fname = (cr.get('first_name') or '').strip()
+            lname = (cr.get('last_name') or '').strip()
             full = f"{fname} {lname}".strip() if lname else fname
             cid = re.sub(r'[^a-z0-9]', '', fname.lower())
             if cid in seen_ids or not cid:
@@ -332,7 +294,7 @@ def run(limit=100, resume=True):
             if cid in seen_ids or not cid:
                 continue
             seen_ids.add(cid)
-            contacts_array.append({'id': cid, 'name': full, 'role': cr[2] or ''})
+            contacts_array.append({'id': cid, 'name': full, 'role': cr.get('title') or ''})
 
         # Assemble full PageData
         page_data = {
@@ -358,49 +320,21 @@ def run(limit=100, resume=True):
             'generatedAt': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
         }
 
-        filepath = save_page(slug, page_data)
-        print(f"    Saved: {filepath}")
-
-        # Update landing_pages table
-        existing_lp = conn.execute(
-            "SELECT id FROM landing_pages WHERE account_id = ? AND slug = ?",
-            (account_id, slug),
-        ).fetchone()
-
         page_url = f"https://thegtmos.ai/for/{slug}"
-        if existing_lp:
-            conn.execute(
-                "UPDATE landing_pages SET page_data = ?, url = ?, status = 'draft', updated_at = datetime('now') WHERE id = ?",
-                (json.dumps(page_data), page_url, existing_lp[0]),
-            )
-        else:
-            conn.execute(
-                """INSERT INTO landing_pages
-                   (account_id, contact_id, slug, url, page_data, template, status, views, created_at, updated_at)
-                   VALUES (?, ?, ?, ?, ?, 'abm-v1', 'draft', 0, datetime('now'), datetime('now'))""",
-                (account_id, contact['id'], slug, page_url, json.dumps(page_data)),
-            )
 
-        conn.commit()
+        # Upsert to Supabase (primary store - goes live immediately via ISR)
+        sb.table('landing_pages').upsert({
+            'slug': slug,
+            'url': page_url,
+            'page_data': page_data,
+            'template': 'abm-v1',
+            'status': 'draft',
+        }, on_conflict='slug').execute()
 
-        # Dual-write landing page to Supabase
-        try:
-            from db_supabase import get_supabase
-            sb = get_supabase()
-            sb.table('landing_pages').upsert({
-                'slug': slug,
-                'url': page_url,
-                'page_data': page_data,
-                'template': 'abm-v1',
-                'status': 'draft',
-            }, on_conflict='slug').execute()
-            print(f"    [supabase] Synced to Supabase - live at {page_url}")
-        except Exception as e:
-            print(f"    [supabase] Warning: {e}")
+        print(f"    Live at {page_url}")
         generated += 1
         time.sleep(1)
 
-    conn.close()
     print(f"\n  Generation complete. {generated} pages created.")
     return generated
 
