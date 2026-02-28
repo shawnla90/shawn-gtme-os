@@ -33,12 +33,12 @@ export default function BuildingDetailPanel({ project, onClose }: BuildingDetail
   const statusColor = STATUS_COLORS[project.status] ?? '#22c55e'
 
   return (
-    <div className="absolute bottom-0 right-0 w-80 max-h-[60vh] bg-black/95 border-l border-t border-green-800/50 overflow-y-auto backdrop-blur-sm font-mono">
+    <div className="absolute bottom-0 right-0 w-80 max-h-[60vh] glass rounded-tl-lg overflow-y-auto font-mono custom-scrollbar">
       {/* Header */}
-      <div className="sticky top-0 bg-black/95 border-b border-green-800/30 px-4 py-3 flex items-center justify-between">
+      <div className="sticky top-0 bg-black/95 backdrop-blur-md border-b border-gray-800/40 px-4 py-3 flex items-center justify-between">
         <div>
           <h3 className="text-green-300 text-sm font-bold">{project.name}</h3>
-          <span className="text-[10px] text-green-700 uppercase">
+          <span className="section-label text-gray-600">
             {TYPE_LABELS[project.type] ?? project.type}
           </span>
         </div>
@@ -52,42 +52,44 @@ export default function BuildingDetailPanel({ project, onClose }: BuildingDetail
 
       {/* Details */}
       <div className="p-4 space-y-3 text-xs">
-        {/* Status + Height */}
+        {/* Status + Intensity */}
         <div className="grid grid-cols-2 gap-2">
           <div>
-            <span className="text-gray-600 block mb-1">Status</span>
+            <span className="text-gray-600 block mb-1.5 text-[10px] uppercase tracking-wider">Status</span>
             <span
               className="inline-block px-2 py-0.5 rounded text-[10px] font-bold"
               style={{
-                backgroundColor: `${statusColor}15`,
+                backgroundColor: `${statusColor}12`,
                 color: statusColor,
-                border: `1px solid ${statusColor}30`,
+                border: `1px solid ${statusColor}25`,
+                boxShadow: `0 0 8px ${statusColor}10`,
               }}
             >
               {project.status.toUpperCase()}
             </span>
           </div>
           <div>
-            <span className="text-gray-600 block mb-1">Intensity</span>
+            <span className="text-gray-600 block mb-1.5 text-[10px] uppercase tracking-wider">Intensity</span>
             <div className="flex items-center gap-2">
-              <div className="flex-1 h-1.5 bg-gray-800 rounded overflow-hidden">
+              <div className="flex-1 h-1.5 bg-gray-900 rounded-full overflow-hidden">
                 <div
-                  className="h-full rounded"
+                  className="h-full rounded-full transition-all duration-500"
                   style={{
                     width: `${Math.round(project.heightFactor * 100)}%`,
                     backgroundColor: statusColor,
+                    boxShadow: `0 0 6px ${statusColor}40`,
                   }}
                 />
               </div>
-              <span className="text-green-400">{Math.round(project.heightFactor * 100)}%</span>
+              <span className="text-green-400 text-[10px]">{Math.round(project.heightFactor * 100)}%</span>
             </div>
           </div>
         </div>
 
         {/* Metadata */}
         {project.meta && Object.keys(project.meta).length > 0 && (
-          <div className="border-t border-green-800/20 pt-3 space-y-1.5">
-            <span className="text-[10px] text-green-700 uppercase tracking-wider">Metadata</span>
+          <div className="border-t border-gray-800/30 pt-3 space-y-1.5">
+            <span className="section-label text-gray-600">Metadata</span>
             {Object.entries(project.meta).map(([key, value]) => (
               <div key={key} className="flex justify-between items-start">
                 <span className="text-gray-600 capitalize">{key}</span>
@@ -103,9 +105,9 @@ export default function BuildingDetailPanel({ project, onClose }: BuildingDetail
         {project.href && (
           <Link
             href={project.href}
-            className="block mt-3 text-center py-2 border border-green-800 rounded text-green-400 hover:bg-green-900/30 transition-colors text-xs"
+            className="block mt-3 text-center py-2 border border-gray-800/50 rounded text-green-400 hover:bg-green-500/5 hover:border-green-800/40 transition-all duration-200 text-xs"
           >
-            Open in Mission Control →
+            Open in Mission Control
           </Link>
         )}
       </div>

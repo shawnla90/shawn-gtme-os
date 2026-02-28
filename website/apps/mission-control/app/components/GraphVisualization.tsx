@@ -1,9 +1,8 @@
 'use client'
 
-import { useEffect, useRef, useMemo, useCallback } from 'react'
+import { useEffect, useRef, useMemo } from 'react'
 import Graph from 'graphology'
 import Sigma from 'sigma'
-import forceAtlas2 from 'graphology-layout-forceatlas2'
 
 interface GraphNode {
   id: string
@@ -12,6 +11,13 @@ interface GraphNode {
   filePath?: string
   size: number
   color: string
+  x?: number
+  y?: number
+  category?: string
+  contentId?: number
+  platform?: string
+  wordCount?: number
+  stage?: string
 }
 
 interface GraphEdge {
@@ -42,17 +48,16 @@ export default function GraphVisualization({ nodes, edges, onNodeClick, searchQu
   const graphRef = useRef<Graph | null>(null)
   const nodesMapRef = useRef<Map<string, GraphNode>>(new Map())
 
-  // Build graph data
+  // Build graph data — uses pre-computed positions from server
   const graph = useMemo(() => {
     const g = new Graph()
     const nodeMap = new Map<string, GraphNode>()
 
-    // Add nodes with random initial positions
     for (const node of nodes) {
       try {
         g.addNode(node.id, {
-          x: Math.random() * 100,
-          y: Math.random() * 100,
+          x: node.x ?? Math.random() * 100,
+          y: node.y ?? Math.random() * 100,
           size: node.size,
           label: node.label,
           color: node.color,
@@ -64,7 +69,6 @@ export default function GraphVisualization({ nodes, edges, onNodeClick, searchQu
       }
     }
 
-    // Add edges — tinted by source node color
     for (const edge of edges) {
       try {
         if (g.hasNode(edge.source) && g.hasNode(edge.target)) {
@@ -82,27 +86,9 @@ export default function GraphVisualization({ nodes, edges, onNodeClick, searchQu
     }
 
     nodesMapRef.current = nodeMap
+    graphRef.current = g
     return g
   }, [nodes, edges])
-
-  // Apply layout
-  useEffect(() => {
-    if (graph.order === 0) return
-
-    // Run ForceAtlas2 layout
-    forceAtlas2.assign(graph, {
-      iterations: 100,
-      settings: {
-        gravity: 1,
-        scalingRatio: 10,
-        barnesHutOptimize: graph.order > 100,
-        strongGravityMode: true,
-        slowDown: 5,
-      },
-    })
-
-    graphRef.current = graph
-  }, [graph])
 
   // Initialize Sigma renderer
   useEffect(() => {
@@ -122,7 +108,7 @@ export default function GraphVisualization({ nodes, edges, onNodeClick, searchQu
       labelColor: { color: '#4ade80' },
       labelFont: 'monospace',
       labelSize: 10,
-      labelRenderedSizeThreshold: 8,
+      labelRenderedSizeThreshold: 12,
       defaultEdgeType: 'arrow',
       stagePadding: 30,
     })

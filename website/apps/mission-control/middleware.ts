@@ -2,29 +2,43 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 const PRIVATE_PREFIXES = ['/logs', '/office', '/databases', '/analytics', '/crm']
+const PRIVATE_API_PREFIXES = ['/api/db', '/api/crm', '/api/office', '/api/ops']
+const PUBLIC_PATHS = ['/sign-in', '/api/auth']
+const AUTH_COOKIE = 'mc-auth'
 
 export function middleware(request: NextRequest) {
-  if (process.env.NEXT_PUBLIC_MODE !== 'public') {
-    return NextResponse.next()
-  }
-
   const { pathname } = request.nextUrl
 
-  // Gate private pages
-  const isPrivate = PRIVATE_PREFIXES.some(
-    (prefix) => pathname === prefix || pathname.startsWith(prefix + '/')
-  )
-  if (isPrivate) {
-    return NextResponse.redirect(new URL('/', request.url))
+  // Password gate — only active when MC_PASSWORD is set (deployed mode)
+  const mcPassword = process.env.MC_PASSWORD
+  if (mcPassword) {
+    const isPublicPath = PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + '/'))
+    if (!isPublicPath) {
+      const authCookie = request.cookies.get(AUTH_COOKIE)?.value
+      if (authCookie !== mcPassword) {
+        // Redirect to sign-in
+        const signInUrl = new URL('/sign-in', request.url)
+        signInUrl.searchParams.set('from', pathname)
+        return NextResponse.redirect(signInUrl)
+      }
+    }
   }
 
-  // Gate private API routes
-  const privateApiPrefixes = ['/api/db', '/api/crm', '/api/office', '/api/ops']
-  const isPrivateApi = privateApiPrefixes.some(
-    (prefix) => pathname.startsWith(prefix)
-  )
-  if (isPrivateApi) {
-    return NextResponse.json({ error: 'Not available in public mode' }, { status: 403 })
+  // Public mode gating (existing logic)
+  if (process.env.NEXT_PUBLIC_MODE === 'public') {
+    const isPrivate = PRIVATE_PREFIXES.some(
+      (prefix) => pathname === prefix || pathname.startsWith(prefix + '/')
+    )
+    if (isPrivate) {
+      return NextResponse.redirect(new URL('/', request.url))
+    }
+
+    const isPrivateApi = PRIVATE_API_PREFIXES.some(
+      (prefix) => pathname.startsWith(prefix)
+    )
+    if (isPrivateApi) {
+      return NextResponse.json({ error: 'Not available in public mode' }, { status: 403 })
+    }
   }
 
   return NextResponse.next()
@@ -32,8 +46,12 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/logs/:path*', '/office/:path*', '/databases/:path*',
-    '/analytics/:path*', '/crm/:path*',
-    '/api/db/:path*', '/api/crm/:path*', '/api/office/:path*', '/api/ops/:path*',
+    /*
+     * Match all request paths except for:
+     * - _next/static (static files)
+     * - _next/image (image optimization files)
+     * - favicon.ico (favicon file)
+     */
+    '/((?!_next/static|_next/image|favicon.ico).*)',
   ],
 }
