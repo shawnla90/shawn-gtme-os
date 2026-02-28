@@ -8,7 +8,7 @@
 
   <key>ProgramArguments</key>
   <array>
-    <string>/usr/bin/python3</string>
+    <string>/opt/homebrew/bin/python3</string>
     <string>/Users/shawnos.ai/shawn-gtme-os/scripts/x_slack_digest.py</string>
   </array>
 

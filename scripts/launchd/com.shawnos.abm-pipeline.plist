@@ -12,7 +12,8 @@
         <string>--step</string>
         <string>all</string>
         <string>--limit</string>
-        <string>100</string>
+        <string>10</string>
+        <string>--resume</string>
     </array>
 
     <key>WorkingDirectory</key>
@@ -20,6 +21,14 @@
 
     <key>RunAtLoad</key>
     <false/>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>22</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
 
     <key>EnvironmentVariables</key>
     <dict>

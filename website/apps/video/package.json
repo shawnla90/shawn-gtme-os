@@ -22,6 +22,14 @@
     "render:reel-4": "remotion render src/index.ts NioReel-McpServers out/nio-reel-mcp-servers.mp4",
     "render:reel-5": "remotion render src/index.ts NioReel-RemotionMeta out/nio-reel-remotion-meta.mp4",
     "render:reel-all": "npm run render:reel-1 && npm run render:reel-2 && npm run render:reel-3 && npm run render:reel-4 && npm run render:reel-5",
+    "render:antislop-tiktok": "remotion render src/index.ts AntiSlopReels out/antislop-tiktok.mp4",
+    "render:antislop-linkedin": "remotion render src/index.ts AntiSlopLinkedIn out/antislop-linkedin.mp4",
+    "render:antislop-landscape": "remotion render src/index.ts AntiSlopLandscape out/antislop-landscape.mp4",
+    "render:antislop-all": "npm run render:antislop-tiktok && npm run render:antislop-linkedin && npm run render:antislop-landscape",
+    "render:antislop60-tiktok": "remotion render src/index.ts AntiSlop60Reels out/antislop60-tiktok.mp4",
+    "render:antislop60-linkedin": "remotion render src/index.ts AntiSlop60LinkedIn out/antislop60-linkedin.mp4",
+    "render:antislop60-landscape": "remotion render src/index.ts AntiSlop60Landscape out/antislop60-landscape.mp4",
+    "render:antislop60-all": "npm run render:antislop60-tiktok && npm run render:antislop60-linkedin && npm run render:antislop60-landscape",
     "build": "echo 'Video app — use render scripts instead'"
   },
   "dependencies": {

@@ -13,11 +13,16 @@ export const metadata: Metadata = {
     description:
       'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
     url: 'https://thecontentos.ai',
+    images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {
+    card: 'summary_large_image',
+    site: '@shawntenam',
+    creator: '@shawntenam',
     title: 'theContentOS.ai | the content operating system',
     description:
       'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
+    images: ['/og'],
   },
 }
 

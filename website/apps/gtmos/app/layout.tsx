@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     siteName: 'theGTMOS.ai',
     title: 'theGTMOS.ai',
     description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides - built in public.',
+    images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     creator: '@shawntenam',
     title: 'theGTMOS.ai',
     description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides - built in public.',
+    images: ['/og'],
   },
   alternates: {
     canonical: SITE_URL,

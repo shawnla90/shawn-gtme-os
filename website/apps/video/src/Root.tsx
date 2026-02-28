@@ -40,6 +40,9 @@ import {
   CLAUDE_MOBILE_FRAMES,
   CLAUDE_MOBILE_FPS,
 } from './scenes/ClaudeCodeMobile';
+import { AntiSlopReel } from './AntiSlopReel';
+import { AntiSlopReel60 } from './AntiSlopReel60';
+import { FPS_SLOP, SLOP_TOTAL_FRAMES, SLOP_60_TOTAL_FRAMES } from './lib/timing-antislop';
 
 export const Root: React.FC = () => {
   return (
@@ -353,6 +356,64 @@ export const Root: React.FC = () => {
             height: spec.composition!.height,
           };
         }}
+      />
+
+      {/* ── Anti-Slop Reel (TikTok 9:16 primary, also LinkedIn 4:5 + Landscape) ── */}
+
+      <Composition
+        id="AntiSlopReels"
+        component={AntiSlopReel}
+        durationInFrames={SLOP_TOTAL_FRAMES}
+        fps={FPS_SLOP}
+        width={PRESETS.reels.width}
+        height={PRESETS.reels.height}
+      />
+
+      <Composition
+        id="AntiSlopLinkedIn"
+        component={AntiSlopReel}
+        durationInFrames={SLOP_TOTAL_FRAMES}
+        fps={FPS_SLOP}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="AntiSlopLandscape"
+        component={AntiSlopReel}
+        durationInFrames={SLOP_TOTAL_FRAMES}
+        fps={FPS_SLOP}
+        width={PRESETS.landscape.width}
+        height={PRESETS.landscape.height}
+      />
+
+      {/* ── Anti-Slop 60s Reel (NPC hook, full breakdown) ── */}
+
+      <Composition
+        id="AntiSlop60Reels"
+        component={AntiSlopReel60}
+        durationInFrames={SLOP_60_TOTAL_FRAMES}
+        fps={FPS_SLOP}
+        width={PRESETS.reels.width}
+        height={PRESETS.reels.height}
+      />
+
+      <Composition
+        id="AntiSlop60LinkedIn"
+        component={AntiSlopReel60}
+        durationInFrames={SLOP_60_TOTAL_FRAMES}
+        fps={FPS_SLOP}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="AntiSlop60Landscape"
+        component={AntiSlopReel60}
+        durationInFrames={SLOP_60_TOTAL_FRAMES}
+        fps={FPS_SLOP}
+        width={PRESETS.landscape.width}
+        height={PRESETS.landscape.height}
       />
 
       {/* ── Claude Code Mobile GIF (LinkedIn horizontal + X) ── */}

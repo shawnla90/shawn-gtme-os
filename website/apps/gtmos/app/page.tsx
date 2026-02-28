@@ -13,11 +13,16 @@ export const metadata: Metadata = {
     description:
       'Pipeline orchestration, outbound automation, and partner workflows. Running from one repo.',
     url: 'https://thegtmos.ai',
+    images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {
+    card: 'summary_large_image',
+    site: '@shawntenam',
+    creator: '@shawntenam',
     title: 'theGTMOS.ai | the GTM operating system',
     description:
       'Pipeline orchestration, outbound automation, and partner workflows. Running from one repo.',
+    images: ['/og'],
   },
 }
 

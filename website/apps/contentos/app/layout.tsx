@@ -57,6 +57,64 @@ export const metadata: Metadata = {
   },
 }
 
+/* ── JSON-LD Structured Data ── */
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'theContentOS.ai',
+  url: SITE_URL,
+  description: 'The content operating system. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+  author: { '@type': 'Person', name: 'Shawn Tenam' },
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a content operating system?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A content operating system is a code-based infrastructure for creating, distributing, and compounding content across platforms. Instead of a content calendar or spreadsheet, you build voice rules, platform playbooks, and production pipelines in version-controlled files.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What is Voice DNA?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Voice DNA is the foundational layer of the 3-tier system. It encodes your cadence, vocabulary, anti-patterns, and identity markers into files that AI agents read before generating any content. Same voice, every platform, every time.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do platform playbooks work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Each platform gets its own playbook that inherits from your Voice DNA. The LinkedIn playbook knows paragraph structure, emoji usage, and CTA patterns. The TikTok playbook knows 16-second structures and hook formats. Same voice, different container.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does the recursive feedback loop work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Every published post teaches the system. Performance data feeds back into voice rules. When the anti-slop guide catches a new pattern, it gets added. When a hook style outperforms, it gets documented. The 100th post is easier than the 1st.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can I build my own Content OS?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Absolutely. The wiki, how-to guides, and method page document the entire system. Start with Voice DNA (who you are), add platform playbooks (how you adapt), then build content ops (how you ship). Everything here is public.',
+      },
+    },
+  ],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -65,6 +123,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
         <Navigation
           siteName="theContentOS.ai"
           links={[
