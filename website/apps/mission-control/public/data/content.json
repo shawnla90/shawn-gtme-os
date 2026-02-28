@@ -1,44 +1,44 @@
 {
-  "generated": "2026-02-27T05:00:07.000Z",
+  "generated": "2026-02-28T05:00:06.000Z",
   "totals": {
-    "total_content": 103,
-    "total_drafts": 62,
-    "total_final": 41,
-    "total_words": 65013,
+    "total_content": 120,
+    "total_drafts": 75,
+    "total_final": 45,
+    "total_words": 77476,
     "platforms_active": 6,
-    "cross_platform_groups": 26,
-    "series_count": 0
+    "cross_platform_groups": 28,
+    "series_count": 4
   },
   "pipeline": {
     "linkedin": {
-      "draft": 26,
+      "draft": 32,
       "final": 12,
-      "total": 38,
-      "words": 24929
+      "total": 44,
+      "words": 29165
     },
     "nio-log": {
       "draft": 0,
-      "final": 9,
-      "total": 9,
-      "words": 4302
-    },
-    "x": {
-      "draft": 26,
-      "final": 9,
-      "total": 35,
-      "words": 12277
+      "final": 10,
+      "total": 10,
+      "words": 5143
     },
     "substack": {
-      "draft": 7,
-      "final": 4,
-      "total": 11,
-      "words": 13742
+      "draft": 9,
+      "final": 5,
+      "total": 14,
+      "words": 16675
     },
     "website": {
       "draft": 1,
-      "final": 7,
-      "total": 8,
-      "words": 7321
+      "final": 9,
+      "total": 10,
+      "words": 9168
+    },
+    "x": {
+      "draft": 31,
+      "final": 9,
+      "total": 40,
+      "words": 14883
     },
     "reddit": {
       "draft": 2,
@@ -50,6 +50,83 @@
   "recent": [
     {
       "platform": "linkedin",
+      "title": "Parallel-Safe Context Handoffs",
+      "slug": "parallel-safe-handoffs",
+      "date": "2026-02-27",
+      "stage": "draft",
+      "pillar": "Building & Sharing",
+      "arc": null,
+      "word_count": 457,
+      "file_path": "content/linkedin/drafts/2026-02-27_parallel-safe-handoffs.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "GOOD. I HAVE STRONG CONTEXT NOW.",
+      "slug": "2026-02-27",
+      "date": "2026-02-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 841,
+      "file_path": "content/nio-log/2026-02-27.md"
+    },
+    {
+      "platform": "substack",
+      "title": "parallel safe handoffs",
+      "slug": "parallel-safe-handoffs",
+      "date": "2026-02-27",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 843,
+      "file_path": "content/substack/drafts/2026-02-27_parallel-safe-handoffs.md"
+    },
+    {
+      "platform": "substack",
+      "title": "I Open Sourced My Methodology",
+      "slug": "recursive-drift-launch",
+      "date": "2026-02-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 547,
+      "file_path": "content/substack/final/2026-02-27_recursive-drift-launch.md"
+    },
+    {
+      "platform": "website",
+      "title": "parallel-safe context handoffs for Claude Code",
+      "slug": "parallel-safe-context-handoffs",
+      "date": "2026-02-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1070,
+      "file_path": "content/website/final/parallel-safe-context-handoffs.md"
+    },
+    {
+      "platform": "website",
+      "title": "I Open Sourced My Methodology",
+      "slug": "recursive-drift",
+      "date": "2026-02-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 777,
+      "file_path": "content/website/final/recursive-drift.md"
+    },
+    {
+      "platform": "x",
+      "title": "parallel safe handoffs",
+      "slug": "parallel-safe-handoffs",
+      "date": "2026-02-27",
+      "stage": "draft",
+      "pillar": "Building & Sharing",
+      "arc": null,
+      "word_count": 223,
+      "file_path": "content/x/drafts/2026-02-27_parallel-safe-handoffs.md"
+    },
+    {
+      "platform": "linkedin",
       "title": "claude code mobile",
       "slug": "claude-code-mobile",
       "date": "2026-02-26",
@@ -58,6 +135,17 @@
       "arc": null,
       "word_count": 473,
       "file_path": "content/linkedin/drafts/2026-02-26_claude-code-mobile.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+      "slug": "ecosystem-capstone",
+      "date": "2026-02-26",
+      "stage": "draft",
+      "pillar": "Building & Sharing (capstone)",
+      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
+      "word_count": 961,
+      "file_path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md"
     },
     {
       "platform": "linkedin",
@@ -94,6 +182,17 @@
     },
     {
       "platform": "x",
+      "title": "Full Ecosystem X Threads -- Day 4",
+      "slug": "ecosystem-threads",
+      "date": "2026-02-26",
+      "stage": "draft",
+      "pillar": null,
+      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
+      "word_count": 626,
+      "file_path": "content/x/drafts/2026-02-26_ecosystem-threads.md"
+    },
+    {
+      "platform": "x",
       "title": "exa grok hubspot landing pages",
       "slug": "exa-grok-hubspot-landing-pages",
       "date": "2026-02-26",
@@ -102,6 +201,28 @@
       "arc": null,
       "word_count": 284,
       "file_path": "content/x/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "Content OS: The Content Machine -- Day 3",
+      "slug": "contentos-machine",
+      "date": "2026-02-25",
+      "stage": "draft",
+      "pillar": "Skill/System Share",
+      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
+      "word_count": 896,
+      "file_path": "content/linkedin/drafts/2026-02-25_contentos-machine.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "LinkedIn Draft: Exa MCP Pre-Enrichment",
+      "slug": "exa-mcp-pre-enrichment",
+      "date": "2026-02-25",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 336,
+      "file_path": "content/linkedin/drafts/2026-02-25_exa-mcp-pre-enrichment.md"
     },
     {
       "platform": "linkedin",
@@ -116,6 +237,17 @@
     },
     {
       "platform": "substack",
+      "title": "Start at Level One",
+      "slug": "start-at-level-one",
+      "date": "2026-02-25",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1543,
+      "file_path": "content/substack/drafts/2026-02-24_start-at-level-one.md"
+    },
+    {
+      "platform": "substack",
       "title": "how to setup ai assistant",
       "slug": "how-to-setup-ai-assistant",
       "date": "2026-02-25",
@@ -124,6 +256,17 @@
       "arc": null,
       "word_count": 1333,
       "file_path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md"
+    },
+    {
+      "platform": "x",
+      "title": "Content OS X Threads -- Day 3",
+      "slug": "contentos-threads",
+      "date": "2026-02-25",
+      "stage": "draft",
+      "pillar": null,
+      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
+      "word_count": 567,
+      "file_path": "content/x/drafts/2026-02-25_contentos-threads.md"
     },
     {
       "platform": "x",
@@ -137,6 +280,17 @@
       "file_path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md"
     },
     {
+      "platform": "linkedin",
+      "title": "GTM OS: The Infrastructure -- Day 2",
+      "slug": "gtmos-infrastructure",
+      "date": "2026-02-24",
+      "stage": "draft",
+      "pillar": "Skill/System Share",
+      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
+      "word_count": 821,
+      "file_path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md"
+    },
+    {
       "platform": "nio-log",
       "title": "NOW I HAVE THE FULL PICTURE.",
       "slug": "2026-02-24",
@@ -148,6 +302,17 @@
       "file_path": "content/nio-log/2026-02-24.md"
     },
     {
+      "platform": "x",
+      "title": "GTM OS X Threads -- Day 2",
+      "slug": "gtmos-threads",
+      "date": "2026-02-24",
+      "stage": "draft",
+      "pillar": null,
+      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
+      "word_count": 596,
+      "file_path": "content/x/drafts/2026-02-24_gtmos-threads.md"
+    },
+    {
       "platform": "linkedin",
       "title": "openclaw honest opinion",
       "slug": "openclaw-honest-opinion",
@@ -157,6 +322,17 @@
       "arc": null,
       "word_count": 542,
       "file_path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
+      "slug": "shawnos-anti-lead-magnet",
+      "date": "2026-02-23",
+      "stage": "draft",
+      "pillar": "Building & Sharing",
+      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
+      "word_count": 765,
+      "file_path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md"
     },
     {
       "platform": "nio-log",
@@ -190,6 +366,17 @@
       "arc": null,
       "word_count": 170,
       "file_path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md"
+    },
+    {
+      "platform": "x",
+      "title": "ShawnOS X Threads -- Day 1",
+      "slug": "shawnos-threads",
+      "date": "2026-02-23",
+      "stage": "draft",
+      "pillar": null,
+      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
+      "word_count": 594,
+      "file_path": "content/x/drafts/2026-02-23_shawnos-threads.md"
     },
     {
       "platform": "linkedin",
@@ -410,197 +597,120 @@
       "arc": null,
       "word_count": 1599,
       "file_path": "content/substack/drafts/2026-02-14_cursor-discovery.md"
-    },
-    {
-      "platform": "x",
-      "title": "Build Your Own OS -- X Thread Cross-Promo",
-      "slug": "build-your-own-os",
-      "date": "2026-02-17",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 465,
-      "file_path": "content/x/drafts/2026-02-17_build-your-own-os.md"
-    },
-    {
-      "platform": "x",
-      "title": "build your own os",
-      "slug": "build-your-own-os",
-      "date": "2026-02-17",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 339,
-      "file_path": "content/x/final/2026-02-17_build-your-own-os.txt"
-    },
-    {
-      "platform": "linkedin",
-      "title": "substack build weekend crosspromo",
-      "slug": "substack-build-weekend-crosspromo",
-      "date": "2026-02-16",
-      "stage": "draft",
-      "pillar": "building & sharing",
-      "arc": null,
-      "word_count": 140,
-      "file_path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md"
-    },
-    {
-      "platform": "substack",
-      "title": "build weekend",
-      "slug": "build-weekend",
-      "date": "2026-02-16",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1876,
-      "file_path": "content/substack/final/2026-02-16_build-weekend.md"
-    },
-    {
-      "platform": "website",
-      "title": "Nothing Stays the Same",
-      "slug": "nothing-stays-the-same",
-      "date": "2026-02-16",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 545,
-      "file_path": "content/website/drafts/nothing-stays-the-same.md"
-    },
-    {
-      "platform": "x",
-      "title": "build trio",
-      "slug": "build-trio",
-      "date": "2026-02-16",
-      "stage": "draft",
-      "pillar": "building & sharing",
-      "arc": null,
-      "word_count": 186,
-      "file_path": "content/x/drafts/2026-02-16_build-trio.md"
-    },
-    {
-      "platform": "x",
-      "title": "substack build weekend crosspromo",
-      "slug": "substack-build-weekend-crosspromo",
-      "date": "2026-02-16",
-      "stage": "draft",
-      "pillar": "building & sharing",
-      "arc": null,
-      "word_count": 55,
-      "file_path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md"
-    },
-    {
-      "platform": "substack",
-      "title": "[ARCHIVED] OS.AI Labs, Post 3 -- The Weekend Build",
-      "slug": "weekend-web-build",
-      "date": "2026-02-14",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1054,
-      "file_path": "content/substack/drafts/2026-02-14_weekend-web-build.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Build Day",
-      "slug": "build-day",
-      "date": "2026-02-13",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 271,
-      "file_path": "content/linkedin/drafts/2026-02-13_build-day.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Screen Teaser \u2014 Actually Building in Public",
-      "slug": "screen-teaser",
-      "date": "2026-02-13",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 295,
-      "file_path": "content/linkedin/drafts/2026-02-13_screen-teaser.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "screen teaser",
-      "slug": "screen-teaser",
-      "date": "2026-02-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 85,
-      "file_path": "content/linkedin/final/2026-02-13_screen-teaser.txt"
-    },
-    {
-      "platform": "substack",
-      "title": "OS.AI Labs, Post 3 -- Build Weekend",
-      "slug": "build-day",
-      "date": "2026-02-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1329,
-      "file_path": "content/substack/drafts/2026-02-13_build-day.md"
-    },
-    {
-      "platform": "website",
-      "title": "Hello, World",
-      "slug": "hello-world",
-      "date": "2026-02-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 562,
-      "file_path": "content/website/final/hello-world.md"
-    },
-    {
-      "platform": "x",
-      "title": "Screen Teaser \u2014 Actually Building",
-      "slug": "screen-teaser",
-      "date": "2026-02-13",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 232,
-      "file_path": "content/x/drafts/2026-02-13_screen-teaser.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Content Flywheel Master Plan",
-      "slug": "content-flywheel-masterplan",
-      "date": "2026-02-12",
-      "stage": "draft",
-      "pillar": "Building & Sharing + Skill/System Shares",
-      "arc": null,
-      "word_count": 1463,
-      "file_path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Daily Tracker Build \u2014 Token Efficiency Dashboard",
-      "slug": "daily-tracker-build",
-      "date": "2026-02-12",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 1462,
-      "file_path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "content flywheel masterplan",
-      "slug": "content-flywheel-masterplan",
-      "date": "2026-02-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 635,
-      "file_path": "content/linkedin/final/2026-02-12_content-flywheel-masterplan.txt"
     }
   ],
-  "series": [],
+  "series": [
+    {
+      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
+      "pillar": "Building & Sharing (capstone)",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+          "slug": "ecosystem-capstone",
+          "date": "2026-02-26",
+          "stage": "draft",
+          "series_position": 4,
+          "word_count": 961
+        },
+        {
+          "platform": "x",
+          "title": "Full Ecosystem X Threads -- Day 4",
+          "slug": "ecosystem-threads",
+          "date": "2026-02-26",
+          "stage": "draft",
+          "series_position": 4,
+          "word_count": 626
+        }
+      ]
+    },
+    {
+      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
+      "pillar": "Skill/System Share",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "Content OS: The Content Machine -- Day 3",
+          "slug": "contentos-machine",
+          "date": "2026-02-25",
+          "stage": "draft",
+          "series_position": 3,
+          "word_count": 896
+        },
+        {
+          "platform": "x",
+          "title": "Content OS X Threads -- Day 3",
+          "slug": "contentos-threads",
+          "date": "2026-02-25",
+          "stage": "draft",
+          "series_position": 3,
+          "word_count": 567
+        }
+      ]
+    },
+    {
+      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
+      "pillar": "Skill/System Share",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "GTM OS: The Infrastructure -- Day 2",
+          "slug": "gtmos-infrastructure",
+          "date": "2026-02-24",
+          "stage": "draft",
+          "series_position": 2,
+          "word_count": 821
+        },
+        {
+          "platform": "x",
+          "title": "GTM OS X Threads -- Day 2",
+          "slug": "gtmos-threads",
+          "date": "2026-02-24",
+          "stage": "draft",
+          "series_position": 2,
+          "word_count": 596
+        }
+      ]
+    },
+    {
+      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
+      "pillar": "Building & Sharing",
+      "items": [
+        {
+          "platform": "linkedin",
+          "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
+          "slug": "shawnos-anti-lead-magnet",
+          "date": "2026-02-23",
+          "stage": "draft",
+          "series_position": 1,
+          "word_count": 765
+        },
+        {
+          "platform": "x",
+          "title": "ShawnOS X Threads -- Day 1",
+          "slug": "shawnos-threads",
+          "date": "2026-02-23",
+          "stage": "draft",
+          "series_position": 1,
+          "word_count": 594
+        }
+      ]
+    }
+  ],
   "crossPlatform": [
+    {
+      "date": "2026-02-27",
+      "slug": "parallel-safe-handoffs",
+      "platforms": [
+        "linkedin",
+        "substack",
+        "x"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 3
+    },
     {
       "date": "2026-02-26",
       "slug": "claude-code-mobile",
@@ -636,6 +746,19 @@
         "series_sibling"
       ],
       "platform_count": 2
+    },
+    {
+      "date": "2026-02-25",
+      "slug": "start-at-level-one",
+      "platforms": [
+        "linkedin",
+        "substack",
+        "x"
+      ],
+      "link_types": [
+        "cross_platform_note"
+      ],
+      "platform_count": 3
     },
     {
       "date": "2026-02-23",
@@ -918,6 +1041,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-02-27",
+      "grade": "A",
+      "score": 470,
+      "words": 36568,
+      "shipped": 36,
+      "cost": 0.0
+    },
+    {
       "date": "2026-02-26",
       "grade": "B",
       "score": 308,
@@ -1020,14 +1151,6 @@
       "words": 36738,
       "shipped": 274,
       "cost": 47.5
-    },
-    {
-      "date": "2026-02-13",
-      "grade": "D",
-      "score": 96,
-      "words": 60299,
-      "shipped": 56,
-      "cost": 33.52
     }
   ]
 }

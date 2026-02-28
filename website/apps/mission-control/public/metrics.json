@@ -1,5 +1,5 @@
 {
-  "generated": "2026-02-28T03:12:40.482Z",
+  "generated": "2026-02-28T05:00:06.000Z",
   "system": {
     "status": "degraded",
     "uptime": "live",
@@ -25,14 +25,80 @@
   ],
   "drafts": [
     {
-      "type": "content",
-      "title": "No drafts detected",
-      "status": "empty"
+      "type": "linkedin",
+      "title": "Parallel-Safe Context Handoffs",
+      "status": "draft",
+      "date": "2026-02-27",
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "substack",
+      "title": "parallel safe handoffs",
+      "status": "draft",
+      "date": "2026-02-27",
+      "pillar": null
+    },
+    {
+      "type": "x",
+      "title": "parallel safe handoffs",
+      "status": "draft",
+      "date": "2026-02-27",
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "linkedin",
+      "title": "claude code mobile",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "linkedin",
+      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "Building & Sharing (capstone)"
+    },
+    {
+      "type": "linkedin",
+      "title": "exa grok hubspot landing pages",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "GTM Workflow / Building & Sharing"
+    },
+    {
+      "type": "x",
+      "title": "claude code mobile",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "Building & Sharing"
+    },
+    {
+      "type": "x",
+      "title": "Full Ecosystem X Threads -- Day 4",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": null
+    },
+    {
+      "type": "x",
+      "title": "exa grok hubspot landing pages",
+      "status": "draft",
+      "date": "2026-02-26",
+      "pillar": "GTM Workflow / Building & Sharing"
+    },
+    {
+      "type": "linkedin",
+      "title": "Content OS: The Content Machine -- Day 3",
+      "status": "draft",
+      "date": "2026-02-25",
+      "pillar": "Skill/System Share"
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
-    "teamMembers": 4
+    "teamMembers": 4,
+    "draftsTracked": 75
   }
 }
