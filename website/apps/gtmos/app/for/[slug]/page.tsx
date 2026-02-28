@@ -1,19 +1,24 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getAllSlugs, getPageData } from '@/lib/abm'
 import { LandingPageTemplate } from './LandingPageTemplate'
+
+export const dynamicParams = true
+export const revalidate = 3600
 
 interface Props {
   params: Promise<{ slug: string }>
 }
 
 export async function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }))
+  const slugs = await getAllSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params
-  const data = getPageData(slug)
+  const data = await getPageData(slug)
   if (!data) return {}
 
   return {
@@ -25,8 +30,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ABMPage({ params }: Props) {
   const { slug } = await params
-  const data = getPageData(slug)
+  const data = await getPageData(slug)
   if (!data) notFound()
 
-  return <LandingPageTemplate data={data} />
+  return (
+    <Suspense>
+      <LandingPageTemplate data={data} />
+    </Suspense>
+  )
 }

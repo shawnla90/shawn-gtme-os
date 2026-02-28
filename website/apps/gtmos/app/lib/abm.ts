@@ -1,7 +1,6 @@
-import fs from 'fs'
-import path from 'path'
+import { supabase } from './supabase'
 
-/* ── PageData types ─────────────────────────────── */
+/* -- PageData types ---------------------------------------- */
 
 export interface PageTheme {
   primary: string
@@ -42,12 +41,19 @@ export interface PageStackItem {
   role: string
 }
 
+export interface PageContact {
+  id: string
+  name: string
+  role: string
+}
+
 export interface PageData {
   slug: string
   company: string
   domain: string
   contactName: string
   contactRole: string
+  contacts?: PageContact[]
   theme: PageTheme
   headline: string
   subheadline: string
@@ -60,23 +66,30 @@ export interface PageData {
   generatedAt: string
 }
 
-/* ── data directory ─────────────────────────────── */
+/* -- helpers ------------------------------------------------ */
 
-const PAGES_DIR = path.join(process.cwd(), '..', '..', '..', 'data', 'abm', 'pages')
-
-/* ── helpers ─────────────────────────────────────── */
-
-export function getAllSlugs(): string[] {
-  if (!fs.existsSync(PAGES_DIR)) return []
-  return fs
-    .readdirSync(PAGES_DIR)
-    .filter((f) => f.endsWith('.json'))
-    .map((f) => f.replace('.json', ''))
+export async function getAllSlugs(): Promise<string[]> {
+  const { data, error } = await supabase
+    .from('landing_pages')
+    .select('slug')
+  if (error || !data) return []
+  return data.map((row) => row.slug)
 }
 
-export function getPageData(slug: string): PageData | null {
-  const filePath = path.join(PAGES_DIR, `${slug}.json`)
-  if (!fs.existsSync(filePath)) return null
-  const raw = fs.readFileSync(filePath, 'utf-8')
-  return JSON.parse(raw) as PageData
+export async function getPageData(slug: string): Promise<PageData | null> {
+  const { data, error } = await supabase
+    .from('landing_pages')
+    .select('page_data')
+    .eq('slug', slug)
+    .single()
+  if (error || !data) return null
+  return data.page_data as PageData
+}
+
+export async function getAllPages(): Promise<PageData[]> {
+  const { data, error } = await supabase
+    .from('landing_pages')
+    .select('page_data')
+  if (error || !data) return []
+  return data.map((row) => row.page_data as PageData)
 }

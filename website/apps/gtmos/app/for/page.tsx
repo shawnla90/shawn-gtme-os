@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { getAllSlugs, getPageData } from '@/lib/abm'
+import { getAllPages } from '@/lib/abm'
 
 const SITE_URL = 'https://thegtmos.ai'
 const ACCENT = '#10B981'
+
+export const revalidate = 3600
 
 export const metadata: Metadata = {
   title: 'Landing Pages | theGTMOS.ai',
@@ -150,12 +152,11 @@ const navLink: React.CSSProperties = {
 
 /* ── page ────────────────────────────────────────────── */
 
-export default function ForDirectoryPage() {
-  const slugs = getAllSlugs()
-  const pages = slugs
-    .map((slug) => getPageData(slug))
+export default async function ForDirectoryPage() {
+  const allPages = await getAllPages()
+  const pages = allPages
     .filter(Boolean)
-    .sort((a, b) => a!.company.localeCompare(b!.company))
+    .sort((a, b) => a.company.localeCompare(b.company))
 
   return (
     <div style={pageWrap}>

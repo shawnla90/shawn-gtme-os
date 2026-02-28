@@ -12,11 +12,12 @@
   },
   "dependencies": {
     "@shawnos/shared": "*",
+    "@supabase/supabase-js": "^2.98.0",
+    "framer-motion": "^12.34.3",
     "next": "^15",
-    "react": "^19",
-    "react-dom": "^19",
     "next-sitemap": "^4.2.3",
-    "framer-motion": "^12.34.3"
+    "react": "^19",
+    "react-dom": "^19"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
