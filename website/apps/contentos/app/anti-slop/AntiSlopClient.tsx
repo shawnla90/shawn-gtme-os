@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Link from 'next/link'
 import {
   MotionReveal,
@@ -105,6 +105,18 @@ const SLOP_EXAMPLE =
 
 const CLEAN_EXAMPLE =
   "I built a content system that runs on three files and zero manual steps. it takes one draft, checks it against 44 anti-slop rules, and reformats for LinkedIn, X, and Substack. same voice, different shape. the whole thing deploys from a git push. no dashboards, no \"content calendars\" - just a repo that does the work."
+
+/* ── intro animation stages ──────────────────────────── */
+
+const INTRO_STAGES = [
+  CLEAN_EXAMPLE,
+  "I built a comprehensive system that streamlines your content drafts. The innovative tool checks against 44 rules, identifies patterns in your writing, and suggests specific replacements to make every sentence direct and clear.",
+  SLOP_EXAMPLE,
+]
+
+const CHAR_DELAY = 4
+const STAGE_HOLD = 700
+const INTRO_DELAY = 600
 
 /* ── analysis logic ────────────────────────────────── */
 
@@ -260,9 +272,61 @@ const violationTypes = [
 /* ── component ─────────────────────────────────────── */
 
 export function AntiSlopClient() {
+  const [introActive, setIntroActive] = useState(true)
+  const [displayText, setDisplayText] = useState('')
   const [text, setText] = useState(SLOP_EXAMPLE)
-  const result = analyze(text)
-  const fragments = getHighlightedFragments(text)
+
+  useEffect(() => {
+    if (!introActive) return
+    let cancelled = false
+
+    function wait(ms: number) {
+      return new Promise<void>((resolve) => {
+        setTimeout(resolve, ms)
+      })
+    }
+
+    async function runIntro() {
+      await wait(INTRO_DELAY)
+
+      for (let s = 0; s < INTRO_STAGES.length; s++) {
+        if (cancelled) return
+        const stage = INTRO_STAGES[s]
+
+        for (let i = 0; i <= stage.length; i++) {
+          if (cancelled) return
+          setDisplayText(stage.slice(0, i))
+          await wait(CHAR_DELAY)
+        }
+
+        if (s < INTRO_STAGES.length - 1) {
+          await wait(STAGE_HOLD)
+          if (cancelled) return
+          setDisplayText('')
+          await wait(150)
+        }
+      }
+
+      if (!cancelled) {
+        setIntroActive(false)
+        setText(SLOP_EXAMPLE)
+      }
+    }
+
+    runIntro()
+    return () => {
+      cancelled = true
+    }
+  }, [introActive])
+
+  const skipIntro = useCallback(() => {
+    setIntroActive(false)
+    setText(SLOP_EXAMPLE)
+  }, [])
+
+  const activeText = introActive ? displayText : text
+  const result = analyze(activeText)
+  const fragments = getHighlightedFragments(activeText)
 
   const loadExample = useCallback((example: string) => setText(example), [])
 
@@ -353,6 +417,7 @@ export function AntiSlopClient() {
                 fontFamily: 'var(--font-mono)',
                 color: getScoreColor(result.score),
                 lineHeight: 1,
+                transition: 'color 0.3s',
               }}
             >
               {result.score}
@@ -363,6 +428,7 @@ export function AntiSlopClient() {
                   fontSize: '16px',
                   fontWeight: 700,
                   color: getScoreColor(result.score),
+                  transition: 'color 0.3s',
                 }}
               >
                 {getScoreLabel(result.score)}
@@ -373,6 +439,28 @@ export function AntiSlopClient() {
             </div>
           </div>
         </MotionReveal>
+
+        {introActive && (
+          <div style={{ marginTop: 20 }}>
+            <button
+              onClick={skipIntro}
+              style={{
+                padding: '6px 18px',
+                background: 'transparent',
+                border: '1px solid var(--border)',
+                borderRadius: 6,
+                color: 'var(--text-muted)',
+                fontSize: '12px',
+                fontWeight: 500,
+                cursor: 'pointer',
+                letterSpacing: '0.02em',
+                transition: 'border-color 0.15s',
+              }}
+            >
+              Skip intro
+            </button>
+          </div>
+        )}
       </section>
 
       {/* ── Full Interactive Detector ── */}
@@ -399,6 +487,7 @@ export function AntiSlopClient() {
                 color: getScoreColor(result.score),
                 lineHeight: 1,
                 minWidth: 70,
+                transition: 'color 0.3s',
               }}
             >
               {result.score}
@@ -410,6 +499,7 @@ export function AntiSlopClient() {
                   fontWeight: 700,
                   color: getScoreColor(result.score),
                   marginBottom: 6,
+                  transition: 'color 0.3s',
                 }}
               >
                 {getScoreLabel(result.score)}
@@ -497,8 +587,11 @@ export function AntiSlopClient() {
             </div>
 
             <textarea
-              value={text}
-              onChange={(e) => setText(e.target.value)}
+              value={activeText}
+              onChange={(e) => {
+                if (!introActive) setText(e.target.value)
+              }}
+              readOnly={introActive}
               style={{
                 position: 'relative',
                 width: '100%',
@@ -515,6 +608,7 @@ export function AntiSlopClient() {
                 outline: 'none',
                 caretColor: 'var(--accent)',
                 boxSizing: 'border-box',
+                cursor: introActive ? 'default' : 'text',
               }}
             />
           </div>
@@ -690,7 +784,7 @@ export function AntiSlopClient() {
             </div>
           )}
 
-          {result.score === 0 && text.length > 0 && (
+          {result.score === 0 && activeText.length > 0 && (
             <div
               style={{
                 padding: '14px 20px',
