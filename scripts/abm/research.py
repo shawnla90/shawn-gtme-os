@@ -16,6 +16,21 @@ SEARCH_QUERIES = [
     "B2B SaaS startup scaling sales outbound team",
     "enterprise software company expanding sales operations",
     "growth stage SaaS company hiring sales development reps",
+    "revenue intelligence platform B2B SaaS company",
+    "sales engagement platform software company",
+    "B2B data enrichment company series B funding",
+    "product-led growth SaaS company scaling outbound sales",
+    "AI sales automation software company",
+    "customer success platform SaaS company",
+    "sales enablement software company series A B",
+    "B2B marketing automation platform company",
+    "conversation intelligence software company",
+    "pipeline management CRM software company",
+    "account-based marketing platform SaaS company",
+    "sales compensation management software company",
+    "B2B intent data provider company",
+    "revenue operations software company",
+    "CPQ configure price quote software company",
 ]
 
 # Deep research queries per company
@@ -44,10 +59,40 @@ def already_researched(conn):
     return {row[0] for row in cur.fetchall()}
 
 
+def is_junk(title, domain):
+    """Filter out articles, job listings, blog posts, and non-company results."""
+    title_lower = title.lower()
+
+    # Known junk domains
+    junk_domains = {'indeed.com', 'linkedin.com', 'medium.com', 'substack.com',
+                    'wikipedia.org', 'youtube.com', 'reddit.com', 'quora.com',
+                    'saasboomi.com', 'g2.com', 'capterra.com', 'trustradius.com'}
+    if domain in junk_domains:
+        return True
+
+    # Title patterns that indicate articles, not companies
+    junk_patterns = [
+        'how to ', 'top ', 'best ', 'guide', 'step-by-step', 'tutorial',
+        'fastest growing', 'trends to watch', 'jobs -', 'jobs |',
+        'series funding', 'what is ', 'review:', 'vs ', ' vs.',
+        'an extensive guide', 'a complete guide',
+    ]
+    for pattern in junk_patterns:
+        if pattern in title_lower:
+            return True
+
+    # Titles that are too long are usually article headlines
+    if len(title) > 80:
+        return True
+
+    return False
+
+
 def find_companies(exa, limit=100):
     """Search Exa for ICP-matched companies."""
     companies = []
     seen_domains = set()
+    filtered = 0
     per_query = max(limit // len(SEARCH_QUERIES), 10)
 
     for query in SEARCH_QUERIES:
@@ -67,10 +112,16 @@ def find_companies(exa, limit=100):
                 domain = getattr(r, 'url', '') or ''
                 # Extract domain from URL
                 domain = domain.replace('https://', '').replace('http://', '').split('/')[0]
+
+                title = getattr(r, 'title', '') or domain
+                if is_junk(title, domain):
+                    filtered += 1
+                    continue
+
                 if domain and domain not in seen_domains:
                     seen_domains.add(domain)
                     companies.append({
-                        'title': getattr(r, 'title', '') or domain,
+                        'title': title,
                         'domain': domain,
                         'url': getattr(r, 'url', ''),
                         'snippet': (getattr(r, 'text', '') or '')[:500],
@@ -83,6 +134,8 @@ def find_companies(exa, limit=100):
             traceback.print_exc()
             time.sleep(2)
 
+    if filtered:
+        print(f"  Filtered {filtered} junk results (articles, job listings, etc.)")
     return companies[:limit]
 
 
@@ -145,6 +198,20 @@ def save_account(conn, company, research):
         )
 
     conn.commit()
+
+    # Dual-write to Supabase
+    try:
+        from db_supabase import get_supabase
+        sb = get_supabase()
+        sb.table('accounts').upsert({
+            'name': company['title'],
+            'domain': company['domain'],
+            'source': 'exa_research',
+            'stage': 'prospect',
+            'exa_research': research,
+        }, on_conflict='domain').execute()
+    except Exception as e:
+        print(f"    [supabase] Warning: {e}")
 
 
 def run(limit=100, resume=True):

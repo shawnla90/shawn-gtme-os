@@ -11,11 +11,11 @@ Usage:
 import argparse
 import json
 import os
-import sqlite3
 import time
 import requests
 
-DB_PATH = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'crm.db')
+from db_supabase import get_supabase
+
 ATTIO_BASE = 'https://api.attio.com/v2'
 
 
@@ -24,10 +24,6 @@ def get_token():
     if not token:
         raise ValueError("ATTIO_API_TOKEN not set. Export it or add to scripts/abm/.env")
     return token
-
-
-def get_db():
-    return sqlite3.connect(os.path.abspath(DB_PATH))
 
 
 def attio_headers(token):
@@ -174,21 +170,15 @@ def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry
 
 
 def run(limit=100, dry_run=False):
-    """Sync accounts and contacts to Attio."""
+    """Sync accounts and contacts to Attio (reads from Supabase)."""
     print(f"\n[Attio Sync] {'DRY RUN - ' if dry_run else ''}Syncing up to {limit} accounts\n")
 
     token = get_token()
-    conn = get_db()
-    conn.row_factory = sqlite3.Row
+    sb = get_supabase()
 
-    # Get accounts with landing pages
-    accounts = conn.execute(
-        """SELECT a.id, a.name, a.domain, a.exa_research
-           FROM accounts a
-           WHERE a.domain IS NOT NULL AND a.domain != ''
-           ORDER BY a.id LIMIT ?""",
-        (limit,),
-    ).fetchall()
+    # Get accounts from Supabase
+    result = sb.table('accounts').select('id, name, domain, exa_research').not_.is_('domain', 'null').order('id').limit(limit).execute()
+    accounts = result.data or []
 
     print(f"  Found {len(accounts)} accounts to sync\n")
 
@@ -196,8 +186,14 @@ def run(limit=100, dry_run=False):
     synced_contacts = 0
 
     for i, account in enumerate(accounts):
-        account = dict(account)
         print(f"  [{i+1}/{len(accounts)}] {account['name']} ({account['domain']})")
+
+        # exa_research is already a dict from JSONB
+        if isinstance(account.get('exa_research'), str):
+            try:
+                account['exa_research'] = json.loads(account['exa_research'])
+            except (json.JSONDecodeError, TypeError):
+                account['exa_research'] = {}
 
         # Upsert company
         company_id = upsert_company(token, account, dry_run=dry_run)
@@ -208,21 +204,16 @@ def run(limit=100, dry_run=False):
         company_record_id = company_id.get('record_id') if isinstance(company_id, dict) else None
         synced_companies += 1
 
-        # Get landing page URL if exists
-        lp = conn.execute(
-            "SELECT url FROM landing_pages WHERE account_id = ?", (account['id'],)
-        ).fetchone()
-        abm_page_url = lp['url'] if lp else None
+        # Get landing page URL from Supabase
+        lp_result = sb.table('landing_pages').select('url').eq('account_id', account['id']).limit(1).execute()
+        abm_page_url = lp_result.data[0]['url'] if lp_result.data else None
 
-        # Get contacts for this account
-        contacts = conn.execute(
-            """SELECT id, first_name, last_name, email, title, linkedin_url, vibe
-               FROM contacts WHERE account_id = ? ORDER BY is_primary DESC, id""",
-            (account['id'],),
-        ).fetchall()
+        # Get contacts from Supabase
+        contacts_result = sb.table('contacts').select(
+            'id, first_name, last_name, email, title, linkedin_url, vibe'
+        ).eq('account_id', account['id']).order('is_primary', desc=True).order('id').execute()
 
-        for contact in contacts:
-            contact = dict(contact)
+        for contact in (contacts_result.data or []):
             person_id = upsert_person(
                 token, contact,
                 company_record_id=company_record_id,
@@ -235,7 +226,6 @@ def run(limit=100, dry_run=False):
 
         time.sleep(0.5)  # Be nice to Attio
 
-    conn.close()
     print(f"\n  Sync complete. {synced_companies} companies, {synced_contacts} contacts pushed to Attio.")
     return synced_companies, synced_contacts
 

@@ -82,7 +82,7 @@ def contacts_for_account(conn, account_id):
     return cur.fetchone()[0]
 
 
-def save_contact(conn, account_id, person):
+def save_contact(conn, account_id, person, domain=None):
     """Save a contact from Apollo response."""
     apollo_id = person.get('id', '')
     first_name = person.get('first_name', '')
@@ -108,6 +108,29 @@ def save_contact(conn, account_id, person):
     )
 
     conn.commit()
+
+    # Dual-write to Supabase
+    if domain:
+        try:
+            from db_supabase import get_supabase
+            sb = get_supabase()
+            # Look up Supabase account by domain
+            acct = sb.table('accounts').select('id').eq('domain', domain).single().execute()
+            if acct.data:
+                sb.table('contacts').insert({
+                    'account_id': acct.data['id'],
+                    'first_name': first_name,
+                    'last_name': last_name,
+                    'email': email,
+                    'title': title,
+                    'linkedin_url': linkedin_url,
+                    'apollo_id': apollo_id,
+                    'source': 'apollo',
+                    'is_primary': False,
+                }).execute()
+        except Exception as e:
+            print(f"    [supabase] Warning: {e}")
+
     return True
 
 
@@ -151,7 +174,7 @@ def run(limit=100, resume=True):
         for person in result.get('people', []):
             if added >= needed:
                 break
-            if save_contact(conn, account_id, person):
+            if save_contact(conn, account_id, person, domain=domain):
                 added += 1
                 print(f"    + {person.get('first_name', '')} {person.get('last_name', '')} - {person.get('title', '')}")
 

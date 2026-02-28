@@ -287,6 +287,19 @@ def run(limit=100, resume=True):
         # Save vibe to contacts table
         conn.execute("UPDATE contacts SET vibe = ? WHERE id = ?", (vibe, contact['id']))
         conn.commit()
+
+        # Dual-write vibe to Supabase
+        try:
+            from db_supabase import get_supabase
+            sb = get_supabase()
+            acct = sb.table('accounts').select('id').eq('domain', domain).single().execute()
+            if acct.data:
+                sb.table('contacts').update({'vibe': vibe}).eq(
+                    'account_id', acct.data['id']
+                ).eq('first_name', contact['first_name']).execute()
+        except Exception as e:
+            print(f"    [supabase] vibe warning: {e}")
+
         time.sleep(1)
 
         # Generate page copy
@@ -300,6 +313,27 @@ def run(limit=100, resume=True):
             print(f"    [!] Failed to generate page copy")
             continue
 
+        # Build contacts array from all contacts for this account
+        all_contacts_rows = conn.execute(
+            """SELECT first_name, last_name, title
+               FROM contacts WHERE account_id = ?
+               ORDER BY is_primary DESC, id""",
+            (account_id,),
+        ).fetchall()
+        contacts_array = []
+        seen_ids = set()
+        for cr in all_contacts_rows:
+            fname = (cr[0] or '').strip()
+            lname = (cr[1] or '').strip()
+            full = f"{fname} {lname}".strip() if lname else fname
+            cid = re.sub(r'[^a-z0-9]', '', fname.lower())
+            if cid in seen_ids or not cid:
+                cid = re.sub(r'[^a-z0-9]', '', f"{fname}{lname}".lower())
+            if cid in seen_ids or not cid:
+                continue
+            seen_ids.add(cid)
+            contacts_array.append({'id': cid, 'name': full, 'role': cr[2] or ''})
+
         # Assemble full PageData
         page_data = {
             'slug': slug,
@@ -307,6 +341,7 @@ def run(limit=100, resume=True):
             'domain': domain,
             'contactName': f"{contact['first_name']} {contact['last_name']}",
             'contactRole': contact.get('title', ''),
+            'contacts': contacts_array,
             'theme': page_copy.get('theme', {
                 'primary': '#F97316',
                 'primaryLight': '#FB923C',
@@ -347,6 +382,21 @@ def run(limit=100, resume=True):
             )
 
         conn.commit()
+
+        # Dual-write landing page to Supabase
+        try:
+            from db_supabase import get_supabase
+            sb = get_supabase()
+            sb.table('landing_pages').upsert({
+                'slug': slug,
+                'url': page_url,
+                'page_data': page_data,
+                'template': 'abm-v1',
+                'status': 'draft',
+            }, on_conflict='slug').execute()
+            print(f"    [supabase] Synced to Supabase - live at {page_url}")
+        except Exception as e:
+            print(f"    [supabase] Warning: {e}")
         generated += 1
         time.sleep(1)
 
