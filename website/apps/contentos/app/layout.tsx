@@ -79,6 +79,7 @@ export default function RootLayout({
             { href: '/search', label: 'Search' },
             { href: '/log', label: 'Log' },
             { href: '/vitals', label: 'Vitals' },
+            { href: '/posts', label: 'Posts' },
             { href: '/updates', label: 'Updates' },
           ]}
         />

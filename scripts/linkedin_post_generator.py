@@ -1,0 +1,299 @@
+#!/usr/bin/env python3
+"""
+linkedin_post_generator.py - Generate LinkedIn posts from scout data.
+
+Reads today's scout output, generates 10 LinkedIn posts using Claude CLI
+with voice rules and anti-slop validation.
+
+Usage:
+    python3 scripts/linkedin_post_generator.py          # generate today's posts
+    python3 scripts/linkedin_post_generator.py --test   # generate 3 posts, print only
+    python3 scripts/linkedin_post_generator.py --date 2026-02-28  # specific date
+"""
+
+import argparse
+import json
+import re
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
+from pathlib import Path
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SCOUT_DIR = REPO_ROOT / "data" / "linkedin" / "scout"
+POSTS_DIR = REPO_ROOT / "data" / "linkedin" / "posts"
+CORE_VOICE_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "core-voice.md"
+ANTI_SLOP_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "anti-slop.md"
+CLAUDE_CLI = "/opt/homebrew/bin/claude"
+
+
+# -- Anti-Slop Patterns (from nio_blog_generator.py) -------------------------
+
+ANTI_SLOP_RULES = [
+    (r"\u2014", "em-dash", True, lambda m: "."),
+    (r"\u2013", "en-dash", True, lambda m: "."),
+    (r"[Tt]he uncomfortable truth", "authority signaling", True, lambda m: ""),
+    (r"[Ll]et me be clear", "authority signaling", True, lambda m: ""),
+    (r"[Hh]ere'?s what nobody tells you", "authority signaling", True, lambda m: ""),
+    (r"[Tt]he hard truth is", "authority signaling", True, lambda m: ""),
+    (r"[Hh]ere'?s the reality", "authority signaling", True, lambda m: ""),
+    (r"[Ww]hat most people miss", "authority signaling", True, lambda m: ""),
+    (r"[Hh]ere'?s the thing about", "narrator setup", True, lambda m: ""),
+    (r"[Hh]ere'?s where it gets interesting", "narrator setup", True, lambda m: ""),
+    (r"[Bb]ut here'?s the part where", "dramatic rhetorical", True, lambda m: ""),
+    (r"[Aa]nd that'?s when it clicked", "dramatic rhetorical", True, lambda m: ""),
+    (r"[Ww]ant to know the crazy part", "dramatic rhetorical", True, lambda m: ""),
+    (r"[Tt]his is what I call", "self-branded concept", True, lambda m: ""),
+    (r"\b(?:game.?changer|unleash|supercharge|next.?level)\b", "hype word", False, None),
+    (r"[Gg]reat question!", "sycophantic opener", True, lambda m: ""),
+    (r"[Aa]bsolutely!", "sycophantic opener", True, lambda m: ""),
+]
+
+
+def validate_anti_slop(text: str) -> tuple[float, list[str], str]:
+    """Validate text against anti-slop rules. Returns (score, violations, fixed_text)."""
+    violations = []
+    fixed = text
+
+    for pattern, desc, auto_fixable, fix_func in ANTI_SLOP_RULES:
+        matches = list(re.finditer(pattern, fixed))
+        if matches:
+            violations.append(f"{desc}: {len(matches)} occurrence(s)")
+            if auto_fixable and fix_func:
+                fixed = re.sub(pattern, fix_func, fixed)
+
+    # Clean up artifacts
+    fixed = re.sub(r"  +", " ", fixed)
+    fixed = re.sub(r"\n{3,}", "\n\n", fixed)
+    fixed = re.sub(r"^\.\s*$", "", fixed, flags=re.MULTILINE)
+
+    score = max(0.0, 100.0 - len(violations) * 10.0)
+    return score, violations, fixed
+
+
+# -- System Prompt Construction -----------------------------------------------
+
+def build_system_prompt() -> str:
+    """Build system prompt with voice rules and anti-slop."""
+    parts = []
+
+    if CORE_VOICE_PATH.exists():
+        voice = CORE_VOICE_PATH.read_text(errors="replace")
+        parts.append(f"# VOICE PRINCIPLES\n\n{voice[:2000]}")
+
+    if ANTI_SLOP_PATH.exists():
+        parts.append(f"# ANTI-SLOP RULES (mandatory)\n\n{ANTI_SLOP_PATH.read_text(errors='replace')}")
+
+    parts.append("""# LINKEDIN POST RULES
+
+You are writing LinkedIn posts for Shawn Tenam - a GTM engineer who went from plumber to SDR to building AI-native GTM infrastructure. He runs 50+ AI skills, 4 live websites, and builds from a monorepo.
+
+Key rules:
+- NO em-dashes. Use periods or commas instead.
+- Practitioner tone. Sound like you build things, not like you advise people who build things.
+- Lowercase energy. Substance over polish.
+- Each post: 150-300 words. Hook line first, body, then CTA.
+- Be specific. Name tools, share numbers, describe real workflows.
+- No engagement bait. No "agree?" endings. Real questions only.
+- Posts should teach, share a perspective, or challenge conventional thinking.
+- Vary the format: some narrative, some list-based, some hot takes, some how-tos.""")
+
+    return "\n\n---\n\n".join(parts)
+
+
+def build_user_prompt(scout_data: dict, count: int = 10) -> str:
+    """Build user prompt from scout data."""
+    sources_summary = []
+    for s in scout_data.get("sources", [])[:15]:
+        tags = ", ".join(s.get("tags", []))
+        eng = s.get("engagement", {})
+        likes = eng.get("likes", 0)
+        comments = eng.get("comments", 0)
+        sources_summary.append(
+            f"- [{s.get('domain', '?')}] {s.get('author', '?')}: {s.get('post_summary', '')[:120]} "
+            f"(likes: {likes}, comments: {comments}) tags: {tags}"
+        )
+
+    sources_text = "\n".join(sources_summary) if sources_summary else "No specific sources available. Generate posts based on current AI/GTM/builder trends."
+
+    return f"""Generate {count} LinkedIn posts inspired by these trending topics.
+
+Each post should be a COMPLETE, ready-to-post LinkedIn post. Draw inspiration from the topics but make the posts original - Shawn's perspective, Shawn's experiences, Shawn's voice.
+
+--- TRENDING SOURCES ---
+{sources_text}
+
+--- OUTPUT FORMAT ---
+Return ONLY a JSON array. Each item:
+{{
+  "title": "short internal title for the post",
+  "hook": "the first 1-2 lines that grab attention (this appears before the 'see more' fold)",
+  "body": "the full post body including the hook (150-300 words total)",
+  "cta": "closing question or call to action",
+  "tags": ["tag1", "tag2", "tag3"],
+  "inspired_by_index": index_of_source_that_inspired_this (0-based, or -1 if general)
+}}
+
+Vary the styles: some tactical how-tos, some hot takes, some personal stories, some pattern observations. No two posts should feel the same."""
+
+
+# -- Claude CLI Call ----------------------------------------------------------
+
+def call_claude(system_prompt: str, user_prompt: str) -> str:
+    """Call Claude via CLI (Max subscription, no API key needed)."""
+    full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
+
+    result = subprocess.run(
+        [CLAUDE_CLI, "-p", "--model", "opus", "--output-format", "text"],
+        input=full_prompt,
+        capture_output=True,
+        text=True,
+        timeout=300,
+        cwd=str(REPO_ROOT),
+    )
+
+    if result.returncode != 0:
+        print(f"ERROR: claude CLI failed (exit {result.returncode})", file=sys.stderr)
+        if result.stderr:
+            print(f"  stderr: {result.stderr[:500]}", file=sys.stderr)
+        sys.exit(1)
+
+    return result.stdout.strip()
+
+
+# -- Main ---------------------------------------------------------------------
+
+def main():
+    parser = argparse.ArgumentParser(description="Generate LinkedIn posts from scout data")
+    parser.add_argument("--test", action="store_true", help="Generate 3 posts, print only")
+    parser.add_argument("--date", help="Target date (YYYY-MM-DD). Default: today.")
+    args = parser.parse_args()
+
+    target_date = args.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    post_count = 3 if args.test else 10
+
+    # Check for scout data
+    scout_path = SCOUT_DIR / f"{target_date}.json"
+    if not scout_path.exists():
+        print(f"No scout data found for {target_date} at {scout_path}")
+        print("Run linkedin_scout.py first, or specify --date")
+        sys.exit(1)
+
+    scout_data = json.loads(scout_path.read_text())
+    print(f"[linkedin_post_generator] {target_date} | {len(scout_data.get('sources', []))} sources | generating {post_count} posts")
+
+    # Verify Claude CLI
+    if not Path(CLAUDE_CLI).exists():
+        print(f"ERROR: claude CLI not found at {CLAUDE_CLI}", file=sys.stderr)
+        sys.exit(1)
+
+    # Build prompts
+    system_prompt = build_system_prompt()
+    user_prompt = build_user_prompt(scout_data, count=post_count)
+
+    # Generate
+    start_time = time.time()
+    raw = call_claude(system_prompt, user_prompt)
+    elapsed = time.time() - start_time
+
+    # Parse JSON
+    if raw.startswith("```"):
+        raw = raw.split("\n", 1)[1] if "\n" in raw else raw[3:]
+        if raw.endswith("```"):
+            raw = raw[:-3]
+        raw = raw.strip()
+    if raw.startswith("json"):
+        raw = raw[4:].strip()
+
+    try:
+        posts_raw = json.loads(raw)
+    except json.JSONDecodeError:
+        # Try to extract JSON array from response
+        match = re.search(r'\[.*\]', raw, re.DOTALL)
+        if match:
+            try:
+                posts_raw = json.loads(match.group(0))
+            except json.JSONDecodeError:
+                print("ERROR: Could not parse Claude response as JSON")
+                print(f"Raw output (first 500 chars): {raw[:500]}")
+                sys.exit(1)
+        else:
+            print("ERROR: Could not find JSON array in Claude response")
+            print(f"Raw output (first 500 chars): {raw[:500]}")
+            sys.exit(1)
+
+    if not isinstance(posts_raw, list):
+        print("ERROR: Expected JSON array")
+        sys.exit(1)
+
+    # Process posts with anti-slop validation
+    sources = scout_data.get("sources", [])
+    posts = []
+
+    for i, post in enumerate(posts_raw):
+        body = post.get("body", "")
+        score, violations, fixed_body = validate_anti_slop(body)
+
+        if violations:
+            print(f"  post {i+1}: anti-slop caught {len(violations)} issue(s), auto-fixed")
+
+        # Link to source if available
+        inspired_idx = post.get("inspired_by_index", -1)
+        inspired_by = None
+        if isinstance(inspired_idx, int) and 0 <= inspired_idx < len(sources):
+            src = sources[inspired_idx]
+            inspired_by = {
+                "author": src.get("author", ""),
+                "summary": src.get("post_summary", ""),
+                "url": src.get("url", "") or src.get("search_url", ""),
+                "engagement": src.get("engagement", {}),
+            }
+
+        posts.append({
+            "id": i + 1,
+            "title": post.get("title", f"Post {i+1}"),
+            "hook": post.get("hook", ""),
+            "body": fixed_body,
+            "cta": post.get("cta", ""),
+            "tags": post.get("tags", []),
+            "inspired_by": inspired_by,
+            "anti_slop_score": score,
+            "platform": "linkedin",
+        })
+
+    # Calculate aggregate score
+    avg_score = sum(p["anti_slop_score"] for p in posts) / len(posts) if posts else 0
+
+    output = {
+        "date": target_date,
+        "generated_count": len(posts),
+        "avg_anti_slop_score": round(avg_score, 1),
+        "generation_time_seconds": round(elapsed, 1),
+        "engine": "claude-cli-opus",
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "posts": posts,
+    }
+
+    if args.test:
+        print(f"\n=== TEST OUTPUT ({len(posts)} posts, avg slop: {avg_score:.0f}%, {elapsed:.1f}s) ===\n")
+        for p in posts:
+            print(f"--- Post {p['id']}: {p['title']} (slop: {p['anti_slop_score']:.0f}%) ---")
+            print(p["body"][:300])
+            print(f"\nCTA: {p['cta']}")
+            print(f"Tags: {', '.join(p['tags'])}")
+            if p["inspired_by"]:
+                print(f"Inspired by: {p['inspired_by']['author']}")
+            print()
+        return
+
+    # Write output
+    POSTS_DIR.mkdir(parents=True, exist_ok=True)
+    output_path = POSTS_DIR / f"{target_date}.json"
+    output_path.write_text(json.dumps(output, indent=2))
+    print(f"\nDone. {len(posts)} posts saved to {output_path}")
+    print(f"  avg anti-slop: {avg_score:.0f}% | time: {elapsed:.1f}s")
+
+
+if __name__ == "__main__":
+    main()

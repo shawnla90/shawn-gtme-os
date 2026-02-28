@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shawnos.linkedin-posts</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>-c</string>
+    <string>cd /Users/shawnos.ai/shawn-gtme-os &amp;&amp; git pull --rebase --quiet 2>/dev/null || true &amp;&amp; /opt/homebrew/bin/python3 scripts/linkedin_scout.py &amp;&amp; /opt/homebrew/bin/python3 scripts/linkedin_post_generator.py &amp;&amp; git add data/linkedin/ &amp;&amp; git commit -m "feat: daily LinkedIn posts $(date +%Y-%m-%d)" &amp;&amp; git push</string>
+  </array>
+
+  <!-- Run daily at 9:00 AM -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>9</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/Users/shawnos.ai/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/shawnos.ai</string>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/linkedin-posts-stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/linkedin-posts-stderr.log</string>
+
+</dict>
+</plist>
