@@ -33,14 +33,17 @@ def attio_headers(token):
     }
 
 
-def upsert_company(token, account, dry_run=False):
+def upsert_company(token, account, abm_page_url=None, dry_run=False):
     """Upsert a company in Attio using domain as matching attribute."""
     research = {}
-    if account['exa_research']:
-        try:
-            research = json.loads(account['exa_research'])
-        except json.JSONDecodeError:
-            pass
+    if account.get('exa_research'):
+        if isinstance(account['exa_research'], str):
+            try:
+                research = json.loads(account['exa_research'])
+            except json.JSONDecodeError:
+                pass
+        elif isinstance(account['exa_research'], dict):
+            research = account['exa_research']
 
     # Build description from research
     snippets = []
@@ -50,14 +53,37 @@ def upsert_company(token, account, dry_run=False):
             snippets.append(text[:200])
     description = ' | '.join(snippets)[:1000] if snippets else ''
 
+    # Map stage and outreach_status to Attio select labels
+    stage_labels = {
+        'prospect': 'Prospect', 'researched': 'Researched', 'page_live': 'Page Live',
+        'outreach': 'Outreach', 'replied': 'Replied', 'meeting': 'Meeting',
+        'client': 'Client', 'opted_out': 'Opted Out',
+    }
+    outreach_labels = {
+        'new': 'New', 'emailed': 'Emailed', 'replied': 'Replied',
+        'meeting': 'Meeting', 'opted_out': 'Opted Out',
+    }
+
     payload = {
         'data': {
             'values': {
                 'domains': [{'domain': account['domain']}],
                 'name': [{'value': account['name']}],
+                'source': 'ABM Pipeline',
             }
         }
     }
+
+    stage = account.get('stage', '')
+    if stage and stage in stage_labels:
+        payload['data']['values']['stage'] = stage_labels[stage]
+
+    outreach = account.get('outreach_status', '')
+    if outreach and outreach in outreach_labels:
+        payload['data']['values']['outreach_status'] = outreach_labels[outreach]
+
+    if abm_page_url:
+        payload['data']['values']['landing_page_url'] = [{'value': abm_page_url}]
 
     if description:
         payload['data']['values']['description'] = [{'value': description}]
@@ -285,8 +311,8 @@ def run(limit=100, dry_run=False):
     token = get_token()
     sb = get_supabase()
 
-    # Get accounts from Supabase (include outreach_status for engagement sync)
-    result = sb.table('accounts').select('id, name, domain, exa_research, outreach_status').not_.is_('domain', 'null').order('id').limit(limit).execute()
+    # Get accounts from Supabase (include stage + outreach_status for custom attributes)
+    result = sb.table('accounts').select('id, name, domain, exa_research, stage, outreach_status').not_.is_('domain', 'null').order('id').limit(limit).execute()
     accounts = result.data or []
 
     print(f"  Found {len(accounts)} accounts to sync\n")
@@ -304,18 +330,18 @@ def run(limit=100, dry_run=False):
             except (json.JSONDecodeError, TypeError):
                 account['exa_research'] = {}
 
-        # Upsert company
-        company_id = upsert_company(token, account, dry_run=dry_run)
+        # Get landing page URL from Supabase
+        lp_result = sb.table('landing_pages').select('url').eq('account_id', account['id']).limit(1).execute()
+        abm_page_url = lp_result.data[0]['url'] if lp_result.data else None
+
+        # Upsert company (now includes source, stage, outreach_status, landing_page_url)
+        company_id = upsert_company(token, account, abm_page_url=abm_page_url, dry_run=dry_run)
         if not company_id:
             print(f"    [!] Failed to upsert company, skipping contacts")
             continue
 
         company_record_id = company_id.get('record_id') if isinstance(company_id, dict) else None
         synced_companies += 1
-
-        # Get landing page URL from Supabase
-        lp_result = sb.table('landing_pages').select('url').eq('account_id', account['id']).limit(1).execute()
-        abm_page_url = lp_result.data[0]['url'] if lp_result.data else None
 
         # Get contacts from Supabase
         contacts_result = sb.table('contacts').select(
