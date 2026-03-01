@@ -1,0 +1,240 @@
+{
+  "date": "2026-03-01",
+  "generated_count": 10,
+  "avg_anti_slop_score": 100.0,
+  "generation_time_seconds": 125.6,
+  "engine": "claude-cli-opus",
+  "generated_at": "2026-03-01T14:02:46.809155+00:00",
+  "posts": [
+    {
+      "id": 1,
+      "title": "Multi-agent systems are just delegation with better logs",
+      "hook": "I run 50+ AI skills from a single monorepo. Not because I planned to. Because single-agent workflows kept breaking.",
+      "body": "I run 50+ AI skills from a single monorepo. Not because I planned to. Because single-agent workflows kept breaking.\n\nThe pattern I kept hitting: one agent tries to do everything, context window fills up, quality drops, things get missed.\n\nSo I started splitting. One agent routes tasks. Another writes content. Another scans for security issues before I push to GitHub. Another handles CRM sync. Each one is focused, testable, and replaceable.\n\nThe multi-agent conversation happening right now feels very theoretical. \"Agents collaborating on complex reasoning.\" Cool. But in production, agents collaborating mostly means... agents staying in their lane and passing clean handoffs.\n\nMy setup:\n\n\ud83d\udd27 Agent router decides solo vs. subagent vs. team\n\ud83d\udd27 Each skill has a SKILL.md that defines scope and constraints\n\ud83d\udd27 Handoffs between sessions are written to disk, not kept in memory\n\ud83d\udd27 Constraints file prevents agents from stepping on each other\n\nThe boring infrastructure matters more than the fancy orchestration. I spent more time on my handoff protocol than on any individual agent's prompt.\n\nMost people building with agents are over-indexing on intelligence and under-indexing on coordination. The smartest agent in the world is useless if it doesn't know what the last agent already did.",
+      "cta": "If you're building multi-agent anything, start with the handoff format. Everything else follows from that.",
+      "tags": [
+        "AI agents",
+        "automation",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Swyx",
+        "summary": "Swyx discusses the evolution of AI agents, emphasizing multi-agent systems and their role in automating complex workflows beyond single-task agents. He shares insights on practical implementations using tools like LangGraph and predicts widespread adoption in developer tools. Highlights challenges in reliability and orchestration.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Swyx%20discusses%20the%20evolution%20of%20AI%20agents%2C%20emphasizing%20multi-agent%20systems%20and%20t",
+        "engagement": {
+          "likes": 2500,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 2,
+      "title": "AI writes my code now and I have feelings about it",
+      "hook": "Six months ago I was mass-sending 200 emails a day from SalesLoft on a primary domain with no warmup. Now I have an AI agent that writes, tests, and commits code while I review diffs.",
+      "body": "Six months ago I was mass-sending 200 emails a day from SalesLoft on a primary domain with no warmup. Now I have an AI agent that writes, tests, and commits code while I review diffs.\n\nThe career arc from SDR to GTM engineer happened fast. But the shift from \"I write code\" to \"I supervise code being written\" happened faster.\n\nI use Claude Code as my primary dev environment. It reads my codebase, follows my rules file, runs builds, and asks before pushing. When something breaks, it reads the logs and fixes it without me explaining the stack.\n\nWhat changed in my workflow:\n\n\u2705 I describe what I want in plain English\n\u2705 The agent explores the codebase and proposes a plan\n\u2705 I approve or redirect\n\u2705 It builds, tests, commits\n\u2705 I review the diff like a senior engineer would\n\nI went from writing every line to being the architect. My job is knowing what to build and why. The agent handles how.\n\nThis isn't replacing developers. It's changing what \"developer\" means. The SDRs who learned to build automations in Clay are becoming GTM engineers. The GTM engineers who learned to direct AI agents are becoming... something new.\n\nThe people who win next aren't the best coders. They're the best specifiers.",
+      "cta": "The skill that matters most right now isn't writing code. It's describing precisely what you want built and knowing when the output is wrong.",
+      "tags": [
+        "AI agents",
+        "developer tools",
+        "career pivot"
+      ],
+      "inspired_by": {
+        "author": "Andrej Karpathy",
+        "summary": "Karpathy explores LLMs as agents for code generation and debugging, showcasing a demo of an AI agent that iteratively fixes bugs in a developer environment. He argues this represents a shift in AI infrastructure towards agentic workflows that augment human developers. Notes on cost efficiency and integration with existing IDEs.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Karpathy%20explores%20LLMs%20as%20agents%20for%20code%20generation%20and%20debugging%2C%20showcasing%20a",
+        "engagement": {
+          "likes": 4500,
+          "comments": 780
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 3,
+      "title": "Production AI agents for sales are 80% plumbing",
+      "hook": "Everyone wants to talk about the AI in their sales stack. Nobody wants to talk about the 14 API calls, 3 enrichment sources, and MX validation layer underneath it.",
+      "body": "Everyone wants to talk about the AI in their sales stack. Nobody wants to talk about the 14 API calls, 3 enrichment sources, and MX validation layer underneath it.\n\nI built an ABM pipeline that sources accounts from Apollo, enriches them, validates contacts, filters by title and email deliverability, syncs to Attio CRM, and pushes qualified leads into Lemlist sequences. Automatically. Every night.\n\nThe AI part? Maybe 15% of the system. An LLM scores account fit and personalizes first lines.\n\nThe other 85%:\n\n\ud83d\udd27 Apollo API for contact sourcing with title filters\n\ud83d\udd27 MX record validation so you're not emailing dead domains\n\ud83d\udd27 Dedup logic against existing CRM records\n\ud83d\udd27 Attio sync with proper list management\n\ud83d\udd27 Lemlist campaign wiring with warmup-safe sending limits\n\ud83d\udd27 Error handling for when Apollo returns garbage data (often)\n\nFour phases of building. Multiple sessions of debugging data quality issues. One entire phase was just fixing title filtering because Apollo's job title field is chaos.\n\nIf you're building AI sales automation and spending most of your time on the prompt... you're building a demo, not a pipeline.\n\nThe infrastructure is the product. The AI is a feature.",
+      "cta": "Start with data quality. Seriously. Your AI personalization means nothing if you're emailing the wrong person at a dead domain.",
+      "tags": [
+        "AI infrastructure",
+        "outbound automation",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "Hamish Grierson",
+        "summary": "Details building production-grade AI agents for sales automation, covering infrastructure needs like vector databases and reliable prompting. Shares a framework for scaling agents without hallucinations, drawing from real-world deployment in customer-facing apps. Emphasizes monitoring tools for agent performance.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Hamish%20Grierson%20Details%20building%20production-grade%20AI%20agents%20for%20sales%20automation%2C%20covering%20infra",
+        "engagement": {
+          "likes": 1200,
+          "comments": 210
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 4,
+      "title": "AI PRs are coming but context is the bottleneck",
+      "hook": "AI agents that handle entire pull requests sound amazing until you realize most codebases don't have enough context written down for a human to make good PRs, let alone an agent.",
+      "body": "AI agents that handle entire pull requests sound amazing until you realize most codebases don't have enough context written down for a human to make good PRs, let alone an agent.\n\nI maintain a monorepo with 3 Next.js sites, a macOS app, Python scripts, and a cron pipeline. My AI agent makes real commits. But it only works because I invested heavily in context.\n\nWhat I had to build for AI-driven development to actually work:\n\n\ud83d\udcc4 A CLAUDE.md rules file the agent reads every session\n\ud83d\udcc4 SKILL.md files for every major system\n\ud83d\udcc4 Architecture docs explaining how pieces connect\n\ud83d\udcc4 A lessons.md file the agent updates when it makes mistakes\n\ud83d\udcc4 Handoff documents so sessions can pick up where the last one stopped\n\nThe agent doesn't just read code. It reads intent, constraints, and history.\n\nWithout that, you get technically correct PRs that miss the point. Code that compiles but violates unwritten conventions. Features that work but break the architecture.\n\nThe teams that will benefit most from AI-driven PRs aren't the ones with the best models. They're the ones with the best documentation.\n\nYour README isn't just for onboarding juniors anymore. It's the training data for your next team member... which might not be human.",
+      "cta": "Write your docs like an AI agent will read them tomorrow. Because it probably will.",
+      "tags": [
+        "developer tools",
+        "AI agents",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Nat Friedman",
+        "summary": "Nat reflects on the next wave of developer tools powered by AI agents, predicting they will handle entire pull requests autonomously. Discusses infrastructure bottlenecks like compute costs and data privacy in agentic systems. Calls for open-source contributions to accelerate progress.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nat%20Friedman%20Nat%20reflects%20on%20the%20next%20wave%20of%20developer%20tools%20powered%20by%20AI%20agents%2C%20predictin",
+        "engagement": {
+          "likes": 3100,
+          "comments": 520
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 5,
+      "title": "Agent benchmarks vs agent reality",
+      "hook": "Benchmarks say AI agents struggle with long-horizon planning. My experience says they struggle with remembering what they did 10 minutes ago.",
+      "body": "Benchmarks say AI agents struggle with long-horizon planning. My experience says they struggle with remembering what they did 10 minutes ago.\n\nI've been building with AI agents daily for months. Real production work, not demos. And the gap between \"agent completes benchmark task\" and \"agent ships reliable code across sessions\" is enormous.\n\nProblems I solve every week that benchmarks don't measure:\n\n- Agent forgets context from earlier in the same session\n- Agent makes the same mistake it made yesterday because there's no persistent memory\n- Agent generates code that passes tests but violates architectural patterns\n- Agent confidently answers questions about project state from training data instead of querying the actual database\n\nMy workarounds are all infrastructure:\n\nPersistent memory files on disk. Rules files loaded every session. A lessons log the agent writes to after corrections. Handoff documents between sessions. A database it queries before answering questions.\n\nThe agent is smart. The agent is also goldfish-brained without scaffolding.\n\nThe hype cycle wants you to believe agents will just work. Reality is agents work when you build the memory and coordination layer around them. That layer is boring. It's markdown files and SQLite queries and naming conventions.\n\nBut it's the difference between a demo and a daily driver.",
+      "cta": "If your agent keeps making the same mistakes, the fix isn't a better model. It's a better memory system.",
+      "tags": [
+        "AI agents",
+        "AI infrastructure",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Eliot Peper",
+        "summary": "Analyzes the hype vs. reality of AI agent infrastructure, pointing to recent benchmarks showing limitations in long-horizon planning. Advocates for hybrid human-AI automation loops in dev tools. References emerging platforms like CrewAI for multi-agent orchestration.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Eliot%20Peper%20Analyzes%20the%20hype%20vs.%20reality%20of%20AI%20agent%20infrastructure%2C%20pointing%20to%20recent%20ben",
+        "engagement": {
+          "likes": 800,
+          "comments": 140
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 6,
+      "title": "GTM engineering is just SDR work with better tools",
+      "hook": "I used to manually build buying committees in Salesforce. 40 contacts per account, mapped by title and department, one by one. Now I have a Python script that does it in 11 seconds.",
+      "body": "I used to manually build buying committees in Salesforce. 40 contacts per account, mapped by title and department, one by one. Now I have a Python script that does it in 11 seconds.\n\nSDRs make the best GTM engineers. Not because SDRs are technical. Because SDRs know which manual processes are actually painful enough to automate.\n\nEvery system I've built started as something I used to do by hand:\n\n\u27a1\ufe0f Manual lead sourcing became an Apollo enrichment pipeline\n\u27a1\ufe0f Copy-pasting into sequences became Lemlist API integration\n\u27a1\ufe0f Checking if emails bounce became MX record validation at source\n\u27a1\ufe0f Guessing account fit became a scoring model fed by real CRM data\n\u27a1\ufe0f Morning pipeline reviews became a Slack digest generated by cron\n\nThe engineering part came later. Python, APIs, databases. But the requirements came from sitting in that SDR seat for years and knowing exactly where the process breaks.\n\nMost RevOps teams build automation top-down. Strategy first, then implementation. GTM engineering works bottom-up. Pain point first, then a system that eliminates it.\n\nYou don't need a CS degree to do this. You need pattern recognition from doing the work manually, and enough stubbornness to learn the tools that automate it.",
+      "cta": "If you're an SDR drowning in manual work and curious about automation, start with one workflow you hate. Automate just that. The rest follows.",
+      "tags": [
+        "GTM engineering",
+        "sales ops",
+        "career pivot"
+      ],
+      "inspired_by": {
+        "author": "Sami Rahman",
+        "summary": "Discusses building scalable GTM engines by integrating engineering principles into go-to-market strategies, emphasizing data-driven experimentation and automation. Shares a framework for aligning product, sales, and marketing through custom tech stacks. Highlights real-world results from reducing CAC by 40% at his startup.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sami%20Rahman%20Discusses%20building%20scalable%20GTM%20engines%20by%20integrating%20engineering%20principles%20in",
+        "engagement": {
+          "likes": 2500,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 7,
+      "title": "Ethical outbound at scale is a data quality problem",
+      "hook": "The difference between personalized outbound and spam isn't the copy. It's whether you actually know who you're emailing and why.",
+      "body": "The difference between personalized outbound and spam isn't the copy. It's whether you actually know who you're emailing and why.\n\nI've been on both sides. I've sent thousands of garbage emails from templates that said \"I noticed your company is growing\" to people at companies that were laying off. I've also built systems that only email validated contacts at accounts that match a real ICP with personalization pulled from actual company data.\n\nThe second approach sends fewer emails and books more meetings.\n\nWhat ethical outbound automation actually looks like in production:\n\n\u2705 Account scoring based on real signals, not just company size\n\u2705 Contact validation before they hit a sequence (MX records, title match, dedup)\n\u2705 Personalization from enrichment data, not hallucinated by AI\n\u2705 Sending limits that respect domain warmup\n\u2705 Automatic removal when someone's already in your CRM\n\nThe volume game is dead. I know because I played it. 200+ emails a day on a primary domain with no warmup. It worked for a while. Then deliverability cratered and it stopped working for everyone.\n\nThe new game is precision. Fewer emails, better targeting, real personalization, clean data.\n\nIt takes more infrastructure. It takes less apologizing to your email provider.",
+      "cta": "Your outbound is only as good as your data layer. Fix the inputs and the outputs fix themselves.",
+      "tags": [
+        "outbound automation",
+        "GTM engineering",
+        "sales ops"
+      ],
+      "inspired_by": {
+        "author": "Josh Braun",
+        "summary": "Breaks down ethical outbound automation tactics using AI tools without spamming, focusing on personalized sequences that boost reply rates. Integrates sales ops best practices for scaling outreach in GTM motions. Warns against common pitfalls and shares metrics from 10x-ing meetings booked.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Josh%20Braun%20Breaks%20down%20ethical%20outbound%20automation%20tactics%20using%20AI%20tools%20without%20spamming%2C",
+        "engagement": {
+          "likes": 3200,
+          "comments": 600
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 8,
+      "title": "Content that builds pipeline vs content that builds ego",
+      "hook": "I have 4 live websites, a daily SEO brief generated by cron, and a blog pipeline that converts Substack posts to web pages automatically. None of it started as a \"content strategy.\"",
+      "body": "I have 4 live websites, a daily SEO brief generated by cron, and a blog pipeline that converts Substack posts to web pages automatically. None of it started as a \"content strategy.\"\n\nIt started as documenting what I was building.\n\nPosts about Clay workflows I actually use. Breakdowns of ABM pipelines I actually run. Screenshots of actual dashboards with real numbers.\n\nThe posts that drove pipeline weren't the polished thought leadership pieces. They were the messy build logs with specific tool names and real results.\n\nWhat I've learned about content that actually converts:\n\n\ud83d\udd27 Specificity beats polish. \"I used Apollo's title filter to exclude VPs\" beats \"target the right personas\"\n\ud83d\udd27 Show your work. Screenshots, code snippets, actual numbers\n\ud83d\udd27 Teach the workflow, not the theory. Step 1, step 2, step 3\n\ud83d\udd27 Give everything away. Prompts in the comments, templates in the DMs, no gatekeeping\n\ud83d\udd27 Write from the build, not for the algorithm\n\nThe content strategy discourse is obsessed with frameworks and calendars. My \"framework\" is: build something, write about building it, share what you learned.\n\nPeople who need what you build will find content about building it. That's the whole strategy.",
+      "cta": "Stop planning content. Start documenting what you're already doing. The pipeline follows the substance.",
+      "tags": [
+        "content strategy",
+        "building in public",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "Aja Frost",
+        "summary": "Outlines a step-by-step content strategy for B2B SaaS that drives pipeline through SEO-optimized long-form posts and repurposed LinkedIn content. Explains how to measure content ROI using sales ops tools like attribution models. Provides templates for content calendars tied to revenue ops goals.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Aja%20Frost%20Outlines%20a%20step-by-step%20content%20strategy%20for%20B2B%20SaaS%20that%20drives%20pipeline%20throu",
+        "engagement": {
+          "likes": 1800,
+          "comments": 320
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 9,
+      "title": "Solo builder shipping from a monorepo",
+      "hook": "I run a monorepo with 3 Next.js sites, a macOS app, Python automation scripts, a CRM sync pipeline, and a cron system. No team. No VC. Just one repo and an AI agent.",
+      "body": "I run a monorepo with 3 Next.js sites, a macOS app, Python automation scripts, a CRM sync pipeline, and a cron system. No team. No VC. Just one repo and an AI agent.\n\nThe solo builder movement usually gets romanticized. \"Ship fast, break things, ramen profitable.\" The reality is more like... debugging a launchd plist at midnight because your cron job stopped syncing CRM data and you have no one to escalate to.\n\nBut that's also the advantage. No standup. No Jira tickets. No waiting for approval. See a problem at 9 PM, ship a fix by 9:30.\n\nWhat makes solo building viable in 2026:\n\n\u2705 AI agents that write, test, and commit code\n\u2705 Monorepo structure so everything shares types and config\n\u2705 Cron pipelines running on a dedicated Mac Mini server\n\u2705 Pre-push security scans so you don't accidentally ship secrets\n\u2705 Context handoffs so you can pick up exactly where you left off\n\nI went from plumber to SDR to GTM engineer to... whatever this is. Solo technical founder? AI-assisted one-person agency? The label doesn't matter. The output does.\n\nFour websites. Fifty AI skills. Pipeline running while I sleep. All from one machine in my apartment.",
+      "cta": "The barrier to building isn't talent or funding anymore. It's willingness to sit with the discomfort of figuring it out alone.",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "shipping products"
+      ],
+      "inspired_by": {
+        "author": "Pieter Levels",
+        "summary": "Pieter shares his experience as a solo founder shipping multiple products like Nomad List without VC funding, emphasizing rapid iteration and building in public. He details how he launched in days using simple tech stacks and grew to millions in revenue. Key takeaway: focus on user feedback over perfection.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shares%20his%20experience%20as%20a%20solo%20founder%20shipping%20multiple%20products%20like%20N",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 10,
+      "title": "Plumber to programmer pipeline",
+      "hook": "I was a plumber. Then an SDR. Then I taught myself to code because I got tired of waiting for engineering to build the automations I needed.",
+      "body": "I was a plumber. Then an SDR. Then I taught myself to code because I got tired of waiting for engineering to build the automations I needed.\n\nThe career pivot stories on LinkedIn usually skip the ugly middle. The part where you're mass-sending emails during the day and watching Python tutorials at night. Where you can't get the API response to parse correctly and there's no senior engineer to ask. Where you ship something broken to production because you didn't know what production meant.\n\nI didn't pivot because I had a vision. I pivoted because I was an SDR staring at Salesforce thinking \"this should be automated\" and nobody was going to build it for me.\n\nFirst automation: a Python script that pulled contacts from Apollo and formatted them for upload. Took me three days to build what should have been a two-hour project. It was ugly. It worked.\n\nThat script became a pipeline. The pipeline became a system. The system became a business.\n\nThe plumbing background actually helps more than you'd think. Plumbing is systems thinking. Water flows downhill, pressure matters, one bad joint ruins the whole line. Software is the same. Data flows through pipes, bad inputs corrupt outputs, and the connection points are where things break.\n\nNobody's career path is a straight line. Mine went from copper pipes to data pipelines.",
+      "cta": "If you're in a non-technical role thinking about learning to code, start by automating one thing you already do manually. You don't need permission or a CS degree. You need a problem worth solving.",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "solo developer"
+      ],
+      "inspired_by": {
+        "author": "Arvid Kahl",
+        "summary": "Arvid recounts building and selling his first SaaS product as a solo developer after pivoting from a non-tech career. He stresses documenting the entire process publicly on LinkedIn to build an audience and attract buyers. The post includes actionable steps for others starting out.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Arvid%20recounts%20building%20and%20selling%20his%20first%20SaaS%20product%20as%20a%20solo%20developer%20a",
+        "engagement": {
+          "likes": 8500,
+          "comments": 320
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    }
+  ]
+}
