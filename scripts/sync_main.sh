@@ -84,4 +84,21 @@ else
   log "WARN: Nothing to push or push failed (non-fatal)"
 fi
 
+# ── Step 5: Trigger Mission Control rebuild if website code changed ──
+HASHFILE="$REPO_ROOT/data/.mc-last-build-hash"
+if [[ -f "$HASHFILE" ]]; then
+  LAST_BUILD_HASH=$(cat "$HASHFILE")
+  CURRENT_HASH=$($GIT rev-parse HEAD)
+  if [[ "$LAST_BUILD_HASH" != "$CURRENT_HASH" ]]; then
+    # Check if any website files changed since last build
+    WEBSITE_CHANGES=$($GIT diff --name-only "$LAST_BUILD_HASH" "$CURRENT_HASH" -- website/ packages/ 2>/dev/null | wc -l | tr -d ' ')
+    if [[ "$WEBSITE_CHANGES" -gt 0 ]]; then
+      log "Website code changed ($WEBSITE_CHANGES files) — restarting Mission Control server"
+      # Kill the running server process — launchd KeepAlive will restart it,
+      # and the startup script will detect the hash mismatch and rebuild
+      pkill -f "node.*mission-control.*server.js" 2>/dev/null || true
+    fi
+  fi
+fi
+
 log "═══ Sync Main End (success) ═══"

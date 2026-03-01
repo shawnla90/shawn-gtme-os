@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shawnos.mission-control</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os/scripts/mission_control_server.sh</string>
+  </array>
+
+  <!-- Keep the server running — restart on crash -->
+  <key>KeepAlive</key>
+  <true/>
+
+  <!-- Wait 10 seconds before restarting after exit -->
+  <key>ThrottleInterval</key>
+  <integer>10</integer>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/Users/shawnos.ai/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/shawnos.ai</string>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/mission-control.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/mission-control-error.log</string>
+
+</dict>
+</plist>

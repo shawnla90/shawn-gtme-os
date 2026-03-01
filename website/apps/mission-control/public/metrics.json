@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-01T05:00:14.000Z",
+  "generated": "2026-03-01T06:20:49.660Z",
   "system": {
     "status": "degraded",
     "uptime": "live",
     "lastCron": "See scheduler",
-    "commitCount": 3,
+    "commitCount": 22,
     "activeSkills": 42,
     "memoryFiles": 5,
     "sessionCost": "$0.00",
@@ -12,7 +12,7 @@
   },
   "calendar": [
     {
-      "date": "2026-02-28",
+      "date": "2026-03-01",
       "events": []
     }
   ],
@@ -25,80 +25,14 @@
   ],
   "drafts": [
     {
-      "type": "linkedin",
-      "title": "Parallel-Safe Context Handoffs",
-      "status": "draft",
-      "date": "2026-02-27",
-      "pillar": "Building & Sharing"
-    },
-    {
-      "type": "substack",
-      "title": "parallel safe handoffs",
-      "status": "draft",
-      "date": "2026-02-27",
-      "pillar": null
-    },
-    {
-      "type": "x",
-      "title": "parallel safe handoffs",
-      "status": "draft",
-      "date": "2026-02-27",
-      "pillar": "Building & Sharing"
-    },
-    {
-      "type": "linkedin",
-      "title": "claude code mobile",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "Building & Sharing"
-    },
-    {
-      "type": "linkedin",
-      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "Building & Sharing (capstone)"
-    },
-    {
-      "type": "linkedin",
-      "title": "exa grok hubspot landing pages",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "GTM Workflow / Building & Sharing"
-    },
-    {
-      "type": "x",
-      "title": "claude code mobile",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "Building & Sharing"
-    },
-    {
-      "type": "x",
-      "title": "Full Ecosystem X Threads -- Day 4",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": null
-    },
-    {
-      "type": "x",
-      "title": "exa grok hubspot landing pages",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "GTM Workflow / Building & Sharing"
-    },
-    {
-      "type": "linkedin",
-      "title": "Content OS: The Content Machine -- Day 3",
-      "status": "draft",
-      "date": "2026-02-25",
-      "pillar": "Skill/System Share"
+      "type": "content",
+      "title": "No drafts detected",
+      "status": "empty"
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
-    "teamMembers": 4,
-    "draftsTracked": 75
+    "teamMembers": 4
   }
 }

@@ -21,6 +21,7 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DB_PATH = REPO_ROOT / "data" / "index.db"
 CONTENT_JSON = REPO_ROOT / "website" / "apps" / "mission-control" / "public" / "data" / "content.json"
+CONTENT_FULL_JSON = REPO_ROOT / "website" / "apps" / "mission-control" / "public" / "data" / "content-full.json"
 METRICS_JSON = REPO_ROOT / "website" / "apps" / "mission-control" / "public" / "metrics.json"
 
 
@@ -232,6 +233,57 @@ def update_metrics_drafts(content_items):
     print(f"  Updated {METRICS_JSON.name}: {len(drafts)} drafts tracked")
 
 
+def build_content_full_json(content_items, links):
+    """Build content-full.json with full bodies for Vercel fallback (code graph API)."""
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+    # Read body from markdown files
+    items = []
+    for item in content_items:
+        file_path = REPO_ROOT / item["file_path"]
+        body = ""
+        if file_path.exists():
+            try:
+                raw = file_path.read_text(encoding="utf-8")
+                # Strip YAML frontmatter
+                if raw.startswith("---"):
+                    end = raw.find("---", 3)
+                    if end != -1:
+                        body = raw[end + 3:].strip()
+                    else:
+                        body = raw
+                else:
+                    body = raw.strip()
+            except Exception:
+                pass
+
+        items.append({
+            "id": item["id"],
+            "title": item["title"],
+            "platform": item["platform"],
+            "stage": item["stage"],
+            "word_count": item.get("word_count"),
+            "date": item.get("date"),
+            "file_path": item["file_path"],
+            "body": body,
+        })
+
+    # Build links array from DB links
+    link_items = []
+    for link in links:
+        link_items.append({
+            "source_path": link["source_path"],
+            "target_path": link["target_path"],
+            "link_type": link["link_type"],
+        })
+
+    return {
+        "generated": now,
+        "items": items,
+        "links": link_items,
+    }
+
+
 def main():
     print("Generating content JSON from index.db")
 
@@ -250,6 +302,11 @@ def main():
     CONTENT_JSON.parent.mkdir(parents=True, exist_ok=True)
     CONTENT_JSON.write_text(json.dumps(data, indent=2) + "\n")
     print(f"  Wrote {CONTENT_JSON.relative_to(REPO_ROOT)}")
+
+    # Build and write content-full.json (Vercel fallback for code graph API)
+    full_data = build_content_full_json(content_items, links)
+    CONTENT_FULL_JSON.write_text(json.dumps(full_data) + "\n")
+    print(f"  Wrote {CONTENT_FULL_JSON.relative_to(REPO_ROOT)} ({len(full_data['items'])} items, {len(full_data['links'])} links)")
 
     # Update metrics.json drafts section
     update_metrics_drafts(content_items)

@@ -184,6 +184,7 @@ $GIT add data/website-stats.json 2>/dev/null || true
 $GIT add data/repo-stats.json 2>/dev/null || true
 $GIT add docs/_generated/skill-manifest.md 2>/dev/null || true
 $GIT add website/apps/mission-control/public/data/content.json 2>/dev/null || true
+$GIT add website/apps/mission-control/public/data/content-full.json 2>/dev/null || true
 $GIT add website/apps/mission-control/public/metrics.json 2>/dev/null || true
 
 # Check if there are staged changes
