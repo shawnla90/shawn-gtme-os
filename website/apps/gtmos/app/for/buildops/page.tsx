@@ -1,5 +1,7 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { BuildOpsContent } from './BuildOpsContent'
+import { ABMTracker } from '../ABMTracker'
 
 export const metadata: Metadata = {
   title: 'Built for BuildOps | AI Sales Development Infrastructure',
@@ -9,5 +11,12 @@ export const metadata: Metadata = {
 }
 
 export default function BuildOpsPage() {
-  return <BuildOpsContent />
+  return (
+    <>
+      <Suspense>
+        <ABMTracker slug="buildops" company="BuildOps" />
+      </Suspense>
+      <BuildOpsContent />
+    </>
+  )
 }

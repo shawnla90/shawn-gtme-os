@@ -1,5 +1,7 @@
+import { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { FYLDContent } from './FYLDContent'
+import { ABMTracker } from '../ABMTracker'
 
 export const metadata: Metadata = {
   title: 'Built for FYLD | AI Sales Development Infrastructure',
@@ -9,5 +11,12 @@ export const metadata: Metadata = {
 }
 
 export default function FYLDPage() {
-  return <FYLDContent />
+  return (
+    <>
+      <Suspense>
+        <ABMTracker slug="fyld" company="FYLD" />
+      </Suspense>
+      <FYLDContent />
+    </>
+  )
 }
