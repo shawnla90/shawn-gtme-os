@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getTableList, getDbFileSize, getDbPath } from '../../../lib/db'
+import { getTableList, getDbFileSize } from '../../../lib/db'
 
 export const dynamic = 'force-dynamic'
 
@@ -24,15 +24,15 @@ export async function GET(
 
     return NextResponse.json({
       name: dbName,
-      path: getDbPath(dbName),
       tables,
       tableCount: tables.length,
       totalRows,
       fileSize,
     })
   } catch (e) {
+    console.error('Database read error:', (e as Error).message)
     return NextResponse.json(
-      { error: `Failed to read database: ${(e as Error).message}` },
+      { error: 'Failed to read database' },
       { status: 500 }
     )
   }

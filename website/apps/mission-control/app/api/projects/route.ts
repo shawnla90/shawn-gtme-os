@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server'
 import { PROJECTS } from '../../lib/projects'
-import { execSync } from 'child_process'
+import { execFileSync } from 'child_process'
 import path from 'path'
 
 export const dynamic = 'force-dynamic'
+
+const SAFE_PATH_RE = /^[a-zA-Z0-9_\-./]+$/
 
 export async function GET() {
   const repoRoot = path.join(process.cwd(), '..', '..', '..')
@@ -12,11 +14,15 @@ export async function GET() {
     let recentCommits: { hash: string; message: string; date: string; author: string }[] = []
     let commitCount = 0
 
+    if (!SAFE_PATH_RE.test(project.path)) {
+      return { ...project, recentCommits, commitCount }
+    }
+
     try {
-      const log = execSync(
-        `git log --oneline --format="%H|%s|%ai|%an" -10 -- "${project.path}"`,
+      const log = (execFileSync(
+        'git', ['log', '--oneline', '--format=%H|%s|%ai|%an', '-10', '--', project.path],
         { cwd: repoRoot, encoding: 'utf-8', timeout: 5000 }
-      ).trim()
+      ) as string).trim()
 
       if (log) {
         recentCommits = log.split('\n').map((line) => {
@@ -25,10 +31,10 @@ export async function GET() {
         })
       }
 
-      const countStr = execSync(
-        `git rev-list --count HEAD -- "${project.path}"`,
+      const countStr = (execFileSync(
+        'git', ['rev-list', '--count', 'HEAD', '--', project.path],
         { cwd: repoRoot, encoding: 'utf-8', timeout: 5000 }
-      ).trim()
+      ) as string).trim()
       commitCount = parseInt(countStr, 10) || 0
     } catch {
       // git might not be available

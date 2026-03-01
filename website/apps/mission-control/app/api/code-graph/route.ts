@@ -19,6 +19,12 @@ interface GraphNode {
   category: string
   x?: number
   y?: number
+  contentId?: number
+  platform?: string
+  wordCount?: number
+  stage?: string
+  gitCommits?: { hash: string; message: string }[]
+  commitCount?: number
 }
 
 interface GraphEdge {
@@ -426,11 +432,11 @@ function loadContentNodes(search: string): { nodes: GraphNode[]; edges: GraphEdg
         category: `content-${platform}`,
         x: undefined,
         y: undefined,
-        contentId: row.id,
+        contentId: Number(row.id),
         platform,
         wordCount,
         stage: row.stage,
-      } as GraphNode & { contentId: number; platform: string; wordCount: number; stage: string })
+      })
     }
 
     // Load content links for edges
@@ -461,25 +467,29 @@ function loadContentNodes(search: string): { nodes: GraphNode[]; edges: GraphEdg
 /**
  * Add git commit info to code file nodes.
  */
+/** Validate a file path contains only safe characters */
+const SAFE_PATH_RE = /^[a-zA-Z0-9_\-./]+$/
+
 function addGitInfo(nodes: GraphNode[]) {
-  const { execSync } = require('child_process')
+  const { execFileSync } = require('child_process')
 
   for (const node of nodes) {
     if (!node.filePath || node.id.startsWith('content:')) continue
+    if (!SAFE_PATH_RE.test(node.filePath)) continue
     try {
       const fullPath = path.join(REPO_ROOT, node.filePath)
       if (!fs.existsSync(fullPath)) continue
-      const log = execSync(
-        `git log --oneline -5 -- "${node.filePath}"`,
+      const log = (execFileSync(
+        'git', ['log', '--oneline', '-5', '--', node.filePath],
         { cwd: REPO_ROOT, timeout: 3000, encoding: 'utf-8' },
-      ).trim()
+      ) as string).trim()
       if (log) {
         const commits = log.split('\n').map((line: string) => {
           const [hash, ...rest] = line.split(' ')
           return { hash, message: rest.join(' ') }
         })
-        ;(node as any).gitCommits = commits
-        ;(node as any).commitCount = commits.length
+        node.gitCommits = commits
+        node.commitCount = commits.length
       }
     } catch {
       // git not available or file not tracked

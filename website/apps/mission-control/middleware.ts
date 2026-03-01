@@ -6,7 +6,41 @@ const PRIVATE_API_PREFIXES = ['/api/db', '/api/crm', '/api/office', '/api/ops']
 const PUBLIC_PATHS = ['/sign-in', '/api/auth']
 const AUTH_COOKIE = 'mc-auth'
 
-export function middleware(request: NextRequest) {
+/**
+ * Verify HMAC-signed auth token using Web Crypto API (Edge Runtime compatible).
+ * Cookie format: `uuid-token.hex-signature`
+ */
+async function verifyAuthToken(cookieValue: string, secret: string): Promise<boolean> {
+  const dotIndex = cookieValue.indexOf('.')
+  if (dotIndex === -1) return false
+
+  const token = cookieValue.slice(0, dotIndex)
+  const signature = cookieValue.slice(dotIndex + 1)
+  if (!token || !signature) return false
+
+  const encoder = new TextEncoder()
+  const key = await crypto.subtle.importKey(
+    'raw',
+    encoder.encode(secret),
+    { name: 'HMAC', hash: 'SHA-256' },
+    false,
+    ['sign'],
+  )
+  const sigBytes = await crypto.subtle.sign('HMAC', key, encoder.encode(token))
+  const expectedHex = Array.from(new Uint8Array(sigBytes))
+    .map((b) => b.toString(16).padStart(2, '0'))
+    .join('')
+
+  // Constant-time comparison
+  if (expectedHex.length !== signature.length) return false
+  let result = 0
+  for (let i = 0; i < expectedHex.length; i++) {
+    result |= expectedHex.charCodeAt(i) ^ signature.charCodeAt(i)
+  }
+  return result === 0
+}
+
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   // Password gate — only active when MC_PASSWORD is set (deployed mode)
@@ -15,7 +49,13 @@ export function middleware(request: NextRequest) {
     const isPublicPath = PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + '/'))
     if (!isPublicPath) {
       const authCookie = request.cookies.get(AUTH_COOKIE)?.value
-      if (authCookie !== mcPassword) {
+
+      let isValid = false
+      if (authCookie) {
+        isValid = await verifyAuthToken(authCookie, mcPassword)
+      }
+
+      if (!isValid) {
         // Redirect to sign-in
         const signInUrl = new URL('/sign-in', request.url)
         signInUrl.searchParams.set('from', pathname)

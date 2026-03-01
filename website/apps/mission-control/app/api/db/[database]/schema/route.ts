@@ -23,8 +23,9 @@ export async function GET(
 
     return NextResponse.json({ schemas })
   } catch (e) {
+    console.error('Schema read error:', (e as Error).message)
     return NextResponse.json(
-      { error: `Failed to read schema: ${(e as Error).message}` },
+      { error: 'Failed to read schema' },
       { status: 500 }
     )
   }

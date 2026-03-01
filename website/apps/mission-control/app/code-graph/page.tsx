@@ -87,7 +87,7 @@ export default function CodeGraphPage() {
       const params = new URLSearchParams({ filter: f })
       if (search.length >= 3) params.set('search', search)
       params.set('include', 'git')
-      const res = await fetch(`/api/code-graph?${params}`)
+      const res = await fetch(`/api/code-graph/?${params}`)
       if (!res.ok) throw new Error('Failed to fetch graph')
       const data = await res.json()
       setGraphData(data)
@@ -122,7 +122,7 @@ export default function CodeGraphPage() {
     }
     const loadContent = async () => {
       try {
-        const res = await fetch(`/api/content/${selectedNode.contentId}`)
+        const res = await fetch(`/api/content/${selectedNode.contentId}/`)
         if (res.ok) {
           const data = await res.json()
           setContentHtml(data.body_html ?? '')

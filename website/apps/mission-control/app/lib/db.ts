@@ -31,6 +31,20 @@ export function getDb(name: DbName): Database.Database {
   return db
 }
 
+/** Validate that a table name exists in the database (prevents SQL injection) */
+function validateTable(db: Database.Database, tableName: string): void {
+  const exists = db.prepare(
+    `SELECT 1 FROM sqlite_master WHERE type='table' AND name = ?`
+  ).get(tableName)
+  if (!exists) throw new Error('Invalid table name')
+}
+
+/** Get valid column names for a table (table must be validated first) */
+function getValidColumns(db: Database.Database, tableName: string): string[] {
+  const pragma = db.prepare(`PRAGMA table_info("${tableName}")`).all() as { name: string }[]
+  return pragma.map((p) => p.name)
+}
+
 export function getTableList(dbName: DbName): { name: string; count: number }[] {
   const db = getDb(dbName)
   const tables = db.prepare(
@@ -64,9 +78,16 @@ export function queryTable(
   const limit = opts.limit ?? 50
   const offset = opts.offset ?? 0
 
-  // Get columns
-  const pragma = db.prepare(`PRAGMA table_info("${tableName}")`).all() as { name: string }[]
-  const columns = pragma.map((p) => p.name)
+  // Validate tableName exists in the database (parameterized — safe from injection)
+  validateTable(db, tableName)
+
+  // Get valid columns (tableName already validated above)
+  const columns = getValidColumns(db, tableName)
+
+  // Validate searchColumn if provided
+  if (opts.searchColumn && !columns.includes(opts.searchColumn)) {
+    throw new Error('Invalid search column')
+  }
 
   // Count
   let countSql = `SELECT COUNT(*) as total FROM "${tableName}"`

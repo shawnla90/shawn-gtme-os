@@ -31,8 +31,9 @@ export async function GET(
 
     return NextResponse.json(result)
   } catch (e) {
+    console.error('Table query error:', (e as Error).message)
     return NextResponse.json(
-      { error: `Query failed: ${(e as Error).message}` },
+      { error: 'Query failed' },
       { status: 500 }
     )
   }
