@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-Cold email outreach sender.
+Cold email outreach sender with multi-account rotation.
 
 Queries Supabase for accounts with stage='prospect' and outreach_status='new',
-renders an email template with their landing page URL, sends via SMTP,
+renders an email template with their landing page URL, sends via SMTP
+using round-robin rotation across Maildoso sending accounts,
 and logs to email_sends table.
 
 Usage:
@@ -13,6 +14,7 @@ Usage:
 """
 
 import argparse
+import json
 import os
 import smtplib
 import sys
@@ -37,25 +39,83 @@ if os.path.exists(env_path):
 
 from db_supabase import get_supabase
 
-SENDER_NAME = os.environ.get('SENDER_NAME', 'Shawn')
-MAX_PER_DAY = 20
 SEND_DELAY_SECONDS = 3
 
 
-def get_smtp():
-    """Create an authenticated SMTP connection."""
+def load_maildoso_accounts():
+    """Load multi-account config from maildoso_accounts.json.
+
+    Falls back to legacy env vars (SMTP_HOST/SMTP_USER/SMTP_PASS) if
+    the JSON file doesn't exist, returning a single-account config.
+    """
+    config_path = os.path.join(SCRIPT_DIR, 'maildoso_accounts.json')
+
+    if os.path.exists(config_path):
+        with open(config_path) as f:
+            config = json.load(f)
+        print(f"  Loaded {len(config['accounts'])} Maildoso accounts from config")
+        return config
+
+    # Legacy fallback: single account from env vars
     host = os.environ.get('SMTP_HOST', '')
-    port = int(os.environ.get('SMTP_PORT', '587'))
     user = os.environ.get('SMTP_USER', '')
     password = os.environ.get('SMTP_PASS', '')
+    port = int(os.environ.get('SMTP_PORT', '587'))
 
     if not all([host, user, password]):
-        raise ValueError("SMTP_HOST, SMTP_USER, and SMTP_PASS must be set in scripts/abm/.env")
+        raise ValueError(
+            "Either maildoso_accounts.json or SMTP_HOST/SMTP_USER/SMTP_PASS must be configured"
+        )
 
-    server = smtplib.SMTP(host, port, timeout=30)
+    print("  Using legacy single-account SMTP config")
+    return {
+        'smtp_host': host,
+        'smtp_port': port,
+        'imap_host': os.environ.get('IMAP_HOST', ''),
+        'password': password,
+        'sender_name': os.environ.get('SENDER_NAME', 'Shawn'),
+        'per_account_daily_limit': 20,
+        'accounts': [{'email': user, 'domain': user.split('@')[1]}],
+    }
+
+
+def get_smtp_for_account(config, account_email):
+    """Create an authenticated SMTP connection for a specific account."""
+    server = smtplib.SMTP(config['smtp_host'], config['smtp_port'], timeout=30)
     server.starttls()
-    server.login(user, password)
+    server.login(account_email, config['password'])
     return server
+
+
+def get_account_send_counts(sb, account_emails):
+    """Query today's send count per account from email_sends."""
+    today = time.strftime('%Y-%m-%dT00:00:00Z')
+    counts = {}
+
+    for email_addr in account_emails:
+        result = sb.table('email_sends').select('id', count='exact').eq(
+            'from_email', email_addr
+        ).gte('created_at', today).execute()
+        counts[email_addr] = result.count or 0
+
+    return counts
+
+
+def pick_next_account(config, send_counts, last_index):
+    """Round-robin account selection, skipping accounts at their daily limit.
+
+    Returns (account_dict, new_index) or (None, last_index) if all maxed out.
+    """
+    num_accounts = len(config['accounts'])
+    limit = config.get('per_account_daily_limit', 3)
+
+    for offset in range(num_accounts):
+        idx = (last_index + 1 + offset) % num_accounts
+        acct = config['accounts'][idx]
+        if send_counts.get(acct['email'], 0) < limit:
+            return acct, idx
+
+    return None, last_index
 
 
 def render_template(subject, body_html, body_text, variables):
@@ -73,10 +133,10 @@ def render_template(subject, body_html, body_text, variables):
     return rendered_subject, rendered_html, rendered_text
 
 
-def build_message(from_email, to_email, subject, body_html, body_text):
+def build_message(sender_name, from_email, to_email, subject, body_html, body_text):
     """Build a MIME multipart email message."""
     msg = MIMEMultipart('alternative')
-    msg['From'] = formataddr((SENDER_NAME, from_email))
+    msg['From'] = formataddr((sender_name, from_email))
     msg['To'] = to_email
     msg['Subject'] = subject
     msg['Message-ID'] = make_msgid(domain=from_email.split('@')[1])
@@ -87,30 +147,31 @@ def build_message(from_email, to_email, subject, body_html, body_text):
     return msg
 
 
-def check_already_sent_today(sb):
-    """Return count of emails sent today to enforce daily limit."""
-    result = sb.table('email_sends').select('id', count='exact').gte(
-        'created_at', time.strftime('%Y-%m-%dT00:00:00Z')
-    ).execute()
-    return result.count or 0
-
-
 def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
-    """Send cold outreach emails."""
+    """Send cold outreach emails with multi-account rotation."""
     print(f"\n[Outreach] {'DRY RUN - ' if dry_run else ''}Sending up to {limit} emails\n")
 
     sb = get_supabase()
-    from_email = os.environ.get('SMTP_USER', '')
+    config = load_maildoso_accounts()
 
-    # Check daily send count
+    sender_name = config.get('sender_name', 'Shawn')
+    per_account_limit = config.get('per_account_daily_limit', 3)
+    account_emails = [a['email'] for a in config['accounts']]
+    max_per_day = len(config['accounts']) * per_account_limit
+
+    # Check daily send counts per account
+    send_counts = get_account_send_counts(sb, account_emails)
+    total_sent_today = sum(send_counts.values())
+    total_remaining = max_per_day - total_sent_today
+
     if not dry_run:
-        sent_today = check_already_sent_today(sb)
-        remaining = MAX_PER_DAY - sent_today
-        if remaining <= 0:
-            print(f"  Daily limit reached ({MAX_PER_DAY} sent today). Try again tomorrow.")
+        if total_remaining <= 0:
+            print(f"  Daily limit reached ({total_sent_today}/{max_per_day} sent today). Try again tomorrow.")
             return 0
-        limit = min(limit, remaining)
-        print(f"  {sent_today} sent today, {remaining} remaining (cap: {MAX_PER_DAY})")
+        limit = min(limit, total_remaining)
+        print(f"  {total_sent_today} sent today, {total_remaining} remaining (cap: {max_per_day})")
+        for email_addr, count in send_counts.items():
+            print(f"    {email_addr}: {count}/{per_account_limit}")
 
     # Load template
     tpl_result = sb.table('email_templates').select('*').eq('name', template_name).limit(1).execute()
@@ -132,16 +193,24 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
 
     print(f"  Found {len(accounts)} eligible accounts\n")
 
-    # Open SMTP connection (reuse for batch)
-    smtp = None
-    if not dry_run:
-        smtp = get_smtp()
-
+    # SMTP connection cache: email -> smtp connection
+    smtp_connections = {}
+    last_account_index = -1
     sent_count = 0
 
     try:
         for i, account in enumerate(accounts):
             print(f"  [{i+1}/{len(accounts)}] {account['name']} ({account['domain']})")
+
+            # Pick next sending account (round-robin)
+            sending_account, last_account_index = pick_next_account(
+                config, send_counts, last_account_index
+            )
+            if sending_account is None:
+                print(f"    [stop] All sending accounts at daily limit")
+                break
+
+            from_email = sending_account['email']
 
             # Get primary contact with email
             contact_result = sb.table('contacts').select(
@@ -182,7 +251,7 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
                 'first_name': contact.get('first_name', ''),
                 'company': account['name'],
                 'page_url': page_url,
-                'sender_name': SENDER_NAME,
+                'sender_name': sender_name,
             }
 
             subject, body_html, body_text = render_template(
@@ -190,25 +259,33 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
             )
 
             if dry_run:
-                print(f"    [DRY RUN] Would send to: {contact['email']}")
+                print(f"    [DRY RUN] Would send to: {contact['email']} via {from_email}")
                 print(f"    Subject: {subject}")
                 print(f"    Page URL: {page_url}")
+                send_counts[from_email] = send_counts.get(from_email, 0) + 1
                 sent_count += 1
                 continue
 
+            # Get or create SMTP connection for this sending account
+            if from_email not in smtp_connections:
+                smtp_connections[from_email] = get_smtp_for_account(config, from_email)
+
+            smtp = smtp_connections[from_email]
+
             # Build and send email
-            msg = build_message(from_email, contact['email'], subject, body_html, body_text)
+            msg = build_message(sender_name, from_email, contact['email'], subject, body_html, body_text)
             message_id = msg['Message-ID']
 
             try:
                 smtp.sendmail(from_email, contact['email'], msg.as_string())
 
-                # Log to email_sends
+                # Log to email_sends (with from_email tracking)
                 sb.table('email_sends').insert({
                     'contact_id': contact['id'],
                     'account_id': account['id'],
                     'template_id': template['id'],
                     'to_email': contact['email'],
+                    'from_email': from_email,
                     'subject': subject,
                     'status': 'sent',
                     'sent_at': time.strftime('%Y-%m-%dT%H:%M:%SZ'),
@@ -220,7 +297,8 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
                     'outreach_status': 'emailed'
                 }).eq('id', account['id']).execute()
 
-                print(f"    -> Sent to {contact['email']}")
+                print(f"    -> Sent to {contact['email']} via {from_email}")
+                send_counts[from_email] = send_counts.get(from_email, 0) + 1
                 sent_count += 1
 
             except Exception as e:
@@ -230,6 +308,7 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
                     'account_id': account['id'],
                     'template_id': template['id'],
                     'to_email': contact['email'],
+                    'from_email': from_email,
                     'subject': subject,
                     'status': 'error',
                     'error': str(e)[:500],
@@ -241,8 +320,11 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
             time.sleep(SEND_DELAY_SECONDS)
 
     finally:
-        if smtp:
-            smtp.quit()
+        for conn in smtp_connections.values():
+            try:
+                conn.quit()
+            except Exception:
+                pass
 
     print(f"\n  Done. {sent_count} emails {'would be ' if dry_run else ''}sent.")
     return sent_count

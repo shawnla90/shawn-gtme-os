@@ -1,7 +1,7 @@
 # ABM Pipeline - Operational Runbook
 
 > Internal ops doc. This directory is gitignored - safe for credentials and internal details.
-> Last updated: 2026-02-28
+> Last updated: 2026-03-01
 
 ## Quick Start
 
@@ -37,7 +37,8 @@ All keys live in `scripts/abm/.env` (gitignored). Required per step:
 | generate | `EXA_API_KEY`, `XAI_API_KEY`, `SUPABASE_URL`, `SUPABASE_KEY` |
 | sync | `ATTIO_API_TOKEN`, `SUPABASE_URL`, `SUPABASE_KEY` |
 | depersonalize | `SUPABASE_URL`, `SUPABASE_KEY` |
-| outreach | `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `SMTP_PORT`, `SENDER_NAME`, `SUPABASE_URL`, `SUPABASE_KEY` |
+| outreach | `maildoso_accounts.json` (preferred) or `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `SMTP_PORT`, `SENDER_NAME`, `SUPABASE_URL`, `SUPABASE_KEY` |
+| check_replies | `maildoso_accounts.json` (preferred) or `IMAP_HOST`, `IMAP_USER`, `IMAP_PASS`, `SUPABASE_URL`, `SUPABASE_KEY` |
 
 ## Pipeline Stages
 
@@ -74,10 +75,20 @@ All keys live in `scripts/abm/.env` (gitignored). Required per step:
 ### 6. Outreach (`outreach.py`)
 - Queries accounts with `stage='prospect'` and `outreach_status='new'`
 - Renders email template with personalized landing page URL
-- Sends via SMTP, logs to `email_sends` table
+- **Multi-account rotation**: 8 Maildoso accounts across 2 domains, round-robin selection
+- Per-account daily limit: 3 emails/account/day (24 total/day)
+- Sends via SMTP, logs to `email_sends` table with `from_email` tracking
 - Sets `sent_at` on landing page (triggers TTL clock)
-- Max 20/day, 3-second delay between sends
+- SMTP connections cached per-account for the batch
+- Falls back to legacy single-account env vars if `maildoso_accounts.json` not found
 - **Must be called explicitly** - never included in `--step all`
+
+### 7. Reply Checking (`check_replies.py`)
+- Scans IMAP inboxes for replies to outreach emails
+- **Multi-inbox**: only scans inboxes that have active sends (via `from_email` in `email_sends`)
+- Matches replies via In-Reply-To / References headers
+- Detects opt-out language and updates account status
+- Falls back to legacy single-account env vars if `maildoso_accounts.json` not found
 
 ## Launchd Schedule
 
@@ -137,6 +148,7 @@ Logs: `~/Library/Logs/abm-pipeline.log` and `~/Library/Logs/abm-depersonalize.lo
 | sent_at | timestamp | When email was sent |
 | template | text | Template name used |
 | status | text | sent/bounced/replied |
+| from_email | text | Sending account used (NULL for legacy sends) |
 
 ## Attio CRM Integration
 
@@ -220,7 +232,41 @@ print(f'Accounts: {accounts.count}, Live pages: {pages.count}')
 - Check `ATTIO_API_TOKEN` is valid
 - Known MCP bugs: list filtering (Modes 3/4) broken, entry removal requires UI
 
-## Known Limitations (as of 2026-02-28)
+## Multi-Account Setup (Maildoso)
+
+8 sending accounts across 2 domains. Config lives in `scripts/abm/maildoso_accounts.json` (gitignored).
+
+**Capacity:** 8 accounts x 3 emails/day = 24 emails/day
+
+```json
+{
+  "smtp_host": "smtp.maildoso.com",
+  "smtp_port": 587,
+  "imap_host": "imap.maildoso.com",
+  "password": "shared_password",
+  "sender_name": "Shawn",
+  "per_account_daily_limit": 3,
+  "accounts": [
+    { "email": "shawn@domain1.com", "domain": "domain1.com" },
+    ...
+  ]
+}
+```
+
+**How rotation works:**
+- Round-robin across accounts, skipping any that hit their daily limit
+- Send counts queried from `email_sends.from_email` per day
+- SMTP connections cached per-account within a batch
+- Reply checking only scans inboxes with active sends
+
+**DNS requirements (per domain):**
+- SPF: configured
+- DMARC: configured
+- DKIM: check Maildoso dashboard for selector
+
+**Legacy fallback:** If `maildoso_accounts.json` doesn't exist, both `outreach.py` and `check_replies.py` fall back to single-account env vars (`SMTP_HOST`/`IMAP_HOST` etc).
+
+## Known Limitations (as of 2026-03-01)
 
 1. **sent_at not auto-populated**: TTL depersonalization requires `sent_at` to be set. This happens when outreach sends. Until outreach is live, pages persist indefinitely.
 2. **Attio MCP list filtering broken**: Can't programmatically remove entries from lists. Use soft-remove (stage + outreach_status update + audit note).

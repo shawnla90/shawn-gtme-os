@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """
-IMAP reply monitor for cold outreach.
+IMAP reply monitor for cold outreach (multi-account).
 
-Connects to IMAP inbox, matches replies to original sends via
-In-Reply-To / References headers, updates email_sends and account statuses.
+Connects to each Maildoso IMAP inbox that has active sends,
+matches replies to original sends via In-Reply-To / References headers,
+updates email_sends and account statuses.
 
 Usage:
   python3 scripts/abm/check_replies.py --dry-run
@@ -13,6 +14,7 @@ Usage:
 import argparse
 import email
 import imaplib
+import json
 import os
 import re
 import sys
@@ -40,17 +42,38 @@ OPT_OUT_PATTERNS = re.compile(
 )
 
 
-def get_imap():
-    """Connect to IMAP and select inbox."""
+def load_maildoso_accounts():
+    """Load multi-account config from maildoso_accounts.json.
+
+    Falls back to legacy env vars if the JSON file doesn't exist.
+    """
+    config_path = os.path.join(SCRIPT_DIR, 'maildoso_accounts.json')
+
+    if os.path.exists(config_path):
+        with open(config_path) as f:
+            return json.load(f)
+
+    # Legacy fallback
     host = os.environ.get('IMAP_HOST', '')
     user = os.environ.get('IMAP_USER', '')
     password = os.environ.get('IMAP_PASS', '')
 
     if not all([host, user, password]):
-        raise ValueError("IMAP_HOST, IMAP_USER, and IMAP_PASS must be set in scripts/abm/.env")
+        raise ValueError(
+            "Either maildoso_accounts.json or IMAP_HOST/IMAP_USER/IMAP_PASS must be configured"
+        )
 
-    imap = imaplib.IMAP4_SSL(host)
-    imap.login(user, password)
+    return {
+        'imap_host': host,
+        'password': password,
+        'accounts': [{'email': user, 'domain': user.split('@')[1]}],
+    }
+
+
+def get_imap_for_account(config, account_email):
+    """Connect to IMAP for a specific account and select inbox."""
+    imap = imaplib.IMAP4_SSL(config['imap_host'])
+    imap.login(account_email, config['password'])
     imap.select('INBOX')
     return imap
 
@@ -77,7 +100,6 @@ def extract_references(msg):
 
     in_reply_to = msg.get('In-Reply-To', '')
     if in_reply_to:
-        # Extract Message-ID from angle brackets
         matches = re.findall(r'<([^>]+)>', in_reply_to)
         refs.update(f'<{m}>' for m in matches)
         if not matches and in_reply_to.strip():
@@ -91,15 +113,101 @@ def extract_references(msg):
     return refs
 
 
+def scan_inbox(config, account_email, msg_id_lookup, sb, dry_run):
+    """Scan a single IMAP inbox for replies. Returns (new_replies, opt_outs)."""
+    new_replies = 0
+    opt_outs = 0
+
+    try:
+        imap = get_imap_for_account(config, account_email)
+    except Exception as e:
+        print(f"    [!] IMAP login failed for {account_email}: {e}")
+        return 0, 0
+
+    try:
+        # Search for recent messages (last 7 days)
+        date_str = time.strftime('%d-%b-%Y', time.gmtime(time.time() - 7 * 86400))
+        status, message_nums = imap.search(None, f'(SINCE {date_str})')
+
+        if status != 'OK' or not message_nums[0]:
+            print(f"    No recent messages")
+            return 0, 0
+
+        msg_ids = message_nums[0].split()
+        print(f"    {len(msg_ids)} messages in last 7 days")
+
+        for num in msg_ids:
+            status, data = imap.fetch(num, '(RFC822)')
+            if status != 'OK':
+                continue
+
+            raw_email = data[0][1]
+            msg = email.message_from_bytes(raw_email)
+
+            # Check if this is a reply to one of our sends
+            references = extract_references(msg)
+            matched_send = None
+
+            for ref in references:
+                if ref in msg_id_lookup:
+                    matched_send = msg_id_lookup[ref]
+                    break
+
+            if not matched_send:
+                continue
+
+            from_addr = email.utils.parseaddr(msg.get('From', ''))[1]
+            body = get_body_text(msg)
+
+            print(f"    Reply from: {from_addr} (re: send #{matched_send['id']})")
+
+            is_opt_out = bool(OPT_OUT_PATTERNS.search(body))
+
+            if is_opt_out:
+                new_status = 'opted_out'
+                acct_status = 'opted_out'
+                print(f"      -> Opt-out detected")
+                opt_outs += 1
+            else:
+                new_status = 'replied'
+                acct_status = 'replied'
+                new_replies += 1
+
+            if dry_run:
+                print(f"      [DRY RUN] Would update send #{matched_send['id']} -> {new_status}")
+                continue
+
+            sb.table('email_sends').update({
+                'status': new_status,
+                'replied_at': time.strftime('%Y-%m-%dT%H:%M:%SZ'),
+            }).eq('id', matched_send['id']).execute()
+
+            sb.table('accounts').update({
+                'outreach_status': acct_status,
+            }).eq('id', matched_send['account_id']).execute()
+
+            del msg_id_lookup[matched_send['message_id']]
+
+    finally:
+        try:
+            imap.close()
+            imap.logout()
+        except Exception:
+            pass
+
+    return new_replies, opt_outs
+
+
 def run(dry_run=False):
-    """Check for replies to outreach emails."""
-    print(f"\n[Reply Check] {'DRY RUN - ' if dry_run else ''}Scanning inbox\n")
+    """Check for replies across all sending accounts."""
+    print(f"\n[Reply Check] {'DRY RUN - ' if dry_run else ''}Scanning inboxes\n")
 
     sb = get_supabase()
+    config = load_maildoso_accounts()
 
-    # Get all message_ids we've sent (only 'sent' status - active outreach)
+    # Get all active sends with their from_email
     sends_result = sb.table('email_sends').select(
-        'id, contact_id, account_id, message_id, to_email'
+        'id, contact_id, account_id, message_id, to_email, from_email'
     ).eq('status', 'sent').not_.is_('message_id', 'null').execute()
 
     sent_messages = sends_result.data or []
@@ -109,93 +217,43 @@ def run(dry_run=False):
 
     # Build lookup: message_id -> send record
     msg_id_lookup = {}
+    active_from_emails = set()
     for send in sent_messages:
         if send.get('message_id'):
             msg_id_lookup[send['message_id']] = send
+            if send.get('from_email'):
+                active_from_emails.add(send['from_email'])
 
     print(f"  Tracking {len(msg_id_lookup)} outreach message IDs")
 
-    # Connect to IMAP
-    imap = get_imap()
+    # Determine which inboxes to scan
+    all_account_emails = {a['email'] for a in config['accounts']}
 
-    # Search for recent messages (last 7 days)
-    date_str = time.strftime('%d-%b-%Y', time.gmtime(time.time() - 7 * 86400))
-    status, message_nums = imap.search(None, f'(SINCE {date_str})')
+    if active_from_emails:
+        # Only scan inboxes that have active sends
+        inboxes_to_scan = active_from_emails & all_account_emails
+    else:
+        # Legacy sends without from_email - scan all inboxes
+        inboxes_to_scan = all_account_emails
 
-    if status != 'OK' or not message_nums[0]:
-        print("  No recent messages found in inbox.")
-        imap.close()
-        imap.logout()
-        return 0
+    if not inboxes_to_scan:
+        # Fallback: if from_emails don't match config (e.g. old env var sends),
+        # scan all configured accounts
+        inboxes_to_scan = all_account_emails
 
-    msg_ids = message_nums[0].split()
-    print(f"  Found {len(msg_ids)} messages in last 7 days")
+    print(f"  Scanning {len(inboxes_to_scan)} inbox(es)\n")
 
-    new_replies = 0
-    opt_outs = 0
+    total_replies = 0
+    total_opt_outs = 0
 
-    for num in msg_ids:
-        status, data = imap.fetch(num, '(RFC822)')
-        if status != 'OK':
-            continue
+    for account_email in sorted(inboxes_to_scan):
+        print(f"  [{account_email}]")
+        replies, opt_outs = scan_inbox(config, account_email, msg_id_lookup, sb, dry_run)
+        total_replies += replies
+        total_opt_outs += opt_outs
 
-        raw_email = data[0][1]
-        msg = email.message_from_bytes(raw_email)
-
-        # Check if this is a reply to one of our sends
-        references = extract_references(msg)
-        matched_send = None
-
-        for ref in references:
-            if ref in msg_id_lookup:
-                matched_send = msg_id_lookup[ref]
-                break
-
-        if not matched_send:
-            continue
-
-        from_addr = email.utils.parseaddr(msg.get('From', ''))[1]
-        body = get_body_text(msg)
-
-        print(f"  Reply from: {from_addr} (re: send #{matched_send['id']})")
-
-        # Check for opt-out language
-        is_opt_out = bool(OPT_OUT_PATTERNS.search(body))
-
-        if is_opt_out:
-            new_status = 'opted_out'
-            acct_status = 'opted_out'
-            print(f"    -> Opt-out detected")
-            opt_outs += 1
-        else:
-            new_status = 'replied'
-            acct_status = 'replied'
-            new_replies += 1
-
-        if dry_run:
-            print(f"    [DRY RUN] Would update send #{matched_send['id']} -> {new_status}")
-            continue
-
-        # Update email_sends
-        update_data = {
-            'status': new_status,
-            'replied_at': time.strftime('%Y-%m-%dT%H:%M:%SZ'),
-        }
-        sb.table('email_sends').update(update_data).eq('id', matched_send['id']).execute()
-
-        # Update account outreach_status
-        sb.table('accounts').update({
-            'outreach_status': acct_status,
-        }).eq('id', matched_send['account_id']).execute()
-
-        # Remove from lookup so we don't re-process
-        del msg_id_lookup[matched_send['message_id']]
-
-    imap.close()
-    imap.logout()
-
-    print(f"\n  Done. {new_replies} new replies, {opt_outs} opt-outs detected.")
-    return new_replies + opt_outs
+    print(f"\n  Done. {total_replies} new replies, {total_opt_outs} opt-outs detected.")
+    return total_replies + total_opt_outs
 
 
 if __name__ == "__main__":

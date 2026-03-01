@@ -43,3 +43,4 @@ node_modules/
 .obsidian/
 .mcp.json
 ShawnOSCommandCenter/.build/
+scripts/abm/maildoso_accounts.json
