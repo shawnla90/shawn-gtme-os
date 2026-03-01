@@ -15,6 +15,9 @@ Usage:
   python3 scripts/abm/pipeline.py --step flag_titles --dry-run
   python3 scripts/abm/pipeline.py --step enrich --limit 50
   python3 scripts/abm/pipeline.py --step replace --limit 50
+  python3 scripts/abm/pipeline.py --step clean --dry-run
+  python3 scripts/abm/pipeline.py --step warming
+  python3 scripts/abm/pipeline.py --step preflight
   python3 scripts/abm/pipeline.py --step all --limit 5 --resume
 """
 
@@ -82,10 +85,98 @@ def check_keys(step):
         if not os.environ.get('LEMLIST_API_KEY'):
             missing.append('LEMLIST_API_KEY')
 
+    if step == 'clean':
+        if not os.environ.get('ATTIO_API_TOKEN'):
+            missing.append('ATTIO_API_TOKEN')
+
     if missing:
         print(f"[!] Missing API keys: {', '.join(missing)}")
         print("    Export them or add to .env before running.")
         sys.exit(1)
+
+
+def run_preflight():
+    """Pre-launch checklist: verify everything is ready for Lemlist outreach."""
+    from db_supabase import get_supabase
+    from qualify import get_qualified_accounts
+
+    print(f"\n{'='*60}")
+    print(f"  Pre-Launch Checklist")
+    print(f"{'='*60}\n")
+
+    sb = get_supabase()
+    checks_passed = 0
+    checks_total = 0
+
+    # Check 1: Qualified accounts exist
+    checks_total += 1
+    qualified = get_qualified_accounts(sb, limit=500)
+    if len(qualified) >= 10:
+        print(f"  [+] Qualified accounts: {len(qualified)} (>= 10)")
+        checks_passed += 1
+    else:
+        print(f"  [!] Qualified accounts: {len(qualified)} (need >= 10)")
+
+    # Check 2: Landing pages are live
+    checks_total += 1
+    qualified_ids = [a['id'] for a in qualified]
+    if qualified_ids:
+        lp_result = sb.table('landing_pages').select(
+            'account_id', count='exact'
+        ).in_('account_id', qualified_ids).eq('status', 'live').execute()
+        lp_count = lp_result.count or 0
+    else:
+        lp_count = 0
+
+    if lp_count >= 10:
+        print(f"  [+] Live landing pages: {lp_count} (>= 10)")
+        checks_passed += 1
+    else:
+        print(f"  [!] Live landing pages: {lp_count} (need >= 10)")
+
+    # Check 3: Domains are warming
+    checks_total += 1
+    try:
+        import warming_status
+        config = warming_status.load_config()
+        statuses = warming_status.get_warming_status(sb, config)
+        min_days = min(s['warming_days'] for s in statuses) if statuses else 0
+
+        if min_days >= 7:
+            print(f"  [+] Domain warming: {min_days} days (>= 7)")
+            checks_passed += 1
+        else:
+            print(f"  [!] Domain warming: {min_days} days (need >= 7)")
+    except Exception as e:
+        print(f"  [!] Domain warming: check failed ({e})")
+
+    # Check 4: Lemlist API key configured
+    checks_total += 1
+    if os.environ.get('LEMLIST_API_KEY'):
+        print(f"  [+] Lemlist API key: configured")
+        checks_passed += 1
+    else:
+        print(f"  [!] Lemlist API key: not set")
+
+    # Check 5: Email template exists
+    checks_total += 1
+    tpl_result = sb.table('email_templates').select('id', count='exact').execute()
+    tpl_count = tpl_result.count or 0
+    if tpl_count > 0:
+        print(f"  [+] Email templates: {tpl_count} available")
+        checks_passed += 1
+    else:
+        print(f"  [!] Email templates: none found")
+
+    print(f"\n{'='*60}")
+    print(f"  Result: {checks_passed}/{checks_total} checks passed")
+    if checks_passed == checks_total:
+        print(f"  READY FOR LAUNCH")
+    else:
+        print(f"  NOT READY - fix issues above")
+    print(f"{'='*60}\n")
+
+    return checks_passed == checks_total
 
 
 def main():
@@ -93,8 +184,9 @@ def main():
     parser.add_argument('--step', choices=[
         'research', 'prospect', 'generate', 'sync', 'depersonalize',
         'outreach', 'gap_analysis', 'find_similar', 'lemlist',
-        'backfill', 'validate', 'flag_titles', 'enrich', 'replace', 'all',
-    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist/backfill/validate/flag_titles/enrich/replace must be called explicitly)')
+        'backfill', 'validate', 'flag_titles', 'enrich', 'replace',
+        'clean', 'warming', 'preflight', 'all',
+    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist/backfill/validate/flag_titles/enrich/replace/clean/warming/preflight must be called explicitly)')
     parser.add_argument('--limit', type=int, default=100,
                         help='Max number of companies to process')
     parser.add_argument('--dry-run', action='store_true',
@@ -195,6 +287,20 @@ def main():
     if step == 'replace':
         import replace_contacts
         replace_contacts.run(limit=limit, dry_run=args.dry_run)
+
+    # Clean Attio CRM - remove unqualified records - explicit only
+    if step == 'clean':
+        import clean_attio
+        clean_attio.run(dry_run=args.dry_run)
+
+    # Domain warming status - explicit only
+    if step == 'warming':
+        import warming_status
+        warming_status.run(check_only=False)
+
+    # Pre-launch checklist - explicit only
+    if step == 'preflight':
+        run_preflight()
 
     elapsed = time.time() - start
     minutes = int(elapsed // 60)

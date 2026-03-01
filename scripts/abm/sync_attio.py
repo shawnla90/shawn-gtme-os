@@ -11,10 +11,15 @@ Usage:
 import argparse
 import json
 import os
+import sys
 import time
 import requests
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+
 from db_supabase import get_supabase
+from qualify import is_actionable_contact, get_qualified_accounts
 
 ATTIO_BASE = 'https://api.attio.com/v2'
 
@@ -254,6 +259,66 @@ def add_company_note(token, company_record_id, title, body, dry_run=False):
         return False
 
 
+def get_company_notes(token, company_record_id):
+    """Fetch existing notes for a company to avoid duplicates."""
+    try:
+        resp = requests.get(
+            f'{ATTIO_BASE}/notes',
+            params={'parent_object': 'companies', 'parent_record_id': company_record_id},
+            headers=attio_headers(token),
+            timeout=30,
+        )
+        if resp.status_code == 200:
+            return resp.json().get('data', [])
+    except requests.exceptions.RequestException:
+        pass
+    return []
+
+
+def add_enrichment_note(token, account, company_record_id, actionable_count, dry_run=False):
+    """Add a structured enrichment note to a company if one doesn't exist yet."""
+    # Check for existing enrichment note
+    existing_notes = get_company_notes(token, company_record_id)
+    for note in existing_notes:
+        title = note.get('title', '')
+        if 'Enrichment' in title or 'ICP' in title:
+            return False  # Already has one
+
+    # Build note body from enrichment data
+    lines = []
+
+    industry = account.get('industry') or ''
+    if industry:
+        lines.append(f"Industry: {industry}")
+
+    icp_score = account.get('icp_score')
+    if icp_score:
+        lines.append(f"ICP Score: {icp_score}/100")
+
+    tech_stack = account.get('tech_stack') or ''
+    if tech_stack:
+        if isinstance(tech_stack, list):
+            tech_stack = ', '.join(tech_stack)
+        lines.append(f"Tech Stack: {tech_stack}")
+
+    employee_count = account.get('employee_count')
+    if employee_count:
+        lines.append(f"Employees: {employee_count}")
+
+    lines.append(f"Actionable Contacts: {actionable_count}")
+
+    # Landing page URL
+    lp_url = account.get('_landing_page_url')
+    if lp_url:
+        lines.append(f"Landing Page: {lp_url}")
+
+    if not lines:
+        return False
+
+    body = '\n'.join(lines)
+    return add_company_note(token, company_record_id, 'Enrichment Summary', body, dry_run=dry_run)
+
+
 def sync_engagement(token, sb, account, company_record_id, dry_run=False):
     """Push outreach engagement data to Attio for a single account."""
     outreach_status = account.get('outreach_status', 'new')
@@ -296,31 +361,41 @@ def sync_engagement(token, sb, account, company_record_id, dry_run=False):
 
 
 def run(limit=100, dry_run=False, full=False):
-    """Sync accounts and contacts to Attio (reads from Supabase).
+    """Sync qualified accounts and actionable contacts to Attio.
 
-    By default, only syncs accounts that have reached 'outreach' stage or later.
-    Use full=True to sync all accounts (old behavior).
+    Default: only syncs accounts with at least 1 actionable contact.
+    Use full=True to bypass qualification (with warning).
     """
-    mode = 'FULL' if full else 'GATED (outreach+)'
+    if full:
+        print(f"\n  [!] WARNING: --full bypasses qualification. Unqualified accounts will sync.")
+        print(f"      This can cause more companies than contacts in Attio.\n")
+
+    mode = 'FULL (unfiltered)' if full else 'QUALIFIED'
     print(f"\n[Attio Sync] {'DRY RUN - ' if dry_run else ''}Syncing up to {limit} accounts [{mode}]\n")
 
     token = get_token()
     sb = get_supabase()
 
-    # Get accounts from Supabase (include stage + outreach_status for custom attributes)
-    query = sb.table('accounts').select('id, name, domain, exa_research, stage, outreach_status').not_.is_('domain', 'null')
-
-    if not full:
-        # Only sync accounts that have been emailed (or later)
-        query = query.in_('stage', ['outreach', 'replied', 'meeting', 'client', 'opted_out'])
-
-    result = query.order('id').limit(limit).execute()
-    accounts = result.data or []
+    if full:
+        # Legacy: sync all accounts without qualification
+        query = sb.table('accounts').select(
+            'id, name, domain, exa_research, stage, outreach_status, '
+            'industry, icp_score, tech_stack, employee_count'
+        ).not_.is_('domain', 'null')
+        result = query.order('id').limit(limit).execute()
+        accounts = result.data or []
+        # Fetch contacts per account inline (old behavior)
+        for account in accounts:
+            account['actionable_contacts'] = None  # Will fetch inline
+    else:
+        # Default: only sync qualified accounts
+        accounts = get_qualified_accounts(sb, limit=limit)
 
     print(f"  Found {len(accounts)} accounts to sync\n")
 
     synced_companies = 0
     synced_contacts = 0
+    skipped_contacts = 0
 
     for i, account in enumerate(accounts):
         print(f"  [{i+1}/{len(accounts)}] {account['name']} ({account['domain']})")
@@ -335,8 +410,9 @@ def run(limit=100, dry_run=False, full=False):
         # Get landing page URL from Supabase
         lp_result = sb.table('landing_pages').select('url').eq('account_id', account['id']).limit(1).execute()
         abm_page_url = lp_result.data[0]['url'] if lp_result.data else None
+        account['_landing_page_url'] = abm_page_url
 
-        # Upsert company (now includes source, stage, outreach_status, landing_page_url)
+        # Upsert company
         company_id = upsert_company(token, account, abm_page_url=abm_page_url, dry_run=dry_run)
         if not company_id:
             print(f"    [!] Failed to upsert company, skipping contacts")
@@ -345,12 +421,22 @@ def run(limit=100, dry_run=False, full=False):
         company_record_id = company_id.get('record_id') if isinstance(company_id, dict) else None
         synced_companies += 1
 
-        # Get contacts from Supabase
-        contacts_result = sb.table('contacts').select(
-            'id, first_name, last_name, email, title, linkedin_url, vibe'
-        ).eq('account_id', account['id']).order('is_primary', desc=True).order('id').execute()
+        # Get contacts - use pre-filtered actionable contacts when available
+        if account.get('actionable_contacts') is not None:
+            contacts = account['actionable_contacts']
+        else:
+            # Full mode: fetch all contacts, skip non-actionable
+            contacts_result = sb.table('contacts').select(
+                'id, first_name, last_name, email, title, linkedin_url, vibe, notes'
+            ).eq('account_id', account['id']).order('is_primary', desc=True).order('id').execute()
+            contacts = contacts_result.data or []
 
-        for contact in (contacts_result.data or []):
+        for contact in contacts:
+            # Skip non-actionable contacts (even in full mode)
+            if not full and not is_actionable_contact(contact):
+                skipped_contacts += 1
+                continue
+
             person_id = upsert_person(
                 token, contact,
                 company_record_id=company_record_id,
@@ -361,13 +447,20 @@ def run(limit=100, dry_run=False, full=False):
                 synced_contacts += 1
                 print(f"    + {contact.get('first_name', '')} {contact.get('last_name', '')} - {contact.get('title', '')}")
 
-        # Sync engagement data (outreach status, reply notes)
+        # Add enrichment note if we have data
+        if company_record_id:
+            actionable_count = len(account.get('actionable_contacts', []))
+            add_enrichment_note(token, account, company_record_id, actionable_count, dry_run=dry_run)
+
+        # Sync engagement data
         if company_record_id:
             sync_engagement(token, sb, account, company_record_id, dry_run=dry_run)
 
         time.sleep(0.5)  # Be nice to Attio
 
     print(f"\n  Sync complete. {synced_companies} companies, {synced_contacts} contacts pushed to Attio.")
+    if skipped_contacts:
+        print(f"  Skipped {skipped_contacts} non-actionable contacts.")
     return synced_companies, synced_contacts
 
 

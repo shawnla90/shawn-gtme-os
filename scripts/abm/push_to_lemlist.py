@@ -34,6 +34,7 @@ if os.path.exists(env_path):
                 os.environ.setdefault(key.strip(), val.strip())
 
 from db_supabase import get_supabase
+from qualify import is_actionable_contact
 
 LEMLIST_BASE = 'https://api.lemlist.com/api'
 
@@ -142,22 +143,25 @@ def run(campaign_id, limit=10, dry_run=False):
 
         # Get primary contact with email, not already in Lemlist
         contact_result = sb.table('contacts').select(
-            'id, first_name, last_name, email, title, linkedin_url, lemlist_lead_id'
+            'id, first_name, last_name, email, title, linkedin_url, lemlist_lead_id, notes'
         ).eq('account_id', account['id']).not_.is_('email', 'null').order(
             'is_primary', desc=True
-        ).limit(1).execute()
+        ).limit(3).execute()
 
         if not contact_result.data:
             continue
 
-        contact = contact_result.data[0]
+        # Find first actionable contact (has email + relevant title)
+        contact = None
+        for c in contact_result.data:
+            if c.get('lemlist_lead_id'):
+                skipped += 1
+                continue
+            if is_actionable_contact(c):
+                contact = c
+                break
 
-        # Skip if already pushed
-        if contact.get('lemlist_lead_id'):
-            skipped += 1
-            continue
-
-        if not contact.get('email'):
+        if not contact:
             continue
 
         # Get landing page URL

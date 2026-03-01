@@ -38,6 +38,7 @@ if os.path.exists(env_path):
                 os.environ.setdefault(key.strip(), val.strip())
 
 from db_supabase import get_supabase
+from warming_status import get_warming_status, is_domain_ready
 
 SEND_DELAY_SECONDS = 3
 
@@ -153,6 +154,16 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
 
     sb = get_supabase()
     config = load_maildoso_accounts()
+
+    # Check domain warming status (warn but don't hard-block)
+    try:
+        statuses = get_warming_status(sb, config)
+        for s in statuses:
+            if not s['ready']:
+                print(f"  [!] WARNING: {s['domain']} not fully warmed ({s['reason']})")
+                print(f"      Proceeding with low-volume sends (warming happens by sending).\n")
+    except Exception:
+        pass  # Don't block outreach if warming check fails
 
     sender_name = config.get('sender_name', 'Shawn')
     per_account_limit = config.get('per_account_daily_limit', 3)
