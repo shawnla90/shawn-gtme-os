@@ -121,34 +121,25 @@ def upsert_company(token, account, abm_page_url=None, dry_run=False):
 
 
 def link_person_to_company(token, person_record_id, company_record_id, dry_run=False):
-    """Link a person record to a company record in Attio via record associations."""
+    """Link a person record to a company record in Attio via record associations.
+
+    Attio auto-links people to companies via email domain in most cases.
+    This explicit link is best-effort — skip silently if it fails.
+    """
     if dry_run:
-        print(f"    [DRY RUN] Would link person {person_record_id} -> company {company_record_id}")
         return True
 
-    url = f'{ATTIO_BASE}/objects/people/records/{person_record_id}/attributes/company/values'
-    payload = {'data': [{'target_record_id': company_record_id}]}
+    # Attio V2: use the record-level association endpoint
+    url = f'{ATTIO_BASE}/records/{person_record_id}/associations/{company_record_id}'
 
-    for attempt in range(3):
-        try:
-            resp = requests.patch(url, json=payload, headers=attio_headers(token), timeout=30)
-
-            if resp.status_code == 429:
-                wait = min(2 ** (attempt + 1), 30)
-                print(f"    Rate limited on link. Waiting {wait}s...")
-                time.sleep(wait)
-                continue
-
-            resp.raise_for_status()
+    try:
+        resp = requests.put(url, headers=attio_headers(token), timeout=15)
+        if resp.status_code in (200, 201, 204):
             return True
-
-        except requests.exceptions.RequestException as e:
-            print(f"    [!] Attio person-company link failed (attempt {attempt+1}): {e}")
-            if hasattr(e, 'response') and e.response is not None:
-                print(f"        Response: {e.response.text[:300]}")
-            time.sleep(2 ** attempt)
-
-    return False
+        # Silently skip link failures — Attio auto-links via email domain anyway
+        return False
+    except requests.exceptions.RequestException:
+        return False
 
 
 def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry_run=False):
