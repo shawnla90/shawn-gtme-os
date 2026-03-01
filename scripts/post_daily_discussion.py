@@ -24,7 +24,8 @@ from typing import Optional
 REPO_ROOT = Path(__file__).resolve().parent.parent
 REPO_ID = "R_kgDORLzDtw"
 ANNOUNCEMENTS_CATEGORY_ID = "DIC_kwDORLzDt84C3AWO"
-GH_BIN = "/Users/shawntenam/.local/bin/gh"
+import shutil
+GH_BIN = shutil.which("gh") or "/opt/homebrew/bin/gh"
 
 
 def load_json(path: Path) -> Optional[dict]:
