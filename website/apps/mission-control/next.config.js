@@ -7,10 +7,6 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
-  // Include copied data/*.db files in all serverless function bundles
-  outputFileTracingIncludes: {
-    '/**': ['./data/**'],
-  },
 }
 
 module.exports = nextConfig
