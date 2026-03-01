@@ -374,10 +374,113 @@ The `/update-github` skill enforces a blocklist scan before every push to the pu
 
 ---
 
-## Known Gaps (as of 2026-02-20)
+## ABM Pipeline (Account-Based Marketing)
 
-1. **No GitHub Actions** — No automated validation of what Mac Mini pushes
-2. **Orphaned scripts** — mission_control_updater.py and nio_commit_tracker.py have hardcoded paths and aren't wired into the pipeline
+A 6-step pipeline that discovers target accounts, researches them, generates personalized landing pages, syncs to CRM, and manages lifecycle (depersonalization + outreach). Two launchd jobs automate it daily.
+
+### Pipeline Stages
+
+```
+Research ─→ Prospect ─→ Generate ─→ Sync ─→ Depersonalize ─→ Outreach
+  (Exa)     (Apollo)    (Grok+Exa)  (Attio)  (TTL cron)      (SMTP)
+                                                               ↑ explicit only
+```
+
+| Step | Script | What It Does | API |
+|------|--------|-------------|-----|
+| research | `research.py` | Exa company discovery + ICP-matched queries | Exa |
+| prospect | `prospect.py` | Apollo contact search (3 per company, VP+ seniority) | Apollo |
+| generate | `generate.py` | Exa deep research + Grok page copy generation → Supabase | Exa + xAI |
+| sync | `sync_attio.py` | Push companies + contacts to Attio CRM | Attio |
+| depersonalize | `depersonalize.py` | TTL enforcement - strip PII from expired pages | Supabase |
+| outreach | `outreach.py` | Cold email with personalized landing page URL | SMTP |
+
+### Data Flow
+
+```
+                    Exa ──→ accounts.exa_research (JSONB)
+                               ↓
+                    Apollo ──→ contacts table
+                               ↓
+              Grok + Exa ──→ landing_pages.page_data (JSONB)
+                               ↓
+           Next.js ISR ──→ thegtmos.ai/for/{slug} (1hr revalidation)
+                               ↓
+             PostHog ──→ abm_page_viewed event → ABM Dashboard
+                               ↓
+               Attio ──→ Target Account List + custom attributes
+```
+
+### Supabase Schema (ABM)
+
+| Table | Key Columns |
+|-------|-------------|
+| `accounts` | id, name, domain, exa_research (JSONB), icp_score |
+| `contacts` | id, account_id, first_name, last_name, email, title, linkedin_url, vibe, is_primary |
+| `landing_pages` | slug (unique), url, page_data (JSONB), status, depersonalized, deprecated, account_id, sent_at, expires_at |
+| `email_sends` | id, contact_id, landing_page_slug, sent_at, template, status |
+
+### Landing Page System
+
+Two modes coexist:
+
+1. **Database-driven (primary)**: `generate.py` → Supabase `landing_pages` → dynamic `[slug]` route → `LandingPageTemplate.tsx`. ISR at 1hr, `dynamicParams=true` for on-demand rendering.
+2. **Static (legacy/VIP)**: Hardcoded `{Company}Content.tsx` files at `/for/{slug}/`. Used for high-touch accounts (maintainx, buildops, tractian, fyld).
+
+Depersonalization lifecycle:
+- **Personalized** (`depersonalized=false`): Shows contact name, greeting, "Custom Proposal" badge. `robots: noindex`.
+- **Depersonalized** (`depersonalized=true`): Blanks contact data, shows "Company Brief" badge. `robots: index`. Triggered by TTL (expires_at) after outreach.
+- **Deprecated** (`deprecated=true`): Returns 404. Manual opt-out via `--deprecate` flag.
+
+### Launchd Schedule
+
+| Time | Job | Plist | Log |
+|------|-----|-------|-----|
+| 22:00 | Pipeline (research + prospect + generate + sync + depersonalize) | `com.shawnos.abm-pipeline.plist` | `~/Library/Logs/abm-pipeline.log` |
+| 06:00 | Depersonalize (TTL enforcement only) | `com.shawnos.abm-depersonalize.plist` | `~/Library/Logs/abm-depersonalize.log` |
+
+### PostHog Integration
+
+| Resource | ID |
+|----------|---|
+| Project | `325806` |
+| ABM Dashboard | `1319078` |
+| Event | `abm_page_viewed` |
+| Properties | `company_slug`, `company_name`, `contact_name`, `contact_id`, `depersonalized` |
+
+### Attio CRM Integration
+
+Custom company attributes: `source` (select), `stage` (select), `outreach_status` (select), `landing_page_url` (text).
+
+Stage flow: `Prospect → Researched → Qualified → Engaged → Opportunity` (or `Opted Out`).
+
+Target Account List: `9c6e26b5-b3b6-494d-8e43-b6726a38a6af`
+
+### ABM Pipeline Usage
+
+```bash
+# Full pipeline (excludes outreach)
+python3 scripts/abm/pipeline.py --step all --limit 10
+
+# Individual steps
+python3 scripts/abm/pipeline.py --step research --limit 5
+python3 scripts/abm/pipeline.py --step generate --limit 5
+
+# Outreach (explicit only, never in 'all')
+python3 scripts/abm/pipeline.py --step outreach --limit 5 --dry-run
+
+# Deprecate a page (opt-out)
+python3 scripts/abm/depersonalize.py --deprecate acme-corp
+```
+
+---
+
+## Known Gaps (as of 2026-02-28)
+
+1. **No GitHub Actions** - No automated validation of what Mac Mini pushes
+2. **Orphaned scripts** - mission_control_updater.py and nio_commit_tracker.py have hardcoded paths and aren't wired into the pipeline
+3. **ABM sent_at not auto-populated** - landing_pages.sent_at must be set externally (outreach step or manual). TTL depersonalization won't trigger until outreach is live.
+4. **Attio MCP list filtering broken** - filter-list-entries Modes 3/4 return unfiltered results. List entry removal requires Attio UI.
 
 ---
 
@@ -388,3 +491,4 @@ The `/update-github` skill enforces a blocklist scan before every push to the pu
 | 2026-02-20 | Initial creation (Phase 1 audit) |
 | 2026-02-20 | Mini corrections: Vercel Pro, Discord operational, blog inline pattern, model allocation table, build-time JSON pattern, .vercel gitignore |
 | 2026-02-20 | Phase 2 safety enforcement: Husky pre-push hook, Slack cron notifications, skill_inventory.py (50-skill auto-manifest), 3 known gaps closed |
+| 2026-02-28 | ABM pipeline section: 6-step pipeline, Supabase schema, landing page system, PostHog + Attio integration, launchd schedule |

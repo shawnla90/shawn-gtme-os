@@ -5,14 +5,38 @@ description: Generate an immersive, custom-branded landing page for a prospect o
 
 # Landing Page — Custom Prospect Page Generator
 
-Build an immersive, custom-branded landing page for a specific company. The page lives at `thegtmos.ai/for/{slug}`, is noindexed, and serves as both a sales tool and a proof of concept — the page itself demonstrates what you can build.
+Build an immersive, custom-branded landing page for a specific company. The page lives at `thegtmos.ai/for/{slug}`, is noindexed, and serves as both a sales tool and a proof of concept - the page itself demonstrates what you can build.
+
+---
+
+## Two Generation Modes
+
+### Mode 1: Database-Driven Pipeline (Primary - 54+ pages)
+
+The automated ABM pipeline generates pages at scale via Python scripts:
+
+```
+scripts/abm/pipeline.py --step all --limit 10
+```
+
+Flow: `research.py` (Exa) → `prospect.py` (Apollo) → `generate.py` (Grok + Exa deep dive) → Supabase `landing_pages` table → Next.js dynamic `[slug]` route → `LandingPageTemplate.tsx`
+
+- Pages go live immediately via ISR (1hr revalidation)
+- Depersonalization handled by `depersonalize.py` (TTL-based)
+- No manual file creation needed - all data in Supabase
+- See `docs/ARCHITECTURE.md` for full pipeline details
+
+### Mode 2: Static Hardcoded Pages (VIP/High-Touch)
+
+For high-priority accounts that need custom UI, animations, or hand-tuned content, build static pages using the process below. Currently used for: maintainx, buildops, tractian, fyld.
 
 ---
 
 ## Command Patterns
 
-- `/landing-page` — generate from conversation context (transcript, notes, company name)
-- `/landing-page <company>` — generate for a named company (will research automatically)
+- `/landing-page` - generate from conversation context (transcript, notes, company name)
+- `/landing-page <company>` - generate for a named company (will research automatically)
+- For bulk generation, use the Python pipeline (Mode 1) instead
 
 ---
 
@@ -264,3 +288,56 @@ The default template assumes a **3-month build + enable** engagement. Adapt as n
 | Content component | PascalCase + "Content" | `MaintainXContent.tsx`, `AcmeCorpContent.tsx` |
 | Theme object | ALL_CAPS short name | `MX`, `AC`, `THEME` |
 | Page component | PascalCase + "Page" | `MaintainXPage`, `AcmeCorpPage` |
+
+---
+
+## Database-Driven Template Reference
+
+For Mode 1 (pipeline-generated) pages, the rendering stack is:
+
+```
+Supabase landing_pages table
+  → website/apps/gtmos/app/lib/abm.ts (getPageData, getAllSlugs)
+    → website/apps/gtmos/app/for/[slug]/page.tsx (ISR, metadata, deprecation check)
+      → website/apps/gtmos/app/for/[slug]/LandingPageTemplate.tsx (full render)
+```
+
+### PageData Schema (stored in page_data JSONB)
+
+```typescript
+interface PageData {
+  slug: string              // URL path
+  company: string           // Display name
+  domain: string            // Company domain
+  contactName: string       // Primary contact
+  contactRole: string       // Primary contact title
+  contacts?: PageContact[]  // All contacts (for ?c= switching)
+  theme: { primary, primaryLight, primaryGlow }
+  headline: string          // "Built for {Company}"
+  subheadline: string
+  stats: { value, label }[]           // 5 company metrics
+  challenges: { icon, title, desc }[] // 4 pain points
+  deliverables: { title, desc, tags }[] // 4 systems to build
+  engagementSteps: { title, subtitle, desc }[] // 3-month timeline
+  faqItems: { question, answer }[]    // 6 FAQ items
+  stackItems: { name, role }[]        // 5 tech stack items
+  generatedAt: string       // ISO timestamp
+}
+```
+
+### Lifecycle Flags
+
+| Flag | Effect |
+|------|--------|
+| `depersonalized: false` | Full personalization, noindex, "Custom Proposal" badge |
+| `depersonalized: true` | Contact data hidden, indexable, "Company Brief" badge |
+| `deprecated: true` | Returns 404, excluded from getAllSlugs() |
+| `status: 'live'` | Active page (informational - not filtered in queries) |
+| `expires_at` | 30 days from generation. TTL depersonalization triggers after outreach. |
+
+### PostHog Tracking
+
+Both static and database-driven pages fire `abm_page_viewed` with:
+- `company_slug`, `company_name`, `contact_name` (if personalized), `contact_id`, `depersonalized`
+- Static pages use `ABMTracker.tsx` component
+- Dynamic pages have inline PostHog in `LandingPageTemplate.tsx`
