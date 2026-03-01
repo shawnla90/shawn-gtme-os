@@ -389,81 +389,122 @@ function resolveImport(importPath: string, fromFile: string, repoRoot: string): 
   return null
 }
 
+/** Convert content rows into graph nodes */
+function buildContentGraph(rows: any[], nodes: GraphNode[], edges: GraphEdge[]) {
+  for (const row of rows) {
+    const nodeId = `content:${row.id}`
+    const platform = row.platform ?? 'unknown'
+    const wordCount = row.word_count ?? 0
+    nodes.push({
+      id: nodeId,
+      label: row.title || path.basename(row.file_path ?? '', '.md'),
+      type: 'content',
+      filePath: row.file_path,
+      size: Math.max(4, Math.min(18, Math.log2(wordCount / 50 + 1) * 4)),
+      color: PLATFORM_COLORS[platform] ?? '#6b7280',
+      category: `content-${platform}`,
+      x: undefined,
+      y: undefined,
+      contentId: Number(row.id),
+      platform,
+      wordCount,
+      stage: row.stage,
+    })
+  }
+}
+
 /**
  * Load content pieces from index.db as graph nodes.
+ * Falls back to static JSON (public/data/content-full.json) when DB is unavailable (Vercel).
  */
 function loadContentNodes(search: string): { nodes: GraphNode[]; edges: GraphEdge[] } {
   const nodes: GraphNode[] = []
   const edges: GraphEdge[] = []
 
+  // Try SQLite first (local dev)
   try {
     const Database = require('better-sqlite3')
     const dbPath = path.join(DATA_DIR, 'index.db')
-    if (!fs.existsSync(dbPath)) return { nodes, edges }
+    if (fs.existsSync(dbPath)) {
+      const db = new Database(dbPath, { readonly: true })
 
-    const db = new Database(dbPath, { readonly: true })
+      let rows: any[]
+      if (search.length >= 3) {
+        rows = db.prepare(`
+          SELECT c.id, c.title, c.platform, c.stage, c.word_count, c.date, c.file_path, c.body
+          FROM content c
+          JOIN content_fts fts ON fts.rowid = c.rowid
+          WHERE content_fts MATCH ?
+          ORDER BY rank
+          LIMIT 200
+        `).all(search)
+      } else {
+        rows = db.prepare(`
+          SELECT id, title, platform, stage, word_count, date, file_path, body
+          FROM content
+          ORDER BY date DESC
+          LIMIT 200
+        `).all()
+      }
 
-    // Query content — optionally filtered by FTS search
-    let rows: any[]
-    if (search.length >= 3) {
-      rows = db.prepare(`
-        SELECT c.id, c.title, c.platform, c.stage, c.word_count, c.date, c.file_path, c.body
-        FROM content c
-        JOIN content_fts fts ON fts.rowid = c.rowid
-        WHERE content_fts MATCH ?
-        ORDER BY rank
-        LIMIT 200
-      `).all(search)
-    } else {
-      rows = db.prepare(`
-        SELECT id, title, platform, stage, word_count, date, file_path, body
-        FROM content
-        ORDER BY date DESC
-        LIMIT 200
-      `).all()
+      buildContentGraph(rows, nodes, edges)
+
+      const links = db.prepare(`
+        SELECT source_id, target_id, link_type FROM content_links
+      `).all() as { source_id: number; target_id: number; link_type: string }[]
+
+      const nodeIdSet = new Set(rows.map((r: any) => r.id))
+      for (const link of links) {
+        if (nodeIdSet.has(link.source_id) && nodeIdSet.has(link.target_id)) {
+          edges.push({
+            source: `content:${link.source_id}`,
+            target: `content:${link.target_id}`,
+            type: 'imports',
+            weight: 0.5,
+          })
+        }
+      }
+
+      db.close()
+      return { nodes, edges }
     }
+  } catch {
+    // DB not available — try static fallback
+  }
 
-    for (const row of rows) {
-      const nodeId = `content:${row.id}`
-      const platform = row.platform ?? 'unknown'
-      const wordCount = row.word_count ?? 0
-      nodes.push({
-        id: nodeId,
-        label: row.title || path.basename(row.file_path ?? '', '.md'),
-        type: 'content',
-        filePath: row.file_path,
-        size: Math.max(4, Math.min(18, Math.log2(wordCount / 50 + 1) * 4)),
-        color: PLATFORM_COLORS[platform] ?? '#6b7280',
-        category: `content-${platform}`,
-        x: undefined,
-        y: undefined,
-        contentId: Number(row.id),
-        platform,
-        wordCount,
-        stage: row.stage,
-      })
-    }
+  // Fallback: load from pre-built JSON (Vercel / when DB unavailable)
+  try {
+    const jsonPath = path.join(process.cwd(), 'public', 'data', 'content-full.json')
+    if (fs.existsSync(jsonPath)) {
+      const data = JSON.parse(fs.readFileSync(jsonPath, 'utf-8'))
+      let rows = data.items || []
 
-    // Load content links for edges
-    const links = db.prepare(`
-      SELECT source_id, target_id, link_type FROM content_links
-    `).all() as { source_id: number; target_id: number; link_type: string }[]
+      // Client-side search filter (no FTS, just substring match)
+      if (search.length >= 3) {
+        const q = search.toLowerCase()
+        rows = rows.filter((r: any) =>
+          (r.title || '').toLowerCase().includes(q) ||
+          (r.body || '').toLowerCase().includes(q)
+        )
+      }
 
-    const nodeIdSet = new Set(rows.map((r: any) => r.id))
-    for (const link of links) {
-      if (nodeIdSet.has(link.source_id) && nodeIdSet.has(link.target_id)) {
-        edges.push({
-          source: `content:${link.source_id}`,
-          target: `content:${link.target_id}`,
-          type: 'imports',
-          weight: 0.5,
-        })
+      rows = rows.slice(0, 200)
+      buildContentGraph(rows, nodes, edges)
+
+      const nodeIdSet = new Set(rows.map((r: any) => r.id))
+      for (const link of (data.links || [])) {
+        if (nodeIdSet.has(link.source_id) && nodeIdSet.has(link.target_id)) {
+          edges.push({
+            source: `content:${link.source_id}`,
+            target: `content:${link.target_id}`,
+            type: 'imports',
+            weight: 0.5,
+          })
+        }
       }
     }
-
-    db.close()
   } catch {
-    // DB not available — return empty
+    // Static data not available either
   }
 
   return { nodes, edges }
