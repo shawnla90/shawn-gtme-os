@@ -10,6 +10,9 @@ Usage:
   python3 scripts/abm/pipeline.py --step gap_analysis --limit 10
   python3 scripts/abm/pipeline.py --step find_similar --limit 20 --seed best
   python3 scripts/abm/pipeline.py --step lemlist --campaign-id cam_xxx --limit 10
+  python3 scripts/abm/pipeline.py --step backfill --limit 50
+  python3 scripts/abm/pipeline.py --step validate --limit 50
+  python3 scripts/abm/pipeline.py --step flag_titles --dry-run
   python3 scripts/abm/pipeline.py --step all --limit 5 --resume
 """
 
@@ -63,6 +66,10 @@ def check_keys(step):
         if not os.environ.get('EXA_API_KEY'):
             missing.append('EXA_API_KEY')
 
+    if step == 'backfill':
+        if not os.environ.get('APOLLO_API_KEY'):
+            missing.append('APOLLO_API_KEY')
+
     if step == 'lemlist':
         if not os.environ.get('LEMLIST_API_KEY'):
             missing.append('LEMLIST_API_KEY')
@@ -77,8 +84,9 @@ def main():
     parser = argparse.ArgumentParser(description='ABM Pipeline - Find, Research, Generate')
     parser.add_argument('--step', choices=[
         'research', 'prospect', 'generate', 'sync', 'depersonalize',
-        'outreach', 'gap_analysis', 'find_similar', 'lemlist', 'all',
-    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist must be called explicitly)')
+        'outreach', 'gap_analysis', 'find_similar', 'lemlist',
+        'backfill', 'validate', 'flag_titles', 'all',
+    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist/backfill/validate/flag_titles must be called explicitly)')
     parser.add_argument('--limit', type=int, default=100,
                         help='Max number of companies to process')
     parser.add_argument('--dry-run', action='store_true',
@@ -154,6 +162,21 @@ def main():
             sys.exit(1)
         import push_to_lemlist
         push_to_lemlist.run(campaign_id=args.campaign_id, limit=limit, dry_run=args.dry_run)
+
+    # Backfill contacts + accounts via Apollo People Match - explicit only
+    if step == 'backfill':
+        import backfill_contacts
+        backfill_contacts.run(limit=limit, dry_run=args.dry_run)
+
+    # Email validation via MX lookup - explicit only
+    if step == 'validate':
+        import validate_emails
+        validate_emails.run(limit=limit, dry_run=args.dry_run)
+
+    # Flag contacts with irrelevant titles - explicit only
+    if step == 'flag_titles':
+        import title_filter
+        title_filter.flag_irrelevant_contacts(dry_run=args.dry_run)
 
     elapsed = time.time() - start
     minutes = int(elapsed // 60)

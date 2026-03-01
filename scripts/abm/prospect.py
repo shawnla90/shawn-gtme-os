@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Apollo contact prospecting module - finds 3 contacts per company."""
+"""Apollo contact prospecting module - finds 3 contacts per company.
+
+Uses seniority + title filtering to ensure only GTM-relevant contacts
+enter the pipeline. Title relevance is checked via title_filter module.
+"""
 
 import os
 import time
 import requests
 
 from db_supabase import get_supabase
+from title_filter import is_relevant_title
 
 APOLLO_BASE_URL = 'https://api.apollo.io/api/v1'
 
@@ -144,12 +149,24 @@ def run(limit=100, resume=True):
             continue
 
         added = 0
+        skipped_title = 0
         for person in result.get('people', []):
             if added >= needed:
                 break
+
+            # Filter by title relevance
+            person_title = person.get('title', '')
+            if not is_relevant_title(person_title):
+                skipped_title += 1
+                if skipped_title <= 3:  # Only show first few skips
+                    print(f"    [skip] {person.get('first_name', '')} {person.get('last_name', '')} - {person_title} (irrelevant)")
+                continue
+
             if save_contact(sb, account_id, person):
                 added += 1
-                print(f"    + {person.get('first_name', '')} {person.get('last_name', '')} - {person.get('title', '')}")
+                print(f"    + {person.get('first_name', '')} {person.get('last_name', '')} - {person_title}")
+        if skipped_title > 3:
+            print(f"    ... and {skipped_title - 3} more irrelevant titles skipped")
 
         # Mark first contact as primary if it's the first batch
         if added > 0 and existing == 0:
