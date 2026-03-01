@@ -87,6 +87,43 @@ Suggest:
 3. Relevance: high, medium, or low (high = directly relates to his brand/offering)"""
 
 
+def claude_chat(messages: list) -> str:
+    """Fallback to Claude Opus 4.6 via Anthropic API. No tool use (no x_search)."""
+    headers = {
+        "Content-Type": "application/json",
+        "x-api-key": ANTHROPIC_API_KEY,
+        "anthropic-version": "2023-06-01",
+    }
+
+    # Convert openai-style messages to Anthropic format
+    system = ""
+    anthropic_messages = []
+    for msg in messages:
+        if msg["role"] == "system":
+            system = msg.get("content", "")
+        elif msg["role"] in ("user", "assistant"):
+            anthropic_messages.append({"role": msg["role"], "content": msg["content"]})
+
+    payload = {
+        "model": FALLBACK_MODEL,
+        "max_tokens": 4096,
+        "temperature": 0.3,
+        "messages": anthropic_messages,
+    }
+    if system:
+        payload["system"] = system
+
+    resp = requests.post(
+        f"{ANTHROPIC_BASE_URL}/messages",
+        headers=headers,
+        json=payload,
+        timeout=90,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    return data["content"][0]["text"]
+
+
 def grok_chat(messages: list, tools: list = None) -> dict:
     """Make a Grok API call with optional tools."""
     headers = {
@@ -161,11 +198,11 @@ def _handle_tool_loop(messages: list, tools: list, max_rounds: int = 5) -> str:
 
 
 def search_x(prompt: str) -> str:
-    """Run an X/Twitter search via Grok's x_search tool."""
+    """Run an X/Twitter search via Grok's x_search tool. Falls back to Claude."""
     messages = [
         {
             "role": "system",
-            "content": "You are a social media research assistant. Search X/Twitter and return structured findings. Be specific — include real usernames, post summaries, and URLs when available. If you can't find exact URLs, describe the content you found.",
+            "content": "You are a social media research assistant. Search X/Twitter and return structured findings. Be specific - include real usernames, post summaries, and URLs when available. If you can't find exact URLs, describe the content you found.",
         },
         {"role": "user", "content": prompt},
     ]
@@ -188,11 +225,24 @@ def search_x(prompt: str) -> str:
         }
     ]
 
-    return _handle_tool_loop(messages, tools)
+    if XAI_API_KEY:
+        try:
+            return _handle_tool_loop(messages, tools)
+        except Exception as e:
+            print(f"    WARN: Grok x_search failed ({e}), falling back to Claude")
+
+    if ANTHROPIC_API_KEY:
+        fallback_messages = [
+            messages[0],
+            {"role": "user", "content": f"Based on your knowledge of recent X/Twitter trends and conversations (you don't have live search, so use your training data for what's likely trending now): {prompt}"},
+        ]
+        return claude_chat(fallback_messages)
+
+    return "[ERROR] No API keys available (XAI_API_KEY or ANTHROPIC_API_KEY)"
 
 
 def search_web(prompt: str) -> str:
-    """Run a web search via Grok's web_search tool."""
+    """Run a web search via Grok's web_search tool. Falls back to Claude."""
     messages = [
         {
             "role": "system",
@@ -217,7 +267,20 @@ def search_web(prompt: str) -> str:
         }
     ]
 
-    return _handle_tool_loop(messages, tools)
+    if XAI_API_KEY:
+        try:
+            return _handle_tool_loop(messages, tools)
+        except Exception as e:
+            print(f"    WARN: Grok web_search failed ({e}), falling back to Claude")
+
+    if ANTHROPIC_API_KEY:
+        fallback_messages = [
+            messages[0],
+            {"role": "user", "content": f"Based on your knowledge of recent web trends (you don't have live search, so use your training data): {prompt}"},
+        ]
+        return claude_chat(fallback_messages)
+
+    return "[ERROR] No API keys available (XAI_API_KEY or ANTHROPIC_API_KEY)"
 
 
 def analyze_and_angle(raw_findings: list) -> list:
@@ -257,8 +320,19 @@ Return ONLY the JSON array, no other text.""",
         },
     ]
 
-    result = grok_chat(messages)
-    content = result["choices"][0]["message"].get("content", "[]")
+    content = ""
+    if XAI_API_KEY:
+        try:
+            result = grok_chat(messages)
+            content = result["choices"][0]["message"].get("content", "[]")
+        except Exception as e:
+            print(f"    WARN: Grok analysis failed ({e}), falling back to Claude")
+
+    if not content.strip() and ANTHROPIC_API_KEY:
+        content = claude_chat(messages)
+
+    if not content.strip():
+        return [{"idea": "No API keys available", "relevance": "low"}]
 
     # Parse JSON from response (handle markdown code blocks)
     content = content.strip()
@@ -271,16 +345,20 @@ Return ONLY the JSON array, no other text.""",
     try:
         return json.loads(content)
     except json.JSONDecodeError:
-        return [{"title": "Analysis parse error", "raw_response": content[:500]}]
+        return [{"idea": "Analysis parse error", "relevance": "low", "raw_response": content[:500]}]
 
 
 def run_scout(test_mode: bool = False) -> dict:
     """Run all research missions and compile the daily briefing."""
-    if not XAI_API_KEY:
+    if not XAI_API_KEY and not ANTHROPIC_API_KEY:
         return {
             "agent": "scout",
-            "error": "XAI_API_KEY not set. Add it to .env or environment.",
+            "error": "Neither XAI_API_KEY nor ANTHROPIC_API_KEY set. Add at least one to .env.",
         }
+    if not XAI_API_KEY:
+        print("[scout] WARN: XAI_API_KEY missing, running on Claude Opus 4.6 fallback (no live x_search)")
+    else:
+        print(f"[scout] using Grok ({MODEL}) with Claude fallback")
 
     now = datetime.now(timezone.utc)
     today = now.strftime("%Y-%m-%d")
@@ -406,6 +484,64 @@ def main():
         print(f"  {i:2d}. [{rel}] ({fmt}) {idea.get('idea', '???')}")
     if briefing.get("top_pick"):
         print(f"\n  TOP PICK: {briefing['top_pick']}")
+
+    # Post to Slack
+    bot_token = os.environ.get("SLACK_BOT_TOKEN")
+    channel_id = os.environ.get("SLACK_X_CHANNEL_ID")
+    if bot_token and channel_id:
+        slack_msg = format_slack_digest(briefing)
+        post_to_slack(channel_id, slack_msg, bot_token)
+    else:
+        print("[scout] WARN: SLACK_BOT_TOKEN or SLACK_X_CHANNEL_ID missing, skipping Slack post")
+
+
+def format_slack_digest(briefing):
+    """Format the 10 post ideas into a Slack message."""
+    date = briefing.get("briefing_date", "today")
+    topics = briefing.get("topics", [])
+    summary = briefing.get("summary", "")
+
+    lines = [f":zap: *Daily Post Ideas* - {date}\n_{summary}_\n"]
+
+    for i, idea in enumerate(topics, 1):
+        rel = idea.get("relevance", "?")
+        fmt = idea.get("format", "post")
+        text = idea.get("idea", "???")
+        trend = idea.get("source_trend", "")
+
+        emoji = ":fire:" if rel == "high" else ":eyes:" if rel == "medium" else ":grey_question:"
+        lines.append(f"{emoji} *{i}.* `{fmt}` {text}")
+        if trend:
+            lines.append(f"    _riffs on: {trend}_")
+        lines.append("")
+
+    if briefing.get("top_pick"):
+        lines.append(f":trophy: *Top pick:* {briefing['top_pick']}")
+
+    return "\n".join(lines)
+
+
+def post_to_slack(channel_id, text, bot_token):
+    """Post a message to Slack."""
+    resp = requests.post(
+        "https://slack.com/api/chat.postMessage",
+        headers={
+            "Authorization": f"Bearer {bot_token}",
+            "Content-Type": "application/json",
+        },
+        json={
+            "channel": channel_id,
+            "text": text,
+            "unfurl_links": False,
+            "unfurl_media": False,
+        },
+        timeout=15,
+    )
+    data = resp.json()
+    if data.get("ok"):
+        print("[scout] Posted digest to Slack")
+    else:
+        print(f"[scout] WARN: Slack error: {data.get('error', 'unknown')}")
 
 
 if __name__ == "__main__":
