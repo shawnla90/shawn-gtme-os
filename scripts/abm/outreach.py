@@ -292,9 +292,10 @@ def run(limit=10, dry_run=False, template_name='cold_outreach_v1'):
                     'message_id': message_id,
                 }).execute()
 
-                # Update account outreach status
+                # Update account outreach status + advance stage
                 sb.table('accounts').update({
-                    'outreach_status': 'emailed'
+                    'outreach_status': 'emailed',
+                    'stage': 'outreach',
                 }).eq('id', account['id']).execute()
 
                 print(f"    -> Sent to {contact['email']} via {from_email}")

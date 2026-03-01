@@ -343,6 +343,9 @@ def run(limit=100, resume=True):
             'expires_at': expires,
         }, on_conflict='slug').execute()
 
+        # Advance stage to page_live
+        sb.table('accounts').update({'stage': 'page_live'}).eq('id', account_id).execute()
+
         print(f"    Live at {page_url}")
         generated += 1
         time.sleep(1)

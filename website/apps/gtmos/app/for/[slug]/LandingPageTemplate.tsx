@@ -316,6 +316,15 @@ export function LandingPageTemplate({ data, depersonalized = false }: { data: Pa
         />
       )}
 
+      {/* ── Lemlist visitor tracking ── */}
+      {process.env.NEXT_PUBLIC_LEMLIST_TRACKING_ID && (
+        <Script
+          id="lemlist-tracking"
+          strategy="afterInteractive"
+          src={`https://app.lemlist.com/api/visitors/tracking?k=&t=${process.env.NEXT_PUBLIC_LEMLIST_TRACKING_ID}`}
+        />
+      )}
+
       {/* ── Hero ── */}
       <section
         className="full-bleed"

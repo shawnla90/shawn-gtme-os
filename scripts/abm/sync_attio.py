@@ -304,15 +304,26 @@ def sync_engagement(token, sb, account, company_record_id, dry_run=False):
         print(f"    [DRY RUN] Engagement: {status_label}")
 
 
-def run(limit=100, dry_run=False):
-    """Sync accounts and contacts to Attio (reads from Supabase)."""
-    print(f"\n[Attio Sync] {'DRY RUN - ' if dry_run else ''}Syncing up to {limit} accounts\n")
+def run(limit=100, dry_run=False, full=False):
+    """Sync accounts and contacts to Attio (reads from Supabase).
+
+    By default, only syncs accounts that have reached 'outreach' stage or later.
+    Use full=True to sync all accounts (old behavior).
+    """
+    mode = 'FULL' if full else 'GATED (outreach+)'
+    print(f"\n[Attio Sync] {'DRY RUN - ' if dry_run else ''}Syncing up to {limit} accounts [{mode}]\n")
 
     token = get_token()
     sb = get_supabase()
 
     # Get accounts from Supabase (include stage + outreach_status for custom attributes)
-    result = sb.table('accounts').select('id, name, domain, exa_research, stage, outreach_status').not_.is_('domain', 'null').order('id').limit(limit).execute()
+    query = sb.table('accounts').select('id, name, domain, exa_research, stage, outreach_status').not_.is_('domain', 'null')
+
+    if not full:
+        # Only sync accounts that have been emailed (or later)
+        query = query.in_('stage', ['outreach', 'replied', 'meeting', 'client', 'opted_out'])
+
+    result = query.order('id').limit(limit).execute()
     accounts = result.data or []
 
     print(f"  Found {len(accounts)} accounts to sync\n")
@@ -373,5 +384,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Sync ABM data to Attio CRM')
     parser.add_argument('--limit', type=int, default=100)
     parser.add_argument('--dry-run', action='store_true', help='Preview without pushing')
+    parser.add_argument('--full', action='store_true', help='Sync ALL accounts (bypass outreach gate)')
     args = parser.parse_args()
-    run(limit=args.limit, dry_run=args.dry_run)
+    run(limit=args.limit, dry_run=args.dry_run, full=args.full)

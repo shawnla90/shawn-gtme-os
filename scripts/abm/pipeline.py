@@ -7,6 +7,9 @@ Usage:
   python3 scripts/abm/pipeline.py --step research --limit 5
   python3 scripts/abm/pipeline.py --step prospect --limit 5
   python3 scripts/abm/pipeline.py --step generate --limit 5
+  python3 scripts/abm/pipeline.py --step gap_analysis --limit 10
+  python3 scripts/abm/pipeline.py --step find_similar --limit 20 --seed best
+  python3 scripts/abm/pipeline.py --step lemlist --campaign-id cam_xxx --limit 10
   python3 scripts/abm/pipeline.py --step all --limit 5 --resume
 """
 
@@ -56,6 +59,14 @@ def check_keys(step):
             if not os.environ.get(key):
                 missing.append(key)
 
+    if step == 'find_similar':
+        if not os.environ.get('EXA_API_KEY'):
+            missing.append('EXA_API_KEY')
+
+    if step == 'lemlist':
+        if not os.environ.get('LEMLIST_API_KEY'):
+            missing.append('LEMLIST_API_KEY')
+
     if missing:
         print(f"[!] Missing API keys: {', '.join(missing)}")
         print("    Export them or add to .env before running.")
@@ -64,16 +75,24 @@ def check_keys(step):
 
 def main():
     parser = argparse.ArgumentParser(description='ABM Pipeline - Find, Research, Generate')
-    parser.add_argument('--step', choices=['research', 'prospect', 'generate', 'sync', 'depersonalize', 'outreach', 'all'],
-                        default='all', help='Pipeline step to run (outreach must be called explicitly)')
+    parser.add_argument('--step', choices=[
+        'research', 'prospect', 'generate', 'sync', 'depersonalize',
+        'outreach', 'gap_analysis', 'find_similar', 'lemlist', 'all',
+    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist must be called explicitly)')
     parser.add_argument('--limit', type=int, default=100,
                         help='Max number of companies to process')
     parser.add_argument('--dry-run', action='store_true',
-                        help='Preview without making changes (outreach step)')
+                        help='Preview without making changes')
+    parser.add_argument('--full', action='store_true',
+                        help='Sync all accounts to Attio (bypass outreach gate)')
     parser.add_argument('--resume', action='store_true', default=True,
                         help='Resume from where we left off (default: true)')
     parser.add_argument('--no-resume', action='store_true',
                         help='Start fresh, don\'t skip already-processed items')
+    parser.add_argument('--seed', choices=['replied', 'viewed', 'best'], default='best',
+                        help='Seed type for find_similar step')
+    parser.add_argument('--campaign-id', default=None,
+                        help='Lemlist campaign ID (required for lemlist step)')
 
     args = parser.parse_args()
 
@@ -107,7 +126,7 @@ def main():
 
     if step in ('sync', 'all'):
         import sync_attio
-        sync_attio.run(limit=limit)
+        sync_attio.run(limit=limit, full=getattr(args, 'full', False))
 
     if step in ('depersonalize', 'all'):
         import depersonalize
@@ -117,6 +136,24 @@ def main():
     if step == 'outreach':
         import outreach
         outreach.run(limit=limit, dry_run=args.dry_run)
+
+    # Gap analysis - explicit only (NOT in 'all')
+    if step == 'gap_analysis':
+        import gap_analysis
+        gap_analysis.run(limit=limit, dry_run=args.dry_run)
+
+    # Find similar - explicit only (NOT in 'all')
+    if step == 'find_similar':
+        import find_similar
+        find_similar.run(limit=limit, seed=args.seed, dry_run=args.dry_run)
+
+    # Lemlist push - explicit only (NOT in 'all')
+    if step == 'lemlist':
+        if not args.campaign_id:
+            print("[!] --campaign-id required for lemlist step")
+            sys.exit(1)
+        import push_to_lemlist
+        push_to_lemlist.run(campaign_id=args.campaign_id, limit=limit, dry_run=args.dry_run)
 
     elapsed = time.time() - start
     minutes = int(elapsed // 60)
