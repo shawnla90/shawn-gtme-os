@@ -4,14 +4,14 @@ import { getAllLogs } from '@shawnos/shared/lib'
 import { HomeContent } from './HomeContent'
 
 export const metadata: Metadata = {
-  title: 'theContentOS.ai | the content operating system',
+  title: 'How to Build an AI Assistant | theContentOS.ai',
   description:
-    'One voice across every platform. AI-powered content that sounds like you, not AI slop. Voice engine, platform playbooks, and recursive content loops. From one repo.',
+    'Learn how to build an AI assistant that sounds like you, not generic slop. ContentOS: voice engine, platform playbooks, and recursive content loops across every platform. From one repo.',
   alternates: { canonical: 'https://thecontentos.ai' },
   openGraph: {
-    title: 'theContentOS.ai | the content operating system',
+    title: 'How to Build an AI Assistant | theContentOS.ai',
     description:
-      'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
+      'Learn how to build an AI assistant that sounds like you, not generic slop. Voice engine, platform playbooks, and recursive content loops.',
     url: 'https://thecontentos.ai',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'theContentOS.ai | the content operating system',
+    title: 'How to Build an AI Assistant | theContentOS.ai',
     description:
-      'One voice across every platform. AI-powered content that sounds like you, not AI slop.',
+      'Learn how to build an AI assistant that sounds like you, not generic slop. Voice engine, platform playbooks, and recursive content loops.',
     images: ['/og'],
   },
 }
