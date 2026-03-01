@@ -13,6 +13,9 @@ data/*
 !data/nio-memory/
 !data/abm/
 !data/abm/pages/
+!data/linkedin/
+!data/linkedin/posts/
+!data/linkedin/scout/
 !data/website-stats.json
 data/daily-log/*.png
 data/daily-log/*.log
