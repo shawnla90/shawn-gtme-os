@@ -34,6 +34,11 @@ XAI_API_KEY = os.environ.get("XAI_API_KEY", "")
 XAI_BASE_URL = "https://api.x.ai/v1"
 MODEL = "grok-4-1-fast-non-reasoning"
 
+# Fallback: Claude Opus 4.6
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
+ANTHROPIC_BASE_URL = "https://api.anthropic.com/v1"
+FALLBACK_MODEL = "claude-opus-4-6"
+
 # ── Research missions ─────────────────────────────────────────────
 
 X_SEARCHES = [
@@ -224,20 +229,23 @@ def analyze_and_angle(raw_findings: list) -> list:
     messages = [
         {
             "role": "system",
-            "content": """You are a content strategy advisor for Shawn Tenam — a GTM engineer who builds AI-native infrastructure. He went from plumber to SDR to AI builder. He runs 4 live websites on Vercel, 50+ AI skills, nightly cron automation, a multi-agent system, and an AI chatbot mascot called Nio.
+            "content": """You are a content strategy advisor for Shawn Tenam - a GTM engineer who builds AI-native infrastructure. He went from plumber to SDR to AI builder. He runs 4 live websites on Vercel, 50+ AI skills, nightly cron automation, a multi-agent system, and an AI chatbot mascot called Nio.
 
 He's about to go independent and sell:
 - Full-stack website builds ($3,500-7,500)
 - AI operating system builds ($10,000-25,000)
 - AI ops retainers ($5,000/month)
 
-Analyze each topic and return a JSON array. For each topic:
+Based on the research findings, generate exactly 10 post ideas for X/Twitter. Each idea should be a specific, ready-to-write post concept that connects trending conversations to Shawn's builder experience.
+
+Mix of formats: hot takes, meme-style one-liners, build log teasers, thread starters, and remix/reaction posts.
+
+Return a JSON array of exactly 10 items:
 {
-  "title": "short headline (max 80 chars)",
-  "platform": "x|hn|reddit|substack|linkedin|web",
+  "idea": "the actual post idea written as a 1-2 sentence pitch (not the full post, just the concept)",
+  "format": "hot_take|meme|build_log|thread|remix|reaction",
+  "source_trend": "what trending topic or conversation this riffs on",
   "relevance": "high|medium|low",
-  "angle": "specific content angle for Shawn (1-2 sentences)",
-  "content_type": "linkedin_post|x_thread|substack|tiktok|skip",
   "tags": ["tag1", "tag2"]
 }
 
@@ -245,7 +253,7 @@ Return ONLY the JSON array, no other text.""",
         },
         {
             "role": "user",
-            "content": f"Analyze these {len(raw_findings)} research findings and give me the structured briefing:\n{findings_text}",
+            "content": f"Here are today's {len(raw_findings)} research findings from X and the web. Generate 10 post ideas:\n{findings_text}",
         },
     ]
 
@@ -335,19 +343,19 @@ def run_scout(test_mode: bool = False) -> dict:
     total = len(topics)
 
     top_pick = None
-    high_topics = [t for t in topics if t.get("relevance") == "high"]
-    if high_topics:
-        top_pick = f"{high_topics[0].get('title', 'Unknown')} — {high_topics[0].get('angle', '')}"
+    high_ideas = [t for t in topics if t.get("relevance") == "high"]
+    if high_ideas:
+        top_pick = high_ideas[0].get("idea", "Unknown")
     elif topics:
-        top_pick = f"{topics[0].get('title', 'Unknown')} — best available today"
+        top_pick = topics[0].get("idea", "Unknown")
 
-    summary = f"{total} topics found ({high_count} high, {med_count} medium relevance). "
-    if high_count >= 3:
-        summary += "Strong content day — multiple high-relevance topics."
-    elif high_count >= 1:
-        summary += "Decent day — at least one strong topic to build on."
+    summary = f"{total} post ideas generated ({high_count} high, {med_count} medium relevance). "
+    if high_count >= 5:
+        summary += "Strong content day - plenty of high-relevance ideas."
+    elif high_count >= 2:
+        summary += "Decent day - a few strong ideas to pick from."
     else:
-        summary += "Quiet day — consider evergreen content or system documentation."
+        summary += "Quiet day - consider evergreen content or system posts."
 
     return {
         "agent": "scout",
@@ -390,10 +398,14 @@ def main():
     with open(log_path, "w") as f:
         json.dump(briefing, f, indent=2, default=str)
 
-    # Print summary to stdout for cron logs
+    # Print summary + all ideas to stdout for cron logs
     print(f"[scout] {briefing['summary']}")
+    for i, idea in enumerate(briefing.get("topics", []), 1):
+        rel = idea.get("relevance", "?")[0].upper()
+        fmt = idea.get("format", "post")
+        print(f"  {i:2d}. [{rel}] ({fmt}) {idea.get('idea', '???')}")
     if briefing.get("top_pick"):
-        print(f"  TOP: {briefing['top_pick']}")
+        print(f"\n  TOP PICK: {briefing['top_pick']}")
 
 
 if __name__ == "__main__":

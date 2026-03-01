@@ -29,7 +29,7 @@ most AIs forget you exist the second you close the tab. mine has a soul file - v
 **First Comment (hashtag overflow):**
 #claudecode #aiassistant #personalai #buildinpublic #aitools #devtools #aicoding #anthropic #techfounders #solofounder #aithatlearns #soulfile #aibot
 
-**Post Day:** Tuesday 11 AM ET
+**Post Day:** Tuesday 11 AM ET | **POSTED** Tue Feb 25
 
 ---
 
@@ -41,7 +41,7 @@ what if your AI leveled up like you do. not frozen in time. not a static chatbot
 **First Comment (hashtag overflow):**
 #claudecode #aiassistant #tamagotchi #personalai #buildinpublic #aitools #devtools #aicoding #anthropic #techfounders #aithatlearns #rpg #aibot #levelup
 
-**Post Day:** Thursday 11 AM ET
+**Post Day:** Thursday 11 AM ET | **POSTED** Thu Feb 27
 
 ---
 
@@ -73,10 +73,10 @@ every AI tool I've tried eventually leaves me behind or I outgrow it. so I built
 
 | Day | Reel | Hook |
 |-----|------|------|
-| Tue Feb 27 | Soul File | "most AIs forget you exist" |
-| Thu Feb 28 | Levels Up | "what if your AI leveled up like you do" |
-| Sat Mar 1 | Backflip | "my AI just did a backflip" |
-| Tue Mar 3 | Grows With You | "every AI tool eventually leaves me behind" |
+| Tue Feb 25 | Soul File | "most AIs forget you exist" | **POSTED** |
+| Thu Feb 27 | Levels Up | "what if your AI leveled up like you do" | **POSTED** |
+| Sat Mar 1 | Backflip | "my AI just did a backflip" | next up |
+| Tue Mar 3 | Grows With You | "every AI tool eventually leaves me behind" | scheduled |
 
 All posts 11 AM - 1 PM ET. Backflip on Saturday for weekend scroll time. Soul File and Levels Up on weekdays for dev audience.
 
