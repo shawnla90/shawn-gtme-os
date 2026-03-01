@@ -9,6 +9,11 @@ export const dynamic = 'force-dynamic'
 const REPO_ROOT = path.resolve(process.cwd(), '../../..')
 const GITNEXUS_DIR = path.join(REPO_ROOT, '.gitnexus')
 
+// On Vercel, DB files are copied to ./data/ during build
+const DATA_DIR = process.env.VERCEL === '1'
+  ? path.join(process.cwd(), 'data')
+  : path.join(REPO_ROOT, 'data')
+
 interface GraphNode {
   id: string
   label: string
@@ -393,7 +398,7 @@ function loadContentNodes(search: string): { nodes: GraphNode[]; edges: GraphEdg
 
   try {
     const Database = require('better-sqlite3')
-    const dbPath = path.resolve(REPO_ROOT, 'data/index.db')
+    const dbPath = path.join(DATA_DIR, 'index.db')
     if (!fs.existsSync(dbPath)) return { nodes, edges }
 
     const db = new Database(dbPath, { readonly: true })

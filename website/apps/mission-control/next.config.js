@@ -1,5 +1,3 @@
-const path = require('path')
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone',
@@ -9,9 +7,9 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
-  // Ensure data/*.db files are included in the Vercel serverless function bundle
+  // Include copied data/*.db files in all serverless function bundles
   outputFileTracingIncludes: {
-    '/api/**': [path.join('..', '..', '..', 'data', '*.db')],
+    '/**': ['./data/**'],
   },
 }
 

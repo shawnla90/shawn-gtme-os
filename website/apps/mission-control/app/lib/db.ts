@@ -2,11 +2,16 @@ import Database from 'better-sqlite3'
 import path from 'path'
 import os from 'os'
 
-// Database paths
+// On Vercel, DB files are copied to ./data/ during build.
+// Locally, they live 3 levels up from the app root.
+const DATA_DIR = process.env.VERCEL === '1'
+  ? path.join(process.cwd(), 'data')
+  : path.join(process.cwd(), '..', '..', '..', 'data')
+
 const DB_PATHS = {
-  index: path.join(process.cwd(), '..', '..', '..', 'data', 'index.db'),
+  index: path.join(DATA_DIR, 'index.db'),
   niobot: path.join(os.homedir(), '.niobot', 'data', 'niobot.db'),
-  crm: path.join(process.cwd(), '..', '..', '..', 'data', 'crm.db'),
+  crm: path.join(DATA_DIR, 'crm.db'),
 } as const
 
 type DbName = keyof typeof DB_PATHS

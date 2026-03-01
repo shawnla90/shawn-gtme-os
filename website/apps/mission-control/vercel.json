@@ -1,6 +1,6 @@
 {
   "installCommand": "cd ../.. && npm install",
-  "buildCommand": "npm run build",
+  "buildCommand": "mkdir -p data && cp ../../../data/index.db data/ && cp ../../../data/crm.db data/ && npm run build",
   "headers": [
     {
       "source": "/(.*)",
