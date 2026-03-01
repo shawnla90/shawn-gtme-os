@@ -5,6 +5,8 @@ import json
 import os
 import re
 import time
+from datetime import datetime, timedelta, timezone
+
 import requests
 
 from db_supabase import get_supabase
@@ -192,6 +194,9 @@ def slugify(name):
     slug = name.lower().strip()
     slug = re.sub(r'[^a-z0-9]+', '-', slug)
     slug = slug.strip('-')
+    # Reject junk slugs from Exa returning blog post URLs instead of company names
+    if len(slug) > 40:
+        return None
     return slug
 
 
@@ -231,6 +236,10 @@ def run(limit=100, resume=True):
         domain = account['domain']
         exa_research = account.get('exa_research')
         slug = slugify(name)
+
+        if not slug:
+            print(f"  [{i+1}/{len(accounts_with_contacts)}] {name} - slug too long (junk data), skipping")
+            continue
 
         if resume and page_exists(sb, slug):
             print(f"  [{i+1}/{len(accounts_with_contacts)}] {name} - page exists, skipping")
@@ -323,12 +332,15 @@ def run(limit=100, resume=True):
         page_url = f"https://thegtmos.ai/for/{slug}"
 
         # Upsert to Supabase (primary store - goes live immediately via ISR)
+        expires = (datetime.now(timezone.utc) + timedelta(days=30)).isoformat()
         sb.table('landing_pages').upsert({
             'slug': slug,
             'url': page_url,
             'page_data': page_data,
             'template': 'abm-v1',
-            'status': 'draft',
+            'status': 'live',
+            'account_id': account_id,
+            'expires_at': expires,
         }, on_conflict='slug').execute()
 
         print(f"    Live at {page_url}")
