@@ -22,31 +22,31 @@ export interface MediaAppearance {
 export const MEDIA_APPEARANCES: MediaAppearance[] = [
   {
     id: 'outbound-wizards-ep82',
-    title: 'Building AI-Native GTM Systems from Scratch',
+    title: 'RevOps Meets GTM Engineering ft. Shawn Tenam',
     show: 'Outbound Wizards',
     host: 'Saurav Gupta',
     date: '2026-02-18',
-    duration: '45 min',
+    duration: '20 min',
     category: 'podcast',
     description:
-      'How a plumber turned GTM engineer builds AI-native pipelines, agent-driven workflows, and a three-site content network - all from a single monorepo. Covers the SalesRobot stack, Clay enrichment workflows, and why building in public compounds faster than any outbound sequence.',
+      'How a plumber turned GTM engineer builds all-bound motions at RevPartners - champion tracking, web visitor identification, email infrastructure, and Clay enrichment workflows. Covers the intersection of RevOps and GTM engineering and why building in public compounds faster than any outbound sequence.',
     topics: [
       'GTM Engineering',
-      'AI Agents',
+      'RevOps',
       'Build in Public',
       'SalesRobot',
       'Clay Workflows',
-      'Monorepo Architecture',
-      'Content-as-Code',
+      'Champion Tracking',
+      'Email Infrastructure',
     ],
     links: [
       {
         platform: 'Apple Podcasts',
-        url: 'https://podcasts.apple.com/us/podcast/outbound-wizards-by-salesrobot/id1740Part0327?i=1000697326429',
+        url: 'https://podcasts.apple.com/us/podcast/revops-meets-gtm-engineering-ft-shawn-tenam/id1837922764?i=1000750238216',
       },
       {
         platform: 'Spotify',
-        url: 'https://open.spotify.com/episode/4yPXREp3qqKfhBwmZhG8oZ',
+        url: 'https://open.spotify.com/episode/4pmZvuhuiSHyBDIsPxtCmy',
       },
     ],
     featured: true,
