@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 interface NavLink {
   href: string
   label: string
+  children?: NavLink[]
 }
 
 interface NavigationProps {
@@ -23,9 +24,18 @@ const defaultLinks: NavLink[] = [
 
 export function Navigation({ siteName, links = defaultLinks }: NavigationProps) {
   const [drawerOpen, setDrawerOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set())
   const pathname = usePathname()
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), [])
+
+  // Close dropdown on route change
+  useEffect(() => {
+    setOpenDropdown(null)
+    setExpandedGroups(new Set())
+    closeDrawer()
+  }, [pathname, closeDrawer])
 
   // Lock body scroll when drawer is open
   useEffect(() => {
@@ -40,18 +50,40 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
   // Close drawer on Escape key
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closeDrawer()
+      if (e.key === 'Escape') {
+        closeDrawer()
+        setOpenDropdown(null)
+      }
     }
-    if (drawerOpen) {
+    if (drawerOpen || openDropdown) {
       document.addEventListener('keydown', handleKey)
       return () => document.removeEventListener('keydown', handleKey)
     }
-  }, [drawerOpen, closeDrawer])
+  }, [drawerOpen, openDropdown, closeDrawer])
 
   const isActive = (href: string) => {
     if (href.startsWith('http')) return false
-    if (href === '/') return pathname === '/'
+    if (href === '/' || href === '#') return pathname === href
     return pathname.startsWith(href)
+  }
+
+  const isGroupActive = (link: NavLink) => {
+    if (link.children) {
+      return link.children.some((child) => isActive(child.href))
+    }
+    return isActive(link.href)
+  }
+
+  const toggleGroup = (label: string) => {
+    setExpandedGroups((prev) => {
+      const next = new Set(prev)
+      if (next.has(label)) {
+        next.delete(label)
+      } else {
+        next.add(label)
+      }
+      return next
+    })
   }
 
   return (
@@ -73,6 +105,66 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
         .nav-link-row {
           display: flex;
           gap: 24px;
+          align-items: center;
+        }
+
+        /* ── Desktop dropdown ── */
+        .nav-dropdown-wrap {
+          position: relative;
+        }
+        .nav-dropdown-trigger {
+          color: var(--text-secondary);
+          font-size: 14px;
+          cursor: default;
+          user-select: none;
+          transition: color 0.15s ease;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .nav-dropdown-trigger:hover {
+          color: var(--accent);
+        }
+        .nav-dropdown-chevron {
+          font-size: 10px;
+          transition: transform 0.2s ease;
+          line-height: 1;
+        }
+        .nav-dropdown-chevron-open {
+          transform: rotate(180deg);
+        }
+        .nav-dropdown-panel {
+          position: absolute;
+          top: calc(100% + 8px);
+          left: 50%;
+          transform: translateX(-50%);
+          background: var(--canvas);
+          border: 1px solid var(--border);
+          border-radius: 6px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          padding: 6px 0;
+          min-width: 160px;
+          z-index: 1001;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity 0.15s ease;
+        }
+        .nav-dropdown-panel-open {
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .nav-dropdown-panel a {
+          display: block;
+          padding: 8px 16px;
+          color: var(--text-secondary);
+          font-size: 14px;
+          text-decoration: none;
+          white-space: nowrap;
+          transition: color 0.15s ease, background 0.15s ease;
+        }
+        .nav-dropdown-panel a:hover {
+          color: var(--accent);
+          background: var(--canvas-subtle);
         }
 
         /* ── Hamburger button ── */
@@ -125,7 +217,8 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
           overflow-y: auto;
         }
         .nav-drawer-link {
-          display: block;
+          display: flex;
+          align-items: center;
           padding: 14px 20px;
           color: var(--text-secondary);
           font-size: 15px;
@@ -134,8 +227,6 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
           transition: color 0.15s ease, background 0.15s ease;
           min-height: 48px;
           box-sizing: border-box;
-          display: flex;
-          align-items: center;
         }
         .nav-drawer-link:hover {
           color: var(--accent);
@@ -145,6 +236,45 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
           color: var(--accent) !important;
           border-left: 3px solid var(--accent);
           padding-left: 17px;
+        }
+        .nav-drawer-group-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 14px 20px;
+          color: var(--text-secondary);
+          font-size: 15px;
+          font-family: var(--font-mono);
+          cursor: pointer;
+          user-select: none;
+          min-height: 48px;
+          box-sizing: border-box;
+          transition: color 0.15s ease, background 0.15s ease;
+          border: none;
+          background: none;
+          width: 100%;
+          text-align: left;
+        }
+        .nav-drawer-group-header:hover {
+          color: var(--accent);
+          background: var(--canvas-subtle);
+        }
+        .nav-drawer-group-children {
+          overflow: hidden;
+          max-height: 0;
+          transition: max-height 0.25s ease;
+        }
+        .nav-drawer-group-children-open {
+          max-height: 500px;
+        }
+        .nav-drawer-group-children a {
+          padding-left: 40px;
+          border-left: 2px solid var(--border);
+          margin-left: 20px;
+        }
+        .nav-drawer-group-children a.nav-drawer-link-active {
+          border-left: 3px solid var(--accent);
+          padding-left: 39px;
         }
 
         /* ── Mobile breakpoint ── */
@@ -192,15 +322,48 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
 
         {/* Desktop link row */}
         <div className="nav-link-row">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`nav-link${isActive(link.href) ? ' nav-link-active' : ''}`}
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.children ? (
+              <div
+                key={link.label}
+                className="nav-dropdown-wrap"
+                onMouseEnter={() => setOpenDropdown(link.label)}
+                onMouseLeave={() => setOpenDropdown(null)}
+              >
+                <span
+                  className={`nav-dropdown-trigger${isGroupActive(link) ? ' nav-link-active' : ''}`}
+                >
+                  {link.label}
+                  <span
+                    className={`nav-dropdown-chevron${openDropdown === link.label ? ' nav-dropdown-chevron-open' : ''}`}
+                  >
+                    ▾
+                  </span>
+                </span>
+                <div
+                  className={`nav-dropdown-panel${openDropdown === link.label ? ' nav-dropdown-panel-open' : ''}`}
+                >
+                  {link.children.map((child) => (
+                    <a
+                      key={child.href}
+                      href={child.href}
+                      className={isActive(child.href) ? 'nav-link-active' : ''}
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`nav-link${isActive(link.href) ? ' nav-link-active' : ''}`}
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
 
         {/* Hamburger button (mobile only) */}
@@ -245,16 +408,46 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
       {/* Slide-down drawer (mobile only) */}
       <div className={`nav-drawer${drawerOpen ? ' nav-drawer-open' : ''}`}>
         <div style={{ padding: '8px 0' }}>
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={`nav-drawer-link${isActive(link.href) ? ' nav-drawer-link-active' : ''}`}
-              onClick={closeDrawer}
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) =>
+            link.children ? (
+              <div key={link.label}>
+                <button
+                  className={`nav-drawer-group-header${isGroupActive(link) ? ' nav-link-active' : ''}`}
+                  onClick={() => toggleGroup(link.label)}
+                >
+                  <span>{link.label}</span>
+                  <span
+                    className={`nav-dropdown-chevron${expandedGroups.has(link.label) ? ' nav-dropdown-chevron-open' : ''}`}
+                  >
+                    ▾
+                  </span>
+                </button>
+                <div
+                  className={`nav-drawer-group-children${expandedGroups.has(link.label) ? ' nav-drawer-group-children-open' : ''}`}
+                >
+                  {link.children.map((child) => (
+                    <a
+                      key={child.href}
+                      href={child.href}
+                      className={`nav-drawer-link${isActive(child.href) ? ' nav-drawer-link-active' : ''}`}
+                      onClick={closeDrawer}
+                    >
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <a
+                key={link.href}
+                href={link.href}
+                className={`nav-drawer-link${isActive(link.href) ? ' nav-drawer-link-active' : ''}`}
+                onClick={closeDrawer}
+              >
+                {link.label}
+              </a>
+            )
+          )}
         </div>
       </div>
     </>
