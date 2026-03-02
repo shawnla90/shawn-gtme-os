@@ -2142,4 +2142,143 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       },
     ],
   },
+
+  /* ================================================================== */
+  /*  SECURITY                                                           */
+  /* ================================================================== */
+
+  {
+    id: 'env-files-explained',
+    title: 'Environment Files Explained',
+    subtitle: 'What .env files are, why they matter, and how to set them up without leaking secrets',
+    category: 'security',
+    description:
+      'Complete guide to .env files for developers and builders. What environment variables are, how to create and manage .env files, security best practices, and the mistakes that get secrets leaked to GitHub.',
+    keywords: [
+      'env file',
+      '.env file',
+      '.env files',
+      'environment files',
+      'what is env file',
+      'what is a .env file',
+      'environment variables',
+      'env file setup',
+      'dotenv',
+      'env file security',
+      'env file gitignore',
+      'how to use env files',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'shawnos',
+    related: [
+      'constraints-and-context-engines',
+      'rules-skills-context',
+    ],
+    sections: [
+      {
+        heading: 'What an .env File Actually Is',
+        type: 'prose',
+        content:
+          'An .env file is a plain text file that stores configuration values your application needs to run. API keys, database passwords, service URLs, feature flags. One key-value pair per line. No quotes needed (though some parsers accept them). No special syntax.\n\nThe file sits in your project root and never gets committed to Git. Your code reads from it using process.env.VARIABLE_NAME in Node.js or os.environ in Python. The values exist only on your machine. Your teammate has their own .env with their own keys. Production has its own set on the hosting platform.\n\nThe name starts with a dot, which makes it a hidden file on Mac and Linux. That is intentional. It should not be visible by default because it contains secrets.',
+      },
+      {
+        heading: 'Why You Need One',
+        type: 'pattern',
+        content:
+          'Three problems .env files solve.\n\nFirst, security. API keys hardcoded in source files end up on GitHub. Bots scrape public repos for exposed keys within minutes of a push. AWS keys get stolen. Stripe keys get stolen. It happens constantly. .env files keep secrets out of version control entirely.\n\nSecond, portability. Your local machine, your staging server, and your production server all need different database URLs, different API endpoints, different feature flags. Same codebase, different environment variables. You deploy the same code everywhere and the .env file tells it how to behave.\n\nThird, collaboration. Your teammate uses their own API keys. Your CI pipeline uses service account keys. Nobody shares credentials through Slack or email. Everyone has their own .env file with their own values.',
+      },
+      {
+        heading: 'Setting One Up',
+        type: 'code',
+        content:
+          'Step 1: Create the file in your project root.\n\ntouch .env\n\nStep 2: Add your variables. One per line. No spaces around the equals sign.\n\nAPI_KEY=sk_live_abc123\nDATABASE_URL=postgres://user:pass@localhost:5432/mydb\nNEXT_PUBLIC_SITE_URL=http://localhost:3000\nDEBUG=true\n\nStep 3: Add .env to your .gitignore immediately. This is non-negotiable.\n\necho ".env" >> .gitignore\necho ".env.local" >> .gitignore\necho ".env*.local" >> .gitignore\n\nStep 4: Install a loader if your framework does not have one built in. Next.js loads .env files automatically. For other Node.js projects, use dotenv:\n\nnpm install dotenv\n\nThen at the top of your entry file:\n\nrequire(\'dotenv\').config()\n\nStep 5: Access variables in your code.\n\nNode.js: process.env.API_KEY\nPython: os.environ.get(\'API_KEY\')\nNext.js (client-side): process.env.NEXT_PUBLIC_SITE_URL\n\nThe NEXT_PUBLIC_ prefix in Next.js means the variable is exposed to the browser. Without that prefix, it stays server-side only. This matters. Do not put secret keys behind NEXT_PUBLIC_.',
+      },
+      {
+        heading: 'The .env File Hierarchy',
+        type: 'pattern',
+        content:
+          'Most frameworks support multiple .env files with a loading priority. Next.js loads them in this order, with later files overriding earlier ones:\n\n.env (base defaults, committed to repo if no secrets)\n.env.local (local overrides, never committed)\n.env.development (only in dev mode)\n.env.development.local (local dev overrides)\n.env.production (only in production builds)\n.env.production.local (local production overrides)\n\nThe .local files always override non-local files. The environment-specific files override the base .env. This lets you commit safe defaults in .env while keeping secrets in .env.local.\n\nA common pattern: .env has NEXT_PUBLIC_SITE_URL=https://yoursite.com as the production default. .env.local overrides it to http://localhost:3000 for local development. No code changes needed to switch between environments.',
+      },
+      {
+        heading: 'The Mistakes That Leak Secrets',
+        type: 'pro-tip',
+        content:
+          'Mistake 1: Forgetting to add .env to .gitignore before the first commit. Once a file is tracked by Git, adding it to .gitignore later does not remove it from history. You need git rm --cached .env to untrack it, then force push. If you already pushed to a public repo, rotate every key in that file immediately. The old keys are in Git history forever.\n\nMistake 2: Using NEXT_PUBLIC_ prefix on secret keys. NEXT_PUBLIC_STRIPE_SECRET_KEY is visible in the browser bundle. Anyone can inspect it. Only use the public prefix for values that are safe to expose, like your site URL or a public API key.\n\nMistake 3: Sharing .env files through Slack or email. Use a password manager, a secrets vault, or a secure sharing tool. .env files in chat histories get indexed, cached, and backed up in places you cannot control.\n\nMistake 4: Not creating a .env.example file. This is a template showing which variables your app expects, without the actual values. Commit this to the repo so new developers know what to fill in.\n\nAPI_KEY=\nDATABASE_URL=\nNEXT_PUBLIC_SITE_URL=http://localhost:3000\n\nMistake 5: Logging environment variables during debugging and forgetting to remove the log statements. console.log(process.env) dumps every secret to whatever logging service you use.',
+      },
+      {
+        heading: 'Production Environment Variables',
+        type: 'pattern',
+        content:
+          'In production, you do not use .env files. You set environment variables directly on your hosting platform.\n\nVercel: Settings > Environment Variables. Add each key-value pair. Choose which environments it applies to (Production, Preview, Development).\n\nRailway: Variables tab in your service settings.\n\nAWS: Parameter Store or Secrets Manager.\n\nThe principle is the same everywhere. Secrets live in the platform, not in files. Your code reads from process.env regardless of where the values come from. Locally they come from .env. In production they come from the platform. Your code does not need to know the difference.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  MCP SERVERS                                                        */
+  /* ================================================================== */
+
+  {
+    id: 'heyreach-linkedin-automation',
+    title: 'HeyReach LinkedIn Automation',
+    subtitle: 'Set up HeyReach for multi-sender LinkedIn outreach with proper warming and campaign structure',
+    category: 'mcp-servers',
+    description:
+      'Complete guide to HeyReach for LinkedIn outreach automation. Multi-sender architecture, campaign setup, connection request sequences, warming strategy, and integration with Clay and Instantly for full-funnel GTM.',
+    keywords: [
+      'heyreach',
+      'heyreach setup',
+      'heyreach linkedin automation',
+      'heyreach campaigns',
+      'linkedin automation tool',
+      'heyreach guide',
+      'linkedin outreach automation',
+      'heyreach multi sender',
+      'heyreach clay integration',
+      'heyreach mcp',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'gtmos',
+    related: [
+      'mcp-gtm-stack',
+    ],
+    sections: [
+      {
+        heading: 'What HeyReach Is',
+        type: 'prose',
+        content:
+          'HeyReach is a LinkedIn automation tool built for multi-sender outreach. The core idea: connect multiple LinkedIn accounts to one workspace and run campaigns across all of them simultaneously. One person can manage 5, 10, 20 sender accounts from a single dashboard.\n\nWhy multi-sender matters: LinkedIn limits each account to roughly 100 connection requests per week and 150 profile views per day. One account caps out fast. Five accounts running the same campaign hit 500 connections per week. The math is straightforward. More senders means more pipeline.\n\nHeyReach handles the rotation automatically. You build a campaign, assign senders, upload a lead list, and it distributes the outreach across accounts. It also manages warming, connection request limits, and response tracking per account.',
+      },
+      {
+        heading: 'Account Setup and Sender Configuration',
+        type: 'code',
+        content:
+          'Step 1: Create your HeyReach workspace at app.heyreach.io. One workspace per team or agency.\n\nStep 2: Connect LinkedIn accounts. HeyReach uses a browser extension or cookie-based auth to link accounts. Each account becomes a "sender" in the workspace.\n\nWarming rules for new senders:\nWeek 1: 10 connection requests per day, 30 profile views\nWeek 2: 15 connection requests per day, 50 profile views\nWeek 3: 20 connection requests per day, 80 profile views\nWeek 4+: 25 connection requests per day, 100 profile views\n\nDo not skip warming. LinkedIn flags accounts that go from zero activity to 100 requests overnight. The warming period builds a natural activity pattern that keeps accounts safe.\n\nStep 3: Set daily limits per sender in Settings > Sender Limits. Be conservative. 20-25 connection requests per day per account is the safe ceiling. Some accounts can handle more, but the risk of restriction goes up past 30.',
+      },
+      {
+        heading: 'Campaign Architecture',
+        type: 'pattern',
+        content:
+          'A HeyReach campaign has three components: the lead list, the sequence, and the sender pool.\n\nLead list: CSV upload or CRM sync. Each row needs a LinkedIn profile URL at minimum. Name, company, and title help with personalization variables. HeyReach deduplicates across campaigns automatically, so the same person does not get hit twice.\n\nSequence: The message flow. A typical outbound sequence:\n\nStep 1: View profile (day 0)\nStep 2: Send connection request with note (day 1)\nStep 3: If accepted, send first message (day 2-3 after acceptance)\nStep 4: Follow-up message if no reply (day 5-7 after first message)\nStep 5: Final touch (day 10-14 after second message)\n\nConnection request notes: keep them under 300 characters. Lead with why you are reaching out, not who you are. "Saw your team is scaling the SDR org - we built something for exactly that" beats "Hi, I am Shawn from GTMe OS and I would love to connect."\n\nSender pool: Assign 3-5 senders per campaign. HeyReach rotates which sender contacts which lead. This distributes the volume and makes the outreach pattern look more natural to LinkedIn.',
+      },
+      {
+        heading: 'Integrating with Clay',
+        type: 'pattern',
+        content:
+          'The real power is Clay feeding HeyReach. Clay enriches your lead list with company data, technographics, hiring signals, and custom scores. Then you push qualified leads directly to HeyReach campaigns.\n\nThe flow:\n\n1. Clay table with enriched leads (company, title, LinkedIn URL, score)\n2. Filter to qualified leads (score above threshold, title match, company fit)\n3. Push to HeyReach via webhook or CSV export\n4. HeyReach runs the LinkedIn sequence\n5. Responses sync back to your CRM\n\nFor the webhook approach, Clay has an HTTP action that can POST to HeyReach API endpoints. Map the Clay columns to HeyReach lead fields: linkedin_url, first_name, last_name, company_name, title.\n\nFor the CSV approach: export from Clay, upload to HeyReach campaign. Less automated but works for batch campaigns where you want to review the list before launching.',
+      },
+      {
+        heading: 'Multi-Channel with Instantly',
+        type: 'pattern',
+        content:
+          'HeyReach handles LinkedIn. Instantly handles email. Running both on the same lead list creates a multi-channel sequence.\n\nThe routing logic depends on the lead. If you have a verified email, they go to Instantly for email outreach AND HeyReach for LinkedIn. If you only have a LinkedIn URL and no email, they go to HeyReach only. If the email domain uses aggressive spam filtering (Proofpoint, Mimecast), lead with LinkedIn through HeyReach and use email as the follow-up channel.\n\nTiming matters. Do not blast both channels on the same day. Stagger them. LinkedIn connection request on day 1. Email on day 3. LinkedIn follow-up on day 7. Email follow-up on day 10. The prospect sees your name across two channels without feeling spammed.\n\nTrack which channel gets the response. Over time you will see patterns. Some industries respond better on LinkedIn. Some respond better to email. Let the data drive your channel allocation.',
+      },
+      {
+        heading: 'Safety and Account Health',
+        type: 'pro-tip',
+        content:
+          'LinkedIn restricts accounts that behave like bots. HeyReach mitigates this with built-in limits and warming, but you still need to be smart about it.\n\nNever exceed 25 connection requests per day per account. The hard limit from LinkedIn is around 100 per week, but spreading them across 5 days at 20 each is safer than doing 50 on Monday and 50 on Friday.\n\nUse the accounts manually too. Post content, comment on posts, engage in groups. LinkedIn tracks overall activity patterns. An account that only sends connection requests and messages looks automated. An account that also posts and comments looks human.\n\nRotate senders periodically. If an account gets a temporary restriction, pull it from campaigns for 1-2 weeks. Let it cool down. Use the remaining senders to maintain campaign volume.\n\nMonitor acceptance rates. A healthy acceptance rate is 30-50% for targeted outreach. Below 20% means your messaging or targeting is off. Below 10% and LinkedIn may start flagging the account.\n\nKeep connection request notes genuine. Templates that sound like templates get ignored. Personalize the first line with something specific to the person or their company. HeyReach supports variables like {first_name}, {company_name}, and custom fields from your CSV.',
+      },
+    ],
+  },
 ]

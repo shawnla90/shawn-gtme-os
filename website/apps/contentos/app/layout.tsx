@@ -59,6 +59,23 @@ export const metadata: Metadata = {
 
 /* ── JSON-LD Structured Data ── */
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Content OS',
+  url: SITE_URL,
+  description: 'The content operating system. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+  founder: {
+    '@type': 'Person',
+    name: 'Shawn Tenam',
+    url: 'https://shawnos.ai',
+  },
+  sameAs: [
+    'https://shawnos.ai',
+    'https://thegtmos.ai',
+  ],
+}
+
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -123,6 +140,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}

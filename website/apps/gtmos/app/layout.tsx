@@ -57,6 +57,29 @@ export const metadata: Metadata = {
 
 /* ── JSON-LD Structured Data ── */
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'GTMe OS',
+  url: SITE_URL,
+  description: 'The go-to-market operating system. GTM knowledge, Clay workflows, pipeline playbooks, and engineering guides - built in public.',
+  founder: {
+    '@type': 'Person',
+    name: 'Shawn Tenam',
+    url: 'https://shawnos.ai',
+  },
+  sameAs: [
+    'https://shawnos.ai',
+    'https://thecontentos.ai',
+    'https://github.com/shawnla90',
+    // Add new profile URLs here as they're created:
+    // 'https://linkedin.com/company/YOUR_COMPANY_SLUG',
+    // 'https://crunchbase.com/organization/YOUR_SLUG',
+    // 'https://cal.com/YOUR_SLUG',
+    // 'https://topmate.io/YOUR_SLUG',
+  ],
+}
+
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -74,6 +97,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}

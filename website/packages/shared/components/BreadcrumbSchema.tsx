@@ -1,5 +1,3 @@
-const SITE_URL = 'https://shawnos.ai'
-
 export interface BreadcrumbItem {
   name: string
   url: string
@@ -10,9 +8,12 @@ export interface BreadcrumbItem {
  * Pass an array of breadcrumb items from root to current page.
  * A "Home" root is always prepended automatically.
  */
-export function BreadcrumbSchema({ items }: { items: BreadcrumbItem[] }) {
+export function BreadcrumbSchema({ items, siteUrl }: { items: BreadcrumbItem[]; siteUrl?: string }) {
+  const resolvedUrl = siteUrl
+    || (items.length > 0 ? new URL(items[0].url).origin : 'https://shawnos.ai')
+
   const allItems: BreadcrumbItem[] = [
-    { name: 'Home', url: SITE_URL },
+    { name: 'Home', url: resolvedUrl },
     ...items,
   ]
 
