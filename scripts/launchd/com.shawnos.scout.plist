@@ -3,17 +3,12 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.shawnos.abm-pipeline</string>
+    <string>com.shawnos.scout</string>
 
     <key>ProgramArguments</key>
     <array>
         <string>/opt/homebrew/bin/python3</string>
-        <string>/Users/shawnos.ai/shawn-gtme-os/scripts/abm/pipeline.py</string>
-        <string>--step</string>
-        <string>all</string>
-        <string>--limit</string>
-        <string>10</string>
-        <string>--resume</string>
+        <string>/Users/shawnos.ai/shawn-gtme-os/scripts/agents/scout.py</string>
     </array>
 
     <key>WorkingDirectory</key>
@@ -25,7 +20,7 @@
     <key>StartCalendarInterval</key>
     <dict>
         <key>Hour</key>
-        <integer>22</integer>
+        <integer>6</integer>
         <key>Minute</key>
         <integer>0</integer>
     </dict>
@@ -33,14 +28,14 @@
     <key>EnvironmentVariables</key>
     <dict>
         <key>PATH</key>
-        <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+        <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin</string>
         <key>HOME</key>
         <string>/Users/shawnos.ai</string>
     </dict>
 
     <key>StandardOutPath</key>
-    <string>/Users/shawnos.ai/Library/Logs/abm-pipeline.log</string>
+    <string>/Users/shawnos.ai/.logs/scout.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/shawnos.ai/Library/Logs/abm-pipeline.log</string>
+    <string>/Users/shawnos.ai/.logs/scout.log</string>
 </dict>
 </plist>

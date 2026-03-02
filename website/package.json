@@ -17,6 +17,7 @@
   },
   "packageManager": "npm@10.8.2",
   "dependencies": {
-    "@vercel/analytics": "^1.6.1"
+    "@vercel/analytics": "^1.6.1",
+    "rehype-sanitize": "^6.0.0"
   }
 }

@@ -4,6 +4,7 @@ import {
   HOW_TO_WIKI_CATEGORIES,
 } from '@shawnos/shared/data/how-to-wiki'
 import { HowToWikiPage } from '@shawnos/shared/pages/HowToWikiPage'
+import type { HowToWikiPageConfig } from '@shawnos/shared/pages/HowToWikiPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://thecontentos.ai'
@@ -114,23 +115,35 @@ const howToSchema = {
 
 /* ── page ─────────────────────────────────────────── */
 
-export default function ContentOSHowToPage() {
-  const entries = HOW_TO_WIKI_ENTRIES.map((e) => ({
+const config: HowToWikiPageConfig = {
+  siteName: 'contentos',
+  siteUrl: SITE_URL,
+  title: 'How-To: AI Content Stack',
+  description:
+    'Step-by-step guides for building an AI content operating system. MCP content stacks, publishing workflows, voice systems, and tools that compound.',
+  terminalCommand: 'cd ~/how-to --site=contentos',
+  badge: 'AI Content Guides',
+  entries: HOW_TO_WIKI_ENTRIES.map((e) => ({
     id: e.id,
     title: e.title,
     subtitle: e.subtitle,
     category: e.category,
     difficulty: e.difficulty,
     canonicalSite: e.canonicalSite,
-  }))
-
-  const categories = HOW_TO_WIKI_CATEGORIES.map((c) => ({
+  })),
+  categories: HOW_TO_WIKI_CATEGORIES.map((c) => ({
     id: c.id,
     label: c.label,
     description: c.description,
     prompt: c.prompt,
-  }))
+  })),
+  navLinks: {
+    left: { href: '/', label: 'home' },
+    right: { href: '/content-wiki', label: 'content wiki' },
+  },
+}
 
+export default function ContentOSHowToPage() {
   return (
     <>
       <BreadcrumbSchema
@@ -144,7 +157,7 @@ export default function ContentOSHowToPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
-      <HowToWikiPage entries={entries} categories={categories} />
+      <HowToWikiPage config={config} />
     </>
   )
 }

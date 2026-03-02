@@ -317,7 +317,7 @@ def call_claude(system_prompt: str, user_prompt: str) -> dict:
         input=full_prompt,
         capture_output=True,
         text=True,
-        timeout=180,
+        timeout=300,
         cwd=str(REPO_ROOT),
     )
 
