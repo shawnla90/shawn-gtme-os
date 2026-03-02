@@ -34,7 +34,7 @@ export function ShowcaseContent() {
           justifyContent: 'center',
           alignItems: 'center',
           background:
-            'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(232, 114, 92, 0.12), transparent 60%), var(--canvas)',
+            'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(255, 105, 180, 0.12), transparent 60%), var(--canvas)',
           textAlign: 'center',
           padding: '80px 24px 60px',
         }}
@@ -47,8 +47,8 @@ export function ShowcaseContent() {
               fontSize: '12px',
               fontWeight: 600,
               color: 'var(--accent)',
-              background: 'rgba(232, 114, 92, 0.08)',
-              border: '1px solid rgba(232, 114, 92, 0.2)',
+              background: 'rgba(255, 105, 180, 0.08)',
+              border: '1px solid rgba(255, 105, 180, 0.2)',
               borderRadius: 999,
               marginBottom: 20,
               letterSpacing: '0.04em',

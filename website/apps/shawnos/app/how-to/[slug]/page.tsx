@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import {
   HOW_TO_WIKI_ENTRIES,
   HOW_TO_WIKI_CATEGORIES,
@@ -10,6 +11,12 @@ import type { CanonicalSite } from '@shawnos/shared/data/how-to-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://shawnos.ai'
+
+const CANONICAL_URLS: Record<CanonicalSite, string> = {
+  shawnos: 'https://shawnos.ai',
+  gtmos: 'https://thegtmos.ai',
+  contentos: 'https://thecontentos.ai',
+}
 
 /* ── static params for SSG ────────────────────────── */
 
@@ -308,6 +315,12 @@ export default async function HowToEntryPage({
     )
   }
 
+  /* redirect non-canonical entries to their home site */
+  if (entry.canonicalSite !== 'shawnos') {
+    const canonicalBase = CANONICAL_URLS[entry.canonicalSite]
+    redirect(`${canonicalBase}/how-to/${entry.id}`)
+  }
+
   const catMeta = HOW_TO_WIKI_CATEGORIES.find((c) => c.id === entry.category)
 
   const relatedEntries = entry.related
@@ -457,10 +470,10 @@ export default async function HowToEntryPage({
               {relatedEntries.map((r) => (
                 <Link
                   key={r.id}
-                  href={r.canonicalSite === 'shawnos' ? `/how-to/${r.id}` : `/how-to`}
-                  style={relatedChip}
+                  href={r.canonicalSite === 'shawnos' ? `/how-to/${r.id}` : `${CANONICAL_URLS[r.canonicalSite]}/how-to/${r.id}`}
+                  style={r.canonicalSite !== 'shawnos' ? { ...relatedChip, borderStyle: 'dashed' } : relatedChip}
                 >
-                  {r.title}
+                  {r.title}{r.canonicalSite !== 'shawnos' && ' ↗'}
                 </Link>
               ))}
             </div>

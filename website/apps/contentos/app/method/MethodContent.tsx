@@ -104,7 +104,7 @@ const tierConnections = [
   },
   {
     flow: 'Playbooks feed Content Ops',
-    color: '#E8725C',
+    color: '#FF69B4',
     desc: 'Platform-formatted content gets automated into production. The pre-publish checklist validates that playbook rules were followed.',
   },
   {
@@ -145,7 +145,7 @@ export function MethodContent() {
           justifyContent: 'center',
           alignItems: 'center',
           background:
-            'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(232, 114, 92, 0.15), transparent 60%), var(--canvas)',
+            'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(255, 105, 180, 0.15), transparent 60%), var(--canvas)',
           textAlign: 'center',
           padding: '0 24px',
           position: 'relative',
@@ -159,8 +159,8 @@ export function MethodContent() {
               fontSize: '12px',
               fontWeight: 600,
               color: 'var(--accent)',
-              background: 'rgba(232, 114, 92, 0.08)',
-              border: '1px solid rgba(232, 114, 92, 0.2)',
+              background: 'rgba(255, 105, 180, 0.08)',
+              border: '1px solid rgba(255, 105, 180, 0.2)',
               borderRadius: 999,
               marginBottom: 20,
               letterSpacing: '0.04em',
@@ -396,7 +396,7 @@ export function MethodContent() {
       {/* ── Tier 2: Context Playbooks ── */}
       <ScrollRevealSection
         background="var(--canvas-subtle)"
-        style={{ borderTop: '3px solid #E8725C' }}
+        style={{ borderTop: '3px solid #FF69B4' }}
       >
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <MotionReveal variant="fadeUp">
@@ -406,9 +406,9 @@ export function MethodContent() {
                 padding: '4px 12px',
                 fontSize: '11px',
                 fontWeight: 700,
-                color: '#E8725C',
-                background: 'rgba(232, 114, 92, 0.1)',
-                border: '1px solid rgba(232, 114, 92, 0.25)',
+                color: '#FF69B4',
+                background: 'rgba(255, 105, 180, 0.1)',
+                border: '1px solid rgba(255, 105, 180, 0.25)',
                 borderRadius: 4,
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
@@ -424,7 +424,7 @@ export function MethodContent() {
               style={{
                 fontSize: 'clamp(28px, 4vw, 44px)',
                 fontWeight: 700,
-                color: '#E8725C',
+                color: '#FF69B4',
                 fontFamily: 'var(--font-mono)',
                 marginBottom: 12,
               }}
@@ -459,8 +459,8 @@ export function MethodContent() {
             >
               {platformGrid.map((p) => (
                 <StaggerItem key={p.name}>
-                  <div style={{ ...tierCard, borderColor: 'rgba(232, 114, 92, 0.15)', height: '100%' }}>
-                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#E8725C', marginBottom: 8 }}>
+                  <div style={{ ...tierCard, borderColor: 'rgba(255, 105, 180, 0.15)', height: '100%' }}>
+                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#FF69B4', marginBottom: 8 }}>
                       {p.name}
                     </div>
                     <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: 8 }}>
@@ -479,12 +479,12 @@ export function MethodContent() {
             <div
               style={{
                 padding: '14px 20px',
-                borderLeft: '3px solid #E8725C',
-                background: 'rgba(232, 114, 92, 0.05)',
+                borderLeft: '3px solid #FF69B4',
+                background: 'rgba(255, 105, 180, 0.05)',
                 borderRadius: '0 6px 6px 0',
               }}
             >
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#E8725C', margin: 0, fontStyle: 'italic' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#FF69B4', margin: 0, fontStyle: 'italic' }}>
                 Same voice, different format. The playbook handles the translation.
               </p>
             </div>
@@ -693,7 +693,7 @@ export function MethodContent() {
           >
             <span style={{ fontSize: '15px', fontWeight: 700, color: '#4EC373' }}>Voice DNA</span>
             <span style={{ color: 'var(--text-muted)', fontSize: '18px' }}>&rarr;</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: '#E8725C' }}>Playbooks</span>
+            <span style={{ fontSize: '15px', fontWeight: 700, color: '#FF69B4' }}>Playbooks</span>
             <span style={{ color: 'var(--text-muted)', fontSize: '18px' }}>&rarr;</span>
             <span style={{ fontSize: '15px', fontWeight: 700, color: '#D2A53C' }}>Content Ops</span>
             <span style={{ color: 'var(--text-muted)', fontSize: '18px' }}>&rarr;</span>
@@ -742,7 +742,7 @@ export function MethodContent() {
           <div
             style={{
               padding: '32px',
-              background: 'linear-gradient(135deg, rgba(232, 114, 92, 0.04), transparent), var(--canvas-subtle)',
+              background: 'linear-gradient(135deg, rgba(255, 105, 180, 0.04), transparent), var(--canvas-subtle)',
               border: '1px solid var(--accent)',
               borderRadius: 8,
               textAlign: 'center',

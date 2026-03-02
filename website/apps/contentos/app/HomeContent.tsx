@@ -168,7 +168,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          background: 'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(232, 114, 92, 0.15), transparent 60%), radial-gradient(ellipse 1200px 800px at 50% 60%, rgba(232, 114, 92, 0.06), transparent 70%), var(--canvas)',
+          background: 'radial-gradient(ellipse 800px 600px at 50% 30%, rgba(255, 105, 180, 0.15), transparent 60%), radial-gradient(ellipse 1200px 800px at 50% 60%, rgba(255, 105, 180, 0.06), transparent 70%), var(--canvas)',
           position: 'relative',
           textAlign: 'center',
           padding: '0 24px',
@@ -182,8 +182,8 @@ export function HomeContent({ latestLog }: HomeContentProps) {
               fontSize: '12px',
               fontWeight: 600,
               color: 'var(--accent)',
-              background: 'rgba(232, 114, 92, 0.08)',
-              border: '1px solid rgba(232, 114, 92, 0.2)',
+              background: 'rgba(255, 105, 180, 0.08)',
+              border: '1px solid rgba(255, 105, 180, 0.2)',
               borderRadius: 999,
               marginBottom: 20,
               letterSpacing: '0.04em',
@@ -650,11 +650,11 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         <div
           style={{
             padding: '40px 32px',
-            background: 'linear-gradient(135deg, rgba(232, 114, 92, 0.04), transparent), var(--canvas-subtle)',
+            background: 'linear-gradient(135deg, rgba(255, 105, 180, 0.04), transparent), var(--canvas-subtle)',
             border: '1px solid var(--border)',
             borderRadius: 8,
             textAlign: 'center',
-            boxShadow: '0 8px 32px rgba(232, 114, 92, 0.08)',
+            boxShadow: '0 8px 32px rgba(255, 105, 180, 0.08)',
           }}
         >
           <h2

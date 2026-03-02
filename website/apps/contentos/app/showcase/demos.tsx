@@ -57,7 +57,7 @@ const PILLARS = [
   {
     name: 'Building + Sharing',
     tag: 'primary',
-    color: '#E8725C',
+    color: '#FF69B4',
     description:
       'The core pillar. Document what you build as you build it. Every commit, every system, every deployment becomes content. The process is the product.',
     exampleFormat:

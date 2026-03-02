@@ -3517,4 +3517,474 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       },
     ],
   },
+
+  /* ================================================================== */
+  /*  PHASE 3: Content OS — Content/Social/Growth SEO pages              */
+  /* ================================================================== */
+
+  {
+    id: 'linkedin-vs-twitter-vs-reddit-b2b',
+    title: 'LinkedIn vs X vs Reddit for B2B Content',
+    subtitle: 'Where to post, what works on each, and how to run all three without burning out',
+    category: 'comparisons',
+    description:
+      'Comparison of LinkedIn, X/Twitter, and Reddit for B2B content distribution. Audience differences, algorithm behavior, content formats that work, and the multi-platform strategy that compounds.',
+    keywords: [
+      'linkedin vs twitter for B2B',
+      'linkedin vs reddit content',
+      'best platform B2B content 2026',
+      'linkedin vs x vs reddit',
+      'B2B content distribution',
+      'where to post B2B content',
+      'linkedin reddit twitter comparison',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'contentos',
+    related: [
+      'mcp-content-stack',
+      'how-to-grow-on-reddit',
+      'how-to-repurpose-content',
+      'content-stack-solo-builders',
+    ],
+    sections: [
+      {
+        heading: 'Three Platforms, Three Audiences',
+        type: 'prose',
+        content:
+          'LinkedIn is where professionals perform. X is where builders argue. Reddit is where practitioners help. Same person, three different modes. The executive who posts polished thought leadership on LinkedIn is the same person upvoting raw technical takes on Reddit at 11pm.\n\nThe mistake: picking one platform and ignoring the others. The opportunity: the same core idea plays differently on each platform. A LinkedIn post about AI automation gets professional engagement. The same idea as a Reddit comment gets technical credibility. The same idea as an X thread gets builder community reach.\n\nI run all three. They serve different purposes in the same funnel.',
+      },
+      {
+        heading: 'LinkedIn: Professional Signal',
+        type: 'pattern',
+        content:
+          'What works on LinkedIn: personal experience stories, contrarian takes on industry trends, specific results with numbers, and frameworks that people can screenshot and share.\n\nAlgorithm behavior: LinkedIn rewards early engagement. The first 60-90 minutes determine your reach. Posts that get comments (not just likes) within the first hour get pushed to the broader network. The algorithm favors text-only posts and carousels over links (external links get suppressed).\n\nFormat that performs: short paragraphs, one idea per line, 150-300 words. Start with a hook that stops the scroll. End with a question or CTA that invites comments. Avoid hashtags in 2026 - they add clutter without meaningful reach benefit.\n\nWho you reach: decision-makers, executives, VPs, hiring managers. LinkedIn audience skews senior. If your content targets founders, VPs of Sales, or CTOs, LinkedIn is the primary channel.\n\nPosting cadence: 3-5 posts per week. Consistency matters more than perfection. A mediocre post that goes out beats a perfect post sitting in your drafts.',
+      },
+      {
+        heading: 'X/Twitter: Builder Community',
+        type: 'pattern',
+        content:
+          'What works on X: real-time takes, building in public, technical insights, hot takes on tools and trends, thread breakdowns of complex topics.\n\nAlgorithm behavior: X rewards engagement velocity. The first 30-60 minutes are critical. Replies, retweets, and bookmarks signal value. X Premium gives an algorithmic boost - serious creators need it. Threads get 3x more engagement than single tweets.\n\nFormat that performs: single tweets for hot takes (under 280 characters, punchy). Threads for depth (5-15 tweets, each one standalone-valuable). Quote tweets with added commentary. Avoid generic takes - X rewards specificity and conviction.\n\nWho you reach: builders, engineers, indie hackers, startup founders. X audience skews technical and opinionated. If your content targets developers, product builders, or early-stage founders, X is a primary channel.\n\nPosting cadence: 2-5 original tweets/threads per week plus 10-20 replies to other people. Replies build your network faster than original posts. Reply to people bigger than you with substantive takes, not "great post" comments.',
+      },
+      {
+        heading: 'Reddit: Practitioner Credibility',
+        type: 'pattern',
+        content:
+          'What works on Reddit: genuine help, specific technical answers, personal experience shared without self-promotion, and honest opinions backed by evidence.\n\nAlgorithm behavior: Reddit is community-driven, not algorithm-driven. Upvotes determine visibility within a subreddit. Moderators control quality. Posts and comments that provide genuine value get upvoted. Self-promotion gets downvoted and removed.\n\nFormat that performs: detailed comments answering specific questions (200-500 words with real examples). Personal experience posts ("I built X, here is what I learned"). Comparison posts with honest pros and cons. Avoid anything that reads like marketing.\n\nWho you reach: practitioners, hands-on operators, people actively solving problems. Reddit audience skews toward people doing the work, not managing the work. If your content targets people who use the tools daily, Reddit builds the deepest credibility.\n\nPosting cadence: 5-10 comments per week across 3-5 relevant subreddits. Focus on helping people with specific problems. Do not drop links. Do not mention your product unless directly asked. Build karma through genuine contribution first.',
+      },
+      {
+        heading: 'The Multi-Platform Strategy',
+        type: 'pro-tip',
+        content:
+          'Here is how to run all three without tripling your workload:\n\nCore content creation: write one substantial piece per week. A blog post, a detailed guide, or a documented experience. This is your source material.\n\nLinkedIn: extract the key insight and personal angle. Write it as a 200-word personal post. Lead with the contrarian take or surprising result. Post Tuesday-Thursday between 8-10am.\n\nX: extract the sharpest take. Write it as a single tweet or a 5-tweet thread. Be more direct and opinionated than LinkedIn. Post any day, engage in replies throughout the day.\n\nReddit: find subreddit threads where people are asking about your topic. Write detailed, helpful comments that draw on your experience. Do not link to your blog. Just help. The credibility compounds over time.\n\nThe flywheel: LinkedIn builds professional authority. X builds builder community. Reddit builds practitioner credibility. Together, they create a presence that no single platform can match. And all three feed SEO - Reddit content gets indexed by Google, LinkedIn profiles rank, X threads get cited by AI engines.\n\nTime investment: 3-4 hours per week total. 1 hour for core content. 30 minutes for LinkedIn adaptation. 30 minutes for X adaptation. 1-2 hours for Reddit commenting throughout the week.',
+      },
+    ],
+  },
+
+  {
+    id: 'ai-content-vs-human-content',
+    title: 'AI Content vs Human Content',
+    subtitle: 'When AI writes better, when humans write better, and how to use both',
+    category: 'comparisons',
+    description:
+      'Honest comparison of AI-generated content vs human-written content. Where AI excels, where it falls flat, the anti-slop framework for quality control, and the hybrid workflow that produces better output than either alone.',
+    keywords: [
+      'AI content vs human content',
+      'AI writing vs human writing',
+      'AI generated content quality',
+      'is AI content good enough',
+      'AI content detection',
+      'AI slop content',
+      'how to avoid AI slop',
+      'AI content best practices',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'contentos',
+    related: [
+      'how-to-use-ai-content-creation',
+      'how-to-build-voice-system',
+      'content-stack-solo-builders',
+    ],
+    sections: [
+      {
+        heading: 'The Real Difference',
+        type: 'prose',
+        content:
+          'AI writes faster. Humans write with lived experience. That is the fundamental difference, and it determines when to use each.\n\nAI can generate a 2,000-word comparison of cold email tools in 3 minutes. It will be accurate, well-structured, and comprehensive. But it will read like a research report - thorough but impersonal. No real stories. No "I tried this and it failed at 3am." No earned opinions.\n\nHumans write slower but embed experience into every sentence. The developer who spent three months debugging a deployment pipeline writes differently about deployment than an AI summarizing documentation. The difference is felt, not always measurable.\n\nThe best content in 2026 is neither pure AI nor pure human. It is AI-assisted human content - the human provides the experience, opinions, and voice; the AI handles structure, research, and first-draft generation.',
+      },
+      {
+        heading: 'Where AI Wins',
+        type: 'pattern',
+        content:
+          'AI is better than most humans at:\n\nStructured reference content. Documentation, glossaries, comparison tables, checklists. AI organizes information cleanly and does not forget to cover edge cases.\n\nFirst drafts. Getting from blank page to structured draft is where AI saves the most time. The first draft is never the final product, but having a structure to react to is faster than writing from scratch.\n\nVolume. If you need 50 product descriptions, 20 email variants, or 10 landing pages, AI handles volume that would take a human team weeks.\n\nResearch synthesis. Combining information from multiple sources into a coherent summary. AI reads 10 articles and synthesizes the key points faster and more comprehensively than a human skimming the same articles.\n\nSEO-optimized structure. AI naturally produces well-structured content with clear headings, keyword integration, and logical flow. This is what search engines want.',
+      },
+      {
+        heading: 'Where Humans Win',
+        type: 'pattern',
+        content:
+          'Humans are better than any AI at:\n\nOriginal experience. "I shipped this feature at 2am while my dog Broly slept on my keyboard" cannot be generated. Lived experiences are the content moat that AI cannot replicate.\n\nContrarian takes. AI optimizes for consensus. It gives you the average opinion. Humans form strong, sometimes wrong, opinions based on personal experience. "Everyone says Cursor is better. I think Claude Code is better for X reason." Those opinions drive engagement.\n\nVoice and personality. AI writes in a competent, generic voice. Humans have quirks, patterns, preferences. "Lowercase energy. Substance over polish." That is a voice. AI can mimic it with enough examples, but the voice originates from a human.\n\nEmotional resonance. The career pivot story. The struggle narrative. The honest failure post. These connect because readers feel the human behind the words.\n\nCultural context. AI misses nuance, timing, and the unwritten rules of specific communities. A Reddit comment that lands perfectly in r/ClaudeAI requires understanding the community culture, not just the topic.',
+      },
+      {
+        heading: 'The Anti-Slop Framework',
+        type: 'formula',
+        content:
+          'AI slop is content that reads like it was generated without human editing. It has telltale patterns:\n\nGeneric phrases: "In the ever-evolving landscape of..." "It is worth noting that..." "At the end of the day..." "Let us dive deeper into..." If you see these in your draft, the AI is filling space without adding substance.\n\nEmpty transitions: "Furthermore..." "Additionally..." "Moreover..." These are padding words. Cut them and the content gets tighter.\n\nHedging: "It could potentially be argued that..." "There are various considerations to keep in mind..." Just say the thing. Make a claim. Back it up.\n\nNo specifics: "Many companies find success with..." Which companies? What success? AI defaults to vague generalizations. Human content names names and cites numbers.\n\nThe 3-flag rule: if a piece of content triggers 3 or more anti-slop patterns, rewrite it from scratch. Do not patch. Patching AI slop leaves artifacts that readers sense even if they cannot articulate why. Start over with the human experience as the foundation and use AI to structure around it.',
+      },
+      {
+        heading: 'The Hybrid Workflow',
+        type: 'pro-tip',
+        content:
+          'The workflow that produces the best content:\n\n1. Human brainstorm. You identify the topic from your actual experience. Not "what should I write about" but "what did I learn this week that others would find useful."\n\n2. AI research and structure. Use AI to gather supporting data, identify angles you might miss, and produce a structural outline.\n\n3. Human first draft. Write the opening, the key arguments, and the conclusion yourself. Use your voice, your examples, your opinions. This is where the content gets its soul.\n\n4. AI expansion. Let AI fill in the supporting sections, add context, improve transitions, and handle the parts that need thoroughness but not personality.\n\n5. Human edit and voice pass. Read the full piece aloud. Does it sound like you? Cut anything that sounds generic. Add specifics where the AI was vague. Inject the personality.\n\n6. Anti-slop audit. Run through the anti-slop checklist. Three or more flags means another edit pass.\n\nThis produces content that is comprehensive (AI contribution), authentic (human contribution), and polished (iterative editing). It takes 60-90 minutes instead of the 3 hours of pure human writing or the 10 minutes of pure AI generation that nobody wants to read.',
+      },
+    ],
+  },
+
+  {
+    id: 'building-in-public-as-gtm',
+    title: 'Building in Public as a GTM Channel',
+    subtitle: 'Why your build log is your best marketing and how to do it without cringing',
+    category: 'comparisons',
+    description:
+      'Building in public as a go-to-market strategy. Why documentation beats advertising, what to share and what to keep private, platform-specific tactics, and the compound effect of transparent building.',
+    keywords: [
+      'building in public',
+      'build in public strategy',
+      'building in public marketing',
+      'build in public GTM',
+      'transparent building',
+      'build in public content strategy',
+      'ship in public',
+      'building in public tips',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'contentos',
+    related: [
+      'linkedin-vs-twitter-vs-reddit-b2b',
+      'how-to-repurpose-content',
+      'ai-content-vs-human-content',
+    ],
+    sections: [
+      {
+        heading: 'Why Building in Public Works',
+        type: 'prose',
+        content:
+          'Traditional marketing says: "Here is our product. Here is why it is great. Buy it." Building in public says: "Here is what I built today. Here is what broke. Here is what I learned. Here is what I am building next."\n\nThe second approach builds more trust, faster. People trust process over claims. When you show the messy middle - the 3am debugging session, the failed deploy, the pivot when the first approach did not work - you demonstrate competence through evidence, not assertions.\n\nBuilding in public works as a GTM channel because it attracts your ideal customers through specificity. A post about "how I automated my outbound pipeline with Clay and Instantly" only resonates with people who care about outbound automation. Those are exactly the people you want finding you. The content self-selects the audience.',
+      },
+      {
+        heading: 'What to Share',
+        type: 'pattern',
+        content:
+          'The content that works in build-in-public:\n\nShipping updates. "Shipped 3 new features this week: X, Y, Z. Here is how they work and why we built them." Short, specific, shows velocity.\n\nTechnical decisions. "We chose SQLite over Postgres for our content index. Here is why." Teaches your audience while positioning your expertise.\n\nFailure post-mortems. "Our email deliverability tanked last week. Here is what went wrong and how we fixed it." These get the highest engagement because they are rare. Everyone posts wins. Few post losses.\n\nNumbers. Revenue, user counts, traffic, costs - whatever you are comfortable sharing. Specific numbers build credibility. "377 impressions in 2 months with zero deliberate SEO" is more interesting than "growing steadily."\n\nStack breakdowns. The tools you use and why. "$525/month runs my entire outbound infrastructure" is content that your ICP actively searches for.\n\nDaily/weekly logs. What you built, what you learned, what is next. Consistency is the key. A weekly build log for 12 months creates a body of work that compounds into authority.',
+      },
+      {
+        heading: 'What to Keep Private',
+        type: 'anti-pattern',
+        content:
+          'Not everything should be public:\n\nClient names and details. Never share who you work with without explicit permission. Patterns are fine ("we helped a Series B fintech"). Specifics are not.\n\nUnvalidated opinions about people. Critique approaches, never individuals. "This architecture has scaling problems" is fine. "This person&#39;s code is bad" is not.\n\nSecurity details. Your deployment setup, API keys, internal URLs, server configurations. Share what you built, not how to break into it.\n\nRevenue from specific clients. Aggregate numbers are fine. Per-client revenue is private.\n\nIn-progress negotiations. Do not share deals, partnerships, or business discussions before they close. Premature announcement creates pressure and can kill deals.',
+      },
+      {
+        heading: 'Platform-Specific Build-in-Public Tactics',
+        type: 'pattern',
+        content:
+          'LinkedIn: polish the story slightly. Frame the build as a professional insight. "Built a multi-agent AI workflow this week. The key insight: delegation beats optimization." Business professionals engage with takeaways they can apply to their own work.\n\nX/Twitter: raw and real-time. "Just shipped. 3 sites deployed from one monorepo in 20 seconds. The CI pipeline took longer to build than the sites themselves." X rewards speed and authenticity.\n\nReddit: help first, share second. Answer questions in relevant subreddits with your build experience. "I had this exact problem. Here is how I solved it: [detailed technical answer]." Building credibility in communities that trust practitioners over promoters.\n\nBlog: the archive. Everything you share on social platforms is ephemeral. The blog post is the permanent record. Write a weekly or monthly recap of what you shipped, what you learned, and what changed. This is your SEO play - blog posts rank in Google long after social posts disappear from feeds.\n\nGitHub: the proof. A public repo with commit history is the ultimate build-in-public artifact. People can see what you actually built, not just what you claim to have built.',
+      },
+      {
+        heading: 'The Compound Effect',
+        type: 'pro-tip',
+        content:
+          'Building in public is a slow burn that suddenly compounds. Month 1-3: you feel like you are shouting into the void. Low engagement. Few followers. This is normal. Keep posting.\n\nMonth 3-6: people start recognizing your name. You get replies from people who have been silently reading. Inbound DMs start. "I have been following your build log and I have a question about..."\n\nMonth 6-12: you are the reference person for your niche. People tag you in conversations. You get inbound leads from your content. Your build log is doing the selling without you ever making a sales pitch.\n\nThe key: consistency beats intensity. One post per week for a year (52 posts) beats a burst of 20 posts in one month followed by silence. The audience builds trust through repeated exposure, not volume.\n\nThe hidden benefit: building in public forces you to think clearly about what you are building. Explaining your work to an audience clarifies your own thinking. The content is not just marketing - it is a feedback loop on your product and strategy.',
+      },
+    ],
+  },
+
+  {
+    id: 'how-to-grow-on-reddit',
+    title: 'How to Grow on Reddit Without Getting Banned',
+    subtitle: 'Karma-first strategy, subreddit culture, and authentic engagement that compounds',
+    category: 'comparisons',
+    description:
+      'Practical Reddit growth guide for builders and creators. How to build karma, choose subreddits, write comments that get upvoted, and turn Reddit credibility into real business outcomes without violating community rules.',
+    keywords: [
+      'how to grow on reddit',
+      'reddit growth strategy',
+      'reddit karma strategy',
+      'reddit marketing 2026',
+      'how to get upvotes reddit',
+      'reddit for business',
+      'reddit engagement strategy',
+      'reddit for B2B',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'contentos',
+    related: [
+      'linkedin-vs-twitter-vs-reddit-b2b',
+      'how-to-repurpose-content',
+      'building-in-public-as-gtm',
+    ],
+    sections: [
+      {
+        heading: 'Reddit Is Not Social Media',
+        type: 'prose',
+        content:
+          'Reddit does not work like LinkedIn or X. On those platforms, you build a personal brand and broadcast to followers. On Reddit, you earn credibility within communities by providing value. There are no followers that see your posts (practically). Every post and comment succeeds or fails on its own merit within the specific subreddit.\n\nThis is why most marketing strategies fail on Reddit. If you approach Reddit with a LinkedIn mindset - polished posts with a CTA - you get downvoted and banned. Reddit users have zero tolerance for self-promotion. The entire culture is built around genuine contribution.\n\nThe good news: if you actually have expertise and share it generously, Reddit is the highest-trust platform on the internet. A Reddit comment from a verified practitioner carries more credibility than a LinkedIn post from a CMO.',
+      },
+      {
+        heading: 'The Karma-First Strategy',
+        type: 'pattern',
+        content:
+          'Before you post anything about your work, build karma through pure contribution. This serves two purposes: you learn the community culture, and you establish credibility that makes your future contributions welcome.\n\nWeek 1-2: Comment only. No posts. Find 3-5 subreddits relevant to your expertise. Sort by New. Find questions you can answer with genuine depth. Write 200-500 word comments that actually solve problems. Aim for 5-10 comments per day.\n\nWeek 3-4: Continue commenting. Start to notice which comment styles get upvoted vs ignored. Each subreddit has its own voice. r/ClaudeAI rewards technical specificity. r/Entrepreneur rewards practical, numbers-backed advice. r/SaaS rewards honest product feedback. Match the voice.\n\nMonth 2: You should have 500+ karma. Now you can start posts. But the posts should still be 90% value, 10% personal. "Here is how I solved X problem" beats "Check out my tool that solves X." The former gets upvoted. The latter gets removed.\n\nOngoing: maintain a 10:1 ratio. For every time you mention your work, provide value 10 times without mentioning it. This ratio keeps you in good standing with moderators and the community.',
+      },
+      {
+        heading: 'Choosing the Right Subreddits',
+        type: 'pattern',
+        content:
+          'Subreddit selection determines your results. Tier your target subreddits:\n\nTier 1 - High relevance, active community (post and comment frequently): subreddits where your exact ICP hangs out. For AI builders: r/ClaudeAI, r/CursorAI, r/LocalLLaMA. For GTM: r/sales, r/coldemail, r/SaaS. For content: r/content_marketing, r/Entrepreneur.\n\nTier 2 - Adjacent relevance (comment when relevant): subreddits where your audience exists but the topic is broader. r/webdev, r/startups, r/SideProject, r/selfhosted.\n\nTier 3 - Occasional engagement (comment on viral threads only): large subreddits where viral threads occasionally touch your expertise. r/technology, r/artificial, r/programming.\n\nRead each subreddit\'s rules before participating. Many have strict self-promotion rules (zero tolerance), content type restrictions (no link posts, text only), and karma minimums for posting. Violating rules gets your post removed and can get you banned.\n\nAvoid subreddits with under 5,000 members (too small to drive meaningful results) or over 5 million members (too broad, your expertise gets lost).',
+      },
+      {
+        heading: 'Comments That Get Upvoted',
+        type: 'formula',
+        content:
+          'The anatomy of a high-performing Reddit comment:\n\nLead with the answer. Do not build up to it. Reddit users scan. Put the most valuable information first.\n\nAdd personal experience. "I ran into this exact issue last week" immediately establishes credibility. Follow with the specific solution.\n\nInclude specific details. Tool names, version numbers, exact steps, code snippets, config settings. Vague advice gets ignored. Specific advice gets saved and upvoted.\n\nAcknowledge limitations. "This worked for my use case but might not if you are doing X" shows intellectual honesty. Reddit upvotes nuanced answers over confident-but-incomplete ones.\n\nFormat for scanning. Use line breaks between paragraphs. Bold key points. Use numbered lists for steps. Reddit comments are read on mobile - walls of text get skipped.\n\nDo not hedge everything. Have an opinion. "Honestly, Instantly is better than Smartlead for solo operators. Here is why." Strong opinions backed by experience get engagement. Diplomatic non-answers get ignored.\n\nTiming: sort by New and comment early on rising posts. The first 5-10 comments get the most visibility. A great comment on a 12-hour-old post gets buried.',
+      },
+      {
+        heading: 'Turning Credibility into Outcomes',
+        type: 'pro-tip',
+        content:
+          'After 2-3 months of consistent Reddit contribution, you start seeing business results:\n\nInbound DMs. People who read your comments send direct messages asking for help. These are pre-qualified prospects - they already know your expertise.\n\nProfile clicks. Your Reddit profile is your landing page. Keep it clean. Pin your best post. Add a brief bio that mentions what you do. Include a link to your website. Every good comment drives profile views.\n\nGoogle juice. Reddit threads rank in Google search. Your detailed technical comment about "how to set up Clay for waterfall enrichment" gets indexed and drives traffic for months. This is the SEO play that most people miss - Reddit comments become permanent search results.\n\nAI citation. LLMs like ChatGPT and Claude consume Reddit content as training data and as retrieval sources. Your expert comments become reference material in AI-generated responses. This is the GEO (Generative Engine Optimization) angle.\n\nThe rule: never sacrifice credibility for a lead. The moment you get pushy or self-promotional, you lose the trust you spent months building. Let the inbound come to you. Reddit rewards patience and genuine expertise more than any other platform.',
+      },
+    ],
+  },
+
+  {
+    id: 'how-to-repurpose-content',
+    title: 'How to Repurpose One Piece of Content Across 5 Platforms',
+    subtitle: 'Write once, adapt everywhere - the content multiplication system',
+    category: 'comparisons',
+    description:
+      'How to take one piece of content and adapt it for LinkedIn, X/Twitter, Reddit, your blog, and email. Platform-specific formatting rules, tone shifts, and the workflow that produces 5 pieces from 1 idea.',
+    keywords: [
+      'content repurposing strategy',
+      'repurpose content across platforms',
+      'content multiplication',
+      'one content multiple platforms',
+      'content repurposing 2026',
+      'how to repurpose blog posts',
+      'cross platform content strategy',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'contentos',
+    related: [
+      'linkedin-vs-twitter-vs-reddit-b2b',
+      'building-in-public-as-gtm',
+      'content-stack-solo-builders',
+      'ai-content-vs-human-content',
+    ],
+    sections: [
+      {
+        heading: 'The Core Idea',
+        type: 'prose',
+        content:
+          'You do not need 5 content ideas per week. You need 1 good idea and 5 adaptations. Every platform has different formatting rules, audience expectations, and engagement patterns. The same insight presented differently on each platform reaches different audiences and reinforces your message.\n\nThe key insight: repurposing is not copying. Pasting the same text on LinkedIn, X, Reddit, your blog, and email is lazy and performs poorly. Each platform needs a version crafted for its specific audience and format. The idea stays the same. The packaging changes.',
+      },
+      {
+        heading: 'Step 1: Start with the Blog Post',
+        type: 'code',
+        content:
+          'The blog post is your long-form source material. Write it once with full depth: 800-1500 words, personal experience, specific examples, and actionable takeaways. This is the canonical version that lives permanently on your website.\n\nWhy start with the blog: it is the most detailed format. Every other adaptation strips out detail. It is easier to compress than to expand. Writing the full version first ensures you have all the material you need for every platform.\n\nSEO bonus: the blog post ranks in Google. Social posts do not. Starting with the blog means your best content lives where search engines can find it. Social posts drive attention. The blog captures the search traffic those social posts generate.\n\nExample: you built a new feature this week. The blog post covers the problem, the solution, the technical approach, what you learned, and what is next. 1200 words. This becomes the source for everything else.',
+      },
+      {
+        heading: 'Step 2: LinkedIn Version (Professional Insight)',
+        type: 'pattern',
+        content:
+          'Extract the key insight and personal angle. Strip the technical depth. Add professional framing.\n\nFormat: 150-250 words. Short paragraphs (1-2 sentences each). White space between lines. Hook in the first line. Personal story or surprising result. End with a question that invites comments.\n\nTone shift: LinkedIn wants "what I learned" not "how I did it." The blog says "here is the technical implementation." LinkedIn says "here is the business insight from building this."\n\nExample adaptation: Blog says "We built waterfall email enrichment in Clay with 3 providers and MX validation, yielding 82% email coverage." LinkedIn says "Most teams settle for 55% email coverage from a single provider. We hit 82% by stacking 3 providers in sequence. The extra 27% translates to 270 more qualified conversations per 1,000 leads. That is the difference between a tool and a system."\n\nNo links in the post body. LinkedIn suppresses posts with external links. Put the blog link in the first comment if you want to share it.',
+      },
+      {
+        heading: 'Step 3: X/Twitter Version (Sharp Take)',
+        type: 'pattern',
+        content:
+          'Extract the most opinionated or surprising point. Make it punchy.\n\nSingle tweet format: one sharp take, under 280 characters. "Single-provider email enrichment gives you 55% coverage. Waterfall enrichment gives you 82%. Most teams leave 27% of their pipeline on the table."\n\nThread format: 5-10 tweets breaking down the insight. Each tweet should work standalone. Start with the hook, build the argument, end with the actionable takeaway.\n\nTone shift: X wants conviction. No hedging. No "it depends." Take a position. "Waterfall enrichment is non-negotiable in 2026. Here is why:" The specificity and confidence is what earns engagement on X.\n\nEngage in replies after posting. The thread performs better when you respond to every reply in the first hour. This signals engagement to the algorithm.',
+      },
+      {
+        heading: 'Steps 4 and 5: Reddit Comment + Email',
+        type: 'pattern',
+        content:
+          'Reddit: do not post your content as a standalone Reddit post (unless you have significant karma in that subreddit). Instead, find threads where people are discussing the same problem your blog post solves. Write a detailed comment sharing your experience and solution. No link to the blog. Just the insight, formatted for Reddit with line breaks and specific details.\n\nReddit tone: humble, specific, helpful. "We ran into this same problem. Here is what worked for us:" followed by the practical details. Reddit rewards genuine help, not content promotion.\n\nEmail newsletter: the full blog post or a condensed version sent to your subscriber list. Email format allows for more personal framing - "This week I built something that surprised me..." Email readers have already opted in, so you can be more direct about your work.\n\nEmail tone: conversational, like writing to a friend. Less formal than LinkedIn, less punchy than X, more personal than the blog. Include the CTA you cannot put elsewhere - "reply to this email if you want the Clay template."\n\nThe total time: 60-90 minutes to write the blog. 15 minutes for LinkedIn adaptation. 10 minutes for X adaptation. 15 minutes for Reddit comments. 15 minutes for email formatting. Under 2.5 hours for 5 pieces of content across 5 platforms.',
+      },
+    ],
+  },
+
+  {
+    id: 'how-to-build-voice-system',
+    title: 'How to Build a Voice System for AI Content',
+    subtitle: 'Teach your AI to write like you - not like everyone else',
+    category: 'comparisons',
+    description:
+      'How to build a voice system that makes AI-generated content sound like you. Voice DNA files, anti-slop filters, platform-specific playbooks, and the quality gates that prevent generic AI output.',
+    keywords: [
+      'AI voice system',
+      'AI writing voice',
+      'AI content voice',
+      'teach AI your voice',
+      'AI content personalization',
+      'AI writing style',
+      'brand voice AI',
+      'anti-slop AI content',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'contentos',
+    related: [
+      'ai-content-vs-human-content',
+      'how-to-repurpose-content',
+      'mcp-content-stack',
+    ],
+    sections: [
+      {
+        heading: 'Why Voice Matters for AI Content',
+        type: 'prose',
+        content:
+          'AI writes in a default voice. It is competent, polished, and completely generic. Every AI-generated blog post, email, and social media post sounds the same because the models optimize for the average of their training data.\n\nA voice system overrides the default. Instead of generic AI output, you get content that sounds like a specific person with specific opinions, specific vocabulary, and specific patterns. Your audience cannot tell whether you wrote it or your AI wrote it because the AI has been trained on your voice.\n\nThis is not prompt engineering. A prompt says "write in a casual tone." A voice system provides 50 specific patterns, 29 anti-patterns, platform-specific rules, and a quality gate process that catches deviations. The difference is the gap between "be casual" and a comprehensive style guide.',
+      },
+      {
+        heading: 'Layer 1: Core Voice DNA',
+        type: 'pattern',
+        content:
+          'The foundation is a voice DNA file - a document that captures your writing patterns. Not abstract descriptions ("warm and friendly") but specific, concrete patterns:\n\nSentence structure: "Use short sentences. 8-12 words average. Break complex ideas into multiple short statements. Never compound sentences with three or more clauses."\n\nVocabulary preferences: "Say \'ship\' not \'deliver.\' Say \'build\' not \'develop.\' Say \'works\' not \'functions.\' Say \'breaks\' not \'encounters errors.\'"\n\nOpening patterns: "Start with a statement, not a question. No rhetorical questions. Lead with the most specific claim, not the broadest context."\n\nPunctuation habits: "Use dashes for asides - like this. No semicolons. No parenthetical statements. No em dashes in customer-facing copy, use spaced hyphens instead."\n\nAbstraction level: "Always include a specific example within 2 sentences of any claim. No abstract statements without concrete proof."\n\nBuild this by analyzing 20+ pieces of your own writing. Find the patterns. Write them as explicit rules the AI can follow.',
+      },
+      {
+        heading: 'Layer 2: Anti-Slop Filters',
+        type: 'formula',
+        content:
+          'The anti-slop layer catches AI patterns that do not match your voice. Every AI model has default behaviors that leak through if unchecked:\n\nBanned phrases: maintain a list of phrases you never use that AI loves to generate. "In today\'s fast-paced world." "It is worth noting." "At the end of the day." "Let us dive in." "Leverage." "Utilize." "Harness." Each banned phrase is a red flag that the AI has fallen back to its default voice.\n\nStructural anti-patterns: "Never start 3+ consecutive paragraphs with the same word." "Never use a list where a paragraph works better." "Never use transition words like Furthermore, Additionally, Moreover."\n\nSubstance requirements: "Every claim needs at least 2 of these 5: specific example, technical detail, reasoning shown, concrete result, or lesson learned." This prevents the AI from making vague assertions.\n\nThe 3-flag rule: if a draft triggers 3 or more anti-slop flags, rewrite it from scratch. Do not patch. Patching creates Frankenstein content that reads as half-human, half-AI.\n\nMaintain the anti-slop list as a living document. Every time you spot a new AI-ism in your drafts, add it to the list. After 3 months, you have a comprehensive filter that catches almost everything.',
+      },
+      {
+        heading: 'Layer 3: Platform Playbooks',
+        type: 'pattern',
+        content:
+          'Your voice adapts per platform. You write differently on LinkedIn than on Reddit. Capture those adaptations in platform-specific playbooks:\n\nLinkedIn playbook: professional tone, insight-first structure, business outcomes framing, no jargon without explanation, CTA as a question.\n\nX playbook: punchy, opinionated, conviction over nuance, one idea per tweet, no hedging language.\n\nReddit playbook: humble, specific, helpful, community-aware, no self-promotion framing, technical depth welcome.\n\nBlog playbook: comprehensive, structured with clear headings, SEO-aware keyword integration, personal narrative woven through technical content.\n\nEmail playbook: conversational, direct, first-person, include context the reader needs to act.\n\nEach playbook is a one-page document that the AI reads before generating content for that platform. The core voice stays consistent. The presentation adapts.',
+      },
+      {
+        heading: 'Putting It All Together',
+        type: 'pro-tip',
+        content:
+          'The full voice system loads in sequence:\n\n1. Core voice DNA file loads first (foundation patterns)\n2. Anti-slop filters load second (quality gates)\n3. Platform playbook loads third (adaptation rules)\n4. Content is generated\n5. Quality gate process runs: slop check, specificity check, depth check, voice check\n\nStore these files in your repo so every AI session has access. In Claude Code, reference them from your CLAUDE.md or load them as skills. In other tools, include them in the system prompt or project context.\n\nThe compound effect: after 3 months of using the voice system, your AI-generated content is indistinguishable from your human-written content. Readers cannot tell. Engagement rates are the same. But you are producing 5x the volume at 20% of the time investment.\n\nThe maintenance: review the voice system monthly. Your voice evolves. New patterns emerge. Old patterns fade. Update the DNA file to match your current voice, not the voice you had 6 months ago.\n\nStart simple: a 50-line voice DNA file, a 30-item anti-slop list, and one platform playbook. Expand from there as you notice patterns the system misses.',
+      },
+    ],
+  },
+
+  {
+    id: 'content-stack-solo-builders',
+    title: 'The Complete Content Stack for Solo Builders in 2026',
+    subtitle: 'Every tool you need to create, publish, and distribute content alone',
+    category: 'comparisons',
+    description:
+      'The full content technology stack for solo builders in 2026. Writing, scheduling, analytics, SEO, and distribution tools with pricing and the build order that gets you publishing fastest.',
+    keywords: [
+      'content stack solo builder',
+      'content tools 2026',
+      'solo creator tools',
+      'content creation stack',
+      'best tools for content creators 2026',
+      'content publishing tools',
+      'content distribution tools',
+      'solo builder content strategy',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'contentos',
+    related: [
+      'linkedin-vs-twitter-vs-reddit-b2b',
+      'how-to-repurpose-content',
+      'ai-content-vs-human-content',
+      'how-to-build-voice-system',
+    ],
+    sections: [
+      {
+        heading: 'The Minimum Viable Stack',
+        type: 'prose',
+        content:
+          'You need four layers: create (write the content), publish (put it on your website), distribute (get it on social platforms), and measure (know what is working). Most solo builders over-tool. They sign up for 10 apps, spend a month configuring them, and publish nothing.\n\nThe rule: start with the cheapest tool that works. Upgrade when you hit a real bottleneck, not when you see a shiny demo. Every tool you add is maintenance you carry.',
+      },
+      {
+        heading: 'Layer 1: Creation',
+        type: 'pattern',
+        content:
+          'Writing: Claude Code or ChatGPT for AI-assisted drafting, plus your code editor for the final product. If your content lives in markdown files in a repo (and it should), your code editor is your CMS.\n\nDesign: Figma (free tier) for graphics, OG images, and social cards. Canva as a simpler alternative. For programmatic image generation, Remotion or Satori generate images from React components at build time.\n\nVideo: Remotion if you are a developer (React-based video rendering). CapCut for quick edits. Loom for screen recordings. Most solo builders do not need video - start with text and add video when there is demand.\n\nVoice system: your voice DNA file + anti-slop filters (text files in your repo, loaded into AI context). Zero cost. Maximum impact on content quality.\n\nTotal creation layer cost: $0-20/month. AI tools are the only potential cost, and Claude Pro at $20/month covers everything.',
+      },
+      {
+        heading: 'Layer 2: Publishing',
+        type: 'pattern',
+        content:
+          'Website: Next.js deployed on Vercel (free tier handles most solo builder traffic). Your blog lives in markdown files. Pages are generated at build time. No CMS needed - your Git repo is your CMS.\n\nAlternative: Substack if you want to skip the technical setup entirely. Built-in audience, email delivery, and discovery. The trade-off: you do not own the platform and SEO control is limited.\n\nSEO infrastructure: next-sitemap for automatic sitemap generation. Schema markup (JSON-LD) for rich snippets. Robots.txt with AI crawler allowlisting. RSS feeds for content syndication. Google Search Console for indexing and performance tracking.\n\nDomain and hosting: one domain ($12/year), DNS on Cloudflare (free), hosting on Vercel (free tier). Total: $1/month.\n\nThe key decision: own your publishing or rent it. Substack is easy but rented. A Next.js site is harder but owned. If you are building long-term, own your platform. The SEO benefits alone are worth the setup time.',
+      },
+      {
+        heading: 'Layer 3: Distribution',
+        type: 'pattern',
+        content:
+          'LinkedIn: post directly from the app. No scheduling tool needed when you are posting 3-5 times per week manually. If you want scheduling: Typefully ($12/month) or Buffer (free tier for 3 channels).\n\nX/Twitter: Typefully for scheduling threads and single tweets. The draft system is better than native X for composing threads. Free tier works for getting started.\n\nReddit: manual only. No automation tools. Reddit detects and bans automated posting. Open the subreddit, find relevant threads, write genuine comments. 15-30 minutes per day.\n\nEmail newsletter: Substack (free), Buttondown (free tier), or Beehiiv (free tier). If your blog is your primary platform, send a weekly digest linking to new posts. Keep the email list warm even if the numbers are small.\n\nContent scheduling: Typefully handles LinkedIn and X in one tool. That covers the two schedulable platforms. Reddit and email are manual.\n\nTotal distribution layer cost: $0-12/month.',
+      },
+      {
+        heading: 'Layer 4: Measurement',
+        type: 'pattern',
+        content:
+          'Website analytics: PostHog (free tier, 1M events/month) or Plausible ($9/month). Google Analytics works but is heavier than most solo builders need. PostHog gives you event tracking, funnels, and session recordings in one tool.\n\nSEO tracking: Google Search Console (free). Track impressions, clicks, average position, and which queries drive traffic. Check weekly. This tells you which content to create more of.\n\nSocial analytics: each platform has built-in analytics. LinkedIn shows impressions and engagement per post. X shows impressions, engagement rate, and profile visits. Reddit shows karma and comment views.\n\nWhat to track weekly: total website visitors, top 5 pages by traffic, top 5 search queries driving traffic, best-performing social posts, and email open rate. That is it. Do not over-measure.\n\nTotal measurement layer cost: $0-9/month.\n\nFull stack cost: $0-41/month. That is the cost of content infrastructure that competes with teams spending $5,000+/month on tools. The advantage of being a solo builder: you do not need enterprise tools. You need focus and consistency.',
+      },
+    ],
+  },
+
+  {
+    id: 'how-to-use-ai-content-creation',
+    title: 'How to Use AI for Content Creation Without Sounding Like AI',
+    subtitle: 'The workflow that produces authentic content at 5x the speed',
+    category: 'comparisons',
+    description:
+      'Practical guide to using AI for content creation while maintaining authenticity. The input-output method, voice loading, editing workflows, and the specific techniques that make AI content indistinguishable from human writing.',
+    keywords: [
+      'AI content creation',
+      'how to use AI for content',
+      'AI writing tips',
+      'AI content without sounding like AI',
+      'authentic AI content',
+      'AI content workflow',
+      'AI writing workflow 2026',
+      'AI content creation guide',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'contentos',
+    related: [
+      'ai-content-vs-human-content',
+      'how-to-build-voice-system',
+      'content-stack-solo-builders',
+      'how-to-repurpose-content',
+    ],
+    sections: [
+      {
+        heading: 'The Input-Output Method',
+        type: 'prose',
+        content:
+          'AI content quality is a function of input quality. Generic input ("write a blog post about AI tools") produces generic output. Specific input produces specific output.\n\nThe method: give the AI three things before asking it to write. First, your experience - the specific story, result, or insight from your actual work. Second, your voice - the patterns, vocabulary, and style you want. Third, the format - the platform, length, structure, and audience.\n\nWith all three inputs, AI produces content that reads as yours. Without them, it produces content that reads as everyone else\'s.',
+      },
+      {
+        heading: 'Step 1: Feed Your Experience',
+        type: 'pattern',
+        content:
+          'The most common AI content failure: asking it to write about something you have not done. AI can research and synthesize, but it cannot fabricate authentic experience. The fix is to provide your experience as input.\n\nBefore generating content, write a rough brain dump. Not polished writing - just notes. "This week I tried waterfall enrichment in Clay. Used Apollo, Prospeo, and Dropcontact in sequence. Got 82% email coverage vs 55% from Apollo alone. Took 2 hours to set up. Credits cost about $1.50 per lead. The gotcha was MX validation - without it, 8% of emails were bad domains."\n\nThat brain dump is 60 words of raw experience. The AI turns it into a polished 500-word blog section with your specific numbers, your specific tools, and your specific gotcha. It cannot make up the 82% figure or the MX validation insight. Those come from you.\n\nRule: never publish AI content about something you have not personally done. Use AI as a writing accelerator, not a writing replacement.',
+      },
+      {
+        heading: 'Step 2: Load Your Voice',
+        type: 'pattern',
+        content:
+          'Before the AI writes, load your voice system into the conversation context. In Claude Code, this means the CLAUDE.md references your voice DNA file, or you explicitly load it at the start of a content session.\n\nMinimum viable voice loading: "Write in short sentences. Average 10 words. No hedging language. No phrases like \'it is worth noting\' or \'in today\'s landscape.\' Use specific numbers over vague qualifiers. Start with claims, then prove them. Lowercase energy - no exclamation marks, no hype."\n\nThat is 50 words of voice instruction that dramatically changes the output quality. The AI stops writing in its default polished-but-generic voice and starts writing in your patterns.\n\nFor better results: load your full voice DNA file with 30+ specific rules. The more patterns you provide, the closer the output matches your natural writing. The sweet spot is 50-100 rules that cover vocabulary, sentence structure, formatting preferences, and content patterns.',
+      },
+      {
+        heading: 'Step 3: Edit Like a Human, Not a Reviewer',
+        type: 'pattern',
+        content:
+          'The AI gives you a draft. Now make it yours. The editing pass is where AI content becomes authentic content.\n\nFirst pass - truth check: is every claim accurate? Did the AI add details you did not provide? AI sometimes confabulates - adds plausible but false specifics. Remove anything you cannot verify.\n\nSecond pass - voice check: read it aloud. Does it sound like you? Mark every sentence that sounds like "AI wrote this" and rewrite it. Usually it is the transitions and the opening/closing sentences that need the most human touch.\n\nThird pass - add the texture: inject the details only you know. The unexpected difficulty. The tool that almost worked but had a deal-breaking bug. The metric that surprised you. These textures are what make content feel human.\n\nFourth pass - cut the fat: AI writes more than necessary. It explains things readers already know. It adds caveats that weaken the argument. Cut 20-30% of the draft. Tighter content performs better on every platform.\n\nThe editing takes 15-30 minutes per piece. The writing took 3 minutes. Total time: 20-35 minutes for a piece that would take 90-120 minutes to write from scratch.',
+      },
+      {
+        heading: 'The Authenticity Test',
+        type: 'pro-tip',
+        content:
+          'Before publishing, run the authenticity test. Three questions:\n\n1. Could anyone else have written this? If yes, it needs more personal experience. Add your specific results, your specific tools, your specific failures. Make it impossible for someone who has not done your work to produce this content.\n\n2. Would you say this out loud to a colleague? If the language feels stiff or formal, it still has AI residue. Rewrite the stiff sentences in the way you would actually explain it in conversation.\n\n3. Does it make a claim you would defend? If there is a statement you would hedge on in a live conversation, either strengthen it with evidence or remove it. AI loves to make broad claims. Your content should only make claims you have earned through experience.\n\nIf the piece passes all three, publish it. If not, one more editing pass focusing on the questions it failed.\n\nThe goal is not to hide that you used AI. The goal is to produce content that reflects your actual expertise, delivered faster than you could write it manually. When the experience is real and the voice is yours, the tool used to produce it is irrelevant.',
+      },
+    ],
+  },
 ]

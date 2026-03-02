@@ -31,7 +31,7 @@ export function GET(req: NextRequest) {
             left: 0,
             right: 0,
             height: 4,
-            background: 'linear-gradient(90deg, #E8725C, #F09080)',
+            background: 'linear-gradient(90deg, #FF69B4, #FF8DC7)',
           }}
         />
 
@@ -41,7 +41,7 @@ export function GET(req: NextRequest) {
             display: 'flex',
             fontSize: 48,
             fontWeight: 700,
-            color: '#E8725C',
+            color: '#FF69B4',
             lineHeight: 1.2,
             marginBottom: 20,
             maxWidth: '90%',
@@ -80,7 +80,7 @@ export function GET(req: NextRequest) {
               display: 'flex',
               fontSize: 18,
               fontWeight: 600,
-              color: '#E8725C',
+              color: '#FF69B4',
             }}
           >
             theContentOS.ai
