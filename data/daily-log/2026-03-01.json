@@ -1,0 +1,1596 @@
+{
+  "date": "2026-03-01",
+  "generated_at": "2026-03-02T05:00:07.966446+00:00",
+  "version": 4,
+  "accomplishments": [
+    {
+      "type": "complex_script",
+      "title": "scout",
+      "path": "scripts/agents/scout.py",
+      "source": "auto",
+      "timestamp": "02:06",
+      "words": 2168,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "prospect",
+      "path": "scripts/abm/prospect.py",
+      "source": "auto",
+      "timestamp": "22:54",
+      "words": 497,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "clean_attio",
+      "path": "scripts/abm/clean_attio.py",
+      "source": "auto",
+      "timestamp": "22:54",
+      "words": 645,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "posthog_to_attio",
+      "path": "scripts/abm/posthog_to_attio.py",
+      "source": "auto",
+      "timestamp": "22:52",
+      "words": 800,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "qualify",
+      "path": "scripts/abm/qualify.py",
+      "source": "auto",
+      "timestamp": "18:38",
+      "words": 441,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "nio_blog_generator",
+      "path": "scripts/nio_blog_generator.py",
+      "source": "auto",
+      "timestamp": "20:00",
+      "words": 2276,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "log",
+      "path": "scripts/abm/log.py",
+      "source": "auto",
+      "timestamp": "22:46",
+      "words": 48,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api content [id] route",
+      "path": "website/apps/mission-control/app/api/content/[id]/route.ts",
+      "source": "auto",
+      "timestamp": "02:06",
+      "words": 204,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "backfill_contacts",
+      "path": "scripts/abm/backfill_contacts.py",
+      "source": "auto",
+      "timestamp": "22:54",
+      "words": 886,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos layout",
+      "path": "website/apps/shawnos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "22:54",
+      "words": 624,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "Navigation",
+      "path": "website/packages/shared/components/Navigation.tsx",
+      "source": "auto",
+      "timestamp": "22:53",
+      "words": 1065,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "outreach",
+      "path": "scripts/abm/outreach.py",
+      "source": "auto",
+      "timestamp": "22:48",
+      "words": 1054,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "skill_updated",
+      "title": "abm-overview",
+      "path": ".claude/skills/abm-overview/SKILL.md",
+      "source": "auto",
+      "timestamp": "00:58",
+      "words": 1065,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "check_replies",
+      "path": "scripts/abm/check_replies.py",
+      "source": "auto",
+      "timestamp": "22:48",
+      "words": 709,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos how-to page",
+      "path": "website/apps/contentos/app/how-to/page.tsx",
+      "source": "auto",
+      "timestamp": "20:00",
+      "words": 809,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "find_similar",
+      "path": "scripts/abm/find_similar.py",
+      "source": "auto",
+      "timestamp": "22:55",
+      "words": 748,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "website_route",
+      "title": "mission-control api code-graph route",
+      "path": "website/apps/mission-control/app/api/code-graph/route.ts",
+      "source": "auto",
+      "timestamp": "02:06",
+      "words": 1924,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "validate_emails",
+      "path": "scripts/abm/validate_emails.py",
+      "source": "auto",
+      "timestamp": "22:49",
+      "words": 689,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "db_supabase",
+      "path": "scripts/abm/db_supabase.py",
+      "source": "auto",
+      "timestamp": "22:47",
+      "words": 60,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "warming_status",
+      "path": "scripts/abm/warming_status.py",
+      "source": "auto",
+      "timestamp": "22:48",
+      "words": 599,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "gap_analysis",
+      "path": "scripts/abm/gap_analysis.py",
+      "source": "auto",
+      "timestamp": "22:48",
+      "words": 1043,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "replace_contacts",
+      "path": "scripts/abm/replace_contacts.py",
+      "source": "auto",
+      "timestamp": "22:49",
+      "words": 518,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "root package",
+      "path": "website/package.json",
+      "source": "auto",
+      "timestamp": "20:00",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos media page",
+      "path": "website/apps/shawnos/app/media/page.tsx",
+      "source": "auto",
+      "timestamp": "19:54",
+      "words": 1161,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "complex_script",
+      "title": "sync_attio",
+      "path": "scripts/abm/sync_attio.py",
+      "source": "auto",
+      "timestamp": "22:55",
+      "words": 1893,
+      "value_score": 25,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "mission-control vercel",
+      "path": "website/apps/mission-control/vercel.json",
+      "source": "auto",
+      "timestamp": "02:06",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "linkedin_import",
+      "path": "scripts/abm/linkedin_import.py",
+      "source": "auto",
+      "timestamp": "22:49",
+      "words": 1031,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "name_validation",
+      "path": "scripts/abm/name_validation.py",
+      "source": "auto",
+      "timestamp": "22:47",
+      "words": 380,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "push_to_lemlist",
+      "path": "scripts/abm/push_to_lemlist.py",
+      "source": "auto",
+      "timestamp": "22:48",
+      "words": 717,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "nio_commit_tracker",
+      "path": "scripts/nio_commit_tracker.py",
+      "source": "auto",
+      "timestamp": "20:00",
+      "words": 532,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "20:00",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "linkedin_messages",
+      "path": "scripts/abm/linkedin_messages.py",
+      "source": "auto",
+      "timestamp": "22:49",
+      "words": 675,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "generate_content_json",
+      "path": "scripts/generate_content_json.py",
+      "source": "auto",
+      "timestamp": "02:06",
+      "words": 901,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "generate",
+      "path": "scripts/abm/generate.py",
+      "source": "auto",
+      "timestamp": "22:53",
+      "words": 1218,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "attio_configure",
+      "path": "scripts/abm/attio_configure.py",
+      "source": "auto",
+      "timestamp": "22:47",
+      "words": 1045,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "research",
+      "path": "scripts/abm/research.py",
+      "source": "auto",
+      "timestamp": "22:55",
+      "words": 609,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "enrich_accounts",
+      "path": "scripts/abm/enrich_accounts.py",
+      "source": "auto",
+      "timestamp": "22:53",
+      "words": 1029,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "config",
+      "path": "scripts/abm/config.py",
+      "source": "auto",
+      "timestamp": "22:56",
+      "words": 427,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "pipeline",
+      "path": "scripts/abm/pipeline.py",
+      "source": "auto",
+      "timestamp": "22:49",
+      "words": 1045,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "title_filter",
+      "path": "scripts/abm/title_filter.py",
+      "source": "auto",
+      "timestamp": "22:49",
+      "words": 591,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "mission_control_updater",
+      "path": "scripts/mission_control_updater.py",
+      "source": "auto",
+      "timestamp": "20:00",
+      "words": 485,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "code_infra",
+      "title": "signals",
+      "path": "scripts/abm/signals.py",
+      "source": "auto",
+      "timestamp": "22:49",
+      "words": 1109,
+      "value_score": 15,
+      "shipped": true
+    },
+    {
+      "type": "client_resource",
+      "title": "client csv notes",
+      "path": "clients/client/steves-recruiting/resources/csv-notes.md",
+      "source": "auto-mtime",
+      "timestamp": "21:55",
+      "words": 484,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "script",
+      "title": "enrich_contacts",
+      "path": "clients/client/steves-recruiting/scripts/enrich_contacts.py",
+      "source": "auto-mtime",
+      "timestamp": "21:37",
+      "words": 1436,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "commits": [
+    {
+      "hash": "89c4d5b",
+      "message": "chore: daily tracker scan 2026-02-28",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 6,
+      "lines_added": 1656,
+      "lines_removed": 74,
+      "lines_net": 1582,
+      "directories": [
+        "data/",
+        "docs/",
+        "website/"
+      ],
+      "timestamp": "00:00"
+    },
+    {
+      "hash": "ae2e6e5",
+      "message": "feat: multi-account Maildoso outreach with round-robin rotation",
+      "type": "infra_build",
+      "score": 25,
+      "files_changed": 4,
+      "lines_added": 322,
+      "lines_removed": 135,
+      "lines_net": 187,
+      "directories": [
+        ".gitignore/",
+        "scripts/"
+      ],
+      "timestamp": "00:24"
+    },
+    {
+      "hash": "494e1af",
+      "message": "chore: daily tracker scan 2026-02-28",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 7,
+      "lines_added": 1228,
+      "lines_removed": 445,
+      "lines_net": 783,
+      "directories": [
+        "data/",
+        "docs/",
+        "website/"
+      ],
+      "timestamp": "00:30"
+    },
+    {
+      "hash": "4fa7713",
+      "message": "fix: static JSON fallback for Vercel \u2014 code graph + content now work",
+      "type": "bug_fix",
+      "score": 8,
+      "files_changed": 4,
+      "lines_added": 147,
+      "lines_removed": 75,
+      "lines_net": 72,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "00:43"
+    },
+    {
+      "hash": "c4543a3",
+      "message": "fix: remove debug endpoint \u2014 was exceeding Vercel 250MB function limit",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 0,
+      "lines_removed": 62,
+      "lines_net": -62,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "00:55"
+    },
+    {
+      "hash": "70b0247",
+      "message": "feat: Mission Control private server for Mac Mini",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 8,
+      "lines_added": 240,
+      "lines_removed": 76,
+      "lines_net": 164,
+      "directories": [
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "01:32"
+    },
+    {
+      "hash": "4163c82",
+      "message": "feat: scout generates 10 daily X post ideas with Grok->Claude fallback + Slack",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 1,
+      "lines_added": 146,
+      "lines_removed": 10,
+      "lines_net": 136,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "02:06"
+    },
+    {
+      "hash": "8ed66ad",
+      "message": "feat: ABM phase 2 \u2014 campaign engine, gap analysis, smart sourcing, Lemlist integration",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 8,
+      "lines_added": 875,
+      "lines_removed": 11,
+      "lines_net": 864,
+      "directories": [
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "02:06"
+    },
+    {
+      "hash": "b5c57f8",
+      "message": "feat: ABM phase 3 \u2014 data quality fix, Apollo backfill, title filtering, MX validation",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 7,
+      "lines_added": 1237,
+      "lines_removed": 85,
+      "lines_net": 1152,
+      "directories": [
+        ".claude/",
+        "docs/",
+        "scripts/"
+      ],
+      "timestamp": "03:02"
+    },
+    {
+      "hash": "603aa92",
+      "message": "feat: ABM phase 4 \u2014 account enrichment, contact replacement, full pipeline wiring",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 3,
+      "lines_added": 540,
+      "lines_removed": 3,
+      "lines_net": 537,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "03:54"
+    },
+    {
+      "hash": "4f626e8",
+      "message": "feat: daily LinkedIn posts 2026-03-01",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 2,
+      "lines_added": 518,
+      "lines_removed": 0,
+      "lines_net": 518,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "09:02"
+    },
+    {
+      "hash": "0e45126",
+      "message": "fix: Attio sync \u2014 fix person-company linking endpoint, sync 178 accounts + 116 contacts",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 14,
+      "lines_removed": 23,
+      "lines_net": -9,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "17:43"
+    },
+    {
+      "hash": "2428bc1",
+      "message": "feat: nio.log 2026-03-01 \u2014 automated daily post",
+      "type": "content_ship",
+      "score": 10,
+      "files_changed": 1,
+      "lines_added": 60,
+      "lines_removed": 0,
+      "lines_net": 60,
+      "directories": [
+        "content/"
+      ],
+      "timestamp": "18:43"
+    },
+    {
+      "hash": "a09626b",
+      "message": "feat: ABM phase 5 \u2014 CRM qualification, cleanup, warming tracker, launch preflight",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 8,
+      "lines_added": 920,
+      "lines_removed": 74,
+      "lines_net": 846,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "18:51"
+    },
+    {
+      "hash": "20f2b9d",
+      "message": "fix: wire Mission Control data pipeline into nightly cron",
+      "type": "bug_fix",
+      "score": 8,
+      "files_changed": 5,
+      "lines_added": 87,
+      "lines_removed": 15,
+      "lines_net": 72,
+      "directories": [
+        "docs/",
+        "scripts/"
+      ],
+      "timestamp": "19:10"
+    },
+    {
+      "hash": "f866a14",
+      "message": "fix: cron health + Vercel deploy \u2014 ABM python path, scout plist, contentos build",
+      "type": "bug_fix",
+      "score": 8,
+      "files_changed": 6,
+      "lines_added": 67,
+      "lines_removed": 31,
+      "lines_net": 36,
+      "directories": [
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "20:00"
+    },
+    {
+      "hash": "0bb4387",
+      "message": "feat: ABM signal layer \u2014 LinkedIn import, hiring signals, priority scoring",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 1,
+      "lines_added": 0,
+      "lines_removed": 0,
+      "lines_net": 0,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "20:34"
+    },
+    {
+      "hash": "91e83b6",
+      "message": "feat: ABM signal layer \u2014 LinkedIn import, hiring signals, priority scoring",
+      "type": "system_engine",
+      "score": 60,
+      "files_changed": 5,
+      "lines_added": 949,
+      "lines_removed": 2,
+      "lines_net": 947,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "20:34"
+    },
+    {
+      "hash": "1378b0f",
+      "message": "fix: Attio sync \u2014 require email for dedup, always enforce quality gate",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 19,
+      "lines_removed": 19,
+      "lines_net": 0,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "20:59"
+    },
+    {
+      "hash": "d2a851e",
+      "message": "fix: Attio sync \u2014 proper person linking, preview exclusion, phantom cleanup",
+      "type": "bug_fix",
+      "score": 5,
+      "files_changed": 3,
+      "lines_added": 187,
+      "lines_removed": 21,
+      "lines_net": 166,
+      "directories": [
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "21:46"
+    },
+    {
+      "hash": "06e5246",
+      "message": "feat: /media page \u2014 podcast appearances, homepage strip, SEO + JSON-LD",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 6,
+      "lines_added": 861,
+      "lines_removed": 199,
+      "lines_net": 662,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "21:57"
+    },
+    {
+      "hash": "93b86e7",
+      "message": "fix: correct Apple Podcasts + Spotify links for Outbound Wizards episode",
+      "type": "bug_fix",
+      "score": 3,
+      "files_changed": 1,
+      "lines_added": 8,
+      "lines_removed": 8,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "22:38"
+    },
+    {
+      "hash": "d470741",
+      "message": "feat: navigation dropdown groups \u2014 Wiki + More menus for shawnos.ai",
+      "type": "feature_build",
+      "score": 25,
+      "files_changed": 2,
+      "lines_added": 237,
+      "lines_removed": 40,
+      "lines_net": 197,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "23:00"
+    },
+    {
+      "hash": "babe925",
+      "message": "refactor: ABM pipeline \u2014 shared config, name validation, standardized logging",
+      "type": "infra_build",
+      "score": 25,
+      "files_changed": 26,
+      "lines_added": 475,
+      "lines_removed": 511,
+      "lines_net": -36,
+      "directories": [
+        "scripts/"
+      ],
+      "timestamp": "23:04"
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "linkedin",
+        "title": "openclaw honest opinion",
+        "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "target_date": "2026-02-23",
+        "words": 542
+      },
+      {
+        "platform": "linkedin",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+        "target_date": "2026-02-23",
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
+      },
+      {
+        "platform": "linkedin",
+        "title": "exa mcp pre enrichment",
+        "path": "content/linkedin/drafts/2026-02-25_exa-mcp-pre-enrichment.md",
+        "target_date": "2026-02-25",
+        "words": 336
+      },
+      {
+        "platform": "linkedin",
+        "title": "how to ai assistant claude code",
+        "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 437
+      },
+      {
+        "platform": "linkedin",
+        "title": "claude code mobile",
+        "path": "content/linkedin/drafts/2026-02-26_claude-code-mobile.md",
+        "target_date": "2026-02-26",
+        "words": 473
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
+      },
+      {
+        "platform": "linkedin",
+        "title": "exa grok hubspot landing pages",
+        "path": "content/linkedin/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
+        "target_date": "2026-02-26",
+        "words": 499
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel safe handoffs",
+        "path": "content/linkedin/drafts/2026-02-27_parallel-safe-handoffs.md",
+        "target_date": "2026-02-27",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "x",
+        "title": "openclaw honest opinion",
+        "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "target_date": "2026-02-23",
+        "words": 170
+      },
+      {
+        "platform": "x",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+        "target_date": "2026-02-23",
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
+      },
+      {
+        "platform": "x",
+        "title": "how to ai assistant claude code",
+        "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 259
+      },
+      {
+        "platform": "x",
+        "title": "claude code mobile",
+        "path": "content/x/drafts/2026-02-26_claude-code-mobile.md",
+        "target_date": "2026-02-26",
+        "words": 254
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
+      },
+      {
+        "platform": "x",
+        "title": "exa grok hubspot landing pages",
+        "path": "content/x/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
+        "target_date": "2026-02-26",
+        "words": 284
+      },
+      {
+        "platform": "x",
+        "title": "parallel safe handoffs",
+        "path": "content/x/drafts/2026-02-27_parallel-safe-handoffs.md",
+        "target_date": "2026-02-27",
+        "words": 223
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+        "target_date": "2026-02-14",
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
+      },
+      {
+        "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1543
+      },
+      {
+        "platform": "substack",
+        "title": "how to setup ai assistant",
+        "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+        "target_date": "2026-02-25",
+        "words": 1333
+      },
+      {
+        "platform": "substack",
+        "title": "parallel safe handoffs",
+        "path": "content/substack/drafts/2026-02-27_parallel-safe-handoffs.md",
+        "target_date": "2026-02-27",
+        "words": 843
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1119
+      }
+    ],
+    "finalized_today": []
+  },
+  "todos": [],
+  "token_usage": [],
+  "stats": {
+    "platform_breakdown": {
+      "other": 37,
+      "website": 6,
+      "ops": 1
+    },
+    "words_in_touched_files": 35640,
+    "pipeline_words": 51430,
+    "finals_count": 0,
+    "first_activity": "00:58",
+    "last_activity": "22:56",
+    "output_score": 523,
+    "letter_grade": "A+",
+    "score_breakdown": [
+      {
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-28",
+        "points": 1
+      },
+      {
+        "type": "infra_build",
+        "title": "feat: multi-account Maildoso outreach with round-robin rotat",
+        "points": 25
+      },
+      {
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-02-28",
+        "points": 1
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: static JSON fallback for Vercel \u2014 code graph + content ",
+        "points": 8
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: remove debug endpoint \u2014 was exceeding Vercel 250MB func",
+        "points": 3
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: Mission Control private server for Mac Mini",
+        "points": 25
+      },
+      {
+        "type": "infra_build",
+        "title": "feat: scout generates 10 daily X post ideas with Grok->Claud",
+        "points": 15
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: ABM phase 2 \u2014 campaign engine, gap analysis, smart sou",
+        "points": 60
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: ABM phase 3 \u2014 data quality fix, Apollo backfill, title",
+        "points": 60
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: ABM phase 4 \u2014 account enrichment, contact replacement,",
+        "points": 60
+      },
+      {
+        "type": "infra_build",
+        "title": "feat: daily LinkedIn posts 2026-03-01",
+        "points": 15
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: Attio sync \u2014 fix person-company linking endpoint, sync ",
+        "points": 3
+      },
+      {
+        "type": "content_ship",
+        "title": "feat: nio.log 2026-03-01 \u2014 automated daily post",
+        "points": 10
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: ABM phase 5 \u2014 CRM qualification, cleanup, warming trac",
+        "points": 60
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: wire Mission Control data pipeline into nightly cron",
+        "points": 8
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: cron health + Vercel deploy \u2014 ABM python path, scout pl",
+        "points": 8
+      },
+      {
+        "type": "infra_build",
+        "title": "feat: ABM signal layer \u2014 LinkedIn import, hiring signals, pr",
+        "points": 15
+      },
+      {
+        "type": "system_engine",
+        "title": "feat: ABM signal layer \u2014 LinkedIn import, hiring signals, pr",
+        "points": 60
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: Attio sync \u2014 require email for dedup, always enforce qu",
+        "points": 3
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: Attio sync \u2014 proper person linking, preview exclusion, ",
+        "points": 5
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: /media page \u2014 podcast appearances, homepage strip, SEO",
+        "points": 25
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: correct Apple Podcasts + Spotify links for Outbound Wiz",
+        "points": 3
+      },
+      {
+        "type": "feature_build",
+        "title": "feat: navigation dropdown groups \u2014 Wiki + More menus for sha",
+        "points": 25
+      },
+      {
+        "type": "infra_build",
+        "title": "refactor: ABM pipeline \u2014 shared config, name validation, sta",
+        "points": 25
+      }
+    ],
+    "efficiency_rating": null,
+    "shipped_count": 42,
+    "draft_count": 2,
+    "ship_rate": 0.95,
+    "agent_cost": 0,
+    "cost_per_point": 0.0,
+    "efficiency_ratio": null,
+    "words_today": 35640,
+    "lines_added": 10793,
+    "lines_removed": 1919,
+    "lines_net": 8874,
+    "code_loc": 6410,
+    "content_loc": 760,
+    "data_loc": 3623
+  },
+  "git_summary": {
+    "commits_today": 24,
+    "files_added": [
+      ".claude/skills/abm-overview/SKILL.md",
+      "content/nio-log/2026-03-01.md",
+      "data/daily-log/2026-02-28.json",
+      "data/linkedin/export/.gitkeep",
+      "data/linkedin/posts/2026-03-01.json",
+      "data/linkedin/scout/2026-03-01.json",
+      "docs/ABM-MASTER-AUDIT.md",
+      "scripts/abm/clean_attio.py",
+      "scripts/abm/config.py",
+      "scripts/abm/enrich_accounts.py",
+      "scripts/abm/find_similar.py",
+      "scripts/abm/gap_analysis.py",
+      "scripts/abm/linkedin_import.py",
+      "scripts/abm/linkedin_messages.py",
+      "scripts/abm/log.py",
+      "scripts/abm/name_validation.py",
+      "scripts/abm/push_to_lemlist.py",
+      "scripts/abm/qualify.py",
+      "scripts/abm/replace_contacts.py",
+      "scripts/abm/signals.py",
+      "scripts/abm/title_filter.py",
+      "scripts/abm/validate_emails.py",
+      "scripts/abm/warming_status.py",
+      "scripts/launchd/com.shawnos.mission-control.plist",
+      "scripts/launchd/com.shawnos.scout.plist",
+      "scripts/mission_control_server.sh",
+      "website/apps/mission-control/public/data/content-full.json",
+      "website/apps/shawnos/app/media/page.tsx",
+      "website/packages/shared/data/media-appearances.ts"
+    ],
+    "files_modified": [
+      ".gitignore",
+      "data/daily-log/2026-02-28.json",
+      "data/progression/profile.json",
+      "data/website-stats.json",
+      "docs/ARCHITECTURE.md",
+      "docs/MACHINE-SETUP.md",
+      "docs/_generated/skill-manifest.md",
+      "scripts/abm/README.md",
+      "scripts/abm/attio_configure.py",
+      "scripts/abm/backfill_contacts.py",
+      "scripts/abm/check_replies.py",
+      "scripts/abm/clean_attio.py",
+      "scripts/abm/db_supabase.py",
+      "scripts/abm/enrich_accounts.py",
+      "scripts/abm/find_similar.py",
+      "scripts/abm/gap_analysis.py",
+      "scripts/abm/generate.py",
+      "scripts/abm/linkedin_import.py",
+      "scripts/abm/linkedin_messages.py",
+      "scripts/abm/outreach.py",
+      "scripts/abm/pipeline.py",
+      "scripts/abm/posthog_to_attio.py",
+      "scripts/abm/prospect.py",
+      "scripts/abm/push_to_lemlist.py",
+      "scripts/abm/replace_contacts.py",
+      "scripts/abm/research.py",
+      "scripts/abm/signals.py",
+      "scripts/abm/sync_attio.py",
+      "scripts/abm/title_filter.py",
+      "scripts/abm/validate_emails.py",
+      "scripts/abm/warming_status.py",
+      "scripts/agents/scout.py",
+      "scripts/daily_cron.sh",
+      "scripts/generate_content_json.py",
+      "scripts/launchd/com.shawnos.abm-pipeline.plist",
+      "scripts/mission_control_updater.py",
+      "scripts/nio_blog_generator.py",
+      "scripts/nio_commit_tracker.py",
+      "scripts/sync_main.sh",
+      "website/apps/contentos/app/how-to/page.tsx",
+      "website/apps/gtmos/app/for/[slug]/LandingPageTemplate.tsx",
+      "website/apps/mission-control/app/api/code-graph/route.ts",
+      "website/apps/mission-control/app/api/content/[id]/route.ts",
+      "website/apps/mission-control/next.config.js",
+      "website/apps/mission-control/public/data/content-full.json",
+      "website/apps/mission-control/public/data/content.json",
+      "website/apps/mission-control/public/metrics.json",
+      "website/apps/mission-control/vercel.json",
+      "website/apps/shawnos/app/HomeContent.tsx",
+      "website/apps/shawnos/app/layout.tsx",
+      "website/apps/shawnos/public/sitemap-0.xml",
+      "website/package-lock.json",
+      "website/package.json",
+      "website/packages/shared/components/Navigation.tsx",
+      "website/packages/shared/data/media-appearances.ts",
+      "website/packages/shared/package.json"
+    ],
+    "lines_added_count": 10793,
+    "lines_removed_count": 1919,
+    "lines_net": 8874,
+    "code_loc": 6410,
+    "content_loc": 760,
+    "data_loc": 3623
+  },
+  "dev_equivalent": {
+    "net_lines": 8874,
+    "dev_days": 59.2,
+    "cost_estimate": 29600,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 8,874 net lines represent approximately 59 developer-days of output \u2014 what a small team would produce in 3+ months.",
+    "assumptions": {
+      "lines_per_day": 150,
+      "cost_per_day": 500,
+      "basis": "Industry average for meaningful, reviewed, production-quality code"
+    }
+  },
+  "cost": {
+    "api_equivalent": 0,
+    "actual_cost": 0.0,
+    "pricing_mode": "max"
+  },
+  "token_efficiency": {
+    "total_tokens": 0,
+    "total_sessions": 0,
+    "tokens_per_point": 0,
+    "tokens_per_commit": 0,
+    "tokens_per_loc": 0,
+    "avg_context_utilization": 0,
+    "pricing_mode": "max",
+    "api_equivalent_cost": 0,
+    "actual_cost": 0.0
+  }
+}

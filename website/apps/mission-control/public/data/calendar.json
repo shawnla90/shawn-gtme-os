@@ -1,169 +1,169 @@
 {
-  "generated": "2026-02-28T03:12:40.411Z",
+  "generated": "2026-03-02T05:00:13.395Z",
   "events": [
     {
-      "id": "commit-d0bcd39",
-      "title": "chore: daily tracker scan 2026-02-26",
+      "id": "commit-babe925",
+      "title": "refactor: ABM pipeline — shared config, name validation, sta",
       "type": "system",
-      "datetime": "2026-02-27T00:01:21-05:00",
+      "datetime": "2026-03-01T23:04:07-05:00",
       "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-26",
+      "description": "refactor: ABM pipeline — shared config, name validation, standardized logging",
       "metadata": {
-        "commitHash": "d0bcd39"
+        "commitHash": "babe925"
       }
     },
     {
-      "id": "commit-5d00045",
-      "title": "chore: update context handoff for Reddit pipeline session",
-      "type": "system",
-      "datetime": "2026-02-26T23:57:28-05:00",
-      "status": "completed",
-      "description": "chore: update context handoff for Reddit pipeline session",
-      "metadata": {
-        "commitHash": "5d00045"
-      }
-    },
-    {
-      "id": "commit-20e6959",
-      "title": "feat: Reddit engagement pipeline — Grok-powered scout, Slack",
+      "id": "commit-d470741",
+      "title": "feat: navigation dropdown groups — Wiki + More menus for sha",
       "type": "milestone",
-      "datetime": "2026-02-26T23:53:33-05:00",
+      "datetime": "2026-03-01T23:00:14-05:00",
       "status": "completed",
-      "description": "feat: Reddit engagement pipeline — Grok-powered scout, Slack digest, posting flow",
+      "description": "feat: navigation dropdown groups — Wiki + More menus for shawnos.ai",
       "metadata": {
-        "commitHash": "20e6959"
+        "commitHash": "d470741"
       }
     },
     {
-      "id": "commit-58f3197",
-      "title": "feat: ContentOS immersive overhaul - Method, Anti-Slop, Show",
-      "type": "milestone",
-      "datetime": "2026-02-26T21:56:29-05:00",
-      "status": "completed",
-      "description": "feat: ContentOS immersive overhaul - Method, Anti-Slop, Showcase pages",
-      "metadata": {
-        "commitHash": "58f3197"
-      }
-    },
-    {
-      "id": "commit-d15fbda",
-      "title": "feat: redirect shawnos.ai/clay-wiki to thegtmos.ai/clay-wiki",
-      "type": "milestone",
-      "datetime": "2026-02-26T21:24:35-05:00",
-      "status": "completed",
-      "description": "feat: redirect shawnos.ai/clay-wiki to thegtmos.ai/clay-wiki",
-      "metadata": {
-        "commitHash": "d15fbda"
-      }
-    },
-    {
-      "id": "commit-5452c3b",
-      "title": "feat: 4 new TikTok reels + sprite animation support for slid",
-      "type": "milestone",
-      "datetime": "2026-02-26T19:29:46-05:00",
-      "status": "completed",
-      "description": "feat: 4 new TikTok reels + sprite animation support for slides",
-      "metadata": {
-        "commitHash": "5452c3b"
-      }
-    },
-    {
-      "id": "commit-702ce80",
-      "title": "fix: GTM carousel - orange accent, remove HeyReach badge, GI",
+      "id": "commit-93b86e7",
+      "title": "fix: correct Apple Podcasts + Spotify links for Outbound Wiz",
       "type": "deployment",
-      "datetime": "2026-02-26T19:19:28-05:00",
+      "datetime": "2026-03-01T22:38:07-05:00",
       "status": "completed",
-      "description": "fix: GTM carousel - orange accent, remove HeyReach badge, GIF output",
+      "description": "fix: correct Apple Podcasts + Spotify links for Outbound Wizards episode",
       "metadata": {
-        "commitHash": "702ce80"
+        "commitHash": "93b86e7"
       }
     },
     {
-      "id": "commit-6606e4c",
-      "title": "feat: GTM automation flow LinkedIn carousel - 3 static image",
+      "id": "commit-06e5246",
+      "title": "feat: /media page — podcast appearances, homepage strip, SEO",
       "type": "milestone",
-      "datetime": "2026-02-26T19:07:42-05:00",
+      "datetime": "2026-03-01T21:57:05-05:00",
       "status": "completed",
-      "description": "feat: GTM automation flow LinkedIn carousel - 3 static images + 1 animated video",
+      "description": "feat: /media page — podcast appearances, homepage strip, SEO + JSON-LD",
       "metadata": {
-        "commitHash": "6606e4c"
+        "commitHash": "06e5246"
       }
     },
     {
-      "id": "commit-2e6261f",
-      "title": "feat: GTMOS major expansion - features page, MCP showcase, C",
-      "type": "milestone",
-      "datetime": "2026-02-26T14:10:09-05:00",
-      "status": "completed",
-      "description": "feat: GTMOS major expansion - features page, MCP showcase, Clay Wiki redesign, brand logos",
-      "metadata": {
-        "commitHash": "2e6261f"
-      }
-    },
-    {
-      "id": "commit-75d76be",
-      "title": "feat: nio.log 2026-02-26 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-02-26T08:01:14-05:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-02-26 — automated daily post",
-      "metadata": {
-        "commitHash": "75d76be"
-      }
-    },
-    {
-      "id": "commit-767d69d",
-      "title": "fix: ContentOS critical gaps - favicon, OG images, metadata,",
+      "id": "commit-d2a851e",
+      "title": "fix: Attio sync — proper person linking, preview exclusion, ",
       "type": "deployment",
-      "datetime": "2026-02-26T03:45:30-05:00",
+      "datetime": "2026-03-01T21:46:51-05:00",
       "status": "completed",
-      "description": "fix: ContentOS critical gaps - favicon, OG images, metadata, method font, Typefully logo",
+      "description": "fix: Attio sync — proper person linking, preview exclusion, phantom cleanup",
       "metadata": {
-        "commitHash": "767d69d"
+        "commitHash": "d2a851e"
       }
     },
     {
-      "id": "commit-87c09a6",
-      "title": "feat: GTMOS recalibration - revert cross-contamination, Clay",
+      "id": "commit-1378b0f",
+      "title": "fix: Attio sync — require email for dedup, always enforce qu",
+      "type": "deployment",
+      "datetime": "2026-03-01T20:59:56-05:00",
+      "status": "completed",
+      "description": "fix: Attio sync — require email for dedup, always enforce quality gate",
+      "metadata": {
+        "commitHash": "1378b0f"
+      }
+    },
+    {
+      "id": "commit-91e83b6",
+      "title": "feat: ABM signal layer — LinkedIn import, hiring signals, pr",
       "type": "milestone",
-      "datetime": "2026-02-26T03:40:08-05:00",
+      "datetime": "2026-03-01T20:34:19-05:00",
       "status": "completed",
-      "description": "feat: GTMOS recalibration - revert cross-contamination, Clay brand assets, GTMLS Sprint 2",
+      "description": "feat: ABM signal layer — LinkedIn import, hiring signals, priority scoring",
       "metadata": {
-        "commitHash": "87c09a6"
+        "commitHash": "91e83b6"
       }
     },
     {
-      "id": "commit-526da17",
-      "title": "feat: ContentOS homepage upgrade - kill terminal vibes, mode",
+      "id": "commit-0bb4387",
+      "title": "feat: ABM signal layer — LinkedIn import, hiring signals, pr",
       "type": "milestone",
-      "datetime": "2026-02-26T02:41:45-05:00",
+      "datetime": "2026-03-01T20:34:05-05:00",
       "status": "completed",
-      "description": "feat: ContentOS homepage upgrade - kill terminal vibes, modern design with Inter font",
+      "description": "feat: ABM signal layer — LinkedIn import, hiring signals, priority scoring",
       "metadata": {
-        "commitHash": "526da17"
+        "commitHash": "0bb4387"
       }
     },
     {
-      "id": "commit-e72ef5a",
-      "title": "feat: GTMOS homepage upgrade — full-viewport hero, component",
+      "id": "commit-f866a14",
+      "title": "fix: cron health + Vercel deploy — ABM python path, scout pl",
+      "type": "deployment",
+      "datetime": "2026-03-01T19:32:58-05:00",
+      "status": "completed",
+      "description": "fix: cron health + Vercel deploy — ABM python path, scout plist, contentos build",
+      "metadata": {
+        "commitHash": "f866a14"
+      }
+    },
+    {
+      "id": "commit-20f2b9d",
+      "title": "fix: wire Mission Control data pipeline into nightly cron",
+      "type": "deployment",
+      "datetime": "2026-03-01T19:10:53-05:00",
+      "status": "completed",
+      "description": "fix: wire Mission Control data pipeline into nightly cron",
+      "metadata": {
+        "commitHash": "20f2b9d"
+      }
+    },
+    {
+      "id": "commit-a09626b",
+      "title": "feat: ABM phase 5 — CRM qualification, cleanup, warming trac",
       "type": "milestone",
-      "datetime": "2026-02-26T01:34:31-05:00",
+      "datetime": "2026-03-01T18:51:59-05:00",
       "status": "completed",
-      "description": "feat: GTMOS homepage upgrade — full-viewport hero, component extraction, premium design",
+      "description": "feat: ABM phase 5 — CRM qualification, cleanup, warming tracker, launch preflight",
       "metadata": {
-        "commitHash": "e72ef5a"
+        "commitHash": "a09626b"
       }
     },
     {
-      "id": "commit-fabadc1",
-      "title": "chore: daily tracker scan 2026-02-25",
-      "type": "system",
-      "datetime": "2026-02-26T00:00:49-05:00",
+      "id": "commit-2428bc1",
+      "title": "feat: nio.log 2026-03-01 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-01T18:43:25-05:00",
       "status": "completed",
-      "description": "chore: daily tracker scan 2026-02-25",
+      "description": "feat: nio.log 2026-03-01 — automated daily post",
       "metadata": {
-        "commitHash": "fabadc1"
+        "commitHash": "2428bc1"
+      }
+    },
+    {
+      "id": "commit-0e45126",
+      "title": "fix: Attio sync — fix person-company linking endpoint, sync ",
+      "type": "deployment",
+      "datetime": "2026-03-01T17:43:48-05:00",
+      "status": "completed",
+      "description": "fix: Attio sync — fix person-company linking endpoint, sync 178 accounts + 116 contacts",
+      "metadata": {
+        "commitHash": "0e45126"
+      }
+    },
+    {
+      "id": "commit-4f626e8",
+      "title": "feat: daily LinkedIn posts 2026-03-01",
+      "type": "milestone",
+      "datetime": "2026-03-01T09:02:46-05:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-01",
+      "metadata": {
+        "commitHash": "4f626e8"
+      }
+    },
+    {
+      "id": "commit-603aa92",
+      "title": "feat: ABM phase 4 — account enrichment, contact replacement,",
+      "type": "milestone",
+      "datetime": "2026-03-01T03:54:31-05:00",
+      "status": "completed",
+      "description": "feat: ABM phase 4 — account enrichment, contact replacement, full pipeline wiring",
+      "metadata": {
+        "commitHash": "603aa92"
       }
     }
   ],
