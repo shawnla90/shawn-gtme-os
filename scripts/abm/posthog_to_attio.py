@@ -22,36 +22,15 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
-# Load .env
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-env_path = os.path.join(SCRIPT_DIR, '.env')
-if os.path.exists(env_path):
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                key, val = line.split('=', 1)
-                os.environ.setdefault(key.strip(), val.strip())
+sys.path.insert(0, SCRIPT_DIR)
 
-POSTHOG_BASE = 'https://us.posthog.com'
-ATTIO_BASE = 'https://api.attio.com/v2'
+from config import ATTIO_BASE, POSTHOG_BASE, get_attio_headers, get_posthog_headers
 
 
-def posthog_headers():
-    key = os.environ.get('POSTHOG_API_KEY', '')
-    if not key:
-        raise ValueError("POSTHOG_API_KEY not set")
-    return {'Authorization': f'Bearer {key}'}
-
-
-def attio_headers():
-    token = os.environ.get('ATTIO_API_TOKEN', '')
-    if not token:
-        raise ValueError("ATTIO_API_TOKEN not set")
-    return {
-        'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json',
-    }
+# Local aliases for use within this file
+posthog_headers = get_posthog_headers
+attio_headers = get_attio_headers
 
 
 def fetch_abm_events(days=7):

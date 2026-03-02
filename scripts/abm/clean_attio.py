@@ -16,28 +16,15 @@ import os
 import sys
 import time
 
-import requests
-
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-env_path = os.path.join(SCRIPT_DIR, '.env')
-if os.path.exists(env_path):
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                key, val = line.split('=', 1)
-                os.environ.setdefault(key.strip(), val.strip())
-
+from config import ATTIO_BASE, get_attio_headers, api_request
 from db_supabase import get_supabase
 from qualify import get_qualified_accounts
 from attio_configure import (
     get_all_attio_companies, get_attio_domain, get_attio_name,
-    attio_headers,
 )
-
-ATTIO_BASE = 'https://api.attio.com/v2'
 
 
 def delete_attio_record(object_type, record_id):
@@ -49,28 +36,20 @@ def delete_attio_record(object_type, record_id):
     """
     url = f'{ATTIO_BASE}/objects/{object_type}/records/{record_id}'
 
-    for attempt in range(3):
-        try:
-            resp = requests.delete(url, headers=attio_headers(), timeout=30)
+    try:
+        resp = api_request('DELETE', url, headers=get_attio_headers())
 
-            if resp.status_code == 429:
-                wait = min(2 ** (attempt + 1), 30)
-                time.sleep(wait)
-                continue
+        if resp.status_code in (200, 204):
+            return True
+        elif resp.status_code == 404:
+            return True  # Already gone
+        else:
+            print(f"    [!] Delete failed ({resp.status_code}): {resp.text[:200]}")
+            return False
 
-            if resp.status_code in (200, 204):
-                return True
-            elif resp.status_code == 404:
-                return True  # Already gone
-            else:
-                print(f"    [!] Delete failed ({resp.status_code}): {resp.text[:200]}")
-                return False
-
-        except requests.exceptions.RequestException as e:
-            print(f"    [!] Delete error (attempt {attempt+1}): {e}")
-            time.sleep(2 ** attempt)
-
-    return False
+    except Exception as e:
+        print(f"    [!] Delete error: {e}")
+        return False
 
 
 def get_attio_people_for_company(company_record_id):
@@ -87,15 +66,12 @@ def get_all_attio_people():
     page_size = 100
     while True:
         payload = {'limit': page_size, 'offset': offset}
-        resp = requests.post(
+        resp = api_request(
+            'POST',
             f'{ATTIO_BASE}/objects/people/records/query',
             json=payload,
-            headers=attio_headers(),
-            timeout=30,
+            headers=get_attio_headers(),
         )
-        if resp.status_code == 429:
-            time.sleep(5)
-            continue
         resp.raise_for_status()
         data = resp.json()
         records = data.get('data', [])

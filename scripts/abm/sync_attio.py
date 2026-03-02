@@ -13,32 +13,17 @@ import json
 import os
 import sys
 import time
-import requests
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
+from config import ATTIO_BASE, get_attio_headers, api_request
 from db_supabase import get_supabase
+from name_validation import classify_junk_name
 from qualify import is_actionable_contact, get_qualified_accounts
 
-ATTIO_BASE = 'https://api.attio.com/v2'
 
-
-def get_token():
-    token = os.environ.get('ATTIO_API_TOKEN', '')
-    if not token:
-        raise ValueError("ATTIO_API_TOKEN not set. Export it or add to scripts/abm/.env")
-    return token
-
-
-def attio_headers(token):
-    return {
-        'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json',
-    }
-
-
-def upsert_company(token, account, abm_page_url=None, dry_run=False):
+def upsert_company(account, abm_page_url=None, dry_run=False):
     """Upsert a company in Attio using domain as matching attribute."""
     research = {}
     if account.get('exa_research'):
@@ -99,35 +84,22 @@ def upsert_company(token, account, abm_page_url=None, dry_run=False):
         print(f"    [DRY RUN] Would upsert company: {account['name']} ({account['domain']})")
         return {'id': {'record_id': 'dry-run'}}
 
-    for attempt in range(3):
-        try:
-            resp = requests.put(
-                f'{ATTIO_BASE}/objects/companies/records?matching_attribute=domains',
-                json=payload,
-                headers=attio_headers(token),
-                timeout=30,
-            )
-
-            if resp.status_code == 429:
-                wait = min(2 ** (attempt + 1), 30)
-                print(f"    Rate limited. Waiting {wait}s...")
-                time.sleep(wait)
-                continue
-
-            resp.raise_for_status()
-            data = resp.json().get('data', {})
-            return data.get('id', {})
-
-        except requests.exceptions.RequestException as e:
-            print(f"    [!] Attio company upsert failed (attempt {attempt+1}): {e}")
-            if hasattr(e, 'response') and e.response is not None:
-                print(f"        Response: {e.response.text[:300]}")
-            time.sleep(2 ** attempt)
-
-    return None
+    try:
+        resp = api_request(
+            'PUT',
+            f'{ATTIO_BASE}/objects/companies/records?matching_attribute=domains',
+            json=payload,
+            headers=get_attio_headers(),
+        )
+        resp.raise_for_status()
+        data = resp.json().get('data', {})
+        return data.get('id', {})
+    except Exception as e:
+        print(f"    [!] Attio company upsert failed: {e}")
+        return None
 
 
-def link_person_to_company(token, person_record_id, company_record_id, dry_run=False):
+def link_person_to_company(person_record_id, company_record_id, dry_run=False):
     """Link a person record to a company record in Attio.
 
     Uses PATCH on the person record to set the 'company' record-reference attribute.
@@ -149,17 +121,17 @@ def link_person_to_company(token, person_record_id, company_record_id, dry_run=F
     }
 
     try:
-        resp = requests.patch(url, json=payload, headers=attio_headers(token), timeout=15)
+        resp = api_request('PATCH', url, json=payload, headers=get_attio_headers(), timeout=15)
         if resp.status_code in (200, 201):
             return True
         print(f"    [!] Link failed ({resp.status_code}): {resp.text[:200]}")
         return False
-    except requests.exceptions.RequestException as e:
+    except Exception as e:
         print(f"    [!] Link error: {e}")
         return False
 
 
-def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry_run=False):
+def upsert_person(contact, company_record_id=None, abm_page_url=None, dry_run=False):
     """Upsert a person in Attio using email as matching attribute.
 
     REQUIRES email — contacts without email are skipped to prevent
@@ -211,38 +183,26 @@ def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry
     # Always PUT with email matching — never POST (which creates duplicates)
     endpoint = f'{ATTIO_BASE}/objects/people/records?matching_attribute=email_addresses'
 
-    for attempt in range(3):
-        try:
-            resp = requests.put(endpoint, json=payload, headers=attio_headers(token), timeout=30)
+    try:
+        resp = api_request('PUT', endpoint, json=payload, headers=get_attio_headers())
+        resp.raise_for_status()
+        data = resp.json().get('data', {})
+        person_id = data.get('id', {})
 
-            if resp.status_code == 429:
-                wait = min(2 ** (attempt + 1), 30)
-                print(f"    Rate limited. Waiting {wait}s...")
-                time.sleep(wait)
-                continue
+        # Link person to company if both IDs are available
+        if person_id and company_record_id:
+            person_record_id = person_id.get('record_id') if isinstance(person_id, dict) else None
+            if person_record_id:
+                link_person_to_company(person_record_id, company_record_id, dry_run=dry_run)
 
-            resp.raise_for_status()
-            data = resp.json().get('data', {})
-            person_id = data.get('id', {})
+        return person_id
 
-            # Link person to company if both IDs are available
-            if person_id and company_record_id:
-                person_record_id = person_id.get('record_id') if isinstance(person_id, dict) else None
-                if person_record_id:
-                    link_person_to_company(token, person_record_id, company_record_id, dry_run=dry_run)
-
-            return person_id
-
-        except requests.exceptions.RequestException as e:
-            print(f"    [!] Attio person upsert failed (attempt {attempt+1}): {e}")
-            if hasattr(e, 'response') and e.response is not None:
-                print(f"        Response: {e.response.text[:300]}")
-            time.sleep(2 ** attempt)
-
-    return None
+    except Exception as e:
+        print(f"    [!] Attio person upsert failed: {e}")
+        return None
 
 
-def add_company_note(token, company_record_id, title, body, dry_run=False):
+def add_company_note(company_record_id, title, body, dry_run=False):
     """Add a note to a company record in Attio."""
     if dry_run:
         print(f"    [DRY RUN] Would add note: {title}")
@@ -258,39 +218,33 @@ def add_company_note(token, company_record_id, title, body, dry_run=False):
     }
 
     try:
-        resp = requests.post(
-            f'{ATTIO_BASE}/notes',
-            json=payload,
-            headers=attio_headers(token),
-            timeout=30,
-        )
+        resp = api_request('POST', f'{ATTIO_BASE}/notes', json=payload, headers=get_attio_headers())
         resp.raise_for_status()
         return True
-    except requests.exceptions.RequestException as e:
+    except Exception as e:
         print(f"    [!] Note creation failed: {e}")
         return False
 
 
-def get_company_notes(token, company_record_id):
+def get_company_notes(company_record_id):
     """Fetch existing notes for a company to avoid duplicates."""
     try:
-        resp = requests.get(
-            f'{ATTIO_BASE}/notes',
+        resp = api_request(
+            'GET', f'{ATTIO_BASE}/notes',
             params={'parent_object': 'companies', 'parent_record_id': company_record_id},
-            headers=attio_headers(token),
-            timeout=30,
+            headers=get_attio_headers(),
         )
         if resp.status_code == 200:
             return resp.json().get('data', [])
-    except requests.exceptions.RequestException:
+    except Exception:
         pass
     return []
 
 
-def add_enrichment_note(token, account, company_record_id, actionable_count, dry_run=False):
+def add_enrichment_note(account, company_record_id, actionable_count, dry_run=False):
     """Add a structured enrichment note to a company if one doesn't exist yet."""
     # Check for existing enrichment note
-    existing_notes = get_company_notes(token, company_record_id)
+    existing_notes = get_company_notes(company_record_id)
     for note in existing_notes:
         title = note.get('title', '')
         if 'Enrichment' in title or 'ICP' in title:
@@ -328,10 +282,10 @@ def add_enrichment_note(token, account, company_record_id, actionable_count, dry
         return False
 
     body = '\n'.join(lines)
-    return add_company_note(token, company_record_id, 'Enrichment Summary', body, dry_run=dry_run)
+    return add_company_note(company_record_id, 'Enrichment Summary', body, dry_run=dry_run)
 
 
-def sync_engagement(token, sb, account, company_record_id, dry_run=False):
+def sync_engagement(sb, account, company_record_id, dry_run=False):
     """Push outreach engagement data to Attio for a single account."""
     outreach_status = account.get('outreach_status', 'new')
     if outreach_status == 'new':
@@ -366,7 +320,7 @@ def sync_engagement(token, sb, account, company_record_id, dry_run=False):
             note_body = f"Reply detected at {r['replied_at']}. Account status: {outreach_status}."
             if opted_out:
                 note_body += " Contact has opted out of future emails."
-            add_company_note(token, company_record_id, note_title, note_body, dry_run=dry_run)
+            add_company_note(company_record_id, note_title, note_body, dry_run=dry_run)
 
     if dry_run:
         print(f"    [DRY RUN] Engagement: {status_label}")
@@ -385,7 +339,6 @@ def run(limit=100, dry_run=False, full=False):
     mode = 'FULL (unfiltered)' if full else 'QUALIFIED'
     print(f"\n[Attio Sync] {'DRY RUN - ' if dry_run else ''}Syncing up to {limit} accounts [{mode}]\n")
 
-    token = get_token()
     sb = get_supabase()
 
     if full:
@@ -425,7 +378,7 @@ def run(limit=100, dry_run=False, full=False):
         account['_landing_page_url'] = abm_page_url
 
         # Upsert company
-        company_id = upsert_company(token, account, abm_page_url=abm_page_url, dry_run=dry_run)
+        company_id = upsert_company(account, abm_page_url=abm_page_url, dry_run=dry_run)
         if not company_id:
             print(f"    [!] Failed to upsert company, skipping contacts")
             continue
@@ -450,7 +403,7 @@ def run(limit=100, dry_run=False, full=False):
                 continue
 
             person_id = upsert_person(
-                token, contact,
+                contact,
                 company_record_id=company_record_id,
                 abm_page_url=abm_page_url,
                 dry_run=dry_run,
@@ -462,11 +415,11 @@ def run(limit=100, dry_run=False, full=False):
         # Add enrichment note if we have data
         if company_record_id:
             actionable_count = len(account.get('actionable_contacts', []))
-            add_enrichment_note(token, account, company_record_id, actionable_count, dry_run=dry_run)
+            add_enrichment_note(account, company_record_id, actionable_count, dry_run=dry_run)
 
         # Sync engagement data
         if company_record_id:
-            sync_engagement(token, sb, account, company_record_id, dry_run=dry_run)
+            sync_engagement(sb, account, company_record_id, dry_run=dry_run)
 
         time.sleep(0.5)  # Be nice to Attio
 
@@ -478,7 +431,6 @@ def run(limit=100, dry_run=False, full=False):
 
 def cleanup_phantom_companies(dry_run=False):
     """Delete Attio companies whose domains are not in our Supabase accounts list."""
-    token = get_token()
     sb = get_supabase()
 
     # Get our canonical domains from Supabase
@@ -493,11 +445,11 @@ def cleanup_phantom_companies(dry_run=False):
         payload = {'limit': 50}
         if offset:
             payload['offset'] = offset
-        resp = requests.post(
+        resp = api_request(
+            'POST',
             f'{ATTIO_BASE}/objects/companies/records/query',
             json=payload,
-            headers=attio_headers(token),
-            timeout=30,
+            headers=get_attio_headers(),
         )
         resp.raise_for_status()
         data = resp.json()
@@ -544,9 +496,10 @@ def cleanup_phantom_companies(dry_run=False):
     deleted = 0
     for p in phantoms:
         try:
-            resp = requests.delete(
+            resp = api_request(
+                'DELETE',
                 f'{ATTIO_BASE}/objects/companies/records/{p["record_id"]}',
-                headers=attio_headers(token),
+                headers=get_attio_headers(),
                 timeout=15,
             )
             if resp.status_code in (200, 204):
@@ -555,7 +508,7 @@ def cleanup_phantom_companies(dry_run=False):
             else:
                 print(f"    [!] Failed to delete {p['name']}: {resp.status_code}")
             time.sleep(0.3)
-        except requests.exceptions.RequestException as e:
+        except Exception as e:
             print(f"    [!] Error deleting {p['name']}: {e}")
 
     print(f"\n  Deleted {deleted}/{len(phantoms)} phantom companies.")
@@ -564,7 +517,6 @@ def cleanup_phantom_companies(dry_run=False):
 
 def report_junk_names():
     """Print Supabase account names that look like junk (page titles, emojis, taglines)."""
-    import re
     sb = get_supabase()
     result = sb.table('accounts').select('id, name, domain').not_.is_('domain', 'null').execute()
     accounts = result.data or []
@@ -574,18 +526,9 @@ def report_junk_names():
         name = acct.get('name', '')
         if not name:
             continue
-        # Flag: contains emoji
-        if re.search(r'[\U0001F300-\U0001F9FF\u2600-\u26FF\u2700-\u27BF]', name):
-            junk.append((acct, 'contains emoji'))
-        # Flag: looks like a page title (very long or contains " - " separator typical of HTML titles)
-        elif ' - ' in name and len(name) > 40:
-            junk.append((acct, 'page title pattern'))
-        # Flag: contains "jobs" or job board patterns
-        elif any(w in name.lower() for w in ['jobs', 'indeed', 'glassdoor', 'linkedin.com']):
-            junk.append((acct, 'job board'))
-        # Flag: contains marketing tagline patterns
-        elif any(w in name.lower() for w in ['scale pipeline', 'hyper-personalized', 'www.']):
-            junk.append((acct, 'tagline/URL in name'))
+        reason = classify_junk_name(name)
+        if reason:
+            junk.append((acct, reason))
 
     if not junk:
         print("\n  No junk account names found.")

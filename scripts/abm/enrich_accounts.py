@@ -24,16 +24,7 @@ import requests
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-# Load .env
-env_path = os.path.join(SCRIPT_DIR, '.env')
-if os.path.exists(env_path):
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                key, val = line.split('=', 1)
-                os.environ.setdefault(key.strip(), val.strip())
-
+from config import get_exa_client, get_grok_headers, XAI_BASE
 from db_supabase import get_supabase
 
 # Grok extraction prompt
@@ -57,13 +48,10 @@ EXTRACT_PROMPT_TEMPLATE = (
 
 def exa_research(domain, company_name):
     """Research a company via Exa search API. Returns text content."""
-    from exa_py import Exa
-
-    api_key = os.environ.get('EXA_API_KEY', '')
-    if not api_key:
+    try:
+        exa = get_exa_client()
+    except ValueError:
         return None
-
-    exa = Exa(api_key=api_key)
     texts = []
 
     queries = [
@@ -146,10 +134,6 @@ def get_content(domain, company_name, source='exa'):
 
 def grok_extract(company_name, domain, content):
     """Use Grok to extract structured data from company content."""
-    api_key = os.environ.get('XAI_API_KEY', '')
-    if not api_key:
-        raise ValueError("XAI_API_KEY not set")
-
     content_trimmed = content[:5000]
 
     prompt = (
@@ -161,11 +145,8 @@ def grok_extract(company_name, domain, content):
 
     try:
         resp = requests.post(
-            'https://api.x.ai/v1/chat/completions',
-            headers={
-                'Authorization': f'Bearer {api_key}',
-                'Content-Type': 'application/json',
-            },
+            f'{XAI_BASE}/chat/completions',
+            headers=get_grok_headers(),
             json={
                 'model': 'grok-3-mini',
                 'messages': [{'role': 'user', 'content': prompt}],

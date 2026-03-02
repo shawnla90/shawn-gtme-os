@@ -23,66 +23,36 @@ import requests
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-# Load .env
-env_path = os.path.join(SCRIPT_DIR, '.env')
-if os.path.exists(env_path):
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                key, val = line.split('=', 1)
-                os.environ.setdefault(key.strip(), val.strip())
-
+from config import APOLLO_BASE as APOLLO_BASE_URL, get_apollo_headers, api_request
 from db_supabase import get_supabase
 from title_filter import is_relevant_title
-
-APOLLO_BASE_URL = 'https://api.apollo.io/api/v1'
 
 
 def apollo_people_match(apollo_id, first_name=None, domain=None):
     """Enrich a single person via Apollo People Match endpoint."""
-    api_key = os.environ.get('APOLLO_API_KEY', '')
-    if not api_key:
-        raise ValueError("APOLLO_API_KEY not set")
-
-    headers = {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-cache',
-        'X-Api-Key': api_key,
-    }
-
     payload = {'id': apollo_id}
     if first_name:
         payload['first_name'] = first_name
     if domain:
         payload['domain'] = domain
 
-    for attempt in range(3):
-        try:
-            resp = requests.post(
-                f'{APOLLO_BASE_URL}/people/match',
-                json=payload,
-                headers=headers,
-                timeout=30,
-            )
+    try:
+        resp = api_request(
+            'POST',
+            f'{APOLLO_BASE_URL}/people/match',
+            json=payload,
+            headers=get_apollo_headers(),
+        )
 
-            if resp.status_code == 429:
-                wait = min(2 ** (attempt + 1), 30)
-                print(f"    Rate limited. Waiting {wait}s...")
-                time.sleep(wait)
-                continue
+        if resp.status_code == 404:
+            return None
 
-            if resp.status_code == 404:
-                return None
+        resp.raise_for_status()
+        return resp.json()
 
-            resp.raise_for_status()
-            return resp.json()
-
-        except requests.exceptions.RequestException as e:
-            print(f"    [!] Apollo match failed (attempt {attempt + 1}): {e}")
-            time.sleep(2 ** attempt)
-
-    return None
+    except Exception as e:
+        print(f"    [!] Apollo match failed: {e}")
+        return None
 
 
 def update_contact(sb, contact_id, person_data):

@@ -18,22 +18,12 @@ import time
 
 import requests
 
-# Add scripts dir to path
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-# Load .env
-env_path = os.path.join(SCRIPT_DIR, '.env')
-if os.path.exists(env_path):
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                key, val = line.split('=', 1)
-                os.environ.setdefault(key.strip(), val.strip())
-
-from exa_py import Exa
+from config import get_exa_client
 from db_supabase import get_supabase
+from name_validation import is_junk_domain, is_valid_company_name
 
 # ICP scoring signals
 POSITIVE_SIGNALS = {
@@ -50,10 +40,7 @@ NEGATIVE_SIGNALS = {
 
 
 def get_exa():
-    key = os.environ.get('EXA_API_KEY', '')
-    if not key:
-        raise ValueError("EXA_API_KEY not set")
-    return Exa(api_key=key)
+    return get_exa_client()
 
 
 def get_seed_urls(sb, seed_type='best'):
@@ -134,11 +121,10 @@ def run(limit=20, seed='best', dry_run=False):
     seed_urls = get_seed_urls(sb, seed)
     if not seed_urls:
         print("  No seed accounts found. Need replied or viewed accounts first.")
-        print("  Falling back to top accounts by stage...")
-        # Fallback: use accounts that are furthest along in pipeline
-        result = sb.table('accounts').select('domain').in_(
-            'stage', ['outreach', 'page_live']
-        ).not_.is_('domain', 'null').limit(10).execute()
+        print("  Falling back to all qualified accounts as seeds...")
+        result = sb.table('accounts').select('domain').not_.is_(
+            'domain', 'null'
+        ).order('icp_score', desc=True).limit(20).execute()
         seed_urls = [f'https://{r["domain"]}' for r in (result.data or [])]
 
     if not seed_urls:
@@ -173,6 +159,15 @@ def run(limit=20, seed='best', dry_run=False):
 
             if not domain or domain in existing_domains:
                 continue
+
+            # Skip junk domains and invalid company names
+            if is_junk_domain(domain):
+                continue
+            if not is_valid_company_name(title):
+                # Fallback: use cleaned domain as name
+                title = domain.split('.')[0].title()
+                if not is_valid_company_name(title):
+                    continue
 
             icp_score = score_company(f'{title} {text}')
             existing_domains.add(domain)  # Prevent dups within this run

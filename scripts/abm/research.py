@@ -3,10 +3,15 @@
 
 import json
 import os
+import sys
 import time
-from exa_py import Exa
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+
+from config import get_exa_client
 from db_supabase import get_supabase
+from name_validation import is_junk_domain, is_valid_company_name
 
 # ICP search queries - rotate through these for variety
 SEARCH_QUERIES = [
@@ -42,10 +47,7 @@ DEEP_QUERIES = [
 
 
 def get_exa():
-    key = os.environ.get('EXA_API_KEY', '')
-    if not key:
-        raise ValueError("EXA_API_KEY not set. Export it or add to .env")
-    return Exa(api_key=key)
+    return get_exa_client()
 
 
 def already_researched(sb):
@@ -56,30 +58,10 @@ def already_researched(sb):
 
 def is_junk(title, domain):
     """Filter out articles, job listings, blog posts, and non-company results."""
-    title_lower = title.lower()
-
-    # Known junk domains
-    junk_domains = {'indeed.com', 'linkedin.com', 'medium.com', 'substack.com',
-                    'wikipedia.org', 'youtube.com', 'reddit.com', 'quora.com',
-                    'saasboomi.com', 'g2.com', 'capterra.com', 'trustradius.com'}
-    if domain in junk_domains:
+    if is_junk_domain(domain):
         return True
-
-    # Title patterns that indicate articles, not companies
-    junk_patterns = [
-        'how to ', 'top ', 'best ', 'guide', 'step-by-step', 'tutorial',
-        'fastest growing', 'trends to watch', 'jobs -', 'jobs |',
-        'series funding', 'what is ', 'review:', 'vs ', ' vs.',
-        'an extensive guide', 'a complete guide',
-    ]
-    for pattern in junk_patterns:
-        if pattern in title_lower:
-            return True
-
-    # Titles that are too long are usually article headlines
-    if len(title) > 80:
+    if not is_valid_company_name(title):
         return True
-
     return False
 
 

@@ -6,13 +6,15 @@ enter the pipeline. Title relevance is checked via title_filter module.
 """
 
 import os
+import sys
 import time
-import requests
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+
+from config import APOLLO_BASE as APOLLO_BASE_URL, get_apollo_headers, api_request
 from db_supabase import get_supabase
 from title_filter import is_relevant_title
-
-APOLLO_BASE_URL = 'https://api.apollo.io/api/v1'
 
 # Target titles for prospecting
 TARGET_TITLES = [
@@ -32,16 +34,6 @@ CONTACTS_PER_COMPANY = 3
 
 def apollo_search(domain, page=1):
     """Search Apollo for contacts at a given domain."""
-    APOLLO_API_KEY = os.environ.get('APOLLO_API_KEY', '')
-    if not APOLLO_API_KEY:
-        raise ValueError("APOLLO_API_KEY not set. Export it or add to .env")
-
-    headers = {
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-cache',
-        'X-Api-Key': APOLLO_API_KEY,
-    }
-
     payload = {
         'q_organization_domains': domain,
         'person_seniorities': TARGET_SENIORITY,
@@ -49,29 +41,18 @@ def apollo_search(domain, page=1):
         'per_page': 10,
     }
 
-    for attempt in range(3):
-        try:
-            resp = requests.post(
-                f'{APOLLO_BASE_URL}/mixed_people/api_search',
-                json=payload,
-                headers=headers,
-                timeout=30,
-            )
-
-            if resp.status_code == 429:
-                wait = min(2 ** (attempt + 1), 30)
-                print(f"    Rate limited. Waiting {wait}s...")
-                time.sleep(wait)
-                continue
-
-            resp.raise_for_status()
-            return resp.json()
-
-        except requests.exceptions.RequestException as e:
-            print(f"    [!] Apollo request failed (attempt {attempt+1}): {e}")
-            time.sleep(2 ** attempt)
-
-    return None
+    try:
+        resp = api_request(
+            'POST',
+            f'{APOLLO_BASE_URL}/mixed_people/api_search',
+            json=payload,
+            headers=get_apollo_headers(),
+        )
+        resp.raise_for_status()
+        return resp.json()
+    except Exception as e:
+        print(f"    [!] Apollo request failed: {e}")
+        return None
 
 
 def contacts_for_account(sb, account_id):

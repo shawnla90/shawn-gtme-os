@@ -16,66 +16,37 @@ import os
 import sys
 import time
 
-import requests
-
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, SCRIPT_DIR)
 
-env_path = os.path.join(SCRIPT_DIR, '.env')
-if os.path.exists(env_path):
-    with open(env_path) as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith('#') and '=' in line:
-                key, val = line.split('=', 1)
-                os.environ.setdefault(key.strip(), val.strip())
-
+from config import ATTIO_BASE, get_attio_headers, api_request
 from db_supabase import get_supabase
 from qualify import get_qualified_accounts, is_actionable_contact
 
-ATTIO_BASE = 'https://api.attio.com/v2'
 TARGET_LIST_SLUG = 'target_account_list'
 PEOPLE_TARGET_LIST_ID = 'ba966502-f512-4c3a-bf8d-1be3cf54cd16'
 
 
-def attio_headers():
-    token = os.environ.get('ATTIO_API_TOKEN', '')
-    if not token:
-        raise ValueError("ATTIO_API_TOKEN not set")
-    return {
-        'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json',
-    }
+# Keep attio_headers as alias for downstream imports (clean_attio.py)
+attio_headers = get_attio_headers
 
 
 def attio_get(path):
-    resp = requests.get(f'{ATTIO_BASE}{path}', headers=attio_headers(), timeout=30)
+    resp = api_request('GET', f'{ATTIO_BASE}{path}', headers=get_attio_headers())
     resp.raise_for_status()
     return resp.json()
 
 
 def attio_post(path, data):
-    resp = requests.post(f'{ATTIO_BASE}{path}', json=data, headers=attio_headers(), timeout=30)
-    if resp.status_code == 429:
-        time.sleep(5)
-        resp = requests.post(f'{ATTIO_BASE}{path}', json=data, headers=attio_headers(), timeout=30)
-    return resp
+    return api_request('POST', f'{ATTIO_BASE}{path}', json=data, headers=get_attio_headers())
 
 
 def attio_put(path, data):
-    resp = requests.put(f'{ATTIO_BASE}{path}', json=data, headers=attio_headers(), timeout=30)
-    if resp.status_code == 429:
-        time.sleep(5)
-        resp = requests.put(f'{ATTIO_BASE}{path}', json=data, headers=attio_headers(), timeout=30)
-    return resp
+    return api_request('PUT', f'{ATTIO_BASE}{path}', json=data, headers=get_attio_headers())
 
 
 def attio_patch(path, data):
-    resp = requests.patch(f'{ATTIO_BASE}{path}', json=data, headers=attio_headers(), timeout=30)
-    if resp.status_code == 429:
-        time.sleep(5)
-        resp = requests.patch(f'{ATTIO_BASE}{path}', json=data, headers=attio_headers(), timeout=30)
-    return resp
+    return api_request('PATCH', f'{ATTIO_BASE}{path}', json=data, headers=get_attio_headers())
 
 
 def get_all_attio_companies():

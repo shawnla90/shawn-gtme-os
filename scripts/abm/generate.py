@@ -4,11 +4,16 @@
 import json
 import os
 import re
+import sys
 import time
 from datetime import datetime, timedelta, timezone
 
 import requests
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, SCRIPT_DIR)
+
+from config import get_grok_headers, get_exa_client, XAI_BASE
 from db_supabase import get_supabase
 
 # Voice rules injected into Grok prompts
@@ -66,16 +71,9 @@ Requirements:
 
 def grok_call(system_prompt, user_prompt, temperature=0.7):
     """Call Grok (xAI) API."""
-    XAI_API_KEY = os.environ.get('XAI_API_KEY', '')
-    if not XAI_API_KEY:
-        raise ValueError("XAI_API_KEY not set")
-
     resp = requests.post(
-        'https://api.x.ai/v1/chat/completions',
-        headers={
-            'Authorization': f'Bearer {XAI_API_KEY}',
-            'Content-Type': 'application/json',
-        },
+        f'{XAI_BASE}/chat/completions',
+        headers=get_grok_headers(),
         json={
             'model': 'grok-3-mini',
             'messages': [
@@ -92,9 +90,7 @@ def grok_call(system_prompt, user_prompt, temperature=0.7):
 
 def exa_deep_dive(company_name, domain):
     """Additional deep research for page generation."""
-    from exa_py import Exa
-
-    exa = Exa(api_key=os.environ.get('EXA_API_KEY', ''))
+    exa = get_exa_client()
     research = []
 
     queries = [
