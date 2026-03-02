@@ -148,19 +148,26 @@ def link_person_to_company(token, person_record_id, company_record_id, dry_run=F
 
 
 def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry_run=False):
-    """Upsert a person in Attio using email as matching attribute."""
+    """Upsert a person in Attio using email as matching attribute.
+
+    REQUIRES email — contacts without email are skipped to prevent
+    duplicate records (POST creates new records without dedup).
+    """
+    # Hard gate: email is required for dedup via upsert
+    if not contact.get('email'):
+        return None
+
     values = {}
 
-    # Name - Attio requires first_name, last_name, AND full_name
+    # Name - use actual data, never fabricate "Unknown"
     first = (contact.get('first_name') or '').strip()
-    last = (contact.get('last_name') or '').strip() or 'Unknown'
+    last = (contact.get('last_name') or '').strip()
     full = f"{first} {last}".strip()
     if first:
         values['name'] = [{'first_name': first, 'last_name': last, 'full_name': full}]
 
-    # Email
-    if contact.get('email'):
-        values['email_addresses'] = [{'email_address': contact['email']}]
+    # Email (guaranteed present by gate above)
+    values['email_addresses'] = [{'email_address': contact['email']}]
 
     # Job title
     if contact.get('title'):
@@ -186,22 +193,15 @@ def upsert_person(token, contact, company_record_id=None, abm_page_url=None, dry
     }
 
     if dry_run:
-        print(f"    [DRY RUN] Would upsert person: {contact.get('first_name', '')} {contact.get('last_name', '')} ({contact.get('email', 'no email')})")
+        print(f"    [DRY RUN] Would upsert person: {first} {last} ({contact['email']})")
         return {'id': {'record_id': 'dry-run'}}
 
-    # Use email as matching attribute if we have one, otherwise create
-    endpoint = f'{ATTIO_BASE}/objects/people/records'
-    method = 'post'
-    if contact.get('email'):
-        endpoint += '?matching_attribute=email_addresses'
-        method = 'put'
+    # Always PUT with email matching — never POST (which creates duplicates)
+    endpoint = f'{ATTIO_BASE}/objects/people/records?matching_attribute=email_addresses'
 
     for attempt in range(3):
         try:
-            if method == 'put':
-                resp = requests.put(endpoint, json=payload, headers=attio_headers(token), timeout=30)
-            else:
-                resp = requests.post(endpoint, json=payload, headers=attio_headers(token), timeout=30)
+            resp = requests.put(endpoint, json=payload, headers=attio_headers(token), timeout=30)
 
             if resp.status_code == 429:
                 wait = min(2 ** (attempt + 1), 30)
@@ -432,8 +432,8 @@ def run(limit=100, dry_run=False, full=False):
             contacts = contacts_result.data or []
 
         for contact in contacts:
-            # Skip non-actionable contacts (even in full mode)
-            if not full and not is_actionable_contact(contact):
+            # Always enforce quality gate — email + relevant title required
+            if not is_actionable_contact(contact):
                 skipped_contacts += 1
                 continue
 
