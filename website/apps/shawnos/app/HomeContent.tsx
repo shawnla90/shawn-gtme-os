@@ -13,6 +13,7 @@ import {
 } from '@shawnos/shared/components'
 import type { RPGProfile } from '@shawnos/shared/lib/rpg'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
+import { MEDIA_APPEARANCES } from '@shawnos/shared/data/media-appearances'
 import { VideoShowcase } from './VideoShowcase'
 import { StatsStrip } from './StatsStrip'
 import { BuiltWithStrip } from './BuiltWithStrip'
@@ -379,6 +380,109 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
         <SectionHeadline subtitle="Featured projects from the monorepo">Case Studies</SectionHeadline>
         <CaseStudyGrid studies={caseStudies} />
       </ScrollRevealSection>
+
+      {/* ── As Heard On ── */}
+      {MEDIA_APPEARANCES.length > 0 && (
+        <ScrollRevealSection background="var(--canvas)">
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '20px',
+              flexWrap: 'wrap',
+              padding: '20px 24px',
+              background: 'var(--canvas-subtle)',
+              border: '1px solid var(--border)',
+              borderRadius: 6,
+            }}
+          >
+            <span
+              style={{
+                fontSize: '11px',
+                fontFamily: 'var(--font-mono)',
+                color: 'var(--text-muted)',
+                textTransform: 'uppercase' as const,
+                letterSpacing: '0.08em',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+              }}
+            >
+              as heard on
+            </span>
+
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '20px',
+                flexWrap: 'wrap',
+              }}
+            >
+              {MEDIA_APPEARANCES.map((appearance) => (
+                <a
+                  key={appearance.id}
+                  href={appearance.links[0]?.url ?? '/media'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    gap: '4px',
+                    textDecoration: 'none',
+                    transition: 'opacity 0.15s ease',
+                  }}
+                >
+                  <span
+                    style={{
+                      fontSize: '24px',
+                      width: 40,
+                      height: 40,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: 'var(--canvas)',
+                      border: '1px solid var(--border)',
+                      borderRadius: '50%',
+                    }}
+                  >
+                    {'\u{1F399}\u{FE0F}'}
+                  </span>
+                  <span
+                    style={{
+                      fontSize: '10px',
+                      fontFamily: 'var(--font-mono)',
+                      color: 'var(--text-secondary)',
+                      textAlign: 'center',
+                      maxWidth: 80,
+                      lineHeight: 1.2,
+                    }}
+                  >
+                    {appearance.show}
+                  </span>
+                </a>
+              ))}
+            </div>
+
+            <div style={{ flex: 1, minWidth: 0 }} />
+
+            <Link
+              href="/media"
+              style={{
+                fontSize: '11px',
+                fontFamily: 'var(--font-mono)',
+                color: 'var(--accent)',
+                textDecoration: 'none',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
+                opacity: 0.8,
+              }}
+            >
+              all appearances &rarr;
+            </Link>
+          </div>
+        </ScrollRevealSection>
+      )}
 
       {/* ── Boot Log — keeps terminal flavor ── */}
       <ScrollRevealSection background="var(--canvas)">
