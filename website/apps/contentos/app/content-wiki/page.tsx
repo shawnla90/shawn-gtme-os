@@ -5,6 +5,7 @@ import {
   CONTENT_WIKI_CATEGORIES,
 } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { detectPlatform, PLATFORM_COLORS } from '../lib/platform-colors'
 
 const SITE_URL = 'https://thecontentos.ai'
 const GTMOS_URL = 'https://thegtmos.ai'
@@ -297,27 +298,32 @@ export default function ContentWikiPage() {
           const entries = CONTENT_WIKI_ENTRIES.filter(
             (e) => e.category === cat.id
           )
+          const isPlatforms = cat.id === 'platforms'
           return (
             <div key={cat.id} style={categorySection}>
               <div style={categoryHeader}>{cat.prompt}</div>
-              <h3 style={categoryTitle}>{cat.label}</h3>
+              <h3 style={isPlatforms ? { ...categoryTitle, background: 'linear-gradient(90deg, #0A66C2, #1D9BF0, #FF6719, #FF4500, #00F2EA, #FF0000)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' } : categoryTitle}>{cat.label}</h3>
               <p style={categoryDesc}>{cat.description}</p>
               <div style={cardGrid}>
-                {entries.map((entry) => (
-                  <Link
-                    key={entry.id}
-                    href={`/content-wiki/${entry.id}`}
-                    style={card}
-                  >
-                    <div style={cardTitle}>{entry.title}</div>
-                    <div style={cardSubtitle}>{entry.subtitle}</div>
-                    <div style={cardMeta}>
-                      <span style={diffBadge(entry.difficulty)}>
-                        {entry.difficulty}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
+                {entries.map((entry) => {
+                  const platform = detectPlatform(entry.id)
+                  const pColor = platform ? PLATFORM_COLORS[platform].hex : null
+                  return (
+                    <Link
+                      key={entry.id}
+                      href={`/content-wiki/${entry.id}`}
+                      style={pColor ? { ...card, borderLeft: `3px solid ${pColor}` } : card}
+                    >
+                      <div style={pColor ? { ...cardTitle, color: pColor } : cardTitle}>{entry.title}</div>
+                      <div style={cardSubtitle}>{entry.subtitle}</div>
+                      <div style={cardMeta}>
+                        <span style={diffBadge(entry.difficulty)}>
+                          {entry.difficulty}
+                        </span>
+                      </div>
+                    </Link>
+                  )
+                })}
               </div>
             </div>
           )

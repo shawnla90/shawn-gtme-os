@@ -7,6 +7,7 @@ import {
 } from '@shawnos/shared/data/content-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { detectPlatform, PLATFORM_COLORS, type PlatformKey } from '../../lib/platform-colors'
 
 const SITE_URL = 'https://thecontentos.ai'
 const GTMOS_URL = 'https://thegtmos.ai'
@@ -277,6 +278,8 @@ export default async function ContentWikiEntryPage({
   }
 
   const catMeta = CONTENT_WIKI_CATEGORIES.find((c) => c.id === entry.category)
+  const platform = detectPlatform(entry.id)
+  const platformColor = platform ? PLATFORM_COLORS[platform].hex : null
 
   const relatedEntries = entry.related
     .map((id) => {
@@ -315,7 +318,7 @@ export default async function ContentWikiEntryPage({
       <div style={pageWrap}>
         {/* Terminal header */}
         <h1 style={terminalHeader}>
-          <span style={{ color: 'var(--accent)' }}>$</span> man content-wiki/
+          <span style={{ color: platformColor || 'var(--accent)' }}>$</span> man content-wiki/
           {entry.id}
         </h1>
 
@@ -323,7 +326,7 @@ export default async function ContentWikiEntryPage({
         <div style={headerRow}>
           {/* Meta badges */}
           <div style={metaRow}>
-            <span style={categoryBadge}>
+            <span style={platformColor ? { ...categoryBadge, color: platformColor, borderColor: `${platformColor}33` } : categoryBadge}>
               {catMeta?.label ?? entry.category}
             </span>
             <span style={diffBadge(entry.difficulty)}>{entry.difficulty}</span>

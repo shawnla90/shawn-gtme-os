@@ -9,6 +9,7 @@ import {
   ScrambleCycler,
   SectionHeadline,
 } from '@shawnos/shared/components'
+import { PLATFORM_COLORS, platformRgba } from '../lib/platform-colors'
 
 /* ── tier data ────────────────────────────────────── */
 
@@ -42,31 +43,37 @@ const voiceDNAComponents = [
 const platformGrid = [
   {
     name: 'LinkedIn',
+    platform: 'linkedin' as const,
     format: '1-2 sentence paragraphs, emoji markers, screen recordings',
     keyRule: 'The post is the hook. The comments are the delivery.',
   },
   {
     name: 'X / Twitter',
+    platform: 'x' as const,
     format: '280-char tweets, 4-6 tweet threads, single-tweet hot takes',
     keyRule: 'Every tweet stands alone. No context required.',
   },
   {
     name: 'Substack',
+    platform: 'substack' as const,
     format: '300-800 words, markdown-native, inline code + screenshots',
     keyRule: 'Deeper version of what you already wrote on social.',
   },
   {
     name: 'TikTok',
+    platform: 'tiktok' as const,
     format: '16-sec videos, on-screen text IS the hook, screen recordings',
     keyRule: 'The demo IS the content. No intros.',
   },
   {
     name: 'YouTube',
+    platform: 'youtube' as const,
     format: '5-15 min walkthroughs, episode format, expanded plays',
     keyRule: 'LinkedIn screen recordings expanded with voiceover.',
   },
   {
     name: 'Reddit',
+    platform: 'reddit' as const,
     format: 'Conversational long-form, subreddit-native, SEO-driven',
     keyRule: 'Written for a smart friend in a niche community.',
   },
@@ -104,7 +111,7 @@ const tierConnections = [
   },
   {
     flow: 'Playbooks feed Content Ops',
-    color: '#FF69B4',
+    color: '#1D9BF0',
     desc: 'Platform-formatted content gets automated into production. The pre-publish checklist validates that playbook rules were followed.',
   },
   {
@@ -396,7 +403,7 @@ export function MethodContent() {
       {/* ── Tier 2: Context Playbooks ── */}
       <ScrollRevealSection
         background="var(--canvas-subtle)"
-        style={{ borderTop: '3px solid #FF69B4' }}
+        style={{ borderTop: '3px solid transparent', borderImage: 'linear-gradient(to right, #0A66C2, #1D9BF0, #FF6719, #FF4500, #00F2EA, #FF0000) 1' }}
       >
         <div style={{ maxWidth: 900, margin: '0 auto' }}>
           <MotionReveal variant="fadeUp">
@@ -406,9 +413,9 @@ export function MethodContent() {
                 padding: '4px 12px',
                 fontSize: '11px',
                 fontWeight: 700,
-                color: '#FF69B4',
-                background: 'rgba(255, 105, 180, 0.1)',
-                border: '1px solid rgba(255, 105, 180, 0.25)',
+                color: '#1D9BF0',
+                background: 'rgba(29, 155, 240, 0.1)',
+                border: '1px solid rgba(29, 155, 240, 0.25)',
                 borderRadius: 4,
                 letterSpacing: '0.06em',
                 textTransform: 'uppercase',
@@ -424,7 +431,10 @@ export function MethodContent() {
               style={{
                 fontSize: 'clamp(28px, 4vw, 44px)',
                 fontWeight: 700,
-                color: '#FF69B4',
+                background: 'linear-gradient(90deg, #0A66C2, #1D9BF0, #FF6719, #FF4500, #00F2EA)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
                 fontFamily: 'var(--font-mono)',
                 marginBottom: 12,
               }}
@@ -457,21 +467,24 @@ export function MethodContent() {
                 marginBottom: 24,
               }}
             >
-              {platformGrid.map((p) => (
-                <StaggerItem key={p.name}>
-                  <div style={{ ...tierCard, borderColor: 'rgba(255, 105, 180, 0.15)', height: '100%' }}>
-                    <div style={{ fontSize: '15px', fontWeight: 700, color: '#FF69B4', marginBottom: 8 }}>
-                      {p.name}
+              {platformGrid.map((p) => {
+                const color = PLATFORM_COLORS[p.platform].hex
+                return (
+                  <StaggerItem key={p.name}>
+                    <div style={{ ...tierCard, borderColor: platformRgba(p.platform, 0.2), borderLeft: `3px solid ${color}`, height: '100%' }}>
+                      <div style={{ fontSize: '15px', fontWeight: 700, color, marginBottom: 8 }}>
+                        {p.name}
+                      </div>
+                      <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: 8 }}>
+                        {p.format}
+                      </div>
+                      <div style={{ fontSize: '12px', color: 'var(--text-muted)', fontStyle: 'italic', lineHeight: 1.5 }}>
+                        {p.keyRule}
+                      </div>
                     </div>
-                    <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: 8 }}>
-                      {p.format}
-                    </div>
-                    <div style={{ fontSize: '12px', color: 'var(--text-muted)', fontStyle: 'italic', lineHeight: 1.5 }}>
-                      {p.keyRule}
-                    </div>
-                  </div>
-                </StaggerItem>
-              ))}
+                  </StaggerItem>
+                )
+              })}
             </div>
           </StaggerContainer>
 
@@ -479,12 +492,12 @@ export function MethodContent() {
             <div
               style={{
                 padding: '14px 20px',
-                borderLeft: '3px solid #FF69B4',
-                background: 'rgba(255, 105, 180, 0.05)',
+                borderLeft: '3px solid #1D9BF0',
+                background: 'rgba(29, 155, 240, 0.05)',
                 borderRadius: '0 6px 6px 0',
               }}
             >
-              <p style={{ fontSize: '14px', fontWeight: 600, color: '#FF69B4', margin: 0, fontStyle: 'italic' }}>
+              <p style={{ fontSize: '14px', fontWeight: 600, color: '#1D9BF0', margin: 0, fontStyle: 'italic' }}>
                 Same voice, different format. The playbook handles the translation.
               </p>
             </div>
@@ -693,7 +706,7 @@ export function MethodContent() {
           >
             <span style={{ fontSize: '15px', fontWeight: 700, color: '#4EC373' }}>Voice DNA</span>
             <span style={{ color: 'var(--text-muted)', fontSize: '18px' }}>&rarr;</span>
-            <span style={{ fontSize: '15px', fontWeight: 700, color: '#FF69B4' }}>Playbooks</span>
+            <span style={{ fontSize: '15px', fontWeight: 700, background: 'linear-gradient(90deg, #0A66C2, #1D9BF0, #FF6719, #FF4500, #00F2EA)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>Playbooks</span>
             <span style={{ color: 'var(--text-muted)', fontSize: '18px' }}>&rarr;</span>
             <span style={{ fontSize: '15px', fontWeight: 700, color: '#D2A53C' }}>Content Ops</span>
             <span style={{ color: 'var(--text-muted)', fontSize: '18px' }}>&rarr;</span>

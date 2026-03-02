@@ -309,7 +309,7 @@ const BRANCHES = [
   },
   {
     name: 'X Thread',
-    color: '#1DA1F2',
+    color: '#1D9BF0',
     icon: 'X',
     rules: [
       { label: 'Length', value: '5-8 tweets, each under 280 chars' },
@@ -1208,7 +1208,7 @@ ${closer}
   },
   x: {
     name: 'X (Thread)',
-    color: '#1DA1F2',
+    color: '#1D9BF0',
     maxLength: '280 chars/tweet',
     formatRules: [
       'First tweet is the hook — must stand alone',
@@ -1280,7 +1280,7 @@ Three files power the whole thing. A single git push triggers the pipeline. No s
   },
   tiktok: {
     name: 'TikTok Script',
-    color: '#FE2C55',
+    color: '#00F2EA',
     maxLength: '60-90 seconds',
     formatRules: [
       'Hook in first 2 seconds — pattern interrupt',

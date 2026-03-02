@@ -17,6 +17,7 @@ import { useIsMobile } from '@shawnos/shared/hooks'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
 import { VideoShowcase } from './VideoShowcase'
 import { BuiltWithStrip } from './components/BuiltWithStrip'
+import { PLATFORM_COLORS } from './lib/platform-colors'
 
 /* ── data ────────────────────────────────────────── */
 
@@ -33,18 +34,21 @@ const featuredSections = [
     desc: 'The reference layer. 50 entries covering voice calibration, platform rules, content structures, and distribution patterns. Searchable, cross-linked, always growing.',
     href: '/content-wiki',
     command: 'cat ~/wiki --index',
+    accent: PLATFORM_COLORS.linkedin.hex,
   },
   {
     title: 'How-To Guides',
     desc: '38 step-by-step playbooks for real content tasks. From writing a first LinkedIn post to building recursive content loops. No theory - just execution.',
     href: '/how-to',
     command: 'ls ~/how-to --all',
+    accent: PLATFORM_COLORS.substack.hex,
   },
   {
     title: 'React Lab',
     desc: 'Live component playground. Every UI element on this site is built here first. Terminal aesthetics, motion patterns, and data visualizations.',
     href: '/react-lab',
     command: 'run ~/lab --interactive',
+    accent: PLATFORM_COLORS.tiktok.hex,
   },
 ]
 
@@ -78,12 +82,16 @@ const painPoints: string[] = [
 ]
 
 const bootLines = [
-  { status: 'OK', label: 'voice engine ... calibrated' },
-  { status: 'OK', label: 'content pipeline ... flowing' },
-  { status: 'OK', label: 'pillar detection ... active' },
-  { status: 'OK', label: 'recursive loop ... engaged' },
-  { status: 'OK', label: 'platform playbooks ... loaded' },
-  { status: 'OK', label: 'network link ... theGTMOS.ai' },
+  { status: 'OK', label: 'voice engine ... calibrated', color: '' },
+  { status: 'OK', label: 'content pipeline ... flowing', color: '' },
+  { status: 'OK', label: 'linkedin playbook ... loaded', color: PLATFORM_COLORS.linkedin.hex },
+  { status: 'OK', label: 'x playbook ... loaded', color: PLATFORM_COLORS.x.hex },
+  { status: 'OK', label: 'reddit playbook ... loaded', color: PLATFORM_COLORS.reddit.hex },
+  { status: 'OK', label: 'substack playbook ... loaded', color: PLATFORM_COLORS.substack.hex },
+  { status: 'OK', label: 'tiktok playbook ... loaded', color: PLATFORM_COLORS.tiktok.hex },
+  { status: 'OK', label: 'youtube playbook ... loaded', color: PLATFORM_COLORS.youtube.hex },
+  { status: 'OK', label: 'recursive loop ... engaged', color: '' },
+  { status: 'OK', label: 'network link ... theGTMOS.ai', color: '' },
 ]
 
 const faqLinkStyle: React.CSSProperties = {
@@ -141,10 +149,10 @@ const faqItems: { question: string; answer: React.ReactNode }[] = [
 ]
 
 const ctaLinks = [
-  { label: 'Browse the wiki', href: '/content-wiki', internal: true },
-  { label: 'Read how-to guides', href: '/how-to', internal: true },
-  { label: 'Explore the lab', href: '/react-lab', internal: true },
-  { label: 'View GTM OS', href: 'https://thegtmos.ai', internal: false },
+  { label: 'Browse the wiki', href: '/content-wiki', internal: true, accent: PLATFORM_COLORS.linkedin.hex },
+  { label: 'Read how-to guides', href: '/how-to', internal: true, accent: PLATFORM_COLORS.substack.hex },
+  { label: 'Explore the lab', href: '/react-lab', internal: true, accent: PLATFORM_COLORS.tiktok.hex },
+  { label: 'View GTM OS', href: 'https://thegtmos.ai', internal: false, accent: PLATFORM_COLORS.reddit.hex },
 ]
 
 /* ── types ────────────────────────────────────────── */
@@ -406,6 +414,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                     padding: '24px',
                     background: 'linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0)), var(--canvas-subtle)',
                     border: '1px solid var(--border)',
+                    borderLeft: `3px solid ${section.accent}`,
                     borderRadius: 6,
                     textDecoration: 'none',
                     height: '100%',
@@ -420,13 +429,13 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                       marginBottom: 12,
                     }}
                   >
-                    <span style={{ color: 'var(--accent)' }}>$</span> {section.command}
+                    <span style={{ color: section.accent }}>$</span> {section.command}
                   </div>
                   <h3
                     style={{
                       fontSize: '16px',
                       fontWeight: 700,
-                      color: 'var(--accent)',
+                      color: section.accent,
                       fontFamily: 'var(--font-mono)',
                       marginBottom: 8,
                       textTransform: 'uppercase',
@@ -616,7 +625,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                     fontFamily: 'var(--font-mono)',
                   }}
                 >
-                  [<span style={{ color: 'var(--accent)', fontWeight: 600 }}>{line.status}</span>] {line.label}
+                  [<span style={{ color: line.color || 'var(--accent)', fontWeight: 600 }}>{line.status}</span>] {line.label}
                 </div>
               </StaggerItem>
             ))}
@@ -650,11 +659,11 @@ export function HomeContent({ latestLog }: HomeContentProps) {
         <div
           style={{
             padding: '40px 32px',
-            background: 'linear-gradient(135deg, rgba(255, 105, 180, 0.04), transparent), var(--canvas-subtle)',
+            background: 'linear-gradient(135deg, rgba(10, 102, 194, 0.04), rgba(255, 69, 0, 0.03), rgba(0, 242, 234, 0.03)), var(--canvas-subtle)',
             border: '1px solid var(--border)',
             borderRadius: 8,
             textAlign: 'center',
-            boxShadow: '0 8px 32px rgba(255, 105, 180, 0.08)',
+            boxShadow: '0 8px 32px rgba(29, 155, 240, 0.08)',
           }}
         >
           <h2
@@ -699,6 +708,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                     padding: '20px 16px',
                     background: 'var(--canvas)',
                     border: '1px solid var(--border)',
+                    borderLeft: `3px solid ${item.accent}`,
                     borderRadius: 6,
                     textDecoration: 'none',
                     transition: 'border-color 0.15s ease',
@@ -708,7 +718,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                     style={{
                       fontSize: '15px',
                       fontWeight: 600,
-                      color: 'var(--accent)',
+                      color: item.accent,
                       fontFamily: 'var(--font-mono)',
                     }}
                   >

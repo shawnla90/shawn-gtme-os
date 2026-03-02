@@ -1,13 +1,18 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import localFont from 'next/font/local'
+import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, CursorGlow } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const SITE_URL = 'https://thecontentos.ai'
 
-const inter = Inter({
-  subsets: ['latin'],
+const satoshi = localFont({
+  src: [
+    { path: '../public/fonts/Satoshi-Regular.woff2', weight: '400', style: 'normal' },
+    { path: '../public/fonts/Satoshi-Medium.woff2', weight: '500', style: 'normal' },
+    { path: '../public/fonts/Satoshi-Bold.woff2', weight: '700', style: 'normal' },
+  ],
   variable: '--font-sans',
   display: 'swap',
 })
@@ -138,7 +143,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
+    <html lang="en" className={`${satoshi.variable} ${jetbrains.variable}`}>
       <body>
         <script
           type="application/ld+json"

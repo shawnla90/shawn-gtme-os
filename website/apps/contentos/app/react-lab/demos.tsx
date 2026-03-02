@@ -51,14 +51,16 @@ const BOOT_LINES = [
   { text: '> loading voice.config...', color: '#8B949E', delay: 400 },
   { text: '[OK] core-voice.md loaded (3 tiers)', color: '#4EC373', delay: 800 },
   { text: '[OK] viral-hooks.md loaded (12 styles)', color: '#4EC373', delay: 1100 },
-  { text: '> scanning content pipeline...', color: '#8B949E', delay: 1500 },
-  { text: '[PHASE 1] draft generation', color: '#E05555', delay: 1900 },
-  { text: '[PHASE 2] voice normalization', color: '#D2A53C', delay: 2300 },
-  { text: '[PHASE 3] platform formatting', color: '#50BED2', delay: 2700 },
-  { text: '[PHASE 4] publish + distribute', color: '#4EC373', delay: 3100 },
-  { text: '', color: '', delay: 3400 },
-  { text: '> content OS operational.', color: '#4EC373', delay: 3500 },
-  { text: '> the system is the content.', color: '#FF69B4', delay: 3900 },
+  { text: '> loading platform playbooks...', color: '#8B949E', delay: 1500 },
+  { text: '[OK] linkedin.md', color: '#0A66C2', delay: 1800 },
+  { text: '[OK] x.md', color: '#1D9BF0', delay: 2000 },
+  { text: '[OK] reddit.md', color: '#FF4500', delay: 2200 },
+  { text: '[OK] substack.md', color: '#FF6719', delay: 2400 },
+  { text: '[OK] tiktok.md', color: '#00F2EA', delay: 2600 },
+  { text: '[OK] youtube.md', color: '#FF0000', delay: 2800 },
+  { text: '', color: '', delay: 3000 },
+  { text: '> 6 playbooks loaded. pipeline ready.', color: '#4EC373', delay: 3100 },
+  { text: '> the system is the content.', color: '#FF69B4', delay: 3500 },
 ]
 
 function TerminalBootDemo() {
@@ -274,7 +276,7 @@ const PIPELINE_STAGES = [
   { name: 'Idea', icon: '◇', color: '#E05555', output: 'raw thought captured in daily log' },
   { name: 'Draft', icon: '◆', color: '#D2A53C', output: 'structured post with hook + body + CTA' },
   { name: 'Voice', icon: '◈', color: '#50BED2', output: 'voice-normalized: slop removed, DNA applied' },
-  { name: 'Format', icon: '▣', color: '#FF69B4', output: 'platform-specific: LinkedIn / X / Substack' },
+  { name: 'Format', icon: '▣', color: '#0A66C2', output: 'platform-specific: LinkedIn / X / Reddit / Substack / TikTok / YouTube' },
   { name: 'Publish', icon: '✦', color: '#4EC373', output: 'live on platform + indexed in content OS' },
 ]
 
@@ -441,6 +443,15 @@ const PALETTES = [
     accent: '#FF69B4',
     muted: '#505050',
     use: 'Professional content, LinkedIn carousels, article headers',
+  },
+  {
+    name: 'Platforms',
+    bg: '#0D1117',
+    primary: '#0A66C2',
+    secondary: '#1D9BF0',
+    accent: '#FF4500',
+    muted: '#00F2EA',
+    use: 'Multi-platform content, cross-channel distribution, playbook demos',
   },
 ]
 
