@@ -96,6 +96,29 @@ Synced dirs: `clients/`, `partners/`, `scripts/`, `.env*`, `.notion-sync-state.j
 
 **NOT synced**: `node_modules/`, `.DS_Store`, `screenshots/`, `~/.cursor/mcp.json`, `~/.openclaw/`
 
+## Session Role Assignments (March 2026+)
+
+To prevent session overlap, each machine has a **default work context**. This isn't a hard wall — you can still do anything from either machine — but Claude Code sessions should default to the machine's assigned role and avoid stepping on the other machine's active work.
+
+| Dimension | MacBook Pro (`shawntenam`) | Mac Mini (`shawnos.ai`) |
+|-----------|---------------------------|-------------------------|
+| **Primary work** | RevPartners partner/client deliverables | Shawn's personal infra, system work |
+| **Secondary work** | Front-end design, UI/UX | ABM pipeline, cron jobs, data pipeline |
+| **Session context** | Partner SKILL.md files, client briefs | ARCHITECTURE.md, scripts/, data/ |
+| **Deploys to** | Vercel (website changes) | Vercel (via nightly cron push) |
+| **Creates cron jobs** | No — draft here, install on Mac Mini | Yes — all launchd plists live here |
+| **Bigger projects** | Partner campaigns, client work, website features | Mission Control, Nio V3, pipeline work |
+
+### Rules for Claude Code Sessions
+
+1. **MacBook sessions default to partner/client context.** Load the relevant partner SKILL.md at session start. Don't drift into infra work unless explicitly asked.
+2. **Mac Mini sessions default to infra/system context.** Load ARCHITECTURE.md and pipeline state. Don't drift into partner deliverables.
+3. **Cron jobs always go on the Mac Mini.** If a cron job is designed on the MacBook, the session must flag: "This plist needs to be installed on the Mac Mini" and stop. Don't install locally.
+4. **Cross-machine changes need a handoff note.** If a MacBook session changes something that affects Mac Mini (or vice versa), write it to `.claude/context-handoff.md` so the next session on the other machine picks it up.
+5. **Git is the sync layer.** Both machines push to `origin/main`. The 23:58 sync ensures consistency. Don't assume the other machine has uncommitted changes.
+6. **When in doubt, check which machine you're on.** Run `whoami` — `shawntenam` = MacBook (partner context), `shawnos.ai` = Mac Mini (infra context).
+
+
 ## SSH Config
 
 Both machines must have passwordless SSH configured:
@@ -119,18 +142,18 @@ Servers with local paths that need per-machine setup:
 
 ## Known Path Issues
 
-Files with hardcoded machine-specific paths that should be made dynamic:
+All previously hardcoded paths have been resolved (2026-03-01):
 
-| File | Issue | Severity |
-|------|-------|----------|
-| `scripts/nio_commit_tracker.py` | Hardcodes `/Users/shawnos.ai/` (line 150) | High — breaks on MacBook |
-| `scripts/mission_control_updater.py` | Hardcodes `/Users/shawnos.ai/` (lines 17, 28) | High — breaks on MacBook |
-| `website/apps/mission-control/app/api/tasks/route.ts` | Hardcodes `/Users/shawnos.ai/` (lines 8-9) | High — API fails on MacBook |
+| File | Issue | Status |
+|------|-------|--------|
+| `scripts/nio_commit_tracker.py` | Was `/Users/shawnos.ai/` | Fixed — uses `Path(__file__).resolve().parent.parent` |
+| `scripts/mission_control_updater.py` | Was `/Users/shawnos.ai/` (lines 17, 28) | Fixed — uses `REPO_ROOT = Path(__file__).resolve().parent.parent` |
+| `website/apps/mission-control/app/api/tasks/route.ts` | Reported as hardcoded | Already uses relative `./public/metrics.json` — no fix needed |
 
-These should be fixed by using environment variables or `__dirname`-relative resolution.
 
 ## Change Log
 
 | Date | Change |
 |------|--------|
 | 2026-02-20 | Initial creation (Phase 1 audit). Fixed sync-machines SKILL.md to reflect actual MacBook username. |
+| 2026-03-01 | Added Session Role Assignments: MacBook = partner/client work, Mac Mini = infra/system. 6 rules for session context separation. |

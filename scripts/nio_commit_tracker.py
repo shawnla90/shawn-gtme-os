@@ -147,7 +147,7 @@ def extract_features(commits):
 
 def main():
     """Main tracking function"""
-    repo_path = '/Users/shawnos.ai/shawn-gtme-os'
+    repo_path = str(Path(__file__).resolve().parent.parent)
     
     # Get commits from last 24 hours
     commits = get_recent_commits(repo_path, 24)

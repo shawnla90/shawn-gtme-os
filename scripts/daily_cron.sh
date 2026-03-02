@@ -158,6 +158,47 @@ else
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
+# ── Step 1k: Mission Control data pipeline ────────────────────────────
+# nio_commit_tracker.py → /tmp/nio_mission_control_data.json (commit stats)
+# mission_control_updater.py → /tmp/mission_control_enhanced.json (calendar, todos, drafts)
+# generate-dashboard-data.js → public/data/*.json (tasks, calendar, memories, team, status)
+# generate-metrics.js → public/metrics.json (reads /tmp + public/data/)
+NODE="/usr/local/bin/node"
+[[ ! -x "$NODE" ]] && NODE="$(which node 2>/dev/null || echo /opt/homebrew/bin/node)"
+MC_SCRIPTS="$REPO_ROOT/website/apps/mission-control/scripts"
+
+log "Running nio_commit_tracker.py"
+if $PYTHON scripts/nio_commit_tracker.py >> "$LOGFILE" 2>&1; then
+  log "Commit tracker completed"
+else
+  log "WARN: Commit tracker failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
+log "Running mission_control_updater.py"
+if $PYTHON scripts/mission_control_updater.py >> "$LOGFILE" 2>&1; then
+  log "Mission Control updater completed"
+else
+  log "WARN: Mission Control updater failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
+log "Running generate-dashboard-data.js"
+if $NODE "$MC_SCRIPTS/generate-dashboard-data.js" >> "$LOGFILE" 2>&1; then
+  log "Dashboard data generated"
+else
+  log "WARN: Dashboard data generation failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
+log "Running generate-metrics.js"
+if $NODE "$MC_SCRIPTS/generate-metrics.js" >> "$LOGFILE" 2>&1; then
+  log "Metrics JSON generated"
+else
+  log "WARN: Metrics generation failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
 # ── Step 2: Generate dashboard image ─────────────────────────────────
 log "Running daily_dashboard.py --date $TARGET_DATE"
 if $PYTHON scripts/daily_dashboard.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
@@ -186,6 +227,11 @@ $GIT add docs/_generated/skill-manifest.md 2>/dev/null || true
 $GIT add website/apps/mission-control/public/data/content.json 2>/dev/null || true
 $GIT add website/apps/mission-control/public/data/content-full.json 2>/dev/null || true
 $GIT add website/apps/mission-control/public/metrics.json 2>/dev/null || true
+$GIT add website/apps/mission-control/public/data/tasks.json 2>/dev/null || true
+$GIT add website/apps/mission-control/public/data/calendar.json 2>/dev/null || true
+$GIT add website/apps/mission-control/public/data/memories.json 2>/dev/null || true
+$GIT add website/apps/mission-control/public/data/team.json 2>/dev/null || true
+$GIT add website/apps/mission-control/public/data/status.json 2>/dev/null || true
 
 # Check if there are staged changes
 if $GIT diff --cached --quiet; then

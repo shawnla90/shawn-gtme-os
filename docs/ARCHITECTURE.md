@@ -475,10 +475,10 @@ python3 scripts/abm/depersonalize.py --deprecate acme-corp
 
 ---
 
-## Known Gaps (as of 2026-02-28)
+## Known Gaps (as of 2026-03-01)
 
 1. **No GitHub Actions** - No automated validation of what Mac Mini pushes
-2. **Orphaned scripts** - mission_control_updater.py and nio_commit_tracker.py have hardcoded paths and aren't wired into the pipeline
+2. ~~**Orphaned scripts**~~ - RESOLVED 2026-03-01: mission_control_updater.py and nio_commit_tracker.py now use dynamic REPO_ROOT and are wired into daily_cron.sh as Step 1k
 3. **ABM sent_at not auto-populated** - landing_pages.sent_at must be set externally (outreach step or manual). TTL depersonalization won't trigger until outreach is live.
 4. **Attio MCP list filtering broken** - filter-list-entries Modes 3/4 return unfiltered results. List entry removal requires Attio UI.
 
@@ -492,3 +492,4 @@ python3 scripts/abm/depersonalize.py --deprecate acme-corp
 | 2026-02-20 | Mini corrections: Vercel Pro, Discord operational, blog inline pattern, model allocation table, build-time JSON pattern, .vercel gitignore |
 | 2026-02-20 | Phase 2 safety enforcement: Husky pre-push hook, Slack cron notifications, skill_inventory.py (50-skill auto-manifest), 3 known gaps closed |
 | 2026-02-28 | ABM pipeline section: 6-step pipeline, Supabase schema, landing page system, PostHog + Attio integration, launchd schedule |
+| 2026-03-01 | Fixed orphaned scripts: hardcoded paths → dynamic REPO_ROOT, wired into daily_cron.sh Step 1k. Mission Control data pipeline now: commit_tracker → updater → dashboard-data.js → metrics.js → git commit. Added session role assignments to MACHINE-SETUP.md. |

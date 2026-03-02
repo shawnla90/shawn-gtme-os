@@ -9,12 +9,14 @@ from datetime import datetime, timedelta
 from pathlib import Path
 import os
 
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
 def get_draft_status():
     """Check for drafts in various content directories"""
     drafts = []
-    
+
     # Check Substack drafts
-    substack_path = Path('/Users/shawnos.ai/shawn-gtme-os/content/substack/drafts')
+    substack_path = REPO_ROOT / 'content' / 'substack' / 'drafts'
     if substack_path.exists():
         for draft in substack_path.glob('*.md'):
             drafts.append({
@@ -23,9 +25,9 @@ def get_draft_status():
                 'status': 'ready to ship',
                 'created': datetime.fromtimestamp(draft.stat().st_mtime).strftime('%Y-%m-%d')
             })
-    
-    # Check LinkedIn drafts  
-    linkedin_path = Path('/Users/shawnos.ai/shawn-gtme-os/content/linkedin')
+
+    # Check LinkedIn drafts
+    linkedin_path = REPO_ROOT / 'content' / 'linkedin'
     if linkedin_path.exists():
         for draft in linkedin_path.glob('*.md'):
             if 'draft' in str(draft):
