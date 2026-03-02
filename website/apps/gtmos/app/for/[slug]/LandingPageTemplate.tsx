@@ -304,13 +304,16 @@ export function LandingPageTemplate({ data, depersonalized = false }: { data: Pa
                 api_host: '${posthogHost}',
                 person_profiles: 'identified_only',
               });
-              posthog.capture('abm_page_viewed', {
-                company_slug: '${data.slug}',
-                company_name: '${data.company}',
-                ${depersonalized ? '' : `contact_name: '${contactName}',`}
-                ${depersonalized ? '' : `contact_id: '${contactParam || 'default'}',`}
-                depersonalized: ${depersonalized},
-              });
+              var _params = new URLSearchParams(window.location.search);
+              if (!_params.get('preview')) {
+                posthog.capture('abm_page_viewed', {
+                  company_slug: '${data.slug}',
+                  company_name: '${data.company}',
+                  ${depersonalized ? '' : `contact_name: '${contactName}',`}
+                  ${depersonalized ? '' : `contact_id: '${contactParam || 'default'}',`}
+                  depersonalized: ${depersonalized},
+                });
+              }
             `,
           }}
         />

@@ -88,7 +88,9 @@ def upsert_company(token, account, abm_page_url=None, dry_run=False):
         payload['data']['values']['outreach_status'] = outreach_labels[outreach]
 
     if abm_page_url:
-        payload['data']['values']['landing_page_url'] = [{'value': abm_page_url}]
+        # Append ?preview=true so clicks from Attio dashboard skip PostHog tracking
+        preview_url = abm_page_url + ('&' if '?' in abm_page_url else '?') + 'preview=true'
+        payload['data']['values']['landing_page_url'] = [{'value': preview_url}]
 
     if description:
         payload['data']['values']['description'] = [{'value': description}]
@@ -126,24 +128,34 @@ def upsert_company(token, account, abm_page_url=None, dry_run=False):
 
 
 def link_person_to_company(token, person_record_id, company_record_id, dry_run=False):
-    """Link a person record to a company record in Attio via record associations.
+    """Link a person record to a company record in Attio.
 
-    Attio auto-links people to companies via email domain in most cases.
-    This explicit link is best-effort — skip silently if it fails.
+    Uses PATCH on the person record to set the 'company' record-reference attribute.
+    This overrides Attio's auto-link (which can create phantom companies from email domains).
     """
     if dry_run:
         return True
 
-    # Attio V2: use the record-level association endpoint
-    url = f'{ATTIO_BASE}/records/{person_record_id}/associations/{company_record_id}'
+    url = f'{ATTIO_BASE}/objects/people/records/{person_record_id}'
+    payload = {
+        'data': {
+            'values': {
+                'company': [{
+                    'target_object': 'companies',
+                    'target_record_id': company_record_id,
+                }]
+            }
+        }
+    }
 
     try:
-        resp = requests.put(url, headers=attio_headers(token), timeout=15)
-        if resp.status_code in (200, 201, 204):
+        resp = requests.patch(url, json=payload, headers=attio_headers(token), timeout=15)
+        if resp.status_code in (200, 201):
             return True
-        # Silently skip link failures — Attio auto-links via email domain anyway
+        print(f"    [!] Link failed ({resp.status_code}): {resp.text[:200]}")
         return False
-    except requests.exceptions.RequestException:
+    except requests.exceptions.RequestException as e:
+        print(f"    [!] Link error: {e}")
         return False
 
 
@@ -464,10 +476,154 @@ def run(limit=100, dry_run=False, full=False):
     return synced_companies, synced_contacts
 
 
+def cleanup_phantom_companies(dry_run=False):
+    """Delete Attio companies whose domains are not in our Supabase accounts list."""
+    token = get_token()
+    sb = get_supabase()
+
+    # Get our canonical domains from Supabase
+    result = sb.table('accounts').select('domain').not_.is_('domain', 'null').execute()
+    our_domains = {row['domain'].lower() for row in (result.data or []) if row.get('domain')}
+    print(f"\n[Phantom Cleanup] {len(our_domains)} canonical domains in Supabase")
+
+    # Fetch all companies from Attio
+    attio_companies = []
+    offset = None
+    while True:
+        payload = {'limit': 50}
+        if offset:
+            payload['offset'] = offset
+        resp = requests.post(
+            f'{ATTIO_BASE}/objects/companies/records/query',
+            json=payload,
+            headers=attio_headers(token),
+            timeout=30,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        batch = data.get('data', [])
+        attio_companies.extend(batch)
+        offset = data.get('next_cursor')
+        if not offset or not batch:
+            break
+        time.sleep(0.3)
+
+    print(f"  {len(attio_companies)} companies in Attio")
+
+    # Find phantoms
+    phantoms = []
+    for company in attio_companies:
+        record_id = company.get('id', {}).get('record_id', '')
+        values = company.get('values', {})
+        domains = values.get('domains', [])
+        name_entries = values.get('name', [])
+        name = name_entries[0].get('value', '(unnamed)') if name_entries else '(unnamed)'
+
+        company_domains = set()
+        for d in domains:
+            domain_val = d.get('domain', '')
+            if domain_val:
+                company_domains.add(domain_val.lower())
+
+        if not company_domains & our_domains:
+            phantoms.append({'record_id': record_id, 'name': name, 'domains': company_domains})
+
+    if not phantoms:
+        print("  No phantom companies found.")
+        return 0
+
+    print(f"\n  Found {len(phantoms)} phantom companies to delete:\n")
+    for p in phantoms:
+        domains_str = ', '.join(p['domains']) if p['domains'] else '(no domain)'
+        print(f"    - {p['name']} ({domains_str})")
+
+    if dry_run:
+        print(f"\n  [DRY RUN] Would delete {len(phantoms)} phantom companies.")
+        return len(phantoms)
+
+    deleted = 0
+    for p in phantoms:
+        try:
+            resp = requests.delete(
+                f'{ATTIO_BASE}/objects/companies/records/{p["record_id"]}',
+                headers=attio_headers(token),
+                timeout=15,
+            )
+            if resp.status_code in (200, 204):
+                print(f"    [x] Deleted: {p['name']}")
+                deleted += 1
+            else:
+                print(f"    [!] Failed to delete {p['name']}: {resp.status_code}")
+            time.sleep(0.3)
+        except requests.exceptions.RequestException as e:
+            print(f"    [!] Error deleting {p['name']}: {e}")
+
+    print(f"\n  Deleted {deleted}/{len(phantoms)} phantom companies.")
+    return deleted
+
+
+def report_junk_names():
+    """Print Supabase account names that look like junk (page titles, emojis, taglines)."""
+    import re
+    sb = get_supabase()
+    result = sb.table('accounts').select('id, name, domain').not_.is_('domain', 'null').execute()
+    accounts = result.data or []
+
+    junk = []
+    for acct in accounts:
+        name = acct.get('name', '')
+        if not name:
+            continue
+        # Flag: contains emoji
+        if re.search(r'[\U0001F300-\U0001F9FF\u2600-\u26FF\u2700-\u27BF]', name):
+            junk.append((acct, 'contains emoji'))
+        # Flag: looks like a page title (very long or contains " - " separator typical of HTML titles)
+        elif ' - ' in name and len(name) > 40:
+            junk.append((acct, 'page title pattern'))
+        # Flag: contains "jobs" or job board patterns
+        elif any(w in name.lower() for w in ['jobs', 'indeed', 'glassdoor', 'linkedin.com']):
+            junk.append((acct, 'job board'))
+        # Flag: contains marketing tagline patterns
+        elif any(w in name.lower() for w in ['scale pipeline', 'hyper-personalized', 'www.']):
+            junk.append((acct, 'tagline/URL in name'))
+
+    if not junk:
+        print("\n  No junk account names found.")
+        return
+
+    print(f"\n[Junk Names] {len(junk)} accounts flagged for review:\n")
+    for acct, reason in junk:
+        print(f"  [{reason}] {acct['name']}")
+        print(f"    domain: {acct['domain']}  |  id: {acct['id']}")
+        print()
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Sync ABM data to Attio CRM')
-    parser.add_argument('--limit', type=int, default=100)
-    parser.add_argument('--dry-run', action='store_true', help='Preview without pushing')
-    parser.add_argument('--full', action='store_true', help='Sync ALL accounts (bypass outreach gate)')
+    sub = parser.add_subparsers(dest='command')
+
+    # Default sync command
+    sync_parser = sub.add_parser('sync', help='Sync accounts + contacts to Attio')
+    sync_parser.add_argument('--limit', type=int, default=100)
+    sync_parser.add_argument('--dry-run', action='store_true', help='Preview without pushing')
+    sync_parser.add_argument('--full', action='store_true', help='Sync ALL accounts (bypass outreach gate)')
+
+    # Phantom cleanup
+    cleanup_parser = sub.add_parser('cleanup-phantoms', help='Delete Attio companies not in Supabase')
+    cleanup_parser.add_argument('--dry-run', action='store_true')
+
+    # Junk name report
+    sub.add_parser('junk-names', help='Report junk account names in Supabase')
+
     args = parser.parse_args()
-    run(limit=args.limit, dry_run=args.dry_run, full=args.full)
+
+    if args.command == 'cleanup-phantoms':
+        cleanup_phantom_companies(dry_run=args.dry_run)
+    elif args.command == 'junk-names':
+        report_junk_names()
+    else:
+        # Default to sync (backward compat with no subcommand)
+        limit = getattr(args, 'limit', 100)
+        dry_run = getattr(args, 'dry_run', False)
+        full = getattr(args, 'full', False)
+        run(limit=limit, dry_run=dry_run, full=full)

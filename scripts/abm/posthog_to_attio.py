@@ -96,6 +96,10 @@ def aggregate_by_company(events):
         if not slug:
             continue
 
+        # Skip preview views (Shawn clicking from Attio dashboard)
+        if props.get('is_preview') or props.get('preview'):
+            continue
+
         companies[slug]['views'] += 1
         companies[slug]['company_name'] = props.get('company_name', slug)
 
@@ -194,6 +198,9 @@ def sink_to_supabase(events, dry_run=False):
         props = event.get('properties', {})
         slug = props.get('company_slug', '')
         if not slug:
+            continue
+        # Skip preview views
+        if props.get('is_preview') or props.get('preview'):
             continue
         rows.append({
             'slug': slug,
