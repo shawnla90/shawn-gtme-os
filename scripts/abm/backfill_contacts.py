@@ -142,6 +142,27 @@ def update_account(sb, account_id, org_data):
     if apollo_org_id:
         updates['apollo_id'] = apollo_org_id
 
+    # Additional Apollo fields (Phase 2 - signal layer)
+    funding_stage = org_data.get('latest_funding_stage', '')
+    if funding_stage:
+        updates['funding_stage'] = funding_stage
+
+    annual_revenue = org_data.get('annual_revenue_printed', '')
+    if annual_revenue:
+        updates['annual_revenue'] = annual_revenue
+
+    latest_funding_date = org_data.get('latest_funding_round_date', '')
+    if latest_funding_date:
+        updates['latest_funding_date'] = latest_funding_date
+
+    founded_year = org_data.get('founded_year')
+    if founded_year:
+        updates['founded_year'] = int(founded_year)
+
+    short_desc = org_data.get('short_description', '')
+    if short_desc:
+        updates['description'] = short_desc
+
     # Geography from org address
     city = org_data.get('city', '')
     state = org_data.get('state', '')

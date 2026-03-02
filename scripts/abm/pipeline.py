@@ -18,6 +18,9 @@ Usage:
   python3 scripts/abm/pipeline.py --step clean --dry-run
   python3 scripts/abm/pipeline.py --step warming
   python3 scripts/abm/pipeline.py --step preflight
+  python3 scripts/abm/pipeline.py --step linkedin_import --dry-run
+  python3 scripts/abm/pipeline.py --step linkedin_messages --dry-run
+  python3 scripts/abm/pipeline.py --step signals --limit 76
   python3 scripts/abm/pipeline.py --step all --limit 5 --resume
 """
 
@@ -185,8 +188,10 @@ def main():
         'research', 'prospect', 'generate', 'sync', 'depersonalize',
         'outreach', 'gap_analysis', 'find_similar', 'lemlist',
         'backfill', 'validate', 'flag_titles', 'enrich', 'replace',
-        'clean', 'warming', 'preflight', 'all',
-    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist/backfill/validate/flag_titles/enrich/replace/clean/warming/preflight must be called explicitly)')
+        'clean', 'warming', 'preflight',
+        'linkedin_import', 'linkedin_messages', 'signals',
+        'all',
+    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist/backfill/validate/flag_titles/enrich/replace/clean/warming/preflight/linkedin_import/linkedin_messages/signals must be called explicitly)')
     parser.add_argument('--limit', type=int, default=100,
                         help='Max number of companies to process')
     parser.add_argument('--dry-run', action='store_true',
@@ -301,6 +306,21 @@ def main():
     # Pre-launch checklist - explicit only
     if step == 'preflight':
         run_preflight()
+
+    # LinkedIn connection import - explicit only
+    if step == 'linkedin_import':
+        import linkedin_import
+        linkedin_import.run(dry_run=args.dry_run)
+
+    # LinkedIn message history import - explicit only
+    if step == 'linkedin_messages':
+        import linkedin_messages
+        linkedin_messages.run(dry_run=args.dry_run)
+
+    # Signal collection + priority scoring - explicit only
+    if step == 'signals':
+        import signals
+        signals.run(limit=limit, dry_run=args.dry_run)
 
     elapsed = time.time() - start
     minutes = int(elapsed // 60)
