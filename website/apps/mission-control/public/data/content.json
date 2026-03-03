@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-02T05:00:13.000Z",
+  "generated": "2026-03-03T05:00:11.000Z",
   "totals": {
-    "total_content": 122,
+    "total_content": 123,
     "total_drafts": 75,
-    "total_final": 47,
-    "total_words": 79144,
+    "total_final": 48,
+    "total_words": 80093,
     "platforms_active": 6,
     "cross_platform_groups": 28,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 12,
-      "total": 12,
-      "words": 6811
+      "final": 13,
+      "total": 13,
+      "words": 7755
     },
     "linkedin": {
       "draft": 32,
       "final": 12,
       "total": 44,
-      "words": 29165
+      "words": 29166
     },
     "substack": {
       "draft": 9,
@@ -32,7 +32,7 @@
       "draft": 1,
       "final": 9,
       "total": 10,
-      "words": 9168
+      "words": 9172
     },
     "x": {
       "draft": 31,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-03-02:",
+      "slug": "2026-03-02",
+      "date": "2026-03-02",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 944,
+      "file_path": "content/nio-log/2026-03-02.md"
+    },
     {
       "platform": "nio-log",
       "title": "ALL THREE SITES BUILDING CLEAN. ABM",
@@ -342,7 +353,7 @@
       "stage": "draft",
       "pillar": "building-sharing + skill-system-shares",
       "arc": null,
-      "word_count": 542,
+      "word_count": 543,
       "file_path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md"
     },
     {
@@ -485,7 +496,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 841,
+      "word_count": 845,
       "file_path": "content/website/final/why-i-stopped-paying-for-api-calls.md"
     },
     {
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 462,
       "file_path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Build Your Own OS -- LinkedIn Cross-Promo",
-      "slug": "build-your-own-os",
-      "date": "2026-02-17",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1064,
-      "file_path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md"
     }
   ],
   "series": [
@@ -1041,6 +1041,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-02",
+      "grade": "B",
+      "score": 367,
+      "words": 7047,
+      "shipped": 13,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-01",
       "grade": "A+",
       "score": 523,
@@ -1143,14 +1151,6 @@
       "words": 57826,
       "shipped": 28,
       "cost": 9.77
-    },
-    {
-      "date": "2026-02-16",
-      "grade": "B",
-      "score": 333,
-      "words": 50465,
-      "shipped": 75,
-      "cost": 32.29
     }
   ]
 }

@@ -1,6 +1,116 @@
 {
-  "generated": "2026-03-02T05:00:13.395Z",
+  "generated": "2026-03-03T05:03:10.047Z",
   "events": [
+    {
+      "id": "commit-82ec8bd",
+      "title": "chore: contentos optimizer - 1 improvements (2026-03-03)",
+      "type": "system",
+      "datetime": "2026-03-02T23:05:46-05:00",
+      "status": "completed",
+      "description": "chore: contentos optimizer - 1 improvements (2026-03-03)",
+      "metadata": {
+        "commitHash": "82ec8bd"
+      }
+    },
+    {
+      "id": "commit-97b642f",
+      "title": "feat: Content OS multi-color front-end overhaul — Satoshi fo",
+      "type": "milestone",
+      "datetime": "2026-03-02T17:20:28-05:00",
+      "status": "completed",
+      "description": "feat: Content OS multi-color front-end overhaul — Satoshi font + platform color system",
+      "metadata": {
+        "commitHash": "97b642f"
+      }
+    },
+    {
+      "id": "commit-252f192",
+      "title": "feat: nio.log 2026-03-02 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-02T08:01:48-05:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-02 — automated daily post",
+      "metadata": {
+        "commitHash": "252f192"
+      }
+    },
+    {
+      "id": "commit-f91cea1",
+      "title": "feat: Phase 3 contentos SEO pages + hot pink color + cross-s",
+      "type": "milestone",
+      "datetime": "2026-03-02T03:09:25-05:00",
+      "status": "completed",
+      "description": "feat: Phase 3 contentos SEO pages + hot pink color + cross-site redirects",
+      "metadata": {
+        "commitHash": "f91cea1"
+      }
+    },
+    {
+      "id": "commit-c92290b",
+      "title": "feat: 10 SEO-targeted how-to pages for thegtmos.ai Phase 2",
+      "type": "milestone",
+      "datetime": "2026-03-02T02:32:09-05:00",
+      "status": "completed",
+      "description": "feat: 10 SEO-targeted how-to pages for thegtmos.ai Phase 2",
+      "metadata": {
+        "commitHash": "c92290b"
+      }
+    },
+    {
+      "id": "commit-666c125",
+      "title": "feat: 10 SEO-targeted how-to pages for shawnos.ai Phase 1",
+      "type": "milestone",
+      "datetime": "2026-03-02T02:21:24-05:00",
+      "status": "completed",
+      "description": "feat: 10 SEO-targeted how-to pages for shawnos.ai Phase 1",
+      "metadata": {
+        "commitHash": "666c125"
+      }
+    },
+    {
+      "id": "commit-a929193",
+      "title": "feat: SEO foundation — domain health, DR playbook, content g",
+      "type": "milestone",
+      "datetime": "2026-03-02T01:46:28-05:00",
+      "status": "completed",
+      "description": "feat: SEO foundation — domain health, DR playbook, content gap pages",
+      "metadata": {
+        "commitHash": "a929193"
+      }
+    },
+    {
+      "id": "commit-16ec2a6",
+      "title": "feat: Clear Cove Partners landing page + deal system setup",
+      "type": "milestone",
+      "datetime": "2026-03-02T00:40:48-05:00",
+      "status": "completed",
+      "description": "feat: Clear Cove Partners landing page + deal system setup",
+      "metadata": {
+        "commitHash": "16ec2a6"
+      }
+    },
+    {
+      "id": "commit-f0ff19b",
+      "title": "feat: /draft-email skill + Steve's contact enrichment sessio",
+      "type": "milestone",
+      "datetime": "2026-03-02T00:18:29-05:00",
+      "status": "completed",
+      "description": "feat: /draft-email skill + Steve's contact enrichment session",
+      "metadata": {
+        "commitHash": "f0ff19b"
+      }
+    },
+    {
+      "id": "commit-9afbd5a",
+      "title": "chore: daily tracker scan 2026-03-01",
+      "type": "system",
+      "datetime": "2026-03-02T00:00:13-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-03-01",
+      "metadata": {
+        "commitHash": "9afbd5a"
+      }
+    },
     {
       "id": "commit-babe925",
       "title": "refactor: ABM pipeline — shared config, name validation, sta",
@@ -54,116 +164,6 @@
       "description": "fix: Attio sync — proper person linking, preview exclusion, phantom cleanup",
       "metadata": {
         "commitHash": "d2a851e"
-      }
-    },
-    {
-      "id": "commit-1378b0f",
-      "title": "fix: Attio sync — require email for dedup, always enforce qu",
-      "type": "deployment",
-      "datetime": "2026-03-01T20:59:56-05:00",
-      "status": "completed",
-      "description": "fix: Attio sync — require email for dedup, always enforce quality gate",
-      "metadata": {
-        "commitHash": "1378b0f"
-      }
-    },
-    {
-      "id": "commit-91e83b6",
-      "title": "feat: ABM signal layer — LinkedIn import, hiring signals, pr",
-      "type": "milestone",
-      "datetime": "2026-03-01T20:34:19-05:00",
-      "status": "completed",
-      "description": "feat: ABM signal layer — LinkedIn import, hiring signals, priority scoring",
-      "metadata": {
-        "commitHash": "91e83b6"
-      }
-    },
-    {
-      "id": "commit-0bb4387",
-      "title": "feat: ABM signal layer — LinkedIn import, hiring signals, pr",
-      "type": "milestone",
-      "datetime": "2026-03-01T20:34:05-05:00",
-      "status": "completed",
-      "description": "feat: ABM signal layer — LinkedIn import, hiring signals, priority scoring",
-      "metadata": {
-        "commitHash": "0bb4387"
-      }
-    },
-    {
-      "id": "commit-f866a14",
-      "title": "fix: cron health + Vercel deploy — ABM python path, scout pl",
-      "type": "deployment",
-      "datetime": "2026-03-01T19:32:58-05:00",
-      "status": "completed",
-      "description": "fix: cron health + Vercel deploy — ABM python path, scout plist, contentos build",
-      "metadata": {
-        "commitHash": "f866a14"
-      }
-    },
-    {
-      "id": "commit-20f2b9d",
-      "title": "fix: wire Mission Control data pipeline into nightly cron",
-      "type": "deployment",
-      "datetime": "2026-03-01T19:10:53-05:00",
-      "status": "completed",
-      "description": "fix: wire Mission Control data pipeline into nightly cron",
-      "metadata": {
-        "commitHash": "20f2b9d"
-      }
-    },
-    {
-      "id": "commit-a09626b",
-      "title": "feat: ABM phase 5 — CRM qualification, cleanup, warming trac",
-      "type": "milestone",
-      "datetime": "2026-03-01T18:51:59-05:00",
-      "status": "completed",
-      "description": "feat: ABM phase 5 — CRM qualification, cleanup, warming tracker, launch preflight",
-      "metadata": {
-        "commitHash": "a09626b"
-      }
-    },
-    {
-      "id": "commit-2428bc1",
-      "title": "feat: nio.log 2026-03-01 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-03-01T18:43:25-05:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-03-01 — automated daily post",
-      "metadata": {
-        "commitHash": "2428bc1"
-      }
-    },
-    {
-      "id": "commit-0e45126",
-      "title": "fix: Attio sync — fix person-company linking endpoint, sync ",
-      "type": "deployment",
-      "datetime": "2026-03-01T17:43:48-05:00",
-      "status": "completed",
-      "description": "fix: Attio sync — fix person-company linking endpoint, sync 178 accounts + 116 contacts",
-      "metadata": {
-        "commitHash": "0e45126"
-      }
-    },
-    {
-      "id": "commit-4f626e8",
-      "title": "feat: daily LinkedIn posts 2026-03-01",
-      "type": "milestone",
-      "datetime": "2026-03-01T09:02:46-05:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-01",
-      "metadata": {
-        "commitHash": "4f626e8"
-      }
-    },
-    {
-      "id": "commit-603aa92",
-      "title": "feat: ABM phase 4 — account enrichment, contact replacement,",
-      "type": "milestone",
-      "datetime": "2026-03-01T03:54:31-05:00",
-      "status": "completed",
-      "description": "feat: ABM phase 4 — account enrichment, contact replacement, full pipeline wiring",
-      "metadata": {
-        "commitHash": "603aa92"
       }
     }
   ],
