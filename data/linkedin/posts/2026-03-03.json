@@ -1,0 +1,240 @@
+{
+  "date": "2026-03-03",
+  "generated_count": 10,
+  "avg_anti_slop_score": 100.0,
+  "generation_time_seconds": 121.8,
+  "engine": "claude-cli-opus",
+  "generated_at": "2026-03-03T14:02:46.435645+00:00",
+  "posts": [
+    {
+      "id": 1,
+      "title": "agents are just crons with better PR",
+      "hook": "most \"AI agents\" in production are just cron jobs with an LLM in the middle.",
+      "body": "most \"AI agents\" in production are just cron jobs with an LLM in the middle.\n\ni run 50+ automated skills across 4 live sites. daily content generation, SEO briefs, CRM enrichment, lead scoring, outbound personalization.\n\nnone of them are \"autonomous agents\" in the way twitter talks about them.\n\nthey're scheduled scripts that call Claude or Qwen at specific steps, validate outputs, and write to databases. launchd triggers them. sqlite stores state. if something breaks, i get a log file, not a philosophical crisis about agent alignment.\n\nthe boring version works:\n\n\u2705 cron fires at midnight\n\u2705 script pulls new data from Clay + Attio\n\u2705 LLM enriches and scores\n\u2705 output writes to niobot.db\n\u2705 next morning i have a brief waiting\n\nno agent framework. no LangChain graph. no multi-agent orchestration layer.\n\njust python, an API key, and a schedule.\n\nthe gap between \"AI agent demo\" and \"AI agent in production\" is mostly just... reliability. can it run 30 days without you touching it? can you debug it at 2am from your phone?\n\nif your agent needs a human babysitter, it's not an agent. it's a demo.",
+      "cta": "what's running unattended in your stack right now?",
+      "tags": [
+        "AI agents",
+        "automation",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Swyx",
+        "summary": "Discusses the evolution of AI agents from hype to practical multi-agent systems, sharing insights on frameworks like LangGraph and AutoGen for building reliable agent workflows. Emphasizes the need for better developer tools to handle agent orchestration and debugging. Highlights recent benchmarks showing agent performance improvements in automation tasks.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Discusses%20the%20evolution%20of%20AI%20agents%20from%20hype%20to%20practical%20multi-agent%20systems%2C",
+        "engagement": {
+          "likes": 2500,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 2,
+      "title": "the SDR to GTM engineer pipeline",
+      "hook": "i used to send 200+ cold emails a day from a primary domain with no warmup on SalesLoft.",
+      "body": "i used to send 200+ cold emails a day from a primary domain with no warmup on SalesLoft.\n\nno secondary domains. no Instantly rotation. just vibes and a prayer that IT wouldn't notice the bounce rate.\n\ni manually built buying committees in Salesforce. clicked through LinkedIn, found the VP of Ops, the Director of IT, the end user. copy-pasted titles into custom fields. enriched contacts one at a time through ZoomInfo.\n\nthat was 2019.\n\nnow i build Clay tables that do the same thing in 90 seconds. waterfall enrichment across 4 providers. AI scoring that flags which accounts actually match our ICP. automated sequences that personalize off technographics, hiring signals, and 10-K filings.\n\nthe mass emails era is over. i know because i lived through it. built pipeline from it. and watched the same playbook stop working in real time.\n\nSDRs who went through the manual grind understand GTM infrastructure differently. you know what breaks because you used to be the one breaking it. you know what data matters because you used to fake it in Salesforce to hit activity metrics.\n\nthe best GTM engineers aren't coming from CS programs. they're coming from the BDR pit.",
+      "cta": "former SDRs building automation now... what was your breaking point?",
+      "tags": [
+        "GTM engineering",
+        "career pivot",
+        "outbound automation"
+      ],
+      "inspired_by": {
+        "author": "Sami Rahman",
+        "summary": "Discusses building scalable GTM engines by integrating engineering with sales and marketing. Shares a framework for automating lead qualification and personalization at scale. Emphasizes data-driven iteration for revenue growth.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sami%20Rahman%20Discusses%20building%20scalable%20GTM%20engines%20by%20integrating%20engineering%20with%20sales%20an",
+        "engagement": {
+          "likes": 1200,
+          "comments": 89
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 3,
+      "title": "cursor won't save you from bad architecture",
+      "hook": "AI coding tools automate 80% of routine tasks. the problem is the other 20% is where all the decisions live.",
+      "body": "AI coding tools automate 80% of routine tasks. the problem is the other 20% is where all the decisions live.\n\ni use Claude Code for everything. it writes my React components, generates my API routes, scaffolds entire features. genuinely fast.\n\nbut last week it generated a \"working\" enrichment pipeline that made 47 redundant API calls per lead because it didn't understand my waterfall logic. technically correct. architecturally terrible. would've cost me $200/day in API credits if i hadn't caught it.\n\nthe tool didn't know:\n- that i cascade Clay --> Apollo --> Clearbit in a specific order\n- that i cache enrichment results in sqlite to avoid re-hitting APIs\n- that my scoring model depends on enrichment completeness, not just presence\n\nit wrote code. i wrote the system.\n\nthat's the gap nobody's talking about in the \"AI replaces developers\" discourse. the code is the easy part. knowing which code to write, in what order, with what constraints... that's engineering.\n\nCursor and Claude Code are the best tools i've ever used. genuinely. but they're power tools, not architects. a nail gun doesn't know where the load-bearing walls are.\n\nformer plumber here. trust me on that metaphor.",
+      "cta": "what's the worst \"technically correct\" thing an AI tool generated for you?",
+      "tags": [
+        "developer tools",
+        "AI infrastructure",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Nat Friedman",
+        "summary": "Predicts the rise of AI-powered developer tools automating 80% of routine coding tasks, referencing tools like Cursor and Devin. Discusses the supporting AI infrastructure needs, such as high-throughput inference engines. Shares thoughts on how this shifts developer roles towards agent supervision.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nat%20Friedman%20Predicts%20the%20rise%20of%20AI-powered%20developer%20tools%20automating%2080%25%20of%20routine%20coding",
+        "engagement": {
+          "likes": 3200,
+          "comments": 560
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 4,
+      "title": "content strategy without ops is just blogging",
+      "hook": "your content strategy is broken because it's disconnected from your sales data.",
+      "body": "your content strategy is broken because it's disconnected from your sales data.\n\ni write content that feeds my outbound. literally. not metaphorically.\n\nmy daily cron pulls SEO keyword gaps, cross-references them against my ICP's job titles in Attio, and generates content briefs that target the exact problems my prospects google before they hit my site.\n\nthe pipeline:\n\n\ud83d\udd27 keyword scanner runs nightly against target verticals\n\ud83d\udd27 brief generator matches keywords to existing case studies\n\ud83d\udd27 draft gets written with voice rules from my soul file\n\ud83d\udd27 published post gets indexed and tracked in PostHog\n\ud83d\udd27 when a target account visits that post, Attio gets a signal\n\nso when my outbound sequence hits their inbox, i'm not cold. they already read something i wrote about their exact problem.\n\nmost content teams publish into the void and measure \"impressions.\" cool. my content triggers CRM events.\n\nthe gap between content marketing and content ops is whether your blog post can start a pipeline. if your CMS doesn't talk to your CRM, you're just journaling in public.\n\nconnect the systems. measure what converts, not what trends.",
+      "cta": "does your content actually connect to your pipeline, or is it running on a separate track?",
+      "tags": [
+        "content strategy",
+        "sales ops",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "Aja Frost",
+        "summary": "Outlines a content strategy playbook for B2B SaaS, focusing on aligning content with sales ops for higher conversion rates. Includes tactics for repurposing content across channels and measuring ROI. Highlights real-world examples from HubSpot's playbook.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Aja%20Frost%20Outlines%20a%20content%20strategy%20playbook%20for%20B2B%20SaaS%2C%20focusing%20on%20aligning%20content%20",
+        "engagement": {
+          "likes": 2500,
+          "comments": 210
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 5,
+      "title": "solo founder stack 2026",
+      "hook": "i run 4 live websites, 50+ AI skills, a CRM, and an outbound engine. no employees. no contractors. one monorepo.",
+      "body": "i run 4 live websites, 50+ AI skills, a CRM, and an outbound engine. no employees. no contractors. one monorepo.\n\nthe stack that makes this possible:\n\n\u2705 Next.js on Cloudflare (4 sites, one deploy pipeline)\n\u2705 Claude Code for all development (Opus on Max sub)\n\u2705 Qwen 2.5 14B on local Ollama for high-frequency crons (free)\n\u2705 Claude API for content generation\n\u2705 Attio for CRM\n\u2705 Clay for enrichment\n\u2705 SQLite for all local state and memory\n\u2705 launchd for scheduling (no external cron service)\n\u2705 two Macs... MacBook for dev, Mac Mini as always-on server\n\ntotal monthly cost for the AI layer: under $300. the Mac Mini runs 24/7 executing nightly jobs that would cost 10x on cloud infrastructure.\n\npeople ask how i compete with funded teams. i don't compete with them. i just don't have their overhead. no Slack channels to monitor. no standups. no quarterly planning theater.\n\ni ship every day because there's nobody to ask permission from.\n\nthe Pieter Levels model works. but the version nobody talks about is the infrastructure layer underneath. it's not just \"ship fast.\" it's \"build systems that ship for you while you sleep.\"",
+      "cta": "solo builders... what's the one tool you'd never give up?",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Pieter Levels",
+        "summary": "Pieter shares his journey as a solo founder building and shipping multiple products like Nomad List and Remote OK without VC funding. He emphasizes transparency in revenue figures, user growth, and development challenges while building in public. The post inspires other indie hackers to start small and iterate quickly.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shares%20his%20journey%20as%20a%20solo%20founder%20building%20and%20shipping%20multiple%20produ",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 6,
+      "title": "outbound personalization that isn't cringe",
+      "hook": "if your \"personalized\" cold email starts with \"i saw your company is hiring for...\" you're using the same prompt as 10,000 other senders.",
+      "body": "if your \"personalized\" cold email starts with \"i saw your company is hiring for...\" you're using the same prompt as 10,000 other senders.\n\nhiring signals are table stakes now. every outbound tool surfaces them. that's not personalization, that's pattern matching on public data.\n\nwhat actually works in my sequences:\n\n\u27a1\ufe0f pull their 10-K filing and extract the GTM language their CFO uses\n\u27a1\ufe0f check if they sponsor events in our vertical (conference sponsorship = budget exists)\n\u27a1\ufe0f look at their Glassdoor reviews for ops pain (\"outdated tools\" shows up more than you'd think)\n\u27a1\ufe0f cross-reference their tech stack against known integration gaps\n\nthen the email references something only someone who actually researched them would know. not \"i saw you're growing fast.\" more like \"noticed your team doubled but your rev ops headcount stayed flat. that math gets uncomfortable around month 4.\"\n\nthe Clay table that builds this takes 6 columns and 3 enrichment steps. i'll drop the full setup in the comments.\n\nreal personalization isn't adding a first name token. it's showing someone you understand their problem better than their own team does.\n\nno gatekeeping. full breakdown below.",
+      "cta": "comment \"PLAY\" and i'll walk you through the Clay setup.",
+      "tags": [
+        "outbound automation",
+        "sales ops",
+        "Clay"
+      ],
+      "inspired_by": {
+        "author": "Kyle Coleman",
+        "summary": "Explains outbound automation strategies using AI to personalize cold outreach without losing authenticity. Details tools and workflows for sales ops teams to scale prospecting. Shares metrics from 3x pipeline growth.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kyle%20Coleman%20Explains%20outbound%20automation%20strategies%20using%20AI%20to%20personalize%20cold%20outreach%20wi",
+        "engagement": {
+          "likes": 1800,
+          "comments": 145
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 7,
+      "title": "plumber to programmer",
+      "hook": "i was a plumber before i was an SDR before i was a GTM engineer before i started building AI systems.",
+      "body": "i was a plumber before i was an SDR before i was a GTM engineer before i started building AI systems.\n\nno CS degree. no bootcamp. no \"always been passionate about technology\" origin story.\n\ni learned to solder copper pipes before i learned to write Python. and honestly, the skills transfer more than you'd think.\n\nplumbing teaches you:\n- systems thinking (water flows downhill, data flows through pipelines)\n- debugging under pressure (a leak at 2am doesn't wait for Stack Overflow)\n- that elegant solutions use fewer fittings\n- that code you can't maintain is as useless as a joint you can't access\n\nthe career pivot wasn't one jump. it was a series of \"i can automate this\" moments. started with Excel macros for my SalesLoft sequences. then Python scripts. then Clay formulas. then full-stack apps.\n\nevery layer built on the one before it. the manual grind gave me context. the context told me what to automate. the automation taught me to code. the code taught me architecture.\n\nnobody's path is linear. the plumber who becomes a programmer brings something a CS grad doesn't... they know what the pipes actually look like before the abstraction layer.\n\nstill fix my own sinks though.",
+      "cta": "what's the most unexpected background that led you to your current role?",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "KP (Karthik Pattabiraman)",
+        "summary": "KP documents his pivot from Amazon engineer to solo founder, shipping ShipFa.st \u2013 a tool for developers to ship faster. He shares weekly updates on features, user feedback, and revenue in his building in public thread. Highlights the realities of solo product development and work-life balance.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20KP%20%28Karthik%20Pattabiraman%29%20KP%20documents%20his%20pivot%20from%20Amazon%20engineer%20to%20solo%20founder%2C%20shipping%20ShipFa.st%20",
+        "engagement": {
+          "likes": 4500,
+          "comments": 210
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 8,
+      "title": "rev ops alignment is a systems problem",
+      "hook": "sales, marketing, and CS alignment isn't a people problem. it's a data model problem.",
+      "body": "sales, marketing, and CS alignment isn't a people problem. it's a data model problem.\n\nif your sales team tracks leads in Salesforce, marketing measures MQLs in HubSpot, and CS logs tickets in Zendesk... you don't have a collaboration issue. you have three separate databases pretending to describe the same customer.\n\ni rebuilt my entire GTM data model in one CRM (Attio) with one enrichment layer (Clay) writing to one local database (SQLite via niobot.db).\n\none record per company. one enrichment waterfall. one scoring model. one timeline.\n\nwhen a blog post gets traffic from a target account, the same record updates that my outbound sequence references. when a prospect replies, the same record that content attribution reads.\n\nno \"syncing\" between systems. no reverse ETL. no middleware translating field names between platforms.\n\nmost rev ops problems are just... too many tools writing to too many databases with no shared schema. the fix isn't better alignment meetings. it's fewer systems with cleaner data.\n\nyou don't need a data warehouse. you need fewer places where data lives.\n\nsimplify the stack. the alignment follows.",
+      "cta": "how many systems does a single lead record touch in your stack?",
+      "tags": [
+        "revenue operations",
+        "GTM engineering",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Dan Tyre",
+        "summary": "Breaks down revenue operations as the backbone of GTM success, covering alignment between sales, marketing, and customer success. Provides actionable steps for ops leaders to reduce churn and accelerate ACV. References case studies from high-growth startups.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Dan%20Tyre%20Breaks%20down%20revenue%20operations%20as%20the%20backbone%20of%20GTM%20success%2C%20covering%20alignmen",
+        "engagement": {
+          "likes": 900,
+          "comments": 67
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 9,
+      "title": "scaling agents means scaling boring stuff",
+      "hook": "everyone's talking about multi-agent orchestration. nobody's talking about multi-agent logging.",
+      "body": "everyone's talking about multi-agent orchestration. nobody's talking about multi-agent logging.\n\ni run parallel Claude Code agents across my monorepo. they research, write code, generate content, scan for security issues. sometimes 4-5 running at once.\n\nthe hard part isn't getting them to run. it's knowing what they did.\n\nmy first version had no structured logging. agents would finish, output a result, and i'd have no idea what calls they made, what files they read, what decisions they made along the way. debugging was archaeology.\n\nnow every agent session writes to a handoff doc with:\n- what it was asked to do\n- what it actually did\n- what files it changed\n- what it couldn't resolve\n- what the next session should pick up\n\nthat's not sexy AI infrastructure. that's just... ops. the same ops principles that make any distributed system work. structured logs. state management. idempotent operations. graceful failure handling.\n\nthe Karpathy talk about scaling AI infrastructure resonated because he gets it. the model is the easy part. the infrastructure around the model is where production systems live or die.\n\nif your agent can't tell you what it did after it ran, it's not production-ready. it's a notebook cell.",
+      "cta": "what's your observability setup for AI workloads?",
+      "tags": [
+        "AI infrastructure",
+        "AI agents",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Andrej Karpathy",
+        "summary": "Explores the infrastructure challenges in scaling AI agents for production, drawing from experiences at Tesla and OpenAI. Advocates for robust vector databases and orchestration layers as key to AI infra. Shares a simple code snippet for agent handoff in developer workflows.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Explores%20the%20infrastructure%20challenges%20in%20scaling%20AI%20agents%20for%20production%2C%20draw",
+        "engagement": {
+          "likes": 4500,
+          "comments": 780
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 10,
+      "title": "shipping small beats shipping big",
+      "hook": "i shipped 47 features last month. none of them took more than a day.",
+      "body": "i shipped 47 features last month. none of them took more than a day.\n\nnot because they were trivial. because i scope ruthlessly.\n\nlast tuesday's list:\n- added PostHog tracking to landing page CTAs (2 hours)\n- built a Clay table for conference sponsor enrichment (3 hours)\n- fixed SSE reconnection bug in nio chat (4 hours)\n- generated 5 SEO-optimized blog posts from Substack drafts (1 hour, automated)\n\neach one was a complete, deployed, working thing by end of day. no feature branches sitting in review for a week. no \"phase 2\" that never comes.\n\nthe Daniel Vassallo model resonates. small bets. small products. small features. ship, measure, iterate.\n\nbut here's what i'd add to that framework... the ability to ship small requires infrastructure that supports small. if every deploy takes 45 minutes of CI/CD pipeline, you won't ship daily. if every change needs 3 approvals, you won't experiment.\n\nmy deploy is: build check, git push, Cloudflare picks it up. under 2 minutes from commit to live.\n\nthat's not cutting corners. that's removing friction so shipping stays cheap.\n\nwhen shipping is cheap, you ship more. when you ship more, you learn faster. when you learn faster, you win.",
+      "cta": "what's blocking you from shipping daily?",
+      "tags": [
+        "shipping products",
+        "solo developer",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Sahil Lavingia",
+        "summary": "Sahil reflects on pivoting from Pinterest to founding Gumroad as a solo-ish builder initially, now a platform for creators shipping digital products. He discusses transparent revenue sharing and lessons from scaling without heavy funding. Motivates others to build in public and embrace minimal viable teams.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sahil%20Lavingia%20Sahil%20reflects%20on%20pivoting%20from%20Pinterest%20to%20founding%20Gumroad%20as%20a%20solo-ish%20buil",
+        "engagement": {
+          "likes": 15000,
+          "comments": 600
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    }
+  ]
+}

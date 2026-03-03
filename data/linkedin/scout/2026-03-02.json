@@ -1,0 +1,278 @@
+{
+  "date": "2026-03-02",
+  "posts_found": 15,
+  "engine": "grok",
+  "scouted_at": "2026-03-02T14:00:41.391248+00:00",
+  "sources": [
+    {
+      "author": "Swyx",
+      "headline": "AI Researcher & Developer Advocate",
+      "post_summary": "Swyx discusses the evolution of AI agents, emphasizing multi-agent systems and their integration with developer workflows for enhanced automation. He shares insights on building reliable agentic pipelines using open-source tools. Highlights challenges in reliability and scaling for production use.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Swyx%20discusses%20the%20evolution%20of%20AI%20agents%2C%20emphasizing%20multi-agent%20systems%20and%20t",
+      "engagement": {
+        "likes": 12000,
+        "comments": 450
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "automation",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Andrej Karpathy",
+      "headline": "Founder at Eureka Labs, ex-OpenAI",
+      "post_summary": "Karpathy explores AI infrastructure needs for training and deploying agentic AI models at scale. He critiques current cloud providers and advocates for specialized hardware acceleration in developer tools. Shares a framework for evaluating infra stacks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Karpathy%20explores%20AI%20infrastructure%20needs%20for%20training%20and%20deploying%20agentic%20AI%20",
+      "engagement": {
+        "likes": 25000,
+        "comments": 800
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "AI agents",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Nat Friedman",
+      "headline": "Co-Founder at GitHub, Investor",
+      "post_summary": "Nat highlights trending automation tools powered by AI agents that are transforming developer productivity. He reviews recent launches in no-code/low-code platforms integrated with LLMs. Predicts massive adoption in enterprise dev teams.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nat%20Friedman%20Nat%20highlights%20trending%20automation%20tools%20powered%20by%20AI%20agents%20that%20are%20transform",
+      "engagement": {
+        "likes": 8000,
+        "comments": 300
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "AI agents",
+        "developer tools"
+      ]
+    },
+    {
+      "author": " Guillermo Rauch",
+      "headline": "CEO at Vercel",
+      "post_summary": "Rauch announces updates to Vercel's AI infrastructure, focusing on serverless deployment for AI agents and automation pipelines. Details performance benchmarks and integration with popular dev tools like Next.js. Emphasizes edge computing for low-latency agent responses.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20%20Guillermo%20Rauch%20Rauch%20announces%20updates%20to%20Vercel%27s%20AI%20infrastructure%2C%20focusing%20on%20serverless%20de",
+      "engagement": {
+        "likes": 15000,
+        "comments": 500
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "automation",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Addy Osmani",
+      "headline": "Engineering Leader at Google Chrome",
+      "post_summary": "Osmani dives into browser-based AI agents for web automation and developer tooling. He demos prototypes using WebGPU for local inference and shares code snippets for building custom agents. Discusses privacy implications and future standards.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Addy%20Osmani%20Osmani%20dives%20into%20browser-based%20AI%20agents%20for%20web%20automation%20and%20developer%20tooli",
+      "engagement": {
+        "likes": 6000,
+        "comments": 250
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI agents",
+        "developer tools",
+        "automation"
+      ]
+    },
+    {
+      "author": "Sami Rahman",
+      "headline": "Founder @ Overloop | Helping RevOps & GTM teams scale outbound with AI",
+      "post_summary": "Discusses building a GTM engineering function from scratch, focusing on integrating outbound automation tools to boost pipeline efficiency. Shares a framework for aligning sales ops with revenue operations for scalable growth. Emphasizes data-driven content strategy to personalize outbound at scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sami%20Rahman%20Discusses%20building%20a%20GTM%20engineering%20function%20from%20scratch%2C%20focusing%20on%20integrat",
+      "engagement": {
+        "likes": 1200,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Amy Volas",
+      "headline": "CEO @ Avenue Talent Partners | RevOps & Sales Leadership Expert",
+      "post_summary": "Explores the evolution of sales ops into revenue operations, highlighting key metrics and tools for outbound automation. Provides actionable advice on content strategy to support GTM motions. Warns against common pitfalls in scaling RevOps teams.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Amy%20Volas%20Explores%20the%20evolution%20of%20sales%20ops%20into%20revenue%20operations%2C%20highlighting%20key%20me",
+      "engagement": {
+        "likes": 850,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales ops",
+        "revenue operations",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "Head of GTM @ Apollo.io | Building scalable revenue engines",
+      "post_summary": "Breaks down outbound automation strategies using AI for high-volume prospecting without sacrificing quality. Ties it to content strategy for better engagement rates in sales ops. Includes case study on RevOps transformation yielding 3x pipeline growth.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kyle%20Coleman%20Breaks%20down%20outbound%20automation%20strategies%20using%20AI%20for%20high-volume%20prospecting%20",
+      "engagement": {
+        "likes": 2100,
+        "comments": 145
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "content strategy",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Justine Moss",
+      "headline": "RevOps Leader | GTM Strategy Consultant",
+      "post_summary": "Outlines a content strategy playbook for revenue operations teams to fuel GTM initiatives. Covers automation in outbound workflows and sales ops optimization. Shares templates for aligning content with sales motions.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Justine%20Moss%20Outlines%20a%20content%20strategy%20playbook%20for%20revenue%20operations%20teams%20to%20fuel%20GTM%20in",
+      "engagement": {
+        "likes": 650,
+        "comments": 42
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "content strategy",
+        "revenue operations",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "Dan Disney",
+      "headline": "Sales Leadership Coach | Revenue Operations Advocate",
+      "post_summary": "Details how sales ops can leverage outbound automation to hit revenue targets faster. Discusses GTM engineering principles for ops teams and integrating content strategy. Features real-world examples from enterprise RevOps implementations.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Dan%20Disney%20Details%20how%20sales%20ops%20can%20leverage%20outbound%20automation%20to%20hit%20revenue%20targets%20fa",
+      "engagement": {
+        "likes": 950,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales ops",
+        "outbound automation",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Indie Hacker & Founder of Nomad List, Remote OK",
+      "post_summary": "Pieter shares his journey as a solo developer building and shipping multiple products like Nomad List and Remote OK without funding. He emphasizes the power of building in public, iterating based on user feedback, and achieving profitability quickly. His post inspires others to start small and ship fast.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shares%20his%20journey%20as%20a%20solo%20developer%20building%20and%20shipping%20multiple%20pro",
+      "engagement": {
+        "likes": 12000,
+        "comments": 450
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "building in public",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Serial Entrepreneur & Author of The Embedded Entrepreneur",
+      "post_summary": "Arvid recounts bootstrapping his SaaS product FeedbackPanda as a solo founder, from idea to $100k ARR. He details the challenges of shipping MVPs solo and building in public to gain early users. The post offers practical advice on audience-building before product launch.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Arvid%20recounts%20bootstrapping%20his%20SaaS%20product%20FeedbackPanda%20as%20a%20solo%20founder%2C%20f",
+      "engagement": {
+        "likes": 8500,
+        "comments": 320
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "bootstrapping",
+        "solo founder",
+        "shipping products"
+      ]
+    },
+    {
+      "author": "KP",
+      "headline": "Founder @ Superhuman | ex-CTO @ Pinterest",
+      "post_summary": "KP shares his career pivot from non-tech background into tech leadership, starting by building side projects publicly. He advises aspiring builders to ship imperfect products and document the process on LinkedIn for accountability and opportunities. The post garnered traction among career switchers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20KP%20KP%20shares%20his%20career%20pivot%20from%20non-tech%20background%20into%20tech%20leadership%2C%20starti",
+      "engagement": {
+        "likes": 15000,
+        "comments": 600
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "tech leadership"
+      ]
+    },
+    {
+      "author": "Daniel Vassallo",
+      "headline": "Ex-AWS | Indie Maker & Writer",
+      "post_summary": "Daniel discusses leaving a high-paying tech job to become a solo builder, shipping small products like his PDF ebook tool that generated $300k. He highlights the freedom of building in public and focusing on sustainable income over VC funding. Readers praised his transparent revenue updates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Daniel%20Vassallo%20Daniel%20discusses%20leaving%20a%20high-paying%20tech%20job%20to%20become%20a%20solo%20builder%2C%20shippi",
+      "engagement": {
+        "likes": 11000,
+        "comments": 400
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "career pivot",
+        "indie maker"
+      ]
+    },
+    {
+      "author": "Sahil Lavingia",
+      "headline": "Founder & CEO at Gumroad",
+      "post_summary": "Sahil reflects on pivoting his career to build Gumroad solo initially, shipping the product in public and growing it to millions in revenue. He stresses the importance of transparency in failures and wins to attract users and talent. The post motivates founders to embrace public building.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sahil%20Lavingia%20Sahil%20reflects%20on%20pivoting%20his%20career%20to%20build%20Gumroad%20solo%20initially%2C%20shipping%20",
+      "engagement": {
+        "likes": 9500,
+        "comments": 350
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "shipping products",
+        "building in public"
+      ]
+    }
+  ]
+}
