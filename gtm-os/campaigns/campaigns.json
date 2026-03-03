@@ -1,0 +1,14 @@
+{
+  "campaigns": [
+    {
+      "id": "2026-03-abm-v1",
+      "name": "ABM V1 - Series A SaaS",
+      "status": "building",
+      "segment": "series-a-saas",
+      "angles": ["page-is-the-pitch", "own-your-pipeline"],
+      "tools": ["exa", "apollo", "grok", "supabase", "attio", "lemlist", "maildoso"],
+      "start_date": null,
+      "created": "2026-03-03"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {
+      "id": "series-a-saas",
+      "name": "Series A SaaS",
+      "description": "B2B SaaS companies that recently raised Series A, building their first real sales motion",
+      "status": "active",
+      "account_count": 0,
+      "icp_fit": "primary",
+      "key_pain": "Need to prove sales efficiency to justify Series B",
+      "campaigns": ["2026-03-abm-v1"]
+    }
+  ]
+}

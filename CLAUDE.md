@@ -80,6 +80,16 @@ Substance requirement: every substantive claim needs at least 2 of 5 — specifi
 - Pattern vs. person test: critique architectures and approaches, never specific clients or named individuals.
 - Respect ecosystem protection rules in `skills/tier-1-voice-dna/safety-filters.md`.
 
+## GTM Operations
+
+The full GTM/ABM operation lives in `gtm-os/`. Self-contained folder with its own CLAUDE.md, tool docs, demand intelligence, campaign tracking, and symlinks to production scripts.
+
+- **Entry point:** `gtm-os/CLAUDE.md` - tool inventory, data flow, workflow rules
+- **Engine docs:** `gtm-os/engine/` - one file per tool (Attio, Apollo, Exa, Supabase, etc.)
+- **Scripts:** `gtm-os/scripts/` symlinks to `scripts/abm/` (production pipeline stays put)
+- **Partners:** `gtm-os/partners/` symlinks to `clients/partner/`
+- **Demo skeleton:** `gtm-os/.claude/reference/gtm-os-skeleton/` - stripped version for clients
+
 ## Key References (Don't Duplicate — Read These)
 
 | Doc | Purpose |
@@ -90,6 +100,7 @@ Substance requirement: every substantive claim needs at least 2 of 5 — specifi
 | `skills/tier-1-voice-dna/method.md` | Recursive Drift methodology |
 | `docs/ARCHITECTURE.md` | System architecture, machine topology, cron pipeline |
 | `docs/MACHINE-SETUP.md` | MacBook vs. Mac Mini roles |
+| `gtm-os/CLAUDE.md` | GTM operations - tool inventory, data flow, rules |
 
 ## Machine Context
 

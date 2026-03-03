@@ -6,6 +6,7 @@ description: Non-technical reference doc for the full ABM pipeline motion. What 
 # ABM Pipeline - The Full Motion
 
 > Non-technical overview. For code-level runbook, see `scripts/abm/README.md`.
+> For full GTM context (tools, demand, messaging, campaigns), see `gtm-os/CLAUDE.md`.
 > Last updated: 2026-03-01
 
 ## What We Built

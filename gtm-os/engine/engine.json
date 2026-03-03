@@ -1,0 +1,105 @@
+{
+  "tables": {
+    "accounts": {
+      "columns": {
+        "id": "serial PK",
+        "name": "text",
+        "domain": "text",
+        "exa_research": "jsonb",
+        "icp_score": "integer",
+        "source": "text",
+        "stage": "text",
+        "outreach_status": "text",
+        "industry": "text",
+        "size": "text",
+        "geography": "text",
+        "apollo_id": "text",
+        "employee_count": "text",
+        "tech_stack": "text",
+        "gap_analysis": "text",
+        "funding": "text"
+      }
+    },
+    "contacts": {
+      "columns": {
+        "id": "serial PK",
+        "account_id": "integer FK accounts",
+        "first_name": "text",
+        "last_name": "text",
+        "email": "text",
+        "title": "text",
+        "linkedin_url": "text",
+        "vibe": "text",
+        "is_primary": "boolean",
+        "apollo_id": "text",
+        "persona": "text",
+        "lemlist_lead_id": "text"
+      }
+    },
+    "landing_pages": {
+      "columns": {
+        "slug": "text PK",
+        "url": "text",
+        "page_data": "jsonb",
+        "template": "text",
+        "status": "text",
+        "depersonalized": "boolean",
+        "deprecated": "boolean",
+        "account_id": "integer FK accounts",
+        "sent_at": "timestamp",
+        "expires_at": "timestamp"
+      }
+    },
+    "email_sends": {
+      "columns": {
+        "id": "serial PK",
+        "contact_id": "integer FK contacts",
+        "landing_page_slug": "text FK landing_pages",
+        "sent_at": "timestamp",
+        "template": "text",
+        "status": "text",
+        "from_email": "text"
+      }
+    },
+    "email_templates": {
+      "columns": {
+        "id": "serial PK",
+        "name": "text",
+        "subject": "text",
+        "body": "text",
+        "campaign_id": "text",
+        "touch_number": "integer"
+      }
+    },
+    "page_views": { "note": "PostHog event sink" },
+    "activities": { "note": "Activity log (unused)" },
+    "deals": { "note": "Deal tracking (unused)" }
+  },
+  "tools": {
+    "exa": { "role": "Discovery + deep research", "status": "active", "mcp": true },
+    "apollo": { "role": "Contact enrichment", "status": "active", "mcp": true },
+    "grok": { "role": "AI copy generation", "status": "active", "mcp": false },
+    "supabase": { "role": "System of record (warehouse)", "status": "active", "mcp": false },
+    "attio": { "role": "Human-facing CRM (workbench)", "status": "active", "mcp": true },
+    "lemlist": { "role": "Campaign sequencing + warmup", "status": "active", "mcp": true },
+    "maildoso": { "role": "Sending infrastructure", "status": "active", "mcp": false },
+    "posthog": { "role": "Page view analytics", "status": "active", "mcp": true },
+    "firecrawl": { "role": "Website scraping", "status": "active", "mcp": false },
+    "clay": { "role": "Enrichment waterfalls", "status": "planned", "mcp": false },
+    "hubspot": { "role": "CRM migration path", "status": "planned", "mcp": true },
+    "instantly": { "role": "Outbound at scale", "status": "planned", "mcp": false },
+    "prospeo": { "role": "Email verification", "status": "planned", "mcp": false },
+    "heyreach": { "role": "LinkedIn automation", "status": "planned", "mcp": false },
+    "blitz": { "role": "Blitz API", "status": "planned", "mcp": false }
+  },
+  "flow": [
+    { "step": 1, "name": "research", "tool": "exa", "output": "accounts.exa_research" },
+    { "step": 2, "name": "prospect", "tool": "apollo", "output": "contacts" },
+    { "step": 3, "name": "generate", "tool": "exa+grok", "output": "landing_pages.page_data" },
+    { "step": 4, "name": "sync", "tool": "attio", "output": "CRM records" },
+    { "step": 5, "name": "depersonalize", "tool": "supabase", "output": "TTL enforcement" },
+    { "step": 6, "name": "outreach", "tool": "lemlist+maildoso", "output": "email_sends" },
+    { "step": 7, "name": "replies", "tool": "imap", "output": "status updates" },
+    { "step": 8, "name": "analytics", "tool": "posthog", "output": "page_views" }
+  ]
+}

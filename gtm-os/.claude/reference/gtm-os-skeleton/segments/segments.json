@@ -1,0 +1,14 @@
+{
+  "segments": [
+    {
+      "id": "example-segment",
+      "name": "Example Segment",
+      "description": "Fill in your primary target segment",
+      "status": "draft",
+      "account_count": 0,
+      "icp_fit": "primary",
+      "key_pain": "Fill in the core pain point",
+      "campaigns": []
+    }
+  ]
+}

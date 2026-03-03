@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "attio": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/attio-mcp-server"],
+      "env": {
+        "ATTIO_API_TOKEN": "YOUR_ATTIO_API_TOKEN"
+      }
+    },
+    "apollo": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/apollo-mcp-server"],
+      "env": {
+        "APOLLO_API_KEY": "YOUR_APOLLO_API_KEY"
+      }
+    },
+    "exa": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/exa-mcp-server"],
+      "env": {
+        "EXA_API_KEY": "YOUR_EXA_API_KEY"
+      }
+    },
+    "posthog": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/posthog-mcp-server"],
+      "env": {
+        "POSTHOG_API_KEY": "YOUR_POSTHOG_API_KEY",
+        "POSTHOG_PROJECT_ID": "YOUR_PROJECT_ID"
+      }
+    },
+    "lemlist": {
+      "command": "npx",
+      "args": ["-y", "@anthropic/lemlist-mcp-server"],
+      "env": {
+        "LEMLIST_API_KEY": "YOUR_LEMLIST_API_KEY"
+      }
+    }
+  }
+}
