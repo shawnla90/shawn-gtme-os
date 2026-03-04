@@ -435,3 +435,16 @@ html {
 .scroll-indicator {
   animation: bounce-down 2s ease-in-out infinite;
 }
+
+/* === Nio avatar glow (follows visible pixels via drop-shadow) === */
+@keyframes nio-glow-breathe {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(78,195,115,0.4)); }
+  50% { filter: drop-shadow(0 0 18px rgba(78,195,115,0.7)); }
+}
+
+/* Hide Nio avatar on small screens where there's no room left of chat */
+@media (max-width: 700px) {
+  .nio-avatar-container {
+    display: none !important;
+  }
+}
