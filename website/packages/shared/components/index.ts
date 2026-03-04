@@ -1,4 +1,6 @@
 export { AvatarBadge } from './AvatarBadge'
+export { ChatWidget } from './ChatWidget'
+export type { ChatWidgetProps } from './ChatWidget'
 export { BreadcrumbSchema } from './BreadcrumbSchema'
 export { TerminalChrome } from './TerminalChrome'
 export { Navigation } from './Navigation'

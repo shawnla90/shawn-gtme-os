@@ -43,6 +43,8 @@ import {
 import { AntiSlopReel } from './AntiSlopReel';
 import { AntiSlopReel60 } from './AntiSlopReel60';
 import { FPS_SLOP, SLOP_TOTAL_FRAMES, SLOP_60_TOTAL_FRAMES } from './lib/timing-antislop';
+import { RoiComparisonVideo } from './RoiComparisonVideo';
+import { FPS_ROI, ROI_TOTAL_FRAMES } from './lib/timing-roi';
 
 export const Root: React.FC = () => {
   return (
@@ -425,6 +427,26 @@ export const Root: React.FC = () => {
         fps={CLAUDE_MOBILE_FPS}
         width={1200}
         height={628}
+      />
+
+      {/* ── ROI Comparison (1920×1080 landscape + 1080×1350 LinkedIn) ── */}
+
+      <Composition
+        id="RoiComparison"
+        component={RoiComparisonVideo}
+        durationInFrames={ROI_TOTAL_FRAMES}
+        fps={FPS_ROI}
+        width={PRESETS.landscape.width}
+        height={PRESETS.landscape.height}
+      />
+
+      <Composition
+        id="RoiComparisonLinkedIn"
+        component={RoiComparisonVideo}
+        durationInFrames={ROI_TOTAL_FRAMES}
+        fps={FPS_ROI}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
       />
 
       {/* ── V1 Compositions (60s, silent — kept for reference) ── */}

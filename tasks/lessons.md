@@ -6,6 +6,14 @@
 
 ---
 
+## 2026-03-03: Shared package dependency management
+- **Never add heavy SDK packages (`ai`, `@ai-sdk/react`) as direct dependencies in the shared package.** They corrupt the lockfile and break Tailwind v4 CSS generation across all apps. Use peerDependencies instead.
+- **Always check CSS renders visually after dependency changes**, not just that the build passes. A clean build does not mean the site looks right.
+- **Tailwind v4 auto-content detection doesn't scan monorepo shared packages.** Use inline styles for shared components that need to work across all apps.
+- **After `npm install` changes, verify the site visually before moving on.** Don't trust build-pass alone.
+
+---
+
 ## 2026-02-28: Attio MCP parameter names vary by tool
 
 **Context:** `update_record` uses `record_data` (not `attributes`). `create_note` uses `resource_type` + `record_id` (not `parent_object` + `parent_record_id`). Each MCP tool has its own param names — always check `ToolSearch` before calling.
@@ -35,6 +43,18 @@
 **Context:** We guessed `jesse@clearcoveadvisors.com` based on company name, but Google Calendar sync showed the real email was `jesse@sagemontadvisors.com`. The person had a prior affiliation.
 
 **Rule:** Before creating contact records, check if Google Calendar or Gmail sync has already captured the email. Attio auto-syncs from connected accounts. Don't assume `firstname@companydomain.com` — always verify against synced data first.
+
+## 2026-03-03: Anti-slop generation failures in blog content
+
+**Context:** Blog post "input, output, ownership" passed generation with 4+ anti-slop violations that should have been caught. Narrator setups ("here's what most people get wrong"), triple parallel sentences ("the infrastructure is mine. the brand is mine. the compounding is mine."), artificial drama setups ("something weird happened after"), and false dichotomy framing ("it's not about X, it's about Y").
+
+**Rule:** Before finalizing ANY content, run explicit validation pass:
+1. Scan for "here's what" / "here's where" / "here's the thing" / "here's why" openers. Cut all.
+2. Scan for 3+ consecutive sentences with the same structure. Collapse to 1-2.
+3. Scan for "something [adjective] happened" setups. Replace with the actual event.
+4. Scan for "it's not X, it's Y" / "it's not about X, it's about Y". Delete the "not X" portion, just state Y.
+5. Scan for "this is the part where" / "this is where" / "and that's when" framing. Delete entirely.
+If catching 3+ patterns, the generation approach needs tightening, not just the validation.
 
 ## 2026-03-02: Attio REST API requires all fields for attribute creation
 

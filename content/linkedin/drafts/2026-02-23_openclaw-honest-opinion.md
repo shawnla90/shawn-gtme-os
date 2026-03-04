@@ -8,7 +8,7 @@ comment_thread: blog link + architecture details
 ---
 
 after using openclaw for a week. honest opinion. total waste of time.
-
+ y
 I was paying $50/day in API costs to run my AI agent through a hosted wrapper.
 
 then I realized I was already paying for unlimited access.

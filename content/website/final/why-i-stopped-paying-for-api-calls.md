@@ -10,7 +10,7 @@ two weeks ago I started building ShawnOS. the repo. a monorepo with three Next.j
 
 a week ago I stood up Nio on OpenClaw. OpenClaw is GPT-based. the idea was a separate chat system for my AI agent. Nio would run cron jobs, write blog posts, manage content pipelines, update dashboards. real infrastructure, not a toy.
 
-and it worked. but the API costs added up fast. Sonnet for daily ops. Opus for anything that needed real thinking. $50 to $200 per month depending on how much I was building. and I was always building.
+and it worked. but the API costs added up fast. Sonnet for daily ops. Opus for anything that needed real thinking. $50 to $100 a day depending on how much I was building. and I was always building. it was absolute madness.
 
 I routed high-frequency crons to a local Ollama model (Qwen 2.5 14B). free, fast, good enough for commit tracking and status updates. but for anything that required actual intelligence... you need Claude.
 
@@ -18,7 +18,7 @@ then the real insight hit.
 
 ## the repo is the magic
 
-I was running two separate systems. OpenClaw for chat. the repo for everything else. but the models I actually depend on — Opus and Sonnet — they already speak with my repo. they amplify my voice and DNA in a way GPT can't. they read my soul files, my commit history, my content pipeline. they don't just respond. they compound.
+I was running two separate systems. OpenClaw for chat. the repo for everything else. but the models I actually depend on. Opus and Sonnet. they already speak with my repo. they amplify my voice and DNA in a way GPT can't. they read my soul files, my commit history, my content pipeline. they don't just respond. they compound.
 
 in another world, OpenClaw would have been built on Anthropic instead of GPT. but it wasn't. and that gap made the answer obvious: you don't need two separate systems. the repo IS the system.
 
@@ -52,7 +52,7 @@ which means adding a new agent is just writing a new markdown file.
 
 one CLI. different soul files. different personalities. separate sessions.
 
-that's what ShawnOS Chat became. a multi-agent platform where each agent has its own personality file, accent color, bubble colors, and isolated session state. switch between agents in the UI. each one picks up where they left off.
+that's what ShawnOS Chat is building towards. a multi-agent platform where each agent has its own personality file, accent color, bubble colors, and isolated session state. switch between agents in the UI. each one picks up where they left off.
 
 Nio handles ops and infrastructure. an Architect agent handles system design. a Writer agent handles content in my voice. same Claude CLI underneath. same zero marginal cost.
 

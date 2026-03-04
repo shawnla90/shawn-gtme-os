@@ -7,7 +7,7 @@ type: "post"
 
 two weeks ago I started building ShawnOS. a monorepo, three websites, agent skills, content pipelines. the operating system for a one-person GTM engine.
 
-a week ago I stood up my AI agent Nio on OpenClaw. OpenClaw is GPT-based. separate system from the repo. it worked. but I was burning $50-200/month on API calls and running two disconnected systems.
+a week ago I stood up my AI agent Nio on OpenClaw. OpenClaw is GPT-based. separate system from the repo. it worked. but I was burning $50-100/day on API calls and running two disconnected systems.
 
 then the insight hit: the repo is the magic. you don't need two systems.
 

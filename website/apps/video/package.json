@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "remotion studio src/index.ts",
+    "dev": "PORT=3005 remotion studio src/index.ts",
     "render": "remotion render src/index.ts LeadMagnetV3 out/lead-magnet-v3-linkedin.mp4",
     "render:linkedin": "remotion render src/index.ts LeadMagnetV3 out/lead-magnet-v3-linkedin.mp4",
     "render:reels": "remotion render src/index.ts LeadMagnetV3Reels out/lead-magnet-v3-reels.mp4",
@@ -30,6 +30,8 @@
     "render:antislop60-linkedin": "remotion render src/index.ts AntiSlop60LinkedIn out/antislop60-linkedin.mp4",
     "render:antislop60-landscape": "remotion render src/index.ts AntiSlop60Landscape out/antislop60-landscape.mp4",
     "render:antislop60-all": "npm run render:antislop60-tiktok && npm run render:antislop60-linkedin && npm run render:antislop60-landscape",
+    "render:roi": "remotion render src/index.ts RoiComparison out/roi-comparison.mp4",
+    "render:roi:linkedin": "remotion render src/index.ts RoiComparisonLinkedIn out/roi-comparison-linkedin.mp4",
     "build": "echo 'Video app — use render scripts instead'"
   },
   "dependencies": {

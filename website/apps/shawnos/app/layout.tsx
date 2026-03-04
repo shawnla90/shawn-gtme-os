@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
 import { CursorGlow } from '@shawnos/shared/components'
+import { NioChat } from './NioChat'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -181,6 +182,7 @@ export default function RootLayout({
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
         <FooterCredit />
+        <NioChat />
         <CursorGlow />
         <Analytics />
         <SpeedInsights />
