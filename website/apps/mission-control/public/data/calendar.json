@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-03T05:03:10.047Z",
+  "generated": "2026-03-04T05:03:20.771Z",
   "events": [
     {
-      "id": "commit-82ec8bd",
+      "id": "commit-175bda2",
+      "title": "chore: contentos optimizer - 1 improvements (2026-03-04)",
+      "type": "system",
+      "datetime": "2026-03-03T23:04:50-05:00",
+      "status": "completed",
+      "description": "chore: contentos optimizer - 1 improvements (2026-03-04)",
+      "metadata": {
+        "commitHash": "175bda2"
+      }
+    },
+    {
+      "id": "commit-f3394e3",
+      "title": "fix: restore contentos build-your-own page + revert vercel.j",
+      "type": "deployment",
+      "datetime": "2026-03-03T22:12:21-05:00",
+      "status": "completed",
+      "description": "fix: restore contentos build-your-own page + revert vercel.json hacks",
+      "metadata": {
+        "commitHash": "f3394e3"
+      }
+    },
+    {
+      "id": "commit-34ae03c",
+      "title": "fix: clear npm cache before install on Vercel to fix idealTr",
+      "type": "deployment",
+      "datetime": "2026-03-03T21:30:25-05:00",
+      "status": "completed",
+      "description": "fix: clear npm cache before install on Vercel to fix idealTree error",
+      "metadata": {
+        "commitHash": "34ae03c"
+      }
+    },
+    {
+      "id": "commit-1ad211f",
+      "title": "feat: Nio chat widget for shawnos.ai + ROI video components ",
+      "type": "milestone",
+      "datetime": "2026-03-03T21:17:16-05:00",
+      "status": "completed",
+      "description": "feat: Nio chat widget for shawnos.ai + ROI video components + blog post",
+      "metadata": {
+        "commitHash": "1ad211f"
+      }
+    },
+    {
+      "id": "commit-dda1640",
+      "title": "feat: GTM OS database reset infrastructure + YC segment + Pr",
+      "type": "milestone",
+      "datetime": "2026-03-03T19:56:29-05:00",
+      "status": "completed",
+      "description": "feat: GTM OS database reset infrastructure + YC segment + Prospeo integration",
+      "metadata": {
+        "commitHash": "dda1640"
+      }
+    },
+    {
+      "id": "commit-7b839d5",
+      "title": "feat: add gtm-os/ structured repo for ABM operations",
+      "type": "milestone",
+      "datetime": "2026-03-03T16:27:06-05:00",
+      "status": "completed",
+      "description": "feat: add gtm-os/ structured repo for ABM operations",
+      "metadata": {
+        "commitHash": "7b839d5"
+      }
+    },
+    {
+      "id": "commit-540762e",
+      "title": "feat: daily LinkedIn posts 2026-03-03",
+      "type": "milestone",
+      "datetime": "2026-03-03T09:02:46-05:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-03",
+      "metadata": {
+        "commitHash": "540762e"
+      }
+    },
+    {
+      "id": "commit-8e8f8ae",
+      "title": "feat: nio.log 2026-03-03 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-03T08:02:05-05:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-03 — automated daily post",
+      "metadata": {
+        "commitHash": "8e8f8ae"
+      }
+    },
+    {
+      "id": "commit-1469eeb",
+      "title": "chore: daily tracker scan 2026-03-02",
+      "type": "system",
+      "datetime": "2026-03-03T00:03:10-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-03-02",
+      "metadata": {
+        "commitHash": "1469eeb"
+      }
+    },
+    {
+      "id": "commit-d557a3f",
       "title": "chore: contentos optimizer - 1 improvements (2026-03-03)",
       "type": "system",
       "datetime": "2026-03-02T23:05:46-05:00",
       "status": "completed",
       "description": "chore: contentos optimizer - 1 improvements (2026-03-03)",
       "metadata": {
-        "commitHash": "82ec8bd"
+        "commitHash": "d557a3f"
       }
     },
     {
-      "id": "commit-97b642f",
+      "id": "commit-83637cf",
       "title": "feat: Content OS multi-color front-end overhaul — Satoshi fo",
       "type": "milestone",
       "datetime": "2026-03-02T17:20:28-05:00",
       "status": "completed",
       "description": "feat: Content OS multi-color front-end overhaul — Satoshi font + platform color system",
       "metadata": {
-        "commitHash": "97b642f"
+        "commitHash": "83637cf"
       }
     },
     {
-      "id": "commit-252f192",
+      "id": "commit-ca6ed51",
       "title": "feat: nio.log 2026-03-02 — automated daily post",
       "type": "milestone",
       "datetime": "2026-03-02T08:01:48-05:00",
       "status": "completed",
       "description": "feat: nio.log 2026-03-02 — automated daily post",
       "metadata": {
-        "commitHash": "252f192"
+        "commitHash": "ca6ed51"
       }
     },
     {
-      "id": "commit-f91cea1",
+      "id": "commit-67db655",
       "title": "feat: Phase 3 contentos SEO pages + hot pink color + cross-s",
       "type": "milestone",
       "datetime": "2026-03-02T03:09:25-05:00",
       "status": "completed",
       "description": "feat: Phase 3 contentos SEO pages + hot pink color + cross-site redirects",
       "metadata": {
-        "commitHash": "f91cea1"
+        "commitHash": "67db655"
       }
     },
     {
-      "id": "commit-c92290b",
+      "id": "commit-2811788",
       "title": "feat: 10 SEO-targeted how-to pages for thegtmos.ai Phase 2",
       "type": "milestone",
       "datetime": "2026-03-02T02:32:09-05:00",
       "status": "completed",
       "description": "feat: 10 SEO-targeted how-to pages for thegtmos.ai Phase 2",
       "metadata": {
-        "commitHash": "c92290b"
+        "commitHash": "2811788"
       }
     },
     {
-      "id": "commit-666c125",
+      "id": "commit-3a6e25a",
       "title": "feat: 10 SEO-targeted how-to pages for shawnos.ai Phase 1",
       "type": "milestone",
       "datetime": "2026-03-02T02:21:24-05:00",
       "status": "completed",
       "description": "feat: 10 SEO-targeted how-to pages for shawnos.ai Phase 1",
       "metadata": {
-        "commitHash": "666c125"
-      }
-    },
-    {
-      "id": "commit-a929193",
-      "title": "feat: SEO foundation — domain health, DR playbook, content g",
-      "type": "milestone",
-      "datetime": "2026-03-02T01:46:28-05:00",
-      "status": "completed",
-      "description": "feat: SEO foundation — domain health, DR playbook, content gap pages",
-      "metadata": {
-        "commitHash": "a929193"
-      }
-    },
-    {
-      "id": "commit-16ec2a6",
-      "title": "feat: Clear Cove Partners landing page + deal system setup",
-      "type": "milestone",
-      "datetime": "2026-03-02T00:40:48-05:00",
-      "status": "completed",
-      "description": "feat: Clear Cove Partners landing page + deal system setup",
-      "metadata": {
-        "commitHash": "16ec2a6"
-      }
-    },
-    {
-      "id": "commit-f0ff19b",
-      "title": "feat: /draft-email skill + Steve's contact enrichment sessio",
-      "type": "milestone",
-      "datetime": "2026-03-02T00:18:29-05:00",
-      "status": "completed",
-      "description": "feat: /draft-email skill + Steve's contact enrichment session",
-      "metadata": {
-        "commitHash": "f0ff19b"
-      }
-    },
-    {
-      "id": "commit-9afbd5a",
-      "title": "chore: daily tracker scan 2026-03-01",
-      "type": "system",
-      "datetime": "2026-03-02T00:00:13-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-03-01",
-      "metadata": {
-        "commitHash": "9afbd5a"
-      }
-    },
-    {
-      "id": "commit-babe925",
-      "title": "refactor: ABM pipeline — shared config, name validation, sta",
-      "type": "system",
-      "datetime": "2026-03-01T23:04:07-05:00",
-      "status": "completed",
-      "description": "refactor: ABM pipeline — shared config, name validation, standardized logging",
-      "metadata": {
-        "commitHash": "babe925"
-      }
-    },
-    {
-      "id": "commit-d470741",
-      "title": "feat: navigation dropdown groups — Wiki + More menus for sha",
-      "type": "milestone",
-      "datetime": "2026-03-01T23:00:14-05:00",
-      "status": "completed",
-      "description": "feat: navigation dropdown groups — Wiki + More menus for shawnos.ai",
-      "metadata": {
-        "commitHash": "d470741"
-      }
-    },
-    {
-      "id": "commit-93b86e7",
-      "title": "fix: correct Apple Podcasts + Spotify links for Outbound Wiz",
-      "type": "deployment",
-      "datetime": "2026-03-01T22:38:07-05:00",
-      "status": "completed",
-      "description": "fix: correct Apple Podcasts + Spotify links for Outbound Wizards episode",
-      "metadata": {
-        "commitHash": "93b86e7"
-      }
-    },
-    {
-      "id": "commit-06e5246",
-      "title": "feat: /media page — podcast appearances, homepage strip, SEO",
-      "type": "milestone",
-      "datetime": "2026-03-01T21:57:05-05:00",
-      "status": "completed",
-      "description": "feat: /media page — podcast appearances, homepage strip, SEO + JSON-LD",
-      "metadata": {
-        "commitHash": "06e5246"
-      }
-    },
-    {
-      "id": "commit-d2a851e",
-      "title": "fix: Attio sync — proper person linking, preview exclusion, ",
-      "type": "deployment",
-      "datetime": "2026-03-01T21:46:51-05:00",
-      "status": "completed",
-      "description": "fix: Attio sync — proper person linking, preview exclusion, phantom cleanup",
-      "metadata": {
-        "commitHash": "d2a851e"
+        "commitHash": "3a6e25a"
       }
     }
   ],
