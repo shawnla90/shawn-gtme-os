@@ -1,39 +1,24 @@
 "use client"
 
-import { useState, useRef, useCallback, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { ChatWidget } from "@shawnos/shared/components"
 
-const VIDEO_SRC = "/avatars/nio-entrance.mp4"
 const GIF_SRC = "/avatars/nio-idle.apng"
-const ENTRANCE_KEY = "nio-entrance-played"
+const AVATAR_SIZE = 160 // half of original 320
 
 export function NioChat() {
-  const [entranceDone, setEntranceDone] = useState(false)
-  const [fading, setFading] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const [avatarVisible, setAvatarVisible] = useState(false)
 
+  // Slide avatar in after chat opens
   useEffect(() => {
-    if (sessionStorage.getItem(ENTRANCE_KEY) === "1") {
-      setEntranceDone(true)
+    if (!isOpen) {
+      setAvatarVisible(false)
+      return
     }
-  }, [])
-
-  const finishEntrance = useCallback(() => {
-    if (fading) return
-    setFading(true)
-    sessionStorage.setItem(ENTRANCE_KEY, "1")
-    setTimeout(() => {
-      setEntranceDone(true)
-    }, 500)
-  }, [fading])
-
-  // Fallback timeout
-  useEffect(() => {
-    if (!isOpen || entranceDone) return
-    const timer = setTimeout(finishEntrance, 7000)
+    const timer = setTimeout(() => setAvatarVisible(true), 200)
     return () => clearTimeout(timer)
-  }, [isOpen, entranceDone, finishEntrance])
+  }, [isOpen])
 
   // Bubble — not open yet
   if (!isOpen) {
@@ -60,53 +45,10 @@ export function NioChat() {
     )
   }
 
-  // Entrance: full-panel video plays once before chat appears
-  if (!entranceDone) {
-    return (
-      <div
-        style={{
-          position: "fixed", bottom: 0, right: 0, zIndex: 9999,
-          width: "100%", maxWidth: 380,
-          height: "min(520px, 100dvh)",
-          borderRadius: "16px 16px 0 0",
-          overflow: "hidden",
-          background: "var(--canvas, #0D1117)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          opacity: fading ? 0 : 1,
-          transition: "opacity 500ms ease-out",
-          boxShadow: "0 8px 40px rgba(0,0,0,0.5)",
-        }}
-      >
-        <video
-          ref={videoRef}
-          src={VIDEO_SRC}
-          autoPlay muted playsInline
-          onEnded={finishEntrance}
-          style={{
-            width: "100%", height: "100%",
-            objectFit: "contain",
-            mixBlendMode: "lighten",
-          }}
-        />
-        <button
-          onClick={finishEntrance}
-          style={{
-            position: "absolute", bottom: 16, right: 16,
-            fontSize: 11, color: "#8B949E",
-            background: "none", border: "none", cursor: "pointer",
-            fontFamily: "var(--font-mono, monospace)", opacity: 0.5,
-          }}
-        >
-          skip
-        </button>
-      </div>
-    )
-  }
-
-  // Chat open + entrance done: Nio stands to the left, chat on the right
+  // Chat open: avatar slides to the left, chat on the right
   return (
     <>
-      {/* Nio avatar — fixed to the left of the chat panel, no clipping */}
+      {/* Nio avatar — slides in from right to left of chat panel */}
       <div
         style={{
           position: "fixed",
@@ -114,6 +56,9 @@ export function NioChat() {
           right: 380,
           zIndex: 9998,
           pointerEvents: "none",
+          transform: avatarVisible ? "translateX(0)" : "translateX(100px)",
+          opacity: avatarVisible ? 1 : 0,
+          transition: "transform 0.5s ease-out, opacity 0.5s ease-out",
         }}
         className="nio-avatar-container"
       >
@@ -122,8 +67,8 @@ export function NioChat() {
           src={GIF_SRC}
           alt="Nio"
           style={{
-            width: 320,
-            height: 320,
+            width: AVATAR_SIZE,
+            height: AVATAR_SIZE,
             display: "block",
             animation: "nio-glow-breathe 2s ease-in-out infinite",
           }}
