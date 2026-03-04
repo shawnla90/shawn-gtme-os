@@ -1,0 +1,240 @@
+{
+  "date": "2026-03-04",
+  "generated_count": 10,
+  "avg_anti_slop_score": 100.0,
+  "generation_time_seconds": 113.9,
+  "engine": "claude-cli-opus",
+  "generated_at": "2026-03-04T14:02:33.055264+00:00",
+  "posts": [
+    {
+      "id": 1,
+      "title": "AI agents are the new CI/CD",
+      "hook": "CI/CD didn't replace developers. It replaced the 45 minutes you spent manually deploying every Friday afternoon.",
+      "body": "CI/CD didn't replace developers. It replaced the 45 minutes you spent manually deploying every Friday afternoon.\n\nAI agents are doing the same thing to GTM.\n\nI run 50+ AI skills across my monorepo. They don't replace me. They replace the repetitive loops I used to burn hours on.\n\nAccount research that took 30 minutes per prospect? Automated into a Clay + Exa enrichment flow that runs while I sleep.\n\nContent scheduling across 4 websites? A cron job on my Mac Mini handles it at midnight.\n\nLead scoring that lived in my head? Now it's a Python script that queries Apollo, scores against my ICP, and pushes qualified accounts to Attio.\n\nThe pattern is identical to what happened with CI/CD. Nobody argued Jenkins was replacing engineers. It was obviously infrastructure. But with AI agents, people keep framing it as replacement instead of what it actually is... tooling.\n\nThe companies winning right now aren't asking \"will AI replace my SDRs.\" They're asking \"what does my SDR do 40 times a day that a script could do better.\"\n\nThat's the question worth answering.",
+      "cta": "What's the most repetitive loop in your GTM workflow right now?",
+      "tags": [
+        "AI agents",
+        "GTM engineering",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Nat Friedman",
+        "summary": "Nat reflects on the explosion of AI agents in software development, comparing it to the rise of CI/CD pipelines. He discusses infrastructure bottlenecks and recommends tools like Ray for distributed agent training. Stresses the need for open-source automation frameworks.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nat%20Friedman%20Nat%20reflects%20on%20the%20explosion%20of%20AI%20agents%20in%20software%20development%2C%20comparing%20it",
+        "engagement": {
+          "likes": 15000,
+          "comments": 500
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 2,
+      "title": "SDRs make the best GTM engineers",
+      "hook": "I used to send 200+ cold emails a day from primary domains with no warmup on SalesLoft. No dedicated IP. No bounce protection. Just vibes and a quota.",
+      "body": "I used to send 200+ cold emails a day from primary domains with no warmup on SalesLoft. No dedicated IP. No bounce protection. Just vibes and a quota.\n\nThat experience is the reason I can build GTM infrastructure now.\n\nWhen I write a Clay enrichment table, I know what bad data looks like because I manually built buying committees in Salesforce for two years. When I set up domain rotation in Instantly, I understand deliverability because I burned domains firsthand.\n\nThe people building the best outbound automation aren't coming from engineering backgrounds. They're coming from the SDR floor. They know which parts of the workflow are soul-crushing busywork and which parts actually require human judgment.\n\nRevOps teams are hiring engineers to build pipelines they don't fully understand. Meanwhile, former SDRs who learned to code are building systems that actually reflect how outbound works in practice.\n\nThe gap isn't technical skill. It's context. You can teach an SDR Python in 6 months. You can't teach an engineer what it feels like to get ghosted on follow-up 47.",
+      "cta": "If you came up through sales and started building, I want to hear your story in the comments.",
+      "tags": [
+        "SDR",
+        "GTM engineering",
+        "career pivot"
+      ],
+      "inspired_by": {
+        "author": "Sami Rahman",
+        "summary": "Discusses building scalable GTM engines by integrating engineering with sales processes. Shares a framework for automating outbound at scale while maintaining personalization. Emphasizes data-driven iteration for revenue growth.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sami%20Rahman%20Discusses%20building%20scalable%20GTM%20engines%20by%20integrating%20engineering%20with%20sales%20pr",
+        "engagement": {
+          "likes": 1200,
+          "comments": 89
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 3,
+      "title": "Multi-agent systems in production",
+      "hook": "Everyone's talking about multi-agent systems. Most people running them in production will tell you the same thing... the hard part isn't the agents. It's the coordination.",
+      "body": "Everyone's talking about multi-agent systems. Most people running them in production will tell you the same thing... the hard part isn't the agents. It's the coordination.\n\nI run agent teams across my monorepo. Research agents, content agents, data enrichment agents. Each one works fine in isolation. The chaos starts when they need to share context.\n\nThree things I learned the hard way:\n\n1. Every agent needs a constraint file. Mine live in `.claude/teams/TEAM-CONSTRAINTS.md`. Without explicit boundaries, agents duplicate work or step on each other's output.\n\n2. Handoff protocols matter more than agent capability. I built a handoff system where each agent writes a context doc on exit so the next session picks up cleanly. No handoff = no continuity = wasted compute.\n\n3. Route before you spawn. I have a routing skill that decides whether a task needs a team, a subagent, or a single focused session. Most tasks don't need three agents. They need one agent with good context.\n\nThe multi-agent future is real. But it looks less like a swarm of autonomous bots and more like a well-organized engineering team with clear ownership and communication protocols.",
+      "cta": "What's your biggest coordination challenge running agents in production?",
+      "tags": [
+        "AI agents",
+        "multi-agent systems",
+        "infrastructure"
+      ],
+      "inspired_by": {
+        "author": "Swyx",
+        "summary": "Swyx discusses the evolution of AI agents, emphasizing multi-agent systems and their role in automating complex developer workflows. He highlights key challenges in reliability and orchestration, sharing insights from recent experiments with tools like LangGraph. The post calls for better developer tools to scale AI infrastructure.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Swyx%20discusses%20the%20evolution%20of%20AI%20agents%2C%20emphasizing%20multi-agent%20systems%20and%20t",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 4,
+      "title": "Building in public from a monorepo",
+      "hook": "I ship from a single monorepo. 4 live websites, 50+ AI skills, a CRM integration layer, content pipelines, and a full GTM engine. All in one repo.",
+      "body": "I ship from a single monorepo. 4 live websites, 50+ AI skills, a CRM integration layer, content pipelines, and a full GTM engine. All in one repo.\n\nPeople ask why I don't split it up. The answer is simple. Context.\n\nWhen my blog generator cron runs at midnight, it needs access to SEO data, voice rules, the website build system, and the deployment pipeline. If those lived in 5 repos, I'd spend more time wiring them together than building features.\n\nMy stack: TypeScript for the web layer (Next.js, React, Remotion). Python for scripting and data pipelines. A Mac Mini running 24/7 as the cron server. Claude Code as the primary dev tool.\n\nLast week I shipped a landing page generator that researches a prospect's company, builds a custom branded page, and deploys it to a /for/company-name route. The whole flow touches SEO data, voice normalization, the Next.js build, and Cloudflare deployment. In a monorepo, that's one PR. In a polyrepo world, that's four PRs and a prayer.\n\nSolo builders don't need microservices. They need everything within arm's reach.",
+      "cta": "Monorepo or polyrepo for solo builders? I'll die on this hill but curious where you land.",
+      "tags": [
+        "building in public",
+        "monorepo",
+        "solo developer"
+      ],
+      "inspired_by": {
+        "author": "Pieter Levels",
+        "summary": "Pieter shares his journey as a solo developer shipping multiple products like Nomad List and Remote OK without VC funding. He emphasizes the power of building in public, iterating based on user feedback, and achieving profitability through bootstrapping. His post details the latest product launch and metrics achieved in the first week.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shares%20his%20journey%20as%20a%20solo%20developer%20shipping%20multiple%20products%20like%20No",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 5,
+      "title": "RevOps is not GTM engineering",
+      "hook": "RevOps and GTM engineering are not the same thing. One configures tools. The other builds systems.",
+      "body": "RevOps and GTM engineering are not the same thing. One configures tools. The other builds systems.\n\nRevOps: sets up Salesforce fields, builds HubSpot workflows, manages Outreach sequences, pulls reports. Essential work. Keeps the lights on.\n\nGTM engineering: writes the Python script that enriches 500 accounts overnight through Clay and Apollo, scores them against a custom ICP model, pushes qualified ones to Attio with full buying committee data attached, and triggers a personalized sequence. No human touched it.\n\nThe difference isn't prestige. It's leverage.\n\nA RevOps person can optimize your existing funnel. A GTM engineer can build a new one from scratch that runs while the team sleeps.\n\nI've been both. I manually configured SalesLoft cadences for months before I wrote my first enrichment script. That foundation matters. You need to understand the workflow before you can automate it.\n\nBut the ceiling is different. RevOps scales linearly with headcount. GTM engineering scales with compute.\n\nThe companies figuring this out are the ones quietly building engineering functions inside their go-to-market teams. Not replacing RevOps. Extending it with code.",
+      "cta": "Does your GTM team have anyone who can write code, or is it all no-code tooling?",
+      "tags": [
+        "GTM engineering",
+        "revenue operations",
+        "outbound automation"
+      ],
+      "inspired_by": {
+        "author": "Dan Tyre",
+        "summary": "Breaks down revenue operations as the backbone of modern GTM strategies. Covers integrating sales ops with outbound automation for predictable scaling. Includes case study from HubSpot's playbook.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Dan%20Tyre%20Breaks%20down%20revenue%20operations%20as%20the%20backbone%20of%20modern%20GTM%20strategies.%20Covers%20",
+        "engagement": {
+          "likes": 950,
+          "comments": 72
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 6,
+      "title": "Browser automation for GTM",
+      "hook": "Browser automation isn't just for QA anymore. I use Playwright to run GTM workflows that no API supports.",
+      "body": "Browser automation isn't just for QA anymore. I use Playwright to run GTM workflows that no API supports.\n\nSome platforms don't have APIs. Some have APIs that are missing critical endpoints. Some rate-limit you into oblivion. The browser doesn't care about any of that.\n\nI have Playwright scripts that:\n\n\u27a1\ufe0f Scout Reddit threads for relevant conversations and log them to a queue\n\u27a1\ufe0f Pull LinkedIn company data that isn't available through any official API\n\u27a1\ufe0f Monitor competitor pricing pages for changes\n\u27a1\ufe0f Capture screenshots of prospect websites for personalized outreach assets\n\nThe key lesson: reuse existing browser sessions. Don't spawn fresh contexts that wipe your logins. I burned hours debugging auth flows before I learned to just persist the session state.\n\nThe other key lesson: browser automation is fragile. Selectors break. Pages change layouts. Rate limits still exist, they're just less visible. Build your scripts to fail gracefully and alert you instead of silently producing garbage data.\n\nWebGPU and local inference are making this even more interesting. Running a small model locally to parse page content means you don't need to send every scraped page to an API.\n\nThe browser is an underrated GTM tool. Most people just use it to check LinkedIn.",
+      "cta": "Anyone else using browser automation for GTM workflows? Drop your use case.",
+      "tags": [
+        "browser automation",
+        "Playwright",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "Addy Osmani",
+        "summary": "Osmani breaks down developer tools for building AI agents, focusing on browser-based automation and WebGPU for local inference. He shares benchmarks on AI infrastructure performance and tips for integrating agents into web dev stacks. Advocates for standardized APIs to accelerate adoption.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Addy%20Osmani%20Osmani%20breaks%20down%20developer%20tools%20for%20building%20AI%20agents%2C%20focusing%20on%20browser-b",
+        "engagement": {
+          "likes": 6000,
+          "comments": 250
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 7,
+      "title": "The plumber to programmer pipeline",
+      "hook": "I was a plumber before I was an SDR. Before that, I was doing manual labor in Arizona heat.",
+      "body": "I was a plumber before I was an SDR. Before that, I was doing manual labor in Arizona heat.\n\nNow I build AI-native GTM infrastructure from a monorepo with 50+ automation skills.\n\nThe path doesn't make sense on paper. It makes perfect sense in practice.\n\nPlumbing taught me systems thinking. Water flows downhill, pressure matters, every joint is a potential failure point. Software works the same way. Data flows through pipelines, bottlenecks kill throughput, every integration is a potential failure point.\n\nSDR work taught me the pain. When you've manually researched 50 accounts in a day, built buying committees by hand in Salesforce, and sent hundreds of emails from a domain you're actively destroying... you know exactly what to automate first.\n\nThe career pivot crowd on LinkedIn makes it sound like a clean story. It wasn't. I taught myself Python by building scripts that solved problems I had at work. No bootcamp. No CS degree. Just a specific problem and Stack Overflow.\n\nThe best builders I know didn't follow a traditional path. They came from trades, sales, ops, support. They understand the work because they did the work.\n\nYour background isn't a liability. It's your competitive advantage.",
+      "cta": "What's your non-traditional path into tech? The weirder the better.",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "solo developer"
+      ],
+      "inspired_by": {
+        "author": "Sahil Lavingia",
+        "summary": "Sahil discusses pivoting from a high-flying VC-backed startup to bootstrapping Gumroad as a solo founder initially. He reflects on career lessons from the pivot into sustainable tech entrepreneurship and building products for creators. The post inspires those considering tech career shifts.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sahil%20Lavingia%20Sahil%20discusses%20pivoting%20from%20a%20high-flying%20VC-backed%20startup%20to%20bootstrapping%20G",
+        "engagement": {
+          "likes": 11000,
+          "comments": 410
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 8,
+      "title": "AI coding agents changed my workflow",
+      "hook": "6 months ago I wrote every line of code myself. Now Claude Code writes 70% of my first drafts and I spend my time reviewing, directing, and architecting.",
+      "body": "6 months ago I wrote every line of code myself. Now Claude Code writes 70% of my first drafts and I spend my time reviewing, directing, and architecting.\n\nThis isn't a productivity hack post. It's a workflow shift that changed what I can build as a solo operator.\n\nMy setup: Claude Code on a Max subscription running Opus. I give it plan mode for anything non-trivial. It explores the codebase, writes a spec, I approve or redirect, then it builds. I review the diff like a senior engineer reviewing a junior's PR.\n\nWhat changed:\n\n\u27a1\ufe0f I shipped a full landing page generator in one session. Company research, custom branding, motion design, deployment. Would have taken me a week solo.\n\n\u27a1\ufe0f My cron pipeline (blog generation, SEO optimization, social scheduling) was built in days instead of weeks.\n\n\u27a1\ufe0f I maintain 4 websites, a CRM integration, and a GTM engine. As one person.\n\nThe shift isn't \"AI writes code for me.\" It's \"I operate at a higher level of abstraction.\" I think in systems and flows. The agent handles implementation details.\n\nThe catch: you need to be good enough to review the output. AI coding agents amplify skill. They don't replace it. If you can't spot a bad architecture decision in a diff, the agent will happily build the wrong thing fast.",
+      "cta": "How has AI coding tooling changed your build velocity? Genuinely curious about other solo builders' experiences.",
+      "tags": [
+        "AI agents",
+        "developer tools",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Andrej Karpathy",
+        "summary": "Karpathy shares a deep dive into building production-grade AI agents for coding tasks, focusing on automation in developer environments. He outlines infrastructure needs like efficient token streaming and error recovery mechanisms. Emphasizes the shift from LLMs to agentic systems in dev tools.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Karpathy%20shares%20a%20deep%20dive%20into%20building%20production-grade%20AI%20agents%20for%20coding%20",
+        "engagement": {
+          "likes": 25000,
+          "comments": 800
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 9,
+      "title": "Content as GTM infrastructure",
+      "hook": "Most companies treat content as marketing. I treat it as infrastructure.",
+      "body": "Most companies treat content as marketing. I treat it as infrastructure.\n\nMy content pipeline is a cron job. Every night at midnight, my Mac Mini runs a script that:\n\n1. Pulls trending topics from my SEO tracking data\n2. Cross-references against my keyword log and used-keywords list to avoid repetition\n3. Generates drafts using Claude Opus with my voice system loaded (core voice rules, anti-slop filters, platform-specific playbooks)\n4. Runs each draft through a 5-gate improvement protocol\n5. Queues approved posts to Typefully for scheduled publishing\n\nThe voice system alone has 29 anti-pattern rules. If a draft triggers 3+ flags, it gets rewritten from scratch, not patched.\n\nThis isn't content at scale. It's content as a system. The difference matters.\n\nContent at scale means more volume. Content as a system means consistent quality, zero manual scheduling, built-in brand safety, and SEO coverage that compounds over time.\n\nI publish across 4 sites. Blog posts, social content, landing pages. All flowing from the same voice DNA, the same keyword strategy, the same cron infrastructure.\n\nBootstrapped SaaS founders spending 10 hours a week on content... that time is better spent building the system that does it for you.",
+      "cta": "Is your content workflow manual, semi-automated, or fully pipelined? No judgment, just mapping the landscape.",
+      "tags": [
+        "content strategy",
+        "GTM engineering",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Arvid Kahl",
+        "summary": "Outlines a content strategy for bootstrapped SaaS companies focusing on GTM motions. Details using outbound automation tools ethically to amplify content reach. Shares metrics from his own experiments.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Outlines%20a%20content%20strategy%20for%20bootstrapped%20SaaS%20companies%20focusing%20on%20GTM%20moti",
+        "engagement": {
+          "likes": 2100,
+          "comments": 145
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 10,
+      "title": "Ship small bets from one machine",
+      "hook": "Two machines. One monorepo. Four live websites. Zero employees.",
+      "body": "Two machines. One monorepo. Four live websites. Zero employees.\n\nMy MacBook Pro is the dev machine. My Mac Mini is the always-on server. Between them, they run my entire operation.\n\nThe Mac Mini handles:\n\u27a1\ufe0f Nightly cron jobs (content generation, SEO optimization, data enrichment)\n\u27a1\ufe0f A local Qwen 2.5 14B model on Ollama for high-frequency tasks that would cost too much on API\n\u27a1\ufe0f Git sync scripts that keep everything current\n\u27a1\ufe0f Reddit and social media monitoring\n\nThe MacBook handles:\n\u27a1\ufe0f All development work\n\u27a1\ufe0f Claude Code sessions for building features\n\u27a1\ufe0f Manual review and approval workflows\n\nTotal infrastructure cost is basically electricity and API credits. No AWS bill. No Kubernetes cluster. No DevOps team.\n\nThe indie hacker playbook usually means \"pick one product and go deep.\" I'm running the opposite experiment. Multiple small bets, shared infrastructure, compounding returns from the monorepo.\n\nEvery new site I add gets the existing voice system, SEO pipeline, deployment flow, and CRM integration for free. The marginal cost of launching site #5 is close to zero because the infrastructure already exists.\n\nYou don't need a server rack. You don't need cloud spend. Two Macs and good architecture go surprisingly far.",
+      "cta": "What does your solo builder infrastructure look like? Always curious about other people's setups.",
+      "tags": [
+        "solo developer",
+        "infrastructure",
+        "indie hacker"
+      ],
+      "inspired_by": {
+        "author": "Daniel Vassallo",
+        "summary": "Daniel shares his pivot from Amazon engineer to full-time indie maker, launching micro-SaaS products. He details shipping several small bets publicly, with real revenue breakdowns and advice for career changers entering tech via building. Focuses on low-risk experimentation over big swings.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Daniel%20Vassallo%20Daniel%20shares%20his%20pivot%20from%20Amazon%20engineer%20to%20full-time%20indie%20maker%2C%20launching",
+        "engagement": {
+          "likes": 9500,
+          "comments": 350
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    }
+  ]
+}
