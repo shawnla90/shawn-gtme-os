@@ -1,4 +1,4 @@
 {
-  "installCommand": "cd ../.. && npm install",
+  "installCommand": "cd ../.. && npm cache clean --force && npm install",
   "buildCommand": "npm run build"
 }
