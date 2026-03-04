@@ -43,6 +43,14 @@ export interface ChatWidgetProps {
   botId: string
   ctaUrl: string
   ctaLabel: string
+  /** Optional React node to render as avatar in header (replaces default icon) */
+  avatarNode?: React.ReactNode
+  /** Optional React node shown above the chat panel (e.g. entrance video, persistent avatar) */
+  heroNode?: React.ReactNode
+  /** Start with panel open (when parent controls bubble/open state) */
+  defaultOpen?: boolean
+  /** Hide the built-in bubble button (when parent renders its own) */
+  hideBubble?: boolean
 }
 
 /* ── Helpers ── */
@@ -133,8 +141,12 @@ export function ChatWidget({
   botId,
   ctaUrl,
   ctaLabel,
+  avatarNode,
+  heroNode,
+  defaultOpen,
+  hideBubble,
 }: ChatWidgetProps) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(defaultOpen ?? false)
   const [hasInteracted, setHasInteracted] = useState(false)
   const [gated, setGated] = useState(false)
   const [userMsgCount, setUserMsgCount] = useState(0)
@@ -278,7 +290,7 @@ export function ChatWidget({
 
   return (
     <>
-      {!isOpen && (
+      {!isOpen && !hideBubble && (
         <button
           onClick={handleOpen}
           style={s.bubble}
@@ -295,7 +307,7 @@ export function ChatWidget({
           {/* Header */}
           <div style={s.header}>
             <div style={s.headerLeft}>
-              <div style={s.headerIcon}><IconChat size={16} /></div>
+              {avatarNode || <div style={s.headerIcon}><IconChat size={16} /></div>}
               <div>
                 <h3 style={s.headerTitle}>{botName}</h3>
                 <p style={s.headerSub}>{botSubtitle}</p>
@@ -305,6 +317,9 @@ export function ChatWidget({
               <IconX />
             </button>
           </div>
+
+          {/* Hero (avatar video, etc.) */}
+          {heroNode}
 
           {/* Messages */}
           <div style={s.messages}>
