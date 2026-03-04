@@ -93,9 +93,36 @@ LLMs will fabricate domains if given relative URLs. Always:
 | Claude Haiku 4.5 | ~$0.001 | ~$3.00 |
 | GPT-4o-mini | ~$0.001 | ~$3.00 |
 
+## Deployment Checklist (MANDATORY)
+
+After implementing the chat widget, you MUST complete these steps before marking done:
+
+1. **Identify the correct Vercel project** — run `vercel project ls` and match the production domain. Do NOT assume the linked project is correct.
+2. **Link to the right project** — `vercel link --yes --project <correct-project-name>`
+3. **Set env vars on the PRODUCTION Vercel project** — not just `.env.local`:
+   - `vercel env add <KEY> production` (pipe the value from .env.local)
+   - `vercel env add <KEY> preview`
+4. **Verify the deploy picks up env vars** — if you added env vars after a deploy started, you must `vercel redeploy <deploy-url>` to pick them up
+5. **Test the production API endpoint** — `curl -s -X POST https://<domain>/api/chat ...` and verify streaming response (not an error)
+6. **Monorepo gotcha** — in this monorepo, each site has its own Vercel project. The local `.vercel/project.json` may be linked to a stale/wrong project. Always verify with `cat .vercel/project.json`.
+
+### Vercel Project Map (shawn-gtme-os monorepo)
+
+| App | Vercel Project | Domain |
+|---|---|---|
+| `website/apps/shawnos` | `shawnos-site` | shawnos.ai |
+| `website/apps/gtmos` | `thegtmos-site` | thegtmos.ai |
+| `website/apps/contentos` | *(check with `vercel project ls`)* | thecontentos.ai |
+
 ## Reference Implementation
 
 Full working code: `~/Desktop/nyc-plumbing-engine/`
 - `lib/chat-retrieval.ts`
 - `app/api/chat/route.ts`
 - `components/chat/chat-widget.tsx`
+
+Also deployed: `website/apps/shawnos/` (Claude Sonnet 4, RAG from all wikis)
+- `website/packages/shared/components/ChatWidget.tsx` — shared widget (inline styles)
+- `website/packages/shared/lib/chat-retrieval.ts` — generic retrieval engine
+- `website/apps/shawnos/app/api/chat/route.ts` — Nio chat endpoint
+- `website/apps/shawnos/app/lib/chat-retrieval.ts` — Nio-specific retrieval config

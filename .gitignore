@@ -44,3 +44,7 @@ node_modules/
 .mcp.json
 ShawnOSCommandCenter/.build/
 scripts/abm/maildoso_accounts.json
+
+# Client/prospect landing pages and ROI data (stay local)
+website/apps/gtmos/app/for/*/
+website/apps/video/src/lib/roi-clients/

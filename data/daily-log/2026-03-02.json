@@ -25,8 +25,8 @@
     },
     {
       "type": "website_page",
-      "title": "gtmos for clear-cove page",
-      "path": "website/apps/gtmos/app/for/clear-cove/page.tsx",
+      "title": "gtmos prospect landing page",
+      "path": "website/apps/gtmos/app/for/prospect/page.tsx",
       "source": "auto",
       "timestamp": "00:26",
       "words": 58,
@@ -35,8 +35,8 @@
     },
     {
       "type": "website_page",
-      "title": "gtmos for sagemont-advisors page",
-      "path": "website/apps/gtmos/app/for/sagemont-advisors/page.tsx",
+      "title": "gtmos prospect landing page 2",
+      "path": "website/apps/gtmos/app/for/prospect-2/page.tsx",
       "source": "auto",
       "timestamp": "02:27",
       "words": 56,
@@ -185,7 +185,7 @@
     },
     {
       "hash": "f0ff19b",
-      "message": "feat: /draft-email skill + Steve's contact enrichment session",
+      "message": "feat: /draft-email skill + contact enrichment session",
       "type": "feature_build",
       "score": 25,
       "files_changed": 7,
@@ -201,7 +201,7 @@
     },
     {
       "hash": "16ec2a6",
-      "message": "feat: Clear Cove Partners landing page + deal system setup",
+      "message": "feat: prospect landing page + deal system setup",
       "type": "feature_build",
       "score": 25,
       "files_changed": 3,
@@ -861,12 +861,12 @@
       },
       {
         "type": "feature_build",
-        "title": "feat: /draft-email skill + Steve's contact enrichment sessio",
+        "title": "feat: /draft-email skill + contact enrichment session",
         "points": 25
       },
       {
         "type": "feature_build",
-        "title": "feat: Clear Cove Partners landing page + deal system setup",
+        "title": "feat: prospect landing page + deal system setup",
         "points": 25
       },
       {
@@ -933,10 +933,10 @@
       "website/apps/contentos/public/fonts/Satoshi-Bold.woff2",
       "website/apps/contentos/public/fonts/Satoshi-Medium.woff2",
       "website/apps/contentos/public/fonts/Satoshi-Regular.woff2",
-      "website/apps/gtmos/app/for/clear-cove/ClearCoveContent.tsx",
-      "website/apps/gtmos/app/for/clear-cove/page.tsx",
-      "website/apps/gtmos/app/for/sagemont-advisors/SagemontContent.tsx",
-      "website/apps/gtmos/app/for/sagemont-advisors/page.tsx"
+      "website/apps/gtmos/app/for/prospect/ProspectContent.tsx",
+      "website/apps/gtmos/app/for/prospect/page.tsx",
+      "website/apps/gtmos/app/for/prospect-2/ProspectContent.tsx",
+      "website/apps/gtmos/app/for/prospect-2/page.tsx"
     ],
     "files_modified": [
       "data/progression/profile.json",

@@ -40,7 +40,7 @@
 
 ## 2026-03-02: Don't guess email domains — check Google Calendar sync
 
-**Context:** We guessed `jesse@clearcoveadvisors.com` based on company name, but Google Calendar sync showed the real email was `jesse@sagemontadvisors.com`. The person had a prior affiliation.
+**Context:** We guessed an email based on company name, but Google Calendar sync showed the real email was from a different domain. The person had a prior affiliation.
 
 **Rule:** Before creating contact records, check if Google Calendar or Gmail sync has already captured the email. Attio auto-syncs from connected accounts. Don't assume `firstname@companydomain.com` — always verify against synced data first.
 
@@ -55,6 +55,16 @@
 4. Scan for "it's not X, it's Y" / "it's not about X, it's about Y". Delete the "not X" portion, just state Y.
 5. Scan for "this is the part where" / "this is where" / "and that's when" framing. Delete entirely.
 If catching 3+ patterns, the generation approach needs tightening, not just the validation.
+
+## 2026-03-03: Always verify Vercel project linkage before deploying
+
+**Context:** Chat widget deployed but API returned "API key missing" in production. Root cause: local CLI was linked to `shawnos` (wrong project) instead of `shawnos-site` (the one serving shawnos.ai). Env vars were added to the wrong project.
+
+**Rule:** Before any Vercel deploy/env-var operation:
+1. Run `cat .vercel/project.json` to check which project is linked
+2. Run `vercel project ls` to see all projects and match domains
+3. If wrong project: `vercel link --yes --project <correct-name>`
+4. After adding env vars mid-deploy, always `vercel redeploy` to pick them up
 
 ## 2026-03-02: Attio REST API requires all fields for attribute creation
 
