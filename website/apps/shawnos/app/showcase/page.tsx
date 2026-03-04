@@ -8,6 +8,7 @@ import {
 } from '@shawnos/shared/components'
 import { ShowcaseCard } from './ShowcaseCard'
 import { ShowcaseReveal, ScrollRevealSection, PageHero, SectionHeadline } from './ShowcaseReveal'
+import { VideoShowcase } from '../VideoShowcase'
 
 /* ── metadata ──────────────────────────────────────── */
 
@@ -418,6 +419,22 @@ export default function ShowcasePage() {
           <div
             style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}
           >
+            {/* Highlight reel */}
+            <div>
+              <div
+                style={{
+                  fontSize: '11px',
+                  color: 'var(--text-muted)',
+                  marginBottom: '10px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                }}
+              >
+                highlight reel — recent builds, shipped live
+              </div>
+              <VideoShowcase />
+            </div>
+
             {/* JSON spec sample */}
             <div>
               <div

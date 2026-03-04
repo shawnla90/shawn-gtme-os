@@ -14,7 +14,6 @@ import {
 import type { RPGProfile } from '@shawnos/shared/lib/rpg'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
 import { MEDIA_APPEARANCES } from '@shawnos/shared/data/media-appearances'
-import { VideoShowcase } from './VideoShowcase'
 import { StatsStrip } from './StatsStrip'
 import { BuiltWithStrip } from './BuiltWithStrip'
 import { CaseStudyGrid } from './components/CaseStudyCard'
@@ -298,12 +297,6 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
         }}
       >
         <StatsStrip />
-      </ScrollRevealSection>
-
-      {/* ── Highlight Reel ── */}
-      <ScrollRevealSection background="var(--canvas)">
-        <SectionHeadline subtitle="Recent builds, shipped live">Highlight Reel</SectionHeadline>
-        <VideoShowcase />
       </ScrollRevealSection>
 
       {/* ── Method ── */}
