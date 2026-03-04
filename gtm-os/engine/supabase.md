@@ -27,6 +27,7 @@
 | tech_stack | text | Known tools |
 | gap_analysis | text | Site audit results |
 | funding | text | Funding stage/amount |
+| segment | text | Segment tag (series-a-saas, yc-growth, etc.) |
 
 ### contacts
 | Column | Type | Notes |
@@ -42,6 +43,7 @@
 | is_primary | boolean | Primary contact for this account |
 | apollo_id | text | Apollo person ID |
 | persona | text | Persona category |
+| email_status | text | Prospeo verification (valid/invalid/catch-all/unknown) |
 | lemlist_lead_id | text | Lemlist lead reference |
 
 ### landing_pages

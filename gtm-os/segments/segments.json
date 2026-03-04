@@ -9,6 +9,16 @@
       "icp_fit": "primary",
       "key_pain": "Need to prove sales efficiency to justify Series B",
       "campaigns": ["2026-03-abm-v1"]
+    },
+    {
+      "id": "yc-growth",
+      "name": "YC Growth",
+      "description": "Y Combinator alumni companies (Series A-B, 30-200 employees) building their first scalable GTM motion",
+      "status": "active",
+      "account_count": 0,
+      "icp_fit": "primary",
+      "key_pain": "Post-YC, need to operationalize outbound before Series B",
+      "campaigns": []
     }
   ]
 }

@@ -37,6 +37,11 @@ def is_actionable_contact(contact):
     if not email:
         return False
 
+    # Skip contacts with verified-invalid emails
+    email_status = (contact.get('email_status') or '').strip()
+    if email_status == 'invalid':
+        return False
+
     # Must have a relevant title
     title = contact.get('title') or ''
     if not is_relevant_title(title):

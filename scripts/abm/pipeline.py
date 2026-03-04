@@ -21,6 +21,9 @@ Usage:
   python3 scripts/abm/pipeline.py --step linkedin_import --dry-run
   python3 scripts/abm/pipeline.py --step linkedin_messages --dry-run
   python3 scripts/abm/pipeline.py --step signals --limit 76
+  python3 scripts/abm/pipeline.py --step cleanup --dry-run
+  python3 scripts/abm/pipeline.py --step verify --limit 50
+  python3 scripts/abm/pipeline.py --step source_yc --limit 200 --dry-run
   python3 scripts/abm/pipeline.py --step all --limit 5 --resume
 """
 
@@ -80,9 +83,18 @@ def check_keys(step):
         if not os.environ.get('LEMLIST_API_KEY'):
             missing.append('LEMLIST_API_KEY')
 
-    if step == 'clean':
+    if step in ('clean', 'cleanup'):
         if not os.environ.get('ATTIO_API_TOKEN'):
             missing.append('ATTIO_API_TOKEN')
+
+    if step == 'verify':
+        if not os.environ.get('PROSPEO_API_KEY'):
+            missing.append('PROSPEO_API_KEY')
+
+    if step == 'source_yc':
+        for key in ('EXA_API_KEY', 'APOLLO_API_KEY', 'PROSPEO_API_KEY'):
+            if not os.environ.get(key):
+                missing.append(key)
 
     if missing:
         print(f"[!] Missing API keys: {', '.join(missing)}")
@@ -180,10 +192,11 @@ def main():
         'research', 'prospect', 'generate', 'sync', 'depersonalize',
         'outreach', 'gap_analysis', 'find_similar', 'lemlist',
         'backfill', 'validate', 'flag_titles', 'enrich', 'replace',
-        'clean', 'warming', 'preflight',
+        'clean', 'cleanup', 'verify', 'source_yc',
+        'warming', 'preflight',
         'linkedin_import', 'linkedin_messages', 'signals',
         'all',
-    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist/backfill/validate/flag_titles/enrich/replace/clean/warming/preflight/linkedin_import/linkedin_messages/signals must be called explicitly)')
+    ], default='all', help='Pipeline step to run (outreach/gap_analysis/find_similar/lemlist/backfill/validate/flag_titles/enrich/replace/clean/cleanup/verify/source_yc/warming/preflight/linkedin_import/linkedin_messages/signals must be called explicitly)')
     parser.add_argument('--limit', type=int, default=100,
                         help='Max number of companies to process')
     parser.add_argument('--dry-run', action='store_true',
@@ -289,6 +302,21 @@ def main():
     if step == 'clean':
         import clean_attio
         clean_attio.run(dry_run=args.dry_run)
+
+    # Database cleanup - archive orphans not in Attio - explicit only
+    if step == 'cleanup':
+        from db_supabase import run_cleanup
+        run_cleanup(dry_run=args.dry_run)
+
+    # Prospeo email verification - explicit only
+    if step == 'verify':
+        import verify_emails
+        verify_emails.run(limit=limit, dry_run=args.dry_run)
+
+    # YC company sourcing - explicit only (NOT in 'all')
+    if step == 'source_yc':
+        import source_yc
+        source_yc.run(limit=limit, dry_run=args.dry_run)
 
     # Domain warming status - explicit only
     if step == 'warming':

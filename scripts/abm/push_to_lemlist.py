@@ -135,7 +135,7 @@ def run(campaign_id, limit=10, dry_run=False):
 
         # Get primary contact with email, not already in Lemlist
         contact_result = sb.table('contacts').select(
-            'id, first_name, last_name, email, title, linkedin_url, lemlist_lead_id, notes'
+            'id, first_name, last_name, email, title, linkedin_url, lemlist_lead_id, notes, email_status'
         ).eq('account_id', account['id']).not_.is_('email', 'null').order(
             'is_primary', desc=True
         ).limit(3).execute()
@@ -149,9 +149,13 @@ def run(campaign_id, limit=10, dry_run=False):
             if c.get('lemlist_lead_id'):
                 skipped += 1
                 continue
-            if is_actionable_contact(c):
-                contact = c
-                break
+            if not is_actionable_contact(c):
+                continue
+            if c.get('email_status') == 'invalid':
+                skipped += 1
+                continue
+            contact = c
+            break
 
         if not contact:
             continue

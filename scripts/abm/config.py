@@ -44,6 +44,7 @@ ATTIO_BASE = 'https://api.attio.com/v2'
 APOLLO_BASE = 'https://api.apollo.io/api/v1'
 XAI_BASE = 'https://api.x.ai/v1'
 POSTHOG_BASE = 'https://us.posthog.com'
+PROSPEO_BASE = 'https://api.prospeo.io'
 
 # ---------------------------------------------------------------------------
 # Header helpers
@@ -99,6 +100,17 @@ def get_exa_client():
     if not key:
         raise ValueError("EXA_API_KEY not set. Export it or add to scripts/abm/.env")
     return Exa(api_key=key)
+
+
+def get_prospeo_headers():
+    """Return Prospeo API headers with X-KEY auth."""
+    key = os.environ.get('PROSPEO_API_KEY', '')
+    if not key:
+        raise ValueError("PROSPEO_API_KEY not set. Export it or add to scripts/abm/.env")
+    return {
+        'Content-Type': 'application/json',
+        'X-KEY': key,
+    }
 
 
 # ---------------------------------------------------------------------------
