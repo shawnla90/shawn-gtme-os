@@ -17,6 +17,7 @@ import { MEDIA_APPEARANCES } from '@shawnos/shared/data/media-appearances'
 import { StatsStrip } from './StatsStrip'
 import { BuiltWithStrip } from './BuiltWithStrip'
 import { CaseStudyGrid } from './components/CaseStudyCard'
+import { WorkTogetherCTA } from './components/WorkTogetherCTA'
 
 /* ── data ────────────────────────────────────────── */
 
@@ -476,6 +477,11 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
           </div>
         </ScrollRevealSection>
       )}
+
+      {/* ── Work Together CTA ── */}
+      <ScrollRevealSection background="var(--canvas)">
+        <WorkTogetherCTA />
+      </ScrollRevealSection>
 
       {/* ── Boot Log — keeps terminal flavor ── */}
       <ScrollRevealSection background="var(--canvas)">

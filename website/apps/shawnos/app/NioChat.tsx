@@ -1,7 +1,8 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { ChatWidget } from "@shawnos/shared/components"
+import { usePostHog } from "posthog-js/react"
 
 const GIF_SRC = "/avatars/nio-idle.apng"
 const AVATAR_SIZE = 160 // half of original 320
@@ -9,6 +10,8 @@ const AVATAR_SIZE = 160 // half of original 320
 export function NioChat() {
   const [isOpen, setIsOpen] = useState(false)
   const [avatarVisible, setAvatarVisible] = useState(false)
+  const openedAtRef = useRef<number | null>(null)
+  const posthog = usePostHog()
 
   // Slide avatar in after chat opens
   useEffect(() => {
@@ -19,6 +22,25 @@ export function NioChat() {
     const timer = setTimeout(() => setAvatarVisible(true), 200)
     return () => clearTimeout(timer)
   }, [isOpen])
+
+  const handleAnalyticsEvent = useCallback((event: string, props?: Record<string, unknown>) => {
+    if (!posthog) return
+
+    if (event === "nio_chat_opened") {
+      openedAtRef.current = Date.now()
+    }
+
+    posthog.capture(event, props)
+  }, [posthog])
+
+  const handleClose = useCallback(() => {
+    const duration = openedAtRef.current
+      ? Math.round((Date.now() - openedAtRef.current) / 1000)
+      : 0
+    openedAtRef.current = null
+
+    posthog?.capture("nio_chat_closed", { bot: "nio", duration_seconds: duration })
+  }, [posthog])
 
   // Bubble — not open yet
   if (!isOpen) {
@@ -90,6 +112,10 @@ export function NioChat() {
         botId="nio"
         ctaUrl="https://cal.com/shawntenam/30min"
         ctaLabel="Book a Call"
+        gateType="substack"
+        substackUrl="https://shawntenam.substack.com"
+        onAnalyticsEvent={handleAnalyticsEvent}
+        onClose={handleClose}
         defaultOpen
         hideBubble
       />

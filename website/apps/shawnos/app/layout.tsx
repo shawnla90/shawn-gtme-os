@@ -6,6 +6,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
 import { CursorGlow } from '@shawnos/shared/components'
 import { NioChat } from './NioChat'
+import { PostHogProvider } from './PostHogProvider'
+import { FeedbackButton } from './components/FeedbackButton'
 import './globals.css'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -142,6 +144,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={jetbrains.variable}>
       <body>
+        <PostHogProvider>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
@@ -183,9 +186,11 @@ export default function RootLayout({
         <Footer siteName="ShawnOS.ai" />
         <FooterCredit />
         <NioChat />
+        <FeedbackButton />
         <CursorGlow />
         <Analytics />
         <SpeedInsights />
+        </PostHogProvider>
       </body>
     </html>
   )

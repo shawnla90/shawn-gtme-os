@@ -51,9 +51,26 @@ export interface ChatWidgetProps {
   defaultOpen?: boolean
   /** Hide the built-in bubble button (when parent renders its own) */
   hideBubble?: boolean
+  /** Gate type: "cta" shows book-a-call link, "substack" shows email signup */
+  gateType?: "cta" | "substack"
+  /** Substack publication URL for the gate signup form */
+  substackUrl?: string
+  /** Callback for analytics events (PostHog, etc.) */
+  onAnalyticsEvent?: (event: string, props?: Record<string, unknown>) => void
+  /** Called when close button is clicked */
+  onClose?: () => void
 }
 
 /* ── Helpers ── */
+
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;")
+}
 
 function getTextContent(message: { parts?: Array<{ type: string; text?: string }> }): string {
   if (!message.parts) return ""
@@ -65,13 +82,16 @@ function getTextContent(message: { parts?: Array<{ type: string; text?: string }
 
 function renderMarkdown(text: string, accentColor: string) {
   return text.split("\n").map((line, i) => {
-    let html = line.replace(
+    // Escape HTML first to prevent XSS
+    let html = escapeHtml(line)
+    // Then apply markdown transforms on the safe string
+    html = html.replace(
       /\*\*(.*?)\*\*/g,
       `<strong style="color:#C9D1D9;font-weight:600">$1</strong>`
     )
     html = html.replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      `<a href="$2" style="color:${accentColor};text-decoration:underline;text-underline-offset:2px" target="_blank" rel="noopener">$1</a>`
+      `<a href="$2" style="color:${escapeHtml(accentColor)};text-decoration:underline;text-underline-offset:2px" target="_blank" rel="noopener noreferrer">$1</a>`
     )
     if (line.trim().startsWith("- ") || line.trim().startsWith("* ")) {
       html = `<li style="margin-left:16px;list-style:disc">${html.replace(/^[\s]*[-*]\s/, "")}</li>`
@@ -87,6 +107,7 @@ function renderMarkdown(text: string, accentColor: string) {
 }
 
 const GATE_KEY_PREFIX = "chat_gate_"
+const UNLOCK_KEY_PREFIX = "chat_unlocked_"
 
 function getMessageCount(botId: string): number {
   if (typeof window === "undefined") return 0
@@ -97,6 +118,15 @@ function incrementMessageCount(botId: string): number {
   const next = getMessageCount(botId) + 1
   localStorage.setItem(`${GATE_KEY_PREFIX}${botId}`, String(next))
   return next
+}
+
+function isUnlocked(botId: string): boolean {
+  if (typeof window === "undefined") return false
+  return localStorage.getItem(`${UNLOCK_KEY_PREFIX}${botId}`) === "true"
+}
+
+function setUnlocked(botId: string) {
+  localStorage.setItem(`${UNLOCK_KEY_PREFIX}${botId}`, "true")
 }
 
 /* ── Analytics helper ── */
@@ -145,17 +175,31 @@ export function ChatWidget({
   heroNode,
   defaultOpen,
   hideBubble,
+  gateType = "cta",
+  substackUrl,
+  onAnalyticsEvent,
+  onClose,
 }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(defaultOpen ?? false)
   const [hasInteracted, setHasInteracted] = useState(false)
   const [gated, setGated] = useState(false)
   const [userMsgCount, setUserMsgCount] = useState(0)
   const [input, setInput] = useState("")
+  const [gateEmail, setGateEmail] = useState("")
+  const [gateSubmitting, setGateSubmitting] = useState(false)
+  const [gateError, setGateError] = useState("")
+  const [gateSuccess, setGateSuccess] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const { messages, sendMessage, status } = useChat()
   const isLoading = status === "submitted" || status === "streaming"
+
+  // Dual-track analytics: Vercel + custom callback
+  const fireEvent = useCallback((event: string, props?: Record<string, unknown>) => {
+    trackEvent(event, props as Record<string, string>)
+    onAnalyticsEvent?.(event, props)
+  }, [onAnalyticsEvent])
 
   useEffect(() => { injectKeyframes() }, [])
 
@@ -163,12 +207,17 @@ export function ChatWidget({
   useEffect(() => {
     if (input.toLowerCase() === "niounlock") {
       localStorage.removeItem(`${GATE_KEY_PREFIX}${botId}`)
+      localStorage.removeItem(`${UNLOCK_KEY_PREFIX}${botId}`)
       setGated(false)
       setUserMsgCount(0)
       setInput("")
     }
   }, [input, botId])
-  useEffect(() => { setUserMsgCount(getMessageCount(botId)) }, [botId])
+  useEffect(() => {
+    setUserMsgCount(getMessageCount(botId))
+    // If already unlocked, don't gate
+    if (isUnlocked(botId)) setGated(false)
+  }, [botId])
   useEffect(() => { messagesEndRef.current?.scrollIntoView({ behavior: "smooth" }) }, [messages, status])
   useEffect(() => { if (isOpen) inputRef.current?.focus() }, [isOpen])
 
@@ -179,23 +228,78 @@ export function ChatWidget({
       setInput("")
       const count = incrementMessageCount(botId)
       setUserMsgCount(count)
-      if (count >= 10) {
+      fireEvent("nio_message_sent", { bot: botId, message_number: count })
+      if (count >= 10 && !isUnlocked(botId)) {
         setGated(true)
-        trackEvent("chat_gate_hit", { bot: botId })
+        fireEvent("nio_gate_triggered", { bot: botId })
         return
       }
-      trackEvent("chat_message", { bot: botId })
       sendMessage({ text })
     },
-    [botId, gated, sendMessage]
+    [botId, gated, sendMessage, fireEvent]
   )
 
   const onSubmit = (e: React.FormEvent) => { e.preventDefault(); send(input) }
 
   const handleOpen = () => {
-    if (getMessageCount(botId) >= 10) setGated(true)
+    if (getMessageCount(botId) >= 10 && !isUnlocked(botId)) setGated(true)
     setIsOpen(true)
-    trackEvent("chat_opened", { bot: botId })
+    fireEvent("nio_chat_opened", { bot: botId })
+  }
+
+  const handleClose = () => {
+    setIsOpen(false)
+    onClose?.()
+    fireEvent("nio_chat_closed", { bot: botId })
+  }
+
+  const handleSubstackSignup = async (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!gateEmail.trim() || !substackUrl) return
+
+    setGateSubmitting(true)
+    setGateError("")
+
+    try {
+      // Submit to Substack via their public subscribe endpoint
+      const pubUrl = substackUrl.replace(/\/$/, "")
+      const res = await fetch(`${pubUrl}/api/v1/free`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: gateEmail.trim(),
+          first_url: window.location.href,
+          first_referrer: document.referrer || "",
+        }),
+      })
+
+      if (!res.ok) {
+        // Even if the API returns an error, Substack often accepts the email
+        // We'll unlock anyway since the intent is clear
+      }
+
+      // Unlock the gate
+      setUnlocked(botId)
+      localStorage.removeItem(`${GATE_KEY_PREFIX}${botId}`)
+      setGated(false)
+      setUserMsgCount(0)
+      setGateSuccess(true)
+      fireEvent("nio_gate_unlocked", { bot: botId, method: "substack" })
+
+      // Auto-dismiss success state
+      setTimeout(() => setGateSuccess(false), 2000)
+    } catch {
+      // Network error - still unlock (we got their intent + email is in the form)
+      setUnlocked(botId)
+      localStorage.removeItem(`${GATE_KEY_PREFIX}${botId}`)
+      setGated(false)
+      setUserMsgCount(0)
+      setGateSuccess(true)
+      fireEvent("nio_gate_unlocked", { bot: botId, method: "substack" })
+      setTimeout(() => setGateSuccess(false), 2000)
+    } finally {
+      setGateSubmitting(false)
+    }
   }
 
   /* ── Styles ── */
@@ -313,7 +417,7 @@ export function ChatWidget({
                 <p style={s.headerSub}>{botSubtitle}</p>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} style={s.closeBtn} aria-label="Close chat">
+            <button onClick={handleClose} style={s.closeBtn} aria-label="Close chat">
               <IconX />
             </button>
           </div>
@@ -361,16 +465,66 @@ export function ChatWidget({
               <p style={{ fontSize: 14, fontWeight: 600, color: "#C9D1D9", margin: 0 }}>
                 You&apos;ve used your {userMsgCount} free messages
               </p>
-              <p style={{ fontSize: 12, color: "#8B949E", margin: 0 }}>
-                Want to keep the conversation going?
-              </p>
-              <a
-                href={ctaUrl}
-                onClick={() => trackEvent("chat_cta_click", { bot: botId })}
-                style={s.ctaBtn}
-              >
-                {ctaLabel}
-              </a>
+
+              {gateType === "substack" && substackUrl ? (
+                <>
+                  <p style={{ fontSize: 12, color: "#8B949E", margin: 0 }}>
+                    subscribe to keep chatting - it&apos;s free
+                  </p>
+                  {gateSuccess ? (
+                    <p style={{ fontSize: 14, color: accentColor, fontWeight: 600, margin: 0 }}>
+                      you&apos;re in. welcome.
+                    </p>
+                  ) : (
+                    <form
+                      onSubmit={handleSubstackSignup}
+                      style={{ display: "flex", flexDirection: "column", gap: 8, width: "100%", maxWidth: 280 }}
+                    >
+                      <input
+                        type="email"
+                        required
+                        value={gateEmail}
+                        onChange={(e) => setGateEmail(e.target.value)}
+                        placeholder="your email"
+                        style={{
+                          ...s.input,
+                          flex: "none",
+                          width: "100%",
+                          textAlign: "center",
+                        }}
+                      />
+                      <button
+                        type="submit"
+                        disabled={gateSubmitting || !gateEmail.trim()}
+                        style={{
+                          ...s.ctaBtn,
+                          border: "none",
+                          cursor: gateSubmitting ? "wait" : "pointer",
+                          opacity: gateSubmitting ? 0.6 : 1,
+                        }}
+                      >
+                        {gateSubmitting ? "subscribing..." : "subscribe & continue"}
+                      </button>
+                      {gateError && (
+                        <p style={{ fontSize: 11, color: "#F85149", margin: 0 }}>{gateError}</p>
+                      )}
+                    </form>
+                  )}
+                </>
+              ) : (
+                <>
+                  <p style={{ fontSize: 12, color: "#8B949E", margin: 0 }}>
+                    Want to keep the conversation going?
+                  </p>
+                  <a
+                    href={ctaUrl}
+                    onClick={() => fireEvent("nio_cta_clicked", { bot: botId, cta_label: ctaLabel })}
+                    style={s.ctaBtn}
+                  >
+                    {ctaLabel}
+                  </a>
+                </>
+              )}
             </div>
           )}
 
