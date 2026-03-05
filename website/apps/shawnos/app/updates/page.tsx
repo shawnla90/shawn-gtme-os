@@ -90,6 +90,20 @@ interface FeatureMilestone {
 
 const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
+    date: '2026-03-05',
+    title: 'Knowledge Wiki Expansion',
+    description: '21 new articles across 4 wikis: 8 engineering terms (RAG, LangChain, PostHog, Railway, Trigger.dev, Cargo.ai, OAuth vs API Keys, Refactoring), 10 how-to guides (CLI ecosystem, PostHog for GTM, co-work sessions, repo evaluation, cron scraping, agent tools, ABM landing pages, ABM architecture, cloud security, CLI vs MCP), 2 context wiki entries, 1 content wiki entry.',
+    type: 'launch',
+    link: '/how-to',
+  },
+  {
+    date: '2026-03-05',
+    title: 'ABM Pipeline & Deployment Tools Categories',
+    description: 'Two new how-to wiki categories: ABM Pipeline (landing pages, personalization architecture) and Deployment Tools (agent building and hosting infrastructure).',
+    type: 'feature',
+    link: '/how-to',
+  },
+  {
     date: '2026-02-22',
     title: 'Cross-Site Updates Pages',
     description: 'Updates feed live on all 3 sites — shawnos.ai, thegtmos.ai, thecontentos.ai. Full cross-site backlinking.',

@@ -64,6 +64,20 @@ interface FeatureMilestone {
 
 const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
+    date: '2026-03-05',
+    title: 'Reddit for GTM Engineers',
+    description: 'New content wiki entry: which subreddits matter, voice-first commenting, karma building, and why Reddit is the raw signal layer for GTM.',
+    type: 'launch',
+    link: '/content-wiki/reddit-for-gtm-engineers',
+  },
+  {
+    date: '2026-03-05',
+    title: 'Knowledge Wiki Expansion',
+    description: '21 new articles across 4 wikis. New how-to guides for co-work sessions, CLI ecosystem, and content-adjacent GTM workflows.',
+    type: 'launch',
+    link: 'https://shawnos.ai/how-to',
+  },
+  {
     date: '2026-02-22',
     title: 'Cross-Site Updates Pages',
     description: 'Updates feed live on all 3 sites. Full cross-site backlinking across shawnos.ai, thegtmos.ai, thecontentos.ai.',

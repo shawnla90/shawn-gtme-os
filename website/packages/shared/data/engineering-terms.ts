@@ -136,6 +136,26 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
           "Buy a domain from any registrar. Point the nameservers to Vercel or Cloudflare. Add the domain in Vercel's dashboard. It auto-configures HTTPS. Takes 10 minutes.",
         related: ['Vercel'],
       },
+      {
+        name: 'Railway',
+        definition:
+          'Hosting platform for backend services, databases, and long-running agents. Handles the workloads Vercel cannot.',
+        whyItMatters:
+          'Vercel is built for frontend and serverless functions. Serverless has a hard timeout - usually 10 seconds on the free tier, 60 seconds on Pro. If your agent needs to run for 5 minutes enriching 200 leads, Vercel kills it. Railway runs persistent processes. Your agent starts, runs as long as it needs, and stays alive. It also hosts databases, Redis instances, and background workers. For GTM engineers deploying agents that do heavy enrichment, research compilation, or multi-step orchestration, Railway is where those agents live. SDK kits from providers like LangChain and Trigger.dev deploy directly to Railway.',
+        howYouUseIt:
+          'Connect your GitHub repo. Railway detects the runtime (Node, Python, Go). Push code and it deploys. Add environment variables in the dashboard. Set up a cron schedule or let it run continuously. Railway handles scaling, logs, and restarts. The cost model is usage-based - you pay for compute time, not a flat monthly rate.',
+        related: ['Vercel', 'Deploy', 'Cron Jobs'],
+      },
+      {
+        name: 'PostHog',
+        definition:
+          'Open-source product analytics platform. Event-based tracking, funnels, session replay, feature flags, and A/B testing. Self-hostable or cloud.',
+        whyItMatters:
+          'Google Analytics tells you page views. PostHog tells you what happened. Every click, form submission, page scroll, and custom event captured with full context. For ABM, PostHog gives you precision that traditional analytics tools cannot match. You can track exactly which companies visited your personalized landing pages, which sections they read, how long they stayed, and whether they converted. Claude Code connects to PostHog through the PostHog MCP, which means you can query analytics, build dashboards, and create funnels using natural language. No SQL, no dashboard builder - just describe what you want to see.',
+        howYouUseIt:
+          'Add the PostHog snippet to your site. Define custom events for ABM-relevant actions: landing page visits with company context, CTA clicks, scroll depth on key sections. Query the data through PostHog MCP in Claude Code sessions. Build funnels that track the full ABM journey from first visit to conversion. The open-source version runs on your own infrastructure if data sovereignty matters.',
+        related: ['Vercel', 'Environment Variables', 'Webhooks'],
+      },
     ],
   },
   {
@@ -191,6 +211,26 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
         howYouUseIt:
           "The daily tracker logs model usage. Opus sessions cost $12-15. Sonnet sessions cost $3-5. Track your spend. Optimize your model picks. Don't use Opus to count words.",
         related: ['Context Windows'],
+      },
+      {
+        name: 'RAG (Retrieval-Augmented Generation)',
+        definition:
+          'A pattern where AI retrieves real documents before generating a response, grounding output in actual data instead of training data alone.',
+        whyItMatters:
+          'This is the "RAG bottle" concept. Without RAG, an AI model answers from its training data - frozen in time, generic, and sometimes wrong. With RAG, you feed it your actual documents, CRM records, or research before it responds. The output is grounded in reality. For GTM engineers, RAG is how you build due diligence research agents that pull real company data instead of hallucinating revenue numbers. It connects directly to context engineering - the better your retrieval pipeline, the better the AI output. Every enrichment cron that feeds data to Claude before generating outreach is doing RAG whether you call it that or not.',
+        howYouUseIt:
+          'The ABM pipeline does RAG implicitly. Exa searches pull real-time company data. Apollo enrichment feeds verified contact info. That data goes into Claude context before generating personalized landing pages or outreach. The context-wiki entries you load in CLAUDE.md are a form of RAG - retrieved knowledge that grounds every session. Building explicit RAG pipelines means setting up vector databases or search indexes that agents query automatically before responding.',
+        related: ['Context Windows', 'MCP Servers', 'Model Selection'],
+      },
+      {
+        name: 'LangChain',
+        definition:
+          'Open-source framework for building AI agent backends in Python and JavaScript. Handles chains, memory, tool use, and retrieval so you do not build it from scratch.',
+        whyItMatters:
+          'Claude Code handles interactive sessions. LangChain handles autonomous agent backends. Different tools for different jobs. When you need an agent that runs on a schedule - enrichment at 2 AM, research compilation at 6 AM, lead scoring at noon - LangChain provides the orchestration layer. It manages conversation memory, tool calling, and retrieval pipelines. For GTM automation, LangChain is how you build the agents that run in your crons. The research agent that pulls Exa data, enriches through Apollo, scores leads, and pushes to Attio - that pipeline is LangChain territory.',
+        howYouUseIt:
+          'LangChain complements Claude Code. Use Claude Code for interactive building and debugging. Use LangChain for deploying autonomous agents that run without supervision. A typical setup: build and test the agent logic interactively in Claude Code, then package it as a LangChain chain deployed on Railway with a cron trigger. The two tools cover the full lifecycle from development to production.',
+        related: ['Parallel Agents', 'Agent Skills', 'Cron Jobs'],
       },
     ],
   },
@@ -248,6 +288,16 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
           "npm install installs all dependencies listed in package.json. pip install Pillow installs Python dependencies. Dependencies are tracked in lock files. Don't edit those manually.",
         related: ['Packages', 'Build Process'],
       },
+      {
+        name: 'Refactoring',
+        definition:
+          'Restructuring existing code without changing what it does. Same output, better internals.',
+        whyItMatters:
+          'Code rots. You build something fast, it works, then three months later you need to add a feature and the original structure fights you. Refactoring is cleaning up the architecture so future changes are easier. GTM engineers need to understand this because it explains half of what Claude Code does when you ask it to "improve" something. It is not rewriting from scratch. It is reorganizing the pieces so they fit better. Obsidian works the same way for knowledge management - you refactor your notes as your understanding deepens. Same ideas, better connections.',
+        howYouUseIt:
+          'Tell Claude Code "refactor this component to separate data fetching from rendering." It reads the file, identifies the coupling, and splits responsibilities without breaking existing behavior. I refactor data files when categories grow too large, split monolithic components when they pass 200 lines, and restructure wiki entries when related arrays get stale. The rule: if you are scared to touch a file, it needs refactoring.',
+        related: ['Monorepo', 'Dependencies'],
+      },
     ],
   },
   {
@@ -283,6 +333,36 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
         howYouUseIt:
           'Vercel auto-deploys on push events. MCP servers trigger on API calls. Watchers trigger on file changes. Design systems that react instead of poll.',
         related: ['Webhooks', 'Cron Jobs'],
+      },
+      {
+        name: 'Trigger.dev',
+        definition:
+          'Background job orchestration platform. Runs long-running tasks, scheduled jobs, and event-driven workflows with built-in retries, logging, and observability.',
+        whyItMatters:
+          'Cron jobs are fire-and-forget. If a cron fails at 2 AM, you find out when you check logs the next morning. Trigger.dev adds the reliability layer: automatic retries, failure alerts, execution logs, and the ability to chain jobs into workflows. For GTM automation, this means your enrichment pipeline does not silently fail. If Apollo rate-limits you on lead 47 of 200, Trigger.dev retries that specific lead instead of dropping the whole batch. It goes beyond cron by supporting event-driven triggers - a new lead in Attio fires an enrichment job, not a schedule.',
+        howYouUseIt:
+          'Define jobs in TypeScript. Deploy to Trigger.dev cloud or self-host. Jobs can run on schedules (like cron) or fire on events (webhook, database change, another job completing). The dashboard shows every execution with timing, logs, and retry history. Pair it with Railway for the compute and Trigger.dev for the orchestration.',
+        related: ['Cron Jobs', 'Event-Driven Workflows', 'Webhooks'],
+      },
+      {
+        name: 'OAuth vs API Keys',
+        definition:
+          'Two authentication patterns for connecting to external services. API keys are static secrets. OAuth is a delegated authorization flow with token refresh.',
+        whyItMatters:
+          'This tripped me up early. API keys are simple: paste a string into your .env file, reference it in code, done. But API keys are permanent until revoked. If one leaks, anyone can use it until you notice. OAuth is more complex but more secure. You authorize an app once, it gets a temporary token, and that token refreshes automatically. MCPs use OAuth for services like HubSpot and Slack. CLIs like the Vercel CLI and Salesforce CLI use OAuth for login. Clay uses API keys for enrichment providers. Understanding which pattern a tool uses tells you how to connect it, how to secure it, and what breaks when credentials expire.',
+        howYouUseIt:
+          'Check the tool docs first. If it says "create an API key" - store it in .env, never commit it, rotate it periodically. If it says "connect your account" or "authorize" - that is OAuth, handled through a browser redirect flow. MCPs handle OAuth automatically after initial setup. For Clay enrichment, you paste API keys into the Clay settings. For Claude Code MCPs, you authorize through the browser once and tokens refresh silently.',
+        related: ['Environment Variables', 'MCP Servers', 'Configuration Files'],
+      },
+      {
+        name: 'Cargo.ai',
+        definition:
+          'AI revenue orchestration platform for multi-agent GTM workflows. Waterfall enrichment, lead scoring, account routing, and 50+ integrations. Sits between enrichment sources and your CRM.',
+        whyItMatters:
+          'Not to be confused with Rust\'s Cargo package manager. Cargo.ai is a GTM data orchestration layer. Think of it as Clay but purpose-built for revenue teams with AI agents doing the heavy lifting. It handles waterfall enrichment (try Apollo first, fall back to Prospeo, then Dropcontact), lead scoring with custom models, and account routing rules that push qualified leads to the right rep. The 50+ integrations mean it connects to your existing stack without ripping anything out. For builders, Cargo.ai represents the trend of GTM tools becoming agent-native - designed from day one for AI workflows, not bolted on after.',
+        howYouUseIt:
+          'Connect your enrichment sources (Apollo, Clearbit, ZoomInfo). Define waterfall logic - which source to try first, what to fall back to, when to stop. Set scoring rules based on enriched data. Route qualified accounts to Attio, HubSpot, or Salesforce. The platform handles the orchestration. You define the rules and monitor the pipeline. Cargo.ai is particularly useful when your enrichment stack gets complex enough that managing it in custom scripts becomes a maintenance burden.',
+        related: ['Webhooks', 'Event-Driven Workflows', 'Cron Jobs'],
       },
     ],
   },

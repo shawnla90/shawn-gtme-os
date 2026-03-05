@@ -68,6 +68,20 @@ interface FeatureMilestone {
 
 const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
+    date: '2026-03-05',
+    title: 'ABM Pipeline & Agent Deployment Guides',
+    description: 'New how-to categories and guides: ABM landing pages, personalization architecture, PostHog for GTM, agent building tools, cron jobs for signal detection, and the CLI ecosystem.',
+    type: 'launch',
+    link: '/how-to',
+  },
+  {
+    date: '2026-03-05',
+    title: 'Knowledge Expansion: GTM Tools',
+    description: '8 new engineering terms: RAG, LangChain, PostHog, Railway, Trigger.dev, Cargo.ai, OAuth vs API Keys, and Refactoring.',
+    type: 'launch',
+    link: 'https://shawnos.ai/knowledge',
+  },
+  {
     date: '2026-02-22',
     title: 'Cross-Site Updates Pages',
     description: 'Updates feed live on all 3 sites. Full cross-site backlinking across shawnos.ai, thegtmos.ai, thecontentos.ai.',

@@ -18,6 +18,8 @@ export type HowToWikiCategory =
   | 'parallel-agents'
   | 'geo-seo'
   | 'comparisons'
+  | 'abm-pipeline'
+  | 'deployment-tools'
 
 export type CanonicalSite = 'shawnos' | 'gtmos' | 'contentos'
 
@@ -90,6 +92,20 @@ export const HOW_TO_WIKI_CATEGORIES: {
     description:
       'Head-to-head breakdowns of AI coding tools, workflows, and concepts. Practitioner perspective from someone who uses them all daily.',
     prompt: '$ diff --tool-a --tool-b',
+  },
+  {
+    id: 'abm-pipeline',
+    label: 'ABM Pipeline',
+    description:
+      'Account-based marketing automation, personalized landing pages, analytics tracking, and the full ABM motion from signal to conversion.',
+    prompt: '$ cd ~/how-to/abm-pipeline/',
+  },
+  {
+    id: 'deployment-tools',
+    label: 'Deployment Tools',
+    description:
+      'Hosting platforms, agent deployment, SDK kits, and infrastructure tools for shipping agents and services beyond static sites.',
+    prompt: '$ cd ~/how-to/deployment-tools/',
   },
 ]
 
@@ -3984,6 +4000,531 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
         type: 'pro-tip',
         content:
           'Before publishing, run the authenticity test. Three questions:\n\n1. Could anyone else have written this? If yes, it needs more personal experience. Add your specific results, your specific tools, your specific failures. Make it impossible for someone who has not done your work to produce this content.\n\n2. Would you say this out loud to a colleague? If the language feels stiff or formal, it still has AI residue. Rewrite the stiff sentences in the way you would actually explain it in conversation.\n\n3. Does it make a claim you would defend? If there is a statement you would hedge on in a live conversation, either strengthen it with evidence or remove it. AI loves to make broad claims. Your content should only make claims you have earned through experience.\n\nIf the piece passes all three, publish it. If not, one more editing pass focusing on the questions it failed.\n\nThe goal is not to hide that you used AI. The goal is to produce content that reflects your actual expertise, delivered faster than you could write it manually. When the experience is real and the voice is yours, the tool used to produce it is irrelevant.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  CLI TOOLS (new entries)                                             */
+  /* ================================================================== */
+
+  {
+    id: 'cli-ecosystem-overview',
+    title: 'The CLI Ecosystem',
+    subtitle: 'Why CLI access is king and how every major GTM tool is converging on terminal-first workflows',
+    category: 'cli-tools',
+    description:
+      'Overview of the CLI ecosystem for GTM engineers. HubSpot CLI, Salesforce CLI, Attio CLI, Vercel CLI, and why natural language CLI through Claude Code changes everything.',
+    keywords: [
+      'cli tools for gtm',
+      'hubspot cli',
+      'salesforce cli',
+      'vercel cli',
+      'claude code cli',
+      'terminal tools for sales',
+      'natural language cli',
+      'cli vs gui',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'cli-vs-mcp-tools',
+      'claude-code-quickstart',
+      'mcp-gtm-stack',
+    ],
+    sections: [
+      {
+        heading: 'Why CLI Access Is the Most Important Thing',
+        type: 'prose',
+        content:
+          'Every major platform is shipping a CLI. HubSpot has hs. Salesforce has sf. Vercel has vercel. Attio is building one. Cargo.ai exposes its pipeline through CLI commands. The pattern is clear: the future of tool access is the terminal, not the browser.\n\nWhy this matters for GTM engineers: CLI access means scriptability. Anything you can type once, you can automate forever. A CLI command to pull pipeline data becomes a cron job that runs every morning. A CLI command to create a contact becomes a bulk import script. A CLI command to check campaign status becomes a Slack bot.\n\nMCPs gave us the first wave of programmatic access. But MCPs drain context windows. Every MCP tool definition eats tokens. A HubSpot MCP with 30 tool definitions burns context before you ask your first question. A CLI binary sitting on your machine costs zero context. You call it when you need it and it returns results.',
+      },
+      {
+        heading: 'The CLI Landscape Right Now',
+        type: 'pattern',
+        content:
+          'HubSpot CLI (hs): manage CRM objects, list deals, create contacts, pull reports. Still maturing but functional for basic operations.\n\nSalesforce CLI (sf): the most mature GTM CLI. Deploy metadata, query SOQL, manage orgs, run tests. Enterprise-grade and battle-tested.\n\nVercel CLI (vercel): deploy sites, manage environment variables, check build status, tail logs. Essential for anyone deploying on Vercel.\n\nAttio CLI: early stage but promising. CRM operations from the terminal. Read and write records, manage lists, search contacts.\n\nClaude Code: this is the meta-CLI. It wraps every other CLI. Instead of memorizing sf data query "SELECT Id FROM Account", you tell Claude Code "pull all accounts created this week from Salesforce" and it writes and runs the sf command for you. Natural language CLI access to every tool that has a CLI.',
+      },
+      {
+        heading: 'Natural Language CLI Through Claude Code',
+        type: 'pro-tip',
+        content:
+          'This is the insight that changes everything. You do not need to memorize CLI syntax. Claude Code reads the docs, constructs the command, runs it, and interprets the output. Your job is to describe intent. The agent translates intent to commands.\n\n"Check if our Vercel deployment succeeded" becomes vercel ls --json | jq. "Find all HubSpot contacts added yesterday" becomes hs contacts list --created-after. "Query Salesforce for open opportunities over 50k" becomes the right SOQL query piped through sf.\n\nThe compound effect: every new CLI that ships instantly becomes accessible through Claude Code. No learning curve. No docs to read. Describe what you want, let the agent figure out the syntax. This is why CLI access matters more than GUI access. GUIs require human eyes and clicks. CLIs require text in and text out. AI agents are built for text in and text out.',
+      },
+      {
+        heading: 'Setting Up Your CLI Stack',
+        type: 'code',
+        content:
+          'Start with the CLIs you actually use. Do not install everything at once.\n\nbrew install vercel - if you deploy on Vercel\nnpm install -g @hubspot/cli - if you use HubSpot\nnpm install -g @salesforce/cli - if you use Salesforce\npip install attio-cli - when available\n\nEach CLI has an auth step. Usually oauth or an API key. Run the auth command once and it stores credentials locally. After that, every command authenticates automatically.\n\nThe test: open Claude Code and say "use the Vercel CLI to show me my recent deployments." If it works, your CLI stack is connected. If it fails, check that the CLI is in your PATH and authenticated.',
+      },
+    ],
+  },
+
+  {
+    id: 'posthog-for-gtm',
+    title: 'PostHog for GTM Engineers',
+    subtitle: 'Open-source analytics with more precision than GA or HubSpot for ABM tracking',
+    category: 'cli-tools',
+    description:
+      'How to use PostHog for GTM analytics. Event-based ABM tracking, natural language dashboard creation through PostHog MCP, funnel analysis, and why PostHog gives you precision traditional tools cannot match.',
+    keywords: [
+      'posthog gtm',
+      'posthog abm tracking',
+      'posthog analytics',
+      'posthog mcp',
+      'posthog claude code',
+      'product analytics for sales',
+      'abm analytics',
+      'posthog vs google analytics',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'gtmos',
+    related: [
+      'cli-ecosystem-overview',
+      'abm-personalization-architecture',
+      'mcp-gtm-stack',
+    ],
+    sections: [
+      {
+        heading: 'Why PostHog for GTM',
+        type: 'prose',
+        content:
+          'Google Analytics tells you "50 people visited your pricing page." PostHog tells you "3 people from Acme Corp visited your /for/acme landing page, read 80% of the case study section, clicked the ROI calculator twice, and left without booking. One came back the next day from a LinkedIn ad."\n\nThat level of detail changes how you run ABM. You stop guessing which accounts are engaged and start knowing. PostHog is event-based. Every interaction is a structured event with properties. You define what matters and PostHog captures it with full context.\n\nThe open-source angle matters too. Your analytics data stays yours. No vendor lock-in. Self-host if data sovereignty is a requirement. The cloud version is free up to 1 million events per month, which covers most GTM operations.',
+      },
+      {
+        heading: 'ABM Event Architecture',
+        type: 'pattern',
+        content:
+          'Define events that map to your ABM funnel stages:\n\nabm_page_view - someone hits a personalized landing page. Properties: company slug, referral source, UTM parameters.\n\nabm_section_read - scroll depth on key sections. Properties: section name, time spent, percentage viewed.\n\nabm_cta_click - any call-to-action interaction. Properties: CTA type (book demo, download, contact), page location.\n\nabm_form_submit - form completions. Properties: form type, company, lead score at time of submission.\n\nWith these four events, you build a complete ABM engagement funnel. Filter by company. Filter by time period. See exactly which accounts are warming up and which went cold.',
+      },
+      {
+        heading: 'Claude Code + PostHog MCP',
+        type: 'pro-tip',
+        content:
+          'The PostHog MCP connects Claude Code directly to your analytics instance. This means natural language queries against your data.\n\n"Show me which companies visited our ABM landing pages this week" - Claude queries PostHog, aggregates by company slug, returns a ranked list.\n\n"Build a funnel from abm_page_view to abm_cta_click to abm_form_submit" - Claude creates the funnel in PostHog and returns conversion rates at each stage.\n\n"Which landing page sections get the most engagement?" - Claude queries scroll depth events, groups by section, and ranks by average time spent.\n\nNo SQL. No dashboard builder. Describe the question, get the answer. This is the natural language analytics layer that makes PostHog accessible to GTM engineers who are not data analysts.',
+      },
+      {
+        heading: 'Setup in 15 Minutes',
+        type: 'code',
+        content:
+          'Step 1: Create a PostHog account at posthog.com. Free tier covers 1M events/month.\n\nStep 2: Add the PostHog snippet to your site. For Next.js, use the posthog-js package. Initialize in your app layout with your project API key.\n\nStep 3: Define custom events. In your ABM landing page components, add posthog.capture("abm_page_view", { company: slug, source: utm_source }). Do the same for scroll depth, CTA clicks, and form submissions.\n\nStep 4: Connect PostHog MCP to Claude Code. Add the PostHog MCP server configuration with your API key. Test with "list my recent PostHog events."\n\nStep 5: Build your first dashboard. Tell Claude Code "create a PostHog dashboard showing ABM landing page visits by company this month." It builds the dashboard through the MCP. Done.',
+      },
+    ],
+  },
+
+  {
+    id: 'claude-code-co-work',
+    title: 'Claude Code Co-Work Sessions',
+    subtitle: 'Drop a folder session with workflows, scripts, and shared context across team members',
+    category: 'cli-tools',
+    description:
+      'How Claude Code co-work sessions change team collaboration. Shared folder context, active playbooks vs passive docs, and why the repo becomes the onboarding.',
+    keywords: [
+      'claude code co-work',
+      'claude code team',
+      'ai pair programming',
+      'shared context ai',
+      'claude code collaboration',
+      'co-work sessions',
+      'claude code folder sessions',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'claude-code-quickstart',
+      'parallel-session-handoffs',
+      'agent-teams-claude-code',
+    ],
+    sections: [
+      {
+        heading: 'What Co-Work Sessions Are',
+        type: 'prose',
+        content:
+          'A co-work session is a Claude Code instance pointed at a shared folder. Everyone on the team gets the same context: the same CLAUDE.md rules, the same skills, the same data files, the same voice system. It is not a chat room. It is a shared operating environment where the AI has already read your playbooks.\n\nThe difference from traditional collaboration: Notion docs sit in a browser tab nobody has open. A Confluence page gets written once and forgotten. A co-work folder is active. The AI reads it on every session start. Every workflow is executable, not just documented. Every playbook runs, it does not just explain.',
+      },
+      {
+        heading: 'How SDRs Should Be Working Now',
+        type: 'pattern',
+        content:
+          'Drop a folder with: CLAUDE.md (team rules, voice, anti-slop filters), scripts/ (enrichment crons, lead scoring, campaign automation), skills/ (outreach generation, research compilation, pipeline review), data/ (target accounts, enrichment results, campaign metrics).\n\nNew SDR joins. They open Claude Code in the folder. The CLAUDE.md loads automatically. They say "research Acme Corp for outbound" and the agent runs the research skill, pulls from Exa, enriches through Apollo, checks Attio for existing history, and produces a research brief. The SDR did not read a single doc. The folder was the onboarding.\n\nThis is the active playbook model. Documentation that executes. Context that compounds. Every session builds on previous sessions through handoff files and memory.',
+      },
+      {
+        heading: 'Setting Up a Team Folder',
+        type: 'code',
+        content:
+          'Create a repo. Structure it:\n\nCLAUDE.md - team rules, model preferences, voice system\n.claude/skills/ - one skill per workflow (research, outreach, reporting)\nscripts/ - automation scripts that skills invoke\ndata/ - shared data files (target lists, enrichment results)\ntasks/ - task tracking and lessons learned\n\nEach team member clones the repo and runs Claude Code from the root. The CLAUDE.md establishes shared context. Skills provide consistent workflows. Data files keep everyone working from the same source of truth.\n\nThe key insight: the repo IS the team knowledge base. Not a separate wiki. Not a Notion workspace. The same folder that runs the automation also documents the automation. Code and documentation live together.',
+      },
+      {
+        heading: 'Active Playbooks vs Passive Docs',
+        type: 'pro-tip',
+        content:
+          'Passive doc: "To research a prospect, check LinkedIn, look at their recent funding, review their tech stack on BuiltWith, and summarize findings in a Google Doc."\n\nActive playbook: a skill file that Claude Code reads and executes. It checks LinkedIn via the browser, pulls funding data from Exa, queries BuiltWith through the API, and writes the summary to the research folder in the repo. Same workflow. One requires a human to follow steps. The other requires a human to say "research this company."\n\nEvery passive doc in your org is a candidate for an active playbook. The conversion process: identify the steps, write them as a skill, test the skill, deploy to the shared folder. The documentation becomes the automation.',
+      },
+    ],
+  },
+
+  {
+    id: 'github-repo-evaluation',
+    title: 'How to Evaluate GitHub Repos',
+    subtitle: 'Never just install someone\'s repo. Use Claude Code to interrogate, compare, and cherry-pick.',
+    category: 'cli-tools',
+    description:
+      'The recursive drift approach to evaluating GitHub repositories. How to use Claude Code to compare repos against your stack, identify useful patterns, and cherry-pick without blind installation.',
+    keywords: [
+      'evaluate github repo',
+      'github repo evaluation',
+      'claude code repo review',
+      'how to evaluate open source',
+      'github repo comparison',
+      'cherry pick code patterns',
+      'recursive drift evaluation',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'cli-ecosystem-overview',
+      'claude-code-quickstart',
+      'context-engineering-vs-prompt-engineering',
+    ],
+    sections: [
+      {
+        heading: 'Never Just Install',
+        type: 'prose',
+        content:
+          'Someone shares a GitHub link. The default move: clone it, npm install, hope it works. The recursive drift move: ask Claude Code to read it first.\n\nMost repos you encounter are 80% irrelevant to your use case. They solve a broader problem than you have, use a different stack, or make architectural choices that conflict with yours. Installing blindly means inheriting their dependencies, their patterns, and their technical debt.\n\nThe better approach: read the code, understand the patterns, take what serves you, leave the rest. Claude Code makes this fast. Point it at a repo and it reads the entire thing in seconds.',
+      },
+      {
+        heading: 'The Three Questions',
+        type: 'pattern',
+        content:
+          'When you find a repo, ask Claude Code three things:\n\n1. "How does this compare to what I already have?" Claude reads both your codebase and theirs. It identifies overlap, gaps, and conflicts. Maybe they solved a problem you are still solving manually. Maybe they use a library that is better than yours. Maybe their approach is worse. You need the comparison before you decide anything.\n\n2. "How can this help me? What should I cherry-pick?" Not "install the whole thing" but "which specific patterns, functions, or approaches are worth adopting?" Maybe their error handling is better. Maybe their data fetching pattern is cleaner. Cherry-pick those specific things.\n\n3. "What are the risks of adopting this?" Dependencies that conflict with yours. License restrictions. Maintenance status - is this actively maintained or abandoned? Claude checks the commit history, open issues, and dependency versions.',
+      },
+      {
+        heading: 'Learning by Reading Code',
+        type: 'pro-tip',
+        content:
+          'The hidden benefit of repo evaluation: you learn faster by reading real code than by reading tutorials. A tutorial shows you the happy path. A production repo shows you the edge cases, the error handling, the performance optimizations, and the architectural trade-offs.\n\nMake it a habit. When someone mentions a tool or framework, find a repo that uses it. Ask Claude Code to walk you through the interesting parts. You absorb patterns without the overhead of building a toy project.\n\nThe compound effect: after evaluating 20 repos, you have a mental library of patterns. You start recognizing good architecture by sight. You know which libraries are worth adopting because you have seen them in production code. Reading code is the fastest path to writing better code.',
+      },
+    ],
+  },
+
+  {
+    id: 'cron-jobs-for-scraping',
+    title: 'Cron Jobs for Job Scraping',
+    subtitle: 'Python scripts as cron jobs for job board scraping and signal detection',
+    category: 'cli-tools',
+    description:
+      'How to build Python cron jobs that scrape job boards for signal detection. launchd scheduling, feeding scraped data into ABM targeting, and building a hiring signal pipeline.',
+    keywords: [
+      'cron job scraping',
+      'job board scraping',
+      'python cron job',
+      'launchd cron',
+      'signal detection abm',
+      'hiring signal pipeline',
+      'job scraping automation',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'gtmos',
+    related: [
+      'cli-ecosystem-overview',
+      'abm-personalization-architecture',
+      'how-to-build-abm-pipeline-with-ai',
+    ],
+    sections: [
+      {
+        heading: 'Why Job Boards Are Signals',
+        type: 'prose',
+        content:
+          'A company posting "Head of RevOps" is a signal. They are building a revenue operations function. A company posting "SDR Manager" is a signal. They are scaling outbound. A company posting "Data Engineer" with "Clay" in the requirements is a signal. They are building GTM data infrastructure.\n\nJob postings are public intent data. The company is telling the world exactly what they are building and what skills they need. If your product or service aligns with what they are hiring for, that is a warm signal. The problem: job boards have thousands of new postings daily. Manual monitoring does not scale. Cron jobs do.',
+      },
+      {
+        heading: 'The Scraping Pipeline',
+        type: 'pattern',
+        content:
+          'Step 1: Python script that queries job board APIs or scrapes listings. Target boards relevant to your ICP: LinkedIn Jobs API, Indeed, Greenhouse board pages, Lever board pages. Filter by keywords that indicate buying intent for your product.\n\nStep 2: Parse and normalize the results. Extract company name, role title, posting date, key requirements. Store in a structured format - JSON or SQLite.\n\nStep 3: Enrich. Match company names against your existing Attio records. Check if they are already in your pipeline. If new, run through Apollo for firmographic data.\n\nStep 4: Score and route. Companies posting 3+ relevant roles in 30 days get a higher score than one-off postings. Route high-scoring signals to your ABM target list.',
+      },
+      {
+        heading: 'launchd Scheduling',
+        type: 'code',
+        content:
+          'On macOS, cron is deprecated in favor of launchd. Create a plist file in ~/Library/LaunchAgents/ that runs your Python script on a schedule.\n\nThe plist defines: which script to run (ProgramArguments), when to run it (StartCalendarInterval or StartInterval), where to log output (StandardOutPath, StandardErrorPath), and whether to run at load (RunAtLoad).\n\nA typical setup: run the scraper every 6 hours. That catches new postings without hammering the source. The script writes results to data/signals/job-postings.json. A separate daily cron reads that file, deduplicates, enriches new entries, and pushes qualified signals to Attio.\n\nKeep the scraping and the enrichment as separate jobs. If the scraper fails, you do not lose yesterday\'s enrichment results. If enrichment fails, you do not lose today\'s scraping results. Decoupled pipelines are resilient pipelines.',
+      },
+      {
+        heading: 'Feeding Signals into ABM',
+        type: 'pro-tip',
+        content:
+          'Raw job postings are noise. Enriched and scored job postings are signals. The enrichment step transforms "Acme Corp posted a Head of RevOps role" into "Acme Corp (Series B, 150 employees, using Salesforce and Outreach, $12M ARR) is building a RevOps function. They posted 3 GTM roles in the last 2 weeks. No existing relationship in Attio."\n\nThat enriched signal feeds directly into your ABM targeting. Build a personalized landing page referencing their RevOps buildout. Draft outreach that connects your solution to their specific hiring pattern. The job posting gave you the opening. The enrichment gave you the context. The ABM pipeline turns both into a conversation.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  DEPLOYMENT TOOLS                                                    */
+  /* ================================================================== */
+
+  {
+    id: 'agent-building-tools',
+    title: 'Tools for Building and Deploying Agents',
+    subtitle: 'Cargo.ai, LangChain, Railway, Trigger.dev - the agent infrastructure stack',
+    category: 'deployment-tools',
+    description:
+      'Overview of the tools for building and deploying AI agents. Cargo.ai for GTM orchestration, LangChain for agent frameworks, Railway for hosting, Trigger.dev for background jobs, and how SDK kits accelerate deployment.',
+    keywords: [
+      'ai agent deployment',
+      'agent building tools',
+      'langchain deployment',
+      'railway ai agents',
+      'trigger.dev agents',
+      'cargo ai gtm',
+      'agent hosting',
+      'agent infrastructure',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'gtmos',
+    related: [
+      'cli-ecosystem-overview',
+      'parallel-agent-patterns',
+      'orchestrating-multi-agent-workflows',
+    ],
+    sections: [
+      {
+        heading: 'The Agent Infrastructure Stack',
+        type: 'prose',
+        content:
+          'Building an agent is the easy part. Making it run reliably in production is the hard part. Four tools cover the stack:\n\nCargo.ai handles GTM orchestration. Multi-agent workflows for enrichment, scoring, and routing. 50+ integrations out of the box. If your agent pipeline involves moving data between GTM tools, Cargo.ai provides the plumbing.\n\nLangChain provides the agent framework. Chains, memory, tool use, retrieval. Build your agent logic in Python or JavaScript using battle-tested patterns instead of raw API calls.\n\nRailway provides the hosting. Long-running processes, databases, background workers. Your agent lives here and runs as long as it needs to.\n\nTrigger.dev provides the orchestration. Scheduled runs, event-driven triggers, retries, failure handling. The reliability layer that ensures your agent actually runs when it should.',
+      },
+      {
+        heading: 'Choosing the Right Tool',
+        type: 'pattern',
+        content:
+          'If you need GTM data orchestration (enrichment waterfalls, lead routing, CRM sync): start with Cargo.ai. It is purpose-built for this and saves you months of custom development.\n\nIf you need custom agent logic (research compilation, content generation, complex reasoning chains): use LangChain. It gives you the building blocks for any agent pattern.\n\nIf you need persistent hosting (always-on agents, databases, APIs): use Railway. Deploy from a GitHub push, scale as needed.\n\nIf you need reliable scheduling (cron-like jobs with retries and monitoring): use Trigger.dev. It adds the reliability layer that bare cron jobs lack.\n\nMost production agent deployments use 2-3 of these together. LangChain agent logic, deployed on Railway, orchestrated by Trigger.dev. Or Cargo.ai for the data pipeline, with custom LangChain agents for the research steps that Cargo.ai does not cover natively.',
+      },
+      {
+        heading: 'SDK Kits and Quick Starts',
+        type: 'code',
+        content:
+          'Every hosting provider ships SDK kits that cut deployment time. Railway has templates for LangChain agents, FastAPI backends, and cron workers. Trigger.dev has starter kits for common job patterns. Cargo.ai has pre-built workflow templates for enrichment and routing.\n\nThe pattern: pick a template that matches your use case. Fork it. Customize the logic. Deploy. You skip the boilerplate (Dockerfile, process management, health checks, logging) and focus on the agent logic that is unique to your use case.\n\nFor GTM engineers who are not DevOps specialists, SDK kits are the difference between "I could build this in a weekend" and "I could build this in an afternoon." The infrastructure is solved. Your job is the business logic.',
+      },
+      {
+        heading: 'Production Checklist',
+        type: 'pro-tip',
+        content:
+          'Before deploying an agent to production:\n\n1. Error handling: what happens when an API call fails? The agent should retry, log the failure, and continue with the next item. Never let one bad API response crash the whole run.\n\n2. Rate limiting: respect API limits. Add delays between calls. Use exponential backoff on retries. Getting rate-limited and retrying immediately makes it worse.\n\n3. Observability: log every step. When the agent runs at 3 AM and something goes wrong, logs are the only way to debug it. Trigger.dev gives you this for free. On Railway, use structured logging.\n\n4. Cost controls: set spending limits on API keys. A bug in a loop can burn through your Apollo credits in minutes. Cap the spend at the API level, not just in your code.\n\n5. Idempotency: running the agent twice should produce the same result. If it enriches a lead that is already enriched, it should skip, not duplicate.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  ABM PIPELINE                                                        */
+  /* ================================================================== */
+
+  {
+    id: 'abm-landing-pages',
+    title: 'Building ABM Landing Pages with Claude Code',
+    subtitle: 'The /landing-page skill: research, build, deploy at /for/{slug}',
+    category: 'abm-pipeline',
+    description:
+      'How to build personalized ABM landing pages with Claude Code. The /landing-page skill workflow, CRM-fed personalization, bidirectional SEO linking, and deploying at /for/{slug}.',
+    keywords: [
+      'abm landing page',
+      'personalized landing page',
+      'claude code landing page',
+      'abm personalization',
+      '/for/ landing page',
+      'hubspot landing page ai',
+      'ai landing page builder',
+      'abm page builder',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'gtmos',
+    related: [
+      'abm-personalization-architecture',
+      'posthog-for-gtm',
+      'how-to-build-abm-pipeline-with-ai',
+    ],
+    sections: [
+      {
+        heading: 'The Landing Page Skill',
+        type: 'prose',
+        content:
+          'The /landing-page skill does three things: research the target company, build a custom page, and deploy it. The output is a live page at /for/{company-slug} on thegtmos.ai.\n\nThe research phase pulls data from Exa (web intelligence), Apollo (firmographics), and Attio (existing CRM history). The build phase generates a React component with the company\'s specific pain points, relevant case studies, and tailored value propositions. The deploy phase pushes to GitHub, triggers a Vercel build, and the page is live in under 2 minutes.\n\nThis is not a template with a logo swap. Each page has unique content based on actual research. The company\'s tech stack, recent funding, hiring patterns, and competitive landscape inform every section. A human could build this page in 4-6 hours. The skill builds it in 5 minutes.',
+      },
+      {
+        heading: 'CRM-Fed Personalization',
+        type: 'pattern',
+        content:
+          'The next evolution: connecting Claude Code to HubSpot or Attio so landing pages pull from CRM data. If you already have deal notes, conversation history, and engagement data on an account, the landing page should reflect that context.\n\nPatterns that work:\n- Account with an open deal: landing page emphasizes the specific use case they discussed with your sales team.\n- Account that went cold: landing page addresses the likely objections with updated proof points.\n- Account from an event: landing page references the event and the specific topic they showed interest in.\n- Net new account: landing page uses industry-level personalization based on firmographic data.\n\nThe CRM data determines the personalization depth. More data, more specific pages. Less data, more industry-level pages. Both outperform generic landing pages by 3-5x on engagement metrics.',
+      },
+      {
+        heading: 'SEO Value of ABM Pages',
+        type: 'pro-tip',
+        content:
+          'ABM landing pages are not throwaway assets. They generate SEO value through bidirectional linking.\n\nEach /for/{slug} page links back to your main product pages, how-to guides, and case studies. Those pages link forward to relevant landing pages. The internal link graph grows with every new account page.\n\nThe pages also target long-tail keywords naturally. "/for/acme" targets "acme + your product category" searches. When Acme employees Google your product, they find a page built specifically for them. That page has more relevant content than your generic homepage.\n\nThe backlink value compounds. 50 ABM pages create 50 new nodes in your site graph, each with 5-10 internal links. That is 250-500 new internal links strengthening your overall domain authority.',
+      },
+    ],
+  },
+
+  {
+    id: 'abm-personalization-architecture',
+    title: 'ABM Personalization Architecture',
+    subtitle: 'Signal-driven personalization from first touch to conversion',
+    category: 'abm-pipeline',
+    description:
+      'The full ABM personalization architecture. Signal detection, RAG for due diligence, bidirectional link graphs, and the funnel from signal to conversion.',
+    keywords: [
+      'abm architecture',
+      'abm personalization',
+      'signal driven marketing',
+      'abm funnel',
+      'account based marketing architecture',
+      'abm signal detection',
+      'personalization pipeline',
+      'abm conversion funnel',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'gtmos',
+    related: [
+      'abm-landing-pages',
+      'posthog-for-gtm',
+      'cron-jobs-for-scraping',
+    ],
+    sections: [
+      {
+        heading: 'The ABM Movement',
+        type: 'prose',
+        content:
+          'ABM is not a tool. It is an architectural decision. Instead of broadcasting to everyone and hoping the right people respond, you identify specific accounts, research them deeply, and build personalized experiences for each one.\n\nThe traditional approach: marketing generates MQLs, sales qualifies them, most are garbage. The ABM approach: sales and marketing agree on target accounts upfront, build personalized content and outreach for each, and measure engagement at the account level.\n\nThe architecture that supports this has four layers: signal detection (who to target), research and enrichment (what to say), personalized delivery (how to say it), and engagement tracking (did it work). Each layer is automated. Each layer feeds data to the next.',
+      },
+      {
+        heading: 'Signal Detection Layer',
+        type: 'pattern',
+        content:
+          'Signals tell you when to engage. Types of signals:\n\nHiring signals: job postings that indicate budget and intent. "Hiring a RevOps Manager" means they are building infrastructure you might support.\n\nFunding signals: recent raises mean budget exists. Series A companies are building. Series B companies are scaling. Both need different things.\n\nTech stack signals: companies adopting tools adjacent to yours are natural buyers. If they just adopted Salesforce and you sell Salesforce integrations, the timing is right.\n\nEngagement signals: website visits, content downloads, social interactions. PostHog tracks these with precision. A company visiting your site 5 times in a week without converting needs personalized outreach, not another nurture email.\n\nCron jobs scan for signals daily. Job board scrapers, Exa web intelligence queries, PostHog engagement alerts. Fresh signals every morning.',
+      },
+      {
+        heading: 'RAG for Due Diligence',
+        type: 'pattern',
+        content:
+          'Once you have a signal, you need context. RAG turns raw signals into actionable research.\n\nThe pipeline: pull the company\'s website content (Exa), recent news (Exa), job postings (scraper), tech stack (BuiltWith or similar), firmographic data (Apollo), and any existing CRM history (Attio). Feed all of it into Claude context. Ask for a due diligence brief.\n\nThe output: a structured research document with company overview, relevant pain points, buying signals, potential objections, and recommended approach. This brief feeds the personalized landing page builder and the outreach generation skill.\n\nWithout RAG, outreach is generic. "I noticed you are growing and thought..." With RAG, outreach is specific. "Your 3 new RevOps hires and recent Salesforce adoption suggest you are building the data infrastructure to support your Series B growth targets. Here is how we helped a similar company cut their pipeline build time by 60%."',
+      },
+      {
+        heading: 'The Bidirectional Link Graph',
+        type: 'formula',
+        content:
+          'Every ABM asset creates connections:\n\nLanding page at /for/{slug} links to: relevant how-to guides, case studies, product pages, blog posts.\n\nHow-to guides link to: related landing pages, other guides, knowledge terms.\n\nBlog posts link to: landing pages for companies mentioned, how-to guides for tools discussed, knowledge terms for concepts explained.\n\nKnowledge terms link to: how-to guides, blog posts, landing pages.\n\nEvery new asset strengthens every existing asset. The graph compounds. 50 landing pages, 30 how-to guides, 20 blog posts, and 80 knowledge terms create a web of thousands of internal links. AI engines see comprehensive coverage. Search engines see topical authority. Visitors find relevant content on every page.\n\nThis is not link building. This is content architecture. The links emerge naturally from the data relationships. The TypeScript data objects define the connections. The templates render the links. No manual linking required.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  SECURITY (new entry)                                                */
+  /* ================================================================== */
+
+  {
+    id: 'team-security-cloud-guardrails',
+    title: 'Security Guardrails for Cloud Teams',
+    subtitle: 'Branch protection, secrets management, and access control for teams deploying agents',
+    category: 'security',
+    description:
+      'Security guardrails for teams deploying AI agents on cloud infrastructure. Local vs cloud for sensitive operations, repo management, Claude Code as a security layer, and protecting production systems.',
+    keywords: [
+      'ai agent security',
+      'cloud security guardrails',
+      'branch protection ai',
+      'secrets management ai',
+      'claude code security',
+      'team security cloud',
+      'agent deployment security',
+      'ai security best practices',
+    ],
+    difficulty: 'advanced',
+    canonicalSite: 'shawnos',
+    related: [
+      'ai-security-myths',
+      'constraints-and-context-engines',
+      'env-files-explained',
+    ],
+    sections: [
+      {
+        heading: 'The Security Architecture',
+        type: 'prose',
+        content:
+          'AI agents with access to production systems need guardrails. Not paranoid restrictions that make them useless, but practical boundaries that prevent catastrophic mistakes.\n\nThe architecture has three layers. First, what runs locally vs what runs in the cloud. Sensitive operations - API key management, database migrations, secrets rotation - stay on local machines where you have physical control. Agent workloads that process data and generate output run in the cloud where they scale.\n\nSecond, repo-level protections. Branch protection rules prevent agents from pushing directly to main. Required reviews ensure a human sees every change before it hits production. Pre-push hooks scan for secrets, API keys, and partner-identifiable data before anything leaves your machine.\n\nThird, runtime guardrails in Claude Code itself. CLAUDE.md rules define what the agent can and cannot do. The agent respects these rules because they are loaded into context at session start.',
+      },
+      {
+        heading: 'Local vs Cloud for Sensitive Ops',
+        type: 'pattern',
+        content:
+          'Keep local: .env files, API key rotation, database credentials, SSH keys, partner data, anything that would be catastrophic if leaked.\n\nPush to cloud: agent code, workflow definitions, processed (anonymized) data, generated content, deployment artifacts.\n\nThe rule: if the data exists in one place (your machine) and leaking it means calling every client, keep it local. If the data is generated or derived and losing it means re-running a script, it can go to the cloud.\n\nFor agents on Railway or similar: pass secrets as environment variables in the hosting dashboard. Never commit them. Never log them. Never include them in error messages. The agent code references process.env.API_KEY, not the actual key.',
+      },
+      {
+        heading: 'Branch Protection and Review',
+        type: 'code',
+        content:
+          'GitHub branch protection settings for teams with AI agents:\n\n1. Require pull request reviews before merging to main. Even if the agent wrote the code, a human reviews it.\n\n2. Require status checks to pass. Run your test suite and security scan before any merge.\n\n3. Require branches to be up to date before merging. No stale branch merges that create conflicts.\n\n4. Restrict who can push to main. Agents push to feature branches. Humans merge to main.\n\nPre-push hooks add another layer. The Husky pre-push hook scans every commit for patterns that should never be pushed: API keys (strings matching key patterns), partner names (from a local blocklist), .env file contents, and large binary files. The push fails if any pattern matches.',
+      },
+      {
+        heading: 'Claude Code as a Security Layer',
+        type: 'pro-tip',
+        content:
+          'Claude Code itself enforces security through CLAUDE.md rules. This is underappreciated.\n\nAdd rules like: "Never commit .env files. Never log API keys. Never include partner names in commit messages. Always check .gitignore before adding files. Run the pre-push blocklist scan before every push."\n\nThe agent follows these rules because they are in its context. It becomes a security-conscious collaborator. When you tell it to push code, it runs the scan first. When you tell it to add a file, it checks .gitignore first. When you tell it to log debug info, it redacts sensitive values.\n\nThis is not foolproof. It is a layer in a defense-in-depth strategy. Combined with branch protection, pre-push hooks, and secret management, it covers the common failure modes where teams accidentally leak credentials or push sensitive data.',
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  COMPARISONS (new entry)                                             */
+  /* ================================================================== */
+
+  {
+    id: 'cli-vs-mcp-tools',
+    title: 'CLI Tools vs MCP Integrations',
+    subtitle: 'When to use CLI access vs MCP and why the answer matters for context windows',
+    category: 'comparisons',
+    description:
+      'Head-to-head comparison of CLI tools and MCP integrations. Context window cost, capability differences, which tools have CLIs vs MCPs vs both, and the convergence trend.',
+    keywords: [
+      'cli vs mcp',
+      'mcp vs cli',
+      'claude code cli mcp',
+      'context window cost mcp',
+      'mcp integration comparison',
+      'cli tools ai',
+      'mcp server cost',
+      'cli mcp convergence',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'shawnos',
+    related: [
+      'cli-ecosystem-overview',
+      'what-are-mcps',
+      'mcp-gtm-stack',
+    ],
+    sections: [
+      {
+        heading: 'The Core Tradeoff',
+        type: 'prose',
+        content:
+          'MCPs give AI agents direct access to external services. The agent calls a tool, the MCP server handles the API request, and the result comes back into context. Seamless. But every MCP server loads its tool definitions into the context window. A HubSpot MCP with 30 tools burns tokens just by existing.\n\nCLI tools sit on your machine. Zero context cost until you use them. When you need to query HubSpot, Claude Code runs the hs CLI command and reads the output. The tool definitions are not in context - the agent constructs the command from its training knowledge.\n\nThe tradeoff: MCPs are more integrated but expensive on context. CLIs are leaner but require the agent to know the CLI syntax. For simple operations, CLIs win. For complex multi-step workflows where the agent needs to discover available tools, MCPs win.',
+      },
+      {
+        heading: 'Context Window Cost Comparison',
+        type: 'formula',
+        content:
+          'A rough comparison:\n\nMCP server with 10 tools: ~2,000-4,000 tokens loaded into every session. That is context you pay for whether you use those tools or not.\n\nMCP server with 30 tools: ~8,000-12,000 tokens. A meaningful chunk of your context window spent on tool definitions.\n\n5 MCP servers simultaneously: 20,000-50,000 tokens. That is 10-25% of a 200k context window consumed before you ask a single question.\n\nCLI equivalent: 0 tokens until invoked. When Claude Code runs a CLI command, the command and its output enter context. A typical CLI interaction costs 200-500 tokens. You pay per use, not per load.\n\nThe math is clear for tools you use occasionally. If you query HubSpot once per session, the CLI saves 3,500 tokens over the MCP. If you query HubSpot 20 times per session, the MCP amortizes its cost and the integration advantage wins.',
+      },
+      {
+        heading: 'Which Tools Have What',
+        type: 'pattern',
+        content:
+          'CLI only: Vercel, Salesforce (sf), Homebrew, Git, most Unix tools.\n\nMCP only: Slack, Attio (currently), PostHog, Browserbase, Substack.\n\nBoth CLI and MCP: HubSpot, GitHub (gh CLI + GitHub MCP), potentially Attio (CLI in development).\n\nThe trend: tools are shipping both. The CLI for power users and automation scripts. The MCP for AI agent integration. The tools that ship both give you the flexibility to choose based on your use case.\n\nFor GTM stacks: the enrichment layer (Apollo, Clearbit, ZoomInfo) mostly uses API keys directly. The CRM layer (HubSpot, Salesforce, Attio) is moving to both CLI and MCP. The outreach layer (Instantly, Lemlist, HeyReach) is mostly MCP or API only.',
+      },
+      {
+        heading: 'The Convergence',
+        type: 'pro-tip',
+        content:
+          'The distinction between CLI and MCP is dissolving. Claude Code wraps both. When you say "check my Vercel deployments," it uses the CLI. When you say "search my Slack channels," it uses the MCP. You do not care which mechanism it uses. You care about the result.\n\nThe future is probably a unified tool layer where Claude Code picks the best access method for each request. CLI for simple queries. MCP for complex interactions. Direct API calls for everything else. The agent handles the routing.\n\nFor now, the practical advice: install CLIs for tools you use heavily (saves context). Set up MCPs for tools where you need the agent to discover capabilities (complex tools with many operations). Use both when available and let Claude Code pick the right one per request.',
       },
     ],
   },

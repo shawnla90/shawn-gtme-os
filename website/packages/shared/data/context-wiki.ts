@@ -1172,4 +1172,92 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
       },
     ],
   },
+
+  /* ================================================================== */
+  /*  FOUNDATIONS (new entry)                                              */
+  /* ================================================================== */
+
+  {
+    id: 'cli-first-philosophy',
+    title: 'CLI-First Philosophy',
+    subtitle: 'Why terminal access is the most important thing and how natural language CLI changes everything',
+    category: 'foundations',
+    description:
+      'The CLI-first philosophy for GTM engineers. Why CLI access has the least friction, how MCPs drain context, which tools have CLIs now, and the natural language CLI future through Claude Code.',
+    keywords: [
+      'cli first',
+      'cli philosophy',
+      'terminal first',
+      'cli vs gui',
+      'natural language cli',
+      'claude code cli',
+      'cli access gtm',
+    ],
+    sections: [
+      {
+        heading: 'Why CLI Access Is the Most Important Thing',
+        type: 'prose',
+        content:
+          'CLI access is the lowest friction path between intent and action. Type a command, get a result. No clicking through menus. No waiting for page loads. No navigating dashboards. Text in, text out.<br/><br/>For AI agents, this matters even more. AI agents process text. CLIs output text. The interface is native. When Claude Code runs a Vercel CLI command, it reads the output directly. No browser automation. No screenshot parsing. No DOM traversal. Just text.<br/><br/>MCPs gave us programmatic access to external tools, but they come with a cost. Every MCP server loads its tool definitions into the context window. Five MCP servers with 20 tools each burns 20,000-50,000 tokens before you ask a question. A CLI binary on your machine costs zero context until you use it. The math is clear: CLI access is cheaper, faster, and more reliable for most operations.',
+      },
+      {
+        heading: 'Who Has CLIs Right Now',
+        type: 'pattern',
+        content:
+          'The CLI landscape is expanding fast. Vercel CLI deploys sites and manages infrastructure. Salesforce CLI (sf) is the most mature GTM CLI - full CRM operations from the terminal. HubSpot CLI (hs) handles CRM objects and reports. GitHub CLI (gh) manages repos, PRs, and issues. Attio is building CLI access. Cargo.ai exposes pipeline operations through terminal commands.<br/><br/>The pattern: every platform that ships a CLI is signaling that programmatic access is a first-class concern. They are building for automation, not just human operators. If a tool you use does not have a CLI, check for an API. If it has an API, Claude Code can call it directly. The CLI is just a convenient wrapper around API calls.',
+      },
+      {
+        heading: 'The Natural Language CLI Future',
+        type: 'pro-tip',
+        content:
+          'Claude Code is a natural language CLI. Instead of memorizing sf data query "SELECT Id FROM Account WHERE CreatedDate = TODAY", you say "pull all Salesforce accounts created today." Claude Code writes the command, runs it, and interprets the output.<br/><br/>This changes who can use CLIs. You do not need to memorize syntax. You do not need to read man pages. Describe your intent in plain English and the agent translates it to the right command for the right tool.<br/><br/>The compound effect: every new CLI that ships becomes instantly accessible. A new tool launches with a CLI? Claude Code can use it on day one based on its training knowledge of CLI patterns. The barrier between "this tool exists" and "I can use this tool" drops to zero.',
+      },
+    ],
+    related: ['terminal-and-cli', 'mcp-servers', 'context-engineering'],
+    difficulty: 'beginner',
+  },
+
+  /* ================================================================== */
+  /*  MODES (new entry)                                                   */
+  /* ================================================================== */
+
+  {
+    id: 'co-work-sessions',
+    title: 'Claude Code Co-Work',
+    subtitle: 'Shared folder sessions that turn passive documentation into active playbooks',
+    category: 'modes',
+    description:
+      'How Claude Code co-work sessions work. Shared folder context, how SDRs should be working now, active playbooks vs passive documentation, and why the repo is the onboarding.',
+    keywords: [
+      'claude code co-work',
+      'co-work sessions',
+      'shared ai context',
+      'active playbooks',
+      'team ai workflow',
+      'claude code collaboration',
+      'repo as onboarding',
+    ],
+    sections: [
+      {
+        heading: 'What Co-Work Sessions Are',
+        type: 'prose',
+        content:
+          'A co-work session is a Claude Code instance pointed at a shared repo. Every team member gets the same context: CLAUDE.md rules, skills, data files, voice system. The AI reads your playbooks on session start. It does not just store them - it executes them.<br/><br/>Traditional team docs rot. Confluence pages written six months ago. Notion wikis nobody updates. Google Docs with conflicting versions. A co-work folder is different because the documentation is the automation. The skill file that describes how to research a prospect also runs that research. The workflow that explains enrichment also performs the enrichment.',
+      },
+      {
+        heading: 'How SDRs Should Be Working Now',
+        type: 'pattern',
+        content:
+          'Drop a folder with: CLAUDE.md (team rules, voice, guardrails), scripts/ (enrichment, scoring, campaign automation), skills/ (research, outreach, pipeline review), data/ (target accounts, enrichment results).<br/><br/>New SDR joins. Opens Claude Code in the folder. Says "research Acme Corp for outbound." The agent runs the research skill - pulls Exa intelligence, enriches through Apollo, checks Attio history, produces a brief. The SDR shipped work before reading a single onboarding doc.<br/><br/>This is the active playbook model. The repo is the onboarding. Context compounds across sessions through handoff files. Every session builds on the last.',
+      },
+      {
+        heading: 'Active Playbooks vs Passive Docs',
+        type: 'pro-tip',
+        content:
+          'Passive doc: "To research a prospect, check LinkedIn, look at funding, review tech stack on BuiltWith, summarize in a Google Doc."<br/><br/>Active playbook: a skill file Claude Code reads and executes. Checks LinkedIn via browser, pulls funding from Exa, queries BuiltWith through the API, writes the summary to the research folder. Same workflow. One requires humans to follow steps. The other requires humans to say "research this company."<br/><br/>Every passive doc in your org is a candidate for conversion. Identify the steps. Write them as a skill. Test. Deploy to the shared folder. The documentation becomes the automation. The gap between knowing what to do and doing it closes to zero.',
+      },
+    ],
+    related: ['skills', 'context-handoffs', 'parallel-agents'],
+    difficulty: 'intermediate',
+  },
 ]

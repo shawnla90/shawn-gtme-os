@@ -1,5 +1,5 @@
 /**
- * ShawnOS — Content Wiki Data
+ * ShawnOS - Content Wiki Data
  * Copyright (c) 2026 Shawn Tenam
  * Licensed under ShawnOS Proprietary License v1.0
  * See LICENSE for terms
@@ -87,7 +87,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Full breakdown of how the For You feed actually ranks content',
     category: 'platforms',
     description:
-      'Deep dive into the X (Twitter) algorithm — Home Mixer orchestration, Phoenix ranking model, Thunder retrieval, candidate pipeline stages, scoring weights, and actionable takeaways for creators.',
+      'Deep dive into the X (Twitter) algorithm - Home Mixer orchestration, Phoenix ranking model, Thunder retrieval, candidate pipeline stages, scoring weights, and actionable takeaways for creators.',
     keywords: [
       'X algorithm',
       'Twitter algorithm 2026',
@@ -101,37 +101,38 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'linkedin-playbook',
       'viral-hooks',
       'content-pillars',
+      'algorithm-literacy',
     ],
     sections: [
       {
         heading: 'System Architecture Overview',
         type: 'prose',
         content:
-          "The X recommendation system is an open-source pipeline that decides what appears in your For You feed. It was released publicly as the xai-org/x-algorithm repo and has over 15,000 stars on GitHub. The system has four major components: Home Mixer is the orchestration layer that coordinates everything. Thunder handles in-network retrieval — pulling tweets from people you follow. Phoenix is the Grok-based transformer model that scores and ranks candidates. And the Candidate Pipeline filters, deduplicates, and assembles the final feed. Understanding this architecture is the difference between guessing what works on X and knowing what the system rewards.",
+          "The X recommendation system is an open-source pipeline that decides what appears in your For You feed. It was released publicly as the xai-org/x-algorithm repo and has over 15,000 stars on GitHub. The system has four major components: Home Mixer is the orchestration layer that coordinates everything. Thunder handles in-network retrieval - pulling tweets from people you follow. Phoenix is the Grok-based transformer model that scores and ranks candidates. And the Candidate Pipeline filters, deduplicates, and assembles the final feed. Understanding this architecture is the difference between guessing what works on X and knowing what the system rewards.",
       },
       {
         heading: 'How Scoring Works',
         type: 'pattern',
         content:
-          "Every tweet that enters your feed goes through a multi-action prediction model. The system predicts the probability of twelve different engagement actions: P(favorite) — will you like it. P(reply) — will you reply. P(repost) — will you retweet. P(quote) — will you quote tweet. P(click) — will you click on it. P(share) — will you share externally. P(dwell) — will you spend time reading it. P(follow_author) — will you follow the author after seeing this. P(not_interested) — will you hit not interested. P(block_author) — will you block the author. P(mute_author) — will you mute the author. P(report) — will you report the tweet.\n\nThe final score is a weighted sum: Final Score = sum(weight_i * P(action_i)). Positive actions (like, reply, repost, quote, share, dwell, follow) push the score up. Negative actions (not_interested, block, mute, report) push the score down. The weights are not equal — replies and quote tweets carry significantly more weight than likes.",
+          "Every tweet that enters your feed goes through a multi-action prediction model. The system predicts the probability of twelve different engagement actions: P(favorite) - will you like it. P(reply) - will you reply. P(repost) - will you retweet. P(quote) - will you quote tweet. P(click) - will you click on it. P(share) - will you share externally. P(dwell) - will you spend time reading it. P(follow_author) - will you follow the author after seeing this. P(not_interested) - will you hit not interested. P(block_author) - will you block the author. P(mute_author) - will you mute the author. P(report) - will you report the tweet.\n\nThe final score is a weighted sum: Final Score = sum(weight_i * P(action_i)). Positive actions (like, reply, repost, quote, share, dwell, follow) push the score up. Negative actions (not_interested, block, mute, report) push the score down. The weights are not equal - replies and quote tweets carry significantly more weight than likes.",
       },
       {
         heading: 'Positive vs Negative Weight Actions',
         type: 'pattern',
         content:
-          "This is where it gets actionable for creators. The algorithm assigns different weights to different engagement types. Replies are weighted heavily — a tweet that sparks conversation scores higher than one that gets passive likes. Quote tweets with added commentary are also high-weight because they represent deeper engagement. Reposts carry moderate weight. Likes are the lowest positive signal — they indicate interest but not deep engagement.\n\nOn the negative side, any tweet that triggers mute, block, not_interested, or report signals gets penalized hard. A single block or report can outweigh dozens of likes. This means controversial content that gets engagement but also triggers negative signals can actually score lower than a modest post with clean positive engagement. The algorithm punishes polarizing content more than people realize.",
+          "This is where it gets actionable for creators. The algorithm assigns different weights to different engagement types. Replies are weighted heavily - a tweet that sparks conversation scores higher than one that gets passive likes. Quote tweets with added commentary are also high-weight because they represent deeper engagement. Reposts carry moderate weight. Likes are the lowest positive signal - they indicate interest but not deep engagement.\n\nOn the negative side, any tweet that triggers mute, block, not_interested, or report signals gets penalized hard. A single block or report can outweigh dozens of likes. This means controversial content that gets engagement but also triggers negative signals can actually score lower than a modest post with clean positive engagement. The algorithm punishes polarizing content more than people realize.",
       },
       {
         heading: 'Phoenix Two-Tower Retrieval',
         type: 'pattern',
         content:
-          "Phoenix uses a two-tower neural network architecture. One tower represents the user — your interests, your engagement history, the types of content you interact with. The other tower represents candidate tweets — the topic, the author, the format, the engagement pattern. Both towers produce embedding vectors, and the system computes similarity between them. High similarity = the tweet is likely relevant to you.\n\nKey design decisions: Phoenix uses no hand-engineered features. Everything is learned from engagement data. It also uses candidate isolation — each tweet is scored independently, not relative to the other tweets in the batch. And it predicts multiple actions simultaneously rather than just one. This means the model captures nuanced engagement patterns that a simpler system would miss.",
+          "Phoenix uses a two-tower neural network architecture. One tower represents the user - your interests, your engagement history, the types of content you interact with. The other tower represents candidate tweets - the topic, the author, the format, the engagement pattern. Both towers produce embedding vectors, and the system computes similarity between them. High similarity = the tweet is likely relevant to you.\n\nKey design decisions: Phoenix uses no hand-engineered features. Everything is learned from engagement data. It also uses candidate isolation - each tweet is scored independently, not relative to the other tweets in the batch. And it predicts multiple actions simultaneously rather than just one. This means the model captures nuanced engagement patterns that a simpler system would miss.",
       },
       {
         heading: 'Practical Takeaways for Creators',
         type: 'pro-tip',
         content:
-          "Based on the algorithm architecture, here is what actually moves the needle: (1) Optimize for replies and quote tweets over likes. Write tweets that invite conversation, not passive agreement. Ask questions. State takes that people want to respond to. (2) Dwell time matters. Longer tweets that people actually read score higher than short tweets they scroll past. But only if the content earns the dwell — padding with filler hurts. (3) Avoid triggering negative signals. Rage-bait might get engagement, but if it also gets mutes and blocks, the net score drops. Clean engagement beats polarizing engagement. (4) Follow signals are gold. If your tweet makes someone follow you, that is one of the strongest positive signals. Build tweets that showcase expertise worth following. (5) Consistency builds your user tower. The more consistently you post about specific topics, the stronger your signal in the user-tower matching. Niche down. (6) In-network vs out-of-network: Thunder pulls from your followers first. Building a strong follower base that engages with your content means your tweets start with a higher baseline before Phoenix even scores them for the wider feed.",
+          "Based on the algorithm architecture, here is what actually moves the needle: (1) Optimize for replies and quote tweets over likes. Write tweets that invite conversation, not passive agreement. Ask questions. State takes that people want to respond to. (2) Dwell time matters. Longer tweets that people actually read score higher than short tweets they scroll past. But only if the content earns the dwell - padding with filler hurts. (3) Avoid triggering negative signals. Rage-bait might get engagement, but if it also gets mutes and blocks, the net score drops. Clean engagement beats polarizing engagement. (4) Follow signals are gold. If your tweet makes someone follow you, that is one of the strongest positive signals. Build tweets that showcase expertise worth following. (5) Consistency builds your user tower. The more consistently you post about specific topics, the stronger your signal in the user-tower matching. Niche down. (6) In-network vs out-of-network: Thunder pulls from your followers first. Building a strong follower base that engages with your content means your tweets start with a higher baseline before Phoenix even scores them for the wider feed.",
       },
       {
         heading: 'Anti-Pattern: Gaming the Algorithm',
@@ -149,7 +150,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Thread format, compression rules, and engagement patterns',
     category: 'platforms',
     description:
-      'X (Twitter) format guide — thread structure, compression rules, micro-tip format, engagement patterns derived from the algorithm, and content pillar adaptation for the X platform.',
+      'X (Twitter) format guide - thread structure, compression rules, micro-tip format, engagement patterns derived from the algorithm, and content pillar adaptation for the X platform.',
     keywords: [
       'X content strategy',
       'Twitter thread format',
@@ -169,25 +170,25 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Platform DNA',
         type: 'prose',
         content:
-          "X is the compressed version of LinkedIn. Same builder voice, faster pace, tighter constraints. LinkedIn is the long-form stage. X is the live feed from the workshop. Everything that works on LinkedIn but stripped to the bone. No filler sentences. Every line earns its spot. Casual, builder, punchy. The character limit is not a limitation — it is a compression engine that forces you to find the essential version of every idea.",
+          "X is the compressed version of LinkedIn. Same builder voice, faster pace, tighter constraints. LinkedIn is the long-form stage. X is the live feed from the workshop. Everything that works on LinkedIn but stripped to the bone. No filler sentences. Every line earns its spot. Casual, builder, punchy. The character limit is not a limitation - it is a compression engine that forces you to find the essential version of every idea.",
       },
       {
         heading: 'Format Strategy',
         type: 'pattern',
         content:
-          "Single posts: memes, reactions, one-liners, hot takes. Under 280 characters when possible. Screenshot or GIF attached. These are X-native content — not repurposed from LinkedIn.\n\nThreads: plays series (condensed), system shares, build logs. Each tweet in the thread should stand alone. Someone scrolling should get value from any single tweet even without reading the rest. Thread length: 4-8 tweets. Beyond 8 is diminishing returns.\n\nQuote tweets and replies: engage the builder community. Add a real take, not generic praise. A thoughtful quote tweet that adds context performs better algorithmically than a simple retweet because the algorithm weights quote tweets heavily.",
+          "Single posts: memes, reactions, one-liners, hot takes. Under 280 characters when possible. Screenshot or GIF attached. These are X-native content - not repurposed from LinkedIn.\n\nThreads: plays series (condensed), system shares, build logs. Each tweet in the thread should stand alone. Someone scrolling should get value from any single tweet even without reading the rest. Thread length: 4-8 tweets. Beyond 8 is diminishing returns.\n\nQuote tweets and replies: engage the builder community. Add a real take, not generic praise. A thoughtful quote tweet that adds context performs better algorithmically than a simple retweet because the algorithm weights quote tweets heavily.",
       },
       {
         heading: 'Thread Structure',
         type: 'pattern',
         content:
-          "Tweet 1: hook — standalone value, the scroll-stop. This tweet must work even if nobody reads the thread. Tweet 2: context and setup — what tool, what signal, what problem. Tweets 3-5: the substance — 1-2 steps per tweet, emoji-marked for visual scanning. Tweet 6: result — what this actually does for pipeline or workflow. Tweet 7 (optional): resource delivery — full prompt in the reply, or link back to the expanded LinkedIn version.\n\nSchedule threads 1-2 days after the LinkedIn version drops. X gets the cliff notes, LinkedIn has the full breakdown. This creates a natural cross-platform funnel without duplicating content.",
+          "Tweet 1: hook - standalone value, the scroll-stop. This tweet must work even if nobody reads the thread. Tweet 2: context and setup - what tool, what signal, what problem. Tweets 3-5: the substance - 1-2 steps per tweet, emoji-marked for visual scanning. Tweet 6: result - what this actually does for pipeline or workflow. Tweet 7 (optional): resource delivery - full prompt in the reply, or link back to the expanded LinkedIn version.\n\nSchedule threads 1-2 days after the LinkedIn version drops. X gets the cliff notes, LinkedIn has the full breakdown. This creates a natural cross-platform funnel without duplicating content.",
       },
       {
         heading: 'Character and Paragraph Rules',
         type: 'pattern',
         content:
-          "Single tweet: 280 characters. Write tight. A 140-character banger beats a 280-character nothing. Don't pad to fill. Thread tweets: still 280 each, but you have room to breathe across multiple.\n\nParagraph structure: one sentence per line. Period. Single-line statements hit hardest on X. No multi-sentence paragraphs — that is LinkedIn energy. Whitespace between thoughts using blank lines. Line breaks count as characters so use them intentionally.",
+          "Single tweet: 280 characters. Write tight. A 140-character banger beats a 280-character nothing. Don't pad to fill. Thread tweets: still 280 each, but you have room to breathe across multiple.\n\nParagraph structure: one sentence per line. Period. Single-line statements hit hardest on X. No multi-sentence paragraphs - that is LinkedIn energy. Whitespace between thoughts using blank lines. Line breaks count as characters so use them intentionally.",
       },
       {
         heading: 'Content Pillars on X',
@@ -199,7 +200,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Anti-Pattern: LinkedIn Energy on X',
         type: 'anti-pattern',
         content:
-          "The most common mistake is taking a LinkedIn post and pasting it on X without compression. X users scroll faster, engage shorter, and expect tighter content. A 1,200 character LinkedIn post needs to become a 280 character tweet or a 4-tweet thread — not a screenshot of the LinkedIn post (those perform terribly). Compress, don't transplant. Find the one insight or one step that carries the most value and lead with that. If the full context matters, thread it. But each tweet in the thread must deliver standalone value.",
+          "The most common mistake is taking a LinkedIn post and pasting it on X without compression. X users scroll faster, engage shorter, and expect tighter content. A 1,200 character LinkedIn post needs to become a 280 character tweet or a 4-tweet thread - not a screenshot of the LinkedIn post (those perform terribly). Compress, don't transplant. Find the one insight or one step that carries the most value and lead with that. If the full context matters, thread it. But each tweet in the thread must deliver standalone value.",
       },
     ],
   },
@@ -211,7 +212,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Algorithm signals, content pillars, and engagement patterns',
     category: 'platforms',
     description:
-      'LinkedIn algorithm and content strategy guide — algorithm signals, 5 content pillars, emoji system, comment strategy, sign-off patterns, and engagement optimization for builders.',
+      'LinkedIn algorithm and content strategy guide - algorithm signals, 5 content pillars, emoji system, comment strategy, sign-off patterns, and engagement optimization for builders.',
     keywords: [
       'LinkedIn algorithm',
       'LinkedIn content strategy',
@@ -225,25 +226,27 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'viral-hooks',
       'commenting-strategy',
       'content-pillars',
+      'algorithm-literacy',
+      'call-to-actions',
     ],
     sections: [
       {
         heading: 'Algorithm Signals That Matter',
         type: 'prose',
         content:
-          "LinkedIn's algorithm prioritizes dwell time, comments, and shares in that order. A post that people stop scrolling to read — even if they don't engage — scores higher than a post that gets quick likes and scroll-past. Comments are the strongest visible signal. Posts that generate conversation threads get pushed to more feeds. Shares extend reach beyond your network. Likes are the weakest signal but still matter for initial distribution.\n\nThe algorithm also weighs early engagement heavily. The first 60-90 minutes after posting determine how wide the distribution goes. If your post gets strong engagement in that window, it enters a broader distribution cycle. If it flatlines, it stays in a narrow feed. This is why posting time matters and why your first commenters matter — they trigger the distribution flywheel.",
+          "LinkedIn's algorithm prioritizes dwell time, comments, and shares in that order. A post that people stop scrolling to read - even if they don't engage - scores higher than a post that gets quick likes and scroll-past. Comments are the strongest visible signal. Posts that generate conversation threads get pushed to more feeds. Shares extend reach beyond your network. Likes are the weakest signal but still matter for initial distribution.\n\nThe algorithm also weighs early engagement heavily. The first 60-90 minutes after posting determine how wide the distribution goes. If your post gets strong engagement in that window, it enters a broader distribution cycle. If it flatlines, it stays in a narrow feed. This is why posting time matters and why your first commenters matter - they trigger the distribution flywheel.",
       },
       {
         heading: 'The Five Content Pillars',
         type: 'pattern',
         content:
-          "Pillar 1 — Plays Series (highest performing): formatted as step-by-step workflow walkthroughs with emoji markers. Pain point or contrarian hook, series title and play number, step-by-step workflow, why-this-matters context, no-gatekeeping resource delivery to comments, identity sign-off. Screen recording or screenshot attached.\n\nPillar 2 — Building and Sharing: narrative, reflective, personal journey. Personal opener about what you built or what broke, the messy real process, the insight or shift in thinking, invitation to connect. Longer sentences allowed. More storytelling, less structure.\n\nPillar 3 — GTM Memes: short text plus meme, gif, or video. Setup line with relatable GTM pain, punchline or meme context, engagement ask, brief sign-off. Pop culture references — anime, wrestling, music — always with a real lesson underneath.\n\nPillar 4 — Release Reactions: first-hand builder take on new tool features. What changed, how you tested it, specific workflow it enables, forward-looking take.\n\nPillar 5 — Skill and System Shares: sharing actual frameworks and skill files. What you built and why, how it works, where to get it, comment thread with deeper insights.",
+          "Pillar 1 - Plays Series (highest performing): formatted as step-by-step workflow walkthroughs with emoji markers. Pain point or contrarian hook, series title and play number, step-by-step workflow, why-this-matters context, no-gatekeeping resource delivery to comments, identity sign-off. Screen recording or screenshot attached.\n\nPillar 2 - Building and Sharing: narrative, reflective, personal journey. Personal opener about what you built or what broke, the messy real process, the insight or shift in thinking, invitation to connect. Longer sentences allowed. More storytelling, less structure.\n\nPillar 3 - GTM Memes: short text plus meme, gif, or video. Setup line with relatable GTM pain, punchline or meme context, engagement ask, brief sign-off. Pop culture references - anime, wrestling, music - always with a real lesson underneath.\n\nPillar 4 - Release Reactions: first-hand builder take on new tool features. What changed, how you tested it, specific workflow it enables, forward-looking take.\n\nPillar 5 - Skill and System Shares: sharing actual frameworks and skill files. What you built and why, how it works, where to get it, comment thread with deeper insights.",
       },
       {
         heading: 'Paragraph and Formatting Rules',
         type: 'pattern',
         content:
-          "1-2 sentences maximum per paragraph. Lots of whitespace for mobile scrolling. Short punchy lines create rhythm. Single-line statements for emphasis. LinkedIn is read on phones — long paragraphs get skipped.\n\nOpening line: always lowercase first word unless it is a proper noun or first-person I. Strong hook in the first 2 lines. Lead with pain, a contrarian take, or action. No generic greetings.\n\nEmoji usage is structural, not decorative. Workflow step markers: checkmarks, wrenches, links, brains, puzzle pieces. Identity markers: lightning bolt, wizard. Tone signaling: self-deprecating, frustrated, knowing. Each emoji marks a step, signals tone, or anchors identity. Don't scatter them randomly.",
+          "1-2 sentences maximum per paragraph. Lots of whitespace for mobile scrolling. Short punchy lines create rhythm. Single-line statements for emphasis. LinkedIn is read on phones - long paragraphs get skipped.\n\nOpening line: always lowercase first word unless it is a proper noun or first-person I. Strong hook in the first 2 lines. Lead with pain, a contrarian take, or action. No generic greetings.\n\nEmoji usage is structural, not decorative. Workflow step markers: checkmarks, wrenches, links, brains, puzzle pieces. Identity markers: lightning bolt, wizard. Tone signaling: self-deprecating, frustrated, knowing. Each emoji marks a step, signals tone, or anchors identity. Don't scatter them randomly.",
       },
       {
         heading: 'Comment Strategy',
@@ -255,13 +258,13 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Sign-Off as Identity Anchor',
         type: 'pro-tip',
         content:
-          "Your sign-off is not a CTA — it is an identity anchor. Variations: shawn the gtme alchemist with wizard emoji, shawn with lightning bolt GTM Engineer, shawn with lightning bolt and pipe the gtme alchemist with wizard emoji. Always include the lightning bolt or wizard or both. The sign-off becomes a recognizable pattern that builds brand recall across posts. People should see the sign-off and know who wrote it before they even read the name.",
+          "Your sign-off is not a CTA - it is an identity anchor. Variations: shawn the gtme alchemist with wizard emoji, shawn with lightning bolt GTM Engineer, shawn with lightning bolt and pipe the gtme alchemist with wizard emoji. Always include the lightning bolt or wizard or both. The sign-off becomes a recognizable pattern that builds brand recall across posts. People should see the sign-off and know who wrote it before they even read the name.",
       },
       {
         heading: 'Anti-Pattern: Performing Expertise',
         type: 'anti-pattern',
         content:
-          "The biggest LinkedIn trap is performing expertise instead of sharing it. Authority signaling phrases like the uncomfortable truth, let me be clear, what most people miss — these are performance, not substance. State your observation directly. Share the specific tool, the specific workflow, the specific result. If you built something that works, show it working. A screenshot of the actual Clay table beats a paragraph about how important data enrichment is. LinkedIn rewards specifics over generalities, always.",
+          "The biggest LinkedIn trap is performing expertise instead of sharing it. Authority signaling phrases like the uncomfortable truth, let me be clear, what most people miss - these are performance, not substance. State your observation directly. Share the specific tool, the specific workflow, the specific result. If you built something that works, show it working. A screenshot of the actual Clay table beats a paragraph about how important data enrichment is. LinkedIn rewards specifics over generalities, always.",
       },
     ],
   },
@@ -273,7 +276,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       '16-second structure, 6 content series, and hook-demo-result format',
     category: 'platforms',
     description:
-      'TikTok algorithm and content strategy — 16-second video structure, hook-demo-result-loop format, 6 content series, watch time signals, and cross-platform distribution for builders.',
+      'TikTok algorithm and content strategy - 16-second video structure, hook-demo-result-loop format, 6 content series, watch time signals, and cross-platform distribution for builders.',
     keywords: [
       'TikTok algorithm',
       'short form video strategy',
@@ -293,7 +296,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Platform DNA',
         type: 'prose',
         content:
-          "TikTok is the compression layer underneath X. LinkedIn tells the story. X gives you the cliff notes. TikTok gives you the moment. One win, one demo, one scroll-stop. 16 seconds or less. The entire platform runs on fast, useful, loopable — and that is exactly how builder content should work here.\n\nThis is not a dance platform anymore. It is where people learn things in 15 seconds that would take a blog post 10 minutes to explain. That is the lane. The version of you that shows someone a shortcut over their shoulder in 12 seconds and walks away.",
+          "TikTok is the compression layer underneath X. LinkedIn tells the story. X gives you the cliff notes. TikTok gives you the moment. One win, one demo, one scroll-stop. 16 seconds or less. The entire platform runs on fast, useful, loopable - and that is exactly how builder content should work here.\n\nThis is not a dance platform anymore. It is where people learn things in 15 seconds that would take a blog post 10 minutes to explain. That is the lane. The version of you that shows someone a shortcut over their shoulder in 12 seconds and walks away.",
       },
       {
         heading: 'The 16-Second Structure',
@@ -305,19 +308,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Six Content Series',
         type: 'pattern',
         content:
-          "Easy Wins with Claude Code: single-use-case demos. One slash command or feature per video. Screen recording, show the output. Lowest lift, highest volume potential.\n\nCursor in 15 Seconds: Cursor-specific shortcuts, features, and tricks most people miss. Hidden features, keyboard shortcuts, MCP integrations. Always screen-captured, zoomed, annotated.\n\nSlash Commands You Didn't Know You Needed: showcase the skills and slash commands from the content OS. Each video equals one command, one result. Natural funnel to GitHub and LinkedIn for depth.\n\nOne Shortcut a Day: daily cadence series. Any tool — Claude, Cursor, Clay, HeyReach, n8n. Formula: problem 2 seconds, shortcut 8 seconds, result 4 seconds, save CTA 2 seconds.\n\nDo This Not That (AI Tool Edition): comparison format. Side-by-side or sequential. The wrong way creates tension, the right way delivers the payoff. Split screen works well.\n\nGTM Plays (The 30-Second Version): repurposed from the LinkedIn Plays series. Extract the aha moment, screen recording of the critical step, full breakdown on LinkedIn as cross-platform CTA.",
+          "Easy Wins with Claude Code: single-use-case demos. One slash command or feature per video. Screen recording, show the output. Lowest lift, highest volume potential.\n\nCursor in 15 Seconds: Cursor-specific shortcuts, features, and tricks most people miss. Hidden features, keyboard shortcuts, MCP integrations. Always screen-captured, zoomed, annotated.\n\nSlash Commands You Didn't Know You Needed: showcase the skills and slash commands from the content OS. Each video equals one command, one result. Natural funnel to GitHub and LinkedIn for depth.\n\nOne Shortcut a Day: daily cadence series. Any tool - Claude, Cursor, Clay, HeyReach, n8n. Formula: problem 2 seconds, shortcut 8 seconds, result 4 seconds, save CTA 2 seconds.\n\nDo This Not That (AI Tool Edition): comparison format. Side-by-side or sequential. The wrong way creates tension, the right way delivers the payoff. Split screen works well.\n\nGTM Plays (The 30-Second Version): repurposed from the LinkedIn Plays series. Extract the aha moment, screen recording of the critical step, full breakdown on LinkedIn as cross-platform CTA.",
       },
       {
         heading: 'Watch Time Signals',
         type: 'pro-tip',
         content:
-          "TikTok's algorithm is simpler than X or LinkedIn in one key way: watch time is everything. Completion rate — what percentage of viewers watch to the end — is the primary distribution signal. Replay rate multiplies it. A 16-second video that people watch twice scores higher than a 60-second video that people abandon at 30 seconds.\n\nThis is why the 16-second cap matters. Shorter videos have higher completion rates by default. A tight 16-second video with a visual loop that triggers auto-replay can accumulate massive watch time numbers relative to its length. Front-load the hook. Deliver fast. Close with a loop. That is the formula.",
+          "TikTok's algorithm is simpler than X or LinkedIn in one key way: watch time is everything. Completion rate - what percentage of viewers watch to the end - is the primary distribution signal. Replay rate multiplies it. A 16-second video that people watch twice scores higher than a 60-second video that people abandon at 30 seconds.\n\nThis is why the 16-second cap matters. Shorter videos have higher completion rates by default. A tight 16-second video with a visual loop that triggers auto-replay can accumulate massive watch time numbers relative to its length. Front-load the hook. Deliver fast. Close with a loop. That is the formula.",
       },
       {
         heading: 'Visual and Audio Rules',
         type: 'pattern',
         content:
-          "Bold text overlays: large, readable on mobile, 2-3 words max per text block. Captions always on — most people watch without sound. Screen recordings: crop tight, zoom on the action, no full-screen IDE shots because too much noise. Split-screen or green screen when personality matters, screen-only when the demo speaks for itself. Fast cuts and zooms using CapCut or TikTok editor.\n\nAudio: trending sounds muted or low plus text overlay as the safe default. Direct-to-cam voiceover when personality adds value. Screen recording with narration for complex demos. No background music that competes with speech.\n\nCaptions: lowercase first word, capitalize I, short and punchy, 1-2 lines max. The caption supports the video, it does not replace it. Tags: 3-5 relevant tags per video, mix niche and broad.",
+          "Bold text overlays: large, readable on mobile, 2-3 words max per text block. Captions always on - most people watch without sound. Screen recordings: crop tight, zoom on the action, no full-screen IDE shots because too much noise. Split-screen or green screen when personality matters, screen-only when the demo speaks for itself. Fast cuts and zooms using CapCut or TikTok editor.\n\nAudio: trending sounds muted or low plus text overlay as the safe default. Direct-to-cam voiceover when personality adds value. Screen recording with narration for complex demos. No background music that competes with speech.\n\nCaptions: lowercase first word, capitalize I, short and punchy, 1-2 lines max. The caption supports the video, it does not replace it. Tags: 3-5 relevant tags per video, mix niche and broad.",
       },
       {
         heading: 'Anti-Pattern: Tutorial Channel Energy',
@@ -335,7 +338,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Subreddit targeting, karma signals, and authentic engagement',
     category: 'platforms',
     description:
-      'Reddit content strategy for builders — subreddit targeting, karma and engagement signals, authentic participation patterns, AMA strategy, and cross-posting without getting flagged as spam.',
+      'Reddit content strategy for builders - subreddit targeting, karma and engagement signals, authentic participation patterns, AMA strategy, and cross-posting without getting flagged as spam.',
     keywords: [
       'Reddit marketing strategy',
       'Reddit content',
@@ -367,7 +370,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Karma and Engagement Signals',
         type: 'pattern',
         content:
-          "Reddit's ranking algorithm uses upvotes, comments, and time decay. A post that gets rapid upvotes in the first hour rises fast. But unlike LinkedIn, downvotes actively hurt visibility. A post at 60% upvoted (meaning 40% downvoted) will underperform a post at 95% upvoted with fewer total votes.\n\nComments are weighted heavily. Posts with active comment sections — especially from the OP engaging with replies — get boosted. Reddit rewards conversation. A post where you drop information and disappear performs worse than a post where you stick around and answer questions in the comments for the next 2 hours.\n\nAwards and saves also signal quality. A saved post tells Reddit this content has lasting value. Award-worthy content gets algorithmic preference in the subreddit and on users' home feeds.",
+          "Reddit's ranking algorithm uses upvotes, comments, and time decay. A post that gets rapid upvotes in the first hour rises fast. But unlike LinkedIn, downvotes actively hurt visibility. A post at 60% upvoted (meaning 40% downvoted) will underperform a post at 95% upvoted with fewer total votes.\n\nComments are weighted heavily. Posts with active comment sections - especially from the OP engaging with replies - get boosted. Reddit rewards conversation. A post where you drop information and disappear performs worse than a post where you stick around and answer questions in the comments for the next 2 hours.\n\nAwards and saves also signal quality. A saved post tells Reddit this content has lasting value. Award-worthy content gets algorithmic preference in the subreddit and on users' home feeds.",
       },
       {
         heading: 'Content That Works on Reddit',
@@ -379,7 +382,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Cross-Posting Without Getting Flagged',
         type: 'pro-tip',
         content:
-          "Cross-posting the same content across multiple subreddits is a fast way to get flagged as spam. Reddit's systems detect identical posts across communities. If you want to share something across 3 subreddits, write 3 different versions. Same core insight, different framing for each community's norms.\n\nTiming matters: don't post to multiple subreddits within the same hour. Space them out across days. And adjust the title and opening for each community — what resonates in r/startups is different from what works in r/ClaudeAI.\n\nFor linking to your own content (LinkedIn posts, Substack articles, tools): the safest approach is to write a valuable Reddit-native post and mention the external resource casually in the comments, not the main post. Let someone ask for the link. Or add it as an edit after the post has gained traction organically. This feels native rather than promotional.",
+          "Cross-posting the same content across multiple subreddits is a fast way to get flagged as spam. Reddit's systems detect identical posts across communities. If you want to share something across 3 subreddits, write 3 different versions. Same core insight, different framing for each community's norms.\n\nTiming matters: don't post to multiple subreddits within the same hour. Space them out across days. And adjust the title and opening for each community - what resonates in r/startups is different from what works in r/ClaudeAI.\n\nFor linking to your own content (LinkedIn posts, Substack articles, tools): the safest approach is to write a valuable Reddit-native post and mention the external resource casually in the comments, not the main post. Let someone ask for the link. Or add it as an edit after the post has gained traction organically. This feels native rather than promotional.",
       },
       {
         heading: 'Anti-Pattern: Reddit as a Distribution Channel',
@@ -397,7 +400,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Newsletter structure, Notes strategy, and subscriber growth',
     category: 'platforms',
     description:
-      'Substack newsletter growth strategy — content structures, Notes feed strategy, cross-promo patterns, lead magnets, subscriber growth tactics, and the shift from custom artwork to build artifacts.',
+      'Substack newsletter growth strategy - content structures, Notes feed strategy, cross-promo patterns, lead magnets, subscriber growth tactics, and the shift from custom artwork to build artifacts.',
     keywords: [
       'Substack growth',
       'newsletter strategy',
@@ -411,13 +414,14 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'recursive-content-flow',
       'content-pillars',
       'repo-content-system',
+      'typefully-mcp',
     ],
     sections: [
       {
         heading: 'Platform DNA',
         type: 'prose',
         content:
-          "Substack is the deep-dive layer. LinkedIn and X hook, compress, and spark. Substack expands, deepens, and builds the longer relationship. This is where a 3-line hook becomes a 600-word breakdown. Where a screenshot becomes a full build log. Where the 50 early subscribers become the core audience that follows the whole arc.\n\nThe tone is long-form extension of builder voice. More reflective, more room to breathe. Sentences can run longer than LinkedIn. Paragraphs can have 2-3 sentences. But the same casual competence — never academic, never corporate. Think: the version of you that sits down after shipping something and explains how the whole thing works to someone who is about to build their own.",
+          "Substack is the deep-dive layer. LinkedIn and X hook, compress, and spark. Substack expands, deepens, and builds the longer relationship. This is where a 3-line hook becomes a 600-word breakdown. Where a screenshot becomes a full build log. Where the 50 early subscribers become the core audience that follows the whole arc.\n\nThe tone is long-form extension of builder voice. More reflective, more room to breathe. Sentences can run longer than LinkedIn. Paragraphs can have 2-3 sentences. But the same casual competence - never academic, never corporate. Think: the version of you that sits down after shipping something and explains how the whole thing works to someone who is about to build their own.",
       },
       {
         heading: 'Four Content Structures',
@@ -441,13 +445,13 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Cross-Platform Growth Flywheel',
         type: 'pattern',
         content:
-          "The growth model: LinkedIn posts hook interest. The CTA drives to Substack for the expanded version. X threads tease the key insight. TikTok demos the visual moment. Every platform feeds back to the newsletter as the long-form home base.\n\nCross-posting rules: GTM Plays start on LinkedIn, expand into Tactical Breakdown on Substack 3-5 days later. Build logs start on X or LinkedIn, expand into full POV Essay on Substack. Hot takes on X expand into Contrarian Takes if they have legs. Original deep dives start on Substack, then get condensed for LinkedIn and X after publish.\n\nThe newsletter is not competing with social — it is the destination that social points to. Every social post is a potential on-ramp to a Substack subscriber.",
+          "The growth model: LinkedIn posts hook interest. The CTA drives to Substack for the expanded version. X threads tease the key insight. TikTok demos the visual moment. Every platform feeds back to the newsletter as the long-form home base.\n\nCross-posting rules: GTM Plays start on LinkedIn, expand into Tactical Breakdown on Substack 3-5 days later. Build logs start on X or LinkedIn, expand into full POV Essay on Substack. Hot takes on X expand into Contrarian Takes if they have legs. Original deep dives start on Substack, then get condensed for LinkedIn and X after publish.\n\nThe newsletter is not competing with social - it is the destination that social points to. Every social post is a potential on-ramp to a Substack subscriber.",
       },
       {
         heading: 'Visual Strategy Shift',
         type: 'pattern',
         content:
-          "No more custom artwork. The legacy approach used custom anime illustrations per newsletter issue. That is over. Visuals now come from the build itself: Cursor screenshots with skill files open, repo tree views, Claude chat outputs that produced something useful, screen recordings of workflows running, and inline code snippets.\n\nOne visual per post minimum. It should be something you already have from building — zero extra production time. The content IS the visual. This removes the bottleneck of art production and lets you publish at the speed of building instead of the speed of designing.",
+          "No more custom artwork. The legacy approach used custom anime illustrations per newsletter issue. That is over. Visuals now come from the build itself: Cursor screenshots with skill files open, repo tree views, Claude chat outputs that produced something useful, screen recordings of workflows running, and inline code snippets.\n\nOne visual per post minimum. It should be something you already have from building - zero extra production time. The content IS the visual. This removes the bottleneck of art production and lets you publish at the speed of building instead of the speed of designing.",
       },
     ],
   },
@@ -495,13 +499,13 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Scheduling Patterns',
         type: 'pattern',
         content:
-          "Content scheduling follows a rhythm, not a fixed calendar. LinkedIn posts perform best Tuesday through Thursday, mornings EST. X posts are more flexible but evenings tend to perform well for builder audiences.\n\nThe pattern: batch-write content during deep work sessions, schedule for distribution across the week. A single writing session can produce 3-5 posts that get scheduled across a week. This separates creation from distribution — you write when you are in flow state and publish when the audience is active.\n\nTypefully's queue feature lets you add posts to a queue without specific times. The queue distributes them according to your preset schedule. This is the lowest-friction approach for consistent posting.",
+          "Content scheduling follows a rhythm, not a fixed calendar. LinkedIn posts perform best Tuesday through Thursday, mornings EST. X posts are more flexible but evenings tend to perform well for builder audiences.\n\nThe pattern: batch-write content during deep work sessions, schedule for distribution across the week. A single writing session can produce 3-5 posts that get scheduled across a week. This separates creation from distribution - you write when you are in flow state and publish when the audience is active.\n\nTypefully's queue feature lets you add posts to a queue without specific times. The queue distributes them according to your preset schedule. This is the lowest-friction approach for consistent posting.",
       },
       {
         heading: 'Integration with the Content OS',
         type: 'pro-tip',
         content:
-          "The real power is the integration loop: markdown drafts in the repo get version controlled. The final-copy skill normalizes voice and extracts clean text. Typefully MCP pushes to the scheduling platform. Published posts get tracked in the daily tracker.\n\nThis means your entire content pipeline — from idea capture to published post — lives inside your IDE. You never need to open Typefully's web interface, never need to copy-paste between tools, never need to context-switch from your code editor. The content operating system handles end-to-end.",
+          "The real power is the integration loop: markdown drafts in the repo get version controlled. The final-copy skill normalizes voice and extracts clean text. Typefully MCP pushes to the scheduling platform. Published posts get tracked in the daily tracker.\n\nThis means your entire content pipeline - from idea capture to published post - lives inside your IDE. You never need to open Typefully's web interface, never need to copy-paste between tools, never need to context-switch from your code editor. The content operating system handles end-to-end.",
       },
     ],
   },
@@ -513,7 +517,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'When to use each tool, template workflows, and video editing',
     category: 'tools',
     description:
-      'When to use Figma, Canva, and VEED for content creation — thumbnail creation, carousel design, video editing with VEED, template workflows, and choosing the right tool for each content type.',
+      'When to use Figma, Canva, and VEED for content creation - thumbnail creation, carousel design, video editing with VEED, template workflows, and choosing the right tool for each content type.',
     keywords: [
       'Figma content design',
       'Canva templates',
@@ -527,13 +531,14 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'python-pillow',
       'tiktok-playbook',
       'content-mcps',
+      'gif-creation-for-web',
     ],
     sections: [
       {
         heading: 'Tool Selection Framework',
         type: 'prose',
         content:
-          "Not every visual needs the same tool. The decision framework: Figma for custom, precise design work — thumbnails, branded templates, carousel posts that need exact spacing and typography. Canva for quick, template-based visuals — when speed matters more than pixel-perfect control. VEED for video editing — TikTok clips, screen recording overlays, subtitle generation, and short-form video production.\n\nThe default for most social content should be the fastest tool that produces acceptable quality. A Canva template finished in 5 minutes beats a Figma masterpiece that took 2 hours — especially when the post's performance depends on the text, not the visual.",
+          "Not every visual needs the same tool. The decision framework: Figma for custom, precise design work - thumbnails, branded templates, carousel posts that need exact spacing and typography. Canva for quick, template-based visuals - when speed matters more than pixel-perfect control. VEED for video editing - TikTok clips, screen recording overlays, subtitle generation, and short-form video production.\n\nThe default for most social content should be the fastest tool that produces acceptable quality. A Canva template finished in 5 minutes beats a Figma masterpiece that took 2 hours - especially when the post's performance depends on the text, not the visual.",
       },
       {
         heading: 'Figma for Content Creators',
@@ -545,7 +550,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Canva for Speed',
         type: 'pattern',
         content:
-          "Canva is the fast lane. Use it when you need a visual in under 5 minutes and the design does not need to be custom. Quote graphics for X, simple announcement visuals, story templates, and any one-off visual that will not be reused.\n\nCanva's AI features have gotten good enough for quick resizing across platforms — design once at LinkedIn dimensions, auto-resize for X, Instagram, and TikTok. The brand kit feature lets you lock in your colors and fonts so even quick designs stay on brand.\n\nWhere Canva falls short: complex multi-element layouts, precise typography control, and anything that needs to feel premium. If the visual represents your brand at a high level — like a hero image for a Substack post — use Figma. If it is a supporting visual for a social post, Canva is fine.",
+          "Canva is the fast lane. Use it when you need a visual in under 5 minutes and the design does not need to be custom. Quote graphics for X, simple announcement visuals, story templates, and any one-off visual that will not be reused.\n\nCanva's AI features have gotten good enough for quick resizing across platforms - design once at LinkedIn dimensions, auto-resize for X, Instagram, and TikTok. The brand kit feature lets you lock in your colors and fonts so even quick designs stay on brand.\n\nWhere Canva falls short: complex multi-element layouts, precise typography control, and anything that needs to feel premium. If the visual represents your brand at a high level - like a hero image for a Substack post - use Figma. If it is a supporting visual for a social post, Canva is fine.",
       },
       {
         heading: 'VEED for Video',
@@ -557,7 +562,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Anti-Pattern: Over-Designing Social Content',
         type: 'anti-pattern',
         content:
-          "The biggest time sink in content creation is over-designing visuals for social posts. A LinkedIn post with a raw screenshot of your actual tool performing a task will outperform a professionally designed infographic about the same topic. Authenticity signals beat production quality on social platforms.\n\nThe rule: spend 80% of your time on the text and 20% on the visual. If the visual is a real screenshot, a real screen recording, or a real code snippet — that is more authentic than a designed graphic. Design tools are for specific use cases (carousels, thumbnails, brand assets), not for every post.",
+          "The biggest time sink in content creation is over-designing visuals for social posts. A LinkedIn post with a raw screenshot of your actual tool performing a task will outperform a professionally designed infographic about the same topic. Authenticity signals beat production quality on social platforms.\n\nThe rule: spend 80% of your time on the text and 20% on the visual. If the visual is a real screenshot, a real screen recording, or a real code snippet - that is more authentic than a designed graphic. Design tools are for specific use cases (carousels, thumbnails, brand assets), not for every post.",
       },
     ],
   },
@@ -569,7 +574,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Building branded terminal images with monospace typography',
     category: 'tools',
     description:
-      'Building branded terminal-style images with Python Pillow — Anthropic color schemes, monospace typography, boot-sequence aesthetics, matrix rain backgrounds, and real skill implementations.',
+      'Building branded terminal-style images with Python Pillow - Anthropic color schemes, monospace typography, boot-sequence aesthetics, matrix rain backgrounds, and real skill implementations.',
     keywords: [
       'Python Pillow social images',
       'terminal aesthetic',
@@ -589,19 +594,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Why Python Pillow for Content Images',
         type: 'prose',
         content:
-          "Python Pillow (PIL fork) generates images programmatically. For a content operating system that lives in a code editor, this means images are code — version controlled, reproducible, parameterized. You do not open Figma. You run a script.\n\nThe terminal aesthetic — black background, green accent, monospace font — is the visual identity of the content OS. It is distinctive, instantly recognizable, and impossible to replicate with Canva templates. Every image looks like it came from a real terminal because it was generated by code that follows terminal design principles.",
+          "Python Pillow (PIL fork) generates images programmatically. For a content operating system that lives in a code editor, this means images are code - version controlled, reproducible, parameterized. You do not open Figma. You run a script.\n\nThe terminal aesthetic - black background, green accent, monospace font - is the visual identity of the content OS. It is distinctive, instantly recognizable, and impossible to replicate with Canva templates. Every image looks like it came from a real terminal because it was generated by code that follows terminal design principles.",
       },
       {
         heading: 'The Anthropic Color Scheme',
         type: 'pattern',
         content:
-          "The base palette: background black (#0D0D0D or #111111), primary text green (#00FF41 — terminal green), secondary text white (#E0E0E0 — slightly off-white for readability), accent amber (#FFB000 — for warnings, highlights), dim text gray (#555555 — for comments and secondary info), border subtle (#1A1A1A — barely visible panel borders).\n\nThis is not random. It mirrors the Anthropic/Claude terminal aesthetic — dark, clean, professional but with personality. The green-on-black is the signature. Every image generated by the content OS uses this palette, creating visual consistency across hundreds of posts without a design system document.",
+          "The base palette: background black (#0D0D0D or #111111), primary text green (#00FF41 - terminal green), secondary text white (#E0E0E0 - slightly off-white for readability), accent amber (#FFB000 - for warnings, highlights), dim text gray (#555555 - for comments and secondary info), border subtle (#1A1A1A - barely visible panel borders).\n\nThis is not random. It mirrors the Anthropic/Claude terminal aesthetic - dark, clean, professional but with personality. The green-on-black is the signature. Every image generated by the content OS uses this palette, creating visual consistency across hundreds of posts without a design system document.",
       },
       {
         heading: 'Boot-Sequence Aesthetic',
         type: 'pattern',
         content:
-          "The boot-sequence style is the hero format for article images and LinkedIn carousel covers. Structure: header with system name and version, a loading or initialization sequence with timestamps, the core content rendered as system output, footer with status line.\n\nThis mimics a real system booting up — the AI/os brand identity in visual form. Each image tells a story of a system starting up, loading modules, and presenting information. It is information-dense, visually striking, and completely unique to this brand.\n\nImplementation: Pillow draws text line by line with calculated Y positions. Each line has a specific color (green for system prompts, white for content, amber for highlights). Font size varies by importance. The monospace font (typically Fira Code or JetBrains Mono) sells the terminal authenticity.",
+          "The boot-sequence style is the hero format for article images and LinkedIn carousel covers. Structure: header with system name and version, a loading or initialization sequence with timestamps, the core content rendered as system output, footer with status line.\n\nThis mimics a real system booting up - the AI/os brand identity in visual form. Each image tells a story of a system starting up, loading modules, and presenting information. It is information-dense, visually striking, and completely unique to this brand.\n\nImplementation: Pillow draws text line by line with calculated Y positions. Each line has a specific color (green for system prompts, white for content, amber for highlights). Font size varies by importance. The monospace font (typically Fira Code or JetBrains Mono) sells the terminal authenticity.",
       },
       {
         heading: 'Matrix Rain Backgrounds',
@@ -613,7 +618,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Real Implementations',
         type: 'pro-tip',
         content:
-          "Three skills in the content OS use Python Pillow directly: aios-image generates the terminal boot-sequence article images. x-tip-image generates matrix rain backgrounds with centered tip panels for X micro-tip posts. content-images is the general-purpose image generator for any custom visual need.\n\nEach skill follows the same architecture: define the canvas size, set up the color palette, calculate text positions, draw background elements, draw text with appropriate fonts and colors, save to the content output directory. The skills are parameterized — you pass in the content text, and the image generates automatically.\n\nThis means image generation is part of the content pipeline, not a separate design step. Write the post. Generate the image. Publish. All from the same editor.",
+          "Three skills in the content OS use Python Pillow directly: aios-image generates the terminal boot-sequence article images. x-tip-image generates matrix rain backgrounds with centered tip panels for X micro-tip posts. content-images is the general-purpose image generator for any custom visual need.\n\nEach skill follows the same architecture: define the canvas size, set up the color palette, calculate text positions, draw background elements, draw text with appropriate fonts and colors, save to the content output directory. The skills are parameterized - you pass in the content text, and the image generates automatically.\n\nThis means image generation is part of the content pipeline, not a separate design step. Write the post. Generate the image. Publish. All from the same editor.",
       },
     ],
   },
@@ -625,7 +630,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'How MCPs power a content operating system from inside Cursor',
     category: 'tools',
     description:
-      'MCP servers for content building — Typefully, Substack, Slack, browser-use for LinkedIn, and how Model Context Protocol integrations power a content operating system from inside Cursor.',
+      'MCP servers for content building - Typefully, Substack, Slack, browser-use for LinkedIn, and how Model Context Protocol integrations power a content operating system from inside Cursor.',
     keywords: [
       'MCP servers content',
       'AI content tools',
@@ -639,6 +644,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'content-skills',
       'repo-content-system',
       'design-tools',
+      'content-clustering-architecture',
     ],
     sections: [
       {
@@ -651,19 +657,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'The Content MCP Stack',
         type: 'pattern',
         content:
-          "Typefully MCP: drafting and scheduling posts for X and LinkedIn. Create drafts, schedule publication times, manage the content queue. This is the primary publishing pipeline for social content.\n\nSubstack MCP: creating newsletter drafts directly on Substack. The final-substack skill uses this to push finalized posts without opening the Substack editor. Handles title, subtitle, and body content.\n\nSlack MCP: reading and posting to Slack channels. Used for partner communications, syncing channel history to markdown, posting reminders, and sending content updates to team channels.\n\nBrowser-use MCP: browser automation for platforms without APIs. Used for LinkedIn interactions — reading posts, posting comments, checking engagement metrics. The browser agent navigates LinkedIn like a human, which is the only reliable way to interact with LinkedIn programmatically.\n\nVercel MCP: deployment pipeline for the website. After making content or feature changes to the site, deploy directly from the editor.",
+          "Typefully MCP: drafting and scheduling posts for X and LinkedIn. Create drafts, schedule publication times, manage the content queue. This is the primary publishing pipeline for social content.\n\nSubstack MCP: creating newsletter drafts directly on Substack. The final-substack skill uses this to push finalized posts without opening the Substack editor. Handles title, subtitle, and body content.\n\nSlack MCP: reading and posting to Slack channels. Used for partner communications, syncing channel history to markdown, posting reminders, and sending content updates to team channels.\n\nBrowser-use MCP: browser automation for platforms without APIs. Used for LinkedIn interactions - reading posts, posting comments, checking engagement metrics. The browser agent navigates LinkedIn like a human, which is the only reliable way to interact with LinkedIn programmatically.\n\nVercel MCP: deployment pipeline for the website. After making content or feature changes to the site, deploy directly from the editor.",
       },
       {
         heading: 'MCP-Powered Content Workflows',
         type: 'pattern',
         content:
-          "Example workflow — publish a LinkedIn play: (1) Write the post in content/drafts/ as markdown. (2) Run final-copy to normalize voice and format. (3) Typefully MCP creates the draft on LinkedIn. (4) Browser-use MCP opens the published post to monitor engagement. (5) Slack MCP posts a notification to the content channel. (6) Daily tracker skill logs the publication.\n\nExample workflow — newsletter publish: (1) Write the post in content/substack/drafts/. (2) Run final-substack to normalize and push to Substack via MCP. (3) After publishing, the skill generates LinkedIn and X cross-promo snippets. (4) Typefully MCP schedules the cross-promo posts for the next day.\n\nEach workflow is a chain of MCP calls orchestrated by skills. The agent knows which MCPs to call, in what order, with what data. You trigger it with a single slash command.",
+          "Example workflow - publish a LinkedIn play: (1) Write the post in content/drafts/ as markdown. (2) Run final-copy to normalize voice and format. (3) Typefully MCP creates the draft on LinkedIn. (4) Browser-use MCP opens the published post to monitor engagement. (5) Slack MCP posts a notification to the content channel. (6) Daily tracker skill logs the publication.\n\nExample workflow - newsletter publish: (1) Write the post in content/substack/drafts/. (2) Run final-substack to normalize and push to Substack via MCP. (3) After publishing, the skill generates LinkedIn and X cross-promo snippets. (4) Typefully MCP schedules the cross-promo posts for the next day.\n\nEach workflow is a chain of MCP calls orchestrated by skills. The agent knows which MCPs to call, in what order, with what data. You trigger it with a single slash command.",
       },
       {
         heading: 'Building Your Own Content MCP',
         type: 'pro-tip',
         content:
-          "Any platform with an API can become an MCP server. The pattern: identify the API endpoints you need (create draft, schedule, publish). Write an MCP server that exposes those endpoints as tools. Configure it in your Cursor MCP settings. Now your agent can call those tools directly.\n\nFor content platforms specifically: most expose create and read endpoints. That covers drafting and publishing. Some expose analytics endpoints — that lets your agent pull performance data and factor it into content decisions.\n\nThe meta-pattern: every new platform you add to your content distribution expands the operating system's reach without changing any existing workflows. Add the MCP, update the relevant skill to include it in the pipeline, done. The architecture scales horizontally.",
+          "Any platform with an API can become an MCP server. The pattern: identify the API endpoints you need (create draft, schedule, publish). Write an MCP server that exposes those endpoints as tools. Configure it in your Cursor MCP settings. Now your agent can call those tools directly.\n\nFor content platforms specifically: most expose create and read endpoints. That covers drafting and publishing. Some expose analytics endpoints - that lets your agent pull performance data and factor it into content decisions.\n\nThe meta-pattern: every new platform you add to your content distribution expands the operating system's reach without changing any existing workflows. Add the MCP, update the relevant skill to include it in the pipeline, done. The architecture scales horizontally.",
       },
     ],
   },
@@ -672,10 +678,10 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
     id: 'image-generation-tools',
     title: 'Image Generation Approaches',
     subtitle:
-      'Python Pillow vs AI image gen vs design tools — when to use what',
+      'Python Pillow vs AI image gen vs design tools - when to use what',
     category: 'tools',
     description:
-      'Image generation approaches for content creators — Python Pillow for terminal aesthetics, AI image generation, design tools, color schemas, and template categories for social content.',
+      'Image generation approaches for content creators - Python Pillow for terminal aesthetics, AI image generation, design tools, color schemas, and template categories for social content.',
     keywords: [
       'content image generation',
       'social media image tools',
@@ -701,7 +707,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Color Schemas',
         type: 'pattern',
         content:
-          "Anthropic Terminal: black background (#0D0D0D), green primary (#00FF41), white secondary (#E0E0E0), amber accent (#FFB000). The signature look. Used for all terminal-style, boot-sequence, and system-output images.\n\nSynthwave: deep purple background (#1A0A2E), pink accent (#FF2D95), cyan secondary (#00F0FF), warm white text. Used for release reactions, hype content, and anything with a futuristic vibe.\n\nMinimal Dark: charcoal background (#1C1C1E), white text (#FFFFFF), single accent color per image. Used for clean, professional visuals — LinkedIn carousels, article headers, quote graphics.\n\nEach schema has a defined palette with specific hex values. The schemas are not arbitrary — they map to content types. Terminal for technical, synthwave for creative, minimal dark for professional. Consistency across images builds visual brand recognition.",
+          "Anthropic Terminal: black background (#0D0D0D), green primary (#00FF41), white secondary (#E0E0E0), amber accent (#FFB000). The signature look. Used for all terminal-style, boot-sequence, and system-output images.\n\nSynthwave: deep purple background (#1A0A2E), pink accent (#FF2D95), cyan secondary (#00F0FF), warm white text. Used for release reactions, hype content, and anything with a futuristic vibe.\n\nMinimal Dark: charcoal background (#1C1C1E), white text (#FFFFFF), single accent color per image. Used for clean, professional visuals - LinkedIn carousels, article headers, quote graphics.\n\nEach schema has a defined palette with specific hex values. The schemas are not arbitrary - they map to content types. Terminal for technical, synthwave for creative, minimal dark for professional. Consistency across images builds visual brand recognition.",
       },
       {
         heading: 'Template Categories',
@@ -713,7 +719,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'When to Use What',
         type: 'pro-tip',
         content:
-          "Decision tree: Is it a recurring visual format that uses the same layout every time? Use Python Pillow — automate it. Is it a one-off creative visual where novelty matters? Use AI image generation. Is it a complex layout with multiple elements that need precise placement? Use Figma. Is it a quick visual needed in under 5 minutes? Use Canva.\n\nThe default for the content OS is Python Pillow because most content images follow recurring patterns (terminal tips, article headers, stack reveals). Automation means zero production time per image once the template script exists. Design tools fill the gaps for custom one-offs. AI image generation is the last resort — useful but unpredictable.",
+          "Decision tree: Is it a recurring visual format that uses the same layout every time? Use Python Pillow - automate it. Is it a one-off creative visual where novelty matters? Use AI image generation. Is it a complex layout with multiple elements that need precise placement? Use Figma. Is it a quick visual needed in under 5 minutes? Use Canva.\n\nThe default for the content OS is Python Pillow because most content images follow recurring patterns (terminal tips, article headers, stack reveals). Automation means zero production time per image once the template script exists. Design tools fill the gaps for custom one-offs. AI image generation is the last resort - useful but unpredictable.",
       },
     ],
   },
@@ -729,7 +735,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       '3-tier architecture for encoding your voice into a repo',
     category: 'voice',
     description:
-      'How to build a voice system — 3-tier architecture (DNA, Context Playbooks, Content Ops), encoding voice into a repo, modular voice loading, and the journey from generic AI output to voice-calibrated content.',
+      'How to build a voice system - 3-tier architecture (DNA, Context Playbooks, Content Ops), encoding voice into a repo, modular voice loading, and the journey from generic AI output to voice-calibrated content.',
     keywords: [
       'AI voice system',
       'content voice guide',
@@ -749,19 +755,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Why Voice Systems Matter',
         type: 'prose',
         content:
-          "Every AI can write. Very few AI outputs sound like a specific person. The difference is a voice system — a structured set of rules, patterns, and examples that constrain AI generation to match your actual voice. Without one, every post sounds like it was written by the same generic AI. With one, the AI becomes an extension of how you actually communicate.\n\nThe problem is not that AI writes badly. It writes competently but generically. Same sentence rhythms, same transition phrases, same structural patterns. A voice system breaks that homogeneity by giving the AI specific constraints: these words yes, these words never, this sentence length, this paragraph structure, this tone.",
+          "Every AI can write. Very few AI outputs sound like a specific person. The difference is a voice system - a structured set of rules, patterns, and examples that constrain AI generation to match your actual voice. Without one, every post sounds like it was written by the same generic AI. With one, the AI becomes an extension of how you actually communicate.\n\nThe problem is not that AI writes badly. It writes competently but generically. Same sentence rhythms, same transition phrases, same structural patterns. A voice system breaks that homogeneity by giving the AI specific constraints: these words yes, these words never, this sentence length, this paragraph structure, this tone.",
       },
       {
         heading: 'The 3-Tier Architecture',
         type: 'pattern',
         content:
-          "Tier 1 — Voice DNA: the foundational layer. Core voice rules that apply to ALL content regardless of platform. Sentence style, word choices, anti-patterns, identity markers, formatting rules. This tier inherits into everything above it. Files: core-voice.md, anti-slop.md, viral-hooks.md.\n\nTier 2 — Context Playbooks: platform-specific adaptations of the voice DNA. How the voice changes for LinkedIn vs X vs TikTok vs Substack. Each playbook inherits from Tier 1 and adds platform-specific constraints. The voice stays consistent but the format, length, and delivery adapt.\n\nTier 3 — Content Ops: production-level rules for creating content. Pre-publish checklist, substance requirements, improvement protocol, content pillars, pitfall avoidance. This tier operationalizes the voice — turning principles into checklists and workflows.\n\nEach tier builds on the one below it. A LinkedIn post loads Tier 1 (voice DNA) + Tier 2 (LinkedIn playbook) + Tier 3 (pre-publish checklist). A TikTok script loads Tier 1 + Tier 2 (TikTok playbook) + Tier 3 (substance requirements). The voice is modular.",
+          "Tier 1 - Voice DNA: the foundational layer. Core voice rules that apply to ALL content regardless of platform. Sentence style, word choices, anti-patterns, identity markers, formatting rules. This tier inherits into everything above it. Files: core-voice.md, anti-slop.md, viral-hooks.md.\n\nTier 2 - Context Playbooks: platform-specific adaptations of the voice DNA. How the voice changes for LinkedIn vs X vs TikTok vs Substack. Each playbook inherits from Tier 1 and adds platform-specific constraints. The voice stays consistent but the format, length, and delivery adapt.\n\nTier 3 - Content Ops: production-level rules for creating content. Pre-publish checklist, substance requirements, improvement protocol, content pillars, pitfall avoidance. This tier operationalizes the voice - turning principles into checklists and workflows.\n\nEach tier builds on the one below it. A LinkedIn post loads Tier 1 (voice DNA) + Tier 2 (LinkedIn playbook) + Tier 3 (pre-publish checklist). A TikTok script loads Tier 1 + Tier 2 (TikTok playbook) + Tier 3 (substance requirements). The voice is modular.",
       },
       {
         heading: 'Encoding Voice Into a Repo',
         type: 'pattern',
         content:
-          "The voice system lives as markdown files in a git repository. This is the key architectural decision. Voice rules are not prompts you paste into ChatGPT. They are versioned documents that evolve over time, are loaded by agent skills, and can be diffed to see how your voice has changed.\n\nDirectory structure: skills/tier-1-voice-dna/ contains the foundation. skills/tier-2-context-playbooks/ contains per-platform adaptations. skills/tier-3-content-ops/ contains production rules, checklists, and pillar definitions.\n\nWhen an agent skill generates content, it reads the relevant voice files first, then generates with those constraints loaded into context. The skill does not need the voice rules hardcoded — it loads them dynamically from the repo. Change a voice rule in the markdown file, and every future content generation reflects the change immediately.",
+          "The voice system lives as markdown files in a git repository. This is the key architectural decision. Voice rules are not prompts you paste into ChatGPT. They are versioned documents that evolve over time, are loaded by agent skills, and can be diffed to see how your voice has changed.\n\nDirectory structure: skills/tier-1-voice-dna/ contains the foundation. skills/tier-2-context-playbooks/ contains per-platform adaptations. skills/tier-3-content-ops/ contains production rules, checklists, and pillar definitions.\n\nWhen an agent skill generates content, it reads the relevant voice files first, then generates with those constraints loaded into context. The skill does not need the voice rules hardcoded - it loads them dynamically from the repo. Change a voice rule in the markdown file, and every future content generation reflects the change immediately.",
       },
       {
         heading: 'The Journey from Generic to Calibrated',
@@ -785,7 +791,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       '14 critical patterns that make AI content sound generic',
     category: 'voice',
     description:
-      'The complete AI slop avoidance guide — 14 critical anti-patterns including em-dashes, authority signaling, narrator setups, dramatic framing, bookend summaries, and detection checklists with before/after examples.',
+      'The complete AI slop avoidance guide - 14 critical anti-patterns including em-dashes, authority signaling, narrator setups, dramatic framing, bookend summaries, and detection checklists with before/after examples.',
     keywords: [
       'AI slop',
       'how to avoid AI slop',
@@ -799,22 +805,23 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'anti-patterns',
       'pre-publish-checklist',
       'viral-hooks',
+      'ai-slop-detector-expanded',
     ],
     sections: [
       {
         heading: 'What AI Slop Is',
         type: 'prose',
         content:
-          "AI slop is the collection of writing patterns that make AI-generated content instantly recognizable as AI-generated. Not because the ideas are bad — because the delivery follows predictable patterns that no human naturally writes in. Em-dashes everywhere. Authority signaling phrases. Three parallel dramatic sentences. Bookend summaries that restate the introduction word-for-word. These patterns exist because language models learned from a training corpus full of a specific kind of polished, performative writing. The model defaults to that style unless you actively constrain it.",
+          "AI slop is the collection of writing patterns that make AI-generated content instantly recognizable as AI-generated. Not because the ideas are bad - because the delivery follows predictable patterns that no human naturally writes in. Em-dashes everywhere. Authority signaling phrases. Three parallel dramatic sentences. Bookend summaries that restate the introduction word-for-word. These patterns exist because language models learned from a training corpus full of a specific kind of polished, performative writing. The model defaults to that style unless you actively constrain it.",
       },
       {
-        heading: 'Critical Patterns — Always Catch',
+        heading: 'Critical Patterns - Always Catch',
         type: 'pattern',
         content:
           "1. Em-dashes: delete all of them. Use periods, commas, or restructure. Natural alternatives are ellipses and arrows.\n\n2. Authority signaling phrases: the uncomfortable truth, let me be clear, here is what nobody tells you, the hard truth is, here is the reality, what most people miss. These are performance, not substance. Exception: here is how and here is the play are directional in builder voice, not performative.\n\n3. Narrator setup lines: here is the thing about, here is where it gets interesting. Delete the setup. Start with the actual point.\n\n4. Dramatic rhetorical framing: but here is the part where, and that is when it clicked, want to know the crazy part. State what happened. Let the reader feel it.\n\n5. Three parallel dramatic sentences: you cannot see it, you cannot copy-paste it away, you have to know it exists. One direct statement lands harder. Cut to one.\n\n6. The bookend summary: opening with a thesis, closing with the exact same thesis rephrased 800 words later. AI wraps content in neat bows. Real thinking goes somewhere new by the end.\n\n7. Self-branded concepts: this is what I call. Just explain it.",
       },
       {
-        heading: 'Critical Patterns — Continued',
+        heading: 'Critical Patterns - Continued',
         type: 'pattern',
         content:
           "8. Artificial drama sentences: the shift sounds simple, it is not. Show why it is hard with a specific example instead of telling the reader it is hard.\n\n9. Colon-listed everything: the result: better data, the impact: faster sales. Reads like a PowerPoint slide. Write natural sentences.\n\n10. The humble brag disclaimer: I do not have all the answers, but. Share your take or do not. The disclaimer makes it worse.",
@@ -823,19 +830,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Context-Dependent Patterns',
         type: 'pattern',
         content:
-          "These need judgment, not automatic deletion:\n\n11. Engagement bait endings: so here is my question for you. Generally avoid. But on meme posts, asking what is your version and drop it in the comments fits the lighter tone.\n\n12. Bullets for arguments: arguments belong in prose. But workflow steps, tool lists, and technical implementations use bullets and emoji markers naturally. The rule: bullets for execution, prose for reasoning.\n\n13. False dichotomies: it is not X, it is Y. Generally avoid. But contrasting old way vs new way — manual SDR grind vs automated Clay workflow — is showing evolution, not a false dichotomy.\n\n14. Bold headers as transitions: headers for navigation only. LinkedIn posts are whitespace-driven, not header-driven.",
+          "These need judgment, not automatic deletion:\n\n11. Engagement bait endings: so here is my question for you. Generally avoid. But on meme posts, asking what is your version and drop it in the comments fits the lighter tone.\n\n12. Bullets for arguments: arguments belong in prose. But workflow steps, tool lists, and technical implementations use bullets and emoji markers naturally. The rule: bullets for execution, prose for reasoning.\n\n13. False dichotomies: it is not X, it is Y. Generally avoid. But contrasting old way vs new way - manual SDR grind vs automated Clay workflow - is showing evolution, not a false dichotomy.\n\n14. Bold headers as transitions: headers for navigation only. LinkedIn posts are whitespace-driven, not header-driven.",
       },
       {
         heading: 'Your Natural Patterns (Not Slop)',
         type: 'pro-tip',
         content:
-          "These look like AI tells but are actually authentic voice patterns. Do not flag them:\n\nEllipses for trailing thoughts: true story, it feels prehistoric. Arrows for workflow steps and progression. Emoji section markers (checkmarks, wrenches, links, brains, puzzle pieces) for structuring workflow walkthroughs. Here is how and here is the play as directional openers into workflow breakdowns. Pop culture references mixed into technical content. No gatekeeping as a value statement with resource delivery in comments.\n\nThe distinction: AI patterns are formulaic and repetitive across all content. Your natural patterns are contextual — they appear in specific content types where they serve a function. Ellipses show up in reflective posts, not in technical breakdowns. Emoji markers show up in plays, not in essays. Context determines whether a pattern is authentic or slop.",
+          "These look like AI tells but are actually authentic voice patterns. Do not flag them:\n\nEllipses for trailing thoughts: true story, it feels prehistoric. Arrows for workflow steps and progression. Emoji section markers (checkmarks, wrenches, links, brains, puzzle pieces) for structuring workflow walkthroughs. Here is how and here is the play as directional openers into workflow breakdowns. Pop culture references mixed into technical content. No gatekeeping as a value statement with resource delivery in comments.\n\nThe distinction: AI patterns are formulaic and repetitive across all content. Your natural patterns are contextual - they appear in specific content types where they serve a function. Ellipses show up in reflective posts, not in technical breakdowns. Emoji markers show up in plays, not in essays. Context determines whether a pattern is authentic or slop.",
       },
       {
         heading: 'Detection Checklist',
         type: 'formula',
         content:
-          "Before publishing any AI-assisted content, run this scan: (1) Search for em-dashes — delete all. (2) Search for here is the thing, here is where, let me be clear, the uncomfortable truth — delete all. (3) Check the opening and closing — if they say the same thing, rewrite the closing. (4) Count parallel sentence structures — if you find three in a row with the same rhythm, cut to one. (5) Check for colon-listed statements — rewrite as natural sentences. (6) Read it out loud — if it sounds like a keynote speech, it is slop. If it sounds like you explaining something to a friend, it is voice.\n\nThis takes 3 minutes per post. Those 3 minutes are the difference between content that sounds like everyone else's AI output and content that sounds like you.",
+          "Before publishing any AI-assisted content, run this scan: (1) Search for em-dashes - delete all. (2) Search for here is the thing, here is where, let me be clear, the uncomfortable truth - delete all. (3) Check the opening and closing - if they say the same thing, rewrite the closing. (4) Count parallel sentence structures - if you find three in a row with the same rhythm, cut to one. (5) Check for colon-listed statements - rewrite as natural sentences. (6) Read it out loud - if it sounds like a keynote speech, it is slop. If it sounds like you explaining something to a friend, it is voice.\n\nThis takes 3 minutes per post. Those 3 minutes are the difference between content that sounds like everyone else's AI output and content that sounds like you.",
       },
     ],
   },
@@ -847,7 +854,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Hook categories, platform-specific hooks, and first-line formulas',
     category: 'voice',
     description:
-      'Viral hooks and scroll-stopping openers — hook categories (curiosity, contrarian, data bomb, story, problem-first, direct challenge), platform-specific adaptation, and first-line formulas that stop the scroll.',
+      'Viral hooks and scroll-stopping openers - hook categories (curiosity, contrarian, data bomb, story, problem-first, direct challenge), platform-specific adaptation, and first-line formulas that stop the scroll.',
     keywords: [
       'viral hooks LinkedIn',
       'scroll stopping hooks',
@@ -861,25 +868,26 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'linkedin-playbook',
       'x-best-practices',
       'tiktok-playbook',
+      'call-to-actions',
     ],
     sections: [
       {
         heading: 'Why Hooks Matter More Than Content',
         type: 'prose',
         content:
-          "On every social platform, the first 1-3 lines determine whether anyone reads the rest. LinkedIn shows 2 lines before the see more fold. X shows the first tweet in a timeline of hundreds. TikTok gives you 1-2 seconds before the thumb scrolls. The hook is not the introduction to your content — it IS the content for 90% of people who see it. If the hook fails, the rest does not exist.\n\nThis is not about clickbait. Clickbait promises and underdelivers. A good hook promises and the content delivers. The hook earns the attention. The content rewards it. Both are required.",
+          "On every social platform, the first 1-3 lines determine whether anyone reads the rest. LinkedIn shows 2 lines before the see more fold. X shows the first tweet in a timeline of hundreds. TikTok gives you 1-2 seconds before the thumb scrolls. The hook is not the introduction to your content - it IS the content for 90% of people who see it. If the hook fails, the rest does not exist.\n\nThis is not about clickbait. Clickbait promises and underdelivers. A good hook promises and the content delivers. The hook earns the attention. The content rewards it. Both are required.",
       },
       {
         heading: 'Six Hook Categories',
         type: 'pattern',
         content:
-          "Curiosity Pings: open a loop the reader needs closed. You are not supposed to know this, but here is the trick top founders use. The loop creates tension that only reading further resolves.\n\nContrarian POVs: challenge conventional wisdom. I ignored everyone is advice and that is why it worked. Contrarian hooks work because they create cognitive dissonance — the reader needs to understand how the opposite of what they believe can be true.\n\nData Bombs: lead with a specific, surprising number. 91% of posts fail. Here is what the top 9% are doing differently. Numbers create credibility and specificity in a feed full of vague claims.\n\nStory Openers: start in the middle of a moment. Three years ago I almost quit. Then something unexpected happened. Story hooks work because humans are wired for narrative. We cannot stop mid-story.\n\nProblem-First: name the pain directly. Your content is not boring. It is just missing this one thing. Problem-first hooks work because the reader self-identifies with the pain and needs to know the solution.\n\nDirect Challenge: provoke the reader's identity. If you cannot explain your product in 10 words, you do not understand it. Challenge hooks work because they trigger a need to prove or disprove the claim.",
+          "Curiosity Pings: open a loop the reader needs closed. You are not supposed to know this, but here is the trick top founders use. The loop creates tension that only reading further resolves.\n\nContrarian POVs: challenge conventional wisdom. I ignored everyone is advice and that is why it worked. Contrarian hooks work because they create cognitive dissonance - the reader needs to understand how the opposite of what they believe can be true.\n\nData Bombs: lead with a specific, surprising number. 91% of posts fail. Here is what the top 9% are doing differently. Numbers create credibility and specificity in a feed full of vague claims.\n\nStory Openers: start in the middle of a moment. Three years ago I almost quit. Then something unexpected happened. Story hooks work because humans are wired for narrative. We cannot stop mid-story.\n\nProblem-First: name the pain directly. Your content is not boring. It is just missing this one thing. Problem-first hooks work because the reader self-identifies with the pain and needs to know the solution.\n\nDirect Challenge: provoke the reader's identity. If you cannot explain your product in 10 words, you do not understand it. Challenge hooks work because they trigger a need to prove or disprove the claim.",
       },
       {
         heading: 'Platform-Specific Hook Adaptation',
         type: 'pattern',
         content:
-          "LinkedIn: lean into professional stakes, career journeys, insights with emotional or intellectual weight. Hooks can be slightly longer — you have 2 lines before the fold. Example: the first time I fired someone I cried in the bathroom.\n\nX: fast hooks, punchy facts, meme-ability, concise. Must work in the first 10 words. Example: this founder built 3 products before he ever launched one.\n\nTikTok and Reels and Shorts: on-screen text IS the hook. 8 words or fewer. Must work without sound. Result-first hooks drive replay value — show the outcome, then how. Example on-screen text: you are using Claude wrong, here is why. Example result-first: 30 minutes of work, 3 seconds.\n\nThe same insight can be hooked differently for each platform. A LinkedIn hook can be reflective and emotional. The X version of the same hook is compressed and punchy. The TikTok version is visual and immediate. Same core idea, different delivery optimized for the platform is attention pattern.",
+          "LinkedIn: lean into professional stakes, career journeys, insights with emotional or intellectual weight. Hooks can be slightly longer - you have 2 lines before the fold. Example: the first time I fired someone I cried in the bathroom.\n\nX: fast hooks, punchy facts, meme-ability, concise. Must work in the first 10 words. Example: this founder built 3 products before he ever launched one.\n\nTikTok and Reels and Shorts: on-screen text IS the hook. 8 words or fewer. Must work without sound. Result-first hooks drive replay value - show the outcome, then how. Example on-screen text: you are using Claude wrong, here is why. Example result-first: 30 minutes of work, 3 seconds.\n\nThe same insight can be hooked differently for each platform. A LinkedIn hook can be reflective and emotional. The X version of the same hook is compressed and punchy. The TikTok version is visual and immediate. Same core idea, different delivery optimized for the platform is attention pattern.",
       },
       {
         heading: 'First-Line Formulas',
@@ -903,7 +911,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'CTA placement, soft vs hard, and platform-specific patterns',
     category: 'voice',
     description:
-      'CTAs that actually convert — CTA placement strategy, soft vs hard CTAs, platform-specific CTA patterns for LinkedIn, X, Substack, and TikTok, and the value-delivery CTA framework.',
+      'CTAs that actually convert - CTA placement strategy, soft vs hard CTAs, platform-specific CTA patterns for LinkedIn, X, Substack, and TikTok, and the value-delivery CTA framework.',
     keywords: [
       'call to action examples',
       'LinkedIn CTA',
@@ -923,13 +931,13 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'The CTA Philosophy',
         type: 'prose',
         content:
-          "Most CTAs fail because they ask before giving. Follow me for more tips. Like if you agree. Subscribe for updates. These ask the reader to do something for the creator with no clear value exchange. The alternative: value-delivery CTAs. Instead of asking for engagement, deliver value and let the engagement follow naturally.\n\nThe framework: give the reader something genuinely useful (a prompt, a formula, a template, a resource), then tell them where to get it. The CTA is not asking for a favor — it is directing them to more value. The engagement (comments, follows, shares) happens as a side effect of the value delivery.",
+          "Most CTAs fail because they ask before giving. Follow me for more tips. Like if you agree. Subscribe for updates. These ask the reader to do something for the creator with no clear value exchange. The alternative: value-delivery CTAs. Instead of asking for engagement, deliver value and let the engagement follow naturally.\n\nThe framework: give the reader something genuinely useful (a prompt, a formula, a template, a resource), then tell them where to get it. The CTA is not asking for a favor - it is directing them to more value. The engagement (comments, follows, shares) happens as a side effect of the value delivery.",
       },
       {
         heading: 'Three CTA Types',
         type: 'pattern',
         content:
-          "Value Delivery CTAs (primary): prompt is in the comments, formula plus HTTP API setup in the comments, do not sleep on the comments the prompt and scoring guide is there, documented the full process and the full doc is in the comments. These work because the reader gets something tangible. The comment section becomes a resource, not a discussion.\n\nCo-Building CTAs (for narrative posts): DM me if you are building something similar, if you are building with Cursor and figuring it out too DM me, follow along if you want to see how it plays out. These work on building-and-sharing posts because they create peer connection, not follower hierarchy.\n\nEngagement CTAs (meme posts only): what is your version drop it in the comments, what is the coldest cold email practice you have seen still running in 2026. These work on lightweight content because they invite shared experience. Never use these on educational or tactical posts — they cheapen the substance.",
+          "Value Delivery CTAs (primary): prompt is in the comments, formula plus HTTP API setup in the comments, do not sleep on the comments the prompt and scoring guide is there, documented the full process and the full doc is in the comments. These work because the reader gets something tangible. The comment section becomes a resource, not a discussion.\n\nCo-Building CTAs (for narrative posts): DM me if you are building something similar, if you are building with Cursor and figuring it out too DM me, follow along if you want to see how it plays out. These work on building-and-sharing posts because they create peer connection, not follower hierarchy.\n\nEngagement CTAs (meme posts only): what is your version drop it in the comments, what is the coldest cold email practice you have seen still running in 2026. These work on lightweight content because they invite shared experience. Never use these on educational or tactical posts - they cheapen the substance.",
       },
       {
         heading: 'Platform-Specific CTA Patterns',
@@ -941,7 +949,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'CTA Placement Strategy',
         type: 'pro-tip',
         content:
-          "Where you place the CTA matters as much as what it says. On LinkedIn: the CTA goes at the end, after the substance. Never before. The reader needs to receive value before they are willing to act. A CTA in the middle of a post interrupts the flow and signals that the content is a vehicle for the CTA rather than the CTA being a natural extension of the content.\n\nException: for plays-series posts, a soft CTA can appear mid-post as a teaser — keep reading, the prompt is below — which functions as a hook to keep them scrolling, not an ask.\n\nOn X: CTA is the last tweet in a thread or a reply to the main tweet. On Substack: CTA is at the very end, after the sign-off if it is a share-ask, or inline if it is a resource link. On TikTok: CTA is the last 2 seconds of the video, visual or verbal.",
+          "Where you place the CTA matters as much as what it says. On LinkedIn: the CTA goes at the end, after the substance. Never before. The reader needs to receive value before they are willing to act. A CTA in the middle of a post interrupts the flow and signals that the content is a vehicle for the CTA rather than the CTA being a natural extension of the content.\n\nException: for plays-series posts, a soft CTA can appear mid-post as a teaser - keep reading, the prompt is below - which functions as a hook to keep them scrolling, not an ask.\n\nOn X: CTA is the last tweet in a thread or a reply to the main tweet. On Substack: CTA is at the very end, after the sign-off if it is a share-ask, or inline if it is a resource link. On TikTok: CTA is the last 2 seconds of the video, visual or verbal.",
       },
       {
         heading: 'Anti-Pattern: Begging for Engagement',
@@ -959,7 +967,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Value pin comments, bucket system, and authentic replies',
     category: 'voice',
     description:
-      'Commenting style and engagement strategy — value pin comments, 6 comment bucket system (technical depth, encouragement, pattern recognition, observational, stack reveal, contrarian), and authentic reply patterns.',
+      'Commenting style and engagement strategy - value pin comments, 6 comment bucket system (technical depth, encouragement, pattern recognition, observational, stack reveal, contrarian), and authentic reply patterns.',
     keywords: [
       'LinkedIn commenting strategy',
       'engagement strategy',
@@ -979,31 +987,31 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Comments as Content',
         type: 'prose',
         content:
-          "Comments are not afterthoughts — they are a content channel. On LinkedIn, your comments appear in other people's feeds. A thoughtful comment on a high-visibility post can get more impressions than your own posts. On your own posts, the comment section is where you deliver resources, add depth, and continue the conversation.\n\nThis means commenting deserves the same voice calibration as posting. A great comment adds value, shows expertise, and feels like it came from a real person — not a bot farm running through a list of influencer posts dropping fire emoji.",
+          "Comments are not afterthoughts - they are a content channel. On LinkedIn, your comments appear in other people's feeds. A thoughtful comment on a high-visibility post can get more impressions than your own posts. On your own posts, the comment section is where you deliver resources, add depth, and continue the conversation.\n\nThis means commenting deserves the same voice calibration as posting. A great comment adds value, shows expertise, and feels like it came from a real person - not a bot farm running through a list of influencer posts dropping fire emoji.",
       },
       {
         heading: 'The Six Comment Buckets',
         type: 'pattern',
         content:
-          "Technical Depth: add specific technical context that the post did not cover. If someone posts about Clay enrichment, comment with a specific column formula or API endpoint you have used. This establishes credibility through specifics, not claims.\n\nEncouragement: genuine recognition of good work. Not great post but I built something similar last month and the hardest part was X, which you nailed. Encouragement that adds context is value. Encouragement without context is noise.\n\nPattern Recognition: connect the post to a broader pattern you have observed. This is the same dynamic I see in how teams adopt Cursor — it starts with one person and spreads when the output quality becomes undeniable. This adds perspective and shows systems thinking.\n\nObservational: notice something in the post that most readers miss. The subtle part here is that the scoring model runs after the enrichment, not during. Most people would put them in the same column. This shows you read deeply and think carefully.\n\nStack Reveal: share the specific tools, configurations, or setups that relate to the post. We run a similar flow but with LeadMagic instead of Apollo for European coverage and the hit rate difference is significant. This is useful information wrapped in engagement.\n\nContrarian: respectfully challenge an assumption in the post. I have found the opposite — smaller batches actually cost more per contact when you factor in the fixed overhead of table setup. Not disagreeing for attention, but adding a real counterpoint with evidence.",
+          "Technical Depth: add specific technical context that the post did not cover. If someone posts about Clay enrichment, comment with a specific column formula or API endpoint you have used. This establishes credibility through specifics, not claims.\n\nEncouragement: genuine recognition of good work. Not great post but I built something similar last month and the hardest part was X, which you nailed. Encouragement that adds context is value. Encouragement without context is noise.\n\nPattern Recognition: connect the post to a broader pattern you have observed. This is the same dynamic I see in how teams adopt Cursor - it starts with one person and spreads when the output quality becomes undeniable. This adds perspective and shows systems thinking.\n\nObservational: notice something in the post that most readers miss. The subtle part here is that the scoring model runs after the enrichment, not during. Most people would put them in the same column. This shows you read deeply and think carefully.\n\nStack Reveal: share the specific tools, configurations, or setups that relate to the post. We run a similar flow but with LeadMagic instead of Apollo for European coverage and the hit rate difference is significant. This is useful information wrapped in engagement.\n\nContrarian: respectfully challenge an assumption in the post. I have found the opposite - smaller batches actually cost more per contact when you factor in the fixed overhead of table setup. Not disagreeing for attention, but adding a real counterpoint with evidence.",
       },
       {
         heading: 'Value Pin Comments',
         type: 'pattern',
         content:
-          "A value pin comment is the first comment on your own post, pinned to the top, that delivers the resource promised in the post. If your post says prompt is in the comments, the pinned comment IS the prompt. Full text. No gatekeeping.\n\nStructure: start with the resource itself (prompt, formula, code, link). Then add 2-3 lines of context about how to use it or adapt it. The pinned comment should be standalone-valuable — someone who reads only the comment and not the post should still get something useful.\n\nThe pinned comment also functions as an engagement anchor. People reply to the pinned comment with their own adaptations, questions, and results. This creates a comment thread that the LinkedIn algorithm reads as high engagement, pushing the post to more feeds.",
+          "A value pin comment is the first comment on your own post, pinned to the top, that delivers the resource promised in the post. If your post says prompt is in the comments, the pinned comment IS the prompt. Full text. No gatekeeping.\n\nStructure: start with the resource itself (prompt, formula, code, link). Then add 2-3 lines of context about how to use it or adapt it. The pinned comment should be standalone-valuable - someone who reads only the comment and not the post should still get something useful.\n\nThe pinned comment also functions as an engagement anchor. People reply to the pinned comment with their own adaptations, questions, and results. This creates a comment thread that the LinkedIn algorithm reads as high engagement, pushing the post to more feeds.",
       },
       {
         heading: 'Replying to Commenters',
         type: 'pro-tip',
         content:
-          "Reply to every comment in the first 2 hours. This is not about being polite — it is about the algorithm. LinkedIn's distribution engine weights early comment activity heavily. A post with 20 comments in the first hour gets more distribution than a post with 20 comments over 3 days.\n\nBut the replies need substance. One-line value adds, not generic thanks. If someone shares their experience, build on it with a specific follow-up. If someone asks a question, answer it thoroughly. If someone disagrees, engage the substance of their point.\n\nNever use: thanks for sharing, great point, totally agree. These are zero-value replies that signal you are replying for the engagement metric, not the conversation. A silent like on their comment is better than a meaningless reply.",
+          "Reply to every comment in the first 2 hours. This is not about being polite - it is about the algorithm. LinkedIn's distribution engine weights early comment activity heavily. A post with 20 comments in the first hour gets more distribution than a post with 20 comments over 3 days.\n\nBut the replies need substance. One-line value adds, not generic thanks. If someone shares their experience, build on it with a specific follow-up. If someone asks a question, answer it thoroughly. If someone disagrees, engage the substance of their point.\n\nNever use: thanks for sharing, great point, totally agree. These are zero-value replies that signal you are replying for the engagement metric, not the conversation. A silent like on their comment is better than a meaningless reply.",
       },
       {
         heading: 'Anti-Pattern: Spray and Pray Commenting',
         type: 'anti-pattern',
         content:
-          "The spray-and-pray strategy — commenting on 50 posts per day with generic responses — is visible and damaging. People notice when the same account drops love this or great insight on every post in their feed. It reads as automated, even if it is manual.\n\nThe alternative: comment on 5-10 posts per day with genuine substance. Pick posts where you have actual expertise to add. Write 2-3 sentences minimum. Reference specific details from the post. Add information the reader would not have gotten from the post alone.\n\nFive substantive comments per day build more credibility than fifty generic ones. The people whose posts you comment on notice quality. They engage back. They become part of your network. That is how commenting drives growth — through relationship, not volume.",
+          "The spray-and-pray strategy - commenting on 50 posts per day with generic responses - is visible and damaging. People notice when the same account drops love this or great insight on every post in their feed. It reads as automated, even if it is manual.\n\nThe alternative: comment on 5-10 posts per day with genuine substance. Pick posts where you have actual expertise to add. Write 2-3 sentences minimum. Reference specific details from the post. Add information the reader would not have gotten from the post alone.\n\nFive substantive comments per day build more credibility than fifty generic ones. The people whose posts you comment on notice quality. They engage back. They become part of your network. That is how commenting drives growth - through relationship, not volume.",
       },
     ],
   },
@@ -1015,7 +1023,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Purple gradient posts, thought leader traps, and over-polish',
     category: 'voice',
     description:
-      'Content anti-patterns to avoid — purple gradient posts, thought leader traps, over-polish, generic advice, template-driven content, and how to recognize and fix each pattern.',
+      'Content anti-patterns to avoid - purple gradient posts, thought leader traps, over-polish, generic advice, template-driven content, and how to recognize and fix each pattern.',
     keywords: [
       'content anti-patterns',
       'LinkedIn cringe',
@@ -1029,13 +1037,14 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'voice-system',
       'pre-publish-checklist',
       'viral-hooks',
+      'ai-slop-detector-expanded',
     ],
     sections: [
       {
         heading: 'The Thought Leader Trap',
         type: 'anti-pattern',
         content:
-          "Performing wisdom instead of sharing lessons. Abstract principles without concrete examples. Three perfect parallel examples that illustrate the point with suspicious symmetry. Branding concepts instead of explaining them — this is what I call the velocity framework.\n\nThe fix: replace every abstract principle with a specific story. Instead of leaders need to communicate clearly, try last tuesday I told my team we were pivoting the campaign targeting and three people had completely different interpretations of what that meant. Specifics are interesting. Abstractions are forgettable.",
+          "Performing wisdom instead of sharing lessons. Abstract principles without concrete examples. Three perfect parallel examples that illustrate the point with suspicious symmetry. Branding concepts instead of explaining them - this is what I call the velocity framework.\n\nThe fix: replace every abstract principle with a specific story. Instead of leaders need to communicate clearly, try last tuesday I told my team we were pivoting the campaign targeting and three people had completely different interpretations of what that meant. Specifics are interesting. Abstractions are forgettable.",
       },
       {
         heading: 'The Generic Advice Trap',
@@ -1047,7 +1056,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'The Over-Polish Trap',
         type: 'anti-pattern',
         content:
-          "Spending 4 hours on a post that should take 30 minutes. Optimizing language instead of adding substance. Making it perfect instead of shipping it. The over-polish trap is insidious because it feels productive — you are improving the content. But past a certain point, you are improving the words while the ideas stay the same.\n\nThe rule of thumb: if you have edited a post more than 3 times without adding new information, you are polishing, not improving. Ship it. The feedback from publishing teaches you more than another round of editing. A good post published today beats a perfect post published never.",
+          "Spending 4 hours on a post that should take 30 minutes. Optimizing language instead of adding substance. Making it perfect instead of shipping it. The over-polish trap is insidious because it feels productive - you are improving the content. But past a certain point, you are improving the words while the ideas stay the same.\n\nThe rule of thumb: if you have edited a post more than 3 times without adding new information, you are polishing, not improving. Ship it. The feedback from publishing teaches you more than another round of editing. A good post published today beats a perfect post published never.",
       },
       {
         heading: 'The Too-Technical Trap',
@@ -1059,13 +1068,13 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Purple Gradient Posts',
         type: 'anti-pattern',
         content:
-          "The purple gradient template post is the visual equivalent of AI slop. Inspirational quote on a gradient background. Leadership wisdom in a carousel with smooth transitions. These perform well in vanity metrics (likes, impressions) but build zero credibility and zero relationship with the reader.\n\nWhy they fail for builders: the audience you want — technical operators, GTM engineers, startup founders — sees through template content instantly. A purple gradient carousel about the 5 principles of effective leadership tells them nothing about your actual expertise. A raw screenshot of your terminal with a one-paragraph explanation of what you just built tells them everything.\n\nThe rule: if a post could have been written by literally anyone, it should not have your name on it. Your content should be impossible to attribute to someone else because it contains your specific tools, your specific workflow, and your specific results.",
+          "The purple gradient template post is the visual equivalent of AI slop. Inspirational quote on a gradient background. Leadership wisdom in a carousel with smooth transitions. These perform well in vanity metrics (likes, impressions) but build zero credibility and zero relationship with the reader.\n\nWhy they fail for builders: the audience you want - technical operators, GTM engineers, startup founders - sees through template content instantly. A purple gradient carousel about the 5 principles of effective leadership tells them nothing about your actual expertise. A raw screenshot of your terminal with a one-paragraph explanation of what you just built tells them everything.\n\nThe rule: if a post could have been written by literally anyone, it should not have your name on it. Your content should be impossible to attribute to someone else because it contains your specific tools, your specific workflow, and your specific results.",
       },
       {
         heading: 'What X Taught Me Templates',
         type: 'anti-pattern',
         content:
-          "What my failed startup taught me about leadership. What running taught me about business. What my dog taught me about patience. This template has been so overused that it triggers an immediate scroll-past from experienced LinkedIn users. The analogy structure (thing from life = lesson for business) is the laziest form of content because it lets you avoid saying anything specific.\n\nIf you actually learned something from a failure, share the failure with specifics. What went wrong, what the numbers looked like, what you changed. The lesson emerges from the details. You do not need to frame it as what X taught me — the teaching is implicit when the story is good enough.",
+          "What my failed startup taught me about leadership. What running taught me about business. What my dog taught me about patience. This template has been so overused that it triggers an immediate scroll-past from experienced LinkedIn users. The analogy structure (thing from life = lesson for business) is the laziest form of content because it lets you avoid saying anything specific.\n\nIf you actually learned something from a failure, share the failure with specifics. What went wrong, what the numbers looked like, what you changed. The lesson emerges from the details. You do not need to frame it as what X taught me - the teaching is implicit when the story is good enough.",
       },
     ],
   },
@@ -1081,7 +1090,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'How one piece of content becomes 5+ across platforms',
     category: 'workflows',
     description:
-      'Recursive content flow — how one piece of content becomes 5+ pieces across LinkedIn, X, Substack, TikTok, and Reddit. The full recursive loop with examples and timing.',
+      'Recursive content flow - how one piece of content becomes 5+ pieces across LinkedIn, X, Substack, TikTok, and Reddit. The full recursive loop with examples and timing.',
     keywords: [
       'content repurposing',
       'recursive content',
@@ -1095,6 +1104,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'linkedin-playbook',
       'x-best-practices',
       'substack-growth',
+      'content-clustering-architecture',
     ],
     sections: [
       {
@@ -1107,13 +1117,13 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'The Expansion Pattern',
         type: 'pattern',
         content:
-          "Start with the long-form version — usually a LinkedIn post or a Substack article. This is where you develop the full idea with all the context, examples, and nuance. This is the source of truth.\n\nFrom LinkedIn to X: compress the core insight into a single tweet or a 4-6 tweet thread. Each tweet stands alone. The thread is the cliff notes version of the LinkedIn post. Schedule 1-2 days after LinkedIn.\n\nFrom LinkedIn to Substack: expand the insight into a 500-800 word deep dive. Add screenshots, code snippets, and extended examples that LinkedIn's format cannot support. Schedule 3-5 days after LinkedIn.\n\nFrom LinkedIn to TikTok: extract the single most visual moment — the screenshot, the demo, the before-and-after. Build a 16-second video around it. This is the most compressed version.\n\nFrom LinkedIn to Reddit: rewrite as a how-I-did-it breakdown with specific numbers and results. Reddit-native framing, no self-promotion. The Reddit version gives the most technical detail because Reddit audiences demand specifics.",
+          "Start with the long-form version - usually a LinkedIn post or a Substack article. This is where you develop the full idea with all the context, examples, and nuance. This is the source of truth.\n\nFrom LinkedIn to X: compress the core insight into a single tweet or a 4-6 tweet thread. Each tweet stands alone. The thread is the cliff notes version of the LinkedIn post. Schedule 1-2 days after LinkedIn.\n\nFrom LinkedIn to Substack: expand the insight into a 500-800 word deep dive. Add screenshots, code snippets, and extended examples that LinkedIn's format cannot support. Schedule 3-5 days after LinkedIn.\n\nFrom LinkedIn to TikTok: extract the single most visual moment - the screenshot, the demo, the before-and-after. Build a 16-second video around it. This is the most compressed version.\n\nFrom LinkedIn to Reddit: rewrite as a how-I-did-it breakdown with specific numbers and results. Reddit-native framing, no self-promotion. The Reddit version gives the most technical detail because Reddit audiences demand specifics.",
       },
       {
         heading: 'Timing and Sequencing',
         type: 'pattern',
         content:
-          "Day 1: LinkedIn post (the source). Day 1-2: X tweet or thread (compressed). Day 3-5: Substack expansion (deep dive). Day 3-7: TikTok video (visual extraction). Day 5-7: Reddit post (technical breakdown).\n\nThe stagger matters. Posting the same idea across all platforms on the same day looks automated and cannibalistic — your followers who are on multiple platforms see the same content everywhere. Staggering by days means each platform gets the content at a natural pace. The LinkedIn audience has moved on by the time the Substack version drops, so it feels fresh rather than repetitive.\n\nException: X can go same-day as LinkedIn because the formats are different enough and the audiences overlap less than you think.",
+          "Day 1: LinkedIn post (the source). Day 1-2: X tweet or thread (compressed). Day 3-5: Substack expansion (deep dive). Day 3-7: TikTok video (visual extraction). Day 5-7: Reddit post (technical breakdown).\n\nThe stagger matters. Posting the same idea across all platforms on the same day looks automated and cannibalistic - your followers who are on multiple platforms see the same content everywhere. Staggering by days means each platform gets the content at a natural pace. The LinkedIn audience has moved on by the time the Substack version drops, so it feels fresh rather than repetitive.\n\nException: X can go same-day as LinkedIn because the formats are different enough and the audiences overlap less than you think.",
       },
       {
         heading: 'The Feedback Loop',
@@ -1131,7 +1141,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Git-based content OS with version control and automation',
     category: 'workflows',
     description:
-      'Building a content repo — git-based content operating system, directory structure, draft and final workflow, version control for content, and skill-based automation from inside a code editor.',
+      'Building a content repo - git-based content operating system, directory structure, draft and final workflow, version control for content, and skill-based automation from inside a code editor.',
     keywords: [
       'content operating system',
       'content repo',
@@ -1164,19 +1174,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'The Draft-to-Final Workflow',
         type: 'pattern',
         content:
-          "Every piece of content follows the same lifecycle: (1) Capture — an idea gets recorded, either manually in a draft file or via the idea-bank skill. (2) Draft — the content is written as a markdown file in content/drafts/ with a date-prefixed filename. (3) Voice normalization — the final-copy or final-substack skill reads the draft, applies voice rules, strips AI slop, and produces platform-ready text. (4) Review — you read the normalized version, make final edits. (5) Publish — Typefully MCP or Substack MCP pushes the content to the platform. (6) Archive — the draft moves to content/final/ with publication metadata.\n\nThis workflow is the same regardless of platform. LinkedIn, X, Substack, TikTok scripts — they all follow capture, draft, normalize, review, publish, archive. The skills handle the platform-specific formatting.",
+          "Every piece of content follows the same lifecycle: (1) Capture - an idea gets recorded, either manually in a draft file or via the idea-bank skill. (2) Draft - the content is written as a markdown file in content/drafts/ with a date-prefixed filename. (3) Voice normalization - the final-copy or final-substack skill reads the draft, applies voice rules, strips AI slop, and produces platform-ready text. (4) Review - you read the normalized version, make final edits. (5) Publish - Typefully MCP or Substack MCP pushes the content to the platform. (6) Archive - the draft moves to content/final/ with publication metadata.\n\nThis workflow is the same regardless of platform. LinkedIn, X, Substack, TikTok scripts - they all follow capture, draft, normalize, review, publish, archive. The skills handle the platform-specific formatting.",
       },
       {
         heading: 'Version Control for Content',
         type: 'pro-tip',
         content:
-          "Git diff on a content file shows you exactly what changed between drafts. This is powerful for voice calibration — you can see which phrases the AI suggested, which ones you edited, and which patterns keep appearing across posts.\n\nCommit messages on content files follow the same convention as code: add for new drafts, update for edits, finalize for publication-ready versions. The git log for a content file tells the story of how that piece evolved from first idea to published post.\n\nBranching is useful for experimental content. Want to try a different hook on the same post? Branch it. Write both versions. Merge the one that feels right. The other version is preserved in git history as a reference for future hook decisions.",
+          "Git diff on a content file shows you exactly what changed between drafts. This is powerful for voice calibration - you can see which phrases the AI suggested, which ones you edited, and which patterns keep appearing across posts.\n\nCommit messages on content files follow the same convention as code: add for new drafts, update for edits, finalize for publication-ready versions. The git log for a content file tells the story of how that piece evolved from first idea to published post.\n\nBranching is useful for experimental content. Want to try a different hook on the same post? Branch it. Write both versions. Merge the one that feels right. The other version is preserved in git history as a reference for future hook decisions.",
       },
       {
         heading: 'Scaling the System',
         type: 'pattern',
         content:
-          "The repo-based content system scales in three dimensions: (1) More platforms — add a new playbook to tier-2, a new skill for publishing, and the same workflow extends to a new platform. (2) More content types — add a new pillar definition to tier-3, a new series to the workflow index, and the system tracks it alongside everything else. (3) More automation — each manual step in the workflow is a candidate for a new skill. If you find yourself doing the same formatting task repeatedly, write a skill for it.\n\nThe system also scales for teams. Multiple contributors can work on content in the same repo with standard git collaboration — branches, pull requests, reviews. The voice system ensures consistency regardless of who is writing because the rules are codified, not tribal knowledge.",
+          "The repo-based content system scales in three dimensions: (1) More platforms - add a new playbook to tier-2, a new skill for publishing, and the same workflow extends to a new platform. (2) More content types - add a new pillar definition to tier-3, a new series to the workflow index, and the system tracks it alongside everything else. (3) More automation - each manual step in the workflow is a candidate for a new skill. If you find yourself doing the same formatting task repeatedly, write a skill for it.\n\nThe system also scales for teams. Multiple contributors can work on content in the same repo with standard git collaboration - branches, pull requests, reviews. The voice system ensures consistency regardless of who is writing because the rules are codified, not tribal knowledge.",
       },
     ],
   },
@@ -1188,7 +1198,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'How skills automate the content creation pipeline',
     category: 'workflows',
     description:
-      'Agent skills for content automation — how skills like final-copy, play-draft, skill-play, and tiktok-script automate the creation pipeline, writing your own content skills, and the skill architecture.',
+      'Agent skills for content automation - how skills like final-copy, play-draft, skill-play, and tiktok-script automate the creation pipeline, writing your own content skills, and the skill architecture.',
     keywords: [
       'AI content automation',
       'Cursor agent skills',
@@ -1202,13 +1212,17 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'content-mcps',
       'voice-system',
       'recursive-content-flow',
+      'elevenlabs-overview',
+      'repos-and-skills-for-builders',
+      'typefully-mcp',
+      'notetaker-tools',
     ],
     sections: [
       {
         heading: 'What Content Skills Do',
         type: 'prose',
         content:
-          "Agent skills are structured instructions that tell the AI agent in your code editor how to perform a specific task. For content, this means: generate a LinkedIn post from a screenshot, convert a draft to platform-ready text, create a TikTok script from a topic, generate terminal-style images, and push to publishing platforms. Each skill encapsulates the full workflow for one content type — inputs, voice loading, generation rules, output format, and publishing steps.\n\nThe power: instead of prompting an AI with write me a LinkedIn post and hoping for the best, you invoke a skill that loads the right voice files, follows the right format structure, applies the right anti-slop rules, and outputs exactly what you need. Consistency through codified process, not repeated prompting.",
+          "Agent skills are structured instructions that tell the AI agent in your code editor how to perform a specific task. For content, this means: generate a LinkedIn post from a screenshot, convert a draft to platform-ready text, create a TikTok script from a topic, generate terminal-style images, and push to publishing platforms. Each skill encapsulates the full workflow for one content type - inputs, voice loading, generation rules, output format, and publishing steps.\n\nThe power: instead of prompting an AI with write me a LinkedIn post and hoping for the best, you invoke a skill that loads the right voice files, follows the right format structure, applies the right anti-slop rules, and outputs exactly what you need. Consistency through codified process, not repeated prompting.",
       },
       {
         heading: 'Key Content Skills',
@@ -1220,19 +1234,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Skill Architecture',
         type: 'code',
         content:
-          "Every content skill follows the same architecture. A SKILL.md file in .cursor/skills/ contains: metadata (name, description, trigger phrases), context loading instructions (which voice files to read first), input requirements (what the skill needs from the user), generation rules (step-by-step instructions for the agent), output format (where to save, what format, file naming conventions), and optional publishing steps (MCP calls, scheduling).\n\nThe skill file is essentially a detailed recipe. The AI agent reads it and executes each step. Because the recipe is explicit, the output is consistent. Because the recipe lives in the repo, it is versioned and improvable. When you notice a skill producing suboptimal output, you edit the SKILL.md — not your prompting strategy — and every future invocation reflects the improvement.",
+          "Every content skill follows the same architecture. A SKILL.md file in .cursor/skills/ contains: metadata (name, description, trigger phrases), context loading instructions (which voice files to read first), input requirements (what the skill needs from the user), generation rules (step-by-step instructions for the agent), output format (where to save, what format, file naming conventions), and optional publishing steps (MCP calls, scheduling).\n\nThe skill file is essentially a detailed recipe. The AI agent reads it and executes each step. Because the recipe is explicit, the output is consistent. Because the recipe lives in the repo, it is versioned and improvable. When you notice a skill producing suboptimal output, you edit the SKILL.md - not your prompting strategy - and every future invocation reflects the improvement.",
       },
       {
         heading: 'Writing Your Own Content Skill',
         type: 'pattern',
         content:
-          "To create a new content skill: (1) Identify a repeating content workflow that follows the same pattern every time. (2) Document the inputs — what does the skill need from you (a topic, a screenshot, a draft file, a partner name). (3) List the voice files to load — which tier-1, tier-2, and tier-3 files are relevant. (4) Write the generation instructions step by step — be explicit about format, length, structure, and style. (5) Define the output — where does the file get saved, what is the filename convention, what format. (6) Add optional automation — MCP calls for publishing, image generation for visuals.\n\nThe test for whether something should be a skill: if you have done it manually more than 3 times and the process was the same each time, it should be a skill. The upfront cost of writing the SKILL.md is 30-60 minutes. The ongoing savings are 15-30 minutes per content piece, forever.",
+          "To create a new content skill: (1) Identify a repeating content workflow that follows the same pattern every time. (2) Document the inputs - what does the skill need from you (a topic, a screenshot, a draft file, a partner name). (3) List the voice files to load - which tier-1, tier-2, and tier-3 files are relevant. (4) Write the generation instructions step by step - be explicit about format, length, structure, and style. (5) Define the output - where does the file get saved, what is the filename convention, what format. (6) Add optional automation - MCP calls for publishing, image generation for visuals.\n\nThe test for whether something should be a skill: if you have done it manually more than 3 times and the process was the same each time, it should be a skill. The upfront cost of writing the SKILL.md is 30-60 minutes. The ongoing savings are 15-30 minutes per content piece, forever.",
       },
       {
         heading: 'The Compound Effect',
         type: 'pro-tip',
         content:
-          "Each new skill reduces the time between idea and published content. The first skill saves 15 minutes per post. The tenth skill means your entire pipeline — from idea capture to multi-platform publishing — runs in minutes instead of hours. The compound effect is not just time savings. It is consistency. Every post goes through the same voice normalization, the same anti-slop scan, the same format checks. The quality floor rises because the process catches errors that manual workflows miss.\n\nAfter 20+ content skills, the content operating system effectively runs itself. You provide the idea and the approval. The system handles everything in between.",
+          "Each new skill reduces the time between idea and published content. The first skill saves 15 minutes per post. The tenth skill means your entire pipeline - from idea capture to multi-platform publishing - runs in minutes instead of hours. The compound effect is not just time savings. It is consistency. Every post goes through the same voice normalization, the same anti-slop scan, the same format checks. The quality floor rises because the process catches errors that manual workflows miss.\n\nAfter 20+ content skills, the content operating system effectively runs itself. You provide the idea and the approval. The system handles everything in between.",
       },
     ],
   },
@@ -1244,7 +1258,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       '5-pillar system for organizing and tracking content',
     category: 'workflows',
     description:
-      'Content pillars framework — the 5-pillar system (Plays, Building/Sharing, Memes, Release Reactions, Skill System Shares), how to develop and track pillars, and balancing pillar distribution.',
+      'Content pillars framework - the 5-pillar system (Plays, Building/Sharing, Memes, Release Reactions, Skill System Shares), how to develop and track pillars, and balancing pillar distribution.',
     keywords: [
       'content pillars',
       'content strategy framework',
@@ -1265,19 +1279,19 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'What Content Pillars Are',
         type: 'prose',
         content:
-          "Content pillars are the 3-5 recurring themes that all your content maps to. They are not rigid categories — they are gravitational centers. Every post should clearly belong to one pillar or intentionally bridge two. Without pillars, content becomes random. With pillars, your audience knows what to expect and your creation process has structure.\n\nPillars solve two problems: for the creator, they eliminate the what should I post about question because every idea maps to a pillar. For the audience, they create predictability — people follow you because they want more of a specific type of content, and pillars ensure they get it.",
+          "Content pillars are the 3-5 recurring themes that all your content maps to. They are not rigid categories - they are gravitational centers. Every post should clearly belong to one pillar or intentionally bridge two. Without pillars, content becomes random. With pillars, your audience knows what to expect and your creation process has structure.\n\nPillars solve two problems: for the creator, they eliminate the what should I post about question because every idea maps to a pillar. For the audience, they create predictability - people follow you because they want more of a specific type of content, and pillars ensure they get it.",
       },
       {
         heading: 'The Five Pillars',
         type: 'pattern',
         content:
-          "Pillar 1 — Plays Series: step-by-step workflow walkthroughs showing how you use specific tools to solve specific problems. This is the highest-performing pillar because it delivers immediate, actionable value. Format: pain point hook, numbered steps with emoji markers, resource delivery in comments.\n\nPillar 2 — Building and Sharing: personal narrative about what you are building, what broke, what you learned. More storytelling, less structure. This pillar builds relationship and trust through vulnerability and authenticity.\n\nPillar 3 — GTM Memes: humor-based content that makes technical concepts relatable. Short text plus meme or GIF. Pop culture references with real lessons underneath. This pillar drives the widest reach because humor is shareable.\n\nPillar 4 — Release Reactions: first-hand takes on new tool releases, platform updates, and industry changes. Tested against real work, not theoretical analysis. This pillar positions you as someone who builds with tools, not just writes about them.\n\nPillar 5 — Skill and System Shares: sharing your actual frameworks, skill files, and automation systems. What you built, how it works, where to get it. This pillar attracts the most technical audience and drives the deepest engagement.",
+          "Pillar 1 - Plays Series: step-by-step workflow walkthroughs showing how you use specific tools to solve specific problems. This is the highest-performing pillar because it delivers immediate, actionable value. Format: pain point hook, numbered steps with emoji markers, resource delivery in comments.\n\nPillar 2 - Building and Sharing: personal narrative about what you are building, what broke, what you learned. More storytelling, less structure. This pillar builds relationship and trust through vulnerability and authenticity.\n\nPillar 3 - GTM Memes: humor-based content that makes technical concepts relatable. Short text plus meme or GIF. Pop culture references with real lessons underneath. This pillar drives the widest reach because humor is shareable.\n\nPillar 4 - Release Reactions: first-hand takes on new tool releases, platform updates, and industry changes. Tested against real work, not theoretical analysis. This pillar positions you as someone who builds with tools, not just writes about them.\n\nPillar 5 - Skill and System Shares: sharing your actual frameworks, skill files, and automation systems. What you built, how it works, where to get it. This pillar attracts the most technical audience and drives the deepest engagement.",
       },
       {
         heading: 'Pillar Distribution',
         type: 'pattern',
         content:
-          "Not every pillar should get equal posting frequency. The distribution follows performance and audience expectations: Plays Series at 30-40% of posts (highest ROI, most engagement). Building and Sharing at 20-25% (relationship building). GTM Memes at 15-20% (reach expansion). Release Reactions at 10-15% (relevance, only when new releases happen). Skill System Shares at 10-15% (deep engagement, niche audience).\n\nTrack actual distribution in your daily tracker or content pipeline. If you notice you have posted 5 plays in a row, the next post should be from a different pillar. Variety prevents audience fatigue and ensures you are building different aspects of your brand — not just the tactical side.",
+          "Not every pillar should get equal posting frequency. The distribution follows performance and audience expectations: Plays Series at 30-40% of posts (highest ROI, most engagement). Building and Sharing at 20-25% (relationship building). GTM Memes at 15-20% (reach expansion). Release Reactions at 10-15% (relevance, only when new releases happen). Skill System Shares at 10-15% (deep engagement, niche audience).\n\nTrack actual distribution in your daily tracker or content pipeline. If you notice you have posted 5 plays in a row, the next post should be from a different pillar. Variety prevents audience fatigue and ensures you are building different aspects of your brand - not just the tactical side.",
       },
       {
         heading: 'Developing New Pillars',
@@ -1301,7 +1315,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Structure check, substance check, safety check, voice check',
     category: 'workflows',
     description:
-      'Pre-publish quality checklist — structure and style check, substance verification, safety review, voice calibration, and anti-slop scan. The final gate before any content goes live.',
+      'Pre-publish quality checklist - structure and style check, substance verification, safety review, voice calibration, and anti-slop scan. The final gate before any content goes live.',
     keywords: [
       'content quality checklist',
       'pre-publish checklist',
@@ -1321,43 +1335,43 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Why a Checklist Matters',
         type: 'prose',
         content:
-          "The difference between amateur content and professional content is not talent — it is process. A pre-publish checklist catches errors that your eyes skip after writing and editing the same piece for 30 minutes. It catches voice drift that creeps in during revision. It catches substance gaps that feel filled when you are deep in the topic but read as empty to someone seeing it for the first time.\n\nThe checklist takes 3 minutes. Those 3 minutes prevent publishing something that sounds like everyone else's AI output, contains an accidental company reference, or reads as thought leadership fluff instead of builder substance.",
+          "The difference between amateur content and professional content is not talent - it is process. A pre-publish checklist catches errors that your eyes skip after writing and editing the same piece for 30 minutes. It catches voice drift that creeps in during revision. It catches substance gaps that feel filled when you are deep in the topic but read as empty to someone seeing it for the first time.\n\nThe checklist takes 3 minutes. Those 3 minutes prevent publishing something that sounds like everyone else's AI output, contains an accidental company reference, or reads as thought leadership fluff instead of builder substance.",
       },
       {
         heading: 'Structure and Style Check',
         type: 'formula',
         content:
-          "Run these checks on every post before publishing: (1) Lowercase first line — the first word should be lowercase unless it is a proper noun or I. This is a voice signature. (2) 1-2 sentence paragraphs maximum — no walls of text. Mobile readers need whitespace. (3) No em-dashes — delete all of them. Use periods, commas, or ellipses. (4) No authority signaling phrases — search for let me be clear, the uncomfortable truth, here is what nobody tells you. Delete them. (5) Natural rhythm — read the post out loud. If it sounds like a keynote speech, it is over-polished. If it sounds like you explaining something to a friend, it is right.",
+          "Run these checks on every post before publishing: (1) Lowercase first line - the first word should be lowercase unless it is a proper noun or I. This is a voice signature. (2) 1-2 sentence paragraphs maximum - no walls of text. Mobile readers need whitespace. (3) No em-dashes - delete all of them. Use periods, commas, or ellipses. (4) No authority signaling phrases - search for let me be clear, the uncomfortable truth, here is what nobody tells you. Delete them. (5) Natural rhythm - read the post out loud. If it sounds like a keynote speech, it is over-polished. If it sounds like you explaining something to a friend, it is right.",
       },
       {
         heading: 'Substance Check',
         type: 'formula',
         content:
-          "Every post must pass the substance gate: (1) At least one specific example with details — not use data to make better decisions but check the source_campaign property in HubSpot to see which Clay table drove the conversion. (2) Technical specifics — column names, tool names, numbers, metrics. Vague posts are forgettable. Specific posts are useful. (3) Reasoning or consequences shown — not just what to do, but why it matters and what happens if you do not. (4) Practical value or lesson — someone who reads this post should be able to do something differently afterward. If the post does not change behavior or thinking, it is not ready.",
+          "Every post must pass the substance gate: (1) At least one specific example with details - not use data to make better decisions but check the source_campaign property in HubSpot to see which Clay table drove the conversion. (2) Technical specifics - column names, tool names, numbers, metrics. Vague posts are forgettable. Specific posts are useful. (3) Reasoning or consequences shown - not just what to do, but why it matters and what happens if you do not. (4) Practical value or lesson - someone who reads this post should be able to do something differently afterward. If the post does not change behavior or thinking, it is not ready.",
       },
       {
         heading: 'Safety Check',
         type: 'formula',
         content:
-          "Before publishing, verify: (1) No named companies or people criticized — patterns over persons, always. You can say I have seen people with 20,000-row Clay tables but never say Company X has terrible Clay hygiene. (2) Pattern vs person test — would the person or company you are referencing feel attacked if they read this? If yes, abstract the pattern further. (3) No ecosystem players targeted — do not criticize competitors, platforms, or tools by name in a negative context. You can state factual limitations but not opinions framed as facts.\n\nThis is not about being soft. It is about building a reputation as someone who shares useful patterns rather than someone who tears others down. The builder community is small. Everyone talks. One careless post burns relationships that took months to build.",
+          "Before publishing, verify: (1) No named companies or people criticized - patterns over persons, always. You can say I have seen people with 20,000-row Clay tables but never say Company X has terrible Clay hygiene. (2) Pattern vs person test - would the person or company you are referencing feel attacked if they read this? If yes, abstract the pattern further. (3) No ecosystem players targeted - do not criticize competitors, platforms, or tools by name in a negative context. You can state factual limitations but not opinions framed as facts.\n\nThis is not about being soft. It is about building a reputation as someone who shares useful patterns rather than someone who tears others down. The builder community is small. Everyone talks. One careless post burns relationships that took months to build.",
       },
       {
         heading: 'Voice Check',
         type: 'formula',
         content:
-          "The final gate: (1) Sounds like you, not a content machine — if you would not say it in a conversation, do not post it. (2) Builder tone, not thought leader — you are sharing what you built and learned, not dispensing wisdom from above. (3) Casual but competent — the tone should feel like a knowledgeable friend, not a textbook or a motivational speaker. (4) No generic B2B speak — no leverage, optimize, synergize, drive results, actionable insights. These words mean nothing. Replace them with specifics about what actually happened.\n\nIf the post passes all four checks — structure, substance, safety, voice — it is ready. If it fails any one, fix it before publishing. No exceptions. The checklist is the quality floor, not the quality ceiling.",
+          "The final gate: (1) Sounds like you, not a content machine - if you would not say it in a conversation, do not post it. (2) Builder tone, not thought leader - you are sharing what you built and learned, not dispensing wisdom from above. (3) Casual but competent - the tone should feel like a knowledgeable friend, not a textbook or a motivational speaker. (4) No generic B2B speak - no leverage, optimize, synergize, drive results, actionable insights. These words mean nothing. Replace them with specifics about what actually happened.\n\nIf the post passes all four checks - structure, substance, safety, voice - it is ready. If it fails any one, fix it before publishing. No exceptions. The checklist is the quality floor, not the quality ceiling.",
       },
       {
         heading: 'Anti-Slop Quick Scan',
         type: 'formula',
         content:
-          "The fastest anti-slop check: (1) Search for em-dashes (the long dash character) — delete all. (2) Search for here is the thing and here is where — delete. (3) Check opening and closing — if they say the same thing, rewrite the closing. (4) Count parallel sentence structures — three in a row with the same rhythm means two need cutting. (5) Check for colon-listed statements — rewrite as natural sentences. (6) Look for three-example patterns — AI loves groups of three. Two specific examples hit harder than three generic ones.\n\nThis scan takes 2 minutes and catches the most visible AI writing tells. Combined with the full pre-publish checklist, it ensures every published post passes the does this sound like a real person wrote it test.",
+          "The fastest anti-slop check: (1) Search for em-dashes (the long dash character) - delete all. (2) Search for here is the thing and here is where - delete. (3) Check opening and closing - if they say the same thing, rewrite the closing. (4) Count parallel sentence structures - three in a row with the same rhythm means two need cutting. (5) Check for colon-listed statements - rewrite as natural sentences. (6) Look for three-example patterns - AI loves groups of three. Two specific examples hit harder than three generic ones.\n\nThis scan takes 2 minutes and catches the most visible AI writing tells. Combined with the full pre-publish checklist, it ensures every published post passes the does this sound like a real person wrote it test.",
       },
     ],
   },
 
   /* ================================================================== */
-  /*  WORKFLOWS — CLUSTERING + VIDEO                                     */
+  /*  WORKFLOWS - CLUSTERING + VIDEO                                     */
   /* ================================================================== */
 
   {
@@ -1367,7 +1381,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'Hub-and-spoke topology for multi-site content that compounds authority',
     category: 'workflows',
     description:
-      'Content clustering architecture — hub-and-spoke topology, taxonomy-driven routing, canonical site designation, bidirectional cross-linking, and breadcrumb schema that tells AI engines exactly how your content connects across multiple websites.',
+      'Content clustering architecture - hub-and-spoke topology, taxonomy-driven routing, canonical site designation, bidirectional cross-linking, and breadcrumb schema that tells AI engines exactly how your content connects across multiple websites.',
     keywords: [
       'content clustering',
       'hub and spoke content',
@@ -1387,25 +1401,25 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'What Content Clustering Is',
         type: 'prose',
         content:
-          'Content clustering is the deliberate architecture of how content connects within and across websites. Individual pages are nodes. Internal links and cross-references are edges. The topology determines how authority flows through the graph. A flat blog with no internal linking means every page starts from zero — no authority passes between pieces. A cluster topology with bidirectional links and explicit hierarchy creates a graph where every new page strengthens every existing page. AI engines evaluate topical authority by measuring this graph. Sites with comprehensive, interconnected coverage of a topic get preferential citation over sites with isolated content.',
+          'Content clustering is the deliberate architecture of how content connects within and across websites. Individual pages are nodes. Internal links and cross-references are edges. The topology determines how authority flows through the graph. A flat blog with no internal linking means every page starts from zero - no authority passes between pieces. A cluster topology with bidirectional links and explicit hierarchy creates a graph where every new page strengthens every existing page. AI engines evaluate topical authority by measuring this graph. Sites with comprehensive, interconnected coverage of a topic get preferential citation over sites with isolated content.',
       },
       {
         heading: 'Hub-and-Spoke Model',
         type: 'pattern',
         content:
-          'One parent concept serves as the hub. Specialized verticals branch as spokes. The hub covers the meta-narrative — the process of building. The spokes cover the outputs — what the process produces. Each spoke builds deep authority in one vertical. The hub connects the verticals into a unified graph. Cross-site links between hub and spokes signal to search engines that these sites are one entity covering different facets of the same expertise. The key is that each site content proves the other sites thesis. The building process IS hub content. The workflows produced ARE spoke content. The methodology of creating content IS the other spoke. The recursion is structural, not accidental.',
+          'One parent concept serves as the hub. Specialized verticals branch as spokes. The hub covers the meta-narrative - the process of building. The spokes cover the outputs - what the process produces. Each spoke builds deep authority in one vertical. The hub connects the verticals into a unified graph. Cross-site links between hub and spokes signal to search engines that these sites are one entity covering different facets of the same expertise. The key is that each site content proves the other sites thesis. The building process IS hub content. The workflows produced ARE spoke content. The methodology of creating content IS the other spoke. The recursion is structural, not accidental.',
       },
       {
         heading: 'Taxonomy-Driven Routing',
         type: 'code',
         content:
-          'Define the topology in a version-controlled taxonomy file. Map every content pillar to a domain. Map routing rules explicitly: personal stories go to the hub, GTM systems go to spoke one, content strategy goes to spoke two. Cross-domain posts get a primary domain plus cross-links to siblings. The taxonomy file becomes the single source of truth for content placement. Any team member, any AI agent, any automation skill can read the file and know where content belongs. The lifecycle — draft, review, final, published, archived — applies uniformly across all domains. The taxonomy routes by pillar, not by platform or format.',
+          'Define the topology in a version-controlled taxonomy file. Map every content pillar to a domain. Map routing rules explicitly: personal stories go to the hub, GTM systems go to spoke one, content strategy goes to spoke two. Cross-domain posts get a primary domain plus cross-links to siblings. The taxonomy file becomes the single source of truth for content placement. Any team member, any AI agent, any automation skill can read the file and know where content belongs. The lifecycle - draft, review, final, published, archived - applies uniformly across all domains. The taxonomy routes by pillar, not by platform or format.',
       },
       {
         heading: 'Canonical Site Designation',
         type: 'pattern',
         content:
-          'Every shared content entry gets a canonical site field designating which domain renders it natively. When a how-to guide has its canonical set to a spoke site, it renders on that spoke and generates a redirect from the hub. The hub does not duplicate spoke content — it routes to it. This prevents duplicate content penalties while maintaining the cross-site graph. In a monorepo setup, all sites import the same data package. The canonical designation is a field on the data object, not a DNS or CMS configuration. Changing which site owns a piece of content means changing one field value.',
+          'Every shared content entry gets a canonical site field designating which domain renders it natively. When a how-to guide has its canonical set to a spoke site, it renders on that spoke and generates a redirect from the hub. The hub does not duplicate spoke content - it routes to it. This prevents duplicate content penalties while maintaining the cross-site graph. In a monorepo setup, all sites import the same data package. The canonical designation is a field on the data object, not a DNS or CMS configuration. Changing which site owns a piece of content means changing one field value.',
       },
       {
         heading: 'Bidirectional Cross-Linking Protocol',
@@ -1426,10 +1440,10 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
     id: 'programmatic-video-content',
     title: 'Programmatic Video as Content',
     subtitle:
-      'React components that render to MP4 — video as a first-class content type',
+      'React components that render to MP4 - video as a first-class content type',
     category: 'tools',
     description:
-      'Programmatic video rendering using Remotion and React — turning video from a separate creative workflow into a first-class content type that shares design tokens, data, and deploy pipelines with your websites.',
+      'Programmatic video rendering using Remotion and React - turning video from a separate creative workflow into a first-class content type that shares design tokens, data, and deploy pipelines with your websites.',
     keywords: [
       'programmatic video',
       'remotion video content',
@@ -1443,6 +1457,8 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       'repo-content-system',
       'content-skills',
       'content-mcps',
+      'gif-creation-for-web',
+      'video-editing-tools',
     ],
     sections: [
       {
@@ -1455,7 +1471,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'The Remotion Model',
         type: 'code',
         content:
-          'Remotion evaluates React components frame by frame at your target FPS and encodes the result to video. You write JSX. It renders pixels. No GPU required. No timeline editor. The video app lives inside the monorepo alongside the website apps. It imports the shared data package for design tokens, colors, and brand configuration. Compositions in a root file define what gets rendered — each composition specifies dimensions, FPS, duration, and the component tree. A render script generates all variants in one command.',
+          'Remotion evaluates React components frame by frame at your target FPS and encodes the result to video. You write JSX. It renders pixels. No GPU required. No timeline editor. The video app lives inside the monorepo alongside the website apps. It imports the shared data package for design tokens, colors, and brand configuration. Compositions in a root file define what gets rendered - each composition specifies dimensions, FPS, duration, and the component tree. A render script generates all variants in one command.',
       },
       {
         heading: 'Multi-Format Output',
@@ -1467,7 +1483,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'Deterministic Animation',
         type: 'pattern',
         content:
-          'Programmatic video requires deterministic rendering. Random values change between frames and break the output. The solution is seeded noise functions. Perlin noise driven by frame number produces organic animation — particle drift, character rain, opacity shimmer — that is fully reproducible. Same seed, same output, every render. This is critical for iteration: you can change one parameter and re-render knowing exactly which frames changed and why. It also enables caching — unchanged compositions skip rendering entirely.',
+          'Programmatic video requires deterministic rendering. Random values change between frames and break the output. The solution is seeded noise functions. Perlin noise driven by frame number produces organic animation - particle drift, character rain, opacity shimmer - that is fully reproducible. Same seed, same output, every render. This is critical for iteration: you can change one parameter and re-render knowing exactly which frames changed and why. It also enables caching - unchanged compositions skip rendering entirely.',
       },
       {
         heading: 'Video in the Content Index',
@@ -1479,7 +1495,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         heading: 'The Monorepo Advantage',
         type: 'pro-tip',
         content:
-          'The real win is not Remotion itself. It is video living in the same codebase as everything else. Design tokens are shared, not duplicated. Brand updates propagate automatically. The deploy pipeline handles video alongside web content. The content index tracks video files alongside blog posts. The knowledge graph can reference video compositions. The same CI that builds the websites can render the videos. Video is no longer a creative island — it is part of the system. That integration is the competitive advantage. Any tool can render video. Only a monorepo can integrate video into every other content type seamlessly.',
+          'The real win is not Remotion itself. It is video living in the same codebase as everything else. Design tokens are shared, not duplicated. Brand updates propagate automatically. The deploy pipeline handles video alongside web content. The content index tracks video files alongside blog posts. The knowledge graph can reference video compositions. The same CI that builds the websites can render the videos. Video is no longer a creative island - it is part of the system. That integration is the competitive advantage. Any tool can render video. Only a monorepo can integrate video into every other content type seamlessly.',
       },
     ],
   },
@@ -1610,7 +1626,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       },
       {
         heading: 'copyright, licensing, and the uncanny valley',
-        content: 'Copyright: on paid Midjourney plans, you own commercial rights to your outputs. The legal landscape around AI-generated images is still evolving, but using MJ outputs in commercial projects is generally accepted on paid tiers. Don\'t replicate copyrighted characters or use celebrity likenesses.\n\nLicensing gotcha: if you cancel your subscription and let it lapse, check the terms. Some platforms revoke commercial rights on content generated during a free period.\n\nThe uncanny valley problem: photorealistic AI images often look slightly wrong in a way that\'s hard to articulate but immediately felt. Over-smoothed skin, lighting that doesn\'t quite match physics, eyes that are almost right. This is why stylized art (anime, chibi, illustration, pixel art) often performs better in brand contexts than photorealism ... the stylized aesthetic signals "intentional art direction" rather than "almost-real."',
+        content: 'Copyright: on paid Midjourney plans, you own commercial rights to your outputs. The law around AI-generated images is still evolving, but using MJ outputs in commercial projects is generally accepted on paid tiers. Don\'t replicate copyrighted characters or use celebrity likenesses.\n\nLicensing gotcha: if you cancel your subscription and let it lapse, check the terms. Some platforms revoke commercial rights on content generated during a free period.\n\nThe uncanny valley problem: photorealistic AI images often look slightly wrong in a way that\'s hard to articulate but immediately felt. Over-smoothed skin, lighting that doesn\'t quite match physics, eyes that are almost right. This is why stylized art (anime, chibi, illustration, pixel art) often performs better in brand contexts than photorealism ... the stylized aesthetic signals "intentional art direction" rather than "almost-real."',
         type: 'prose',
       },
       {
@@ -1755,7 +1771,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         type: "prose"
       }
     ],
-    related: ["gif-rendering-technical", "video-editing-tools", "programmatic-video-content", "design-tools"]
+    related: ["gif-creation-for-web", "video-editing-tools", "programmatic-video-content", "design-tools"]
   },
 
   {
@@ -1812,7 +1828,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
     sections: [
       {
         heading: 'what makes Grok different',
-        content: 'Most AI models are trained on data with a cutoff date. Grok isn\'t. It has live access to X/Twitter, which means when you ask it what\'s trending in B2B SaaS today, it\'s actually looking at today\'s posts, not data from six months ago.\n\nThat real-time awareness is the entire value proposition. You can ask: "what angles on AI automation are getting engagement right now?" and get an answer grounded in actual current signal, not pattern-matched from stale training data.\n\nFor content creators, this closes a gap that every other AI tool leaves open.',
+        content: 'Most AI models are trained on data with a cutoff date. Grok isn\'t. It has live access to X/Twitter, which means when you ask it what\'s trending in B2B SaaS today, it\'s actually looking at today\'s posts, not data from six months ago.\n\nThat real-time awareness is the whole point. You can ask: "what angles on AI automation are getting engagement right now?" and get an answer grounded in actual current signal, not pattern-matched from stale training data.\n\nFor content creators, this closes a gap that every other AI tool leaves open.',
         type: 'prose'
       },
       {
@@ -1898,7 +1914,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         type: 'prose'
       }
     ],
-    related: ['grok-as-scout-agent', 'super-whisper-for-content', 'ai-slop-guide', 'content-os-full-stack', 'commenting-strategy'],
+    related: ['grok-as-scout-agent', 'super-whisper-for-content', 'ai-slop-guide', 'content-os-full-stack', 'commenting-strategy', 'favikon-overview'],
     difficulty: 'intermediate'
   },
   {
@@ -2092,14 +2108,14 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         type: "prose"
       }
     ],
-    related: ["recursive-content-flow", "repo-content-system", "content-skills", "platform-specific-ai-strategy"]
+    related: ["recursive-content-flow", "repo-content-system", "content-skills", "platform-specific-ai-strategy", "elevenlabs-overview", "favikon-overview", "repos-and-skills-for-builders", "video-editing-tools", "notetaker-tools"]
   },
 
   /* ── EXPANDED SLOP DETECTION ─────────────────── */
   {
     id: "ai-slop-detector-expanded",
     title: "the expanded AI slop index (every pattern, every tell)",
-    subtitle: "Comprehensive reference for detecting and removing AI slop before it ships.",
+    subtitle: "Full reference for detecting and removing AI slop before it ships.",
     category: "voice",
     description: "The full indexed reference for AI slop detection: word swaps, tell phrases, 2026 pattern updates, NPC vocabulary, and a scoring rubric for when to rewrite vs. patch.",
     keywords: ["AI slop", "slop detection", "content voice", "AI writing tells", "NPC content", "editing checklist", "authentic content"],
@@ -2166,7 +2182,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       },
       {
         heading: "monorepo architecture",
-        content: "A monorepo is one repository that contains multiple projects. The shawnos.ai setup runs three separate websites from one codebase. Shared components (navigation, buttons, utility functions) live once and all three sites use them. Update the component once and all sites get the update on next deploy.\n\nTurborepo and Nx are the two main monorepo management tools. Turborepo is simpler for most builders and has excellent Vercel integration (they're the same company). Nx has more advanced features that become relevant at team scale.\n\nThe practical benefit: if you're building more than one site or app, start with a monorepo structure even if it feels like overkill. Migrating into a monorepo later is painful. Starting in one and having everything connected from day one is a significant time saver.",
+        content: "A monorepo is one repository that contains multiple projects. The shawnos.ai setup runs three separate websites from one codebase. Shared components (navigation, buttons, utility functions) live once and all three sites use them. Update the component once and all sites get the update on next deploy.\n\nTurborepo and Nx are the two main monorepo management tools. Turborepo is simpler for most builders and has excellent Vercel integration (they're the same company). Nx has more advanced features that become relevant at team scale.\n\nThe practical benefit: if you're building more than one site or app, start with a monorepo structure even if it feels like overkill. Migrating into a monorepo later is painful. Starting in one and having everything connected from day one is a real time saver.",
         type: "prose"
       },
       {
@@ -2190,7 +2206,7 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
         type: "prose"
       }
     ],
-    related: ["content-os-full-stack", "repo-content-system", "content-skills", "content-mcps"]
+    related: ["content-os-full-stack", "repo-content-system", "content-skills", "content-mcps", "notetaker-tools"]
   },
 
   {
@@ -2234,5 +2250,62 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       }
     ],
     related: ["content-os-full-stack", "repos-and-skills-for-builders", "content-mcps", "content-skills"]
-  }
+  },
+
+  /* ================================================================== */
+  /*  PLATFORM PLAYBOOKS (new entry)                                      */
+  /* ================================================================== */
+
+  {
+    id: 'reddit-for-gtm-engineers',
+    title: 'Reddit for Go-To-Market Engineers',
+    subtitle: 'Which subreddits matter, how to comment without AI slop, and building karma strategically',
+    category: 'platforms',
+    description:
+      'How GTM engineers use Reddit for signal detection, authority building, and community engagement. Key subreddits, voice-matched commenting, SuperWhisper for speed, and why Reddit is the raw signal layer for GTM.',
+    keywords: [
+      'reddit gtm',
+      'reddit for sales',
+      'reddit b2b marketing',
+      'reddit cold email',
+      'reddit saas marketing',
+      'reddit signal detection',
+      'reddit karma building',
+      'reddit ai slop',
+    ],
+    difficulty: 'intermediate',
+    sections: [
+      {
+        heading: 'Why Reddit Matters for GTM',
+        type: 'prose',
+        content:
+          "Reddit is the raw signal layer. People ask real questions with real problems. No corporate filter. No LinkedIn polish. A founder in r/SaaS posting \"we're at $500k ARR and our outbound is broken\" is a signal you cannot get from any intent data provider.\n\nThe subreddits that matter for GTM engineers: r/coldemail (outbound tactics, deliverability, tool reviews), r/sales (process, objection handling, career), r/SaaS (founders with real problems), r/growthacking (growth experiments, acquisition channels), r/Entrepreneur (early-stage builders). These communities generate thousands of posts per week. Most are noise. The valuable ones are people describing problems your product or service solves.\n\nReddit is also the fastest-growing source of AI training data citations. Google is showing Reddit results in featured snippets. AI engines cite Reddit threads. Your comments build entity authority in places AI engines actively index.",
+      },
+      {
+        heading: 'How to Comment Without AI Slop',
+        type: 'pattern',
+        content:
+          "Reddit detects AI slop instantly. The community has zero tolerance for generic \"great question! here are 5 tips\" responses. Getting caught posting AI-generated comments kills your account credibility permanently.\n\nThe method: use AI for research, not for writing. Read the post. Understand the specific problem. Use Claude Code to pull relevant data or check your experience notes. Then write the comment yourself.\n\nIf you use AI to draft: load your voice system first. Every comment should sound like you talking to a colleague, not a blog post. Short sentences. Specific examples from your actual work. No hedging language. No \"it's worth noting\" or \"in my experience.\" Just the answer.\n\nThe litmus test: would you say this exact thing out loud to someone at a bar? If not, rewrite it. Reddit rewards authenticity and punishes performance.",
+      },
+      {
+        heading: 'SuperWhisper and Voice-First Commenting',
+        type: 'pro-tip',
+        content:
+          "Speed matters on Reddit. The first good comment on a trending post gets the most visibility. SuperWhisper (or any voice-to-text tool) lets you dictate comments at conversation speed instead of typing.\n\nThe workflow: see a relevant post, hit the voice button, talk through your answer like you are explaining it to a friend, clean up the transcription for 30 seconds, post. Total time: 90 seconds. Compared to 5-10 minutes of typing and editing.\n\nVoice-first commenting also produces better content. When you dictate, you naturally use conversational language. You skip the formal tone that makes comments feel corporate. You include the tangents and caveats that make answers feel authentic. The transcription needs light editing (punctuation, remove filler words) but the voice is already right.",
+      },
+      {
+        heading: 'Building Karma Strategically',
+        type: 'pattern',
+        content:
+          "Karma is not vanity. It is permission. Low-karma accounts get filtered by AutoModerator in most subreddits. Some subreddits require 50+ comment karma before you can post. Building karma is the cost of entry.\n\nThe strategy: start with genuinely helpful comments in communities where you have real expertise. Answer technical questions in your domain. Share specific results with numbers. Upvotes come from utility, not from self-promotion.\n\nNever link to your product in the first 20 comments. Build credibility first. Once you have karma and post history, occasional relevant links are accepted. A comment that says \"I built a tool that does this\" with no post history gets downvoted. The same comment from an account with 50 helpful answers gets upvoted.\n\nThe signal detection angle: monitor subreddits for posts that describe problems you solve. Comment with genuine help. If your product is relevant, mention it after providing value. Reddit rewards the help-first approach and punishes the pitch-first approach.",
+      },
+      {
+        heading: 'Frequently Asked Questions',
+        type: 'prose',
+        content:
+          "Q: How many subreddits should I actively monitor?\nA: Start with 3-5 that match your ICP. More than that and you spread too thin. Better to be deeply engaged in 3 communities than superficially present in 10.\n\nQ: How often should I comment?\nA: 3-5 comments per week in your target subreddits. Consistency matters more than volume. An account that comments daily for a month then disappears looks like a campaign. An account that comments weekly for a year looks like a real person.\n\nQ: Can I automate Reddit monitoring?\nA: Yes. RSS feeds for subreddits, keyword alerts, and cron jobs that scan for relevant posts. Automate the monitoring. Never automate the commenting. The detection is automated. The engagement is human.\n\nQ: Is Reddit worth it for B2B?\nA: If your ICP uses Reddit, yes. SaaS founders, developers, growth marketers, and sales professionals are active on Reddit. Enterprise procurement officers are not. Know your audience.",
+      },
+    ],
+    related: ['how-to-grow-on-reddit', 'linkedin-vs-twitter-vs-reddit-b2b', 'content-os-full-stack'],
+  },
 ]
