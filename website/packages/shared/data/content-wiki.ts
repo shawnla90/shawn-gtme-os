@@ -1483,4 +1483,756 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       },
     ],
   },
+
+  /* ── AI IMAGE GENERATION ──────────────────────── */
+  {
+    id: 'midjourney-fundamentals',
+    title: 'midjourney for builders (not artists)',
+    subtitle: 'generate brand visuals and character art that don\'t look like stock photos',
+    category: 'tools',
+    difficulty: 'beginner',
+    description: 'A practical guide to Midjourney for product builders. Covers subscription tiers, prompt parameters, aspect ratios, and when to use MJ vs. DALL-E vs. Flux.',
+    keywords: ['midjourney', 'ai image generation', 'prompt engineering', 'brand visuals', 'character art', 'discord', 'generative ai'],
+    sections: [
+      {
+        heading: 'what midjourney actually is',
+        content: 'Midjourney is a Discord-based AI image generator. You type a prompt, it returns four image options. That\'s the core loop.\n\nOriginally it only ran inside Discord via the /imagine command. Now there\'s also a web UI at midjourney.com, but Discord is still where most power users live because you can watch other people\'s generations and reverse-engineer their prompts.\n\nIt\'s not a photo editor. It\'s not a design tool. It generates raw visual assets from text descriptions. You then take those assets into Figma, Canva, or Photoshop to do the actual compositing.',
+        type: 'prose',
+      },
+      {
+        heading: 'subscription tiers and which one to get',
+        content: 'Basic ($10/mo): 200 fast GPU minutes per month. Runs out fast if you\'re iterating seriously. Fine for one-off experiments.\n\nStandard ($30/mo): unlimited relaxed mode generations + 15 fast GPU hours. This is the sweet spot. Relaxed mode takes 0-4 minutes per generation but you\'re never throttled.\n\nPro ($60/mo): stealth mode (private generations), 30 fast GPU hours, 12 concurrent jobs. Worth it if you\'re doing client work where you don\'t want your prompts visible in public Discord channels.\n\nMega ($120/mo): 60 fast GPU hours. Only makes sense if you\'re generating hundreds of assets per month.\n\nFor most builders: start with Standard. Relaxed mode gives you unlimited runway to iterate.',
+        type: 'prose',
+      },
+      {
+        heading: 'model versions and how prompts changed',
+        content: 'v5 (2023): required very specific, comma-separated keywords. Prompt style: "chibi character, blue hair, holding laptop, white background, detailed, 8k, artstation"\n\nv6 (late 2023): shifted toward natural language. You can write prompts like sentences. "A chibi character with blue hair holding a laptop against a white background" works better than keyword soup.\n\nv7 (2025): even stronger natural language understanding, better consistency, significantly improved hands and text. Still not perfect on text, but noticeably better.\n\nPractical impact: if you copy a v5 prompt from a tutorial, it may produce worse results on v6+. Strip the keyword-list formatting and rewrite as a description.',
+        type: 'prose',
+      },
+      {
+        heading: 'parameters that matter',
+        content: 'Aspect ratio ... --ar 16:9 for hero banners and landscape thumbnails. --ar 1:1 for avatars and profile images. --ar 9:16 for mobile-first verticals and stories. --ar 4:5 for Instagram feed posts.\n\n--stylize (or --s): controls how strongly Midjourney applies its aesthetic "taste." Range 0-1000, default 100. Low values (0-50) stick closer to your prompt. High values (750+) lean into MJ\'s house style. For brand work, stay between 50-300.\n\n--chaos (or --c): controls variation between the four generated options. Low chaos = four similar images. High chaos (50-100) = wildly different interpretations. Useful early in exploration, bad when you\'re close to what you want.\n\n--no: negative prompts. --no text, watermark, hands gives the model explicit avoid signals.',
+        type: 'pattern',
+      },
+      {
+        heading: 'image-to-image prompting',
+        content: 'Upload a reference image before your prompt text to use it as a visual anchor. In Discord: attach the image to your message, copy its URL, then include that URL at the start of your prompt.\n\nExample: [image URL] chibi version of this character, same color palette, holding a sword --ar 1:1\n\n--iw controls image weight (0.5-2.0). Higher weight = generation stays closer to the reference. Default is 1.0.\n\nUseful for: iterating on a character you\'re developing, maintaining color palette consistency across a set, remixing a composition with a different art style.',
+        type: 'pattern',
+      },
+      {
+        heading: 'when to use midjourney vs. the alternatives',
+        content: 'Midjourney: best for stylized art, character design, brand visuals, editorial illustration. Output has a recognizable aesthetic that reads as intentional and artistic rather than AI-generated stock.\n\nDALL-E 3 (via ChatGPT): better at following precise instructions and rendering text. Worse at consistent art direction. Good for quick one-off assets when you\'re already in ChatGPT.\n\nStable Diffusion: free, runs locally, infinitely customizable with LoRAs and fine-tuning. High ceiling, high floor. Worth learning if you need character consistency across many frames or have privacy requirements.\n\nFlux (via Replicate or fal.ai): strong photorealism, good at following complex instructions. Newer, improving fast. Watch this one.\n\nFor building character-driven brand assets like the neobots on shawnos.ai: Midjourney is the right tool. Treat prompts like engineering specs ... specific about style, mood, composition, and what NOT to include.',
+        type: 'prose',
+      },
+      {
+        heading: 'frequently asked questions',
+        content: 'Can I use Midjourney images commercially?\nYes, on paid plans. The Basic, Standard, Pro, and Mega tiers all include commercial usage rights. Free tier does not.\n\nWhy do my prompts keep ignoring parts of the description?\nLong prompts dilute attention. The model weights earlier tokens more heavily. Put your most important descriptors first. Use --no for things to avoid rather than "no X" in the prompt body.\n\nHow do I get consistent results?\nSave your core style parameters as a custom suffix in Midjourney settings. For example, setting --style raw --ar 1:1 --s 150 as your default means every generation starts from that baseline.\n\nCan it generate logos?\nNot reliably. It\'ll generate logo-like images but they\'re not vector, have no precision, and usually include garbled text. Generate the visual concept in MJ, then recreate it properly in Figma.\n\nIs the web UI different from Discord?\nSame model, different interface. Web UI has a cleaner workspace and image organization. Discord gives you community context and prompt discovery. Most serious users use both.',
+        type: 'prose',
+      },
+    ],
+    related: ['character-design-with-ai', 'ai-image-limitations', 'image-generation-tools', 'design-tools'],
+  },
+  {
+    id: 'character-design-with-ai',
+    title: 'how we built the neobots with midjourney',
+    subtitle: 'the actual prompt structure and iteration loop behind a chibi character system',
+    category: 'tools',
+    difficulty: 'intermediate',
+    description: 'How the neobot characters on shawnos.ai were designed with Midjourney. Covers prompt structure, iteration workflow, style consistency, and web export.',
+    keywords: ['character design', 'midjourney', 'chibi', 'anime art', 'brand characters', 'neobots', 'ai illustration'],
+    sections: [
+      {
+        heading: 'why a chibi character system for a tech brand',
+        content: 'Most GTM and SaaS sites look identical: hero image, three feature cards, testimonials, gradient CTA. The visual language is interchangeable.\n\nCharacter-driven design breaks that pattern. Memorable, differentiating, immediately communicates personality before a visitor reads a word. Chibi and anime-inspired styles work specifically because they read as intentional and branded rather than stock-photo-generic.\n\nThe neobot system on shawnos.ai gives each AI tool in the stack a character: Nio (the assistant), RemBot (the slop detector), and others. This makes abstract AI capabilities concrete and gives users something to form a relationship with. It\'s the same logic Pokemon uses ... each character represents a concept, and the design encodes its personality.',
+        type: 'prose',
+      },
+      {
+        heading: 'prompt structure that produces consistent results',
+        content: 'Order matters. Build prompts in this sequence:\n\n[art style] + [character description] + [pose/action] + [outfit and props] + [color palette] + [background] + [negative prompts via --no]\n\nExample prompt for a tech-themed chibi character:\n\n"chibi anime character, small round face, large expressive eyes, short spiky blue hair, sitting cross-legged on a floating server rack, wearing a hoodie with circuit board patterns, holding a glowing laptop, cool blue and white color palette, soft gradient background, clean linework, flat shading --ar 1:1 --s 150 --no text, watermark, realistic proportions, photorealism"\n\nThe --no list is as important as the positive prompt. Without it, the model will default toward photorealism, add watermarks to signage in the scene, or drift toward adult proportions on a chibi character.',
+        type: 'pattern',
+      },
+      {
+        heading: 'the iteration loop: expect 20-50 generations per final character',
+        content: 'Generation 1-5: exploration. Use high --chaos (50-80) to see how MJ interprets the concept. Don\'t fall in love with anything yet.\n\nGeneration 6-15: direction lock. Pick the closest option, hit U (upscale) on it, then V (variation) to explore nearby design space. Refine the prompt based on what\'s working and what isn\'t.\n\nGeneration 15-30: refinement. Lower --chaos to 10-20. Tighten the prompt. Remove vague language ("cool", "nice", "detailed") and replace with specific descriptors ("cobalt blue", "isometric perspective", "cel-shaded").\n\nGeneration 30-50: final polish. You should be in V (variation) territory at this point, making small adjustments to pose, expression, or props.\n\nThe mistake most people make: giving up after 5-10 generations because "the AI isn\'t getting it." The iteration loop is the process, not a sign something is wrong.',
+        type: 'pattern',
+      },
+      {
+        heading: 'using anime references as structural inspiration',
+        content: 'This isn\'t about copying characters. It\'s about using structural design language as a reference point.\n\nOne Piece\'s Zoro has a three-item loadout concept: three swords that define his fighting style and personality. That\'s an architectural idea, not a visual one. Nio\'s design borrows the concept ... three tools that define their function ... without any visual similarity to the character.\n\nHow this works in prompts: instead of "looks like [character]" (which MJ will hallucinate badly), describe the structural elements. "Character carries three signature items that represent their role: [item 1], [item 2], [item 3]" is a prompt-safe way to encode the archetype.\n\nColor coding is another structural tool. Rem/RemBot uses red-and-white as a scan/alert color language because that\'s the cognitive association with system warnings. The color choice isn\'t arbitrary ... it carries meaning.',
+        type: 'prose',
+      },
+      {
+        heading: 'consistency across a character system',
+        content: 'The hardest part of AI character design isn\'t generating one good character. It\'s making six characters look like they belong in the same universe.\n\nCore consistency parameters: lock in art style (chibi, anime, cel-shaded) and never deviate. Lock in linework style (clean, flat shading vs. detailed crosshatching). Lock in color temperature (warm or cool, not both). Define a shared background treatment (soft gradient, flat color, transparent).\n\nCreate a style anchor prompt that you prepend to every character. Example: "chibi anime character, cel-shaded, clean linework, flat shading, consistent proportions (2-3 head heights), cool blue-toned color palette" ... then add character-specific details after.\n\nSave this as a Midjourney custom suffix in /settings so it applies automatically.',
+        type: 'pattern',
+      },
+      {
+        heading: 'exporting and preparing images for web',
+        content: 'Midjourney outputs JPGs or PNGs with backgrounds. For web use you usually want transparent backgrounds.\n\nWorkflow: Upscale the final image in MJ (U button). Download the upscaled PNG. Take it into remove.bg, Adobe Express, or Photoshop\'s Remove Background tool. Export as PNG with transparency preserved.\n\nCompression matters. An uncompressed PNG of a character illustration can be 2-4MB. Run it through Squoosh (squoosh.app) targeting WebP format at 80-85% quality. For a chibi character at 512x512 this should land under 80KB without visible quality loss.\n\nFor the neobots on shawnos.ai: characters are served as WebP, compressed at build time via Next.js image optimization, with explicit width/height to prevent layout shift. The transparent PNG is the source file; the build handles delivery format.',
+        type: 'prose',
+      },
+      {
+        heading: 'frequently asked questions',
+        content: 'How many characters should a brand system have?\nStart with one and get it right. Adding characters before nailing the first one produces an incoherent visual system. The neobots expanded from one to several over months, not days.\n\nCan I get the exact same character twice?\nNo. MJ doesn\'t have character memory. You can get close through detailed prompts and seeded variations, but not pixel-identical. Plan for "same design language" not "same render."\n\nShould I use an existing character as the reference image?\nOnly for style extraction, not character copying. Uploading a screenshot of an anime character and asking MJ to copy it is copyright territory. Using it to anchor "I want this art style for an original character" is standard practice.\n\nWhat if my character keeps drifting toward a different style?\nYour style keywords are probably not specific enough. "Anime" is extremely broad. "Chibi with 2-head-height proportions, large eyes relative to face, rounded shapes, flat cel shading" is specific. Add more architectural descriptors, fewer aesthetic adjectives.\n\nHow do I handle the same character in different poses or scenes?\nGenerate a "reference sheet" generation first: front view, side view, expression sheet on one canvas. Then use that as your image reference for scene-specific generations.',
+        type: 'prose',
+      },
+    ],
+    related: ['midjourney-fundamentals', 'ai-image-limitations', 'image-generation-tools', 'ai-slop-detector-expanded'],
+  },
+  {
+    id: 'ai-image-limitations',
+    title: 'what AI image generation can not do (yet)',
+    subtitle: 'the real failure modes and how to route around them',
+    category: 'tools',
+    difficulty: 'beginner',
+    description: 'Honest breakdown of what AI image generators consistently fail at: text, hands, consistency, precise control, and photorealism. Plus practical workarounds for each.',
+    keywords: ['ai image limitations', 'midjourney problems', 'ai generated images', 'image generation failures', 'generative ai', 'ai art'],
+    sections: [
+      {
+        heading: 'text in images: just don\'t',
+        content: 'Every major AI image generator ... Midjourney, DALL-E, Flux, Stable Diffusion ... struggles with rendering legible text inside images. Letters get transposed, words get garbled, fonts get hallucinated. On v7, short words like "Nio" or "OK" sometimes render correctly. Anything longer than 5-6 characters is a coin flip.\n\nWorkaround: generate the image without text. Export it. Add text as a real text layer in Canva, Figma, or Photoshop. This is always the better approach anyway because you can edit, resize, and translate text layers without regenerating the entire image.\n\nThe one exception: stylized lettering where legibility isn\'t the point. "Graffiti-style letters, abstract" as a texture element can work because you\'re not asking the model to produce readable content.',
+        type: 'anti-pattern',
+      },
+      {
+        heading: 'hands and fingers: plan around them',
+        content: 'Hand rendering has improved significantly in v6 and v7, but it\'s still the most common failure mode in photorealistic or semi-realistic styles. Six fingers, fused digits, hands that don\'t connect to wrists correctly.\n\nIn stylized art (chibi, anime, cartoon), this matters much less because stylized hands are intentionally simplified. A chibi character with mitten-like hands reads as a style choice, not a failure.\n\nFor realistic styles: use --no hands to push the model toward compositions that hide or minimize hands. Design the shot around it. A character holding something behind their back, hands in pockets, arms crossed with fists visible from behind. Photography studios do this anyway for complex shots.\n\nIf you need visible hands: generate several variations, cherry-pick the cleanest result, and fix any remaining issues in Photoshop with generative fill.',
+        type: 'anti-pattern',
+      },
+      {
+        heading: 'consistency across frames',
+        content: 'AI image generators don\'t have character memory. Generate the same prompt twice and you get two similar but not identical characters. This makes animation from AI stills extremely difficult and makes maintaining a character across a long series of images time-consuming.\n\nThis is why stable diffusion with LoRA fine-tuning exists. You train a small model on your specific character and it produces that character consistently across generations. High ceiling, high effort.\n\nFor Midjourney users: the closest workaround is using an upscaled image of your character as the reference image (--iw 1.5-2.0) for subsequent generations. You\'ll get similar-but-not-identical results. Good enough for a web context where images appear in different sections. Not good enough for sequential frames in a video.\n\nFor animation: treat AI images as concept art, then recreate them in a vector tool or commission a human animator to use them as style guides.',
+        type: 'prose',
+      },
+      {
+        heading: 'precise control: AI generates, you composite',
+        content: 'You can\'t tell an AI image generator "put the logo in the top-left corner at 200x80 pixels." You can influence composition ("logo in top-left, minimal, white background") but you can\'t control placement precisely.\n\nThe mental model that works: AI is a raw asset generator. The design tool (Figma, Canva, Photoshop) is where you do layout and composition. Never try to do both in the AI.\n\nFor UI mockups: generate background textures, illustration elements, and decorative assets in MJ. Import them as layers. Place UI elements as real layers on top. This workflow produces better results than trying to prompt a full UI mockup.\n\nInpainting (filling a masked region of an image) in tools like Stable Diffusion or DALL-E gives you more surgical control. Midjourney\'s remix mode gets you partway there. But for pixel-precise placement, use a design tool.',
+        type: 'pattern',
+      },
+      {
+        heading: 'copyright, licensing, and the uncanny valley',
+        content: 'Copyright: on paid Midjourney plans, you own commercial rights to your outputs. The legal landscape around AI-generated images is still evolving, but using MJ outputs in commercial projects is generally accepted on paid tiers. Don\'t replicate copyrighted characters or use celebrity likenesses.\n\nLicensing gotcha: if you cancel your subscription and let it lapse, check the terms. Some platforms revoke commercial rights on content generated during a free period.\n\nThe uncanny valley problem: photorealistic AI images often look slightly wrong in a way that\'s hard to articulate but immediately felt. Over-smoothed skin, lighting that doesn\'t quite match physics, eyes that are almost right. This is why stylized art (anime, chibi, illustration, pixel art) often performs better in brand contexts than photorealism ... the stylized aesthetic signals "intentional art direction" rather than "almost-real."',
+        type: 'prose',
+      },
+      {
+        heading: 'practical workarounds summary',
+        content: 'Text in images ... generate without text, add text layer in Canva or Figma.\n\nHand problems ... use stylized art styles where simplified hands are a feature, or use --no hands and design around it.\n\nCharacter consistency ... use the character\'s upscaled image as a reference with high --iw, accept near-identical rather than pixel-identical.\n\nPrecise placement ... use AI for raw asset generation, composite in a design tool.\n\nPhotorealism uncanny valley ... lean into stylized art: anime, chibi, cel-shaded, pixel art, watercolor. These styles read as intentional rather than almost-real.\n\nCopyright uncertainty ... use paid plan, generate original characters, avoid celebrity likenesses, document your generation workflow.',
+        type: 'pattern',
+      },
+      {
+        heading: 'frequently asked questions',
+        content: 'Will these limitations be fixed soon?\nText rendering and hands are improving generation over generation. Midjourney v7 is noticeably better than v5 on both. Expect continued improvement but don\'t expect perfection within the next 12-18 months.\n\nCan I fix AI image failures in post?\nYes. Photoshop\'s generative fill, Adobe Firefly, and CleanUp.pictures all let you fix specific regions. For occasional fixes this is fine. If you\'re fixing the same failure every time, redesign the prompt instead.\n\nIs there an AI image tool that handles text reliably?\nNot yet. DALL-E 3 is marginally better than Midjourney on very short text. Ideogram was built specifically for text-in-image generation and is the current leader for legible text, but it has a less polished aesthetic for everything else.\n\nWhy does my realistic character look slightly off even when technically correct?\nThe uncanny valley. Switch to a stylized aesthetic and the problem largely disappears. The "off" feeling is a perception response to near-real rather than a technical failure you can prompt your way out of.',
+        type: 'prose',
+      },
+    ],
+    related: ['midjourney-fundamentals', 'character-design-with-ai', 'image-generation-tools', 'design-tools'],
+  },
+
+  /* ── AI VOICE AND AUDIO ───────────────────────── */
+  {
+    id: "elevenlabs-overview",
+    title: "elevenlabs for content builders",
+    subtitle: "text-to-speech, voice cloning, and audio APIs that actually sound human",
+    category: "tools",
+    description: "ElevenLabs turns written content into natural-sounding audio. Voice cloning, multilingual support, and an API for building audio into your content pipeline.",
+    keywords: ["elevenlabs", "text-to-speech", "voice cloning", "ai audio", "content pipeline", "tts api", "podcast"],
+    difficulty: "beginner",
+    sections: [
+      {
+        heading: "what elevenlabs does",
+        content: "ElevenLabs is a text-to-speech platform that covers four main capabilities: standard TTS (paste text, get audio), voice cloning (train on your samples), speech-to-speech (convert one voice to another in real time), and sound effects generation from text prompts.\n\nThe flagship use case is TTS that doesn't sound robotic. Five years ago AI voices had this stilted cadence and weird emphasis patterns that made them immediately identifiable as fake. ElevenLabs changed that. The voices breathe naturally, handle punctuation correctly, and can convey actual emotion... not perfect, but close enough that most listeners won't flag it as AI on first listen.\n\nThey currently support 29+ languages from English input text, which matters if you're distributing content internationally.",
+        type: "prose"
+      },
+      {
+        heading: "use cases for builders",
+        content: "Four concrete use cases worth paying for:\n\n1. Blog post narration. Take a written post, pipe it through the API, embed the audio player at the top. Readers who prefer listening don't leave. This is a real accessibility win, not just a nice-to-have.\n\n2. Product demo voiceover. Record your screen, drop in an ElevenLabs narration track. Faster than waiting for your own schedule to free up for recording.\n\n3. Documentation audio. Knowledge base articles, onboarding flows, tutorial content. These don't need your personal voice ... they need clarity and consistency. AI handles that well at scale.\n\n4. Podcast-style content from written posts. You write a newsletter, the pipeline generates an audio version, you distribute it as a podcast episode. One piece of content, two distribution channels.",
+        type: "prose"
+      },
+      {
+        heading: "voice cloning",
+        content: "Clone your own voice with about 3-5 minutes of clean audio samples. ElevenLabs takes those samples, builds a model, and from that point your content can have your actual voice even when AI generates the audio.\n\nThe gotcha is sample quality. Background noise, room echo, inconsistent microphone distance ... all of these degrade the clone. Record in a quiet room with a decent USB microphone, speak naturally at a consistent volume, and avoid sentences that end with trailing off. Clear, confident read is what the model learns from.\n\nInstant Voice Cloning (IVC) uses your samples with the base model. Professional Voice Cloning (PVC) takes longer to train but produces a more accurate result. For most builders IVC is good enough. PVC is worth it if the clone is going to represent you publicly on a podcast or YouTube channel.\n\nOne real limitation: emotional range. A cloned voice can sound like you but doesn't capture the full dynamic range of how you actually speak. Excited, frustrated, whispering ... the clone flattens some of that. It's improving, but it's not there yet.",
+        type: "prose"
+      },
+      {
+        heading: "the API",
+        content: "ElevenLabs has a clean REST API. Pass your text, specify a voice ID, and get back an MP3 or PCM stream. That's enough to build voice into any content pipeline.\n\nBasic call structure:\n\nPOST https://api.elevenlabs.io/v1/text-to-speech/{voice_id}\nHeaders: xi-api-key: your-key, Content-Type: application/json\nBody: { \"text\": \"your content here\", \"model_id\": \"eleven_multilingual_v2\" }\n\nFor real-time streaming, the /stream endpoint lets you start playing audio before the full generation completes. Matters for latency-sensitive use cases like voice interfaces or live demos. Not relevant if you're batch-generating audio files for a blog.\n\nThe API also supports voice settings ... stability, similarity boost, style, speaker boost. Stability higher = more consistent but flatter. Lower = more expressive but variable. For long-form content narration, keep stability around 0.7-0.8 or you'll get weird energy spikes mid-paragraph.",
+        type: "prose"
+      },
+      {
+        heading: "pricing and limits",
+        content: "The free tier gives you 10,000 characters per month. That's roughly 5-7 minutes of audio. Good for testing, not enough for production.\n\nCreator tier ($22/month) gives 100,000 characters. A 1,500-word blog post is around 8,000 characters ... so you're getting about 12 posts per month. If you're generating audio for more than that, the Independent Publisher or Growing Business tiers scale to 500K and 2M characters.\n\nThe main constraint is characters, not minutes. Long-form content with simple vocabulary burns fewer characters than short-form with lots of technical terms and proper nouns.\n\nOne thing to watch: the multilingual v2 model costs more characters than the English-only v1 model. If you're only doing English content, stick with v1 or the turbo variants unless you specifically need the quality improvement.",
+        type: "prose"
+      },
+      {
+        heading: "frequently asked questions",
+        content: "Can I use ElevenLabs audio commercially? Yes, on paid tiers. The free tier restricts commercial use. Check the current terms because they update these policies.\n\nHow does ElevenLabs compare to Google TTS or Amazon Polly? More natural sounding, higher cost. Polly is cheaper and easier to scale but the voices are noticeably more robotic. If voice quality is part of your product experience, ElevenLabs is worth the premium.\n\nWill it mispronounce technical terms? Yes, sometimes. Acronyms, product names, and domain jargon get mispronounced. You can add pronunciation guides in the settings, or use SSML tags to phonetically spell out problem words. Always listen before publishing.\n\nDoes it work for languages other than English? The multilingual v2 model supports 29+ languages and handles code-switching (mixing languages mid-sentence) reasonably well. Quality varies by language. Spanish and French are excellent. Less common languages are more hit-or-miss.",
+        type: "prose"
+      }
+    ],
+    related: ["voice-in-content-pipelines", "super-whisper-for-content", "content-os-full-stack", "content-skills"]
+  },
+
+  {
+    id: "voice-in-content-pipelines",
+    title: "building voice into your content system",
+    subtitle: "the pipeline from written draft to published audio without doing it manually each time",
+    category: "workflows",
+    description: "How to automate audio generation for your content. Covers batch processing, quality control, combining with video, and when to use AI voice vs your real voice.",
+    keywords: ["content pipeline", "elevenlabs api", "audio automation", "voice workflow", "super whisper", "podcast", "content ops"],
+    difficulty: "intermediate",
+    sections: [
+      {
+        heading: "the core pipeline",
+        content: "The basic flow: written content -> ElevenLabs API -> MP3 file -> hosted and embedded or distributed as podcast episode.\n\nFor a blog-to-audio pipeline, you need three things: a script that reads your post content, an API call to ElevenLabs, and a place to store the resulting MP3. S3 or Cloudflare R2 for storage. Your CMS or site builder for embedding.\n\nThe script looks roughly like this in Python:\n\nimport requests, os\ntext = open(\"post.txt\").read()\nres = requests.post(\n  f\"https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}\",\n  headers={\"xi-api-key\": os.environ[\"XI_KEY\"]},\n  json={\"text\": text, \"model_id\": \"eleven_monolingual_v1\"}\n)\nopen(\"output.mp3\", \"wb\").write(res.content)\n\nThat's the whole thing. You wrap that in whatever automation you already have, whether it's a GitHub Action, a cron job, or a build step.",
+        type: "prose"
+      },
+      {
+        heading: "batch processing",
+        content: "One-off generation is fine for occasional posts. For a content operation generating audio regularly, you want batch processing.\n\nBatch approach: queue all posts that don't have audio yet, generate them in sequence (not parallel, to avoid rate limit issues), store results, update your CMS to mark them as having audio available.\n\nThe rate limit on ElevenLabs API is per-second concurrent requests, not per-day volume. So sequential calls with a short sleep between them (0.5-1 second) avoids 429 errors without meaningfully slowing down a batch run.\n\nFor a 30-post backlog, a batch script runs in under 10 minutes and generates audio for everything at once. After that, new posts get audio generated as part of the publish workflow, not as a separate manual step.\n\nCharacter tracking matters in batch mode. Build in a check that logs characters used per run so you can see where you're tracking against your monthly quota.",
+        type: "prose"
+      },
+      {
+        heading: "quality control before publishing",
+        content: "AI voice needs a human listen before it goes live. This is not optional.\n\nCommon issues to listen for:\n- Technical term mispronunciation (API, SaaS, specific product names like \"Figma\" or \"Supabase\")\n- Incorrect emphasis on compound words or acronyms\n- Awkward pauses mid-sentence from punctuation the model interprets differently than you intended\n- Energy drop at the end of long paragraphs where the model seems to run out of steam\n\nThe fix for most of these is editing the source text rather than the audio. Add commas to control pacing. Spell out acronyms phonetically for the model (\"S-A-A-S\" instead of \"SaaS\"). Break up sentences that are too long.\n\nA full listen on every post takes 3-5 minutes per piece. Spot-checking (first 30 seconds, a middle section, the end) cuts that to 60-90 seconds and catches most issues. Pick your threshold based on how prominent the audio feature is on your site.",
+        type: "prose"
+      },
+      {
+        heading: "combining voice with video",
+        content: "AI-generated voice as narration track over screen recordings or animations is a workflow that removes one of the hardest constraints in video production: needing to record good audio at the same time as capturing screen content.\n\nThe workflow: capture your screen silently while doing the thing you want to show. Write the narration separately as a script. Generate audio from the script. Drop the audio over the video in your editor and sync.\n\nThis is faster than trying to narrate live because you can iterate on the script without re-recording the screen capture. The script can be shorter or longer than the raw recording ... you adjust pacing in the edit.\n\nOne gotcha: AI voice pacing is consistent and slightly mechanical compared to live narration. When the audio says \"and here you can see...\" but there's a 2-second gap before that thing appears on screen, the sync feels off. Script your narration to match the actual timing of what happens on screen, not just what you want to explain.",
+        type: "prose"
+      },
+      {
+        heading: "Super Whisper integration",
+        content: "Super Whisper is speech-to-text. You speak messy, it transcribes. ElevenLabs is text-to-audio. You pass clean text, it reads it back.\n\nThe combination: speak a rough draft into Super Whisper while you're walking, cooking, or commuting. Get back a messy transcript. Clean it up in your editor. Pass the cleaned version to ElevenLabs. Publish both the text post and the audio version.\n\nThis is a real workflow for people who think better out loud than at a keyboard. The speaking-to-draft step captures ideas in flow state that keyboard drafting sometimes kills. The AI voice step means you don't have to also record a clean audio read ... which would require setting up a microphone, a quiet environment, and doing multiple takes.\n\nThe friction you're removing: you speak when inspiration hits -> clean text appears -> polished audio gets generated automatically -> both formats published. Three steps that used to require maybe five different sessions collapsed into one continuous flow.",
+        type: "prose"
+      },
+      {
+        heading: "real voice vs AI voice",
+        content: "The distinction that matters: is this content building a personal relationship or distributing information at scale?\n\nUse your real voice for:\n- LinkedIn video posts where you want people to feel they know you\n- Podcast appearances and interviews\n- Sales calls, demos where you're present\n- Content where authenticity and real-time reaction are the whole point\n\nUse AI voice for:\n- Documentation and knowledge base audio\n- Tutorial narration over screen recordings\n- Content that needs to exist in audio form but isn't a personal brand moment\n- Any content you're generating faster than you could record\n\nThe wrong framing: \"AI voice = lazy.\" The right framing: AI voice at scale gets content to people who prefer listening, in a format they can consume on a commute, without requiring you to block out recording time for every piece of content you publish.\n\nFrequently asked questions:\n\nDoes AI voice hurt SEO? No. The text content is what Google indexes. Audio is supplementary.\n\nWill listeners know it's AI? Some will. Most won't on casual listen. If you're cloning your own voice, it's close enough that the gap is shrinking. Disclosure norms are still forming but leaning toward transparency being standard practice.\n\nHow long should audio versions be? Same length as the content. Don't truncate for audio. If the post is long, the audio is long. Listeners who click play expect the full version.",
+        type: "prose"
+      }
+    ],
+    related: ["elevenlabs-overview", "super-whisper-for-content", "recursive-content-flow", "content-os-full-stack"]
+  },
+
+  /* ── VIDEO AND GIF CREATION ──────────────────── */
+  {
+    id: "gif-creation-for-web",
+    title: "making GIFs that do not suck (for your site and socials)",
+    subtitle: "file size, frame rate, tooling, and the ffmpeg commands you'll actually use",
+    category: "tools",
+    description: "GIFs still work everywhere that video doesn't. How to create, optimize, and deploy them without blowing up your page load time or getting wrecked by platform compression.",
+    keywords: ["gif creation", "animated gif", "ffmpeg", "gifsicle", "web performance", "social media", "screen recording"],
+    difficulty: "intermediate",
+    sections: [
+      {
+        heading: "why GIFs still matter in 2025",
+        content: "GIFs autoplay everywhere that video doesn't. LinkedIn autoplays GIFs in the feed with no click required. Email clients render GIFs (most video embeds get stripped). Slack previews them inline. Twitter/X treats them as native animations.\n\nThe format is 30 years old and refuses to die because it solves a real problem: showing motion without requiring a video player, audio considerations, or user interaction. For product demos, feature announcements, tutorial snippets, and attention-grabbing feed content, a well-made GIF does the job in a format that works universally.\n\nThe tradeoff: file size and color limitations. A GIF of a gradient-heavy UI can look terrible and weigh 15MB. A GIF of a clean screen recording with flat UI elements can be crisp and under 2MB. Knowing which situations favor GIF and which don't is the whole skill.",
+        type: "prose"
+      },
+      {
+        heading: "frame rate and file size",
+        content: "12-15 fps is the sweet spot for web GIFs. At 12 fps, motion is smooth enough that the human eye reads it as continuous animation rather than a slideshow. At 24 fps (film rate), file size roughly doubles without a perceptible quality improvement for most content types.\n\nThe math: a 5-second GIF at 24 fps = 120 frames. At 12 fps = 60 frames. Half the data, nearly identical perceived smoothness for UI recordings and product demos.\n\nDimensions matter more than frame rate for file size. A 800px wide GIF at 12 fps is often 3-4x larger than the same content at 480px. Most social platforms display GIFs at 400-600px wide anyway. Exporting at 480px width covers 90% of use cases without the file size penalty of higher resolution.\n\nRule of thumb: target under 5MB for social media GIFs. Under 2MB is better. Over 5MB and platforms will recompress your GIF, which usually makes it look worse than if you'd optimized it yourself.",
+        type: "prose"
+      },
+      {
+        heading: "the 256 color limitation",
+        content: "GIF supports a maximum of 256 colors per frame. This is not a suggestion, it's a hard technical constraint from the format specification.\n\nWhere this bites you:\n- Gradients: a blue-to-purple gradient that looks smooth at 16 million colors becomes visibly banded at 256 colors. The GIF format tries to approximate the gradient by dithering (alternating pixels of different colors to simulate blending), but this adds noise and file size.\n- Photography and complex imagery: photographs have thousands of subtle color variations. Forcing them into 256 colors produces visible artifacts.\n- Shadows and transparency effects: most macOS UI shadows use semi-transparency over a variable background. GIF's 1-bit transparency (fully transparent or fully opaque, no in-between) makes shadows look harsh or disappear.\n\nWhere this doesn't bite you:\n- Clean UI recordings with flat colors and minimal gradients\n- Terminal/code recordings (text is high contrast, limited palette)\n- Diagrams, flowcharts, and illustrations designed with flat colors\n\nDesign GIFs with their format constraints in mind rather than recording something gradient-heavy and wondering why it looks bad.",
+        type: "prose"
+      },
+      {
+        heading: "tools for creation",
+        content: "For Mac:\n- Kap (free, open source): records your screen and exports directly to GIF, MP4, or WebM. The GIF export settings let you set frame rate and quality. Simple and reliable. The default settings are usually fine for quick social content.\n- LICEcap (free): older but still solid. Very small footprint. Records a region of your screen to GIF. No bells, no friction.\n\nFor Windows:\n- ScreenToGif (free): screen recorder with a built-in editor. You can trim, add captions, adjust frame timing, and optimize before export. More features than you need for most use cases but good for precise control.\n\nFor converting existing video to GIF:\nffmpeg is the most reliable option. Two-step command that produces a properly optimized palette:\n\n# Step 1: generate color palette\nffmpeg -i input.mp4 -vf \"fps=12,scale=480:-1,palettegen\" palette.png\n\n# Step 2: use palette to generate GIF\nffmpeg -i input.mp4 -i palette.png -vf \"fps=12,scale=480:-1,paletteuse\" -loop 0 output.gif\n\nThe two-step approach with a palette file produces significantly better color quality than the single-command version. Takes 10 extra seconds, worth it every time.",
+        type: "prose"
+      },
+      {
+        heading: "optimization with gifsicle",
+        content: "Always optimize before deploying. gifsicle is a command-line tool that can reduce GIF file size by 30-60% without visible quality loss by removing redundant frame data and optimizing the color tables.\n\nInstall on Mac: brew install gifsicle\n\nBasic optimization command:\ngifsicle -O3 --lossy=80 input.gif -o output.gif\n\nThe -O3 flag applies the most aggressive lossless optimization (reorders frames for smaller delta). The --lossy=80 flag applies lossy compression similar to JPEG (80 is a good default, lower = smaller file but visible artifacts, higher = less savings). On a 10MB raw GIF this often produces a 4-6MB output with no visible quality difference.\n\nFor batch optimization of a folder:\nfor f in *.gif; do gifsicle -O3 --lossy=80 \"$f\" -o \"${f%.gif}_opt.gif\"; done\n\nRun gifsicle after exporting from any tool, before you upload anywhere. Platforms compress on top of whatever you give them, so starting smaller means ending up with a better result after their compression pass.",
+        type: "pro-tip"
+      },
+      {
+        heading: "GIF vs MP4 vs WebP animated",
+        content: "GIF: universal compatibility, large file size, limited colors. Use when you need it to work everywhere including email.\n\nMP4 (autoplay muted loop): 10-15x smaller than equivalent GIF, full color, but requires a video player and browser support for autoplay. Use for web pages where you control the embedding. Many builders use the pattern of displaying a looping muted MP4 instead of a GIF on their own site, then exporting actual GIFs specifically for social and email.\n\nAnimated WebP: smaller than GIF, better color than GIF, but not supported in all email clients or older browsers. Use when you're confident in your audience's browser stack.\n\nThe practical workflow for most builders: export MP4 from your recording tool, use it directly on your site (as a video element with autoplay muted loop), convert to GIF with ffmpeg when you need the format for social media or email, optimize the GIF with gifsicle before uploading.\n\nFrequently asked questions:\n\nWhy does my GIF look great locally but terrible on LinkedIn? LinkedIn recompresses GIFs on upload. Starting with a well-optimized GIF (gifsicle) gives the platform better source material to work with. Also stay under 5MB ... larger files trigger more aggressive compression.\n\nCan GIFs have transparent backgrounds? Yes, but only 1-bit transparency. Pixels are either fully transparent or fully opaque. No feathered edges, no drop shadows with soft falloff. Design your GIF content with solid backgrounds if you need edge quality.\n\nWhat's the max GIF dimensions for Twitter/X? Twitter accepts GIFs up to 15MB and 1280x1080 pixels. Practically, staying under 5MB and under 720px wide produces the best feed results after their compression.",
+        type: "prose"
+      }
+    ],
+    related: ["gif-rendering-technical", "video-editing-tools", "programmatic-video-content", "design-tools"]
+  },
+
+  {
+    id: "video-editing-tools",
+    title: "video editing for builders who are not video editors",
+    subtitle: "the minimum viable video toolkit to ship product demos, clips, and social content",
+    category: "tools",
+    description: "You need to edit video sometimes. Here's which tools to use for which jobs, the builder workflow for a 60-second clip, and where AI actually helps vs where it falls short.",
+    keywords: ["video editing", "veed", "capcut", "davinci resolve", "canva video", "screen recording", "content production"],
+    difficulty: "beginner",
+    sections: [
+      {
+        heading: "the actual bar you need to clear",
+        content: "You are not trying to become a video editor. You are trying to ship product demos, record feature walkthroughs, clip longer recordings into social posts, and occasionally explain something visually that would take paragraphs to write.\n\nThe bar for builder video is: clear, watchable, and under 2 minutes. That's it. Nobody is grading your color grading or your b-roll transitions. They want to understand the thing you're showing them.\n\nThis means your tool selection should optimize for speed and minimal friction, not maximum features. A video that takes 45 minutes to edit in Adobe Premiere and 15 minutes to edit in VEED is the same video to your audience. Ship the 15-minute version.",
+        type: "prose"
+      },
+      {
+        heading: "VEED: browser-based and good enough for most things",
+        content: "VEED is a browser-based video editor. Upload your recording, trim clips, add subtitles, resize for different platforms, export. No install, no project files, no complicated timeline.\n\nWhat it's genuinely good at:\n- Auto-subtitles: upload video, click auto-subtitle, get captions in under a minute. Accuracy is around 90-95% for clear speech. Better than YouTube's auto-captions for most accents. This alone saves hours if you caption everything.\n- Resizing for platforms: one click to resize a 16:9 recording to 9:16 for Reels or TikTok, with auto-repositioning.\n- Simple cuts and trims: removing dead air from the start and end, cutting out the section where you paused to think for 8 seconds.\n\nWhere it fights you:\n- The free tier adds a watermark. If you're publishing anything to clients or under your brand, you need a paid plan ($18/month starter).\n- Precise frame-level edits are painful. If you need to cut exactly between two words without losing a syllable, VEED's timeline can be finicky. Experienced this firsthand trying to fix a mispronounced word in an intro... ended up re-recording the intro rather than making the edit work.\n- Large files (over 1GB) can be slow to upload and process.\n\nVerdict: correct tool for 80% of builder video needs. Subtitle, trim, export, done.",
+        type: "prose"
+      },
+      {
+        heading: "CapCut: free and the best for short-form",
+        content: "CapCut is free, has no watermark on standard exports, and is optimized for TikTok-style vertical video. It's the tool to know if you're posting Reels, TikToks, or YouTube Shorts.\n\nAuto-captions are solid and styled well out of the box ... the animated word-by-word captions that TikTok popularized are a native feature, not a workaround. This matters because that caption style consistently drives higher watch time on short-form platforms.\n\nThe desktop version exists and works, but CapCut is primarily a mobile editing experience and it shows. The desktop UI is less intuitive than VEED for someone used to desktop software.\n\nBest use: you recorded something on your phone or have a clip you want to turn into a vertical social post. Start and finish in CapCut. Don't fight the tool's primary use case by trying to do horizontal 16:9 work in it.\n\nOne concrete limitation: if you want to export at higher than 1080p, you need a paid plan. For social media distribution, 1080p is fine. For anything going on your actual website or a presentation, you might want the headroom.",
+        type: "prose"
+      },
+      {
+        heading: "Canva video and DaVinci Resolve",
+        content: "Canva video: if you're already in Canva for graphics, the video editor works for branded social clips and simple animations. The strength is brand consistency ... your fonts, colors, and brand kit carry over from graphics work into video without setup. Weakness is the timeline is basic and long-form editing is frustrating. Use it for 15-30 second branded clips, not for editing a 5-minute demo.\n\nDaVinci Resolve: this is the free pro-grade option. Color grading, advanced effects, multi-track audio, precision editing, Fusion for motion graphics. It's genuinely professional software that Hollywood editors use.\n\nWhy most builders shouldn't start here: the learning curve is steep and the interface is complex. You can spend an hour learning the tool instead of shipping the video. The payoff is worth it if you're doing high-volume video production where quality matters at every frame. For occasional demos and clips, it's more tool than you need.\n\nThe exception: if you have audio issues (background noise, inconsistent mic levels), DaVinci Resolve's Fairlight audio tab is genuinely the best free option for fixing them. The noise removal is better than anything in VEED or CapCut.",
+        type: "prose"
+      },
+      {
+        heading: "the builder video workflow",
+        content: "For a 60-second product demo or explainer clip, this workflow takes under 15 minutes:\n\n1. Record screen with OBS (free, works on all OS) or the built-in recorder (Shift+Cmd+5 on Mac). Don't try to be perfect on the first take. Record the whole thing, pause and restart when you fumble, keep going.\n\n2. Open in VEED. Trim the dead air from the start and end. Cut the obvious fumbles. Don't over-edit ... two or three cuts is usually enough.\n\n3. Run auto-subtitles. Fix the words it got wrong (usually 3-5 corrections for a 60-second clip). Lock in the caption style.\n\n4. Export at 1080p. Upload directly from the export, don't re-edit after the fact.\n\nTotal time: 10-15 minutes for a polished-enough clip. The trap is spending 45 minutes perfecting timing and transitions on content that will be watched once and scrolled past. Ship fast, iterate on what resonates.",
+        type: "pattern"
+      },
+      {
+        heading: "where AI helps and where it doesn't",
+        content: "AI capabilities in video editing are real but narrow.\n\nAI is genuinely useful for:\n- Auto-subtitles (all three tools have this, VEED and CapCut are the best implementations)\n- Background noise removal (DaVinci Resolve Fairlight, also in Adobe tools)\n- Filler word removal ... some tools can identify and cut \"um\", \"uh\", and silence automatically. Descript does this best if you want to add a fourth tool to your stack.\n- Auto-reframe for different aspect ratios (identifies the main subject and keeps it in frame when you change dimensions)\n\nAI cannot:\n- Decide what to cut. It doesn't know which part of your demo is the compelling part and which is you navigating through menus to get to the compelling part.\n- Fix pacing. If your explanation is too slow or too fast, no AI tool adjusts that without sounding unnatural.\n- Make creative decisions about structure, what to show first, what the hook should be.\n\nFrequently asked questions:\n\nDo I need to learn keyboard shortcuts? For VEED and CapCut, no. Spacebar to play/pause, that's enough. For DaVinci Resolve, yes ... keyboard shortcuts are how the pros move 10x faster.\n\nShould I script before recording? For content where you're explaining something complex, yes. For product demos where you're showing a flow, a bullet point outline is enough. Reading from a full script makes delivery feel robotic.\n\nHow important is audio quality? More important than video quality. Viewers will watch blurry footage if the audio is clear. They will leave crisp 4K footage with bad audio within 10 seconds. Get a decent USB microphone ($50-100 range) before you invest in anything else.",
+        type: "prose"
+      }
+    ],
+    related: ["gif-creation-for-web", "tiktok-playbook", "programmatic-video-content", "content-os-full-stack"],
+  },
+
+  /* ── AI AGENTS FOR CONTENT ────────────────────── */
+  {
+    id: 'grok-as-scout-agent',
+    title: 'why Grok is the best scout agent for social content',
+    subtitle: 'Real-time X data makes Grok the research layer your content pipeline is missing.',
+    category: 'tools',
+    description: 'Grok has live access to X/Twitter data, making it the best tool for scouting trending topics, angles, and questions before you create. Free, fast, and built for the platform.',
+    keywords: ['Grok', 'X Twitter', 'content research', 'trending topics', 'AI scouting', 'social intelligence', 'content pipeline'],
+    sections: [
+      {
+        heading: 'what makes Grok different',
+        content: 'Most AI models are trained on data with a cutoff date. Grok isn\'t. It has live access to X/Twitter, which means when you ask it what\'s trending in B2B SaaS today, it\'s actually looking at today\'s posts, not data from six months ago.\n\nThat real-time awareness is the entire value proposition. You can ask: "what angles on AI automation are getting engagement right now?" and get an answer grounded in actual current signal, not pattern-matched from stale training data.\n\nFor content creators, this closes a gap that every other AI tool leaves open.',
+        type: 'prose'
+      },
+      {
+        heading: 'the scout agent pattern',
+        content: 'The mental model: Grok is your research layer, not your publishing layer. Before you create anything, you send Grok in to scout.\n\nAsk it:\n- "What questions are people asking about [topic] on X this week?"\n- "What angles on [topic] are getting the most replies?"\n- "What\'s the current conversation around [competitor or concept]?"\n\nYou take that raw intelligence, filter it through your own perspective, and build content from what you find. The scouting happens in five minutes. The creating still requires you.',
+        type: 'pattern'
+      },
+      {
+        heading: 'generating post drafts',
+        content: 'Grok drafts posts that are natively formatted for X because it\'s been trained on X content. It understands thread structure, hook patterns, reply dynamics ... the platform\'s rhythm is baked in.\n\nThis doesn\'t mean you post raw Grok output. It means you have a structurally correct draft in 30 seconds and spend your time making it sound like you instead of making it sound like a post.\n\nSpecific prompt that works: "Draft three different X posts about [topic] using the current conversation as context. Keep them under 280 characters. Make them opinionated."',
+        type: 'prose'
+      },
+      {
+        heading: 'competitive intelligence without the scroll',
+        content: 'You can ask Grok to analyze what\'s working for specific creators or accounts without manually scrolling their feed for an hour.\n\n"What types of posts from [creator] get the most engagement?" gives you a pattern analysis. "What topics does [account] post about that their audience responds to?" gives you content strategy intel.\n\nThis is useful before entering a new niche or before engaging with a community you\'re not deeply embedded in yet. Know the landscape before you post in it.',
+        type: 'pattern'
+      },
+      {
+        heading: 'where Grok is weaker',
+        content: 'Grok is strongest on X-native content. For LinkedIn drafts, it\'s less effective ... it doesn\'t have the same live data signal for that platform, and the post format norms are different enough that you\'ll spend more time fixing drafts than if you\'d started in Claude or ChatGPT.\n\nFor email, newsletters, or long-form writing, use a different tool. Grok is a scout, not a ghostwriter. The more you try to use it outside its lane, the more you\'ll be editing output that wasn\'t built for your actual context.',
+        type: 'anti-pattern'
+      },
+      {
+        heading: 'the full workflow',
+        content: 'Step 1: Open Grok. Ask what\'s trending in your niche and what questions are getting traction.\nStep 2: Read the output. Pick 1-2 angles that match something you actually have a perspective on.\nStep 3: Draft your post using those angles as a starting point. Add your experience. Add the specific detail only you would know.\nStep 4: If you want a structural draft, ask Grok to write it ... then rewrite in your voice.\nStep 5: Post. Grok does the research, you supply the substance.',
+        type: 'formula'
+      },
+      {
+        heading: 'frequently asked questions',
+        content: 'Is Grok free?\nYes. The base version is free with an X account. The real-time search functionality is available without a paid subscription, which makes it accessible for builders who aren\'t ready to pay for five different AI tools.\n\nCan Grok replace a social media manager?\nNo. It can replace the research and first-draft phase. The editorial judgment, the voice, the decision about what\'s worth posting ... that\'s still yours.\n\nHow often should I use Grok to scout?\nBefore any new content series or when entering a new topic. Not for every single post. The goal is awareness, not dependency.\n\nDoes Grok work for niches outside tech?\nYes, but quality varies. For highly technical or niche professional topics it\'s strongest. For very offline or local communities, the X data signal is thinner.',
+        type: 'prose'
+      }
+    ],
+    related: ['platform-specific-ai-strategy', 'x-algorithm', 'x-best-practices', 'content-os-full-stack'],
+    difficulty: 'beginner'
+  },
+  {
+    id: 'platform-specific-ai-strategy',
+    title: 'which AI to use on which platform (the honest breakdown)',
+    subtitle: 'The right AI for LinkedIn is wrong for Reddit. Here\'s where each tool actually fits.',
+    category: 'tools',
+    description: 'Platform-by-platform breakdown of which AI tools work, which fail, and why Reddit will expose AI content faster than anywhere else. No generic advice.',
+    keywords: ['AI for LinkedIn', 'AI for Reddit', 'platform AI strategy', 'content tools', 'Grok', 'Claude', 'AI slop', 'Super Whisper'],
+    sections: [
+      {
+        heading: 'LinkedIn: draft with AI, rewrite with your brain',
+        content: 'Claude or ChatGPT for structure, you for substance. The workflow: give the AI your raw idea and ask for a post outline or first draft. Take that draft, gut the generic parts, and replace them with the specific thing you actually know ... the project name, the exact number, the outcome that wasn\'t obvious.\n\nTechnical LinkedIn audiences detect AI slop immediately. The tell isn\'t that it\'s AI, it\'s that it\'s nonspecific. "I learned that systems matter more than hustle" is slop. "I cut our onboarding time from 14 days to 3 by killing the welcome email sequence and moving everything into an interactive checklist" is not.\n\nTools like Tapio exist for LinkedIn scheduling. They\'re useful when starting out. But the more you build your own content operating system ... voice rules, templates, automated workflows ... the less you need them. The content just comes out naturally once the system is running.',
+        type: 'prose'
+      },
+      {
+        heading: 'X/Twitter: Grok for research, your voice for output',
+        content: 'The platform rewards speed and takes. Grok\'s real-time X access gives you signal on what\'s trending right now, which is a structural advantage over any other AI tool for this platform specifically.\n\nThe pattern: Grok scouts the conversation, you post the take. Your post should be short, opinionated, and grounded in something specific. AI can get you to a draft in 30 seconds. You spend the other two minutes making it sound like you and not like a thought leadership template.\n\nDon\'t overthink X. Volume and consistency beat any optimization. One well-reasoned opinion posted daily beats five AI-polished posts per week.',
+        type: 'prose'
+      },
+      {
+        heading: 'TikTok: AI for prep, not for content',
+        content: 'Your face and camera are the content on TikTok. AI belongs in the prep layer, not in the video itself.\n\nWhere AI helps: loose script outlines (not full scripts ... scripted-sounding delivery kills engagement), hashtag research, trend identification in your niche. CapCut\'s built-in AI features ... auto-captions, background removal, auto-cut on silence ... are the most practically useful AI layer for TikTok creators.\n\nWhere AI hurts: if you\'re reading an AI-written script verbatim, viewers feel it. The delivery goes flat. TikTok rewards authenticity more literally than any other platform because you\'re on camera.',
+        type: 'prose'
+      },
+      {
+        heading: 'Reddit: do not use AI for posting, full stop',
+        content: 'Reddit communities detect AI content faster than anywhere else. Not because they have special tools ... because they\'re actively suspicious and they read carefully. One AI-sounding paragraph in a 400-word comment and you\'re getting called out in the replies.\n\nThe move for Reddit: Super Whisper. Speak your thoughts naturally, let it transcribe, clean up manually. The content is 100% your words and your thinking. That\'s the difference between AI content and AI-assisted workflow.\n\nNever be an NPC on Reddit. Non-playable character: someone running on a script instead of thinking for themselves. Reddit karma is built on genuine participation and cannot be shortcutted. You need karma before posting in most subreddits. The only way to build it is commenting on posts you actually care about, adding real value, asking genuine questions. No AI post generator will get you there.',
+        type: 'anti-pattern'
+      },
+      {
+        heading: 'email and newsletters: AI for structure, you for tone',
+        content: 'Email is the most intimate channel. Readers feel when it\'s not you ... not because they can detect AI technically, but because the warmth and specificity of a real person writing to them is distinctive.\n\nUse Claude to break blank page paralysis: paste in your rough notes and ask for a draft. Then rewrite almost everything. Keep the structure, kill the generic sentences, add back in the personal detail.\n\nThe test: would you say this to a specific person you know? Email should pass that test. AI drafts usually don\'t on first pass.',
+        type: 'prose'
+      },
+      {
+        heading: 'the VA + AI anti-pattern',
+        content: 'Hiring a VA to run AI tools and reviewing the output is where most content goes generic and stays generic. The content looks the same because it is the same ... same prompts, same output patterns, same LinkedIn commenting templates.\n\nThe worst offender: the "great point, [rephrasing what they said]" comment format. That\'s the fingerprint of someone running ChatGPT on other people\'s posts to generate engagement. Every technical person on LinkedIn recognizes this pattern immediately.\n\nIf you\'re using a VA, have them speak their response to a voice memo first, then transcribe and clean. The one test that matters: does it sound like a specific human made a specific observation? Not "does it pass an AI detector" ... those tools are unreliable. Does it sound human? That\'s the only metric.',
+        type: 'anti-pattern'
+      },
+      {
+        heading: 'building your own OS vs. depending on tools',
+        content: 'Fiverr, Tapio, Later.com, Buffer ... they have a real place when you\'re starting out and need scaffolding. Use them. But they\'re training wheels, not a destination.\n\nThe shift happens when you internalize enough about voice, platform rhythm, and your own content patterns that the system runs through you rather than around you. At that point you\'re not drafting anymore in the traditional sense. You have hundreds of drafts, notes, half-formed ideas ... and the content just surfaces naturally through the recursive process you\'ve built.\n\nThat\'s the real operating system. Not the tools. The version of yourself that has published enough to know exactly what resonates, why, and how to produce more of it.',
+        type: 'prose'
+      },
+      {
+        heading: 'frequently asked questions',
+        content: 'Can I use the same AI for every platform?\nTechnically yes. Strategically no. Platform norms are different enough that a LinkedIn draft sounds wrong on X and a Reddit comment sounds wrong in a newsletter. Match the tool to the platform\'s actual content patterns.\n\nIs it okay to use AI at all on Reddit?\nFor research, yes. For transcription via Super Whisper, yes. For drafting your actual post or comment, no. The community will notice.\n\nHow much should I edit AI output?\nEnough that no specific sentence is verbatim AI unless it was already perfect. Rule of thumb: if you can\'t remember why you wrote a specific sentence, it\'s probably AI output you didn\'t properly edit.\n\nDo AI detectors work?\nNot reliably enough to depend on them, in either direction. Don\'t use them to "clear" your content. Just write like a human.\n\nWhat\'s the fastest path to building my own content OS?\nPublish consistently for six months using AI as a draft layer. Track what you actually had to rewrite every time. Those rewrites are your voice rules.',
+        type: 'prose'
+      }
+    ],
+    related: ['grok-as-scout-agent', 'super-whisper-for-content', 'ai-slop-guide', 'content-os-full-stack', 'commenting-strategy'],
+    difficulty: 'intermediate'
+  },
+  {
+    id: 'super-whisper-for-content',
+    title: 'Super Whisper is the most underrated content tool',
+    subtitle: 'Speak your ideas, get a transcript, edit it into content. No blank page required.',
+    category: 'tools',
+    description: 'Super Whisper transcribes speech locally on Mac with no cloud processing. For builders who think faster than they type, it removes blank-page paralysis from the entire content workflow.',
+    keywords: ['Super Whisper', 'speech to text', 'voice transcription', 'content creation', 'Mac tools', 'Reddit content', 'voice-first workflow'],
+    sections: [
+      {
+        heading: 'what Super Whisper actually is',
+        content: 'Super Whisper is a macOS app that transcribes your speech to text locally on your device. No audio sent to a server. No account required to process your voice. The model runs on your Mac.\n\nIt\'s not Siri dictation. It\'s not Otter.ai. It\'s a fast, accurate transcription tool that runs in the background with a keyboard shortcut to start and stop. Hold the key, talk, release ... and your words appear wherever your cursor is.\n\nThe local processing matters for two reasons: speed and privacy. You get near-instant transcription without latency from a round-trip to a cloud API, and nothing you say goes anywhere.',
+        type: 'prose'
+      },
+      {
+        heading: 'why it matters if you build for a living',
+        content: 'Your brain runs faster than your fingers. This is the core problem with most content workflows ... by the time you\'ve typed out the first paragraph, you\'ve already lost three other ideas you had while typing.\n\nSpeaking eliminates that gap. You can brain-dump at actual thought speed. A 10-minute voice session produces 1,200 to 1,800 words of raw material ... more than enough for a week of posts, a newsletter draft, or documentation that used to take a full afternoon.\n\nThe edit from a transcript is fundamentally different from writing from scratch. You\'re cutting and shaping, not generating. For most builders, that\'s dramatically faster.',
+        type: 'prose'
+      },
+      {
+        heading: 'where it fits in the content workflow',
+        content: 'The loop: speak your idea ... Super Whisper transcribes ... you edit the transcript into whatever you\'re publishing.\n\nSpecific use cases that work well:\n\nReddit comments: speak your response to a post naturally, the way you\'d explain it to someone in person. Transcribe. Clean up filler words and false starts. Post. This is the highest-quality Reddit content workflow that doesn\'t get you called out for AI.\n\nLong-form drafts: 10-minute brain dump on a topic you know well gives you 1,500+ words to work with. Better than staring at a blank doc.\n\nSlack explanations: for complex technical explanations in async channels, speaking is faster and usually clearer than typing.\n\nDocumentation: speak the workflow as you\'re doing it, transcribe, clean. Faster than writing docs after the fact.',
+        type: 'pattern'
+      },
+      {
+        heading: 'the Reddit connection specifically',
+        content: 'Reddit is the one platform where AI-drafted content gets detected and punished most aggressively. Communities are suspicious, read carefully, and will call you out in replies.\n\nSuper Whisper is the bridge. It\'s technically AI-powered transcription ... Whisper is an OpenAI model ... but the content is 100% your words and your actual thinking. You\'re not generating ideas with AI. You\'re converting your voice to text.\n\nThat distinction matters. Reddit doesn\'t hate AI-assisted workflows. It hates AI-generated opinions that nobody actually holds. Speak your real take, transcribe it, clean it up ... and you have authentic content that passes every human test because it is human.',
+        type: 'pro-tip'
+      },
+      {
+        heading: 'voice-first beats blank page every time',
+        content: 'Writer\'s block is almost exclusively a text-first problem. Very few people get "talker\'s block." You don\'t freeze up when someone asks you to explain something you know ... you just explain it.\n\nSuper Whisper applies that to content creation. Instead of "what should I write about X," you ask yourself "how would I explain X to someone who\'s learning it?" Then you talk for three minutes. Then you edit.\n\nThe shift from generation to editing changes the emotional experience of content creation. Editing feels like progress. Staring at a blank text field feels like failure.',
+        type: 'prose'
+      },
+      {
+        heading: 'setup and real limitations',
+        content: 'Setup: download from superwhisper.app, install, set your keyboard shortcut for push-to-talk or toggle. Runs in the menu bar. Supports multiple languages. Works system-wide wherever your cursor is.\n\nActual limitations you\'ll hit:\n\nMac only. No Windows or Linux version. If you\'re not on Mac, this tool doesn\'t exist for you yet.\n\nMic quality matters. Built-in MacBook mic works. External mic or AirPods Pro is noticeably better for accuracy, especially in noisy environments.\n\nTranscription is literal. Filler words ("um," "like," "you know") come through. False starts come through. You need to edit the transcript, not just paste it. Budget 20-30% of your speaking time for cleanup.\n\nYou still have to think. Super Whisper transcribes whatever you say. If you ramble without a point, you get a rambling transcript. The tool removes the text-entry bottleneck, not the thinking bottleneck.',
+        type: 'anti-pattern'
+      },
+      {
+        heading: 'frequently asked questions',
+        content: 'Is it really private? Nothing leaves my device?\nYes. The Whisper model runs locally. No audio is sent to a server. This is different from most transcription services.\n\nDoes it work for non-English languages?\nYes. Whisper supports 99 languages with varying accuracy. English is strongest. Other major languages are reliable. Less common languages may have more errors.\n\nHow long does it take to get accurate transcriptions?\nImmediately, no training required. Unlike older voice dictation tools, Whisper doesn\'t need to learn your voice. It works well out of the box for most speakers.\n\nCan I use this on my phone?\nNot directly. Super Whisper is Mac-only. There are iOS apps built on Whisper but they\'re separate products with different privacy models.\n\nIs this better than just using ChatGPT to write my Reddit comments?\nCompletely different category. ChatGPT generates content that didn\'t come from you. Super Whisper transcribes content that did. The result is your actual thinking in text form, which is what Reddit communities are actually looking for.',
+        type: 'prose'
+      }
+    ],
+    related: ['platform-specific-ai-strategy', 'grok-as-scout-agent', 'voice-in-content-pipelines', 'reddit-strategy'],
+    difficulty: 'beginner',
+  },
+
+  /* ── ANALYTICS AND ALGORITHM INTELLIGENCE ────── */
+  {
+    id: "favikon-overview",
+    title: "favikon is how you see what the algorithm sees",
+    subtitle: "Creator analytics and ranking platform that turns social presence into a single score brands actually use.",
+    category: "tools",
+    description: "Favikon aggregates your LinkedIn, X, TikTok, Instagram, and YouTube presence into one creator score. Here's how to read it and use it.",
+    keywords: ["favikon", "creator score", "influence score", "creator analytics", "category ranking", "campaign value", "cross-platform analytics"],
+    difficulty: "beginner",
+    sections: [
+      {
+        heading: "what favikon actually is",
+        content: "Favikon is a creator analytics platform that aggregates your social presence across LinkedIn, X, TikTok, Instagram, and YouTube into a single creator profile. It's not a scheduling tool or a growth hack. It's a visibility layer ... brands, recruiters, and partnership teams use it to evaluate creators before reaching out.\n\nWhen someone searches for creators in a category, Favikon is often how they find and vet you. Your Favikon profile is a public-facing summary of your social footprint whether you've claimed it or not. Claiming it gives you control over which platforms are connected and which category you rank in.",
+        type: "prose"
+      },
+      {
+        heading: "the influence score (and what moves it)",
+        content: "Favikon scores creators out of 100 based on a mix of signals: engagement quality, follower count, content frequency, and cross-platform presence. The score isn't public in methodology but the levers are observable.\n\nEngagement quality matters more than raw follower count. A creator with 5K followers and a 4% engagement rate will often outscore one with 20K followers and 0.3% engagement. Consistency is scored too ... posting twice a week for three months moves the needle more than a viral post followed by silence.\n\nThe score is what brands look at when filtering creator lists. At 6-7K followers with strong engagement, expect a score in the 65-75 range depending on category. That range typically unlocks partnership conversations.",
+        type: "prose"
+      },
+      {
+        heading: "category rankings and why the category choice is the strategy",
+        content: "Favikon lets you rank within a category. Common ones: Sales and Marketing, Lead Generation, Growth, Entrepreneurship, Technology. Your global and country rank within that category is what shows on your profile.\n\nThe category you choose determines who you're competing against and what ranking is achievable. \"Sales and Marketing\" is crowded with every marketing influencer on the planet. \"Lead Generation\" or \"B2B Growth\" might have fewer creators but much better alignment if your content is tactical and demand-gen focused.\n\nSwitching from \"Sales and Marketing\" to \"Lead Generation\" can move your rank from 8,000th globally to 2,000th with zero new posts ... just better alignment between content and category. Check what your top posts are actually about, then pick the category that matches the content you already make.",
+        type: "pattern"
+      },
+      {
+        heading: "estimated campaign value",
+        content: "Favikon estimates what a sponsored post on your profile is worth. At 6-7K LinkedIn followers with above-average engagement, the estimate typically lands around $400-600 per post. At 15K+ with consistent content, that range moves to $1,200-2,500.\n\nThese numbers aren't what brands necessarily pay, but they set a floor for negotiation. If a brand offers $50 for a post and Favikon estimates your value at $500, you have data to push back with.\n\nThe estimates factor in platform, follower count, engagement rate, and content niche. LinkedIn posts are valued higher than X posts at the same follower count because the professional audience commands higher CPMs in brand budgets.",
+        type: "prose"
+      },
+      {
+        heading: "connecting platforms (and when not to)",
+        content: "Favikon combines connected platforms into one profile score. The aggregation can help or hurt depending on what you connect.\n\nIf a connected platform has strong engagement relative to followers, connect it ... it adds positive signal. If a platform has low followers AND low engagement (like a TikTok account you started but didn't stick with), wait to connect until you have traction. A 200-follower TikTok with 1% engagement can pull your overall profile score down.\n\nThe rule: connect platforms where your engagement rate is above 2%. Disconnect or don't connect platforms where you're still building. You can always add them later when the numbers improve.",
+        type: "pro-tip"
+      },
+      {
+        heading: "using favikon for competitor analysis",
+        content: "Search any creator or brand in Favikon to see their score, engagement rate, posting frequency, and top-performing content themes. This isn't about copying anyone ... it's about understanding what the algorithm rewards in your category.\n\nIf the top 10 creators in \"B2B Growth\" are posting 4x per week on LinkedIn and averaging 3.2% engagement, that's your calibration point. If they're all using document posts and carousels, the algorithm is signaling format preference.\n\nCheck your top competitors monthly. When their score drops, look at what changed in their posting behavior. When it rises, look at what they did differently. The pattern over time is more valuable than any single data point.",
+        type: "prose"
+      },
+      {
+        heading: "frequently asked questions",
+        content: "Q: Do I need to pay for Favikon to see my score?\nA: Basic profile and score visibility is free. Advanced analytics, competitor tracking, and campaign value estimates are behind a paid plan. Start free, upgrade when you're actively pursuing brand partnerships.\n\nQ: How often does Favikon update scores?\nA: Typically every few days to once a week depending on account tier. Don't check daily ... check weekly and look for directional trends.\n\nQ: Can I game the Favikon score?\nA: Not sustainably. The score reflects actual engagement. Buying followers tanks your engagement rate. Pod activity can inflate short-term but the system accounts for engagement quality over time.\n\nQ: What if Favikon has my profile wrong?\nA: Claim your profile and correct it. Categories, connected platforms, and profile info are all editable after claiming.",
+        type: "prose"
+      }
+    ],
+    related: ["algorithm-literacy", "linkedin-playbook", "x-algorithm", "content-pillars"]
+  },
+
+  {
+    id: "algorithm-literacy",
+    title: "understanding how algorithms read your content",
+    subtitle: "Every platform uses ML to decide who sees your posts. knowing the signals is the competitive edge.",
+    category: "platforms",
+    description: "LinkedIn, X, TikTok, Reddit all use different algorithmic signals. Understanding what each platform rewards lets you post smarter without gaming the system.",
+    keywords: ["algorithm", "engagement signals", "dwell time", "LinkedIn algorithm", "TikTok algorithm", "Reddit algorithm", "content distribution"],
+    difficulty: "intermediate",
+    sections: [
+      {
+        heading: "what the algorithm is actually doing",
+        content: "Every major social platform runs an ML model that decides how widely to distribute your content. The model is trained on what keeps users on platform longest and coming back most often. When your content produces those outcomes, the algorithm distributes it more. When it doesn't, distribution stops.\n\nUnderstanding this changes how you think about posting. You're not trying to trick the algorithm. You're trying to produce content that genuinely keeps people engaged ... which turns out to be the same thing as producing good content. The overlap between \"what algorithms reward\" and \"what audiences actually want\" is larger than most creators think.",
+        type: "prose"
+      },
+      {
+        heading: "LinkedIn algorithm signals",
+        content: "LinkedIn's distribution model weights these signals in roughly this order:\n\nDwell time: how long someone stops scrolling on your post. A 600-word post with a strong hook that people read fully beats a 100-word post that people scroll past in two seconds. LinkedIn can detect when someone pauses versus when they skip.\n\nEarly engagement velocity: comments in the first 60-90 minutes after posting have outsized impact. LinkedIn interprets early engagement as a quality signal and widens distribution in response. This is why posting when your audience is online matters more than most other timing advice.\n\nComment depth: replies to comments (threaded discussions) signal richer engagement than single comments. Responding to every comment in your first hour isn't just good manners ... it's algorithmic fuel.\n\nPosting cadence: LinkedIn rewards accounts that post consistently. Going from 3x per week to 1x per week signals lower priority and distribution drops. Going from 0 to 3x signals new activity and can get an early boost.",
+        type: "pattern"
+      },
+      {
+        heading: "X/Twitter algorithm signals",
+        content: "X's algorithm changed significantly with the Elon-era changes but the core engagement signals remain: engagement rate relative to follower count, reply thread depth, retweet and quote velocity, and topic relevance to follower interests.\n\nX rewards accounts that generate conversation, not just consumption. A tweet with 50 replies and 20 retweets on an account with 2K followers will get broader distribution than a tweet with 200 likes and 5 replies on an account with 10K followers. The ratio matters more than the raw number.\n\nX also rewards Premium subscribers with additional distribution ... this is a documented algorithmic boost, not speculation. Long-form posts (the \"article\" format) are being pushed by X as a platform feature and get algorithmic support as a result.\n\nEngagement rate on your last 10-20 posts affects how the next post is initially seeded. Consistent 2%+ engagement keeps the baseline distribution high.",
+        type: "pattern"
+      },
+      {
+        heading: "TikTok algorithm signals (the watch time model)",
+        content: "TikTok's algorithm is the most transparent in terms of what it rewards: watch time percentage. If people watch 80% of your video on average, TikTok distributes it aggressively. If they watch 20%, distribution stops after the initial seed.\n\nThe critical difference from every other platform: TikTok does not care about your follower count for initial distribution. Every video gets seeded to a test group of 200-500 users regardless of whether you have 100 or 100,000 followers. Watch time in that test group determines whether it gets pushed to a larger pool.\n\nReplay rate is the second-biggest signal. Videos people rewatch signal high value. This is why short, dense, replayable content does well on TikTok even when longer videos perform better on LinkedIn.\n\nShares push TikTok distribution harder than any other interaction. A video shared to someone's DMs counts. A video saved to a collection counts. These off-platform signals tell TikTok the content has real value beyond passive entertainment.",
+        type: "pattern"
+      },
+      {
+        heading: "Reddit algorithm and why it's different",
+        content: "Reddit's algorithm is the most anti-manipulation system of the major platforms. It weights upvote/downvote ratio, comment velocity, community karma, and account age ... but it also actively penalizes suspected bot behavior and cross-posting patterns that look like coordinated promotion.\n\nReddit users, not the algorithm, are the primary gatekeepers. Post something that feels promotional or AI-generated in a subreddit and the downvotes come fast. The algorithm then deprioritizes the post and sometimes the account. This is different from every other platform where bad content just doesn't get distribution ... on Reddit, bad content can actively hurt your standing.\n\nThe account age and karma system means you can't just create an account and start posting self-promotional content. Subreddits track account age and karma minimums. r/entrepreneur requires 30+ days account age and positive karma to post. Building Reddit presence is a 3-6 month project, not a week.",
+        type: "pattern"
+      },
+      {
+        heading: "favikon as a weekly algorithm feedback loop",
+        content: "Your Favikon score and category ranking change weekly based on engagement trends. Treating it as a weekly check-in creates a feedback loop: post, check score movement, identify what changed, adjust.\n\nScore dropped? Look at your engagement rate from the past two weeks. Usually it's a dip in comment volume or posting frequency. Score rose? Find which posts drove above-average engagement and look for the pattern ... was it the format, the topic, the time of day?\n\nFavikon also shows your engagement rate trend over time, not just the current number. A rising engagement rate even at lower follower count signals to both the algorithm and the Favikon score that your content is improving. That's the metric worth tracking more than follower count in the first 6-12 months.",
+        type: "prose"
+      },
+      {
+        heading: "frequently asked questions",
+        content: "Q: Should I use pods (engagement groups) to boost early engagement?\nA: Pods can trigger the early engagement signal on LinkedIn but the quality signal matters too. Irrelevant comments from pod members don't generate replies or dwell time, which limits the downstream boost. Genuine peer networks where members actually read and comment are more effective and lower risk.\n\nQ: Do platform-native formats actually get algorithmic boosts?\nA: Yes, documented on LinkedIn (newsletters, document posts) and TikTok (trending sounds, duet/stitch). Platforms want adoption of new features and reward early users with distribution. Not permanent, but real.\n\nQ: How often should I post to each platform?\nA: LinkedIn: 3-5x per week for growth, 1-2x to maintain. X: daily or near-daily. TikTok: 5-7x per week minimum for growth phase. Reddit: 2-3x per week per relevant subreddit, never pure self-promotion.\n\nQ: Does posting time matter?\nA: Less than consistency, more than most people think. LinkedIn peaks 7-9am and 12-1pm in your audience's primary timezone. TikTok is more forgiving because of how it seeds content to test groups. Reddit varies heavily by subreddit.",
+        type: "prose"
+      }
+    ],
+    related: ["favikon-overview", "linkedin-playbook", "x-algorithm", "tiktok-playbook", "reddit-strategy"]
+  },
+
+  /* ── CONTENT OS ──────────────────────────────── */
+  {
+    id: "content-os-full-stack",
+    title: "the content OS tool stack (what we actually use and why)",
+    subtitle: "Every tool in the stack creates, distributes, or measures content. if it doesn't do one of those, it doesn't belong.",
+    category: "workflows",
+    description: "The full tool stack behind an AI-native content operation: AI layer, creation layer, distribution layer, analytics, and infrastructure. What each tool does and why it's in the stack.",
+    keywords: ["content OS", "tool stack", "Claude Code", "Cursor IDE", "content automation", "creator tools", "AI content workflow"],
+    difficulty: "intermediate",
+    sections: [
+      {
+        heading: "the AI layer",
+        content: "Claude is the primary AI for long-form writing, code generation, system design, and anything requiring sustained reasoning. The context window and instruction-following make it reliable for complex workflows that can't afford hallucinations.\n\nChatGPT handles project organization, API integration brainstorming, and quick iterative tasks. The project memory feature is useful for storing persistent context that doesn't need to be rebuilt each session.\n\nGrok is the social scout. It has real-time X access and a personality that's calibrated for understanding what's actually trending versus what just looks like it's trending. Use it to monitor what conversations are happening before writing takes on a topic.\n\nMidjourney handles character art and brand visuals. The Nio character and brand visual system were built in Midjourney. ElevenLabs handles voice generation when audio content is in the pipeline. The quality gap between ElevenLabs and other TTS tools is still significant.",
+        type: "prose"
+      },
+      {
+        heading: "the creation layer",
+        content: "Cursor IDE is an AI-native code editor with inline completions, codebase-aware chat, and debugging. It's where interactive building happens ... when you want to write code alongside AI explanation and iteration.\n\nClaude Code CLI is the automated layer. It runs as an agent in your terminal, reads your entire repo, writes code, runs tests, and commits. The nightly cron pipeline uses Claude Code to run automated content builds and repo management while you sleep. It's the difference between AI as a tool you use and AI as a system that runs.\n\nSuper Whisper is voice-to-text drafting. Talking through a post idea and editing the transcript is 3-4x faster than writing from scratch for most people. The quality of modern voice recognition means transcript cleanup takes under a minute for a 500-word post.\n\nCanva handles quick graphics and social templates. VEED does video editing and auto-subtitles for longer content. CapCut is TikTok and Reels specific ... the built-in template library and trending audio integration are worth the context switch from a more general editor.",
+        type: "prose"
+      },
+      {
+        heading: "the distribution layer",
+        content: "LinkedIn is the primary platform. 6.7K+ followers, long-form tactical content, 3-5x per week cadence. The audience skews B2B decision-makers and practitioners which makes it the highest-value distribution channel for any business-adjacent content.\n\nX is an expanding channel for short-form takes and real-time commentary. The strategy is complementary to LinkedIn, not competitive ... LinkedIn for depth, X for speed and conversation.\n\nTikTok is video-first builder content. The platform's algorithm doesn't punish low follower count the way LinkedIn does, so it's a viable growth channel even at 0 followers if the content quality is there.\n\nReddit is the authentic community participation channel. Not self-promotion, not link dropping ... genuine participation in subreddits where the content is useful. r/entrepreneur, r/SaaS, r/marketing for the primary audience. The karma and account age requirements mean this is a long-term build, but the trust signals from Reddit traffic are high quality.",
+        type: "prose"
+      },
+      {
+        heading: "the analytics and infrastructure layer",
+        content: "Favikon is the cross-platform creator analytics layer. Weekly check-in on influence score, category ranking, and engagement rate trends. It's the feedback loop that tells you whether the algorithm is rewarding what you're building.\n\nThe infrastructure is a Next.js 15 monorepo running three sites from one codebase. Shared components and utilities mean a component built once works across all three sites. Vercel handles deployment ... push to main, site is live. The CI/CD pipeline runs automatically.\n\nSQLite runs locally for data that doesn't need to be in the cloud. The nightly cron pipeline queries it for content ops data, logs results back, and produces automated reports. The database grows more useful over time as patterns accumulate.",
+        type: "prose"
+      },
+      {
+        heading: "on notetakers and second brain tools",
+        content: "Obsidian handles personal knowledge management. Local-first, markdown files, graph view that shows connections between notes. The bidirectional linking is the feature ... connect a note about content strategy to a note about a specific tool and the graph surfaces those relationships visually. Your data lives on your machine, no cloud dependency.\n\nNotion with MCP handles team collaboration and structured databases. The MCP integration means Claude can read and write to your Notion workspace directly, turning a passive wiki into an active workflow component. Ask Claude to check your content ideas database before suggesting topics for the week and it will.\n\nThe key rule for notetakers: one primary system you actually use beats two half-used systems. Pick Obsidian if you think in freeform and want a knowledge graph. Pick Notion if you think in structured tables and need team access. Use Apple Notes for quick mobile captures that get processed into the primary system later.",
+        type: "prose"
+      },
+      {
+        heading: "building your own OS vs. third-party tools",
+        content: "Tools like Typefully, Later, and Taplio exist and have their place when you're starting. Scheduling tools abstract away distribution mechanics that are worth understanding before you automate them. Use them until you understand what they're doing, then decide whether to keep them or replace with something custom.\n\nThe more you build your own operating system, the less you need external tools. The shift is from AI as a drafting assistant to AI as a version control system for your thinking. Hundreds of drafts exist in the pipeline but content comes naturally once you've internalized the patterns at a system level ... the AI stops generating ideas and starts executing them.\n\nThe test for any new tool: does it create, distribute, or measure content? If yes, evaluate it. If no, don't add it. Tool sprawl is a real productivity cost. The OS is the system connecting the tools, and complexity in the system creates maintenance overhead that eventually exceeds the value of the tool that created it.",
+        type: "prose"
+      },
+      {
+        heading: "frequently asked questions",
+        content: "Q: Is this stack too expensive for someone starting out?\nA: The free tier of most tools here is functional for at least 6 months of building. Claude (free tier), Cursor (free tier), Canva (free), Favikon (free profile). The paid tools that matter first: Claude Pro for longer context, Cursor Pro for codebase chat. Everything else scales when revenue justifies it.\n\nQ: Do I need all of these tools?\nA: No. Start with one AI tool, one creation tool, one platform. Add tools when you hit a specific constraint, not because the stack sounds impressive.\n\nQ: What's the most underrated tool in this stack?\nA: Super Whisper. The combination of voice drafting and Claude editing removes the blank page problem entirely. Talking is faster than typing and the transcript gives Claude something concrete to work from.\n\nQ: How long did it take to build this OS?\nA: About 18 months of iterative addition and subtraction. Some tools looked essential and got cut. The current stack is stable because every remaining tool has a clear function that nothing else in the stack handles.",
+        type: "prose"
+      }
+    ],
+    related: ["recursive-content-flow", "repo-content-system", "content-skills", "platform-specific-ai-strategy"]
+  },
+
+  /* ── EXPANDED SLOP DETECTION ─────────────────── */
+  {
+    id: "ai-slop-detector-expanded",
+    title: "the expanded AI slop index (every pattern, every tell)",
+    subtitle: "Comprehensive reference for detecting and removing AI slop before it ships.",
+    category: "voice",
+    description: "The full indexed reference for AI slop detection: word swaps, tell phrases, 2026 pattern updates, NPC vocabulary, and a scoring rubric for when to rewrite vs. patch.",
+    keywords: ["AI slop", "slop detection", "content voice", "AI writing tells", "NPC content", "editing checklist", "authentic content"],
+    difficulty: "intermediate",
+    sections: [
+      {
+        heading: "what AI slop actually is",
+        content: "Slop is content that reads like it was generated by AI and posted without human editing. It's not just about specific words ... it's about the absence of a real person's perspective, specificity, and judgment.\n\nAudiences develop detection skills faster than AI improves at mimicking humans. The window where polished AI output could pass for human writing is already closing. Posting slop now doesn't just underperform ... it actively erodes trust and signals you don't care enough to edit.\n\nThe Rem character on thecontentos.ai is the slop detection guardian. She scans content for these tells before it publishes. The goal isn't perfect AI-free writing. The goal is content that sounds like a real person chose these words for a real reason. That's the bar.",
+        type: "prose"
+      },
+      {
+        heading: "the slop word index",
+        content: "These words appear constantly in AI output because they were common in training data. Swap them for the specific alternative.\n\nleverage ... use\ninnovative ... new, useful, different\ncutting-edge ... current, newest\nrevolutionize ... change, improve, shift\nseamless ... smooth, easy, frictionless\ncomprehensive ... full, complete, thorough\nrobust ... strong, solid, reliable\nsynergy ... working together, combined effect\nempower ... enable, help, let\nutilize ... use\nstreamline ... simplify, cut steps\nparadigm ... model, approach, framework\necosystem ... system, community, space\nstakeholders ... people involved, the team, customers\nbest-in-class ... top, leading, strongest\ndisruptive ... different, category-changing\nscalable ... grows with you, handles volume\nvalue-add ... bonus, benefit, extra\ngame-changer ... significant shift, big move\nthought leader ... expert, practitioner, voice\nholistic ... full-picture, end-to-end\nproactive ... early, ahead of it, before it happens\nactionable ... practical, usable, specific\nimpactful ... effective, meaningful, high-ROI\ndeep dive ... breakdown, analysis, walkthrough\nunpack ... explain, break down, walk through\nlandscape ... space, market, category\nnavigate ... work through, handle, manage\ndouble down ... focus on, commit to, go harder on\nnext-level ... better, advanced, stronger",
+        type: "pattern"
+      },
+      {
+        heading: "AI tell phrases",
+        content: "These phrases signal AI authorship not because they're bad words but because they appear in AI output at statistically impossible rates. Real humans vary their transitions. AI uses the same 30.\n\n\"It's worth noting\" ... just say the thing\n\"Let's dive in\" ... just start\n\"Interestingly enough\" ... just say what's interesting\n\"I'm excited to\" ... just do it\n\"game-changing\" ... say what changed and how\n\"In conclusion\" ... just conclude\n\"without further ado\" ... just begin\n\"buckle up\" ... never\n\"spoiler alert\" ... never in professional content\n\"not gonna lie\" ... signals false authenticity\n\"the reality is\" ... narrator setup, cut it\n\"at its core\" ... filler, cut it\n\"the bottom line\" ... just say the bottom line\n\"Here's the thing\" ... narrator setup, cut it\n\"In today's\" ... cuts to lazy contextualizing\n\"It's no secret\" ... authority setup, cut it\n\"As we all know\" ... condescending, cut it\n\"In this day and age\" ... always cut\n\"It goes without saying\" ... then don't say it\n\"At the end of the day\" ... overused to the point of meaninglessness\n\"When it comes to\" ... filler, restructure the sentence\n\"Needless to say\" ... then don't say it\n\"Moving forward\" ... just say what happens next\n\"One thing is clear\" ... authority signal, cut it",
+        type: "pattern"
+      },
+      {
+        heading: "2026 pattern updates",
+        content: "The original slop list was built on 2023-2024 AI patterns. The 2026 update adds patterns that emerged as AI writing evolved.\n\nThe negation list pattern: \"I built this. Not of hope. Not of luck. Not of privilege.\" ... this is AI trying to sound philosophical by stacking negations for dramatic effect. No human talks like this naturally. The tell is the rhythm: deny X, deny Y, deny Z, then reveal the \"real\" answer. Cut it entirely or rephrase as a single honest statement.\n\nThe exhaustive negation: \"Not because of X, not because of Y, but because of Z\" ... three-part structure where the first two are strawmen constructed to make the third point land harder. AI uses this constantly in LinkedIn posts and newsletter openers. If you find yourself writing \"not because,\" check whether you're actually adding information or just building a rhetorical structure.\n\nThe NPC comment pattern: generic engagement comments that could have been left by anyone on any post. \"Great post! Really resonated with me.\" ... that's NPC energy. It sounds like a scripted character because it is. When VAs run AI to generate comments at scale, every comment sounds identical because they're all running the same prompt with zero persona.\n\nLinkedIn quotation rephrasing: starting a comment by quoting a rephrase of the post in quotation marks. \"Your point about X really highlights Y.\" ... humans react, add, challenge, or share a story. They don't summarize in quotation marks. This pattern is AI trying to signal comprehension by parroting back the content.",
+        type: "pattern"
+      },
+      {
+        heading: "the NPC vocabulary",
+        content: "NPC = non-playable character. In gaming, these are scripted characters that follow fixed dialogue trees regardless of what you do. In content, NPC energy is the same thing: using the same phrases everyone else uses, commenting identically on every post, creating content that could have been written by literally anyone.\n\nSigns you're posting as an NPC: your comments are interchangeable with any other commenter on the post. You use \"love this\" and \"great insight\" as complete responses. Your posts could have anyone's name on them and nothing would change. You're running a VA who's running ChatGPT who's running on autopilot with no persona injection.\n\nThe NPC vocabulary: \"love this,\" \"so true,\" \"couldn't agree more,\" \"this is gold,\" \"dropping this here,\" \"came here to say this,\" \"need to save this,\" \"sharing this everywhere,\" \"this is exactly what I needed,\" \"preach.\"\n\nThe fix is simple but not easy: speak from your actual experience. If you agree with a post, say what specifically you agree with and why, based on something real you've encountered. If a post made you think of something, say the thing. Super Whisper helps because talking forces you to use your actual words rather than reaching for a phrase that sounds appropriate.",
+        type: "anti-pattern"
+      },
+      {
+        heading: "scoring and detection",
+        content: "The accumulation rule: 3+ slop flags in a single piece means rewrite, not patch. Individual patterns can occasionally survive in context. Stack them and the piece loses its voice entirely. Patching stacked slop is like painting over rust ... the problem is still there.\n\nQuick scan checklist (run in order):\n\n1. Search the document for em-dashes. Delete all of them. Replace with \" ...\" (space, three dots) or restructure the sentence. Em-dashes are the single most reliable AI tell in 2025-2026 content.\n\n2. Search for authority phrases and narrator setups: \"Here's the thing,\" \"Let me be clear,\" \"The reality is,\" \"The truth is.\" Cut or restructure.\n\n3. Check for negation list patterns. If you see three consecutive sentences starting with \"Not\" or \"No,\" rewrite as a single direct statement.\n\n4. Check the opening and closing. AI often bookends content with a summary sentence at the top and a restatement at the bottom. If the first sentence restates the headline and the last sentence restates the first, cut both.\n\n5. Count parallel sentence structures in any five-sentence block. Two parallel structures can be intentional. Three or more in a row is almost always AI rhythm.\n\n6. Read it out loud. If it sounds like a keynote speaker performing expertise for an audience, it's slop. If it sounds like you explaining something to a builder friend at a coffee shop, it's content.",
+        type: "formula"
+      },
+      {
+        heading: "frequently asked questions",
+        content: "Q: Is all AI-assisted content slop?\nA: No. Slop is the result of not editing, not of using AI. AI-drafted content that goes through genuine human editing ... where the human's perspective, specificity, and judgment shape the final piece ... is not slop. The authorship question is less important than the authenticity question.\n\nQ: How do I know if my content passes?\nA: The simplest test: could you defend every sentence in this piece from your own experience? If you wrote something you've never actually encountered or done, that's where slop creeps in.\n\nQ: What about the Rem AI slop checker on thecontentos.ai?\nA: Rem runs a subset of these checks automatically before content publishes. She flags accumulation and the most common tells. She doesn't catch everything ... the read-aloud test and your own judgment are still the final gate.\n\nQ: Can you over-edit to remove all AI patterns and make content worse?\nA: Yes. Cutting every parallel structure makes writing choppy. The goal is human judgment applied to AI output, not sanitizing all structure out of the piece. Keep what's working, cut what's performing authenticity rather than achieving it.",
+        type: "prose"
+      }
+    ],
+    related: ["ai-slop-guide", "anti-patterns", "voice-system", "commenting-strategy", "pre-publish-checklist"]
+  },
+
+  /* ── DEVELOPMENT AND TOOLS ───────────────────── */
+  {
+    id: "repos-and-skills-for-builders",
+    title: "the repos and skills you actually need to build AI-powered apps",
+    subtitle: "You don't need to be a senior developer. you need repos, basic CLI, and how to work with AI coding assistants.",
+    category: "workflows",
+    description: "The minimal skill set for building production AI apps: git fundamentals, Next.js, Vercel, Claude Code CLI, and Cursor. What to learn first and what to skip.",
+    keywords: ["builder skills", "git basics", "Next.js", "Vercel deployment", "Claude Code", "Cursor IDE", "monorepo", "MCP"],
+    difficulty: "beginner",
+    sections: [
+      {
+        heading: "the stack reality",
+        content: "The barrier to building production AI apps dropped significantly in 2024-2025. AI coding assistants can write code you don't fully understand yet, which means you can build things before you understand all of them. That's a feature, not a cheat.\n\nWhat you actually need: the ability to run terminal commands without panicking, basic understanding of what a repository is and why it exists, and enough Next.js familiarity to understand what you're reading when Claude explains it. The rest you learn while building.\n\nWhat you don't need to learn first: Docker, Kubernetes, AWS infrastructure, advanced TypeScript generics, database optimization, or system architecture theory. Learn those when a specific problem requires them. Build something first.",
+        type: "prose"
+      },
+      {
+        heading: "git fundamentals for builders",
+        content: "Git is version control. It tracks every change to your code so you can undo mistakes and collaborate without overwriting each other's work. The five commands that cover 90% of daily use:\n\ngit status ... see what files have changed\ngit add <filename> ... stage a file for commit\ngit commit -m \"what you did\" ... save a checkpoint\ngit push ... send your changes to GitHub\ngit pull ... get the latest changes from GitHub\n\nThe other 10%: git log (see history), git branch (create a parallel version), git checkout (switch between branches), git merge (combine branches). You'll learn these when you need them.\n\nOne rule: never commit .env files. They contain API keys and credentials. Add .env to your .gitignore file and it will be excluded automatically. If you accidentally commit one, rotate the key immediately ... it's now public.",
+        type: "prose"
+      },
+      {
+        heading: "monorepo architecture",
+        content: "A monorepo is one repository that contains multiple projects. The shawnos.ai setup runs three separate websites from one codebase. Shared components (navigation, buttons, utility functions) live once and all three sites use them. Update the component once and all sites get the update on next deploy.\n\nTurborepo and Nx are the two main monorepo management tools. Turborepo is simpler for most builders and has excellent Vercel integration (they're the same company). Nx has more advanced features that become relevant at team scale.\n\nThe practical benefit: if you're building more than one site or app, start with a monorepo structure even if it feels like overkill. Migrating into a monorepo later is painful. Starting in one and having everything connected from day one is a significant time saver.",
+        type: "prose"
+      },
+      {
+        heading: "Next.js, Vercel, and the deploy pipeline",
+        content: "Next.js is the production framework for this stack. Server components handle data fetching without exposing API keys to the browser. API routes let you build backend logic without a separate server. The app router is the current standard ... use it for any new project.\n\nThe docs at nextjs.org are genuinely good. The \"Learn Next.js\" tutorial at nextjs.org/learn takes about 4-6 hours and covers 80% of what you need for production apps. Do the tutorial before trying to build anything complex.\n\nVercel is the deployment layer. Connect your GitHub repo and every push to main automatically builds and deploys your site. No configuring CI/CD pipelines, no managing servers. The free tier handles most personal projects. The killer feature for Next.js is edge functions ... serverless functions that run close to users globally with no configuration.\n\nDeploy cadence matters for learning. The tightest feedback loop is: write code locally, push to GitHub, watch Vercel build logs, see the result live. That loop should take under 2 minutes. If it's taking longer, something in the pipeline needs fixing.",
+        type: "prose"
+      },
+      {
+        heading: "Claude Code CLI and Cursor (the AI layer)",
+        content: "Claude Code CLI is an AI agent that lives in your terminal and operates on your entire codebase. Unlike a chat interface where you paste code snippets, Claude Code reads all your files, understands the architecture, and can write code that fits your existing patterns. It can run tests, commit changes, and manage the repo.\n\nThe nightly cron pipeline uses Claude Code to run automated content operations while you sleep. A cron job triggers Claude Code, it reads the repo state, executes the task (generating content, updating data files, running reports), commits the results, and pushes. No human in the loop.\n\nCursor IDE is the interactive complement to Claude Code. When you want to write code alongside AI explanation and iteration, Cursor is the environment. The codebase-aware chat can explain any file, suggest refactors, and debug errors in context. The inline completions are faster than switching to a chat window.\n\nMCP (Model Context Protocol) is the protocol that lets AI agents connect to external tools: browsers, databases, APIs, task managers. MCP servers expose capabilities that Claude Code and Cursor can call. The multi-agent system runs on MCP connections between tools ... Claude Code coordinates with Playwright for browser automation, with Notion for knowledge base updates, with Attio for CRM operations.",
+        type: "prose"
+      },
+      {
+        heading: "the learning path",
+        content: "The sequence that minimizes wasted time:\n\n1. Git basics: commit, push, pull, .gitignore. One afternoon. Use GitHub's own tutorial or the git-scm.com book's first three chapters.\n\n2. Next.js tutorial: nextjs.org/learn. Do the whole thing. 4-6 hours. Build the demo app.\n\n3. Deploy something: take your tutorial app, connect it to Vercel, push to GitHub, watch it deploy live. This step matters for confidence.\n\n4. Add Claude Code: install the CLI, run it on your repo, ask it to add a feature. Watch how it reads the codebase and writes code that fits.\n\n5. Build a real feature: something you actually want. The tutorial app won't teach you what building for yourself teaches you.\n\nThe learning trap to avoid: spending weeks on documentation before writing any code. The documentation is for when you're stuck, not for prereading. Build, break, get stuck, look it up. That sequence is faster than the alternative.",
+        type: "prose"
+      },
+      {
+        heading: "frequently asked questions",
+        content: "Q: Do I need to know JavaScript before TypeScript?\nA: TypeScript is JavaScript with types added. Most tutorials start with JavaScript fundamentals and layer TypeScript on top. If you're starting from zero, the JavaScript.info tutorial is the best free resource. Give it 2-3 weeks of daily practice before jumping into Next.js.\n\nQ: What about backend and databases?\nA: Next.js API routes handle most backend needs for early-stage apps. For data, start with SQLite locally (zero config) and Supabase (Postgres with a free tier) when you need a hosted database. Skip self-hosted Postgres and ORMs until you have a specific problem that requires them.\n\nQ: How much does this stack cost to run?\nA: GitHub (free for public repos), Vercel (free tier covers most personal projects), Claude Code (subscription), Cursor (free tier is functional, $20/month Pro). Total for a real production stack: $20-40/month.\n\nQ: Can I build a production app without any coding knowledge?\nA: Claude Code and Cursor can write most of the code but you need enough literacy to understand what's happening, debug when things break, and make architectural decisions. The minimum viable coding knowledge is: read TypeScript and understand it, run terminal commands, read error messages and know where to look for help.",
+        type: "prose"
+      }
+    ],
+    related: ["content-os-full-stack", "repo-content-system", "content-skills", "content-mcps"]
+  },
+
+  {
+    id: "notetaker-tools",
+    title: "notetaker tools and second brain systems for builders",
+    subtitle: "The tool doesn't matter as much as having ONE system you actually use.",
+    category: "tools",
+    description: "Obsidian, Notion, and Notion MCP for building a second brain as a creator and developer. When to use each, how to connect them to AI, and the one rule that makes them work.",
+    keywords: ["Obsidian", "Notion", "second brain", "knowledge management", "Notion MCP", "notetaking", "PKM"],
+    difficulty: "beginner",
+    sections: [
+      {
+        heading: "the problem with builder ideas",
+        content: "Builders have ideas constantly. In the shower, on walks, driving, at 2am when something clicks. The problem isn't idea generation ... it's capture and retrieval. Most ideas evaporate within 15 minutes because there's no frictionless place to put them.\n\nA second brain system is a capture-plus-retrieval infrastructure. Capture is the act of recording the idea before it disappears. Retrieval is finding it again when it's actually useful, which is usually days or weeks later when you're working on something related.\n\nThe tool matters less than the habit. A consistent Apple Notes practice beats an elaborate Obsidian vault you only open twice a month. Pick the simplest system you'll actually maintain, then upgrade when the simplicity creates a real constraint.",
+        type: "prose"
+      },
+      {
+        heading: "Obsidian",
+        content: "Obsidian is a local-first note-taking app built on markdown files. Every note is a plain text file on your machine. No cloud dependency, no subscription required for the core app, and your data is portable to any other system.\n\nThe killer feature is bidirectional linking. Write [[content-strategy]] in any note and it creates a link to a note called \"content-strategy.\" Both notes then know they're connected. The graph view visualizes all these connections ... over time you can see clusters of related thinking emerge that you didn't consciously plan.\n\nThe plugin ecosystem is extensive. Dataview lets you query your notes like a database (\"show me all notes tagged #content-idea created in the last 30 days\"). Templater lets you define note templates for recurring capture types. Daily notes give you a dated journal for daily thinking.\n\nThe tradeoff: Obsidian rewards investment. The more you use it and link between notes, the more valuable it becomes. The first week feels like overhead. Month three it becomes a genuine thinking tool.",
+        type: "prose"
+      },
+      {
+        heading: "Notion",
+        content: "Notion is structured databases plus documents plus collaboration. The difference from Obsidian is the structure ... Notion thinks in tables, kanban boards, and relational databases. You can have a content ideas database with properties like \"platform,\" \"status,\" \"publish date,\" and \"draft link\" and filter and sort it like a spreadsheet.\n\nFor team use, Notion has no competition at this price point. Shared wikis, project trackers, and meeting notes all in one place with real-time collaboration. Obsidian's collaboration features are minimal.\n\nThe tradeoff: Notion's flexibility comes with overhead. It's easy to spend an hour building a beautiful system that you then don't actually use for capture because pulling up Notion on mobile is slower than Apple Notes. Use Notion for structured project tracking and team wikis. Use something frictionless for first-capture.",
+        type: "prose"
+      },
+      {
+        heading: "Notion MCP",
+        content: "MCP (Model Context Protocol) is the protocol that lets AI agents like Claude Code and Cursor connect to external tools. The Notion MCP integration means Claude can read and write to your Notion workspace directly during a coding session.\n\nPractical example: you have a content ideas database in Notion. Before starting a content planning session with Claude Code, it queries the database for unprocessed ideas, checks what topics you've already covered in the last 30 days, and factors that into its suggestions. Your passive knowledge base becomes an active input to your AI workflow.\n\nSetting it up: install the Notion MCP server, connect it with your Notion API key, and configure it in your Claude Code or Cursor settings. The Notion integration page in your workspace settings generates the API key. The MCP server configuration goes in your .claude or Cursor settings file. Once connected, you can ask Claude to \"add this to my content ideas database\" and it happens without you switching apps.",
+        type: "prose"
+      },
+      {
+        heading: "when to use what",
+        content: "Obsidian: personal knowledge graph, freeform thinking, research notes, long-term idea development. Use when you want to connect ideas over time and see patterns emerge. Best for solo, local-first workflows.\n\nNotion: team wikis, structured project tracking, content calendars, any data that benefits from database views and filtering. Use when you need collaboration or structured data relationships.\n\nApple Notes: quick mobile captures, voice memo transcripts, things that need to be recorded in under 10 seconds. Process into your primary system later ... Apple Notes is the inbox, not the archive.\n\nThe one rule that makes all of these work: pick one primary system and process everything else into it. Two half-used systems are worse than one committed system because you never know which one has the note you're looking for. Obsidian and Notion together works only if you have a clear rule about what goes where and you enforce it consistently.",
+        type: "prose"
+      },
+      {
+        heading: "frequently asked questions",
+        content: "Q: Is Obsidian free?\nA: The core app is free forever. Sync (encrypted cloud sync across devices) is $4/month. Publish (hosting your vault as a website) is $8/month. The free version is fully functional for personal use with manual backup.\n\nQ: Does Notion have a free tier?\nA: Yes. The free tier supports unlimited pages and blocks for individuals. Team features (collaborative workspaces, advanced permissions) require a paid plan. The free tier is enough to evaluate it.\n\nQ: I already use Apple Notes. do I need to switch?\nA: Only if Apple Notes is creating a specific problem. If you can find your notes when you need them and you're actually capturing ideas in it, it's working. Upgrade to Obsidian or Notion when the lack of cross-linking or structure is visibly slowing you down.\n\nQ: How do I set up Notion MCP?\nA: The Notion developer portal at developers.notion.com generates your API key. Search for \"Notion MCP server\" on GitHub for the open source server implementation. Configuration instructions are in the README. The setup takes about 20 minutes for someone comfortable with terminal commands.\n\nQ: Can Obsidian connect to AI tools like Notion MCP can?\nA: Not as natively. There are community plugins for AI integration (Smart Connections, Text Generator) but the MCP ecosystem is more mature around Notion. If AI-first workflow integration is important, Notion has an edge.",
+        type: "prose"
+      }
+    ],
+    related: ["content-os-full-stack", "repos-and-skills-for-builders", "content-mcps", "content-skills"]
+  }
 ]

@@ -60,6 +60,39 @@ const AI_TELLS: { phrase: string; fix: string }[] = [
   { phrase: 'the reality is', fix: 'Assert it directly, no preamble.' },
   { phrase: 'at its core', fix: 'Just describe the core thing.' },
   { phrase: 'the bottom line', fix: 'Lead with the conclusion, skip the label.' },
+  { phrase: "Here's where it gets interesting", fix: 'If it is interesting, the content shows it.' },
+  { phrase: "But here's the part where", fix: 'Dramatic framing. State what happened.' },
+  { phrase: "And that's when it clicked", fix: 'Show the insight directly, skip the narration.' },
+  { phrase: 'Want to know the crazy part', fix: 'Just say the part. Let the reader decide if it is crazy.' },
+  { phrase: 'This is what I call', fix: 'Self-branded concepts. Just explain it.' },
+  { phrase: 'The shift sounds simple', fix: 'Show why it is hard with a specific example instead.' },
+  { phrase: "I don't have all the answers", fix: 'Humble brag disclaimer. Share your take or do not.' },
+  { phrase: 'Great post! Really resonated', fix: 'NPC energy. Say what specifically resonated and why.' },
+  { phrase: "couldn't agree more", fix: 'NPC energy. Add what you would add, not agreement.' },
+  { phrase: 'Your point about', fix: 'LinkedIn quotation rephrase. React, add, or challenge instead.' },
+]
+
+const NPC_PATTERNS = [
+  'love this',
+  'so true',
+  'this is gold',
+  'dropping this here',
+  'came here to say this',
+  'need to save this',
+  'sharing this everywhere',
+  'this is exactly what I needed',
+  'preach',
+  'great insight',
+  'well said',
+  'spot on',
+  'nailed it',
+  'fire post',
+  'take my follow',
+]
+
+const NEGATION_PATTERNS = [
+  /not (?:of|because of|about|for) \w+[.,]\s*not (?:of|because of|about|for) \w+[.,]\s*(?:not (?:of|because of|about|for) \w+[.,]\s*)?(?:but |because )/gi,
+  /(?:Not \w+\.\s*){2,}/g,
 ]
 
 const PASSIVE_PATTERNS = [
@@ -125,6 +158,8 @@ function analyze(input: string) {
   const foundPassive: string[] = []
   const foundOpeners: string[] = []
   const foundAiTells: { phrase: string; fix: string }[] = []
+  const foundNpc: string[] = []
+  let negationCount = 0
 
   for (const s of SLOP_WORDS) {
     const regex = new RegExp(`\\b${s.word.replace(/-/g, '[\\-\\s]?')}s?\\b`, 'gi')
@@ -144,17 +179,26 @@ function analyze(input: string) {
   for (const a of AI_TELLS) {
     if (lower.includes(a.phrase.toLowerCase())) foundAiTells.push(a)
   }
+  for (const n of NPC_PATTERNS) {
+    if (lower.includes(n.toLowerCase())) foundNpc.push(n)
+  }
+  for (const pattern of NEGATION_PATTERNS) {
+    const matches = input.match(pattern)
+    if (matches) negationCount += matches.length
+  }
 
   const slopPenalty = foundSlop.reduce((sum, s) => sum + s.count * 8, 0)
   const passivePenalty = foundPassive.length * 6
   const openerPenalty = foundOpeners.length * 10
   const aiTellPenalty = foundAiTells.length * 7
-  const score = Math.min(100, slopPenalty + passivePenalty + openerPenalty + aiTellPenalty)
+  const npcPenalty = foundNpc.length * 9
+  const negationPenalty = negationCount * 12
+  const score = Math.min(100, slopPenalty + passivePenalty + openerPenalty + aiTellPenalty + npcPenalty + negationPenalty)
 
-  return { foundSlop, foundPassive, foundOpeners, foundAiTells, score }
+  return { foundSlop, foundPassive, foundOpeners, foundAiTells, foundNpc, negationCount, score }
 }
 
-type ViolationType = 'slop' | 'passive' | 'opener' | 'aitell'
+type ViolationType = 'slop' | 'passive' | 'opener' | 'aitell' | 'npc'
 
 function getHighlightedFragments(input: string) {
   type Segment = { start: number; end: number; type: ViolationType }
@@ -186,6 +230,13 @@ function getHighlightedFragments(input: string) {
     let match
     while ((match = regex.exec(input)) !== null) {
       segments.push({ start: match.index, end: match.index + match[0].length, type: 'aitell' })
+    }
+  }
+  for (const n of NPC_PATTERNS) {
+    const regex = new RegExp(n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi')
+    let match
+    while ((match = regex.exec(input)) !== null) {
+      segments.push({ start: match.index, end: match.index + match[0].length, type: 'npc' })
     }
   }
 
@@ -576,7 +627,7 @@ export function AntiSlopClient() {
                               : 'transparent',
                     borderBottom:
                       f.type !== 'normal'
-                        ? `2px solid ${f.type === 'slop' ? '#E05555' : f.type === 'passive' ? '#D2A53C' : f.type === 'aitell' ? '#50BED2' : '#E08C45'}`
+                        ? `2px solid ${f.type === 'slop' ? '#E05555' : f.type === 'passive' ? '#D2A53C' : f.type === 'aitell' ? '#50BED2' : f.type === 'npc' ? '#C850D2' : '#E08C45'}`
                         : 'none',
                     color: 'transparent',
                   }}
@@ -784,6 +835,59 @@ export function AntiSlopClient() {
             </div>
           )}
 
+          {result.foundNpc.length > 0 && (
+            <div style={{ marginBottom: 20 }}>
+              <div
+                style={{
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  color: '#C850D2',
+                  marginBottom: 10,
+                  letterSpacing: '0.04em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                NPC Energy ({result.foundNpc.length} found) — don&apos;t be a non-playable character
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {result.foundNpc.map((n) => (
+                  <div
+                    key={n}
+                    style={{
+                      padding: '8px 14px',
+                      background: 'rgba(200, 80, 210, 0.06)',
+                      border: '1px solid rgba(200, 80, 210, 0.2)',
+                      borderRadius: 6,
+                      fontSize: '13px',
+                      color: '#C850D2',
+                      fontWeight: 600,
+                    }}
+                  >
+                    &quot;{n}&quot; — say what specifically you mean instead
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {result.negationCount > 0 && (
+            <div style={{ marginBottom: 20 }}>
+              <div
+                style={{
+                  padding: '8px 14px',
+                  background: 'rgba(224, 140, 69, 0.06)',
+                  border: '1px solid rgba(224, 140, 69, 0.2)',
+                  borderRadius: 6,
+                  fontSize: '13px',
+                  color: '#E08C45',
+                  fontWeight: 600,
+                }}
+              >
+                Negation list pattern detected ({result.negationCount}x) — &quot;not of X, not of Y&quot; is AI trying to sound philosophical. one direct statement lands harder.
+              </div>
+            </div>
+          )}
+
           {result.score === 0 && activeText.length > 0 && (
             <div
               style={{
@@ -816,6 +920,7 @@ export function AntiSlopClient() {
               { label: 'AI tells', color: '#50BED2', penalty: '7pts each' },
               { label: 'Passive voice', color: '#D2A53C', penalty: '6pts each' },
               { label: 'Vague opener', color: '#E08C45', penalty: '10pts each' },
+              { label: 'NPC energy', color: '#C850D2', penalty: '9pts each' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -849,7 +954,7 @@ export function AntiSlopClient() {
           label="VIOLATIONS"
           subtitle="What gets flagged and why it matters"
         >
-          The 4 Violation Types
+          The 5 Violation Types
         </SectionHeadline>
 
         <StaggerContainer stagger={0.15}>

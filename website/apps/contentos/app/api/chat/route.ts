@@ -66,7 +66,15 @@ const REM_SYNONYMS: Record<string, string[]> = {
   playbook: ["platform playbook", "template", "framework", "guide"],
   pipeline: ["content pipeline", "workflow", "automation", "ops"],
   seo: ["search", "organic", "ranking", "google"],
-  "anti-slop": ["slop", "generic", "ai writing", "quality"],
+  "anti-slop": ["slop", "generic", "ai writing", "quality", "npc", "ai tells", "negation pattern"],
+  midjourney: ["image generation", "ai art", "character design", "neobots", "chibi"],
+  elevenlabs: ["voice cloning", "text to speech", "tts", "audio", "ai voice"],
+  grok: ["scout agent", "x research", "twitter research", "trending"],
+  "super whisper": ["speech to text", "voice transcription", "dictation", "voice first"],
+  favikon: ["creator score", "influence", "algorithm", "ranking", "analytics"],
+  video: ["gif", "screen recording", "veed", "capcut", "davinci resolve", "editing"],
+  obsidian: ["notion", "notetaker", "second brain", "knowledge management", "pkm"],
+  tools: ["tool stack", "content os", "which ai", "platform strategy"],
 }
 
 let cachedConfig: RetrievalConfig | null = null
