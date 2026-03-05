@@ -198,7 +198,7 @@ function analyze(input: string) {
   return { foundSlop, foundPassive, foundOpeners, foundAiTells, foundNpc, negationCount, score }
 }
 
-type ViolationType = 'slop' | 'passive' | 'opener' | 'aitell' | 'npc'
+type ViolationType = 'slop' | 'passive' | 'opener' | 'aitell' | 'npc' | 'negation'
 
 function getHighlightedFragments(input: string) {
   type Segment = { start: number; end: number; type: ViolationType }
@@ -237,6 +237,13 @@ function getHighlightedFragments(input: string) {
     let match
     while ((match = regex.exec(input)) !== null) {
       segments.push({ start: match.index, end: match.index + match[0].length, type: 'npc' })
+    }
+  }
+  for (const pattern of NEGATION_PATTERNS) {
+    const regex = new RegExp(pattern.source, pattern.flags)
+    let match
+    while ((match = regex.exec(input)) !== null) {
+      segments.push({ start: match.index, end: match.index + match[0].length, type: 'negation' })
     }
   }
 
@@ -317,6 +324,26 @@ const violationTypes = [
     why: 'These waste the most valuable real estate in your content - the first line. Readers decide in 2 seconds. "In today\'s fast-paced world" earns zero attention.',
     before: "In today's fast-paced digital landscape, it's no secret that AI is transforming content.",
     after: 'AI writes 40% of LinkedIn posts now. Most of them sound identical.',
+  },
+  {
+    label: 'NPC Comments',
+    color: '#C850D2',
+    penalty: '9 pts each',
+    count: `${NPC_PATTERNS.length} phrases`,
+    examples: ['love this', 'so true', 'this is gold', 'nailed it', 'great insight', 'well said'],
+    why: 'Generic agreement comments that add nothing. They signal "I want engagement credit without thinking." Real engagement adds a take, a question, or a counter-example.',
+    before: 'Love this! So true. This is gold. Nailed it.',
+    after: 'The part about scoring replies over likes changed how I structure threads. Tried it yesterday and replies jumped 3x.',
+  },
+  {
+    label: 'Negation Stacking',
+    color: '#D26850',
+    penalty: '12 pts each',
+    count: `${NEGATION_PATTERNS.length} patterns`,
+    examples: ['Not about X. Not about Y. But about Z.', 'Not for the metrics, not for the followers, but for...'],
+    why: 'Stacking negations before the actual point is a dramatic framing trick. It wastes the reader\'s time saying what something ISN\'T before saying what it IS. Just lead with the point.',
+    before: 'Not about the tools. Not about the strategy. Not about the metrics. But about showing up every day.',
+    after: 'Showing up every day matters more than tools, strategy, or metrics.',
   },
 ]
 
@@ -624,10 +651,12 @@ export function AntiSlopClient() {
                             ? 'rgba(224, 140, 69, 0.25)'
                             : f.type === 'aitell'
                               ? 'rgba(80, 190, 210, 0.25)'
-                              : 'transparent',
+                              : f.type === 'negation'
+                                ? 'rgba(210, 104, 80, 0.25)'
+                                : 'transparent',
                     borderBottom:
                       f.type !== 'normal'
-                        ? `2px solid ${f.type === 'slop' ? '#E05555' : f.type === 'passive' ? '#D2A53C' : f.type === 'aitell' ? '#50BED2' : f.type === 'npc' ? '#C850D2' : '#E08C45'}`
+                        ? `2px solid ${f.type === 'slop' ? '#E05555' : f.type === 'passive' ? '#D2A53C' : f.type === 'aitell' ? '#50BED2' : f.type === 'npc' ? '#C850D2' : f.type === 'negation' ? '#D26850' : '#E08C45'}`
                         : 'none',
                     color: 'transparent',
                   }}
@@ -921,6 +950,7 @@ export function AntiSlopClient() {
               { label: 'Passive voice', color: '#D2A53C', penalty: '6pts each' },
               { label: 'Vague opener', color: '#E08C45', penalty: '10pts each' },
               { label: 'NPC energy', color: '#C850D2', penalty: '9pts each' },
+              { label: 'Negation stacking', color: '#D26850', penalty: '12pts each' },
             ].map((item) => (
               <div
                 key={item.label}
@@ -948,13 +978,13 @@ export function AntiSlopClient() {
         </div>
       </ScrollRevealSection>
 
-      {/* ── Educational Section: The 3 Violation Types ── */}
+      {/* ── Educational Section: The 7 Violation Types ── */}
       <ScrollRevealSection background="var(--canvas)">
         <SectionHeadline
           label="VIOLATIONS"
           subtitle="What gets flagged and why it matters"
         >
-          The 5 Violation Types
+          The 7 Violation Types
         </SectionHeadline>
 
         <StaggerContainer stagger={0.15}>
