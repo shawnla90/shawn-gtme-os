@@ -1,17 +1,18 @@
+```tsx
 import type { Metadata } from 'next'
 import path from 'path'
 import { getAllLogs } from '@shawnos/shared/lib'
 import { HomeContent } from './HomeContent'
 
 export const metadata: Metadata = {
-  title: 'How to Build an AI Assistant | theContentOS.ai',
+  title: 'How to Create AI Assistant in Python & Ship Content | theContentOS.ai',
   description:
-    'Learn how to build an AI assistant that sounds like you, not generic slop. ContentOS: voice engine, platform playbooks, and recursive content loops across every platform. From one repo.',
+    'How to create an AI assistant in Python that publishes like you, not generic slop. ContentOS: voice engine, platform playbooks, and recursive content workflows across every channel. From one repo.',
   alternates: { canonical: 'https://thecontentos.ai' },
   openGraph: {
-    title: 'How to Build an AI Assistant | theContentOS.ai',
+    title: 'How to Create AI Assistant in Python & Ship Content | theContentOS.ai',
     description:
-      'Learn how to build an AI assistant that sounds like you, not generic slop. Voice engine, platform playbooks, and recursive content loops.',
+      'How to create an AI assistant in Python that publishes like you, not generic slop. Voice engine, platform playbooks, and recursive content workflows.',
     url: 'https://thecontentos.ai',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
@@ -19,9 +20,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'How to Build an AI Assistant | theContentOS.ai',
+    title: 'How to Create AI Assistant in Python & Ship Content | theContentOS.ai',
     description:
-      'Learn how to build an AI assistant that sounds like you, not generic slop. Voice engine, platform playbooks, and recursive content loops.',
+      'How to create an AI assistant in Python that publishes like you, not generic slop. Voice engine, platform playbooks, and recursive content workflows.',
     images: ['/og'],
   },
 }
@@ -34,3 +35,4 @@ export default function HomePage() {
 
   return <HomeContent latestLog={latestLog} />
 }
+```

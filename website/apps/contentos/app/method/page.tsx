@@ -5,7 +5,7 @@ import { MethodContent } from './MethodContent'
 const SITE_URL = 'https://thecontentos.ai'
 
 export const metadata: Metadata = {
-  title: 'Method - The 3-Tier Content Operating System',
+  title: 'Method - AI Content System & Python AI Workflow | 3-Tier Content OS',
   description:
     'The architecture behind Content OS: Voice DNA, Context Playbooks, and Content Ops. Your content strategy should be a system, not a calendar. A repo, not a spreadsheet. Infrastructure, not inspiration.',
   keywords: [
@@ -14,6 +14,8 @@ export const metadata: Metadata = {
     'content playbooks',
     'content ops',
     'AI content system',
+    'Python AI workflow',
+    'personal AI assistant setup',
     'content architecture',
     'voice system',
     'content infrastructure',
@@ -22,9 +24,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/method` },
   openGraph: {
-    title: 'Method - The 3-Tier Content Operating System | theContentOS.ai',
+    title: 'Method - AI Content System & Python AI Workflow | theContentOS.ai',
     description:
-      'Voice DNA, Context Playbooks, Content Ops. Your content strategy should be a system, not a calendar.',
+      'Voice DNA, Context Playbooks, Content Ops. A proven AI content system for creators and developers - including Python AI workflows and personal AI assistant setups. Your content strategy should be a system, not a calendar.',
     url: `${SITE_URL}/method`,
     images: [
       {
@@ -35,9 +37,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'Method - The 3-Tier Content Operating System | theContentOS.ai',
+    title: 'Method - AI Content System & Python AI Workflow | theContentOS.ai',
     description:
-      'Voice DNA, Context Playbooks, Content Ops. Your content strategy should be a system, not a calendar.',
+      'Voice DNA, Context Playbooks, Content Ops. A proven AI content system for creators and developers - including Python AI workflows and personal AI assistant setups. Your content strategy should be a system, not a calendar.',
     images: ['/og?title=The+Method&subtitle=3-Tier+Content+Operating+System'],
   },
 }
@@ -48,6 +50,13 @@ export default function MethodPage() {
       <BreadcrumbSchema
         items={[{ name: 'Method', url: `${SITE_URL}/method` }]}
       />
+      <p className="sr-only">
+        ContentOS works for any knowledge-based creator — including developers
+        building Python-based AI assistant workflows and personal AI assistant
+        setups. The same 3-tier system structures your voice, your context, and
+        your content ops whether you&apos;re a solo creator or an AI content
+        system running at scale.
+      </p>
       <MethodContent />
     </>
   )
