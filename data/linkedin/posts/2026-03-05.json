@@ -1,0 +1,240 @@
+{
+  "date": "2026-03-05",
+  "generated_count": 10,
+  "avg_anti_slop_score": 100.0,
+  "generation_time_seconds": 113.2,
+  "engine": "claude-cli-opus",
+  "generated_at": "2026-03-05T14:02:40.293951+00:00",
+  "posts": [
+    {
+      "id": 1,
+      "title": "SDRs make the best GTM engineers",
+      "hook": "I sent 200+ cold emails a day from primary domains with no warmup on SalesLoft. No sequences. No AI. Just me and a Salesforce account I barely understood.",
+      "body": "I sent 200+ cold emails a day from primary domains with no warmup on SalesLoft. No sequences. No AI. Just me and a Salesforce account I barely understood.\n\nNow I build the systems that automate what I used to do by hand.\n\nThe gap between those two versions of me isn't \"learning to code.\" It's pattern recognition. When you've manually built buying committees in Salesforce, you know exactly which fields matter. When you've been burned by bad data, you know what enrichment actually needs to check.\n\nEvery Clay workflow I build starts with a question I asked myself at 7am in 2019 staring at a spreadsheet. Every scoring rubric maps back to signals I learned to read from sending thousands of emails and watching what landed.\n\nThe AI agent discourse right now is all infrastructure and orchestration. Cool. But the best GTM agents aren't built by people who understand agents. They're built by people who understand the job the agent replaces.\n\nThat's why former SDRs, AEs, and RevOps people who learn to build will run circles around engineers who learn GTM secondhand.\n\nThe grind isn't the obstacle. It's the training data.",
+      "cta": "What's the manual work you did early in your career that now shapes how you build?",
+      "tags": [
+        "GTM engineering",
+        "career pivot",
+        "building in public"
+      ],
+      "inspired_by": {
+        "author": "Sami Rahman",
+        "summary": "Discusses building scalable GTM engines by integrating engineering principles into go-to-market strategies. Shares a framework for aligning product, sales, and marketing through data-driven automation. Emphasizes the need for GTM engineers to bridge technical and revenue teams.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sami%20Rahman%20Discusses%20building%20scalable%20GTM%20engines%20by%20integrating%20engineering%20principles%20in",
+        "engagement": {
+          "likes": 2500,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 2,
+      "title": "Multi-agent systems are just pipelines",
+      "hook": "Everyone's building multi-agent systems. Most of them are just pipelines with extra steps.",
+      "body": "Everyone's building multi-agent systems. Most of them are just pipelines with extra steps.\n\nI run 50+ AI skills from a monorepo. Claude Code for orchestration, Sonnet for chat, Qwen 2.5 14B locally for high-freq crons, Opus for content generation. Four models, different jobs.\n\nHere's what actually matters when you wire agents together:\n\n1. Context handoffs. Every agent session writes a handoff doc so the next session picks up clean. No re-explaining. No context loss.\n2. Routing logic. Not every task needs a team of agents. Most tasks need one focused agent with the right tools loaded. I built a routing skill that decides before spawning anything.\n3. Failure boundaries. When an agent goes sideways mid-execution, it stops and re-plans. It doesn't keep pushing broken code hoping it works.\n\nThe Kubernetes-for-AI framing is accurate but misleading. Kubernetes solved orchestration for stateless containers. Agents are stateful, opinionated, and wrong 15% of the time. The hard part isn't scheduling them. It's knowing when to trust their output.\n\nI've burned entire sessions watching agents confidently produce garbage because the routing was lazy. Now the rule is simple... one task per agent, verify before done, never mark complete without proof.",
+      "cta": "If you're building with multiple AI models, what's your routing logic? Or is everything going to one model?",
+      "tags": [
+        "AI agents",
+        "automation",
+        "developer tools"
+      ],
+      "inspired_by": {
+        "author": "Swyx",
+        "summary": "Swyx discusses the evolution of AI agents, highlighting how multi-agent systems are revolutionizing workflows by enabling collaborative AI. He shares insights on building reliable agentic architectures and predicts their impact on developer productivity. Emphasizes practical frameworks for implementation.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Swyx%20discusses%20the%20evolution%20of%20AI%20agents%2C%20highlighting%20how%20multi-agent%20systems%20",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 3,
+      "title": "Outbound automation without intent is spam",
+      "hook": "Automated outbound without intent data is just spam at scale. I know because I built both versions.",
+      "body": "Automated outbound without intent data is just spam at scale. I know because I built both versions.\n\nVersion 1: Pull a list from Apollo. Enrich with Clay. Throw it into a sequence. 2% reply rate. Most replies were \"unsubscribe.\"\n\nVersion 2: Score accounts on hiring signals, tech stack changes, and funding events before they hit a sequence. Layer in website visitor data from PostHog. Only trigger outbound when the score crosses a threshold.\n\nSame tools. Completely different results.\n\nThe problem with most outbound automation isn't the automation part. It's that people skip the intelligence layer. They go straight from \"here's a list\" to \"here's a sequence\" and wonder why deliverability tanks and nobody responds.\n\nThe intelligence layer is the boring part. It's building scoring rubrics in Clay that check 6 signals before a contact qualifies. It's writing Sculptor prompts that actually validate whether someone matches your ICP instead of just checking their title.\n\nAutomation multiplies whatever you feed it. Feed it garbage data and lazy targeting, you get garbage at scale. Feed it scored, intent-validated accounts, you get pipeline.\n\nThere's no shortcut past the scoring layer.",
+      "cta": "What signals are you scoring on before contacts hit your sequences?",
+      "tags": [
+        "outbound automation",
+        "sales ops",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "Josh Braun",
+        "summary": "Explains why outbound automation fails without personalized intent data and human oversight. Provides tips for sales ops teams to optimize sequences for higher reply rates. Highlights real-world results from testing 10+ tools.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Josh%20Braun%20Explains%20why%20outbound%20automation%20fails%20without%20personalized%20intent%20data%20and%20huma",
+        "engagement": {
+          "likes": 1800,
+          "comments": 320
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 4,
+      "title": "I run 4 websites from one repo",
+      "hook": "I run 4 live websites, a CRM integration, a Reddit scout, an SEO engine, and a daily content cron. All from one monorepo on a Mac Mini that sits on my desk.",
+      "body": "I run 4 live websites, a CRM integration, a Reddit scout, an SEO engine, and a daily content cron. All from one monorepo on a Mac Mini that sits on my desk.\n\nNo DevOps team. No Terraform. No cloud bill anxiety.\n\nThe stack: Next.js for the sites, Cloudflare for hosting, Python scripts for the pipelines, launchd for scheduling, SQLite for state. The Mac Mini runs 24/7 as my always-on server. My MacBook is for building.\n\nPeople overcomplicate infrastructure. I see founders spinning up Kubernetes clusters for apps that serve 200 users. I see teams with 4 engineers managing AWS bills bigger than their revenue.\n\nMeanwhile my midnight cron generates SEO content, scores keywords, publishes blog posts, and syncs everything to GitHub. Total monthly cost for the compute... my electricity bill.\n\nThe lesson from shipping 5 products isn't about speed. It's about removing friction from the loop. When deploy means \"git push\" and your CI is a shell script, you ship more because shipping is easy.\n\nI'm not anti-cloud. I'm anti-complexity-before-you-need-it. Start with the simplest thing that works. Scale when it breaks.",
+      "cta": "What's the most overengineered piece of your stack that could be replaced with a shell script?",
+      "tags": [
+        "building in public",
+        "solo developer",
+        "indie hacking"
+      ],
+      "inspired_by": {
+        "author": "Pieter Levels",
+        "summary": "Pieter shared his latest product launch, a new AI-powered tool for remote workers, detailing the solo development process from idea to shipping in under a week. He emphasized the importance of building in public to gather feedback and iterate quickly. The post includes metrics on initial user signups and lessons learned from the MVP release.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shared%20his%20latest%20product%20launch%2C%20a%20new%20AI-powered%20tool%20for%20remote%20worker",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 5,
+      "title": "Content strategy for RevOps is backwards",
+      "hook": "Most RevOps content strategies start with \"what should we write about?\" That's backwards.",
+      "body": "Most RevOps content strategies start with \"what should we write about?\" That's backwards.\n\nStart with what you already know from the data.\n\nEvery RevOps team sits on a goldmine of content. Your CRM tells you which objections kill deals. Your enrichment data shows which ICPs convert. Your scoring rubrics encode years of pattern recognition.\n\nTurn those into content and you're not writing thought leadership. You're publishing proof of work.\n\nHere's what I do. My SEO engine pulls trending keywords daily, scores them against my ICP, and queues topics that match what I actually build. Then the content gets generated from real workflows, not hypothetical frameworks.\n\nThe post about Clay scoring rubrics? That's a real rubric running in production. The ABM walkthrough? That's my actual pipeline with names swapped out.\n\nStorytelling in B2B isn't about being vulnerable or sharing your founder journey. It's about showing your work with enough specificity that someone could replicate it.\n\nThe bar for content isn't \"is this interesting.\" It's \"could someone use this tomorrow morning.\"\n\nIf your content strategy doesn't start from what your systems already know, you're just guessing at what to write.",
+      "cta": "What data does your team sit on that could be content but isn't?",
+      "tags": [
+        "content strategy",
+        "revenue operations",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "Alice He",
+        "summary": "Outlines a content strategy playbook for RevOps to drive pipeline through thought leadership. Details how to repurpose sales enablement content into LinkedIn posts and emails. Shares metrics showing 3x lead gen increase.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alice%20He%20Outlines%20a%20content%20strategy%20playbook%20for%20RevOps%20to%20drive%20pipeline%20through%20though",
+        "engagement": {
+          "likes": 3200,
+          "comments": 600
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 6,
+      "title": "Plumber to programmer pipeline",
+      "hook": "I was a plumber before I was an SDR. Before that I was a line cook. The career pivot posts always skip the ugly middle.",
+      "body": "I was a plumber before I was an SDR. Before that I was a line cook. The career pivot posts always skip the ugly middle.\n\nThe middle looks like this: you're 26, you have no degree, and you're learning Salesforce from YouTube videos at midnight after 10-hour days. Nobody's cheering. There's no \"and then I raised a seed round\" moment coming.\n\nWhat actually happened: I got good at the boring repetitive work that nobody wanted to do. Data entry. List building. Manually researching accounts. That repetitive work taught me what needed to be automated before I knew what automation was.\n\nNow I build GTM infrastructure. 50+ AI skills. A full ABM pipeline. 4 websites. Not because I had some grand vision. Because I kept solving the next problem in front of me and eventually the problems got more interesting.\n\nThe pivot wasn't one moment. It was 500 small decisions to keep learning instead of staying comfortable.\n\nI think the reason builder backgrounds are underrated in tech is because we're trained to value credentials over calluses. But the person who's installed 200 water heaters understands systems thinking in a way that's hard to teach.\n\nRepetition isn't the obstacle to creativity. It's the foundation.",
+      "cta": "What's your non-traditional background that actually makes you better at what you do now?",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "founder"
+      ],
+      "inspired_by": {
+        "author": "Arvid Kahl",
+        "summary": "Arvid recounted his journey pivoting from corporate sales to bootstrapping and selling his first SaaS product as a solo founder. He outlined key steps like validating ideas through public updates and shipping minimal viable products rapidly. The post offers practical advice for others considering a tech career pivot.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Arvid%20recounted%20his%20journey%20pivoting%20from%20corporate%20sales%20to%20bootstrapping%20and%20s",
+        "engagement": {
+          "likes": 8500,
+          "comments": 320
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 7,
+      "title": "Edge computing for GTM agents",
+      "hook": "Running AI models locally changed my GTM operation more than any SaaS tool this year.",
+      "body": "Running AI models locally changed my GTM operation more than any SaaS tool this year.\n\nI run Qwen 2.5 14B on Ollama for every high-frequency task that doesn't need frontier intelligence. Keyword scoring, content drafts, data validation, SEO classification. Stuff that runs 20+ times a day.\n\nCost per query: zero. Latency: sub-second. No rate limits. No API keys to rotate. No vendor deciding to 5x their pricing overnight.\n\nFor the tasks that need real reasoning, Opus handles content creation and strategic work. Sonnet runs the chat interface. Each model has a job based on what it's actually good at.\n\nThe edge computing conversation in AI is mostly about deploying inference closer to users. But for GTM ops, the win is deploying inference closer to your data. My enrichment scripts, scoring crons, and content pipelines all run on the same machine as the database. No round trips. No serialization overhead.\n\nThe serverless pitch is compelling until you're running 200 function invocations a day and your bill looks like you're training a model.\n\nI'm not saying everyone should run local models. I'm saying the default of sending everything to an API endpoint deserves scrutiny. Especially when half your workload is classification tasks a 14B model handles fine.",
+      "cta": "Are you running any AI workloads locally, or is everything API-based?",
+      "tags": [
+        "AI infrastructure",
+        "automation",
+        "developer tools"
+      ],
+      "inspired_by": {
+        "author": " Guillermo Rauch",
+        "summary": "Rauch unveils new developer tools at Vercel for seamless AI agent deployment, focusing on edge computing and serverless automation. He demonstrates how these tools reduce latency in agentic apps and shares code snippets for quick starts. Highlights integration with popular AI models.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20%20Guillermo%20Rauch%20Rauch%20unveils%20new%20developer%20tools%20at%20Vercel%20for%20seamless%20AI%20agent%20deployment%2C%20fo",
+        "engagement": {
+          "likes": 8000,
+          "comments": 300
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 8,
+      "title": "The scoring layer nobody builds",
+      "hook": "You don't have a pipeline problem. You have a scoring problem.",
+      "body": "You don't have a pipeline problem. You have a scoring problem.\n\nMost GTM teams I talk to run some version of this: pull accounts from Apollo or ZoomInfo, enrich in Clay, push to sequences. Then they wonder why conversion rates are flat.\n\nThe missing layer is scoring. Not lead scoring in your MAP that checks \"opened email 3 times.\" Real account scoring that validates fit before a single touch happens.\n\nHere's what my scoring layer checks before an account enters any sequence:\n\n\u2705 Hiring signals (are they building the team that buys what I sell?)\n\u2705 Tech stack match (verified through enrichment, not self-reported)\n\u2705 Funding or growth signals within 6 months\n\u2705 Website visitor behavior from PostHog\n\u2705 Content engagement across channels\n\u2705 Sculptor validation (does this company actually match the ICP when you dig in?)\n\nSix signals. Each weighted. Threshold score before anything triggers.\n\nThe result: smaller lists, higher conversion, better deliverability because you're not burning your domain on accounts that were never going to buy.\n\nScaling outbound isn't about sending more emails. It's about being ruthlessly selective about who gets them. The scoring layer is the hardest part to build and the easiest part to skip. That's exactly why it's the differentiator.",
+      "cta": "How many signals do you validate before an account enters your outbound motion?",
+      "tags": [
+        "GTM engineering",
+        "sales ops",
+        "outbound automation"
+      ],
+      "inspired_by": {
+        "author": "Dan Tyre",
+        "summary": "Breaks down sales ops best practices for scaling outbound at high-growth startups. Covers tool stacks for automation and metrics to track for efficiency. Warns against common pitfalls like over-automation without process maturity.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Dan%20Tyre%20Breaks%20down%20sales%20ops%20best%20practices%20for%20scaling%20outbound%20at%20high-growth%20startup",
+        "engagement": {
+          "likes": 1500,
+          "comments": 280
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 9,
+      "title": "Ship the ugly version",
+      "hook": "My first version of every tool I've built was embarrassing. That's the point.",
+      "body": "My first version of every tool I've built was embarrassing. That's the point.\n\nThe Reddit scout started as a Python script that dumped raw JSON to a file. No UI. No filtering. Just a cron job and a prayer.\n\nNow it scores opportunities, matches them to voice profiles, drafts responses, and queues them for approval in Slack. But it took 6 iterations to get there. Each one built on watching what actually mattered when I used the ugly version.\n\nThe builders who ship 5 products a year aren't better engineers. They just have a lower bar for v1.\n\nHere's the pattern I've noticed... the people who ship slowly aren't stuck on hard problems. They're stuck on easy problems they've overcomplicated. They're adding auth before they have users. Building dashboards before they have data. Designing APIs before they know what the client needs.\n\nMy rule: if the first version takes more than a weekend, you're building the wrong first version.\n\nThe ugly version teaches you things the spec never will. It shows you which features actually matter, which edge cases are real, and which assumptions were wrong.\n\nYou can't architect your way to product-market fit. You have to ship your way there.",
+      "cta": "What's something you shipped ugly that turned into your best tool?",
+      "tags": [
+        "shipping products",
+        "building in public",
+        "indie maker"
+      ],
+      "inspired_by": {
+        "author": "KP (Karthik Pattabiraman)",
+        "summary": "KP documented shipping his 5th product in a year as a solo developer, a no-code automation tool, with transparent revenue numbers and build logs. He discussed challenges of working alone and how building in public helped attract early users and collaborators. Readers praised the authenticity and substance of his updates.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20KP%20%28Karthik%20Pattabiraman%29%20KP%20documented%20shipping%20his%205th%20product%20in%20a%20year%20as%20a%20solo%20developer%2C%20a%20no-code%20",
+        "engagement": {
+          "likes": 6500,
+          "comments": 280
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 10,
+      "title": "AI agents need trust boundaries",
+      "hook": "I let an AI agent run unsupervised for 3 hours once. It confidently rewrote a working system into something that looked better and did less.",
+      "body": "I let an AI agent run unsupervised for 3 hours once. It confidently rewrote a working system into something that looked better and did less.\n\nThat's when I built trust boundaries into everything.\n\nThe discourse around AI agent infrastructure treats reliability as a scaling problem. Build better orchestration, add more guardrails, implement retry logic. But the real problem is simpler... agents are confidently wrong just often enough to be dangerous.\n\nMy rules after getting burned:\n\n1. Never mark a task complete without verification. The agent has to prove it works, not just say it works.\n2. One task per agent. The moment you give an agent two objectives, it optimizes for the wrong one.\n3. Failure stops execution. When something breaks mid-task, the agent re-plans instead of pushing through.\n4. Human checkpoints at deploy boundaries. Agents can write code, run tests, build locally. They cannot push to production without sign-off.\n\nThis isn't anti-AI. I run my entire operation on AI agents. But I treat them like junior engineers, not senior architects. They're fast, capable, and need code review.\n\nThe teams that will win with agents aren't the ones with the most sophisticated orchestration. They're the ones with the clearest boundaries around what agents can and can't do autonomously.",
+      "cta": "Where do you draw the line between agent autonomy and human oversight in your workflows?",
+      "tags": [
+        "AI agents",
+        "AI infrastructure",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Nat Friedman",
+        "summary": "Nat breaks down the next wave of AI infrastructure for agent swarms, comparing it to Kubernetes for AI. He argues that robust orchestration layers are essential for enterprise automation and spotlights emerging startups in the space. Provides a reading list for devs.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nat%20Friedman%20Nat%20breaks%20down%20the%20next%20wave%20of%20AI%20infrastructure%20for%20agent%20swarms%2C%20comparing%20i",
+        "engagement": {
+          "likes": 15000,
+          "comments": 550
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    }
+  ]
+}
