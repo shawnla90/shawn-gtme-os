@@ -10,7 +10,7 @@
 Shawn's voice and content system lives in the skill tree. It is NOT optional.
 Do NOT write content from scratch using your own patterns. Load the voice first.
 
-**All paths are relative to repo root: `/Users/shawntenam/Desktop/shawn-gtme-os/`**
+**All paths are relative to repo root: `/Users/shawnos.ai/shawn-gtme-os/`**
 
 ### Required Reading by Role
 

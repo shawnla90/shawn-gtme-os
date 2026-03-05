@@ -8,8 +8,7 @@
 
 ## Infrastructure Reality
 
-- **MacBook Pro** — Primary dev (human at keyboard), Cursor IDE, 46 skills
-- **Mac Mini** — Always-on server, Claude Code CLI with child imprint (24/7), nightly cron pipeline
+- **Mac Mini** — Single machine: dev + always-on server, Claude Code CLI (24/7), nightly cron pipeline
 - **No OpenClaw** — Sunset and removed. Everything runs Mac Mini CLI direct.
 - **4 live websites** — ShawnOS, TheGTMOS, TheContentOS, Mission Control (all Next.js 15 / Vercel)
 - **Nio** — Multi-agent chatbot (Nio/Architect/Writer), Tamagotchi evolution, soul files, SQLite, PWA

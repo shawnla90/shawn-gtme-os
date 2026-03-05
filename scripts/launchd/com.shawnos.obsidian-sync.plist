@@ -6,17 +6,17 @@
     <string>com.shawnos.obsidian-sync</string>
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/shawntenam/Desktop/shawn-gtme-os/scripts/obsidian_sync.sh</string>
+        <string>/Users/shawnos.ai/shawn-gtme-os/scripts/obsidian_sync.sh</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
     <key>KeepAlive</key>
     <true/>
     <key>StandardOutPath</key>
-    <string>/Users/shawntenam/Desktop/shawn-gtme-os/data/daily-log/obsidian-sync.log</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/obsidian-sync.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/shawntenam/Desktop/shawn-gtme-os/data/daily-log/obsidian-sync.log</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/obsidian-sync.log</string>
     <key>WorkingDirectory</key>
-    <string>/Users/shawntenam/Desktop/shawn-gtme-os</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os</string>
 </dict>
 </plist>

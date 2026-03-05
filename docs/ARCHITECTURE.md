@@ -4,19 +4,18 @@
 > Last updated: 2026-02-20
 
 ## System Overview
-Okay, so now I wanna build a new, so I set up teams or agent teams on the other CLI Claude Code. Do I have it on here as well with the push to me, and do you have that data?
-ShawnOS is a personal AI operating system that gamifies daily engineering output with RPG progression mechanics. It spans 2 machines, 4 websites, 50 skills, 17 MCP servers, and a nightly automation pipeline that scans work, scores it, and deploys fresh data. A Husky pre-push hook enforces blocklist scans on every `git push`, and Slack notifications alert on cron success/failure.
+ShawnOS is a personal AI operating system that gamifies daily engineering output with RPG progression mechanics. It runs on a single Mac Mini, powering 4 websites, 50 skills, 17 MCP servers, and a nightly automation pipeline that scans work, scores it, and deploys fresh data. A Husky pre-push hook enforces blocklist scans on every `git push`, and Slack notifications alert on cron success/failure.
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        SHAWN AI OS                              │
 ├──────────────┬──────────────┬──────────────┬───────────────────┤
 │  Skill Tree  │  Client Ops  │   Websites   │  Data Pipeline    │
-│  (50 skills) │  (3 partners │  (4 Next.js  │  (7 Python + 2   │
-│              │   1 client)  │   apps)      │   shell scripts)  │
+│  (50 skills) │              │  (4 Next.js  │  (7 Python + 2   │
+│              │              │   apps)      │   shell scripts)  │
 ├──────────────┴──────────────┴──────────────┴───────────────────┤
-│                     2 Machines (git + rsync)                    │
-│              MacBook (shawntenam) + Mac Mini (shawnos.ai)       │
+│                  Mac Mini (shawnos.ai)                          │
+│              Dev + always-on server (single machine)            │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -28,10 +27,9 @@ See [MACHINE-SETUP.md](./MACHINE-SETUP.md) for full machine identity details.
 
 | Machine | User | Role | Repo Path |
 |---------|------|------|-----------|
-| MacBook Pro | `shawntenam` | Primary dev (human at keyboard) | `/Users/shawntenam/Desktop/shawn-gtme-os` |
-| Mac Mini | `shawnos.ai` | Always-on server (OpenClaw, cron) | `/Users/shawnos.ai/shawn-gtme-os` |
+| Mac Mini | `shawnos.ai` | Dev + always-on server | `/Users/shawnos.ai/shawn-gtme-os` |
 
-**Sync model**: Git handles tracked files. The `/sync-machines` skill uses rsync for gitignored dirs (clients/, partners/, .env files).
+Single machine handles everything: development, cron pipelines, agent execution, and deploys.
 
 ---
 
@@ -350,16 +348,9 @@ Each entity follows the standard structure: SKILL.md, research/, prompts/, workf
 
 ---
 
-## OpenClaw
+## OpenClaw (Sunset)
 
-OpenClaw is a persistent AI gateway running as a macOS LaunchAgent (`KeepAlive: true`) on the Mac Mini. It provides:
-
-- IPC communication bridge for the AI OS
-- Workspace memory at `~/.openclaw/workspace/memory/`
-- Session logging at `~/.openclaw/agents/main/sessions/` (consumed by cost tracker)
-- Health monitoring via Mission Control integration
-
-Restart procedure: `.claude/skills/restart-openclaw/SKILL.md`
+OpenClaw has been sunset. All operations now run via Claude Code CLI directly on the Mac Mini. Legacy references to `~/.openclaw/` may exist in older scripts but are no longer active.
 
 ---
 
@@ -493,3 +484,4 @@ python3 scripts/abm/depersonalize.py --deprecate acme-corp
 | 2026-02-20 | Phase 2 safety enforcement: Husky pre-push hook, Slack cron notifications, skill_inventory.py (50-skill auto-manifest), 3 known gaps closed |
 | 2026-02-28 | ABM pipeline section: 6-step pipeline, Supabase schema, landing page system, PostHog + Attio integration, launchd schedule |
 | 2026-03-01 | Fixed orphaned scripts: hardcoded paths → dynamic REPO_ROOT, wired into daily_cron.sh Step 1k. Mission Control data pipeline now: commit_tracker → updater → dashboard-data.js → metrics.js → git commit. Added session role assignments to MACHINE-SETUP.md. |
+| 2026-03-05 | Rewrote for single-machine setup. Removed dual-machine topology, updated ASCII diagram, sunset OpenClaw section. Mac Mini is now dev + server. |

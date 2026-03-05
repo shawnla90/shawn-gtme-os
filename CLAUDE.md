@@ -99,11 +99,11 @@ The full GTM/ABM operation lives in `gtm-os/`. Self-contained folder with its ow
 | `.claude/skills/context-handoff/SKILL.md` | Session handoff protocol |
 | `skills/tier-1-voice-dna/method.md` | Recursive Drift methodology |
 | `docs/ARCHITECTURE.md` | System architecture, machine topology, cron pipeline |
-| `docs/MACHINE-SETUP.md` | MacBook vs. Mac Mini roles |
+| `docs/MACHINE-SETUP.md` | Machine setup (single Mac Mini) |
 | `gtm-os/CLAUDE.md` | GTM operations - tool inventory, data flow, rules |
 
 ## Machine Context
 
-- **MacBook Pro** (`shawntenam`): Primary dev machine. Human sessions.
-- **Mac Mini** (`shawnos.ai`): Always-on server. Runs nightly cron (daily_cron.sh at midnight), sync_main.sh at 23:58, Reddit Slack digest at 10 AM.
-- When writing launchd plists or scripts, use the correct machine paths.
+- **Mac Mini** (`shawnos.ai`): Single machine - dev + always-on server. Runs nightly cron (daily_cron.sh at midnight), sync_main.sh at 23:58, ABM pipeline at 22:00, agent crons.
+- Repo path: `/Users/shawnos.ai/shawn-gtme-os`
+- When writing launchd plists or scripts, use dynamic path resolution (see `docs/MACHINE-SETUP.md`).
