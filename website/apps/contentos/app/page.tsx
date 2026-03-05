@@ -1,4 +1,3 @@
-```tsx
 import type { Metadata } from 'next'
 import path from 'path'
 import { getAllLogs } from '@shawnos/shared/lib'
@@ -35,4 +34,3 @@ export default function HomePage() {
 
   return <HomeContent latestLog={latestLog} />
 }
-```

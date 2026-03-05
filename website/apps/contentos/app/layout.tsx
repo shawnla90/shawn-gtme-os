@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, CursorGlow } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
+import { RemChat } from './RemChat'
 import './globals.css'
 
 const SITE_URL = 'https://thecontentos.ai'
@@ -179,6 +180,7 @@ export default function RootLayout({
         <main>{children}</main>
         <NetworkBanner currentSite="contentos" />
         <Footer siteName="theContentOS.ai" />
+        <RemChat />
         <Analytics />
       </body>
     </html>
