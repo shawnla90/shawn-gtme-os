@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-04T05:00:09.000Z",
+  "generated": "2026-03-05T05:03:41.320Z",
   "system": {
     "status": "online",
     "uptime": "live",
     "lastCron": "See scheduler",
-    "commitCount": 9,
+    "commitCount": 11,
     "activeSkills": 42,
     "memoryFiles": 5,
     "sessionCost": "$0.00",
@@ -12,7 +12,7 @@
   },
   "calendar": [
     {
-      "date": "2026-03-03",
+      "date": "2026-03-05",
       "events": [
         {
           "time": "8:00 AM",
@@ -52,84 +52,43 @@
       "task": "Publish 5 pending drafts",
       "time": "Flexible",
       "priority": "high"
+    },
+    {
+      "task": "Weekly system performance review",
+      "time": "4:00 PM",
+      "priority": "medium"
     }
   ],
   "drafts": [
     {
-      "type": "linkedin",
-      "title": "Parallel-Safe Context Handoffs",
-      "status": "draft",
-      "date": "2026-02-27",
-      "pillar": "Building & Sharing"
+      "type": "substack",
+      "title": "2026-02-27 Parallel-Safe-Handoffs",
+      "status": "ready to ship"
     },
     {
       "type": "substack",
-      "title": "parallel safe handoffs",
-      "status": "draft",
-      "date": "2026-02-27",
-      "pillar": null
+      "title": "2026-02-14 Cursor-Discovery",
+      "status": "ready to ship"
     },
     {
-      "type": "x",
-      "title": "parallel safe handoffs",
-      "status": "draft",
-      "date": "2026-02-27",
-      "pillar": "Building & Sharing"
+      "type": "substack",
+      "title": "2026-02-13 Build-Day",
+      "status": "ready to ship"
     },
     {
-      "type": "linkedin",
-      "title": "claude code mobile",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "Building & Sharing"
+      "type": "substack",
+      "title": "2026-02-19 Recursive-Drift",
+      "status": "ready to ship"
     },
     {
-      "type": "linkedin",
-      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "Building & Sharing (capstone)"
-    },
-    {
-      "type": "linkedin",
-      "title": "exa grok hubspot landing pages",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "GTM Workflow / Building & Sharing"
-    },
-    {
-      "type": "x",
-      "title": "claude code mobile",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "Building & Sharing"
-    },
-    {
-      "type": "x",
-      "title": "Full Ecosystem X Threads -- Day 4",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": null
-    },
-    {
-      "type": "x",
-      "title": "exa grok hubspot landing pages",
-      "status": "draft",
-      "date": "2026-02-26",
-      "pillar": "GTM Workflow / Building & Sharing"
-    },
-    {
-      "type": "linkedin",
-      "title": "Content OS: The Content Machine -- Day 3",
-      "status": "draft",
-      "date": "2026-02-25",
-      "pillar": "Skill/System Share"
+      "type": "substack",
+      "title": "2026-02-24 Start-At-Level-One",
+      "status": "ready to ship"
     }
   ],
   "telemetry": {
     "calendarEvents": 15,
     "tasksTracked": 0,
-    "teamMembers": 4,
-    "draftsTracked": 75
+    "teamMembers": 4
   }
 }

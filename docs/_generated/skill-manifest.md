@@ -9,7 +9,7 @@
 | 2 | add-mcp | Research, configure, and install MCP servers into the Cursor IDE. Use when th... | .cursor/skills/ | 2026-02-08 |
 | 3 | agent-context-handoff | Produces a scope/handoff document optimized for loading into a new agent's co... | .cursor/skills/ | 2026-02-10 |
 | 4 | agent-routing | Decides whether a task needs Agent Teams, subagents, or a single focused sess... | .claude/skills/ | 2026-02-25 |
-| 5 | ai-chat-widget | (no description) | .claude/skills/ | 2026-03-03 |
+| 5 | ai-chat-widget | (no description) | .claude/skills/ | 2026-03-04 |
 | 6 | aios-image | Generate terminal-style AI/os command branded images from any post, draft, or... | .cursor/skills/ | 2026-02-12 |
 | 7 | avatar-develop | Alter avatar sprites and animations — edit → generate → preview → approve. Us... | .cursor/skills/ | 2026-02-14 |
 | 8 | campaign-copy-workflow | Generate the complete Phase 2 of any web reveal campaign — static email bodie... | .cursor/skills/ | 2026-02-12 |
