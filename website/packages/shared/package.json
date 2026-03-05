@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "framer-motion": "^12.34.3",
+    "posthog-js": "^1.358.1",
     "feed": "^5.2.0",
     "gray-matter": "latest",
     "rehype-highlight": "latest",

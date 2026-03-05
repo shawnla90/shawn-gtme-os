@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
-import { CursorGlow } from '@shawnos/shared/components'
 import { NioChat } from './NioChat'
-import { PostHogProvider } from './PostHogProvider'
 import { FeedbackButton } from './components/FeedbackButton'
 import './globals.css'
 

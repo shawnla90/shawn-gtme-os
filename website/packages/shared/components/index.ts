@@ -1,4 +1,5 @@
 export { AvatarBadge } from './AvatarBadge'
+export { PostHogProvider } from './PostHogProvider'
 export { ChatWidget } from './ChatWidget'
 export type { ChatWidgetProps } from './ChatWidget'
 export { BreadcrumbSchema } from './BreadcrumbSchema'

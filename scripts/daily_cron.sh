@@ -83,8 +83,8 @@ else
 fi
 
 # ── Step 1c: Run the progression engine ──────────────────────────────
-log "Running progression_engine.py"
-if $PYTHON scripts/progression_engine.py --skip-avatar >> "$LOGFILE" 2>&1; then
+log "Running progression_engine_v3.py"
+if $PYTHON scripts/progression_engine_v3.py >> "$LOGFILE" 2>&1; then
   log "Progression engine completed successfully"
 else
   log "WARN: Progression engine failed (non-fatal, continuing)"

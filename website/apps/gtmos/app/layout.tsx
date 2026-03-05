@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer, PostHogProvider } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
-import { PostHogProvider } from './PostHogProvider'
 import { ReconChat } from './ReconChat'
 import './globals.css'
 
