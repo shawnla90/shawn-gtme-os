@@ -20,7 +20,6 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       loaded: (ph) => {
         if (process.env.NODE_ENV === "development") ph.debug()
 
-        // Tag internal users (Shawn's machines) so they can be filtered out
         const isInternal =
           window.location.hostname === "localhost" ||
           document.cookie.includes("shawnos_internal=1")

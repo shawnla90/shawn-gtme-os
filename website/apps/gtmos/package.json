@@ -11,7 +11,11 @@
     "clean": "rm -rf .next node_modules"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^3.0.54",
+    "@ai-sdk/react": "^3.0.113",
+    "ai": "^6.0.111",
     "@shawnos/shared": "*",
+    "posthog-js": "^1.358.1",
     "@supabase/supabase-js": "^2.98.0",
     "framer-motion": "^12.34.3",
     "next": "^15",

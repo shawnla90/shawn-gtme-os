@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
+import { PostHogProvider } from './PostHogProvider'
+import { ReconChat } from './ReconChat'
 import './globals.css'
 
 const SITE_URL = 'https://thegtmos.ai'
@@ -105,25 +107,28 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
-        <Navigation
-          siteName="theGTMOS.ai"
-          links={[
-            { href: '/', label: 'Home' },
-            { href: '/features', label: 'Features' },
-            { href: '/how-to', label: 'How-To' },
-            { href: '/knowledge/gtm', label: 'Knowledge' },
-            { href: '/clay-wiki', label: 'Clay Wiki' },
-            { href: '/mcp', label: 'MCP' },
-            { href: 'https://thecontentos.ai/content-wiki', label: 'Content Wiki' },
-            { href: '/log', label: 'Log' },
-            { href: '/vitals', label: 'Vitals' },
-            { href: '/updates', label: 'Updates' },
-            { href: '/search', label: 'Search' },
-          ]}
-        />
-        <main>{children}</main>
-        <NetworkBanner currentSite="gtmos" />
-        <Footer siteName="theGTMOS.ai" />
+        <PostHogProvider>
+          <Navigation
+            siteName="theGTMOS.ai"
+            links={[
+              { href: '/', label: 'Home' },
+              { href: '/features', label: 'Features' },
+              { href: '/how-to', label: 'How-To' },
+              { href: '/knowledge/gtm', label: 'Knowledge' },
+              { href: '/clay-wiki', label: 'Clay Wiki' },
+              { href: '/mcp', label: 'MCP' },
+              { href: 'https://thecontentos.ai/content-wiki', label: 'Content Wiki' },
+              { href: '/log', label: 'Log' },
+              { href: '/vitals', label: 'Vitals' },
+              { href: '/updates', label: 'Updates' },
+              { href: '/search', label: 'Search' },
+            ]}
+          />
+          <main>{children}</main>
+          <NetworkBanner currentSite="gtmos" />
+          <Footer siteName="theGTMOS.ai" />
+          <ReconChat />
+        </PostHogProvider>
         <Analytics />
       </body>
     </html>
