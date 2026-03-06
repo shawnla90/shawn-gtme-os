@@ -1,0 +1,242 @@
+{
+  "date": "2026-03-06",
+  "generated_count": 10,
+  "avg_anti_slop_score": 100.0,
+  "generation_time_seconds": 237.4,
+  "engine": "claude-cli-opus",
+  "generated_at": "2026-03-06T14:09:42.734033+00:00",
+  "posts": [
+    {
+      "id": 1,
+      "title": "AI agents are hitting GTM next",
+      "hook": "Every developer tool company is shipping AI agents right now. GTM tools are 3 years behind.",
+      "body": "Every developer tool company is shipping AI agents right now. GTM tools are 3 years behind.\n\nCursor, Copilot, Devin... dev teams have agents that read codebases, write PRs, and debug in production. Meanwhile the average sales ops team is still building Zaps between 6 tools that don't talk to each other.\n\nThe gap is closing fast though. I've been building agent workflows that do what SDR teams used to do manually. Research accounts, map buying committees, enrich contacts, score intent signals, draft personalized sequences. Not with some off-the-shelf tool. With Clay tables piped into APIs piped into custom scoring logic.\n\nThe teams figuring this out right now have a 12-18 month head start. Not because the tech is hard. Because the workflows are. You need someone who understands both the tooling AND the motion.\n\nDev teams had that person already. They're called engineers. GTM teams are just now realizing they need their own version. And the best ones aren't coming from engineering backgrounds. They're coming from the sales floor.\n\nWhat GTM workflow are you automating right now? Genuinely curious what tools people are stitching together.",
+      "cta": "What GTM workflow are you automating right now? Genuinely curious what tools people are stitching together.",
+      "tags": [
+        "AI agents",
+        "GTM engineering",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Swyx",
+        "summary": "Swyx discusses the rise of AI agents in developer workflows, highlighting how tools like Claude and Cursor are automating code reviews and debugging. He predicts a shift from traditional IDEs to agentic systems that handle entire development cycles. Emphasizes the need for robust AI infrastructure to support scalable agent deployment.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Swyx%20discusses%20the%20rise%20of%20AI%20agents%20in%20developer%20workflows%2C%20highlighting%20how%20to",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 2,
+      "title": "Replacing research headcount with Clay",
+      "hook": "Last week I replaced a 3-person research team's weekly output with a Clay table and 4 API calls.",
+      "body": "Last week I replaced a 3-person research team's weekly output with a Clay table and 4 API calls.\n\nNot bragging. Pointing out the math has changed.\n\nHere's the workflow:\n\n\ud83d\udd0d Source: Pull ICP-fit accounts from Apollo with hiring signals and tech stack filters\n\ud83e\udde0 Enrich: Run each through Clay's AI researcher for recent news, funding, leadership changes\n\ud83d\udcca Score: Custom column that weights 5 intent signals into a composite priority score\n\u2709\ufe0f Route: High-score accounts get pushed to Attio with full context. Sales sees a warm, researched list every Monday morning.\n\nTotal build time: about 6 hours. Runs automatically now.\n\nThe part that takes the most time is maintenance. These workflows break. APIs change. Data quality drifts. You need someone watching the pipeline, not just building it.\n\nThat's the difference between automation and a system. Automation runs once. A system runs every week and someone owns the output quality.\n\nIf you're evaluating whether to hire more researchers or build a pipeline... build the pipeline. Then hire one person who can maintain and improve it. That's your leverage play.\n\nFull workflow breakdown in the comments. No gatekeeping.",
+      "cta": "Full workflow breakdown in the comments. No gatekeeping.",
+      "tags": [
+        "Clay",
+        "outbound automation",
+        "GTM engineering"
+      ],
+      "inspired_by": {
+        "author": "Justine Clay",
+        "summary": "Argues for integrating outbound automation into sales ops playbooks to scale without headcount bloat. Includes tactical steps for A/B testing sequences and compliance checks, backed by metrics from enterprise implementations.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Justine%20Clay%20Argues%20for%20integrating%20outbound%20automation%20into%20sales%20ops%20playbooks%20to%20scale%20wit",
+        "engagement": {
+          "likes": 670,
+          "comments": 54
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 3,
+      "title": "Most GTM engineering is just renamed ops",
+      "hook": "\"GTM engineer\" is trending on LinkedIn. 90% of what I see labeled GTM engineering is just ops work with a new title.",
+      "body": "\"GTM engineer\" is trending on LinkedIn. 90% of what I see labeled GTM engineering is just ops work with a new title.\n\nSetting up a Zapier integration isn't engineering. Configuring HubSpot workflows isn't engineering. Buying a Clay license isn't engineering.\n\nEngineering means you're building systems with logic, data models, feedback loops, and failure handling. It means when the enrichment API returns garbage data, your pipeline catches it instead of polluting your CRM. It means your scoring model improves over time because you built measurement into it.\n\nI'm not gatekeeping the title. Use whatever title gets you hired. But if the industry treats GTM engineering as \"ops person who uses AI tools,\" we'll lose the plot on what makes it valuable.\n\nThe value isn't the tools. It's the systems thinking. Understanding how data flows from intent signal to closed deal. Building pipelines that improve without manual intervention. Knowing when to automate and when to keep a human in the loop.\n\nOps maintains systems. Engineering builds them. Both matter. They're just different jobs.\n\nAm I being too precious about this? Curious how others draw the line.",
+      "cta": "Am I being too precious about this? Curious how others draw the line.",
+      "tags": [
+        "GTM engineering",
+        "revenue operations",
+        "hot take"
+      ],
+      "inspired_by": {
+        "author": "Kyle Coleman",
+        "summary": "Breaks down the role of GTM engineering in modern RevOps, focusing on data orchestration between sales, marketing, and CS. Shares open-source playbook for automating lead routing and enrichment, resulting in 30% faster sales cycles.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kyle%20Coleman%20Breaks%20down%20the%20role%20of%20GTM%20engineering%20in%20modern%20RevOps%2C%20focusing%20on%20data%20orche",
+        "engagement": {
+          "likes": 950,
+          "comments": 72
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 4,
+      "title": "My agent emailed the wrong buying committee",
+      "hook": "My AI agent sent 47 emails to the wrong buying committee last Tuesday.",
+      "body": "My AI agent sent 47 emails to the wrong buying committee last Tuesday.\n\nHere's what happened. I built an enrichment pipeline that maps org charts from LinkedIn data, identifies the right stakeholders per account, and routes them into personalized sequences. Works great in testing. Works great on the first 500 accounts.\n\nAccount 501 had a parent company with the same name as a subsidiary. The agent mapped contacts from the parent org into the subsidiary's sequence. Wrong personas, wrong messaging, wrong everything.\n\n47 emails went out before I caught it.\n\nThe fix took 20 minutes. Added a domain verification step that cross-references company domain against the LinkedIn company URL before mapping contacts. Simple check. Should have been there from day one.\n\nKarpathy is right that reliability is the real bottleneck with AI agents. Not capability. Every demo looks amazing. Production is where things get weird because real data is messy in ways you can't anticipate.\n\nMy rule now: every agent workflow gets a \"chaos account\" in testing. An edge case designed to break the assumptions. If it survives the chaos account, it ships. If not, back to the drawing board.\n\nBuild fast, but build guardrails faster.\n\nWhat's the worst agent failure you've shipped? No judgment. We've all been there.",
+      "cta": "What's the worst agent failure you've shipped? No judgment. We've all been there.",
+      "tags": [
+        "AI agents",
+        "automation",
+        "production reliability"
+      ],
+      "inspired_by": {
+        "author": "Andrej Karpathy",
+        "summary": "Karpathy shares insights on building production-grade AI agents, focusing on reliability challenges in automation pipelines. He outlines key developer tools for agent orchestration and the importance of vector databases in AI infrastructure. Draws from his experience at OpenAI and Tesla.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Karpathy%20shares%20insights%20on%20building%20production-grade%20AI%20agents%2C%20focusing%20on%20rel",
+        "engagement": {
+          "likes": 25000,
+          "comments": 800
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 5,
+      "title": "Solo GTM operator is the new indie hacker",
+      "hook": "The solo GTM operator is the new indie hacker. Same playbook, different P&L line.",
+      "body": "The solo GTM operator is the new indie hacker. Same playbook, different P&L line.\n\nPieter Levels ships products solo. One person, full stack, no team. The indie hacker movement proved you don't need 50 engineers to build a profitable product.\n\nThe same thing is happening in GTM. One person with Clay, a CRM, a sequencing tool, and some Python scripts can run an outbound operation that used to require 5-8 people. Account research, enrichment, scoring, personalization, delivery, reporting. All automated. All maintained by one operator.\n\nI've been running this motion for clients. Full pipeline from ICP definition to booked meetings. No SDR team. No BDR manager. Just systems.\n\nThe economics are wild. A 5-person SDR team costs $400-500K loaded. A solo GTM operator with the right stack costs a fraction of that and scales better because the system improves every cycle.\n\nThis isn't about replacing people. It's about what becomes possible when one person can do what a team used to do. You can test 10 ICPs simultaneously. Run account-based plays for 50 target accounts. Iterate weekly instead of quarterly.\n\nThe tools are here. The playbooks are forming. The people who figure this out first have a real head start.\n\nAnyone else running solo GTM operations? Would love to compare stacks.",
+      "cta": "Anyone else running solo GTM operations? Would love to compare stacks.",
+      "tags": [
+        "solo operator",
+        "GTM engineering",
+        "indie hacker"
+      ],
+      "inspired_by": {
+        "author": "Pieter Levels",
+        "summary": "Pieter shared his latest product launch, a new tool for remote workers, detailing the tech stack used as a solo developer and the challenges overcome in shipping it in under a week. He emphasized the importance of building in public to gather early feedback and iterate quickly. The post includes metrics from the first day of launch.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shared%20his%20latest%20product%20launch%2C%20a%20new%20tool%20for%20remote%20workers%2C%20detailin",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 6,
+      "title": "Top SDRs are learning to code",
+      "hook": "Something interesting is happening in SDR orgs. The top performers aren't getting promoted to AE. They're learning to code.",
+      "body": "Something interesting is happening in SDR orgs. The top performers aren't getting promoted to AE. They're learning to code.\n\nI keep meeting former SDRs who taught themselves Python, learned Clay's API, started building their own enrichment workflows, and realized they could automate 80% of their old job. Instead of moving into closing roles, they moved into building roles.\n\nSDRs understand the workflow intimately. They know which data matters for personalization because they've written thousands of first lines. They know which signals predict a response because they've tested it manually across hundreds of accounts. They know where the process breaks because they've lived inside the broken process.\n\nThat domain knowledge is incredibly hard to teach an engineer. But teaching an SDR to write Python and call APIs? That's a weekend with Claude and some YouTube tutorials.\n\nThe best GTM systems I've seen were built by people who used to do the job manually. They don't over-engineer. They don't build for hypothetical edge cases. They build exactly what's needed because they've felt the pain of not having it.\n\nIf you're an SDR thinking about your next move... building might be it.\n\nAny former SDRs making this jump? Would love to hear what you're building.",
+      "cta": "Any former SDRs making this jump? Would love to hear what you're building.",
+      "tags": [
+        "SDR career",
+        "GTM engineering",
+        "career pivot"
+      ],
+      "inspired_by": {
+        "author": "Sami Rahman",
+        "summary": "Discusses building a GTM engineering function to automate outbound prospecting at scale. Shares a framework for integrating AI tools into sales workflows, reducing manual touchpoints by 70%. Emphasizes measuring ROI through pipeline velocity metrics.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sami%20Rahman%20Discusses%20building%20a%20GTM%20engineering%20function%20to%20automate%20outbound%20prospecting%20a",
+        "engagement": {
+          "likes": 1200,
+          "comments": 89
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 7,
+      "title": "Weekly CRM enrichment pipeline",
+      "hook": "Your CRM has 200K contacts. At least half the data is wrong. Here's the enrichment pipeline I run every Monday to fix it.",
+      "body": "Your CRM has 200K contacts. At least half the data is wrong. Here's the enrichment pipeline I run every Monday to fix it.\n\nEvery week, the same pipeline runs:\n\n1\ufe0f\u20e3 Pull contacts from Attio where last_enriched > 90 days or key fields are blank\n2\ufe0f\u20e3 Batch through Apollo for current title, company, email verification\n3\ufe0f\u20e3 Run Clay enrichment for tech stack, company size, recent funding\n4\ufe0f\u20e3 Score each contact against our ICP rubric (weighted: title match, company fit, intent signals)\n5\ufe0f\u20e3 Push updated records back to Attio. Flag contacts that changed companies for re-evaluation.\n\nThe whole thing takes about 45 minutes to run. No manual work after initial setup.\n\nTwo things I learned building this.\n\nEmail verification alone catches 15-20% of your database that's gone stale. Bounced emails tank your sender reputation and waste sequence slots. Run verification before anything else.\n\nThe \"changed companies\" flag is gold. When a champion moves to a new company, that's one of the highest-converting outbound signals you can act on. Most teams miss it because their data is static.\n\nClean data isn't a nice-to-have. It's the foundation everything else sits on. Scoring, routing, personalization... all garbage if the underlying data is wrong.\n\nDrop your enrichment stack in the comments. Curious what tools people are combining.",
+      "cta": "Drop your enrichment stack in the comments. Curious what tools people are combining.",
+      "tags": [
+        "data enrichment",
+        "CRM",
+        "Clay",
+        "outbound automation"
+      ],
+      "inspired_by": {
+        "author": "Kyle Coleman",
+        "summary": "Breaks down the role of GTM engineering in modern RevOps, focusing on data orchestration between sales, marketing, and CS. Shares open-source playbook for automating lead routing and enrichment, resulting in 30% faster sales cycles.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kyle%20Coleman%20Breaks%20down%20the%20role%20of%20GTM%20engineering%20in%20modern%20RevOps%2C%20focusing%20on%20data%20orche",
+        "engagement": {
+          "likes": 950,
+          "comments": 72
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 8,
+      "title": "Benchmarks lie about agent reliability",
+      "hook": "AI agent benchmarks keep climbing. My production agent still hallucinates company names on Tuesdays.",
+      "body": "AI agent benchmarks keep climbing. My production agent still hallucinates company names on Tuesdays.\n\nI'm only half joking. The gap between what AI agents can do in controlled evaluations and what they actually do in messy, real-world GTM workflows is massive.\n\nOn a benchmark, the agent correctly identifies the VP of Sales at a target account 95% of the time. In production, that same agent confidently returns the VP of Sales... from 2019. Who now works somewhere else entirely. And it doesn't flag any uncertainty.\n\nThe reliability problem isn't about model capability. It's about data freshness, API inconsistencies, edge cases in company structures, and the thousand little things that make real business data messy.\n\nWhat actually works: treat every agent output as a draft, not a decision. Build verification layers. Cross-reference multiple data sources. Set confidence thresholds below which a human reviews the output.\n\nMy current stack runs three enrichment sources against every contact and only promotes to \"verified\" when two of three agree on core fields. Sounds expensive. Costs less than one bad email to a wrong-title contact at a target account.\n\nBenchmarks measure capability. Production measures trust. Build for trust.\n\nWhat verification layers are you running on your AI outputs?",
+      "cta": "What verification layers are you running on your AI outputs?",
+      "tags": [
+        "AI agents",
+        "production reliability",
+        "data quality"
+      ],
+      "inspired_by": {
+        "author": "Nat Friedman",
+        "summary": "Friedman analyzes the latest benchmarks for AI agents in software engineering tasks, comparing tools like Devin and Replit Agent. He discusses infrastructure bottlenecks in scaling these agents and calls for better open-source developer tools. Post sparked debates on agent autonomy vs. human oversight.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nat%20Friedman%20Friedman%20analyzes%20the%20latest%20benchmarks%20for%20AI%20agents%20in%20software%20engineering%20ta",
+        "engagement": {
+          "likes": 15000,
+          "comments": 600
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 9,
+      "title": "Content as outbound targeting signal",
+      "hook": "Most teams treat content as distribution. The better play is using content engagement as a targeting signal for outbound.",
+      "body": "Most teams treat content as distribution. The better play is using content engagement as a targeting signal for outbound.\n\nHere's how this works in practice.\n\nYou publish a post about, say, enrichment pipeline architecture. Standard content play. But instead of just measuring impressions, you build a feedback loop.\n\nTrack who engages. Not just likes. Profile views, comments, shares, link clicks on resources you drop in the comments. Map those people against your ICP criteria.\n\nSomeone who comments on your enrichment pipeline post AND matches your ICP AND works at a company showing hiring signals? That's not a cold lead. That's someone who just told you what they care about.\n\nThe outbound email writes itself. \"Saw your comment on my enrichment post. We actually built the pipeline I described for a similar company. Here's how it performed.\"\n\nRelevant. Timely. Personal. Not because you scraped a database. Because they engaged with your actual thinking.\n\nThe content isn't the product. The content is the filter. It self-selects people who care about the problem you solve. Outbound to that list converts 3-4x better than cold lists in my experience.\n\nStop thinking about content and outbound as separate motions. They're the same pipeline.\n\nAnyone else using content engagement as an outbound signal? Would love to hear what's working.",
+      "cta": "Anyone else using content engagement as an outbound signal? Would love to hear what's working.",
+      "tags": [
+        "content strategy",
+        "outbound automation",
+        "ABM"
+      ],
+      "inspired_by": {
+        "author": "Dan Disney",
+        "summary": "Outlines a content strategy playbook for revenue operations teams to fuel outbound and inbound pipelines. Details creating pillar content clusters tied to buyer journeys, with examples of LinkedIn and email campaigns driving 25% more SQLs.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Dan%20Disney%20Outlines%20a%20content%20strategy%20playbook%20for%20revenue%20operations%20teams%20to%20fuel%20outbou",
+        "engagement": {
+          "likes": 2100,
+          "comments": 145
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 10,
+      "title": "The headcount-to-automation shift is here",
+      "hook": "Two years ago, scaling outbound meant hiring more SDRs. That math broke sometime in 2025.",
+      "body": "Two years ago, scaling outbound meant hiring more SDRs. That math broke sometime in 2025.\n\nThe old model: 1 SDR = ~200 accounts per quarter. Want to cover 1,000 accounts? Hire 5 SDRs. Simple math, expensive execution.\n\nThe new model: 1 GTM operator with the right automation stack covers 1,000+ accounts per quarter. Research, enrichment, scoring, personalized outreach, follow-up sequences. All systematized.\n\nI'm not arguing SDRs are obsolete. The ones who adapt are becoming the most valuable people in revenue orgs. They're the ones building these systems because they understand the workflow from the inside.\n\nBut the teams still running the old headcount math are falling behind. They're spending $500K on salary for output that a well-built pipeline produces for $50K in tooling and one skilled operator.\n\nThe shift is already happening. Look at job postings. \"GTM engineer\" and \"revenue operations engineer\" are showing up where \"SDR manager\" used to be. Companies are trading headcount for infrastructure.\n\nThis doesn't mean fewer jobs. It means different jobs. The demand for people who can build, maintain, and optimize these systems is growing faster than the talent pool can fill it.\n\nIf you're in sales ops right now, learn to build. The leverage is moving from managing reps to managing systems.\n\nIs your team making this shift? What does the transition actually look like on the ground?",
+      "cta": "Is your team making this shift? What does the transition actually look like on the ground?",
+      "tags": [
+        "sales ops",
+        "GTM engineering",
+        "automation",
+        "market shift"
+      ],
+      "inspired_by": {
+        "author": "Amy Volas",
+        "summary": "Explains how sales ops teams can leverage outbound automation to boost efficiency without sacrificing personalization. Provides case study from a SaaS client where automation increased response rates by 40%. Advises on tool stacks like Apollo and Outreach.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Amy%20Volas%20Explains%20how%20sales%20ops%20teams%20can%20leverage%20outbound%20automation%20to%20boost%20efficienc",
+        "engagement": {
+          "likes": 850,
+          "comments": 67
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    }
+  ]
+}
