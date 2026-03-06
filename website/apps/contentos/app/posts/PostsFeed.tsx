@@ -11,6 +11,13 @@ interface InspiredBy {
   engagement: { likes?: number; comments?: number }
 }
 
+export interface RemixVariant {
+  label: string
+  hook: string
+  body: string
+  cta: string
+}
+
 export interface PostEntry {
   id: number
   title: string
@@ -21,6 +28,9 @@ export interface PostEntry {
   inspired_by: InspiredBy | null
   anti_slop_score: number
   platform: string
+  remixes?: RemixVariant[]
+  tones?: { builder: string; advisor: string; provocateur: string }
+  platforms?: { linkedin: string; x: string; newsletter: string }
 }
 
 export interface PostsData {
@@ -106,6 +116,44 @@ const copyBtn: React.CSSProperties = {
   transition: 'background 0.15s ease',
 }
 
+const controlBar: React.CSSProperties = {
+  display: 'flex',
+  gap: '16px',
+  flexWrap: 'wrap',
+  alignItems: 'center',
+  marginBottom: '12px',
+  paddingBottom: '10px',
+  borderBottom: '1px solid var(--border)',
+}
+
+const controlGroup: React.CSSProperties = {
+  display: 'flex',
+  gap: '4px',
+  alignItems: 'center',
+}
+
+const controlLabel: React.CSSProperties = {
+  fontSize: '9px',
+  fontWeight: 700,
+  textTransform: 'uppercase',
+  letterSpacing: '0.08em',
+  color: 'var(--text-muted)',
+  marginRight: '4px',
+}
+
+const controlPill = (active: boolean): React.CSSProperties => ({
+  padding: '3px 8px',
+  fontSize: '10px',
+  fontWeight: active ? 700 : 400,
+  color: active ? 'var(--accent)' : 'var(--text-muted)',
+  background: active ? 'rgba(var(--accent-rgb, 249, 115, 22), 0.12)' : 'transparent',
+  border: `1px solid ${active ? 'rgba(var(--accent-rgb, 249, 115, 22), 0.3)' : 'var(--border)'}`,
+  borderRadius: '3px',
+  cursor: 'pointer',
+  fontFamily: 'var(--font-mono)',
+  transition: 'all 0.15s ease',
+})
+
 const slopBadge = (score: number): React.CSSProperties => ({
   display: 'inline-block',
   fontSize: '10px',
@@ -142,9 +190,35 @@ const dateBtnStyle = (active: boolean): React.CSSProperties => ({
 export function PostsFeed({ data, availableDates }: PostsFeedProps) {
   const [copiedId, setCopiedId] = useState<number | null>(null)
   const [expandedId, setExpandedId] = useState<number | null>(null)
+  const [viewMode, setViewMode] = useState<Record<number, string>>({})
+
+  const setMode = (postId: number, mode: string) => {
+    setViewMode(prev => ({ ...prev, [postId]: prev[postId] === mode ? 'original' : mode }))
+  }
+
+  const getDisplayContent = (post: PostEntry) => {
+    const mode = viewMode[post.id] || 'original'
+    let hook = post.hook
+    let body = post.body
+    let cta = post.cta
+
+    if (mode.startsWith('remix-')) {
+      const idx = parseInt(mode.split('-')[1])
+      const remix = post.remixes?.[idx]
+      if (remix) { hook = remix.hook; body = remix.body; cta = remix.cta }
+    } else if (mode.startsWith('tone-')) {
+      const tone = mode.split('-')[1] as 'builder' | 'advisor' | 'provocateur'
+      body = post.tones?.[tone] || post.body
+    } else if (mode.startsWith('platform-')) {
+      const plat = mode.split('-')[1] as 'linkedin' | 'x' | 'newsletter'
+      body = post.platforms?.[plat] || post.body
+    }
+    return { hook, body, cta }
+  }
 
   const handleCopy = async (post: PostEntry) => {
-    const text = `${post.body}\n\n${post.cta}`
+    const { body, cta } = getDisplayContent(post)
+    const text = `${body}\n\n${cta}`
     try {
       await navigator.clipboard.writeText(text)
       setCopiedId(post.id)
@@ -199,10 +273,13 @@ export function PostsFeed({ data, availableDates }: PostsFeedProps) {
 
       {/* Posts */}
       {data.posts.map((post) => {
+        const mode = viewMode[post.id] || 'original'
+        const { hook: displayHook, body: displayBody, cta: displayCta } = getDisplayContent(post)
         const isExpanded = expandedId === post.id
-        const bodyPreview = post.body.length > 300 && !isExpanded
-          ? post.body.slice(0, 300) + '...'
-          : post.body
+        const bodyPreview = displayBody.length > 300 && !isExpanded
+          ? displayBody.slice(0, 300) + '...'
+          : displayBody
+        const hasVariations = !!(post.remixes?.length || post.tones || post.platforms)
 
         return (
           <div key={post.id} style={cardStyle}>
@@ -210,6 +287,11 @@ export function PostsFeed({ data, availableDates }: PostsFeedProps) {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '8px' }}>
               <div style={{ fontSize: '11px', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 Post #{post.id}
+                {mode !== 'original' && (
+                  <span style={{ marginLeft: '8px', color: 'var(--accent)', fontSize: '9px' }}>
+                    [{mode.replace('-', ': ')}]
+                  </span>
+                )}
               </div>
               <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
                 <span style={slopBadge(post.anti_slop_score)}>
@@ -224,13 +306,58 @@ export function PostsFeed({ data, availableDates }: PostsFeedProps) {
               </div>
             </div>
 
+            {/* Variation controls */}
+            {hasVariations && (
+              <div style={controlBar}>
+                {post.remixes && post.remixes.length > 0 && (
+                  <div style={controlGroup}>
+                    <span style={controlLabel}>remix</span>
+                    <button style={controlPill(mode === 'original' || mode.startsWith('tone-') || mode.startsWith('platform-'))} onClick={() => setMode(post.id, 'original')}>original</button>
+                    {post.remixes.map((r, i) => (
+                      <button key={i} style={controlPill(mode === `remix-${i}`)} onClick={() => setMode(post.id, `remix-${i}`)}>
+                        {r.label || `remix ${i + 1}`}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {post.tones && (
+                  <div style={controlGroup}>
+                    <span style={controlLabel}>tone</span>
+                    {(['builder', 'advisor', 'provocateur'] as const).map(t => (
+                      <button
+                        key={t}
+                        style={controlPill(t === 'builder' ? !mode.startsWith('tone-') && !mode.startsWith('remix-') && !mode.startsWith('platform-') : mode === `tone-${t}`)}
+                        onClick={() => setMode(post.id, t === 'builder' ? 'original' : `tone-${t}`)}
+                      >
+                        {t}
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {post.platforms && (
+                  <div style={controlGroup}>
+                    <span style={controlLabel}>format</span>
+                    {(['linkedin', 'x', 'newsletter'] as const).map(p => (
+                      <button
+                        key={p}
+                        style={controlPill(p === 'linkedin' ? !mode.startsWith('platform-') && !mode.startsWith('remix-') && !mode.startsWith('tone-') : mode === `platform-${p}`)}
+                        onClick={() => setMode(post.id, p === 'linkedin' ? 'original' : `platform-${p}`)}
+                      >
+                        {p === 'x' ? '\ud835\udd4f' : p}
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             {/* Hook */}
-            <div style={hookStyle}>{post.hook}</div>
+            <div style={hookStyle}>{displayHook}</div>
 
             {/* Body */}
             <div style={bodyStyle}>{bodyPreview}</div>
 
-            {post.body.length > 300 && !isExpanded && (
+            {displayBody.length > 300 && !isExpanded && (
               <button
                 onClick={() => setExpandedId(post.id)}
                 style={{
@@ -259,7 +386,7 @@ export function PostsFeed({ data, availableDates }: PostsFeedProps) {
             )}
 
             {/* CTA */}
-            {post.cta && <div style={ctaStyle}>{post.cta}</div>}
+            {displayCta && <div style={ctaStyle}>{displayCta}</div>}
 
             {/* Tags */}
             <div style={{ marginBottom: '4px' }}>
