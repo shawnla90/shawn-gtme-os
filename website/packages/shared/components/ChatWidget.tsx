@@ -80,7 +80,18 @@ function getTextContent(message: { parts?: Array<{ type: string; text?: string }
     .join("")
 }
 
-function renderMarkdown(text: string, accentColor: string) {
+const INTERNAL_HOSTS = ["shawnos.ai", "thegtmos.ai", "thecontentos.ai"]
+
+function appendUtm(url: string, botId: string): string {
+  // Only tag internal links (relative paths or our domains)
+  const isRelative = url.startsWith("/")
+  const isInternal = !isRelative && INTERNAL_HOSTS.some((h) => url.includes(h))
+  if (!isRelative && !isInternal) return url
+  const sep = url.includes("?") ? "&" : "?"
+  return `${url}${sep}utm_source=chatbot&utm_medium=${botId}`
+}
+
+function renderMarkdown(text: string, accentColor: string, botId?: string) {
   return text.split("\n").map((line, i) => {
     // Escape HTML first to prevent XSS
     let html = escapeHtml(line)
@@ -91,7 +102,10 @@ function renderMarkdown(text: string, accentColor: string) {
     )
     html = html.replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
-      `<a href="$2" style="color:${escapeHtml(accentColor)};text-decoration:underline;text-underline-offset:2px" target="_blank" rel="noopener noreferrer">$1</a>`
+      (_match, label: string, href: string) => {
+        const finalHref = botId ? appendUtm(href, botId) : href
+        return `<a href="${finalHref}" style="color:${escapeHtml(accentColor)};text-decoration:underline;text-underline-offset:2px" target="_blank" rel="noopener noreferrer">${label}</a>`
+      }
     )
     if (line.trim().startsWith("- ") || line.trim().startsWith("* ")) {
       html = `<li style="margin-left:16px;list-style:disc">${html.replace(/^[\s]*[-*]\s/, "")}</li>`
@@ -442,7 +456,7 @@ export function ChatWidget({
               if (!text) return null
               return (
                 <div key={m.id} style={s.bubbleMsg(m.role === "user")}>
-                  {m.role === "assistant" ? renderMarkdown(text, accentColor) : text}
+                  {m.role === "assistant" ? renderMarkdown(text, accentColor, botId) : text}
                 </div>
               )
             })}

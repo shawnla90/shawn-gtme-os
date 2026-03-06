@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
+import { usePostHog } from 'posthog-js/react'
 import {
   MotionReveal,
   StaggerContainer,
@@ -350,6 +351,10 @@ function WIAccordion({ items }: { items: { question: string; answer: React.React
 /* ── main component ──────────────────────────────── */
 
 export function WhyIndependentContent() {
+  const posthog = usePostHog()
+  const track = (event: string, props?: Record<string, string>) =>
+    posthog?.capture(event, { page: 'why_independent', ...props })
+
   return (
     <div className="wi-page" style={{ fontFamily: GTM.font }}>
       <style>{scopedCSS}</style>
@@ -430,6 +435,7 @@ export function WhyIndependentContent() {
                 href="https://cal.com/shawntenam/30min"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => track('wi_cta_clicked', { cta_type: 'book_call', section: 'hero' })}
                 style={{
                   display: 'inline-block',
                   padding: '14px 36px',
@@ -449,6 +455,7 @@ export function WhyIndependentContent() {
             <MagneticHover>
               <a
                 href="tel:3474520467"
+                onClick={() => track('wi_cta_clicked', { cta_type: 'phone', section: 'hero' })}
                 style={{
                   display: 'inline-block',
                   padding: '14px 36px',
@@ -506,6 +513,7 @@ export function WhyIndependentContent() {
               <StaggerItem key={p.icon}>
                 <Link
                   href={p.href}
+                  onClick={() => track('wi_knowledge_link_clicked', { link_title: p.title, link_href: p.href, section: 'problems' })}
                   style={{
                     display: 'block',
                     padding: '28px',
@@ -757,7 +765,11 @@ export function WhyIndependentContent() {
           >
             {litmusTests.map((test) => (
               <StaggerItem key={test.title}>
-                <Link href={test.href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                <Link
+                  href={test.href}
+                  onClick={() => track('wi_knowledge_link_clicked', { link_title: test.title, link_href: test.href, section: 'litmus_tests' })}
+                  style={{ textDecoration: 'none', display: 'block', height: '100%' }}
+                >
                   <motion.div
                     whileHover={{
                       borderColor: GTM.orangeBorder,
@@ -852,6 +864,7 @@ export function WhyIndependentContent() {
                   href="https://cal.com/shawntenam/30min"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => track('wi_cta_clicked', { cta_type: 'book_call', section: 'footer' })}
                   style={{
                     display: 'inline-block',
                     padding: '16px 44px',
@@ -871,6 +884,7 @@ export function WhyIndependentContent() {
               <MagneticHover>
                 <a
                   href="tel:3474520467"
+                  onClick={() => track('wi_cta_clicked', { cta_type: 'phone', section: 'footer' })}
                   style={{
                     display: 'inline-block',
                     padding: '16px 44px',
