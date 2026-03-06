@@ -169,6 +169,145 @@ def call_claude(system_prompt: str, user_prompt: str) -> str:
     return result.stdout.strip()
 
 
+def parse_json_response(raw: str) -> list | dict | None:
+    """Extract JSON from Claude response, handling code fences."""
+    text = raw.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[1] if "\n" in text else text[3:]
+        if text.endswith("```"):
+            text = text[:-3]
+        text = text.strip()
+    if text.startswith("json"):
+        text = text[4:].strip()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        match = re.search(r'\[.*\]', text, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group(0))
+            except json.JSONDecodeError:
+                pass
+    return None
+
+
+# -- Variation Generation -----------------------------------------------------
+
+def generate_variations(posts: list[dict]) -> list[dict]:
+    """Generate remix, tone, and platform variations for each post."""
+    summaries = []
+    for p in posts:
+        summaries.append({
+            "id": p["id"],
+            "title": p["title"],
+            "hook": p["hook"],
+            "body": p["body"][:400],
+            "cta": p["cta"],
+            "tags": p["tags"],
+        })
+
+    variation_prompt = f"""You are generating variations of LinkedIn posts. For each post below, generate:
+
+1. TWO remix variants - completely different angles on the same topic. New hook, body, and CTA. Same core insight, fresh narrative approach.
+2. TWO tone variants of the body text only:
+   - "advisor": authoritative, consulting-style. "Here's what I recommend..." energy.
+   - "provocateur": edgy, contrarian, challenges assumptions. Spicy takes.
+3. TWO platform variants of the body text only:
+   - "x": Twitter/X format. Punchy, under 280 chars, or a thread with numbered points (1/, 2/, 3/).
+   - "newsletter": Personal newsletter intro style. Warmer, more conversational, as if writing to subscribers.
+
+RULES:
+- NO em-dashes anywhere. Use periods or commas.
+- Remixes should be 150-300 words each.
+- Tone variants are body-only rewrites, 150-300 words.
+- X format: either one punchy tweet (<280 chars) or a thread (use "1/ ... 2/ ... 3/ ..." format).
+- Newsletter format: 100-200 words, personal tone.
+- Keep anti-slop rules: no "game-changer", "unleash", "supercharge", no sycophantic openers.
+
+--- POSTS TO VARY ---
+{json.dumps(summaries, indent=2)}
+
+--- OUTPUT FORMAT ---
+Return ONLY a JSON array. Each item:
+{{
+  "post_id": <id>,
+  "remixes": [
+    {{ "label": "short label like contrarian-flip or tactical-breakdown", "hook": "...", "body": "...", "cta": "..." }},
+    {{ "label": "...", "hook": "...", "body": "...", "cta": "..." }}
+  ],
+  "tones": {{
+    "advisor": "full body text in advisor tone",
+    "provocateur": "full body text in provocateur tone"
+  }},
+  "platforms": {{
+    "x": "tweet or thread format",
+    "newsletter": "newsletter intro format"
+  }}
+}}"""
+
+    system = "You generate content variations. Return only valid JSON. No commentary."
+
+    print("  generating variations (remixes, tones, platforms)...")
+    var_start = time.time()
+
+    try:
+        raw = call_claude(system, variation_prompt)
+        result = parse_json_response(raw)
+        if not result or not isinstance(result, list):
+            print("  WARNING: could not parse variations, skipping")
+            return posts
+
+        # Merge variations into posts
+        var_map = {v["post_id"]: v for v in result if isinstance(v, dict)}
+        for post in posts:
+            v = var_map.get(post["id"])
+            if not v:
+                continue
+
+            # Remixes - apply anti-slop
+            remixes = []
+            for remix in v.get("remixes", []):
+                _, _, fixed_body = validate_anti_slop(remix.get("body", ""))
+                remixes.append({
+                    "label": remix.get("label", "remix"),
+                    "hook": remix.get("hook", ""),
+                    "body": fixed_body,
+                    "cta": remix.get("cta", ""),
+                })
+            if remixes:
+                post["remixes"] = remixes
+
+            # Tones - apply anti-slop, include original as builder
+            tones_raw = v.get("tones", {})
+            if tones_raw:
+                _, _, advisor_fixed = validate_anti_slop(tones_raw.get("advisor", ""))
+                _, _, provocateur_fixed = validate_anti_slop(tones_raw.get("provocateur", ""))
+                post["tones"] = {
+                    "builder": post["body"],
+                    "advisor": advisor_fixed,
+                    "provocateur": provocateur_fixed,
+                }
+
+            # Platforms - apply anti-slop, include original as linkedin
+            plats_raw = v.get("platforms", {})
+            if plats_raw:
+                _, _, x_fixed = validate_anti_slop(plats_raw.get("x", ""))
+                _, _, newsletter_fixed = validate_anti_slop(plats_raw.get("newsletter", ""))
+                post["platforms"] = {
+                    "linkedin": post["body"],
+                    "x": x_fixed,
+                    "newsletter": newsletter_fixed,
+                }
+
+        var_elapsed = time.time() - var_start
+        print(f"  variations done ({var_elapsed:.1f}s)")
+
+    except Exception as e:
+        print(f"  WARNING: variation generation failed: {e}")
+
+    return posts
+
+
 # -- Main ---------------------------------------------------------------------
 
 def main():
@@ -268,6 +407,12 @@ def main():
             "anti_slop_score": score,
             "platform": "linkedin",
         })
+
+    # Generate variations (remixes, tones, platforms)
+    if posts and not args.test:
+        posts = generate_variations(posts)
+    elif posts and args.test:
+        print("  (skipping variations in test mode)")
 
     # Calculate aggregate score
     avg_score = sum(p["anti_slop_score"] for p in posts) / len(posts) if posts else 0

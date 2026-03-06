@@ -3,6 +3,8 @@ import { anthropic } from "@ai-sdk/anthropic"
 import { CONTENT_WIKI_ENTRIES, type ContentWikiEntry } from "@shawnos/shared/data/content-wiki"
 import { HOW_TO_WIKI_ENTRIES, type HowToWikiEntry } from "@shawnos/shared/data/how-to-wiki"
 import { retrieveItems, type RetrievableItem, type RetrievalConfig } from "@shawnos/shared/lib/chat-retrieval"
+import fs from "fs"
+import path from "path"
 
 const MAX_MESSAGE_LENGTH = 10_000
 const RATE_LIMIT_MAP = new Map<string, { count: number; resetAt: number }>()
@@ -60,6 +62,38 @@ function howToWikiToItems(): RetrievableItem[] {
     }))
 }
 
+function loadLatestPosts(): RetrievableItem[] {
+  const candidates = [
+    path.join(process.cwd(), "..", "..", "..", "data", "linkedin", "posts"),
+    path.resolve("/Users/shawnos.ai/shawn-gtme-os/data/linkedin/posts"),
+  ]
+  let dir = ""
+  for (const d of candidates) {
+    if (fs.existsSync(d)) { dir = d; break }
+  }
+  if (!dir) return []
+
+  const files = fs.readdirSync(dir).filter(f => f.endsWith(".json")).sort().reverse()
+  const latest = files[0]
+  if (!latest) return []
+
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(dir, latest), "utf-8"))
+    const posts = data.posts || []
+    return posts.slice(0, 10).map((p: { id: number; title: string; hook: string; body: string; cta: string; tags: string[] }) => ({
+      id: `post-${data.date}-${p.id}`,
+      title: `LinkedIn Post: ${p.title}`,
+      description: p.hook,
+      keywords: ["linkedin post", "generated post", "remix", ...(p.tags || [])],
+      category: "posts/linkedin",
+      content: truncate(`${p.body}\n\nCTA: ${p.cta}`),
+      url: `https://thecontentos.ai/posts?date=${data.date}`,
+    }))
+  } catch {
+    return []
+  }
+}
+
 const REM_SYNONYMS: Record<string, string[]> = {
   voice: ["voice dna", "tone", "cadence", "writing style", "brand voice"],
   content: ["blog", "newsletter", "substack", "distribution", "repurpose"],
@@ -70,6 +104,7 @@ const REM_SYNONYMS: Record<string, string[]> = {
   midjourney: ["image generation", "ai art", "character design", "neobots", "chibi"],
   elevenlabs: ["voice cloning", "text to speech", "tts", "audio", "ai voice"],
   grok: ["scout agent", "x research", "twitter research", "trending"],
+  posts: ["linkedin post", "generated post", "today's posts", "remix", "post ideas", "daily posts"],
   "super whisper": ["speech to text", "voice transcription", "dictation", "voice first"],
   favikon: ["creator score", "influence", "algorithm", "ranking", "analytics"],
   video: ["gif", "screen recording", "veed", "capcut", "davinci resolve", "editing"],
@@ -82,7 +117,7 @@ let cachedConfig: RetrievalConfig | null = null
 function getConfig(): RetrievalConfig {
   if (cachedConfig) return cachedConfig
   cachedConfig = {
-    items: [...contentWikiToItems(), ...howToWikiToItems()],
+    items: [...contentWikiToItems(), ...howToWikiToItems(), ...loadLatestPosts()],
     synonymMap: REM_SYNONYMS,
   }
   return cachedConfig
@@ -149,6 +184,7 @@ RULES:
 - Keep responses concise - 2-4 short paragraphs max.
 - If the question is outside your knowledge, say so honestly and suggest they check the content wiki or how-to guides.
 - Use markdown for bold, links, and short lists when helpful. No headers.
+- If the user asks about today's posts, linkedin posts, or wants to remix/rework a post, reference the post content from your context. you can help them spin it, adjust the tone, or adapt it for a different platform.
 
 AVAILABLE ARTICLES:
 ${articleContext}`
