@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-05T05:03:41.217Z",
+  "generated": "2026-03-06T05:04:01.120Z",
   "events": [
     {
-      "id": "commit-4f64f17",
-      "title": "chore: contentos optimizer - 2 improvements (2026-03-05)",
+      "id": "commit-d24a688",
+      "title": "feat: GTM engineer consultant positioning + /why-independent",
+      "type": "milestone",
+      "datetime": "2026-03-05T23:57:16-05:00",
+      "status": "completed",
+      "description": "feat: GTM engineer consultant positioning + /why-independent page",
+      "metadata": {
+        "commitHash": "d24a688"
+      }
+    },
+    {
+      "id": "commit-9197306",
+      "title": "feat: post variations engine + REM post awareness",
+      "type": "milestone",
+      "datetime": "2026-03-05T23:29:26-05:00",
+      "status": "completed",
+      "description": "feat: post variations engine + REM post awareness",
+      "metadata": {
+        "commitHash": "9197306"
+      }
+    },
+    {
+      "id": "commit-ddaa108",
+      "title": "chore: contentos optimizer - 1 improvements (2026-03-06)",
       "type": "system",
-      "datetime": "2026-03-04T23:03:36-05:00",
+      "datetime": "2026-03-05T23:03:07-05:00",
       "status": "completed",
-      "description": "chore: contentos optimizer - 2 improvements (2026-03-05)",
+      "description": "chore: contentos optimizer - 1 improvements (2026-03-06)",
       "metadata": {
-        "commitHash": "4f64f17"
+        "commitHash": "ddaa108"
       }
     },
     {
-      "id": "commit-ba0dc83",
-      "title": "feat: nio sword animation - birefnet bg removal, forward+rev",
+      "id": "commit-697ea09",
+      "title": "feat: scout post variety + disclaimer banner",
       "type": "milestone",
-      "datetime": "2026-03-04T22:44:20-05:00",
+      "datetime": "2026-03-05T22:18:23-05:00",
       "status": "completed",
-      "description": "feat: nio sword animation - birefnet bg removal, forward+reverse+idle bob",
+      "description": "feat: scout post variety + disclaimer banner",
       "metadata": {
-        "commitHash": "ba0dc83"
+        "commitHash": "697ea09"
       }
     },
     {
-      "id": "commit-541cf97",
-      "title": "feat: chat analytics, security hardening, Substack gate, fee",
-      "type": "milestone",
-      "datetime": "2026-03-04T19:15:55-05:00",
-      "status": "completed",
-      "description": "feat: chat analytics, security hardening, Substack gate, feedback button",
-      "metadata": {
-        "commitHash": "541cf97"
-      }
-    },
-    {
-      "id": "commit-acc62ec",
-      "title": "fix: move highlight reel video from home page to showcase",
-      "type": "deployment",
-      "datetime": "2026-03-04T16:20:59-05:00",
-      "status": "completed",
-      "description": "fix: move highlight reel video from home page to showcase",
-      "metadata": {
-        "commitHash": "acc62ec"
-      }
-    },
-    {
-      "id": "commit-b764c41",
-      "title": "fix: remove entrance video gate, avatar slides in at half si",
-      "type": "deployment",
-      "datetime": "2026-03-04T15:28:42-05:00",
-      "status": "completed",
-      "description": "fix: remove entrance video gate, avatar slides in at half size",
-      "metadata": {
-        "commitHash": "b764c41"
-      }
-    },
-    {
-      "id": "commit-6647ec2",
-      "title": "fix: add defaultOpen and hideBubble props to ChatWidget",
-      "type": "deployment",
-      "datetime": "2026-03-04T14:47:24-05:00",
-      "status": "completed",
-      "description": "fix: add defaultOpen and hideBubble props to ChatWidget",
-      "metadata": {
-        "commitHash": "6647ec2"
-      }
-    },
-    {
-      "id": "commit-efe8051",
-      "title": "feat: daily LinkedIn posts 2026-03-04",
-      "type": "milestone",
-      "datetime": "2026-03-04T09:02:33-05:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-04",
-      "metadata": {
-        "commitHash": "efe8051"
-      }
-    },
-    {
-      "id": "commit-23ae5cc",
-      "title": "feat: nio.log 2026-03-04 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-03-04T08:02:30-05:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-03-04 — automated daily post",
-      "metadata": {
-        "commitHash": "23ae5cc"
-      }
-    },
-    {
-      "id": "commit-b82ef1f",
-      "title": "fix: nio avatar transparent background + glow animation",
-      "type": "deployment",
-      "datetime": "2026-03-04T04:22:23-05:00",
-      "status": "completed",
-      "description": "fix: nio avatar transparent background + glow animation",
-      "metadata": {
-        "commitHash": "b82ef1f"
-      }
-    },
-    {
-      "id": "commit-e1f5dc1",
-      "title": "fix: scrub client names from public repo + restore contentos",
-      "type": "deployment",
-      "datetime": "2026-03-04T00:29:59-05:00",
-      "status": "completed",
-      "description": "fix: scrub client names from public repo + restore contentos build",
-      "metadata": {
-        "commitHash": "e1f5dc1"
-      }
-    },
-    {
-      "id": "commit-0c8da01",
-      "title": "chore: daily tracker scan 2026-03-03",
+      "id": "commit-9469285",
+      "title": "docs: add ASSETS.md agent taxonomy + archive progression spr",
       "type": "system",
-      "datetime": "2026-03-04T00:05:56-05:00",
+      "datetime": "2026-03-05T21:13:19-05:00",
       "status": "completed",
-      "description": "chore: daily tracker scan 2026-03-03",
+      "description": "docs: add ASSETS.md agent taxonomy + archive progression sprites",
       "metadata": {
-        "commitHash": "0c8da01"
+        "commitHash": "9469285"
       }
     },
     {
-      "id": "commit-175bda2",
-      "title": "chore: contentos optimizer - 1 improvements (2026-03-04)",
+      "id": "commit-73dcceb",
+      "title": "docs: archive stale docs + update memory for single-machine",
       "type": "system",
-      "datetime": "2026-03-03T23:04:50-05:00",
+      "datetime": "2026-03-05T19:43:25-05:00",
       "status": "completed",
-      "description": "chore: contentos optimizer - 1 improvements (2026-03-04)",
+      "description": "docs: archive stale docs + update memory for single-machine",
       "metadata": {
-        "commitHash": "175bda2"
+        "commitHash": "73dcceb"
       }
     },
     {
-      "id": "commit-f3394e3",
-      "title": "fix: restore contentos build-your-own page + revert vercel.j",
+      "id": "commit-d288021",
+      "title": "fix: operational hardening - ABM pipeline fix + env docs",
       "type": "deployment",
-      "datetime": "2026-03-03T22:12:21-05:00",
+      "datetime": "2026-03-05T19:42:05-05:00",
       "status": "completed",
-      "description": "fix: restore contentos build-your-own page + revert vercel.json hacks",
+      "description": "fix: operational hardening - ABM pipeline fix + env docs",
       "metadata": {
-        "commitHash": "f3394e3"
+        "commitHash": "d288021"
       }
     },
     {
-      "id": "commit-34ae03c",
-      "title": "fix: clear npm cache before install on Vercel to fix idealTr",
-      "type": "deployment",
-      "datetime": "2026-03-03T21:30:25-05:00",
+      "id": "commit-bc845c0",
+      "title": "refactor: architecture normalization - shared URLs, pinned d",
+      "type": "system",
+      "datetime": "2026-03-05T19:36:16-05:00",
       "status": "completed",
-      "description": "fix: clear npm cache before install on Vercel to fix idealTree error",
+      "description": "refactor: architecture normalization - shared URLs, pinned deps, PostHog proxy",
       "metadata": {
-        "commitHash": "34ae03c"
+        "commitHash": "bc845c0"
       }
     },
     {
-      "id": "commit-1ad211f",
-      "title": "feat: Nio chat widget for shawnos.ai + ROI video components ",
+      "id": "commit-2982d73",
+      "title": "refactor: dead code removal + PostHogProvider extraction",
+      "type": "system",
+      "datetime": "2026-03-05T18:54:31-05:00",
+      "status": "completed",
+      "description": "refactor: dead code removal + PostHogProvider extraction",
+      "metadata": {
+        "commitHash": "2982d73"
+      }
+    },
+    {
+      "id": "commit-b4c598f",
+      "title": "refactor: single-machine transition - remove dual-machine to",
+      "type": "system",
+      "datetime": "2026-03-05T18:42:24-05:00",
+      "status": "completed",
+      "description": "refactor: single-machine transition - remove dual-machine topology",
+      "metadata": {
+        "commitHash": "b4c598f"
+      }
+    },
+    {
+      "id": "commit-208fefe",
+      "title": "chore: commit pending work + harden .gitignore",
+      "type": "system",
+      "datetime": "2026-03-05T17:46:12-05:00",
+      "status": "completed",
+      "description": "chore: commit pending work + harden .gitignore",
+      "metadata": {
+        "commitHash": "208fefe"
+      }
+    },
+    {
+      "id": "commit-7f361cf",
+      "title": "feat: daily LinkedIn posts 2026-03-05",
       "type": "milestone",
-      "datetime": "2026-03-03T21:17:16-05:00",
+      "datetime": "2026-03-05T09:02:40-05:00",
       "status": "completed",
-      "description": "feat: Nio chat widget for shawnos.ai + ROI video components + blog post",
+      "description": "feat: daily LinkedIn posts 2026-03-05",
       "metadata": {
-        "commitHash": "1ad211f"
+        "commitHash": "7f361cf"
+      }
+    },
+    {
+      "id": "commit-ba80159",
+      "title": "feat: nio.log 2026-03-05 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-05T08:01:59-05:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-05 — automated daily post",
+      "metadata": {
+        "commitHash": "ba80159"
+      }
+    },
+    {
+      "id": "commit-d698274",
+      "title": "feat: anti-slop detector - negation stacking + NPC highlight",
+      "type": "milestone",
+      "datetime": "2026-03-05T05:28:43-05:00",
+      "status": "completed",
+      "description": "feat: anti-slop detector - negation stacking + NPC highlighting",
+      "metadata": {
+        "commitHash": "d698274"
+      }
+    },
+    {
+      "id": "commit-df9eea9",
+      "title": "feat: knowledge wiki expansion - 21 new articles across 4 wi",
+      "type": "milestone",
+      "datetime": "2026-03-05T05:23:36-05:00",
+      "status": "completed",
+      "description": "feat: knowledge wiki expansion - 21 new articles across 4 wikis",
+      "metadata": {
+        "commitHash": "df9eea9"
       }
     }
   ],
