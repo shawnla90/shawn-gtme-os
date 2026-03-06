@@ -1215,7 +1215,7 @@ def scan_mtime_for_date(target_date):
     """Find files modified on target_date by checking filesystem mtime.
 
     This catches files that don't have date prefixes in their names — like
-    clients/partner/praecipio/prompts/web-reveal-qualification.md, icp.md,
+    clients/partner/acme-consulting/prompts/web-reveal-qualification.md, icp.md,
     SKILL.md, etc. Walks MTIME_SCAN_DIRS and collects any .md or .py file
     whose mtime falls on the target date.
 

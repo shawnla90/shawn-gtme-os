@@ -5,6 +5,7 @@ import { GtmOsVideo, GTM_OS_TOTAL_FRAMES } from './GtmOsVideo';
 import { ContentOsVideo } from './ContentOsVideo';
 import { NioVideo } from './NioVideo';
 import { ShawnOsThumbnail, GtmOsThumbnail, ContentOsThumbnail } from './Thumbnails';
+import { NioBanner, ReconBanner, RemBanner, UnifiedBanner } from './Banners';
 import { FPS, TOTAL_FRAMES, PRESETS } from './lib/timing';
 import { FPS_V2, TOTAL_FRAMES_V2 } from './lib/timing-v2';
 import { FPS_NIO, NIO_TOTAL_FRAMES } from './lib/timing-nio';
@@ -192,6 +193,44 @@ export const Root: React.FC = () => {
         fps={1}
         width={PRESETS.linkedin.width}
         height={PRESETS.linkedin.height}
+      />
+
+      {/* ── Social Profile Banners (1500×500) ── */}
+
+      <Composition
+        id="NioBanner"
+        component={NioBanner}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.banner.width}
+        height={PRESETS.banner.height}
+      />
+
+      <Composition
+        id="ReconBanner"
+        component={ReconBanner}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.banner.width}
+        height={PRESETS.banner.height}
+      />
+
+      <Composition
+        id="RemBanner"
+        component={RemBanner}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.banner.width}
+        height={PRESETS.banner.height}
+      />
+
+      <Composition
+        id="UnifiedBanner"
+        component={UnifiedBanner}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.banner.width}
+        height={PRESETS.banner.height}
       />
 
       {/* ── GTM Automation Flow Carousel (LinkedIn 4:5) ── */}

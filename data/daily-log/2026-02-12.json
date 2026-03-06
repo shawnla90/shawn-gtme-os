@@ -612,7 +612,7 @@
     {
       "type": "partner_research",
       "title": "partner personas",
-      "path": "clients/partner/praecipio/research/personas.md",
+      "path": "clients/partner/acme-consulting/research/personas.md",
       "source": "auto-mtime",
       "timestamp": "20:32",
       "words": 1754,
@@ -623,7 +623,7 @@
     {
       "type": "partner_prompt",
       "title": "partner personalization research",
-      "path": "clients/partner/praecipio/prompts/personalization-research.md",
+      "path": "clients/partner/acme-consulting/prompts/personalization-research.md",
       "source": "auto-mtime",
       "timestamp": "17:28",
       "words": 738,
@@ -645,7 +645,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign monitoring",
-      "path": "clients/partner/praecipio/workflows/campaign-monitoring.md",
+      "path": "clients/partner/acme-consulting/workflows/campaign-monitoring.md",
       "source": "auto-mtime",
       "timestamp": "13:11",
       "words": 105,
@@ -656,7 +656,7 @@
     {
       "type": "partner_prompt",
       "title": "partner signal retrieval",
-      "path": "clients/partner/praecipio/prompts/signal-retrieval.md",
+      "path": "clients/partner/acme-consulting/prompts/signal-retrieval.md",
       "source": "auto-mtime",
       "timestamp": "13:29",
       "words": 408,
@@ -667,7 +667,7 @@
     {
       "type": "partner_prompt",
       "title": "partner campaign copy",
-      "path": "clients/partner/praecipio/prompts/campaign-copy.md",
+      "path": "clients/partner/acme-consulting/prompts/campaign-copy.md",
       "source": "auto-mtime",
       "timestamp": "17:28",
       "words": 376,
@@ -689,7 +689,7 @@
     {
       "type": "partner_resource",
       "title": "partner contacts",
-      "path": "clients/partner/praecipio/resources/contacts.md",
+      "path": "clients/partner/acme-consulting/resources/contacts.md",
       "source": "auto-mtime",
       "timestamp": "13:11",
       "words": 75,
@@ -700,7 +700,7 @@
     {
       "type": "partner_workflow",
       "title": "partner campaign patterns",
-      "path": "clients/partner/praecipio/workflows/campaign-patterns.md",
+      "path": "clients/partner/acme-consulting/workflows/campaign-patterns.md",
       "source": "auto-mtime",
       "timestamp": "20:27",
       "words": 273,
@@ -711,7 +711,7 @@
     {
       "type": "partner_onboard",
       "title": "partner onboard skill",
-      "path": "clients/partner/praecipio/SKILL.md",
+      "path": "clients/partner/acme-consulting/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "20:27",
       "words": 508,
@@ -722,7 +722,7 @@
     {
       "type": "partner_research",
       "title": "partner icp",
-      "path": "clients/partner/praecipio/research/icp.md",
+      "path": "clients/partner/acme-consulting/research/icp.md",
       "source": "auto-mtime",
       "timestamp": "13:28",
       "words": 563,
@@ -744,7 +744,7 @@
     {
       "type": "partner_prompt",
       "title": "partner web reveal qualification",
-      "path": "clients/partner/praecipio/prompts/web-reveal-qualification.md",
+      "path": "clients/partner/acme-consulting/prompts/web-reveal-qualification.md",
       "source": "auto-mtime",
       "timestamp": "20:51",
       "words": 1591,

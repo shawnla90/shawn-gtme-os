@@ -21,7 +21,7 @@ Generate a **copy-paste-ready partner update** from the current conversation con
 
 Any text after the partner name is treated as **additional context** the agent folds into the message.
 
-Example: `/partnercomm slack praecipio ran the full 4L web reveal workflow — qualified prospects, built persona prompts, set up email waterfall with conditional logic`
+Example: `/partnercomm slack acme-consulting ran the full 4L web reveal workflow — qualified prospects, built persona prompts, set up email waterfall with conditional logic`
 
 ---
 

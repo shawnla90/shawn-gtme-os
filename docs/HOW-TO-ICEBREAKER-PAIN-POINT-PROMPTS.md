@@ -49,7 +49,7 @@ The opening line of a cold email that proves you researched the person. A specif
 **Partner Gamma (ShopTalk event context)**:
 > "Saw you're heading to ShopTalk — and that you just expanded into Target doors last quarter. That kind of retail velocity usually breaks a 3PL relationship before the first OTIF review."
 
-**Praecipio (web reveal context)**:
+**Acme Consulting (web reveal context)**:
 > "Noticed you've been scaling an Atlassian footprint since the Zendesk migration last year — that kind of transition usually surfaces some ugly workflow gaps by month six."
 
 **Partner Beta (account research context)**:
@@ -102,7 +102,7 @@ A provocative, uncomfortable observation that challenges how the company is prob
 **Partner Gamma — Retail brand**:
 > "Running omni-channel fulfillment from three separate inventory pools and calling it 'operational flexibility' is just a polite way of saying nobody has the budget to fix it."
 
-**Praecipio (Email 1 body — "poke the bear" style)**:
+**Acme Consulting (Email 1 body — "poke the bear" style)**:
 > "Here's what I keep seeing at orgs your size — everyone knows the tooling is creating drag, but nobody wants to be the one to say it out loud. The workarounds become the process, and the process becomes 'how we've always done it.'"
 
 **Partner Beta (hypothetical — built from pain points)**:
@@ -153,7 +153,7 @@ A data point or observation that identifies a specific problem the company is fa
 | CapEx barriers | "You're evaluating automation but the $100M price tag keeps pushing it to 'next year's budget.'" |
 | WISMO tickets | "Your support team is fielding 200 WISMO tickets a week because your 3PL's inventory sync is 6 hours behind your Shopify store." |
 
-**Praecipio — mapped to service fit**:
+**Acme Consulting — mapped to service fit**:
 
 | Service Fit | Example Variable Output |
 |-------------|----------------------|
@@ -207,7 +207,7 @@ Subject: Re: quick question
 — {sender}
 ```
 
-### 2-Touch Sequence (Praecipio Model)
+### 2-Touch Sequence (Acme Consulting Model)
 
 ```
 EMAIL 1 — Day 0 (Poke the Bear w/ Icebreaker)
@@ -356,7 +356,7 @@ Use these when building prompts for specific partners. Map your poke-the-bear an
 | Black box 3PL — no visibility into inventory | All | Complaints about 3PL reporting, seeking visibility tools |
 | WISMO tickets crushing customer experience | Retail, DTC | Shopify stores, high return rates, support tool usage |
 
-### Praecipio — Atlassian Platinum Partner
+### Acme Consulting — Atlassian Platinum Partner
 
 | Pain Point | Service Fit | Signal to Look For |
 |------------|------------|-------------------|

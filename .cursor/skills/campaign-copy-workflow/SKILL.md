@@ -9,8 +9,8 @@ Generate a complete outbound email campaign package: static email bodies (for In
 
 ## Trigger
 
-- `/campaigncopy <partner>` (e.g., `/campaigncopy praecipio`)
-- "campaign copy workflow praecipio"
+- `/campaigncopy <partner>` (e.g., `/campaigncopy acme-consulting`)
+- "campaign copy workflow acme-consulting"
 - "build campaign copy for [partner]"
 
 ## Prerequisites

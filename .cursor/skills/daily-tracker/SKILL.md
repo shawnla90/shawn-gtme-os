@@ -25,7 +25,7 @@ The tracker is typically run **once per evening around ~20:00 (8 PM)** as an end
 **CRITICAL**: The dashboard image and tracker summary are shareable content. **Never include partner or client names** in accomplishment titles, score breakdowns, or any visible output. Use generic labels:
 - "partner web reveal qualification" — NOT "acme web reveal qualification"
 - "partner onboard skill" — NOT "acme partner skill"
-- "client signal retrieval" — NOT "steves-recruiting signal retrieval"
+- "client signal retrieval" — NOT "example-client signal retrieval"
 
 This applies to the scanner (`daily_scan.py`), dashboard image, and any markdown summary the agent prints. The underlying JSON `path` field still contains the real path (for internal reference), but `title` must be scrubbed.
 

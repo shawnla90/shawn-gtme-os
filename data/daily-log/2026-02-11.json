@@ -178,7 +178,7 @@
     {
       "type": "client_prompt",
       "title": "client list cleaning",
-      "path": "clients/client/steves-recruiting/prompts/list-cleaning.md",
+      "path": "clients/client/example-client/prompts/list-cleaning.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 342,
@@ -200,7 +200,7 @@
     {
       "type": "client_workflow",
       "title": "client list management",
-      "path": "clients/client/steves-recruiting/workflows/list-management.md",
+      "path": "clients/client/example-client/workflows/list-management.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 354,
@@ -310,7 +310,7 @@
     {
       "type": "client_resource",
       "title": "client csv notes",
-      "path": "clients/client/steves-recruiting/resources/csv-notes.md",
+      "path": "clients/client/example-client/resources/csv-notes.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 399,
@@ -365,7 +365,7 @@
     {
       "type": "client_research",
       "title": "client icp",
-      "path": "clients/client/steves-recruiting/research/icp.md",
+      "path": "clients/client/example-client/research/icp.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 219,
@@ -464,7 +464,7 @@
     {
       "type": "client_research",
       "title": "client personas",
-      "path": "clients/client/steves-recruiting/research/personas.md",
+      "path": "clients/client/example-client/research/personas.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 310,
@@ -530,7 +530,7 @@
     {
       "type": "client_resource",
       "title": "client contacts",
-      "path": "clients/client/steves-recruiting/resources/contacts.md",
+      "path": "clients/client/example-client/resources/contacts.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 94,
@@ -541,7 +541,7 @@
     {
       "type": "client_onboard",
       "title": "client onboard skill",
-      "path": "clients/client/steves-recruiting/SKILL.md",
+      "path": "clients/client/example-client/SKILL.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 552,
@@ -563,7 +563,7 @@
     {
       "type": "client_workflow",
       "title": "client tool consolidation",
-      "path": "clients/client/steves-recruiting/workflows/tool-consolidation.md",
+      "path": "clients/client/example-client/workflows/tool-consolidation.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 658,
@@ -651,7 +651,7 @@
     {
       "type": "client_resource",
       "title": "client email thread",
-      "path": "clients/client/steves-recruiting/resources/email-thread.md",
+      "path": "clients/client/example-client/resources/email-thread.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 998,
@@ -772,7 +772,7 @@
     {
       "type": "client_prompt",
       "title": "client signal retrieval",
-      "path": "clients/client/steves-recruiting/prompts/signal-retrieval.md",
+      "path": "clients/client/example-client/prompts/signal-retrieval.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 259,
@@ -849,7 +849,7 @@
     {
       "type": "client_prompt",
       "title": "client lead prioritization",
-      "path": "clients/client/steves-recruiting/prompts/lead-prioritization.md",
+      "path": "clients/client/example-client/prompts/lead-prioritization.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 344,
@@ -882,7 +882,7 @@
     {
       "type": "client_workflow",
       "title": "client daily batching",
-      "path": "clients/client/steves-recruiting/workflows/daily-batching.md",
+      "path": "clients/client/example-client/workflows/daily-batching.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 308,
@@ -1025,7 +1025,7 @@
     {
       "type": "client_resource",
       "title": "client session 01",
-      "path": "clients/client/steves-recruiting/resources/transcripts/session-01.md",
+      "path": "clients/client/example-client/resources/transcripts/session-01.md",
       "source": "auto-mtime",
       "timestamp": "15:43",
       "words": 20,

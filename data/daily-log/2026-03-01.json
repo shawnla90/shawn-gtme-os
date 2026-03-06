@@ -423,7 +423,7 @@
     {
       "type": "client_resource",
       "title": "client csv notes",
-      "path": "clients/client/steves-recruiting/resources/csv-notes.md",
+      "path": "clients/client/example-client/resources/csv-notes.md",
       "source": "auto-mtime",
       "timestamp": "21:55",
       "words": 484,
@@ -434,7 +434,7 @@
     {
       "type": "script",
       "title": "enrich_contacts",
-      "path": "clients/client/steves-recruiting/scripts/enrich_contacts.py",
+      "path": "clients/client/example-client/scripts/enrich_contacts.py",
       "source": "auto-mtime",
       "timestamp": "21:37",
       "words": 1436,

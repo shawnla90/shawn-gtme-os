@@ -15,7 +15,7 @@
 - RPG progression: XP from daily output scores, 6 avatar tiers, 5 classes, milestones
 - Daily cron at midnight via launchd: scan → cost tracker → progression → dashboard → git push → Vercel deploy
 - Scripts: 19+ in `scripts/` including session_cost_tracker.py (we built this)
-- Clients: `clients/partner/` and `clients/client/` (steves-recruiting)
+- Clients: `clients/partner/` and `clients/client/` (example-client)
 
 ## My Setup
 - Name: Nio 🤖

@@ -92,6 +92,17 @@ Write the handoff using this exact structure:
 [Top 3-5 files the next session should read to get oriented, in priority order.]
 ```
 
+## Post-Handoff: Auto-Compact
+
+After writing the handoff file, **always run `/compact`** to compress the conversation context. This lets the user continue working in the same session with a fresh context window.
+
+Steps:
+1. Write the handoff file (as above)
+2. Print a brief confirmation: "handoff written to ~/.claude/handoffs/... - compacting context now."
+3. Tell the user: "handoff saved. run `/compact` to free up context and keep working."
+
+The user prefers to stay in-session rather than starting fresh. The handoff + compact combo gives them a checkpoint without losing their terminal state.
+
 ## Rules
 
 1. **Be specific** - file paths, commit hashes, line numbers. Vague handoffs are useless.
@@ -102,3 +113,4 @@ Write the handoff using this exact structure:
 6. **Never overwrite another session's handoff.** Each session gets its own file.
 7. **Consume on read.** Mark handoffs `_done` after reading them so they don't pile up.
 8. **Auto-clean.** Delete `_done` handoffs older than 7 days.
+9. **Always suggest `/compact` after writing.** The user wants to continue in-session.

@@ -18,7 +18,11 @@ export const COLORS = {
 
   // GTMOS palette
   teal: '#3DBFA0',
+  orange: '#F97316',
   red: '#E05555',
+
+  // ContentOS palette
+  pink: '#FF69B4',
 
   // Nio palette
   nioBlue: '#6B8AFF',
@@ -37,7 +41,7 @@ export const FONTS = {
 /** Per-site accent colors for the 3-site network */
 export const SITE_ACCENTS = {
   shawnos: COLORS.green,
-  gtmos: COLORS.teal,
-  contentos: COLORS.purple,
+  gtmos: COLORS.orange,
+  contentos: COLORS.pink,
   nio: COLORS.nioBlue,
 } as const;

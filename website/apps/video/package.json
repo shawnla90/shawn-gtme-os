@@ -32,6 +32,11 @@
     "render:antislop60-all": "npm run render:antislop60-tiktok && npm run render:antislop60-linkedin && npm run render:antislop60-landscape",
     "render:roi": "remotion render src/index.ts RoiComparison out/roi-comparison.mp4",
     "render:roi:linkedin": "remotion render src/index.ts RoiComparisonLinkedIn out/roi-comparison-linkedin.mp4",
+    "render:banner-nio": "remotion still src/index.ts NioBanner --image-format=png out/banner-nio.png",
+    "render:banner-recon": "remotion still src/index.ts ReconBanner --image-format=png out/banner-recon.png",
+    "render:banner-rem": "remotion still src/index.ts RemBanner --image-format=png out/banner-rem.png",
+    "render:banner-unified": "remotion still src/index.ts UnifiedBanner --image-format=png out/banner-unified.png",
+    "render:banners": "npm run render:banner-nio && npm run render:banner-recon && npm run render:banner-rem && npm run render:banner-unified",
     "build": "echo 'Video app — use render scripts instead'"
   },
   "dependencies": {

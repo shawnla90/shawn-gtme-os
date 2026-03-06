@@ -202,7 +202,7 @@ See `clients/partner/<partner>/research/icp.md` for format. Key sections:
 
 ### research/personas.md Template
 
-See `clients/partner/praecipio/research/personas.md` for format. Key sections:
+See `clients/partner/acme-consulting/research/personas.md` for format. Key sections:
 - Persona tiers (Economic Buyer, Technical Decision Maker, Operational Buyer, etc.)
 - Clay/Claygent queries — full query + by-tier bracketed format + outreach priority groups
 - Query usage notes
