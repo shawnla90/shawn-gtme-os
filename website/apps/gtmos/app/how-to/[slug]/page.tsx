@@ -9,14 +9,11 @@ import {
 } from '@shawnos/shared/data/how-to-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES, type SiteKey } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 
-const CANONICAL_URLS: Record<string, string> = {
-  shawnos: 'https://shawnos.ai',
-  gtmos: 'https://thegtmos.ai',
-  contentos: 'https://thecontentos.ai',
-}
+const CANONICAL_URLS: Record<string, string> = SITES
 
 /* ── static params: only gtmos-canonical entries ──── */
 
@@ -310,7 +307,7 @@ export default async function HowToEntryPage({
       if (!r) return null
       return { id: r.id, title: r.title, canonicalSite: r.canonicalSite }
     })
-    .filter(Boolean) as { id: string; title: string; canonicalSite: string }[]
+    .filter(Boolean) as { id: string; title: string; canonicalSite: SiteKey }[]
 
   const localRelated = relatedEntries.filter(
     (r) => r.canonicalSite === 'gtmos',

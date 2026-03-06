@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 import { ToolsClient } from './ToolsClient'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 
 export const metadata: Metadata = {
   title: 'Features - Email Deliverability Tools',

@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 import { AntiSlopClient } from './AntiSlopClient'
 
-const SITE_URL = 'https://thecontentos.ai'
+const SITE_URL = SITES.contentos
 
 export const metadata: Metadata = {
   title: 'Anti-Slop Detector - Score Your Content Against 20 Rules',

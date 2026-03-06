@@ -8,8 +8,9 @@ import {
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 
 /* ── static params for SSG ────────────────────────── */
 

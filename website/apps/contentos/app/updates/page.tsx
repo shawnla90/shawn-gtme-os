@@ -14,9 +14,10 @@ import { getHowToWikiEntriesBySite } from '@shawnos/shared/data/how-to-wiki'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema, UpdatesFeed } from '@shawnos/shared/components'
 import type { FeedEntry, CategoryFilter } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
-const SHAWNOS_URL = 'https://shawnos.ai'
+const SITE_URL = SITES.contentos
+const SHAWNOS_URL = SITES.shawnos
 const DATA_ROOT = resolveDataRoot()
 const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
 

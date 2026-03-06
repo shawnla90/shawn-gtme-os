@@ -6,9 +6,10 @@ import {
 } from '@shawnos/shared/data/content-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { detectPlatform, PLATFORM_COLORS } from '../lib/platform-colors'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
-const GTMOS_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.contentos
+const GTMOS_URL = SITES.gtmos
 
 /* ── metadata ─────────────────────────────────────── */
 

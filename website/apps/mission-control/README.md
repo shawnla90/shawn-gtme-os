@@ -17,7 +17,7 @@ Command center for your AI operating system.
 ## Tech Stack
 
 - **Framework:** Next.js 14 (App Router)
-- **Styling:** Tailwind CSS
+- **Styling:** Tailwind CSS v3 (other apps use v4 - not worth upgrading for internal tool)
 - **Icons:** Lucide React
 - **Theme:** Terminal/Matrix-inspired dark theme
 - **Data:** File system integration with GTM OS repo

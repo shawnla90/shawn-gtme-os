@@ -18,9 +18,10 @@ import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema, UpdatesFeed } from '@shawnos/shared/components'
 import type { FeedEntry, CategoryFilter } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thegtmos.ai'
-const SHAWNOS_URL = 'https://shawnos.ai'
+const SITE_URL = SITES.gtmos
+const SHAWNOS_URL = SITES.shawnos
 const DATA_ROOT = resolveDataRoot()
 const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
 

@@ -20,7 +20,15 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       loaded: (ph) => {
         if (process.env.NODE_ENV === "development") ph.debug()
 
-        // Tag internal users (Shawn's machines) so they can be filtered out
+        // Set internal cookie via URL param (works on any device/browser)
+        const params = new URLSearchParams(window.location.search)
+        if (params.get('_shawnos') === '1') {
+          document.cookie = 'shawnos_internal=1; max-age=31536000; path=/; SameSite=Lax'
+          params.delete('_shawnos')
+          const clean = params.toString()
+          window.history.replaceState({}, '', window.location.pathname + (clean ? '?' + clean : ''))
+        }
+
         const isInternal =
           window.location.hostname === "localhost" ||
           document.cookie.includes("shawnos_internal=1")

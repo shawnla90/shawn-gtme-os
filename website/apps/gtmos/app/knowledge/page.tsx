@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { KnowledgeGuidePage } from '@shawnos/shared/pages/KnowledgeGuidePage'
 import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 
 export const metadata: Metadata = {
   title: 'Knowledge Guide | Engineering & AI Terms',

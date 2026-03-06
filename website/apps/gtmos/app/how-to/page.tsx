@@ -6,8 +6,9 @@ import {
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { HowToWikiPage } from '@shawnos/shared/pages/HowToWikiPage'
 import type { HowToWikiPageConfig } from '@shawnos/shared/pages/HowToWikiPage'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 
 /* ── metadata ─────────────────────────────────────── */
 

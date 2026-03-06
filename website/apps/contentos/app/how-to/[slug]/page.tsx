@@ -9,16 +9,13 @@ import {
 } from '@shawnos/shared/data/how-to-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
-const SHAWNOS_URL = 'https://shawnos.ai'
-const GTMOS_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.contentos
+const SHAWNOS_URL = SITES.shawnos
+const GTMOS_URL = SITES.gtmos
 
-const CANONICAL_URLS: Record<string, string> = {
-  shawnos: SHAWNOS_URL,
-  gtmos: GTMOS_URL,
-  contentos: SITE_URL,
-}
+const CANONICAL_URLS: Record<string, string> = SITES
 
 /* ── static params (only contentos-canonical entries) ── */
 

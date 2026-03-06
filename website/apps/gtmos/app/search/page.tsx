@@ -6,10 +6,11 @@ import { ENGINEERING_CATEGORIES, toSlug } from '@shawnos/shared/data/engineering
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 import SearchContent from './SearchContent'
 import type { SearchItem } from './SearchContent'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 const DATA_ROOT = resolveDataRoot()
 const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
 

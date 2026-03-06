@@ -2,10 +2,11 @@ import type { Metadata } from 'next'
 import { CONTENT_WIKI_ENTRIES, CONTENT_WIKI_CATEGORIES } from '@shawnos/shared/data/content-wiki'
 import { getHowToWikiEntriesBySite } from '@shawnos/shared/data/how-to-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 import SearchContent from './SearchContent'
 import type { SearchItem } from './SearchContent'
 
-const SITE_URL = 'https://thecontentos.ai'
+const SITE_URL = SITES.contentos
 
 /* ── metadata ─────────────────────────────────────── */
 

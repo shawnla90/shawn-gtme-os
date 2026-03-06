@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import path from 'path'
 import { getLogDates, getLogByDate, getWeeklyContext } from '@shawnos/shared/lib'
 import { DailyLogView, LogDetailIntro } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
+const SITE_URL = SITES.contentos
 const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
 
 /* ── Static generation ─────────────────────────── */

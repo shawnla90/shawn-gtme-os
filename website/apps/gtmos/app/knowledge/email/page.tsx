@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import { EmailInfrastructureGuidePage } from '@shawnos/shared/pages/EmailInfrastructureGuidePage'
 import { EMAIL_CATEGORIES } from '@shawnos/shared/data/email-infrastructure'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 
 export const metadata: Metadata = {
   title: 'Email Infrastructure Guide | Domains, Warmup & Deliverability',

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { JetBrains_Mono } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer, CursorGlow } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer, CursorGlow, PostHogProvider } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import { RemChat } from './RemChat'
 import './globals.css'
@@ -146,42 +146,44 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${satoshi.variable} ${jetbrains.variable}`}>
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-        <Navigation
-          siteName="theContentOS.ai"
-          links={[
-            { href: '/', label: 'Home' },
-            { href: '/how-to', label: 'How-To' },
-            { href: '/content-wiki', label: 'Content Wiki' },
-            { href: 'https://shawnos.ai/knowledge', label: 'Knowledge' },
-            { href: 'https://thegtmos.ai/clay-wiki', label: 'Clay Wiki' },
-            { href: '/method', label: 'Method' },
-            { href: '/showcase', label: 'Showcase' },
-            { href: '/anti-slop', label: 'Anti-Slop' },
-            { href: '/search', label: 'Search' },
-            { href: '/log', label: 'Log' },
-            { href: '/vitals', label: 'Vitals' },
-            { href: '/posts', label: 'Posts' },
-            { href: '/updates', label: 'Updates' },
-          ]}
-        />
-        <CursorGlow />
-        <main>{children}</main>
-        <NetworkBanner currentSite="contentos" />
-        <Footer siteName="theContentOS.ai" />
-        <RemChat />
-        <Analytics />
+        <PostHogProvider>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          />
+          <Navigation
+            siteName="theContentOS.ai"
+            links={[
+              { href: '/', label: 'Home' },
+              { href: '/how-to', label: 'How-To' },
+              { href: '/content-wiki', label: 'Content Wiki' },
+              { href: 'https://shawnos.ai/knowledge', label: 'Knowledge' },
+              { href: 'https://thegtmos.ai/clay-wiki', label: 'Clay Wiki' },
+              { href: '/method', label: 'Method' },
+              { href: '/showcase', label: 'Showcase' },
+              { href: '/anti-slop', label: 'Anti-Slop' },
+              { href: '/search', label: 'Search' },
+              { href: '/log', label: 'Log' },
+              { href: '/vitals', label: 'Vitals' },
+              { href: '/posts', label: 'Posts' },
+              { href: '/updates', label: 'Updates' },
+            ]}
+          />
+          <CursorGlow />
+          <main>{children}</main>
+          <NetworkBanner currentSite="contentos" />
+          <Footer siteName="theContentOS.ai" />
+          <RemChat />
+          <Analytics />
+        </PostHogProvider>
       </body>
     </html>
   )

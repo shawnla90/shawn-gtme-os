@@ -8,8 +8,9 @@ import {
 } from '@shawnos/shared/lib/rss'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 import { HOW_TO_WIKI_ENTRIES } from '@shawnos/shared/data/how-to-wiki'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
+const SITE_URL = SITES.contentos
 const LOG_DIR = path.join(process.cwd(), '../../../data/daily-log')
 
 export function GET() {

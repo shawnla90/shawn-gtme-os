@@ -6,8 +6,9 @@ import {
 import { HowToWikiPage } from '@shawnos/shared/pages/HowToWikiPage'
 import type { HowToWikiPageConfig } from '@shawnos/shared/pages/HowToWikiPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
+const SITE_URL = SITES.contentos
 
 /* ── metadata ─────────────────────────────────────── */
 

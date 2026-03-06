@@ -5,8 +5,9 @@ import Link from 'next/link'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { PostsFeed } from './PostsFeed'
 import type { PostsData } from './PostsFeed'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
+const SITE_URL = SITES.contentos
 const DATA_DIR = path.join(process.cwd(), '..', '..', '..', 'data', 'linkedin', 'posts')
 
 export const revalidate = 3600

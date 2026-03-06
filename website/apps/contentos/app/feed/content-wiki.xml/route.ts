@@ -1,8 +1,9 @@
 import { feedResponse, getFeedConfig } from '@shawnos/shared/lib'
 import { contentWikiToFeedItems } from '@shawnos/shared/lib/rss'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thecontentos.ai'
+const SITE_URL = SITES.contentos
 
 export function GET() {
   const config = getFeedConfig('contentos', {

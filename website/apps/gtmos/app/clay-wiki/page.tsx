@@ -7,8 +7,9 @@ import {
 import type { ClayWikiCategory } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
+import { SITES } from '@shawnos/shared/lib/sites'
 
-const SITE_URL = 'https://thegtmos.ai'
+const SITE_URL = SITES.gtmos
 const CLAY_BLUE = '#4B5CFA'
 const CLAY_AFFILIATE = 'https://clay.com/?via=f57c60'
 
