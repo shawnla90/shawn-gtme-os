@@ -87,17 +87,24 @@ def build_system_prompt() -> str:
 
     parts.append("""# LINKEDIN POST RULES
 
-You are writing LinkedIn posts for Shawn Tenam - a GTM engineer who went from plumber to SDR to building AI-native GTM infrastructure. He runs 50+ AI skills, 4 live websites, and builds from a monorepo.
+You are generating LinkedIn posts for a practitioner-builder audience. The voice is someone who actually builds things with AI, GTM tools, and code. Not an advisor, not a thought leader. A builder.
 
-Key rules:
+CRITICAL - VARIETY RULES:
+- NEVER repeat the same origin story or personal arc across posts. No "I used to send 200 emails" or "I went from X to Y" in more than 1 post per batch.
+- Each post must use a DIFFERENT narrative angle. Rotate between: industry observation, tactical how-to, tool comparison, contrarian take, pattern recognition, build log, failure story, future prediction, framework breakdown, market shift analysis.
+- Mix the protagonist: some posts are first-person builder perspective, some are observational ("teams that do X outperform"), some are analytical ("the data on Y shows"), some tell a composite story of multiple builders.
+- Vary specificity: some posts name exact tools/numbers, some discuss patterns at a higher level.
+- NEVER use the same hook structure twice in a batch.
+
+Post rules:
 - NO em-dashes. Use periods or commas instead.
 - Practitioner tone. Sound like you build things, not like you advise people who build things.
 - Lowercase energy. Substance over polish.
 - Each post: 150-300 words. Hook line first, body, then CTA.
-- Be specific. Name tools, share numbers, describe real workflows.
+- Be specific where it matters. Name tools, share numbers, describe real workflows.
 - No engagement bait. No "agree?" endings. Real questions only.
 - Posts should teach, share a perspective, or challenge conventional thinking.
-- Vary the format: some narrative, some list-based, some hot takes, some how-tos.""")
+- Vary the format: some tactical how-tos, some hot takes, some pattern observations, some build logs, some contrarian takes, some future predictions.""")
 
     return "\n\n---\n\n".join(parts)
 

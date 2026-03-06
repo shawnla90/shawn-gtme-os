@@ -164,6 +164,24 @@ export function PostsFeed({ data, availableDates }: PostsFeedProps) {
 
   return (
     <div>
+      {/* Disclaimer */}
+      <div style={{
+        padding: '14px 16px',
+        marginBottom: '20px',
+        background: 'rgba(var(--accent-rgb, 249, 115, 22), 0.06)',
+        border: '1px solid rgba(var(--accent-rgb, 249, 115, 22), 0.15)',
+        borderRadius: '6px',
+        fontSize: '12px',
+        lineHeight: 1.6,
+        color: 'var(--text-secondary)',
+      }}>
+        <span style={{ fontWeight: 700, color: 'var(--accent)' }}>heads up:</span>{' '}
+        these posts are AI-generated creative fiction. the angles, stories, and numbers are fabricated
+        from trending topics, not real events. they blend voice patterns and narrative structures to
+        spark ideas. don&apos;t copy-paste verbatim. use them as raw material, spin them your own way,
+        or just browse for fun.
+      </div>
+
       {/* Date navigation */}
       {availableDates.length > 1 && (
         <div style={dateNavStyle}>
