@@ -320,4 +320,66 @@ export const GTM_CATEGORIES: GTMCategory[] = [
       },
     ],
   },
+  {
+    id: 'tool-evaluation',
+    name: 'Tool Evaluation',
+    prompt: '$ ls ~/gtm-os/tool-evaluation/',
+    terms: [
+      {
+        id: 'data-lake',
+        name: 'Data Lake',
+        definition:
+          'A persistent store of every enrichment result, qualification score, and engagement signal your GTM team has ever generated. Keyed by company domain. Queried before enrichment to avoid re-paying for data you already have.',
+        whyItMatters:
+          "most GTM teams treat enrichment as a per-campaign expense. they enrich 500 leads, run the campaign, archive the table, and start fresh next quarter. if 200 of those leads overlap, they just paid for the same data twice. a data lake stores every enrichment result with a timestamp. before running a new campaign, you query the lake first and only enrich the gaps. I've seen this cut enrichment costs by 40-60% for teams with overlapping target lists. beyond cost savings, a data lake builds institutional knowledge. you can see how a company's tech stack, headcount, and hiring signals changed over six months. that context makes outbound more relevant than any single-point enrichment.",
+        howYouUseIt:
+          "I build a simple data lake as the foundation of every GTM engagement. PostgreSQL or SQLite with three core tables: companies (keyed by domain), contacts (keyed by email), and enrichment_results (timestamped). every enrichment pipeline checks the lake first. if the company was enriched within 90 days, use the cached data. only call Clay, Apollo, or Exa for stale or missing records. the lake also feeds analytics - which companies appeared in multiple campaigns, which contacts engaged across channels, which enrichment providers returned the best data. that is the kind of analysis you cannot do when every campaign is a throwaway CSV.",
+        related: ['enrichment-pipeline', 'batch-processing', 'deduplication', 'credit-transparency'],
+      },
+      {
+        id: 'mcp-litmus-test',
+        name: 'MCP Litmus Test',
+        definition:
+          'A three-level evaluation framework for GTM tools: Level 1 - does it have an API? Level 2 - is there a CLI? Level 3 - does it ship an MCP server? The score determines how automatable the tool is and whether it belongs in a modern GTM stack.',
+        whyItMatters:
+          "every GTM tool has a web interface. that is table stakes. the real question is whether the tool can be operated without clicking. can an AI agent call it? can a cron job trigger it? can a script run it at 2 AM? a tool stuck at GUI-only has an automation ceiling. you can scale the team, but you cannot scale the process. I evaluate every tool in a client's stack against this test. the results usually reveal why certain workflows bottleneck - the enrichment layer is fully automatable (Level 3) but the outreach layer requires manual intervention (Level 0). that mismatch is where pipeline velocity dies.",
+        howYouUseIt:
+          "I score every tool in the stack 0-3 during a stack audit. Level 0 means GUI only - no programmatic access at all. Level 1 means REST API with authentication. Level 2 means official CLI tooling. Level 3 means MCP server available. tools like HubSpot and GitHub score 3. tools like Clay score 1-2 (API exists but most power is in the GUI). tools with no API score 0 and get flagged for replacement. the aggregate score across the stack tells you how automatable your GTM motion is. a stack averaging 2.5+ is ready for agent-driven orchestration. a stack averaging 1.0 needs infrastructure work before automation makes sense.",
+        related: ['mcp-server', 'orchestration', 'vendor-lock-in', 'credit-transparency'],
+      },
+      {
+        id: 'credit-transparency',
+        name: 'Credit Transparency',
+        definition:
+          'The ability to see exactly what each enrichment, send, and lookup costs at the per-action level. Not just total credits consumed, but credits per workflow, per campaign, per lead. The foundation of GTM cost management.',
+        whyItMatters:
+          "most GTM tools use credit-based pricing, but most teams have no idea what they are spending per lead or per campaign. a Clay table with 10 enrichment columns processing 500 leads can burn 5000-7500 credits in one run. without per-action tracking, you do not know until you hit your limit and enrichments stop mid-pipeline. I treat credit tracking the same way a CFO treats expense tracking. every credit should be attributable to a campaign. the teams I audit that have credit transparency in place consistently spend 30-40% less than teams operating blind - not because they do less, but because they stop wasting credits on low-performing campaigns.",
+        howYouUseIt:
+          "I implement a simple credit tracking layer in the first week of every engagement. a spreadsheet or database that logs credits consumed per campaign alongside pipeline outcomes. campaign A used 2000 credits and generated 8 meetings. campaign B used 3000 credits and generated 2 meetings. the decision is obvious. I also set credit budgets per campaign before launch - if you estimate 500 leads at 10 credits each, budget 5000 credits. if the campaign exceeds budget, pause and investigate. this framework takes 30 minutes per week to maintain and saves thousands per quarter.",
+        related: ['data-lake', 'vendor-lock-in', 'mcp-litmus-test'],
+      },
+      {
+        id: 'vendor-lock-in',
+        name: 'Vendor Lock-In',
+        definition:
+          'When switching away from a tool or agency requires starting from zero - no data export, no workflow portability, no institutional knowledge transfer. The cost of leaving exceeds the cost of staying, even when staying means suboptimal results.',
+        whyItMatters:
+          "vendor lock-in is the most expensive problem in GTM that nobody budgets for. it shows up when the agency controls your tool logins, when your enrichment data lives in their accounts, when your outbound sequences are built on their templates in their platforms. you are paying a premium for campaigns, but you own none of the infrastructure. I see this pattern in almost every agency audit. the client has been running outbound for two years and owns zero assets - no data, no workflows, no documentation. if they leave the agency tomorrow, they start from scratch. that is not a partnership. that is a dependency.",
+        howYouUseIt:
+          "during every stack audit, I check three things. first, who owns the logins? every tool should be in the client's accounts with their credentials. second, can the data be exported? enrichment results, campaign analytics, contact lists - all should be exportable in standard formats. third, is the workflow documented? if the person who built it leaves, can someone else operate it? a go-to-market engineer builds everything in the client's accounts from day one. documentation is written as the system is built, not after. when the engagement ends, the client has a running system with full ownership. that is the opposite of lock-in.",
+        related: ['credit-transparency', 'mcp-litmus-test', 'data-lake'],
+      },
+      {
+        id: 'go-to-market-engineer-consultant',
+        name: 'Go-to-Market Engineer Consultant',
+        definition:
+          'An independent practitioner who evaluates GTM stacks, audits agency relationships, recommends tools based on fit (not vendor allegiance), builds infrastructure in client accounts, and transfers full ownership. The strategist to the strategist.',
+        whyItMatters:
+          "the GTM space has agencies, vendors, recruiters, and in-house engineers. what it lacks is an independent evaluator - someone who can look at your stack, your agency, your tools, and your workflows with no bias toward any platform or provider. agencies recommend tools they have partnerships with. vendors recommend themselves. recruiters recommend hiring. a go-to-market engineer consultant recommends what actually fits your situation, even when the answer is 'you do not need to buy anything new.' that independence is the value proposition. the same tribal knowledge agencies charge for, but aligned to your outcomes, not their retainer.",
+        howYouUseIt:
+          "the engagement follows four phases. audit: evaluate the current stack, agency relationships, tool consumption, and workflow efficiency. recommend: provide independent tool recommendations with buy-vs-build analysis for every layer. build: construct the enrichment pipelines, qualification workflows, and outbound automation in the client's accounts. transfer: document everything, train the team, and hand over full ownership. the client owns every login, every workflow, every piece of data. no lock-in, no dependency. the system runs independently after handoff. this is what makes the model different from an agency retainer - there is a defined endpoint where the client is self-sufficient.",
+        related: ['vendor-lock-in', 'credit-transparency', 'mcp-litmus-test', 'data-lake'],
+      },
+    ],
+  },
 ]

@@ -61,6 +61,17 @@ export function WorkTogetherCTA() {
         >
           drop me a line
         </a>
+        <a
+          href="https://thegtmos.ai/why-independent"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track("gtm_stack_audit")}
+          style={linkStyle}
+          onMouseEnter={onEnter}
+          onMouseLeave={onLeave}
+        >
+          evaluate your gtm stack
+        </a>
       </div>
     </div>
   )

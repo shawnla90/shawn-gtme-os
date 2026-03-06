@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 import {
   MotionReveal,
   StaggerContainer,
@@ -35,21 +36,25 @@ const problems = [
     icon: '01',
     title: 'Agency Vendor Lock-In',
     desc: 'Your agency picked the tools. They control the logins. When you leave, you start from zero - no data, no workflows, no institutional knowledge.',
+    href: '/knowledge/vendor-lock-in',
   },
   {
     icon: '02',
     title: 'Credit Opacity',
     desc: 'How many Clay credits did that enrichment actually burn? How many Instantly sends went to bad domains? If you can\'t answer, someone else is deciding your ROI.',
+    href: '/knowledge/credit-transparency',
   },
   {
     icon: '03',
     title: 'Engineers Spread Too Thin',
     desc: 'Your GTM engineer is managing 9-10 workspaces across clients. That\'s not engineering - that\'s maintenance. Your pipeline deserves focused attention.',
+    href: '/how-to/workspace-red-flag',
   },
   {
     icon: '04',
     title: 'Optimizing for Campaigns, Not Outcomes',
     desc: 'Agencies bill for campaigns shipped, not pipeline generated. The incentive is volume, not quality. Your outbound should compound - not just churn.',
+    href: '/how-to/agency-evaluation-checklist',
   },
 ]
 
@@ -80,25 +85,44 @@ const litmusTests = [
   {
     title: 'MCP + CLI Access',
     desc: 'Can your tools be automated programmatically? If the only interface is a GUI, you\'re paying for clicks, not infrastructure.',
+    href: '/how-to/mcp-cli-litmus-test',
   },
   {
     title: 'Credit Transparency',
     desc: 'Do you know exactly what each enrichment, send, and lookup costs? Credit-based tools should report consumption to the penny.',
+    href: '/how-to/credit-transparency-gtm-tools',
   },
   {
     title: 'Data Lake Alternatives',
     desc: 'Are you storing enrichment results, or re-running the same lookups every campaign? A data lake saves money and builds institutional knowledge.',
+    href: '/how-to/data-lake-for-gtm',
   },
 ]
 
-const faqItems = [
+const faqLinkStyle: React.CSSProperties = {
+  color: GTM.orange,
+  textDecoration: 'none',
+  fontWeight: 600,
+}
+
+const faqItems: { question: string; answer: React.ReactNode }[] = [
   {
     question: 'What makes this different from an agency?',
-    answer: 'Agencies optimize campaigns. I evaluate the tools and workflows powering those campaigns. Think of it as a second opinion before you sign - or a diagnostic when results plateau. I don\'t sell leads. I tell you who should be generating them and which tools to buy.',
+    answer: (
+      <>
+        Agencies optimize campaigns. I evaluate the tools and workflows powering those campaigns. Think of it as a second opinion before you sign - or a diagnostic when results plateau. I don&apos;t sell leads. I tell you who should be generating them and which tools to buy.{' '}
+        <Link href="/how-to/agency-evaluation-checklist" style={faqLinkStyle}>see the agency evaluation checklist &rarr;</Link>
+      </>
+    ),
   },
   {
     question: 'Do you sell tools?',
-    answer: 'No. I have no vendor allegiances, no referral fees, no partnerships that bias recommendations. My evaluation is independent. If Clay is right for you, I\'ll say so. If a $0 alternative does the job, I\'ll say that too.',
+    answer: (
+      <>
+        No. I have no vendor allegiances, no referral fees, no partnerships that bias recommendations. My evaluation is independent. If Clay is right for you, I&apos;ll say so. If a $0 alternative does the job, I&apos;ll say that too.{' '}
+        <Link href="/how-to/should-you-get-clay" style={faqLinkStyle}>read the Clay evaluation &rarr;</Link>
+      </>
+    ),
   },
   {
     question: 'How does pricing work?',
@@ -239,7 +263,7 @@ function SectionTitle({
 
 /* ── FAQ accordion ───────────────────────────────── */
 
-function WIAccordion({ items }: { items: typeof faqItems }) {
+function WIAccordion({ items }: { items: { question: string; answer: React.ReactNode }[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
@@ -480,12 +504,16 @@ export function WhyIndependentContent() {
           >
             {problems.map((p) => (
               <StaggerItem key={p.icon}>
-                <div
+                <Link
+                  href={p.href}
                   style={{
+                    display: 'block',
                     padding: '28px',
                     background: GTM.darkCard,
                     border: `1px solid ${GTM.border}`,
                     borderRadius: 10,
+                    textDecoration: 'none',
+                    transition: 'border-color 0.15s ease',
                   }}
                 >
                   <div
@@ -523,7 +551,18 @@ export function WhyIndependentContent() {
                   >
                     {p.desc}
                   </div>
-                </div>
+                  <div
+                    style={{
+                      fontSize: '12px',
+                      color: GTM.orange,
+                      fontFamily: 'var(--font-mono)',
+                      marginTop: 14,
+                      fontWeight: 600,
+                    }}
+                  >
+                    learn more &rarr;
+                  </div>
+                </Link>
               </StaggerItem>
             ))}
           </div>
@@ -718,42 +757,55 @@ export function WhyIndependentContent() {
           >
             {litmusTests.map((test) => (
               <StaggerItem key={test.title}>
-                <motion.div
-                  whileHover={{
-                    borderColor: GTM.orangeBorder,
-                    scale: 1.01,
-                  }}
-                  transition={{ duration: 0.2 }}
-                  style={{
-                    padding: '28px',
-                    background: GTM.darkCard,
-                    border: `1px solid ${GTM.border}`,
-                    borderRadius: 10,
-                    height: '100%',
-                  }}
-                >
-                  <div
+                <Link href={test.href} style={{ textDecoration: 'none', display: 'block', height: '100%' }}>
+                  <motion.div
+                    whileHover={{
+                      borderColor: GTM.orangeBorder,
+                      scale: 1.01,
+                    }}
+                    transition={{ duration: 0.2 }}
                     style={{
-                      fontSize: '17px',
-                      fontWeight: 600,
-                      color: GTM.text,
-                      fontFamily: 'var(--font-mono)',
-                      marginBottom: 10,
+                      padding: '28px',
+                      background: GTM.darkCard,
+                      border: `1px solid ${GTM.border}`,
+                      borderRadius: 10,
+                      height: '100%',
                     }}
                   >
-                    {test.title}
-                  </div>
-                  <div
-                    style={{
-                      fontSize: '14px',
-                      color: GTM.textSecondary,
-                      fontFamily: GTM.font,
-                      lineHeight: 1.65,
-                    }}
-                  >
-                    {test.desc}
-                  </div>
-                </motion.div>
+                    <div
+                      style={{
+                        fontSize: '17px',
+                        fontWeight: 600,
+                        color: GTM.text,
+                        fontFamily: 'var(--font-mono)',
+                        marginBottom: 10,
+                      }}
+                    >
+                      {test.title}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '14px',
+                        color: GTM.textSecondary,
+                        fontFamily: GTM.font,
+                        lineHeight: 1.65,
+                      }}
+                    >
+                      {test.desc}
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '12px',
+                        color: GTM.orange,
+                        fontFamily: 'var(--font-mono)',
+                        marginTop: 14,
+                        fontWeight: 600,
+                      }}
+                    >
+                      take the test &rarr;
+                    </div>
+                  </motion.div>
+                </Link>
               </StaggerItem>
             ))}
           </div>

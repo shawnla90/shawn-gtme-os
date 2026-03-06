@@ -579,6 +579,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
             {[
               { label: 'Building content systems?', href: 'https://thecontentos.ai', text: 'theContentOS.ai' },
               { label: 'Building GTM pipelines?', href: 'https://thegtmos.ai', text: 'theGTMOS.ai' },
+              { label: 'Need a GTM stack audit?', href: 'https://thegtmos.ai/why-independent', text: 'Get an Evaluation' },
               { label: 'Want to see how it works?', href: '/blog', text: 'Read the Blog', internal: true },
               { label: 'Want to see the components?', href: '/showcase', text: 'Showcase', internal: true },
             ].map((item) => {

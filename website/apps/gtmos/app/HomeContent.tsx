@@ -593,6 +593,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
             {[
               { label: 'Building content systems?', href: 'https://thecontentos.ai', text: 'theContentOS.ai' },
               { label: 'Exploring the full OS?', href: 'https://shawnos.ai', text: 'ShawnOS.ai' },
+              { label: 'Meet the builder', href: 'https://shawnos.ai/about', text: 'ShawnOS.ai/about' },
               { label: 'Learning Clay workflows?', href: '/clay-wiki', text: 'Clay Wiki', internal: true },
               { label: 'Want GTM playbooks?', href: '/knowledge/gtm', text: 'Knowledge Base', internal: true },
             ].map((item) => {
