@@ -111,6 +111,7 @@ export default function RootLayout({
             siteName="theGTMOS.ai"
             links={[
               { href: '/', label: 'Home' },
+              { href: '/why-independent', label: 'Why Independent' },
               { href: '/features', label: 'Features' },
               { href: '/how-to', label: 'How-To' },
               { href: '/knowledge/gtm', label: 'Knowledge' },

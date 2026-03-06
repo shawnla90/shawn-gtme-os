@@ -131,6 +131,33 @@ const faqItems: { question: string; answer: React.ReactNode }[] = [
       </>
     ),
   },
+  {
+    question: 'What is an independent GTM engineer consultant?',
+    answer: (
+      <>
+        The strategist to the strategist. Not an agency, not a vendor - an independent evaluator who audits your GTM stack, recommends the right tools, builds the infrastructure, and transfers full ownership to your team. No vendor lock-in, no retainer dependency.{' '}
+        <Link href="/why-independent" style={faqLinkStyle}>learn more &rarr;</Link>
+      </>
+    ),
+  },
+  {
+    question: 'Should I use Clay for enrichment?',
+    answer: (
+      <>
+        It depends. Clay is powerful, but not every team needs it. The real question is whether you need waterfall enrichment at scale or if a simpler stack gets you there. An independent evaluation looks at your volume, budget, and existing tools before recommending.{' '}
+        <Link href="/why-independent" style={faqLinkStyle}>get an independent evaluation &rarr;</Link>
+      </>
+    ),
+  },
+  {
+    question: 'What is the MCP litmus test for GTM tools?',
+    answer: (
+      <>
+        Can your tools be automated programmatically via MCP servers and CLI access? If the only interface is a GUI, you are paying for clicks, not infrastructure. Credit transparency and data portability are the other two legs of the test.{' '}
+        <Link href="/why-independent" style={faqLinkStyle}>see the litmus tests &rarr;</Link>
+      </>
+    ),
+  },
 ]
 
 const SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif"
@@ -242,6 +269,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                 'Go. To. Market.',
                 'Get. The. Meeting.',
                 'Grow. The. Machine.',
+                'Evaluate. The. Stack.',
               ]}
               holdMs={3000}
               scrambleSpeed={30}
@@ -290,6 +318,26 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                 }}
               >
                 GTM knowledge base
+              </Link>
+            </MagneticHover>
+            <MagneticHover>
+              <Link
+                href="/why-independent"
+                className="cta-secondary"
+                style={{
+                  display: 'inline-block',
+                  padding: '14px 32px',
+                  fontSize: '15px',
+                  fontWeight: 600,
+                  fontFamily: SANS,
+                  color: 'var(--text-secondary)',
+                  background: 'transparent',
+                  border: '1px solid var(--border)',
+                  borderRadius: 6,
+                  textDecoration: 'none',
+                }}
+              >
+                why go independent? &rarr;
               </Link>
             </MagneticHover>
           </div>

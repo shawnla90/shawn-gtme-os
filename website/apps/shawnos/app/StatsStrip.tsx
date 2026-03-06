@@ -10,11 +10,11 @@ interface Stat {
 }
 
 const STATS: Stat[] = [
-  { value: '7',    label: 'Blog Posts' },
-  { value: '40+',  label: 'Video Compositions' },
-  { value: '3',    label: 'Websites' },
-  { value: '470+', label: 'Avatar Sprites' },
-  { value: '1',    label: 'AI Agent (Nio)' },
+  { value: '4',    label: 'Websites' },
+  { value: '3',    label: 'AI Agents' },
+  { value: '150+', label: 'Knowledge Entries' },
+  { value: '34',   label: 'Video Compositions' },
+  { value: '10',   label: 'Blog Posts' },
 ]
 
 /* ── component ─────────────────────────────────────── */
