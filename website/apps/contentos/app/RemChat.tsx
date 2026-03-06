@@ -84,7 +84,7 @@ export function RemChat() {
         suggestedQuestions={[
           "What is voice DNA?",
           "How does the content pipeline work?",
-          "What platforms should I focus on?",
+          "How did you build this bot?",
         ]}
         placeholder="ask rem anything..."
         accentColor="#FF69B4"

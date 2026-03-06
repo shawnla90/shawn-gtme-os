@@ -2308,4 +2308,106 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
     ],
     related: ['how-to-grow-on-reddit', 'linkedin-vs-twitter-vs-reddit-b2b', 'content-os-full-stack'],
   },
+
+  /* ================================================================== */
+  /*  TOOLS - CHATBOT & AVATAR                                          */
+  /* ================================================================== */
+
+  {
+    id: 'chatbot-architecture',
+    title: 'How the NeoBots Work',
+    subtitle: 'Soul files, RAG scoring, and the ChatWidget pattern behind Nio, Rem, and Recon',
+    category: 'tools',
+    description:
+      'Technical breakdown of how the three GTMe OS chatbots work - soul files that define personality, keyword-based RAG retrieval that pulls wiki content, and the shared ChatWidget component that renders them across all three sites.',
+    keywords: [
+      'chatbot',
+      'neobot',
+      'nio',
+      'rem',
+      'recon',
+      'RAG',
+      'soul file',
+      'ChatWidget',
+      'how was I built',
+      'bot architecture',
+    ],
+    difficulty: 'intermediate',
+    related: ['neobot-avatar-creation', 'content-os-full-stack'],
+    sections: [
+      {
+        heading: 'Three Bots, One Pattern',
+        type: 'prose',
+        content:
+          "Each site in the GTMe OS monorepo ships its own chatbot: Nio on shawnos.ai, Rem on thecontentos.ai, Recon on thegtmos.ai. They share the same ChatWidget component from the shared package but each has a distinct personality, knowledge base, and accent color. The bots are public-facing - no auth required - and exist to help visitors explore the wiki, blog, and knowledge base content on each site.",
+      },
+      {
+        heading: 'Soul Files and System Prompts',
+        type: 'pattern',
+        content:
+          "Each bot's personality is defined in its API route's system prompt. The prompt sets the tone (lowercase energy, direct, no fluff), the persona (Nio talks like a builder, Rem like a content strategist, Recon like an ops engineer), and the rules (only answer from provided context, never fabricate URLs, link to full articles). The system prompt is assembled at request time by injecting retrieved article content below the rules block. This means the bot's knowledge is always current with the wiki - no retraining needed.",
+      },
+      {
+        heading: 'RAG Retrieval Without a Vector DB',
+        type: 'pattern',
+        content:
+          "The bots use keyword-based retrieval instead of embeddings. Each wiki entry, knowledge term, and blog post is converted into a RetrievableItem with title, description, keywords, and truncated content. When a user sends a message, the retrieval engine scores every item against the query using keyword overlap, synonym expansion, and category matching. The top 5 results are injected into the system prompt as context. A synonym map per bot expands queries - asking about 'cold email' also matches 'outbound', 'sequence', and 'prospecting'. This approach is fast, deterministic, and costs zero infrastructure.",
+      },
+      {
+        heading: 'The ChatWidget Component',
+        type: 'pro-tip',
+        content:
+          "All three bots render through a single ChatWidget component in the shared package. It handles the chat UI, message streaming, suggested questions, gating (Substack subscribe or CTA), and the floating bubble. Each site passes its own config: bot name, accent color, welcome message, suggested questions, and API endpoint. The avatar (animated APNG) is rendered separately by each site's wrapper component (NioChat, RemChat, ReconChat) with a slide-in animation when the chat opens.",
+      },
+    ],
+  },
+
+  {
+    id: 'neobot-avatar-creation',
+    title: 'NeoBot Avatar Pipeline',
+    subtitle: 'From MidJourney prompt to animated APNG on the web',
+    category: 'tools',
+    description:
+      'The full pipeline for creating NeoBot character avatars - MidJourney generation with CREF/OREF for consistency, background removal, GIF animation, APNG conversion, and web delivery.',
+    keywords: [
+      'avatar',
+      'neobot',
+      'midjourney',
+      'CREF',
+      'OREF',
+      'character design',
+      'APNG',
+      'GIF',
+      'animation',
+      'chibi',
+    ],
+    difficulty: 'intermediate',
+    related: ['chatbot-architecture', 'midjourney-mastery'],
+    sections: [
+      {
+        heading: 'Character Design with MidJourney',
+        type: 'prose',
+        content:
+          "Each NeoBot starts as a MidJourney prompt. The characters are chibi-style with distinct color palettes: Nio is green with a sword, Rem is pink with content tools, Recon is orange with scout gear. MidJourney's CREF (character reference) and OREF (object reference) parameters are used to maintain visual consistency across generations. CREF locks the character's face and proportions. OREF locks specific objects like weapons or accessories. This means you can generate new poses and expressions while keeping the character recognizable.",
+      },
+      {
+        heading: 'Background Removal and Cleanup',
+        type: 'pattern',
+        content:
+          "Raw MidJourney outputs have backgrounds that need removal for web overlay use. The pipeline uses remove.bg or Photoshop's AI removal to extract the character. The result is a transparent PNG. Edge cleanup matters - artifacts around hair or weapon edges are visible against dark site backgrounds. Each character gets a static PNG (fallback) and source frames for animation.",
+      },
+      {
+        heading: 'Animation: GIF to APNG',
+        type: 'pattern',
+        content:
+          "The idle animations are subtle breathing or floating loops. Frames are created by slightly transforming the base image - small vertical translations and scale changes on a 2-second loop. GIFs work but have a 256-color limit that destroys the character's color depth. APNG (Animated PNG) supports full 24-bit color with alpha transparency. The final assets are served as .apng files with a CSS animation fallback (drop-shadow glow breathing effect) that runs independently of the image animation.",
+      },
+      {
+        heading: 'Web Delivery',
+        type: 'pro-tip',
+        content:
+          "Each avatar lives in the site's /public/avatars/ directory. The chat wrapper component (NioChat, RemChat, ReconChat) loads the APNG and positions it fixed to the bottom-right, offset left of the chat panel. The avatar slides in with a CSS transform transition when chat opens and slides out when it closes. File sizes are kept under 200KB per avatar to avoid blocking the chat interaction. Browser support for APNG is universal in modern browsers - no polyfill needed.",
+      },
+    ],
+  },
 ]

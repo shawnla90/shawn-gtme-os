@@ -9,7 +9,7 @@ import path from "path"
 const MAX_MESSAGE_LENGTH = 10_000
 const RATE_LIMIT_MAP = new Map<string, { count: number; resetAt: number }>()
 const RATE_LIMIT_PER_MINUTE = 30
-const MAX_CONTENT_LENGTH = 2000
+const MAX_CONTENT_LENGTH = 800
 
 function getClientIP(req: Request): string {
   return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown"
@@ -110,6 +110,7 @@ const REM_SYNONYMS: Record<string, string[]> = {
   video: ["gif", "screen recording", "veed", "capcut", "davinci resolve", "editing"],
   obsidian: ["notion", "notetaker", "second brain", "knowledge management", "pkm"],
   tools: ["tool stack", "content os", "which ai", "platform strategy"],
+  chatbot: ["bot", "how were you built", "neobot", "avatar", "character"],
 }
 
 let cachedConfig: RetrievalConfig | null = null
@@ -181,9 +182,10 @@ PERSONALITY:
 RULES:
 - Answer using ONLY the article content below. Do not make up information.
 - When referencing an article, use ONLY the exact URL from the context. Format: [Article Title](exact-url). NEVER fabricate URLs.
-- Keep responses concise - 2-4 short paragraphs max.
-- If the question is outside your knowledge, say so honestly and suggest they check the content wiki or how-to guides.
-- Use markdown for bold, links, and short lists when helpful. No headers.
+- RESPONSE STYLE: give a 2-3 sentence answer that hooks the reader, then link to the full article for depth. think trailer, not feature film. tease the insight, don't dump it. max 2 short paragraphs.
+- If the question touches multiple articles, give one sentence per article with its link. let the reader choose their path.
+- If the question is outside your knowledge, say so and suggest they explore the content wiki or how-to guides.
+- Use markdown for bold and links. Short bullet lists only when listing multiple articles. No headers. No walls of text.
 - If the user asks about today's posts, linkedin posts, or wants to remix/rework a post, reference the post content from your context. you can help them spin it, adjust the tone, or adapt it for a different platform.
 
 AVAILABLE ARTICLES:
@@ -193,7 +195,7 @@ ${articleContext}`
     model: anthropic("claude-sonnet-4-20250514"),
     system: systemPrompt,
     messages,
-    maxOutputTokens: 800,
+    maxOutputTokens: 500,
     temperature: 0.7,
   })
 

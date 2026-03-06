@@ -8,7 +8,7 @@ import { GTM_CATEGORIES } from "@shawnos/shared/data/gtm-terms"
 import { getAllPosts } from "@shawnos/shared/lib"
 import { retrieveItems, type RetrievableItem, type RetrievalConfig } from "@shawnos/shared/lib/chat-retrieval"
 
-const MAX_CONTENT_LENGTH = 2000
+const MAX_CONTENT_LENGTH = 800
 
 function truncate(text: string): string {
   if (text.length <= MAX_CONTENT_LENGTH) return text
@@ -169,6 +169,7 @@ const NIO_SYNONYMS: Record<string, string[]> = {
   content: ["blog", "newsletter", "substack", "distribution", "repurpose"],
   hubspot: ["crm", "deals", "contacts", "pipeline"],
   email: ["cold email", "deliverability", "warmup", "instantly", "smartlead"],
+  chatbot: ["bot", "how were you built", "neobot", "avatar", "character"],
 }
 
 /* ── Cache + export ── */

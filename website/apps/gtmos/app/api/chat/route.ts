@@ -10,7 +10,7 @@ import { retrieveItems, type RetrievableItem, type RetrievalConfig } from "@shaw
 const MAX_MESSAGE_LENGTH = 10_000
 const RATE_LIMIT_MAP = new Map<string, { count: number; resetAt: number }>()
 const RATE_LIMIT_PER_MINUTE = 30
-const MAX_CONTENT_LENGTH = 2000
+const MAX_CONTENT_LENGTH = 800
 
 function getClientIP(req: Request): string {
   return req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown"
@@ -126,6 +126,7 @@ const RECON_SYNONYMS: Record<string, string[]> = {
   mcp: ["model context protocol", "ai tools", "claude tools", "agent tools"],
   agent: ["ai agent", "autonomous", "automation", "workflow agent"],
   deploy: ["ship", "launch", "go live", "production", "vercel"],
+  chatbot: ["bot", "how were you built", "neobot", "avatar", "character"],
 }
 
 let cachedConfig: RetrievalConfig | null = null
@@ -204,9 +205,10 @@ PERSONALITY:
 RULES:
 - Answer using ONLY the article content below. Do not make up information.
 - When referencing an article, use ONLY the exact URL from the context. Format: [Article Title](exact-url). NEVER fabricate URLs.
-- Keep responses concise - 2-4 short paragraphs max.
-- If the question is outside your knowledge, say so honestly and suggest they check the knowledge base, clay wiki, or how-to guides.
-- Use markdown for bold, links, and short lists when helpful. No headers.
+- RESPONSE STYLE: give a 2-3 sentence answer that hooks the reader, then link to the full article for depth. think trailer, not feature film. tease the insight, don't dump it. max 2 short paragraphs.
+- If the question touches multiple articles, give one sentence per article with its link. let the reader choose their path.
+- If the question is outside your knowledge, say so and suggest they explore the knowledge base, clay wiki, or how-to guides.
+- Use markdown for bold and links. Short bullet lists only when listing multiple articles. No headers. No walls of text.
 
 AVAILABLE ARTICLES:
 ${articleContext}`
@@ -215,7 +217,7 @@ ${articleContext}`
     model: anthropic("claude-sonnet-4-20250514"),
     system: systemPrompt,
     messages,
-    maxOutputTokens: 800,
+    maxOutputTokens: 500,
     temperature: 0.7,
   })
 

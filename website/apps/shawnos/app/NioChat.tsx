@@ -105,7 +105,7 @@ export function NioChat() {
         suggestedQuestions={[
           "What is context engineering?",
           "How does the monorepo work?",
-          "What tools does Shawn use?",
+          "How did you build this bot?",
         ]}
         placeholder="ask nio anything..."
         accentColor="#4EC373"

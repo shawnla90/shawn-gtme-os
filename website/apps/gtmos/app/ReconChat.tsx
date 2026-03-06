@@ -106,7 +106,7 @@ export function ReconChat() {
         suggestedQuestions={[
           "How does Clay waterfall enrichment work?",
           "What's the right email warmup process?",
-          "How do I build an outbound pipeline?",
+          "How did you build this bot?",
         ]}
         placeholder="ask recon anything..."
         accentColor="#F97316"
