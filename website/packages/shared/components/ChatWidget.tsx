@@ -432,7 +432,7 @@ export function ChatWidget({
             {!hasInteracted && messages.length === 0 && (
               <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
                 {suggestedQuestions.map((q) => (
-                  <button key={q} onClick={() => send(q)} style={s.sugBtn}>{q}</button>
+                  <button key={q} onClick={() => { fireEvent("nio_suggested_question_clicked", { bot: botId, question: q }); send(q) }} style={s.sugBtn}>{q}</button>
                 ))}
               </div>
             )}

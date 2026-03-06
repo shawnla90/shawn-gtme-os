@@ -911,6 +911,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'mcp-gtm-stack',
       'mcp-content-stack',
       'managing-mcp-servers',
+      'mcp-cli-litmus-test',
     ],
     sections: [
       {
@@ -961,6 +962,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'what-are-mcps',
       'mcp-content-stack',
       'managing-mcp-servers',
+      'mcp-cli-litmus-test',
     ],
     sections: [
       {
@@ -1127,6 +1129,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'credit-management',
       'parallel-agent-patterns',
       'orchestrating-multi-agent-workflows',
+      'should-you-get-clay',
     ],
     sections: [
       {
@@ -1177,6 +1180,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'model-selection-strategy',
       'parallel-agent-patterns',
       'rules-skills-context',
+      'credit-transparency-gtm-tools',
     ],
     sections: [
       {
@@ -3182,6 +3186,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'cold-email-infrastructure',
       'instantly-vs-smartlead-vs-lemlist',
       'heyreach-linkedin-automation',
+      'data-lake-for-gtm',
     ],
     sections: [
       {
@@ -4311,6 +4316,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'abm-landing-pages',
       'posthog-for-gtm',
       'cron-jobs-for-scraping',
+      'agency-evaluation-checklist',
     ],
     sections: [
       {
@@ -4477,6 +4483,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'mcp-cli-litmus-test',
       'data-lake-for-gtm',
       'credit-transparency-gtm-tools',
+      'model-selection-strategy',
     ],
     sections: [
       {
@@ -4527,6 +4534,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'should-you-get-clay',
       'credit-transparency-gtm-tools',
       'workspace-red-flag',
+      'mcp-gtm-stack',
     ],
     sections: [
       {
@@ -4577,6 +4585,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'should-you-get-clay',
       'credit-transparency-gtm-tools',
       'mcp-cli-litmus-test',
+      'how-to-build-abm-pipeline-with-ai',
     ],
     sections: [
       {
@@ -4627,6 +4636,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'workspace-red-flag',
       'credit-transparency-gtm-tools',
       'should-you-get-clay',
+      'abm-personalization-architecture',
     ],
     sections: [
       {
@@ -4677,6 +4687,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'should-you-get-clay',
       'data-lake-for-gtm',
       'agency-evaluation-checklist',
+      'credit-management',
     ],
     sections: [
       {
@@ -4727,6 +4738,7 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'mcp-cli-litmus-test',
       'agency-evaluation-checklist',
       'workspace-red-flag',
+      'should-you-get-clay',
     ],
     sections: [
       {

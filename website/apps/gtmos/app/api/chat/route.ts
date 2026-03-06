@@ -218,7 +218,7 @@ ${articleContext}`
     system: systemPrompt,
     messages,
     maxOutputTokens: 500,
-    temperature: 0.7,
+    temperature: 0.5,
   })
 
   return result.toUIMessageStreamResponse()

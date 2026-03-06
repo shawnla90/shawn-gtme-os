@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react"
 import { ChatWidget } from "@shawnos/shared/components"
+import { usePostHog } from "posthog-js/react"
 
 const GIF_SRC = "/avatars/rem-idle.apng"
 const AVATAR_W = 120
@@ -10,6 +11,8 @@ const AVATAR_H = 160
 export function RemChat() {
   const [isOpen, setIsOpen] = useState(false)
   const [avatarVisible, setAvatarVisible] = useState(false)
+  const openedAtRef = useRef<number | null>(null)
+  const posthog = usePostHog()
 
   useEffect(() => {
     if (!isOpen) {
@@ -19,6 +22,25 @@ export function RemChat() {
     const timer = setTimeout(() => setAvatarVisible(true), 200)
     return () => clearTimeout(timer)
   }, [isOpen])
+
+  const handleAnalyticsEvent = useCallback((event: string, props?: Record<string, unknown>) => {
+    if (!posthog) return
+
+    if (event === "nio_chat_opened") {
+      openedAtRef.current = Date.now()
+    }
+
+    posthog.capture(event, props)
+  }, [posthog])
+
+  const handleClose = useCallback(() => {
+    const duration = openedAtRef.current
+      ? Math.round((Date.now() - openedAtRef.current) / 1000)
+      : 0
+    openedAtRef.current = null
+
+    posthog?.capture("nio_chat_closed", { bot: "rem", duration_seconds: duration })
+  }, [posthog])
 
   if (!isOpen) {
     return (
@@ -93,6 +115,8 @@ export function RemChat() {
         ctaLabel="Book a Call"
         gateType="substack"
         substackUrl="https://shawntenam.substack.com"
+        onAnalyticsEvent={handleAnalyticsEvent}
+        onClose={handleClose}
         defaultOpen
         hideBubble
       />
