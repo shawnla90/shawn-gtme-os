@@ -196,7 +196,7 @@ print(f'Report written to $REPORT_FILE')
 "
 
 # --- Slack notification on critical findings ---
-if [ "$critical" -gt 0 ] && [ -n "${SLACK_WEBHOOK_URL:-}" ]; then
+if { [ "$critical" -gt 0 ] || [ "$high" -gt 0 ]; } && [ -n "${SLACK_WEBHOOK_URL:-}" ]; then
   curl -s -X POST "$SLACK_WEBHOOK_URL" \
     -H 'Content-Type: application/json' \
     -d "{\"text\": \"Security Audit: $critical CRITICAL, $high HIGH findings. Review data/security-audit.json\"}" \

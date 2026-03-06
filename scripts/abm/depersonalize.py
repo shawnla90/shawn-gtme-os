@@ -26,7 +26,7 @@ def run(dry_run: bool = False):
     # Find pages where sent_at is set, TTL has expired, and not yet depersonalized
     result = (
         sb.table('landing_pages')
-        .select('slug, company, sent_at, expires_at')
+        .select('slug, sent_at, expires_at')
         .eq('depersonalized', False)
         .not_.is_('sent_at', 'null')
         .lt('expires_at', now)
@@ -41,7 +41,7 @@ def run(dry_run: bool = False):
 
     print(f"[depersonalize] Found {len(pages)} expired page(s):")
     for p in pages:
-        print(f"  - {p['slug']} ({p['company']}) | sent: {p['sent_at']} | expired: {p['expires_at']}")
+        print(f"  - {p['slug']} | sent: {p['sent_at']} | expired: {p['expires_at']}")
 
     if dry_run:
         print("[depersonalize] --dry-run: no changes made.")
@@ -66,13 +66,13 @@ def deprecate(slug: str):
     sb = get_supabase()
 
     # Verify the page exists
-    check = sb.table('landing_pages').select('slug, company, deprecated').eq('slug', slug).single().execute()
+    check = sb.table('landing_pages').select('slug, deprecated').eq('slug', slug).single().execute()
     if not check.data:
         print(f"[deprecate] Page '{slug}' not found.")
         return False
 
     if check.data.get('deprecated'):
-        print(f"[deprecate] Page '{slug}' ({check.data['company']}) is already deprecated.")
+        print(f"[deprecate] Page '{slug}' is already deprecated.")
         return True
 
     sb.table('landing_pages').update({
@@ -80,7 +80,7 @@ def deprecate(slug: str):
         'depersonalized': True,
     }).eq('slug', slug).execute()
 
-    print(f"[deprecate] Page '{slug}' ({check.data['company']}) deprecated. It will now 404.")
+    print(f"[deprecate] Page '{slug}' deprecated. It will now 404.")
     return True
 
 
@@ -88,20 +88,20 @@ def undeprecate(slug: str):
     """Restore a deprecated page. Stays depersonalized - re-personalize manually if needed."""
     sb = get_supabase()
 
-    check = sb.table('landing_pages').select('slug, company, deprecated').eq('slug', slug).single().execute()
+    check = sb.table('landing_pages').select('slug, deprecated').eq('slug', slug).single().execute()
     if not check.data:
         print(f"[undeprecate] Page '{slug}' not found.")
         return False
 
     if not check.data.get('deprecated'):
-        print(f"[undeprecate] Page '{slug}' ({check.data['company']}) is not deprecated.")
+        print(f"[undeprecate] Page '{slug}' is not deprecated.")
         return True
 
     sb.table('landing_pages').update({
         'deprecated': False,
     }).eq('slug', slug).execute()
 
-    print(f"[undeprecate] Page '{slug}' ({check.data['company']}) restored. Still depersonalized - re-personalize manually if needed.")
+    print(f"[undeprecate] Page '{slug}' restored. Still depersonalized - re-personalize manually if needed.")
     return True
 
 
