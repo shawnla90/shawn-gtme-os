@@ -241,6 +241,18 @@ Only make the specific change described. Do not refactor or change anything else
 
         output = result.stdout.strip()
 
+        # Sanity check: reject output that isn't actual code
+        rejection_signals = [
+            "The edit was blocked",
+            "Please grant write permission",
+            "I'll retry",
+            "Once you approve",
+            "The changes I'm making are:",
+        ]
+        for signal in rejection_signals:
+            if signal in output:
+                return {"status": "failed", "reason": f"Claude output was not code: '{signal}'"}
+
         # Parse multi-file output
         if "===FILE:" in output:
             parts = re.split(r"===FILE:\s*(.+?)===", output)
@@ -259,12 +271,22 @@ Only make the specific change described. Do not refactor or change anything else
             # Single file output
             fpath = REPO_ROOT / files[0]
             if fpath.exists():
+                original_size = len(fpath.read_text())
+
                 # Strip markdown code fences if present
                 if output.startswith("```"):
                     output = output.split("\n", 1)[1] if "\n" in output else output[3:]
                     if output.endswith("```"):
                         output = output[:-3]
                     output = output.strip()
+
+                # Size guard: reject if output is <30% of original (likely truncated/corrupted)
+                if original_size > 100 and len(output) < original_size * 0.3:
+                    return {
+                        "status": "failed",
+                        "reason": f"output too small ({len(output)} chars vs {original_size} original)",
+                    }
+
                 fpath.write_text(output + "\n")
 
         return {"status": "applied"}
@@ -294,10 +316,60 @@ def queue_review_task(task: dict, today: str):
     queue_path.write_text(json.dumps(existing, indent=2))
 
 
+# -- Build gate ---------------------------------------------------------------
+
+def verify_build() -> bool:
+    """Run the contentos build and return True if it passes."""
+    print("  running build check...", end=" ", flush=True)
+    try:
+        result = subprocess.run(
+            ["npx", "turbo", "build", "--filter=@shawnos/contentos", "--filter=@shawnos/shared"],
+            capture_output=True,
+            text=True,
+            timeout=300,
+            cwd=str(REPO_ROOT / "website"),
+        )
+        if result.returncode == 0:
+            print("PASSED")
+            return True
+        else:
+            print("FAILED")
+            # Extract error info
+            for line in result.stdout.split("\n"):
+                if "Error" in line or "error" in line:
+                    print(f"    {line.strip()}")
+            return False
+    except subprocess.TimeoutExpired:
+        print("TIMEOUT")
+        return False
+    except OSError as e:
+        print(f"ERROR: {e}")
+        return False
+
+
+def revert_changes():
+    """Revert all uncommitted changes to contentos app files."""
+    print("  reverting changes...", end=" ", flush=True)
+    try:
+        subprocess.run(
+            ["git", "-C", str(REPO_ROOT), "checkout", "--", "website/apps/contentos/"],
+            check=True, capture_output=True,
+        )
+        print("reverted")
+    except subprocess.CalledProcessError as e:
+        print(f"revert failed: {e}")
+
+
 # -- Git operations -----------------------------------------------------------
 
 def git_commit_changes(today: str, tasks_applied: int):
-    """Commit applied changes."""
+    """Commit applied changes only if build passes."""
+    # BUILD GATE: verify the build before committing
+    if not verify_build():
+        print("  BUILD FAILED - reverting all changes, nothing will be committed")
+        revert_changes()
+        return
+
     try:
         subprocess.run(
             ["git", "-C", str(REPO_ROOT), "add", "website/apps/contentos/"],

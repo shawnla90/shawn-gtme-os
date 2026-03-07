@@ -147,7 +147,7 @@ Vary the styles: some tactical how-tos, some hot takes, some personal stories, s
 
 # -- Claude CLI Call ----------------------------------------------------------
 
-def call_claude(system_prompt: str, user_prompt: str) -> str:
+def call_claude(system_prompt: str, user_prompt: str, timeout: int = 300) -> str:
     """Call Claude via CLI (Max subscription, no API key needed)."""
     full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
 
@@ -156,7 +156,7 @@ def call_claude(system_prompt: str, user_prompt: str) -> str:
         input=full_prompt,
         capture_output=True,
         text=True,
-        timeout=300,
+        timeout=timeout,
         cwd=str(REPO_ROOT),
     )
 
@@ -193,20 +193,9 @@ def parse_json_response(raw: str) -> list | dict | None:
 
 # -- Variation Generation -----------------------------------------------------
 
-def generate_variations(posts: list[dict]) -> list[dict]:
-    """Generate remix, tone, and platform variations for each post."""
-    summaries = []
-    for p in posts:
-        summaries.append({
-            "id": p["id"],
-            "title": p["title"],
-            "hook": p["hook"],
-            "body": p["body"][:400],
-            "cta": p["cta"],
-            "tags": p["tags"],
-        })
-
-    variation_prompt = f"""You are generating variations of LinkedIn posts. For each post below, generate:
+def _build_variation_prompt(summaries: list[dict]) -> str:
+    """Build the variation prompt for a batch of posts."""
+    return f"""You are generating variations of LinkedIn posts. For each post below, generate:
 
 1. TWO remix variants - completely different angles on the same topic. New hook, body, and CTA. Same core insight, fresh narrative approach.
 2. TWO tone variants of the body text only:
@@ -245,65 +234,100 @@ Return ONLY a JSON array. Each item:
   }}
 }}"""
 
+
+def _merge_variations(posts: list[dict], var_result: list[dict]):
+    """Merge parsed variation results into posts."""
+    var_map = {v["post_id"]: v for v in var_result if isinstance(v, dict)}
+    for post in posts:
+        v = var_map.get(post["id"])
+        if not v:
+            continue
+
+        # Remixes - apply anti-slop
+        remixes = []
+        for remix in v.get("remixes", []):
+            _, _, fixed_body = validate_anti_slop(remix.get("body", ""))
+            remixes.append({
+                "label": remix.get("label", "remix"),
+                "hook": remix.get("hook", ""),
+                "body": fixed_body,
+                "cta": remix.get("cta", ""),
+            })
+        if remixes:
+            post["remixes"] = remixes
+
+        # Tones - apply anti-slop, include original as builder
+        tones_raw = v.get("tones", {})
+        if tones_raw:
+            _, _, advisor_fixed = validate_anti_slop(tones_raw.get("advisor", ""))
+            _, _, provocateur_fixed = validate_anti_slop(tones_raw.get("provocateur", ""))
+            post["tones"] = {
+                "builder": post["body"],
+                "advisor": advisor_fixed,
+                "provocateur": provocateur_fixed,
+            }
+
+        # Platforms - apply anti-slop, include original as linkedin
+        plats_raw = v.get("platforms", {})
+        if plats_raw:
+            _, _, x_fixed = validate_anti_slop(plats_raw.get("x", ""))
+            _, _, newsletter_fixed = validate_anti_slop(plats_raw.get("newsletter", ""))
+            post["platforms"] = {
+                "linkedin": post["body"],
+                "x": x_fixed,
+                "newsletter": newsletter_fixed,
+            }
+
+
+VARIATION_BATCH_SIZE = 5
+
+
+def generate_variations(posts: list[dict]) -> list[dict]:
+    """Generate remix, tone, and platform variations for each post in batches."""
     system = "You generate content variations. Return only valid JSON. No commentary."
 
-    print("  generating variations (remixes, tones, platforms)...")
+    print(f"  generating variations in batches of {VARIATION_BATCH_SIZE}...")
     var_start = time.time()
+    total_merged = 0
 
-    try:
-        raw = call_claude(system, variation_prompt)
-        result = parse_json_response(raw)
-        if not result or not isinstance(result, list):
-            print("  WARNING: could not parse variations, skipping")
-            return posts
+    for batch_start in range(0, len(posts), VARIATION_BATCH_SIZE):
+        batch = posts[batch_start:batch_start + VARIATION_BATCH_SIZE]
+        batch_num = batch_start // VARIATION_BATCH_SIZE + 1
+        total_batches = (len(posts) + VARIATION_BATCH_SIZE - 1) // VARIATION_BATCH_SIZE
 
-        # Merge variations into posts
-        var_map = {v["post_id"]: v for v in result if isinstance(v, dict)}
-        for post in posts:
-            v = var_map.get(post["id"])
-            if not v:
+        summaries = []
+        for p in batch:
+            summaries.append({
+                "id": p["id"],
+                "title": p["title"],
+                "hook": p["hook"],
+                "body": p["body"][:400],
+                "cta": p["cta"],
+                "tags": p["tags"],
+            })
+
+        print(f"    batch {batch_num}/{total_batches} (posts {batch[0]['id']}-{batch[-1]['id']})...", end=" ", flush=True)
+
+        try:
+            variation_prompt = _build_variation_prompt(summaries)
+            raw = call_claude(system, variation_prompt, timeout=600)
+            result = parse_json_response(raw)
+            if not result or not isinstance(result, list):
+                print("parse failed, skipping batch")
                 continue
 
-            # Remixes - apply anti-slop
-            remixes = []
-            for remix in v.get("remixes", []):
-                _, _, fixed_body = validate_anti_slop(remix.get("body", ""))
-                remixes.append({
-                    "label": remix.get("label", "remix"),
-                    "hook": remix.get("hook", ""),
-                    "body": fixed_body,
-                    "cta": remix.get("cta", ""),
-                })
-            if remixes:
-                post["remixes"] = remixes
+            _merge_variations(posts, result)
+            merged = sum(1 for p in batch if p.get("tones"))
+            total_merged += merged
+            print(f"{merged}/{len(batch)} merged")
 
-            # Tones - apply anti-slop, include original as builder
-            tones_raw = v.get("tones", {})
-            if tones_raw:
-                _, _, advisor_fixed = validate_anti_slop(tones_raw.get("advisor", ""))
-                _, _, provocateur_fixed = validate_anti_slop(tones_raw.get("provocateur", ""))
-                post["tones"] = {
-                    "builder": post["body"],
-                    "advisor": advisor_fixed,
-                    "provocateur": provocateur_fixed,
-                }
+        except subprocess.TimeoutExpired:
+            print("TIMEOUT, skipping batch")
+        except Exception as e:
+            print(f"failed: {e}")
 
-            # Platforms - apply anti-slop, include original as linkedin
-            plats_raw = v.get("platforms", {})
-            if plats_raw:
-                _, _, x_fixed = validate_anti_slop(plats_raw.get("x", ""))
-                _, _, newsletter_fixed = validate_anti_slop(plats_raw.get("newsletter", ""))
-                post["platforms"] = {
-                    "linkedin": post["body"],
-                    "x": x_fixed,
-                    "newsletter": newsletter_fixed,
-                }
-
-        var_elapsed = time.time() - var_start
-        print(f"  variations done ({var_elapsed:.1f}s)")
-
-    except Exception as e:
-        print(f"  WARNING: variation generation failed: {e}")
+    var_elapsed = time.time() - var_start
+    print(f"  variations done: {total_merged}/{len(posts)} posts enriched ({var_elapsed:.1f}s)")
 
     return posts
 
