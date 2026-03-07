@@ -1,44 +1,44 @@
 {
-  "generated": "2026-03-06T05:00:10.000Z",
+  "generated": "2026-03-07T05:00:07.000Z",
   "totals": {
-    "total_content": 127,
-    "total_drafts": 75,
-    "total_final": 52,
-    "total_words": 83984,
+    "total_content": 133,
+    "total_drafts": 77,
+    "total_final": 56,
+    "total_words": 87528,
     "platforms_active": 6,
-    "cross_platform_groups": 28,
+    "cross_platform_groups": 29,
     "series_count": 4
   },
   "pipeline": {
+    "linkedin": {
+      "draft": 33,
+      "final": 12,
+      "total": 45,
+      "words": 29390
+    },
     "nio-log": {
       "draft": 0,
-      "final": 16,
-      "total": 16,
-      "words": 10218
+      "final": 17,
+      "total": 17,
+      "words": 10907
     },
     "website": {
       "draft": 1,
-      "final": 10,
-      "total": 11,
-      "words": 10600
+      "final": 13,
+      "total": 14,
+      "words": 13066
     },
-    "linkedin": {
+    "x": {
       "draft": 32,
-      "final": 12,
-      "total": 44,
-      "words": 29166
+      "final": 9,
+      "total": 41,
+      "words": 15048
     },
     "substack": {
       "draft": 9,
       "final": 5,
       "total": 14,
       "words": 16675
-    },
-    "x": {
-      "draft": 31,
-      "final": 9,
-      "total": 40,
-      "words": 14883
     },
     "reddit": {
       "draft": 2,
@@ -48,6 +48,72 @@
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "google workspace cli",
+      "slug": "google-workspace-cli",
+      "date": "2026-03-06",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 224,
+      "file_path": "content/linkedin/drafts/2026-03-06_google-workspace-cli.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "THE FUNNEL HAS A SHAPE NOW",
+      "slug": "2026-03-06",
+      "date": "2026-03-06",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 689,
+      "file_path": "content/nio-log/2026-03-06.md"
+    },
+    {
+      "platform": "website",
+      "title": "Google just shipped a CLI that wraps every Workspace API",
+      "slug": "google-workspace-cli",
+      "date": "2026-03-06",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1096,
+      "file_path": "content/website/final/google-workspace-cli.md"
+    },
+    {
+      "platform": "website",
+      "title": "should your SDR team learn AI tools (yes)",
+      "slug": "should-sdrs-learn-ai-tools",
+      "date": "2026-03-06",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 645,
+      "file_path": "content/website/final/should-sdrs-learn-ai-tools.md"
+    },
+    {
+      "platform": "website",
+      "title": "what a go-to-market engineer actually does",
+      "slug": "what-a-go-to-market-engineer-does",
+      "date": "2026-03-06",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 725,
+      "file_path": "content/website/final/what-a-go-to-market-engineer-does.md"
+    },
+    {
+      "platform": "x",
+      "title": "google workspace cli",
+      "slug": "google-workspace-cli",
+      "date": "2026-03-06",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 165,
+      "file_path": "content/x/drafts/2026-03-06_google-workspace-cli.md"
+    },
     {
       "platform": "nio-log",
       "title": "GOOD. NOW I HAVE THE FULL",
@@ -531,72 +597,6 @@
       "arc": null,
       "word_count": 782,
       "file_path": "content/website/final/sqlite-content-index.md"
-    },
-    {
-      "platform": "website",
-      "title": "Why I Stopped Paying for API Calls and Built My Own AI Chat",
-      "slug": "why-i-stopped-paying-for-api-calls",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 845,
-      "file_path": "content/website/final/why-i-stopped-paying-for-api-calls.md"
-    },
-    {
-      "platform": "x",
-      "title": "ShawnOS Chat - CLI-to-Chat Bridge Thread",
-      "slug": "shawnos-chat-thread",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 223,
-      "file_path": "content/x/final/shawnos-chat-thread.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THE COMPOUND EFFECT",
-      "slug": "2026-02-21",
-      "date": "2026-02-21",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 516,
-      "file_path": "content/nio-log/2026-02-21.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THE AUTOMATION SYMPHONY",
-      "slug": "2026-02-20",
-      "date": "2026-02-20",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 425,
-      "file_path": "content/nio-log/2026-02-20.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "post-one: blade tier achieved",
-      "slug": "post-one",
-      "date": "2026-02-20",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 299,
-      "file_path": "content/nio-log/post-one.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "genesis",
-      "slug": "2026-02-19",
-      "date": "2026-02-19",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 336,
-      "file_path": "content/nio-log/2026-02-19.md"
     }
   ],
   "series": [
@@ -698,6 +698,19 @@
     }
   ],
   "crossPlatform": [
+    {
+      "date": "2026-03-06",
+      "slug": "google-workspace-cli",
+      "platforms": [
+        "linkedin",
+        "website",
+        "x"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 3
+    },
     {
       "date": "2026-02-27",
       "slug": "parallel-safe-handoffs",
@@ -1041,6 +1054,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-06",
+      "grade": "C",
+      "score": 219,
+      "words": 20808,
+      "shipped": 15,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-05",
       "grade": "B",
       "score": 358,
@@ -1143,14 +1164,6 @@
       "words": 41794,
       "shipped": 23,
       "cost": 229.42
-    },
-    {
-      "date": "2026-02-20",
-      "grade": "S+",
-      "score": 706,
-      "words": 33737,
-      "shipped": 84,
-      "cost": 167.56
     }
   ]
 }

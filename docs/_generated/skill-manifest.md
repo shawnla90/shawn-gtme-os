@@ -12,11 +12,11 @@
 | 5 | ai-chat-widget | (no description) | .claude/skills/ | 2026-03-04 |
 | 6 | aios-image | Generate terminal-style AI/os command branded images from any post, draft, or... | .cursor/skills/ | 2026-02-12 |
 | 7 | avatar-develop | Alter avatar sprites and animations — edit → generate → preview → approve. Us... | .cursor/skills/ | 2026-02-14 |
-| 8 | campaign-copy-workflow | Generate the complete Phase 2 of any web reveal campaign — static email bodie... | .cursor/skills/ | 2026-02-12 |
+| 8 | campaign-copy-workflow | Generate the complete Phase 2 of any web reveal campaign — static email bodie... | .cursor/skills/ | 2026-03-06 |
 | 9 | clickup-time-track | Auto-log tracked time on ClickUp tasks after completing work. Fires after any... | .cursor/skills/ | 2026-02-17 |
 | 10 | content-images | Generates images and visual assets for LinkedIn, X, and other social content ... | .cursor/skills/ | 2026-02-12 |
-| 11 | context-handoff | Generate a context handoff document at the end of a session so the next Claud... | .claude/skills/ | 2026-02-27 |
-| 12 | daily-tracker | Track daily accomplishments, TODOs, and content pipeline. Auto-scans git + co... | .cursor/skills/ | 2026-02-15 |
+| 11 | context-handoff | Generate a context handoff document at the end of a session so the next Claud... | .claude/skills/ | 2026-03-06 |
+| 12 | daily-tracker | Track daily accomplishments, TODOs, and content pipeline. Auto-scans git + co... | .cursor/skills/ | 2026-03-06 |
 | 13 | deploy | Commit, push, and deploy the website to Vercel. Handles git staging, commit m... | .cursor/skills/ | 2026-02-14 |
 | 14 | discuss | Decision-lock workflow for complex features. Asks targeted domain-specific qu... | .claude/skills/ | 2026-02-25 |
 | 15 | domain-calc | Calculate domains and mailboxes needed for cold email campaigns and generate ... | .cursor/skills/ | 2026-02-20 |
@@ -38,8 +38,8 @@
 | 31 | linkedin-recon | Browser-based LinkedIn profile recon using Browserbase MCP. Visits LinkedIn p... | .cursor/skills/ | 2026-02-10 |
 | 32 | morning | Daily ops dashboard. Reads context handoff, checks git status, queries ClickU... | .claude/skills/ | 2026-02-25 |
 | 33 | notion-sync | Sync repository content (branding, clients, partners, workflows, skills) to N... | .cursor/skills/ | 2026-02-09 |
-| 34 | partner-comms | Generate formatted partner update messages for Slack or email from conversati... | .cursor/skills/ | 2026-02-12 |
-| 35 | partner-onboard | Scaffold a new GTM partner in the repo by extracting data from ClickUp MCP an... | .cursor/skills/ | 2026-02-13 |
+| 34 | partner-comms | Generate formatted partner update messages for Slack or email from conversati... | .cursor/skills/ | 2026-03-06 |
+| 35 | partner-onboard | Scaffold a new GTM partner in the repo by extracting data from ClickUp MCP an... | .cursor/skills/ | 2026-03-06 |
 | 36 | phase-report | Generate a phase report when building multi-session features. Creates both a ... | .claude/skills/ | 2026-02-25 |
 | 37 | plan-format | Produces structured plans with model recommendations, execution order, parall... | .cursor/skills/ | 2026-02-14 |
 | 38 | play-draft | Turn a screenshot of something you built, shipped, or accomplished into Linke... | .cursor/skills/ | 2026-02-18 |
@@ -60,7 +60,7 @@
 | 53 | value-pin-comments | Generate value pin comments for LinkedIn posts. Analyzes the post and produce... | .cursor/skills/ | 2026-02-10 |
 | 54 | video | (no description) | .claude/skills/ | 2026-02-20 |
 | 55 | viral-hooks | Generate 2–5 scroll-stopping hook options for LinkedIn or X posts. Complement... | .cursor/skills/ | 2026-02-10 |
-| 56 | web-reveal-workflow | Generate the full Clay web reveal qualification flow for a partner. Creates 3... | .cursor/skills/ | 2026-02-12 |
+| 56 | web-reveal-workflow | Generate the full Clay web reveal qualification flow for a partner. Creates 3... | .cursor/skills/ | 2026-03-06 |
 | 57 | webfix | Quick CSS, component, and styling fixes for the website with instant dev serv... | .cursor/skills/ | 2026-02-15 |
 | 58 | website-feature | Spin up the local dev environment and open a side-by-side browser preview for... | .cursor/skills/ | 2026-02-14 |
 | 59 | x-engage | Draft and approve X/Twitter replies from scouted opportunities. Reads the que... | .claude/skills/ | 2026-02-27 |

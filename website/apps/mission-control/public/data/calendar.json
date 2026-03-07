@@ -1,6 +1,149 @@
 {
-  "generated": "2026-03-06T05:04:01.120Z",
+  "generated": "2026-03-07T05:02:36.149Z",
   "events": [
+    {
+      "id": "commit-7f4fe9c",
+      "title": "feat: MidJourney Gallery & Prompt Builder (Phase 2)",
+      "type": "milestone",
+      "datetime": "2026-03-06T23:18:40-05:00",
+      "status": "completed",
+      "description": "feat: MidJourney Gallery & Prompt Builder (Phase 2)",
+      "metadata": {
+        "commitHash": "7f4fe9c"
+      }
+    },
+    {
+      "id": "commit-0270398",
+      "title": "chore: contentos optimizer - 2 improvements (2026-03-07)",
+      "type": "system",
+      "datetime": "2026-03-06T23:02:23-05:00",
+      "status": "completed",
+      "description": "chore: contentos optimizer - 2 improvements (2026-03-07)",
+      "metadata": {
+        "commitHash": "0270398"
+      }
+    },
+    {
+      "id": "commit-5601fcd",
+      "title": "feat: change \"drop me a line\" CTA to \"text me\" with SMS link",
+      "type": "milestone",
+      "datetime": "2026-03-06T21:10:42-05:00",
+      "status": "completed",
+      "description": "feat: change \"drop me a line\" CTA to \"text me\" with SMS link",
+      "metadata": {
+        "commitHash": "5601fcd"
+      }
+    },
+    {
+      "id": "commit-99a041a",
+      "title": "feat: MidJourney Mastery interactive page on contentos",
+      "type": "milestone",
+      "datetime": "2026-03-06T19:06:41-05:00",
+      "status": "completed",
+      "description": "feat: MidJourney Mastery interactive page on contentos",
+      "metadata": {
+        "commitHash": "99a041a"
+      }
+    },
+    {
+      "id": "commit-3fa8eae",
+      "title": "feat: PostHog tracking on /why-independent + sanitize gtmos ",
+      "type": "milestone",
+      "datetime": "2026-03-06T18:40:32-05:00",
+      "status": "completed",
+      "description": "feat: PostHog tracking on /why-independent + sanitize gtmos sitemap",
+      "metadata": {
+        "commitHash": "3fa8eae"
+      }
+    },
+    {
+      "id": "commit-57fb95d",
+      "title": "chore: remove client name from gtmos sitemap",
+      "type": "system",
+      "datetime": "2026-03-06T15:38:52-05:00",
+      "status": "completed",
+      "description": "chore: remove client name from gtmos sitemap",
+      "metadata": {
+        "commitHash": "57fb95d"
+      }
+    },
+    {
+      "id": "commit-6f3c248",
+      "title": "feat: content depth + cross-site blog posts + bidirectional ",
+      "type": "milestone",
+      "datetime": "2026-03-06T14:53:04-05:00",
+      "status": "completed",
+      "description": "feat: content depth + cross-site blog posts + bidirectional link mesh",
+      "metadata": {
+        "commitHash": "6f3c248"
+      }
+    },
+    {
+      "id": "commit-e4946b1",
+      "title": "feat: daily LinkedIn posts 2026-03-06",
+      "type": "milestone",
+      "datetime": "2026-03-06T09:09:42-05:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-06",
+      "metadata": {
+        "commitHash": "e4946b1"
+      }
+    },
+    {
+      "id": "commit-37ff21b",
+      "title": "feat: chatbot teaser mode + \"how was I built?\" wiki content",
+      "type": "milestone",
+      "datetime": "2026-03-06T04:01:14-05:00",
+      "status": "completed",
+      "description": "feat: chatbot teaser mode + \"how was I built?\" wiki content",
+      "metadata": {
+        "commitHash": "37ff21b"
+      }
+    },
+    {
+      "id": "commit-48358ff",
+      "title": "chore: sanitize tracked files for public GitHub",
+      "type": "system",
+      "datetime": "2026-03-06T02:25:43-05:00",
+      "status": "completed",
+      "description": "chore: sanitize tracked files for public GitHub",
+      "metadata": {
+        "commitHash": "48358ff"
+      }
+    },
+    {
+      "id": "commit-e8a1882",
+      "title": "feat: content depth + cross-site linking for /why-independen",
+      "type": "milestone",
+      "datetime": "2026-03-06T01:52:06-05:00",
+      "status": "completed",
+      "description": "feat: content depth + cross-site linking for /why-independent",
+      "metadata": {
+        "commitHash": "e8a1882"
+      }
+    },
+    {
+      "id": "commit-3e53b58",
+      "title": "feat: backfill post variations data (remixes, tones, platfor",
+      "type": "milestone",
+      "datetime": "2026-03-06T01:14:29-05:00",
+      "status": "completed",
+      "description": "feat: backfill post variations data (remixes, tones, platforms)",
+      "metadata": {
+        "commitHash": "3e53b58"
+      }
+    },
+    {
+      "id": "commit-f75fe27",
+      "title": "chore: daily tracker scan 2026-03-05",
+      "type": "system",
+      "datetime": "2026-03-06T00:04:01-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-03-05",
+      "metadata": {
+        "commitHash": "f75fe27"
+      }
+    },
     {
       "id": "commit-d24a688",
       "title": "feat: GTM engineer consultant positioning + /why-independent",
@@ -21,149 +164,6 @@
       "description": "feat: post variations engine + REM post awareness",
       "metadata": {
         "commitHash": "9197306"
-      }
-    },
-    {
-      "id": "commit-ddaa108",
-      "title": "chore: contentos optimizer - 1 improvements (2026-03-06)",
-      "type": "system",
-      "datetime": "2026-03-05T23:03:07-05:00",
-      "status": "completed",
-      "description": "chore: contentos optimizer - 1 improvements (2026-03-06)",
-      "metadata": {
-        "commitHash": "ddaa108"
-      }
-    },
-    {
-      "id": "commit-697ea09",
-      "title": "feat: scout post variety + disclaimer banner",
-      "type": "milestone",
-      "datetime": "2026-03-05T22:18:23-05:00",
-      "status": "completed",
-      "description": "feat: scout post variety + disclaimer banner",
-      "metadata": {
-        "commitHash": "697ea09"
-      }
-    },
-    {
-      "id": "commit-9469285",
-      "title": "docs: add ASSETS.md agent taxonomy + archive progression spr",
-      "type": "system",
-      "datetime": "2026-03-05T21:13:19-05:00",
-      "status": "completed",
-      "description": "docs: add ASSETS.md agent taxonomy + archive progression sprites",
-      "metadata": {
-        "commitHash": "9469285"
-      }
-    },
-    {
-      "id": "commit-73dcceb",
-      "title": "docs: archive stale docs + update memory for single-machine",
-      "type": "system",
-      "datetime": "2026-03-05T19:43:25-05:00",
-      "status": "completed",
-      "description": "docs: archive stale docs + update memory for single-machine",
-      "metadata": {
-        "commitHash": "73dcceb"
-      }
-    },
-    {
-      "id": "commit-d288021",
-      "title": "fix: operational hardening - ABM pipeline fix + env docs",
-      "type": "deployment",
-      "datetime": "2026-03-05T19:42:05-05:00",
-      "status": "completed",
-      "description": "fix: operational hardening - ABM pipeline fix + env docs",
-      "metadata": {
-        "commitHash": "d288021"
-      }
-    },
-    {
-      "id": "commit-bc845c0",
-      "title": "refactor: architecture normalization - shared URLs, pinned d",
-      "type": "system",
-      "datetime": "2026-03-05T19:36:16-05:00",
-      "status": "completed",
-      "description": "refactor: architecture normalization - shared URLs, pinned deps, PostHog proxy",
-      "metadata": {
-        "commitHash": "bc845c0"
-      }
-    },
-    {
-      "id": "commit-2982d73",
-      "title": "refactor: dead code removal + PostHogProvider extraction",
-      "type": "system",
-      "datetime": "2026-03-05T18:54:31-05:00",
-      "status": "completed",
-      "description": "refactor: dead code removal + PostHogProvider extraction",
-      "metadata": {
-        "commitHash": "2982d73"
-      }
-    },
-    {
-      "id": "commit-b4c598f",
-      "title": "refactor: single-machine transition - remove dual-machine to",
-      "type": "system",
-      "datetime": "2026-03-05T18:42:24-05:00",
-      "status": "completed",
-      "description": "refactor: single-machine transition - remove dual-machine topology",
-      "metadata": {
-        "commitHash": "b4c598f"
-      }
-    },
-    {
-      "id": "commit-208fefe",
-      "title": "chore: commit pending work + harden .gitignore",
-      "type": "system",
-      "datetime": "2026-03-05T17:46:12-05:00",
-      "status": "completed",
-      "description": "chore: commit pending work + harden .gitignore",
-      "metadata": {
-        "commitHash": "208fefe"
-      }
-    },
-    {
-      "id": "commit-7f361cf",
-      "title": "feat: daily LinkedIn posts 2026-03-05",
-      "type": "milestone",
-      "datetime": "2026-03-05T09:02:40-05:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-05",
-      "metadata": {
-        "commitHash": "7f361cf"
-      }
-    },
-    {
-      "id": "commit-ba80159",
-      "title": "feat: nio.log 2026-03-05 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-03-05T08:01:59-05:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-03-05 — automated daily post",
-      "metadata": {
-        "commitHash": "ba80159"
-      }
-    },
-    {
-      "id": "commit-d698274",
-      "title": "feat: anti-slop detector - negation stacking + NPC highlight",
-      "type": "milestone",
-      "datetime": "2026-03-05T05:28:43-05:00",
-      "status": "completed",
-      "description": "feat: anti-slop detector - negation stacking + NPC highlighting",
-      "metadata": {
-        "commitHash": "d698274"
-      }
-    },
-    {
-      "id": "commit-df9eea9",
-      "title": "feat: knowledge wiki expansion - 21 new articles across 4 wi",
-      "type": "milestone",
-      "datetime": "2026-03-05T05:23:36-05:00",
-      "status": "completed",
-      "description": "feat: knowledge wiki expansion - 21 new articles across 4 wikis",
-      "metadata": {
-        "commitHash": "df9eea9"
       }
     }
   ],
