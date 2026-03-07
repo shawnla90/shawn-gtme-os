@@ -2410,4 +2410,46 @@ export const CONTENT_WIKI_ENTRIES: ContentWikiEntry[] = [
       },
     ],
   },
+
+  {
+    id: 'midjourney-mastery',
+    title: 'MidJourney Mastery',
+    subtitle: 'Interactive guide to MidJourney prompt engineering and character design',
+    category: 'tools',
+    description:
+      'Comprehensive guide to MidJourney techniques - CREF character references, OREF object locking, SREF style consistency, prompt structure, and the production pipeline behind NeoBot avatar creation.',
+    keywords: [
+      'midjourney',
+      'CREF',
+      'OREF',
+      'SREF',
+      'prompt engineering',
+      'character reference',
+      'AI art',
+      'character design',
+      'style consistency',
+    ],
+    difficulty: 'intermediate',
+    related: ['neobot-avatar-creation', 'chatbot-architecture'],
+    sections: [
+      {
+        heading: 'Interactive Guide',
+        type: 'prose',
+        content:
+          'This topic has a dedicated immersive page with interactive prompt templates, parameter breakdowns, and copy-to-clipboard examples. Visit thecontentos.ai/midjourney for the full interactive experience.',
+      },
+      {
+        heading: 'Techniques Covered',
+        type: 'pattern',
+        content:
+          'Prompting fundamentals (subject-first grammar, lighting keywords, style modifiers), CREF character reference for face and proportion locking, OREF object reference for accessory consistency, SREF style reference for visual cohesion across a series, and aspect ratio composition for production-ready assets.',
+      },
+      {
+        heading: 'The NeoBot Connection',
+        type: 'pro-tip',
+        content:
+          'Every NeoBot avatar (Nio, Rem, Recon) was built using the techniques documented here. The CREF + OREF pipeline is how each character maintains visual consistency across dozens of generated poses and expressions. See the NeoBot Avatar Pipeline entry for the full production workflow from MidJourney output to animated APNG on the web.',
+      },
+    ],
+  },
 ]
