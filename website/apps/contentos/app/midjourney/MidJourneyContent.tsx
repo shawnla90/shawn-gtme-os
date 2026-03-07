@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import {
   MotionReveal,
@@ -45,6 +45,253 @@ const difficultyColors: Record<string, string> = {
   beginner: '#4EC373',
   intermediate: '#5B8DEF',
   advanced: '#FF69B4',
+}
+
+/* ── Floating Spirits ────────────────────────────────── */
+
+interface SpiritState {
+  x: number
+  y: number
+  vx: number
+  vy: number
+  scale: number
+  clicked: boolean
+  clickTimer: number
+  trail: { x: number; y: number; opacity: number }[]
+}
+
+function FloatingSpirits() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const animRef = useRef<number>(0)
+  const mouseRef = useRef({ x: 0, y: 0 })
+  const [spirits, setSpirits] = useState<SpiritState[]>([
+    {
+      x: 0.15,
+      y: 0.3,
+      vx: 0.3,
+      vy: 0.2,
+      scale: 1,
+      clicked: false,
+      clickTimer: 0,
+      trail: [],
+    },
+    {
+      x: 0.85,
+      y: 0.6,
+      vx: -0.25,
+      vy: 0.35,
+      scale: 1,
+      clicked: false,
+      clickTimer: 0,
+      trail: [],
+    },
+  ])
+  const spiritsRef = useRef(spirits)
+  spiritsRef.current = spirits
+
+  /* Track mouse position */
+  useEffect(() => {
+    function handleMouse(e: MouseEvent) {
+      if (!containerRef.current) return
+      const rect = containerRef.current.getBoundingClientRect()
+      mouseRef.current = {
+        x: (e.clientX - rect.left) / rect.width,
+        y: (e.clientY - rect.top) / rect.height,
+      }
+    }
+    window.addEventListener('mousemove', handleMouse)
+    return () => window.removeEventListener('mousemove', handleMouse)
+  }, [])
+
+  /* Animation loop */
+  useEffect(() => {
+    let prev = performance.now()
+
+    function tick(now: number) {
+      const dt = Math.min((now - prev) / 1000, 0.05)
+      prev = now
+
+      setSpirits((prev) =>
+        prev.map((s) => {
+          let { x, y, vx, vy, scale, clicked, clickTimer, trail } = {
+            ...s,
+            trail: [...s.trail],
+          }
+
+          /* Gentle mouse attraction */
+          const mx = mouseRef.current.x
+          const my = mouseRef.current.y
+          const dx = mx - x
+          const dy = my - y
+          const dist = Math.sqrt(dx * dx + dy * dy)
+
+          if (dist > 0.05 && dist < 0.5) {
+            const pull = 0.15 / (dist + 0.1)
+            vx += dx * pull * dt
+            vy += dy * pull * dt
+          }
+
+          /* Bounce off edges */
+          if (x < 0.05 || x > 0.95) vx *= -0.8
+          if (y < 0.05 || y > 0.95) vy *= -0.8
+
+          /* Damping */
+          vx *= 0.995
+          vy *= 0.995
+
+          /* Speed limit */
+          const speed = Math.sqrt(vx * vx + vy * vy)
+          if (speed > 0.8) {
+            vx = (vx / speed) * 0.8
+            vy = (vy / speed) * 0.8
+          }
+
+          /* Idle drift */
+          vx += (Math.random() - 0.5) * 0.3 * dt
+          vy += (Math.random() - 0.5) * 0.3 * dt
+
+          x += vx * dt
+          y += vy * dt
+          x = Math.max(0.02, Math.min(0.98, x))
+          y = Math.max(0.02, Math.min(0.98, y))
+
+          /* Click effect decay */
+          if (clicked) {
+            clickTimer -= dt
+            scale = 1 + Math.max(0, clickTimer) * 0.5
+            if (clickTimer <= 0) {
+              clicked = false
+              clickTimer = 0
+              scale = 1
+            }
+          }
+
+          /* Trail */
+          trail.unshift({ x, y, opacity: 0.6 })
+          trail = trail.slice(0, 8).map((t, i) => ({
+            ...t,
+            opacity: 0.6 * (1 - i / 8),
+          }))
+
+          return { x, y, vx, vy, scale, clicked, clickTimer, trail }
+        }),
+      )
+
+      animRef.current = requestAnimationFrame(tick)
+    }
+
+    animRef.current = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(animRef.current)
+  }, [])
+
+  /* Click handler - burst effect */
+  const handleClick = useCallback((index: number) => {
+    setSpirits((prev) =>
+      prev.map((s, i) => {
+        if (i !== index) return s
+        /* Burst: randomize velocity + scale pop */
+        const angle = Math.random() * Math.PI * 2
+        return {
+          ...s,
+          vx: Math.cos(angle) * 1.2,
+          vy: Math.sin(angle) * 1.2,
+          clicked: true,
+          clickTimer: 0.6,
+          scale: 1.5,
+        }
+      }),
+    )
+  }, [])
+
+  const images = ['/midjourney/muse-wireframe.apng', '/midjourney/spirit-jellyfish.apng']
+  const glowColors = ['rgba(255, 7, 58, 0.4)', 'rgba(255, 7, 58, 0.35)']
+  const sizes = [120, 100]
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        position: 'absolute',
+        inset: 0,
+        overflow: 'hidden',
+        pointerEvents: 'none',
+        zIndex: 2,
+      }}
+    >
+      {spirits.map((s, i) => (
+        <div key={i}>
+          {/* Trail particles */}
+          {s.trail.map((t, ti) => (
+            <div
+              key={ti}
+              style={{
+                position: 'absolute',
+                left: `${t.x * 100}%`,
+                top: `${t.y * 100}%`,
+                width: 4 + ti * 0.5,
+                height: 4 + ti * 0.5,
+                borderRadius: '50%',
+                background: `rgba(255, 7, 58, ${t.opacity * 0.3})`,
+                transform: 'translate(-50%, -50%)',
+                transition: 'left 0.1s linear, top 0.1s linear',
+              }}
+            />
+          ))}
+
+          {/* Spirit */}
+          <div
+            style={{
+              position: 'absolute',
+              left: `${s.x * 100}%`,
+              top: `${s.y * 100}%`,
+              transform: `translate(-50%, -50%) scale(${s.scale})`,
+              transition: 'transform 0.15s ease-out',
+              pointerEvents: 'auto',
+              cursor: 'pointer',
+              filter: `drop-shadow(0 0 20px ${glowColors[i]}) drop-shadow(0 0 40px ${glowColors[i]})`,
+            }}
+            onClick={() => handleClick(i)}
+          >
+            <img
+              src={images[i]}
+              alt={i === 0 ? 'Muse spirit' : 'Ethereal spirit'}
+              style={{
+                width: sizes[i],
+                height: sizes[i],
+                objectFit: 'contain',
+                userSelect: 'none',
+              }}
+              draggable={false}
+            />
+
+            {/* Click burst particles */}
+            {s.clicked && (
+              <>
+                {Array.from({ length: 6 }).map((_, pi) => (
+                  <div
+                    key={pi}
+                    className="spirit-burst"
+                    style={{
+                      position: 'absolute',
+                      left: '50%',
+                      top: '50%',
+                      width: 6,
+                      height: 6,
+                      borderRadius: '50%',
+                      background: '#FF073A',
+                      boxShadow: '0 0 8px #FF073A',
+                      transform: `translate(-50%, -50%) rotate(${pi * 60}deg) translateX(${30 + Math.random() * 40}px)`,
+                      opacity: s.clickTimer,
+                    }}
+                  />
+                ))}
+              </>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  )
 }
 
 /* ── PromptBlock ─────────────────────────────────────── */
@@ -440,6 +687,8 @@ export function MidJourneyContent() {
           position: 'relative',
         }}
       >
+        <FloatingSpirits />
+
         <MotionReveal variant="fadeUp" delay={0.05}>
           <div
             style={{
