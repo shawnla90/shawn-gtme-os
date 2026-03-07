@@ -53,13 +53,13 @@ export function WorkTogetherCTA() {
           book a call
         </a>
         <a
-          href="mailto:shawn@thegtmos.ai"
-          onClick={() => track("email")}
+          href="sms:3474520467"
+          onClick={() => track("text_me")}
           style={linkStyle}
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
         >
-          drop me a line
+          text me
         </a>
         <a
           href="https://thegtmos.ai/why-independent"
