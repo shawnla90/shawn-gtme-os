@@ -781,8 +781,8 @@ export function MidJourneyContent() {
                 lineHeight: 1.6,
               }}
             >
-              Browse the gallery to see these techniques in action, or explore
-              the content wiki to see how it all connects.
+              Browse the gallery to see these techniques in action, build your
+              own prompts, or explore the content wiki.
             </p>
             <div
               style={{
@@ -794,7 +794,7 @@ export function MidJourneyContent() {
             >
               <MagneticHover>
                 <Link
-                  href="/content-wiki/neobot-avatar-creation"
+                  href="/midjourney/gallery"
                   style={{
                     display: 'inline-block',
                     padding: '14px 28px',
@@ -808,12 +808,12 @@ export function MidJourneyContent() {
                     letterSpacing: '0.02em',
                   }}
                 >
-                  NeoBot Avatar Pipeline
+                  Gallery & Prompt Builder
                 </Link>
               </MagneticHover>
               <MagneticHover>
                 <Link
-                  href="/content-wiki"
+                  href="/content-wiki/neobot-avatar-creation"
                   style={{
                     display: 'inline-block',
                     padding: '14px 28px',
@@ -828,7 +828,7 @@ export function MidJourneyContent() {
                     letterSpacing: '0.02em',
                   }}
                 >
-                  Content Wiki
+                  NeoBot Avatar Pipeline
                 </Link>
               </MagneticHover>
             </div>
