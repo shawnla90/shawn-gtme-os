@@ -1,0 +1,265 @@
+{
+  "date": "2026-03-07",
+  "posts_found": 14,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-03-07T14:02:05.630830+00:00",
+  "sources": [
+    {
+      "author": "Swyx",
+      "headline": "AI Researcher & Developer Advocate at AWS",
+      "post_summary": "Discusses the evolution of AI agents from hype to practical deployment, highlighting key frameworks like LangChain and AutoGen for building multi-agent systems. Emphasizes the need for robust evaluation metrics in agentic workflows. Shares insights on recent benchmarks showing agent performance surpassing human levels in coding tasks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Discusses%20the%20evolution%20of%20AI%20agents%20from%20hype%20to%20practical%20deployment%2C%20highligh",
+      "engagement": {
+        "likes": 12000,
+        "comments": 450
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "automation",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Andrej Karpathy",
+      "headline": "Founder at Eureka Labs, ex-OpenAI",
+      "post_summary": "Explores the infrastructure challenges in scaling AI agents, including compute demands and data pipelines. Advocates for open-source tools like Ray and Kubernetes integrations for agent orchestration. Predicts agent swarms will redefine developer productivity in 2025.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Explores%20the%20infrastructure%20challenges%20in%20scaling%20AI%20agents%2C%20including%20compute%20d",
+      "engagement": {
+        "likes": 25000,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "AI agents",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Nat Friedman",
+      "headline": "Co-Founder at GitHub Copilot",
+      "post_summary": "Highlights new automation trends with AI agents in dev tools, showcasing Cursor and Replit integrations. Details how agents are automating 70% of repetitive coding tasks based on recent studies. Calls for ethical guidelines in agent deployment.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nat%20Friedman%20Highlights%20new%20automation%20trends%20with%20AI%20agents%20in%20dev%20tools%2C%20showcasing%20Cursor%20",
+      "engagement": {
+        "likes": 8000,
+        "comments": 320
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "developer tools",
+        "AI agents"
+      ]
+    },
+    {
+      "author": " Guillermo Rauch",
+      "headline": "CEO at Vercel",
+      "post_summary": "Dives into AI infrastructure for edge-deployed agents, discussing Vercel's AI SDK and serverless scaling. Shares case studies on reducing latency by 50% with optimized agent runtimes. Encourages developers to experiment with next-gen infra stacks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20%20Guillermo%20Rauch%20Dives%20into%20AI%20infrastructure%20for%20edge-deployed%20agents%2C%20discussing%20Vercel%27s%20AI%20SD",
+      "engagement": {
+        "likes": 15000,
+        "comments": 560
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "automation",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Liliane Kammer",
+      "headline": "AI Product Lead at Scale AI",
+      "post_summary": "Analyzes the rise of specialized AI agents for enterprise automation, focusing on tools like CrewAI. Outlines infrastructure requirements for production-grade agents, including observability and fault tolerance. Provides a roadmap for teams transitioning to agentic architectures.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liliane%20Kammer%20Analyzes%20the%20rise%20of%20specialized%20AI%20agents%20for%20enterprise%20automation%2C%20focusing%20o",
+      "engagement": {
+        "likes": 5000,
+        "comments": 210
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI agents",
+        "AI infrastructure",
+        "automation"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Swoogo | Former Clari | GTM Advisor",
+      "post_summary": "Most companies are running outbound like it's 2019. Here's what's actually working in 2026: signal-based sequencing triggered by job changes, funding events, and tech stack shifts \u2014 not spray-and-pray cadences. We cut our sequence volume by 60% and tripled reply rates. The era of the GTM engineer who can wire Clay + Apollo + your CRM is more valuable than 5 traditional SDRs.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 341
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "gtm-engineering",
+        "signal-based-selling"
+      ]
+    },
+    {
+      "author": "Stevie Case",
+      "headline": "CRO at Vanta | Scaling revenue teams from $0-$100M+",
+      "post_summary": "RevOps is dead. GTM Engineering is what actually moves the number. The difference: RevOps reports on what happened, GTM Engineering builds systems that change what happens. If your ops team isn't shipping Zapier flows, Clay enrichment tables, and AI personalization layers \u2014 you're paying for dashboards nobody reads.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 518
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "gtm-engineering",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Jess Schultz",
+      "headline": "Founder @ Amplify GTM | Helping B2B teams build content that converts pipeline",
+      "post_summary": "Your ICP doesn't want another ebook. They want to watch you solve a real problem in 90 seconds. We switched our entire top-of-funnel content strategy from gated PDFs to short-form LinkedIn video walkthroughs \u2014 same topics, zero-gate. Pipeline attributed to content went up 4x in one quarter. Distribution is the strategy now, not the asset.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 204
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "b2b-marketing"
+      ]
+    },
+    {
+      "author": "Armand Farrokh",
+      "headline": "Host of 30 Minutes to President's Club | Co-author: Cold Calling Sucks (And That's Why It Works)",
+      "post_summary": "AI SDRs are not replacing your SDR team. They're exposing which SDRs were already robots. The ones who survive are the ones who use AI to do the research in 2 minutes so they can spend 10 minutes on a genuinely relevant cold call. The job isn't going away \u2014 the low-effort version of the job is. Train for signal interpretation, not sequence execution.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6731,
+        "comments": 892
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ai-sdr",
+        "outbound-automation",
+        "sales-development"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Indie Maker & Founder of Nomad List, Remote OK",
+      "post_summary": "Pieter shared his latest product launch as a solo developer, detailing the tech stack used and initial user feedback after shipping on Product Hunt. He emphasized the importance of building in public to iterate quickly based on real user data. The post garnered significant engagement from the indie hacker community.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shared%20his%20latest%20product%20launch%20as%20a%20solo%20developer%2C%20detailing%20the%20tech%20",
+      "engagement": {
+        "likes": 12000,
+        "comments": 450
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "solo developer",
+        "shipping products",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Founder of Feedback Panda, Author of The Embedded Entrepreneur",
+      "post_summary": "Arvid recounted his journey pivoting from corporate life to bootstrapping SaaS products as a solo founder. He outlined key lessons on shipping MVPs rapidly and building sustainable businesses without VC funding. Followers praised his transparent building-in-public approach.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Arvid%20recounted%20his%20journey%20pivoting%20from%20corporate%20life%20to%20bootstrapping%20SaaS%20p",
+      "engagement": {
+        "likes": 8500,
+        "comments": 320
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "bootstrapping",
+        "solo founder",
+        "career pivot",
+        "SaaS"
+      ]
+    },
+    {
+      "author": "KP (Karthik Pattabiraman)",
+      "headline": "Solo Founder & Indie Hacker",
+      "post_summary": "KP documented week 12 of building his AI tool in public, announcing the launch and sharing revenue numbers from day one. He discussed challenges overcome as a solo dev and tips for others shipping products independently. The post inspired many aspiring builders.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20KP%20%28Karthik%20Pattabiraman%29%20KP%20documented%20week%2012%20of%20building%20his%20AI%20tool%20in%20public%2C%20announcing%20the%20launch%20a",
+      "engagement": {
+        "likes": 4500,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "indie hacker",
+        "AI product",
+        "solo developer"
+      ]
+    },
+    {
+      "author": "Sahil Lavingia",
+      "headline": "Founder & CEO at Gumroad",
+      "post_summary": "Sahil shared insights on his career pivot from Pinterest to founding Gumroad, focusing on the power of solo shipping and creator economy tools. He advised on validating ideas quickly and building in public to attract users organically. High engagement from entrepreneurs.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sahil%20Lavingia%20Sahil%20shared%20insights%20on%20his%20career%20pivot%20from%20Pinterest%20to%20founding%20Gumroad%2C%20fo",
+      "engagement": {
+        "likes": 15000,
+        "comments": 600
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "career pivot",
+        "shipping products",
+        "creator economy"
+      ]
+    },
+    {
+      "author": "Daniel Vassallo",
+      "headline": "Ex-AWS, Indie Maker, Small Bets Advocate",
+      "post_summary": "Daniel posted about transitioning from big tech to solo indie projects, shipping multiple micro-SaaS products. He broke down his process for building in public, including failures and wins, encouraging others to pivot into tech entrepreneurship. Resonated with career changers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Daniel%20Vassallo%20Daniel%20posted%20about%20transitioning%20from%20big%20tech%20to%20solo%20indie%20projects%2C%20shipping",
+      "engagement": {
+        "likes": 7000,
+        "comments": 280
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "indie maker",
+        "solo developer",
+        "building in public"
+      ]
+    }
+  ]
+}

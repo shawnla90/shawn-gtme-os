@@ -1,0 +1,240 @@
+{
+  "date": "2026-03-07",
+  "generated_count": 10,
+  "avg_anti_slop_score": 100.0,
+  "generation_time_seconds": 178.2,
+  "engine": "claude-cli-opus",
+  "generated_at": "2026-03-07T14:10:03.966176+00:00",
+  "posts": [
+    {
+      "id": 1,
+      "title": "Agents that actually work in GTM",
+      "hook": "Everyone's shipping AI agents. Almost nobody's shipping AI agents that touch production data without breaking things.",
+      "body": "Everyone's shipping AI agents. Almost nobody's shipping AI agents that touch production data without breaking things.\n\nI've been running agentic workflows in our GTM stack for months now. Enrichment, scoring, routing, list building. Real pipeline stuff.\n\nThe gap between demo and production is massive.\n\nDemo: \"Watch this agent research a company and write a personalized email.\"\n\nProduction: That agent hallucinated a VP of Sales who left 8 months ago, pulled revenue data from a competitor's Crunchbase page, and confidently wrote an email referencing a product launch that never happened.\n\nWhat actually works is small, constrained agents with verified data inputs. Not one mega-agent that \"thinks\" its way through your whole workflow.\n\nOur enrichment agent does exactly three things. Pulls firmographic data from Apollo. Cross-references job postings for hiring signals. Checks for tech stack indicators via web scrape. That's it. No creative writing. No \"reasoning\" about whether the account is a fit.\n\nThe scoring and routing logic stays deterministic. If/then. Thresholds. Human-readable rules.\n\nAgents are incredible at data collection and transformation. They're terrible at judgment calls on your pipeline. Keep the AI in the pipes, keep the logic in code you can debug.",
+      "cta": "What's the first agent workflow you actually put in production? Curious what survived contact with real data.",
+      "tags": [
+        "ai-agents",
+        "gtm-engineering",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Swyx",
+        "summary": "Discusses the evolution of AI agents from hype to practical deployment, highlighting key frameworks like LangChain and AutoGen for building multi-agent systems. Emphasizes the need for robust evaluation metrics in agentic workflows. Shares insights on recent benchmarks showing agent performance surpassing human levels in coding tasks.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Discusses%20the%20evolution%20of%20AI%20agents%20from%20hype%20to%20practical%20deployment%2C%20highligh",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 2,
+      "title": "Signal-based outbound in practice",
+      "hook": "We stopped sending sequences based on ICP fit alone. Pipeline went up 40% in 8 weeks.",
+      "body": "We stopped sending sequences based on ICP fit alone. Pipeline went up 40% in 8 weeks.\n\nICP fit tells you WHO could buy. Signals tell you who's likely buying RIGHT NOW.\n\nThe setup isn't complicated. It just requires plumbing most teams never build.\n\nThree signal layers we run daily:\n\n\u2705 Hiring signals. Job postings for roles that indicate budget allocation. A company hiring 3 SDRs doesn't need our help. A company hiring a \"GTM Engineer\" or \"Revenue Operations Lead\" probably does.\n\n\u2705 Tech stack changes. New tools appearing on their site. BuiltWith + web scrape + Clay enrichment. If they just adopted Outreach but don't have enrichment tooling, that's a timing window.\n\n\u2705 Content engagement. Who's reading what in your ecosystem. Not just your content. Industry content that maps to the problem you solve.\n\nEach signal gets a score. Signals compound. One signal is noise. Two signals in 14 days is a pattern. Three is a campaign trigger.\n\nThe Clay table that runs this has 47 columns. It's ugly. It works.\n\nThe hard part isn't the concept. It's maintaining the data hygiene so your signals don't decay into garbage after 60 days. That's where most teams quit.",
+      "cta": "Which signal source has been most reliable for your team? Hiring data has been our most consistent by far.",
+      "tags": [
+        "signal-based-selling",
+        "outbound",
+        "clay"
+      ],
+      "inspired_by": {
+        "author": "Kyle Coleman",
+        "summary": "Most companies are running outbound like it's 2019. Here's what's actually working in 2026: signal-based sequencing triggered by job changes, funding events, and tech stack shifts \u2014 not spray-and-pray cadences. We cut our sequence volume by 60% and tripled reply rates. The era of the GTM engineer who can wire Clay + Apollo + your CRM is more valuable than 5 traditional SDRs.",
+        "url": "",
+        "engagement": {
+          "likes": 2847,
+          "comments": 341
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 3,
+      "title": "GTM Engineering is just RevOps that ships",
+      "hook": "RevOps isn't dead. It just stopped evolving when dashboards became the deliverable.",
+      "body": "RevOps isn't dead. It just stopped evolving when dashboards became the deliverable.\n\nI've worked with RevOps teams that are genuinely great. They understand data models, attribution, forecasting mechanics. Real analytical depth.\n\nBut the job description drifted. It became \"maintain Salesforce, build reports, attend pipeline reviews.\" Reactive. Backward-looking.\n\nGTM Engineering is what happens when you take that same systems thinking and point it forward.\n\nRevOps: \"Here's why we missed the quarter.\"\nGTM Engineering: \"Here's the enrichment workflow that surfaces accounts 3 weeks before they hit our inbound funnel.\"\n\nRevOps: \"We need cleaner data in Salesforce.\"\nGTM Engineering: \"I built a Clay workflow that enriches, dedupes, and routes leads before they ever touch the CRM.\"\n\nSame brain. Different output.\n\nThe best GTM Engineers I know came from RevOps. They have the data intuition. They just got tired of being the reporting team and started building the pipes instead.\n\nIf you're in RevOps and feel stuck, you don't need a new career. You need a code editor and a Clay account. The analytical skills you already have are the hard part. The tooling is learnable in weeks.",
+      "cta": "Curious if anyone else made this transition. What was the catalyst that got you building instead of reporting?",
+      "tags": [
+        "gtm-engineering",
+        "revops",
+        "career"
+      ],
+      "inspired_by": {
+        "author": "Stevie Case",
+        "summary": "RevOps is dead. GTM Engineering is what actually moves the number. The difference: RevOps reports on what happened, GTM Engineering builds systems that change what happens. If your ops team isn't shipping Zapier flows, Clay enrichment tables, and AI personalization layers \u2014 you're paying for dashboards nobody reads.",
+        "url": "",
+        "engagement": {
+          "likes": 4102,
+          "comments": 518
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 4,
+      "title": "Solo shipping compounds",
+      "hook": "Shipped 4 internal tools in 6 weeks. None of them are polished. All of them are running in production.",
+      "body": "Shipped 4 internal tools in 6 weeks. None of them are polished. All of them are running in production.\n\nA daily SEO brief generator. An ABM enrichment pipeline. A blog publisher that pulls from Substack, reformats, and deploys. A CRM sync that keeps Attio clean without manual data entry.\n\nEach one saves 30-90 minutes a day. Combined, they gave me back an entire workday per week.\n\nThe pattern that makes solo shipping work: build the thing you're going to use tomorrow. Not the thing that would be cool to have. Not the thing with the biggest market. The thing where you personally feel the pain today.\n\nEvery tool I've shipped started the same way. I did something manually three days in a row, got annoyed, and automated it that night.\n\nThe second pattern: ship ugly, iterate in production. My blog publisher looked terrible for two weeks. Formatting bugs, missing images, wrong metadata. But it was running. Each fix took 10 minutes. If I'd tried to make it perfect before shipping, it would still be a TODO in my backlog.\n\nPerfection is the enemy of production. Production is where you learn what actually matters.",
+      "cta": "What's the last thing you automated out of frustration? Those are usually the ones that stick.",
+      "tags": [
+        "building-in-public",
+        "solo-builder",
+        "automation"
+      ],
+      "inspired_by": {
+        "author": "Pieter Levels",
+        "summary": "Pieter shared his latest product launch as a solo developer, detailing the tech stack used and initial user feedback after shipping on Product Hunt. He emphasized the importance of building in public to iterate quickly based on real user data. The post garnered significant engagement from the indie hacker community.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20shared%20his%20latest%20product%20launch%20as%20a%20solo%20developer%2C%20detailing%20the%20tech%20",
+        "engagement": {
+          "likes": 12000,
+          "comments": 450
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 5,
+      "title": "AI SDRs expose the real problem",
+      "hook": "AI SDRs aren't replacing your team. They're revealing that 80% of your outbound was already robotic.",
+      "body": "AI SDRs aren't replacing your team. They're revealing that 80% of your outbound was already robotic.\n\nI ran outbound as an SDR for years. 200+ emails a day from primary domains. No warmup. SalesLoft sequences that were basically mail merge with extra steps.\n\nMost of those emails could have been written by a script. And honestly, most of them were. Template, swap company name, swap pain point from a dropdown, send.\n\nThat's what AI SDR tools automate. The mechanical part. The part that was never really \"human\" to begin with.\n\nThe SDRs who are thriving right now are the ones who were already doing the work AI can't replicate:\n\n... actually reading 10-Ks before calling the CFO\n... building multi-threaded relationships inside accounts\n... pattern-matching across conversations to surface insights their AEs miss\n... creating mini business cases in their outreach instead of \"just checking in\"\n\nThe uncomfortable reality for sales leaders: if an AI tool can replace your SDR's output with zero quality drop, the problem wasn't the AI. The problem was your enablement, your coaching, and your incentive structure.\n\nAI SDRs are a mirror. Some teams won't like what they see.",
+      "cta": "For SDR leaders: what skill are you actively coaching that AI genuinely can't replicate?",
+      "tags": [
+        "ai-sdr",
+        "sales-development",
+        "outbound"
+      ],
+      "inspired_by": {
+        "author": "Armand Farrokh",
+        "summary": "AI SDRs are not replacing your SDR team. They're exposing which SDRs were already robots. The ones who survive are the ones who use AI to do the research in 2 minutes so they can spend 10 minutes on a genuinely relevant cold call. The job isn't going away \u2014 the low-effort version of the job is. Train for signal interpretation, not sequence execution.",
+        "url": "",
+        "engagement": {
+          "likes": 6731,
+          "comments": 892
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 6,
+      "title": "Edge vs cloud for GTM agents",
+      "hook": "Running AI enrichment on serverless edge functions cut our per-lead cost by 73%. The tradeoff nobody talks about.",
+      "body": "Running AI enrichment on serverless edge functions cut our per-lead cost by 73%. The tradeoff nobody talks about.\n\nMost GTM teams run enrichment through centralized APIs. Clay calls OpenAI, OpenAI processes, results come back. Simple. Expensive at scale.\n\nWe moved our lighter enrichment tasks to edge functions on Cloudflare Workers. Company categorization, tech stack detection from HTML parsing, basic sentiment scoring on job postings.\n\nThese don't need GPT-4. A small model running at the edge handles them fine. Response times dropped from 2-3 seconds to under 200ms. Cost per enrichment went from ~$0.03 to ~$0.008.\n\nThe tradeoff: you're now maintaining inference infrastructure instead of just making API calls. Deploying models. Monitoring latency. Debugging cold starts. It's engineering work, not drag-and-drop.\n\nFor our volume (processing ~2,000 leads/day through various enrichment steps), the math made sense after month two.\n\nFor teams processing under 500 leads/day, the API cost probably isn't worth optimizing. Just use Clay's built-in AI columns and move on.\n\nInfrastructure decisions should follow volume, not trends. Build boring until boring breaks.",
+      "cta": "Anyone else running enrichment workloads at the edge? Would love to compare architectures.",
+      "tags": [
+        "ai-infrastructure",
+        "gtm-engineering",
+        "cloudflare"
+      ],
+      "inspired_by": {
+        "author": " Guillermo Rauch",
+        "summary": "Dives into AI infrastructure for edge-deployed agents, discussing Vercel's AI SDK and serverless scaling. Shares case studies on reducing latency by 50% with optimized agent runtimes. Encourages developers to experiment with next-gen infra stacks.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20%20Guillermo%20Rauch%20Dives%20into%20AI%20infrastructure%20for%20edge-deployed%20agents%2C%20discussing%20Vercel%27s%20AI%20SD",
+        "engagement": {
+          "likes": 15000,
+          "comments": 560
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 7,
+      "title": "Your ICP doesn't want content",
+      "hook": "We killed our ebook strategy and started screen-recording real builds. Demo requests tripled.",
+      "body": "We killed our ebook strategy and started screen-recording real builds. Demo requests tripled.\n\nThe old playbook: write a 15-page ebook about \"The State of [Industry].\" Gate it. Collect emails. Nurture for 6 months. Hope someone converts.\n\nThe new playbook: record a 90-second Loom of you actually solving a problem in your product. Post it ungated. Let people see what using the thing looks like.\n\nWhy it works: buyers in 2026 have been burned by too many gated PDFs that say nothing. They can smell a lead gen play from the subject line. But a short video of someone building something real... that's hard to fake.\n\nOur best-performing content last quarter wasn't a blog post or a case study. It was a 2-minute screen recording of building a Clay enrichment workflow from scratch, posted on LinkedIn with zero production value.\n\n4x the engagement of our polished case study. 3x the inbound demo requests.\n\nThe insight isn't \"video beats text.\" The insight is that demonstrated competence beats claimed competence. People want to see you do the thing, not read about how you do the thing.\n\nStop writing about your product. Start showing it in action.",
+      "cta": "What format is actually driving pipeline for you right now? Genuinely curious what's working outside the standard playbook.",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "b2b-marketing"
+      ],
+      "inspired_by": {
+        "author": "Jess Schultz",
+        "summary": "Your ICP doesn't want another ebook. They want to watch you solve a real problem in 90 seconds. We switched our entire top-of-funnel content strategy from gated PDFs to short-form LinkedIn video walkthroughs \u2014 same topics, zero-gate. Pipeline attributed to content went up 4x in one quarter. Distribution is the strategy now, not the asset.",
+        "url": "",
+        "engagement": {
+          "likes": 1923,
+          "comments": 204
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 8,
+      "title": "The framework tax",
+      "hook": "Spent a week evaluating AI agent frameworks. Then built what I needed in 200 lines of TypeScript.",
+      "body": "Spent a week evaluating AI agent frameworks. Then built what I needed in 200 lines of TypeScript.\n\nLangChain. CrewAI. AutoGen. Each one promises to make building AI agents \"easy.\" Each one adds a layer of abstraction that makes debugging harder.\n\nMy use case: an agent that reads a prospect's website, extracts key business signals, and writes a structured JSON summary for our CRM enrichment pipeline.\n\nWith a framework: install 47 dependencies, learn the framework's mental model for \"chains\" and \"tools\" and \"memory,\" configure YAML files, figure out why the default prompt template is injecting instructions I don't want.\n\nWithout a framework: fetch the URL, pass HTML to Claude with a system prompt, parse the JSON response, write to database. Four functions. One file. Zero magic.\n\nFrameworks make sense when you have genuine complexity. Multi-agent coordination. Stateful conversations with branching logic. Complex tool orchestration.\n\nBut most GTM automation isn't that complex. It's API call, transform, API call, store. You don't need a framework for a pipeline.\n\nThe best code is code your future self can debug at 11pm when something breaks in production. Frameworks optimized for getting started fast are often the worst for fixing things fast.",
+      "cta": "When has a framework actually saved you time vs. rolling your own? There's a crossover point, I'm just not sure most use cases reach it.",
+      "tags": [
+        "ai-agents",
+        "developer-tools",
+        "engineering"
+      ],
+      "inspired_by": {
+        "author": "Liliane Kammer",
+        "summary": "Analyzes the rise of specialized AI agents for enterprise automation, focusing on tools like CrewAI. Outlines infrastructure requirements for production-grade agents, including observability and fault tolerance. Provides a roadmap for teams transitioning to agentic architectures.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liliane%20Kammer%20Analyzes%20the%20rise%20of%20specialized%20AI%20agents%20for%20enterprise%20automation%2C%20focusing%20o",
+        "engagement": {
+          "likes": 5000,
+          "comments": 210
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 9,
+      "title": "Career pivots nobody talks about",
+      "hook": "The most underrated career pivot in tech right now: from individual contributor to building your own internal tooling.",
+      "body": "The most underrated career pivot in tech right now: from individual contributor to building your own internal tooling.\n\nNot quitting your job. Not starting a SaaS. Building tools inside your current role that make you unreplaceable.\n\nI watched three people do this in the last year.\n\nAn SDR who built a Python script that pulled intent signals from G2 and auto-prioritized their call list. Went from bottom quartile to top performer in one quarter. Got promoted to GTM Engineer.\n\nA content marketer who built a Notion + Zapier + Claude workflow that drafted first versions of blog posts from customer call transcripts. Cut content production time by 60%. Now runs content ops for the whole team.\n\nA RevOps analyst who built a dbt pipeline that replaced 12 manual spreadsheet reports. Went from \"the Salesforce person\" to leading their data engineering function.\n\nNone of them asked permission. None of them had \"engineer\" in their title when they started. They just solved their own pain and showed the output.\n\nThe tools are all accessible now. Claude for code generation. Cursor for the IDE. Clay for data workflows. You don't need a CS degree. You need a problem that bugs you enough to fix it.\n\nThe best career move is building the thing that makes your current job better.",
+      "cta": "What tool did you build at work that changed your trajectory? These stories are way more interesting than startup launch threads.",
+      "tags": [
+        "career",
+        "building-in-public",
+        "gtm-engineering"
+      ],
+      "inspired_by": {
+        "author": "KP (Karthik Pattabiraman)",
+        "summary": "KP documented week 12 of building his AI tool in public, announcing the launch and sharing revenue numbers from day one. He discussed challenges overcome as a solo dev and tips for others shipping products independently. The post inspired many aspiring builders.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20KP%20%28Karthik%20Pattabiraman%29%20KP%20documented%20week%2012%20of%20building%20his%20AI%20tool%20in%20public%2C%20announcing%20the%20launch%20a",
+        "engagement": {
+          "likes": 4500,
+          "comments": 210
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    },
+    {
+      "id": 10,
+      "title": "The real cost of AI agents",
+      "hook": "Our AI enrichment pipeline costs $847/month to run. Here's the exact breakdown and where the money actually goes.",
+      "body": "Our AI enrichment pipeline costs $847/month to run. Here's the exact breakdown and where the money actually goes.\n\nPeople talk about AI agents in the abstract. Let me share real numbers from a production GTM pipeline processing ~2,000 leads/day.\n\nClaude API (enrichment + categorization): $312/mo\nApollo (contact + firmographic data): $199/mo\nCloudflare Workers (edge compute): $23/mo\nExa (web search for signal detection): $89/mo\nSupabase (storage + vector search): $25/mo\nClay (orchestration for complex flows): $199/mo\n\nTotal: $847/mo\n\nBefore this pipeline, the same work required 2 part-time contractors at roughly $4,800/mo combined. And they couldn't run at 2am when job postings go live.\n\nBut the cost people miss is maintenance. I spend ~5 hours/week monitoring, fixing edge cases, updating prompts when data sources change their HTML structure, and adding new signal sources.\n\nThat's real time. It's not free. The pipeline doesn't run itself.\n\nThe math works for us because the output directly drives pipeline. If your enrichment data doesn't connect to revenue outcomes, spending $847/mo on better data is just spending $847/mo.\n\nTrack cost per qualified lead, not cost per enriched record. Those are very different numbers.",
+      "cta": "Would it be useful if I did a deeper breakdown of any of these layers? Happy to share the actual architecture.",
+      "tags": [
+        "ai-infrastructure",
+        "gtm-engineering",
+        "cost-analysis"
+      ],
+      "inspired_by": {
+        "author": "Andrej Karpathy",
+        "summary": "Explores the infrastructure challenges in scaling AI agents, including compute demands and data pipelines. Advocates for open-source tools like Ray and Kubernetes integrations for agent orchestration. Predicts agent swarms will redefine developer productivity in 2025.",
+        "url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Explores%20the%20infrastructure%20challenges%20in%20scaling%20AI%20agents%2C%20including%20compute%20d",
+        "engagement": {
+          "likes": 25000,
+          "comments": 890
+        }
+      },
+      "anti_slop_score": 100.0,
+      "platform": "linkedin"
+    }
+  ]
+}
