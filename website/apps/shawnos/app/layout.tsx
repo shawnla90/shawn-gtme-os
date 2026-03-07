@@ -3,6 +3,7 @@ import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow } from '@shawnos/shared/components'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import Script from 'next/script'
 import { FooterCredit } from './FooterCredit'
 import { NioChat } from './NioChat'
 import { FeedbackButton } from './components/FeedbackButton'
@@ -141,6 +142,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={jetbrains.variable}>
+      <head>
+        <Script src="https://p.midbound.click/Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk" strategy="beforeInteractive" />
+      </head>
       <body>
         <PostHogProvider>
         <script
