@@ -1,12 +1,15 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow } from '@shawnos/shared/components'
+import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from './FooterCredit'
 import { NioChat } from './NioChat'
 import { FeedbackButton } from './components/FeedbackButton'
 import './globals.css'
+
+const themeScript = `(function(){try{var t=localStorage.getItem('shawnos-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})();`
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -140,11 +143,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={jetbrains.variable}>
+    <html lang="en" className={jetbrains.variable} suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script async src="https://p.midbound.click/Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk" />
       </head>
       <body>
+        <ThemeProvider>
         <PostHogProvider>
         <script
           type="application/ld+json"
@@ -158,6 +163,7 @@ export default function RootLayout({
           siteName="ShawnOS.ai"
           links={[
             { href: '/', label: 'Home' },
+            { href: '/services/web-development', label: 'Services' },
             { href: '/blog', label: 'Blog' },
             { href: '/media', label: 'Media' },
             { href: '/about', label: 'About' },
@@ -192,6 +198,7 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         </PostHogProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

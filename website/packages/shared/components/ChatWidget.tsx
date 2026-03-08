@@ -98,7 +98,7 @@ function renderMarkdown(text: string, accentColor: string, botId?: string) {
     // Then apply markdown transforms on the safe string
     html = html.replace(
       /\*\*(.*?)\*\*/g,
-      `<strong style="color:#C9D1D9;font-weight:600">$1</strong>`
+      `<strong style="color:var(--text-primary);font-weight:600">$1</strong>`
     )
     html = html.replace(
       /\[([^\]]+)\]\(([^)]+)\)/g,
@@ -339,7 +339,7 @@ export function ChatWidget({
     header: {
       display: "flex", alignItems: "center", justifyContent: "space-between",
       padding: "12px 16px",
-      backgroundColor: "#0D1117", borderBottom: "1px solid #30363D",
+      backgroundColor: "var(--canvas)", borderBottom: "1px solid var(--canvas-border)",
     } as CSSProperties,
     headerLeft: { display: "flex", alignItems: "center", gap: 8 } as CSSProperties,
     headerIcon: {
@@ -347,15 +347,15 @@ export function ChatWidget({
       width: 32, height: 32, borderRadius: "50%",
       backgroundColor: accentColor, color: "white",
     } as CSSProperties,
-    headerTitle: { fontSize: 14, fontWeight: 600, color: "#C9D1D9", margin: 0 } as CSSProperties,
-    headerSub: { fontSize: 12, color: "#8B949E", margin: 0 } as CSSProperties,
+    headerTitle: { fontSize: 14, fontWeight: 600, color: "var(--text-primary)", margin: 0 } as CSSProperties,
+    headerSub: { fontSize: 12, color: "var(--text-secondary)", margin: 0 } as CSSProperties,
     closeBtn: {
       background: "none", border: "none", cursor: "pointer",
-      color: "#8B949E", borderRadius: "50%", padding: 4,
+      color: "var(--text-secondary)", borderRadius: "50%", padding: 4,
     } as CSSProperties,
     messages: {
       flex: 1, overflowY: "auto", padding: "12px 16px",
-      backgroundColor: "#161B22",
+      backgroundColor: "var(--canvas-subtle)",
       display: "flex", flexDirection: "column", gap: 12,
     } as CSSProperties,
     bubbleMsg: (isUser: boolean) => ({
@@ -363,25 +363,25 @@ export function ChatWidget({
       ...(isUser
         ? {
             borderTopRightRadius: 4, alignSelf: "flex-end" as const,
-            backgroundColor: `${accentColor}1a`, border: `1px solid ${accentColor}33`, color: "#C9D1D9",
+            backgroundColor: `${accentColor}1a`, border: `1px solid ${accentColor}33`, color: "var(--text-primary)",
           }
         : {
             borderTopLeftRadius: 4, alignSelf: "flex-start" as const,
-            backgroundColor: "#0D1117", border: "1px solid #30363D", color: "#C9D1D9",
+            backgroundColor: "var(--canvas)", border: "1px solid var(--canvas-border)", color: "var(--text-primary)",
           }),
     }) as CSSProperties,
     sugBtn: {
       borderRadius: 20, padding: "6px 12px", fontSize: 12, cursor: "pointer",
-      border: `1px solid ${accentColor}33`, backgroundColor: "#0D1117", color: accentColor,
+      border: `1px solid ${accentColor}33`, backgroundColor: "var(--canvas)", color: accentColor,
       transition: "background-color 0.15s",
     } as CSSProperties,
     form: {
       display: "flex", alignItems: "center", gap: 8,
-      padding: "12px 12px", backgroundColor: "#0D1117", borderTop: "1px solid #30363D",
+      padding: "12px 12px", backgroundColor: "var(--canvas)", borderTop: "1px solid var(--canvas-border)",
     } as CSSProperties,
     input: {
       flex: 1, borderRadius: 20, padding: "10px 16px", fontSize: 14,
-      backgroundColor: "#161B22", border: "1px solid #30363D", color: "#C9D1D9",
+      backgroundColor: "var(--canvas-subtle)", border: "1px solid var(--canvas-border)", color: "var(--text-primary)",
       outline: "none", fontFamily: "inherit",
     } as CSSProperties,
     sendBtn: {
@@ -393,7 +393,7 @@ export function ChatWidget({
       position: "absolute", inset: 0, zIndex: 10,
       display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
       gap: 16, padding: "0 24px", textAlign: "center",
-      backgroundColor: "rgba(13,17,23,0.95)",
+      backgroundColor: "var(--canvas)", opacity: 0.98,
     } as CSSProperties,
     ctaBtn: {
       display: "inline-block", borderRadius: 20, padding: "10px 24px",
@@ -476,13 +476,13 @@ export function ChatWidget({
           {gated && (
             <div style={s.gate}>
               <div style={{ fontSize: 30 }}>&#128274;</div>
-              <p style={{ fontSize: 14, fontWeight: 600, color: "#C9D1D9", margin: 0 }}>
+              <p style={{ fontSize: 14, fontWeight: 600, color: "var(--text-primary)", margin: 0 }}>
                 You&apos;ve used your {userMsgCount} free messages
               </p>
 
               {gateType === "substack" && substackUrl ? (
                 <>
-                  <p style={{ fontSize: 12, color: "#8B949E", margin: 0 }}>
+                  <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: 0 }}>
                     subscribe to keep chatting - it&apos;s free
                   </p>
                   {gateSuccess ? (
@@ -527,7 +527,7 @@ export function ChatWidget({
                 </>
               ) : (
                 <>
-                  <p style={{ fontSize: 12, color: "#8B949E", margin: 0 }}>
+                  <p style={{ fontSize: 12, color: "var(--text-secondary)", margin: 0 }}>
                     Want to keep the conversation going?
                   </p>
                   <a

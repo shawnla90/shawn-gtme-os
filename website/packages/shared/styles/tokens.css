@@ -32,6 +32,27 @@
   --border: var(--canvas-border);
   --code-bg: var(--canvas-subtle);
 
+  /* === Theme-aware extras === */
+  --nav-backdrop: rgba(13, 17, 23, 0.85);
+  --text-on-accent: #0D1117;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+
   /* === Font === */
   --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+}
+
+/* === Anthropic Mode (Light Theme) === */
+[data-theme="light"] {
+  --canvas: #FAF9F0;
+  --canvas-subtle: #F0EFE6;
+  --canvas-border: #DDD9CC;
+
+  --text-primary: #1A1A1B;
+  --text-secondary: #5C5C5E;
+  --text-muted: #9C9C9E;
+
+  --code-bg: #ECEADF;
+  --nav-backdrop: rgba(250, 249, 240, 0.85);
+  --text-on-accent: #FAF9F0;
+  --shadow-color: rgba(0, 0, 0, 0.08);
 }

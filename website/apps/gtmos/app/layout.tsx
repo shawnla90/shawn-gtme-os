@@ -1,9 +1,12 @@
 import type { Metadata } from 'next'
 import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, PostHogProvider } from '@shawnos/shared/components'
+import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { Analytics } from '@vercel/analytics/next'
 import { ReconChat } from './ReconChat'
 import './globals.css'
+
+const themeScript = `(function(){try{var t=localStorage.getItem('shawnos-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})();`
 
 const SITE_URL = 'https://thegtmos.ai'
 
@@ -96,7 +99,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={jetbrains.variable}>
+    <html lang="en" className={jetbrains.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body>
         <script
           type="application/ld+json"
@@ -106,6 +112,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
+        <ThemeProvider>
         <PostHogProvider>
           <Navigation
             siteName="theGTMOS.ai"
@@ -129,6 +136,7 @@ export default function RootLayout({
           <Footer siteName="theGTMOS.ai" />
           <ReconChat />
         </PostHogProvider>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

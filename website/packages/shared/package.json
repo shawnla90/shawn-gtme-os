@@ -38,6 +38,7 @@
     "./lib/sites": "./lib/sites.ts",
     "./lib/chat-retrieval": "./lib/chat-retrieval.ts",
     "./hooks": "./hooks/useIsMobile.ts",
+    "./hooks/useTheme": "./hooks/useTheme.ts",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {
