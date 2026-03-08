@@ -38,7 +38,7 @@ nav[class*="nav"] {
   z-index: 100;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(13, 17, 23, 0.85);
+  background: var(--nav-backdrop);
 }
 
 /* === Layout utilities === */
@@ -268,7 +268,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #C9D1D9;
+  color: var(--text-primary);
   transition: color 0.15s ease, filter 0.15s ease;
 }
 
@@ -280,7 +280,7 @@ html {
 .tech-card .tech-label {
   font-size: 11px;
   font-family: var(--font-mono);
-  color: #8B949E;
+  color: var(--text-secondary);
   text-align: center;
   line-height: 1.3;
   letter-spacing: 0.02em;
@@ -289,7 +289,7 @@ html {
 }
 
 .tech-card:hover .tech-label {
-  color: #C9D1D9;
+  color: var(--text-primary);
 }
 
 .tech-desc-wrapper {
@@ -310,7 +310,7 @@ html {
 .tech-desc-text {
   font-size: 10px;
   font-family: var(--font-mono);
-  color: #8B949E;
+  color: var(--text-secondary);
   text-align: center;
   line-height: 1.4;
   padding-top: 4px;
@@ -380,13 +380,13 @@ html {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: #8B949E;
+  color: var(--text-secondary);
   transition: color 0.15s ease, transform 0.15s ease;
   cursor: default;
   position: relative;
 }
 .builtwith-logo:hover {
-  color: var(--brand-color, #8B949E);
+  color: var(--brand-color, var(--text-secondary));
   transform: scale(1.15);
 }
 .builtwith-logo .builtwith-label {
@@ -430,6 +430,12 @@ html {
 @keyframes bounce-down {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(8px); }
+}
+
+/* === Float animation (web-dev hero) === */
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
 }
 
 .scroll-indicator {

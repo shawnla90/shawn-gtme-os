@@ -3,6 +3,7 @@
   --canvas: #0D1117;
   --canvas-subtle: #161B22;
   --canvas-border: #30363D;
+  --canvas-card: #1C2128;
 
   /* === Text === */
   --text-primary: #C9D1D9;
@@ -37,22 +38,37 @@
   --text-on-accent: #0D1117;
   --shadow-color: rgba(0, 0, 0, 0.3);
 
+  /* === Warm / immersive tokens === */
+  --canvas-warm: rgba(249, 115, 22, 0.06);
+  --canvas-warm-subtle: rgba(249, 115, 22, 0.03);
+  --canvas-dark: #0D1117;
+  --grid-color: #1E2430;
+  --border-dashed: #30363D;
+
   /* === Font === */
   --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Code', 'Fira Code', monospace;
+  --font-sans: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
 }
 
 /* === Anthropic Mode (Light Theme) === */
 [data-theme="light"] {
-  --canvas: #FAF9F0;
-  --canvas-subtle: #F0EFE6;
-  --canvas-border: #DDD9CC;
+  --canvas: #F5F0E5;
+  --canvas-subtle: #EDE8DA;
+  --canvas-border: #CFC9B8;
+  --canvas-card: #E8E3D5;
 
-  --text-primary: #1A1A1B;
-  --text-secondary: #5C5C5E;
-  --text-muted: #9C9C9E;
+  --text-primary: #1A1714;
+  --text-secondary: #524D46;
+  --text-muted: #8E887E;
 
-  --code-bg: #ECEADF;
-  --nav-backdrop: rgba(250, 249, 240, 0.85);
-  --text-on-accent: #FAF9F0;
+  --canvas-warm: #E8D5A8;
+  --canvas-warm-subtle: #EBE0C4;
+  --canvas-dark: #2A2520;
+  --grid-color: #CFC9B8;
+  --border-dashed: #C2BBB0;
+
+  --code-bg: #E5E0D2;
+  --nav-backdrop: rgba(245, 240, 229, 0.85);
+  --text-on-accent: #F5F0E5;
   --shadow-color: rgba(0, 0, 0, 0.08);
 }
