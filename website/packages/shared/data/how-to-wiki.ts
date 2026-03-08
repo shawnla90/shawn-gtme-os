@@ -4817,4 +4817,64 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       },
     ],
   },
+
+  /* ================================================================== */
+  /*  PARALLEL AGENTS                                                     */
+  /* ================================================================== */
+
+  {
+    id: 'autonomous-agent-loops',
+    title: 'Autonomous Agent Loops: The Autoresearch Pattern',
+    subtitle:
+      'How Karpathy\'s autoresearch repo reveals the architecture behind self-improving AI agents',
+    category: 'parallel-agents',
+    description:
+      'Autonomous agent loops let AI agents run experiments, evaluate results, and iterate without human intervention. The pattern behind Karpathy\'s autoresearch applies far beyond ML research - to content pipelines, GTM automation, and any domain with a clear success metric.',
+    keywords: [
+      'autonomous agent loops',
+      'karpathy autoresearch',
+      'self-improving AI agents',
+      'AI agent architecture',
+      'agent feedback loops',
+      'autonomous AI research',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'gtmos',
+    related: [
+      'claude-code-quickstart',
+      'parallel-agent-orchestration',
+    ],
+    sections: [
+      {
+        heading: 'What Autoresearch Is',
+        type: 'prose',
+        content:
+          'In March 2026, Andrej Karpathy released <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">autoresearch</a> (<a href="https://x.com/karpathy/status/2030371219518931079" target="_blank" rel="noopener">announcement on X</a>). Three files. One GPU. An AI agent that modifies training code, runs a 5-minute experiment, evaluates whether the result improved, keeps or discards the change, and repeats. Around 12 experiments per hour, roughly 100 overnight, with zero human intervention.\n\nThe repo itself is a demo - a small GPT model training on a single NVIDIA GPU. But the pattern it demonstrates is the real contribution. Autonomous agent loops with a clear metric, a constrained action space, and indefinite iteration.',
+      },
+      {
+        heading: 'The Three-File Architecture',
+        type: 'pattern',
+        content:
+          'The entire system is three files. prepare.py is locked - utilities for data loading and evaluation that the agent cannot touch. train.py is the only file the agent modifies - contains the model, optimizer, and training loop. program.md is where humans write instructions for the agent.\n\nThat last file is the paradigm shift. You do not program Python. You program a markdown file that tells the agent what to explore. The agent writes the Python. Karpathy calls this "programming the program.md." The human provides strategy. The agent provides execution. The loop provides compounding.',
+      },
+      {
+        heading: 'The Pattern Applied to GTM',
+        type: 'pattern',
+        content:
+          'The autoresearch loop has four steps: modify, test, evaluate, keep-or-discard. This pattern applies to any domain where you can define a clear success metric and give an agent a constrained action space.\n\nContent pipelines: read previous output, generate new content, validate against quality rules, score the output, retry if below threshold. The output becomes input for the next cycle. Voice consistency improves with every iteration because the agent studies what it already produced.\n\nEmail campaigns: generate a variant, send to a test segment, measure reply rate, keep or discard the variant. The campaign optimizes itself over time.\n\nEnrichment workflows: run an enrichment sequence, score the data quality, flag gaps, modify the sequence, run again. Each pass fills holes the previous pass missed.\n\nThe principle is the same everywhere: define the metric, constrain the action space, let the loop run.',
+      },
+      {
+        heading: 'Constraint Is the Feature',
+        type: 'pro-tip',
+        content:
+          'Autoresearch works because the problem space is deliberately narrow. One file the agent can edit. One number to optimize. Five-minute experiments. If you give an agent unlimited scope, it wanders. If you give it one file and one number, it optimizes.\n\nThis is the single most transferable lesson. When designing autonomous agent workflows, the temptation is to give the agent maximum flexibility. The opposite produces better results. Narrow the action space. Pick one metric. Set a time budget per iteration. Let the loop compound.\n\nKarpathy\'s system reached 10,000+ generations because each generation is cheap, fast, and clearly evaluated. An agent that tries to optimize everything at once reaches zero generations because it never finishes a single experiment.',
+      },
+      {
+        heading: 'How to Build Your Own Loop',
+        type: 'code',
+        content:
+          'The recipe is four components:\n\n1. Action space - what can the agent modify? Keep it as narrow as possible. One file. One template. One configuration block.\n\n2. Evaluation metric - how do you know if the change helped? Must be numeric and automated. Validation loss, anti-slop score, reply rate, data completeness percentage. If a human has to judge, the loop cannot run autonomously.\n\n3. Time budget - how long does each experiment run? Short enough to iterate fast (Karpathy uses 5 minutes). Long enough to produce a meaningful signal.\n\n4. Memory - what does the agent carry between iterations? The output from iteration N becomes context for iteration N+1. This is the recursive property that makes the loop compound rather than repeat.\n\nYou do not need an H100 or a custom framework. A Claude Code session with a markdown instruction file, a script to run, and a scoring function is enough to run this pattern on a single machine.',
+      },
+    ],
+  },
 ]
