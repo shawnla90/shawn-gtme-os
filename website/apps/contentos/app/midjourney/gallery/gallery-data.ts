@@ -1,5 +1,23 @@
 /* ── MidJourney Gallery - Data ────────────────────────── */
 
+/* ── Theme ─────────────────────────────────────────────── */
+
+export const MJ = {
+  accent: '#FF69B4',
+  mjBlue: '#5B8DEF',
+  gridBg: '#0A0E14',
+  promptGreen: '#4EC373',
+  neonRed: '#FF073A',
+  blossomPink: '#E8B4D8',
+  dark: '#0D1117',
+  darkSubtle: '#161B22',
+  border: '#30363D',
+  text: '#C9D1D9',
+  textMuted: '#8B949E',
+}
+
+/* ── Gallery Entry ─────────────────────────────────────── */
+
 export interface GalleryEntry {
   id: string
   title: string
@@ -10,7 +28,172 @@ export interface GalleryEntry {
   imagePath: string
   parameters: { key: string; value: string }[]
   tags: string[]
+  recipeCategory?: RecipeId
 }
+
+/* ── Recipe Types ──────────────────────────────────────── */
+
+export type RecipeId = 'build-a-bot' | 'create-a-spirit' | 'design-a-scene'
+
+export interface WizardStep {
+  id: string
+  label: string
+  options: {
+    value: string
+    label: string
+    description: string
+    promptFragment: string
+  }[]
+}
+
+export interface Recipe {
+  id: RecipeId
+  title: string
+  subtitle: string
+  description: string
+  icon: string
+  accentColor: string
+  steps: [WizardStep, WizardStep, WizardStep]
+  basePrompt: string
+  defaultParams: string
+}
+
+/* ── 3 Recipes ─────────────────────────────────────────── */
+
+export const recipes: Recipe[] = [
+  {
+    id: 'build-a-bot',
+    title: 'Build a Bot',
+    subtitle: 'Create your chibi warrior',
+    description:
+      'Design a unique bot character with custom style, colors, and pose. Perfect for avatars and mascots.',
+    icon: '\u2694\uFE0F',
+    accentColor: MJ.promptGreen,
+    steps: [
+      {
+        id: 'style',
+        label: 'Style',
+        options: [
+          { value: 'chibi', label: 'Chibi', description: 'Cute oversized head, small body', promptFragment: 'chibi style, cute proportions, oversized head' },
+          { value: 'mecha', label: 'Mecha', description: 'Armored robot warrior', promptFragment: 'mecha armor style, mechanical joints, plated design' },
+          { value: 'pixel', label: 'Pixel', description: 'Retro pixel art aesthetic', promptFragment: 'pixel art style, 16-bit retro, blocky design' },
+          { value: 'minimalist', label: 'Minimalist', description: 'Clean lines, flat design', promptFragment: 'minimalist flat design, clean lines, geometric shapes' },
+        ],
+      },
+      {
+        id: 'color',
+        label: 'Color Palette',
+        options: [
+          { value: 'neon-green', label: 'Neon Green', description: 'Matrix-style energy', promptFragment: 'glitch art teal, neon green glow, dark background' },
+          { value: 'electric-blue', label: 'Electric Blue', description: 'Cybernetic cool', promptFragment: 'electric blue, ice cyan accents, holographic shimmer' },
+          { value: 'sunset-orange', label: 'Sunset Orange', description: 'Warm intensity', promptFragment: 'matter orange, warm amber, golden highlights' },
+          { value: 'cosmic-purple', label: 'Cosmic Purple', description: 'Space royalty vibes', promptFragment: 'cosmic purple, deep violet, nebula glow accents' },
+        ],
+      },
+      {
+        id: 'pose',
+        label: 'Pose',
+        options: [
+          { value: 'battle-ready', label: 'Battle Ready', description: 'Weapon drawn, stance set', promptFragment: 'battle ready stance, weapon drawn, intense focus' },
+          { value: 'victory', label: 'Victory', description: 'Triumphant celebration', promptFragment: 'victory pose, triumphant stance, radial effects' },
+          { value: 'idle-float', label: 'Idle Float', description: 'Hovering serenely', promptFragment: 'floating idle pose, levitating, serene energy aura' },
+          { value: 'speed-rush', label: 'Speed Rush', description: 'Motion blur action', promptFragment: 'speed rush motion, blur trails, dynamic action pose' },
+        ],
+      },
+    ],
+    basePrompt:
+      'bot character, {style}, {color}, {pose}, studio lighting, dark background, clean render',
+    defaultParams: '--ar 1:1 --v 7',
+  },
+  {
+    id: 'create-a-spirit',
+    title: 'Create a Spirit',
+    subtitle: 'Conjure an ethereal creature',
+    description:
+      'Bring a spirit creature to life with custom form, energy, and mood. Floating, glowing, alive.',
+    icon: '\uD83D\uDD25',
+    accentColor: MJ.neonRed,
+    steps: [
+      {
+        id: 'form',
+        label: 'Form',
+        options: [
+          { value: 'jellyfish', label: 'Jellyfish', description: 'Translucent flowing tentacles', promptFragment: 'jellyfish spirit creature, translucent bell, flowing tentacles' },
+          { value: 'phoenix', label: 'Phoenix', description: 'Fiery wings spread wide', promptFragment: 'phoenix spirit creature, fiery wings spread wide, rebirth energy' },
+          { value: 'wisp', label: 'Wisp', description: 'Tiny floating orb of light', promptFragment: 'wisp spirit, tiny glowing orb, trailing light particles' },
+          { value: 'crystal', label: 'Crystal', description: 'Geometric crystal entity', promptFragment: 'crystal spirit entity, geometric facets, prismatic light refraction' },
+        ],
+      },
+      {
+        id: 'energy',
+        label: 'Energy',
+        options: [
+          { value: 'fire', label: 'Fire', description: 'Dancing flames and embers', promptFragment: 'dancing flames, floating embers, heat distortion' },
+          { value: 'electric', label: 'Electric', description: 'Crackling lightning arcs', promptFragment: 'electric arcs, crackling energy, plasma trails' },
+          { value: 'ethereal', label: 'Ethereal', description: 'Soft ghostly glow', promptFragment: 'soft ethereal energy aura, translucent glow' },
+          { value: 'void', label: 'Void', description: 'Dark matter absorption', promptFragment: 'void energy, dark matter particles, light absorption' },
+        ],
+      },
+      {
+        id: 'mood',
+        label: 'Mood',
+        options: [
+          { value: 'calm', label: 'Calm Drift', description: 'Peaceful floating presence', promptFragment: 'calm floating drift, serene presence' },
+          { value: 'aggressive', label: 'Aggressive', description: 'Intense attack stance', promptFragment: 'aggressive intense presence, attack stance' },
+          { value: 'playful', label: 'Playful', description: 'Curious and mischievous', promptFragment: 'playful curious energy, mischievous expression' },
+          { value: 'mysterious', label: 'Mysterious', description: 'Ancient and unknowable', promptFragment: 'mysterious ancient presence, unknowable aura' },
+        ],
+      },
+    ],
+    basePrompt:
+      '{form}, {energy}, {mood}, neon red core glow, dark background',
+    defaultParams: '--ar 1:1 --v 7',
+  },
+  {
+    id: 'design-a-scene',
+    title: 'Design a Scene',
+    subtitle: 'Build an immersive world',
+    description:
+      'Craft a cinematic environment with custom setting, lighting, and composition. Frame the perfect shot.',
+    icon: '\uD83C\uDFA8',
+    accentColor: MJ.mjBlue,
+    steps: [
+      {
+        id: 'environment',
+        label: 'Environment',
+        options: [
+          { value: 'dark-forest', label: 'Dark Forest', description: 'Moody ancient woodland', promptFragment: 'dark moody forest, ancient trees, volumetric mist' },
+          { value: 'neon-city', label: 'Neon City', description: 'Cyberpunk metropolis', promptFragment: 'neon-lit cyberpunk city, rain-slicked streets, holographic signs' },
+          { value: 'space-station', label: 'Space Station', description: 'Orbital facility', promptFragment: 'orbital space station interior, zero gravity, starfield windows' },
+          { value: 'underwater', label: 'Underwater', description: 'Deep ocean depths', promptFragment: 'deep underwater scene, bioluminescent creatures, coral structures' },
+        ],
+      },
+      {
+        id: 'lighting',
+        label: 'Lighting',
+        options: [
+          { value: 'golden-hour', label: 'Golden Hour', description: 'Warm sunset rays', promptFragment: 'golden hour lighting, warm sun rays, long shadows' },
+          { value: 'neon-glow', label: 'Neon Glow', description: 'Electric artificial light', promptFragment: 'neon glow lighting, electric colors, artificial ambiance' },
+          { value: 'moonlit', label: 'Moonlit', description: 'Cold silver moonlight', promptFragment: 'moonlit scene, cold silver light, deep shadows' },
+          { value: 'volumetric', label: 'Volumetric Fog', description: 'Light beams through haze', promptFragment: 'volumetric fog, god rays, atmospheric haze' },
+        ],
+      },
+      {
+        id: 'composition',
+        label: 'Composition',
+        options: [
+          { value: 'wide-epic', label: 'Wide Epic', description: 'Vast landscape panorama', promptFragment: 'wide angle epic shot, vast scale, panoramic view' },
+          { value: 'close-detail', label: 'Close Detail', description: 'Macro texture focus', promptFragment: 'close-up detail shot, macro focus, texture emphasis' },
+          { value: 'vertical-story', label: 'Vertical Story', description: 'Tall narrative frame', promptFragment: 'vertical composition, layered depth, narrative framing' },
+          { value: 'symmetrical', label: 'Symmetrical', description: 'Perfect center balance', promptFragment: 'perfect symmetry, centered composition, mirror balance' },
+        ],
+      },
+    ],
+    basePrompt:
+      '{environment}, {lighting}, {composition}, cinematic color grading, 35mm film grain',
+    defaultParams: '--ar 16:9 --style raw --v 7',
+  },
+]
 
 /* ── Style options (for prompt builder) ──────────────── */
 
@@ -58,6 +241,7 @@ export const galleryEntries: GalleryEntry[] = [
       { key: '--v', value: '6.1' },
     ],
     tags: ['character', 'chibi', 'action', 'avatar'],
+    recipeCategory: 'build-a-bot',
   },
   {
     id: 'nio-victory',
@@ -74,6 +258,7 @@ export const galleryEntries: GalleryEntry[] = [
       { key: '--ar', value: '1:1' },
     ],
     tags: ['character', 'chibi', 'CREF', 'celebration'],
+    recipeCategory: 'build-a-bot',
   },
   {
     id: 'nio-sword-detail',
@@ -106,6 +291,7 @@ export const galleryEntries: GalleryEntry[] = [
       { key: '--ar', value: '1:1' },
     ],
     tags: ['character', 'chibi', 'CREF', 'portrait'],
+    recipeCategory: 'build-a-bot',
   },
   {
     id: 'rem-portrait',
@@ -122,6 +308,7 @@ export const galleryEntries: GalleryEntry[] = [
       { key: '--ar', value: '1:1' },
     ],
     tags: ['character', 'chibi', 'CREF', 'portrait'],
+    recipeCategory: 'create-a-spirit',
   },
   {
     id: 'forest-environment',
@@ -138,6 +325,7 @@ export const galleryEntries: GalleryEntry[] = [
       { key: '--v', value: '6.1' },
     ],
     tags: ['environment', 'cinematic', 'landscape', 'raw'],
+    recipeCategory: 'design-a-scene',
   },
   {
     id: 'style-bible-sheet',
@@ -174,6 +362,7 @@ export const galleryEntries: GalleryEntry[] = [
       { key: '--ar', value: '16:9' },
     ],
     tags: ['character', 'team', 'SREF', 'lineup'],
+    recipeCategory: 'build-a-bot',
   },
   {
     id: 'mobile-wallpaper',
@@ -190,6 +379,7 @@ export const galleryEntries: GalleryEntry[] = [
       { key: '--ar', value: '9:16' },
     ],
     tags: ['wallpaper', 'mobile', 'CREF', 'vertical'],
+    recipeCategory: 'design-a-scene',
   },
 ]
 

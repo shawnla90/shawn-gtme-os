@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { JetBrains_Mono } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, CursorGlow, PostHogProvider } from '@shawnos/shared/components'
+import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { Analytics } from '@vercel/analytics/next'
 import { RemChat } from './RemChat'
 import './globals.css'
@@ -146,6 +147,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${satoshi.variable} ${jetbrains.variable}`}>
       <body>
+        <ThemeProvider>
         <PostHogProvider>
           <script
             type="application/ld+json"
@@ -184,6 +186,7 @@ export default function RootLayout({
           <RemChat />
           <Analytics />
         </PostHogProvider>
+        </ThemeProvider>
       </body>
     </html>
   )

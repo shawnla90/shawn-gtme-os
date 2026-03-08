@@ -30,6 +30,7 @@ export interface HowToWikiPageConfig {
   description: string
   terminalCommand: string
   badge: string
+  intro?: string
   entries: HowToEntryCard[]
   categories: HowToCategoryMeta[]
   statOverride?: { label: string; value: string }
@@ -601,6 +602,19 @@ export function HowToWikiPage({ config }: { config: HowToWikiPageConfig }) {
         <div className="htw-two-col" style={twoCol}>
           {/* Main content */}
           <div style={mainCol}>
+            {config.intro && (
+              <p
+                style={{
+                  fontSize: '14px',
+                  lineHeight: 1.75,
+                  color: 'var(--text-secondary)',
+                  marginBottom: '40px',
+                  maxWidth: 640,
+                }}
+              >
+                {config.intro}
+              </p>
+            )}
             {categoriesWithEntries.map((cat) => {
               const catSlug = toSlug(cat.label)
               const hasEntries = cat.canonical.length > 0 || cat.crossSite.length > 0
