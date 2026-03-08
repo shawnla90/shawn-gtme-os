@@ -1,32 +1,32 @@
 {
-  "generated": "2026-03-07T05:00:07.000Z",
+  "generated": "2026-03-08T05:00:06.000Z",
   "totals": {
-    "total_content": 133,
+    "total_content": 135,
     "total_drafts": 77,
-    "total_final": 56,
-    "total_words": 87528,
+    "total_final": 58,
+    "total_words": 89972,
     "platforms_active": 6,
     "cross_platform_groups": 29,
     "series_count": 4
   },
   "pipeline": {
+    "nio-log": {
+      "draft": 0,
+      "final": 18,
+      "total": 18,
+      "words": 11983
+    },
+    "website": {
+      "draft": 1,
+      "final": 14,
+      "total": 15,
+      "words": 14434
+    },
     "linkedin": {
       "draft": 33,
       "final": 12,
       "total": 45,
       "words": 29390
-    },
-    "nio-log": {
-      "draft": 0,
-      "final": 17,
-      "total": 17,
-      "words": 10907
-    },
-    "website": {
-      "draft": 1,
-      "final": 13,
-      "total": 14,
-      "words": 13066
     },
     "x": {
       "draft": 32,
@@ -48,6 +48,28 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "HERE'S THE NIO.LOG ENTRY:",
+      "slug": "2026-03-07",
+      "date": "2026-03-07",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1076,
+      "file_path": "content/nio-log/2026-03-07.md"
+    },
+    {
+      "platform": "website",
+      "title": "the real cost of a slow website for service businesses",
+      "slug": "slow-website-cost",
+      "date": "2026-03-07",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1024,
+      "file_path": "content/website/final/slow-website-cost.md"
+    },
     {
       "platform": "linkedin",
       "title": "google workspace cli",
@@ -78,7 +100,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1096,
+      "word_count": 1440,
       "file_path": "content/website/final/google-workspace-cli.md"
     },
     {
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 858,
       "file_path": "content/website/final/content-cluster-breadcrumbs.md"
-    },
-    {
-      "platform": "website",
-      "title": "How I Built a Video Rendering System in React",
-      "slug": "remotion-video-system",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 783,
-      "file_path": "content/website/final/remotion-video-system.md"
-    },
-    {
-      "platform": "website",
-      "title": "Querying Your Repo Like a Database",
-      "slug": "sqlite-content-index",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 782,
-      "file_path": "content/website/final/sqlite-content-index.md"
     }
   ],
   "series": [
@@ -1054,6 +1054,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-07",
+      "grade": "D",
+      "score": 112,
+      "words": 21836,
+      "shipped": 11,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-06",
       "grade": "C",
       "score": 219,
@@ -1156,14 +1164,6 @@
       "words": 38465,
       "shipped": 45,
       "cost": 252.46
-    },
-    {
-      "date": "2026-02-21",
-      "grade": "S",
-      "score": 641,
-      "words": 41794,
-      "shipped": 23,
-      "cost": 229.42
     }
   ]
 }

@@ -1,6 +1,105 @@
 {
-  "generated": "2026-03-07T05:02:36.149Z",
+  "generated": "2026-03-08T05:02:53.450Z",
   "events": [
+    {
+      "id": "commit-a82ff1f",
+      "title": "feat: anthropic mode (light theme) + /services/web-developme",
+      "type": "milestone",
+      "datetime": "2026-03-07T20:38:12-05:00",
+      "status": "completed",
+      "description": "feat: anthropic mode (light theme) + /services/web-development page",
+      "metadata": {
+        "commitHash": "a82ff1f"
+      }
+    },
+    {
+      "id": "commit-28de99a",
+      "title": "feat: floating neon red spirits on MidJourney Mastery page",
+      "type": "milestone",
+      "datetime": "2026-03-07T16:49:54-05:00",
+      "status": "completed",
+      "description": "feat: floating neon red spirits on MidJourney Mastery page",
+      "metadata": {
+        "commitHash": "28de99a"
+      }
+    },
+    {
+      "id": "commit-3a1ecb1",
+      "title": "fix: add build gate to optimizer cron + batch LinkedIn varia",
+      "type": "deployment",
+      "datetime": "2026-03-07T14:50:20-05:00",
+      "status": "completed",
+      "description": "fix: add build gate to optimizer cron + batch LinkedIn variations",
+      "metadata": {
+        "commitHash": "3a1ecb1"
+      }
+    },
+    {
+      "id": "commit-9978a11",
+      "title": "fix: restore HomeContent.tsx corrupted by optimizer cron",
+      "type": "deployment",
+      "datetime": "2026-03-07T14:27:25-05:00",
+      "status": "completed",
+      "description": "fix: restore HomeContent.tsx corrupted by optimizer cron",
+      "metadata": {
+        "commitHash": "9978a11"
+      }
+    },
+    {
+      "id": "commit-1f1ae54",
+      "title": "feat: daily LinkedIn posts 2026-03-07",
+      "type": "milestone",
+      "datetime": "2026-03-07T09:10:04-05:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-07",
+      "metadata": {
+        "commitHash": "1f1ae54"
+      }
+    },
+    {
+      "id": "commit-34d9934",
+      "title": "feat: nio.log 2026-03-07 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-07T08:02:42-05:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-07 — automated daily post",
+      "metadata": {
+        "commitHash": "34d9934"
+      }
+    },
+    {
+      "id": "commit-07c1846",
+      "title": "fix: use raw script tag for Midbound pixel (Next.js Script c",
+      "type": "deployment",
+      "datetime": "2026-03-07T01:13:40-05:00",
+      "status": "completed",
+      "description": "fix: use raw script tag for Midbound pixel (Next.js Script component breaks detection)",
+      "metadata": {
+        "commitHash": "07c1846"
+      }
+    },
+    {
+      "id": "commit-e6fb882",
+      "title": "feat: Midbound visitor ID pixel on shawnos.ai + PostHog webh",
+      "type": "milestone",
+      "datetime": "2026-03-07T00:29:44-05:00",
+      "status": "completed",
+      "description": "feat: Midbound visitor ID pixel on shawnos.ai + PostHog webhook",
+      "metadata": {
+        "commitHash": "e6fb882"
+      }
+    },
+    {
+      "id": "commit-c433fde",
+      "title": "chore: daily tracker scan 2026-03-06",
+      "type": "system",
+      "datetime": "2026-03-07T00:02:36-05:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-03-06",
+      "metadata": {
+        "commitHash": "c433fde"
+      }
+    },
     {
       "id": "commit-7f4fe9c",
       "title": "feat: MidJourney Gallery & Prompt Builder (Phase 2)",
@@ -65,105 +164,6 @@
       "description": "chore: remove client name from gtmos sitemap",
       "metadata": {
         "commitHash": "57fb95d"
-      }
-    },
-    {
-      "id": "commit-6f3c248",
-      "title": "feat: content depth + cross-site blog posts + bidirectional ",
-      "type": "milestone",
-      "datetime": "2026-03-06T14:53:04-05:00",
-      "status": "completed",
-      "description": "feat: content depth + cross-site blog posts + bidirectional link mesh",
-      "metadata": {
-        "commitHash": "6f3c248"
-      }
-    },
-    {
-      "id": "commit-e4946b1",
-      "title": "feat: daily LinkedIn posts 2026-03-06",
-      "type": "milestone",
-      "datetime": "2026-03-06T09:09:42-05:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-06",
-      "metadata": {
-        "commitHash": "e4946b1"
-      }
-    },
-    {
-      "id": "commit-37ff21b",
-      "title": "feat: chatbot teaser mode + \"how was I built?\" wiki content",
-      "type": "milestone",
-      "datetime": "2026-03-06T04:01:14-05:00",
-      "status": "completed",
-      "description": "feat: chatbot teaser mode + \"how was I built?\" wiki content",
-      "metadata": {
-        "commitHash": "37ff21b"
-      }
-    },
-    {
-      "id": "commit-48358ff",
-      "title": "chore: sanitize tracked files for public GitHub",
-      "type": "system",
-      "datetime": "2026-03-06T02:25:43-05:00",
-      "status": "completed",
-      "description": "chore: sanitize tracked files for public GitHub",
-      "metadata": {
-        "commitHash": "48358ff"
-      }
-    },
-    {
-      "id": "commit-e8a1882",
-      "title": "feat: content depth + cross-site linking for /why-independen",
-      "type": "milestone",
-      "datetime": "2026-03-06T01:52:06-05:00",
-      "status": "completed",
-      "description": "feat: content depth + cross-site linking for /why-independent",
-      "metadata": {
-        "commitHash": "e8a1882"
-      }
-    },
-    {
-      "id": "commit-3e53b58",
-      "title": "feat: backfill post variations data (remixes, tones, platfor",
-      "type": "milestone",
-      "datetime": "2026-03-06T01:14:29-05:00",
-      "status": "completed",
-      "description": "feat: backfill post variations data (remixes, tones, platforms)",
-      "metadata": {
-        "commitHash": "3e53b58"
-      }
-    },
-    {
-      "id": "commit-f75fe27",
-      "title": "chore: daily tracker scan 2026-03-05",
-      "type": "system",
-      "datetime": "2026-03-06T00:04:01-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-03-05",
-      "metadata": {
-        "commitHash": "f75fe27"
-      }
-    },
-    {
-      "id": "commit-d24a688",
-      "title": "feat: GTM engineer consultant positioning + /why-independent",
-      "type": "milestone",
-      "datetime": "2026-03-05T23:57:16-05:00",
-      "status": "completed",
-      "description": "feat: GTM engineer consultant positioning + /why-independent page",
-      "metadata": {
-        "commitHash": "d24a688"
-      }
-    },
-    {
-      "id": "commit-9197306",
-      "title": "feat: post variations engine + REM post awareness",
-      "type": "milestone",
-      "datetime": "2026-03-05T23:29:26-05:00",
-      "status": "completed",
-      "description": "feat: post variations engine + REM post awareness",
-      "metadata": {
-        "commitHash": "9197306"
       }
     }
   ],
