@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import { UseCaseBlock } from '../components/UseCaseBlock'
 import type { UseCase } from '../components/UseCaseBlock'
+import { useContentTracking } from '../hooks/useContentTracking'
 
 /* ── types ───────────────────────────────────────── */
 
@@ -709,6 +710,8 @@ const mobileTocToggle: React.CSSProperties = {
 /* ── Component ───────────────────────────────────── */
 
 export function GTMKnowledgeGuidePage() {
+  useContentTracking({ content_type: 'gtm-knowledge', content_slug: 'gtm-knowledge-guide', content_title: 'GTM Knowledge Guide', site: 'gtmos' })
+
   const [activeId, setActiveId] = useState<string>('')
   const [mobileTocOpen, setMobileTocOpen] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)

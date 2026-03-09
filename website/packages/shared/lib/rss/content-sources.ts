@@ -5,6 +5,7 @@ import type { ClayWikiEntry } from '../../data/clay-wiki'
 import type { ContentWikiEntry } from '../../data/content-wiki'
 import type { ContextWikiEntry } from '../../data/context-wiki'
 import type { HowToWikiEntry } from '../../data/how-to-wiki'
+import type { GeoWikiEntry } from '../../data/geo-wiki'
 import type { KnowledgeCategory } from '../../data/engineering-terms'
 import type { GTMCategory } from '../../data/gtm-terms'
 
@@ -114,6 +115,21 @@ export function howToWikiToFeedItems(
     description: wikiDescription(entry),
     date: BUILD_DATE,
     category: ['how-to', entry.category],
+  }))
+}
+
+export function geoWikiToFeedItems(
+  entries: GeoWikiEntry[],
+  siteUrl: string,
+  basePath = '/geo',
+): FeedItem[] {
+  return entries.map((entry) => ({
+    title: entry.title,
+    id: `${siteUrl}${basePath}/${entry.id}`,
+    link: `${siteUrl}${basePath}/${entry.id}`,
+    description: wikiDescription(entry),
+    date: BUILD_DATE,
+    category: ['geo-wiki', entry.category],
   }))
 }
 

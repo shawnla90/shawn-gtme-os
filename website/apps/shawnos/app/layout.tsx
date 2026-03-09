@@ -61,6 +61,7 @@ export const metadata: Metadata = {
         { url: '/feed/how-to.xml', title: 'ShawnOS.ai — How-To' },
         { url: '/feed/nio-terminal.xml', title: 'ShawnOS.ai — Nio Terminal' },
         { url: '/feed/daily-logs.xml', title: 'ShawnOS.ai — Daily Logs' },
+        { url: '/feed/geo.xml', title: 'ShawnOS.ai — GEO Wiki' },
         { url: '/feed/updates.xml', title: 'ShawnOS.ai — Latest Updates' },
       ],
     },
@@ -180,6 +181,7 @@ export default function RootLayout({
               { href: '/clay-wiki', label: 'Clay Wiki' },
               { href: '/content-wiki', label: 'Content Wiki' },
               { href: '/context-wiki', label: 'Context Wiki' },
+              { href: '/geo', label: 'GEO Wiki' },
             ]},
             { href: '#', label: 'More', children: [
               { href: '/log', label: 'Log' },
