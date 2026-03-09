@@ -63,20 +63,6 @@ export { getCostAnalytics } from './costs.server'
 // Crews
 export type { CrewAgent, Crew, CrewsConfig, CrewStatus } from './crews'
 
-// Analytics
-export {
-  capture,
-  extractUTMParams,
-  trackContentView,
-  trackScrollDepth,
-  trackTimeOnPage,
-  trackOutboundClick,
-  trackCtaClick,
-  trackNewsletterSignup,
-  trackCrossSiteNav,
-} from './analytics'
-export type { ContentMeta, UTMParams, SiteKey as AnalyticsSiteKey } from './analytics'
-
 export { buildFeed, feedResponse, getFeedConfig } from './rss'
 export {
   blogPostsToFeedItems,
@@ -87,7 +73,6 @@ export {
   howToWikiToFeedItems,
   knowledgeToFeedItems,
   gtmTermsToFeedItems,
-  geoWikiToFeedItems,
   mergeFeedItems,
 } from './rss'
 export type { FeedConfig, FeedItem, FeedAuthor, SiteKey as RssSiteKey } from './rss'

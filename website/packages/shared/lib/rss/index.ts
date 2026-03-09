@@ -8,7 +8,6 @@ export {
   contextWikiToFeedItems,
   howToWikiToFeedItems,
   knowledgeToFeedItems,
-  geoWikiToFeedItems,
   gtmTermsToFeedItems,
   mergeFeedItems,
 } from './content-sources'

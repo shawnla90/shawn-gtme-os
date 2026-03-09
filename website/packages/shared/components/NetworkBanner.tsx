@@ -1,7 +1,4 @@
-'use client'
-
 import React from 'react'
-import { trackCrossSiteNav } from '../lib/analytics'
 
 type SiteKey = 'shawnos' | 'gtmos' | 'contentos'
 
@@ -55,7 +52,6 @@ export function NetworkBanner({ currentSite }: NetworkBannerProps) {
                 href={site.url}
                 className="network-link"
                 data-accent={site.key}
-                onClick={() => trackCrossSiteNav(currentSite, site.key, site.url)}
               >
                 {site.label}
               </a>

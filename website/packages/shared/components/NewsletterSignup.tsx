@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState, useRef, useCallback } from 'react'
-import { trackNewsletterSignup } from '../lib/analytics'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -26,7 +25,6 @@ export function NewsletterSignup() {
         if (form) {
           form.submit()
         }
-        trackNewsletterSignup('footer')
         setTimeout(() => setStatus('success'), 1500)
       } catch {
         setStatus('error')

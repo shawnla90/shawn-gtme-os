@@ -8,12 +8,10 @@ import {
   blogPostsToFeedItems,
   dailyLogsToFeedItems,
   howToWikiToFeedItems,
-  geoWikiToFeedItems,
   knowledgeToFeedItems,
   mergeFeedItems,
 } from '@shawnos/shared/lib'
 import { HOW_TO_WIKI_ENTRIES } from '@shawnos/shared/data/how-to-wiki'
-import { GEO_WIKI_ENTRIES } from '@shawnos/shared/data/geo-wiki'
 import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 import type { FeedItem } from '@shawnos/shared/lib'
 
@@ -46,7 +44,6 @@ export function GET() {
     dailyLogsToFeedItems(getAllLogs(LOG_DIR), SITE_URL),
     NIO_POSTS,
     howToWikiToFeedItems(HOW_TO_WIKI_ENTRIES, SITE_URL),
-    geoWikiToFeedItems(GEO_WIKI_ENTRIES, SITE_URL),
     knowledgeToFeedItems(ENGINEERING_CATEGORIES, SITE_URL),
   )
 

@@ -5,7 +5,6 @@ import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { TableOfContents } from './TableOfContents'
 import { ArticleReveal, HeaderReveal } from './ArticleReveal'
-import { BlogTracking } from './BlogTracking'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
@@ -82,7 +81,6 @@ export default async function BlogPost({
 
   return (
     <>
-      <BlogTracking slug={post.slug} title={post.title} />
       <BreadcrumbSchema
         items={[
           { name: 'Blog', url: `${SITE_URL}/blog` },

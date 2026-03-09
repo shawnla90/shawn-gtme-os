@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
-import { useContentTracking } from '../hooks/useContentTracking'
 
 /* ── types ─────────────────────────────────────────── */
 
@@ -318,8 +317,6 @@ const navLinkStyle: React.CSSProperties = {
 /* ── component ─────────────────────────────────────── */
 
 export function HowToWikiPage({ config }: { config: HowToWikiPageConfig }) {
-  useContentTracking({ content_type: 'how-to', content_slug: 'how-to-wiki', content_title: config.title, site: config.siteName })
-
   const [activeId, setActiveId] = useState('')
   const [tocOpen, setTocOpen] = useState(false)
 

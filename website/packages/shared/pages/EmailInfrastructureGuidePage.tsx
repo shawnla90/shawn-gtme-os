@@ -6,7 +6,6 @@ import {
   EMAIL_CATEGORIES,
   INBOX_KIT_AFFILIATE_LINK,
 } from '../data/email-infrastructure'
-import { useContentTracking } from '../hooks/useContentTracking'
 
 /* ── styles ──────────────────────────────────────── */
 
@@ -264,8 +263,6 @@ const mobileTocToggle: React.CSSProperties = {
 /* ── Component ───────────────────────────────────── */
 
 export function EmailInfrastructureGuidePage() {
-  useContentTracking({ content_type: 'knowledge', content_slug: 'email-infrastructure', content_title: 'Email Infrastructure Guide', site: 'gtmos' })
-
   const [activeId, setActiveId] = useState<string>('')
   const [mobileTocOpen, setMobileTocOpen] = useState(false)
   const observerRef = useRef<IntersectionObserver | null>(null)

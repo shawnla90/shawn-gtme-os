@@ -13,9 +13,6 @@
 ## Feeds
 - RSS: /feed.xml, /feed/content-wiki.xml
 
-## Related
-- GEO Wiki: https://shawnos.ai/geo — Generative Engine Optimization guide (25 entries)
-
 ## Key Topics
 - Platform-specific content strategy (X, LinkedIn, Substack)
 - Voice engineering and anti-slop methodology

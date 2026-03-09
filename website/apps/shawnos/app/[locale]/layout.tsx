@@ -161,7 +161,6 @@ export default async function LocaleLayout({ children, params }: Props) {
               { href: '/clay-wiki', label: nav('clayWiki') },
               { href: '/content-wiki', label: nav('contentWiki') },
               { href: '/context-wiki', label: nav('contextWiki') },
-              { href: '/geo', label: nav('geoWiki') },
             ]},
             { href: '#', label: nav('more'), children: [
               { href: '/log', label: nav('log') },
