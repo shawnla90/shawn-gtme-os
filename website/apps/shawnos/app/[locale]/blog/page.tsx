@@ -1,11 +1,18 @@
 import type { Metadata } from 'next'
 import path from 'path'
-import { getTranslations } from 'next-intl/server'
+import fs from 'fs'
+import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { getAllPosts } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { BlogContent } from './BlogContent'
 
-const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
+const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
+
+function getContentDir(locale: string) {
+  const localeDir = path.join(CONTENT_BASE, locale)
+  if (locale !== 'en' && fs.existsSync(localeDir)) return localeDir
+  return CONTENT_BASE
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Blog')
@@ -27,8 +34,14 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function BlogIndex() {
-  const posts = getAllPosts(CONTENT_DIR)
+type Props = {
+  params: Promise<{ locale: string }>
+}
+
+export default async function BlogIndex({ params }: Props) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  const posts = getAllPosts(getContentDir(locale))
 
   return (
     <>

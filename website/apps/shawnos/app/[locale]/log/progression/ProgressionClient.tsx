@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { Link } from '../../../../i18n/navigation'
 import { useTranslations } from 'next-intl'
 import type { RPGProfile, Milestone, ScoringLogEntry } from '@shawnos/shared/lib/rpg'
 import { StaggerContainer, StaggerItem } from '@shawnos/shared/components'

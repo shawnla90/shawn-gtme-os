@@ -13,6 +13,7 @@ interface NavLink {
 interface NavigationProps {
   siteName: string
   links?: NavLink[]
+  actions?: React.ReactNode
 }
 
 const defaultLinks: NavLink[] = [
@@ -23,7 +24,7 @@ const defaultLinks: NavLink[] = [
   { href: '/about', label: 'About' },
 ]
 
-export function Navigation({ siteName, links = defaultLinks }: NavigationProps) {
+export function Navigation({ siteName, links = defaultLinks, actions }: NavigationProps) {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set())
@@ -423,6 +424,7 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
               </a>
             )
           )}
+          {actions}
           <button
             className="nav-theme-toggle"
             onClick={toggleTheme}
@@ -491,6 +493,11 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
       {/* Slide-down drawer (mobile only) */}
       <div className={`nav-drawer${drawerOpen ? ' nav-drawer-open' : ''}`}>
         <div style={{ padding: '8px 0' }}>
+          {actions && (
+            <div style={{ padding: '10px 20px', borderBottom: '1px solid var(--border)' }}>
+              {actions}
+            </div>
+          )}
           <button
             className="nav-theme-toggle-mobile"
             onClick={toggleTheme}

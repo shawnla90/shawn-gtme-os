@@ -2,6 +2,7 @@
 
 import { useTranslations } from 'next-intl'
 import { PostCard, StaggerContainer, StaggerItem, ScrollRevealSection } from '@shawnos/shared/components'
+import { Link } from '../../../i18n/navigation'
 import { PageHero } from '../../components/PageHero'
 
 interface Post {
@@ -61,7 +62,7 @@ export function BlogContent({ posts }: { posts: Post[] }) {
                         {t('featured')}
                       </span>
                     </div>
-                    <a
+                    <Link
                       href={`/blog/${post.slug}`}
                       style={{
                         color: 'var(--accent)',
@@ -72,7 +73,7 @@ export function BlogContent({ posts }: { posts: Post[] }) {
                       }}
                     >
                       {post.title}
-                    </a>
+                    </Link>
                     <div style={{
                       display: 'flex',
                       alignItems: 'center',
@@ -113,12 +114,12 @@ export function BlogContent({ posts }: { posts: Post[] }) {
                     }}>
                       {post.excerpt}
                     </p>
-                    <a
+                    <Link
                       href={`/blog/${post.slug}`}
                       style={{ fontSize: '13px', color: 'var(--accent)', textDecoration: 'none' }}
                     >
                       {t('readMore')} &rarr;
-                    </a>
+                    </Link>
                   </article>
                 ))}
               </div>
@@ -133,6 +134,9 @@ export function BlogContent({ posts }: { posts: Post[] }) {
                     slug={post.slug}
                     readingTime={post.readingTime}
                     category={post.category}
+                    readMoreLabel={t('readMore')}
+                    minReadLabel={post.readingTime !== undefined ? t('minRead', { minutes: post.readingTime }) : undefined}
+                    LinkComponent={Link}
                   />
                 </StaggerItem>
               ))}

@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
+import { Link } from '../../../../i18n/navigation'
 import { redirect } from 'next/navigation'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import {
   HOW_TO_WIKI_ENTRIES,
-  HOW_TO_WIKI_CATEGORIES,
-  getHowToWikiEntry,
+  getLocalizedHowToEntry,
+  getLocalizedHowToEntries,
+  getLocalizedHowToCategories,
 } from '@shawnos/shared/data/how-to-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import type { CanonicalSite } from '@shawnos/shared/data/how-to-wiki'
@@ -32,10 +33,10 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }): Promise<Metadata> {
-  const { slug } = await params
-  const entry = getHowToWikiEntry(slug)
+  const { slug, locale } = await params
+  const entry = getLocalizedHowToEntry(slug, locale)
 
   if (!entry) {
     return { title: 'Entry Not Found | How-To Wiki' }
@@ -44,7 +45,8 @@ export async function generateMetadata({
   const title = `How-To: ${entry.title}`
   const description = entry.description.slice(0, 155)
   const url = `${SITE_URL}/how-to/${entry.id}`
-  const catMeta = HOW_TO_WIKI_CATEGORIES.find((c) => c.id === entry.category)
+  const categories = getLocalizedHowToCategories(locale)
+  const catMeta = categories.find((c) => c.id === entry.category)
 
   return {
     title,
@@ -302,10 +304,11 @@ const navLink: React.CSSProperties = {
 export default async function HowToEntryPage({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params
-  const entry = getHowToWikiEntry(slug)
+  const { slug, locale } = await params
+  setRequestLocale(locale)
+  const entry = getLocalizedHowToEntry(slug, locale)
   const t = await getTranslations('HowTo')
 
   if (!entry) {
@@ -331,11 +334,13 @@ export default async function HowToEntryPage({
     redirect(`${canonicalBase}/how-to/${entry.id}`)
   }
 
-  const catMeta = HOW_TO_WIKI_CATEGORIES.find((c) => c.id === entry.category)
+  const localizedCategories = getLocalizedHowToCategories(locale)
+  const catMeta = localizedCategories.find((c) => c.id === entry.category)
 
+  const localizedEntries = getLocalizedHowToEntries(locale)
   const relatedEntries = entry.related
     .map((id) => {
-      const r = HOW_TO_WIKI_ENTRIES.find((e) => e.id === id)
+      const r = localizedEntries.find((e) => e.id === id)
       return r ? { id: r.id, title: r.title, canonicalSite: r.canonicalSite } : null
     })
     .filter((r): r is { id: string; title: string; canonicalSite: CanonicalSite } => !!r)

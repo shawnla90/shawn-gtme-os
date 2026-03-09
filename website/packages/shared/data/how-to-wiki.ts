@@ -143,6 +143,25 @@ export function getHowToWikiCrossLinks(
   return HOW_TO_WIKI_ENTRIES.filter((e) => e.canonicalSite !== site)
 }
 
+/* ── locale-aware getters ─────────────────────────── */
+
+import { HOW_TO_WIKI_ENTRIES_HE, HOW_TO_WIKI_CATEGORIES_HE } from './how-to-wiki.he'
+
+export function getLocalizedHowToEntries(locale: string): HowToWikiEntry[] {
+  if (locale === 'he') return HOW_TO_WIKI_ENTRIES_HE
+  return HOW_TO_WIKI_ENTRIES
+}
+
+export function getLocalizedHowToCategories(locale: string) {
+  if (locale === 'he') return HOW_TO_WIKI_CATEGORIES_HE
+  return HOW_TO_WIKI_CATEGORIES
+}
+
+export function getLocalizedHowToEntry(slug: string, locale: string): HowToWikiEntry | undefined {
+  const entries = getLocalizedHowToEntries(locale)
+  return entries.find((e) => e.id === slug)
+}
+
 /* ── wiki entries ─────────────────────────────────── */
 
 export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [

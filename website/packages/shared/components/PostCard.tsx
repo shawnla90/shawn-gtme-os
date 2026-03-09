@@ -7,9 +7,16 @@ interface PostCardProps {
   slug: string
   readingTime?: number
   category?: string
+  readMoreLabel?: string
+  minReadLabel?: string
+  linkPrefix?: string
+  LinkComponent?: React.ComponentType<{ href: string; style?: React.CSSProperties; children: React.ReactNode }>
 }
 
-export function PostCard({ title, date, excerpt, slug, readingTime, category }: PostCardProps) {
+export function PostCard({ title, date, excerpt, slug, readingTime, category, readMoreLabel = 'read more', minReadLabel, linkPrefix = '/blog', LinkComponent }: PostCardProps) {
+  const Anchor = LinkComponent || 'a'
+  const href = LinkComponent ? `/blog/${slug}` : `${linkPrefix}/${slug}`
+
   return (
     <article
       style={{
@@ -18,8 +25,8 @@ export function PostCard({ title, date, excerpt, slug, readingTime, category }: 
         fontFamily: 'var(--font-mono)',
       }}
     >
-      <a
-        href={`/blog/${slug}`}
+      <Anchor
+        href={href}
         style={{
           color: 'var(--accent)',
           fontSize: '18px',
@@ -29,7 +36,7 @@ export function PostCard({ title, date, excerpt, slug, readingTime, category }: 
         }}
       >
         {title}
-      </a>
+      </Anchor>
 
       <div
         style={{
@@ -54,7 +61,7 @@ export function PostCard({ title, date, excerpt, slug, readingTime, category }: 
           <>
             <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>·</span>
             <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-              {readingTime} min read
+              {minReadLabel || `${readingTime} min read`}
             </span>
           </>
         )}
@@ -86,16 +93,16 @@ export function PostCard({ title, date, excerpt, slug, readingTime, category }: 
       >
         {excerpt}
       </p>
-      <a
-        href={`/blog/${slug}`}
+      <Anchor
+        href={href}
         style={{
           fontSize: '13px',
           color: 'var(--accent)',
           textDecoration: 'none',
         }}
       >
-        read more &rarr;
-      </a>
+        {readMoreLabel} &rarr;
+      </Anchor>
     </article>
   )
 }

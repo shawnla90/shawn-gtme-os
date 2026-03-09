@@ -9,6 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from '../FooterCredit'
 import { NioChat } from '../NioChat'
 import { FeedbackButton } from '../components/FeedbackButton'
+import { LanguageSwitcher } from '../components/LanguageSwitcher'
 import { routing } from '../../i18n/routing'
 import { locales } from '../../i18n/config'
 import '../globals.css'
@@ -129,6 +130,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages()
   const nav = await getTranslations('Nav')
   const dir = locale === 'he' ? 'rtl' : 'ltr'
+  const lp = (path: string) => locale === 'en' ? path : (path === '/' ? `/${locale}` : `/${locale}${path}`)
 
   return (
     <html lang={locale} dir={dir} className={`${jetbrains.variable} ${bricolage.variable} ${locale === 'he' ? heebo.variable : ''}`} suppressHydrationWarning>
@@ -150,29 +152,30 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
         <Navigation
           siteName="ShawnOS.ai"
+          actions={<LanguageSwitcher />}
           links={[
-            { href: '/', label: nav('home') },
-            { href: '/services/web-development', label: nav('services') },
-            { href: '/blog', label: nav('blog') },
-            { href: '/media', label: nav('media') },
-            { href: '/about', label: nav('about') },
+            { href: lp('/'), label: nav('home') },
+            { href: lp('/services/web-development'), label: nav('services') },
+            { href: lp('/blog'), label: nav('blog') },
+            { href: lp('/media'), label: nav('media') },
+            { href: lp('/about'), label: nav('about') },
             { href: '#', label: nav('wiki'), children: [
-              { href: '/knowledge', label: nav('knowledge') },
-              { href: '/how-to', label: nav('howTo') },
-              { href: '/clay-wiki', label: nav('clayWiki') },
-              { href: '/content-wiki', label: nav('contentWiki') },
-              { href: '/context-wiki', label: nav('contextWiki') },
-              { href: '/geo', label: nav('geoWiki') },
+              { href: lp('/knowledge'), label: nav('knowledge') },
+              { href: lp('/how-to'), label: nav('howTo') },
+              { href: lp('/clay-wiki'), label: nav('clayWiki') },
+              { href: lp('/content-wiki'), label: nav('contentWiki') },
+              { href: lp('/context-wiki'), label: nav('contextWiki') },
+              { href: lp('/geo'), label: nav('geoWiki') },
             ]},
             { href: '#', label: nav('more'), children: [
-              { href: '/log', label: nav('log') },
-              { href: '/rpg-preview', label: nav('rpg') },
-              { href: '/vitals', label: nav('vitals') },
-              { href: '/method', label: nav('method') },
-              { href: '/showcase', label: nav('showcase') },
-              { href: '/updates', label: nav('updates') },
-              { href: '/search', label: nav('search') },
-              { href: '/api', label: nav('api') },
+              { href: lp('/log'), label: nav('log') },
+              { href: lp('/rpg-preview'), label: nav('rpg') },
+              { href: lp('/vitals'), label: nav('vitals') },
+              { href: lp('/method'), label: nav('method') },
+              { href: lp('/showcase'), label: nav('showcase') },
+              { href: lp('/updates'), label: nav('updates') },
+              { href: lp('/search'), label: nav('search') },
+              { href: lp('/api'), label: nav('api') },
             ]},
           ]}
         />

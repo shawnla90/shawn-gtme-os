@@ -1,17 +1,26 @@
 import type { Metadata } from 'next'
 import path from 'path'
+import fs from 'fs'
 import { getTranslations } from 'next-intl/server'
 import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { Link } from '../../../../i18n/navigation'
+import { locales } from '../../../../i18n/config'
 import { TableOfContents } from './TableOfContents'
 import { ArticleReveal, HeaderReveal } from './ArticleReveal'
 import { BlogTracking } from './BlogTracking'
 
 const SITE_URL = 'https://shawnos.ai'
-const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
+const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
+
+function getContentDir(locale: string) {
+  const localeDir = path.join(CONTENT_BASE, locale)
+  if (locale !== 'en' && fs.existsSync(localeDir)) return localeDir
+  return CONTENT_BASE
+}
 
 export function generateStaticParams() {
-  const slugs = getPostSlugs(CONTENT_DIR)
+  const slugs = getPostSlugs(CONTENT_BASE)
   return slugs.map((slug) => ({ slug }))
 }
 
@@ -21,7 +30,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>
 }): Promise<Metadata> {
   const { slug } = await params
-  const post = getPostBySlug(slug, CONTENT_DIR)
+  const post = getPostBySlug(slug, CONTENT_BASE)
   const postUrl = `${SITE_URL}/blog/${slug}`
   const ogImage = `/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt)}`
 
@@ -47,11 +56,17 @@ export async function generateMetadata({
   }
 }
 
-function formatDate(dateStr: string): string {
+const localeMap: Record<string, string> = {
+  en: 'en-US',
+  es: 'es-ES',
+  he: 'he-IL',
+}
+
+function formatDate(dateStr: string, locale = 'en'): string {
   if (!dateStr) return dateStr
   const d = new Date(dateStr)
   if (isNaN(d.getTime())) return dateStr
-  return d.toLocaleDateString('en-US', {
+  return d.toLocaleDateString(localeMap[locale] || 'en-US', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
@@ -61,11 +76,12 @@ function formatDate(dateStr: string): string {
 export default async function BlogPost({
   params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string; locale: string }>
 }) {
-  const { slug } = await params
+  const { slug, locale } = await params
   const t = await getTranslations('Blog')
-  const post = getPostBySlug(slug, CONTENT_DIR)
+  const contentDir = getContentDir(locale)
+  const post = getPostBySlug(slug, contentDir)
   const htmlContent = await markdownToHtml(post.content)
 
   const articleSchema = {
@@ -104,7 +120,7 @@ export default async function BlogPost({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
           />
 
-          <a
+          <Link
             href="/blog"
             style={{
               fontSize: '13px',
@@ -115,7 +131,7 @@ export default async function BlogPost({
             }}
           >
             &larr; {t('backToBlog')}
-          </a>
+          </Link>
 
           {/*
             Mobile TOC strip lives here inside the article column, above the
@@ -154,7 +170,7 @@ export default async function BlogPost({
                     color: 'var(--text-muted)',
                   }}
                 >
-                  {formatDate(post.date)}
+                  {formatDate(post.date, locale)}
                 </time>
 
                 <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>·</span>
@@ -199,7 +215,7 @@ export default async function BlogPost({
               borderTop: '1px solid var(--border)',
             }}
           >
-            <a
+            <Link
               href="/blog"
               style={{
                 fontSize: '13px',
@@ -208,7 +224,7 @@ export default async function BlogPost({
               }}
             >
               &larr; {t('backToBlog')}
-            </a>
+            </Link>
           </footer>
         </article>
 

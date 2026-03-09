@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import {
-  HOW_TO_WIKI_ENTRIES,
-  HOW_TO_WIKI_CATEGORIES,
+  getLocalizedHowToEntries,
+  getLocalizedHowToCategories,
 } from '@shawnos/shared/data/how-to-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { HowToWikiPage } from '@shawnos/shared/pages/HowToWikiPage'
@@ -95,28 +95,36 @@ const faqSchema = {
   ],
 }
 
-/* ── page config ──────────────────────────────────── */
-
-const entries = HOW_TO_WIKI_ENTRIES.map((e) => ({
-  id: e.id,
-  title: e.title,
-  subtitle: e.subtitle,
-  category: e.category,
-  difficulty: e.difficulty,
-  canonicalSite: e.canonicalSite,
-}))
-
-const categories = HOW_TO_WIKI_CATEGORIES.map((c) => ({
-  id: c.id,
-  label: c.label,
-  description: c.description,
-  prompt: c.prompt,
-}))
-
 /* ── page component ───────────────────────────────── */
 
-export default async function HowToPage() {
+export default async function HowToPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations('HowTo')
+
+  const localizedEntries = getLocalizedHowToEntries(locale)
+  const localizedCategories = getLocalizedHowToCategories(locale)
+
+  const entries = localizedEntries.map((e) => ({
+    id: e.id,
+    title: e.title,
+    subtitle: e.subtitle,
+    category: e.category,
+    difficulty: e.difficulty,
+    canonicalSite: e.canonicalSite,
+  }))
+
+  const categories = localizedCategories.map((c) => ({
+    id: c.id,
+    label: c.label,
+    description: c.description,
+    prompt: c.prompt,
+  }))
+
   const config: HowToWikiPageConfig = {
     siteName: 'shawnos',
     siteUrl: SITE_URL,
