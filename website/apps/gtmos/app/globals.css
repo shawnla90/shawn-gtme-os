@@ -38,7 +38,7 @@ nav[class*="nav"] {
   z-index: 100;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(13, 17, 23, 0.85);
+  background: var(--nav-backdrop);
 }
 
 /* === Layout utilities === */
@@ -160,13 +160,13 @@ html {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  color: #8B949E;
+  color: var(--text-secondary);
   transition: color 0.15s ease, transform 0.15s ease;
   cursor: default;
   position: relative;
 }
 .builtwith-logo:hover {
-  color: var(--brand-color, #8B949E);
+  color: var(--brand-color, var(--text-secondary));
   transform: scale(1.15);
 }
 .builtwith-logo .builtwith-label {

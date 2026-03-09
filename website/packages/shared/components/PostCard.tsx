@@ -52,7 +52,7 @@ export function PostCard({ title, date, excerpt, slug, readingTime, category }: 
 
         {readingTime !== undefined && (
           <>
-            <span style={{ fontSize: '12px', color: '#484F58' }}>·</span>
+            <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>·</span>
             <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
               {readingTime} min read
             </span>
@@ -63,8 +63,8 @@ export function PostCard({ title, date, excerpt, slug, readingTime, category }: 
           <span
             style={{
               fontSize: '11px',
-              color: '#4EC373',
-              border: '1px solid #4EC373',
+              color: 'var(--accent)',
+              border: '1px solid var(--accent)',
               borderRadius: '3px',
               padding: '1px 6px',
               letterSpacing: '0.4px',

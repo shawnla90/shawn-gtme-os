@@ -34,7 +34,12 @@ function CaseStudyCard({ study }: { study: CaseStudy }) {
   const Wrapper = study.external ? 'a' : Link
 
   return (
-    <div className="case-study-card">
+    <div className="case-study-card" style={{
+      border: '1px dashed var(--border-dashed)',
+      borderRadius: 12,
+      padding: 20,
+      transition: 'border-color 0.2s ease',
+    }}>
       <Wrapper
         href={study.href}
         style={{

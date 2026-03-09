@@ -1,3 +1,8 @@
+---
+name: ai-chat-widget
+description: "Floating AI chat widget for Next.js content sites (ChatWidget on shawnos.ai - Anthropic API, keyword RAG). NOT NioBot V3."
+---
+
 # Skill: AI Chat Widget for Content Sites
 
 ## What This Does

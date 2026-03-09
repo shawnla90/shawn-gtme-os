@@ -149,7 +149,7 @@ export function TechStackGrid() {
               style={{
                 fontSize: '11px',
                 fontFamily: 'var(--font-mono)',
-                color: '#8B949E',
+                color: 'var(--text-secondary)',
                 textTransform: 'uppercase' as const,
                 letterSpacing: '0.1em',
                 marginBottom: '8px',

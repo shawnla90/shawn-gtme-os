@@ -1,7 +1,7 @@
 ---
 title: "Google just shipped a CLI that wraps every Workspace API"
 date: "2026-03-06"
-excerpt: "gws is a new CLI that turns every Google Workspace API into shell commands with 89 agent skills for Claude Code. I set it up, tested it against real GTM work, and picked the 27 skills worth installing."
+excerpt: "gws is a new CLI that turns every Google Workspace API into shell commands with 89 agent skills for Claude Code. I set it up, tested it against real GTM work, picked 27 skills worth having, and learned why you should not load them all at once."
 ---
 
 ## what gws actually is
@@ -66,13 +66,49 @@ gws auth status
 
 should show credentials exist and list which services are authorized.
 
-## which skills to install (and which to skip)
+## which skills to install (and how to not wreck your context window)
 
-`gws` ships with 89 agent skills. I installed 27. here is how I picked them.
+`gws` ships with 89 agent skills. do not install all of them. do not even install 27 of them into your active skills directory. I learned this the hard way.
 
-**foundation (1 skill)**
+every skill in `~/.claude/skills/` gets loaded into your agent's context window on every session. 27 skills is roughly 50KB of instructions that Claude reads before you even say hello. if you are editing a React component or debugging a deploy, none of that Google Workspace context is relevant. it is just noise eating tokens.
 
-`gws-shared` is the base layer. every other skill depends on it.
+**the move: install one skill into active context. park the rest.**
+
+install `gws-shared` into your active skills. it is the foundation layer. it teaches Claude how to authenticate, use global flags, and format output. about 2KB. that is all you need loaded by default.
+
+```bash
+npx skills add googleworkspace/cli --skill gws-shared --agent claude-code -y -g
+```
+
+then install whatever else you need into a parking directory:
+
+```bash
+# install to global skills repo (not auto-loaded)
+npx skills add googleworkspace/cli --skill gws-gmail gws-calendar gws-sheets gws-drive gws-tasks gws-docs --agent claude-code -y -g
+
+# move them out of auto-load
+mkdir -p ~/.claude/skills-available
+mv ~/.claude/skills/gws-gmail ~/.claude/skills-available/
+mv ~/.claude/skills/gws-calendar ~/.claude/skills-available/
+# ... etc for each skill
+```
+
+when you want a GWS-heavy session (inbox triage, calendar review, sheets work), symlink the ones you need back in:
+
+```bash
+ln -s ~/.claude/skills-available/gws-gmail ~/.claude/skills/gws-gmail
+ln -s ~/.claude/skills-available/gws-gmail-triage ~/.claude/skills/gws-gmail-triage
+```
+
+remove them when you are done. your context window is finite. treat it like memory, not a junk drawer.
+
+## the 27 skills worth having available
+
+here is what I installed and parked. grouped by what they do.
+
+**foundation (always loaded)**
+
+`gws-shared` - auth, global flags, output formatting. the only one that stays in `~/.claude/skills/`.
 
 **core services (6 skills)**
 
@@ -88,7 +124,7 @@ purpose-built operations that save you from constructing raw API calls:
 - `drive-upload` - upload files
 - `docs-write` - create and edit documents
 
-these are the ones you will actually use daily. the core service skills are the fallback for anything the helpers do not cover.
+these are the ones you will actually reach for. the core service skills are the fallback for anything the helpers do not cover.
 
 **workflows (5 skills)**
 
@@ -155,6 +191,8 @@ every command returns clean JSON. that is the point. Claude Code can parse it, r
 
 **not officially supported.** the repo README says it clearly. this is not a Google product. it is a tool built on Google APIs. it works today. whether it works in 6 months depends on whether Google keeps it maintained.
 
+**do not load 27 skills into active context.** I did this and immediately realized the problem. 50KB of Workspace instructions loaded on every session whether you need them or not. keep `gws-shared` active, park the rest in a `skills-available` directory, and symlink in what you need per session.
+
 **npx skills add clones the repo.** each skill install pulls the full repo. it is slow the first time. accept it.
 
 **JSON params everywhere.** every `--params` flag takes a JSON string. get comfortable with single-quoted JSON in your shell, or pipe from files.
@@ -167,8 +205,8 @@ this tool removes most of that friction. one CLI. one auth flow. JSON in, JSON o
 
 the quality of the skills varies. the core service wrappers are solid. some of the workflow skills feel early. but the foundation is right, and the fact that it builds on the official Google Discovery Service means the API coverage is complete, not hand-rolled.
 
-for a solo GTM operator running Claude Code as the primary agent, this is the cleanest path to Google Workspace integration I have found. install the 27 skills that match your work. skip the rest. ship something with it before writing about it.
+for a solo GTM operator running Claude Code as the primary agent, this is the cleanest path to Google Workspace integration I have found. install the skills that match your work, park them outside active context, and pull them in when you actually need them. your context window is the most expensive resource in your stack. do not fill it with instructions for services you are not using in that session.
 
-that is what I did.
+that is what I did. and then immediately undid the part where I loaded all 27 at once.
 
 shawn ⚡

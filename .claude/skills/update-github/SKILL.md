@@ -176,3 +176,17 @@ Compare against the Step 0 snapshot.
 - Do NOT continue until the user confirms data is restored
 
 **If all counts match or increased:** Report "Local data integrity verified — no files lost."
+
+## Vercel Deployment (post-push)
+
+After successful push to main, Vercel auto-deploys all three sites. Optionally verify:
+
+1. Wait 5s for Vercel to pick up the push
+2. Check deployment status via Vercel MCP `list_deployments` if available
+3. Report status for each site:
+   - shawnos.ai (Vercel project: `shawnos-site`)
+   - thegtmos.ai (Vercel project: `thegtmos-site`)
+   - thecontentos.ai (check with `vercel project ls`)
+4. If pushed to non-main branch: inform user that Vercel deploys from main only
+
+If Vercel MCP not connected, report: "Pushed to origin. Check https://vercel.com/dashboard for deploy status."

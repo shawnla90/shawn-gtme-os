@@ -153,7 +153,7 @@ export default async function BlogPost({
                   {formatDate(post.date)}
                 </time>
 
-                <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
+                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>·</span>
 
                 <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                   {post.readingTime} min read
@@ -161,12 +161,12 @@ export default async function BlogPost({
 
                 {post.category && (
                   <>
-                    <span style={{ fontSize: '13px', color: '#484F58' }}>·</span>
+                    <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>·</span>
                     <span
                       style={{
                         fontSize: '11px',
-                        color: '#4EC373',
-                        border: '1px solid #4EC373',
+                        color: 'var(--accent)',
+                        border: '1px solid var(--accent)',
                         borderRadius: '3px',
                         padding: '1px 6px',
                         letterSpacing: '0.4px',

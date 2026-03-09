@@ -10,13 +10,17 @@ import {
   StaggerItem,
   MagneticHover,
   ScrollRevealSection,
+  DotGrid,
+  GraphGrid,
+  DashedCard,
+  DarkInterlude,
 } from '@shawnos/shared/components'
 import type { RPGProfile } from '@shawnos/shared/lib/rpg'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
 import { MEDIA_APPEARANCES } from '@shawnos/shared/data/media-appearances'
 import { StatsStrip } from './StatsStrip'
 import { BuiltWithStrip } from './BuiltWithStrip'
-import { CaseStudyGrid } from './components/CaseStudyCard'
+// CaseStudyGrid inlined below for per-card MotionReveal animation
 import { WorkTogetherCTA } from './components/WorkTogetherCTA'
 
 /* ── data ────────────────────────────────────────── */
@@ -193,6 +197,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
           padding: '0 24px',
         }}
       >
+        <GraphGrid spacing={40} opacity={0.45} lineWidth={1} />
         <MotionReveal variant="fadeUp" delay={0.1}>
           <h1
             style={{
@@ -301,28 +306,60 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
       </ScrollRevealSection>
 
       {/* ── Method ── */}
-      <ScrollRevealSection background="var(--canvas-subtle)">
+      <ScrollRevealSection background="var(--canvas-warm-subtle)" style={{ position: 'relative' }}>
+        <GraphGrid spacing={48} opacity={0.35} lineWidth={1} />
         <SectionHeadline subtitle="How everything gets built">The Method</SectionHeadline>
         <ProcessSteps steps={processSteps} />
       </ScrollRevealSection>
+
+      {/* ── Dark Interlude ── */}
+      <DarkInterlude
+        title="one monorepo. everything ships from here."
+        subtitle="three sites. AI agents. content pipelines. GTM automation. all version-controlled."
+      />
 
       {/* ── Latest Posts ── */}
       {posts.length > 0 && (
         <ScrollRevealSection background="var(--canvas)">
           <SectionHeadline subtitle="What shipped recently">Latest Posts</SectionHeadline>
 
-          <StaggerContainer stagger={0.1}>
-            {posts.map((post) => (
-              <StaggerItem key={post.slug}>
+          {/* Featured first post */}
+          {posts[0] && (
+            <MotionReveal variant="fadeUp" delay={0.05}>
+              <div style={{
+                borderLeft: '3px solid var(--accent)',
+                paddingLeft: 20,
+                marginBottom: 24,
+              }}>
                 <PostCard
-                  title={post.title}
-                  date={post.date}
-                  excerpt={post.excerpt}
-                  slug={post.slug}
+                  title={posts[0].title}
+                  date={posts[0].date}
+                  excerpt={posts[0].excerpt}
+                  slug={posts[0].slug}
                 />
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
+              </div>
+            </MotionReveal>
+          )}
+
+          {/* Remaining posts in 2-col grid */}
+          {posts.length > 1 && (
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+              gap: 16,
+            }}>
+              {posts.slice(1).map((post, i) => (
+                <MotionReveal key={post.slug} variant="fadeUp" delay={0.1 + i * 0.08}>
+                  <PostCard
+                    title={post.title}
+                    date={post.date}
+                    excerpt={post.excerpt}
+                    slug={post.slug}
+                  />
+                </MotionReveal>
+              ))}
+            </div>
+          )}
 
           <div style={{ marginTop: 24 }}>
             <Link
@@ -372,7 +409,48 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
       {/* ── Case Studies ── */}
       <ScrollRevealSection background="var(--canvas-subtle)">
         <SectionHeadline subtitle="Featured projects from the monorepo">Case Studies</SectionHeadline>
-        <CaseStudyGrid studies={caseStudies} />
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gap: 16,
+        }}>
+          {caseStudies.map((study, i) => (
+            <MotionReveal key={study.title} variant="scale" delay={i * 0.1}>
+              <Link
+                href={study.href}
+                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
+              >
+                <div className="case-study-card">
+                  <div style={{
+                    fontSize: '16px', fontWeight: 600,
+                    color: 'var(--text-primary)', fontFamily: 'var(--font-mono)',
+                    marginBottom: 8,
+                  }}>
+                    {study.title}
+                  </div>
+                  <div style={{
+                    fontSize: '14px', color: 'var(--text-secondary)',
+                    fontFamily: 'var(--font-mono)', lineHeight: 1.6, marginBottom: 12,
+                  }}>
+                    {study.description}
+                  </div>
+                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+                    {study.tags.map((tag) => (
+                      <span key={tag} style={{
+                        fontSize: '11px', fontFamily: 'var(--font-mono)',
+                        padding: '2px 8px', borderRadius: 4,
+                        background: 'rgba(78, 195, 115, 0.1)',
+                        color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.02em',
+                      }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Link>
+            </MotionReveal>
+          ))}
+        </div>
       </ScrollRevealSection>
 
       {/* ── As Heard On ── */}
@@ -506,7 +584,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
             borderRadius: 6,
           }}
         >
-          <StaggerContainer stagger={0.05}>
+          <StaggerContainer stagger={0.08}>
             {bootLines.map((line) => (
               <StaggerItem key={line.label}>
                 <div
@@ -593,8 +671,8 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                     display: 'block',
                     padding: '20px 16px',
                     background: 'var(--canvas)',
-                    border: '1px solid var(--border)',
-                    borderRadius: 6,
+                    border: '1px dashed var(--border-dashed)',
+                    borderRadius: 12,
                     textDecoration: 'none',
                     transition: 'border-color 0.15s ease',
                   }}

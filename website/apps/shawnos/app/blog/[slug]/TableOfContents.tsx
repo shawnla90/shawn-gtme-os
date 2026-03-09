@@ -98,12 +98,12 @@ export function TableOfContents({ html, mobileOnly, desktopOnly }: TableOfConten
             cursor: 'pointer',
             fontFamily: 'var(--font-mono)',
             fontSize: '12px',
-            color: '#8B949E',
+            color: 'var(--text-secondary)',
           }}
           aria-expanded={open}
         >
           <span>$ toc</span>
-          <span style={{ color: '#4EC373' }}>{open ? '▲' : '▼'}</span>
+          <span style={{ color: 'var(--accent)' }}>{open ? '▲' : '▼'}</span>
         </button>
 
         {open && (
@@ -142,7 +142,7 @@ export function TableOfContents({ html, mobileOnly, desktopOnly }: TableOfConten
         <p
           style={{
             fontSize: '11px',
-            color: '#484F58',
+            color: 'var(--text-muted)',
             letterSpacing: '0.5px',
             marginBottom: 10,
             marginTop: 0,
@@ -193,14 +193,14 @@ function TocList({
                 padding: 0,
                 fontFamily: 'var(--font-mono)',
                 fontSize: '12px',
-                color: isActive ? '#4EC373' : '#8B949E',
+                color: isActive ? 'var(--accent)' : 'var(--text-secondary)',
                 textAlign: 'left',
                 lineHeight: 1.5,
                 transition: 'color 0.15s',
               }}
             >
               {level === 3 && (
-                <span style={{ marginRight: 4, color: '#484F58' }}>{'└'}</span>
+                <span style={{ marginRight: 4, color: 'var(--text-muted)' }}>{'└'}</span>
               )}
               {text}
             </button>

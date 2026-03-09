@@ -1,3 +1,8 @@
+---
+name: video
+description: Remotion programmatic video production for ShawnOS network sites. Renders highlight reels with live data, 4-scene structure, multi-aspect-ratio output.
+---
+
 # /video — Remotion Video Production Skill
 
 Renders programmatic highlight reel videos for the ShawnOS network using Remotion. Videos pull live data from shared wiki/knowledge base files — counts update automatically on re-render.

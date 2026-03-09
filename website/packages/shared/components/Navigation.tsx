@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useRef } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTheme } from '../hooks/useTheme'
 
@@ -27,6 +27,7 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set())
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const pathname = usePathname()
   const { theme, toggleTheme } = useTheme()
 
@@ -150,6 +151,14 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
           opacity: 0;
           pointer-events: none;
           transition: opacity 0.15s ease;
+        }
+        .nav-dropdown-panel::before {
+          content: '';
+          position: absolute;
+          top: -12px;
+          left: 0;
+          right: 0;
+          height: 12px;
         }
         .nav-dropdown-panel-open {
           opacity: 1;
@@ -372,8 +381,13 @@ export function Navigation({ siteName, links = defaultLinks }: NavigationProps) 
               <div
                 key={link.label}
                 className="nav-dropdown-wrap"
-                onMouseEnter={() => setOpenDropdown(link.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
+                onMouseEnter={() => {
+                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current)
+                  setOpenDropdown(link.label)
+                }}
+                onMouseLeave={() => {
+                  closeTimeoutRef.current = setTimeout(() => setOpenDropdown(null), 100)
+                }}
               >
                 <span
                   className={`nav-dropdown-trigger${isGroupActive(link) ? ' nav-link-active' : ''}`}

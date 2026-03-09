@@ -51,9 +51,9 @@ export function FeedbackButton() {
       padding: "8px 14px",
       fontSize: 12,
       fontFamily: "var(--font-mono, monospace)",
-      color: "#8B949E",
-      backgroundColor: "#0D1117",
-      border: "1px solid #30363D",
+      color: "var(--text-secondary)",
+      backgroundColor: "var(--canvas)",
+      border: "1px solid var(--canvas-border)",
       borderRadius: 20,
       cursor: "pointer",
       transition: "border-color 0.15s, color 0.15s",
@@ -71,8 +71,8 @@ export function FeedbackButton() {
       width: "100%",
       maxWidth: 340,
       padding: 24,
-      backgroundColor: "#0D1117",
-      border: "1px solid #30363D",
+      backgroundColor: "var(--canvas)",
+      border: "1px solid var(--canvas-border)",
       borderRadius: 12,
       fontFamily: "var(--font-mono, monospace)",
       textAlign: "center" as const,
@@ -80,7 +80,7 @@ export function FeedbackButton() {
     ratingBtn: (active: boolean) => ({
       fontSize: 28,
       padding: "8px 12px",
-      background: active ? "#161B22" : "transparent",
+      background: active ? "var(--canvas-subtle)" : "transparent",
       border: active ? "1px solid #4EC373" : "1px solid transparent",
       borderRadius: 8,
       cursor: "pointer",
@@ -92,10 +92,10 @@ export function FeedbackButton() {
       padding: "8px 12px",
       fontSize: 13,
       fontFamily: "inherit",
-      backgroundColor: "#161B22",
-      border: "1px solid #30363D",
+      backgroundColor: "var(--canvas-subtle)",
+      border: "1px solid var(--canvas-border)",
       borderRadius: 8,
-      color: "#C9D1D9",
+      color: "var(--text-primary)",
       outline: "none",
       resize: "vertical" as const,
     } as CSSProperties,
@@ -105,7 +105,7 @@ export function FeedbackButton() {
       fontSize: 13,
       fontWeight: 600,
       fontFamily: "inherit",
-      color: "white",
+      color: "var(--text-on-accent)",
       backgroundColor: "#4EC373",
       border: "none",
       borderRadius: 20,
@@ -121,12 +121,12 @@ export function FeedbackButton() {
           onClick={() => setIsOpen(true)}
           style={s.trigger}
           onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "#4EC373"
-            e.currentTarget.style.color = "#C9D1D9"
+            e.currentTarget.style.borderColor = "var(--accent)"
+            e.currentTarget.style.color = "var(--text-primary)"
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = "#30363D"
-            e.currentTarget.style.color = "#8B949E"
+            e.currentTarget.style.borderColor = "var(--canvas-border)"
+            e.currentTarget.style.color = "var(--text-secondary)"
           }}
           aria-label="Give feedback"
         >
@@ -146,7 +146,7 @@ export function FeedbackButton() {
               </p>
             ) : (
               <>
-                <p style={{ fontSize: 14, fontWeight: 600, color: "#C9D1D9", margin: "0 0 16px" }}>
+                <p style={{ fontSize: 14, fontWeight: 600, color: "var(--text-primary)", margin: "0 0 16px" }}>
                   how&apos;s the experience?
                 </p>
 
@@ -184,7 +184,7 @@ export function FeedbackButton() {
                   onClick={() => setIsOpen(false)}
                   style={{
                     marginTop: 8, background: "none", border: "none",
-                    color: "#8B949E", fontSize: 12, cursor: "pointer", fontFamily: "inherit",
+                    color: "var(--text-secondary)", fontSize: 12, cursor: "pointer", fontFamily: "inherit",
                   }}
                 >
                   close

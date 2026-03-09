@@ -331,8 +331,8 @@ const toolTag: React.CSSProperties = {
 }
 
 const codeBlock: React.CSSProperties = {
-  background: '#0d1117',
-  border: '1px solid #30363d',
+  background: 'var(--canvas)',
+  border: '1px solid var(--canvas-border)',
   borderRadius: 8,
   padding: 24,
   overflowX: 'auto',
@@ -342,7 +342,7 @@ const codeBlock: React.CSSProperties = {
 }
 
 const codeLine: React.CSSProperties = {
-  color: '#e6edf3',
+  color: 'var(--text-primary)',
   whiteSpace: 'pre',
   display: 'block',
 }
@@ -529,7 +529,7 @@ export default function MCPPage() {
         <div style={codeBlock}>
           <span style={codeLine}>
             <span style={codeAccent}>$</span>{' '}
-            <span style={{ color: '#e6edf3' }}>agent-dispatch --parallel</span>
+            <span style={{ color: 'var(--text-primary)' }}>agent-dispatch --parallel</span>
           </span>
           <span style={codeLine}>
             <span style={codeMuted}>{'|-- '}</span>
@@ -586,7 +586,7 @@ export default function MCPPage() {
               <span style={{ ...codeLine, marginBottom: i < CRON_ENTRIES.length - 1 ? 12 : 0 }}>
                 <span style={codeMuted}>{entry.schedule}</span>
                 {'  '}
-                <span style={{ color: '#e6edf3' }}>{entry.command}</span>
+                <span style={{ color: 'var(--text-primary)' }}>{entry.command}</span>
                 {'      '}
                 <span style={codeComment}># STATUS: </span>
                 <span

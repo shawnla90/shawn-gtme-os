@@ -52,23 +52,23 @@
 
 /* === Anthropic Mode (Light Theme) === */
 [data-theme="light"] {
-  --canvas: #F5F0E5;
-  --canvas-subtle: #EDE8DA;
-  --canvas-border: #CFC9B8;
-  --canvas-card: #E8E3D5;
+  --canvas: #EDE4D0;
+  --canvas-subtle: #E3D9C3;
+  --canvas-border: #C5BBA5;
+  --canvas-card: #D9D0BB;
 
   --text-primary: #1A1714;
   --text-secondary: #524D46;
   --text-muted: #8E887E;
 
-  --canvas-warm: #E8D5A8;
-  --canvas-warm-subtle: #EBE0C4;
+  --canvas-warm: #D4B87A;
+  --canvas-warm-subtle: #DFD2B0;
   --canvas-dark: #2A2520;
-  --grid-color: #CFC9B8;
-  --border-dashed: #C2BBB0;
+  --grid-color: #A89878;
+  --border-dashed: #B8AE98;
 
-  --code-bg: #E5E0D2;
-  --nav-backdrop: rgba(245, 240, 229, 0.85);
-  --text-on-accent: #F5F0E5;
-  --shadow-color: rgba(0, 0, 0, 0.08);
+  --code-bg: #D9D0BB;
+  --nav-backdrop: rgba(237, 228, 208, 0.85);
+  --text-on-accent: #EDE4D0;
+  --shadow-color: rgba(0, 0, 0, 0.1);
 }

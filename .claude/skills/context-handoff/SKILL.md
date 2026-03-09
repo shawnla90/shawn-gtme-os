@@ -103,6 +103,21 @@ Steps:
 
 The user prefers to stay in-session rather than starting fresh. The handoff + compact combo gives them a checkpoint without losing their terminal state.
 
+## Agent-to-Agent Handoffs
+
+When handing off to a new agent (not a new session), produce a **standalone context document** optimized for pasting into a fresh context window:
+
+| Section | Contents |
+|---------|----------|
+| Partner/context | Who, what project, contact names |
+| What we accomplished | Completed tasks, deliverables, decisions |
+| Key files | Absolute paths to outputs, inputs, references |
+| Open questions / blocked | Anything unresolved or pending |
+| Next steps | Specific actions for the new agent |
+| Workflow hooks (optional) | Related skills, commands, scripts to invoke |
+
+Keep under 200 lines, token-efficient, file-anchored. No preamble.
+
 ## Rules
 
 1. **Be specific** - file paths, commit hashes, line numbers. Vague handoffs are useless.

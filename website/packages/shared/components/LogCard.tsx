@@ -87,7 +87,7 @@ export function LogCard({
                   alignItems: 'center',
                   justifyContent: 'center',
                   background: color,
-                  color: '#0D1117',
+                  color: 'var(--text-on-accent)',
                   fontWeight: 700,
                   fontSize: '13px',
                   padding: '2px 10px',

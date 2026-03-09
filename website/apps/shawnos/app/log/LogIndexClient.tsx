@@ -111,7 +111,7 @@ export default function LogIndexClient({
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#0D1117',
+                color: 'var(--text-on-accent)',
                 fontWeight: 700,
                 fontSize: '13px',
               }}

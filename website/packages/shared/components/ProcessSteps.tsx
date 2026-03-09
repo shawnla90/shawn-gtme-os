@@ -1,6 +1,6 @@
 'use client'
 
-import { StaggerContainer, StaggerItem } from './motion'
+import { MotionReveal } from './motion'
 
 interface Step {
   command?: string
@@ -15,7 +15,7 @@ interface ProcessStepsProps {
 
 export function ProcessSteps({ steps, style }: ProcessStepsProps) {
   return (
-    <StaggerContainer stagger={0.1} style={style}>
+    <div style={style}>
       <div style={{ position: 'relative', paddingLeft: 40 }}>
         {/* Connecting line */}
         <div
@@ -31,7 +31,11 @@ export function ProcessSteps({ steps, style }: ProcessStepsProps) {
         />
 
         {steps.map((step, i) => (
-          <StaggerItem key={i}>
+          <MotionReveal
+            key={i}
+            variant={i % 2 === 0 ? 'slideLeft' : 'slideRight'}
+            delay={i * 0.12}
+          >
             <div
               style={{
                 position: 'relative',
@@ -87,9 +91,9 @@ export function ProcessSteps({ steps, style }: ProcessStepsProps) {
                 </div>
               </div>
             </div>
-          </StaggerItem>
+          </MotionReveal>
         ))}
       </div>
-    </StaggerContainer>
+    </div>
   )
 }

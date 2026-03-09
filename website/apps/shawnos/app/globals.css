@@ -6,6 +6,10 @@
   --accent: #4EC373;
 }
 
+[data-theme="light"] {
+  --accent: #C47A2A;
+}
+
 /* === Base body styles === */
 html body {
   margin: 0;
@@ -331,28 +335,12 @@ html {
   }
 }
 
-/* === Stats strip animations === */
-@keyframes stats-count-up {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.stats-item {
-  opacity: 0;
-}
-.stats-item.visible {
-  animation: stats-count-up 0.5s ease forwards;
-}
-.stats-item.visible:nth-child(1) { animation-delay: 0.05s; }
-.stats-item.visible:nth-child(2) { animation-delay: 0.13s; }
-.stats-item.visible:nth-child(3) { animation-delay: 0.21s; }
-.stats-item.visible:nth-child(4) { animation-delay: 0.29s; }
-.stats-item.visible:nth-child(5) { animation-delay: 0.37s; }
-
+/* === Stats strip mobile === */
 @media (max-width: 600px) {
   .stats-strip {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  .stats-strip .stats-item:last-child {
+  .stats-strip > div:last-child {
     grid-column: 1 / -1;
   }
 }
@@ -360,17 +348,18 @@ html {
 /* === Case study card hover === */
 .case-study-card {
   background: var(--canvas-subtle);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 24px;
+  border: 1px dashed var(--border-dashed);
+  border-radius: 12px;
+  padding: 20px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 .case-study-card:hover {
-  transform: scale(1.02);
+  transform: translateY(-2px);
   border-color: var(--accent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 /* === Built-with logo hover (pure CSS) === */
@@ -446,6 +435,13 @@ html {
 @keyframes nio-glow-breathe {
   0%, 100% { filter: drop-shadow(0 0 8px rgba(78,195,115,0.4)); }
   50% { filter: drop-shadow(0 0 18px rgba(78,195,115,0.7)); }
+}
+
+/* === GraphGrid mobile: reduce visual noise === */
+@media (max-width: 768px) {
+  .graph-grid-mobile-dim {
+    opacity: 0.12 !important;
+  }
 }
 
 /* Hide Nio avatar on small screens where there's no room left of chat */
