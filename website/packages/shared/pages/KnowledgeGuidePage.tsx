@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react'
 import Link from 'next/link'
+import { useContentTracking } from '../hooks/useContentTracking'
 
 /* ── types ─────────────────────────────────────────── */
 
@@ -1016,6 +1017,8 @@ export function KnowledgeGuideLayout({
 /* ── exported page: Engineering / AI ─────────────── */
 
 export function KnowledgeGuidePage() {
+  useContentTracking({ content_type: 'knowledge', content_slug: 'knowledge-guide', content_title: 'Engineering & AI Knowledge Guide', site: 'shawnos' })
+
   return (
     <KnowledgeGuideLayout
       config={{

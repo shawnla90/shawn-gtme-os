@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { getNioBlogPost, getNioBlogSlugs } from '../lib/nio-blog'
+import { NioPostTracking } from './NioPostTracking'
 
 /* ── styles ───────────────────────────────────────── */
 
@@ -132,6 +133,7 @@ export function NioPostPage({ slug }: NioPostPageProps) {
 
   return (
     <div style={page}>
+      <NioPostTracking slug={slug} title={post.title} />
       <Link href="/vitals/nio-terminal" style={backLink}>
         <span>←</span>
         <span>back to nio.terminal</span>

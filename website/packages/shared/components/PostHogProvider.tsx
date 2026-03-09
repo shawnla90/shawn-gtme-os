@@ -35,6 +35,17 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
         if (isInternal) {
           ph.register({ internal_user: true })
         }
+
+        // Persist UTM params as super properties (carry across all events)
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const
+        const utmProps: Record<string, string> = {}
+        for (const key of utmKeys) {
+          const val = params.get(key)
+          if (val) utmProps[key] = val
+        }
+        if (Object.keys(utmProps).length > 0) {
+          ph.register(utmProps)
+        }
       },
     })
   }, [])

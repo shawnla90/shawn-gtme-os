@@ -13,9 +13,10 @@
 - Daily Logs: /log — Daily build tracking with scores and accomplishments
 - Content Wiki: /content-wiki — Platform playbooks, voice systems, content workflows
 - Context Wiki: /context-wiki — Context engineering patterns and practices
+- GEO Wiki: /geo — Generative Engine Optimization guide (25 entries) — how to get cited by ChatGPT, Perplexity, Gemini, and AI Overviews
 
 ## Feeds
-- RSS: /feed.xml (blog), /feed/all.xml (everything), /feed/knowledge.xml, /feed/how-to.xml, /feed/daily-logs.xml
+- RSS: /feed.xml (blog), /feed/all.xml (everything), /feed/knowledge.xml, /feed/how-to.xml, /feed/geo.xml, /feed/daily-logs.xml
 - All feeds: RSS 2.0 format
 
 ## Key Topics
