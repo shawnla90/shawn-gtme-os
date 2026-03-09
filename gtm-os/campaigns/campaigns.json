@@ -19,6 +19,16 @@
       "tools": ["apollo", "supabase", "attio"],
       "start_date": null,
       "created": "2026-03-09"
+    },
+    {
+      "id": "2026-03-wp-migration-nyc",
+      "name": "WordPress Migration - NYC SMBs",
+      "status": "sourcing",
+      "segment": "wp-migration-nyc",
+      "angles": ["wordpress-performance", "next-js-migration"],
+      "tools": ["apollo", "supabase", "attio"],
+      "start_date": null,
+      "created": "2026-03-09"
     }
   ]
 }
