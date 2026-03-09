@@ -1,0 +1,494 @@
+{
+  "Nav": {
+    "home": "בית",
+    "services": "שירותים",
+    "blog": "בלוג",
+    "media": "מדיה",
+    "about": "אודות",
+    "wiki": "ויקי",
+    "knowledge": "ידע",
+    "howTo": "מדריכים",
+    "clayWiki": "Clay Wiki",
+    "contentWiki": "Content Wiki",
+    "contextWiki": "Context Wiki",
+    "more": "עוד",
+    "log": "יומן",
+    "rpg": "RPG",
+    "vitals": "מדדים",
+    "method": "שיטה",
+    "showcase": "תצוגה",
+    "updates": "עדכונים",
+    "search": "חיפוש",
+    "api": "API"
+  },
+  "Footer": {
+    "copyright": "© {year} ShawnOS.ai",
+    "allRights": "כל הזכויות שמורות.",
+    "newsletter": "ניוזלטר",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "github": "GitHub",
+      "substack": "Substack"
+    }
+  },
+  "Common": {
+    "readMore": "קרא עוד",
+    "backToHome": "חזרה לדף הבית",
+    "loading": "טוען...",
+    "error": "משהו השתבש",
+    "notFound": "הדף לא נמצא",
+    "language": "שפה",
+    "english": "English",
+    "hebrew": "עברית",
+    "spanish": "Español",
+    "scroll": "גלול"
+  },
+  "Home": {
+    "metadata": {
+      "title": "ShawnOS.ai | הנדסת GTM, נבנה בגלוי",
+      "description": "מונורפו אחד. מערכת הפעלה אחת. כל מיומנות, פוסט וקמפיין רצים דרך אותו קוד."
+    },
+    "hero": {
+      "titleLine1": "הנדסת GTM,",
+      "titleLine2": "נבנה בגלוי",
+      "subtitle": "מונורפו אחד. מערכת הפעלה אחת. כל מיומנות, פוסט וקמפיין רצים דרך אותו קוד.",
+      "ctaBlog": "קרא את הבלוג",
+      "ctaAbout": "אודות"
+    },
+    "stats": {
+      "websites": "אתרים",
+      "aiAgents": "סוכני AI",
+      "knowledgeEntries": "ערכי ידע",
+      "videoCompositions": "קומפוזיציות וידאו",
+      "blogPosts": "פוסטים בבלוג"
+    },
+    "method": {
+      "headline": "השיטה",
+      "subtitle": "איך הכל נבנה",
+      "explore": { "title": "חקור", "description": "בדוק את השטח. מצא איפה הפאנל דולף, אילו פערי תוכן קיימים, ואיפה אוטומציה יכולה להחליף עבודה ידנית." },
+      "plan": { "title": "תכנן", "description": "מפה את סדר הבנייה. הגדר מה יוצא השבוע, מה מצטבר לאורך זמן, ומה נחתך." },
+      "build": { "title": "בנה", "description": "שלח תשתית אמיתית. כתוב את הצנרת, כתוב את התוכן, חבר את האוטומציות. כל חלק חי במונורפו." },
+      "ship": { "title": "שלח", "description": "העלה לפרודקשן. כל commit עולה. כל פוסט מתפרסם. בלי גהינום של staging - בנה, בדוק, שלח." },
+      "compound": { "title": "צבור", "description": "תן לזה להצטבר. SEO מצטבר. ספריות תוכן גדלות. אוטומציות רצות בזמן שאתה ישן. המערכת מתחזקת כל יום." }
+    },
+    "darkInterlude": {
+      "title": "מונורפו אחד. הכל יוצא מפה.",
+      "subtitle": "שלושה אתרים. סוכני AI. צנרת תוכן. אוטומציית GTM. הכל בבקרת גרסאות."
+    },
+    "latestPosts": {
+      "headline": "פוסטים אחרונים",
+      "subtitle": "מה יצא לאחרונה",
+      "viewAll": "צפה בכל הפוסטים"
+    },
+    "latestLog": {
+      "headline": "יומן אחרון",
+      "subtitle": "יומן הבנייה של היום",
+      "viewAll": "צפה בכל היומנים"
+    },
+    "faq": {
+      "headline": "שאלות נפוצות",
+      "subtitle": "תשובות לשאלות נפוצות",
+      "q1": {
+        "question": "מה זה הנדסת GTM?",
+        "answer": "הנדסת GTM היא הפרקטיקה של בניית מערכות go-to-market בקוד. במקום ללחוץ בתוך CRM-ים וגיליונות, אתה כותב צנרת, מאטמט outbound, בונה תהליכי העשרה ומשלח מערכות תוכן - הכל בבקרת גרסאות וניתן להרכבה.",
+        "link": "חקור את ה-GTM playbook"
+      },
+      "q2": {
+        "question": "מה זה ShawnOS?",
+        "answer": "ShawnOS הוא מונורפו שמריץ את כל מערכת ההפעלה המקצועית שלי.",
+        "answerCont": "שלושה אתרים, מנוע התקדמות, סוכני AI, צנרת תוכן וכלי GTM - הכל בקוד אחד. זה ניסוי בניהול הקריירה שלך כמוצר תוכנה.",
+        "linkShowcase": "שלושה אתרים",
+        "linkRpg": "מנוע התקדמות"
+      },
+      "q3": {
+        "question": "למה לבנות בגלוי?",
+        "answer": "בנייה בגלוי הופכת את תהליך הלמידה שלך לתוכן, את ה-commits שלך להוכחת עבודה, ואת הכישלונות שלך לשיעורים שאחרים יכולים ללמוד מהם. זה מצטבר - כל פוסט, כל עדכון, כל פיצ'ר שיצא הוא ארטיפקט קבוע שבונה אמון לאורך זמן.",
+        "link": "ראה את יומן הבנייה"
+      },
+      "q4": {
+        "question": "על איזה סטאק זה רץ?",
+        "answer": "מונורפו TypeScript עם Next.js (3 אתרים על Vercel), Python לסקריפטים ויצירת תוכן, Claude AI לשכבת הסוכנים, ו-launchd crons לאוטומציה. הכל יוצא מרפו git אחד.",
+        "link": "ראה את הסטאק המלא"
+      },
+      "q5": {
+        "question": "אפשר להשתמש בגישה הזו לקריירה שלי?",
+        "answer": "בהחלט. הרעיון המרכזי - תתייחס לקריירה שלך כמוצר, שלח ארטיפקטים כל יום, אוטמט מה שאפשר, ותן להכל להצטבר - עובד לכל תחום. אתה לא צריך את הסטאק הזה בדיוק. אתה צריך את הגישה של פלט שיטתי ונראה.",
+        "link": "התחל לבנות"
+      },
+      "q6": {
+        "question": "מה זה מנוע ההתקדמות?",
+        "answer": "שכבת גיימיפיקציה שעוקבת אחרי פלט יומי אמיתי - פוסטים בבלוג, commits של קוד, פיצ'רים שיצאו - וממירה אותם ל-XP. אתה מתקדם דרך 11 דרגות עם אווטרים בפיקסל ארט שמתפתחים. זה לא דקורטיבי - זה משקף עבודה אמיתית.",
+        "link": "ראה את הדרגות"
+      }
+    },
+    "caseStudies": {
+      "headline": "מקרי בוחן",
+      "subtitle": "פרויקטים נבחרים מהמונורפו",
+      "threeSiteNetwork": { "title": "רשת שלושת האתרים", "description": "מונורפו אחד שמניע את ShawnOS.ai, theGTMOS.ai ו-theContentOS.ai. רכיבים משותפים, שכבת נתונים משותפת, העלאות עצמאיות." },
+      "aiContentPipeline": { "title": "צנרת תוכן AI", "description": "יצירת בלוגים אוטומטית עם Claude + מחקר מילות מפתח SEO + פרסום אוטומטי. רץ על cron יומי, כותב טיוטות לבדיקה אנושית." },
+      "progressionEngine": { "title": "מנוע התקדמות", "description": "מערכת RPG ב-11 דרגות שהופכת פלט עבודה אמיתי למשחק. אווטרים בפיקסל ארט מתפתחים על בסיס XP שנצבר מ-commits ותוכן יומי." },
+      "missionControl": { "title": "חדר בקרה", "description": "דשבורד פנימי למעקב אחרי כל המערכות - סטטוס סוכנים, צנרת תוכן, מדדי SEO ותיאום צוות." }
+    },
+    "asHeardOn": "כפי שנשמע ב",
+    "allAppearances": "כל ההופעות",
+    "workTogether": {
+      "heading": "רוצה לעבוד ביחד?",
+      "bookCall": "קבע שיחה",
+      "textMe": "שלח הודעה",
+      "evaluateStack": "הערך את סטאק ה-GTM שלך"
+    },
+    "systemStatus": {
+      "heading": "סטטוס מערכת",
+      "allOperational": "> all systems operational_",
+      "bootLines": {
+        "contentEngine": "content engine ... online",
+        "threeSiteNetwork": "three-site network ... synced",
+        "gtmEngine": "gtm engine ... theGTMOS.ai",
+        "contentOs": "content os ... theContentOS.ai",
+        "cursorAgent": "cursor agent ... active",
+        "blogPipeline": "blog pipeline ... mounted",
+        "buildInPublic": "build-in-public mode ... engaged",
+        "dailyTracker": "daily tracker ... streaming"
+      }
+    },
+    "builtWith": { "label": "נבנה עם", "fullStack": "סטאק מלא" },
+    "chooseYourPath": {
+      "heading": "בחר את הנתיב שלך",
+      "contentSystems": { "label": "בונה מערכות תוכן?", "text": "theContentOS.ai" },
+      "gtmPipelines": { "label": "בונה צנרת GTM?", "text": "theGTMOS.ai" },
+      "stackAudit": { "label": "צריך הערכת סטאק GTM?", "text": "קבל הערכה" },
+      "readBlog": { "label": "רוצה לראות איך זה עובד?", "text": "קרא את הבלוג" },
+      "showcase": { "label": "רוצה לראות את הרכיבים?", "text": "תצוגה" }
+    },
+    "liveUpdates": {
+      "showUpdates": "הצג עדכונים",
+      "dismissUpdates": "סגור עדכונים",
+      "updatesHeading": "עדכונים",
+      "minimize": "מזער",
+      "updateCount": "עדכון {count}",
+      "updateCountPlural": "{count} עדכונים"
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "אודות",
+      "description": "מהנדס GTM. בונה. נשלח ממונורפו. מערכת ההפעלה מאחורי shawnos.ai.",
+      "ogTitle": "אודות | shawnos.ai",
+      "ogDescription": "מהנדס GTM. בונה. נשלח ממונורפו."
+    },
+    "hero": {
+      "title": "אודות",
+      "titleAccent": "Shawn Tenam",
+      "subtitle": "מהנדס GTM. בונה. נשלח ממונורפו."
+    },
+    "identity": {
+      "headline": "זהות",
+      "subtitle": "מי בונה את זה",
+      "paragraph": "אני בונה צנרת AI-native, תהליכי עבודה מונחי סוכנים ומערכות תוכן שמצטברות. כל מיומנות, כל פוסט, כל קמפיין רץ דרך קוד אחד. האתר שאתה בו עכשיו הוא הוכחת העבודה."
+    },
+    "techStack": {
+      "headline": "סטאק טכנולוגי",
+      "subtitle": "הכלים מאחורי המערכת",
+      "categories": { "framework": "פריימוורק", "infrastructure": "תשתית", "aiMedia": "AI ומדיה" },
+      "items": {
+        "nextjs": { "label": "Next.js", "description": "פריימוורק React מלא" },
+        "react": { "label": "React", "description": "ספריית רכיבי UI" },
+        "typescript": { "label": "TypeScript", "description": "JavaScript עם טיפוסים לבטיחות" },
+        "tailwind": { "label": "Tailwind", "description": "עיצוב CSS מבוסס utility" },
+        "vercel": { "label": "Vercel", "description": "פלטפורמת העלאה על ה-edge" },
+        "turborepo": { "label": "Turborepo", "description": "מנהל בנייה למונורפו" },
+        "cloudflare": { "label": "Cloudflare", "description": "ניהול CDN ו-DNS" },
+        "sqlite": { "label": "SQLite", "description": "שמירת נתונים מקומית" },
+        "remotion": { "label": "Remotion", "description": "מנוע וידאו פרוגרמטי" },
+        "claude": { "label": "Claude (AI)", "description": "מנוע חשיבה וקוד" }
+      }
+    },
+    "network": {
+      "headline": "הרשת",
+      "subtitle": "שלושה אתרים, מונורפו אחד",
+      "description": "shawnos.ai הוא צומת אחד במערכת של שלושה אתרים. כל אתר מחזיק תחום בסטאק.",
+      "gtmos": { "label": "theGTMOS.ai", "description": "מערכת ההפעלה של GTM. פריימוורקים, playbooks ובניות חיות להנדסת go-to-market." },
+      "contentos": { "label": "theContentOS.ai", "description": "מערכת ההפעלה של תוכן. פרסום voice-first, צנרת שימוש חוזר ותוכן-כקוד." }
+    },
+    "connect": {
+      "headline": "התחבר",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "substack": "Substack",
+      "github": "GitHub"
+    },
+    "showcaseCta": {
+      "title": "ראה את הרכיבים בפעולה",
+      "description": "דמואים חיים של כל מערכת - ממשק טרמינל, אנימציות, מנוע RPG, יצירת וידאו.",
+      "button": "תצוגת רכיבים"
+    },
+    "arcCta": {
+      "title": "רוצה את הסיפור המלא?",
+      "description": "שרברב. SDR. מהנדס GTM. השכבות, התזה, ולמה שלושה דומיינים קיימים.",
+      "button": "קרא את הסיפור"
+    }
+  },
+  "AboutArc": {
+    "metadata": {
+      "title": "הסיפור",
+      "description": "שרברב. SDR. מהנדס GTM. הסיפור המלא מאחורי shawnos.ai ומערכת ההפעלה.",
+      "ogTitle": "הסיפור | shawnos.ai",
+      "ogDescription": "שרברב. SDR. מהנדס GTM. הסיפור המלא."
+    },
+    "hero": { "title": "הסיפור", "subtitle": "שרברב. SDR. מהנדס GTM." },
+    "intro": {
+      "line1": "לכל יוצר GTM יש את אותו עמוד אודות.",
+      "quote": "\"הייתי SDR. אז גיליתי את Clay. עכשיו אני מלמד אנשים איך להשתמש בזה.\"",
+      "line2": "יפה. הנה שלי.",
+      "line3": "רק שלי מתחיל עם צינור נחושת ולפיד."
+    },
+    "layers": {
+      "heading": "השכבות",
+      "description": "לא עברתי מ-SDR למהנדס GTM בקו ישר. עברתי דרך שלוש שכבות, וכל אחת שינתה את הדרך שבה אני חושב על בנייה.",
+      "whatItTaughtMe": "מה זה לימד אותי:",
+      "plumber": { "title": "שרברב", "subtitle": "שכבה 1", "body": "לפני טק, הייתי שרברב. לא מטאפורה. שרברבות אמיתית. אבחון בעיות דרך הקשבה לקירות, מעקב אחרי צינורות שאף אחד לא רצה לגעת בהם, תיקון מערכות תחת לחץ בלי תיעוד.", "lesson": "לכל מערכת יש לוגיקה. תעקוב אחרי הזרימה. אם משהו נשבר למעלה, הכל למטה נכשל. ואף אחד לא מעריך את התיקון עד שהמים מפסיקים לדלוף." },
+      "sdr": { "title": "SDR", "subtitle": "שכבה 2", "body": "200+ אימיילים קרים ביום. דומיינים ראשיים, בלי warmup, סדרות SalesLoft, רישום פעילות ב-Salesforce ביד. בניית ועדות רכישה מאפס בחשבונות שאף אחד לא רצה.", "lesson": "נפח הוא מורה. דחייה היא דאטה. והאנשים שטוחנים outbound ידנית הם אלה שבאמת מבינים מה צריך לאטמט אחר כך." },
+      "gtmEngineer": { "title": "מהנדס GTM", "subtitle": "שכבה 3", "body": "הפסקתי לעבוד בתוך המערכות והתחלתי לבנות אותן. טבלאות Clay, אוטומציית HubSpot, סדרות Instantly, תהליכי web reveal, צנרת העשרה. אותה עבודה שעשיתי ביד, עכשיו רצה על תשתית שאני תכננתי.", "lesson": "הבונים הטובים ביותר הם אלה שעשו את העבודה לפני שאוטמטו אותה. אתה לא יכול לתכנת מה שאתה לא מבין." },
+      "conclusion": "אף אחת מהשכבות האלה לא מגדירה אותי. כולן משחיזות את מה שאני שולח."
+    },
+    "thesis": {
+      "heading": "התזה",
+      "bold": "זה לא vibe coding.",
+      "p1": "אני לא שולח prompt אחד ומשלח מה שחוזר. אני משתמש ב-plan mode לפני שאני כותב שורה אחת. אני משתמש ב-ask mode כשמשהו נשבר. אני מריץ sub-agents לעבודה מקבילית. אני בודק, שובר דברים, קורא את השגיאה, מתקן, ושולח.",
+      "p2": "AI לא עושה את העבודה בשבילך. הוא מאיץ את העבודה שאתה כבר מבין.",
+      "p3": "כל עמוד באתר הזה עבר איטרציות, לא נוצר בפעם אחת. כל מיומנות עברה debug לפני שתועדה. כל תבנית קמפיין נבדקה על pipeline אמיתי לפני שהפכה ל-playbook.",
+      "p4": "לרפו יש מעל 400 קבצים. אפס מהם היו one-shot prompts."
+    },
+    "threeSites": {
+      "heading": "שלושה אתרים, מערכת אחת",
+      "description": "זה לא יהירות. זה ארכיטקטורה.",
+      "shawnos": { "name": "shawnos.ai", "description": "הבונה. מערכת ההפעלה האישית. מעקב יומי, התקדמות RPG, מערכת אווטרים, שכבת API. פה התשתית חיה." },
+      "gtmos": { "name": "thegtmos.ai", "description": "ה-playbook. פריימוורקים של הנדסת GTM, פירוקי תהליכים, ארכיטקטורות קמפיינים. המערכות מאחורי יצירת pipeline." },
+      "contentos": { "name": "thecontentos.ai", "description": "מנוע הקול. פרסום תוכן-כקוד, Voice DNA, צנרת שימוש חוזר. איך המילים נוצרות ולאן הן הולכות." },
+      "footer": "שלושה דומיינים. מונורפו אחד. כל עמוד, כל API route, כל תמונה מיוצרת מגיעים מאותו קוד. שום דבר פה הוא לא במקרה."
+    },
+    "buildWithMe": {
+      "heading": "בנה איתי",
+      "description": "זה לא פורטפוליו שמסתכלים עליו. זו מערכת שאפשר לעשות לה fork.",
+      "theApi": { "label": "ה-API", "description": "endpoints, סכמות, נתונים חיים" },
+      "questBoard": { "label": "לוח משימות", "description": "אתגרים לבונים" },
+      "buildYourOwn": { "label": "בנה משלך", "description": "ה-prompt ההתחלתי" },
+      "skillGuide": { "label": "מדריך מיומנויות", "description": "איך מערכת ה-RPG עובדת" }
+    },
+    "connect": {
+      "heading": "התחבר",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "substack": "Substack",
+      "github": "GitHub",
+      "backToAbout": "חזרה לאודות"
+    }
+  },
+  "Blog": {
+    "metadata": { "title": "בלוג", "description": "פוסטים מיומן הבנייה של shawnos.ai. הנדסת GTM, נבנה בגלוי." },
+    "hero": { "title": "בלוג", "subtitle": "פוסטים מיומן הבנייה." },
+    "emptyState": "לא נמצאו פוסטים. בדוק שוב בקרוב.",
+    "featured": "מומלץ",
+    "readMore": "קרא עוד",
+    "minRead": "{minutes} דקות קריאה",
+    "backToBlog": "חזרה לבלוג",
+    "toc": "$ toc"
+  },
+  "Media": {
+    "metadata": { "title": "מדיה | פודקאסטים, ראיונות והופעות", "description": "פודקאסטים, ראיונות, פאנלים והופעות דיבור של Shawn Tenam." },
+    "hero": { "title": "מדיה", "subtitle": "פודקאסטים, ראיונות והופעות" },
+    "stats": { "appearances": "הופעות", "platforms": "פלטפורמות", "latest": "אחרון" },
+    "sections": { "featured": "מומלצים", "allAppearances": "כל ההופעות" },
+    "categories": { "podcast": "PODCAST", "interview": "INTERVIEW", "panel": "PANEL", "speaking": "SPEAKING", "article": "ARTICLE" },
+    "backlink": { "heading": "למנחי פודקאסטים ומדיה:", "body": "קשרו חזרה ל-{url} בהערות התוכנית." },
+    "nav": { "home": "בית", "about": "אודות" }
+  },
+  "Method": {
+    "metadata": { "title": "השיטה", "description": "Recursive Drift. השיטה הלא-ליניארית לבנייה עם AI. שישה מצבים, בלי סדר קבוע, הפלט חוזר כקלט." },
+    "hero": { "title": "Recursive Drift", "subtitle": "השיטה הלא-ליניארית לבנייה עם AI." },
+    "intro": { "heading": "recursive drift.", "tagline": "השיטה הלא-ליניארית לבנייה עם AI." },
+    "states": {
+      "sectionTitle": "המצבים",
+      "sectionSubtitle": "מכונת מצבים עם לולאות משוב",
+      "inPractice": "בפרקטיקה:",
+      "freefall": { "name": "נפילה חופשית", "tag": "חקור" },
+      "plan": { "name": "תכנון", "tag": "גבש" },
+      "build": { "name": "בנייה", "tag": "האצל" },
+      "break": { "name": "שבירה", "tag": "הפנה" },
+      "ask": { "name": "שאלה", "tag": "חקור" },
+      "seed": { "name": "זריעה", "tag": "שתול" }
+    },
+    "recursive": { "sectionTitle": "רקורסיבי", "sectionSubtitle": "הפלט חוזר כקלט" },
+    "antiPatterns": { "sectionTitle": "מה זה לא" },
+    "contrasts": { "sectionTitle": "במה זה שונה" },
+    "paradox": { "sectionTitle": "הפרדוקס" },
+    "seeItRunning": {
+      "sectionTitle": "ראה את זה רץ",
+      "links": {
+        "fieldGuide": { "label": "מדריך שטח", "desc": "recursive drift מיושם על בדיקת פיצ'רי AI חדשים" },
+        "arc": { "label": "הסיפור", "desc": "איפה זה התחיל. שרברב, SDR, מהנדס GTM" },
+        "log": { "label": "היומן", "desc": "פלט יומי מהלולאה" },
+        "blog": { "label": "הבלוג", "desc": "תוכן ארוך שהמערכת הפיקה" },
+        "api": { "label": "ה-API", "desc": "endpoints, סכמות, נתונים חיים" }
+      }
+    },
+    "backToAbout": "חזרה לאודות"
+  },
+  "Knowledge": {
+    "metadata": { "title": "מדריך ידע | מונחי הנדסה ו-AI שבאמת צריך לדעת", "description": "Git, Vercel, סוכני AI, cron jobs, והמונחים הטכניים שצריך להכיר." },
+    "breadcrumb": "ידע",
+    "termPage": {
+      "notFoundMessage": "המונח לא נמצא. נסה את",
+      "notFoundLink": "מדריך הידע",
+      "sections": { "whyItMatters": "למה זה חשוב", "howYouUseIt": "איך אתה משתמש בזה", "howIUseIt": "איך אני משתמש בזה", "relatedTerms": "מונחים קשורים", "goDeeper": "צלול עמוק יותר" },
+      "nav": { "backToEngineering": "מדריך הנדסה ו-AI", "backToGtm": "מדריך ידע GTM", "allTerms": "כל המונחים" }
+    },
+    "guidePage": {
+      "toc": "בעמוד הזה",
+      "mobileToc": "תוכן עניינים",
+      "fieldLabels": { "whyItMatters": "למה זה חשוב", "howYouUseIt": "איך אתה משתמש בזה", "related": "קשור:" },
+      "outro": { "title": "ערכת הכלים של ה-vibe coder", "closingLine": "לך תבנה משהו.", "cta": { "title": "רוצה את הצד של GTM?", "buttonText": "מדריך ידע GTM OS" } },
+      "nav": { "left": "בית", "right": "מדריך GTM OS" }
+    }
+  },
+  "HowTo": {
+    "metadata": { "title": "ויקי מדריכים | המדריך של המתרגל לכלי AI", "description": "מדריכים צעד-אחר-צעד ל-Cursor IDE, Claude Code, שרתי MCP, סוכנים מקבילים, ניהול עלויות ואבטחת AI." },
+    "breadcrumb": { "knowledge": "ידע", "howToWiki": "ויקי מדריכים" },
+    "hubPage": {
+      "title": "ויקי מדריכים",
+      "description": "המדריך של המתרגל לכלי AI.",
+      "badge": "AI Engineering Practitioner",
+      "stats": { "guides": "מדריכים", "categories": "קטגוריות", "onThisSite": "באתר הזה" },
+      "mobileToc": "קטגוריות",
+      "toc": { "heading": "קטגוריות", "legend": "מקרא", "localEntry": "ערך מקומי", "crossSite": "חוצה אתרים" },
+      "nav": { "left": "מדריך ידע", "right": "Clay Wiki" }
+    },
+    "entryPage": {
+      "notFoundMessage": "הערך לא נמצא. נסה את",
+      "notFoundLink": "ויקי מדריכים",
+      "sectionTypes": { "pattern": "PATTERN", "code": "CODE", "antiPattern": "ANTI-PATTERN", "proTip": "PRO TIP", "formula": "FORMULA" },
+      "sections": { "relatedGuides": "מדריכים קשורים" },
+      "nav": { "left": "ויקי מדריכים", "right": "מדריך ידע" }
+    }
+  },
+  "ContextWiki": {
+    "metadata": { "title": "ויקי הנדסת קונטקסט | המדריך של המתרגל", "description": "המדריך של המתרגל להנדסת קונטקסט למהנדסי GTM." },
+    "hero": { "title": "הנדסת קונטקסט", "subtitle": "תן ל-AI את הקונטקסט הנכון. תפסיק לנחש." },
+    "stats": { "wikiEntries": "ערכי ויקי", "categories": "קטגוריות", "skillsBuilt": "מיומנויות שנבנו" },
+    "badge": "Context Engineer",
+    "nav": { "knowledgeGuide": "מדריך ידע", "clayWiki": "Clay Wiki" },
+    "entry": { "notFoundMessage": "הערך לא נמצא. נסה את", "notFoundLink": "ויקי קונטקסט", "relatedLabel": "ערכים קשורים", "navBackToWiki": "ויקי קונטקסט", "navToKnowledge": "מדריך ידע" },
+    "sectionTypes": { "pattern": "PATTERN", "code": "CODE", "antiPattern": "ANTI-PATTERN", "proTip": "PRO TIP", "formula": "FORMULA" }
+  },
+  "Search": {
+    "metadata": { "title": "חיפוש", "description": "חפש בכל התוכן ב-shawnos.ai." },
+    "hero": { "title": "חיפוש", "subtitle": "מצא כל דבר ב-shawnos.ai." },
+    "input": { "placeholder": "חפש הכל...", "clear": "נקה" },
+    "hint": { "startTyping": "התחל להקליד כדי למצוא כל דבר." },
+    "results": { "noResults": "אין תוצאות עבור \"{query}\"", "resultCount": "{count} תוצאות" },
+    "types": { "howTo": "מדריכים", "knowledge": "ידע", "contextWiki": "Context Wiki", "clayWiki": "Clay Wiki", "contentWiki": "Content Wiki", "blog": "בלוג", "dailyLog": "יומן יומי" }
+  },
+  "Updates": {
+    "metadata": { "title": "עדכונים אחרונים | מה חדש ב-ShawnOS.ai", "description": "כל מאמר חדש, ערך ויקי, פיצ'ר ועדכון מערכת ב-shawnos.ai." },
+    "hero": { "title": "עדכונים", "subtitle": "הכל מה שיצא, בפיד אחד." },
+    "stats": { "recentUpdates": "עדכונים אחרונים", "featuresShipped": "פיצ'רים שיצאו", "categories": "קטגוריות" },
+    "rss": { "badge": "RSS Feed" },
+    "sections": { "featuresAndLaunches": "פיצ'רים והשקות", "allContent": "כל התוכן" },
+    "featureTypes": { "launch": "LAUNCH", "feature": "FEATURE", "integration": "INTEGRATION", "infrastructure": "INFRA" },
+    "feed": { "all": "הכל", "searchPlaceholder": "חפש כותרות, תיאורים...", "clear": "נקה", "clearAll": "נקה הכל", "noResultsForQuery": "אין תוצאות עבור \"{query}\".", "noResultsForFilters": "אין תוצאות לפילטרים הנוכחיים.", "reset": "אפס" },
+    "nav": { "home": "בית", "rssFeed": "RSS feed" }
+  },
+  "Showcase": {
+    "metadata": { "title": "תצוגת רכיבים", "description": "דמואים חיים של רכיבי React, מערכות אנימציה ומנוע ה-RPG שמניעים את shawnos.ai." },
+    "hero": { "title": "תצוגה", "subtitle": "דמואים חיים של כל מערכת." },
+    "terminalUi": { "title": "terminal-ui", "description": "עיצוב טרמינל מותאם אישית שמשמש בכל העמודים." },
+    "animationSystem": { "title": "animation-system", "description": "שני פרימיטיבים של אנימציה ב-React טהור." },
+    "rpgEngine": { "title": "rpg-progression-engine", "description": "XP נצבר מעבודה יומית אמיתית." },
+    "videoGeneration": { "title": "video-generation", "description": "40+ קומפוזיציות Remotion." },
+    "contentPipeline": { "title": "content-pipeline", "description": "קבצי Markdown הופכים לפוסטים בבלוג, דפי ויקי ופידי RSS בזמן בנייה." },
+    "cta": { "headline": "נבנה בגלוי. כל commit נעקב.", "description": "עקוב אחרי היומן היומי כדי לראות איך כל מערכת נבנית.", "readTheLog": "קרא את היומן", "about": "אודות" }
+  },
+  "Log": {
+    "metadata": { "title": "יומן בנייה יומי", "description": "יומן בנייה יומי ממערכת ההפעלה של GTM." },
+    "index": {
+      "heroTitle": "יומן בנייה",
+      "heroSubtitle": "הוכחת עבודה יומית.",
+      "viewProgression": "צפה בהתקדמות",
+      "exploreSkillGuide": "חקור את מדריך המיומנויות",
+      "buildYourOwnCTA": "רוצה לבנות משלך? קח את ה-prompt.",
+      "searchPlaceholder": "חפש לפי תאריך...",
+      "gradeFilterAll": "הכל",
+      "noLogsFound": "לא נמצאו יומנים. בדוק שוב בקרוב.",
+      "noLogsMatch": "אין יומנים שתואמים את הפילטר הנוכחי."
+    },
+    "detail": { "backToLogs": "חזרה ליומנים", "logNotFound": "לא נמצא יומן לתאריך {date}." },
+    "buildYourOwn": {
+      "metadata": { "title": "בנה מעקב יומי משלך", "description": "prompt להעתקה-הדבקה לבניית מעקב פעילות יומי AI-native משלך." },
+      "heroTitle": "בנה משלך", "heroSubtitle": "ה-prompt מאחורי הקבלות היומיות.",
+      "thePrompt": "ה-prompt", "copyPrompt": "העתק Prompt", "copied": "הועתק!", "backToLog": "חזרה ליומן"
+    },
+    "progression": {
+      "metadata": { "title": "התקדמות דמות", "description": "צמיחת XP, מגמות ציונים, מכפיל רצף, אבני דרך ויעילות טוקנים." },
+      "heroTitle": "התקדמות", "heroSubtitle": "XP, ציונים ולבלינג.", "backToLogs": "חזרה ליומנים",
+      "xpEarnedPerDay": "XP שנצבר ליום", "scoringLog": "יומן ניקוד",
+      "tableHeaders": { "date": "תאריך", "score": "ציון", "grade": "דרגה", "commits": "Commits" },
+      "currentClass": "קלאס נוכחי", "milestones": "אבני דרך", "tokenEfficiency": "יעילות טוקנים", "totalSpend": "הוצאה כוללת", "avgPerDay": "ממוצע/יום"
+    },
+    "quests": { "metadata": { "title": "לוח משימות | אתגרים לבונים", "description": "חמישה אתגרים לבניית מעקב יומי משלך ועוד." }, "heroTitle": "לוח משימות", "heroSubtitle": "אתגרים לבונים." },
+    "skillGuide": { "metadata": { "title": "מדריך מיומנויות | איך המעקב היומי עובד", "description": "סיפור המקור, פירוט הסטאק ומערכת התקדמות ה-RPG." }, "heroTitle": "מדריך מיומנויות", "heroSubtitle": "איך המעקב היומי עובד." }
+  },
+  "RPG": {
+    "metadata": { "title": "מנוע ההתקדמות | ShawnOS.ai", "description": "11 דרגות. 5 קלאסים. כל תואר נצבר דרך פלט יומי." },
+    "heroTitle": "מנוע התקדמות", "heroSubtitle": "XP מעבודה אמיתית. 11 דרגות. 5 קלאסים.",
+    "sections": { "tierProgression": "התקדמות דרגות", "classes": "קלאסים", "titleTable": "טבלת תארים" },
+    "tableHeaders": { "level": "רמה", "title": "תואר", "xpRequired": "XP נדרש", "avatarTier": "דרגת אווטר", "xpToNext": "XP לדרגה הבאה" },
+    "footer": { "seeHowEarned": "ראה איך הציון הזה נצבר" },
+    "reveal": { "clickToPreview": "לחץ לתצוגה מקדימה", "maxRank": "MAX RANK" },
+    "loading": { "systemLabel": "LOADING SYSTEM v1.0", "tapToStart": "הקש להתחלה" }
+  },
+  "Lab": {
+    "metadata": { "title": "Nio DNA Lab | ShawnOS.ai", "description": "אבולוציית סוכן AI בפעולה. צפה ב-Nio מתקדם דרך שימוש אמיתי." },
+    "bootLabel": "DNA LAB v1.0", "bootTap": "הקש להתחלה",
+    "header": { "title": "Nio DNA Lab", "subtitle": "אבולוציית סוכן AI בפעולה. נבנה על ידי המערכת שהוא מתאר." },
+    "sections": {
+      "roadmap": { "current": "נוכחי" },
+      "costs": { "claudeMax": "Claude Max", "apiSpend": "הוצאת API", "total": "סה\"כ:", "messages": "הודעות", "apiCost": "עלות API", "dailyCap": "מכסה יומית", "utilization": "ניצולת" }
+    },
+    "cta": { "readPost": "קרא את הפוסט המלא", "exploreMore": "חקור עוד" }
+  },
+  "Vitals": {
+    "metadata": { "title": "מדדי מערכת", "description": "סריקת מערכת חיה של אקוסיסטם האתרים של ShawnOS." },
+    "heroTitle": "מדדי מערכת", "heroSubtitle": "סריקת אקוסיסטם חיה.",
+    "scannerNotInit": "הסורק לא אותחל. הפעל website_scanner.py קודם.",
+    "nioTerminal": { "metadata": { "title": "nio.terminal - יומן פיתוח AI", "description": "תובנות יומיות מ-Nio, שומר האתר ה-AI." } },
+    "v2Lab": { "title": "מנוע התקדמות v2 Lab", "subtitle": "השוואת רפאים. ציונים מכוילים מחדש, מכפיל שרשרת עולה, ניקוד בונוס.", "labels": { "v1Current": "v1 - נוכחי (חי)", "v2Experimental": "v2 - ניסיוני" } }
+  },
+  "API": {
+    "metadata": { "title": "API ציבורי | ShawnOS.ai - פיד התקדמות RPG בזמן אמת", "description": "גש ל-XP החי, רמה ואבני דרך שלי דרך JSON." },
+    "heroTitle": "API ציבורי", "heroSubtitle": "פיד התקדמות בזמן אמת.",
+    "copyButton": "העתק",
+    "sections": { "quickStart": "התחלה מהירה", "responseSchema": "סכמת תגובה", "useCases": "מקרי שימוש", "howItWorks": "איך המערכת הזו עובדת", "buildYourOwn": "בנה משלך", "aboutShawnOS": "על ShawnOS", "relatedResources": "משאבים קשורים" },
+    "quickStart": { "curl": "cURL", "jsFetch": "JavaScript (fetch)", "python": "Python" },
+    "useCases": {
+      "embedStats": { "title": "הטמע סטטיסטיקות חיות", "description": "הצג XP ורמה בזמן אמת בפורטפוליו שלך" },
+      "discordBot": { "title": "בוט Discord", "description": "בנה בוט שעוקב אחרי התקדמות" },
+      "twitterAutomation": { "title": "אוטומציית Twitter", "description": "ציוץ אוטומטי כשמושגות אבני דרך" },
+      "studyArchitecture": { "title": "למד את הארכיטקטורה", "description": "בחן איך מערכת RPG בזמן אמת בנויה" }
+    },
+    "buildYourOwn": {
+      "steps": {
+        "dataPipeline": { "title": "1. צנרת נתונים", "description": "סרוק את מקורות העבודה שלך וחשב ציונים" },
+        "persistenceLayer": { "title": "2. שכבת שמירה", "description": "כתוב סטטיסטיקות לקובץ JSON ציבורי" },
+        "apiEndpoint": { "title": "3. API Endpoint", "description": "חשוף דרך API ציבורי עם CORS וקאשינג" },
+        "frontendDisplay": { "title": "4. תצוגת Frontend", "description": "בנה רכיבי UI שמציגים את הנתונים" }
+      },
+      "toolStack": "סטאק כלים"
+    },
+    "resources": {
+      "homepage": { "title": "דף הבית של ShawnOS.ai", "description": "עמוד נחיתה ראשי ודשבורד RPG" },
+      "github": { "title": "GitHub Repository", "description": "קוד מקור מלא ותיעוד" },
+      "rpgEngine": { "title": "מנוע התקדמות RPG", "description": "פירוט ויזואלי של תארים, דרגות ואבני דרך" }
+    }
+  }
+}
