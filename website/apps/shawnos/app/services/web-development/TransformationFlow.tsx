@@ -57,21 +57,21 @@ const stepIcons = [ClockIcon, MagnifyIcon, TerminalIcon, ShieldCheckIcon, TrendU
 const steps = [
   {
     label: 'Slow WordPress',
-    detail: '4.2s LCP',
+    detail: '4.2s load time',
     color: '#E05555',
   },
   {
     label: 'Performance Audit',
-    detail: 'Core Web Vitals Scan',
+    detail: 'Speed & performance check',
     color: 'var(--text-secondary)',
   },
   {
     label: 'Next.js Rebuild',
-    detail: 'SSR + Edge Deploy',
+    detail: 'Fast, secure hosting',
     color: 'var(--accent)',
   },
   {
-    label: 'Core Web Vitals: PASS',
+    label: 'Google Approved',
     detail: '95+ PageSpeed',
     color: 'var(--accent)',
   },

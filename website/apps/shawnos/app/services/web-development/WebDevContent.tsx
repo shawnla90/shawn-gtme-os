@@ -7,13 +7,14 @@ import {
   StaggerItem,
   MagneticHover,
   ScrollRevealSection,
-  ProcessSteps,
-  DotGrid,
+  GraphGrid,
   DashedCard,
   DarkInterlude,
 } from '@shawnos/shared/components'
 import { TransformationFlow } from './TransformationFlow'
 import { NotRightFit } from './NotRightFit'
+import { InteractiveSteps } from './InteractiveSteps'
+import { TechStackProof } from './TechStackProof'
 
 /* ── SVG Icons for deliverables ── */
 
@@ -83,101 +84,140 @@ const deliverableIcons = [LayersIcon, LightningIcon, SearchPlusIcon, UsersIcon, 
 const pricingTiers = [
   {
     name: 'Foundation',
-    price: '$4,500',
+    price: '$3,500',
     tag: 'Get Started',
+    timeline: '1-2 weeks',
+    supportPeriod: '1 month',
     features: [
-      '5-8 page Next.js site',
+      '5-7 page custom website',
       'Mobile-optimized responsive design',
       'Service area pages',
-      'Lead capture form',
+      'Lead capture forms',
       'Google Business Profile setup',
       'Reviews section',
       'Basic SEO + sitemap',
-      '1 month support',
     ],
   },
   {
     name: 'Growth',
-    price: '$6,500',
-    tag: 'Recommended',
+    price: '$5,500',
+    tag: 'Most Popular',
     recommended: true,
+    timeline: '2-3 weeks',
+    supportPeriod: '3 months',
     features: [
       'Everything in Foundation',
+      '8-12 pages',
+      'English + Spanish (bilingual)',
       'AI chatbot integration',
       'Booking system',
-      'Email automation setup',
       'Content strategy (3 blog posts)',
-      'Analytics + conversion tracking',
-      '3 months support',
+      'Analytics dashboard',
     ],
   },
   {
     name: 'Dominance',
     price: '$8,500',
     tag: 'Full Package',
+    timeline: '3-4 weeks',
+    supportPeriod: '6 months',
     features: [
       'Everything in Growth',
-      'Local SEO audit + optimization',
-      'Schema markup for rich results',
-      'Multi-location support',
+      '12-20 pages',
+      '3+ languages supported',
+      'Full SEO audit + schema markup',
+      'Analytics dashboard + monthly reports',
       'Google Ads consultation',
       'Competitor analysis report',
-      '6 months support',
     ],
   },
 ]
 
 const vitalsComparison = [
-  { metric: 'LCP (Largest Contentful Paint)', wordpress: 4.2, nextjs: 1.1, unit: 's', threshold: 2.5, lower: true },
-  { metric: 'INP (Interaction to Next Paint)', wordpress: 380, nextjs: 85, unit: 'ms', threshold: 200, lower: true },
-  { metric: 'CLS (Cumulative Layout Shift)', wordpress: 0.25, nextjs: 0.02, unit: '', threshold: 0.1, lower: true },
+  {
+    metric: 'Page Load Speed',
+    techName: 'LCP (Largest Contentful Paint)',
+    wordpress: 4.2,
+    nextjs: 1.1,
+    unit: 's',
+    threshold: 2.5,
+    lower: true,
+    whatItIs: 'How fast your page loads. Google penalizes anything over 2.5 seconds.',
+    whatItMeans: 'WordPress makes customers wait 4+ seconds. Ours loads in about 1 second.',
+  },
+  {
+    metric: 'Button Response Time',
+    techName: 'INP (Interaction to Next Paint)',
+    wordpress: 380,
+    nextjs: 85,
+    unit: 'ms',
+    threshold: 200,
+    lower: true,
+    whatItIs: 'How fast buttons respond when tapped. Google penalizes anything over 200ms.',
+    whatItMeans: 'On WordPress, tapping "Call Now" feels like nothing happened. Ours responds instantly.',
+  },
+  {
+    metric: 'Layout Stability',
+    techName: 'CLS (Cumulative Layout Shift)',
+    wordpress: 0.25,
+    nextjs: 0.02,
+    unit: '',
+    threshold: 0.1,
+    lower: true,
+    whatItIs: 'Does the page jump around while loading? Google penalizes scores over 0.1.',
+    whatItMeans: 'WordPress shifts content as plugins load. Ours locks everything in place.',
+  },
 ]
 
 const deliverables = [
   { title: 'Custom Design', desc: 'No templates. Designed around your business, your brand, your customers.' },
-  { title: 'Performance-First', desc: 'Sub-1-second load times. Every page optimized for Core Web Vitals.' },
+  { title: 'Performance-First', desc: 'Sub-1-second load times. Every page optimized for speed and search rankings.' },
   { title: 'SEO Built In', desc: 'Structured data, meta tags, sitemaps, Google Business Profile - from day one.' },
   { title: 'Lead Capture', desc: 'Forms, booking systems, chatbots. Turn visitors into customers automatically.' },
   { title: 'Analytics Dashboard', desc: 'Know exactly what is working. Traffic, conversions, page performance - all tracked.' },
   { title: 'Ongoing Support', desc: 'We do not build and disappear. Every package includes post-launch support.' },
 ]
 
-const processSteps = [
-  { title: 'Free Site Audit', description: 'We run your current site through Google PageSpeed, check your Core Web Vitals, and show you exactly where you stand.' },
-  { title: 'Strategy Call', description: 'We talk about your business, your customers, and what your website needs to do. No jargon. Just a plan.' },
-  { title: 'Design & Build', description: 'We build your site in Next.js with your feedback at every stage. Most sites launch in 2-3 weeks.' },
-  { title: 'Launch & Optimize', description: 'We deploy to production, verify performance, and set up your analytics. You see the numbers from day one.' },
-  { title: 'Ongoing Support', description: 'We monitor, adjust, and improve. Your site keeps getting better after launch.' },
-]
-
 const faqItems = [
   {
-    q: 'How much does a website for a plumbing business cost?',
-    a: 'Our packages start at $4,500 for a 5-8 page Next.js site with mobile optimization, lead capture forms, and basic SEO. Most service businesses choose the Growth package at $6,500 which includes a booking system, analytics, and 3 months of support. The investment typically pays for itself within 1-2 months through new leads.',
+    q: 'How much does a website for a service business cost?',
+    a: 'Our packages start at $3,500 for a 5-7 page custom site with mobile optimization, lead capture forms, and basic SEO. Most service businesses choose the Growth package at $5,500 which adds a booking system, bilingual support, analytics, and 3 months of support. The investment typically pays for itself within 1-2 months through new leads.',
   },
   {
-    q: 'Why Next.js instead of WordPress?',
-    a: "WordPress sites average 4-6 seconds to load on mobile. Next.js sites load in under 1 second. After Google's February 2026 core update, page speed directly impacts your search rankings. A faster site means more visibility, more clicks, and more customers. Next.js also eliminates plugin vulnerabilities, requires no maintenance updates, and costs nothing to host on Vercel.",
+    q: 'Why not just use WordPress like everyone else?',
+    a: 'WordPress sites average 4-6 seconds to load on mobile. Our sites load in under 1 second. After Google\'s February 2026 core update, page speed directly impacts your search rankings. A faster site means more visibility, more clicks, and more customers. Our approach also eliminates plugin vulnerabilities, requires no maintenance updates, and costs nothing to host.',
   },
   {
-    q: 'How long does it take to build a website?',
-    a: 'Most projects launch within 2-3 weeks. Simple sites (Foundation package) can be ready in as little as 1 week. We start with a strategy call, then move through design and development with your feedback at every stage.',
+    q: 'How long does it take to build?',
+    a: 'Foundation sites launch in 1-2 weeks. Growth sites take 2-3 weeks. Dominance projects run 3-4 weeks. We start with a strategy call, then move through design and development with your feedback at every stage.',
   },
   {
-    q: 'Do I need to know how to code?',
-    a: 'No. We handle everything - design, development, deployment, and ongoing support. You focus on running your business. We build the site that brings you customers.',
+    q: 'Do I need to know anything about technology?',
+    a: 'No. We handle everything - design, development, hosting, and ongoing support. You focus on running your business. We build the site that brings you customers.',
   },
   {
-    q: 'What happens after my site launches?',
-    a: 'Every package includes support (1-6 months depending on tier). We monitor your Core Web Vitals, track conversion metrics, and make adjustments to improve performance. You get a dashboard showing exactly how your site is performing.',
+    q: 'What does "support" actually mean?',
+    a: 'During your support period, we monitor your site speed, fix any issues, make content updates, track your analytics, and optimize for better results. You can reach us directly for changes. It is not a call center - it is the same team that built your site.',
   },
   {
-    q: 'Can you help with Google Business Profile and local SEO?',
+    q: 'What happens after my support period ends?',
+    a: 'Your site keeps running exactly as it was. Hosting is free, so there are no ongoing costs unless you want them. You can upgrade to our Managed plan for ongoing optimization, or self-manage. The site is yours.',
+  },
+  {
+    q: 'Do you build sites in other languages?',
+    a: 'Yes. The Growth package includes bilingual support (English + Spanish). The Dominance package supports 3 or more languages. Every language gets its own optimized pages - not just a translation plugin.',
+  },
+  {
+    q: 'Can you help with Google Business Profile and local search?',
     a: 'Yes. The Foundation package includes Google Business Profile setup. The Dominance package includes a full local SEO audit, schema markup for rich search results, and multi-location support. We make sure Google understands exactly what you do and where you do it.',
   },
   {
-    q: 'What makes your approach different from other web developers?',
-    a: "Proof. Every site we build comes with measurable performance data - Core Web Vitals scores, load times, conversion tracking. We do not just build a pretty site and walk away. We build a site that performs, prove it with data, and keep optimizing. This page you are reading right now is built with the same technology and scores 95+ on Google PageSpeed.",
+    q: 'How much does ongoing management cost?',
+    a: 'Our Managed plan runs $500-$1,000/month depending on scope. It includes ongoing content updates, SEO optimization, analytics reporting, and priority support. Most businesses start with a build package and add Managed later once they see results.',
+  },
+  {
+    q: 'What makes you different from other web developers?',
+    a: 'Proof. Every site we build comes with measurable performance data - load times, search rankings, conversion tracking. We do not just build a site and walk away. We build a site that performs, prove it with data, and keep optimizing. This page you are reading right now is built with the same technology.',
   },
 ]
 
@@ -294,9 +334,16 @@ function PerformanceGauge({
         marginTop: 4,
         fontFamily: 'var(--font-mono)',
       }}>
-        {pass ? 'PASS' : 'FAIL'}
+        {pass ? 'GOOD' : 'NEEDS WORK'}
       </div>
-      <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>{label}</div>
+      <div style={{
+        fontSize: 10,
+        color: 'var(--text-muted)',
+        marginTop: 2,
+      }}>
+        {pass ? 'Meets Google\'s standard' : 'Google may lower your ranking'}
+      </div>
+      <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4, fontWeight: 600 }}>{label}</div>
     </div>
   )
 }
@@ -319,7 +366,7 @@ export function WebDevContent() {
         position: 'relative',
         background: 'radial-gradient(ellipse at 50% 0%, var(--canvas-warm-subtle) 0%, var(--canvas) 70%)',
       }}>
-        <DotGrid opacity={0.3} />
+        <GraphGrid opacity={0.15} />
 
         <MotionReveal>
           <p style={{
@@ -331,7 +378,7 @@ export function WebDevContent() {
             marginBottom: 24,
             fontFamily: 'var(--font-mono)',
           }}>
-            WEB DEVELOPMENT SERVICES
+            WEB DEVELOPMENT FOR SERVICE BUSINESSES
           </p>
         </MotionReveal>
 
@@ -345,7 +392,8 @@ export function WebDevContent() {
             marginBottom: 8,
             maxWidth: 800,
           }}>
-            Does Your Website Have Proof?
+            Your Website Looks Fine.{' '}
+            <span style={{ display: 'block' }}>It&apos;s Losing You Money.</span>
           </h1>
         </MotionReveal>
 
@@ -357,7 +405,7 @@ export function WebDevContent() {
             lineHeight: 1.2,
             marginBottom: 24,
           }}>
-            Ours Does.
+            We can prove it.
           </p>
         </MotionReveal>
 
@@ -369,7 +417,7 @@ export function WebDevContent() {
             lineHeight: 1.7,
             marginBottom: 40,
           }}>
-            Websites that load in under 1 second, rank on Google, and show you exactly what&apos;s working. Every metric tracked. Every result proven.
+            Most service business websites load too slow, rank too low, and track nothing. We build sites that load in under 1 second, show up on Google, and tell you exactly where your next customer came from.
           </p>
         </MotionReveal>
 
@@ -395,7 +443,7 @@ export function WebDevContent() {
             </MagneticHover>
             <MagneticHover>
               <a
-                href="https://cal.com/shawntenam"
+                href="https://cal.com/shawn-lead-alchemy/30min?overlayCalendar=true"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -413,6 +461,15 @@ export function WebDevContent() {
                 Get a Free Site Audit
               </a>
             </MagneticHover>
+          </div>
+          <div style={{ marginTop: 16, fontSize: 13, color: 'var(--text-muted)' }}>
+            or text us at{' '}
+            <a
+              href="sms:+13474520467"
+              style={{ color: 'var(--text-secondary)', textDecoration: 'none', borderBottom: '1px dashed var(--border-dashed)' }}
+            >
+              (347) 452-0467
+            </a>
           </div>
         </MotionReveal>
 
@@ -433,7 +490,7 @@ export function WebDevContent() {
 
       {/* ── 2. TransformationFlow ── */}
       <section style={{ position: 'relative', backgroundColor: 'var(--canvas-subtle)' }}>
-        <DotGrid opacity={0.25} />
+        <GraphGrid opacity={0.12} />
         <TransformationFlow />
       </section>
 
@@ -459,7 +516,7 @@ export function WebDevContent() {
               { stat: '0', label: 'Analytics on most small business sites' },
             ].map((item) => (
               <MotionReveal key={item.label}>
-                <DashedCard warm style={{ textAlign: 'center', borderLeft: '3px solid var(--accent)' }}>
+                <DashedCard warm style={{ textAlign: 'center', borderLeft: '3px solid var(--accent)', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <div style={{
                     fontSize: 'clamp(28px, 4vw, 40px)',
                     fontWeight: 800,
@@ -504,13 +561,13 @@ export function WebDevContent() {
 
       <SectionDivider />
 
-      {/* ── 5. Performance Comparison ── */}
+      {/* ── 5. Performance Comparison - Three Column ── */}
       <ScrollRevealSection>
-        <div style={{ maxWidth: 900, margin: '0 auto', padding: '80px 24px', position: 'relative' }}>
-          <DotGrid opacity={0.2} />
+        <div style={{ maxWidth: 1000, margin: '0 auto', padding: '80px 24px', position: 'relative' }}>
+          <GraphGrid opacity={0.1} />
           <SectionHeadline>WordPress vs Next.js</SectionHeadline>
           <SectionSub>
-            Real Core Web Vitals benchmarks. Not marketing claims - measurable performance.
+            Real performance benchmarks. Not marketing claims - measurable results that affect your Google ranking.
           </SectionSub>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 48 }}>
@@ -518,30 +575,70 @@ export function WebDevContent() {
               <MotionReveal key={v.metric}>
                 <div>
                   <div style={{
-                    fontSize: 14,
-                    color: 'var(--text-secondary)',
-                    marginBottom: 20,
-                    fontWeight: 600,
+                    fontSize: 16,
+                    color: 'var(--text-primary)',
+                    marginBottom: 4,
+                    fontWeight: 700,
                     textAlign: 'center',
                   }}>
                     {v.metric}
                   </div>
+                  <div style={{
+                    fontSize: 12,
+                    color: 'var(--text-muted)',
+                    marginBottom: 20,
+                    textAlign: 'center',
+                    fontFamily: 'var(--font-mono)',
+                  }}>
+                    {v.techName}
+                  </div>
 
-                  <div className="gauge-row" style={{ display: 'flex', justifyContent: 'center', gap: 40 }}>
-                    <PerformanceGauge
-                      value={v.wordpress}
-                      maxValue={v.wordpress * 1.2}
-                      label="WordPress"
-                      pass={false}
-                      unit={v.unit}
-                    />
-                    <PerformanceGauge
-                      value={v.nextjs}
-                      maxValue={v.wordpress * 1.2}
-                      label="Next.js"
-                      pass={true}
-                      unit={v.unit}
-                    />
+                  <div className="vitals-row">
+                    {/* Left: What it is */}
+                    <div className="vitals-context" style={{
+                      fontSize: 13,
+                      color: 'var(--text-secondary)',
+                      lineHeight: 1.6,
+                      padding: '12px 16px',
+                      backgroundColor: 'var(--canvas-subtle)',
+                      borderRadius: 8,
+                      border: '1px dashed var(--border-dashed)',
+                    }}>
+                      <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>What it is</div>
+                      {v.whatItIs}
+                    </div>
+
+                    {/* Center: Gauges */}
+                    <div className="gauge-row" style={{ display: 'flex', justifyContent: 'center', gap: 24 }}>
+                      <PerformanceGauge
+                        value={v.wordpress}
+                        maxValue={v.wordpress * 1.2}
+                        label="WordPress"
+                        pass={false}
+                        unit={v.unit}
+                      />
+                      <PerformanceGauge
+                        value={v.nextjs}
+                        maxValue={v.wordpress * 1.2}
+                        label="Next.js"
+                        pass={true}
+                        unit={v.unit}
+                      />
+                    </div>
+
+                    {/* Right: What it means */}
+                    <div className="vitals-context" style={{
+                      fontSize: 13,
+                      color: 'var(--text-secondary)',
+                      lineHeight: 1.6,
+                      padding: '12px 16px',
+                      backgroundColor: 'var(--canvas-subtle)',
+                      borderRadius: 8,
+                      border: '1px dashed var(--border-dashed)',
+                    }}>
+                      <div style={{ fontSize: 11, fontWeight: 600, color: 'var(--accent)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>What it means for you</div>
+                      {v.whatItMeans}
+                    </div>
                   </div>
                 </div>
               </MotionReveal>
@@ -601,28 +698,29 @@ export function WebDevContent() {
 
       <SectionDivider />
 
-      {/* ── 7. How It Works ── */}
+      {/* ── 7. How It Works - Interactive Accordion ── */}
       <ScrollRevealSection style={{ position: 'relative' }}>
-        <DotGrid opacity={0.2} />
-        <div style={{ maxWidth: 800, margin: '0 auto', padding: '80px 24px' }}>
+        <GraphGrid opacity={0.1} />
+        <div style={{ maxWidth: 700, margin: '0 auto', padding: '80px 24px' }}>
           <SectionHeadline>How It Works</SectionHeadline>
           <SectionSub>
-            From first call to live site in 2-3 weeks. Here is the process.
+            From first call to live site in 1-4 weeks. Here is the process.
           </SectionSub>
-          <ProcessSteps steps={processSteps} />
+          <InteractiveSteps />
         </div>
       </ScrollRevealSection>
 
       <SectionDivider />
 
-      {/* ── 8. Pricing ── */}
+      {/* ── 8. Pricing - 4 Tiers ── */}
       <ScrollRevealSection style={{ backgroundColor: 'var(--canvas-subtle)' }}>
         <div id="pricing" style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 24px' }}>
           <SectionHeadline>Pricing</SectionHeadline>
           <SectionSub>
-            Transparent pricing. No surprises. Every package includes deployment, analytics, and support.
+            Transparent pricing. No surprises. Every package includes deployment, hosting, and support.
           </SectionSub>
 
+          {/* 3-column grid for first 3 tiers */}
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
@@ -672,19 +770,27 @@ export function WebDevContent() {
                       textTransform: 'uppercase',
                       letterSpacing: '0.04em',
                     }}>
-                      Recommended
+                      Most Popular
                     </div>
                   )}
 
+                  {/* Timeline badge */}
                   <div style={{
-                    fontSize: 12,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    padding: '3px 10px',
+                    borderRadius: 20,
+                    backgroundColor: 'var(--canvas-subtle)',
+                    border: '1px dashed var(--border-dashed)',
+                    fontSize: 11,
+                    fontWeight: 600,
                     color: 'var(--text-muted)',
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.08em',
-                    marginBottom: 8,
                     fontFamily: 'var(--font-mono)',
+                    marginBottom: 12,
+                    alignSelf: 'flex-start',
                   }}>
-                    {tier.tag}
+                    {tier.timeline}
                   </div>
 
                   <div style={{
@@ -701,7 +807,7 @@ export function WebDevContent() {
                     fontSize: 'clamp(28px, 4vw, 36px)',
                     fontWeight: 700,
                     color: 'var(--accent)',
-                    marginBottom: 24,
+                    marginBottom: 16,
                     fontFamily: 'var(--font-mono)',
                   }}>
                     {tier.price}
@@ -729,16 +835,29 @@ export function WebDevContent() {
                     ))}
                   </ul>
 
+                  {/* Support explanation */}
+                  <div style={{
+                    fontSize: 12,
+                    color: 'var(--text-muted)',
+                    marginTop: 16,
+                    lineHeight: 1.5,
+                    padding: '8px 12px',
+                    backgroundColor: 'var(--canvas-subtle)',
+                    borderRadius: 6,
+                  }}>
+                    <strong>{tier.supportPeriod} support included.</strong> After that, your site keeps running - upgrade to Managed or self-manage.
+                  </div>
+
                   <MagneticHover>
                     <a
-                      href="https://cal.com/shawntenam"
+                      href="https://cal.com/shawn-lead-alchemy/30min?overlayCalendar=true"
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
                         display: 'block',
                         textAlign: 'center',
                         padding: '14px 24px',
-                        marginTop: 24,
+                        marginTop: 16,
                         backgroundColor: tier.recommended ? 'var(--accent)' : 'transparent',
                         color: tier.recommended ? 'var(--text-on-accent)' : 'var(--accent)',
                         border: tier.recommended ? 'none' : '1px solid var(--accent)',
@@ -756,39 +875,108 @@ export function WebDevContent() {
               </MotionReveal>
             ))}
           </div>
+
+          {/* Managed tier - full width */}
+          <MotionReveal>
+            <DashedCard style={{
+              marginTop: 24,
+              padding: 32,
+              borderTop: '3px solid var(--accent)',
+            }}>
+              <div className="managed-tier-inner">
+                <div style={{ flex: 1 }}>
+                  <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 4,
+                    padding: '3px 10px',
+                    borderRadius: 20,
+                    backgroundColor: 'var(--canvas-subtle)',
+                    border: '1px dashed var(--border-dashed)',
+                    fontSize: 11,
+                    fontWeight: 600,
+                    color: 'var(--text-muted)',
+                    fontFamily: 'var(--font-mono)',
+                    marginBottom: 12,
+                  }}>
+                    After any package
+                  </div>
+
+                  <div style={{
+                    fontSize: 'clamp(24px, 3vw, 32px)',
+                    fontWeight: 800,
+                    color: 'var(--text-primary)',
+                    marginBottom: 4,
+                    letterSpacing: '-0.02em',
+                  }}>
+                    Managed
+                  </div>
+                  <div style={{
+                    fontSize: 'clamp(20px, 3vw, 28px)',
+                    fontWeight: 700,
+                    color: 'var(--accent)',
+                    marginBottom: 16,
+                    fontFamily: 'var(--font-mono)',
+                  }}>
+                    $500-$1,000<span style={{ fontSize: 14, color: 'var(--text-muted)', fontWeight: 400 }}>/month</span>
+                  </div>
+                  <p style={{
+                    fontSize: 14,
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.7,
+                    maxWidth: 500,
+                    margin: 0,
+                  }}>
+                    Ongoing content updates, SEO optimization, monthly analytics reports, priority support, and Google Ads management. The same team that built your site keeps improving it.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 12, justifyContent: 'center', alignItems: 'flex-start' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                    {['Ongoing content updates', 'SEO optimization', 'Monthly performance reports', 'Priority support', 'Google Ads included'].map((f) => (
+                      <div key={f} style={{ fontSize: 13, color: 'var(--text-secondary)', display: 'flex', gap: 8, alignItems: 'center' }}>
+                        <span style={{ color: 'var(--accent)', fontWeight: 600 }}>+</span>
+                        {f}
+                      </div>
+                    ))}
+                  </div>
+                  <MagneticHover>
+                    <a
+                      href="https://cal.com/shawn-lead-alchemy/30min?overlayCalendar=true"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-block',
+                        padding: '14px 32px',
+                        backgroundColor: 'var(--accent)',
+                        color: 'var(--text-on-accent)',
+                        borderRadius: 8,
+                        fontWeight: 600,
+                        fontSize: 14,
+                        textDecoration: 'none',
+                        transition: 'transform 0.15s',
+                        marginTop: 8,
+                      }}
+                    >
+                      Book a Call
+                    </a>
+                  </MagneticHover>
+                </div>
+              </div>
+            </DashedCard>
+          </MotionReveal>
         </div>
       </ScrollRevealSection>
 
       <SectionDivider />
 
-      {/* ── 9. Meta Proof ── */}
+      {/* ── 9. This Page Is the Proof - Tech Stack ── */}
       <ScrollRevealSection>
         <div style={{ maxWidth: 700, margin: '0 auto', padding: '80px 24px' }}>
           <SectionHeadline>This Page Is the Proof</SectionHeadline>
           <SectionSub>
-            You are looking at a site built with the same technology we use for every client. Run it through Google PageSpeed yourself.
+            You are looking at a site built with the same tools we use for every client.
           </SectionSub>
-
-          <MotionReveal>
-            <div style={{
-              backgroundColor: 'var(--canvas-subtle)',
-              border: '1px solid var(--border)',
-              borderRadius: 12,
-              padding: 24,
-              fontFamily: 'var(--font-mono)',
-              fontSize: 13,
-              lineHeight: 2,
-            }}>
-              <div style={{ color: 'var(--text-muted)', marginBottom: 8 }}>$ performance-check --this-page</div>
-              <div><span style={{ color: 'var(--accent)' }}>[PASS]</span> <span style={{ color: 'var(--text-secondary)' }}>framework:</span> <span style={{ color: 'var(--text-primary)' }}>Next.js 15</span></div>
-              <div><span style={{ color: 'var(--accent)' }}>[PASS]</span> <span style={{ color: 'var(--text-secondary)' }}>hosting:</span> <span style={{ color: 'var(--text-primary)' }}>Vercel Edge Network</span></div>
-              <div><span style={{ color: 'var(--accent)' }}>[PASS]</span> <span style={{ color: 'var(--text-secondary)' }}>LCP:</span> <span style={{ color: 'var(--text-primary)' }}>&lt; 1.0s</span></div>
-              <div><span style={{ color: 'var(--accent)' }}>[PASS]</span> <span style={{ color: 'var(--text-secondary)' }}>INP:</span> <span style={{ color: 'var(--text-primary)' }}>&lt; 100ms</span></div>
-              <div><span style={{ color: 'var(--accent)' }}>[PASS]</span> <span style={{ color: 'var(--text-secondary)' }}>CLS:</span> <span style={{ color: 'var(--text-primary)' }}>&lt; 0.05</span></div>
-              <div><span style={{ color: 'var(--accent)' }}>[PASS]</span> <span style={{ color: 'var(--text-secondary)' }}>page weight:</span> <span style={{ color: 'var(--text-primary)' }}>&lt; 200KB</span></div>
-              <div style={{ color: 'var(--text-muted)', marginTop: 8 }}>all checks passed. 6/6 green.</div>
-            </div>
-          </MotionReveal>
+          <TechStackProof />
         </div>
       </ScrollRevealSection>
 
@@ -842,14 +1030,60 @@ export function WebDevContent() {
         </div>
       </ScrollRevealSection>
 
-      {/* ── 12. CTA ── */}
+      {/* ── 12. Sources ── */}
+      <section style={{
+        maxWidth: 800,
+        margin: '0 auto',
+        padding: '40px 24px',
+      }}>
+        <div style={{
+          fontSize: 12,
+          fontWeight: 600,
+          color: 'var(--text-muted)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.08em',
+          marginBottom: 16,
+        }}>
+          Learn More
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+          {[
+            { label: 'Google Core Web Vitals Documentation', href: 'https://web.dev/articles/vitals' },
+            { label: 'Google PageSpeed Insights', href: 'https://pagespeed.web.dev/' },
+            { label: 'Google Structured Data Guide', href: 'https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data' },
+          ].map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: 13,
+                color: 'var(--text-secondary)',
+                textDecoration: 'none',
+                borderBottom: '1px dashed var(--border-dashed)',
+                paddingBottom: 2,
+                display: 'inline-block',
+                alignSelf: 'flex-start',
+                transition: 'color 0.15s',
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = 'var(--accent)' }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)' }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* ── 13. CTA ── */}
       <section style={{
         padding: '80px 24px',
         textAlign: 'center',
         backgroundColor: 'var(--canvas-warm-subtle)',
         position: 'relative',
       }}>
-        <DotGrid opacity={0.15} />
+        <GraphGrid opacity={0.1} />
         <MotionReveal>
           <h2 style={{
             fontSize: 'clamp(28px, 4vw, 44px)',
@@ -873,32 +1107,76 @@ export function WebDevContent() {
           </p>
         </MotionReveal>
         <MotionReveal delay={0.2}>
-          <MagneticHover>
-            <a
-              href="https://cal.com/shawntenam"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                padding: '16px 40px',
-                backgroundColor: 'var(--accent)',
-                color: 'var(--text-on-accent)',
-                borderRadius: 8,
-                fontWeight: 700,
-                fontSize: 16,
-                textDecoration: 'none',
-                transition: 'transform 0.15s',
-              }}
-            >
-              Book a Free Site Audit
-            </a>
-          </MagneticHover>
+          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
+            <MagneticHover>
+              <a
+                href="https://cal.com/shawn-lead-alchemy/30min?overlayCalendar=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'inline-block',
+                  padding: '16px 40px',
+                  backgroundColor: 'var(--accent)',
+                  color: 'var(--text-on-accent)',
+                  borderRadius: 8,
+                  fontWeight: 700,
+                  fontSize: 16,
+                  textDecoration: 'none',
+                  transition: 'transform 0.15s',
+                }}
+              >
+                Book a Free Site Audit
+              </a>
+            </MagneticHover>
+            <MagneticHover>
+              <a
+                href="sms:+13474520467"
+                style={{
+                  display: 'inline-block',
+                  padding: '16px 40px',
+                  border: '1px solid var(--border)',
+                  color: 'var(--text-primary)',
+                  borderRadius: 8,
+                  fontWeight: 600,
+                  fontSize: 15,
+                  textDecoration: 'none',
+                  transition: 'border-color 0.15s',
+                }}
+              >
+                Text Us: (347) 452-0467
+              </a>
+            </MagneticHover>
+          </div>
         </MotionReveal>
       </section>
 
       <style>{`
         .gauge-row {
           flex-wrap: wrap;
+        }
+        .vitals-row {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 16px;
+          align-items: center;
+        }
+        .vitals-context {
+          text-align: left;
+        }
+        .managed-tier-inner {
+          display: flex;
+          flex-direction: column;
+          gap: 24px;
+        }
+        @media (min-width: 768px) {
+          .vitals-row {
+            grid-template-columns: 1fr auto 1fr;
+            gap: 24px;
+          }
+          .managed-tier-inner {
+            flex-direction: row;
+            gap: 48px;
+          }
         }
         @media (max-width: 480px) {
           .gauge-row {

@@ -5,7 +5,7 @@ import { DashedCard } from '@shawnos/shared/components'
 
 function XCircleIcon() {
   return (
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E05555" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <circle cx="12" cy="12" r="10" />
       <line x1="15" y1="9" x2="9" y2="15" />
       <line x1="9" y1="9" x2="15" y2="15" />
@@ -16,27 +16,27 @@ function XCircleIcon() {
 const cards = [
   {
     title: '...Want a $500 Template Site',
-    desc: 'We build custom. Templates exist for a reason - but our clients need more.',
+    desc: 'We build custom sites designed around your business. Templates exist for a reason - but our clients need more.',
   },
   {
-    title: '...Need It by Friday',
-    desc: 'Good work takes 2-3 weeks. Rush jobs make bad sites.',
+    title: '...Need It Done Tomorrow',
+    desc: 'Good sites take 1-4 weeks. Rush jobs make bad sites that cost you customers.',
   },
   {
-    title: '...Want WordPress',
-    desc: 'We build on Next.js. No plugins, no maintenance headaches.',
+    title: '...Want to Stay on WordPress',
+    desc: 'Our approach is built on faster technology. WordPress is not part of our stack.',
   },
   {
-    title: "...Don't Care About Speed",
-    desc: 'Our whole approach is performance-first and data-driven.',
+    title: "...Don't Care About Performance",
+    desc: 'Speed and rankings are our foundation. If that does not matter to you, we are not the right fit.',
   },
   {
-    title: '...Want to Manage It Yourself',
-    desc: 'We handle the build and ongoing support. You focus on your business.',
+    title: '...Want to Edit It Yourself',
+    desc: 'We handle updates through support packages. You focus on your business.',
   },
   {
-    title: '...Just Need a Logo or Branding',
-    desc: 'We build full websites, not brand identities.',
+    title: '...Just Need a Logo',
+    desc: 'We build full websites, not brand identities. We can recommend branding partners.',
   },
 ]
 
@@ -71,32 +71,28 @@ export function NotRightFit() {
             key={card.title}
             className="notfit-card"
           >
-            <DashedCard style={{ height: '100%' }}>
+            <DashedCard style={{
+              height: '100%',
+              borderLeft: '3px solid #E05555',
+            }}>
               <div
                 style={{
-                  width: '100%',
-                  height: 120,
-                  backgroundColor: 'var(--canvas-subtle)',
-                  borderRadius: 8,
-                  marginBottom: 16,
                   display: 'flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--text-muted)',
-                  border: '1px dashed var(--border-dashed)',
-                }}
-              >
-                <XCircleIcon />
-              </div>
-              <div
-                style={{
-                  fontSize: 15,
-                  fontWeight: 700,
-                  color: 'var(--text-primary)',
+                  gap: 8,
                   marginBottom: 8,
                 }}
               >
-                {card.title}
+                <XCircleIcon />
+                <div
+                  style={{
+                    fontSize: 15,
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                  }}
+                >
+                  {card.title}
+                </div>
               </div>
               <div
                 style={{
