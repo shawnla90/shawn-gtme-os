@@ -60,7 +60,7 @@ done
 echo "── Scanning file contents..."
 for term in "${TERMS[@]}"; do
   matches=$(git ls-files -z \
-    | xargs -0 grep -il "$term" 2>/dev/null \
+    | xargs -0 grep --binary-files=without-match -il "$term" 2>/dev/null \
     | grep -v '\.claude/blocklist\.txt' \
     | grep -v '\.husky/pre-push' \
     || true)
