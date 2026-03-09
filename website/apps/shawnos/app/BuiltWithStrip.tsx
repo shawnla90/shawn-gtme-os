@@ -5,8 +5,6 @@
  * Pure CSS hover - no client-side JS required.
  * ────────────────────────────────────────────────────────────────────── */
 
-import { getTranslations } from 'next-intl/server'
-
 interface BuiltWithLogo {
   name: string
   path: string
@@ -95,9 +93,7 @@ function MiniLogo({ logo }: { logo: BuiltWithLogo }) {
   )
 }
 
-export async function BuiltWithStrip() {
-  const t = await getTranslations('Home.builtWith')
-
+export function BuiltWithStrip() {
   return (
     <div
       style={{
@@ -123,7 +119,7 @@ export async function BuiltWithStrip() {
           flexShrink: 0,
         }}
       >
-        {t('label')}
+        built with
       </span>
 
       <div
@@ -153,7 +149,7 @@ export async function BuiltWithStrip() {
           opacity: 0.8,
         }}
       >
-        {t('fullStack')} &rarr;
+        full stack &rarr;
       </a>
     </div>
   )

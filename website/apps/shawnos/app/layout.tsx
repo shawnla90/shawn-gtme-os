@@ -1,6 +1,31 @@
 import type { Metadata } from 'next'
+import { JetBrains_Mono, Bricolage_Grotesque } from 'next/font/google'
+import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow } from '@shawnos/shared/components'
+import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { FooterCredit } from './FooterCredit'
+import { NioChat } from './NioChat'
+import { FeedbackButton } from './components/FeedbackButton'
+import './globals.css'
+
+const themeScript = `(function(){try{var t=localStorage.getItem('shawnos-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})();`
 
 const SITE_URL = 'https://shawnos.ai'
+
+const jetbrains = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-mono',
+  display: 'swap',
+})
+
+const bricolage = Bricolage_Grotesque({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800'],
+  variable: '--font-sans',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -46,10 +71,142 @@ export const metadata: Metadata = {
   },
 }
 
+/* ── JSON-LD Structured Data ── */
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Shawn Tenam',
+  url: SITE_URL,
+  jobTitle: 'GTM Engineer',
+  description:
+    'GTM engineer who builds AI-native pipelines, agent-driven workflows, and content systems that compound — all shipped from a single monorepo.',
+  knowsAbout: [
+    'GTM Engineering',
+    'AI Agent Development',
+    'Sales Operations',
+    'Revenue Operations',
+    'Pipeline Automation',
+    'Cold Email Infrastructure',
+    'LinkedIn Outreach Automation',
+    'Data Enrichment Pipelines',
+    'Content-as-Code Publishing',
+    'Next.js',
+    'TypeScript',
+    'Python',
+    'Vercel Deployment',
+    'Monorepo Architecture',
+    'Clay Workflows',
+    'HubSpot Automation',
+    'MCP Servers',
+    'Cursor IDE',
+  ],
+  hasOccupation: {
+    '@type': 'Occupation',
+    name: 'GTM Engineer',
+    description:
+      'Designs and builds go-to-market infrastructure — AI-native pipelines, enrichment workflows, outbound automation, and content systems.',
+    skills:
+      'Clay, HeyReach, Instantly, HubSpot, Next.js, TypeScript, Python, Vercel, Cursor IDE, Claude AI',
+    occupationLocation: {
+      '@type': 'Country',
+      name: 'US',
+    },
+  },
+  alumniOf: [
+    {
+      '@type': 'Organization',
+      name: 'Plumbing Industry',
+      description: 'Licensed plumber turned GTM engineer — career pivot from trades to tech',
+    },
+    {
+      '@type': 'Role',
+      roleName: 'SDR / BDR',
+      description: 'Sales development representative building outbound systems and pipeline automation',
+    },
+  ],
+  sameAs: [
+    'https://linkedin.com/in/shawntenam',
+    'https://x.com/shawntenam',
+    'https://shawntenam.substack.com',
+    'https://github.com/shawnla90',
+    'https://thegtmos.ai',
+    'https://thecontentos.ai',
+  ],
+}
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'ShawnOS.ai',
+  url: SITE_URL,
+  description: 'GTM engineering, built in public. One monorepo. One operating system.',
+  author: { '@type': 'Person', name: 'Shawn Tenam' },
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <html lang="en" className={`${jetbrains.variable} ${bricolage.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script async src="https://p.midbound.click/Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk" />
+      </head>
+      <body>
+        <ThemeProvider>
+        <PostHogProvider>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Navigation
+          siteName="ShawnOS.ai"
+          links={[
+            { href: '/', label: 'Home' },
+            { href: '/services/web-development', label: 'Services' },
+            { href: '/blog', label: 'Blog' },
+            { href: '/media', label: 'Media' },
+            { href: '/about', label: 'About' },
+            { href: '#', label: 'Wiki', children: [
+              { href: '/knowledge', label: 'Knowledge' },
+              { href: '/how-to', label: 'How-To' },
+              { href: '/clay-wiki', label: 'Clay Wiki' },
+              { href: '/content-wiki', label: 'Content Wiki' },
+              { href: '/context-wiki', label: 'Context Wiki' },
+            ]},
+            { href: '#', label: 'More', children: [
+              { href: '/log', label: 'Log' },
+              { href: '/rpg-preview', label: 'RPG' },
+              { href: '/vitals', label: 'Vitals' },
+              { href: '/method', label: 'Method' },
+              { href: '/showcase', label: 'Showcase' },
+              { href: '/updates', label: 'Updates' },
+              { href: '/search', label: 'Search' },
+              { href: '/api', label: 'API' },
+            ]},
+          ]}
+        />
+        <main>
+          <div className="page-enter">{children}</div>
+        </main>
+        <NetworkBanner currentSite="shawnos" />
+        <Footer siteName="ShawnOS.ai" />
+        <FooterCredit />
+        <NioChat />
+        <FeedbackButton />
+        <CursorGlow />
+        <Analytics />
+        <SpeedInsights />
+        </PostHogProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  )
 }

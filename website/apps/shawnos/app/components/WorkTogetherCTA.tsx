@@ -1,11 +1,9 @@
 "use client"
 
 import { usePostHog } from "posthog-js/react"
-import { useTranslations } from 'next-intl'
 
 export function WorkTogetherCTA() {
   const posthog = usePostHog()
-  const t = useTranslations('Home.workTogether')
 
   const track = (source: string) => {
     posthog?.capture("nio_work_with_me_clicked", { source })
@@ -40,7 +38,7 @@ export function WorkTogetherCTA() {
           margin: '0 0 16px',
         }}
       >
-        {t('heading')}
+        want to work together?
       </p>
       <div style={{ display: 'flex', gap: 24, justifyContent: 'center', flexWrap: 'wrap' }}>
         <a
@@ -52,7 +50,7 @@ export function WorkTogetherCTA() {
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
         >
-          {t('bookCall')}
+          book a call
         </a>
         <a
           href="sms:3474520467"
@@ -61,7 +59,7 @@ export function WorkTogetherCTA() {
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
         >
-          {t('textMe')}
+          text me
         </a>
         <a
           href="https://thegtmos.ai/why-independent"
@@ -72,7 +70,7 @@ export function WorkTogetherCTA() {
           onMouseEnter={onEnter}
           onMouseLeave={onLeave}
         >
-          {t('evaluateStack')}
+          evaluate your gtm stack
         </a>
       </div>
     </div>
