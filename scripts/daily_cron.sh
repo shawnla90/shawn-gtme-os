@@ -158,7 +158,25 @@ else
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
-# ── Step 1k: Mission Control data pipeline ────────────────────────────
+# ── Step 1k: Content performance analytics ─────────────────────────────
+log "Running content_performance.py"
+if $PYTHON scripts/content_performance.py --days 7 >> "$LOGFILE" 2>&1; then
+  log "Content performance report generated"
+else
+  log "WARN: Content performance report failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
+# ── Step 1l: PostHog to Attio sync ────────────────────────────────────
+log "Running posthog_to_attio.py"
+if $PYTHON scripts/abm/posthog_to_attio.py --days 1 >> "$LOGFILE" 2>&1; then
+  log "PostHog to Attio sync completed"
+else
+  log "WARN: PostHog to Attio sync failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
+# ── Step 1m: Mission Control data pipeline ────────────────────────────
 # nio_commit_tracker.py → /tmp/nio_mission_control_data.json (commit stats)
 # mission_control_updater.py → /tmp/mission_control_enhanced.json (calendar, todos, drafts)
 # generate-dashboard-data.js → public/data/*.json (tasks, calendar, memories, team, status)
@@ -224,6 +242,8 @@ $GIT add data/progression/profile.json 2>/dev/null || true
 $GIT add data/website-stats.json 2>/dev/null || true
 $GIT add data/repo-stats.json 2>/dev/null || true
 $GIT add docs/_generated/skill-manifest.md 2>/dev/null || true
+$GIT add data/content-analytics/latest.json 2>/dev/null || true
+$GIT add data/content-analytics/weekly-report.json 2>/dev/null || true
 $GIT add website/apps/mission-control/public/data/content.json 2>/dev/null || true
 $GIT add website/apps/mission-control/public/data/content-full.json 2>/dev/null || true
 $GIT add website/apps/mission-control/public/metrics.json 2>/dev/null || true

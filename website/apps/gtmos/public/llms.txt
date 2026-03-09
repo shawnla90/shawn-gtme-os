@@ -14,6 +14,9 @@
 ## Feeds
 - RSS: /feed.xml, /feed/clay-wiki.xml, /feed/knowledge.xml
 
+## Related
+- GEO Wiki: https://shawnos.ai/geo — Generative Engine Optimization guide (25 entries)
+
 ## Key Topics
 - Clay.com workflows and enrichment
 - Outbound sales automation (HeyReach, Instantly)
