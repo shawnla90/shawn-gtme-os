@@ -1,6 +1,61 @@
 {
-  "generated": "2026-03-09T00:32:51.521Z",
+  "generated": "2026-03-09T04:03:50.165Z",
   "events": [
+    {
+      "id": "commit-ed83a29",
+      "title": "Merge remote-tracking branch 'origin/lets-prepare-this-for-n",
+      "type": "system",
+      "datetime": "2026-03-08T23:37:31-04:00",
+      "status": "completed",
+      "description": "Merge remote-tracking branch 'origin/lets-prepare-this-for-new-substack-blog-and-x-post'",
+      "metadata": {
+        "commitHash": "ed83a29"
+      }
+    },
+    {
+      "id": "commit-e7d084c",
+      "title": "feat: SDR to solo GTM engineer - blog post, LinkedIn, X thre",
+      "type": "milestone",
+      "datetime": "2026-03-08T23:26:36-04:00",
+      "status": "completed",
+      "description": "feat: SDR to solo GTM engineer - blog post, LinkedIn, X thread",
+      "metadata": {
+        "commitHash": "e7d084c"
+      }
+    },
+    {
+      "id": "commit-056bd43",
+      "title": "feat: skills consolidation - migrate Cursor skills, add GTM-",
+      "type": "milestone",
+      "datetime": "2026-03-08T21:46:02-04:00",
+      "status": "completed",
+      "description": "feat: skills consolidation - migrate Cursor skills, add GTM-scoped skills, archive stale content",
+      "metadata": {
+        "commitHash": "056bd43"
+      }
+    },
+    {
+      "id": "commit-2d1d02c",
+      "title": "chore: sanitize repo for public GitHub + accumulated changes",
+      "type": "system",
+      "datetime": "2026-03-08T20:57:34-04:00",
+      "status": "completed",
+      "description": "chore: sanitize repo for public GitHub + accumulated changes",
+      "metadata": {
+        "commitHash": "2d1d02c"
+      }
+    },
+    {
+      "id": "commit-9de893c",
+      "title": "feat: services page overhaul - customer education, pricing, ",
+      "type": "milestone",
+      "datetime": "2026-03-08T20:55:12-04:00",
+      "status": "completed",
+      "description": "feat: services page overhaul - customer education, pricing, UX",
+      "metadata": {
+        "commitHash": "9de893c"
+      }
+    },
     {
       "id": "commit-8a810eb",
       "title": "fix: add missing shared components (DashedCard, DotGrid, Gra",
@@ -109,61 +164,6 @@
       "description": "fix: add build gate to optimizer cron + batch LinkedIn variations",
       "metadata": {
         "commitHash": "3a1ecb1"
-      }
-    },
-    {
-      "id": "commit-9978a11",
-      "title": "fix: restore HomeContent.tsx corrupted by optimizer cron",
-      "type": "deployment",
-      "datetime": "2026-03-07T14:27:25-05:00",
-      "status": "completed",
-      "description": "fix: restore HomeContent.tsx corrupted by optimizer cron",
-      "metadata": {
-        "commitHash": "9978a11"
-      }
-    },
-    {
-      "id": "commit-1f1ae54",
-      "title": "feat: daily LinkedIn posts 2026-03-07",
-      "type": "milestone",
-      "datetime": "2026-03-07T09:10:04-05:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-07",
-      "metadata": {
-        "commitHash": "1f1ae54"
-      }
-    },
-    {
-      "id": "commit-34d9934",
-      "title": "feat: nio.log 2026-03-07 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-03-07T08:02:42-05:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-03-07 — automated daily post",
-      "metadata": {
-        "commitHash": "34d9934"
-      }
-    },
-    {
-      "id": "commit-07c1846",
-      "title": "fix: use raw script tag for Midbound pixel (Next.js Script c",
-      "type": "deployment",
-      "datetime": "2026-03-07T01:13:40-05:00",
-      "status": "completed",
-      "description": "fix: use raw script tag for Midbound pixel (Next.js Script component breaks detection)",
-      "metadata": {
-        "commitHash": "07c1846"
-      }
-    },
-    {
-      "id": "commit-e6fb882",
-      "title": "feat: Midbound visitor ID pixel on shawnos.ai + PostHog webh",
-      "type": "milestone",
-      "datetime": "2026-03-07T00:29:44-05:00",
-      "status": "completed",
-      "description": "feat: Midbound visitor ID pixel on shawnos.ai + PostHog webhook",
-      "metadata": {
-        "commitHash": "e6fb882"
       }
     }
   ],

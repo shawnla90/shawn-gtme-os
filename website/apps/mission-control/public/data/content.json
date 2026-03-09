@@ -1,44 +1,44 @@
 {
-  "generated": "2026-03-08T05:00:06.000Z",
+  "generated": "2026-03-09T04:00:12.000Z",
   "totals": {
-    "total_content": 135,
-    "total_drafts": 77,
-    "total_final": 58,
-    "total_words": 89972,
+    "total_content": 141,
+    "total_drafts": 80,
+    "total_final": 61,
+    "total_words": 94456,
     "platforms_active": 6,
-    "cross_platform_groups": 29,
+    "cross_platform_groups": 30,
     "series_count": 4
   },
   "pipeline": {
+    "linkedin": {
+      "draft": 34,
+      "final": 12,
+      "total": 46,
+      "words": 29697
+    },
     "nio-log": {
       "draft": 0,
-      "final": 18,
-      "total": 18,
-      "words": 11983
+      "final": 19,
+      "total": 19,
+      "words": 12800
+    },
+    "substack": {
+      "draft": 10,
+      "final": 5,
+      "total": 15,
+      "words": 18032
     },
     "website": {
       "draft": 1,
-      "final": 14,
-      "total": 15,
-      "words": 14434
-    },
-    "linkedin": {
-      "draft": 33,
-      "final": 12,
-      "total": 45,
-      "words": 29390
+      "final": 16,
+      "total": 17,
+      "words": 16267
     },
     "x": {
-      "draft": 32,
+      "draft": 33,
       "final": 9,
-      "total": 41,
-      "words": 15048
-    },
-    "substack": {
-      "draft": 9,
-      "final": 5,
-      "total": 14,
-      "words": 16675
+      "total": 42,
+      "words": 15218
     },
     "reddit": {
       "draft": 2,
@@ -48,6 +48,72 @@
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "sdr to solo gtm engineer",
+      "slug": "sdr-to-solo-gtm-engineer",
+      "date": "2026-03-08",
+      "stage": "draft",
+      "pillar": "building-and-sharing",
+      "arc": null,
+      "word_count": 307,
+      "file_path": "content/linkedin/drafts/2026-03-08_sdr-to-solo-gtm-engineer.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "ALL THREE SITES BUILDING CLEAN. THE",
+      "slug": "2026-03-08",
+      "date": "2026-03-08",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 817,
+      "file_path": "content/nio-log/2026-03-08.md"
+    },
+    {
+      "platform": "substack",
+      "title": "sdr to solo gtm engineer",
+      "slug": "sdr-to-solo-gtm-engineer",
+      "date": "2026-03-08",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1357,
+      "file_path": "content/substack/drafts/2026-03-08_sdr-to-solo-gtm-engineer.md"
+    },
+    {
+      "platform": "website",
+      "title": "Karpathy's Autoresearch and the Agent Loop That Changes Everything",
+      "slug": "karpathy-autoresearch-autonomous-agents",
+      "date": "2026-03-08",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 594,
+      "file_path": "content/website/final/karpathy-autoresearch-autonomous-agents.md"
+    },
+    {
+      "platform": "website",
+      "title": "from SDR to solo GTM engineer",
+      "slug": "sdr-to-solo-gtm-engineer",
+      "date": "2026-03-08",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1239,
+      "file_path": "content/website/final/sdr-to-solo-gtm-engineer.md"
+    },
+    {
+      "platform": "x",
+      "title": "sdr to solo gtm engineer thread",
+      "slug": "sdr-to-solo-gtm-engineer-thread",
+      "date": "2026-03-08",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 170,
+      "file_path": "content/x/drafts/2026-03-08_sdr-to-solo-gtm-engineer-thread.md"
+    },
     {
       "platform": "nio-log",
       "title": "HERE'S THE NIO.LOG ENTRY:",
@@ -531,72 +597,6 @@
       "arc": null,
       "word_count": 170,
       "file_path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md"
-    },
-    {
-      "platform": "x",
-      "title": "ShawnOS X Threads -- Day 1",
-      "slug": "shawnos-threads",
-      "date": "2026-02-23",
-      "stage": "draft",
-      "pillar": null,
-      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
-      "word_count": 594,
-      "file_path": "content/x/drafts/2026-02-23_shawnos-threads.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "ShawnOS Chat - LinkedIn Post",
-      "slug": "shawnos-chat-post",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 296,
-      "file_path": "content/linkedin/final/shawnos-chat-post.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "SHIP SPEED VS SYSTEM DRAG",
-      "slug": "2026-02-22",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 394,
-      "file_path": "content/nio-log/2026-02-22.md"
-    },
-    {
-      "platform": "substack",
-      "title": "The Anti Lead Magnet: Start at Level One or Don't Start at All",
-      "slug": "anti-lead-magnet",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 676,
-      "file_path": "content/substack/final/2026-02-22_anti-lead-magnet.md"
-    },
-    {
-      "platform": "website",
-      "title": "The Anti Lead Magnet",
-      "slug": "build-your-own-os",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 689,
-      "file_path": "content/website/final/build-your-own-os.md"
-    },
-    {
-      "platform": "website",
-      "title": "Content Clusters and the Breadcrumb Protocol",
-      "slug": "content-cluster-breadcrumbs",
-      "date": "2026-02-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 858,
-      "file_path": "content/website/final/content-cluster-breadcrumbs.md"
     }
   ],
   "series": [
@@ -698,6 +698,19 @@
     }
   ],
   "crossPlatform": [
+    {
+      "date": "2026-03-08",
+      "slug": "sdr-to-solo-gtm-engineer",
+      "platforms": [
+        "linkedin",
+        "substack",
+        "website"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 3
+    },
     {
       "date": "2026-03-06",
       "slug": "google-workspace-cli",
@@ -1054,6 +1067,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-08",
+      "grade": "D",
+      "score": 175,
+      "words": 25387,
+      "shipped": 29,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-07",
       "grade": "D",
       "score": 112,
@@ -1156,14 +1177,6 @@
       "words": 7332,
       "shipped": 0,
       "cost": 55.43
-    },
-    {
-      "date": "2026-02-22",
-      "grade": "S",
-      "score": 624,
-      "words": 38465,
-      "shipped": 45,
-      "cost": 252.46
     }
   ]
 }
