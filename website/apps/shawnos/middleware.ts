@@ -1,8 +1,12 @@
+import createIntlMiddleware from 'next-intl/middleware'
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { routing } from './i18n/routing'
+
+const intlMiddleware = createIntlMiddleware(routing)
 
 export function middleware(request: NextRequest) {
-  const response = NextResponse.next()
+  const response = intlMiddleware(request)
 
   // Force revalidation on HTML responses
   const accept = request.headers.get('accept') || ''
@@ -25,6 +29,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|icons|avatars|ingest).*)',
+    '/((?!_next/static|_next/image|favicon.ico|icons|avatars|ingest|api|og|feed|feed\\.xml|sitemap|robots\\.txt|.*\\..*).*)',
   ],
 }

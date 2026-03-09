@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 /* ── stat definitions ──────────────────────────────── */
 
@@ -9,13 +10,16 @@ interface Stat {
   label: string
 }
 
-const STATS: Stat[] = [
-  { value: '4',    label: 'Websites' },
-  { value: '3',    label: 'AI Agents' },
-  { value: '150+', label: 'Knowledge Entries' },
-  { value: '34',   label: 'Video Compositions' },
-  { value: '10',   label: 'Blog Posts' },
-]
+function useStats(): Stat[] {
+  const t = useTranslations('Home.stats')
+  return [
+    { value: '4',    label: t('websites') },
+    { value: '3',    label: t('aiAgents') },
+    { value: '150+', label: t('knowledgeEntries') },
+    { value: '34',   label: t('videoCompositions') },
+    { value: '10',   label: t('blogPosts') },
+  ]
+}
 
 /* ── parse stat value ─────────────────────────────── */
 
@@ -25,7 +29,9 @@ function parseStat(value: string): { target: number; suffix: string } {
   return { target: parseInt(match[1], 10), suffix: match[2] }
 }
 
-const MAX_VALUE = Math.max(...STATS.map((s) => parseStat(s.value).target))
+// Static values for bar width computation (labels change per locale, values don't)
+const STAT_VALUES = ['4', '3', '150+', '34', '10']
+const MAX_VALUE = Math.max(...STAT_VALUES.map((v) => parseStat(v).target))
 
 /* ── easeOutExpo ──────────────────────────────────── */
 
@@ -136,6 +142,7 @@ function StatCell({ stat, index, triggered }: { stat: Stat; index: number; trigg
 /* ── component ─────────────────────────────────────── */
 
 export function StatsStrip() {
+  const STATS = useStats()
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 

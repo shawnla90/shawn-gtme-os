@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { getTranslations } from 'next-intl/server'
 import {
   PostCard,
   LogCard,
@@ -25,135 +26,11 @@ import { WorkTogetherCTA } from './components/WorkTogetherCTA'
 
 /* ── data ────────────────────────────────────────── */
 
-const bootLines = [
-  { status: 'OK', label: 'content engine ... online' },
-  { status: 'OK', label: 'three-site network ... synced' },
-  { status: 'OK', label: 'gtm engine ... theGTMOS.ai' },
-  { status: 'OK', label: 'content os ... theContentOS.ai' },
-  { status: 'OK', label: 'cursor agent ... active' },
-  { status: 'OK', label: 'blog pipeline ... mounted' },
-  { status: 'OK', label: 'build-in-public mode ... engaged' },
-  { status: 'OK', label: 'daily tracker ... streaming' },
-]
-
-const processSteps = [
-  {
-    command: 'explore',
-    title: 'Explore',
-    description: 'Audit the landscape. Find where the pipeline leaks, what content gaps exist, and where automation can replace manual work.',
-  },
-  {
-    command: 'plan',
-    title: 'Plan',
-    description: 'Map the build order. Define what ships this week, what compounds over time, and what gets cut.',
-  },
-  {
-    command: 'build',
-    title: 'Build',
-    description: 'Ship real infrastructure. Code the pipelines, write the content, wire the automations. Every piece lives in the monorepo.',
-  },
-  {
-    command: 'ship',
-    title: 'Ship',
-    description: 'Push to production. Every commit deploys. Every post publishes. No staging purgatory — build, test, ship.',
-  },
-  {
-    command: 'compound',
-    title: 'Compound',
-    description: 'Let it stack. SEO compounds. Content libraries grow. Automations run while you sleep. The system gets stronger every day.',
-  },
-]
-
 const faqLinkStyle: React.CSSProperties = {
   color: 'var(--accent)',
   textDecoration: 'none',
   fontWeight: 600,
 }
-
-const faqItems: { question: string; answer: React.ReactNode }[] = [
-  {
-    question: 'What is GTM engineering?',
-    answer: (
-      <>
-        GTM engineering is the practice of building go-to-market systems with code. Instead of clicking through CRMs and spreadsheets, you write pipelines, automate outbound, build enrichment workflows, and ship content systems — all version-controlled and composable.{' '}
-        <Link href="https://thegtmos.ai" style={faqLinkStyle}>explore the GTM playbook &rarr;</Link>
-      </>
-    ),
-  },
-  {
-    question: 'What is ShawnOS?',
-    answer: (
-      <>
-        ShawnOS is a monorepo that runs my entire professional operating system.{' '}
-        <Link href="/showcase" style={faqLinkStyle}>Three websites</Link>, a{' '}
-        <Link href="/rpg-preview" style={faqLinkStyle}>progression engine</Link>, AI agents, content pipelines, and GTM tools — all in one codebase. It&apos;s an experiment in running your career like a software product.
-      </>
-    ),
-  },
-  {
-    question: 'Why build in public?',
-    answer: (
-      <>
-        Building in public turns your learning process into content, your commits into proof of work, and your failures into lessons others can learn from. It compounds — every post, every update, every shipped feature is a permanent artifact that builds trust over time.{' '}
-        <Link href="/log" style={faqLinkStyle}>see the build log &rarr;</Link>
-      </>
-    ),
-  },
-  {
-    question: 'What stack does this run on?',
-    answer: (
-      <>
-        TypeScript monorepo with Next.js (3 sites on Vercel), Python for scripting and content generation, Claude AI for the agent layer, and launchd crons for automation. Everything ships from one git repo.{' '}
-        <Link href="/about" style={faqLinkStyle}>see the full stack &rarr;</Link>
-      </>
-    ),
-  },
-  {
-    question: 'Can I use this approach for my own career?',
-    answer: (
-      <>
-        Absolutely. The core idea — treat your career like a product, ship artifacts daily, automate what you can, and let everything compound — works for any discipline. You don&apos;t need this exact stack. You need the mindset of systematic, visible output.{' '}
-        <Link href="/log/build-your-own" style={faqLinkStyle}>start building &rarr;</Link>
-      </>
-    ),
-  },
-  {
-    question: 'What\'s the progression engine?',
-    answer: (
-      <>
-        A gamification layer that tracks real daily output — blog posts, code commits, shipped features — and converts them to XP. You level up through 11 tiers with evolving pixel art avatars. It&apos;s not decorative; it reflects actual work done.{' '}
-        <Link href="/rpg-preview" style={faqLinkStyle}>see the tiers &rarr;</Link>
-      </>
-    ),
-  },
-]
-
-const caseStudies = [
-  {
-    title: 'Three-Site Network',
-    description: 'One monorepo powering ShawnOS.ai, theGTMOS.ai, and theContentOS.ai. Shared components, shared data layer, independent deploys.',
-    tags: ['Next.js', 'Turborepo', 'Vercel'],
-    href: '/showcase',
-  },
-  {
-    title: 'AI Content Pipeline',
-    description: 'Automated blog generation with Claude + SEO keyword research + automated publishing. Runs on a daily cron, writes drafts for human review.',
-    tags: ['Claude AI', 'Python', 'SEO'],
-    href: '/blog',
-  },
-  {
-    title: 'Progression Engine',
-    description: '11-tier RPG system that gamifies real work output. Pixel art avatars evolve based on XP earned from daily commits and content shipped.',
-    tags: ['Gamification', 'TypeScript', 'Pixel Art'],
-    href: '/rpg-preview',
-  },
-  {
-    title: 'Mission Control',
-    description: 'Internal dashboard for monitoring all systems — agent status, content pipelines, SEO metrics, and team coordination.',
-    tags: ['Dashboard', 'Real-time', 'React'],
-    href: '/showcase',
-  },
-]
 
 /* ── types ───────────────────────────────────────── */
 
@@ -179,7 +56,141 @@ interface HomeContentProps {
 
 /* ── component ──────────────────────────────────── */
 
-export function HomeContent({ posts, latestLog }: HomeContentProps) {
+export async function HomeContent({ posts, latestLog }: HomeContentProps) {
+  const t = await getTranslations('Home')
+
+  const bootLines = [
+    { status: 'OK', label: t('systemStatus.bootLines.contentEngine') },
+    { status: 'OK', label: t('systemStatus.bootLines.threeSiteNetwork') },
+    { status: 'OK', label: t('systemStatus.bootLines.gtmEngine') },
+    { status: 'OK', label: t('systemStatus.bootLines.contentOs') },
+    { status: 'OK', label: t('systemStatus.bootLines.cursorAgent') },
+    { status: 'OK', label: t('systemStatus.bootLines.blogPipeline') },
+    { status: 'OK', label: t('systemStatus.bootLines.buildInPublic') },
+    { status: 'OK', label: t('systemStatus.bootLines.dailyTracker') },
+  ]
+
+  const processSteps = [
+    {
+      command: 'explore',
+      title: t('method.explore.title'),
+      description: t('method.explore.description'),
+    },
+    {
+      command: 'plan',
+      title: t('method.plan.title'),
+      description: t('method.plan.description'),
+    },
+    {
+      command: 'build',
+      title: t('method.build.title'),
+      description: t('method.build.description'),
+    },
+    {
+      command: 'ship',
+      title: t('method.ship.title'),
+      description: t('method.ship.description'),
+    },
+    {
+      command: 'compound',
+      title: t('method.compound.title'),
+      description: t('method.compound.description'),
+    },
+  ]
+
+  const faqItems: { question: string; answer: React.ReactNode }[] = [
+    {
+      question: t('faq.q1.question'),
+      answer: (
+        <>
+          {t('faq.q1.answer')}{' '}
+          <Link href="https://thegtmos.ai" style={faqLinkStyle}>{t('faq.q1.link')} &rarr;</Link>
+        </>
+      ),
+    },
+    {
+      question: t('faq.q2.question'),
+      answer: (
+        <>
+          {t('faq.q2.answer')}{' '}
+          <Link href="/showcase" style={faqLinkStyle}>{t('faq.q2.linkShowcase')}</Link>, a{' '}
+          <Link href="/rpg-preview" style={faqLinkStyle}>{t('faq.q2.linkRpg')}</Link>, {t('faq.q2.answerCont')}
+        </>
+      ),
+    },
+    {
+      question: t('faq.q3.question'),
+      answer: (
+        <>
+          {t('faq.q3.answer')}{' '}
+          <Link href="/log" style={faqLinkStyle}>{t('faq.q3.link')} &rarr;</Link>
+        </>
+      ),
+    },
+    {
+      question: t('faq.q4.question'),
+      answer: (
+        <>
+          {t('faq.q4.answer')}{' '}
+          <Link href="/about" style={faqLinkStyle}>{t('faq.q4.link')} &rarr;</Link>
+        </>
+      ),
+    },
+    {
+      question: t('faq.q5.question'),
+      answer: (
+        <>
+          {t('faq.q5.answer')}{' '}
+          <Link href="/log/build-your-own" style={faqLinkStyle}>{t('faq.q5.link')} &rarr;</Link>
+        </>
+      ),
+    },
+    {
+      question: t('faq.q6.question'),
+      answer: (
+        <>
+          {t('faq.q6.answer')}{' '}
+          <Link href="/rpg-preview" style={faqLinkStyle}>{t('faq.q6.link')} &rarr;</Link>
+        </>
+      ),
+    },
+  ]
+
+  const caseStudies = [
+    {
+      title: t('caseStudies.threeSiteNetwork.title'),
+      description: t('caseStudies.threeSiteNetwork.description'),
+      tags: ['Next.js', 'Turborepo', 'Vercel'],
+      href: '/showcase',
+    },
+    {
+      title: t('caseStudies.aiContentPipeline.title'),
+      description: t('caseStudies.aiContentPipeline.description'),
+      tags: ['Claude AI', 'Python', 'SEO'],
+      href: '/blog',
+    },
+    {
+      title: t('caseStudies.progressionEngine.title'),
+      description: t('caseStudies.progressionEngine.description'),
+      tags: ['Gamification', 'TypeScript', 'Pixel Art'],
+      href: '/rpg-preview',
+    },
+    {
+      title: t('caseStudies.missionControl.title'),
+      description: t('caseStudies.missionControl.description'),
+      tags: ['Dashboard', 'Real-time', 'React'],
+      href: '/showcase',
+    },
+  ]
+
+  const chooseYourPathItems = [
+    { label: t('chooseYourPath.contentSystems.label'), href: 'https://thecontentos.ai', text: t('chooseYourPath.contentSystems.text') },
+    { label: t('chooseYourPath.gtmPipelines.label'), href: 'https://thegtmos.ai', text: t('chooseYourPath.gtmPipelines.text') },
+    { label: t('chooseYourPath.stackAudit.label'), href: 'https://thegtmos.ai/why-independent', text: t('chooseYourPath.stackAudit.text') },
+    { label: t('chooseYourPath.readBlog.label'), href: '/blog', text: t('chooseYourPath.readBlog.text'), internal: true },
+    { label: t('chooseYourPath.showcase.label'), href: '/showcase', text: t('chooseYourPath.showcase.text'), internal: true },
+  ]
+
   return (
     <>
       {/* ── Hero — 100dvh, centered, bold ── */}
@@ -209,8 +220,8 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
               maxWidth: 900,
             }}
           >
-            <span style={{ color: 'var(--text-primary)' }}>GTM Engineering,</span>{' '}
-            <span style={{ color: 'var(--accent)' }}>Built in Public</span>
+            <span style={{ color: 'var(--text-primary)' }}>{t('hero.titleLine1')}</span>{' '}
+            <span style={{ color: 'var(--accent)' }}>{t('hero.titleLine2')}</span>
           </h1>
         </MotionReveal>
 
@@ -225,7 +236,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
               margin: '0 auto 40px',
             }}
           >
-            One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.
+            {t('hero.subtitle')}
           </p>
         </MotionReveal>
 
@@ -248,7 +259,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                   transition: 'opacity 0.15s ease',
                 }}
               >
-                read the blog &rarr;
+                {t('hero.ctaBlog')} &rarr;
               </Link>
             </MagneticHover>
             <MagneticHover>
@@ -268,7 +279,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                   transition: 'background 0.15s ease, color 0.15s ease',
                 }}
               >
-                about
+                {t('hero.ctaAbout')}
               </Link>
             </MagneticHover>
           </div>
@@ -308,20 +319,20 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
       {/* ── Method ── */}
       <ScrollRevealSection background="var(--canvas-warm-subtle)" style={{ position: 'relative' }}>
         <GraphGrid spacing={48} opacity={0.35} lineWidth={1} />
-        <SectionHeadline subtitle="How everything gets built">The Method</SectionHeadline>
+        <SectionHeadline subtitle={t('method.subtitle')}>{t('method.headline')}</SectionHeadline>
         <ProcessSteps steps={processSteps} />
       </ScrollRevealSection>
 
       {/* ── Dark Interlude ── */}
       <DarkInterlude
-        title="one monorepo. everything ships from here."
-        subtitle="three sites. AI agents. content pipelines. GTM automation. all version-controlled."
+        title={t('darkInterlude.title')}
+        subtitle={t('darkInterlude.subtitle')}
       />
 
       {/* ── Latest Posts ── */}
       {posts.length > 0 && (
         <ScrollRevealSection background="var(--canvas)">
-          <SectionHeadline subtitle="What shipped recently">Latest Posts</SectionHeadline>
+          <SectionHeadline subtitle={t('latestPosts.subtitle')}>{t('latestPosts.headline')}</SectionHeadline>
 
           {/* Featured first post */}
           {posts[0] && (
@@ -371,7 +382,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                 fontWeight: 600,
               }}
             >
-              view all posts &rarr;
+              {t('latestPosts.viewAll')} &rarr;
             </Link>
           </div>
         </ScrollRevealSection>
@@ -380,7 +391,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
       {/* ── Latest Log ── */}
       {latestLog && (
         <ScrollRevealSection background="var(--canvas-subtle)">
-          <SectionHeadline subtitle="Today's build log">Latest Log</SectionHeadline>
+          <SectionHeadline subtitle={t('latestLog.subtitle')}>{t('latestLog.headline')}</SectionHeadline>
 
           <LogCard {...latestLog} basePath="/log" />
 
@@ -394,7 +405,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                 fontWeight: 600,
               }}
             >
-              view all logs &rarr;
+              {t('latestLog.viewAll')} &rarr;
             </Link>
           </div>
         </ScrollRevealSection>
@@ -402,13 +413,13 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
 
       {/* ── FAQ ── */}
       <ScrollRevealSection background="var(--canvas)">
-        <SectionHeadline subtitle="Common questions answered">FAQ</SectionHeadline>
+        <SectionHeadline subtitle={t('faq.subtitle')}>{t('faq.headline')}</SectionHeadline>
         <FAQAccordion items={faqItems} />
       </ScrollRevealSection>
 
       {/* ── Case Studies ── */}
       <ScrollRevealSection background="var(--canvas-subtle)">
-        <SectionHeadline subtitle="Featured projects from the monorepo">Case Studies</SectionHeadline>
+        <SectionHeadline subtitle={t('caseStudies.subtitle')}>{t('caseStudies.headline')}</SectionHeadline>
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
@@ -479,7 +490,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                 flexShrink: 0,
               }}
             >
-              as heard on
+              {t('asHeardOn')}
             </span>
 
             <div
@@ -550,7 +561,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                 opacity: 0.8,
               }}
             >
-              all appearances &rarr;
+              {t('allAppearances')} &rarr;
             </Link>
           </div>
         </ScrollRevealSection>
@@ -573,7 +584,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
             letterSpacing: '0.06em',
           }}
         >
-          system status
+          {t('systemStatus.heading')}
         </h2>
 
         <div
@@ -609,7 +620,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
               fontWeight: 600,
             }}
           >
-            &gt; all systems operational_
+            {t('systemStatus.allOperational')}
           </div>
         </div>
       </ScrollRevealSection>
@@ -642,7 +653,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
               margin: '0 0 32px',
             }}
           >
-            Choose Your Path
+            {t('chooseYourPath.heading')}
           </h2>
 
           <div
@@ -654,13 +665,7 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
               margin: '0 auto',
             }}
           >
-            {[
-              { label: 'Building content systems?', href: 'https://thecontentos.ai', text: 'theContentOS.ai' },
-              { label: 'Building GTM pipelines?', href: 'https://thegtmos.ai', text: 'theGTMOS.ai' },
-              { label: 'Need a GTM stack audit?', href: 'https://thegtmos.ai/why-independent', text: 'Get an Evaluation' },
-              { label: 'Want to see how it works?', href: '/blog', text: 'Read the Blog', internal: true },
-              { label: 'Want to see the components?', href: '/showcase', text: 'Showcase', internal: true },
-            ].map((item) => {
+            {chooseYourPathItems.map((item) => {
               const LinkEl = item.internal ? Link : 'a'
               return (
                 <LinkEl

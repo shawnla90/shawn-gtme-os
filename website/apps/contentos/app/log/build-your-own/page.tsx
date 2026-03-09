@@ -5,11 +5,14 @@ import CopyButton from './CopyButton'
 /* ── Metadata & SEO ── */
 
 export const metadata: Metadata = {
-  title: 'Build Your Own Daily Tracker',
+  title: 'Build Your Own AI Assistant for Free - Step by Step Guide',
   description:
-    'A copy-paste prompt to build your own AI-native daily activity tracker — auto-detects output from git, file mtime, and content directories, scores it, and renders a visual dashboard.',
+    'Learn how to build an AI assistant for free with this copy-paste prompt. Auto-detects your daily output from git, file mtime, and content directories, scores it, and renders a visual dashboard.',
   keywords: [
-    'daily tracker',
+    'how to build ai assistant for free',
+    'build ai assistant',
+    'free ai assistant',
+    'AI daily tracker',
     'AI workflow',
     'build in public',
     'Cursor IDE',
@@ -20,24 +23,24 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://thecontentos.ai/log/build-your-own' },
   openGraph: {
-    title: 'Build Your Own Daily Tracker | thecontentos.ai',
+    title: 'Build Your Own AI Assistant for Free - Step by Step Guide | thecontentos.ai',
     description:
-      'A copy-paste prompt to build your own AI-native daily activity tracker — auto-detects output, scores it, and renders a visual dashboard.',
+      'Learn how to build an AI assistant for free. Copy-paste prompt that auto-detects output, scores it, and renders a visual dashboard.',
     url: 'https://thecontentos.ai/log/build-your-own',
     images: [
       {
-        url: '/og?title=Build+Your+Own+Tracker&subtitle=The+prompt+behind+the+daily+receipts',
+        url: '/og?title=Build+Your+Own+AI+Assistant&subtitle=Free+step-by-step+guide',
         width: 1200,
         height: 630,
       },
     ],
   },
   twitter: {
-    title: 'Build Your Own Daily Tracker | thecontentos.ai',
+    title: 'Build Your Own AI Assistant for Free - Step by Step Guide | thecontentos.ai',
     description:
-      'A copy-paste prompt to build your own AI-native daily activity tracker — auto-detects output, scores it, and renders a visual dashboard.',
+      'Learn how to build an AI assistant for free. Copy-paste prompt that auto-detects output, scores it, and renders a visual dashboard.',
     images: [
-      '/og?title=Build+Your+Own+Tracker&subtitle=The+prompt+behind+the+daily+receipts',
+      '/og?title=Build+Your+Own+AI+Assistant&subtitle=Free+step-by-step+guide',
     ],
   },
 }

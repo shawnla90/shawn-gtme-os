@@ -1,0 +1,494 @@
+{
+  "Nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "blog": "Blog",
+    "media": "Medios",
+    "about": "Acerca de",
+    "wiki": "Wiki",
+    "knowledge": "Conocimiento",
+    "howTo": "Tutoriales",
+    "clayWiki": "Clay Wiki",
+    "contentWiki": "Content Wiki",
+    "contextWiki": "Context Wiki",
+    "more": "Más",
+    "log": "Registro",
+    "rpg": "RPG",
+    "vitals": "Métricas",
+    "method": "Método",
+    "showcase": "Portafolio",
+    "updates": "Actualizaciones",
+    "search": "Buscar",
+    "api": "API"
+  },
+  "Footer": {
+    "copyright": "© {year} ShawnOS.ai",
+    "allRights": "Todos los derechos reservados.",
+    "newsletter": "Boletín",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "github": "GitHub",
+      "substack": "Substack"
+    }
+  },
+  "Common": {
+    "readMore": "Leer más",
+    "backToHome": "Volver al inicio",
+    "loading": "Cargando...",
+    "error": "Algo salió mal",
+    "notFound": "Página no encontrada",
+    "language": "Idioma",
+    "english": "English",
+    "hebrew": "עברית",
+    "spanish": "Español",
+    "scroll": "scroll"
+  },
+  "Home": {
+    "metadata": {
+      "title": "ShawnOS.ai | GTM engineering, construido en público",
+      "description": "Un monorepo. Un sistema operativo. Cada habilidad, publicación y campaña pasa por el mismo código."
+    },
+    "hero": {
+      "titleLine1": "GTM Engineering,",
+      "titleLine2": "Construido en Público",
+      "subtitle": "Un monorepo. Un sistema operativo. Cada habilidad, publicación y campaña pasa por el mismo código.",
+      "ctaBlog": "leer el blog",
+      "ctaAbout": "acerca de"
+    },
+    "stats": {
+      "websites": "Sitios web",
+      "aiAgents": "Agentes de IA",
+      "knowledgeEntries": "Entradas de conocimiento",
+      "videoCompositions": "Composiciones de video",
+      "blogPosts": "Publicaciones del blog"
+    },
+    "method": {
+      "headline": "El Método",
+      "subtitle": "Cómo se construye todo",
+      "explore": { "title": "Explorar", "description": "Auditar el panorama. Encontrar dónde pierde el pipeline, qué brechas de contenido existen y dónde la automatización puede reemplazar el trabajo manual." },
+      "plan": { "title": "Planificar", "description": "Mapear el orden de construcción. Definir qué se lanza esta semana, qué se acumula con el tiempo y qué se descarta." },
+      "build": { "title": "Construir", "description": "Lanzar infraestructura real. Programar los pipelines, escribir el contenido, conectar las automatizaciones. Cada pieza vive en el monorepo." },
+      "ship": { "title": "Lanzar", "description": "Llevar a producción. Cada commit se despliega. Cada publicación se publica. Sin purgatorio de staging - construir, probar, lanzar." },
+      "compound": { "title": "Acumular", "description": "Dejar que se apile. El SEO se acumula. Las bibliotecas de contenido crecen. Las automatizaciones corren mientras duermes. El sistema se fortalece cada día." }
+    },
+    "darkInterlude": {
+      "title": "un monorepo. todo se lanza desde aquí.",
+      "subtitle": "tres sitios. agentes de IA. pipelines de contenido. automatización GTM. todo versionado."
+    },
+    "latestPosts": {
+      "headline": "Últimas publicaciones",
+      "subtitle": "Lo que se lanzó recientemente",
+      "viewAll": "ver todas las publicaciones"
+    },
+    "latestLog": {
+      "headline": "Último registro",
+      "subtitle": "Registro de construcción del día",
+      "viewAll": "ver todos los registros"
+    },
+    "faq": {
+      "headline": "FAQ",
+      "subtitle": "Preguntas frecuentes",
+      "q1": {
+        "question": "Qué es GTM engineering?",
+        "answer": "GTM engineering es la práctica de construir sistemas go-to-market con código. En vez de hacer clics en CRMs y hojas de cálculo, escribes pipelines, automatizas outbound, construyes workflows de enriquecimiento y lanzas sistemas de contenido - todo versionado y componible.",
+        "link": "explorar el playbook GTM"
+      },
+      "q2": {
+        "question": "Qué es ShawnOS?",
+        "answer": "ShawnOS es un monorepo que ejecuta todo mi sistema operativo profesional.",
+        "answerCont": "Tres sitios web, un motor de progresión, agentes de IA, pipelines de contenido y herramientas GTM - todo en un solo código. Es un experimento de manejar tu carrera como un producto de software.",
+        "linkShowcase": "Tres sitios web",
+        "linkRpg": "motor de progresión"
+      },
+      "q3": {
+        "question": "Por qué construir en público?",
+        "answer": "Construir en público convierte tu proceso de aprendizaje en contenido, tus commits en prueba de trabajo, y tus fracasos en lecciones que otros pueden aprender. Se acumula - cada publicación, cada actualización, cada feature lanzado es un artefacto permanente que construye confianza con el tiempo.",
+        "link": "ver el registro de construcción"
+      },
+      "q4": {
+        "question": "Con qué stack funciona?",
+        "answer": "Monorepo en TypeScript con Next.js (3 sitios en Vercel), Python para scripting y generación de contenido, Claude AI para la capa de agentes, y crons con launchd para automatización. Todo se lanza desde un solo repositorio git.",
+        "link": "ver el stack completo"
+      },
+      "q5": {
+        "question": "Puedo usar este enfoque para mi propia carrera?",
+        "answer": "Absolutamente. La idea central - tratar tu carrera como un producto, lanzar artefactos diarios, automatizar lo que puedas y dejar que todo se acumule - funciona para cualquier disciplina. No necesitas este stack exacto. Necesitas la mentalidad de producción sistemática y visible.",
+        "link": "empezar a construir"
+      },
+      "q6": {
+        "question": "Qué es el motor de progresión?",
+        "answer": "Una capa de gamificación que rastrea la producción diaria real - publicaciones de blog, commits de código, features lanzados - y los convierte en XP. Subes de nivel a través de 11 tiers con avatares en pixel art que evolucionan. No es decorativo; refleja trabajo real hecho.",
+        "link": "ver los tiers"
+      }
+    },
+    "caseStudies": {
+      "headline": "Casos de estudio",
+      "subtitle": "Proyectos destacados del monorepo",
+      "threeSiteNetwork": { "title": "Red de tres sitios", "description": "Un monorepo alimentando ShawnOS.ai, theGTMOS.ai y theContentOS.ai. Componentes compartidos, capa de datos compartida, despliegues independientes." },
+      "aiContentPipeline": { "title": "Pipeline de contenido con IA", "description": "Generación automatizada de blog con Claude + investigación de keywords SEO + publicación automática. Corre en un cron diario, escribe borradores para revisión humana." },
+      "progressionEngine": { "title": "Motor de progresión", "description": "Sistema RPG de 11 tiers que gamifica la producción real. Avatares en pixel art evolucionan basados en XP ganado por commits diarios y contenido lanzado." },
+      "missionControl": { "title": "Mission Control", "description": "Dashboard interno para monitorear todos los sistemas - estado de agentes, pipelines de contenido, métricas SEO y coordinación de equipo." }
+    },
+    "asHeardOn": "como se vio en",
+    "allAppearances": "todas las apariciones",
+    "workTogether": {
+      "heading": "quieres trabajar juntos?",
+      "bookCall": "agendar una llamada",
+      "textMe": "escríbeme",
+      "evaluateStack": "evalúa tu stack GTM"
+    },
+    "systemStatus": {
+      "heading": "estado del sistema",
+      "allOperational": "> all systems operational_",
+      "bootLines": {
+        "contentEngine": "content engine ... online",
+        "threeSiteNetwork": "three-site network ... synced",
+        "gtmEngine": "gtm engine ... theGTMOS.ai",
+        "contentOs": "content os ... theContentOS.ai",
+        "cursorAgent": "cursor agent ... active",
+        "blogPipeline": "blog pipeline ... mounted",
+        "buildInPublic": "build-in-public mode ... engaged",
+        "dailyTracker": "daily tracker ... streaming"
+      }
+    },
+    "builtWith": { "label": "construido con", "fullStack": "stack completo" },
+    "chooseYourPath": {
+      "heading": "Elige tu camino",
+      "contentSystems": { "label": "Construyendo sistemas de contenido?", "text": "theContentOS.ai" },
+      "gtmPipelines": { "label": "Construyendo pipelines GTM?", "text": "theGTMOS.ai" },
+      "stackAudit": { "label": "Necesitas una auditoría de tu stack GTM?", "text": "Obtener una evaluación" },
+      "readBlog": { "label": "Quieres ver cómo funciona?", "text": "Leer el blog" },
+      "showcase": { "label": "Quieres ver los componentes?", "text": "Portafolio" }
+    },
+    "liveUpdates": {
+      "showUpdates": "Mostrar actualizaciones",
+      "dismissUpdates": "Ocultar actualizaciones",
+      "updatesHeading": "actualizaciones",
+      "minimize": "minimizar",
+      "updateCount": "{count} actualización",
+      "updateCountPlural": "{count} actualizaciones"
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "Acerca de",
+      "description": "GTM Engineer. Constructor. Lanzado desde un monorepo. El sistema operativo detrás de shawnos.ai.",
+      "ogTitle": "Acerca de | shawnos.ai",
+      "ogDescription": "GTM Engineer. Constructor. Lanzado desde un monorepo."
+    },
+    "hero": {
+      "title": "Acerca de",
+      "titleAccent": "Shawn Tenam",
+      "subtitle": "GTM Engineer. Constructor. Lanzado desde un monorepo."
+    },
+    "identity": {
+      "headline": "Identidad",
+      "subtitle": "Quién construye esto",
+      "paragraph": "Construyo pipelines nativos de IA, workflows impulsados por agentes y sistemas de contenido que se acumulan. cada habilidad, cada publicación, cada campaña pasa por un solo código. el sitio en el que estás ahora es la prueba de trabajo."
+    },
+    "techStack": {
+      "headline": "Tech Stack",
+      "subtitle": "Las herramientas detrás del sistema",
+      "categories": { "framework": "framework", "infrastructure": "infraestructura", "aiMedia": "IA y medios" },
+      "items": {
+        "nextjs": { "label": "Next.js", "description": "Framework full-stack de React" },
+        "react": { "label": "React", "description": "Biblioteca de componentes UI" },
+        "typescript": { "label": "TypeScript", "description": "JavaScript tipado para seguridad" },
+        "tailwind": { "label": "Tailwind", "description": "Estilos CSS utility-first" },
+        "vercel": { "label": "Vercel", "description": "Plataforma de despliegue edge" },
+        "turborepo": { "label": "Turborepo", "description": "Orquestador de builds del monorepo" },
+        "cloudflare": { "label": "Cloudflare", "description": "CDN y gestión de DNS" },
+        "sqlite": { "label": "SQLite", "description": "Persistencia de datos local" },
+        "remotion": { "label": "Remotion", "description": "Motor de video programático" },
+        "claude": { "label": "Claude (AI)", "description": "Motor de razonamiento y código" }
+      }
+    },
+    "network": {
+      "headline": "La Red",
+      "subtitle": "Tres sitios, un monorepo",
+      "description": "shawnos.ai es un nodo en un sistema de tres sitios. cada sitio maneja un dominio del stack.",
+      "gtmos": { "label": "theGTMOS.ai", "description": "El sistema operativo GTM. Frameworks, playbooks y construcciones en vivo para GTM engineering." },
+      "contentos": { "label": "theContentOS.ai", "description": "El sistema operativo de contenido. Publicación voice-first, pipelines de reutilización y contenido como código." }
+    },
+    "connect": {
+      "headline": "Conectar",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "substack": "Substack",
+      "github": "GitHub"
+    },
+    "showcaseCta": {
+      "title": "mira los componentes en acción",
+      "description": "demos en vivo de cada sistema - terminal UI, animaciones, motor RPG, generación de video.",
+      "button": "portafolio de componentes"
+    },
+    "arcCta": {
+      "title": "quieres la historia completa?",
+      "description": "plomero. SDR. GTM engineer. las capas, la tesis y por qué existen tres dominios.",
+      "button": "leer el arco"
+    }
+  },
+  "AboutArc": {
+    "metadata": {
+      "title": "El Arco",
+      "description": "Plomero. SDR. GTM Engineer. El arco completo detrás de shawnos.ai y el sistema operativo.",
+      "ogTitle": "El Arco | shawnos.ai",
+      "ogDescription": "Plomero. SDR. GTM Engineer. El arco completo."
+    },
+    "hero": { "title": "El Arco", "subtitle": "Plomero. SDR. GTM Engineer." },
+    "intro": {
+      "line1": "todos los creadores GTM tienen la misma página de \"acerca de\".",
+      "quote": "\"Era SDR. Descubrí Clay. Ahora enseño a usarlo.\"",
+      "line2": "bien. acá va la mía.",
+      "line3": "excepto que la mía empieza con tubería de cobre y un soplete."
+    },
+    "layers": {
+      "heading": "las capas",
+      "description": "No fui de SDR a GTM engineer en línea recta. Pasé por tres capas, y cada una reconfiguró cómo pienso sobre construir.",
+      "whatItTaughtMe": "qué me enseñó:",
+      "plumber": { "title": "plomero", "subtitle": "capa 1", "body": "antes de tech, era plomero. no es metáfora. plomería real. diagnosticar problemas escuchando paredes, rastreando tuberías que nadie más quería tocar, arreglando sistemas bajo presión sin documentación.", "lesson": "todo sistema tiene una lógica. sigue el flujo. si algo se rompe arriba, todo abajo falla. y nadie respeta la reparación hasta que el agua deja de gotear." },
+      "sdr": { "title": "SDR", "subtitle": "capa 2", "body": "200+ correos fríos por día. dominios primarios, sin warmup, secuencias en SalesLoft, registro de actividades en Salesforce a mano. construyendo comités de compra desde cero en cuentas que nadie quería.", "lesson": "el volumen es un maestro. el rechazo son datos. y las personas que manualmente hacen el trabajo duro de outbound son las que realmente entienden qué se debe automatizar después." },
+      "gtmEngineer": { "title": "GTM engineer", "subtitle": "capa 3", "body": "dejé de trabajar dentro de los sistemas y empecé a construirlos. Tablas de Clay, automatización de HubSpot, secuencias de Instantly, workflows de web reveal, pipelines de enriquecimiento. el mismo trabajo que hacía a mano, ahora corriendo en infraestructura que yo diseñé.", "lesson": "los mejores constructores son los que hicieron el trabajo antes de automatizarlo. no puedes diseñar lo que no entiendes." },
+      "conclusion": "ninguna de estas me define. todas afilan lo que lanzo."
+    },
+    "thesis": {
+      "heading": "la tesis",
+      "bold": "esto no es vibe coding.",
+      "p1": "No hago un prompt y lanzo lo que sea que salga. Uso plan mode antes de escribir una sola línea. Uso ask mode cuando algo se rompe. Corro sub-agentes para trabajo en paralelo. Pruebo, rompo cosas, leo el error, lo arreglo, lo lanzo.",
+      "p2": "la IA no hace el trabajo por ti. acelera el trabajo que ya entiendes.",
+      "p3": "cada página de este sitio fue iterada, no generada. cada habilidad fue debuggeada antes de documentarse. cada template de campaña fue probado en pipeline real antes de convertirse en playbook.",
+      "p4": "el repositorio tiene más de 400 archivos. cero fueron prompts de un solo intento."
+    },
+    "threeSites": {
+      "heading": "tres sitios, un sistema",
+      "description": "esto no es vanidad. es arquitectura.",
+      "shawnos": { "name": "shawnos.ai", "description": "el constructor. el sistema operativo personal. tracker diario, progresión RPG, sistema de avatares, capa API. aquí es donde vive la infraestructura." },
+      "gtmos": { "name": "thegtmos.ai", "description": "el playbook. Frameworks de GTM engineering, desgloses de workflows, arquitecturas de campaña. los sistemas detrás de la generación de pipeline." },
+      "contentos": { "name": "thecontentos.ai", "description": "el motor de voz. publicación content-as-code, voice DNA, pipelines de reutilización. cómo se hacen las palabras y a dónde van." },
+      "footer": "tres dominios. un monorepo. cada página, cada ruta API, cada imagen generada viene del mismo código. nada aquí es accidental."
+    },
+    "buildWithMe": {
+      "heading": "construye conmigo",
+      "description": "esto no es un portafolio para ver. es un sistema que puedes forkear.",
+      "theApi": { "label": "el API", "description": "endpoints, schemas, datos en vivo" },
+      "questBoard": { "label": "tablero de misiones", "description": "retos para constructores" },
+      "buildYourOwn": { "label": "construye el tuyo", "description": "el prompt inicial" },
+      "skillGuide": { "label": "guía de habilidades", "description": "cómo funciona el sistema RPG" }
+    },
+    "connect": {
+      "heading": "conectar",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "substack": "Substack",
+      "github": "GitHub",
+      "backToAbout": "volver a acerca de"
+    }
+  },
+  "Blog": {
+    "metadata": { "title": "Blog", "description": "Publicaciones del registro de construcción de shawnos.ai. GTM engineering, construido en público." },
+    "hero": { "title": "Blog", "subtitle": "Publicaciones del registro de construcción." },
+    "emptyState": "No se encontraron publicaciones. Vuelve pronto.",
+    "featured": "destacado",
+    "readMore": "leer más",
+    "minRead": "{minutes} min de lectura",
+    "backToBlog": "volver al blog",
+    "toc": "$ toc"
+  },
+  "Media": {
+    "metadata": { "title": "Medios | Podcasts, entrevistas y apariciones", "description": "Podcasts, entrevistas, paneles y apariciones de Shawn Tenam." },
+    "hero": { "title": "Medios", "subtitle": "Podcasts, entrevistas y apariciones" },
+    "stats": { "appearances": "Apariciones", "platforms": "Plataformas", "latest": "Reciente" },
+    "sections": { "featured": "Destacados", "allAppearances": "Todas las apariciones" },
+    "categories": { "podcast": "PODCAST", "interview": "ENTREVISTA", "panel": "PANEL", "speaking": "CONFERENCIA", "article": "ARTÍCULO" },
+    "backlink": { "heading": "Para hosts de podcast y medios:", "body": "Enlaza a {url} en las notas del episodio." },
+    "nav": { "home": "inicio", "about": "acerca de" }
+  },
+  "Method": {
+    "metadata": { "title": "El Método", "description": "Recursive Drift. el método no lineal para construir con IA. Seis estados, sin orden fijo, la salida se retroalimenta como entrada." },
+    "hero": { "title": "Recursive Drift", "subtitle": "El método no lineal para construir con IA." },
+    "intro": { "heading": "recursive drift.", "tagline": "el método no lineal para construir con IA." },
+    "states": {
+      "sectionTitle": "Los estados",
+      "sectionSubtitle": "Una máquina de estados con ciclos de retroalimentación",
+      "inPractice": "en la práctica:",
+      "freefall": { "name": "freefall", "tag": "explorar" },
+      "plan": { "name": "plan", "tag": "cristalizar" },
+      "build": { "name": "build", "tag": "delegar" },
+      "break": { "name": "break", "tag": "redirigir" },
+      "ask": { "name": "ask", "tag": "interrogar" },
+      "seed": { "name": "seed", "tag": "plantar" }
+    },
+    "recursive": { "sectionTitle": "Recursivo", "sectionSubtitle": "La salida se retroalimenta como entrada" },
+    "antiPatterns": { "sectionTitle": "Lo que esto no es" },
+    "contrasts": { "sectionTitle": "En qué se diferencia" },
+    "paradox": { "sectionTitle": "La paradoja" },
+    "seeItRunning": {
+      "sectionTitle": "Míralo en acción",
+      "links": {
+        "fieldGuide": { "label": "la guía de campo", "desc": "recursive drift aplicado a probar nuevas features de IA" },
+        "arc": { "label": "el arco", "desc": "dónde empezó esto. plomero, SDR, GTM engineer" },
+        "log": { "label": "el registro", "desc": "producción diaria del ciclo" },
+        "blog": { "label": "el blog", "desc": "contenido largo que el sistema produjo" },
+        "api": { "label": "el API", "desc": "endpoints, schemas, datos en vivo" }
+      }
+    },
+    "backToAbout": "volver a acerca de"
+  },
+  "Knowledge": {
+    "metadata": { "title": "Guía de conocimiento | Términos de ingeniería e IA que realmente necesitas", "description": "Git, Vercel, agentes de IA, cron jobs y los términos técnicos que necesitas conocer." },
+    "breadcrumb": "Conocimiento",
+    "termPage": {
+      "notFoundMessage": "término no encontrado. prueba la",
+      "notFoundLink": "guía de conocimiento",
+      "sections": { "whyItMatters": "por qué importa", "howYouUseIt": "cómo lo usas", "howIUseIt": "cómo lo uso yo", "relatedTerms": "términos relacionados", "goDeeper": "profundizar" },
+      "nav": { "backToEngineering": "guía de ingeniería e IA", "backToGtm": "guía de conocimiento GTM", "allTerms": "todos los términos" }
+    },
+    "guidePage": {
+      "toc": "en esta página",
+      "mobileToc": "tabla de contenidos",
+      "fieldLabels": { "whyItMatters": "por qué importa", "howYouUseIt": "cómo lo usas", "related": "relacionados:" },
+      "outro": { "title": "el toolkit del vibe coder", "closingLine": "ve y construye algo.", "cta": { "title": "quieres el lado GTM?", "buttonText": "guía de conocimiento GTM OS" } },
+      "nav": { "left": "inicio", "right": "guía GTM OS" }
+    }
+  },
+  "HowTo": {
+    "metadata": { "title": "Wiki de tutoriales | La guía práctica de herramientas de IA", "description": "Guías paso a paso para Cursor IDE, Claude Code, servidores MCP, agentes paralelos, gestión de costos y seguridad de IA." },
+    "breadcrumb": { "knowledge": "Conocimiento", "howToWiki": "Wiki de tutoriales" },
+    "hubPage": {
+      "title": "Wiki de tutoriales",
+      "description": "La guía práctica de herramientas de IA.",
+      "badge": "Practicante de ingeniería de IA",
+      "stats": { "guides": "Guías", "categories": "Categorías", "onThisSite": "En este sitio" },
+      "mobileToc": "categorías",
+      "toc": { "heading": "categorías", "legend": "leyenda", "localEntry": "entrada local", "crossSite": "entre sitios" },
+      "nav": { "left": "guía de conocimiento", "right": "Clay Wiki" }
+    },
+    "entryPage": {
+      "notFoundMessage": "entrada no encontrada. prueba la",
+      "notFoundLink": "wiki de tutoriales",
+      "sectionTypes": { "pattern": "PATTERN", "code": "CODE", "antiPattern": "ANTI-PATTERN", "proTip": "PRO TIP", "formula": "FORMULA" },
+      "sections": { "relatedGuides": "guías relacionadas" },
+      "nav": { "left": "wiki de tutoriales", "right": "guía de conocimiento" }
+    }
+  },
+  "ContextWiki": {
+    "metadata": { "title": "Wiki de Context Engineering | La guía práctica", "description": "La guía práctica de context engineering para GTM engineers." },
+    "hero": { "title": "Context Engineering", "subtitle": "Dale a la IA el contexto correcto. Deja de adivinar." },
+    "stats": { "wikiEntries": "Entradas del wiki", "categories": "Categorías", "skillsBuilt": "Habilidades creadas" },
+    "badge": "Context Engineer",
+    "nav": { "knowledgeGuide": "guía de conocimiento", "clayWiki": "Clay Wiki" },
+    "entry": { "notFoundMessage": "entrada no encontrada. prueba el", "notFoundLink": "wiki de contexto", "relatedLabel": "entradas relacionadas", "navBackToWiki": "wiki de contexto", "navToKnowledge": "guía de conocimiento" },
+    "sectionTypes": { "pattern": "PATTERN", "code": "CODE", "antiPattern": "ANTI-PATTERN", "proTip": "PRO TIP", "formula": "FORMULA" }
+  },
+  "Search": {
+    "metadata": { "title": "Buscar", "description": "Buscar todo el contenido en shawnos.ai." },
+    "hero": { "title": "Buscar", "subtitle": "Encuentra cualquier cosa en shawnos.ai." },
+    "input": { "placeholder": "buscar todo...", "clear": "limpiar" },
+    "hint": { "startTyping": "empieza a escribir para encontrar cualquier cosa." },
+    "results": { "noResults": "sin resultados para \"{query}\"", "resultCount": "{count} resultados" },
+    "types": { "howTo": "Tutoriales", "knowledge": "Conocimiento", "contextWiki": "Context Wiki", "clayWiki": "Clay Wiki", "contentWiki": "Content Wiki", "blog": "Blog", "dailyLog": "Registro diario" }
+  },
+  "Updates": {
+    "metadata": { "title": "Últimas actualizaciones | Qué hay de nuevo en ShawnOS.ai", "description": "Cada nuevo artículo, entrada de wiki, feature y actualización del sistema en shawnos.ai." },
+    "hero": { "title": "Actualizaciones", "subtitle": "Todo lo lanzado, en un solo feed." },
+    "stats": { "recentUpdates": "Actualizaciones recientes", "featuresShipped": "Features lanzados", "categories": "Categorías" },
+    "rss": { "badge": "RSS Feed" },
+    "sections": { "featuresAndLaunches": "Features y lanzamientos", "allContent": "Todo el contenido" },
+    "featureTypes": { "launch": "LAUNCH", "feature": "FEATURE", "integration": "INTEGRATION", "infrastructure": "INFRA" },
+    "feed": { "all": "Todo", "searchPlaceholder": "Buscar títulos, descripciones...", "clear": "limpiar", "clearAll": "limpiar todo", "noResultsForQuery": "Sin resultados para \"{query}\".", "noResultsForFilters": "Sin resultados para los filtros actuales.", "reset": "Reiniciar" },
+    "nav": { "home": "inicio", "rssFeed": "feed RSS" }
+  },
+  "Showcase": {
+    "metadata": { "title": "Portafolio de componentes", "description": "Demos en vivo de los componentes React, sistemas de animación y motor RPG que alimentan shawnos.ai." },
+    "hero": { "title": "Portafolio", "subtitle": "Demos en vivo de cada sistema." },
+    "terminalUi": { "title": "terminal-ui", "description": "Chrome de terminal personalizado usado en todas las páginas." },
+    "animationSystem": { "title": "animation-system", "description": "Dos primitivas de animación puras en React." },
+    "rpgEngine": { "title": "rpg-progression-engine", "description": "XP se acumula del trabajo diario real." },
+    "videoGeneration": { "title": "video-generation", "description": "40+ composiciones en Remotion." },
+    "contentPipeline": { "title": "content-pipeline", "description": "Archivos Markdown se convierten en publicaciones de blog, páginas de wiki y feeds RSS al compilar." },
+    "cta": { "headline": "construido en público. cada commit rastreado.", "description": "sigue el registro diario para ver cómo se construye cada sistema.", "readTheLog": "leer el registro", "about": "acerca de" }
+  },
+  "Log": {
+    "metadata": { "title": "Registro de construcción diario", "description": "Registro de construcción diario del sistema operativo GTM." },
+    "index": {
+      "heroTitle": "Registro de construcción",
+      "heroSubtitle": "Prueba de trabajo diaria.",
+      "viewProgression": "Ver progresión",
+      "exploreSkillGuide": "explorar la guía de habilidades",
+      "buildYourOwnCTA": "Quieres construir el tuyo? Agarra el prompt.",
+      "searchPlaceholder": "Buscar por fecha...",
+      "gradeFilterAll": "Todos",
+      "noLogsFound": "No se encontraron registros. Vuelve pronto.",
+      "noLogsMatch": "Ningún registro coincide con el filtro actual."
+    },
+    "detail": { "backToLogs": "volver a registros", "logNotFound": "Registro no encontrado para {date}." },
+    "buildYourOwn": {
+      "metadata": { "title": "Construye tu propio tracker diario", "description": "Un prompt para copiar y pegar y construir tu propio tracker de actividad diaria con IA." },
+      "heroTitle": "Construye el tuyo", "heroSubtitle": "El prompt detrás de los recibos diarios.",
+      "thePrompt": "el prompt", "copyPrompt": "Copiar prompt", "copied": "Copiado!", "backToLog": "Volver al registro"
+    },
+    "progression": {
+      "metadata": { "title": "Progresión del personaje", "description": "Crecimiento de XP, tendencias de grado, multiplicador de racha, hitos y eficiencia de tokens." },
+      "heroTitle": "Progresión", "heroSubtitle": "XP, grados y nivel.", "backToLogs": "volver a registros",
+      "xpEarnedPerDay": "XP ganado por día", "scoringLog": "Registro de puntuación",
+      "tableHeaders": { "date": "Fecha", "score": "Puntaje", "grade": "Grado", "commits": "Commits" },
+      "currentClass": "Clase actual", "milestones": "Hitos", "tokenEfficiency": "Eficiencia de tokens", "totalSpend": "Gasto total", "avgPerDay": "Promedio/Día"
+    },
+    "quests": { "metadata": { "title": "Tablero de misiones | Retos para constructores", "description": "Cinco retos para construir tu propio tracker diario y más." }, "heroTitle": "Tablero de misiones", "heroSubtitle": "Retos para constructores." },
+    "skillGuide": { "metadata": { "title": "Guía de habilidades | Cómo funciona el tracker diario", "description": "La historia de origen, desglose del stack y sistema de progresión RPG." }, "heroTitle": "Guía de habilidades", "heroSubtitle": "Cómo funciona el tracker diario." }
+  },
+  "RPG": {
+    "metadata": { "title": "El motor de progresión | ShawnOS.ai", "description": "11 tiers. 5 clases. Cada título ganado a través de producción diaria." },
+    "heroTitle": "Motor de progresión", "heroSubtitle": "XP de trabajo real. 11 tiers. 5 clases.",
+    "sections": { "tierProgression": "Progresión de tiers", "classes": "Clases", "titleTable": "Tabla de títulos" },
+    "tableHeaders": { "level": "Nivel", "title": "Título", "xpRequired": "XP requerido", "avatarTier": "Tier del avatar", "xpToNext": "XP para el siguiente" },
+    "footer": { "seeHowEarned": "mira cómo se gana este puntaje" },
+    "reveal": { "clickToPreview": "Clic para previsualizar", "maxRank": "RANGO MÁXIMO" },
+    "loading": { "systemLabel": "LOADING SYSTEM v1.0", "tapToStart": "Toca para iniciar" }
+  },
+  "Lab": {
+    "metadata": { "title": "Nio DNA Lab | ShawnOS.ai", "description": "Evolución de agentes de IA en acción. Mira a Nio subir de nivel con uso real." },
+    "bootLabel": "DNA LAB v1.0", "bootTap": "toca para iniciar",
+    "header": { "title": "Nio DNA Lab", "subtitle": "Evolución de agentes de IA en acción. Construido por el sistema que describe." },
+    "sections": {
+      "roadmap": { "current": "actual" },
+      "costs": { "claudeMax": "Claude Max", "apiSpend": "gasto API", "total": "Total:", "messages": "mensajes", "apiCost": "costo API", "dailyCap": "tope diario", "utilization": "utilización" }
+    },
+    "cta": { "readPost": "LEER EL POST COMPLETO", "exploreMore": "EXPLORAR MÁS" }
+  },
+  "Vitals": {
+    "metadata": { "title": "Métricas del sistema", "description": "Escaneo en vivo del ecosistema de sitios web ShawnOS." },
+    "heroTitle": "Métricas del sistema", "heroSubtitle": "Escaneo del ecosistema en vivo.",
+    "scannerNotInit": "Escáner no inicializado. Ejecuta website_scanner.py primero.",
+    "nioTerminal": { "metadata": { "title": "nio.terminal - Registro de desarrollo de IA", "description": "Perspectivas diarias de Nio, el guardián de IA del sitio." } },
+    "v2Lab": { "title": "Motor de progresión v2 Lab", "subtitle": "Comparación fantasma. Grados recalibrados, multiplicador de cadena ascendente, puntuación bonus.", "labels": { "v1Current": "v1 - actual (en vivo)", "v2Experimental": "v2 - experimental" } }
+  },
+  "API": {
+    "metadata": { "title": "API pública | ShawnOS.ai - Feed de progresión RPG en tiempo real", "description": "Accede a mi XP, nivel e hitos en vivo vía JSON." },
+    "heroTitle": "API pública", "heroSubtitle": "Feed de progresión en tiempo real.",
+    "copyButton": "Copiar",
+    "sections": { "quickStart": "Inicio rápido", "responseSchema": "Schema de respuesta", "useCases": "Casos de uso", "howItWorks": "Cómo funciona este sistema", "buildYourOwn": "Construye el tuyo", "aboutShawnOS": "Sobre ShawnOS", "relatedResources": "Recursos relacionados" },
+    "quickStart": { "curl": "cURL", "jsFetch": "JavaScript (fetch)", "python": "Python" },
+    "useCases": {
+      "embedStats": { "title": "Insertar estadísticas en vivo", "description": "Muestra XP y nivel en tiempo real en tu portafolio" },
+      "discordBot": { "title": "Bot de Discord", "description": "Construye un bot que rastree la progresión" },
+      "twitterAutomation": { "title": "Automatización de Twitter", "description": "Tuitea automáticamente cuando se alcanzan hitos" },
+      "studyArchitecture": { "title": "Estudiar la arquitectura", "description": "Examina cómo se construye un sistema RPG en tiempo real" }
+    },
+    "buildYourOwn": {
+      "steps": {
+        "dataPipeline": { "title": "1. Pipeline de datos", "description": "Escanea tus fuentes de trabajo y calcula puntajes" },
+        "persistenceLayer": { "title": "2. Capa de persistencia", "description": "Escribe estadísticas a un archivo JSON público" },
+        "apiEndpoint": { "title": "3. Endpoint API", "description": "Expón vía una API pública con CORS y caché" },
+        "frontendDisplay": { "title": "4. Display del frontend", "description": "Construye componentes UI que rendericen los datos" }
+      },
+      "toolStack": "Stack de herramientas"
+    },
+    "resources": {
+      "homepage": { "title": "Página principal de ShawnOS.ai", "description": "Landing page principal y dashboard RPG" },
+      "github": { "title": "Repositorio en GitHub", "description": "Código fuente completo y documentación" },
+      "rpgEngine": { "title": "Motor de progresión RPG", "description": "Desglose visual de títulos, tiers e hitos" }
+    }
+  }
+}
