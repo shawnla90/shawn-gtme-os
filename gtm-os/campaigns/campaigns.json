@@ -9,6 +9,16 @@
       "tools": ["exa", "apollo", "grok", "supabase", "attio", "lemlist", "maildoso"],
       "start_date": null,
       "created": "2026-03-03"
+    },
+    {
+      "id": "2026-03-wp-migration-miami",
+      "name": "WordPress Migration - Miami SMBs",
+      "status": "sourcing",
+      "segment": "wp-migration-miami",
+      "angles": ["wordpress-performance", "next-js-migration"],
+      "tools": ["apollo", "supabase", "attio"],
+      "start_date": null,
+      "created": "2026-03-09"
     }
   ]
 }

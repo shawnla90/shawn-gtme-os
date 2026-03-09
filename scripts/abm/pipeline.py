@@ -24,6 +24,7 @@ Usage:
   python3 scripts/abm/pipeline.py --step cleanup --dry-run
   python3 scripts/abm/pipeline.py --step verify --limit 50
   python3 scripts/abm/pipeline.py --step source_yc --limit 200 --dry-run
+  python3 scripts/abm/pipeline.py --step source_wp --city "Miami, FL" --limit 50 --dry-run
   python3 scripts/abm/pipeline.py --step all --limit 5 --resume
 """
 
@@ -95,6 +96,10 @@ def check_keys(step):
         for key in ('EXA_API_KEY', 'APOLLO_API_KEY', 'PROSPEO_API_KEY'):
             if not os.environ.get(key):
                 missing.append(key)
+
+    if step == 'source_wp':
+        if not os.environ.get('APOLLO_API_KEY'):
+            missing.append('APOLLO_API_KEY')
 
     if missing:
         print(f"[!] Missing API keys: {', '.join(missing)}")
@@ -192,7 +197,7 @@ def main():
         'research', 'prospect', 'generate', 'sync', 'depersonalize',
         'outreach', 'gap_analysis', 'find_similar', 'lemlist',
         'backfill', 'validate', 'flag_titles', 'enrich', 'replace',
-        'clean', 'cleanup', 'verify', 'source_yc',
+        'clean', 'cleanup', 'verify', 'source_yc', 'source_wp',
         'warming', 'preflight',
         'linkedin_import', 'linkedin_messages', 'signals',
         'all',
@@ -211,6 +216,8 @@ def main():
                         help='Seed type for find_similar step')
     parser.add_argument('--campaign-id', default=None,
                         help='Lemlist campaign ID (required for lemlist step)')
+    parser.add_argument('--city', default='Miami, FL',
+                        help='Target city for source_wp step (e.g. "Miami, FL")')
 
     args = parser.parse_args()
 
@@ -317,6 +324,11 @@ def main():
     if step == 'source_yc':
         import source_yc
         source_yc.run(limit=limit, dry_run=args.dry_run)
+
+    # WordPress migration sourcing - explicit only (NOT in 'all')
+    if step == 'source_wp':
+        import source_wp_migration
+        source_wp_migration.run(city=args.city, limit=limit, dry_run=args.dry_run)
 
     # Domain warming status - explicit only
     if step == 'warming':
