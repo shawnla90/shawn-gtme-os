@@ -146,14 +146,17 @@ export function getHowToWikiCrossLinks(
 /* ── locale-aware getters ─────────────────────────── */
 
 import { HOW_TO_WIKI_ENTRIES_HE, HOW_TO_WIKI_CATEGORIES_HE } from './how-to-wiki.he'
+import { HOW_TO_WIKI_ENTRIES_ES, HOW_TO_WIKI_CATEGORIES_ES } from './how-to-wiki.es'
 
 export function getLocalizedHowToEntries(locale: string): HowToWikiEntry[] {
   if (locale === 'he') return HOW_TO_WIKI_ENTRIES_HE
+  if (locale === 'es') return HOW_TO_WIKI_ENTRIES_ES
   return HOW_TO_WIKI_ENTRIES
 }
 
 export function getLocalizedHowToCategories(locale: string) {
   if (locale === 'he') return HOW_TO_WIKI_CATEGORIES_HE
+  if (locale === 'es') return HOW_TO_WIKI_CATEGORIES_ES
   return HOW_TO_WIKI_CATEGORIES
 }
 
