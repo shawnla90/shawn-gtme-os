@@ -6,6 +6,7 @@
  */
 
 import type { Metadata } from 'next'
+import { setRequestLocale } from 'next-intl/server'
 import {
   getRPGProfile,
   resolveDataRoot,
@@ -119,7 +120,9 @@ function pct(a: number, b: number): string {
 
 /* ── page ────────────────────────────────────────── */
 
-export default function V2LabPage() {
+export default async function V2LabPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const v1 = getRPGProfile(DATA_ROOT)
   const v2 = getRPGProfileV2(DATA_ROOT)
 
