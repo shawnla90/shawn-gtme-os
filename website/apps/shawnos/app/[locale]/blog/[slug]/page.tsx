@@ -13,9 +13,16 @@ import { BlogTracking } from './BlogTracking'
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
 
-function getContentDir(locale: string) {
-  const localeDir = path.join(CONTENT_BASE, locale)
-  if (locale !== 'en' && fs.existsSync(localeDir)) return localeDir
+function getContentDir(locale: string, slug?: string) {
+  if (locale !== 'en') {
+    const localeDir = path.join(CONTENT_BASE, locale)
+    if (slug) {
+      const localeFile = path.join(localeDir, `${slug}.md`)
+      if (fs.existsSync(localeFile)) return localeDir
+    } else if (fs.existsSync(localeDir)) {
+      return localeDir
+    }
+  }
   return CONTENT_BASE
 }
 
@@ -80,7 +87,7 @@ export default async function BlogPost({
 }) {
   const { slug, locale } = await params
   const t = await getTranslations('Blog')
-  const contentDir = getContentDir(locale)
+  const contentDir = getContentDir(locale, slug)
   const post = getPostBySlug(slug, contentDir)
   const htmlContent = await markdownToHtml(post.content)
 
