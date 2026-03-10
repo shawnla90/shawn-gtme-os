@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { CopyButton, CodeBlock } from './components'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { PageHero, ScrollRevealSection, SectionHeadline } from './ApiHero'
@@ -46,7 +46,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function APIPage() {
+export default async function APIPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations('API')
   return (
     <>

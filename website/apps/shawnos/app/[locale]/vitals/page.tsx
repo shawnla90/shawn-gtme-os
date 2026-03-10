@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getWebsiteStats, resolveDataRoot } from '@shawnos/shared/lib'
 import { VitalsPage } from '@shawnos/shared/pages/VitalsPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
@@ -45,7 +45,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function VitalsRoute() {
+export default async function VitalsRoute({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations('Vitals')
   const stats = getWebsiteStats(DATA_ROOT)
 
