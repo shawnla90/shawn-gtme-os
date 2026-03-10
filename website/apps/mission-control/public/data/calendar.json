@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-09T04:03:50.165Z",
+  "generated": "2026-03-10T04:03:33.644Z",
   "events": [
     {
-      "id": "commit-ed83a29",
-      "title": "Merge remote-tracking branch 'origin/lets-prepare-this-for-n",
-      "type": "system",
-      "datetime": "2026-03-08T23:37:31-04:00",
-      "status": "completed",
-      "description": "Merge remote-tracking branch 'origin/lets-prepare-this-for-new-substack-blog-and-x-post'",
-      "metadata": {
-        "commitHash": "ed83a29"
-      }
-    },
-    {
-      "id": "commit-e7d084c",
-      "title": "feat: SDR to solo GTM engineer - blog post, LinkedIn, X thre",
+      "id": "commit-ed078b4",
+      "title": "feat: ABM WordPress migration campaign - NYC sourcing",
       "type": "milestone",
-      "datetime": "2026-03-08T23:26:36-04:00",
+      "datetime": "2026-03-09T18:02:11-04:00",
       "status": "completed",
-      "description": "feat: SDR to solo GTM engineer - blog post, LinkedIn, X thread",
+      "description": "feat: ABM WordPress migration campaign - NYC sourcing",
       "metadata": {
-        "commitHash": "e7d084c"
+        "commitHash": "ed078b4"
       }
     },
     {
-      "id": "commit-056bd43",
-      "title": "feat: skills consolidation - migrate Cursor skills, add GTM-",
+      "id": "commit-65ae816",
+      "title": "feat: ABM WordPress migration campaign - Miami sourcing",
       "type": "milestone",
-      "datetime": "2026-03-08T21:46:02-04:00",
+      "datetime": "2026-03-09T18:00:48-04:00",
       "status": "completed",
-      "description": "feat: skills consolidation - migrate Cursor skills, add GTM-scoped skills, archive stale content",
+      "description": "feat: ABM WordPress migration campaign - Miami sourcing",
       "metadata": {
-        "commitHash": "056bd43"
+        "commitHash": "65ae816"
       }
     },
     {
-      "id": "commit-2d1d02c",
-      "title": "chore: sanitize repo for public GitHub + accumulated changes",
-      "type": "system",
-      "datetime": "2026-03-08T20:57:34-04:00",
-      "status": "completed",
-      "description": "chore: sanitize repo for public GitHub + accumulated changes",
-      "metadata": {
-        "commitHash": "2d1d02c"
-      }
-    },
-    {
-      "id": "commit-9de893c",
-      "title": "feat: services page overhaul - customer education, pricing, ",
+      "id": "commit-9c84bba",
+      "title": "feat: i18n Hebrew how-to wiki + GEO hub + blog translations ",
       "type": "milestone",
-      "datetime": "2026-03-08T20:55:12-04:00",
+      "datetime": "2026-03-09T16:42:32-04:00",
       "status": "completed",
-      "description": "feat: services page overhaul - customer education, pricing, UX",
+      "description": "feat: i18n Hebrew how-to wiki + GEO hub + blog translations + globals.css fix",
       "metadata": {
-        "commitHash": "9de893c"
+        "commitHash": "9c84bba"
       }
     },
     {
-      "id": "commit-8a810eb",
-      "title": "fix: add missing shared components (DashedCard, DotGrid, Gra",
+      "id": "commit-3f8846f",
+      "title": "feat: daily LinkedIn posts 2026-03-09",
+      "type": "milestone",
+      "datetime": "2026-03-09T09:09:47-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-09",
+      "metadata": {
+        "commitHash": "3f8846f"
+      }
+    },
+    {
+      "id": "commit-a204737",
+      "title": "feat: nio.log 2026-03-09 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-09T08:02:16-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-09 — automated daily post",
+      "metadata": {
+        "commitHash": "a204737"
+      }
+    },
+    {
+      "id": "commit-2755a40",
+      "title": "feat: GEO authority hub + analytics + globals.css fix",
+      "type": "milestone",
+      "datetime": "2026-03-09T03:49:45-04:00",
+      "status": "completed",
+      "description": "feat: GEO authority hub + analytics + globals.css fix",
+      "metadata": {
+        "commitHash": "2755a40"
+      }
+    },
+    {
+      "id": "commit-c71b59a",
+      "title": "fix: add globals.css import to [locale]/layout.tsx",
       "type": "deployment",
-      "datetime": "2026-03-08T19:44:44-04:00",
+      "datetime": "2026-03-09T03:46:00-04:00",
       "status": "completed",
-      "description": "fix: add missing shared components (DashedCard, DotGrid, GraphGrid)",
+      "description": "fix: add globals.css import to [locale]/layout.tsx",
       "metadata": {
-        "commitHash": "8a810eb"
+        "commitHash": "c71b59a"
       }
     },
     {
-      "id": "commit-9101890",
-      "title": "feat: blog post on Karpathy's autoresearch for shawnos.ai + ",
-      "type": "milestone",
-      "datetime": "2026-03-08T19:05:10-04:00",
-      "status": "completed",
-      "description": "feat: blog post on Karpathy's autoresearch for shawnos.ai + thegtmos.ai",
-      "metadata": {
-        "commitHash": "9101890"
-      }
-    },
-    {
-      "id": "commit-4e31b4b",
-      "title": "feat: sprint 3.5 professional polish - typography, warm them",
-      "type": "milestone",
-      "datetime": "2026-03-08T12:15:20-04:00",
-      "status": "completed",
-      "description": "feat: sprint 3.5 professional polish - typography, warm theme, SVG icons, gauges",
-      "metadata": {
-        "commitHash": "4e31b4b"
-      }
-    },
-    {
-      "id": "commit-73e578a",
-      "title": "feat: daily LinkedIn posts 2026-03-08",
-      "type": "milestone",
-      "datetime": "2026-03-08T09:09:47-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-08",
-      "metadata": {
-        "commitHash": "73e578a"
-      }
-    },
-    {
-      "id": "commit-6d17618",
-      "title": "feat: nio.log 2026-03-08 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-03-08T08:03:18-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-03-08 — automated daily post",
-      "metadata": {
-        "commitHash": "6d17618"
-      }
-    },
-    {
-      "id": "commit-310b243",
-      "title": "feat: MidJourney gallery overhaul - recipe wizards + interac",
-      "type": "milestone",
-      "datetime": "2026-03-08T00:49:57-05:00",
-      "status": "completed",
-      "description": "feat: MidJourney gallery overhaul - recipe wizards + interactive showcase",
-      "metadata": {
-        "commitHash": "310b243"
-      }
-    },
-    {
-      "id": "commit-50d14a7",
-      "title": "chore: daily tracker scan 2026-03-07",
-      "type": "system",
-      "datetime": "2026-03-08T00:02:53-05:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-03-07",
-      "metadata": {
-        "commitHash": "50d14a7"
-      }
-    },
-    {
-      "id": "commit-a82ff1f",
-      "title": "feat: anthropic mode (light theme) + /services/web-developme",
-      "type": "milestone",
-      "datetime": "2026-03-07T20:38:12-05:00",
-      "status": "completed",
-      "description": "feat: anthropic mode (light theme) + /services/web-development page",
-      "metadata": {
-        "commitHash": "a82ff1f"
-      }
-    },
-    {
-      "id": "commit-28de99a",
-      "title": "feat: floating neon red spirits on MidJourney Mastery page",
-      "type": "milestone",
-      "datetime": "2026-03-07T16:49:54-05:00",
-      "status": "completed",
-      "description": "feat: floating neon red spirits on MidJourney Mastery page",
-      "metadata": {
-        "commitHash": "28de99a"
-      }
-    },
-    {
-      "id": "commit-3a1ecb1",
-      "title": "fix: add build gate to optimizer cron + batch LinkedIn varia",
+      "id": "commit-ba55d26",
+      "title": "fix: pre-push hook skip binary files in content scan",
       "type": "deployment",
-      "datetime": "2026-03-07T14:50:20-05:00",
+      "datetime": "2026-03-09T03:37:56-04:00",
       "status": "completed",
-      "description": "fix: add build gate to optimizer cron + batch LinkedIn variations",
+      "description": "fix: pre-push hook skip binary files in content scan",
       "metadata": {
-        "commitHash": "3a1ecb1"
+        "commitHash": "ba55d26"
+      }
+    },
+    {
+      "id": "commit-63955eb",
+      "title": "Revert \"feat: full-app i18n - EN/HE/ES on every page via nex",
+      "type": "system",
+      "datetime": "2026-03-09T03:35:44-04:00",
+      "status": "completed",
+      "description": "Revert \"feat: full-app i18n - EN/HE/ES on every page via next-intl\"",
+      "metadata": {
+        "commitHash": "63955eb"
+      }
+    },
+    {
+      "id": "commit-d75f1f1",
+      "title": "Revert \"merge: integrate GEO authority hub with i18n infrast",
+      "type": "system",
+      "datetime": "2026-03-09T03:35:44-04:00",
+      "status": "completed",
+      "description": "Revert \"merge: integrate GEO authority hub with i18n infrastructure\"",
+      "metadata": {
+        "commitHash": "d75f1f1"
+      }
+    },
+    {
+      "id": "commit-b51b0ed",
+      "title": "Revert \"chore: update package-lock and sitemaps after i18n +",
+      "type": "system",
+      "datetime": "2026-03-09T03:35:44-04:00",
+      "status": "completed",
+      "description": "Revert \"chore: update package-lock and sitemaps after i18n + GEO merge\"",
+      "metadata": {
+        "commitHash": "b51b0ed"
+      }
+    },
+    {
+      "id": "commit-d4ab39d",
+      "title": "Revert \"fix: pre-push hook false positives on binary files a",
+      "type": "system",
+      "datetime": "2026-03-09T03:35:44-04:00",
+      "status": "completed",
+      "description": "Revert \"fix: pre-push hook false positives on binary files and auto-generated sitemaps\"",
+      "metadata": {
+        "commitHash": "d4ab39d"
+      }
+    },
+    {
+      "id": "commit-087e407",
+      "title": "fix: pre-push hook false positives on binary files and auto-",
+      "type": "deployment",
+      "datetime": "2026-03-09T03:23:26-04:00",
+      "status": "completed",
+      "description": "fix: pre-push hook false positives on binary files and auto-generated sitemaps",
+      "metadata": {
+        "commitHash": "087e407"
+      }
+    },
+    {
+      "id": "commit-b3faa35",
+      "title": "chore: update package-lock and sitemaps after i18n + GEO mer",
+      "type": "system",
+      "datetime": "2026-03-09T03:18:30-04:00",
+      "status": "completed",
+      "description": "chore: update package-lock and sitemaps after i18n + GEO merge",
+      "metadata": {
+        "commitHash": "b3faa35"
+      }
+    },
+    {
+      "id": "commit-c5d4840",
+      "title": "feat: full-app i18n - EN/HE/ES on every page via next-intl",
+      "type": "milestone",
+      "datetime": "2026-03-09T03:07:58-04:00",
+      "status": "completed",
+      "description": "feat: full-app i18n - EN/HE/ES on every page via next-intl",
+      "metadata": {
+        "commitHash": "c5d4840"
       }
     }
   ],

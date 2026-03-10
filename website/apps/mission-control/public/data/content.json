@@ -1,26 +1,26 @@
 {
-  "generated": "2026-03-09T04:00:12.000Z",
+  "generated": "2026-03-10T04:00:07.000Z",
   "totals": {
-    "total_content": 141,
+    "total_content": 142,
     "total_drafts": 80,
-    "total_final": 61,
-    "total_words": 94456,
+    "total_final": 62,
+    "total_words": 95251,
     "platforms_active": 6,
     "cross_platform_groups": 30,
     "series_count": 4
   },
   "pipeline": {
+    "nio-log": {
+      "draft": 0,
+      "final": 20,
+      "total": 20,
+      "words": 13595
+    },
     "linkedin": {
       "draft": 34,
       "final": 12,
       "total": 46,
       "words": 29697
-    },
-    "nio-log": {
-      "draft": 0,
-      "final": 19,
-      "total": 19,
-      "words": 12800
     },
     "substack": {
       "draft": 10,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-03-09:",
+      "slug": "2026-03-09",
+      "date": "2026-03-09",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 795,
+      "file_path": "content/nio-log/2026-03-09.md"
+    },
     {
       "platform": "linkedin",
       "title": "sdr to solo gtm engineer",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 2261,
       "file_path": "content/website/final/how-to-setup-your-own-ai-assistant.md"
-    },
-    {
-      "platform": "x",
-      "title": "openclaw honest opinion",
-      "slug": "openclaw-honest-opinion",
-      "date": "2026-02-23",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 170,
-      "file_path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md"
     }
   ],
   "series": [
@@ -1067,6 +1067,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-09",
+      "grade": "A",
+      "score": 411,
+      "words": 50858,
+      "shipped": 68,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-08",
       "grade": "D",
       "score": 175,
@@ -1169,14 +1177,6 @@
       "words": 46624,
       "shipped": 50,
       "cost": 22.99
-    },
-    {
-      "date": "2026-02-23",
-      "grade": "D",
-      "score": 1,
-      "words": 7332,
-      "shipped": 0,
-      "cost": 55.43
     }
   ]
 }
