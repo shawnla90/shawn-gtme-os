@@ -1,0 +1,38 @@
+everyone's hiring Clay agencies. nobody's auditing them.
+
+I get the same DM every week:
+
+"should I hire a Clay agency?"
+"is this agency legit?"
+"we're spending $X/month and I don't know if it's working."
+
+I don't run an agency. I'm not trying to. but I've been deep in Clay since the early days - 60+ Clay Wiki entries, open-source GTM OS, building tables and enrichment waterfalls daily.
+
+so I started offering a free 30-minute audit. no pitch. just a screen share.
+
+the 5-question checklist:
+
+🔍 how many workspaces are you actually running?
+💰 are credits being burned on data you already have?
+📊 is anyone tracking table efficiency and cost-per-row?
+🔒 who owns the tables if the agency leaves?
+⚠️ are you paying for a tier that doesn't match your usage?
+
+most teams fail at least 3 of these. not because they're bad at GTM - because nobody told them to look.
+
+what you walk away with:
+✅ clear picture of workspace sprawl and waste
+✅ specific recommendations (written, not verbal)
+✅ enough context to evaluate any agency proposal
+
+if you need an agency after the audit, I'll tell you. I'll even tell you what to put in the contract.
+
+I take 2-3 customers at a time. education-first. independence over dependency. everything I learn goes back into the Clay Wiki and GTM OS.
+
+full breakdown on my blog. DM me to book the audit.
+
+30 minutes. your Clay setup. my honest take. free.
+
+shawn ⚡ GTM Engineer
+
+#GTMEngineering #ClayDotCom #RevOps

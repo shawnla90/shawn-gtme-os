@@ -1,0 +1,31 @@
+ran 4 Clay audits last month. same pattern every time.
+
+the team hired an agency to build their Clay tables. agency delivered, campaigns ran, credits burned. then the engagement ended.
+
+and nobody on the team could explain what any of the tables did.
+
+no documentation. no training. no credit tracking. just a workspace full of tables with names like "Q4 campaign v3 FINAL" and a monthly bill that kept climbing.
+
+one team was running 3 workspaces they didn't know about. another was re-enriching the same 2,000 leads across 4 different tables because nobody set up a shared data layer. a third had 40% of their enrichment calls returning empty - burning credits on dead endpoints nobody had checked in 6 months.
+
+the real gap is audit, not agency.
+
+agencies can be great. but before you sign one, you should know:
+
+🔍 how many workspaces you have and what each one does
+💰 your actual credit burn per table, per campaign
+📊 hit rates and error rates on your enrichments
+🔒 who owns the tables and whether your team can maintain them
+📋 whether your plan tier matches your actual usage
+
+I offer a free 30-minute audit. no pitch deck. no follow-up sequence. just a screen share where we go through your setup together.
+
+you walk away with written recommendations and enough context to make a smart decision - whether that's hiring an agency, bringing it in-house, or something in between.
+
+I keep 2-3 customers max. education-first. everything I learn goes into the Clay Wiki (60+ entries) and the open-source GTM OS.
+
+DM me or email shawn@shawnos.ai to book.
+
+shawn ⚡ GTM Engineer
+
+#GTMEngineering #ClayDotCom #RevOps
