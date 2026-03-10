@@ -55,6 +55,6 @@ Screenshot*
 chat-check.png
 
 # Tool artifacts
-nio-terminal/
+/nio-terminal/
 .playwright-mcp/
 __pycache__/
