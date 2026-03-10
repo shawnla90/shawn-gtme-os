@@ -3,6 +3,7 @@ module.exports = {
   siteUrl: 'https://thegtmos.ai',
   generateRobotsTxt: true,
   outDir: './public',
+  exclude: ['/for/s*-advisors', '/for/cl*-cove'],
   robotsTxtOptions: {
     policies: [
       { userAgent: '*', allow: '/' },

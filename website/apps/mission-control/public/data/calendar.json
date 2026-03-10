@@ -1,6 +1,28 @@
 {
-  "generated": "2026-03-10T04:49:10.396Z",
+  "generated": "2026-03-10T05:06:07.549Z",
   "events": [
+    {
+      "id": "commit-aaddc96",
+      "title": "chore: sanitize repo — remove client names from sitemap, upd",
+      "type": "system",
+      "datetime": "2026-03-10T00:57:39-04:00",
+      "status": "completed",
+      "description": "chore: sanitize repo — remove client names from sitemap, update data files",
+      "metadata": {
+        "commitHash": "aaddc96"
+      }
+    },
+    {
+      "id": "commit-83d0963",
+      "title": "fix: include data/ in standalone output for all three sites",
+      "type": "deployment",
+      "datetime": "2026-03-10T00:55:50-04:00",
+      "status": "completed",
+      "description": "fix: include data/ in standalone output for all three sites",
+      "metadata": {
+        "commitHash": "83d0963"
+      }
+    },
     {
       "id": "commit-2a590da",
       "title": "chore: daily tracker scan 2026-03-09",
@@ -131,28 +153,6 @@
       "description": "Revert \"chore: update package-lock and sitemaps after i18n + GEO merge\"",
       "metadata": {
         "commitHash": "b51b0ed"
-      }
-    },
-    {
-      "id": "commit-d4ab39d",
-      "title": "Revert \"fix: pre-push hook false positives on binary files a",
-      "type": "system",
-      "datetime": "2026-03-09T03:35:44-04:00",
-      "status": "completed",
-      "description": "Revert \"fix: pre-push hook false positives on binary files and auto-generated sitemaps\"",
-      "metadata": {
-        "commitHash": "d4ab39d"
-      }
-    },
-    {
-      "id": "commit-087e407",
-      "title": "fix: pre-push hook false positives on binary files and auto-",
-      "type": "deployment",
-      "datetime": "2026-03-09T03:23:26-04:00",
-      "status": "completed",
-      "description": "fix: pre-push hook false positives on binary files and auto-generated sitemaps",
-      "metadata": {
-        "commitHash": "087e407"
       }
     },
     {
