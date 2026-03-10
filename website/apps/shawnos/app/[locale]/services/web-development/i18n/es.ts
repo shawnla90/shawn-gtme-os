@@ -216,6 +216,23 @@ export const es: WebDevTranslations = {
           'Reporte de analisis de competencia',
         ],
       },
+      {
+        name: 'Full Stack Dominance',
+        price: 'Agende una Llamada',
+        tag: 'Solo por Invitacion',
+        inviteOnly: true,
+        features: [
+          'Todo lo incluido en Dominance',
+          'Gestion completa de cuenta de Reddit + estrategia',
+          'Configuracion y gestion de Reddit Ads',
+          'Campana de construccion de karma',
+          'Distribucion de contenido (Reddit, LinkedIn, X)',
+          'Creacion de contenido semanal (blogs, posts de Reddit, redes sociales)',
+          'Analiticas mensuales + atribucion de trafico',
+          'Contenido optimizado para IA y motores de busqueda',
+          'Estratega de contenido dedicado',
+        ],
+      },
     ],
     managed: {
       badge: 'Despues de cualquier paquete',
@@ -322,6 +339,10 @@ export const es: WebDevTranslations = {
       {
         q: 'Cuanto cuesta la administracion continua?',
         a: 'Nuestro plan Administrado cuesta $500-$1,000/mes dependiendo del alcance. Incluye actualizaciones de contenido continuas, optimizacion SEO, reportes de analiticas y soporte prioritario. La mayoria de los negocios empiezan con un paquete de construccion y agregan el plan Administrado despues cuando ven resultados.',
+      },
+      {
+        q: 'Que es el paquete Full Stack Dominance?',
+        a: 'Full Stack Dominance combina nuestro desarrollo web con una operacion completa de distribucion de contenido. Obtiene el sitio Dominance mas gestion de cuenta de Reddit, campanas de construccion de karma, creacion de contenido en Reddit, LinkedIn y X, y reportes mensuales de atribucion de trafico. Generamos 527 visitantes y mas de 75,000 vistas en Reddit en 24 horas para un cliente. Este paquete es solo por invitacion - agende una llamada para ver si es la opcion correcta.',
       },
       {
         q: 'Que los hace diferentes de otros desarrolladores web?',

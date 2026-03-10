@@ -27,8 +27,9 @@ export interface PricingTier {
   price: string
   tag: string
   recommended?: boolean
-  timeline: string
-  supportPeriod: string
+  inviteOnly?: boolean
+  timeline?: string
+  supportPeriod?: string
   features: string[]
 }
 

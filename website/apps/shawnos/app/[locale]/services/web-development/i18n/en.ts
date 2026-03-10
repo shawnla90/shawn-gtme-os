@@ -216,6 +216,23 @@ export const en: WebDevTranslations = {
           'Competitor analysis report',
         ],
       },
+      {
+        name: 'Full Stack Dominance',
+        price: 'Book a Call',
+        tag: 'By Invitation Only',
+        inviteOnly: true,
+        features: [
+          'Everything in Dominance',
+          'Full Reddit account management + strategy',
+          'Reddit Ads setup + management',
+          'Karma building campaign',
+          'Content distribution (Reddit, LinkedIn, X)',
+          'Weekly content creation (blogs, Reddit posts, social)',
+          'Monthly analytics + traffic attribution',
+          'AI-optimized content for search engines + AI models',
+          'Dedicated content strategist',
+        ],
+      },
     ],
     managed: {
       badge: 'After any package',
@@ -322,6 +339,10 @@ export const en: WebDevTranslations = {
       {
         q: 'How much does ongoing management cost?',
         a: 'Our Managed plan runs $500-$1,000/month depending on scope. It includes ongoing content updates, SEO optimization, analytics reporting, and priority support. Most businesses start with a build package and add Managed later once they see results.',
+      },
+      {
+        q: 'What is the Full Stack Dominance package?',
+        a: 'Full Stack Dominance combines our web development with a full content distribution operation. You get the Dominance website build plus Reddit account management, karma building campaigns, content creation across Reddit, LinkedIn, and X, and monthly traffic attribution reports. We drove 527 visitors and 75,000+ Reddit views in 24 hours for one client. This package is by invitation only - book a call to see if it is the right fit.',
       },
       {
         q: 'What makes you different from other web developers?',

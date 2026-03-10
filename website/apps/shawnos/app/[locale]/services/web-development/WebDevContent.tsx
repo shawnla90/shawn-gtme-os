@@ -593,9 +593,9 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
           <SectionHeadline>{t.pricing.headline}</SectionHeadline>
           <SectionSub>{t.pricing.sub}</SectionSub>
 
-          <div style={{
+          <div className="pricing-grid" style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             gap: 24,
           }}>
             {t.pricing.tiers.map((tier) => (
@@ -605,14 +605,15 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  borderColor: tier.recommended ? 'var(--accent)' : undefined,
-                  borderWidth: tier.recommended ? 2 : undefined,
-                  borderStyle: tier.recommended ? 'dashed' : undefined,
+                  borderColor: tier.recommended ? 'var(--accent)' : tier.inviteOnly ? '#D2A53C' : undefined,
+                  borderWidth: (tier.recommended || tier.inviteOnly) ? 2 : undefined,
+                  borderStyle: (tier.recommended || tier.inviteOnly) ? 'dashed' : undefined,
                   position: 'relative',
-                  borderTop: tier.recommended
+                  borderTop: (tier.recommended || tier.inviteOnly)
                     ? undefined
                     : '3px solid var(--border-dashed)',
                   overflow: 'hidden',
+                  background: tier.inviteOnly ? 'linear-gradient(135deg, rgba(210, 165, 60, 0.04), transparent)' : undefined,
                 }}>
                   {tier.recommended && (
                     <div style={{
@@ -625,14 +626,25 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
                     }} />
                   )}
 
-                  {tier.recommended && (
+                  {tier.inviteOnly && (
+                    <div style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      right: 0,
+                      height: 3,
+                      background: 'linear-gradient(90deg, #D2A53C, #F0D78C)',
+                    }} />
+                  )}
+
+                  {(tier.recommended || tier.inviteOnly) && (
                     <div style={{
                       position: 'absolute',
                       top: -12,
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      backgroundColor: 'var(--accent)',
-                      color: 'var(--text-on-accent)',
+                      backgroundColor: tier.inviteOnly ? '#D2A53C' : 'var(--accent)',
+                      color: tier.inviteOnly ? '#1a1a1a' : 'var(--text-on-accent)',
                       padding: '4px 16px',
                       borderRadius: 20,
                       fontSize: 12,
@@ -640,33 +652,40 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
                       fontFamily: 'var(--font-mono)',
                       textTransform: 'uppercase',
                       letterSpacing: '0.04em',
+                      whiteSpace: 'nowrap',
                     }}>
                       {tier.tag}
                     </div>
                   )}
 
-                  <div style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: 4,
-                    padding: '3px 10px',
-                    borderRadius: 20,
-                    backgroundColor: 'var(--canvas-subtle)',
-                    border: '1px dashed var(--border-dashed)',
-                    fontSize: 11,
-                    fontWeight: 600,
-                    color: 'var(--text-muted)',
-                    fontFamily: 'var(--font-mono)',
-                    marginBottom: 12,
-                    alignSelf: 'flex-start',
-                  }}>
-                    {tier.timeline}
-                  </div>
+                  {tier.timeline && (
+                    <div style={{
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: 4,
+                      padding: '3px 10px',
+                      borderRadius: 20,
+                      backgroundColor: 'var(--canvas-subtle)',
+                      border: '1px dashed var(--border-dashed)',
+                      fontSize: 11,
+                      fontWeight: 600,
+                      color: 'var(--text-muted)',
+                      fontFamily: 'var(--font-mono)',
+                      marginBottom: 12,
+                      alignSelf: 'flex-start',
+                    }}>
+                      {tier.timeline}
+                    </div>
+                  )}
+
+                  {tier.inviteOnly && !tier.timeline && (
+                    <div style={{ marginBottom: 12, height: 24 }} />
+                  )}
 
                   <div style={{
                     fontSize: 'clamp(24px, 3vw, 32px)',
                     fontWeight: 800,
-                    color: 'var(--text-primary)',
+                    color: tier.inviteOnly ? '#D2A53C' : 'var(--text-primary)',
                     marginBottom: 4,
                     letterSpacing: '-0.02em',
                   }}>
@@ -676,7 +695,7 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
                   <div style={{
                     fontSize: 'clamp(28px, 4vw, 36px)',
                     fontWeight: 700,
-                    color: 'var(--accent)',
+                    color: tier.inviteOnly ? '#D2A53C' : 'var(--accent)',
                     marginBottom: 16,
                     fontFamily: 'var(--font-mono)',
                   }}>
@@ -699,23 +718,25 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
                         alignItems: 'flex-start',
                         gap: 8,
                       }}>
-                        <span style={{ color: 'var(--accent)', fontWeight: 600, flexShrink: 0 }}>+</span>
+                        <span style={{ color: tier.inviteOnly ? '#D2A53C' : 'var(--accent)', fontWeight: 600, flexShrink: 0 }}>+</span>
                         {f}
                       </li>
                     ))}
                   </ul>
 
-                  <div style={{
-                    fontSize: 12,
-                    color: 'var(--text-muted)',
-                    marginTop: 16,
-                    lineHeight: 1.5,
-                    padding: '8px 12px',
-                    backgroundColor: 'var(--canvas-subtle)',
-                    borderRadius: 6,
-                  }}>
-                    <strong>{tier.supportPeriod} {t.pricing.supportNote}</strong> {locale === 'he' ? 'אחרי שהתמיכה מסתיימת, האתר ממשיך לפעול - שדרגו לניהול או נהלו בעצמכם.' : locale === 'es' ? 'Despues, su sitio sigue funcionando - actualice a Managed o adminstrelo usted mismo.' : 'After that, your site keeps running - upgrade to Managed or self-manage.'}
-                  </div>
+                  {tier.supportPeriod && (
+                    <div style={{
+                      fontSize: 12,
+                      color: 'var(--text-muted)',
+                      marginTop: 16,
+                      lineHeight: 1.5,
+                      padding: '8px 12px',
+                      backgroundColor: 'var(--canvas-subtle)',
+                      borderRadius: 6,
+                    }}>
+                      <strong>{tier.supportPeriod} {t.pricing.supportNote}</strong> {locale === 'he' ? 'אחרי שהתמיכה מסתיימת, האתר ממשיך לפעול - שדרגו לניהול או נהלו בעצמכם.' : locale === 'es' ? 'Despues, su sitio sigue funcionando - actualice a Managed o adminstrelo usted mismo.' : 'After that, your site keeps running - upgrade to Managed or self-manage.'}
+                    </div>
+                  )}
 
                   <MagneticHover>
                     <a
@@ -727,9 +748,9 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
                         textAlign: 'center',
                         padding: '14px 24px',
                         marginTop: 16,
-                        backgroundColor: tier.recommended ? 'var(--accent)' : 'transparent',
-                        color: tier.recommended ? 'var(--text-on-accent)' : 'var(--accent)',
-                        border: tier.recommended ? 'none' : '1px solid var(--accent)',
+                        backgroundColor: (tier.recommended || tier.inviteOnly) ? (tier.inviteOnly ? '#D2A53C' : 'var(--accent)') : 'transparent',
+                        color: (tier.recommended || tier.inviteOnly) ? (tier.inviteOnly ? '#1a1a1a' : 'var(--text-on-accent)') : 'var(--accent)',
+                        border: (tier.recommended || tier.inviteOnly) ? 'none' : '1px solid var(--accent)',
                         borderRadius: 8,
                         fontWeight: 600,
                         fontSize: 14,
@@ -737,7 +758,7 @@ export function WebDevContent({ t, locale }: WebDevContentProps) {
                         transition: 'transform 0.15s',
                       }}
                     >
-                      {t.pricing.getStarted}
+                      {tier.inviteOnly ? tier.price : t.pricing.getStarted}
                     </a>
                   </MagneticHover>
                 </DashedCard>
