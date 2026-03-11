@@ -51,9 +51,9 @@ export function RedditFeed({
             style={{
               padding: '6px 14px',
               borderRadius: 20,
-              border: `1px solid ${!activeFlair ? accentColor : 'rgba(255,255,255,0.15)'}`,
+              border: `1px solid ${!activeFlair ? accentColor : 'var(--canvas-border)'}`,
               background: !activeFlair ? `${accentColor}22` : 'transparent',
-              color: !activeFlair ? accentColor : 'rgba(255,255,255,0.6)',
+              color: !activeFlair ? accentColor : 'var(--text-secondary)',
               fontSize: 12,
               fontWeight: 600,
               cursor: 'pointer',
@@ -69,9 +69,9 @@ export function RedditFeed({
               style={{
                 padding: '6px 14px',
                 borderRadius: 20,
-                border: `1px solid ${activeFlair === flair ? accentColor : 'rgba(255,255,255,0.15)'}`,
+                border: `1px solid ${activeFlair === flair ? accentColor : 'var(--canvas-border)'}`,
                 background: activeFlair === flair ? `${accentColor}22` : 'transparent',
-                color: activeFlair === flair ? accentColor : 'rgba(255,255,255,0.6)',
+                color: activeFlair === flair ? accentColor : 'var(--text-secondary)',
                 fontSize: 12,
                 fontWeight: 600,
                 cursor: 'pointer',
@@ -90,7 +90,7 @@ export function RedditFeed({
           style={{
             textAlign: 'center',
             padding: '64px 20px',
-            color: 'rgba(255,255,255,0.4)',
+            color: 'var(--text-muted)',
             fontSize: 14,
           }}
         >
@@ -122,19 +122,19 @@ export function RedditFeed({
                   display: 'block',
                   padding: 20,
                   borderRadius: 10,
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid var(--canvas-border)',
+                  background: 'var(--canvas-subtle)',
                   textDecoration: 'none',
                   color: 'inherit',
                   transition: 'border-color 0.2s, background 0.2s',
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = `${accentColor}44`
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)'
+                  e.currentTarget.style.background = 'var(--canvas-card)'
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.03)'
+                  e.currentTarget.style.borderColor = 'var(--canvas-border)'
+                  e.currentTarget.style.background = 'var(--canvas-subtle)'
                 }}
               >
                 {/* Flair + time */}
@@ -145,7 +145,7 @@ export function RedditFeed({
                     gap: 8,
                     marginBottom: 10,
                     fontSize: 11,
-                    color: 'rgba(255,255,255,0.4)',
+                    color: 'var(--text-muted)',
                   }}
                 >
                   {post.flair && (
@@ -174,7 +174,7 @@ export function RedditFeed({
                     fontSize: 15,
                     fontWeight: 600,
                     lineHeight: 1.4,
-                    color: 'rgba(255,255,255,0.9)',
+                    color: 'var(--text-primary)',
                   }}
                 >
                   {post.title}
@@ -187,7 +187,7 @@ export function RedditFeed({
                       margin: '0 0 14px',
                       fontSize: 13,
                       lineHeight: 1.5,
-                      color: 'rgba(255,255,255,0.45)',
+                      color: 'var(--text-secondary)',
                     }}
                   >
                     {truncate(post.selftext)}
@@ -201,7 +201,7 @@ export function RedditFeed({
                     alignItems: 'center',
                     gap: 14,
                     fontSize: 12,
-                    color: 'rgba(255,255,255,0.35)',
+                    color: 'var(--text-muted)',
                   }}
                 >
                   <span style={{ fontWeight: 500 }}>u/{post.author}</span>

@@ -93,7 +93,7 @@ export default async function CommunityPage() {
         <p
           style={{
             fontSize: 'clamp(16px, 2.5vw, 20px)',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'var(--text-secondary)',
             maxWidth: 560,
             margin: '0 auto 32px',
             lineHeight: 1.5,
@@ -118,7 +118,7 @@ export default async function CommunityPage() {
               <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
                 {subInfo.subscribers}
               </div>
-              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
+              <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
                 Members
               </div>
             </div>
@@ -127,7 +127,7 @@ export default async function CommunityPage() {
             <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
               {posts.length}
             </div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
+            <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
               Posts
             </div>
           </div>
@@ -135,7 +135,7 @@ export default async function CommunityPage() {
             <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
               {totalKarma}
             </div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
+            <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
               Karma
             </div>
           </div>
@@ -143,7 +143,7 @@ export default async function CommunityPage() {
             <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
               {totalComments}
             </div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
+            <div style={{ fontSize: 12, color: 'var(--text-muted)' }}>
               Comments
             </div>
           </div>
@@ -187,7 +187,7 @@ export default async function CommunityPage() {
             href="https://shawnos.ai/community"
             style={{
               fontSize: 13,
-              color: 'rgba(255,255,255,0.4)',
+              color: 'var(--text-muted)',
               textDecoration: 'none',
             }}
           >
