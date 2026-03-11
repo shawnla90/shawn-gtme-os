@@ -1,6 +1,138 @@
 {
-  "generated": "2026-03-10T05:06:07.549Z",
+  "generated": "2026-03-11T04:03:42.412Z",
   "events": [
+    {
+      "id": "commit-63b0e06",
+      "title": "chore: contentos optimizer - 1 improvements (2026-03-11)",
+      "type": "system",
+      "datetime": "2026-03-10T23:01:13-04:00",
+      "status": "completed",
+      "description": "chore: contentos optimizer - 1 improvements (2026-03-11)",
+      "metadata": {
+        "commitHash": "63b0e06"
+      }
+    },
+    {
+      "id": "commit-8757de3",
+      "title": "feat: Reddit Dominance package + content campaign — pricing ",
+      "type": "milestone",
+      "datetime": "2026-03-10T15:57:38-04:00",
+      "status": "completed",
+      "description": "feat: Reddit Dominance package + content campaign — pricing tier, ContentOS services, blog + social drafts",
+      "metadata": {
+        "commitHash": "8757de3"
+      }
+    },
+    {
+      "id": "commit-1823fe7",
+      "title": "fix: add Hebrew blog file + per-file locale fallback to prev",
+      "type": "deployment",
+      "datetime": "2026-03-10T15:55:04-04:00",
+      "status": "completed",
+      "description": "fix: add Hebrew blog file + per-file locale fallback to prevent 500s",
+      "metadata": {
+        "commitHash": "1823fe7"
+      }
+    },
+    {
+      "id": "commit-01408a4",
+      "title": "feat: Clay agency audit content campaign — blog + LinkedIn +",
+      "type": "milestone",
+      "datetime": "2026-03-10T15:06:35-04:00",
+      "status": "completed",
+      "description": "feat: Clay agency audit content campaign — blog + LinkedIn + Reddit + X",
+      "metadata": {
+        "commitHash": "01408a4"
+      }
+    },
+    {
+      "id": "commit-5fee4fe",
+      "title": "fix: track nio-terminal pages — were blocked by gitignore ru",
+      "type": "deployment",
+      "datetime": "2026-03-10T13:49:07-04:00",
+      "status": "completed",
+      "description": "fix: track nio-terminal pages — were blocked by gitignore rule",
+      "metadata": {
+        "commitHash": "5fee4fe"
+      }
+    },
+    {
+      "id": "commit-c48660d",
+      "title": "fix: add setRequestLocale to all vitals sub-pages — enables ",
+      "type": "deployment",
+      "datetime": "2026-03-10T13:48:15-04:00",
+      "status": "completed",
+      "description": "fix: add setRequestLocale to all vitals sub-pages — enables SSG on Vercel",
+      "metadata": {
+        "commitHash": "c48660d"
+      }
+    },
+    {
+      "id": "commit-a93099d",
+      "title": "fix: add setRequestLocale to vitals + api pages — enables SS",
+      "type": "deployment",
+      "datetime": "2026-03-10T13:11:38-04:00",
+      "status": "completed",
+      "description": "fix: add setRequestLocale to vitals + api pages — enables SSG on Vercel",
+      "metadata": {
+        "commitHash": "a93099d"
+      }
+    },
+    {
+      "id": "commit-e2d2fee",
+      "title": "feat: daily LinkedIn posts 2026-03-10",
+      "type": "milestone",
+      "datetime": "2026-03-10T09:10:19-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-10",
+      "metadata": {
+        "commitHash": "e2d2fee"
+      }
+    },
+    {
+      "id": "commit-3d47b4f",
+      "title": "feat: nio.log 2026-03-10 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-10T08:02:17-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-10 — automated daily post",
+      "metadata": {
+        "commitHash": "3d47b4f"
+      }
+    },
+    {
+      "id": "commit-0281bc9",
+      "title": "fix: add missing how-to-wiki.es.ts — was imported but untrac",
+      "type": "deployment",
+      "datetime": "2026-03-10T01:25:24-04:00",
+      "status": "completed",
+      "description": "fix: add missing how-to-wiki.es.ts — was imported but untracked",
+      "metadata": {
+        "commitHash": "0281bc9"
+      }
+    },
+    {
+      "id": "commit-b59b3f9",
+      "title": "chore: trigger clean deploy",
+      "type": "system",
+      "datetime": "2026-03-10T01:20:32-04:00",
+      "status": "completed",
+      "description": "chore: trigger clean deploy",
+      "metadata": {
+        "commitHash": "b59b3f9"
+      }
+    },
+    {
+      "id": "commit-3c0950e",
+      "title": "fix: revert outputFileTracingIncludes — vitals is SSG, not n",
+      "type": "deployment",
+      "datetime": "2026-03-10T01:10:37-04:00",
+      "status": "completed",
+      "description": "fix: revert outputFileTracingIncludes — vitals is SSG, not needed",
+      "metadata": {
+        "commitHash": "3c0950e"
+      }
+    },
     {
       "id": "commit-aaddc96",
       "title": "chore: sanitize repo — remove client names from sitemap, upd",
@@ -32,138 +164,6 @@
       "description": "chore: daily tracker scan 2026-03-09",
       "metadata": {
         "commitHash": "2a590da"
-      }
-    },
-    {
-      "id": "commit-ed078b4",
-      "title": "feat: ABM WordPress migration campaign - NYC sourcing",
-      "type": "milestone",
-      "datetime": "2026-03-09T18:02:11-04:00",
-      "status": "completed",
-      "description": "feat: ABM WordPress migration campaign - NYC sourcing",
-      "metadata": {
-        "commitHash": "ed078b4"
-      }
-    },
-    {
-      "id": "commit-65ae816",
-      "title": "feat: ABM WordPress migration campaign - Miami sourcing",
-      "type": "milestone",
-      "datetime": "2026-03-09T18:00:48-04:00",
-      "status": "completed",
-      "description": "feat: ABM WordPress migration campaign - Miami sourcing",
-      "metadata": {
-        "commitHash": "65ae816"
-      }
-    },
-    {
-      "id": "commit-9c84bba",
-      "title": "feat: i18n Hebrew how-to wiki + GEO hub + blog translations ",
-      "type": "milestone",
-      "datetime": "2026-03-09T16:42:32-04:00",
-      "status": "completed",
-      "description": "feat: i18n Hebrew how-to wiki + GEO hub + blog translations + globals.css fix",
-      "metadata": {
-        "commitHash": "9c84bba"
-      }
-    },
-    {
-      "id": "commit-3f8846f",
-      "title": "feat: daily LinkedIn posts 2026-03-09",
-      "type": "milestone",
-      "datetime": "2026-03-09T09:09:47-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-09",
-      "metadata": {
-        "commitHash": "3f8846f"
-      }
-    },
-    {
-      "id": "commit-a204737",
-      "title": "feat: nio.log 2026-03-09 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-03-09T08:02:16-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-03-09 — automated daily post",
-      "metadata": {
-        "commitHash": "a204737"
-      }
-    },
-    {
-      "id": "commit-2755a40",
-      "title": "feat: GEO authority hub + analytics + globals.css fix",
-      "type": "milestone",
-      "datetime": "2026-03-09T03:49:45-04:00",
-      "status": "completed",
-      "description": "feat: GEO authority hub + analytics + globals.css fix",
-      "metadata": {
-        "commitHash": "2755a40"
-      }
-    },
-    {
-      "id": "commit-c71b59a",
-      "title": "fix: add globals.css import to [locale]/layout.tsx",
-      "type": "deployment",
-      "datetime": "2026-03-09T03:46:00-04:00",
-      "status": "completed",
-      "description": "fix: add globals.css import to [locale]/layout.tsx",
-      "metadata": {
-        "commitHash": "c71b59a"
-      }
-    },
-    {
-      "id": "commit-ba55d26",
-      "title": "fix: pre-push hook skip binary files in content scan",
-      "type": "deployment",
-      "datetime": "2026-03-09T03:37:56-04:00",
-      "status": "completed",
-      "description": "fix: pre-push hook skip binary files in content scan",
-      "metadata": {
-        "commitHash": "ba55d26"
-      }
-    },
-    {
-      "id": "commit-63955eb",
-      "title": "Revert \"feat: full-app i18n - EN/HE/ES on every page via nex",
-      "type": "system",
-      "datetime": "2026-03-09T03:35:44-04:00",
-      "status": "completed",
-      "description": "Revert \"feat: full-app i18n - EN/HE/ES on every page via next-intl\"",
-      "metadata": {
-        "commitHash": "63955eb"
-      }
-    },
-    {
-      "id": "commit-d75f1f1",
-      "title": "Revert \"merge: integrate GEO authority hub with i18n infrast",
-      "type": "system",
-      "datetime": "2026-03-09T03:35:44-04:00",
-      "status": "completed",
-      "description": "Revert \"merge: integrate GEO authority hub with i18n infrastructure\"",
-      "metadata": {
-        "commitHash": "d75f1f1"
-      }
-    },
-    {
-      "id": "commit-b51b0ed",
-      "title": "Revert \"chore: update package-lock and sitemaps after i18n +",
-      "type": "system",
-      "datetime": "2026-03-09T03:35:44-04:00",
-      "status": "completed",
-      "description": "Revert \"chore: update package-lock and sitemaps after i18n + GEO merge\"",
-      "metadata": {
-        "commitHash": "b51b0ed"
-      }
-    },
-    {
-      "id": "commit-c5d4840",
-      "title": "feat: full-app i18n - EN/HE/ES on every page via next-intl",
-      "type": "milestone",
-      "datetime": "2026-03-09T03:07:58-04:00",
-      "status": "completed",
-      "description": "feat: full-app i18n - EN/HE/ES on every page via next-intl",
-      "metadata": {
-        "commitHash": "c5d4840"
       }
     }
   ],

@@ -1,26 +1,38 @@
 {
-  "generated": "2026-03-10T04:00:07.000Z",
+  "generated": "2026-03-11T04:00:08.000Z",
   "totals": {
-    "total_content": 142,
-    "total_drafts": 80,
-    "total_final": 62,
-    "total_words": 95251,
+    "total_content": 150,
+    "total_drafts": 83,
+    "total_final": 67,
+    "total_words": 100113,
     "platforms_active": 6,
     "cross_platform_groups": 30,
     "series_count": 4
   },
   "pipeline": {
+    "linkedin": {
+      "draft": 35,
+      "final": 14,
+      "total": 49,
+      "words": 30479
+    },
     "nio-log": {
       "draft": 0,
-      "final": 20,
-      "total": 20,
-      "words": 13595
+      "final": 21,
+      "total": 21,
+      "words": 14434
     },
-    "linkedin": {
-      "draft": 34,
-      "final": 12,
-      "total": 46,
-      "words": 29697
+    "reddit": {
+      "draft": 4,
+      "final": 0,
+      "total": 4,
+      "words": 3480
+    },
+    "website": {
+      "draft": 1,
+      "final": 18,
+      "total": 19,
+      "words": 18470
     },
     "substack": {
       "draft": 10,
@@ -28,26 +40,91 @@
       "total": 15,
       "words": 18032
     },
-    "website": {
-      "draft": 1,
-      "final": 16,
-      "total": 17,
-      "words": 16267
-    },
     "x": {
       "draft": 33,
       "final": 9,
       "total": 42,
       "words": 15218
-    },
-    "reddit": {
-      "draft": 2,
-      "final": 0,
-      "total": 2,
-      "words": 2442
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "reddit dominance",
+      "slug": "reddit-dominance",
+      "date": "2026-03-10",
+      "stage": "draft",
+      "pillar": "building-and-sharing",
+      "arc": null,
+      "word_count": 257,
+      "file_path": "content/linkedin/drafts/2026-03-10_reddit-dominance.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "clay agency audit share",
+      "slug": "clay-agency-audit-share",
+      "date": "2026-03-10",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 250,
+      "file_path": "content/linkedin/final/2026-03-10_clay-agency-audit-share.txt"
+    },
+    {
+      "platform": "linkedin",
+      "title": "clay agency audit standalone",
+      "slug": "clay-agency-audit-standalone",
+      "date": "2026-03-10",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 275,
+      "file_path": "content/linkedin/final/2026-03-10_clay-agency-audit-standalone.txt"
+    },
+    {
+      "platform": "nio-log",
+      "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-03-10:",
+      "slug": "2026-03-10",
+      "date": "2026-03-10",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 839,
+      "file_path": "content/nio-log/2026-03-10.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "Reddit: Before You Hire a Clay Agency - Free Audit Checklist",
+      "slug": "clay-agency-audit",
+      "date": "2026-03-10",
+      "stage": "draft",
+      "pillar": "gtm-engineering, clay",
+      "arc": null,
+      "word_count": 550,
+      "file_path": "content/reddit/drafts/clay-agency-audit.md"
+    },
+    {
+      "platform": "website",
+      "title": "before you hire a clay agency, talk to me",
+      "slug": "before-you-hire-a-clay-agency",
+      "date": "2026-03-10",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1061,
+      "file_path": "content/website/final/before-you-hire-a-clay-agency.md"
+    },
+    {
+      "platform": "website",
+      "title": "reddit is king: 500+ visitors in 24 hours from one post",
+      "slug": "reddit-is-king",
+      "date": "2026-03-10",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1142,
+      "file_path": "content/website/final/reddit-is-king.md"
+    },
     {
       "platform": "nio-log",
       "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-03-09:",
@@ -520,83 +597,6 @@
       "arc": null,
       "word_count": 259,
       "file_path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "GTM OS: The Infrastructure -- Day 2",
-      "slug": "gtmos-infrastructure",
-      "date": "2026-02-24",
-      "stage": "draft",
-      "pillar": "Skill/System Share",
-      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
-      "word_count": 821,
-      "file_path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "NOW I HAVE THE FULL PICTURE.",
-      "slug": "2026-02-24",
-      "date": "2026-02-24",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 832,
-      "file_path": "content/nio-log/2026-02-24.md"
-    },
-    {
-      "platform": "x",
-      "title": "GTM OS X Threads -- Day 2",
-      "slug": "gtmos-threads",
-      "date": "2026-02-24",
-      "stage": "draft",
-      "pillar": null,
-      "arc": "Anti-Lead Magnet Series (Day 2 of 4)",
-      "word_count": 596,
-      "file_path": "content/x/drafts/2026-02-24_gtmos-threads.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "openclaw honest opinion",
-      "slug": "openclaw-honest-opinion",
-      "date": "2026-02-23",
-      "stage": "draft",
-      "pillar": "building-sharing + skill-system-shares",
-      "arc": null,
-      "word_count": 543,
-      "file_path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "ShawnOS: The Anti-Lead Magnet -- Day 1",
-      "slug": "shawnos-anti-lead-magnet",
-      "date": "2026-02-23",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": "Anti-Lead Magnet Series (Day 1 of 4)",
-      "word_count": 765,
-      "file_path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "BUILD SPEED IS CAPPED BY CONTEXT SWITCHES",
-      "slug": "2026-02-23",
-      "date": "2026-02-23",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 335,
-      "file_path": "content/nio-log/2026-02-23.md"
-    },
-    {
-      "platform": "website",
-      "title": "How to Set Up Your Own AI Assistant Through Claude Code",
-      "slug": "how-to-setup-your-own-ai-assistant",
-      "date": "2026-02-23",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 2261,
-      "file_path": "content/website/final/how-to-setup-your-own-ai-assistant.md"
     }
   ],
   "series": [
@@ -1067,6 +1067,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-10",
+      "grade": "D",
+      "score": 106,
+      "words": 7679,
+      "shipped": 14,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-09",
       "grade": "A",
       "score": 411,
@@ -1169,14 +1177,6 @@
       "words": 46069,
       "shipped": 60,
       "cost": 172.14
-    },
-    {
-      "date": "2026-02-24",
-      "grade": "C",
-      "score": 279,
-      "words": 46624,
-      "shipped": 50,
-      "cost": 22.99
     }
   ]
 }
