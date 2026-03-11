@@ -60,7 +60,7 @@ If nobody is monitoring this, you're flying blind regardless of whether you have
 I've been documenting everything I learn and sharing it publicly:
 
 - **[Clay Wiki](https://thegtmos.ai/clay-wiki)** - 60+ entries on enrichments, formulas, Claygent patterns, HTTP API setups, workflow architectures. Updated weekly.
-- **[GTM OS](https://github.com/shawnesquivel/gtme-os)** - Open-source GTM operating system. The infra I actually use.
+- **[GTM OS](https://github.com/shawnla90/shawn-gtme-os)** - Open-source GTM operating system. The infra I actually use.
 - **[Full blog post](https://shawnos.ai/blog/before-you-hire-a-clay-agency)** - Longer version of this with more detail on each point.
 
 ---
@@ -69,6 +69,6 @@ I've been documenting everything I learn and sharing it publicly:
 
 I'm offering free 30-minute audits. No pitch, no follow-up sequence. Screen share, walk through your setup, written recommendations.
 
-DM me here or on [LinkedIn](https://linkedin.com/in/shawnesquivel) if you want one.
+DM me here or on [LinkedIn](https://linkedin.com/in/shawntenam) if you want one.
 
 Happy to answer questions in the comments too.

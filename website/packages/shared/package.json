@@ -38,6 +38,7 @@
     "./components/motion": "./components/motion/index.ts",
     "./lib/sites": "./lib/sites.ts",
     "./lib/chat-retrieval": "./lib/chat-retrieval.ts",
+    "./lib/reddit": "./lib/reddit.ts",
     "./hooks": "./hooks/useIsMobile.ts",
     "./hooks/useTheme": "./hooks/useTheme.ts",
     "./hooks/useContentTracking": "./hooks/useContentTracking.ts",

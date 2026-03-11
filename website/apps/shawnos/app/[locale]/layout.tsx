@@ -168,6 +168,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               { href: lp('/geo'), label: nav('geoWiki') },
             ]},
             { href: '#', label: nav('more'), children: [
+              { href: lp('/community'), label: 'Community' },
               { href: lp('/log'), label: nav('log') },
               { href: lp('/rpg-preview'), label: nav('rpg') },
               { href: lp('/vitals'), label: nav('vitals') },

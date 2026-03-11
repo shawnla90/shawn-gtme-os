@@ -71,7 +71,7 @@ what I do:
 - **web development** - the sites, the dashboards, the tools that sit on top of the data
 - **enablement** - teaching your team to own and maintain what gets built
 
-my approach is education-first. I'd rather teach you to fish than sell you fish every month. everything I learn goes into public resources - the [Clay Wiki](https://thegtmos.ai/clay-wiki), the [GTM OS](https://github.com/shawnesquivel/gtme-os) (open-source), and content that breaks down exactly how things work.
+my approach is education-first. I'd rather teach you to fish than sell you fish every month. everything I learn goes into public resources - the [Clay Wiki](https://thegtmos.ai/clay-wiki), the [GTM OS](https://github.com/shawnla90/shawn-gtme-os) (open-source), and content that breaks down exactly how things work.
 
 the goal is independence, not dependency.
 
@@ -108,14 +108,14 @@ no pressure. no follow-up sequence. just a conversation between two people who c
 everything I build is public:
 
 - **[Clay Wiki](https://thegtmos.ai/clay-wiki)** - 60+ entries covering enrichments, formulas, Claygent patterns, HTTP API setups, and workflow architectures. growing every week.
-- **[GTM OS](https://github.com/shawnesquivel/gtme-os)** - open-source operating system for GTM engineers. the infrastructure I use every day, shared publicly.
+- **[GTM OS](https://github.com/shawnla90/shawn-gtme-os)** - open-source operating system for GTM engineers. the infrastructure I use every day, shared publicly.
 - **daily content** - I post Clay breakdowns, plays, and system shares across LinkedIn, X, and my blog. no gatekeeping.
 
 people reach out daily because the work is visible. building in public, sharing what I find.
 
 ## book the audit
 
-DM me on [LinkedIn](https://linkedin.com/in/shawnesquivel). email me at shawn@shawnos.ai. or just reply to any of my posts.
+DM me on [LinkedIn](https://linkedin.com/in/shawntenam). email me at shawn@shawnos.ai. or just reply to any of my posts.
 
 30 minutes. your Clay setup. my honest take. free.
 
