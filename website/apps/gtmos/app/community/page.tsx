@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { BreadcrumbSchema, RedditFeed } from '@shawnos/shared/components'
-import { fetchSubredditPosts } from '@shawnos/shared/lib/reddit'
+import { fetchSubredditPosts, fetchSubredditInfo } from '@shawnos/shared/lib/reddit'
 
 export const revalidate = 3600
 
@@ -41,7 +41,10 @@ export const metadata: Metadata = {
 }
 
 export default async function CommunityPage() {
-  const posts = await fetchSubredditPosts(SUBREDDIT, 25)
+  const [posts, subInfo] = await Promise.all([
+    fetchSubredditPosts(SUBREDDIT, 25),
+    fetchSubredditInfo(SUBREDDIT),
+  ])
 
   const totalKarma = posts.reduce((sum, p) => sum + p.score, 0)
   const totalComments = posts.reduce((sum, p) => sum + p.numComments, 0)
@@ -110,6 +113,16 @@ export default async function CommunityPage() {
             marginBottom: 12,
           }}
         >
+          {subInfo && (
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
+                {subInfo.subscribers}
+              </div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
+                Members
+              </div>
+            </div>
+          )}
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
               {posts.length}

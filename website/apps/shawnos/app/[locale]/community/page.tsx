@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { BreadcrumbSchema, RedditFeed } from '@shawnos/shared/components'
-import { fetchSubredditPosts } from '@shawnos/shared/lib/reddit'
+import { fetchSubredditPosts, fetchUserProfile } from '@shawnos/shared/lib/reddit'
 
 export const revalidate = 3600
 
@@ -53,12 +53,14 @@ export default async function CommunityPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  const allPosts = await fetchSubredditPosts(SUBREDDIT, 50)
+  const [allPosts, profile] = await Promise.all([
+    fetchSubredditPosts(SUBREDDIT, 50),
+    fetchUserProfile(REDDIT_USERNAME),
+  ])
   const myPosts = allPosts.filter(
     (p) => p.author.toLowerCase() === REDDIT_USERNAME.toLowerCase(),
   )
 
-  const totalKarma = myPosts.reduce((sum, p) => sum + p.score, 0)
   const totalComments = myPosts.reduce((sum, p) => sum + p.numComments, 0)
 
   return (
@@ -125,20 +127,22 @@ export default async function CommunityPage({ params }: Props) {
             marginBottom: 12,
           }}
         >
+          {profile && (
+            <div style={{ textAlign: 'center' }}>
+              <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
+                {profile.totalKarma.toLocaleString()}
+              </div>
+              <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
+                Reddit Karma
+              </div>
+            </div>
+          )}
           <div style={{ textAlign: 'center' }}>
             <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
               {myPosts.length}
             </div>
             <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
               Posts
-            </div>
-          </div>
-          <div style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 24, fontWeight: 700, color: '#4ADE80' }}>
-              {totalKarma}
-            </div>
-            <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>
-              Karma
             </div>
           </div>
           <div style={{ textAlign: 'center' }}>

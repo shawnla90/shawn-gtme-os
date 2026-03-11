@@ -77,3 +77,65 @@ export async function fetchAuthorPosts(
     (p) => p.author.toLowerCase() === author.toLowerCase(),
   )
 }
+
+export interface SubredditInfo {
+  name: string
+  subscribers: number
+  description: string
+}
+
+export async function fetchSubredditInfo(
+  subreddit: string,
+): Promise<SubredditInfo | null> {
+  try {
+    const res = await fetch(
+      `https://www.reddit.com/r/${subreddit}/about.json`,
+      {
+        headers: { 'User-Agent': 'GTMeOS/1.0 (+https://thegtmos.ai)' },
+        next: { revalidate: 3600 },
+      },
+    )
+    if (!res.ok) return null
+    const json = await res.json()
+    const d = json.data
+    return {
+      name: d.display_name,
+      subscribers: d.subscribers ?? 0,
+      description: d.public_description ?? '',
+    }
+  } catch {
+    return null
+  }
+}
+
+export interface RedditUserProfile {
+  name: string
+  totalKarma: number
+  linkKarma: number
+  commentKarma: number
+}
+
+export async function fetchUserProfile(
+  username: string,
+): Promise<RedditUserProfile | null> {
+  try {
+    const res = await fetch(
+      `https://www.reddit.com/user/${username}/about.json`,
+      {
+        headers: { 'User-Agent': 'GTMeOS/1.0 (+https://thegtmos.ai)' },
+        next: { revalidate: 3600 },
+      },
+    )
+    if (!res.ok) return null
+    const json = await res.json()
+    const d = json.data
+    return {
+      name: d.name,
+      totalKarma: d.total_karma ?? 0,
+      linkKarma: d.link_karma ?? 0,
+      commentKarma: d.comment_karma ?? 0,
+    }
+  } catch {
+    return null
+  }
+}
