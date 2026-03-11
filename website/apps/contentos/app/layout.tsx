@@ -28,25 +28,25 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'theContentOS.ai - How to Build a Free AI Assistant & Content System',
+    default: 'theContentOS.ai - Personal AI Assistant with Memory & Content System',
     template: '%s | theContentOS.ai',
   },
-  description: 'Learn how to build a free AI assistant and personal content operating system. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+  description: 'Build a personal AI assistant with memory that knows your voice. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'theContentOS.ai',
-    title: 'theContentOS.ai - How to Build a Free AI Assistant & Content System',
-    description: 'Learn how to build a free AI assistant and personal content operating system. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+    title: 'theContentOS.ai - Personal AI Assistant with Memory & Content System',
+    description: 'Build a personal AI assistant with memory that knows your voice. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'theContentOS.ai - How to Build a Free AI Assistant & Content System',
-    description: 'Learn how to build a free AI assistant and personal content operating system. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+    title: 'theContentOS.ai - Personal AI Assistant with Memory & Content System',
+    description: 'Build a personal AI assistant with memory that knows your voice. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
     images: ['/og'],
   },
   alternates: {
