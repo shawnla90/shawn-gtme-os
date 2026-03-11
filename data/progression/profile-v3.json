@@ -2,7 +2,7 @@
   "name": "Operator",
   "title": "Context Weaver",
   "level": 22,
-  "xp_total": 14627,
+  "xp_total": 14789,
   "xp_next_level": 18000,
   "class": "Builder",
   "avatar_tier": 3,
@@ -17,125 +17,125 @@
       "id": "first_100xp",
       "title": "Spark Plug",
       "description": "Earned 100 XP",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "first_500xp",
       "title": "Warm Boot",
       "description": "Earned 500 XP",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "first_1000xp",
       "title": "Kilobyte Club",
       "description": "Earned 1,000 XP",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "first_2000xp",
       "title": "Repo Unlocked",
       "description": "Earned 2,000 XP",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "first_5000xp",
       "title": "Pipeline Active",
       "description": "Earned 5,000 XP",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "first_10000xp",
       "title": "Five Digits",
       "description": "Earned 10,000 XP",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "shipped_10",
       "title": "Shipping Container",
       "description": "Shipped 10+ items across all days",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "shipped_50",
       "title": "Cargo Fleet",
       "description": "Shipped 50+ items across all days",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "shipped_100",
       "title": "Assembly Line",
       "description": "Shipped 100+ items across all days",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "streak_3",
       "title": "Three-Day March",
       "description": "Logged activity for 3+ consecutive days",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "streak_7",
       "title": "Week Warrior",
       "description": "Logged activity for 7+ days",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "words_50k",
       "title": "Fifty Thousand Words",
       "description": "Wrote 50,000+ words across all days",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "words_100k",
       "title": "Novelist",
       "description": "Wrote 100,000+ words across all days",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "momentum_3",
       "title": "Building Momentum",
       "description": "3-day ascending momentum chain",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "streak_14",
       "title": "Two-Week Grind",
       "description": "14 consecutive days logged",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "commit_machine",
       "title": "Commit Machine",
       "description": "Day with 25+ commits",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "polymath_day",
       "title": "Renaissance Day",
       "description": "Accomplishments in all 3 categories in one day",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     },
     {
       "id": "first_s_grade_v3",
       "title": "S-Rank Day (v3)",
       "description": "Achieved S grade on a daily log (v3 thresholds)",
-      "unlocked_at": "2026-03-10T04:00:03.771475+00:00"
+      "unlocked_at": "2026-03-11T04:00:06.076479+00:00"
     }
   ],
-  "updated_at": "2026-03-10T04:00:03.771667+00:00",
+  "updated_at": "2026-03-11T04:00:06.076645+00:00",
   "v3_meta": {
     "engine_version": "3.0",
-    "v1_xp_total": 8743,
-    "xp_delta_from_v1": 5884,
-    "current_ascending_chain": 3,
-    "current_streak": 27,
+    "v1_xp_total": 8849,
+    "xp_delta_from_v1": 5940,
+    "current_ascending_chain": 1,
+    "current_streak": 28,
     "longest_chain": 4,
-    "longest_streak": 27,
-    "momentum_mult": 1.45,
+    "longest_streak": 28,
+    "momentum_mult": 1.29,
     "class_window": "7d",
     "class_breakdown": {
-      "builder": 0.97,
-      "scribe": 0.03,
+      "builder": 0.95,
+      "scribe": 0.05,
       "strategist": 0.0
     },
     "grade_thresholds": {
@@ -714,6 +714,27 @@
         "total_bonus": 0.2525,
         "total_mult": 1.8161,
         "v3_xp": 743
+      },
+      {
+        "date": "2026-03-10",
+        "raw_score": 106,
+        "base_score": 106.0,
+        "v2_grade": "C",
+        "v3_grade": "C",
+        "ascending_chain": 1,
+        "ascending_bonus": 0.08,
+        "streak_days": 28,
+        "streak_bonus": 0.21,
+        "momentum_mult": 1.29,
+        "quality_bonus": 0.05,
+        "type_diversity": 0.62,
+        "high_value_ratio": 0.0,
+        "efficiency_bonus": 0.0,
+        "velocity_bonus": 0.06,
+        "ship_bonus": 0.082,
+        "total_bonus": 0.192,
+        "total_mult": 1.5377,
+        "v3_xp": 162
       }
     ]
   }

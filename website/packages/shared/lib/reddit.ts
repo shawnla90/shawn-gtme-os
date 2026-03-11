@@ -1,3 +1,5 @@
+import cachedData from '../data/reddit-cache.json'
+
 export interface RedditPost {
   id: string
   title: string
@@ -59,12 +61,17 @@ export async function fetchSubredditPosts(
         next: { revalidate: 3600 },
       },
     )
-    if (!res.ok) return []
+    if (!res.ok) throw new Error(`Reddit API ${res.status}`)
     const json: RedditApiResponse = await res.json()
-    return json.data.children.map(mapPost)
+    const posts = json.data.children.map(mapPost)
+    if (posts.length > 0) return posts
   } catch {
-    return []
+    // Reddit blocks cloud provider IPs — fall back to cached data
   }
+  return cachedData.posts.map((p) => ({
+    ...p,
+    flair: p.flair ?? undefined,
+  })).slice(0, limit)
 }
 
 export async function fetchAuthorPosts(
@@ -95,7 +102,7 @@ export async function fetchSubredditInfo(
         next: { revalidate: 3600 },
       },
     )
-    if (!res.ok) return null
+    if (!res.ok) throw new Error(`Reddit API ${res.status}`)
     const json = await res.json()
     const d = json.data
     return {
@@ -104,7 +111,8 @@ export async function fetchSubredditInfo(
       description: d.public_description ?? '',
     }
   } catch {
-    return null
+    // Fall back to cached subreddit info
+    return cachedData.subredditInfo as SubredditInfo
   }
 }
 
@@ -126,7 +134,7 @@ export async function fetchUserProfile(
         next: { revalidate: 3600 },
       },
     )
-    if (!res.ok) return null
+    if (!res.ok) throw new Error(`Reddit API ${res.status}`)
     const json = await res.json()
     const d = json.data
     return {
@@ -136,6 +144,7 @@ export async function fetchUserProfile(
       commentKarma: d.comment_karma ?? 0,
     }
   } catch {
-    return null
+    // Fall back to cached user profile
+    return cachedData.userProfile as RedditUserProfile
   }
 }

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shawnos.sync-reddit</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os/scripts/sync_reddit.sh</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os</string>
+
+  <key>StartInterval</key>
+  <integer>3600</integer>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/sync-reddit-stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/sync-reddit-stderr.log</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/shawnos.ai</string>
+  </dict>
+
+  <key>RunAtLoad</key>
+  <true/>
+</dict>
+</plist>
