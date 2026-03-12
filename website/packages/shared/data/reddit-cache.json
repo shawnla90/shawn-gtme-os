@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-12T05:47:52.305388+00:00",
+  "lastUpdated": "2026-03-12T06:48:09.965281+00:00",
   "posts": [
     {
       "id": "1rrf0i5",
@@ -100,13 +100,13 @@
   ],
   "subredditInfo": {
     "name": "GTMbuilders",
-    "subscribers": 45,
+    "subscribers": 50,
     "description": "Builders shipping the future of go-to-market with AI. GitHub commits over slide decks. Tribal knowledge shared openly. Systems, experiments, and real lessons from operators who build in public and grow together. No gatekeeping. No guru talk. Builder-led growth starts here."
   },
   "userProfile": {
     "name": "Shawntenam",
-    "totalKarma": 616,
+    "totalKarma": 634,
     "linkKarma": 118,
-    "commentKarma": 498
+    "commentKarma": 516
   }
 }
