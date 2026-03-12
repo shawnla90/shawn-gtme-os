@@ -1,0 +1,29 @@
+clay changed their entire pricing model today. not a tweak. a restructure.
+
+I've been building in Clay daily for over a year. tables, Claygents, HTTP API integrations, enrichment architectures. I'm not a partner. I'm not an affiliate. nobody pays me to say nice things about Clay.
+
+so here's my honest take on who this helps and who it hurts.
+
+✅ CRM sync dropped from $800/mo (Pro) to $495/mo (Growth). if you were paying $800 just to push data to HubSpot or Salesforce, that's $3,660/year back in your pocket.
+
+✅ data costs cut 50-90% across top enrichments. if you run high-volume enrichment, your unit economics just improved significantly.
+
+✅ Web Intent signals and Clay Ads bundled into the Growth plan. features that used to be enterprise-only.
+
+⚠️ HTTP API moved UP from $349 Explorer to $495 Growth. and HTTP calls now consume Actions. if you built your stack on HTTP columns at the Explorer tier, this hits twice. higher plan cost + a new consumption meter.
+
+⚠️ entry price went from $149 to $185. plus you now have two currencies to track (Data Credits + Actions) instead of one. more to learn before you can evaluate whether the tool works for you.
+
+⚠️ light users paying for capacity they'll never touch. 15,000 Actions/mo on the Launch plan when you only run 2,000 enrichments.
+
+the real move here: Clay is becoming a platform, not a data tool. cheaper data is the incentive to go deeper. Actions are the new monetization layer.
+
+that's not bad. but it means the pricing works best for builders who use Clay as infrastructure. if you're only doing light enrichment with no CRM sync or API work, run the numbers. you might be paying platform tax for orchestration you don't use.
+
+existing customers are grandfathered. no forced migration. but you have until April 10 to switch between legacy plans (one-time window). after that, legacy tiers close.
+
+full breakdown with side-by-side tier comparison, migration decision framework, and who-wins-who-loses analysis on the blog 👇
+
+shawn ⚡ GTM Engineer
+
+#GTMEngineering #ClayDotCom #RevOps #GTM

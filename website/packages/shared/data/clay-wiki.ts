@@ -340,6 +340,7 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
       'formulas',
       'http-column',
       'troubleshooting',
+      'pricing-model-2026',
     ],
     sections: [
       {
@@ -1512,6 +1513,86 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         type: 'pro-tip',
         content:
           "Routing contacts to Instantly or HeyReach is the last step in Clay — but the infrastructure those platforms sit on determines whether your emails land. Domain provisioning, DNS records, inbox provider splits, warmup schedules, sending limits, and mailbox rotation all matter. See the Email Infrastructure Guide at /knowledge/email for the complete sending infrastructure breakdown.",
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  REFERENCE — Pricing Model (March 2026)                            */
+  /* ================================================================== */
+
+  {
+    id: 'pricing-model-2026',
+    title: 'Clay Pricing Model (March 2026)',
+    subtitle: 'Dual currency, cheaper data, and the Actions meter explained',
+    category: 'reference',
+    description:
+      'Breakdown of Clay\'s March 2026 pricing overhaul — the dual-currency system (Data Credits + Actions), new plan tiers, feature redistribution, grandfathering rules, and migration decision framework for builders.',
+    keywords: [
+      'clay pricing 2026',
+      'clay new pricing',
+      'clay actions',
+      'clay data credits',
+      'clay plan comparison',
+      'clay growth plan',
+      'clay launch plan',
+      'clay pricing change',
+    ],
+    difficulty: 'beginner',
+    related: [
+      'credit-system',
+      'http-column',
+      'hubspot-create-update',
+      'enterprise-guardrails',
+    ],
+    sections: [
+      {
+        heading: 'The Structural Change',
+        type: 'prose',
+        content:
+          "On March 11, 2026, Clay restructured their entire pricing model. The old system used a single currency — credits — for everything. Enrichments, AI calls, HTTP columns, orchestration. One number to track. The new system splits into two currencies: Data Credits for enrichment marketplace costs, and Actions for platform orchestration work. Data costs dropped 50-90% across the top 20 enrichments. But every enrichment run, Claygent call, HTTP API execution, CRM push, and webhook trigger now also consumes an Action. Formulas and imports remain free. Plan names changed from Free/Starter/Explorer/Pro/Enterprise to Free/Launch/Growth/Enterprise.",
+      },
+      {
+        heading: 'Plan Comparison: Old vs. New',
+        type: 'pattern',
+        content:
+          "Old tiers: Starter ($149/mo, 2K-3K credits, no CRM, no HTTP API) — Explorer ($349/mo, 10K-20K credits, HTTP API + webhooks, no CRM) — Pro ($800/mo, 50K-150K credits, CRM integrations, 5 seats).\n\nNew tiers: Launch ($185/mo, 15K Actions, 2.5K-20K Data Credits) — Growth ($495/mo, 40K Actions, 6K-100K Data Credits, CRM sync, HTTP API, webhooks, Web Intent, Clay Ads) — Enterprise (custom, 100K+ Actions, 100K+ Data Credits, data warehouse sync, SSO, RBAC, bulk enrichment).\n\nBiggest moves: CRM integrations dropped from $800 Pro to $495 Growth. HTTP API moved up from $349 Explorer to $495 Growth and now costs Actions per call. Web Intent and Clay Ads bundled into Growth.",
+      },
+      {
+        heading: 'Understanding Actions',
+        type: 'prose',
+        content:
+          "Actions measure platform orchestration — anything where Clay does work on your behalf. Each enrichment run is an Action. Each Claygent call is an Action. Each HTTP API execution, CRM push, and webhook trigger is an Action. What is NOT an Action: importing rows, running formulas, manual edits, transformations. Clay says 90% of customers will never hit their Actions limit. The default ratio is roughly 4-5 Actions per Data Credit based on power-user patterns. Free gets 500 Actions/mo. Launch gets 15,000. Growth gets 40,000. Enterprise gets 100,000+.",
+      },
+      {
+        heading: 'Who This Helps',
+        type: 'pattern',
+        content:
+          "Teams paying $800/mo Pro just for CRM sync — Growth at $495 saves $305/mo ($3,660/year). Heavy enrichment users benefit from 50-90% cheaper data costs across the marketplace. Builders who want Web Intent signals and Clay Ads now get them at the Growth tier instead of enterprise-only pricing. New users get a lower entry point to CRM + HTTP API + webhooks compared to the old Pro plan.",
+      },
+      {
+        heading: 'Who This Hurts',
+        type: 'anti-pattern',
+        content:
+          "Explorer users at $349/mo who relied on HTTP API — now need Growth at $495/mo, plus HTTP calls consume Actions. Light users who only run a few thousand enrichments per month — floor went from $149 to $185 with capacity they won't use. Anyone who built automation around a single-credit model — dual currency adds cognitive overhead and two limits to monitor. Teams just learning Clay now have more complexity before they can evaluate whether the tool works for them.",
+      },
+      {
+        heading: 'Migration Decision Framework',
+        type: 'pro-tip',
+        content:
+          "Existing customers are grandfathered — no forced migration. Through April 10, 2026, legacy customers can do a one-time switch to any legacy plan. After that, legacy plans close to new selections. To decide: (1) Pull your last 3 months of credit usage. (2) Map your HTTP API calls, Claygent runs, CRM syncs, and enrichments separately. (3) Compare your total against the new tier limits. (4) If you're on Explorer using HTTP API heavily, your legacy plan might be cheaper than Growth. (5) If you're on Pro for CRM sync and don't use 50K credits, Growth at $495 is probably better. (6) Run the math before switching — Clay themselves said they'd advise customers to stay on legacy when it's cheaper.",
+      },
+      {
+        heading: 'AI Model Pricing Split',
+        type: 'pattern',
+        content:
+          "Clay split AI model pricing into two tracks. Simple models (Claygent Helium, Neon, Argon) get fixed credit pricing — predictable costs per call. Reasoning models pass through at actual token cost with zero Clay markup — you pay what the model costs, no platform premium. For builders running heavy Claygent workflows, the simple models give predictable budgeting. For complex research tasks requiring reasoning models, pass-through pricing means you're paying OpenAI or Anthropic rates without Clay adding a margin on top.",
+      },
+      {
+        heading: 'Credit Top-Up Changes',
+        type: 'pro-tip',
+        content:
+          "Mid-cycle credit top-ups used to carry a 50% premium. Now it's 30%. Still not cheap, but less punishing if you run out mid-month. Credit rollover: monthly plans roll over up to 2x monthly allocation. Annual plans roll over up to 15% of annual credits. If you consistently need top-ups, you're on the wrong plan — upgrade instead of paying the premium.",
       },
     ],
   },
