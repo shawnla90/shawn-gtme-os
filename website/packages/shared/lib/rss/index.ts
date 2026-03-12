@@ -3,6 +3,7 @@ export { buildFeed, generateETag, feedResponse, atomFeedResponse, jsonFeedRespon
 export {
   blogPostsToFeedItems,
   dailyLogsToFeedItems,
+  apolloWikiToFeedItems,
   clayWikiToFeedItems,
   contentWikiToFeedItems,
   contextWikiToFeedItems,

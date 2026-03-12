@@ -8,6 +8,7 @@ import {
   howToWikiToFeedItems,
   knowledgeToFeedItems,
   clayWikiToFeedItems,
+  apolloWikiToFeedItems,
   gtmTermsToFeedItems,
   mergeFeedItems,
 } from '@shawnos/shared/lib'
@@ -16,6 +17,7 @@ import { HOW_TO_WIKI_ENTRIES, getHowToWikiEntriesBySite } from '@shawnos/shared/
 import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
+import { APOLLO_WIKI_ENTRIES } from '@shawnos/shared/data/apollo-wiki'
 import { BreadcrumbSchema, UpdatesFeed } from '@shawnos/shared/components'
 import type { FeedEntry, CategoryFilter } from '@shawnos/shared/components'
 import { SITES } from '@shawnos/shared/lib/sites'
@@ -68,6 +70,13 @@ interface FeatureMilestone {
 }
 
 const FEATURE_MILESTONES: FeatureMilestone[] = [
+  {
+    date: '2026-03-12',
+    title: 'Apollo Wiki',
+    description: 'People search infrastructure guide. API architecture, title filtering, hacker track (Supabase + API + cron), SDR enablement track, and conference prospecting flows.',
+    type: 'launch',
+    link: '/apollo-wiki',
+  },
   {
     date: '2026-03-05',
     title: 'ABM Pipeline & Agent Deployment Guides',
@@ -138,6 +147,7 @@ const FEATURE_MILESTONES: FeatureMilestone[] = [
 const CATEGORY_MAP: Record<string, { label: string; color: string; isReference?: boolean }> = {
   'daily-log': { label: 'Daily Log', color: '#facc15' },
   'clay-wiki': { label: 'Clay Wiki', color: '#fb923c', isReference: true },
+  'apollo-wiki': { label: 'Apollo Wiki', color: '#6366F1', isReference: true },
   'gtm-knowledge': { label: 'GTM Knowledge', color: '#34d399', isReference: true },
   knowledge: { label: 'Engineering Knowledge', color: '#a78bfa', isReference: true },
   'how-to': { label: 'How-To', color: '#38bdf8', isReference: true },
@@ -152,6 +162,8 @@ function classifyItem(item: FeedItem): { key: string; label: string; color: stri
     return { key: 'daily-log', ...CATEGORY_MAP['daily-log'], isReference: false }
   if (cats.includes('clay-wiki') || link.includes('/clay-wiki'))
     return { key: 'clay-wiki', ...CATEGORY_MAP['clay-wiki'], isReference: true }
+  if (cats.includes('apollo-wiki') || link.includes('/apollo-wiki'))
+    return { key: 'apollo-wiki', ...CATEGORY_MAP['apollo-wiki'], isReference: true }
   if (cats.includes('gtm-knowledge'))
     return { key: 'gtm-knowledge', ...CATEGORY_MAP['gtm-knowledge'], isReference: true }
   if (cats.includes('knowledge'))
@@ -420,6 +432,7 @@ export default function UpdatesPage() {
   // Reference sources
   const referenceItems = mergeFeedItems(
     clayWikiToFeedItems(CLAY_WIKI_ENTRIES, SITE_URL),
+    apolloWikiToFeedItems(APOLLO_WIKI_ENTRIES, SITE_URL),
     gtmTermsToFeedItems(GTM_CATEGORIES, SITE_URL),
     knowledgeToFeedItems(ENGINEERING_CATEGORIES, SITE_URL),
     howToWikiToFeedItems(gtmHowTos, SITE_URL),

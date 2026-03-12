@@ -9,10 +9,11 @@
 ## Content Types
 - GTM Knowledge Base: /gtm-knowledge — Go-to-market terms, frameworks, and playbooks
 - Clay Wiki: /clay-wiki — Clay.com workflows, enrichment plays, and integration guides
+- Apollo Wiki: /apollo-wiki — Apollo people search infrastructure, API patterns, and sourcing workflows
 - How-To Wiki: /how-to — GTM engineering guides (cross-linked from shawnos.ai)
 
 ## Feeds
-- RSS: /feed.xml, /feed/clay-wiki.xml, /feed/knowledge.xml
+- RSS: /feed.xml, /feed/clay-wiki.xml, /feed/apollo-wiki.xml, /feed/knowledge.xml
 
 ## Related
 - GEO Wiki: https://shawnos.ai/geo — Generative Engine Optimization guide (25 entries)

@@ -1,6 +1,7 @@
 import { streamText, convertToModelMessages, type UIMessage } from "ai"
 import { anthropic } from "@ai-sdk/anthropic"
 import { CLAY_WIKI_ENTRIES, type ClayWikiEntry } from "@shawnos/shared/data/clay-wiki"
+import { APOLLO_WIKI_ENTRIES, type ApolloWikiEntry } from "@shawnos/shared/data/apollo-wiki"
 import { GTM_CATEGORIES, type GTMCategory } from "@shawnos/shared/data/gtm-terms"
 import { EMAIL_CATEGORIES, type EmailCategory } from "@shawnos/shared/data/email-infrastructure"
 import { HOW_TO_WIKI_ENTRIES, type HowToWikiEntry } from "@shawnos/shared/data/how-to-wiki"
@@ -48,6 +49,18 @@ function clayWikiToItems(): RetrievableItem[] {
     category: `clay-wiki/${e.category}`,
     content: truncate(sectionsToText(e.sections)),
     url: `https://thegtmos.ai/clay-wiki/${e.id}`,
+  }))
+}
+
+function apolloWikiToItems(): RetrievableItem[] {
+  return APOLLO_WIKI_ENTRIES.map((e: ApolloWikiEntry) => ({
+    id: `apollo-${e.id}`,
+    title: e.title,
+    description: e.description,
+    keywords: e.keywords,
+    category: `apollo-wiki/${e.category}`,
+    content: truncate(sectionsToText(e.sections)),
+    url: `https://thegtmos.ai/apollo-wiki/${e.id}`,
   }))
 }
 
@@ -108,6 +121,7 @@ function engineeringToItems(): RetrievableItem[] {
 }
 
 const RECON_SYNONYMS: Record<string, string[]> = {
+  apollo: ["apollo.io", "people search", "sourcing", "contact database", "b2b data", "people data"],
   clay: ["clay.com", "waterfall", "enrichment", "data provider", "claygent"],
   enrichment: ["waterfall enrichment", "data enrichment", "append", "lookup", "provider"],
   outbound: ["cold email", "cold outreach", "prospecting", "sdr", "bdr", "sales development"],
@@ -136,6 +150,7 @@ function getConfig(): RetrievalConfig {
   cachedConfig = {
     items: [
       ...clayWikiToItems(),
+      ...apolloWikiToItems(),
       ...gtmTermsToItems(),
       ...emailInfraToItems(),
       ...howToWikiToItems(),

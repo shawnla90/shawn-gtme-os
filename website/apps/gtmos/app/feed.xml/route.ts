@@ -5,6 +5,7 @@ import {
   knowledgeToFeedItems,
   gtmTermsToFeedItems,
   clayWikiToFeedItems,
+  apolloWikiToFeedItems,
   howToWikiToFeedItems,
   dailyLogsToFeedItems,
   mergeFeedItems,
@@ -14,6 +15,7 @@ import { getAllLogs } from '@shawnos/shared/lib'
 import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
+import { APOLLO_WIKI_ENTRIES } from '@shawnos/shared/data/apollo-wiki'
 import { HOW_TO_WIKI_ENTRIES } from '@shawnos/shared/data/how-to-wiki'
 
 const SITE_URL = SITE_URLS.gtmos
@@ -31,6 +33,7 @@ export function GET() {
     knowledgeToFeedItems(ENGINEERING_CATEGORIES, SITE_URL, '/knowledge'),
     gtmTermsToFeedItems(GTM_CATEGORIES, SITE_URL, '/knowledge/gtm'),
     clayWikiToFeedItems(CLAY_WIKI_ENTRIES, SITE_URL, '/clay-wiki'),
+    apolloWikiToFeedItems(APOLLO_WIKI_ENTRIES, SITE_URL, '/apollo-wiki'),
     howToWikiToFeedItems(HOW_TO_WIKI_ENTRIES, SITE_URL, '/how-to'),
     dailyLogsToFeedItems(getAllLogs(LOG_DIR), SITE_URL),
   )

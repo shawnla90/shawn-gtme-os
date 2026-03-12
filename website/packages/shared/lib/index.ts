@@ -81,6 +81,7 @@ export { buildFeed, feedResponse, getFeedConfig } from './rss'
 export {
   blogPostsToFeedItems,
   dailyLogsToFeedItems,
+  apolloWikiToFeedItems,
   clayWikiToFeedItems,
   contentWikiToFeedItems,
   contextWikiToFeedItems,

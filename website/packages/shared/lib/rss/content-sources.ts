@@ -6,6 +6,7 @@ import type { ContentWikiEntry } from '../../data/content-wiki'
 import type { ContextWikiEntry } from '../../data/context-wiki'
 import type { HowToWikiEntry } from '../../data/how-to-wiki'
 import type { GeoWikiEntry } from '../../data/geo-wiki'
+import type { ApolloWikiEntry } from '../../data/apollo-wiki'
 import type { KnowledgeCategory } from '../../data/engineering-terms'
 import type { GTMCategory } from '../../data/gtm-terms'
 
@@ -70,6 +71,21 @@ export function clayWikiToFeedItems(
     description: wikiDescription(entry),
     date: BUILD_DATE,
     category: ['clay-wiki', entry.category],
+  }))
+}
+
+export function apolloWikiToFeedItems(
+  entries: ApolloWikiEntry[],
+  siteUrl: string,
+  basePath = '/apollo-wiki',
+): FeedItem[] {
+  return entries.map((entry) => ({
+    title: entry.title,
+    id: `${siteUrl}${basePath}/${entry.id}`,
+    link: `${siteUrl}${basePath}/${entry.id}`,
+    description: wikiDescription(entry),
+    date: BUILD_DATE,
+    category: ['apollo-wiki', entry.category],
   }))
 }
 

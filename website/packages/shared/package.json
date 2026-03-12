@@ -21,6 +21,7 @@
     "./data/gtm-terms": "./data/gtm-terms.ts",
     "./data/email-infrastructure": "./data/email-infrastructure.ts",
     "./data/clay-wiki": "./data/clay-wiki.ts",
+    "./data/apollo-wiki": "./data/apollo-wiki.ts",
     "./data/context-wiki": "./data/context-wiki.ts",
     "./data/content-wiki": "./data/content-wiki.ts",
     "./data/how-to-wiki": "./data/how-to-wiki.ts",
@@ -42,6 +43,7 @@
     "./hooks": "./hooks/useIsMobile.ts",
     "./hooks/useTheme": "./hooks/useTheme.ts",
     "./hooks/useContentTracking": "./hooks/useContentTracking.ts",
+    "./data/ai-news-cache.json": "./data/ai-news-cache.json",
     "./styles": "./styles/tokens.css"
   },
   "dependencies": {

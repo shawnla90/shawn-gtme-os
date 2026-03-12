@@ -5,6 +5,7 @@ import { getHowToWikiEntriesBySite } from '@shawnos/shared/data/how-to-wiki'
 import { ENGINEERING_CATEGORIES, toSlug } from '@shawnos/shared/data/engineering-terms'
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import { CLAY_WIKI_ENTRIES } from '@shawnos/shared/data/clay-wiki'
+import { APOLLO_WIKI_ENTRIES } from '@shawnos/shared/data/apollo-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { SITES } from '@shawnos/shared/lib/sites'
 import SearchContent from './SearchContent'
@@ -65,6 +66,14 @@ export default function SearchPage() {
       description: e.subtitle,
       href: `/clay-wiki/${e.id}`,
       type: 'Clay Wiki',
+    })),
+
+    /* Apollo wiki */
+    ...APOLLO_WIKI_ENTRIES.map((e) => ({
+      title: e.title,
+      description: e.subtitle,
+      href: `/apollo-wiki/${e.id}`,
+      type: 'Apollo Wiki',
     })),
 
     /* how-to entries */
