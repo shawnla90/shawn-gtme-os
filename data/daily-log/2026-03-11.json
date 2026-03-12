@@ -1,0 +1,1483 @@
+{
+  "date": "2026-03-11",
+  "generated_at": "2026-03-12T04:00:05.139543+00:00",
+  "version": 4,
+  "accomplishments": [
+    {
+      "type": "website_page",
+      "title": "shawnos locale community page",
+      "path": "website/apps/shawnos/app/[locale]/community/page.tsx",
+      "source": "auto",
+      "timestamp": "16:05",
+      "words": 516,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "config_file",
+      "title": "shared package",
+      "path": "website/packages/shared/package.json",
+      "source": "auto",
+      "timestamp": "23:58",
+      "value_score": 0,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos layout",
+      "path": "website/apps/gtmos/app/layout.tsx",
+      "source": "auto",
+      "timestamp": "23:58",
+      "words": 513,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_component",
+      "title": "RedditFeed",
+      "path": "website/packages/shared/components/RedditFeed.tsx",
+      "source": "auto",
+      "timestamp": "16:04",
+      "words": 619,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos community page",
+      "path": "website/apps/gtmos/app/community/page.tsx",
+      "source": "auto",
+      "timestamp": "16:04",
+      "words": 503,
+      "value_score": 5,
+      "shipped": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/components/index.ts",
+      "source": "auto",
+      "timestamp": "05:07",
+      "words": 229,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "reddit_draft",
+      "title": "clay agency audit",
+      "path": "content/reddit/drafts/clay-agency-audit.md",
+      "source": "auto",
+      "timestamp": "05:05",
+      "words": 550,
+      "value_score": 2,
+      "shipped": false
+    },
+    {
+      "type": "website_lib",
+      "title": "shared reddit",
+      "path": "website/packages/shared/lib/reddit.ts",
+      "source": "auto",
+      "timestamp": "23:58",
+      "words": 478,
+      "value_score": 3,
+      "shipped": true
+    },
+    {
+      "type": "linkedin_final",
+      "title": "clay pricing breakdown",
+      "path": "content/linkedin/final/2026-03-11_clay-pricing-breakdown.txt",
+      "source": "auto",
+      "timestamp": "21:41",
+      "words": 342,
+      "value_score": 10,
+      "shipped": true
+    },
+    {
+      "type": "website_style",
+      "title": "globals styles",
+      "path": "website/apps/shawnos/app/globals.css",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 1172,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/rss/index.ts",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 44,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos apollo-wiki page",
+      "path": "website/apps/gtmos/app/apollo-wiki/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:34",
+      "words": 1578,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos apollo-wiki slug page",
+      "path": "website/apps/gtmos/app/apollo-wiki/[slug]/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:35",
+      "words": 1064,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared content-sources",
+      "path": "website/packages/shared/lib/rss/content-sources.ts",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 588,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos search page",
+      "path": "website/apps/gtmos/app/search/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 356,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "gtmos updates page",
+      "path": "website/apps/gtmos/app/updates/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 1776,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed.xml route",
+      "path": "website/apps/gtmos/app/feed.xml/route.ts",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 118,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "complex_script",
+      "title": "ai_news_scout",
+      "path": "scripts/ai_news_scout.py",
+      "source": "auto-mtime",
+      "timestamp": "21:56",
+      "words": 1975,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos api chat route",
+      "path": "website/apps/gtmos/app/api/chat/route.ts",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 1041,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "shawnos locale live page",
+      "path": "website/apps/shawnos/app/[locale]/live/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "21:52",
+      "words": 261,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos layout",
+      "path": "website/apps/contentos/app/layout.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 838,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_route",
+      "title": "gtmos feed apollo-wiki.xml route",
+      "path": "website/apps/gtmos/app/feed/apollo-wiki.xml/route.ts",
+      "source": "auto-mtime",
+      "timestamp": "23:36",
+      "words": 57,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_lib",
+      "title": "shared index",
+      "path": "website/packages/shared/lib/index.ts",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 246,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    },
+    {
+      "type": "website_page",
+      "title": "contentos how-to page",
+      "path": "website/apps/contentos/app/how-to/page.tsx",
+      "source": "auto-mtime",
+      "timestamp": "23:58",
+      "words": 1148,
+      "value_score": 0,
+      "shipped": false,
+      "mtime_only": true
+    }
+  ],
+  "commits": [
+    {
+      "hash": "6a212f4",
+      "message": "chore: daily tracker scan 2026-03-10",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 10,
+      "lines_added": 1379,
+      "lines_removed": 204,
+      "lines_net": 1175,
+      "directories": [
+        "data/",
+        "website/"
+      ],
+      "timestamp": "00:03"
+    },
+    {
+      "hash": "40be5cc",
+      "message": "feat: r/GTMBuilders community feed pages + fix shawnesquivel references",
+      "type": "monorepo_scaffold",
+      "score": 80,
+      "files_changed": 16,
+      "lines_added": 1090,
+      "lines_removed": 9,
+      "lines_net": 1081,
+      "directories": [
+        "content/",
+        "website/"
+      ],
+      "timestamp": "05:17"
+    },
+    {
+      "hash": "cce4276",
+      "message": "fix: add Reddit karma + member count to community pages",
+      "type": "bug_fix",
+      "score": 5,
+      "files_changed": 3,
+      "lines_added": 92,
+      "lines_removed": 13,
+      "lines_net": 79,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "05:26"
+    },
+    {
+      "hash": "bfa644b",
+      "message": "fix: Reddit cache fallback for Vercel + hourly sync cron + seed post 4 draft",
+      "type": "bug_fix",
+      "score": 8,
+      "files_changed": 11,
+      "lines_added": 1548,
+      "lines_removed": 1150,
+      "lines_net": 398,
+      "directories": [
+        "content/",
+        "data/",
+        "scripts/",
+        "website/"
+      ],
+      "timestamp": "05:43"
+    },
+    {
+      "hash": "b58da61",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 06:42)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 4,
+      "lines_removed": 4,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "06:42"
+    },
+    {
+      "hash": "d0781a1",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 07:42)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "07:42"
+    },
+    {
+      "hash": "62fcca5",
+      "message": "feat: nio.log 2026-03-11 \u2014 automated daily post",
+      "type": "content_ship",
+      "score": 10,
+      "files_changed": 1,
+      "lines_added": 21,
+      "lines_removed": 0,
+      "lines_net": 21,
+      "directories": [
+        "content/"
+      ],
+      "timestamp": "08:01"
+    },
+    {
+      "hash": "5a1d60c",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 08:42)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 3,
+      "lines_removed": 3,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "08:42"
+    },
+    {
+      "hash": "a74880b",
+      "message": "feat: daily LinkedIn posts 2026-03-11",
+      "type": "infra_build",
+      "score": 15,
+      "files_changed": 2,
+      "lines_added": 758,
+      "lines_removed": 0,
+      "lines_net": 758,
+      "directories": [
+        "data/"
+      ],
+      "timestamp": "09:11"
+    },
+    {
+      "hash": "17a8535",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 09:43)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "09:43"
+    },
+    {
+      "hash": "fe93c3d",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 10:43)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 4,
+      "lines_removed": 4,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "10:43"
+    },
+    {
+      "hash": "d6606d2",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 11:43)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "11:43"
+    },
+    {
+      "hash": "4b574c5",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 12:44)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 4,
+      "lines_removed": 4,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "12:44"
+    },
+    {
+      "hash": "cee0e19",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 13:44)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "13:44"
+    },
+    {
+      "hash": "39f4185",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 14:44)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 4,
+      "lines_removed": 4,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "14:44"
+    },
+    {
+      "hash": "7e826b3",
+      "message": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 15:44)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 4,
+      "lines_removed": 4,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:44"
+    },
+    {
+      "hash": "dcf51f3",
+      "message": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 15:58)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 12,
+      "lines_removed": 1,
+      "lines_net": 11,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "15:58"
+    },
+    {
+      "hash": "a956d35",
+      "message": "fix: use CSS tokens for community pages \u2014 light theme compatibility",
+      "type": "bug_fix",
+      "score": 5,
+      "files_changed": 3,
+      "lines_added": 25,
+      "lines_removed": 25,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:06"
+    },
+    {
+      "hash": "25ab67a",
+      "message": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 16:45)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "16:45"
+    },
+    {
+      "hash": "a6cae94",
+      "message": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 17:45)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 6,
+      "lines_removed": 6,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "17:45"
+    },
+    {
+      "hash": "0eef1f6",
+      "message": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 18:45)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "18:45"
+    },
+    {
+      "hash": "d56671d",
+      "message": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 19:46)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "19:46"
+    },
+    {
+      "hash": "03573e2",
+      "message": "chore: sync Reddit cache \u2014 5 posts (2026-03-11 20:46)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 16,
+      "lines_removed": 5,
+      "lines_net": 11,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "20:46"
+    },
+    {
+      "hash": "f581c35",
+      "message": "feat: Clay pricing March 2026 breakdown \u2014 blog, wiki entry, LinkedIn post",
+      "type": "component",
+      "score": 15,
+      "files_changed": 3,
+      "lines_added": 245,
+      "lines_removed": 0,
+      "lines_net": 245,
+      "directories": [
+        "content/",
+        "website/"
+      ],
+      "timestamp": "21:43"
+    },
+    {
+      "hash": "7c0bb23",
+      "message": "chore: sync Reddit cache \u2014 5 posts (2026-03-11 21:46)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 35,
+      "lines_removed": 10,
+      "lines_net": 25,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "21:46"
+    },
+    {
+      "hash": "5a7d621",
+      "message": "chore: sync Reddit cache \u2014 5 posts (2026-03-11 22:47)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 5,
+      "lines_removed": 5,
+      "lines_net": 0,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "22:47"
+    },
+    {
+      "hash": "6e9e2bf",
+      "message": "chore: sync Reddit cache \u2014 6 posts (2026-03-11 23:47)",
+      "type": "chore",
+      "score": 1,
+      "files_changed": 1,
+      "lines_added": 21,
+      "lines_removed": 5,
+      "lines_net": 16,
+      "directories": [
+        "website/"
+      ],
+      "timestamp": "23:47"
+    }
+  ],
+  "pipeline": {
+    "drafts_active": [
+      {
+        "platform": "linkedin",
+        "title": "skill tree repo",
+        "path": "content/linkedin/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 1103
+      },
+      {
+        "platform": "linkedin",
+        "title": "slack sync context",
+        "path": "content/linkedin/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 907
+      },
+      {
+        "platform": "linkedin",
+        "title": "weekend build",
+        "path": "content/linkedin/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 666
+      },
+      {
+        "platform": "linkedin",
+        "title": "youtube hype",
+        "path": "content/linkedin/drafts/2026-02-09_youtube-hype.md",
+        "target_date": "2026-02-09",
+        "words": 402
+      },
+      {
+        "platform": "linkedin",
+        "title": "agent context handoff",
+        "path": "content/linkedin/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 848
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os meta",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 678
+      },
+      {
+        "platform": "linkedin",
+        "title": "content os schematic",
+        "path": "content/linkedin/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 1263
+      },
+      {
+        "platform": "linkedin",
+        "title": "github safety workflow",
+        "path": "content/linkedin/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 784
+      },
+      {
+        "platform": "linkedin",
+        "title": "heyreach partner handoff v2",
+        "path": "content/linkedin/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 629
+      },
+      {
+        "platform": "linkedin",
+        "title": "skill play",
+        "path": "content/linkedin/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 740
+      },
+      {
+        "platform": "linkedin",
+        "title": "voice modularity",
+        "path": "content/linkedin/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 795
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker system",
+        "path": "content/linkedin/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 1341
+      },
+      {
+        "platform": "linkedin",
+        "title": "identity not tools",
+        "path": "content/linkedin/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 826
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack identity crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 120
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack launch crosspromo",
+        "path": "content/linkedin/drafts/2026-02-11_substack-launch-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 1586
+      },
+      {
+        "platform": "linkedin",
+        "title": "content flywheel masterplan",
+        "path": "content/linkedin/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 1463
+      },
+      {
+        "platform": "linkedin",
+        "title": "daily tracker build",
+        "path": "content/linkedin/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 1462
+      },
+      {
+        "platform": "linkedin",
+        "title": "build day",
+        "path": "content/linkedin/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 271
+      },
+      {
+        "platform": "linkedin",
+        "title": "screen teaser",
+        "path": "content/linkedin/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 295
+      },
+      {
+        "platform": "linkedin",
+        "title": "substack build weekend crosspromo",
+        "path": "content/linkedin/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 140
+      },
+      {
+        "platform": "linkedin",
+        "title": "build your own os",
+        "path": "content/linkedin/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1064
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel agents plan mode",
+        "path": "content/linkedin/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 1437
+      },
+      {
+        "platform": "linkedin",
+        "title": "openclaw honest opinion",
+        "path": "content/linkedin/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "target_date": "2026-02-23",
+        "words": 543
+      },
+      {
+        "platform": "linkedin",
+        "title": "shawnos anti lead magnet",
+        "path": "content/linkedin/drafts/2026-02-23_shawnos-anti-lead-magnet.md",
+        "target_date": "2026-02-23",
+        "words": 765
+      },
+      {
+        "platform": "linkedin",
+        "title": "gtmos infrastructure",
+        "path": "content/linkedin/drafts/2026-02-24_gtmos-infrastructure.md",
+        "target_date": "2026-02-24",
+        "words": 821
+      },
+      {
+        "platform": "linkedin",
+        "title": "contentos machine",
+        "path": "content/linkedin/drafts/2026-02-25_contentos-machine.md",
+        "target_date": "2026-02-25",
+        "words": 896
+      },
+      {
+        "platform": "linkedin",
+        "title": "exa mcp pre enrichment",
+        "path": "content/linkedin/drafts/2026-02-25_exa-mcp-pre-enrichment.md",
+        "target_date": "2026-02-25",
+        "words": 336
+      },
+      {
+        "platform": "linkedin",
+        "title": "how to ai assistant claude code",
+        "path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 437
+      },
+      {
+        "platform": "linkedin",
+        "title": "claude code mobile",
+        "path": "content/linkedin/drafts/2026-02-26_claude-code-mobile.md",
+        "target_date": "2026-02-26",
+        "words": 473
+      },
+      {
+        "platform": "linkedin",
+        "title": "ecosystem capstone",
+        "path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md",
+        "target_date": "2026-02-26",
+        "words": 961
+      },
+      {
+        "platform": "linkedin",
+        "title": "exa grok hubspot landing pages",
+        "path": "content/linkedin/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
+        "target_date": "2026-02-26",
+        "words": 499
+      },
+      {
+        "platform": "linkedin",
+        "title": "parallel safe handoffs",
+        "path": "content/linkedin/drafts/2026-02-27_parallel-safe-handoffs.md",
+        "target_date": "2026-02-27",
+        "words": 457
+      },
+      {
+        "platform": "linkedin",
+        "title": "google workspace cli",
+        "path": "content/linkedin/drafts/2026-03-06_google-workspace-cli.md",
+        "target_date": "2026-03-06",
+        "words": 224
+      },
+      {
+        "platform": "linkedin",
+        "title": "sdr to solo gtm engineer",
+        "path": "content/linkedin/drafts/2026-03-08_sdr-to-solo-gtm-engineer.md",
+        "target_date": "2026-03-08",
+        "words": 307
+      },
+      {
+        "platform": "linkedin",
+        "title": "reddit dominance",
+        "path": "content/linkedin/drafts/2026-03-10_reddit-dominance.md",
+        "target_date": "2026-03-10",
+        "words": 257
+      },
+      {
+        "platform": "x",
+        "title": "skill tree repo",
+        "path": "content/x/drafts/2026-02-09_skill-tree-repo.md",
+        "target_date": "2026-02-09",
+        "words": 611
+      },
+      {
+        "platform": "x",
+        "title": "slack sync context",
+        "path": "content/x/drafts/2026-02-09_slack-sync-context.md",
+        "target_date": "2026-02-09",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "weekend build",
+        "path": "content/x/drafts/2026-02-09_weekend-build.md",
+        "target_date": "2026-02-09",
+        "words": 271
+      },
+      {
+        "platform": "x",
+        "title": "x comeback",
+        "path": "content/x/drafts/2026-02-09_x-comeback.md",
+        "target_date": "2026-02-09",
+        "words": 348
+      },
+      {
+        "platform": "x",
+        "title": "agent context handoff",
+        "path": "content/x/drafts/2026-02-10_agent-context-handoff.md",
+        "target_date": "2026-02-10",
+        "words": 390
+      },
+      {
+        "platform": "x",
+        "title": "content os meta",
+        "path": "content/x/drafts/2026-02-10_content-os-meta.md",
+        "target_date": "2026-02-10",
+        "words": 385
+      },
+      {
+        "platform": "x",
+        "title": "content os schematic",
+        "path": "content/x/drafts/2026-02-10_content-os-schematic.md",
+        "target_date": "2026-02-10",
+        "words": 577
+      },
+      {
+        "platform": "x",
+        "title": "github safety workflow",
+        "path": "content/x/drafts/2026-02-10_github-safety-workflow.md",
+        "target_date": "2026-02-10",
+        "words": 489
+      },
+      {
+        "platform": "x",
+        "title": "heyreach partner handoff v2",
+        "path": "content/x/drafts/2026-02-10_heyreach-partner-handoff-v2.md",
+        "target_date": "2026-02-10",
+        "words": 419
+      },
+      {
+        "platform": "x",
+        "title": "skill play",
+        "path": "content/x/drafts/2026-02-10_skill-play.md",
+        "target_date": "2026-02-10",
+        "words": 369
+      },
+      {
+        "platform": "x",
+        "title": "voice modularity",
+        "path": "content/x/drafts/2026-02-10_voice-modularity.md",
+        "target_date": "2026-02-10",
+        "words": 457
+      },
+      {
+        "platform": "x",
+        "title": "cursor tip plan mode",
+        "path": "content/x/drafts/2026-02-11_cursor-tip-plan-mode.md",
+        "target_date": "2026-02-11",
+        "words": 96
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker system",
+        "path": "content/x/drafts/2026-02-11_daily-tracker-system.md",
+        "target_date": "2026-02-11",
+        "words": 604
+      },
+      {
+        "platform": "x",
+        "title": "identity not tools",
+        "path": "content/x/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 381
+      },
+      {
+        "platform": "x",
+        "title": "substack identity crosspromo",
+        "path": "content/x/drafts/2026-02-11_substack-identity-crosspromo.md",
+        "target_date": "2026-02-11",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "content flywheel masterplan",
+        "path": "content/x/drafts/2026-02-12_content-flywheel-masterplan.md",
+        "target_date": "2026-02-12",
+        "words": 647
+      },
+      {
+        "platform": "x",
+        "title": "daily tracker build",
+        "path": "content/x/drafts/2026-02-12_daily-tracker-build.md",
+        "target_date": "2026-02-12",
+        "words": 550
+      },
+      {
+        "platform": "x",
+        "title": "screen teaser",
+        "path": "content/x/drafts/2026-02-13_screen-teaser.md",
+        "target_date": "2026-02-13",
+        "words": 232
+      },
+      {
+        "platform": "x",
+        "title": "build trio",
+        "path": "content/x/drafts/2026-02-16_build-trio.md",
+        "target_date": "2026-02-16",
+        "words": 186
+      },
+      {
+        "platform": "x",
+        "title": "substack build weekend crosspromo",
+        "path": "content/x/drafts/2026-02-16_substack-build-weekend-crosspromo.md",
+        "target_date": "2026-02-16",
+        "words": 55
+      },
+      {
+        "platform": "x",
+        "title": "build your own os",
+        "path": "content/x/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 465
+      },
+      {
+        "platform": "x",
+        "title": "parallel agents plan mode",
+        "path": "content/x/drafts/2026-02-18_parallel-agents-plan-mode.md",
+        "target_date": "2026-02-18",
+        "words": 462
+      },
+      {
+        "platform": "x",
+        "title": "openclaw honest opinion",
+        "path": "content/x/drafts/2026-02-23_openclaw-honest-opinion.md",
+        "target_date": "2026-02-23",
+        "words": 170
+      },
+      {
+        "platform": "x",
+        "title": "shawnos threads",
+        "path": "content/x/drafts/2026-02-23_shawnos-threads.md",
+        "target_date": "2026-02-23",
+        "words": 594
+      },
+      {
+        "platform": "x",
+        "title": "gtmos threads",
+        "path": "content/x/drafts/2026-02-24_gtmos-threads.md",
+        "target_date": "2026-02-24",
+        "words": 596
+      },
+      {
+        "platform": "x",
+        "title": "contentos threads",
+        "path": "content/x/drafts/2026-02-25_contentos-threads.md",
+        "target_date": "2026-02-25",
+        "words": 567
+      },
+      {
+        "platform": "x",
+        "title": "how to ai assistant claude code",
+        "path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md",
+        "target_date": "2026-02-25",
+        "words": 259
+      },
+      {
+        "platform": "x",
+        "title": "claude code mobile",
+        "path": "content/x/drafts/2026-02-26_claude-code-mobile.md",
+        "target_date": "2026-02-26",
+        "words": 254
+      },
+      {
+        "platform": "x",
+        "title": "ecosystem threads",
+        "path": "content/x/drafts/2026-02-26_ecosystem-threads.md",
+        "target_date": "2026-02-26",
+        "words": 626
+      },
+      {
+        "platform": "x",
+        "title": "exa grok hubspot landing pages",
+        "path": "content/x/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md",
+        "target_date": "2026-02-26",
+        "words": 284
+      },
+      {
+        "platform": "x",
+        "title": "parallel safe handoffs",
+        "path": "content/x/drafts/2026-02-27_parallel-safe-handoffs.md",
+        "target_date": "2026-02-27",
+        "words": 223
+      },
+      {
+        "platform": "x",
+        "title": "google workspace cli",
+        "path": "content/x/drafts/2026-03-06_google-workspace-cli.md",
+        "target_date": "2026-03-06",
+        "words": 165
+      },
+      {
+        "platform": "x",
+        "title": "sdr to solo gtm engineer thread",
+        "path": "content/x/drafts/2026-03-08_sdr-to-solo-gtm-engineer-thread.md",
+        "target_date": "2026-03-08",
+        "words": 170
+      },
+      {
+        "platform": "substack",
+        "title": "content os reveal",
+        "path": "content/substack/drafts/2026-02-10_content-os-reveal.md",
+        "target_date": "2026-02-10",
+        "words": 1187
+      },
+      {
+        "platform": "substack",
+        "title": "identity not tools",
+        "path": "content/substack/drafts/2026-02-11_identity-not-tools.md",
+        "target_date": "2026-02-11",
+        "words": 1440
+      },
+      {
+        "platform": "substack",
+        "title": "build day",
+        "path": "content/substack/drafts/2026-02-13_build-day.md",
+        "target_date": "2026-02-13",
+        "words": 1329
+      },
+      {
+        "platform": "substack",
+        "title": "cursor discovery",
+        "path": "content/substack/drafts/2026-02-14_cursor-discovery.md",
+        "target_date": "2026-02-14",
+        "words": 1599
+      },
+      {
+        "platform": "substack",
+        "title": "weekend web build",
+        "path": "content/substack/drafts/2026-02-14_weekend-web-build.md",
+        "target_date": "2026-02-14",
+        "words": 1054
+      },
+      {
+        "platform": "substack",
+        "title": "recursive drift",
+        "path": "content/substack/drafts/2026-02-19_recursive-drift.md",
+        "target_date": "2026-02-19",
+        "words": 1641
+      },
+      {
+        "platform": "substack",
+        "title": "start at level one",
+        "path": "content/substack/drafts/2026-02-24_start-at-level-one.md",
+        "target_date": "2026-02-24",
+        "words": 1543
+      },
+      {
+        "platform": "substack",
+        "title": "how to setup ai assistant",
+        "path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md",
+        "target_date": "2026-02-25",
+        "words": 1333
+      },
+      {
+        "platform": "substack",
+        "title": "parallel safe handoffs",
+        "path": "content/substack/drafts/2026-02-27_parallel-safe-handoffs.md",
+        "target_date": "2026-02-27",
+        "words": 843
+      },
+      {
+        "platform": "substack",
+        "title": "sdr to solo gtm engineer",
+        "path": "content/substack/drafts/2026-03-08_sdr-to-solo-gtm-engineer.md",
+        "target_date": "2026-03-08",
+        "words": 1357
+      },
+      {
+        "platform": "reddit",
+        "title": "content os reddit",
+        "path": "content/reddit/drafts/2026-02-11_content-os-reddit.md",
+        "target_date": "2026-02-11",
+        "words": 1323
+      },
+      {
+        "platform": "reddit",
+        "title": "build your own os",
+        "path": "content/reddit/drafts/2026-02-17_build-your-own-os.md",
+        "target_date": "2026-02-17",
+        "words": 1119
+      },
+      {
+        "platform": "reddit",
+        "title": "clay agency audit",
+        "path": "content/reddit/drafts/clay-agency-audit.md",
+        "words": 550
+      },
+      {
+        "platform": "reddit",
+        "title": "reddit is king",
+        "path": "content/reddit/drafts/reddit-is-king.md",
+        "words": 488
+      }
+    ],
+    "finalized_today": [
+      {
+        "platform": "linkedin",
+        "path": "content/linkedin/final/2026-03-11_clay-pricing-breakdown.txt"
+      }
+    ]
+  },
+  "todos": [],
+  "token_usage": [],
+  "stats": {
+    "platform_breakdown": {
+      "website": 20,
+      "other": 2,
+      "reddit": 1,
+      "linkedin": 1
+    },
+    "words_in_touched_files": 16012,
+    "pipeline_words": 54949,
+    "finals_count": 1,
+    "first_activity": "05:05",
+    "last_activity": "23:58",
+    "output_score": 158,
+    "letter_grade": "D",
+    "score_breakdown": [
+      {
+        "type": "chore",
+        "title": "chore: daily tracker scan 2026-03-10",
+        "points": 1
+      },
+      {
+        "type": "monorepo_scaffold",
+        "title": "feat: r/GTMBuilders community feed pages + fix shawnesquivel",
+        "points": 80
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: add Reddit karma + member count to community pages",
+        "points": 5
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: Reddit cache fallback for Vercel + hourly sync cron + s",
+        "points": 8
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 06:42)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 07:42)",
+        "points": 1
+      },
+      {
+        "type": "content_ship",
+        "title": "feat: nio.log 2026-03-11 \u2014 automated daily post",
+        "points": 10
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 08:42)",
+        "points": 1
+      },
+      {
+        "type": "infra_build",
+        "title": "feat: daily LinkedIn posts 2026-03-11",
+        "points": 15
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 09:43)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 10:43)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 11:43)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 12:44)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 13:44)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 14:44)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 3 posts (2026-03-11 15:44)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 15:58)",
+        "points": 1
+      },
+      {
+        "type": "bug_fix",
+        "title": "fix: use CSS tokens for community pages \u2014 light theme compat",
+        "points": 5
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 16:45)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 17:45)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 18:45)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 4 posts (2026-03-11 19:46)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 5 posts (2026-03-11 20:46)",
+        "points": 1
+      },
+      {
+        "type": "component",
+        "title": "feat: Clay pricing March 2026 breakdown \u2014 blog, wiki entry, ",
+        "points": 15
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 5 posts (2026-03-11 21:46)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 5 posts (2026-03-11 22:47)",
+        "points": 1
+      },
+      {
+        "type": "chore",
+        "title": "chore: sync Reddit cache \u2014 6 posts (2026-03-11 23:47)",
+        "points": 1
+      }
+    ],
+    "efficiency_rating": null,
+    "shipped_count": 8,
+    "draft_count": 16,
+    "ship_rate": 0.33,
+    "agent_cost": 0,
+    "cost_per_point": 0.0,
+    "efficiency_ratio": null,
+    "words_today": 16012,
+    "lines_added": 5311,
+    "lines_removed": 1491,
+    "lines_net": 3820,
+    "code_loc": 1064,
+    "content_loc": 690,
+    "data_loc": 3557
+  },
+  "git_summary": {
+    "commits_today": 27,
+    "files_added": [
+      "content/linkedin/final/2026-03-11_clay-pricing-breakdown.txt",
+      "content/nio-log/2026-03-11.md",
+      "content/reddit/gtm-builders/seed-post-1.md",
+      "content/reddit/gtm-builders/seed-post-2.md",
+      "content/reddit/gtm-builders/seed-post-3.md",
+      "content/reddit/gtm-builders/seed-post-4.md",
+      "content/reddit/gtm-builders/wiki.md",
+      "content/website/final/clay-pricing-march-2026-breakdown.md",
+      "data/daily-log/2026-03-10.json",
+      "data/linkedin/posts/2026-03-11.json",
+      "data/linkedin/scout/2026-03-11.json",
+      "scripts/launchd/com.shawnos.sync-reddit.plist",
+      "scripts/sync_reddit.sh",
+      "website/apps/gtmos/app/community/page.tsx",
+      "website/apps/shawnos/app/[locale]/community/page.tsx",
+      "website/packages/shared/components/RedditFeed.tsx",
+      "website/packages/shared/data/reddit-cache.json",
+      "website/packages/shared/lib/reddit.ts"
+    ],
+    "files_modified": [
+      "content/reddit/drafts/clay-agency-audit.md",
+      "content/website/final/before-you-hire-a-clay-agency.md",
+      "content/website/final/he/before-you-hire-a-clay-agency.md",
+      "data/progression/profile-v3.json",
+      "data/seo/daily-brief.json",
+      "data/seo/keyword-log.json",
+      "data/seo/used-keywords.json",
+      "data/website-stats.json",
+      "website/apps/gtmos/app/community/page.tsx",
+      "website/apps/gtmos/app/layout.tsx",
+      "website/apps/gtmos/public/sitemap-0.xml",
+      "website/apps/mission-control/public/data/calendar.json",
+      "website/apps/mission-control/public/data/content-full.json",
+      "website/apps/mission-control/public/data/content.json",
+      "website/apps/mission-control/public/data/memories.json",
+      "website/apps/mission-control/public/data/status.json",
+      "website/apps/mission-control/public/data/tasks.json",
+      "website/apps/mission-control/public/data/team.json",
+      "website/apps/mission-control/public/metrics.json",
+      "website/apps/shawnos/app/[locale]/community/page.tsx",
+      "website/apps/shawnos/app/[locale]/layout.tsx",
+      "website/apps/shawnos/public/sitemap-0.xml",
+      "website/packages/shared/components/RedditFeed.tsx",
+      "website/packages/shared/components/index.ts",
+      "website/packages/shared/data/clay-wiki.ts",
+      "website/packages/shared/data/reddit-cache.json",
+      "website/packages/shared/lib/reddit.ts",
+      "website/packages/shared/package.json"
+    ],
+    "lines_added_count": 5311,
+    "lines_removed_count": 1491,
+    "lines_net": 3820,
+    "code_loc": 1064,
+    "content_loc": 690,
+    "data_loc": 3557
+  },
+  "dev_equivalent": {
+    "net_lines": 3820,
+    "dev_days": 25.5,
+    "cost_estimate": 12750,
+    "explanation": "A mid-level developer writes ~150 lines of production code per day at ~$500/day (fully loaded). Today's 3,820 net lines represent approximately 26 developer-days of output \u2014 what a small team would produce in 1+ month.",
+    "assumptions": {
+      "lines_per_day": 150,
+      "cost_per_day": 500,
+      "basis": "Industry average for meaningful, reviewed, production-quality code"
+    }
+  },
+  "cost": {
+    "api_equivalent": 0,
+    "actual_cost": 0.0,
+    "pricing_mode": "max"
+  },
+  "token_efficiency": {
+    "total_tokens": 0,
+    "total_sessions": 0,
+    "tokens_per_point": 0,
+    "tokens_per_commit": 0,
+    "tokens_per_loc": 0,
+    "avg_context_utilization": 0,
+    "pricing_mode": "max",
+    "api_equivalent_cost": 0,
+    "actual_cost": 0.0
+  }
+}

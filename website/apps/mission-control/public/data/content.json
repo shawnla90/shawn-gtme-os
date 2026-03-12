@@ -1,38 +1,38 @@
 {
-  "generated": "2026-03-11T04:00:08.000Z",
+  "generated": "2026-03-12T04:00:09.000Z",
   "totals": {
-    "total_content": 150,
+    "total_content": 154,
     "total_drafts": 83,
-    "total_final": 67,
-    "total_words": 100113,
+    "total_final": 71,
+    "total_words": 102972,
     "platforms_active": 6,
     "cross_platform_groups": 30,
     "series_count": 4
   },
   "pipeline": {
+    "website": {
+      "draft": 1,
+      "final": 20,
+      "total": 21,
+      "words": 20867
+    },
     "linkedin": {
       "draft": 35,
-      "final": 14,
-      "total": 49,
-      "words": 30479
+      "final": 15,
+      "total": 50,
+      "words": 30821
     },
     "nio-log": {
       "draft": 0,
-      "final": 21,
-      "total": 21,
-      "words": 14434
+      "final": 22,
+      "total": 22,
+      "words": 14554
     },
     "reddit": {
       "draft": 4,
       "final": 0,
       "total": 4,
       "words": 3480
-    },
-    "website": {
-      "draft": 1,
-      "final": 18,
-      "total": 19,
-      "words": 18470
     },
     "substack": {
       "draft": 10,
@@ -48,6 +48,50 @@
     }
   },
   "recent": [
+    {
+      "platform": "website",
+      "title": "why apollo should be your first sourcing run, not clay",
+      "slug": "apollo-should-be-your-first-run",
+      "date": "2026-03-12",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 896,
+      "file_path": "content/website/final/apollo-should-be-your-first-run.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "clay pricing breakdown",
+      "slug": "clay-pricing-breakdown",
+      "date": "2026-03-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 342,
+      "file_path": "content/linkedin/final/2026-03-11_clay-pricing-breakdown.txt"
+    },
+    {
+      "platform": "nio-log",
+      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-11.MD`.",
+      "slug": "2026-03-11",
+      "date": "2026-03-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 120,
+      "file_path": "content/nio-log/2026-03-11.md"
+    },
+    {
+      "platform": "website",
+      "title": "clay changed their pricing. here's what it actually means for builders",
+      "slug": "clay-pricing-march-2026-breakdown",
+      "date": "2026-03-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1501,
+      "file_path": "content/website/final/clay-pricing-march-2026-breakdown.md"
+    },
     {
       "platform": "linkedin",
       "title": "reddit dominance",
@@ -553,50 +597,6 @@
       "arc": null,
       "word_count": 437,
       "file_path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md"
-    },
-    {
-      "platform": "substack",
-      "title": "Start at Level One",
-      "slug": "start-at-level-one",
-      "date": "2026-02-25",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1543,
-      "file_path": "content/substack/drafts/2026-02-24_start-at-level-one.md"
-    },
-    {
-      "platform": "substack",
-      "title": "how to setup ai assistant",
-      "slug": "how-to-setup-ai-assistant",
-      "date": "2026-02-25",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1333,
-      "file_path": "content/substack/drafts/2026-02-25_how-to-setup-ai-assistant.md"
-    },
-    {
-      "platform": "x",
-      "title": "Content OS X Threads -- Day 3",
-      "slug": "contentos-threads",
-      "date": "2026-02-25",
-      "stage": "draft",
-      "pillar": null,
-      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
-      "word_count": 567,
-      "file_path": "content/x/drafts/2026-02-25_contentos-threads.md"
-    },
-    {
-      "platform": "x",
-      "title": "how to ai assistant claude code",
-      "slug": "how-to-ai-assistant-claude-code",
-      "date": "2026-02-25",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 259,
-      "file_path": "content/x/drafts/2026-02-25_how-to-ai-assistant-claude-code.md"
     }
   ],
   "series": [
@@ -1067,6 +1067,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-11",
+      "grade": "D",
+      "score": 158,
+      "words": 16012,
+      "shipped": 8,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-10",
       "grade": "D",
       "score": 106,
@@ -1169,14 +1177,6 @@
       "words": 20169,
       "shipped": 22,
       "cost": 0.0
-    },
-    {
-      "date": "2026-02-25",
-      "grade": "S",
-      "score": 678,
-      "words": 46069,
-      "shipped": 60,
-      "cost": 172.14
     }
   ]
 }
