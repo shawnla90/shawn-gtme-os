@@ -147,7 +147,9 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
           border-radius: 6px;
           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
           padding: 6px 0;
-          min-width: 160px;
+          min-width: 200px;
+          max-height: 70vh;
+          overflow-y: auto;
           z-index: 1001;
           opacity: 0;
           pointer-events: none;

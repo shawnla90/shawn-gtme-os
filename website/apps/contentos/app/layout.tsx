@@ -28,25 +28,25 @@ const jetbrains = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'theContentOS.ai - Personal AI Assistant with Memory & Content System',
+    default: 'theContentOS.ai — Best Self-Hosted AI Coding Assistant & Content OS',
     template: '%s | theContentOS.ai',
   },
-  description: 'Build a personal AI assistant with memory that knows your voice. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+  description: 'The best self-hosted AI coding assistant and content OS. Build a personal AI with memory that knows your voice — Voice DNA, context playbooks, and content ops as a system.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'theContentOS.ai',
-    title: 'theContentOS.ai - Personal AI Assistant with Memory & Content System',
-    description: 'Build a personal AI assistant with memory that knows your voice. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+    title: 'theContentOS.ai — Best Self-Hosted AI Coding Assistant & Content OS',
+    description: 'The best self-hosted AI coding assistant and content OS. Build a personal AI with memory that knows your voice — Voice DNA, context playbooks, and content ops as a system.',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'theContentOS.ai - Personal AI Assistant with Memory & Content System',
-    description: 'Build a personal AI assistant with memory that knows your voice. Voice DNA, context playbooks, and content ops - your content strategy as a system, not a calendar.',
+    title: 'theContentOS.ai — Best Self-Hosted AI Coding Assistant & Content OS',
+    description: 'The best self-hosted AI coding assistant and content OS. Build a personal AI with memory that knows your voice — Voice DNA, context playbooks, and content ops as a system.',
     images: ['/og'],
   },
   alternates: {
@@ -164,20 +164,24 @@ export default function RootLayout({
           <Navigation
             siteName="theContentOS.ai"
             links={[
-              { href: '/', label: 'Home' },
-              { href: '/services', label: 'Services' },
-              { href: '/how-to', label: 'How-To' },
-              { href: '/content-wiki', label: 'Content Wiki' },
-              { href: 'https://shawnos.ai/knowledge', label: 'Knowledge' },
-              { href: 'https://thegtmos.ai/clay-wiki', label: 'Clay Wiki' },
-              { href: '/method', label: 'Method' },
-              { href: '/showcase', label: 'Showcase' },
-              { href: '/anti-slop', label: 'Anti-Slop' },
-              { href: '/search', label: 'Search' },
-              { href: '/log', label: 'Log' },
-              { href: '/vitals', label: 'Vitals' },
-              { href: '/posts', label: 'Posts' },
-              { href: '/updates', label: 'Updates' },
+              {
+                href: '#', label: 'Explore', children: [
+                  { href: '/', label: 'Home' },
+                  { href: '/services', label: 'Services' },
+                  { href: '/how-to', label: 'How-To' },
+                  { href: '/content-wiki', label: 'Content Wiki' },
+                  { href: 'https://shawnos.ai/knowledge', label: 'Knowledge' },
+                  { href: 'https://thegtmos.ai/clay-wiki', label: 'Clay Wiki' },
+                  { href: '/method', label: 'Method' },
+                  { href: '/showcase', label: 'Showcase' },
+                  { href: '/anti-slop', label: 'Anti-Slop' },
+                  { href: '/search', label: 'Search' },
+                  { href: '/log', label: 'Log' },
+                  { href: '/vitals', label: 'Vitals' },
+                  { href: '/posts', label: 'Posts' },
+                  { href: '/updates', label: 'Updates' },
+                ],
+              },
             ]}
           />
           <CursorGlow />

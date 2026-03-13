@@ -118,20 +118,25 @@ export default function RootLayout({
           <Navigation
             siteName="theGTMOS.ai"
             links={[
-              { href: '/', label: 'Home' },
-              { href: '/why-independent', label: 'Why Independent' },
-              { href: '/features', label: 'Features' },
-              { href: '/how-to', label: 'How-To' },
-              { href: '/knowledge/gtm', label: 'Knowledge' },
-              { href: '/clay-wiki', label: 'Clay Wiki' },
-              { href: '/apollo-wiki', label: 'Apollo Wiki' },
-              { href: '/mcp', label: 'MCP' },
-              { href: 'https://thecontentos.ai/content-wiki', label: 'Content Wiki' },
-              { href: '/log', label: 'Log' },
-              { href: '/vitals', label: 'Vitals' },
-              { href: '/updates', label: 'Updates' },
-              { href: '/community', label: 'Community' },
-              { href: '/search', label: 'Search' },
+              {
+                href: '#', label: 'Explore', children: [
+                  { href: '/', label: 'Home' },
+                  { href: '/why-independent', label: 'Why Independent' },
+                  { href: '/features', label: 'Features' },
+                  { href: '/how-to', label: 'How-To' },
+                  { href: '/knowledge/gtm', label: 'Knowledge' },
+                  { href: '/clay-wiki', label: 'Clay Wiki' },
+                  { href: '/apollo-wiki', label: 'Apollo Wiki' },
+                  { href: '/lemlist-wiki', label: 'Lemlist Wiki' },
+                  { href: '/mcp', label: 'MCP' },
+                  { href: 'https://thecontentos.ai/content-wiki', label: 'Content Wiki' },
+                  { href: '/log', label: 'Log' },
+                  { href: '/vitals', label: 'Vitals' },
+                  { href: '/updates', label: 'Updates' },
+                  { href: '/community', label: 'Community' },
+                  { href: '/search', label: 'Search' },
+                ],
+              },
             ]}
           />
           <main>{children}</main>
