@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-13T16:54:47.498809+00:00",
+  "lastUpdated": "2026-03-13T17:55:04.394927+00:00",
   "posts": [
     {
       "id": "1rsgc55",
       "title": "My rookie project",
       "author": "Spare-Combination-63",
-      "score": 6,
+      "score": 5,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rsgc55/my_rookie_project/",
       "selftext": "Hey everyone! Super nervous to post this but here goes, this is literally my first project that I've ever pushed to GitHub, so please be kind lol.\n\nI built an AI-powered tool that lets you research any professional and pulls together their career trajectory, articles they've written, media presence, LinkedIn highlights, and more all in one place. The idea came from the frustration of having to jump between 5 different tabs just to get a basic picture of someone before a meeting or interview.\n\nGitHub:\u00a0[https://github.com/atifirshad21/individual-info-in-one-place](https://github.com/atifirshad21/individual-info-in-one-place)\n\nI'm calling this my rookie project, it's rough around the edges and the README is pretty bare bones right now, but feel free to make this better. \n\nWould love any feedback,\n\nThanks for checking it out!",
@@ -22,7 +22,7 @@
       "title": "tool devotion is a trap. Clay just proved the thesis.",
       "author": "Shawntenam",
       "score": 7,
-      "numComments": 2,
+      "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rs1f6n/tool_devotion_is_a_trap_clay_just_proved_the/",
       "selftext": "for the past two months I've been posting the same thesis. the builder is the moat, not the tool. if your entire value proposition is proficiency with a specific platform, you're one pricing change away from a career problem.\n\nI was saying this before the price change. and then Clay proved it.\n\n**the proof**\n\nClay killed the Explorer tier. that was the $349/mo plan with HTTP API access. the builder's plan. the one where you learned to connect Clay to real systems and actually practice GTM engineering.\n\nthe new pricing jumps from $185 (no API, no webhooks) to $495. every HTTP API call now costs an Action. Clay is metering your requests to servers they don't own, for data they don't provide.\n\nagencies running 5-6 accounts went from roughly $1,750/mo in Explorer plans to $2,500-3,000/mo at Growth. same capabilities. higher floor.\n\n**what this means for the community**\n\nthe people who built Clay's community were builders sharing their work publicly. LinkedIn posts, playbooks, tutorials. they brought customers to Clay through builder-led growth. and now the pricing is optimized for enterprise accounts that don't need the community.\n\nevery platform eventually does this. they grow on builders, then optimize for enterprise. the builders who drove adoption are the ones who feel the squeeze.\n\n**the transition**\n\nI've been mostly sharing observations and patterns here. how things work, what tools do, where the gaps are. this is probably my last pure observation post for a while.\n\nI'm shifting to build drops. actual systems, actual architectures, actual code. Apollo's free API for sourcing. Supabase for storage. Claude Code for orchestration. \n\ninfrastructure you own that doesn't meter your API calls.\n\nthe patterns I learned in Clay transfer to all of this. enrichment architecture is enrichment architecture. ICP scoring is ICP scoring. the implementation layer changes. the thinking doesn't.\n\n**closing**\n\nI'm grateful for what Clay taught me. genuinely. and I think they just made it harder for the next person to learn it.\n\nthe tools are a trap when your skills are locked to one platform's interface. the escape hatch is learning to build the systems yourself.\n\ncurious what tools everyone here is building with now. what's your stack looking like in 2026?\n\nshawn - GTM Engineer",
       "createdUtc": 1773345655.0,
@@ -137,8 +137,8 @@
   },
   "userProfile": {
     "name": "Shawntenam",
-    "totalKarma": 782,
-    "linkKarma": 218,
+    "totalKarma": 789,
+    "linkKarma": 225,
     "commentKarma": 564
   }
 }
