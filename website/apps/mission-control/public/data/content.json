@@ -1,32 +1,32 @@
 {
-  "generated": "2026-03-12T04:00:09.000Z",
+  "generated": "2026-03-13T04:00:09.000Z",
   "totals": {
-    "total_content": 154,
+    "total_content": 157,
     "total_drafts": 83,
-    "total_final": 71,
-    "total_words": 102972,
+    "total_final": 74,
+    "total_words": 105524,
     "platforms_active": 6,
     "cross_platform_groups": 30,
     "series_count": 4
   },
   "pipeline": {
+    "nio-log": {
+      "draft": 0,
+      "final": 23,
+      "total": 23,
+      "words": 14671
+    },
     "website": {
       "draft": 1,
-      "final": 20,
-      "total": 21,
-      "words": 20867
+      "final": 22,
+      "total": 23,
+      "words": 23302
     },
     "linkedin": {
       "draft": 35,
       "final": 15,
       "total": 50,
       "words": 30821
-    },
-    "nio-log": {
-      "draft": 0,
-      "final": 22,
-      "total": 22,
-      "words": 14554
     },
     "reddit": {
       "draft": 4,
@@ -49,6 +49,17 @@
   },
   "recent": [
     {
+      "platform": "nio-log",
+      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-12.MD`.",
+      "slug": "2026-03-12",
+      "date": "2026-03-12",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 117,
+      "file_path": "content/nio-log/2026-03-12.md"
+    },
+    {
       "platform": "website",
       "title": "why apollo should be your first sourcing run, not clay",
       "slug": "apollo-should-be-your-first-run",
@@ -58,6 +69,28 @@
       "arc": null,
       "word_count": 896,
       "file_path": "content/website/final/apollo-should-be-your-first-run.md"
+    },
+    {
+      "platform": "website",
+      "title": "clay's pricing makes sense for enterprise. the rest of us got squeezed.",
+      "slug": "clay-pricing-opinion-what-it-means-for-builders",
+      "date": "2026-03-12",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1010,
+      "file_path": "content/website/final/clay-pricing-opinion-what-it-means-for-builders.md"
+    },
+    {
+      "platform": "website",
+      "title": "stop renting your audience. build your own website.",
+      "slug": "stop-renting-your-audience-build-your-own-website",
+      "date": "2026-03-12",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1425,
+      "file_path": "content/website/final/stop-renting-your-audience-build-your-own-website.md"
     },
     {
       "platform": "linkedin",
@@ -564,39 +597,6 @@
       "arc": null,
       "word_count": 284,
       "file_path": "content/x/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Content OS: The Content Machine -- Day 3",
-      "slug": "contentos-machine",
-      "date": "2026-02-25",
-      "stage": "draft",
-      "pillar": "Skill/System Share",
-      "arc": "Anti-Lead Magnet Series (Day 3 of 4)",
-      "word_count": 896,
-      "file_path": "content/linkedin/drafts/2026-02-25_contentos-machine.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "LinkedIn Draft: Exa MCP Pre-Enrichment",
-      "slug": "exa-mcp-pre-enrichment",
-      "date": "2026-02-25",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 336,
-      "file_path": "content/linkedin/drafts/2026-02-25_exa-mcp-pre-enrichment.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "how to ai assistant claude code",
-      "slug": "how-to-ai-assistant-claude-code",
-      "date": "2026-02-25",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 437,
-      "file_path": "content/linkedin/drafts/2026-02-25_how-to-ai-assistant-claude-code.md"
     }
   ],
   "series": [
@@ -1067,6 +1067,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-12",
+      "grade": "C",
+      "score": 205,
+      "words": 46750,
+      "shipped": 58,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-11",
       "grade": "D",
       "score": 158,
@@ -1168,14 +1176,6 @@
       "score": 470,
       "words": 36568,
       "shipped": 36,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-02-26",
-      "grade": "B",
-      "score": 308,
-      "words": 20169,
-      "shipped": 22,
       "cost": 0.0
     }
   ]
