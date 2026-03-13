@@ -240,6 +240,16 @@ export default async function PostsPage({
   const data = targetDate ? getPostsByDate(targetDate) : null
   const aggregates = getPostAggregates(allDates)
 
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Daily LinkedIn Posts',
+    url: `${SITE_URL}/posts`,
+    description:
+      'AI-generated LinkedIn posts with voice DNA and anti-slop validation. Trending topics scouted daily.',
+    author: { '@type': 'Person', name: 'Shawn Tenam', url: 'https://shawnos.ai' },
+  }
+
   return (
     <>
       <BreadcrumbSchema
@@ -247,6 +257,10 @@ export default async function PostsPage({
           { name: 'Home', url: SITE_URL },
           { name: 'Posts', url: `${SITE_URL}/posts` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
 
       <div style={pageWrap}>

@@ -7,6 +7,7 @@
 
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
+import { hreflang } from '../../../../i18n/hreflang'
 import {
   getRPGProfile,
   resolveDataRoot,
@@ -23,6 +24,7 @@ export const metadata: Metadata = {
   description:
     'Ghost comparison — v1 vs v2 progression engine side by side.',
   robots: { index: false, follow: false },
+  alternates: { canonical: 'https://shawnos.ai/vitals/v2-lab', languages: hreflang('/vitals/v2-lab') },
 }
 
 /* ── styles ──────────────────────────────────────── */

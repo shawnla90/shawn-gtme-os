@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
+import { hreflang } from '../../../i18n/hreflang'
 import { getWebsiteStats, resolveDataRoot } from '@shawnos/shared/lib'
 import { VitalsPage } from '@shawnos/shared/pages/VitalsPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
@@ -24,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'Next.js site statistics',
       'open source project stats',
     ],
-    alternates: { canonical: 'https://shawnos.ai/vitals' },
+    alternates: { canonical: 'https://shawnos.ai/vitals', languages: hreflang('/vitals') },
     openGraph: {
       title: 'System Vitals | shawnos.ai',
       description: t('metadata.description'),

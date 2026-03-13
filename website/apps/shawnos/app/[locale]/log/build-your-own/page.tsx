@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import CopyButton from './CopyButton'
@@ -22,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'developer dashboard',
       'Pillow dashboard',
     ],
-    alternates: { canonical: 'https://shawnos.ai/log/build-your-own' },
+    alternates: { canonical: 'https://shawnos.ai/log/build-your-own', languages: hreflang('/log/build-your-own') },
     openGraph: {
       title: `${t('metadata.title')} | shawnos.ai`,
       description: t('metadata.description'),

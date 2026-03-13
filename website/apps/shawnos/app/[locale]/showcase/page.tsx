@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Link } from '../../../i18n/navigation'
 import { getTranslations } from 'next-intl/server'
+import { hreflang } from '../../../i18n/hreflang'
 import {
   TerminalChrome,
   TypewriterHero,
@@ -30,7 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'Next.js',
       'TypeScript',
     ],
-    alternates: { canonical: 'https://shawnos.ai/showcase' },
+    alternates: { canonical: 'https://shawnos.ai/showcase', languages: hreflang('/showcase') },
     openGraph: {
       title: 'Component Showcase | shawnos.ai',
       description:

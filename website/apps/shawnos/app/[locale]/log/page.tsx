@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../i18n/hreflang'
 import path from 'path'
 import { getTranslations } from 'next-intl/server'
 import {
@@ -26,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'AI workflow tracking',
       'content pipeline',
     ],
-    alternates: { canonical: 'https://shawnos.ai/log' },
+    alternates: { canonical: 'https://shawnos.ai/log', languages: hreflang('/log') },
     openGraph: {
       title: `${t('metadata.title')} | shawnos.ai`,
       description: t('metadata.description'),

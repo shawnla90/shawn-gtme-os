@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
+import { hreflang } from '../../../i18n/hreflang'
 import { TITLE_TABLE, getRPGProfile, resolveDataRoot } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { TierProgressionGrid } from './TierProgressionGrid'
@@ -27,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'tier progression engine',
       'creative coding RPG',
     ],
-    alternates: { canonical: 'https://shawnos.ai/rpg-preview' },
+    alternates: { canonical: 'https://shawnos.ai/rpg-preview', languages: hreflang('/rpg-preview') },
     openGraph: {
       title: t('metadata.title'),
       description: t('metadata.description'),

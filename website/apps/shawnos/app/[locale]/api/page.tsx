@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { CopyButton, CodeBlock } from './components'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { PageHero, ScrollRevealSection, SectionHeadline } from './ApiHero'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -30,6 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
     alternates: {
       canonical: 'https://shawnos.ai/api',
+      languages: hreflang('/api'),
     },
     openGraph: {
       title: t('metadata.title'),

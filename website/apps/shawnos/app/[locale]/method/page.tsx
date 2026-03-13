@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Link } from '../../../i18n/navigation'
 import { getTranslations } from 'next-intl/server'
+import { hreflang } from '../../../i18n/hreflang'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { MethodReveal, CardStagger, CardItem, ScrollRevealSection, PageHero, SectionHeadline } from './MethodReveal'
@@ -22,7 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'build in public method',
       'compound building',
     ],
-    alternates: { canonical: 'https://shawnos.ai/method' },
+    alternates: { canonical: 'https://shawnos.ai/method', languages: hreflang('/method') },
     openGraph: {
       title: 'The Method | shawnos.ai',
       description: t('metadata.description'),
@@ -199,10 +200,34 @@ export default async function MethodPage() {
   const t = await getTranslations('Method')
   const ouroborosSprite = getToolAvatarUrls('ouroboros')
 
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'Recursive Drift - AI-Native Building Method',
+    description:
+      'A non-linear method for building with AI. Six states, no fixed order. Each pass compounds on the last.',
+    url: 'https://shawnos.ai/method',
+    step: states.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name,
+      text: s.body,
+    })),
+    author: {
+      '@type': 'Person',
+      name: 'Shawn Tenam',
+      url: 'https://shawnos.ai',
+    },
+  }
+
   return (
     <>
       <BreadcrumbSchema
         items={[{ name: 'The Method', url: 'https://shawnos.ai/method' }]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <PageHero
         compact

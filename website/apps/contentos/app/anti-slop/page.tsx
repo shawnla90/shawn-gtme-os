@@ -41,6 +41,27 @@ export const metadata: Metadata = {
   },
 }
 
+const softwareSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Anti-Slop Detector',
+  applicationCategory: 'UtilitiesApplication',
+  operatingSystem: 'Web',
+  url: `${SITE_URL}/anti-slop`,
+  description:
+    'Paste any text and score it against 20 anti-slop rules. Corporate filler words, passive voice patterns, and vague openers get flagged in real time.',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Shawn Tenam',
+    url: 'https://shawnos.ai',
+  },
+}
+
 export default function AntiSlopPage() {
   return (
     <>
@@ -49,6 +70,10 @@ export default function AntiSlopPage() {
           { name: 'Showcase', url: `${SITE_URL}/showcase` },
           { name: 'Anti-Slop Detector', url: `${SITE_URL}/anti-slop` },
         ]}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
       />
       <AntiSlopClient />
     </>

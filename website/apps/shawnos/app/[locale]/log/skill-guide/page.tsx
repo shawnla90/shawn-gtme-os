@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../../i18n/hreflang'
 import { getTranslations } from 'next-intl/server'
 import { SkillGuidePage } from '@shawnos/shared/pages/SkillGuidePage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
@@ -19,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'Pillow dashboard',
       'developer tools',
     ],
-    alternates: { canonical: 'https://shawnos.ai/log/skill-guide' },
+    alternates: { canonical: 'https://shawnos.ai/log/skill-guide', languages: hreflang('/log/skill-guide') },
     openGraph: {
       title: `${t('heroTitle')} | shawnos.ai`,
       description: t('metadata.description'),

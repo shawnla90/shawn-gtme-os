@@ -9,6 +9,18 @@ export const metadata: Metadata = {
   title: 'Features - Email Deliverability Tools',
   description:
     'Free email deliverability tools - MX record checker, sending volume calculator, domain health scorer, warmup timeline planner. Built for GTM engineers.',
+  keywords: [
+    'email deliverability tools',
+    'MX record checker',
+    'sending volume calculator',
+    'domain health score',
+    'email warmup planner',
+    'cold email deliverability',
+    'email infrastructure tools',
+    'GTM tools',
+    'free email tools',
+    'SPF DKIM DMARC checker',
+  ],
   alternates: { canonical: `${SITE_URL}/features` },
   openGraph: {
     title: 'Features - Email Deliverability Tools | theGTMOS.ai',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
 import { redirect } from 'next/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
@@ -52,7 +53,7 @@ export async function generateMetadata({
     title,
     description,
     keywords: entry.keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: hreflang(`/how-to/${slug}`) },
     openGraph: {
       title,
       description,

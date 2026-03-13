@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../i18n/hreflang'
 import { getTranslations } from 'next-intl/server'
 import { KnowledgeGuidePage } from '@shawnos/shared/pages/KnowledgeGuidePage'
 import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
@@ -21,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'monorepo',
       'developer tools',
     ],
-    alternates: { canonical: 'https://shawnos.ai/knowledge' },
+    alternates: { canonical: 'https://shawnos.ai/knowledge', languages: hreflang('/knowledge') },
     openGraph: {
       title: 'Engineering & AI Knowledge Guide | shawnos.ai',
       description:

@@ -8,6 +8,7 @@ import {
 } from '@shawnos/shared/data/context-wiki'
 import type { WikiSection } from '@shawnos/shared/data/context-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../i18n/hreflang'
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -40,7 +41,7 @@ export async function generateMetadata({
     title,
     description,
     keywords: entry.keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: hreflang(`/context-wiki/${slug}`) },
     openGraph: {
       title,
       description,

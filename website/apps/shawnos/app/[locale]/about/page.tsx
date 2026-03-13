@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { AboutContent } from './AboutContent'
 
 type Props = {
@@ -28,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'independent GTM consultant',
       'Lead Alchemy',
     ],
-    alternates: { canonical: 'https://shawnos.ai/about' },
+    alternates: { canonical: 'https://shawnos.ai/about', languages: hreflang('/about') },
     openGraph: {
       title: t('metadata.ogTitle'),
       description: t('metadata.ogDescription'),

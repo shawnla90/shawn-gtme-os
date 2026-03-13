@@ -7,6 +7,7 @@ import {
 } from '@shawnos/shared/data/context-wiki'
 import type { ContextWikiCategory } from '@shawnos/shared/data/context-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { PageHero, ScrollRevealSection } from '../../WikiReveal'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -29,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'ai context window',
       'gtm ai agents',
     ],
-    alternates: { canonical: `${SITE_URL}/context-wiki` },
+    alternates: { canonical: `${SITE_URL}/context-wiki`, languages: hreflang('/context-wiki') },
     openGraph: {
       title: 'Context Engineering Wiki | The Practitioner\'s Guide',
       description:

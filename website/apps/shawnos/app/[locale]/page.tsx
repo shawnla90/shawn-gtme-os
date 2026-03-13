@@ -3,6 +3,7 @@ import path from 'path'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../i18n/hreflang'
 import { HomeContent } from '../HomeContent'
 import { LiveUpdatesWidget } from '../components/LiveUpdatesWidget'
 import { announcements } from '../data/announcements'
@@ -18,7 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: t('metadata.title'),
     description: t('metadata.description'),
-    alternates: { canonical: 'https://shawnos.ai' },
+    alternates: { canonical: 'https://shawnos.ai', languages: hreflang('/') },
     openGraph: {
       title: t('metadata.title'),
       description: t('metadata.description'),

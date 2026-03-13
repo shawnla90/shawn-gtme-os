@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Link } from '../../../../i18n/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../i18n/hreflang'
 import { PageHero, ScrollRevealSection } from '../../../WikiReveal'
 
 type Props = {
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       'build in public journey',
       'unconventional career path',
     ],
-    alternates: { canonical: 'https://shawnos.ai/about/arc' },
+    alternates: { canonical: 'https://shawnos.ai/about/arc', languages: hreflang('/about/arc') },
     openGraph: {
       title: t('metadata.ogTitle'),
       description: t('metadata.ogDescription'),

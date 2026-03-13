@@ -4,6 +4,7 @@ import fs from 'fs'
 import { getTranslations } from 'next-intl/server'
 import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
 import { locales } from '../../../../i18n/config'
 import { TableOfContents } from './TableOfContents'
@@ -44,7 +45,7 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: postUrl },
+    alternates: { canonical: postUrl, languages: hreflang(`/blog/${slug}`) },
     openGraph: {
       type: 'article',
       title: post.title,

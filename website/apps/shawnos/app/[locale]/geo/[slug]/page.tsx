@@ -7,6 +7,7 @@ import {
 } from '@shawnos/shared/data/geo-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../i18n/hreflang'
 import { GeoEntryTracking } from './GeoEntryTracking'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -40,7 +41,7 @@ export async function generateMetadata({
     title,
     description,
     keywords: entry.keywords,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: hreflang(`/geo/${slug}`) },
     openGraph: {
       title,
       description,

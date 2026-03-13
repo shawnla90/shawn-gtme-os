@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getTranslations } from 'next-intl/server'
+import { hreflang } from '../../../i18n/hreflang'
 import { getAllPosts, getAllLogs, resolveDataRoot } from '@shawnos/shared/lib'
 import { HOW_TO_WIKI_ENTRIES } from '@shawnos/shared/data/how-to-wiki'
 import { ENGINEERING_CATEGORIES, toSlug } from '@shawnos/shared/data/engineering-terms'
@@ -23,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t('metadata.title'),
     description: t('metadata.description'),
-    alternates: { canonical: 'https://shawnos.ai/search' },
+    alternates: { canonical: 'https://shawnos.ai/search', languages: hreflang('/search') },
     openGraph: {
       title: 'Search | shawnos.ai',
       description: t('metadata.description'),

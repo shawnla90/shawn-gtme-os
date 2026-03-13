@@ -5,6 +5,7 @@ import {
   GEO_WIKI_CATEGORIES,
 } from '@shawnos/shared/data/geo-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { PageHero, ScrollRevealSection } from '../../WikiReveal'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     'answer engine optimization',
     'llms.txt',
   ],
-  alternates: { canonical: `${SITE_URL}/geo` },
+  alternates: { canonical: `${SITE_URL}/geo`, languages: hreflang('/geo') },
   openGraph: {
     title: 'GEO Wiki | Generative Engine Optimization Guide',
     description:

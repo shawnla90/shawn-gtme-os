@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { BreadcrumbSchema, RedditFeed } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { fetchSubredditPosts, fetchUserProfile } from '@shawnos/shared/lib/reddit'
 
 export const revalidate = 3600
@@ -24,7 +25,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'builder-led growth',
       'GTM workflows',
     ],
-    alternates: { canonical: 'https://shawnos.ai/community' },
+    alternates: { canonical: 'https://shawnos.ai/community', languages: hreflang('/community') },
     openGraph: {
       title: 'Community - Building in Public',
       description:

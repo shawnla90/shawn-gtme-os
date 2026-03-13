@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { NioPostPage } from '@shawnos/shared/pages/NioPostPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../../i18n/hreflang'
 
 export const metadata: Metadata = {
   title: 'post-one: blade tier achieved - nio.terminal',
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     'mission control dashboard',
     'meta recursion AI',
   ],
-  alternates: { canonical: 'https://shawnos.ai/vitals/nio-terminal/post-one' },
+  alternates: { canonical: 'https://shawnos.ai/vitals/nio-terminal/post-one', languages: hreflang('/vitals/nio-terminal/post-one') },
   openGraph: {
     title: 'post-one: blade tier achieved | nio.terminal',
     description: 'Historic moment: Nio levels up from Spark to Blade tier at exactly 30,000 lines of code.',

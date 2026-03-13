@@ -8,6 +8,19 @@ export const metadata: Metadata = {
   title: 'MCP Stack - Model Context Protocol for GTM',
   description:
     'How theGTMOS.ai uses Model Context Protocol servers, parallel agents, and automation crons to power AI-native go-to-market operations.',
+  keywords: [
+    'Model Context Protocol',
+    'MCP servers',
+    'MCP for GTM',
+    'AI agent automation',
+    'GTM automation stack',
+    'parallel AI agents',
+    'MCP Exa search',
+    'MCP Playwright',
+    'AI-native GTM',
+    'go-to-market automation',
+    'agent orchestration',
+  ],
   alternates: { canonical: `${SITE_URL}/mcp` },
   openGraph: {
     title: 'The MCP Stack | theGTMOS.ai',

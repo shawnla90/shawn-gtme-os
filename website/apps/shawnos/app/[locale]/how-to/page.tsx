@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../i18n/hreflang'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import {
   getLocalizedHowToEntries,
@@ -29,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'cursor IDE guide',
       'claude code setup',
     ],
-    alternates: { canonical: `${SITE_URL}/how-to` },
+    alternates: { canonical: `${SITE_URL}/how-to`, languages: hreflang('/how-to') },
     openGraph: {
       title: 'How-To Wiki | The Practitioner\'s Guide to AI Tools',
       description:

@@ -4,6 +4,7 @@ import fs from 'fs'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 import { getAllPosts } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { BlogContent } from './BlogContent'
 
 const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
@@ -19,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t('metadata.title'),
     description: t('metadata.description'),
-    alternates: { canonical: 'https://shawnos.ai/blog' },
+    alternates: { canonical: 'https://shawnos.ai/blog', languages: hreflang('/blog') },
     openGraph: {
       title: 'Blog | shawnos.ai',
       description: t('metadata.description'),
@@ -43,9 +44,23 @@ export default async function BlogIndex({ params }: Props) {
   setRequestLocale(locale)
   const posts = getAllPosts(getContentDir(locale))
 
+  const collectionSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Blog',
+    url: 'https://shawnos.ai/blog',
+    description: 'Posts from the build log. GTM engineering, AI workflows, and building in public.',
+    author: { '@type': 'Person', name: 'Shawn Tenam', url: 'https://shawnos.ai' },
+    numberOfItems: posts.length,
+  }
+
   return (
     <>
       <BreadcrumbSchema items={[{ name: 'Blog', url: 'https://shawnos.ai/blog' }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
+      />
       <BlogContent posts={posts} />
     </>
   )

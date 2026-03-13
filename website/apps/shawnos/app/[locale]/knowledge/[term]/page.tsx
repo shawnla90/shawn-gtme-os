@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import {
@@ -123,7 +124,7 @@ export async function generateMetadata({
       t.source === 'gtm' ? 'gtm engineering' : 'vibe coding',
       t.category.toLowerCase(),
     ],
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: hreflang(`/knowledge/${t.slug}`) },
     openGraph: {
       title,
       description,

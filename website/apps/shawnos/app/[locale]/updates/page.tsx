@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Link } from '../../../i18n/navigation'
 import path from 'path'
 import { getTranslations } from 'next-intl/server'
+import { hreflang } from '../../../i18n/hreflang'
 import {
   getAllPosts,
   getAllLogs,
@@ -51,6 +52,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
     alternates: {
       canonical: `${SITE_URL}/updates`,
+      languages: hreflang('/updates'),
       types: {
         'application/rss+xml': [
           { url: '/feed/updates.xml', title: 'ShawnOS.ai — Latest Updates' },

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../../i18n/hreflang'
 import path from 'path'
 import { getTranslations } from 'next-intl/server'
 import {
@@ -65,7 +66,7 @@ export async function generateMetadata({
       'AI workflow tracking',
       'daily shipping',
     ],
-    alternates: { canonical: pageUrl },
+    alternates: { canonical: pageUrl, languages: hreflang(`/log/${date}`) },
     openGraph: {
       type: 'article',
       title: `${title} | shawnos.ai`,

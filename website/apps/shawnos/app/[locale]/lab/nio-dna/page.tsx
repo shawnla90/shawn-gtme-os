@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../i18n/hreflang'
 import { NioDnaLab } from './NioDnaLab'
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'AI ops agent',
       'gamified AI agent',
     ],
-    alternates: { canonical: 'https://shawnos.ai/lab/nio-dna' },
+    alternates: { canonical: 'https://shawnos.ai/lab/nio-dna', languages: hreflang('/lab/nio-dna') },
     openGraph: {
       title: t('metadata.title'),
       description: t('metadata.description'),

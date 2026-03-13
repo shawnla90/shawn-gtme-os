@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { NioPostPage } from '@shawnos/shared/pages/NioPostPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../../i18n/hreflang'
 import { getNioBlogSlugs } from '@shawnos/shared/lib/nio-blog'
 import { notFound } from 'next/navigation'
 
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: NioPostRouteProps): Promise<M
   return {
     title: `${dateSlug} - nio.terminal`,
     description: `AI development log entry: ${dateSlug}`,
-    alternates: { canonical: `https://shawnos.ai/vitals/nio-terminal/${dateSlug}` },
+    alternates: { canonical: `https://shawnos.ai/vitals/nio-terminal/${dateSlug}`, languages: hreflang(`/vitals/nio-terminal/${dateSlug}`) },
   }
 }
 

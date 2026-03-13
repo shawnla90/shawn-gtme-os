@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { hreflang } from '../../../../i18n/hreflang'
 import { getTranslations } from 'next-intl/server'
 import { QuestBoardPage } from '@shawnos/shared/pages/QuestBoardPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
@@ -20,7 +21,7 @@ export async function generateMetadata(): Promise<Metadata> {
       'Cursor IDE',
       'Python Pillow',
     ],
-    alternates: { canonical: 'https://shawnos.ai/log/quests' },
+    alternates: { canonical: 'https://shawnos.ai/log/quests', languages: hreflang('/log/quests') },
     openGraph: {
       title: `${t('heroTitle')} | shawnos.ai`,
       description: t('metadata.description'),

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Link } from '../../../i18n/navigation'
 import { getTranslations } from 'next-intl/server'
+import { hreflang } from '../../../i18n/hreflang'
 import { MEDIA_APPEARANCES } from '@shawnos/shared/data/media-appearances'
 import type { MediaAppearance } from '@shawnos/shared/data/media-appearances'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
@@ -30,6 +31,7 @@ export async function generateMetadata(): Promise<Metadata> {
     ],
     alternates: {
       canonical: `${SITE_URL}/media`,
+      languages: hreflang('/media'),
     },
     openGraph: {
       title: t('metadata.title'),

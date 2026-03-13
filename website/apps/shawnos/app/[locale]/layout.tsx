@@ -110,6 +110,29 @@ const websiteSchema = {
   author: { '@type': 'Person', name: 'Shawn Tenam' },
 }
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'ShawnOS',
+  url: SITE_URL,
+  description:
+    'GTM engineering studio building AI-native pipelines, content systems, and go-to-market infrastructure.',
+  founder: {
+    '@type': 'Person',
+    name: 'Shawn Tenam',
+    url: SITE_URL,
+  },
+  sameAs: [
+    'https://thegtmos.ai',
+    'https://thecontentos.ai',
+    'https://linkedin.com/in/shawntenam',
+    'https://x.com/shawntenam',
+    'https://github.com/shawnla90',
+    'https://shawntenam.substack.com',
+    'https://reddit.com/r/GTMBuilders',
+  ],
+}
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }))
 }
@@ -149,6 +172,10 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...websiteSchema, inLanguage: locale }) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <Navigation
           siteName="ShawnOS.ai"
