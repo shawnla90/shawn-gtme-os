@@ -33,6 +33,7 @@ export { DarkInterlude } from './DarkInterlude'
 export { SectionHeadline } from './SectionHeadline'
 export { FAQAccordion } from './FAQAccordion'
 export { ProcessSteps } from './ProcessSteps'
+export { AffiliateLink, AffiliateDisclosure } from './AffiliateLink'
 export {
   MotionReveal,
   StaggerContainer,

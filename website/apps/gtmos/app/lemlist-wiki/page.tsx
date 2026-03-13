@@ -1,53 +1,49 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import {
-  CLAY_WIKI_ENTRIES,
-  CLAY_WIKI_CATEGORIES,
-} from '@shawnos/shared/data/clay-wiki'
-import type { ClayWikiCategory } from '@shawnos/shared/data/clay-wiki'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
-import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
-import { AffiliateLink, AffiliateDisclosure } from '@shawnos/shared/components'
+  LEMLIST_WIKI_ENTRIES,
+  LEMLIST_WIKI_CATEGORIES,
+} from '@shawnos/shared/data/lemlist-wiki'
+import { BreadcrumbSchema, AffiliateLink, AffiliateDisclosure } from '@shawnos/shared/components'
 import { SITES } from '@shawnos/shared/lib/sites'
 
 const SITE_URL = SITES.gtmos
-const CLAY_BLUE = '#4B5CFA'
-const CLAY_AFFILIATE = 'https://clay.com/?via=f57c60'
+const LEMLIST_PURPLE = '#7C3AED'
+const LEMLIST_AFFILIATE = 'https://get.lemlist.com/bpxtvqplcews'
 
 /* ── metadata ─────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'Clay Wiki | The Practitioner\'s Guide to Clay',
+  title: 'Lemlist Wiki | Multichannel Outreach for GTM Engineers',
   description:
-    'Everything you need to know about Clay - enrichment patterns, scoring systems, Claygent prompts, formulas, certification tips, and real-world plays from a certified Clay practitioner.',
+    'Everything you need to know about Lemlist - multichannel sequences, deliverability, inbox rotation, A/B testing, and real-world outreach patterns from production campaigns.',
   keywords: [
-    'clay wiki',
-    'learn clay',
-    'clay guide',
-    'clay playbooks',
-    'clay tutorial',
-    'clay enrichment',
-    'clay certification',
-    'claygent prompts',
-    'clay formulas',
-    'clay credit system',
-    'clay scoring',
+    'lemlist wiki',
+    'lemlist guide',
+    'lemlist tutorial',
+    'multichannel outreach',
+    'email outreach',
+    'lemlist sequences',
+    'lemlist deliverability',
+    'lemwarm',
+    'email automation',
+    'outreach tool',
   ],
-  alternates: { canonical: `${SITE_URL}/clay-wiki` },
+  alternates: { canonical: `${SITE_URL}/lemlist-wiki` },
   openGraph: {
-    title: 'Clay Wiki | The Practitioner\'s Guide to Clay',
+    title: 'Lemlist Wiki | Multichannel Outreach for GTM Engineers',
     description:
-      'Enrichment patterns, scoring systems, Claygent prompts, formulas, and real-world plays from a certified Clay practitioner.',
-    url: `${SITE_URL}/clay-wiki`,
+      'Multichannel sequences, deliverability, and outreach patterns from production campaigns.',
+    url: `${SITE_URL}/lemlist-wiki`,
   },
   twitter: {
-    title: 'Clay Wiki | The Practitioner\'s Guide to Clay',
+    title: 'Lemlist Wiki | Multichannel Outreach for GTM Engineers',
     description:
-      'Enrichment patterns, scoring systems, Claygent prompts, formulas, and real-world plays from a certified Clay practitioner.',
+      'Multichannel sequences, deliverability, and outreach patterns from production campaigns.',
   },
 }
 
-/* ── FAQ schema for hub page ──────────────────────── */
+/* ── FAQ schema ───────────────────────────────────── */
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -55,26 +51,26 @@ const faqSchema = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'What is Clay used for in GTM?',
+      name: 'What is Lemlist used for in GTM?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Clay is a data enrichment and automation platform used by GTM engineers to find emails, validate companies, run AI research prompts, build scoring systems, and route contacts to CRMs and outreach tools. It\'s the orchestration layer for modern go-to-market workflows.',
+        text: 'Lemlist is a multichannel outreach platform for email, LinkedIn, and phone sequences. GTM engineers use it to execute personalized outreach campaigns at scale with built-in deliverability tools like Lemwarm, inbox rotation, and A/B testing.',
       },
     },
     {
       '@type': 'Question',
-      name: 'How do Clay credits work?',
+      name: 'How does Lemwarm work?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Clay credits are consumed when you use native enrichment providers, Claygent prompts, and certain integrations. The practitioner philosophy: if the time spent avoiding credits exceeds the credit cost, just use the credits. Prove and test with credits, then optimize with APIs at scale.',
+        text: 'Lemwarm is Lemlist\'s built-in domain warm-up tool. It sends and receives emails between real inboxes in a warm-up network, generating opens, replies, and spam rescues that build your sender reputation with email providers.',
       },
     },
     {
       '@type': 'Question',
-      name: 'What is the account-first enrichment pattern?',
+      name: 'How does Lemlist compare to Instantly and Smartlead?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Always split contacts to an account table, dedupe by domain, enrich at the account level, then write back to contacts via lookup. This is THE fundamental Clay architecture pattern that saves credits and ensures data consistency.',
+        text: 'Lemlist excels at multichannel (email + LinkedIn + phone in one sequence). Instantly focuses on high-volume email with aggressive inbox rotation. Smartlead specializes in agency-scale sending with sub-accounts. Choose based on whether you need multichannel or pure email volume.',
       },
     },
   ],
@@ -84,24 +80,24 @@ const faqSchema = {
 
 const WORKFLOWS = [
   {
-    title: 'Landing Page Generation',
+    title: 'Clay Enrichment Pipeline',
     description:
-      'Generate personalized landing pages from Clay enrichment data. Account research flows directly into page copy.',
+      'Enriched, scored leads from Clay flow directly into personalized Lemlist sequences with custom variables.',
   },
   {
-    title: 'HubSpot CRM Sync',
+    title: 'Multichannel Sequences',
     description:
-      'Bi-directional Clay-to-HubSpot sync. Enriched contacts push to CRM with scoring, routing, and lifecycle stage automation.',
+      'Email + LinkedIn profile visits + connection requests + messages in a single automated sequence.',
   },
   {
-    title: 'Exa Research Enrichment',
+    title: 'Domain Warm-Up',
     description:
-      'Deep prospect intelligence using Exa API. Company research, news monitoring, and competitive intel - all inside Clay.',
+      'Lemwarm handles new domain reputation building. Start warm-up day one, campaign sends by week three.',
   },
   {
-    title: 'Account Scoring Formulas',
+    title: 'CRM Activity Sync',
     description:
-      'Multi-signal scoring using Clay formulas. Combine firmographic, technographic, and intent data for ICP fit scores.',
+      'Outreach events (sent, opened, replied) sync to your CRM via native integrations or webhooks.',
   },
 ]
 
@@ -127,9 +123,9 @@ const pageWrap: React.CSSProperties = {
   fontFamily: 'var(--font-mono)',
 }
 
-const clayStripe: React.CSSProperties = {
+const lemlistStripe: React.CSSProperties = {
   height: '3px',
-  background: `linear-gradient(90deg, ${CLAY_BLUE}, ${CLAY_BLUE}88, transparent)`,
+  background: `linear-gradient(90deg, ${LEMLIST_PURPLE}, ${LEMLIST_PURPLE}88, transparent)`,
   marginBottom: '40px',
   borderRadius: '0 0 2px 2px',
 }
@@ -169,50 +165,17 @@ const heroDesc: React.CSSProperties = {
   maxWidth: 640,
 }
 
-const certBadge: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '8px',
-  fontSize: '12px',
-  fontWeight: 600,
-  color: 'var(--accent)',
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '6px',
-  padding: '8px 16px',
-  letterSpacing: '0.03em',
-}
-
-const certifiedCallout: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '8px',
-  fontSize: '11px',
-  fontWeight: 700,
-  color: CLAY_BLUE,
-  background: `${CLAY_BLUE}12`,
-  border: `1px solid ${CLAY_BLUE}33`,
-  borderRadius: '6px',
-  padding: '8px 16px',
-  letterSpacing: '0.06em',
-  textTransform: 'uppercase' as const,
-}
-
-const tryClayButton: React.CSSProperties = {
-  display: 'inline-block',
-  fontSize: '13px',
-  fontWeight: 700,
-  color: '#ffffff',
-  background: CLAY_BLUE,
-  borderRadius: '6px',
-  padding: '10px 20px',
-  textDecoration: 'none',
-  letterSpacing: '0.02em',
-  transition: 'opacity 0.15s ease, transform 0.1s ease',
-}
-
 const spriteWrap: React.CSSProperties = {
   flexShrink: 0,
+  width: 128,
+  height: 128,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: `${LEMLIST_PURPLE}15`,
+  border: `2px solid ${LEMLIST_PURPLE}33`,
+  borderRadius: '16px',
+  fontSize: '48px',
 }
 
 const divider: React.CSSProperties = {
@@ -220,8 +183,6 @@ const divider: React.CSSProperties = {
   borderTop: '1px solid var(--border)',
   margin: '40px 0',
 }
-
-/* ── workflow section styles ──────────────────────── */
 
 const workflowSection: React.CSSProperties = {
   marginBottom: '48px',
@@ -251,7 +212,7 @@ const workflowCard: React.CSSProperties = {
   padding: '20px',
   background: 'var(--canvas-subtle)',
   border: '1px solid var(--border)',
-  borderLeft: `3px solid ${CLAY_BLUE}`,
+  borderLeft: `3px solid ${LEMLIST_PURPLE}`,
   borderRadius: '8px',
 }
 
@@ -280,12 +241,10 @@ const greenDot: React.CSSProperties = {
   flexShrink: 0,
 }
 
-/* ── affiliate CTA banner styles ─────────────────── */
-
 const ctaBanner: React.CSSProperties = {
   padding: '40px 32px',
-  background: `linear-gradient(135deg, ${CLAY_BLUE}0a, ${CLAY_BLUE}18, ${CLAY_BLUE}0a)`,
-  border: `1px solid ${CLAY_BLUE}22`,
+  background: `linear-gradient(135deg, ${LEMLIST_PURPLE}0a, ${LEMLIST_PURPLE}18, ${LEMLIST_PURPLE}0a)`,
+  border: `1px solid ${LEMLIST_PURPLE}22`,
   borderRadius: '12px',
   textAlign: 'center' as const,
   marginBottom: '48px',
@@ -312,7 +271,7 @@ const ctaButton: React.CSSProperties = {
   fontSize: '14px',
   fontWeight: 700,
   color: '#ffffff',
-  background: CLAY_BLUE,
+  background: LEMLIST_PURPLE,
   borderRadius: '6px',
   padding: '12px 24px',
   textDecoration: 'none',
@@ -320,7 +279,18 @@ const ctaButton: React.CSSProperties = {
   transition: 'opacity 0.15s ease, transform 0.1s ease',
 }
 
-/* ── category section styles ─────────────────────── */
+const tryButton: React.CSSProperties = {
+  display: 'inline-block',
+  fontSize: '13px',
+  fontWeight: 700,
+  color: '#ffffff',
+  background: LEMLIST_PURPLE,
+  borderRadius: '6px',
+  padding: '10px 20px',
+  textDecoration: 'none',
+  letterSpacing: '0.02em',
+  transition: 'opacity 0.15s ease, transform 0.1s ease',
+}
 
 const categorySection: React.CSSProperties = {
   marginBottom: '48px',
@@ -439,27 +409,26 @@ const navLink: React.CSSProperties = {
   textDecoration: 'none',
 }
 
-const navLinkClay: React.CSSProperties = {
+const navLinkLemlist: React.CSSProperties = {
   display: 'inline-block',
   fontSize: '13px',
   fontWeight: 600,
-  color: CLAY_BLUE,
+  color: LEMLIST_PURPLE,
   textDecoration: 'none',
 }
 
 /* ── page component ───────────────────────────────── */
 
-export default function ClayWikiPage() {
-  const claySprite = getToolAvatarUrls('clay')
-  const entryCount = CLAY_WIKI_ENTRIES.length
-  const categoryCount = CLAY_WIKI_CATEGORIES.length
+export default function LemlistWikiPage() {
+  const entryCount = LEMLIST_WIKI_ENTRIES.length
+  const categoryCount = LEMLIST_WIKI_CATEGORIES.length
 
   return (
     <>
       <BreadcrumbSchema
         items={[
           { name: 'Knowledge', url: `${SITE_URL}/knowledge` },
-          { name: 'Clay Wiki', url: `${SITE_URL}/clay-wiki` },
+          { name: 'Lemlist Wiki', url: `${SITE_URL}/lemlist-wiki` },
         ]}
       />
       <script
@@ -468,23 +437,22 @@ export default function ClayWikiPage() {
       />
 
       <div style={pageWrap}>
-        {/* Clay-blue gradient stripe */}
-        <div style={clayStripe} />
+        {/* Lemlist-purple gradient stripe */}
+        <div style={lemlistStripe} />
 
         {/* Terminal header */}
         <h1 style={terminalHeader}>
-          <span style={{ color: 'var(--accent)' }}>$</span> cd ~/clay-wiki
+          <span style={{ color: 'var(--accent)' }}>$</span> cd ~/lemlist-wiki
         </h1>
 
-        {/* Hero section with sprite */}
+        {/* Hero section */}
         <div style={heroSection}>
           <div style={heroText}>
-            <h2 style={heroTitle}>Clay Wiki</h2>
+            <h2 style={heroTitle}>Lemlist Wiki</h2>
             <p style={heroDesc}>
-              The practitioner&apos;s guide to Clay. Not the docs - the patterns, plays, and
-              hard-won opinions from building real GTM pipelines. Enrichment architecture,
-              scoring systems, Claygent prompt engineering, formulas, and every workflow
-              pattern I use in production.
+              Multichannel outreach infrastructure for GTM engineers. Not the docs - the
+              sequence patterns, deliverability playbook, and hard-won opinions from running
+              production campaigns. Email, LinkedIn, and phone touches orchestrated in one tool.
             </p>
 
             {/* Stats */}
@@ -498,50 +466,23 @@ export default function ClayWikiPage() {
                 <span style={statLabel}>Categories</span>
               </div>
               <div style={statBox}>
-                <span style={statNum}>98</span>
-                <span style={statLabel}>Cert Score</span>
+                <span style={statNum}>3</span>
+                <span style={statLabel}>Channels</span>
               </div>
             </div>
 
-            {/* Certification badge + Clay Creator badge + Certified callout */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '20px' }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/brands/clay-creator-full.png"
-                alt="Clay Creator badge"
-                width={100}
-                height={100}
-                style={{ borderRadius: 8, objectFit: 'contain' }}
-              />
-              <div style={certBadge}>
-                <span style={{ fontSize: '16px' }}>&#9670;</span>
-                Clay Certified Practitioner &middot; 98/100
-              </div>
-              <div style={certifiedCallout}>
-                <span style={{ fontSize: '14px' }}>&#10003;</span>
-                Certified Clay Creator
-              </div>
-            </div>
-
-            {/* Try Clay CTA */}
+            {/* Try Lemlist CTA */}
             <AffiliateLink
-              href={CLAY_AFFILIATE}
-              style={tryClayButton}
+              href={LEMLIST_AFFILIATE}
+              style={tryButton}
             >
-              Try Clay &rarr;
+              Try Lemlist &rarr;
             </AffiliateLink>
           </div>
 
-          {/* Clay sprite */}
+          {/* Lemlist icon */}
           <div style={spriteWrap}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={claySprite.idle}
-              alt="Clay tool avatar"
-              width={128}
-              height={128}
-              style={{ imageRendering: 'pixelated' }}
-            />
+            &#9993;
           </div>
         </div>
 
@@ -550,7 +491,7 @@ export default function ClayWikiPage() {
         {/* ── Real Workflows Section ──────────────────── */}
         <div style={workflowSection}>
           <div style={workflowHeader}>
-            <span style={{ color: 'var(--accent)' }}>$</span> ls ~/clay-wiki/workflows/
+            <span style={{ color: 'var(--accent)' }}>$</span> ls ~/lemlist-wiki/workflows/
           </div>
           <h3 style={workflowTitle}>Real Workflows</h3>
           <div style={workflowGrid}>
@@ -570,17 +511,18 @@ export default function ClayWikiPage() {
 
         {/* ── Affiliate CTA Banner ────────────────────── */}
         <div style={ctaBanner}>
-          <div style={ctaHeading}>Ready to build your own GTM workflows?</div>
+          <div style={ctaHeading}>Ready to build multichannel sequences?</div>
           <div style={ctaSubtext}>
-            Clay is the data enrichment and automation platform powering modern go-to-market teams.
+            Lemlist is the multichannel outreach platform for teams that want
+            email, LinkedIn, and phone in one workflow.
           </div>
           <a
-            href={CLAY_AFFILIATE}
+            href={LEMLIST_AFFILIATE}
             target="_blank"
             rel="noopener noreferrer"
             style={ctaButton}
           >
-            Start with Clay
+            Start with Lemlist
           </a>
           <AffiliateDisclosure />
         </div>
@@ -588,8 +530,8 @@ export default function ClayWikiPage() {
         <hr style={divider} />
 
         {/* ── Category Sections ───────────────────────── */}
-        {CLAY_WIKI_CATEGORIES.map((cat) => {
-          const entries = CLAY_WIKI_ENTRIES.filter((e) => e.category === cat.id)
+        {LEMLIST_WIKI_CATEGORIES.map((cat) => {
+          const entries = LEMLIST_WIKI_ENTRIES.filter((e) => e.category === cat.id)
           return (
             <div key={cat.id} style={categorySection}>
               <div style={categoryHeader}>{cat.prompt}</div>
@@ -599,7 +541,7 @@ export default function ClayWikiPage() {
                 {entries.map((entry) => (
                   <Link
                     key={entry.id}
-                    href={`/clay-wiki/${entry.id}`}
+                    href={`/lemlist-wiki/${entry.id}`}
                     style={card}
                   >
                     <div style={cardTitle}>{entry.title}</div>
@@ -623,15 +565,15 @@ export default function ClayWikiPage() {
           </Link>
           <div style={{ display: 'flex', gap: '20px' }}>
             <a
-              href={CLAY_AFFILIATE}
+              href={LEMLIST_AFFILIATE}
               target="_blank"
               rel="noopener noreferrer"
-              style={navLinkClay}
+              style={navLinkLemlist}
             >
-              try clay &rarr;
+              try lemlist &rarr;
             </a>
-            <Link href="/content-wiki" style={navLink}>
-              content wiki &rarr;
+            <Link href="/apollo-wiki" style={navLink}>
+              apollo wiki &rarr;
             </Link>
           </div>
         </div>

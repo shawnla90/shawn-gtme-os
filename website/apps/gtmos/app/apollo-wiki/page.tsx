@@ -6,10 +6,12 @@ import {
 } from '@shawnos/shared/data/apollo-wiki'
 import type { ApolloWikiCategory } from '@shawnos/shared/data/apollo-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { AffiliateLink, AffiliateDisclosure } from '@shawnos/shared/components'
 import { SITES } from '@shawnos/shared/lib/sites'
 
 const SITE_URL = SITES.gtmos
 const APOLLO_INDIGO = '#6366F1'
+const APOLLO_AFFILIATE = 'https://get.apollo.io/y3gtusoq4h9g'
 
 /* ── metadata ─────────────────────────────────────── */
 
@@ -466,10 +468,8 @@ export default function ApolloWikiPage() {
             </div>
 
             {/* Apollo CTA */}
-            <a
-              href="https://apollo.io"
-              target="_blank"
-              rel="noopener noreferrer"
+            <AffiliateLink
+              href={APOLLO_AFFILIATE}
               style={{
                 display: 'inline-block',
                 fontSize: '13px',
@@ -484,7 +484,7 @@ export default function ApolloWikiPage() {
               }}
             >
               Try Apollo &rarr;
-            </a>
+            </AffiliateLink>
           </div>
 
           {/* Apollo icon placeholder */}
@@ -524,13 +524,14 @@ export default function ApolloWikiPage() {
             Start with the free API and scale from there.
           </div>
           <a
-            href="https://apollo.io"
+            href={APOLLO_AFFILIATE}
             target="_blank"
             rel="noopener noreferrer"
             style={ctaButton}
           >
             Start with Apollo
           </a>
+          <AffiliateDisclosure />
         </div>
 
         <hr style={divider} />
@@ -571,7 +572,7 @@ export default function ApolloWikiPage() {
           </Link>
           <div style={{ display: 'flex', gap: '20px' }}>
             <a
-              href="https://apollo.io"
+              href={APOLLO_AFFILIATE}
               target="_blank"
               rel="noopener noreferrer"
               style={navLinkApollo}
