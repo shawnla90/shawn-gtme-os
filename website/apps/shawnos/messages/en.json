@@ -173,15 +173,15 @@
   },
   "About": {
     "metadata": {
-      "title": "About",
-      "description": "GTM Engineer. Builder. Shipped from a monorepo. The operating system behind shawnos.ai.",
-      "ogTitle": "About | shawnos.ai",
-      "ogDescription": "GTM Engineer. Builder. Shipped from a monorepo."
+      "title": "Shawn Tenam | GTM Engineer",
+      "description": "Shawn Tenam - GTM engineer building AI-native pipelines, Clay workflows, and content systems from a single monorepo. Independent consultant, Clay Certified Creator.",
+      "ogTitle": "Shawn Tenam | GTM Engineer",
+      "ogDescription": "GTM engineer building AI-native pipelines, Clay workflows, and content systems. Independent consultant, Clay Certified Creator."
     },
     "hero": {
       "title": "About",
       "titleAccent": "Shawn Tenam",
-      "subtitle": "GTM Engineer. Builder. Shipped from a monorepo."
+      "subtitle": "GTM Engineer. Independent. Clay Certified Creator. Building AI-native pipelines from a monorepo."
     },
     "identity": {
       "headline": "Identity",
@@ -216,6 +216,7 @@
       "headline": "Connect",
       "linkedin": "LinkedIn",
       "xTwitter": "X / Twitter",
+      "reddit": "Reddit",
       "substack": "Substack",
       "github": "GitHub"
     },
@@ -464,6 +465,44 @@
     "scannerNotInit": "Scanner not initialized. Run website_scanner.py first.",
     "nioTerminal": { "metadata": { "title": "nio.terminal - AI Development Log", "description": "Daily insights from Nio, the AI site guardian." } },
     "v2Lab": { "title": "Progression Engine v2 Lab", "subtitle": "Ghost comparison. Recalibrated grades, ascending chain multiplier, bonus scoring.", "labels": { "v1Current": "v1 - current (live)", "v2Experimental": "v2 - experimental" } }
+  },
+  "Live": {
+    "metadata": {
+      "title": "Live Feed | AI News & Builder Community",
+      "description": "Curated AI builder news and community posts from r/GTMBuilders. Live from the builder community."
+    },
+    "hero": {
+      "title": "Live Feed",
+      "subtitle": "Curated AI news and builder community posts."
+    },
+    "stats": {
+      "subscribers": "Subscribers",
+      "posts": "Posts",
+      "syncedHourly": "Synced hourly"
+    },
+    "tabs": {
+      "aiNews": "AI News",
+      "community": "Community"
+    },
+    "categories": {
+      "ai-news": "AI News",
+      "builder-tools": "Builder Tools",
+      "repos": "Repos",
+      "shipped": "Shipped"
+    },
+    "empty": {
+      "aiNews": "No AI news items yet. The scout runs every 6 hours.",
+      "community": "No community posts yet."
+    },
+    "cta": {
+      "headline": "Builder-led growth starts here.",
+      "joinReddit": "Join r/GTMBuilders",
+      "postOnReddit": "Post on Reddit"
+    },
+    "nav": {
+      "home": "home",
+      "updates": "updates"
+    }
   },
   "API": {
     "metadata": { "title": "Public API | ShawnOS.ai - Real-Time RPG Progression Feed", "description": "Access my live XP, level, and milestones via JSON." },

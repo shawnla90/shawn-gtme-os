@@ -216,6 +216,7 @@
       "headline": "Conectar",
       "linkedin": "LinkedIn",
       "xTwitter": "X / Twitter",
+      "reddit": "Reddit",
       "substack": "Substack",
       "github": "GitHub"
     },
@@ -464,6 +465,44 @@
     "scannerNotInit": "Escáner no inicializado. Ejecuta website_scanner.py primero.",
     "nioTerminal": { "metadata": { "title": "nio.terminal - Registro de desarrollo de IA", "description": "Perspectivas diarias de Nio, el guardián de IA del sitio." } },
     "v2Lab": { "title": "Motor de progresión v2 Lab", "subtitle": "Comparación fantasma. Grados recalibrados, multiplicador de cadena ascendente, puntuación bonus.", "labels": { "v1Current": "v1 - actual (en vivo)", "v2Experimental": "v2 - experimental" } }
+  },
+  "Live": {
+    "metadata": {
+      "title": "Feed en vivo | Noticias AI y Comunidad de Builders",
+      "description": "Noticias de AI curadas y publicaciones de la comunidad r/GTMBuilders."
+    },
+    "hero": {
+      "title": "Feed en vivo",
+      "subtitle": "Noticias de AI curadas y publicaciones de la comunidad."
+    },
+    "stats": {
+      "subscribers": "Suscriptores",
+      "posts": "Publicaciones",
+      "syncedHourly": "Sincronizado cada hora"
+    },
+    "tabs": {
+      "aiNews": "Noticias AI",
+      "community": "Comunidad"
+    },
+    "categories": {
+      "ai-news": "Noticias AI",
+      "builder-tools": "Herramientas",
+      "repos": "Repos",
+      "shipped": "Lanzado"
+    },
+    "empty": {
+      "aiNews": "No hay noticias de AI todavía. El scout se ejecuta cada 6 horas.",
+      "community": "No hay publicaciones de la comunidad todavía."
+    },
+    "cta": {
+      "headline": "El crecimiento liderado por builders empieza aquí.",
+      "joinReddit": "Unirse a r/GTMBuilders",
+      "postOnReddit": "Publicar en Reddit"
+    },
+    "nav": {
+      "home": "inicio",
+      "updates": "actualizaciones"
+    }
   },
   "API": {
     "metadata": { "title": "API pública | ShawnOS.ai - Feed de progresión RPG en tiempo real", "description": "Accede a mi XP, nivel e hitos en vivo vía JSON." },

@@ -108,6 +108,16 @@ Licensed under [ShawnOS Proprietary License v1.0](LICENSE).
 
 **TL;DR**: You can view, fork, and reference for educational purposes. You cannot use this code to build competing products.
 
+## 🔗 Connect
+
+- **Website**: [shawnos.ai](https://shawnos.ai)
+- **GTM OS**: [thegtmos.ai](https://thegtmos.ai)
+- **Content OS**: [thecontentos.ai](https://thecontentos.ai)
+- **LinkedIn**: [linkedin.com/in/shawntenam](https://linkedin.com/in/shawntenam)
+- **X / Twitter**: [x.com/shawntenam](https://x.com/shawntenam)
+- **Reddit**: [r/GTMBuilders](https://reddit.com/r/GTMBuilders)
+- **Substack**: [shawntenam.substack.com](https://shawntenam.substack.com)
+
 ---
 
-Built by [Shawn Tenam](https://shawnos.ai) — shipping in public, one commit at a time.
+Built by [Shawn Tenam](https://shawnos.ai) — GTM engineer, shipping in public, one commit at a time.

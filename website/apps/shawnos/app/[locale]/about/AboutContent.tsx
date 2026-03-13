@@ -46,6 +46,7 @@ export function AboutContent() {
   const socials = [
     { label: t('connect.linkedin'), url: 'https://linkedin.com/in/shawntenam' },
     { label: t('connect.xTwitter'), url: 'https://x.com/shawntenam' },
+    { label: t('connect.reddit'), url: 'https://reddit.com/r/GTMBuilders' },
     { label: t('connect.substack'), url: 'https://shawntenam.substack.com' },
     { label: t('connect.github'), url: 'https://github.com/shawnla90' },
   ]

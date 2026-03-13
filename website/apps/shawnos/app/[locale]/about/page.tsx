@@ -15,28 +15,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t('metadata.title'),
     description: t('metadata.description'),
     keywords: [
+      'Shawn Tenam',
+      'Shawn Tenam GTM engineer',
       'GTM engineer',
+      'go-to-market engineer',
+      'Clay certified creator',
+      'Clay practitioner',
       'revenue operations engineer',
       'GTM systems architect',
       'go-to-market automation',
-      'sales operations engineer',
       'AI-native development',
-      'monorepo builder',
-      'Clay HubSpot automation',
-      'outbound pipeline engineering',
-      'Cursor IDE developer',
+      'independent GTM consultant',
+      'Lead Alchemy',
     ],
     alternates: { canonical: 'https://shawnos.ai/about' },
     openGraph: {
       title: t('metadata.ogTitle'),
       description: t('metadata.ogDescription'),
       url: 'https://shawnos.ai/about',
-      images: [{ url: '/og?title=About&subtitle=GTM+Engineer.+Builder.+Shipped+from+a+monorepo.', width: 1200, height: 630 }],
+      images: [{ url: '/og?title=Shawn+Tenam&subtitle=GTM+Engineer.+Independent.+Clay+Certified+Creator.', width: 1200, height: 630 }],
     },
     twitter: {
       title: t('metadata.ogTitle'),
       description: t('metadata.ogDescription'),
-      images: ['/og?title=About&subtitle=GTM+Engineer.+Builder.+Shipped+from+a+monorepo.'],
+      images: ['/og?title=Shawn+Tenam&subtitle=GTM+Engineer.+Independent.+Clay+Certified+Creator.'],
     },
   }
 }
@@ -45,9 +47,37 @@ export default async function AboutPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Shawn Tenam',
+    jobTitle: 'GTM Engineer',
+    url: 'https://shawnos.ai',
+    sameAs: [
+      'https://linkedin.com/in/shawntenam',
+      'https://x.com/shawntenam',
+      'https://github.com/shawnla90',
+      'https://reddit.com/r/GTMBuilders',
+      'https://shawntenam.substack.com',
+      'https://thegtmos.ai',
+      'https://thecontentos.ai',
+    ],
+    knowsAbout: [
+      'Go-to-market engineering',
+      'Clay data enrichment',
+      'Sales pipeline automation',
+      'AI-native development',
+      'Content operating systems',
+    ],
+  }
+
   return (
     <>
-      <BreadcrumbSchema items={[{ name: 'About', url: 'https://shawnos.ai/about' }]} />
+      <BreadcrumbSchema items={[{ name: 'About Shawn Tenam', url: 'https://shawnos.ai/about' }]} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <AboutContent />
     </>
   )

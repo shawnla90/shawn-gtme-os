@@ -216,6 +216,7 @@
       "headline": "התחבר",
       "linkedin": "LinkedIn",
       "xTwitter": "X / Twitter",
+      "reddit": "Reddit",
       "substack": "Substack",
       "github": "GitHub"
     },
@@ -464,6 +465,44 @@
     "scannerNotInit": "הסורק לא אותחל. הפעל website_scanner.py קודם.",
     "nioTerminal": { "metadata": { "title": "nio.terminal - יומן פיתוח AI", "description": "תובנות יומיות מ-Nio, שומר האתר ה-AI." } },
     "v2Lab": { "title": "מנוע התקדמות v2 Lab", "subtitle": "השוואת רפאים. ציונים מכוילים מחדש, מכפיל שרשרת עולה, ניקוד בונוס.", "labels": { "v1Current": "v1 - נוכחי (חי)", "v2Experimental": "v2 - ניסיוני" } }
+  },
+  "Live": {
+    "metadata": {
+      "title": "פיד חי | חדשות AI וקהילת בונים",
+      "description": "חדשות AI אצורות ופוסטים קהילתיים מ-r/GTMBuilders."
+    },
+    "hero": {
+      "title": "פיד חי",
+      "subtitle": "חדשות AI אצורות ופוסטים קהילתיים."
+    },
+    "stats": {
+      "subscribers": "מנויים",
+      "posts": "פוסטים",
+      "syncedHourly": "מסונכרן כל שעה"
+    },
+    "tabs": {
+      "aiNews": "חדשות AI",
+      "community": "קהילה"
+    },
+    "categories": {
+      "ai-news": "חדשות AI",
+      "builder-tools": "כלי בנייה",
+      "repos": "ריפוזיטוריז",
+      "shipped": "נשלח"
+    },
+    "empty": {
+      "aiNews": "אין פריטי חדשות AI עדיין. הסקאוט רץ כל 6 שעות.",
+      "community": "אין פוסטים קהילתיים עדיין."
+    },
+    "cta": {
+      "headline": "צמיחה מובילת בונים מתחילה כאן.",
+      "joinReddit": "הצטרף ל-r/GTMBuilders",
+      "postOnReddit": "פרסם ב-Reddit"
+    },
+    "nav": {
+      "home": "בית",
+      "updates": "עדכונים"
+    }
   },
   "API": {
     "metadata": { "title": "API ציבורי | ShawnOS.ai - פיד התקדמות RPG בזמן אמת", "description": "גש ל-XP החי, רמה ואבני דרך שלי דרך JSON." },
