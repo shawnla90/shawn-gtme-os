@@ -2,8 +2,9 @@ import type { Locale, WebDevTranslations } from './types'
 import { en } from './en'
 import { he } from './he'
 import { es } from './es'
+import { zh } from './zh'
 
-const translations: Partial<Record<Locale, WebDevTranslations>> = { en, he, es }
+const translations: Record<Locale, WebDevTranslations> = { en, he, es, zh }
 
 export const VALID_LOCALES: Locale[] = ['he', 'es', 'zh']
 
