@@ -68,6 +68,7 @@ const localeMap: Record<string, string> = {
   en: 'en-US',
   es: 'es-ES',
   he: 'he-IL',
+  zh: 'zh-CN',
 }
 
 function formatDate(dateStr: string, locale = 'en'): string {
