@@ -21,6 +21,11 @@ html body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* === Chinese font override === */
+[lang="zh"] body {
+  font-family: var(--font-chinese), var(--font-mono);
+}
+
 /* Main gutters — pages keep padding, homepage sections break out */
 main {
   padding: 0 24px;
@@ -429,6 +434,58 @@ html {
 
 .scroll-indicator {
   animation: bounce-down 2s ease-in-out infinite;
+}
+
+/* === Live feed pulse animation === */
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+  50% { opacity: 0.8; box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: live-pulse 2s ease-in-out infinite;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* === Live feed sticky tabs === */
+.live-tabs {
+  position: sticky;
+  top: 48px;
+  z-index: 50;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--canvas) 85%, transparent);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 0;
+  margin: 0 -24px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (max-width: 768px) {
+  .live-tabs {
+    margin: 0 -16px;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* === Live feed news card hover === */
+.live-news-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.live-news-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent) 15%, transparent);
 }
 
 /* === Nio avatar glow (follows visible pixels via drop-shadow) === */

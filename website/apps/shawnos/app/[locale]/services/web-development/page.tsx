@@ -20,12 +20,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     en: 'Web Development Services',
     he: 'שירותי פיתוח אתרי אינטרנט',
     es: 'Servicios de Desarrollo Web',
+    zh: '网站开发服务',
   }
 
   const localeDesc: Record<Locale, string> = {
     en: 'Custom websites for service businesses starting at $3,500. Sites that load in under 1 second, rank on Google, and show you exactly where your next customer came from. Multi-language support available.',
     he: 'אתרים מותאמים אישית לעסקי שירותיים החל מ-$3,500. אתרים שנטענים בפחות משנייה, מדורגים ב-Google, ומראים לכם בדיוק מאיפה הגיע הלקוח הבא.',
     es: 'Sitios web personalizados para negocios de servicios desde $3,500. Sitios que cargan en menos de 1 segundo, aparecen en Google y le muestran exactamente de dónde vino su próximo cliente.',
+    zh: '为服务型企业定制网站，起价$3,500。加载速度不到1秒，在Google上获得排名，并精确追踪您的下一个客户来源。支持多语言。',
   }
 
   return {
@@ -132,6 +134,7 @@ export default async function WebDevPage({ params }: Props) {
     en: { service: 'Services', page: 'Web Development' },
     he: { service: 'שירותים', page: 'פיתוח אתרי אינטרנט' },
     es: { service: 'Servicios', page: 'Desarrollo Web' },
+    zh: { service: '服务', page: '网站开发' },
   }
 
   return (
