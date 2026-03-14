@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-14T15:01:07.412215+00:00",
+  "lastUpdated": "2026-03-14T16:01:24.417353+00:00",
   "posts": [
     {
       "id": "1rt9x4o",
@@ -37,7 +37,7 @@
       "id": "1rt2jp4",
       "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price.",
       "author": "Shawntenam",
-      "score": 4,
+      "score": 5,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rt2jp4/claude_code_just_dropped_1m_context_window_and_im/",
       "selftext": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --&gt; 1M tokens. same Opus 4.6 model. same Max subscription. no price increase.\n\nif you've been building with this thing daily, \n\nyou know exactly why this is massive. context compaction was THE bottleneck. you're deep in a build, agent is cooking, and then it starts forgetting what\n\nfiles it already read. you re-explain your\n\narchitecture for the third time. momentum gone.\n\nthat whole era just ended.\n\nI run a monorepo with 3 Next.js apps, i18n in 3 languages, full GTM ops layer, automation scripts.\n\nbefore today the agent could barely hold one app in\n\nits head at a time. just tested the new window and it\n\nreasoned across the ENTIRE system in one session. no\n\ncompaction. no re-explaining. no babysitting.\n\n\n\nseriously now we can.\n\n\\- spec to deploy in a single session \n\n\\- debugging that traces through your whole stack\n\nwithout losing what it found 20 minutes ago\n\n\\- hand off a big task, walk away, come back to finished work\n\n\\- the agent actually remembers its own mistakes and\n\nstops repeating them\n\n\n\nit's Friday.what are you building with this new context window??. full breadown in my [blog](https://shawnos.ai/blog/claude-code-1m-context-window)",
@@ -53,7 +53,7 @@
       "id": "1rsgc55",
       "title": "My rookie project",
       "author": "Spare-Combination-63",
-      "score": 7,
+      "score": 6,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rsgc55/my_rookie_project/",
       "selftext": "Hey everyone! Super nervous to post this but here goes, this is literally my first project that I've ever pushed to GitHub, so please be kind lol.\n\nI built an AI-powered tool that lets you research any professional and pulls together their career trajectory, articles they've written, media presence, LinkedIn highlights, and more all in one place. The idea came from the frustration of having to jump between 5 different tabs just to get a basic picture of someone before a meeting or interview.\n\nGitHub:\u00a0[https://github.com/atifirshad21/individual-info-in-one-place](https://github.com/atifirshad21/individual-info-in-one-place)\n\nI'm calling this my rookie project, it's rough around the edges and the README is pretty bare bones right now, but feel free to make this better. \n\nWould love any feedback,\n\nThanks for checking it out!",
@@ -185,8 +185,8 @@
   },
   "userProfile": {
     "name": "Shawntenam",
-    "totalKarma": 838,
-    "linkKarma": 262,
+    "totalKarma": 839,
+    "linkKarma": 263,
     "commentKarma": 576
   }
 }
