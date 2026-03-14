@@ -1,0 +1,550 @@
+{
+  "Nav": {
+    "home": "首页",
+    "services": "服务",
+    "blog": "博客",
+    "media": "媒体",
+    "about": "关于",
+    "wiki": "百科",
+    "knowledge": "知识库",
+    "howTo": "操作指南",
+    "clayWiki": "Clay Wiki",
+    "contentWiki": "Content Wiki",
+    "contextWiki": "Context Wiki",
+    "geoWiki": "GEO Wiki",
+    "more": "更多",
+    "log": "日志",
+    "rpg": "RPG",
+    "vitals": "系统状态",
+    "method": "方法论",
+    "showcase": "组件展示",
+    "updates": "更新",
+    "search": "搜索",
+    "api": "API",
+    "repos": "代码仓库"
+  },
+  "Footer": {
+    "copyright": "© {year} ShawnOS.ai",
+    "allRights": "保留所有权利。",
+    "newsletter": "订阅通讯",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "github": "GitHub",
+      "substack": "Substack"
+    }
+  },
+  "Common": {
+    "readMore": "阅读更多",
+    "backToHome": "返回首页",
+    "loading": "加载中...",
+    "error": "出了点问题",
+    "notFound": "页面未找到",
+    "language": "语言",
+    "english": "English",
+    "hebrew": "עברית",
+    "spanish": "Español",
+    "scroll": "滚动"
+  },
+  "Home": {
+    "metadata": {
+      "title": "ShawnOS.ai | GTM 工程，公开构建",
+      "description": "一个代码仓库。一个操作系统。每个技能、文章和营销活动都在同一个代码库中运行。"
+    },
+    "hero": {
+      "titleLine1": "GTM 工程，",
+      "titleLine2": "公开构建",
+      "subtitle": "一个代码仓库。一个操作系统。每个技能、文章和营销活动都在同一个代码库中运行。",
+      "ctaBlog": "阅读博客",
+      "ctaAbout": "关于"
+    },
+    "stats": {
+      "websites": "网站",
+      "aiAgents": "AI 智能体",
+      "knowledgeEntries": "知识库条目",
+      "videoCompositions": "视频作品",
+      "blogPosts": "博客文章"
+    },
+    "method": {
+      "headline": "方法论",
+      "subtitle": "一切是怎么构建的",
+      "explore": { "title": "探索", "description": "审视全局。找出漏斗在哪泄漏、有哪些内容空白、以及哪里可以用自动化取代手动操作。" },
+      "plan": { "title": "计划", "description": "规划构建顺序。确定这周发布什么、什么能长期复利、什么该砍掉。" },
+      "build": { "title": "构建", "description": "交付真正的基础设施。写管道代码，写内容，接通自动化。每一块都在同一个代码仓库里。" },
+      "ship": { "title": "发布", "description": "推到生产环境。每次提交都部署。每篇文章都发布。没有暂存炼狱 - 构建、测试、发布。" },
+      "compound": { "title": "复利", "description": "让它叠加。SEO 复利增长。内容库不断扩充。自动化在你睡觉时运行。系统每天都在变强。" }
+    },
+    "darkInterlude": {
+      "title": "一个代码仓库。所有东西都从这里发布。",
+      "subtitle": "三个网站。AI 智能体。内容管道。GTM 自动化。全部版本控制。"
+    },
+    "latestPosts": {
+      "headline": "最新文章",
+      "subtitle": "最近发布的内容",
+      "viewAll": "查看所有文章"
+    },
+    "latestLog": {
+      "headline": "最新日志",
+      "subtitle": "今天的构建日志",
+      "viewAll": "查看所有日志"
+    },
+    "faq": {
+      "headline": "常见问题",
+      "subtitle": "常见问题解答",
+      "q1": {
+        "question": "什么是 GTM 工程？",
+        "answer": "GTM 工程是用代码构建市场推广系统的实践。不再需要在 CRM 和电子表格里点来点去，而是编写管道、自动化外呼、构建数据增强工作流、发布内容系统 - 全部版本控制、可组合。",
+        "link": "探索 GTM 实战手册"
+      },
+      "q2": {
+        "question": "什么是 ShawnOS？",
+        "answer": "ShawnOS 是一个单一代码仓库，运行着我整个职业操作系统。",
+        "answerCont": "三个网站、一个成长引擎、AI 智能体、内容管道和 GTM 工具 - 全在一个代码库里。这是一个把职业生涯当软件产品来运营的实验。",
+        "linkShowcase": "三个网站",
+        "linkRpg": "成长引擎"
+      },
+      "q3": {
+        "question": "为什么要公开构建？",
+        "answer": "公开构建把你的学习过程变成内容，把你的提交变成工作证明，把你的失败变成别人可以学习的教训。它会复利增长 - 每篇文章、每次更新、每个发布的功能都是永久的凭证，随着时间积累信任。",
+        "link": "查看构建日志"
+      },
+      "q4": {
+        "question": "这个系统用的什么技术栈？",
+        "answer": "TypeScript 单仓库，用 Next.js（3 个站点部署在 Vercel），Python 做脚本和内容生成，Claude AI 做智能体层，launchd 定时任务做自动化。所有东西从一个 git 仓库发布。",
+        "link": "查看完整技术栈"
+      },
+      "q5": {
+        "question": "我能把这种方法用在自己的职业上吗？",
+        "answer": "当然可以。核心理念 - 把你的职业当产品、每天产出成果、尽可能自动化、让一切复利增长 - 适用于任何领域。你不需要这个确切的技术栈。你需要的是系统化、可见产出的思维方式。",
+        "link": "开始构建"
+      },
+      "q6": {
+        "question": "成长引擎是什么？",
+        "answer": "一个游戏化层，追踪真实的日常产出 - 博客文章、代码提交、发布的功能 - 并将它们转化为 XP。你通过 11 个等级不断升级，伴随着不断进化的像素风头像。这不是装饰；它反映的是实际完成的工作。",
+        "link": "查看等级体系"
+      }
+    },
+    "caseStudies": {
+      "headline": "案例研究",
+      "subtitle": "来自单仓库的精选项目",
+      "threeSiteNetwork": { "title": "三站网络", "description": "一个单仓库驱动 ShawnOS.ai、theGTMOS.ai 和 theContentOS.ai。共享组件，共享数据层，独立部署。" },
+      "aiContentPipeline": { "title": "AI 内容管道", "description": "使用 Claude + SEO 关键词研究 + 自动发布的自动化博客生成。通过每日定时任务运行，生成草稿供人工审核。" },
+      "progressionEngine": { "title": "成长引擎", "description": "11 级 RPG 系统，将真实工作产出游戏化。像素风头像根据每日提交和发布内容获得的 XP 进化。" },
+      "missionControl": { "title": "任务控制台", "description": "用于监控所有系统的内部仪表盘 - 智能体状态、内容管道、SEO 指标和团队协作。" }
+    },
+    "asHeardOn": "曾出现在",
+    "allAppearances": "所有出场",
+    "workTogether": {
+      "heading": "想一起合作吗？",
+      "bookCall": "预约通话",
+      "textMe": "给我发消息",
+      "evaluateStack": "评估你的 GTM 技术栈"
+    },
+    "systemStatus": {
+      "heading": "系统状态",
+      "allOperational": "> 所有系统运行正常_",
+      "bootLines": {
+        "contentEngine": "内容引擎 ... 在线",
+        "threeSiteNetwork": "三站网络 ... 已同步",
+        "gtmEngine": "GTM 引擎 ... theGTMOS.ai",
+        "contentOs": "内容操作系统 ... theContentOS.ai",
+        "cursorAgent": "cursor 智能体 ... 激活",
+        "blogPipeline": "博客管道 ... 已挂载",
+        "buildInPublic": "公开构建模式 ... 已启动",
+        "dailyTracker": "每日追踪器 ... 运行中"
+      }
+    },
+    "builtWith": { "label": "技术栈", "fullStack": "完整技术栈" },
+    "chooseYourPath": {
+      "heading": "选择你的路径",
+      "contentSystems": { "label": "在构建内容系统？", "text": "theContentOS.ai" },
+      "gtmPipelines": { "label": "在构建 GTM 管道？", "text": "theGTMOS.ai" },
+      "stackAudit": { "label": "需要 GTM 技术栈审计？", "text": "获取评估" },
+      "readBlog": { "label": "想看看它怎么运作？", "text": "阅读博客" },
+      "showcase": { "label": "想看看组件？", "text": "组件展示" }
+    },
+    "liveUpdates": {
+      "showUpdates": "显示更新",
+      "dismissUpdates": "关闭更新",
+      "updatesHeading": "更新",
+      "minimize": "最小化",
+      "updateCount": "{count} 条更新",
+      "updateCountPlural": "{count} 条更新"
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "Shawn Tenam | GTM 工程师",
+      "description": "Shawn Tenam - GTM 工程师，从单一代码仓库构建 AI 原生管道、Clay 工作流和内容系统。独立顾问，Clay 认证创作者。",
+      "ogTitle": "Shawn Tenam | GTM 工程师",
+      "ogDescription": "GTM 工程师，构建 AI 原生管道、Clay 工作流和内容系统。独立顾问，Clay 认证创作者。"
+    },
+    "hero": {
+      "title": "关于",
+      "titleAccent": "Shawn Tenam",
+      "subtitle": "GTM 工程师。独立工作者。Clay 认证创作者。从单仓库构建 AI 原生管道。"
+    },
+    "identity": {
+      "headline": "身份",
+      "subtitle": "谁在构建这一切",
+      "paragraph": "我构建 AI 原生管道、智能体驱动的工作流，以及能产生复利效应的内容系统。每个技能、每篇文章、每个营销活动都通过同一个代码库运行。你现在看的这个网站就是工作证明。"
+    },
+    "techStack": {
+      "headline": "技术栈",
+      "subtitle": "系统背后的工具",
+      "categories": { "framework": "框架", "infrastructure": "基础设施", "aiMedia": "AI 与媒体" },
+      "items": {
+        "nextjs": { "label": "Next.js", "description": "全栈 React 框架" },
+        "react": { "label": "React", "description": "UI 组件库" },
+        "typescript": { "label": "TypeScript", "description": "类型安全的 JavaScript" },
+        "tailwind": { "label": "Tailwind", "description": "实用优先的 CSS 框架" },
+        "vercel": { "label": "Vercel", "description": "边缘部署平台" },
+        "turborepo": { "label": "Turborepo", "description": "单仓库构建编排器" },
+        "cloudflare": { "label": "Cloudflare", "description": "CDN 和 DNS 管理" },
+        "sqlite": { "label": "SQLite", "description": "本地数据持久化" },
+        "remotion": { "label": "Remotion", "description": "编程式视频引擎" },
+        "claude": { "label": "Claude (AI)", "description": "推理与代码引擎" }
+      }
+    },
+    "network": {
+      "headline": "站点网络",
+      "subtitle": "三个网站，一个代码仓库",
+      "description": "shawnos.ai 是三站系统中的一个节点。每个站点拥有技术栈的一个领域。",
+      "gtmos": { "label": "theGTMOS.ai", "description": "GTM 操作系统。市场推广工程的框架、实战手册和实时构建。" },
+      "contentos": { "label": "theContentOS.ai", "description": "内容操作系统。语音优先发布、内容再利用管道和内容即代码。" }
+    },
+    "connect": {
+      "headline": "联系方式",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "reddit": "Reddit",
+      "substack": "Substack",
+      "github": "GitHub"
+    },
+    "showcaseCta": {
+      "title": "查看组件实际运行效果",
+      "description": "终端 UI、动画、RPG 引擎、视频生成的实时演示。",
+      "button": "组件展示"
+    },
+    "arcCta": {
+      "title": "想了解完整故事？",
+      "description": "管道工。销售代表。GTM 工程师。成长历程、核心论点，以及为什么要做三个域名。",
+      "button": "阅读成长弧线"
+    }
+  },
+  "AboutArc": {
+    "metadata": {
+      "title": "成长弧线",
+      "description": "管道工。销售代表。GTM 工程师。shawnos.ai 和操作系统背后的完整故事。",
+      "ogTitle": "成长弧线 | shawnos.ai",
+      "ogDescription": "管道工。销售代表。GTM 工程师。完整的成长弧线。"
+    },
+    "hero": { "title": "成长弧线", "subtitle": "管道工。销售代表。GTM 工程师。" },
+    "intro": {
+      "line1": "每个 GTM 创作者都有同样的关于页面。",
+      "quote": "\"我以前做销售代表。后来发现了 Clay。现在我教别人怎么用它。\"",
+      "line2": "很好。这是我的故事。",
+      "line3": "但我的故事从铜管和喷灯开始。"
+    },
+    "layers": {
+      "heading": "三个层次",
+      "description": "我不是从销售代表直线走到 GTM 工程师的。我经历了三个层次，每一个都重塑了我对构建的理解。",
+      "whatItTaughtMe": "它教会我的：",
+      "plumber": { "title": "管道工", "subtitle": "第一层", "body": "进入科技行业之前，我是个管道工。不是比喻。真正的管道工。通过听墙壁诊断问题，追踪没人愿意碰的管道，在没有文档的情况下在压力下修复系统。", "lesson": "每个系统都有它的逻辑。跟着水流走。如果上游出了问题，下游一切都会崩溃。而且没人会尊重你的修复，直到水不再漏了。" },
+      "sdr": { "title": "销售代表", "subtitle": "第二层", "body": "每天 200+ 封冷邮件。主域名，不做预热，SalesLoft 序列，手动在 Salesforce 记录活动。在没人想要的客户里从零开始建立采购委员会。", "lesson": "数量是老师。拒绝是数据。那些手动磨出来的做外呼的人，才是后来真正理解什么该自动化的人。" },
+      "gtmEngineer": { "title": "GTM 工程师", "subtitle": "第三层", "body": "我不再在系统内工作，而是开始构建系统。Clay 表格，HubSpot 自动化，Instantly 序列，网站访客识别工作流，数据增强管道。以前手动做的活，现在跑在我设计的基础设施上。", "lesson": "最好的构建者是那些在自动化之前亲手做过这份工作的人。你无法工程化你不理解的东西。" },
+      "conclusion": "这些都不能定义我。但它们都磨砺了我的产出。"
+    },
+    "thesis": {
+      "heading": "核心论点",
+      "bold": "这不是氛围编程。",
+      "p1": "我不是随便提示一下就发布生成的东西。我在写一行代码之前先用计划模式。出了问题就用提问模式。用子智能体做并行工作。我测试，我搞崩，我读错误日志，我修复，我发布。",
+      "p2": "AI 不会替你做工作。它加速的是你已经理解的工作。",
+      "p3": "这个网站的每一页都是迭代出来的，不是生成的。每个技能在文档化之前都调试过。每个营销模板在变成实战手册之前都在真实管道上测试过。",
+      "p4": "这个仓库有超过 400 个文件。没有一个是一次性提示的产物。"
+    },
+    "threeSites": {
+      "heading": "三个网站，一个系统",
+      "description": "这不是虚荣。这是架构。",
+      "shawnos": { "name": "shawnos.ai", "description": "构建者。个人操作系统。每日追踪、RPG 成长、头像系统、API 层。基础设施就在这里。" },
+      "gtmos": { "name": "thegtmos.ai", "description": "实战手册。GTM 工程框架、工作流拆解、营销活动架构。管道生成背后的系统。" },
+      "contentos": { "name": "thecontentos.ai", "description": "语音引擎。内容即代码发布、语音 DNA、内容再利用管道。文字如何生产，去往何处。" },
+      "footer": "三个域名。一个代码仓库。每一页、每一个 API 路由、每一张生成的图片都来自同一个代码库。这里没有偶然。"
+    },
+    "buildWithMe": {
+      "heading": "和我一起构建",
+      "description": "这不是一个用来看的作品集。这是一个你可以 fork 的系统。",
+      "theApi": { "label": "API", "description": "接口、数据结构、实时数据" },
+      "questBoard": { "label": "任务板", "description": "给构建者的挑战" },
+      "buildYourOwn": { "label": "自己构建", "description": "入门提示词" },
+      "skillGuide": { "label": "技能指南", "description": "RPG 系统怎么运作" }
+    },
+    "connect": {
+      "heading": "联系方式",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "substack": "Substack",
+      "github": "GitHub",
+      "backToAbout": "返回关于页"
+    }
+  },
+  "Blog": {
+    "metadata": { "title": "博客", "description": "来自 shawnos.ai 构建日志的文章。GTM 工程，公开构建。" },
+    "hero": { "title": "博客", "subtitle": "来自构建日志的文章。" },
+    "emptyState": "暂无文章。请稍后查看。",
+    "featured": "精选",
+    "readMore": "阅读更多",
+    "minRead": "{minutes} 分钟阅读",
+    "backToBlog": "返回博客",
+    "toc": "$ 目录"
+  },
+  "Media": {
+    "metadata": { "title": "媒体 | 播客、访谈与公开亮相", "description": "Shawn Tenam 的播客、访谈、论坛和演讲活动。" },
+    "hero": { "title": "媒体", "subtitle": "播客、访谈和公开亮相" },
+    "stats": { "appearances": "亮相次数", "platforms": "平台数", "latest": "最新" },
+    "sections": { "featured": "精选", "allAppearances": "所有亮相" },
+    "categories": { "podcast": "播客", "interview": "访谈", "panel": "论坛", "speaking": "演讲", "article": "文章" },
+    "backlink": { "heading": "致播客主持人和媒体：", "body": "请在节目笔记中链接到 {url}。" },
+    "nav": { "home": "首页", "about": "关于" }
+  },
+  "Method": {
+    "metadata": { "title": "方法论", "description": "递归漂移。用 AI 构建的非线性方法。六个状态，没有固定顺序，输出反馈为输入。" },
+    "hero": { "title": "递归漂移", "subtitle": "用 AI 构建的非线性方法。" },
+    "intro": { "heading": "递归漂移。", "tagline": "用 AI 构建的非线性方法。" },
+    "states": {
+      "sectionTitle": "状态",
+      "sectionSubtitle": "带反馈循环的状态机",
+      "inPractice": "实践中：",
+      "freefall": { "name": "自由落体", "tag": "探索" },
+      "plan": { "name": "计划", "tag": "具体化" },
+      "build": { "name": "构建", "tag": "委托" },
+      "break": { "name": "中断", "tag": "重定向" },
+      "ask": { "name": "提问", "tag": "质询" },
+      "seed": { "name": "播种", "tag": "种下" }
+    },
+    "recursive": { "sectionTitle": "递归", "sectionSubtitle": "输出反馈为输入" },
+    "antiPatterns": { "sectionTitle": "这不是什么" },
+    "contrasts": { "sectionTitle": "它的不同之处" },
+    "paradox": { "sectionTitle": "悖论" },
+    "seeItRunning": {
+      "sectionTitle": "看它运行",
+      "links": {
+        "fieldGuide": { "label": "实战指南", "desc": "递归漂移应用于测试新 AI 功能" },
+        "arc": { "label": "成长弧线", "desc": "一切从这里开始。管道工、销售代表、GTM 工程师" },
+        "log": { "label": "日志", "desc": "循环中的日常产出" },
+        "blog": { "label": "博客", "desc": "系统产出的长文内容" },
+        "api": { "label": "API", "desc": "接口、数据结构、实时数据" }
+      }
+    },
+    "backToAbout": "返回关于页"
+  },
+  "Knowledge": {
+    "metadata": { "title": "知识库指南 | 你真正需要的工程与 AI 术语", "description": "Git、Vercel、AI 智能体、定时任务，以及你需要知道的技术术语。" },
+    "breadcrumb": "知识库",
+    "termPage": {
+      "notFoundMessage": "未找到该术语。试试",
+      "notFoundLink": "知识库指南",
+      "sections": { "whyItMatters": "为什么重要", "howYouUseIt": "你怎么用它", "howIUseIt": "我怎么用它", "relatedTerms": "相关术语", "goDeeper": "深入了解" },
+      "nav": { "backToEngineering": "工程与 AI 指南", "backToGtm": "GTM 知识库指南", "allTerms": "所有术语" }
+    },
+    "guidePage": {
+      "toc": "本页内容",
+      "mobileToc": "目录",
+      "fieldLabels": { "whyItMatters": "为什么重要", "howYouUseIt": "你怎么用它", "related": "相关：" },
+      "outro": { "title": "氛围编程工具包", "closingLine": "去构建点什么吧。", "cta": { "title": "想看 GTM 方面的？", "buttonText": "GTM OS 知识库指南" } },
+      "nav": { "left": "首页", "right": "GTM OS 指南" }
+    }
+  },
+  "HowTo": {
+    "metadata": { "title": "操作指南 Wiki | AI 工具实践者指南", "description": "Cursor IDE、Claude Code、MCP 服务器、并行智能体、成本管理和 AI 安全的分步指南。" },
+    "breadcrumb": { "knowledge": "知识库", "howToWiki": "操作指南 Wiki" },
+    "hubPage": {
+      "title": "操作指南 Wiki",
+      "description": "AI 工具实践者指南。",
+      "badge": "AI 工程实践者",
+      "stats": { "guides": "指南数", "categories": "分类数", "onThisSite": "本站内容" },
+      "mobileToc": "分类",
+      "toc": { "heading": "分类", "legend": "图例", "localEntry": "本站条目", "crossSite": "跨站" },
+      "nav": { "left": "知识库指南", "right": "Clay Wiki" }
+    },
+    "entryPage": {
+      "notFoundMessage": "未找到该条目。试试",
+      "notFoundLink": "操作指南 Wiki",
+      "sectionTypes": { "pattern": "模式", "code": "代码", "antiPattern": "反模式", "proTip": "专业技巧", "formula": "公式" },
+      "sections": { "relatedGuides": "相关指南" },
+      "nav": { "left": "操作指南 Wiki", "right": "知识库指南" }
+    }
+  },
+  "ContextWiki": {
+    "metadata": { "title": "上下文工程 Wiki | 实践者指南", "description": "面向 GTM 工程师的上下文工程实践者指南。" },
+    "hero": { "title": "上下文工程", "subtitle": "给 AI 正确的上下文。别再猜了。" },
+    "stats": { "wikiEntries": "Wiki 条目", "categories": "分类", "skillsBuilt": "已构建技能" },
+    "badge": "上下文工程师",
+    "nav": { "knowledgeGuide": "知识库指南", "clayWiki": "Clay Wiki" },
+    "entry": { "notFoundMessage": "未找到该条目。试试", "notFoundLink": "上下文 Wiki", "relatedLabel": "相关条目", "navBackToWiki": "上下文 Wiki", "navToKnowledge": "知识库指南" },
+    "sectionTypes": { "pattern": "模式", "code": "代码", "antiPattern": "反模式", "proTip": "专业技巧", "formula": "公式" }
+  },
+  "Search": {
+    "metadata": { "title": "搜索", "description": "搜索 shawnos.ai 上的所有内容。" },
+    "hero": { "title": "搜索", "subtitle": "在 shawnos.ai 上搜索任何内容。" },
+    "input": { "placeholder": "搜索所有内容...", "clear": "清除" },
+    "hint": { "startTyping": "开始输入以搜索。" },
+    "results": { "noResults": "未找到 \"{query}\" 的相关结果", "resultCount": "{count} 条结果" },
+    "types": { "howTo": "操作指南", "knowledge": "知识库", "contextWiki": "上下文 Wiki", "clayWiki": "Clay Wiki", "contentWiki": "Content Wiki", "blog": "博客", "dailyLog": "每日日志" }
+  },
+  "Updates": {
+    "metadata": { "title": "最新更新 | ShawnOS.ai 的新动态", "description": "shawnos.ai 上每一篇新文章、Wiki 条目、功能和系统更新。" },
+    "hero": { "title": "更新", "subtitle": "所有已发布的内容，汇聚一处。" },
+    "stats": { "recentUpdates": "最近更新", "featuresShipped": "已发布功能", "categories": "分类" },
+    "rss": { "badge": "RSS 订阅" },
+    "sections": { "featuresAndLaunches": "功能与发布", "allContent": "所有内容" },
+    "featureTypes": { "launch": "发布", "feature": "功能", "integration": "集成", "infrastructure": "基础设施" },
+    "feed": { "all": "全部", "searchPlaceholder": "搜索标题、描述...", "clear": "清除", "clearAll": "全部清除", "noResultsForQuery": "未找到 \"{query}\" 的相关结果。", "noResultsForFilters": "当前筛选条件下没有结果。", "reset": "重置" },
+    "nav": { "home": "首页", "rssFeed": "RSS 订阅" }
+  },
+  "Showcase": {
+    "metadata": { "title": "组件展示", "description": "驱动 shawnos.ai 的 React 组件、动画系统和 RPG 引擎的实时演示。" },
+    "hero": { "title": "组件展示", "subtitle": "每个系统的实时演示。" },
+    "terminalUi": { "title": "终端 UI", "description": "在所有页面使用的自定义终端界面。" },
+    "animationSystem": { "title": "动画系统", "description": "两个纯 React 动画原语。" },
+    "rpgEngine": { "title": "RPG 成长引擎", "description": "XP 来自真实的日常工作。" },
+    "videoGeneration": { "title": "视频生成", "description": "40+ Remotion 视频作品。" },
+    "contentPipeline": { "title": "内容管道", "description": "Markdown 文件在构建时变成博客文章、Wiki 页面和 RSS 订阅。" },
+    "cta": { "headline": "公开构建。每次提交都被追踪。", "description": "关注每日日志，看每个系统是怎么构建的。", "readTheLog": "阅读日志", "about": "关于" }
+  },
+  "Log": {
+    "metadata": { "title": "每日构建日志", "description": "来自 GTM 操作系统的每日构建日志。" },
+    "index": {
+      "heroTitle": "构建日志",
+      "heroSubtitle": "每日工作证明。",
+      "viewProgression": "查看成长进度",
+      "exploreSkillGuide": "探索技能指南",
+      "buildYourOwnCTA": "想自己构建一个？获取提示词。",
+      "searchPlaceholder": "按日期搜索...",
+      "gradeFilterAll": "全部",
+      "noLogsFound": "暂无日志。请稍后查看。",
+      "noLogsMatch": "没有匹配当前筛选条件的日志。"
+    },
+    "detail": { "backToLogs": "返回日志", "logNotFound": "未找到 {date} 的日志。" },
+    "buildYourOwn": {
+      "metadata": { "title": "构建你自己的每日追踪器", "description": "一个可复制粘贴的提示词，用于构建你自己的 AI 原生每日活动追踪器。" },
+      "heroTitle": "自己构建", "heroSubtitle": "每日工作清单背后的提示词。",
+      "thePrompt": "提示词", "copyPrompt": "复制提示词", "copied": "已复制！", "backToLog": "返回日志"
+    },
+    "progression": {
+      "metadata": { "title": "角色成长", "description": "XP 增长、评分趋势、连续奖励倍率、里程碑和代币效率。" },
+      "heroTitle": "成长进度", "heroSubtitle": "XP、评分与升级。", "backToLogs": "返回日志",
+      "xpEarnedPerDay": "每日获得 XP", "scoringLog": "评分日志",
+      "tableHeaders": { "date": "日期", "score": "分数", "grade": "评分", "commits": "提交数" },
+      "currentClass": "当前职阶", "milestones": "里程碑", "tokenEfficiency": "代币效率", "totalSpend": "总花费", "avgPerDay": "日均"
+    },
+    "quests": { "metadata": { "title": "任务板 | 给构建者的挑战", "description": "五个挑战，帮你构建自己的每日追踪器等。" }, "heroTitle": "任务板", "heroSubtitle": "给构建者的挑战。" },
+    "skillGuide": { "metadata": { "title": "技能指南 | 每日追踪器的工作原理", "description": "起源故事、技术栈拆解和 RPG 成长系统。" }, "heroTitle": "技能指南", "heroSubtitle": "每日追踪器是怎么运作的。" }
+  },
+  "RPG": {
+    "metadata": { "title": "成长引擎 | ShawnOS.ai", "description": "11 个等级。5 个职阶。每个称号都通过日常产出获得。" },
+    "heroTitle": "成长引擎", "heroSubtitle": "XP 来自真实工作。11 个等级。5 个职阶。",
+    "sections": { "tierProgression": "等级进度", "classes": "职阶", "titleTable": "称号表" },
+    "tableHeaders": { "level": "等级", "title": "称号", "xpRequired": "所需 XP", "avatarTier": "头像等级", "xpToNext": "距下一级" },
+    "footer": { "seeHowEarned": "看看这个分数是怎么获得的" },
+    "reveal": { "clickToPreview": "点击预览", "maxRank": "最高等级" },
+    "loading": { "systemLabel": "系统加载中 v1.0", "tapToStart": "点击开始" }
+  },
+  "Lab": {
+    "metadata": { "title": "Nio DNA 实验室 | ShawnOS.ai", "description": "AI 智能体进化实况。观看 Nio 通过真实使用不断升级。" },
+    "bootLabel": "DNA 实验室 v1.0", "bootTap": "点击开始",
+    "header": { "title": "Nio DNA 实验室", "subtitle": "AI 智能体进化实况。由它描述的系统构建。" },
+    "sections": {
+      "roadmap": { "current": "当前" },
+      "costs": { "claudeMax": "Claude Max", "apiSpend": "API 支出", "total": "合计：", "messages": "消息数", "apiCost": "API 成本", "dailyCap": "每日上限", "utilization": "使用率" }
+    },
+    "cta": { "readPost": "阅读完整文章", "exploreMore": "探索更多" }
+  },
+  "Vitals": {
+    "metadata": { "title": "系统状态", "description": "ShawnOS 网站生态系统的实时系统扫描。" },
+    "heroTitle": "系统状态", "heroSubtitle": "实时生态系统扫描。",
+    "scannerNotInit": "扫描器未初始化。请先运行 website_scanner.py。",
+    "nioTerminal": { "metadata": { "title": "nio.terminal - AI 开发日志", "description": "来自 AI 站点守护者 Nio 的每日洞察。" } },
+    "v2Lab": { "title": "成长引擎 v2 实验室", "subtitle": "影子对比。重新校准的评分、递增链式倍率、额外加分。", "labels": { "v1Current": "v1 - 当前（线上）", "v2Experimental": "v2 - 实验性" } }
+  },
+  "Live": {
+    "metadata": {
+      "title": "实时动态 | AI 新闻与构建者社区",
+      "description": "精选 AI 构建者新闻和来自 r/GTMBuilders 的社区帖子。来自构建者社区的实时内容。"
+    },
+    "hero": {
+      "title": "实时动态",
+      "subtitle": "精选 AI 新闻和构建者社区帖子。"
+    },
+    "stats": {
+      "subscribers": "订阅者",
+      "posts": "帖子数",
+      "syncedHourly": "每小时同步"
+    },
+    "tabs": {
+      "aiNews": "AI 新闻",
+      "community": "社区"
+    },
+    "categories": {
+      "ai-news": "AI 新闻",
+      "builder-tools": "构建者工具",
+      "repos": "代码仓库",
+      "shipped": "已发布"
+    },
+    "empty": {
+      "aiNews": "暂无 AI 新闻。信息侦察每 6 小时运行一次。",
+      "community": "暂无社区帖子。"
+    },
+    "cta": {
+      "headline": "构建者驱动的增长从这里开始。",
+      "joinReddit": "加入 r/GTMBuilders",
+      "postOnReddit": "在 Reddit 发帖"
+    },
+    "nav": {
+      "home": "首页",
+      "updates": "更新"
+    }
+  },
+  "API": {
+    "metadata": { "title": "公开 API | ShawnOS.ai - 实时 RPG 成长数据流", "description": "通过 JSON 访问我的实时 XP、等级和里程碑。" },
+    "heroTitle": "公开 API", "heroSubtitle": "实时成长数据流。",
+    "copyButton": "复制",
+    "sections": { "quickStart": "快速开始", "responseSchema": "响应数据结构", "useCases": "使用场景", "howItWorks": "这个系统怎么运作", "buildYourOwn": "自己构建", "aboutShawnOS": "关于 ShawnOS", "relatedResources": "相关资源" },
+    "quickStart": { "curl": "cURL", "jsFetch": "JavaScript (fetch)", "python": "Python" },
+    "useCases": {
+      "embedStats": { "title": "嵌入实时数据", "description": "在你的作品集上展示实时 XP 和等级" },
+      "discordBot": { "title": "Discord 机器人", "description": "构建一个追踪成长进度的机器人" },
+      "twitterAutomation": { "title": "Twitter 自动化", "description": "达到里程碑时自动发推" },
+      "studyArchitecture": { "title": "研究架构", "description": "了解一个实时 RPG 系统是怎么构建的" }
+    },
+    "buildYourOwn": {
+      "steps": {
+        "dataPipeline": { "title": "1. 数据管道", "description": "扫描你的工作来源并计算分数" },
+        "persistenceLayer": { "title": "2. 持久化层", "description": "将数据写入公开的 JSON 文件" },
+        "apiEndpoint": { "title": "3. API 接口", "description": "通过支持 CORS 和缓存的公开 API 暴露" },
+        "frontendDisplay": { "title": "4. 前端展示", "description": "构建渲染数据的 UI 组件" }
+      },
+      "toolStack": "工具栈"
+    },
+    "resources": {
+      "homepage": { "title": "ShawnOS.ai 首页", "description": "主页和 RPG 仪表盘" },
+      "github": { "title": "GitHub 仓库", "description": "完整源代码和文档" },
+      "rpgEngine": { "title": "RPG 成长引擎", "description": "称号、等级和里程碑的可视化展示" }
+    }
+  },
+  "Repos": {
+    "metadata": {
+      "title": "代码仓库 | shawnos.ai",
+      "description": "开源仓库、社区构建和推荐工具。"
+    },
+    "hero": {
+      "title": "代码仓库",
+      "subtitle": "开源仓库、工具和社区构建"
+    },
+    "tabs": {
+      "mine": "Shawn 的仓库",
+      "community": "社区",
+      "recommended": "推荐"
+    }
+  }
+}

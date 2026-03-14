@@ -1,7 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { JetBrains_Mono, Bricolage_Grotesque, Heebo } from 'next/font/google'
+import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow } from '@shawnos/shared/components'
 import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { Analytics } from '@vercel/analytics/next'
@@ -36,6 +36,13 @@ const heebo = Heebo({
   subsets: ['hebrew'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-hebrew',
+  display: 'swap',
+})
+
+const notoSansSC = Noto_Sans_SC({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-chinese',
   display: 'swap',
 })
 
@@ -156,7 +163,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const lp = (path: string) => locale === 'en' ? path : (path === '/' ? `/${locale}` : `/${locale}${path}`)
 
   return (
-    <html lang={locale} dir={dir} className={`${jetbrains.variable} ${bricolage.variable} ${locale === 'he' ? heebo.variable : ''}`} suppressHydrationWarning>
+    <html lang={locale} dir={dir} className={`${jetbrains.variable} ${bricolage.variable} ${locale === 'he' ? heebo.variable : ''} ${locale === 'zh' ? notoSansSC.variable : ''}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script async src="https://p.midbound.click/Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk" />
@@ -204,6 +211,7 @@ export default async function LocaleLayout({ children, params }: Props) {
               { href: lp('/updates'), label: nav('updates') },
               { href: lp('/search'), label: nav('search') },
               { href: lp('/api'), label: nav('api') },
+              { href: lp('/repos'), label: nav('repos') },
             ]},
           ]}
         />

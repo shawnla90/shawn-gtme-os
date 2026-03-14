@@ -28,6 +28,7 @@
     "./data/how-to-wiki": "./data/how-to-wiki.ts",
     "./data/geo-wiki": "./data/geo-wiki.ts",
     "./data/media-appearances": "./data/media-appearances.ts",
+    "./data/repos": "./data/repos.ts",
     "./lib/rpg-v2": "./lib/rpg-v2.ts",
     "./lib/rpg-v2.server": "./lib/rpg-v2.server.ts",
     "./lib/rpg-v3": "./lib/rpg-v3.ts",

@@ -20,7 +20,8 @@
     "showcase": "תצוגה",
     "updates": "עדכונים",
     "search": "חיפוש",
-    "api": "API"
+    "api": "API",
+    "repos": "RepoHub"
   },
   "Footer": {
     "copyright": "© {year} ShawnOS.ai",
@@ -529,6 +530,21 @@
       "homepage": { "title": "דף הבית של ShawnOS.ai", "description": "עמוד נחיתה ראשי ודשבורד RPG" },
       "github": { "title": "GitHub Repository", "description": "קוד מקור מלא ותיעוד" },
       "rpgEngine": { "title": "מנוע התקדמות RPG", "description": "פירוט ויזואלי של תארים, דרגות ואבני דרך" }
+    }
+  },
+  "Repos": {
+    "metadata": {
+      "title": "RepoHub | shawnos.ai",
+      "description": "רפוזיטוריות קוד פתוח, בניות קהילתיות וכלים מומלצים."
+    },
+    "hero": {
+      "title": "RepoHub",
+      "subtitle": "רפוזיטוריות קוד פתוח, כלים ובניות קהילתיות"
+    },
+    "tabs": {
+      "mine": "הרפוזיטוריות של שון",
+      "community": "קהילה",
+      "recommended": "מומלצים"
     }
   }
 }

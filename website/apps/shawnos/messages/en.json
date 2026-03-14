@@ -20,7 +20,8 @@
     "showcase": "Showcase",
     "updates": "Updates",
     "search": "Search",
-    "api": "API"
+    "api": "API",
+    "repos": "RepoHub"
   },
   "Footer": {
     "copyright": "© {year} ShawnOS.ai",
@@ -529,6 +530,21 @@
       "homepage": { "title": "ShawnOS.ai Homepage", "description": "Main landing page and RPG dashboard" },
       "github": { "title": "GitHub Repository", "description": "Full source code and documentation" },
       "rpgEngine": { "title": "RPG Progression Engine", "description": "Visual breakdown of titles, tiers, and milestones" }
+    }
+  },
+  "Repos": {
+    "metadata": {
+      "title": "RepoHub | shawnos.ai",
+      "description": "Open source repos, community builds, and recommended tools."
+    },
+    "hero": {
+      "title": "RepoHub",
+      "subtitle": "open source repos, tools, and community builds"
+    },
+    "tabs": {
+      "mine": "Shawn's Repos",
+      "community": "Community",
+      "recommended": "Recommended"
     }
   }
 }
