@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-14T00:57:02.906872+00:00",
+  "lastUpdated": "2026-03-14T01:57:19.796743+00:00",
   "posts": [
     {
       "id": "1rt2jp4",
@@ -21,7 +21,7 @@
       "id": "1rsgc55",
       "title": "My rookie project",
       "author": "Spare-Combination-63",
-      "score": 7,
+      "score": 6,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rsgc55/my_rookie_project/",
       "selftext": "Hey everyone! Super nervous to post this but here goes, this is literally my first project that I've ever pushed to GitHub, so please be kind lol.\n\nI built an AI-powered tool that lets you research any professional and pulls together their career trajectory, articles they've written, media presence, LinkedIn highlights, and more all in one place. The idea came from the frustration of having to jump between 5 different tabs just to get a basic picture of someone before a meeting or interview.\n\nGitHub:\u00a0[https://github.com/atifirshad21/individual-info-in-one-place](https://github.com/atifirshad21/individual-info-in-one-place)\n\nI'm calling this my rookie project, it's rough around the edges and the README is pretty bare bones right now, but feel free to make this better. \n\nWould love any feedback,\n\nThanks for checking it out!",
@@ -153,8 +153,8 @@
   },
   "userProfile": {
     "name": "Shawntenam",
-    "totalKarma": 818,
-    "linkKarma": 250,
-    "commentKarma": 568
+    "totalKarma": 821,
+    "linkKarma": 252,
+    "commentKarma": 569
   }
 }
