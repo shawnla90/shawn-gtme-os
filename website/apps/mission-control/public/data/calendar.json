@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-13T04:04:14.524Z",
+  "generated": "2026-03-14T04:03:25.316Z",
   "events": [
     {
-      "id": "commit-234a2c2",
-      "title": "feat: SEO/GEO audit fixes — hreflang, structured data, keywo",
-      "type": "milestone",
-      "datetime": "2026-03-12T23:53:05-04:00",
-      "status": "completed",
-      "description": "feat: SEO/GEO audit fixes — hreflang, structured data, keywords, sitemap priority",
-      "metadata": {
-        "commitHash": "234a2c2"
-      }
-    },
-    {
-      "id": "commit-98d0f72",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 23:51)",
+      "id": "commit-4eec3b7",
+      "title": "chore: sync Reddit cache — 10 posts (2026-03-13 23:57)",
       "type": "system",
-      "datetime": "2026-03-12T23:51:08-04:00",
+      "datetime": "2026-03-13T23:57:53-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 23:51)",
+      "description": "chore: sync Reddit cache — 10 posts (2026-03-13 23:57)",
       "metadata": {
-        "commitHash": "98d0f72"
+        "commitHash": "4eec3b7"
       }
     },
     {
-      "id": "commit-4ef0993",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 22:50)",
+      "id": "commit-517049e",
+      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 22:57)",
       "type": "system",
-      "datetime": "2026-03-12T22:50:52-04:00",
+      "datetime": "2026-03-13T22:57:36-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 22:50)",
+      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 22:57)",
       "metadata": {
-        "commitHash": "4ef0993"
+        "commitHash": "517049e"
       }
     },
     {
-      "id": "commit-38ba24e",
-      "title": "feat: SEO discoverability — about page, README, footer, cros",
-      "type": "milestone",
-      "datetime": "2026-03-12T22:50:03-04:00",
-      "status": "completed",
-      "description": "feat: SEO discoverability — about page, README, footer, cross-links",
-      "metadata": {
-        "commitHash": "38ba24e"
-      }
-    },
-    {
-      "id": "commit-c77eb35",
-      "title": "refactor: collapse nav to single Explore dropdown on gtmos +",
+      "id": "commit-da91b4a",
+      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 21:57)",
       "type": "system",
-      "datetime": "2026-03-12T22:01:57-04:00",
+      "datetime": "2026-03-13T21:57:19-04:00",
       "status": "completed",
-      "description": "refactor: collapse nav to single Explore dropdown on gtmos + contentos",
+      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 21:57)",
       "metadata": {
-        "commitHash": "c77eb35"
+        "commitHash": "da91b4a"
       }
     },
     {
-      "id": "commit-aba2f2b",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 21:50)",
+      "id": "commit-626afef",
+      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 20:57)",
       "type": "system",
-      "datetime": "2026-03-12T21:50:35-04:00",
+      "datetime": "2026-03-13T20:57:02-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 21:50)",
+      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 20:57)",
       "metadata": {
-        "commitHash": "aba2f2b"
+        "commitHash": "626afef"
       }
     },
     {
-      "id": "commit-e6a3921",
-      "title": "feat: affiliate link system + lemlist wiki + apollo/clay aff",
-      "type": "milestone",
-      "datetime": "2026-03-12T20:59:38-04:00",
-      "status": "completed",
-      "description": "feat: affiliate link system + lemlist wiki + apollo/clay affiliate links",
-      "metadata": {
-        "commitHash": "e6a3921"
-      }
-    },
-    {
-      "id": "commit-fed02c1",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 20:50)",
+      "id": "commit-3b41ac0",
+      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 19:56)",
       "type": "system",
-      "datetime": "2026-03-12T20:50:18-04:00",
+      "datetime": "2026-03-13T19:56:46-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 20:50)",
+      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 19:56)",
       "metadata": {
-        "commitHash": "fed02c1"
+        "commitHash": "3b41ac0"
       }
     },
     {
-      "id": "commit-12f38cc",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 19:50)",
+      "id": "commit-91319f0",
+      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 18:56)",
       "type": "system",
-      "datetime": "2026-03-12T19:50:02-04:00",
+      "datetime": "2026-03-13T18:56:29-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 19:50)",
+      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 18:56)",
       "metadata": {
-        "commitHash": "12f38cc"
+        "commitHash": "91319f0"
       }
     },
     {
-      "id": "commit-3722ccf",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 18:49)",
+      "id": "commit-1dbb499",
+      "title": "fix: move blog post to correct content directory (content/we",
+      "type": "deployment",
+      "datetime": "2026-03-13T18:43:11-04:00",
+      "status": "completed",
+      "description": "fix: move blog post to correct content directory (content/website/final/)",
+      "metadata": {
+        "commitHash": "1dbb499"
+      }
+    },
+    {
+      "id": "commit-a8057dd",
+      "title": "add blog post: Claude Code 1M context window breakdown",
       "type": "system",
-      "datetime": "2026-03-12T18:49:45-04:00",
+      "datetime": "2026-03-13T18:14:36-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 18:49)",
+      "description": "add blog post: Claude Code 1M context window breakdown",
       "metadata": {
-        "commitHash": "3722ccf"
+        "commitHash": "a8057dd"
       }
     },
     {
-      "id": "commit-5ca1b1e",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 17:49)",
+      "id": "commit-3b46c74",
+      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 17:56)",
       "type": "system",
-      "datetime": "2026-03-12T17:49:28-04:00",
+      "datetime": "2026-03-13T17:56:12-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 17:49)",
+      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 17:56)",
       "metadata": {
-        "commitHash": "5ca1b1e"
+        "commitHash": "3b46c74"
       }
     },
     {
-      "id": "commit-b8f2363",
-      "title": "feat: clay pricing part 2 — opinion piece + multi-channel co",
-      "type": "milestone",
-      "datetime": "2026-03-12T17:25:39-04:00",
-      "status": "completed",
-      "description": "feat: clay pricing part 2 — opinion piece + multi-channel content drop",
-      "metadata": {
-        "commitHash": "b8f2363"
-      }
-    },
-    {
-      "id": "commit-13094e1",
-      "title": "chore: sync Reddit cache — 7 posts (2026-03-12 16:49)",
+      "id": "commit-d9a7e15",
+      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 16:55)",
       "type": "system",
-      "datetime": "2026-03-12T16:49:12-04:00",
+      "datetime": "2026-03-13T16:55:55-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 7 posts (2026-03-12 16:49)",
+      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 16:55)",
       "metadata": {
-        "commitHash": "13094e1"
+        "commitHash": "d9a7e15"
       }
     },
     {
-      "id": "commit-39d3d52",
-      "title": "chore: sync Reddit cache — 6 posts (2026-03-12 15:48)",
+      "id": "commit-6071ae4",
+      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 15:55)",
       "type": "system",
-      "datetime": "2026-03-12T15:48:55-04:00",
+      "datetime": "2026-03-13T15:55:38-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 6 posts (2026-03-12 15:48)",
+      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 15:55)",
       "metadata": {
-        "commitHash": "39d3d52"
+        "commitHash": "6071ae4"
       }
     },
     {
-      "id": "commit-bb7ef86",
-      "title": "chore: sync Reddit cache — 6 posts (2026-03-12 14:48)",
+      "id": "commit-f5dd937",
+      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 14:55)",
       "type": "system",
-      "datetime": "2026-03-12T14:48:38-04:00",
+      "datetime": "2026-03-13T14:55:21-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 6 posts (2026-03-12 14:48)",
+      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 14:55)",
       "metadata": {
-        "commitHash": "bb7ef86"
+        "commitHash": "f5dd937"
+      }
+    },
+    {
+      "id": "commit-1742cfd",
+      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 13:55)",
+      "type": "system",
+      "datetime": "2026-03-13T13:55:04-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 13:55)",
+      "metadata": {
+        "commitHash": "1742cfd"
+      }
+    },
+    {
+      "id": "commit-82b3916",
+      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 12:54)",
+      "type": "system",
+      "datetime": "2026-03-13T12:54:47-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 12:54)",
+      "metadata": {
+        "commitHash": "82b3916"
+      }
+    },
+    {
+      "id": "commit-db83628",
+      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 11:54)",
+      "type": "system",
+      "datetime": "2026-03-13T11:54:31-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 11:54)",
+      "metadata": {
+        "commitHash": "db83628"
       }
     }
   ],

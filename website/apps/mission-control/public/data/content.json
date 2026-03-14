@@ -1,53 +1,383 @@
 {
-  "generated": "2026-03-13T04:00:09.000Z",
+  "generated": "2026-03-14T04:00:10.000Z",
   "totals": {
-    "total_content": 157,
-    "total_drafts": 83,
-    "total_final": 74,
-    "total_words": 105524,
+    "total_content": 187,
+    "total_drafts": 107,
+    "total_final": 80,
+    "total_words": 113181,
     "platforms_active": 6,
-    "cross_platform_groups": 30,
+    "cross_platform_groups": 33,
     "series_count": 4
   },
   "pipeline": {
+    "linkedin": {
+      "draft": 39,
+      "final": 16,
+      "total": 55,
+      "words": 32169
+    },
+    "reddit": {
+      "draft": 15,
+      "final": 0,
+      "total": 15,
+      "words": 6399
+    },
+    "x": {
+      "draft": 42,
+      "final": 11,
+      "total": 53,
+      "words": 17141
+    },
     "nio-log": {
       "draft": 0,
-      "final": 23,
-      "total": 23,
-      "words": 14671
+      "final": 24,
+      "total": 24,
+      "words": 14787
     },
     "website": {
       "draft": 1,
-      "final": 22,
-      "total": 23,
-      "words": 23302
-    },
-    "linkedin": {
-      "draft": 35,
-      "final": 15,
-      "total": 50,
-      "words": 30821
-    },
-    "reddit": {
-      "draft": 4,
-      "final": 0,
-      "total": 4,
-      "words": 3480
+      "final": 24,
+      "total": 25,
+      "words": 24653
     },
     "substack": {
       "draft": 10,
       "final": 5,
       "total": 15,
       "words": 18032
-    },
-    "x": {
-      "draft": 33,
-      "final": 9,
-      "total": 42,
-      "words": 15218
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "going back on my own",
+      "slug": "going-back-on-my-own",
+      "date": "2026-03-17",
+      "stage": "draft",
+      "pillar": "building-sharing",
+      "arc": null,
+      "word_count": 454,
+      "file_path": "content/linkedin/drafts/2026-03-17_going-back-on-my-own.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "pipe bomb claudecode",
+      "slug": "pipe-bomb-claudecode",
+      "date": "2026-03-17",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 285,
+      "file_path": "content/reddit/drafts/2026-03-17_pipe-bomb-claudecode.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "pipe bomb gtmbuilders",
+      "slug": "pipe-bomb-gtmbuilders",
+      "date": "2026-03-17",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 317,
+      "file_path": "content/reddit/drafts/2026-03-17_pipe-bomb-gtmbuilders.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "pipe bomb gtmengineer",
+      "slug": "pipe-bomb-gtmengineer",
+      "date": "2026-03-17",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 357,
+      "file_path": "content/reddit/drafts/2026-03-17_pipe-bomb-gtmengineer.md"
+    },
+    {
+      "platform": "x",
+      "title": "Thread 1: The Story",
+      "slug": "pipe-bomb-thread-1",
+      "date": "2026-03-17",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 218,
+      "file_path": "content/x/drafts/2026-03-17_pipe-bomb-thread-1.md"
+    },
+    {
+      "platform": "x",
+      "title": "Thread 2: The Pattern",
+      "slug": "pipe-bomb-thread-2",
+      "date": "2026-03-17",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 198,
+      "file_path": "content/x/drafts/2026-03-17_pipe-bomb-thread-2.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "pipe bomb mobilization",
+      "slug": "pipe-bomb-mobilization",
+      "date": "2026-03-16",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 117,
+      "file_path": "content/reddit/drafts/2026-03-16_pipe-bomb-mobilization.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "pipe bomb breadcrumb",
+      "slug": "pipe-bomb-breadcrumb",
+      "date": "2026-03-15",
+      "stage": "draft",
+      "pillar": "building-sharing",
+      "arc": null,
+      "word_count": 60,
+      "file_path": "content/linkedin/drafts/2026-03-15_pipe-bomb-breadcrumb.md"
+    },
+    {
+      "platform": "x",
+      "title": "pipe bomb breadcrumb 2",
+      "slug": "pipe-bomb-breadcrumb-2",
+      "date": "2026-03-15",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 48,
+      "file_path": "content/x/drafts/2026-03-15_pipe-bomb-breadcrumb-2.md"
+    },
+    {
+      "platform": "x",
+      "title": "pipe bomb breadcrumb 1",
+      "slug": "pipe-bomb-breadcrumb-1",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 34,
+      "file_path": "content/x/drafts/2026-03-14_pipe-bomb-breadcrumb-1.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "claude code 1m context",
+      "slug": "claude-code-1m-context",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": "release-reaction",
+      "arc": null,
+      "word_count": 260,
+      "file_path": "content/linkedin/drafts/2026-03-13_claude-code-1m-context.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "gws cli",
+      "slug": "gws-cli",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": "skill-system-shares",
+      "arc": null,
+      "word_count": 287,
+      "file_path": "content/linkedin/drafts/2026-03-13_gws-cli.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "gws cli",
+      "slug": "gws-cli",
+      "date": "2026-03-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 287,
+      "file_path": "content/linkedin/final/2026-03-13_gws-cli.txt"
+    },
+    {
+      "platform": "nio-log",
+      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-13.MD`.",
+      "slug": "2026-03-13",
+      "date": "2026-03-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 116,
+      "file_path": "content/nio-log/2026-03-13.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "1m context claudecode 1",
+      "slug": "1m-context-claudecode-1",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 227,
+      "file_path": "content/reddit/drafts/2026-03-13_1m-context-claudecode-1.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "1m context claudecode 2",
+      "slug": "1m-context-claudecode-2",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 153,
+      "file_path": "content/reddit/drafts/2026-03-13_1m-context-claudecode-2.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "1m context gtmbuilders 1",
+      "slug": "1m-context-gtmbuilders-1",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 273,
+      "file_path": "content/reddit/drafts/2026-03-13_1m-context-gtmbuilders-1.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "1m context gtmbuilders 2",
+      "slug": "1m-context-gtmbuilders-2",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 153,
+      "file_path": "content/reddit/drafts/2026-03-13_1m-context-gtmbuilders-2.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "gws cli claudecode",
+      "slug": "gws-cli-claudecode",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 363,
+      "file_path": "content/reddit/drafts/2026-03-13_gws-cli-claudecode.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "move skills there, symlink back when needed",
+      "slug": "gws-cli-gtmbuilders",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 320,
+      "file_path": "content/reddit/drafts/2026-03-13_gws-cli-gtmbuilders.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "gws cli gtmengineer",
+      "slug": "gws-cli-gtmengineer",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 354,
+      "file_path": "content/reddit/drafts/2026-03-13_gws-cli-gtmengineer.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Just Went 5x: 1M Context Window Changes Everything for Builders",
+      "slug": "claude-code-1m-context-window",
+      "date": "2026-03-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 768,
+      "file_path": "content/website/final/claude-code-1m-context-window.md"
+    },
+    {
+      "platform": "website",
+      "title": "I haven't opened a CMS editor in months",
+      "slug": "terminal-to-landing-page-90-seconds",
+      "date": "2026-03-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 583,
+      "file_path": "content/website/final/terminal-to-landing-page-90-seconds.md"
+    },
+    {
+      "platform": "x",
+      "title": "Thread 1: The Builder's Take",
+      "slug": "claude-code-1m-thread-1",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 314,
+      "file_path": "content/x/drafts/2026-03-13_claude-code-1m-thread-1.md"
+    },
+    {
+      "platform": "x",
+      "title": "Thread 2: The Technical Breakdown",
+      "slug": "claude-code-1m-thread-2",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 209,
+      "file_path": "content/x/drafts/2026-03-13_claude-code-1m-thread-2.md"
+    },
+    {
+      "platform": "x",
+      "title": "Thread 3: The Friday Hype",
+      "slug": "claude-code-1m-thread-3",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 201,
+      "file_path": "content/x/drafts/2026-03-13_claude-code-1m-thread-3.md"
+    },
+    {
+      "platform": "x",
+      "title": "Thread 1: The Discovery",
+      "slug": "gws-cli-thread-1",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 166,
+      "file_path": "content/x/drafts/2026-03-13_gws-cli-thread-1.md"
+    },
+    {
+      "platform": "x",
+      "title": "Thread 2: The Contrarian Take",
+      "slug": "gws-cli-thread-2",
+      "date": "2026-03-13",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 183,
+      "file_path": "content/x/drafts/2026-03-13_gws-cli-thread-2.md"
+    },
+    {
+      "platform": "x",
+      "title": "gws cli thread 1",
+      "slug": "gws-cli-thread-1",
+      "date": "2026-03-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 168,
+      "file_path": "content/x/final/2026-03-13_gws-cli-thread-1.txt"
+    },
+    {
+      "platform": "x",
+      "title": "gws cli thread 2",
+      "slug": "gws-cli-thread-2",
+      "date": "2026-03-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 184,
+      "file_path": "content/x/final/2026-03-13_gws-cli-thread-2.txt"
+    },
     {
       "platform": "nio-log",
       "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-12.MD`.",
@@ -267,336 +597,6 @@
       "arc": null,
       "word_count": 1239,
       "file_path": "content/website/final/sdr-to-solo-gtm-engineer.md"
-    },
-    {
-      "platform": "x",
-      "title": "sdr to solo gtm engineer thread",
-      "slug": "sdr-to-solo-gtm-engineer-thread",
-      "date": "2026-03-08",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 170,
-      "file_path": "content/x/drafts/2026-03-08_sdr-to-solo-gtm-engineer-thread.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "HERE'S THE NIO.LOG ENTRY:",
-      "slug": "2026-03-07",
-      "date": "2026-03-07",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1076,
-      "file_path": "content/nio-log/2026-03-07.md"
-    },
-    {
-      "platform": "website",
-      "title": "the real cost of a slow website for service businesses",
-      "slug": "slow-website-cost",
-      "date": "2026-03-07",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1024,
-      "file_path": "content/website/final/slow-website-cost.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "google workspace cli",
-      "slug": "google-workspace-cli",
-      "date": "2026-03-06",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 224,
-      "file_path": "content/linkedin/drafts/2026-03-06_google-workspace-cli.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THE FUNNEL HAS A SHAPE NOW",
-      "slug": "2026-03-06",
-      "date": "2026-03-06",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 689,
-      "file_path": "content/nio-log/2026-03-06.md"
-    },
-    {
-      "platform": "website",
-      "title": "Google just shipped a CLI that wraps every Workspace API",
-      "slug": "google-workspace-cli",
-      "date": "2026-03-06",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1440,
-      "file_path": "content/website/final/google-workspace-cli.md"
-    },
-    {
-      "platform": "website",
-      "title": "should your SDR team learn AI tools (yes)",
-      "slug": "should-sdrs-learn-ai-tools",
-      "date": "2026-03-06",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 645,
-      "file_path": "content/website/final/should-sdrs-learn-ai-tools.md"
-    },
-    {
-      "platform": "website",
-      "title": "what a go-to-market engineer actually does",
-      "slug": "what-a-go-to-market-engineer-does",
-      "date": "2026-03-06",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 725,
-      "file_path": "content/website/final/what-a-go-to-market-engineer-does.md"
-    },
-    {
-      "platform": "x",
-      "title": "google workspace cli",
-      "slug": "google-workspace-cli",
-      "date": "2026-03-06",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 165,
-      "file_path": "content/x/drafts/2026-03-06_google-workspace-cli.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "GOOD. NOW I HAVE THE FULL",
-      "slug": "2026-03-05",
-      "date": "2026-03-05",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 889,
-      "file_path": "content/nio-log/2026-03-05.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "ALL THREE SITES BUILDING CLEAN. 11",
-      "slug": "2026-03-04",
-      "date": "2026-03-04",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 824,
-      "file_path": "content/nio-log/2026-03-04.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "ALL THREE SITES BUILDING CLEAN. 4",
-      "slug": "2026-03-03",
-      "date": "2026-03-03",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 750,
-      "file_path": "content/nio-log/2026-03-03.md"
-    },
-    {
-      "platform": "website",
-      "title": "input, output, ownership",
-      "slug": "input-output-ownership",
-      "date": "2026-03-03",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1428,
-      "file_path": "content/website/final/input-output-ownership.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-03-02:",
-      "slug": "2026-03-02",
-      "date": "2026-03-02",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 944,
-      "file_path": "content/nio-log/2026-03-02.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "ALL THREE SITES BUILDING CLEAN. ABM",
-      "slug": "2026-03-01",
-      "date": "2026-03-01",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 849,
-      "file_path": "content/nio-log/2026-03-01.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-02-28:",
-      "slug": "2026-02-28",
-      "date": "2026-02-28",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 819,
-      "file_path": "content/nio-log/2026-02-28.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "Parallel-Safe Context Handoffs",
-      "slug": "parallel-safe-handoffs",
-      "date": "2026-02-27",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 457,
-      "file_path": "content/linkedin/drafts/2026-02-27_parallel-safe-handoffs.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "GOOD. I HAVE STRONG CONTEXT NOW.",
-      "slug": "2026-02-27",
-      "date": "2026-02-27",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 841,
-      "file_path": "content/nio-log/2026-02-27.md"
-    },
-    {
-      "platform": "substack",
-      "title": "parallel safe handoffs",
-      "slug": "parallel-safe-handoffs",
-      "date": "2026-02-27",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 843,
-      "file_path": "content/substack/drafts/2026-02-27_parallel-safe-handoffs.md"
-    },
-    {
-      "platform": "substack",
-      "title": "I Open Sourced My Methodology",
-      "slug": "recursive-drift-launch",
-      "date": "2026-02-27",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 547,
-      "file_path": "content/substack/final/2026-02-27_recursive-drift-launch.md"
-    },
-    {
-      "platform": "website",
-      "title": "parallel-safe context handoffs for Claude Code",
-      "slug": "parallel-safe-context-handoffs",
-      "date": "2026-02-27",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1070,
-      "file_path": "content/website/final/parallel-safe-context-handoffs.md"
-    },
-    {
-      "platform": "website",
-      "title": "I Open Sourced My Methodology",
-      "slug": "recursive-drift",
-      "date": "2026-02-27",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 777,
-      "file_path": "content/website/final/recursive-drift.md"
-    },
-    {
-      "platform": "x",
-      "title": "parallel safe handoffs",
-      "slug": "parallel-safe-handoffs",
-      "date": "2026-02-27",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 223,
-      "file_path": "content/x/drafts/2026-02-27_parallel-safe-handoffs.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "claude code mobile",
-      "slug": "claude-code-mobile",
-      "date": "2026-02-26",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 473,
-      "file_path": "content/linkedin/drafts/2026-02-26_claude-code-mobile.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "The Anti-Lead Magnet Manifesto -- Day 4",
-      "slug": "ecosystem-capstone",
-      "date": "2026-02-26",
-      "stage": "draft",
-      "pillar": "Building & Sharing (capstone)",
-      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
-      "word_count": 961,
-      "file_path": "content/linkedin/drafts/2026-02-26_ecosystem-capstone.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "exa grok hubspot landing pages",
-      "slug": "exa-grok-hubspot-landing-pages",
-      "date": "2026-02-26",
-      "stage": "draft",
-      "pillar": "GTM Workflow / Building & Sharing",
-      "arc": null,
-      "word_count": 499,
-      "file_path": "content/linkedin/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "NOW I HAVE EVERYTHING I NEED.",
-      "slug": "2026-02-26",
-      "date": "2026-02-26",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 829,
-      "file_path": "content/nio-log/2026-02-26.md"
-    },
-    {
-      "platform": "x",
-      "title": "claude code mobile",
-      "slug": "claude-code-mobile",
-      "date": "2026-02-26",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 254,
-      "file_path": "content/x/drafts/2026-02-26_claude-code-mobile.md"
-    },
-    {
-      "platform": "x",
-      "title": "Full Ecosystem X Threads -- Day 4",
-      "slug": "ecosystem-threads",
-      "date": "2026-02-26",
-      "stage": "draft",
-      "pillar": null,
-      "arc": "Anti-Lead Magnet Series (Day 4 of 4)",
-      "word_count": 626,
-      "file_path": "content/x/drafts/2026-02-26_ecosystem-threads.md"
-    },
-    {
-      "platform": "x",
-      "title": "exa grok hubspot landing pages",
-      "slug": "exa-grok-hubspot-landing-pages",
-      "date": "2026-02-26",
-      "stage": "draft",
-      "pillar": "GTM Workflow / Building & Sharing",
-      "arc": null,
-      "word_count": 284,
-      "file_path": "content/x/drafts/2026-02-26_exa-grok-hubspot-landing-pages.md"
     }
   ],
   "series": [
@@ -698,6 +698,39 @@
     }
   ],
   "crossPlatform": [
+    {
+      "date": "2026-03-13",
+      "slug": "gws-cli",
+      "platforms": [
+        "linkedin"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 1
+    },
+    {
+      "date": "2026-03-13",
+      "slug": "gws-cli-thread-1",
+      "platforms": [
+        "x"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 1
+    },
+    {
+      "date": "2026-03-13",
+      "slug": "gws-cli-thread-2",
+      "platforms": [
+        "x"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 1
+    },
     {
       "date": "2026-03-08",
       "slug": "sdr-to-solo-gtm-engineer",
@@ -1067,6 +1100,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-13",
+      "grade": "D",
+      "score": 76,
+      "words": 10964,
+      "shipped": 3,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-12",
       "grade": "C",
       "score": 205,
@@ -1168,14 +1209,6 @@
       "score": 372,
       "words": 74182,
       "shipped": 43,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-02-27",
-      "grade": "A",
-      "score": 470,
-      "words": 36568,
-      "shipped": 36,
       "cost": 0.0
     }
   ]
