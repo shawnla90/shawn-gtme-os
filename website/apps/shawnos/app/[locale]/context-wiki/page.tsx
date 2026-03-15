@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Link } from '../../../i18n/navigation'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, getLocale } from 'next-intl/server'
 import {
-  CONTEXT_WIKI_ENTRIES,
-  CONTEXT_WIKI_CATEGORIES,
+  getLocalizedContextWikiEntries,
+  getLocalizedContextWikiCategories,
 } from '@shawnos/shared/data/context-wiki'
 import type { ContextWikiCategory } from '@shawnos/shared/data/context-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
@@ -286,8 +286,11 @@ const navLink: React.CSSProperties = {
 
 export default async function ContextWikiPage() {
   const t = await getTranslations('ContextWiki')
-  const entryCount = CONTEXT_WIKI_ENTRIES.length
-  const categoryCount = CONTEXT_WIKI_CATEGORIES.length
+  const locale = await getLocale()
+  const entries = getLocalizedContextWikiEntries(locale)
+  const categories = getLocalizedContextWikiCategories(locale)
+  const entryCount = entries.length
+  const categoryCount = categories.length
 
   return (
     <>
@@ -332,14 +335,14 @@ export default async function ContextWikiPage() {
       </ScrollRevealSection>
 
       {/* Category sections */}
-      {CONTEXT_WIKI_CATEGORIES.map((cat, idx) => {
-        const entries = CONTEXT_WIKI_ENTRIES.filter((e) => e.category === cat.id)
+      {categories.map((cat, idx) => {
+        const catEntries = entries.filter((e) => e.category === cat.id)
         return (
           <ScrollRevealSection key={cat.id} background={idx % 2 === 0 ? 'var(--canvas-subtle)' : 'var(--canvas)'}>
             <h3 style={categoryTitle}>{cat.label}</h3>
             <p style={categoryDesc}>{cat.description}</p>
             <div style={cardGrid}>
-              {entries.map((entry) => (
+              {catEntries.map((entry) => (
                 <Link
                   key={entry.id}
                   href={`/context-wiki/${entry.id}`}

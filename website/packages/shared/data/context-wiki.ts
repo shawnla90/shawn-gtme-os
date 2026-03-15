@@ -77,6 +77,25 @@ export function getContextWikiEntry(
   return CONTEXT_WIKI_ENTRIES.find((e) => e.id === slug)
 }
 
+/* ── locale-aware getters ─────────────────────────── */
+
+import { CONTEXT_WIKI_ENTRIES_ZH, CONTEXT_WIKI_CATEGORIES_ZH } from './context-wiki.zh'
+
+export function getLocalizedContextWikiEntries(locale: string): ContextWikiEntry[] {
+  if (locale === 'zh') return CONTEXT_WIKI_ENTRIES_ZH
+  return CONTEXT_WIKI_ENTRIES
+}
+
+export function getLocalizedContextWikiCategories(locale: string) {
+  if (locale === 'zh') return CONTEXT_WIKI_CATEGORIES_ZH
+  return CONTEXT_WIKI_CATEGORIES
+}
+
+export function getLocalizedContextWikiEntry(slug: string, locale: string): ContextWikiEntry | undefined {
+  const entries = getLocalizedContextWikiEntries(locale)
+  return entries.find((e) => e.id === slug)
+}
+
 /* ── wiki entries ─────────────────────────────────── */
 
 export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [

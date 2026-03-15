@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import { Link } from '../../../../i18n/navigation'
-import { getTranslations } from 'next-intl/server'
+import { getTranslations, getLocale } from 'next-intl/server'
 import {
   CONTEXT_WIKI_ENTRIES,
   CONTEXT_WIKI_CATEGORIES,
   getContextWikiEntry,
+  getLocalizedContextWikiEntry,
+  getLocalizedContextWikiEntries,
+  getLocalizedContextWikiCategories,
 } from '@shawnos/shared/data/context-wiki'
 import type { WikiSection } from '@shawnos/shared/data/context-wiki'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
@@ -288,7 +291,8 @@ export default async function ContextWikiEntryPage({
   params: Promise<{ slug: string }>
 }) {
   const { slug } = await params
-  const entry = getContextWikiEntry(slug)
+  const locale = await getLocale()
+  const entry = getLocalizedContextWikiEntry(slug, locale)
   const t = await getTranslations('ContextWiki')
 
   if (!entry) {
@@ -308,11 +312,13 @@ export default async function ContextWikiEntryPage({
     )
   }
 
-  const catMeta = CONTEXT_WIKI_CATEGORIES.find((c) => c.id === entry.category)
+  const allCategories = getLocalizedContextWikiCategories(locale)
+  const allEntries = getLocalizedContextWikiEntries(locale)
+  const catMeta = allCategories.find((c) => c.id === entry.category)
 
   const relatedEntries = entry.related
     .map((id) => {
-      const r = CONTEXT_WIKI_ENTRIES.find((e) => e.id === id)
+      const r = allEntries.find((e) => e.id === id)
       return r ? { id: r.id, title: r.title } : null
     })
     .filter((r): r is { id: string; title: string } => !!r)
