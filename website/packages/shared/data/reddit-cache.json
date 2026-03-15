@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-15T07:05:57.648780+00:00",
+  "lastUpdated": "2026-03-15T08:06:16.435840+00:00",
   "posts": [
     {
       "id": "1rtxsv2",
@@ -85,7 +85,7 @@
       "id": "1rt2jp4",
       "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price.",
       "author": "Shawntenam",
-      "score": 3,
+      "score": 5,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rt2jp4/claude_code_just_dropped_1m_context_window_and_im/",
       "selftext": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --&gt; 1M tokens. same Opus 4.6 model. same Max subscription. no price increase.\n\nif you've been building with this thing daily, \n\nyou know exactly why this is massive. context compaction was THE bottleneck. you're deep in a build, agent is cooking, and then it starts forgetting what\n\nfiles it already read. you re-explain your\n\narchitecture for the third time. momentum gone.\n\nthat whole era just ended.\n\nI run a monorepo with 3 Next.js apps, i18n in 3 languages, full GTM ops layer, automation scripts.\n\nbefore today the agent could barely hold one app in\n\nits head at a time. just tested the new window and it\n\nreasoned across the ENTIRE system in one session. no\n\ncompaction. no re-explaining. no babysitting.\n\n\n\nseriously now we can.\n\n\\- spec to deploy in a single session \n\n\\- debugging that traces through your whole stack\n\nwithout losing what it found 20 minutes ago\n\n\\- hand off a big task, walk away, come back to finished work\n\n\\- the agent actually remembers its own mistakes and\n\nstops repeating them\n\n\n\nit's Friday.what are you building with this new context window??. full breadown in my [blog](https://shawnos.ai/blog/claude-code-1m-context-window)",
