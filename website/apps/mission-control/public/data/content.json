@@ -1,44 +1,44 @@
 {
-  "generated": "2026-03-14T04:00:10.000Z",
+  "generated": "2026-03-15T04:00:08.000Z",
   "totals": {
-    "total_content": 187,
-    "total_drafts": 107,
-    "total_final": 80,
-    "total_words": 113181,
+    "total_content": 201,
+    "total_drafts": 117,
+    "total_final": 84,
+    "total_words": 118434,
     "platforms_active": 6,
-    "cross_platform_groups": 33,
+    "cross_platform_groups": 34,
     "series_count": 4
   },
   "pipeline": {
     "linkedin": {
-      "draft": 39,
+      "draft": 42,
       "final": 16,
-      "total": 55,
-      "words": 32169
+      "total": 58,
+      "words": 32826
     },
     "reddit": {
-      "draft": 15,
+      "draft": 19,
       "final": 0,
-      "total": 15,
-      "words": 6399
+      "total": 19,
+      "words": 7658
     },
     "x": {
-      "draft": 42,
+      "draft": 45,
       "final": 11,
-      "total": 53,
-      "words": 17141
+      "total": 56,
+      "words": 17662
     },
     "nio-log": {
       "draft": 0,
-      "final": 24,
-      "total": 24,
-      "words": 14787
+      "final": 25,
+      "total": 25,
+      "words": 14883
     },
     "website": {
       "draft": 1,
-      "final": 24,
-      "total": 25,
-      "words": 24653
+      "final": 27,
+      "total": 28,
+      "words": 27373
     },
     "substack": {
       "draft": 10,
@@ -148,6 +148,138 @@
       "file_path": "content/x/drafts/2026-03-15_pipe-bomb-breadcrumb-2.md"
     },
     {
+      "platform": "linkedin",
+      "title": "context handoff engine",
+      "slug": "context-handoff-engine",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 211,
+      "file_path": "content/linkedin/drafts/2026-03-14_context-handoff-engine.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "structured divergence",
+      "slug": "structured-divergence",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": "building-sharing",
+      "arc": null,
+      "word_count": 209,
+      "file_path": "content/linkedin/drafts/2026-03-14_structured-divergence.md"
+    },
+    {
+      "platform": "linkedin",
+      "title": "website with soul",
+      "slug": "website-with-soul",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": "building-sharing",
+      "arc": null,
+      "word_count": 237,
+      "file_path": "content/linkedin/drafts/2026-03-14_website-with-soul.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-14.MD`.",
+      "slug": "2026-03-14",
+      "date": "2026-03-14",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 96,
+      "file_path": "content/nio-log/2026-03-14.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "I open sourced the context infrastructure I use to run 4-6 Claude Code terminals in parallel",
+      "slug": "context-handoff-engine-gtmbuilders",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 223,
+      "file_path": "content/reddit/drafts/2026-03-14_context-handoff-engine-gtmbuilders.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "structured divergence claudecode",
+      "slug": "structured-divergence-claudecode",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 355,
+      "file_path": "content/reddit/drafts/2026-03-14_structured-divergence-claudecode.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "structured divergence gtmbuilders",
+      "slug": "structured-divergence-gtmbuilders",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 367,
+      "file_path": "content/reddit/drafts/2026-03-14_structured-divergence-gtmbuilders.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "website with soul gtmbuilders",
+      "slug": "website-with-soul-gtmbuilders",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 314,
+      "file_path": "content/reddit/drafts/2026-03-14_website-with-soul-gtmbuilders.md"
+    },
+    {
+      "platform": "website",
+      "title": "I Open Sourced the Context Engine Behind Recursive Drift",
+      "slug": "context-handoff-engine-open-source",
+      "date": "2026-03-14",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 850,
+      "file_path": "content/website/final/context-handoff-engine-open-source.md"
+    },
+    {
+      "platform": "website",
+      "title": "Structured Divergence: Why ADHD Brains Were Built for Claude Code",
+      "slug": "structured-divergence",
+      "date": "2026-03-14",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1189,
+      "file_path": "content/website/final/structured-divergence.md"
+    },
+    {
+      "platform": "website",
+      "title": "I Open Sourced the Complete Playbook for Building a Website With Soul",
+      "slug": "website-with-soul-open-source",
+      "date": "2026-03-14",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 681,
+      "file_path": "content/website/final/website-with-soul-open-source.md"
+    },
+    {
+      "platform": "x",
+      "title": "context handoff engine thread",
+      "slug": "context-handoff-engine-thread",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 172,
+      "file_path": "content/x/drafts/2026-03-14_context-handoff-engine-thread.md"
+    },
+    {
       "platform": "x",
       "title": "pipe bomb breadcrumb 1",
       "slug": "pipe-bomb-breadcrumb-1",
@@ -157,6 +289,28 @@
       "arc": null,
       "word_count": 34,
       "file_path": "content/x/drafts/2026-03-14_pipe-bomb-breadcrumb-1.md"
+    },
+    {
+      "platform": "x",
+      "title": "structured divergence thread",
+      "slug": "structured-divergence-thread",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 182,
+      "file_path": "content/x/drafts/2026-03-14_structured-divergence-thread.md"
+    },
+    {
+      "platform": "x",
+      "title": "website with soul thread",
+      "slug": "website-with-soul-thread",
+      "date": "2026-03-14",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 167,
+      "file_path": "content/x/drafts/2026-03-14_website-with-soul-thread.md"
     },
     {
       "platform": "linkedin",
@@ -443,160 +597,6 @@
       "arc": null,
       "word_count": 120,
       "file_path": "content/nio-log/2026-03-11.md"
-    },
-    {
-      "platform": "website",
-      "title": "clay changed their pricing. here's what it actually means for builders",
-      "slug": "clay-pricing-march-2026-breakdown",
-      "date": "2026-03-11",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1501,
-      "file_path": "content/website/final/clay-pricing-march-2026-breakdown.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "reddit dominance",
-      "slug": "reddit-dominance",
-      "date": "2026-03-10",
-      "stage": "draft",
-      "pillar": "building-and-sharing",
-      "arc": null,
-      "word_count": 257,
-      "file_path": "content/linkedin/drafts/2026-03-10_reddit-dominance.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "clay agency audit share",
-      "slug": "clay-agency-audit-share",
-      "date": "2026-03-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 250,
-      "file_path": "content/linkedin/final/2026-03-10_clay-agency-audit-share.txt"
-    },
-    {
-      "platform": "linkedin",
-      "title": "clay agency audit standalone",
-      "slug": "clay-agency-audit-standalone",
-      "date": "2026-03-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 275,
-      "file_path": "content/linkedin/final/2026-03-10_clay-agency-audit-standalone.txt"
-    },
-    {
-      "platform": "nio-log",
-      "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-03-10:",
-      "slug": "2026-03-10",
-      "date": "2026-03-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 839,
-      "file_path": "content/nio-log/2026-03-10.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "Reddit: Before You Hire a Clay Agency - Free Audit Checklist",
-      "slug": "clay-agency-audit",
-      "date": "2026-03-10",
-      "stage": "draft",
-      "pillar": "gtm-engineering, clay",
-      "arc": null,
-      "word_count": 550,
-      "file_path": "content/reddit/drafts/clay-agency-audit.md"
-    },
-    {
-      "platform": "website",
-      "title": "before you hire a clay agency, talk to me",
-      "slug": "before-you-hire-a-clay-agency",
-      "date": "2026-03-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1061,
-      "file_path": "content/website/final/before-you-hire-a-clay-agency.md"
-    },
-    {
-      "platform": "website",
-      "title": "reddit is king: 500+ visitors in 24 hours from one post",
-      "slug": "reddit-is-king",
-      "date": "2026-03-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1142,
-      "file_path": "content/website/final/reddit-is-king.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "HERE'S THE NIO.LOG ENTRY FOR 2026-03-09:",
-      "slug": "2026-03-09",
-      "date": "2026-03-09",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 795,
-      "file_path": "content/nio-log/2026-03-09.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "sdr to solo gtm engineer",
-      "slug": "sdr-to-solo-gtm-engineer",
-      "date": "2026-03-08",
-      "stage": "draft",
-      "pillar": "building-and-sharing",
-      "arc": null,
-      "word_count": 307,
-      "file_path": "content/linkedin/drafts/2026-03-08_sdr-to-solo-gtm-engineer.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "ALL THREE SITES BUILDING CLEAN. THE",
-      "slug": "2026-03-08",
-      "date": "2026-03-08",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 817,
-      "file_path": "content/nio-log/2026-03-08.md"
-    },
-    {
-      "platform": "substack",
-      "title": "sdr to solo gtm engineer",
-      "slug": "sdr-to-solo-gtm-engineer",
-      "date": "2026-03-08",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1357,
-      "file_path": "content/substack/drafts/2026-03-08_sdr-to-solo-gtm-engineer.md"
-    },
-    {
-      "platform": "website",
-      "title": "Karpathy's Autoresearch and the Agent Loop That Changes Everything",
-      "slug": "karpathy-autoresearch-autonomous-agents",
-      "date": "2026-03-08",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 594,
-      "file_path": "content/website/final/karpathy-autoresearch-autonomous-agents.md"
-    },
-    {
-      "platform": "website",
-      "title": "from SDR to solo GTM engineer",
-      "slug": "sdr-to-solo-gtm-engineer",
-      "date": "2026-03-08",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1239,
-      "file_path": "content/website/final/sdr-to-solo-gtm-engineer.md"
     }
   ],
   "series": [
@@ -698,6 +698,18 @@
     }
   ],
   "crossPlatform": [
+    {
+      "date": "2026-03-14",
+      "slug": "structured-divergence",
+      "platforms": [
+        "linkedin",
+        "website"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 2
+    },
     {
       "date": "2026-03-13",
       "slug": "gws-cli",
@@ -1100,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-14",
+      "grade": "C",
+      "score": 229,
+      "words": 10394,
+      "shipped": 7,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-13",
       "grade": "D",
       "score": 76,
@@ -1201,14 +1221,6 @@
       "score": 523,
       "words": 35640,
       "shipped": 42,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-02-28",
-      "grade": "B",
-      "score": 372,
-      "words": 74182,
-      "shipped": 43,
       "cost": 0.0
     }
   ]

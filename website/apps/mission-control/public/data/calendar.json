@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-14T04:03:25.316Z",
+  "generated": "2026-03-15T04:03:02.569Z",
   "events": [
     {
-      "id": "commit-4eec3b7",
-      "title": "chore: sync Reddit cache — 10 posts (2026-03-13 23:57)",
+      "id": "commit-c9595cf",
+      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 23:04)",
       "type": "system",
-      "datetime": "2026-03-13T23:57:53-04:00",
+      "datetime": "2026-03-14T23:04:45-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 10 posts (2026-03-13 23:57)",
+      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 23:04)",
       "metadata": {
-        "commitHash": "4eec3b7"
+        "commitHash": "c9595cf"
       }
     },
     {
-      "id": "commit-517049e",
-      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 22:57)",
+      "id": "commit-b7e629a",
+      "title": "feat(shawnos): add zh translations for all 27 context-wiki e",
       "type": "system",
-      "datetime": "2026-03-13T22:57:36-04:00",
+      "datetime": "2026-03-14T22:20:22-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 22:57)",
+      "description": "feat(shawnos): add zh translations for all 27 context-wiki entries",
       "metadata": {
-        "commitHash": "517049e"
+        "commitHash": "b7e629a"
       }
     },
     {
-      "id": "commit-da91b4a",
-      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 21:57)",
+      "id": "commit-9191e72",
+      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 22:04)",
       "type": "system",
-      "datetime": "2026-03-13T21:57:19-04:00",
+      "datetime": "2026-03-14T22:04:28-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 21:57)",
+      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 22:04)",
       "metadata": {
-        "commitHash": "da91b4a"
+        "commitHash": "9191e72"
       }
     },
     {
-      "id": "commit-626afef",
-      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 20:57)",
+      "id": "commit-7455ef9",
+      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 21:04)",
       "type": "system",
-      "datetime": "2026-03-13T20:57:02-04:00",
+      "datetime": "2026-03-14T21:04:11-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 20:57)",
+      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 21:04)",
       "metadata": {
-        "commitHash": "626afef"
+        "commitHash": "7455ef9"
       }
     },
     {
-      "id": "commit-3b41ac0",
-      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 19:56)",
+      "id": "commit-b2d5aa1",
+      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 20:03)",
       "type": "system",
-      "datetime": "2026-03-13T19:56:46-04:00",
+      "datetime": "2026-03-14T20:03:54-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 19:56)",
+      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 20:03)",
       "metadata": {
-        "commitHash": "3b41ac0"
+        "commitHash": "b2d5aa1"
       }
     },
     {
-      "id": "commit-91319f0",
-      "title": "chore: sync Reddit cache — 9 posts (2026-03-13 18:56)",
+      "id": "commit-1852002",
+      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 19:03)",
       "type": "system",
-      "datetime": "2026-03-13T18:56:29-04:00",
+      "datetime": "2026-03-14T19:03:37-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 9 posts (2026-03-13 18:56)",
+      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 19:03)",
       "metadata": {
-        "commitHash": "91319f0"
+        "commitHash": "1852002"
       }
     },
     {
-      "id": "commit-1dbb499",
-      "title": "fix: move blog post to correct content directory (content/we",
-      "type": "deployment",
-      "datetime": "2026-03-13T18:43:11-04:00",
+      "id": "commit-5cfbc1d",
+      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 18:03)",
+      "type": "system",
+      "datetime": "2026-03-14T18:03:20-04:00",
       "status": "completed",
-      "description": "fix: move blog post to correct content directory (content/website/final/)",
+      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 18:03)",
       "metadata": {
-        "commitHash": "1dbb499"
+        "commitHash": "5cfbc1d"
       }
     },
     {
-      "id": "commit-a8057dd",
-      "title": "add blog post: Claude Code 1M context window breakdown",
+      "id": "commit-cf2837f",
+      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 17:03)",
       "type": "system",
-      "datetime": "2026-03-13T18:14:36-04:00",
+      "datetime": "2026-03-14T17:03:03-04:00",
       "status": "completed",
-      "description": "add blog post: Claude Code 1M context window breakdown",
+      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 17:03)",
       "metadata": {
-        "commitHash": "a8057dd"
+        "commitHash": "cf2837f"
       }
     },
     {
-      "id": "commit-3b46c74",
-      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 17:56)",
+      "id": "commit-a8f4739",
+      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 16:02)",
       "type": "system",
-      "datetime": "2026-03-13T17:56:12-04:00",
+      "datetime": "2026-03-14T16:02:31-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 17:56)",
+      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 16:02)",
       "metadata": {
-        "commitHash": "3b46c74"
+        "commitHash": "a8f4739"
       }
     },
     {
-      "id": "commit-d9a7e15",
-      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 16:55)",
+      "id": "commit-6e680aa",
+      "title": "feat(shawnos): add zh blog batches 3-4 - 13 more posts trans",
       "type": "system",
-      "datetime": "2026-03-13T16:55:55-04:00",
+      "datetime": "2026-03-14T15:51:12-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 16:55)",
+      "description": "feat(shawnos): add zh blog batches 3-4 - 13 more posts translated to Chinese",
       "metadata": {
-        "commitHash": "d9a7e15"
+        "commitHash": "6e680aa"
       }
     },
     {
-      "id": "commit-6071ae4",
-      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 15:55)",
+      "id": "commit-ff055ef",
+      "title": "feat(shawnos): add zh blog batch 2 - 7 more posts translated",
       "type": "system",
-      "datetime": "2026-03-13T15:55:38-04:00",
+      "datetime": "2026-03-14T15:35:41-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 15:55)",
+      "description": "feat(shawnos): add zh blog batch 2 - 7 more posts translated to Chinese",
       "metadata": {
-        "commitHash": "6071ae4"
+        "commitHash": "ff055ef"
       }
     },
     {
-      "id": "commit-f5dd937",
-      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 14:55)",
+      "id": "commit-8740eeb",
+      "title": "feat(shawnos): add zh blog batch 1 - 7 posts translated to C",
       "type": "system",
-      "datetime": "2026-03-13T14:55:21-04:00",
+      "datetime": "2026-03-14T15:15:10-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 14:55)",
+      "description": "feat(shawnos): add zh blog batch 1 - 7 posts translated to Chinese",
       "metadata": {
-        "commitHash": "f5dd937"
+        "commitHash": "8740eeb"
       }
     },
     {
-      "id": "commit-1742cfd",
-      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 13:55)",
+      "id": "commit-f51756e",
+      "title": "feat(shawnos): add zh translations for UI strings and web-de",
       "type": "system",
-      "datetime": "2026-03-13T13:55:04-04:00",
+      "datetime": "2026-03-14T15:02:49-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 13:55)",
+      "description": "feat(shawnos): add zh translations for UI strings and web-dev service page",
       "metadata": {
-        "commitHash": "1742cfd"
+        "commitHash": "f51756e"
       }
     },
     {
-      "id": "commit-82b3916",
-      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 12:54)",
+      "id": "commit-003ae93",
+      "title": "chore: sync Reddit cache — 12 posts (2026-03-14 15:02)",
       "type": "system",
-      "datetime": "2026-03-13T12:54:47-04:00",
+      "datetime": "2026-03-14T15:02:14-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 12:54)",
+      "description": "chore: sync Reddit cache — 12 posts (2026-03-14 15:02)",
       "metadata": {
-        "commitHash": "82b3916"
+        "commitHash": "003ae93"
       }
     },
     {
-      "id": "commit-db83628",
-      "title": "chore: sync Reddit cache — 8 posts (2026-03-13 11:54)",
+      "id": "commit-4f81f3f",
+      "title": "feat(shawnos): add zh locale infrastructure for Chinese lang",
       "type": "system",
-      "datetime": "2026-03-13T11:54:31-04:00",
+      "datetime": "2026-03-14T14:55:07-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 8 posts (2026-03-13 11:54)",
+      "description": "feat(shawnos): add zh locale infrastructure for Chinese language support",
       "metadata": {
-        "commitHash": "db83628"
+        "commitHash": "4f81f3f"
       }
     }
   ],
