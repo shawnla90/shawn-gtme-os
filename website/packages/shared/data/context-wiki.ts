@@ -80,14 +80,17 @@ export function getContextWikiEntry(
 /* ── locale-aware getters ─────────────────────────── */
 
 import { CONTEXT_WIKI_ENTRIES_ZH, CONTEXT_WIKI_CATEGORIES_ZH } from './context-wiki.zh'
+import { CONTEXT_WIKI_ENTRIES_JA, CONTEXT_WIKI_CATEGORIES_JA } from './context-wiki.ja'
 
 export function getLocalizedContextWikiEntries(locale: string): ContextWikiEntry[] {
   if (locale === 'zh') return CONTEXT_WIKI_ENTRIES_ZH
+  if (locale === 'ja') return CONTEXT_WIKI_ENTRIES_JA
   return CONTEXT_WIKI_ENTRIES
 }
 
 export function getLocalizedContextWikiCategories(locale: string) {
   if (locale === 'zh') return CONTEXT_WIKI_CATEGORIES_ZH
+  if (locale === 'ja') return CONTEXT_WIKI_CATEGORIES_JA
   return CONTEXT_WIKI_CATEGORIES
 }
 

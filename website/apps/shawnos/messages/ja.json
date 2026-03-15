@@ -1,0 +1,550 @@
+{
+  "Nav": {
+    "home": "ホーム",
+    "services": "サービス",
+    "blog": "ブログ",
+    "media": "メディア",
+    "about": "自己紹介",
+    "wiki": "Wiki",
+    "knowledge": "ナレッジ",
+    "howTo": "ハウツー",
+    "clayWiki": "Clay Wiki",
+    "contentWiki": "コンテンツ Wiki",
+    "contextWiki": "コンテキスト Wiki",
+    "geoWiki": "GEO Wiki",
+    "more": "もっと見る",
+    "log": "ログ",
+    "rpg": "RPG",
+    "vitals": "システム状態",
+    "method": "メソッド",
+    "showcase": "ショーケース",
+    "updates": "更新情報",
+    "search": "検索",
+    "api": "API",
+    "repos": "RepoHub"
+  },
+  "Footer": {
+    "copyright": "© {year} ShawnOS.ai",
+    "allRights": "All rights reserved.",
+    "newsletter": "ニュースレター",
+    "social": {
+      "linkedin": "LinkedIn",
+      "x": "X",
+      "github": "GitHub",
+      "substack": "Substack"
+    }
+  },
+  "Common": {
+    "readMore": "続きを読む",
+    "backToHome": "ホームに戻る",
+    "loading": "読み込み中...",
+    "error": "エラーが発生しました",
+    "notFound": "ページが見つかりません",
+    "language": "言語",
+    "english": "English",
+    "hebrew": "עברית",
+    "spanish": "Español",
+    "scroll": "スクロール"
+  },
+  "Home": {
+    "metadata": {
+      "title": "ShawnOS.ai | GTMエンジニアリング、公開で構築",
+      "description": "ひとつのmonorepo。ひとつのOS。すべてのスキル、投稿、キャンペーンが同じコードベースで動く。"
+    },
+    "hero": {
+      "titleLine1": "GTMエンジニアリング、",
+      "titleLine2": "公開で構築",
+      "subtitle": "ひとつのmonorepo。ひとつのOS。すべてのスキル、投稿、キャンペーンが同じコードベースで動く。",
+      "ctaBlog": "ブログを読む",
+      "ctaAbout": "自己紹介"
+    },
+    "stats": {
+      "websites": "ウェブサイト",
+      "aiAgents": "AIエージェント",
+      "knowledgeEntries": "ナレッジ記事",
+      "videoCompositions": "動画コンポジション",
+      "blogPosts": "ブログ記事"
+    },
+    "method": {
+      "headline": "メソッド",
+      "subtitle": "すべてがどう構築されるか",
+      "explore": { "title": "探索", "description": "全体を見渡す。パイプラインの漏れ、コンテンツのギャップ、自動化で手作業を置き換えられるポイントを見つける。" },
+      "plan": { "title": "計画", "description": "構築の順序を決める。今週何を出すか、長期的に積み上がるもの、切るものを定義する。" },
+      "build": { "title": "構築", "description": "実際のインフラを出荷する。パイプラインのコードを書き、コンテンツを作り、自動化を接続する。すべてmonorepoに入る。" },
+      "ship": { "title": "出荷", "description": "本番にプッシュする。すべてのコミットがデプロイされる。すべての投稿が公開される。ステージング地獄はない - 作って、テストして、出荷する。" },
+      "compound": { "title": "複利", "description": "積み上げていく。SEOは複利で効く。コンテンツライブラリは成長する。自動化は寝ている間も動く。システムは毎日強くなる。" }
+    },
+    "darkInterlude": {
+      "title": "ひとつのmonorepo。すべてここから出荷。",
+      "subtitle": "3つのサイト。AIエージェント。コンテンツパイプライン。GTM自動化。すべてバージョン管理下。"
+    },
+    "latestPosts": {
+      "headline": "最新の投稿",
+      "subtitle": "最近出荷されたもの",
+      "viewAll": "すべての投稿を見る"
+    },
+    "latestLog": {
+      "headline": "最新ログ",
+      "subtitle": "今日のビルドログ",
+      "viewAll": "すべてのログを見る"
+    },
+    "faq": {
+      "headline": "FAQ",
+      "subtitle": "よくある質問",
+      "q1": {
+        "question": "GTMエンジニアリングとは？",
+        "answer": "GTMエンジニアリングとは、Go-to-Marketのシステムをコードで構築する実践です。CRMやスプレッドシートを手作業で操作する代わりに、パイプラインを書き、アウトバウンドを自動化し、エンリッチメントワークフローを構築し、コンテンツシステムを出荷する - すべてバージョン管理されコンポーザブルに。",
+        "link": "GTMプレイブックを見る"
+      },
+      "q2": {
+        "question": "ShawnOSとは？",
+        "answer": "ShawnOSは、私のプロフェッショナルOSの全体を動かすmonorepoです。",
+        "answerCont": "3つのウェブサイト、プログレッションエンジン、AIエージェント、コンテンツパイプライン、GTMツール - すべてひとつのコードベースに。キャリアをソフトウェアプロダクトのように運用する実験です。",
+        "linkShowcase": "3つのウェブサイト",
+        "linkRpg": "プログレッションエンジン"
+      },
+      "q3": {
+        "question": "なぜ公開で構築するのか？",
+        "answer": "公開で構築すると、学びのプロセスがコンテンツになり、コミットが仕事の証明になり、失敗が他の人が学べる教訓になります。複利で効く - すべての投稿、すべての更新、すべての出荷された機能が、時間とともに信頼を築く永続的なアーティファクトです。",
+        "link": "ビルドログを見る"
+      },
+      "q4": {
+        "question": "どんな技術スタックで動いている？",
+        "answer": "TypeScript monorepoでNext.js（3サイトをVercelにデプロイ）、Pythonでスクリプトとコンテンツ生成、Claude AIでエージェントレイヤー、launchd cronで自動化。すべてひとつのgitリポジトリから出荷。",
+        "link": "フルスタックを見る"
+      },
+      "q5": {
+        "question": "自分のキャリアにもこのアプローチは使える？",
+        "answer": "もちろん。核となる考え方 - キャリアをプロダクトとして扱い、毎日アーティファクトを出荷し、自動化できるものは自動化し、すべてを複利で積み上げる - はどの分野でも機能します。この正確なスタックは必要ありません。必要なのは、体系的で可視化された成果物を出すマインドセットです。",
+        "link": "構築を始める"
+      },
+      "q6": {
+        "question": "プログレッションエンジンとは？",
+        "answer": "実際の日々のアウトプット - ブログ投稿、コードコミット、出荷された機能 - を追跡し、XPに変換するゲーミフィケーションレイヤーです。進化するピクセルアートアバターとともに11段階のティアをレベルアップしていきます。飾りではなく、実際の仕事量を反映しています。",
+        "link": "ティアを見る"
+      }
+    },
+    "caseStudies": {
+      "headline": "ケーススタディ",
+      "subtitle": "monorepoからの注目プロジェクト",
+      "threeSiteNetwork": { "title": "3サイトネットワーク", "description": "ひとつのmonorepoがShawnOS.ai、theGTMOS.ai、theContentOS.aiを駆動。共有コンポーネント、共有データレイヤー、独立デプロイ。" },
+      "aiContentPipeline": { "title": "AIコンテンツパイプライン", "description": "Claude + SEOキーワードリサーチ + 自動公開によるブログ自動生成。毎日のcronで実行され、人間のレビュー用にドラフトを作成。" },
+      "progressionEngine": { "title": "プログレッションエンジン", "description": "実際の仕事のアウトプットをゲーミフィケーションする11段階のRPGシステム。毎日のコミットと出荷されたコンテンツから獲得したXPに基づいてピクセルアートアバターが進化。" },
+      "missionControl": { "title": "ミッションコントロール", "description": "すべてのシステムを監視する内部ダッシュボード - エージェントステータス、コンテンツパイプライン、SEO指標、チーム連携。" }
+    },
+    "asHeardOn": "掲載メディア",
+    "allAppearances": "すべての出演",
+    "workTogether": {
+      "heading": "一緒に働きませんか？",
+      "bookCall": "通話を予約",
+      "textMe": "メッセージを送る",
+      "evaluateStack": "GTMスタックを評価する"
+    },
+    "systemStatus": {
+      "heading": "システムステータス",
+      "allOperational": "> 全システム稼働中_",
+      "bootLines": {
+        "contentEngine": "コンテンツエンジン ... オンライン",
+        "threeSiteNetwork": "3サイトネットワーク ... 同期済み",
+        "gtmEngine": "GTMエンジン ... theGTMOS.ai",
+        "contentOs": "コンテンツOS ... theContentOS.ai",
+        "cursorAgent": "Cursorエージェント ... 稼働中",
+        "blogPipeline": "ブログパイプライン ... マウント済み",
+        "buildInPublic": "公開構築モード ... 起動",
+        "dailyTracker": "デイリートラッカー ... ストリーミング中"
+      }
+    },
+    "builtWith": { "label": "使用技術", "fullStack": "フルスタック" },
+    "chooseYourPath": {
+      "heading": "パスを選ぶ",
+      "contentSystems": { "label": "コンテンツシステムを構築？", "text": "theContentOS.ai" },
+      "gtmPipelines": { "label": "GTMパイプラインを構築？", "text": "theGTMOS.ai" },
+      "stackAudit": { "label": "GTMスタック診断が必要？", "text": "評価を受ける" },
+      "readBlog": { "label": "仕組みを知りたい？", "text": "ブログを読む" },
+      "showcase": { "label": "コンポーネントを見たい？", "text": "ショーケース" }
+    },
+    "liveUpdates": {
+      "showUpdates": "更新を表示",
+      "dismissUpdates": "更新を閉じる",
+      "updatesHeading": "更新情報",
+      "minimize": "最小化",
+      "updateCount": "{count}件の更新",
+      "updateCountPlural": "{count}件の更新"
+    }
+  },
+  "About": {
+    "metadata": {
+      "title": "Shawn Tenam | GTMエンジニア",
+      "description": "Shawn Tenam - ひとつのmonorepoからAIネイティブパイプライン、Clayワークフロー、コンテンツシステムを構築するGTMエンジニア。独立コンサルタント、Clay認定クリエイター。",
+      "ogTitle": "Shawn Tenam | GTMエンジニア",
+      "ogDescription": "AIネイティブパイプライン、Clayワークフロー、コンテンツシステムを構築するGTMエンジニア。独立コンサルタント、Clay認定クリエイター。"
+    },
+    "hero": {
+      "title": "自己紹介",
+      "titleAccent": "Shawn Tenam",
+      "subtitle": "GTMエンジニア。独立。Clay認定クリエイター。monorepoからAIネイティブパイプラインを構築。"
+    },
+    "identity": {
+      "headline": "アイデンティティ",
+      "subtitle": "誰がこれを作っているか",
+      "paragraph": "AIネイティブパイプライン、エージェント駆動ワークフロー、複利で効くコンテンツシステムを構築しています。すべてのスキル、すべての投稿、すべてのキャンペーンがひとつのコードベースを通る。今あなたが見ているこのサイト自体が、仕事の証明です。"
+    },
+    "techStack": {
+      "headline": "技術スタック",
+      "subtitle": "システムを支えるツール群",
+      "categories": { "framework": "フレームワーク", "infrastructure": "インフラ", "aiMedia": "AI & メディア" },
+      "items": {
+        "nextjs": { "label": "Next.js", "description": "フルスタックReactフレームワーク" },
+        "react": { "label": "React", "description": "UIコンポーネントライブラリ" },
+        "typescript": { "label": "TypeScript", "description": "型付きJavaScript" },
+        "tailwind": { "label": "Tailwind", "description": "ユーティリティファーストCSS" },
+        "vercel": { "label": "Vercel", "description": "エッジデプロイメントプラットフォーム" },
+        "turborepo": { "label": "Turborepo", "description": "Monorepoビルドオーケストレーター" },
+        "cloudflare": { "label": "Cloudflare", "description": "CDNとDNS管理" },
+        "sqlite": { "label": "SQLite", "description": "ローカルデータ永続化" },
+        "remotion": { "label": "Remotion", "description": "プログラマティック動画エンジン" },
+        "claude": { "label": "Claude (AI)", "description": "推論とコードエンジン" }
+      }
+    },
+    "network": {
+      "headline": "ネットワーク",
+      "subtitle": "3つのサイト、ひとつのmonorepo",
+      "description": "shawnos.aiは3サイトシステムのひとつのノードです。各サイトがスタックのひとつの領域を担当しています。",
+      "gtmos": { "label": "theGTMOS.ai", "description": "GTMオペレーティングシステム。Go-to-Marketエンジニアリングのフレームワーク、プレイブック、ライブビルド。" },
+      "contentos": { "label": "theContentOS.ai", "description": "コンテンツオペレーティングシステム。ボイスファースト・パブリッシング、リパーパスパイプライン、コンテンツ・アズ・コード。" }
+    },
+    "connect": {
+      "headline": "つながる",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "reddit": "Reddit",
+      "substack": "Substack",
+      "github": "GitHub"
+    },
+    "showcaseCta": {
+      "title": "コンポーネントの動作を見る",
+      "description": "ターミナルUI、アニメーション、RPGエンジン、動画生成のライブデモ。",
+      "button": "コンポーネントショーケース"
+    },
+    "arcCta": {
+      "title": "全ストーリーを知りたい？",
+      "description": "配管工。SDR。GTMエンジニア。レイヤー、テーゼ、そして3つのドメインが存在する理由。",
+      "button": "アークを読む"
+    }
+  },
+  "AboutArc": {
+    "metadata": {
+      "title": "アーク",
+      "description": "配管工。SDR。GTMエンジニア。shawnos.aiとオペレーティングシステムの全アーク。",
+      "ogTitle": "アーク | shawnos.ai",
+      "ogDescription": "配管工。SDR。GTMエンジニア。全アーク。"
+    },
+    "hero": { "title": "アーク", "subtitle": "配管工。SDR。GTMエンジニア。" },
+    "intro": {
+      "line1": "すべてのGTMクリエイターは同じ自己紹介ページを持っている。",
+      "quote": "「SDRだった。Clayを見つけた。今はその使い方を教えている。」",
+      "line2": "なるほど。これが私のバージョン。",
+      "line3": "ただし、私のは銅管とバーナーから始まる。"
+    },
+    "layers": {
+      "heading": "レイヤー",
+      "description": "SDRからGTMエンジニアに一直線で進んだわけじゃない。3つのレイヤーを経て、それぞれが構築への考え方を根本から変えた。",
+      "whatItTaughtMe": "学んだこと：",
+      "plumber": { "title": "配管工", "subtitle": "レイヤー 1", "body": "テックの前は配管工だった。比喩じゃない。本物の配管。壁に耳を当てて問題を診断し、誰も触りたがらないパイプを辿り、ドキュメントなしでプレッシャーの中システムを直す。", "lesson": "すべてのシステムにはロジックがある。流れを追え。上流で何かが壊れたら、下流のすべてが壊れる。そして水漏れが止まるまで、誰もその修理を評価しない。" },
+      "sdr": { "title": "SDR", "subtitle": "レイヤー 2", "body": "1日200通以上のコールドメール。プライマリドメイン、ウォームアップなし、SalesLoftシーケンス、Salesforceアクティビティの手動ログ。誰も手をつけたがらないアカウントでゼロからバイイングコミッティを構築。", "lesson": "量は教師になる。拒否はデータになる。手動でアウトリーチを地道にやった人こそが、後で何を自動化すべきかを本当に理解できる。" },
+      "gtmEngineer": { "title": "GTMエンジニア", "subtitle": "レイヤー 3", "body": "システムの中で働くのをやめて、システムを作る側になった。Clayテーブル、HubSpot自動化、Instantlyシーケンス、ウェブリビールワークフロー、エンリッチメントパイプライン。以前手作業でやっていた仕事が、今は自分が設計したインフラ上で動いている。", "lesson": "最高のビルダーは、自動化する前にその仕事をやっていた人間だ。理解していないものはエンジニアリングできない。" },
+      "conclusion": "これらのどれも私を定義しない。すべてが私の出荷するものを研ぎ澄ませる。"
+    },
+    "thesis": {
+      "heading": "テーゼ",
+      "bold": "これはバイブコーディングじゃない。",
+      "p1": "一度プロンプトを打って返ってきたものをそのまま出荷するなんてことはしない。コードを一行書く前にプランモードを使う。何かが壊れたらアスクモードを使う。並列作業にはサブエージェントを走らせる。テストし、壊し、エラーを読み、直し、出荷する。",
+      "p2": "AIがあなたの代わりに仕事をするわけじゃない。あなたが既に理解している仕事を加速する。",
+      "p3": "このサイトのすべてのページは、生成されたのではなくイテレーションされた。すべてのスキルはドキュメント化される前にデバッグされた。すべてのキャンペーンテンプレートは、プレイブックになる前にリアルなパイプラインでテストされた。",
+      "p4": "リポジトリには400以上のファイルがある。ワンショットプロンプトで作られたものはゼロ。"
+    },
+    "threeSites": {
+      "heading": "3つのサイト、ひとつのシステム",
+      "description": "虚栄心じゃない。アーキテクチャだ。",
+      "shawnos": { "name": "shawnos.ai", "description": "ビルダー。パーソナルOS。デイリートラッカー、RPGプログレッション、アバターシステム、APIレイヤー。インフラが住む場所。" },
+      "gtmos": { "name": "thegtmos.ai", "description": "プレイブック。GTMエンジニアリングフレームワーク、ワークフロー解説、キャンペーンアーキテクチャ。パイプライン生成の裏側にあるシステム。" },
+      "contentos": { "name": "thecontentos.ai", "description": "ボイスエンジン。コンテンツ・アズ・コードのパブリッシング、ボイスDNA、リパーパスパイプライン。言葉がどう作られ、どこに届くか。" },
+      "footer": "3つのドメイン。ひとつのmonorepo。すべてのページ、すべてのAPIルート、すべての生成画像が同じコードベースから。ここに偶然はない。"
+    },
+    "buildWithMe": {
+      "heading": "一緒に構築する",
+      "description": "見るだけのポートフォリオじゃない。フォークできるシステムだ。",
+      "theApi": { "label": "API", "description": "エンドポイント、スキーマ、ライブデータ" },
+      "questBoard": { "label": "クエストボード", "description": "ビルダーへの挑戦" },
+      "buildYourOwn": { "label": "自分で作る", "description": "スターターのプロンプト" },
+      "skillGuide": { "label": "スキルガイド", "description": "RPGシステムの仕組み" }
+    },
+    "connect": {
+      "heading": "つながる",
+      "linkedin": "LinkedIn",
+      "xTwitter": "X / Twitter",
+      "substack": "Substack",
+      "github": "GitHub",
+      "backToAbout": "自己紹介に戻る"
+    }
+  },
+  "Blog": {
+    "metadata": { "title": "ブログ", "description": "shawnos.aiビルドログからの投稿。GTMエンジニアリング、公開で構築。" },
+    "hero": { "title": "ブログ", "subtitle": "ビルドログからの投稿。" },
+    "emptyState": "投稿が見つかりません。近日公開予定。",
+    "featured": "注目",
+    "readMore": "続きを読む",
+    "minRead": "{minutes}分で読める",
+    "backToBlog": "ブログに戻る",
+    "toc": "$ 目次"
+  },
+  "Media": {
+    "metadata": { "title": "メディア | ポッドキャスト・インタビュー・出演", "description": "Shawn Tenamのポッドキャスト、インタビュー、パネル、登壇。" },
+    "hero": { "title": "メディア", "subtitle": "ポッドキャスト、インタビュー、出演" },
+    "stats": { "appearances": "出演", "platforms": "プラットフォーム", "latest": "最新" },
+    "sections": { "featured": "注目", "allAppearances": "すべての出演" },
+    "categories": { "podcast": "ポッドキャスト", "interview": "インタビュー", "panel": "パネル", "speaking": "登壇", "article": "記事" },
+    "backlink": { "heading": "ポッドキャストホスト・メディア向け：", "body": "番組ノートに {url} へのリンクをお願いします。" },
+    "nav": { "home": "ホーム", "about": "自己紹介" }
+  },
+  "Method": {
+    "metadata": { "title": "メソッド", "description": "Recursive Drift。AIで構築するための非線形メソッド。6つの状態、固定順序なし、出力が入力にフィードバック。" },
+    "hero": { "title": "Recursive Drift", "subtitle": "AIで構築するための非線形メソッド。" },
+    "intro": { "heading": "recursive drift.", "tagline": "AIで構築するための非線形メソッド。" },
+    "states": {
+      "sectionTitle": "ステート",
+      "sectionSubtitle": "フィードバックループを持つステートマシン",
+      "inPractice": "実践では：",
+      "freefall": { "name": "フリーフォール", "tag": "探索" },
+      "plan": { "name": "プラン", "tag": "結晶化" },
+      "build": { "name": "ビルド", "tag": "委譲" },
+      "break": { "name": "ブレイク", "tag": "方向転換" },
+      "ask": { "name": "アスク", "tag": "問い" },
+      "seed": { "name": "シード", "tag": "種まき" }
+    },
+    "recursive": { "sectionTitle": "再帰的", "sectionSubtitle": "出力が入力にフィードバック" },
+    "antiPatterns": { "sectionTitle": "これはそうではない" },
+    "contrasts": { "sectionTitle": "他との違い" },
+    "paradox": { "sectionTitle": "パラドックス" },
+    "seeItRunning": {
+      "sectionTitle": "動いているところを見る",
+      "links": {
+        "fieldGuide": { "label": "フィールドガイド", "desc": "新しいAI機能テストに適用されたrecursive drift" },
+        "arc": { "label": "アーク", "desc": "始まりの場所。配管工、SDR、GTMエンジニア" },
+        "log": { "label": "ログ", "desc": "ループからの日々のアウトプット" },
+        "blog": { "label": "ブログ", "desc": "システムが生み出した長文コンテンツ" },
+        "api": { "label": "API", "desc": "エンドポイント、スキーマ、ライブデータ" }
+      }
+    },
+    "backToAbout": "自己紹介に戻る"
+  },
+  "Knowledge": {
+    "metadata": { "title": "ナレッジガイド | 本当に必要なエンジニアリング＆AI用語集", "description": "Git、Vercel、AIエージェント、cronジョブ、知っておくべき技術用語。" },
+    "breadcrumb": "ナレッジ",
+    "termPage": {
+      "notFoundMessage": "用語が見つかりません。こちらをお試しください：",
+      "notFoundLink": "ナレッジガイド",
+      "sections": { "whyItMatters": "なぜ重要か", "howYouUseIt": "どう使うか", "howIUseIt": "私がどう使っているか", "relatedTerms": "関連用語", "goDeeper": "もっと深く" },
+      "nav": { "backToEngineering": "エンジニアリング＆AIガイド", "backToGtm": "GTMナレッジガイド", "allTerms": "すべての用語" }
+    },
+    "guidePage": {
+      "toc": "このページの内容",
+      "mobileToc": "目次",
+      "fieldLabels": { "whyItMatters": "なぜ重要か", "howYouUseIt": "どう使うか", "related": "関連：" },
+      "outro": { "title": "バイブコーダーのツールキット", "closingLine": "何か作ろう。", "cta": { "title": "GTM側が知りたい？", "buttonText": "GTM OSナレッジガイド" } },
+      "nav": { "left": "ホーム", "right": "GTM OSガイド" }
+    }
+  },
+  "HowTo": {
+    "metadata": { "title": "ハウツー Wiki | AIツール実践ガイド", "description": "Cursor IDE、Claude Code、MCPサーバー、並列エージェント、コスト管理、AIセキュリティのステップバイステップガイド。" },
+    "breadcrumb": { "knowledge": "ナレッジ", "howToWiki": "ハウツー Wiki" },
+    "hubPage": {
+      "title": "ハウツー Wiki",
+      "description": "AIツールの実践ガイド。",
+      "badge": "AIエンジニアリング実践者",
+      "stats": { "guides": "ガイド", "categories": "カテゴリ", "onThisSite": "本サイト上" },
+      "mobileToc": "カテゴリ",
+      "toc": { "heading": "カテゴリ", "legend": "凡例", "localEntry": "ローカル記事", "crossSite": "クロスサイト" },
+      "nav": { "left": "ナレッジガイド", "right": "Clay Wiki" }
+    },
+    "entryPage": {
+      "notFoundMessage": "記事が見つかりません。こちらをお試しください：",
+      "notFoundLink": "ハウツー Wiki",
+      "sectionTypes": { "pattern": "パターン", "code": "コード", "antiPattern": "アンチパターン", "proTip": "プロのコツ", "formula": "フォーミュラ" },
+      "sections": { "relatedGuides": "関連ガイド" },
+      "nav": { "left": "ハウツー Wiki", "right": "ナレッジガイド" }
+    }
+  },
+  "ContextWiki": {
+    "metadata": { "title": "コンテキストエンジニアリング Wiki | 実践ガイド", "description": "GTMエンジニア向けコンテキストエンジニアリングの実践ガイド。" },
+    "hero": { "title": "コンテキストエンジニアリング", "subtitle": "AIに正しいコンテキストを与える。推測をやめる。" },
+    "stats": { "wikiEntries": "Wiki記事", "categories": "カテゴリ", "skillsBuilt": "構築済みスキル" },
+    "badge": "コンテキストエンジニア",
+    "nav": { "knowledgeGuide": "ナレッジガイド", "clayWiki": "Clay Wiki" },
+    "entry": { "notFoundMessage": "記事が見つかりません。こちらをお試しください：", "notFoundLink": "コンテキスト Wiki", "relatedLabel": "関連記事", "navBackToWiki": "コンテキスト Wiki", "navToKnowledge": "ナレッジガイド" },
+    "sectionTypes": { "pattern": "パターン", "code": "コード", "antiPattern": "アンチパターン", "proTip": "プロのコツ", "formula": "フォーミュラ" }
+  },
+  "Search": {
+    "metadata": { "title": "検索", "description": "shawnos.aiのすべてのコンテンツを検索。" },
+    "hero": { "title": "検索", "subtitle": "shawnos.aiで何でも見つける。" },
+    "input": { "placeholder": "すべてを検索...", "clear": "クリア" },
+    "hint": { "startTyping": "入力を始めると検索されます。" },
+    "results": { "noResults": "「{query}」の検索結果なし", "resultCount": "{count}件の結果" },
+    "types": { "howTo": "ハウツー", "knowledge": "ナレッジ", "contextWiki": "コンテキスト Wiki", "clayWiki": "Clay Wiki", "contentWiki": "コンテンツ Wiki", "blog": "ブログ", "dailyLog": "デイリーログ" }
+  },
+  "Updates": {
+    "metadata": { "title": "最新の更新 | ShawnOS.aiの新着情報", "description": "shawnos.aiのすべての新しい記事、Wiki記事、機能、システム更新。" },
+    "hero": { "title": "更新情報", "subtitle": "出荷されたすべてを、ひとつのフィードで。" },
+    "stats": { "recentUpdates": "最近の更新", "featuresShipped": "出荷された機能", "categories": "カテゴリ" },
+    "rss": { "badge": "RSSフィード" },
+    "sections": { "featuresAndLaunches": "機能＆ローンチ", "allContent": "すべてのコンテンツ" },
+    "featureTypes": { "launch": "ローンチ", "feature": "機能", "integration": "連携", "infrastructure": "インフラ" },
+    "feed": { "all": "すべて", "searchPlaceholder": "タイトル、説明を検索...", "clear": "クリア", "clearAll": "すべてクリア", "noResultsForQuery": "「{query}」の結果はありません。", "noResultsForFilters": "現在のフィルターに該当する結果はありません。", "reset": "リセット" },
+    "nav": { "home": "ホーム", "rssFeed": "RSSフィード" }
+  },
+  "Showcase": {
+    "metadata": { "title": "コンポーネントショーケース", "description": "shawnos.aiを駆動するReactコンポーネント、アニメーションシステム、RPGエンジンのライブデモ。" },
+    "hero": { "title": "ショーケース", "subtitle": "すべてのシステムのライブデモ。" },
+    "terminalUi": { "title": "ターミナルUI", "description": "すべてのページで使用されるカスタムターミナルUI。" },
+    "animationSystem": { "title": "アニメーションシステム", "description": "2つの純粋なReactアニメーションプリミティブ。" },
+    "rpgEngine": { "title": "RPGプログレッションエンジン", "description": "実際の日々の仕事からXPが蓄積される。" },
+    "videoGeneration": { "title": "動画生成", "description": "40以上のRemotionコンポジション。" },
+    "contentPipeline": { "title": "コンテンツパイプライン", "description": "Markdownファイルがビルド時にブログ投稿、Wikiページ、RSSフィードになる。" },
+    "cta": { "headline": "公開で構築。すべてのコミットを追跡。", "description": "各システムがどう構築されるか、デイリーログをフォローしよう。", "readTheLog": "ログを読む", "about": "自己紹介" }
+  },
+  "Log": {
+    "metadata": { "title": "デイリービルドログ", "description": "GTMオペレーティングシステムからのデイリービルドログ。" },
+    "index": {
+      "heroTitle": "ビルドログ",
+      "heroSubtitle": "日々の仕事の証明。",
+      "viewProgression": "プログレッションを見る",
+      "exploreSkillGuide": "スキルガイドを見る",
+      "buildYourOwnCTA": "自分で作りたい？プロンプトを取得。",
+      "searchPlaceholder": "日付で検索...",
+      "gradeFilterAll": "すべて",
+      "noLogsFound": "ログが見つかりません。近日公開予定。",
+      "noLogsMatch": "現在のフィルターに該当するログはありません。"
+    },
+    "detail": { "backToLogs": "ログに戻る", "logNotFound": "{date}のログが見つかりません。" },
+    "buildYourOwn": {
+      "metadata": { "title": "自分で作る - デイリートラッカー", "description": "AIネイティブなデイリーアクティビティトラッカーを構築するためのコピペプロンプト。" },
+      "heroTitle": "自分で作る", "heroSubtitle": "デイリーレシートの裏にあるプロンプト。",
+      "thePrompt": "プロンプト", "copyPrompt": "プロンプトをコピー", "copied": "コピーしました！", "backToLog": "ログに戻る"
+    },
+    "progression": {
+      "metadata": { "title": "キャラクタープログレッション", "description": "XP成長、グレードトレンド、ストリーク倍率、マイルストーン、トークン効率。" },
+      "heroTitle": "プログレッション", "heroSubtitle": "XP、グレード＆レベリング。", "backToLogs": "ログに戻る",
+      "xpEarnedPerDay": "1日あたりの獲得XP", "scoringLog": "スコアリングログ",
+      "tableHeaders": { "date": "日付", "score": "スコア", "grade": "グレード", "commits": "コミット" },
+      "currentClass": "現在のクラス", "milestones": "マイルストーン", "tokenEfficiency": "トークン効率", "totalSpend": "合計支出", "avgPerDay": "1日あたり平均"
+    },
+    "quests": { "metadata": { "title": "クエストボード | ビルダーへの挑戦", "description": "自分のデイリートラッカーを構築するための5つのチャレンジ。" }, "heroTitle": "クエストボード", "heroSubtitle": "ビルダーへの挑戦。" },
+    "skillGuide": { "metadata": { "title": "スキルガイド | デイリートラッカーの仕組み", "description": "オリジンストーリー、スタック解説、RPGプログレッションシステム。" }, "heroTitle": "スキルガイド", "heroSubtitle": "デイリートラッカーの仕組み。" }
+  },
+  "RPG": {
+    "metadata": { "title": "プログレッションエンジン | ShawnOS.ai", "description": "11段階。5つのクラス。すべてのタイトルは日々のアウトプットから獲得。" },
+    "heroTitle": "プログレッションエンジン", "heroSubtitle": "実際の仕事からXPを獲得。11段階。5つのクラス。",
+    "sections": { "tierProgression": "ティアプログレッション", "classes": "クラス", "titleTable": "タイトル一覧" },
+    "tableHeaders": { "level": "レベル", "title": "タイトル", "xpRequired": "必要XP", "avatarTier": "アバターティア", "xpToNext": "次までのXP" },
+    "footer": { "seeHowEarned": "このスコアの獲得方法を見る" },
+    "reveal": { "clickToPreview": "クリックしてプレビュー", "maxRank": "最大ランク" },
+    "loading": { "systemLabel": "システムロード中 v1.0", "tapToStart": "タップして開始" }
+  },
+  "Lab": {
+    "metadata": { "title": "Nio DNA Lab | ShawnOS.ai", "description": "AIエージェントの進化を実演。Nioが実際の使用を通じてレベルアップする様子を観察。" },
+    "bootLabel": "DNA LAB v1.0", "bootTap": "タップして開始",
+    "header": { "title": "Nio DNA Lab", "subtitle": "AIエージェントの進化を実演。それ自身が記述するシステムによって構築。" },
+    "sections": {
+      "roadmap": { "current": "現在" },
+      "costs": { "claudeMax": "Claude Max", "apiSpend": "API支出", "total": "合計：", "messages": "メッセージ", "apiCost": "APIコスト", "dailyCap": "1日の上限", "utilization": "使用率" }
+    },
+    "cta": { "readPost": "全文を読む", "exploreMore": "もっと探索" }
+  },
+  "Vitals": {
+    "metadata": { "title": "システムバイタル", "description": "ShawnOSウェブサイトエコシステムのライブスキャン。" },
+    "heroTitle": "システムバイタル", "heroSubtitle": "ライブエコシステムスキャン。",
+    "scannerNotInit": "スキャナーが初期化されていません。まずwebsite_scanner.pyを実行してください。",
+    "nioTerminal": { "metadata": { "title": "nio.terminal - AI開発ログ", "description": "AIサイトガーディアンNioからの日々のインサイト。" } },
+    "v2Lab": { "title": "プログレッションエンジン v2 Lab", "subtitle": "ゴースト比較。再調整されたグレード、上昇チェーン倍率、ボーナススコアリング。", "labels": { "v1Current": "v1 - 現行（本番）", "v2Experimental": "v2 - 実験的" } }
+  },
+  "Live": {
+    "metadata": {
+      "title": "ライブフィード | AIニュース＆ビルダーコミュニティ",
+      "description": "厳選されたAIビルダーニュースとr/GTMBuildersのコミュニティ投稿。ビルダーコミュニティからのライブ配信。"
+    },
+    "hero": {
+      "title": "ライブフィード",
+      "subtitle": "厳選されたAIニュースとビルダーコミュニティの投稿。"
+    },
+    "stats": {
+      "subscribers": "登録者",
+      "posts": "投稿",
+      "syncedHourly": "1時間ごとに同期"
+    },
+    "tabs": {
+      "aiNews": "AIニュース",
+      "community": "コミュニティ"
+    },
+    "categories": {
+      "ai-news": "AIニュース",
+      "builder-tools": "ビルダーツール",
+      "repos": "リポジトリ",
+      "shipped": "出荷済み"
+    },
+    "empty": {
+      "aiNews": "AIニュースはまだありません。スカウトは6時間ごとに実行されます。",
+      "community": "コミュニティ投稿はまだありません。"
+    },
+    "cta": {
+      "headline": "ビルダー主導のグロースはここから始まる。",
+      "joinReddit": "r/GTMBuildersに参加",
+      "postOnReddit": "Redditに投稿"
+    },
+    "nav": {
+      "home": "ホーム",
+      "updates": "更新情報"
+    }
+  },
+  "API": {
+    "metadata": { "title": "パブリック API | ShawnOS.ai - リアルタイムRPGプログレッションフィード", "description": "ライブのXP、レベル、マイルストーンにJSONでアクセス。" },
+    "heroTitle": "パブリック API", "heroSubtitle": "リアルタイムプログレッションフィード。",
+    "copyButton": "コピー",
+    "sections": { "quickStart": "クイックスタート", "responseSchema": "レスポンススキーマ", "useCases": "ユースケース", "howItWorks": "このシステムの仕組み", "buildYourOwn": "自分で作る", "aboutShawnOS": "ShawnOSについて", "relatedResources": "関連リソース" },
+    "quickStart": { "curl": "cURL", "jsFetch": "JavaScript (fetch)", "python": "Python" },
+    "useCases": {
+      "embedStats": { "title": "ライブ統計を埋め込む", "description": "ポートフォリオにリアルタイムのXPとレベルを表示" },
+      "discordBot": { "title": "Discord Bot", "description": "プログレッションを追跡するBotを構築" },
+      "twitterAutomation": { "title": "Twitter自動化", "description": "マイルストーン達成時に自動ツイート" },
+      "studyArchitecture": { "title": "アーキテクチャを学ぶ", "description": "リアルタイムRPGシステムの構築方法を調査" }
+    },
+    "buildYourOwn": {
+      "steps": {
+        "dataPipeline": { "title": "1. データパイプライン", "description": "作業ソースをスキャンしてスコアを計算" },
+        "persistenceLayer": { "title": "2. 永続化レイヤー", "description": "統計をパブリックJSONファイルに書き込み" },
+        "apiEndpoint": { "title": "3. APIエンドポイント", "description": "CORSとキャッシュ付きでパブリックAPIとして公開" },
+        "frontendDisplay": { "title": "4. フロントエンド表示", "description": "データをレンダリングするUIコンポーネントを構築" }
+      },
+      "toolStack": "ツールスタック"
+    },
+    "resources": {
+      "homepage": { "title": "ShawnOS.aiホームページ", "description": "メインランディングページとRPGダッシュボード" },
+      "github": { "title": "GitHubリポジトリ", "description": "ソースコードとドキュメント" },
+      "rpgEngine": { "title": "RPGプログレッションエンジン", "description": "タイトル、ティア、マイルストーンのビジュアル解説" }
+    }
+  },
+  "Repos": {
+    "metadata": {
+      "title": "RepoHub | shawnos.ai",
+      "description": "オープンソースリポジトリ、コミュニティビルド、おすすめツール。"
+    },
+    "hero": {
+      "title": "RepoHub",
+      "subtitle": "オープンソースリポジトリ、ツール、コミュニティビルド"
+    },
+    "tabs": {
+      "mine": "Shawnのリポジトリ",
+      "community": "コミュニティ",
+      "recommended": "おすすめ"
+    }
+  }
+}

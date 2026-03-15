@@ -1,4 +1,4 @@
-export type Locale = 'en' | 'he' | 'es' | 'zh'
+export type Locale = 'en' | 'he' | 'es' | 'zh' | 'ja'
 
 export interface TransformationStep {
   label: string

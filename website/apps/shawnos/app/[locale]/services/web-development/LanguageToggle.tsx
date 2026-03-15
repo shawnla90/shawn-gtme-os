@@ -7,6 +7,7 @@ const localeLabels: Record<Locale, string> = {
   he: '\u05E2\u05D1',
   es: 'ES',
   zh: '中',
+  ja: '日',
 }
 
 const localeUrls: Record<Locale, string> = {
@@ -14,6 +15,7 @@ const localeUrls: Record<Locale, string> = {
   he: '/he/services/web-development',
   es: '/es/services/web-development',
   zh: '/zh/services/web-development',
+  ja: '/ja/services/web-development',
 }
 
 interface LanguageToggleProps {

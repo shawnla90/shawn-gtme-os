@@ -26,6 +26,11 @@ html body {
   font-family: var(--font-chinese), var(--font-mono);
 }
 
+/* === Japanese font override === */
+[lang="ja"] body {
+  font-family: var(--font-japanese), var(--font-mono);
+}
+
 /* Main gutters — pages keep padding, homepage sections break out */
 main {
   padding: 0 24px;

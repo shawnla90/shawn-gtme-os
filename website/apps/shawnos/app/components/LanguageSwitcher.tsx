@@ -9,6 +9,7 @@ const locales = [
   { code: 'he', label: 'עברית', short: 'עב' },
   { code: 'es', label: 'Espanol', short: 'ES' },
   { code: 'zh', label: '中文', short: '中' },
+  { code: 'ja', label: '日本語', short: '日' },
 ]
 
 export function LanguageSwitcher() {

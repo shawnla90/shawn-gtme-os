@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     he: 'שירותי פיתוח אתרי אינטרנט',
     es: 'Servicios de Desarrollo Web',
     zh: '网站开发服务',
+    ja: 'ウェブ開発サービス',
   }
 
   const localeDesc: Record<Locale, string> = {
@@ -28,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     he: 'אתרים מותאמים אישית לעסקי שירותיים החל מ-$3,500. אתרים שנטענים בפחות משנייה, מדורגים ב-Google, ומראים לכם בדיוק מאיפה הגיע הלקוח הבא.',
     es: 'Sitios web personalizados para negocios de servicios desde $3,500. Sitios que cargan en menos de 1 segundo, aparecen en Google y le muestran exactamente de dónde vino su próximo cliente.',
     zh: '为服务型企业定制网站，起价$3,500。加载速度不到1秒，在Google上获得排名，并精确追踪您的下一个客户来源。支持多语言。',
+    ja: 'サービス業向けカスタムウェブサイト、$3,500から。1秒未満で読み込み、Googleで上位表示、次の顧客がどこから来たか正確に把握。多言語対応。',
   }
 
   return {
@@ -52,6 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         'en': `${SITE_URL}/services/web-development`,
         'he': `${SITE_URL}/he/services/web-development`,
         'es': `${SITE_URL}/es/services/web-development`,
+        'ja': `${SITE_URL}/ja/services/web-development`,
         'x-default': `${SITE_URL}/services/web-development`,
       },
     },
@@ -61,7 +64,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: validLocale === 'en'
         ? `${SITE_URL}/services/web-development`
         : `${SITE_URL}/${validLocale}/services/web-development`,
-      locale: validLocale === 'he' ? 'he_IL' : validLocale === 'es' ? 'es_US' : 'en_US',
+      locale: validLocale === 'he' ? 'he_IL' : validLocale === 'es' ? 'es_US' : validLocale === 'ja' ? 'ja_JP' : validLocale === 'zh' ? 'zh_CN' : 'en_US',
       images: [
         {
           url: '/og?title=Web+Development+Services&subtitle=Your+website+looks+fine.+It%27s+losing+you+money.',
@@ -135,6 +138,7 @@ export default async function WebDevPage({ params }: Props) {
     he: { service: 'שירותים', page: 'פיתוח אתרי אינטרנט' },
     es: { service: 'Servicios', page: 'Desarrollo Web' },
     zh: { service: '服务', page: '网站开发' },
+    ja: { service: 'サービス', page: 'ウェブ開発' },
   }
 
   return (
