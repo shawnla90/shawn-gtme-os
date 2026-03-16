@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-15T04:00:08.000Z",
+  "generated": "2026-03-16T04:00:14.000Z",
   "totals": {
-    "total_content": 201,
+    "total_content": 202,
     "total_drafts": 117,
-    "total_final": 84,
-    "total_words": 118434,
+    "total_final": 85,
+    "total_words": 118534,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
@@ -30,15 +30,15 @@
     },
     "nio-log": {
       "draft": 0,
-      "final": 25,
-      "total": 25,
-      "words": 14883
+      "final": 26,
+      "total": 26,
+      "words": 15011
     },
     "website": {
       "draft": 1,
       "final": 27,
       "total": 28,
-      "words": 27373
+      "words": 27345
     },
     "substack": {
       "draft": 10,
@@ -135,6 +135,17 @@
       "arc": null,
       "word_count": 60,
       "file_path": "content/linkedin/drafts/2026-03-15_pipe-bomb-breadcrumb.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-15.MD`.",
+      "slug": "2026-03-15",
+      "date": "2026-03-15",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 128,
+      "file_path": "content/nio-log/2026-03-15.md"
     },
     {
       "platform": "x",
@@ -248,13 +259,13 @@
     },
     {
       "platform": "website",
-      "title": "Structured Divergence: Why ADHD Brains Were Built for Claude Code",
+      "title": "Structured Divergence: Four Repos, One Pattern, and Why Everyone Builds the Same Things",
       "slug": "structured-divergence",
       "date": "2026-03-14",
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1189,
+      "word_count": 1161,
       "file_path": "content/website/final/structured-divergence.md"
     },
     {
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 342,
       "file_path": "content/linkedin/final/2026-03-11_clay-pricing-breakdown.txt"
-    },
-    {
-      "platform": "nio-log",
-      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-11.MD`.",
-      "slug": "2026-03-11",
-      "date": "2026-03-11",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 120,
-      "file_path": "content/nio-log/2026-03-11.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-15",
+      "grade": "B",
+      "score": 353,
+      "words": 12241,
+      "shipped": 14,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-14",
       "grade": "C",
       "score": 229,
@@ -1213,14 +1221,6 @@
       "score": 367,
       "words": 7047,
       "shipped": 13,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-01",
-      "grade": "A+",
-      "score": 523,
-      "words": 35640,
-      "shipped": 42,
       "cost": 0.0
     }
   ]

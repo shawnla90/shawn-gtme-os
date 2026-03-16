@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-15T04:03:02.569Z",
+  "generated": "2026-03-16T04:03:05.636Z",
   "events": [
     {
-      "id": "commit-c9595cf",
-      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 23:04)",
+      "id": "commit-c39ef75",
+      "title": "chore: sync Reddit cache — 16 posts (2026-03-15 23:47)",
       "type": "system",
-      "datetime": "2026-03-14T23:04:45-04:00",
+      "datetime": "2026-03-15T23:47:14-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 23:04)",
+      "description": "chore: sync Reddit cache — 16 posts (2026-03-15 23:47)",
       "metadata": {
-        "commitHash": "c9595cf"
+        "commitHash": "c39ef75"
       }
     },
     {
-      "id": "commit-b7e629a",
-      "title": "feat(shawnos): add zh translations for all 27 context-wiki e",
+      "id": "commit-ab32cbc",
+      "title": "feat(analytics): enrich newsletter signup tracking + PostHog",
       "type": "system",
-      "datetime": "2026-03-14T22:20:22-04:00",
+      "datetime": "2026-03-15T23:19:51-04:00",
       "status": "completed",
-      "description": "feat(shawnos): add zh translations for all 27 context-wiki entries",
+      "description": "feat(analytics): enrich newsletter signup tracking + PostHog dashboard",
       "metadata": {
-        "commitHash": "b7e629a"
+        "commitHash": "ab32cbc"
       }
     },
     {
-      "id": "commit-9191e72",
-      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 22:04)",
+      "id": "commit-d51d4ea",
+      "title": "chore: sync Reddit cache — 16 posts (2026-03-15 22:46)",
       "type": "system",
-      "datetime": "2026-03-14T22:04:28-04:00",
+      "datetime": "2026-03-15T22:46:57-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 22:04)",
+      "description": "chore: sync Reddit cache — 16 posts (2026-03-15 22:46)",
       "metadata": {
-        "commitHash": "9191e72"
+        "commitHash": "d51d4ea"
       }
     },
     {
-      "id": "commit-7455ef9",
-      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 21:04)",
+      "id": "commit-86fc0fe",
+      "title": "feat(repos): add Projects tab to RepoHub with 5 live project",
       "type": "system",
-      "datetime": "2026-03-14T21:04:11-04:00",
+      "datetime": "2026-03-15T22:38:13-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 21:04)",
+      "description": "feat(repos): add Projects tab to RepoHub with 5 live projects",
       "metadata": {
-        "commitHash": "7455ef9"
+        "commitHash": "86fc0fe"
       }
     },
     {
-      "id": "commit-b2d5aa1",
-      "title": "chore: sync Reddit cache — 14 posts (2026-03-14 20:03)",
+      "id": "commit-8e1b447",
+      "title": "feat(crypto-os): premium typography, daily briefing, $100 gu",
       "type": "system",
-      "datetime": "2026-03-14T20:03:54-04:00",
+      "datetime": "2026-03-15T22:10:09-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 14 posts (2026-03-14 20:03)",
+      "description": "feat(crypto-os): premium typography, daily briefing, $100 guide",
       "metadata": {
-        "commitHash": "b2d5aa1"
+        "commitHash": "8e1b447"
       }
     },
     {
-      "id": "commit-1852002",
-      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 19:03)",
+      "id": "commit-808e307",
+      "title": "feat(scroll-signup): require both 40% scroll AND 10s on page",
       "type": "system",
-      "datetime": "2026-03-14T19:03:37-04:00",
+      "datetime": "2026-03-15T21:52:24-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 19:03)",
+      "description": "feat(scroll-signup): require both 40% scroll AND 10s on page",
       "metadata": {
-        "commitHash": "1852002"
+        "commitHash": "808e307"
       }
     },
     {
-      "id": "commit-5cfbc1d",
-      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 18:03)",
+      "id": "commit-d4f5d2f",
+      "title": "fix(scroll-signup): persist subscription to localStorage acr",
       "type": "system",
-      "datetime": "2026-03-14T18:03:20-04:00",
+      "datetime": "2026-03-15T21:51:16-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 18:03)",
+      "description": "fix(scroll-signup): persist subscription to localStorage across pages",
       "metadata": {
-        "commitHash": "5cfbc1d"
+        "commitHash": "d4f5d2f"
       }
     },
     {
-      "id": "commit-cf2837f",
-      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 17:03)",
+      "id": "commit-1d55923",
+      "title": "chore: sync Reddit cache — 16 posts (2026-03-15 21:46)",
       "type": "system",
-      "datetime": "2026-03-14T17:03:03-04:00",
+      "datetime": "2026-03-15T21:46:38-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 17:03)",
+      "description": "chore: sync Reddit cache — 16 posts (2026-03-15 21:46)",
       "metadata": {
-        "commitHash": "cf2837f"
+        "commitHash": "1d55923"
       }
     },
     {
-      "id": "commit-a8f4739",
-      "title": "chore: sync Reddit cache — 13 posts (2026-03-14 16:02)",
+      "id": "commit-d3890e1",
+      "title": "fix(crypto): handle untracked files and stash in deploy scri",
       "type": "system",
-      "datetime": "2026-03-14T16:02:31-04:00",
+      "datetime": "2026-03-15T21:44:51-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 13 posts (2026-03-14 16:02)",
+      "description": "fix(crypto): handle untracked files and stash in deploy script",
       "metadata": {
-        "commitHash": "a8f4739"
+        "commitHash": "d3890e1"
       }
     },
     {
-      "id": "commit-6e680aa",
-      "title": "feat(shawnos): add zh blog batches 3-4 - 13 more posts trans",
+      "id": "commit-9340a24",
+      "title": "redesign(scroll-signup): centered modal with dark+green prem",
       "type": "system",
-      "datetime": "2026-03-14T15:51:12-04:00",
+      "datetime": "2026-03-15T21:44:39-04:00",
       "status": "completed",
-      "description": "feat(shawnos): add zh blog batches 3-4 - 13 more posts translated to Chinese",
+      "description": "redesign(scroll-signup): centered modal with dark+green premium aesthetic",
       "metadata": {
-        "commitHash": "6e680aa"
+        "commitHash": "9340a24"
       }
     },
     {
-      "id": "commit-ff055ef",
-      "title": "feat(shawnos): add zh blog batch 2 - 7 more posts translated",
+      "id": "commit-fd151fd",
+      "title": "chore(crypto): initial evening signal 2026-03-15",
       "type": "system",
-      "datetime": "2026-03-14T15:35:41-04:00",
+      "datetime": "2026-03-15T21:32:12-04:00",
       "status": "completed",
-      "description": "feat(shawnos): add zh blog batch 2 - 7 more posts translated to Chinese",
+      "description": "chore(crypto): initial evening signal 2026-03-15",
       "metadata": {
-        "commitHash": "ff055ef"
+        "commitHash": "fd151fd"
       }
     },
     {
-      "id": "commit-8740eeb",
-      "title": "feat(shawnos): add zh blog batch 1 - 7 posts translated to C",
+      "id": "commit-fe1d416",
+      "title": "redesign(scroll-signup): dark + green premium card, no dismi",
       "type": "system",
-      "datetime": "2026-03-14T15:15:10-04:00",
+      "datetime": "2026-03-15T21:32:06-04:00",
       "status": "completed",
-      "description": "feat(shawnos): add zh blog batch 1 - 7 posts translated to Chinese",
+      "description": "redesign(scroll-signup): dark + green premium card, no dismiss button",
       "metadata": {
-        "commitHash": "8740eeb"
+        "commitHash": "fe1d416"
       }
     },
     {
-      "id": "commit-f51756e",
-      "title": "feat(shawnos): add zh translations for UI strings and web-de",
+      "id": "commit-cc12988",
+      "title": "feat(crypto-os): auto-deploy signals to shawnos.ai",
       "type": "system",
-      "datetime": "2026-03-14T15:02:49-04:00",
+      "datetime": "2026-03-15T21:24:39-04:00",
       "status": "completed",
-      "description": "feat(shawnos): add zh translations for UI strings and web-dev service page",
+      "description": "feat(crypto-os): auto-deploy signals to shawnos.ai",
       "metadata": {
-        "commitHash": "f51756e"
+        "commitHash": "cc12988"
       }
     },
     {
-      "id": "commit-003ae93",
-      "title": "chore: sync Reddit cache — 12 posts (2026-03-14 15:02)",
+      "id": "commit-56a35e6",
+      "title": "redesign(scroll-signup): clean floating bar instead of termi",
       "type": "system",
-      "datetime": "2026-03-14T15:02:14-04:00",
+      "datetime": "2026-03-15T21:22:23-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 12 posts (2026-03-14 15:02)",
+      "description": "redesign(scroll-signup): clean floating bar instead of terminal overlay",
       "metadata": {
-        "commitHash": "003ae93"
+        "commitHash": "56a35e6"
       }
     },
     {
-      "id": "commit-4f81f3f",
-      "title": "feat(shawnos): add zh locale infrastructure for Chinese lang",
+      "id": "commit-0836520",
+      "title": "fix(scroll-signup): make component fixed-position overlay in",
       "type": "system",
-      "datetime": "2026-03-14T14:55:07-04:00",
+      "datetime": "2026-03-15T21:15:45-04:00",
       "status": "completed",
-      "description": "feat(shawnos): add zh locale infrastructure for Chinese language support",
+      "description": "fix(scroll-signup): make component fixed-position overlay instead of inline",
       "metadata": {
-        "commitHash": "4f81f3f"
+        "commitHash": "0836520"
       }
     }
   ],
