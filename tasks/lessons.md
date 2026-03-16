@@ -66,6 +66,14 @@ If catching 3+ patterns, the generation approach needs tightening, not just the 
 3. If wrong project: `vercel link --yes --project <correct-name>`
 4. After adding env vars mid-deploy, always `vercel redeploy` to pick them up
 
+## 2026-03-16: Never commit outreach drafts or files containing personal names to GitHub
+
+**Context:** Pushed a LinkedIn DM draft with a prospect's full name in the filename and content to GitHub. This violates the safety principle of not pushing person-identifiable data.
+
+**Rule:** Outreach drafts with real names should never be committed to the repo. Keep them local-only or use anonymized filenames. The pre-push blocklist covers partner/client names but not ad-hoc outreach targets. When in doubt, don't commit content with someone's real name.
+
+---
+
 ## 2026-03-02: Attio REST API requires all fields for attribute creation
 
 **Context:** `POST /v2/objects/{slug}/attributes` requires `description`, `is_required`, `is_unique`, `is_multiselect`, and `config` — not just title/type/slug. Also, select options must be created separately via `POST /attributes/{slug}/options`.
