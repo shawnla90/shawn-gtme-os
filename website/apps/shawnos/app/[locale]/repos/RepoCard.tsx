@@ -34,14 +34,38 @@ export function RepoCard({ repo, featured = false }: RepoCardProps) {
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 12 }}>
         <div>
-          <h2 style={{
-            fontSize: featured ? '18px' : '14px',
-            fontWeight: 600,
-            color: 'var(--accent)',
-            margin: '0 0 6px 0',
-          }}>
-            {repo.name}
-          </h2>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 6 }}>
+            <h2 style={{
+              fontSize: featured ? '18px' : '14px',
+              fontWeight: 600,
+              color: 'var(--accent)',
+              margin: 0,
+            }}>
+              {repo.name}
+            </h2>
+            {repo.projectUrl && (
+              <a
+                href={repo.projectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                style={{
+                  fontSize: '10px',
+                  fontFamily: 'var(--font-mono)',
+                  fontWeight: 600,
+                  letterSpacing: '0.06em',
+                  color: '#0D1117',
+                  background: 'var(--accent)',
+                  padding: '2px 8px',
+                  borderRadius: 3,
+                  textDecoration: 'none',
+                  textTransform: 'uppercase',
+                }}
+              >
+                Live
+              </a>
+            )}
+          </div>
           {repo.author && (
             <span style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
               by{' '}

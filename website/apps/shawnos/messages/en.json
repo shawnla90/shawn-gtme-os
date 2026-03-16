@@ -535,13 +535,14 @@
   "Repos": {
     "metadata": {
       "title": "RepoHub | shawnos.ai",
-      "description": "Open source repos, community builds, and recommended tools."
+      "description": "Live projects, open source repos, community builds, and recommended tools."
     },
     "hero": {
       "title": "RepoHub",
-      "subtitle": "open source repos, tools, and community builds"
+      "subtitle": "live projects, open source repos, and community builds"
     },
     "tabs": {
+      "projects": "Projects",
       "mine": "Shawn's Repos",
       "community": "Community",
       "recommended": "Recommended"

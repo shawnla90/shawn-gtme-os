@@ -542,6 +542,7 @@
       "subtitle": "オープンソースリポジトリ、ツール、コミュニティビルド"
     },
     "tabs": {
+      "projects": "プロジェクト",
       "mine": "Shawnのリポジトリ",
       "community": "コミュニティ",
       "recommended": "おすすめ"

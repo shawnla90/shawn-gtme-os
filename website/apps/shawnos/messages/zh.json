@@ -542,6 +542,7 @@
       "subtitle": "开源仓库、工具和社区构建"
     },
     "tabs": {
+      "projects": "项目",
       "mine": "Shawn 的仓库",
       "community": "社区",
       "recommended": "推荐"

@@ -6,11 +6,11 @@ import { PageHero } from '../../components/PageHero'
 import { RepoCard } from './RepoCard'
 import { repos } from '@shawnos/shared/data/repos'
 
-type Tab = 'mine' | 'community' | 'recommended'
+type Tab = 'mine' | 'community' | 'recommended' | 'projects'
 
 export function RepoHubContent() {
   const t = useTranslations('Repos')
-  const [activeTab, setActiveTab] = useState<Tab>('mine')
+  const [activeTab, setActiveTab] = useState<Tab>('projects')
 
   const filtered = repos
     .filter((r) => r.category === activeTab)
@@ -20,6 +20,7 @@ export function RepoHubContent() {
   const rest = filtered.filter((r) => r !== featuredRepo)
 
   const tabs: { key: Tab; label: string }[] = [
+    { key: 'projects', label: t('tabs.projects') },
     { key: 'mine', label: t('tabs.mine') },
     { key: 'community', label: t('tabs.community') },
     { key: 'recommended', label: t('tabs.recommended') },

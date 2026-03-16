@@ -542,6 +542,7 @@
       "subtitle": "repositorios open source, herramientas y builds de la comunidad"
     },
     "tabs": {
+      "projects": "Proyectos",
       "mine": "Repos de Shawn",
       "community": "Comunidad",
       "recommended": "Recomendados"
