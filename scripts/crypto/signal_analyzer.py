@@ -38,6 +38,7 @@ from config import (
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 LOG_DIR = REPO_ROOT / "data" / "agent-logs" / "crypto"
+WEBSITE_SIGNALS = REPO_ROOT / "website" / "apps" / "shawnos" / "public" / "data" / "crypto-signals.json"
 
 # Load from .env if not in environment
 ENV_FILE = REPO_ROOT / ".env"
@@ -269,6 +270,47 @@ def run_analysis(test_mode: bool = False) -> dict:
     }
 
 
+def determine_period() -> str:
+    """Determine if this is a morning or evening run based on local hour."""
+    from datetime import datetime as dt
+    hour = dt.now().hour
+    return "morning" if hour < 14 else "evening"
+
+
+def update_website_signals(result: dict) -> None:
+    """Merge this run into the website-facing signals JSON.
+
+    Keeps both morning and evening runs visible. The website reads
+    this file at build time (Vercel) and on client load.
+    """
+    period = determine_period()
+    result["period"] = period
+
+    # Load existing data if present
+    existing = {"last_updated": "", "runs": {}}
+    if WEBSITE_SIGNALS.exists():
+        try:
+            existing = json.loads(WEBSITE_SIGNALS.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    # Reset runs if it's a new day
+    existing_date = existing.get("runs", {}).get("morning", {}).get("date", "")
+    if existing_date and existing_date != result["date"]:
+        existing["runs"] = {}
+
+    # Merge this run
+    existing["last_updated"] = result["timestamp"]
+    existing["runs"][period] = result
+
+    # Write
+    WEBSITE_SIGNALS.parent.mkdir(parents=True, exist_ok=True)
+    with open(WEBSITE_SIGNALS, "w") as f:
+        json.dump(existing, f, indent=2, default=str)
+
+    print(f"[crypto] Website signals updated ({period} run) → {WEBSITE_SIGNALS}")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Crypto OS — Signal Analyzer")
     parser.add_argument(
@@ -292,6 +334,9 @@ def main():
 
     with open(log_path, "w") as f:
         json.dump(result, f, indent=2, default=str)
+
+    # Update website-facing signals JSON
+    update_website_signals(result)
 
     # Print summary to stdout for cron logs
     snap = result["market_snapshot"]

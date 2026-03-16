@@ -7,12 +7,12 @@
 
     <key>ProgramArguments</key>
     <array>
-        <string>/opt/homebrew/bin/python3</string>
-        <string>/Users/shawnos.ai/shawn-gtme-os/scripts/crypto/signal_analyzer.py</string>
+        <string>/bin/bash</string>
+        <string>/Users/shawnos.ai/shawn-gtme-os/scripts/crypto/deploy_signals.sh</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/shawnos.ai/shawn-gtme-os/scripts/crypto</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os</string>
 
     <key>RunAtLoad</key>
     <false/>
@@ -27,9 +27,9 @@
         </dict>
         <dict>
             <key>Hour</key>
-            <integer>19</integer>
+            <integer>17</integer>
             <key>Minute</key>
-            <integer>0</integer>
+            <integer>30</integer>
         </dict>
     </array>
 
