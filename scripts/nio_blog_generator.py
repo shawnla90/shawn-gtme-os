@@ -273,7 +273,7 @@ def build_user_prompt(target_date: str, db: sqlite3.Connection) -> str:
         "5. tomorrow's focus (specific next actions)",
         "6. random thought (optional, philosophical/meta)",
         "",
-        "output ONLY the markdown body (no frontmatter, no title heading).",
+        "output ONLY the markdown body (no frontmatter, no title heading). print the full post content directly to stdout. do NOT use any tools. do NOT save to a file.",
         "start directly with ## system status.",
         "use lowercase for headings and body text (except I and proper nouns).",
         "your audience is builders and curious people, not engineers reading a changelog. teach, don't list.",
@@ -313,7 +313,7 @@ def call_claude(system_prompt: str, user_prompt: str) -> dict:
     full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
 
     result = subprocess.run(
-        [CLAUDE_CLI, "-p", "--model", "opus", "--output-format", "text"],
+        [CLAUDE_CLI, "-p", "--model", "opus", "--output-format", "text", "--allowedTools", ""],
         input=full_prompt,
         capture_output=True,
         text=True,
