@@ -75,4 +75,24 @@ three paths depending on how deep you want to go.
 
 the repo is at [github.com/shawnla90/website-with-soul](https://github.com/shawnla90/website-with-soul).
 
+## the builder challenge
+
+I'm trying something new. if you've been thinking about building your own site and you're somewhere on the Claude Code progression... I'll guide you through it.
+
+the playbook has 32 chapters. the starter template gets you deployed in 15 minutes. but building alone is slower than building with someone who already shipped three sites on this stack.
+
+so here's the offer. clone the repo, build your site with Claude Code, and reach out when you get stuck. I'll help you debug the weird parts, review architecture choices, and get it live. once it's deployed, I'll link to it from shawnos.ai and share it across my platforms.
+
+then we do the same for the next builder. and the next.
+
+a backlinking network of builder sites. not a link exchange. a community of people who built something real and promote each other's work because they've seen each other's code.
+
+the first few sites in the network get the most direct support from me and the most visibility. early builders help shape what the network becomes.
+
+[r/GTMBuilders](https://reddit.com/r/GTMBuilders) is where the building happens. 120 people doing collaborative, honest work. small enough that everyone actually ships. the energy is different because talking about building and actually building are not the same thing, and this group does the second one.
+
+I don't know how this scales. that's the honest answer. but I know the first version of anything only gets built by the people willing to start before it's figured out.
+
+if you want in, fork the repo. build the site. post in r/GTMBuilders when you're live. I'll find you.
+
 no gatekeeping. the whole thing is in there.

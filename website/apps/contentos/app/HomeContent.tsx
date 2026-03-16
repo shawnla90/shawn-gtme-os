@@ -50,6 +50,13 @@ const featuredSections = [
     command: 'run ~/lab --interactive',
     accent: PLATFORM_COLORS.tiktok.hex,
   },
+  {
+    title: 'Master MidJourney',
+    desc: 'Interactive guide to MidJourney prompt engineering. Character design, CREF, OREF, SREF, and production-grade techniques for consistent visual output.',
+    href: '/midjourney',
+    command: 'open ~/midjourney --mastery',
+    accent: '#7B68EE',
+  },
 ]
 
 const tiers = [
@@ -152,6 +159,7 @@ const ctaLinks = [
   { label: 'Browse the wiki', href: '/content-wiki', internal: true, accent: PLATFORM_COLORS.linkedin.hex },
   { label: 'Read how-to guides', href: '/how-to', internal: true, accent: PLATFORM_COLORS.substack.hex },
   { label: 'Explore the lab', href: '/react-lab', internal: true, accent: PLATFORM_COLORS.tiktok.hex },
+  { label: 'Master MidJourney', href: '/midjourney', internal: true, accent: '#7B68EE' },
   { label: 'View GTM OS', href: 'https://thegtmos.ai', internal: false, accent: PLATFORM_COLORS.reddit.hex },
 ]
 
