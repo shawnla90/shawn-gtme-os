@@ -11,7 +11,7 @@ import {
 } from '@shawnos/shared/data/how-to-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
 import type { CanonicalSite } from '@shawnos/shared/data/how-to-wiki'
-import { BreadcrumbSchema, ScrollSignup } from '@shawnos/shared/components'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://shawnos.ai'
 
@@ -496,8 +496,6 @@ export default async function HowToEntryPage({
             </div>
           </>
         )}
-
-        <ScrollSignup />
 
         {/* Navigation */}
         <div style={navRow}>
