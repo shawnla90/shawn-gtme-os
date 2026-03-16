@@ -49,7 +49,7 @@ export function ScrollSignup() {
         setTimeout(() => {
           setDismissed(true)
           setVisible(false)
-        }, 3500)
+        }, 3000)
       } catch {
         setStatus('error')
         setTimeout(() => setStatus('idle'), 3000)
@@ -58,23 +58,13 @@ export function ScrollSignup() {
     [email],
   )
 
-  const handleDismiss = () => {
-    setDismissed(true)
-    setVisible(false)
-  }
-
   if (!visible || dismissed) return null
 
   return (
-    <div style={backdrop}>
-      <div style={bar}>
-        <button
-          onClick={handleDismiss}
-          style={closeBtn}
-          aria-label="Dismiss signup"
-        >
-          &times;
-        </button>
+    <div style={outer}>
+      <div style={card}>
+        {/* Accent glow behind the card */}
+        <div style={glowEffect} aria-hidden="true" />
 
         <iframe
           ref={iframeRef}
@@ -85,13 +75,24 @@ export function ScrollSignup() {
         />
 
         {status === 'success' ? (
-          <p style={successText}>welcome to the build.</p>
+          <div style={successBlock}>
+            <div style={checkCircle}>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M5 10.5L8.5 14L15 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <p style={successHeadline}>you're in</p>
+            <p style={successSub}>welcome to the build.</p>
+          </div>
         ) : (
           <>
-            <div style={copyBlock}>
+            <div style={topSection}>
+              <div style={accentDot} aria-hidden="true" />
               <p style={headline}>follow the build</p>
-              <p style={subline}>
-                ships, repos, and the occasional late-night build log. no spam.
+              <p style={subtext}>
+                what I'm shipping, how I'm building it, and what I'd do differently.
+                <br />
+                no sales. no spam. just the work.
               </p>
             </div>
 
@@ -108,31 +109,33 @@ export function ScrollSignup() {
               <input type="hidden" name="current_url" value="https://shawntenam.substack.com/" />
               <input type="hidden" name="current_referrer" value="" />
 
-              <input
-                type="email"
-                name="email"
-                placeholder="you@email.com"
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                  if (status === 'error') setStatus('idle')
-                }}
-                required
-                style={emailInput}
-                aria-label="Email address"
-              />
+              <div style={inputGroup}>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="your email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                    if (status === 'error') setStatus('idle')
+                  }}
+                  required
+                  style={emailInput}
+                  aria-label="Email address"
+                />
 
-              <button
-                type="submit"
-                disabled={status === 'submitting' || !email}
-                style={{
-                  ...submitBtn,
-                  opacity: status === 'submitting' || !email ? 0.6 : 1,
-                  cursor: status === 'submitting' ? 'wait' : 'pointer',
-                }}
-              >
-                {status === 'submitting' ? 'joining...' : 'subscribe'}
-              </button>
+                <button
+                  type="submit"
+                  disabled={status === 'submitting' || !email}
+                  style={{
+                    ...submitBtn,
+                    opacity: status === 'submitting' || !email ? 0.5 : 1,
+                    cursor: status === 'submitting' ? 'wait' : 'pointer',
+                  }}
+                >
+                  {status === 'submitting' ? 'joining...' : 'subscribe'}
+                </button>
+              </div>
             </form>
 
             {status === 'error' && (
@@ -147,110 +150,140 @@ export function ScrollSignup() {
 
 /* ---------- styles ---------- */
 
-const backdrop: React.CSSProperties = {
+const outer: React.CSSProperties = {
   position: 'fixed',
   bottom: 0,
   left: 0,
   right: 0,
   zIndex: 50,
-  padding: '16px',
+  padding: '20px 16px',
   pointerEvents: 'none',
-  animation: 'scrollSignupFadeIn 0.5s ease-out',
+  animation: 'scrollSignupFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
 }
 
-const bar: React.CSSProperties = {
+const card: React.CSSProperties = {
   position: 'relative',
-  maxWidth: '540px',
+  maxWidth: '480px',
   margin: '0 auto',
-  padding: '20px 24px',
+  padding: '28px 28px 24px',
   pointerEvents: 'auto',
-  background: 'color-mix(in srgb, var(--canvas-subtle) 95%, var(--accent) 5%)',
-  border: '1px solid color-mix(in srgb, var(--accent) 25%, var(--border) 75%)',
-  borderRadius: '12px',
-  boxShadow:
-    '0 -4px 24px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)',
-  backdropFilter: 'blur(12px)',
+  background: '#0D1117',
+  border: '1px solid rgba(78, 195, 115, 0.2)',
+  borderRadius: '16px',
+  overflow: 'hidden',
 }
 
-const closeBtn: React.CSSProperties = {
+const glowEffect: React.CSSProperties = {
   position: 'absolute',
-  top: '8px',
-  right: '10px',
-  background: 'none',
-  border: 'none',
-  color: 'var(--text-secondary)',
-  fontSize: '20px',
-  lineHeight: 1,
-  cursor: 'pointer',
-  padding: '4px 8px',
-  borderRadius: '4px',
-  transition: 'color 0.15s',
+  top: '-1px',
+  left: '-1px',
+  right: '-1px',
+  height: '3px',
+  background: 'linear-gradient(90deg, transparent, #4EC373, transparent)',
+  borderRadius: '16px 16px 0 0',
 }
 
-const copyBlock: React.CSSProperties = {
-  marginBottom: '14px',
-  paddingRight: '28px',
+const topSection: React.CSSProperties = {
+  marginBottom: '20px',
+}
+
+const accentDot: React.CSSProperties = {
+  width: '6px',
+  height: '6px',
+  borderRadius: '50%',
+  background: '#4EC373',
+  boxShadow: '0 0 8px rgba(78, 195, 115, 0.6)',
+  marginBottom: '12px',
 }
 
 const headline: React.CSSProperties = {
-  margin: 0,
-  fontSize: '15px',
-  fontWeight: 600,
-  color: 'var(--text-primary)',
-  letterSpacing: '-0.01em',
+  margin: '0 0 8px',
+  fontSize: '20px',
+  fontWeight: 700,
+  color: '#E6EDF3',
+  letterSpacing: '-0.02em',
+  lineHeight: 1.2,
 }
 
-const subline: React.CSSProperties = {
-  margin: '4px 0 0',
+const subtext: React.CSSProperties = {
+  margin: 0,
   fontSize: '13px',
-  lineHeight: 1.5,
-  color: 'var(--text-secondary)',
+  lineHeight: 1.6,
+  color: '#8B949E',
 }
 
 const formRow: React.CSSProperties = {
+  margin: 0,
+}
+
+const inputGroup: React.CSSProperties = {
   display: 'flex',
   gap: '8px',
-  alignItems: 'center',
-  flexWrap: 'wrap',
+  alignItems: 'stretch',
 }
 
 const emailInput: React.CSSProperties = {
-  flex: '1 1 200px',
-  minHeight: '40px',
-  padding: '0 14px',
+  flex: 1,
+  minHeight: '44px',
+  padding: '0 16px',
   fontSize: '14px',
-  color: 'var(--text-primary)',
-  background: 'var(--canvas)',
-  border: '1px solid var(--border)',
-  borderRadius: '8px',
+  color: '#E6EDF3',
+  background: '#161B22',
+  border: '1px solid rgba(78, 195, 115, 0.15)',
+  borderRadius: '10px',
   outline: 'none',
-  transition: 'border-color 0.15s',
+  transition: 'border-color 0.2s',
 }
 
 const submitBtn: React.CSSProperties = {
-  minHeight: '40px',
-  padding: '0 20px',
+  minHeight: '44px',
+  padding: '0 24px',
   fontSize: '14px',
   fontWeight: 600,
-  color: '#fff',
-  background: 'var(--accent)',
+  color: '#0D1117',
+  background: 'linear-gradient(135deg, #4EC373 0%, #3BA55D 100%)',
   border: 'none',
-  borderRadius: '8px',
+  borderRadius: '10px',
   transition: 'opacity 0.15s, transform 0.1s',
   whiteSpace: 'nowrap',
+  boxShadow: '0 2px 12px rgba(78, 195, 115, 0.3)',
 }
 
-const successText: React.CSSProperties = {
+const successBlock: React.CSSProperties = {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '8px',
+  padding: '8px 0',
+}
+
+const checkCircle: React.CSSProperties = {
+  width: '36px',
+  height: '36px',
+  borderRadius: '50%',
+  background: 'rgba(78, 195, 115, 0.15)',
+  border: '1px solid rgba(78, 195, 115, 0.3)',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#4EC373',
+}
+
+const successHeadline: React.CSSProperties = {
   margin: 0,
-  fontSize: '15px',
-  fontWeight: 600,
-  color: 'var(--accent)',
-  textAlign: 'center',
-  padding: '4px 0',
+  fontSize: '18px',
+  fontWeight: 700,
+  color: '#E6EDF3',
+}
+
+const successSub: React.CSSProperties = {
+  margin: 0,
+  fontSize: '13px',
+  color: '#8B949E',
 }
 
 const errorText: React.CSSProperties = {
-  margin: '8px 0 0',
+  margin: '10px 0 0',
   fontSize: '12px',
   color: '#E05555',
 }
