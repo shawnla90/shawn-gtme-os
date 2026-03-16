@@ -61,10 +61,13 @@ export function ScrollSignup() {
   if (!visible || dismissed) return null
 
   return (
-    <div style={outer}>
+    <div style={overlay}>
       <div style={card}>
-        {/* Accent glow behind the card */}
-        <div style={glowEffect} aria-hidden="true" />
+        {/* Top glow bar */}
+        <div style={glowBar} aria-hidden="true" />
+
+        {/* Subtle grid pattern overlay */}
+        <div style={gridPattern} aria-hidden="true" />
 
         <iframe
           ref={iframeRef}
@@ -77,20 +80,21 @@ export function ScrollSignup() {
         {status === 'success' ? (
           <div style={successBlock}>
             <div style={checkCircle}>
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M5 10.5L8.5 14L15 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 13L10 18L20 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
-            <p style={successHeadline}>you're in</p>
+            <p style={successTitle}>you&apos;re in</p>
             <p style={successSub}>welcome to the build.</p>
           </div>
         ) : (
-          <>
-            <div style={topSection}>
-              <div style={accentDot} aria-hidden="true" />
-              <p style={headline}>follow the build</p>
+          <div style={content}>
+            <div style={textBlock}>
+              <p style={headline}>
+                follow the <span style={greenText}>build</span>
+              </p>
               <p style={subtext}>
-                what I'm shipping, how I'm building it, and what I'd do differently.
+                what I&apos;m shipping, how I&apos;m building it, and what I&apos;d do differently.
                 <br />
                 no sales. no spam. just the work.
               </p>
@@ -102,18 +106,18 @@ export function ScrollSignup() {
               method="POST"
               target="scroll-signup-frame"
               onSubmit={handleSubmit}
-              style={formRow}
+              style={formBlock}
             >
               <input type="hidden" name="first_url" value="https://shawntenam.substack.com/" />
               <input type="hidden" name="first_referrer" value="" />
               <input type="hidden" name="current_url" value="https://shawntenam.substack.com/" />
               <input type="hidden" name="current_referrer" value="" />
 
-              <div style={inputGroup}>
+              <div style={inputRow}>
                 <input
                   type="email"
                   name="email"
-                  placeholder="your email"
+                  placeholder="your@email.com"
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value)
@@ -141,7 +145,7 @@ export function ScrollSignup() {
             {status === 'error' && (
               <p style={errorText}>something went wrong — try again.</p>
             )}
-          </>
+          </div>
         )}
       </div>
     </div>
@@ -150,140 +154,158 @@ export function ScrollSignup() {
 
 /* ---------- styles ---------- */
 
-const outer: React.CSSProperties = {
+const overlay: React.CSSProperties = {
   position: 'fixed',
-  bottom: 0,
-  left: 0,
-  right: 0,
-  zIndex: 50,
-  padding: '20px 16px',
-  pointerEvents: 'none',
-  animation: 'scrollSignupFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+  inset: 0,
+  zIndex: 100,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: 'rgba(0, 0, 0, 0.7)',
+  backdropFilter: 'blur(6px)',
+  padding: '24px',
+  animation: 'scrollSignupFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
 }
 
 const card: React.CSSProperties = {
   position: 'relative',
-  maxWidth: '480px',
-  margin: '0 auto',
-  padding: '28px 28px 24px',
-  pointerEvents: 'auto',
+  width: '100%',
+  maxWidth: '520px',
+  padding: '48px 40px 40px',
   background: '#0D1117',
-  border: '1px solid rgba(78, 195, 115, 0.2)',
-  borderRadius: '16px',
+  border: '1px solid rgba(78, 195, 115, 0.25)',
+  borderRadius: '20px',
   overflow: 'hidden',
+  boxShadow:
+    '0 0 80px rgba(78, 195, 115, 0.12), 0 0 40px rgba(0, 0, 0, 0.5)',
 }
 
-const glowEffect: React.CSSProperties = {
+const glowBar: React.CSSProperties = {
   position: 'absolute',
-  top: '-1px',
-  left: '-1px',
-  right: '-1px',
-  height: '3px',
-  background: 'linear-gradient(90deg, transparent, #4EC373, transparent)',
-  borderRadius: '16px 16px 0 0',
+  top: 0,
+  left: 0,
+  right: 0,
+  height: '2px',
+  background: 'linear-gradient(90deg, transparent 0%, #4EC373 30%, #4EC373 70%, transparent 100%)',
+  boxShadow: '0 0 20px rgba(78, 195, 115, 0.5), 0 0 60px rgba(78, 195, 115, 0.2)',
 }
 
-const topSection: React.CSSProperties = {
-  marginBottom: '20px',
+const gridPattern: React.CSSProperties = {
+  position: 'absolute',
+  inset: 0,
+  backgroundImage:
+    'linear-gradient(rgba(78, 195, 115, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(78, 195, 115, 0.03) 1px, transparent 1px)',
+  backgroundSize: '24px 24px',
+  pointerEvents: 'none',
 }
 
-const accentDot: React.CSSProperties = {
-  width: '6px',
-  height: '6px',
-  borderRadius: '50%',
-  background: '#4EC373',
-  boxShadow: '0 0 8px rgba(78, 195, 115, 0.6)',
-  marginBottom: '12px',
+const content: React.CSSProperties = {
+  position: 'relative',
+}
+
+const textBlock: React.CSSProperties = {
+  textAlign: 'center',
+  marginBottom: '32px',
 }
 
 const headline: React.CSSProperties = {
-  margin: '0 0 8px',
-  fontSize: '20px',
+  margin: '0 0 12px',
+  fontSize: '28px',
   fontWeight: 700,
   color: '#E6EDF3',
-  letterSpacing: '-0.02em',
+  letterSpacing: '-0.03em',
   lineHeight: 1.2,
+}
+
+const greenText: React.CSSProperties = {
+  color: '#4EC373',
+  textShadow: '0 0 20px rgba(78, 195, 115, 0.4)',
 }
 
 const subtext: React.CSSProperties = {
   margin: 0,
-  fontSize: '13px',
-  lineHeight: 1.6,
+  fontSize: '15px',
+  lineHeight: 1.7,
   color: '#8B949E',
 }
 
-const formRow: React.CSSProperties = {
-  margin: 0,
+const formBlock: React.CSSProperties = {
+  position: 'relative',
 }
 
-const inputGroup: React.CSSProperties = {
+const inputRow: React.CSSProperties = {
   display: 'flex',
-  gap: '8px',
+  gap: '10px',
   alignItems: 'stretch',
 }
 
 const emailInput: React.CSSProperties = {
   flex: 1,
-  minHeight: '44px',
-  padding: '0 16px',
-  fontSize: '14px',
+  minHeight: '52px',
+  padding: '0 18px',
+  fontSize: '15px',
   color: '#E6EDF3',
   background: '#161B22',
-  border: '1px solid rgba(78, 195, 115, 0.15)',
-  borderRadius: '10px',
+  border: '1px solid rgba(78, 195, 115, 0.2)',
+  borderRadius: '12px',
   outline: 'none',
-  transition: 'border-color 0.2s',
+  transition: 'border-color 0.2s, box-shadow 0.2s',
 }
 
 const submitBtn: React.CSSProperties = {
-  minHeight: '44px',
-  padding: '0 24px',
-  fontSize: '14px',
-  fontWeight: 600,
+  minHeight: '52px',
+  padding: '0 32px',
+  fontSize: '16px',
+  fontWeight: 700,
+  letterSpacing: '-0.01em',
   color: '#0D1117',
-  background: 'linear-gradient(135deg, #4EC373 0%, #3BA55D 100%)',
+  background: 'linear-gradient(135deg, #5EE89A 0%, #4EC373 50%, #3BA55D 100%)',
   border: 'none',
-  borderRadius: '10px',
+  borderRadius: '12px',
   transition: 'opacity 0.15s, transform 0.1s',
   whiteSpace: 'nowrap',
-  boxShadow: '0 2px 12px rgba(78, 195, 115, 0.3)',
+  boxShadow:
+    '0 4px 20px rgba(78, 195, 115, 0.35), 0 0 40px rgba(78, 195, 115, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
 }
 
 const successBlock: React.CSSProperties = {
+  position: 'relative',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  gap: '8px',
-  padding: '8px 0',
+  gap: '12px',
+  padding: '16px 0',
 }
 
 const checkCircle: React.CSSProperties = {
-  width: '36px',
-  height: '36px',
+  width: '48px',
+  height: '48px',
   borderRadius: '50%',
   background: 'rgba(78, 195, 115, 0.15)',
-  border: '1px solid rgba(78, 195, 115, 0.3)',
+  border: '2px solid rgba(78, 195, 115, 0.4)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   color: '#4EC373',
+  boxShadow: '0 0 24px rgba(78, 195, 115, 0.2)',
 }
 
-const successHeadline: React.CSSProperties = {
+const successTitle: React.CSSProperties = {
   margin: 0,
-  fontSize: '18px',
+  fontSize: '24px',
   fontWeight: 700,
   color: '#E6EDF3',
 }
 
 const successSub: React.CSSProperties = {
   margin: 0,
-  fontSize: '13px',
+  fontSize: '15px',
   color: '#8B949E',
 }
 
 const errorText: React.CSSProperties = {
-  margin: '10px 0 0',
-  fontSize: '12px',
+  margin: '12px 0 0',
+  fontSize: '13px',
   color: '#E05555',
+  textAlign: 'center',
 }
