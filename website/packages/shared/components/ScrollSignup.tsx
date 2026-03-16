@@ -5,16 +5,29 @@ import { trackNewsletterSignup } from '../lib/analytics'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
+const STORAGE_KEY = 'scroll-signup-subscribed'
+
 export function ScrollSignup() {
   const [visible, setVisible] = useState(false)
-  const [dismissed, setDismissed] = useState(false)
+  const [subscribed, setSubscribed] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
+  // Check localStorage on mount — if already subscribed, never show
   useEffect(() => {
-    if (dismissed) return
+    try {
+      if (localStorage.getItem(STORAGE_KEY)) {
+        setSubscribed(true)
+      }
+    } catch {
+      // localStorage unavailable (e.g. private browsing) — show anyway
+    }
+  }, [])
+
+  useEffect(() => {
+    if (subscribed) return
 
     const handleScroll = () => {
       const scrollPercent =
@@ -27,7 +40,7 @@ export function ScrollSignup() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [dismissed])
+  }, [subscribed])
 
   const isValidEmail = (value: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
@@ -45,9 +58,10 @@ export function ScrollSignup() {
           form.submit()
         }
         trackNewsletterSignup('inline')
+        try { localStorage.setItem(STORAGE_KEY, '1') } catch {}
         setTimeout(() => setStatus('success'), 1500)
         setTimeout(() => {
-          setDismissed(true)
+          setSubscribed(true)
           setVisible(false)
         }, 3000)
       } catch {
@@ -58,7 +72,7 @@ export function ScrollSignup() {
     [email],
   )
 
-  if (!visible || dismissed) return null
+  if (!visible || subscribed) return null
 
   return (
     <div style={overlay}>
