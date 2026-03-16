@@ -14,6 +14,7 @@ export function ScrollSignup() {
   const [status, setStatus] = useState<Status>('idle')
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
+  const mountTime = useRef(Date.now())
 
   // Check localStorage on mount — if already subscribed, never show
   useEffect(() => {
@@ -75,7 +76,18 @@ export function ScrollSignup() {
         if (form) {
           form.submit()
         }
-        trackNewsletterSignup('inline')
+        const pathname = window.location.pathname
+        const site = window.location.hostname.includes('gtmos')
+          ? 'gtmos'
+          : window.location.hostname.includes('contentos')
+            ? 'contentos'
+            : 'shawnos'
+        const slug = pathname.split('/').filter(Boolean).pop() || ''
+        trackNewsletterSignup('inline', {
+          site,
+          content_slug: slug,
+          seconds_on_page: Math.round((Date.now() - mountTime.current) / 1000),
+        })
         try { localStorage.setItem(STORAGE_KEY, '1') } catch {}
         setTimeout(() => setStatus('success'), 1500)
         setTimeout(() => {

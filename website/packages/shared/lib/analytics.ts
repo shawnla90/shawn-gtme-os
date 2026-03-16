@@ -118,10 +118,13 @@ export function trackCtaClick(
 
 export function trackNewsletterSignup(
   source: 'footer' | 'chat_gate' | 'inline',
+  extras?: Record<string, unknown>,
 ): void {
   capture('newsletter_signup', {
     source,
     url: typeof window !== 'undefined' ? window.location.href : '',
+    referrer: typeof document !== 'undefined' ? document.referrer : '',
+    ...extras,
   })
 }
 
