@@ -29,17 +29,35 @@ export function ScrollSignup() {
   useEffect(() => {
     if (subscribed) return
 
-    const handleScroll = () => {
-      const scrollPercent =
-        window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
-      if (scrollPercent > 0.4) {
+    let scrollReady = false
+    let timeReady = false
+
+    const maybeShow = () => {
+      if (scrollReady && timeReady) {
         setVisible(true)
         window.removeEventListener('scroll', handleScroll)
       }
     }
 
+    const handleScroll = () => {
+      const scrollPercent =
+        window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)
+      if (scrollPercent > 0.4) {
+        scrollReady = true
+        maybeShow()
+      }
+    }
+
+    const timer = setTimeout(() => {
+      timeReady = true
+      maybeShow()
+    }, 10000)
+
     window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(timer)
+    }
   }, [subscribed])
 
   const isValidEmail = (value: string) =>
