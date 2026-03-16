@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-16T00:46:21.216109+00:00",
+  "lastUpdated": "2026-03-16T01:46:38.403562+00:00",
   "posts": [
     {
       "id": "1rus6wb",
@@ -117,7 +117,7 @@
       "id": "1rt2jp4",
       "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price.",
       "author": "Shawntenam",
-      "score": 3,
+      "score": 5,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rt2jp4/claude_code_just_dropped_1m_context_window_and_im/",
       "selftext": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --&gt; 1M tokens. same Opus 4.6 model. same Max subscription. no price increase.\n\nif you've been building with this thing daily, \n\nyou know exactly why this is massive. context compaction was THE bottleneck. you're deep in a build, agent is cooking, and then it starts forgetting what\n\nfiles it already read. you re-explain your\n\narchitecture for the third time. momentum gone.\n\nthat whole era just ended.\n\nI run a monorepo with 3 Next.js apps, i18n in 3 languages, full GTM ops layer, automation scripts.\n\nbefore today the agent could barely hold one app in\n\nits head at a time. just tested the new window and it\n\nreasoned across the ENTIRE system in one session. no\n\ncompaction. no re-explaining. no babysitting.\n\n\n\nseriously now we can.\n\n\\- spec to deploy in a single session \n\n\\- debugging that traces through your whole stack\n\nwithout losing what it found 20 minutes ago\n\n\\- hand off a big task, walk away, come back to finished work\n\n\\- the agent actually remembers its own mistakes and\n\nstops repeating them\n\n\n\nit's Friday.what are you building with this new context window??. full breadown in my [blog](https://shawnos.ai/blog/claude-code-1m-context-window)",
@@ -149,7 +149,7 @@
       "id": "1rs1f6n",
       "title": "tool devotion is a trap. Clay just proved the thesis.",
       "author": "Shawntenam",
-      "score": 6,
+      "score": 8,
       "numComments": 4,
       "permalink": "/r/GTMbuilders/comments/1rs1f6n/tool_devotion_is_a_trap_clay_just_proved_the/",
       "selftext": "for the past two months I've been posting the same thesis. the builder is the moat, not the tool. if your entire value proposition is proficiency with a specific platform, you're one pricing change away from a career problem.\n\nI was saying this before the price change. and then Clay proved it.\n\n**the proof**\n\nClay killed the Explorer tier. that was the $349/mo plan with HTTP API access. the builder's plan. the one where you learned to connect Clay to real systems and actually practice GTM engineering.\n\nthe new pricing jumps from $185 (no API, no webhooks) to $495. every HTTP API call now costs an Action. Clay is metering your requests to servers they don't own, for data they don't provide.\n\nagencies running 5-6 accounts went from roughly $1,750/mo in Explorer plans to $2,500-3,000/mo at Growth. same capabilities. higher floor.\n\n**what this means for the community**\n\nthe people who built Clay's community were builders sharing their work publicly. LinkedIn posts, playbooks, tutorials. they brought customers to Clay through builder-led growth. and now the pricing is optimized for enterprise accounts that don't need the community.\n\nevery platform eventually does this. they grow on builders, then optimize for enterprise. the builders who drove adoption are the ones who feel the squeeze.\n\n**the transition**\n\nI've been mostly sharing observations and patterns here. how things work, what tools do, where the gaps are. this is probably my last pure observation post for a while.\n\nI'm shifting to build drops. actual systems, actual architectures, actual code. Apollo's free API for sourcing. Supabase for storage. Claude Code for orchestration. \n\ninfrastructure you own that doesn't meter your API calls.\n\nthe patterns I learned in Clay transfer to all of this. enrichment architecture is enrichment architecture. ICP scoring is ICP scoring. the implementation layer changes. the thinking doesn't.\n\n**closing**\n\nI'm grateful for what Clay taught me. genuinely. and I think they just made it harder for the next person to learn it.\n\nthe tools are a trap when your skills are locked to one platform's interface. the escape hatch is learning to build the systems yourself.\n\ncurious what tools everyone here is building with now. what's your stack looking like in 2026?\n\nshawn - GTM Engineer",
