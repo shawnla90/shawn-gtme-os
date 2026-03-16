@@ -1,34 +1,30 @@
 'use client'
 
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useCallback } from 'react'
 import { trackNewsletterSignup } from '../lib/analytics'
+import { subscribeEmail } from '../lib/subscribe'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
 export function NewsletterSignup() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const formRef = useRef<HTMLFormElement>(null)
 
   const isValidEmail = (value: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent) => {
+    async (e: React.FormEvent) => {
       e.preventDefault()
       if (!isValidEmail(email)) return
 
       setStatus('submitting')
+      trackNewsletterSignup('footer')
 
-      try {
-        const form = formRef.current
-        if (form) {
-          form.submit()
-        }
-        trackNewsletterSignup('footer')
-        setTimeout(() => setStatus('success'), 1500)
-      } catch {
+      const result = await subscribeEmail(email)
+      if (result.ok) {
+        setStatus('success')
+      } else {
         setStatus('error')
         setTimeout(() => setStatus('idle'), 3000)
       }
@@ -61,15 +57,6 @@ export function NewsletterSignup() {
     <div style={wrapperStyle}>
       <style>{blinkKeyframes}</style>
       <div style={containerStyle}>
-        {/* Hidden iframe target for Substack form */}
-        <iframe
-          ref={iframeRef}
-          name="substack-signup-frame"
-          title="Substack signup"
-          style={{ display: 'none' }}
-          tabIndex={-1}
-        />
-
         <p style={headingStyle}>// subscribe to follow the build</p>
 
         <p style={descStyle}>
@@ -79,17 +66,9 @@ export function NewsletterSignup() {
         </p>
 
         <form
-          ref={formRef}
-          action="https://shawntenam.substack.com/api/v1/free?nojs=true"
-          method="POST"
-          target="substack-signup-frame"
           onSubmit={handleSubmit}
           style={formStyle}
         >
-          <input type="hidden" name="first_url" value="https://shawntenam.substack.com/" />
-          <input type="hidden" name="first_referrer" value="" />
-          <input type="hidden" name="current_url" value="https://shawntenam.substack.com/" />
-          <input type="hidden" name="current_referrer" value="" />
 
           <div style={inputWrapperStyle}>
             <span style={promptStyle}>&gt;</span>

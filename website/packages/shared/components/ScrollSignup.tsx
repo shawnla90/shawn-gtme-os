@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { trackNewsletterSignup } from '../lib/analytics'
+import { subscribeEmail } from '../lib/subscribe'
 
 type Status = 'idle' | 'submitting' | 'success' | 'error'
 
@@ -13,8 +14,6 @@ export function ScrollSignup() {
   const [dismissed, setDismissed] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const formRef = useRef<HTMLFormElement>(null)
   const mountTime = useRef(Date.now())
 
   // Check localStorage on mount — if already subscribed, never show
@@ -71,40 +70,39 @@ export function ScrollSignup() {
   }, [])
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent) => {
+    async (e: React.FormEvent) => {
       e.preventDefault()
       if (!isValidEmail(email)) return
 
       setStatus('submitting')
 
-      // Write localStorage BEFORE form submit to guarantee persistence
+      // Write localStorage immediately so we never re-show
       try { localStorage.setItem(STORAGE_KEY, '1') } catch {}
 
-      try {
-        const pathname = window.location.pathname
-        const site = window.location.hostname.includes('gtmos')
-          ? 'gtmos'
-          : window.location.hostname.includes('contentos')
-            ? 'contentos'
-            : 'shawnos'
-        const slug = pathname.split('/').filter(Boolean).pop() || ''
-        trackNewsletterSignup('inline', {
-          site,
-          content_slug: slug,
-          seconds_on_page: Math.round((Date.now() - mountTime.current) / 1000),
-        })
+      // Track in PostHog
+      const pathname = window.location.pathname
+      const site = window.location.hostname.includes('gtmos')
+        ? 'gtmos'
+        : window.location.hostname.includes('contentos')
+          ? 'contentos'
+          : 'shawnos'
+      const slug = pathname.split('/').filter(Boolean).pop() || ''
+      trackNewsletterSignup('inline', {
+        site,
+        content_slug: slug,
+        seconds_on_page: Math.round((Date.now() - mountTime.current) / 1000),
+      })
 
-        const form = formRef.current
-        if (form) {
-          form.submit()
-        }
+      // Submit via server-side API route (captures email + forwards to Substack)
+      const result = await subscribeEmail(email)
 
-        setTimeout(() => setStatus('success'), 1500)
+      if (result.ok) {
+        setStatus('success')
         setTimeout(() => {
           setSubscribed(true)
           setVisible(false)
         }, 3000)
-      } catch {
+      } else {
         setStatus('error')
         setTimeout(() => setStatus('idle'), 3000)
       }
@@ -134,14 +132,6 @@ export function ScrollSignup() {
         {/* Subtle grid pattern overlay */}
         <div style={gridPattern} aria-hidden="true" />
 
-        <iframe
-          ref={iframeRef}
-          name="scroll-signup-frame"
-          title="Substack signup"
-          style={{ display: 'none' }}
-          tabIndex={-1}
-        />
-
         {status === 'success' ? (
           <div style={successBlock}>
             <div style={checkCircle}>
@@ -166,22 +156,12 @@ export function ScrollSignup() {
             </div>
 
             <form
-              ref={formRef}
-              action="https://shawntenam.substack.com/api/v1/free?nojs=true"
-              method="POST"
-              target="scroll-signup-frame"
               onSubmit={handleSubmit}
               style={formBlock}
             >
-              <input type="hidden" name="first_url" value="https://shawntenam.substack.com/" />
-              <input type="hidden" name="first_referrer" value="" />
-              <input type="hidden" name="current_url" value="https://shawntenam.substack.com/" />
-              <input type="hidden" name="current_referrer" value="" />
-
               <div style={inputRow}>
                 <input
                   type="email"
-                  name="email"
                   placeholder="your@email.com"
                   value={email}
                   onChange={(e) => {
@@ -208,7 +188,7 @@ export function ScrollSignup() {
             </form>
 
             {status === 'error' && (
-              <p style={errorText}>something went wrong — try again.</p>
+              <p style={errorText}>something went wrong. try again.</p>
             )}
           </div>
         )}
