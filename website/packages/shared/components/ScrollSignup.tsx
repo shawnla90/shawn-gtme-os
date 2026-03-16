@@ -10,6 +10,7 @@ const STORAGE_KEY = 'scroll-signup-subscribed'
 export function ScrollSignup() {
   const [visible, setVisible] = useState(false)
   const [subscribed, setSubscribed] = useState(false)
+  const [dismissed, setDismissed] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -52,7 +53,7 @@ export function ScrollSignup() {
     const timer = setTimeout(() => {
       timeReady = true
       maybeShow()
-    }, 10000)
+    }, 6000)
 
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
@@ -64,6 +65,11 @@ export function ScrollSignup() {
   const isValidEmail = (value: string) =>
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
 
+  const handleDismiss = useCallback(() => {
+    setDismissed(true)
+    setVisible(false)
+  }, [])
+
   const handleSubmit = useCallback(
     (e: React.FormEvent) => {
       e.preventDefault()
@@ -71,11 +77,10 @@ export function ScrollSignup() {
 
       setStatus('submitting')
 
+      // Write localStorage BEFORE form submit to guarantee persistence
+      try { localStorage.setItem(STORAGE_KEY, '1') } catch {}
+
       try {
-        const form = formRef.current
-        if (form) {
-          form.submit()
-        }
         const pathname = window.location.pathname
         const site = window.location.hostname.includes('gtmos')
           ? 'gtmos'
@@ -88,7 +93,12 @@ export function ScrollSignup() {
           content_slug: slug,
           seconds_on_page: Math.round((Date.now() - mountTime.current) / 1000),
         })
-        try { localStorage.setItem(STORAGE_KEY, '1') } catch {}
+
+        const form = formRef.current
+        if (form) {
+          form.submit()
+        }
+
         setTimeout(() => setStatus('success'), 1500)
         setTimeout(() => {
           setSubscribed(true)
@@ -102,11 +112,22 @@ export function ScrollSignup() {
     [email],
   )
 
-  if (!visible || subscribed) return null
+  if (!visible || subscribed || dismissed) return null
 
   return (
-    <div style={overlay}>
-      <div style={card}>
+    <div style={overlay} onClick={handleDismiss}>
+      <div style={card} onClick={(e) => e.stopPropagation()}>
+        {/* Dismiss button */}
+        <button
+          onClick={handleDismiss}
+          style={dismissBtn}
+          aria-label="Close signup"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M4 4L12 12M12 4L4 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        </button>
+
         {/* Top glow bar */}
         <div style={glowBar} aria-hidden="true" />
 
@@ -209,6 +230,25 @@ const overlay: React.CSSProperties = {
   backdropFilter: 'blur(6px)',
   padding: '24px',
   animation: 'scrollSignupFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+}
+
+const dismissBtn: React.CSSProperties = {
+  position: 'absolute',
+  top: '14px',
+  right: '14px',
+  zIndex: 2,
+  width: '28px',
+  height: '28px',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: 'rgba(255, 255, 255, 0.06)',
+  border: '1px solid rgba(255, 255, 255, 0.1)',
+  borderRadius: '8px',
+  color: '#8B949E',
+  cursor: 'pointer',
+  padding: 0,
+  transition: 'color 0.15s, background 0.15s',
 }
 
 const card: React.CSSProperties = {
