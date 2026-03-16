@@ -158,7 +158,14 @@ export function ScrollSignup() {
 /* ---------- styles ---------- */
 
 const wrapperStyle: React.CSSProperties = {
-  padding: '32px 24px',
+  position: 'fixed',
+  bottom: '24px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  zIndex: 50,
+  padding: '0 16px',
+  width: '100%',
+  maxWidth: '620px',
   animation: 'scrollSignupFadeIn 0.4s ease-out',
 }
 
@@ -169,6 +176,7 @@ const containerStyle: React.CSSProperties = {
   border: '1px solid var(--border)',
   borderRadius: '6px',
   padding: '24px 24px',
+  boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
 }
 
 const headerRowStyle: React.CSSProperties = {
