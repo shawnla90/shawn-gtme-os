@@ -1,39 +1,39 @@
 {
-  "last_updated": "2026-03-16T11:00:05.877202+00:00",
+  "last_updated": "2026-03-16T21:30:07.542325+00:00",
   "runs": {
     "evening": {
       "agent": "crypto-signal",
-      "timestamp": "2026-03-16T01:28:36.677377+00:00",
+      "timestamp": "2026-03-16T21:30:07.542325+00:00",
       "date": "2026-03-16",
       "test_mode": false,
       "market_snapshot": {
-        "btc_dominance_pct": 56.9,
-        "total_market_cap_usd": 2551995232284.0,
+        "btc_dominance_pct": 56.64,
+        "total_market_cap_usd": 2623170861055.0,
         "fear_greed_index": 23,
         "fear_greed_label": "Extreme Fear",
         "assets": {
           "BTC": {
-            "price_usd": 72634,
-            "change_24h_pct": 2.38,
-            "market_cap_usd": 1452830129620.0
+            "price_usd": 74249,
+            "change_24h_pct": 3.45,
+            "market_cap_usd": 1485705899013.0
           },
           "ETH": {
-            "price_usd": 2179.81,
-            "change_24h_pct": 4.5,
-            "market_cap_usd": 262954598878.0
+            "price_usd": 2346.43,
+            "change_24h_pct": 10.19,
+            "market_cap_usd": 283384598117.0
           },
           "SOL": {
-            "price_usd": 91.92,
-            "change_24h_pct": 4.67,
-            "market_cap_usd": 52517230260.0
+            "price_usd": 95.88,
+            "change_24h_pct": 7.94,
+            "market_cap_usd": 54815020148.0
           }
         }
       },
       "signals": [
         {
           "asset": "BTC",
-          "price_usd": 72634,
-          "change_24h_pct": 2.38,
+          "price_usd": 74249,
+          "change_24h_pct": 3.45,
           "action": "hold",
           "confidence": 0.3,
           "reasoning": [
@@ -42,18 +42,18 @@
         },
         {
           "asset": "ETH",
-          "price_usd": 2179.81,
-          "change_24h_pct": 4.5,
-          "action": "hold",
-          "confidence": 0.3,
+          "price_usd": 2346.43,
+          "change_24h_pct": 10.19,
+          "action": "watch",
+          "confidence": 0.4,
           "reasoning": [
-            "no significant signals \u2014 default hold"
+            "24h pump 10.2%"
           ]
         },
         {
           "asset": "SOL",
-          "price_usd": 91.92,
-          "change_24h_pct": 4.67,
+          "price_usd": 95.88,
+          "change_24h_pct": 7.94,
           "action": "hold",
           "confidence": 0.3,
           "reasoning": [
