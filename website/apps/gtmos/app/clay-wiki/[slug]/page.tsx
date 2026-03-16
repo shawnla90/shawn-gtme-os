@@ -6,7 +6,7 @@ import {
   getClayWikiEntry,
 } from '@shawnos/shared/data/clay-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, ScrollSignup } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { SITES } from '@shawnos/shared/lib/sites'
 
@@ -408,6 +408,8 @@ export default async function ClayWikiEntryPage({
             </div>
           </>
         )}
+
+        <ScrollSignup />
 
         {/* Navigation */}
         <div style={navRow}>
