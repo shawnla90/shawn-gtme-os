@@ -10,12 +10,10 @@ export function ScrollSignup() {
   const [dismissed, setDismissed] = useState(false)
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
-  const sentinelRef = useRef<HTMLDivElement>(null)
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
 
   useEffect(() => {
-    // don't show if already dismissed this session
     if (dismissed) return
 
     const handleScroll = () => {
@@ -48,6 +46,10 @@ export function ScrollSignup() {
         }
         trackNewsletterSignup('inline')
         setTimeout(() => setStatus('success'), 1500)
+        setTimeout(() => {
+          setDismissed(true)
+          setVisible(false)
+        }, 3500)
       } catch {
         setStatus('error')
         setTimeout(() => setStatus('idle'), 3000)
@@ -61,24 +63,19 @@ export function ScrollSignup() {
     setVisible(false)
   }
 
-  if (!visible || dismissed) return <div ref={sentinelRef} />
-
-  if (status === 'success') {
-    return (
-      <div style={wrapperStyle}>
-        <div style={containerStyle}>
-          <p style={successStyle}>
-            <span style={{ color: 'var(--accent)', marginRight: '8px' }}>✓</span>
-            you're in. welcome to the build.
-          </p>
-        </div>
-      </div>
-    )
-  }
+  if (!visible || dismissed) return null
 
   return (
-    <div style={wrapperStyle}>
-      <div style={containerStyle}>
+    <div style={backdrop}>
+      <div style={bar}>
+        <button
+          onClick={handleDismiss}
+          style={closeBtn}
+          aria-label="Dismiss signup"
+        >
+          &times;
+        </button>
+
         <iframe
           ref={iframeRef}
           name="scroll-signup-frame"
@@ -87,68 +84,61 @@ export function ScrollSignup() {
           tabIndex={-1}
         />
 
-        <div style={headerRowStyle}>
-          <p style={headingStyle}>// appreciate you reading this far</p>
-          <button
-            onClick={handleDismiss}
-            style={dismissStyle}
-            aria-label="Dismiss signup"
-          >
-            ×
-          </button>
-        </div>
+        {status === 'success' ? (
+          <p style={successText}>welcome to the build.</p>
+        ) : (
+          <>
+            <div style={copyBlock}>
+              <p style={headline}>follow the build</p>
+              <p style={subline}>
+                ships, repos, and the occasional late-night build log. no spam.
+              </p>
+            </div>
 
-        <p style={descStyle}>
-          sign up if you want to follow the build. no sales, no spam.
-          <br />
-          just ships, repos, and the occasional late-night build log.
-        </p>
+            <form
+              ref={formRef}
+              action="https://shawntenam.substack.com/api/v1/free?nojs=true"
+              method="POST"
+              target="scroll-signup-frame"
+              onSubmit={handleSubmit}
+              style={formRow}
+            >
+              <input type="hidden" name="first_url" value="https://shawntenam.substack.com/" />
+              <input type="hidden" name="first_referrer" value="" />
+              <input type="hidden" name="current_url" value="https://shawntenam.substack.com/" />
+              <input type="hidden" name="current_referrer" value="" />
 
-        <form
-          ref={formRef}
-          action="https://shawntenam.substack.com/api/v1/free?nojs=true"
-          method="POST"
-          target="scroll-signup-frame"
-          onSubmit={handleSubmit}
-          style={formStyle}
-        >
-          <input type="hidden" name="first_url" value="https://shawntenam.substack.com/" />
-          <input type="hidden" name="first_referrer" value="" />
-          <input type="hidden" name="current_url" value="https://shawntenam.substack.com/" />
-          <input type="hidden" name="current_referrer" value="" />
+              <input
+                type="email"
+                name="email"
+                placeholder="you@email.com"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value)
+                  if (status === 'error') setStatus('idle')
+                }}
+                required
+                style={emailInput}
+                aria-label="Email address"
+              />
 
-          <div style={inputWrapperStyle}>
-            <span style={promptStyle}>&gt;</span>
-            <input
-              type="email"
-              name="email"
-              placeholder="email@example.com"
-              value={email}
-              onChange={(e) => {
-                setEmail(e.target.value)
-                if (status === 'error') setStatus('idle')
-              }}
-              required
-              style={inputStyle}
-              aria-label="Email address"
-            />
-          </div>
+              <button
+                type="submit"
+                disabled={status === 'submitting' || !email}
+                style={{
+                  ...submitBtn,
+                  opacity: status === 'submitting' || !email ? 0.6 : 1,
+                  cursor: status === 'submitting' ? 'wait' : 'pointer',
+                }}
+              >
+                {status === 'submitting' ? 'joining...' : 'subscribe'}
+              </button>
+            </form>
 
-          <button
-            type="submit"
-            disabled={status === 'submitting' || !email}
-            style={{
-              ...buttonStyle,
-              opacity: status === 'submitting' || !email ? 0.5 : 1,
-              cursor: status === 'submitting' ? 'wait' : 'pointer',
-            }}
-          >
-            {status === 'submitting' ? 'sending...' : 'subscribe'}
-          </button>
-        </form>
-
-        {status === 'error' && (
-          <p style={errorStyle}>// error. try again.</p>
+            {status === 'error' && (
+              <p style={errorText}>something went wrong — try again.</p>
+            )}
+          </>
         )}
       </div>
     </div>
@@ -157,121 +147,110 @@ export function ScrollSignup() {
 
 /* ---------- styles ---------- */
 
-const wrapperStyle: React.CSSProperties = {
+const backdrop: React.CSSProperties = {
   position: 'fixed',
-  bottom: '24px',
-  left: '50%',
-  transform: 'translateX(-50%)',
+  bottom: 0,
+  left: 0,
+  right: 0,
   zIndex: 50,
-  padding: '0 16px',
-  width: '100%',
-  maxWidth: '620px',
-  animation: 'scrollSignupFadeIn 0.4s ease-out',
+  padding: '16px',
+  pointerEvents: 'none',
+  animation: 'scrollSignupFadeIn 0.5s ease-out',
 }
 
-const containerStyle: React.CSSProperties = {
-  maxWidth: '560px',
+const bar: React.CSSProperties = {
+  position: 'relative',
+  maxWidth: '540px',
   margin: '0 auto',
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '6px',
-  padding: '24px 24px',
-  boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+  padding: '20px 24px',
+  pointerEvents: 'auto',
+  background: 'color-mix(in srgb, var(--canvas-subtle) 95%, var(--accent) 5%)',
+  border: '1px solid color-mix(in srgb, var(--accent) 25%, var(--border) 75%)',
+  borderRadius: '12px',
+  boxShadow:
+    '0 -4px 24px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.04), inset 0 1px 0 rgba(255,255,255,0.06)',
+  backdropFilter: 'blur(12px)',
 }
 
-const headerRowStyle: React.CSSProperties = {
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  marginBottom: '8px',
-}
-
-const headingStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '13px',
-  color: 'var(--accent)',
-  margin: 0,
-}
-
-const dismissStyle: React.CSSProperties = {
+const closeBtn: React.CSSProperties = {
+  position: 'absolute',
+  top: '8px',
+  right: '10px',
   background: 'none',
   border: 'none',
-  color: 'var(--text-muted)',
-  fontSize: '18px',
-  cursor: 'pointer',
-  padding: '0 4px',
-  lineHeight: 1,
-  fontFamily: 'var(--font-mono)',
-}
-
-const descStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '12px',
-  lineHeight: '1.6',
   color: 'var(--text-secondary)',
-  margin: '0 0 16px',
+  fontSize: '20px',
+  lineHeight: 1,
+  cursor: 'pointer',
+  padding: '4px 8px',
+  borderRadius: '4px',
+  transition: 'color 0.15s',
 }
 
-const formStyle: React.CSSProperties = {
+const copyBlock: React.CSSProperties = {
+  marginBottom: '14px',
+  paddingRight: '28px',
+}
+
+const headline: React.CSSProperties = {
+  margin: 0,
+  fontSize: '15px',
+  fontWeight: 600,
+  color: 'var(--text-primary)',
+  letterSpacing: '-0.01em',
+}
+
+const subline: React.CSSProperties = {
+  margin: '4px 0 0',
+  fontSize: '13px',
+  lineHeight: 1.5,
+  color: 'var(--text-secondary)',
+}
+
+const formRow: React.CSSProperties = {
   display: 'flex',
   gap: '8px',
+  alignItems: 'center',
   flexWrap: 'wrap',
 }
 
-const inputWrapperStyle: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  flex: '1 1 220px',
+const emailInput: React.CSSProperties = {
+  flex: '1 1 200px',
+  minHeight: '40px',
+  padding: '0 14px',
+  fontSize: '14px',
+  color: 'var(--text-primary)',
   background: 'var(--canvas)',
   border: '1px solid var(--border)',
-  borderRadius: '4px',
-  padding: '0 12px',
-  minHeight: '36px',
-}
-
-const promptStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '13px',
-  color: 'var(--accent)',
-  marginRight: '8px',
-  userSelect: 'none',
-}
-
-const inputStyle: React.CSSProperties = {
-  flex: 1,
-  background: 'transparent',
-  border: 'none',
+  borderRadius: '8px',
   outline: 'none',
-  fontFamily: 'var(--font-mono)',
-  fontSize: '12px',
-  color: 'var(--text-primary)',
-  padding: '8px 0',
+  transition: 'border-color 0.15s',
 }
 
-const buttonStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '12px',
+const submitBtn: React.CSSProperties = {
+  minHeight: '40px',
+  padding: '0 20px',
+  fontSize: '14px',
   fontWeight: 600,
+  color: '#fff',
   background: 'var(--accent)',
-  color: 'var(--canvas)',
   border: 'none',
-  borderRadius: '4px',
-  padding: '8px 16px',
-  minHeight: '36px',
-  transition: 'opacity 0.15s',
+  borderRadius: '8px',
+  transition: 'opacity 0.15s, transform 0.1s',
+  whiteSpace: 'nowrap',
 }
 
-const successStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '13px',
-  color: 'var(--accent)',
+const successText: React.CSSProperties = {
   margin: 0,
+  fontSize: '15px',
+  fontWeight: 600,
+  color: 'var(--accent)',
   textAlign: 'center',
+  padding: '4px 0',
 }
 
-const errorStyle: React.CSSProperties = {
-  fontFamily: 'var(--font-mono)',
-  fontSize: '11px',
-  color: '#E05555',
+const errorText: React.CSSProperties = {
   margin: '8px 0 0',
+  fontSize: '12px',
+  color: '#E05555',
 }
