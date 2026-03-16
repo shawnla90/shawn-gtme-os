@@ -17,22 +17,24 @@ cd "$REPO_ROOT"
 
 echo "[crypto-deploy] $(date) — starting signal run"
 
-# Pull latest to avoid conflicts
+# Pull latest to avoid conflicts (stash if needed)
+git stash --quiet 2>/dev/null || true
 git pull --rebase --quiet 2>/dev/null || true
+git stash pop --quiet 2>/dev/null || true
 
 # Run the signal analyzer (writes to both log dir and website JSON)
 cd "$SCRIPT_DIR"
 "$PYTHON" signal_analyzer.py
 cd "$REPO_ROOT"
 
-# Check if the signals file was updated
-if git diff --quiet "$SIGNALS_FILE" 2>/dev/null; then
+# Stage the signals file (handles both new and modified)
+git add "$SIGNALS_FILE"
+
+# Check if there's anything to commit
+if git diff --cached --quiet 2>/dev/null; then
     echo "[crypto-deploy] No changes to signals file, skipping deploy"
     exit 0
 fi
-
-# Commit and push
-git add "$SIGNALS_FILE"
 PERIOD="morning"
 if [ "$(date +%H)" -ge 14 ]; then
     PERIOD="evening"
