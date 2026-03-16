@@ -8,7 +8,7 @@ import {
   getHowToWikiEntriesBySite,
 } from '@shawnos/shared/data/how-to-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, ScrollSignup } from '@shawnos/shared/components'
 import { SITES } from '@shawnos/shared/lib/sites'
 
 const SITE_URL = SITES.contentos
@@ -425,6 +425,8 @@ export default async function HowToEntryPage({
             </div>
           </>
         )}
+
+        <ScrollSignup />
 
         {/* Navigation */}
         <div style={navRow}>
