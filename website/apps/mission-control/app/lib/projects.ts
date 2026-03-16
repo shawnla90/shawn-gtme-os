@@ -54,6 +54,15 @@ export const PROJECTS: Project[] = [
     team: ['claude-code'],
     status: 'active',
   },
+  {
+    slug: 'crypto-os',
+    name: 'Crypto OS',
+    description: 'AI-powered crypto signal analyzer — cyborg model: AI analyzes, human decides, human executes',
+    path: 'crypto-os/',
+    techStack: ['Python', 'CoinGecko API', 'Reddit PRAW', 'LaunchD'],
+    team: ['claude-code'],
+    status: 'active',
+  },
 ]
 
 export function getProjectBySlug(slug: string): Project | undefined {
