@@ -9,6 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from '../FooterCredit'
 import { NioChat } from '../NioChat'
 import { FeedbackButton } from '../components/FeedbackButton'
+import { ScrollSignupGlobal } from '../components/ScrollSignupGlobal'
 import { LanguageSwitcher } from '../components/LanguageSwitcher'
 import { routing } from '../../i18n/routing'
 import { locales } from '../../i18n/config'
@@ -228,6 +229,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
         <FooterCredit />
+        <ScrollSignupGlobal />
         <NioChat />
         <FeedbackButton />
         <CursorGlow />

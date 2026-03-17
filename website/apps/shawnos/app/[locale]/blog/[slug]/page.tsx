@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import { getTranslations } from 'next-intl/server'
 import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
-import { BreadcrumbSchema, ScrollSignup } from '@shawnos/shared/components'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
 import { locales } from '../../../../i18n/config'
@@ -223,8 +223,6 @@ export default async function BlogPost({
               dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
           </ArticleReveal>
-
-          <ScrollSignup />
 
           <footer
             style={{
