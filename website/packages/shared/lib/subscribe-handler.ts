@@ -1,46 +1,41 @@
 /**
  * Server-side newsletter subscribe handler.
  * 1. Validates email
- * 2. Saves to local JSON log (never lose a signup)
+ * 2. Captures to PostHog (persistent, always works on Vercel)
  * 3. Forwards to Substack API
  *
  * Each site's /api/subscribe/route.ts just re-exports this.
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { promises as fs } from 'fs'
-import path from 'path'
 
 const SUBSTACK_URL = 'https://shawntenam.substack.com/api/v1/free?nojs=true'
 
-// Persistent log file — gitignored via data/ pattern
-const LOG_DIR = path.join(process.cwd(), '..', '..', '..', 'data')
-const LOG_FILE = path.join(LOG_DIR, 'newsletter-signups.json')
+const POSTHOG_KEY = process.env.NEXT_PUBLIC_POSTHOG_KEY || ''
+const POSTHOG_HOST = 'https://us.i.posthog.com'
 
-interface SignupEntry {
-  email: string
-  timestamp: string
-  site: string
-  source: string
-  forwarded: boolean
-  substack_status?: number
-}
-
-async function appendSignup(entry: SignupEntry): Promise<void> {
+async function captureToPostHog(email: string, site: string, forwarded: boolean, substackStatus: number): Promise<void> {
+  if (!POSTHOG_KEY) return
   try {
-    await fs.mkdir(LOG_DIR, { recursive: true })
-    let entries: SignupEntry[] = []
-    try {
-      const raw = await fs.readFile(LOG_FILE, 'utf-8')
-      entries = JSON.parse(raw)
-    } catch {
-      // File doesn't exist yet
-    }
-    entries.push(entry)
-    await fs.writeFile(LOG_FILE, JSON.stringify(entries, null, 2))
+    await fetch(`${POSTHOG_HOST}/capture/`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        api_key: POSTHOG_KEY,
+        event: 'newsletter_signup_server',
+        distinct_id: email,
+        properties: {
+          email,
+          site,
+          source: 'scroll-signup',
+          forwarded_to_substack: forwarded,
+          substack_status: substackStatus,
+          $current_url: `https://${site === 'gtmos' ? 'thegtmos.ai' : site === 'contentos' ? 'thecontentos.ai' : 'shawnos.ai'}`,
+        },
+      }),
+    })
   } catch {
-    // Non-fatal — we still proceed with the signup
-    console.error('[subscribe] Failed to write signup log')
+    // Non-fatal
   }
 }
 
@@ -87,22 +82,15 @@ export async function handleSubscribe(request: NextRequest): Promise<NextRespons
 
     // Forward to Substack
     const substackStatus = await forwardToSubstack(email)
+    const forwarded = substackStatus >= 200 && substackStatus < 400
 
-    // Log locally (always, regardless of Substack result)
-    await appendSignup({
-      email,
-      timestamp: new Date().toISOString(),
-      site,
-      source: 'scroll-signup',
-      forwarded: substackStatus >= 200 && substackStatus < 400,
-      substack_status: substackStatus,
-    })
+    // Capture to PostHog (persistent — works on Vercel)
+    await captureToPostHog(email, site, forwarded, substackStatus)
 
-    // Even if Substack fails, we captured the email
     return NextResponse.json({
       message: 'Subscribed',
       captured: true,
-      forwarded: substackStatus >= 200 && substackStatus < 400,
+      forwarded,
     })
   } catch {
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
