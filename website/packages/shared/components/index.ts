@@ -1,3 +1,4 @@
+export { AuthorByline } from './AuthorByline'
 export { AvatarBadge } from './AvatarBadge'
 export { PostHogProvider } from './PostHogProvider'
 export { ChatWidget } from './ChatWidget'

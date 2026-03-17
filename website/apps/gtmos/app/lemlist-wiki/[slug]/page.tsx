@@ -6,7 +6,7 @@ import {
   getLemlistWikiEntry,
 } from '@shawnos/shared/data/lemlist-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, AuthorByline } from '@shawnos/shared/components'
 import { SITES } from '@shawnos/shared/lib/sites'
 
 const SITE_URL = SITES.gtmos
@@ -353,6 +353,7 @@ export default async function LemlistWikiEntryPage({
             {/* Title */}
             <h2 style={entryTitle}>{entry.title}</h2>
             <p style={entrySubtitle}>{entry.subtitle}</p>
+            <AuthorByline />
           </div>
 
           {/* Lemlist icon */}

@@ -8,7 +8,7 @@ import {
   getHowToWikiEntriesBySite,
 } from '@shawnos/shared/data/how-to-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, AuthorByline } from '@shawnos/shared/components'
 import { SITES, type SiteKey } from '@shawnos/shared/lib/sites'
 
 const SITE_URL = SITES.gtmos
@@ -391,6 +391,7 @@ export default async function HowToEntryPage({
 
           <h2 style={entryTitle}>{entry.title}</h2>
           <p style={entrySubtitle}>{entry.subtitle}</p>
+          <AuthorByline />
         </div>
 
         <hr style={divider} />

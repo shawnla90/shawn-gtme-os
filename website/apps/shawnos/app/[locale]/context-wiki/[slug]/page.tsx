@@ -10,7 +10,7 @@ import {
   getLocalizedContextWikiCategories,
 } from '@shawnos/shared/data/context-wiki'
 import type { WikiSection } from '@shawnos/shared/data/context-wiki'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, AuthorByline } from '@shawnos/shared/components'
 import { hreflang } from '../../../../i18n/hreflang'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -401,6 +401,7 @@ export default async function ContextWikiEntryPage({
           {/* Title */}
           <h2 style={entryTitle}>{entry.title}</h2>
           <p style={entrySubtitle}>{entry.subtitle}</p>
+          <AuthorByline />
         </div>
 
         <hr style={divider} />

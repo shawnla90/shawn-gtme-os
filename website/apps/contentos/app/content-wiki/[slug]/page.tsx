@@ -6,7 +6,7 @@ import {
   getContentWikiEntry,
 } from '@shawnos/shared/data/content-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
-import { BreadcrumbSchema, ScrollSignup } from '@shawnos/shared/components'
+import { BreadcrumbSchema, ScrollSignup, AuthorByline } from '@shawnos/shared/components'
 import { detectPlatform, PLATFORM_COLORS, type PlatformKey } from '../../lib/platform-colors'
 import { SITES } from '@shawnos/shared/lib/sites'
 
@@ -336,6 +336,7 @@ export default async function ContentWikiEntryPage({
           {/* Title */}
           <h2 style={entryTitle}>{entry.title}</h2>
           <p style={entrySubtitle}>{entry.subtitle}</p>
+          <AuthorByline />
         </div>
 
         <hr style={divider} />

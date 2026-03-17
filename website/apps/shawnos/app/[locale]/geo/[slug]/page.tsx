@@ -6,7 +6,7 @@ import {
   getGeoWikiEntry,
 } from '@shawnos/shared/data/geo-wiki'
 import type { WikiSection } from '@shawnos/shared/data/clay-wiki'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, AuthorByline } from '@shawnos/shared/components'
 import { hreflang } from '../../../../i18n/hreflang'
 import { GeoEntryTracking } from './GeoEntryTracking'
 
@@ -398,6 +398,7 @@ export default async function GeoEntryPage({
             </div>
             <h2 style={entryTitle}>{entry.title}</h2>
             <p style={entrySubtitle}>{entry.subtitle}</p>
+            <AuthorByline />
           </div>
         </div>
 

@@ -7,7 +7,7 @@ import {
   toSlug,
 } from '@shawnos/shared/data/engineering-terms'
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, AuthorByline } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { CONTEXT_WIKI_ENTRIES } from '@shawnos/shared/data/context-wiki'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
@@ -380,6 +380,8 @@ export default async function TermPage({
 
         {/* Definition */}
         <p style={defStyle}>{t.definition}</p>
+
+        <AuthorByline />
 
         <hr style={divider} />
 

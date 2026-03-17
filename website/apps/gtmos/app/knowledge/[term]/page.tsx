@@ -7,7 +7,7 @@ import {
 import { GTM_CATEGORIES } from '@shawnos/shared/data/gtm-terms'
 import type { UseCase } from '@shawnos/shared/data/gtm-terms'
 import { EMAIL_CATEGORIES } from '@shawnos/shared/data/email-infrastructure'
-import { BreadcrumbSchema, UseCaseBlock } from '@shawnos/shared/components'
+import { BreadcrumbSchema, UseCaseBlock, AuthorByline } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { CONTENT_WIKI_ENTRIES } from '@shawnos/shared/data/content-wiki'
 
@@ -399,6 +399,8 @@ export default async function TermPage({
 
         <h2 style={termTitle}>{t.name}</h2>
         <p style={defStyle}>{t.definition}</p>
+
+        <AuthorByline />
 
         <hr style={divider} />
 

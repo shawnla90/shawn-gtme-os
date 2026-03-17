@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { Link } from '../../../i18n/navigation'
 import { getTranslations } from 'next-intl/server'
 import { hreflang } from '../../../i18n/hreflang'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { BreadcrumbSchema, AuthorByline } from '@shawnos/shared/components'
 import { getToolAvatarUrls } from '@shawnos/shared/lib/rpg'
 import { MethodReveal, CardStagger, CardItem, ScrollRevealSection, PageHero, SectionHeadline } from './MethodReveal'
 
@@ -234,6 +234,10 @@ export default async function MethodPage() {
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
       />
+
+      <ScrollRevealSection background="var(--canvas)">
+        <AuthorByline />
+      </ScrollRevealSection>
 
       <ScrollRevealSection background="var(--canvas)">
         <div style={section}>
