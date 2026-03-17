@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-17T16:30:49.844431+00:00",
+  "lastUpdated": "2026-03-17T17:31:06.555386+00:00",
   "posts": [
     {
       "id": "1rvvj06",
@@ -37,7 +37,7 @@
       "id": "1rv3j5j",
       "title": "what's up builders. dropping a LinkedIn post this morning that covers everything I've been building for the last 6 weeks with Claude Code.",
       "author": "Shawntenam",
-      "score": 8,
+      "score": 7,
       "numComments": 2,
       "permalink": "/r/GTMbuilders/comments/1rv3j5j/whats_up_builders_dropping_a_linkedin_post_this/",
       "selftext": "so check this out.\n\nthis community. we're less than a week old and already 140+ members. \n\nthat's not normal. that's because there's a real gap here that nobody was filling. GTM people who actually build. not people who talk about AI. people who ship.\n\nif you're lurking and haven't posted yet... just post. seriously. share what you're working on. share what broke. share what you figured out at 3am. \n\nyour Reddit karma goes up just by being active in here. comment on other people's builds. ask questions. that's literally all it takes.\n\nif you have a product or a tool you built, share it. promote it. that's what we're here for. the only rule is it has to actually help builders. no fluff, no vapor. \n\nif you built something real, this is the place to show it.\n\nI'm going to keep updating this community with everything I'm shipping. the blog posts, the repos, the wins, the stuff that doesn't work. this is the home base for the builder movement in GTM and I want everyone in here to feel like they own it too.\n\nwe're early. the people who are here right now are the foundation. let's make this the place where GTM builders come to level up.\n\nfull blog breakdown of the 6 weeks: [https://shawnos.ai/blog/6-weeks-of-building-with-claude-code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code)\n\nlet's go \ud83d\udd25\n\n[https://www.linkedin.com/posts/shawntenam\\_im-happy-to-share-that-im-starting-a-new-activity-7439214369047158784-piac](https://www.linkedin.com/posts/shawntenam_im-happy-to-share-that-im-starting-a-new-activity-7439214369047158784-piac)",
@@ -181,7 +181,7 @@
       "id": "1rsgc55",
       "title": "My rookie project",
       "author": "Spare-Combination-63",
-      "score": 7,
+      "score": 8,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rsgc55/my_rookie_project/",
       "selftext": "Hey everyone! Super nervous to post this but here goes, this is literally my first project that I've ever pushed to GitHub, so please be kind lol.\n\nI built an AI-powered tool that lets you research any professional and pulls together their career trajectory, articles they've written, media presence, LinkedIn highlights, and more all in one place. The idea came from the frustration of having to jump between 5 different tabs just to get a basic picture of someone before a meeting or interview.\n\nGitHub:\u00a0[https://github.com/atifirshad21/individual-info-in-one-place](https://github.com/atifirshad21/individual-info-in-one-place)\n\nI'm calling this my rookie project, it's rough around the edges and the README is pretty bare bones right now, but feel free to make this better. \n\nWould love any feedback,\n\nThanks for checking it out!",
@@ -308,7 +308,7 @@
   ],
   "subredditInfo": {
     "name": "GTMbuilders",
-    "subscribers": 229,
+    "subscribers": 232,
     "description": "Builders shipping the future of go-to-market with AI. GitHub commits over slide decks. Tribal knowledge shared openly. Systems, experiments, and real lessons from operators who build in public and grow together. No gatekeeping. No guru talk. Builder-led growth starts here."
   },
   "userProfile": {
