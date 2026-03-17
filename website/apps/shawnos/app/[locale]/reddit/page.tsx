@@ -4,6 +4,7 @@ import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../i18n/hreflang'
 import { fetchUserProfile } from '@shawnos/shared/lib/reddit'
 import { RedditTabs } from './RedditTabs'
+import { EvidenceCard } from './EvidenceCard'
 
 export const revalidate = 3600
 
@@ -66,6 +67,7 @@ const EVIDENCE = [
     views: '28K',
     type: 'crossover' as const,
     image: '/images/reddit-evidence/dad-plumber-nyc.png',
+    body: 'I\'m Shawn. For 10 years I worked plumbing in New York City with my father, Reuven. Not holding tools. running jobs. Every borough. Pre-war brownstones where nothing is where the blueprints say it is. High-rises where one bad valve floods six floors.',
     lesson: 'personal story in an unexpected subreddit. authenticity wins. highest single-post upvotes.',
   },
   {
@@ -78,6 +80,7 @@ const EVIDENCE = [
     views: '18K',
     type: 'meme' as const,
     image: '/images/reddit-evidence/cc-remote-gosling.png',
+    body: 'Ryan Gosling meme — posted the morning Claude Code remote access dropped. zero effort, maximum relatability.',
     lesson: 'memes work. posted right when Claude Code remote dropped. timing is everything.',
   },
   {
@@ -90,6 +93,7 @@ const EVIDENCE = [
     views: '145K',
     type: 'showcase' as const,
     image: '/images/reddit-evidence/6week-claude-code.png',
+    body: 'shipped 4 open source repos, 3 production websites, a content pipeline across 6 platforms, and cron jobs running nightly on a single Mac Mini. all Claude Code. the 4-6 concurrent terminal sessions lifestyle is real.',
     lesson: '145K views, 164 comments. the post was the hook, the comments were the delivery.',
   },
   {
@@ -102,6 +106,7 @@ const EVIDENCE = [
     views: '45K',
     type: 'question' as const,
     image: '/images/reddit-evidence/ssh-thin-client.png',
+    body: 'picking up a MacBook Neo (the new $699 one with the A18 Pro chip) as a portable terminal. all my actual compute lives on a Mac Mini that runs 24/7. the plan is basically: SSH in, tmux attach, run Claude Code on the Mini\'s hardware.',
     lesson: 'genuine question — I was actually buying the MacBook Neo. 46 comments of real technical answers.',
   },
   {
@@ -114,6 +119,7 @@ const EVIDENCE = [
     views: '4.1K',
     type: 'thought-leadership' as const,
     image: '/images/reddit-evidence/sdr-to-gtm-engineer.png',
+    body: '4 weeks ago I started using Claude Code heavy. since then I\'ve shipped four full stack websites, built a arsenal of reusable skills, a voice system for content, a progression engine. all one monorepo, one Mac Mini.',
     lesson: 'career arc story. linked repos, not landing pages. showed the method, not just the results.',
   },
   {
@@ -126,6 +132,7 @@ const EVIDENCE = [
     views: '3.4K',
     type: 'meme' as const,
     image: '/images/reddit-evidence/1m-context-meme.png',
+    body: 'anime meme — "claude code 40 files deep executing a plan with full confidence" vs "me with my finger on ctrl+c deciding if this is genius or a disaster"',
     lesson: 'anime meme on launch day. low effort, high relatability. keeps you visible between big posts.',
   },
   {
@@ -138,6 +145,7 @@ const EVIDENCE = [
     views: '3.1K',
     type: 'hot-take' as const,
     image: '/images/reddit-evidence/tool-devotion-trap.png',
+    body: 'for the past two months I\'ve been pushing the same thesis. the builder is the moat, not the tool. if your entire value proposition is proficiency with a specific platform, you\'re one pricing change away from a career problem.',
     lesson: 'timely contrarian take. backed by 18 months of daily Clay usage. cross-posted to both subs.',
   },
   {
@@ -150,6 +158,7 @@ const EVIDENCE = [
     views: '365',
     type: 'thesis' as const,
     image: '/images/reddit-evidence/stop-renting-audience.png',
+    body: 'stop renting your audience. build your own website. I said the tools are a trap, that you shouldn\'t tie your career to someone else\'s roadmap.',
     lesson: 'not every post hits. this one was too preachy. lesson: lead with story, not advice.',
   },
   {
@@ -162,6 +171,7 @@ const EVIDENCE = [
     views: '2K',
     type: 'value-first' as const,
     image: '/images/reddit-evidence/clay-agency-audit.png',
+    body: 'I\'ve been building in Clay daily for over a year. 60+ Clay Wiki entries, open-source GTM OS. I keep getting asked "should I hire a Clay agency?" so I put together the 5-question audit I run before answering.',
     lesson: 'pure value. no email gate. just the checklist. people saved this one.',
   },
   {
@@ -174,6 +184,7 @@ const EVIDENCE = [
     views: '738',
     type: 'thesis' as const,
     image: '/images/reddit-evidence/gtm-resume-github-repo.png',
+    body: 'I spent 2 years getting good at Clay. learned every enrichment, every Claygent pattern, every HTTP API workaround. documented 60+ entries in a public wiki. then I realized something. Clay could change their pricing tomorrow.',
     lesson: 'thesis post for the community. small numbers but seeded the conversation for future posts.',
   },
 ]
@@ -344,59 +355,7 @@ const sectionDivider: React.CSSProperties = {
   margin: '48px 0',
 }
 
-const evidenceCard: React.CSSProperties = {
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '12px',
-  overflow: 'hidden',
-  marginBottom: '24px',
-}
-
-const evidenceImage: React.CSSProperties = {
-  width: '100%',
-  display: 'block',
-  borderBottom: '1px solid var(--border)',
-}
-
-const evidenceBody: React.CSSProperties = {
-  padding: '20px',
-}
-
-const evidenceTitle: React.CSSProperties = {
-  fontSize: '15px',
-  fontWeight: 600,
-  color: 'var(--text-primary)',
-  margin: '0 0 8px',
-  lineHeight: 1.4,
-}
-
-const evidenceMeta: React.CSSProperties = {
-  display: 'flex',
-  gap: '12px',
-  flexWrap: 'wrap',
-  marginBottom: '12px',
-  fontSize: '12px',
-  color: 'var(--text-secondary)',
-}
-
-const metaBadge = (color: string): React.CSSProperties => ({
-  display: 'inline-block',
-  fontSize: '10px',
-  fontWeight: 600,
-  color,
-  border: `1px solid ${color}44`,
-  borderRadius: '4px',
-  padding: '2px 8px',
-  textTransform: 'uppercase',
-  letterSpacing: '0.04em',
-})
-
-const evidenceLesson: React.CSSProperties = {
-  fontSize: '13px',
-  color: 'var(--text-secondary)',
-  lineHeight: 1.6,
-  fontStyle: 'italic',
-}
+/* evidence card styles moved to EvidenceCard.tsx */
 
 const postTypeCard: React.CSSProperties = {
   background: 'var(--canvas-subtle)',
@@ -577,28 +536,7 @@ export default async function RedditPage({ params }: Props) {
         </p>
 
         {EVIDENCE.map((e, i) => (
-          <div key={i} style={evidenceCard}>
-            {e.image && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={e.image}
-                alt={`${e.title} — ${e.sub}`}
-                style={evidenceImage}
-                loading="lazy"
-              />
-            )}
-            <div style={evidenceBody}>
-              <p style={evidenceTitle}>{e.title}</p>
-              <div style={evidenceMeta}>
-                <span style={metaBadge(e.tagColor)}>{e.tag}</span>
-                <span>{e.sub}</span>
-                <span>↑ {e.upvotes}</span>
-                <span>💬 {e.comments}</span>
-                <span>👁 {e.views} views</span>
-              </div>
-              <p style={evidenceLesson}>{e.lesson}</p>
-            </div>
-          </div>
+          <EvidenceCard key={i} {...e} />
         ))}
 
         <hr style={sectionDivider} />

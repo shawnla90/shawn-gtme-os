@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { EvidenceCard } from './EvidenceCard'
 
 /* ── comment data ──────────────────────────────────── */
 
@@ -200,22 +201,19 @@ export function RedditTabs() {
 
               <div style={exampleGrid}>
                 {ct.examples.map((ex, j) => (
-                  <div key={j} style={exampleCard}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={ex.image}
-                      alt={ex.context}
-                      style={exampleImage}
-                      loading="lazy"
-                    />
-                    <div style={exampleBody}>
-                      <p style={exampleContext}>{ex.context}</p>
-                      <div style={exampleStats}>
-                        <span>↑ {ex.upvotes}</span>
-                        <span>👁 {ex.views} views</span>
-                      </div>
-                    </div>
-                  </div>
+                  <EvidenceCard
+                    key={j}
+                    title={ex.context}
+                    sub=""
+                    tag="Comment"
+                    tagColor="#FF4500"
+                    upvotes={ex.upvotes}
+                    comments={0}
+                    views={ex.views}
+                    image={ex.image}
+                    body={ex.text}
+                    lesson=""
+                  />
                 ))}
               </div>
             </div>
@@ -301,40 +299,5 @@ const commentTypeHighlight: React.CSSProperties = {
 const exampleGrid: React.CSSProperties = {
   display: 'flex',
   flexDirection: 'column',
-  gap: '16px',
-}
-
-const exampleCard: React.CSSProperties = {
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '12px',
-  overflow: 'hidden',
-}
-
-const exampleImage: React.CSSProperties = {
-  width: '100%',
-  display: 'block',
-  borderBottom: '1px solid var(--border)',
-}
-
-const exampleBody: React.CSSProperties = {
-  padding: '12px 16px',
-  display: 'flex',
-  justifyContent: 'space-between',
-  alignItems: 'center',
-  flexWrap: 'wrap',
   gap: '8px',
-}
-
-const exampleContext: React.CSSProperties = {
-  fontSize: '12px',
-  color: 'var(--text-secondary)',
-  margin: 0,
-}
-
-const exampleStats: React.CSSProperties = {
-  display: 'flex',
-  gap: '12px',
-  fontSize: '12px',
-  color: 'var(--text-secondary)',
 }
