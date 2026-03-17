@@ -8,6 +8,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
+import { notifySignup } from './subscribe-notify'
 
 const SUBSTACK_URL = 'https://shawntenam.substack.com/api/v1/free?nojs=true'
 
@@ -85,7 +86,11 @@ export async function handleSubscribe(request: NextRequest): Promise<NextRespons
     const forwarded = substackStatus >= 200 && substackStatus < 400
 
     // Capture to PostHog (persistent — works on Vercel)
-    await captureToPostHog(email, site, forwarded, substackStatus)
+    // Notify via Telegram + Google Sheet
+    await Promise.allSettled([
+      captureToPostHog(email, site, forwarded, substackStatus),
+      notifySignup(email, site),
+    ])
 
     return NextResponse.json({
       message: 'Subscribed',

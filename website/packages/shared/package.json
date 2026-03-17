@@ -44,6 +44,7 @@
     "./lib/reddit": "./lib/reddit.ts",
     "./lib/subscribe": "./lib/subscribe.ts",
     "./lib/subscribe-handler": "./lib/subscribe-handler.ts",
+    "./lib/subscribe-notify": "./lib/subscribe-notify.ts",
     "./hooks": "./hooks/useIsMobile.ts",
     "./hooks/useTheme": "./hooks/useTheme.ts",
     "./hooks/useContentTracking": "./hooks/useContentTracking.ts",
