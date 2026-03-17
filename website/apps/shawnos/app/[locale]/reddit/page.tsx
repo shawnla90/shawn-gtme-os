@@ -514,6 +514,19 @@ export default async function RedditPage({ params }: Props) {
       <div style={pageWrap}>
         {/* Hero */}
         <section style={heroSection}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/reddit-evidence/reddit-logo-dark.png"
+            alt="Reddit"
+            style={{
+              width: '180px',
+              height: 'auto',
+              margin: '0 auto 24px',
+              display: 'block',
+              opacity: 0.9,
+              borderRadius: '12px',
+            }}
+          />
           <h1 style={heroTitle}>
             <span style={heroAccent}>Reddit</span> Growth Playbook
           </h1>
@@ -609,6 +622,20 @@ export default async function RedditPage({ params }: Props) {
         <hr style={sectionDivider} />
 
         {/* Rules */}
+        <div style={{ textAlign: 'center', margin: '0 0 -16px' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/reddit-evidence/reddit-dark-snoo.png"
+            alt=""
+            style={{
+              width: '120px',
+              height: 'auto',
+              opacity: 0.5,
+              borderRadius: '12px',
+              filter: 'grayscale(0.3)',
+            }}
+          />
+        </div>
         <h2 style={sectionTitle}>the 8 rules</h2>
         <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '24px' }}>
           these aren&apos;t theory. every rule came from watching what worked and what got me destroyed.
@@ -628,6 +655,19 @@ export default async function RedditPage({ params }: Props) {
 
         {/* CTA */}
         <div style={ctaBlock}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/reddit-evidence/reddit-3d-snoo.png"
+            alt=""
+            style={{
+              width: '80px',
+              height: 'auto',
+              margin: '0 auto 16px',
+              display: 'block',
+              borderRadius: '8px',
+              filter: 'brightness(0.95)',
+            }}
+          />
           <p style={ctaTitle}>want to build with us?</p>
           <p style={ctaDesc}>
             r/GTMBuilders is where the building happens. 120+ people shipping real work.
