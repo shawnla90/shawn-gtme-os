@@ -48,13 +48,13 @@
   },
   "Home": {
     "metadata": {
-      "title": "ShawnOS.ai | GTM engineering, built in public",
-      "description": "One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase."
+      "title": "ShawnOS.ai | Shawn Tenam — GTM engineering, built in public",
+      "description": "Shawn Tenam's operating system. One monorepo. Three websites. AI agents, content pipelines, and GTM automation — all version-controlled."
     },
     "hero": {
       "titleLine1": "GTM Engineering,",
       "titleLine2": "Built in Public",
-      "subtitle": "One monorepo. One operating system. Every skill, post, and campaign runs through the same codebase.",
+      "subtitle": "by Shawn Tenam. one monorepo. one operating system. every skill, post, and campaign runs through the same codebase.",
       "ctaBlog": "read the blog",
       "ctaAbout": "about"
     },

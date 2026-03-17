@@ -173,6 +173,12 @@ export default async function BlogPost({
                   marginTop: 8,
                 }}
               >
+                <span style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>
+                  Shawn Tenam
+                </span>
+
+                <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>·</span>
+
                 <time
                   dateTime={post.date}
                   style={{
