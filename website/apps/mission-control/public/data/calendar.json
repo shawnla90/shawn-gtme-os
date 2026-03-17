@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-16T04:03:05.636Z",
+  "generated": "2026-03-17T04:04:27.968Z",
   "events": [
     {
-      "id": "commit-c39ef75",
-      "title": "chore: sync Reddit cache — 16 posts (2026-03-15 23:47)",
+      "id": "commit-40b960c",
+      "title": "refactor(reddit): restructure page flow — types → rules → re",
       "type": "system",
-      "datetime": "2026-03-15T23:47:14-04:00",
+      "datetime": "2026-03-16T23:48:51-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 16 posts (2026-03-15 23:47)",
+      "description": "refactor(reddit): restructure page flow — types → rules → receipts",
       "metadata": {
-        "commitHash": "c39ef75"
+        "commitHash": "40b960c"
       }
     },
     {
-      "id": "commit-ab32cbc",
-      "title": "feat(analytics): enrich newsletter signup tracking + PostHog",
+      "id": "commit-26a810f",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-16 23:27)",
       "type": "system",
-      "datetime": "2026-03-15T23:19:51-04:00",
+      "datetime": "2026-03-16T23:27:09-04:00",
       "status": "completed",
-      "description": "feat(analytics): enrich newsletter signup tracking + PostHog dashboard",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-16 23:27)",
       "metadata": {
-        "commitHash": "ab32cbc"
+        "commitHash": "26a810f"
       }
     },
     {
-      "id": "commit-d51d4ea",
-      "title": "chore: sync Reddit cache — 16 posts (2026-03-15 22:46)",
+      "id": "commit-a703b38",
+      "title": "feat(reddit): text-first evidence cards with screenshot togg",
       "type": "system",
-      "datetime": "2026-03-15T22:46:57-04:00",
+      "datetime": "2026-03-16T23:10:13-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 16 posts (2026-03-15 22:46)",
+      "description": "feat(reddit): text-first evidence cards with screenshot toggle",
       "metadata": {
-        "commitHash": "d51d4ea"
+        "commitHash": "a703b38"
       }
     },
     {
-      "id": "commit-86fc0fe",
-      "title": "feat(repos): add Projects tab to RepoHub with 5 live project",
+      "id": "commit-bc08280",
+      "title": "wip(reddit): integrate Reddit brand assets into page design",
       "type": "system",
-      "datetime": "2026-03-15T22:38:13-04:00",
+      "datetime": "2026-03-16T22:44:41-04:00",
       "status": "completed",
-      "description": "feat(repos): add Projects tab to RepoHub with 5 live projects",
+      "description": "wip(reddit): integrate Reddit brand assets into page design",
       "metadata": {
-        "commitHash": "86fc0fe"
+        "commitHash": "bc08280"
       }
     },
     {
-      "id": "commit-8e1b447",
-      "title": "feat(crypto-os): premium typography, daily briefing, $100 gu",
+      "id": "commit-89bf9ea",
+      "title": "feat(subscribe): add Telegram + Google Sheet notifications o",
       "type": "system",
-      "datetime": "2026-03-15T22:10:09-04:00",
+      "datetime": "2026-03-16T22:34:06-04:00",
       "status": "completed",
-      "description": "feat(crypto-os): premium typography, daily briefing, $100 guide",
+      "description": "feat(subscribe): add Telegram + Google Sheet notifications on signup",
       "metadata": {
-        "commitHash": "8e1b447"
+        "commitHash": "89bf9ea"
       }
     },
     {
-      "id": "commit-808e307",
-      "title": "feat(scroll-signup): require both 40% scroll AND 10s on page",
+      "id": "commit-da3eb06",
+      "title": "wip(reddit): add comments guide with 6 comment types + tabbe",
       "type": "system",
-      "datetime": "2026-03-15T21:52:24-04:00",
+      "datetime": "2026-03-16T22:34:02-04:00",
       "status": "completed",
-      "description": "feat(scroll-signup): require both 40% scroll AND 10s on page",
+      "description": "wip(reddit): add comments guide with 6 comment types + tabbed UI",
       "metadata": {
-        "commitHash": "808e307"
+        "commitHash": "da3eb06"
       }
     },
     {
-      "id": "commit-d4f5d2f",
-      "title": "fix(scroll-signup): persist subscription to localStorage acr",
+      "id": "commit-2a22f6f",
+      "title": "chore: sync Reddit cache — 18 posts (2026-03-16 22:26)",
       "type": "system",
-      "datetime": "2026-03-15T21:51:16-04:00",
+      "datetime": "2026-03-16T22:26:53-04:00",
       "status": "completed",
-      "description": "fix(scroll-signup): persist subscription to localStorage across pages",
+      "description": "chore: sync Reddit cache — 18 posts (2026-03-16 22:26)",
       "metadata": {
-        "commitHash": "d4f5d2f"
+        "commitHash": "2a22f6f"
       }
     },
     {
-      "id": "commit-1d55923",
-      "title": "chore: sync Reddit cache — 16 posts (2026-03-15 21:46)",
+      "id": "commit-f570ab4",
+      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 21:26)",
       "type": "system",
-      "datetime": "2026-03-15T21:46:38-04:00",
+      "datetime": "2026-03-16T21:26:35-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 16 posts (2026-03-15 21:46)",
+      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 21:26)",
       "metadata": {
-        "commitHash": "1d55923"
+        "commitHash": "f570ab4"
       }
     },
     {
-      "id": "commit-d3890e1",
-      "title": "fix(crypto): handle untracked files and stash in deploy scri",
+      "id": "commit-b9e430c",
+      "title": "fix(subscribe): use PostHog server-side capture instead of f",
       "type": "system",
-      "datetime": "2026-03-15T21:44:51-04:00",
+      "datetime": "2026-03-16T21:20:33-04:00",
       "status": "completed",
-      "description": "fix(crypto): handle untracked files and stash in deploy script",
+      "description": "fix(subscribe): use PostHog server-side capture instead of filesystem",
       "metadata": {
-        "commitHash": "d3890e1"
+        "commitHash": "b9e430c"
       }
     },
     {
-      "id": "commit-9340a24",
-      "title": "redesign(scroll-signup): centered modal with dark+green prem",
+      "id": "commit-661b142",
+      "title": "wip(reddit): Reddit Growth Playbook page + evidence screensh",
       "type": "system",
-      "datetime": "2026-03-15T21:44:39-04:00",
+      "datetime": "2026-03-16T21:19:28-04:00",
       "status": "completed",
-      "description": "redesign(scroll-signup): centered modal with dark+green premium aesthetic",
+      "description": "wip(reddit): Reddit Growth Playbook page + evidence screenshots",
       "metadata": {
-        "commitHash": "9340a24"
+        "commitHash": "661b142"
       }
     },
     {
-      "id": "commit-fd151fd",
-      "title": "chore(crypto): initial evening signal 2026-03-15",
+      "id": "commit-dd14aa1",
+      "title": "fix(shared): add subscribe exports to package.json",
       "type": "system",
-      "datetime": "2026-03-15T21:32:12-04:00",
+      "datetime": "2026-03-16T20:41:33-04:00",
       "status": "completed",
-      "description": "chore(crypto): initial evening signal 2026-03-15",
+      "description": "fix(shared): add subscribe exports to package.json",
       "metadata": {
-        "commitHash": "fd151fd"
+        "commitHash": "dd14aa1"
       }
     },
     {
-      "id": "commit-fe1d416",
-      "title": "redesign(scroll-signup): dark + green premium card, no dismi",
+      "id": "commit-74dae19",
+      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 20:26)",
       "type": "system",
-      "datetime": "2026-03-15T21:32:06-04:00",
+      "datetime": "2026-03-16T20:26:15-04:00",
       "status": "completed",
-      "description": "redesign(scroll-signup): dark + green premium card, no dismiss button",
+      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 20:26)",
       "metadata": {
-        "commitHash": "fe1d416"
+        "commitHash": "74dae19"
       }
     },
     {
-      "id": "commit-cc12988",
-      "title": "feat(crypto-os): auto-deploy signals to shawnos.ai",
+      "id": "commit-708bf14",
+      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 19:53)",
       "type": "system",
-      "datetime": "2026-03-15T21:24:39-04:00",
+      "datetime": "2026-03-16T19:53:18-04:00",
       "status": "completed",
-      "description": "feat(crypto-os): auto-deploy signals to shawnos.ai",
+      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 19:53)",
       "metadata": {
-        "commitHash": "cc12988"
+        "commitHash": "708bf14"
       }
     },
     {
-      "id": "commit-56a35e6",
-      "title": "redesign(scroll-signup): clean floating bar instead of termi",
+      "id": "commit-0558707",
+      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 18:53)",
       "type": "system",
-      "datetime": "2026-03-15T21:22:23-04:00",
+      "datetime": "2026-03-16T18:53:00-04:00",
       "status": "completed",
-      "description": "redesign(scroll-signup): clean floating bar instead of terminal overlay",
+      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 18:53)",
       "metadata": {
-        "commitHash": "56a35e6"
+        "commitHash": "0558707"
       }
     },
     {
-      "id": "commit-0836520",
-      "title": "fix(scroll-signup): make component fixed-position overlay in",
+      "id": "commit-abedf8a",
+      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 17:52)",
       "type": "system",
-      "datetime": "2026-03-15T21:15:45-04:00",
+      "datetime": "2026-03-16T17:52:40-04:00",
       "status": "completed",
-      "description": "fix(scroll-signup): make component fixed-position overlay instead of inline",
+      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 17:52)",
       "metadata": {
-        "commitHash": "0836520"
+        "commitHash": "abedf8a"
       }
     }
   ],

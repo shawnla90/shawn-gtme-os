@@ -1,26 +1,26 @@
 {
-  "generated": "2026-03-16T04:00:14.000Z",
+  "generated": "2026-03-17T04:00:12.000Z",
   "totals": {
-    "total_content": 202,
-    "total_drafts": 117,
-    "total_final": 85,
-    "total_words": 118534,
+    "total_content": 211,
+    "total_drafts": 123,
+    "total_final": 88,
+    "total_words": 131954,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
   },
   "pipeline": {
     "linkedin": {
-      "draft": 42,
+      "draft": 44,
       "final": 16,
-      "total": 58,
-      "words": 32826
+      "total": 60,
+      "words": 33422
     },
     "reddit": {
-      "draft": 19,
+      "draft": 22,
       "final": 0,
-      "total": 19,
-      "words": 7658
+      "total": 22,
+      "words": 9204
     },
     "x": {
       "draft": 45,
@@ -30,21 +30,21 @@
     },
     "nio-log": {
       "draft": 0,
-      "final": 26,
-      "total": 26,
-      "words": 15011
+      "final": 27,
+      "total": 27,
+      "words": 19904
     },
     "website": {
       "draft": 1,
-      "final": 27,
-      "total": 28,
-      "words": 27345
+      "final": 29,
+      "total": 30,
+      "words": 32069
     },
     "substack": {
-      "draft": 10,
+      "draft": 11,
       "final": 5,
-      "total": 15,
-      "words": 18032
+      "total": 16,
+      "words": 19693
     }
   },
   "recent": [
@@ -115,6 +115,28 @@
       "file_path": "content/x/drafts/2026-03-17_pipe-bomb-thread-2.md"
     },
     {
+      "platform": "linkedin",
+      "title": "going solo",
+      "slug": "going-solo",
+      "date": "2026-03-16",
+      "stage": "draft",
+      "pillar": "building-sharing",
+      "arc": null,
+      "word_count": 395,
+      "file_path": "content/linkedin/drafts/2026-03-16_going-solo.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "SUNDAY. THE MACHINES ARE RUNNING THEMSELVES.",
+      "slug": "2026-03-16",
+      "date": "2026-03-16",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 778,
+      "file_path": "content/nio-log/2026-03-16.md"
+    },
+    {
       "platform": "reddit",
       "title": "pipe bomb mobilization",
       "slug": "pipe-bomb-mobilization",
@@ -124,6 +146,28 @@
       "arc": null,
       "word_count": 117,
       "file_path": "content/reddit/drafts/2026-03-16_pipe-bomb-mobilization.md"
+    },
+    {
+      "platform": "website",
+      "title": "6 weeks of building with Claude Code changed everything",
+      "slug": "6-weeks-of-building-with-claude-code",
+      "date": "2026-03-16",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1273,
+      "file_path": "content/website/final/6-weeks-of-building-with-claude-code.md"
+    },
+    {
+      "platform": "website",
+      "title": "the reddit mastery wiki: 1,089 karma in 30 days with zero ads",
+      "slug": "reddit-mastery-wiki",
+      "date": "2026-03-16",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 3183,
+      "file_path": "content/website/final/reddit-mastery-wiki.md"
     },
     {
       "platform": "linkedin",
@@ -137,15 +181,70 @@
       "file_path": "content/linkedin/drafts/2026-03-15_pipe-bomb-breadcrumb.md"
     },
     {
+      "platform": "linkedin",
+      "title": "substack sunday",
+      "slug": "substack-sunday",
+      "date": "2026-03-15",
+      "stage": "draft",
+      "pillar": "building-sharing",
+      "arc": null,
+      "word_count": 201,
+      "file_path": "content/linkedin/drafts/2026-03-15_substack-sunday.md"
+    },
+    {
       "platform": "nio-log",
-      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-15.MD`.",
+      "title": "THE MULTIPLICATION EFFECT",
       "slug": "2026-03-15",
       "date": "2026-03-15",
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 128,
+      "word_count": 960,
       "file_path": "content/nio-log/2026-03-15.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "lounge intro",
+      "slug": "lounge-intro",
+      "date": "2026-03-15",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 278,
+      "file_path": "content/reddit/drafts/2026-03-15_lounge-intro.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "structured divergence claudecode",
+      "slug": "structured-divergence-claudecode",
+      "date": "2026-03-15",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 620,
+      "file_path": "content/reddit/drafts/2026-03-15_structured-divergence-claudecode.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "website with soul webdev",
+      "slug": "website-with-soul-webdev",
+      "date": "2026-03-15",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 648,
+      "file_path": "content/reddit/drafts/2026-03-15_website-with-soul-webdev.md"
+    },
+    {
+      "platform": "substack",
+      "title": "Four Repos, Six Weeks, One Pattern",
+      "slug": "structured-divergence-launch",
+      "date": "2026-03-15",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1661,
+      "file_path": "content/substack/drafts/2026-03-15_structured-divergence-launch.md"
     },
     {
       "platform": "x",
@@ -193,13 +292,13 @@
     },
     {
       "platform": "nio-log",
-      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-14.MD`.",
+      "title": "THE TRILOGY",
       "slug": "2026-03-14",
       "date": "2026-03-14",
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 96,
+      "word_count": 971,
       "file_path": "content/nio-log/2026-03-14.md"
     },
     {
@@ -276,7 +375,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 681,
+      "word_count": 949,
       "file_path": "content/website/final/website-with-soul-open-source.md"
     },
     {
@@ -358,13 +457,13 @@
     },
     {
       "platform": "nio-log",
-      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-13.MD`.",
+      "title": "THE MAINTENANCE RATIO",
       "slug": "2026-03-13",
       "date": "2026-03-13",
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 116,
+      "word_count": 948,
       "file_path": "content/nio-log/2026-03-13.md"
     },
     {
@@ -498,105 +597,6 @@
       "arc": null,
       "word_count": 201,
       "file_path": "content/x/drafts/2026-03-13_claude-code-1m-thread-3.md"
-    },
-    {
-      "platform": "x",
-      "title": "Thread 1: The Discovery",
-      "slug": "gws-cli-thread-1",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 166,
-      "file_path": "content/x/drafts/2026-03-13_gws-cli-thread-1.md"
-    },
-    {
-      "platform": "x",
-      "title": "Thread 2: The Contrarian Take",
-      "slug": "gws-cli-thread-2",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 183,
-      "file_path": "content/x/drafts/2026-03-13_gws-cli-thread-2.md"
-    },
-    {
-      "platform": "x",
-      "title": "gws cli thread 1",
-      "slug": "gws-cli-thread-1",
-      "date": "2026-03-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 168,
-      "file_path": "content/x/final/2026-03-13_gws-cli-thread-1.txt"
-    },
-    {
-      "platform": "x",
-      "title": "gws cli thread 2",
-      "slug": "gws-cli-thread-2",
-      "date": "2026-03-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 184,
-      "file_path": "content/x/final/2026-03-13_gws-cli-thread-2.txt"
-    },
-    {
-      "platform": "nio-log",
-      "title": "DONE. DRAFT SAVED TO `CONTENT/DRAFTS/NIO-LOG-2026-03-12.MD`.",
-      "slug": "2026-03-12",
-      "date": "2026-03-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 117,
-      "file_path": "content/nio-log/2026-03-12.md"
-    },
-    {
-      "platform": "website",
-      "title": "why apollo should be your first sourcing run, not clay",
-      "slug": "apollo-should-be-your-first-run",
-      "date": "2026-03-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 896,
-      "file_path": "content/website/final/apollo-should-be-your-first-run.md"
-    },
-    {
-      "platform": "website",
-      "title": "clay's pricing makes sense for enterprise. the rest of us got squeezed.",
-      "slug": "clay-pricing-opinion-what-it-means-for-builders",
-      "date": "2026-03-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1010,
-      "file_path": "content/website/final/clay-pricing-opinion-what-it-means-for-builders.md"
-    },
-    {
-      "platform": "website",
-      "title": "stop renting your audience. build your own website.",
-      "slug": "stop-renting-your-audience-build-your-own-website",
-      "date": "2026-03-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1425,
-      "file_path": "content/website/final/stop-renting-your-audience-build-your-own-website.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "clay pricing breakdown",
-      "slug": "clay-pricing-breakdown",
-      "date": "2026-03-11",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 342,
-      "file_path": "content/linkedin/final/2026-03-11_clay-pricing-breakdown.txt"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-16",
+      "grade": "B",
+      "score": 302,
+      "words": 14911,
+      "shipped": 14,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-15",
       "grade": "B",
       "score": 353,
@@ -1213,14 +1221,6 @@
       "score": 190,
       "words": 10565,
       "shipped": 20,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-02",
-      "grade": "B",
-      "score": 367,
-      "words": 7047,
-      "shipped": 13,
       "cost": 0.0
     }
   ]
