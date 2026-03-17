@@ -15,16 +15,14 @@ export function ScrollSignup() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<Status>('idle')
   const mountTime = useRef(Date.now())
+  const substackIframeRef = useRef<HTMLIFrameElement>(null)
 
-  // Check localStorage on mount — if already subscribed, never show
   useEffect(() => {
     try {
       if (localStorage.getItem(STORAGE_KEY)) {
         setSubscribed(true)
       }
-    } catch {
-      // localStorage unavailable (e.g. private browsing) — show anyway
-    }
+    } catch {}
   }, [])
 
   useEffect(() => {
@@ -76,10 +74,9 @@ export function ScrollSignup() {
 
       setStatus('submitting')
 
-      // Write localStorage immediately so we never re-show
       try { localStorage.setItem(STORAGE_KEY, '1') } catch {}
 
-      // Track in PostHog
+      // Track in PostHog client-side
       const pathname = window.location.pathname
       const site = window.location.hostname.includes('gtmos')
         ? 'gtmos'
@@ -93,16 +90,20 @@ export function ScrollSignup() {
         seconds_on_page: Math.round((Date.now() - mountTime.current) / 1000),
       })
 
-      // Submit via server-side API route (captures email + forwards to Substack)
-      const result = await subscribeEmail(email)
+      // Capture email server-side (PostHog + Telegram)
+      await subscribeEmail(email)
 
-      if (result.ok) {
-        setStatus('success')
-        // Don't auto-dismiss — let them complete the Substack embed
-      } else {
-        setStatus('error')
-        setTimeout(() => setStatus('idle'), 3000)
+      // Send to Substack via hidden iframe
+      if (substackIframeRef.current) {
+        substackIframeRef.current.src =
+          `https://shawntenam.substack.com/subscribe?email=${encodeURIComponent(email)}&just_hierarchical=true`
       }
+
+      setStatus('success')
+      setTimeout(() => {
+        setSubscribed(true)
+        setVisible(false)
+      }, 3000)
     },
     [email],
   )
@@ -112,7 +113,6 @@ export function ScrollSignup() {
   return (
     <div style={overlay} onClick={handleDismiss}>
       <div style={card} onClick={(e) => e.stopPropagation()}>
-        {/* Dismiss button */}
         <button
           onClick={handleDismiss}
           style={dismissBtn}
@@ -123,36 +123,76 @@ export function ScrollSignup() {
           </svg>
         </button>
 
-        {/* Top glow bar */}
         <div style={glowBar} aria-hidden="true" />
-
-        {/* Subtle grid pattern overlay */}
         <div style={gridPattern} aria-hidden="true" />
 
-        <div style={content}>
-          <div style={textBlock}>
-            <p style={headline}>
-              follow the <span style={greenText}>build</span>
-            </p>
-            <p style={subtext}>
-              what I&apos;m shipping, how I&apos;m building it, and what I&apos;d do differently.
-              <br />
-              <span style={{ fontSize: '12px', opacity: 0.7 }}>
-                signed up before and didn&apos;t get a confirmation? we fixed it. try again.
-              </span>
-            </p>
-          </div>
+        {/* Hidden iframe for Substack subscribe */}
+        <iframe
+          ref={substackIframeRef}
+          style={{ display: 'none' }}
+          title="Substack subscribe"
+          tabIndex={-1}
+        />
 
-          <iframe
-            src="https://shawntenam.substack.com/embed"
-            width="100%"
-            height="150"
-            style={{ border: 'none', borderRadius: '8px' }}
-            frameBorder="0"
-            scrolling="no"
-            title="Subscribe on Substack"
-          />
-        </div>
+        {status === 'success' ? (
+          <div style={successBlock}>
+            <div style={checkCircle}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M5 13L10 18L20 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <p style={successTitle}>you&apos;re in</p>
+            <p style={successSub}>check your email to confirm.</p>
+          </div>
+        ) : (
+          <div style={content}>
+            <div style={textBlock}>
+              <p style={headline}>
+                follow the <span style={greenText}>build</span>
+              </p>
+              <p style={subtext}>
+                what I&apos;m shipping, how I&apos;m building it, and what I&apos;d do differently.
+                <br />
+                <span style={{ fontSize: '12px', opacity: 0.7 }}>
+                  signed up before and didn&apos;t get a confirmation? we fixed it. try again.
+                </span>
+              </p>
+            </div>
+
+            <form onSubmit={handleSubmit} style={formBlock}>
+              <div style={inputRow}>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value)
+                    if (status === 'error') setStatus('idle')
+                  }}
+                  required
+                  style={emailInput}
+                  aria-label="Email address"
+                />
+
+                <button
+                  type="submit"
+                  disabled={status === 'submitting' || !email}
+                  style={{
+                    ...submitBtn,
+                    opacity: status === 'submitting' || !email ? 0.5 : 1,
+                    cursor: status === 'submitting' ? 'wait' : 'pointer',
+                  }}
+                >
+                  {status === 'submitting' ? 'joining...' : 'subscribe'}
+                </button>
+              </div>
+            </form>
+
+            {status === 'error' && (
+              <p style={errorText}>something went wrong. try again.</p>
+            )}
+          </div>
+        )}
       </div>
     </div>
   )
