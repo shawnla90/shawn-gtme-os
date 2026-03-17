@@ -12,7 +12,7 @@ import { notifySignup } from './subscribe-notify'
 
 const SUBSTACK_URL = 'https://shawntenam.substack.com/api/v1/free?nojs=true'
 
-const POSTHOG_KEY = process.env.POSTHOG_KEY || process.env.NEXT_PUBLIC_POSTHOG_KEY || ''
+const POSTHOG_KEY = process.env.POSTHOG_KEY || process.env.NEXT_PUBLIC_POSTHOG_KEY || 'phc_zlJOdh1FPyUXLHSWVQITPRFZxGIrGdHonI5mlUJupJC'
 const POSTHOG_HOST = 'https://us.i.posthog.com'
 
 async function captureToPostHog(email: string, site: string, forwarded: boolean, substackStatus: number): Promise<void> {
@@ -96,6 +96,7 @@ export async function handleSubscribe(request: NextRequest): Promise<NextRespons
       message: 'Subscribed',
       captured: true,
       forwarded,
+      posthog_key_present: POSTHOG_KEY.length > 0,
     })
   } catch {
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
