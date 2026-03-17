@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../i18n/hreflang'
 import { fetchUserProfile } from '@shawnos/shared/lib/reddit'
+import { RedditTabs } from './RedditTabs'
 
 export const revalidate = 3600
 
@@ -552,6 +553,9 @@ export default async function RedditPage({ params }: Props) {
         </div>
 
         <hr style={sectionDivider} />
+
+        {/* Tabs */}
+        <RedditTabs />
 
         {/* Evidence */}
         <h2 style={sectionTitle}>the receipts</h2>
