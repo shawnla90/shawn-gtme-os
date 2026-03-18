@@ -369,13 +369,12 @@ export function BlogContent({ posts }: { posts: Post[] }) {
 
   const toggleFilter = (key: string) => {
     setActiveFilters((prev) => {
-      const next = new Set(prev)
-      if (next.has(key)) {
-        next.delete(key)
-      } else {
-        next.add(key)
+      if (prev.has(key) && prev.size === 1) {
+        // Clicking the only active filter deselects it (back to All)
+        return new Set()
       }
-      return next
+      // Single-select: clicking any category shows only that category
+      return new Set([key])
     })
   }
 
