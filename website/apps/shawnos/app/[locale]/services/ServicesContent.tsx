@@ -15,12 +15,12 @@ const RED_GLOW = 'rgba(230, 57, 70, 0.3)'
 const BG = '#0A0A0A'
 const BG_CARD = '#111111'
 const BORDER = '#1A1A1A'
-const TEXT = '#E8E8E8'
-const TEXT_DIM = '#888888'
+const TEXT = '#F5F5F5'
+const TEXT_DIM = '#A0A0A0'
 const MONO = 'var(--font-mono)'
 const SANS = 'var(--font-sans)'
 
-const CAL_LINK = 'https://cal.com/shawntenam/30min'
+const CAL_LINK = 'https://cal.com/shawn-lead-alchemy/30min'
 
 /* ── SVG Icons ── */
 function CodeIcon() {
@@ -127,7 +127,7 @@ export function ServicesContent() {
   }
 
   return (
-    <div style={{ background: BG, color: TEXT, fontFamily: MONO, margin: '-0px -24px', padding: '0 24px' }}>
+    <div style={{ background: BG, color: TEXT, fontFamily: SANS, margin: '-0px -24px', padding: '0 24px' }}>
       {/* ══ HERO ══ */}
       <section style={{ textAlign: 'center', padding: '100px 0 80px', maxWidth: 800, margin: '0 auto' }}>
         <MotionReveal>
@@ -166,7 +166,7 @@ export function ServicesContent() {
               background: RED,
               color: '#fff',
               fontSize: 14,
-              fontFamily: MONO,
+              fontFamily: SANS,
               fontWeight: 600,
               borderRadius: 6,
               textDecoration: 'none',
@@ -237,10 +237,12 @@ export function ServicesContent() {
                       {s.title}
                     </h3>
                     <p style={{
-                      fontSize: 13,
+                      fontSize: 14,
                       color: RED,
                       margin: '0 0 16px',
-                      fontFamily: MONO,
+                      fontFamily: SANS,
+                      fontWeight: 500,
+                      letterSpacing: '0.01em',
                     }}>
                       {s.subtitle}
                     </p>
@@ -252,11 +254,12 @@ export function ServicesContent() {
                     }}>
                       {s.points.map((p, j) => (
                         <li key={j} style={{
-                          fontSize: 13,
+                          fontSize: 14,
                           color: TEXT_DIM,
-                          lineHeight: 1.7,
-                          paddingLeft: 16,
+                          lineHeight: 1.8,
+                          paddingLeft: 20,
                           position: 'relative' as const,
+                          fontFamily: SANS,
                         }}>
                           <span style={{
                             position: 'absolute' as const,
@@ -307,9 +310,9 @@ export function ServicesContent() {
                   {p.number}
                 </div>
                 <div style={{
-                  fontSize: 13,
+                  fontSize: 14,
                   color: TEXT_DIM,
-                  fontFamily: MONO,
+                  fontFamily: SANS,
                 }}>
                   {p.label}
                 </div>
@@ -418,7 +421,7 @@ export function ServicesContent() {
                 background: RED,
                 color: '#fff',
                 fontSize: 14,
-                fontFamily: MONO,
+                fontFamily: SANS,
                 fontWeight: 600,
                 borderRadius: 6,
                 textDecoration: 'none',
@@ -444,7 +447,7 @@ export function ServicesContent() {
                 background: 'transparent',
                 color: RED,
                 fontSize: 14,
-                fontFamily: MONO,
+                fontFamily: SANS,
                 fontWeight: 600,
                 borderRadius: 6,
                 textDecoration: 'none',

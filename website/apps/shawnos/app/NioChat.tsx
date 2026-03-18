@@ -110,7 +110,7 @@ export function NioChat() {
         placeholder="ask nio anything..."
         accentColor="#4EC373"
         botId="nio"
-        ctaUrl="https://cal.com/shawntenam/30min"
+        ctaUrl="https://cal.com/shawn-lead-alchemy/30min"
         ctaLabel="Book a Call"
         gateType="substack"
         substackUrl="https://shawntenam.substack.com"
