@@ -47,7 +47,13 @@ BRIEFING_MD_DIR = REPO_ROOT / "content" / "content-intel"
 BLOG_DIR = REPO_ROOT / "content" / "website" / "final"
 CORE_VOICE_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "core-voice.md"
 ANTI_SLOP_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "anti-slop.md"
-CLAUDE_CLI = "/opt/homebrew/bin/claude"
+CLAUDE_CLI = os.environ.get("CLAUDE_CLI", "/opt/homebrew/bin/claude")
+if not Path(CLAUDE_CLI).exists():
+    # Fallback: check common locations
+    for p in ["/Users/shawnos.ai/.local/bin/claude", "/usr/local/bin/claude"]:
+        if Path(p).exists():
+            CLAUDE_CLI = p
+            break
 
 # ── .env loader ───────────────────────────────────────────────────────
 
@@ -776,7 +782,7 @@ Content angles identified:
 All posts data:
 {json.dumps([{"title": p["title"], "sub": p["subreddit"], "score": p["score"], "comments": p["num_comments"], "preview": p["selftext_preview"][:150]} for p in posts[:30]], indent=2)}
 
-Write the blog digest."""
+Write the blog digest now. Print the full markdown body to stdout. Start with ## ecosystem overview. Do not describe what you would write. Do not use tools. Just write the actual blog post content."""
 
     content = call_claude(system_prompt, user_prompt, model="opus")
     if not content:
