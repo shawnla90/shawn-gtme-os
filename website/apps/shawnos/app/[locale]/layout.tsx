@@ -197,7 +197,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           actions={<LanguageSwitcher />}
           links={[
             { href: lp('/'), label: nav('home') },
-            { href: lp('/services/web-development'), label: nav('services') },
+            { href: lp('/services'), label: nav('services') },
             { href: lp('/blog'), label: nav('blog') },
             { href: lp('/media'), label: nav('media') },
             { href: lp('/about'), label: nav('about') },
