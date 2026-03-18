@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import fs from 'fs'
 import { getTranslations } from 'next-intl/server'
-import { getPostSlugs, getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
+import { getPostSlugs, getPostBySlug, markdownToHtml, extractFAQs } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
@@ -95,9 +95,23 @@ export default async function BlogPost({
   const contentDir = getContentDir(locale, slug)
   const post = getPostBySlug(slug, contentDir)
   const htmlContent = await markdownToHtml(post.content)
+  const faqs = extractFAQs(post.content)
 
   const postUrl = `${SITE_URL}/blog/${slug}`
   const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt)}`
+
+  const faqSchema = faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  } : null
 
   const articleSchema = {
     '@context': 'https://schema.org',
@@ -154,6 +168,12 @@ export default async function BlogPost({
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
           />
+          {faqSchema && (
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+          )}
 
           <Link
             href="/blog"

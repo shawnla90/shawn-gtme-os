@@ -1,6 +1,7 @@
 export { getPostSlugs, getPostBySlug, getAllPosts } from './posts'
 export type { Post } from './posts'
-export { markdownToHtml } from './markdown'
+export { markdownToHtml, extractFAQs } from './markdown'
+export type { FAQItem } from './markdown'
 export { getSiteUrl } from './related'
 export { getLogDates, getLogByDate, getAllLogs, getLogAggregates, getWeeklyContext } from './logs'
 export type {
