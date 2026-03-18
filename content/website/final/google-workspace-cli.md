@@ -4,7 +4,9 @@ date: "2026-03-06"
 excerpt: "gws is a new CLI that turns every Google Workspace API into shell commands with 89 agent skills for Claude Code. I set it up, tested it against real GTM work, picked 27 skills worth having, and learned why you should not load them all at once."
 ---
 
-## what gws actually is
+**tl;dr:** Google dropped a CLI called `gws` that wraps every Workspace API into shell commands with 89 agent skills for Claude Code. I tested it, picked the 27 skills worth having, and learned the hard way that loading them all at once wrecks your context window. Here's the full setup and the skills worth installing.
+
+## what does Google's new CLI do?
 
 Google quietly dropped a CLI called `gws` that wraps every Workspace API. Gmail, Drive, Calendar, Sheets, Docs, Tasks. all of it. one command-line tool.
 
@@ -14,7 +16,7 @@ I have been stitching together Google API access for months. OAuth flows, MCP se
 
 the catch: it is not an officially supported Google product. the README says so. but it works, and it is built on top of the official Google Discovery Service, so the API surface is real.
 
-## setup (the actual commands)
+## how do you set it up?
 
 here is the exact sequence I ran. no summarizing. these are the real commands.
 
@@ -66,7 +68,7 @@ gws auth status
 
 should show credentials exist and list which services are authorized.
 
-## which skills to install (and how to not wreck your context window)
+## what skills does the CLI include?
 
 `gws` ships with 89 agent skills. do not install all of them. do not even install 27 of them into your active skills directory. I learned this the hard way.
 
@@ -102,19 +104,19 @@ ln -s ~/.claude/skills-available/gws-gmail-triage ~/.claude/skills/gws-gmail-tri
 
 remove them when you are done. your context window is finite. treat it like memory, not a junk drawer.
 
-## the 27 skills worth having available
+## which 27 skills are worth having available?
 
 here is what I installed and parked. grouped by what they do.
 
-**foundation (always loaded)**
+### foundation (always loaded)
 
 `gws-shared` - auth, global flags, output formatting. the only one that stays in `~/.claude/skills/`.
 
-**core services (6 skills)**
+### core services (6 skills)
 
 one skill per Workspace API: `gmail`, `calendar`, `sheets`, `drive`, `tasks`, `docs`. these give Claude Code the ability to call any endpoint on each service. generic but complete.
 
-**helpers (9 skills)**
+### helpers (9 skills)
 
 purpose-built operations that save you from constructing raw API calls:
 
@@ -126,7 +128,7 @@ purpose-built operations that save you from constructing raw API calls:
 
 these are the ones you will actually reach for. the core service skills are the fallback for anything the helpers do not cover.
 
-**workflows (5 skills)**
+### workflows (5 skills)
 
 compound operations that chain multiple services:
 
@@ -136,7 +138,7 @@ compound operations that chain multiple services:
 - `email-to-task` - convert emails into Google Tasks
 - `weekly-digest` - summarize the week across all services
 
-**recipes (6 skills)**
+### recipes (6 skills)
 
 specific GTM-relevant automations:
 
@@ -147,13 +149,13 @@ specific GTM-relevant automations:
 - `review-overdue-tasks` - surface what is slipping
 - `log-deal-update` - append deal notes to a tracking sheet
 
-**what I skipped (62 skills)**
+### what I skipped (62 skills)
 
 Chat, Classroom, Keep, Meet, Admin Reports, Model Armor, Slides, Forms, People, Events. and the associated helpers/recipes for all of those.
 
 if you are a solo operator or small team doing GTM work, you do not need classroom management or admin reports. install what matches your actual workflow. you can always add more later.
 
-## real commands
+## what does it look like in practice?
 
 here is what it looks like in practice.
 
@@ -183,7 +185,7 @@ gws tasks tasklists list
 
 every command returns clean JSON. that is the point. Claude Code can parse it, reason about it, and chain it into multi-step workflows without any adapter code.
 
-## gotchas
+## what are the gotchas?
 
 **OAuth scope limit.** apps in testing mode cap at 25 scopes. 6 services keeps you well under, but if you try to enable everything at once you will hit the wall.
 
@@ -208,5 +210,25 @@ the quality of the skills varies. the core service wrappers are solid. some of t
 for a solo GTM operator running Claude Code as the primary agent, this is the cleanest path to Google Workspace integration I have found. install the skills that match your work, park them outside active context, and pull them in when you actually need them. your context window is the most expensive resource in your stack. do not fill it with instructions for services you are not using in that session.
 
 that is what I did. and then immediately undid the part where I loaded all 27 at once.
+
+## frequently asked questions
+
+**what is Google's Workspace CLI?**
+`gws` is an unofficial CLI tool that wraps every Google Workspace API into shell commands. Gmail, Drive, Calendar, Sheets, Docs, Tasks. it also ships 89 agent skills purpose-built for Claude Code so your AI agent can interact with Google services directly.
+
+**is the Google CLI free?**
+yes. the CLI itself is free and open source. you need a Google Cloud project with the relevant APIs enabled, and an OAuth consent screen configured. the APIs themselves are free within normal usage limits.
+
+**what can you automate with the Google Workspace CLI?**
+anything the Workspace APIs support. inbox triage, calendar management, spreadsheet updates, file uploads, document creation, task management. the workflow skills chain multiple services together for things like morning standup reports and weekly digests.
+
+**does it work with Gmail?**
+yes. Gmail is one of the six core services. the CLI includes dedicated skills for sending emails, triaging your inbox, and watching for new messages. you need to enable the Gmail API in your GCP project and include it in your auth scopes.
+
+## keep reading
+
+- [how I generate landing pages from the terminal in 90 seconds](https://shawnos.ai/blog/terminal-to-landing-page-90-seconds)
+- [how to set up your own AI assistant through Claude Code](https://shawnos.ai/blog/how-to-setup-your-own-ai-assistant)
+- [what 1M context window means for Claude Code](https://shawnos.ai/blog/claude-code-1m-context-window)
 
 shawn ⚡

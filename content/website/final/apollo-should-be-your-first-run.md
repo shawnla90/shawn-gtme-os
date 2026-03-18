@@ -6,7 +6,11 @@ category: "gtm-engineering"
 featured: true
 ---
 
-## the bottleneck nobody talks about
+**tl;dr:** Apollo's free API returns the richest B2B data in the space. one API call replaces 30 minutes of manual sourcing. run it on a cron and wake up to qualified contacts every morning.
+
+people search is step one in every GTM pipeline. it should be automated first, not last.
+
+## what's the real bottleneck in GTM pipelines?
 
 Every GTM pipeline starts the same way. You need to find people. Specific people at specific companies with specific titles. And for most teams, that step is still manual. Open LinkedIn Sales Navigator. Scroll. Click. Export. Import. Start enriching.
 
@@ -14,7 +18,7 @@ The downstream stuff gets all the attention. Enrichment waterfall. ICP scoring. 
 
 They're not. The hard part is sourcing. Finding the right 500 people out of 275 million. And most teams are still doing it by hand.
 
-## why apollo first
+## why should you use Apollo before Clay?
 
 Apollo has the richest people database in B2B SaaS. 275M+ contacts. 73M+ companies. Verified emails. Direct dials. Seniority levels. Company technographics. And the API is free for the first 10,000 credits per month.
 
@@ -26,7 +30,7 @@ The new way: one API call returns structured JSON with people + company data. A 
 
 Apollo is not replacing Clay. They solve different problems. Apollo handles people search. Clay handles enrichment and routing. Supabase handles storage. Each tool does what it does best.
 
-## two tracks
+## how do you build an Apollo sourcing pipeline?
 
 There are two ways to build this depending on your technical comfort level.
 
@@ -40,7 +44,7 @@ The batching pattern matters here. Never search Apollo for everything at once. B
 
 Drop an Apollo export into Raw Data. Ask Claude to research each company. Ask Claude to generate icebreakers based on title + company research. Output goes to a CSV ready for CRM import. The whole flow takes 10 minutes for 50 contacts. An SDR doing this manually would spend 2-3 hours.
 
-## the title leakage problem
+## what is title leakage and how do you fix it?
 
 The one thing that will wreck your pipeline quality if you don't solve it early: title leakage. You search for "VP of Marketing" and get back HR leaders, engineering managers at martech companies, and interns with "Marketing" in their LinkedIn headline.
 
@@ -48,7 +52,7 @@ Apollo's seniority filters help but they're not enough. You need an allowlist/bl
 
 Run allowlist first, then blocklist. Log the drops so you can tune the lists over time. Keep the lists in a config file, not hardcoded. That way non-technical team members can adjust targeting without touching the sourcing script.
 
-## the infrastructure
+## what infrastructure do you need?
 
 This whole thing runs on a Mac Mini. Always-on. $599 once, $5/month electricity. If you can send a MacBook to a remote employee, you can run an always-on GTM server.
 
@@ -56,7 +60,7 @@ The cron runs every night. Pull new contacts from Apollo. Title filter. Dedupe a
 
 The Mac Mini is not the point though. The point is that the infrastructure is simple enough that a single machine handles everything. No cloud orchestration. No Kubernetes. No monthly SaaS bills that scale with usage. Just a machine running scripts on a schedule.
 
-## conference prospecting
+## how do you use Apollo for conference prospecting?
 
 This is where the architecture really pays off. A mid-size SaaS conference has 500-2,000 attendees. The attendee list drops 2-4 weeks before the event. Most sales teams manually qualify 20-30 people before giving up.
 
@@ -69,3 +73,21 @@ From an 800-attendee conference: Apollo matched 620 (77% match rate). Title filt
 The [Apollo Wiki on theGTMOS.ai](https://thegtmos.ai/apollo-wiki) has the full breakdown. API architecture, title filtering patterns, the Supabase warehouse schema, and step-by-step workflows for both tracks. Eight entries across four categories. All the patterns from production pipelines.
 
 People search is step one. It should be automated first, not last.
+
+## frequently asked questions
+
+**is Apollo's API really free?**
+yes. Apollo offers 10,000 credits per month on the free tier. that's enough to run meaningful sourcing for a solo operator or small team. credits refresh monthly. you don't need a paid plan to build a working pipeline.
+
+**how many contacts can you pull from Apollo per month?**
+on the free tier, 10,000 credits per month. each people search API call costs credits based on the data returned. batching by persona and deduping against your existing database keeps credit usage efficient. most solo operators can source 2,000-5,000 net new contacts per month on the free tier.
+
+**should I use Apollo or Clay for sourcing?**
+Apollo for sourcing, Clay for enrichment. they solve different problems. Apollo has the people database. Clay has the enrichment waterfall and workflow builder. use Apollo to find people, then Clay to enrich and route them. trying to use Clay for sourcing is like using a Swiss Army knife to cut lumber. for the full comparison, see [Clay pricing opinion](https://shawnos.ai/blog/clay-pricing-opinion).
+
+**what's the best way to avoid title leakage in Apollo?**
+use an allowlist/blocklist pattern. define strings the title must contain and strings it must not contain. run allowlist first, then blocklist. keep the lists in a config file so non-technical teammates can tune targeting without editing code. log every drop so you can review and adjust over time.
+
+---
+
+*related reading: [Clay pricing opinion](https://shawnos.ai/blog/clay-pricing-opinion) · [what a go-to-market engineer actually does](https://shawnos.ai/blog/what-a-go-to-market-engineer-does)*

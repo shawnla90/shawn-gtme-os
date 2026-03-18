@@ -13,6 +13,8 @@ keywords:
   - Reddit commenting strategy
 ---
 
+**tl;dr:** 1,089 karma in 30 days from a brand new account with zero ads. this is the full breakdown: 7 post types that work, a commenting strategy that builds real reputation, subreddit selection tiers, and every mistake to avoid. the 50/50 post-to-comment karma split is the key metric most people miss.
+
 ## the numbers
 
 one month on Reddit. here's where it stands:
@@ -233,6 +235,24 @@ Google indexes Reddit posts within hours. AI models cite Reddit discussions in t
 1,089 karma in 30 days isn't the achievement. the achievement is 30 communities that recognize my name, a body of public work that demonstrates expertise, and a reputation built on giving away value with no strings attached.
 
 that's the play. no shortcuts. no hacks. just show up, be useful, and let the compound interest do its thing.
+
+## frequently asked questions
+
+**what subreddits work best for tech content?**
+communities with 5,000 to 50,000 members where the engagement ratio is high. for AI and GTM specifically, r/ClaudeCode, r/gtmengineering, and niche professional subs outperform general tech subreddits. check the top 10 posts by "hot" and look at comment counts. a sub where top posts get 50+ comments is better than one with 100K members and 5 comments per post.
+
+**how do you avoid getting banned on Reddit?**
+read the rules before posting. spend a week lurking to understand the culture. never post promotional content or gate content behind DMs. maintain a 50/50 post-to-comment karma ratio so you look like a community member, not a broadcaster. engage with every comment on your own posts for at least 24 hours.
+
+**what comment strategies work on Reddit?**
+three principles. first, treat comments as value delivery. write substantive 200-word replies with specific details, not "great post!" responses. second, comment on other people's threads. this builds recognition and comment karma. third, never post and ghost. stay active in your own threads for 24+ hours. Reddit's algorithm rewards active threads.
+
+**how long does it take to build Reddit karma?**
+with consistent daily posting and commenting, you can hit 1,000+ karma in 30 days from a new account. the key is the 50/50 split between post karma and comment karma. most people who try to "grow on Reddit" only post and never comment. that ratio signals broadcasting, not participation, and the community responds accordingly.
+
+---
+
+**related posts:** [reddit is king: 500+ visitors in 24 hours](https://shawnos.ai/blog/reddit-is-king) | [6 weeks of building with Claude Code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code)
 
 no gatekeeping. everything's in the comments.
 

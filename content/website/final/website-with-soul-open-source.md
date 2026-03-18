@@ -6,6 +6,8 @@ category: "ships"
 featured: true
 ---
 
+**tl;dr:** I open sourced a 32-chapter playbook and working starter template for building a website that sounds like you, ranks in search, and feeds AI systems. 90% free stack. Clone it, run one command, deploy in 15 minutes. The full system that runs three production sites.
+
 ## the trilogy is complete
 
 I pushed [website-with-soul](https://github.com/shawnla90/website-with-soul) to GitHub today. it's the third and final repo in a trilogy that started with methodology, moved to infrastructure, and ends with the product.
@@ -16,7 +18,7 @@ I pushed [website-with-soul](https://github.com/shawnla90/website-with-soul) to 
 
 website-with-soul is where it all lands. everything in the first two repos exists to make this one work. build a real website that sounds like you, ranks in search, feeds AI systems, and compounds over time.
 
-## what's in it
+## what's in the website playbook?
 
 two things.
 
@@ -24,15 +26,23 @@ two things.
 
 **a 32-chapter playbook.** four phases covering the full arc from empty directory to content machine.
 
-phase 1 is the build. 11 chapters walking through every file in the starter template. setup, blog system, chat widget, analytics, sitemap, OG images, RSS, security headers, performance, deploy, Claude Code setup.
+### phase 1: the build
 
-phase 2 is giving it soul. voice DNA, anti-slop patterns, content filing, blog workflow, multi-platform distribution, SEO pipeline. this is the part most people skip and it's the part that matters most.
+11 chapters walking through every file in the starter template. setup, blog system, chat widget, analytics, sitemap, OG images, RSS, security headers, performance, deploy, Claude Code setup.
 
-phase 3 is growing organically. distribution matrix, Reddit strategy (with the GEO thesis on AI-indexed content), LinkedIn builder voice, X thread format. no paid ads. your website is the hub, social platforms are distribution channels.
+### phase 2: giving it soul
 
-phase 4 is scaling. monorepo upgrade, autonomous blog pipeline, cron automation, Claude Code agent systems, Cloudflare Pages migration.
+voice DNA, anti-slop patterns, content filing, blog workflow, multi-platform distribution, SEO pipeline. this is the part most people skip and it's the part that matters most.
 
-## the stack costs almost nothing
+### phase 3: growing organically
+
+distribution matrix, Reddit strategy (with the GEO thesis on AI-indexed content), LinkedIn builder voice, X thread format. no paid ads. your website is the hub, social platforms are distribution channels.
+
+### phase 4: scaling
+
+monorepo upgrade, autonomous blog pipeline, cron automation, Claude Code agent systems, Cloudflare Pages migration.
+
+## what does the stack cost?
 
 | tool | cost |
 |------|------|
@@ -45,7 +55,7 @@ phase 4 is scaling. monorepo upgrade, autonomous blog pipeline, cron automation,
 
 $10/year for a domain. everything else is either free or optional. the Claude Code subscription is the only real cost and you're probably already paying for it.
 
-## the part people get wrong
+## what do people get wrong about building websites?
 
 everyone says "build in public." almost nobody talks about owning the infrastructure.
 
@@ -55,7 +65,7 @@ the website is the thing you own. every blog post compounds. every page gets ind
 
 the social platforms are distribution channels. they drive traffic back to the thing you own. the website.
 
-## why I built this in the open
+## why build this in the open?
 
 three sites run on this exact stack. [shawnos.ai](https://shawnos.ai), [thegtmos.ai](https://thegtmos.ai), [thecontentos.ai](https://thecontentos.ai). same codebase, same playbook, same voice system. the starter template is extracted directly from production code.
 
@@ -63,7 +73,7 @@ I could have kept this proprietary. made it a paid course or a SaaS product. but
 
 so it's MIT licensed. use it however you want.
 
-## getting started
+## how do you get started?
 
 three paths depending on how deep you want to go.
 
@@ -94,5 +104,25 @@ the first few sites in the network get the most direct support from me and the m
 I don't know how this scales. that's the honest answer. but I know the first version of anything only gets built by the people willing to start before it's figured out.
 
 if you want in, fork the repo. build the site. post in r/GTMBuilders when you're live. I'll find you.
+
+## frequently asked questions
+
+**what is a website with soul?**
+a website that sounds like the person who built it. not a template with generic copy. a site with a voice system, anti-slop filters, and content that compounds over time. the soul comes from codified voice DNA and a methodology for writing that preserves your actual voice through AI assistance.
+
+**how much does it cost to host a website on Vercel?**
+free for most personal and small business sites. Vercel's hobby tier covers static sites and serverless functions with generous limits. the only required cost is a domain name at ~$10/year. everything else in the stack (Next.js, Tailwind, PostHog) is free tier.
+
+**what's in the 32-chapter playbook?**
+four phases. phase 1 covers the build (11 chapters on every file in the starter template). phase 2 covers voice and soul (voice DNA, anti-slop, content workflow). phase 3 covers organic growth (Reddit, LinkedIn, X distribution). phase 4 covers scaling (monorepo, cron automation, agent systems).
+
+**do you need to know how to code?**
+you need to be willing to learn. the playbook walks through every file, and Claude Code handles most of the implementation. but understanding what the code does matters more than writing it from scratch. the builder challenge exists specifically to help people who are learning.
+
+## keep reading
+
+- [the real cost of a slow website](https://shawnos.ai/blog/slow-website-cost)
+- [the anti lead magnet: build your own OS](https://shawnos.ai/blog/build-your-own-os)
+- [Reddit is king: the GEO thesis](https://shawnos.ai/blog/reddit-is-king)
 
 no gatekeeping. the whole thing is in there.

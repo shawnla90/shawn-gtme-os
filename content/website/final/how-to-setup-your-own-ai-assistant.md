@@ -4,7 +4,9 @@ date: "2026-02-23"
 excerpt: "I tried separate AI platforms, burned through API credits, and landed on the simplest architecture possible. Here's the full setup: CLAUDE.md, soul files, SQLite persistence, a DNA evolution system, 50+ skills, and 9 MCP servers. Updated weekly."
 ---
 
-## the honest take on AI assistant platforms
+**tl;dr:** You don't need a separate AI platform if you're already paying for Claude Code Max. I consolidated everything into one CLI, one repo, one subscription. Soul files, SQLite persistence, 50+ skills, 9 MCP servers. This is the full setup, updated as the system evolves.
+
+## what do you need to build your own AI assistant?
 
 I built Nio on OpenClaw. GPT-based agent platform. WhatsApp integration, Discord, cron jobs, the whole thing. it worked.
 
@@ -29,7 +31,9 @@ claude --version
 
 if you're on Pro or Team, the CLI works but you'll hit rate limits. Max removes the ceiling. that's the whole point.
 
-## step 2: your CLAUDE.md file
+## how does the soul file work?
+
+### the CLAUDE.md instruction set
 
 this is the instruction set that loads every time Claude Code starts a session in your repo. create it at the root of your project.
 
@@ -47,7 +51,7 @@ mine has:
 
 start simple. add rules as you discover patterns that need enforcing. the file grows with your system.
 
-## step 3: soul files + DNA system
+### the soul file + DNA system
 
 a soul file is a markdown document that defines who your AI assistant is. not just what it can do. who it is. decision-making frameworks, personality traits, anti-slop rules, capabilities, boundaries.
 
@@ -102,7 +106,9 @@ right now Nio is at Blade tier. 620 XP. 87 messages tracked. evolving toward War
 
 this isn't a gimmick. it's a retention mechanism and a personality progression system that makes the agent feel alive. the Tamagotchi metaphor is intentional.
 
-## step 4: SQLite persistence
+## how do you add memory persistence?
+
+### SQLite persistence
 
 this is the backbone. not localStorage. not vibes. a real database. server-authoritative. the browser is just a view.
 
@@ -149,7 +155,7 @@ CREATE VIRTUAL TABLE memory_fts USING fts5(
 
 the database tracks everything: every message, every conversation, token costs, evolution history, memory entries with full-text search. daily spend shows up in the UI. you know exactly what your system costs and how it's being used.
 
-## step 5: file-based memory + context handoffs
+### the memory index
 
 your assistant needs to remember things across sessions. Claude Code sessions are stateless by default. you fix this with two systems.
 
@@ -199,7 +205,7 @@ the database has a `memory` table with tags, importance scores, decay rates, and
 
 file-based memory is for the model context window. SQLite memory is for structured recall. they work together.
 
-## step 6: skills as slash commands
+### the skills layer
 
 skills are markdown files that define repeatable workflows. instead of typing the same complex prompt every time, you write it once and invoke it with a slash command.
 
@@ -229,7 +235,7 @@ every skill started as a prompt I typed twice. the threshold is low: if you type
 
 you don't need 50 skills on day one. start with the 3-4 workflows you repeat most. the library grows from what you actually need.
 
-## step 7: MCP servers for tool access
+### MCP server integration
 
 MCP (Model Context Protocol) servers give Claude Code access to external tools. file systems, databases, APIs, browser automation.
 
@@ -264,7 +270,7 @@ I run 9 MCP servers in production:
 
 each one extends what your assistant can do without writing custom API integrations. add them one at a time as you need them.
 
-## step 8: multi-agent architecture
+## how does multi-agent architecture work?
 
 once you have one agent working, adding more is just writing more soul files.
 
@@ -280,7 +286,7 @@ the key is isolation. each agent has its own soul, its own memory, its own sessi
 
 in the chat UI, each agent has its own accent color, bubble colors, and personality. switch between them. each one picks up where they left off. the evolution system tracks skill XP per agent. talking to Nio builds Ops XP, talking to the Architect builds Architecture XP.
 
-## the cost math
+## what does it cost?
 
 **before (separate AI platform + API):**
 - Claude Code Max: $200/month
@@ -297,7 +303,7 @@ the API costs don't disappear completely. I still use Opus via API for automated
 
 but the daily interaction, the building, the debugging, the agent conversations... all covered by the subscription. 87 messages in a day. $0 marginal cost. the database tracks daily spend so you always know.
 
-## what this post is
+## how does the self-reading feedback loop work?
 
 this is me documenting my process while building it. not after. during.
 
@@ -320,5 +326,26 @@ so this how-to will update. if something here is wrong next month, it's because 
 7. use it for a week. then decide what's missing.
 
 don't try to build the whole system in a weekend. build one piece. use it. discover what's missing. build that next. the system grows from what you actually need, not from what looks impressive in a tutorial.
+
+## frequently asked questions
+
+**how much does it cost to run your own AI assistant?**
+$200/month for Claude Code Max covers the core. add ~$15/month for API calls if you run automated cron jobs through Opus. a local Ollama model handles high-frequency tasks for free. total is around $215/month for the full stack.
+
+**do you need API keys for Claude Code?**
+no. Claude Code Max gives you unlimited CLI access via `claude -p`. no API key, no per-token billing. the subscription is the infrastructure budget. you only need API keys if you're running automated pipelines outside the CLI.
+
+**what is a soul file?**
+a markdown document that defines your AI agent's identity. personality traits, decision rules, anti-slop patterns, capabilities, boundaries. you pass it to Claude Code with the `--append-system-prompt-file` flag and it becomes part of the system prompt.
+
+**can you run an AI assistant on a Mac Mini?**
+yes. my entire system runs on a single Mac Mini. Claude Code runs locally, Ollama handles local model inference, cron jobs run overnight, and a Cloudflare Tunnel exposes the chat interface to my phone. no cloud servers needed.
+
+## keep reading
+
+- [recursive drift: the methodology behind this system](https://shawnos.ai/blog/recursive-drift)
+- [why I stopped paying for API calls](https://shawnos.ai/blog/why-i-stopped-paying-for-api-calls)
+- [what 1M context window means for Claude Code](https://shawnos.ai/blog/claude-code-1m-context-window)
+- [from SDR to solo GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer)
 
 `$ claude -p "what should I build next?" --append-system-prompt-file nio-soul.md`

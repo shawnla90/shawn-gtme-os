@@ -6,7 +6,9 @@ category: "methodology"
 featured: true
 ---
 
-## the person behind the tool
+**tl;dr:** The creator of Claude Code ships 20-30 PRs/day running 5 parallel instances. His CLAUDE.md pattern is the same paradigm as Karpathy's program.md. You don't program the code. You program the context file that tells the agent how to write the code. The context compounds. The code is replaceable.
+
+## who is Boris Cherny?
 
 Boris Cherny is the creator and Head of Claude Code at Anthropic. Before Anthropic, he spent five years at Meta as a Principal Engineer. He wrote "Programming TypeScript." He joined Anthropic in September 2024.
 
@@ -20,7 +22,7 @@ That origin matters. Claude Code wasn't designed by committee or built from a pr
 
 The Claude Code team is roughly 12 engineers. They ship 60-100 internal releases per day. Every engineer change triggers an internal npm package release with rapid feedback loops. The velocity is the feature. The tool evolves faster than its documentation.
 
-## the workflow that tells you everything
+## how does Boris Cherny use Claude Code?
 
 Boris ships 20-30 PRs per day. The workflow:
 
@@ -32,9 +34,11 @@ But the detail that matters most: after every Claude mistake on their codebase, 
 
 Read that again. Every mistake becomes a constraint. The constraint file grows. The system gets smarter. Not because the model improved. Because the context improved.
 
+**Context engineering** is the practice of designing the instruction layer (CLAUDE.md files, skill files, system prompts, voice rules) that an AI agent reads before executing any task. It's distinct from prompt engineering because it's persistent, cumulative, and structural. A prompt is a one-shot instruction. Context engineering builds a growing body of constraints, rules, and domain knowledge that makes the agent smarter over time without changing the model.
+
 That's context engineering.
 
-## the connection to Karpathy
+## how does CLAUDE.md connect to Karpathy's program.md?
 
 Karpathy's [autoresearch](https://shawnos.ai/blog/karpathy-autoresearch-autonomous-agents) has `program.md`. The human writes markdown instructions. The agent writes code. The markdown file is the programming surface.
 
@@ -44,11 +48,11 @@ Same paradigm. Different domain.
 
 In autoresearch, the agent modifies `train.py` based on instructions in `program.md`. In Claude Code, the agent modifies your codebase based on instructions in `CLAUDE.md`. Both systems get better not through model updates but through better context.
 
-[Karpathy's repos](https://shawnos.ai/blog/who-is-andrej-karpathy) demonstrate the pattern in ML. Boris Cherny's tool makes the pattern accessible to every developer and builder.
+[Karpathy's repos](https://shawnos.ai/blog/who-is-andrej-karpathy) demonstrate the pattern in ML. Boris Cherny's tool makes the pattern accessible to every developer and builder. For the GTM-specific breakdown of each Karpathy repo, see [Karpathy repos for GTM engineers](https://thegtmos.ai/blog/karpathy-repos-for-gtm-engineers).
 
 See [context engineering vs prompt engineering](https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering) for why this distinction changes everything.
 
-## what his decisions enable
+## what do Boris Cherny's architectural decisions enable?
 
 three architectural choices that Boris made early define what Claude Code can do today.
 
@@ -60,7 +64,7 @@ I wrote about this in [6 weeks of building with Claude Code](https://shawnos.ai/
 
 **CLAUDE.md as the control layer.** Making project-level instructions a first-class concept means every project teaches the agent how to work on that specific project. The file grows. The mistakes accumulate as rules. The rules prevent future mistakes. This is the self-improving loop that Boris's team practices daily.
 
-## the 60-100 releases per day detail
+## how does the Claude Code team ship 60-100 releases per day?
 
 let that number sit for a moment.
 
@@ -80,8 +84,22 @@ Karpathy proved it in ML research with program.md. Boris proved it in software d
 
 For GTM engineers, this means the same thing it means for developers. Your CLAUDE.md, your skill files, your voice system, your lessons.md. That's the infrastructure. The output is replaceable. The context is the asset.
 
+## frequently asked questions
+
+**who created Claude Code?**
+Boris Cherny, Head of Claude Code at Anthropic. He joined Anthropic in September 2024 after five years as a Principal Engineer at Meta. He's also the author of "Programming TypeScript" (O'Reilly).
+
+**how many people work on Claude Code?**
+The Claude Code team is roughly 12 engineers. Despite the small team size, they ship 60-100 internal releases per day through an architecture that makes the cost of each release nearly zero.
+
+**what is CLAUDE.md?**
+CLAUDE.md is a project-level instruction file that Claude Code reads at the start of every session. It contains rules, constraints, workflow instructions, and accumulated lessons specific to your project. It's the primary mechanism for making the agent smarter over time without changing the model itself.
+
+**how does Boris Cherny ship 20-30 PRs a day?**
+He runs 5 parallel Claude Code instances across 5 terminal tabs, each on a separate checkout. He starts in plan mode, iterates until the approach is right, then executes the implementation. The parallel sessions multiply throughput. The CLAUDE.md file ensures consistency across all sessions.
+
 ---
 
-*[6 weeks of building with Claude Code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code) · [Claude Code 1M context window](https://shawnos.ai/blog/claude-code-1m-context-window) · [who is Andrej Karpathy](https://shawnos.ai/blog/who-is-andrej-karpathy) · [context engineering vs prompt engineering](https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering)*
+*[6 weeks of building with Claude Code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code) · [Claude Code 1M context window](https://shawnos.ai/blog/claude-code-1m-context-window) · [who is Andrej Karpathy](https://shawnos.ai/blog/who-is-andrej-karpathy) · [Karpathy repos for GTM engineers](https://thegtmos.ai/blog/karpathy-repos-for-gtm-engineers) · [context engineering vs prompt engineering](https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering)*
 
 shawn ⚡ GTM Engineer

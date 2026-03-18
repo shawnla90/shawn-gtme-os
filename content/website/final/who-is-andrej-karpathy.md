@@ -6,6 +6,8 @@ category: "methodology"
 featured: true
 ---
 
+**tl;dr:** Karpathy matters because of how he builds, not his resume. Every repo he publishes strips a complex system down to its minimum viable architecture, then lets the loop compound. That design philosophy transfers directly to GTM systems, enrichment pipelines, content engines, and agent automation.
+
 ## not a wikipedia entry
 
 if you search "who is andrej karpathy," you'll get his resume. Founding member of OpenAI. Former Director of AI at Tesla. Stanford PhD. Built the Autopilot vision system. All true. All missing the point for builders.
@@ -14,7 +16,7 @@ Karpathy matters to GTM engineers not because of his credentials. He matters bec
 
 That principle transfers directly to what we do.
 
-## the repos that matter
+## which Karpathy repos should builders study?
 
 Karpathy has published a progression of repos that tell a story. Each one strips something down to its essence.
 
@@ -32,7 +34,7 @@ And then [autoresearch](https://shawnos.ai/blog/karpathy-autoresearch-autonomous
 
 For the GTM-specific breakdown of each repo, see [Karpathy repos for GTM engineers](https://thegtmos.ai/blog/karpathy-repos-for-gtm-engineers).
 
-## the pattern across all of them
+## what pattern connects all of Karpathy's repos?
 
 every repo follows the same architecture.
 
@@ -44,7 +46,7 @@ Compounding loops. The output of iteration N feeds into iteration N+1. In autore
 
 This is the same architecture that works in GTM. The enrichment pipeline that runs nightly. The content system that reads its own output before generating. The campaign that optimizes based on response data. The mechanism is identical.
 
-## markdown as programming
+## what is the markdown-as-programming paradigm?
 
 the paradigm shift that autoresearch makes explicit.
 
@@ -56,9 +58,11 @@ This is the same shift happening across every AI-assisted workflow. CLAUDE.md fi
 
 For GTM engineers, this means the most valuable technical skill isn't writing code. It's writing constraints. Context engineering. Designing the instruction layer that an agent executes reliably.
 
+Boris Cherny built this same paradigm into Claude Code with CLAUDE.md. See the full breakdown: [Boris Cherny and Claude Code context engineering](https://shawnos.ai/blog/boris-cherny-claude-code-context-engineering).
+
 See [context engineering vs prompt engineering](https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering) for why this distinction matters.
 
-## why "meat computers" is the right framing
+## what does Karpathy mean by "meat computers"?
 
 Karpathy's quote from the autoresearch announcement: "one day, frontier AI research used to be done by meat computers... that era is long gone."
 
@@ -80,8 +84,22 @@ three levels.
 
 Karpathy built demos. The patterns behind them are infrastructure.
 
+## frequently asked questions
+
+**what did Karpathy do at Tesla?**
+He was the Director of AI and led the Autopilot vision team. His team built the neural networks that power Tesla's self-driving computer vision system. He scaled the operation from early prototypes to production systems running on millions of vehicles.
+
+**what did Karpathy do at OpenAI?**
+He was a founding member of OpenAI and one of its earliest research scientists. He worked on deep learning research and helped establish the organization's early technical direction before leaving to join Tesla.
+
+**what is Karpathy working on now?**
+After leaving Tesla in 2022, he returned to OpenAI briefly, then left again in 2024. He's been publishing open source repos (autoresearch, llm.c, minbpe), teaching through his YouTube channel, and building tools that demonstrate how AI systems should be architected. He launched Eureka Labs, focused on AI-native education.
+
+**why do GTM engineers follow Karpathy?**
+Not for the ML knowledge. For the architecture patterns. Every Karpathy repo demonstrates minimal surface area, clear metrics, and compounding loops. Those are the same principles that make GTM pipelines work. His repos are case studies in system design that happen to use ML as the domain.
+
 ---
 
-*[autoresearch blog](https://shawnos.ai/blog/karpathy-autoresearch-autonomous-agents) · [Karpathy repos for GTM engineers](https://thegtmos.ai/blog/karpathy-repos-for-gtm-engineers) · [autonomous agent loops wiki](https://thegtmos.ai/how-to/autonomous-agent-loops) · [context engineering vs prompt engineering](https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering)*
+*[autoresearch blog](https://shawnos.ai/blog/karpathy-autoresearch-autonomous-agents) · [Karpathy repos for GTM engineers](https://thegtmos.ai/blog/karpathy-repos-for-gtm-engineers) · [autonomous agent loops wiki](https://thegtmos.ai/how-to/autonomous-agent-loops) · [context engineering vs prompt engineering](https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering) · [Boris Cherny and Claude Code](https://shawnos.ai/blog/boris-cherny-claude-code-context-engineering)*
 
 shawn ⚡ GTM Engineer

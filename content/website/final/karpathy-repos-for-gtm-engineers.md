@@ -6,6 +6,8 @@ category: "methodology"
 featured: false
 ---
 
+**tl;dr:** Each Karpathy repo teaches an architecture pattern that applies directly to GTM systems. Micrograd teaches minimum viable builds. NanoGPT proves solo operators can match enterprise output. Autoresearch demonstrates the autonomous loop. You don't need to understand ML to extract the structural lessons.
+
 ## why a GTM engineer is reading ML repos
 
 I don't train neural networks. I build enrichment pipelines, content systems, and automated outbound campaigns. But the architecture patterns in Karpathy's repos transfer directly.
@@ -16,7 +18,7 @@ This is not an ML tutorial. It's a GTM engineer reading each repo for the struct
 
 For the broader context on why Karpathy matters to builders, see [who is Andrej Karpathy](https://shawnos.ai/blog/who-is-andrej-karpathy).
 
-## micrograd: the smallest version that teaches the mechanism
+## what does micrograd teach GTM engineers?
 
 [github.com/karpathy/micrograd](https://github.com/karpathy/micrograd)
 
@@ -28,7 +30,7 @@ I've watched teams spend months building elaborate Clay table architectures befo
 
 The 100-line version teaches you more than the 10,000-line version because you can see every moving part. Same principle in GTM. A 5-row Clay table teaches you more about your enrichment architecture than a 5,000-row table because you can verify every output.
 
-## nanoGPT: reproducing the big thing on your own machine
+## what does nanoGPT teach GTM engineers?
 
 [github.com/karpathy/nanoGPT](https://github.com/karpathy/nanoGPT)
 
@@ -40,7 +42,7 @@ The parallel is direct. Enterprise companies run Salesforce, Marketo, 6-tool enr
 
 NanoGPT proved that the gap between "research lab result" and "individual contributor result" is mostly infrastructure, not capability. Same is true in GTM. The gap between an enterprise outbound operation and a solo operator is shrinking every quarter.
 
-## llm.c: removing the abstraction layers
+## what does llm.c teach GTM engineers?
 
 [github.com/karpathy/llm.c](https://github.com/karpathy/llm.c)
 
@@ -54,7 +56,7 @@ But they also hide the cost. Clay's HTTP column metering your API calls. Instant
 
 This is why I moved my [Apollo sourcing to direct API calls](https://shawnos.ai/blog/apollo-should-be-your-first-run). Not because Clay's enrichment doesn't work. Because understanding the raw operation revealed that one API call returns everything a 6-step waterfall was trying to assemble.
 
-## minbpe: the preprocessing that everyone ignores
+## what does minbpe teach GTM engineers?
 
 [github.com/karpathy/minbpe](https://github.com/karpathy/minbpe)
 
@@ -68,7 +70,7 @@ But a pipeline with clean preprocessing converts at 2-3x the rate of one running
 
 The tokenizer determines what the model can learn. The preprocessing determines what your pipeline can qualify. Both are invisible. Both are essential.
 
-## autoresearch: the loop that compounds
+## what does autoresearch teach GTM engineers?
 
 [github.com/karpathy/autoresearch](https://github.com/karpathy/autoresearch)
 
@@ -82,7 +84,9 @@ The short version: any workflow with a clear metric and a constrained action spa
 
 The constraint design is the key lesson. Autoresearch works because the agent can only modify one file. Give it unlimited scope and it wanders. Give it one file and one number, it optimizes.
 
-## microgpt: everything in one file
+Boris Cherny built the same constraint architecture into Claude Code with CLAUDE.md. The human writes context. The agent executes. Same paradigm, different domain. Full breakdown: [Boris Cherny and Claude Code context engineering](https://shawnos.ai/blog/boris-cherny-claude-code-context-engineering).
+
+## what does microgpt teach GTM engineers?
 
 [github.com/karpathy/microgpt](https://github.com/karpathy/microgpt)
 
@@ -94,7 +98,7 @@ I keep a one-page architecture diagram of my entire GTM pipeline. Exa discovers.
 
 Microgpt is the proof that the most complex systems can be compressed to their essence. Not as a toy, but as a working system. The compression forces clarity. Clarity enables optimization.
 
-## the meta-lesson
+## what's the meta-lesson across all Karpathy repos?
 
 Karpathy doesn't build complex systems. He builds simple systems that produce complex results through iteration.
 
@@ -102,8 +106,19 @@ That's the GTM engineering thesis. The pipeline is simple. The compounding is co
 
 Every repo in this list demonstrates it. Start minimal. Define the metric. Let the loop run.
 
+## frequently asked questions
+
+**do I need to understand ML to learn from Karpathy's repos?**
+No. The ML is the domain, not the lesson. The lessons are architectural: minimal surface area, clear metrics, compounding loops, constraint as a feature. You can extract every GTM-relevant insight without understanding backpropagation or gradient descent.
+
+**which Karpathy repo should I study first?**
+Start with micrograd. It's the simplest (roughly 100 lines) and the architecture pattern is the most transparent. Then read the autoresearch blog post for the autonomous loop pattern. Those two cover the core ideas.
+
+**are Karpathy's repos open source?**
+Yes. All of them are MIT licensed. You can read, fork, modify, and learn from every repo on his GitHub. The code is free. The patterns are free.
+
 ---
 
-*[who is Andrej Karpathy](https://shawnos.ai/blog/who-is-andrej-karpathy) · [autoresearch blog](https://shawnos.ai/blog/karpathy-autoresearch-autonomous-agents) · [autonomous agent loops wiki](https://thegtmos.ai/how-to/autonomous-agent-loops) · [Karpathy repos explained wiki](https://thegtmos.ai/how-to/karpathy-repos-explained)*
+*[who is Andrej Karpathy](https://shawnos.ai/blog/who-is-andrej-karpathy) · [autoresearch blog](https://shawnos.ai/blog/karpathy-autoresearch-autonomous-agents) · [autonomous agent loops wiki](https://thegtmos.ai/how-to/autonomous-agent-loops) · [Karpathy repos explained wiki](https://thegtmos.ai/how-to/karpathy-repos-explained) · [Boris Cherny and Claude Code](https://shawnos.ai/blog/boris-cherny-claude-code-context-engineering)*
 
 shawn ⚡ GTM Engineer

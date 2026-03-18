@@ -6,7 +6,9 @@ category: "web-development"
 featured: true
 ---
 
-## the page loaded. they didn't wait.
+**tl;dr:** A site that loads in 6 seconds loses over half its visitors before they see your offer. For a service business getting 2,000 monthly visitors, that's $128,000 in annual pipeline gone. The fix isn't hard. It's a stack problem, not a content problem.
+
+## how much does a slow website actually cost?
 
 Google published the number years ago. 53% of mobile visitors abandon a page that takes longer than 3 seconds to load. That stat gets cited constantly. But service businesses - consultants, agencies, local firms - rarely connect it to their own revenue.
 
@@ -16,7 +18,7 @@ Now your site loads in 5.8 seconds instead of 2.2. You lose 35-40% of those visi
 
 Not because your offer is wrong. Because the page was slow.
 
-## where the seconds go
+## where do the seconds go?
 
 Most service business websites run on WordPress with a page builder, a dozen plugins, unoptimized images, and shared hosting. The math on that stack:
 
@@ -30,7 +32,7 @@ Stack those up and you're at 4-6 seconds easy. On mobile with a mediocre connect
 
 The thing is, none of these are hard problems. They're configuration problems. But most agencies that build service business websites never circle back to fix them. The site launched. The invoice was paid. Performance wasn't in the SOW.
 
-## what Google actually measures
+## what does Google actually measure?
 
 Core Web Vitals aren't abstract metrics. They directly affect where you rank:
 
@@ -42,7 +44,7 @@ Core Web Vitals aren't abstract metrics. They directly affect where you rank:
 
 These three metrics feed directly into Google's ranking algorithm. Two service businesses with identical content and backlink profiles will rank differently based on Core Web Vitals. The fast site wins.
 
-## the compounding problem
+## how does slow speed compound?
 
 Speed isn't just about the first visit. It affects everything downstream.
 
@@ -55,7 +57,7 @@ Slow sites get lower Google rankings. Lower rankings mean fewer visitors. Fewer 
 
 You end up paying more for ads that convert less, ranking lower for organic terms you should own, and losing word-of-mouth referrals because nobody shares a site that frustrated them.
 
-## what fast actually looks like
+## what does fast actually look like?
 
 A properly built service business website loads in under 2 seconds. Here's what that takes:
 
@@ -69,7 +71,7 @@ A properly built service business website loads in under 2 seconds. Here's what 
 
 The result is sub-second LCP, zero CLS, near-zero INP. Google rewards it. Visitors reward it. Your pipeline reflects it.
 
-## the ROI calculation nobody does
+## how do you calculate the ROI?
 
 Take that same 2,000 visitors per month scenario. A fast site retains 95%+ of visitors (instead of losing 35-40%). Your effective visitors go from 1,200 back to 1,900. Your leads go from 24 back to 38.
 
@@ -77,7 +79,7 @@ If your average engagement is $8,000, that's an extra $112,000 in annual pipelin
 
 And that's before the SEO lift. Better Core Web Vitals improve rankings, which increase traffic, which increases leads further. The compounding works in your favor once you fix the foundation.
 
-## what to do right now
+## what should you do right now?
 
 If you're running a service business website and haven't checked your speed recently:
 
@@ -92,3 +94,22 @@ If you're running a service business website and haven't checked your speed rece
 If you want to see what a fast service business website looks like in practice, the [web development page](/services/web-development) on this site explains the approach. If you want to see the full system it runs on, check the [build page](/build).
 
 Your website is your most patient salesperson. Make sure it shows up on time.
+
+## frequently asked questions
+
+**how fast should a website load?**
+under 2 seconds for the main content to be visible (LCP). Google's threshold is 2.5 seconds, but sub-2 is where you start seeing real conversion gains. anything above 3 seconds and you're losing over half your mobile visitors.
+
+**what is a good Core Web Vitals score?**
+LCP under 2.5 seconds, CLS under 0.1, INP under 200ms. those are Google's "good" thresholds. the best service business sites hit sub-second LCP, zero CLS, and near-zero INP through static generation and minimal JavaScript.
+
+**how much revenue does a slow website lose?**
+it depends on your traffic and deal size, but the math scales fast. a service business with 2,000 monthly visitors and $8,000 average deals can lose $128,000 in annual pipeline from a 6-second load time vs. a 2-second one. the slower the site, the bigger the gap.
+
+**does page speed affect SEO?**
+yes. Core Web Vitals are a direct ranking factor in Google's algorithm. two sites with identical content and backlinks will rank differently based on speed. the fast site wins. and the SEO lift compounds because better rankings mean more traffic, which means more leads.
+
+## keep reading
+
+- [Reddit is king: the GEO thesis for AI-indexed content](https://shawnos.ai/blog/reddit-is-king)
+- [terminal to landing page in 90 seconds](https://shawnos.ai/blog/terminal-to-landing-page-90-seconds)

@@ -6,6 +6,8 @@ category: "gtm-engineering"
 featured: true
 ---
 
+**tl;dr:** Before you sign with a Clay agency, audit what you already have. Most teams are overpaying on credits, running duplicate workspaces, and locked into setups only the agency can maintain. I offer a free 30-minute audit to catch all of that before you commit.
+
 ## the question I keep getting
 
 every week, someone DMs me the same question. different words, same energy.
@@ -16,17 +18,17 @@ every week, someone DMs me the same question. different words, same energy.
 
 "we're spending $X/month on Clay and I have no idea if we're getting value."
 
-I don't run a Clay agency. I'm not trying to be one. but I've been deep in Clay since the early days - building tables, debugging Claygent prompts, writing HTTP API integrations, documenting enrichment waterfalls for the [Clay Wiki](https://thegtmos.ai/clay-wiki). 60+ entries and growing.
+I don't run a Clay agency. I'm not trying to be one. but I've been deep in Clay since the early days. building tables, debugging Claygent prompts, writing HTTP API integrations, documenting enrichment waterfalls for the [Clay Wiki](https://thegtmos.ai/clay-wiki). 60+ entries and growing.
 
 so people ask me. and I keep giving the same advice: before you sign anything, audit what you already have.
 
-## the audit checklist
+## what should you check before hiring a Clay agency?
 
 this is what I walk through with anyone who asks. five questions that tell you whether an agency engagement will actually help or just add another layer of opacity.
 
 ### 1. how many workspaces are you running?
 
-most teams don't know. Clay workspaces multiply fast - one for the SDR team, one the agency set up, one from that pilot project nobody shut down. each workspace has its own credit pool, its own tables, its own version of the truth.
+most teams don't know. Clay workspaces multiply fast. one for the SDR team, one the agency set up, one from that pilot project nobody shut down. each workspace has its own credit pool, its own tables, its own version of the truth.
 
 if you can't list your workspaces on one hand and explain what each one does, that's the first red flag. consolidation alone can save thousands per year.
 
@@ -40,9 +42,9 @@ I wrote a full breakdown of [credit transparency for GTM tools](https://thegtmos
 
 ### 3. are you paying more for credits than you need?
 
-Clay's pricing tiers have changed multiple times. some teams are on legacy plans that made sense two years ago but don't anymore. others bought the enterprise plan for features they never use.
+Clay's pricing tiers have changed multiple times. some teams are on legacy plans that made sense two years ago but don't anymore. others bought the enterprise plan for features they never use. with [Clay's March 2026 pricing overhaul](https://shawnos.ai/blog/clay-changed-their-pricing-heres-what-it-actually-means-for-builders), this check matters more than ever.
 
-pull up your billing page. compare your monthly credit burn against your plan allocation. if you're consistently using 40% of what you pay for, you're overpaying. if you're hitting limits every month and buying overages, you might need a different tier - or better table efficiency.
+pull up your billing page. compare your monthly credit burn against your plan allocation. if you're consistently using 40% of what you pay for, you're overpaying. if you're hitting limits every month and buying overages, you might need a different tier, or better table efficiency.
 
 ### 4. do you understand the vendor lock-ins?
 
@@ -60,7 +62,7 @@ before signing with any agency, ask:
 
 a Clay table that worked six months ago might be burning credits on enrichments that return empty 30% of the time. data providers change, endpoints deprecate, and prompts that worked with GPT-4 might produce garbage with the latest model update.
 
-somebody needs to be watching hit rates, error rates, and cost-per-row. if nobody is, you're flying blind - whether you have an agency or not.
+somebody needs to be watching hit rates, error rates, and cost-per-row. if nobody is, you're flying blind, whether you have an agency or not.
 
 ## what I actually offer
 
@@ -71,11 +73,11 @@ what I do:
 - **web development** - the sites, the dashboards, the tools that sit on top of the data
 - **enablement** - teaching your team to own and maintain what gets built
 
-my approach is education-first. I'd rather teach you to fish than sell you fish every month. everything I learn goes into public resources - the [Clay Wiki](https://thegtmos.ai/clay-wiki), the [GTM OS](https://github.com/shawnla90/shawn-gtme-os) (open-source), and content that breaks down exactly how things work.
+my approach is education-first. the same [builder evolution from SDR to GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer) that shaped how I work. I'd rather teach you to fish than sell you fish every month. everything I learn goes into public resources. the [Clay Wiki](https://thegtmos.ai/clay-wiki), the [GTM OS](https://github.com/shawnla90/shawn-gtme-os) (open-source), and content that breaks down exactly how things work.
 
 the goal is independence, not dependency.
 
-## the free audit
+## what does the free Clay audit include?
 
 30 minutes. no strings. no pitch deck. just a screen share where we walk through your Clay setup together.
 
@@ -93,7 +95,7 @@ what you walk away with:
 
 if it turns out you need an agency, I'll tell you that too. I'll even tell you what to look for in the contract.
 
-## why I do this for free
+## why offer a free Clay audit?
 
 two reasons.
 
@@ -120,5 +122,16 @@ DM me on [LinkedIn](https://linkedin.com/in/shawntenam). email me at shawn@shawn
 30 minutes. your Clay setup. my honest take. free.
 
 I'd rather spend 30 minutes now than watch you spend 6 months locked into the wrong setup.
+
+## frequently asked questions
+
+### how do I know if my Clay agency is good?
+Ask them to show you hit rates, cost-per-row, and credit burn per table. If they can't, they're not monitoring efficiency. A good agency documents everything, trains your team, and builds toward independence, not dependency.
+
+### what should a Clay workspace audit include?
+At minimum: workspace inventory, credit usage patterns, table efficiency (hit rates and error rates), vendor lock-in risks, and a gap analysis between what you're paying for and what you're actually using. That's exactly what the free 30-minute audit covers.
+
+### how much should I be spending on Clay credits per month?
+It varies by use case, but most teams I audit are overspending by 30-50%. Common culprits: enriching data you already have, running duplicate workspaces, and staying on a plan tier that doesn't match your actual usage. Pull your last 3 months of billing and compare against actual consumption.
 
 shawn ⚡ GTM Engineer

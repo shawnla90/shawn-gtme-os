@@ -5,6 +5,8 @@ excerpt: "6 layers of context infrastructure for Claude Code. Parallel-safe hand
 category: "ships"
 ---
 
+**tl;dr:** Claude Code starts every session from zero. the context handoff engine is 6 layers of infrastructure that fix this. parallel-safe handoffs, structured memory, self-improvement loops, agent coordination, and routing. all open source, copy-paste ready, 5 minutes to start.
+
 ## the problem compounds
 
 Claude Code starts every session with zero memory. for a single terminal, that's annoying. for 4-6 parallel terminals running all day, it breaks things.
@@ -23,7 +25,7 @@ I hit five failure modes in order as I scaled up.
 
 each failure mode appeared after I leveled up the previous one. and each one required its own solution.
 
-## the 6 layers
+## how does the layered architecture work?
 
 [context-handoff-engine](https://github.com/shawnla90/context-handoff-engine) is 6 layers of context infrastructure. each layer solves one failure mode. use as many as you need.
 
@@ -82,7 +84,7 @@ pattern A: single focused session. pattern B: parallel subagents. pattern C: age
 
 the anti-pattern this prevents: spinning up a full team with task lists and messaging for a 2-file edit that takes 3 minutes solo.
 
-## what's in the repo
+## what's in the repo?
 
 the repo is designed for copy-paste adoption. three tiers.
 
@@ -106,5 +108,20 @@ every template file has working bash commands. every example directory shows wha
 you can use either without the other. they're better together.
 
 the repo is MIT licensed.
+
+## frequently asked questions
+
+**what is the context handoff engine?**
+an open source system with 6 layers of context infrastructure for Claude Code. it solves the problem of sessions starting from zero by providing parallel-safe handoffs, structured memory, a self-improvement loop, agent-to-agent context transfer, team coordination rules, and task routing. each layer is independent and you can adopt them incrementally.
+
+**how many layers does the handoff system have?**
+six. layer 1 is parallel-safe session handoffs. layer 2 is structured memory with an index file linking to topic files. layer 3 is a self-improvement loop where corrections become permanent rules. layer 4 handles agent-to-agent context transfer. layer 5 provides team coordination rules for parallel agents. layer 6 routes tasks to the right execution pattern.
+
+**can I use this with other AI tools besides Claude Code?**
+the principles apply to any AI coding tool that reads files from a project directory. the templates are written for Claude Code's CLAUDE.md convention, but the handoff format, memory structure, and self-improvement loop are just markdown files. if your tool can read markdown on session start, you can adapt the system.
+
+---
+
+**related posts:** [parallel-safe context handoffs](https://shawnos.ai/blog/parallel-safe-context-handoffs) | [recursive drift](https://shawnos.ai/blog/recursive-drift)
 
 [github.com/shawnla90/context-handoff-engine](https://github.com/shawnla90/context-handoff-engine)

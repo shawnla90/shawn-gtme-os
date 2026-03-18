@@ -5,7 +5,11 @@ excerpt: "The role sits between SDR and infrastructure engineer. Here's what it 
 category: "gtm"
 ---
 
+**tl;dr:** a go-to-market engineer is someone who took the tribal knowledge from doing SDR work and turned it into infrastructure. not a developer who read about sales. an operator who got tired of clicking and started building systems.
+
 ## the role nobody posted a job listing for
+
+a go-to-market engineer is an operator who took tribal knowledge from doing the work and turned it into automated infrastructure.
 
 I was an SDR. 200 emails a day. manually building buying committees in spreadsheets. copy-pasting templates. warming domains the wrong way and tanking sender reputation before I understood what sender reputation was.
 
@@ -15,7 +19,7 @@ then I started automating. first it was spreadsheet formulas. then basic scripts
 
 that's what a go-to-market engineer is. someone who took the tribal knowledge from doing the work and turned it into infrastructure. not a developer who read about sales. not a marketer who learned to code. an operator who got tired of clicking.
 
-## the evaluation layer
+## how does a GTM engineer evaluate a stack?
 
 the first thing I do in any engagement is evaluate the stack. not by brand name or pricing page. by automation ceiling.
 
@@ -25,7 +29,7 @@ then I look at cost transparency. most teams have no idea what they spend per le
 
 the third piece is storage architecture. most GTM teams treat enrichment as a per-campaign expense instead of a compounding asset. you enriched 500 leads last quarter. 200 of them overlap with this quarter. you just paid twice. a [data lake approach](https://thegtmos.ai/how-to/data-lake-for-gtm) turns enrichment into an investment that compounds over time instead of a cost that resets every campaign.
 
-## the agency gap
+## what's the gap between agencies and GTM engineers?
 
 I see the same pattern in almost every engagement. the company hired an agency. the agency runs campaigns. the campaigns produce activity. activity does not equal pipeline.
 
@@ -37,7 +41,7 @@ the biggest red flag is [workspace ownership](https://thegtmos.ai/how-to/workspa
 
 this isn't a knock on agencies. some are excellent. the checklist exists because most founders don't know what questions to ask.
 
-## the independent model
+## why work as an independent GTM engineer?
 
 the reason I work as an [independent consultant](https://thegtmos.ai/knowledge/go-to-market-engineer-consultant) instead of an agency is structural.
 
@@ -48,3 +52,21 @@ there's a defined endpoint. audit the stack, recommend tools, build the infrastr
 the [tool evaluation framework](https://thegtmos.ai/how-to/should-you-get-clay) applies the same principle. I don't recommend tools based on partnerships or commissions. I recommend what fits the client's volume, budget, and technical capacity. sometimes that means Clay. sometimes that means a spreadsheet and Apollo. sometimes that means they don't need to buy anything new at all.
 
 that independence is the value. same tribal knowledge. aligned to your outcomes, not anyone's retainer.
+
+## frequently asked questions
+
+**what does a GTM engineer do?**
+a GTM engineer evaluates, builds, and automates go-to-market infrastructure. that includes sourcing pipelines, enrichment waterfalls, outbound sequences, CRM routing, and credit tracking. the role sits between sales ops and software engineering. the output is systems that generate pipeline without manual work.
+
+**is a GTM engineer the same as RevOps?**
+not exactly. RevOps focuses on reporting, forecasting, and process alignment across sales, marketing, and CS. a GTM engineer focuses on building the technical infrastructure that powers outbound and inbound pipelines. there's overlap, but a GTM engineer is more builder than analyst.
+
+**how much does a GTM engineer cost vs an agency?**
+an independent GTM engineer typically runs project-based engagements with a defined endpoint. agencies run ongoing retainers. the GTM engineer builds infrastructure you own and leaves. the agency stays and operates it for you. total cost depends on scope, but the GTM engineer model usually costs less over 12 months because there's no recurring retainer after the build is done.
+
+**do you need to know how to code to be a GTM engineer?**
+you need to be technical, but "know how to code" is a spectrum. you need to understand APIs, be comfortable in a terminal, and be able to read and modify scripts. you don't need a CS degree. most GTM engineers learned by automating their own SDR workflows. the domain knowledge matters more than the engineering skill. tools like Claude Code close the gap fast.
+
+---
+
+*related reading: [should your SDR team learn AI tools](https://shawnos.ai/blog/should-sdrs-learn-ai-tools) · [from SDR to solo GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer) · [why Apollo should be your first sourcing run](https://shawnos.ai/blog/apollo-should-be-your-first-run)*

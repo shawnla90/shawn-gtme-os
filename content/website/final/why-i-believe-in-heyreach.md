@@ -6,6 +6,8 @@ category: "gtm-engineering"
 featured: true
 ---
 
+**tl;dr:** HeyReach builds for operators, not enterprise buyers. workspace-based pricing, multi-sender architecture, and a real expert program that gives practitioners influence over the roadmap. that's why I'm staying on it.
+
 ## the short version
 
 I've tested most LinkedIn automation tools. Dripify, Expandi, Phantombuster, Waalaxy. They all work. They all automate connection requests and messages. They all have dashboards with campaign metrics.
@@ -14,7 +16,7 @@ HeyReach is the one I'm staying on. Not because the features are wildly differen
 
 **affiliate disclosure:** I'm part of the HeyReach expert program. Links in this post may be affiliate links. I'll always tell you that upfront. I don't recommend tools I don't use.
 
-## community-driven, not enterprise-captured
+## why is HeyReach different from other LinkedIn tools?
 
 here's the pattern I keep seeing in GTM tools.
 
@@ -26,7 +28,7 @@ HeyReach is going the other direction. Their expert program isn't a certificatio
 
 That's the difference between a certification program and a builder movement.
 
-## what the expert program actually is
+## what is the HeyReach expert program?
 
 most "partner" or "expert" programs are badge factories. Pay $500, watch some videos, pass a quiz, get a logo for your LinkedIn.
 
@@ -38,7 +40,7 @@ It reminds me of how open source projects work. The people building are the peop
 
 For the full breakdown on how the program works, see the [HeyReach expert program wiki entry](https://thegtmos.ai/how-to/heyreach-expert-program).
 
-## the multi-sender architecture
+## how does HeyReach's multi-sender architecture work?
 
 the technical reason HeyReach works for solo operators and small teams.
 
@@ -50,7 +52,7 @@ This matters because LinkedIn outreach volume is a ceiling problem. You can writ
 
 The setup details are in the [campaign setup guide](https://thegtmos.ai/how-to/heyreach-campaign-setup) and [sender warming guide](https://thegtmos.ai/how-to/heyreach-sender-warming).
 
-## contrast with tools that forgot operators
+## how does HeyReach compare to Dripify and Expandi?
 
 Dripify went enterprise early. The pricing is per-seat, which sounds fine until you realize "seat" means "LinkedIn account." Running five senders costs five seats. The math punishes the exact architecture that makes LinkedIn automation work.
 
@@ -60,13 +62,13 @@ HeyReach's pricing is workspace-based, not per-sender. Add senders without multi
 
 For the full comparison: [HeyReach vs Dripify vs Expandi](https://thegtmos.ai/how-to/heyreach-vs-dripify-vs-expandi).
 
-## how it fits the stack
+## how does HeyReach fit into a GTM stack?
 
 the way I think about outbound channels is routing-based.
 
 Email goes through [Instantly or Lemlist](https://thegtmos.ai/how-to/instantly-vs-smartlead-vs-lemlist) depending on the campaign type. LinkedIn goes through HeyReach. The routing decision depends on the lead: MX record, seniority, industry response patterns.
 
-The [routing logic](https://thegtmos.ai/how-to/heyreach-routing-logic) is simple. Microsoft MX or C-suite contacts lead with LinkedIn. Google MX leads with email. Multi-channel campaigns stagger both, LinkedIn day 1, email day 3, LinkedIn follow-up day 7.
+The [routing logic](https://thegtmos.ai/how-to/heyreach-routing-logic) is simple. Microsoft MX or C-suite contacts lead with LinkedIn. Google MX leads with email. Multi-channel campaigns stagger both. LinkedIn day 1, email day 3, LinkedIn follow-up day 7.
 
 HeyReach handles the LinkedIn side. The messaging templates, the connection request notes, the follow-up sequences. See the [messaging templates guide](https://thegtmos.ai/how-to/heyreach-messaging-templates) for the full framework.
 
@@ -90,8 +92,24 @@ HeyReach is that tool for LinkedIn automation right now. The architecture is sou
 
 The SDR-to-solo-GTM-engineer path I wrote about in [from SDR to solo GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer) needs tools that scale with the builder, not against them. HeyReach scales with you.
 
+## frequently asked questions
+
+**is HeyReach safe for LinkedIn automation?**
+as safe as any LinkedIn automation tool can be. HeyReach uses conservative daily limits, sender warming schedules, and automatic rotation across accounts to minimize detection risk. no automation tool is zero-risk because LinkedIn actively detects automation. but HeyReach's approach, warming new accounts gradually and respecting daily caps, is the safest pattern available.
+
+**how much does HeyReach cost?**
+HeyReach uses workspace-based pricing, not per-seat. that means you can add multiple LinkedIn sender accounts without multiplying your bill. check their pricing page for current numbers, but the structure is what matters. for solo operators and small teams, workspace pricing is significantly cheaper than per-seat tools when running multi-sender campaigns.
+
+**can you use multiple LinkedIn accounts with HeyReach?**
+yes. that's the core architecture. connect multiple LinkedIn accounts to one workspace, build campaigns, and HeyReach rotates sends across all accounts automatically. five accounts means roughly 500 connection requests per week from one dashboard. the rotation handles warming, daily limits, and response tracking per account.
+
+**what's the HeyReach expert program?**
+a practitioner community, not a certification factory. you earn entry by running real campaigns and producing results. experts get direct access to the product team, early feature access, roadmap influence, and community collaboration. it's closer to an open source contributor model than a traditional partner program.
+
 ---
 
 *[HeyReach wiki entries](https://thegtmos.ai/how-to/heyreach-linkedin-automation) · [campaign setup guide](https://thegtmos.ai/how-to/heyreach-campaign-setup) · [messaging templates](https://thegtmos.ai/how-to/heyreach-messaging-templates) · [sender warming](https://thegtmos.ai/how-to/heyreach-sender-warming)*
+
+*related reading: [from SDR to solo GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer) · [what a go-to-market engineer actually does](https://shawnos.ai/blog/what-a-go-to-market-engineer-does)*
 
 shawn ⚡ GTM Engineer

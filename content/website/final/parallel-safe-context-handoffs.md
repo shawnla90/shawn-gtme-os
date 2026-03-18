@@ -4,7 +4,9 @@ date: "2026-02-27"
 excerpt: "I run 4-6 Claude Code terminals at once. The single handoff file worked until it didn't. Here's the parallel-safe architecture I replaced it with."
 ---
 
-## the problem with one file
+**tl;dr:** if you run multiple Claude Code terminals, a single handoff file silently loses context every day. the fix is a directory-based system with timestamped files, read-all-on-start, and mark-done consumption. took 30 minutes to implement and eliminated all context loss across parallel sessions.
+
+## what problem do parallel handoffs solve?
 
 every Claude Code session starts from zero. close the terminal, the context is gone. no memory of what you built, what broke, what decisions you made, what is half-finished.
 
@@ -18,7 +20,7 @@ terminal A finishes and writes its handoff. terminal B finishes 30 seconds later
 
 this is a last-write-wins race condition. and it gets worse as you scale. I run 4 to 6 Claude Code terminals simultaneously. with a single file, 3 to 5 sessions of context get silently destroyed every day. the system looks healthy because a handoff file always exists. you just do not see what is missing from it.
 
-## how I got here
+## how did I get here?
 
 the evolution went like this:
 
@@ -32,7 +34,7 @@ the evolution went like this:
 
 the frustrating part is how obvious the fix was in retrospect. I spent weeks losing context before I realized the architecture was the problem, not the model.
 
-## the architecture
+## how do parallel-safe handoffs work?
 
 the full parallel-safe handoff system has 4 operations.
 
@@ -63,7 +65,7 @@ Cleanup (periodic):
 
 that is the entire system. no database. no lock files. no coordination between sessions. each session operates independently and the directory handles the merge.
 
-## the memory upgrade
+## how does the memory upgrade work?
 
 while fixing handoffs, I hit the same problem with memory files.
 
@@ -79,7 +81,7 @@ MEMORY.md always loads. topic files load on demand when the task is relevant. th
 
 same principle as the handoff directory. structure replaces a single overloaded file.
 
-## the before and after
+## what changed before and after?
 
 **before:**
 - one handoff file at `~/.claude/context-handoff.md`
@@ -145,6 +147,19 @@ keep handoffs factual. no commentary. a session reading it at 6 AM needs file pa
 
 the recursive insight is worth naming. context engineering infrastructure needs its own context engineering. the handoff system that manages session context was itself broken by a context problem - sessions overwriting each other because the architecture did not account for parallelism. the fix was applying the same principles I use for everything else: structure, naming conventions, and never putting all your state in one file.
 
+## frequently asked questions
+
+**what are parallel-safe context handoffs?**
+a system where multiple Claude Code terminals can write session context simultaneously without overwriting each other. each session writes to a uniquely timestamped file in a directory. on session start, all unconsumed handoffs get read and merged. no race conditions, no lost context.
+
+**how do you prevent session conflicts in Claude Code?**
+use a directory instead of a single file. each session writes to `~/.claude/handoffs/YYYY-MM-DD_HHMMSS_slug.md`. the timestamp guarantees uniqueness. sessions read all unconsumed files on start and rename them with a `_done` suffix after reading. no coordination between sessions required.
+
+**what is a context handoff file?**
+a structured markdown document with 5 sections: session summary, what changed (specific file paths), what still needs work, key decisions, and active context (branch, environment). it captures everything a future session needs to continue the work without re-explanation.
+
 ---
+
+**related posts:** [the context handoff engine](https://shawnos.ai/blog/context-handoff-engine-open-source) | [recursive drift](https://shawnos.ai/blog/recursive-drift) | [6 weeks of building with Claude Code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code)
 
 *related: [context handoffs wiki](/context-wiki/context-handoffs) - [parallel session handoffs how-to](/how-to/parallel-session-handoffs) - [how to set up your own AI assistant](/blog/how-to-setup-your-own-ai-assistant)*

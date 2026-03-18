@@ -6,6 +6,8 @@ category: "methodology"
 featured: true
 ---
 
+**tl;dr:** recursive drift is the methodology I've been running for months, now open source. six non-linear states, a self-reading feedback loop, and an evolution system that lets AI agents develop voice over time. no API keys required. just Claude Code and the CLI.
+
 ## the repo is live
 
 I pushed [recursive-drift](https://github.com/shawnla90/recursive-drift) to GitHub today. it's the methodology I've been running for months, extracted into something anyone can use.
@@ -24,7 +26,7 @@ there's no prescribed order. you don't go freefall to plan to build in sequence.
 
 the recursive part is simpler. output feeds back as input. the documentation documents itself. plans rewrite themselves during execution. content becomes infrastructure. skills produce content documenting the skills. each pass adds context that makes the next pass faster.
 
-## the three layers
+## what are the three layers of recursive drift?
 
 the repo has three layers of adoption. you can use one without the others.
 
@@ -34,7 +36,7 @@ the repo has three layers of adoption. you can use one without the others.
 
 **NioBot** is the deep end. a full build guide for creating an AI agent with personality files, a 5-tier evolution system, and a self-reading feedback loop. the agent reads its own previous output before generating new output. it develops memory by studying its own work.
 
-## the self-reading feedback loop
+## how does the self-reading feedback loop work?
 
 this is the part that changes things. the mechanism that turns a stateless text generator into something with voice memory.
 
@@ -44,7 +46,7 @@ past posts shape new posts. new posts become past posts. the loop restarts tomor
 
 the agent doesn't remember in the traditional sense. it re-reads. and that re-reading is what creates the compounding effect. the 50th generation is better than the 1st because 49 generations worth of patterns, themes, and voice calibration already exist as input.
 
-## why CLI-first
+## why is recursive drift CLI-first?
 
 one principle drove the architecture. you should not need API keys to build AI agents.
 
@@ -52,7 +54,7 @@ Claude Code with a Max subscription gives you `claude -p` for non-interactive ge
 
 you can add external model APIs as sub-agents when architecture requires it. but the core runs solely on CLI.
 
-## the evolution system
+## how does the agent evolution system work?
 
 agents start simple and develop personality over time. five tiers. each tier is a markdown file injected into the system prompt at runtime.
 
@@ -71,5 +73,23 @@ three paths depending on where you are.
 **path 3: build a NioBot.** follow `niobot/quickstart.md`. in 30 minutes you'll have a soul file, anti-slop rules, a tier-1 evolution fragment, and a minimal blog generator running via `claude -p`. requires Claude Code with a Max subscription.
 
 the repo is MIT licensed. fork it and run the loop.
+
+## frequently asked questions
+
+**what is recursive drift?**
+recursive drift is a non-linear methodology for building with AI. it defines six states (freefall, plan, build, break, ask, seed) that you move between based on what the work demands. the recursive property means output feeds back as input. documentation documents itself. each pass through the loop makes the next one faster.
+
+**do you need Claude Code to use recursive drift?**
+the methodology itself is tool-agnostic. you can apply the six states and the recursive property to any workflow. but the templates and NioBot build guide are designed for Claude Code with a Max subscription, which gives you `claude -p` for non-interactive generation and multi-terminal parallel sessions with no API keys.
+
+**how is recursive drift different from agile?**
+agile prescribes a linear flow with sprints, standups, and retrospectives. recursive drift has no prescribed order. you enter whichever state the work demands right now. there are no sprints. there's no backlog grooming. the system self-improves through the feedback loop instead of through ceremony.
+
+**what's the self-reading feedback loop?**
+before generating new content, the agent reads its previous output from SQLite. it studies voice patterns, checks for topic overlap, and finds fresh angles. then it generates, validates against 60+ patterns, and auto-fixes issues. past output shapes new output. the loop compounds over time.
+
+---
+
+**related posts:** [from SDR to solo GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer) | [6 weeks of building with Claude Code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code) | [the context handoff engine](https://shawnos.ai/blog/context-handoff-engine-open-source)
 
 [github.com/shawnla90/recursive-drift](https://github.com/shawnla90/recursive-drift)

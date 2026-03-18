@@ -4,7 +4,9 @@ date: "2026-02-22"
 excerpt: "100+ content files across 6 platforms became opaque. So I built a SQLite index that makes the entire repo queryable from the command line."
 ---
 
-## the problem
+**tl;dr:** 100+ content files across 6 platforms were impossible to query from the file system. So I built a SQLite index that makes the entire repo queryable from the command line. One script, 9 tables, zero external dependencies. It even found its own content gap.
+
+## what problem does a content index solve?
 
 the repo had over 100 content files. LinkedIn drafts, X threads, Substack newsletters, Reddit posts, website blog entries, TikTok scripts. spread across 6 platforms, split between draft and final stages. the directory structure was clean, but the data was opaque. I couldn't answer basic questions without manually scanning files.
 
@@ -12,7 +14,7 @@ how many LinkedIn posts went final this week? which content has cross-platform s
 
 the file system is great for organizing. it's terrible for querying.
 
-## the solution: a derived SQLite database
+## how is the SQLite index built?
 
 `scripts/build_index.py` walks the repo, parses every content file, and loads the results into a 9-table SQLite database at `data/index.db`. zero external dependencies. stdlib only. json, sqlite3, pathlib, re. that's it.
 
@@ -30,7 +32,7 @@ Building index: data/index.db
   Content links: 75 series-sibling pairs detected
 ```
 
-## the schema
+## how is the SQLite schema structured?
 
 nine tables. each one indexes a different content type.
 
@@ -50,7 +52,7 @@ nine tables. each one indexes a different content type.
 
 **thumbnails**: thumbnail inventory by brand and variant.
 
-## the query CLI
+## how do you query the index?
 
 `scripts/query_index.py` is the read-only interface. eight subcommands with filtering.
 
@@ -65,7 +67,7 @@ $ python3 scripts/query_index.py videos --brand gtmos --source-only
 
 output modes: table (default), JSON (`--json`), row count (`--count`). the table output is human-readable. the JSON output pipes into other scripts.
 
-## cross-platform link detection
+## how does cross-platform link detection work?
 
 this is where it gets interesting. the index doesn't just catalog files. it discovers relationships between them.
 
@@ -75,7 +77,7 @@ this is where it gets interesting. the index doesn't just catalog files. it disc
 
 75 sibling pairs and 4 explicit cross-links in the current index. the content graph is real and queryable.
 
-## dead page detection
+## what is the dead page detector?
 
 this is why this post exists. the index revealed its own gap.
 
@@ -83,10 +85,26 @@ query the content table for files with zero inbound links from content_links. th
 
 I ran those queries and found that three major systems had shipped with zero blog coverage: the Remotion video system, this SQLite index itself, and the content cluster topology. the tool that finds content gaps revealed content gaps about the tool.
 
-## the recursive meta
+## how does the system document itself?
 
 this post is a direct result of the system it describes. the SQLite index made the repo queryable. a query revealed that no content covered the index. so I wrote this post. when I rebuild the index, this post appears in it. the system documents itself.
 
 that's not a gimmick. that's the content engineering thesis. the system produces the content that describes the system. every new capability becomes a new piece of content. every new piece of content strengthens the knowledge graph. the loop compounds.
+
+## frequently asked questions
+
+**why use SQLite for a content index?**
+SQLite is zero-dependency, file-based, and fast enough for thousands of content files. it ships with Python's standard library so you don't need any external packages. the database is a single file you can delete and rebuild from git-tracked source files at any time.
+
+**can you query a blog like a database?**
+yes. once your content is indexed, you can run SQL queries against it. filter by platform, date range, word count, stage, pillar, series. the query CLI supports table output for humans and JSON output for piping into other scripts.
+
+**what is a dead page detector?**
+it's a query pattern that finds orphaned content. pages with zero inbound links (nothing points to them) and pages with zero outbound links (they don't connect to anything else). these are the posts that exist but don't participate in your content graph.
+
+## keep reading
+
+- [content cluster breadcrumbs: the topology system](https://shawnos.ai/blog/content-cluster-breadcrumbs)
+- [recursive drift: thinking with AI without losing your voice](https://shawnos.ai/blog/recursive-drift)
 
 `$ python3 scripts/query_index.py content --platform website --stage final`

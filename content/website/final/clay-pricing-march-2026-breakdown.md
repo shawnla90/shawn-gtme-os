@@ -6,6 +6,8 @@ category: "gtm-engineering"
 featured: true
 ---
 
+**tl;dr:** Clay split credits into two currencies (Actions and Data Credits), killed the Explorer tier, and reshuffled features across plans. Data got cheaper, but orchestration is now metered. If you're on a legacy plan, do the math before switching. You have until April 10, 2026.
+
 ## the timing
 
 Clay dropped new pricing today. not a tweak. a full restructure. new plan names, new currency system, features moving between tiers. they even published their internal pricing memo, which is either very confident or very calculated. probably both.
@@ -14,7 +16,7 @@ I've been building in Clay daily for over a year. tables, Claygents, HTTP API in
 
 so here's the breakdown from someone who actually uses the tool every day and has zero incentive to spin this in any direction.
 
-## what actually changed
+## what actually changed in Clay's March 2026 pricing?
 
 the old model was simple. one currency: credits. everything you did in Clay burned credits. enrichments, AI calls, HTTP columns, the works. plans went: Free, Starter ($149), Explorer ($349), Pro ($800), Enterprise (custom).
 
@@ -26,7 +28,7 @@ the new model splits that single currency into two:
 
 the new tiers: Free, Launch ($185/mo), Growth ($495/mo), Enterprise (custom).
 
-## the pricing table nobody's showing you side by side
+## what does Clay's old vs new pricing look like side by side?
 
 **old world:**
 
@@ -42,7 +44,7 @@ the new tiers: Free, Launch ($185/mo), Growth ($495/mo), Enterprise (custom).
 
 the entry price went up from $149 to $185. but the feature set at each tier shifted significantly. you can't do a straight dollar comparison without looking at what each tier now includes.
 
-## who wins
+## who wins under Clay's new pricing?
 
 ### the team stuck at $800 just for CRM sync
 
@@ -60,7 +62,7 @@ the account-first enrichment pattern I teach in the [Clay Wiki](https://thegtmos
 
 Clay bundled their newer products (Web Intent signals, Clay Ads) into the Growth tier. these used to be enterprise-only or separate add-ons. if you're building intent-based workflows, the Growth plan now gives you more surface area to work with.
 
-## who loses
+## who loses under Clay's new pricing?
 
 ### Explorer users who relied on HTTP API
 
@@ -104,11 +106,11 @@ if you're building production GTM workflows, Growth is where the tooling lives.
 
 ### if you barely use Clay: consider whether you need it
 
-I say this as someone who uses Clay daily. if you're running 1,000-2,000 enrichments a month with no API integrations and no CRM sync, you're now paying $185/mo for what amounts to a fancy spreadsheet with enrichment columns. that might still be worth it. but it also might be worth running those enrichments directly through Apollo or Prospeo's API and saving the platform cost entirely.
+I say this as someone who uses Clay daily. if you're running 1,000-2,000 enrichments a month with no API integrations and no CRM sync, you're now paying $185/mo for what amounts to a fancy spreadsheet with enrichment columns. that might still be worth it. but it also might be worth running those enrichments directly through [Apollo's API](https://shawnos.ai/blog/why-apollo-should-be-your-first-sourcing-run-not-clay) or Prospeo's API and saving the platform cost entirely.
 
 Clay's value is in orchestration, not individual enrichments. if you're not using the orchestration, you're paying for the platform without using the platform.
 
-## the bigger picture
+## what's the bigger picture behind Clay's pricing shift?
 
 Clay published their internal pricing memo. they explicitly said they expect a ~10% short-term revenue decline. that's a real bet. they're saying: we'll make less money now because we believe cheaper data plus accessible features will make people build more complex workflows, which will drive Actions consumption.
 
@@ -126,10 +128,27 @@ this is also why the free audit matters more now than last week. if you're evalu
 
 Clay is becoming more of a platform and less of a data tool. the pricing reflects that. if you're a builder who uses Clay as orchestration infrastructure (CRM sync, HTTP API, Claygent workflows, multi-step enrichment), the new pricing probably works in your favor. cheaper data, more features at lower tiers.
 
-if you're a lightweight user who just wants enrichment without the platform, the floor just got higher and the complexity just increased.
+if you're a lightweight user who just wants enrichment without the platform, the floor just got higher and the complexity just increased. the [evolution from SDR to GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer) means learning to build outside any single tool's constraints.
 
 and if you're on Explorer at $349 using HTTP API heavily, run your numbers before switching. your legacy plan might be the better deal.
 
 no vendor is going to tell you that last part. that's why I'm telling you.
+
+## frequently asked questions
+
+### what are Clay Actions vs Data Credits?
+Data Credits pay for enrichment data from Clay's marketplace (Apollo lookups, email finders, firmographic data). Actions pay for everything else Clay does on your behalf: orchestration, Claygent calls, HTTP API executions, CRM pushes, webhook triggers. Two separate meters, two separate budgets.
+
+### is the old Clay pricing still available?
+If you're already on a legacy plan, yes. Clay is grandfathering existing plans. You have until April 10, 2026 to do a one-time switch between legacy tiers. New signups only see the new pricing.
+
+### should I switch from my legacy plan to the new pricing?
+Pull your last 3 months of credit usage and model it against the new tiers. If you were on Explorer at $349 for HTTP API access, your legacy plan is likely the better deal. If you were on Pro at $800 mainly for CRM sync, switching to Growth at $495 saves $305/mo.
+
+### how many Actions do I actually need?
+Add up your monthly enrichment runs, Claygent calls, HTTP API executions, CRM pushes, and webhook triggers. Growth gives you 40,000 Actions. Clay says 90% of users won't hit their limit, but if you're running heavy HTTP API workflows, the meter adds up fast.
+
+### did Clay data credits get cheaper?
+Yes. Clay claims 50-90% cost reduction across the top 20 enrichments. Their internal memo says they expect short-term revenue loss from this change, which suggests the savings are real.
 
 shawn ⚡ GTM Engineer

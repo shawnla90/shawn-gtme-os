@@ -6,6 +6,8 @@ category: "gtm-engineering"
 featured: true
 ---
 
+**tl;dr:** Clay paused their certification program in March 2026. I scored 98 on my first attempt. The cert tested UI knowledge that changes every quarter, and with Claygents moving toward context engineering, a multiple-choice exam can't measure what actually matters. Build a portfolio instead.
+
 ## what happened
 
 Clay put their certification program on hold in March 2026.
@@ -14,7 +16,7 @@ No official sunset announcement. No replacement timeline. Just... paused. If you
 
 I scored 98/100 on my first attempt. Documented the whole study process in the [Clay Wiki certification guide](https://thegtmos.ai/clay-wiki/certification-guide). And honestly, I'm not surprised it's gone.
 
-## why the certification stopped making sense
+## why did Clay's certification stop making sense?
 
 the cert tested Clay UI knowledge. table architecture, enrichment provider selection, credit costs, Sculptor, formula patterns. All useful stuff. All stuff that changes every quarter.
 
@@ -26,7 +28,7 @@ Clay was reportedly working on a Claygent certification. That made sense when Cl
 
 Except prompting isn't prompting anymore. It's [context engineering](https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering). The shift from crafting individual prompts to designing the entire context window, the constraint system, the feedback loops. You can't certify that with a multiple choice exam. The skill is architectural, not procedural.
 
-## what I actually got from the 98
+## what did I actually get from scoring 98 on Clay's cert?
 
 the certification was useful for one thing. Credibility signal.
 
@@ -36,7 +38,7 @@ But the knowledge that made me useful wasn't in the exam. It was in the 60+ patt
 
 The exam tested whether you knew Clay's interface. The work tested whether you could think in systems.
 
-## the Claygent certification problem
+## why can't you certify Claygent skills with an exam?
 
 here's why a Claygent cert doesn't work in 2026.
 
@@ -46,13 +48,13 @@ Context engineering means the prompt is the smallest part. The real skill is wha
 
 You can't test that understanding with a timed exam. It's like certifying someone in "programming" by testing syntax. The syntax matters. But the architecture is what ships.
 
-## what this means for builders
+## what should builders do instead of Clay certification?
 
 if you already have the certification, keep using it. The badge still carries weight. Most people you talk to won't know it's paused.
 
 If you were planning to get certified, redirect that energy.
 
-Build something in Clay instead. Ship an enrichment pipeline. Wire up an HTTP API integration. Push data to a CRM. Document what you learn. That portfolio of work proves more than any exam score.
+Build something in Clay instead. Ship an enrichment pipeline. Wire up an HTTP API integration. Push data to a CRM. Document what you learn. That portfolio of work proves more than any exam score. The [path from SDR to solo GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer) is built on shipped work, not badges.
 
 ## be the system thinker, not the certification chaser
 
@@ -64,7 +66,9 @@ System thinking transfers everywhere. The [enrichment architecture](https://theg
 
 Clay taught me everything I needed. The certification confirmed I learned it. But the learning was always the point, not the badge.
 
-## if you have APIs, Clay is less relevant
+Certifications are snapshots. Systems thinking is compounding. The builder who can move patterns between tools will always outpace the one who memorized a single platform's UI.
+
+## does Clay matter less once you can write API calls?
 
 I'll say what nobody with a Clay partnership will say.
 
@@ -72,9 +76,20 @@ If you can write API calls, Clay's value proposition narrows. [One Apollo API ca
 
 Clay's orchestration UI is still the best for non-technical operators who need to chain enrichments visually. That's real value. If you're maxing out your credits and Clay is the center of your GTM stack, it still works.
 
-But for builders who've moved past the UI and into code... the [new pricing](https://shawnos.ai/blog/clay-changed-their-pricing-heres-what-it-actually-means-for-builders) makes the math harder to justify. And the certification that validated your Clay expertise is now on hold.
+But for builders who've moved past the UI and into code... the [new pricing](https://shawnos.ai/blog/clay-changed-their-pricing-heres-what-it-actually-means-for-builders) makes the math harder to justify. Tools like [HeyReach](https://shawnos.ai/blog/why-i-believe-in-heyreach) show that pricing can scale with value without locking out builders. And the certification that validated your Clay expertise is now on hold.
 
 The platform is going enterprise. The cert was community. Those two things stopped aligning.
+
+## frequently asked questions
+
+### is Clay certification coming back?
+No official timeline. Clay paused it without a sunset announcement or replacement plan. Given the pricing restructure and the shift toward Claygents, any future cert would need to test architectural thinking, not just UI knowledge. Don't wait for it.
+
+### is the Claygent certification worth getting?
+It doesn't exist yet, and it may never ship. Clay was reportedly working on one, but Claygent skills have moved from prompt engineering to context engineering. That's hard to test with a multiple-choice exam. Focus on building real Claygent workflows instead.
+
+### what should I learn instead of Clay certification?
+Systems thinking that transfers across tools. Git, API calls, agent orchestration, data pipelines. Learn to call [Apollo's API directly](https://shawnos.ai/blog/why-apollo-should-be-your-first-sourcing-run-not-clay), push to a database, and automate with code. Those skills compound regardless of what any vendor does to their pricing or certification program.
 
 ---
 

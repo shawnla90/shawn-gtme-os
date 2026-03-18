@@ -6,6 +6,8 @@ category: "web-development"
 featured: true
 ---
 
+**tl;dr:** one Reddit post drove 527 visitors, 1,600 page views, and 75,000 impressions to a plumbing company's website in 24 hours. zero ad spend. Reddit is the most underrated distribution channel for service businesses right now because Google indexes it within hours and AI models cite it in answers.
+
 ## you built the website. nobody came.
 
 This is the part of web development that doesn't get talked about enough. You can build a perfectly optimized website for a service business with sub-second loads and flawless Core Web Vitals. And it sits there generating zero leads because nobody knows it exists.
@@ -14,7 +16,7 @@ Traffic is the missing piece. SEO takes months. Google Ads cost $15-40 per click
 
 So I tried something different with a client.
 
-## the reddit experiment
+## what was the Reddit experiment?
 
 Joe Parziale Plumbing Co. is a plumbing company in New York City. Good reputation, solid work, new website built on Next.js with sub-second page loads. The kind of site that converts well once people actually land on it.
 
@@ -26,7 +28,7 @@ So I wrote one post. Not promotional. Not a link to the website. An educational 
 
 Posted it to r/nyc and a couple of homeowner and local subreddits. Then engaged with every single comment. Answered follow-up questions. Gave specific advice. Linked to the website only when someone explicitly asked for a recommendation.
 
-## the numbers
+## what were the results?
 
 Within 24 hours:
 
@@ -40,7 +42,7 @@ For context, a typical local service business website gets 50-200 visitors per m
 
 The 1,600 page views matter even more than the visitor count. That's roughly 3 pages per visitor, which means people weren't bouncing. They landed, explored, and engaged. That only happens when the site loads fast and the content is relevant. A 6-second WordPress site would have lost 40% of that Reddit traffic before the homepage even rendered.
 
-## why reddit works better than anything else right now
+## why does Reddit work better than other channels right now?
 
 Three things changed in the last 18 months that make Reddit the most underrated distribution channel for service businesses.
 
@@ -52,7 +54,7 @@ Three things changed in the last 18 months that make Reddit the most underrated 
 
 The organic reach is also massive compared to other platforms. A helpful Reddit post can get tens of thousands of views without any paid boost. The algorithm rewards genuine, useful content. Promotional posts get downvoted into oblivion. Helpful posts compound.
 
-## the actual playbook
+## what's the actual Reddit playbook for service businesses?
 
 This wasn't random. There's a specific approach that works.
 
@@ -64,7 +66,7 @@ This wasn't random. There's a specific approach that works.
 
 **Have a fast website ready to catch the traffic.** Reddit traffic comes in bursts. Hundreds of visitors in a few hours. A slow site on shared hosting would buckle. The Next.js build on Vercel handled the spike without breaking a sweat. Sub-second loads meant visitors actually stuck around to explore.
 
-## the combined play
+## how do a fast website and Reddit traffic work together?
 
 Building a fast website and driving traffic to it aren't separate services. They're two halves of the same problem.
 
@@ -76,12 +78,30 @@ The combination compounds. A fast site converts more of each visitor. More conve
 
 Scale that over a year of consistent Reddit content and the gap becomes enormous.
 
-## what this means for service businesses
+## what does this mean for service businesses?
 
 Most web development agencies deliver a website and walk away. The client gets a polished deliverable and zero strategy for getting anyone to see it. Six months later the site has 30 visitors a month and the client thinks the website doesn't work.
 
 The website works fine. The distribution was never built.
 
 Reddit is one channel. There are others. But right now, for local service businesses, it's the highest-leverage play available. Zero cost, immediate results, and the content keeps working long after you post it through Google indexing, AI citation, and Reddit's own search.
+
+## frequently asked questions
+
+**how do you drive traffic to a website from Reddit?**
+write educational content that genuinely helps people in relevant subreddits. don't promote. don't link-drop. answer questions, engage with every comment, and link to your site only when someone explicitly asks. Reddit rewards helpful content and destroys promotional content.
+
+**does Reddit work for B2B marketing?**
+yes. niche professional subreddits like r/gtmengineering, r/sales, and industry-specific communities have high-intent audiences. the numbers are smaller than consumer subreddits, but the engagement quality is higher. a post with 4K views in a focused B2B subreddit can generate more qualified leads than 100K views in a general audience sub.
+
+**how long does Reddit traffic last?**
+the initial spike happens in 24-48 hours. but Reddit posts keep working after that through Google indexing (Reddit posts show up in search results within days) and AI citation (models like ChatGPT and Perplexity pull from Reddit threads). a well-written post can drive traffic for months.
+
+**how many visitors can one Reddit post drive?**
+it depends on the subreddit size and engagement, but a single educational post in a large, active subreddit can drive 500+ visitors in 24 hours. the plumbing post drove 527 unique visitors and 1,600 page views from one piece of content with zero ad spend.
+
+---
+
+**related posts:** [the reddit mastery wiki](https://shawnos.ai/blog/reddit-mastery-wiki) | [the cost of a slow website](https://shawnos.ai/blog/slow-website-cost)
 
 If you want to see how the full system works, website build plus content distribution plus traffic operations, check out the [Full Stack Dominance package](/services/web-development). The website is step one. Getting people there is everything after.

@@ -52,6 +52,8 @@ export async function generateMetadata({
       description: post.excerpt,
       url: postUrl,
       publishedTime: post.date,
+      modifiedTime: post.date,
+      section: post.category,
       authors: ['Shawn Tenam'],
       images: [{ url: ogImage, width: 1200, height: 630, alt: post.title }],
     },
@@ -100,10 +102,12 @@ export default async function BlogPost({
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.date,
     author: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
     publisher: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
     mainEntityOfPage: `${SITE_URL}/blog/${slug}`,
     url: `${SITE_URL}/blog/${slug}`,
+    ...(post.category && { articleSection: post.category }),
   }
 
   return (

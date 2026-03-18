@@ -6,6 +6,8 @@ category: "methodology"
 featured: true
 ---
 
+**tl;dr:** I shipped 4 open source repos, 3 production websites, and a full content pipeline in 6 weeks from a single Mac Mini with Claude Code. then I left my agency. the building came first. the leaving was what happens when you realize the math changed.
+
 ## the routine
 
 I've been building with Claude Code every day for 6 weeks straight. not as a side project. as the main thing.
@@ -16,7 +18,7 @@ a week ago I left my agency.
 
 that's not a coincidence. the building came first. the leaving was what happens when you spend 6 weeks shipping production systems from a terminal and realize the math changed. not theoretically. literally. I didn't leave and then figure it out. I built until leaving was the obvious move.
 
-## what shipped
+## what shipped in 6 weeks?
 
 in 6 weeks, from a single Mac Mini with a Claude Code Max subscription:
 
@@ -40,7 +42,7 @@ you're not defined by the tools you used to use. you're defined by what you can 
 
 once you see that, there's no going back. that's what the last 6 weeks proved. the doors open and you can't unsee what's on the other side.
 
-## the method
+## what is recursive drift in practice?
 
 I open sourced my methodology a few weeks back. I call it recursive drift. six non-linear states you move between based on what the work demands. freefall for exploring without structure. plan for crystallizing direction. build for shipping fast. break for questioning assumptions before you waste hours going the wrong way. ask for interrogating the system itself. seed for planting future work.
 
@@ -54,7 +56,7 @@ the practical version: I run 4 to 6 concurrent Claude Code sessions on the Mac M
 
 that's what recursive drift looks like in practice. not using AI occasionally. building with AI as a daily discipline that compounds over time.
 
-## the builder movement
+## what is the builder movement?
 
 here's the part I didn't plan.
 
@@ -66,7 +68,7 @@ the pattern was obvious. so less than a week ago I opened r/GTMBuilders on Reddi
 
 nobody's selling courses. nobody's pitching a certification. builders showing each other what they shipped and how it works. the only credential is having built something.
 
-## who this is for
+## who is this for?
 
 the next generation of go-to-market isn't ops people who learn prompting. it's builders.
 
@@ -97,5 +99,23 @@ if you're in GTM and you're building things... reach out. dm me on LinkedIn. joi
 I don't care where you are in the journey. I care that you started.
 
 the builder movement isn't a brand. it's what happens when the tools get good enough that individual practitioners can ship at a scale that used to require teams. we're in that window right now. the people who recognize it and start building will define the next era of go-to-market.
+
+## frequently asked questions
+
+**what tools do you need to build like this?**
+Claude Code with a Max subscription ($100/month), a Mac (Mini, MacBook, whatever), and a Vercel free tier account for deploys. that's the core stack. total infrastructure cost is around $110/month plus $10/year for domains.
+
+**how much does the setup cost?**
+Claude Code Max is $100/month. Vercel free tier handles the hosting. domains run about $10/year each. no API billing, no cloud infrastructure fees, no monthly SaaS automation costs. everything runs on one machine.
+
+**can you build with Claude Code on Windows?**
+yes. Claude Code runs on Windows via WSL (Windows Subsystem for Linux). the workflow is the same. SSH into a remote machine works from any OS. I use a Mac Mini as my always-on build server, but the methodology and templates work anywhere Claude Code runs.
+
+**what is r/GTMBuilders?**
+r/GTMBuilders is a Reddit community I started for people building GTM systems with AI tools. no courses, no certifications. just builders showing each other what they shipped. the only credential is having built something.
+
+---
+
+**related posts:** [recursive drift](https://shawnos.ai/blog/recursive-drift) | [Claude Code 1M context window](https://shawnos.ai/blog/claude-code-1m-context-window) | [who is Andrej Karpathy](https://shawnos.ai/blog/who-is-andrej-karpathy)
 
 all the repos, sites, and blog posts are linked in the comments of the LinkedIn post and on [shawnos.ai](https://shawnos.ai).

@@ -6,7 +6,7 @@ category: "ships"
 featured: true
 ---
 
-# Claude Code Just Went 5x: 1M Context Window Changes Everything for Builders
+**tl;dr:** 5x context window, same price. Sessions stop being fragile. Entire codebases fit in working memory. The 1M token upgrade in Claude Code v2.1.75 means you can run full feature builds, multi-file refactors, and deep debugging in a single continuous session without compaction anxiety.
 
 Friday afternoon. Claude Code v2.1.75 lands. I open the changelog and do a double take.
 
@@ -14,7 +14,9 @@ Friday afternoon. Claude Code v2.1.75 lands. I open the changelog and do a doubl
 
 If you've been building seriously with Claude Code, you already know the constraint that defined every session: context compaction. That invisible ceiling where your agent starts forgetting what it was doing, where you have to re-explain architecture, where long sessions degrade into confusion. That constraint just got blown wide open.
 
-## What Actually Changed
+The 1M context window means an entire codebase, all your CLAUDE.md rules, skill files, voice systems, and session history can fit in working memory simultaneously. The agent stops forgetting. The sessions stop breaking.
+
+## what actually changed in Claude Code v2.1.75?
 
 The numbers are simple:
 
@@ -24,7 +26,7 @@ The numbers are simple:
 
 The implications are not simple at all.
 
-## Why This Is a Different Way of Working
+## why does 1M context change how you work?
 
 200k felt like this in practice: you could explore a codebase, plan an approach, implement a feature, and maybe run tests before things got tight. Complex multi-file refactors? You'd burn through context just reading the files. Full-stack features touching frontend, backend, database, and deployment? You'd manage compaction anxiety the entire time.
 
@@ -38,7 +40,7 @@ At 1M, that math changes fundamentally.
 
 **No more babysitting.** I already run with permissions auto-approved. The context limit was the last thing I had to actively manage. Now I hand off ambitious tasks and actually walk away. Come back to finished work instead of a confused agent that compacted away the important bits.
 
-## What This Means for Weekend Builds
+## what does this mean for weekend builds?
 
 It's Friday. Which means it's time for the builds that don't fit into weekday slots. The ambitious ones. The ones that start with "I wonder if I could..."
 
@@ -46,7 +48,7 @@ With 200k context, those projects required careful session management. Break it 
 
 With 1M context, I can sit down Saturday morning and say "build me an entire feature from spec to deploy" and have genuine confidence the agent will maintain coherence from start to finish. Not because the model got smarter. Same Opus 4.6. But because it can finally hold enough context to use its intelligence on real problems instead of spending capacity re-reading its own earlier work.
 
-## The Compounding Effect
+## how does the larger context window compound?
 
 This isn't just 5x more tokens. It's a qualitative shift in what's possible per session:
 
@@ -58,7 +60,7 @@ This isn't just 5x more tokens. It's a qualitative shift in what's possible per 
 
 Each of these was theoretically possible before. In practice, context limits made them fragile at best, impossible at worst.
 
-## The Builder's Advantage
+## what's the builder's advantage?
 
 If you're shipping real products with Claude Code... not writing blog posts about AI, not making demo videos, actually shipping... this update is the single biggest quality-of-life improvement since the tool launched.
 
@@ -67,5 +69,27 @@ The builders who figure out how to use this space effectively will pull ahead fa
 Same Opus 4.6. Same pricing. Same tool. Just 5x more room to actually use it.
 
 Happy Friday. Time to build.
+
+## frequently asked questions
+
+**how big is Claude Code's context window?**
+As of v2.1.75, Claude Code has a 1 million token context window. That's roughly 5x the previous ~200k limit. It's large enough to hold an entire monorepo, all your instruction files, and a full session history simultaneously.
+
+**did Claude Code's pricing change with the 1M update?**
+No. The 1M context window ships at the same price as the previous 200k window. Same Max subscription. 5x more room for zero additional cost.
+
+**what model does Claude Code use?**
+Claude Code runs on Opus 4.6. The 1M context update didn't change the underlying model. Same intelligence, more working memory.
+
+**how does a larger context window help with coding?**
+The context window is the agent's working memory. A larger window means the agent can hold more of your codebase, more of your instructions, and more of the current session's history without forgetting. This eliminates the compaction problem where long sessions degrade because the agent loses track of earlier work. Bigger context means longer, more coherent sessions and fewer re-explanations.
+
+---
+
+Boris Cherny designed Claude Code's architecture to treat context as the primary programming surface. The 1M window is the logical extension of that philosophy. Full breakdown: [Boris Cherny and Claude Code context engineering](https://shawnos.ai/blog/boris-cherny-claude-code-context-engineering).
+
+For how this fits into a daily building practice: [6 weeks of building with Claude Code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code).
+
+The same shift applies beyond coding. Solo GTM engineers running full pipelines on this stack: [from SDR to solo GTM engineer](https://shawnos.ai/blog/sdr-to-solo-gtm-engineer).
 
 *Building with Claude Code daily at [shawnos.ai](https://shawnos.ai). GTM OS is open for builders who want to see how AI-native operations actually work.*
