@@ -93,9 +93,9 @@ const services = [
 ]
 
 const proof = [
-  { number: '2,200+', label: 'visitors in 48 hours' },
+  { number: '7,500+', label: 'visitors in 48 hours' },
   { number: '86', label: 'countries reached' },
-  { number: '200K+', label: 'Reddit impressions' },
+  { number: '500K+', label: 'Reddit impressions' },
   { number: '3', label: 'sites shipped from 1 monorepo' },
 ]
 
