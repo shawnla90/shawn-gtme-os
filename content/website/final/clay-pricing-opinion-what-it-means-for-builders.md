@@ -82,6 +82,6 @@ Clay taught me everything I needed to outgrow Clay. I'm grateful for that. and I
 
 *for the full factual breakdown of the pricing changes, tiers, and migration math, read [part 1](https://shawnos.ai/blog/clay-changed-their-pricing-heres-what-it-actually-means-for-builders).*
 
-*[Clay Wiki](https://thegtmos.ai/clay-wiki) · [free agency audit](https://shawnos.ai/blog/before-you-hire-a-clay-agency) · [Apollo sourcing guide](https://shawnos.ai/blog/why-apollo-should-be-your-first-sourcing-run-not-clay)*
+*[Clay Wiki](https://thegtmos.ai/clay-wiki) · [certification on hold](https://shawnos.ai/blog/clay-certification-on-hold-what-it-means) · [free agency audit](https://shawnos.ai/blog/before-you-hire-a-clay-agency) · [Apollo sourcing guide](https://shawnos.ai/blog/why-apollo-should-be-your-first-sourcing-run-not-clay)*
 
 shawn ⚡ GTM Engineer

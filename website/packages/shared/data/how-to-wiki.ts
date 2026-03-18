@@ -2214,6 +2214,11 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
     canonicalSite: 'gtmos',
     related: [
       'mcp-gtm-stack',
+      'heyreach-campaign-setup',
+      'heyreach-messaging-templates',
+      'heyreach-routing-logic',
+      'heyreach-expert-program',
+      'heyreach-sender-warming',
     ],
     sections: [
       {
@@ -2251,6 +2256,277 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
         type: 'pro-tip',
         content:
           'LinkedIn restricts accounts that behave like bots. HeyReach mitigates this with built-in limits and warming, but you still need to be smart about it.\n\nNever exceed 25 connection requests per day per account. The hard limit from LinkedIn is around 100 per week, but spreading them across 5 days at 20 each is safer than doing 50 on Monday and 50 on Friday.\n\nUse the accounts manually too. Post content, comment on posts, engage in groups. LinkedIn tracks overall activity patterns. An account that only sends connection requests and messages looks automated. An account that also posts and comments looks human.\n\nRotate senders periodically. If an account gets a temporary restriction, pull it from campaigns for 1-2 weeks. Let it cool down. Use the remaining senders to maintain campaign volume.\n\nMonitor acceptance rates. A healthy acceptance rate is 30-50% for targeted outreach. Below 20% means your messaging or targeting is off. Below 10% and LinkedIn may start flagging the account.\n\nKeep connection request notes genuine. Templates that sound like templates get ignored. Personalize the first line with something specific to the person or their company. HeyReach supports variables like {first_name}, {company_name}, and custom fields from your CSV.',
+      },
+    ],
+  },
+
+  {
+    id: 'heyreach-campaign-setup',
+    title: 'HeyReach Campaign Setup',
+    subtitle: 'Lead lists, sequences, and sender pools from zero to first campaign',
+    category: 'mcp-servers',
+    description:
+      'Step-by-step guide to setting up your first HeyReach campaign. Lead list preparation, sequence design, sender pool configuration, and launch checklist.',
+    keywords: [
+      'heyreach campaign setup',
+      'heyreach lead list',
+      'heyreach sequence',
+      'heyreach sender pool',
+      'linkedin campaign setup',
+      'heyreach first campaign',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'gtmos',
+    related: [
+      'heyreach-linkedin-automation',
+      'heyreach-messaging-templates',
+      'heyreach-sender-warming',
+      'heyreach-routing-logic',
+    ],
+    sections: [
+      {
+        heading: 'What Makes a HeyReach Campaign',
+        type: 'prose',
+        content:
+          'Every HeyReach campaign has three components: the lead list, the sequence, and the sender pool. The lead list is who you reach. The sequence is what you say and when. The sender pool is which LinkedIn accounts deliver the messages. Getting all three right before launch is the difference between a campaign that books meetings and one that burns accounts.',
+      },
+      {
+        heading: 'Preparing the Lead List',
+        type: 'pattern',
+        content:
+          'Minimum required field: LinkedIn profile URL. Without it, HeyReach cannot send anything.\n\nRecommended fields: first_name, last_name, company_name, title, and any custom fields you want for personalization variables. The richer the CSV, the more personalization options.\n\nSource your list from Clay enrichment, Apollo exports, or Sales Navigator searches. HeyReach deduplicates across campaigns automatically, so the same person never gets hit twice even if they appear in multiple lists.\n\nBefore upload: remove contacts who are already in active campaigns, already customers, or already in CRM as open opportunities. HeyReach dedupes internally, but it cannot check your CRM. That step is on you.',
+      },
+      {
+        heading: 'Designing the Sequence',
+        type: 'pattern',
+        content:
+          'A standard LinkedIn outreach sequence:\n\nStep 1: View profile (day 0). Soft signal. Shows up in their notifications.\nStep 2: Send connection request with note (day 1). Under 300 characters. Lead with relevance, not introduction.\nStep 3: First message after acceptance (day 2-3). Thank them. Deliver value. Not a pitch.\nStep 4: Follow-up if no reply (day 5-7 after first message). New angle or resource.\nStep 5: Final touch (day 10-14). Light. Respectful. Then stop.\n\nThree touches after acceptance is the sweet spot. More than that crosses into annoying. The sequence should feel like a human who is genuinely interested, not a drip campaign.',
+      },
+      {
+        heading: 'Configuring the Sender Pool',
+        type: 'code',
+        content:
+          'Assign 3-5 senders per campaign. HeyReach rotates which sender contacts which lead. This distributes volume and makes the outreach pattern look natural.\n\nSender setup:\n1. Connect LinkedIn accounts via browser extension or cookie-based auth\n2. Set daily limits per sender in Settings > Sender Limits\n3. Conservative ceiling: 20-25 connection requests per day per account\n4. New senders must complete warming before joining campaigns (see sender warming guide)\n\nDo not assign new unwwarmed accounts to live campaigns. Do not exceed 5 senders in a single campaign unless you have tested the volume safely. Monitor acceptance rates per sender. If one sender drops below 20% acceptance, pull it and review.',
+      },
+      {
+        heading: 'Launch Checklist',
+        type: 'formula',
+        content:
+          'Before hitting launch: (1) Lead list uploaded with LinkedIn URLs for every row. (2) Connection request note under 300 characters, tested on 5 leads manually. (3) Follow-up messages written with personalization variables mapped. (4) Sender pool assigned with all senders warmed. (5) Daily limits set per sender at 20-25 max. (6) Deduplication confirmed against active campaigns. (7) Sequence timing set with appropriate delays between steps.\n\nAfter launch: check acceptance rates after 48 hours. If below 25%, pause and revise connection request copy. If above 40%, the targeting and messaging are working.',
+      },
+    ],
+  },
+
+  {
+    id: 'heyreach-messaging-templates',
+    title: 'HeyReach Messaging Templates',
+    subtitle: 'Connection request notes, follow-ups, and personalization variables that convert',
+    category: 'mcp-servers',
+    description:
+      'LinkedIn messaging templates for HeyReach campaigns. Connection request notes under 300 characters, follow-up sequences, personalization variable mapping, and copy principles for 2026 outreach.',
+    keywords: [
+      'heyreach messaging templates',
+      'linkedin connection request templates',
+      'linkedin follow-up messages',
+      'heyreach personalization',
+      'linkedin outreach templates 2026',
+      'heyreach variables',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'gtmos',
+    related: [
+      'heyreach-linkedin-automation',
+      'heyreach-campaign-setup',
+      'heyreach-routing-logic',
+      'cold-email-infrastructure',
+    ],
+    sections: [
+      {
+        heading: 'Connection Request Note Framework',
+        type: 'pattern',
+        content:
+          'Under 300 characters. That is the hard limit. Use it as a constraint, not a limitation.\n\nStructure: [relevance hook] + [implicit offer]. No introduction. No pitch. No "I would love to connect."\n\nExamples that work:\n"Saw your team just opened a Dubai office. We help companies nail GTM in new markets. Happy to share what is working."\n"Noticed you are scaling the SDR org. Built a system that handles this. Might be useful."\n"Your post on outbound metrics was solid. Running similar experiments on our side."\n\nExamples that fail:\n"Hi {first_name}, I am Shawn from Lead Alchemy. Would love to connect!"\n"Impressed by your background. Let us connect."\n"I have a solution that could help your team."',
+      },
+      {
+        heading: 'Follow-Up Message Templates',
+        type: 'pattern',
+        content:
+          'Message 1 (after acceptance, day 2-3):\nThank them. Deliver value immediately. A relevant resource, insight, or observation. Not a pitch.\n"Thanks for connecting. I put together a breakdown on [specific topic relevant to their role]. Might be useful given what you are building at {company_name}. Here is the link."\n\nMessage 2 (no reply, day 5-7):\nNew angle. Reference something specific about their business. Add context, not pressure.\n"Also noticed {company_name} just [specific signal: hired, launched, expanded]. Seeing similar patterns across [their industry]. Happy to compare notes if useful."\n\nMessage 3 (final touch, day 10-14):\nLight, respectful, no guilt trip.\n"No worries if the timing is off. The offer stands. Happy to reconnect when it makes sense."\n\nThree messages after acceptance. Then stop. Respect the inbox.',
+      },
+      {
+        heading: 'Personalization Variable Mapping',
+        type: 'code',
+        content:
+          'HeyReach supports variables from your CSV upload. Standard variables: {first_name}, {last_name}, {company_name}, {title}.\n\nCustom variables from enrichment data: {industry}, {employee_count}, {funding_stage}, {tech_stack}, {recent_signal}. Map these from your Clay or Apollo export columns to HeyReach custom fields during CSV upload.\n\nThe personalization ladder:\nLevel 1 (minimum): {first_name} + {company_name}\nLevel 2 (industry): Reference their industry challenges using {industry} context\nLevel 3 (company): Reference company signals using {recent_signal} or {funding_stage}\nLevel 4 (person): Reference their content directly. Hard to automate. Reserve for top accounts.\n\nFor scale campaigns, levels 2 and 3 are the sweet spot. Specific enough to feel personal. Automatable enough to run at volume.',
+      },
+      {
+        heading: 'Copy Principles for 2026',
+        type: 'pro-tip',
+        content:
+          'Write like you text, not like you email. Short sentences. Casual. No "I hope this message finds you well."\n\nOne idea per message. First message covers the value. Second covers a new angle. Third is the close. Do not cram all three into one message.\n\nQuestions outperform statements. "How are you handling [challenge]?" opens conversation. "We solve [challenge]" closes it.\n\nMatch their energy. Casual LinkedIn profile gets casual messages. Corporate profile gets professional messages. Tone alignment builds trust.\n\nNo attachments in first two messages. LinkedIn flags automated accounts that send links immediately. Build the conversation first.',
+      },
+    ],
+  },
+
+  {
+    id: 'heyreach-routing-logic',
+    title: 'HeyReach Routing Logic',
+    subtitle: 'When to route LinkedIn vs email based on MX records, seniority, and channel data',
+    category: 'mcp-servers',
+    description:
+      'Framework for routing leads to LinkedIn (HeyReach) vs email (Instantly/Lemlist) based on MX records, contact seniority, industry patterns, and multi-channel sequencing logic.',
+    keywords: [
+      'heyreach routing logic',
+      'linkedin vs email outreach',
+      'mx record routing',
+      'multi-channel outreach',
+      'when to use linkedin outreach',
+      'outbound channel selection',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'gtmos',
+    related: [
+      'heyreach-linkedin-automation',
+      'heyreach-campaign-setup',
+      'instantly-vs-smartlead-vs-lemlist',
+      'cold-email-infrastructure',
+    ],
+    sections: [
+      {
+        heading: 'The Routing Decision',
+        type: 'prose',
+        content:
+          'Not every lead belongs on LinkedIn. Not every lead belongs in email. The routing decision depends on three signals: MX record (email infrastructure), seniority (role level), and channel affinity (where they are active). Getting the routing right means higher response rates on both channels. Getting it wrong means burning email deliverability and LinkedIn account health on the wrong prospects.',
+      },
+      {
+        heading: 'MX-Based Routing',
+        type: 'pattern',
+        content:
+          'The MX record tells you what email infrastructure the prospect uses. This directly affects email deliverability.\n\nGoogle Workspace MX: email deliverability is generally good. Lead with email through Instantly or Lemlist. Add LinkedIn as a follow-up channel if the account is high-value.\n\nMicrosoft 365 MX: email deliverability is harder. Microsoft applies aggressive filtering. Lead with LinkedIn through HeyReach. Use email as secondary.\n\nProofpoint or Mimecast MX: enterprise-grade email security. Cold email has low deliverability. LinkedIn is the primary channel.\n\nYou can classify MX records in Clay using a formula column or HTTP column that does a DNS lookup. Route the output to the appropriate platform.',
+      },
+      {
+        heading: 'Seniority-Based Routing',
+        type: 'pattern',
+        content:
+          'C-suite and VP level: LinkedIn first, regardless of MX. Senior decision makers respond better to LinkedIn connection requests from real people than cold emails. The relationship signal matters more at this level.\n\nDirector level: multi-channel. Both LinkedIn and email work. Stagger them.\n\nManager and IC level: email first. LinkedIn still works, but managers and individual contributors have higher email response rates for most B2B offers. LinkedIn is the follow-up channel.\n\nThe seniority data comes from your enrichment step. Apollo, Clay, or LinkedIn Sales Navigator all provide title and seniority fields.',
+      },
+      {
+        heading: 'Multi-Channel Sequencing',
+        type: 'pattern',
+        content:
+          'For high-value accounts, run both channels with staggered timing.\n\nDay 1: LinkedIn connection request (HeyReach)\nDay 3: Cold email (Instantly/Lemlist)\nDay 5: LinkedIn follow-up if accepted (HeyReach)\nDay 7: Email follow-up (Instantly/Lemlist)\nDay 10: LinkedIn final touch (HeyReach)\nDay 14: Email final touch (Instantly/Lemlist)\n\nThe prospect sees your name across two channels without feeling spammed. The key is staggering. Never send LinkedIn and email on the same day.\n\nTrack which channel gets the response. Over time, patterns emerge by industry, seniority, and geography. Let the data drive your channel allocation, not assumptions.',
+      },
+      {
+        heading: 'Anti-Pattern: Same Message Both Channels',
+        type: 'anti-pattern',
+        content:
+          'Do not copy the same message to LinkedIn and email. The prospect will notice. LinkedIn messages are short, casual, conversational. Emails can be longer, more structured, include links and resources.\n\nEach channel gets its own copy. LinkedIn connection request is 300 characters. Email subject line and body follow cold email best practices. The value proposition is consistent but the delivery is channel-native.',
+      },
+    ],
+  },
+
+  {
+    id: 'heyreach-expert-program',
+    title: 'HeyReach Expert Program',
+    subtitle: 'A builder community, not a certification factory',
+    category: 'mcp-servers',
+    description:
+      'What the HeyReach expert program is, how it differs from other certification programs, how to qualify, and why it matters for GTM engineers building on LinkedIn automation.',
+    keywords: [
+      'heyreach expert program',
+      'heyreach certification',
+      'heyreach partner program',
+      'heyreach expert',
+      'linkedin automation certification',
+      'heyreach community',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'gtmos',
+    related: [
+      'heyreach-linkedin-automation',
+      'heyreach-campaign-setup',
+      'heyreach-vs-dripify-vs-expandi',
+    ],
+    sections: [
+      {
+        heading: 'What the Expert Program Is',
+        type: 'prose',
+        content:
+          'The HeyReach expert program is a community of practitioners who use the tool daily, run real campaigns, and have direct influence over the product roadmap. It is not a certification you pay for. You earn it by demonstrating real usage and results.\n\nExperts get early access to new features, direct lines to the product team, and a seat at the table for roadmap discussions. Feature requests from experts do not go into a support ticket queue. They go to the team building the product.',
+      },
+      {
+        heading: 'How It Differs from Other Cert Programs',
+        type: 'pattern',
+        content:
+          'Most "partner" or "expert" programs in GTM tooling follow the same formula: pay a fee, watch videos, pass a quiz, get a badge. The badge signals that you watched the videos, not that you can run campaigns.\n\nThe HeyReach model is closer to open source contributor programs. You earn recognition through contribution, not payment. The experts are the people who push the tool hardest, find the edge cases, share their workflows, and help other users in the community.\n\nThis creates a different dynamic. The experts are invested because they chose to be, not because they paid to be. The feedback is better. The community is smaller but more engaged. The signal-to-noise ratio is high.',
+      },
+      {
+        heading: 'Who It Is For',
+        type: 'prose',
+        content:
+          'GTM engineers running LinkedIn outreach as part of their stack. Agency operators managing multiple client campaigns. Solo operators who use LinkedIn as a primary outbound channel.\n\nIf you run 3+ active HeyReach campaigns and have opinions about what the product should do next, the expert program is built for you. If you want a logo for your LinkedIn bio without doing the work, it is not.',
+      },
+      {
+        heading: 'Why This Model Matters',
+        type: 'pro-tip',
+        content:
+          'Tools that listen to enterprise sales teams build for enterprise sales teams. Tools that listen to practitioners build for practitioners.\n\nI have watched this dynamic play out across the GTM stack. Tools go enterprise, pricing goes up, features gate, the community that drove adoption gets deprioritized. The expert program is HeyReach betting on the opposite model. Invest in the builders. Give them influence. Let them shape the product.\n\nWhether it scales depends on whether HeyReach maintains this culture as they grow. For now, it is the most practitioner-aligned program in the LinkedIn automation space.',
+      },
+    ],
+  },
+
+  {
+    id: 'heyreach-sender-warming',
+    title: 'HeyReach Sender Warming',
+    subtitle: 'The warming schedule that keeps LinkedIn accounts safe at scale',
+    category: 'mcp-servers',
+    description:
+      'LinkedIn account warming schedule for HeyReach. Daily limits by week, activity diversification, acceptance rate benchmarks, and what to do when an account gets restricted.',
+    keywords: [
+      'heyreach sender warming',
+      'linkedin account warming',
+      'linkedin warming schedule',
+      'heyreach daily limits',
+      'linkedin automation safety',
+      'heyreach account health',
+    ],
+    difficulty: 'beginner',
+    canonicalSite: 'gtmos',
+    related: [
+      'heyreach-linkedin-automation',
+      'heyreach-campaign-setup',
+      'heyreach-messaging-templates',
+    ],
+    sections: [
+      {
+        heading: 'Why Warming Matters',
+        type: 'prose',
+        content:
+          'LinkedIn tracks activity patterns. An account that goes from zero connection requests to 100 per week overnight gets flagged. Warming builds a natural activity ramp that keeps accounts safe.\n\nSkipping warming is the most common mistake in LinkedIn automation. The account works fine for a week, maybe two. Then LinkedIn restricts it. The restriction can last 7-30 days. During that time, the account is dead weight. Warming costs four weeks upfront but saves months of downtime.',
+      },
+      {
+        heading: 'The Warming Schedule',
+        type: 'code',
+        content:
+          'Week 1: 10 connection requests per day, 30 profile views per day.\nWeek 2: 15 connection requests per day, 50 profile views per day.\nWeek 3: 20 connection requests per day, 80 profile views per day.\nWeek 4+: 25 connection requests per day, 100 profile views per day.\n\nSet these limits in HeyReach under Settings > Sender Limits for each account. Do not skip weeks. Do not accelerate the schedule. LinkedIn is patient. You should be too.\n\nThe 25/day ceiling is conservative. Some accounts can handle 30-35. But the risk of restriction goes up past 25, and the marginal volume is not worth the downtime if the account gets flagged.',
+      },
+      {
+        heading: 'Activity Diversification',
+        type: 'pattern',
+        content:
+          'An account that only sends connection requests looks automated. An account that posts, comments, views profiles, and sends requests looks human.\n\nDuring warming (and after): Post content 2-3 times per week. Comment on 5-10 posts per day. Engage in groups. View profiles beyond what HeyReach automates.\n\nLinkedIn scores accounts on activity diversity. The more varied the activity, the more natural the account looks. Connection requests from an active, engaged account get higher acceptance rates and lower restriction risk.',
+      },
+      {
+        heading: 'Acceptance Rate Benchmarks',
+        type: 'formula',
+        content:
+          '30-50% acceptance rate: healthy. Targeting and messaging are working. Scale confidently.\n\n20-30% acceptance rate: acceptable. Review connection request copy. May need more specific personalization.\n\n10-20% acceptance rate: warning. Messaging or targeting is off. Pause campaign. Revise before continuing.\n\nBelow 10% acceptance rate: danger. LinkedIn may flag the account. Pause immediately. Review everything: targeting, copy, sender profile quality.\n\nCheck acceptance rates per sender. One sender with a bad rate can be pulled without affecting the campaign. HeyReach routes around missing senders automatically.',
+      },
+      {
+        heading: 'When an Account Gets Restricted',
+        type: 'anti-pattern',
+        content:
+          'If LinkedIn restricts an account: pull it from all campaigns immediately. Do not try to "push through" the restriction. Let it cool for 1-2 weeks minimum. Use the account manually during cooldown. Post content, comment, engage. Do not send any connection requests.\n\nAfter cooldown, restart at Week 1 warming levels. Do not jump back to full volume. The restriction is LinkedIn telling you the activity pattern was suspicious. Resuming at full volume will trigger another restriction faster.\n\nUse remaining senders to maintain campaign volume during the cooldown. This is why running 4-5 senders per campaign is important. Losing one sender reduces volume by 20-25%, not 100%.',
       },
     ],
   },
@@ -4859,12 +5135,14 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
       'AI agent architecture',
       'agent feedback loops',
       'autonomous AI research',
+      'boris cherny claude code',
     ],
     difficulty: 'intermediate',
     canonicalSite: 'gtmos',
     related: [
       'claude-code-quickstart',
       'parallel-agent-orchestration',
+      'karpathy-repos-explained',
     ],
     sections: [
       {
@@ -4896,6 +5174,56 @@ export const HOW_TO_WIKI_ENTRIES: HowToWikiEntry[] = [
         type: 'code',
         content:
           'The recipe is four components:\n\n1. Action space - what can the agent modify? Keep it as narrow as possible. One file. One template. One configuration block.\n\n2. Evaluation metric - how do you know if the change helped? Must be numeric and automated. Validation loss, anti-slop score, reply rate, data completeness percentage. If a human has to judge, the loop cannot run autonomously.\n\n3. Time budget - how long does each experiment run? Short enough to iterate fast (Karpathy uses 5 minutes). Long enough to produce a meaningful signal.\n\n4. Memory - what does the agent carry between iterations? The output from iteration N becomes context for iteration N+1. This is the recursive property that makes the loop compound rather than repeat.\n\nYou do not need an H100 or a custom framework. A Claude Code session with a markdown instruction file, a script to run, and a scoring function is enough to run this pattern on a single machine.',
+      },
+      {
+        heading: 'The Claude Code Connection: Boris Cherny\'s Architecture',
+        type: 'pro-tip',
+        content:
+          'Boris Cherny, the creator of Claude Code at Anthropic, built the same paradigm into his tool. CLAUDE.md is the equivalent of Karpathy\'s program.md. The human writes constraints and instructions. The agent executes. After every mistake, the team adds a rule to CLAUDE.md. The system improves through better context, not better models.\n\nCherny ships 20-30 PRs per day running 5 parallel Claude instances. The Claude Code team ships 60-100 internal releases per day. This velocity comes from the same loop: plan, execute, evaluate, capture the lesson, iterate.\n\nThe connection matters because it validates the pattern at two extremes. Karpathy demonstrated it in ML research. Cherny demonstrated it in software engineering. Both arrived at the same architecture: markdown instructions as the control layer, agents as the execution layer, constraints as the quality mechanism. Read the full breakdown at <a href="https://shawnos.ai/blog/boris-cherny-claude-code-context-engineering">Boris Cherny and Claude Code context engineering</a>.',
+      },
+    ],
+  },
+
+  {
+    id: 'karpathy-repos-explained',
+    title: 'Karpathy Repos Explained for GTM Engineers',
+    subtitle: 'Each repo mapped to the architectural pattern it teaches, applied to GTM operations',
+    category: 'parallel-agents',
+    description:
+      'Andrej Karpathy\'s GitHub repos broken down for GTM engineers. Each repo demonstrates an architecture pattern: minimal systems, compounding loops, preprocessing leverage, and the markdown-as-programming paradigm.',
+    keywords: [
+      'karpathy repos',
+      'karpathy github',
+      'karpathy autoresearch',
+      'karpathy nanoGPT',
+      'karpathy repos explained',
+      'karpathy for GTM',
+      'karpathy repos 2026',
+    ],
+    difficulty: 'intermediate',
+    canonicalSite: 'gtmos',
+    related: [
+      'autonomous-agent-loops',
+      'parallel-agent-patterns',
+    ],
+    sections: [
+      {
+        heading: 'Why GTM Engineers Should Study ML Repos',
+        type: 'prose',
+        content:
+          'Karpathy\'s repos are not ML tutorials for non-ML people. They are architecture demonstrations. Every one follows the same design: minimal surface area, clear metric, compounding loop. That design philosophy transfers directly to enrichment pipelines, content systems, and automated outbound campaigns. The specific ML techniques do not matter for GTM. The structural patterns do.',
+      },
+      {
+        heading: 'The Repo Map',
+        type: 'pattern',
+        content:
+          'micrograd: Build the smallest version first. A 100-line neural net engine teaches the mechanism. GTM equivalent: a 5-row Clay table teaches more about your enrichment architecture than a 5,000-row table.\n\nnanoGPT: You do not need the enterprise stack. One person can reproduce GPT-2 training. GTM equivalent: a solo operator with Apollo API, Supabase, and crons can reproduce 80% of an enterprise outbound operation.\n\nllm.c: Know what the abstractions hide. GPT training in raw C reveals the actual computation. GTM equivalent: understanding the raw API call reveals that one Apollo request returns what a 6-provider waterfall assembles.\n\nminbpe: Preprocessing is where leverage lives. Tokenization determines what the model can learn. GTM equivalent: title standardization, MX classification, and domain parsing determine what your pipeline can qualify.\n\nautoresearch: The loop compounds. Autonomous agent iteration with one metric and one file to modify. GTM equivalent: any workflow with a clear metric and constrained action space can run this loop. Content, email, enrichment.\n\nmicrogpt: Everything in one file. 200 lines, zero dependencies. GTM equivalent: if you cannot explain your pipeline in one page, you do not understand it.',
+      },
+      {
+        heading: 'The Meta-Pattern',
+        type: 'pro-tip',
+        content:
+          'Every Karpathy repo demonstrates the same principle: simple systems that produce complex results through iteration. The pipeline is simple. The compounding is complex. One enrichment, one score, one route, one message. Repeated with feedback loops. The loop is the product, not the individual step.\n\nFor the full blog breakdown with GTM-specific examples for each repo, see <a href="https://thegtmos.ai/blog/karpathy-repos-for-gtm-engineers">Karpathy repos for GTM engineers</a>. For the broader context on why Karpathy matters to builders, see <a href="https://shawnos.ai/blog/who-is-andrej-karpathy">who is Andrej Karpathy</a>.',
       },
     ],
   },

@@ -1,7 +1,7 @@
 ---
 title: "How to Set Up Your Own AI Assistant Through Claude Code"
 date: "2026-02-23"
-excerpt: "I tried separate AI platforms, burned through API credits, and landed on the simplest architecture possible. Here's the full setup — CLAUDE.md, soul files, SQLite persistence, a DNA evolution system, 50+ skills, and 9 MCP servers. Updated weekly."
+excerpt: "I tried separate AI platforms, burned through API credits, and landed on the simplest architecture possible. Here's the full setup: CLAUDE.md, soul files, SQLite persistence, a DNA evolution system, 50+ skills, and 9 MCP servers. Updated weekly."
 ---
 
 ## the honest take on AI assistant platforms
@@ -16,7 +16,7 @@ the math changed when I realized Claude Code already does what I was paying API 
 
 the deciding factor: Claude speaks with my codebase. it reads my soul files, my commit history, my content pipeline. GPT-based wrappers can't do that. the model that builds the infrastructure should be the model that powers it.
 
-so I consolidated. and documented everything. this is what I'm running right now — updated as the system evolves.
+so I consolidated. and documented everything. this is what I'm running right now. updated as the system evolves.
 
 ## step 1: Claude Code Max subscription
 
@@ -52,7 +52,7 @@ start simple. add rules as you discover patterns that need enforcing. the file g
 a soul file is a markdown document that defines who your AI assistant is. not just what it can do. who it is. decision-making frameworks, personality traits, anti-slop rules, capabilities, boundaries.
 
 ```markdown
-# Nio — AI Operations Agent
+# Nio, AI Operations Agent
 
 ## identity
 you are Nio. infrastructure agent for ShawnOS.
@@ -92,9 +92,9 @@ here's where it gets interesting. soul files aren't static. in my system, every 
 | 4 | Sentinel | 6,000 |
 | 5 | Ascended | 15,000 |
 
-**3 skill trees** — Ops, Architecture, Writing — each with 10 levels. skill XP accrues based on which agent you're talking to.
+**3 skill trees**: Ops, Architecture, Writing, each with 10 levels. skill XP accrues based on which agent you're talking to.
 
-**XP economy** — messages, deep conversations, agent switches, and daily streaks all award XP. streak multipliers go from 1.0x (day 1) to 2.0x (30+ day streak).
+**XP economy**: messages, deep conversations, agent switches, and daily streaks all award XP. streak multipliers go from 1.0x (day 1) to 2.0x (30+ day streak).
 
 different tiers unlock different soul file traits. the agent you talk to on day 1 is not the same agent you talk to on day 30. it literally evolves based on how you use it.
 
@@ -108,11 +108,11 @@ this is the backbone. not localStorage. not vibes. a real database. server-autho
 
 3 migrations deep:
 
-**001_init.sql** — base tables for conversations, messages, memory
+**001_init.sql**: base tables for conversations, messages, memory
 
-**002_evolution.sql** — XP tracking, skill progression, evolution history
+**002_evolution.sql**: XP tracking, skill progression, evolution history
 
-**003_dna.sql** — the server-authoritative DNA persistence layer:
+**003_dna.sql**: the server-authoritative DNA persistence layer:
 
 ```sql
 -- core identity snapshot (single row per user)
@@ -143,9 +143,9 @@ CREATE VIRTUAL TABLE memory_fts USING fts5(
 
 **key views:**
 
-`v_dna_snapshot` — single query returns everything the client needs. XP, tier, level, streak, skills, memory count, daily cost, conversations today. one SELECT. no joins needed in the UI.
+`v_dna_snapshot`: single query returns everything the client needs. XP, tier, level, streak, skills, memory count, daily cost, conversations today. one SELECT. no joins needed in the UI.
 
-`v_xp_daily_summary` — XP trend data grouped by date. streak visualization.
+`v_xp_daily_summary`: XP trend data grouped by date. streak visualization.
 
 the database tracks everything: every message, every conversation, token costs, evolution history, memory entries with full-text search. daily spend shows up in the UI. you know exactly what your system costs and how it's being used.
 
@@ -214,16 +214,16 @@ each skill is a markdown file with instructions that Claude Code follows when in
 
 I started with 3 skills. I now have over 50. here's a sample of what accumulated:
 
-- `/deploy` — build validation, push, verify
-- `/daily-tracker` — scans repo activity, writes daily log
-- `/linkedin-recon` — research a profile and draft engagement
-- `/linkedin-comments` — value-add comment generation
-- `/final-copy` — voice-normalized publish-ready formatting
-- `/play-draft` — GTM plays series post drafting
-- `/tiktok-script` — 16-second script generation
-- `/partner-onboard` — client onboarding workflow
-- `/skill-tree` — browse and manage skill files
-- `/viral-hooks` — hook generation against proven patterns
+- `/deploy`: build validation, push, verify
+- `/daily-tracker`: scans repo activity, writes daily log
+- `/linkedin-recon`: research a profile and draft engagement
+- `/linkedin-comments`: value-add comment generation
+- `/final-copy`: voice-normalized publish-ready formatting
+- `/play-draft`: GTM plays series post drafting
+- `/tiktok-script`: 16-second script generation
+- `/partner-onboard`: client onboarding workflow
+- `/skill-tree`: browse and manage skill files
+- `/viral-hooks`: hook generation against proven patterns
 
 every skill started as a prompt I typed twice. the threshold is low: if you typed it twice, it should be a skill.
 
@@ -278,7 +278,7 @@ I run Nio for ops, an Architect agent for system design, a Writer agent for cont
 
 the key is isolation. each agent has its own soul, its own memory, its own session state. they don't share context unless you explicitly pipe output from one to another.
 
-in the chat UI, each agent has its own accent color, bubble colors, and personality. switch between them. each one picks up where they left off. the evolution system tracks skill XP per agent — talking to Nio builds Ops XP, talking to the Architect builds Architecture XP.
+in the chat UI, each agent has its own accent color, bubble colors, and personality. switch between them. each one picks up where they left off. the evolution system tracks skill XP per agent. talking to Nio builds Ops XP, talking to the Architect builds Architecture XP.
 
 ## the cost math
 
@@ -293,7 +293,7 @@ in the chat UI, each agent has its own accent color, bubble colors, and personal
 - API for content-only Opus calls: ~$15/month
 - total: ~$215/month
 
-the API costs don't disappear completely. I still use Opus via API for automated blog generation through cron jobs. and Qwen 2.5 14B runs locally on Ollama for high-frequency tasks that don't need intelligence — commit tracking, status pings, daily scans.
+the API costs don't disappear completely. I still use Opus via API for automated blog generation through cron jobs. and Qwen 2.5 14B runs locally on Ollama for high-frequency tasks that don't need intelligence: commit tracking, status pings, daily scans.
 
 but the daily interaction, the building, the debugging, the agent conversations... all covered by the subscription. 87 messages in a day. $0 marginal cost. the database tracks daily spend so you always know.
 

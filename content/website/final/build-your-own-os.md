@@ -38,11 +38,11 @@ static knowledge in a dynamic space is dead knowledge.
 
 so I didn't package anything into downloads. I built three living websites.
 
-[**shawnos.ai**](https://shawnos.ai) — personal operating system. RPG progression, daily build logs with XP scoring, tool guides, copyable tracking prompts. updated weekly.
+[**shawnos.ai**](https://shawnos.ai): personal operating system. RPG progression, daily build logs with XP scoring, tool guides, copyable tracking prompts. updated weekly.
 
-[**thegtmos.ai**](https://thegtmos.ai) — GTM engineering infrastructure. open-source Clay documentation, enrichment patterns, Claygent workflows, Sculptor prompts, signal trigger patterns, MCP connection guides. updates align with tool releases.
+[**thegtmos.ai**](https://thegtmos.ai): GTM engineering infrastructure. open-source Clay documentation, enrichment patterns, Claygent workflows, Sculptor prompts, signal trigger patterns, MCP connection guides. updates align with tool releases.
 
-[**thecontentos.ai**](https://thecontentos.ai) — content production system. voice DNA files defining writing style, 26 automated slash-command skills, 29 anti-slop pattern filters, platform-specific playbooks for LinkedIn, X, TikTok, Substack. six platform outputs from one unified system.
+[**thecontentos.ai**](https://thecontentos.ai): content production system. voice DNA files defining writing style, 26 automated slash-command skills, 29 anti-slop pattern filters, platform-specific playbooks for LinkedIn, X, TikTok, Substack. six platform outputs from one unified system.
 
 no email gates. no paywalls. no expiration dates. the content updates when the tools update and when I discover new patterns. if something looks outdated, tell me directly.
 

@@ -1282,4 +1282,103 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
     related: ['skills', 'context-handoffs', 'parallel-agents'],
     difficulty: 'intermediate',
   },
+
+  /* ================================================================== */
+  /*  FOUNDATIONS — Context Engineering for GTM                           */
+  /* ================================================================== */
+
+  {
+    id: 'context-engineering-for-gtm',
+    title: 'Context Engineering for GTM Engineers',
+    subtitle: 'How GTM engineers use context engineering differently than developers',
+    category: 'foundations',
+    description:
+      'Context engineering applied to GTM operations. How enrichment pipelines, voice systems, campaign optimization, and agent coordination benefit from context-first architecture. Written for operators, not developers.',
+    keywords: [
+      'context engineering for GTM',
+      'GTM context engineering',
+      'context engineering for sales',
+      'context engineering for marketing',
+      'AI context for GTM',
+      'context engineering non-developers',
+    ],
+    sections: [
+      {
+        heading: 'What Context Engineering Means for GTM',
+        type: 'prose',
+        content:
+          'Context engineering for developers means loading the right files, rules, and constraints so AI writes better code. Context engineering for GTM engineers means loading the right data, voice rules, and workflow instructions so AI produces better campaigns, content, and pipeline operations. The principle is identical. The inputs are different. Instead of code files, you load enrichment data, ICP definitions, voice DNA, anti-slop rules, and campaign history. The agent\'s output quality is directly proportional to the context quality. Better context, better campaigns.',
+      },
+      {
+        heading: 'The Four GTM Context Layers',
+        type: 'pattern',
+        content:
+          'Layer 1: Data context. What you know about the prospect. Enrichment data, company research, technographics, hiring signals, intent data. This feeds personalization and scoring.\n\nLayer 2: Voice context. How you sound. Voice DNA, anti-slop rules, platform playbooks, tone calibration. This feeds content generation and outreach copy.\n\nLayer 3: Workflow context. How you operate. CLAUDE.md rules, skill files, pipeline architecture, tool configurations. This feeds agent orchestration and automation.\n\nLayer 4: Memory context. What you learned. Lessons from previous campaigns, correction history, handoff files from prior sessions. This feeds continuous improvement.\n\nMost GTM teams have layers 1 and 2. The teams that compound have all four.',
+      },
+      {
+        heading: 'CLAUDE.md Is Your GTM Playbook',
+        type: 'pro-tip',
+        content:
+          'Developers use CLAUDE.md to tell the agent how to work on their codebase. GTM engineers use it to tell the agent how to work on their pipeline. What tools to use. What order to run enrichment. How to score leads. How to route to outreach platforms. What voice rules to follow. What mistakes to avoid.\n\nEvery correction you make to the agent becomes a rule. Every rule makes the next session better. Boris Cherny\'s Claude Code team does this daily. After every Claude mistake, they add a rule. The system gets smarter not because the model changed, but because the context improved. Same principle applies to your GTM operations.',
+      },
+      {
+        heading: 'Context Engineering vs Prompt Engineering for GTM',
+        type: 'pattern',
+        content:
+          'Prompt engineering: "Write a cold email for a VP of Sales at a SaaS company with 200 employees."\n\nContext engineering: Load the enrichment data, the ICP definition, the voice DNA, the campaign performance history, the anti-slop rules, the outreach playbook, and then say "write the email."\n\nThe prompt is one sentence. The context is everything else. The output quality difference is not incremental. It is categorical. A well-prompted agent with no context produces generic output. A lightly-prompted agent with deep context produces output that sounds like your best operator wrote it.\n\nSee <a href="https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering">context engineering vs prompt engineering</a> for the technical breakdown.',
+      },
+    ],
+    related: ['context-engineering', 'claude-md', 'grounding'],
+    difficulty: 'beginner',
+  },
+
+  /* ================================================================== */
+  /*  FOUNDATIONS — Markdown as Programming                               */
+  /* ================================================================== */
+
+  {
+    id: 'markdown-as-programming',
+    title: 'Markdown as Programming',
+    subtitle: 'The paradigm shift from writing code to writing instructions',
+    category: 'foundations',
+    description:
+      'The shift from code as the primary programming surface to markdown instructions. How CLAUDE.md, program.md, skill files, and voice systems represent a new paradigm where the human writes constraints and the agent writes code.',
+    keywords: [
+      'markdown as programming',
+      'program.md',
+      'CLAUDE.md programming',
+      'AI programming paradigm',
+      'instructions as code',
+      'markdown programming shift',
+      'context-first programming',
+    ],
+    sections: [
+      {
+        heading: 'The Paradigm Shift',
+        type: 'prose',
+        content:
+          'For decades, programming meant writing code. The programmer decides the logic, writes the implementation, debugs the output. The code is the artifact. In 2026, a second paradigm is emerging. The programmer writes instructions in markdown. The agent writes the code. The markdown file is the artifact. Karpathy demonstrated this with <a href="https://github.com/karpathy/autoresearch" target="_blank" rel="noopener">autoresearch</a>, where program.md is the control layer and the agent modifies train.py. Boris Cherny built Claude Code around the same principle, where CLAUDE.md is the project-level instruction file that shapes every agent session.',
+      },
+      {
+        heading: 'What This Looks Like in Practice',
+        type: 'pattern',
+        content:
+          'In autoresearch: the human writes program.md with research directions. The agent modifies train.py, runs experiments, evaluates results. The human never touches Python.\n\nIn Claude Code: the human writes CLAUDE.md with project rules, workflow instructions, and constraints. The agent modifies the codebase. The human reviews and corrects. Corrections become new rules in CLAUDE.md.\n\nIn content systems: the human writes voice DNA, anti-slop rules, and platform playbooks. The agent generates content. The human scores and iterates. Quality rules accumulate.\n\nIn GTM pipelines: the human writes skill files with enrichment patterns, scoring logic, and routing rules. The agent runs the pipeline. The human monitors and adjusts. Lessons accumulate.\n\nIn every case, the markdown files compound. The code is disposable. The instructions are the asset.',
+      },
+      {
+        heading: 'Why Markdown Specifically',
+        type: 'pro-tip',
+        content:
+          'Markdown is not special as a format. What is special is that it is human-readable, version-controllable, and directly consumable by AI agents. You can write a CLAUDE.md, commit it to Git, track its evolution over time, diff it against previous versions, and the agent reads it on every session start.\n\nJSON and YAML configurations do similar things but are harder to read and write. Code comments add context but are scattered across files. Markdown instruction files are centralized, readable, and iterable. The format matches the workflow: write, test, revise, commit.',
+      },
+      {
+        heading: 'The Implication for Builders',
+        type: 'prose',
+        content:
+          'If the primary programming surface is shifting from code to markdown instructions, the most valuable skill is not writing code. It is writing constraints. Designing the instruction layer that produces reliable, high-quality output from AI agents.\n\nThis is context engineering. The ability to load the right context, set the right constraints, define the right metrics, and let the agent execute. The code the agent writes is an implementation detail. The context you provide is the architecture.\n\nDevelopers who understand this ship faster. GTM engineers who understand this build systems that compound. The paradigm shift is not coming. It is here.',
+      },
+    ],
+    related: ['context-engineering', 'claude-md', 'context-engineering-for-gtm', 'skill-trees'],
+    difficulty: 'beginner',
+  },
 ]

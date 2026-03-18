@@ -6,7 +6,7 @@ excerpt: "No GPU, no After Effects. Just React components, Remotion, and the sam
 
 ## the problem with video
 
-I needed promo videos for three brands. ShawnOS, GTMOS, ContentOS. Each one needed three aspect ratios — LinkedIn (4:5), Reels (9:16), landscape (16:9). That's nine render targets. And every time the design tokens changed, every video needed to update.
+I needed promo videos for three brands. ShawnOS, GTMOS, ContentOS. Each one needed three aspect ratios. LinkedIn (4:5), Reels (9:16), landscape (16:9). That's nine render targets. And every time the design tokens changed, every video needed to update.
 
 I looked at After Effects templates. I looked at Canva. I looked at hiring someone. Every option meant a manual pipeline that would fall out of sync with the websites the moment I pushed a color change.
 
@@ -22,28 +22,28 @@ nine compositions live in a single `Root.tsx`. three brands times three aspect r
 
 ## the scene architecture
 
-videos are built from scenes connected by `TransitionSeries` — Remotion's composition tool that handles overlap timing between segments. each scene is a React component with a fixed frame count.
+videos are built from scenes connected by `TransitionSeries`, Remotion's composition tool that handles overlap timing between segments. each scene is a React component with a fixed frame count.
 
 the current V3 system runs about 10 seconds at 30fps (310 frames total):
 
-- **Hook** (36 frames / 1.2s) — the opening grab
-- **BootWikiBlitz** (110 frames / 3.7s) — terminal boot sequence with rapid-fire wiki cards
-- **Progression** (100 frames / 3.3s) — the RPG-style tier system visualization
-- **CtaNetwork** (94 frames / 3.1s) — call to action with network graph
+- **Hook** (36 frames / 1.2s): the opening grab
+- **BootWikiBlitz** (110 frames / 3.7s): terminal boot sequence with rapid-fire wiki cards
+- **Progression** (100 frames / 3.3s): the RPG-style tier system visualization
+- **CtaNetwork** (94 frames / 3.1s): call to action with network graph
 
-transitions get 10 frames of overlap between scenes. the timing config lives in `timing-v2.ts` — one file controls the entire video rhythm.
+transitions get 10 frames of overlap between scenes. the timing config lives in `timing-v2.ts`. one file controls the entire video rhythm.
 
 ## the component library
 
 three components do most of the visual work.
 
-**MatrixRain** uses Perlin noise from `@remotion/noise` to generate a deterministic character rain effect. each column drifts independently. character selection is seeded by column, row, and frame number. the effect is organic but reproducible — same seed, same output, every render.
+**MatrixRain** uses Perlin noise from `@remotion/noise` to generate a deterministic character rain effect. each column drifts independently. character selection is seeded by column, row, and frame number. the effect is organic but reproducible. same seed, same output, every render.
 
 **TypewriterText** reveals characters frame by frame with a blinking cursor. elapsed frames control visible character count. the cursor blinks at 1Hz. simple math, clean effect.
 
 **ParticleField** creates ambient floating particles using two independent noise streams for x and y drift. 40 particles by default, bounded to 8% canvas drift. subtle pulse via a third noise channel.
 
-all three components are deterministic. no `Math.random()`. Remotion requires this — random values change between frames and break the render. Perlin noise with consistent seeds gives you organic animation that's reproducible.
+all three components are deterministic. no `Math.random()`. Remotion requires this. random values change between frames and break the render. Perlin noise with consistent seeds gives you organic animation that's reproducible.
 
 ## the visual treatment
 
@@ -70,7 +70,7 @@ purple:  #9B72CF  (ContentOS)
 amber:   #D2A53C  (secondary accent)
 ```
 
-`SITE_ACCENTS` maps brand names to colors. the BootWikiBlitz scene cycles through the palette — green, teal, amber, purple, green — as wiki cards flip through. the brand identity is in the data, not hardcoded into components.
+`SITE_ACCENTS` maps brand names to colors. the BootWikiBlitz scene cycles through the palette: green, teal, amber, purple, green. as wiki cards flip through. the brand identity is in the data, not hardcoded into components.
 
 font is JetBrains Mono everywhere. monospace. consistent with the terminal aesthetic across all three sites.
 

@@ -72,7 +72,7 @@ if you're paying per-token for personal AI tooling and you have a Claude Code Ma
 
 the CLI is the API. your subscription is the infrastructure budget. everything else is just plumbing.
 
-but more than that — if you're running your AI on a platform that doesn't speak with your codebase, you're building two systems when you only need one. the model that builds your infrastructure should be the model that powers it. that's not a shortcut. that's the architecture.
+but more than that. if you're running your AI on a platform that doesn't speak with your codebase, you're building two systems when you only need one. the model that builds your infrastructure should be the model that powers it. that's not a shortcut. that's the architecture.
 
 this is part of ShawnOS. the operating system I'm building in public for running a one-person GTM engine. started building the repo two weeks ago. already compounding.
 

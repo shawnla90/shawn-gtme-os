@@ -118,7 +118,7 @@ this isn't good or bad. it's a business model shift from "pay for data" to "pay 
 
 ## what I'm updating in the Clay Wiki
 
-I'm adding a full pricing model entry to the [Clay Wiki](https://thegtmos.ai/clay-wiki) covering the new dual-currency system, tier comparison, and migration decision framework. the existing [credit system guide](https://thegtmos.ai/clay-wiki/credit-system) still applies for understanding how individual enrichments cost credits. the new entry covers the structural change on top of that.
+I'm adding a full pricing model entry to the [Clay Wiki](https://thegtmos.ai/clay-wiki) covering the new dual-currency system, tier comparison, and migration decision framework. the existing [credit system guide](https://thegtmos.ai/clay-wiki/credit-system) still applies for understanding how individual enrichments cost credits. the new entry covers the structural change on top of that. for a deep dive on how the two currencies interact, see the [Actions vs Data Credits guide](https://thegtmos.ai/clay-wiki/actions-credits-dual-system).
 
 this is also why the free audit matters more now than last week. if you're evaluating whether to switch plans, stay on legacy, or restructure your Clay architecture to optimize for the new model, [that 30-minute conversation](https://shawnos.ai/blog/before-you-hire-a-clay-agency) could save you thousands in misallocated spend.
 

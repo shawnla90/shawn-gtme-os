@@ -14,7 +14,7 @@ the file system is great for organizing. it's terrible for querying.
 
 ## the solution: a derived SQLite database
 
-`scripts/build_index.py` walks the repo, parses every content file, and loads the results into a 9-table SQLite database at `data/index.db`. zero external dependencies — stdlib only. json, sqlite3, pathlib, re. that's it.
+`scripts/build_index.py` walks the repo, parses every content file, and loads the results into a 9-table SQLite database at `data/index.db`. zero external dependencies. stdlib only. json, sqlite3, pathlib, re. that's it.
 
 the index is derived data. it's rebuilt from git-tracked files every time you run it. delete the database, run the script, get the same result. the source of truth is always the repo. the database is just a query layer on top.
 
@@ -34,21 +34,21 @@ Building index: data/index.db
 
 nine tables. each one indexes a different content type.
 
-**content** — the core table. every draft and final across all platforms. fields include platform, stage, title, slug, date, pillar, arc, series, word count. metadata is parsed from two formats: blockquote syntax (`> **Key**: Value`) for most platforms, YAML frontmatter for website posts.
+**content**: the core table. every draft and final across all platforms. fields include platform, stage, title, slug, date, pillar, arc, series, word count. metadata is parsed from two formats: blockquote syntax (`> **Key**: Value`) for most platforms, YAML frontmatter for website posts.
 
-**daily_logs** — performance metrics from the daily tracker. output score, letter grade, word count, shipped count, agent cost, ROI multiplier, commits.
+**daily_logs**: performance metrics from the daily tracker. output score, letter grade, word count, shipped count, agent cost, ROI multiplier, commits.
 
-**sessions** — context handoff history. this table is append-only and survives index rebuilds. every other table gets dropped and recreated. sessions persist because they're historical records, not derived data.
+**sessions**: context handoff history. this table is append-only and survives index rebuilds. every other table gets dropped and recreated. sessions persist because they're historical records, not derived data.
 
-**skills** — the Claude and Cursor skill registry. 54 skills indexed with name, description, file path, category.
+**skills**: the Claude and Cursor skill registry. 54 skills indexed with name, description, file path, category.
 
-**content_links** — the relationship graph. two link types: `series_sibling` (same date and slug across platforms, detected automatically) and `cross_platform_note` (explicit references parsed from Cross-Platform Notes sections).
+**content_links**: the relationship graph. two link types: `series_sibling` (same date and slug across platforms, detected automatically) and `cross_platform_note` (explicit references parsed from Cross-Platform Notes sections).
 
-**assets** — 522 visual assets across the progression system. tier avatars, class badges, tool icons, Nio variants, sprite sheets. filename patterns get parsed into structured data: `tier-3-idle-256.gif` becomes asset_type=tier, tier=3, variant=idle, size_px=256.
+**assets**: 522 visual assets across the progression system. tier avatars, class badges, tool icons, Nio variants, sprite sheets. filename patterns get parsed into structured data: `tier-3-idle-256.gif` becomes asset_type=tier, tier=3, variant=idle, size_px=256.
 
-**videos** — video file catalog with brand, aspect ratio, format, deployment status.
+**videos**: video file catalog with brand, aspect ratio, format, deployment status.
 
-**thumbnails** — thumbnail inventory by brand and variant.
+**thumbnails**: thumbnail inventory by brand and variant.
 
 ## the query CLI
 
@@ -67,7 +67,7 @@ output modes: table (default), JSON (`--json`), row count (`--count`). the table
 
 ## cross-platform link detection
 
-this is where it gets interesting. the index doesn't just catalog files — it discovers relationships between them.
+this is where it gets interesting. the index doesn't just catalog files. it discovers relationships between them.
 
 **implicit sibling detection**: files with identical (date, slug) across platforms get linked as `series_sibling`. if you have `linkedin/final/2026-02-17_build-your-own-os.md` and `substack/final/2026-02-17_build-your-own-os.md`, the index knows they're related without you telling it.
 
@@ -79,7 +79,7 @@ this is where it gets interesting. the index doesn't just catalog files — it d
 
 this is why this post exists. the index revealed its own gap.
 
-query the content table for files with zero inbound links from content_links. those are orphans — content that exists but nothing points to. query for files with zero outbound links. those are dead ends — content that doesn't connect to anything else.
+query the content table for files with zero inbound links from content_links. those are orphans. content that exists but nothing points to. query for files with zero outbound links. those are dead ends. content that doesn't connect to anything else.
 
 I ran those queries and found that three major systems had shipped with zero blog coverage: the Remotion video system, this SQLite index itself, and the content cluster topology. the tool that finds content gaps revealed content gaps about the tool.
 

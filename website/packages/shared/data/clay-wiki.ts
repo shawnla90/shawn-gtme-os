@@ -263,7 +263,7 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
     subtitle: 'Get Claygent to stop hallucinating and start producing usable data',
     category: 'core-concepts',
     description:
-      'Claygent prompt engineering guide — model selection, validation patterns, structured output, and how to prevent hallucinations in Clay AI columns.',
+      'Claygent prompt engineering guide. Note: Claygent prompting is now better understood as context engineering. Model selection, validation patterns, structured output, and how to prevent hallucinations in Clay AI columns.',
     keywords: [
       'claygent prompts',
       'clay ai',
@@ -271,6 +271,7 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
       'clay prompt engineering',
       'clay ai column',
       'claygent tips',
+      'claygent context engineering',
     ],
     difficulty: 'intermediate',
     related: [
@@ -278,8 +279,15 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
       'sculptor-guide',
       'credit-system',
       'troubleshooting',
+      'certification-guide',
     ],
     sections: [
+      {
+        heading: 'Claygent Prompting Is Now Context Engineering',
+        type: 'pro-tip',
+        content:
+          "This guide was originally written as a prompt engineering reference. The principles still apply. But the paradigm has shifted. Claygent prompting in 2026 is better understood as context engineering. The prompt itself is the smallest part. What matters is the full context: the constraint files, the validation rules, the output schemas, the evaluation loops. See <a href='https://shawnos.ai/how-to/context-engineering-vs-prompt-engineering'>context engineering vs prompt engineering</a> for the full breakdown. The techniques below still work. Just understand that they're one layer in a larger architecture, not the whole picture.",
+      },
       {
         heading: 'What Claygent Actually Is',
         type: 'prose',
@@ -1111,7 +1119,7 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
     subtitle: 'How I scored 98/100 on the Clay certification exam',
     category: 'reference',
     description:
-      'Practical guide to passing the Clay certification exam with a 98/100 score. Study strategy, key concepts, common traps, and the mindset that matters more than memorization.',
+      'Practical guide to passing the Clay certification exam with a 98/100 score. Certification is currently on hold as of March 2026. Study strategy, key concepts, common traps, and the mindset that matters more than memorization.',
     keywords: [
       'clay certification',
       'clay certified',
@@ -1119,6 +1127,9 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
       'clay certification guide',
       'clay certification tips',
       'how to pass clay certification',
+      'clay certification on hold',
+      'clay certification 2026',
+      'clay certification score',
     ],
     difficulty: 'beginner',
     related: [
@@ -1126,8 +1137,15 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
       'claygent-prompts',
       'formulas',
       'sculptor-guide',
+      'actions-credits-dual-system',
     ],
     sections: [
+      {
+        heading: 'Certification Status: On Hold (March 2026)',
+        type: 'prose',
+        content:
+          "Clay paused their certification program in March 2026. No official sunset announcement, no replacement timeline. The exam is not currently available. If you already have the certification, the badge still carries weight. Most people you talk to won't know it's paused. If you were planning to get certified, redirect that energy into building. Ship an enrichment pipeline. Wire up an HTTP API integration. Push data to a CRM. Document what you learn. A portfolio of real work proves more than any exam score. The certification tested foundational UI knowledge. But Clay's pricing restructured (dual currency, new plan tiers), Claygent prompting evolved into context engineering, and the exam content became outdated. A Claygent certification was reportedly in development, but certifying context engineering with a multiple choice exam doesn't map. The skill is architectural, not procedural. For the full breakdown, read <a href='https://shawnos.ai/blog/clay-certification-on-hold-what-it-means'>clay certification on hold: what it means</a>.",
+      },
       {
         heading: 'Why Get Certified',
         type: 'prose',
@@ -1593,6 +1611,73 @@ export const CLAY_WIKI_ENTRIES: ClayWikiEntry[] = [
         type: 'pro-tip',
         content:
           "Mid-cycle credit top-ups used to carry a 50% premium. Now it's 30%. Still not cheap, but less punishing if you run out mid-month. Credit rollover: monthly plans roll over up to 2x monthly allocation. Annual plans roll over up to 15% of annual credits. If you consistently need top-ups, you're on the wrong plan — upgrade instead of paying the premium.",
+      },
+    ],
+  },
+
+  /* ================================================================== */
+  /*  REFERENCE — Actions + Credits Dual System                         */
+  /* ================================================================== */
+
+  {
+    id: 'actions-credits-dual-system',
+    title: 'Clay Actions vs Data Credits: The Dual Currency System',
+    subtitle: 'Two meters instead of one. Here is how to think about each.',
+    category: 'reference',
+    description:
+      'Explains Clay\'s March 2026 dual currency system. Actions measure platform orchestration. Data Credits measure enrichment costs. How they interact, what counts as each, and how to optimize your spend across both.',
+    keywords: [
+      'clay actions vs credits',
+      'clay dual currency',
+      'clay actions explained',
+      'clay data credits',
+      'clay actions',
+      'clay credit system 2026',
+      'clay actions limit',
+    ],
+    difficulty: 'beginner',
+    related: [
+      'credit-system',
+      'pricing-model-2026',
+      'http-column',
+      'claygent-prompts',
+    ],
+    sections: [
+      {
+        heading: 'Why Two Currencies',
+        type: 'prose',
+        content:
+          "Before March 2026, Clay had one currency: credits. Everything you did cost credits. Simple. The new system splits that into two: Data Credits and Actions. Data Credits pay for enrichment data from Clay's marketplace. The providers, the waterfalls, the lookups. Actions pay for platform orchestration, anything where Clay does work on your behalf. The split lets Clay price data cheaper (50-90% cuts across top enrichments) while metering the orchestration separately. It's a bet that cheaper data drives more complex workflows, which drives more Actions consumption.",
+      },
+      {
+        heading: 'What Counts as a Data Credit',
+        type: 'pattern',
+        content:
+          "Data Credits are consumed when you use enrichment providers through Clay's marketplace. Apollo person search, email finders, firmographic data, technographics, intent signals. Each provider costs a specific number of Data Credits per row. Simple lookups cost 1-2 credits. Complex enrichments cost more. The costs dropped significantly in March 2026, with Clay claiming 50-90% reductions across the top 20 enrichments. If you're running enrichment waterfalls, the math improved. The data itself got cheaper.",
+      },
+      {
+        heading: 'What Counts as an Action',
+        type: 'pattern',
+        content:
+          "Every enrichment run is an Action. Every Claygent call is an Action. Every HTTP API execution, CRM push, and webhook trigger is an Action. One row enriched = one Data Credit charge + one Action charge. That's the dual currency in practice. What does NOT cost an Action: importing rows, running formulas, manual edits, column transformations. Formulas remain free. This is important. If you can solve something with a formula instead of an enrichment or Claygent call, you save both currencies. The formula-first principle from the old credit system now saves you double.",
+      },
+      {
+        heading: 'The Math That Matters',
+        type: 'pro-tip',
+        content:
+          "Free gets 500 Actions/mo. Launch ($185) gets 15,000. Growth ($495) gets 40,000. Enterprise gets 100,000+. Clay says 90% of customers won't hit their Actions limit. But if you run heavy HTTP API workflows, Claygent research chains, or high-volume enrichment tables, you can burn through Actions faster than Data Credits. The scenario to watch: HTTP API calls. These used to cost one credit. Now they cost one Action AND the external API's own cost. If you make 5,000 HTTP calls per month for MX lookups, time APIs, or custom endpoints, that's 5,000 Actions just from HTTP. Add enrichments, Claygent, CRM syncs, and you can approach the Growth limit. Map your usage before switching plans.",
+      },
+      {
+        heading: 'How to Optimize Across Both',
+        type: 'pattern',
+        content:
+          "The optimization priority stays the same, just applied to two numbers now. (1) Formula first. Zero cost on both currencies. Use formulas for title normalization, MX classification, scoring bins, name merging. (2) Single-provider over waterfall. One enrichment = one Action. A 3-provider waterfall = 3 Actions for one row, even if providers 2 and 3 find nothing new. Only waterfall when coverage demands it. (3) Account-first enrichment. Enrich 500 companies, then enrich contacts only at qualified companies. You spend Actions on qualification first, not on contacts you'll discard. (4) HTTP API calls in bulk. If you're making the same API call pattern across 1,000 rows, consider whether a Python script outside Clay can do it for zero Actions. (5) Monitor the ratio. Track your Actions consumption vs Data Credits. If Actions run out first, you have an orchestration-heavy workflow that might be cheaper to partially move to code.",
+      },
+      {
+        heading: 'When Actions Change the Clay vs Code Decision',
+        type: 'pro-tip',
+        content:
+          "Before dual currency, the decision to move a workflow out of Clay was about credit cost vs time cost. Now there's a second meter. Every HTTP API call in Clay costs an Action. The same call from a Python script costs nothing. Every Claygent research task in Clay costs an Action plus Data Credits. The same research via Claude Code costs your subscription, which you're already paying. This doesn't mean leave Clay. It means be intentional about what stays in Clay (orchestration UI, visual workflows, team collaboration) and what moves to code (high-volume API calls, repetitive research, batch operations). The dual currency makes the boundary clearer.",
       },
     ],
   },

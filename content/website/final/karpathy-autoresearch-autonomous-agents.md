@@ -61,4 +61,8 @@ Karpathy built a demo. the pattern behind it is infrastructure.
 
 if you're building agent systems, study the constraint design more than the code. the repo is MIT licensed. the pattern is free.
 
+for more on Karpathy's repos and why GTM engineers should study them: [who is Andrej Karpathy](https://shawnos.ai/blog/who-is-andrej-karpathy) and [Karpathy repos for GTM engineers](https://thegtmos.ai/blog/karpathy-repos-for-gtm-engineers).
+
+Boris Cherny built the same paradigm into Claude Code with CLAUDE.md. The full connection: [Boris Cherny and Claude Code context engineering](https://shawnos.ai/blog/boris-cherny-claude-code-context-engineering).
+
 [github.com/karpathy/autoresearch](https://github.com/karpathy/autoresearch)
