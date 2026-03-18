@@ -2,7 +2,7 @@
 title: "karpathy's repos and what GTM engineers should take from each one"
 date: "2026-03-17"
 excerpt: "Andrej Karpathy's GitHub isn't just ML research. Each repo demonstrates an architecture pattern that applies directly to GTM systems. Here's the breakdown."
-category: "methodology"
+category: "context-engineering"
 featured: false
 ---
 

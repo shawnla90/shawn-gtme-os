@@ -2,7 +2,7 @@
 title: "what a go-to-market engineer actually does"
 date: "2026-03-06"
 excerpt: "The role sits between SDR and infrastructure engineer. Here's what it looks like in practice - the tools, the evaluations, and why independence matters."
-category: "gtm"
+category: "gtm-engineering"
 ---
 
 **tl;dr:** a go-to-market engineer is someone who took the tribal knowledge from doing SDR work and turned it into infrastructure. not a developer who read about sales. an operator who got tired of clicking and started building systems.

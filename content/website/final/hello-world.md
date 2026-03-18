@@ -2,6 +2,7 @@
 title: "Hello, World"
 date: "2026-02-13"
 excerpt: "The first post from ShawnOS.ai. Where GTM engineering meets building in public."
+category: "ships"
 ---
 
 **tl;dr:** This is post zero. ShawnOS.ai is a system that happens to have a URL. Three websites, one monorepo, an RPG progression system, and daily build logs. Built from scratch by someone who didn't know what DNS was two weeks before launch.

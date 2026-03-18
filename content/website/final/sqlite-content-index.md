@@ -2,6 +2,7 @@
 title: "Querying Your Repo Like a Database"
 date: "2026-02-22"
 excerpt: "100+ content files across 6 platforms became opaque. So I built a SQLite index that makes the entire repo queryable from the command line."
+category: "methodology"
 ---
 
 **tl;dr:** 100+ content files across 6 platforms were impossible to query from the file system. So I built a SQLite index that makes the entire repo queryable from the command line. One script, 9 tables, zero external dependencies. It even found its own content gap.

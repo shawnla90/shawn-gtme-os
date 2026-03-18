@@ -2,7 +2,7 @@
 title: "Claude Code Just Went 5x: 1M Context Window Changes Everything for Builders"
 date: "2026-03-13"
 excerpt: "Claude Code v2.1.75 dropped a 1M context window. 5x more room, same pricing. Here's what that actually means when you're building real systems, not toy demos."
-category: "ships"
+category: "context-engineering"
 featured: true
 ---
 

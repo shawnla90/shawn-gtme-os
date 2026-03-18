@@ -2,6 +2,7 @@
 title: "The Anti Lead Magnet"
 date: "2026-02-22"
 excerpt: "Why importing someone else's skill pack into your system is the fastest way to destroy what you've built. And why everything lives on three open websites instead."
+category: "ships"
 ---
 
 **tl;dr:** Importing someone else's skill pack into your AI repo is like equipping endgame gear on a level-one character. Build your own system one skill at a time. Everything lives on three open websites instead of gated downloads because static knowledge in a dynamic space is dead knowledge.

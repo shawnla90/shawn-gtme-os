@@ -2,7 +2,7 @@
 title: "Karpathy's Autoresearch and the Agent Loop That Changes Everything"
 date: "2026-03-08"
 excerpt: "Andrej Karpathy open sourced a repo that lets AI agents run ML research autonomously overnight. The code isn't the point. The pattern is."
-category: "methodology"
+category: "context-engineering"
 featured: true
 ---
 

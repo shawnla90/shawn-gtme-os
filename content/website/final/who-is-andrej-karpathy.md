@@ -2,7 +2,7 @@
 title: "who is andrej karpathy and why GTM engineers should pay attention"
 date: "2026-03-17"
 excerpt: "Karpathy isn't just an AI researcher. His repos are blueprints for how systems compound. Here's why a GTM engineer cares about someone training neural nets."
-category: "methodology"
+category: "context-engineering"
 featured: true
 ---
 

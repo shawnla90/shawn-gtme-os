@@ -2,6 +2,7 @@
 title: "How to Set Up Your Own AI Assistant Through Claude Code"
 date: "2026-02-23"
 excerpt: "I tried separate AI platforms, burned through API credits, and landed on the simplest architecture possible. Here's the full setup: CLAUDE.md, soul files, SQLite persistence, a DNA evolution system, 50+ skills, and 9 MCP servers. Updated weekly."
+category: "context-engineering"
 ---
 
 **tl;dr:** You don't need a separate AI platform if you're already paying for Claude Code Max. I consolidated everything into one CLI, one repo, one subscription. Soul files, SQLite persistence, 50+ skills, 9 MCP servers. This is the full setup, updated as the system evolves.

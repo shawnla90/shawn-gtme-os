@@ -2,7 +2,7 @@
 title: "boris cherny built claude code. here's why his architectural decisions matter"
 date: "2026-03-17"
 excerpt: "The creator of Claude Code ships 20-30 PRs a day running 5 parallel instances. His workflow reveals the same paradigm Karpathy's repos demonstrate: context is the programming surface."
-category: "methodology"
+category: "context-engineering"
 featured: true
 ---
 

@@ -2,6 +2,7 @@
 title: "How I Built a Video Rendering System in React"
 date: "2026-02-22"
 excerpt: "No GPU, no After Effects. Just React components, Remotion, and the same monorepo that runs three websites."
+category: "ships"
 ---
 
 **tl;dr:** I needed promo videos for three brands across three aspect ratios. Instead of After Effects or Canva, I built the video system in React using Remotion inside the same monorepo that runs the websites. Same design tokens, same data layer, zero manual exports.

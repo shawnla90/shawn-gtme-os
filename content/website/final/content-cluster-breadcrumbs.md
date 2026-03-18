@@ -2,6 +2,7 @@
 title: "Content Clusters and the Breadcrumb Protocol"
 date: "2026-02-22"
 excerpt: "Three sites, one parent keyword, and a deliberate topology that tells search engines and AI platforms exactly how everything connects."
+category: "methodology"
 ---
 
 **tl;dr:** content clusters are how you tell search engines and AI platforms that your site owns a topic. the breadcrumb protocol is the cross-site navigation system that connects three websites into one content graph. taxonomy.yaml, canonical routing, and bidirectional related arrays handle the wiring.

@@ -2,6 +2,7 @@
 title: "Google just shipped a CLI that wraps every Workspace API"
 date: "2026-03-06"
 excerpt: "gws is a new CLI that turns every Google Workspace API into shell commands with 89 agent skills for Claude Code. I set it up, tested it against real GTM work, picked 27 skills worth having, and learned why you should not load them all at once."
+category: "ships"
 ---
 
 **tl;dr:** Google dropped a CLI called `gws` that wraps every Workspace API into shell commands with 89 agent skills for Claude Code. I tested it, picked the 27 skills worth having, and learned the hard way that loading them all at once wrecks your context window. Here's the full setup and the skills worth installing.

@@ -2,6 +2,7 @@
 title: "Why I Stopped Paying for API Calls and Built My Own AI Chat"
 date: "2026-02-22"
 excerpt: "I was spending hundreds per month on API calls to chat with my AI agent. Then I realized I was already paying for unlimited access. Here's the CLI-to-chat bridge pattern that changed everything."
+category: "context-engineering"
 ---
 
 **tl;dr:** I was spending $50-100/day on API calls for a separate AI chat platform. Then I realized Claude Code Max already gives unlimited CLI access. One afternoon later, I had a PWA chat interface powered by `claude -p` with zero marginal cost. The repo is the system.

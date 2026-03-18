@@ -2,7 +2,7 @@
 title: "the reddit mastery wiki: 1,089 karma in 30 days with zero ads"
 date: "2026-03-16"
 excerpt: "the complete breakdown of how i built real authority on Reddit in one month. 7 post types, commenting strategy, subreddit selection, and the exact numbers behind every move. no gatekeeping."
-category: "growth"
+category: "web-development"
 featured: true
 keywords:
   - Reddit growth strategy 2026

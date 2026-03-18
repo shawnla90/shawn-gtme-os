@@ -2,6 +2,7 @@
 title: "parallel-safe context handoffs for Claude Code"
 date: "2026-02-27"
 excerpt: "I run 4-6 Claude Code terminals at once. The single handoff file worked until it didn't. Here's the parallel-safe architecture I replaced it with."
+category: "methodology"
 ---
 
 **tl;dr:** if you run multiple Claude Code terminals, a single handoff file silently loses context every day. the fix is a directory-based system with timestamped files, read-all-on-start, and mark-done consumption. took 30 minutes to implement and eliminated all context loss across parallel sessions.

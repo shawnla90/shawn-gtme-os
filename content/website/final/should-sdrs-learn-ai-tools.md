@@ -2,7 +2,7 @@
 title: "should your SDR team learn AI tools (yes)"
 date: "2026-03-06"
 excerpt: "The SDR role is evolving into something more technical. The ones learning now will become the go-to-market engineers companies need."
-category: "gtm"
+category: "gtm-engineering"
 ---
 
 **tl;dr:** yes. the domain knowledge you already have is the hard part. the tools are the easy part. SDRs who learn AI tooling now are building the muscle that turns them into GTM engineers companies can't find on job boards.
