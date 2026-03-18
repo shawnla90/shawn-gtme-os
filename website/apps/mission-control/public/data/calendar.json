@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-17T04:04:27.968Z",
+  "generated": "2026-03-18T04:04:10.597Z",
   "events": [
     {
-      "id": "commit-40b960c",
-      "title": "refactor(reddit): restructure page flow — types → rules → re",
+      "id": "commit-e73a1b8",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 23:33)",
       "type": "system",
-      "datetime": "2026-03-16T23:48:51-04:00",
+      "datetime": "2026-03-17T23:33:55-04:00",
       "status": "completed",
-      "description": "refactor(reddit): restructure page flow — types → rules → receipts",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 23:33)",
       "metadata": {
-        "commitHash": "40b960c"
+        "commitHash": "e73a1b8"
       }
     },
     {
-      "id": "commit-26a810f",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-16 23:27)",
+      "id": "commit-226ac46",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 22:33)",
       "type": "system",
-      "datetime": "2026-03-16T23:27:09-04:00",
+      "datetime": "2026-03-17T22:33:37-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-16 23:27)",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 22:33)",
       "metadata": {
-        "commitHash": "26a810f"
+        "commitHash": "226ac46"
       }
     },
     {
-      "id": "commit-a703b38",
-      "title": "feat(reddit): text-first evidence cards with screenshot togg",
+      "id": "commit-72ff921",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 21:33)",
       "type": "system",
-      "datetime": "2026-03-16T23:10:13-04:00",
+      "datetime": "2026-03-17T21:33:20-04:00",
       "status": "completed",
-      "description": "feat(reddit): text-first evidence cards with screenshot toggle",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 21:33)",
       "metadata": {
-        "commitHash": "a703b38"
+        "commitHash": "72ff921"
       }
     },
     {
-      "id": "commit-bc08280",
-      "title": "wip(reddit): integrate Reddit brand assets into page design",
+      "id": "commit-e43d23a",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 20:33)",
       "type": "system",
-      "datetime": "2026-03-16T22:44:41-04:00",
+      "datetime": "2026-03-17T20:33:03-04:00",
       "status": "completed",
-      "description": "wip(reddit): integrate Reddit brand assets into page design",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 20:33)",
       "metadata": {
-        "commitHash": "bc08280"
+        "commitHash": "e43d23a"
       }
     },
     {
-      "id": "commit-89bf9ea",
-      "title": "feat(subscribe): add Telegram + Google Sheet notifications o",
+      "id": "commit-66748d8",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 19:32)",
       "type": "system",
-      "datetime": "2026-03-16T22:34:06-04:00",
+      "datetime": "2026-03-17T19:32:47-04:00",
       "status": "completed",
-      "description": "feat(subscribe): add Telegram + Google Sheet notifications on signup",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 19:32)",
       "metadata": {
-        "commitHash": "89bf9ea"
+        "commitHash": "66748d8"
       }
     },
     {
-      "id": "commit-da3eb06",
-      "title": "wip(reddit): add comments guide with 6 comment types + tabbe",
+      "id": "commit-9d3cb41",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 18:32)",
       "type": "system",
-      "datetime": "2026-03-16T22:34:02-04:00",
+      "datetime": "2026-03-17T18:32:30-04:00",
       "status": "completed",
-      "description": "wip(reddit): add comments guide with 6 comment types + tabbed UI",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 18:32)",
       "metadata": {
-        "commitHash": "da3eb06"
+        "commitHash": "9d3cb41"
       }
     },
     {
-      "id": "commit-2a22f6f",
-      "title": "chore: sync Reddit cache — 18 posts (2026-03-16 22:26)",
+      "id": "commit-0a6df6d",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 17:32)",
       "type": "system",
-      "datetime": "2026-03-16T22:26:53-04:00",
+      "datetime": "2026-03-17T17:32:13-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 18 posts (2026-03-16 22:26)",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 17:32)",
       "metadata": {
-        "commitHash": "2a22f6f"
+        "commitHash": "0a6df6d"
       }
     },
     {
-      "id": "commit-f570ab4",
-      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 21:26)",
+      "id": "commit-d758067",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 16:31)",
       "type": "system",
-      "datetime": "2026-03-16T21:26:35-04:00",
+      "datetime": "2026-03-17T16:31:56-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 21:26)",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 16:31)",
       "metadata": {
-        "commitHash": "f570ab4"
+        "commitHash": "d758067"
       }
     },
     {
-      "id": "commit-b9e430c",
-      "title": "fix(subscribe): use PostHog server-side capture instead of f",
+      "id": "commit-689d13a",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 15:31)",
       "type": "system",
-      "datetime": "2026-03-16T21:20:33-04:00",
+      "datetime": "2026-03-17T15:31:40-04:00",
       "status": "completed",
-      "description": "fix(subscribe): use PostHog server-side capture instead of filesystem",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 15:31)",
       "metadata": {
-        "commitHash": "b9e430c"
+        "commitHash": "689d13a"
       }
     },
     {
-      "id": "commit-661b142",
-      "title": "wip(reddit): Reddit Growth Playbook page + evidence screensh",
+      "id": "commit-359d1a6",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 14:31)",
       "type": "system",
-      "datetime": "2026-03-16T21:19:28-04:00",
+      "datetime": "2026-03-17T14:31:23-04:00",
       "status": "completed",
-      "description": "wip(reddit): Reddit Growth Playbook page + evidence screenshots",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 14:31)",
       "metadata": {
-        "commitHash": "661b142"
+        "commitHash": "359d1a6"
       }
     },
     {
-      "id": "commit-dd14aa1",
-      "title": "fix(shared): add subscribe exports to package.json",
+      "id": "commit-c832067",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 13:31)",
       "type": "system",
-      "datetime": "2026-03-16T20:41:33-04:00",
+      "datetime": "2026-03-17T13:31:06-04:00",
       "status": "completed",
-      "description": "fix(shared): add subscribe exports to package.json",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 13:31)",
       "metadata": {
-        "commitHash": "dd14aa1"
+        "commitHash": "c832067"
       }
     },
     {
-      "id": "commit-74dae19",
-      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 20:26)",
+      "id": "commit-32dfef0",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 12:30)",
       "type": "system",
-      "datetime": "2026-03-16T20:26:15-04:00",
+      "datetime": "2026-03-17T12:30:49-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 20:26)",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 12:30)",
       "metadata": {
-        "commitHash": "74dae19"
+        "commitHash": "32dfef0"
       }
     },
     {
-      "id": "commit-708bf14",
-      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 19:53)",
+      "id": "commit-093e3d2",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 11:30)",
       "type": "system",
-      "datetime": "2026-03-16T19:53:18-04:00",
+      "datetime": "2026-03-17T11:30:33-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 19:53)",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 11:30)",
       "metadata": {
-        "commitHash": "708bf14"
+        "commitHash": "093e3d2"
       }
     },
     {
-      "id": "commit-0558707",
-      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 18:53)",
+      "id": "commit-88e14c9",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 10:30)",
       "type": "system",
-      "datetime": "2026-03-16T18:53:00-04:00",
+      "datetime": "2026-03-17T10:30:16-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 18:53)",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 10:30)",
       "metadata": {
-        "commitHash": "0558707"
+        "commitHash": "88e14c9"
       }
     },
     {
-      "id": "commit-abedf8a",
-      "title": "chore: sync Reddit cache — 17 posts (2026-03-16 17:52)",
+      "id": "commit-3a016bb",
+      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 09:29)",
       "type": "system",
-      "datetime": "2026-03-16T17:52:40-04:00",
+      "datetime": "2026-03-17T09:29:59-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 17 posts (2026-03-16 17:52)",
+      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 09:29)",
       "metadata": {
-        "commitHash": "abedf8a"
+        "commitHash": "3a016bb"
       }
     }
   ],

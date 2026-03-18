@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-17T04:00:12.000Z",
+  "generated": "2026-03-18T04:00:14.000Z",
   "totals": {
-    "total_content": 211,
+    "total_content": 218,
     "total_drafts": 123,
-    "total_final": 88,
-    "total_words": 131954,
+    "total_final": 95,
+    "total_words": 147160,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
@@ -16,29 +16,29 @@
       "total": 60,
       "words": 33422
     },
+    "nio-log": {
+      "draft": 0,
+      "final": 28,
+      "total": 28,
+      "words": 20608
+    },
     "reddit": {
       "draft": 22,
       "final": 0,
       "total": 22,
       "words": 9204
     },
+    "website": {
+      "draft": 1,
+      "final": 35,
+      "total": 36,
+      "words": 46571
+    },
     "x": {
       "draft": 45,
       "final": 11,
       "total": 56,
       "words": 17662
-    },
-    "nio-log": {
-      "draft": 0,
-      "final": 27,
-      "total": 27,
-      "words": 19904
-    },
-    "website": {
-      "draft": 1,
-      "final": 29,
-      "total": 30,
-      "words": 32069
     },
     "substack": {
       "draft": 11,
@@ -58,6 +58,17 @@
       "arc": null,
       "word_count": 454,
       "file_path": "content/linkedin/drafts/2026-03-17_going-back-on-my-own.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "MONDAY. SIX AUTOMATED REDDIT SYNCS OVERNIGHT,",
+      "slug": "2026-03-17",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 704,
+      "file_path": "content/nio-log/2026-03-17.md"
     },
     {
       "platform": "reddit",
@@ -91,6 +102,72 @@
       "arc": null,
       "word_count": 357,
       "file_path": "content/reddit/drafts/2026-03-17_pipe-bomb-gtmengineer.md"
+    },
+    {
+      "platform": "website",
+      "title": "boris cherny built claude code. here's why his architectural decisions matter",
+      "slug": "boris-cherny-claude-code-context-engineering",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1268,
+      "file_path": "content/website/final/boris-cherny-claude-code-context-engineering.md"
+    },
+    {
+      "platform": "website",
+      "title": "clay certification is on hold. here's what that tells you about where Clay is headed",
+      "slug": "clay-certification-on-hold-what-it-means",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1012,
+      "file_path": "content/website/final/clay-certification-on-hold-what-it-means.md"
+    },
+    {
+      "platform": "website",
+      "title": "karpathy's repos and what GTM engineers should take from each one",
+      "slug": "karpathy-repos-for-gtm-engineers",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1176,
+      "file_path": "content/website/final/karpathy-repos-for-gtm-engineers.md"
+    },
+    {
+      "platform": "website",
+      "title": "linkedin messaging best practices for 2026",
+      "slug": "linkedin-messaging-best-practices-2026",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1276,
+      "file_path": "content/website/final/linkedin-messaging-best-practices-2026.md"
+    },
+    {
+      "platform": "website",
+      "title": "who is andrej karpathy and why GTM engineers should pay attention",
+      "slug": "who-is-andrej-karpathy",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1138,
+      "file_path": "content/website/final/who-is-andrej-karpathy.md"
+    },
+    {
+      "platform": "website",
+      "title": "why I believe in HeyReach",
+      "slug": "why-i-believe-in-heyreach",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1210,
+      "file_path": "content/website/final/why-i-believe-in-heyreach.md"
     },
     {
       "platform": "x",
@@ -155,7 +232,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1273,
+      "word_count": 1521,
       "file_path": "content/website/final/6-weeks-of-building-with-claude-code.md"
     },
     {
@@ -166,7 +243,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 3183,
+      "word_count": 3501,
       "file_path": "content/website/final/reddit-mastery-wiki.md"
     },
     {
@@ -353,7 +430,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 850,
+      "word_count": 1086,
       "file_path": "content/website/final/context-handoff-engine-open-source.md"
     },
     {
@@ -364,7 +441,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1161,
+      "word_count": 1394,
       "file_path": "content/website/final/structured-divergence.md"
     },
     {
@@ -375,7 +452,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 949,
+      "word_count": 1244,
       "file_path": "content/website/final/website-with-soul-open-source.md"
     },
     {
@@ -520,83 +597,6 @@
       "arc": null,
       "word_count": 363,
       "file_path": "content/reddit/drafts/2026-03-13_gws-cli-claudecode.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "move skills there, symlink back when needed",
-      "slug": "gws-cli-gtmbuilders",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 320,
-      "file_path": "content/reddit/drafts/2026-03-13_gws-cli-gtmbuilders.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "gws cli gtmengineer",
-      "slug": "gws-cli-gtmengineer",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 354,
-      "file_path": "content/reddit/drafts/2026-03-13_gws-cli-gtmengineer.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Just Went 5x: 1M Context Window Changes Everything for Builders",
-      "slug": "claude-code-1m-context-window",
-      "date": "2026-03-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 768,
-      "file_path": "content/website/final/claude-code-1m-context-window.md"
-    },
-    {
-      "platform": "website",
-      "title": "I haven't opened a CMS editor in months",
-      "slug": "terminal-to-landing-page-90-seconds",
-      "date": "2026-03-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 583,
-      "file_path": "content/website/final/terminal-to-landing-page-90-seconds.md"
-    },
-    {
-      "platform": "x",
-      "title": "Thread 1: The Builder's Take",
-      "slug": "claude-code-1m-thread-1",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 314,
-      "file_path": "content/x/drafts/2026-03-13_claude-code-1m-thread-1.md"
-    },
-    {
-      "platform": "x",
-      "title": "Thread 2: The Technical Breakdown",
-      "slug": "claude-code-1m-thread-2",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 209,
-      "file_path": "content/x/drafts/2026-03-13_claude-code-1m-thread-2.md"
-    },
-    {
-      "platform": "x",
-      "title": "Thread 3: The Friday Hype",
-      "slug": "claude-code-1m-thread-3",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 201,
-      "file_path": "content/x/drafts/2026-03-13_claude-code-1m-thread-3.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-17",
+      "grade": "C",
+      "score": 258,
+      "words": 21421,
+      "shipped": 19,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-16",
       "grade": "B",
       "score": 302,
@@ -1213,14 +1221,6 @@
       "score": 109,
       "words": 9452,
       "shipped": 11,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-03",
-      "grade": "D",
-      "score": 190,
-      "words": 10565,
-      "shipped": 20,
       "cost": 0.0
     }
   ]
