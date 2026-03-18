@@ -26,6 +26,7 @@ const CATEGORY_CONFIG: Record<string, { label: string; color: string }> = {
   'ships': { label: 'Ships', color: '#D2A8FF' },
   'context-engineering': { label: 'Context Engineering', color: '#FF7B72' },
   'web-development': { label: 'Web Dev', color: '#FFA657' },
+  'claude-daily': { label: 'Claude Daily', color: '#79C0FF' },
 }
 
 function getCategoryConfig(key?: string) {

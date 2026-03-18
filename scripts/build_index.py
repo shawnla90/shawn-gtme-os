@@ -159,6 +159,19 @@ CREATE TABLE IF NOT EXISTS blog_generations (
     UNIQUE(date, slug)
 );
 
+-- Content intelligence pipeline runs (append-only, survives rebuilds)
+CREATE TABLE IF NOT EXISTS content_intel_runs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    date TEXT NOT NULL,
+    phase TEXT NOT NULL DEFAULT 'all',
+    posts_collected INTEGER,
+    angles_generated INTEGER,
+    blog_published INTEGER DEFAULT 0,
+    slack_notified INTEGER DEFAULT 0,
+    created_at TEXT DEFAULT (datetime('now')),
+    UNIQUE(date, phase)
+);
+
 -- FTS5 for content search (topic overlap, voice matching)
 CREATE VIRTUAL TABLE IF NOT EXISTS content_fts USING fts5(
     title, body, content=content, content_rowid=rowid

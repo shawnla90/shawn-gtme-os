@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.shawnos.content-intel</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/opt/homebrew/bin/python3</string>
+    <string>/Users/shawnos.ai/shawn-gtme-os/scripts/daily_content_intel.py</string>
+  </array>
+
+  <!-- Run daily at 10:00 AM -->
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>10</integer>
+    <key>Minute</key>
+    <integer>0</integer>
+  </dict>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/Users/shawnos.ai/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/shawnos.ai</string>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/content-intel-stdout.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/content-intel-stderr.log</string>
+
+</dict>
+</plist>

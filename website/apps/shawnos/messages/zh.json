@@ -21,7 +21,8 @@
     "updates": "更新",
     "search": "搜索",
     "api": "API",
-    "repos": "代码仓库"
+    "repos": "代码仓库",
+    "claudeDaily": "Claude Daily"
   },
   "Footer": {
     "copyright": "© {year} ShawnOS.ai",

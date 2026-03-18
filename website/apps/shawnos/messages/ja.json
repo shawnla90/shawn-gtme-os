@@ -21,7 +21,8 @@
     "updates": "更新情報",
     "search": "検索",
     "api": "API",
-    "repos": "RepoHub"
+    "repos": "RepoHub",
+    "claudeDaily": "Claude Daily"
   },
   "Footer": {
     "copyright": "© {year} ShawnOS.ai",

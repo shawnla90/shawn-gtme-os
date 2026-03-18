@@ -199,6 +199,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             { href: lp('/'), label: nav('home') },
             { href: lp('/services'), label: nav('services') },
             { href: lp('/blog'), label: nav('blog') },
+            { href: lp('/claude-daily'), label: nav('claudeDaily') },
             { href: lp('/media'), label: nav('media') },
             { href: lp('/about'), label: nav('about') },
             { href: '#', label: nav('wiki'), children: [

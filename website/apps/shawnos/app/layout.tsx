@@ -38,6 +38,7 @@ export const metadata: Metadata = {
         { url: '/feed/daily-logs.xml', title: 'ShawnOS.ai — Daily Logs' },
         { url: '/feed/geo.xml', title: 'ShawnOS.ai — GEO Wiki' },
         { url: '/feed/updates.xml', title: 'ShawnOS.ai — Latest Updates' },
+        { url: '/feed/claude-daily.xml', title: 'ShawnOS.ai — Claude Code Daily' },
       ],
     },
   },
