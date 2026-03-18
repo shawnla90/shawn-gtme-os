@@ -96,6 +96,9 @@ export default async function BlogPost({
   const post = getPostBySlug(slug, contentDir)
   const htmlContent = await markdownToHtml(post.content)
 
+  const postUrl = `${SITE_URL}/blog/${slug}`
+  const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt)}`
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -105,9 +108,23 @@ export default async function BlogPost({
     dateModified: post.date,
     author: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
     publisher: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
-    mainEntityOfPage: `${SITE_URL}/blog/${slug}`,
-    url: `${SITE_URL}/blog/${slug}`,
+    mainEntityOfPage: postUrl,
+    url: postUrl,
+    image: ogImage,
+    wordCount: post.wordCount,
+    inLanguage: localeMap[locale] || 'en-US',
     ...(post.category && { articleSection: post.category }),
+  }
+
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: post.title,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['.blog-post-content h1', '.blog-post-content .prose'],
+    },
+    url: postUrl,
   }
 
   return (
@@ -128,10 +145,14 @@ export default async function BlogPost({
       */}
       <div className="blog-post-layout">
         {/* Main content column */}
-        <article className="blog-post-content" style={{ fontFamily: 'var(--font-mono)' }}>
+        <article className="blog-post-content" style={{ fontFamily: 'var(--font-sans)' }}>
           <script
             type="application/ld+json"
             dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+          />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
           />
 
           <Link
