@@ -310,32 +310,31 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                   boxShadow: '0 0 40px #4EC37310',
                 }}
               />
-              {/* Back C - angled */}
+              {/* Top C - upper left */}
               <pre
                 style={{
                   ...blockTextBase,
                   position: 'absolute',
                   top: '50%',
                   left: '50%',
-                  transform: 'translate(-50%, -50%) rotate(-18deg) translate(4px, -2px)',
-                  fontSize: 'clamp(14px, 2.5vw, 28px)',
-                  color: '#3A9A5A',
-                  textShadow: '0 0 12px #3A9A5A30',
-                  opacity: 0.7,
+                  transform: 'translate(-58%, -62%)',
+                  fontSize: 'clamp(12px, 2.2vw, 24px)',
+                  color: GREEN,
+                  textShadow: `0 0 16px #4EC37340, 0 0 4px #4EC37330`,
                 }}
               >
                 {C_ART}
               </pre>
-              {/* Front C - straight */}
+              {/* Bottom C - lower right, full opacity */}
               <pre
                 style={{
                   ...blockTextBase,
                   position: 'absolute',
                   top: '50%',
                   left: '50%',
-                  transform: 'translate(-50%, -50%)',
-                  fontSize: 'clamp(14px, 2.5vw, 28px)',
-                  color: GREEN,
+                  transform: 'translate(-38%, -38%)',
+                  fontSize: 'clamp(12px, 2.2vw, 24px)',
+                  color: '#6FD98F',
                   textShadow: `0 0 16px #4EC37340, 0 0 4px #4EC37330`,
                 }}
               >
