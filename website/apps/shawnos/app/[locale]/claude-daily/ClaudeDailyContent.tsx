@@ -14,67 +14,172 @@ interface Post {
   featured?: boolean
 }
 
-/* ── brand color ──────────────────────────────────── */
+/* ── brand ────────────────────────────────────────── */
 
 const GREEN = '#4EC373'
+const GREEN_BORDER = '#3A9A5A'
 const GREEN_DIM = '#4EC37344'
-const GREEN_GLOW = '#4EC37322'
+const GREEN_GLOW = '#4EC37318'
 
-/* ── CC logo SVG ──────────────────────────────────── */
+/* ── pixel font (6-wide × 8-tall, 2px-stroke style) ─ */
 
-function CCLogo() {
+const FONT: Record<string, string[]> = {
+  C: ['.XXXX.', 'XX..XX', 'XX....', 'XX....', 'XX....', 'XX....', 'XX..XX', '.XXXX.'],
+  L: ['XX....', 'XX....', 'XX....', 'XX....', 'XX....', 'XX....', 'XX....', 'XXXXXX'],
+  A: ['.XXXX.', 'XX..XX', 'XX..XX', 'XXXXXX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX'],
+  U: ['XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', '.XXXX.'],
+  D: ['XXXX..', 'XX.XX.', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX.XX.', 'XXXX..'],
+  E: ['XXXXXX', 'XX....', 'XX....', 'XXXXX.', 'XX....', 'XX....', 'XX....', 'XXXXXX'],
+  I: ['XXXX', '.XX.', '.XX.', '.XX.', '.XX.', '.XX.', '.XX.', 'XXXX'],
+  Y: ['XX..XX', 'XX..XX', '.XXXX.', '..XX..', '..XX..', '..XX..', '..XX..', '..XX..'],
+  ' ': ['...', '...', '...', '...', '...', '...', '...', '...'],
+}
+
+/* ── pixel text renderer ──────────────────────────── */
+
+function PixelText({ text, cellSize = 6, gap = 1.5 }: { text: string; cellSize?: number; gap?: number }) {
+  const pitch = cellSize + gap
+  const rects: React.ReactElement[] = []
+  let cursorX = 0
+
+  for (let ci = 0; ci < text.length; ci++) {
+    const char = text[ci]
+    const grid = FONT[char]
+    if (!grid) { cursorX += 3; continue }
+
+    const charWidth = grid[0].length
+
+    for (let row = 0; row < grid.length; row++) {
+      for (let col = 0; col < grid[row].length; col++) {
+        if (grid[row][col] === 'X') {
+          rects.push(
+            <rect
+              key={`${ci}-${row}-${col}`}
+              x={(cursorX + col) * pitch}
+              y={row * pitch}
+              width={cellSize}
+              height={cellSize}
+              fill={GREEN}
+              stroke={GREEN_BORDER}
+              strokeWidth={0.4}
+              rx={0.8}
+            />
+          )
+        }
+      }
+    }
+
+    cursorX += charWidth + 1
+  }
+
+  const totalWidth = (cursorX - 1) * pitch
+  const totalHeight = 8 * pitch
+
   return (
     <svg
-      width="220"
-      height="220"
-      viewBox="0 0 220 220"
+      viewBox={`-2 -2 ${totalWidth + 4} ${totalHeight + 4}`}
+      style={{ width: '100%', maxWidth: `${totalWidth * 1.1}px`, height: 'auto' }}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      {/* Glow layer */}
+      <defs>
+        <filter id="pixel-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+        </filter>
+      </defs>
+      <g filter="url(#pixel-glow)" opacity="0.35">
+        {rects}
+      </g>
+      {/* Sharp layer */}
+      <g>{rects}</g>
+    </svg>
+  )
+}
+
+/* ── CC pixel icon ────────────────────────────────── */
+
+function CCIcon() {
+  const cell = 14
+  const gap = 2
+  const pitch = cell + gap
+  const grid = FONT['C']
+  const charW = 6
+  const rects: React.ReactElement[] = []
+
+  // Two C's side by side
+  const offsets = [0, charW + 1]
+  offsets.forEach((ox, ci) => {
+    grid.forEach((row, ry) => {
+      for (let cx = 0; cx < row.length; cx++) {
+        if (row[cx] === 'X') {
+          rects.push(
+            <rect
+              key={`cc-${ci}-${ry}-${cx}`}
+              x={(ox + cx) * pitch}
+              y={ry * pitch}
+              width={cell}
+              height={cell}
+              fill={GREEN}
+              stroke={GREEN_BORDER}
+              strokeWidth={0.6}
+              rx={1.5}
+            />
+          )
+        }
+      }
+    })
+  })
+
+  const totalW = (charW * 2 + 1) * pitch
+  const totalH = 8 * pitch
+  const pad = 28
+
+  return (
+    <svg
+      width={totalW + pad * 2}
+      height={totalH + pad * 2}
+      viewBox={`${-pad} ${-pad} ${totalW + pad * 2} ${totalH + pad * 2}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: 'block' }}
     >
-      {/* Terminal window frame */}
-      <rect x="10" y="10" width="200" height="200" rx="16" fill="#0d1117" stroke={GREEN_DIM} strokeWidth="1.5" />
+      {/* Dark rounded background */}
+      <rect
+        x={-pad + 4}
+        y={-pad + 4}
+        width={totalW + pad * 2 - 8}
+        height={totalH + pad * 2 - 8}
+        rx={20}
+        fill="#161b22"
+        stroke={GREEN_DIM}
+        strokeWidth={1}
+      />
 
-      {/* Outer glow */}
-      <rect x="10" y="10" width="200" height="200" rx="16" fill="none" stroke={GREEN_GLOW} strokeWidth="6" />
+      {/* Outer glow ring */}
+      <rect
+        x={-pad + 4}
+        y={-pad + 4}
+        width={totalW + pad * 2 - 8}
+        height={totalH + pad * 2 - 8}
+        rx={20}
+        fill="none"
+        stroke={GREEN_GLOW}
+        strokeWidth={8}
+      />
 
-      {/* Traffic light dots */}
-      <circle cx="34" cy="32" r="5" fill="#FF5F57" opacity="0.7" />
-      <circle cx="52" cy="32" r="5" fill="#FEBC2E" opacity="0.7" />
-      <circle cx="70" cy="32" r="5" fill={GREEN} opacity="0.7" />
+      {/* Glow layer */}
+      <defs>
+        <filter id="cc-glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+        </filter>
+      </defs>
+      <g filter="url(#cc-glow)" opacity="0.4">
+        {rects}
+      </g>
 
-      {/* Prompt symbol */}
-      <text x="32" y="108" fontFamily="var(--font-mono), 'JetBrains Mono', monospace" fontSize="22" fill={GREEN} opacity="0.5" fontWeight="400">
-        {'>_'}
-      </text>
-
-      {/* CC monogram */}
-      <text x="68" y="118" fontFamily="var(--font-mono), 'JetBrains Mono', monospace" fontSize="72" fill={GREEN} fontWeight="700" letterSpacing="-2">
-        CC
-      </text>
-
-      {/* Blinking cursor */}
-      <rect x="182" y="82" width="3" height="40" fill={GREEN} opacity="0.8">
-        <animate attributeName="opacity" values="0.8;0;0.8" dur="1.2s" repeatCount="indefinite" />
-      </rect>
-
-      {/* Divider line */}
-      <line x1="32" y1="138" x2="188" y2="138" stroke={GREEN_DIM} strokeWidth="1" />
-
-      {/* claude-daily label */}
-      <text x="110" y="162" fontFamily="var(--font-mono), 'JetBrains Mono', monospace" fontSize="13" fill={GREEN} opacity="0.7" textAnchor="middle" letterSpacing="2" fontWeight="500">
-        CLAUDE DAILY
-      </text>
-
-      {/* Subtle scanline effect */}
-      <line x1="32" y1="175" x2="80" y2="175" stroke={GREEN} strokeWidth="1" opacity="0.15" />
-      <line x1="86" y1="175" x2="140" y2="175" stroke={GREEN} strokeWidth="1" opacity="0.1" />
-      <line x1="146" y1="175" x2="188" y2="175" stroke={GREEN} strokeWidth="1" opacity="0.08" />
-
-      {/* Version badge */}
-      <text x="110" y="192" fontFamily="var(--font-mono), 'JetBrains Mono', monospace" fontSize="9" fill={GREEN} opacity="0.35" textAnchor="middle" letterSpacing="1">
-        v1.0 // ecosystem digest
-      </text>
+      {/* Sharp tiles */}
+      <g>{rects}</g>
     </svg>
   )
 }
@@ -95,7 +200,7 @@ const heroInner: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: '48px',
+  gap: '40px',
   maxWidth: '960px',
   width: '100%',
 }
@@ -105,29 +210,12 @@ const heroLeft: React.CSSProperties = {
   minWidth: 0,
 }
 
-const heroRight: React.CSSProperties = {
-  flexShrink: 0,
-}
-
-const heroTitle: React.CSSProperties = {
-  fontSize: 'clamp(32px, 5vw, 56px)',
-  fontWeight: 700,
-  fontFamily: 'var(--font-mono)',
-  lineHeight: 1.15,
-  margin: '0 0 16px',
-  color: 'var(--text-primary)',
-}
-
-const heroTitleAccent: React.CSSProperties = {
-  color: GREEN,
-}
-
 const heroSubtitle: React.CSSProperties = {
-  fontSize: 'clamp(14px, 1.8vw, 18px)',
+  fontSize: 'clamp(13px, 1.6vw, 16px)',
   color: 'var(--text-secondary)',
   fontFamily: 'var(--font-mono)',
   lineHeight: 1.6,
-  margin: '0 0 24px',
+  margin: '20px 0 20px',
 }
 
 const heroMeta: React.CSSProperties = {
@@ -135,26 +223,6 @@ const heroMeta: React.CSSProperties = {
   alignItems: 'center',
   gap: '12px',
   flexWrap: 'wrap',
-}
-
-const subtitleRow: React.CSSProperties = {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '12px',
-  marginBottom: '32px',
-  flexWrap: 'wrap',
-}
-
-const rssLink: React.CSSProperties = {
-  fontSize: '11px',
-  fontWeight: 600,
-  color: GREEN,
-  border: `1px solid ${GREEN_DIM}`,
-  borderRadius: '3px',
-  padding: '2px 8px',
-  textDecoration: 'none',
-  fontFamily: 'var(--font-mono)',
-  letterSpacing: '0.06em',
 }
 
 const countBadge: React.CSSProperties = {
@@ -173,6 +241,18 @@ const liveBadge: React.CSSProperties = {
   fontFamily: 'var(--font-mono)',
   letterSpacing: '0.08em',
   textTransform: 'uppercase' as const,
+}
+
+const rssLink: React.CSSProperties = {
+  fontSize: '11px',
+  fontWeight: 600,
+  color: GREEN,
+  border: `1px solid ${GREEN_DIM}`,
+  borderRadius: '3px',
+  padding: '2px 8px',
+  textDecoration: 'none',
+  fontFamily: 'var(--font-mono)',
+  letterSpacing: '0.06em',
 }
 
 const latestSection: React.CSSProperties = {
@@ -227,7 +307,7 @@ const metaDate: React.CSSProperties = {
   fontFamily: 'var(--font-mono)',
 }
 
-const readLink: React.CSSProperties = {
+const readLinkStyle: React.CSSProperties = {
   fontSize: '12px',
   color: GREEN,
   fontFamily: 'var(--font-mono)',
@@ -263,7 +343,7 @@ const archiveTitle: React.CSSProperties = {
   flex: 1,
 }
 
-const archiveDate: React.CSSProperties = {
+const archiveDateStyle: React.CSSProperties = {
   fontSize: '11px',
   color: 'var(--text-muted)',
   fontFamily: 'var(--font-mono)',
@@ -281,12 +361,6 @@ const emptyState: React.CSSProperties = {
   fontFamily: 'var(--font-mono)',
 }
 
-/* ── responsive helper ────────────────────────────── */
-
-const mobileLogoHide: React.CSSProperties = {
-  ...heroRight,
-}
-
 /* ── component ────────────────────────────────────── */
 
 export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
@@ -300,15 +374,12 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
 
   return (
     <>
-      {/* Custom branded hero with CC logo */}
+      {/* Branded hero with pixel art title + CC icon */}
       <section className="full-bleed" style={heroSection}>
         <div style={heroInner}>
           <MotionReveal variant="fadeUp" delay={0.1}>
             <div style={heroLeft}>
-              <h1 style={heroTitle}>
-                Claude Code{' '}
-                <span style={heroTitleAccent}>Daily</span>
-              </h1>
+              <PixelText text="CLAUDE DAILY" cellSize={7} gap={1.5} />
               <p style={heroSubtitle}>
                 ecosystem digest from the trenches.
                 <br />
@@ -325,13 +396,12 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
           </MotionReveal>
 
           <MotionReveal variant="fadeUp" delay={0.3}>
-            <div style={mobileLogoHide} className="cc-logo-wrap">
-              <CCLogo />
+            <div className="cc-icon-wrap" style={{ flexShrink: 0 }}>
+              <CCIcon />
             </div>
           </MotionReveal>
         </div>
 
-        {/* Scroll indicator */}
         <div
           style={{
             position: 'absolute',
@@ -355,7 +425,6 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
           </div>
         ) : (
           <>
-            {/* Latest digest */}
             {latest && (
               <div style={latestSection}>
                 <div style={latestLabel}>Latest</div>
@@ -381,13 +450,12 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                         <span style={metaDate}>{latest.readingTime} min read</span>
                       </>
                     )}
-                    <span style={readLink}>read &rarr;</span>
+                    <span style={readLinkStyle}>read &rarr;</span>
                   </div>
                 </Link>
               </div>
             )}
 
-            {/* Archive timeline */}
             {archive.length > 0 && (
               <div>
                 <div style={archiveLabel}>Archive</div>
@@ -411,7 +479,7 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                         }}
                       >
                         <span style={archiveTitle}>{post.title}</span>
-                        <time dateTime={post.date} style={archiveDate}>
+                        <time dateTime={post.date} style={archiveDateStyle}>
                           {post.date}
                         </time>
                       </Link>
@@ -424,10 +492,9 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
         )}
       </ScrollRevealSection>
 
-      {/* Hide logo on mobile */}
       <style>{`
-        @media (max-width: 640px) {
-          .cc-logo-wrap { display: none; }
+        @media (max-width: 700px) {
+          .cc-icon-wrap { display: none; }
         }
       `}</style>
     </>
