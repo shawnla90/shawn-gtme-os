@@ -17,169 +17,175 @@ interface Post {
 /* ── brand ────────────────────────────────────────── */
 
 const GREEN = '#4EC373'
-const GREEN_BORDER = '#3A9A5A'
+const GREEN_LIGHT = '#6FD98F'
+const GREEN_DARK = '#3A9A5A'
+const GREEN_BORDER = '#2D7A47'
 const GREEN_DIM = '#4EC37344'
-const GREEN_GLOW = '#4EC37318'
+const GREEN_GLOW = '#4EC37320'
 
-/* ── pixel font (6-wide × 8-tall, 2px-stroke style) ─ */
+/* ══════════════════════════════════════════════════════
+   BLOCK ART DATA — generated via oh-my-logo (block font)
+   Each entry: [col, row] coordinates of filled cells
+   ══════════════════════════════════════════════════════ */
 
-const FONT: Record<string, string[]> = {
-  C: ['.XXXX.', 'XX..XX', 'XX....', 'XX....', 'XX....', 'XX....', 'XX..XX', '.XXXX.'],
-  L: ['XX....', 'XX....', 'XX....', 'XX....', 'XX....', 'XX....', 'XX....', 'XXXXXX'],
-  A: ['.XXXX.', 'XX..XX', 'XX..XX', 'XXXXXX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX'],
-  U: ['XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', '.XXXX.'],
-  D: ['XXXX..', 'XX.XX.', 'XX..XX', 'XX..XX', 'XX..XX', 'XX..XX', 'XX.XX.', 'XXXX..'],
-  E: ['XXXXXX', 'XX....', 'XX....', 'XXXXX.', 'XX....', 'XX....', 'XX....', 'XXXXXX'],
-  I: ['XXXX', '.XX.', '.XX.', '.XX.', '.XX.', '.XX.', '.XX.', 'XXXX'],
-  Y: ['XX..XX', 'XX..XX', '.XXXX.', '..XX..', '..XX..', '..XX..', '..XX..', '..XX..'],
-  ' ': ['...', '...', '...', '...', '...', '...', '...', '...'],
-}
+// "CLAUDE" — 54 cols × 6 rows
+const CLAUDE_COORDS: [number, number][] = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[8,0],[9,0],[10,0],[18,0],[19,0],[20,0],[21,0],[22,0],[23,0],[26,0],[27,0],[28,0],[32,0],[33,0],[34,0],[36,0],[37,0],[38,0],[39,0],[40,0],[41,0],[42,0],[45,0],[46,0],[47,0],[48,0],[49,0],[50,0],[51,0],[52,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[9,1],[10,1],[11,1],[18,1],[19,1],[20,1],[21,1],[22,1],[23,1],[24,1],[25,1],[27,1],[28,1],[29,1],[33,1],[34,1],[35,1],[37,1],[38,1],[39,1],[40,1],[41,1],[42,1],[43,1],[44,1],[46,1],[47,1],[48,1],[49,1],[50,1],[51,1],[52,1],[53,1],[0,2],[1,2],[2,2],[9,2],[10,2],[11,2],[18,2],[19,2],[20,2],[21,2],[22,2],[23,2],[24,2],[25,2],[27,2],[28,2],[29,2],[33,2],[34,2],[35,2],[37,2],[38,2],[39,2],[42,2],[43,2],[44,2],[46,2],[47,2],[48,2],[49,2],[50,2],[51,2],[0,3],[1,3],[2,3],[9,3],[10,3],[11,3],[18,3],[19,3],[20,3],[21,3],[22,3],[23,3],[24,3],[25,3],[27,3],[28,3],[29,3],[33,3],[34,3],[35,3],[37,3],[38,3],[39,3],[42,3],[43,3],[44,3],[46,3],[47,3],[48,3],[49,3],[50,3],[51,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[9,4],[10,4],[11,4],[12,4],[13,4],[14,4],[15,4],[16,4],[18,4],[19,4],[20,4],[23,4],[24,4],[25,4],[27,4],[28,4],[29,4],[30,4],[31,4],[32,4],[33,4],[34,4],[35,4],[37,4],[38,4],[39,4],[40,4],[41,4],[42,4],[43,4],[44,4],[46,4],[47,4],[48,4],[49,4],[50,4],[51,4],[52,4],[53,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[9,5],[10,5],[11,5],[12,5],[13,5],[14,5],[15,5],[16,5],[18,5],[19,5],[20,5],[23,5],[24,5],[25,5],[28,5],[29,5],[30,5],[31,5],[32,5],[33,5],[34,5],[37,5],[38,5],[39,5],[40,5],[41,5],[42,5],[43,5],[46,5],[47,5],[48,5],[49,5],[50,5],[51,5],[52,5],[53,5]]
+const CLAUDE_COLS = 54
+const CLAUDE_ROWS = 6
 
-/* ── pixel text renderer ──────────────────────────── */
+// "DAILY" — 40 cols × 6 rows
+const DAILY_COORDS: [number, number][] = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[10,0],[11,0],[12,0],[13,0],[14,0],[15,0],[18,0],[19,0],[20,0],[22,0],[23,0],[24,0],[31,0],[32,0],[33,0],[37,0],[38,0],[39,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[9,1],[10,1],[11,1],[12,1],[13,1],[14,1],[15,1],[16,1],[18,1],[19,1],[20,1],[22,1],[23,1],[24,1],[31,1],[32,1],[33,1],[34,1],[36,1],[37,1],[38,1],[39,1],[0,2],[1,2],[2,2],[5,2],[6,2],[7,2],[9,2],[10,2],[11,2],[12,2],[13,2],[14,2],[15,2],[16,2],[18,2],[19,2],[20,2],[22,2],[23,2],[24,2],[32,2],[33,2],[34,2],[35,2],[36,2],[37,2],[38,2],[0,3],[1,3],[2,3],[5,3],[6,3],[7,3],[9,3],[10,3],[11,3],[12,3],[13,3],[14,3],[15,3],[16,3],[18,3],[19,3],[20,3],[22,3],[23,3],[24,3],[33,3],[34,3],[35,3],[36,3],[37,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[9,4],[10,4],[11,4],[14,4],[15,4],[16,4],[18,4],[19,4],[20,4],[22,4],[23,4],[24,4],[25,4],[26,4],[27,4],[28,4],[29,4],[34,4],[35,4],[36,4],[0,5],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[9,5],[10,5],[11,5],[14,5],[15,5],[16,5],[18,5],[19,5],[20,5],[22,5],[23,5],[24,5],[25,5],[26,5],[27,5],[28,5],[29,5],[34,5],[35,5],[36,5]]
+const DAILY_COLS = 40
+const DAILY_ROWS = 6
 
-function PixelText({ text, cellSize = 6, gap = 1.5 }: { text: string; cellSize?: number; gap?: number }) {
+// "CC" icon — 17 cols × 6 rows
+const CC_COORDS: [number, number][] = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[9,0],[10,0],[11,0],[12,0],[13,0],[14,0],[15,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[9,1],[10,1],[11,1],[12,1],[13,1],[14,1],[15,1],[16,1],[0,2],[1,2],[2,2],[9,2],[10,2],[11,2],[0,3],[1,3],[2,3],[9,3],[10,3],[11,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[9,4],[10,4],[11,4],[12,4],[13,4],[14,4],[15,4],[16,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[10,5],[11,5],[12,5],[13,5],[14,5],[15,5],[16,5]]
+const CC_COLS = 17
+const CC_ROWS = 6
+
+/* ── block art SVG renderer ───────────────────────── */
+
+function BlockArt({
+  coords,
+  cols,
+  rows,
+  cellSize = 8,
+  gap = 1.5,
+  gradientId,
+  className,
+  style,
+}: {
+  coords: [number, number][]
+  cols: number
+  rows: number
+  cellSize?: number
+  gap?: number
+  gradientId?: string
+  className?: string
+  style?: React.CSSProperties
+}) {
   const pitch = cellSize + gap
-  const rects: React.ReactElement[] = []
-  let cursorX = 0
+  const svgW = cols * pitch
+  const svgH = rows * pitch
+  const pad = 4
 
-  for (let ci = 0; ci < text.length; ci++) {
-    const char = text[ci]
-    const grid = FONT[char]
-    if (!grid) { cursorX += 3; continue }
-
-    const charWidth = grid[0].length
-
-    for (let row = 0; row < grid.length; row++) {
-      for (let col = 0; col < grid[row].length; col++) {
-        if (grid[row][col] === 'X') {
-          rects.push(
-            <rect
-              key={`${ci}-${row}-${col}`}
-              x={(cursorX + col) * pitch}
-              y={row * pitch}
-              width={cellSize}
-              height={cellSize}
-              fill={GREEN}
-              stroke={GREEN_BORDER}
-              strokeWidth={0.4}
-              rx={0.8}
-            />
-          )
-        }
-      }
-    }
-
-    cursorX += charWidth + 1
-  }
-
-  const totalWidth = (cursorX - 1) * pitch
-  const totalHeight = 8 * pitch
+  const fill = gradientId ? `url(#${gradientId})` : GREEN
 
   return (
     <svg
-      viewBox={`-2 -2 ${totalWidth + 4} ${totalHeight + 4}`}
-      style={{ width: '100%', maxWidth: `${totalWidth * 1.1}px`, height: 'auto' }}
+      viewBox={`${-pad} ${-pad} ${svgW + pad * 2} ${svgH + pad * 2}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      style={style}
     >
-      {/* Glow layer */}
       <defs>
-        <filter id="pixel-glow" x="-30%" y="-30%" width="160%" height="160%">
+        {gradientId && (
+          <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor={GREEN_LIGHT} />
+            <stop offset="50%" stopColor={GREEN} />
+            <stop offset="100%" stopColor={GREEN_DARK} />
+          </linearGradient>
+        )}
+        <filter id={`glow-${gradientId || 'default'}`} x="-25%" y="-25%" width="150%" height="150%">
           <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
         </filter>
       </defs>
-      <g filter="url(#pixel-glow)" opacity="0.35">
-        {rects}
+
+      {/* Glow layer */}
+      <g filter={`url(#glow-${gradientId || 'default'})`} opacity="0.3">
+        {coords.map(([c, r], i) => (
+          <rect
+            key={`g${i}`}
+            x={c * pitch}
+            y={r * pitch}
+            width={cellSize}
+            height={cellSize}
+            fill={fill}
+            rx={1}
+          />
+        ))}
       </g>
-      {/* Sharp layer */}
-      <g>{rects}</g>
+
+      {/* Sharp tiles */}
+      <g>
+        {coords.map(([c, r], i) => (
+          <rect
+            key={`t${i}`}
+            x={c * pitch}
+            y={r * pitch}
+            width={cellSize}
+            height={cellSize}
+            fill={fill}
+            stroke={GREEN_BORDER}
+            strokeWidth={0.3}
+            rx={1}
+          />
+        ))}
+      </g>
     </svg>
   )
 }
 
-/* ── CC pixel icon ────────────────────────────────── */
+/* ── CC mascot icon with background ───────────────── */
 
-function CCIcon() {
+function CCMascot() {
   const cell = 14
   const gap = 2
   const pitch = cell + gap
-  const grid = FONT['C']
-  const charW = 6
-  const rects: React.ReactElement[] = []
-
-  // Two C's side by side
-  const offsets = [0, charW + 1]
-  offsets.forEach((ox, ci) => {
-    grid.forEach((row, ry) => {
-      for (let cx = 0; cx < row.length; cx++) {
-        if (row[cx] === 'X') {
-          rects.push(
-            <rect
-              key={`cc-${ci}-${ry}-${cx}`}
-              x={(ox + cx) * pitch}
-              y={ry * pitch}
-              width={cell}
-              height={cell}
-              fill={GREEN}
-              stroke={GREEN_BORDER}
-              strokeWidth={0.6}
-              rx={1.5}
-            />
-          )
-        }
-      }
-    })
-  })
-
-  const totalW = (charW * 2 + 1) * pitch
-  const totalH = 8 * pitch
-  const pad = 28
+  const svgW = CC_COLS * pitch
+  const svgH = CC_ROWS * pitch
+  const pad = 32
 
   return (
     <svg
-      width={totalW + pad * 2}
-      height={totalH + pad * 2}
-      viewBox={`${-pad} ${-pad} ${totalW + pad * 2} ${totalH + pad * 2}`}
+      width={svgW + pad * 2}
+      height={svgH + pad * 2}
+      viewBox={`${-pad} ${-pad} ${svgW + pad * 2} ${svgH + pad * 2}`}
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: 'block' }}
     >
-      {/* Dark rounded background */}
-      <rect
-        x={-pad + 4}
-        y={-pad + 4}
-        width={totalW + pad * 2 - 8}
-        height={totalH + pad * 2 - 8}
-        rx={20}
+      {/* Dark circle background */}
+      <circle
+        cx={svgW / 2}
+        cy={svgH / 2}
+        r={Math.max(svgW, svgH) / 2 + 20}
         fill="#161b22"
-        stroke={GREEN_DIM}
-        strokeWidth={1}
       />
-
-      {/* Outer glow ring */}
-      <rect
-        x={-pad + 4}
-        y={-pad + 4}
-        width={totalW + pad * 2 - 8}
-        height={totalH + pad * 2 - 8}
-        rx={20}
+      <circle
+        cx={svgW / 2}
+        cy={svgH / 2}
+        r={Math.max(svgW, svgH) / 2 + 20}
         fill="none"
         stroke={GREEN_GLOW}
-        strokeWidth={8}
+        strokeWidth={3}
       />
 
-      {/* Glow layer */}
       <defs>
+        <linearGradient id="cc-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={GREEN_LIGHT} />
+          <stop offset="40%" stopColor={GREEN} />
+          <stop offset="100%" stopColor={GREEN_DARK} />
+        </linearGradient>
         <filter id="cc-glow" x="-30%" y="-30%" width="160%" height="160%">
           <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
         </filter>
       </defs>
+
+      {/* Glow */}
       <g filter="url(#cc-glow)" opacity="0.4">
-        {rects}
+        {CC_COORDS.map(([c, r], i) => (
+          <rect key={`cg${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-grad)" rx={1.5} />
+        ))}
       </g>
 
-      {/* Sharp tiles */}
-      <g>{rects}</g>
+      {/* Tiles */}
+      <g>
+        {CC_COORDS.map(([c, r], i) => (
+          <rect key={`ct${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-grad)" stroke={GREEN_BORDER} strokeWidth={0.5} rx={1.5} />
+        ))}
+      </g>
     </svg>
   )
 }
@@ -187,8 +193,9 @@ function CCIcon() {
 /* ── styles ────────────────────────────────────────── */
 
 const heroSection: React.CSSProperties = {
-  minHeight: '60vh',
+  minHeight: '70vh',
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   background: 'var(--canvas)',
@@ -200,8 +207,8 @@ const heroInner: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: '40px',
-  maxWidth: '960px',
+  gap: '48px',
+  maxWidth: '1000px',
   width: '100%',
 }
 
@@ -374,12 +381,32 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
 
   return (
     <>
-      {/* Branded hero with pixel art title + CC icon */}
+      {/* Hero with block art title + CC mascot */}
       <section className="full-bleed" style={heroSection}>
         <div style={heroInner}>
           <MotionReveal variant="fadeUp" delay={0.1}>
             <div style={heroLeft}>
-              <PixelText text="CLAUDE DAILY" cellSize={7} gap={1.5} />
+              {/* CLAUDE in block art */}
+              <BlockArt
+                coords={CLAUDE_COORDS}
+                cols={CLAUDE_COLS}
+                rows={CLAUDE_ROWS}
+                cellSize={8}
+                gap={1.5}
+                gradientId="claude-grad"
+                style={{ width: '100%', maxWidth: '520px', height: 'auto', marginBottom: '6px' }}
+              />
+              {/* DAILY in block art */}
+              <BlockArt
+                coords={DAILY_COORDS}
+                cols={DAILY_COLS}
+                rows={DAILY_ROWS}
+                cellSize={8}
+                gap={1.5}
+                gradientId="daily-grad"
+                style={{ width: '100%', maxWidth: '385px', height: 'auto' }}
+              />
+
               <p style={heroSubtitle}>
                 ecosystem digest from the trenches.
                 <br />
@@ -396,8 +423,8 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
           </MotionReveal>
 
           <MotionReveal variant="fadeUp" delay={0.3}>
-            <div className="cc-icon-wrap" style={{ flexShrink: 0 }}>
-              <CCIcon />
+            <div className="cc-mascot-wrap" style={{ flexShrink: 0 }}>
+              <CCMascot />
             </div>
           </MotionReveal>
         </div>
@@ -494,7 +521,7 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
 
       <style>{`
         @media (max-width: 700px) {
-          .cc-icon-wrap { display: none; }
+          .cc-mascot-wrap { display: none; }
         }
       `}</style>
     </>
