@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-18T04:04:10.597Z",
+  "generated": "2026-03-19T04:04:30.815Z",
   "events": [
     {
-      "id": "commit-e73a1b8",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 23:33)",
+      "id": "commit-c7cda9e",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-18 23:40)",
       "type": "system",
-      "datetime": "2026-03-17T23:33:55-04:00",
+      "datetime": "2026-03-18T23:40:51-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 23:33)",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-18 23:40)",
       "metadata": {
-        "commitHash": "e73a1b8"
+        "commitHash": "c7cda9e"
       }
     },
     {
-      "id": "commit-226ac46",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 22:33)",
-      "type": "system",
-      "datetime": "2026-03-17T22:33:37-04:00",
+      "id": "commit-6c1a48a",
+      "title": "feat: Phase 3 — GEO content optimization, related posts engi",
+      "type": "milestone",
+      "datetime": "2026-03-18T23:36:03-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 22:33)",
+      "description": "feat: Phase 3 — GEO content optimization, related posts engine, cross-site schema",
       "metadata": {
-        "commitHash": "226ac46"
+        "commitHash": "6c1a48a"
       }
     },
     {
-      "id": "commit-72ff921",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 21:33)",
+      "id": "commit-d15646b",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-18 22:40)",
       "type": "system",
-      "datetime": "2026-03-17T21:33:20-04:00",
+      "datetime": "2026-03-18T22:40:34-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 21:33)",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-18 22:40)",
       "metadata": {
-        "commitHash": "72ff921"
+        "commitHash": "d15646b"
       }
     },
     {
-      "id": "commit-e43d23a",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 20:33)",
-      "type": "system",
-      "datetime": "2026-03-17T20:33:03-04:00",
+      "id": "commit-ea03e47",
+      "title": "fix: CC mascot as two stacked C's, both full opacity",
+      "type": "deployment",
+      "datetime": "2026-03-18T21:57:23-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 20:33)",
+      "description": "fix: CC mascot as two stacked C's, both full opacity",
       "metadata": {
-        "commitHash": "e43d23a"
+        "commitHash": "ea03e47"
       }
     },
     {
-      "id": "commit-66748d8",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 19:32)",
-      "type": "system",
-      "datetime": "2026-03-17T19:32:47-04:00",
+      "id": "commit-9c723ab",
+      "title": "feat: render block art as Unicode characters, not SVG tiles",
+      "type": "milestone",
+      "datetime": "2026-03-18T21:55:12-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 19:32)",
+      "description": "feat: render block art as Unicode characters, not SVG tiles",
       "metadata": {
-        "commitHash": "66748d8"
+        "commitHash": "9c723ab"
       }
     },
     {
-      "id": "commit-9d3cb41",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 18:32)",
-      "type": "system",
-      "datetime": "2026-03-17T18:32:30-04:00",
+      "id": "commit-00920f8",
+      "title": "feat: rectangular brick tiles + angled CC mascot",
+      "type": "milestone",
+      "datetime": "2026-03-18T21:46:35-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 18:32)",
+      "description": "feat: rectangular brick tiles + angled CC mascot",
       "metadata": {
-        "commitHash": "9d3cb41"
+        "commitHash": "00920f8"
       }
     },
     {
-      "id": "commit-0a6df6d",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-17 17:32)",
-      "type": "system",
-      "datetime": "2026-03-17T17:32:13-04:00",
+      "id": "commit-db2469f",
+      "title": "fix: unsquish title block art, bigger CC mascot, tighter til",
+      "type": "deployment",
+      "datetime": "2026-03-18T21:42:16-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-17 17:32)",
+      "description": "fix: unsquish title block art, bigger CC mascot, tighter tiles",
       "metadata": {
-        "commitHash": "0a6df6d"
+        "commitHash": "db2469f"
       }
     },
     {
-      "id": "commit-d758067",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 16:31)",
+      "id": "commit-3957cc6",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-18 21:40)",
       "type": "system",
-      "datetime": "2026-03-17T16:31:56-04:00",
+      "datetime": "2026-03-18T21:40:17-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 16:31)",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-18 21:40)",
       "metadata": {
-        "commitHash": "d758067"
+        "commitHash": "3957cc6"
       }
     },
     {
-      "id": "commit-689d13a",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 15:31)",
-      "type": "system",
-      "datetime": "2026-03-17T15:31:40-04:00",
+      "id": "commit-60668d1",
+      "title": "feat: overlapping CC mascot, unsquished title, CC favicon",
+      "type": "milestone",
+      "datetime": "2026-03-18T21:34:30-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 15:31)",
+      "description": "feat: overlapping CC mascot, unsquished title, CC favicon",
       "metadata": {
-        "commitHash": "689d13a"
+        "commitHash": "60668d1"
       }
     },
     {
-      "id": "commit-359d1a6",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 14:31)",
-      "type": "system",
-      "datetime": "2026-03-17T14:31:23-04:00",
+      "id": "commit-0e72f23",
+      "title": "feat: exact Claude Code block art style via oh-my-logo data",
+      "type": "milestone",
+      "datetime": "2026-03-18T21:22:07-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 14:31)",
+      "description": "feat: exact Claude Code block art style via oh-my-logo data",
       "metadata": {
-        "commitHash": "359d1a6"
+        "commitHash": "0e72f23"
       }
     },
     {
-      "id": "commit-c832067",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 13:31)",
-      "type": "system",
-      "datetime": "2026-03-17T13:31:06-04:00",
+      "id": "commit-efb5ccf",
+      "title": "feat: pixel-block font title + CC icon matching Claude Code ",
+      "type": "milestone",
+      "datetime": "2026-03-18T21:12:17-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 13:31)",
+      "description": "feat: pixel-block font title + CC icon matching Claude Code aesthetic",
       "metadata": {
-        "commitHash": "c832067"
+        "commitHash": "efb5ccf"
       }
     },
     {
-      "id": "commit-32dfef0",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 12:30)",
-      "type": "system",
-      "datetime": "2026-03-17T12:30:49-04:00",
+      "id": "commit-b1de515",
+      "title": "feat: add CC terminal logo to Claude Daily hero",
+      "type": "milestone",
+      "datetime": "2026-03-18T20:49:53-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 12:30)",
+      "description": "feat: add CC terminal logo to Claude Daily hero",
       "metadata": {
-        "commitHash": "32dfef0"
+        "commitHash": "b1de515"
       }
     },
     {
-      "id": "commit-093e3d2",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 11:30)",
+      "id": "commit-44217fc",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-18 20:39)",
       "type": "system",
-      "datetime": "2026-03-17T11:30:33-04:00",
+      "datetime": "2026-03-18T20:39:59-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 11:30)",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-18 20:39)",
       "metadata": {
-        "commitHash": "093e3d2"
+        "commitHash": "44217fc"
       }
     },
     {
-      "id": "commit-88e14c9",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 10:30)",
-      "type": "system",
-      "datetime": "2026-03-17T10:30:16-04:00",
+      "id": "commit-8b14aa4",
+      "title": "feat: auto-extract FAQ schema from blog posts — 33 posts, 12",
+      "type": "milestone",
+      "datetime": "2026-03-18T19:50:28-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 10:30)",
+      "description": "feat: auto-extract FAQ schema from blog posts — 33 posts, 121 questions",
       "metadata": {
-        "commitHash": "88e14c9"
+        "commitHash": "8b14aa4"
       }
     },
     {
-      "id": "commit-3a016bb",
-      "title": "chore: sync Reddit cache — 19 posts (2026-03-17 09:29)",
+      "id": "commit-36c88e6",
+      "title": "chore: sync Reddit cache — 21 posts (2026-03-18 19:39)",
       "type": "system",
-      "datetime": "2026-03-17T09:29:59-04:00",
+      "datetime": "2026-03-18T19:39:42-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 19 posts (2026-03-17 09:29)",
+      "description": "chore: sync Reddit cache — 21 posts (2026-03-18 19:39)",
       "metadata": {
-        "commitHash": "3a016bb"
+        "commitHash": "36c88e6"
       }
     }
   ],

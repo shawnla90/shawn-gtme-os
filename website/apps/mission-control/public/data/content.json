@@ -1,38 +1,38 @@
 {
-  "generated": "2026-03-18T04:00:14.000Z",
+  "generated": "2026-03-19T04:00:11.000Z",
   "totals": {
-    "total_content": 218,
+    "total_content": 221,
     "total_drafts": 123,
-    "total_final": 95,
-    "total_words": 147160,
+    "total_final": 98,
+    "total_words": 150524,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
   },
   "pipeline": {
+    "nio-log": {
+      "draft": 0,
+      "final": 29,
+      "total": 29,
+      "words": 21312
+    },
+    "website": {
+      "draft": 1,
+      "final": 37,
+      "total": 38,
+      "words": 49231
+    },
     "linkedin": {
       "draft": 44,
       "final": 16,
       "total": 60,
       "words": 33422
     },
-    "nio-log": {
-      "draft": 0,
-      "final": 28,
-      "total": 28,
-      "words": 20608
-    },
     "reddit": {
       "draft": 22,
       "final": 0,
       "total": 22,
       "words": 9204
-    },
-    "website": {
-      "draft": 1,
-      "final": 35,
-      "total": 36,
-      "words": 46571
     },
     "x": {
       "draft": 45,
@@ -48,6 +48,28 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "TUESDAY. EIGHT AUTOMATED REDDIT SYNCS OVERNIGHT.",
+      "slug": "2026-03-18",
+      "date": "2026-03-18",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 704,
+      "file_path": "content/nio-log/2026-03-18.md"
+    },
+    {
+      "platform": "website",
+      "title": "what Karpathy's markdown files taught me about context engineering",
+      "slug": "karpathy-markdown-context-engineering",
+      "date": "2026-03-18",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1108,
+      "file_path": "content/website/final/karpathy-markdown-context-engineering.md"
+    },
     {
       "platform": "linkedin",
       "title": "going back on my own",
@@ -113,6 +135,17 @@
       "arc": null,
       "word_count": 1268,
       "file_path": "content/website/final/boris-cherny-claude-code-context-engineering.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: March 17, 2026",
+      "slug": "claude-daily-2026-03-17",
+      "date": "2026-03-17",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 938,
+      "file_path": "content/website/final/claude-daily-2026-03-17.md"
     },
     {
       "platform": "website",
@@ -243,7 +276,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 3501,
+      "word_count": 3722,
       "file_path": "content/website/final/reddit-mastery-wiki.md"
     },
     {
@@ -564,39 +597,6 @@
       "arc": null,
       "word_count": 153,
       "file_path": "content/reddit/drafts/2026-03-13_1m-context-claudecode-2.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "1m context gtmbuilders 1",
-      "slug": "1m-context-gtmbuilders-1",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 273,
-      "file_path": "content/reddit/drafts/2026-03-13_1m-context-gtmbuilders-1.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "1m context gtmbuilders 2",
-      "slug": "1m-context-gtmbuilders-2",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 153,
-      "file_path": "content/reddit/drafts/2026-03-13_1m-context-gtmbuilders-2.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "gws cli claudecode",
-      "slug": "gws-cli-claudecode",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 363,
-      "file_path": "content/reddit/drafts/2026-03-13_gws-cli-claudecode.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-18",
+      "grade": "A",
+      "score": 444,
+      "words": 24298,
+      "shipped": 21,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-17",
       "grade": "C",
       "score": 258,
@@ -1213,14 +1221,6 @@
       "score": 358,
       "words": 24620,
       "shipped": 41,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-04",
-      "grade": "D",
-      "score": 109,
-      "words": 9452,
-      "shipped": 11,
       "cost": 0.0
     }
   ]
