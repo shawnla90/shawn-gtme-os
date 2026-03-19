@@ -51,8 +51,10 @@ function BlockArt({
   coords,
   cols,
   rows,
-  cellSize = 8,
-  gap = 1.5,
+  cellW = 14,
+  cellH = 9,
+  gapX = 1.5,
+  gapY = 1.5,
   gradientId,
   className,
   style,
@@ -60,15 +62,18 @@ function BlockArt({
   coords: [number, number][]
   cols: number
   rows: number
-  cellSize?: number
-  gap?: number
+  cellW?: number
+  cellH?: number
+  gapX?: number
+  gapY?: number
   gradientId?: string
   className?: string
   style?: React.CSSProperties
 }) {
-  const pitch = cellSize + gap
-  const svgW = cols * pitch
-  const svgH = rows * pitch
+  const pitchX = cellW + gapX
+  const pitchY = cellH + gapY
+  const svgW = cols * pitchX
+  const svgH = rows * pitchY
   const pad = 4
 
   const fill = gradientId ? `url(#${gradientId})` : GREEN
@@ -97,29 +102,40 @@ function BlockArt({
       {/* Glow layer */}
       <g filter={`url(#glow-${gradientId || 'default'})`} opacity="0.25">
         {coords.map(([c, r], i) => (
-          <rect key={`g${i}`} x={c * pitch} y={r * pitch} width={cellSize} height={cellSize} fill={fill} rx={1.5} />
+          <rect key={`g${i}`} x={c * pitchX} y={r * pitchY} width={cellW} height={cellH} fill={fill} rx={1.5} />
         ))}
       </g>
 
-      {/* Sharp tiles */}
+      {/* Sharp tiles with border */}
       <g>
         {coords.map(([c, r], i) => (
-          <rect key={`t${i}`} x={c * pitch} y={r * pitch} width={cellSize} height={cellSize} fill={fill} stroke={GREEN_BORDER} strokeWidth={0.15} rx={1.5} />
+          <rect key={`t${i}`} x={c * pitchX} y={r * pitchY} width={cellW} height={cellH} fill={fill} stroke={GREEN_BORDER} strokeWidth={0.5} rx={1.5} />
         ))}
       </g>
     </svg>
   )
 }
 
-/* ── CC mascot icon with overlapping C's ──────────── */
+/* ── Single C coordinates (from oh-my-logo block font) ─ */
+
+const SINGLE_C: [number, number][] = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[0,2],[1,2],[2,2],[0,3],[1,3],[2,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5]]
+const C_COLS = 8
+const C_ROWS = 6
+
+/* ── CC mascot: front C + angled back C ───────────── */
 
 function CCMascot() {
-  const cell = 20
-  const gap = 2
-  const pitch = cell + gap
-  const svgW = CC_COLS * pitch
-  const svgH = CC_ROWS * pitch
-  const pad = 40
+  const cellW = 22
+  const cellH = 16
+  const gapX = 2
+  const gapY = 2
+  const pitchX = cellW + gapX
+  const pitchY = cellH + gapY
+  const svgW = C_COLS * pitchX
+  const svgH = C_ROWS * pitchY
+  const cx = svgW / 2
+  const cy = svgH / 2
+  const pad = 50
 
   return (
     <svg
@@ -131,48 +147,47 @@ function CCMascot() {
       style={{ display: 'block' }}
     >
       {/* Dark circle background */}
-      <circle cx={svgW / 2} cy={svgH / 2} r={Math.max(svgW, svgH) / 2 + 24} fill="#161b22" />
-      <circle cx={svgW / 2} cy={svgH / 2} r={Math.max(svgW, svgH) / 2 + 24} fill="none" stroke={GREEN_GLOW} strokeWidth={3} />
+      <circle cx={cx} cy={cy} r={Math.max(svgW, svgH) / 2 + 28} fill="#161b22" />
+      <circle cx={cx} cy={cy} r={Math.max(svgW, svgH) / 2 + 28} fill="none" stroke={GREEN_GLOW} strokeWidth={3} />
 
       <defs>
         <linearGradient id="cc-back-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={GREEN} />
-          <stop offset="100%" stopColor={GREEN_DARK} />
+          <stop offset="0%" stopColor={GREEN_DARK} />
+          <stop offset="100%" stopColor="#2D7A47" />
         </linearGradient>
         <linearGradient id="cc-front-grad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor={GREEN_LIGHT} />
-          <stop offset="100%" stopColor={GREEN} />
+          <stop offset="60%" stopColor={GREEN} />
+          <stop offset="100%" stopColor={GREEN_DARK} />
         </linearGradient>
-        <filter id="cc-glow" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+        <filter id="cc-glow" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="6" />
         </filter>
       </defs>
 
       {/* Glow layer */}
       <g filter="url(#cc-glow)" opacity="0.3">
-        {[...CC_BACK, ...CC_OVERLAP, ...CC_FRONT].map(([c, r], i) => (
-          <rect key={`gg${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill={GREEN} rx={2} />
+        <g transform={`rotate(-18 ${cx} ${cy}) translate(6 -4)`}>
+          {SINGLE_C.map(([c, r], i) => (
+            <rect key={`bg${i}`} x={c * pitchX} y={r * pitchY} width={cellW} height={cellH} fill={GREEN} rx={2} />
+          ))}
+        </g>
+        {SINGLE_C.map(([c, r], i) => (
+          <rect key={`fg${i}`} x={c * pitchX} y={r * pitchY} width={cellW} height={cellH} fill={GREEN} rx={2} />
         ))}
       </g>
 
-      {/* Back C (darker shade, full opacity for solidity) */}
-      <g>
-        {CC_BACK.map(([c, r], i) => (
-          <rect key={`cb${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-back-grad)" stroke={GREEN_BORDER} strokeWidth={0.2} rx={2} />
+      {/* Back C — rotated, darker, behind */}
+      <g transform={`rotate(-18 ${cx} ${cy}) translate(6 -4)`} opacity="0.75">
+        {SINGLE_C.map(([c, r], i) => (
+          <rect key={`cb${i}`} x={c * pitchX} y={r * pitchY} width={cellW} height={cellH} fill="url(#cc-back-grad)" stroke={GREEN_BORDER} strokeWidth={0.5} rx={2} />
         ))}
       </g>
 
-      {/* Overlap zone (brightest — intersection highlight) */}
+      {/* Front C — straight, brighter, on top */}
       <g>
-        {CC_OVERLAP.map(([c, r], i) => (
-          <rect key={`co${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill={GREEN_LIGHT} stroke="#5FCC82" strokeWidth={0.3} rx={2} />
-        ))}
-      </g>
-
-      {/* Front C (lighter, on top) */}
-      <g>
-        {CC_FRONT.map(([c, r], i) => (
-          <rect key={`cf${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-front-grad)" stroke={GREEN_BORDER} strokeWidth={0.2} rx={2} />
+        {SINGLE_C.map(([c, r], i) => (
+          <rect key={`cf${i}`} x={c * pitchX} y={r * pitchY} width={cellW} height={cellH} fill="url(#cc-front-grad)" stroke={GREEN_BORDER} strokeWidth={0.5} rx={2} />
         ))}
       </g>
     </svg>
@@ -380,8 +395,6 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                 coords={CLAUDE_COORDS}
                 cols={CLAUDE_COLS}
                 rows={CLAUDE_ROWS}
-                cellSize={12}
-                gap={1}
                 gradientId="claude-grad"
                 style={{ width: '100%', height: 'auto', marginBottom: '4px' }}
               />
@@ -390,8 +403,6 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                 coords={DAILY_COORDS}
                 cols={DAILY_COLS}
                 rows={DAILY_ROWS}
-                cellSize={12}
-                gap={1}
                 gradientId="daily-grad"
                 style={{ width: `${(DAILY_COLS / CLAUDE_COLS) * 100}%`, height: 'auto' }}
               />
