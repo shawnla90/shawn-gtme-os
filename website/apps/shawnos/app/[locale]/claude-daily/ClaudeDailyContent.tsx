@@ -95,34 +95,16 @@ function BlockArt({
       </defs>
 
       {/* Glow layer */}
-      <g filter={`url(#glow-${gradientId || 'default'})`} opacity="0.3">
+      <g filter={`url(#glow-${gradientId || 'default'})`} opacity="0.25">
         {coords.map(([c, r], i) => (
-          <rect
-            key={`g${i}`}
-            x={c * pitch}
-            y={r * pitch}
-            width={cellSize}
-            height={cellSize}
-            fill={fill}
-            rx={1}
-          />
+          <rect key={`g${i}`} x={c * pitch} y={r * pitch} width={cellSize} height={cellSize} fill={fill} rx={1.5} />
         ))}
       </g>
 
       {/* Sharp tiles */}
       <g>
         {coords.map(([c, r], i) => (
-          <rect
-            key={`t${i}`}
-            x={c * pitch}
-            y={r * pitch}
-            width={cellSize}
-            height={cellSize}
-            fill={fill}
-            stroke={GREEN_BORDER}
-            strokeWidth={0.3}
-            rx={1}
-          />
+          <rect key={`t${i}`} x={c * pitch} y={r * pitch} width={cellSize} height={cellSize} fill={fill} stroke={GREEN_BORDER} strokeWidth={0.15} rx={1.5} />
         ))}
       </g>
     </svg>
@@ -132,12 +114,12 @@ function BlockArt({
 /* ── CC mascot icon with overlapping C's ──────────── */
 
 function CCMascot() {
-  const cell = 16
-  const gap = 2.5
+  const cell = 20
+  const gap = 2
   const pitch = cell + gap
   const svgW = CC_COLS * pitch
   const svgH = CC_ROWS * pitch
-  const pad = 36
+  const pad = 40
 
   return (
     <svg
@@ -167,30 +149,30 @@ function CCMascot() {
       </defs>
 
       {/* Glow layer */}
-      <g filter="url(#cc-glow)" opacity="0.35">
+      <g filter="url(#cc-glow)" opacity="0.3">
         {[...CC_BACK, ...CC_OVERLAP, ...CC_FRONT].map(([c, r], i) => (
           <rect key={`gg${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill={GREEN} rx={2} />
         ))}
       </g>
 
-      {/* Back C (darker, slightly behind) */}
-      <g opacity="0.6">
+      {/* Back C (darker shade, full opacity for solidity) */}
+      <g>
         {CC_BACK.map(([c, r], i) => (
-          <rect key={`cb${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-back-grad)" stroke={GREEN_BORDER} strokeWidth={0.4} rx={2} />
+          <rect key={`cb${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-back-grad)" stroke={GREEN_BORDER} strokeWidth={0.2} rx={2} />
         ))}
       </g>
 
-      {/* Overlap zone (brightest — both C's intersect) */}
+      {/* Overlap zone (brightest — intersection highlight) */}
       <g>
         {CC_OVERLAP.map(([c, r], i) => (
-          <rect key={`co${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill={GREEN_LIGHT} stroke={GREEN_BORDER} strokeWidth={0.4} rx={2} />
+          <rect key={`co${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill={GREEN_LIGHT} stroke="#5FCC82" strokeWidth={0.3} rx={2} />
         ))}
       </g>
 
-      {/* Front C (brighter, on top) */}
+      {/* Front C (lighter, on top) */}
       <g>
         {CC_FRONT.map(([c, r], i) => (
-          <rect key={`cf${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-front-grad)" stroke={GREEN_BORDER} strokeWidth={0.4} rx={2} />
+          <rect key={`cf${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-front-grad)" stroke={GREEN_BORDER} strokeWidth={0.2} rx={2} />
         ))}
       </g>
     </svg>
@@ -398,20 +380,20 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                 coords={CLAUDE_COORDS}
                 cols={CLAUDE_COLS}
                 rows={CLAUDE_ROWS}
-                cellSize={10}
-                gap={2}
+                cellSize={12}
+                gap={1}
                 gradientId="claude-grad"
-                style={{ width: '100%', maxWidth: '650px', height: 'auto', marginBottom: '8px' }}
+                style={{ width: '100%', height: 'auto', marginBottom: '4px' }}
               />
               {/* DAILY in block art */}
               <BlockArt
                 coords={DAILY_COORDS}
                 cols={DAILY_COLS}
                 rows={DAILY_ROWS}
-                cellSize={10}
-                gap={2}
+                cellSize={12}
+                gap={1}
                 gradientId="daily-grad"
-                style={{ width: '100%', maxWidth: '480px', height: 'auto' }}
+                style={{ width: `${(DAILY_COLS / CLAUDE_COLS) * 100}%`, height: 'auto' }}
               />
 
               <p style={heroSubtitle}>
