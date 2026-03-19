@@ -38,9 +38,11 @@ const DAILY_COORDS: [number, number][] = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6
 const DAILY_COLS = 40
 const DAILY_ROWS = 6
 
-// "CC" icon — 17 cols × 6 rows
-const CC_COORDS: [number, number][] = [[0,0],[1,0],[2,0],[3,0],[4,0],[5,0],[6,0],[9,0],[10,0],[11,0],[12,0],[13,0],[14,0],[15,0],[0,1],[1,1],[2,1],[3,1],[4,1],[5,1],[6,1],[7,1],[9,1],[10,1],[11,1],[12,1],[13,1],[14,1],[15,1],[16,1],[0,2],[1,2],[2,2],[9,2],[10,2],[11,2],[0,3],[1,3],[2,3],[9,3],[10,3],[11,3],[0,4],[1,4],[2,4],[3,4],[4,4],[5,4],[6,4],[7,4],[9,4],[10,4],[11,4],[12,4],[13,4],[14,4],[15,4],[16,4],[1,5],[2,5],[3,5],[4,5],[5,5],[6,5],[7,5],[10,5],[11,5],[12,5],[13,5],[14,5],[15,5],[16,5]]
-const CC_COLS = 17
+// Overlapping CC — back C, overlapping tiles, front C (offset by 5 cols)
+const CC_BACK: [number, number][] = [[0,0],[0,1],[0,2],[0,3],[0,4],[1,0],[1,1],[1,2],[1,3],[1,4],[1,5],[2,0],[2,1],[2,2],[2,3],[2,4],[2,5],[3,0],[3,1],[3,4],[3,5],[4,0],[4,1],[4,4],[4,5],[5,5]]
+const CC_OVERLAP: [number, number][] = [[5,0],[5,1],[5,4],[6,0],[6,1],[6,4],[6,5],[7,1],[7,4],[7,5]]
+const CC_FRONT: [number, number][] = [[5,2],[5,3],[6,2],[6,3],[7,0],[7,2],[7,3],[8,0],[8,1],[8,4],[8,5],[9,0],[9,1],[9,4],[9,5],[10,0],[10,1],[10,4],[10,5],[11,0],[11,1],[11,4],[11,5],[12,1],[12,4],[12,5]]
+const CC_COLS = 13
 const CC_ROWS = 6
 
 /* ── block art SVG renderer ───────────────────────── */
@@ -127,15 +129,15 @@ function BlockArt({
   )
 }
 
-/* ── CC mascot icon with background ───────────────── */
+/* ── CC mascot icon with overlapping C's ──────────── */
 
 function CCMascot() {
-  const cell = 14
-  const gap = 2
+  const cell = 16
+  const gap = 2.5
   const pitch = cell + gap
   const svgW = CC_COLS * pitch
   const svgH = CC_ROWS * pitch
-  const pad = 32
+  const pad = 36
 
   return (
     <svg
@@ -147,43 +149,48 @@ function CCMascot() {
       style={{ display: 'block' }}
     >
       {/* Dark circle background */}
-      <circle
-        cx={svgW / 2}
-        cy={svgH / 2}
-        r={Math.max(svgW, svgH) / 2 + 20}
-        fill="#161b22"
-      />
-      <circle
-        cx={svgW / 2}
-        cy={svgH / 2}
-        r={Math.max(svgW, svgH) / 2 + 20}
-        fill="none"
-        stroke={GREEN_GLOW}
-        strokeWidth={3}
-      />
+      <circle cx={svgW / 2} cy={svgH / 2} r={Math.max(svgW, svgH) / 2 + 24} fill="#161b22" />
+      <circle cx={svgW / 2} cy={svgH / 2} r={Math.max(svgW, svgH) / 2 + 24} fill="none" stroke={GREEN_GLOW} strokeWidth={3} />
 
       <defs>
-        <linearGradient id="cc-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={GREEN_LIGHT} />
-          <stop offset="40%" stopColor={GREEN} />
+        <linearGradient id="cc-back-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={GREEN} />
           <stop offset="100%" stopColor={GREEN_DARK} />
         </linearGradient>
+        <linearGradient id="cc-front-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={GREEN_LIGHT} />
+          <stop offset="100%" stopColor={GREEN} />
+        </linearGradient>
         <filter id="cc-glow" x="-30%" y="-30%" width="160%" height="160%">
-          <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
         </filter>
       </defs>
 
-      {/* Glow */}
-      <g filter="url(#cc-glow)" opacity="0.4">
-        {CC_COORDS.map(([c, r], i) => (
-          <rect key={`cg${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-grad)" rx={1.5} />
+      {/* Glow layer */}
+      <g filter="url(#cc-glow)" opacity="0.35">
+        {[...CC_BACK, ...CC_OVERLAP, ...CC_FRONT].map(([c, r], i) => (
+          <rect key={`gg${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill={GREEN} rx={2} />
         ))}
       </g>
 
-      {/* Tiles */}
+      {/* Back C (darker, slightly behind) */}
+      <g opacity="0.6">
+        {CC_BACK.map(([c, r], i) => (
+          <rect key={`cb${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-back-grad)" stroke={GREEN_BORDER} strokeWidth={0.4} rx={2} />
+        ))}
+      </g>
+
+      {/* Overlap zone (brightest — both C's intersect) */}
       <g>
-        {CC_COORDS.map(([c, r], i) => (
-          <rect key={`ct${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-grad)" stroke={GREEN_BORDER} strokeWidth={0.5} rx={1.5} />
+        {CC_OVERLAP.map(([c, r], i) => (
+          <rect key={`co${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill={GREEN_LIGHT} stroke={GREEN_BORDER} strokeWidth={0.4} rx={2} />
+        ))}
+      </g>
+
+      {/* Front C (brighter, on top) */}
+      <g>
+        {CC_FRONT.map(([c, r], i) => (
+          <rect key={`cf${i}`} x={c * pitch} y={r * pitch} width={cell} height={cell} fill="url(#cc-front-grad)" stroke={GREEN_BORDER} strokeWidth={0.4} rx={2} />
         ))}
       </g>
     </svg>
@@ -391,20 +398,20 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                 coords={CLAUDE_COORDS}
                 cols={CLAUDE_COLS}
                 rows={CLAUDE_ROWS}
-                cellSize={8}
-                gap={1.5}
+                cellSize={10}
+                gap={2}
                 gradientId="claude-grad"
-                style={{ width: '100%', maxWidth: '520px', height: 'auto', marginBottom: '6px' }}
+                style={{ width: '100%', maxWidth: '650px', height: 'auto', marginBottom: '8px' }}
               />
               {/* DAILY in block art */}
               <BlockArt
                 coords={DAILY_COORDS}
                 cols={DAILY_COLS}
                 rows={DAILY_ROWS}
-                cellSize={8}
-                gap={1.5}
+                cellSize={10}
+                gap={2}
                 gradientId="daily-grad"
-                style={{ width: '100%', maxWidth: '385px', height: 'auto' }}
+                style={{ width: '100%', maxWidth: '480px', height: 'auto' }}
               />
 
               <p style={heroSubtitle}>
