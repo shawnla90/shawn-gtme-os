@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import fs from 'fs'
 import { getTranslations } from 'next-intl/server'
-import { getPostSlugs, getPostBySlug, markdownToHtml, extractFAQs } from '@shawnos/shared/lib'
+import { getPostSlugs, getPostBySlug, getAllPosts, getRelatedPosts, markdownToHtml, extractFAQs } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
@@ -94,6 +94,8 @@ export default async function BlogPost({
   const t = await getTranslations('Blog')
   const contentDir = getContentDir(locale, slug)
   const post = getPostBySlug(slug, contentDir)
+  const allPosts = getAllPosts(CONTENT_BASE)
+  const relatedPosts = getRelatedPosts(slug, post.category, allPosts)
   const htmlContent = await markdownToHtml(post.content)
   const faqs = extractFAQs(post.content)
 
@@ -128,6 +130,9 @@ export default async function BlogPost({
     wordCount: post.wordCount,
     inLanguage: localeMap[locale] || 'en-US',
     ...(post.category && { articleSection: post.category }),
+    ...(relatedPosts.length > 0 && {
+      relatedLink: relatedPosts.map((rp) => `${SITE_URL}/blog/${rp.slug}`),
+    }),
   }
 
   const speakableSchema = {
@@ -287,6 +292,101 @@ export default async function BlogPost({
               &larr; {t('backToBlog')}
             </Link>
           </footer>
+
+          {relatedPosts.length > 0 && (
+            <section
+              style={{
+                marginTop: 48,
+                paddingTop: 32,
+                borderTop: '1px solid var(--border)',
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: '11px',
+                  fontFamily: 'var(--font-mono)',
+                  color: 'var(--text-muted)',
+                  textTransform: 'uppercase',
+                  letterSpacing: '1.5px',
+                  margin: '0 0 20px 0',
+                  fontWeight: 500,
+                }}
+              >
+                Related Posts
+              </h2>
+
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                  gap: '16px',
+                }}
+              >
+                {relatedPosts.map((rp) => (
+                  <Link
+                    key={rp.slug}
+                    href={`/blog/${rp.slug}`}
+                    style={{
+                      display: 'block',
+                      padding: '16px',
+                      border: '1px solid var(--border)',
+                      borderRadius: '6px',
+                      textDecoration: 'none',
+                      transition: 'border-color 0.15s',
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: 'block',
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        color: 'var(--accent)',
+                        lineHeight: 1.4,
+                        marginBottom: 8,
+                      }}
+                    >
+                      {rp.title}
+                    </span>
+
+                    <span
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                        flexWrap: 'wrap',
+                      }}
+                    >
+                      <time
+                        dateTime={rp.date}
+                        style={{
+                          fontSize: '12px',
+                          color: 'var(--text-muted)',
+                        }}
+                      >
+                        {formatDate(rp.date, locale)}
+                      </time>
+
+                      {rp.category && (
+                        <span
+                          style={{
+                            fontSize: '10px',
+                            color: 'var(--accent)',
+                            border: '1px solid var(--accent)',
+                            borderRadius: '3px',
+                            padding: '1px 5px',
+                            letterSpacing: '0.4px',
+                            opacity: 0.75,
+                          }}
+                        >
+                          {rp.category}
+                        </span>
+                      )}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </article>
 
         {/* Desktop sidebar TOC — hidden on mobile via CSS */}

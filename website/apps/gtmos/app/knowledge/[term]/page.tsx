@@ -344,17 +344,35 @@ export default async function TermPage({
     ],
   }
 
+  const termUrl = `${SITE_URL}/knowledge/${t.slug}`
+  const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(`What is ${t.name}?`)}&subtitle=${encodeURIComponent(t.definition.slice(0, 100))}`
+  const termWordCount = [t.definition, t.whyItMatters, t.howYouUseIt].join(' ').split(/\s+/).length
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: `What is ${t.name}?`,
     description: t.definition,
+    image: ogImage,
+    wordCount: termWordCount,
+    inLanguage: 'en-US',
     author: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
     publisher: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
-    url: `${SITE_URL}/knowledge/${t.slug}`,
-    mainEntityOfPage: `${SITE_URL}/knowledge/${t.slug}`,
+    url: termUrl,
+    mainEntityOfPage: termUrl,
     articleSection: t.category,
     keywords: [t.name, t.category, sourceBadge],
+  }
+
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: `What is ${t.name}?`,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h2', '[style]'],
+    },
+    url: termUrl,
   }
 
   const related = resolveRelated(t)
@@ -369,6 +387,10 @@ export default async function TermPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
 
       <div style={pageWrap}>

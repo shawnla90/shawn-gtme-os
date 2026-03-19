@@ -303,17 +303,35 @@ export default async function LemlistWikiEntryPage({
     .filter((r): r is { id: string; title: string } => !!r)
 
   /* ── structured data ── */
+  const entryUrl = `${SITE_URL}/lemlist-wiki/${entry.id}`
+  const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(entry.title)}&subtitle=${encodeURIComponent(entry.description.slice(0, 100))}`
+  const entryWordCount = entry.sections.reduce((sum, s) => sum + s.content.split(/\s+/).length, 0)
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: entry.title,
     description: entry.description,
+    image: ogImage,
+    wordCount: entryWordCount,
+    inLanguage: 'en-US',
     author: { '@type': 'Person', name: 'Shawn Tenam', url: 'https://shawnos.ai' },
     publisher: { '@type': 'Person', name: 'Shawn Tenam', url: 'https://shawnos.ai' },
-    url: `${SITE_URL}/lemlist-wiki/${entry.id}`,
-    mainEntityOfPage: `${SITE_URL}/lemlist-wiki/${entry.id}`,
+    url: entryUrl,
+    mainEntityOfPage: entryUrl,
     articleSection: catMeta?.label ?? 'Lemlist Wiki',
     keywords: entry.keywords,
+  }
+
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: entry.title,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h2', 'h3', '[style]'],
+    },
+    url: entryUrl,
   }
 
   return (
@@ -328,6 +346,10 @@ export default async function LemlistWikiEntryPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
 
       <div style={pageWrap}>

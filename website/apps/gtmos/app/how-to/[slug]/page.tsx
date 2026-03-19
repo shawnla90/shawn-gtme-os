@@ -317,11 +317,17 @@ export default async function HowToEntryPage({
   )
 
   /* ── structured data ── */
+  const entryUrl = `${SITE_URL}/how-to/${entry.id}`
+  const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(entry.title)}&subtitle=${encodeURIComponent(entry.description.slice(0, 100))}`
+  const entryWordCount = entry.sections.reduce((sum, s) => sum + s.content.split(/\s+/).length, 0)
+
   const howToSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: entry.title,
     description: entry.description,
+    image: ogImage,
+    inLanguage: 'en-US',
     step: entry.sections.map((s, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
@@ -335,6 +341,9 @@ export default async function HowToEntryPage({
     '@type': 'Article',
     headline: entry.title,
     description: entry.description,
+    image: ogImage,
+    wordCount: entryWordCount,
+    inLanguage: 'en-US',
     author: {
       '@type': 'Person',
       name: 'Shawn Tenam',
@@ -345,10 +354,21 @@ export default async function HowToEntryPage({
       name: 'Shawn Tenam',
       url: 'https://shawnos.ai',
     },
-    url: `${SITE_URL}/how-to/${entry.id}`,
-    mainEntityOfPage: `${SITE_URL}/how-to/${entry.id}`,
+    url: entryUrl,
+    mainEntityOfPage: entryUrl,
     articleSection: catMeta?.label ?? 'How-To',
     keywords: entry.keywords,
+  }
+
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: entry.title,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h2', 'h3', '[style]'],
+    },
+    url: entryUrl,
   }
 
   return (
@@ -371,6 +391,10 @@ export default async function HowToEntryPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
 
       <div style={pageWrap}>

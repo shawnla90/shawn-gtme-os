@@ -67,3 +67,51 @@ export function getAllPosts(contentDir: string): Post[] {
     .map((slug) => getPostBySlug(slug, contentDir))
     .sort((a, b) => (a.date > b.date ? -1 : 1))
 }
+
+/** Lightweight post shape returned by getRelatedPosts (no content/wordCount/readingTime). */
+export interface RelatedPost {
+  slug: string
+  title: string
+  date: string
+  category?: string
+  excerpt: string
+}
+
+/**
+ * Returns up to 3 related posts for a given slug.
+ * Priority: same category first (most recent), then most recent from any category.
+ * The current post is always excluded.
+ */
+export function getRelatedPosts(
+  currentSlug: string,
+  currentCategory: string | undefined,
+  allPosts: Post[],
+  limit = 3,
+): RelatedPost[] {
+  const candidates = allPosts.filter((p) => p.slug !== currentSlug)
+
+  const sameCategory = currentCategory
+    ? candidates.filter((p) => p.category === currentCategory)
+    : []
+  const otherCategory = candidates.filter(
+    (p) => !currentCategory || p.category !== currentCategory,
+  )
+
+  const picked: Post[] = []
+  for (const p of sameCategory) {
+    if (picked.length >= limit) break
+    picked.push(p)
+  }
+  for (const p of otherCategory) {
+    if (picked.length >= limit) break
+    picked.push(p)
+  }
+
+  return picked.map(({ slug, title, date, category, excerpt }) => ({
+    slug,
+    title,
+    date,
+    category,
+    excerpt,
+  }))
+}

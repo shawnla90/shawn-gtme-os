@@ -22,11 +22,14 @@ Not because your offer is wrong. Because the page was slow.
 
 Most service business websites run on WordPress with a page builder, a dozen plugins, unoptimized images, and shared hosting. The math on that stack:
 
-- **WordPress core + theme**: 800ms-1.2s just to generate the HTML server-side
-- **Page builder CSS/JS**: another 400-800ms of render-blocking resources
-- **Unoptimized hero image**: 1.5MB JPEG that could be a 180KB WebP
-- **Analytics, chat widgets, fonts**: 600ms-1s of third-party scripts fighting for bandwidth
-- **Shared hosting cold start**: 200-500ms before the server even starts responding
+| bottleneck | time added | what's happening |
+|-----------|-----------|-----------------|
+| WordPress core + theme | 800ms-1.2s | generating HTML server-side |
+| page builder CSS/JS | 400-800ms | render-blocking resources |
+| unoptimized hero image | 500ms-1.5s | 1.5MB JPEG that could be a 180KB WebP |
+| analytics, chat widgets, fonts | 600ms-1s | third-party scripts fighting for bandwidth |
+| shared hosting cold start | 200-500ms | server hasn't even started responding |
+| **total** | **4-6s** | **on mobile, closer to 8s** |
 
 Stack those up and you're at 4-6 seconds easy. On mobile with a mediocre connection, closer to 8.
 
@@ -36,11 +39,23 @@ The thing is, none of these are hard problems. They're configuration problems. B
 
 Core Web Vitals aren't abstract metrics. They directly affect where you rank:
 
-**Largest Contentful Paint (LCP)** measures when the main content becomes visible. Google wants this under 2.5 seconds. Most service business sites I've audited come in between 4-8 seconds.
+| metric | what it measures | Google's threshold | typical service business site |
+|--------|-----------------|-------------------|------------------------------|
+| LCP (Largest Contentful Paint) | when main content is visible | under 2.5s | 4-8s |
+| CLS (Cumulative Layout Shift) | visual stability | under 0.1 | 0.15-0.4 |
+| INP (Interaction to Next Paint) | responsiveness to clicks | under 200ms | 300-800ms |
 
-**Cumulative Layout Shift (CLS)** measures visual stability. Ever load a page and tap a button, but the page shifts and you tap an ad instead? That's CLS. It happens when images don't have width/height attributes, when fonts swap in late, when ads inject above the fold.
+### Largest Contentful Paint (LCP)
 
-**Interaction to Next Paint (INP)** measures responsiveness. Click a button, how long until something happens? Heavy JavaScript frameworks make this worse. A static site with minimal JS scores near zero.
+measures when the main content becomes visible. Google wants this under 2.5 seconds. Most service business sites I've audited come in between 4-8 seconds.
+
+### Cumulative Layout Shift (CLS)
+
+measures visual stability. Ever load a page and tap a button, but the page shifts and you tap an ad instead? That's CLS. It happens when images don't have width/height attributes, when fonts swap in late, when ads inject above the fold.
+
+### Interaction to Next Paint (INP)
+
+measures responsiveness. Click a button, how long until something happens? Heavy JavaScript frameworks make this worse. A static site with minimal JS scores near zero.
 
 These three metrics feed directly into Google's ranking algorithm. Two service businesses with identical content and backlink profiles will rank differently based on Core Web Vitals. The fast site wins.
 
@@ -61,21 +76,38 @@ You end up paying more for ads that convert less, ranking lower for organic term
 
 A properly built service business website loads in under 2 seconds. Here's what that takes:
 
-**Static generation**. Pre-render your pages at build time. The server delivers finished HTML, not a runtime computation. Next.js, Astro, and Hugo all do this. Your contact page doesn't need server-side rendering. It's the same page for everyone. Build it once, serve it from a CDN edge node 50ms from the visitor.
+### static generation
 
-**Image optimization**. Serve WebP/AVIF with responsive srcsets. A hero image should be 100-200KB, not 1.5MB. Modern frameworks handle this automatically - `next/image` generates the right sizes and formats at build time.
+Pre-render your pages at build time. The server delivers finished HTML, not a runtime computation. Next.js, Astro, and Hugo all do this. Your contact page doesn't need server-side rendering. It's the same page for everyone. Build it once, serve it from a CDN edge node 50ms from the visitor.
 
-**Minimal JavaScript**. A service business website doesn't need React hydrating the entire page. Ship HTML and CSS. Add JavaScript only for interactive elements - a mobile menu toggle, a form submission handler, maybe a lightbox. The rest is decoration that costs milliseconds.
+### image optimization
 
-**Edge deployment**. Vercel, Cloudflare Pages, Netlify. Your site lives on 300+ edge nodes worldwide. A visitor in Chicago hits a server in Chicago, not a shared hosting box in Phoenix.
+Serve WebP/AVIF with responsive srcsets. A hero image should be 100-200KB, not 1.5MB. Modern frameworks handle this automatically - `next/image` generates the right sizes and formats at build time.
+
+### minimal JavaScript
+
+A service business website doesn't need React hydrating the entire page. Ship HTML and CSS. Add JavaScript only for interactive elements - a mobile menu toggle, a form submission handler, maybe a lightbox. The rest is decoration that costs milliseconds.
+
+### edge deployment
+
+Vercel, Cloudflare Pages, Netlify. Your site lives on 300+ edge nodes worldwide. A visitor in Chicago hits a server in Chicago, not a shared hosting box in Phoenix.
 
 The result is sub-second LCP, zero CLS, near-zero INP. Google rewards it. Visitors reward it. Your pipeline reflects it.
 
 ## how do you calculate the ROI?
 
-Take that same 2,000 visitors per month scenario. A fast site retains 95%+ of visitors (instead of losing 35-40%). Your effective visitors go from 1,200 back to 1,900. Your leads go from 24 back to 38.
+Take that same 2,000 visitors per month scenario:
 
-If your average engagement is $8,000, that's an extra $112,000 in annual pipeline from speed alone. The cost to rebuild a service business website on a modern stack? $3,000-$12,000 depending on complexity. That's a 10-30x return in year one.
+| metric | slow site (5.8s) | fast site (sub-2s) |
+|--------|-----------------|-------------------|
+| monthly visitors | 2,000 | 2,000 |
+| visitor retention | ~60% | 95%+ |
+| effective visitors | 1,200 | 1,900 |
+| leads (at 2% conversion) | 24 | 38 |
+| annual pipeline (at $8K/deal) | $192,000 | $304,000 |
+| **pipeline gap** | | **$112,000/year** |
+
+The cost to rebuild a service business website on a modern stack? $3,000-$12,000 depending on complexity. That's a 10-30x return in year one.
 
 And that's before the SEO lift. Better Core Web Vitals improve rankings, which increase traffic, which increases leads further. The compounding works in your favor once you fix the foundation.
 

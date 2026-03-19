@@ -32,11 +32,14 @@ Posted it to r/nyc and a couple of homeowner and local subreddits. Then engaged 
 
 Within 24 hours:
 
-- **527 unique visitors** to Joe Parziale Plumbing Co.'s website
-- **1,600 page views** across the site (people clicked around, looked at services, checked the about page)
-- **75,000+ impressions** on the Reddit posts
-- **800+ karma** gained over the weekend
-- **$0 in ad spend**
+| metric | result |
+|--------|--------|
+| unique visitors | 527 |
+| page views | 1,600 |
+| Reddit impressions | 75,000+ |
+| karma gained | 800+ |
+| ad spend | $0 |
+| pages per visitor | ~3 |
 
 For context, a typical local service business website gets 50-200 visitors per month organically in its first year. This was 527 in a single day. From one piece of content.
 
@@ -46,11 +49,17 @@ The 1,600 page views matter even more than the visitor count. That's roughly 3 p
 
 Three things changed in the last 18 months that make Reddit the most underrated distribution channel for service businesses.
 
-**Google indexes Reddit within hours.** A blog post on a new domain takes 3-6 months to start ranking. A Reddit post with engagement shows up in Google search results the same week, sometimes the same day. Google's partnership with Reddit and the sheer domain authority of reddit.com means your content gets indexed faster there than on your own site.
+### Google indexes Reddit within hours
 
-**AI models cite Reddit in answers.** When someone asks ChatGPT, Perplexity, or Claude about NYC plumbing recommendations, those models pull from Reddit threads. A well-written Reddit post with genuine engagement becomes training data and citation material. Your content gets surfaced in AI-generated answers without you doing anything after the initial post.
+A blog post on a new domain takes 3-6 months to start ranking. A Reddit post with engagement shows up in Google search results the same week, sometimes the same day. Google's partnership with Reddit and the sheer domain authority of reddit.com means your content gets indexed faster there than on your own site.
 
-**Reddit users are high-intent.** Someone browsing r/homeowners asking about water pressure problems is not casually scrolling. They have a problem right now. They're looking for real answers from real people. The engagement quality is fundamentally different from Instagram likes or LinkedIn impressions. These are people actively searching for solutions.
+### AI models cite Reddit in answers
+
+When someone asks ChatGPT, Perplexity, or Claude about NYC plumbing recommendations, those models pull from Reddit threads. A well-written Reddit post with genuine engagement becomes training data and citation material. Your content gets surfaced in AI-generated answers without you doing anything after the initial post.
+
+### Reddit users are high-intent
+
+Someone browsing r/homeowners asking about water pressure problems is not casually scrolling. They have a problem right now. They're looking for real answers from real people. The engagement quality is fundamentally different from Instagram likes or LinkedIn impressions. These are people actively searching for solutions.
 
 The organic reach is also massive compared to other platforms. A helpful Reddit post can get tens of thousands of views without any paid boost. The algorithm rewards genuine, useful content. Promotional posts get downvoted into oblivion. Helpful posts compound.
 
@@ -58,13 +67,13 @@ The organic reach is also massive compared to other platforms. A helpful Reddit 
 
 This wasn't random. There's a specific approach that works.
 
-**Write educational content, not promotional content.** The post was about NYC plumbing problems and solutions. It mentioned Joe Parziale Plumbing Co. exactly zero times in the post body. The value was the content itself. Reddit users can smell promotion from three paragraphs away and they will destroy you in the comments if you try it.
+1. **Write educational content, not promotional content.** The post was about NYC plumbing problems and solutions. It mentioned Joe Parziale Plumbing Co. exactly zero times in the post body. The value was the content itself. Reddit users can smell promotion from three paragraphs away and they will destroy you in the comments if you try it.
 
-**Pick subreddits where the audience already has the problem.** r/nyc for local visibility. Homeowner subreddits for people dealing with plumbing issues. The targeting was manual but precise. No spray-and-pray across 50 random subreddits.
+2. **Pick subreddits where the audience already has the problem.** r/nyc for local visibility. Homeowner subreddits for people dealing with plumbing issues. The targeting was manual but precise. No spray-and-pray across 50 random subreddits.
 
-**Engage with every comment.** This is where most people fail. They post and disappear. Every comment on those posts got a thoughtful reply. Follow-up questions got detailed answers. That engagement signals to Reddit's algorithm that the post is generating real discussion, which pushes it higher in the feed.
+3. **Engage with every comment.** This is where most people fail. They post and disappear. Every comment on those posts got a thoughtful reply. Follow-up questions got detailed answers. That engagement signals to Reddit's algorithm that the post is generating real discussion, which pushes it higher in the feed.
 
-**Have a fast website ready to catch the traffic.** Reddit traffic comes in bursts. Hundreds of visitors in a few hours. A slow site on shared hosting would buckle. The Next.js build on Vercel handled the spike without breaking a sweat. Sub-second loads meant visitors actually stuck around to explore.
+4. **Have a fast website ready to catch the traffic.** Reddit traffic comes in bursts. Hundreds of visitors in a few hours. A slow site on shared hosting would buckle. The Next.js build on Vercel handled the spike without breaking a sweat. Sub-second loads meant visitors actually stuck around to explore.
 
 ## how do a fast website and Reddit traffic work together?
 
@@ -83,6 +92,13 @@ Scale that over a year of consistent Reddit content and the gap becomes enormous
 Most web development agencies deliver a website and walk away. The client gets a polished deliverable and zero strategy for getting anyone to see it. Six months later the site has 30 visitors a month and the client thinks the website doesn't work.
 
 The website works fine. The distribution was never built.
+
+| channel | cost per click | time to results | content lifespan | AI citability |
+|---------|---------------|-----------------|------------------|---------------|
+| Google Ads | $15-40 | immediate | stops when you stop paying | none |
+| SEO (own domain) | $0 | 3-6 months | long-term | moderate |
+| Facebook organic | $0 | declining reach | 24-48 hours | low |
+| Reddit organic | $0 | same day | months (Google indexing + AI citation) | high |
 
 Reddit is one channel. There are others. But right now, for local service businesses, it's the highest-leverage play available. Zero cost, immediate results, and the content keeps working long after you post it through Google indexing, AI citation, and Reddit's own search.
 

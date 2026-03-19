@@ -39,6 +39,16 @@ for context: i started this account from zero. no existing audience ported over.
 
 after 226 contributions across 30 communities, clear patterns emerged. not every post type works for every subreddit, but these seven consistently generate engagement when done right.
 
+| post type | best example | upvotes | comments | views | upvote rate |
+|-----------|-------------|---------|----------|-------|-------------|
+| showcase | "mass building with Claude Code" | 43 | 163 | 143K | 0.03% |
+| question | "Claude Code over SSH?" | 22 | 46 | 45K | 0.05% |
+| meme | "life now with cc remote control" | 95 | 23 | 18K | 0.53% |
+| crossover | "10 years as a plumber in NYC" | 188 | 26 | 28K | 0.67% |
+| thought leadership | "from SDR to solo GTM engineer" | 18 | 9 | 4.1K | 0.44% |
+| hot take | "Clay just changed pricing" | 5 | 23 | 4.5K | 0.11% |
+| value-first | "free audit checklist" | 10 | 6 | 2K | 0.50% |
+
 ### 1. the showcase post
 
 **example:** "been mass building with Claude Code every day for 6 weeks straight" in r/ClaudeCode
@@ -138,11 +148,17 @@ here's the part most people skip entirely. they obsess over posts and ignore com
 
 my 50/50 karma split exists because i spend as much energy commenting as i do posting. maybe more. the comment strategy breaks down into three principles.
 
-**comment as value delivery.** the post is the hook. the comments are the payload. on my showcase posts, the real substance lives in the comment replies. someone asks "how did you handle X?" and i write a 200-word comment with the exact approach, the repo link, and the gotchas i ran into. that comment often gets more upvotes than the post itself.
+### comment as value delivery
 
-**comment on other people's threads.** this is where most of the 226 contributions come from. i'm in 30 communities, reading posts daily, and dropping comments when i have something useful to add. not "great post!" or "this." real responses. someone asks about Clay integrations, i drop my actual workflow. someone asks about thin client setups, i share my experience with the Neo. the comment karma from these adds up fast and builds recognition within the community.
+the post is the hook. the comments are the payload. on my showcase posts, the real substance lives in the comment replies. someone asks "how did you handle X?" and i write a 200-word comment with the exact approach, the repo link, and the gotchas i ran into. that comment often gets more upvotes than the post itself.
 
-**never post and ghost.** every post i publish, i'm in the comments for at least 24 hours after. responding to questions, thanking people for insights, adding follow-up context. Reddit's algorithm rewards active threads. a post with 10 comments from the OP replying to questions ranks higher than a post with 10 comments from strangers. and people remember when the OP actually shows up.
+### comment on other people's threads
+
+this is where most of the 226 contributions come from. i'm in 30 communities, reading posts daily, and dropping comments when i have something useful to add. not "great post!" or "this." real responses. someone asks about Clay integrations, i drop my actual workflow. someone asks about thin client setups, i share my experience with the Neo. the comment karma from these adds up fast and builds recognition within the community.
+
+### never post and ghost
+
+every post i publish, i'm in the comments for at least 24 hours after. responding to questions, thanking people for insights, adding follow-up context. Reddit's algorithm rewards active threads. a post with 10 comments from the OP replying to questions ranks higher than a post with 10 comments from strangers. and people remember when the OP actually shows up.
 
 the ratio matters because Reddit communities notice patterns. if your profile is all posts and zero comments on other people's threads, you look like a broadcaster. if your profile shows consistent commenting across the community, you look like a member. members get upvoted. broadcasters get ignored.
 
@@ -152,19 +168,31 @@ the ratio matters because Reddit communities notice patterns. if your profile is
 
 30 active communities sounds like a lot. but in practice, there's a hierarchy.
 
-**tier 1: your home subreddits (3 max).** these are the communities where you post regularly and comment daily. for me: r/ClaudeCode, r/gtmengineering, r/GTMbuilders. i know the culture, the recurring topics, the power users, and the mod expectations. three is the right number because you can maintain genuine presence in three communities. five stretches you thin. ten means you're just drive-by posting.
+| tier | name | count | purpose | posting frequency |
+|------|------|-------|---------|-------------------|
+| 1 | home subreddits | 3 max | post regularly, comment daily | daily |
+| 2 | crossover subreddits | 3-5 | non-primary expertise | weekly or less |
+| 3 | monitoring subreddits | 20+ | read, occasional comments | as needed |
 
-**tier 2: your crossover subreddits (3-5).** communities where your non-primary expertise is valuable. for me: r/NYCapartments (plumbing knowledge), NYC-local subreddits, homeowner subreddits. i don't post here as often, but when i do, the crossover factor drives outsized engagement.
+### tier 1: your home subreddits (3 max)
 
-**tier 3: monitoring subreddits (20+).** communities i read and occasionally comment in, but don't actively post to. these keep me informed about adjacent topics and give me ideas for posts in my tier 1 subreddits.
+these are the communities where you post regularly and comment daily. for me: r/ClaudeCode, r/gtmengineering, r/GTMbuilders. i know the culture, the recurring topics, the power users, and the mod expectations. three is the right number because you can maintain genuine presence in three communities. five stretches you thin. ten means you're just drive-by posting.
 
-**how to pick your tier 1 subreddits:**
+### tier 2: your crossover subreddits (3-5)
 
-look for communities with **5,000 to 50,000 members.** below 5K, there's not enough activity to sustain regular posting. above 50K, your posts get buried by volume unless they're exceptional. the sweet spot is where your post can realistically hit the front page of the subreddit and stay there for 12-24 hours.
+communities where your non-primary expertise is valuable. for me: r/NYCapartments (plumbing knowledge), NYC-local subreddits, homeowner subreddits. i don't post here as often, but when i do, the crossover factor drives outsized engagement.
 
-check the **engagement ratio.** sort by "hot" and look at the top 10 posts. how many comments do they have? how many upvotes? a subreddit with 20K members where the top posts get 50+ comments is better than a subreddit with 100K members where top posts get 5 comments. engagement ratio tells you whether people actually participate or just lurk.
+### tier 3: monitoring subreddits (20+)
 
-read the **community rules and culture.** some subreddits have strict rules about self-promotion, link posting, or post formatting. some have unwritten rules that are just as important. spend a week reading before you post. understand what gets upvoted and what gets downvoted. every subreddit has its own personality.
+communities i read and occasionally comment in, but don't actively post to. these keep me informed about adjacent topics and give me ideas for posts in my tier 1 subreddits.
+
+### how to pick your tier 1 subreddits
+
+1. **check member count.** look for communities with 5,000 to 50,000 members. below 5K, there's not enough activity to sustain regular posting. above 50K, your posts get buried by volume unless they're exceptional. the sweet spot is where your post can realistically hit the front page of the subreddit and stay there for 12-24 hours.
+
+2. **check the engagement ratio.** sort by "hot" and look at the top 10 posts. how many comments do they have? how many upvotes? a subreddit with 20K members where the top posts get 50+ comments is better than a subreddit with 100K members where top posts get 5 comments. engagement ratio tells you whether people actually participate or just lurk.
+
+3. **read the community rules and culture.** some subreddits have strict rules about self-promotion, link posting, or post formatting. some have unwritten rules that are just as important. spend a week reading before you post. understand what gets upvoted and what gets downvoted. every subreddit has its own personality.
 
 ---
 
@@ -172,17 +200,29 @@ read the **community rules and culture.** some subreddits have strict rules abou
 
 i've seen every mistake in the book over the past month, both from watching others and from my own early missteps. here's what kills your Reddit presence.
 
-**don't post AI-generated content.** Reddit communities in 2026 are hypersensitive to AI slop. they can spot it in two sentences. if your post reads like it was written by ChatGPT, you'll get called out in the comments, downvoted, and possibly banned. every word needs to sound like a human wrote it because a human should have written it. use AI to help you think, not to write your posts.
+### don't post AI-generated content
 
-**don't gate content behind DMs or email.** "DM me for the full playbook" is the fastest way to get downvoted on Reddit. the community views it as manipulation. if you have something valuable, put it in the post or in the comments. the no-gatekeeping approach is both an ethical position and a tactical one. free content in the open builds trust 10x faster than gated content behind a DM.
+Reddit communities in 2026 are hypersensitive to AI slop. they can spot it in two sentences. if your post reads like it was written by ChatGPT, you'll get called out in the comments, downvoted, and possibly banned. every word needs to sound like a human wrote it because a human should have written it. use AI to help you think, not to write your posts.
 
-**don't post and ghost.** if you're not going to engage in the comments for at least 24 hours, don't post. a post with zero OP replies signals "i'm here to broadcast, not to participate." Reddit rewards active threads. your own comments on your own post are the highest-leverage engagement you can do.
+### don't gate content behind DMs or email
 
-**don't treat Reddit like LinkedIn.** no "thought leader" energy. no polished corporate voice. no "i'm humbled to announce." Reddit culture is anti-corporate, anti-polished, and anti-performative. write like you're talking to a friend who works in the same field. lowercase is fine. incomplete sentences are fine. authenticity beats polish every single time.
+"DM me for the full playbook" is the fastest way to get downvoted on Reddit. the community views it as manipulation. if you have something valuable, put it in the post or in the comments. the no-gatekeeping approach is both an ethical position and a tactical one. free content in the open builds trust 10x faster than gated content behind a DM.
 
-**don't spray and pray.** posting the same content across 15 subreddits is obvious and annoying. cross-posting is fine when genuinely relevant. but if you're posting your Clay workflow breakdown to r/cooking because it technically mentions "ingredients," you're going to get roasted.
+### don't post and ghost
 
-**don't buy karma or use karma farming subreddits.** it's tempting when you're starting from zero and some subreddits have minimum karma requirements. don't do it. Reddit's systems are increasingly good at detecting farmed karma, and communities can check your post history. real karma from real engagement is the only kind that builds authority.
+if you're not going to engage in the comments for at least 24 hours, don't post. a post with zero OP replies signals "i'm here to broadcast, not to participate." Reddit rewards active threads. your own comments on your own post are the highest-leverage engagement you can do.
+
+### don't treat Reddit like LinkedIn
+
+no "thought leader" energy. no polished corporate voice. no "i'm humbled to announce." Reddit culture is anti-corporate, anti-polished, and anti-performative. write like you're talking to a friend who works in the same field. lowercase is fine. incomplete sentences are fine. authenticity beats polish every single time.
+
+### don't spray and pray
+
+posting the same content across 15 subreddits is obvious and annoying. cross-posting is fine when genuinely relevant. but if you're posting your Clay workflow breakdown to r/cooking because it technically mentions "ingredients," you're going to get roasted.
+
+### don't buy karma or use karma farming subreddits
+
+it's tempting when you're starting from zero and some subreddits have minimum karma requirements. don't do it. Reddit's systems are increasingly good at detecting farmed karma, and communities can check your post history. real karma from real engagement is the only kind that builds authority.
 
 ---
 
@@ -212,15 +252,25 @@ the crossover play also has a secondary benefit. when people from r/NYCapartment
 
 i started r/GTMBuilders from scratch. it's at 120 members now. all genuine builders, not bots or karma farmers. here's what i learned.
 
-**seed posts set the culture.** the first 10 posts in your subreddit define what the community becomes. i made sure those initial posts were substantive: real workflow breakdowns, actual tool comparisons, genuine questions about GTM engineering challenges. no fluff. no motivational quotes. no "what's your favorite tool?" polls. the early posts teach new members what kind of content belongs here.
+### seed posts set the culture
 
-**community rules matter from day one.** i established clear rules: no gatekeeping, no "DM me" posts, no AI slop, no pure self-promotion without substance. these rules aren't just guidelines. they're culture architecture. the rules you set early determine who stays and who leaves.
+the first 10 posts in your subreddit define what the community becomes. i made sure those initial posts were substantive: real workflow breakdowns, actual tool comparisons, genuine questions about GTM engineering challenges. no fluff. no motivational quotes. no "what's your favorite tool?" polls. the early posts teach new members what kind of content belongs here.
 
-**quality over quantity, always.** 120 real members who post and comment is worth more than 10,000 members who never engage. i'd rather have a small community where every post gets 5 thoughtful comments than a massive community where posts get lost in noise. growth should be organic and driven by the content quality, not by promotion.
+### community rules matter from day one
 
-**show up every day.** as the founder, you need to be the most active member. comment on every post. welcome new members. answer questions. share your own work. if the founder isn't active, the community dies. this is the part people underestimate. building a subreddit is a daily commitment, not a launch-and-forget project.
+i established clear rules: no gatekeeping, no "DM me" posts, no AI slop, no pure self-promotion without substance. these rules aren't just guidelines. they're culture architecture. the rules you set early determine who stays and who leaves.
 
-**let the community evolve.** the best subreddit cultures emerge from the members, not from top-down direction. i set the initial tone, but the members have started bringing their own perspectives, their own tools, their own workflows. that's the goal. a community that runs on its own energy, not just the founder's.
+### quality over quantity, always
+
+120 real members who post and comment is worth more than 10,000 members who never engage. i'd rather have a small community where every post gets 5 thoughtful comments than a massive community where posts get lost in noise. growth should be organic and driven by the content quality, not by promotion.
+
+### show up every day
+
+as the founder, you need to be the most active member. comment on every post. welcome new members. answer questions. share your own work. if the founder isn't active, the community dies. this is the part people underestimate. building a subreddit is a daily commitment, not a launch-and-forget project.
+
+### let the community evolve
+
+the best subreddit cultures emerge from the members, not from top-down direction. i set the initial tone, but the members have started bringing their own perspectives, their own tools, their own workflows. that's the goal. a community that runs on its own energy, not just the founder's.
 
 ---
 

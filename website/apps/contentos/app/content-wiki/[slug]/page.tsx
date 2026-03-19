@@ -290,6 +290,10 @@ export default async function ContentWikiEntryPage({
     .filter((r): r is { id: string; title: string } => !!r)
 
   /* ── structured data (Article schema) ── */
+  const entryUrl = `${SITE_URL}/content-wiki/${entry.id}`
+  const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(entry.title)}&subtitle=${encodeURIComponent(entry.description.slice(0, 100))}`
+  const entryWordCount = entry.sections.reduce((sum, s) => sum + s.content.split(/\s+/).length, 0)
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -297,10 +301,24 @@ export default async function ContentWikiEntryPage({
     description: entry.description,
     author: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
     publisher: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
-    url: `${SITE_URL}/content-wiki/${entry.id}`,
-    mainEntityOfPage: `${SITE_URL}/content-wiki/${entry.id}`,
+    url: entryUrl,
+    mainEntityOfPage: entryUrl,
+    image: ogImage,
+    wordCount: entryWordCount,
+    inLanguage: 'en-US',
     articleSection: catMeta?.label ?? 'Content Wiki',
     keywords: entry.keywords,
+  }
+
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: entry.title,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h2', '[style]'],
+    },
+    url: entryUrl,
   }
 
   return (
@@ -314,6 +332,10 @@ export default async function ContentWikiEntryPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
 
       <div style={pageWrap}>

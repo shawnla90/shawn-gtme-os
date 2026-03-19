@@ -30,19 +30,25 @@ the new tiers: Free, Launch ($185/mo), Growth ($495/mo), Enterprise (custom).
 
 ## what does Clay's old vs new pricing look like side by side?
 
-**old world:**
-
-- Starter: $149/mo, 2,000-3,000 credits, no CRM, no HTTP API
-- Explorer: $349/mo, 10,000-20,000 credits, HTTP API + webhooks, no CRM
-- Pro: $800/mo, 50,000-150,000 credits, CRM integrations, 5 team seats
-
-**new world:**
-
-- Launch: $185/mo, 15,000 Actions, 2,500-20,000 Data Credits
-- Growth: $495/mo, 40,000 Actions, 6,000-100,000 Data Credits, CRM sync, HTTP API, webhooks, Web Intent
-- Enterprise: custom, 100K+ Actions, 100K+ Data Credits, data warehouse sync, SSO, bulk enrichment
+| | old plan | price | credits/actions | key features |
+|---|----------|-------|-----------------|-------------|
+| **old** | Starter | $149/mo | 2,000-3,000 credits | no CRM, no HTTP API |
+| **old** | Explorer | $349/mo | 10,000-20,000 credits | HTTP API + webhooks, no CRM |
+| **old** | Pro | $800/mo | 50,000-150,000 credits | CRM integrations, 5 team seats |
+| **new** | Launch | $185/mo | 15,000 Actions + 2,500-20,000 Data Credits | basic enrichment, no CRM |
+| **new** | Growth | $495/mo | 40,000 Actions + 6,000-100,000 Data Credits | CRM sync, HTTP API, webhooks, Web Intent |
+| **new** | Enterprise | custom | 100K+ Actions + 100K+ Data Credits | data warehouse sync, SSO, bulk enrichment |
 
 the entry price went up from $149 to $185. but the feature set at each tier shifted significantly. you can't do a straight dollar comparison without looking at what each tier now includes.
+
+| who | impact | detail |
+|-----|--------|--------|
+| teams paying $800 for CRM sync | wins | CRM now on Growth at $495, saves $305/mo |
+| heavy enrichment users | wins | 50-90% data cost reduction |
+| builders wanting Web Intent/Ads | wins | bundled into Growth tier |
+| Explorer users with HTTP API | loses | HTTP API now requires Growth ($495 vs $349), plus Actions metering |
+| light users (<2K enrichments/mo) | loses | floor raised from $149 to $185 for unused capacity |
+| anyone who liked simple pricing | loses | dual currency adds cognitive overhead |
 
 ## who wins under Clay's new pricing?
 
@@ -88,23 +94,23 @@ for experienced builders this is manageable. for teams just getting started with
 
 ## what the builder should actually do
 
-### if you're on a legacy plan: don't panic, do math
+### 1. if you're on a legacy plan: don't panic, do math
 
 Clay is grandfathering existing plans. you don't have to switch. but you have until April 10, 2026 to do a one-time switch between legacy plans if a different legacy tier makes more sense for you.
 
 pull your last 3 months of credit usage. look at what you actually consume vs. what you pay for. then model it against the new tiers. the math is different for every team.
 
-### if HTTP API is your lifeline: run the numbers carefully
+### 2. if HTTP API is your lifeline: run the numbers carefully
 
 map how many HTTP API calls you make per month. under the new model, each call is an Action. Growth gives you 40,000 Actions. if you're running 5,000 HTTP calls plus 10,000 enrichment runs plus Claygent calls, add up whether 40,000 Actions covers it. the Actions meter includes everything, not just HTTP.
 
-### if you're new to Clay: start on Growth
+### 3. if you're new to Clay: start on Growth
 
 the Growth plan at $495/mo is the new sweet spot for serious builders. CRM sync, HTTP API, webhooks, Web Intent, 40,000 Actions, up to 100,000 Data Credits. that used to require the $800 Pro plan for just the CRM piece.
 
 if you're building production GTM workflows, Growth is where the tooling lives.
 
-### if you barely use Clay: consider whether you need it
+### 4. if you barely use Clay: consider whether you need it
 
 I say this as someone who uses Clay daily. if you're running 1,000-2,000 enrichments a month with no API integrations and no CRM sync, you're now paying $185/mo for what amounts to a fancy spreadsheet with enrichment columns. that might still be worth it. but it also might be worth running those enrichments directly through [Apollo's API](https://shawnos.ai/blog/why-apollo-should-be-your-first-sourcing-run-not-clay) or Prospeo's API and saving the platform cost entirely.
 

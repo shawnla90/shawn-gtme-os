@@ -168,16 +168,12 @@ create a `MEMORY.md` at a known path. your CLAUDE.md tells Claude Code to read i
 ~/.claude/projects/your-project/memory/MEMORY.md
 ```
 
-what goes in memory:
-- architectural decisions that shouldn't be relitigated
-- user preferences discovered during work
-- recurring patterns and solutions
-- file paths that matter
-
-what stays out:
-- session-specific context (that's what handoffs are for)
-- unverified assumptions
-- anything already in CLAUDE.md
+| put in MEMORY.md | keep out of MEMORY.md |
+|-------------------|----------------------|
+| architectural decisions that shouldn't be relitigated | session-specific context (that's what handoffs are for) |
+| user preferences discovered during work | unverified assumptions |
+| recurring patterns and solutions | anything already in CLAUDE.md |
+| file paths that matter | temporary debugging notes |
 
 ### context handoffs (session continuity)
 
@@ -190,11 +186,11 @@ at the end of every session, write a context handoff file:
 ```
 
 contents:
-- what was done this session (specific file paths, not vague descriptions)
-- what still needs fixing
-- key decisions made
-- active TODOs
-- data the next session needs
+1. what was done this session (specific file paths, not vague descriptions)
+2. what still needs fixing
+3. key decisions made
+4. active TODOs
+5. data the next session needs
 
 at the start of every session, read the handoff file first. now your new session has the full context of what just happened. no re-explaining. no lost work.
 
@@ -275,13 +271,16 @@ each one extends what your assistant can do without writing custom API integrati
 
 once you have one agent working, adding more is just writing more soul files.
 
-the pattern:
-- one CLI (`claude -p`)
-- different soul files per agent
-- different session IDs per agent (so context doesn't bleed)
-- each agent gets its own memory file
+### the multi-agent pattern
+
+1. one CLI (`claude -p`)
+2. different soul files per agent
+3. different session IDs per agent (so context doesn't bleed)
+4. each agent gets its own memory file
 
 I run Nio for ops, an Architect agent for system design, a Writer agent for content. same subscription. same CLI. different jobs.
+
+### agent isolation
 
 the key is isolation. each agent has its own soul, its own memory, its own session state. they don't share context unless you explicitly pipe output from one to another.
 
@@ -289,16 +288,13 @@ in the chat UI, each agent has its own accent color, bubble colors, and personal
 
 ## what does it cost?
 
-**before (separate AI platform + API):**
-- Claude Code Max: $200/month
-- API costs for Sonnet + Opus: $50 to $200/month
-- total: $250 to $400/month
-
-**after (Claude Code only):**
-- Claude Code Max: $200/month
-- local Ollama for high-frequency crons: $0
-- API for content-only Opus calls: ~$15/month
-- total: ~$215/month
+| cost item | before (platform + API) | after (Claude Code only) |
+|-----------|------------------------|--------------------------|
+| Claude Code Max | $200/mo | $200/mo |
+| API costs (Sonnet + Opus) | $50-$200/mo | - |
+| local Ollama (high-freq crons) | - | $0 |
+| API for content-only Opus calls | - | ~$15/mo |
+| **total** | **$250-$400/mo** | **~$215/mo** |
 
 the API costs don't disappear completely. I still use Opus via API for automated blog generation through cron jobs. and Qwen 2.5 14B runs locally on Ollama for high-frequency tasks that don't need intelligence: commit tracking, status pings, daily scans.
 

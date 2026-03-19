@@ -306,15 +306,20 @@ export default async function HowToEntryPage({
     })
     .filter(Boolean) as { id: string; title: string; canonicalSite: string }[]
 
+  const entryUrl = `${SITE_URL}/how-to/${entry.id}`
+  const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(entry.title)}&subtitle=${encodeURIComponent(entry.description.slice(0, 100))}`
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: entry.title,
     description: entry.description,
+    image: ogImage,
+    inLanguage: 'en-US',
     author: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
     publisher: { '@type': 'Person', name: 'Shawn Tenam', url: SITE_URL },
-    url: `${SITE_URL}/how-to/${entry.id}`,
-    mainEntityOfPage: `${SITE_URL}/how-to/${entry.id}`,
+    url: entryUrl,
+    mainEntityOfPage: entryUrl,
     step: entry.sections.map((s, i) => ({
       '@type': 'HowToStep',
       position: i + 1,
@@ -322,6 +327,17 @@ export default async function HowToEntryPage({
       text: s.content.slice(0, 200),
     })),
     keywords: entry.keywords,
+  }
+
+  const speakableSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: entry.title,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h2', 'h3', '[style]'],
+    },
+    url: entryUrl,
   }
 
   return (
@@ -335,6 +351,10 @@ export default async function HowToEntryPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
 
       <div style={pageWrap}>

@@ -1,5 +1,5 @@
-export { getPostSlugs, getPostBySlug, getAllPosts } from './posts'
-export type { Post } from './posts'
+export { getPostSlugs, getPostBySlug, getAllPosts, getRelatedPosts } from './posts'
+export type { Post, RelatedPost } from './posts'
 export { markdownToHtml, extractFAQs } from './markdown'
 export type { FAQItem } from './markdown'
 export { getSiteUrl } from './related'
