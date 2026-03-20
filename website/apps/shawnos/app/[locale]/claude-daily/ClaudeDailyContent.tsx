@@ -14,6 +14,13 @@ interface Post {
   featured?: boolean
 }
 
+interface Highlights {
+  bestComment: string | null
+  trollOfTheDay: string | null
+  funFacts: string[]
+  pulse: string | null
+}
+
 /* ── brand ────────────────────────────────────────── */
 
 const GREEN = '#4EC373'
@@ -264,7 +271,7 @@ const emptyState: React.CSSProperties = {
 
 /* ── component ────────────────────────────────────── */
 
-export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
+export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highlights?: Highlights }) {
   const sorted = useMemo(
     () => [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     [posts],
@@ -390,6 +397,245 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
           &#8964;
         </div>
       </section>
+
+      {/* Highlights from latest episode */}
+      {highlights && (highlights.bestComment || highlights.trollOfTheDay || highlights.funFacts.length > 0) && sorted.length > 0 && (
+        <section
+          style={{
+            background: 'var(--canvas)',
+            padding: '0 24px 48px',
+          }}
+        >
+          <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+            {/* section header */}
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                marginBottom: '20px',
+              }}
+            >
+              <div
+                style={{
+                  height: '1px',
+                  flex: 1,
+                  background: `linear-gradient(90deg, ${GREEN}30, transparent)`,
+                }}
+              />
+              <span
+                style={{
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: GREEN,
+                  fontFamily: 'var(--font-mono)',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                Today&apos;s Highlights
+              </span>
+              <div
+                style={{
+                  height: '1px',
+                  flex: 1,
+                  background: `linear-gradient(90deg, transparent, ${GREEN}30)`,
+                }}
+              />
+            </div>
+
+            {/* cards grid */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gap: '16px',
+              }}
+            >
+              {/* Best Comment */}
+              {highlights.bestComment && (
+                <Link
+                  href={`/blog/${sorted[0].slug}#best-comment-award`}
+                  style={{
+                    padding: '20px',
+                    background: '#0d1117',
+                    border: `1px solid ${GREEN_DIM}`,
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    display: 'block',
+                    transition: 'border-color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = GREEN
+                  }}
+                  onMouseLeave={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = GREEN_DIM
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: GREEN,
+                      marginBottom: '10px',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    Best Comment Award
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '14px',
+                      lineHeight: 1.6,
+                      color: 'var(--text-secondary)',
+                      borderLeft: `2px solid ${GREEN}40`,
+                      paddingLeft: '12px',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    &ldquo;{highlights.bestComment.length > 180
+                      ? highlights.bestComment.slice(0, 180) + '...'
+                      : highlights.bestComment}&rdquo;
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      color: GREEN,
+                      marginTop: '10px',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    read more &rarr;
+                  </div>
+                </Link>
+              )}
+
+              {/* Troll of the Day */}
+              {highlights.trollOfTheDay && (
+                <Link
+                  href={`/blog/${sorted[0].slug}#troll-of-the-day`}
+                  style={{
+                    padding: '20px',
+                    background: '#0d1117',
+                    border: '1px solid #ff7b7225',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    display: 'block',
+                    transition: 'border-color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = '#ff7b72'
+                  }}
+                  onMouseLeave={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = '#ff7b7225'
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: '#ff7b72',
+                      marginBottom: '10px',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    Troll of the Day
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '14px',
+                      lineHeight: 1.6,
+                      color: 'var(--text-secondary)',
+                      borderLeft: '2px solid #ff7b7240',
+                      paddingLeft: '12px',
+                      fontStyle: 'italic',
+                    }}
+                  >
+                    &ldquo;{highlights.trollOfTheDay.length > 180
+                      ? highlights.trollOfTheDay.slice(0, 180) + '...'
+                      : highlights.trollOfTheDay}&rdquo;
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      color: '#ff7b72',
+                      marginTop: '10px',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    read more &rarr;
+                  </div>
+                </Link>
+              )}
+
+              {/* Fun Facts */}
+              {highlights.funFacts.length > 0 && (
+                <Link
+                  href={`/blog/${sorted[0].slug}#fun-facts`}
+                  style={{
+                    padding: '20px',
+                    background: '#0d1117',
+                    border: '1px solid #d2a8ff25',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    display: 'block',
+                    transition: 'border-color 0.2s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = '#d2a8ff'
+                  }}
+                  onMouseLeave={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = '#d2a8ff25'
+                  }}
+                >
+                  <div
+                    style={{
+                      fontSize: '10px',
+                      fontWeight: 700,
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: '#d2a8ff',
+                      marginBottom: '10px',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    Fun Facts
+                  </div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    {highlights.funFacts.map((fact, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          fontSize: '13px',
+                          lineHeight: 1.5,
+                          color: 'var(--text-secondary)',
+                        }}
+                      >
+                        {fact.length > 120 ? fact.slice(0, 120) + '...' : fact}
+                      </div>
+                    ))}
+                  </div>
+                  <div
+                    style={{
+                      fontSize: '11px',
+                      color: '#d2a8ff',
+                      marginTop: '10px',
+                      fontFamily: 'var(--font-mono)',
+                    }}
+                  >
+                    all facts &rarr;
+                  </div>
+                </Link>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
 
       <ScrollRevealSection background="var(--canvas)">
         {sorted.length === 0 ? (

@@ -50,12 +50,77 @@ type Props = {
   params: Promise<{ locale: string }>
 }
 
+function extractHighlights(content: string) {
+  const sections: Record<string, string> = {}
+  const lines = content.split('\n')
+  let currentSection = ''
+  let currentBody: string[] = []
+
+  for (const line of lines) {
+    const match = line.match(/^## (.+)$/)
+    if (match) {
+      if (currentSection && currentBody.length) {
+        sections[currentSection] = currentBody.join('\n').trim()
+      }
+      currentSection = match[1].trim()
+      currentBody = []
+    } else if (currentSection) {
+      currentBody.push(line)
+    }
+  }
+  if (currentSection && currentBody.length) {
+    sections[currentSection] = currentBody.join('\n').trim()
+  }
+
+  // Extract blockquote from a section (for best comment / troll)
+  function getBlockquote(text: string | undefined): string | null {
+    if (!text) return null
+    const bqLines: string[] = []
+    let inQuote = false
+    for (const l of text.split('\n')) {
+      if (l.startsWith('> ')) {
+        inQuote = true
+        bqLines.push(l.replace(/^> ?/, ''))
+      } else if (inQuote && l.trim() === '') {
+        break
+      } else if (inQuote) {
+        break
+      }
+    }
+    return bqLines.length ? bqLines.join(' ').trim() : null
+  }
+
+  // Extract fun facts as array of bullet points
+  function getFunFacts(text: string | undefined): string[] {
+    if (!text) return []
+    return text
+      .split('\n')
+      .filter((l) => l.startsWith('- **'))
+      .map((l) => l.replace(/^- /, '').trim())
+      .slice(0, 3)
+  }
+
+  return {
+    bestComment: getBlockquote(sections['best comment award']),
+    trollOfTheDay: getBlockquote(sections['troll of the day']),
+    funFacts: getFunFacts(sections['fun facts']),
+    pulse: (sections['the pulse'] || '').split('\n')[0]?.trim() || null,
+  }
+}
+
 export default async function ClaudeDailyPage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
   const allPosts = getAllPosts(getContentDir(locale))
   const dailyPosts = allPosts.filter((p) => p.category === 'claude-daily')
+
+  // Extract highlights from the latest post
+  const sortedPosts = [...dailyPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  )
+  const latestContent = sortedPosts[0]?.content || ''
+  const highlights = extractHighlights(latestContent)
 
   const collectionSchema = {
     '@context': 'https://schema.org',
@@ -77,7 +142,7 @@ export default async function ClaudeDailyPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
-      <ClaudeDailyContent posts={dailyPosts} />
+      <ClaudeDailyContent posts={dailyPosts} highlights={highlights} />
     </>
   )
 }
