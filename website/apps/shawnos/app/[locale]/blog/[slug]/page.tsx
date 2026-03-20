@@ -236,9 +236,9 @@ export default async function BlogPost({
                   style={{
                     width: '48px',
                     height: '48px',
-                    borderRadius: '10px',
-                    background: `linear-gradient(135deg, ${GREEN}18, ${GREEN}08)`,
-                    border: `1px solid ${GREEN}30`,
+                    borderRadius: '12px',
+                    background: `linear-gradient(135deg, ${GREEN}15, ${GREEN}08)`,
+                    border: `1px solid ${GREEN}25`,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
@@ -247,7 +247,7 @@ export default async function BlogPost({
                 >
                   <span
                     style={{
-                      fontFamily: 'var(--font-mono)',
+                      fontFamily: 'var(--font-sans)',
                       fontSize: '20px',
                       fontWeight: 800,
                       color: GREEN,
@@ -262,39 +262,39 @@ export default async function BlogPost({
                 <div style={{ flex: 1 }}>
                   <div
                     style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '20px',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '18px',
                       fontWeight: 700,
                       color: '#e6edf3',
-                      letterSpacing: '0.06em',
+                      letterSpacing: '-0.01em',
                       lineHeight: 1,
                     }}
                   >
-                    CLAUDE CODE{' '}
-                    <span style={{ color: GREEN }}>DAILY</span>
+                    Claude Code{' '}
+                    <span style={{ color: GREEN }}>Daily</span>
                   </div>
                   <div
                     style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      color: 'var(--text-muted)',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '12px',
+                      color: '#8b949e',
                       marginTop: '4px',
-                      letterSpacing: '0.02em',
                     }}
                   >
-                    the daily show for claude code developers
+                    The daily show for Claude Code builders
                   </div>
                 </div>
 
                 <span
                   style={{
-                    fontSize: '9px',
+                    fontSize: '10px',
                     fontWeight: 700,
                     color: GREEN,
-                    border: `1px solid ${GREEN}40`,
-                    borderRadius: '10px',
-                    padding: '4px 12px',
-                    fontFamily: 'var(--font-mono)',
+                    background: `${GREEN}12`,
+                    border: `1px solid ${GREEN}30`,
+                    borderRadius: '20px',
+                    padding: '5px 14px',
+                    fontFamily: 'var(--font-sans)',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     flexShrink: 0,
@@ -330,16 +330,16 @@ export default async function BlogPost({
                     key={label}
                     href={`#${label.replace(/\s+/g, '-')}`}
                     style={{
-                      fontSize: '10px',
-                      fontFamily: 'var(--font-mono)',
-                      color: 'var(--text-muted)',
-                      padding: '3px 10px',
-                      borderRadius: '4px',
+                      fontSize: '11px',
+                      fontFamily: 'var(--font-sans)',
+                      fontWeight: 500,
+                      color: '#8b949e',
+                      padding: '4px 12px',
+                      borderRadius: '6px',
                       background: '#ffffff06',
                       border: '1px solid #ffffff0a',
                       textDecoration: 'none',
                       transition: 'all 0.15s ease',
-                      letterSpacing: '0.02em',
                     }}
                   >
                     {label}

@@ -791,7 +791,7 @@ def phase_blog(target_date, config, dry_run=False):
 
 Write the "Claude Code Daily: {target_date}" blog post for shawnos.ai.
 
-This is THE daily show for Claude Code developers. Think late night TV meets dev news.
+This is THE daily show for Claude Code builders. Think late night TV meets dev news.
 People should want to read this every morning because it's genuinely funny AND useful.
 It's the place where r/ClaudeCode becomes entertainment.
 
