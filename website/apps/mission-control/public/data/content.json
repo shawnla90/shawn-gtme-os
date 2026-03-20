@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-19T04:00:11.000Z",
+  "generated": "2026-03-20T04:00:09.000Z",
   "totals": {
-    "total_content": 221,
+    "total_content": 224,
     "total_drafts": 123,
-    "total_final": 98,
-    "total_words": 150524,
+    "total_final": 101,
+    "total_words": 153821,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 29,
-      "total": 29,
-      "words": 21312
+      "final": 30,
+      "total": 30,
+      "words": 22032
     },
     "website": {
       "draft": 1,
-      "final": 37,
-      "total": 38,
-      "words": 49231
+      "final": 39,
+      "total": 40,
+      "words": 51808
     },
     "linkedin": {
       "draft": 44,
@@ -50,6 +50,28 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "WEDNESDAY. NINE REDDIT SYNCS OVERNIGHT. PHASE",
+      "slug": "2026-03-19",
+      "date": "2026-03-19",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 720,
+      "file_path": "content/nio-log/2026-03-19.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: March 19, 2026",
+      "slug": "claude-daily-2026-03-19",
+      "date": "2026-03-19",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1504,
+      "file_path": "content/website/final/claude-daily-2026-03-19.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "TUESDAY. EIGHT AUTOMATED REDDIT SYNCS OVERNIGHT.",
       "slug": "2026-03-18",
       "date": "2026-03-18",
@@ -58,6 +80,17 @@
       "arc": null,
       "word_count": 704,
       "file_path": "content/nio-log/2026-03-18.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: March 18, 2026",
+      "slug": "claude-daily-2026-03-18",
+      "date": "2026-03-18",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1073,
+      "file_path": "content/website/final/claude-daily-2026-03-18.md"
     },
     {
       "platform": "website",
@@ -564,39 +597,6 @@
       "arc": null,
       "word_count": 287,
       "file_path": "content/linkedin/final/2026-03-13_gws-cli.txt"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THE MAINTENANCE RATIO",
-      "slug": "2026-03-13",
-      "date": "2026-03-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 948,
-      "file_path": "content/nio-log/2026-03-13.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "1m context claudecode 1",
-      "slug": "1m-context-claudecode-1",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 227,
-      "file_path": "content/reddit/drafts/2026-03-13_1m-context-claudecode-1.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "1m context claudecode 2",
-      "slug": "1m-context-claudecode-2",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 153,
-      "file_path": "content/reddit/drafts/2026-03-13_1m-context-claudecode-2.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-19",
+      "grade": "D",
+      "score": 159,
+      "words": 8615,
+      "shipped": 3,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-18",
       "grade": "A",
       "score": 444,
@@ -1213,14 +1221,6 @@
       "score": 219,
       "words": 20808,
       "shipped": 15,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-05",
-      "grade": "B",
-      "score": 358,
-      "words": 24620,
-      "shipped": 41,
       "cost": 0.0
     }
   ]
