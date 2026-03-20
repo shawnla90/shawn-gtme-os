@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-20T08:13:09.083155+00:00",
+  "lastUpdated": "2026-03-20T09:13:26.718664+00:00",
   "posts": [
     {
       "id": "1rykecv",
       "title": "Claude Code Daily is live.",
       "author": "Shawntenam",
-      "score": 5,
+      "score": 4,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rykecv/claude_code_daily_is_live/",
       "selftext": "https://preview.redd.it/4exe4b3244qg1.png?width=980&amp;format=png&amp;auto=webp&amp;s=13d7e2e39c841052436f165fa611c3e201739999\n\nEvery day it scans r/ClaudeCode, r/ClaudeAI, and the builder subreddits, pulls trending threads, highlighted repos, actual code drops, and the funniest comments from the community. Then it writes itself into a full daily digest.\n\n if you are building with AI and not just talking about it: there are repos getting shared every single day that most people miss. Code patterns, MCP server configs, cost-saving tricks, workflow setups. The kind of stuff that saves you a weekend of trial and error.\n\nEach episode covers:\n\n\\- Trending repos and code drops\n\n\\- Builder takeaways you can actually use\n\n\\- The best and worst takes from the community (yes there is a Troll of the Day section)\n\n\\- Fun facts pulled straight from the data\n\n\\- A full scoreboard with velocity scores and engagement numbers\n\n\n\nI am going to be posting this daily and constantly improving it. If you want to see r/gtmengineering or other builder channels added to the scan, let me know. If there are sections you want added or things that would make it more useful, drop it in the comments. This thing learns and evolves.\n\nFair warning: I have zero say in what Claude decides to write each day. It builds off the data, picks its own highlights, writes its own roasts. Sometimes it is going to nail it. Sometimes it might come in hot. That is part of the fun.\n\nStill figuring out new features for it. But right now it is a way to stay current on what is actually happening in the Claude Code ecosystem, learn some new stuff, and laugh at the same time.\n\n\n\n[shawnos.ai/claude-daily](http://shawnos.ai/claude-daily)",
@@ -165,7 +165,7 @@
       "id": "1rtqx18",
       "title": "I built a free, open-source Clay alternative, BYOK enrichment",
       "author": "IntelligentLeek123",
-      "score": 7,
+      "score": 5,
       "numComments": 4,
       "permalink": "/r/GTMbuilders/comments/1rtqx18/i_built_a_free_opensource_clay_alternative_byok/",
       "selftext": "Got tired of Clay's pricing. Built my own.\n\nUpload a CSV, describe what you want in English, pick your AI model, run it. You bring your own API key.\n\nOne thing no other tool does, it shows you the estimated cost before you run anything.\n\nGood for company research, qualification, competitive intel. Not for verified emails, use Apollo for that.\n\nOpen source. No account. No tracking. No platform fees. [OpenClay.io](http://OpenClay.io)\n\nHappy to answer questions",
@@ -213,7 +213,7 @@
       "id": "1rt2jp4",
       "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price.",
       "author": "Shawntenam",
-      "score": 4,
+      "score": 3,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rt2jp4/claude_code_just_dropped_1m_context_window_and_im/",
       "selftext": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --&gt; 1M tokens. same Opus 4.6 model. same Max subscription. no price increase.\n\nif you've been building with this thing daily, \n\nyou know exactly why this is massive. context compaction was THE bottleneck. you're deep in a build, agent is cooking, and then it starts forgetting what\n\nfiles it already read. you re-explain your\n\narchitecture for the third time. momentum gone.\n\nthat whole era just ended.\n\nI run a monorepo with 3 Next.js apps, i18n in 3 languages, full GTM ops layer, automation scripts.\n\nbefore today the agent could barely hold one app in\n\nits head at a time. just tested the new window and it\n\nreasoned across the ENTIRE system in one session. no\n\ncompaction. no re-explaining. no babysitting.\n\n\n\nseriously now we can.\n\n\\- spec to deploy in a single session \n\n\\- debugging that traces through your whole stack\n\nwithout losing what it found 20 minutes ago\n\n\\- hand off a big task, walk away, come back to finished work\n\n\\- the agent actually remembers its own mistakes and\n\nstops repeating them\n\n\n\nit's Friday.what are you building with this new context window??. full breadown in my [blog](https://shawnos.ai/blog/claude-code-1m-context-window)",
@@ -356,7 +356,7 @@
   ],
   "subredditInfo": {
     "name": "GTMbuilders",
-    "subscribers": 281,
+    "subscribers": 282,
     "description": "Builders shipping the future of go-to-market with AI. GitHub commits over slide decks. Tribal knowledge shared openly. Systems, experiments, and real lessons from operators who build in public and grow together. No gatekeeping. No guru talk. Builder-led growth starts here."
   },
   "userProfile": {
