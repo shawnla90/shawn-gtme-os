@@ -64,12 +64,12 @@ const blockTextBase: React.CSSProperties = {
 /* ── styles ────────────────────────────────────────── */
 
 const heroSection: React.CSSProperties = {
-  minHeight: '70vh',
+  minHeight: '0',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   background: 'var(--canvas)',
-  padding: '80px 24px 40px',
+  padding: '80px 24px 24px',
   position: 'relative',
 }
 
@@ -133,7 +133,7 @@ const rssLink: React.CSSProperties = {
 }
 
 const latestSection: React.CSSProperties = {
-  marginBottom: '48px',
+  marginBottom: '32px',
 }
 
 const latestLabel: React.CSSProperties = {
@@ -382,20 +382,6 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
           </MotionReveal>
         </div>
 
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 32,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            color: 'var(--text-muted)',
-            fontSize: '24px',
-            lineHeight: 1,
-            userSelect: 'none',
-          }}
-        >
-          &#8964;
-        </div>
       </section>
 
       {/* Highlights from latest episode */}
@@ -403,7 +389,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
         <section
           style={{
             background: 'var(--canvas)',
-            padding: '0 24px 48px',
+            padding: '0 24px 20px',
           }}
         >
           <div style={{ maxWidth: '960px', margin: '0 auto' }}>
@@ -449,8 +435,9 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '16px',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                gap: '12px',
+                alignItems: 'start',
               }}
             >
               {/* Best Comment */}
@@ -496,8 +483,8 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                       fontStyle: 'italic',
                     }}
                   >
-                    &ldquo;{highlights.bestComment.length > 180
-                      ? highlights.bestComment.slice(0, 180) + '...'
+                    &ldquo;{highlights.bestComment.length > 250
+                      ? highlights.bestComment.slice(0, 250) + '...'
                       : highlights.bestComment}&rdquo;
                   </div>
                   <div
@@ -556,8 +543,8 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                       fontStyle: 'italic',
                     }}
                   >
-                    &ldquo;{highlights.trollOfTheDay.length > 180
-                      ? highlights.trollOfTheDay.slice(0, 180) + '...'
+                    &ldquo;{highlights.trollOfTheDay.length > 250
+                      ? highlights.trollOfTheDay.slice(0, 250) + '...'
                       : highlights.trollOfTheDay}&rdquo;
                   </div>
                   <div
@@ -616,7 +603,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                           color: 'var(--text-secondary)',
                         }}
                       >
-                        {fact.length > 120 ? fact.slice(0, 120) + '...' : fact}
+                        {fact.length > 160 ? fact.slice(0, 160) + '...' : fact}
                       </div>
                     ))}
                   </div>

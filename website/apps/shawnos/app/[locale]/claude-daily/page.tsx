@@ -72,22 +72,34 @@ function extractHighlights(content: string) {
     sections[currentSection] = currentBody.join('\n').trim()
   }
 
-  // Extract blockquote from a section (for best comment / troll)
+  // Extract all blockquote lines from a section (handles multi-line and blank-line gaps)
   function getBlockquote(text: string | undefined): string | null {
     if (!text) return null
     const bqLines: string[] = []
-    let inQuote = false
-    for (const l of text.split('\n')) {
+    const lines = text.split('\n')
+    let foundQuote = false
+    let gapCount = 0
+    for (const l of lines) {
       if (l.startsWith('> ')) {
-        inQuote = true
-        bqLines.push(l.replace(/^> ?/, ''))
-      } else if (inQuote && l.trim() === '') {
-        break
-      } else if (inQuote) {
+        foundQuote = true
+        gapCount = 0
+        const cleaned = l.replace(/^> ?/, '').trim()
+        if (cleaned) bqLines.push(cleaned)
+      } else if (foundQuote && l.trim() === '>') {
+        // empty blockquote line (paragraph break in quote)
+        gapCount = 0
+      } else if (foundQuote && l.trim() === '') {
+        gapCount++
+        if (gapCount > 1) break // two blank lines = end of quote block
+      } else if (foundQuote) {
         break
       }
     }
     return bqLines.length ? bqLines.join(' ').trim() : null
+  }
+
+  function stripMarkdown(text: string): string {
+    return text.replace(/\*\*/g, '').replace(/\*/g, '').replace(/`/g, '')
   }
 
   // Extract fun facts as array of bullet points
@@ -95,8 +107,8 @@ function extractHighlights(content: string) {
     if (!text) return []
     return text
       .split('\n')
-      .filter((l) => l.startsWith('- **'))
-      .map((l) => l.replace(/^- /, '').trim())
+      .filter((l) => l.startsWith('- '))
+      .map((l) => stripMarkdown(l.replace(/^- /, '').trim()))
       .slice(0, 3)
   }
 
