@@ -14,6 +14,27 @@ import { BlogTracking } from './BlogTracking'
 const GREEN = '#4EC373'
 const GREEN_DIM = '#4EC37344'
 
+const CLAUDE_ART = `██████╗ ██╗       █████╗  ██╗   ██╗ ██████╗  ███████╗
+██╔════╝ ██║      ██╔══██╗ ██║   ██║ ██╔══██╗ ██╔════╝
+██║      ██║      ███████║ ██║   ██║ ██║  ██║ █████╗
+██║      ██║      ██╔══██║ ██║   ██║ ██║  ██║ ██╔══╝
+╚██████╗ ███████╗ ██║  ██║ ╚██████╔╝ ██████╔╝ ███████╗
+ ╚═════╝ ╚══════╝ ╚═╝  ╚═╝  ╚═════╝  ╚═════╝  ╚══════╝`
+
+const DAILY_ART = `██████╗   █████╗  ██╗ ██╗      ██╗   ██╗
+██╔══██╗ ██╔══██╗ ██║ ██║      ╚██╗ ██╔╝
+██║  ██║ ███████║ ██║ ██║       ╚████╔╝
+██║  ██║ ██╔══██║ ██║ ██║        ╚██╔╝
+██████╔╝ ██║  ██║ ██║ ███████╗    ██║
+╚═════╝  ╚═╝  ╚═╝ ╚═╝ ╚══════╝    ╚═╝`
+
+const C_ART = ` ██████╗
+██╔════╝
+██║
+██║
+╚██████╗
+ ╚═════╝`
+
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
 
@@ -194,11 +215,11 @@ export default async function BlogPost({
           {post.category === 'claude-daily' && (
             <div
               style={{
-                padding: '32px 32px 28px',
+                padding: '28px 24px',
                 marginBottom: '28px',
-                background: 'linear-gradient(135deg, #0a0f14 0%, #0d1117 40%, #101820 100%)',
+                background: '#0d1117',
                 border: `1px solid ${GREEN_DIM}`,
-                borderRadius: '12px',
+                borderRadius: '8px',
                 position: 'relative',
                 overflow: 'hidden',
               }}
@@ -208,99 +229,145 @@ export default async function BlogPost({
                 style={{
                   position: 'absolute',
                   top: 0,
-                  left: '10%',
-                  right: '10%',
-                  height: '2px',
+                  left: 0,
+                  right: 0,
+                  height: '1px',
                   background: `linear-gradient(90deg, transparent, ${GREEN}, transparent)`,
-                  borderRadius: '0 0 2px 2px',
                 }}
               />
 
-              {/* subtle corner glow */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: '-40px',
-                  right: '-40px',
-                  width: '120px',
-                  height: '120px',
-                  background: `radial-gradient(circle, ${GREEN}08 0%, transparent 70%)`,
-                  pointerEvents: 'none',
-                }}
-              />
+              {/* logo + mascot row */}
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px' }}>
+                {/* left: CLAUDE + DAILY block art */}
+                <div style={{ minWidth: 0 }}>
+                  <pre
+                    style={{
+                      fontFamily: 'var(--font-mono), monospace',
+                      fontSize: 'clamp(5px, 1.4vw, 8px)',
+                      lineHeight: 1.15,
+                      letterSpacing: '0.02em',
+                      whiteSpace: 'pre',
+                      margin: 0,
+                      padding: 0,
+                      userSelect: 'none',
+                      color: GREEN,
+                      textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
+                    }}
+                  >
+                    {CLAUDE_ART}
+                  </pre>
+                  <pre
+                    style={{
+                      fontFamily: 'var(--font-mono), monospace',
+                      fontSize: 'clamp(5px, 1.4vw, 8px)',
+                      lineHeight: 1.15,
+                      letterSpacing: '0.02em',
+                      whiteSpace: 'pre',
+                      margin: 0,
+                      padding: 0,
+                      userSelect: 'none',
+                      color: GREEN,
+                      textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
+                      marginTop: '-1px',
+                    }}
+                  >
+                    {DAILY_ART}
+                  </pre>
+                </div>
 
-              {/* masthead */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-                {/* CC mark */}
+                {/* right: CC mascot */}
                 <div
+                  className="cc-article-mascot"
                   style={{
-                    width: '48px',
-                    height: '48px',
-                    borderRadius: '12px',
-                    background: `linear-gradient(135deg, ${GREEN}15, ${GREEN}08)`,
-                    border: `1px solid ${GREEN}25`,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
                     flexShrink: 0,
+                    position: 'relative',
+                    width: '80px',
+                    height: '80px',
                   }}
                 >
-                  <span
+                  <div
                     style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '20px',
-                      fontWeight: 800,
+                      position: 'absolute',
+                      inset: 0,
+                      borderRadius: '50%',
+                      background: '#161b22',
+                      border: '1px solid #4EC37315',
+                      boxShadow: '0 0 30px #4EC37310',
+                    }}
+                  />
+                  <pre
+                    style={{
+                      fontFamily: 'var(--font-mono), monospace',
+                      lineHeight: 1.15,
+                      whiteSpace: 'pre',
+                      margin: 0,
+                      padding: 0,
+                      userSelect: 'none',
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-58%, -62%)',
+                      fontSize: '8px',
                       color: GREEN,
-                      letterSpacing: '-2px',
-                      lineHeight: 1,
+                      textShadow: `0 0 16px #4EC37340`,
                     }}
                   >
-                    CC
-                  </span>
-                </div>
-
-                <div style={{ flex: 1 }}>
-                  <div
+                    {C_ART}
+                  </pre>
+                  <pre
                     style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '18px',
-                      fontWeight: 700,
-                      color: '#e6edf3',
-                      letterSpacing: '-0.01em',
-                      lineHeight: 1,
+                      fontFamily: 'var(--font-mono), monospace',
+                      lineHeight: 1.15,
+                      whiteSpace: 'pre',
+                      margin: 0,
+                      padding: 0,
+                      userSelect: 'none',
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-38%, -38%)',
+                      fontSize: '8px',
+                      color: '#6FD98F',
+                      textShadow: `0 0 16px #4EC37340`,
                     }}
                   >
-                    Claude Code{' '}
-                    <span style={{ color: GREEN }}>Daily</span>
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '12px',
-                      color: '#8b949e',
-                      marginTop: '4px',
-                    }}
-                  >
-                    The daily show for Claude Code builders
-                  </div>
+                    {C_ART}
+                  </pre>
                 </div>
+              </div>
 
+              {/* meta row */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  marginTop: '14px',
+                }}
+              >
                 <span
                   style={{
                     fontSize: '10px',
                     fontWeight: 700,
                     color: GREEN,
-                    background: `${GREEN}12`,
-                    border: `1px solid ${GREEN}30`,
-                    borderRadius: '20px',
-                    padding: '5px 14px',
-                    fontFamily: 'var(--font-sans)',
-                    letterSpacing: '0.1em',
+                    border: `1px solid ${GREEN_DIM}`,
+                    borderRadius: '10px',
+                    padding: '3px 10px',
+                    fontFamily: 'var(--font-mono)',
+                    letterSpacing: '0.08em',
                     textTransform: 'uppercase',
-                    flexShrink: 0,
                   }}
                 >
                   live
+                </span>
+                <span
+                  style={{
+                    fontSize: '12px',
+                    color: 'var(--text-muted)',
+                    fontFamily: 'var(--font-mono)',
+                  }}
+                >
+                  the daily show for claude code builders
                 </span>
               </div>
 
@@ -309,7 +376,7 @@ export default async function BlogPost({
                 style={{
                   height: '1px',
                   background: `linear-gradient(90deg, ${GREEN}20, ${GREEN}40, ${GREEN}20)`,
-                  margin: '16px 0',
+                  margin: '14px 0',
                 }}
               />
 
@@ -330,22 +397,34 @@ export default async function BlogPost({
                     key={label}
                     href={`#${label.replace(/\s+/g, '-')}`}
                     style={{
-                      fontSize: '11px',
-                      fontFamily: 'var(--font-sans)',
-                      fontWeight: 500,
-                      color: '#8b949e',
-                      padding: '4px 12px',
-                      borderRadius: '6px',
+                      fontSize: '10px',
+                      fontFamily: 'var(--font-mono)',
+                      color: 'var(--text-muted)',
+                      padding: '3px 10px',
+                      borderRadius: '4px',
                       background: '#ffffff06',
                       border: '1px solid #ffffff0a',
                       textDecoration: 'none',
                       transition: 'all 0.15s ease',
+                      letterSpacing: '0.02em',
                     }}
                   >
                     {label}
                   </a>
                 ))}
               </div>
+
+              {/* bottom accent line */}
+              <div
+                style={{
+                  position: 'absolute',
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: '1px',
+                  background: `linear-gradient(90deg, transparent, ${GREEN_DIM}, transparent)`,
+                }}
+              />
             </div>
           )}
 

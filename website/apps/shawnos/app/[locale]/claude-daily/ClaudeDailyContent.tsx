@@ -19,7 +19,226 @@ interface Post {
 const GREEN = '#4EC373'
 const GREEN_DIM = '#4EC37344'
 
-/* ── section nav ────────────────────────────────────── */
+/* ── block art strings (oh-my-logo --filled --block-font block) ── */
+
+const CLAUDE_ART = `██████╗ ██╗       █████╗  ██╗   ██╗ ██████╗  ███████╗
+██╔════╝ ██║      ██╔══██╗ ██║   ██║ ██╔══██╗ ██╔════╝
+██║      ██║      ███████║ ██║   ██║ ██║  ██║ █████╗
+██║      ██║      ██╔══██║ ██║   ██║ ██║  ██║ ██╔══╝
+╚██████╗ ███████╗ ██║  ██║ ╚██████╔╝ ██████╔╝ ███████╗
+ ╚═════╝ ╚══════╝ ╚═╝  ╚═╝  ╚═════╝  ╚═════╝  ╚══════╝`
+
+const DAILY_ART = `██████╗   █████╗  ██╗ ██╗      ██╗   ██╗
+██╔══██╗ ██╔══██╗ ██║ ██║      ╚██╗ ██╔╝
+██║  ██║ ███████║ ██║ ██║       ╚████╔╝
+██║  ██║ ██╔══██║ ██║ ██║        ╚██╔╝
+██████╔╝ ██║  ██║ ██║ ███████╗    ██║
+╚═════╝  ╚═╝  ╚═╝ ╚═╝ ╚══════╝    ╚═╝`
+
+const C_ART = ` ██████╗
+██╔════╝
+██║
+██║
+╚██████╗
+ ╚═════╝`
+
+/* ── block art text style ─────────────────────────── */
+
+const blockTextBase: React.CSSProperties = {
+  fontFamily: 'var(--font-mono), monospace',
+  lineHeight: 1.15,
+  letterSpacing: '0.02em',
+  whiteSpace: 'pre',
+  margin: 0,
+  padding: 0,
+  userSelect: 'none',
+}
+
+/* ── styles ────────────────────────────────────────── */
+
+const heroSection: React.CSSProperties = {
+  minHeight: '70vh',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  background: 'var(--canvas)',
+  padding: '80px 24px 40px',
+  position: 'relative',
+}
+
+const heroInner: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '48px',
+  maxWidth: '1060px',
+  width: '100%',
+}
+
+const heroLeft: React.CSSProperties = {
+  flex: 1,
+  minWidth: 0,
+}
+
+const heroSubtitle: React.CSSProperties = {
+  fontSize: 'clamp(13px, 1.6vw, 16px)',
+  color: 'var(--text-secondary)',
+  fontFamily: 'var(--font-mono)',
+  lineHeight: 1.6,
+  margin: '20px 0 20px',
+}
+
+const heroMeta: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '12px',
+  flexWrap: 'wrap',
+}
+
+const countBadge: React.CSSProperties = {
+  fontSize: '11px',
+  color: 'var(--text-muted)',
+  fontFamily: 'var(--font-mono)',
+}
+
+const liveBadge: React.CSSProperties = {
+  fontSize: '10px',
+  fontWeight: 700,
+  color: GREEN,
+  border: `1px solid ${GREEN_DIM}`,
+  borderRadius: '10px',
+  padding: '3px 10px',
+  fontFamily: 'var(--font-mono)',
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase' as const,
+}
+
+const rssLink: React.CSSProperties = {
+  fontSize: '11px',
+  fontWeight: 600,
+  color: GREEN,
+  border: `1px solid ${GREEN_DIM}`,
+  borderRadius: '3px',
+  padding: '2px 8px',
+  textDecoration: 'none',
+  fontFamily: 'var(--font-mono)',
+  letterSpacing: '0.06em',
+}
+
+const latestSection: React.CSSProperties = {
+  marginBottom: '48px',
+}
+
+const latestLabel: React.CSSProperties = {
+  fontSize: '10px',
+  fontWeight: 700,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase',
+  color: GREEN,
+  fontFamily: 'var(--font-mono)',
+  marginBottom: '12px',
+}
+
+const latestCard: React.CSSProperties = {
+  padding: '24px',
+  background: 'var(--canvas-subtle)',
+  border: `1px solid ${GREEN_DIM}`,
+  borderRadius: '8px',
+  textDecoration: 'none',
+  display: 'block',
+  transition: 'border-color 0.2s ease',
+}
+
+const latestTitle: React.CSSProperties = {
+  fontSize: '22px',
+  fontWeight: 600,
+  color: GREEN,
+  lineHeight: 1.3,
+  marginBottom: '8px',
+}
+
+const latestExcerpt: React.CSSProperties = {
+  fontSize: '14px',
+  lineHeight: 1.6,
+  color: 'var(--text-secondary)',
+  marginBottom: '12px',
+}
+
+const latestMeta: React.CSSProperties = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '8px',
+}
+
+const metaDate: React.CSSProperties = {
+  fontSize: '11px',
+  fontWeight: 400,
+  color: 'var(--text-muted)',
+  fontFamily: 'var(--font-mono)',
+}
+
+const readLinkStyle: React.CSSProperties = {
+  fontSize: '12px',
+  color: GREEN,
+  fontFamily: 'var(--font-mono)',
+  fontWeight: 600,
+  textDecoration: 'none',
+}
+
+const archiveLabel: React.CSSProperties = {
+  fontSize: '10px',
+  fontWeight: 700,
+  letterSpacing: '0.12em',
+  textTransform: 'uppercase',
+  color: 'var(--text-muted)',
+  fontFamily: 'var(--font-mono)',
+  marginBottom: '16px',
+}
+
+const archiveItem: React.CSSProperties = {
+  padding: '16px 20px',
+  borderBottom: '1px solid var(--border)',
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  gap: '16px',
+  textDecoration: 'none',
+}
+
+const archiveTitle: React.CSSProperties = {
+  fontSize: '14px',
+  fontWeight: 500,
+  color: 'var(--text-primary)',
+  lineHeight: 1.4,
+  flex: 1,
+}
+
+const archiveDateStyle: React.CSSProperties = {
+  fontSize: '11px',
+  color: 'var(--text-muted)',
+  fontFamily: 'var(--font-mono)',
+  whiteSpace: 'nowrap',
+}
+
+const sectionBadge: React.CSSProperties = {
+  fontSize: '10px',
+  fontWeight: 600,
+  color: 'var(--text-muted)',
+  border: '1px solid var(--border)',
+  borderRadius: '12px',
+  padding: '3px 10px',
+  fontFamily: 'var(--font-mono)',
+  textDecoration: 'none',
+  transition: 'all 0.15s ease',
+  whiteSpace: 'nowrap',
+}
+
+const sectionBadgesWrap: React.CSSProperties = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '6px',
+  marginTop: '12px',
+}
 
 const SECTIONS = [
   { label: 'the pulse', anchor: 'the-pulse' },
@@ -32,12 +251,15 @@ const SECTIONS = [
   { label: 'scoreboard', anchor: 'the-scoreboard' },
 ]
 
-/* ── helpers ────────────────────────────────────────── */
-
-function formatDate(dateStr: string): string {
-  const d = new Date(dateStr)
-  if (isNaN(d.getTime())) return dateStr
-  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+const emptyState: React.CSSProperties = {
+  padding: '48px 32px',
+  textAlign: 'center',
+  color: 'var(--text-muted)',
+  fontSize: '13px',
+  background: 'var(--canvas-subtle)',
+  border: '1px solid var(--border)',
+  borderRadius: '8px',
+  fontFamily: 'var(--font-mono)',
 }
 
 /* ── component ────────────────────────────────────── */
@@ -54,159 +276,115 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
   return (
     <>
       {/* Hero */}
-      <section
-        className="full-bleed"
-        style={{
-          minHeight: '60vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: 'linear-gradient(180deg, #0a0f14 0%, var(--canvas) 100%)',
-          padding: '100px 24px 60px',
-          position: 'relative',
-          overflow: 'hidden',
-        }}
-      >
-        {/* background glow */}
-        <div
-          style={{
-            position: 'absolute',
-            top: '10%',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            width: '600px',
-            height: '300px',
-            background: `radial-gradient(ellipse, ${GREEN}08 0%, transparent 70%)`,
-            pointerEvents: 'none',
-          }}
-        />
-
-        <div style={{ maxWidth: '720px', width: '100%', textAlign: 'center', position: 'relative' }}>
+      <section className="full-bleed" style={heroSection}>
+        <div style={heroInner}>
           <MotionReveal variant="fadeUp" delay={0.1}>
-            {/* CC mark */}
-            <div
-              style={{
-                width: '72px',
-                height: '72px',
-                borderRadius: '16px',
-                background: `linear-gradient(135deg, ${GREEN}15, ${GREEN}08)`,
-                border: `1px solid ${GREEN}25`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                margin: '0 auto 28px',
-              }}
-            >
-              <span
+            <div style={heroLeft}>
+              {/* CLAUDE in block characters */}
+              <pre
                 style={{
-                  fontSize: '28px',
-                  fontWeight: 800,
+                  ...blockTextBase,
+                  fontSize: 'clamp(6px, 1.15vw, 14px)',
                   color: GREEN,
-                  letterSpacing: '-2px',
-                  lineHeight: 1,
-                  fontFamily: 'var(--font-sans)',
+                  textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
                 }}
               >
-                CC
-              </span>
+                {CLAUDE_ART}
+              </pre>
+              {/* DAILY in block characters */}
+              <pre
+                style={{
+                  ...blockTextBase,
+                  fontSize: 'clamp(6px, 1.15vw, 14px)',
+                  color: GREEN,
+                  textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
+                  marginTop: '-2px',
+                }}
+              >
+                {DAILY_ART}
+              </pre>
+
+              <p style={heroSubtitle}>
+                the daily show for claude code builders.
+                <br />
+                news. repos. roasts. the comments you missed.
+              </p>
+              <div style={heroMeta}>
+                <span style={liveBadge}>live</span>
+                <span style={countBadge}>{sorted.length} digests</span>
+                <a href="/feed/claude-daily.xml" style={rssLink}>
+                  RSS
+                </a>
+              </div>
             </div>
+          </MotionReveal>
 
-            {/* title */}
-            <h1
-              style={{
-                fontSize: 'clamp(32px, 5vw, 48px)',
-                fontWeight: 700,
-                color: '#e6edf3',
-                lineHeight: 1.1,
-                margin: 0,
-                fontFamily: 'var(--font-sans)',
-                letterSpacing: '-0.02em',
-              }}
-            >
-              Claude Code{' '}
-              <span style={{ color: GREEN }}>Daily</span>
-            </h1>
-
-            {/* tagline */}
-            <p
-              style={{
-                fontSize: 'clamp(15px, 2vw, 18px)',
-                color: '#8b949e',
-                lineHeight: 1.6,
-                margin: '16px auto 0',
-                maxWidth: '480px',
-                fontFamily: 'var(--font-sans)',
-                fontWeight: 400,
-              }}
-            >
-              The daily show for Claude Code builders.
-              <br />
-              News. Repos. Roasts. The comments you missed.
-            </p>
-
-            {/* meta row */}
+          {/* CC mascot - two C's, back one angled */}
+          <MotionReveal variant="fadeUp" delay={0.3}>
             <div
+              className="cc-mascot-wrap"
               style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '16px',
-                marginTop: '28px',
+                flexShrink: 0,
+                position: 'relative',
+                width: 'clamp(160px, 18vw, 240px)',
+                height: 'clamp(160px, 18vw, 240px)',
               }}
             >
-              <span
+              {/* Dark circle bg */}
+              <div
                 style={{
-                  fontSize: '10px',
-                  fontWeight: 700,
+                  position: 'absolute',
+                  inset: 0,
+                  borderRadius: '50%',
+                  background: '#161b22',
+                  border: '1px solid #4EC37315',
+                  boxShadow: '0 0 40px #4EC37310',
+                }}
+              />
+              {/* Top C - upper left */}
+              <pre
+                style={{
+                  ...blockTextBase,
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-58%, -62%)',
+                  fontSize: 'clamp(12px, 2.2vw, 24px)',
                   color: GREEN,
-                  background: `${GREEN}12`,
-                  border: `1px solid ${GREEN}30`,
-                  borderRadius: '20px',
-                  padding: '5px 16px',
-                  fontFamily: 'var(--font-sans)',
-                  letterSpacing: '0.12em',
-                  textTransform: 'uppercase' as const,
+                  textShadow: `0 0 16px #4EC37340, 0 0 4px #4EC37330`,
                 }}
               >
-                Live
-              </span>
-              <span
+                {C_ART}
+              </pre>
+              {/* Bottom C - lower right, full opacity */}
+              <pre
                 style={{
-                  fontSize: '13px',
-                  color: '#8b949e',
-                  fontFamily: 'var(--font-sans)',
+                  ...blockTextBase,
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  transform: 'translate(-38%, -38%)',
+                  fontSize: 'clamp(12px, 2.2vw, 24px)',
+                  color: '#6FD98F',
+                  textShadow: `0 0 16px #4EC37340, 0 0 4px #4EC37330`,
                 }}
               >
-                {sorted.length} episodes
-              </span>
-              <a
-                href="/feed/claude-daily.xml"
-                style={{
-                  fontSize: '12px',
-                  fontWeight: 600,
-                  color: GREEN,
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-sans)',
-                }}
-              >
-                RSS
-              </a>
+                {C_ART}
+              </pre>
             </div>
           </MotionReveal>
         </div>
 
-        {/* scroll hint */}
         <div
           style={{
             position: 'absolute',
-            bottom: 28,
+            bottom: 32,
             left: '50%',
             transform: 'translateX(-50%)',
-            color: '#8b949e',
-            fontSize: '20px',
+            color: 'var(--text-muted)',
+            fontSize: '24px',
             lineHeight: 1,
             userSelect: 'none',
-            opacity: 0.5,
           }}
         >
           &#8964;
@@ -214,247 +392,103 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
       </section>
 
       <ScrollRevealSection background="var(--canvas)">
-        <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-          {sorted.length === 0 ? (
-            <div
-              style={{
-                padding: '48px 32px',
-                textAlign: 'center',
-                color: '#8b949e',
-                fontSize: '15px',
-                background: 'var(--canvas-subtle)',
-                border: '1px solid var(--border)',
-                borderRadius: '12px',
-                fontFamily: 'var(--font-sans)',
-              }}
-            >
-              No episodes yet. First one drops soon.
-            </div>
-          ) : (
-            <>
-              {/* Latest episode */}
-              {latest && (
-                <div style={{ marginBottom: '56px' }}>
-                  <div
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      color: GREEN,
-                      marginBottom: '14px',
-                      fontFamily: 'var(--font-sans)',
-                    }}
-                  >
-                    Latest Episode
-                  </div>
-                  <Link
-                    href={`/blog/${latest.slug}`}
-                    style={{
-                      padding: '28px',
-                      background: 'linear-gradient(135deg, #0d1117, #101820)',
-                      border: `1px solid ${GREEN_DIM}`,
-                      borderRadius: '12px',
-                      textDecoration: 'none',
-                      display: 'block',
-                      transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                      const el = e.currentTarget as HTMLElement
-                      el.style.borderColor = GREEN
-                      el.style.boxShadow = `0 0 30px ${GREEN}10`
-                    }}
-                    onMouseLeave={(e) => {
-                      const el = e.currentTarget as HTMLElement
-                      el.style.borderColor = GREEN_DIM
-                      el.style.boxShadow = 'none'
-                    }}
-                  >
-                    <div
-                      style={{
-                        fontSize: '22px',
-                        fontWeight: 600,
-                        color: '#e6edf3',
-                        lineHeight: 1.3,
-                        marginBottom: '10px',
-                        fontFamily: 'var(--font-sans)',
-                      }}
-                    >
-                      {latest.title}
-                    </div>
-                    <div
-                      style={{
-                        fontSize: '14px',
-                        lineHeight: 1.6,
-                        color: '#8b949e',
-                        marginBottom: '16px',
-                        fontFamily: 'var(--font-sans)',
-                      }}
-                    >
-                      {latest.excerpt}
-                    </div>
-
-                    {/* section badges */}
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
-                      {SECTIONS.map((s) => (
-                        <Link
-                          key={s.anchor}
-                          href={`/blog/${latest.slug}#${s.anchor}`}
-                          style={{
-                            fontSize: '11px',
-                            fontWeight: 500,
-                            color: '#8b949e',
-                            padding: '4px 12px',
-                            borderRadius: '6px',
-                            background: '#ffffff06',
-                            border: '1px solid #ffffff0a',
-                            textDecoration: 'none',
-                            transition: 'all 0.15s ease',
-                            fontFamily: 'var(--font-sans)',
-                          }}
-                          onMouseEnter={(e) => {
-                            const el = e.currentTarget as HTMLElement
-                            el.style.borderColor = `${GREEN}40`
-                            el.style.color = GREEN
-                          }}
-                          onMouseLeave={(e) => {
-                            const el = e.currentTarget as HTMLElement
-                            el.style.borderColor = '#ffffff0a'
-                            el.style.color = '#8b949e'
-                          }}
-                        >
-                          {s.label}
-                        </Link>
-                      ))}
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                      <time
-                        dateTime={latest.date}
-                        style={{
-                          fontSize: '13px',
-                          color: '#6e7681',
-                          fontFamily: 'var(--font-sans)',
+        {sorted.length === 0 ? (
+          <div style={emptyState}>
+            No digests published yet. First one drops soon.
+          </div>
+        ) : (
+          <>
+            {latest && (
+              <div style={latestSection}>
+                <div style={latestLabel}>Latest</div>
+                <Link
+                  href={`/blog/${latest.slug}`}
+                  style={latestCard}
+                  onMouseEnter={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = GREEN
+                  }}
+                  onMouseLeave={(e) => {
+                    ;(e.currentTarget as HTMLElement).style.borderColor = GREEN_DIM
+                  }}
+                >
+                  <div style={latestTitle}>{latest.title}</div>
+                  <div style={latestExcerpt}>{latest.excerpt}</div>
+                  <div style={sectionBadgesWrap}>
+                    {SECTIONS.map((s) => (
+                      <Link
+                        key={s.anchor}
+                        href={`/blog/${latest.slug}#${s.anchor}`}
+                        style={sectionBadge}
+                        onMouseEnter={(e) => {
+                          ;(e.currentTarget as HTMLElement).style.borderColor = GREEN
+                          ;(e.currentTarget as HTMLElement).style.color = GREEN
+                        }}
+                        onMouseLeave={(e) => {
+                          ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'
+                          ;(e.currentTarget as HTMLElement).style.color = 'var(--text-muted)'
                         }}
                       >
-                        {formatDate(latest.date)}
-                      </time>
-                      {latest.readingTime !== undefined && (
-                        <>
-                          <span style={{ fontSize: '13px', color: '#6e7681' }}>&middot;</span>
-                          <span
-                            style={{
-                              fontSize: '13px',
-                              color: '#6e7681',
-                              fontFamily: 'var(--font-sans)',
-                            }}
-                          >
-                            {latest.readingTime} min read
-                          </span>
-                        </>
-                      )}
-                      <span
-                        style={{
-                          fontSize: '13px',
-                          color: GREEN,
-                          fontWeight: 600,
-                          fontFamily: 'var(--font-sans)',
-                          marginLeft: 'auto',
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <div style={{ ...latestMeta, marginTop: '12px' }}>
+                    <time dateTime={latest.date} style={metaDate}>
+                      {latest.date}
+                    </time>
+                    {latest.readingTime !== undefined && (
+                      <>
+                        <span style={{ ...metaDate, color: 'var(--text-muted)' }}>&middot;</span>
+                        <span style={metaDate}>{latest.readingTime} min read</span>
+                      </>
+                    )}
+                    <span style={readLinkStyle}>read &rarr;</span>
+                  </div>
+                </Link>
+              </div>
+            )}
+
+            {archive.length > 0 && (
+              <div>
+                <div style={archiveLabel}>Archive</div>
+                <StaggerContainer stagger={0.04}>
+                  {archive.map((post) => (
+                    <StaggerItem key={post.slug}>
+                      <Link
+                        href={`/blog/${post.slug}`}
+                        style={archiveItem}
+                        onMouseEnter={(e) => {
+                          const title = (e.currentTarget as HTMLElement).querySelector(
+                            'span',
+                          ) as HTMLElement
+                          if (title) title.style.color = GREEN
+                        }}
+                        onMouseLeave={(e) => {
+                          const title = (e.currentTarget as HTMLElement).querySelector(
+                            'span',
+                          ) as HTMLElement
+                          if (title) title.style.color = 'var(--text-primary)'
                         }}
                       >
-                        Read episode &rarr;
-                      </span>
-                    </div>
-                  </Link>
-                </div>
-              )}
-
-              {/* Archive */}
-              {archive.length > 0 && (
-                <div>
-                  <div
-                    style={{
-                      fontSize: '11px',
-                      fontWeight: 600,
-                      letterSpacing: '0.1em',
-                      textTransform: 'uppercase',
-                      color: '#6e7681',
-                      marginBottom: '16px',
-                      fontFamily: 'var(--font-sans)',
-                    }}
-                  >
-                    Previous Episodes
-                  </div>
-                  <div
-                    style={{
-                      border: '1px solid var(--border)',
-                      borderRadius: '12px',
-                      overflow: 'hidden',
-                    }}
-                  >
-                    <StaggerContainer stagger={0.04}>
-                      {archive.map((post, i) => (
-                        <StaggerItem key={post.slug}>
-                          <Link
-                            href={`/blog/${post.slug}`}
-                            style={{
-                              padding: '16px 20px',
-                              borderBottom: i < archive.length - 1 ? '1px solid var(--border)' : 'none',
-                              display: 'flex',
-                              justifyContent: 'space-between',
-                              alignItems: 'center',
-                              gap: '16px',
-                              textDecoration: 'none',
-                              transition: 'background 0.15s ease',
-                            }}
-                            onMouseEnter={(e) => {
-                              const el = e.currentTarget as HTMLElement
-                              el.style.background = '#ffffff04'
-                              const title = el.querySelector('[data-title]') as HTMLElement
-                              if (title) title.style.color = GREEN
-                            }}
-                            onMouseLeave={(e) => {
-                              const el = e.currentTarget as HTMLElement
-                              el.style.background = 'transparent'
-                              const title = el.querySelector('[data-title]') as HTMLElement
-                              if (title) title.style.color = '#e6edf3'
-                            }}
-                          >
-                            <span
-                              data-title
-                              style={{
-                                fontSize: '14px',
-                                fontWeight: 500,
-                                color: '#e6edf3',
-                                lineHeight: 1.4,
-                                flex: 1,
-                                fontFamily: 'var(--font-sans)',
-                              }}
-                            >
-                              {post.title}
-                            </span>
-                            <time
-                              dateTime={post.date}
-                              style={{
-                                fontSize: '13px',
-                                color: '#6e7681',
-                                whiteSpace: 'nowrap',
-                                fontFamily: 'var(--font-sans)',
-                              }}
-                            >
-                              {formatDate(post.date)}
-                            </time>
-                          </Link>
-                        </StaggerItem>
-                      ))}
-                    </StaggerContainer>
-                  </div>
-                </div>
-              )}
-            </>
-          )}
-        </div>
+                        <span style={archiveTitle}>{post.title}</span>
+                        <time dateTime={post.date} style={archiveDateStyle}>
+                          {post.date}
+                        </time>
+                      </Link>
+                    </StaggerItem>
+                  ))}
+                </StaggerContainer>
+              </div>
+            )}
+          </>
+        )}
       </ScrollRevealSection>
+
+      <style>{`
+        @media (max-width: 700px) {
+          .cc-mascot-wrap { display: none; }
+        }
+      `}</style>
     </>
   )
 }
