@@ -220,6 +220,37 @@ const archiveDateStyle: React.CSSProperties = {
   whiteSpace: 'nowrap',
 }
 
+const sectionBadge: React.CSSProperties = {
+  fontSize: '10px',
+  fontWeight: 600,
+  color: 'var(--text-muted)',
+  border: '1px solid var(--border)',
+  borderRadius: '12px',
+  padding: '3px 10px',
+  fontFamily: 'var(--font-mono)',
+  textDecoration: 'none',
+  transition: 'all 0.15s ease',
+  whiteSpace: 'nowrap',
+}
+
+const sectionBadgesWrap: React.CSSProperties = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '6px',
+  marginTop: '12px',
+}
+
+const SECTIONS = [
+  { label: 'the pulse', anchor: 'the-pulse' },
+  { label: 'hottest thread', anchor: 'hottest-thread' },
+  { label: 'repo of the day', anchor: 'repo-of-the-day' },
+  { label: 'best comment', anchor: 'best-comment-award' },
+  { label: 'troll of the day', anchor: 'troll-of-the-day' },
+  { label: 'fun facts', anchor: 'fun-facts' },
+  { label: 'code drop', anchor: 'code-drop' },
+  { label: 'scoreboard', anchor: 'the-scoreboard' },
+]
+
 const emptyState: React.CSSProperties = {
   padding: '48px 32px',
   textAlign: 'center',
@@ -274,9 +305,9 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
               </pre>
 
               <p style={heroSubtitle}>
-                ecosystem digest from the trenches.
+                the daily show for claude code developers.
                 <br />
-                what builders shipped, what broke, what matters.
+                news. repos. roasts. the comments you missed.
               </p>
               <div style={heroMeta}>
                 <span style={liveBadge}>live</span>
@@ -382,7 +413,26 @@ export function ClaudeDailyContent({ posts }: { posts: Post[] }) {
                 >
                   <div style={latestTitle}>{latest.title}</div>
                   <div style={latestExcerpt}>{latest.excerpt}</div>
-                  <div style={latestMeta}>
+                  <div style={sectionBadgesWrap}>
+                    {SECTIONS.map((s) => (
+                      <Link
+                        key={s.anchor}
+                        href={`/blog/${latest.slug}#${s.anchor}`}
+                        style={sectionBadge}
+                        onMouseEnter={(e) => {
+                          ;(e.currentTarget as HTMLElement).style.borderColor = GREEN
+                          ;(e.currentTarget as HTMLElement).style.color = GREEN
+                        }}
+                        onMouseLeave={(e) => {
+                          ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--border)'
+                          ;(e.currentTarget as HTMLElement).style.color = 'var(--text-muted)'
+                        }}
+                      >
+                        {s.label}
+                      </Link>
+                    ))}
+                  </div>
+                  <div style={{ ...latestMeta, marginTop: '12px' }}>
                     <time dateTime={latest.date} style={metaDate}>
                       {latest.date}
                     </time>

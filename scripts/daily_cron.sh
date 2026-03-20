@@ -167,7 +167,16 @@ else
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
-# ── Step 1l: PostHog to Attio sync ────────────────────────────────────
+# ── Step 1l: Content intel scanner (r/ClaudeCode daily digest) ────────
+log "Running daily_content_intel.py --date $TARGET_DATE"
+if $PYTHON scripts/daily_content_intel.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
+  log "Content intel scanner completed"
+else
+  log "WARN: Content intel scanner failed (non-fatal, continuing)"
+  WARN_COUNT=$((WARN_COUNT + 1))
+fi
+
+# ── Step 1m: PostHog to Attio sync ────────────────────────────────────
 log "Running posthog_to_attio.py"
 if $PYTHON scripts/abm/posthog_to_attio.py --days 1 >> "$LOGFILE" 2>&1; then
   log "PostHog to Attio sync completed"

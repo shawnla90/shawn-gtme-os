@@ -7,7 +7,7 @@ angles (Reddit/X/LinkedIn), auto-publishes a Claude Daily blog digest,
 and notifies via Slack.
 
 5 phases, each independently runnable:
-  1. COLLECT  — PRAW scan of subreddits for trending posts
+  1. COLLECT  — Public Reddit JSON API scan for trending posts
   2. ANALYZE  — Claude CLI scores 10 content angles
   3. GENERATE — Multi-platform versions (Claude + Grok)
   4. BLOG     — Claude CLI generates daily digest blog post
@@ -49,11 +49,14 @@ CORE_VOICE_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "core-voice.md"
 ANTI_SLOP_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "anti-slop.md"
 CLAUDE_CLI = os.environ.get("CLAUDE_CLI", "/opt/homebrew/bin/claude")
 if not Path(CLAUDE_CLI).exists():
-    # Fallback: check common locations
     for p in ["/Users/shawnos.ai/.local/bin/claude", "/usr/local/bin/claude"]:
         if Path(p).exists():
             CLAUDE_CLI = p
             break
+
+# Ensure /opt/homebrew/bin is on PATH (needed for node, used by claude CLI)
+if "/opt/homebrew/bin" not in os.environ.get("PATH", ""):
+    os.environ["PATH"] = f"/opt/homebrew/bin:{os.environ.get('PATH', '')}"
 
 # ── .env loader ───────────────────────────────────────────────────────
 
@@ -113,32 +116,64 @@ def validate_anti_slop(text):
     score = max(0.0, 100.0 - len(violations) * 10.0)
     return score, violations, fixed
 
-# ── PRAW Client ───────────────────────────────────────────────────────
+# ── Reddit Public JSON Client ─────────────────────────────────────────
 
-def get_reddit_client():
-    try:
-        import praw
-    except ImportError:
-        print("ERROR: praw not installed. pip install praw", file=sys.stderr)
-        sys.exit(1)
+REDDIT_HEADERS = {
+    "User-Agent": "ShawnOS ContentIntel/1.0 (content scanner)",
+}
 
-    client_id = os.environ.get("REDDIT_CLIENT_ID")
-    client_secret = os.environ.get("REDDIT_CLIENT_SECRET")
-    username = os.environ.get("REDDIT_USERNAME")
-    password = os.environ.get("REDDIT_PASSWORD")
+def fetch_reddit_json(url, retries=2, quiet=False):
+    """Fetch Reddit's public JSON endpoint with retry logic."""
+    for attempt in range(retries + 1):
+        try:
+            resp = requests.get(url, headers=REDDIT_HEADERS, timeout=15)
+            if resp.status_code == 429:
+                if attempt < retries:
+                    wait = min(int(resp.headers.get("Retry-After", 3)), 10)
+                    if not quiet:
+                        print(f"    rate limited, waiting {wait}s...")
+                    time.sleep(wait)
+                    continue
+                return None
+            resp.raise_for_status()
+            return resp.json()
+        except Exception as e:
+            if attempt < retries:
+                time.sleep(2)
+                continue
+            if not quiet:
+                print(f"    ERROR fetching {url}: {e}", file=sys.stderr)
+            return None
+    return None
 
-    if not all([client_id, client_secret, username, password]):
-        print("ERROR: Reddit credentials not set in .env", file=sys.stderr)
-        print("Required: REDDIT_CLIENT_ID, REDDIT_CLIENT_SECRET, REDDIT_USERNAME, REDDIT_PASSWORD")
-        sys.exit(1)
 
-    return praw.Reddit(
-        client_id=client_id,
-        client_secret=client_secret,
-        username=username,
-        password=password,
-        user_agent=f"ShawnOS ContentIntel/1.0 (by u/{username})",
-    )
+def fetch_subreddit_posts(sub_name, sort="hot", limit=50):
+    """Fetch posts from a subreddit using public JSON API."""
+    url = f"https://www.reddit.com/r/{sub_name}/{sort}.json?limit={limit}&raw_json=1"
+    data = fetch_reddit_json(url)
+    if not data or "data" not in data:
+        return []
+    return [child["data"] for child in data["data"].get("children", [])
+            if child.get("kind") == "t3"]
+
+
+def fetch_post_comments(sub_name, post_id, limit=5):
+    """Fetch top comments for a post using public JSON API."""
+    url = f"https://www.reddit.com/r/{sub_name}/comments/{post_id}.json?limit={limit}&sort=best&raw_json=1"
+    data = fetch_reddit_json(url)
+    if not data or len(data) < 2:
+        return []
+    comments = []
+    for child in data[1]["data"].get("children", [])[:limit]:
+        if child.get("kind") != "t1":
+            continue
+        c = child["data"]
+        comments.append({
+            "author": c.get("author", "[deleted]"),
+            "score": c.get("score", 0),
+            "body": (c.get("body", "") or "")[:300],
+        })
+    return comments
 
 # ── Grok API ──────────────────────────────────────────────────────────
 
@@ -205,7 +240,7 @@ Who Shawn is:
 - Runs shawnos.ai, builds from a monorepo with 50+ AI skills, 17 MCP servers
 - Active in r/ClaudeCode (1,177 karma in 1 month), growing authority on Claude Code
 - Building "Reddit as a service" for B2B SaaS companies
-- Uses Claude Code, PRAW, Grok, and automated content pipelines daily
+- Uses Claude Code, Grok, and automated content pipelines daily
 - Voice: builder-first, casual competence, no gatekeeping, lowercase-first style
 - Brand: Lead Alchemy, the gtme alchemist
 
@@ -220,15 +255,14 @@ His audience:
 # ══════════════════════════════════════════════════════════════════════
 
 def phase_collect(target_date, config, dry_run=False):
-    """Scan subreddits via PRAW for trending posts."""
+    """Scan subreddits via Reddit public JSON API for trending posts."""
     print("\n── PHASE 1: COLLECT ──")
 
-    reddit = get_reddit_client()
     all_subs = config["subreddits"]["primary"] + config["subreddits"]["secondary"]
     collect_config = config.get("collection", {})
     hot_limit = collect_config.get("hot_limit", 50)
     new_limit = collect_config.get("new_limit", 25)
-    top_comments = collect_config.get("top_comments", 5)
+    top_comments_limit = collect_config.get("top_comments", 5)
     hours_lookback = collect_config.get("hours_lookback", 24)
 
     now = datetime.now(timezone.utc)
@@ -238,72 +272,79 @@ def phase_collect(target_date, config, dry_run=False):
 
     for sub_name in all_subs:
         print(f"  scanning r/{sub_name}...")
-        try:
-            subreddit = reddit.subreddit(sub_name)
-        except Exception as e:
-            print(f"    ERROR: could not access r/{sub_name}: {e}")
-            continue
-
         seen_ids = set()
-        posts = []
+        posts_raw = []
 
         # Hot posts
-        try:
-            for post in subreddit.hot(limit=hot_limit):
-                if post.created_utc < cutoff or post.id in seen_ids:
-                    continue
-                seen_ids.add(post.id)
-                posts.append(post)
-        except Exception as e:
-            print(f"    WARN: hot scan failed: {e}")
+        hot_posts = fetch_subreddit_posts(sub_name, sort="hot", limit=hot_limit)
+        for p in hot_posts:
+            if p.get("created_utc", 0) < cutoff or p["id"] in seen_ids:
+                continue
+            seen_ids.add(p["id"])
+            posts_raw.append(p)
 
         # New posts
-        try:
-            for post in subreddit.new(limit=new_limit):
-                if post.created_utc < cutoff or post.id in seen_ids:
-                    continue
-                seen_ids.add(post.id)
-                posts.append(post)
-        except Exception as e:
-            print(f"    WARN: new scan failed: {e}")
+        new_posts = fetch_subreddit_posts(sub_name, sort="new", limit=new_limit)
+        for p in new_posts:
+            if p.get("created_utc", 0) < cutoff or p["id"] in seen_ids:
+                continue
+            seen_ids.add(p["id"])
+            posts_raw.append(p)
 
-        for post in posts:
-            hours_old = max(0.1, (now.timestamp() - post.created_utc) / 3600)
-            velocity_score = round(post.score / hours_old, 2)
-            engagement_ratio = round(post.num_comments / max(1, post.score), 2)
+        # Rate limit: small delay between subreddits
+        time.sleep(1)
 
-            # Get top comments
-            post_comments = []
-            try:
-                post.comment_sort = "best"
-                post.comments.replace_more(limit=0)
-                for comment in post.comments[:top_comments]:
-                    post_comments.append({
-                        "author": str(comment.author) if comment.author else "[deleted]",
-                        "score": comment.score,
-                        "body": comment.body[:300] if comment.body else "",
-                    })
-            except Exception:
-                pass
+        # Build post entries without comments first
+        sub_posts = []
+        for post in posts_raw:
+            created = post.get("created_utc", 0)
+            hours_old = max(0.1, (now.timestamp() - created) / 3600)
+            score = post.get("score", 0)
+            num_comments = post.get("num_comments", 0)
+            velocity_score = round(score / hours_old, 2)
+            engagement_ratio = round(num_comments / max(1, score), 2)
 
-            collected.append({
-                "id": post.id,
-                "subreddit": sub_name,
-                "title": post.title,
-                "selftext_preview": (post.selftext or "")[:500],
-                "score": post.score,
-                "num_comments": post.num_comments,
-                "upvote_ratio": post.upvote_ratio,
-                "created_utc": post.created_utc,
-                "hours_old": round(hours_old, 1),
+            permalink = post.get("permalink", f"/r/{sub_name}/comments/{post['id']}/")
+            sub_posts.append({
+                "id": post["id"],
+                "sub_name": sub_name,
+                "score": score,
                 "velocity_score": velocity_score,
+                "post": post,
+                "permalink": permalink,
+                "hours_old": hours_old,
+                "num_comments": num_comments,
                 "engagement_ratio": engagement_ratio,
-                "url": f"https://reddit.com{post.permalink}",
+                "created": created,
+            })
+
+        # Only fetch comments for top 10 posts by velocity (avoids rate limiting)
+        sub_posts.sort(key=lambda x: -x["velocity_score"])
+        for i, sp in enumerate(sub_posts):
+            post_comments = []
+            if i < 10:
+                post_comments = fetch_post_comments(sub_name, sp["id"], limit=top_comments_limit)
+                time.sleep(1)
+
+            post = sp["post"]
+            collected.append({
+                "id": sp["id"],
+                "subreddit": sub_name,
+                "title": post.get("title", ""),
+                "selftext_preview": (post.get("selftext", "") or "")[:500],
+                "score": sp["score"],
+                "num_comments": sp["num_comments"],
+                "upvote_ratio": post.get("upvote_ratio", 0),
+                "created_utc": sp["created"],
+                "hours_old": round(sp["hours_old"], 1),
+                "velocity_score": sp["velocity_score"],
+                "engagement_ratio": sp["engagement_ratio"],
+                "url": f"https://reddit.com{sp['permalink']}",
                 "top_comments": post_comments,
                 "is_primary": sub_name in config["subreddits"]["primary"],
             })
 
-        print(f"    collected {len(posts)} posts from r/{sub_name}")
+        print(f"    collected {len(posts_raw)} posts from r/{sub_name}")
 
     # Sort by velocity score
     collected.sort(key=lambda x: -x["velocity_score"])
@@ -722,6 +763,22 @@ def phase_blog(target_date, config, dry_run=False):
             angles_lines.append(f"- [{a.get('post_type', '?')}] {a.get('title', '')}")
         angles_summary = "\n".join(angles_lines)
 
+    # Collect best comments for the awards sections
+    all_comments = []
+    for p in posts:
+        for c in p.get("top_comments", []):
+            all_comments.append({
+                "comment": c.get("body", ""),
+                "author": c.get("author", "[deleted]"),
+                "score": c.get("score", 0),
+                "post_title": p.get("title", ""),
+                "subreddit": p.get("subreddit", ""),
+            })
+    top_comments_data = sorted(all_comments, key=lambda x: -x["score"])[:20]
+
+    # Find posts with linked repos
+    repo_posts = [p for p in posts if "github.com" in (p.get("selftext_preview", "") + p.get("url", ""))]
+
     system_prompt = f"""{voice_system}
 
 ---
@@ -734,37 +791,94 @@ def phase_blog(target_date, config, dry_run=False):
 
 Write the "Claude Code Daily: {target_date}" blog post for shawnos.ai.
 
-This is a daily digest covering what happened in the Claude Code ecosystem today.
-It makes shawnos.ai the go-to source for Claude Code news.
+This is THE daily show for Claude Code developers. Think late night TV meets dev news.
+People should want to read this every morning because it's genuinely funny AND useful.
+It's the place where r/ClaudeCode becomes entertainment.
 
-Structure (use these exact headings):
-## ecosystem overview
-1-2 paragraph summary of the day's activity across the Claude/AI subreddits.
+You are the anchor of this show. Confident, witty, a little unhinged but always informed.
+Think of yourself as the Jon Stewart of Claude Code news. You roast, you inform, you entertain.
 
-## trending discussions
-Cover 3-5 notable threads. For each:
-- What the discussion is about
-- Why it matters for builders
-- Key insights from the community
+Structure (use these EXACT headings in this order):
+
+## the pulse
+2-3 paragraph overview of today's ecosystem. Set the scene. What's the vibe? What blew up?
+Write it like you're opening a show. Punchy. Engaging. Make people want to keep reading.
+
+## hottest thread
+The post that dominated today. Break down what happened, why it matters, and what the
+community said about it. Include real upvote counts and comment numbers. Give it context.
+
+## repo of the day
+If there's a GitHub repo shared today, highlight it. What it does, why it's interesting,
+and whether it's actually useful or just hype. If no repo was shared, pick the most
+technical/buildable discussion and frame it as "what you should build from this."
+
+## best comment award
+Pull the single best comment from today's data verbatim (in a blockquote). Credit the user.
+Then explain why this comment won. Was it insightful? Brutally honest? Perfectly timed?
+
+## troll of the day
+The most unhinged, spicy, or hilariously wrong take from today's threads. Quote it (blockquote).
+Roast it with love. This should make people laugh. If there's genuinely no troll moment, pick
+the most controversial take and play devil's advocate with humor.
+
+## fun facts
+3-5 weird, surprising, or amusing data points from today's scan. Format as bullet points.
+Examples: word frequency stats, ratio oddities, posting patterns, sentiment shifts.
+Make these genuinely entertaining. "r/ClaudeCode used the word 'vibe' 47 times today.
+We are not okay."
+
+## code drop
+If someone shared a useful code snippet, config, or technical pattern, highlight it here.
+Format the code in a code block. Explain what it does and why it matters. If nothing
+code-specific was shared, highlight the most actionable technical tip from the discussions.
 
 ## builder takeaways
-3-5 actionable takeaways for Claude Code users. What should they know or try?
+3-5 actionable things Claude Code users should know or try based on today's activity.
+Keep these specific and practical. Not generic advice.
 
-## community pulse
-Quick stats and vibes. What's the community feeling? Any shifts in sentiment?
-
-## by the numbers
-Raw stats in a clean list format.
+## the scoreboard
+Today's stats in a clean format:
+- Posts tracked
+- Total upvotes / comments
+- Fastest rising post (velocity)
+- Most debated (highest comment:upvote ratio)
+- Subreddits scanned
 
 Rules:
-- Lowercase headings (## ecosystem overview, not ## Ecosystem Overview)
-- Builder voice. You're reporting from inside the community, not above it.
-- No em-dashes. Period.
-- Specific. Name real threads, real users (where appropriate), real numbers.
-- AEO-optimized excerpt in the frontmatter (answers a question someone would ask).
-- Don't use quotation marks around phrases.
+- Lowercase headings always
+- Builder voice. You're inside the community, not reporting on it from a desk.
+- No em-dashes. Ever. Use periods, commas, or line breaks instead.
+- Be SPECIFIC. Real thread titles, real usernames, real numbers. No vague references.
+- When quoting comments, use > blockquote format and credit u/username.
+- Humor should be natural, not forced. Dry wit > trying too hard.
+- Don't use quotation marks around phrases (no "air quotes").
+- Roasting is fine. Being mean is not. Punch up, not down.
 - Output ONLY the markdown body. No frontmatter. No title heading.
-- Start directly with ## ecosystem overview."""
+- Start directly with ## the pulse."""
+
+    # Pre-build JSON strings outside f-string to avoid {{ }} escaping issues
+    top_posts_json = json.dumps([
+        {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
+         "comments": p["num_comments"], "velocity": p["velocity_score"],
+         "preview": p["selftext_preview"][:300]}
+        for p in top_posts
+    ], indent=2)
+
+    top_comments_json = json.dumps(top_comments_data[:15], indent=2)
+
+    repo_posts_json = json.dumps([
+        {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
+         "preview": p["selftext_preview"][:300], "url": p.get("url", "")}
+        for p in repo_posts[:5]
+    ], indent=2) if repo_posts else "None today"
+
+    all_posts_json = json.dumps([
+        {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
+         "comments": p["num_comments"], "preview": p["selftext_preview"][:150],
+         "top_comments": [c["body"][:100] for c in p.get("top_comments", [])[:2]]}
+        for p in posts[:40]
+    ], indent=2)
 
     user_prompt = f"""Today's data ({target_date}):
 
@@ -774,15 +888,21 @@ Total upvotes: {total_upvotes}
 Subreddits: {', '.join(subs_covered)}
 
 Top 5 posts by velocity:
-{json.dumps([{"title": p["title"], "sub": p["subreddit"], "score": p["score"], "comments": p["num_comments"], "velocity": p["velocity_score"], "preview": p["selftext_preview"][:200]} for p in top_posts], indent=2)}
+{top_posts_json}
+
+Top comments (for Best Comment Award and Troll of the Day):
+{top_comments_json}
+
+Posts with GitHub repos linked:
+{repo_posts_json}
 
 Content angles identified:
 {angles_summary or "(analysis not yet run)"}
 
-All posts data:
-{json.dumps([{"title": p["title"], "sub": p["subreddit"], "score": p["score"], "comments": p["num_comments"], "preview": p["selftext_preview"][:150]} for p in posts[:30]], indent=2)}
+All posts data (for fun facts and broader coverage):
+{all_posts_json}
 
-Write the blog digest now. Print the full markdown body to stdout. Start with ## ecosystem overview. Do not describe what you would write. Do not use tools. Just write the actual blog post content."""
+Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. Be the show people tune into."""
 
     content = call_claude(system_prompt, user_prompt, model="opus")
     if not content:

@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Claude Code Daily | shawnos.ai',
     description:
-      'Daily digest of the Claude Code ecosystem. Trending discussions, builder takeaways, and community pulse from r/ClaudeCode and beyond.',
+      'The daily show for Claude Code developers. News, repos, roasts, and the Reddit comments you missed. Updated every day from r/ClaudeCode.',
     alternates: {
       canonical: 'https://shawnos.ai/claude-daily',
       languages: hreflang('/claude-daily'),
@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: 'Claude Code Daily | shawnos.ai',
       description:
-        'Daily digest of the Claude Code ecosystem. Trending discussions, builder takeaways, and community pulse.',
+        'The daily show for Claude Code developers. News, repos, roasts, and the Reddit comments you missed.',
       url: 'https://shawnos.ai/claude-daily',
       images: [
         {
@@ -40,7 +40,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       title: 'Claude Code Daily | shawnos.ai',
       description:
-        'Daily digest of the Claude Code ecosystem. Trending discussions, builder takeaways, and community pulse.',
+        'The daily show for Claude Code developers. News, repos, roasts, and the Reddit comments you missed.',
       images: ['/og?title=Claude+Code+Daily&subtitle=ecosystem+digest'],
     },
   }
@@ -63,7 +63,7 @@ export default async function ClaudeDailyPage({ params }: Props) {
     name: 'Claude Code Daily',
     url: 'https://shawnos.ai/claude-daily',
     description:
-      'Daily digest of the Claude Code ecosystem. Trending discussions, builder takeaways, and community pulse.',
+      'The daily show for Claude Code developers. News, repos, roasts, and the Reddit comments you missed.',
     author: { '@type': 'Person', name: 'Shawn Tenam', url: 'https://shawnos.ai' },
     numberOfItems: dailyPosts.length,
   }
