@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-20T04:23:59.671Z",
+  "generated": "2026-03-21T04:20:58.657Z",
   "events": [
     {
-      "id": "commit-601d51d",
-      "title": "feat: claude daily digest 2026-03-19",
+      "id": "commit-3d278a5",
+      "title": "feat: claude daily digest 2026-03-20",
       "type": "milestone",
-      "datetime": "2026-03-20T00:23:39-04:00",
+      "datetime": "2026-03-21T00:20:37-04:00",
       "status": "completed",
-      "description": "feat: claude daily digest 2026-03-19",
+      "description": "feat: claude daily digest 2026-03-20",
       "metadata": {
-        "commitHash": "601d51d"
+        "commitHash": "3d278a5"
       }
     },
     {
-      "id": "commit-f6b075d",
-      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 00:11)",
+      "id": "commit-2bea8fe",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-21 00:19)",
       "type": "system",
-      "datetime": "2026-03-20T00:11:55-04:00",
+      "datetime": "2026-03-21T00:19:17-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 00:11)",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-21 00:19)",
       "metadata": {
-        "commitHash": "f6b075d"
+        "commitHash": "2bea8fe"
       }
     },
     {
-      "id": "commit-84984e5",
-      "title": "chore: sync Reddit cache — 22 posts (2026-03-19 23:11)",
+      "id": "commit-91c95da",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 23:18)",
       "type": "system",
-      "datetime": "2026-03-19T23:11:36-04:00",
+      "datetime": "2026-03-20T23:18:58-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 22 posts (2026-03-19 23:11)",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 23:18)",
       "metadata": {
-        "commitHash": "84984e5"
+        "commitHash": "91c95da"
       }
     },
     {
-      "id": "commit-1f0666e",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-19 22:11)",
+      "id": "commit-a0bba36",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 22:18)",
       "type": "system",
-      "datetime": "2026-03-19T22:11:18-04:00",
+      "datetime": "2026-03-20T22:18:40-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-19 22:11)",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 22:18)",
       "metadata": {
-        "commitHash": "1f0666e"
+        "commitHash": "a0bba36"
       }
     },
     {
-      "id": "commit-cb8a8ba",
-      "title": "fix(claude-daily): tighten spacing, fix quote parser, strip ",
+      "id": "commit-fe76b8d",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 21:18)",
       "type": "system",
-      "datetime": "2026-03-19T21:57:12-04:00",
+      "datetime": "2026-03-20T21:18:20-04:00",
       "status": "completed",
-      "description": "fix(claude-daily): tighten spacing, fix quote parser, strip markdown from facts",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 21:18)",
       "metadata": {
-        "commitHash": "cb8a8ba"
+        "commitHash": "fe76b8d"
       }
     },
     {
-      "id": "commit-3658f53",
-      "title": "feat(claude-daily): highlight cards between hero and archive",
+      "id": "commit-f0f26c0",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 20:18)",
       "type": "system",
-      "datetime": "2026-03-19T21:48:35-04:00",
+      "datetime": "2026-03-20T20:18:01-04:00",
       "status": "completed",
-      "description": "feat(claude-daily): highlight cards between hero and archive",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 20:18)",
       "metadata": {
-        "commitHash": "3658f53"
+        "commitHash": "f0f26c0"
       }
     },
     {
-      "id": "commit-9edc970",
-      "title": "fix(claude-daily): restore ASCII art logo + CC mascot on bot",
+      "id": "commit-1db2ec8",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 19:17)",
       "type": "system",
-      "datetime": "2026-03-19T21:34:41-04:00",
+      "datetime": "2026-03-20T19:17:43-04:00",
       "status": "completed",
-      "description": "fix(claude-daily): restore ASCII art logo + CC mascot on both pages, keep section nav",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 19:17)",
       "metadata": {
-        "commitHash": "9edc970"
+        "commitHash": "1db2ec8"
       }
     },
     {
-      "id": "commit-48c906f",
-      "title": "feat(claude-daily): premium hub redesign, clean typography, ",
+      "id": "commit-f8bdcbd",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 18:17)",
       "type": "system",
-      "datetime": "2026-03-19T21:25:14-04:00",
+      "datetime": "2026-03-20T18:17:23-04:00",
       "status": "completed",
-      "description": "feat(claude-daily): premium hub redesign, clean typography, builders not developers",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 18:17)",
       "metadata": {
-        "commitHash": "48c906f"
+        "commitHash": "f8bdcbd"
       }
     },
     {
-      "id": "commit-a3dc085",
-      "title": "fix(claude-daily): premium masthead header, drop ASCII art f",
+      "id": "commit-c30409f",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 17:17)",
       "type": "system",
-      "datetime": "2026-03-19T21:19:17-04:00",
+      "datetime": "2026-03-20T17:17:05-04:00",
       "status": "completed",
-      "description": "fix(claude-daily): premium masthead header, drop ASCII art for clean typography",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 17:17)",
       "metadata": {
-        "commitHash": "a3dc085"
+        "commitHash": "c30409f"
       }
     },
     {
-      "id": "commit-87cce78",
-      "title": "feat(claude-daily): new show format + branded article header",
+      "id": "commit-5038803",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 16:16)",
       "type": "system",
-      "datetime": "2026-03-19T21:11:18-04:00",
+      "datetime": "2026-03-20T16:16:44-04:00",
       "status": "completed",
-      "description": "feat(claude-daily): new show format + branded article headers",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 16:16)",
       "metadata": {
-        "commitHash": "87cce78"
+        "commitHash": "5038803"
       }
     },
     {
-      "id": "commit-3427ef9",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-19 21:11)",
+      "id": "commit-4d3edec",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 15:16)",
       "type": "system",
-      "datetime": "2026-03-19T21:11:01-04:00",
+      "datetime": "2026-03-20T15:16:25-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-19 21:11)",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 15:16)",
       "metadata": {
-        "commitHash": "3427ef9"
+        "commitHash": "4d3edec"
       }
     },
     {
-      "id": "commit-4200f71",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-19 20:10)",
+      "id": "commit-3c21c4f",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 14:16)",
       "type": "system",
-      "datetime": "2026-03-19T20:10:43-04:00",
+      "datetime": "2026-03-20T14:16:06-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-19 20:10)",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 14:16)",
       "metadata": {
-        "commitHash": "4200f71"
+        "commitHash": "3c21c4f"
       }
     },
     {
-      "id": "commit-605e6cd",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-19 19:10)",
+      "id": "commit-4822b3c",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 13:15)",
       "type": "system",
-      "datetime": "2026-03-19T19:10:24-04:00",
+      "datetime": "2026-03-20T13:15:48-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-19 19:10)",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 13:15)",
       "metadata": {
-        "commitHash": "605e6cd"
+        "commitHash": "4822b3c"
       }
     },
     {
-      "id": "commit-46e9160",
-      "title": "feat: claude daily digest 2026-03-19",
-      "type": "milestone",
-      "datetime": "2026-03-19T19:08:24-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-03-19",
-      "metadata": {
-        "commitHash": "46e9160"
-      }
-    },
-    {
-      "id": "commit-ee1cb09",
-      "title": "chore: sync Reddit cache — 21 posts (2026-03-19 18:10)",
+      "id": "commit-7adab7e",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 12:15)",
       "type": "system",
-      "datetime": "2026-03-19T18:10:06-04:00",
+      "datetime": "2026-03-20T12:15:30-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 21 posts (2026-03-19 18:10)",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 12:15)",
       "metadata": {
-        "commitHash": "ee1cb09"
+        "commitHash": "7adab7e"
+      }
+    },
+    {
+      "id": "commit-01e9205",
+      "title": "chore: sync Reddit cache — 22 posts (2026-03-20 11:15)",
+      "type": "system",
+      "datetime": "2026-03-20T11:15:12-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 22 posts (2026-03-20 11:15)",
+      "metadata": {
+        "commitHash": "01e9205"
       }
     }
   ],
