@@ -4,14 +4,14 @@ import { getAllLogs } from '@shawnos/shared/lib'
 import { HomeContent } from './HomeContent'
 
 export const metadata: Metadata = {
-  title: 'How to Create AI Assistant in Python & Ship Content | theContentOS.ai',
+  title: 'ContentOS — Best AI Agent Orchestration Platform for Content Creators',
   description:
-    'How to create an AI assistant in Python that publishes like you, not generic slop. ContentOS: voice engine, platform playbooks, and recursive content workflows across every channel. From one repo.',
+    'The best AI agent orchestration platform for content creators. ContentOS: voice engine, platform playbooks, and recursive content workflows that publish across every channel in your voice.',
   alternates: { canonical: 'https://thecontentos.ai' },
   openGraph: {
-    title: 'How to Create AI Assistant in Python & Ship Content | theContentOS.ai',
+    title: 'ContentOS — Best AI Agent Orchestration Platform for Content Creators',
     description:
-      'How to create an AI assistant in Python that publishes like you, not generic slop. Voice engine, platform playbooks, and recursive content workflows.',
+      'The best AI agent orchestration platform for content creators. ContentOS: voice engine, platform playbooks, and recursive content workflows across every channel.',
     url: 'https://thecontentos.ai',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'How to Create AI Assistant in Python & Ship Content | theContentOS.ai',
+    title: 'ContentOS — Best AI Agent Orchestration Platform for Content Creators',
     description:
-      'How to create an AI assistant in Python that publishes like you, not generic slop. Voice engine, platform playbooks, and recursive content workflows.',
+      'The best AI agent orchestration platform for content creators. ContentOS: voice engine, platform playbooks, and recursive content workflows across every channel.',
     images: ['/og'],
   },
 }

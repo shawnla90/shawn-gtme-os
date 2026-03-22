@@ -249,7 +249,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
               margin: '0 auto 16px',
             }}
           >
-            One voice across every platform. AI-powered content that sounds like you, not AI slop.
+            The AI agent orchestration platform built for content creators. One voice across every channel - sounds like you, not AI slop.
           </p>
         </MotionReveal>
 
@@ -269,6 +269,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
                 'Create. Orchestrate. Ship.',
                 'one voice. every platform.',
                 'draft > ship > compound > repeat',
+                'best AI agent orchestration platform',
                 'voice engine + platform playbooks + content ops',
               ]}
               holdMs={3000}
