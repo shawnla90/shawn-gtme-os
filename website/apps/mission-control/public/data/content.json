@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-21T04:00:16.000Z",
+  "generated": "2026-03-22T04:00:11.000Z",
   "totals": {
-    "total_content": 225,
+    "total_content": 227,
     "total_drafts": 123,
-    "total_final": 102,
-    "total_words": 154747,
+    "total_final": 104,
+    "total_words": 156887,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 31,
-      "total": 31,
-      "words": 22917
+      "final": 32,
+      "total": 32,
+      "words": 23709
     },
     "website": {
       "draft": 1,
-      "final": 39,
-      "total": 40,
-      "words": 51849
+      "final": 40,
+      "total": 41,
+      "words": 53197
     },
     "linkedin": {
       "draft": 44,
@@ -50,6 +50,17 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "FRIDAY. ELEVEN AUTOMATED REDDIT SYNCS SINCE",
+      "slug": "2026-03-21",
+      "date": "2026-03-21",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 792,
+      "file_path": "content/nio-log/2026-03-21.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "THURSDAY. TEN AUTOMATED REDDIT SYNCS SINCE",
       "slug": "2026-03-20",
       "date": "2026-03-20",
@@ -58,6 +69,17 @@
       "arc": null,
       "word_count": 885,
       "file_path": "content/nio-log/2026-03-20.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: March 20, 2026",
+      "slug": "claude-daily-2026-03-20",
+      "date": "2026-03-20",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1348,
+      "file_path": "content/website/final/claude-daily-2026-03-20.md"
     },
     {
       "platform": "nio-log",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 167,
       "file_path": "content/x/drafts/2026-03-14_website-with-soul-thread.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "claude code 1m context",
-      "slug": "claude-code-1m-context",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": "release-reaction",
-      "arc": null,
-      "word_count": 260,
-      "file_path": "content/linkedin/drafts/2026-03-13_claude-code-1m-context.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "gws cli",
-      "slug": "gws-cli",
-      "date": "2026-03-13",
-      "stage": "draft",
-      "pillar": "skill-system-shares",
-      "arc": null,
-      "word_count": 287,
-      "file_path": "content/linkedin/drafts/2026-03-13_gws-cli.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-21",
+      "grade": "D",
+      "score": 66,
+      "words": 2074,
+      "shipped": 2,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-20",
       "grade": "D",
       "score": 65,
@@ -1213,14 +1221,6 @@
       "score": 175,
       "words": 25387,
       "shipped": 29,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-07",
-      "grade": "D",
-      "score": 112,
-      "words": 21836,
-      "shipped": 11,
       "cost": 0.0
     }
   ]
