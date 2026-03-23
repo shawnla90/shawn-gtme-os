@@ -734,6 +734,7 @@ def phase_blog(target_date, config, dry_run=False):
     """Generate Claude Code Daily blog digest."""
     print("\n── PHASE 4: BLOG DIGEST ──")
 
+    day_name = datetime.strptime(target_date, "%Y-%m-%d").strftime("%A")
     raw_path = RAW_DIR / f"{target_date}.json"
     analysis_path = ANALYSIS_DIR / f"{target_date}.json"
 
@@ -789,7 +790,7 @@ def phase_blog(target_date, config, dry_run=False):
 
 # TASK: Claude Code Daily Blog Digest
 
-Write the "Claude Code Daily: {target_date}" blog post for shawnos.ai.
+Write the "Claude Code Daily" blog post for {target_date} ({day_name}) on shawnos.ai.
 
 This is THE daily show for Claude Code builders. Think late night TV meets dev news.
 People should want to read this every morning because it's genuinely funny AND useful.
@@ -880,7 +881,7 @@ Rules:
         for p in posts[:40]
     ], indent=2)
 
-    user_prompt = f"""Today's data ({target_date}):
+    user_prompt = f"""Today's data ({target_date}, {day_name}):
 
 Posts collected: {total_posts}
 Total comments: {total_comments}
@@ -934,7 +935,7 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
     body = fixed or content
 
     # Build frontmatter
-    formatted_date = datetime.strptime(target_date, "%Y-%m-%d").strftime("%B %d, %Y")
+    formatted_date = datetime.strptime(target_date, "%Y-%m-%d").strftime("%A, %B %d, %Y")
 
     # Extract first meaningful paragraph for excerpt
     excerpt = ""
