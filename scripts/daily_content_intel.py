@@ -974,6 +974,112 @@ featured: false
 
 
 # ══════════════════════════════════════════════════════════════════════
+#  LINKEDIN + TYPEFULLY
+# ══════════════════════════════════════════════════════════════════════
+
+LINKEDIN_SYSTEM = """You are generating a LinkedIn post for Shawn Tenam (@shawntenam).
+
+Rules (non-negotiable):
+- Lowercase first word always (except I, proper nouns)
+- 1-2 sentences per paragraph, lots of whitespace
+- No em-dashes, no en-dashes. Use periods or commas.
+- No quotation marks around phrases
+- No authority signaling ("here's what nobody tells you", "let me be clear")
+- Emojis are structural only: ⚡ 🧙‍♂️ for sign-off, ✅ 🔧 for list markers
+- End with: shawn ⚡
+- Keep it under 1300 characters (LinkedIn truncates at ~1300)
+- This is a daily digest promo, not the full blog. Tease 2-3 highlights, link to the full post.
+- Voice: builder, casual, specific. You're sharing what you found, not announcing content.
+- Output ONLY the post text. No markdown headers, no frontmatter."""
+
+
+def schedule_linkedin(target_date, slug, dry_run=False):
+    """Generate LinkedIn post from blog digest and schedule via Typefully."""
+    blog_path = BLOG_DIR / f"{slug}.md"
+    if not blog_path.exists():
+        print("  skipping LinkedIn (no blog file)")
+        return
+
+    api_key = os.environ.get("TYPEFULLY_API_KEY")
+    if not api_key:
+        print("  skipping LinkedIn (no TYPEFULLY_API_KEY)")
+        return
+
+    day_name = datetime.strptime(target_date, "%Y-%m-%d").strftime("%A")
+    blog_body = blog_path.read_text()
+
+    # Strip frontmatter
+    if blog_body.startswith("---"):
+        parts = blog_body.split("---", 2)
+        if len(parts) >= 3:
+            blog_body = parts[2].strip()
+
+    user_prompt = f"""Write a LinkedIn post promoting today's Claude Code Daily ({day_name}, {target_date}).
+
+Blog URL: https://shawnos.ai/blog/{slug}
+
+Here's the full blog content to pull highlights from:
+
+{blog_body[:3000]}
+
+Write the LinkedIn post now. Tease 2-3 of the best highlights (specific thread titles, numbers, funny moments). End with the link and your sign-off."""
+
+    print("  generating LinkedIn post...")
+    linkedin_text = call_claude(LINKEDIN_SYSTEM, user_prompt, model="sonnet")
+    if not linkedin_text:
+        print("  WARN: LinkedIn post generation failed")
+        return
+
+    # Anti-slop pass
+    score, violations, fixed = validate_anti_slop(linkedin_text)
+    linkedin_text = fixed or linkedin_text
+    if violations:
+        print(f"  LinkedIn anti-slop: {score:.0f}% ({len(violations)} fixes)")
+
+    # Save locally
+    linkedin_path = REPO_ROOT / "content" / "linkedin" / "final" / f"{slug}.txt"
+    linkedin_path.parent.mkdir(parents=True, exist_ok=True)
+    linkedin_path.write_text(linkedin_text)
+    print(f"  saved: {linkedin_path.relative_to(REPO_ROOT)}")
+
+    if dry_run:
+        print(f"  DRY RUN: would schedule to Typefully for 10:00 AM ET")
+        return
+
+    # Schedule for 10:00 AM ET next day
+    from datetime import timedelta
+    target_dt = datetime.strptime(target_date, "%Y-%m-%d")
+    publish_dt = target_dt + timedelta(days=1)
+    schedule_iso = publish_dt.strftime("%Y-%m-%dT10:00:00-04:00")  # ET (EDT)
+
+    try:
+        resp = requests.post(
+            "https://api.typefully.com/v1/drafts/",
+            headers={
+                "X-API-KEY": api_key,
+                "Content-Type": "application/json",
+            },
+            json={
+                "content": linkedin_text,
+                "schedule-date": schedule_iso,
+                "share": True,
+            },
+            timeout=15,
+        )
+        data = resp.json()
+        if resp.status_code in (200, 201):
+            draft_id = data.get("id", "?")
+            share_url = data.get("share_url", "")
+            print(f"  Typefully draft #{draft_id} scheduled for {schedule_iso}")
+            if share_url:
+                print(f"  preview: {share_url}")
+        else:
+            print(f"  WARN: Typefully error {resp.status_code}: {data}")
+    except Exception as e:
+        print(f"  WARN: Typefully scheduling failed: {e}")
+
+
+# ══════════════════════════════════════════════════════════════════════
 #  PHASE 5: PUBLISH
 # ══════════════════════════════════════════════════════════════════════
 
@@ -1018,6 +1124,9 @@ def phase_publish(target_date, config, dry_run=False):
         print(f"  committed and pushed: {files_to_add}")
     except subprocess.CalledProcessError as e:
         print(f"  WARN: git operation failed: {e.stderr.decode() if e.stderr else e}", file=sys.stderr)
+
+    # LinkedIn post + Typefully scheduling
+    schedule_linkedin(target_date, slug, dry_run)
 
     # Slack notification
     bot_token = os.environ.get("SLACK_BOT_TOKEN")
