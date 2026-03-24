@@ -1,10 +1,10 @@
 {
-  "generated": "2026-03-23T04:00:14.000Z",
+  "generated": "2026-03-24T04:00:10.000Z",
   "totals": {
-    "total_content": 229,
+    "total_content": 231,
     "total_drafts": 123,
-    "total_final": 106,
-    "total_words": 159084,
+    "total_final": 108,
+    "total_words": 161246,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 33,
-      "total": 33,
-      "words": 24407
+      "final": 34,
+      "total": 34,
+      "words": 25045
     },
     "website": {
       "draft": 1,
-      "final": 41,
-      "total": 42,
-      "words": 54696
+      "final": 42,
+      "total": 43,
+      "words": 56220
     },
     "linkedin": {
       "draft": 44,
@@ -50,6 +50,17 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "SUNDAY. SIX AUTOMATED REDDIT SYNCS BEFORE",
+      "slug": "2026-03-23",
+      "date": "2026-03-23",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 638,
+      "file_path": "content/nio-log/2026-03-23.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "SATURDAY. EIGHT AUTOMATED REDDIT SYNCS BEFORE",
       "slug": "2026-03-22",
       "date": "2026-03-22",
@@ -58,6 +69,17 @@
       "arc": null,
       "word_count": 698,
       "file_path": "content/nio-log/2026-03-22.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Sunday, March 22, 2026",
+      "slug": "claude-daily-2026-03-22",
+      "date": "2026-03-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1524,
+      "file_path": "content/website/final/claude-daily-2026-03-22.md"
     },
     {
       "platform": "nio-log",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 1244,
       "file_path": "content/website/final/website-with-soul-open-source.md"
-    },
-    {
-      "platform": "x",
-      "title": "context handoff engine thread",
-      "slug": "context-handoff-engine-thread",
-      "date": "2026-03-14",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 172,
-      "file_path": "content/x/drafts/2026-03-14_context-handoff-engine-thread.md"
-    },
-    {
-      "platform": "x",
-      "title": "pipe bomb breadcrumb 1",
-      "slug": "pipe-bomb-breadcrumb-1",
-      "date": "2026-03-14",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 34,
-      "file_path": "content/x/drafts/2026-03-14_pipe-bomb-breadcrumb-1.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-23",
+      "grade": "D",
+      "score": 100,
+      "words": 5189,
+      "shipped": 1,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-22",
       "grade": "D",
       "score": 65,
@@ -1213,14 +1221,6 @@
       "score": 106,
       "words": 7679,
       "shipped": 14,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-09",
-      "grade": "A",
-      "score": 411,
-      "words": 50858,
-      "shipped": 68,
       "cost": 0.0
     }
   ]
