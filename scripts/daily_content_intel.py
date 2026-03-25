@@ -43,6 +43,7 @@ CONFIG_PATH = REPO_ROOT / "data" / "content-intel" / "config.json"
 RAW_DIR = REPO_ROOT / "data" / "content-intel" / "raw"
 ANALYSIS_DIR = REPO_ROOT / "data" / "content-intel" / "analysis"
 BRIEFING_DIR = REPO_ROOT / "data" / "content-intel" / "briefing"
+TRACKER_PATH = REPO_ROOT / "data" / "content-intel" / "story_tracker.json"
 BRIEFING_MD_DIR = REPO_ROOT / "content" / "content-intel"
 BLOG_DIR = REPO_ROOT / "content" / "website" / "final"
 CORE_VOICE_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "core-voice.md"
@@ -249,6 +250,225 @@ His audience:
 - GTM engineers and agency builders
 - People exploring AI-native workflows
 - Reddit community participants"""
+
+# ══════════════════════════════════════════════════════════════════════
+#  STORY TRACKER — Continuity between daily issues
+# ══════════════════════════════════════════════════════════════════════
+
+def load_story_tracker():
+    """Load story_tracker.json or return empty structure."""
+    if TRACKER_PATH.exists():
+        try:
+            return json.loads(TRACKER_PATH.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+    return {
+        "date": "",
+        "active_stories": [],
+        "yesterday_highlights": {
+            "troll_of_the_day": {},
+            "best_comment": {},
+            "repo_of_the_day": {},
+        },
+        "running_gags": [],
+    }
+
+
+def build_continuity_prompt(tracker, target_date):
+    """Build the continuity context block for the blog generation prompt."""
+    if not tracker or not tracker.get("date"):
+        return ""
+
+    parts = []
+    parts.append("\n--- CONTINUITY CONTEXT ---")
+    parts.append("You have memory of previous Claude Daily issues. Use this naturally.")
+    parts.append("Do NOT force references. Only mention previous coverage when there")
+    parts.append("is genuine new information or a meaningful update.\n")
+
+    # Active stories
+    active = tracker.get("active_stories", [])
+    if active:
+        parts.append("Active stories from previous issues:")
+        for s in active:
+            parts.append(f"  - [{s.get('status', 'active')}] {s.get('headline', '')} (first: {s.get('first_appeared', '?')}, last: {s.get('last_mentioned', '?')})")
+            if s.get("context"):
+                parts.append(f"    context: {s['context']}")
+        parts.append("")
+
+    # Yesterday's highlights
+    yh = tracker.get("yesterday_highlights", {})
+    if any(yh.get(k) for k in ("troll_of_the_day", "best_comment", "repo_of_the_day")):
+        parts.append("Yesterday's highlights:")
+        troll = yh.get("troll_of_the_day", {})
+        if troll.get("user"):
+            parts.append(f"  troll: {troll.get('user', '?')} on \"{troll.get('topic', '?')}\"")
+        bc = yh.get("best_comment", {})
+        if bc.get("user"):
+            parts.append(f"  best comment: {bc.get('user', '?')} — \"{bc.get('quote', '?')}\" ({bc.get('upvotes', '?')} upvotes)")
+        repo = yh.get("repo_of_the_day", {})
+        if repo.get("name"):
+            parts.append(f"  repo: {repo.get('name', '?')} by {repo.get('author', '?')}")
+        parts.append("")
+
+    # Running gags
+    gags = tracker.get("running_gags", [])
+    if gags:
+        parts.append("Running gags:")
+        for g in gags:
+            parts.append(f"  - {g.get('description', '?')} (mentioned {g.get('mention_count', 0)}x)")
+        parts.append("")
+
+    # Rules
+    parts.append("Continuity rules:")
+    parts.append("1. If an active story has new posts today, reference it naturally: 'the usage limit saga continues...'")
+    parts.append("2. If yesterday's troll or best comment user posted again today, call it out")
+    parts.append("3. Running gags: one line max, light touch, not forced")
+    parts.append("4. If NO meaningful updates to previous stories, do not mention them. Silence is fine.")
+    parts.append("5. Never open with 'as we covered yesterday' or 'following up on'. Weave it in naturally.")
+    parts.append("6. The scoreboard can include a 'returning characters' count if usernames appeared in both days")
+    parts.append("")
+    parts.append("Anti-patterns: do NOT recap yesterday, do NOT force callbacks, do NOT use 'previously on Claude Daily'")
+    parts.append("--- END CONTINUITY ---\n")
+
+    return "\n".join(parts)
+
+
+def _extract_section(body, heading):
+    """Extract content between a ## heading and the next ## heading."""
+    pattern = rf"##\s*{re.escape(heading)}\s*\n(.*?)(?=\n##\s|\Z)"
+    m = re.search(pattern, body, re.DOTALL | re.IGNORECASE)
+    return m.group(1).strip() if m else ""
+
+
+def _extract_blockquote_and_user(section_text):
+    """Pull the first blockquote and any u/username from a section."""
+    quote_lines = []
+    for line in section_text.split("\n"):
+        if line.strip().startswith(">"):
+            quote_lines.append(line.strip().lstrip("> ").strip())
+    quote = " ".join(quote_lines) if quote_lines else ""
+    user_match = re.search(r"u/(\w+)", section_text)
+    user = f"u/{user_match.group(1)}" if user_match else ""
+    return quote, user
+
+
+def update_story_tracker(body, raw_data, target_date):
+    """Parse the generated blog and update story_tracker.json."""
+    tracker = load_story_tracker()
+
+    # --- Parse today's highlights ---
+    # Best comment
+    bc_section = _extract_section(body, "best comment award")
+    bc_quote, bc_user = _extract_blockquote_and_user(bc_section)
+    upvote_match = re.search(r"(\d[\d,]*)\s*upvote", bc_section)
+    bc_upvotes = int(upvote_match.group(1).replace(",", "")) if upvote_match else 0
+
+    # Troll of the day
+    troll_section = _extract_section(body, "troll of the day")
+    troll_quote, troll_user = _extract_blockquote_and_user(troll_section)
+    # Extract topic from the first non-blockquote, non-empty line
+    troll_topic = ""
+    for line in troll_section.split("\n"):
+        line = line.strip()
+        if line and not line.startswith(">") and not line.startswith("#"):
+            troll_topic = line[:120]
+            break
+
+    # Repo of the day
+    repo_section = _extract_section(body, "repo of the day")
+    repo_name = ""
+    repo_author = ""
+    repo_match = re.search(r"\*\*[\"']?([^\"'*]+)[\"']?\*\*", repo_section)
+    if repo_match:
+        repo_name = repo_match.group(1).strip()
+    repo_author_match = re.search(r"u/(\w+)", repo_section)
+    if repo_author_match:
+        repo_author = f"u/{repo_author_match.group(1)}"
+
+    tracker["yesterday_highlights"] = {
+        "troll_of_the_day": {"user": troll_user, "topic": troll_topic},
+        "best_comment": {"user": bc_user, "quote": bc_quote[:200], "upvotes": bc_upvotes},
+        "repo_of_the_day": {"name": repo_name, "author": repo_author},
+    }
+
+    # --- Update active stories ---
+    pulse = _extract_section(body, "the pulse")
+    hottest = _extract_section(body, "hottest thread")
+    today_text = (pulse + " " + hottest).lower()
+    posts = raw_data.get("posts", [])
+
+    # Check existing stories against today's data
+    for story in tracker.get("active_stories", []):
+        story_keywords = story.get("headline", "").lower().split()
+        # Check if at least 2 keywords from the headline appear in today's content
+        matches = sum(1 for kw in story_keywords if len(kw) > 4 and kw in today_text)
+        if matches >= 2:
+            story["last_mentioned"] = target_date
+            story["status"] = "active"
+        else:
+            # Check days since last mention
+            last = story.get("last_mentioned", story.get("first_appeared", target_date))
+            try:
+                days_stale = (datetime.strptime(target_date, "%Y-%m-%d") - datetime.strptime(last, "%Y-%m-%d")).days
+            except ValueError:
+                days_stale = 0
+            if days_stale >= 3:
+                story["status"] = "stale"
+
+    # Remove stale stories
+    tracker["active_stories"] = [s for s in tracker.get("active_stories", []) if s.get("status") != "stale"]
+
+    # Add new story from hottest thread if it looks multi-day
+    if hottest:
+        # Extract title from hottest thread (usually bolded)
+        title_match = re.search(r"\*\*[\"']?([^\"'*]+)[\"']?\*\*", hottest)
+        if title_match:
+            new_headline = title_match.group(1).strip()[:100]
+            existing_ids = {s.get("id", "") for s in tracker.get("active_stories", [])}
+            story_id = re.sub(r"[^a-z0-9]+", "-", new_headline.lower())[:40]
+            if story_id not in existing_ids:
+                # Extract context from first meaningful line
+                context = ""
+                for line in hottest.split("\n"):
+                    line = line.strip()
+                    if line and not line.startswith("#") and not line.startswith("*"):
+                        context = line[:200]
+                        break
+                tracker["active_stories"].append({
+                    "id": story_id,
+                    "headline": new_headline,
+                    "first_appeared": target_date,
+                    "last_mentioned": target_date,
+                    "status": "active",
+                    "context": context,
+                })
+
+    # Cap active stories at 10
+    tracker["active_stories"] = tracker["active_stories"][:10]
+
+    # --- Update running gags ---
+    gag_keywords = {
+        "claude-bedtime": ["sleep", "go to bed", "tells you to sleep", "bedtime"],
+        "usage-limits": ["usage", "quota", "rate limit", "limit"],
+        "vibe-coding": ["vibe coding", "vibecoding", "vibe coded"],
+    }
+    all_titles = " ".join(p.get("title", "") for p in posts).lower()
+    for gag in tracker.get("running_gags", []):
+        keywords = gag_keywords.get(gag.get("id", ""), [])
+        if any(kw in all_titles for kw in keywords):
+            gag["mention_count"] = gag.get("mention_count", 0) + 1
+
+    # Cap running gags at 5
+    tracker["running_gags"] = tracker.get("running_gags", [])[:5]
+
+    tracker["date"] = target_date
+
+    # Write back
+    TRACKER_PATH.parent.mkdir(parents=True, exist_ok=True)
+    TRACKER_PATH.write_text(json.dumps(tracker, indent=2))
+    print(f"  updated story tracker: {TRACKER_PATH}")
+    return tracker
+
 
 # ══════════════════════════════════════════════════════════════════════
 #  PHASE 1: COLLECT
@@ -745,6 +965,12 @@ def phase_blog(target_date, config, dry_run=False):
     raw_data = json.loads(raw_path.read_text())
     analysis = json.loads(analysis_path.read_text()) if analysis_path.exists() else None
 
+    # Load story tracker for continuity
+    tracker = load_story_tracker()
+    continuity_block = build_continuity_prompt(tracker, target_date)
+    if continuity_block:
+        print(f"  loaded continuity context (tracker date: {tracker.get('date', 'none')})")
+
     voice_system = load_voice_system()
 
     # Build stats summary
@@ -903,6 +1129,8 @@ Content angles identified:
 All posts data (for fun facts and broader coverage):
 {all_posts_json}
 
+{continuity_block}
+
 Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. Be the show people tune into."""
 
     content = call_claude(system_prompt, user_prompt, model="opus")
@@ -933,6 +1161,9 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
                 print(f"  retry anti-slop: {score:.0f}%")
 
     body = fixed or content
+
+    # Update story tracker with today's content
+    update_story_tracker(body, raw_data, target_date)
 
     # Build frontmatter
     formatted_date = datetime.strptime(target_date, "%Y-%m-%d").strftime("%A, %B %d, %Y")

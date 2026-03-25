@@ -1,0 +1,61 @@
+{
+  "date": "2026-03-23",
+  "active_stories": [
+    {
+      "id": "computer-use-preview",
+      "headline": "Computer use research preview launched",
+      "first_appeared": "2026-03-23",
+      "last_mentioned": "2026-03-23",
+      "status": "active",
+      "context": "845 upvotes in r/ClaudeAI, 517 in r/ClaudeCode. Community split on security implications. Potentially obsoletes Playwright/Puppeteer for many use cases."
+    },
+    {
+      "id": "usage-limits-march",
+      "headline": "Usage limit complaints flooding r/ClaudeCode",
+      "first_appeared": "2026-03-23",
+      "last_mentioned": "2026-03-23",
+      "status": "active",
+      "context": "Multiple reports of quotas jumping 50-80% in single messages on Max plan. Anthropic acknowledged but not resolved."
+    },
+    {
+      "id": "five-levels-claude-code",
+      "headline": "Five levels of Claude Code framework",
+      "first_appeared": "2026-03-23",
+      "last_mentioned": "2026-03-23",
+      "status": "active",
+      "context": "Most users plateau at level 2-3. The gap is CLAUDE.md with explicit behavioral rules vs vague project descriptions."
+    }
+  ],
+  "yesterday_highlights": {
+    "troll_of_the_day": {
+      "user": "u/SnooCats9602",
+      "topic": "AI trader won 24 straight trades on a market manipulation day"
+    },
+    "best_comment": {
+      "user": "u/Disillusioned_Sleepr",
+      "quote": "Using their own product",
+      "upvotes": 436
+    },
+    "repo_of_the_day": {
+      "name": "awesome-autoresearch",
+      "author": "u/alvinunreal"
+    }
+  },
+  "running_gags": [
+    {
+      "id": "claude-bedtime",
+      "description": "Opus 4.6 telling users to go to sleep",
+      "mention_count": 1
+    },
+    {
+      "id": "usage-limits",
+      "description": "Usage quota complaints dominating r/ClaudeCode",
+      "mention_count": 3
+    },
+    {
+      "id": "vibe-coding",
+      "description": "Vibe coding as a legitimate development methodology",
+      "mention_count": 2
+    }
+  ]
+}
