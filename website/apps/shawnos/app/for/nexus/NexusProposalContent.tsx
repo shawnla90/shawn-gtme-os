@@ -492,20 +492,6 @@ export function NexusProposalContent() {
                 border: 'none',
               }}>See the Roadmap</a>
             </MagneticHover>
-            <MagneticHover>
-              <a href="/for/nexus/preview" style={{
-                display: 'inline-block',
-                padding: '14px 32px',
-                background: 'transparent',
-                color: NX.green,
-                fontWeight: 700,
-                fontSize: '15px',
-                borderRadius: 10,
-                textDecoration: 'none',
-                fontFamily: NX.font,
-                border: `1.5px solid ${NX.green}`,
-              }}>See Your Website</a>
-            </MagneticHover>
           </div>
         </MotionReveal>
 
@@ -935,7 +921,7 @@ export function NexusProposalContent() {
           fontSize: '14px',
           color: NX.textMuted,
           fontFamily: NX.font,
-        }}>or text (323) 628-3268</p>
+        }}>or text (347) 452-0467</p>
       </NXSection>
 
       {/* ── Section 8: Footer ── */}
