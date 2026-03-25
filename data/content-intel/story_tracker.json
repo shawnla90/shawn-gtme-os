@@ -1,5 +1,5 @@
 {
-  "date": "2026-03-23",
+  "date": "2026-03-24",
   "active_stories": [
     {
       "id": "computer-use-preview",
@@ -13,7 +13,7 @@
       "id": "usage-limits-march",
       "headline": "Usage limit complaints flooding r/ClaudeCode",
       "first_appeared": "2026-03-23",
-      "last_mentioned": "2026-03-23",
+      "last_mentioned": "2026-03-24",
       "status": "active",
       "context": "Multiple reports of quotas jumping 50-80% in single messages on Max plan. Anthropic acknowledged but not resolved."
     },
@@ -24,38 +24,46 @@
       "last_mentioned": "2026-03-23",
       "status": "active",
       "context": "Most users plateau at level 2-3. The gap is CLAUDE.md with explicit behavioral rules vs vague project descriptions."
+    },
+    {
+      "id": "claude-code-can-now-dream",
+      "headline": "Claude Code can now /dream",
+      "first_appeared": "2026-03-24",
+      "last_mentioned": "2026-03-24",
+      "status": "active",
+      "context": "the feature is called Auto Dream. the idea: Claude Code already has Auto Memory (the agent writes notes based on your corrections), but memory alone is reactive. /dream lets the agent periodically ste"
     }
   ],
   "yesterday_highlights": {
     "troll_of_the_day": {
-      "user": "u/SnooCats9602",
-      "topic": "AI trader won 24 straight trades on a market manipulation day"
+      "user": "u/svachalek",
+      "topic": "u/svachalek, 374 upvotes, responding to the \"devs are worried about the wrong thing\" post."
     },
     "best_comment": {
-      "user": "u/Disillusioned_Sleepr",
-      "quote": "Using their own product",
-      "upvotes": 436
+      "user": "u/Tiny_Arugula_5648",
+      "quote": "OK well now we need /acid to handle all of it's hallucinations",
+      "upvotes": 681
     },
     "repo_of_the_day": {
-      "name": "awesome-autoresearch",
-      "author": "u/alvinunreal"
+      "name": "Make Claude Code go flashy",
+      "author": ""
     }
   },
   "running_gags": [
     {
       "id": "claude-bedtime",
       "description": "Opus 4.6 telling users to go to sleep",
-      "mention_count": 1
+      "mention_count": 3
     },
     {
       "id": "usage-limits",
       "description": "Usage quota complaints dominating r/ClaudeCode",
-      "mention_count": 3
+      "mention_count": 5
     },
     {
       "id": "vibe-coding",
       "description": "Vibe coding as a legitimate development methodology",
-      "mention_count": 2
+      "mention_count": 4
     }
   ]
 }
