@@ -31,6 +31,7 @@ qualified_leads_to_process.json
 .claude/blocklist.txt
 data/daily-log/briefings/
 screenshots/
+website/apps/shawnos/public/images/case-studies/
 content/internal/
 content/video/all/*.mp4
 content/video/all/*.png
@@ -58,3 +59,4 @@ chat-check.png
 /nio-terminal/
 .playwright-mcp/
 __pycache__/
+.gstack/
