@@ -10,6 +10,11 @@ export interface RedditPost {
   selftext: string
   createdUtc: number
   flair?: string
+  thumbnail?: string
+  url?: string
+  isSelf?: boolean
+  stickied?: boolean
+  preview?: string
 }
 
 interface RedditApiChild {
@@ -24,6 +29,14 @@ interface RedditApiChild {
     created_utc: number
     link_flair_text?: string
     stickied?: boolean
+    thumbnail?: string
+    url?: string
+    is_self?: boolean
+    preview?: {
+      images?: Array<{
+        source?: { url?: string }
+      }>
+    }
   }
 }
 
@@ -36,6 +49,7 @@ interface RedditApiResponse {
 
 function mapPost(child: RedditApiChild): RedditPost {
   const d = child.data
+  const previewUrl = d.preview?.images?.[0]?.source?.url?.replace(/&amp;/g, '&')
   return {
     id: d.id,
     title: d.title,
@@ -46,6 +60,11 @@ function mapPost(child: RedditApiChild): RedditPost {
     selftext: d.selftext,
     createdUtc: d.created_utc,
     flair: d.link_flair_text ?? undefined,
+    thumbnail: d.thumbnail && d.thumbnail !== 'self' && d.thumbnail !== 'default' ? d.thumbnail : undefined,
+    url: d.url ?? undefined,
+    isSelf: d.is_self ?? undefined,
+    stickied: d.stickied ?? undefined,
+    preview: previewUrl ?? undefined,
   }
 }
 
@@ -71,6 +90,11 @@ export async function fetchSubredditPosts(
   return cachedData.posts.map((p) => ({
     ...p,
     flair: p.flair ?? undefined,
+    thumbnail: p.thumbnail ?? undefined,
+    url: p.url ?? undefined,
+    isSelf: p.isSelf ?? undefined,
+    stickied: p.stickied ?? undefined,
+    preview: p.preview ?? undefined,
   })).slice(0, limit)
 }
 

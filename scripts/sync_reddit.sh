@@ -67,6 +67,14 @@ except Exception:
 posts = []
 for c in posts_raw.get("data", {}).get("children", []):
     d = c["data"]
+    thumb = d.get("thumbnail", "")
+    if thumb in ("self", "default", ""):
+        thumb = None
+    preview_url = None
+    try:
+        preview_url = d["preview"]["images"][0]["source"]["url"].replace("&amp;", "&")
+    except (KeyError, IndexError, TypeError):
+        pass
     posts.append({
         "id": d["id"],
         "title": d["title"],
@@ -77,6 +85,11 @@ for c in posts_raw.get("data", {}).get("children", []):
         "selftext": d["selftext"],
         "createdUtc": d["created_utc"],
         "flair": d.get("link_flair_text"),
+        "thumbnail": thumb,
+        "url": d.get("url"),
+        "isSelf": d.get("is_self", True),
+        "stickied": d.get("stickied", False),
+        "preview": preview_url,
     })
 
 # Subreddit info
