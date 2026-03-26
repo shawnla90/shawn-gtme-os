@@ -1,11 +1,11 @@
 {
-  "lastUpdated": "2026-03-26T02:56:08.128581+00:00",
+  "lastUpdated": "2026-03-26T03:56:26.905252+00:00",
   "posts": [
     {
       "id": "1s37m56",
       "title": "First (micro) test",
       "author": "france996",
-      "score": 1,
+      "score": 2,
       "numComments": 0,
       "permalink": "/r/GTMbuilders/comments/1s37m56/first_micro_test/",
       "selftext": "I ran my first test, a micro test, while building out a larger list.\n\nResults:\u00a080 leads, 36 opened, 4 replies, 1 thank you but not interested (not relevant now), 3 out of office.\n\nhttps://preview.redd.it/crg6jhnna6rg1.png?width=1670&amp;format=png&amp;auto=webp&amp;s=32b116ee43e60a842840c31e636383bdacb901f1\n\nThe list was intentionally small because I wanted to test the stack, and overall I'd say we can draw the conclusion that all emails were delivered and the copy\u2014especially the subject line\u2014performed decently well.\n\nFrom DMARC analysis, both domains performed quite well aside from one that failed SPF.\n\nhttps://preview.redd.it/yv37pttxa6rg1.png?width=2179&amp;format=png&amp;auto=webp&amp;s=92e01b5f6d41ecabd38c0af9bea3d1017aaa8204\n\nBut here's my question: I'm still too inexperienced\u2014both in GTM and especially in programming\u2014so I need to rely on some SaaS to get the job done.\n\nThe service I hate paying for most is email infrastructure management; a consultant I consulted back then had me use Mailforge, but honestly I never saw the value in it.\n\nCurrently all my domains are on Hostinger, which allows me to create unlimited emails per domain (I have 5 for each); 4 domains have DMARC and SPF verified with a service.\n\nI read in many guides and on Reddit that it would be better to use Google Workspace or Outlook, or a mix of both.\n\nSo my question is:\u00a0Is there really that much difference on using services like mailforge and GWS/outlook mail when you scale? Isn't it possible to use a stack like mine?",
@@ -22,7 +22,7 @@
       "title": "Is LinkedIn banning HeyReach going to stop my HeyReach campaigns from working too?",
       "author": "Serious-Aspect-7617",
       "score": 4,
-      "numComments": 4,
+      "numComments": 5,
       "permalink": "/r/GTMbuilders/comments/1s31mht/is_linkedin_banning_heyreach_going_to_stop_my/",
       "selftext": "I guess you all have heard it: LinkedIn has taken down HeyReach\u2019s LinkedIn profile including their founder\u2019s. Not their first crackdown on third party service providers. As somebody new to this I was wondering what this would mean to the functioning of their platform. ",
       "createdUtc": 1774415150.0,
@@ -37,7 +37,7 @@
       "id": "1s2j632",
       "title": "Claude Code Cloud Scheduled Tasks. One feature away from killing my VPS.",
       "author": "jonathanmalkin",
-      "score": 1,
+      "score": 2,
       "numComments": 0,
       "permalink": "/r/GTMbuilders/comments/1s2j632/claude_code_cloud_scheduled_tasks_one_feature/",
       "selftext": "",
@@ -213,7 +213,7 @@
       "id": "1rykecv",
       "title": "Claude Code Daily is live.",
       "author": "Shawntenam",
-      "score": 4,
+      "score": 3,
       "numComments": 6,
       "permalink": "/r/GTMbuilders/comments/1rykecv/claude_code_daily_is_live/",
       "selftext": "https://preview.redd.it/4exe4b3244qg1.png?width=980&amp;format=png&amp;auto=webp&amp;s=13d7e2e39c841052436f165fa611c3e201739999\n\nEvery day it scans r/ClaudeCode, r/ClaudeAI, and the builder subreddits, pulls trending threads, highlighted repos, actual code drops, and the funniest comments from the community. Then it writes itself into a full daily digest.\n\n if you are building with AI and not just talking about it: there are repos getting shared every single day that most people miss. Code patterns, MCP server configs, cost-saving tricks, workflow setups. The kind of stuff that saves you a weekend of trial and error.\n\nEach episode covers:\n\n\\- Trending repos and code drops\n\n\\- Builder takeaways you can actually use\n\n\\- The best and worst takes from the community (yes there is a Troll of the Day section)\n\n\\- Fun facts pulled straight from the data\n\n\\- A full scoreboard with velocity scores and engagement numbers\n\n\n\nI am going to be posting this daily and constantly improving it. If you want to see r/gtmengineering or other builder channels added to the scan, let me know. If there are sections you want added or things that would make it more useful, drop it in the comments. This thing learns and evolves.\n\nFair warning: I have zero say in what Claude decides to write each day. It builds off the data, picks its own highlights, writes its own roasts. Sometimes it is going to nail it. Sometimes it might come in hot. That is part of the fun.\n\nStill figuring out new features for it. But right now it is a way to stay current on what is actually happening in the Claude Code ecosystem, learn some new stuff, and laugh at the same time.\n\n\n\n[shawnos.ai/claude-daily](http://shawnos.ai/claude-daily)",
@@ -261,7 +261,7 @@
       "id": "1rvvj06",
       "title": "2x Claude usage limits for March - what are you doing with it?",
       "author": "muzzythinks",
-      "score": 3,
+      "score": 4,
       "numComments": 5,
       "permalink": "/r/GTMbuilders/comments/1rvvj06/2x_claude_usage_limits_for_march_what_are_you/",
       "selftext": "How have you been taking advantage of this?\n\nI'm organizing a hackathon - challenging myself and friends to design ambitious projects and spec/brief them so well during peak times that with ralph loops / a few terminals - you can atrempt to one-shot during off-peak.\n\nThe rule- no intervention. \nWinner: Most complete app true to intention\n\nUsed to get together with friends to play halo with Xbox ones in Lan parties. This feels like that.",
@@ -293,7 +293,7 @@
       "id": "1rv3j5j",
       "title": "what's up builders. dropping a LinkedIn post this morning that covers everything I've been building for the last 6 weeks with Claude Code.",
       "author": "Shawntenam",
-      "score": 7,
+      "score": 8,
       "numComments": 2,
       "permalink": "/r/GTMbuilders/comments/1rv3j5j/whats_up_builders_dropping_a_linkedin_post_this/",
       "selftext": "so check this out.\n\nthis community. we're less than a week old and already 140+ members. \n\nthat's not normal. that's because there's a real gap here that nobody was filling. GTM people who actually build. not people who talk about AI. people who ship.\n\nif you're lurking and haven't posted yet... just post. seriously. share what you're working on. share what broke. share what you figured out at 3am. \n\nyour Reddit karma goes up just by being active in here. comment on other people's builds. ask questions. that's literally all it takes.\n\nif you have a product or a tool you built, share it. promote it. that's what we're here for. the only rule is it has to actually help builders. no fluff, no vapor. \n\nif you built something real, this is the place to show it.\n\nI'm going to keep updating this community with everything I'm shipping. the blog posts, the repos, the wins, the stuff that doesn't work. this is the home base for the builder movement in GTM and I want everyone in here to feel like they own it too.\n\nwe're early. the people who are here right now are the foundation. let's make this the place where GTM builders come to level up.\n\nfull blog breakdown of the 6 weeks: [https://shawnos.ai/blog/6-weeks-of-building-with-claude-code](https://shawnos.ai/blog/6-weeks-of-building-with-claude-code)\n\nlet's go \ud83d\udd25\n\n[https://www.linkedin.com/posts/shawntenam\\_im-happy-to-share-that-im-starting-a-new-activity-7439214369047158784-piac](https://www.linkedin.com/posts/shawntenam_im-happy-to-share-that-im-starting-a-new-activity-7439214369047158784-piac)",
@@ -421,7 +421,7 @@
       "id": "1rt2jp4",
       "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price.",
       "author": "Shawntenam",
-      "score": 4,
+      "score": 5,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rt2jp4/claude_code_just_dropped_1m_context_window_and_im/",
       "selftext": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --&gt; 1M tokens. same Opus 4.6 model. same Max subscription. no price increase.\n\nif you've been building with this thing daily, \n\nyou know exactly why this is massive. context compaction was THE bottleneck. you're deep in a build, agent is cooking, and then it starts forgetting what\n\nfiles it already read. you re-explain your\n\narchitecture for the third time. momentum gone.\n\nthat whole era just ended.\n\nI run a monorepo with 3 Next.js apps, i18n in 3 languages, full GTM ops layer, automation scripts.\n\nbefore today the agent could barely hold one app in\n\nits head at a time. just tested the new window and it\n\nreasoned across the ENTIRE system in one session. no\n\ncompaction. no re-explaining. no babysitting.\n\n\n\nseriously now we can.\n\n\\- spec to deploy in a single session \n\n\\- debugging that traces through your whole stack\n\nwithout losing what it found 20 minutes ago\n\n\\- hand off a big task, walk away, come back to finished work\n\n\\- the agent actually remembers its own mistakes and\n\nstops repeating them\n\n\n\nit's Friday.what are you building with this new context window??. full breadown in my [blog](https://shawnos.ai/blog/claude-code-1m-context-window)",
@@ -453,7 +453,7 @@
       "id": "1rs1f6n",
       "title": "tool devotion is a trap. Clay just proved the thesis.",
       "author": "Shawntenam",
-      "score": 9,
+      "score": 10,
       "numComments": 8,
       "permalink": "/r/GTMbuilders/comments/1rs1f6n/tool_devotion_is_a_trap_clay_just_proved_the/",
       "selftext": "for the past two months I've been posting the same thesis. the builder is the moat, not the tool. if your entire value proposition is proficiency with a specific platform, you're one pricing change away from a career problem.\n\nI was saying this before the price change. and then Clay proved it.\n\n**the proof**\n\nClay killed the Explorer tier. that was the $349/mo plan with HTTP API access. the builder's plan. the one where you learned to connect Clay to real systems and actually practice GTM engineering.\n\nthe new pricing jumps from $185 (no API, no webhooks) to $495. every HTTP API call now costs an Action. Clay is metering your requests to servers they don't own, for data they don't provide.\n\nagencies running 5-6 accounts went from roughly $1,750/mo in Explorer plans to $2,500-3,000/mo at Growth. same capabilities. higher floor.\n\n**what this means for the community**\n\nthe people who built Clay's community were builders sharing their work publicly. LinkedIn posts, playbooks, tutorials. they brought customers to Clay through builder-led growth. and now the pricing is optimized for enterprise accounts that don't need the community.\n\nevery platform eventually does this. they grow on builders, then optimize for enterprise. the builders who drove adoption are the ones who feel the squeeze.\n\n**the transition**\n\nI've been mostly sharing observations and patterns here. how things work, what tools do, where the gaps are. this is probably my last pure observation post for a while.\n\nI'm shifting to build drops. actual systems, actual architectures, actual code. Apollo's free API for sourcing. Supabase for storage. Claude Code for orchestration. \n\ninfrastructure you own that doesn't meter your API calls.\n\nthe patterns I learned in Clay transfer to all of this. enrichment architecture is enrichment architecture. ICP scoring is ICP scoring. the implementation layer changes. the thinking doesn't.\n\n**closing**\n\nI'm grateful for what Clay taught me. genuinely. and I think they just made it harder for the next person to learn it.\n\nthe tools are a trap when your skills are locked to one platform's interface. the escape hatch is learning to build the systems yourself.\n\ncurious what tools everyone here is building with now. what's your stack looking like in 2026?\n\nshawn - GTM Engineer",
@@ -485,7 +485,7 @@
       "id": "1rr4hlb",
       "title": "stop renting your audience. build your own website.",
       "author": "Shawntenam",
-      "score": 6,
+      "score": 5,
       "numComments": 1,
       "permalink": "/r/GTMbuilders/comments/1rr4hlb/stop_renting_your_audience_build_your_own_website/",
       "selftext": "I said the tools are a trap. that you shouldn't tie your career to someone else's roadmap. that the builder is the moat, not the platform.\n\nbut I left something out.\n\n**the platforms are the same trap.**\n\nLinkedIn, X, Substack, even Reddit - you don't own any of it. you're renting. the algorithm decides who sees your work. the platform decides the rules. one policy change and your \"audience\" disappears overnight.\n\nremember when Twitter became X and half the creator economy panicked? remember when LinkedIn started suppressing external links? remember when Substack's recommendation algorithm changed and suddenly your open rates dropped?\n\nyou didn't change. the landlord changed the locks.\n\n**you already know this pattern**\n\npost 1 in this community was about how your Clay expertise becomes a depreciating asset the moment Clay changes their roadmap. the tools are a trap because you don't control them.\n\nthe platforms are the exact same trap. you build an audience on LinkedIn and LinkedIn decides who sees it. you write threads on X and X decides the distribution. you're always one algorithm update away from starting over.\n\nthe builders who figured this out? they own their platform. they have a website. a blog. content that lives on a domain they control. and then they cross-post everywhere else for distribution.\n\n**the difference between renting and owning**\n\nrenting: you write a post on LinkedIn. LinkedIn shows it to 3% of your followers. if it gets engagement in the first 90 minutes, maybe 8%. you have zero control.\n\nowning: you write a blog post on your domain. Google indexes it forever. you share the link on LinkedIn, X, Reddit, wherever. the content lives on YOUR site. the platforms are distribution channels, not the source of truth.\n\nthe post you're reading right now? it also lives on my website. google indexes both. reddit gets the discussion. my site gets the SEO. double coverage from the same piece of content.\n\nthat's the game.\n\n**\"but I'm not a developer\"**\n\nyou don't need to be. it's 2026.\n\nhere's the actual stack. this is what I run and what I'd tell any builder to start with:\n\n1. **Next.js** \\- open source framework. free. handles your blog, your pages, your SEO, everything. the same framework powering half the internet.\n2. **Vercel** \\- deploy for free. push your code, it goes live. no servers to manage. no DevOps. hobby tier costs $0.\n3. **GitHub** \\- your code lives here. version controlled. public if you want it. this is also your resume (post 1).\n4. **Markdown files** \\- write your blog posts in markdown. no CMS. no database. just files in a folder. you can write markdown if you can write a Reddit post.\n\nthat's it. four things. a weekend project if you're focused. and now you own everything you publish for the rest of your career.\n\n**the cross-post flywheel**\n\nyou write a blog post on your site. then you:\n\n* post the full text on Reddit (communities reward full posts, not link drops)\n* share the key insight on LinkedIn with a link back\n* thread it on X with the blog link in the last tweet\n* the Reddit discussion drives comments and karma\n* Google indexes your site AND the Reddit thread\n* both point back to you\n\none piece of content. four platforms. two Google-indexed pages. all pointing to a domain you control.\n\nnow do that every week for a year. that's 52 blog posts on your domain. 52 Reddit discussions. hundreds of indexed pages. a body of work that no algorithm change can take away.\n\n**the people who get this**\n\nlook at any builder you respect. they have a website. not a Linktree. not a Card. a real website with real content that shows what they know.\n\ntheir blog isn't behind a lead magnet. their knowledge isn't gated behind \"comment PLAYBOOK.\" it's just... there. indexable. findable. permanent.\n\nand when they share that content on social platforms? it's distribution, not dependence. LinkedIn goes down tomorrow and they still have their site, their blog, their body of work.\n\nthat's the difference between a content creator and a content owner.\n\n**the real algorithm hack**\n\neveryone's trying to game the LinkedIn algorithm. post at 7:47am EST. use exactly 3 emojis. ask a question in the first line. hook, story, CTA.\n\nhere's the actual hack: stop caring about any single algorithm.\n\nown your content. distribute everywhere. let the platforms fight over showing it. your site is the canonical source. everything else is amplification.\n\nGoogle's algorithm is the only one that matters long-term. and Google rewards original content on real domains with real authority. a blog post that answers a real question will drive traffic for years. a LinkedIn post has a 48-hour shelf life.\n\n**getting started**\n\nif you've never built a website before, this is the post I wish someone wrote for me.\n\nstep 1: install Node.js (nodejs.org, click the download button)\n\nstep 2: open your terminal and run `npx create-next-app@latest my-site`\n\nstep 3: say yes to TypeScript, yes to Tailwind, yes to App Router\n\nstep 4: create a Vercel account (vercel.com), connect your GitHub, deploy\n\nstep 5: write your first blog post as a markdown file in your project\n\nyou now have a website. for free. that you own. that Google will index. that nobody can take away from you.\n\nis it going to look amazing on day one? no. does it matter? also no. ship ugly, iterate later. the content is what matters. the content is what Google indexes. the content is what builds your authority.\n\n**this is builder-led growth applied to yourself**\n\nwe talk about building systems for GTM. about not being locked into tools. about owning what you create.\n\nyour website is the most important system you can build. it's the one platform that runs on your roadmap. the one place where your content compounds without an algorithm deciding who deserves to see it.\n\nthe tools are a trap. the platforms are a trap. but a domain you own? that's yours forever.\n\nstop renting. start building.\n\nshawn \u26a1 GTM Engineer",
@@ -548,13 +548,13 @@
   ],
   "subredditInfo": {
     "name": "GTMbuilders",
-    "subscribers": 386,
+    "subscribers": 388,
     "description": "Builders shipping the future of go-to-market with AI. GitHub commits over slide decks. Tribal knowledge shared openly. Systems, experiments, and real lessons from operators who build in public and grow together. No gatekeeping. No guru talk. Builder-led growth starts here."
   },
   "userProfile": {
     "name": "Shawntenam",
-    "totalKarma": 1239,
+    "totalKarma": 1240,
     "linkKarma": 569,
-    "commentKarma": 670
+    "commentKarma": 671
   }
 }
