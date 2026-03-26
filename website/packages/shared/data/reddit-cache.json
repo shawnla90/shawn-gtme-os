@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-26T06:57:22.679387+00:00",
+  "lastUpdated": "2026-03-26T07:57:44.403468+00:00",
   "posts": [
     {
       "id": "1s37m56",
@@ -133,7 +133,7 @@
       "id": "1s1cbro",
       "title": "GTM newbie advice",
       "author": "france996",
-      "score": 5,
+      "score": 3,
       "numComments": 12,
       "permalink": "/r/GTMbuilders/comments/1s1cbro/gtm_newbie_advice/",
       "selftext": "TLDR:\u00a0Industrial engineering freelancer got introduced to cold outreach/GTM, started building an email infrastructure (4 domains, multiple mailboxes, Smartlead), but had to pause for a year. Now wants to restart and finish setting up sequences solo. Looking for learning resources, course recommendations, and advice on lead-finding tools (considering Prospeo or Bitscale as Clay alternatives).\n\nGood morning everyone, I'm a total GTM newbie and would like some suggestions for building my stack, but first let me briefly tell you my story.\n\nI'm an industrial engineering freelancer, and while looking for new clients after opening my business, I came across a guy on LinkedIn who does GTM. I hopped on a call and he told me there are cold outreach methods that can help find clients \u2014 at a price that was, admittedly, quite steep.\n\nThe infrastructure he used, which I had to pay for, consisted of 4 domains similar to my main one and 3\u20135 email addresses created for each domain. The tools he recommended: Mailforge, Smartlead, and Clay.\n\nWe started building ICPs, putting together the tables, and then for personal reasons I had to put everything on hold for a year. Now I'm at the final step \u2014 actually launching the sequences \u2014 but he's too busy and can't help me anymore.\n\nAt this point I've already fallen in love with this world and want to go deeper, so I wanted to ask you for advice on how to learn as quickly and effectively as possible \u2014 courses, websites, etc.\n\nSince Mailforge felt like money down the drain, here's my current stack:\n\n* 4 domains on Hostinger with 5 emails each\n* PowerDMARC to monitor the policies on all 4 domains (though I'm not sure I configured them correctly)\n* Smartlead for warmup and sending emails\n* for next projects I still need to choose a lead-finding tool; Clay raised its prices so I'm considering Prospeo or Bitscale",
@@ -213,7 +213,7 @@
       "id": "1rykecv",
       "title": "Claude Code Daily is live.",
       "author": "Shawntenam",
-      "score": 5,
+      "score": 3,
       "numComments": 6,
       "permalink": "/r/GTMbuilders/comments/1rykecv/claude_code_daily_is_live/",
       "selftext": "https://preview.redd.it/4exe4b3244qg1.png?width=980&amp;format=png&amp;auto=webp&amp;s=13d7e2e39c841052436f165fa611c3e201739999\n\nEvery day it scans r/ClaudeCode, r/ClaudeAI, and the builder subreddits, pulls trending threads, highlighted repos, actual code drops, and the funniest comments from the community. Then it writes itself into a full daily digest.\n\n if you are building with AI and not just talking about it: there are repos getting shared every single day that most people miss. Code patterns, MCP server configs, cost-saving tricks, workflow setups. The kind of stuff that saves you a weekend of trial and error.\n\nEach episode covers:\n\n\\- Trending repos and code drops\n\n\\- Builder takeaways you can actually use\n\n\\- The best and worst takes from the community (yes there is a Troll of the Day section)\n\n\\- Fun facts pulled straight from the data\n\n\\- A full scoreboard with velocity scores and engagement numbers\n\n\n\nI am going to be posting this daily and constantly improving it. If you want to see r/gtmengineering or other builder channels added to the scan, let me know. If there are sections you want added or things that would make it more useful, drop it in the comments. This thing learns and evolves.\n\nFair warning: I have zero say in what Claude decides to write each day. It builds off the data, picks its own highlights, writes its own roasts. Sometimes it is going to nail it. Sometimes it might come in hot. That is part of the fun.\n\nStill figuring out new features for it. But right now it is a way to stay current on what is actually happening in the Claude Code ecosystem, learn some new stuff, and laugh at the same time.\n\n\n\n[shawnos.ai/claude-daily](http://shawnos.ai/claude-daily)",
@@ -261,7 +261,7 @@
       "id": "1rvvj06",
       "title": "2x Claude usage limits for March - what are you doing with it?",
       "author": "muzzythinks",
-      "score": 5,
+      "score": 4,
       "numComments": 5,
       "permalink": "/r/GTMbuilders/comments/1rvvj06/2x_claude_usage_limits_for_march_what_are_you/",
       "selftext": "How have you been taking advantage of this?\n\nI'm organizing a hackathon - challenging myself and friends to design ambitious projects and spec/brief them so well during peak times that with ralph loops / a few terminals - you can atrempt to one-shot during off-peak.\n\nThe rule- no intervention. \nWinner: Most complete app true to intention\n\nUsed to get together with friends to play halo with Xbox ones in Lan parties. This feels like that.",
@@ -437,7 +437,7 @@
       "id": "1rsgc55",
       "title": "My rookie project",
       "author": "Spare-Combination-63",
-      "score": 13,
+      "score": 12,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rsgc55/my_rookie_project/",
       "selftext": "Hey everyone! Super nervous to post this but here goes, this is literally my first project that I've ever pushed to GitHub, so please be kind lol.\n\nI built an AI-powered tool that lets you research any professional and pulls together their career trajectory, articles they've written, media presence, LinkedIn highlights, and more all in one place. The idea came from the frustration of having to jump between 5 different tabs just to get a basic picture of someone before a meeting or interview.\n\nGitHub:\u00a0[https://github.com/atifirshad21/individual-info-in-one-place](https://github.com/atifirshad21/individual-info-in-one-place)\n\nI'm calling this my rookie project, it's rough around the edges and the README is pretty bare bones right now, but feel free to make this better. \n\nWould love any feedback,\n\nThanks for checking it out!",
@@ -453,7 +453,7 @@
       "id": "1rs1f6n",
       "title": "tool devotion is a trap. Clay just proved the thesis.",
       "author": "Shawntenam",
-      "score": 9,
+      "score": 8,
       "numComments": 8,
       "permalink": "/r/GTMbuilders/comments/1rs1f6n/tool_devotion_is_a_trap_clay_just_proved_the/",
       "selftext": "for the past two months I've been posting the same thesis. the builder is the moat, not the tool. if your entire value proposition is proficiency with a specific platform, you're one pricing change away from a career problem.\n\nI was saying this before the price change. and then Clay proved it.\n\n**the proof**\n\nClay killed the Explorer tier. that was the $349/mo plan with HTTP API access. the builder's plan. the one where you learned to connect Clay to real systems and actually practice GTM engineering.\n\nthe new pricing jumps from $185 (no API, no webhooks) to $495. every HTTP API call now costs an Action. Clay is metering your requests to servers they don't own, for data they don't provide.\n\nagencies running 5-6 accounts went from roughly $1,750/mo in Explorer plans to $2,500-3,000/mo at Growth. same capabilities. higher floor.\n\n**what this means for the community**\n\nthe people who built Clay's community were builders sharing their work publicly. LinkedIn posts, playbooks, tutorials. they brought customers to Clay through builder-led growth. and now the pricing is optimized for enterprise accounts that don't need the community.\n\nevery platform eventually does this. they grow on builders, then optimize for enterprise. the builders who drove adoption are the ones who feel the squeeze.\n\n**the transition**\n\nI've been mostly sharing observations and patterns here. how things work, what tools do, where the gaps are. this is probably my last pure observation post for a while.\n\nI'm shifting to build drops. actual systems, actual architectures, actual code. Apollo's free API for sourcing. Supabase for storage. Claude Code for orchestration. \n\ninfrastructure you own that doesn't meter your API calls.\n\nthe patterns I learned in Clay transfer to all of this. enrichment architecture is enrichment architecture. ICP scoring is ICP scoring. the implementation layer changes. the thinking doesn't.\n\n**closing**\n\nI'm grateful for what Clay taught me. genuinely. and I think they just made it harder for the next person to learn it.\n\nthe tools are a trap when your skills are locked to one platform's interface. the escape hatch is learning to build the systems yourself.\n\ncurious what tools everyone here is building with now. what's your stack looking like in 2026?\n\nshawn - GTM Engineer",
@@ -548,7 +548,7 @@
   ],
   "subredditInfo": {
     "name": "GTMbuilders",
-    "subscribers": 389,
+    "subscribers": 390,
     "description": "Builders shipping the future of go-to-market with AI. GitHub commits over slide decks. Tribal knowledge shared openly. Systems, experiments, and real lessons from operators who build in public and grow together. No gatekeeping. No guru talk. Builder-led growth starts here."
   },
   "userProfile": {
