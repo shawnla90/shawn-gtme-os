@@ -1,26 +1,26 @@
 {
-  "generated": "2026-03-25T04:00:09.000Z",
+  "generated": "2026-03-26T04:00:14.000Z",
   "totals": {
-    "total_content": 234,
+    "total_content": 236,
     "total_drafts": 123,
-    "total_final": 111,
-    "total_words": 163919,
+    "total_final": 113,
+    "total_words": 166827,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
   },
   "pipeline": {
+    "website": {
+      "draft": 1,
+      "final": 45,
+      "total": 46,
+      "words": 60838
+    },
     "nio-log": {
       "draft": 0,
       "final": 35,
       "total": 35,
       "words": 25873
-    },
-    "website": {
-      "draft": 1,
-      "final": 43,
-      "total": 44,
-      "words": 57930
     },
     "linkedin": {
       "draft": 44,
@@ -49,6 +49,17 @@
   },
   "recent": [
     {
+      "platform": "website",
+      "title": "I Built a Fully Automated Daily Blog That Publishes Itself at Midnight",
+      "slug": "claude-code-daily-how-it-works",
+      "date": "2026-03-25",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1547,
+      "file_path": "content/website/final/claude-code-daily-how-it-works.md"
+    },
+    {
       "platform": "nio-log",
       "title": "MONDAY. THE MAC MINI LOGGED EIGHT",
       "slug": "2026-03-24",
@@ -58,6 +69,17 @@
       "arc": null,
       "word_count": 828,
       "file_path": "content/nio-log/2026-03-24.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Tuesday, March 24, 2026",
+      "slug": "claude-daily-2026-03-24",
+      "date": "2026-03-24",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1361,
+      "file_path": "content/website/final/claude-daily-2026-03-24.md"
     },
     {
       "platform": "nio-log",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 367,
       "file_path": "content/reddit/drafts/2026-03-14_structured-divergence-gtmbuilders.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "website with soul gtmbuilders",
-      "slug": "website-with-soul-gtmbuilders",
-      "date": "2026-03-14",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 314,
-      "file_path": "content/reddit/drafts/2026-03-14_website-with-soul-gtmbuilders.md"
-    },
-    {
-      "platform": "website",
-      "title": "I Open Sourced the Context Engine Behind Recursive Drift",
-      "slug": "context-handoff-engine-open-source",
-      "date": "2026-03-14",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1086,
-      "file_path": "content/website/final/context-handoff-engine-open-source.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-25",
+      "grade": "D",
+      "score": 93,
+      "words": 6118,
+      "shipped": 2,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-24",
       "grade": "D",
       "score": 125,
@@ -1213,14 +1221,6 @@
       "score": 205,
       "words": 46750,
       "shipped": 58,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-11",
-      "grade": "D",
-      "score": 158,
-      "words": 16012,
-      "shipped": 8,
       "cost": 0.0
     }
   ]

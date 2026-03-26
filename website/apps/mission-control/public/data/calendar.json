@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-25T04:03:55.973Z",
+  "generated": "2026-03-26T04:04:51.928Z",
   "events": [
     {
-      "id": "commit-f2df7ae",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 23:49)",
+      "id": "commit-f17735e",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 23:56)",
       "type": "system",
-      "datetime": "2026-03-24T23:49:00-04:00",
+      "datetime": "2026-03-25T23:56:26-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 23:49)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 23:56)",
       "metadata": {
-        "commitHash": "f2df7ae"
+        "commitHash": "f17735e"
       }
     },
     {
-      "id": "commit-a25e1d1",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 22:48)",
+      "id": "commit-bbeb471",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 22:56)",
       "type": "system",
-      "datetime": "2026-03-24T22:48:41-04:00",
+      "datetime": "2026-03-25T22:56:08-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 22:48)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 22:56)",
       "metadata": {
-        "commitHash": "a25e1d1"
+        "commitHash": "bbeb471"
       }
     },
     {
-      "id": "commit-22b8ebd",
-      "title": "fix: remove preview page, fix phone number, remove \"See Your",
-      "type": "deployment",
-      "datetime": "2026-03-24T21:55:29-04:00",
-      "status": "completed",
-      "description": "fix: remove preview page, fix phone number, remove \"See Your Website\" CTA",
-      "metadata": {
-        "commitHash": "22b8ebd"
-      }
-    },
-    {
-      "id": "commit-b6b43ac",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 21:48)",
+      "id": "commit-9aaefd5",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 21:55)",
       "type": "system",
-      "datetime": "2026-03-24T21:48:23-04:00",
+      "datetime": "2026-03-25T21:55:49-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 21:48)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 21:55)",
       "metadata": {
-        "commitHash": "b6b43ac"
+        "commitHash": "9aaefd5"
       }
     },
     {
-      "id": "commit-f95af5f",
-      "title": "feat: add case study evidence images for nexus proposal",
-      "type": "milestone",
-      "datetime": "2026-03-24T21:43:23-04:00",
-      "status": "completed",
-      "description": "feat: add case study evidence images for nexus proposal",
-      "metadata": {
-        "commitHash": "f95af5f"
-      }
-    },
-    {
-      "id": "commit-b7c0abd",
-      "title": "feat: add Nexus Construction proposal + POC landing pages",
-      "type": "milestone",
-      "datetime": "2026-03-24T21:33:29-04:00",
-      "status": "completed",
-      "description": "feat: add Nexus Construction proposal + POC landing pages",
-      "metadata": {
-        "commitHash": "b7c0abd"
-      }
-    },
-    {
-      "id": "commit-2f5e2db",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 20:48)",
+      "id": "commit-50f8181",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 20:55)",
       "type": "system",
-      "datetime": "2026-03-24T20:48:03-04:00",
+      "datetime": "2026-03-25T20:55:31-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 20:48)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 20:55)",
       "metadata": {
-        "commitHash": "2f5e2db"
+        "commitHash": "50f8181"
       }
     },
     {
-      "id": "commit-b40ae3a",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 19:47)",
+      "id": "commit-c9bcae7",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 19:55)",
       "type": "system",
-      "datetime": "2026-03-24T19:47:45-04:00",
+      "datetime": "2026-03-25T19:55:12-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 19:47)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 19:55)",
       "metadata": {
-        "commitHash": "b40ae3a"
+        "commitHash": "c9bcae7"
       }
     },
     {
-      "id": "commit-c7c7dbd",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 18:47)",
+      "id": "commit-927b5ea",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 18:54)",
       "type": "system",
-      "datetime": "2026-03-24T18:47:26-04:00",
+      "datetime": "2026-03-25T18:54:54-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 18:47)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 18:54)",
       "metadata": {
-        "commitHash": "c7c7dbd"
+        "commitHash": "927b5ea"
       }
     },
     {
-      "id": "commit-e7f9bb8",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 17:47)",
+      "id": "commit-35a953d",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 17:54)",
       "type": "system",
-      "datetime": "2026-03-24T17:47:07-04:00",
+      "datetime": "2026-03-25T17:54:36-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 17:47)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 17:54)",
       "metadata": {
-        "commitHash": "e7f9bb8"
+        "commitHash": "35a953d"
       }
     },
     {
-      "id": "commit-c6cc5bb",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 16:46)",
+      "id": "commit-3eaa54a",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 16:54)",
       "type": "system",
-      "datetime": "2026-03-24T16:46:48-04:00",
+      "datetime": "2026-03-25T16:54:17-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 16:46)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 16:54)",
       "metadata": {
-        "commitHash": "c6cc5bb"
+        "commitHash": "3eaa54a"
       }
     },
     {
-      "id": "commit-e27701c",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 15:46)",
+      "id": "commit-8047b2d",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 15:53)",
       "type": "system",
-      "datetime": "2026-03-24T15:46:28-04:00",
+      "datetime": "2026-03-25T15:53:58-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 15:46)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 15:53)",
       "metadata": {
-        "commitHash": "e27701c"
+        "commitHash": "8047b2d"
       }
     },
     {
-      "id": "commit-e48209e",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 14:46)",
+      "id": "commit-1be8e34",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 14:53)",
       "type": "system",
-      "datetime": "2026-03-24T14:46:09-04:00",
+      "datetime": "2026-03-25T14:53:35-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 14:46)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 14:53)",
       "metadata": {
-        "commitHash": "e48209e"
+        "commitHash": "1be8e34"
       }
     },
     {
-      "id": "commit-c6d8676",
-      "title": "chore: sync Reddit cache — 32 posts (2026-03-24 13:45)",
+      "id": "commit-ec26434",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 13:53)",
       "type": "system",
-      "datetime": "2026-03-24T13:45:50-04:00",
+      "datetime": "2026-03-25T13:53:16-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 32 posts (2026-03-24 13:45)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 13:53)",
       "metadata": {
-        "commitHash": "c6d8676"
+        "commitHash": "ec26434"
       }
     },
     {
-      "id": "commit-ee83d1d",
-      "title": "chore: sync Reddit cache — 31 posts (2026-03-24 12:45)",
+      "id": "commit-29be15f",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 12:52)",
       "type": "system",
-      "datetime": "2026-03-24T12:45:27-04:00",
+      "datetime": "2026-03-25T12:52:58-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 31 posts (2026-03-24 12:45)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 12:52)",
       "metadata": {
-        "commitHash": "ee83d1d"
+        "commitHash": "29be15f"
+      }
+    },
+    {
+      "id": "commit-92d19e7",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 11:52)",
+      "type": "system",
+      "datetime": "2026-03-25T11:52:39-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 11:52)",
+      "metadata": {
+        "commitHash": "92d19e7"
+      }
+    },
+    {
+      "id": "commit-8913236",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 10:52)",
+      "type": "system",
+      "datetime": "2026-03-25T10:52:21-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 10:52)",
+      "metadata": {
+        "commitHash": "8913236"
+      }
+    },
+    {
+      "id": "commit-1a1de01",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-25 09:52)",
+      "type": "system",
+      "datetime": "2026-03-25T09:52:03-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-25 09:52)",
+      "metadata": {
+        "commitHash": "1a1de01"
       }
     }
   ],
