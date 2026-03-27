@@ -22,7 +22,7 @@ HeyReach is the one I'm staying on. Not because the features are wildly differen
 
 here's the pattern I keep seeing in GTM tools.
 
-Tool launches for operators. Builders adopt it. Community grows. LinkedIn posts, playbooks, shared workflows. Then the tool raises a round. Pricing goes up. Features gate behind enterprise tiers. The builders who drove adoption get priced out or deprioritized.
+Tool launches for operators. Builders adopt it. Community grows. LinkedIn posts, playbooks, shared workflows. Then the tool raises a round. Pricing goes up. Features gate behind higher tiers. The builders who drove adoption get priced out or deprioritized.
 
 I've watched it happen more than once. It's the default arc for GTM SaaS.
 
@@ -56,7 +56,7 @@ The setup details are in the [campaign setup guide](https://thegtmos.ai/how-to/h
 
 ## how does HeyReach compare to Dripify and Expandi?
 
-Dripify went enterprise early. The pricing is per-seat, which sounds fine until you realize "seat" means "LinkedIn account." Running five senders costs five seats. The math punishes the exact architecture that makes LinkedIn automation work.
+Some tools price per-seat, which sounds fine until you realize "seat" means "LinkedIn account." Running five senders costs five seats. The math punishes the exact architecture that makes LinkedIn automation work.
 
 Expandi positions as a premium tool with premium pricing. The features justify it for agencies. But for a solo GTM engineer running their own outreach, the cost-per-sender math doesn't work at small scale.
 
