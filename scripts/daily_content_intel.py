@@ -200,8 +200,10 @@ def grok_chat(api_key, messages, config):
 
 # ── Claude CLI ────────────────────────────────────────────────────────
 
-def call_claude(system_prompt, user_prompt, model="sonnet"):
+def call_claude(system_prompt, user_prompt, model="sonnet", timeout=None):
     """Call Claude via CLI. Uses sonnet for speed, opus for blog quality."""
+    if timeout is None:
+        timeout = 600 if model == "opus" else 300
     full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
 
     result = subprocess.run(
@@ -209,7 +211,7 @@ def call_claude(system_prompt, user_prompt, model="sonnet"):
         input=full_prompt,
         capture_output=True,
         text=True,
-        timeout=300,
+        timeout=timeout,
         cwd=str(REPO_ROOT),
     )
 

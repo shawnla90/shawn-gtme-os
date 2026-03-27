@@ -168,11 +168,25 @@ else
 fi
 
 # ── Step 1l: Content intel scanner (r/ClaudeCode daily digest) ────────
-log "Running daily_content_intel.py --date $TARGET_DATE"
-if $PYTHON scripts/daily_content_intel.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
-  log "Content intel scanner completed"
-else
-  log "WARN: Content intel scanner failed (non-fatal, continuing)"
+# Retry up to 3 times with backoff — Claude API can be flaky at midnight
+INTEL_SUCCESS=false
+for INTEL_ATTEMPT in 1 2 3; do
+  log "Running daily_content_intel.py --date $TARGET_DATE (attempt $INTEL_ATTEMPT/3)"
+  if $PYTHON scripts/daily_content_intel.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
+    log "Content intel scanner completed"
+    INTEL_SUCCESS=true
+    break
+  else
+    if [[ $INTEL_ATTEMPT -lt 3 ]]; then
+      BACKOFF=$((INTEL_ATTEMPT * 120))
+      log "WARN: Content intel attempt $INTEL_ATTEMPT failed, retrying in ${BACKOFF}s..."
+      sleep $BACKOFF
+    fi
+  fi
+done
+if [[ "$INTEL_SUCCESS" != "true" ]]; then
+  log "WARN: Content intel scanner failed after 3 attempts (non-fatal, continuing)"
+  send_slack "⚠️ WARN" "Content intel failed after 3 retries — no Claude Daily post for $TARGET_DATE"
   WARN_COUNT=$((WARN_COUNT + 1))
 fi
 
