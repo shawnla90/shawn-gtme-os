@@ -1,14 +1,14 @@
 ---
 title: "why I believe in HeyReach"
 date: "2026-03-17"
-excerpt: "Most LinkedIn automation tools go enterprise and forget the solo operator. HeyReach did the opposite. Here's why I'm building my LinkedIn outreach on it."
+excerpt: "Most LinkedIn automation tools forget the solo operator. HeyReach didn't. Here's why I'm building my LinkedIn outreach on it."
 category: "gtm-engineering"
 featured: true
 ---
 
 > **Update, March 27:** Originally published March 17. Updated for accuracy after LinkedIn removed HeyReach's business page and banned CEO Nick Velkovski's account. I believed in them before. I still do.
 
-**tl;dr:** HeyReach builds for operators, not enterprise buyers. sender-based pricing that doesn't punish you for scaling, multi-sender architecture, and a real Partner Program that gives practitioners influence over the roadmap. that's why I'm staying on it.
+**tl;dr:** HeyReach builds for operators. sender-based pricing that doesn't punish you for scaling, multi-sender architecture, and a real Partner Program that gives practitioners influence over the roadmap. that's why I'm staying on it.
 
 ## the short version
 
@@ -88,7 +88,7 @@ And the Partner Program is still early. The community is small and engaged. Whet
 
 ## the conviction
 
-I bet on tools where the builders have influence. Where the product team listens to practitioners, not just enterprise sales targets. Where pricing rewards usage patterns that actually work, not just seat counts that maximize revenue.
+I bet on tools where the builders have influence. Where the product team listens to practitioners. Where pricing rewards usage patterns that actually work, not just seat counts that maximize revenue.
 
 HeyReach is that tool for LinkedIn automation right now. The architecture is sound, the pricing is fair, the community is real.
 
