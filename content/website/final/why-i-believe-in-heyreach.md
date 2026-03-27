@@ -8,7 +8,7 @@ featured: true
 
 > **Update, March 27:** Originally published March 17. Updated for accuracy after LinkedIn removed HeyReach's business page and banned CEO Nick Velkovski's account. I believed in them before. I still do.
 
-**tl;dr:** HeyReach builds for operators, not enterprise buyers. tiered sender-based pricing where adding senders on Agency and Unlimited plans doesn't multiply your bill, multi-sender architecture, and a real Partner Program that gives practitioners influence over the roadmap. that's why I'm staying on it.
+**tl;dr:** HeyReach builds for operators, not enterprise buyers. sender-based pricing that doesn't punish you for scaling, multi-sender architecture, and a real Partner Program that gives practitioners influence over the roadmap. that's why I'm staying on it.
 
 ## the short version
 
@@ -60,7 +60,7 @@ Dripify went enterprise early. The pricing is per-seat, which sounds fine until 
 
 Expandi positions as a premium tool with premium pricing. The features justify it for agencies. But for a solo GTM engineer running their own outreach, the cost-per-sender math doesn't work at small scale.
 
-HeyReach uses tiered sender-based pricing — Growth ($79/mo, 1 sender), Agency ($799/mo, up to 50 senders), and Unlimited ($1,999/mo, no cap). On the Agency and Unlimited tiers, adding senders doesn't multiply your bill. For solo operators and small teams, this is the difference between "I can run real volume" and "I'm paying $200/month per LinkedIn account."
+HeyReach uses sender-based pricing where higher tiers let you add senders without multiplying your bill. For solo operators and small teams, this is the difference between "I can run real volume" and "I'm paying per LinkedIn account."
 
 For the full comparison: [HeyReach vs Dripify vs Expandi](https://thegtmos.ai/how-to/heyreach-vs-dripify-vs-expandi).
 
@@ -100,7 +100,7 @@ The SDR-to-solo-GTM-engineer path I wrote about in [from SDR to solo GTM enginee
 as safe as any LinkedIn automation tool can be. HeyReach uses conservative daily limits, sender warming schedules, and automatic rotation across accounts to minimize detection risk. no automation tool is zero-risk because LinkedIn actively detects automation. but HeyReach's approach, warming new accounts gradually and respecting daily caps, is the safest pattern available.
 
 **how much does HeyReach cost?**
-HeyReach uses tiered sender-based pricing: Growth at $79/mo for 1 sender, Agency at $799/mo for up to 50 senders, and Unlimited at $1,999/mo with no cap. on the Agency and Unlimited tiers, adding senders doesn't multiply your bill. check their pricing page for current numbers, but the structure is what matters. for solo operators and small teams, this is significantly cheaper than per-seat tools when running multi-sender campaigns.
+HeyReach uses sender-based pricing with tiered plans. on the higher tiers, adding senders doesn't multiply your bill. check their [pricing page](https://heyreach.io/pricing) for current numbers, but the structure is what matters. for solo operators and small teams, this is significantly cheaper than per-seat tools when running multi-sender campaigns.
 
 **can you use multiple LinkedIn accounts with HeyReach?**
 yes. that's the core architecture. connect multiple LinkedIn accounts to one workspace, build campaigns, and HeyReach rotates sends across all accounts automatically. five accounts means roughly 500 connection requests per week from one dashboard. the rotation handles warming, daily limits, and response tracking per account.
