@@ -6,7 +6,9 @@ category: "gtm-engineering"
 featured: true
 ---
 
-**tl;dr:** HeyReach builds for operators, not enterprise buyers. workspace-based pricing, multi-sender architecture, and a real expert program that gives practitioners influence over the roadmap. that's why I'm staying on it.
+> **Update, March 27:** Originally published March 17. Updated for accuracy after LinkedIn removed HeyReach's business page and banned CEO Nick Velkovski's account. I believed in them before. I still do.
+
+**tl;dr:** HeyReach builds for operators, not enterprise buyers. tiered sender-based pricing where adding senders on Agency and Unlimited plans doesn't multiply your bill, multi-sender architecture, and a real Partner Program that gives practitioners influence over the roadmap. that's why I'm staying on it.
 
 ## the short version
 
@@ -14,7 +16,7 @@ I've tested most LinkedIn automation tools. Dripify, Expandi, Phantombuster, Waa
 
 HeyReach is the one I'm staying on. Not because the features are wildly different. Because the company thinks differently about who they're building for.
 
-**affiliate disclosure:** I'm part of the HeyReach expert program. Links in this post may be affiliate links. I'll always tell you that upfront. I don't recommend tools I don't use.
+**affiliate disclosure:** I'm a HeyReach Certified Expert through their Partner Program. Links in this post may be affiliate links. I'll always tell you that upfront. I don't recommend tools I don't use.
 
 ## why is HeyReach different from other LinkedIn tools?
 
@@ -22,23 +24,23 @@ here's the pattern I keep seeing in GTM tools.
 
 Tool launches for operators. Builders adopt it. Community grows. LinkedIn posts, playbooks, shared workflows. Then the tool raises a round. Pricing goes up. Features gate behind enterprise tiers. The builders who drove adoption get priced out or deprioritized.
 
-[I wrote about this with Clay](https://shawnos.ai/blog/clay-pricing-opinion-what-it-means-for-builders). The Explorer tier disappeared. HTTP API moved behind a $495 wall. The community that made Clay viral was the first to feel the squeeze.
+I've watched it happen more than once. It's the default arc for GTM SaaS.
 
-HeyReach is going the other direction. Their expert program isn't a certification you pay for. It's a community of practitioners who build campaigns, share results, and shape the product roadmap. The experts get early access, direct lines to the team, and actual influence over what ships.
+HeyReach is going the other direction. Their Partner Program isn't a certification you pay for. It's a community of practitioners who build campaigns, share results, and shape the product roadmap. The experts get early access, direct lines to the team, and actual influence over what ships.
 
-That's the difference between a certification program and a builder movement.
+That's what a builder movement looks like.
 
-## what is the HeyReach expert program?
+## what is the HeyReach Partner Program?
 
 most "partner" or "expert" programs are badge factories. Pay $500, watch some videos, pass a quiz, get a logo for your LinkedIn.
 
-the HeyReach expert program works differently.
+the HeyReach Partner Program works differently.
 
 You earn it by using the tool and producing results. The program focuses on practitioners who run real campaigns, not people who took a course. You get direct access to the product team. Feature requests don't go into a black hole. Experts see roadmap priorities and can push for what matters.
 
 It reminds me of how open source projects work. The people building are the people influencing. There's no wall between "customer" and "contributor."
 
-For the full breakdown on how the program works, see the [HeyReach expert program wiki entry](https://thegtmos.ai/how-to/heyreach-expert-program).
+For the full breakdown on how the program works, see the [HeyReach Partner Program wiki entry](https://thegtmos.ai/how-to/heyreach-expert-program).
 
 ## how does HeyReach's multi-sender architecture work?
 
@@ -58,7 +60,7 @@ Dripify went enterprise early. The pricing is per-seat, which sounds fine until 
 
 Expandi positions as a premium tool with premium pricing. The features justify it for agencies. But for a solo GTM engineer running their own outreach, the cost-per-sender math doesn't work at small scale.
 
-HeyReach's pricing is workspace-based, not per-sender. Add senders without multiplying your bill. For solo operators and small teams, this is the difference between "I can run real volume" and "I'm paying $200/month per LinkedIn account."
+HeyReach uses tiered sender-based pricing — Growth ($79/mo, 1 sender), Agency ($799/mo, up to 50 senders), and Unlimited ($1,999/mo, no cap). On the Agency and Unlimited tiers, adding senders doesn't multiply your bill. For solo operators and small teams, this is the difference between "I can run real volume" and "I'm paying $200/month per LinkedIn account."
 
 For the full comparison: [HeyReach vs Dripify vs Expandi](https://thegtmos.ai/how-to/heyreach-vs-dripify-vs-expandi).
 
@@ -82,7 +84,7 @@ LinkedIn changes their detection algorithms regularly. Any automation tool is on
 
 The product is younger than Dripify or Expandi. Some features are catching up. Reporting could be deeper. Integrations are expanding but not as wide as competitors yet.
 
-And the expert program is still early. The community is small and engaged. Whether it stays that way as HeyReach scales is an open question.
+And the Partner Program is still early. The community is small and engaged. Whether it stays that way as HeyReach scales is an open question.
 
 ## the conviction
 
@@ -98,13 +100,13 @@ The SDR-to-solo-GTM-engineer path I wrote about in [from SDR to solo GTM enginee
 as safe as any LinkedIn automation tool can be. HeyReach uses conservative daily limits, sender warming schedules, and automatic rotation across accounts to minimize detection risk. no automation tool is zero-risk because LinkedIn actively detects automation. but HeyReach's approach, warming new accounts gradually and respecting daily caps, is the safest pattern available.
 
 **how much does HeyReach cost?**
-HeyReach uses workspace-based pricing, not per-seat. that means you can add multiple LinkedIn sender accounts without multiplying your bill. check their pricing page for current numbers, but the structure is what matters. for solo operators and small teams, workspace pricing is significantly cheaper than per-seat tools when running multi-sender campaigns.
+HeyReach uses tiered sender-based pricing: Growth at $79/mo for 1 sender, Agency at $799/mo for up to 50 senders, and Unlimited at $1,999/mo with no cap. on the Agency and Unlimited tiers, adding senders doesn't multiply your bill. check their pricing page for current numbers, but the structure is what matters. for solo operators and small teams, this is significantly cheaper than per-seat tools when running multi-sender campaigns.
 
 **can you use multiple LinkedIn accounts with HeyReach?**
 yes. that's the core architecture. connect multiple LinkedIn accounts to one workspace, build campaigns, and HeyReach rotates sends across all accounts automatically. five accounts means roughly 500 connection requests per week from one dashboard. the rotation handles warming, daily limits, and response tracking per account.
 
-**what's the HeyReach expert program?**
-a practitioner community, not a certification factory. you earn entry by running real campaigns and producing results. experts get direct access to the product team, early feature access, roadmap influence, and community collaboration. it's closer to an open source contributor model than a traditional partner program.
+**what's the HeyReach Partner Program?**
+a practitioner community, not a certification factory. you earn entry by running real campaigns and producing results. experts get direct access to the product team, early feature access, roadmap influence, and community collaboration. it's closer to an open source contributor model than a traditional certification program.
 
 ---
 
