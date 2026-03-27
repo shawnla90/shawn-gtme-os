@@ -49,7 +49,8 @@
     "./hooks/useTheme": "./hooks/useTheme.ts",
     "./hooks/useContentTracking": "./hooks/useContentTracking.ts",
     "./data/ai-news-cache.json": "./data/ai-news-cache.json",
-    "./styles": "./styles/tokens.css"
+    "./styles": "./styles/tokens.css",
+    "./data/guide-manifest": "./data/guide-manifest.ts"
   },
   "dependencies": {
     "framer-motion": "^12.34.3",

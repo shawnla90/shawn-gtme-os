@@ -203,6 +203,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             { href: lp('/media'), label: nav('media') },
             { href: lp('/about'), label: nav('about') },
             { href: '#', label: nav('wiki'), children: [
+              { href: lp('/guide/gtm-coding-agent'), label: nav('playbook') },
               { href: lp('/knowledge'), label: nav('knowledge') },
               { href: lp('/how-to'), label: nav('howTo') },
               { href: lp('/clay-wiki'), label: nav('clayWiki') },

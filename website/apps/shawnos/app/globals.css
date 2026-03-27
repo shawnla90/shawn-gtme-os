@@ -600,3 +600,226 @@ html {
     display: none !important;
   }
 }
+
+/* === Guide / Playbook prose enhancements === */
+.guide-prose {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+}
+
+.guide-prose p:first-of-type::first-letter {
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 8px;
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-sans);
+}
+
+.guide-prose p { margin-bottom: 1.6em; }
+.guide-prose h1 { font-size: 1.75em; margin-top: 2em; margin-bottom: 0.75em; }
+.guide-prose h2 { font-size: 1.45em; margin-top: 2em; margin-bottom: 0.65em; }
+.guide-prose h3 { font-size: 1.15em; margin-top: 1.5em; margin-bottom: 0.5em; }
+
+.guide-prose h1,
+.guide-prose h2,
+.guide-prose h3 {
+  color: var(--accent);
+  font-weight: 700;
+  font-family: var(--font-sans);
+  line-height: 1.3;
+}
+
+.guide-prose a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.guide-prose a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
+
+.guide-prose code {
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-family: var(--font-mono);
+}
+
+.guide-prose pre {
+  background: var(--code-bg);
+  padding: 16px;
+  border-radius: 8px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  line-height: 1.6;
+}
+
+.guide-prose pre code { background: none; padding: 0; font-size: inherit; }
+
+.guide-prose blockquote {
+  border-left: 3px solid var(--accent);
+  padding-left: 20px;
+  margin-left: 0;
+  margin-right: 0;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1.05em;
+  line-height: 1.7;
+}
+
+.guide-prose img { max-width: 100%; border-radius: 8px; margin: 1.5em 0; }
+.guide-prose ul, .guide-prose ol { padding-left: 24px; margin-bottom: 1.25em; }
+.guide-prose li { margin-bottom: 8px; line-height: 1.7; }
+.guide-prose hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+.guide-prose strong { color: var(--text-primary); font-weight: 600; }
+
+.guide-prose table { width: 100%; border-collapse: collapse; margin: 1.5em 0; font-size: 0.925em; overflow-x: auto; display: block; }
+.guide-prose thead { border-bottom: 2px solid var(--accent); }
+.guide-prose th { text-align: left; padding: 10px 14px; color: var(--accent); font-weight: 600; white-space: nowrap; }
+.guide-prose td { padding: 10px 14px; border-bottom: 1px solid var(--border); }
+.guide-prose tbody tr:last-child td { border-bottom: none; }
+
+@media (max-width: 768px) {
+  .guide-prose {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  .guide-prose h1 { font-size: 1.5em; }
+  .guide-prose h2 { font-size: 1.25em; }
+  .guide-prose h3 { font-size: 1.1em; }
+  .guide-prose ul, .guide-prose ol { padding-left: 20px; }
+  .guide-prose blockquote { padding-left: 14px; font-size: 1em; }
+  .guide-prose pre { padding: 12px; font-size: 0.8em; border-radius: 6px; }
+}
+
+/* === Guide chapter layout (flex row on desktop) === */
+.guide-chapter-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: var(--font-sans);
+}
+
+@media (max-width: 480px) {
+  .guide-chapter-layout { padding: 24px 4px; }
+}
+
+@media (min-width: 900px) {
+  .guide-chapter-layout {
+    flex-direction: row;
+    gap: 48px;
+    align-items: flex-start;
+  }
+  .guide-chapter-content {
+    flex: 1;
+    min-width: 0;
+    max-width: 720px;
+  }
+}
+
+/* === Chapter nav (prev/next) === */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+
+.chapter-nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  transition: color 0.15s;
+  max-width: 45%;
+}
+
+.chapter-nav a:hover { color: var(--accent); }
+
+.chapter-nav .chapter-nav-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.chapter-nav .chapter-nav-title {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* === Guide progress bar === */
+.guide-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 200;
+  transition: width 0.3s ease;
+}
+
+/* === Guide landing page TOC === */
+.guide-toc-part {
+  margin-bottom: 32px;
+}
+
+.guide-toc-part-title {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.guide-toc-chapter {
+  display: block;
+  padding: 12px 16px;
+  margin-bottom: 4px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  transition: background 0.15s, border-color 0.15s;
+  border: 1px solid transparent;
+}
+
+.guide-toc-chapter:hover {
+  background: var(--canvas-subtle);
+  border-color: var(--border);
+}
+
+.guide-toc-chapter-number {
+  font-size: 12px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.guide-toc-chapter-title {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.guide-toc-chapter-subtitle {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  line-height: 1.4;
+}
