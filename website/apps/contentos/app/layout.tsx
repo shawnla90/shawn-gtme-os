@@ -31,14 +31,15 @@ export const metadata: Metadata = {
     default: 'theContentOS.ai — Best Self-Hosted AI Coding Assistant & Content OS',
     template: '%s | theContentOS.ai',
   },
-  description: 'The best self-hosted AI coding assistant and content OS. Build a personal AI with memory that knows your voice — Voice DNA, context playbooks, and content ops as a system.',
+  description: 'A free AI agent automation tool for content creators. Set up AI agent automation fast — Voice DNA, context playbooks, and AI agent setup as a system.',
+  keywords: ['free ai agent automation tool', 'ai agent setup', 'content operating system', 'ai automation'],
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: SITE_URL,
     siteName: 'theContentOS.ai',
     title: 'theContentOS.ai — Best Self-Hosted AI Coding Assistant & Content OS',
-    description: 'The best self-hosted AI coding assistant and content OS. Build a personal AI with memory that knows your voice — Voice DNA, context playbooks, and content ops as a system.',
+    description: 'A free AI agent automation tool for content creators. Set up AI agent automation fast — Voice DNA, context playbooks, and AI agent setup as a system.',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
   twitter: {

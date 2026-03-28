@@ -4,14 +4,14 @@ import { getAllLogs } from '@shawnos/shared/lib'
 import { HomeContent } from './HomeContent'
 
 export const metadata: Metadata = {
-  title: 'ContentOS — Best AI Agent Orchestration Platform for Content Creators',
+  title: 'ContentOS – AI Agent Automation Tools & Content Operating System',
   description:
-    'The best AI agent orchestration platform for content creators. ContentOS: voice engine, platform playbooks, and recursive content workflows that publish across every channel in your voice.',
+    'ContentOS gives creators AI agent automation tools for fast AI agent setup and end-to-end content workflows that publish in your voice across every channel.',
   alternates: { canonical: 'https://thecontentos.ai' },
   openGraph: {
-    title: 'ContentOS — Best AI Agent Orchestration Platform for Content Creators',
+    title: 'ContentOS – AI Agent Automation Tools & Content Operating System',
     description:
-      'The best AI agent orchestration platform for content creators. ContentOS: voice engine, platform playbooks, and recursive content workflows across every channel.',
+      'ContentOS gives creators AI agent automation tools for fast AI agent setup and end-to-end content workflows that publish in your voice across every channel.',
     url: 'https://thecontentos.ai',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'ContentOS — Best AI Agent Orchestration Platform for Content Creators',
+    title: 'ContentOS – AI Agent Automation Tools & Content Operating System',
     description:
-      'The best AI agent orchestration platform for content creators. ContentOS: voice engine, platform playbooks, and recursive content workflows across every channel.',
+      'ContentOS gives creators AI agent automation tools for fast AI agent setup and end-to-end content workflows that publish in your voice across every channel.',
     images: ['/og'],
   },
 }

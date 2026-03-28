@@ -249,7 +249,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
               margin: '0 auto 16px',
             }}
           >
-            The AI agent orchestration platform built for content creators. One voice across every channel - sounds like you, not AI slop.
+            The AI agent automation platform built for content creators. Complete AI agent setup for voice, platforms, and distribution - sounds like you, not AI slop.
           </p>
         </MotionReveal>
 
@@ -403,7 +403,7 @@ export function HomeContent({ latestLog }: HomeContentProps) {
 
       {/* ── 5. Featured Sections ── */}
       <ScrollRevealSection background="var(--canvas)">
-        <SectionHeadline label="EXPLORE" subtitle="The core modules of the content operating system">Explore the System</SectionHeadline>
+        <SectionHeadline label="EXPLORE" subtitle="Free tools built for AI agent automation workflows - the core modules of the content operating system">Explore the System</SectionHeadline>
 
         <StaggerContainer stagger={0.12}>
           <div

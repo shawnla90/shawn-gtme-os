@@ -5,10 +5,13 @@ import { ServicesContent } from './ServicesContent'
 const SITE_URL = 'https://thecontentos.ai'
 
 export const metadata: Metadata = {
-  title: 'Services - Content Operating System for Your Business',
+  title: 'AI Agent Setup & Automation Services | ContentOS',
   description:
-    'Voice DNA calibration, content engine retainer, and full dominance packages. We drove 527 visitors and 75,000+ Reddit views in 24 hours. Content distribution that compounds.',
+    'Free ai agent automation tool for content distribution. Voice DNA calibration, content engine retainer, and full dominance packages. We drove 527 visitors and 75,000+ Reddit views in 24 hours.',
   keywords: [
+    'free ai agent automation tool',
+    'ai agent setup',
+    'ai agent automation',
     'content operating system',
     'content marketing services',
     'voice DNA calibration',

@@ -120,7 +120,7 @@ export function ServicesContent() {
               maxWidth: 800,
             }}
           >
-            <span style={{ color: 'var(--text-primary)' }}>Your content,</span>{' '}
+            <span style={{ color: 'var(--text-primary)' }}>AI agent content,</span>{' '}
             <span style={{ color: 'var(--accent)' }}>
               <ScrambleCycler
                 phrases={[
