@@ -1,32 +1,32 @@
 {
-  "generated": "2026-03-27T04:00:11.000Z",
+  "generated": "2026-03-28T04:00:11.000Z",
   "totals": {
-    "total_content": 238,
-    "total_drafts": 123,
-    "total_final": 115,
-    "total_words": 168388,
+    "total_content": 242,
+    "total_drafts": 124,
+    "total_final": 118,
+    "total_words": 171279,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
   },
   "pipeline": {
-    "website": {
-      "draft": 1,
-      "final": 46,
-      "total": 47,
-      "words": 62289
+    "linkedin": {
+      "draft": 45,
+      "final": 19,
+      "total": 64,
+      "words": 33970
     },
     "nio-log": {
       "draft": 0,
-      "final": 35,
-      "total": 35,
-      "words": 25873
+      "final": 36,
+      "total": 36,
+      "words": 26798
     },
-    "linkedin": {
-      "draft": 44,
-      "final": 18,
-      "total": 62,
-      "words": 33667
+    "website": {
+      "draft": 1,
+      "final": 47,
+      "total": 48,
+      "words": 63952
     },
     "reddit": {
       "draft": 22,
@@ -48,6 +48,39 @@
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "heyreach support linkedin ban",
+      "slug": "heyreach-support-linkedin-ban",
+      "date": "2026-03-27",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 198,
+      "file_path": "content/linkedin/drafts/2026-03-27_heyreach-support-linkedin-ban.txt"
+    },
+    {
+      "platform": "nio-log",
+      "title": "THURSDAY. SIX CONSECUTIVE D GRADES. THE",
+      "slug": "2026-03-27",
+      "date": "2026-03-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 925,
+      "file_path": "content/nio-log/2026-03-27.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Thursday, March 26, 2026",
+      "slug": "claude-daily-2026-03-26",
+      "date": "2026-03-26",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1613,
+      "file_path": "content/website/final/claude-daily-2026-03-26.md"
+    },
     {
       "platform": "website",
       "title": "I Built a Fully Automated Daily Blog That Publishes Itself at Midnight",
@@ -364,7 +397,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1210,
+      "word_count": 1260,
       "file_path": "content/website/final/why-i-believe-in-heyreach.md"
     },
     {
@@ -564,39 +597,6 @@
       "arc": null,
       "word_count": 237,
       "file_path": "content/linkedin/drafts/2026-03-14_website-with-soul.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THE TRILOGY",
-      "slug": "2026-03-14",
-      "date": "2026-03-14",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 971,
-      "file_path": "content/nio-log/2026-03-14.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "I open sourced the context infrastructure I use to run 4-6 Claude Code terminals in parallel",
-      "slug": "context-handoff-engine-gtmbuilders",
-      "date": "2026-03-14",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 223,
-      "file_path": "content/reddit/drafts/2026-03-14_context-handoff-engine-gtmbuilders.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "structured divergence claudecode",
-      "slug": "structured-divergence-claudecode",
-      "date": "2026-03-14",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 355,
-      "file_path": "content/reddit/drafts/2026-03-14_structured-divergence-claudecode.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-27",
+      "grade": "D",
+      "score": 131,
+      "words": 10228,
+      "shipped": 9,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-26",
       "grade": "D",
       "score": 37,
@@ -1213,14 +1221,6 @@
       "score": 229,
       "words": 10394,
       "shipped": 7,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-13",
-      "grade": "D",
-      "score": 76,
-      "words": 10964,
-      "shipped": 3,
       "cost": 0.0
     }
   ]

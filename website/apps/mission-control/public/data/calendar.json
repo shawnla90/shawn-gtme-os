@@ -1,169 +1,169 @@
 {
-  "generated": "2026-03-27T04:24:28.626Z",
+  "generated": "2026-03-28T04:20:07.547Z",
   "events": [
     {
-      "id": "commit-94b1887",
-      "title": "feat: claude daily digest 2026-03-25",
+      "id": "commit-efc4b42",
+      "title": "feat: claude daily digest 2026-03-27",
       "type": "milestone",
-      "datetime": "2026-03-26T20:35:50-04:00",
+      "datetime": "2026-03-28T00:19:15-04:00",
       "status": "completed",
-      "description": "feat: claude daily digest 2026-03-25",
+      "description": "feat: claude daily digest 2026-03-27",
       "metadata": {
-        "commitHash": "94b1887"
+        "commitHash": "efc4b42"
       }
     },
     {
-      "id": "commit-51977c4",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 20:20)",
+      "id": "commit-62040ce",
+      "title": "chore: contentos optimizer - 1 improvements (2026-03-28)",
       "type": "system",
-      "datetime": "2026-03-26T20:20:56-04:00",
+      "datetime": "2026-03-27T23:02:58-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 20:20)",
+      "description": "chore: contentos optimizer - 1 improvements (2026-03-28)",
       "metadata": {
-        "commitHash": "51977c4"
+        "commitHash": "62040ce"
       }
     },
     {
-      "id": "commit-e2edd01",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 20:02)",
+      "id": "commit-3ac6d50",
+      "title": "chore: sync Reddit cache — 34 posts (2026-03-27 20:21)",
       "type": "system",
-      "datetime": "2026-03-26T20:02:54-04:00",
+      "datetime": "2026-03-27T20:21:34-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 20:02)",
+      "description": "chore: sync Reddit cache — 34 posts (2026-03-27 20:21)",
       "metadata": {
-        "commitHash": "e2edd01"
+        "commitHash": "3ac6d50"
       }
     },
     {
-      "id": "commit-e0ff388",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 19:02)",
-      "type": "system",
-      "datetime": "2026-03-26T19:02:35-04:00",
+      "id": "commit-0c0c047",
+      "title": "feat: daily LinkedIn posts 2026-03-27",
+      "type": "milestone",
+      "datetime": "2026-03-27T09:09:38-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 19:02)",
+      "description": "feat: daily LinkedIn posts 2026-03-27",
       "metadata": {
-        "commitHash": "e0ff388"
+        "commitHash": "0c0c047"
       }
     },
     {
-      "id": "commit-0b0959f",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 18:02)",
+      "id": "commit-aeaea94",
+      "title": "chore: sync Reddit cache — 36 posts (2026-03-27 08:21)",
       "type": "system",
-      "datetime": "2026-03-26T18:02:15-04:00",
+      "datetime": "2026-03-27T08:21:15-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 18:02)",
+      "description": "chore: sync Reddit cache — 36 posts (2026-03-27 08:21)",
       "metadata": {
-        "commitHash": "0b0959f"
+        "commitHash": "aeaea94"
       }
     },
     {
-      "id": "commit-fd0a7fd",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 17:01)",
-      "type": "system",
-      "datetime": "2026-03-26T17:01:51-04:00",
+      "id": "commit-cb446cb",
+      "title": "feat: nio.log 2026-03-27 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-27T08:01:13-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 17:01)",
+      "description": "feat: nio.log 2026-03-27 — automated daily post",
       "metadata": {
-        "commitHash": "fd0a7fd"
+        "commitHash": "cb446cb"
       }
     },
     {
-      "id": "commit-b93ef0d",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 16:01)",
+      "id": "commit-e971239",
+      "title": "update LinkedIn HeyReach solidarity post tone",
       "type": "system",
-      "datetime": "2026-03-26T16:01:32-04:00",
+      "datetime": "2026-03-27T02:40:47-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 16:01)",
+      "description": "update LinkedIn HeyReach solidarity post tone",
       "metadata": {
-        "commitHash": "b93ef0d"
+        "commitHash": "e971239"
       }
     },
     {
-      "id": "commit-1f98b48",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 15:01)",
-      "type": "system",
-      "datetime": "2026-03-26T15:01:12-04:00",
+      "id": "commit-52b8f8a",
+      "title": "fix: remove em dashes, all comparisons, and \"I tried other t",
+      "type": "deployment",
+      "datetime": "2026-03-27T02:39:04-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 15:01)",
+      "description": "fix: remove em dashes, all comparisons, and \"I tried other tools\" framing",
       "metadata": {
-        "commitHash": "1f98b48"
+        "commitHash": "52b8f8a"
       }
     },
     {
-      "id": "commit-285404b",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 14:00)",
+      "id": "commit-4f5823c",
+      "title": "rewrite HeyReach blog: remove all competitor names, add trus",
       "type": "system",
-      "datetime": "2026-03-26T14:00:52-04:00",
+      "datetime": "2026-03-27T02:30:12-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 14:00)",
+      "description": "rewrite HeyReach blog: remove all competitor names, add trust/integrations/brand sections",
       "metadata": {
-        "commitHash": "285404b"
+        "commitHash": "4f5823c"
       }
     },
     {
-      "id": "commit-f23449d",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 13:00)",
+      "id": "commit-353e0ea",
+      "title": "add GTM Coding Agent Playbook guide to shawnos.ai",
       "type": "system",
-      "datetime": "2026-03-26T13:00:34-04:00",
+      "datetime": "2026-03-27T02:14:36-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 13:00)",
+      "description": "add GTM Coding Agent Playbook guide to shawnos.ai",
       "metadata": {
-        "commitHash": "f23449d"
+        "commitHash": "353e0ea"
       }
     },
     {
-      "id": "commit-4755669",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 12:00)",
-      "type": "system",
-      "datetime": "2026-03-26T12:00:15-04:00",
+      "id": "commit-98bab1d",
+      "title": "fix: remove remaining enterprise references from HeyReach bl",
+      "type": "deployment",
+      "datetime": "2026-03-27T02:11:02-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 12:00)",
+      "description": "fix: remove remaining enterprise references from HeyReach blog",
       "metadata": {
-        "commitHash": "4755669"
+        "commitHash": "98bab1d"
       }
     },
     {
-      "id": "commit-0a56a05",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 10:59)",
-      "type": "system",
-      "datetime": "2026-03-26T10:59:55-04:00",
+      "id": "commit-264c485",
+      "title": "fix: remove anti-enterprise framing from HeyReach blog",
+      "type": "deployment",
+      "datetime": "2026-03-27T02:10:05-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 10:59)",
+      "description": "fix: remove anti-enterprise framing from HeyReach blog",
       "metadata": {
-        "commitHash": "0a56a05"
+        "commitHash": "264c485"
       }
     },
     {
-      "id": "commit-fb7b850",
-      "title": "chore: sync Reddit cache — 35 posts (2026-03-26 09:59)",
-      "type": "system",
-      "datetime": "2026-03-26T09:59:36-04:00",
+      "id": "commit-02236f7",
+      "title": "fix: remove specific pricing figures from HeyReach blog",
+      "type": "deployment",
+      "datetime": "2026-03-27T02:09:30-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 35 posts (2026-03-26 09:59)",
+      "description": "fix: remove specific pricing figures from HeyReach blog",
       "metadata": {
-        "commitHash": "fb7b850"
+        "commitHash": "02236f7"
       }
     },
     {
-      "id": "commit-41836cb",
-      "title": "chore: sync Reddit cache — 34 posts (2026-03-26 08:59)",
+      "id": "commit-076ff85",
+      "title": "update HeyReach blog for accuracy + add LinkedIn solidarity ",
       "type": "system",
-      "datetime": "2026-03-26T08:59:17-04:00",
+      "datetime": "2026-03-27T02:04:14-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 34 posts (2026-03-26 08:59)",
+      "description": "update HeyReach blog for accuracy + add LinkedIn solidarity post",
       "metadata": {
-        "commitHash": "41836cb"
+        "commitHash": "076ff85"
       }
     },
     {
-      "id": "commit-ba7b8e3",
-      "title": "chore: sync Reddit cache — 34 posts (2026-03-26 07:58)",
-      "type": "system",
-      "datetime": "2026-03-26T07:58:59-04:00",
+      "id": "commit-f18924c",
+      "title": "fix: increase Opus timeout to 600s + add 3x retry for conten",
+      "type": "deployment",
+      "datetime": "2026-03-27T01:21:53-04:00",
       "status": "completed",
-      "description": "chore: sync Reddit cache — 34 posts (2026-03-26 07:58)",
+      "description": "fix: increase Opus timeout to 600s + add 3x retry for content intel cron",
       "metadata": {
-        "commitHash": "ba7b8e3"
+        "commitHash": "f18924c"
       }
     }
   ],
