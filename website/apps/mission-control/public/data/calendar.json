@@ -1,6 +1,83 @@
 {
-  "generated": "2026-03-28T04:20:07.547Z",
+  "generated": "2026-03-29T04:18:43.415Z",
   "events": [
+    {
+      "id": "commit-93add75",
+      "title": "feat: claude daily digest 2026-03-28",
+      "type": "milestone",
+      "datetime": "2026-03-29T00:17:59-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-03-28",
+      "metadata": {
+        "commitHash": "93add75"
+      }
+    },
+    {
+      "id": "commit-bf766d2",
+      "title": "chore: contentos optimizer - 2 improvements (2026-03-29)",
+      "type": "system",
+      "datetime": "2026-03-28T23:05:06-04:00",
+      "status": "completed",
+      "description": "chore: contentos optimizer - 2 improvements (2026-03-29)",
+      "metadata": {
+        "commitHash": "bf766d2"
+      }
+    },
+    {
+      "id": "commit-33fd09e",
+      "title": "chore: sync Reddit cache — 37 posts (2026-03-28 20:22)",
+      "type": "system",
+      "datetime": "2026-03-28T20:22:20-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 37 posts (2026-03-28 20:22)",
+      "metadata": {
+        "commitHash": "33fd09e"
+      }
+    },
+    {
+      "id": "commit-39dca8e",
+      "title": "feat: daily LinkedIn posts 2026-03-28",
+      "type": "milestone",
+      "datetime": "2026-03-28T09:09:58-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-28",
+      "metadata": {
+        "commitHash": "39dca8e"
+      }
+    },
+    {
+      "id": "commit-f31fa51",
+      "title": "chore: sync Reddit cache — 35 posts (2026-03-28 08:22)",
+      "type": "system",
+      "datetime": "2026-03-28T08:22:00-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 35 posts (2026-03-28 08:22)",
+      "metadata": {
+        "commitHash": "f31fa51"
+      }
+    },
+    {
+      "id": "commit-3b472a1",
+      "title": "feat: nio.log 2026-03-28 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-28T08:01:03-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-28 — automated daily post",
+      "metadata": {
+        "commitHash": "3b472a1"
+      }
+    },
+    {
+      "id": "commit-3615e5b",
+      "title": "chore: daily tracker scan 2026-03-27",
+      "type": "system",
+      "datetime": "2026-03-28T00:20:08-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-03-27",
+      "metadata": {
+        "commitHash": "3615e5b"
+      }
+    },
     {
       "id": "commit-efc4b42",
       "title": "feat: claude daily digest 2026-03-27",
@@ -87,83 +164,6 @@
       "description": "fix: remove em dashes, all comparisons, and \"I tried other tools\" framing",
       "metadata": {
         "commitHash": "52b8f8a"
-      }
-    },
-    {
-      "id": "commit-4f5823c",
-      "title": "rewrite HeyReach blog: remove all competitor names, add trus",
-      "type": "system",
-      "datetime": "2026-03-27T02:30:12-04:00",
-      "status": "completed",
-      "description": "rewrite HeyReach blog: remove all competitor names, add trust/integrations/brand sections",
-      "metadata": {
-        "commitHash": "4f5823c"
-      }
-    },
-    {
-      "id": "commit-353e0ea",
-      "title": "add GTM Coding Agent Playbook guide to shawnos.ai",
-      "type": "system",
-      "datetime": "2026-03-27T02:14:36-04:00",
-      "status": "completed",
-      "description": "add GTM Coding Agent Playbook guide to shawnos.ai",
-      "metadata": {
-        "commitHash": "353e0ea"
-      }
-    },
-    {
-      "id": "commit-98bab1d",
-      "title": "fix: remove remaining enterprise references from HeyReach bl",
-      "type": "deployment",
-      "datetime": "2026-03-27T02:11:02-04:00",
-      "status": "completed",
-      "description": "fix: remove remaining enterprise references from HeyReach blog",
-      "metadata": {
-        "commitHash": "98bab1d"
-      }
-    },
-    {
-      "id": "commit-264c485",
-      "title": "fix: remove anti-enterprise framing from HeyReach blog",
-      "type": "deployment",
-      "datetime": "2026-03-27T02:10:05-04:00",
-      "status": "completed",
-      "description": "fix: remove anti-enterprise framing from HeyReach blog",
-      "metadata": {
-        "commitHash": "264c485"
-      }
-    },
-    {
-      "id": "commit-02236f7",
-      "title": "fix: remove specific pricing figures from HeyReach blog",
-      "type": "deployment",
-      "datetime": "2026-03-27T02:09:30-04:00",
-      "status": "completed",
-      "description": "fix: remove specific pricing figures from HeyReach blog",
-      "metadata": {
-        "commitHash": "02236f7"
-      }
-    },
-    {
-      "id": "commit-076ff85",
-      "title": "update HeyReach blog for accuracy + add LinkedIn solidarity ",
-      "type": "system",
-      "datetime": "2026-03-27T02:04:14-04:00",
-      "status": "completed",
-      "description": "update HeyReach blog for accuracy + add LinkedIn solidarity post",
-      "metadata": {
-        "commitHash": "076ff85"
-      }
-    },
-    {
-      "id": "commit-f18924c",
-      "title": "fix: increase Opus timeout to 600s + add 3x retry for conten",
-      "type": "deployment",
-      "datetime": "2026-03-27T01:21:53-04:00",
-      "status": "completed",
-      "description": "fix: increase Opus timeout to 600s + add 3x retry for content intel cron",
-      "metadata": {
-        "commitHash": "f18924c"
       }
     }
   ],

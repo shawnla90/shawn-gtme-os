@@ -1,32 +1,32 @@
 {
-  "generated": "2026-03-28T04:00:11.000Z",
+  "generated": "2026-03-29T04:00:12.000Z",
   "totals": {
-    "total_content": 242,
+    "total_content": 245,
     "total_drafts": 124,
-    "total_final": 118,
-    "total_words": 171279,
+    "total_final": 121,
+    "total_words": 173618,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
   },
   "pipeline": {
-    "linkedin": {
-      "draft": 45,
-      "final": 19,
-      "total": 64,
-      "words": 33970
-    },
     "nio-log": {
       "draft": 0,
-      "final": 36,
-      "total": 36,
-      "words": 26798
+      "final": 37,
+      "total": 37,
+      "words": 27563
+    },
+    "linkedin": {
+      "draft": 45,
+      "final": 20,
+      "total": 65,
+      "words": 34088
     },
     "website": {
       "draft": 1,
-      "final": 47,
-      "total": 48,
-      "words": 63952
+      "final": 48,
+      "total": 49,
+      "words": 65408
     },
     "reddit": {
       "draft": 22,
@@ -49,6 +49,17 @@
   },
   "recent": [
     {
+      "platform": "nio-log",
+      "title": "FRIDAY. THE CONTENTOS OPTIMIZER RAN OVERNIGHT",
+      "slug": "2026-03-28",
+      "date": "2026-03-28",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 765,
+      "file_path": "content/nio-log/2026-03-28.md"
+    },
+    {
       "platform": "linkedin",
       "title": "heyreach support linkedin ban",
       "slug": "heyreach-support-linkedin-ban",
@@ -69,6 +80,17 @@
       "arc": null,
       "word_count": 925,
       "file_path": "content/nio-log/2026-03-27.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Friday, March 27, 2026",
+      "slug": "claude-daily-2026-03-27",
+      "date": "2026-03-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1456,
+      "file_path": "content/website/final/claude-daily-2026-03-27.md"
     },
     {
       "platform": "website",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 211,
       "file_path": "content/linkedin/drafts/2026-03-14_context-handoff-engine.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "structured divergence",
-      "slug": "structured-divergence",
-      "date": "2026-03-14",
-      "stage": "draft",
-      "pillar": "building-sharing",
-      "arc": null,
-      "word_count": 209,
-      "file_path": "content/linkedin/drafts/2026-03-14_structured-divergence.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "website with soul",
-      "slug": "website-with-soul",
-      "date": "2026-03-14",
-      "stage": "draft",
-      "pillar": "building-sharing",
-      "arc": null,
-      "word_count": 237,
-      "file_path": "content/linkedin/drafts/2026-03-14_website-with-soul.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-28",
+      "grade": "D",
+      "score": 44,
+      "words": 3383,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-27",
       "grade": "D",
       "score": 131,
@@ -1213,14 +1221,6 @@
       "score": 353,
       "words": 12241,
       "shipped": 14,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-14",
-      "grade": "C",
-      "score": 229,
-      "words": 10394,
-      "shipped": 7,
       "cost": 0.0
     }
   ]
