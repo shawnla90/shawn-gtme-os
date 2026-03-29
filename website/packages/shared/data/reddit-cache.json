@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-29T00:22:20.509746+00:00",
+  "lastUpdated": "2026-03-29T12:22:40.832838+00:00",
   "posts": [
     {
       "id": "1s66q9w",
@@ -53,7 +53,7 @@
       "id": "1s5kz3h",
       "title": "Hey builders, dropping a repo I just finished building out. It's basically coding agents for GTM starter kit.. not your LinkedIn skill pack.!!!",
       "author": "Shawntenam",
-      "score": 1,
+      "score": 0,
       "numComments": 1,
       "permalink": "/r/GTMbuilders/comments/1s5kz3h/hey_builders_dropping_a_repo_i_just_finished/",
       "selftext": "https://preview.redd.it/w1hsrm1veorg1.png?width=1738&amp;format=png&amp;auto=webp&amp;s=3555918874de59edc47d90602de94acdd36551a9\n\nIf you're in GTM and you've been hearing about coding agents but aren't sure where to start, or you're technical and thinking about moving into GTM engineering, this is for you.\n\nThe GTM Coding Agent repo is a learning system. 10 chapters, interactive onboarding, templates, Python scripts, and a full GTM-OS skeleton you can fork and build from.\n\nWhat's inside:\n\n\\- 10 chapters covering everything from \"what is a coding agent\" to running your Mac as a GTM server\n\n\\- Interactive onboarding that asks you 6 questions and configures your workspace based on your role\n\n\\- Context engineering patterns for structuring [CLAUDE.md](http://CLAUDE.md) files that make agents useful\n\n\\- Token efficiency, OAuth, CLI, and API connection frameworks\n\n\\- Python scripts for enrichment, API calls, and CSV pipelines\n\n\\- A GTM-OS folder structure with ICP, positioning, segments, campaigns, and content\n\n\\- 4 persona modes: solo founder, agency, single client, ABM outbound\n\n\\- Voice DNA and anti-slop templates\n\n\\- 6 prompts for ICP building, positioning, competitor analysis, signal mapping, email sequences, and content repurposing\n\n\\- Real examples with anonymized data\n\n\n\nYou open it in Claude Code, type \"help me set up,\" and it walks you through the whole thing.\n\n\n\nThere's also a full companion blog on the website if you prefer reading it as a guide rather than working through the repo.\n\n\n\nNo course. No upsell. Everything is in the repo.\n\n\n\nGitHub: [github.com/shawnla90/gtm-coding-agent](http://github.com/shawnla90/gtm-coding-agent)\n\nBlog: [shawnos.ai/guide/gtm-coding-agent](http://shawnos.ai/guide/gtm-coding-agent)\n\n\n\nIf you get into it and have questions, drop them here. Happy to help.",
@@ -117,7 +117,7 @@
       "id": "1s31mht",
       "title": "Is LinkedIn banning HeyReach going to stop my HeyReach campaigns from working too?",
       "author": "Serious-Aspect-7617",
-      "score": 6,
+      "score": 4,
       "numComments": 14,
       "permalink": "/r/GTMbuilders/comments/1s31mht/is_linkedin_banning_heyreach_going_to_stop_my/",
       "selftext": "I guess you all have heard it: LinkedIn has taken down HeyReach\u2019s LinkedIn profile including their founder\u2019s. Not their first crackdown on third party service providers. As somebody new to this I was wondering what this would mean to the functioning of their platform. ",
@@ -165,7 +165,7 @@
       "id": "1s1t3hs",
       "title": "New to GTM and tried something",
       "author": "Plenty-Thought3218",
-      "score": 4,
+      "score": 3,
       "numComments": 5,
       "permalink": "/r/GTMbuilders/comments/1s1t3hs/new_to_gtm_and_tried_something/",
       "selftext": "Hi all, I\u2019m new to GTM (came across it just last week) I was all over the internet searching abt this new role but ended up just reading and watching videos on whats GTM. So today I decided to try building something with whatever I\u2019ve understood so far. I\u2019m currently working as a Business Growth Intern more on tech side at a startup ( I am building their demo listing pages for demo based sales and built their website ) I thought its good opportunity to create a small proof-of-work around outbound and automation for this startup.\n\nHere\u2019s what I\u2019ve done so far:\n\n* Built a simple workflow using n8n got help of claude ( Do tell me my mistakes if any, as it was my first time using n8n ) Right now did automation based on fields not spreadsheet\n* Used Gemini Flash to:\n   * Analyze company details\n   * Match them with our ICP\n   * Score them (out of 10)\n* Generated personalized email content automatically\n* Sent emails only to leads with an ICP score greater than 7\n\nI also documented by adding notes in my workspace since I realized how important that is while building.\n\nNot sure if this is the best way to approach learning GTM, but I felt stuck just consuming content, so I tried a more hands-on approach.\n\nI\u2019d really appreciate some guidance on: ( I don\u2019t come from a sales background, so apologies if some of these are basic stupid questions I\u2019m a software engineering student exploring this space) :)\n\n* Is building workflows like this a good way to learn GTM, or am I missing something important?\n* What exactly is email warm-up and why is it needed? Why do Gmail emails often land in spam even when the content seems fine?\n* Should I be using multiple domains/email IDs for outbound, or is it okay to start simple? I am really confused with people talking abt it\n\nI have also built a python based scarper using Claude which would filter according to ICP and scrap only those businesses from google maps who do not have a virtual tour presence in all verticals (since this company provides that service ) it got me around 300 leads but it needs data cleaning before using it on automation\n\nWould love any feedback or suggestions on how to improve or what to explore next. Since I am from tech side I feel like directly jumping into building before understanding things is not gonna work ahead so I would love to know how can i increase my sales knowledge?\n\nThanks! ",
@@ -309,7 +309,7 @@
       "id": "1rvvj06",
       "title": "2x Claude usage limits for March - what are you doing with it?",
       "author": "muzzythinks",
-      "score": 5,
+      "score": 4,
       "numComments": 5,
       "permalink": "/r/GTMbuilders/comments/1rvvj06/2x_claude_usage_limits_for_march_what_are_you/",
       "selftext": "How have you been taking advantage of this?\n\nI'm organizing a hackathon - challenging myself and friends to design ambitious projects and spec/brief them so well during peak times that with ralph loops / a few terminals - you can atrempt to one-shot during off-peak.\n\nThe rule- no intervention. \nWinner: Most complete app true to intention\n\nUsed to get together with friends to play halo with Xbox ones in Lan parties. This feels like that.",
@@ -421,7 +421,7 @@
       "id": "1rtqx18",
       "title": "I built a free, open-source Clay alternative, BYOK enrichment",
       "author": "IntelligentLeek123",
-      "score": 6,
+      "score": 5,
       "numComments": 4,
       "permalink": "/r/GTMbuilders/comments/1rtqx18/i_built_a_free_opensource_clay_alternative_byok/",
       "selftext": "Got tired of Clay's pricing. Built my own.\n\nUpload a CSV, describe what you want in English, pick your AI model, run it. You bring your own API key.\n\nOne thing no other tool does, it shows you the estimated cost before you run anything.\n\nGood for company research, qualification, competitive intel. Not for verified emails, use Apollo for that.\n\nOpen source. No account. No tracking. No platform fees. [OpenClay.io](http://OpenClay.io)\n\nHappy to answer questions",
@@ -469,7 +469,7 @@
       "id": "1rt2jp4",
       "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price.",
       "author": "Shawntenam",
-      "score": 5,
+      "score": 3,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rt2jp4/claude_code_just_dropped_1m_context_window_and_im/",
       "selftext": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --&gt; 1M tokens. same Opus 4.6 model. same Max subscription. no price increase.\n\nif you've been building with this thing daily, \n\nyou know exactly why this is massive. context compaction was THE bottleneck. you're deep in a build, agent is cooking, and then it starts forgetting what\n\nfiles it already read. you re-explain your\n\narchitecture for the third time. momentum gone.\n\nthat whole era just ended.\n\nI run a monorepo with 3 Next.js apps, i18n in 3 languages, full GTM ops layer, automation scripts.\n\nbefore today the agent could barely hold one app in\n\nits head at a time. just tested the new window and it\n\nreasoned across the ENTIRE system in one session. no\n\ncompaction. no re-explaining. no babysitting.\n\n\n\nseriously now we can.\n\n\\- spec to deploy in a single session \n\n\\- debugging that traces through your whole stack\n\nwithout losing what it found 20 minutes ago\n\n\\- hand off a big task, walk away, come back to finished work\n\n\\- the agent actually remembers its own mistakes and\n\nstops repeating them\n\n\n\nit's Friday.what are you building with this new context window??. full breadown in my [blog](https://shawnos.ai/blog/claude-code-1m-context-window)",
@@ -485,7 +485,7 @@
       "id": "1rsgc55",
       "title": "My rookie project",
       "author": "Spare-Combination-63",
-      "score": 12,
+      "score": 13,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rsgc55/my_rookie_project/",
       "selftext": "Hey everyone! Super nervous to post this but here goes, this is literally my first project that I've ever pushed to GitHub, so please be kind lol.\n\nI built an AI-powered tool that lets you research any professional and pulls together their career trajectory, articles they've written, media presence, LinkedIn highlights, and more all in one place. The idea came from the frustration of having to jump between 5 different tabs just to get a basic picture of someone before a meeting or interview.\n\nGitHub:\u00a0[https://github.com/atifirshad21/individual-info-in-one-place](https://github.com/atifirshad21/individual-info-in-one-place)\n\nI'm calling this my rookie project, it's rough around the edges and the README is pretty bare bones right now, but feel free to make this better. \n\nWould love any feedback,\n\nThanks for checking it out!",
@@ -601,8 +601,8 @@
   },
   "userProfile": {
     "name": "Shawntenam",
-    "totalKarma": 1730,
-    "linkKarma": 1019,
-    "commentKarma": 711
+    "totalKarma": 1808,
+    "linkKarma": 1100,
+    "commentKarma": 708
   }
 }
