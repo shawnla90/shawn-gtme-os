@@ -1,6 +1,61 @@
 {
-  "generated": "2026-03-29T04:18:43.415Z",
+  "generated": "2026-03-30T04:13:43.085Z",
   "events": [
+    {
+      "id": "commit-da5657f",
+      "title": "chore: sync Reddit cache — 38 posts (2026-03-29 20:22)",
+      "type": "system",
+      "datetime": "2026-03-29T20:22:59-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 38 posts (2026-03-29 20:22)",
+      "metadata": {
+        "commitHash": "da5657f"
+      }
+    },
+    {
+      "id": "commit-0d67f16",
+      "title": "feat: daily LinkedIn posts 2026-03-29",
+      "type": "milestone",
+      "datetime": "2026-03-29T09:10:34-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-03-29",
+      "metadata": {
+        "commitHash": "0d67f16"
+      }
+    },
+    {
+      "id": "commit-37b49c7",
+      "title": "chore: sync Reddit cache — 37 posts (2026-03-29 08:22)",
+      "type": "system",
+      "datetime": "2026-03-29T08:22:40-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 37 posts (2026-03-29 08:22)",
+      "metadata": {
+        "commitHash": "37b49c7"
+      }
+    },
+    {
+      "id": "commit-4a4b0ec",
+      "title": "feat: nio.log 2026-03-29 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-03-29T08:01:15-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-03-29 — automated daily post",
+      "metadata": {
+        "commitHash": "4a4b0ec"
+      }
+    },
+    {
+      "id": "commit-65db90e",
+      "title": "chore: daily tracker scan 2026-03-28",
+      "type": "system",
+      "datetime": "2026-03-29T00:18:43-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-03-28",
+      "metadata": {
+        "commitHash": "65db90e"
+      }
+    },
     {
       "id": "commit-93add75",
       "title": "feat: claude daily digest 2026-03-28",
@@ -88,90 +143,13 @@
       "metadata": {
         "commitHash": "efc4b42"
       }
-    },
-    {
-      "id": "commit-62040ce",
-      "title": "chore: contentos optimizer - 1 improvements (2026-03-28)",
-      "type": "system",
-      "datetime": "2026-03-27T23:02:58-04:00",
-      "status": "completed",
-      "description": "chore: contentos optimizer - 1 improvements (2026-03-28)",
-      "metadata": {
-        "commitHash": "62040ce"
-      }
-    },
-    {
-      "id": "commit-3ac6d50",
-      "title": "chore: sync Reddit cache — 34 posts (2026-03-27 20:21)",
-      "type": "system",
-      "datetime": "2026-03-27T20:21:34-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 34 posts (2026-03-27 20:21)",
-      "metadata": {
-        "commitHash": "3ac6d50"
-      }
-    },
-    {
-      "id": "commit-0c0c047",
-      "title": "feat: daily LinkedIn posts 2026-03-27",
-      "type": "milestone",
-      "datetime": "2026-03-27T09:09:38-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-03-27",
-      "metadata": {
-        "commitHash": "0c0c047"
-      }
-    },
-    {
-      "id": "commit-aeaea94",
-      "title": "chore: sync Reddit cache — 36 posts (2026-03-27 08:21)",
-      "type": "system",
-      "datetime": "2026-03-27T08:21:15-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 36 posts (2026-03-27 08:21)",
-      "metadata": {
-        "commitHash": "aeaea94"
-      }
-    },
-    {
-      "id": "commit-cb446cb",
-      "title": "feat: nio.log 2026-03-27 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-03-27T08:01:13-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-03-27 — automated daily post",
-      "metadata": {
-        "commitHash": "cb446cb"
-      }
-    },
-    {
-      "id": "commit-e971239",
-      "title": "update LinkedIn HeyReach solidarity post tone",
-      "type": "system",
-      "datetime": "2026-03-27T02:40:47-04:00",
-      "status": "completed",
-      "description": "update LinkedIn HeyReach solidarity post tone",
-      "metadata": {
-        "commitHash": "e971239"
-      }
-    },
-    {
-      "id": "commit-52b8f8a",
-      "title": "fix: remove em dashes, all comparisons, and \"I tried other t",
-      "type": "deployment",
-      "datetime": "2026-03-27T02:39:04-04:00",
-      "status": "completed",
-      "description": "fix: remove em dashes, all comparisons, and \"I tried other tools\" framing",
-      "metadata": {
-        "commitHash": "52b8f8a"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 15,
-    "completedEvents": 15,
+    "totalEvents": 13,
+    "completedEvents": 13,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 15,
+    "deploymentsThisWeek": 13,
     "upcomingCronJobs": 0
   }
 }
