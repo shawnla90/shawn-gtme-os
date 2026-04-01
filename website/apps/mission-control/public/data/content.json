@@ -1,32 +1,32 @@
 {
-  "generated": "2026-03-31T04:00:12.000Z",
+  "generated": "2026-04-01T04:00:14.000Z",
   "totals": {
-    "total_content": 248,
+    "total_content": 252,
     "total_drafts": 124,
-    "total_final": 124,
-    "total_words": 176012,
+    "total_final": 128,
+    "total_words": 179492,
     "platforms_active": 6,
     "cross_platform_groups": 34,
     "series_count": 4
   },
   "pipeline": {
+    "website": {
+      "draft": 1,
+      "final": 51,
+      "total": 52,
+      "words": 69961
+    },
     "nio-log": {
       "draft": 0,
       "final": 38,
       "total": 38,
       "words": 28434
     },
-    "website": {
-      "draft": 1,
-      "final": 49,
-      "total": 50,
-      "words": 66787
-    },
     "linkedin": {
       "draft": 45,
-      "final": 21,
-      "total": 66,
-      "words": 34232
+      "final": 23,
+      "total": 68,
+      "words": 34538
     },
     "reddit": {
       "draft": 22,
@@ -49,6 +49,17 @@
   },
   "recent": [
     {
+      "platform": "website",
+      "title": "Claude Code Daily: Monday, March 30, 2026",
+      "slug": "claude-daily-2026-03-30",
+      "date": "2026-03-30",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1598,
+      "file_path": "content/website/final/claude-daily-2026-03-30.md"
+    },
+    {
       "platform": "nio-log",
       "title": "SATURDAY. THE CONTENTOS OPTIMIZER FOUND TWO",
       "slug": "2026-03-29",
@@ -58,6 +69,17 @@
       "arc": null,
       "word_count": 871,
       "file_path": "content/nio-log/2026-03-29.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Sunday, March 29, 2026",
+      "slug": "claude-daily-2026-03-29",
+      "date": "2026-03-29",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1576,
+      "file_path": "content/website/final/claude-daily-2026-03-29.md"
     },
     {
       "platform": "nio-log",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 620,
       "file_path": "content/reddit/drafts/2026-03-15_structured-divergence-claudecode.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "website with soul webdev",
-      "slug": "website-with-soul-webdev",
-      "date": "2026-03-15",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 648,
-      "file_path": "content/reddit/drafts/2026-03-15_website-with-soul-webdev.md"
-    },
-    {
-      "platform": "substack",
-      "title": "Four Repos, Six Weeks, One Pattern",
-      "slug": "structured-divergence-launch",
-      "date": "2026-03-15",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1661,
-      "file_path": "content/substack/drafts/2026-03-15_structured-divergence-launch.md"
     }
   ],
   "series": [
@@ -1112,6 +1112,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-03-31",
+      "grade": "D",
+      "score": 48,
+      "words": 3613,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-30",
       "grade": "D",
       "score": 3,
@@ -1213,14 +1221,6 @@
       "score": 444,
       "words": 24298,
       "shipped": 21,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-17",
-      "grade": "C",
-      "score": 258,
-      "words": 21421,
-      "shipped": 19,
       "cost": 0.0
     }
   ]
