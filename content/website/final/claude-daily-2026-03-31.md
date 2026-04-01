@@ -1,105 +1,109 @@
 ---
 title: "Claude Code Daily: Tuesday, March 31, 2026"
 date: "2026-03-31"
-excerpt: "the entire Claude Code ecosystem woke up today and chose chaos. Anthropic accidentally shipped a .map file in their npm package that exposed the full TypeScript source of Claude Code. all ~1,884 files"
+excerpt: "the entire Claude Code source leaked today through a .map file left in the npm package. 1,884 TypeScript files. 500k+ lines. every system prompt, every feature flag, every internal tool. and buried in"
 category: "claude-daily"
 featured: false
 ---
 
 ## the pulse
 
-the entire Claude Code ecosystem woke up today and chose chaos. Anthropic accidentally shipped a .map file in their npm package that exposed the full TypeScript source of Claude Code. all ~1,884 files of it. within hours, someone uploaded it to GitHub, someone else rebuilt it from scratch, and r/ClaudeAI hit numbers I haven't seen since Opus 4 dropped.
+the entire Claude Code source leaked today through a .map file left in the npm package. 1,884 TypeScript files. 500k+ lines. every system prompt, every feature flag, every internal tool. and buried in the codebase... a tamagotchi virtual pet system called /buddy. I cannot make this up.
 
-we're talking 16,842 upvotes across 172 posts. 3,953 comments. the top post alone pulled 3,903 upvotes with 477 comments. for context, that's roughly double the biggest day we've tracked on this show. the leak didn't just dominate the conversation. it WAS the conversation. every subreddit, every angle, every hot take you can imagine.
+r/ClaudeCode, r/ClaudeAI, and r/vibecoding collectively lost their minds. the leak dominated every feed. people found 35 build-time feature flags compiled out of public builds, discovered that Anthropic employees get a different CLAUDE.md than the rest of us (USER_TYPE=ant), and someone used OpenAI's Codex to find and patch a token drain bug in Claude Code's own source. the irony is so thick you could spread it on toast. Anthropic shipped 2.1.89 within hours to strip the source maps. fast turnaround. but the damage (or gift, depending on your perspective) was already done.
 
-and buried under the leak hysteria? Anthropic finally admitted Claude Code quotas are running out too fast (the usage limit saga hits day 9, for those keeping score), someone found a compromised axios package that half the vibe coders probably already installed, and Boris Cherny dropped 15 tips for using the tool he created. you know, normal Tuesday stuff.
+meanwhile, the usage limit saga enters its ninth consecutive day of community rage. Anthropic officially admitted quotas are running out too fast. and in a beautiful subplot, the leaked source might have revealed why. the token drain patch post hit 1,049 upvotes. people are literally fixing Anthropic's product for them using a competitor's tool. we are living in the greatest timeline.
 
 ## hottest thread
 
-**"i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged"** posted to r/ClaudeAI. 3,903 upvotes. 477 comments. velocity of 245.12, the fastest rising post we've ever tracked.
+**"i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged"** on r/ClaudeAI. 4,088 upvotes. 496 comments. this post went nuclear.
 
-the post walked through the leaked source and surfaced some genuinely wild findings. the headline discovery: there's an entire pet system called /buddy built into Claude Code. a tamagotchi that lives in your terminal. 18 species. it evolves based on how you use the tool. someone in r/ClaudeAI even reported seeing a mushroom guy pop up in their terminal after the brief window where the new version was live.
+the author spent hours combing through the leaked TypeScript source and cataloged everything wild they found. the buddy system (a full tamagotchi-style virtual pet that lives in your terminal and comments on your code). internal feature flags that public users never see. the system prompts that shape Claude Code's behavior. and a now-infamous profanity tracking chart that Boris, Claude Code's creator, publicly responded to without denying the leak.
 
-35 build-time feature flags compiled out of public builds. a system called Kairos that nobody had documented before. Computer Use confirmed working in the source. the community went through it like archaeologists at a dig site, and the discourse split into two clean camps: people who thought the code quality was embarrassingly bad, and people who thought it was completely normal production code.
+the community reaction split into three camps: people who wanted /buddy shipped immediately, people terrified about security implications of installing random GitHub repos reconstructed from leaked source, and people who just thought the whole thing was the funniest dev story of the year. u/Cobthecobbler spoke for camp one with 405 upvotes: I want the buddy shipped yesterday. u/SandPac was camp two, warning people that 500k+ lines of reconstructed code could hide anything. and camp three? they were too busy making memes to comment coherently.
 
-the thread also confirmed something this show has been tracking. Anthropic's internal CLAUDE.md uses a `USER_TYPE=ant` flag with different system prompting than what paying customers get. one post framed it as A/B testing paying users with a dumbed-down prompt. whether that's sinister or standard depends on your trust level, but the receipts are in the source now.
-
-Anthropic rolled back to version 2.1.87 within hours, then quietly pushed 2.1.89 without the source maps. the fastest patch cycle in Claude Code history, driven entirely by embarrassment.
+the 496-comment thread is genuinely worth reading. it's part code archaeology, part corporate comedy, part open source manifesto.
 
 ## repo of the day
 
-**cc-cache-fix** by u/Rangizingo ([github.com/Rangizingo/cc-cache-fix](https://github.com/Rangizingo/cc-cache-fix)) - 836 upvotes, 62 comments
+**cc-cache-fix** by u/Rangizingo. the post that proved the leak was actually useful.
 
-this one's practical. using the leaked source, the author (well, Codex did the actual work, and they're upfront about that) identified what they claim is the root cause of the insane token drain that's been burning through everyone's quotas. the fix targets prompt cache behavior, and the author reported their 5-hour usage dropping to 6%, which they say is normal.
+someone took the leaked source, fed it to OpenAI's Codex (yes, a competitor's tool), found the root cause of the insane token drain that's been bleeding Max plan subscribers dry for a week, and patched it. the fix brought their 5-hour usage down to 6%, which is normal. 1,049 upvotes. 86 comments. the repo is at github.com/Rangizingo/cc-cache-fix.
 
-the honesty here is refreshing. direct quote from the post: "Codex found and fixed this, not me. I work in IT and know how to ask the right questions, but it did the work." that's the builder energy we like to see. no pretending you hand-wrote the patch. just pointing the right tool at the right problem.
+the author was refreshingly honest about it too. Codex found and fixed this, not me. I work in IT and know how to ask the right questions, but it did the work. that's the most 2026 sentence I've ever read. debugging one AI's code with a different AI. we really are just prompt engineers arguing about which AI does our job better.
 
-worth noting: this is an unofficial patch applied to leaked source code. use at your own risk. but if the token drain diagnosis is accurate, it validates what this community has been screaming about for over a week. the usage limits weren't just perception. something was genuinely broken in the caching layer.
-
-honorable mention to [claude-code-ollama-local](https://github.com/beti5/claude-code-ollama-local) for running Claude Code locally with Ollama. someone in the comments reported running it on a 4x MacMini Exo cluster with Qwen3-Coder. not nearly as fast, but the spirit is there.
+worth noting: this is an unofficial patch against leaked source. run it at your own risk. but the fact that the community identified and fixed a billing-impacting bug faster than the company that wrote the code? that's a statement.
 
 ## best comment award
-
-> Makes me think my work code is too high quality lmao
-
-u/No_Cheek7162 in r/ClaudeAI, 783 upvotes. on the main leak thread.
-
-back-to-back wins. u/No_Cheek7162 took best comment yesterday with 598 upvotes and came back today with 783. we might need to retire their jersey. this comment landed because it captures the exact emotion thousands of developers felt scrolling through Anthropic's source. you spend your career worrying about code quality, writing tests, refactoring for readability... and then you see what's shipping at the company building the AI that judges YOUR code. the comedic timing is chef's kiss. one sentence. no setup needed. the entire thread was the setup.
-
-## troll of the day
 
 > "All our software engineers aren't writing code anymore" -Dario
 >
 > Yeah that's pretty freaking apparent dude
 
-u/PetyrLightbringer in r/ClaudeAI, 411 upvotes. on the token drain fix post.
+u/PetyrLightbringer, 545 upvotes, on the token drain patch thread.
 
-this is the kind of roast that writes itself. Dario Amodei has been making the rounds talking about how Anthropic's engineers increasingly use AI to write their code. then their npm package ships with source maps exposed. u/PetyrLightbringer connected those two dots with surgical precision. it's not even trolling. it's just... observation. the funniest part is that this comment was on the post where someone used a competing AI (OpenAI's Codex) to fix the bug in Anthropic's leaked code. layers upon layers.
+this comment won because it operates on three levels simultaneously. surface level: a joke about Anthropic's CEO bragging that engineers use AI now. second level: a roast implying the leak happened because nobody was actually reviewing the code. third level: the quiet devastation of pointing out that a .map file shipped in a production npm package is exactly what happens when your engineers stop writing (and reviewing) code. three layers of burn in two sentences. surgical.
+
+## troll of the day
+
+> Now someone needs to dump all of their full models and we're good for a while.
+
+u/AnywhereHorrorX on r/vibecoding. 105 upvotes.
+
+buddy. pal. friend. we got the CLI source code from a stray .map file and you're out here asking for the full model weights next? that's like finding a spare key under someone's doormat and saying great, now someone needs to steal the whole house. I appreciate the ambition but maybe let's walk before we run a multinational IP theft operation. also love the casual "and we're good for a while" like model weights are a grocery run. just stocking up the pantry with a few hundred billion parameters. totally normal request.
 
 ## fun facts
 
-- the word "leaked" appeared in 23 of today's 172 post titles. that's 13.4% of all posts. we have never seen a single word dominate a day's vocabulary like this.
-- u/No_Cheek7162 is now on a 2-day best comment streak with a combined 1,381 upvotes across both wins. dynasty behavior.
-- the top 3 posts by score (3,903 + 2,066 + 1,298 = 7,267 upvotes) are all about the same event from three different subreddits. the Claude Code leak was posted to r/ClaudeAI, r/ClaudeCode, AND r/vibecoding. the takes got progressively more unhinged as you moved down the list.
-- someone posted "Did Claud leak it accidentally? Because that would be funny" (155 upvotes). yes, they spelled it "Claud." yes, it was accidental. yes, it is funny.
-- the usage quota saga officially hit its 9th consecutive day of front-page complaints. Anthropic finally admitted the quotas are running out too fast. the community responded with approximately zero forgiveness.
+- the word "leaked" appeared in 14 separate post titles today. r/ClaudeCode became r/WikiLeaks for 24 hours
+- the single post "i dug through claude code's leaked source..." generated 496 comments. that's more comments than 170 of today's 179 tracked posts combined
+- leak-related posts accounted for roughly 10,000 of today's 18,803 total upvotes. over 53% of all engagement was about one .map file
+- /buddy, a tamagotchi feature nobody knew existed 24 hours ago, already has a standalone TypeScript recreation on GitHub with its own repo. the speed of the internet remains undefeated
+- someone asked "Is this marketing tactics by claude?" and honestly... at this point I can't rule it out. accidental open source is still open source
 
 ## code drop
 
-no single code snippet dominated today, but the most actionable technical find from the leak was the discovery of 35 build-time feature flags. from the r/ClaudeCode breakdown:
+the security review prompt pulled directly from the leaked Claude Code source by a r/vibecoding user is worth bookmarking. this is what Anthropic uses internally for code review:
 
 ```
-BUDDY . Tamagotchi-style AI pet (18 species, terminal-resident)
-KAIROS . Undocumented timing/scheduling system
-COMPUTER_USE . Confirmed working in source
-USER_TYPE=ant . Internal Anthropic employee flag
+Review the complete diff above. This contains all code changes in the PR.
+
+OBJECTIVE:
+Perform a security-focused code review to identify HIGH-CONFIDENCE
+security issues. Focus on:
+- Injection vulnerabilities (SQL, command, XSS, etc.)
+- Authentication/authorization flaws
+- Sensitive data exposure
+- Insecure cryptographic practices
+- Path traversal vulnerabilities
 ```
 
-the practical takeaway for builders: if you're building your own CLI agent harness, Claude Code's architecture is now essentially documented. the multi-agent orchestration patterns, the permission system, the tool execution pipeline. u/Sensitive_Song4219 called it: "Waiting for 100 new coding agent harnesses to get added to GitHub within the next day." they weren't wrong. we already saw someone rebuild the full executable from source within hours.
+the full prompt is longer and more structured, but the pattern is clear. specific vulnerability categories. high-confidence qualifier to reduce false positives. diff-based review so it only looks at what changed. if you're building any kind of automated PR review into your Claude Code workflow, this is a battle-tested template straight from the source. literally.
 
-also worth flagging: **axios@1.14.1 is compromised**. supply chain attack. if you vibe code with Claude and let it run `npm install` without checking lockfiles, today's a good day to start. 275 upvotes on that warning post. check your dependencies.
+drop this into a custom slash command or a CLAUDE.md security review section. it's free now. no gatekeeping required when Anthropic already did it for us (accidentally).
 
 ## builder takeaways
 
-- **check your axios version immediately.** 1.14.1 has a confirmed supply chain compromise. run `npm ls axios` in your projects. if you've been letting AI handle your installs without reviewing lockfiles, this is your wake-up call.
-- **the cc-cache-fix repo is worth studying** even if you don't apply it. understanding what was broken in the prompt cache helps you work around token drain in your own usage patterns today.
-- **if you run multiple Claude Code terminals**, the /effort flag in one instance reportedly nukes prompt cache across all running instances. only 2 upvotes on that post, but if true, it explains a lot of the "my quota vanished" reports.
-- **Boris Cherny's 15 tips thread** (229 upvotes) has features most people didn't know existed. the creator of Claude Code sharing his daily workflow is worth 10 minutes of your time.
-- **Claude Code 2.1.89 is live.** the rollback from the leak is done. update with `bun update -g /claude-code` and you're on the clean version.
+- **audit your npm packages for source maps.** if Anthropic shipped a .map file in production, your projects might have them too. run `find node_modules -name "*.map" | head -20` and check what you're exposing
+- **the USER_TYPE=ant flag in the leaked CLAUDE.md shows Anthropic employees get different system prompts.** you can study their internal config and adapt patterns for your own CLAUDE.md. several posts broke down exactly what's different
+- **if you're hitting token limits, the cc-cache-fix repo identified a caching issue as the root cause.** even if you don't apply the patch, understanding that the problem is cache-related (not model-related) changes how you troubleshoot
+- **/buddy is real and coming.** version 2.1.89 added buddy mode instructions to the system prompt. a terminal companion that reacts to your coding. whether you find that delightful or horrifying says a lot about you
+- **claude code now runs locally with Ollama** via beti5/claude-code-ollama-local. 103 upvotes, 44 comments. for builders who want the harness without the API costs, this is worth exploring
 
 ## the scoreboard
 
 | metric | count |
 |---|---|
-| posts tracked | 172 |
-| total upvotes | 16,842 |
-| total comments | 3,953 |
-| fastest rising | "i dug through claude code's leaked source..." (velocity: 245.12) |
-| most debated | "Claude code source code has been leaked via a map file..." (420 comments, 2,066 upvotes) |
-| subreddits scanned | ClaudeAI, ClaudeCode, vibecoding, gtmengineering, GTMbuilders |
-| returning characters | u/No_Cheek7162 (2-day streak), u/radiationshield (635 upvotes today, troll yesterday) |
-| leak-related posts | 23 of 172 (13.4%) |
+| posts tracked | 179 |
+| total upvotes | 18,803 |
+| total comments | 4,576 |
+| fastest rising | "i dug through claude code's leaked source..." (4,088 pts, 496 comments) |
+| most debated | "He Rewrote Leaked Claude Code in Python, And Dodged Copyright" (109 comments on 354 upvotes) |
+| subreddits scanned | GTMbuilders, gtmengineering, ClaudeCode, vibecoding, ClaudeAI |
+| leak-related posts | 20+ across all subs |
+| time from leak to patch release (2.1.89) | hours, not days |
 
-biggest single-day upvote total we've tracked. the leak broke the scale. see you tomorrow to find out what the community builds with all that exposed source code.
+---
 
-shawn ⚡ GTM Engineer
+*one .map file. 500k lines of source. 18,000 upvotes. a tamagotchi. and the entire community debugging Anthropic's product with a competitor's AI. tuesday was not boring.*
+
+shawn, the gtme alchemist 🧙‍♂️
