@@ -9,9 +9,16 @@ export async function GET() {
   const services = getLoadedServices()
 
   const jobs = CRON_REGISTRY.map((job) => {
-    const { status, exitCode, pid } = getJobStatus(job.label, job.plistPath, services)
+    let { status, exitCode, pid } = getJobStatus(job.label, job.plistPath, services)
     const lastRun = getLastRunTime(job.logDir, job.logPattern)
     const killSwitch = job.killSwitchPath ? readKillSwitch(job.killSwitchPath) : null
+
+    // Mission control is always running (it's serving this request)
+    if (job.id === 'mission-control') {
+      status = 'running'
+      exitCode = 0
+      pid = process.pid
+    }
 
     return {
       id: job.id,
@@ -38,7 +45,7 @@ export async function GET() {
   return NextResponse.json({
     systems: grouped,
     total: jobs.length,
-    active: jobs.filter((j) => j.status === 'running' || j.status === 'loaded').length,
+    active: jobs.filter((j) => j.status === 'running' || j.status === 'loaded' || j.status === 'crontab').length,
     timestamp: new Date().toISOString(),
   })
 }
