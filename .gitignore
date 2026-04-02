@@ -59,3 +59,4 @@ chat-check.png
 .playwright-mcp/
 __pycache__/
 .gstack/
+scripts/instagram/.env

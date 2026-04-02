@@ -129,9 +129,11 @@ rm -rf "$TMP_DIR"
 POST_COUNT=$(/opt/homebrew/bin/python3 -c "import json; print(len(json.load(open('$CACHE_FILE'))['posts']))")
 log "Cached $POST_COUNT posts"
 
-# Check if anything actually changed
+# Check if anything actually changed (ignore lastUpdated timestamp)
 cd "$REPO_ROOT"
-if git diff --quiet "$CACHE_FILE" 2>/dev/null; then
+if git diff "$CACHE_FILE" 2>/dev/null | grep '^[+-]' | grep -v '^[+-][+-][+-]' | grep -v '"lastUpdated"' | grep -q .; then
+  : # real data changed — proceed to commit
+else
   log "No changes to Reddit data — skipping commit"
   exit 0
 fi

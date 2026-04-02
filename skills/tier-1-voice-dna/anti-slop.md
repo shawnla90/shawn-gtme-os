@@ -25,6 +25,12 @@ These are the critical patterns that get caught in every piece of content. The f
 
 10. **The Humble Brag Disclaimer**: "I don't have all the answers, but..." Share your take or don't. The disclaimer makes it worse.
 
+11. **Hype Words**: "game changer", "chaos", "unleash", "supercharge", "next-level". Lazy energy words that say nothing. Replace with what actually changed or happened.
+
+12. **"No fluff" / "No BS" Disclaimers**: Saying "no fluff" is itself fluff. If the content has no fluff, the reader will know. Delete the disclaimer.
+
+13. **"Nada" Filler**: "Nada this, nada that." Performative emphasis that reads as AI padding. Cut it.
+
 ## Context-Dependent (Check but don't auto-delete)
 
 11. **Engagement Bait Endings**: "So here's my question for you..." Generally avoid, BUT on meme posts you do ask "what's your version? drop it in the comments" and that fits the lighter tone.

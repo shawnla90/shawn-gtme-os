@@ -27,7 +27,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`dark ${jetbrainsMono.variable} ${inter.variable}`}>
+      <head>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon-192.png" />
+      </head>
       <body className="bg-black text-green-400 font-mono min-h-screen antialiased">
+        <script dangerouslySetInnerHTML={{ __html: `if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js')` }} />
         <Sidebar />
         <div className="lg:pl-[220px]">
           <div className="container mx-auto px-4 py-8 max-w-6xl">

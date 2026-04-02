@@ -16,7 +16,7 @@
   <string>/Users/shawnos.ai/shawn-gtme-os</string>
 
   <key>StartInterval</key>
-  <integer>3600</integer>
+  <integer>86400</integer>
 
   <key>StandardOutPath</key>
   <string>/Users/shawnos.ai/shawn-gtme-os/data/daily-log/sync-reddit-stdout.log</string>

@@ -1,5 +1,5 @@
 # Context Handoff
-> Generated: 2026-02-26 22:00 | Machine: MacBook | Session: Reddit Engagement Pipeline
+> Generated: 2026-03-18 ~02:00 | Machine: Mac Mini | Session: Full SEO/AEO/GEO Audit + Blog Redesign
 
 ## METHODOLOGY: GET SHIT DONE
 Do not over-explore. Do not spend sessions just reading code. Build, test, ship. If something takes more than 2-3 minutes to plan, show an outline and ask before deep-diving. Deliver working code every session.
@@ -8,48 +8,103 @@ Do not over-explore. Do not spend sessions just reading code. Build, test, ship.
 
 ## What Was Done This Session
 
-### Reddit Engagement Pipeline (Full Build)
-- **`scripts/reddit_scout.py`** -- Grok-powered Reddit scanner. Uses Grok `web_search` for smart discovery (understands context, not just keywords). Falls back to PRAW keyword matching via `--praw-only`. Auto-detects mode based on `XAI_API_KEY`.
-- **`scripts/reddit_post.py`** -- Posts approved items from queue via PRAW. Rate-limited per config. `--test` for dry runs.
-- **`scripts/reddit_slack_digest.py`** -- Posts top 10 scouted opportunities to Slack at 10 AM. Reads queue, formats digest, posts via Bot Token API.
-- **`.claude/skills/reddit-engage/SKILL.md`** -- `/reddit-engage` skill for drafting + approving comments in-session. Loads voice system, presents opportunities, drafts comments, human-in-the-loop approval.
-- **`data/reddit/config.json`** -- Subreddit targets (Tier 1 + 2), keywords, scout settings, rate limits. (gitignored)
-- **`data/reddit/queue.json`** + **`history.json`** -- Queue state files. (gitignored)
-- **`scripts/launchd/com.shawnos.reddit-digest.plist`** -- Mac Mini launchd agent for 10 AM Slack digest.
-- **Updated `scripts/daily_cron.sh`** -- Added `reddit_scout.py` as non-fatal step with Slack notification.
-- **Updated `skills/tier-3-content-ops/pillars/reddit-growth-seo.md`** -- Added GEO thesis section.
-- **Updated `requirements.txt`** -- Added `praw>=7.7.0`.
-- **Added Lead Alchemy Slack MCP** to `.mcp.json` (gitignored).
+### Full SEO/AEO/GEO Audit (all 34 blog posts)
+- **TL;DRs added** to all 34 posts (GEO extraction targets for AI citation)
+- **H2s rewritten to question format** across all posts (AEO optimization)
+- **FAQ sections added** to 33 posts (hello-world skipped)
+- **Cross-links added** to all orphaned posts (topical authority)
+- **H3 subsections added** to 4 dense posts (how-to-setup-ai-assistant, website-with-soul, content-cluster-breadcrumbs, google-workspace-cli)
+- **Standalone quotable definitions** added for GEO citation magnets
+- **Zero em dashes** verified across all content
+- **AI slop audit**: clean. Zero critical violations.
+- Commit: `51fb5b2` feat(seo): full AEO/GEO audit
 
-### Data Flow
-```
-Midnight: daily_cron.sh -> reddit_scout.py (Grok finds threads)
-10 AM:    launchd -> reddit_slack_digest.py (top 10 to Slack)
-Anytime:  /reddit-engage (Claude drafts, Shawn approves)
-Manual:   reddit_post.py (posts approved comments)
-```
+### JSON-LD Schema Improvements
+- Added `dateModified` and `articleSection` to Article structured data
+- Added `modifiedTime` and `section` to OpenGraph metadata
+- File: `website/apps/shawnos/app/[locale]/blog/[slug]/page.tsx`
+
+### LinkedIn Messaging Post Rewrite
+- Rewrote `linkedin-messaging-best-practices-2026.md` to match Shawn's actual approach
+- **Blank connection requests** (not notes) as the default
+- **1-2 sentence messages** (not email-length)
+- Simplified personalization (killed the 4-level ladder)
+- Adjusted benchmarks (40-60% acceptance for blank requests)
+- Commit: `9b65ece`
+
+### Blog Page Redesign
+- **Complete rewrite of BlogContent.tsx** with:
+  - Top 3 featured posts as prominent cards (responsive grid)
+  - Search bar (monospace, dark input, real-time filtering)
+  - Category filter pills with color coding (single-select toggle)
+  - 2-column post grid with stagger animations
+  - Featured section hides when searching/filtering
+  - Empty state handling
+- Commit: `e4bdcc8` + fix `8673d60` (single-select toggle behavior)
+
+### Category Consolidation
+- Reduced from 7 messy categories to 5 clean buckets:
+  - **gtm-engineering** (9 posts, green #4EC373)
+  - **ships** (8 posts, purple #D2A8FF)
+  - **methodology** (7 posts, blue #58A6FF)
+  - **context-engineering** (7 posts, coral #FF7B72)
+  - **web-development** (3 posts, orange #FFA657)
+- 9 previously uncategorized posts assigned
+- 8 posts reclassified into correct buckets
+
+### Link Validation
+- All 47 internal shawnos.ai/blog links verified valid
+- 38 thegtmos.ai links cataloged (wiki entries from sprint, should be live)
+- 8 non-blog shawnos.ai routes cataloged for manual verification
+- Zero broken internal links
+
+### Content Sprint (done by other session, deployed before this one)
+- 6 new blog posts across Clay, HeyReach, Karpathy pillars
+- Wiki entries added to clay-wiki.ts, how-to-wiki.ts, context-wiki.ts
+- HeyReach engine doc expanded
+- Cross-linking between all three pillar clusters
 
 ## Current State
-- **Git**: branch `main`, just committed + pushing
-- **Last commit**: `98f6c3a feat: Reddit engagement pipeline`
-- **Needs**: Shawn to create `#reddit-pipeline` channel in Lead Alchemy Slack, add `SLACK_BOT_TOKEN` + `SLACK_REDDIT_CHANNEL_ID` to `.env`, load plist on Mac Mini
+- **Git**: branch `main`, latest commit `8673d60`
+- **Deploy**: Vercel auto-deploying from main
+- **Blog page**: New design live at shawnos.ai/blog with search + category filters
+- **All 34 posts**: TL;DRs, question headers, FAQs, cross-links, categories assigned
 
-## Next Steps (Priority Order)
-1. **Create Slack channel** + add env vars to `.env`
-2. **Load launchd plist on Mac Mini**: `cp ~/shawn-gtme-os/scripts/launchd/com.shawnos.reddit-digest.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.shawnos.reddit-digest.plist`
-3. **Test scout**: `python3 scripts/reddit_scout.py --test` (needs Reddit API creds or just XAI_API_KEY)
-4. **Test digest**: `python3 scripts/reddit_slack_digest.py --test`
-5. **First real engagement**: `/reddit-engage` once queue has items
+## What Wasn't Done (Next Session Priorities)
+
+### 1. Reddit Analytics (r/ClaudeCode)
+- Reddit MCP server added (`reddit-mcp-buddy`) but needs session restart to load
+- Shawn wants analytics on his r/ClaudeCode presence: ranking, engagement, 1% status
+- Run in next session after MCP loads
+
+### 2. thegtmos.ai Link Verification
+- 38 links from blog posts point to thegtmos.ai wiki entries
+- Need to verify these routes actually resolve (wiki entries created in sprint)
+- Check: /how-to/*, /clay-wiki/*, /apollo-wiki/*, /knowledge/* routes
+
+### 3. FAQ JSON-LD Schema
+- Blog posts now have FAQ sections in markdown
+- Could add FAQPage structured data for Google rich results
+- Would go in the [slug]/page.tsx component
+
+### 4. Translated Posts
+- 78 translated posts (he/, ja/, zh/) don't have TL;DRs or FAQs yet
+- Lower priority but would improve international SEO
+
+### 5. Two Minor AI Slop Fixes
+- "here's where it gets interesting" in how-to-setup-ai-assistant.md and why-i-stopped-paying.md
+- Borderline, both followed by substance. Fix if desired.
+
+## Key Files Modified
+| File | What Changed |
+|------|-------------|
+| `content/website/final/*.md` (all 34) | TL;DRs, question H2s, FAQs, cross-links, categories |
+| `website/apps/shawnos/app/[locale]/blog/BlogContent.tsx` | Complete redesign with search, filters, featured cards |
+| `website/apps/shawnos/app/[locale]/blog/[slug]/page.tsx` | JSON-LD dateModified, articleSection, OG modifiedTime |
 
 ## Key Decisions Made
-- **Grok over PRAW for discovery** -- Grok `web_search` understands context, not just keywords. PRAW still used for metadata enrichment and posting.
-- **Slack digest at 10 AM** -- Creates morning urgency without requiring Claude Code session.
-- **Human-in-the-loop always** -- Scout and digest are automated, posting is never automated.
-- **Mac Mini for cron** -- Always-on, MacBook sleeps.
-
-## Files to Read First
-1. `scripts/reddit_scout.py` -- The Grok-powered scout
-2. `.claude/skills/reddit-engage/SKILL.md` -- The engagement skill
-3. `scripts/reddit_slack_digest.py` -- The Slack digest
-4. `data/reddit/config.json` -- Subreddit + keyword config
-5. `skills/tier-3-content-ops/pillars/reddit-growth-seo.md` -- Strategy doc with GEO thesis
+- **Blank connection requests > notes** for LinkedIn outreach in 2026
+- **5 category taxonomy**: gtm-engineering, methodology, ships, context-engineering, web-development
+- **Single-select category toggles** (not multi-select)
+- **Featured section hides** when user is searching/filtering (shows all matching posts instead)
+- **Question-format H2s** are the AEO standard going forward for all new content

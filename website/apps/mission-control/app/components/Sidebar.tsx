@@ -17,6 +17,7 @@ import {
   Menu,
   X,
   GitGraph,
+  Timer,
 } from 'lucide-react'
 
 interface NavItem {
@@ -40,6 +41,7 @@ const NAV_SECTIONS: NavSection[] = [
       { label: 'Dashboard', href: '/', icon: LayoutDashboard },
       { label: 'Logs', href: '/logs', icon: FileText, private: true },
       { label: 'Calendar', href: '/calendar', icon: Calendar },
+      { label: 'Crons', href: '/crons', icon: Timer, private: true },
       { label: 'Office', href: '/office', icon: Building2, private: true },
     ],
   },

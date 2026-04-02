@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const PRIVATE_PREFIXES = ['/logs', '/office', '/databases', '/analytics', '/crm']
-const PRIVATE_API_PREFIXES = ['/api/db', '/api/crm', '/api/office', '/api/ops']
+const PRIVATE_PREFIXES = ['/logs', '/office', '/databases', '/analytics', '/crm', '/crons']
+const PRIVATE_API_PREFIXES = ['/api/db', '/api/crm', '/api/office', '/api/ops', '/api/crons', '/api/kill-switches']
 const PUBLIC_PATHS = ['/sign-in', '/api/auth']
 const AUTH_COOKIE = 'mc-auth'
 

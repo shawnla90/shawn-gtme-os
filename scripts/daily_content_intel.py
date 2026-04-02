@@ -44,6 +44,7 @@ RAW_DIR = REPO_ROOT / "data" / "content-intel" / "raw"
 ANALYSIS_DIR = REPO_ROOT / "data" / "content-intel" / "analysis"
 BRIEFING_DIR = REPO_ROOT / "data" / "content-intel" / "briefing"
 TRACKER_PATH = REPO_ROOT / "data" / "content-intel" / "story_tracker.json"
+LEDGER_PATH = REPO_ROOT / "data" / "content-intel" / "post_ledger.json"
 BRIEFING_MD_DIR = REPO_ROOT / "content" / "content-intel"
 BLOG_DIR = REPO_ROOT / "content" / "website" / "final"
 CORE_VOICE_PATH = REPO_ROOT / "skills" / "tier-1-voice-dna" / "core-voice.md"
@@ -203,16 +204,17 @@ def grok_chat(api_key, messages, config):
 def call_claude(system_prompt, user_prompt, model="sonnet", timeout=None):
     """Call Claude via CLI. Uses sonnet for speed, opus for blog quality."""
     if timeout is None:
-        timeout = 600 if model == "opus" else 300
+        timeout = 900 if model == "opus" else 300
     full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
 
     result = subprocess.run(
-        [CLAUDE_CLI, "-p", "--model", model, "--output-format", "text", "--allowedTools", ""],
+        [CLAUDE_CLI, "-p", "--model", model, "--output-format", "text",
+         "--allowedTools", "", "--setting-sources", "user"],
         input=full_prompt,
         capture_output=True,
         text=True,
         timeout=timeout,
-        cwd=str(REPO_ROOT),
+        cwd="/tmp",
     )
 
     if result.returncode != 0:
@@ -276,6 +278,50 @@ def load_story_tracker():
     }
 
 
+# ══════════════════════════════════════════════════════════════════════
+#  POST DEDUP LEDGER — Track post IDs across days
+# ══════════════════════════════════════════════════════════════════════
+
+def load_post_ledger():
+    """Load post_ledger.json or return empty dict. Maps post_id -> {first_seen, title, sub}."""
+    if LEDGER_PATH.exists():
+        try:
+            return json.loads(LEDGER_PATH.read_text())
+        except (json.JSONDecodeError, OSError):
+            pass
+    return {}
+
+
+def update_post_ledger(ledger, collected_posts, target_date):
+    """Add new post IDs to ledger, prune entries older than 14 days, write back."""
+    for p in collected_posts:
+        pid = p.get("id", "")
+        if pid and pid not in ledger:
+            ledger[pid] = {
+                "first_seen": target_date,
+                "title": p.get("title", "")[:120],
+                "sub": p.get("subreddit", ""),
+            }
+
+    # Prune entries older than 14 days
+    try:
+        target_dt = datetime.strptime(target_date, "%Y-%m-%d")
+    except ValueError:
+        target_dt = datetime.now()
+    pruned = {}
+    for pid, info in ledger.items():
+        try:
+            first = datetime.strptime(info.get("first_seen", target_date), "%Y-%m-%d")
+            if (target_dt - first).days <= 14:
+                pruned[pid] = info
+        except ValueError:
+            pruned[pid] = info
+
+    LEDGER_PATH.parent.mkdir(parents=True, exist_ok=True)
+    LEDGER_PATH.write_text(json.dumps(pruned, indent=2))
+    return pruned
+
+
 def build_continuity_prompt(tracker, target_date):
     """Build the continuity context block for the blog generation prompt."""
     if not tracker or not tracker.get("date"):
@@ -318,6 +364,23 @@ def build_continuity_prompt(tracker, target_date):
         parts.append("Running gags:")
         for g in gags:
             parts.append(f"  - {g.get('description', '?')} (mentioned {g.get('mention_count', 0)}x)")
+        parts.append("")
+
+    # Award blocklist (last 3 days)
+    award_history = tracker.get("award_history", [])
+    blocked_users = set()
+    for entry in award_history[-3:]:
+        for key in ("troll_user", "best_comment_user"):
+            u = entry.get(key, "")
+            if u:
+                blocked_users.add(u)
+    if blocked_users:
+        parts.append("AWARD BLOCKLIST (mandatory, non-negotiable):")
+        parts.append("The following users have won awards in the last 3 days.")
+        parts.append("Do NOT give Best Comment Award or Troll of the Day to ANY of them.")
+        parts.append("Pick someone else. There are always other candidates.")
+        for u in sorted(blocked_users):
+            parts.append(f"  - {u}")
         parts.append("")
 
     # Rules
@@ -392,6 +455,18 @@ def update_story_tracker(body, raw_data, target_date):
         "best_comment": {"user": bc_user, "quote": bc_quote[:200], "upvotes": bc_upvotes},
         "repo_of_the_day": {"name": repo_name, "author": repo_author},
     }
+
+    # --- Rolling award history (last 7 days) ---
+    award_history = tracker.get("award_history", [])
+    # Avoid duplicate entries for the same date (re-runs)
+    award_history = [e for e in award_history if e.get("date") != target_date]
+    award_history.append({
+        "date": target_date,
+        "troll_user": troll_user,
+        "best_comment_user": bc_user,
+        "repo_name": repo_name,
+    })
+    tracker["award_history"] = award_history[-7:]
 
     # --- Update active stories ---
     pulse = _extract_section(body, "the pulse")
@@ -487,8 +562,23 @@ def phase_collect(target_date, config, dry_run=False):
     top_comments_limit = collect_config.get("top_comments", 5)
     hours_lookback = collect_config.get("hours_lookback", 24)
 
+    # Date-anchored cutoff: use target_date window, not "now"
     now = datetime.now(timezone.utc)
-    cutoff = now.timestamp() - (hours_lookback * 3600)
+    today_str = now.strftime("%Y-%m-%d")
+    target_dt = datetime.strptime(target_date, "%Y-%m-%d").replace(tzinfo=timezone.utc)
+
+    if target_date == today_str:
+        cutoff = now.timestamp() - (hours_lookback * 3600)
+        reference_time = now.timestamp()
+    else:
+        # Backfill or yesterday run: midnight-to-midnight window for target_date
+        window_end = target_dt.timestamp() + 86400
+        cutoff = window_end - (hours_lookback * 3600)
+        reference_time = window_end
+
+    # Load post ledger for cross-day dedup
+    ledger = load_post_ledger()
+    previously_seen_ids = set(ledger.keys())
 
     collected = []
 
@@ -520,7 +610,7 @@ def phase_collect(target_date, config, dry_run=False):
         sub_posts = []
         for post in posts_raw:
             created = post.get("created_utc", 0)
-            hours_old = max(0.1, (now.timestamp() - created) / 3600)
+            hours_old = max(0.1, (reference_time - created) / 3600)
             score = post.get("score", 0)
             num_comments = post.get("num_comments", 0)
             velocity_score = round(score / hours_old, 2)
@@ -564,6 +654,8 @@ def phase_collect(target_date, config, dry_run=False):
                 "url": f"https://reddit.com{sp['permalink']}",
                 "top_comments": post_comments,
                 "is_primary": sub_name in config["subreddits"]["primary"],
+                "is_returning": sp["id"] in previously_seen_ids,
+                "first_seen_date": ledger.get(sp["id"], {}).get("first_seen", target_date),
             })
 
         print(f"    collected {len(posts_raw)} posts from r/{sub_name}")
@@ -590,7 +682,11 @@ def phase_collect(target_date, config, dry_run=False):
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(output, indent=2))
-    print(f"  wrote {len(collected)} posts to {output_path}")
+
+    # Update post ledger with newly seen IDs
+    update_post_ledger(ledger, collected, target_date)
+    returning_count = sum(1 for p in collected if p.get("is_returning"))
+    print(f"  wrote {len(collected)} posts to {output_path} ({returning_count} returning, {len(collected) - returning_count} new)")
     return output
 
 
@@ -992,13 +1088,28 @@ def phase_blog(target_date, config, dry_run=False):
             angles_lines.append(f"- [{a.get('post_type', '?')}] {a.get('title', '')}")
         angles_summary = "\n".join(angles_lines)
 
-    # Collect best comments for the awards sections
+    # Build award blocklist from recent history (defense-in-depth)
+    award_history = tracker.get("award_history", [])
+    blocked_award_users = set()
+    for entry in award_history[-3:]:
+        for key in ("troll_user", "best_comment_user"):
+            u = entry.get(key, "")
+            if u:
+                blocked_award_users.add(u)
+                # Also add without u/ prefix for matching
+                if u.startswith("u/"):
+                    blocked_award_users.add(u[2:])
+
+    # Collect best comments for the awards sections (excluding blocked users)
     all_comments = []
     for p in posts:
         for c in p.get("top_comments", []):
+            author = c.get("author", "[deleted]")
+            if author in blocked_award_users or f"u/{author}" in blocked_award_users:
+                continue
             all_comments.append({
                 "comment": c.get("body", ""),
-                "author": c.get("author", "[deleted]"),
+                "author": author,
                 "score": c.get("score", 0),
                 "post_title": p.get("title", ""),
                 "subreddit": p.get("subreddit", ""),
@@ -1083,6 +1194,12 @@ Rules:
 - Humor should be natural, not forced. Dry wit > trying too hard.
 - Don't use quotation marks around phrases (no "air quotes").
 - Roasting is fine. Being mean is not. Punch up, not down.
+- DEDUP RULES (critical):
+  - Posts with is_returning=true appeared in PREVIOUS days. They are NOT new today.
+  - For "hottest thread" and "the pulse": PRIORITIZE posts where is_returning=false. Only feature a returning post if it has genuinely massive new activity since yesterday.
+  - For "best comment award" and "troll of the day": see the AWARD BLOCKLIST in continuity context. Those users MUST NOT win again. Pick someone else.
+  - If a returning post is still relevant, acknowledge its age: "still trending from Saturday" not "today X happened."
+  - Never present a multi-day-old post as if it just dropped.
 - Output ONLY the markdown body. No frontmatter. No title heading.
 - Start directly with ## the pulse."""
 
@@ -1090,7 +1207,9 @@ Rules:
     top_posts_json = json.dumps([
         {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
          "comments": p["num_comments"], "velocity": p["velocity_score"],
-         "preview": p["selftext_preview"][:300]}
+         "preview": p["selftext_preview"][:300],
+         "is_returning": p.get("is_returning", False),
+         "first_seen_date": p.get("first_seen_date", target_date)}
         for p in top_posts
     ], indent=2)
 
@@ -1105,6 +1224,8 @@ Rules:
     all_posts_json = json.dumps([
         {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
          "comments": p["num_comments"], "preview": p["selftext_preview"][:150],
+         "is_returning": p.get("is_returning", False),
+         "first_seen_date": p.get("first_seen_date", target_date),
          "top_comments": [c["body"][:100] for c in p.get("top_comments", [])[:2]]}
         for p in posts[:40]
     ], indent=2)

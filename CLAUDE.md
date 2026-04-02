@@ -1,3 +1,7 @@
+## Environment
+
+This project runs on multiple machines. Always confirm which machine you're running on before performing git operations, deployments, or repo cloning. Known machines: Mac Mini (main), MacBook Neo (thin client). Neo does NOT have node installed.
+
 ## Session Startup
 
 1. Read `.claude/context-handoff.md` for previous session state.
@@ -72,6 +76,18 @@ All content creation MUST load the voice system first:
 4. `skills/tier-3-content-ops/improvement-protocol.md` — Sequential gates: Slop → Specificity → Depth → Performance → Safety → Voice
 
 Substance requirement: every substantive claim needs at least 2 of 5 — specific example, technical implementation, reasoning shown, consequences/results, or gotchas/lessons learned.
+
+## Content & Tone
+
+When generating LinkedIn comments or social media copy, keep it short, authentic, and conversational. Avoid verbose, generic, or 'NPC-style' language. Default to 1-3 sentences max unless asked otherwise.
+
+## Workflow Conventions
+
+When copying content to clipboard, confirm with the user which specific file/piece they want. Don't assume.
+
+## Technical Preferences
+
+For visual/design work (carousels, SVGs, images), prefer SVG-based or MCP-based approaches over Pillow/PIL. Pillow output quality has been rejected previously.
 
 ## Safety
 
