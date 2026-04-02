@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-04-02T11:00:02.681364+00:00",
+  "last_updated": "2026-04-02T21:30:04.644448+00:00",
   "runs": {
     "morning": {
       "agent": "crypto-signal",
@@ -69,6 +69,75 @@
       "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
       "model": "rule-based-v1",
       "period": "morning"
+    },
+    "evening": {
+      "agent": "crypto-signal",
+      "timestamp": "2026-04-02T21:30:04.644448+00:00",
+      "date": "2026-04-02",
+      "test_mode": false,
+      "market_snapshot": {
+        "btc_dominance_pct": 55.89,
+        "total_market_cap_usd": 2393085108894.0,
+        "fear_greed_index": 12,
+        "fear_greed_label": "Extreme Fear",
+        "assets": {
+          "BTC": {
+            "price_usd": 66839,
+            "change_24h_pct": -2.35,
+            "market_cap_usd": 1337571314100.0
+          },
+          "ETH": {
+            "price_usd": 2059.54,
+            "change_24h_pct": -4.46,
+            "market_cap_usd": 248559498587.0
+          },
+          "SOL": {
+            "price_usd": 78.97,
+            "change_24h_pct": -4.6,
+            "market_cap_usd": 45224821345.0
+          }
+        }
+      },
+      "signals": [
+        {
+          "asset": "BTC",
+          "price_usd": 66839,
+          "change_24h_pct": -2.35,
+          "action": "watch",
+          "confidence": 0.45,
+          "reasoning": [
+            "extreme fear (12)"
+          ]
+        },
+        {
+          "asset": "ETH",
+          "price_usd": 2059.54,
+          "change_24h_pct": -4.46,
+          "action": "watch",
+          "confidence": 0.45,
+          "reasoning": [
+            "extreme fear (12)"
+          ]
+        },
+        {
+          "asset": "SOL",
+          "price_usd": 78.97,
+          "change_24h_pct": -4.6,
+          "action": "watch",
+          "confidence": 0.45,
+          "reasoning": [
+            "extreme fear (12)"
+          ]
+        }
+      ],
+      "reddit_sentiment": {
+        "post_count": 0,
+        "avg_score": 0,
+        "top_topics": []
+      },
+      "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
+      "model": "rule-based-v1",
+      "period": "evening"
     }
   }
 }
