@@ -1,6 +1,138 @@
 {
-  "generated": "2026-04-01T04:20:29.557Z",
+  "generated": "2026-04-02T04:20:10.176Z",
   "events": [
+    {
+      "id": "commit-90c31ec",
+      "title": "feat: claude daily digest 2026-04-01",
+      "type": "milestone",
+      "datetime": "2026-04-02T00:19:28-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-01",
+      "metadata": {
+        "commitHash": "90c31ec"
+      }
+    },
+    {
+      "id": "commit-ff02f6a",
+      "title": "Mission control self-reports as running, count crontab as ac",
+      "type": "system",
+      "datetime": "2026-04-01T23:54:10-04:00",
+      "status": "completed",
+      "description": "Mission control self-reports as running, count crontab as active",
+      "metadata": {
+        "commitHash": "ff02f6a"
+      }
+    },
+    {
+      "id": "commit-c0835b8",
+      "title": "Fix cron registry paths + add timeline view",
+      "type": "system",
+      "datetime": "2026-04-01T23:53:18-04:00",
+      "status": "completed",
+      "description": "Fix cron registry paths + add timeline view",
+      "metadata": {
+        "commitHash": "c0835b8"
+      }
+    },
+    {
+      "id": "commit-476062a",
+      "title": "Add cron management PWA to Mission Control",
+      "type": "system",
+      "datetime": "2026-04-01T23:33:37-04:00",
+      "status": "completed",
+      "description": "Add cron management PWA to Mission Control",
+      "metadata": {
+        "commitHash": "476062a"
+      }
+    },
+    {
+      "id": "commit-885ff79",
+      "title": "chore: contentos optimizer - 1 improvements (2026-04-02)",
+      "type": "system",
+      "datetime": "2026-04-01T23:04:34-04:00",
+      "status": "completed",
+      "description": "chore: contentos optimizer - 1 improvements (2026-04-02)",
+      "metadata": {
+        "commitHash": "885ff79"
+      }
+    },
+    {
+      "id": "commit-cef0d54",
+      "title": "chore: sync Reddit cache — 40 posts (2026-04-01 20:24)",
+      "type": "system",
+      "datetime": "2026-04-01T20:24:57-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 40 posts (2026-04-01 20:24)",
+      "metadata": {
+        "commitHash": "cef0d54"
+      }
+    },
+    {
+      "id": "commit-60bf450",
+      "title": "add terminals-not-courses blog post and CODE content drafts",
+      "type": "system",
+      "datetime": "2026-04-01T15:46:21-04:00",
+      "status": "completed",
+      "description": "add terminals-not-courses blog post and CODE content drafts",
+      "metadata": {
+        "commitHash": "60bf450"
+      }
+    },
+    {
+      "id": "commit-d2e5f08",
+      "title": "feat: daily LinkedIn posts 2026-04-01",
+      "type": "milestone",
+      "datetime": "2026-04-01T09:10:34-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-04-01",
+      "metadata": {
+        "commitHash": "d2e5f08"
+      }
+    },
+    {
+      "id": "commit-30c9329",
+      "title": "chore: sync Reddit cache — 39 posts (2026-04-01 08:24)",
+      "type": "system",
+      "datetime": "2026-04-01T08:24:38-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 39 posts (2026-04-01 08:24)",
+      "metadata": {
+        "commitHash": "30c9329"
+      }
+    },
+    {
+      "id": "commit-7631ef3",
+      "title": "feat: nio.log 2026-04-01 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-04-01T08:01:04-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-04-01 — automated daily post",
+      "metadata": {
+        "commitHash": "7631ef3"
+      }
+    },
+    {
+      "id": "commit-b6bb2bb",
+      "title": "feat: claude daily digest 2026-03-31",
+      "type": "milestone",
+      "datetime": "2026-04-01T02:31:49-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-03-31",
+      "metadata": {
+        "commitHash": "b6bb2bb"
+      }
+    },
+    {
+      "id": "commit-34accab",
+      "title": "chore: daily tracker scan 2026-03-31",
+      "type": "system",
+      "datetime": "2026-04-01T00:20:30-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-03-31",
+      "metadata": {
+        "commitHash": "34accab"
+      }
+    },
     {
       "id": "commit-2b0ac8e",
       "title": "feat: claude daily digest 2026-03-31",
@@ -33,79 +165,13 @@
       "metadata": {
         "commitHash": "c9e5df8"
       }
-    },
-    {
-      "id": "commit-d9a4ada",
-      "title": "feat: claude daily digest 2026-03-30",
-      "type": "milestone",
-      "datetime": "2026-03-31T15:37:38-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-03-30",
-      "metadata": {
-        "commitHash": "d9a4ada"
-      }
-    },
-    {
-      "id": "commit-9d12cce",
-      "title": "feat: claude daily digest 2026-03-29",
-      "type": "milestone",
-      "datetime": "2026-03-31T15:07:37-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-03-29",
-      "metadata": {
-        "commitHash": "9d12cce"
-      }
-    },
-    {
-      "id": "commit-23ce9e4",
-      "title": "chore: sync Reddit cache — 39 posts (2026-03-31 08:24)",
-      "type": "system",
-      "datetime": "2026-03-31T08:24:00-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 39 posts (2026-03-31 08:24)",
-      "metadata": {
-        "commitHash": "23ce9e4"
-      }
-    },
-    {
-      "id": "commit-f42a321",
-      "title": "chore: daily tracker scan 2026-03-30",
-      "type": "system",
-      "datetime": "2026-03-31T00:13:00-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-03-30",
-      "metadata": {
-        "commitHash": "f42a321"
-      }
-    },
-    {
-      "id": "commit-c5ad04b",
-      "title": "chore: sync Reddit cache — 38 posts (2026-03-30 20:23)",
-      "type": "system",
-      "datetime": "2026-03-30T20:23:40-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 38 posts (2026-03-30 20:23)",
-      "metadata": {
-        "commitHash": "c5ad04b"
-      }
-    },
-    {
-      "id": "commit-36ce2dd",
-      "title": "chore: sync Reddit cache — 38 posts (2026-03-30 08:23)",
-      "type": "system",
-      "datetime": "2026-03-30T08:23:19-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 38 posts (2026-03-30 08:23)",
-      "metadata": {
-        "commitHash": "36ce2dd"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 9,
-    "completedEvents": 9,
+    "totalEvents": 15,
+    "completedEvents": 15,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 9,
+    "deploymentsThisWeek": 15,
     "upcomingCronJobs": 0
   }
 }

@@ -1,53 +1,119 @@
 {
-  "generated": "2026-04-01T04:00:14.000Z",
+  "generated": "2026-04-02T04:00:12.000Z",
   "totals": {
-    "total_content": 252,
-    "total_drafts": 124,
-    "total_final": 128,
-    "total_words": 179492,
+    "total_content": 259,
+    "total_drafts": 127,
+    "total_final": 132,
+    "total_words": 186389,
     "platforms_active": 6,
-    "cross_platform_groups": 34,
+    "cross_platform_groups": 35,
     "series_count": 4
   },
   "pipeline": {
-    "website": {
-      "draft": 1,
-      "final": 51,
-      "total": 52,
-      "words": 69961
+    "linkedin": {
+      "draft": 46,
+      "final": 24,
+      "total": 70,
+      "words": 35102
     },
     "nio-log": {
       "draft": 0,
-      "final": 38,
-      "total": 38,
-      "words": 28434
+      "final": 39,
+      "total": 39,
+      "words": 29160
     },
-    "linkedin": {
-      "draft": 45,
-      "final": 23,
-      "total": 68,
-      "words": 34538
+    "substack": {
+      "draft": 12,
+      "final": 5,
+      "total": 17,
+      "words": 21627
+    },
+    "website": {
+      "draft": 1,
+      "final": 53,
+      "total": 54,
+      "words": 73260
+    },
+    "x": {
+      "draft": 46,
+      "final": 11,
+      "total": 57,
+      "words": 18036
     },
     "reddit": {
       "draft": 22,
       "final": 0,
       "total": 22,
       "words": 9204
-    },
-    "x": {
-      "draft": 45,
-      "final": 11,
-      "total": 56,
-      "words": 17662
-    },
-    "substack": {
-      "draft": 11,
-      "final": 5,
-      "total": 16,
-      "words": 19693
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "from tabs to terminals",
+      "slug": "terminals-not-courses",
+      "date": "2026-04-01",
+      "stage": "draft",
+      "pillar": "Building & Sharing",
+      "arc": null,
+      "word_count": 444,
+      "file_path": "content/linkedin/drafts/2026-04-01_terminals-not-courses.md"
+    },
+    {
+      "platform": "nio-log",
+      "title": "APRIL 1. Q2 DAY ONE. NINTH",
+      "slug": "2026-04-01",
+      "date": "2026-04-01",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 726,
+      "file_path": "content/nio-log/2026-04-01.md"
+    },
+    {
+      "platform": "substack",
+      "title": "the AI is the teacher",
+      "slug": "terminals-not-courses",
+      "date": "2026-04-01",
+      "stage": "draft",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1934,
+      "file_path": "content/substack/drafts/2026-04-01_terminals-not-courses.md"
+    },
+    {
+      "platform": "website",
+      "title": "the AI is the teacher",
+      "slug": "terminals-not-courses",
+      "date": "2026-04-01",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1914,
+      "file_path": "content/website/final/terminals-not-courses.md"
+    },
+    {
+      "platform": "x",
+      "title": "from tabs to terminals",
+      "slug": "terminals-not-courses",
+      "date": "2026-04-01",
+      "stage": "draft",
+      "pillar": "X Micro Tips / Building & Sharing",
+      "arc": null,
+      "word_count": 374,
+      "file_path": "content/x/drafts/2026-04-01_terminals-not-courses.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Tuesday, March 31, 2026",
+      "slug": "claude-daily-2026-03-31",
+      "date": "2026-03-31",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1385,
+      "file_path": "content/website/final/claude-daily-2026-03-31.md"
+    },
     {
       "platform": "website",
       "title": "Claude Code Daily: Monday, March 30, 2026",
@@ -531,72 +597,6 @@
       "arc": null,
       "word_count": 1521,
       "file_path": "content/website/final/6-weeks-of-building-with-claude-code.md"
-    },
-    {
-      "platform": "website",
-      "title": "the reddit mastery wiki: 1,089 karma in 30 days with zero ads",
-      "slug": "reddit-mastery-wiki",
-      "date": "2026-03-16",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 3722,
-      "file_path": "content/website/final/reddit-mastery-wiki.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "pipe bomb breadcrumb",
-      "slug": "pipe-bomb-breadcrumb",
-      "date": "2026-03-15",
-      "stage": "draft",
-      "pillar": "building-sharing",
-      "arc": null,
-      "word_count": 60,
-      "file_path": "content/linkedin/drafts/2026-03-15_pipe-bomb-breadcrumb.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "substack sunday",
-      "slug": "substack-sunday",
-      "date": "2026-03-15",
-      "stage": "draft",
-      "pillar": "building-sharing",
-      "arc": null,
-      "word_count": 201,
-      "file_path": "content/linkedin/drafts/2026-03-15_substack-sunday.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THE MULTIPLICATION EFFECT",
-      "slug": "2026-03-15",
-      "date": "2026-03-15",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 960,
-      "file_path": "content/nio-log/2026-03-15.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "lounge intro",
-      "slug": "lounge-intro",
-      "date": "2026-03-15",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 278,
-      "file_path": "content/reddit/drafts/2026-03-15_lounge-intro.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "structured divergence claudecode",
-      "slug": "structured-divergence-claudecode",
-      "date": "2026-03-15",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 620,
-      "file_path": "content/reddit/drafts/2026-03-15_structured-divergence-claudecode.md"
     }
   ],
   "series": [
@@ -698,6 +698,20 @@
     }
   ],
   "crossPlatform": [
+    {
+      "date": "2026-04-01",
+      "slug": "terminals-not-courses",
+      "platforms": [
+        "linkedin",
+        "substack",
+        "website",
+        "x"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 4
+    },
     {
       "date": "2026-03-14",
       "slug": "structured-divergence",
@@ -1112,6 +1126,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-01",
+      "grade": "D",
+      "score": 159,
+      "words": 14141,
+      "shipped": 10,
+      "cost": 0.0
+    },
+    {
       "date": "2026-03-31",
       "grade": "D",
       "score": 48,
@@ -1213,14 +1235,6 @@
       "score": 159,
       "words": 8615,
       "shipped": 3,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-18",
-      "grade": "A",
-      "score": 444,
-      "words": 24298,
-      "shipped": 21,
       "cost": 0.0
     }
   ]
