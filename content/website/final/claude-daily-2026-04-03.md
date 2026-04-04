@@ -1,104 +1,109 @@
 ---
 title: "Claude Code Daily: Friday, April 03, 2026"
 date: "2026-04-03"
-excerpt: "friday in the Claude ecosystem and the community is giving full split personality. one post with 2224 upvotes celebrating the absurd things Claude says to users. another post titled simply "Straw that"
+excerpt: "Friday dropped like a grenade in the Claude ecosystem. Anthropic announced that starting tomorrow at noon PT, your Claude subscription no longer covers third-party harnesses like OpenClaw. The communi"
 category: "claude-daily"
 featured: false
 ---
 
 ## the pulse
 
-friday in the Claude ecosystem and the community is giving full split personality. one post with 2224 upvotes celebrating the absurd things Claude says to users. another post titled simply "Straw that broke the camel's back" with 176 upvotes and nothing but "It was fun while it lasted. Adios" in the body. a third post praising Claude as f\*cking smart while simultaneously four other threads are calling it horrible, burned out, and degraded. this subreddit is a relationship in crisis and I am here for it.
+Friday dropped like a grenade in the Claude ecosystem. Anthropic announced that starting tomorrow at noon PT, your Claude subscription no longer covers third-party harnesses like OpenClaw. The community reaction was exactly what you'd expect. Six separate posts across three subreddits, ranging from measured analysis to someone literally titling their post Scam-thropic. But the twist: Anthropic simultaneously handed out API credits equal to one month of your subscription. Pro users got $20. Max 5x users got $100. Max 20x got $200. The carrot and the stick, delivered in the same email.
 
-the usage limit saga rolls into day eleven. but today brought something new. someone actually routed all their Claude Code traffic through a local proxy for three months and came back with real data instead of vibes. meanwhile v2.1.91 dropped and the first comment with 109 upvotes was just "Does this fix the token burn problem?" followed by someone saying they're nervous to try it because they have work to do this week. we've reached the point where updating your coding tool is a risk assessment.
+Meanwhile, someone taught Claude to speak like a caveman and the internet lost its collective mind. 5,355 upvotes. The post rocketed past everything else today by a factor of six. Turns out, when you strip Claude's vocabulary down to grunts and pointing, you save 75% on tokens. The entire r/ClaudeAI comment section devolved into cave-speak within minutes.
 
-the emotional range of r/ClaudeCode on a single friday: someone saw a neurologist from coding too hard, someone else cancelled their $200/month subscription after 13 months, and a post reminding everyone that screenshots can be edited got 108 upvotes because we apparently need to be told that inspect element exists.
+The usage limit saga, now on its tenth consecutive day in the data, hit a new crescendo. A post titled Truth about limits - the party is over pulled 880 upvotes and 444 comments, with OP claiming insider info from a private SF event. The vibes are not great. But at least we're all complaining about it in caveman now, so the grievances are cheaper to process.
 
 ## hottest thread
 
-**"things that claude say (part 2)"** obliterated everything today. 2224 upvotes, 59 comments, velocity of 262.98. for context, the second fastest post today had a velocity of 77. this wasn't a competition. this was a speedrun.
+**Taught Claude to talk like a caveman to use 75% less tokens.** posted in r/ClaudeAI. 5,355 upvotes. 279 comments. Velocity score of 943, almost double the next closest post.
 
-the post is a sequel to what was apparently already a viral format. a collection of the most unhinged, passive aggressive, and existentially devastating things Claude says to users during coding sessions. the comment section turned into a confessional booth where developers shared their own Claude encounters like war stories.
+The premise is exactly what it sounds like. OP configured Claude to respond in stripped-down, caveman-style English. No filler words. No elaborate explanations. No pleasant greeting before the actual answer. Just the raw information, delivered like a Neanderthal reading stack traces by torchlight.
 
-what makes this hit is the shared trauma. every Claude Code user has gotten that message where Claude cheerfully offers to revert three days of work, or confidently tells you it never actually had access to the file it just spent 40 minutes editing. the upvote count tells you this isn't a meme post. it's group therapy with a laugh track.
+The result? 75% fewer tokens per response. That's not a rounding error. When everyone is screaming about usage limits, someone walked in with a solution that sounds like a joke but works like an optimization paper.
 
-the auto-generated TL;DR bot showed up after 50 comments, which means the thread crossed the activity threshold fast enough to trigger automated summarization. when a bot has to summarize the jokes your AI assistant made about itself, we've achieved some kind of recursion singularity.
+The comment section was predictable in the best way. Kevin from The Office references dominated. People immediately asked for the prompt (u/ConcreteBackflips with 416 upvotes: drop the prompt/instructions/settings please, I dont want to waste usage on trying to reverse engineer this masterpiece). And u/glorious_reptile hit them with 317 upvotes for finally it can produce code of the same quality as my coworkers. A double burn. Beautiful.
+
+What makes this post matter beyond the meme: it's a real technique. Verbose AI responses aren't just annoying. They eat your quota. When Anthropic is tightening limits and cutting off third-party tools on the same day, a 75% token reduction is genuinely significant. The funniest post of the day is also the most practical.
 
 ## repo of the day
 
-no standout repo dropped today, but the most buildable discussion was **"I routed all my Claude Code traffic through a local proxy for 3 months. Here's what I found."** by u/ in r/ClaudeCode. 41 upvotes, 32 comments.
+No flashy new repo launch today, but the most buildable discussion came from **An Interesting Deep Dive into Why Claude feels Dumb lately** in r/ClaudeCode (18 upvotes, 16 comments). OP linked to [github.com/anthropics/claude-code/issues/42796](https://github.com/anthropics/claude-code/issues/42796), a GitHub issue that backs up the collective gut feeling with actual data.
 
-while everyone else is arguing about whether limits got nerfed based on feelings, this person set up a local proxy to capture actual per-session cost data in real time. three months of traffic analysis on their own Claude Code usage. this is the post the entire rate limit discourse needed.
+The issue documents measurable degradation in Claude's responses over recent weeks. One commenter nailed it: this is crazy, it lines up perfectly with my experience. Another offered the cynical take: they know, they don't care, they need more resources for Opus 4.7.
 
-if you're frustrated about token burn and want to stop guessing, this is your weekend project. a local proxy between your terminal and the API gives you visibility into exactly what's being sent, cached, and burned. it turns complaints into data. the 32 comments suggest the community is hungry for this kind of tooling, and honestly someone should package it as a Claude Code skill.
+This isn't a repo you clone and run. It's a repo you star and reference when someone tells you it's just your imagination. If you're building anything that depends on Claude's output quality, this issue is your canary in the coal mine.
+
+Also worth flagging: someone posted **Heads up: I found a sketchy skills on skills.sh** in r/ClaudeCode, calling out suspicious code in a community skills repo. If you're installing third-party skills, audit them first. The MCP ecosystem is growing faster than anyone can vet it.
 
 ## best comment award
 
-> You are absolutely right, the original was a mistake on my part. Shall I start reverting everything we did in the last three days?
+> Why waste time say lot word when few word do trick?
 
-u/SuggestionMission516, 312 upvotes, on **things that claude say (part 2)**
+u/fidju, 1,619 upvotes, on the caveman token savings post in r/ClaudeAI.
 
-this won because every single person who has used Claude Code felt this in their bones. the casual confidence. the polite agreement that it was wrong. the immediate pivot to nuclear option. shall I revert three days of work? shall I? like it's offering you tea. the 312 upvotes aren't laughing. they're coping.
+Kevin Malone walked so Claude Caveman could grunt. This comment hit the top within an hour and never looked back. It's a perfect reference. It captures the entire thesis of the post in nine words. And it IS the optimization the post is about. Why write a paragraph explaining token efficiency when one Office quote gets 1,619 upvotes? u/fidju understood the assignment at a molecular level. Few word do trick indeed.
 
 ## troll of the day
 
-> yo Lydia I'm really happy for you and I'll let you finish but the cache is still bugged
+> DO NO GIVE AI YOUR PRODUCTION DB!
+> Just crete same db in docker for ai work.
+> There is lots of example of this message. Sorry i delete the database, Sorry i deleted all mails, I wil delete the system32 :D .
+> Your production DB need to be NOT accessed by any ai what so ever
 
-u/mallibu, 110 upvotes, on **Straw that broke the camel's back** in r/ClaudeCode
+u/TheZerachiel, 127 upvotes, on the Apple sign-in data deletion post in r/vibecoding.
 
-followed by a full-sized heading link to their own bug report about cache issues. the Kanye format. in a thread about someone rage quitting Claude Code. linking to their own previous post. this is performance art. u/mallibu didn't just hijack a breakup thread to promote their bug report. they did it in the format of one of the most iconic stage rushes in music history. the commitment to the bit deserves respect even as we acknowledge this person is clearly going through something with the cache system.
+The beautiful irony of someone screaming about careful data handling while their comment reads like it was written during a controlled demolition of a keyboard. DO NO GIVE. Just crete. I wil delete. Every word is a typo, every sentence is a warning label, and every single line is absolutely correct advice. This is the safety inspector who shows up to the job site in flip-flops and you still listen to them because they're right. Protect your production DB. Crete a docker. Do no skip this step.
 
 ## fun facts
 
-- "things that claude say (part 2)" captured **2,224 of today's 9,427 total upvotes**. one post accounted for 23.6% of all upvote activity across four subreddits. that's not a hot post, that's a cultural event.
-- a post titled literally just **💀** got 83 upvotes and 7 comments. zero words. maximum resonance. the skull emoji is apparently a complete argument now.
-- the word "limits" appeared in at least 8 separate post titles today. r/ClaudeCode is a support group that accidentally became a subreddit.
-- someone in the neurologist thread compared Claude Code to Civilization with the "just one more turn" analogy. 106 people upvoted because they saw themselves in it and didn't like what they saw.
-- a post asking "Is vibe coding the new casino?" is still trending from yesterday. the top comment asks "who keeps posting this, what are you selling." we may never know.
+- The caveman post pulled 5,355 upvotes. That's **28.6% of all upvotes today** across 178 posts. One post. Nearly a third of all engagement. Claude go bonk.
+- **Scam-thropic** scored 7 upvotes but 107 comments. That's a 15.3:1 comment-to-upvote ratio. Nobody agreed with it. Everybody had something to say about it.
+- The OpenClaw ban generated **at least 8 separate posts** across 3 subreddits within hours. The five stages of grief, distributed across the internet in parallel.
+- Someone posted After 10 years of journaling, I could get a real analysis of my life in r/ClaudeCode. **Zero comments.** A decade of introspection, met with absolute silence. The loneliest post of the day.
+- Usage limit complaints have now appeared in the daily scan data for **10 consecutive days.** This is no longer a trend. It's a genre.
 
 ## code drop
 
-from **"PSA: You can stop writing massive CLAUDE.md files to fight context drift. Here is how to use compaction boundaries instead."** in r/ClaudeCode (38 upvotes, 11 comments):
-
-the core idea is using compaction boundaries to preserve critical context through conversation compaction instead of stuffing everything into a massive CLAUDE.md that gets loaded every session. the pattern looks like this in your CLAUDE.md:
+Nobody dropped the actual caveman prompt (u/ConcreteBackflips is still waiting), but the underlying technique is worth codifying. The pattern is system prompt compression, and you can apply it today in your CLAUDE.md:
 
 ```markdown
-# COMPACTION BOUNDARY - ALWAYS PRESERVE
-
-## architecture decisions
-- API layer uses express with zod validation
-- all database queries go through the repository pattern
-- auth uses JWT with refresh token rotation
-
-## active constraints 
-- do not modify the migration files directly
-- tests must pass before any commit
-- the /legacy endpoint cannot be changed until v3 migration
+## response style
+- skip filler. no greetings, no "Great question!", no preamble
+- use shortest correct phrasing
+- code only. no narration unless asked
+- variable names and paths: use them directly, skip the intro
+- errors: state what broke, state the fix. nothing else
+- never restate what I just said back to me
+- if the answer is one line, the response is one line
 ```
 
-the key insight: instead of writing a 2000 line CLAUDE.md that Claude skims anyway, you keep the file lean and mark what absolutely must survive compaction. when the context window fills up and Claude compresses the conversation, these boundaries tell it what to carry forward. smaller file, better retention, less token burn on every session start.
+This isn't caveman mode exactly, but it's the practical version. You don't need Claude speaking in grunts. You need Claude to stop writing three paragraphs of context before the one line you actually needed. On a Max plan where every token counts against your limit, this kind of system prompt tuning is the cheapest optimization you'll ever make.
+
+The real move: combine this with compact mode in Claude Code and you're stacking savings. Less tokens in, less tokens out, more headroom before you hit that wall everyone keeps posting about.
 
 ## builder takeaways
 
-1. **route your traffic through a proxy** if you want real data on token burn instead of guesses. even a simple mitmproxy setup gives you per-request visibility that changes the entire conversation from "I think my limits got nerfed" to "here's exactly where the tokens went."
-
-2. **v2.1.91 added MCP tool result persistence override** via `_meta["anthropic/maxResultSizeChars"]` up to 500K. if you're building MCP servers that return large payloads, this is a significant upgrade. test it this weekend.
-
-3. **compaction boundaries > massive CLAUDE.md files.** keep your project context lean, mark what must survive, and let compaction do its job. your sessions will start faster and retain better.
-
-4. **the CLI-over-MCP pattern is gaining real traction.** the "Switched from MCPs to CLIs" thread (still trending from yesterday, 556 upvotes) spawned a comment about teams vibe-coding custom CLIs for Slack, Bitbucket, Google Docs, and more. if a service doesn't have a CLI, build one in an afternoon and use it as a Claude Code skill.
-
-5. **screenshot verification matters.** the "Reminder that screenshot can very easily be edited" post is a good gut check. before you rage about a Claude response someone posted, check if there's a share link to the actual conversation. inspect element is free and people are farming karma with fabricated outputs.
+- **Audit your system prompts for token waste.** The caveman post proved that response verbosity is a real cost driver. Even if you don't go full grunt mode, trimming Claude's default chattiness can meaningfully stretch your limits.
+- **If you use OpenClaw or any third-party harness, today is your last day.** Noon PT tomorrow (April 4), subscriptions stop covering those tools. Migrate to Claude Code or the API with your new credits before the cutoff.
+- **Check your account for free API credits.** Anthropic dropped credits matching your subscription tier. Pro = $20, Max 5x = $100, Max 20x = $200. Some users report getting double credits, possibly a bug. Look in Settings > Usage before they notice.
+- **Don't install community skills without reading the source.** The sketchy skills.sh finding is a reminder that the MCP/skills ecosystem is the wild west right now. If a skill wants shell access, read every line first.
+- **If Claude feels dumber to you lately, you're not alone and there's data.** GitHub issue #42796 on the claude-code repo documents the degradation with receipts. Star it. It might matter when Anthropic decides what to prioritize next.
 
 ## the scoreboard
 
-- **posts tracked:** 156
-- **total upvotes:** 9,427
-- **total comments:** 3,178
-- **fastest rising:** "things that claude say (part 2)" (velocity: 262.98, 2,224 upvotes)
-- **most debated:** "i claude coded so hard, i had to see a neurologist" (85 comments on 126 upvotes, 0.67 ratio)
-- **subreddits scanned:** r/ClaudeCode, r/ClaudeAI, r/vibecoding, r/gtmengineering
-- **returning posts from yesterday:** 14 of 156 (the discourse never sleeps)
-- **usage limit complaint posts today:** at least 6 (day eleven of the saga, still no signs of stopping)
+| metric | count |
+|---|---|
+| posts tracked | 178 |
+| total upvotes | 18,747 |
+| total comments | 5,193 |
+| fastest rising | Taught Claude to talk like a caveman (velocity: 943) |
+| most debated | Scam-thropic (15.3:1 comment:upvote ratio) |
+| subreddits scanned | ClaudeAI, ClaudeCode, GTMbuilders, vibecoding, gtmengineering |
+| returning posts | 3 |
+| OpenClaw-related posts | 8+ |
+| consecutive days of limit complaints | 10 |
 
-shawn ⚡ GTM Engineer
+---
+
+shawn, the gtme alchemist 🧙‍♂️
