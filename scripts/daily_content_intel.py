@@ -1301,6 +1301,9 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
     if not excerpt:
         excerpt = f"Daily digest of the Claude Code ecosystem for {formatted_date}. Trending discussions, builder takeaways, and community pulse."
 
+    # Sanitize excerpt for YAML double-quoted string
+    excerpt = excerpt.replace('"', "'")
+
     slug = f"claude-daily-{target_date}"
     frontmatter = f"""---
 title: "Claude Code Daily: {formatted_date}"
