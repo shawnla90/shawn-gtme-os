@@ -1,6 +1,22 @@
 {
-  "lastUpdated": "2026-04-05T23:18:51.824894+00:00",
+  "lastUpdated": "2026-04-06T11:19:12.415399+00:00",
   "posts": [
+    {
+      "id": "1sdktbl",
+      "title": "Hot take: AI is making most GTM teams faster at the wrong things",
+      "author": "Party_Mango8122",
+      "score": 1,
+      "numComments": 0,
+      "permalink": "/r/GTMbuilders/comments/1sdktbl/hot_take_ai_is_making_most_gtm_teams_faster_at/",
+      "selftext": "",
+      "createdUtc": 1775437986.0,
+      "flair": "Blog Posts",
+      "thumbnail": null,
+      "url": "/r/ClaudeGTM/comments/1sdkkhy/hot_take_ai_is_making_most_gtm_teams_faster_at/",
+      "isSelf": false,
+      "stickied": false,
+      "preview": null
+    },
     {
       "id": "1scvwdm",
       "title": "What if AI agents could A/B test your messaging for you, by actually developing opinions over time?",
@@ -37,7 +53,7 @@
       "id": "1s8fdoq",
       "title": "Built an AI sales agent with LangGraph",
       "author": "Spare-Combination-63",
-      "score": 5,
+      "score": 6,
       "numComments": 1,
       "permalink": "/r/GTMbuilders/comments/1s8fdoq/built_an_ai_sales_agent_with_langgraph/",
       "selftext": "Been learning LangChain/LangGraph and built something, an AI agent that automates outbound sales research and email drafting.\n\n**What it does:**\u00a0You point it at a Google Sheet full of leads. For each one it: checks if someone already reached out \u2192 runs a research subagent that scrapes their website + searches for news \u2192 drafts a personalized email with Claude \u2192 shows you the draft for approval (Send/Edit/Cancel) \u2192 updates CRM status.\n\n**It learns from your edits.**\u00a0If you edit a draft before sending, the agent compares the original vs. your version, extracts style preferences (\"prefers casual tone\", \"shorter subject lines\"), and stores them in SQLite. Next draft already reflects your style. Gets better every time you use it.\n\n**Architecture decision:**\u00a0The overall workflow is a deterministic LangGraph StateGraph, same steps, same order, every time. But the research step inside the graph is a flexible ReAct agent that decides which tools to use. Graph for reliability, agent for intelligence. Got the idea from LangChain's blog post about their internal GTM agent.\n\n**Stack:**\u00a0Python, LangChain, LangGraph, Claude Sonnet 4, Google Sheets, Tavily, BeautifulSoup, SQLite.\n\nFully configurable \u2014 edit one\u00a0[`config.py`](http://config.py)\u00a0file with your company info and it works for any business. Included example configs for SaaS.\n\nGitHub:\u00a0[https://github.com/atifirshad21/gtm\\_agent](https://github.com/atifirshad21/gtm_agent)\n\nAny kind of feedback is welcome.\n\nhttps://preview.redd.it/f92e2g00obsg1.png?width=1012&amp;format=png&amp;auto=webp&amp;s=362aa01fdb3c14a25e0f32097948847e7205a59b\n\n",
@@ -181,7 +197,7 @@
       "id": "1s31mht",
       "title": "Is LinkedIn banning HeyReach going to stop my HeyReach campaigns from working too?",
       "author": "[deleted]",
-      "score": 5,
+      "score": 4,
       "numComments": 14,
       "permalink": "/r/GTMbuilders/comments/1s31mht/is_linkedin_banning_heyreach_going_to_stop_my/",
       "selftext": "I guess you all have heard it: LinkedIn has taken down HeyReach\u2019s LinkedIn profile including their founder\u2019s. Not their first crackdown on third party service providers. As somebody new to this I was wondering what this would mean to the functioning of their platform. ",
@@ -325,7 +341,7 @@
       "id": "1rykecv",
       "title": "Claude Code Daily is live.",
       "author": "Shawntenam",
-      "score": 3,
+      "score": 4,
       "numComments": 6,
       "permalink": "/r/GTMbuilders/comments/1rykecv/claude_code_daily_is_live/",
       "selftext": "https://preview.redd.it/4exe4b3244qg1.png?width=980&amp;format=png&amp;auto=webp&amp;s=13d7e2e39c841052436f165fa611c3e201739999\n\nEvery day it scans r/ClaudeCode, r/ClaudeAI, and the builder subreddits, pulls trending threads, highlighted repos, actual code drops, and the funniest comments from the community. Then it writes itself into a full daily digest.\n\n if you are building with AI and not just talking about it: there are repos getting shared every single day that most people miss. Code patterns, MCP server configs, cost-saving tricks, workflow setups. The kind of stuff that saves you a weekend of trial and error.\n\nEach episode covers:\n\n\\- Trending repos and code drops\n\n\\- Builder takeaways you can actually use\n\n\\- The best and worst takes from the community (yes there is a Troll of the Day section)\n\n\\- Fun facts pulled straight from the data\n\n\\- A full scoreboard with velocity scores and engagement numbers\n\n\n\nI am going to be posting this daily and constantly improving it. If you want to see r/gtmengineering or other builder channels added to the scan, let me know. If there are sections you want added or things that would make it more useful, drop it in the comments. This thing learns and evolves.\n\nFair warning: I have zero say in what Claude decides to write each day. It builds off the data, picks its own highlights, writes its own roasts. Sometimes it is going to nail it. Sometimes it might come in hot. That is part of the fun.\n\nStill figuring out new features for it. But right now it is a way to stay current on what is actually happening in the Claude Code ecosystem, learn some new stuff, and laugh at the same time.\n\n\n\n[shawnos.ai/claude-daily](http://shawnos.ai/claude-daily)",
@@ -373,7 +389,7 @@
       "id": "1rvvj06",
       "title": "2x Claude usage limits for March - what are you doing with it?",
       "author": "muzzythinks",
-      "score": 4,
+      "score": 5,
       "numComments": 5,
       "permalink": "/r/GTMbuilders/comments/1rvvj06/2x_claude_usage_limits_for_march_what_are_you/",
       "selftext": "How have you been taking advantage of this?\n\nI'm organizing a hackathon - challenging myself and friends to design ambitious projects and spec/brief them so well during peak times that with ralph loops / a few terminals - you can atrempt to one-shot during off-peak.\n\nThe rule- no intervention. \nWinner: Most complete app true to intention\n\nUsed to get together with friends to play halo with Xbox ones in Lan parties. This feels like that.",
@@ -533,7 +549,7 @@
       "id": "1rt2jp4",
       "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price.",
       "author": "Shawntenam",
-      "score": 5,
+      "score": 4,
       "numComments": 3,
       "permalink": "/r/GTMbuilders/comments/1rt2jp4/claude_code_just_dropped_1m_context_window_and_im/",
       "selftext": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --&gt; 1M tokens. same Opus 4.6 model. same Max subscription. no price increase.\n\nif you've been building with this thing daily, \n\nyou know exactly why this is massive. context compaction was THE bottleneck. you're deep in a build, agent is cooking, and then it starts forgetting what\n\nfiles it already read. you re-explain your\n\narchitecture for the third time. momentum gone.\n\nthat whole era just ended.\n\nI run a monorepo with 3 Next.js apps, i18n in 3 languages, full GTM ops layer, automation scripts.\n\nbefore today the agent could barely hold one app in\n\nits head at a time. just tested the new window and it\n\nreasoned across the ENTIRE system in one session. no\n\ncompaction. no re-explaining. no babysitting.\n\n\n\nseriously now we can.\n\n\\- spec to deploy in a single session \n\n\\- debugging that traces through your whole stack\n\nwithout losing what it found 20 minutes ago\n\n\\- hand off a big task, walk away, come back to finished work\n\n\\- the agent actually remembers its own mistakes and\n\nstops repeating them\n\n\n\nit's Friday.what are you building with this new context window??. full breadown in my [blog](https://shawnos.ai/blog/claude-code-1m-context-window)",
@@ -565,7 +581,7 @@
       "id": "1rs1f6n",
       "title": "tool devotion is a trap. Clay just proved the thesis.",
       "author": "Shawntenam",
-      "score": 10,
+      "score": 9,
       "numComments": 8,
       "permalink": "/r/GTMbuilders/comments/1rs1f6n/tool_devotion_is_a_trap_clay_just_proved_the/",
       "selftext": "for the past two months I've been posting the same thesis. the builder is the moat, not the tool. if your entire value proposition is proficiency with a specific platform, you're one pricing change away from a career problem.\n\nI was saying this before the price change. and then Clay proved it.\n\n**the proof**\n\nClay killed the Explorer tier. that was the $349/mo plan with HTTP API access. the builder's plan. the one where you learned to connect Clay to real systems and actually practice GTM engineering.\n\nthe new pricing jumps from $185 (no API, no webhooks) to $495. every HTTP API call now costs an Action. Clay is metering your requests to servers they don't own, for data they don't provide.\n\nagencies running 5-6 accounts went from roughly $1,750/mo in Explorer plans to $2,500-3,000/mo at Growth. same capabilities. higher floor.\n\n**what this means for the community**\n\nthe people who built Clay's community were builders sharing their work publicly. LinkedIn posts, playbooks, tutorials. they brought customers to Clay through builder-led growth. and now the pricing is optimized for enterprise accounts that don't need the community.\n\nevery platform eventually does this. they grow on builders, then optimize for enterprise. the builders who drove adoption are the ones who feel the squeeze.\n\n**the transition**\n\nI've been mostly sharing observations and patterns here. how things work, what tools do, where the gaps are. this is probably my last pure observation post for a while.\n\nI'm shifting to build drops. actual systems, actual architectures, actual code. Apollo's free API for sourcing. Supabase for storage. Claude Code for orchestration. \n\ninfrastructure you own that doesn't meter your API calls.\n\nthe patterns I learned in Clay transfer to all of this. enrichment architecture is enrichment architecture. ICP scoring is ICP scoring. the implementation layer changes. the thinking doesn't.\n\n**closing**\n\nI'm grateful for what Clay taught me. genuinely. and I think they just made it harder for the next person to learn it.\n\nthe tools are a trap when your skills are locked to one platform's interface. the escape hatch is learning to build the systems yourself.\n\ncurious what tools everyone here is building with now. what's your stack looking like in 2026?\n\nshawn - GTM Engineer",
@@ -665,8 +681,8 @@
   },
   "userProfile": {
     "name": "Shawntenam",
-    "totalKarma": 1875,
-    "linkKarma": 1163,
-    "commentKarma": 712
+    "totalKarma": 1921,
+    "linkKarma": 1206,
+    "commentKarma": 715
   }
 }
