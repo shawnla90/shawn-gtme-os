@@ -90,14 +90,14 @@ export function ScrollSignup() {
         seconds_on_page: Math.round((Date.now() - mountTime.current) / 1000),
       })
 
-      // Capture email server-side (PostHog + Telegram)
-      await subscribeEmail(email)
-
-      // Send to Substack via hidden iframe
+      // Send to Substack via hidden iframe FIRST (runs from user's browser, not server)
       if (substackIframeRef.current) {
         substackIframeRef.current.src =
           `https://shawntenam.substack.com/subscribe?email=${encodeURIComponent(email)}&just_hierarchical=true`
       }
+
+      // Capture email server-side (PostHog + Telegram + Sheets)
+      await subscribeEmail(email)
 
       setStatus('success')
       setTimeout(() => {

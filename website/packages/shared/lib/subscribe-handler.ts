@@ -1,8 +1,11 @@
 /**
  * Server-side newsletter subscribe handler.
  * 1. Validates email
- * 2. Captures to PostHog (persistent, always works on Vercel)
- * 3. Forwards to Substack API
+ * 2. Captures to PostHog (persistent)
+ * 3. Notifies via Telegram + Google Sheets
+ *
+ * Substack forwarding is handled client-side via iframe in ScrollSignup.tsx.
+ * Server-side Substack API calls get Cloudflare 403'd.
  *
  * Each site's /api/subscribe/route.ts just re-exports this.
  */
@@ -10,12 +13,10 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { notifySignup } from './subscribe-notify'
 
-const SUBSTACK_URL = 'https://shawntenam.substack.com/api/v1/free?nojs=true'
-
 const POSTHOG_KEY = process.env.POSTHOG_KEY || process.env.NEXT_PUBLIC_POSTHOG_KEY || 'phc_zlJOdh1FPyUXLHSWVQITPRFZxGIrGdHonI5mlUJupJC'
 const POSTHOG_HOST = 'https://us.i.posthog.com'
 
-async function captureToPostHog(email: string, site: string, forwarded: boolean, substackStatus: number): Promise<void> {
+async function captureToPostHog(email: string, site: string): Promise<void> {
   if (!POSTHOG_KEY) return
   try {
     await fetch(`${POSTHOG_HOST}/capture/`, {
@@ -29,39 +30,13 @@ async function captureToPostHog(email: string, site: string, forwarded: boolean,
           email,
           site,
           source: 'scroll-signup',
-          forwarded_to_substack: forwarded,
-          substack_status: substackStatus,
+          substack_method: 'client-iframe',
           $current_url: `https://${site === 'gtmos' ? 'thegtmos.ai' : site === 'contentos' ? 'thecontentos.ai' : 'shawnos.ai'}`,
         },
       }),
     })
   } catch {
     // Non-fatal
-  }
-}
-
-async function forwardToSubstack(email: string): Promise<number> {
-  try {
-    const params = new URLSearchParams({
-      email,
-      first_url: 'https://shawntenam.substack.com/',
-      first_referrer: '',
-      current_url: 'https://shawntenam.substack.com/',
-      current_referrer: '',
-    })
-    const res = await fetch(SUBSTACK_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Origin': 'https://shawntenam.substack.com',
-        'Referer': 'https://shawntenam.substack.com/',
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36',
-      },
-      body: params.toString(),
-    })
-    return res.status
-  } catch {
-    return 0
   }
 }
 
@@ -73,7 +48,6 @@ export async function handleSubscribe(request: NextRequest): Promise<NextRespons
       return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
     }
 
-    // Detect which site this came from
     const host = request.headers.get('host') || ''
     const site = host.includes('gtmos')
       ? 'gtmos'
@@ -81,22 +55,14 @@ export async function handleSubscribe(request: NextRequest): Promise<NextRespons
         ? 'contentos'
         : 'shawnos'
 
-    // Forward to Substack
-    const substackStatus = await forwardToSubstack(email)
-    const forwarded = substackStatus >= 200 && substackStatus < 400
-
-    // Capture to PostHog (persistent — works on Vercel)
-    // Notify via Telegram + Google Sheet
     await Promise.allSettled([
-      captureToPostHog(email, site, forwarded, substackStatus),
+      captureToPostHog(email, site),
       notifySignup(email, site),
     ])
 
     return NextResponse.json({
       message: 'Subscribed',
       captured: true,
-      forwarded,
-      posthog_key_present: POSTHOG_KEY.length > 0,
     })
   } catch {
     return NextResponse.json({ error: 'Server error' }, { status: 500 })
