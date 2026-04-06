@@ -1,7 +1,7 @@
 ---
 title: "Claude Code Daily: Saturday, April 04, 2026"
 date: "2026-04-04"
-excerpt: "saturday in the Claude ecosystem and the subreddits are processing collective trauma through memes. four of today's top posts are straight up shitposts. r/ClaudeCode dropped "every post" at 233 upvote"
+excerpt: "saturday in the Claude ecosystem and the subreddits are processing collective trauma through memes. four of today's top posts are straight up shitposts. r/ClaudeCode dropped 'every post' at 233 upvote"
 category: "claude-daily"
 featured: false
 ---
