@@ -13,6 +13,7 @@
     "clean": "turbo run clean"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.15.9",
     "turbo": "^2.8.8"
   },
   "packageManager": "npm@10.8.2",
