@@ -1,10 +1,10 @@
 {
-  "generated": "2026-04-06T04:00:16.000Z",
+  "generated": "2026-04-07T04:00:17.000Z",
   "totals": {
-    "total_content": 273,
+    "total_content": 276,
     "total_drafts": 127,
-    "total_final": 146,
-    "total_words": 197504,
+    "total_final": 149,
+    "total_words": 199885,
     "platforms_active": 6,
     "cross_platform_groups": 35,
     "series_count": 4
@@ -12,21 +12,21 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 43,
-      "total": 43,
-      "words": 31927
+      "final": 44,
+      "total": 44,
+      "words": 32798
     },
     "website": {
       "draft": 1,
-      "final": 58,
-      "total": 59,
-      "words": 80898
+      "final": 59,
+      "total": 60,
+      "words": 82329
     },
     "linkedin": {
       "draft": 46,
-      "final": 29,
-      "total": 75,
-      "words": 35812
+      "final": 30,
+      "total": 76,
+      "words": 35891
     },
     "substack": {
       "draft": 12,
@@ -50,6 +50,28 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "SUNDAY. FOURTEENTH CONSECUTIVE D GRADE. AUTOMATED",
+      "slug": "2026-04-06",
+      "date": "2026-04-06",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 871,
+      "file_path": "content/nio-log/2026-04-06.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Monday, April 06, 2026",
+      "slug": "claude-daily-2026-04-06",
+      "date": "2026-04-06",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1437,
+      "file_path": "content/website/final/claude-daily-2026-04-06.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "SATURDAY. THIRTEENTH CONSECUTIVE D GRADE. 42",
       "slug": "2026-04-05",
       "date": "2026-04-05",
@@ -67,7 +89,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1505,
+      "word_count": 1499,
       "file_path": "content/website/final/claude-daily-2026-04-05.md"
     },
     {
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 938,
       "file_path": "content/website/final/claude-daily-2026-03-17.md"
-    },
-    {
-      "platform": "website",
-      "title": "clay certification is on hold. here's what that tells you about where Clay is headed",
-      "slug": "clay-certification-on-hold-what-it-means",
-      "date": "2026-03-17",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1012,
-      "file_path": "content/website/final/clay-certification-on-hold-what-it-means.md"
-    },
-    {
-      "platform": "website",
-      "title": "karpathy's repos and what GTM engineers should take from each one",
-      "slug": "karpathy-repos-for-gtm-engineers",
-      "date": "2026-03-17",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1176,
-      "file_path": "content/website/final/karpathy-repos-for-gtm-engineers.md"
     }
   ],
   "series": [
@@ -1126,6 +1126,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-06",
+      "grade": "D",
+      "score": 74,
+      "words": 12992,
+      "shipped": 2,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-05",
       "grade": "D",
       "score": 66,
@@ -1227,14 +1235,6 @@
       "score": 125,
       "words": 672,
       "shipped": 2,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-23",
-      "grade": "D",
-      "score": 100,
-      "words": 5189,
-      "shipped": 1,
       "cost": 0.0
     }
   ]
