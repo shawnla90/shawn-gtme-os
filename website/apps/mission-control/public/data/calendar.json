@@ -1,6 +1,105 @@
 {
-  "generated": "2026-04-07T04:22:36.120Z",
+  "generated": "2026-04-08T04:27:40.084Z",
   "events": [
+    {
+      "id": "commit-0863f14",
+      "title": "feat: claude daily digest 2026-04-07",
+      "type": "milestone",
+      "datetime": "2026-04-08T00:26:57-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-07",
+      "metadata": {
+        "commitHash": "0863f14"
+      }
+    },
+    {
+      "id": "commit-dc72812",
+      "title": "chore: sync Reddit cache — 43 posts (2026-04-07 19:20)",
+      "type": "system",
+      "datetime": "2026-04-07T19:20:11-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 43 posts (2026-04-07 19:20)",
+      "metadata": {
+        "commitHash": "dc72812"
+      }
+    },
+    {
+      "id": "commit-99cf3ce",
+      "title": "chore(crypto): evening signal update 2026-04-07",
+      "type": "system",
+      "datetime": "2026-04-07T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-04-07",
+      "metadata": {
+        "commitHash": "99cf3ce"
+      }
+    },
+    {
+      "id": "commit-31f9ec8",
+      "title": "feat: claude daily digest 2026-04-07",
+      "type": "milestone",
+      "datetime": "2026-04-07T10:22:21-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-07",
+      "metadata": {
+        "commitHash": "31f9ec8"
+      }
+    },
+    {
+      "id": "commit-17ec5cd",
+      "title": "feat: daily LinkedIn posts 2026-04-07",
+      "type": "milestone",
+      "datetime": "2026-04-07T09:11:50-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-04-07",
+      "metadata": {
+        "commitHash": "17ec5cd"
+      }
+    },
+    {
+      "id": "commit-bf91b27",
+      "title": "feat: nio.log 2026-04-07 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-04-07T08:01:03-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-04-07 — automated daily post",
+      "metadata": {
+        "commitHash": "bf91b27"
+      }
+    },
+    {
+      "id": "commit-d9f3f7c",
+      "title": "chore: sync Reddit cache — 42 posts (2026-04-07 07:19)",
+      "type": "system",
+      "datetime": "2026-04-07T07:19:51-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 42 posts (2026-04-07 07:19)",
+      "metadata": {
+        "commitHash": "d9f3f7c"
+      }
+    },
+    {
+      "id": "commit-2f4ead1",
+      "title": "chore(crypto): morning signal update 2026-04-07",
+      "type": "system",
+      "datetime": "2026-04-07T07:00:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-04-07",
+      "metadata": {
+        "commitHash": "2f4ead1"
+      }
+    },
+    {
+      "id": "commit-23d06bc",
+      "title": "chore: daily tracker scan 2026-04-06",
+      "type": "system",
+      "datetime": "2026-04-07T00:22:36-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-04-06",
+      "metadata": {
+        "commitHash": "23d06bc"
+      }
+    },
     {
       "id": "commit-9e445af",
       "title": "feat: claude daily digest 2026-04-06",
@@ -65,105 +164,6 @@
       "description": "feat: nio.log 2026-04-06 — automated daily post",
       "metadata": {
         "commitHash": "627647a"
-      }
-    },
-    {
-      "id": "commit-18557bd",
-      "title": "chore: sync Reddit cache — 42 posts (2026-04-06 07:19)",
-      "type": "system",
-      "datetime": "2026-04-06T07:19:12-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 42 posts (2026-04-06 07:19)",
-      "metadata": {
-        "commitHash": "18557bd"
-      }
-    },
-    {
-      "id": "commit-4f5e4d3",
-      "title": "chore(crypto): morning signal update 2026-04-06",
-      "type": "system",
-      "datetime": "2026-04-06T07:00:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-04-06",
-      "metadata": {
-        "commitHash": "4f5e4d3"
-      }
-    },
-    {
-      "id": "commit-980b83d",
-      "title": "fix: add @netlify/plugin-nextjs as dependency for git-trigge",
-      "type": "deployment",
-      "datetime": "2026-04-06T00:36:04-04:00",
-      "status": "completed",
-      "description": "fix: add @netlify/plugin-nextjs as dependency for git-triggered builds",
-      "metadata": {
-        "commitHash": "980b83d"
-      }
-    },
-    {
-      "id": "commit-55d935e",
-      "title": "chore: daily tracker scan 2026-04-05",
-      "type": "system",
-      "datetime": "2026-04-06T00:20:31-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-04-05",
-      "metadata": {
-        "commitHash": "55d935e"
-      }
-    },
-    {
-      "id": "commit-37e12df",
-      "title": "fix: sanitize YAML frontmatter excerpts in daily digest gene",
-      "type": "deployment",
-      "datetime": "2026-04-06T00:20:31-04:00",
-      "status": "completed",
-      "description": "fix: sanitize YAML frontmatter excerpts in daily digest generator",
-      "metadata": {
-        "commitHash": "37e12df"
-      }
-    },
-    {
-      "id": "commit-1ee2ef4",
-      "title": "feat: claude daily digest 2026-04-05",
-      "type": "milestone",
-      "datetime": "2026-04-06T00:19:42-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-04-05",
-      "metadata": {
-        "commitHash": "1ee2ef4"
-      }
-    },
-    {
-      "id": "commit-b73d888",
-      "title": "fix: escape quotes in claude-daily-2026-04-04 frontmatter",
-      "type": "deployment",
-      "datetime": "2026-04-06T00:17:09-04:00",
-      "status": "completed",
-      "description": "fix: escape quotes in claude-daily-2026-04-04 frontmatter",
-      "metadata": {
-        "commitHash": "b73d888"
-      }
-    },
-    {
-      "id": "commit-cbf4328",
-      "title": "fix: pin Node 24 for Netlify git-triggered builds",
-      "type": "deployment",
-      "datetime": "2026-04-06T00:14:43-04:00",
-      "status": "completed",
-      "description": "fix: pin Node 24 for Netlify git-triggered builds",
-      "metadata": {
-        "commitHash": "cbf4328"
-      }
-    },
-    {
-      "id": "commit-9836965",
-      "title": "chore: contentos optimizer - 1 improvements (2026-04-06)",
-      "type": "system",
-      "datetime": "2026-04-05T23:03:20-04:00",
-      "status": "completed",
-      "description": "chore: contentos optimizer - 1 improvements (2026-04-06)",
-      "metadata": {
-        "commitHash": "9836965"
       }
     }
   ],

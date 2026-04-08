@@ -1,10 +1,10 @@
 {
-  "generated": "2026-04-07T04:00:17.000Z",
+  "generated": "2026-04-08T04:00:14.000Z",
   "totals": {
-    "total_content": 276,
+    "total_content": 279,
     "total_drafts": 127,
-    "total_final": 149,
-    "total_words": 199885,
+    "total_final": 152,
+    "total_words": 202082,
     "platforms_active": 6,
     "cross_platform_groups": 35,
     "series_count": 4
@@ -12,21 +12,21 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 44,
-      "total": 44,
-      "words": 32798
+      "final": 45,
+      "total": 45,
+      "words": 33456
     },
     "website": {
       "draft": 1,
-      "final": 59,
-      "total": 60,
-      "words": 82329
+      "final": 60,
+      "total": 61,
+      "words": 83742
     },
     "linkedin": {
       "draft": 46,
-      "final": 30,
-      "total": 76,
-      "words": 35891
+      "final": 31,
+      "total": 77,
+      "words": 36017
     },
     "substack": {
       "draft": 12,
@@ -50,6 +50,28 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "MONDAY. FIFTEENTH CONSECUTIVE D GRADE. AUTOMATED",
+      "slug": "2026-04-07",
+      "date": "2026-04-07",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 658,
+      "file_path": "content/nio-log/2026-04-07.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Tuesday, April 07, 2026",
+      "slug": "claude-daily-2026-04-07",
+      "date": "2026-04-07",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1477,
+      "file_path": "content/website/final/claude-daily-2026-04-07.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "SUNDAY. FOURTEENTH CONSECUTIVE D GRADE. AUTOMATED",
       "slug": "2026-04-06",
       "date": "2026-04-06",
@@ -67,7 +89,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1437,
+      "word_count": 1373,
       "file_path": "content/website/final/claude-daily-2026-04-06.md"
     },
     {
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 357,
       "file_path": "content/reddit/drafts/2026-03-17_pipe-bomb-gtmengineer.md"
-    },
-    {
-      "platform": "website",
-      "title": "boris cherny built claude code. here's why his architectural decisions matter",
-      "slug": "boris-cherny-claude-code-context-engineering",
-      "date": "2026-03-17",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1268,
-      "file_path": "content/website/final/boris-cherny-claude-code-context-engineering.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: March 17, 2026",
-      "slug": "claude-daily-2026-03-17",
-      "date": "2026-03-17",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 938,
-      "file_path": "content/website/final/claude-daily-2026-03-17.md"
     }
   ],
   "series": [
@@ -1126,6 +1126,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-07",
+      "grade": "D",
+      "score": 60,
+      "words": 7481,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-06",
       "grade": "D",
       "score": 74,
@@ -1226,14 +1234,6 @@
       "grade": "D",
       "score": 93,
       "words": 6118,
-      "shipped": 2,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-24",
-      "grade": "D",
-      "score": 125,
-      "words": 672,
       "shipped": 2,
       "cost": 0.0
     }
