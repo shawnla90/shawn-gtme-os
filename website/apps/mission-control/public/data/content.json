@@ -1,10 +1,10 @@
 {
-  "generated": "2026-04-10T04:00:15.000Z",
+  "generated": "2026-04-11T04:00:17.000Z",
   "totals": {
-    "total_content": 286,
+    "total_content": 289,
     "total_drafts": 127,
-    "total_final": 159,
-    "total_words": 208414,
+    "total_final": 162,
+    "total_words": 210582,
     "platforms_active": 6,
     "cross_platform_groups": 35,
     "series_count": 4
@@ -12,21 +12,21 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 47,
-      "total": 47,
-      "words": 34880
+      "final": 48,
+      "total": 48,
+      "words": 35620
     },
     "website": {
       "draft": 1,
-      "final": 63,
-      "total": 64,
-      "words": 88374
+      "final": 64,
+      "total": 65,
+      "words": 89710
     },
     "linkedin": {
       "draft": 46,
-      "final": 33,
-      "total": 79,
-      "words": 36293
+      "final": 34,
+      "total": 80,
+      "words": 36385
     },
     "substack": {
       "draft": 12,
@@ -50,6 +50,28 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "THURSDAY. EIGHTEENTH CONSECUTIVE D GRADE. CRONS",
+      "slug": "2026-04-10",
+      "date": "2026-04-10",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 740,
+      "file_path": "content/nio-log/2026-04-10.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Friday, April 10, 2026",
+      "slug": "claude-daily-2026-04-10",
+      "date": "2026-04-10",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1290,
+      "file_path": "content/website/final/claude-daily-2026-04-10.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "WEDNESDAY. SEVENTEENTH CONSECUTIVE D GRADE. CRONS",
       "slug": "2026-04-09",
       "date": "2026-04-09",
@@ -67,7 +89,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1341,
+      "word_count": 1387,
       "file_path": "content/website/final/claude-daily-2026-04-09.md"
     },
     {
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 704,
       "file_path": "content/nio-log/2026-03-18.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: March 18, 2026",
-      "slug": "claude-daily-2026-03-18",
-      "date": "2026-03-18",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1073,
-      "file_path": "content/website/final/claude-daily-2026-03-18.md"
-    },
-    {
-      "platform": "website",
-      "title": "what Karpathy's markdown files taught me about context engineering",
-      "slug": "karpathy-markdown-context-engineering",
-      "date": "2026-03-18",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1108,
-      "file_path": "content/website/final/karpathy-markdown-context-engineering.md"
     }
   ],
   "series": [
@@ -1126,6 +1126,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-10",
+      "grade": "D",
+      "score": 60,
+      "words": 7961,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-09",
       "grade": "D",
       "score": 60,
@@ -1227,14 +1235,6 @@
       "score": 44,
       "words": 3383,
       "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-27",
-      "grade": "D",
-      "score": 131,
-      "words": 10228,
-      "shipped": 9,
       "cost": 0.0
     }
   ]
