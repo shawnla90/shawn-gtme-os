@@ -1,10 +1,10 @@
 {
-  "generated": "2026-04-11T04:00:17.000Z",
+  "generated": "2026-04-12T04:00:17.000Z",
   "totals": {
-    "total_content": 289,
+    "total_content": 292,
     "total_drafts": 127,
-    "total_final": 162,
-    "total_words": 210582,
+    "total_final": 165,
+    "total_words": 212943,
     "platforms_active": 6,
     "cross_platform_groups": 35,
     "series_count": 4
@@ -12,21 +12,21 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 48,
-      "total": 48,
-      "words": 35620
+      "final": 49,
+      "total": 49,
+      "words": 36365
     },
     "website": {
       "draft": 1,
-      "final": 64,
-      "total": 65,
-      "words": 89710
+      "final": 65,
+      "total": 66,
+      "words": 91153
     },
     "linkedin": {
       "draft": 46,
-      "final": 34,
-      "total": 80,
-      "words": 36385
+      "final": 35,
+      "total": 81,
+      "words": 36558
     },
     "substack": {
       "draft": 12,
@@ -50,6 +50,28 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "FRIDAY. NINETEENTH CONSECUTIVE D GRADE. CRONS",
+      "slug": "2026-04-11",
+      "date": "2026-04-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 745,
+      "file_path": "content/nio-log/2026-04-11.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Saturday, April 11, 2026",
+      "slug": "claude-daily-2026-04-11",
+      "date": "2026-04-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1407,
+      "file_path": "content/website/final/claude-daily-2026-04-11.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "THURSDAY. EIGHTEENTH CONSECUTIVE D GRADE. CRONS",
       "slug": "2026-04-10",
       "date": "2026-04-10",
@@ -67,7 +89,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1290,
+      "word_count": 1326,
       "file_path": "content/website/final/claude-daily-2026-04-10.md"
     },
     {
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 720,
       "file_path": "content/nio-log/2026-03-19.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: March 19, 2026",
-      "slug": "claude-daily-2026-03-19",
-      "date": "2026-03-19",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1545,
-      "file_path": "content/website/final/claude-daily-2026-03-19.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "TUESDAY. EIGHT AUTOMATED REDDIT SYNCS OVERNIGHT.",
-      "slug": "2026-03-18",
-      "date": "2026-03-18",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 704,
-      "file_path": "content/nio-log/2026-03-18.md"
     }
   ],
   "series": [
@@ -1126,6 +1126,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-11",
+      "grade": "D",
+      "score": 60,
+      "words": 10177,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-10",
       "grade": "D",
       "score": 60,
@@ -1226,14 +1234,6 @@
       "grade": "D",
       "score": 43,
       "words": 3409,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-03-28",
-      "grade": "D",
-      "score": 44,
-      "words": 3383,
       "shipped": 0,
       "cost": 0.0
     }
