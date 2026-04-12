@@ -33,6 +33,8 @@ COPY --from=builder /app/website/apps/shawnos/public ./website/apps/shawnos/publ
 COPY --from=builder --chown=nextjs:nodejs /app/website/apps/shawnos/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/website/apps/shawnos/.next/static ./website/apps/shawnos/.next/static
 
+RUN echo "=== standalone root ===" && ls -la /app/ && echo "=== website/apps/shawnos/ ===" && ls -la /app/website/apps/shawnos/ 2>/dev/null || echo "path not found" && echo "=== find server.js ===" && find /app -name "server.js" -not -path "*/node_modules/*" 2>/dev/null
+
 USER nextjs
 EXPOSE 3000
 
