@@ -1,98 +1,106 @@
 ---
 title: "Claude Code Daily: Saturday, April 11, 2026"
 date: "2026-04-11"
-excerpt: "saturday energy in the Claude ecosystem and the vibes are... angry? AMD's director of AI just dropped a GitHub issue with receipts showing Claude Code reads code 3x less before editing, rewrites entir"
+excerpt: "saturday in the Claude ecosystem and the pitchforks are out. not the fun kind where everybody's building something cool. the kind where paying customers are running data analysis on their own API call"
 category: "claude-daily"
 featured: false
 ---
 
 ## the pulse
 
-saturday energy in the Claude ecosystem and the vibes are... angry? AMD's director of AI just dropped a GitHub issue with receipts showing Claude Code reads code 3x less before editing, rewrites entire files 2x as often, and abandons tasks at rates that were previously zero. nearly 7,000 sessions of data. this isn't a reddit rant from someone whose todo app broke. this is an AMD director with version-controlled proof that the model got worse.
+saturday in the Claude ecosystem and the pitchforks are out. not the fun kind where everybody's building something cool. the kind where paying customers are running data analysis on their own API calls to prove they're getting scammed. r/ClaudeCode and r/ClaudeAI basically merged into a single support group today, with 163 posts generating nearly 12,000 upvotes and over 4,100 comments. the ratio tells you everything. people are not here to share wins.
 
-meanwhile the Mythos hype train from yesterday is still rolling but the backlash car got attached. someone drew a comic about it. someone else posted a whole thread arguing it's damage control after the leak. and the roommate saga (still trending from yesterday) crossed 3,300 upvotes, which means more people clicked that post than probably use Claude Code on a given saturday. the community is split right down the middle between people who think Anthropic is building something genuinely unprecedented and people who think their current product is falling apart in real time. both camps have evidence.
+the big story is a one-two punch. someone pulled 120,000 API call logs across two machines and found that Anthropic silently cut cache TTL from one hour to five minutes back on March 6th. that's not a conspiracy theory. that's timestamped data. meanwhile, the AMD lobotomization thread continues to snowball past 1,750 upvotes, and a separate post called Anthropic: Stop shipping. Seriously. racked up 1,336 upvotes in r/ClaudeAI and another 450 when it got crossposted to r/ClaudeCode. there's also someone who set up a transparent API proxy and found a hidden `fallback-percentage: 0.5` header, suggesting every plan gets 50% of advertised capacity. the community is doing Anthropic's QA for them at this point.
 
-the cancellation posts are reaching critical mass. r/ClaudeCode alone has three separate goodbye letters today. one user on the $200 Max plan hit 95% session limit in under an hour. another called Opus 4.6 a destructive junior dev. a third just titled their post "Just canceled." with a period. that period is doing a lot of work. the usage limit saga is now on day 19 and counting, and today AMD gave it a corporate letterhead.
+the one bright spot? someone discovered that switching to the older Opus 4.5 model with `/model claude-opus-4-5-20251101` makes Claude Code dramatically better. 162 upvotes and comments like "it's fast too, ~100t/s." so the escape hatch exists. you just have to know it's there.
 
 ## hottest thread
 
-**AMD AI directors analysis confirms lobotomization of Claude** (r/ClaudeAI, 659 upvotes, 143 comments, velocity: 184.18)
+**Anthropic: Stop shipping. Seriously.** (r/ClaudeAI, 1,336 upvotes, 232 comments)
 
-Stella Laurenzo, AMD's director of AI, filed a detailed GitHub issue on April 2 documenting degradation across nearly 7,000 Claude Code sessions. the numbers are specific and painful: the model reads code three times less before making edits, rewrites entire files twice as often, and abandons tasks mid-way at rates that were previously zero.
+a Claude Max subscriber wrote what amounts to an open letter to Anthropic leadership. the premise: stop adding flashy features and fix the core product. the post hit r/ClaudeAI first and exploded, then someone crossposted it to r/ClaudeCode where it picked up another 450 upvotes and 84 comments. combined, that's nearly 1,800 upvotes and 316 comments across two subreddits, all saying the same thing.
 
-this matters because it's not vibes. it's not "it feels dumber." it's a senior technical leader at a major chip company with structured data across thousands of sessions showing measurable regression. the kind of evidence that's very hard to hand-wave away with "have you tried updating your system prompt?"
+the top comment in r/ClaudeCode nailed the sentiment: core features are suffering because of countless flashy features, and the only thing a coding agent needs to do well is code. another commenter pointed out it gets worse every time they ship, asking Anthropic to fork the models so stable users don't eat the experimental chaos.
 
-u/ketosoy's comment captured the frustration perfectly: Opus can't pass the car wash test with extended thinking during business hours, but passes it easily off-hours. the implication being that capacity constraints are silently degrading model quality during peak times. and the community's response? u/martin1744 with 198 upvotes: "AMD wrote it down so Anthropic can't gaslight us anymore." the word gaslight appeared in that thread more times than I'm comfortable with.
+u/IamFondOfHugeBoobies (yes, really) dropped the pragmatist take at 210 upvotes: cancel your $200 sub, you keep the remainder, re-sub if they fix it, but nothing sends feedback like cancelling. this tracks with what we've been seeing all week. the usage limit saga is now a full-blown retention crisis playing out in public.
+
+what makes this thread different from the usual complaint posts is the tone. it's not rage. it's disappointment from someone who clearly loves the product. and that hits harder.
 
 ## repo of the day
 
-no blockbuster repo drop today, but two small tools caught my eye.
+**Orca** by stablyai ([github.com/stablyai/orca](https://github.com/stablyai/orca))
 
-**Repowise** (shared by u/unknown in r/ClaudeCode, 5 upvotes) tackles a real problem: every Claude Code session on a large codebase starts with the model reading your file tree, opening 20 files, tracing imports, and burning context window before doing actual work. Repowise pre-indexes your codebase so the model starts with understanding instead of exploration. the claim is 50% less token usage on 50k+ LOC projects. small upvote count but the problem it solves is universal.
+posted by someone in r/ClaudeCode with the title The Claude/Codex situation right now... alongside a meme of getting beaten up. 81 upvotes, 30 comments.
 
-**envcc** (r/ClaudeCode, 2 upvotes) is a simple CLI for managing Claude Code environment variables. pulls current variables with descriptions from Anthropic's docs and lets you set them in JSON. nothing fancy. that's the point. the author explicitly said existing env managers are too complex. sometimes the right tool is the boring one.
+Orca adds usage tracking and fast account switching for both Claude and Codex. the pitch: if you're getting throttled on one account, swap to another without leaving your terminal. it's the kind of tool that shouldn't need to exist but absolutely does right now. when your $200/month plan hits 95% in under an hour, having a second account ready to roll is just operational hygiene.
+
+the comments went in a different direction though. "you will see the real price after IPO" and "if energy gets more expensive our models will also get more expensive." pragmatic crowd today.
 
 ## best comment award
 
-> Anthrophic has been using Mythos internally since February and we all know there have been 0 bugs in the features they shipped since then
+> McKinsey isn't selling research. They're selling a liability shield and a scapegoat for layoffs.
 
-u/Hungry_Audience_4901, 352 upvotes, on the "Mythos is Just Damage Control After the Leak" thread.
+u/Jinh, 928 upvotes, on Firecrawl + Claude just replaced McKinsey consultants
 
-this wins because it operates on two levels simultaneously. on the surface it reads like a defense of Mythos. then you remember the current state of the product. the spelling of "Anthrophic" is the cherry on top. intentional or not, it lands. this is the kind of comment that makes both sides of the debate laugh and then immediately start arguing about what it means.
+this comment won because it did in one sentence what the original post couldn't do in several paragraphs. someone posted a breathless thread about how Firecrawl plus Claude replaces $300,000 McKinsey engagements. the community was already suspicious (u/gerira clocked it as a mindless ad for Firecrawl at 140 upvotes). but u/Jinh didn't just call out the hype. they articulated the actual value proposition of consulting that AI genuinely cannot replace: political cover. nobody gets fired for hiring McKinsey. that's the product. 928 people understood this immediately.
 
 ## troll of the day
 
-> Skill issue bro! what's your claude.md? what's your /context?
+> I just barely scratch the surface and vibecoded 6 apps on the max plan I even reduced it to the 100$ version because 200 was overkill. What are you guys doing? Do you feed it a 500 pdf that's just images every prompt?
 
-anonymous r/ClaudeCode commenter responding to someone paying €100/month whose model can't proofread emails anymore.
+u/Silpher9, 383 upvotes, on I pay $200/month for Claude Max and hit the limit in under 1 hour
 
-love this energy. someone's paying triple digits a month and the model is inserting typos into their email drafts, and the community response is essentially "have you tried being better at prompting?" we've reached the phase of AI adoption where the product degrading is somehow the user's fault. this is the "you're holding it wrong" era of language models and we're all just living in it.
+the absolute audacity of walking into a thread where someone is melting down about hitting limits in 45 minutes and saying actually I downgraded because I had too much. this is the equivalent of responding to someone complaining about rent prices by saying "have you tried simply owning property?" and getting 383 upvotes for it. the beautiful part is they might be right. if you're vibecoding six apps from scratch versus iterating on a complex existing codebase, the token math is completely different. but reading the room? zero points.
 
 ## fun facts
 
-- the word "canceled" (or "cancelling" or "just canceled") appeared in **5 separate post titles** today across r/ClaudeCode alone. saturday is breakup day apparently.
-- the Mythos roommate post from yesterday crossed 3,372 upvotes, making it roughly 57x more popular than the most upvoted actual Claude Code tool shared today (5 upvotes for Repowise). drama outperforms utility by a factor of 57. write that down.
-- someone posted "Super Claude is back, America is asleep!" in r/ClaudeCode. the top response? a CST user saying they never sleep anymore. the off-hours quality gap is becoming its own lore.
-- the phrase "destructive junior dev" was used to describe Opus 4.6 with high effort enabled. high effort. the premium reasoning mode. junior dev.
-- 156 posts tracked today, and the total upvote-to-post ratio is 73.8. yesterday's biggest single post (the roommate story) has more upvotes than 95% of today's posts combined. saturday really is the B-side.
+- the word "nerfed" appeared in 14 separate post titles today. we've moved past suspicion into accepted lore.
+- r/ClaudeCode's average post sentiment today was negative across every single time bucket. saturday is supposed to be building day. it was grieving day.
+- the Anthropic: Stop shipping post generated 316 total comments across two subreddits but the comments are weirdly civil. 1,800 combined upvotes and almost no one is trolling. that's how you know it's real.
+- someone posted I coded by hand for the first time in months and it felt beautiful with 6 upvotes and zero comments. the loneliest post on the board today, and somehow the most relatable.
+- the hidden `fallback-percentage: 0.5` header post got an update at 11pm confirming the issue is now fixed after 11,505 API calls of independent replication. community-driven QA works faster than filing a support ticket.
 
 ## code drop
 
-no clean code snippet dropped today, but the most actionable technical pattern came from the AMD GitHub issue discussion. multiple users confirmed that Claude Code performance varies significantly by time of day, suggesting capacity-based model degradation. u/ketosoy's testing methodology is worth stealing:
+the most actionable technical finding today comes from the phantom token bug post. if you're on Claude Code versions 2.1.100 or 2.1.101, you're burning approximately 20,000 extra tokens per request on the server side. invisible to you. very visible to your quota.
 
-```
-test the same prompt at different times:
-- business hours (9am-5pm ET): extended thinking ON
-- off hours (11pm-6am ET): extended thinking OFF
+the fix:
 
-compare outputs on a known-good benchmark task
-(ketosoy uses "the car wash test" - unclear what this is
-but the methodology of time-slicing your quality checks
-is the real takeaway)
+```bash
+# pin to the last stable version
+npm install -g @anthropic-ai/claude-code@2.1.98
 ```
 
-if you're doing serious work with Claude Code right now, the builder move is to establish your own regression test. pick a task the model used to nail. run it periodically. log the output quality. Stella Laurenzo tracked 7,000 sessions. you don't need 7,000. you need 10 consistent ones across different times of day to know if what you're experiencing is real or confirmation bias.
+and for the model quality issue, people are finding real results with:
+
+```
+/model claude-opus-4-5-20251101
+```
+
+this switches you to the older Opus 4.5 inside Claude Code. 162 upvotes on that discovery with comments confirming faster output (~100 tokens/sec) and noticeably better reasoning. it won't fix the token burn, but it fixes the "why does my AI sound like it's having a stroke" problem.
+
+combine both: pin the CLI version AND swap the model. belt and suspenders for a product that apparently needs both right now.
 
 ## builder takeaways
 
-- **benchmark your own usage.** the AMD issue proves that structured data beats forum complaints. pick 3 tasks Claude Code handles regularly for you, run them at different times, and log the results. if quality is degrading, you'll have evidence. if it's not, you'll stop worrying.
-- **pre-index large codebases.** Repowise and similar tools that give Claude Code context before it starts exploring can cut token usage significantly on big projects. if you're on Max and burning through limits, this is the lowest-hanging optimization.
-- **off-hours might genuinely be better.** multiple independent reports today confirm that model quality improves during low-traffic periods. if you have flexibility in when you work, experiment with early morning or late night sessions.
-- **the env variable CLI (envcc) exists now.** if you've been manually editing Claude Code environment configs, there's a tool for that. simple, does one thing.
-- **if you're hitting Max limits in under an hour, audit your context window.** the $200/month user burning through limits that fast is likely sending massive context with every request. /clear between tasks, scope your conversations, and stop feeding the model your entire codebase every prompt.
+- **pin your Claude Code version to 2.1.98** if you haven't already. versions 2.1.100 and 2.1.101 have a confirmed phantom token bug burning ~20k extra tokens per request server-side. that explains the sudden quota explosions.
+- **try `/model claude-opus-4-5-20251101`** for complex engineering work. multiple users confirmed it produces dramatically better output than current Opus 4.6. the tradeoff is the model is older, but apparently older and functional beats newer and lobotomized.
+- **the cache TTL change on March 6th is real.** if your API costs spiked in March, this is likely why. cache went from 1 hour to 5 minutes, meaning repeated calls that used to hit cache are now full-price. plan your batching accordingly.
+- **stop resuming old chats.** u/only_anp's tip at 129 upvotes: resuming a long conversation burns massive tokens just to reload context. start fresh sessions for new tasks, even if they're related to previous work.
+- **if you're going to cancel, do it strategically.** you keep access through the end of your billing period. Anthropic sees cancellation metrics faster than they read reddit threads. the community is treating this as the most effective feedback mechanism available.
 
 ## the scoreboard
 
-| metric | today |
+| metric | count |
 |---|---|
-| posts tracked | 156 |
-| total upvotes | 11,518 |
-| total comments | 3,744 |
-| fastest rising | AMD AI directors analysis confirms lobotomization of Claude (velocity: 184.18) |
-| most debated | Anthropic is now banning people under 18 (358 comments on 898 upvotes, ratio: 0.40) |
-| returning posts in top 10 | 5 of 10 |
-| subreddits scanned | ClaudeCode, vibecoding, ClaudeAI, GTMbuilders, gtmengineering |
-| cancellation posts today | 5 |
-| days since usage limit complaints started | 19 |
+| posts tracked | 163 |
+| total upvotes | 11,934 |
+| total comments | 4,167 |
+| fastest rising | Mythos for me, nerfed Opus for you (870 velocity) |
+| most debated | Anthropic is now banning people who are under 18 (471 comments on 1,149 upvotes) |
+| subreddits scanned | r/ClaudeCode, r/ClaudeAI, r/vibecoding, r/gtmengineering, r/GTMbuilders |
+| returning heavy hitters | AMD lobotomization (1,750), $200/month limit thread (747), medical emergency (1,304) |
+
+the usage limit complaint counter is now at 26 days running. at this point it's not a running gag. it's a running crisis.
 
 shawn, the gtme alchemist 🧙‍♂️
