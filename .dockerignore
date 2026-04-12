@@ -1,0 +1,28 @@
+# Git
+.git
+
+# Node
+**/node_modules
+**/.next
+**/.turbo
+
+# Env and secrets
+.env*
+**/.env*
+clients/
+
+# Build artifacts
+**/*.log
+**/.vercel
+**/tsconfig.tsbuildinfo
+
+# Non-web dirs not needed for shawnos build
+scripts/
+_archive/
+docs/
+tasks/
+skills/
+.claude/
+.cursor/
+.github/
+gtm-os/
