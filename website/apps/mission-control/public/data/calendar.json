@@ -1,6 +1,149 @@
 {
-  "generated": "2026-04-12T04:16:41.089Z",
+  "generated": "2026-04-13T04:17:13.151Z",
   "events": [
+    {
+      "id": "commit-7bae433",
+      "title": "feat: claude daily digest 2026-04-12",
+      "type": "milestone",
+      "datetime": "2026-04-13T00:16:37-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-12",
+      "metadata": {
+        "commitHash": "7bae433"
+      }
+    },
+    {
+      "id": "commit-32a983c",
+      "title": "chore: sync Reddit cache — 46 posts (2026-04-12 19:23)",
+      "type": "system",
+      "datetime": "2026-04-12T19:23:48-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 46 posts (2026-04-12 19:23)",
+      "metadata": {
+        "commitHash": "32a983c"
+      }
+    },
+    {
+      "id": "commit-a4bc1c1",
+      "title": "chore(crypto): evening signal update 2026-04-12",
+      "type": "system",
+      "datetime": "2026-04-12T17:30:06-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-04-12",
+      "metadata": {
+        "commitHash": "a4bc1c1"
+      }
+    },
+    {
+      "id": "commit-d34bad6",
+      "title": "feat: claude daily digest 2026-04-12",
+      "type": "milestone",
+      "datetime": "2026-04-12T10:11:34-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-12",
+      "metadata": {
+        "commitHash": "d34bad6"
+      }
+    },
+    {
+      "id": "commit-1078722",
+      "title": "feat: daily LinkedIn posts 2026-04-12",
+      "type": "milestone",
+      "datetime": "2026-04-12T09:10:45-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-04-12",
+      "metadata": {
+        "commitHash": "1078722"
+      }
+    },
+    {
+      "id": "commit-d9553b8",
+      "title": "feat: nio.log 2026-04-12 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-04-12T08:01:11-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-04-12 — automated daily post",
+      "metadata": {
+        "commitHash": "d9553b8"
+      }
+    },
+    {
+      "id": "commit-497b4a9",
+      "title": "chore: sync Reddit cache — 46 posts (2026-04-12 07:23)",
+      "type": "system",
+      "datetime": "2026-04-12T07:23:27-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 46 posts (2026-04-12 07:23)",
+      "metadata": {
+        "commitHash": "497b4a9"
+      }
+    },
+    {
+      "id": "commit-7eed46f",
+      "title": "chore(crypto): morning signal update 2026-04-12",
+      "type": "system",
+      "datetime": "2026-04-12T07:00:07-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-04-12",
+      "metadata": {
+        "commitHash": "7eed46f"
+      }
+    },
+    {
+      "id": "commit-787c587",
+      "title": "fix: correct standalone server.js path — apps/ not website/a",
+      "type": "deployment",
+      "datetime": "2026-04-12T02:56:36-04:00",
+      "status": "completed",
+      "description": "fix: correct standalone server.js path — apps/ not website/apps/",
+      "metadata": {
+        "commitHash": "787c587"
+      }
+    },
+    {
+      "id": "commit-f1d41b4",
+      "title": "debug: add ls step to Dockerfile to diagnose server.js path",
+      "type": "system",
+      "datetime": "2026-04-12T02:50:16-04:00",
+      "status": "completed",
+      "description": "debug: add ls step to Dockerfile to diagnose server.js path",
+      "metadata": {
+        "commitHash": "f1d41b4"
+      }
+    },
+    {
+      "id": "commit-117791c",
+      "title": "fix: move railway.json to repo root for auto-detection",
+      "type": "deployment",
+      "datetime": "2026-04-12T02:12:02-04:00",
+      "status": "completed",
+      "description": "fix: move railway.json to repo root for auto-detection",
+      "metadata": {
+        "commitHash": "117791c"
+      }
+    },
+    {
+      "id": "commit-4817ff6",
+      "title": "chore(shawnos): add Dockerfile + railway.json for Railway mi",
+      "type": "system",
+      "datetime": "2026-04-12T02:00:35-04:00",
+      "status": "completed",
+      "description": "chore(shawnos): add Dockerfile + railway.json for Railway migration",
+      "metadata": {
+        "commitHash": "4817ff6"
+      }
+    },
+    {
+      "id": "commit-5098341",
+      "title": "chore: daily tracker scan 2026-04-11",
+      "type": "system",
+      "datetime": "2026-04-12T00:16:41-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-04-11",
+      "metadata": {
+        "commitHash": "5098341"
+      }
+    },
     {
       "id": "commit-3bef779",
       "title": "feat: claude daily digest 2026-04-11",
@@ -21,149 +164,6 @@
       "description": "chore: sync Reddit cache — 46 posts (2026-04-11 19:22)",
       "metadata": {
         "commitHash": "f0b7650"
-      }
-    },
-    {
-      "id": "commit-fb1a55e",
-      "title": "chore(crypto): evening signal update 2026-04-11",
-      "type": "system",
-      "datetime": "2026-04-11T17:30:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-04-11",
-      "metadata": {
-        "commitHash": "fb1a55e"
-      }
-    },
-    {
-      "id": "commit-e44ae2c",
-      "title": "feat: claude daily digest 2026-04-11",
-      "type": "milestone",
-      "datetime": "2026-04-11T10:13:16-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-04-11",
-      "metadata": {
-        "commitHash": "e44ae2c"
-      }
-    },
-    {
-      "id": "commit-1a314a6",
-      "title": "feat: daily LinkedIn posts 2026-04-11",
-      "type": "milestone",
-      "datetime": "2026-04-11T09:09:28-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-04-11",
-      "metadata": {
-        "commitHash": "1a314a6"
-      }
-    },
-    {
-      "id": "commit-8132f64",
-      "title": "feat: nio.log 2026-04-11 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-04-11T08:01:00-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-04-11 — automated daily post",
-      "metadata": {
-        "commitHash": "8132f64"
-      }
-    },
-    {
-      "id": "commit-3e186c5",
-      "title": "chore: sync Reddit cache — 46 posts (2026-04-11 07:22)",
-      "type": "system",
-      "datetime": "2026-04-11T07:22:33-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 46 posts (2026-04-11 07:22)",
-      "metadata": {
-        "commitHash": "3e186c5"
-      }
-    },
-    {
-      "id": "commit-f497447",
-      "title": "chore(crypto): morning signal update 2026-04-11",
-      "type": "system",
-      "datetime": "2026-04-11T07:00:05-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-04-11",
-      "metadata": {
-        "commitHash": "f497447"
-      }
-    },
-    {
-      "id": "commit-e1a86fc",
-      "title": "chore: daily tracker scan 2026-04-10",
-      "type": "system",
-      "datetime": "2026-04-11T00:16:55-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-04-10",
-      "metadata": {
-        "commitHash": "e1a86fc"
-      }
-    },
-    {
-      "id": "commit-1698cb3",
-      "title": "feat: claude daily digest 2026-04-10",
-      "type": "milestone",
-      "datetime": "2026-04-11T00:16:18-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-04-10",
-      "metadata": {
-        "commitHash": "1698cb3"
-      }
-    },
-    {
-      "id": "commit-9475e34",
-      "title": "chore: sync Reddit cache — 45 posts (2026-04-10 19:22)",
-      "type": "system",
-      "datetime": "2026-04-10T19:22:13-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 45 posts (2026-04-10 19:22)",
-      "metadata": {
-        "commitHash": "9475e34"
-      }
-    },
-    {
-      "id": "commit-17115ee",
-      "title": "chore(crypto): evening signal update 2026-04-10",
-      "type": "system",
-      "datetime": "2026-04-10T17:30:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-04-10",
-      "metadata": {
-        "commitHash": "17115ee"
-      }
-    },
-    {
-      "id": "commit-7194dd3",
-      "title": "feat: claude daily digest 2026-04-10",
-      "type": "milestone",
-      "datetime": "2026-04-10T10:13:58-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-04-10",
-      "metadata": {
-        "commitHash": "7194dd3"
-      }
-    },
-    {
-      "id": "commit-209eaf5",
-      "title": "feat: daily LinkedIn posts 2026-04-10",
-      "type": "milestone",
-      "datetime": "2026-04-10T09:09:29-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-04-10",
-      "metadata": {
-        "commitHash": "209eaf5"
-      }
-    },
-    {
-      "id": "commit-df9d5f3",
-      "title": "feat: nio.log 2026-04-10 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-04-10T08:01:01-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-04-10 — automated daily post",
-      "metadata": {
-        "commitHash": "df9d5f3"
       }
     }
   ],
