@@ -15,7 +15,23 @@ COPY --from=deps /app/website/node_modules ./website/node_modules
 COPY website/ ./website/
 COPY content/ ./content/
 COPY data/ ./data/
+
+# NEXT_PUBLIC_* env vars are inlined at build time. Declared as ARG so
+# Railway (and any other Docker builder) can pass them through via
+# --build-arg. Railway passes all matching service Variables automatically
+# when the Dockerfile declares the ARG.
+ARG NEXT_PUBLIC_POSTHOG_KEY
+ARG NEXT_PUBLIC_POSTHOG_HOST
+ARG NEXT_PUBLIC_SITE_URL
+ARG NEXT_PUBLIC_STRIPE_SECRET_KEY
+ARG NEXT_PUBLIC_VERCEL_OBSERVABILITY_BASEPATH
+ENV NEXT_PUBLIC_POSTHOG_KEY=$NEXT_PUBLIC_POSTHOG_KEY
+ENV NEXT_PUBLIC_POSTHOG_HOST=$NEXT_PUBLIC_POSTHOG_HOST
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+ENV NEXT_PUBLIC_STRIPE_SECRET_KEY=$NEXT_PUBLIC_STRIPE_SECRET_KEY
+ENV NEXT_PUBLIC_VERCEL_OBSERVABILITY_BASEPATH=$NEXT_PUBLIC_VERCEL_OBSERVABILITY_BASEPATH
 ENV NEXT_TELEMETRY_DISABLED=1
+
 RUN cd website && npx turbo run build --filter=@shawnos/web
 
 FROM node:20-alpine AS runner
