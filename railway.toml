@@ -1,0 +1,19 @@
+[build]
+builder = "NIXPACKS"
+buildCommand = "cd website && npm install && npm run build --workspace=apps/shawnos"
+
+[deploy]
+startCommand = "cd website/apps/shawnos && node .next/standalone/server.js"
+healthcheckPath = "/"
+healthcheckTimeout = 30
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3
+
+# Required environment variables (set in Railway dashboard, not here):
+#   NEXT_PUBLIC_POSTHOG_KEY=phc_zlJOdh1FPyUXLHSWVQITPRFZxGIrGdHonI5mlUJupJC
+#   NEXT_PUBLIC_POSTHOG_HOST=https://us.posthog.com  (optional, /ingest rewrite handles it)
+#   NODE_ENV=production
+#   PORT set by Railway
+#
+# Any other NEXT_PUBLIC_* vars the old Vercel deploy used should be copied over.
+# Run `grep -r "process.env.NEXT_PUBLIC_" website/apps/shawnos website/packages` to enumerate.

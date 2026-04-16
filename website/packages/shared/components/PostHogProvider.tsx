@@ -2,7 +2,44 @@
 
 import posthog from "posthog-js"
 import { PostHogProvider as PHProvider } from "posthog-js/react"
-import { useEffect } from "react"
+import { Suspense, useEffect } from "react"
+import { usePathname, useSearchParams } from "next/navigation"
+
+// Map a pathname to a coarse page_type so HogQL queries can filter without URL parsing.
+function derivePageType(pathname: string): string {
+  const withoutLocale = pathname.replace(/^\/[a-z]{2}(\/|$)/, "/")
+  const segs = withoutLocale.split("/").filter(Boolean)
+  if (segs.length === 0) return "home"
+  return segs[0]
+}
+
+function deriveSlug(pathname: string): string | undefined {
+  const withoutLocale = pathname.replace(/^\/[a-z]{2}(\/|$)/, "/")
+  const segs = withoutLocale.split("/").filter(Boolean)
+  if (segs.length >= 2) return segs[segs.length - 1]
+  return undefined
+}
+
+function PostHogPageview() {
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    if (!pathname) return
+    if (typeof window === "undefined") return
+    const page_type = derivePageType(pathname)
+    const slug = deriveSlug(pathname)
+    const qs = searchParams?.toString() ?? ""
+    const url = window.location.origin + pathname + (qs ? `?${qs}` : "")
+    posthog.capture("$pageview", {
+      $current_url: url,
+      page_type,
+      ...(slug ? { slug } : {}),
+    })
+  }, [pathname, searchParams])
+
+  return null
+}
 
 export function PostHogProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
@@ -13,7 +50,10 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
       api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "/ingest",
       person_profiles: "identified_only",
       autocapture: false,
-      capture_pageview: true,
+      // Manual pageviews via <PostHogPageview /> below — keeps App Router
+      // SPA transitions accurate and attaches page_type + slug.
+      capture_pageview: false,
+      capture_pageleave: true,
       session_recording: {
         maskAllInputs: true,
       },
@@ -22,11 +62,11 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
 
         // Set internal cookie via URL param (works on any device/browser)
         const params = new URLSearchParams(window.location.search)
-        if (params.get('_shawnos') === '1') {
-          document.cookie = 'shawnos_internal=1; max-age=31536000; path=/; SameSite=Lax'
-          params.delete('_shawnos')
+        if (params.get("_shawnos") === "1") {
+          document.cookie = "shawnos_internal=1; max-age=31536000; path=/; SameSite=Lax"
+          params.delete("_shawnos")
           const clean = params.toString()
-          window.history.replaceState({}, '', window.location.pathname + (clean ? '?' + clean : ''))
+          window.history.replaceState({}, "", window.location.pathname + (clean ? "?" + clean : ""))
         }
 
         const isInternal =
@@ -37,7 +77,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
         }
 
         // Persist UTM params as super properties (carry across all events)
-        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const
+        const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"] as const
         const utmProps: Record<string, string> = {}
         for (const key of utmKeys) {
           const val = params.get(key)
@@ -50,5 +90,12 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     })
   }, [])
 
-  return <PHProvider client={posthog}>{children}</PHProvider>
+  return (
+    <PHProvider client={posthog}>
+      <Suspense fallback={null}>
+        <PostHogPageview />
+      </Suspense>
+      {children}
+    </PHProvider>
+  )
 }

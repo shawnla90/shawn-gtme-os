@@ -4,8 +4,6 @@ import { notFound } from 'next/navigation'
 import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC, Noto_Sans_JP } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow } from '@shawnos/shared/components'
 import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
-import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { FooterCredit } from '../FooterCredit'
 import { NioChat } from '../NioChat'
 import { FeedbackButton } from '../components/FeedbackButton'
@@ -174,7 +172,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} dir={dir} className={`${jetbrains.variable} ${bricolage.variable} ${locale === 'he' ? heebo.variable : ''} ${locale === 'zh' ? notoSansSC.variable : ''} ${locale === 'ja' ? notoSansJP.variable : ''}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <script async src="https://p.midbound.click/Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk" />
+        <script async src="https://p.midbound.click/NRC8Bv4PYbYXzehqnFz5liiX1hM4ObRv" />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
@@ -235,8 +233,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <NioChat />
         <FeedbackButton />
         <CursorGlow />
-        <Analytics />
-        <SpeedInsights />
         </PostHogProvider>
         </ThemeProvider>
         </NextIntlClientProvider>
