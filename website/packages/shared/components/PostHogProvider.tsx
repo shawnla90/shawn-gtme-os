@@ -47,7 +47,12 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     if (!process.env.NEXT_PUBLIC_POSTHOG_KEY) return
 
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "/ingest",
+      // Hit PostHog's origin directly. The /ingest rewrite fails with
+      // Cloudflare Error 1000 because both shawnos.ai and posthog are behind CF
+      // and the server-side proxy loop is blocked. Trade off: ad blockers will
+      // catch direct hits. Re-enable the rewrite once the CF proxy is fixed.
+      api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST || "https://us.i.posthog.com",
+      ui_host: "https://us.posthog.com",
       person_profiles: "identified_only",
       autocapture: false,
       // Manual pageviews via <PostHogPageview /> below — keeps App Router

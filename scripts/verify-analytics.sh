@@ -52,12 +52,20 @@ else
   FAIL=1
 fi
 
-# 3. PostHog /ingest rewrite works (proxy returns the SDK array.js)
-js=$(curl -sS "$SITE/ingest/static/array.js" | head -c 200)
-if [[ -n "$js" ]] && grep -q -E "posthog|function" <<<"$js"; then
-  green "✓ 3/4  /ingest rewrite responds with PostHog SDK"
+# 3. PostHog is referenced in at least one shipped JS chunk
+chunks=$(curl -sS "$SITE" | grep -oE '_next/static/chunks/[^"]+\.js' | head -20)
+found=0
+for c in $chunks; do
+  cnt=$(curl -sS "$SITE/$c" | grep -oc posthog || true)
+  if [[ "${cnt:-0}" != "0" ]]; then
+    found=1
+    break
+  fi
+done
+if [[ "$found" -eq 1 ]]; then
+  green "✓ 3/4  PostHog client SDK bundled into Next.js chunks"
 else
-  red   "✗ 3/4  /ingest rewrite broken (${#js} bytes returned)"
+  red   "✗ 3/4  PostHog not found in any shipped JS chunk"
   FAIL=1
 fi
 
