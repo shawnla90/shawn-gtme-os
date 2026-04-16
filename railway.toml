@@ -1,9 +1,9 @@
 [build]
 builder = "NIXPACKS"
-buildCommand = "cd website && npm install && npm run build --workspace=apps/shawnos"
+buildCommand = "bash -lc 'cd website && npm install && npm run build --workspace=apps/shawnos'"
 
 [deploy]
-startCommand = "cd website/apps/shawnos && node .next/standalone/server.js"
+startCommand = "bash scripts/start-railway.sh"
 healthcheckPath = "/"
 healthcheckTimeout = 30
 restartPolicyType = "on_failure"
