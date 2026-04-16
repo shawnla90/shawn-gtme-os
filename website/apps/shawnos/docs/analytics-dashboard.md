@@ -4,7 +4,7 @@ PostHog project: **325806** (US cloud)
 Read API key: stored in `POSTHOG_READ_KEY` env / 1Password. Not committed.
 Query endpoint: `POST https://us.posthog.com/api/projects/325806/query/`
 
-Midbound script key (live): `NRC8Bv4PYbYXzehqnFz5liiX1hM4ObRv`
+Midbound script key (live): `Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk`
 
 ## Event model
 

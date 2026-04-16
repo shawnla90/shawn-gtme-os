@@ -14,7 +14,7 @@ if [[ -z "$POSTHOG_KEY" ]]; then
   exit 2
 fi
 
-MIDBOUND_KEY="NRC8Bv4PYbYXzehqnFz5liiX1hM4ObRv"
+MIDBOUND_KEY="Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk"
 
 red()   { printf "\033[1;31m%s\033[0m\n" "$*"; }
 green() { printf "\033[1;32m%s\033[0m\n" "$*"; }

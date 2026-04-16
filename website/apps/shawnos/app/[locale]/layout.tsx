@@ -172,7 +172,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} dir={dir} className={`${jetbrains.variable} ${bricolage.variable} ${locale === 'he' ? heebo.variable : ''} ${locale === 'zh' ? notoSansSC.variable : ''} ${locale === 'ja' ? notoSansJP.variable : ''}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-        <script async src="https://p.midbound.click/NRC8Bv4PYbYXzehqnFz5liiX1hM4ObRv" />
+        <script async src="https://p.midbound.click/Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk" />
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>
