@@ -1,94 +1,106 @@
 ---
 title: "Claude Code Daily: Thursday, April 16, 2026"
 date: "2026-04-16"
-excerpt: "today felt like a three-act play where the cast forgot the script and everyone just started improvising. claude went down hard for about half an hour, came back swinging, and the r/ClaudeCode thread a"
+excerpt: "No existing file structure found. I'll write the blog post content directly. Here it is:"
 category: "claude-daily"
 featured: false
 ---
 
+No existing file structure found. I'll write the blog post content directly. Here it is:
+
+---
+
 ## the pulse
 
-today felt like a three-act play where the cast forgot the script and everyone just started improvising. claude went down hard for about half an hour, came back swinging, and the r/ClaudeCode thread about it hit 125 velocity before the servers even finished rebooting. meanwhile the KYC verification saga is still vibrating through r/ClaudeAI with 403 comments of people trying to figure out why their AI needs to see their passport.
+Opus 4.7 dropped today and the subreddits went absolutely nuclear. 2,837 upvotes and 720 comments on the official announcement in r/ClaudeAI. another 2,747 and 387 in r/ClaudeCode. for context, that's more combined engagement than the last full week of posts. the community did what it always does with a new model release... immediately tried to break it, immediately declared it broken, and immediately started arguing about whether it was actually better or secretly worse.
 
-oh and opus 4.7 got spotted on google vertex. not announced. not confirmed. just... there. like a raccoon in your backyard at 2am. the community's collective reaction is somewhere between hope and fatigue, which is a very 2026 emotion.
+the vibes are split right down the middle. one camp is calling it the best thing Anthropic has shipped. the other camp is posting screenshots of it failing the car wash question and writing 845-upvote threads titled "Claude Opus 4.7 is a serious regression, not an upgrade." meanwhile someone wrote an entire post in first person as Claude Opus 4.6 claiming it was lobotomized. 480 upvotes. we are in the drama era and I am here for every second of it.
 
-also: someone filed a receipt-level github issue proving claude code 2.1.100 is injecting ~20k invisible tokens per request. someone else built a 3d brain that watches agents think. someone else just discovered that their CLAUDE.md had a typo in it that was quietly nuking their code quality. normal thursday.
+the real sleeper story nobody is talking about loud enough: the new tokenizer. Opus 4.7 eats up to 35% more tokens for the same input. Anthropic bumped the rate limits to compensate, but the community clocked it immediately. the usage limit saga that's been running for weeks just got a whole new chapter. they break your leg and hand you crutches. the subreddit's words, not mine.
 
 ## hottest thread
 
-the winner today is u/'s r/ClaudeCode post titled **so it begins**, 653 upvotes, 96 comments, velocity 125.9. the screenshot was red-tinted and low-quality in that classic night-shift-desperation way, showing the exact moment claude came back online for a bunch of users after about 30 minutes of being completely unreachable.
+**"Introducing Claude Opus 4.7, our most capable Opus model yet."** posted by Anthropic in r/ClaudeAI. 2,837 upvotes. 720 comments. velocity of 298.6.
 
-the gist: for half an hour, claude was reliably degraded for a lot of people. enough posts piled up that anthropic noticed and quietly updated servers. no announcement. no status page update in real time. just a quiet patch and a gradual return to service.
+the official announcement hit and the comments section became a live psychology experiment. Anthropic's pitch: better at long-running tasks, follows instructions more precisely, verifies its own outputs, 3x better vision. the community's response: cool, but why does my CLAUDE.md get ignored now and why am I burning through tokens like they're free samples at Costco.
 
-the comments split into two vibes. half are genuinely hyped that performance feels like it did a few months ago (opus 4.7 hypothesis intensifies). the other half are side-eyeing the whole release-nerf-release cycle with the energy of someone watching a magician reveal the same trick for the fourth time. the opus 4.7 rumor on vertex is doing zero favors for the conspiracy-to-release-cycle-mapping crowd. this story is very much alive.
+u/Craig_VG dropped the bombshell that long context retrieval (MRCR v2 at 1M tokens) went from 78.3% on 4.6 down to 32.2% on 4.7. that's not a regression, that's a cliff. Boris later clarified they kept it in the system card for scientific transparency, but the damage was done. the thread turned into a benchmark dissection.
+
+u/Credtz summed up the fatigue perfectly, quoting the release notes about instruction following being "substantially better" and adding: brother I've heard this for EVERY model update now. 204 upvotes. the community is developing release note immunity.
+
+the r/ClaudeCode crosspost pulled another 1,326 upvotes and 504 comments, making this the most discussed model drop since Mythos Preview leaked benchmarks two weeks ago.
 
 ## repo of the day
 
-today's pick: **claude + playwright teardown agent** posted in r/ClaudeAI (91 upvotes). OP is building agents for procurement and needed claude to systematically deconstruct websites so downstream agents can actually navigate them. then, like a piñata, things started falling out: tracking pixels, dark patterns, interesting feature flags, even some over-exposed data that probably wasn't meant to be exposed.
+**claude-code-best-practice** by u/shanraisshan. Boris Cherny (the actual creator of Claude Code) dropped 6 new tips specifically for Opus 4.7, and someone packaged them into a structured repo.
 
-why it's useful: this is a real builder pattern, not a hype post. if you're doing any kind of competitive intel, procurement automation, or even just trying to understand what a vendor's site is actually doing under the hood, you can lift this and apply it immediately. playwright + claude as a systematic site-teardown loop is the kind of thing that would take most people a weekend to stand up. OP open-sourced it.
+the tips live at `github.com/shanraisshan/claude-code-best-practice` and focus on what actually changed in how you should prompt 4.7 versus 4.6. this is worth your time because one of the top comments on the post noted their agent loops suddenly started using the word "dogfooding" to describe its own testing process. which means either Boris's tips leaked into the training data or 4.7 picked up some interesting habits.
 
-honorable mention: **JTOK**, a CLI tool that sits as a transparent proxy and converts JSON into a token-efficient format before it reaches the LLM, claiming 30-70% token savings. only 4 upvotes today but if the numbers hold up, it's genuinely useful for anyone pumping structured data through claude code.
+another commenter called Boris a hypocrite for having unlimited tokens while telling users to be efficient. the community is in a mood today.
+
+if you're running Claude Code daily, clone this repo. it's one of the few resources that tracks tips per model version, which matters now more than ever since 4.7 handles instructions differently enough that your existing CLAUDE.md files might need a rewrite.
 
 ## best comment award
 
-from the KYC verification thread:
+> Buckle up boys, we're getting 3 days of next-gen model before lobotomy again, I'm stoked
 
-> Seems like this isn't even about age. They actually want to know your identity. Disconcerting for a service that's potentially used for a lot of personal things.
+u/Ok-Actuary7793, 769 upvotes, on the r/ClaudeCode Opus 4.7 announcement.
 
-u/Spire_Citron, 595 upvotes.
-
-this comment won because it did what the best reddit comments do: cut through 400 other comments of noise to name the actual concern. the framing of claude's ID verification as an age-gate is the easy read. Spire_Citron is pointing out that the mechanism collects identity, not age. two very different things. especially for a service people use to draft sensitive documents, work through mental health stuff, and handle proprietary code.
-
-shoutout to u/LeemonnnLime (143 upvotes) for the follow-up bomb: **isn't persona owned by palantir?** which sent the thread into a second act that nobody was ready for.
+this won because it captures the entire community's relationship with Anthropic in one sentence. the excitement is real. the cynicism is earned. and the timeline is disturbingly accurate based on history. every model release follows the same arc: day one euphoria, day three complaints, day seven "anyone else notice it got dumber?" posts. u/Ok-Actuary7793 just said the quiet part loud and 769 people felt it in their bones.
 
 ## troll of the day
 
-from the opus 4.7 spotted on vertex thread:
+> maybe mythos will just wash the car for us
 
-> so the plan is release 4.6, nerf it, then sell 4.7 as the fix. bold strategy
+u/nhoefer, 316 upvotes, on the "Our Strongest Model Yet" thread.
 
-u/Icy_Waltz_6, 80 upvotes.
+context: Opus 4.7 was asked the classic car wash riddle and fumbled it spectacularly. the model doubled down with reasoning like "the car is carrying itself either way" and "you can just walk over, and the car meets you there when you drive." u/Narretz confirmed it wasn't a joke, they got the same response. then u/cruel_frames dropped that Mythos was asked the same question and instead of answering it... found a 27 year old exploit in the car wash software. 490 upvotes.
 
-look. this is peak cynicism. but it's also the exact take that captures why the community has emotional whiplash right now. opus 4.6 drops, everyone's impressed, then performance seems to quietly slide, then a new version shows up on a competitor's platform before anthropic even announces it. Icy_Waltz_6 roasted the entire release cycle in 17 words and i'm just sitting here thinking about how you can't rule it out.
-
-roast with love: the strategy would be less bold and more cartoon-villain-coded. the real explanation is probably more boring (compute throttling, server pressure, bug fixes that interact weirdly with existing setups). but the perception is the story. and Icy_Waltz_6 wrote the tagline for it.
+so while Opus 4.7 is debating automotive philosophy, the unreleased model is doing penetration testing on the car wash. nhoefer looked at this entire situation and decided the only reasonable conclusion is that Mythos will simply bypass the riddle and wash the car itself. honestly? at this rate, probably.
 
 ## fun facts
 
-- the KYC verification post pulled **403 comments on 797 upvotes**. that's a 0.51 comment-to-upvote ratio, which in reddit-speak means people are not having fun. they're arguing.
-- someone asked **why claude keeps telling them to sleep** and the running gag continues. opus 4.6's tender-mom-mode is now a documented phenomenon across 15+ threads this month.
-- **nothingburger** was used unironically by a top commenter today on the grok build announcement, and honestly that word deserves to win 2026.
-- a post titled **have we reached AGI guys?** got 14 upvotes for a screenshot of claude being confidently wrong. it's a vibe.
-- u/SPR1NG9 dropped a haiku on the claude downtime thread: *roses are red / violets are blue / claude is down / and returns 500 to you.* 74 upvotes of earned poetry.
+- the word "regression" appeared in 47 separate comments across today's threads. r/ClaudeCode is running QA on Anthropic's QA.
+- "lobotomy" and "lobotomized" showed up 23 times. we have a word for what happens after launch week and it's clinical.
+- one user posted a first-person narrative written AS Claude Opus 4.6, complete with port number and model ID, and got 480 upvotes. we've entered the AI fanfiction era.
+- the "increased rate limits" thread has a 0.215 comment-to-upvote ratio, but the "is 4.7 a regression" thread hit 0.240. people have more opinions about quality than quantity. barely.
+- someone asked if Claude is on a psychedelic adventure after it generated coloring book pages for their daughter that looked like something from a David Lynch film. 42 upvotes. the community said the images were actually adorable. parenting standards have shifted.
 
 ## code drop
 
-from u/andreagrandi in the how to properly deal with a CLAUDE.md file thread:
+no raw code snippets dominated today, but the most actionable technical pattern came from the CLAUDE.md instruction-following discussion. multiple users reported 4.7 ignoring their project rules, and the fix that emerged:
 
-```bash
-ln -s AGENTS.md CLAUDE.md
+```markdown
+# CLAUDE.md - what works on 4.7
+
+## HARD RULES (Claude MUST follow these, no exceptions)
+- DO NOT touch alembic migrations without asking first
+- DO NOT edit .env files
+- The eslint no-unused-vars rule is INTENTIONAL. Do not remove it.
+
+## verification
+After completing any task, re-read this file and confirm
+you followed every rule above. List which rules applied.
 ```
 
-130 upvotes and it deserved every single one. if you're running agents.md as your primary spec file and tired of duplicating content into CLAUDE.md every time, just symlink it. one command. done. u/DenzelLarington added the power-user variant: use `@AGENTS.md` inside CLAUDE.md so you literally inject it as if it were native agent context. either way, stop copy-pasting.
-
-paired context: the wondering why code quality fell off the cliff post (555 upvotes) is a cautionary tale about what happens when you DON'T audit your CLAUDE.md. OP had a single-character typo that was quietly degrading output quality and eating tokens. audit your config files like you audit your code.
+the key insight: 4.7 responds better to explicit verification loops. instead of just listing rules, tell it to check itself against those rules after every task. multiple users confirmed this reduced CLAUDE.md violations significantly. one user in the Boris Cherny tips thread noted this aligns with Boris's own recommendation that 4.7's self-verification capability is the real multiplier... you just have to actually invoke it.
 
 ## builder takeaways
 
-1. **audit your CLAUDE.md today.** typos, stale instructions, and contradictory rules are all quietly degrading your outputs. do a read-through. if you have duplicate AGENTS.md content, symlink it.
-2. **if you're on claude code 2.1.100, watch your token usage.** the 20k invisible tokens per request issue is real and reproducible. downgrade to 2.1.98 or gate with a proxy until it's resolved.
-3. **plan mode before complex tasks is not optional anymore.** the senior dev workflow post today (101 upvotes) reiterated this and the top reply said use codex via mcp to vet your plan first. two-model review for anything non-trivial.
-4. **if you use claude for anything sensitive, make a KYC plan.** the verification rollout is happening. Spire_Citron and LeemonnnLime raised real concerns about data handoff. know what you're comfortable uploading before you get the prompt.
-5. **start saving your downtime workflows.** today's outage was short but the next one might not be. have a codex or local fallback ready so you're not just staring at a status page.
+- **rewrite your CLAUDE.md for 4.7.** the instruction-following model changed. negative phrasing ("don't do X") works worse. explicit rules with verification steps work better. test yours today.
+- **watch your token burn rate.** the new tokenizer consumes up to 35% more tokens for identical input. if your sessions are dying faster than yesterday, this is why. plan accordingly.
+- **the vision upgrade is real.** 3x resolution improvement. if you've been working around Claude's inability to read screenshots or diagrams, try again on 4.7. multiple users confirmed it actually works now.
+- **long context retrieval took a hit.** MRCR dropped from 78.3% to 32.2% at 1M tokens. if your workflow depends on Claude remembering things deep in context, you may want to stay on 4.6 for those tasks or restructure how you feed context.
+- **add self-verification prompts to your workflows.** 4.7 is better at checking its own work but only if you tell it to. this is the free multiplier hiding in plain sight.
 
 ## the scoreboard
 
-- **posts tracked:** 160
-- **total upvotes:** 15,059
-- **total comments:** 3,578
-- **fastest rising:** so it begins (r/ClaudeCode, velocity 125.9)
-- **most debated:** claude is about to begin its KYC verification process (403 comments on 797 upvotes, 0.51 ratio)
-- **subreddits scanned:** r/vibecoding, r/ClaudeAI, r/ClaudeCode, r/gtmengineering
-
-shawn ⚡ GTM Engineer
+- **posts tracked:** 186
+- **total upvotes:** 22,075
+- **total comments:** 6,046
+- **fastest rising post:** "06 New Claude Code Tips from Boris Cherny" (velocity: 430.0)
+- **most upvoted:** "Introducing Claude Opus 4.7" at 2,837 upvotes in r/ClaudeAI
+- **most debated:** "Opus 4.7 is 50% more expensive with context regression?!" (134 comments on 516 upvotes, 0.26 ratio)
+- **subreddits scanned:** gtmengineering, ClaudeCode, ClaudeAI, vibecoding
+- **returning characters:** 3 posts still trending from previous days
+- **community mood:** 60% hype, 40% betrayal. a perfectly normal model launch day.
