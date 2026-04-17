@@ -46,6 +46,11 @@ import { AntiSlopReel60 } from './AntiSlopReel60';
 import { FPS_SLOP, SLOP_TOTAL_FRAMES, SLOP_60_TOTAL_FRAMES } from './lib/timing-antislop';
 import { RoiComparisonVideo } from './RoiComparisonVideo';
 import { FPS_ROI, ROI_TOTAL_FRAMES } from './lib/timing-roi';
+import {
+  ClaudeConnectTeaserStill,
+  ClaudeConnectTeaserAnimated,
+  CLAUDE_CONNECT_TEASER_FRAMES,
+} from './ClaudeConnectTeaser';
 
 export const Root: React.FC = () => {
   return (
@@ -484,6 +489,26 @@ export const Root: React.FC = () => {
         component={RoiComparisonVideo}
         durationInFrames={ROI_TOTAL_FRAMES}
         fps={FPS_ROI}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      {/* ── Claude Connect Teaser (LinkedIn comment drop: Claude → HubSpot + Apollo) ── */}
+
+      <Composition
+        id="ClaudeConnectTeaserStill"
+        component={ClaudeConnectTeaserStill}
+        durationInFrames={1}
+        fps={1}
+        width={PRESETS.linkedin.width}
+        height={PRESETS.linkedin.height}
+      />
+
+      <Composition
+        id="ClaudeConnectTeaserAnimated"
+        component={ClaudeConnectTeaserAnimated}
+        durationInFrames={CLAUDE_CONNECT_TEASER_FRAMES}
+        fps={30}
         width={PRESETS.linkedin.width}
         height={PRESETS.linkedin.height}
       />

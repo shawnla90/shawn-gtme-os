@@ -37,6 +37,10 @@
     "render:banner-rem": "remotion still src/index.ts RemBanner --image-format=png out/banner-rem.png",
     "render:banner-unified": "remotion still src/index.ts UnifiedBanner --image-format=png out/banner-unified.png",
     "render:banners": "npm run render:banner-nio && npm run render:banner-recon && npm run render:banner-rem && npm run render:banner-unified",
+    "render:claude-connect-still": "remotion still src/index.ts ClaudeConnectTeaserStill --image-format=png out/claude-connect-teaser.png",
+    "render:claude-connect-gif": "remotion render src/index.ts ClaudeConnectTeaserAnimated out/claude-connect-teaser.gif --codec=gif",
+    "render:claude-connect-mp4": "remotion render src/index.ts ClaudeConnectTeaserAnimated out/claude-connect-teaser.mp4",
+    "render:claude-connect-all": "npm run render:claude-connect-still && npm run render:claude-connect-gif",
     "build": "echo 'Video app — use render scripts instead'"
   },
   "dependencies": {
