@@ -14,11 +14,24 @@ export function middleware(request: NextRequest) {
     response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate')
   }
 
-  // Security headers
-  response.headers.set(
-    'Content-Security-Policy',
-    "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://us.i.posthog.com; frame-ancestors 'none'"
-  )
+  // Security headers. Every third-party analytics host must be allowlisted in
+  // the correct directive or the browser silently blocks it and the vendor's
+  // verifier reports "script not detected" even though the tag is in HTML.
+  //   - Midbound B2B visitor reveal: *.midbound.click
+  //   - PostHog: us.i.posthog.com (capture/decide) + us-assets.i.posthog.com (SDK assets/array config)
+  //   - Cloudflare insights beacon: static.cloudflareinsights.com + cloudflareinsights.com
+  //   - Substack featured post embed: *.substack.com
+  const csp = [
+    "default-src 'self'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data: blob: https://*.midbound.click https://us-assets.i.posthog.com",
+    "font-src 'self' https://fonts.gstatic.com",
+    "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://cloudflareinsights.com",
+    "frame-src 'self' https://*.substack.com",
+    "frame-ancestors 'none'",
+  ].join('; ')
+  response.headers.set('Content-Security-Policy', csp)
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('X-Frame-Options', 'DENY')
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
