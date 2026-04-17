@@ -17,17 +17,19 @@ export function middleware(request: NextRequest) {
   // Security headers. Every third-party analytics host must be allowlisted in
   // the correct directive or the browser silently blocks it and the vendor's
   // verifier reports "script not detected" even though the tag is in HTML.
-  //   - Midbound B2B visitor reveal: *.midbound.click
+  //   - Midbound B2B visitor reveal: two-stage install.
+  //     Stage 1 loader at *.midbound.click, stage 2 pixel at *.midbound.net.
+  //     Both hosts must be allowed or no visitor data flows.
   //   - PostHog: us.i.posthog.com (capture/decide) + us-assets.i.posthog.com (SDK assets/array config)
   //   - Cloudflare insights beacon: static.cloudflareinsights.com + cloudflareinsights.com
   //   - Substack featured post embed: *.substack.com
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://*.midbound.net https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https://*.midbound.click https://us-assets.i.posthog.com",
+    "img-src 'self' data: blob: https://*.midbound.click https://*.midbound.net https://us-assets.i.posthog.com",
     "font-src 'self' https://fonts.gstatic.com",
-    "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://cloudflareinsights.com",
+    "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://*.midbound.net https://cloudflareinsights.com",
     "frame-src 'self' https://*.substack.com",
     "frame-ancestors 'none'",
   ].join('; ')
