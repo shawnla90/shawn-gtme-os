@@ -17,19 +17,23 @@ export function middleware(request: NextRequest) {
   // Security headers. Every third-party analytics host must be allowlisted in
   // the correct directive or the browser silently blocks it and the vendor's
   // verifier reports "script not detected" even though the tag is in HTML.
-  //   - Midbound B2B visitor reveal: two-stage install.
-  //     Stage 1 loader at *.midbound.click, stage 2 pixel at *.midbound.net.
-  //     Both hosts must be allowed or no visitor data flows.
+  //   - Midbound B2B visitor reveal: four-stage install.
+  //     Stage 1 loader at *.midbound.click, stage 2 pixel at *.midbound.net,
+  //     stage 3 identity resolution at *.mdb.tools, stage 4 external
+  //     fingerprint sync at a.usbrowserspeed.com. All four must be allowed
+  //     or Midbound's dashboard stays empty even if the installer verifier
+  //     reports "detected." Stage 4 is a third-party fingerprinting vendor
+  //     that Midbound rents — disclose in privacy policy if applicable.
   //   - PostHog: us.i.posthog.com (capture/decide) + us-assets.i.posthog.com (SDK assets/array config)
   //   - Cloudflare insights beacon: static.cloudflareinsights.com + cloudflareinsights.com
   //   - Substack featured post embed: *.substack.com
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://*.midbound.net https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https://*.midbound.click https://*.midbound.net https://us-assets.i.posthog.com",
+    "img-src 'self' data: blob: https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://us-assets.i.posthog.com",
     "font-src 'self' https://fonts.gstatic.com",
-    "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://*.midbound.net https://cloudflareinsights.com",
+    "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://cloudflareinsights.com",
     "frame-src 'self' https://*.substack.com",
     "frame-ancestors 'none'",
   ].join('; ')
