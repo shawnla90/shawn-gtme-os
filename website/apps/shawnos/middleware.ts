@@ -17,23 +17,21 @@ export function middleware(request: NextRequest) {
   // Security headers. Every third-party analytics host must be allowlisted in
   // the correct directive or the browser silently blocks it and the vendor's
   // verifier reports "script not detected" even though the tag is in HTML.
-  //   - Midbound B2B visitor reveal: five-host install.
+  //   - Midbound B2B visitor reveal: full chain.
   //     Stage 1 loader at *.midbound.click, stage 2 pixel at *.midbound.net,
   //     stage 3 identity at *.mdb.tools, stage 4 external fingerprint at
-  //     a.usbrowserspeed.com, stage 5 event ingestion at api.sitelytics.tech.
-  //     All five must be allowed or Midbound's dashboard stays empty even
-  //     if the installer verifier reports "detected." Stage 4 is a third-party
-  //     fingerprinting vendor — disclose in privacy policy if applicable.
+  //     a.usbrowserspeed.com, stage 5 event ingestion at api.sitelytics.tech,
+  //     stage 6 Sovrn/Lijit identity graph enrichment at *.lijit.com.
   //   - PostHog: us.i.posthog.com (capture/decide) + us-assets.i.posthog.com (SDK assets/array config)
   //   - Cloudflare insights beacon: static.cloudflareinsights.com + cloudflareinsights.com
   //   - Substack featured post embed: *.substack.com
   const csp = [
     "default-src 'self'",
-    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://*.lijit.com https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://us-assets.i.posthog.com",
+    "img-src 'self' data: blob: https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://*.lijit.com https://us-assets.i.posthog.com",
     "font-src 'self' https://fonts.gstatic.com",
-    "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://api.sitelytics.tech https://cloudflareinsights.com",
+    "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://*.lijit.com https://api.sitelytics.tech https://cloudflareinsights.com",
     "frame-src 'self' https://*.substack.com",
     "frame-ancestors 'none'",
   ].join('; ')
