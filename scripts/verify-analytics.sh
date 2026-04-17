@@ -37,18 +37,21 @@ else
   FAIL=1
 fi
 
-# 2. PostHog + Midbound scripts present in HTML
+# 2. Midbound tag: key present in HTML AND beacon endpoint reachable.
+#    (PostHog is NOT in server HTML — it loads from the client JS bundle.
+#     That's what check 3 verifies. Grepping HTML for "posthog" was a dead
+#     false-negative on any properly configured Next.js setup.)
 html=$(curl -sS "$SITE")
-if grep -q "posthog" <<<"$html"; then
-  green "✓ 2a/4 PostHog bootstrap present in HTML"
-else
-  red   "✗ 2a/4 PostHog NOT in HTML (client script missing)"
-  FAIL=1
-fi
 if grep -q "$MIDBOUND_KEY" <<<"$html"; then
-  green "✓ 2b/4 Midbound key ${MIDBOUND_KEY:0:12}… present"
+  midbound_status=$(curl -sS -o /dev/null -w "%{http_code}" "https://p.midbound.click/${MIDBOUND_KEY}")
+  if [[ "$midbound_status" == "200" ]]; then
+    green "✓ 2/4  Midbound key ${MIDBOUND_KEY:0:12}… present in HTML, beacon returns 200"
+  else
+    red   "✗ 2/4  Midbound key in HTML but beacon p.midbound.click returned ${midbound_status}"
+    FAIL=1
+  fi
 else
-  red   "✗ 2b/4 Midbound key NOT found in HTML"
+  red   "✗ 2/4  Midbound key NOT found in HTML"
   FAIL=1
 fi
 
@@ -69,18 +72,34 @@ else
   FAIL=1
 fi
 
-# 4. Actual pageview events landed in PostHog in the last 15 minutes
-query='{"query":{"kind":"HogQLQuery","query":"SELECT count() FROM events WHERE event = '\''$pageview'\'' AND timestamp >= now() - INTERVAL 15 MINUTE"}}'
-count=$(curl -sS -X POST "https://us.posthog.com/api/projects/${POSTHOG_PROJECT}/query/" \
+# 4. Pageview events actually landing in PostHog in the last 60 minutes.
+#    Falls back to $pageleave if $pageview is zero: $pageleave is auto-captured
+#    by posthog-js, so if it's firing but $pageview is not, the manual
+#    <PostHogPageview /> component in PostHogProvider.tsx is broken (this is
+#    exactly the bug that hit shawnos.ai on 2026-04-10 — preserved here so the
+#    next time it happens, the script diagnoses it immediately).
+pv_query='{"query":{"kind":"HogQLQuery","query":"SELECT count() FROM events WHERE event = '\''$pageview'\'' AND timestamp >= now() - INTERVAL 60 MINUTE"}}'
+pv_count=$(curl -sS -X POST "https://us.posthog.com/api/projects/${POSTHOG_PROJECT}/query/" \
   -H "Authorization: Bearer ${POSTHOG_KEY}" \
   -H "Content-Type: application/json" \
-  -d "$query" | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d.get("results",[[0]])[0][0])' 2>/dev/null || echo "0")
+  -d "$pv_query" | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d.get("results",[[0]])[0][0])' 2>/dev/null || echo "0")
 
-if [[ "${count:-0}" -gt 0 ]]; then
-  green "✓ 4/4  PostHog ingested ${count} pageviews in the last 15 minutes"
+if [[ "${pv_count:-0}" -gt 0 ]]; then
+  green "✓ 4/4  PostHog ingested ${pv_count} pageviews in the last 60 minutes"
 else
-  red   "✗ 4/4  0 pageviews in last 15 minutes (client tracking dead)"
-  dim   "        hit the site in a clean browser and re-run this script to verify"
+  pl_query='{"query":{"kind":"HogQLQuery","query":"SELECT count() FROM events WHERE event = '\''$pageleave'\'' AND timestamp >= now() - INTERVAL 60 MINUTE"}}'
+  pl_count=$(curl -sS -X POST "https://us.posthog.com/api/projects/${POSTHOG_PROJECT}/query/" \
+    -H "Authorization: Bearer ${POSTHOG_KEY}" \
+    -H "Content-Type: application/json" \
+    -d "$pl_query" | python3 -c 'import json,sys; d=json.load(sys.stdin); print(d.get("results",[[0]])[0][0])' 2>/dev/null || echo "0")
+
+  if [[ "${pl_count:-0}" -gt 0 ]]; then
+    red "✗ 4/4  0 pageviews but ${pl_count} pageleaves in last 60 min — PostHog alive, but \$pageview capture is broken"
+    dim "        check <PostHogPageview /> in website/packages/shared/components/PostHogProvider.tsx"
+  else
+    red "✗ 4/4  0 pageviews AND 0 pageleaves in last 60 min — either no traffic, or PostHog client isn't initialized"
+    dim "        hit the site in a clean browser (not incognito with adblock) and re-run"
+  fi
   FAIL=1
 fi
 
