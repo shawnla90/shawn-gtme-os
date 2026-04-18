@@ -1,6 +1,160 @@
 {
-  "generated": "2026-04-17T04:14:52.612Z",
+  "generated": "2026-04-18T04:17:38.149Z",
   "events": [
+    {
+      "id": "commit-f38febf",
+      "title": "feat: claude daily digest 2026-04-17",
+      "type": "milestone",
+      "datetime": "2026-04-18T00:17:01-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-17",
+      "metadata": {
+        "commitHash": "f38febf"
+      }
+    },
+    {
+      "id": "commit-9aed2fd",
+      "title": "chore: sync Reddit cache — 44 posts (2026-04-17 19:27)",
+      "type": "system",
+      "datetime": "2026-04-17T19:27:13-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 44 posts (2026-04-17 19:27)",
+      "metadata": {
+        "commitHash": "9aed2fd"
+      }
+    },
+    {
+      "id": "commit-3470aba",
+      "title": "chore(crypto): evening signal update 2026-04-17",
+      "type": "system",
+      "datetime": "2026-04-17T17:30:06-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-04-17",
+      "metadata": {
+        "commitHash": "3470aba"
+      }
+    },
+    {
+      "id": "commit-68d1032",
+      "title": "feat: claude daily digest 2026-04-17",
+      "type": "milestone",
+      "datetime": "2026-04-17T10:12:52-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-17",
+      "metadata": {
+        "commitHash": "68d1032"
+      }
+    },
+    {
+      "id": "commit-287c96a",
+      "title": "feat: daily LinkedIn posts 2026-04-17",
+      "type": "milestone",
+      "datetime": "2026-04-17T09:09:53-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-04-17",
+      "metadata": {
+        "commitHash": "287c96a"
+      }
+    },
+    {
+      "id": "commit-0f942e7",
+      "title": "feat: nio.log 2026-04-17 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-04-17T08:01:23-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-04-17 — automated daily post",
+      "metadata": {
+        "commitHash": "0f942e7"
+      }
+    },
+    {
+      "id": "commit-10a20af",
+      "title": "chore: sync Reddit cache — 44 posts (2026-04-17 07:26)",
+      "type": "system",
+      "datetime": "2026-04-17T07:26:53-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 44 posts (2026-04-17 07:26)",
+      "metadata": {
+        "commitHash": "10a20af"
+      }
+    },
+    {
+      "id": "commit-8e8ee5e",
+      "title": "chore(crypto): morning signal update 2026-04-17",
+      "type": "system",
+      "datetime": "2026-04-17T07:00:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-04-17",
+      "metadata": {
+        "commitHash": "8e8ee5e"
+      }
+    },
+    {
+      "id": "commit-7e09463",
+      "title": "fix(csp): close the last 2 Sovrn sync gaps (sitelytics img +",
+      "type": "system",
+      "datetime": "2026-04-17T02:57:26-04:00",
+      "status": "completed",
+      "description": "fix(csp): close the last 2 Sovrn sync gaps (sitelytics img + lijit frame)",
+      "metadata": {
+        "commitHash": "7e09463"
+      }
+    },
+    {
+      "id": "commit-2612ade",
+      "title": "fix(csp): allow Midbound Sovrn/Lijit identity graph enrichme",
+      "type": "system",
+      "datetime": "2026-04-17T02:51:57-04:00",
+      "status": "completed",
+      "description": "fix(csp): allow Midbound Sovrn/Lijit identity graph enrichment",
+      "metadata": {
+        "commitHash": "2612ade"
+      }
+    },
+    {
+      "id": "commit-0808cd2",
+      "title": "fix(csp): allow Midbound stage 5 (event ingestion at api.sit",
+      "type": "system",
+      "datetime": "2026-04-17T02:45:40-04:00",
+      "status": "completed",
+      "description": "fix(csp): allow Midbound stage 5 (event ingestion at api.sitelytics.tech)",
+      "metadata": {
+        "commitHash": "0808cd2"
+      }
+    },
+    {
+      "id": "commit-26dc946",
+      "title": "fix(csp): allow Midbound stages 3-4 (identity sync + fingerp",
+      "type": "system",
+      "datetime": "2026-04-17T02:42:04-04:00",
+      "status": "completed",
+      "description": "fix(csp): allow Midbound stages 3-4 (identity sync + fingerprint vendor)",
+      "metadata": {
+        "commitHash": "26dc946"
+      }
+    },
+    {
+      "id": "commit-983ced3",
+      "title": "fix(csp): allow Midbound stage-2 pixel host (*.midbound.net)",
+      "type": "system",
+      "datetime": "2026-04-17T01:44:31-04:00",
+      "status": "completed",
+      "description": "fix(csp): allow Midbound stage-2 pixel host (*.midbound.net)",
+      "metadata": {
+        "commitHash": "983ced3"
+      }
+    },
+    {
+      "id": "commit-b6221d3",
+      "title": "chore: daily tracker scan 2026-04-16",
+      "type": "system",
+      "datetime": "2026-04-17T00:14:53-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-04-16",
+      "metadata": {
+        "commitHash": "b6221d3"
+      }
+    },
     {
       "id": "commit-1b2d281",
       "title": "feat: claude daily digest 2026-04-16",
@@ -10,160 +164,6 @@
       "description": "feat: claude daily digest 2026-04-16",
       "metadata": {
         "commitHash": "1b2d281"
-      }
-    },
-    {
-      "id": "commit-7aa3e0a",
-      "title": "fix(verify-analytics): kill false-negative checks, add real ",
-      "type": "system",
-      "datetime": "2026-04-16T22:11:18-04:00",
-      "status": "completed",
-      "description": "fix(verify-analytics): kill false-negative checks, add real diagnostics",
-      "metadata": {
-        "commitHash": "7aa3e0a"
-      }
-    },
-    {
-      "id": "commit-179adc9",
-      "title": "fix(csp): allowlist Midbound, PostHog assets, CF insights, S",
-      "type": "system",
-      "datetime": "2026-04-16T22:11:06-04:00",
-      "status": "completed",
-      "description": "fix(csp): allowlist Midbound, PostHog assets, CF insights, Substack",
-      "metadata": {
-        "commitHash": "179adc9"
-      }
-    },
-    {
-      "id": "commit-147d7f7",
-      "title": "chore: sync Reddit cache — 45 posts (2026-04-16 19:26)",
-      "type": "system",
-      "datetime": "2026-04-16T19:26:32-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 45 posts (2026-04-16 19:26)",
-      "metadata": {
-        "commitHash": "147d7f7"
-      }
-    },
-    {
-      "id": "commit-b92416b",
-      "title": "chore(crypto): evening signal update 2026-04-16",
-      "type": "system",
-      "datetime": "2026-04-16T17:30:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-04-16",
-      "metadata": {
-        "commitHash": "b92416b"
-      }
-    },
-    {
-      "id": "commit-6f6afdc",
-      "title": "fix(analytics): restore original Midbound key (Yvy2M9X0v5...",
-      "type": "system",
-      "datetime": "2026-04-16T17:28:36-04:00",
-      "status": "completed",
-      "description": "fix(analytics): restore original Midbound key (Yvy2M9X0v5...); the other one was for a different landing page",
-      "metadata": {
-        "commitHash": "6f6afdc"
-      }
-    },
-    {
-      "id": "commit-84e4728",
-      "title": "fix(docker): declare NEXT_PUBLIC_* as ARG so Railway passes ",
-      "type": "system",
-      "datetime": "2026-04-16T17:24:38-04:00",
-      "status": "completed",
-      "description": "fix(docker): declare NEXT_PUBLIC_* as ARG so Railway passes them into build",
-      "metadata": {
-        "commitHash": "84e4728"
-      }
-    },
-    {
-      "id": "commit-c7cce3b",
-      "title": "fix(analytics): bypass /ingest rewrite, hit PostHog origin d",
-      "type": "system",
-      "datetime": "2026-04-16T16:58:43-04:00",
-      "status": "completed",
-      "description": "fix(analytics): bypass /ingest rewrite, hit PostHog origin directly",
-      "metadata": {
-        "commitHash": "c7cce3b"
-      }
-    },
-    {
-      "id": "commit-dd38faf",
-      "title": "fix(railway): drop build/start overrides, let the Dockerfile",
-      "type": "system",
-      "datetime": "2026-04-16T16:46:03-04:00",
-      "status": "completed",
-      "description": "fix(railway): drop build/start overrides, let the Dockerfile CMD run",
-      "metadata": {
-        "commitHash": "dd38faf"
-      }
-    },
-    {
-      "id": "commit-f026e19",
-      "title": "fix(railway): wrap start command in bash so cd resolves",
-      "type": "system",
-      "datetime": "2026-04-16T16:42:46-04:00",
-      "status": "completed",
-      "description": "fix(railway): wrap start command in bash so cd resolves",
-      "metadata": {
-        "commitHash": "f026e19"
-      }
-    },
-    {
-      "id": "commit-b5006c7",
-      "title": "chore(analytics): rebuild PostHog for Railway + swap Midboun",
-      "type": "system",
-      "datetime": "2026-04-16T16:04:56-04:00",
-      "status": "completed",
-      "description": "chore(analytics): rebuild PostHog for Railway + swap Midbound key",
-      "metadata": {
-        "commitHash": "b5006c7"
-      }
-    },
-    {
-      "id": "commit-8b8f837",
-      "title": "feat: claude daily digest 2026-04-16",
-      "type": "milestone",
-      "datetime": "2026-04-16T10:11:54-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-04-16",
-      "metadata": {
-        "commitHash": "8b8f837"
-      }
-    },
-    {
-      "id": "commit-e9e37b5",
-      "title": "feat: daily LinkedIn posts 2026-04-16",
-      "type": "milestone",
-      "datetime": "2026-04-16T09:11:54-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-04-16",
-      "metadata": {
-        "commitHash": "e9e37b5"
-      }
-    },
-    {
-      "id": "commit-c5b1107",
-      "title": "feat: nio.log 2026-04-16 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-04-16T08:00:51-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-04-16 — automated daily post",
-      "metadata": {
-        "commitHash": "c5b1107"
-      }
-    },
-    {
-      "id": "commit-3b9bcde",
-      "title": "chore: sync Reddit cache — 45 posts (2026-04-16 07:26)",
-      "type": "system",
-      "datetime": "2026-04-16T07:26:12-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 45 posts (2026-04-16 07:26)",
-      "metadata": {
-        "commitHash": "3b9bcde"
       }
     }
   ],
