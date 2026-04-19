@@ -1,6 +1,105 @@
 {
-  "generated": "2026-04-18T04:17:38.149Z",
+  "generated": "2026-04-19T04:15:24.171Z",
   "events": [
+    {
+      "id": "commit-baffbd5",
+      "title": "feat: claude daily digest 2026-04-18",
+      "type": "milestone",
+      "datetime": "2026-04-19T00:14:47-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-18",
+      "metadata": {
+        "commitHash": "baffbd5"
+      }
+    },
+    {
+      "id": "commit-68627f6",
+      "title": "chore: sync Reddit cache — 45 posts (2026-04-18 19:27)",
+      "type": "system",
+      "datetime": "2026-04-18T19:27:55-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 45 posts (2026-04-18 19:27)",
+      "metadata": {
+        "commitHash": "68627f6"
+      }
+    },
+    {
+      "id": "commit-962f15a",
+      "title": "chore(crypto): evening signal update 2026-04-18",
+      "type": "system",
+      "datetime": "2026-04-18T17:30:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-04-18",
+      "metadata": {
+        "commitHash": "962f15a"
+      }
+    },
+    {
+      "id": "commit-ecc9a49",
+      "title": "feat: claude daily digest 2026-04-18",
+      "type": "milestone",
+      "datetime": "2026-04-18T10:13:19-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-04-18",
+      "metadata": {
+        "commitHash": "ecc9a49"
+      }
+    },
+    {
+      "id": "commit-44f6e46",
+      "title": "feat: daily LinkedIn posts 2026-04-18",
+      "type": "milestone",
+      "datetime": "2026-04-18T09:10:18-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-04-18",
+      "metadata": {
+        "commitHash": "44f6e46"
+      }
+    },
+    {
+      "id": "commit-9e85cdd",
+      "title": "feat: nio.log 2026-04-18 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-04-18T08:01:01-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-04-18 — automated daily post",
+      "metadata": {
+        "commitHash": "9e85cdd"
+      }
+    },
+    {
+      "id": "commit-b5ebb67",
+      "title": "chore: sync Reddit cache — 45 posts (2026-04-18 07:27)",
+      "type": "system",
+      "datetime": "2026-04-18T07:27:34-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 45 posts (2026-04-18 07:27)",
+      "metadata": {
+        "commitHash": "b5ebb67"
+      }
+    },
+    {
+      "id": "commit-a620f04",
+      "title": "chore(crypto): morning signal update 2026-04-18",
+      "type": "system",
+      "datetime": "2026-04-18T07:00:07-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-04-18",
+      "metadata": {
+        "commitHash": "a620f04"
+      }
+    },
+    {
+      "id": "commit-733432b",
+      "title": "chore: daily tracker scan 2026-04-17",
+      "type": "system",
+      "datetime": "2026-04-18T00:17:38-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-04-17",
+      "metadata": {
+        "commitHash": "733432b"
+      }
+    },
     {
       "id": "commit-f38febf",
       "title": "feat: claude daily digest 2026-04-17",
@@ -65,105 +164,6 @@
       "description": "feat: nio.log 2026-04-17 — automated daily post",
       "metadata": {
         "commitHash": "0f942e7"
-      }
-    },
-    {
-      "id": "commit-10a20af",
-      "title": "chore: sync Reddit cache — 44 posts (2026-04-17 07:26)",
-      "type": "system",
-      "datetime": "2026-04-17T07:26:53-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 44 posts (2026-04-17 07:26)",
-      "metadata": {
-        "commitHash": "10a20af"
-      }
-    },
-    {
-      "id": "commit-8e8ee5e",
-      "title": "chore(crypto): morning signal update 2026-04-17",
-      "type": "system",
-      "datetime": "2026-04-17T07:00:05-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-04-17",
-      "metadata": {
-        "commitHash": "8e8ee5e"
-      }
-    },
-    {
-      "id": "commit-7e09463",
-      "title": "fix(csp): close the last 2 Sovrn sync gaps (sitelytics img +",
-      "type": "system",
-      "datetime": "2026-04-17T02:57:26-04:00",
-      "status": "completed",
-      "description": "fix(csp): close the last 2 Sovrn sync gaps (sitelytics img + lijit frame)",
-      "metadata": {
-        "commitHash": "7e09463"
-      }
-    },
-    {
-      "id": "commit-2612ade",
-      "title": "fix(csp): allow Midbound Sovrn/Lijit identity graph enrichme",
-      "type": "system",
-      "datetime": "2026-04-17T02:51:57-04:00",
-      "status": "completed",
-      "description": "fix(csp): allow Midbound Sovrn/Lijit identity graph enrichment",
-      "metadata": {
-        "commitHash": "2612ade"
-      }
-    },
-    {
-      "id": "commit-0808cd2",
-      "title": "fix(csp): allow Midbound stage 5 (event ingestion at api.sit",
-      "type": "system",
-      "datetime": "2026-04-17T02:45:40-04:00",
-      "status": "completed",
-      "description": "fix(csp): allow Midbound stage 5 (event ingestion at api.sitelytics.tech)",
-      "metadata": {
-        "commitHash": "0808cd2"
-      }
-    },
-    {
-      "id": "commit-26dc946",
-      "title": "fix(csp): allow Midbound stages 3-4 (identity sync + fingerp",
-      "type": "system",
-      "datetime": "2026-04-17T02:42:04-04:00",
-      "status": "completed",
-      "description": "fix(csp): allow Midbound stages 3-4 (identity sync + fingerprint vendor)",
-      "metadata": {
-        "commitHash": "26dc946"
-      }
-    },
-    {
-      "id": "commit-983ced3",
-      "title": "fix(csp): allow Midbound stage-2 pixel host (*.midbound.net)",
-      "type": "system",
-      "datetime": "2026-04-17T01:44:31-04:00",
-      "status": "completed",
-      "description": "fix(csp): allow Midbound stage-2 pixel host (*.midbound.net)",
-      "metadata": {
-        "commitHash": "983ced3"
-      }
-    },
-    {
-      "id": "commit-b6221d3",
-      "title": "chore: daily tracker scan 2026-04-16",
-      "type": "system",
-      "datetime": "2026-04-17T00:14:53-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-04-16",
-      "metadata": {
-        "commitHash": "b6221d3"
-      }
-    },
-    {
-      "id": "commit-1b2d281",
-      "title": "feat: claude daily digest 2026-04-16",
-      "type": "milestone",
-      "datetime": "2026-04-17T00:14:18-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-04-16",
-      "metadata": {
-        "commitHash": "1b2d281"
       }
     }
   ],
