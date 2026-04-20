@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-19T04:15:24.228Z",
+  "generated": "2026-04-20T04:17:20.808Z",
   "system": {
     "status": "online",
     "uptime": "live",
@@ -12,7 +12,7 @@
   },
   "calendar": [
     {
-      "date": "2026-04-19",
+      "date": "2026-04-20",
       "events": [
         {
           "time": "8:00 AM",
@@ -20,9 +20,19 @@
           "type": "automated"
         },
         {
+          "time": "6:00 AM",
+          "event": "Morning briefing scan",
+          "type": "automated"
+        },
+        {
           "time": "10:00 PM",
           "event": "Daily build summary",
           "type": "automated"
+        },
+        {
+          "time": "3:00 PM",
+          "event": "Weekly Discord community roundup",
+          "type": "planned"
         }
       ]
     }
