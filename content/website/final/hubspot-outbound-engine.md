@@ -60,9 +60,9 @@ All three live in a custom property group called "Engine Intelligence." On the c
 
 The PATCH is one call per contact. `/contacts/{id}`, three properties, done. About 80ms in my run.
 
-> **Heads up: I just launched a newsletter — Level Up GTM.**
+> **Heads up: a newsletter is dropping Monday — Level Up GTM.**
 >
-> Each Sunday evening, one play I shipped that week, runnable, with the prompt and the gotchas. This post is the first issue. If you want next week's play in your inbox before everyone else sees the GIF, [subscribe to Level Up GTM on LinkedIn]([NEWSLETTER_URL]).
+> Each Sunday evening, one play I shipped that week, runnable, with the prompt and the gotchas. The inaugural issue is the engine you're reading about right now. Subscribe link goes live on the LinkedIn newsletter Monday morning.
 
 ## The actual code
 
@@ -112,6 +112,6 @@ The same engine takes website-visitor signals as input. That's next week's play.
 
 ---
 
-**Subscribe to Level Up GTM on LinkedIn** for one play like this every Sunday evening: [LEVEL UP GTM]([NEWSLETTER_URL])
+**Level Up GTM** is a weekly LinkedIn newsletter dropping Monday with one play like this every Sunday evening. Inaugural issue is this post.
 
 *Building this stuff daily at [shawnos.ai](https://shawnos.ai). If you want me to build the engine for you, [shawn@leadalchemy.co](mailto:shawn@leadalchemy.co).*
