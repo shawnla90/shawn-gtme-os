@@ -1,0 +1,25 @@
+HubSpot's MCP went GA last week. Salesforce's is still beta. Salesforce just put MCP and CLI on equal footing at TDX with Headless 360.
+
+Nobody's lining all three up in the same sentence.
+
+I ran the numbers on my own stack before picking a side: 5.94 billion cache-read tokens in the last 65 days of Claude Code CLI. That ratio is only possible when you architect around one context, not chatty tool calls.
+
+Which means the CLI-vs-MCP debate isn't really a debate. It's a role question.
+
+MCP is a convenience layer for agents that can't code. It solves real problems for reps, enterprise admins, governance.
+
+CLI is for agents that can. Builders who are the user, the admin, and the maintainer.
+
+Salesforce just quietly named three first-class surfaces and stopped picking favorites. The primitive you pick decides what you can build.
+
+Full write-up + a 28-second GIF showing the same task through CLI, MCP, and API is on the blog.
+
+shawnos.ai/blog/pick-your-primitive-cli-vs-mcp
+
+The repo is open. No email wall. 41 stars, 16 forks already.
+
+github.com/shawnla90/gtm-coding-agent
+
+---
+
+[attach: rate-limit-wall.gif]

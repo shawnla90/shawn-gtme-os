@@ -1,0 +1,91 @@
+=== ANCHOR THREAD (5 tweets) ===
+
+=== TWEET 1 ===
+HubSpot's MCP went GA last week.
+Salesforce's is still beta.
+Salesforce put API, MCP, and CLI on equal footing at TDX.
+
+nobody's lining all three up in the same sentence. here's why it matters for how you build.
+
+=== TWEET 2 ===
+the primitive you pick decides what you can build.
+
+MCP is a convenience layer for agents that can't code.
+CLI is for agents that can.
+API is the thing underneath both.
+
+that's not a values statement. it's an architectural one.
+
+=== TWEET 3 ===
+here's the proof.
+
+65 days of Claude Code CLI: 5.94 billion cache-read tokens.
+
+that ratio doesn't happen in chatty MCP sessions. each tool call is an island. each prompt pays full freight.
+
+CLI-direct sits in one context and hits the same cache, over and over.
+
+[attach: claude-code-usage-stats.png]
+
+=== TWEET 4 ===
+who MCP is for: reps, enterprise admins, governance-heavy rollouts. the user can't code, so the agent does.
+
+who CLI is for: you, if you are the user, the admin, AND the maintainer. one person. own the stack.
+
+match the tool to who you actually are.
+
+=== TWEET 5 ===
+Salesforce just quietly stopped picking a side. Headless 360 names three co-equal surfaces and hands out three sets of keys.
+
+full write-up + a 28-sec GIF:
+shawnos.ai/blog/pick-your-primitive-cli-vs-mcp
+
+repo is open. 41 stars, 16 forks. no email wall:
+github.com/shawnla90/gtm-coding-agent
+
+[attach: rate-limit-wall.gif]
+
+
+=== ATOMIC POSTS (standalone, for consistent drip) ===
+
+=== ATOMIC 1 — news plug ===
+three things happened in the last ten days nobody is lining up in the same sentence:
+
+· HubSpot remote MCP went GA
+· Salesforce MCP is still beta
+· Salesforce put CLI, MCP, and API on equal footing at TDX (Headless 360)
+
+the framing IS the news.
+
+=== ATOMIC 2 — the one-liner ===
+MCP is a convenience layer for agents that can't code.
+CLI is for agents that can.
+
+pick the primitive that matches who you actually are.
+
+=== ATOMIC 3 — the cache stat ===
+5.94 billion cache-read tokens in 65 days.
+
+that ratio is what CLI-direct architecture looks like. chatty MCP sessions can't get there. each tool call is an island.
+
+[attach: claude-code-usage-stats.png]
+
+=== ATOMIC 4 — the Headless 360 pull ===
+at TDX last week Salesforce put APIs, MCP tools, and CLI commands in the same sentence as three co-equal surfaces.
+
+Headless 360 specifically named Claude Code, Cursor, Codex, Windsurf.
+
+those are CLI-first tools.
+
+the agent-surface debate is over. there are three of them.
+
+=== ATOMIC 5 — the repo drop ===
+the full gtm-coding-agent repo is public.
+
+41 stars. 16 forks. no email wall. no course upsell.
+
+10 chapters, an onboarding wizard, the gtm-os skeleton, every python script.
+
+github.com/shawnla90/gtm-coding-agent
+
+the stars and forks are the proof. value ships either way.

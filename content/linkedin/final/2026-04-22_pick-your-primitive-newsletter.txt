@@ -1,0 +1,91 @@
+Pick Your Primitive: Why I Run CLI While Everyone's Hyping MCP
+
+[INSERT IMAGE: rate-limit-wall.gif — cover; drop at the very top of the newsletter body]
+
+Three things happened in the last ten days that nobody is lining up in the same sentence.
+
+HubSpot's remote MCP went generally available on April 13. Any MCP-compatible AI tool can now read and write your CRM over a HubSpot-hosted OAuth connection. If you want your reps chatting with an agent inside claude.ai, that's the unlock.
+
+Salesforce's hosted MCP is still in beta. GA was targeted for February, slipped, and the docs still say beta.
+
+And on April 15 at TDX, Salesforce announced Headless 360. Every capability across Salesforce, Agentforce, and Slack is now accessible through three co-equal surfaces: APIs, MCP tools, and CLI commands. The announcement specifically named Claude Code, Cursor, Codex, and Windsurf. Those are CLI-first coding agents.
+
+That third announcement is the news. MCP isn't winning. CLI isn't winning. The biggest CRM in the world just put them on equal footing.
+
+So which one do you actually pick?
+
+
+I spent yesterday afternoon stress-testing my own answer to that.
+
+Context: I'm a go-to-market engineer. Everything I run lives in scripts that commit to git and execute from a terminal. My Claude Code usage over the last 65 days is 5.94 billion cache-read tokens, 43 million output tokens, about 6,500 assistant messages. Peak day was April 11, when I pushed 7.8 million output tokens through 4,681 messages in a single day.
+
+The number that matters is the 5.94 billion cache reads.
+
+That ratio doesn't happen by accident. It's what the cache looks like when you architect your work to sit in one context, hit the same prompt surface, and reuse the same code. Chatty MCP tool-calling doesn't get you there. Each MCP call is its own island. Each island pays full freight on tokens and context.
+
+When I finally sat down to ask myself whether I was wrong to skip MCP for my own builds, the cache ratio answered the question. I'd been doing exactly what the architecture rewards.
+
+
+Here's the shape of the argument.
+
+MCP is a protocol wrapper. It standardizes how agents discover tools and make tool calls. An MCP server like HubSpot's pre-registers your CRM as a set of callable actions and handles the OAuth dance. Then any MCP-compatible client, claude.ai or Cursor or ChatGPT desktop, can talk to your CRM in plain language.
+
+That is great if your user is a salesperson.
+
+Because the thing MCP is actually solving for is: the user can't code. They can't hold a token, they can't read API docs, they can't compose a Python script. The MCP wrapper lets an agent do those things on their behalf, safely, over a protocol that respects permissions and logs writes.
+
+That's the whole value. A convenience layer for agents operated by users who wouldn't otherwise have access.
+
+If you build for a living, you are not that user.
+
+
+The redundancy you feel in MCP isn't in your head. It's architectural.
+
+The same "update this deal's owner" operation that takes one Python call takes five to seven MCP turns. Discover tools. Search the deal. Re-parse the response shape. Search the owner. Issue the update. Verify. Every turn is a round-trip, every round-trip carries tokens and context drift, and nothing is cached between them because each invocation is stateless.
+
+On one deal that feels fine. On a batch of two hundred, the cost structure is a different shape of problem. That's why CLI-direct workflows that hit the same script hundreds of times a night still cost less than a single MCP-mediated conversation over the same data.
+
+[INSERT IMAGE: speed-efficiency.gif — drop here; shows the same task on a stopwatch, 4.4× faster on CLI]
+
+
+Who MCP is actually for.
+
+RevOps leaders rolling out an agent experience to fifty AEs. Enterprise admins who need OAuth 2.1 with PKCE on the audit trail. Product teams building conversational CRM surfaces for non-technical users. Companies where the cost of governance matters more than the cost of a chat turn.
+
+For those audiences, MCP is exactly right. The people hyping its GA should be those same people.
+
+
+Who CLI is for.
+
+Three tests. You are the user, the admin, and the maintainer. You write Python against the result anyway. You care more about reproducibility next quarter than conversational fluency today.
+
+That's the builder profile. One person who owns the stack, writes in a terminal, commits scripts to git, treats every workflow as infrastructure rather than a chat. For that person the MCP wrapper is overhead without benefit. You already know the API. You already have the token. Your agent can already read docs and make authenticated calls.
+
+The split isn't MCP versus CLI in the abstract. It's your role versus the protocol's assumed user. Match the tool to who you actually are.
+
+[INSERT IMAGE: token-economics.gif — drop here; "Who CLI is for" — the token math makes the learning curve pay off]
+
+
+The Headless 360 moment.
+
+Here's why this is the most important framing of the debate. Salesforce didn't pick a side. The announcement put APIs, MCP, and CLI in the same sentence and let the buyer pick. It specifically named four CLI-first coding agents.
+
+For two years the big-platform narrative was "MCP is the agent surface." Headless 360 just quietly named three surfaces and handed out three sets of keys. You can stop feeling like the CLI path is the unofficial one. It's officially one of three.
+
+
+So pick your primitive.
+
+MCP is a convenience layer for agents that can't code. CLI is for agents that can. API is the thing underneath both.
+
+If you're reading a GTM engineering newsletter in the first place, you know which side of that line you're on.
+
+I'm picking CLI. The 5.94 billion cache reads are picking CLI with me.
+
+The full write-up with the architectural argument and the CLI-vs-MCP-vs-API instructional GIF is on the blog. Chapter 11 of the GTM Coding Agents guide goes deeper on the decision framework: the audience matrix across builder / rep / admin / partner, when MCP is the right call, and how to recognize the moment you've outgrown your CLI script.
+
+shawnos.ai/blog/pick-your-primitive-cli-vs-mcp
+
+The full repo is public and ungated: github.com/shawnla90/gtm-coding-agent. 41 stars, 16 forks. All 10 chapters, the onboarding wizard, the GTM-OS skeleton, every Python script. No email wall. The stars and forks prove the value ships whether you pay or not.
+
+
+shawn ⚡
