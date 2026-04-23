@@ -24,7 +24,7 @@
 | 17 | draft-email | Draft a client email from the current session context and push it to Lead Alc... | .claude/skills/ | 2026-03-02 |
 | 18 | evaluate | Evaluate a GitHub repo or tool for potential use. Fetches repo metadata, asse... | .claude/skills/ | 2026-02-25 |
 | 19 | final-copy | Converts an approved markdown draft into platform-ready plain text and option... | .cursor/skills/ | 2026-02-10 |
-| 20 | final-copy | Convert approved markdown drafts into platform-ready plain text and optionall... | .claude/skills/ | 2026-03-08 |
+| 20 | final-copy | [DEPRECATED 2026-04-22 — superseded by `clip` verb in the content OS] Legacy ... | .claude/skills/ | 2026-03-08 |
 | 21 | heyreach-conversations | Pull and display LinkedIn conversation history for accepted connections from ... | .cursor/skills/ | 2026-02-08 |
 | 22 | heyreach-export | Export HeyReach campaign leads to CSV filtered by connection status. Use when... | .cursor/skills/ | 2026-02-10 |
 | 23 | idea-bank | Capture, organize, and track future project ideas by domain and content pilla... | .cursor/skills/ | 2026-02-13 |

@@ -1,53 +1,141 @@
 {
-  "generated": "2026-04-22T04:00:19.000Z",
+  "generated": "2026-04-23T04:00:12.000Z",
   "totals": {
-    "total_content": 324,
-    "total_drafts": 127,
-    "total_final": 197,
-    "total_words": 240501,
+    "total_content": 337,
+    "total_drafts": 130,
+    "total_final": 207,
+    "total_words": 251189,
     "platforms_active": 6,
-    "cross_platform_groups": 35,
+    "cross_platform_groups": 36,
     "series_count": 4
   },
   "pipeline": {
+    "linkedin": {
+      "draft": 48,
+      "final": 49,
+      "total": 97,
+      "words": 40066
+    },
     "nio-log": {
       "draft": 0,
-      "final": 59,
-      "total": 59,
-      "words": 44349
-    },
-    "website": {
-      "draft": 1,
-      "final": 77,
-      "total": 78,
-      "words": 109484
-    },
-    "linkedin": {
-      "draft": 46,
-      "final": 45,
-      "total": 91,
-      "words": 37801
+      "final": 60,
+      "total": 60,
+      "words": 45043
     },
     "substack": {
       "draft": 12,
-      "final": 5,
-      "total": 17,
-      "words": 21627
+      "final": 6,
+      "total": 18,
+      "words": 23427
+    },
+    "website": {
+      "draft": 1,
+      "final": 80,
+      "total": 81,
+      "words": 114460
     },
     "x": {
       "draft": 46,
-      "final": 11,
-      "total": 57,
-      "words": 18036
+      "final": 12,
+      "total": 58,
+      "words": 18502
     },
     "reddit": {
-      "draft": 22,
+      "draft": 23,
       "final": 0,
-      "total": 22,
-      "words": 9204
+      "total": 23,
+      "words": 9691
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "pick your primitive feed",
+      "slug": "pick-your-primitive-feed",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 177,
+      "file_path": "content/linkedin/final/2026-04-22_pick-your-primitive-feed.txt"
+    },
+    {
+      "platform": "linkedin",
+      "title": "pick your primitive newsletter",
+      "slug": "pick-your-primitive-newsletter",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1022,
+      "file_path": "content/linkedin/final/2026-04-22_pick-your-primitive-newsletter.txt"
+    },
+    {
+      "platform": "nio-log",
+      "title": "TUESDAY. DAY THIRTY OF D GRADES.",
+      "slug": "2026-04-22",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 694,
+      "file_path": "content/nio-log/2026-04-22.md"
+    },
+    {
+      "platform": "substack",
+      "title": "Pick Your Primitive: Why I Run CLI While Everyone's Hyping MCP",
+      "slug": "pick-your-primitive",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1800,
+      "file_path": "content/substack/final/2026-04-22_pick-your-primitive.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Wednesday, April 22, 2026",
+      "slug": "claude-daily-2026-04-22",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1359,
+      "file_path": "content/website/final/claude-daily-2026-04-22.md"
+    },
+    {
+      "platform": "website",
+      "title": "GTM Coding Agents Chapter 13: Your GTM Stack Has No Git Log",
+      "slug": "gtm-coding-agents-chapter-13-living-repo",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1390,
+      "file_path": "content/website/final/gtm-coding-agents-chapter-13-living-repo.md"
+    },
+    {
+      "platform": "website",
+      "title": "Pick Your Primitive: Why I Run CLI While Everyone's Hyping MCP",
+      "slug": "pick-your-primitive-cli-vs-mcp",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 2183,
+      "file_path": "content/website/final/pick-your-primitive-cli-vs-mcp.md"
+    },
+    {
+      "platform": "x",
+      "title": "pick your primitive",
+      "slug": "pick-your-primitive",
+      "date": "2026-04-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 466,
+      "file_path": "content/x/final/2026-04-22_pick-your-primitive.txt"
+    },
     {
       "platform": "nio-log",
       "title": "MONDAY. DAY TWENTY-NINE OF D GRADES.",
@@ -67,7 +155,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1468,
+      "word_count": 1512,
       "file_path": "content/website/final/claude-daily-2026-04-21.md"
     },
     {
@@ -509,94 +597,6 @@
       "arc": null,
       "word_count": 810,
       "file_path": "content/nio-log/2026-04-02.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Thursday, April 02, 2026",
-      "slug": "claude-daily-2026-04-02",
-      "date": "2026-04-02",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1469,
-      "file_path": "content/website/final/claude-daily-2026-04-02.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "from tabs to terminals",
-      "slug": "terminals-not-courses",
-      "date": "2026-04-01",
-      "stage": "draft",
-      "pillar": "Building & Sharing",
-      "arc": null,
-      "word_count": 444,
-      "file_path": "content/linkedin/drafts/2026-04-01_terminals-not-courses.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "APRIL 1. Q2 DAY ONE. NINTH",
-      "slug": "2026-04-01",
-      "date": "2026-04-01",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 726,
-      "file_path": "content/nio-log/2026-04-01.md"
-    },
-    {
-      "platform": "substack",
-      "title": "the AI is the teacher",
-      "slug": "terminals-not-courses",
-      "date": "2026-04-01",
-      "stage": "draft",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1934,
-      "file_path": "content/substack/drafts/2026-04-01_terminals-not-courses.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Wednesday, April 01, 2026",
-      "slug": "claude-daily-2026-04-01",
-      "date": "2026-04-01",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1531,
-      "file_path": "content/website/final/claude-daily-2026-04-01.md"
-    },
-    {
-      "platform": "website",
-      "title": "the AI is the teacher",
-      "slug": "terminals-not-courses",
-      "date": "2026-04-01",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1914,
-      "file_path": "content/website/final/terminals-not-courses.md"
-    },
-    {
-      "platform": "x",
-      "title": "from tabs to terminals",
-      "slug": "terminals-not-courses",
-      "date": "2026-04-01",
-      "stage": "draft",
-      "pillar": "X Micro Tips / Building & Sharing",
-      "arc": null,
-      "word_count": 374,
-      "file_path": "content/x/drafts/2026-04-01_terminals-not-courses.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Tuesday, March 31, 2026",
-      "slug": "claude-daily-2026-03-31",
-      "date": "2026-03-31",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1385,
-      "file_path": "content/website/final/claude-daily-2026-03-31.md"
     }
   ],
   "series": [
@@ -698,6 +698,18 @@
     }
   ],
   "crossPlatform": [
+    {
+      "date": "2026-04-22",
+      "slug": "pick-your-primitive",
+      "platforms": [
+        "substack",
+        "x"
+      ],
+      "link_types": [
+        "series_sibling"
+      ],
+      "platform_count": 2
+    },
     {
       "date": "2026-04-01",
       "slug": "terminals-not-courses",
@@ -1126,6 +1138,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-22",
+      "grade": "D",
+      "score": 80,
+      "words": 15299,
+      "shipped": 4,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-21",
       "grade": "D",
       "score": 60,
@@ -1226,14 +1246,6 @@
       "grade": "D",
       "score": 60,
       "words": 7951,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-04-08",
-      "grade": "D",
-      "score": 70,
-      "words": 7849,
       "shipped": 0,
       "cost": 0.0
     }
