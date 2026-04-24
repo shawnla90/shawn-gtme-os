@@ -18,6 +18,7 @@ const tiers = [
     price: '$2,500',
     model: 'One-time',
     color: '#4EC373',
+    cta: 'Build My Voice System',
     features: [
       'Voice DNA calibration (core voice, anti-slop, hooks, safety)',
       'Anti-slop system tuned to your patterns',
@@ -33,6 +34,7 @@ const tiers = [
     model: '/month',
     color: '#1D9BF0',
     recommended: true,
+    cta: 'Launch My Content Engine',
     features: [
       'Everything in Voice Setup',
       'Weekly content pipeline (4-8 pieces)',
@@ -48,6 +50,7 @@ const tiers = [
     price: 'Book a Call',
     model: 'Retainer',
     color: '#D2A53C',
+    cta: 'Book a Call',
     features: [
       'Everything in Content Engine',
       'Full Reddit account management',
@@ -120,7 +123,7 @@ export function ServicesContent() {
               maxWidth: 800,
             }}
           >
-            <span style={{ color: 'var(--text-primary)' }}>AI agent content,</span>{' '}
+            <span style={{ color: 'var(--text-primary)' }}>Your personal AI assistant for solopreneurs,</span>{' '}
             <span style={{ color: 'var(--accent)' }}>
               <ScrambleCycler
                 phrases={[
@@ -147,9 +150,25 @@ export function ServicesContent() {
               margin: '0 auto 40px',
             }}
           >
-            Most businesses publish content that disappears. We build content systems
-            that compound. Voice DNA + platform playbooks + distribution ops = traffic
-            that grows every week.
+            We help solopreneurs build their own AI assistant infrastructure, not rent someone else&apos;s.
+            Voice DNA + platform playbooks + distribution ops = traffic that compounds every week.
+          </p>
+        </MotionReveal>
+
+        <MotionReveal variant="fadeUp" delay={0.3}>
+          <p
+            style={{
+              fontSize: 'clamp(14px, 1.6vw, 17px)',
+              color: 'var(--text-muted)',
+              lineHeight: 1.7,
+              maxWidth: 600,
+              margin: '0 auto 32px',
+            }}
+          >
+            Whether you want to build your own AI assistant, start with our free AI tools,
+            or hand off the entire operation - ContentOS services meet you where you are.
+            Every package is built on the same infrastructure: persistent memory, voice
+            calibration, and distribution systems that do the work without you babysitting it.
           </p>
         </MotionReveal>
 
@@ -282,7 +301,7 @@ export function ServicesContent() {
             label="PACKAGES"
             subtitle="From voice calibration to full content dominance"
           >
-            Services
+            Build Your Own AI Infrastructure
           </SectionHeadline>
 
           <StaggerContainer stagger={0.1}>
@@ -449,7 +468,7 @@ export function ServicesContent() {
                         transition: 'opacity 0.15s',
                       }}
                     >
-                      {tier.price === 'Book a Call' ? 'Book a Call' : 'Get Started'}
+                      {tier.cta}
                     </a>
                   </div>
                 </StaggerItem>

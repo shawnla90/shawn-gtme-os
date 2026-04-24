@@ -5,10 +5,11 @@ import CopyButton from './CopyButton'
 /* ── Metadata & SEO ── */
 
 export const metadata: Metadata = {
-  title: 'Build Your Own AI Assistant for Free - Step by Step Guide',
+  title: 'Build Your Own AI Assistant: A Personal Airplane Kit Approach',
   description:
-    'Learn how to build an AI assistant for free with this copy-paste prompt. Auto-detects your daily output from git, file mtime, and content directories, scores it, and renders a visual dashboard.',
+    'Build your own AI assistant like assembling an airplane kit - all the components are here, pre-specified, ready to assemble. A free copy-paste prompt that auto-detects your daily output from git, file mtime, and content directories, scores it, and renders a visual dashboard.',
   keywords: [
+    'build your own airplane kit',
     'how to build ai assistant for free',
     'build ai assistant',
     'free ai assistant',
@@ -20,12 +21,14 @@ export const metadata: Metadata = {
     'daily output',
     'developer dashboard',
     'Pillow dashboard',
+    'ai agent automation tools',
+    'AI agent setup',
   ],
   alternates: { canonical: 'https://thecontentos.ai/log/build-your-own' },
   openGraph: {
-    title: 'Build Your Own AI Assistant for Free - Step by Step Guide | thecontentos.ai',
+    title: 'Build Your Own AI Assistant: A Personal Airplane Kit Approach | thecontentos.ai',
     description:
-      'Learn how to build an AI assistant for free. Copy-paste prompt that auto-detects output, scores it, and renders a visual dashboard.',
+      'A free AI agent automation stack using Claude, launchd, and Next.js. Build your own airplane kit style - copy-paste prompt that auto-detects output, scores it, and renders a visual dashboard.',
     url: 'https://thecontentos.ai/log/build-your-own',
     images: [
       {
@@ -36,13 +39,70 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    title: 'Build Your Own AI Assistant for Free - Step by Step Guide | thecontentos.ai',
+    title: 'Build Your Own AI Assistant: A Personal Airplane Kit Approach | thecontentos.ai',
     description:
-      'Learn how to build an AI assistant for free. Copy-paste prompt that auto-detects output, scores it, and renders a visual dashboard.',
+      'A free AI agent automation stack using Claude, launchd, and Next.js. Build your own airplane kit style - copy-paste prompt that auto-detects output, scores it, and renders a visual dashboard.',
     images: [
       '/og?title=Build+Your+Own+AI+Assistant&subtitle=Free+step-by-step+guide',
     ],
   },
+}
+
+/* ── FAQ schema ── */
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is a free AI agent automation tool?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'A free AI agent automation tool is a prompt or script you drop into an AI IDE like Cursor or Claude Code that automates a repeatable workflow without a paid SaaS subscription. This daily tracker is one example — it uses Python stdlib (no paid libraries), reads from git and file system, and only requires an Anthropic API key for the dashboard generation step. The scanner itself makes zero API calls.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How do I set up an AI agent for free?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'To set up a free AI agent for daily tracking: (1) Copy the prompt from this page into Cursor, Claude Code, or any AI IDE. (2) Customize the directory list to match your repo structure. (3) Run the generated scanner script each evening — it reads git commits, untracked files, and file modification times to detect your output automatically. (4) Run the dashboard script to render a visual PNG card from the JSON log. No cloud account, no SaaS tool, no GPU required — just Python 3, Pillow, and an Anthropic API key.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What does this AI agent daily tracker automate?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The daily tracker automates four things: (1) Output detection — it scans git commits, date-prefixed untracked files, and file modification times across your content and script directories so nothing slips through. (2) Scoring — it weights each file type (finalized content = 10pts, new skills = 5pts, drafts = 2pts) and computes a letter grade from S down to D. (3) Token cost tracking — it parses Claude Code JSONL transcripts to compute your actual API spend per session. (4) Dashboard generation — it renders a Pillow PNG card with all stats laid out, which you can screenshot and share as a daily receipt.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does an AI content assistant with memory work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'An AI content assistant with memory works by persisting context between sessions in files or a database the AI can read at startup. This tracker stores daily output logs as JSON, which Claude can read at the start of each session to know what you shipped yesterday, last week, or last month. The memory is not stored inside the model — it lives in your repo as structured data. That means you own it, can edit it, and can load as much or as little context as you need for any given session.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can an AI remember my writing style?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, but not by default. Claude and other LLMs do not retain anything between API calls. The way to make an AI remember your writing style is to store voice examples and rules in plain text files — usually called voice DNA or a style guide — and load them into the context at the start of each content session. This stack uses a core-voice.md file and a set of anti-pattern rules that get prepended to every content prompt. The AI does not learn from you over time; it reads from files you curate over time. That distinction matters: you control exactly what it absorbs.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Is this a good personal AI assistant for content creators?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'It depends on what you mean by assistant. This stack is not a chatbot you talk to — it is an automation layer that runs on a schedule and tracks what you shipped. For content creators specifically, it solves the problem of knowing what you actually produced on a given day across platforms like LinkedIn, X, Substack, and Reddit. If you write across multiple channels and lose track of where you are in the pipeline, the daily JSON log plus dashboard card gives you a single source of truth. Pair it with a voice DNA file and you get a system that tracks output and generates drafts in your voice.',
+      },
+    },
+  ],
 }
 
 /* ── The self-contained prompt ── */
@@ -388,15 +448,62 @@ const backLink: React.CSSProperties = {
 
 export default function BuildYourOwnPage() {
   return (
-    <div style={container}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div style={container}>
       {/* Terminal header */}
       <h1 style={terminalHeader}>
         <span style={{ color: 'var(--accent)' }}>$</span> ./build-your-own-tracker.sh
       </h1>
 
+      {/* ContentOS definition */}
+      <div style={{ ...calloutBox, borderLeftColor: 'var(--accent)', marginBottom: '28px' }}>
+        <div style={{ ...calloutTitle, color: 'var(--accent)' }}>What is ContentOS?</div>
+        <p style={calloutText}>
+          ContentOS is a personal AI content operating system - a set of prompts, scripts, and conventions that run your content pipeline the way an OS runs a machine.{' '}
+          It combines a <Link href="/method" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>voice-driven methodology</Link> with automated tracking, scoring, and publishing so your AI works in your system, not a vendor&apos;s.{' '}
+          See the full <Link href="/services" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>services</Link> if you want it built for you.
+        </p>
+      </div>
+
+      {/* Intro */}
+      <p style={{ ...heroSub, marginBottom: '24px', color: 'var(--text-secondary)' }}>
+        If you want the step-by-step walkthrough,{' '}
+        <Link href="/how-to" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+          how to make your own AI assistant for free
+        </Link>{' '}
+        is the place to start.{' '}
+        Think of this as a build-your-own airplane kit for AI automation: all the components are here, pre-specified, ready to assemble - no subscriptions, no cloud dependency, no vendor controlling your runway.
+        This build log documents what it actually looks like to construct a working AI agent from scratch - including building your own AI agent memory system that persists context between sessions.
+        AI agent memory systems are not magic: they are structured files your agent reads at startup, a scoring layer that tracks what you shipped, and a daily log that grows over time.
+        Everything documented here runs in production on a Mac Mini, firing nightly via launchd.
+        The prompt below is the exact thing that powers it.
+      </p>
+
+      {/* Claude Code callout */}
+      <div style={{ ...calloutBox, borderLeftColor: 'var(--accent)', marginBottom: '28px' }}>
+        <div style={{ ...calloutTitle, color: 'var(--accent)' }}>Building an AI Agent with Claude Code</div>
+        <p style={calloutText}>
+          This entire stack was built by{' '}
+          <Link href="/how-to" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+            building an AI agent with Claude Code
+          </Link>{' '}
+          - using it as the execution layer that writes the scripts, runs the scans, and iterates on the prompt below.{' '}
+          If you want the guided version, the{' '}
+          <Link href="/how-to" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+            how-to guides
+          </Link>{' '}
+          walk through setup step by step, from first prompt to nightly cron.
+        </p>
+      </div>
+
       {/* Hero */}
-      <h2 style={heroTitle}>Build Your Own Daily Tracker</h2>
+      <h2 style={heroTitle}>Build Your Own AI Assistant - Airplane Kit Approach</h2>
       <p style={heroSub}>
+        This is a live build log of a free AI agent automation stack using Claude, launchd, and Next.js.{' '}
         The daily receipts you see on{' '}
         <Link
           href="/log"
@@ -425,6 +532,23 @@ export default function BuildYourOwnPage() {
         </p>
       </div>
 
+      {/* AI agent memory callout */}
+      <div style={{ ...calloutBox, borderLeftColor: 'var(--accent)' }}>
+        <div style={{ ...calloutTitle, color: 'var(--accent)' }}>AI Agent Memory System</div>
+        <p style={calloutText}>
+          The same build-your-own approach applies to persistent agent memory — storing what your AI knows between sessions in files it can read at startup, not inside the model.{' '}
+          Instead of re-explaining your context every time, you write it once to a structured file and load it on demand.{' '}
+          See{' '}
+          <Link
+            href="/how-to"
+            style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}
+          >
+            the how-to guides
+          </Link>{' '}
+          for step-by-step walkthroughs on setting up file-based memory, voice DNA, and context handoffs for your own AI agent.
+        </p>
+      </div>
+
       {/* The prompt */}
       <div style={{ marginBottom: '12px' }}>
         <h3 style={sectionLabel}>the prompt</h3>
@@ -435,10 +559,82 @@ export default function BuildYourOwnPage() {
         <pre style={promptBlock}>{TRACKER_PROMPT}</pre>
       </div>
 
+      {/* FAQ */}
+      <div style={{ marginTop: '48px', marginBottom: '32px' }}>
+        <h3 style={sectionLabel}>FAQ</h3>
+        {[
+          {
+            q: 'What hardware do I need to build a personal AI assistant?',
+            a: 'A Mac Mini M2 (8GB RAM, 256GB SSD) handles this entire stack. The scanner and dashboard scripts are pure Python — no GPU needed. AI calls go to Claude over the network, so local compute is just file I/O and image rendering.',
+          },
+          {
+            q: 'Can I run this on a Mac Mini?',
+            a: 'Yes — this was built on a Mac Mini M2 running as an always-on dev server. The tracker fires as a nightly launchd job, scans the repo, and generates the dashboard card without any manual input. Low power, always on, silent.',
+          },
+          {
+            q: 'How much does a personal AI assistant cost to run?',
+            a: 'Claude Sonnet runs ~$3/M input and $15/M output tokens. A typical daily tracker session uses under 10K tokens total — roughly $0.05–$0.15/day or $1.50–$4.50/month. The scanner itself uses zero API calls (pure Python). Only dashboard generation hits the model.',
+          },
+          {
+            q: 'Do I need a cloud subscription or SaaS tool?',
+            a: 'No. The tracker runs entirely local: git CLI, Python stdlib, and Pillow for image rendering. The only external dependency is an Anthropic API key. No Notion, no Linear, no third-party logging service.',
+          },
+          {
+            q: 'Does this work with Cursor or Claude Code?',
+            a: 'Yes. The prompt is model-agnostic — drop it into Cursor Agent, Claude Code, or any tool that takes a system prompt. Claude Code also writes token usage to JSONL transcripts that the scanner reads automatically, so cost tracking works with zero extra setup.',
+          },
+          {
+            q: 'How does an AI content assistant with memory work?',
+            a: 'The memory lives in files, not inside the model. Claude does not remember anything between sessions by default — but if you store your daily output logs as JSON and load them at session start, the AI can read three months of history in seconds. That is what this tracker does. The "memory" is just structured data in your repo that you own, can edit, and can pass as context whenever it is relevant.',
+          },
+          {
+            q: 'Can an AI actually remember your writing style?',
+            a: 'Not automatically. What you can do is write down your voice as rules and examples — things like "no em dashes", "lead with the specific before the general", "never use the word impactful" — and store them in a plain text file. Every content session loads that file first. The AI is not learning from you over time; it is reading what you taught it to read. That is actually better, because you control exactly what gets reinforced.',
+          },
+          {
+            q: 'Is this useful if I am a content creator, not a developer?',
+            a: 'The tracker as-is requires a git repo and some Python comfort. But the underlying pattern works for anyone who ships content across multiple platforms and loses track of the pipeline. The JSON log + voice DNA approach scales down to a notes folder and a single markdown file if you want a lighter version. The core idea — auto-detect what you shipped, score it, and review it each evening — is useful regardless of the tech stack.',
+          },
+        ].map(({ q, a }) => (
+          <details
+            key={q}
+            style={{ borderBottom: '1px solid var(--border)', padding: '14px 0' }}
+          >
+            <summary
+              style={{
+                fontSize: '14px',
+                fontWeight: 600,
+                color: 'var(--text-primary)',
+                cursor: 'pointer',
+                listStyle: 'none',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              {q}
+              <span style={{ color: 'var(--accent)', marginLeft: '8px', flexShrink: 0 }}>+</span>
+            </summary>
+            <p
+              style={{
+                fontSize: '13px',
+                lineHeight: 1.75,
+                color: 'var(--text-secondary)',
+                marginTop: '10px',
+                marginBottom: 0,
+              }}
+            >
+              {a}
+            </p>
+          </details>
+        ))}
+      </div>
+
       {/* Back link */}
       <Link href="/log" style={backLink}>
         &larr; Back to the log
       </Link>
-    </div>
+      </div>
+    </>
   )
 }

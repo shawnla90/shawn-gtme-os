@@ -4,14 +4,14 @@ import { getAllLogs } from '@shawnos/shared/lib'
 import { HomeContent } from './HomeContent'
 
 export const metadata: Metadata = {
-  title: 'ContentOS – AI Agent Automation Tools & Content Operating System',
+  title: 'ContentOS — The Best AI Assistant for Solopreneurs',
   description:
-    'ContentOS gives creators AI agent automation tools for fast AI agent setup and end-to-end content workflows that publish in your voice across every channel.',
+    'ContentOS is the AI-powered content operating system built for solopreneurs. Write, publish, and distribute faster with your personal AI assistant.',
   alternates: { canonical: 'https://thecontentos.ai' },
   openGraph: {
-    title: 'ContentOS – AI Agent Automation Tools & Content Operating System',
+    title: 'ContentOS — The Best AI Assistant for Solopreneurs',
     description:
-      'ContentOS gives creators AI agent automation tools for fast AI agent setup and end-to-end content workflows that publish in your voice across every channel.',
+      'ContentOS is the AI-powered content operating system built for solopreneurs. Write, publish, and distribute faster with your personal AI assistant.',
     url: 'https://thecontentos.ai',
     images: [{ url: '/og', width: 1200, height: 630 }],
   },
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@shawntenam',
     creator: '@shawntenam',
-    title: 'ContentOS – AI Agent Automation Tools & Content Operating System',
+    title: 'ContentOS — The Best AI Assistant for Solopreneurs',
     description:
-      'ContentOS gives creators AI agent automation tools for fast AI agent setup and end-to-end content workflows that publish in your voice across every channel.',
+      'ContentOS is the AI-powered content operating system built for solopreneurs. Write, publish, and distribute faster with your personal AI assistant.',
     images: ['/og'],
   },
 }

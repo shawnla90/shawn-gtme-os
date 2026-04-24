@@ -5,14 +5,24 @@ import { ServicesContent } from './ServicesContent'
 const SITE_URL = 'https://thecontentos.ai'
 
 export const metadata: Metadata = {
-  title: 'AI Agent Setup & Automation Services | ContentOS',
+  title: 'Content Services | Personal AI Infrastructure — ContentOS',
   description:
-    'Free ai agent automation tool for content distribution. Voice DNA calibration, content engine retainer, and full dominance packages. We drove 527 visitors and 75,000+ Reddit views in 24 hours.',
+    'We help solopreneurs build their own AI assistant infrastructure, not rent someone else\'s. Voice DNA calibration, content operating system, and distribution ops that compound.',
   keywords: [
+    'personal AI infrastructure setup',
+    'AI content operating system',
+    'ai agent memory system',
+    'ai agent memory system setup',
+    'persistent agent memory',
+    'context retention AI',
+    'AI agent configuration',
+    'personal AI assistant',
+    'AI assistant with memory',
+    'AI with memory',
+    'content operating system',
     'free ai agent automation tool',
     'ai agent setup',
     'ai agent automation',
-    'content operating system',
     'content marketing services',
     'voice DNA calibration',
     'content distribution strategy',
@@ -26,9 +36,9 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/services` },
   openGraph: {
-    title: 'Services | theContentOS.ai',
+    title: 'Personal AI Infrastructure Setup & AI Content Operating System | ContentOS',
     description:
-      'Voice DNA calibration, content engine retainer, and full dominance packages. Content distribution that compounds.',
+      'ContentOS is your personal AI infrastructure setup - persistent agent memory, knowledge bases, and a full AI content operating system. Content engine retainer, AI agent configuration, and full dominance packages.',
     url: `${SITE_URL}/services`,
   },
 }
@@ -39,7 +49,7 @@ const serviceSchema = {
   name: 'ContentOS - Content Operating System Services',
   url: `${SITE_URL}/services`,
   description:
-    'Voice DNA calibration, content engine retainer, and full dominance packages. Content distribution that compounds.',
+    'AI agent automation tools and AI agent setup services. Voice DNA calibration, content engine retainer, and full dominance packages. Content distribution that compounds.',
   provider: {
     '@type': 'Person',
     name: 'Shawn Tenam',

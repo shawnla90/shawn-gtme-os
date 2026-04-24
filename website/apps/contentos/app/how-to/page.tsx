@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import {
   HOW_TO_WIKI_ENTRIES,
   HOW_TO_WIKI_CATEGORIES,
@@ -13,36 +14,46 @@ const SITE_URL = SITES.contentos
 /* ── metadata ─────────────────────────────────────── */
 
 export const metadata: Metadata = {
-  title: 'How to Build an AI Assistant | Best AI Agent Orchestration Guides',
+  title: 'How to Build an AI Agent with Claude Code | ContentOS',
   description:
-    'Step-by-step guides for how to build an AI assistant using the best AI agent orchestration patterns. MCP content stacks, publishing workflows, voice systems, and tools that compound.',
+    'How to build an AI agent with Claude Code — step-by-step guides covering Claude Code agent setup, memory systems, MCP integrations, voice systems, and full content OS architecture that runs without a paid API.',
   keywords: [
+    'build ai agent with claude code',
+    'how to build an AI agent with Claude Code',
+    'claude code agent setup',
     'how to build AI assistant',
+    'how to build a personal AI assistant with memory',
     'best ai agent orchestration',
+    'AI agent memory system setup',
+    'how to set up an AI agent memory system',
     'how to use AI for content',
     'MCP content stack',
     'AI content workflow',
     'content operating system guides',
     'AI publishing tools',
     'content creation AI tutorial',
+    'ai agent automation tools',
+    'free ai agent automation tool',
+    'free ai agent setup',
   ],
   alternates: { canonical: `${SITE_URL}/how-to` },
   openGraph: {
-    title: 'How to Build an AI Assistant | Best AI Agent Orchestration Guides',
+    type: 'website',
+    title: 'How to Build an AI Assistant | AI Agent Memory System Setup & Orchestration Guides',
     description:
-      'Step-by-step guides for how to build an AI assistant using the best AI agent orchestration patterns. MCP content stacks, publishing workflows, and tools that compound.',
+      'Step-by-step guides for how to build a personal AI assistant with memory using the best AI agent orchestration patterns. Covers AI agent memory system setup, MCP content stacks, publishing workflows, and tools that compound.',
     url: `${SITE_URL}/how-to`,
   },
   twitter: {
-    title: 'How to Build an AI Assistant | Best AI Agent Orchestration Guides',
+    title: 'How to Build an AI Assistant | AI Agent Memory System Setup & Orchestration Guides',
     description:
-      'Step-by-step guides for how to build an AI assistant using the best AI agent orchestration patterns. MCP content stacks, publishing workflows, and tools that compound.',
+      'Step-by-step guides for how to build a personal AI assistant with memory using the best AI agent orchestration patterns. Covers AI agent memory system setup, MCP content stacks, publishing workflows, and tools that compound.',
   },
 }
 
 /* ── FAQ schema ───────────────────────────────────── */
 
-const faqItems = [
+const faqItems: { question: string; answer: string; answerNode?: ReactNode }[] = [
   {
     question: 'What is AI agent orchestration?',
     answer:
@@ -68,6 +79,48 @@ const faqItems = [
     answer:
       'A single prompt asks one model to do everything in one shot - research, draft, format, and finalize. It works for simple tasks but degrades fast as complexity grows because the model has to balance too many constraints at once. Agent orchestration splits those constraints across specialized agents: each agent is small, focused, and evaluated independently. You can swap out one agent without touching the rest. You can rerun a failed stage without repeating the whole pipeline. And you can log the output of each stage, which makes debugging a bad result much faster than re-reading a 3,000-token prompt to figure out where it went wrong.',
   },
+  {
+    question: 'How do I build my own AI assistant?',
+    answer:
+      'Start by writing a voice file - a markdown document that captures your tone, vocabulary, and the patterns you want the AI to follow consistently. Then connect it to your publishing tools via MCP servers so it can write and post without copy-pasting. The full setup walkthrough is in the guide on AI agent memory system setup.',
+    answerNode: (
+      <>
+        Start by writing a voice file - a markdown document that captures your tone, vocabulary, and the patterns you want the AI to follow consistently. Then connect it to your publishing tools via MCP servers so it can write and post without copy-pasting. The full setup walkthrough is in the{' '}
+        <a href="/how-to/how-to-build-persistent-ai-memory" style={{ textDecoration: 'underline' }}>
+          guide on AI agent memory system setup
+        </a>
+        .
+      </>
+    ),
+  },
+  {
+    question: 'What is a personal AI assistant kit?',
+    answer:
+      'A personal AI assistant kit is the set of files, configs, and integrations that make an AI work specifically for you: a voice file, skill files (prompt templates per task), MCP server connections, and a git repo that gives it long-term memory. Unlike a generic chatbot, a kit is opinionated - it knows your workflow, your tone, and where to put output. You can see what a real kit looks like in the build your own log.',
+    answerNode: (
+      <>
+        A personal AI assistant kit is the set of files, configs, and integrations that make an AI work specifically for you: a voice file, skill files (prompt templates per task), MCP server connections, and a git repo that gives it long-term memory. Unlike a generic chatbot, a kit is opinionated - it knows your workflow, your tone, and where to put output. You can see what a real kit looks like in the{' '}
+        <a href="/log/build-your-own" style={{ textDecoration: 'underline' }}>
+          build your own log
+        </a>
+        .
+      </>
+    ),
+  },
+  {
+    question: 'Can I build an airplane kit workflow with AI?',
+    answer:
+      'Yes - the airplane kit model applies directly to AI-assisted builds: every step is predefined, parts are standardized, and you assemble rather than fabricate from scratch. With AI, you replace manual fabrication with skill files (reusable prompt templates) and MCP tools that handle the mechanical steps automatically. The build your own log documents exactly how this plays out in a real content OS build.',
+    answerNode: (
+      <>
+        Yes - the airplane kit model applies directly to AI-assisted builds: every step is predefined, parts are standardized, and you assemble rather than fabricate from scratch. With AI, you replace manual fabrication with skill files (reusable prompt templates) and MCP tools that handle the mechanical steps automatically. The{' '}
+        <a href="/log/build-your-own" style={{ textDecoration: 'underline' }}>
+          build your own log
+        </a>{' '}
+        documents exactly how this plays out in a real content OS build.
+      </>
+    ),
+  },
 ]
 
 const faqSchema = {
@@ -88,9 +141,9 @@ const faqSchema = {
 const howToSchema = {
   '@context': 'https://schema.org',
   '@type': 'HowTo',
-  name: 'How to Build an AI Assistant for Content',
+  name: 'How to Build an AI Agent Memory System for Content',
   description:
-    'Build a persistent AI assistant that writes in your voice across every platform using a repo-based content operating system.',
+    'Build a persistent AI agent memory system and complete agent setup that writes in your voice across every platform using a repo-based content operating system.',
   step: [
     {
       '@type': 'HowToStep',
@@ -130,21 +183,31 @@ const howToSchema = {
 const config: HowToWikiPageConfig = {
   siteName: 'contentos',
   siteUrl: SITE_URL,
-  title: 'How-To: AI Content Stack',
+  title: 'How-To: AI Agent Setup & Content Stack',
   description:
-    'Step-by-step guides for building an AI content operating system. MCP content stacks, publishing workflows, voice systems, and tools that compound.',
+    'Step-by-step guides for AI agent setup, building an AI agent memory system, and running a full content operating system. MCP integrations, publishing workflows, voice systems, and tools that compound.',
   terminalCommand: 'cd ~/how-to --site=contentos',
-  badge: 'AI Content Guides',
+  badge: 'AI Agent Guides',
   intro:
-    'A self-hosted AI assistant gives you control that cloud-only tools never will - you run locally, decide what gets logged, and own your data outright. Most people hand their entire content operation to a SaaS tool they have no visibility into; a self-hosted AI assistant flips that default. These guides cover the full stack: voice systems, MCP integrations, best AI agent orchestration patterns, publishing pipelines, and the repo structure that makes it all compound over time. Whether you are starting from scratch or porting an existing workflow, each guide is written for practitioners who want a system that actually works, not a demo.',
-  entries: HOW_TO_WIKI_ENTRIES.map((e) => ({
-    id: e.id,
-    title: e.title,
-    subtitle: e.subtitle,
-    category: e.category,
-    difficulty: e.difficulty,
-    canonicalSite: e.canonicalSite,
-  })),
+    'Most people are still prompting one tool at a time. These guides show you how to build an AI agent with Claude Code - from initial setup to a full content OS that runs without you. When you build an AI agent with Claude Code, your agent knows your voice, remembers decisions, and ships content across platforms while you focus on strategy. Covers Claude Code agent setup, AI infrastructure design, MCP integrations, agent memory systems, voice files, and the repo structure that makes everything compound. Whether you are starting from zero or converting an existing workflow - each guide is written for practitioners who want something that actually runs, not a five-minute demo that breaks in production.',
+  entries: [
+    ...HOW_TO_WIKI_ENTRIES.filter((e) => e.id !== 'how-to-build-persistent-ai-memory').map((e) => ({
+      id: e.id,
+      title: e.title,
+      subtitle: e.subtitle,
+      category: e.category,
+      difficulty: e.difficulty,
+      canonicalSite: e.canonicalSite,
+    })),
+    {
+      id: 'how-to-build-persistent-ai-memory',
+      title: 'How to set up an AI agent memory system',
+      subtitle: 'Session handoffs, memory files, and the architecture that makes AI remember',
+      category: 'cli-tools' as const,
+      difficulty: 'intermediate' as const,
+      canonicalSite: 'shawnos' as const,
+    },
+  ],
   categories: HOW_TO_WIKI_CATEGORIES.map((c) => ({
     id: c.id,
     label: c.label,
@@ -171,6 +234,29 @@ export default function ContentOSHowToPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
+      <h1
+        style={{
+          maxWidth: '720px',
+          margin: '0 auto',
+          padding: '32px 24px 0',
+          fontSize: '1.5rem',
+          fontWeight: 700,
+          lineHeight: '1.4',
+        }}
+      >
+        How to build an AI agent with Claude Code — personal AI assistant setup, Claude Code agent configuration, and the content OS stack that runs without you.
+      </h1>
+      <p
+        style={{
+          maxWidth: '720px',
+          margin: '0 auto',
+          padding: '16px 24px 0',
+          lineHeight: '1.7',
+          fontSize: '1rem',
+        }}
+      >
+        These guides are built for the AI assistant for solopreneurs - solo operators running their own content stack without a team behind them. If you are the writer, the publisher, the strategist, and the editor all at once, this is your playbook. Each guide is written for practitioners who want a system that actually runs, not a demo that breaks after one use.
+      </p>
       <HowToWikiPage config={config} />
       <section
         aria-label="Frequently asked questions about AI agent orchestration"
@@ -179,7 +265,7 @@ export default function ContentOSHowToPage() {
         itemType="https://schema.org/FAQPage"
       >
         <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '32px' }}>
-          FAQ: AI Agent Orchestration
+          FAQ: AI Agent Setup & Orchestration
         </h2>
         {faqItems.map((item) => (
           <div
@@ -201,7 +287,7 @@ export default function ContentOSHowToPage() {
               itemType="https://schema.org/Answer"
             >
               <p itemProp="text" style={{ lineHeight: '1.7', margin: 0 }}>
-                {item.answer}
+                {item.answerNode ?? item.answer}
               </p>
             </div>
           </div>
