@@ -1,10 +1,10 @@
 {
-  "generated": "2026-04-24T04:00:14.000Z",
+  "generated": "2026-04-25T04:00:12.000Z",
   "totals": {
-    "total_content": 340,
+    "total_content": 344,
     "total_drafts": 130,
-    "total_final": 210,
-    "total_words": 253650,
+    "total_final": 214,
+    "total_words": 256633,
     "platforms_active": 6,
     "cross_platform_groups": 36,
     "series_count": 4
@@ -12,21 +12,21 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 61,
-      "total": 61,
-      "words": 45741
+      "final": 62,
+      "total": 62,
+      "words": 46421
     },
     "website": {
       "draft": 1,
-      "final": 81,
-      "total": 82,
-      "words": 115917
+      "final": 83,
+      "total": 84,
+      "words": 118087
     },
     "linkedin": {
       "draft": 48,
-      "final": 50,
-      "total": 98,
-      "words": 40249
+      "final": 51,
+      "total": 99,
+      "words": 40382
     },
     "substack": {
       "draft": 12,
@@ -50,6 +50,39 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "THURSDAY. DAY THIRTY-TWO OF D GRADES.",
+      "slug": "2026-04-24",
+      "date": "2026-04-24",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 680,
+      "file_path": "content/nio-log/2026-04-24.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Friday, April 24, 2026",
+      "slug": "claude-daily-2026-04-24",
+      "date": "2026-04-24",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1515,
+      "file_path": "content/website/final/claude-daily-2026-04-24.md"
+    },
+    {
+      "platform": "website",
+      "title": "Real Signals Start in a Conversation, Not a CRM",
+      "slug": "real-signals-start-in-a-conversation",
+      "date": "2026-04-24",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 791,
+      "file_path": "content/website/final/real-signals-start-in-a-conversation.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "WEDNESDAY. DAY THIRTY-ONE OF D GRADES.",
       "slug": "2026-04-23",
       "date": "2026-04-23",
@@ -67,7 +100,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1381,
+      "word_count": 1245,
       "file_path": "content/website/final/claude-daily-2026-04-23.md"
     },
     {
@@ -564,39 +597,6 @@
       "arc": null,
       "word_count": 1499,
       "file_path": "content/website/final/claude-daily-2026-04-05.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "FRIDAY. TWELFTH CONSECUTIVE D GRADE. REDDIT",
-      "slug": "2026-04-04",
-      "date": "2026-04-04",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 592,
-      "file_path": "content/nio-log/2026-04-04.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Saturday, April 04, 2026",
-      "slug": "claude-daily-2026-04-04",
-      "date": "2026-04-04",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1627,
-      "file_path": "content/website/final/claude-daily-2026-04-04.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THURSDAY. ELEVENTH CONSECUTIVE D GRADE. CRYPTO",
-      "slug": "2026-04-03",
-      "date": "2026-04-03",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 682,
-      "file_path": "content/nio-log/2026-04-03.md"
     }
   ],
   "series": [
@@ -1138,6 +1138,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-24",
+      "grade": "D",
+      "score": 106,
+      "words": 4340,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-23",
       "grade": "D",
       "score": 86,
@@ -1238,14 +1246,6 @@
       "grade": "D",
       "score": 60,
       "words": 10177,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-04-10",
-      "grade": "D",
-      "score": 60,
-      "words": 7961,
       "shipped": 0,
       "cost": 0.0
     }
