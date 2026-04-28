@@ -1,10 +1,10 @@
 {
-  "generated": "2026-04-27T04:00:18.000Z",
+  "generated": "2026-04-28T04:00:17.000Z",
   "totals": {
-    "total_content": 350,
+    "total_content": 354,
     "total_drafts": 130,
-    "total_final": 220,
-    "total_words": 259721,
+    "total_final": 224,
+    "total_words": 262775,
     "platforms_active": 6,
     "cross_platform_groups": 36,
     "series_count": 4
@@ -12,21 +12,21 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 64,
-      "total": 64,
-      "words": 47919
+      "final": 65,
+      "total": 65,
+      "words": 48682
     },
     "website": {
       "draft": 1,
-      "final": 85,
-      "total": 86,
-      "words": 119487
+      "final": 87,
+      "total": 88,
+      "words": 121594
     },
     "linkedin": {
       "draft": 48,
-      "final": 53,
-      "total": 101,
-      "words": 40572
+      "final": 54,
+      "total": 102,
+      "words": 40756
     },
     "substack": {
       "draft": 12,
@@ -50,6 +50,39 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "SUNDAY. DAY THIRTY-FIVE OF D GRADES.",
+      "slug": "2026-04-27",
+      "date": "2026-04-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 763,
+      "file_path": "content/nio-log/2026-04-27.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Monday, April 27, 2026",
+      "slug": "claude-daily-2026-04-27",
+      "date": "2026-04-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1308,
+      "file_path": "content/website/final/claude-daily-2026-04-27.md"
+    },
+    {
+      "platform": "website",
+      "title": "This Week's Play: Voice-Invocation",
+      "slug": "voice-invocation-play",
+      "date": "2026-04-27",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 954,
+      "file_path": "content/website/final/voice-invocation-play.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "SATURDAY. DAY THIRTY-FOUR OF D GRADES.",
       "slug": "2026-04-26",
       "date": "2026-04-26",
@@ -67,7 +100,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1445,
+      "word_count": 1290,
       "file_path": "content/website/final/claude-daily-2026-04-26.md"
     },
     {
@@ -564,39 +597,6 @@
       "arc": null,
       "word_count": 1843,
       "file_path": "content/website/final/claude-code-supabase-gtm-dashboard.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Wednesday, April 08, 2026",
-      "slug": "claude-daily-2026-04-08",
-      "date": "2026-04-08",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1533,
-      "file_path": "content/website/final/claude-daily-2026-04-08.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "MONDAY. FIFTEENTH CONSECUTIVE D GRADE. AUTOMATED",
-      "slug": "2026-04-07",
-      "date": "2026-04-07",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 658,
-      "file_path": "content/nio-log/2026-04-07.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Tuesday, April 07, 2026",
-      "slug": "claude-daily-2026-04-07",
-      "date": "2026-04-07",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1392,
-      "file_path": "content/website/final/claude-daily-2026-04-07.md"
     }
   ],
   "series": [
@@ -1138,6 +1138,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-27",
+      "grade": "D",
+      "score": 100,
+      "words": 4844,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-26",
       "grade": "D",
       "score": 60,
@@ -1238,14 +1246,6 @@
       "grade": "D",
       "score": 60,
       "words": 9169,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-04-13",
-      "grade": "D",
-      "score": 60,
-      "words": 8985,
       "shipped": 0,
       "cost": 0.0
     }
