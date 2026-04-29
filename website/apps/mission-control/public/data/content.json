@@ -1,10 +1,10 @@
 {
-  "generated": "2026-04-28T04:00:17.000Z",
+  "generated": "2026-04-29T04:00:14.000Z",
   "totals": {
-    "total_content": 354,
+    "total_content": 357,
     "total_drafts": 130,
-    "total_final": 224,
-    "total_words": 262775,
+    "total_final": 227,
+    "total_words": 265094,
     "platforms_active": 6,
     "cross_platform_groups": 36,
     "series_count": 4
@@ -12,21 +12,21 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 65,
-      "total": 65,
-      "words": 48682
+      "final": 66,
+      "total": 66,
+      "words": 49407
     },
     "website": {
       "draft": 1,
-      "final": 87,
-      "total": 88,
-      "words": 121594
+      "final": 88,
+      "total": 89,
+      "words": 123087
     },
     "linkedin": {
       "draft": 48,
-      "final": 54,
-      "total": 102,
-      "words": 40756
+      "final": 55,
+      "total": 103,
+      "words": 40857
     },
     "substack": {
       "draft": 12,
@@ -50,6 +50,28 @@
   "recent": [
     {
       "platform": "nio-log",
+      "title": "MONDAY. DAY THIRTY-SIX OF D GRADES.",
+      "slug": "2026-04-28",
+      "date": "2026-04-28",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 725,
+      "file_path": "content/nio-log/2026-04-28.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Tuesday, April 28, 2026",
+      "slug": "claude-daily-2026-04-28",
+      "date": "2026-04-28",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1293,
+      "file_path": "content/website/final/claude-daily-2026-04-28.md"
+    },
+    {
+      "platform": "nio-log",
       "title": "SUNDAY. DAY THIRTY-FIVE OF D GRADES.",
       "slug": "2026-04-27",
       "date": "2026-04-27",
@@ -67,7 +89,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1308,
+      "word_count": 1508,
       "file_path": "content/website/final/claude-daily-2026-04-27.md"
     },
     {
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 1387,
       "file_path": "content/website/final/claude-daily-2026-04-09.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "TUESDAY. SIXTEENTH CONSECUTIVE D GRADE. BLOG",
-      "slug": "2026-04-08",
-      "date": "2026-04-08",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 689,
-      "file_path": "content/nio-log/2026-04-08.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code + Supabase = GTM Dashboard",
-      "slug": "claude-code-supabase-gtm-dashboard",
-      "date": "2026-04-08",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1843,
-      "file_path": "content/website/final/claude-code-supabase-gtm-dashboard.md"
     }
   ],
   "series": [
@@ -1138,6 +1138,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-28",
+      "grade": "D",
+      "score": 60,
+      "words": 4818,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-27",
       "grade": "D",
       "score": 100,
@@ -1238,14 +1246,6 @@
       "grade": "D",
       "score": 70,
       "words": 9186,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-04-14",
-      "grade": "D",
-      "score": 60,
-      "words": 9169,
       "shipped": 0,
       "cost": 0.0
     }
