@@ -1,44 +1,44 @@
 {
-  "generated": "2026-04-29T04:00:14.000Z",
+  "generated": "2026-04-30T04:00:16.000Z",
   "totals": {
-    "total_content": 357,
+    "total_content": 362,
     "total_drafts": 130,
-    "total_final": 227,
-    "total_words": 265094,
+    "total_final": 232,
+    "total_words": 266480,
     "platforms_active": 6,
     "cross_platform_groups": 36,
     "series_count": 4
   },
   "pipeline": {
+    "linkedin": {
+      "draft": 48,
+      "final": 57,
+      "total": 105,
+      "words": 41071
+    },
     "nio-log": {
       "draft": 0,
-      "final": 66,
-      "total": 66,
-      "words": 49407
+      "final": 67,
+      "total": 67,
+      "words": 50227
     },
     "website": {
       "draft": 1,
-      "final": 88,
-      "total": 89,
-      "words": 123087
+      "final": 89,
+      "total": 90,
+      "words": 123378
     },
-    "linkedin": {
-      "draft": 48,
-      "final": 55,
-      "total": 103,
-      "words": 40857
+    "x": {
+      "draft": 46,
+      "final": 13,
+      "total": 59,
+      "words": 18563
     },
     "substack": {
       "draft": 12,
       "final": 6,
       "total": 18,
       "words": 23550
-    },
-    "x": {
-      "draft": 46,
-      "final": 12,
-      "total": 58,
-      "words": 18502
     },
     "reddit": {
       "draft": 23,
@@ -48,6 +48,50 @@
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "superwhisper claude code feed",
+      "slug": "superwhisper-claude-code-feed",
+      "date": "2026-04-29",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 124,
+      "file_path": "content/linkedin/final/2026-04-29_superwhisper-claude-code-feed.txt"
+    },
+    {
+      "platform": "nio-log",
+      "title": "TUESDAY. DAY THIRTY-SEVEN OF D GRADES.",
+      "slug": "2026-04-29",
+      "date": "2026-04-29",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 820,
+      "file_path": "content/nio-log/2026-04-29.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Wednesday, April 29, 2026",
+      "slug": "claude-daily-2026-04-29",
+      "date": "2026-04-29",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 118,
+      "file_path": "content/website/final/claude-daily-2026-04-29.md"
+    },
+    {
+      "platform": "x",
+      "title": "superwhisper claude code",
+      "slug": "superwhisper-claude-code",
+      "date": "2026-04-29",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 61,
+      "file_path": "content/x/final/2026-04-29_superwhisper-claude-code.txt"
+    },
     {
       "platform": "nio-log",
       "title": "MONDAY. DAY THIRTY-SIX OF D GRADES.",
@@ -67,7 +111,7 @@
       "stage": "final",
       "pillar": null,
       "arc": null,
-      "word_count": 1293,
+      "word_count": 1466,
       "file_path": "content/website/final/claude-daily-2026-04-28.md"
     },
     {
@@ -553,50 +597,6 @@
       "arc": null,
       "word_count": 1446,
       "file_path": "content/website/final/claude-daily-2026-04-11.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THURSDAY. EIGHTEENTH CONSECUTIVE D GRADE. CRONS",
-      "slug": "2026-04-10",
-      "date": "2026-04-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 740,
-      "file_path": "content/nio-log/2026-04-10.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Friday, April 10, 2026",
-      "slug": "claude-daily-2026-04-10",
-      "date": "2026-04-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1326,
-      "file_path": "content/website/final/claude-daily-2026-04-10.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "WEDNESDAY. SEVENTEENTH CONSECUTIVE D GRADE. CRONS",
-      "slug": "2026-04-09",
-      "date": "2026-04-09",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 735,
-      "file_path": "content/nio-log/2026-04-09.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Thursday, April 09, 2026",
-      "slug": "claude-daily-2026-04-09",
-      "date": "2026-04-09",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1387,
-      "file_path": "content/website/final/claude-daily-2026-04-09.md"
     }
   ],
   "series": [
@@ -1138,6 +1138,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-04-29",
+      "grade": "D",
+      "score": 60,
+      "words": 4967,
+      "shipped": 2,
+      "cost": 0.0
+    },
+    {
       "date": "2026-04-28",
       "grade": "D",
       "score": 60,
@@ -1239,14 +1247,6 @@
       "score": 90,
       "words": 9819,
       "shipped": 1,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-04-15",
-      "grade": "D",
-      "score": 70,
-      "words": 9186,
-      "shipped": 0,
       "cost": 0.0
     }
   ]
