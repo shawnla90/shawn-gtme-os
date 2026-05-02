@@ -1,6 +1,61 @@
 {
-  "generated": "2026-05-01T04:28:59.897Z",
+  "generated": "2026-05-02T04:42:57.647Z",
   "events": [
+    {
+      "id": "commit-1e9e810",
+      "title": "chore: sync Reddit cache — 48 posts (2026-05-01 19:38)",
+      "type": "system",
+      "datetime": "2026-05-01T19:38:07-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 48 posts (2026-05-01 19:38)",
+      "metadata": {
+        "commitHash": "1e9e810"
+      }
+    },
+    {
+      "id": "commit-8992446",
+      "title": "chore(crypto): evening signal update 2026-05-01",
+      "type": "system",
+      "datetime": "2026-05-01T17:30:09-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-05-01",
+      "metadata": {
+        "commitHash": "8992446"
+      }
+    },
+    {
+      "id": "commit-2692b80",
+      "title": "chore: sync Reddit cache — 48 posts (2026-05-01 07:37)",
+      "type": "system",
+      "datetime": "2026-05-01T07:37:43-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 48 posts (2026-05-01 07:37)",
+      "metadata": {
+        "commitHash": "2692b80"
+      }
+    },
+    {
+      "id": "commit-9c4fac4",
+      "title": "chore(crypto): morning signal update 2026-05-01",
+      "type": "system",
+      "datetime": "2026-05-01T07:00:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-05-01",
+      "metadata": {
+        "commitHash": "9c4fac4"
+      }
+    },
+    {
+      "id": "commit-c323ceb",
+      "title": "chore: daily tracker scan 2026-04-30",
+      "type": "system",
+      "datetime": "2026-05-01T00:29:00-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-04-30",
+      "metadata": {
+        "commitHash": "c323ceb"
+      }
+    },
     {
       "id": "commit-5565deb",
       "title": "chore: sync Reddit cache — 48 posts (2026-04-30 19:37)",
@@ -44,101 +99,13 @@
       "metadata": {
         "commitHash": "ead2d7f"
       }
-    },
-    {
-      "id": "commit-a6ddd2e",
-      "title": "chore: daily tracker scan 2026-04-29",
-      "type": "system",
-      "datetime": "2026-04-30T00:29:03-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-04-29",
-      "metadata": {
-        "commitHash": "a6ddd2e"
-      }
-    },
-    {
-      "id": "commit-4694274",
-      "title": "chore: sync Reddit cache — 48 posts (2026-04-29 19:36)",
-      "type": "system",
-      "datetime": "2026-04-29T19:36:28-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 48 posts (2026-04-29 19:36)",
-      "metadata": {
-        "commitHash": "4694274"
-      }
-    },
-    {
-      "id": "commit-8c91055",
-      "title": "chore(crypto): evening signal update 2026-04-29",
-      "type": "system",
-      "datetime": "2026-04-29T17:30:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-04-29",
-      "metadata": {
-        "commitHash": "8c91055"
-      }
-    },
-    {
-      "id": "commit-175b6e8",
-      "title": "feat: claude daily digest 2026-04-29",
-      "type": "milestone",
-      "datetime": "2026-04-29T10:16:53-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-04-29",
-      "metadata": {
-        "commitHash": "175b6e8"
-      }
-    },
-    {
-      "id": "commit-387e97f",
-      "title": "feat: daily LinkedIn posts 2026-04-29",
-      "type": "milestone",
-      "datetime": "2026-04-29T09:10:20-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-04-29",
-      "metadata": {
-        "commitHash": "387e97f"
-      }
-    },
-    {
-      "id": "commit-a754e44",
-      "title": "feat: nio.log 2026-04-29 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-04-29T08:01:22-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-04-29 — automated daily post",
-      "metadata": {
-        "commitHash": "a754e44"
-      }
-    },
-    {
-      "id": "commit-26d946e",
-      "title": "chore: sync Reddit cache — 48 posts (2026-04-29 07:36)",
-      "type": "system",
-      "datetime": "2026-04-29T07:36:03-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 48 posts (2026-04-29 07:36)",
-      "metadata": {
-        "commitHash": "26d946e"
-      }
-    },
-    {
-      "id": "commit-3d80c6a",
-      "title": "chore(crypto): morning signal update 2026-04-29",
-      "type": "system",
-      "datetime": "2026-04-29T07:00:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-04-29",
-      "metadata": {
-        "commitHash": "3d80c6a"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 12,
-    "completedEvents": 12,
+    "totalEvents": 9,
+    "completedEvents": 9,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 12,
+    "deploymentsThisWeek": 9,
     "upcomingCronJobs": 0
   }
 }
