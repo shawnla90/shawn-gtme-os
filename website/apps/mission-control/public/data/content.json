@@ -1,10 +1,10 @@
 {
-  "generated": "2026-05-11T04:00:14.000Z",
+  "generated": "2026-05-12T04:00:17.000Z",
   "totals": {
-    "total_content": 364,
+    "total_content": 368,
     "total_drafts": 131,
-    "total_final": 233,
-    "total_words": 268882,
+    "total_final": 237,
+    "total_words": 272324,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "linkedin": {
       "draft": 49,
-      "final": 58,
-      "total": 107,
-      "words": 43473
+      "final": 62,
+      "total": 111,
+      "words": 46915
     },
     "nio-log": {
       "draft": 0,
@@ -48,6 +48,50 @@
     }
   },
   "recent": [
+    {
+      "platform": "linkedin",
+      "title": "clearbox launch newsletter",
+      "slug": "clearbox-launch-newsletter",
+      "date": "2026-05-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 431,
+      "file_path": "content/linkedin/final/2026-05-11_clearbox-launch-newsletter.txt"
+    },
+    {
+      "platform": "linkedin",
+      "title": "meta ad intelligence newsletter grok",
+      "slug": "meta-ad-intelligence-newsletter-grok",
+      "date": "2026-05-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 749,
+      "file_path": "content/linkedin/final/2026-05-11_meta-ad-intelligence-newsletter-grok.txt"
+    },
+    {
+      "platform": "linkedin",
+      "title": "meta ad intelligence newsletter opus",
+      "slug": "meta-ad-intelligence-newsletter-opus",
+      "date": "2026-05-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1159,
+      "file_path": "content/linkedin/final/2026-05-11_meta-ad-intelligence-newsletter-opus.txt"
+    },
+    {
+      "platform": "linkedin",
+      "title": "meta ad intelligence newsletter sonnet",
+      "slug": "meta-ad-intelligence-newsletter-sonnet",
+      "date": "2026-05-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1103,
+      "file_path": "content/linkedin/final/2026-05-11_meta-ad-intelligence-newsletter-sonnet.txt"
+    },
     {
       "platform": "linkedin",
       "title": "claude code vs cowork newsletter",
@@ -553,50 +597,6 @@
       "arc": null,
       "word_count": 1472,
       "file_path": "content/website/final/claude-daily-2026-04-14.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "SUNDAY. TWENTY-FIRST CONSECUTIVE D GRADE. CRONS",
-      "slug": "2026-04-13",
-      "date": "2026-04-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 861,
-      "file_path": "content/nio-log/2026-04-13.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Monday, April 13, 2026",
-      "slug": "claude-daily-2026-04-13",
-      "date": "2026-04-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1327,
-      "file_path": "content/website/final/claude-daily-2026-04-13.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "SATURDAY. TWENTIETH CONSECUTIVE D GRADE. CRONS",
-      "slug": "2026-04-12",
-      "date": "2026-04-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 843,
-      "file_path": "content/nio-log/2026-04-12.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Sunday, April 12, 2026",
-      "slug": "claude-daily-2026-04-12",
-      "date": "2026-04-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1486,
-      "file_path": "content/website/final/claude-daily-2026-04-12.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-05-11",
+      "grade": "D",
+      "score": 5,
+      "words": 8994,
+      "shipped": 4,
+      "cost": 0.0
+    },
+    {
       "date": "2026-05-10",
       "grade": "D",
       "score": 5,
@@ -1249,14 +1257,6 @@
       "grade": "D",
       "score": 60,
       "words": 4818,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-04-27",
-      "grade": "D",
-      "score": 100,
-      "words": 4844,
       "shipped": 0,
       "cost": 0.0
     }
