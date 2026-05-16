@@ -2,10 +2,9 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC, Noto_Sans_JP } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow, ThemeToggle } from '@shawnos/shared/components'
 import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { FooterCredit } from '../FooterCredit'
-import { NioChat } from '../NioChat'
 import { FeedbackButton } from '../components/FeedbackButton'
 import { ScrollSignupGlobal } from '../components/ScrollSignupGlobal'
 import { LanguageSwitcher } from '../components/LanguageSwitcher'
@@ -192,24 +191,28 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
         <Navigation
           siteName="ShawnOS.ai"
-          actions={<LanguageSwitcher />}
+          actions={
+            <>
+              <ThemeToggle />
+              <LanguageSwitcher />
+            </>
+          }
           links={[
             { href: lp('/'), label: nav('home') },
-            { href: lp('/services'), label: nav('services') },
+            { href: lp('/clearbox'), label: 'Clearbox' },
             { href: lp('/blog'), label: nav('blog') },
-            { href: lp('/claude-daily'), label: nav('claudeDaily') },
-            { href: lp('/media'), label: nav('media') },
+            { href: lp('/reddit'), label: 'Reddit' },
+            { href: lp('/how-to'), label: nav('howTo') },
+            { href: lp('/context-wiki'), label: nav('contextWiki') },
             { href: lp('/about'), label: nav('about') },
-            { href: '#', label: nav('wiki'), children: [
+            { href: '#', label: nav('more'), children: [
+              { href: lp('/claude-daily'), label: nav('claudeDaily') },
+              { href: lp('/media'), label: nav('media') },
               { href: lp('/guide/gtm-coding-agent'), label: nav('playbook') },
               { href: lp('/knowledge'), label: nav('knowledge') },
-              { href: lp('/how-to'), label: nav('howTo') },
               { href: lp('/clay-wiki'), label: nav('clayWiki') },
               { href: lp('/content-wiki'), label: nav('contentWiki') },
-              { href: lp('/context-wiki'), label: nav('contextWiki') },
               { href: lp('/geo'), label: nav('geoWiki') },
-            ]},
-            { href: '#', label: nav('more'), children: [
               { href: lp('/community'), label: 'Community' },
               { href: lp('/log'), label: nav('log') },
               { href: lp('/rpg-preview'), label: nav('rpg') },
@@ -230,7 +233,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <Footer siteName="ShawnOS.ai" />
         <FooterCredit />
         <ScrollSignupGlobal />
-        <NioChat />
         <FeedbackButton />
         <CursorGlow />
         </PostHogProvider>

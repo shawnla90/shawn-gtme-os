@@ -1,38 +1,15 @@
+'use client'
+
+import Image from 'next/image'
 import { Link } from '../i18n/navigation'
-import { getTranslations } from 'next-intl/server'
 import {
-  PostCard,
-  LogCard,
-  SectionHeadline,
-  FAQAccordion,
-  ProcessSteps,
-  MotionReveal,
-  StaggerContainer,
-  StaggerItem,
-  MagneticHover,
-  ScrollRevealSection,
-  DotGrid,
-  GraphGrid,
-  DashedCard,
-  DarkInterlude,
-} from '@shawnos/shared/components'
-import type { RPGProfile } from '@shawnos/shared/lib/rpg'
+  BentoGrid,
+  BentoGridItem,
+  GlowingEffect,
+  FloatingDock,
+  BackgroundRippleEffect,
+} from '@shawnos/shared/components/ui'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
-import { MEDIA_APPEARANCES } from '@shawnos/shared/data/media-appearances'
-import { StatsStrip } from './StatsStrip'
-import { BuiltWithStrip } from './BuiltWithStrip'
-// CaseStudyGrid inlined below for per-card MotionReveal animation
-import { WorkTogetherCTA } from './components/WorkTogetherCTA'
-
-/* ── data ────────────────────────────────────────── */
-
-const faqLinkStyle: React.CSSProperties = {
-  color: 'var(--accent)',
-  textDecoration: 'none',
-  fontWeight: 600,
-}
-
-/* ── types ───────────────────────────────────────── */
 
 interface Post {
   slug: string
@@ -41,673 +18,546 @@ interface Post {
   excerpt: string
 }
 
-interface AvatarUrls {
-  static?: string
-  idle?: string
-  action?: string
-}
-
 interface HomeContentProps {
   posts: Post[]
   latestLog: DailyLogSummary | null
-  profile: RPGProfile | null
-  avatarUrls: AvatarUrls | null
 }
 
-/* ── component ──────────────────────────────────── */
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+)
+const GithubIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
+    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.16c-3.2.7-3.88-1.37-3.88-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.25 3.35.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.95 10.95 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.39-2.69 5.36-5.25 5.64.41.35.78 1.04.78 2.1v3.11c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5z" />
+  </svg>
+)
+const LinkedInIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
+    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zm13.5 12.27h-3v-5.5c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.43-2.12 2.92v5.6h-3v-11h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6v6.46z" />
+  </svg>
+)
+const SubstackIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
+    <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
+  </svg>
+)
+const DiscordIcon = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
+    <path d="M20.32 4.37A19.79 19.79 0 0 0 16.06 3a14.7 14.7 0 0 0-.66 1.35 18.27 18.27 0 0 0-5.4 0A14.7 14.7 0 0 0 9.34 3 19.79 19.79 0 0 0 5.08 4.37 21 21 0 0 0 1.5 18.61a19.96 19.96 0 0 0 6.04 3.05c.49-.66.92-1.36 1.29-2.09a13.05 13.05 0 0 1-2.03-.97c.17-.13.34-.26.5-.4a14.27 14.27 0 0 0 12.4 0c.16.14.33.27.5.4-.65.38-1.33.71-2.04.97.37.73.8 1.43 1.29 2.09a19.94 19.94 0 0 0 6.05-3.05 21 21 0 0 0-3.58-14.24zM8.52 15.7c-1.18 0-2.16-1.1-2.16-2.45 0-1.35.95-2.46 2.16-2.46s2.18 1.11 2.16 2.46c0 1.35-.95 2.45-2.16 2.45zm6.96 0c-1.18 0-2.16-1.1-2.16-2.45 0-1.35.95-2.46 2.16-2.46s2.18 1.11 2.16 2.46c0 1.35-.95 2.45-2.16 2.45z" />
+  </svg>
+)
 
-export async function HomeContent({ posts, latestLog }: HomeContentProps) {
-  const t = await getTranslations('Home')
+const socials = [
+  { title: 'X', icon: <XIcon />, href: 'https://x.com/shawntenam' },
+  { title: 'GitHub', icon: <GithubIcon />, href: 'https://github.com/shawnla90' },
+  { title: 'LinkedIn', icon: <LinkedInIcon />, href: 'https://linkedin.com/in/shawntenam' },
+  { title: 'Substack', icon: <SubstackIcon />, href: 'https://shawntenam.substack.com' },
+  { title: 'Discord', icon: <DiscordIcon />, href: 'https://discord.gg/shawnos' },
+]
 
-  const bootLines = [
-    { status: 'OK', label: t('systemStatus.bootLines.contentEngine') },
-    { status: 'OK', label: t('systemStatus.bootLines.threeSiteNetwork') },
-    { status: 'OK', label: t('systemStatus.bootLines.gtmEngine') },
-    { status: 'OK', label: t('systemStatus.bootLines.contentOs') },
-    { status: 'OK', label: t('systemStatus.bootLines.cursorAgent') },
-    { status: 'OK', label: t('systemStatus.bootLines.blogPipeline') },
-    { status: 'OK', label: t('systemStatus.bootLines.buildInPublic') },
-    { status: 'OK', label: t('systemStatus.bootLines.dailyTracker') },
-  ]
+const tileBase =
+  'group/bento relative row-span-1 flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-[var(--canvas-subtle)] transition duration-200 hover:border-[var(--accent)]/40 overflow-hidden'
 
-  const processSteps = [
-    {
-      command: 'explore',
-      title: t('method.explore.title'),
-      description: t('method.explore.description'),
-    },
-    {
-      command: 'plan',
-      title: t('method.plan.title'),
-      description: t('method.plan.description'),
-    },
-    {
-      command: 'build',
-      title: t('method.build.title'),
-      description: t('method.build.description'),
-    },
-    {
-      command: 'ship',
-      title: t('method.ship.title'),
-      description: t('method.ship.description'),
-    },
-    {
-      command: 'compound',
-      title: t('method.compound.title'),
-      description: t('method.compound.description'),
-    },
-  ]
-
-  const faqItems: { question: string; answer: React.ReactNode }[] = [
-    {
-      question: t('faq.q1.question'),
-      answer: (
-        <>
-          {t('faq.q1.answer')}{' '}
-          <Link href="https://thegtmos.ai" style={faqLinkStyle}>{t('faq.q1.link')} &rarr;</Link>
-        </>
-      ),
-    },
-    {
-      question: t('faq.q2.question'),
-      answer: (
-        <>
-          {t('faq.q2.answer')}{' '}
-          <Link href="/showcase" style={faqLinkStyle}>{t('faq.q2.linkShowcase')}</Link>, a{' '}
-          <Link href="/rpg-preview" style={faqLinkStyle}>{t('faq.q2.linkRpg')}</Link>, {t('faq.q2.answerCont')}
-        </>
-      ),
-    },
-    {
-      question: t('faq.q3.question'),
-      answer: (
-        <>
-          {t('faq.q3.answer')}{' '}
-          <Link href="/log" style={faqLinkStyle}>{t('faq.q3.link')} &rarr;</Link>
-        </>
-      ),
-    },
-    {
-      question: t('faq.q4.question'),
-      answer: (
-        <>
-          {t('faq.q4.answer')}{' '}
-          <Link href="/about" style={faqLinkStyle}>{t('faq.q4.link')} &rarr;</Link>
-        </>
-      ),
-    },
-    {
-      question: t('faq.q5.question'),
-      answer: (
-        <>
-          {t('faq.q5.answer')}{' '}
-          <Link href="/log/build-your-own" style={faqLinkStyle}>{t('faq.q5.link')} &rarr;</Link>
-        </>
-      ),
-    },
-    {
-      question: t('faq.q6.question'),
-      answer: (
-        <>
-          {t('faq.q6.answer')}{' '}
-          <Link href="/rpg-preview" style={faqLinkStyle}>{t('faq.q6.link')} &rarr;</Link>
-        </>
-      ),
-    },
-  ]
-
-  const caseStudies = [
-    {
-      title: t('caseStudies.threeSiteNetwork.title'),
-      description: t('caseStudies.threeSiteNetwork.description'),
-      tags: ['Next.js', 'Turborepo', 'Vercel'],
-      href: '/showcase',
-    },
-    {
-      title: t('caseStudies.aiContentPipeline.title'),
-      description: t('caseStudies.aiContentPipeline.description'),
-      tags: ['Claude AI', 'Python', 'SEO'],
-      href: '/blog',
-    },
-    {
-      title: t('caseStudies.progressionEngine.title'),
-      description: t('caseStudies.progressionEngine.description'),
-      tags: ['Gamification', 'TypeScript', 'Pixel Art'],
-      href: '/rpg-preview',
-    },
-    {
-      title: t('caseStudies.missionControl.title'),
-      description: t('caseStudies.missionControl.description'),
-      tags: ['Dashboard', 'Real-time', 'React'],
-      href: '/showcase',
-    },
-  ]
-
-  const chooseYourPathItems = [
-    { label: t('chooseYourPath.contentSystems.label'), href: 'https://thecontentos.ai', text: t('chooseYourPath.contentSystems.text') },
-    { label: t('chooseYourPath.gtmPipelines.label'), href: 'https://thegtmos.ai', text: t('chooseYourPath.gtmPipelines.text') },
-    { label: t('chooseYourPath.stackAudit.label'), href: 'https://thegtmos.ai/why-independent', text: t('chooseYourPath.stackAudit.text') },
-    { label: t('chooseYourPath.readBlog.label'), href: '/blog', text: t('chooseYourPath.readBlog.text'), internal: true },
-    { label: t('chooseYourPath.showcase.label'), href: '/showcase', text: t('chooseYourPath.showcase.text'), internal: true },
-  ]
-
+export function HomeContent({ posts, latestLog }: HomeContentProps) {
   return (
-    <>
-      {/* ── Hero — 100dvh, centered, bold ── */}
-      <section
-        className="full-bleed"
-        style={{
-          minHeight: '100dvh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          alignItems: 'center',
-          background: 'var(--canvas)',
-          position: 'relative',
-          textAlign: 'center',
-          padding: '0 24px',
-        }}
-      >
-        <GraphGrid spacing={40} opacity={0.45} lineWidth={1} />
-        <MotionReveal variant="fadeUp" delay={0.1}>
+    <section style={{ position: 'relative', padding: '40px 24px 120px' }}>
+      <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative' }}>
+        <header style={{ marginBottom: '32px', maxWidth: '720px' }}>
           <h1
             style={{
-              fontSize: 'clamp(36px, 6vw, 64px)',
+              fontFamily: 'var(--font-sans)',
+              fontSize: 'clamp(36px, 5vw, 56px)',
               fontWeight: 700,
-              fontFamily: 'var(--font-mono)',
-              lineHeight: 1.15,
-              margin: '0 0 24px',
-              maxWidth: 900,
+              lineHeight: 1.05,
+              letterSpacing: '-0.02em',
+              color: 'var(--text-primary)',
+              margin: 0,
             }}
           >
-            <span style={{ color: 'var(--text-primary)' }}>{t('hero.titleLine1')}</span>{' '}
-            <span style={{ color: 'var(--accent)' }}>{t('hero.titleLine2')}</span>
+            Shawn Tenam
           </h1>
-        </MotionReveal>
-
-        <MotionReveal variant="fadeUp" delay={0.25}>
           <p
             style={{
-              fontSize: 'clamp(16px, 2vw, 20px)',
-              color: 'var(--text-secondary)',
+              marginTop: '12px',
               fontFamily: 'var(--font-mono)',
-              lineHeight: 1.6,
-              maxWidth: 640,
-              margin: '0 auto 40px',
+              fontSize: '14px',
+              color: 'var(--text-muted)',
+              lineHeight: 1.5,
+              maxWidth: '560px',
             }}
           >
-            {t('hero.subtitle')}
+            GTM engineer. Building AI-native pipelines, content systems, and the front end of how
+            B2B finds its market.
           </p>
-        </MotionReveal>
+        </header>
 
-        <MotionReveal variant="fadeUp" delay={0.4}>
-          <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <MagneticHover>
+        <BentoGrid className="md:grid-cols-3 md:auto-rows-[14rem]">
+          {/* Clearbox — 2x2 hero */}
+          <BentoGridItem
+            className={`${tileBase} md:col-span-2 md:row-span-2`}
+            header={
               <Link
-                href="/blog"
+                href={'/clearbox' as never}
                 style={{
-                  display: 'inline-block',
-                  padding: '14px 32px',
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  fontFamily: 'var(--font-mono)',
-                  color: 'var(--canvas)',
-                  background: 'var(--accent)',
-                  border: '1px solid var(--accent)',
-                  borderRadius: 6,
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'flex-end',
+                  height: '100%',
+                  width: '100%',
+                  padding: '28px',
                   textDecoration: 'none',
-                  transition: 'opacity 0.15s ease',
+                  color: 'inherit',
+                  overflow: 'hidden',
+                  borderRadius: 'inherit',
                 }}
               >
-                {t('hero.ctaBlog')} &rarr;
-              </Link>
-            </MagneticHover>
-            <MagneticHover>
-              <Link
-                href="/about"
-                style={{
-                  display: 'inline-block',
-                  padding: '14px 32px',
-                  fontSize: '15px',
-                  fontWeight: 600,
-                  fontFamily: 'var(--font-mono)',
-                  color: 'var(--accent)',
-                  background: 'transparent',
-                  border: '1px solid var(--accent)',
-                  borderRadius: 6,
-                  textDecoration: 'none',
-                  transition: 'background 0.15s ease, color 0.15s ease',
-                }}
-              >
-                {t('hero.ctaAbout')}
-              </Link>
-            </MagneticHover>
-          </div>
-        </MotionReveal>
-
-        {/* Scroll indicator */}
-        <div
-          className="scroll-indicator"
-          style={{
-            position: 'absolute',
-            bottom: 32,
-            left: '50%',
-            transform: 'translateX(-50%)',
-            color: 'var(--text-muted)',
-            fontSize: '24px',
-            lineHeight: 1,
-            userSelect: 'none',
-          }}
-        >
-          &#8964;
-        </div>
-      </section>
-
-      {/* ── Stats Strip ── */}
-      <ScrollRevealSection
-        background="var(--canvas-subtle)"
-        style={{
-          borderTop: '1px solid var(--border)',
-          borderBottom: '1px solid var(--border)',
-          paddingTop: 48,
-          paddingBottom: 48,
-        }}
-      >
-        <StatsStrip />
-      </ScrollRevealSection>
-
-      {/* ── Method ── */}
-      <ScrollRevealSection background="var(--canvas-warm-subtle)" style={{ position: 'relative' }}>
-        <GraphGrid spacing={48} opacity={0.35} lineWidth={1} />
-        <SectionHeadline subtitle={t('method.subtitle')}>{t('method.headline')}</SectionHeadline>
-        <ProcessSteps steps={processSteps} />
-      </ScrollRevealSection>
-
-      {/* ── Dark Interlude ── */}
-      <DarkInterlude
-        title={t('darkInterlude.title')}
-        subtitle={t('darkInterlude.subtitle')}
-      />
-
-      {/* ── Latest Posts ── */}
-      {posts.length > 0 && (
-        <ScrollRevealSection background="var(--canvas)">
-          <SectionHeadline subtitle={t('latestPosts.subtitle')}>{t('latestPosts.headline')}</SectionHeadline>
-
-          {/* Featured first post */}
-          {posts[0] && (
-            <MotionReveal variant="fadeUp" delay={0.05}>
-              <div style={{
-                borderLeft: '3px solid var(--accent)',
-                paddingLeft: 20,
-                marginBottom: 24,
-              }}>
-                <PostCard
-                  title={posts[0].title}
-                  date={posts[0].date}
-                  excerpt={posts[0].excerpt}
-                  slug={posts[0].slug}
-                />
-              </div>
-            </MotionReveal>
-          )}
-
-          {/* Remaining posts in 2-col grid */}
-          {posts.length > 1 && (
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-              gap: 16,
-            }}>
-              {posts.slice(1).map((post, i) => (
-                <MotionReveal key={post.slug} variant="fadeUp" delay={0.1 + i * 0.08}>
-                  <PostCard
-                    title={post.title}
-                    date={post.date}
-                    excerpt={post.excerpt}
-                    slug={post.slug}
-                  />
-                </MotionReveal>
-              ))}
-            </div>
-          )}
-
-          <div style={{ marginTop: 24 }}>
-            <Link
-              href="/blog"
-              style={{
-                fontSize: '15px',
-                color: 'var(--accent)',
-                textDecoration: 'none',
-                fontWeight: 600,
-              }}
-            >
-              {t('latestPosts.viewAll')} &rarr;
-            </Link>
-          </div>
-        </ScrollRevealSection>
-      )}
-
-      {/* ── Latest Log ── */}
-      {latestLog && (
-        <ScrollRevealSection background="var(--canvas-subtle)">
-          <SectionHeadline subtitle={t('latestLog.subtitle')}>{t('latestLog.headline')}</SectionHeadline>
-
-          <LogCard {...latestLog} basePath="/log" />
-
-          <div style={{ marginTop: 24 }}>
-            <Link
-              href="/log"
-              style={{
-                fontSize: '15px',
-                color: 'var(--accent)',
-                textDecoration: 'none',
-                fontWeight: 600,
-              }}
-            >
-              {t('latestLog.viewAll')} &rarr;
-            </Link>
-          </div>
-        </ScrollRevealSection>
-      )}
-
-      {/* ── FAQ ── */}
-      <ScrollRevealSection background="var(--canvas)">
-        <SectionHeadline subtitle={t('faq.subtitle')}>{t('faq.headline')}</SectionHeadline>
-        <FAQAccordion items={faqItems} />
-      </ScrollRevealSection>
-
-      {/* ── Case Studies ── */}
-      <ScrollRevealSection background="var(--canvas-subtle)">
-        <SectionHeadline subtitle={t('caseStudies.subtitle')}>{t('caseStudies.headline')}</SectionHeadline>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: 16,
-        }}>
-          {caseStudies.map((study, i) => (
-            <MotionReveal key={study.title} variant="scale" delay={i * 0.1}>
-              <Link
-                href={study.href}
-                style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
-              >
-                <div className="case-study-card">
-                  <div style={{
-                    fontSize: '16px', fontWeight: 600,
-                    color: 'var(--text-primary)', fontFamily: 'var(--font-mono)',
-                    marginBottom: 8,
-                  }}>
-                    {study.title}
-                  </div>
-                  <div style={{
-                    fontSize: '14px', color: 'var(--text-secondary)',
-                    fontFamily: 'var(--font-mono)', lineHeight: 1.6, marginBottom: 12,
-                  }}>
-                    {study.description}
-                  </div>
-                  <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                    {study.tags.map((tag) => (
-                      <span key={tag} style={{
-                        fontSize: '11px', fontFamily: 'var(--font-mono)',
-                        padding: '2px 8px', borderRadius: 4,
-                        background: 'rgba(78, 195, 115, 0.1)',
-                        color: 'var(--accent)', fontWeight: 600, letterSpacing: '0.02em',
-                      }}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <GlowingEffect variant="default" glow proximity={64} disabled={false} />
+                <div style={{ position: 'absolute', inset: 0, opacity: 0.18 }}>
+                  <BackgroundRippleEffect rows={6} cols={20} cellSize={56} />
                 </div>
-              </Link>
-            </MotionReveal>
-          ))}
-        </div>
-      </ScrollRevealSection>
-
-      {/* ── As Heard On ── */}
-      {MEDIA_APPEARANCES.length > 0 && (
-        <ScrollRevealSection background="var(--canvas)">
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '20px',
-              flexWrap: 'wrap',
-              padding: '20px 24px',
-              background: 'var(--canvas-subtle)',
-              border: '1px solid var(--border)',
-              borderRadius: 6,
-            }}
-          >
-            <span
-              style={{
-                fontSize: '11px',
-                fontFamily: 'var(--font-mono)',
-                color: 'var(--text-muted)',
-                textTransform: 'uppercase' as const,
-                letterSpacing: '0.08em',
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-              }}
-            >
-              {t('asHeardOn')}
-            </span>
-
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '20px',
-                flexWrap: 'wrap',
-              }}
-            >
-              {MEDIA_APPEARANCES.map((appearance) => (
-                <a
-                  key={appearance.id}
-                  href={appearance.links[0]?.url ?? '/media'}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: '4px',
-                    textDecoration: 'none',
-                    transition: 'opacity 0.15s ease',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: '24px',
-                      width: 40,
-                      height: 40,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background: 'var(--canvas)',
-                      border: '1px solid var(--border)',
-                      borderRadius: '50%',
-                    }}
-                  >
-                    {'\u{1F399}\u{FE0F}'}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: '10px',
-                      fontFamily: 'var(--font-mono)',
-                      color: 'var(--text-secondary)',
-                      textAlign: 'center',
-                      maxWidth: 80,
-                      lineHeight: 1.2,
-                    }}
-                  >
-                    {appearance.show}
-                  </span>
-                </a>
-              ))}
-            </div>
-
-            <div style={{ flex: 1, minWidth: 0 }} />
-
-            <Link
-              href="/media"
-              style={{
-                fontSize: '11px',
-                fontFamily: 'var(--font-mono)',
-                color: 'var(--accent)',
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-                opacity: 0.8,
-              }}
-            >
-              {t('allAppearances')} &rarr;
-            </Link>
-          </div>
-        </ScrollRevealSection>
-      )}
-
-      {/* ── Work Together CTA ── */}
-      <ScrollRevealSection background="var(--canvas)">
-        <WorkTogetherCTA />
-      </ScrollRevealSection>
-
-      {/* ── Boot Log — keeps terminal flavor ── */}
-      <ScrollRevealSection background="var(--canvas)">
-        <h2
-          style={{
-            fontSize: '14px',
-            fontWeight: 600,
-            color: 'var(--accent)',
-            marginBottom: 16,
-            textTransform: 'uppercase',
-            letterSpacing: '0.06em',
-          }}
-        >
-          {t('systemStatus.heading')}
-        </h2>
-
-        <div
-          style={{
-            padding: '20px 24px',
-            background: 'var(--canvas-subtle)',
-            border: '1px solid var(--border)',
-            borderRadius: 6,
-          }}
-        >
-          <StaggerContainer stagger={0.08}>
-            {bootLines.map((line) => (
-              <StaggerItem key={line.label}>
                 <div
                   style={{
-                    fontSize: '13px',
-                    lineHeight: 2,
-                    color: 'var(--text-secondary)',
+                    position: 'absolute',
+                    inset: 0,
+                    background:
+                      'radial-gradient(circle at 70% 30%, rgba(251,146,60,0.25), transparent 60%), radial-gradient(circle at 20% 80%, rgba(167,139,250,0.20), transparent 55%)',
+                    pointerEvents: 'none',
                   }}
-                >
-                  [<span style={{ color: 'var(--accent)', fontWeight: 600 }}>{line.status}</span>] {line.label}
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-          <div
-            style={{
-              marginTop: 16,
-              paddingTop: 12,
-              borderTop: '1px solid var(--border)',
-              fontSize: '13px',
-              color: 'var(--accent)',
-              fontWeight: 600,
-            }}
-          >
-            {t('systemStatus.allOperational')}
-          </div>
-        </div>
-      </ScrollRevealSection>
-
-      {/* ── Built With ── */}
-      <ScrollRevealSection
-        background="var(--canvas-subtle)"
-        style={{ paddingTop: 48, paddingBottom: 48 }}
-      >
-        <BuiltWithStrip />
-      </ScrollRevealSection>
-
-      {/* ── Choose Your Path CTA ── */}
-      <ScrollRevealSection background="var(--canvas)" variant="scale">
-        <div
-          style={{
-            padding: '40px 32px',
-            background: 'var(--canvas-subtle)',
-            border: '1px solid var(--border)',
-            borderRadius: 8,
-            textAlign: 'center',
-          }}
-        >
-          <h2
-            style={{
-              fontSize: 'clamp(24px, 3.5vw, 36px)',
-              fontWeight: 700,
-              fontFamily: 'var(--font-mono)',
-              color: 'var(--text-primary)',
-              margin: '0 0 32px',
-            }}
-          >
-            {t('chooseYourPath.heading')}
-          </h2>
-
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: 16,
-              maxWidth: 800,
-              margin: '0 auto',
-            }}
-          >
-            {chooseYourPathItems.map((item) => {
-              const LinkEl = item.internal ? Link : 'a'
-              return (
-                <LinkEl
-                  key={item.text}
-                  href={item.href}
-                  {...(!item.internal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                  style={{
-                    display: 'block',
-                    padding: '20px 16px',
-                    background: 'var(--canvas)',
-                    border: '1px dashed var(--border-dashed)',
-                    borderRadius: 12,
-                    textDecoration: 'none',
-                    transition: 'border-color 0.15s ease',
-                  }}
-                >
+                />
+                <div style={{ position: 'relative', zIndex: 2 }}>
+                  <Image
+                    src="/clearbox/aura-logo.png"
+                    alt="Clearbox"
+                    width={56}
+                    height={56}
+                    style={{ marginBottom: '20px', opacity: 0.95 }}
+                  />
                   <div
                     style={{
-                      fontSize: '13px',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    Now shipping →
+                  </div>
+                  <h2
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: 'clamp(28px, 3.4vw, 44px)',
+                      fontWeight: 700,
+                      lineHeight: 1.05,
+                      letterSpacing: '-0.02em',
+                      color: 'var(--text-primary)',
+                      margin: 0,
+                    }}
+                  >
+                    Clearbox
+                  </h2>
+                  <p
+                    style={{
+                      marginTop: '10px',
+                      fontSize: '17px',
                       color: 'var(--text-secondary)',
-                      fontFamily: 'var(--font-mono)',
-                      marginBottom: 6,
+                      lineHeight: 1.4,
+                      maxWidth: '420px',
                     }}
                   >
-                    {item.label}
+                    See your market. Move first.
+                  </p>
+                </div>
+              </Link>
+            }
+          />
+
+          {/* Context Engineering — 1x2 */}
+          <BentoGridItem
+            className={`${tileBase} md:row-span-2`}
+            header={
+              <Link
+                href={'/context-wiki' as never}
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  width: '100%',
+                  padding: '24px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderRadius: 'inherit',
+                }}
+              >
+                <GlowingEffect variant="silver" glow proximity={48} disabled={false} />
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      color: 'var(--accent)',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    $ wiki
+                  </div>
+                  <h3
+                    style={{
+                      marginTop: '8px',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '22px',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    Context Engineering
+                  </h3>
+                </div>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', lineHeight: 1.7 }}>
+                  <div style={{ color: 'var(--text-muted)' }}>&gt; cat CLAUDE.md</div>
+                  <div style={{ color: 'var(--text-secondary)' }}>// memory shapes output</div>
+                  <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>&gt; ls skills/</div>
+                  <div style={{ color: 'var(--text-secondary)' }}>// agents that compound</div>
+                  <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>&gt; explore →</div>
+                </div>
+              </Link>
+            }
+          />
+
+          {/* Reddit Growth Playbook — 2x1 */}
+          <BentoGridItem
+            className={`${tileBase} md:col-span-2`}
+            header={
+              <Link
+                href={'/reddit' as never}
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '24px',
+                  height: '100%',
+                  width: '100%',
+                  padding: '24px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderRadius: 'inherit',
+                }}
+              >
+                <GlowingEffect variant="silver" glow proximity={48} disabled={false} />
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      letterSpacing: '0.12em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    Reddit Growth Playbook
+                  </div>
+                  <h3
+                    style={{
+                      marginTop: '8px',
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: '20px',
+                      fontWeight: 700,
+                      color: 'var(--text-primary)',
+                      letterSpacing: '-0.01em',
+                      maxWidth: '320px',
+                    }}
+                  >
+                    Zero to a community in 30 days
+                  </h3>
+                </div>
+                <div style={{ textAlign: 'right' }}>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-sans)',
+                      fontSize: 'clamp(40px, 5vw, 64px)',
+                      fontWeight: 800,
+                      lineHeight: 1,
+                      color: 'var(--accent)',
+                      letterSpacing: '-0.03em',
+                    }}
+                  >
+                    1,089
                   </div>
                   <div
                     style={{
-                      fontSize: '16px',
-                      fontWeight: 600,
-                      color: 'var(--accent)',
                       fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      color: 'var(--text-muted)',
+                      letterSpacing: '0.08em',
+                      textTransform: 'uppercase',
+                      marginTop: '4px',
                     }}
                   >
-                    {item.text} &rarr;
+                    karma · 30 days
                   </div>
-                </LinkEl>
-              )
-            })}
-          </div>
-        </div>
-      </ScrollRevealSection>
-    </>
+                </div>
+              </Link>
+            }
+          />
+
+          {/* Blog — 2x1 latest 3 */}
+          <BentoGridItem
+            className={`${tileBase} md:col-span-2`}
+            header={
+              <Link
+                href={'/blog' as never}
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  height: '100%',
+                  width: '100%',
+                  padding: '24px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderRadius: 'inherit',
+                }}
+              >
+                <GlowingEffect variant="silver" glow proximity={48} disabled={false} />
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    marginBottom: '12px',
+                  }}
+                >
+                  Blog · latest
+                </div>
+                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                  {posts.slice(0, 3).map((post) => (
+                    <li key={post.slug} style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
+                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', minWidth: '72px' }}>
+                        {post.date}
+                      </span>
+                      <span style={{ fontSize: '14px', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.35 }}>
+                        {post.title}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </Link>
+            }
+          />
+
+          {/* How-To — 1x1 */}
+          <BentoGridItem
+            className={tileBase}
+            header={
+              <Link
+                href={'/how-to' as never}
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  width: '100%',
+                  padding: '20px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderRadius: 'inherit',
+                }}
+              >
+                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Playbooks
+                </div>
+                <h3
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '20px',
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    letterSpacing: '-0.01em',
+                    margin: 0,
+                  }}
+                >
+                  How-To <span style={{ color: 'var(--accent)' }}>→</span>
+                </h3>
+              </Link>
+            }
+          />
+
+          {/* Cloud Code Daily — 1x1 */}
+          <BentoGridItem
+            className={tileBase}
+            header={
+              <Link
+                href={'/claude-daily' as never}
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  width: '100%',
+                  padding: '20px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderRadius: 'inherit',
+                }}
+              >
+                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Cloud Code Daily
+                </div>
+                <div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
+                    {latestLog
+                      ? `${latestLog.date} · grade ${latestLog.letter_grade} · ${latestLog.accomplishment_count} ships`
+                      : 'Multi-subreddit pulse, daily.'}
+                  </div>
+                  <div
+                    style={{
+                      marginTop: '8px',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      color: 'var(--accent)',
+                    }}
+                  >
+                    Read latest →
+                  </div>
+                </div>
+              </Link>
+            }
+          />
+
+          {/* Founder's Journey — 1x1 */}
+          <BentoGridItem
+            className={tileBase}
+            header={
+              <Link
+                href={'/about/arc' as never}
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  width: '100%',
+                  padding: '20px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderRadius: 'inherit',
+                }}
+              >
+                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Founder&apos;s journey
+                </div>
+                <p
+                  style={{
+                    fontSize: '14px',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.4,
+                    fontStyle: 'italic',
+                    margin: 0,
+                  }}
+                >
+                  &ldquo;Trades to tech. SDR to engineer. Still shipping.&rdquo;
+                </p>
+              </Link>
+            }
+          />
+
+          {/* Build / Showcase — 1x1 */}
+          <BentoGridItem
+            className={tileBase}
+            header={
+              <Link
+                href={'/build' as never}
+                style={{
+                  position: 'relative',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  height: '100%',
+                  width: '100%',
+                  padding: '20px',
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  borderRadius: 'inherit',
+                }}
+              >
+                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    color: 'var(--text-muted)',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  Build · live
+                </div>
+                <div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
+                    What I&apos;m shipping this week.
+                  </div>
+                  <div
+                    style={{
+                      marginTop: '8px',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      color: 'var(--accent)',
+                    }}
+                  >
+                    See current →
+                  </div>
+                </div>
+              </Link>
+            }
+          />
+        </BentoGrid>
+      </div>
+
+      <FloatingDock
+        items={socials}
+        desktopClassName="fixed bottom-6 left-1/2 -translate-x-1/2 z-40"
+        mobileClassName="fixed bottom-6 right-6 z-40"
+      />
+    </section>
   )
 }

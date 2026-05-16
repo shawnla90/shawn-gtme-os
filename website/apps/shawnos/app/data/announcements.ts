@@ -13,7 +13,7 @@ export const announcements: Announcement[] = [
     text: 'Web dev services now in 3 languages',
     link: '/services/web-development',
     date: '2026-03-08',
-    active: true,
+    active: false,
     priority: 1,
   },
   {
@@ -21,7 +21,7 @@ export const announcements: Announcement[] = [
     text: 'Services page redesigned with live benchmarks',
     link: '/services/web-development',
     date: '2026-03-07',
-    active: true,
+    active: false,
     priority: 2,
   },
   {

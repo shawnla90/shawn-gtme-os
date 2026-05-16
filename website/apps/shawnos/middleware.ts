@@ -5,7 +5,19 @@ import { routing } from './i18n/routing'
 
 const intlMiddleware = createIntlMiddleware(routing)
 
+const SERVICES_REDIRECT = /^\/(?:[a-z]{2}\/)?services(?:\/.*)?$/
+
 export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+  if (SERVICES_REDIRECT.test(pathname)) {
+    const localeMatch = pathname.match(/^\/([a-z]{2})\//)
+    const target = localeMatch ? `/${localeMatch[1]}` : '/'
+    const url = request.nextUrl.clone()
+    url.pathname = target
+    url.search = ''
+    return NextResponse.redirect(url, 301)
+  }
+
   const response = intlMiddleware(request)
 
   // Force revalidation on HTML responses

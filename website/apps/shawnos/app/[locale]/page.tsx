@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { getAllPosts, getAllLogs, getRPGProfile, getAvatarUrlsForProfile, resolveDataRoot } from '@shawnos/shared/lib'
+import { getAllPosts, getAllLogs, resolveDataRoot } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../i18n/hreflang'
 import { HomeContent } from '../HomeContent'
@@ -47,19 +47,10 @@ export default async function HomePage({ params }: Props) {
   const logs = getAllLogs(LOG_DIR)
   const latestLog = logs.length > 0 ? logs[0] : null
 
-  const profile = getRPGProfile(DATA_ROOT)
-  const urls =
-    profile && profile.level > 0 ? getAvatarUrlsForProfile(profile) : null
-
   return (
     <>
       <BreadcrumbSchema items={[]} />
-      <HomeContent
-        posts={latestPosts}
-        latestLog={latestLog}
-        profile={profile}
-        avatarUrls={urls}
-      />
+      <HomeContent posts={latestPosts} latestLog={latestLog} />
       <LiveUpdatesWidget announcements={announcements} />
     </>
   )

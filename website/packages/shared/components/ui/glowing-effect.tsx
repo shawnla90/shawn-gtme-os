@@ -9,7 +9,7 @@ interface GlowingEffectProps {
   inactiveZone?: number
   proximity?: number
   spread?: number
-  variant?: 'default' | 'white'
+  variant?: 'default' | 'white' | 'silver'
   glow?: boolean
   className?: string
   disabled?: boolean
@@ -125,6 +125,7 @@ const GlowingEffect = memo(
             'pointer-events-none absolute -inset-px hidden rounded-[inherit] border opacity-0 transition-opacity',
             glow && 'opacity-100',
             variant === 'white' && 'border-white',
+            variant === 'silver' && 'border-neutral-300',
             disabled && '!block'
           )}
         />
@@ -144,6 +145,15 @@ const GlowingEffect = memo(
                   from 236.84deg at 50% 50%,
                   var(--black),
                   var(--black) calc(25% / var(--repeating-conic-gradient-times))
+                )`
+                  : variant === 'silver'
+                  ? `repeating-conic-gradient(
+                  from 236.84deg at 50% 50%,
+                  #ffffff 0%,
+                  #d4d4d4 calc(25% / var(--repeating-conic-gradient-times)),
+                  #a3a3a3 calc(50% / var(--repeating-conic-gradient-times)),
+                  #d4d4d4 calc(75% / var(--repeating-conic-gradient-times)),
+                  #ffffff calc(100% / var(--repeating-conic-gradient-times))
                 )`
                   : `radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%),
                 radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%),
