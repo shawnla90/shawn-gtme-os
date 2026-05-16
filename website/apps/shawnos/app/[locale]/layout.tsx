@@ -13,7 +13,7 @@ import { routing } from '../../i18n/routing'
 import { locales } from '../../i18n/config'
 import '../globals.css'
 
-const themeScript = `(function(){try{var t=localStorage.getItem('shawnos-theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:light)').matches){document.documentElement.setAttribute('data-theme','light')}}catch(e){}})();`
+const themeScript = `(function(){try{var t=localStorage.getItem('shawnos-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();`
 
 const SITE_URL = 'https://shawnos.ai'
 

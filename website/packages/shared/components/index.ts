@@ -36,6 +36,7 @@ export { SectionHeadline } from './SectionHeadline'
 export { FAQAccordion } from './FAQAccordion'
 export { ProcessSteps } from './ProcessSteps'
 export { AffiliateLink, AffiliateDisclosure } from './AffiliateLink'
+export { ThemeToggle } from './ThemeToggle'
 export {
   MotionReveal,
   StaggerContainer,

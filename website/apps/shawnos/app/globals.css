@@ -1,13 +1,80 @@
 @import "tailwindcss";
 @import "@shawnos/shared/styles";
 
-/* === shawnos.ai accent override === */
-:root {
-  --accent: #4EC373;
+/* === Tailwind v4: scan shared monorepo package for class usage === */
+@source "../../../packages/shared/components/ui";
+@source "../../../packages/shared/components";
+
+/* === Tailwind v4: route dark: variant through our data-theme attribute === */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* === shawnos.ai theme tokens — xAI dark / ElevenLabs light === */
+:root,
+[data-theme="dark"] {
+  /* canvas — near-black engineered surface */
+  --canvas: #0a0a0a;
+  --canvas-subtle: #121212;
+  --canvas-border: #1f1f1f;
+  --canvas-card: #161616;
+  --canvas-warm: rgba(251, 146, 60, 0.04);
+  --canvas-warm-subtle: rgba(251, 146, 60, 0.02);
+  --canvas-dark: #050505;
+  --grid-color: #1a1a1a;
+  --border-dashed: #262626;
+
+  /* ink — high-contrast white set */
+  --text-primary: #fafafa;
+  --text-secondary: #a3a3a3;
+  --text-muted: #525252;
+
+  /* accents — xAI palette pop on black */
+  --accent-sunset: #fb923c;
+  --accent-dusk: #c084fc;
+  --accent-twilight: #818cf8;
+  --accent-breeze: #7dd3fc;
+  --accent: var(--accent-sunset);
+
+  --link: var(--accent);
+  --link-hover: color-mix(in srgb, var(--accent) 75%, white);
+  --border: var(--canvas-border);
+  --code-bg: var(--canvas-subtle);
+  --nav-backdrop: rgba(10, 10, 10, 0.82);
+  --text-on-accent: #0a0a0a;
+  --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 [data-theme="light"] {
-  --accent: #C47A2A;
+  /* canvas — ElevenLabs off-white editorial */
+  --canvas: #f5f5f4;
+  --canvas-subtle: #e7e5e4;
+  --canvas-border: #d6d3d1;
+  --canvas-card: #ffffff;
+  --canvas-warm: rgba(253, 186, 116, 0.08);
+  --canvas-warm-subtle: rgba(253, 186, 116, 0.04);
+  --canvas-dark: #1c1917;
+  --grid-color: #d6d3d1;
+  --border-dashed: #d6d3d1;
+
+  /* ink — near-black, never pure */
+  --text-primary: #292524;
+  --text-secondary: #57534e;
+  --text-muted: #a8a29e;
+
+  /* accents — ElevenLabs gradient-orb palette */
+  --accent-mint: #6ee7b7;
+  --accent-peach: #fdba74;
+  --accent-lavender: #c4b5fd;
+  --accent-sky: #93c5fd;
+  --accent-rose: #fda4af;
+  --accent: #292524;
+
+  --link: var(--accent);
+  --link-hover: color-mix(in srgb, var(--accent) 65%, white);
+  --border: var(--canvas-border);
+  --code-bg: var(--canvas-subtle);
+  --nav-backdrop: rgba(245, 245, 244, 0.82);
+  --text-on-accent: #f5f5f4;
+  --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 /* === Base body styles === */
@@ -822,4 +889,27 @@ html {
   color: var(--text-secondary);
   margin-top: 2px;
   line-height: 1.4;
+}
+
+/* === BackgroundRippleEffect cell animation === */
+@keyframes cell-ripple {
+  0% {
+    transform: scale(1);
+    background-color: var(--cell-fill-color);
+  }
+  50% {
+    transform: scale(1.08);
+    background-color: var(--cell-shadow-color);
+  }
+  100% {
+    transform: scale(1);
+    background-color: var(--cell-fill-color);
+  }
+}
+
+.animate-cell-ripple {
+  animation-name: cell-ripple;
+  animation-duration: var(--duration, 600ms);
+  animation-delay: var(--delay, 0ms);
+  animation-timing-function: ease-in-out;
 }
