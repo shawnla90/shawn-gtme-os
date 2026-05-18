@@ -1,6 +1,61 @@
 {
-  "generated": "2026-05-17T04:29:25.425Z",
+  "generated": "2026-05-18T04:29:12.712Z",
   "events": [
+    {
+      "id": "commit-0b2c8a6",
+      "title": "chore(crypto): evening signal update 2026-05-17",
+      "type": "system",
+      "datetime": "2026-05-17T17:30:11-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-05-17",
+      "metadata": {
+        "commitHash": "0b2c8a6"
+      }
+    },
+    {
+      "id": "commit-cef7293",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-17 17:18)",
+      "type": "system",
+      "datetime": "2026-05-17T17:18:32-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-17 17:18)",
+      "metadata": {
+        "commitHash": "cef7293"
+      }
+    },
+    {
+      "id": "commit-f408b28",
+      "title": "chore(crypto): morning signal update 2026-05-17",
+      "type": "system",
+      "datetime": "2026-05-17T07:00:11-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-05-17",
+      "metadata": {
+        "commitHash": "f408b28"
+      }
+    },
+    {
+      "id": "commit-2aa0c44",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-17 05:18)",
+      "type": "system",
+      "datetime": "2026-05-17T05:18:06-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-17 05:18)",
+      "metadata": {
+        "commitHash": "2aa0c44"
+      }
+    },
+    {
+      "id": "commit-778fc1e",
+      "title": "chore: daily tracker scan 2026-05-16",
+      "type": "system",
+      "datetime": "2026-05-17T00:29:25-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-05-16",
+      "metadata": {
+        "commitHash": "778fc1e"
+      }
+    },
     {
       "id": "commit-5257349",
       "title": "chore(crypto): evening signal update 2026-05-16",
@@ -66,79 +121,13 @@
       "metadata": {
         "commitHash": "f2cc57b"
       }
-    },
-    {
-      "id": "commit-9658444",
-      "title": "feat(shawnos): aceternity foundation + xAI/ElevenLabs theme ",
-      "type": "system",
-      "datetime": "2026-05-15T22:35:28-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): aceternity foundation + xAI/ElevenLabs theme tokens",
-      "metadata": {
-        "commitHash": "9658444"
-      }
-    },
-    {
-      "id": "commit-84863fe",
-      "title": "chore(crypto): evening signal update 2026-05-15",
-      "type": "system",
-      "datetime": "2026-05-15T17:30:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-05-15",
-      "metadata": {
-        "commitHash": "84863fe"
-      }
-    },
-    {
-      "id": "commit-95e1c72",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-15 17:16)",
-      "type": "system",
-      "datetime": "2026-05-15T17:16:47-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-15 17:16)",
-      "metadata": {
-        "commitHash": "95e1c72"
-      }
-    },
-    {
-      "id": "commit-78fd958",
-      "title": "chore(crypto): morning signal update 2026-05-15",
-      "type": "system",
-      "datetime": "2026-05-15T07:00:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-05-15",
-      "metadata": {
-        "commitHash": "78fd958"
-      }
-    },
-    {
-      "id": "commit-4cd53cb",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-15 05:16)",
-      "type": "system",
-      "datetime": "2026-05-15T05:16:23-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-15 05:16)",
-      "metadata": {
-        "commitHash": "4cd53cb"
-      }
-    },
-    {
-      "id": "commit-e410729",
-      "title": "chore: daily tracker scan 2026-05-14",
-      "type": "system",
-      "datetime": "2026-05-15T00:34:38-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-05-14",
-      "metadata": {
-        "commitHash": "e410729"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 12,
-    "completedEvents": 12,
+    "totalEvents": 11,
+    "completedEvents": 11,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 12,
+    "deploymentsThisWeek": 11,
     "upcomingCronJobs": 0
   }
 }
