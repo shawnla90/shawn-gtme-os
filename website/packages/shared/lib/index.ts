@@ -78,6 +78,22 @@ export {
 } from './analytics'
 export type { ContentMeta, UTMParams, SiteKey as AnalyticsSiteKey } from './analytics'
 
+export {
+  getTimelineItems,
+  blogPostsToTimelineItems,
+  readSubstackTimelineItems,
+  readRedditSelfTimelineItems,
+  timelineCountsBySource,
+} from './timeline'
+export type {
+  TimelineItem,
+  TimelineSource,
+  TimelineAuthor,
+  TimelineBadge,
+  TimelineMeta,
+  GetTimelineItemsOptions,
+} from './timeline'
+
 export { buildFeed, feedResponse, getFeedConfig } from './rss'
 export {
   blogPostsToFeedItems,

@@ -2,10 +2,12 @@ import type { Metadata } from 'next'
 import path from 'path'
 import fs from 'fs'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
-import { getAllPosts } from '@shawnos/shared/lib'
+import { getTimelineItems } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../i18n/hreflang'
-import { BlogContent } from './BlogContent'
+import { BlogTimeline } from './BlogTimeline'
+
+export const revalidate = 60
 
 const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
 
@@ -42,16 +44,21 @@ type Props = {
 export default async function BlogIndex({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
-  const posts = getAllPosts(getContentDir(locale))
+  const blogHrefBase = locale === 'en' ? '/blog' : `/${locale}/blog`
+  const items = getTimelineItems({
+    contentDir: getContentDir(locale),
+    blogHrefBase,
+    limit: 80,
+  })
 
   const collectionSchema = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
     name: 'Blog',
     url: 'https://shawnos.ai/blog',
-    description: 'Posts from the build log. GTM engineering, AI workflows, and building in public.',
+    description: 'Live feed of everything Shawn Tenam publishes — blog posts, Substack essays, Reddit threads.',
     author: { '@type': 'Person', name: 'Shawn Tenam', url: 'https://shawnos.ai' },
-    numberOfItems: posts.length,
+    numberOfItems: items.length,
   }
 
   return (
@@ -61,7 +68,7 @@ export default async function BlogIndex({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
-      <BlogContent posts={posts} />
+      <BlogTimeline initialItems={items} />
     </>
   )
 }
