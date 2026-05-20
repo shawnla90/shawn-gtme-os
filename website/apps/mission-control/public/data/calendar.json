@@ -1,6 +1,94 @@
 {
-  "generated": "2026-05-19T04:28:22.571Z",
+  "generated": "2026-05-20T04:27:28.100Z",
   "events": [
+    {
+      "id": "commit-6a9d0a5",
+      "title": "build(shawnos): explicit Vercel config — nextjs framework + ",
+      "type": "system",
+      "datetime": "2026-05-19T19:46:14-04:00",
+      "status": "completed",
+      "description": "build(shawnos): explicit Vercel config — nextjs framework + workspace install",
+      "metadata": {
+        "commitHash": "6a9d0a5"
+      }
+    },
+    {
+      "id": "commit-aa960ec",
+      "title": "chore: trigger Vercel rebuild after rootDirectory fix",
+      "type": "system",
+      "datetime": "2026-05-19T19:33:43-04:00",
+      "status": "completed",
+      "description": "chore: trigger Vercel rebuild after rootDirectory fix",
+      "metadata": {
+        "commitHash": "aa960ec"
+      }
+    },
+    {
+      "id": "commit-03d38d8",
+      "title": "feat(shawnos): blog as live X-style timeline feed (S2.1)",
+      "type": "system",
+      "datetime": "2026-05-19T18:33:19-04:00",
+      "status": "completed",
+      "description": "feat(shawnos): blog as live X-style timeline feed (S2.1)",
+      "metadata": {
+        "commitHash": "03d38d8"
+      }
+    },
+    {
+      "id": "commit-c18a2ee",
+      "title": "chore(crypto): evening signal update 2026-05-19",
+      "type": "system",
+      "datetime": "2026-05-19T17:30:04-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-05-19",
+      "metadata": {
+        "commitHash": "c18a2ee"
+      }
+    },
+    {
+      "id": "commit-8522db5",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-19 17:20)",
+      "type": "system",
+      "datetime": "2026-05-19T17:20:14-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-19 17:20)",
+      "metadata": {
+        "commitHash": "8522db5"
+      }
+    },
+    {
+      "id": "commit-749fb10",
+      "title": "chore(crypto): morning signal update 2026-05-19",
+      "type": "system",
+      "datetime": "2026-05-19T07:00:09-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-05-19",
+      "metadata": {
+        "commitHash": "749fb10"
+      }
+    },
+    {
+      "id": "commit-b34f518",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-19 05:19)",
+      "type": "system",
+      "datetime": "2026-05-19T05:19:52-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-19 05:19)",
+      "metadata": {
+        "commitHash": "b34f518"
+      }
+    },
+    {
+      "id": "commit-e84aa17",
+      "title": "chore: daily tracker scan 2026-05-18",
+      "type": "system",
+      "datetime": "2026-05-19T00:28:23-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-05-18",
+      "metadata": {
+        "commitHash": "e84aa17"
+      }
+    },
     {
       "id": "commit-9529f9d",
       "title": "chore(crypto): evening signal update 2026-05-18",
@@ -55,68 +143,13 @@
       "metadata": {
         "commitHash": "aed0677"
       }
-    },
-    {
-      "id": "commit-0b2c8a6",
-      "title": "chore(crypto): evening signal update 2026-05-17",
-      "type": "system",
-      "datetime": "2026-05-17T17:30:11-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-05-17",
-      "metadata": {
-        "commitHash": "0b2c8a6"
-      }
-    },
-    {
-      "id": "commit-cef7293",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-17 17:18)",
-      "type": "system",
-      "datetime": "2026-05-17T17:18:32-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-17 17:18)",
-      "metadata": {
-        "commitHash": "cef7293"
-      }
-    },
-    {
-      "id": "commit-f408b28",
-      "title": "chore(crypto): morning signal update 2026-05-17",
-      "type": "system",
-      "datetime": "2026-05-17T07:00:11-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-05-17",
-      "metadata": {
-        "commitHash": "f408b28"
-      }
-    },
-    {
-      "id": "commit-2aa0c44",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-17 05:18)",
-      "type": "system",
-      "datetime": "2026-05-17T05:18:06-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-17 05:18)",
-      "metadata": {
-        "commitHash": "2aa0c44"
-      }
-    },
-    {
-      "id": "commit-778fc1e",
-      "title": "chore: daily tracker scan 2026-05-16",
-      "type": "system",
-      "datetime": "2026-05-17T00:29:25-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-05-16",
-      "metadata": {
-        "commitHash": "778fc1e"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 10,
-    "completedEvents": 10,
+    "totalEvents": 13,
+    "completedEvents": 13,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 10,
+    "deploymentsThisWeek": 13,
     "upcomingCronJobs": 0
   }
 }
