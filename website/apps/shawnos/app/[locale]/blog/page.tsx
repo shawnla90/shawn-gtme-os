@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import path from 'path'
 import fs from 'fs'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
-import { getTimelineItems } from '@shawnos/shared/lib'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { getTimelineItems, getAllPosts } from '@shawnos/shared/lib'
+import { BreadcrumbSchema, PostCard } from '@shawnos/shared/components'
 import { hreflang } from '../../../i18n/hreflang'
 import { BlogTimeline } from './BlogTimeline'
 
@@ -45,11 +45,15 @@ export default async function BlogIndex({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
   const blogHrefBase = locale === 'en' ? '/blog' : `/${locale}/blog`
+  const contentDir = getContentDir(locale)
   const items = getTimelineItems({
-    contentDir: getContentDir(locale),
+    contentDir,
     blogHrefBase,
     limit: 80,
   })
+
+  const allPosts = getAllPosts(contentDir)
+  const featuredPosts = allPosts.slice(0, 3)
 
   const collectionSchema = {
     '@context': 'https://schema.org',
@@ -68,6 +72,58 @@ export default async function BlogIndex({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
+      {featuredPosts.length > 0 && (
+        <section
+          style={{
+            maxWidth: '1080px',
+            margin: '0 auto',
+            padding: '32px 24px 0',
+          }}
+        >
+          <p
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '12px',
+              color: 'var(--text-muted)',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              margin: '0 0 16px',
+            }}
+          >
+            // featured
+          </p>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '24px',
+              marginBottom: '32px',
+            }}
+          >
+            {featuredPosts.map((post) => (
+              <div
+                key={post.slug}
+                style={{
+                  border: '1px solid var(--canvas-border)',
+                  borderRadius: '12px',
+                  padding: '8px 20px 4px',
+                  background: 'var(--canvas-subtle)',
+                }}
+              >
+                <PostCard
+                  title={post.title}
+                  date={post.date}
+                  excerpt={post.excerpt}
+                  slug={post.slug}
+                  readingTime={post.readingTime}
+                  category={post.category}
+                  linkPrefix={blogHrefBase}
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
       <BlogTimeline initialItems={items} />
     </>
   )
