@@ -5,7 +5,6 @@ const withNextIntl = createNextIntlPlugin('./i18n/request.ts')
 
 const nextConfig: NextConfig = {
   transpilePackages: ['@shawnos/shared'],
-  output: 'standalone',
   images: {
     formats: ['image/avif', 'image/webp'],
   },

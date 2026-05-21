@@ -32,7 +32,7 @@
   --accent-dusk: #c084fc;
   --accent-twilight: #818cf8;
   --accent-breeze: #7dd3fc;
-  --accent: var(--accent-sunset);
+  --accent: var(--text-primary);
 
   --link: var(--accent);
   --link-hover: color-mix(in srgb, var(--accent) 75%, white);
@@ -66,7 +66,7 @@
   --accent-lavender: #c4b5fd;
   --accent-sky: #93c5fd;
   --accent-rose: #fda4af;
-  --accent: #292524;
+  --accent: var(--text-primary);
 
   --link: var(--accent);
   --link-hover: color-mix(in srgb, var(--accent) 65%, white);

@@ -2,7 +2,7 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC, Noto_Sans_JP } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer, PostHogProvider, CursorGlow, ThemeToggle } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer, PostHogProvider, ThemeToggle } from '@shawnos/shared/components'
 import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { FooterCredit } from '../FooterCredit'
 import { FeedbackButton } from '../components/FeedbackButton'
@@ -234,7 +234,6 @@ export default async function LocaleLayout({ children, params }: Props) {
         <FooterCredit />
         <ScrollSignupGlobal />
         <FeedbackButton />
-        <CursorGlow />
         </PostHogProvider>
         </ThemeProvider>
         </NextIntlClientProvider>

@@ -93,18 +93,25 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
   return (
     <>
       <style>{`
-        /* ── Desktop link row ── */
+        /* ── Desktop link row — grid-box framed ── */
         .nav-link {
           color: var(--text-secondary);
           font-size: 14px;
           text-decoration: none;
-          transition: color 0.15s ease;
+          border: 1px solid var(--canvas-border);
+          border-radius: 6px;
+          padding: 8px 14px;
+          transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
         }
         .nav-link:hover {
-          color: var(--accent);
+          background: rgba(255, 255, 255, 0.06);
+          border-color: var(--canvas-border);
+          color: var(--text-primary);
         }
         .nav-link-active {
-          color: var(--accent) !important;
+          background: var(--text-primary) !important;
+          color: var(--canvas) !important;
+          border-color: var(--text-primary) !important;
         }
         .nav-link-row {
           display: flex;
@@ -121,13 +128,17 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
           font-size: 14px;
           cursor: default;
           user-select: none;
-          transition: color 0.15s ease;
+          border: 1px solid var(--canvas-border);
+          border-radius: 6px;
+          padding: 8px 14px;
+          transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
           display: flex;
           align-items: center;
           gap: 4px;
         }
         .nav-dropdown-trigger:hover {
-          color: var(--accent);
+          background: rgba(255, 255, 255, 0.06);
+          color: var(--text-primary);
         }
         .nav-dropdown-chevron {
           font-size: 10px;
@@ -177,7 +188,7 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
           transition: color 0.15s ease, background 0.15s ease;
         }
         .nav-dropdown-panel a:hover {
-          color: var(--accent);
+          color: var(--text-primary);
           background: var(--canvas-subtle);
         }
 
@@ -247,8 +258,8 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
           background: var(--canvas-subtle);
         }
         .nav-drawer-link-active {
-          color: var(--accent) !important;
-          border-left: 3px solid var(--accent);
+          color: var(--text-primary) !important;
+          border-left: 3px solid var(--text-primary);
           padding-left: 17px;
         }
         .nav-drawer-group-header {
@@ -287,7 +298,7 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
           margin-left: 20px;
         }
         .nav-drawer-group-children a.nav-drawer-link-active {
-          border-left: 3px solid var(--accent);
+          border-left: 3px solid var(--text-primary);
           padding-left: 39px;
         }
 
@@ -367,7 +378,7 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
         <a
           href="/"
           style={{
-            color: 'var(--accent)',
+            color: 'var(--text-primary)',
             fontSize: '18px',
             fontWeight: 700,
             textDecoration: 'none',

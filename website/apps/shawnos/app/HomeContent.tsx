@@ -54,7 +54,7 @@ const socials = [
   { title: 'GitHub', icon: <GithubIcon />, href: 'https://github.com/shawnla90' },
   { title: 'LinkedIn', icon: <LinkedInIcon />, href: 'https://linkedin.com/in/shawntenam' },
   { title: 'Substack', icon: <SubstackIcon />, href: 'https://shawntenam.substack.com' },
-  { title: 'Discord', icon: <DiscordIcon />, href: 'https://discord.gg/shawnos' },
+  { title: 'Discord', icon: <DiscordIcon />, href: 'https://discord.gg/6eKe49nth' },
 ]
 
 const tileBase =
