@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Link } from '../i18n/navigation'
 import {
@@ -7,9 +8,76 @@ import {
   BentoGridItem,
   GlowingEffect,
   FloatingDock,
-  BackgroundRippleEffect,
 } from '@shawnos/shared/components/ui'
 import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
+
+const COMING_SOON_KEY = 'shawnos-clearbox-strip-dismissed'
+
+function ComingSoonStrip() {
+  const [dismissed, setDismissed] = useState(true)
+
+  useEffect(() => {
+    try {
+      setDismissed(localStorage.getItem(COMING_SOON_KEY) === '1')
+    } catch {
+      setDismissed(false)
+    }
+  }, [])
+
+  if (dismissed) return null
+
+  return (
+    <div
+      style={{
+        background: 'var(--canvas-subtle)',
+        border: '1px solid var(--canvas-border)',
+        borderRadius: '9999px',
+        padding: '10px 18px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '12px',
+        marginBottom: '24px',
+        fontFamily: 'var(--font-mono)',
+        fontSize: '12px',
+        color: 'var(--text-secondary)',
+      }}
+    >
+      <Link
+        href={'/clearbox' as never}
+        style={{
+          color: 'var(--text-primary)',
+          textDecoration: 'none',
+          flex: 1,
+          minWidth: 0,
+          overflow: 'hidden',
+          textOverflow: 'ellipsis',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        // clearbox ships this week. join early access →
+      </Link>
+      <button
+        onClick={() => {
+          try { localStorage.setItem(COMING_SOON_KEY, '1') } catch {}
+          setDismissed(true)
+        }}
+        aria-label="dismiss announcement"
+        style={{
+          background: 'none',
+          border: 'none',
+          color: 'var(--text-muted)',
+          cursor: 'pointer',
+          padding: '2px 6px',
+          fontSize: '14px',
+          lineHeight: 1,
+        }}
+      >
+        ×
+      </button>
+    </div>
+  )
+}
 
 interface Post {
   slug: string
@@ -93,8 +161,10 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
           </p>
         </header>
 
+        <ComingSoonStrip />
+
         <BentoGrid className="md:grid-cols-3 md:auto-rows-[14rem]">
-          {/* Clearbox — 2x2 hero */}
+          {/* Clearbox — 2x2 hero (clean, no glow/ripple/orange) */}
           <BentoGridItem
             className={`${tileBase} md:col-span-2 md:row-span-2`}
             header={
@@ -107,26 +177,12 @@ export function HomeContent({ posts, latestLog }: HomeContentProps) {
                   justifyContent: 'flex-end',
                   height: '100%',
                   width: '100%',
-                  padding: '28px',
+                  padding: '32px',
                   textDecoration: 'none',
                   color: 'inherit',
-                  overflow: 'hidden',
                   borderRadius: 'inherit',
                 }}
               >
-                <GlowingEffect variant="default" glow proximity={64} disabled={false} />
-                <div style={{ position: 'absolute', inset: 0, opacity: 0.18 }}>
-                  <BackgroundRippleEffect rows={6} cols={20} cellSize={56} />
-                </div>
-                <div
-                  style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background:
-                      'radial-gradient(circle at 70% 30%, rgba(251,146,60,0.25), transparent 60%), radial-gradient(circle at 20% 80%, rgba(167,139,250,0.20), transparent 55%)',
-                    pointerEvents: 'none',
-                  }}
-                />
                 <div style={{ position: 'relative', zIndex: 2 }}>
                   <Image
                     src="/clearbox/aura-logo.png"

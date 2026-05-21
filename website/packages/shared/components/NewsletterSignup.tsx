@@ -1,11 +1,14 @@
 'use client'
 
 import React, { useState, useEffect } from 'react'
+import { Button } from './ui/button'
 
 const STORAGE_KEY = 'scroll-signup-subscribed'
+const SUBSTACK_SUBSCRIBE_URL = 'https://shawntenam.substack.com/subscribe'
 
 export function NewsletterSignup() {
   const [subscribed, setSubscribed] = useState(false)
+  const [email, setEmail] = useState('')
 
   useEffect(() => {
     try {
@@ -17,6 +20,20 @@ export function NewsletterSignup() {
     }
   }, [])
 
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    const trimmed = email.trim()
+    if (!trimmed) return
+    const url = `${SUBSTACK_SUBSCRIBE_URL}?email=${encodeURIComponent(trimmed)}`
+    window.open(url, '_blank', 'noopener,noreferrer')
+    try {
+      localStorage.setItem(STORAGE_KEY, '1')
+    } catch {
+      // localStorage unavailable
+    }
+    setSubscribed(true)
+  }
+
   return (
     <div style={wrapperStyle}>
       <div style={containerStyle}>
@@ -24,26 +41,31 @@ export function NewsletterSignup() {
 
         {subscribed ? (
           <p style={subscribedStyle}>
-            <span style={{ color: 'var(--accent)', marginRight: '8px' }}>✓</span>
-            you&apos;re already subscribed. thanks for being here.
+            <span style={{ color: 'var(--text-primary)', marginRight: '8px' }}>✓</span>
+            you&apos;re subscribed. thanks for being here.
           </p>
         ) : (
           <>
             <p style={descStyle}>
-              get build logs, quest updates, and gtm engineering drops.
+              build logs, quest updates, and gtm engineering drops.
               <br />
               no spam. unsubscribe anytime.
             </p>
 
-            <iframe
-              src="https://shawntenam.substack.com/embed"
-              width="100%"
-              height="150"
-              style={iframeStyle}
-              frameBorder="0"
-              scrolling="no"
-              title="Subscribe to Substack"
-            />
+            <form onSubmit={handleSubmit} style={formStyle}>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                style={inputStyle}
+                aria-label="email address"
+              />
+              <Button type="submit" variant="primary" size="md">
+                Subscribe
+              </Button>
+            </form>
           </>
         )}
       </div>
@@ -63,14 +85,14 @@ const containerStyle: React.CSSProperties = {
   margin: '0 auto',
   background: 'var(--canvas-subtle)',
   border: '1px solid var(--border)',
-  borderRadius: '6px',
+  borderRadius: '12px',
   padding: '32px 28px',
 }
 
 const headingStyle: React.CSSProperties = {
   fontFamily: 'var(--font-mono)',
   fontSize: '14px',
-  color: 'var(--accent)',
+  color: 'var(--text-primary)',
   margin: '0 0 12px',
 }
 
@@ -79,7 +101,7 @@ const descStyle: React.CSSProperties = {
   fontSize: '13px',
   lineHeight: '1.6',
   color: 'var(--text-secondary)',
-  margin: '0 0 16px',
+  margin: '0 0 20px',
 }
 
 const subscribedStyle: React.CSSProperties = {
@@ -89,7 +111,22 @@ const subscribedStyle: React.CSSProperties = {
   margin: 0,
 }
 
-const iframeStyle: React.CSSProperties = {
-  borderRadius: '4px',
-  background: 'transparent',
+const formStyle: React.CSSProperties = {
+  display: 'flex',
+  gap: '8px',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+}
+
+const inputStyle: React.CSSProperties = {
+  flex: '1 1 200px',
+  minWidth: 0,
+  padding: '12px 16px',
+  fontFamily: 'var(--font-mono)',
+  fontSize: '13px',
+  color: 'var(--text-primary)',
+  background: 'var(--canvas)',
+  border: '1px solid var(--canvas-border)',
+  borderRadius: '9999px',
+  outline: 'none',
 }
