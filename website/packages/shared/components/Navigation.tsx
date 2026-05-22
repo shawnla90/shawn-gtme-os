@@ -421,8 +421,13 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
                       key={child.href}
                       href={child.href}
                       className={isActive(child.href) ? 'nav-link-active' : ''}
+                      target={child.href.startsWith('http') ? '_blank' : undefined}
+                      rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
                       {child.label}
+                      {child.href.startsWith('http') && (
+                        <span style={{ marginLeft: 6, opacity: 0.55, fontSize: '0.85em' }}>↗</span>
+                      )}
                     </a>
                   ))}
                 </div>
@@ -561,8 +566,13 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
                       href={child.href}
                       className={`nav-drawer-link${isActive(child.href) ? ' nav-drawer-link-active' : ''}`}
                       onClick={closeDrawer}
+                      target={child.href.startsWith('http') ? '_blank' : undefined}
+                      rel={child.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
                       {child.label}
+                      {child.href.startsWith('http') && (
+                        <span style={{ marginLeft: 6, opacity: 0.55, fontSize: '0.85em' }}>↗</span>
+                      )}
                     </a>
                   ))}
                 </div>
