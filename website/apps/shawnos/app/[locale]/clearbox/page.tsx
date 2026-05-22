@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import { ButtonLink } from '@shawnos/shared/components/ui'
+import { ClearboxDemo } from './ClearboxDemo'
 
 type Props = {
   params: Promise<{ locale: string }>
@@ -110,22 +111,7 @@ export default async function ClearboxInterimPage({ params }: Props) {
         </div>
       </header>
 
-      {/* Demo slot — ch16 InboxPanel + AuraPanel port lands here once pasted. */}
-      <div
-        style={{
-          marginTop: '48px',
-          padding: '64px 24px',
-          background: 'var(--canvas-subtle)',
-          border: '1px dashed var(--canvas-border)',
-          borderRadius: '16px',
-          textAlign: 'center',
-          fontFamily: 'var(--font-mono)',
-          fontSize: '13px',
-          color: 'var(--text-muted)',
-        }}
-      >
-        // demo coming. inbox + aura panel render here.
-      </div>
+      <ClearboxDemo />
     </section>
   )
 }

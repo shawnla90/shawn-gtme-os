@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { getAllPosts, getAllLogs, resolveDataRoot } from '@shawnos/shared/lib'
+import { getAllPosts, getTimelineItems, resolveDataRoot } from '@shawnos/shared/lib'
+import { fetchUserProfile } from '@shawnos/shared/lib/reddit'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../i18n/hreflang'
 import { HomeContent } from '../HomeContent'
@@ -34,9 +35,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const DATA_ROOT = resolveDataRoot()
+const _DATA_ROOT = resolveDataRoot()
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
-const LOG_DIR = path.join(DATA_ROOT, 'daily-log')
+
+export const revalidate = 3600
 
 export default async function HomePage({ params }: Props) {
   const { locale } = await params
@@ -44,13 +46,26 @@ export default async function HomePage({ params }: Props) {
 
   const posts = getAllPosts(CONTENT_DIR)
   const latestPosts = posts.slice(0, 3)
-  const logs = getAllLogs(LOG_DIR)
-  const latestLog = logs.length > 0 ? logs[0] : null
+  const timeline = getTimelineItems({
+    contentDir: CONTENT_DIR,
+    blogHrefBase: locale === 'en' ? '/blog' : `/${locale}/blog`,
+    limit: 8,
+  })
+
+  let karma = '1,089'
+  try {
+    const profile = await fetchUserProfile('Shawntenam')
+    if (profile?.totalKarma) {
+      karma = new Intl.NumberFormat('en-US').format(profile.totalKarma)
+    }
+  } catch {
+    // fall back to default — cached/static value
+  }
 
   return (
     <>
       <BreadcrumbSchema items={[]} />
-      <HomeContent posts={latestPosts} latestLog={latestLog} />
+      <HomeContent posts={latestPosts} timeline={timeline} karma={karma} />
       <LiveUpdatesWidget announcements={announcements} />
     </>
   )

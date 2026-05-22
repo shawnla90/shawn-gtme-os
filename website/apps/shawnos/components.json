@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "iconLibrary": "lucide",
+  "registries": {
+    "@unlumen-ui": {
+      "url": "https://ui.unlumen.com/r/{name}.json",
+      "headers": {
+        "Authorization": "Bearer ${UNLUMEN_LICENSE_KEY}"
+      }
+    }
+  }
+}

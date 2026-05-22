@@ -46,7 +46,7 @@ function buildStyle(variant: Variant, size: Size, fullWidth: boolean, extra?: Re
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    borderRadius: '9999px',
+    borderRadius: '24px',
     fontFamily: 'var(--font-sans)',
     fontWeight: 500,
     lineHeight: 1,

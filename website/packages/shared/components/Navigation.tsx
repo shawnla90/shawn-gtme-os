@@ -1,8 +1,9 @@
 'use client'
 
-import React, { useState, useEffect, useCallback, useRef } from 'react'
+import React, { useState, useEffect, useCallback, useRef, type ReactNode } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTheme } from '../hooks/useTheme'
+import { CircleNavItem, circleNavStyles } from './CircleNavItem'
 
 interface NavLink {
   href: string
@@ -10,10 +11,30 @@ interface NavLink {
   children?: NavLink[]
 }
 
+export interface CircularLink {
+  href: string
+  label: string
+  description?: string
+  logoSrc?: string
+  icon?: ReactNode
+  /** If set, this entry renders as a gooey-merged cluster of its children instead of a single circle. */
+  cluster?: Array<{
+    href: string
+    label: string
+    description?: string
+    logoSrc?: string
+    icon?: ReactNode
+  }>
+  /** SVG filter id to apply to the cluster (must match a <GooeySvgFilter id={...}> rendered somewhere on the page). */
+  clusterFilterId?: string
+}
+
 interface NavigationProps {
   siteName: string
   links?: NavLink[]
   actions?: React.ReactNode
+  /** When provided, replaces the desktop pill link row with a circular icon strip. Mobile drawer still uses `links`. */
+  circularLinks?: CircularLink[]
 }
 
 const defaultLinks: NavLink[] = [
@@ -24,7 +45,7 @@ const defaultLinks: NavLink[] = [
   { href: '/about', label: 'About' },
 ]
 
-export function Navigation({ siteName, links = defaultLinks, actions }: NavigationProps) {
+export function Navigation({ siteName, links = defaultLinks, actions, circularLinks }: NavigationProps) {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set())
@@ -362,6 +383,8 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
             display: block;
           }
         }
+
+        ${circleNavStyles}
       `}</style>
       <nav
         style={{
@@ -389,6 +412,43 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
         </a>
 
         {/* Desktop link row */}
+        {circularLinks ? (
+          <div className="circle-nav-row">
+            {circularLinks.map((link) =>
+              link.cluster && link.clusterFilterId ? (
+                <div
+                  key={link.label}
+                  className="circle-nav-cluster"
+                  style={{ filter: `url(#${link.clusterFilterId})` }}
+                  aria-label={link.label}
+                >
+                  {link.cluster.map((child) => (
+                    <CircleNavItem
+                      key={child.href}
+                      href={child.href}
+                      label={child.label}
+                      description={child.description}
+                      logoSrc={child.logoSrc}
+                      icon={child.icon}
+                      active={isActive(child.href)}
+                    />
+                  ))}
+                </div>
+              ) : (
+                <CircleNavItem
+                  key={link.href}
+                  href={link.href}
+                  label={link.label}
+                  description={link.description}
+                  logoSrc={link.logoSrc}
+                  icon={link.icon}
+                  active={isActive(link.href)}
+                />
+              )
+            )}
+            {actions}
+          </div>
+        ) : (
         <div className="nav-link-row">
           {links.map((link) =>
             link.children ? (
@@ -470,6 +530,7 @@ export function Navigation({ siteName, links = defaultLinks, actions }: Navigati
             </button>
           )}
         </div>
+        )}
 
         {/* Hamburger button (mobile only) */}
         <button

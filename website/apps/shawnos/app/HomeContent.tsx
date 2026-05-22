@@ -3,13 +3,22 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Link } from '../i18n/navigation'
-import {
-  BentoGrid,
-  BentoGridItem,
-  GlowingEffect,
-  FloatingDock,
-} from '@shawnos/shared/components/ui'
-import type { DailyLogSummary } from '@shawnos/shared/lib/logs'
+import { SmartAnimateText } from '../components/unlumen-ui/smart-animate-text'
+import { ButtonLink } from '@shawnos/shared/components/ui'
+import type { TimelineItem } from '@shawnos/shared/lib'
+
+interface Post {
+  slug: string
+  title: string
+  date: string
+  excerpt: string
+}
+
+interface HomeContentProps {
+  posts: Post[]
+  timeline: TimelineItem[]
+  karma: string
+}
 
 const COMING_SOON_KEY = 'shawnos-clearbox-strip-dismissed'
 
@@ -37,7 +46,7 @@ function ComingSoonStrip() {
         alignItems: 'center',
         justifyContent: 'space-between',
         gap: '12px',
-        marginBottom: '24px',
+        marginBottom: '32px',
         fontFamily: 'var(--font-mono)',
         fontSize: '12px',
         color: 'var(--text-secondary)',
@@ -79,541 +88,419 @@ function ComingSoonStrip() {
   )
 }
 
-interface Post {
-  slug: string
-  title: string
-  date: string
-  excerpt: string
-}
-
-interface HomeContentProps {
-  posts: Post[]
-  latestLog: DailyLogSummary | null
-}
-
-const XIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-)
-const GithubIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
-    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2.16c-3.2.7-3.88-1.37-3.88-1.37-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.69 1.25 3.35.95.1-.74.4-1.25.73-1.54-2.55-.29-5.24-1.27-5.24-5.65 0-1.25.45-2.27 1.18-3.07-.12-.29-.51-1.46.11-3.04 0 0 .96-.31 3.15 1.17a10.95 10.95 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.58.23 2.75.11 3.04.74.8 1.18 1.82 1.18 3.07 0 4.39-2.69 5.36-5.25 5.64.41.35.78 1.04.78 2.1v3.11c0 .31.21.67.8.56C20.21 21.39 23.5 17.08 23.5 12c0-6.35-5.15-11.5-11.5-11.5z" />
-  </svg>
-)
-const LinkedInIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
-    <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.27a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5zm13.5 12.27h-3v-5.5c0-1.32-.03-3.02-1.84-3.02-1.84 0-2.12 1.43-2.12 2.92v5.6h-3v-11h2.88v1.5h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6v6.46z" />
-  </svg>
-)
-const SubstackIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
-    <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z" />
-  </svg>
-)
-const DiscordIcon = () => (
-  <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden>
-    <path d="M20.32 4.37A19.79 19.79 0 0 0 16.06 3a14.7 14.7 0 0 0-.66 1.35 18.27 18.27 0 0 0-5.4 0A14.7 14.7 0 0 0 9.34 3 19.79 19.79 0 0 0 5.08 4.37 21 21 0 0 0 1.5 18.61a19.96 19.96 0 0 0 6.04 3.05c.49-.66.92-1.36 1.29-2.09a13.05 13.05 0 0 1-2.03-.97c.17-.13.34-.26.5-.4a14.27 14.27 0 0 0 12.4 0c.16.14.33.27.5.4-.65.38-1.33.71-2.04.97.37.73.8 1.43 1.29 2.09a19.94 19.94 0 0 0 6.05-3.05 21 21 0 0 0-3.58-14.24zM8.52 15.7c-1.18 0-2.16-1.1-2.16-2.45 0-1.35.95-2.46 2.16-2.46s2.18 1.11 2.16 2.46c0 1.35-.95 2.45-2.16 2.45zm6.96 0c-1.18 0-2.16-1.1-2.16-2.45 0-1.35.95-2.46 2.16-2.46s2.18 1.11 2.16 2.46c0 1.35-.95 2.45-2.16 2.45z" />
-  </svg>
-)
-
-const socials = [
-  { title: 'X', icon: <XIcon />, href: 'https://x.com/shawntenam' },
-  { title: 'GitHub', icon: <GithubIcon />, href: 'https://github.com/shawnla90' },
-  { title: 'LinkedIn', icon: <LinkedInIcon />, href: 'https://linkedin.com/in/shawntenam' },
-  { title: 'Substack', icon: <SubstackIcon />, href: 'https://shawntenam.substack.com' },
-  { title: 'Discord', icon: <DiscordIcon />, href: 'https://discord.gg/6eKe49nth' },
+const ARC = [
+  {
+    eyebrow: 'PLUMBER',
+    sentence: 'before tech, I was a plumber. not a metaphor. actual plumbing.',
+    lesson: 'every system has a logic. follow the flow.',
+  },
+  {
+    eyebrow: 'SDR',
+    sentence: '200+ cold emails a day. primary domains, SalesLoft sequences.',
+    lesson: 'volume is a teacher. rejection is data.',
+  },
+  {
+    eyebrow: 'GTM ENGINEER',
+    sentence: 'I stopped working inside the systems and started building them.',
+    lesson: 'you can’t engineer what you don’t understand.',
+  },
 ]
 
-const tileBase =
-  'group/bento relative row-span-1 flex flex-col justify-between rounded-2xl border border-[var(--border)] bg-[var(--canvas-subtle)] transition duration-200 hover:border-[var(--accent)]/40 overflow-hidden'
+function formatRelative(timestamp: string): string {
+  const t = new Date(timestamp).getTime()
+  if (!Number.isFinite(t)) return ''
+  const diff = Date.now() - t
+  const hours = Math.floor(diff / 3_600_000)
+  if (hours < 1) return 'just now'
+  if (hours < 24) return `${hours}h ago`
+  const days = Math.floor(hours / 24)
+  if (days < 7) return `${days}d ago`
+  const weeks = Math.floor(days / 7)
+  if (weeks < 5) return `${weeks}w ago`
+  const months = Math.floor(days / 30)
+  return `${months}mo ago`
+}
 
-export function HomeContent({ posts, latestLog }: HomeContentProps) {
+const sourceColor: Record<string, string> = {
+  blog: 'var(--text-primary)',
+  substack: '#ff6719',
+  reddit: '#ff4500',
+}
+
+export function HomeContent({ posts, timeline, karma }: HomeContentProps) {
   return (
     <section style={{ position: 'relative', padding: '40px 24px 120px' }}>
-      <div style={{ maxWidth: '1240px', margin: '0 auto', position: 'relative' }}>
-        <header style={{ marginBottom: '32px', maxWidth: '720px' }}>
-          <h1
-            style={{
-              fontFamily: 'var(--font-sans)',
-              fontSize: 'clamp(36px, 5vw, 56px)',
-              fontWeight: 700,
-              lineHeight: 1.05,
-              letterSpacing: '-0.02em',
-              color: 'var(--text-primary)',
-              margin: 0,
-            }}
-          >
-            Shawn Tenam
-          </h1>
-          <p
-            style={{
-              marginTop: '12px',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '14px',
-              color: 'var(--text-muted)',
-              lineHeight: 1.5,
-              maxWidth: '560px',
-            }}
-          >
-            GTM engineer. Building AI-native pipelines, content systems, and the front end of how
-            B2B finds its market.
-          </p>
-        </header>
-
+      <div style={{ maxWidth: '1080px', margin: '0 auto', paddingRight: '88px' /* right-rail space */ }}>
         <ComingSoonStrip />
 
-        <BentoGrid className="md:grid-cols-3 md:auto-rows-[14rem]">
-          {/* Clearbox — 2x2 hero (clean, no glow/ripple/orange) */}
-          <BentoGridItem
-            className={`${tileBase} md:col-span-2 md:row-span-2`}
-            header={
-              <Link
-                href={'/clearbox' as never}
-                style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'flex-end',
-                  height: '100%',
-                  width: '100%',
-                  padding: '32px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
-                }}
-              >
-                <div style={{ position: 'relative', zIndex: 2 }}>
-                  <Image
-                    src="/clearbox/aura-logo.png"
-                    alt="Clearbox"
-                    width={56}
-                    height={56}
-                    style={{ marginBottom: '20px', opacity: 0.95 }}
-                  />
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      color: 'var(--text-muted)',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                      marginBottom: '8px',
-                    }}
-                  >
-                    Now shipping →
-                  </div>
-                  <h2
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: 'clamp(28px, 3.4vw, 44px)',
-                      fontWeight: 700,
-                      lineHeight: 1.05,
-                      letterSpacing: '-0.02em',
-                      color: 'var(--text-primary)',
-                      margin: 0,
-                    }}
-                  >
-                    Clearbox
-                  </h2>
-                  <p
-                    style={{
-                      marginTop: '10px',
-                      fontSize: '17px',
-                      color: 'var(--text-secondary)',
-                      lineHeight: 1.4,
-                      maxWidth: '420px',
-                    }}
-                  >
-                    See your market. Move first.
-                  </p>
-                </div>
-              </Link>
-            }
+        {/* HERO */}
+        <header
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            gap: '24px',
+            marginBottom: '64px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <Image
+            src="/clearbox/pfp.png"
+            alt="Shawn Tenam"
+            width={80}
+            height={80}
+            style={{
+              borderRadius: '9999px',
+              border: '1px solid var(--canvas-border)',
+              flexShrink: 0,
+            }}
+            priority
           />
+          <div style={{ flex: '1 1 320px', minWidth: 0 }}>
+            <p
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '12px',
+                color: 'var(--text-muted)',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                margin: '0 0 8px',
+              }}
+            >
+              // hello
+            </p>
+            <h1
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: 'clamp(36px, 5vw, 56px)',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-0.02em',
+                color: 'var(--text-primary)',
+                margin: '0 0 8px',
+              }}
+            >
+              Shawn Tenam
+            </h1>
+            <p
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '20px',
+                color: 'var(--text-primary)',
+                lineHeight: 1.3,
+                margin: '0 0 16px',
+                fontWeight: 500,
+              }}
+            >
+              GTM engineer. Plumber for 10 years before that.
+            </p>
+            <p
+              style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '16px',
+                color: 'var(--text-secondary)',
+                lineHeight: 1.55,
+                margin: 0,
+                maxWidth: '560px',
+              }}
+            >
+              I build AI-native pipelines, agent-driven workflows, and content systems that
+              compound. Every skill, every post, every campaign runs through a single codebase.
+            </p>
+          </div>
+        </header>
 
-          {/* Context Engineering — 1x2 */}
-          <BentoGridItem
-            className={`${tileBase} md:row-span-2`}
-            header={
-              <Link
-                href={'/context-wiki' as never}
+        {/* 3-ACT STORY */}
+        <section style={{ marginBottom: '64px' }}>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+              gap: '16px',
+              marginBottom: '20px',
+            }}
+          >
+            {ARC.map((act) => (
+              <article
+                key={act.eyebrow}
                 style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                  width: '100%',
+                  background: 'var(--canvas-subtle)',
+                  border: '1px solid var(--canvas-border)',
+                  borderRadius: '16px',
                   padding: '24px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
+                  transition: 'transform 0.15s ease, border-color 0.15s ease',
+                  cursor: 'default',
                 }}
               >
-                <GlowingEffect variant="silver" glow proximity={48} disabled={false} />
-                <div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      color: 'var(--accent)',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    $ wiki
-                  </div>
-                  <h3
-                    style={{
-                      marginTop: '8px',
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '22px',
-                      fontWeight: 700,
-                      color: 'var(--text-primary)',
-                      letterSpacing: '-0.01em',
-                    }}
-                  >
-                    Context Engineering
-                  </h3>
-                </div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', lineHeight: 1.7 }}>
-                  <div style={{ color: 'var(--text-muted)' }}>&gt; cat CLAUDE.md</div>
-                  <div style={{ color: 'var(--text-secondary)' }}>// memory shapes output</div>
-                  <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>&gt; ls skills/</div>
-                  <div style={{ color: 'var(--text-secondary)' }}>// agents that compound</div>
-                  <div style={{ color: 'var(--text-muted)', marginTop: '4px' }}>&gt; explore →</div>
-                </div>
-              </Link>
-            }
-          />
-
-          {/* Reddit Growth Playbook — 2x1 */}
-          <BentoGridItem
-            className={`${tileBase} md:col-span-2`}
-            header={
-              <Link
-                href={'/reddit' as never}
-                style={{
-                  position: 'relative',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '24px',
-                  height: '100%',
-                  width: '100%',
-                  padding: '24px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
-                }}
-              >
-                <GlowingEffect variant="silver" glow proximity={48} disabled={false} />
-                <div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      color: 'var(--text-muted)',
-                      letterSpacing: '0.12em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    Reddit Growth Playbook
-                  </div>
-                  <h3
-                    style={{
-                      marginTop: '8px',
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: '20px',
-                      fontWeight: 700,
-                      color: 'var(--text-primary)',
-                      letterSpacing: '-0.01em',
-                      maxWidth: '320px',
-                    }}
-                  >
-                    Zero to a community in 30 days
-                  </h3>
-                </div>
-                <div style={{ textAlign: 'right' }}>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-sans)',
-                      fontSize: 'clamp(40px, 5vw, 64px)',
-                      fontWeight: 800,
-                      lineHeight: 1,
-                      color: 'var(--accent)',
-                      letterSpacing: '-0.03em',
-                    }}
-                  >
-                    1,089
-                  </div>
-                  <div
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      color: 'var(--text-muted)',
-                      letterSpacing: '0.08em',
-                      textTransform: 'uppercase',
-                      marginTop: '4px',
-                    }}
-                  >
-                    karma · 30 days
-                  </div>
-                </div>
-              </Link>
-            }
-          />
-
-          {/* Blog — 2x1 latest 3 */}
-          <BentoGridItem
-            className={`${tileBase} md:col-span-2`}
-            header={
-              <Link
-                href={'/blog' as never}
-                style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  height: '100%',
-                  width: '100%',
-                  padding: '24px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
-                }}
-              >
-                <GlowingEffect variant="silver" glow proximity={48} disabled={false} />
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                    marginBottom: '12px',
-                  }}
-                >
-                  Blog · latest
-                </div>
-                <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                  {posts.slice(0, 3).map((post) => (
-                    <li key={post.slug} style={{ display: 'flex', gap: '12px', alignItems: 'baseline' }}>
-                      <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', minWidth: '72px' }}>
-                        {post.date}
-                      </span>
-                      <span style={{ fontSize: '14px', color: 'var(--text-primary)', fontWeight: 500, lineHeight: 1.35 }}>
-                        {post.title}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </Link>
-            }
-          />
-
-          {/* How-To — 1x1 */}
-          <BentoGridItem
-            className={tileBase}
-            header={
-              <Link
-                href={'/how-to' as never}
-                style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                  width: '100%',
-                  padding: '20px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
-                }}
-              >
-                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Playbooks
-                </div>
-                <h3
-                  style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '20px',
-                    fontWeight: 700,
-                    color: 'var(--text-primary)',
-                    letterSpacing: '-0.01em',
-                    margin: 0,
-                  }}
-                >
-                  How-To <span style={{ color: 'var(--accent)' }}>→</span>
-                </h3>
-              </Link>
-            }
-          />
-
-          {/* Cloud Code Daily — 1x1 */}
-          <BentoGridItem
-            className={tileBase}
-            header={
-              <Link
-                href={'/claude-daily' as never}
-                style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                  width: '100%',
-                  padding: '20px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
-                }}
-              >
-                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Cloud Code Daily
-                </div>
-                <div>
-                  <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-                    {latestLog
-                      ? `${latestLog.date} · grade ${latestLog.letter_grade} · ${latestLog.accomplishment_count} ships`
-                      : 'Multi-subreddit pulse, daily.'}
-                  </div>
-                  <div
-                    style={{
-                      marginTop: '8px',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      color: 'var(--accent)',
-                    }}
-                  >
-                    Read latest →
-                  </div>
-                </div>
-              </Link>
-            }
-          />
-
-          {/* Founder's Journey — 1x1 */}
-          <BentoGridItem
-            className={tileBase}
-            header={
-              <Link
-                href={'/about/arc' as never}
-                style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                  width: '100%',
-                  padding: '20px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
-                }}
-              >
-                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '11px',
-                    color: 'var(--text-muted)',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  Founder&apos;s journey
-                </div>
                 <p
                   style={{
-                    fontSize: '14px',
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.4,
-                    fontStyle: 'italic',
-                    margin: 0,
-                  }}
-                >
-                  &ldquo;Trades to tech. SDR to engineer. Still shipping.&rdquo;
-                </p>
-              </Link>
-            }
-          />
-
-          {/* Build / Showcase — 1x1 */}
-          <BentoGridItem
-            className={tileBase}
-            header={
-              <Link
-                href={'/build' as never}
-                style={{
-                  position: 'relative',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  height: '100%',
-                  width: '100%',
-                  padding: '20px',
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  borderRadius: 'inherit',
-                }}
-              >
-                <GlowingEffect variant="silver" glow proximity={36} disabled={false} />
-                <div
-                  style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '11px',
                     color: 'var(--text-muted)',
-                    letterSpacing: '0.12em',
-                    textTransform: 'uppercase',
+                    letterSpacing: '0.14em',
+                    margin: '0 0 12px',
                   }}
                 >
-                  Build · live
-                </div>
-                <div>
-                  <div style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.4 }}>
-                    What I&apos;m shipping this week.
-                  </div>
-                  <div
-                    style={{
-                      marginTop: '8px',
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '11px',
-                      color: 'var(--accent)',
-                    }}
-                  >
-                    See current →
-                  </div>
-                </div>
-              </Link>
-            }
-          />
-        </BentoGrid>
-      </div>
+                  {act.eyebrow}
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '17px',
+                    color: 'var(--text-primary)',
+                    lineHeight: 1.4,
+                    margin: '0 0 12px',
+                    fontWeight: 500,
+                  }}
+                >
+                  {act.sentence}
+                </p>
+                <p
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '12px',
+                    color: 'var(--text-secondary)',
+                    lineHeight: 1.5,
+                    margin: 0,
+                  }}
+                >
+                  {act.lesson}
+                </p>
+              </article>
+            ))}
+          </div>
+          <ButtonLink href="/about/arc" variant="secondary" size="md">
+            Read the full arc →
+          </ButtonLink>
+        </section>
 
-      <FloatingDock
-        items={socials}
-        desktopClassName="fixed bottom-6 left-1/2 -translate-x-1/2 z-40"
-        mobileClassName="fixed bottom-6 right-6 z-40"
-      />
+        {/* 3 DESTINATIONS */}
+        <section style={{ marginBottom: '64px' }}>
+          <p
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '12px',
+              color: 'var(--text-muted)',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              margin: '0 0 20px',
+            }}
+          >
+            // start here
+          </p>
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '20px',
+            }}
+          >
+            {/* Clearbox */}
+            <Link
+              href={'/clearbox' as never}
+              style={{
+                background: 'var(--canvas-subtle)',
+                border: '1px solid var(--canvas-border)',
+                borderRadius: '20px',
+                padding: '28px',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                minHeight: '260px',
+                transition: 'transform 0.15s ease, border-color 0.15s ease',
+              }}
+            >
+              <Image
+                src="/clearbox/icon-dark.svg"
+                alt="Clearbox"
+                width={48}
+                height={48}
+                style={{ opacity: 0.95 }}
+              />
+              <div>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 6px' }}>
+                  // launching this week
+                </p>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.01em', margin: '0 0 8px' }}>
+                  Clearbox
+                </h3>
+                <p style={{ fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.4, margin: 0 }}>
+                  See your market. Move first.
+                </p>
+              </div>
+              <span style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-primary)' }}>
+                Open Clearbox →
+              </span>
+            </Link>
+
+            {/* Reddit Growth Playbook */}
+            <Link
+              href={'/reddit' as never}
+              style={{
+                background: 'var(--canvas-subtle)',
+                border: '1px solid var(--canvas-border)',
+                borderRadius: '20px',
+                padding: '28px',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                minHeight: '260px',
+                transition: 'transform 0.15s ease, border-color 0.15s ease',
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logos/reddit.svg"
+                alt="Reddit"
+                width={48}
+                height={48}
+                style={{ opacity: 0.95, color: 'var(--text-primary)' }}
+              />
+              <div>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 6px' }}>
+                  // reddit growth playbook
+                </p>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.01em', margin: '0 0 8px' }}>
+                  Zero to a community in 30 days
+                </h3>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px' }}>
+                  <SmartAnimateText
+                    value={karma}
+                    className="text-[40px] font-extrabold leading-none text-[var(--text-primary)]"
+                  />
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                    karma · live
+                  </span>
+                </div>
+              </div>
+              <span style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-primary)' }}>
+                Read the playbook →
+              </span>
+            </Link>
+
+            {/* Knowledge Hub */}
+            <Link
+              href={'/knowledge' as never}
+              style={{
+                background: 'var(--canvas-subtle)',
+                border: '1px solid var(--canvas-border)',
+                borderRadius: '20px',
+                padding: '28px',
+                textDecoration: 'none',
+                color: 'inherit',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '16px',
+                minHeight: '260px',
+                transition: 'transform 0.15s ease, border-color 0.15s ease',
+              }}
+            >
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--text-primary)' }}>
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              <div>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', letterSpacing: '0.12em', textTransform: 'uppercase', margin: '0 0 6px' }}>
+                  // 200+ entries
+                </p>
+                <h3 style={{ fontFamily: 'var(--font-sans)', fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', letterSpacing: '-0.01em', margin: '0 0 8px' }}>
+                  Knowledge
+                </h3>
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.45, margin: 0, fontFamily: 'var(--font-mono)' }}>
+                  knowledge · how-to · context · geo · guide · daily · contacts
+                </p>
+              </div>
+              <span style={{ marginTop: 'auto', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-primary)' }}>
+                Open the hub →
+              </span>
+            </Link>
+          </div>
+        </section>
+
+        {/* WHAT I'M SHIPPING — feed */}
+        <section>
+          <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '16px', marginBottom: '20px', flexWrap: 'wrap' }}>
+            <div>
+              <p
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '12px',
+                  color: 'var(--text-muted)',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  margin: '0 0 6px',
+                }}
+              >
+                // what I&apos;m shipping right now
+              </p>
+              <p style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', margin: 0 }}>
+                blog · substack · reddit · live
+              </p>
+            </div>
+            <Link href={'/blog' as never} style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-primary)', textDecoration: 'none' }}>
+              See all →
+            </Link>
+          </div>
+
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            {timeline.slice(0, 8).map((item) => (
+              <li
+                key={item.id}
+                style={{
+                  background: 'var(--canvas-subtle)',
+                  border: '1px solid var(--canvas-border)',
+                  borderRadius: '12px',
+                  padding: '14px 18px',
+                  display: 'flex',
+                  gap: '14px',
+                  alignItems: 'baseline',
+                  flexWrap: 'wrap',
+                }}
+              >
+                <span
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '10px',
+                    color: sourceColor[item.source] ?? 'var(--text-muted)',
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    minWidth: '72px',
+                  }}
+                >
+                  {item.badge.label}
+                </span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-muted)', minWidth: '64px' }}>
+                  {formatRelative(item.timestamp)}
+                </span>
+                <a
+                  href={item.href}
+                  target={item.isExternal ? '_blank' : undefined}
+                  rel={item.isExternal ? 'noopener noreferrer' : undefined}
+                  style={{
+                    flex: 1,
+                    fontSize: '14px',
+                    color: 'var(--text-primary)',
+                    fontWeight: 500,
+                    textDecoration: 'none',
+                    lineHeight: 1.4,
+                    minWidth: '240px',
+                  }}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+            {posts.length > 0 && timeline.length === 0 && (
+              <li style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--text-muted)' }}>
+                Feed loading. Check back in a moment.
+              </li>
+            )}
+          </ul>
+        </section>
+      </div>
     </section>
   )
 }
