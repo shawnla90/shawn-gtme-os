@@ -1,6 +1,127 @@
 {
-  "generated": "2026-05-21T04:27:24.142Z",
+  "generated": "2026-05-22T04:28:24.536Z",
   "events": [
+    {
+      "id": "commit-9e5b918",
+      "title": "fix(shawnos): restore output: 'standalone' for Railway prod ",
+      "type": "system",
+      "datetime": "2026-05-21T23:39:46-04:00",
+      "status": "completed",
+      "description": "fix(shawnos): restore output: 'standalone' for Railway prod build",
+      "metadata": {
+        "commitHash": "9e5b918"
+      }
+    },
+    {
+      "id": "commit-840811c",
+      "title": "feat(shawnos): phases 6-7 — unlumen pro + right-rail dock + ",
+      "type": "system",
+      "datetime": "2026-05-21T22:59:35-04:00",
+      "status": "completed",
+      "description": "feat(shawnos): phases 6-7 — unlumen pro + right-rail dock + knowledge hub + story-first home",
+      "metadata": {
+        "commitHash": "840811c"
+      }
+    },
+    {
+      "id": "commit-71c9e90",
+      "title": "feat(shawnos): phase 4 — wiki group, slim more dropdown, off",
+      "type": "system",
+      "datetime": "2026-05-21T20:13:06-04:00",
+      "status": "completed",
+      "description": "feat(shawnos): phase 4 — wiki group, slim more dropdown, off-site glyph",
+      "metadata": {
+        "commitHash": "71c9e90"
+      }
+    },
+    {
+      "id": "commit-aee01b6",
+      "title": "feat(shawnos): phase 3 — featured posts strip, single theme ",
+      "type": "system",
+      "datetime": "2026-05-21T19:49:50-04:00",
+      "status": "completed",
+      "description": "feat(shawnos): phase 3 — featured posts strip, single theme toggle",
+      "metadata": {
+        "commitHash": "aee01b6"
+      }
+    },
+    {
+      "id": "commit-3454522",
+      "title": "feat(shawnos): phase 2 — clearbox cleanup, native signup, bu",
+      "type": "system",
+      "datetime": "2026-05-21T19:26:37-04:00",
+      "status": "completed",
+      "description": "feat(shawnos): phase 2 — clearbox cleanup, native signup, button primitive",
+      "metadata": {
+        "commitHash": "3454522"
+      }
+    },
+    {
+      "id": "commit-e5d17f6",
+      "title": "feat(shawnos): phase 1 — monochrome accent, framed nav, drop",
+      "type": "system",
+      "datetime": "2026-05-21T18:09:31-04:00",
+      "status": "completed",
+      "description": "feat(shawnos): phase 1 — monochrome accent, framed nav, drop cursor glow",
+      "metadata": {
+        "commitHash": "e5d17f6"
+      }
+    },
+    {
+      "id": "commit-6cb48e4",
+      "title": "chore(crypto): evening signal update 2026-05-21",
+      "type": "system",
+      "datetime": "2026-05-21T17:30:04-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-05-21",
+      "metadata": {
+        "commitHash": "6cb48e4"
+      }
+    },
+    {
+      "id": "commit-1bb30b9",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-21 17:21)",
+      "type": "system",
+      "datetime": "2026-05-21T17:21:42-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-21 17:21)",
+      "metadata": {
+        "commitHash": "1bb30b9"
+      }
+    },
+    {
+      "id": "commit-0a18b48",
+      "title": "chore(crypto): morning signal update 2026-05-21",
+      "type": "system",
+      "datetime": "2026-05-21T07:00:09-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-05-21",
+      "metadata": {
+        "commitHash": "0a18b48"
+      }
+    },
+    {
+      "id": "commit-7f621fa",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-21 05:21)",
+      "type": "system",
+      "datetime": "2026-05-21T05:21:20-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-21 05:21)",
+      "metadata": {
+        "commitHash": "7f621fa"
+      }
+    },
+    {
+      "id": "commit-f4d165d",
+      "title": "chore: daily tracker scan 2026-05-20",
+      "type": "system",
+      "datetime": "2026-05-21T00:27:24-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-05-20",
+      "metadata": {
+        "commitHash": "f4d165d"
+      }
+    },
     {
       "id": "commit-8ccd5c5",
       "title": "chore(crypto): evening signal update 2026-05-20",
@@ -44,112 +165,13 @@
       "metadata": {
         "commitHash": "1858e31"
       }
-    },
-    {
-      "id": "commit-105b168",
-      "title": "chore: daily tracker scan 2026-05-19",
-      "type": "system",
-      "datetime": "2026-05-20T00:27:28-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-05-19",
-      "metadata": {
-        "commitHash": "105b168"
-      }
-    },
-    {
-      "id": "commit-6a9d0a5",
-      "title": "build(shawnos): explicit Vercel config — nextjs framework + ",
-      "type": "system",
-      "datetime": "2026-05-19T19:46:14-04:00",
-      "status": "completed",
-      "description": "build(shawnos): explicit Vercel config — nextjs framework + workspace install",
-      "metadata": {
-        "commitHash": "6a9d0a5"
-      }
-    },
-    {
-      "id": "commit-aa960ec",
-      "title": "chore: trigger Vercel rebuild after rootDirectory fix",
-      "type": "system",
-      "datetime": "2026-05-19T19:33:43-04:00",
-      "status": "completed",
-      "description": "chore: trigger Vercel rebuild after rootDirectory fix",
-      "metadata": {
-        "commitHash": "aa960ec"
-      }
-    },
-    {
-      "id": "commit-03d38d8",
-      "title": "feat(shawnos): blog as live X-style timeline feed (S2.1)",
-      "type": "system",
-      "datetime": "2026-05-19T18:33:19-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): blog as live X-style timeline feed (S2.1)",
-      "metadata": {
-        "commitHash": "03d38d8"
-      }
-    },
-    {
-      "id": "commit-c18a2ee",
-      "title": "chore(crypto): evening signal update 2026-05-19",
-      "type": "system",
-      "datetime": "2026-05-19T17:30:04-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-05-19",
-      "metadata": {
-        "commitHash": "c18a2ee"
-      }
-    },
-    {
-      "id": "commit-8522db5",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-19 17:20)",
-      "type": "system",
-      "datetime": "2026-05-19T17:20:14-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-19 17:20)",
-      "metadata": {
-        "commitHash": "8522db5"
-      }
-    },
-    {
-      "id": "commit-749fb10",
-      "title": "chore(crypto): morning signal update 2026-05-19",
-      "type": "system",
-      "datetime": "2026-05-19T07:00:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-05-19",
-      "metadata": {
-        "commitHash": "749fb10"
-      }
-    },
-    {
-      "id": "commit-b34f518",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-19 05:19)",
-      "type": "system",
-      "datetime": "2026-05-19T05:19:52-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-19 05:19)",
-      "metadata": {
-        "commitHash": "b34f518"
-      }
-    },
-    {
-      "id": "commit-e84aa17",
-      "title": "chore: daily tracker scan 2026-05-18",
-      "type": "system",
-      "datetime": "2026-05-19T00:28:23-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-05-18",
-      "metadata": {
-        "commitHash": "e84aa17"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 13,
-    "completedEvents": 13,
+    "totalEvents": 15,
+    "completedEvents": 15,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 13,
+    "deploymentsThisWeek": 15,
     "upcomingCronJobs": 0
   }
 }
