@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import path from 'path'
 import { hreflang } from '../../../i18n/hreflang'
 import { getTranslations } from 'next-intl/server'
-import { ENGINEERING_CATEGORIES } from '@shawnos/shared/data/engineering-terms'
+import { ENGINEERING_CATEGORIES, toSlug } from '@shawnos/shared/data/engineering-terms'
 import { HOW_TO_WIKI_ENTRIES, HOW_TO_WIKI_CATEGORIES } from '@shawnos/shared/data/how-to-wiki'
 import { CONTEXT_WIKI_ENTRIES, CONTEXT_WIKI_CATEGORIES } from '@shawnos/shared/data/context-wiki'
 import { GEO_WIKI_ENTRIES, GEO_WIKI_CATEGORIES } from '@shawnos/shared/data/geo-wiki'
@@ -106,7 +106,7 @@ function buildTabs(): KnowledgeTabSummary[] {
       countSuffix: ' terms',
       description: 'Technical terms for vibe coders and GTM engineers. Git, deployment, AI agents, debugging.',
       categoriesText: knowledgeCats,
-      samples: knowledgeSamples.map((t) => ({ title: t.name, href: `/knowledge/${t.slug}` })),
+      samples: knowledgeSamples.map((t) => ({ title: t.name, href: `/knowledge/${toSlug(t.name)}` })),
       fullHref: '/knowledge#all',
       fullLabel: 'Browse all terms',
     },
@@ -117,7 +117,7 @@ function buildTabs(): KnowledgeTabSummary[] {
       countSuffix: ' entries',
       description: 'Step-by-step playbooks. IDE setup, MCP servers, parallel agents, ABM pipelines.',
       categoriesText: howToCatNames,
-      samples: howToSamples.map((e) => ({ title: e.title, href: `/how-to#${e.slug}` })),
+      samples: howToSamples.map((e) => ({ title: e.title, href: `/how-to#${e.id}` })),
       fullHref: '/how-to',
       fullLabel: 'Open How-To',
     },
@@ -128,7 +128,7 @@ function buildTabs(): KnowledgeTabSummary[] {
       countSuffix: ' entries',
       description: 'How memory shapes Claude output. Plan mode, skills, voice DNA, sub-agents.',
       categoriesText: contextCatNames,
-      samples: contextSamples.map((e) => ({ title: e.title, href: `/context-wiki#${e.slug}` })),
+      samples: contextSamples.map((e) => ({ title: e.title, href: `/context-wiki#${e.id}` })),
       fullHref: '/context-wiki',
       fullLabel: 'Open Context Wiki',
     },
@@ -139,7 +139,7 @@ function buildTabs(): KnowledgeTabSummary[] {
       countSuffix: ' entries',
       description: 'Generative Engine Optimization. Getting cited by ChatGPT, Perplexity, AI Overviews.',
       categoriesText: geoCatNames,
-      samples: geoSamples.map((e) => ({ title: e.title, href: `/geo#${e.slug}` })),
+      samples: geoSamples.map((e) => ({ title: e.title, href: `/geo#${e.id}` })),
       fullHref: '/geo',
       fullLabel: 'Open GEO Wiki',
     },
