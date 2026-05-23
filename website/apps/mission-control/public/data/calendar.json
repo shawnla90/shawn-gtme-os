@@ -1,6 +1,72 @@
 {
-  "generated": "2026-05-22T04:28:24.536Z",
+  "generated": "2026-05-23T04:28:19.039Z",
   "events": [
+    {
+      "id": "commit-911a4d4",
+      "title": "chore(crypto): evening signal update 2026-05-22",
+      "type": "system",
+      "datetime": "2026-05-22T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-05-22",
+      "metadata": {
+        "commitHash": "911a4d4"
+      }
+    },
+    {
+      "id": "commit-9472b64",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-22 17:22)",
+      "type": "system",
+      "datetime": "2026-05-22T17:22:26-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-22 17:22)",
+      "metadata": {
+        "commitHash": "9472b64"
+      }
+    },
+    {
+      "id": "commit-c0b7285",
+      "title": "chore(crypto): morning signal update 2026-05-22",
+      "type": "system",
+      "datetime": "2026-05-22T07:00:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-05-22",
+      "metadata": {
+        "commitHash": "c0b7285"
+      }
+    },
+    {
+      "id": "commit-7d8c730",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-22 05:22)",
+      "type": "system",
+      "datetime": "2026-05-22T05:22:05-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-22 05:22)",
+      "metadata": {
+        "commitHash": "7d8c730"
+      }
+    },
+    {
+      "id": "commit-0e21ec9",
+      "title": "chore: daily tracker scan 2026-05-21",
+      "type": "system",
+      "datetime": "2026-05-22T00:28:25-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-05-21",
+      "metadata": {
+        "commitHash": "0e21ec9"
+      }
+    },
+    {
+      "id": "commit-3898f96",
+      "title": "fix(shawnos): KnowledgeHub field refs — slug→id for wiki ent",
+      "type": "system",
+      "datetime": "2026-05-22T00:05:04-04:00",
+      "status": "completed",
+      "description": "fix(shawnos): KnowledgeHub field refs — slug→id for wiki entries, toSlug() for terms",
+      "metadata": {
+        "commitHash": "3898f96"
+      }
+    },
     {
       "id": "commit-9e5b918",
       "title": "fix(shawnos): restore output: 'standalone' for Railway prod ",
@@ -98,72 +164,6 @@
       "description": "chore(crypto): morning signal update 2026-05-21",
       "metadata": {
         "commitHash": "0a18b48"
-      }
-    },
-    {
-      "id": "commit-7f621fa",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-21 05:21)",
-      "type": "system",
-      "datetime": "2026-05-21T05:21:20-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-21 05:21)",
-      "metadata": {
-        "commitHash": "7f621fa"
-      }
-    },
-    {
-      "id": "commit-f4d165d",
-      "title": "chore: daily tracker scan 2026-05-20",
-      "type": "system",
-      "datetime": "2026-05-21T00:27:24-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-05-20",
-      "metadata": {
-        "commitHash": "f4d165d"
-      }
-    },
-    {
-      "id": "commit-8ccd5c5",
-      "title": "chore(crypto): evening signal update 2026-05-20",
-      "type": "system",
-      "datetime": "2026-05-20T17:30:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-05-20",
-      "metadata": {
-        "commitHash": "8ccd5c5"
-      }
-    },
-    {
-      "id": "commit-969965a",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-20 17:20)",
-      "type": "system",
-      "datetime": "2026-05-20T17:20:58-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-20 17:20)",
-      "metadata": {
-        "commitHash": "969965a"
-      }
-    },
-    {
-      "id": "commit-912b7bb",
-      "title": "chore(crypto): morning signal update 2026-05-20",
-      "type": "system",
-      "datetime": "2026-05-20T07:00:07-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-05-20",
-      "metadata": {
-        "commitHash": "912b7bb"
-      }
-    },
-    {
-      "id": "commit-1858e31",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-20 05:20)",
-      "type": "system",
-      "datetime": "2026-05-20T05:20:36-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-20 05:20)",
-      "metadata": {
-        "commitHash": "1858e31"
       }
     }
   ],
