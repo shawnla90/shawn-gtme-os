@@ -1,6 +1,61 @@
 {
-  "generated": "2026-05-23T04:28:19.039Z",
+  "generated": "2026-05-24T04:27:02.909Z",
   "events": [
+    {
+      "id": "commit-c01175d",
+      "title": "chore(crypto): evening signal update 2026-05-23",
+      "type": "system",
+      "datetime": "2026-05-23T17:30:07-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-05-23",
+      "metadata": {
+        "commitHash": "c01175d"
+      }
+    },
+    {
+      "id": "commit-d6690c6",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-23 17:23)",
+      "type": "system",
+      "datetime": "2026-05-23T17:23:13-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-23 17:23)",
+      "metadata": {
+        "commitHash": "d6690c6"
+      }
+    },
+    {
+      "id": "commit-76ef1d5",
+      "title": "chore(crypto): morning signal update 2026-05-23",
+      "type": "system",
+      "datetime": "2026-05-23T07:00:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-05-23",
+      "metadata": {
+        "commitHash": "76ef1d5"
+      }
+    },
+    {
+      "id": "commit-bc102bd",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-23 05:22)",
+      "type": "system",
+      "datetime": "2026-05-23T05:22:49-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-23 05:22)",
+      "metadata": {
+        "commitHash": "bc102bd"
+      }
+    },
+    {
+      "id": "commit-945be39",
+      "title": "chore: daily tracker scan 2026-05-22",
+      "type": "system",
+      "datetime": "2026-05-23T00:28:19-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-05-22",
+      "metadata": {
+        "commitHash": "945be39"
+      }
+    },
     {
       "id": "commit-911a4d4",
       "title": "chore(crypto): evening signal update 2026-05-22",
@@ -55,123 +110,13 @@
       "metadata": {
         "commitHash": "0e21ec9"
       }
-    },
-    {
-      "id": "commit-3898f96",
-      "title": "fix(shawnos): KnowledgeHub field refs — slug→id for wiki ent",
-      "type": "system",
-      "datetime": "2026-05-22T00:05:04-04:00",
-      "status": "completed",
-      "description": "fix(shawnos): KnowledgeHub field refs — slug→id for wiki entries, toSlug() for terms",
-      "metadata": {
-        "commitHash": "3898f96"
-      }
-    },
-    {
-      "id": "commit-9e5b918",
-      "title": "fix(shawnos): restore output: 'standalone' for Railway prod ",
-      "type": "system",
-      "datetime": "2026-05-21T23:39:46-04:00",
-      "status": "completed",
-      "description": "fix(shawnos): restore output: 'standalone' for Railway prod build",
-      "metadata": {
-        "commitHash": "9e5b918"
-      }
-    },
-    {
-      "id": "commit-840811c",
-      "title": "feat(shawnos): phases 6-7 — unlumen pro + right-rail dock + ",
-      "type": "system",
-      "datetime": "2026-05-21T22:59:35-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): phases 6-7 — unlumen pro + right-rail dock + knowledge hub + story-first home",
-      "metadata": {
-        "commitHash": "840811c"
-      }
-    },
-    {
-      "id": "commit-71c9e90",
-      "title": "feat(shawnos): phase 4 — wiki group, slim more dropdown, off",
-      "type": "system",
-      "datetime": "2026-05-21T20:13:06-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): phase 4 — wiki group, slim more dropdown, off-site glyph",
-      "metadata": {
-        "commitHash": "71c9e90"
-      }
-    },
-    {
-      "id": "commit-aee01b6",
-      "title": "feat(shawnos): phase 3 — featured posts strip, single theme ",
-      "type": "system",
-      "datetime": "2026-05-21T19:49:50-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): phase 3 — featured posts strip, single theme toggle",
-      "metadata": {
-        "commitHash": "aee01b6"
-      }
-    },
-    {
-      "id": "commit-3454522",
-      "title": "feat(shawnos): phase 2 — clearbox cleanup, native signup, bu",
-      "type": "system",
-      "datetime": "2026-05-21T19:26:37-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): phase 2 — clearbox cleanup, native signup, button primitive",
-      "metadata": {
-        "commitHash": "3454522"
-      }
-    },
-    {
-      "id": "commit-e5d17f6",
-      "title": "feat(shawnos): phase 1 — monochrome accent, framed nav, drop",
-      "type": "system",
-      "datetime": "2026-05-21T18:09:31-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): phase 1 — monochrome accent, framed nav, drop cursor glow",
-      "metadata": {
-        "commitHash": "e5d17f6"
-      }
-    },
-    {
-      "id": "commit-6cb48e4",
-      "title": "chore(crypto): evening signal update 2026-05-21",
-      "type": "system",
-      "datetime": "2026-05-21T17:30:04-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-05-21",
-      "metadata": {
-        "commitHash": "6cb48e4"
-      }
-    },
-    {
-      "id": "commit-1bb30b9",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-21 17:21)",
-      "type": "system",
-      "datetime": "2026-05-21T17:21:42-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-21 17:21)",
-      "metadata": {
-        "commitHash": "1bb30b9"
-      }
-    },
-    {
-      "id": "commit-0a18b48",
-      "title": "chore(crypto): morning signal update 2026-05-21",
-      "type": "system",
-      "datetime": "2026-05-21T07:00:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-05-21",
-      "metadata": {
-        "commitHash": "0a18b48"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 15,
-    "completedEvents": 15,
+    "totalEvents": 10,
+    "completedEvents": 10,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 15,
+    "deploymentsThisWeek": 10,
     "upcomingCronJobs": 0
   }
 }
