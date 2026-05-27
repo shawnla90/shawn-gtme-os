@@ -104,31 +104,38 @@ const metaRow: React.CSSProperties = {
 
 const badge = (color: string): React.CSSProperties => ({
   display: 'inline-block',
+  fontFamily: 'var(--font-editorial-body)',
   fontSize: '10px',
-  fontWeight: 700,
+  fontWeight: 600,
   color,
   border: `1px solid ${color}44`,
   borderRadius: '4px',
   padding: '2px 8px',
   textTransform: 'uppercase',
-  letterSpacing: '0.04em',
+  letterSpacing: '0.06em',
 })
 
 const subLabel: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
   fontSize: '12px',
+  fontWeight: 500,
   color: 'var(--text-secondary)',
 }
 
 const titleStyle: React.CSSProperties = {
-  fontSize: '16px',
-  fontWeight: 700,
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '18px',
+  fontWeight: 500,
   color: 'var(--text-primary)',
-  margin: '0 0 10px',
-  lineHeight: 1.4,
+  margin: '0 0 12px',
+  lineHeight: 1.35,
+  letterSpacing: '-0.01em',
 }
 
 const bodyText: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
   fontSize: '14px',
+  fontWeight: 400,
   color: 'var(--text-secondary)',
   lineHeight: 1.65,
   margin: '0 0 14px',
@@ -141,8 +148,10 @@ const statsRow: React.CSSProperties = {
 }
 
 const stat: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
   fontSize: '13px',
   fontWeight: 600,
+  fontVariantNumeric: 'tabular-nums',
   color: 'var(--text-primary)',
   display: 'flex',
   alignItems: 'center',
@@ -155,12 +164,14 @@ const statIcon: React.CSSProperties = {
 }
 
 const lessonText: React.CSSProperties = {
-  fontSize: '13px',
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '14px',
+  fontWeight: 400,
   color: 'var(--text-secondary)',
-  lineHeight: 1.6,
+  lineHeight: 1.55,
   fontStyle: 'italic',
   margin: '0 0 12px',
-  paddingLeft: '12px',
+  paddingLeft: '14px',
   borderLeft: '2px solid #FF450044',
 }
 
@@ -172,8 +183,9 @@ const toggleBtn: React.CSSProperties = {
   fontWeight: 600,
   cursor: 'pointer',
   padding: '4px 0',
-  fontFamily: 'var(--font-mono)',
+  fontFamily: 'var(--font-editorial-body)',
   transition: 'opacity 0.15s',
+  letterSpacing: '0.01em',
 }
 
 const screenshotWrap: React.CSSProperties = {

@@ -1,7 +1,7 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC, Noto_Sans_JP } from 'next/font/google'
+import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC, Noto_Sans_JP, Newsreader, Inter, Space_Grotesk } from 'next/font/google'
 import { Navigation, NetworkBanner, Footer, PostHogProvider, ThemeToggle, RightRailDock } from '@shawnos/shared/components'
 import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { FooterCredit } from '../FooterCredit'
@@ -48,6 +48,28 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
   variable: '--font-japanese',
+  display: 'swap',
+})
+
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-editorial-display',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-editorial-body',
+  display: 'swap',
+})
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-display-walsh',
   display: 'swap',
 })
 
@@ -168,7 +190,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const lp = (path: string) => locale === 'en' ? path : (path === '/' ? `/${locale}` : `/${locale}${path}`)
 
   return (
-    <html lang={locale} dir={dir} className={`${jetbrains.variable} ${bricolage.variable} ${locale === 'he' ? heebo.variable : ''} ${locale === 'zh' ? notoSansSC.variable : ''} ${locale === 'ja' ? notoSansJP.variable : ''}`} suppressHydrationWarning>
+    <html lang={locale} dir={dir} className={`${jetbrains.variable} ${bricolage.variable} ${newsreader.variable} ${inter.variable} ${spaceGrotesk.variable} ${locale === 'he' ? heebo.variable : ''} ${locale === 'zh' ? notoSansSC.variable : ''} ${locale === 'ja' ? notoSansJP.variable : ''}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script async src="https://p.midbound.click/Yvy2M9X0v59ygzOV0tP2tNSRyJnzOGyk" />

@@ -14,9 +14,9 @@ type Props = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Reddit Growth Playbook — 1,000+ Karma in 30 Days'
+  const title = 'Reddit Growth Playbook — 2,000+ Karma in 3 Months'
   const description =
-    'How I went from zero to 1,000+ karma in one month with a 50/50 post-comment ratio. Real evidence, real numbers, no gatekeeping.'
+    'How I doubled to 2,000+ karma in 3 months with a 50/50 post-comment ratio and 1.5M+ views across r/GTMbuilders, r/gtmengineering, r/ClaudeCode and 15 other communities. Every Reddit conversation becomes a lead, a competitor signal, or an engagement opportunity.'
   return {
     title,
     description,
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/reddit`,
       images: [
         {
-          url: `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('1,000+ karma in 30 days. the evidence.')}`,
+          url: `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma in 3 months. the evidence.')}`,
           width: 1200,
           height: 630,
         },
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       images: [
-        `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('1,000+ karma in 30 days. the evidence.')}`,
+        `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma in 3 months. the evidence.')}`,
       ],
     },
   }
@@ -59,7 +59,7 @@ const pageWrap: React.CSSProperties = {
   maxWidth: 880,
   margin: '0 auto',
   padding: '40px 20px 80px',
-  fontFamily: 'var(--font-mono)',
+  fontFamily: 'var(--font-editorial-body)',
 }
 
 const heroSection: React.CSSProperties = {
@@ -68,23 +68,27 @@ const heroSection: React.CSSProperties = {
 }
 
 const heroTitle: React.CSSProperties = {
-  fontSize: 'clamp(28px, 5vw, 42px)',
-  fontWeight: 700,
+  fontFamily: 'var(--font-display-walsh)',
+  fontSize: 'clamp(48px, 9vw, 104px)',
+  fontWeight: 500,
   color: 'var(--text-primary)',
-  lineHeight: 1.15,
-  margin: '0 0 16px',
-  letterSpacing: '-0.03em',
+  lineHeight: 0.92,
+  margin: '0 0 24px',
+  letterSpacing: '-0.05em',
 }
 
 const heroAccent: React.CSSProperties = {
   color: '#FF4500',
+  fontWeight: 500,
 }
 
 const heroSub: React.CSSProperties = {
-  fontSize: '15px',
-  lineHeight: 1.7,
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '16px',
+  fontWeight: 400,
+  lineHeight: 1.65,
   color: 'var(--text-secondary)',
-  maxWidth: 560,
+  maxWidth: 580,
   margin: '0 auto',
 }
 
@@ -104,17 +108,22 @@ const statCard: React.CSSProperties = {
 }
 
 const statNumber: React.CSSProperties = {
-  fontSize: '28px',
-  fontWeight: 700,
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '30px',
+  fontWeight: 600,
+  fontVariantNumeric: 'tabular-nums',
   color: '#FF4500',
-  margin: '0 0 4px',
+  margin: '0 0 6px',
+  letterSpacing: '-0.02em',
 }
 
 const statLabel: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
   fontSize: '11px',
+  fontWeight: 500,
   color: 'var(--text-secondary)',
   textTransform: 'uppercase',
-  letterSpacing: '0.06em',
+  letterSpacing: '0.08em',
 }
 
 const sectionDivider: React.CSSProperties = {
@@ -133,28 +142,50 @@ const ctaBlock: React.CSSProperties = {
 }
 
 const ctaTitle: React.CSSProperties = {
-  fontSize: '20px',
-  fontWeight: 700,
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '24px',
+  fontWeight: 400,
   color: 'var(--text-primary)',
-  margin: '0 0 12px',
+  margin: '0 0 14px',
+  letterSpacing: '-0.01em',
+  lineHeight: 1.25,
 }
 
 const ctaDesc: React.CSSProperties = {
-  fontSize: '14px',
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '15px',
+  fontWeight: 400,
   color: 'var(--text-secondary)',
-  lineHeight: 1.6,
-  margin: '0 0 20px',
+  lineHeight: 1.65,
+  margin: '0 0 22px',
 }
 
 const ctaLink: React.CSSProperties = {
   display: 'inline-block',
+  fontFamily: 'var(--font-editorial-body)',
   fontSize: '14px',
   fontWeight: 600,
   color: '#fff',
   background: '#FF4500',
-  padding: '10px 24px',
+  padding: '11px 26px',
   borderRadius: '8px',
   textDecoration: 'none',
+  letterSpacing: '0.01em',
+}
+
+const ctaSecondary: React.CSSProperties = {
+  textAlign: 'center',
+  marginTop: '20px',
+}
+
+const ctaSecondaryLink: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '13px',
+  fontWeight: 500,
+  color: 'var(--text-secondary)',
+  textDecoration: 'none',
+  borderBottom: '1px dotted var(--text-secondary)',
+  paddingBottom: '1px',
 }
 
 /* ── page component ─────────────────────────────────── */
@@ -191,37 +222,37 @@ export default async function RedditPage({ params }: Props) {
             <span style={heroAccent}>Reddit</span> Growth Playbook
           </h1>
           <p style={heroSub}>
-            1,000+ karma in 30 days. nearly 50/50 post-comment ratio. 250K+ impressions across 30 communities.
+            2,000+ karma in 3 months. nearly 50/50 post-comment ratio. 1.5M+ views.
             <br />
-            here&apos;s exactly how I did it, what flopped, and why the receipts matter more than the advice.
+            most active in r/GTMbuilders, r/gtmengineering, r/ClaudeCode + 15 others — here&apos;s exactly how I did it, what flopped, and how every conversation became a lead, a competitor signal, or an engagement opportunity.
           </p>
         </section>
 
         {/* Stats */}
         <div style={statGrid}>
           <div style={statCard}>
-            <p style={statNumber}>{profile?.totalKarma?.toLocaleString() ?? '1,089'}</p>
+            <p style={statNumber}>{profile?.totalKarma?.toLocaleString() ?? '2,173'}</p>
             <p style={statLabel}>total karma</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>250K+</p>
-            <p style={statLabel}>impressions</p>
+            <p style={statNumber}>1.5M+</p>
+            <p style={statLabel}>views</p>
           </div>
           <div style={statCard}>
             <p style={statNumber}>50/50</p>
             <p style={statLabel}>post/comment ratio</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>30</p>
-            <p style={statLabel}>days</p>
+            <p style={statNumber}>3</p>
+            <p style={statLabel}>months</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>226</p>
+            <p style={statNumber}>350+</p>
             <p style={statLabel}>contributions</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>24</p>
-            <p style={statLabel}>achievements</p>
+            <p style={statNumber}>308</p>
+            <p style={statLabel}>top post ↑</p>
           </div>
         </div>
 
@@ -232,34 +263,46 @@ export default async function RedditPage({ params }: Props) {
 
         <hr style={sectionDivider} />
 
-        {/* CTA */}
+        {/* Primary CTA — Clearbox bridge */}
         <div style={ctaBlock}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/reddit-evidence/reddit-3d-snoo.png"
-            alt=""
+            src="/clearbox/aura-logo.png"
+            alt="Clearbox Aura"
             style={{
               width: '80px',
               height: 'auto',
               margin: '0 auto 16px',
               display: 'block',
               borderRadius: '8px',
-              filter: 'brightness(0.95)',
             }}
           />
-          <p style={ctaTitle}>want to build with us?</p>
+          <p style={ctaTitle}>this playbook is the manual version of Clearbox</p>
           <p style={ctaDesc}>
-            r/GTMBuilders is where the building happens. 120+ people shipping real work.
+            Clearbox is a signal-based intelligence engine. it reads the conversations your buyers are already having
+            and labels every thread as a lead, a competitor mention, or an engagement opportunity.
             <br />
-            no gatekeeping. no courses. just builders.
+            Aura tells you which to act on first.
           </p>
           <a
-            href="https://reddit.com/r/GTMBuilders"
+            href="https://clearbox.to"
             target="_blank"
             rel="noopener noreferrer"
             style={ctaLink}
           >
-            join r/GTMBuilders
+            See your market. Move first. →
+          </a>
+        </div>
+
+        {/* Secondary — r/GTMBuilders community link */}
+        <div style={ctaSecondary}>
+          <a
+            href="https://reddit.com/r/GTMBuilders"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={ctaSecondaryLink}
+          >
+            or join r/GTMBuilders if you want to build alongside us →
           </a>
         </div>
 

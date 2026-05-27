@@ -7,45 +7,67 @@ import { EvidenceCard } from './EvidenceCard'
 
 const POST_ARCHETYPES = [
   {
+    name: 'the pattern read',
+    emoji: '📡',
+    desc: 'scan complaints, releases, pricing pages — turn the pattern into a post. people upvote synthesis they could not do themselves.',
+    valueLead: 'for B2B marketing: synthesize 30 customer complaints, not 3 LinkedIn posts. for SaaS: link the raw scan output.',
+    stats: '308 upvotes, 115 comments, ~50K views',
+    evidence: {
+      title: 'Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why.',
+      sub: 'r/ClaudeCode',
+      tag: 'Pattern Read',
+      tagColor: '#fbbf24',
+      upvotes: 308,
+      comments: 115,
+      views: '~50K',
+      image: '/images/reddit-evidence/rate-limit-max-plan-308.png',
+      body: 'three months on the $200 Max plan, zero rate limits. ran Claude over every rate-limit complaint thread in this sub to figure out what the heavy users were doing wrong. shared the pattern, not the punchline.',
+      lesson: 'the value was the scan, not my opinion. cross-posted variant in r/ClaudeAI hit 227 upvotes the same way.',
+    },
+  },
+  {
     name: 'the showcase',
     emoji: '🏗️',
     desc: 'show what you shipped. numbers, repos, screenshots. the post is the hook, the comments deliver the depth.',
-    stats: '46 upvotes, 164 comments, 145K views',
+    valueLead: 'for SaaS: numbers + a public repo. for Clay: a working stack diagram with the table count and the cost.',
+    stats: '71 upvotes, 225 comments, 145K views',
     evidence: {
       title: 'been mass building with Claude Code every day for 6 weeks straight.',
       sub: 'r/ClaudeCode',
       tag: 'Showcase',
       tagColor: '#4ade80',
-      upvotes: 46,
-      comments: 164,
+      upvotes: 71,
+      comments: 225,
       views: '145K',
       image: '/images/reddit-evidence/6week-claude-code.png',
       body: 'shipped 4 open source repos, 3 production websites, a content pipeline across 6 platforms, and cron jobs running nightly on a single Mac Mini. all Claude Code.',
-      lesson: 'the post was the hook, the comments were the delivery. 164 comments because I replied to every single one.',
+      lesson: 'the post was the hook, the comments were the delivery. 225 comments because I replied to every single one.',
     },
   },
   {
     name: 'the question',
     emoji: '❓',
-    desc: "ask something you genuinely want to know. technical depth invites technical answers. don't fake it.",
-    stats: '22 upvotes, 46 comments, 45K views',
+    desc: 'ask something you genuinely want to know. technical depth invites technical answers. real stakes invite real answers.',
+    valueLead: 'for GTM eng: name your real constraint, not a hypothetical. for Clay: include the table you got stuck on.',
+    stats: '22 upvotes, 48 comments, 45K views',
     evidence: {
       title: 'anyone running Claude Code over SSH from a thin client?',
       sub: 'r/ClaudeCode',
       tag: 'Question',
       tagColor: '#58a6ff',
       upvotes: 22,
-      comments: 46,
+      comments: 48,
       views: '45K',
       image: '/images/reddit-evidence/ssh-thin-client.png',
       body: 'picking up a MacBook Neo as a portable terminal. all my actual compute lives on a Mac Mini that runs 24/7. the plan is basically: SSH in, tmux attach, run Claude Code on the Mini\'s hardware.',
-      lesson: 'genuine question — I was actually buying the Neo. 46 comments of real technical answers because people could tell it was real.',
+      lesson: 'genuine question — I was actually buying the Neo. 48 comments of real technical answers because people could tell it was real.',
     },
   },
   {
     name: 'the meme',
     emoji: '😂',
     desc: 'relatable humor, perfectly timed. post when a feature drops or a trend is peaking.',
+    valueLead: 'for any audience: the joke has to land for an insider. one specific reference beats five generic punchlines.',
     stats: '95 upvotes, 23 comments, 18K views',
     evidence: {
       title: 'life now with cc remote control',
@@ -64,6 +86,7 @@ const POST_ARCHETYPES = [
     name: 'the crossover',
     emoji: '🔀',
     desc: "find unexpected subreddits where your story resonates. a plumber's son in r/NYCapartments shouldn't work — but it does.",
+    valueLead: 'for SaaS founders: bring your operator story to subs that buy what you sell, not subs that build what you sell.',
     stats: '188 upvotes, 26 comments, 28K views',
     evidence: {
       title: 'I spent 10 years as a plumber in NYC alongside my dad. Now I\'m using tech to share everything he knows. for free.',
@@ -81,54 +104,57 @@ const POST_ARCHETYPES = [
   {
     name: 'the hot take',
     emoji: '🔥',
-    desc: 'ride breaking news within hours. have a real opinion backed by experience, not just outrage.',
-    stats: '16 upvotes, 14 comments, 3.1K views',
+    desc: 'ride breaking news within hours. have a real opinion backed by experience.',
+    valueLead: 'for Clay: 18 months of daily usage is the receipt. for B2B marketing: name the vendor and the line item, not the category.',
+    stats: '21 upvotes, 18 comments, ~6K views',
     evidence: {
-      title: 'tool devotion is a trap. Clay just proved the thesis.',
-      sub: 'r/GTMbuilders + r/gtmengineering',
+      title: "Clay's new pricing changes what I build with. here's my updated stack.",
+      sub: 'r/gtmengineering',
       tag: 'Hot Take',
       tagColor: '#f87171',
-      upvotes: 16,
-      comments: 14,
-      views: '3.1K',
-      image: '/images/reddit-evidence/tool-devotion-trap.png',
-      body: 'for the past two months I\'ve been pushing the same thesis. the builder is the moat, not the tool. if your entire value proposition is proficiency with a specific platform, you\'re one pricing change away from a career problem.',
-      lesson: 'timely contrarian take. backed by 18 months of daily Clay usage. cross-posted to both subs.',
+      upvotes: 21,
+      comments: 18,
+      views: '~6K',
+      image: '/images/reddit-evidence/clay-pricing-dual.png',
+      body: '18 months of daily Clay usage. the new pricing model changed which workflows still make sense and which ones moved to Supabase + Sheets. here is the side-by-side and what each tool now owns.',
+      lesson: 'a hot take with a stack diagram beats a hot take with adjectives. the receipts moved the conversation.',
     },
   },
   {
     name: 'the value drop',
     emoji: '🎁',
-    desc: 'give away something useful. checklists, frameworks, audits. no gate, no DM, no email capture.',
-    stats: '10 upvotes, 6 comments, 2K views',
+    desc: 'give away something useful. checklists, frameworks, audits. publish inline, link the live artifact in the body.',
+    valueLead: 'for Clay: the actual checklist you use, not a teaser to a course. for GTM eng: the SQL query or the Python script, copy-paste ready.',
+    stats: '25 upvotes, 8 comments, ~8K views',
     evidence: {
-      title: 'Before You Hire a Clay Agency. Free Audit Checklist.',
+      title: 'open-sourced my entire GTM engineering stack. not selling anything yet.',
       sub: 'r/gtmengineering',
       tag: 'Resource',
       tagColor: '#c084fc',
-      upvotes: 10,
-      comments: 6,
-      views: '2K',
-      image: '/images/reddit-evidence/clay-agency-audit.png',
-      body: 'I\'ve been building in Clay daily for over a year. 60+ Clay Wiki entries, open-source GTM OS. I keep getting asked "should I hire a Clay agency?" so I put together the 5-question audit I run before answering.',
-      lesson: 'pure value. no email gate. just the checklist. people saved this one.',
+      upvotes: 25,
+      comments: 8,
+      views: '~8K',
+      image: '/images/reddit-evidence/open-sourced-gtm-stack-25.png',
+      body: 'MIT-licensed monorepo. ABM pipeline, Clay wiki, voice system, content OS, the works. every script that runs my business is in there. no email gate, no waitlist.',
+      lesson: 'pure value. the people who watched me give it away are the ones who hire me later.',
     },
   },
   {
     name: 'the thought piece',
     emoji: '🧠',
     desc: 'career arc, methodology, thesis. show the journey, link the receipts.',
-    stats: '18 upvotes, 9 comments, 4.1K views',
+    valueLead: 'for SaaS founders: name the specific transition (job → first dollar → second dollar). for GTM eng: name the tools that died and the tools that replaced them.',
+    stats: '27 upvotes, 9 comments, 4.1K views',
     evidence: {
       title: 'from SDR to solo GTM engineer. the AI development method behind my entire operation',
       sub: 'r/gtmengineering',
-      tag: 'Showcase',
+      tag: 'Thought Piece',
       tagColor: '#4ade80',
-      upvotes: 18,
+      upvotes: 27,
       comments: 9,
       views: '4.1K',
       image: '/images/reddit-evidence/sdr-to-gtm-engineer.png',
-      body: '4 weeks ago I started using Claude Code heavy. since then I\'ve shipped four full stack websites, built a arsenal of reusable skills, a voice system for content, a progression engine. all one monorepo, one Mac Mini.',
+      body: '3 months ago I started using Claude Code heavy. since then I have shipped four full stack websites, built an arsenal of reusable skills, a voice system for content, a progression engine. all one monorepo, one Mac Mini.',
       lesson: 'career arc story. linked repos, not landing pages. showed the method, not just the results.',
     },
   },
@@ -138,25 +164,41 @@ const POST_ARCHETYPES = [
 
 const RULES = [
   { rule: 'find 3 subreddits that match your niche', detail: '5K-50K members is the sweet spot. look for engagement ratios, not subscriber count. mine: r/ClaudeCode, r/gtmengineering, r/GTMBuilders.' },
-  { rule: 'comment like a madman', detail: "50/50 post-comment karma ratio is the goal. comment naturally, add value, comment again. don't say \"great post\" — say something worth reading." },
-  { rule: 'the post is the hook, the comments are the delivery', detail: 'write a tight post. then drop the depth, the links, the repos in the comments. this is how you get 163 comments on a single post.' },
-  { rule: 'no gatekeeping', detail: "never say \"comment PLAYBOOK and I'll DM it.\" never gate behind email. MIT license your repos. the people who watch you give it away are the ones who hire you later." },
-  { rule: 'be genuine', detail: "post real questions you actually have. share real work you actually shipped. give real takes you actually believe. Reddit's immune system detects performance instantly." },
-  { rule: 'mix your post types', detail: "memes one day, showcases the next, questions in between. monotone accounts get ignored. variety signals you're a real person, not a content machine." },
+  { rule: 'comment like a madman', detail: "50/50 post-comment karma ratio is the goal. comment naturally, add value, comment again. say something worth reading." },
+  { rule: 'the post is the hook, the comments are the delivery', detail: 'write a tight post. then drop the depth, the links, the repos in the comments. this is how you get 225 comments on a single post.' },
+  { rule: 'publish everything fully', detail: 'MIT the repos. post the checklist inline. link the live site in the body, not behind a DM. the people who watch you give it away are the ones who hire you later.' },
+  { rule: 'be genuine', detail: "post real questions you actually have. share real work you actually shipped. give real takes you actually believe. Reddit's immune system rewards the same signal it filters for." },
+  { rule: 'mix your post types', detail: "memes one day, showcases the next, questions in between. variety signals you're a real person. monotone reads like a content machine." },
   { rule: 'ride the wave', detail: 'when news breaks, post within hours. my Clay pricing posts hit because I was there first with a real opinion and 18 months of daily usage behind it.' },
-  { rule: "don't post AI slop", detail: "Reddit will destroy you. no ChatGPT-generated posts. no em-dashes. no \"here's the uncomfortable truth.\" write like you talk. dictate if you have to." },
+  { rule: 'write like you talk', detail: "if it sounds like you wrote it at 2am after a long day, post it. dictate if you have to. real cadence is what Reddit's immune system rewards." },
 ]
 
 /* ── all receipts (for expandable section) ──────────── */
 
 const ALL_RECEIPTS = [
   {
+    title: 'Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why.',
+    sub: 'r/ClaudeCode', tag: 'Pattern Read', tagColor: '#fbbf24',
+    upvotes: 308, comments: 115, views: '~50K',
+    image: '/images/reddit-evidence/rate-limit-max-plan-308.png',
+    body: 'three months on the $200 Max plan, zero rate limits. Claude-scanned the rate-limit complaint threads to surface the pattern.',
+    lesson: 'top post on the account. the synthesis was the value, not the opinion.',
+  },
+  {
+    title: 'On the $200 Max plan and never been rate limited once. Ran the numbers.',
+    sub: 'r/ClaudeAI', tag: 'Pattern Read', tagColor: '#fbbf24',
+    upvotes: 227, comments: 122, views: '~40K',
+    image: '/images/reddit-evidence/max-plan-claudeai-227.png',
+    body: 'cross-post variant of the rate-limit thread, sharpened for r/ClaudeAI. same scan, different framing.',
+    lesson: 'the same pattern read works in two subs if the framing matches the audience.',
+  },
+  {
     title: 'I spent 10 years as a plumber in NYC alongside my dad.',
     sub: 'r/NYCapartments', tag: 'Crossover', tagColor: '#58a6ff',
     upvotes: 188, comments: 26, views: '28K',
     image: '/images/reddit-evidence/dad-plumber-nyc.png',
-    body: 'personal story in an unexpected subreddit. the crossover play that became my highest-upvoted post.',
-    lesson: '188 upvotes. authenticity in unexpected places wins.',
+    body: 'personal story in an unexpected subreddit. the crossover play that built the dad-plumber arc.',
+    lesson: 'authenticity in unexpected places wins. arc continued in r/AskNYC the next week.',
   },
   {
     title: 'life now with cc remote control',
@@ -164,71 +206,71 @@ const ALL_RECEIPTS = [
     upvotes: 95, comments: 23, views: '18K',
     image: '/images/reddit-evidence/cc-remote-gosling.png',
     body: 'Ryan Gosling meme posted the morning Claude Code remote dropped.',
-    lesson: 'best upvote-to-effort ratio of any post. 30 seconds of work.',
+    lesson: 'best upvote-to-effort ratio. 30 seconds of work.',
   },
   {
     title: 'been mass building with Claude Code every day for 6 weeks straight.',
     sub: 'r/ClaudeCode', tag: 'Showcase', tagColor: '#4ade80',
-    upvotes: 46, comments: 164, views: '145K',
+    upvotes: 71, comments: 225, views: '145K',
     image: '/images/reddit-evidence/6week-claude-code.png',
     body: 'shipped 4 open source repos, 3 production websites, a content pipeline across 6 platforms.',
-    lesson: '145K views. highest impression count across all posts.',
+    lesson: '145K views. highest impression count across all posts. 225 comments because I replied to every one.',
+  },
+  {
+    title: 'Supabase + Google Sheets + Claude Code replaced Clay for me. here is how.',
+    sub: 'r/gtmengineering', tag: 'Pattern Read', tagColor: '#fbbf24',
+    upvotes: 65, comments: 42, views: '~30K',
+    image: '/images/reddit-evidence/supabase-replaced-clay-65.png',
+    body: 'workflow-by-workflow swap after Clay re-priced. each task: what Clay did, what replaced it, what it now costs.',
+    lesson: 'competitor-mention magnet. half the comments were Clay users running the same math.',
+  },
+  {
+    title: '3 weeks running HubSpot from Claude Code CLI instead of MCP. 7 gotchas.',
+    sub: 'r/hubspot', tag: 'Showcase', tagColor: '#4ade80',
+    upvotes: 33, comments: 29, views: '~15K',
+    image: '/images/reddit-evidence/hubspot-cli-gotchas-33.png',
+    body: 'CLI-first HubSpot CRM ops, all 7 gotchas listed inline with the workaround under each.',
+    lesson: 'r/hubspot was a brand-new sub for me. real receipts beat domain history.',
+  },
+  {
+    title: 'from SDR to solo GTM engineer. the AI development method behind my entire operation',
+    sub: 'r/gtmengineering', tag: 'Thought Piece', tagColor: '#4ade80',
+    upvotes: 27, comments: 9, views: '4.1K',
+    image: '/images/reddit-evidence/sdr-to-gtm-engineer.png',
+    body: 'career arc story. 3 months of Claude Code, 4 full stack websites.',
+    lesson: 'linked repos, not landing pages.',
+  },
+  {
+    title: 'open-sourced my entire GTM engineering stack. not selling anything yet.',
+    sub: 'r/gtmengineering', tag: 'Value Drop', tagColor: '#c084fc',
+    upvotes: 25, comments: 8, views: '~8K',
+    image: '/images/reddit-evidence/open-sourced-gtm-stack-25.png',
+    body: 'MIT-licensed monorepo. ABM pipeline, Clay wiki, voice system, content OS. every script that runs the business.',
+    lesson: 'pure value. no email gate. the people who watched me give it away are the ones who hire me later.',
   },
   {
     title: 'anyone running Claude Code over SSH from a thin client?',
     sub: 'r/ClaudeCode', tag: 'Question', tagColor: '#58a6ff',
-    upvotes: 22, comments: 46, views: '45K',
+    upvotes: 22, comments: 48, views: '45K',
     image: '/images/reddit-evidence/ssh-thin-client.png',
     body: 'genuine question about the MacBook Neo setup.',
-    lesson: '46 comments of real technical answers.',
+    lesson: '48 comments of real technical answers because the stakes were real.',
   },
   {
-    title: 'Testing the new 1M context window be like...',
-    sub: 'r/ClaudeCode', tag: 'Humor', tagColor: '#f472b6',
-    upvotes: 12, comments: 3, views: '3.4K',
-    image: '/images/reddit-evidence/1m-context-meme.png',
-    body: 'anime meme on launch day. keeps you visible between big posts.',
-    lesson: 'low effort, high relatability.',
+    title: "Clay's new pricing changes what I build with. here's my updated stack.",
+    sub: 'r/gtmengineering', tag: 'Hot Take', tagColor: '#f87171',
+    upvotes: 21, comments: 18, views: '~6K',
+    image: '/images/reddit-evidence/clay-pricing-dual.png',
+    body: '18 months of daily Clay usage. side-by-side stack: what Clay still owns vs what moved to Supabase + Sheets.',
+    lesson: 'hot take with a stack diagram beats hot take with adjectives.',
   },
   {
-    title: 'tool devotion is a trap. Clay just proved the thesis.',
-    sub: 'r/GTMbuilders + r/gtmengineering', tag: 'Hot Take', tagColor: '#f87171',
-    upvotes: 16, comments: 14, views: '3.1K',
-    image: '/images/reddit-evidence/tool-devotion-trap.png',
-    body: 'the builder is the moat, not the tool. Clay pricing change proved it.',
-    lesson: 'timely contrarian take backed by 18 months of experience.',
-  },
-  {
-    title: 'from SDR to solo GTM engineer.',
-    sub: 'r/gtmengineering', tag: 'Thought Piece', tagColor: '#4ade80',
-    upvotes: 18, comments: 9, views: '4.1K',
-    image: '/images/reddit-evidence/sdr-to-gtm-engineer.png',
-    body: 'career arc story. 4 weeks of Claude Code, 4 full stack websites.',
-    lesson: 'linked repos, not landing pages.',
-  },
-  {
-    title: 'Before You Hire a Clay Agency. Free Audit Checklist.',
-    sub: 'r/gtmengineering', tag: 'Value Drop', tagColor: '#c084fc',
-    upvotes: 10, comments: 6, views: '2K',
-    image: '/images/reddit-evidence/clay-agency-audit.png',
-    body: '5-question audit checklist. no email gate.',
-    lesson: 'pure value. people saved this one.',
-  },
-  {
-    title: 'stop renting your audience. build your own website.',
-    sub: 'r/gtmengineering', tag: 'Blog Posts', tagColor: '#4ade80',
-    upvotes: 1, comments: 0, views: '365',
-    image: '/images/reddit-evidence/stop-renting-audience.png',
-    body: 'thesis post that was too preachy.',
-    lesson: 'not every post hits. lead with story, not advice.',
-  },
-  {
-    title: 'the new GTM resume is a GitHub repo and Reddit karma',
-    sub: 'r/GTMbuilders', tag: 'Blog Posts', tagColor: '#4ade80',
-    upvotes: 3, comments: 8, views: '738',
-    image: '/images/reddit-evidence/gtm-resume-github-repo.png',
-    body: 'thesis post seeding the builder identity conversation.',
-    lesson: 'small numbers but seeded future conversations.',
+    title: 'Intent signals are qualification scores, not buying intent.',
+    sub: 'r/GTMbuilders', tag: 'Thought Piece', tagColor: '#4ade80',
+    upvotes: 7, comments: 14, views: '~2K',
+    image: '/images/reddit-evidence/intent-signals-qualification-7.png',
+    body: 'the Clearbox thesis stated in plain English. someone scrolling Reddit is not asking to buy — they are showing you which problem to solve first.',
+    lesson: 'low score, high conversion. 3 of the 14 commenters turned into Clearbox early-access signups.',
   },
 ]
 
@@ -239,9 +281,9 @@ const COMMENT_TYPES = [
     name: 'the mega comment',
     emoji: '💎',
     desc: 'a comment that IS a post. one sentence that captures the moment so perfectly it outperforms every post you\'ve ever written.',
-    highlight: '237 upvotes, 27K views — my highest-performing piece of content is a comment.',
+    highlight: '239 upvotes, 27K views — my highest-performing piece of content is a comment.',
     examples: [
-      { image: '/images/reddit-evidence/comment-adhd-btw-237.png', context: 'r/ClaudeCode — "Claude just released /BTW and it\'s clutch"', upvotes: 237, views: '27K', text: '"Ah man, this is a gift to us Claude Code homies that have the ADHD brain. pressing escape and changes their plans every three sub-agent runs."' },
+      { image: '/images/reddit-evidence/comment-adhd-btw-237.png', context: 'r/ClaudeCode — "Claude just released /BTW and it\'s clutch"', upvotes: 239, views: '27K', text: '"Ah man, this is a gift to us Claude Code homies that have the ADHD brain. pressing escape and changes their plans every three sub-agent runs."' },
     ],
   },
   {
@@ -294,6 +336,16 @@ const COMMENT_TYPES = [
       { image: '/images/reddit-evidence/comment-jury-rigged-fire.png', context: 'r/ClaudeCode — "My jury-rigged rate limit solution"', upvotes: 8, views: '796', text: '"yeah not gonna lie, that\'s fire. If I could I\'d sponsor you to get a Claude Code max plan"' },
     ],
   },
+  {
+    name: 'the value lead',
+    emoji: '🪞',
+    desc: 'state the principle in someone else\'s thread without selling. the comment is the credential.',
+    highlight: 'value-leading proof in B2B subs — where readers buy what you build. the kind of comment that gets profile-checked.',
+    examples: [
+      { image: '/images/reddit-evidence/comment-b2bmarketing-reddit-art.png', context: 'r/b2bmarketing — thread on Reddit growth tactics', upvotes: 8, views: '~1K', text: '"Reddit is an art though. To share value and grow your brand on Reddit is such a different muscle from LinkedIn or X. the readers are sharper and the immune system is faster."' },
+      { image: '/images/reddit-evidence/comment-claudeai-never-claim.png', context: 'r/ClaudeAI — someone accusing a post of being slop', upvotes: 7, views: '~1.5K', text: '"Never claim to make some big analysis or uncover some ungodly new thing. I share what I shipped. that is the only post worth posting."' },
+    ],
+  },
 ]
 
 /* ── expandable post type card ──────────────────────── */
@@ -311,6 +363,9 @@ function PostArchetype({ archetype }: { archetype: typeof POST_ARCHETYPES[0] }) 
         <span style={expandIcon}>{expanded ? '▾' : '▸'}</span>
       </button>
       <p style={archetypeDesc}>{archetype.desc}</p>
+      {archetype.valueLead && (
+        <p style={archetypeValueLead}>↳ {archetype.valueLead}</p>
+      )}
       {expanded && (
         <div style={{ marginTop: '16px' }}>
           <EvidenceCard {...archetype.evidence} />
@@ -323,7 +378,7 @@ function PostArchetype({ archetype }: { archetype: typeof POST_ARCHETYPES[0] }) 
 /* ── main tabs component ────────────────────────────── */
 
 export function RedditTabs() {
-  const [tab, setTab] = useState<'posts' | 'comments'>('posts')
+  const [tab, setTab] = useState<'posts' | 'comments' | 'beyond'>('posts')
   const [receiptsOpen, setReceiptsOpen] = useState(false)
 
   return (
@@ -336,16 +391,19 @@ export function RedditTabs() {
         <button onClick={() => setTab('comments')} style={tab === 'comments' ? activeTab : inactiveTab}>
           comments guide
         </button>
+        <button onClick={() => setTab('beyond')} style={tab === 'beyond' ? activeTab : inactiveTab}>
+          beyond buy-intent
+        </button>
       </div>
 
       {/* ── POSTS TAB ── */}
       {tab === 'posts' && (
         <div style={{ marginTop: '24px' }}>
-          {/* 7 Post Archetypes */}
-          <h2 style={sectionTitle}>the 7 post types that work</h2>
+          {/* 8 Post Archetypes */}
+          <h2 style={sectionTitle}>the 8 post types that work</h2>
           <p style={sectionIntro}>
-            I tested all of these in my first month. each one hits differently.
-            click any type to see the real example with stats.
+            I tested all of these across 3 months. each one hits differently.
+            click any type to see the real example with stats, plus the value-lead note for SaaS / B2B marketing / Clay / GTM-engineering readers.
           </p>
 
           {POST_ARCHETYPES.map((a, i) => (
@@ -396,10 +454,10 @@ export function RedditTabs() {
         <div style={{ marginTop: '24px' }}>
           <p style={sectionIntro}>
             my highest-performing piece of content on Reddit isn&apos;t a post. it&apos;s a comment.
-            237 upvotes, 27K views. one sentence about ADHD and Claude Code.
+            239 upvotes, 27K views. one sentence about ADHD and Claude Code.
           </p>
           <p style={sectionIntro}>
-            comments are where karma actually lives. here are the 6 comment types I use and why each one matters.
+            comments are where karma actually lives. here are the 7 comment types I use and why each one matters.
           </p>
 
           {COMMENT_TYPES.map((ct, i) => (
@@ -428,6 +486,104 @@ export function RedditTabs() {
           ))}
         </div>
       )}
+
+      {/* ── BEYOND BUY-INTENT TAB ── */}
+      {tab === 'beyond' && (
+        <div style={{ marginTop: '24px' }}>
+          <h2 style={sectionTitle}>every conversation is worth more than the close</h2>
+          <p style={sectionIntro}>
+            most people read Reddit looking for someone asking to buy. that&apos;s less than 1% of the value.
+            the other 99% is qualification surface area — pre-buy signals, competitor mentions, and the engagement that tells you
+            which problem to solve first. these three categories are how Clearbox labels every thread.
+          </p>
+
+          {/* lead surfacing */}
+          <div style={beyondSection}>
+            <h3 style={beyondName}>🎯 lead surfacing</h3>
+            <p style={beyondDesc}>
+              pre-buy signals. someone complaining about Clay pricing isn&apos;t saying &quot;sell me Clay alternatives.&quot;
+              they&apos;re showing you the budget pressure that comes before the switch.
+              the question, the complaint, the &quot;has anyone tried X&quot; — that&apos;s the lead.
+            </p>
+            <p style={beyondClearboxNote}>in Clearbox terms: <strong>lead</strong> — a thread Aura scores for prospect intent before the buyer self-identifies.</p>
+            <EvidenceCard
+              title="Intent signals are qualification scores, not buying intent."
+              sub="r/GTMbuilders"
+              tag="Lead Signal"
+              tagColor="#fbbf24"
+              upvotes={7}
+              comments={14}
+              views="~2K"
+              image="/images/reddit-evidence/intent-signals-qualification-7.png"
+              body="the Clearbox thesis stated in plain English. someone scrolling a problem thread is not asking to buy — they are showing you which problem to solve first."
+              lesson="low post-score, high conversion. 3 of the 14 commenters turned into Clearbox early-access signups."
+            />
+          </div>
+
+          {/* competitor mentions */}
+          <div style={beyondSection}>
+            <h3 style={beyondName}>⚔️ competitor mentions</h3>
+            <p style={beyondDesc}>
+              &quot;we just switched off X.&quot; &quot;Apollo is overpriced.&quot; &quot;Clay&apos;s new model broke our workflow.&quot;
+              these threads tell you exactly which competitor is bleeding which segment, and what the trigger was.
+              the comments are the dataset.
+            </p>
+            <p style={beyondClearboxNote}>in Clearbox terms: <strong>competitor</strong> — a thread Aura tags for active brand displacement.</p>
+            <EvidenceCard
+              title="Supabase + Google Sheets + Claude Code replaced Clay for me. here is how."
+              sub="r/gtmengineering"
+              tag="Competitor Signal"
+              tagColor="#f87171"
+              upvotes={65}
+              comments={42}
+              views="~30K"
+              image="/images/reddit-evidence/supabase-replaced-clay-65.png"
+              body="workflow-by-workflow swap after Clay re-priced. each task: what Clay did, what replaced it, what it now costs. half the comments were Clay users running the same math."
+              lesson="competitor-mention magnet. you don't need to mention competitors to attract competitor-shopping readers — the swap diagram does it for you."
+            />
+          </div>
+
+          {/* engagement value */}
+          <div style={beyondSection}>
+            <h3 style={beyondName}>🔍 engagement value &gt; buy intent</h3>
+            <p style={beyondDesc}>
+              the conversation is the asset. someone asking a question, someone challenging your take,
+              someone sharing their own stack — every reply tells you what to build next, who to talk to,
+              and which pitch lands. the qualification surface area IS the value.
+            </p>
+            <p style={beyondClearboxNote}>in Clearbox terms: <strong>engager</strong> — a thread Aura scores for relationship depth, not just intent.</p>
+            <EvidenceCard
+              title='r/b2bmarketing — thread on Reddit growth tactics'
+              sub=""
+              tag="Engagement Signal"
+              tagColor="#58a6ff"
+              upvotes={8}
+              comments={0}
+              views="~1K"
+              image="/images/reddit-evidence/comment-b2bmarketing-reddit-art.png"
+              body='"Reddit is an art though. To share value and grow your brand on Reddit is such a different muscle from LinkedIn or X. the readers are sharper and the immune system is faster."'
+              lesson="the comment landed because it described the work, not the outcome. five DMs from B2B marketers checking the profile within 48 hours."
+            />
+          </div>
+
+          {/* Clearbox bridge note */}
+          <div style={beyondBridge}>
+            <p style={beyondBridgeText}>
+              the playbook above is the manual version of the same three-label system Clearbox runs at scale.
+              <br />
+              every Reddit thread, X reply, LinkedIn comment your buyers post — labeled, scored by Aura, ranked by what to act on first.
+            </p>
+            <a
+              href="https://clearbox.to"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={beyondBridgeLink}
+            >
+              See your market. Move first. →
+            </a>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
@@ -439,24 +595,28 @@ const tabRow: React.CSSProperties = {
 }
 
 const activeTab: React.CSSProperties = {
-  padding: '12px 24px', fontSize: '14px', fontWeight: 700, color: '#FF4500',
+  padding: '12px 24px', fontSize: '14px', fontWeight: 600, color: '#FF4500',
   background: 'none', border: 'none', borderBottom: '2px solid #FF4500',
-  cursor: 'pointer', fontFamily: 'var(--font-mono)', marginBottom: '-1px',
+  cursor: 'pointer', fontFamily: 'var(--font-editorial-body)', marginBottom: '-1px',
+  letterSpacing: '-0.01em',
 }
 
 const inactiveTab: React.CSSProperties = {
   padding: '12px 24px', fontSize: '14px', fontWeight: 500, color: 'var(--text-secondary)',
   background: 'none', border: 'none', borderBottom: '2px solid transparent',
-  cursor: 'pointer', fontFamily: 'var(--font-mono)', marginBottom: '-1px',
+  cursor: 'pointer', fontFamily: 'var(--font-editorial-body)', marginBottom: '-1px',
+  letterSpacing: '-0.01em',
 }
 
 const sectionTitle: React.CSSProperties = {
-  fontSize: '22px', fontWeight: 700, color: 'var(--text-primary)',
-  margin: '0 0 12px', letterSpacing: '-0.02em',
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '28px', fontWeight: 400, color: 'var(--text-primary)',
+  margin: '0 0 14px', letterSpacing: '-0.02em', lineHeight: 1.2,
 }
 
 const sectionIntro: React.CSSProperties = {
-  fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '20px',
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '15px', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.7, marginBottom: '22px',
 }
 
 const divider: React.CSSProperties = {
@@ -472,15 +632,20 @@ const archetypeCard: React.CSSProperties = {
 const archetypeHeader: React.CSSProperties = {
   display: 'flex', alignItems: 'center', gap: '12px', width: '100%',
   background: 'none', border: 'none', cursor: 'pointer', padding: 0,
-  fontFamily: 'var(--font-mono)', textAlign: 'left',
+  fontFamily: 'var(--font-editorial-body)', textAlign: 'left',
 }
 
 const archetypeName: React.CSSProperties = {
-  fontSize: '15px', fontWeight: 700, color: 'var(--text-primary)', flex: 1,
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '18px', fontWeight: 500, color: 'var(--text-primary)', flex: 1,
+  letterSpacing: '-0.01em',
 }
 
 const archetypeStats: React.CSSProperties = {
-  fontSize: '12px', color: '#FF4500', fontWeight: 600, whiteSpace: 'nowrap',
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '12px', color: '#FF4500', fontWeight: 600,
+  fontVariantNumeric: 'tabular-nums',
+  whiteSpace: 'nowrap',
 }
 
 const expandIcon: React.CSSProperties = {
@@ -488,8 +653,15 @@ const expandIcon: React.CSSProperties = {
 }
 
 const archetypeDesc: React.CSSProperties = {
-  fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6,
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '14px', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.65,
   margin: '8px 0 0',
+}
+
+const archetypeValueLead: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '13px', color: '#FF4500', lineHeight: 1.55,
+  margin: '6px 0 0', fontStyle: 'italic', fontWeight: 400, opacity: 0.9,
 }
 
 /* rules */
@@ -500,16 +672,21 @@ const ruleCard: React.CSSProperties = {
 }
 
 const ruleNumber: React.CSSProperties = {
-  fontSize: '20px', fontWeight: 700, color: '#FF4500',
-  minWidth: '28px', lineHeight: 1, paddingTop: '2px',
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '24px', fontWeight: 300, color: '#FF4500',
+  minWidth: '32px', lineHeight: 1, paddingTop: '2px',
+  fontVariantNumeric: 'tabular-nums',
 }
 
 const ruleTitle: React.CSSProperties = {
-  fontSize: '14px', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 4px',
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '16px', fontWeight: 500, color: 'var(--text-primary)', margin: '0 0 4px',
+  letterSpacing: '-0.01em',
 }
 
 const ruleDetail: React.CSSProperties = {
-  fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0,
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '14px', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.65, margin: 0,
 }
 
 /* receipts toggle */
@@ -518,11 +695,12 @@ const receiptsToggle: React.CSSProperties = {
   width: '100%', padding: '20px 24px',
   background: 'var(--canvas-subtle)', border: '1px solid var(--border)',
   borderRadius: '12px', cursor: 'pointer',
-  fontFamily: 'var(--font-mono)', fontSize: '18px', fontWeight: 700,
-  color: 'var(--text-primary)',
+  fontFamily: 'var(--font-editorial-display)', fontSize: '20px', fontWeight: 400,
+  color: 'var(--text-primary)', letterSpacing: '-0.01em',
 }
 
 const receiptsSubtext: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
   fontSize: '12px', fontWeight: 500, color: 'var(--text-secondary)',
 }
 
@@ -532,17 +710,74 @@ const commentSection: React.CSSProperties = {
 }
 
 const commentName: React.CSSProperties = {
-  fontSize: '18px', fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 8px',
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '22px', fontWeight: 500, color: 'var(--text-primary)', margin: '0 0 10px',
+  letterSpacing: '-0.01em',
 }
 
 const commentDesc: React.CSSProperties = {
-  fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6, margin: '0 0 8px',
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '14px', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.65, margin: '0 0 8px',
 }
 
 const commentHighlight: React.CSSProperties = {
-  fontSize: '13px', color: '#FF4500', fontWeight: 600, margin: '0 0 16px', fontStyle: 'italic',
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '14px', color: '#FF4500', fontWeight: 400, margin: '0 0 16px', fontStyle: 'italic',
 }
 
 const exampleGrid: React.CSSProperties = {
   display: 'flex', flexDirection: 'column', gap: '8px',
+}
+
+/* beyond buy-intent tab */
+const beyondSection: React.CSSProperties = {
+  marginBottom: '40px', paddingBottom: '32px', borderBottom: '1px solid var(--border)',
+}
+
+const beyondName: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '24px', fontWeight: 400, color: 'var(--text-primary)', margin: '0 0 12px',
+  letterSpacing: '-0.01em',
+}
+
+const beyondDesc: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '15px', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.7, margin: '0 0 14px',
+}
+
+const beyondClearboxNote: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '14px', color: '#FF4500', lineHeight: 1.6, margin: '0 0 20px',
+  padding: '12px 16px',
+  background: 'rgba(255, 69, 0, 0.06)',
+  borderLeft: '2px solid #FF4500',
+  borderRadius: '4px',
+  fontStyle: 'italic',
+}
+
+const beyondBridge: React.CSSProperties = {
+  marginTop: '24px',
+  padding: '32px 36px',
+  background: 'linear-gradient(135deg, rgba(255, 69, 0, 0.08), rgba(255, 69, 0, 0.02))',
+  border: '1px solid rgba(255, 69, 0, 0.2)',
+  borderRadius: '16px',
+  textAlign: 'center',
+}
+
+const beyondBridgeText: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '15px', fontWeight: 400, color: 'var(--text-secondary)', lineHeight: 1.7, margin: '0 0 20px',
+}
+
+const beyondBridgeLink: React.CSSProperties = {
+  display: 'inline-block',
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '14px',
+  fontWeight: 600,
+  color: '#fff',
+  background: '#FF4500',
+  padding: '11px 26px',
+  borderRadius: '8px',
+  textDecoration: 'none',
+  letterSpacing: '0.01em',
 }
