@@ -1,6 +1,50 @@
 {
-  "generated": "2026-05-28T04:27:08.299Z",
+  "generated": "2026-05-29T04:26:51.478Z",
   "events": [
+    {
+      "id": "commit-a088a48",
+      "title": "chore(crypto): evening signal update 2026-05-28",
+      "type": "system",
+      "datetime": "2026-05-28T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-05-28",
+      "metadata": {
+        "commitHash": "a088a48"
+      }
+    },
+    {
+      "id": "commit-8f0fecd",
+      "title": "chore(crypto): morning signal update 2026-05-28",
+      "type": "system",
+      "datetime": "2026-05-28T07:00:09-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-05-28",
+      "metadata": {
+        "commitHash": "8f0fecd"
+      }
+    },
+    {
+      "id": "commit-e526090",
+      "title": "chore: sync Reddit cache — 50 posts (2026-05-28 05:26)",
+      "type": "system",
+      "datetime": "2026-05-28T05:26:46-04:00",
+      "status": "completed",
+      "description": "chore: sync Reddit cache — 50 posts (2026-05-28 05:26)",
+      "metadata": {
+        "commitHash": "e526090"
+      }
+    },
+    {
+      "id": "commit-de15a08",
+      "title": "chore: daily tracker scan 2026-05-27",
+      "type": "system",
+      "datetime": "2026-05-28T00:27:08-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-05-27",
+      "metadata": {
+        "commitHash": "de15a08"
+      }
+    },
     {
       "id": "commit-5bbf7f9",
       "title": "chore(crypto): evening signal update 2026-05-27",
@@ -55,79 +99,13 @@
       "metadata": {
         "commitHash": "6b35dcf"
       }
-    },
-    {
-      "id": "commit-87d9c5e",
-      "title": "feat(reddit): playbook v2 — refresh stats, add \"beyond buy-i",
-      "type": "system",
-      "datetime": "2026-05-26T21:25:27-04:00",
-      "status": "completed",
-      "description": "feat(reddit): playbook v2 — refresh stats, add \"beyond buy-intent\" tab + Clearbox bridge",
-      "metadata": {
-        "commitHash": "87d9c5e"
-      }
-    },
-    {
-      "id": "commit-ac11f11",
-      "title": "chore(crypto): evening signal update 2026-05-26",
-      "type": "system",
-      "datetime": "2026-05-26T17:30:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-05-26",
-      "metadata": {
-        "commitHash": "ac11f11"
-      }
-    },
-    {
-      "id": "commit-1311e02",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-26 17:25)",
-      "type": "system",
-      "datetime": "2026-05-26T17:25:35-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-26 17:25)",
-      "metadata": {
-        "commitHash": "1311e02"
-      }
-    },
-    {
-      "id": "commit-5dec3d7",
-      "title": "chore(crypto): morning signal update 2026-05-26",
-      "type": "system",
-      "datetime": "2026-05-26T07:00:04-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-05-26",
-      "metadata": {
-        "commitHash": "5dec3d7"
-      }
-    },
-    {
-      "id": "commit-ec4f7d2",
-      "title": "chore: sync Reddit cache — 50 posts (2026-05-26 05:25)",
-      "type": "system",
-      "datetime": "2026-05-26T05:25:11-04:00",
-      "status": "completed",
-      "description": "chore: sync Reddit cache — 50 posts (2026-05-26 05:25)",
-      "metadata": {
-        "commitHash": "ec4f7d2"
-      }
-    },
-    {
-      "id": "commit-fa49b75",
-      "title": "chore: daily tracker scan 2026-05-25",
-      "type": "system",
-      "datetime": "2026-05-26T00:34:10-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-05-25",
-      "metadata": {
-        "commitHash": "fa49b75"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 11,
-    "completedEvents": 11,
+    "totalEvents": 9,
+    "completedEvents": 9,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 11,
+    "deploymentsThisWeek": 9,
     "upcomingCronJobs": 0
   }
 }
