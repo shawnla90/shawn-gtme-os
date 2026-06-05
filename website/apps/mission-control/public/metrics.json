@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-04T04:26:04.020Z",
+  "generated": "2026-06-05T04:25:47.936Z",
   "system": {
     "status": "online",
     "uptime": "live",
@@ -12,7 +12,7 @@
   },
   "calendar": [
     {
-      "date": "2026-06-04",
+      "date": "2026-06-05",
       "events": [
         {
           "time": "8:00 AM",
@@ -52,11 +52,6 @@
       "task": "Publish 5 pending drafts",
       "time": "Flexible",
       "priority": "high"
-    },
-    {
-      "task": "Weekly system performance review",
-      "time": "4:00 PM",
-      "priority": "medium"
     }
   ],
   "drafts": [
