@@ -1,5 +1,5 @@
 {
-  "generated": "2026-06-08T04:26:49.103Z",
+  "generated": "2026-06-09T04:32:09.265Z",
   "system": {
     "status": "online",
     "uptime": "live",
@@ -12,7 +12,7 @@
   },
   "calendar": [
     {
-      "date": "2026-06-08",
+      "date": "2026-06-09",
       "events": [
         {
           "time": "8:00 AM",
@@ -28,11 +28,6 @@
           "time": "10:00 PM",
           "event": "Daily build summary",
           "type": "automated"
-        },
-        {
-          "time": "3:00 PM",
-          "event": "Weekly Discord community roundup",
-          "type": "planned"
         }
       ]
     }
