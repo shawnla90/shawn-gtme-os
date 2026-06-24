@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import fs from 'fs'
 import path from 'path'
 import { notFound } from 'next/navigation'
 import {
@@ -22,6 +23,12 @@ export function generateStaticParams() {
   const params: { guide: string; chapter: string }[] = []
   for (const g of getAllGuides()) {
     for (const ch of g.chapters) {
+      // A guide can be declared in the manifest before its chapter markdown
+      // lands on disk. Only prerender chapters whose .md actually exists so a
+      // not-yet-written chapter never crashes the build — it just isn't a route
+      // yet, and appears automatically once the markdown is added.
+      const mdPath = path.join(CONTENT_BASE, g.slug, `${ch.slug}.md`)
+      if (!fs.existsSync(mdPath)) continue
       params.push({ guide: g.slug, chapter: ch.slug })
     }
   }
@@ -72,6 +79,7 @@ export default async function ChapterPage({
   if (!guide || !chapter) notFound()
 
   const guideContentDir = path.join(CONTENT_BASE, guideSlug)
+  if (!fs.existsSync(path.join(guideContentDir, `${chapterSlug}.md`))) notFound()
   const post = getPostBySlug(chapterSlug, guideContentDir)
   const htmlContent = await markdownToHtml(post.content)
 
