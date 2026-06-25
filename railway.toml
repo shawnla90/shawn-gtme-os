@@ -7,7 +7,16 @@
 #
 # Required environment variables (set in the Railway dashboard, Variables tab):
 #   NEXT_PUBLIC_POSTHOG_KEY   = phc_zlJOdh1FPyUXLHSWVQITPRFZxGIrGdHonI5mlUJupJC
-#   NEXT_PUBLIC_POSTHOG_HOST  = https://us.posthog.com   (optional)
+#       Public project token for the "ShawnOS" PostHog project (id 325806).
+#       Verified live: shawnos.ai pageviews + page_type/slug + scroll/time
+#       events land here. Mirrored in niobot secrets as SHAWNOS_POSTHOG_TOKEN.
+#       NOTE: this is NOT the niobot POSTHOG_PROJECT_TOKEN secret — that token
+#       (phc_qUkN...) belongs to the Clearbox project (425320). Do not cross them.
+#   NEXT_PUBLIC_POSTHOG_HOST  = LEAVE UNSET.
+#       The PostHogProvider already defaults api_host to the correct ingestion
+#       host https://us.i.posthog.com. Do NOT set this to https://us.posthog.com
+#       — that is the app/UI host; events sent there never ingest. (This exact
+#       mix-up is the analytics breakage we kept hitting.)
 #   NODE_ENV                  = production               (set by Railway by default)
 #
 # Copy any other NEXT_PUBLIC_* vars the old Vercel deploy used. Enumerate with:
