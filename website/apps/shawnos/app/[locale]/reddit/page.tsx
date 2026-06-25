@@ -231,7 +231,7 @@ export default async function RedditPage({ params }: Props) {
         {/* Stats */}
         <div style={statGrid}>
           <div style={statCard}>
-            <p style={statNumber}>{profile?.totalKarma?.toLocaleString() ?? '2,173'}</p>
+            <p style={statNumber}>{profile?.totalKarma?.toLocaleString() ?? '2,181'}</p>
             <p style={statLabel}>total karma</p>
           </div>
           <div style={statCard}>

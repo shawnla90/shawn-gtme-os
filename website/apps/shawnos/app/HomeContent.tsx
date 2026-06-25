@@ -287,7 +287,7 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
                     value={karma}
                     className="text-[40px] font-extrabold leading-none text-[var(--text-primary)]"
                   />
-                  <span className="dest-stat-label">karma · live</span>
+                  <span className="dest-stat-label">reddit karma</span>
                 </div>
               </div>
               <span className="dest-go">Read the playbook →</span>

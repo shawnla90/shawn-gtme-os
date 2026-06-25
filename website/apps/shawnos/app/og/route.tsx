@@ -98,6 +98,11 @@ export function GET(req: NextRequest) {
     {
       width: 1200,
       height: 630,
+      headers: {
+        // OG images are deterministic per query — cache hard so crawlers/CDN
+        // don't regenerate on every social share.
+        'Cache-Control': 'public, immutable, no-transform, max-age=86400, s-maxage=604800',
+      },
     }
   )
 }
