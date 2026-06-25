@@ -1,8 +1,9 @@
+import type { Metadata } from 'next'
 import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC, Noto_Sans_JP, Newsreader, Inter, Space_Grotesk } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer, PostHogProvider, ThemeToggle, RightRailDock } from '@shawnos/shared/components'
+import { Navigation, NetworkBanner, Footer, PostHogProvider, ThemeToggle } from '@shawnos/shared/components'
 import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { FooterCredit } from '../FooterCredit'
 import { FeedbackButton } from '../components/FeedbackButton'
@@ -11,6 +12,12 @@ import { LanguageSwitcher } from '../components/LanguageSwitcher'
 import { routing } from '../../i18n/routing'
 import { locales } from '../../i18n/config'
 import '../globals.css'
+
+export const metadata: Metadata = {
+  title: 'ShawnOS.ai - GTM Engineering & Personal AI Assistant',
+  description:
+    'Shawn Tenam builds AI-native GTM pipelines and personal AI assistants. Learn how to run AI locally without vendor lock-in - pipelines, content systems, and outbound automation built in public.',
+}
 
 const themeScript = `(function(){try{var t=localStorage.getItem('shawnos-theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'}document.documentElement.setAttribute('data-theme',t)}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();`
 
@@ -213,6 +220,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         />
         <Navigation
           siteName="ShawnOS.ai"
+          centeredPill
           actions={
             <>
               <ThemeToggle />
@@ -241,15 +249,6 @@ export default async function LocaleLayout({ children, params }: Props) {
               { href: lp('/search'), label: nav('search') },
               { href: lp('/community'), label: 'Community' },
             ]},
-          ]}
-        />
-        <RightRailDock
-          items={[
-            { href: lp('/clearbox'), label: 'Clearbox', description: 'See your market. Move first.', logoSrc: '/clearbox/icon-dark.svg' },
-            { href: lp('/reddit'), label: 'Reddit Growth Playbook', description: 'Zero to a community in 30 days.', logoSrc: '/logos/reddit.svg' },
-            { href: lp('/knowledge'), label: 'Knowledge', description: 'Wikis, how-tos, daily log. Everything in one place.', icon: (
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            )},
           ]}
         />
         <main>

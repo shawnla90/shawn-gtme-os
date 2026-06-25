@@ -35,6 +35,8 @@ interface NavigationProps {
   actions?: React.ReactNode
   /** When provided, replaces the desktop pill link row with a circular icon strip. Mobile drawer still uses `links`. */
   circularLinks?: CircularLink[]
+  /** Opt-in (shawnos): center the links in a single floating pill island, sans font. Other sites keep the default left-logo/right-links look. */
+  centeredPill?: boolean
 }
 
 const defaultLinks: NavLink[] = [
@@ -45,7 +47,7 @@ const defaultLinks: NavLink[] = [
   { href: '/about', label: 'About' },
 ]
 
-export function Navigation({ siteName, links = defaultLinks, actions, circularLinks }: NavigationProps) {
+export function Navigation({ siteName, links = defaultLinks, actions, circularLinks, centeredPill }: NavigationProps) {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set())
@@ -384,18 +386,60 @@ export function Navigation({ siteName, links = defaultLinks, actions, circularLi
           }
         }
 
+        /* ── Centered pill island variant (shawnos opt-in) ── */
+        .nav--pill { font-family: var(--font-sans); }
+        .nav--pill > a { justify-self: start; }
+        .nav--pill .nav-link-row {
+          justify-self: center;
+          gap: 4px;
+          padding: 5px;
+          border: 1px solid var(--canvas-border);
+          border-radius: 9999px;
+          background: color-mix(in srgb, var(--canvas-subtle) 80%, transparent);
+          backdrop-filter: blur(14px);
+          -webkit-backdrop-filter: blur(14px);
+        }
+        .nav--pill .nav-link,
+        .nav--pill .nav-dropdown-trigger {
+          border-color: transparent;
+          border-radius: 9999px;
+          padding: 7px 15px;
+          font-family: var(--font-sans);
+        }
+        .nav--pill .nav-link:hover,
+        .nav--pill .nav-dropdown-trigger:hover {
+          background: color-mix(in srgb, var(--text-primary) 8%, transparent);
+          border-color: transparent;
+        }
+        .nav--pill .nav-dropdown-panel { border-radius: 16px; }
+        @media (max-width: 768px) {
+          .nav--pill { display: flex !important; justify-content: space-between !important; }
+        }
+
         ${circleNavStyles}
       `}</style>
       <nav
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '16px 24px',
-          fontFamily: 'var(--font-mono)',
-          position: 'relative',
-          zIndex: 1000,
-        }}
+        className={centeredPill ? 'nav--pill' : undefined}
+        style={
+          centeredPill
+            ? {
+                display: 'grid',
+                gridTemplateColumns: '1fr auto 1fr',
+                alignItems: 'center',
+                padding: '14px 24px',
+                position: 'relative',
+                zIndex: 1000,
+              }
+            : {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '16px 24px',
+                fontFamily: 'var(--font-mono)',
+                position: 'relative',
+                zIndex: 1000,
+              }
+        }
       >
         {/* Logo / Site name */}
         <a
