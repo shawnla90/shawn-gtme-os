@@ -22,17 +22,26 @@
   --grid-color: #1a1a1a;
   --border-dashed: #262626;
 
+  /* radius scale — pill-first */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
   /* ink — high-contrast white set */
   --text-primary: #fafafa;
   --text-secondary: #a3a3a3;
   --text-muted: #525252;
 
-  /* accents — xAI palette pop on black */
-  --accent-sunset: #fb923c;
-  --accent-dusk: #c084fc;
-  --accent-twilight: #818cf8;
-  --accent-breeze: #7dd3fc;
+  /* accent — monochrome: bound to ink, no color */
   --accent: var(--text-primary);
+
+  /* brand palette tokens — neutralized to monochrome on shawnos.
+     Shared tokens.css defaults these to color for the sibling sites;
+     overriding here keeps gtmos/contentos untouched. */
+  --shawnos-green: var(--text-primary);
+  --shawnos-purple: var(--text-secondary);
+  --shawnos-amber: var(--text-secondary);
 
   --link: var(--accent);
   --link-hover: color-mix(in srgb, var(--accent) 75%, white);
@@ -60,12 +69,7 @@
   --text-secondary: #57534e;
   --text-muted: #a8a29e;
 
-  /* accents — ElevenLabs gradient-orb palette */
-  --accent-mint: #6ee7b7;
-  --accent-peach: #fdba74;
-  --accent-lavender: #c4b5fd;
-  --accent-sky: #93c5fd;
-  --accent-rose: #fda4af;
+  /* accent — monochrome: bound to ink, no color */
   --accent: var(--text-primary);
 
   --link: var(--accent);
@@ -83,19 +87,22 @@ html body {
   padding: 0;
   background: var(--canvas);
   color: var(--text-primary);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hybrid type system: body is sans; mono is reserved for code, labels,
+   numbers, and terminal chrome (set explicitly where used). */
+
 /* === Chinese font override === */
 [lang="zh"] body {
-  font-family: var(--font-chinese), var(--font-mono);
+  font-family: var(--font-chinese), var(--font-sans);
 }
 
 /* === Japanese font override === */
 [lang="ja"] body {
-  font-family: var(--font-japanese), var(--font-mono);
+  font-family: var(--font-japanese), var(--font-sans);
 }
 
 /* Main gutters — pages keep padding, homepage sections break out */
@@ -436,8 +443,8 @@ html {
 }
 
 .tech-card:hover .tech-icon {
-  color: #4EC373;
-  filter: drop-shadow(0 0 8px rgba(78, 195, 115, 0.45));
+  color: var(--text-primary);
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--text-primary) 35%, transparent));
 }
 
 .tech-card .tech-label {

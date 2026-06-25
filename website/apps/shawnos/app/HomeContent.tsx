@@ -59,8 +59,8 @@ function formatRelative(timestamp: string): string {
 
 const sourceColor: Record<string, string> = {
   blog: 'var(--text-primary)',
-  substack: '#ff6719',
-  reddit: '#ff4500',
+  substack: 'var(--text-secondary)',
+  reddit: 'var(--text-secondary)',
 }
 
 export function HomeContent({ posts, timeline, karma }: HomeContentProps) {
@@ -78,19 +78,34 @@ export function HomeContent({ posts, timeline, karma }: HomeContentProps) {
         /* immersive hero */
         .home-hero { position: relative; text-align: center; padding: 32px 0 76px; }
         .home-hero-glow {
-          position: absolute; inset: -200px 0 auto 0; height: 640px; z-index: 0; pointer-events: none;
+          position: absolute; inset: -240px 0 auto 0; height: 720px; z-index: 0; pointer-events: none;
           background:
-            radial-gradient(44% 50% at 50% 16%, color-mix(in srgb, var(--text-primary) 17%, transparent), transparent 64%),
-            radial-gradient(72% 70% at 50% 6%, color-mix(in srgb, var(--text-primary) 7%, transparent), transparent 72%);
-          -webkit-mask-image: radial-gradient(72% 72% at 50% 22%, #000, transparent 80%);
-          mask-image: radial-gradient(72% 72% at 50% 22%, #000, transparent 80%);
+            radial-gradient(36% 40% at 50% 18%, color-mix(in srgb, var(--text-primary) 26%, transparent), transparent 60%),
+            radial-gradient(58% 58% at 50% 12%, color-mix(in srgb, var(--text-primary) 12%, transparent), transparent 70%),
+            radial-gradient(92% 82% at 50% 2%, color-mix(in srgb, var(--text-primary) 5%, transparent), transparent 80%);
+          -webkit-mask-image: radial-gradient(76% 76% at 50% 24%, #000, transparent 82%);
+          mask-image: radial-gradient(76% 76% at 50% 24%, #000, transparent 82%);
           animation: home-glow-breathe 9s ease-in-out infinite;
         }
+        /* tight central bloom — the "white blur in the middle", with its own pulse */
+        .home-hero-glow::before {
+          content: ''; position: absolute; left: 50%; top: 54px; transform: translateX(-50%);
+          width: 440px; height: 300px; border-radius: 50%;
+          background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--text-primary) 20%, transparent), transparent 72%);
+          filter: blur(24px);
+          animation: home-glow-core 7s ease-in-out infinite;
+        }
         @keyframes home-glow-breathe {
-          0%, 100% { opacity: 0.78; transform: translateY(0); }
+          0%, 100% { opacity: 0.82; transform: translateY(0); }
           50% { opacity: 1; transform: translateY(-8px); }
         }
-        @media (prefers-reduced-motion: reduce) { .home-hero-glow { animation: none; } }
+        @keyframes home-glow-core {
+          0%, 100% { opacity: 0.65; transform: translateX(-50%) scale(1); }
+          50% { opacity: 1; transform: translateX(-50%) scale(1.08); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .home-hero-glow, .home-hero-glow::before { animation: none; }
+        }
         .home-hero-grid {
           position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
           background-image:
@@ -100,7 +115,9 @@ export function HomeContent({ posts, timeline, karma }: HomeContentProps) {
           -webkit-mask-image: radial-gradient(60% 55% at 50% 30%, #000, transparent 70%);
           mask-image: radial-gradient(60% 55% at 50% 30%, #000, transparent 70%);
         }
-        .home-hero > * { position: relative; z-index: 1; }
+        /* lift content above the decorative layers; leave the aria-hidden
+           glow/grid on their own absolute positioning (don't drop them into flow) */
+        .home-hero > *:not([aria-hidden]) { position: relative; z-index: 1; }
         .home-avatar { border-radius: 9999px; border: 1px solid var(--canvas-border); margin: 0 auto 22px; display: block; }
         .home-eyebrow {
           font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted);

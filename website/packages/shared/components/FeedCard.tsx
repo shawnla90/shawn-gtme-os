@@ -3,12 +3,24 @@
 import Image from 'next/image'
 import type { CSSProperties, MouseEvent } from 'react'
 import type { TimelineItem } from '../lib/timeline'
-import { GlowingEffect } from './ui/glowing-effect'
 import { RelativeTime } from './RelativeTime'
 import { SourceBadge } from './SourceBadge'
 
 interface FeedCardProps {
   item: TimelineItem
+}
+
+const freshPill: CSSProperties = {
+  fontFamily: 'var(--font-mono)',
+  fontSize: 9,
+  fontWeight: 600,
+  letterSpacing: '0.08em',
+  textTransform: 'uppercase',
+  color: 'var(--canvas)',
+  background: 'var(--text-primary)',
+  borderRadius: 9999,
+  padding: '1px 7px',
+  lineHeight: 1.5,
 }
 
 const ExternalArrow = (
@@ -63,10 +75,6 @@ export function FeedCard({ item }: FeedCardProps) {
       onMouseLeave={onLeave}
       style={card}
     >
-      {item.isFresh && (
-        <GlowingEffect variant="silver" disabled={false} spread={32} proximity={64} />
-      )}
-
       <header
         style={{
           display: 'flex',
@@ -111,6 +119,7 @@ export function FeedCard({ item }: FeedCardProps) {
             </span>
             <span style={{ color: 'var(--text-muted)', fontSize: 12 }}>·</span>
             <RelativeTime timestamp={item.timestamp} />
+            {item.isFresh && <span style={freshPill}>New</span>}
           </div>
         </div>
         <SourceBadge label={item.badge.label} source={item.badge.source} />
