@@ -5,6 +5,7 @@ import { Link } from '../i18n/navigation'
 import { SmartAnimateText } from '../components/unlumen-ui/smart-animate-text'
 import { ButtonLink } from '@shawnos/shared/components/ui'
 import type { TimelineItem, LearningDiscipline } from '@shawnos/shared/lib'
+import { ClearboxModeDemo } from './[locale]/clearbox/ClearboxModeDemo'
 
 interface Post {
   slug: string
@@ -202,6 +203,11 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         .learn-chip-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
         .learn-chip-status { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
           text-transform: uppercase; color: var(--text-muted); }
+
+        /* what clearbox is */
+        .clearbox-lead { font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 28px; max-width: 640px; }
+        .clearbox-inline-link { color: var(--text-primary); text-decoration: none; font-weight: 500; }
+        .clearbox-inline-link:hover { opacity: 0.7; }
       `}</style>
 
       <div className="home-inner">
@@ -301,6 +307,20 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
               <span className="dest-go">Open the hub →</span>
             </Link>
           </div>
+        </section>
+
+        {/* WHAT CLEARBOX IS */}
+        <section className="home-section">
+          <div className="home-section-head">
+            <p className="home-kicker">What Clearbox is</p>
+            <Link href={'/clearbox' as never} className="home-section-link">Open the full Clearbox →</Link>
+          </div>
+          <p className="clearbox-lead">
+            Signal-based market intelligence. Pick a mode — lead, competitor, or engager — and Clearbox scores
+            the conversations worth showing up in.{' '}
+            <Link href={'/clearbox' as never} className="clearbox-inline-link">See it live →</Link>
+          </p>
+          <ClearboxModeDemo />
         </section>
 
         {/* CURRENTLY LEARNING */}
