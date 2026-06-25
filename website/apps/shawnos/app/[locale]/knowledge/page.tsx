@@ -167,7 +167,7 @@ function buildTabs(): KnowledgeTabSummary[] {
       id: 'contacts',
       label: 'Contacts',
       description: 'The network surface lands here. Builders, operators, collaborators.',
-      samples: [{ title: 'Coming soon. In the meantime, join the Discord.' }],
+      samples: [{ title: 'Being curated. Join the Discord to get on it.' }],
       fullHref: 'https://discord.gg/6eKe49nth',
       fullLabel: 'Join the Discord',
     },

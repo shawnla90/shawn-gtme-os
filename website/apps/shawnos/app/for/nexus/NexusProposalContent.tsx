@@ -903,7 +903,7 @@ export function NexusProposalContent() {
           Let&apos;s build.
         </h2>
         <MagneticHover>
-          <a href="#" style={{
+          <a href="mailto:shawn@shawnos.ai?subject=Nexus%20Construction%20Proposal" style={{
             display: 'inline-block',
             padding: '16px 40px',
             background: NX.green,

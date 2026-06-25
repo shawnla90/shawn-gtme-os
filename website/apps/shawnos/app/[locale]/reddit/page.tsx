@@ -14,9 +14,9 @@ type Props = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Reddit Growth Playbook — 2,000+ Karma in 3 Months'
+  const title = 'Reddit Growth Playbook — 2,000+ Karma, 2M+ Views'
   const description =
-    'How I doubled to 2,000+ karma in 3 months with a 50/50 post-comment ratio and 1.5M+ views across r/GTMbuilders, r/gtmengineering, r/ClaudeCode and 15 other communities. Every Reddit conversation becomes a lead, a competitor signal, or an engagement opportunity.'
+    'How I built 2,000+ karma and 2M+ views with a 50/50 post-comment ratio across r/GTMbuilders, r/gtmengineering, r/ClaudeCode and 15 other communities. Every Reddit conversation becomes a lead, a competitor signal, or an engagement opportunity.'
   return {
     title,
     description,
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/reddit`,
       images: [
         {
-          url: `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma in 3 months. the evidence.')}`,
+          url: `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma. 2M+ views. the evidence.')}`,
           width: 1200,
           height: 630,
         },
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       images: [
-        `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma in 3 months. the evidence.')}`,
+        `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma. 2M+ views. the evidence.')}`,
       ],
     },
   }
@@ -222,7 +222,7 @@ export default async function RedditPage({ params }: Props) {
             <span style={heroAccent}>Reddit</span> Growth Playbook
           </h1>
           <p style={heroSub}>
-            2,000+ karma in 3 months. nearly 50/50 post-comment ratio. 1.5M+ views.
+            2,000+ karma. nearly 50/50 post-comment ratio. 2M+ views.
             <br />
             most active in r/GTMbuilders, r/gtmengineering, r/ClaudeCode + 15 others — here&apos;s exactly how I did it, what flopped, and how every conversation became a lead, a competitor signal, or an engagement opportunity.
           </p>
@@ -235,7 +235,7 @@ export default async function RedditPage({ params }: Props) {
             <p style={statLabel}>total karma</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>1.5M+</p>
+            <p style={statNumber}>2M+</p>
             <p style={statLabel}>views</p>
           </div>
           <div style={statCard}>

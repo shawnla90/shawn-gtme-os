@@ -45,7 +45,7 @@ export function Footer({ siteName }: FooterProps) {
           ))}
         </div>
         <p style={{ margin: '0 0 4px' }}>
-          built in public. powered by cursor.
+          built in public.
         </p>
         <p style={{ margin: 0 }}>
           &copy; {year} {siteName ?? 'shawnos'}. all rights reserved.

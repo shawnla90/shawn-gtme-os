@@ -262,7 +262,7 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
             <Link href={'/clearbox' as never} className="dest-card">
               <Image src="/clearbox/icon-dark.svg" alt="Clearbox" width={44} height={44} className="dest-icon" />
               <div>
-                <p className="dest-kicker">Launching this week</p>
+                <p className="dest-kicker">Now live</p>
                 <h3 className="dest-title">Clearbox</h3>
                 <p className="dest-sub">See your market. Move first.</p>
               </div>

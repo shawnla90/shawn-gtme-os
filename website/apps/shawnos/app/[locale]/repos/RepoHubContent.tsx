@@ -97,7 +97,7 @@ export function RepoHubContent() {
               </>
             )}
             {activeTab === 'recommended' && (
-              <p style={{ margin: 0 }}>recommended repos coming soon.</p>
+              <p style={{ margin: 0 }}>more repos land here as I ship them.</p>
             )}
           </div>
         )}

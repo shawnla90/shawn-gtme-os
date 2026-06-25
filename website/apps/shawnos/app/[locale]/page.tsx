@@ -55,7 +55,7 @@ export default async function HomePage({ params }: Props) {
 
   const learning = getLearningDisciplines(DATA_ROOT).disciplines
 
-  let karma = '1,089'
+  let karma = '2,181'
   try {
     const profile = await fetchUserProfile('Shawntenam')
     if (profile?.totalKarma) {

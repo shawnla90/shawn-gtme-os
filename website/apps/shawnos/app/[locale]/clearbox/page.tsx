@@ -13,11 +13,11 @@ type Props = {
 export const metadata: Metadata = {
   title: 'Clearbox — see your market, move first',
   description:
-    'Clearbox is a signal-based market intelligence engine. Launching this week. Join early access.',
+    'Clearbox is a signal-based market intelligence engine. Live now — join the early access.',
   alternates: { canonical: 'https://shawnos.ai/clearbox', languages: hreflang('/clearbox') },
   openGraph: {
     title: 'Clearbox — see your market, move first',
-    description: 'Signal-based market intelligence. Launching this week.',
+    description: 'Signal-based market intelligence. Live now.',
     url: 'https://shawnos.ai/clearbox',
     images: [
       {
@@ -67,7 +67,7 @@ export default async function ClearboxInterimPage({ params }: Props) {
             textTransform: 'uppercase',
           }}
         >
-          Launching this week
+          Now live
         </div>
         <h1
           style={{
