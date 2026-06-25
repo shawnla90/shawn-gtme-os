@@ -7,6 +7,7 @@ import {
   TypewriterHero,
   ScrambleCycler,
   AvatarBadge,
+  BreadcrumbSchema,
 } from '@shawnos/shared/components'
 import { ShowcaseCard } from './ShowcaseCard'
 import { ShowcaseReveal, ScrollRevealSection, PageHero, SectionHeadline } from './ShowcaseReveal'
@@ -139,6 +140,7 @@ export default async function ShowcasePage() {
   const t = await getTranslations('Showcase')
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Showcase', url: 'https://shawnos.ai/showcase' }]} />
       <PageHero
         compact
         title={t('hero.title')}

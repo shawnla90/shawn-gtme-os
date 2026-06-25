@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { setRequestLocale } from 'next-intl/server'
 import { ButtonLink } from '@shawnos/shared/components/ui'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { ClearboxDemo } from './ClearboxDemo'
 
 type Props = {
@@ -12,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Clearbox — see your market, move first',
   description:
     'Clearbox is a signal-based market intelligence engine. Launching this week. Join early access.',
-  alternates: { canonical: 'https://shawnos.ai/clearbox' },
+  alternates: { canonical: 'https://shawnos.ai/clearbox', languages: hreflang('/clearbox') },
   openGraph: {
     title: 'Clearbox — see your market, move first',
     description: 'Signal-based market intelligence. Launching this week.',
@@ -39,6 +41,7 @@ export default async function ClearboxInterimPage({ params }: Props) {
         margin: '0 auto',
       }}
     >
+      <BreadcrumbSchema items={[{ name: 'Clearbox', url: 'https://shawnos.ai/clearbox' }]} />
       <header
         style={{
           display: 'flex',

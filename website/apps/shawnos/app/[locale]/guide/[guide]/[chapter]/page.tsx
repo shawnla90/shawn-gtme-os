@@ -11,6 +11,7 @@ import {
 } from '@shawnos/shared/data/guide-manifest'
 import { getPostBySlug, markdownToHtml } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../../i18n/hreflang'
 import { ChapterNav } from './ChapterNav'
 import { ChapterProgress } from './ChapterProgress'
 import { GuideTableOfContents } from './GuideTableOfContents'
@@ -51,7 +52,7 @@ export async function generateMetadata({
   return {
     title: `${chapter.title} | ${guide.title}`,
     description: chapter.subtitle,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: hreflang(`/guide/${guideSlug}/${chapterSlug}`) },
     openGraph: {
       type: 'article',
       title: chapter.title,

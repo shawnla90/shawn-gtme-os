@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { NioTerminalPage } from '@shawnos/shared/pages/NioTerminalPage'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../../i18n/hreflang'
 import { getAllNioBlogPosts } from '@shawnos/shared/lib/nio-blog'
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     'site guardian thoughts',
     'ai evolution blog',
   ],
-  alternates: { canonical: 'https://shawnos.ai/vitals/nio-terminal' },
+  alternates: { canonical: 'https://shawnos.ai/vitals/nio-terminal', languages: hreflang('/vitals/nio-terminal') },
   openGraph: {
     title: 'nio.terminal - AI Development Log | shawnos.ai',
     description:

@@ -8,6 +8,7 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import { hreflang } from '../../../../i18n/hreflang'
+import { BreadcrumbSchema } from '@shawnos/shared/components'
 import {
   getRPGProfile,
   resolveDataRoot,
@@ -131,6 +132,7 @@ export default async function V2LabPage({ params }: { params: Promise<{ locale: 
   if (!v1 || !v2) {
     return (
       <div style={page}>
+        <BreadcrumbSchema items={[{ name: 'Vitals', url: 'https://shawnos.ai/vitals' }, { name: 'V2 Lab', url: 'https://shawnos.ai/vitals/v2-lab' }]} />
         <p style={{ color: 'var(--text-muted)' }}>
           <span style={promptChar}>$</span> ./progression-lab --compare v1 v2
         </p>
@@ -174,6 +176,7 @@ export default async function V2LabPage({ params }: { params: Promise<{ locale: 
 
   return (
     <div style={page}>
+      <BreadcrumbSchema items={[{ name: 'Vitals', url: 'https://shawnos.ai/vitals' }, { name: 'V2 Lab', url: 'https://shawnos.ai/vitals/v2-lab' }]} />
       {/* ── Header ── */}
       <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: 8 }}>
         <span style={promptChar}>$</span> ./progression-lab --compare v1 v2

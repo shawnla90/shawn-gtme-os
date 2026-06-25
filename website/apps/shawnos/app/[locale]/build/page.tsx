@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { hreflang } from '../../../i18n/hreflang'
 import { BuildContent } from './BuildContent'
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
     'AI agent development',
     'website deployment',
   ],
-  alternates: { canonical: 'https://shawnos.ai/build' },
+  alternates: { canonical: 'https://shawnos.ai/build', languages: hreflang('/build') },
   openGraph: {
     title: 'Build With Me | shawnos.ai',
     description:

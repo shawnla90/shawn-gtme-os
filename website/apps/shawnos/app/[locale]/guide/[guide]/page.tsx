@@ -6,6 +6,7 @@ import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { getGuideBySlug, getAllGuides } from '@shawnos/shared/data/guide-manifest'
 import { getPostBySlug } from '@shawnos/shared/lib'
 import { Link } from '../../../../i18n/navigation'
+import { hreflang } from '../../../../i18n/hreflang'
 import { GitHubCTA } from './GitHubCTA'
 
 const SITE_URL = 'https://shawnos.ai'
@@ -30,7 +31,7 @@ export async function generateMetadata({
   return {
     title: `${guide.title} | shawnos.ai`,
     description: guide.description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: hreflang(`/guide/${guideSlug}`) },
     openGraph: {
       type: 'website',
       title: guide.title,
