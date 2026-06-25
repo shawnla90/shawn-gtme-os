@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import path from 'path'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { getAllPosts, getTimelineItems, resolveDataRoot } from '@shawnos/shared/lib'
+import { getAllPosts, getTimelineItems, resolveDataRoot, getLearningDisciplines } from '@shawnos/shared/lib'
 import { fetchUserProfile } from '@shawnos/shared/lib/reddit'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../i18n/hreflang'
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const _DATA_ROOT = resolveDataRoot()
+const DATA_ROOT = resolveDataRoot()
 const CONTENT_DIR = path.join(process.cwd(), '../../../content/website/final')
 
 export const revalidate = 3600
@@ -53,6 +53,8 @@ export default async function HomePage({ params }: Props) {
     excludeCategories: ['claude-daily'],
   })
 
+  const learning = getLearningDisciplines(DATA_ROOT).disciplines
+
   let karma = '1,089'
   try {
     const profile = await fetchUserProfile('Shawntenam')
@@ -66,7 +68,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <BreadcrumbSchema items={[]} />
-      <HomeContent posts={latestPosts} timeline={timeline} karma={karma} />
+      <HomeContent posts={latestPosts} timeline={timeline} karma={karma} learning={learning} />
       <LiveUpdatesWidget announcements={announcements} />
     </>
   )

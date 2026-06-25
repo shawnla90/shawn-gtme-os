@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { Link } from '../i18n/navigation'
 import { SmartAnimateText } from '../components/unlumen-ui/smart-animate-text'
 import { ButtonLink } from '@shawnos/shared/components/ui'
-import type { TimelineItem } from '@shawnos/shared/lib'
+import type { TimelineItem, LearningDiscipline } from '@shawnos/shared/lib'
 
 interface Post {
   slug: string
@@ -17,6 +17,7 @@ interface HomeContentProps {
   posts: Post[]
   timeline: TimelineItem[]
   karma: string
+  learning: LearningDiscipline[]
 }
 
 const ARC = [
@@ -63,7 +64,7 @@ const sourceColor: Record<string, string> = {
   reddit: 'var(--text-secondary)',
 }
 
-export function HomeContent({ posts, timeline, karma }: HomeContentProps) {
+export function HomeContent({ posts, timeline, karma, learning }: HomeContentProps) {
   return (
     <div className="home">
       <style>{`
@@ -191,6 +192,16 @@ export function HomeContent({ posts, timeline, karma }: HomeContentProps) {
         .feed-title { flex: 1; min-width: 240px; font-size: 15px; font-weight: 500; color: var(--text-primary);
           text-decoration: none; line-height: 1.4; }
         .feed-title:hover { color: var(--text-primary); opacity: 0.7; }
+
+        /* currently-learning band */
+        .learn-band { display: flex; flex-wrap: wrap; gap: 10px; }
+        .learn-chip { display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px;
+          border: 1px solid var(--canvas-border); border-radius: 9999px; text-decoration: none;
+          background: var(--canvas-subtle); transition: border-color 0.15s ease, transform 0.15s ease; }
+        .learn-chip:hover { border-color: var(--text-secondary); transform: translateY(-2px); }
+        .learn-chip-name { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+        .learn-chip-status { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em;
+          text-transform: uppercase; color: var(--text-muted); }
       `}</style>
 
       <div className="home-inner">
@@ -291,6 +302,24 @@ export function HomeContent({ posts, timeline, karma }: HomeContentProps) {
             </Link>
           </div>
         </section>
+
+        {/* CURRENTLY LEARNING */}
+        {learning.length > 0 && (
+          <section className="home-section">
+            <div className="home-section-head">
+              <p className="home-kicker">Currently learning</p>
+              <Link href={'/log/skills' as never} className="home-section-link">See the craft log →</Link>
+            </div>
+            <div className="learn-band">
+              {learning.map((d) => (
+                <Link key={d.slug} href={'/log/skills' as never} className="learn-chip">
+                  <span className="learn-chip-name">{d.discipline}</span>
+                  <span className="learn-chip-status">{d.status}</span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* BUILDING IN PUBLIC — feed */}
         <section className="home-section">

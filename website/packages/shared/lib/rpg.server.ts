@@ -89,3 +89,46 @@ export function getAvatarGifPath(
 export function hasRPGData(dataRoot: string): boolean {
   return getRPGProfile(dataRoot) !== null
 }
+
+/* ------------------------------------------------------------------ */
+/*  Learning / skills-in-public                                        */
+/* ------------------------------------------------------------------ */
+
+export type LearningStatus = 'Exploring' | 'Practicing' | 'Shipping'
+
+export interface LearningDiscipline {
+  slug: string
+  discipline: string
+  status: LearningStatus
+  started: string
+  why: string
+  tools: string[]
+  milestones: string[]
+  proof_links: { label: string; url: string }[]
+}
+
+export interface LearningData {
+  disciplines: LearningDiscipline[]
+  updated: string
+}
+
+/**
+ * Reads `data/progression/learning.json` — the hand-curated list of
+ * disciplines Shawn is learning in public. Returns empty when the file
+ * is missing or malformed (page renders an empty-state instead of 500ing).
+ *
+ * @param dataRoot - Absolute path to the repository root `data/` directory.
+ */
+export function getLearningDisciplines(dataRoot: string): LearningData {
+  const filePath = path.join(dataRoot, 'progression', 'learning.json')
+  if (!fs.existsSync(filePath)) return { disciplines: [], updated: '' }
+  try {
+    const raw = JSON.parse(fs.readFileSync(filePath, 'utf8'))
+    const disciplines: LearningDiscipline[] = Array.isArray(raw.disciplines)
+      ? raw.disciplines
+      : []
+    return { disciplines, updated: typeof raw.updated === 'string' ? raw.updated : '' }
+  } catch {
+    return { disciplines: [], updated: '' }
+  }
+}

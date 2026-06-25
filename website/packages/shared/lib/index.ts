@@ -32,7 +32,8 @@ export {
   getClassAvatarUrls,
   getToolAvatarUrls,
 } from './rpg'
-export { getRPGProfile, getAvatarPath, getAvatarGifPath, hasRPGData } from './rpg.server'
+export { getRPGProfile, getAvatarPath, getAvatarGifPath, hasRPGData, getLearningDisciplines } from './rpg.server'
+export type { LearningDiscipline, LearningData, LearningStatus } from './rpg.server'
 export { resolveDataRoot } from './dataRoot'
 export {
   getNioAvatarUrls,

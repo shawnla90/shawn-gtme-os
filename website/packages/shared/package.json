@@ -11,6 +11,7 @@
     "./lib/rpg": "./lib/rpg.ts",
     "./lib/rpg.server": "./lib/rpg.server.ts",
     "./pages/SkillGuidePage": "./pages/SkillGuidePage.tsx",
+    "./pages/LearningPage": "./pages/LearningPage.tsx",
     "./pages/QuestBoardPage": "./pages/QuestBoardPage.tsx",
     "./pages/KnowledgeGuidePage": "./pages/KnowledgeGuidePage.tsx",
     "./pages/GTMKnowledgeGuidePage": "./pages/GTMKnowledgeGuidePage.tsx",

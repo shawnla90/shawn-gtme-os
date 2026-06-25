@@ -155,6 +155,26 @@ export default function LogIndexClient({
         {t('exploreSkillGuide')} &rarr;
       </Link>
 
+      {/* CTA — skills / learning in public */}
+      <Link
+        href="/log/skills"
+        style={{
+          display: 'block',
+          padding: '14px 18px',
+          marginBottom: '12px',
+          background: 'var(--canvas-subtle)',
+          border: '1px solid var(--border)',
+          borderRadius: '6px',
+          textDecoration: 'none',
+          fontSize: '13px',
+          fontWeight: 600,
+          color: 'var(--accent)',
+          transition: 'border-color 0.15s ease',
+        }}
+      >
+        Skills I&rsquo;m learning &rarr;
+      </Link>
+
       {/* CTA — build your own */}
       <Link
         href="/log/build-your-own"

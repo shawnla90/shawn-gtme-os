@@ -138,6 +138,7 @@ export default async function ArcPage({ params }: Props) {
     { href: '/log/quests', label: t('buildWithMe.questBoard.label'), desc: t('buildWithMe.questBoard.description') },
     { href: '/log/build-your-own', label: t('buildWithMe.buildYourOwn.label'), desc: t('buildWithMe.buildYourOwn.description') },
     { href: '/log/skill-guide', label: t('buildWithMe.skillGuide.label'), desc: t('buildWithMe.skillGuide.description') },
+    { href: '/log/skills', label: "Skills I'm learning", desc: 'Photography, video, audio — the craft behind the build, tracked in public.' },
   ]
 
   const socials = [

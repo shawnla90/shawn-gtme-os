@@ -1,0 +1,36 @@
+{
+  "updated": "2026-06-25",
+  "note": "Disciplines Shawn is actively learning, tracked in public. Status ladder: Exploring -> Practicing -> Shipping. milestones[] and proof_links[] are filled in as real work lands (kept empty until then on purpose - no fabricated progress).",
+  "disciplines": [
+    {
+      "slug": "photography",
+      "discipline": "Photography",
+      "status": "Exploring",
+      "started": "2026-06",
+      "why": "Original images beat stock every time. Learning to shoot so every post, thumbnail, and brand frame is mine - not a render, not a stock grab.",
+      "tools": ["Lightroom"],
+      "milestones": [],
+      "proof_links": []
+    },
+    {
+      "slug": "video-editing",
+      "discipline": "Video editing",
+      "status": "Exploring",
+      "started": "2026-06",
+      "why": "Building in public only compounds if people can watch it. Learning DaVinci Resolve to cut the streams, demos, and shorts into something worth following.",
+      "tools": ["DaVinci Resolve"],
+      "milestones": [],
+      "proof_links": []
+    },
+    {
+      "slug": "audio",
+      "discipline": "Audio editing",
+      "status": "Exploring",
+      "started": "2026-06",
+      "why": "Bad audio kills good video. Learning to cut, clean, and mix so the voice carries - for streams, shorts, and anything with a mic.",
+      "tools": ["DaVinci Resolve (Fairlight)"],
+      "milestones": [],
+      "proof_links": []
+    }
+  ]
+}
