@@ -25,7 +25,7 @@ export default function Icon() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#0D1117',
+          background: '#0a0a0a',
           borderRadius: 6,
           position: 'relative',
         }}
@@ -40,7 +40,7 @@ export default function Icon() {
               top: PAD + r * PITCH + 4,
               width: CELL,
               height: CELL,
-              background: '#3A9A5A',
+              background: '#6b6b6b',
               borderRadius: 0.5,
             }}
           />
@@ -55,7 +55,7 @@ export default function Icon() {
               top: PAD + r * PITCH + 4,
               width: CELL,
               height: CELL,
-              background: '#6FD98F',
+              background: '#fafafa',
               borderRadius: 0.5,
             }}
           />
@@ -70,7 +70,7 @@ export default function Icon() {
               top: PAD + r * PITCH + 4,
               width: CELL,
               height: CELL,
-              background: '#4EC373',
+              background: '#a3a3a3',
               borderRadius: 0.5,
             }}
           />

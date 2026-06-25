@@ -11,8 +11,12 @@ import { TableOfContents } from './TableOfContents'
 import { ArticleReveal, HeaderReveal } from './ArticleReveal'
 import { BlogTracking } from './BlogTracking'
 
-const GREEN = '#4EC373'
-const GREEN_DIM = '#4EC37344'
+// Monochrome accent for the dark-only claude-daily terminal panel.
+// This panel hardcodes a dark background (#0d1117 / #161b22) regardless of
+// the page theme, so we use a concrete light gray here (not a theme token)
+// to keep the accent legible against the fixed-dark panel in both themes.
+const GREEN = '#E6E6E6'
+const GREEN_DIM = '#E6E6E644'
 
 const CLAUDE_ART = `██████╗ ██╗       █████╗  ██╗   ██╗ ██████╗  ███████╗
 ██╔════╝ ██║      ██╔══██╗ ██║   ██║ ██╔══██╗ ██╔════╝
@@ -203,7 +207,7 @@ export default async function BlogPost({
             href={post.category === 'claude-daily' ? '/claude-daily' : '/blog'}
             style={{
               fontSize: '13px',
-              color: post.category === 'claude-daily' ? GREEN : 'var(--accent)',
+              color: post.category === 'claude-daily' ? 'var(--text-primary)' : 'var(--accent)',
               textDecoration: 'none',
               display: 'inline-block',
               marginBottom: 24,
@@ -251,7 +255,7 @@ export default async function BlogPost({
                       padding: 0,
                       userSelect: 'none',
                       color: GREEN,
-                      textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
+                      textShadow: `0 0 20px #E6E6E630, 0 0 4px #E6E6E620`,
                     }}
                   >
                     {CLAUDE_ART}
@@ -267,7 +271,7 @@ export default async function BlogPost({
                       padding: 0,
                       userSelect: 'none',
                       color: GREEN,
-                      textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
+                      textShadow: `0 0 20px #E6E6E630, 0 0 4px #E6E6E620`,
                       marginTop: '-1px',
                     }}
                   >
@@ -291,8 +295,8 @@ export default async function BlogPost({
                       inset: 0,
                       borderRadius: '50%',
                       background: '#161b22',
-                      border: '1px solid #4EC37315',
-                      boxShadow: '0 0 30px #4EC37310',
+                      border: '1px solid #E6E6E615',
+                      boxShadow: '0 0 30px #E6E6E610',
                     }}
                   />
                   <pre
@@ -309,7 +313,7 @@ export default async function BlogPost({
                       transform: 'translate(-58%, -62%)',
                       fontSize: '8px',
                       color: GREEN,
-                      textShadow: `0 0 16px #4EC37340`,
+                      textShadow: `0 0 16px #E6E6E640`,
                     }}
                   >
                     {C_ART}
@@ -327,8 +331,8 @@ export default async function BlogPost({
                       left: '50%',
                       transform: 'translate(-38%, -38%)',
                       fontSize: '8px',
-                      color: '#6FD98F',
-                      textShadow: `0 0 16px #4EC37340`,
+                      color: '#FFFFFF',
+                      textShadow: `0 0 16px #E6E6E640`,
                     }}
                   >
                     {C_ART}
@@ -441,7 +445,7 @@ export default async function BlogPost({
                 style={{
                   fontSize: 'clamp(24px, 4vw, 32px)',
                   fontWeight: 700,
-                  color: post.category === 'claude-daily' ? GREEN : 'var(--accent)',
+                  color: post.category === 'claude-daily' ? 'var(--text-primary)' : 'var(--accent)',
                   lineHeight: 1.3,
                   margin: 0,
                 }}
@@ -513,14 +517,14 @@ export default async function BlogPost({
             style={{
               marginTop: 48,
               paddingTop: 24,
-              borderTop: `1px solid ${post.category === 'claude-daily' ? GREEN_DIM : 'var(--border)'}`,
+              borderTop: `1px solid ${post.category === 'claude-daily' ? 'color-mix(in srgb, var(--text-primary) 27%, transparent)' : 'var(--border)'}`,
             }}
           >
             <Link
               href={post.category === 'claude-daily' ? '/claude-daily' : '/blog'}
               style={{
                 fontSize: '13px',
-                color: post.category === 'claude-daily' ? GREEN : 'var(--accent)',
+                color: post.category === 'claude-daily' ? 'var(--text-primary)' : 'var(--accent)',
                 textDecoration: 'none',
               }}
             >

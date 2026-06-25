@@ -8,10 +8,10 @@ import { TerminalChrome } from '@shawnos/shared/components'
    CONSTANTS
    ═══════════════════════════════════════════════════ */
 
-const BLADE_COLOR = '#6B8AFF'
-const OPS_COLOR = '#4EC373'
-const ARCH_COLOR = '#6B8AFF'
-const WRITER_COLOR = '#FF8A6B'
+const BLADE_COLOR = 'var(--text-primary)'
+const OPS_COLOR = 'var(--text-secondary)'
+const ARCH_COLOR = 'var(--text-primary)'
+const WRITER_COLOR = 'var(--text-secondary)'
 
 const BOOT_LINES = [
   '> AI/os boot --mode=dna-lab',
@@ -79,9 +79,9 @@ const TIERS = [
 const ARCH_LAYERS = [
   { name: 'CLAUDE.md', desc: 'System instructions & personality', color: OPS_COLOR },
   { name: 'Soul Files', desc: 'Agent DNA, skills, evolution log', color: BLADE_COLOR },
-  { name: 'SQLite', desc: 'niobot.db — messages, XP, memory', color: '#D2A53C' },
+  { name: 'SQLite', desc: 'niobot.db — messages, XP, memory', color: 'var(--text-secondary)' },
   { name: 'MCP Servers', desc: '9 tools — filesystem, GitHub, browser', color: WRITER_COLOR },
-  { name: '54 Skills', desc: 'Slash commands — /commit, /review, /deploy', color: '#A78BFA' },
+  { name: '54 Skills', desc: 'Slash commands — /commit, /review, /deploy', color: 'var(--text-muted)' },
 ]
 
 /* ═══════════════════════════════════════════════════
@@ -317,12 +317,12 @@ export function NioDnaLab() {
         <section ref={heroReveal.ref} className="dna-hero">
           <div className="dna-hero-ring-wrapper">
             <div className="dna-hero-ring-container">
-              <svg viewBox="0 0 120 120" className="dna-hero-ring-svg">
-                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(107,138,255,0.15)" strokeWidth="8" />
+              <svg viewBox="0 0 120 120" className="dna-hero-ring-svg" style={{ color: 'var(--text-primary)' }}>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" strokeOpacity="0.15" strokeWidth="8" />
                 <circle
                   cx="60" cy="60" r="52"
                   fill="none"
-                  stroke={BLADE_COLOR}
+                  stroke="currentColor"
                   strokeWidth="8"
                   strokeLinecap="round"
                   strokeDasharray={`${2 * Math.PI * 52}`}
@@ -593,7 +593,7 @@ const CSS = `
   pointer-events: none;
   background: repeating-linear-gradient(
     0deg, transparent, transparent 2px,
-    rgba(107,138,255,0.03) 2px, rgba(107,138,255,0.03) 4px
+    rgba(230,237,243,0.03) 2px, rgba(230,237,243,0.03) 4px
   );
 }
 .dna-boot-content {
@@ -609,7 +609,7 @@ const CSS = `
   font-family: var(--font-mono, 'Courier New', monospace);
   font-size: 13px;
   line-height: 1.8;
-  color: ${BLADE_COLOR};
+  color: #e6edf3;
   width: 100%;
   min-height: 200px;
 }
@@ -622,7 +622,7 @@ const CSS = `
 }
 .dna-cursor {
   display: inline-block;
-  color: ${BLADE_COLOR};
+  color: #e6edf3;
   animation: dna-blink 0.6s step-end infinite;
 }
 @keyframes dna-blink {
@@ -632,42 +632,42 @@ const CSS = `
 .dna-boot-bar-track {
   width: 100%;
   height: 18px;
-  border: 1px solid rgba(107,138,255,0.3);
+  border: 1px solid rgba(230,237,243,0.3);
   border-radius: 2px;
-  background: rgba(107,138,255,0.05);
+  background: rgba(230,237,243,0.05);
   overflow: hidden;
 }
 .dna-boot-bar-fill {
   height: 100%;
-  background: ${BLADE_COLOR};
+  background: #e6edf3;
   border-radius: 1px;
   transition: width 0.1s linear;
-  box-shadow: 0 0 20px rgba(107,138,255,0.6), 0 0 40px rgba(107,138,255,0.3);
+  box-shadow: 0 0 20px rgba(230,237,243,0.6), 0 0 40px rgba(230,237,243,0.3);
   animation: dna-glow-pulse 1.2s ease-in-out infinite;
 }
 @keyframes dna-glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(107,138,255,0.6), 0 0 40px rgba(107,138,255,0.3); }
-  50%      { box-shadow: 0 0 30px rgba(107,138,255,0.8), 0 0 60px rgba(107,138,255,0.4); }
+  0%, 100% { box-shadow: 0 0 20px rgba(230,237,243,0.6), 0 0 40px rgba(230,237,243,0.3); }
+  50%      { box-shadow: 0 0 30px rgba(230,237,243,0.8), 0 0 60px rgba(230,237,243,0.4); }
 }
 .dna-boot-pct {
   font-family: var(--font-mono, 'Courier New', monospace);
   font-size: 28px;
   font-weight: 700;
-  color: ${BLADE_COLOR};
-  text-shadow: 0 0 12px rgba(107,138,255,0.5);
+  color: #e6edf3;
+  text-shadow: 0 0 12px rgba(230,237,243,0.5);
   letter-spacing: 0.05em;
 }
 .dna-boot-label {
   font-family: var(--font-mono, 'Courier New', monospace);
   font-size: 11px;
-  color: rgba(107,138,255,0.4);
+  color: rgba(230,237,243,0.4);
   text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 .dna-boot-tap {
   font-family: var(--font-mono, 'Courier New', monospace);
   font-size: 10px;
-  color: rgba(107,138,255,0.5);
+  color: rgba(230,237,243,0.5);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 8px;
@@ -758,7 +758,7 @@ const CSS = `
 }
 .dna-hero-xp-label {
   font-size: 11px;
-  color: rgba(107,138,255,0.6);
+  color: color-mix(in srgb, var(--text-primary) 60%, transparent);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-top: 4px;
@@ -771,13 +771,13 @@ const CSS = `
   font-size: 20px;
   font-weight: 700;
   color: ${BLADE_COLOR};
-  text-shadow: 0 0 20px rgba(107,138,255,0.4);
+  text-shadow: 0 0 20px color-mix(in srgb, var(--text-primary) 40%, transparent);
   animation: dna-tier-pulse 2s ease-in-out infinite;
   margin-bottom: 4px;
 }
 @keyframes dna-tier-pulse {
-  0%, 100% { text-shadow: 0 0 20px rgba(107,138,255,0.4); }
-  50%      { text-shadow: 0 0 30px rgba(107,138,255,0.7), 0 0 60px rgba(107,138,255,0.3); }
+  0%, 100% { text-shadow: 0 0 20px color-mix(in srgb, var(--text-primary) 40%, transparent); }
+  50%      { text-shadow: 0 0 30px color-mix(in srgb, var(--text-primary) 70%, transparent), 0 0 60px color-mix(in srgb, var(--text-primary) 30%, transparent); }
 }
 .dna-hero-level {
   font-size: 12px;
@@ -796,7 +796,7 @@ const CSS = `
 }
 .dna-hero-progress-track {
   height: 8px;
-  background: rgba(107,138,255,0.1);
+  background: color-mix(in srgb, var(--text-primary) 10%, transparent);
   border-radius: 4px;
   overflow: hidden;
 }
@@ -805,7 +805,7 @@ const CSS = `
   background: ${BLADE_COLOR};
   border-radius: 4px;
   transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 0 12px rgba(107,138,255,0.4);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--text-primary) 40%, transparent);
 }
 .dna-hero-stats {
   display: flex;
@@ -921,18 +921,18 @@ const CSS = `
   font-size: 12px;
 }
 .dna-roadmap-completed .dna-roadmap-marker {
-  background: rgba(78,195,115,0.15);
+  background: color-mix(in srgb, var(--text-secondary) 15%, transparent);
   border: 2px solid ${OPS_COLOR};
 }
 .dna-roadmap-check { color: ${OPS_COLOR}; font-size: 14px; }
 .dna-roadmap-active .dna-roadmap-marker {
-  background: rgba(107,138,255,0.15);
+  background: color-mix(in srgb, var(--text-primary) 15%, transparent);
   border: 2px solid ${BLADE_COLOR};
   animation: dna-node-pulse 2s ease-in-out infinite;
 }
 @keyframes dna-node-pulse {
-  0%, 100% { box-shadow: 0 0 8px rgba(107,138,255,0.3); }
-  50%      { box-shadow: 0 0 20px rgba(107,138,255,0.6); }
+  0%, 100% { box-shadow: 0 0 8px color-mix(in srgb, var(--text-primary) 30%, transparent); }
+  50%      { box-shadow: 0 0 20px color-mix(in srgb, var(--text-primary) 60%, transparent); }
 }
 .dna-roadmap-pulse {
   width: 8px;
@@ -957,10 +957,10 @@ const CSS = `
   border-left: 2px dashed rgba(255,255,255,0.1);
 }
 .dna-roadmap-active .dna-roadmap-line {
-  border-left-color: rgba(107,138,255,0.3);
+  border-left-color: color-mix(in srgb, var(--text-primary) 30%, transparent);
 }
 .dna-roadmap-completed .dna-roadmap-line {
-  border-left-color: rgba(78,195,115,0.3);
+  border-left-color: color-mix(in srgb, var(--text-secondary) 30%, transparent);
 }
 .dna-roadmap-name {
   font-size: 15px;
@@ -1137,7 +1137,7 @@ const CSS = `
   font-family: var(--font-mono, 'Courier New', monospace);
   font-size: 14px;
   font-weight: 600;
-  color: #0a0a0a;
+  color: var(--canvas, #0a0a0a);
   background: ${BLADE_COLOR};
   border-radius: 4px;
   text-decoration: none;
@@ -1145,7 +1145,7 @@ const CSS = `
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .dna-cta-link:hover {
-  box-shadow: 0 0 20px rgba(107,138,255,0.5);
+  box-shadow: 0 0 20px color-mix(in srgb, var(--text-primary) 50%, transparent);
   transform: translateY(-1px);
 }
 .dna-cta-link-secondary {

@@ -23,8 +23,8 @@ interface Highlights {
 
 /* ── brand ────────────────────────────────────────── */
 
-const GREEN = '#4EC373'
-const GREEN_DIM = '#4EC37344'
+const GREEN = 'var(--text-primary)'
+const GREEN_DIM = 'color-mix(in srgb, var(--text-primary) 27%, transparent)'
 
 /* ── block art strings (oh-my-logo --filled --block-font block) ── */
 
@@ -293,7 +293,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   ...blockTextBase,
                   fontSize: 'clamp(6px, 1.15vw, 14px)',
                   color: GREEN,
-                  textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
+                  textShadow: `0 0 20px color-mix(in srgb, var(--text-primary) 19%, transparent), 0 0 4px color-mix(in srgb, var(--text-primary) 13%, transparent)`,
                 }}
               >
                 {CLAUDE_ART}
@@ -304,7 +304,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   ...blockTextBase,
                   fontSize: 'clamp(6px, 1.15vw, 14px)',
                   color: GREEN,
-                  textShadow: `0 0 20px #4EC37330, 0 0 4px #4EC37320`,
+                  textShadow: `0 0 20px color-mix(in srgb, var(--text-primary) 19%, transparent), 0 0 4px color-mix(in srgb, var(--text-primary) 13%, transparent)`,
                   marginTop: '-2px',
                 }}
               >
@@ -343,9 +343,9 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   position: 'absolute',
                   inset: 0,
                   borderRadius: '50%',
-                  background: '#161b22',
-                  border: '1px solid #4EC37315',
-                  boxShadow: '0 0 40px #4EC37310',
+                  background: 'var(--canvas-subtle)',
+                  border: '1px solid color-mix(in srgb, var(--text-primary) 8%, transparent)',
+                  boxShadow: '0 0 40px color-mix(in srgb, var(--text-primary) 6%, transparent)',
                 }}
               />
               {/* Top C - upper left */}
@@ -357,8 +357,8 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   left: '50%',
                   transform: 'translate(-58%, -62%)',
                   fontSize: 'clamp(12px, 2.2vw, 24px)',
-                  color: GREEN,
-                  textShadow: `0 0 16px #4EC37340, 0 0 4px #4EC37330`,
+                  color: 'var(--text-secondary)',
+                  textShadow: `0 0 16px color-mix(in srgb, var(--text-primary) 25%, transparent), 0 0 4px color-mix(in srgb, var(--text-primary) 19%, transparent)`,
                 }}
               >
                 {C_ART}
@@ -372,8 +372,8 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   left: '50%',
                   transform: 'translate(-38%, -38%)',
                   fontSize: 'clamp(12px, 2.2vw, 24px)',
-                  color: '#6FD98F',
-                  textShadow: `0 0 16px #4EC37340, 0 0 4px #4EC37330`,
+                  color: 'var(--text-primary)',
+                  textShadow: `0 0 16px color-mix(in srgb, var(--text-primary) 25%, transparent), 0 0 4px color-mix(in srgb, var(--text-primary) 19%, transparent)`,
                 }}
               >
                 {C_ART}
@@ -406,7 +406,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                 style={{
                   height: '1px',
                   flex: 1,
-                  background: `linear-gradient(90deg, ${GREEN}30, transparent)`,
+                  background: `linear-gradient(90deg, color-mix(in srgb, var(--text-primary) 19%, transparent), transparent)`,
                 }}
               />
               <span
@@ -426,7 +426,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                 style={{
                   height: '1px',
                   flex: 1,
-                  background: `linear-gradient(90deg, transparent, ${GREEN}30)`,
+                  background: `linear-gradient(90deg, transparent, color-mix(in srgb, var(--text-primary) 19%, transparent))`,
                 }}
               />
             </div>
@@ -446,7 +446,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   href={`/blog/${sorted[0].slug}#best-comment-award`}
                   style={{
                     padding: '20px',
-                    background: '#0d1117',
+                    background: 'var(--canvas-subtle)',
                     border: `1px solid ${GREEN_DIM}`,
                     borderRadius: '8px',
                     textDecoration: 'none',
@@ -478,7 +478,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                       fontSize: '14px',
                       lineHeight: 1.6,
                       color: 'var(--text-secondary)',
-                      borderLeft: `2px solid ${GREEN}40`,
+                      borderLeft: `2px solid color-mix(in srgb, var(--text-primary) 25%, transparent)`,
                       paddingLeft: '12px',
                       fontStyle: 'italic',
                     }}
@@ -506,18 +506,18 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   href={`/blog/${sorted[0].slug}#troll-of-the-day`}
                   style={{
                     padding: '20px',
-                    background: '#0d1117',
-                    border: '1px solid #ff7b7225',
+                    background: 'var(--canvas-subtle)',
+                    border: '1px solid color-mix(in srgb, var(--text-primary) 15%, transparent)',
                     borderRadius: '8px',
                     textDecoration: 'none',
                     display: 'block',
                     transition: 'border-color 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.borderColor = '#ff7b72'
+                    ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--text-primary)'
                   }}
                   onMouseLeave={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.borderColor = '#ff7b7225'
+                    ;(e.currentTarget as HTMLElement).style.borderColor = 'color-mix(in srgb, var(--text-primary) 15%, transparent)'
                   }}
                 >
                   <div
@@ -526,7 +526,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                       fontWeight: 700,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
-                      color: '#ff7b72',
+                      color: 'var(--text-primary)',
                       marginBottom: '10px',
                       fontFamily: 'var(--font-mono)',
                     }}
@@ -538,7 +538,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                       fontSize: '14px',
                       lineHeight: 1.6,
                       color: 'var(--text-secondary)',
-                      borderLeft: '2px solid #ff7b7240',
+                      borderLeft: '2px solid color-mix(in srgb, var(--text-primary) 25%, transparent)',
                       paddingLeft: '12px',
                       fontStyle: 'italic',
                     }}
@@ -550,7 +550,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   <div
                     style={{
                       fontSize: '11px',
-                      color: '#ff7b72',
+                      color: 'var(--text-primary)',
                       marginTop: '10px',
                       fontFamily: 'var(--font-mono)',
                     }}
@@ -566,18 +566,18 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   href={`/blog/${sorted[0].slug}#fun-facts`}
                   style={{
                     padding: '20px',
-                    background: '#0d1117',
-                    border: '1px solid #d2a8ff25',
+                    background: 'var(--canvas-subtle)',
+                    border: '1px solid color-mix(in srgb, var(--text-primary) 15%, transparent)',
                     borderRadius: '8px',
                     textDecoration: 'none',
                     display: 'block',
                     transition: 'border-color 0.2s ease',
                   }}
                   onMouseEnter={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.borderColor = '#d2a8ff'
+                    ;(e.currentTarget as HTMLElement).style.borderColor = 'var(--text-primary)'
                   }}
                   onMouseLeave={(e) => {
-                    ;(e.currentTarget as HTMLElement).style.borderColor = '#d2a8ff25'
+                    ;(e.currentTarget as HTMLElement).style.borderColor = 'color-mix(in srgb, var(--text-primary) 15%, transparent)'
                   }}
                 >
                   <div
@@ -586,7 +586,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                       fontWeight: 700,
                       letterSpacing: '0.1em',
                       textTransform: 'uppercase',
-                      color: '#d2a8ff',
+                      color: 'var(--text-primary)',
                       marginBottom: '10px',
                       fontFamily: 'var(--font-mono)',
                     }}
@@ -610,7 +610,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
                   <div
                     style={{
                       fontSize: '11px',
-                      color: '#d2a8ff',
+                      color: 'var(--text-primary)',
                       marginTop: '10px',
                       fontFamily: 'var(--font-mono)',
                     }}
