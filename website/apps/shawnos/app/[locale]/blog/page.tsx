@@ -50,10 +50,14 @@ export default async function BlogIndex({ params }: Props) {
     contentDir,
     blogHrefBase,
     limit: 80,
+    excludeCategories: ['claude-daily'],
   })
 
-  const allPosts = getAllPosts(contentDir)
-  const featuredPosts = allPosts.slice(0, 3)
+  // claude-daily recaps live on their own /claude-daily route — keep them out
+  // of the main blog so the evergreen posts surface. Featured hero honors the
+  // `featured:` frontmatter flag (newest first).
+  const allPosts = getAllPosts(contentDir).filter((p) => p.category !== 'claude-daily')
+  const featuredPosts = allPosts.filter((p) => p.featured).slice(0, 3)
 
   const collectionSchema = {
     '@context': 'https://schema.org',

@@ -167,11 +167,17 @@ export interface GetTimelineItemsOptions {
   blogHrefBase?: string
   source?: TimelineSource
   limit?: number
+  /** Blog categories to drop from the feed (e.g. ['claude-daily']). Opt-in — default keeps every post, so other sites are unaffected. */
+  excludeCategories?: string[]
 }
 
 export function getTimelineItems(opts: GetTimelineItemsOptions): TimelineItem[] {
-  const { contentDir, blogHrefBase, source, limit } = opts
-  const blog = blogPostsToTimelineItems(getAllPosts(contentDir), blogHrefBase)
+  const { contentDir, blogHrefBase, source, limit, excludeCategories } = opts
+  let posts = getAllPosts(contentDir)
+  if (excludeCategories?.length) {
+    posts = posts.filter((p) => !excludeCategories.includes(p.category ?? ''))
+  }
+  const blog = blogPostsToTimelineItems(posts, blogHrefBase)
   const substack = readSubstackTimelineItems()
   const reddit = readRedditSelfTimelineItems()
 

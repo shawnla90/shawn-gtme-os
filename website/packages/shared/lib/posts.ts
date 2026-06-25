@@ -12,6 +12,9 @@ export interface Post {
   wordCount: number
   category?: string
   featured?: boolean
+  updated?: string
+  dateModified?: string
+  keywords?: string[]
 }
 
 
@@ -55,6 +58,9 @@ export function getPostBySlug(slug: string, contentDir: string): Post {
     wordCount: words,
     category: (data.category as string) ?? undefined,
     featured: (data.featured as boolean) ?? undefined,
+    updated: (data.updated as string) ?? undefined,
+    dateModified: (data.dateModified as string) ?? undefined,
+    keywords: Array.isArray(data.keywords) ? (data.keywords as string[]) : undefined,
   }
 }
 

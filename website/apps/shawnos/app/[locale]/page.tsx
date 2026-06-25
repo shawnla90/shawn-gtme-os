@@ -44,12 +44,13 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params
   setRequestLocale(locale)
 
-  const posts = getAllPosts(CONTENT_DIR)
+  const posts = getAllPosts(CONTENT_DIR).filter((p) => p.category !== 'claude-daily')
   const latestPosts = posts.slice(0, 3)
   const timeline = getTimelineItems({
     contentDir: CONTENT_DIR,
     blogHrefBase: locale === 'en' ? '/blog' : `/${locale}/blog`,
     limit: 8,
+    excludeCategories: ['claude-daily'],
   })
 
   let karma = '1,089'
