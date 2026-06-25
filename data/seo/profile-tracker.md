@@ -12,6 +12,13 @@
 | thecontentos.ai | Live | YES (added 3/2/26) | SUBMIT NOW | TBD | 0 |
 | leadalchemy.co | Parked | - | - | - | - |
 
+### GSC verification — DNS TXT (confirmed live 2026-06-25)
+`shawnos.ai` is GSC-verified via two live `google-site-verification` TXT records on the apex (either one satisfies Google):
+- `google-site-verification=g-Vu5V8cBOeGakc9aDj3O8UXNzzSSOSO5yBoDWo83Fw`
+- `google-site-verification=EJkwoRFcfX1niOaNFbI4nO3Gnu0_DG_GGSCPYc55eio`
+
+Backup if DNS is ever wiped: re-add either TXT record, or set `verification: { google: '<value>' }` in `apps/shawnos/app/[locale]/layout.tsx` (renders a `<meta name="google-site-verification">` fallback).
+
 ## Baseline Brand Profiles (nofollow / trust signals)
 
 | Platform | Status | URL | Has Website Link | Indexed by Google | Notes |
