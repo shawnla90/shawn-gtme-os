@@ -12,6 +12,11 @@ interface Contact {
   role: string | null
   is_primary: number
   account_name: string
+  linkedin_url?: string | null
+  persona?: string | null
+  vibe?: string | null
+  title?: string | null
+  source?: string | null
 }
 
 export default function ContactsPage() {

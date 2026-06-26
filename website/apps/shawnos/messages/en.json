@@ -429,8 +429,8 @@
     },
     "detail": { "backToLogs": "back to logs", "logNotFound": "Log not found for {date}." },
     "buildYourOwn": {
-      "metadata": { "title": "Build Your Own Daily Tracker", "description": "A copy-paste prompt to build your own AI-native daily activity tracker." },
-      "heroTitle": "Build Your Own", "heroSubtitle": "The prompt behind the daily receipts.",
+      "metadata": { "title": "How to Build Your Own AI Assistant | Build Log", "description": "Step-by-step build log for creating your own personal AI assistant from scratch. Tools, decisions, and lessons learned." },
+      "heroTitle": "How to Build Your Own AI Model", "heroSubtitle": "The prompt behind the daily receipts.",
       "thePrompt": "the prompt", "copyPrompt": "Copy Prompt", "copied": "Copied!", "backToLog": "Back to the log"
     },
     "progression": {

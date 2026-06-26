@@ -26,6 +26,7 @@ export interface GuideManifest {
   githubRepo: string
   githubUrl: string
   date: string
+  tags?: string[]
   parts: GuidePart[]
   chapters: GuideChapter[]
 }
@@ -131,6 +132,15 @@ const chapters: GuideChapter[] = [
   },
   {
     order: 11,
+    slug: '11-pick-your-primitive',
+    title: 'Pick Your Primitive',
+    subtitle: 'CLI vs MCP vs API. When each one is the right call, and why the answer depends on who you are more than what you’re doing.',
+    part: 3,
+    partTitle: 'The Operating System',
+    githubPath: 'chapters/11-pick-your-primitive.md',
+  },
+  {
+    order: 12,
     slug: 'afterword',
     title: 'Fork It, Build It, Ship It',
     subtitle: 'This is an open-source playbook. Take it and make it yours.',
@@ -177,10 +187,92 @@ export const GTM_CODING_AGENT_GUIDE: GuideManifest = {
   chapters,
 }
 
+const devopsChapters: GuideChapter[] = [
+  {
+    order: 0,
+    slug: 'intro',
+    title: 'AI in DevOps: What Actually Changes',
+    subtitle: 'The shift from manual pipelines to AI-augmented delivery loops',
+    part: 0,
+    partTitle: 'Overview',
+  },
+  {
+    order: 1,
+    slug: '01-cicd-automation',
+    title: 'CI/CD Automation with AI',
+    subtitle: 'Let agents write pipeline configs, catch regressions, and unblock failing builds.',
+    part: 1,
+    partTitle: 'Core Workflows',
+    githubPath: 'chapters/01-cicd-automation.md',
+  },
+  {
+    order: 2,
+    slug: '02-ai-code-review',
+    title: 'AI-Assisted Code Review',
+    subtitle: 'Automate the mechanical parts of review so humans focus on architecture and intent.',
+    part: 1,
+    partTitle: 'Core Workflows',
+    githubPath: 'chapters/02-ai-code-review.md',
+  },
+  {
+    order: 3,
+    slug: '03-incident-response',
+    title: 'Incident Response with AI',
+    subtitle: 'From alert to postmortem — how AI shortens the blast radius of production incidents.',
+    part: 1,
+    partTitle: 'Core Workflows',
+    githubPath: 'chapters/03-incident-response.md',
+  },
+]
+
+export const AI_DEVOPS_GUIDE: GuideManifest = {
+  slug: 'ai-in-devops',
+  title: 'How to Use AI in DevOps',
+  subtitle: 'CI/CD automation, AI-assisted code review, and faster incident response',
+  author: 'Shawn Tenam',
+  description:
+    'A practical guide to wiring AI into your DevOps workflow. Covers CI/CD pipeline automation, AI-assisted code review to cut review time without losing quality, and AI-accelerated incident response from alert triage to postmortem.',
+  githubRepo: '',
+  githubUrl: '',
+  date: '2026-04-28',
+  tags: ['devops', 'ci-cd', 'code-review', 'incident-response', 'automation', 'ai'],
+  parts: buildParts(devopsChapters),
+  chapters: devopsChapters,
+}
+
+const runAiLocallyChapters: GuideChapter[] = [
+  {
+    order: 0,
+    slug: 'intro',
+    title: 'How to Run AI Locally: The No-Cloud Setup',
+    subtitle: 'Ollama, LM Studio, and the exact steps to get a capable AI model running on your own hardware — no API keys, no subscriptions.',
+    part: 0,
+    partTitle: 'Guide',
+    githubPath: 'chapters/intro.md',
+  },
+]
+
+export const RUN_AI_LOCALLY_GUIDE: GuideManifest = {
+  slug: 'run-ai-locally',
+  title: 'How to Run AI Locally: The No-Cloud Setup',
+  subtitle: 'Run capable AI models on your own hardware — no API keys, no subscriptions, no data leaving your machine',
+  author: 'Shawn Tenam',
+  description:
+    'Step-by-step guide to running AI locally on Windows and Mac. Covers Ollama and LM Studio setup, model selection, hardware requirements, and how to wire local models into your existing tools — completely offline, completely free.',
+  githubRepo: '',
+  githubUrl: '',
+  date: '2026-05-30',
+  tags: ['local-ai', 'ollama', 'lm-studio', 'offline-ai', 'privacy', 'no-cloud'],
+  parts: buildParts(runAiLocallyChapters),
+  chapters: runAiLocallyChapters,
+}
+
 // --- Helpers ---
 
 const GUIDES: Record<string, GuideManifest> = {
   'gtm-coding-agent': GTM_CODING_AGENT_GUIDE,
+  'ai-in-devops': AI_DEVOPS_GUIDE,
+  'run-ai-locally': RUN_AI_LOCALLY_GUIDE,
 }
 
 export function getGuideBySlug(slug: string): GuideManifest | undefined {

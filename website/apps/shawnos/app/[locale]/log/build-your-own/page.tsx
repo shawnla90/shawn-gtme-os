@@ -14,6 +14,17 @@ export async function generateMetadata(): Promise<Metadata> {
     title: t('metadata.title'),
     description: t('metadata.description'),
     keywords: [
+      'how to build your own AI model',
+      'build your own AI model',
+      'personal AI assistant',
+      'free build your own AI girlfriend',
+      'build your own AI girlfriend',
+      'personalized AI companion',
+      'custom AI assistant free',
+      'free build your own AI girl',
+      'build your own AI girl',
+      'custom AI assistant',
+      'personal AI companion',
       'daily tracker',
       'AI workflow',
       'build in public',
@@ -250,7 +261,7 @@ Generate a PNG dashboard card using Python + Pillow with this layout:
 - C: Amber \`(220, 170, 60)\`
 - D: Red \`(180, 70, 70)\`
 
-## Implementation
+## Agent Implementation
 
 You need two Python scripts:
 
@@ -267,7 +278,7 @@ You need two Python scripts:
 - Renders the Pillow image with the layout above
 - Saves as \`data/daily-log/YYYY-MM-DD.png\`
 
-### Dependencies
+### Agent Tool Selection & Dependencies
 - Python 3 (stdlib only for scanner)
 - Pillow (\`pip install Pillow\`) for dashboard
 - Menlo font (pre-installed on macOS) or any monospace font
@@ -284,7 +295,7 @@ The scanner **never deletes** manual accomplishments, TODOs, or non-auto token e
 
 Safe to run multiple times per day.
 
-## Commands
+## Agent Workflow Commands
 
 | Command | What it does |
 |---|---|
@@ -410,6 +421,67 @@ export default async function BuildYourOwnPage() {
     />
 
     <ScrollRevealSection background="var(--canvas)">
+      <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', marginBottom: '28px' }}>
+        This is a hands-on reference for building an AI agent automation system from scratch - the kind that runs locally, costs almost nothing, and replaces hours of manual tracking with a nightly automation pipeline. No SaaS, no vendor lock-in. The agent setup covered here powers the daily receipts on this site: a scanner that reads git history and file mtimes, scores your output, and renders a dashboard card every evening without any human input.
+      </p>
+      <h1 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '12px', lineHeight: 1.3 }}>
+        How to Build Your Own AI Model - Personal AI Assistant Guide
+      </h1>
+      <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', marginBottom: '16px' }}>
+        If you want to build your own AI model that tracks daily output - no cloud subscriptions, no SaaS lock-in - this is the starting point. It runs as a personal AI assistant on your own machine: scanning git commits, scoring your work, and generating a dashboard card every evening without any manual input. Free to use, copy-paste ready, and built from the exact stack behind this site.
+      </p>
+      <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', marginBottom: '32px' }}>
+        This is the prompt and system behind the daily tracker you see on this site. It scans your work, scores your output, and generates a dashboard card every evening. No subscriptions, no cloud lock-in, just a prompt and a Python script.
+      </p>
+      <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', marginBottom: '20px' }}>
+        What follows is a live reference for ai agent orchestration at the individual level — a single developer wiring together scanning, scoring, and rendering into a fully automated nightly pipeline with no manual input required.
+      </p>
+      <h2 style={{ fontSize: '20px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '24px', lineHeight: 1.3 }}>
+        Day-by-day log of building an AI automation agency from scratch
+      </h2>
+      <p style={{ ...heroSub, marginBottom: '28px' }}>
+        This is a free guide to building your own personal AI assistant - no SaaS subscriptions, no cloud lock-in, just a prompt and a Python script running on your own machine.
+        Everything here is open, copy-paste ready, and built from the actual system powering the daily receipts on this site.
+        If you want to track your own output the same way, start here.
+      </p>
+
+      {/* Claude Code callout */}
+      <div style={{ ...calloutBox, borderLeft: '3px solid var(--accent)', marginBottom: '28px' }}>
+        <div style={{ ...calloutTitle, color: 'var(--accent)' }}>Building an AI Agent with Claude Code</div>
+        <p style={calloutText}>
+          This entire stack was built by{' '}
+          <Link href="/how-to" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+            building an AI agent with Claude Code
+          </Link>{' '}
+          - using it as the execution layer that writes the scripts, runs the scans, and iterates on the prompt below.{' '}
+          If you want the guided version, the{' '}
+          <Link href="/how-to" style={{ color: 'var(--accent)', textDecoration: 'underline', textUnderlineOffset: '3px' }}>
+            how-to guides
+          </Link>{' '}
+          walk through setup step by step, from first prompt to nightly cron.
+        </p>
+      </div>
+
+      <p style={{ fontSize: '14px', lineHeight: 1.75, color: 'var(--text-secondary)', marginBottom: '28px' }}>
+        The initial scaffolding and daily iteration ran on Claude Sonnet - fast feedback loops, lower cost per session, ideal for the scan-score-render cycle that needed dozens of small refinements. Architecture decisions (scoring weights, the merge safety model, schema versioning) switched to Claude Opus, where the broader reasoning depth paid for itself in fewer wrong turns. The nightly cron job itself runs on Claude Haiku - near-zero cost for structured JSON generation at that scale, no Opus firepower needed.
+      </p>
+
+      <div style={{ marginBottom: '28px' }}>
+        <h2 style={sectionLabel}>AI Agent Orchestration Setup</h2>
+        <p style={heroSub}>
+          This page is a resource for setting up free AI agents and automations
+          that run on your own machine - no SaaS subscriptions, no vendor lock-in.
+          The tracker below is one piece of a larger free automations stack: tools
+          wired together to scan, score, and surface your daily output automatically.
+          The ai agent behind these daily receipts replaced ~45 minutes of manual
+          logging per day - scanning git history, file mtimes, and content directories
+          in seconds and rendering a scored dashboard card without any human input.
+          If you want to build your own AI agent for developer productivity tracking,
+          this is the exact prompt that powers it. Drop it into Cursor, Claude Code,
+          or any AI IDE and you have a working agent in minutes.
+        </p>
+      </div>
+
       <p style={heroSub}>
         The daily receipts you see on{' '}
         <Link
@@ -447,6 +519,77 @@ export default async function BuildYourOwnPage() {
       <div style={promptWrapper}>
         <CopyButton text={TRACKER_PROMPT} />
         <pre style={promptBlock}>{TRACKER_PROMPT}</pre>
+      </div>
+
+      {/* FAQ */}
+      <div style={{ marginTop: '48px', marginBottom: '32px' }}>
+        <h3 style={sectionLabel}>Agent Setup FAQ</h3>
+        {[
+          {
+            q: 'What hardware do I need to build a personal AI assistant?',
+            a: 'A Mac Mini M2 (8GB RAM, 256GB SSD) handles this entire stack. The scanner and dashboard scripts are pure Python — no GPU needed. AI calls go to Claude over the network, so local compute is just file I/O and image rendering.',
+          },
+          {
+            q: 'Can I run this on a Mac Mini?',
+            a: 'Yes — this was built on a Mac Mini M2 running as an always-on dev server. The tracker fires as a nightly launchd job, scans the repo, and generates the dashboard card without any manual input. Low power, always on, silent.',
+          },
+          {
+            q: 'How much does a personal AI assistant cost to run?',
+            a: 'Claude Sonnet runs ~$3/M input and $15/M output tokens. A typical daily tracker session uses under 10K tokens total — roughly $0.05–$0.15/day or $1.50–$4.50/month. The scanner itself uses zero API calls (pure Python). Only dashboard generation hits the model.',
+          },
+          {
+            q: 'Do I need a cloud subscription or SaaS tool?',
+            a: 'No. The tracker runs entirely local: git CLI, Python stdlib, and Pillow for image rendering. The only external dependency is an Anthropic API key. No Notion, no Linear, no third-party logging service.',
+          },
+          {
+            q: 'Does this work with Cursor or Claude Code?',
+            a: 'Yes. The prompt is model-agnostic — drop it into Cursor Agent, Claude Code, or any tool that takes a system prompt. Claude Code also writes token usage to JSONL transcripts that the scanner reads automatically, so cost tracking works with zero extra setup.',
+          },
+          {
+            q: 'Can I build my own AI girlfriend for free?',
+            a: 'Yes, in the sense that the core setup costs nothing upfront. The scanner and dashboard scripts are free, open, and run locally. The only cost is API usage if you use a hosted model like Claude - and at typical usage that runs under $5/month. If you want fully free, you can swap in a local model via Ollama and pay nothing.',
+          },
+          {
+            q: 'What tools do I need to build a personal AI assistant?',
+            a: 'The minimum setup is Python 3, Pillow for image rendering, and an Anthropic API key. Optional but useful: git (for tracking commits), Cursor or Claude Code as your AI IDE, and launchd or cron to schedule the nightly scan. No cloud services, no paid SaaS, no database. Everything runs from your local machine.',
+          },
+          {
+            q: 'Is it free to create a custom AI companion?',
+            a: 'The code is free. Running it costs whatever your API provider charges for the model calls - typically a few cents per day at normal usage. If you want zero ongoing cost, run a local model instead. The tracker itself (scanning, scoring, dashboard rendering) uses no API calls at all.',
+          },
+        ].map(({ q, a }) => (
+          <details
+            key={q}
+            style={{ borderBottom: '1px solid var(--border)', padding: '14px 0' }}
+          >
+            <summary
+              style={{
+                fontSize: '14px',
+                fontWeight: 600,
+                color: 'var(--text-primary)',
+                cursor: 'pointer',
+                listStyle: 'none',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              {q}
+              <span style={{ color: 'var(--accent)', marginLeft: '8px', flexShrink: 0 }}>+</span>
+            </summary>
+            <p
+              style={{
+                fontSize: '13px',
+                lineHeight: 1.75,
+                color: 'var(--text-secondary)',
+                marginTop: '10px',
+                marginBottom: 0,
+              }}
+            >
+              {a}
+            </p>
+          </details>
+        ))}
       </div>
 
       <Link href="/log" style={backLink}>

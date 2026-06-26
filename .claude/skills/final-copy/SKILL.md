@@ -1,7 +1,14 @@
 ---
 name: final-copy
-description: Convert approved markdown drafts into platform-ready plain text and optionally push to Typefully. Use when the user types /finalcopy or asks to finalize a post.
+status: deprecated
+deprecated_on: 2026-04-22
+superseded_by: code-content
+description: "[DEPRECATED 2026-04-22 — superseded by `clip` verb in the content OS] Legacy skill for pushing clean plain text to clipboard / Typefully. Do not invoke for new packs — use `/code` to dispatch, then say `clip next` to pull winning variants to clipboard."
 ---
+
+> **⚠ DEPRECATED 2026-04-22.** This skill is superseded by the `clip` / `clip next` verb in the new content operating system. Canonical doc: `~/shawn-gtme-os/content/CLAUDE.md`.
+>
+> The description below is preserved for historical reference only. For new work, `/code` the pack → `approve` → `clip next`.
 
 # Final Copy
 

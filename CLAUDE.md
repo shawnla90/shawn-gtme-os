@@ -67,6 +67,18 @@ This project runs on multiple machines. Always confirm which machine you're runn
 - **No Laziness**: Find root causes. No temporary fixes. Senior developer standards.
 - **Minimal Impact**: Changes should only touch what's necessary. Avoid introducing bugs.
 
+## Content OS (canonical)
+
+All content authoring + distribution flows through the Discord-first content operating system. Canonical doc: **`content/CLAUDE.md`** in this repo. Read it before authoring, dispatching, or publishing.
+
+- Trigger: say `code` or `/code` → invokes `~/.claude/skills/code-content/SKILL.md`.
+- Approval verbs: `status`, `approve`, `approve <channel>`, `approve <channel> hook <N>`, `edit <channel> "<instruction>"`, `final` (⚠ deploy-to-Railway), `clip next`.
+- Secrets: niobot.db `secrets` table. Access via `from secret import secret` after `sys.path.insert(0, '~/content/dispatch')`.
+- Webhooks: never hardcode, always resolve from `secrets` by key (e.g. `DISCORD_WEBHOOK_BLOG_NEWSLETTERS`).
+- **`final` on blog-newsletters** is the only verb that runs `git push origin main` → Railway redeploy. Requires user to say the word `final`.
+
+Archived skills (do not invoke for new packs): `content-drop`, `final-copy`. Engagement skills (`reddit-engage`, `x-engage`, `linkedin-comments`, `grok-critique`) remain active.
+
 ## Voice & Content Rules
 
 All content creation MUST load the voice system first:

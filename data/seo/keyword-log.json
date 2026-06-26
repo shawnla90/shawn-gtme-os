@@ -1,155 +1,5 @@
 [
   {
-    "date": "2026-02-23",
-    "keyword": "how to build ai assistant using python",
-    "score": 95.0,
-    "total_candidates": 159
-  },
-  {
-    "date": "2026-02-24",
-    "keyword": "how to build ai assistant in chatgpt",
-    "score": 95.0,
-    "total_candidates": 154
-  },
-  {
-    "date": "2026-02-25",
-    "keyword": "how to build ai automation agent",
-    "score": 95.0,
-    "total_candidates": 153
-  },
-  {
-    "date": "2026-02-26",
-    "keyword": "how to build ai agents with claude",
-    "score": 93.0,
-    "total_candidates": 155
-  },
-  {
-    "date": "2026-02-27",
-    "keyword": "build ai agent with claude",
-    "score": 93.0,
-    "total_candidates": 154
-  },
-  {
-    "date": "2026-02-28",
-    "keyword": "how to build AI assistant",
-    "score": 85.0,
-    "total_candidates": 153
-  },
-  {
-    "date": "2026-03-01",
-    "keyword": "how to build ai assistant",
-    "score": 85.0,
-    "total_candidates": 151
-  },
-  {
-    "date": "2026-03-02",
-    "keyword": "how to build your own ai agent",
-    "score": 85.0,
-    "total_candidates": 151
-  },
-  {
-    "date": "2026-03-03",
-    "keyword": "build your own ai agent",
-    "score": 85.0,
-    "total_candidates": 150
-  },
-  {
-    "date": "2026-03-04",
-    "keyword": "how to create ai assistant in python",
-    "score": 85.0,
-    "total_candidates": 149
-  },
-  {
-    "date": "2026-03-05",
-    "keyword": "best ai agent automation tools",
-    "score": 85.0,
-    "total_candidates": 148
-  },
-  {
-    "date": "2026-03-06",
-    "keyword": "best ai agent automation",
-    "score": 85.0,
-    "total_candidates": 147
-  },
-  {
-    "date": "2026-03-07",
-    "keyword": "best ai agent automation platform",
-    "score": 85.0,
-    "total_candidates": 146
-  },
-  {
-    "date": "2026-03-08",
-    "keyword": "how to build ai assistant for free",
-    "score": 85.0,
-    "total_candidates": 145
-  },
-  {
-    "date": "2026-03-09",
-    "keyword": "best ai assistant with memory",
-    "score": 83.0,
-    "total_candidates": 143
-  },
-  {
-    "date": "2026-03-10",
-    "keyword": "personal ai assistant with memory",
-    "score": 81.0,
-    "total_candidates": 143
-  },
-  {
-    "date": "2026-03-11",
-    "keyword": "best self hosted ai coding assistant",
-    "score": 77.0,
-    "total_candidates": 142
-  },
-  {
-    "date": "2026-03-12",
-    "keyword": "how to build ai automation agency",
-    "score": 77.0,
-    "total_candidates": 141
-  },
-  {
-    "date": "2026-03-13",
-    "keyword": "personal AI chatbot setup",
-    "score": 77.0,
-    "total_candidates": 140
-  },
-  {
-    "date": "2026-03-14",
-    "keyword": "ai personal assistant mac mini",
-    "score": 75.0,
-    "total_candidates": 144
-  },
-  {
-    "date": "2026-03-15",
-    "keyword": "personal ai infrastructure daniel miessler",
-    "score": 75.0,
-    "total_candidates": 143
-  },
-  {
-    "date": "2026-03-16",
-    "keyword": "how to program an ai assistant",
-    "score": 75.0,
-    "total_candidates": 142
-  },
-  {
-    "date": "2026-03-17",
-    "keyword": "best ai agent orchestration tools",
-    "score": 75.0,
-    "total_candidates": 141
-  },
-  {
-    "date": "2026-03-18",
-    "keyword": "best self hosted ai assistant",
-    "score": 75.0,
-    "total_candidates": 140
-  },
-  {
-    "date": "2026-03-19",
-    "keyword": "personal ai infrastructure github",
-    "score": 75.0,
-    "total_candidates": 139
-  },
-  {
     "date": "2026-03-20",
     "keyword": "best ai agent orchestration",
     "score": 75.0,
@@ -178,5 +28,515 @@
     "keyword": "ai assistant mac mini",
     "score": 73.0,
     "total_candidates": 134
+  },
+  {
+    "date": "2026-04-02",
+    "keyword": "how to build ai agents with claude code",
+    "score": 93.0,
+    "total_candidates": 130
+  },
+  {
+    "date": "2026-04-03",
+    "keyword": "best way to build your own ai agent",
+    "score": 85.0,
+    "total_candidates": 130
+  },
+  {
+    "date": "2026-04-04",
+    "keyword": "free ai agents & automations sabrina ramonov",
+    "score": 83.0,
+    "total_candidates": 129
+  },
+  {
+    "date": "2026-04-05",
+    "keyword": "ai agent automation jobs",
+    "score": 73.0,
+    "total_candidates": 128
+  },
+  {
+    "date": "2026-04-06",
+    "keyword": "ai agent automation tools",
+    "score": 73.0,
+    "total_candidates": 127
+  },
+  {
+    "date": "2026-04-07",
+    "keyword": "AI assistant Mac Mini",
+    "score": 73.0,
+    "total_candidates": 126
+  },
+  {
+    "date": "2026-04-08",
+    "keyword": "free ai agent automation tool",
+    "score": 73.0,
+    "total_candidates": 125
+  },
+  {
+    "date": "2026-04-09",
+    "keyword": "free ai agent automation",
+    "score": 73.0,
+    "total_candidates": 124
+  },
+  {
+    "date": "2026-04-10",
+    "keyword": "AI assistant with memory",
+    "score": 71.0,
+    "total_candidates": 123
+  },
+  {
+    "date": "2026-04-11",
+    "keyword": "ai assistant with memory",
+    "score": 71.0,
+    "total_candidates": 122
+  },
+  {
+    "date": "2026-04-12",
+    "keyword": "ai agent memory system",
+    "score": 71.0,
+    "total_candidates": 121
+  },
+  {
+    "date": "2026-04-13",
+    "keyword": "AI agent memory system",
+    "score": 71.0,
+    "total_candidates": 120
+  },
+  {
+    "date": "2026-04-14",
+    "keyword": "personal AI infrastructure",
+    "score": 68.0,
+    "total_candidates": 119
+  },
+  {
+    "date": "2026-04-15",
+    "keyword": "how to make your own ai assistant for free",
+    "score": 68.0,
+    "total_candidates": 118
+  },
+  {
+    "date": "2026-04-16",
+    "keyword": "build ai agent with claude code",
+    "score": 93.0,
+    "total_candidates": 121
+  },
+  {
+    "date": "2026-04-17",
+    "keyword": "how to create a personal ai assistant",
+    "score": 85.0,
+    "total_candidates": 120
+  },
+  {
+    "date": "2026-04-18",
+    "keyword": "how to make a personal ai assistant",
+    "score": 85.0,
+    "total_candidates": 119
+  },
+  {
+    "date": "2026-04-19",
+    "keyword": "how to make your own ai assistant in python",
+    "score": 78.0,
+    "total_candidates": 118
+  },
+  {
+    "date": "2026-04-20",
+    "keyword": "best ai assistant for solopreneur",
+    "score": 75.0,
+    "total_candidates": 117
+  },
+  {
+    "date": "2026-04-21",
+    "keyword": "personal ai infrastructure",
+    "score": 68.0,
+    "total_candidates": 116
+  },
+  {
+    "date": "2026-04-22",
+    "keyword": "create ai assistant",
+    "score": 68.0,
+    "total_candidates": 115
+  },
+  {
+    "date": "2026-04-23",
+    "keyword": "build your own airplane kit",
+    "score": 67.0,
+    "total_candidates": 114
+  },
+  {
+    "date": "2026-04-24",
+    "keyword": "free build your own ai",
+    "score": 67.0,
+    "total_candidates": 113
+  },
+  {
+    "date": "2026-04-25",
+    "keyword": "how to start ai automation agency",
+    "score": 67.0,
+    "total_candidates": 112
+  },
+  {
+    "date": "2026-04-26",
+    "keyword": "free build your own ai girl",
+    "score": 67.0,
+    "total_candidates": 111
+  },
+  {
+    "date": "2026-04-27",
+    "keyword": "free build your own ai girlfriend",
+    "score": 67.0,
+    "total_candidates": 110
+  },
+  {
+    "date": "2026-04-28",
+    "keyword": "how to use ai in devops",
+    "score": 67.0,
+    "total_candidates": 109
+  },
+  {
+    "date": "2026-04-29",
+    "keyword": "build your own AI",
+    "score": 67.0,
+    "total_candidates": 108
+  },
+  {
+    "date": "2026-04-30",
+    "keyword": "build your own ai",
+    "score": 67.0,
+    "total_candidates": 107
+  },
+  {
+    "date": "2026-05-01",
+    "keyword": "build your own airplane",
+    "score": 67.0,
+    "total_candidates": 107
+  },
+  {
+    "date": "2026-05-02",
+    "keyword": "best way to build your own ai",
+    "score": 67.0,
+    "total_candidates": 106
+  },
+  {
+    "date": "2026-05-03",
+    "keyword": "how to build your own ai model",
+    "score": 67.0,
+    "total_candidates": 105
+  },
+  {
+    "date": "2026-05-04",
+    "keyword": "how to build your own ai",
+    "score": 67.0,
+    "total_candidates": 104
+  },
+  {
+    "date": "2026-05-05",
+    "keyword": "ai agent automation",
+    "score": 66.0,
+    "total_candidates": 104
+  },
+  {
+    "date": "2026-05-06",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 103
+  },
+  {
+    "date": "2026-05-07",
+    "keyword": "claude opus vs sonnet vs haiku",
+    "score": 65.0,
+    "total_candidates": 102
+  },
+  {
+    "date": "2026-05-08",
+    "keyword": "how much does ai assistant cost",
+    "score": 63.0,
+    "total_candidates": 101
+  },
+  {
+    "date": "2026-05-09",
+    "keyword": "programmatic seo ai agent",
+    "score": 63.0,
+    "total_candidates": 100
+  },
+  {
+    "date": "2026-05-10",
+    "keyword": "ai assistant cost comparison",
+    "score": 63.0,
+    "total_candidates": 99
+  },
+  {
+    "date": "2026-05-11",
+    "keyword": "AI assistant for solopreneurs",
+    "score": 63.0,
+    "total_candidates": 98
+  },
+  {
+    "date": "2026-05-12",
+    "keyword": "self hosted AI assistant",
+    "score": 63.0,
+    "total_candidates": 97
+  },
+  {
+    "date": "2026-05-13",
+    "keyword": "AI assistant daily blog",
+    "score": 63.0,
+    "total_candidates": 96
+  },
+  {
+    "date": "2026-05-14",
+    "keyword": "ai agent orchestration framework",
+    "score": 63.0,
+    "total_candidates": 95
+  },
+  {
+    "date": "2026-05-15",
+    "keyword": "ai agent orchestration tools",
+    "score": 63.0,
+    "total_candidates": 94
+  },
+  {
+    "date": "2026-05-16",
+    "keyword": "ai agent automation course",
+    "score": 73.0,
+    "total_candidates": 94
+  },
+  {
+    "date": "2026-05-17",
+    "keyword": "ai knowledge graph builder",
+    "score": 67.0,
+    "total_candidates": 93
+  },
+  {
+    "date": "2026-05-18",
+    "keyword": "how to run ai locally on windows",
+    "score": 67.0,
+    "total_candidates": 92
+  },
+  {
+    "date": "2026-05-19",
+    "keyword": "ai assistant next js",
+    "score": 63.0,
+    "total_candidates": 93
+  },
+  {
+    "date": "2026-05-20",
+    "keyword": "most advanced ai assistant",
+    "score": 63.0,
+    "total_candidates": 92
+  },
+  {
+    "date": "2026-05-21",
+    "keyword": "how to create ai automation agent",
+    "score": 85.0,
+    "total_candidates": 94
+  },
+  {
+    "date": "2026-05-22",
+    "keyword": "best memory system for ai agent",
+    "score": 83.0,
+    "total_candidates": 93
+  },
+  {
+    "date": "2026-05-23",
+    "keyword": "examples of intelligent agents in ai",
+    "score": 73.0,
+    "total_candidates": 92
+  },
+  {
+    "date": "2026-05-24",
+    "keyword": "AI assistant XP system",
+    "score": 63.0,
+    "total_candidates": 91
+  },
+  {
+    "date": "2026-05-25",
+    "keyword": "self hosted ai assistant reddit",
+    "score": 63.0,
+    "total_candidates": 90
+  },
+  {
+    "date": "2026-05-26",
+    "keyword": "how much ai assistant cost",
+    "score": 63.0,
+    "total_candidates": 89
+  },
+  {
+    "date": "2026-05-27",
+    "keyword": "how does.ai.agent orchestration work",
+    "score": 63.0,
+    "total_candidates": 88
+  },
+  {
+    "date": "2026-05-28",
+    "keyword": "self hosted ai assistant",
+    "score": 63.0,
+    "total_candidates": 87
+  },
+  {
+    "date": "2026-05-29",
+    "keyword": "how to run ai locally on mac",
+    "score": 57.0,
+    "total_candidates": 86
+  },
+  {
+    "date": "2026-05-30",
+    "keyword": "best way to run ai locally",
+    "score": 57.0,
+    "total_candidates": 85
+  },
+  {
+    "date": "2026-05-31",
+    "keyword": "how to run ai locally",
+    "score": 57.0,
+    "total_candidates": 84
+  },
+  {
+    "date": "2026-06-01",
+    "keyword": "best create your own ai",
+    "score": 57.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-02",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-03",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-04",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-05",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-06",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-07",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-08",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-09",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-10",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-11",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-12",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-13",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-14",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-15",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-16",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-17",
+    "keyword": "AI agent automation",
+    "score": 66.0,
+    "total_candidates": 83
+  },
+  {
+    "date": "2026-06-18",
+    "keyword": "personal ai infrastructure pai",
+    "score": 75.0,
+    "total_candidates": 87
+  },
+  {
+    "date": "2026-06-19",
+    "keyword": "agents in ai geeksforgeeks",
+    "score": 73.0,
+    "total_candidates": 87
+  },
+  {
+    "date": "2026-06-20",
+    "keyword": "how to build ai agents in claude",
+    "score": 103.0,
+    "total_candidates": 77
+  },
+  {
+    "date": "2026-06-21",
+    "keyword": "AI assistant Mac Mini",
+    "score": 73.0,
+    "total_candidates": 85
+  },
+  {
+    "date": "2026-06-22",
+    "keyword": "AI assistant Mac Mini",
+    "score": 73.0,
+    "total_candidates": 88
+  },
+  {
+    "date": "2026-06-23",
+    "keyword": "AI assistant Mac Mini",
+    "score": 73.0,
+    "total_candidates": 88
+  },
+  {
+    "date": "2026-06-24",
+    "keyword": "AI assistant Mac Mini",
+    "score": 73.0,
+    "total_candidates": 79
+  },
+  {
+    "date": "2026-06-25",
+    "keyword": "AI assistant Mac Mini",
+    "score": 73.0,
+    "total_candidates": 88
   }
 ]

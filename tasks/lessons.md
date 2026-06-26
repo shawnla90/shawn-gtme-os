@@ -56,6 +56,12 @@
 5. Scan for "this is the part where" / "this is where" / "and that's when" framing. Delete entirely.
 If catching 3+ patterns, the generation approach needs tightening, not just the validation.
 
+## 2026-06-14: Reddit repo list format must match prior winning post
+
+**Context:** Shawn asked for a part-two Reddit repo post, but the first draft explained the stack conceptually instead of matching the original Reddit post that worked.
+
+**Rule:** For Reddit repo-list follow-ups, use the same native format as the winning post: numbered repo name, raw GitHub link, then short first-person context on how Shawn actually uses it. Do not turn it into an essay about the stack unless explicitly asked.
+
 ## 2026-03-03: Always verify Vercel project linkage before deploying
 
 **Context:** Chat widget deployed but API returned "API key missing" in production. Root cause: local CLI was linked to `shawnos` (wrong project) instead of `shawnos-site` (the one serving shawnos.ai). Env vars were added to the wrong project.

@@ -1,51 +1,83 @@
 {
-  "date": "2026-03-24",
+  "date": "2026-04-29",
   "active_stories": [
-    {
-      "id": "computer-use-preview",
-      "headline": "Computer use research preview launched",
-      "first_appeared": "2026-03-23",
-      "last_mentioned": "2026-03-23",
-      "status": "active",
-      "context": "845 upvotes in r/ClaudeAI, 517 in r/ClaudeCode. Community split on security implications. Potentially obsoletes Playwright/Puppeteer for many use cases."
-    },
     {
       "id": "usage-limits-march",
       "headline": "Usage limit complaints flooding r/ClaudeCode",
       "first_appeared": "2026-03-23",
-      "last_mentioned": "2026-03-24",
+      "last_mentioned": "2026-04-28",
       "status": "active",
       "context": "Multiple reports of quotas jumping 50-80% in single messages on Max plan. Anthropic acknowledged but not resolved."
     },
     {
-      "id": "five-levels-claude-code",
-      "headline": "Five levels of Claude Code framework",
-      "first_appeared": "2026-03-23",
-      "last_mentioned": "2026-03-23",
+      "id": "boris-cherny-creator-of-cc-complete-thre",
+      "headline": "Boris Cherny (creator of CC) complete thread - anthropic bans subscription on 3rd party usage",
+      "first_appeared": "2026-04-04",
+      "last_mentioned": "2026-04-28",
       "status": "active",
-      "context": "Most users plateau at level 2-3. The gap is CLAUDE.md with explicit behavioral rules vs vague project descriptions."
+      "context": "the numbers don't tell the full story here. this post matters because of who wrote it. Boris Cherny built Claude Code. and on the day Anthropic pulls the plug on OpenClaw and every other third-party h"
     },
     {
-      "id": "claude-code-can-now-dream",
-      "headline": "Claude Code can now /dream",
-      "first_appeared": "2026-03-24",
-      "last_mentioned": "2026-03-24",
+      "id": "i-built-an-ai-job-search-system-with-cla",
+      "headline": "I built an AI job search system with Claude Code that scored 740+ offers and landed me a job. Just o",
+      "first_appeared": "2026-04-05",
+      "last_mentioned": "2026-04-28",
       "status": "active",
-      "context": "the feature is called Auto Dream. the idea: Claude Code already has Auto Memory (the agent writes notes based on your corrections), but memory alone is reactive. /dream lets the agent periodically ste"
+      "context": "OP previously shared a video of the system on r/SideProject where it hit 534 upvotes. people asked for the code. OP delivered. the system turns your terminal into a job search command center. you past"
+    },
+    {
+      "id": "anthropic-just-dropped-benchmark-scores-",
+      "headline": "Anthropic just dropped benchmark scores for their unreleased model. The gap is embarrassing for ever",
+      "first_appeared": "2026-04-07",
+      "last_mentioned": "2026-04-28",
+      "status": "active",
+      "context": "The post itself is a benchmark flex. Mythos Preview numbers are out and the delta from current frontier models is significant. But the comments section went somewhere else entirely. u/premiumleo's top"
+    },
+    {
+      "id": "introducing-claude-design-by-anthropic-l",
+      "headline": "Introducing Claude Design by Anthropic Labs",
+      "first_appeared": "2026-04-17",
+      "last_mentioned": "2026-04-28",
+      "status": "active",
+      "context": "Anthropic Labs (not Anthropic proper, the distinction matters) shipped a design tool that lets you describe what you want and get prototypes, slides, and one-pagers through conversation. it's powered "
+    },
+    {
+      "id": "psa-claude-pro-no-longer-lists-claude-co",
+      "headline": "PSA: Claude Pro no longer lists Claude Code as an included feature",
+      "first_appeared": "2026-04-21",
+      "last_mentioned": "2026-04-28",
+      "status": "active",
+      "context": "the post itself was simple. someone checked the pricing page, Claude Code wasn't listed under Pro anymore, and they screenshotted it. that's it. no editorializing needed. the community took it from th"
+    },
+    {
+      "id": "anthropic-just-published-a-postmortem-ex",
+      "headline": "Anthropic just published a postmortem explaining exactly why Claude felt dumber for the past month",
+      "first_appeared": "2026-04-23",
+      "last_mentioned": "2026-04-28",
+      "status": "active",
+      "context": "three bugs. not one. three. a silent reasoning downgrade, cache misses spiking token burn, and a harness-level prompt conflict that was feeding the model contradictory instructions. the community had "
+    },
+    {
+      "id": "anthropic-just-quietly-locked-opus-behin",
+      "headline": "Anthropic just quietly locked Opus behind a paywall-within-a-paywall for Pro users in Claude Code",
+      "first_appeared": "2026-04-27",
+      "last_mentioned": "2026-04-28",
+      "status": "active",
+      "context": "the original post was clean and damning. someone found a support doc stating that Pro plan users would only get Opus models after enabling and purchasing extra usage. the math was laid out simply: you"
     }
   ],
   "yesterday_highlights": {
     "troll_of_the_day": {
-      "user": "u/svachalek",
-      "topic": "u/svachalek, 374 upvotes, responding to the \"devs are worried about the wrong thing\" post."
+      "user": "",
+      "topic": ""
     },
     "best_comment": {
-      "user": "u/Tiny_Arugula_5648",
-      "quote": "OK well now we need /acid to handle all of it's hallucinations",
-      "upvotes": 681
+      "user": "",
+      "quote": "",
+      "upvotes": 0
     },
     "repo_of_the_day": {
-      "name": "Make Claude Code go flashy",
+      "name": "",
       "author": ""
     }
   },
@@ -53,17 +85,61 @@
     {
       "id": "claude-bedtime",
       "description": "Opus 4.6 telling users to go to sleep",
-      "mention_count": 3
+      "mention_count": 24
     },
     {
       "id": "usage-limits",
       "description": "Usage quota complaints dominating r/ClaudeCode",
-      "mention_count": 5
+      "mention_count": 61
     },
     {
       "id": "vibe-coding",
       "description": "Vibe coding as a legitimate development methodology",
-      "mention_count": 4
+      "mention_count": 60
+    }
+  ],
+  "award_history": [
+    {
+      "date": "2026-04-23",
+      "troll_user": "u/Kaveh96",
+      "best_comment_user": "u/martin1744",
+      "repo_name": "Agent-Quest"
+    },
+    {
+      "date": "2026-04-24",
+      "troll_user": "",
+      "best_comment_user": "",
+      "repo_name": ""
+    },
+    {
+      "date": "2026-04-25",
+      "troll_user": "u/Clem_de_Menthe",
+      "best_comment_user": "u/sebstaq",
+      "repo_name": "Storybloq"
+    },
+    {
+      "date": "2026-04-26",
+      "troll_user": "u/MagazineSilent6569",
+      "best_comment_user": "u/martin1744",
+      "repo_name": "Plugin+Skills to use ANY CLI agent in Claude Code"
+    },
+    {
+      "date": "2026-04-27",
+      "troll_user": "u/Funkahontas",
+      "best_comment_user": "u/dlp0e",
+      "repo_name": "Divoom MiniToo Bluetooth Status Indicator"
+    },
+    {
+      "date": "2026-04-28",
+      "troll_user": "u/Gorefindal",
+      "best_comment_user": "u/ectocarpus",
+      "repo_name": ""
+    },
+    {
+      "date": "2026-04-29",
+      "troll_user": "",
+      "best_comment_user": "",
+      "repo_name": ""
     }
   ]
 }
