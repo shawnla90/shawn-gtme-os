@@ -11,6 +11,8 @@ export interface Post {
   readingTime: number
   wordCount: number
   category?: string
+  /** daily-show stream: 'ai' (AI Desk) | 'gtm' (Full-Stack GTM). undefined → treated as 'ai' */
+  stream?: string
   featured?: boolean
   updated?: string
   dateModified?: string
@@ -57,6 +59,7 @@ export function getPostBySlug(slug: string, contentDir: string): Post {
     readingTime: Math.max(1, Math.round(words / 200)),
     wordCount: words,
     category: (data.category as string) ?? undefined,
+    stream: (data.stream as string) ?? undefined,
     featured: (data.featured as boolean) ?? undefined,
     updated: (data.updated as string) ?? undefined,
     dateModified: (data.dateModified as string) ?? undefined,

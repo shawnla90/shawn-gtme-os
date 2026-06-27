@@ -16,32 +16,32 @@ function getContentDir(locale: string) {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
+  const title = 'The Daily, hosted by Aura | shawnos.ai'
+  const description =
+    'Aura reads the market every day — two desks: AI (models, Hugging Face, Claude Code, agents) and Full-Stack GTM (the SDR/RevOps/GTM-engineer convergence). High signal, zero filler.'
   return {
-    title: 'Claude Code Daily | shawnos.ai',
-    description:
-      'The daily show for Claude Code builders. News, repos, roasts, and the Reddit comments you missed. Updated every day from r/ClaudeCode.',
+    title,
+    description,
     alternates: {
       canonical: 'https://shawnos.ai/claude-daily',
       languages: hreflang('/claude-daily'),
     },
     openGraph: {
-      title: 'Claude Code Daily | shawnos.ai',
-      description:
-        'The daily show for Claude Code builders. News, repos, roasts, and the Reddit comments you missed.',
+      title,
+      description,
       url: 'https://shawnos.ai/claude-daily',
       images: [
         {
-          url: '/og?title=Claude+Code+Daily&subtitle=ecosystem+digest',
+          url: '/og?title=The+Daily&subtitle=Aura+reads+the+market',
           width: 1200,
           height: 630,
         },
       ],
     },
     twitter: {
-      title: 'Claude Code Daily | shawnos.ai',
-      description:
-        'The daily show for Claude Code builders. News, repos, roasts, and the Reddit comments you missed.',
-      images: ['/og?title=Claude+Code+Daily&subtitle=ecosystem+digest'],
+      title,
+      description,
+      images: ['/og?title=The+Daily&subtitle=Aura+reads+the+market'],
     },
   }
 }
