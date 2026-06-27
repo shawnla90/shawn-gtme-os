@@ -8,6 +8,8 @@ interface FooterProps {
 const socialLinks = [
   { href: 'https://linkedin.com/in/shawntenam', label: 'LinkedIn' },
   { href: 'https://x.com/shawntenam', label: 'X' },
+  { href: 'https://www.youtube.com/@ShawnOsAI', label: 'YouTube' },
+  { href: 'https://www.tiktok.com/@shawnos.ai', label: 'TikTok' },
   { href: 'https://github.com/shawnla90', label: 'GitHub' },
   { href: 'https://reddit.com/r/GTMBuilders', label: 'Reddit' },
   { href: 'https://shawntenam.substack.com', label: 'Substack' },
