@@ -230,24 +230,25 @@ export default async function LocaleLayout({ children, params }: Props) {
           links={[
             { href: lp('/'), label: nav('home') },
             { href: lp('/clearbox'), label: 'Clearbox' },
+            // One knowledge surface — both lenses (context eng + GTM eng) under one roof.
+            { href: '#', label: 'Knowledge', children: [
+              { href: lp('/knowledge'), label: 'Knowledge hub' },
+              { href: lp('/context-wiki'), label: 'Context Wiki' },
+              { href: lp('/guide/gtm-coding-agent'), label: 'GTM Coding Agent' },
+              { href: lp('/how-to'), label: 'How-To' },
+              { href: lp('/geo'), label: 'GEO Wiki' },
+              { href: lp('/claude-daily'), label: 'The Daily' },
+            ]},
             { href: lp('/blog'), label: nav('blog') },
             { href: lp('/reddit'), label: 'Reddit' },
-            { href: '#', label: nav('wiki'), children: [
-              { href: lp('/knowledge'), label: nav('knowledge') },
-              { href: lp('/how-to'), label: nav('howTo') },
-              { href: lp('/context-wiki'), label: nav('contextWiki') },
-              { href: lp('/geo'), label: nav('geoWiki') },
-              { href: lp('/guide/gtm-coding-agent'), label: nav('playbook') },
-            ]},
             { href: lp('/about'), label: nav('about') },
             { href: '#', label: nav('more'), children: [
-              { href: lp('/claude-daily'), label: nav('claudeDaily') },
-              { href: lp('/media'), label: nav('media') },
-              { href: lp('/log'), label: nav('log') },
-              { href: lp('/showcase'), label: nav('showcase') },
-              { href: lp('/updates'), label: nav('updates') },
-              { href: lp('/search'), label: nav('search') },
+              { href: lp('/media'), label: 'Media' },
+              { href: lp('/log'), label: 'Log' },
+              { href: lp('/showcase'), label: 'Showcase' },
+              { href: lp('/updates'), label: 'Updates' },
               { href: lp('/community'), label: 'Community' },
+              { href: lp('/search'), label: 'Search' },
             ]},
           ]}
         />
