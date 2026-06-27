@@ -36,6 +36,8 @@ export interface TimelineItem {
   meta?: TimelineMeta
   pinned?: boolean
   isFresh?: boolean
+  /** blog post category (e.g. 'ships', 'gtm-engineering'); undefined for substack/reddit */
+  category?: string
 }
 
 const SHAWN_AUTHOR: TimelineAuthor = {
@@ -81,6 +83,7 @@ export function blogPostsToTimelineItems(
           label: p.category ? `blog · ${p.category}` : 'blog',
           source: 'blog' as const,
         },
+        category: p.category,
         meta: { readingTime: p.readingTime },
         isFresh: hoursSince(p.date) < 24,
       }

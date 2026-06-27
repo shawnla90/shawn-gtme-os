@@ -25,6 +25,7 @@ export function BlogTimeline({
   tagline = 'Live feed — everything I publish: blog, Substack, Reddit.',
 }: BlogTimelineProps) {
   const [filter, setFilter] = useState<Filter>('all')
+  const [category, setCategory] = useState<string>('all')
   const [visible, setVisible] = useState(PAGE_SIZE)
 
   const counts = useMemo(() => {
@@ -33,10 +34,22 @@ export function BlogTimeline({
     return c
   }, [initialItems])
 
+  // distinct blog topics present, with counts, most-used first
+  const categories = useMemo(() => {
+    const m = new Map<string, number>()
+    for (const i of initialItems) {
+      if (i.source === 'blog' && i.category) m.set(i.category, (m.get(i.category) ?? 0) + 1)
+    }
+    return [...m.entries()].sort((a, b) => b[1] - a[1])
+  }, [initialItems])
+
   const filtered = useMemo(() => {
-    if (filter === 'all') return initialItems
-    return initialItems.filter((i) => i.source === filter)
-  }, [initialItems, filter])
+    return initialItems.filter(
+      (i) =>
+        (filter === 'all' || i.source === filter) &&
+        (category === 'all' || i.category === category),
+    )
+  }, [initialItems, filter, category])
 
   const sliced = filtered.slice(0, visible)
   const hasMore = visible < filtered.length
@@ -46,6 +59,11 @@ export function BlogTimeline({
     { id: 'blog', label: `Blog · ${counts.blog}` },
     { id: 'substack', label: `Substack · ${counts.substack}` },
     { id: 'reddit', label: `Reddit · ${counts.reddit}` },
+  ]
+
+  const categoryTabs: PillTabItem[] = [
+    { id: 'all', label: 'All topics' },
+    ...categories.map(([cat, n]) => ({ id: cat, label: `${cat.replace(/-/g, ' ')} · ${n}` })),
   ]
 
   return (
@@ -136,10 +154,28 @@ export function BlogTimeline({
             onChange={(id) => {
               setFilter(id as Filter)
               setVisible(PAGE_SIZE)
+              // source + topic are AND-ed; substack/reddit carry no topic, so clear it
+              if (id === 'substack' || id === 'reddit') setCategory('all')
             }}
             ariaLabel="Filter feed by source"
           />
         </div>
+
+        {categories.length > 0 && (
+          <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', marginTop: 8 }}>
+            <PillTabs
+              items={categoryTabs}
+              value={category}
+              onChange={(id) => {
+                setCategory(id)
+                setVisible(PAGE_SIZE)
+                // a topic is blog-only — drop any non-blog source filter
+                if (id !== 'all') setFilter('all')
+              }}
+              ariaLabel="Filter blog posts by topic"
+            />
+          </div>
+        )}
       </header>
 
       {sliced.length === 0 ? (

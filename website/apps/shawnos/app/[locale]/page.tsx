@@ -45,11 +45,13 @@ export default async function HomePage({ params }: Props) {
   setRequestLocale(locale)
 
   const posts = getAllPosts(CONTENT_DIR).filter((p) => p.category !== 'claude-daily')
-  const latestPosts = posts.slice(0, 3)
+  const featured = posts.filter((p) => p.featured)
+  // prefer hand-picked featured posts; fall back to latest if fewer than 3 are flagged
+  const homeFeatured = (featured.length >= 3 ? featured : posts).slice(0, 3)
   const timeline = getTimelineItems({
     contentDir: CONTENT_DIR,
     blogHrefBase: locale === 'en' ? '/blog' : `/${locale}/blog`,
-    limit: 8,
+    limit: 12,
     excludeCategories: ['claude-daily'],
   })
 
@@ -68,7 +70,7 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       <BreadcrumbSchema items={[]} />
-      <HomeContent posts={latestPosts} timeline={timeline} karma={karma} learning={learning} />
+      <HomeContent posts={homeFeatured} timeline={timeline} karma={karma} learning={learning} />
       <LiveUpdatesWidget announcements={announcements} />
     </>
   )

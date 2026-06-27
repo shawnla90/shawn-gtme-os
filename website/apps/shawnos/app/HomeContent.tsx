@@ -12,6 +12,8 @@ interface Post {
   title: string
   date: string
   excerpt: string
+  category?: string
+  featured?: boolean
 }
 
 interface HomeContentProps {
@@ -208,6 +210,22 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         .clearbox-lead { font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 28px; max-width: 640px; }
         .clearbox-inline-link { color: var(--text-primary); text-decoration: none; font-weight: 500; }
         .clearbox-inline-link:hover { opacity: 0.7; }
+
+        /* writing — featured posts */
+        .writing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+        .post-card {
+          background: var(--canvas-subtle); border: 1px solid var(--canvas-border); border-radius: var(--radius-lg);
+          padding: 26px 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column;
+          transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+        }
+        .post-card:hover { transform: translateY(-3px); border-color: var(--text-secondary); background: var(--canvas-card); }
+        .post-card-kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em;
+          text-transform: uppercase; color: var(--text-muted); margin: 0 0 12px; }
+        .post-card-title { font-size: 19px; font-weight: 700; color: var(--text-primary); line-height: 1.3;
+          letter-spacing: -0.01em; margin: 0 0 10px; }
+        .post-card-excerpt { font-size: 14px; color: var(--text-secondary); line-height: 1.55; margin: 0 0 18px;
+          display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .post-card-go { margin-top: auto; font-size: 13px; font-weight: 600; color: var(--text-primary); }
       `}</style>
 
       <div className="home-inner">
@@ -309,6 +327,33 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
           </div>
         </section>
 
+        {/* WRITING — featured posts, surfaced high */}
+        {posts.length > 0 && (
+          <section className="home-section">
+            <div className="home-section-head">
+              <p className="home-kicker">Writing</p>
+              <Link href={'/blog' as never} className="home-section-link">Read the blog →</Link>
+            </div>
+            <div className="writing-grid">
+              {posts.map((p) => {
+                const d = new Date(p.date)
+                const dateLabel = Number.isFinite(d.getTime())
+                  ? d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+                  : ''
+                const cat = p.category ? p.category.replace(/-/g, ' ') : ''
+                return (
+                  <Link key={p.slug} href={`/blog/${p.slug}` as never} className="post-card">
+                    <p className="post-card-kicker">{[cat, dateLabel].filter(Boolean).join(' · ')}</p>
+                    <h3 className="post-card-title">{p.title}</h3>
+                    <p className="post-card-excerpt">{p.excerpt}</p>
+                    <span className="post-card-go">Read →</span>
+                  </Link>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
         {/* WHAT CLEARBOX IS */}
         <section className="home-section">
           <div className="home-section-head">
@@ -348,7 +393,7 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
             <Link href={'/blog' as never} className="home-section-link">See all →</Link>
           </div>
           <ul className="feed-list">
-            {timeline.slice(0, 8).map((item) => (
+            {timeline.slice(0, 12).map((item) => (
               <li key={item.id} className="feed-item">
                 <span className="feed-badge" style={{ color: sourceColor[item.source] ?? 'var(--text-muted)' }}>
                   {item.badge.label}
