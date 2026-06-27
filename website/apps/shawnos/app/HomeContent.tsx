@@ -245,8 +245,8 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
           <h1 className="home-name">Shawn Tenam</h1>
           <p className="home-lead">Go-to-market engineer, now founder. Plumber for 10 years before that.</p>
           <p className="home-intro">
-            I build AI-native pipelines, agent-driven workflows, and content systems that compound.
-            Every skill, every post, every campaign runs through a single codebase.
+            I work the accounts, send the programmatic email, and write the content — then build the agents
+            that run all of it. Every campaign, every post, every skill lives in one codebase, in public.
           </p>
           <div className="home-cta">
             <ButtonLink href="/clearbox" variant="primary" size="md">
@@ -323,6 +323,21 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
                 <p className="dest-sub">Wikis, how-tos, context engineering, GEO, guides — everything in one place.</p>
               </div>
               <span className="dest-go">Open the hub →</span>
+            </Link>
+
+            {/* Built in public */}
+            <Link href={'/built' as never} className="dest-card">
+              <svg className="dest-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="3" />
+                <line x1="3" y1="12" x2="9" y2="12" />
+                <line x1="15" y1="12" x2="21" y2="12" />
+              </svg>
+              <div>
+                <p className="dest-kicker">open source · the git log</p>
+                <h3 className="dest-title">Built in public</h3>
+                <p className="dest-sub">The stars, the commit trail, and the one thing I won&apos;t claim.</p>
+              </div>
+              <span className="dest-go">See the build →</span>
             </Link>
           </div>
         </section>
