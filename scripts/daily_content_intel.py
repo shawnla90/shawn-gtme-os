@@ -1285,6 +1285,24 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
 
     body = fixed or content
 
+    # Guard against CLI tool-summary artifacts. The Apr-2026 failure mode: the agent
+    # wrote the post to a temp file and returned "Done. The blog post is at
+    # /private/tmp/claude-code-daily-...". That string then got persisted AS the digest.
+    # A real digest is long and has '##' section headers — anything else is a stub.
+    def _looks_bogus(text):
+        if not text or len(text.strip()) < 400:
+            return True
+        low = text.strip().lower()
+        if low.startswith("done") or "/private/tmp" in text or "the blog post is at" in low:
+            return True
+        if "##" not in text:
+            return True
+        return False
+
+    if _looks_bogus(body):
+        print(f"  ✗ blog body failed validation (len={len((body or '').strip())}) — refusing to write a stub")
+        return None
+
     # Update story tracker with today's content
     update_story_tracker(body, raw_data, target_date)
 
@@ -1305,11 +1323,14 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
     excerpt = excerpt.replace('"', "'")
 
     slug = f"claude-daily-{target_date}"
+    # stream routes the digest to a desk on /claude-daily: 'ai' (AI Desk) or 'gtm' (Full-Stack GTM)
+    stream = (config.get("blog_digest", {}) or {}).get("stream", "ai")
     frontmatter = f"""---
 title: "Claude Code Daily: {formatted_date}"
 date: "{target_date}"
 excerpt: "{excerpt}"
 category: "claude-daily"
+stream: "{stream}"
 featured: false
 ---"""
 
