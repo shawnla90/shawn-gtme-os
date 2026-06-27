@@ -1,0 +1,338 @@
+[
+  {
+    "hash": "8ae4fd5e",
+    "date": "2026-06-27",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 3 \u2014 surface blog higher + topic navigation"
+  },
+  {
+    "hash": "653ae0fb",
+    "date": "2026-06-27",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 2 \u2014 one knowledge surface, two lenses"
+  },
+  {
+    "hash": "a7f2ebd4",
+    "date": "2026-06-27",
+    "type": "style",
+    "scope": "shawnos",
+    "subject": "phase 1 \u2014 tighten hero, define the nav pill, de-square cards"
+  },
+  {
+    "hash": "00a01077",
+    "date": "2026-06-25",
+    "type": "fix",
+    "scope": "shawnos",
+    "subject": "honest reddit labels + OG image caching"
+  },
+  {
+    "hash": "8e3a6293",
+    "date": "2026-06-25",
+    "type": "style",
+    "scope": "shawnos",
+    "subject": "finish B&W pass \u2014 neutralize brand green on secondary pages"
+  },
+  {
+    "hash": "15a49f85",
+    "date": "2026-06-25",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "feature the Clearbox demo on the homepage + make it reusable"
+  },
+  {
+    "hash": "d6e34fb9",
+    "date": "2026-06-25",
+    "type": "fix",
+    "scope": "shawnos",
+    "subject": "relaunch staleness pass \u2014 kill 3-month-old claims"
+  },
+  {
+    "hash": "134b0a14",
+    "date": "2026-06-25",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 5 \u2014 skills/learning-in-public (/log/skills)"
+  },
+  {
+    "hash": "f623e928",
+    "date": "2026-06-25",
+    "type": "feat",
+    "scope": "shawnos blog",
+    "subject": "surface evergreen posts, retire claude-daily from index + freshness support"
+  },
+  {
+    "hash": "dbb78367",
+    "date": "2026-06-25",
+    "type": "fix",
+    "scope": "shawnos seo",
+    "subject": "add BreadcrumbSchema + hreflang to gap routes"
+  },
+  {
+    "hash": "27c9b498",
+    "date": "2026-06-25",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 3 design system \u2014 hybrid font, B&W tokens, hero fix"
+  },
+  {
+    "hash": "f8ac520c",
+    "date": "2026-06-24",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 1-2 frontend \u2014 centered pill nav, kill tri-edge dock, immersive homepage"
+  },
+  {
+    "hash": "a8b31f18",
+    "date": "2026-06-24",
+    "type": "fix",
+    "scope": "shawnos",
+    "subject": "green build \u2014 guard guide chapters with no markdown yet"
+  },
+  {
+    "hash": "87d9c5e9",
+    "date": "2026-05-26",
+    "type": "feat",
+    "scope": "reddit",
+    "subject": "playbook v2 \u2014 refresh stats, add \"beyond buy-intent\" tab + Clearbox bridge"
+  },
+  {
+    "hash": "3898f96c",
+    "date": "2026-05-22",
+    "type": "fix",
+    "scope": "shawnos",
+    "subject": "KnowledgeHub field refs \u2014 slug\u2192id for wiki entries, toSlug() for terms"
+  },
+  {
+    "hash": "9e5b918f",
+    "date": "2026-05-21",
+    "type": "fix",
+    "scope": "shawnos",
+    "subject": "restore output: 'standalone' for Railway prod build"
+  },
+  {
+    "hash": "840811c9",
+    "date": "2026-05-21",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phases 6-7 \u2014 unlumen pro + right-rail dock + knowledge hub + story-first home"
+  },
+  {
+    "hash": "71c9e90b",
+    "date": "2026-05-21",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 4 \u2014 wiki group, slim more dropdown, off-site glyph"
+  },
+  {
+    "hash": "aee01b67",
+    "date": "2026-05-21",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 3 \u2014 featured posts strip, single theme toggle"
+  },
+  {
+    "hash": "34545227",
+    "date": "2026-05-21",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 2 \u2014 clearbox cleanup, native signup, button primitive"
+  },
+  {
+    "hash": "e5d17f6a",
+    "date": "2026-05-21",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "phase 1 \u2014 monochrome accent, framed nav, drop cursor glow"
+  },
+  {
+    "hash": "03d38d8d",
+    "date": "2026-05-19",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "blog as live X-style timeline feed (S2.1)"
+  },
+  {
+    "hash": "6d2d7f06",
+    "date": "2026-05-16",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "bento homepage + services kill + nav rewire"
+  },
+  {
+    "hash": "9658444f",
+    "date": "2026-05-15",
+    "type": "feat",
+    "scope": "shawnos",
+    "subject": "aceternity foundation + xAI/ElevenLabs theme tokens"
+  },
+  {
+    "hash": "6253a1a9",
+    "date": "2026-04-23",
+    "type": "feat",
+    "scope": "blog",
+    "subject": "pick your primitive \u2014 CLI vs MCP post + 3-GIF visual system"
+  },
+  {
+    "hash": "803b1768",
+    "date": "2026-04-19",
+    "type": "feat",
+    "scope": "blog",
+    "subject": "add hubspot-outbound-engine post + GIF asset"
+  },
+  {
+    "hash": "7e094631",
+    "date": "2026-04-17",
+    "type": "fix",
+    "scope": "csp",
+    "subject": "close the last 2 Sovrn sync gaps (sitelytics img + lijit frame)"
+  },
+  {
+    "hash": "2612adeb",
+    "date": "2026-04-17",
+    "type": "fix",
+    "scope": "csp",
+    "subject": "allow Midbound Sovrn/Lijit identity graph enrichment"
+  },
+  {
+    "hash": "0808cd29",
+    "date": "2026-04-17",
+    "type": "fix",
+    "scope": "csp",
+    "subject": "allow Midbound stage 5 (event ingestion at api.sitelytics.tech)"
+  },
+  {
+    "hash": "26dc9460",
+    "date": "2026-04-17",
+    "type": "fix",
+    "scope": "csp",
+    "subject": "allow Midbound stages 3-4 (identity sync + fingerprint vendor)"
+  },
+  {
+    "hash": "983ced33",
+    "date": "2026-04-17",
+    "type": "fix",
+    "scope": "csp",
+    "subject": "allow Midbound stage-2 pixel host (*.midbound.net)"
+  },
+  {
+    "hash": "179adc98",
+    "date": "2026-04-16",
+    "type": "fix",
+    "scope": "csp",
+    "subject": "allowlist Midbound, PostHog assets, CF insights, Substack"
+  },
+  {
+    "hash": "6f6afdcd",
+    "date": "2026-04-16",
+    "type": "fix",
+    "scope": "analytics",
+    "subject": "restore original Midbound key (Yvy2M9X0v5...); the other one was for a different landing page"
+  },
+  {
+    "hash": "84e47286",
+    "date": "2026-04-16",
+    "type": "fix",
+    "scope": "docker",
+    "subject": "declare NEXT_PUBLIC_* as ARG so Railway passes them into build"
+  },
+  {
+    "hash": "c7cce3bb",
+    "date": "2026-04-16",
+    "type": "fix",
+    "scope": "analytics",
+    "subject": "bypass /ingest rewrite, hit PostHog origin directly"
+  },
+  {
+    "hash": "787c587c",
+    "date": "2026-04-12",
+    "type": "fix",
+    "scope": "",
+    "subject": "correct standalone server.js path \u2014 apps/ not website/apps/"
+  },
+  {
+    "hash": "117791cc",
+    "date": "2026-04-12",
+    "type": "fix",
+    "scope": "",
+    "subject": "move railway.json to repo root for auto-detection"
+  },
+  {
+    "hash": "980b83d7",
+    "date": "2026-04-06",
+    "type": "fix",
+    "scope": "",
+    "subject": "add @netlify/plugin-nextjs as dependency for git-triggered builds"
+  },
+  {
+    "hash": "cbf43282",
+    "date": "2026-04-06",
+    "type": "fix",
+    "scope": "",
+    "subject": "pin Node 24 for Netlify git-triggered builds"
+  },
+  {
+    "hash": "389fb9b6",
+    "date": "2026-04-05",
+    "type": "fix",
+    "scope": "",
+    "subject": "remove broken server-side Substack forwarding, use client iframe"
+  },
+  {
+    "hash": "22b8ebd8",
+    "date": "2026-03-24",
+    "type": "fix",
+    "scope": "",
+    "subject": "remove preview page, fix phone number, remove \"See Your Website\" CTA"
+  },
+  {
+    "hash": "f95af5f9",
+    "date": "2026-03-24",
+    "type": "feat",
+    "scope": "",
+    "subject": "add case study evidence images for nexus proposal"
+  },
+  {
+    "hash": "b7c0abd5",
+    "date": "2026-03-24",
+    "type": "feat",
+    "scope": "",
+    "subject": "add Nexus Construction proposal + POC landing pages"
+  },
+  {
+    "hash": "cb8a8bad",
+    "date": "2026-03-19",
+    "type": "fix",
+    "scope": "claude-daily",
+    "subject": "tighten spacing, fix quote parser, strip markdown from facts"
+  },
+  {
+    "hash": "3658f53d",
+    "date": "2026-03-19",
+    "type": "feat",
+    "scope": "claude-daily",
+    "subject": "highlight cards between hero and archive"
+  },
+  {
+    "hash": "9edc9706",
+    "date": "2026-03-19",
+    "type": "fix",
+    "scope": "claude-daily",
+    "subject": "restore ASCII art logo + CC mascot on both pages, keep section nav"
+  },
+  {
+    "hash": "48c906ff",
+    "date": "2026-03-19",
+    "type": "feat",
+    "scope": "claude-daily",
+    "subject": "premium hub redesign, clean typography, builders not developers"
+  },
+  {
+    "hash": "a3dc0854",
+    "date": "2026-03-19",
+    "type": "fix",
+    "scope": "claude-daily",
+    "subject": "premium masthead header, drop ASCII art for clean typography"
+  }
+]

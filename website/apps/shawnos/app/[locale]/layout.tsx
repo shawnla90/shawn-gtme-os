@@ -243,6 +243,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             { href: lp('/reddit'), label: 'Reddit' },
             { href: lp('/about'), label: nav('about') },
             { href: '#', label: nav('more'), children: [
+              { href: lp('/built'), label: 'Built in public' },
               { href: lp('/media'), label: 'Media' },
               { href: lp('/log'), label: 'Log' },
               { href: lp('/showcase'), label: 'Showcase' },
