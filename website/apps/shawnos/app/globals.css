@@ -515,7 +515,7 @@ html {
 .case-study-card {
   background: var(--canvas-subtle);
   border: 1px dashed var(--border-dashed);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   padding: 20px;
   cursor: pointer;
   position: relative;

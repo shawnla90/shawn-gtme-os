@@ -78,9 +78,9 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         .home-inner { max-width: var(--home-max); margin: 0 auto; padding: 0 24px 140px; }
 
         /* immersive hero */
-        .home-hero { position: relative; text-align: center; padding: 32px 0 76px; }
+        .home-hero { position: relative; text-align: center; padding: 24px 0 48px; }
         .home-hero-glow {
-          position: absolute; inset: -240px 0 auto 0; height: 720px; z-index: 0; pointer-events: none;
+          position: absolute; inset: -150px 0 auto 0; height: 460px; z-index: 0; pointer-events: none;
           background:
             radial-gradient(36% 40% at 50% 18%, color-mix(in srgb, var(--text-primary) 26%, transparent), transparent 60%),
             radial-gradient(58% 58% at 50% 12%, color-mix(in srgb, var(--text-primary) 12%, transparent), transparent 70%),
@@ -91,8 +91,8 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         }
         /* tight central bloom — the "white blur in the middle", with its own pulse */
         .home-hero-glow::before {
-          content: ''; position: absolute; left: 50%; top: 54px; transform: translateX(-50%);
-          width: 440px; height: 300px; border-radius: 50%;
+          content: ''; position: absolute; left: 50%; top: 28px; transform: translateX(-50%);
+          width: 360px; height: 220px; border-radius: 50%;
           background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--text-primary) 20%, transparent), transparent 72%);
           filter: blur(24px);
           animation: home-glow-core 7s ease-in-out infinite;
@@ -126,8 +126,8 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
           margin: 0 0 18px; font-weight: 600;
         }
         .home-name {
-          font-size: clamp(48px, 8vw, 88px); font-weight: 700; line-height: 0.98; letter-spacing: -0.035em;
-          color: var(--text-primary); margin: 0 0 18px;
+          font-size: clamp(40px, 6vw, 66px); font-weight: 700; line-height: 1.0; letter-spacing: -0.035em;
+          color: var(--text-primary); margin: 0 0 16px;
         }
         .home-lead {
           font-size: clamp(18px, 2.4vw, 22px); font-weight: 500; color: var(--text-primary);
@@ -184,7 +184,7 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         .feed-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
         .feed-item {
           display: flex; gap: 16px; align-items: baseline; flex-wrap: wrap;
-          border: 1px solid transparent; border-bottom-color: var(--canvas-border); border-radius: 10px;
+          border: 1px solid transparent; border-bottom-color: var(--canvas-border); border-radius: 14px;
           padding: 14px 14px; transition: background 0.15s ease, border-color 0.15s ease;
         }
         .feed-item:hover { background: var(--canvas-subtle); border-color: var(--canvas-border); }

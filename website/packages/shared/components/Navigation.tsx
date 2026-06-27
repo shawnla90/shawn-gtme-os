@@ -392,12 +392,14 @@ export function Navigation({ siteName, links = defaultLinks, actions, circularLi
         .nav--pill .nav-link-row {
           justify-self: center;
           gap: 4px;
-          padding: 5px;
-          border: 1px solid var(--canvas-border);
+          padding: 6px;
+          border: 1px solid color-mix(in srgb, var(--text-primary) 11%, var(--canvas-border));
           border-radius: 9999px;
-          background: color-mix(in srgb, var(--canvas-subtle) 80%, transparent);
-          backdrop-filter: blur(14px);
-          -webkit-backdrop-filter: blur(14px);
+          background: color-mix(in srgb, var(--canvas-card) 88%, transparent);
+          backdrop-filter: blur(16px) saturate(1.4);
+          -webkit-backdrop-filter: blur(16px) saturate(1.4);
+          box-shadow: 0 1px 1px color-mix(in srgb, var(--text-primary) 6%, transparent),
+                      0 10px 30px var(--shadow-color);
         }
         .nav--pill .nav-link,
         .nav--pill .nav-dropdown-trigger {
