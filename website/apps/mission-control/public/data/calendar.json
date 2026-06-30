@@ -1,169 +1,169 @@
 {
-  "generated": "2026-06-29T04:27:25.690Z",
+  "generated": "2026-06-30T04:29:48.163Z",
   "events": [
     {
-      "id": "commit-8e151ef",
+      "id": "commit-c786004",
+      "title": "chore(crypto): evening signal update 2026-06-29",
+      "type": "system",
+      "datetime": "2026-06-29T17:30:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-06-29",
+      "metadata": {
+        "commitHash": "c786004"
+      }
+    },
+    {
+      "id": "commit-dd9117c",
+      "title": "chore(crypto): morning signal update 2026-06-29",
+      "type": "system",
+      "datetime": "2026-06-29T07:00:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-06-29",
+      "metadata": {
+        "commitHash": "dd9117c"
+      }
+    },
+    {
+      "id": "commit-d2b1b1e",
+      "title": "chore: daily tracker scan 2026-06-28",
+      "type": "system",
+      "datetime": "2026-06-29T00:27:26-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-06-28",
+      "metadata": {
+        "commitHash": "d2b1b1e"
+      }
+    },
+    {
+      "id": "commit-814aa67",
       "title": "chore(crypto): evening signal update 2026-06-28",
       "type": "system",
       "datetime": "2026-06-28T17:30:07-04:00",
       "status": "completed",
       "description": "chore(crypto): evening signal update 2026-06-28",
       "metadata": {
-        "commitHash": "8e151ef"
+        "commitHash": "814aa67"
       }
     },
     {
-      "id": "commit-411f1f2",
+      "id": "commit-f9fe1a9",
       "title": "chore(crypto): morning signal update 2026-06-28",
       "type": "system",
       "datetime": "2026-06-28T07:00:06-04:00",
       "status": "completed",
       "description": "chore(crypto): morning signal update 2026-06-28",
       "metadata": {
-        "commitHash": "411f1f2"
+        "commitHash": "f9fe1a9"
       }
     },
     {
-      "id": "commit-1cc4983",
+      "id": "commit-104f8e6",
       "title": "chore: daily tracker scan 2026-06-27",
       "type": "system",
       "datetime": "2026-06-28T00:27:35-04:00",
       "status": "completed",
       "description": "chore: daily tracker scan 2026-06-27",
       "metadata": {
-        "commitHash": "1cc4983"
+        "commitHash": "104f8e6"
       }
     },
     {
-      "id": "commit-a46058c",
+      "id": "commit-a40a0ce",
       "title": "chore(crypto): evening signal update 2026-06-27",
       "type": "system",
       "datetime": "2026-06-27T17:30:05-04:00",
       "status": "completed",
       "description": "chore(crypto): evening signal update 2026-06-27",
       "metadata": {
-        "commitHash": "a46058c"
+        "commitHash": "a40a0ce"
       }
     },
     {
-      "id": "commit-1a3876b",
+      "id": "commit-0242f00",
       "title": "chore(crypto): morning signal update 2026-06-27",
       "type": "system",
       "datetime": "2026-06-27T07:00:11-04:00",
       "status": "completed",
       "description": "chore(crypto): morning signal update 2026-06-27",
       "metadata": {
-        "commitHash": "1a3876b"
+        "commitHash": "0242f00"
       }
     },
     {
-      "id": "commit-709d50b",
+      "id": "commit-f075e04",
       "title": "feat(shawnos): phase 7 — sharpen the GTM-engineer narrative ",
       "type": "system",
       "datetime": "2026-06-27T04:29:19-04:00",
       "status": "completed",
       "description": "feat(shawnos): phase 7 — sharpen the GTM-engineer narrative + surface /built",
       "metadata": {
-        "commitHash": "709d50b"
+        "commitHash": "f075e04"
       }
     },
     {
-      "id": "commit-024a361",
+      "id": "commit-c31aa18",
       "title": "feat: phase 4b — revive the daily generator + seed both desk",
       "type": "milestone",
       "datetime": "2026-06-27T04:26:19-04:00",
       "status": "completed",
       "description": "feat: phase 4b — revive the daily generator + seed both desks",
       "metadata": {
-        "commitHash": "024a361"
+        "commitHash": "c31aa18"
       }
     },
     {
-      "id": "commit-bc48749",
+      "id": "commit-4b7705a",
       "title": "feat(shawnos): phase 4a — rebrand the daily as Aura, two str",
       "type": "system",
       "datetime": "2026-06-27T04:20:50-04:00",
       "status": "completed",
       "description": "feat(shawnos): phase 4a — rebrand the daily as Aura, two streams",
       "metadata": {
-        "commitHash": "bc48749"
+        "commitHash": "4b7705a"
       }
     },
     {
-      "id": "commit-1ac41d2",
+      "id": "commit-40d4651",
       "title": "feat(shawnos): phase 6 — /watch video gallery (YouTube + Tik",
       "type": "system",
       "datetime": "2026-06-27T04:15:45-04:00",
       "status": "completed",
       "description": "feat(shawnos): phase 6 — /watch video gallery (YouTube + TikTok)",
       "metadata": {
-        "commitHash": "1ac41d2"
+        "commitHash": "40d4651"
       }
     },
     {
-      "id": "commit-b9f3f6d",
+      "id": "commit-80e78a5",
       "title": "feat(shawnos): phase 5 — /built, the proof page",
       "type": "system",
       "datetime": "2026-06-27T04:11:04-04:00",
       "status": "completed",
       "description": "feat(shawnos): phase 5 — /built, the proof page",
       "metadata": {
-        "commitHash": "b9f3f6d"
+        "commitHash": "80e78a5"
       }
     },
     {
-      "id": "commit-36318bd",
+      "id": "commit-fb7afa8",
       "title": "feat(shawnos): phase 3 — surface blog higher + topic navigat",
       "type": "system",
       "datetime": "2026-06-27T04:04:57-04:00",
       "status": "completed",
       "description": "feat(shawnos): phase 3 — surface blog higher + topic navigation",
       "metadata": {
-        "commitHash": "36318bd"
+        "commitHash": "fb7afa8"
       }
     },
     {
-      "id": "commit-4833fda",
+      "id": "commit-54e879f",
       "title": "feat(shawnos): phase 2 — one knowledge surface, two lenses",
       "type": "system",
       "datetime": "2026-06-27T03:59:26-04:00",
       "status": "completed",
       "description": "feat(shawnos): phase 2 — one knowledge surface, two lenses",
       "metadata": {
-        "commitHash": "4833fda"
-      }
-    },
-    {
-      "id": "commit-f37a7b6",
-      "title": "style(shawnos): phase 1 — tighten hero, define the nav pill,",
-      "type": "system",
-      "datetime": "2026-06-27T03:54:30-04:00",
-      "status": "completed",
-      "description": "style(shawnos): phase 1 — tighten hero, define the nav pill, de-square cards",
-      "metadata": {
-        "commitHash": "f37a7b6"
-      }
-    },
-    {
-      "id": "commit-3466380",
-      "title": "chore: daily tracker scan 2026-06-26",
-      "type": "system",
-      "datetime": "2026-06-27T00:27:34-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-06-26",
-      "metadata": {
-        "commitHash": "3466380"
-      }
-    },
-    {
-      "id": "commit-b1163a7",
-      "title": "chore(crypto): evening signal update 2026-06-26",
-      "type": "system",
-      "datetime": "2026-06-26T17:30:07-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-06-26",
-      "metadata": {
-        "commitHash": "b1163a7"
+        "commitHash": "54e879f"
       }
     }
   ],
