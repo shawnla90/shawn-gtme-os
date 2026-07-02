@@ -1,169 +1,169 @@
 {
-  "generated": "2026-07-01T04:34:01.215Z",
+  "generated": "2026-07-02T04:26:08.072Z",
   "events": [
     {
-      "id": "commit-8bd260c",
+      "id": "commit-23651f5",
+      "title": "chore(crypto): evening signal update 2026-07-01",
+      "type": "system",
+      "datetime": "2026-07-01T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-01",
+      "metadata": {
+        "commitHash": "23651f5"
+      }
+    },
+    {
+      "id": "commit-cc26f9b",
+      "title": "chore(crypto): morning signal update 2026-07-01",
+      "type": "system",
+      "datetime": "2026-07-01T07:00:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-01",
+      "metadata": {
+        "commitHash": "cc26f9b"
+      }
+    },
+    {
+      "id": "commit-ed89593",
+      "title": "chore: daily tracker scan 2026-06-30",
+      "type": "system",
+      "datetime": "2026-07-01T00:34:01-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-06-30",
+      "metadata": {
+        "commitHash": "ed89593"
+      }
+    },
+    {
+      "id": "commit-7c00435",
       "title": "chore(crypto): evening signal update 2026-06-30",
       "type": "system",
       "datetime": "2026-06-30T17:30:02-04:00",
       "status": "completed",
       "description": "chore(crypto): evening signal update 2026-06-30",
       "metadata": {
-        "commitHash": "8bd260c"
+        "commitHash": "7c00435"
       }
     },
     {
-      "id": "commit-f993d72",
+      "id": "commit-9798d59",
       "title": "chore(crypto): morning signal update 2026-06-30",
       "type": "system",
       "datetime": "2026-06-30T07:00:04-04:00",
       "status": "completed",
       "description": "chore(crypto): morning signal update 2026-06-30",
       "metadata": {
-        "commitHash": "f993d72"
+        "commitHash": "9798d59"
       }
     },
     {
-      "id": "commit-66578a6",
+      "id": "commit-9b9cf39",
       "title": "chore: daily tracker scan 2026-06-29",
       "type": "system",
       "datetime": "2026-06-30T00:29:48-04:00",
       "status": "completed",
       "description": "chore: daily tracker scan 2026-06-29",
       "metadata": {
-        "commitHash": "66578a6"
+        "commitHash": "9b9cf39"
       }
     },
     {
-      "id": "commit-21365d3",
+      "id": "commit-fe38b87",
       "title": "chore(crypto): evening signal update 2026-06-29",
       "type": "system",
       "datetime": "2026-06-29T17:30:05-04:00",
       "status": "completed",
       "description": "chore(crypto): evening signal update 2026-06-29",
       "metadata": {
-        "commitHash": "21365d3"
+        "commitHash": "fe38b87"
       }
     },
     {
-      "id": "commit-67e87e0",
+      "id": "commit-78e4a46",
       "title": "chore(crypto): morning signal update 2026-06-29",
       "type": "system",
       "datetime": "2026-06-29T07:00:08-04:00",
       "status": "completed",
       "description": "chore(crypto): morning signal update 2026-06-29",
       "metadata": {
-        "commitHash": "67e87e0"
+        "commitHash": "78e4a46"
       }
     },
     {
-      "id": "commit-3483565",
+      "id": "commit-3ebbbc5",
       "title": "chore: daily tracker scan 2026-06-28",
       "type": "system",
       "datetime": "2026-06-29T00:27:26-04:00",
       "status": "completed",
       "description": "chore: daily tracker scan 2026-06-28",
       "metadata": {
-        "commitHash": "3483565"
+        "commitHash": "3ebbbc5"
       }
     },
     {
-      "id": "commit-38545a9",
+      "id": "commit-ee65bda",
       "title": "chore(crypto): evening signal update 2026-06-28",
       "type": "system",
       "datetime": "2026-06-28T17:30:07-04:00",
       "status": "completed",
       "description": "chore(crypto): evening signal update 2026-06-28",
       "metadata": {
-        "commitHash": "38545a9"
+        "commitHash": "ee65bda"
       }
     },
     {
-      "id": "commit-2a38b75",
+      "id": "commit-20adc25",
       "title": "chore(crypto): morning signal update 2026-06-28",
       "type": "system",
       "datetime": "2026-06-28T07:00:06-04:00",
       "status": "completed",
       "description": "chore(crypto): morning signal update 2026-06-28",
       "metadata": {
-        "commitHash": "2a38b75"
+        "commitHash": "20adc25"
       }
     },
     {
-      "id": "commit-9bb4ab1",
+      "id": "commit-bbf25a1",
       "title": "chore: daily tracker scan 2026-06-27",
       "type": "system",
       "datetime": "2026-06-28T00:27:35-04:00",
       "status": "completed",
       "description": "chore: daily tracker scan 2026-06-27",
       "metadata": {
-        "commitHash": "9bb4ab1"
+        "commitHash": "bbf25a1"
       }
     },
     {
-      "id": "commit-f3935bc",
+      "id": "commit-75d2207",
       "title": "chore(crypto): evening signal update 2026-06-27",
       "type": "system",
       "datetime": "2026-06-27T17:30:05-04:00",
       "status": "completed",
       "description": "chore(crypto): evening signal update 2026-06-27",
       "metadata": {
-        "commitHash": "f3935bc"
+        "commitHash": "75d2207"
       }
     },
     {
-      "id": "commit-bb48986",
+      "id": "commit-35bbc16",
       "title": "chore(crypto): morning signal update 2026-06-27",
       "type": "system",
       "datetime": "2026-06-27T07:00:11-04:00",
       "status": "completed",
       "description": "chore(crypto): morning signal update 2026-06-27",
       "metadata": {
-        "commitHash": "bb48986"
+        "commitHash": "35bbc16"
       }
     },
     {
-      "id": "commit-0c83843",
+      "id": "commit-ce1781b",
       "title": "feat(shawnos): phase 7 — sharpen the GTM-engineer narrative ",
       "type": "system",
       "datetime": "2026-06-27T04:29:19-04:00",
       "status": "completed",
       "description": "feat(shawnos): phase 7 — sharpen the GTM-engineer narrative + surface /built",
       "metadata": {
-        "commitHash": "0c83843"
-      }
-    },
-    {
-      "id": "commit-e236f87",
-      "title": "feat: phase 4b — revive the daily generator + seed both desk",
-      "type": "milestone",
-      "datetime": "2026-06-27T04:26:19-04:00",
-      "status": "completed",
-      "description": "feat: phase 4b — revive the daily generator + seed both desks",
-      "metadata": {
-        "commitHash": "e236f87"
-      }
-    },
-    {
-      "id": "commit-ae1ac4c",
-      "title": "feat(shawnos): phase 4a — rebrand the daily as Aura, two str",
-      "type": "system",
-      "datetime": "2026-06-27T04:20:50-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): phase 4a — rebrand the daily as Aura, two streams",
-      "metadata": {
-        "commitHash": "ae1ac4c"
-      }
-    },
-    {
-      "id": "commit-4fad891",
-      "title": "feat(shawnos): phase 6 — /watch video gallery (YouTube + Tik",
-      "type": "system",
-      "datetime": "2026-06-27T04:15:45-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): phase 6 — /watch video gallery (YouTube + TikTok)",
-      "metadata": {
-        "commitHash": "4fad891"
+        "commitHash": "ce1781b"
       }
     }
   ],
