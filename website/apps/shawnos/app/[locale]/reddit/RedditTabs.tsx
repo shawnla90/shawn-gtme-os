@@ -1,7 +1,16 @@
 'use client'
 
 import React, { useState } from 'react'
+import redditStats from '@shawnos/shared/data/reddit-stats.json'
 import { EvidenceCard } from './EvidenceCard'
+
+/* ── stats helpers ──────────────────────────────────── */
+
+const fmtViews = (n: number) =>
+  n >= 1_000_000 ? `${(n / 1_000_000).toFixed(2)}M` : `${Math.round(n / 1000)}K`
+
+const KARMA_ERA = redditStats.eras.find((e) => e.era === 'karma-building') ?? { items: 0, views: 0 }
+const CLEARBOX_ERA = redditStats.eras.find((e) => e.era === 'clearbox') ?? { items: 0, views: 0 }
 
 /* ── post type archetypes with linked examples ──────── */
 
@@ -79,7 +88,7 @@ const POST_ARCHETYPES = [
       views: '18K',
       image: '/images/reddit-evidence/cc-remote-gosling.png',
       body: 'Ryan Gosling meme — posted the morning Claude Code remote access dropped. zero effort, maximum relatability.',
-      lesson: 'timing is everything. this took 30 seconds to post and outperformed most of my long-form content.',
+      lesson: 'timing is everything. this took 30 seconds to post and outperformed nearly all of my long-form content.',
     },
   },
   {
@@ -160,17 +169,32 @@ const POST_ARCHETYPES = [
   },
 ]
 
-/* ── rules ──────────────────────────────────────────── */
+/* ── the 6 craft rules (entry system lives on the karma gating tab) ── */
 
 const RULES = [
-  { rule: 'find 3 subreddits that match your niche', detail: '5K-50K members is the sweet spot. look for engagement ratios, not subscriber count. mine: r/ClaudeCode, r/gtmengineering, r/GTMBuilders.' },
-  { rule: 'comment like a madman', detail: "50/50 post-comment karma ratio is the goal. comment naturally, add value, comment again. say something worth reading." },
   { rule: 'the post is the hook, the comments are the delivery', detail: 'write a tight post. then drop the depth, the links, the repos in the comments. this is how you get 225 comments on a single post.' },
   { rule: 'publish everything fully', detail: 'MIT the repos. post the checklist inline. link the live site in the body, not behind a DM. the people who watch you give it away are the ones who hire you later.' },
   { rule: 'be genuine', detail: "post real questions you actually have. share real work you actually shipped. give real takes you actually believe. Reddit's immune system rewards the same signal it filters for." },
   { rule: 'mix your post types', detail: "memes one day, showcases the next, questions in between. variety signals you're a real person. monotone reads like a content machine." },
   { rule: 'ride the wave', detail: 'when news breaks, post within hours. my Clay pricing posts hit because I was there first with a real opinion and 18 months of daily usage behind it.' },
   { rule: 'write like you talk', detail: "if it sounds like you wrote it at 2am after a long day, post it. dictate if you have to. real cadence is what Reddit's immune system rewards." },
+]
+
+/* ── karma gating system steps ──────────────────────── */
+
+const GATING_STEPS = [
+  {
+    rule: 'pick 3 subreddits that match your niche',
+    detail: '5K-50K members is the sweet spot. look for engagement ratios, not subscriber count. mine: r/ClaudeCode, r/gtmengineering, r/GTMBuilders. then find each sub\'s gate before you post: minimum karma, minimum account age, automod filters. every sub has one.',
+  },
+  {
+    rule: 'comment for weeks before you post',
+    detail: 'comment naturally, add value, comment again. the karma you build hyping other people\'s work is what lets you post your own later without reading as a self-promoter. by the time you drop your first showcase, the sub already knows your name.',
+  },
+  {
+    rule: 'target the 50/50 post-comment split',
+    detail: `${redditStats.linkKarma.toLocaleString()} link / ${redditStats.commentKarma} comment karma is my real split right now. comments are where a sub learns to trust you, posts are where that trust pays out. the split is the tell that you live there.`,
+  },
 ]
 
 /* ── all receipts (for expandable section) ──────────── */
@@ -377,8 +401,10 @@ function PostArchetype({ archetype }: { archetype: typeof POST_ARCHETYPES[0] }) 
 
 /* ── main tabs component ────────────────────────────── */
 
+type TabId = 'posts' | 'comments' | 'gating' | 'linkmap' | 'llmo' | 'beyond'
+
 export function RedditTabs() {
-  const [tab, setTab] = useState<'posts' | 'comments' | 'beyond'>('posts')
+  const [tab, setTab] = useState<TabId>('posts')
   const [receiptsOpen, setReceiptsOpen] = useState(false)
 
   return (
@@ -390,6 +416,15 @@ export function RedditTabs() {
         </button>
         <button onClick={() => setTab('comments')} style={tab === 'comments' ? activeTab : inactiveTab}>
           comments guide
+        </button>
+        <button onClick={() => setTab('gating')} style={tab === 'gating' ? activeTab : inactiveTab}>
+          karma gating
+        </button>
+        <button onClick={() => setTab('linkmap')} style={tab === 'linkmap' ? activeTab : inactiveTab}>
+          the link map
+        </button>
+        <button onClick={() => setTab('llmo')} style={tab === 'llmo' ? activeTab : inactiveTab}>
+          LLMO
         </button>
         <button onClick={() => setTab('beyond')} style={tab === 'beyond' ? activeTab : inactiveTab}>
           beyond buy-intent
@@ -412,10 +447,11 @@ export function RedditTabs() {
 
           <hr style={divider} />
 
-          {/* 8 Rules */}
-          <h2 style={sectionTitle}>the 8 rules</h2>
+          {/* 6 Craft Rules */}
+          <h2 style={sectionTitle}>the 6 craft rules</h2>
           <p style={sectionIntro}>
             these aren&apos;t theory. every rule came from watching what worked and what got me destroyed.
+            the entry system, picking subs and building karma before you post, lives on the karma gating tab. these six are the craft.
           </p>
 
           {RULES.map((r, i) => (
@@ -487,13 +523,154 @@ export function RedditTabs() {
         </div>
       )}
 
+      {/* ── KARMA GATING TAB ── */}
+      {tab === 'gating' && (
+        <div style={{ marginTop: '24px' }}>
+          <h2 style={sectionTitle}>subreddits gate you by karma</h2>
+          <p style={sectionIntro}>
+            every sub you want to post in has a gate. some gates are posted in the rules: minimum karma, minimum account age.
+            some are invisible: automod quietly removes your post and never tells you.
+            know the gate before you post, or your best work dies in the queue with zero views and you never learn why.
+          </p>
+
+          <h2 style={sectionTitle}>the entry system</h2>
+          {GATING_STEPS.map((r, i) => (
+            <div key={i} style={ruleCard}>
+              <span style={ruleNumber}>{i + 1}</span>
+              <div style={{ flex: 1 }}>
+                <p style={ruleTitle}>{r.rule}</p>
+                <p style={ruleDetail}>{r.detail}</p>
+              </div>
+            </div>
+          ))}
+
+          <p style={sectionIntro}>
+            &quot;the post is the hook, the comments are the delivery&quot; stays on the posts guide. that&apos;s posting craft.
+            this tab is how you earn the right to post at all.
+          </p>
+
+          <p style={gatingReceipt}>
+            the receipt: my karma-building era ran {KARMA_ERA.items} posts and comments for {fmtViews(KARMA_ERA.views)} views
+            before the clearbox era started ({CLEARBOX_ERA.items} items, {fmtViews(CLEARBOX_ERA.views)} views).
+            the gate-building phase came first. it always does.
+          </p>
+
+          <div style={vaultLinkWrap}>
+            <a href="/vault" style={vaultLink}>
+              the actual files: /vault → reddit/ →
+            </a>
+          </div>
+        </div>
+      )}
+
+      {/* ── LINK MAP TAB ── */}
+      {tab === 'linkmap' && (
+        <div style={{ marginTop: '24px' }}>
+          <h2 style={sectionTitle}>where links live</h2>
+          <p style={sectionIntro}>
+            three zones, three different rules. get this wrong and the automod buries you before a human ever votes.
+          </p>
+
+          <div style={beyondSection}>
+            <h3 style={beyondName}>🚫 post bodies: almost never</h3>
+            <p style={beyondDesc}>
+              a URL in a post body gets auto-removed or shadow-buried in many subs. you find out days later when the views flatline at zero.
+              if the artifact matters, describe it in the post and put the link in a comment, or skip the link entirely.
+            </p>
+          </div>
+
+          <div style={beyondSection}>
+            <h3 style={beyondName}>💬 comments: when asked, or when the culture allows</h3>
+            <p style={beyondDesc}>
+              drop a link in a comment when someone asks for it, or when the sub treats links as answers.
+              the plumber-site comment in r/NYCapartments worked because a homeowner wanted the guides and the sub&apos;s culture allows it.
+            </p>
+            <EvidenceCard
+              title="r/NYCapartments — someone else's plumber post"
+              sub=""
+              tag="Comment"
+              tagColor="#FF4500"
+              upvotes={5}
+              comments={0}
+              views="2.8K"
+              image="/images/reddit-evidence/comment-crosspollin-plumber-frankenstein.png"
+              body='"You should definitely check out some of the homeowner guide articles in his website"'
+              lesson="the link landed because the culture allows it and the reader asked for exactly this. same comment in r/ClaudeCode would read as spam."
+            />
+          </div>
+
+          <div style={beyondSection}>
+            <h3 style={beyondName}>👤 profile: always yours</h3>
+            <p style={beyondDesc}>
+              your profile is the one zone no automod polices. pin the site, pin the repo, pin the offer.
+              every good comment sends readers there, and the click is theirs to make.
+            </p>
+          </div>
+
+          <p style={gatingReceipt}>
+            the stronger move: no URL at all. somebody asks, you describe what the thing does.
+            &quot;I built a scanner that reads every complaint thread and labels each one lead, competitor, or engager.&quot;
+            the reader who wants it will find it. the description is the link.
+          </p>
+        </div>
+      )}
+
+      {/* ── LLMO TAB ── */}
+      {tab === 'llmo' && (
+        <div style={{ marginTop: '24px' }}>
+          <h2 style={sectionTitle}>no-link mentions still index</h2>
+          <p style={sectionIntro}>
+            mentioning Clearbox by name, no link, in context of someone asking is enough to get indexed and cited by AI search.
+            here&apos;s how it works today: Google indexes Reddit within hours. LLMs cite Reddit threads.
+            an unlinked brand mention inside a high-signal answer becomes retrievable, and the model repeats it to the next person who asks.
+          </p>
+          <p style={gatingReceipt}>
+            the receipt: {redditStats.wins} tracked wins came through this pipeline.
+            {' '}{fmtViews(redditStats.trackedViews)} live-tracked views is the surface those wins came from.
+          </p>
+
+          <hr style={divider} />
+
+          <h2 style={sectionTitle}>LLMO: language-level model optimization</h2>
+          <p style={sectionIntro}>
+            the discipline on top of SEO and GEO. you&apos;re injecting your language, your phrasing, your voice
+            into the places models read, so the model&apos;s answer sounds like you and points back to you.
+          </p>
+          <p style={sectionIntro}>
+            the mechanism is voice consistency, not keyword stuffing. the same voice across Reddit, blog, and site
+            teaches the model one coherent entity. this is why the same voice DNA files run everything I publish.
+          </p>
+
+          <div style={vaultLinkWrap}>
+            <a href="/vault" style={vaultLink}>
+              the actual files: /vault → reddit/ →
+            </a>
+          </div>
+
+          <div style={beyondBridge}>
+            <p style={beyondBridgeText}>
+              Clearbox runs this loop at scale: it reads the conversations your buyers are already having,
+              labels every thread, and Aura tells you which mention to make next.
+            </p>
+            <a
+              href="https://clearbox.to"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={beyondBridgeLink}
+            >
+              See your market. Move first. →
+            </a>
+          </div>
+        </div>
+      )}
+
       {/* ── BEYOND BUY-INTENT TAB ── */}
       {tab === 'beyond' && (
         <div style={{ marginTop: '24px' }}>
           <h2 style={sectionTitle}>every conversation is worth more than the close</h2>
           <p style={sectionIntro}>
-            most people read Reddit looking for someone asking to buy. that&apos;s less than 1% of the value.
-            the other 99% is qualification surface area — pre-buy signals, competitor mentions, and the engagement that tells you
+            people read Reddit looking for someone asking to buy. that&apos;s less than 1% of the value.
+            the other 99% is qualification surface area: pre-buy signals, competitor mentions, and the engagement that tells you
             which problem to solve first. these three categories are how Clearbox labels every thread.
           </p>
 
@@ -591,7 +768,7 @@ export function RedditTabs() {
 /* ── styles ─────────────────────────────────────────── */
 
 const tabRow: React.CSSProperties = {
-  display: 'flex', gap: '4px', borderBottom: '1px solid var(--border)',
+  display: 'flex', gap: '4px', borderBottom: '1px solid var(--border)', flexWrap: 'wrap',
 }
 
 const activeTab: React.CSSProperties = {
@@ -727,6 +904,30 @@ const commentHighlight: React.CSSProperties = {
 
 const exampleGrid: React.CSSProperties = {
   display: 'flex', flexDirection: 'column', gap: '8px',
+}
+
+/* karma gating tab */
+const gatingReceipt: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-display)',
+  fontSize: '14px', color: '#FF4500', lineHeight: 1.6, margin: '0 0 20px',
+  padding: '12px 16px',
+  background: 'rgba(255, 69, 0, 0.06)',
+  borderLeft: '2px solid #FF4500',
+  borderRadius: '4px',
+  fontStyle: 'italic',
+}
+
+const vaultLinkWrap: React.CSSProperties = {
+  textAlign: 'center', marginTop: '24px', marginBottom: '24px',
+}
+
+const vaultLink: React.CSSProperties = {
+  fontFamily: 'var(--font-editorial-body)',
+  fontSize: '13px', fontWeight: 500,
+  color: 'var(--text-secondary)',
+  textDecoration: 'none',
+  borderBottom: '1px dotted var(--text-secondary)',
+  paddingBottom: '1px',
 }
 
 /* beyond buy-intent tab */

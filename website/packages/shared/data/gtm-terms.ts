@@ -382,4 +382,88 @@ export const GTM_CATEGORIES: GTMCategory[] = [
       },
     ],
   },
+  {
+    id: 'programmable-gtm',
+    name: 'Programmable GTM',
+    prompt: '$ ls ~/gtm-os/programmable-gtm/',
+    terms: [
+      {
+        id: 'programmable-gtm',
+        name: 'Programmable GTM',
+        definition:
+          'Go-to-market run as code. APIs, Python scripts, and a coding agent instead of a chain of point-and-click SaaS tools. The play lives in a script you can read, rerun, and version, not in a workflow builder you rent.',
+        whyItMatters:
+          "the SaaS chain model charges you seat prices for point-and-click access to the same APIs you could call directly. when a play lives inside a vendor's workflow builder, you can't diff it, you can't rerun it against last quarter's list, and you can't take it with you when you leave. when the play is a script, you own the pipeline end to end. you pay API prices instead of seat prices. and every play is reproducible: same input, same script, same output, six months later. that reproducibility is the real unlock. a campaign stops being a thing you did once and becomes a function you call.",
+        howYouUseIt:
+          "my entire stack runs this way. enrichment is Python scripts calling Apollo and Prospeo directly. sending is API-managed infrastructure. qualification is a prompt in a script, not a column in a SaaS table. the coding agent is the operator: I describe the play, it writes the script, the script runs against the data lake, and the output routes to sending or the CRM. when a play works, it gets committed. when a partner asks 'can we do that again for this new list,' the answer is one command, not a week of rebuilding. the test for whether something belongs in the stack: can a script call it at 2 AM without a human clicking anything?",
+        related: ['deepline', 'apollo-api-first', 'orchestration', 'enrichment-pipeline', 'mcp-litmus-test', 'data-lake'],
+      },
+      {
+        id: 'deepline',
+        name: 'Deepline',
+        definition:
+          'The orchestration spine for GTM plays. Durable datasets, waterfall enrichment, joins across providers like Apollo and Prospeo, and custom plays written as scripts. The layer where individual API calls become repeatable pipelines.',
+        whyItMatters:
+          "raw API access gets you data. it doesn't get you a pipeline. the hard part of programmable GTM is the connective tissue: what happens when provider A misses, how results from three providers join on one contact, where the dataset lives between runs so you don't re-pay for enrichment you already did. Deepline is that tissue. plays are durable, so a run that fails at record 400 of 1,000 picks up where it stopped instead of starting over. providers are interchangeable, so when one degrades you swap the waterfall order without rewriting the play. and because plays are scripts, they compose: the output of the enrichment play is the input of the qualification play.",
+        howYouUseIt:
+          "Deepline sits under every multi-provider play I run. a typical play: pull a segment from the data lake, run Apollo-first email enrichment, fall back to Prospeo on the gaps, join the results back on domain, verify, and export to the sending layer. I bring my own provider keys, so the economics stay API-priced. custom plays handle the weird stuff: joins across LinkedIn scrape data and CRM records, projections that strip a 40-column dataset down to the 6 fields the campaign needs, fallback logic per provider. the spine means I write the play once and run it against any list.",
+        related: ['programmable-gtm', 'apollo-api-first', 'rapidapi-scraping-waterfalls', 'orchestration', 'enrichment-pipeline', 'data-lake'],
+      },
+      {
+        id: 'email-bison',
+        name: 'Email Bison',
+        definition:
+          'Cold email sending infrastructure managed through its API. Campaigns, sender accounts, sequences, and reply handling all driven by scripts instead of a dashboard.',
+        whyItMatters:
+          "sending platforms are where programmable stacks usually break. enrichment and qualification live happily in scripts, then the last mile becomes a human pasting CSVs into a web UI. that manual step caps the whole pipeline. an API-managed sender like Email Bison removes the cap. campaign creation, lead upload, sequence assignment, and reply polling all happen programmatically, which means the full loop from raw list to sent email runs without a click. it also means sending becomes testable: a script can verify the campaign exists, the leads landed, and the sequence is live before anything sends.",
+        howYouUseIt:
+          "Email Bison slots in as the sending layer at the end of a play. the pipeline enriches and qualifies upstream, then a script pushes the routed contacts into the right campaign via the API, assigns the sequence, and confirms the upload count matches the input count. replies poll back out on a schedule and land in the CRM. the same pattern I apply to every sending tool: if I can create a campaign, add leads, and read replies from a script, it fits the stack. if the API only covers half of that, the missing half becomes the bottleneck.",
+        related: ['programmable-gtm', 'deepline', 'acs-deliverability-routing', 'deliverability', 'sequence'],
+      },
+      {
+        id: 'apollo-api-first',
+        name: 'Apollo (API-First)',
+        definition:
+          "Using Apollo's API directly for contact search and enrichment instead of the web UI. The first-run source of truth for contact data in a programmable stack.",
+        whyItMatters:
+          "Apollo's UI and Apollo's API are the same database with two very different economics. the UI meters you through a browser session built for one rep clicking around. the API lets a script enrich a thousand contacts in one run, on a flat plan, with every result landing in your own dataset instead of a vendor's saved list. running Apollo API-first also changes its role: it stops being a prospecting tool someone logs into and becomes the first provider in the waterfall. the script hits Apollo first because its hit rate on verified contact data is strong, and only the gaps flow to the next provider. that ordering alone cuts enrichment spend.",
+        howYouUseIt:
+          "Apollo is the first call in my enrichment waterfall. the script queries the API for each contact, writes results to the data lake with a timestamp, and flags the misses. on a recent batch the Apollo-first pass covered the bulk of contacts that had emails available, and Prospeo picked up net-new finds on the remainder. I never enrich through the UI. everything runs through scripts so the results are queryable later: which provider found this email, when, and at what confidence. that history is what makes the next campaign cheaper than the last one.",
+        related: ['deepline', 'rapidapi-scraping-waterfalls', 'programmable-gtm', 'enrichment', 'waterfall', 'data-lake'],
+      },
+      {
+        id: 'rapidapi-scraping-waterfalls',
+        name: 'RapidAPI / Scraping Waterfalls',
+        definition:
+          'Filling data gaps with scraping tools and marketplace APIs when primary providers miss. A fallback tier, not a first call. Every scraped result gets verified before it gets used.',
+        whyItMatters:
+          "no primary provider covers everything. Apollo misses contacts, official APIs get locked down, and some data only exists on a live page. that's where marketplace APIs like RapidAPI earn their place: when the front door closes, there's usually a vendor on a marketplace with a working back door. I've had LinkedIn scraping paths die one by one until a RapidAPI vendor was the only route that still returned fresh profile data. the discipline is verify-then-use. scraped data is the least trustworthy tier in the stack, so it never flows straight into a campaign. it fills gaps, gets validated, and only then joins the dataset.",
+        howYouUseIt:
+          "scraping sits at the bottom of my waterfall, after the primary providers have had their shot. the pattern: primary enrichment runs first, the gap list gets extracted, and a scraping script works the gaps through a marketplace API. results come back messy, so every record passes a validation gate: does the email have a valid MX record, does the profile match the person, is the data fresh enough to act on. anything that fails the gate gets dropped, not hedged. I also test marketplace vendors on 5 rows before running a batch, because half of them are stale wrappers around dead endpoints. the good ones are gold. the bad ones burn credits and return 2019 data.",
+        related: ['apollo-api-first', 'deepline', 'waterfall', 'validation', 'enrichment', 'rate-limiting'],
+      },
+      {
+        id: 'posthog-gtm-signal',
+        name: 'PostHog as GTM Signal',
+        definition:
+          'Product analytics turned into an outbound signal source. Watching what bounces, what dwells, and which pages prospects hit, then feeding that behavior back into plays.',
+        whyItMatters:
+          "analytics tools get treated as reporting: a dashboard someone checks monthly to feel good about traffic. that wastes the data. a prospect who spent four minutes on your pricing page is a warmer signal than any enrichment field you can buy, and it's sitting in your own event stream for free. the shift is treating PostHog as a signal source that plays can query. dwell time on a landing page tells you which account is actually reading. a bounce off the top of a page tells you the hook failed for that segment. pages hit in sequence tell you what a prospect is evaluating. all of that is targeting data, not vanity metrics.",
+        howYouUseIt:
+          "PostHog events flow into my plays two ways. first, prospect behavior: personalized landing pages carry company context in their events, so when an account visits, dwells, and scrolls, a script picks that up and moves the account up the priority queue. deep dwell routes to a founder-touch sequence instead of the standard one. second, content feedback: I query dwell and bounce across properties to see which pages hold attention and which lose it, then the next batch of pages gets built from what held. the queries run through the PostHog API on a schedule, so the signal is a column in the dataset by the time the next play runs.",
+        related: ['programmable-gtm', 'signals', 'web-reveal', 'routing', 'scoring'],
+      },
+      {
+        id: 'acs-deliverability-routing',
+        name: 'ACS / Deliverability Routing',
+        definition:
+          'Knowing which mailbox infrastructure lands where, and routing every send accordingly. Deliverability treated as a routed system with measured paths, not a prayer you say before hitting launch.',
+        whyItMatters:
+          "the same domain can be poison on one path and clean on another. I run sending domains that wall at Google on reputation, bouncing at 33%, while the identical domains land at Microsoft inboxes at a 1% bounce rate. one sending stack, two completely different outcomes, decided entirely by the receiving provider. if you don't know your landing rates per provider, you're averaging a great path and a terrible path into one mediocre number and torching domains to learn it. routing fixes this: classify every contact by mail provider before sending, and only send down paths you've measured. Azure Communication Services (ACS) is one of those paths, sending infrastructure you control at the API level instead of renting mailbox seats.",
+        howYouUseIt:
+          "every send in my stack passes through a routing gate. an MX classification script tags each contact with their email provider, and the send logic routes on that tag: contacts on providers where my domains land go through the ACS pipeline, contacts on providers where those domains wall get held back or routed to a different channel entirely. the gate is code, so it can't be skipped by enthusiasm. I learned the split by measuring bounces per provider, not per campaign. once the paths are mapped, deliverability stops being a mystery that strikes at random and becomes a routing table you maintain.",
+        related: ['deliverability', 'mx-record', 'email-bison', 'domain-warming', 'routing', 'programmable-gtm'],
+      },
+    ],
+  },
 ]

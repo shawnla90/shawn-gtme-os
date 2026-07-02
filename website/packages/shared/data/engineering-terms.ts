@@ -693,6 +693,20 @@ export const ENGINEERING_CATEGORIES: KnowledgeCategory[] = [
           'The Keyword Nugget Pattern',
         ],
       },
+      {
+        name: 'LLMO (Language-Level Model Optimization)',
+        definition:
+          'Injecting your language and voice into the surfaces AI models read, like Reddit threads, blog posts, and your own site, so AI answers sound like you and point back to you. Sits on top of SEO and GEO.',
+        whyItMatters:
+          "GEO gets you cited. LLMO gets you echoed. When a model has read your phrasing across enough surfaces, it starts reproducing your framing when it answers questions in your space. Your terminology becomes the default vocabulary for the topic. I have watched this happen with Reddit: threads I wrote pulled 2M+ cumulative views, and the language from those threads shows up in AI answers about the same topics. That is a different game from ranking. Ranking gets you a link. LLMO gets your worldview baked into the answer itself, and the answer points back to you because you are the origin of the phrasing.",
+        howYouUseIt:
+          'Pick the vocabulary you want to own and use it consistently everywhere models read: Reddit, the blog, the site, LinkedIn. Same terms, same framing, same definitions, across every surface. The knowledge base here does this by design: every term gets a canonical definition that repeats across the wiki, the guides, and the posts that reference it. Reddit is the highest-leverage surface because models train on it heavily and threads persist. Write the definitive thread on your topic in your own language, and that language compounds.',
+        related: [
+          'GEO (Generative Engine Optimization)',
+          'Entity Authority',
+          'Content Extractability',
+        ],
+      },
     ],
   },
 ]

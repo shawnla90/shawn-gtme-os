@@ -462,7 +462,7 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
       'How to pass context between sessions so agents never start from zero',
     category: 'modes',
     description:
-      'Parallel-safe context handoff architecture for Claude Code. How to move from a single handoff file to timestamped parallel writes that survive 6 terminals running at once. The pattern that makes sessions compound instead of reset.',
+      'Parallel-safe context handoff architecture for Claude Code. Session-end handoff files that let the next agent session resume with full state, and the pattern that survives full context windows. How to move from a single handoff file to timestamped parallel writes that survive 6 terminals running at once.',
     keywords: [
       'context handoffs claude code',
       'claude code session handoff',
@@ -503,6 +503,12 @@ export const CONTEXT_WIKI_ENTRIES: ContextWikiEntry[] = [
         type: 'formula',
         content:
           'Every handoff document needs five sections:\n\n1. Session summary. One paragraph. What was the goal and what happened.\n2. What changed. Files created, modified, deleted. Specific paths.\n3. What still needs work. Unfinished tasks, known bugs, next steps.\n4. Key decisions. Architectural choices, tradeoffs, things the next session should not revisit.\n5. Active context. Branch name, running processes, environment state, anything the next session needs to know about the current machine state.\n\nKeep it factual. No commentary, no opinions, no narrative. The handoff is a status report, not a blog post. A session reading it at 6 AM does not need your feelings about the refactor. It needs to know which files changed and what broke.',
+      },
+      {
+        heading: 'Handoffs Survive Full Context Windows',
+        type: 'pro-tip',
+        content:
+          'Handoffs are not just for session boundaries. They are the escape hatch for a full context window. When a long session approaches the limit, the agent compacts or resets, and everything not written down is at risk. A handoff written before the wall hits means the reset costs you nothing: the next session (or the same session after compaction) reads the file and resumes with full state. The habit that makes this work is writing the handoff when the work is done, not when the context is dying. By the time the window is full, it is too late to reconstruct the details worth saving. Treat the handoff as part of finishing the task, and full context windows become a non-event instead of a data loss.',
       },
     ],
   },

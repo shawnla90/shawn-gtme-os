@@ -33,7 +33,7 @@ export async function generateMetadata(): Promise<Metadata> {
     openGraph: {
       title: 'Engineering & AI Knowledge Guide | shawnos.ai',
       description:
-        'Technical terms explained for vibe coders and GTM engineers. No gatekeeping, no overcomplicated BS.',
+        'Technical terms explained for vibe coders and GTM engineers. No gatekeeping, no overcomplicated BS. Updated July 2026 with the programmable GTM stack.',
       url: 'https://shawnos.ai/knowledge',
       images: [
         {
@@ -46,7 +46,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       title: 'Engineering & AI Knowledge Guide | shawnos.ai',
       description:
-        'Technical terms explained for vibe coders and GTM engineers.',
+        'Technical terms explained for vibe coders and GTM engineers. Updated July 2026.',
       images: [
         '/og?title=Knowledge+Guide&subtitle=Engineering+and+AI+Terms',
       ],

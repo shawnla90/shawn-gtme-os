@@ -3,6 +3,7 @@ import { setRequestLocale } from 'next-intl/server'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../i18n/hreflang'
 import { fetchUserProfile } from '@shawnos/shared/lib/reddit'
+import redditStats from '@shawnos/shared/data/reddit-stats.json'
 import { RedditTabs } from './RedditTabs'
 
 export const revalidate = 3600
@@ -14,9 +15,8 @@ type Props = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'Reddit Growth Playbook — 2,000+ Karma, 2M+ Views'
-  const description =
-    'How I built 2,000+ karma and 2M+ views with a 50/50 post-comment ratio across r/GTMbuilders, r/gtmengineering, r/ClaudeCode and 15 other communities. Every Reddit conversation becomes a lead, a competitor signal, or an engagement opportunity.'
+  const title = 'Reddit Growth Playbook — 2,300+ Karma, 2M+ Views'
+  const description = `How I built ${redditStats.totalKarma.toLocaleString()} karma and 2M+ views on Reddit, with ${(redditStats.trackedViews / 1_000_000).toFixed(2)}M views live-tracked right now. The karma gating system, the link map, LLMO, and how every conversation becomes a lead, a competitor signal, or an engagement opportunity.`
   return {
     title,
     description,
@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/reddit`,
       images: [
         {
-          url: `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma. 2M+ views. the evidence.')}`,
+          url: `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,300+ karma. 2M+ views. the evidence.')}`,
           width: 1200,
           height: 630,
         },
@@ -47,7 +47,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       images: [
-        `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,000+ karma. 2M+ views. the evidence.')}`,
+        `/og?title=${encodeURIComponent('Reddit Growth Playbook')}&subtitle=${encodeURIComponent('2,300+ karma. 2M+ views. the evidence.')}`,
       ],
     },
   }
@@ -222,16 +222,16 @@ export default async function RedditPage({ params }: Props) {
             <span style={heroAccent}>Reddit</span> Growth Playbook
           </h1>
           <p style={heroSub}>
-            2,000+ karma. nearly 50/50 post-comment ratio. 2M+ views.
+            {redditStats.totalKarma.toLocaleString()} karma. {redditStats.linkKarma.toLocaleString()} link / {redditStats.commentKarma} comment, the 50/50 split. 2M+ cumulative views, {(redditStats.trackedViews / 1_000_000).toFixed(2)}M of it live-tracked right now.
             <br />
-            most active in r/GTMbuilders, r/gtmengineering, r/ClaudeCode + 15 others — here&apos;s exactly how I did it, what flopped, and how every conversation became a lead, a competitor signal, or an engagement opportunity.
+            home subs: r/GTMbuilders, r/gtmengineering, r/ClaudeCode + 15 others. here&apos;s exactly how I did it, what flopped, and how every conversation became a lead, a competitor signal, or an engagement opportunity.
           </p>
         </section>
 
-        {/* Stats */}
+        {/* Stats — JSON is the floor, live fetch can only raise the number */}
         <div style={statGrid}>
           <div style={statCard}>
-            <p style={statNumber}>{profile?.totalKarma?.toLocaleString() ?? '2,181'}</p>
+            <p style={statNumber}>{Math.max(profile?.totalKarma ?? 0, redditStats.totalKarma).toLocaleString()}</p>
             <p style={statLabel}>total karma</p>
           </div>
           <div style={statCard}>
@@ -239,26 +239,26 @@ export default async function RedditPage({ params }: Props) {
             <p style={statLabel}>views</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>50/50</p>
-            <p style={statLabel}>post/comment ratio</p>
+            <p style={statNumber}>{(redditStats.trackedViews / 1_000_000).toFixed(2)}M</p>
+            <p style={statLabel}>views live-tracked</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>3</p>
-            <p style={statLabel}>months</p>
+            <p style={statNumber}>{redditStats.totalPosts + redditStats.totalComments}</p>
+            <p style={statLabel}>posts + comments</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>350+</p>
-            <p style={statLabel}>contributions</p>
+            <p style={statNumber}>{redditStats.wins}</p>
+            <p style={statLabel}>tracked wins</p>
           </div>
           <div style={statCard}>
-            <p style={statNumber}>308</p>
+            <p style={statNumber}>{redditStats.topPost.score}</p>
             <p style={statLabel}>top post ↑</p>
           </div>
         </div>
 
         <hr style={sectionDivider} />
 
-        {/* All content lives in tabs: posts guide (types → rules → receipts) | comments guide */}
+        {/* All content lives in tabs: posts guide | comments guide | karma gating | the link map | LLMO | beyond buy-intent */}
         <RedditTabs />
 
         <hr style={sectionDivider} />
