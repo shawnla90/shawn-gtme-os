@@ -8,7 +8,7 @@
 /* === Tailwind v4: route dark: variant through our data-theme attribute === */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
-/* === shawnos.ai theme tokens — xAI dark / ElevenLabs light === */
+/* === shawnos.ai theme tokens — Clearbox aura dark / ElevenLabs light === */
 :root,
 [data-theme="dark"] {
   /* canvas — near-black engineered surface */
@@ -16,10 +16,10 @@
   --canvas-subtle: #121212;
   --canvas-border: #1f1f1f;
   --canvas-card: #161616;
-  --canvas-warm: rgba(251, 146, 60, 0.04);
-  --canvas-warm-subtle: rgba(251, 146, 60, 0.02);
+  --canvas-warm: rgba(109, 94, 233, 0.05);
+  --canvas-warm-subtle: rgba(109, 94, 233, 0.025);
   --canvas-dark: #050505;
-  --grid-color: #1a1a1a;
+  --grid-color: #16132a;
   --border-dashed: #262626;
 
   /* radius scale — pill-first */
@@ -33,22 +33,27 @@
   --text-secondary: #a3a3a3;
   --text-muted: #525252;
 
-  /* accent — monochrome: bound to ink, no color */
-  --accent: var(--text-primary);
+  /* aura — the Clearbox-family violet. Canonical: oklch(0.585 0.223 264.376) */
+  --aura: #6d5ee9;
+  --aura-strong: #8b7dff;
+  --aura-glow: rgba(109, 94, 233, 0.25);
 
-  /* brand palette tokens — neutralized to monochrome on shawnos.
+  /* accent — aura violet on interactive/brand surfaces; headings stay ink */
+  --accent: var(--aura);
+
+  /* brand palette tokens — green/amber stay quiet; purple IS the brand now.
      Shared tokens.css defaults these to color for the sibling sites;
      overriding here keeps gtmos/contentos untouched. */
   --shawnos-green: var(--text-primary);
-  --shawnos-purple: var(--text-secondary);
+  --shawnos-purple: var(--aura);
   --shawnos-amber: var(--text-secondary);
 
-  --link: var(--accent);
-  --link-hover: color-mix(in srgb, var(--accent) 75%, white);
+  --link: var(--aura-strong);
+  --link-hover: color-mix(in srgb, var(--aura-strong) 70%, white);
   --border: var(--canvas-border);
   --code-bg: var(--canvas-subtle);
   --nav-backdrop: rgba(10, 10, 10, 0.82);
-  --text-on-accent: #0a0a0a;
+  --text-on-accent: #fafafa;
   --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -58,10 +63,10 @@
   --canvas-subtle: #e7e5e4;
   --canvas-border: #d6d3d1;
   --canvas-card: #ffffff;
-  --canvas-warm: rgba(253, 186, 116, 0.08);
-  --canvas-warm-subtle: rgba(253, 186, 116, 0.04);
+  --canvas-warm: rgba(109, 94, 233, 0.06);
+  --canvas-warm-subtle: rgba(109, 94, 233, 0.03);
   --canvas-dark: #1c1917;
-  --grid-color: #d6d3d1;
+  --grid-color: #e2ddf2;
   --border-dashed: #d6d3d1;
 
   /* ink — near-black, never pure */
@@ -69,23 +74,35 @@
   --text-secondary: #57534e;
   --text-muted: #a8a29e;
 
-  /* accent — monochrome: bound to ink, no color */
-  --accent: var(--text-primary);
+  /* aura — darkened a step for contrast on off-white */
+  --aura: #5646d1;
+  --aura-strong: #6d5ee9;
+  --aura-glow: rgba(109, 94, 233, 0.16);
 
-  --link: var(--accent);
-  --link-hover: color-mix(in srgb, var(--accent) 65%, white);
+  /* accent — aura violet on interactive/brand surfaces; headings stay ink */
+  --accent: var(--aura);
+
+  --link: var(--aura);
+  --link-hover: color-mix(in srgb, var(--aura) 70%, black);
   --border: var(--canvas-border);
   --code-bg: var(--canvas-subtle);
   --nav-backdrop: rgba(245, 245, 244, 0.82);
-  --text-on-accent: #f5f5f4;
+  --text-on-accent: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
 /* === Base body styles === */
+/* Fine engineered grid painted into the body background itself —
+   the Clearbox-family surface. Solid card/nav fills sit on top of it. */
 html body {
   margin: 0;
   padding: 0;
-  background: var(--canvas);
+  background-color: var(--canvas);
+  background-image:
+    linear-gradient(0deg, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -116,6 +133,19 @@ main {
 
 @media (max-width: 480px) {
   main { padding: 0 12px; }
+}
+
+/* === Aura nav pill (scoped override of the shared Navigation styles;
+   siblings keep their own look) === */
+.nav--pill .nav-link-active {
+  background: var(--aura) !important;
+  color: #fafafa !important;
+  border-color: var(--aura) !important;
+  box-shadow: 0 0 16px var(--aura-glow);
+}
+.nav--pill .nav-link:hover,
+.nav--pill .nav-dropdown-trigger:hover {
+  border-color: color-mix(in srgb, var(--aura) 45%, var(--canvas-border)) !important;
 }
 
 /* === Sticky nav === */
@@ -213,7 +243,7 @@ nav[class*="nav"] {
 .prose h1,
 .prose h2,
 .prose h3 {
-  color: var(--accent);
+  color: var(--text-primary);
   font-weight: 700;
   font-family: var(--font-sans);
   line-height: 1.3;
@@ -703,7 +733,7 @@ html {
 .guide-prose h1,
 .guide-prose h2,
 .guide-prose h3 {
-  color: var(--accent);
+  color: var(--text-primary);
   font-weight: 700;
   font-family: var(--font-sans);
   line-height: 1.3;

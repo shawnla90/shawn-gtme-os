@@ -84,18 +84,18 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         .home-hero-glow {
           position: absolute; inset: -150px 0 auto 0; height: 460px; z-index: 0; pointer-events: none;
           background:
-            radial-gradient(36% 40% at 50% 18%, color-mix(in srgb, var(--text-primary) 26%, transparent), transparent 60%),
-            radial-gradient(58% 58% at 50% 12%, color-mix(in srgb, var(--text-primary) 12%, transparent), transparent 70%),
-            radial-gradient(92% 82% at 50% 2%, color-mix(in srgb, var(--text-primary) 5%, transparent), transparent 80%);
+            radial-gradient(36% 40% at 50% 18%, color-mix(in srgb, var(--aura-strong) 34%, transparent), transparent 60%),
+            radial-gradient(58% 58% at 50% 12%, color-mix(in srgb, var(--aura) 18%, transparent), transparent 70%),
+            radial-gradient(92% 82% at 50% 2%, color-mix(in srgb, var(--aura) 7%, transparent), transparent 80%);
           -webkit-mask-image: radial-gradient(76% 76% at 50% 24%, #000, transparent 82%);
           mask-image: radial-gradient(76% 76% at 50% 24%, #000, transparent 82%);
           animation: home-glow-breathe 9s ease-in-out infinite;
         }
-        /* tight central bloom — the "white blur in the middle", with its own pulse */
+        /* tight central bloom — the aura core, with its own pulse */
         .home-hero-glow::before {
           content: ''; position: absolute; left: 50%; top: 28px; transform: translateX(-50%);
           width: 360px; height: 220px; border-radius: 50%;
-          background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--text-primary) 20%, transparent), transparent 72%);
+          background: radial-gradient(50% 50% at 50% 50%, color-mix(in srgb, var(--aura-strong) 30%, transparent), transparent 72%);
           filter: blur(24px);
           animation: home-glow-core 7s ease-in-out infinite;
         }
@@ -113,8 +113,8 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         .home-hero-grid {
           position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.5;
           background-image:
-            linear-gradient(color-mix(in srgb, var(--text-primary) 4%, transparent) 1px, transparent 1px),
-            linear-gradient(90deg, color-mix(in srgb, var(--text-primary) 4%, transparent) 1px, transparent 1px);
+            linear-gradient(color-mix(in srgb, var(--aura) 9%, transparent) 1px, transparent 1px),
+            linear-gradient(90deg, color-mix(in srgb, var(--aura) 9%, transparent) 1px, transparent 1px);
           background-size: 44px 44px;
           -webkit-mask-image: radial-gradient(60% 55% at 50% 30%, #000, transparent 70%);
           mask-image: radial-gradient(60% 55% at 50% 30%, #000, transparent 70%);

@@ -30,7 +30,7 @@ export default function Icon() {
           position: 'relative',
         }}
       >
-        {/* Back C — darker green */}
+        {/* Back C — deep aura */}
         {BACK.map(([c, r], i) => (
           <div
             key={`b${i}`}
@@ -40,12 +40,12 @@ export default function Icon() {
               top: PAD + r * PITCH + 4,
               width: CELL,
               height: CELL,
-              background: '#6b6b6b',
+              background: '#4a3fb0',
               borderRadius: 0.5,
             }}
           />
         ))}
-        {/* Overlap — brightest */}
+        {/* Overlap — brightest aura */}
         {OVERLAP.map(([c, r], i) => (
           <div
             key={`o${i}`}
@@ -55,12 +55,12 @@ export default function Icon() {
               top: PAD + r * PITCH + 4,
               width: CELL,
               height: CELL,
-              background: '#fafafa',
+              background: '#a99dff',
               borderRadius: 0.5,
             }}
           />
         ))}
-        {/* Front C — green */}
+        {/* Front C — aura */}
         {FRONT.map(([c, r], i) => (
           <div
             key={`f${i}`}
@@ -70,7 +70,7 @@ export default function Icon() {
               top: PAD + r * PITCH + 4,
               width: CELL,
               height: CELL,
-              background: '#a3a3a3',
+              background: '#6d5ee9',
               borderRadius: 0.5,
             }}
           />
