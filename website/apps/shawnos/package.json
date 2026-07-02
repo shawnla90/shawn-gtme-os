@@ -14,6 +14,7 @@
   "dependencies": {
     "@ai-sdk/anthropic": "^3.0.54",
     "@ai-sdk/react": "^3.0.113",
+    "@radix-ui/react-popover": "^1.1.18",
     "@shawnos/shared": "*",
     "@vercel/speed-insights": "^1.3.1",
     "ai": "^6.0.111",
@@ -26,6 +27,7 @@
     "posthog-js": "^1.358.1",
     "react": "^19",
     "react-dom": "^19",
+    "react-tweet": "^3.3.1",
     "react-use-measure": "^2.1.7"
   },
   "devDependencies": {
@@ -33,6 +35,7 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "archiver": "^7.0.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

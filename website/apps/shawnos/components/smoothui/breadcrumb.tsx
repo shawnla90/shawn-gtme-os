@@ -1,0 +1,102 @@
+"use client";
+
+import { cn } from "@shawnos/shared/lib/utils";
+import { ChevronRight } from "lucide-react";
+import { motion, useReducedMotion } from "motion/react";
+import type { ReactNode } from "react";
+const SPRING_DEFAULT = { type: "spring" as const, duration: 0.25, bounce: 0.1 };
+
+/** A single breadcrumb item definition. */
+export type BreadcrumbItemProps = {
+  /** Display label for the breadcrumb item. */
+  label: ReactNode;
+  /** URL the breadcrumb links to. Omit for the current (last) page. */
+  href?: string;
+};
+
+export type BreadcrumbProps = {
+  /** Ordered list of breadcrumb items. The last item is treated as the current page. */
+  items: BreadcrumbItemProps[];
+  /** Custom separator element. Defaults to a chevron icon. */
+  separator?: ReactNode;
+  /** Additional CSS classes for the nav element. */
+  className?: string;
+  /** Link renderer — pass the app's i18n Link for locale-aware navigation. Defaults to <a>. */
+  linkComponent?: React.ComponentType<{
+    href: string;
+    className?: string;
+    children: ReactNode;
+  }>;
+};
+
+const staggerDelay = 0.04;
+
+export default function Breadcrumb({
+  items,
+  separator,
+  className,
+  linkComponent,
+}: BreadcrumbProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const LinkComp = linkComponent ?? "a";
+
+  return (
+    <nav aria-label="Breadcrumb" className={cn("inline-flex", className)}>
+      <ol className="flex flex-wrap items-center gap-1.5 text-muted-foreground text-sm sm:gap-2.5">
+        {items.map((item, index) => {
+          const isLast = index === items.length - 1;
+
+          return (
+            <motion.li
+              animate={{ opacity: 1, transform: "translateX(0px)" }}
+              className="inline-flex items-center gap-1.5"
+              initial={
+                shouldReduceMotion
+                  ? { opacity: 1 }
+                  : { opacity: 0, transform: "translateX(-4px)" }
+              }
+              key={
+                typeof item.label === "string"
+                  ? item.label
+                  : `breadcrumb-${String(index)}`
+              }
+              transition={
+                shouldReduceMotion
+                  ? { duration: 0 }
+                  : {
+                      ...SPRING_DEFAULT,
+                      delay: index * staggerDelay,
+                    }
+              }
+            >
+              {index > 0 && (
+                <span
+                  aria-hidden="true"
+                  className="mr-1.5 [&>svg]:size-3.5"
+                  role="presentation"
+                >
+                  {separator ?? <ChevronRight className="size-3.5" />}
+                </span>
+              )}
+              {isLast ? (
+                <span
+                  aria-current="page"
+                  className="font-normal text-foreground"
+                >
+                  {item.label}
+                </span>
+              ) : (
+                <LinkComp
+                  className="transition-colors hover:text-foreground"
+                  href={item.href ?? "#"}
+                >
+                  {item.label}
+                </LinkComp>
+              )}
+            </motion.li>
+          );
+        })}
+      </ol>
+    </nav>
+  );
+}

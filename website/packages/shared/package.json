@@ -52,6 +52,7 @@
     "./hooks/useTheme": "./hooks/useTheme.ts",
     "./hooks/useContentTracking": "./hooks/useContentTracking.ts",
     "./data/ai-news-cache.json": "./data/ai-news-cache.json",
+    "./data/github-contributions.json": "./data/github-contributions.json",
     "./styles": "./styles/tokens.css",
     "./data/guide-manifest": "./data/guide-manifest.ts"
   },

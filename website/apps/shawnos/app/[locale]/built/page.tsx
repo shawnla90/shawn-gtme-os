@@ -4,10 +4,14 @@ import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../i18n/hreflang'
 import { getBuildStats } from './stats'
 import journeyRaw from '../../data/build-journey.json'
+import contributionsRaw from '@shawnos/shared/data/github-contributions.json'
+import ContributionGraph from '../../../components/smoothui/contribution-graph'
+import GitHubStarsAnimation from '../../../components/smoothui/github-stars-animation'
 
 export const revalidate = 3600
 
 const SITE_URL = 'https://shawnos.ai'
+const GH_FLAGSHIP = { owner: 'shawnla90' }
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -60,6 +64,10 @@ export default async function BuiltPage({ params }: Props) {
   const months = [...byMonth.keys()].sort((a, b) => (a < b ? 1 : -1))
 
   const flagship = stats.topRepos[0]
+
+  const contribYear = parseInt(contributionsRaw.pulledAt.slice(0, 4), 10)
+  const contribDays = contributionsRaw.days.filter((d) => d.date.startsWith(String(contribYear)))
+  const contribYearTotal = contribDays.reduce((a, d) => a + d.count, 0)
 
   return (
     <>
@@ -159,6 +167,19 @@ export default async function BuiltPage({ params }: Props) {
         </div>
         <p className="built-live"><i />{stats.live ? 'live from the GitHub API' : 'last verified count'} · refreshed hourly</p>
 
+        {/* contribution heatmap */}
+        <section className="built-section">
+          <p className="built-kicker">the heatmap</p>
+          <h2 className="built-h2">{fmt(contributionsRaw.total)} contributions in the last year.</h2>
+          <p className="built-sub">
+            My real GitHub contribution calendar, {contribYear} so far ({fmt(contribYearTotal)} and counting) —
+            pulled straight from my account, rendered on my own grid. This is what building in public looks like day by day.
+          </p>
+          <div style={{ overflowX: 'auto', paddingBottom: 8 }}>
+            <ContributionGraph data={contribDays} year={contribYear} showLegend showTooltips />
+          </div>
+        </section>
+
         {/* repos */}
         <section className="built-section">
           <p className="built-kicker">the open source</p>
@@ -166,6 +187,11 @@ export default async function BuiltPage({ params }: Props) {
           <p className="built-sub">
             The work is public. Stars and forks are pulled straight from GitHub — click through and read the code.
           </p>
+          {flagship && (
+            <div style={{ marginBottom: 18 }}>
+              <GitHubStarsAnimation owner={GH_FLAGSHIP.owner} repo={flagship.name} starCount={flagship.stars} showAvatars={false} />
+            </div>
+          )}
           <div className="repo-grid">
             {stats.topRepos.map((r) => (
               <a key={r.full} className="repo-card" href={r.url} target="_blank" rel="noopener noreferrer">

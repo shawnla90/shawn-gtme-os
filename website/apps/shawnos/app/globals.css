@@ -91,6 +91,32 @@
   --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
+/* === Tailwind theme bridge — shadcn-convention color names mapped onto the
+   site's tokens so vendored components (SmoothUI, Unlumen) work untouched.
+   "accent" here is the shadcn hover-surface meaning, NOT the brand aura. === */
+@theme inline {
+  --color-background: var(--canvas);
+  --color-foreground: var(--text-primary);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--aura);
+  --color-primary: var(--aura);
+  --color-primary-foreground: #fafafa;
+  --color-secondary: var(--canvas-subtle);
+  --color-secondary-foreground: var(--text-primary);
+  --color-muted: var(--canvas-subtle);
+  --color-muted-foreground: var(--text-secondary);
+  --color-accent: var(--canvas-subtle);
+  --color-accent-foreground: var(--text-primary);
+  --color-destructive: #e05555;
+  --color-destructive-foreground: #fafafa;
+  --color-card: var(--canvas-card);
+  --color-card-foreground: var(--text-primary);
+  --color-popover: var(--canvas-card);
+  --color-popover-foreground: var(--text-primary);
+  --color-brand: var(--aura);
+}
+
 /* === Base body styles === */
 /* Fine engineered grid painted into the body background itself —
    the Clearbox-family surface. Solid card/nav fills sit on top of it. */
