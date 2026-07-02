@@ -3,6 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import { getTranslations } from 'next-intl/server'
 import { getPostSlugs, getPostBySlug, markdownToHtml, extractFAQs } from '@shawnos/shared/lib'
+import { withYouTubeEmbeds } from '../../../../lib/youtube-embed'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
@@ -122,7 +123,7 @@ export default async function BlogPost({
   const t = await getTranslations('Blog')
   const contentDir = getContentDir(locale, slug)
   const post = getPostBySlug(slug, contentDir)
-  const htmlContent = await markdownToHtml(post.content)
+  const htmlContent = withYouTubeEmbeds(await markdownToHtml(post.content))
   const faqs = extractFAQs(post.content)
 
   const postUrl = `${SITE_URL}/blog/${slug}`
