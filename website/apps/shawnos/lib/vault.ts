@@ -101,7 +101,11 @@ export function getVaultFile(category: string, slug: string): VaultFile | null {
     title: data.title ?? slug,
     description: data.description ?? '',
     source: data.source,
-    updated: data.updated ? String(data.updated) : undefined,
+    updated: data.updated
+      ? data.updated instanceof Date
+        ? data.updated.toISOString().slice(0, 10)
+        : String(data.updated)
+      : undefined,
     order: typeof data.order === 'number' ? data.order : 99,
     content,
     wordCount: content.split(/\s+/).filter(Boolean).length,
