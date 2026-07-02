@@ -10,6 +10,7 @@ import { GTM_CODING_AGENT_GUIDE } from '@shawnos/shared/data/guide-manifest'
 import { getAllLogs, resolveDataRoot } from '@shawnos/shared/lib'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { KnowledgeHub, type KnowledgeTabSummary } from './KnowledgeHub'
+import { getVaultCategories, getCategoryFiles, getVaultTotalCount } from '../../../lib/vault'
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations('Knowledge')
@@ -98,7 +99,26 @@ function buildTabs(): KnowledgeTabSummary[] {
     href: `/claude-daily/${l.date}`,
   }))
 
+  const vaultCategories = getVaultCategories()
+  const vaultSamples = vaultCategories
+    .slice(0, 5)
+    .flatMap((c) => getCategoryFiles(c.slug).slice(0, 1))
+    .slice(0, 5)
+    .map((f) => ({ title: f.title, href: `/vault/${f.category}/${f.slug}` }))
+
   return [
+    {
+      id: 'vault',
+      label: 'The Vault',
+      lens: 'both',
+      count: getVaultTotalCount(),
+      countSuffix: ' files',
+      description: 'My real GTM-agent files — voice DNA, anti-slop, playbooks, handoffs. Browse the tree, download the folders, build.',
+      categoriesText: vaultCategories.map((c) => `${c.label}/`).join(' · '),
+      samples: vaultSamples,
+      fullHref: '/vault',
+      fullLabel: 'Open the Vault',
+    },
     {
       id: 'context',
       label: 'Context Engineering',

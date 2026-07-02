@@ -1,0 +1,92 @@
+{
+ "asOf": "2026-07-01",
+ "totalKarma": 2334,
+ "linkKarma": 1455,
+ "commentKarma": 879,
+ "totalPosts": 158,
+ "totalComments": 537,
+ "trackedViews": 1394015,
+ "wins": 23,
+ "eras": [
+  {
+   "era": "clearbox",
+   "items": 273,
+   "views": 234453,
+   "score": 782
+  },
+  {
+   "era": "karma-building",
+   "items": 422,
+   "views": 1159562,
+   "score": 2226
+  }
+ ],
+ "topSubreddits": [
+  {
+   "subreddit": "ClaudeCode",
+   "items": 158,
+   "views": 669495,
+   "score": 855
+  },
+  {
+   "subreddit": "ClaudeAI",
+   "items": 44,
+   "views": 367900,
+   "score": 424
+  },
+  {
+   "subreddit": "GTMbuilders",
+   "items": 104,
+   "views": 121565,
+   "score": 369
+  },
+  {
+   "subreddit": "gtmengineering",
+   "items": 149,
+   "views": 82611,
+   "score": 422
+  },
+  {
+   "subreddit": "OnePiece",
+   "items": 15,
+   "views": 71000,
+   "score": 168
+  },
+  {
+   "subreddit": "NYCapartments",
+   "items": 13,
+   "views": 32000,
+   "score": 277
+  },
+  {
+   "subreddit": "ClaudeGTM",
+   "items": 16,
+   "views": 18952,
+   "score": 30
+  },
+  {
+   "subreddit": "hubspot",
+   "items": 11,
+   "views": 17200,
+   "score": 61
+  },
+  {
+   "subreddit": "UseApolloIo",
+   "items": 10,
+   "views": 4000,
+   "score": 24
+  },
+  {
+   "subreddit": "buildinpublic",
+   "items": 10,
+   "views": 1958,
+   "score": 10
+  }
+ ],
+ "topPost": {
+  "title": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data.",
+  "subreddit": "ClaudeCode",
+  "score": 307,
+  "views": 252000
+ }
+}

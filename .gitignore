@@ -60,3 +60,4 @@ chat-check.png
 __pycache__/
 .gstack/
 scripts/instagram/.env
+website/apps/shawnos/public/downloads/vault/

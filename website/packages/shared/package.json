@@ -54,6 +54,7 @@
     "./data/ai-news-cache.json": "./data/ai-news-cache.json",
     "./data/github-contributions.json": "./data/github-contributions.json",
     "./data/youtube-videos.json": "./data/youtube-videos.json",
+    "./data/reddit-stats.json": "./data/reddit-stats.json",
     "./styles": "./styles/tokens.css",
     "./data/guide-manifest": "./data/guide-manifest.ts"
   },

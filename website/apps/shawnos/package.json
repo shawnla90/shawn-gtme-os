@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3000",
     "dev:clean": "rm -rf .next && next dev --port 3000",
+    "prebuild": "node scripts/build-vault-zips.mjs",
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
