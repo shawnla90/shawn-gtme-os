@@ -1,63 +1,63 @@
 {
-  "last_updated": "2026-07-01T21:30:06.774011+00:00",
+  "last_updated": "2026-07-02T11:00:06.167117+00:00",
   "runs": {
     "morning": {
       "agent": "crypto-signal",
-      "timestamp": "2026-07-01T11:00:03.560996+00:00",
-      "date": "2026-07-01",
+      "timestamp": "2026-07-02T11:00:06.167117+00:00",
+      "date": "2026-07-02",
       "test_mode": false,
       "market_snapshot": {
-        "btc_dominance_pct": 55.37,
-        "total_market_cap_usd": 2122187889430.0,
-        "fear_greed_index": 11,
+        "btc_dominance_pct": 55.83,
+        "total_market_cap_usd": 2198278909545.0,
+        "fear_greed_index": 19,
         "fear_greed_label": "Extreme Fear",
         "assets": {
           "BTC": {
-            "price_usd": 58598,
-            "change_24h_pct": -1.17,
-            "market_cap_usd": 1174970001928.0
+            "price_usd": 61196,
+            "change_24h_pct": 4.45,
+            "market_cap_usd": 1227052249423.0
           },
           "ETH": {
-            "price_usd": 1572.35,
-            "change_24h_pct": -0.69,
-            "market_cap_usd": 189764068037.0
+            "price_usd": 1644.31,
+            "change_24h_pct": 4.61,
+            "market_cap_usd": 198444537582.0
           },
           "SOL": {
-            "price_usd": 75.02,
-            "change_24h_pct": 1.97,
-            "market_cap_usd": 43581528969.0
+            "price_usd": 81.52,
+            "change_24h_pct": 8.74,
+            "market_cap_usd": 47364309648.0
           }
         }
       },
       "signals": [
         {
           "asset": "BTC",
-          "price_usd": 58598,
-          "change_24h_pct": -1.17,
+          "price_usd": 61196,
+          "change_24h_pct": 4.45,
           "action": "watch",
           "confidence": 0.45,
           "reasoning": [
-            "extreme fear (11)"
+            "extreme fear (19)"
           ]
         },
         {
           "asset": "ETH",
-          "price_usd": 1572.35,
-          "change_24h_pct": -0.69,
+          "price_usd": 1644.31,
+          "change_24h_pct": 4.61,
           "action": "watch",
           "confidence": 0.45,
           "reasoning": [
-            "extreme fear (11)"
+            "extreme fear (19)"
           ]
         },
         {
           "asset": "SOL",
-          "price_usd": 75.02,
-          "change_24h_pct": 1.97,
+          "price_usd": 81.52,
+          "change_24h_pct": 8.74,
           "action": "watch",
           "confidence": 0.45,
           "reasoning": [
-            "extreme fear (11)"
+            "extreme fear (19)"
           ]
         }
       ],
@@ -69,75 +69,6 @@
       "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
       "model": "rule-based-v1",
       "period": "morning"
-    },
-    "evening": {
-      "agent": "crypto-signal",
-      "timestamp": "2026-07-01T21:30:06.774011+00:00",
-      "date": "2026-07-01",
-      "test_mode": false,
-      "market_snapshot": {
-        "btc_dominance_pct": 55.74,
-        "total_market_cap_usd": 2174178239090.0,
-        "fear_greed_index": 11,
-        "fear_greed_label": "Extreme Fear",
-        "assets": {
-          "BTC": {
-            "price_usd": 60442,
-            "change_24h_pct": 3.32,
-            "market_cap_usd": 1210797607939.0
-          },
-          "ETH": {
-            "price_usd": 1622.31,
-            "change_24h_pct": 3.35,
-            "market_cap_usd": 195744891382.0
-          },
-          "SOL": {
-            "price_usd": 77.73,
-            "change_24h_pct": 6.18,
-            "market_cap_usd": 45146519818.0
-          }
-        }
-      },
-      "signals": [
-        {
-          "asset": "BTC",
-          "price_usd": 60442,
-          "change_24h_pct": 3.32,
-          "action": "watch",
-          "confidence": 0.45,
-          "reasoning": [
-            "extreme fear (11)"
-          ]
-        },
-        {
-          "asset": "ETH",
-          "price_usd": 1622.31,
-          "change_24h_pct": 3.35,
-          "action": "watch",
-          "confidence": 0.45,
-          "reasoning": [
-            "extreme fear (11)"
-          ]
-        },
-        {
-          "asset": "SOL",
-          "price_usd": 77.73,
-          "change_24h_pct": 6.18,
-          "action": "watch",
-          "confidence": 0.45,
-          "reasoning": [
-            "extreme fear (11)"
-          ]
-        }
-      ],
-      "reddit_sentiment": {
-        "post_count": 0,
-        "avg_score": 0,
-        "top_topics": []
-      },
-      "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
-      "model": "rule-based-v1",
-      "period": "evening"
     }
   }
 }
