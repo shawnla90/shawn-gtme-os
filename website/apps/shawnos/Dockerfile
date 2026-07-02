@@ -49,6 +49,13 @@ COPY --from=builder /app/website/apps/shawnos/public ./apps/shawnos/public
 COPY --from=builder --chown=nextjs:nodejs /app/website/apps/shawnos/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/website/apps/shawnos/.next/static ./apps/shawnos/.next/static
 
+# Runtime fs readers resolve process.cwd() + '../../../content' → '/content'
+# (cwd is /app/apps/shawnos or /app; three levels up is / either way).
+# Without these, ISR revalidation regenerates blog/vault pages against a
+# missing filesystem: empty blog index, 404s on vault deep links.
+COPY --from=builder --chown=nextjs:nodejs /app/content /content
+COPY --from=builder --chown=nextjs:nodejs /app/data /data
+
 USER nextjs
 EXPOSE 3000
 

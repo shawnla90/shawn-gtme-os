@@ -41,10 +41,10 @@ export function middleware(request: NextRequest) {
     "default-src 'self'",
     "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://*.lijit.com https://us-assets.i.posthog.com https://static.cloudflareinsights.com",
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://*.lijit.com https://api.sitelytics.tech https://us-assets.i.posthog.com",
+    "img-src 'self' data: blob: https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://*.lijit.com https://api.sitelytics.tech https://us-assets.i.posthog.com https://i.ytimg.com https://img.youtube.com",
     "font-src 'self' https://fonts.gstatic.com",
     "connect-src 'self' https://us.i.posthog.com https://us-assets.i.posthog.com https://*.midbound.click https://*.midbound.net https://*.mdb.tools https://a.usbrowserspeed.com https://*.lijit.com https://api.sitelytics.tech https://cloudflareinsights.com",
-    "frame-src 'self' https://*.substack.com https://*.lijit.com",
+    "frame-src 'self' https://*.substack.com https://*.lijit.com https://www.youtube.com https://www.youtube-nocookie.com",
     "frame-ancestors 'none'",
   ].join('; ')
   response.headers.set('Content-Security-Policy', csp)
