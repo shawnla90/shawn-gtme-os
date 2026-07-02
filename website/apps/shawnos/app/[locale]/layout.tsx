@@ -230,26 +230,28 @@ export default async function LocaleLayout({ children, params }: Props) {
           links={[
             { href: lp('/'), label: nav('home') },
             { href: lp('/clearbox'), label: 'Clearbox' },
+            { href: lp('/blog'), label: nav('blog') },
             // One knowledge surface — both lenses (context eng + GTM eng) under one roof.
             { href: '#', label: 'Knowledge', children: [
               { href: lp('/knowledge'), label: 'Knowledge hub' },
+              { href: lp('/vault'), label: 'The Vault' },
               { href: lp('/context-wiki'), label: 'Context Wiki' },
               { href: lp('/guide/gtm-coding-agent'), label: 'GTM Coding Agent' },
               { href: lp('/how-to'), label: 'How-To' },
               { href: lp('/geo'), label: 'GEO Wiki' },
               { href: lp('/claude-daily'), label: 'The Daily' },
             ]},
-            { href: lp('/blog'), label: nav('blog') },
             { href: lp('/reddit'), label: 'Reddit' },
-            { href: lp('/about'), label: nav('about') },
-            { href: '#', label: nav('more'), children: [
+            { href: lp('/watch'), label: 'Watch' },
+            { href: '#', label: nav('about'), children: [
+              { href: lp('/about'), label: 'About' },
+              { href: lp('/about/arc'), label: 'The Arc' },
               { href: lp('/built'), label: 'Built in public' },
-              { href: lp('/watch'), label: 'Watch' },
-              { href: lp('/media'), label: 'Media' },
               { href: lp('/log'), label: 'Log' },
+              { href: lp('/media'), label: 'Media' },
+              { href: lp('/community'), label: 'Community' },
               { href: lp('/showcase'), label: 'Showcase' },
               { href: lp('/updates'), label: 'Updates' },
-              { href: lp('/community'), label: 'Community' },
               { href: lp('/search'), label: 'Search' },
             ]},
           ]}
