@@ -37,7 +37,7 @@ These are the critical patterns that get caught in every piece of content. The f
 
 12. **Bullets for Arguments**: Arguments belong in prose. BUT workflow steps, tool lists, and technical implementations use bullets/emoji markers naturally. The rule: bullets for execution, prose for reasoning.
 
-13. **False Dichotomies**: "It's not X, it's Y." Generally avoid, BUT you naturally contrast old way vs. new way (manual SDR grind vs. automated Clay workflow). That's not a false dichotomy, that's showing evolution.
+13. **False Dichotomies**: "It's not X, it's Y." Generally avoid, BUT you naturally contrast old way vs. new way (renting a five-figure point-tool stack vs. building it with agents + APIs + SQLite). That's not a false dichotomy, that's showing evolution.
 
 14. **Bold Headers as Transitions**: Headers for navigation only. Your posts don't typically use headers anyway. LinkedIn formatting is whitespace-driven.
 

@@ -12,6 +12,8 @@ import {
 } from '@shawnos/shared/components'
 import { PageHero } from '../../components/PageHero'
 import { TechStackGrid } from './TechStackGrid'
+import ContributionGraph from '../../../components/smoothui/contribution-graph'
+import contributionsRaw from '@shawnos/shared/data/github-contributions.json'
 
 const paragraph: React.CSSProperties = {
   fontSize: '15px',
@@ -28,18 +30,21 @@ const mutedText: React.CSSProperties = {
 export function AboutContent() {
   const t = useTranslations('About')
 
+  const contribYear = parseInt(contributionsRaw.pulledAt.slice(0, 4), 10)
+  const contribDays = contributionsRaw.days.filter((d) => d.date.startsWith(String(contribYear)))
+
   const network = [
     {
-      label: t('network.gtmos.label'),
-      url: 'https://thegtmos.ai',
-      accent: 'var(--gtmos-teal)',
-      desc: t('network.gtmos.description'),
+      label: 'Clearbox',
+      url: 'https://clearbox.to',
+      accent: 'var(--aura-strong)',
+      desc: 'See your market. Move first.',
     },
     {
-      label: t('network.contentos.label'),
-      url: 'https://thecontentos.ai',
-      accent: 'var(--contentos-purple)',
-      desc: t('network.contentos.description'),
+      label: 'GitHub',
+      url: 'https://github.com/shawnla90',
+      accent: 'var(--text-primary)',
+      desc: 'The source. Agents, skills, pipelines, and this site, readable end to end.',
     },
   ]
 
@@ -66,6 +71,36 @@ export function AboutContent() {
         <p style={paragraph}>
           {t('identity.paragraph')}
         </p>
+      </ScrollRevealSection>
+
+      {/* Built in public — the highlight */}
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <SectionHeadline subtitle="the receipts">built in public</SectionHeadline>
+        <p style={{ ...paragraph, maxWidth: '620px' }}>
+          Every commit, campaign, and content run happens in the open. The contribution graph is real.
+        </p>
+        <div style={{ overflowX: 'auto', paddingBottom: 8, margin: '20px 0 24px' }}>
+          <ContributionGraph data={contribDays} year={contribYear} showLegend showTooltips />
+        </div>
+        <MagneticHover>
+          <Link
+            href="/built"
+            style={{
+              display: 'inline-block',
+              padding: '10px 22px',
+              fontSize: '13px',
+              fontWeight: 600,
+              fontFamily: 'var(--font-mono)',
+              color: 'var(--canvas)',
+              background: 'var(--accent)',
+              border: '1px solid var(--accent)',
+              borderRadius: 6,
+              textDecoration: 'none',
+            }}
+          >
+            See the build &rarr;
+          </Link>
+        </MagneticHover>
       </ScrollRevealSection>
 
       {/* Tech Stack */}
@@ -147,52 +182,6 @@ export function AboutContent() {
             </StaggerItem>
           ))}
         </StaggerContainer>
-      </ScrollRevealSection>
-
-      {/* Showcase CTA */}
-      <ScrollRevealSection background="var(--canvas)" variant="scale">
-        <div
-          style={{
-            background: 'var(--canvas-subtle)',
-            border: '1px solid var(--border)',
-            borderRadius: '8px',
-            padding: '20px 24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '12px',
-          }}
-        >
-          <div>
-            <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '4px' }}>
-              {t('showcaseCta.title')}
-            </div>
-            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
-              {t('showcaseCta.description')}
-            </div>
-          </div>
-          <MagneticHover>
-            <Link
-              href="/showcase"
-              style={{
-                display: 'inline-block',
-                padding: '8px 18px',
-                fontSize: '12px',
-                fontWeight: 600,
-                fontFamily: 'var(--font-mono)',
-                color: 'var(--accent)',
-                background: 'transparent',
-                border: '1px solid var(--accent)',
-                borderRadius: 6,
-                textDecoration: 'none',
-                whiteSpace: 'nowrap',
-              }}
-            >
-              {t('showcaseCta.button')} &rarr;
-            </Link>
-          </MagneticHover>
-        </div>
       </ScrollRevealSection>
 
       {/* Arc CTA */}

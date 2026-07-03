@@ -23,11 +23,11 @@ function sectionsToText(sections: { heading: string; content: string }[]): strin
 
 const URLS: Record<string, { base: string; prefix: string }> = {
   "context-wiki": { base: "https://shawnos.ai", prefix: "/context-wiki" },
-  "clay-wiki": { base: "https://thegtmos.ai", prefix: "/clay-wiki" },
-  "content-wiki": { base: "https://thecontentos.ai", prefix: "/content-wiki" },
+  "clay-wiki": { base: "https://shawnos.ai", prefix: "/knowledge" },
+  "content-wiki": { base: "https://shawnos.ai", prefix: "/knowledge" },
   "how-to": { base: "https://shawnos.ai", prefix: "/how-to" },
   "engineering": { base: "https://shawnos.ai", prefix: "/knowledge" },
-  "gtm": { base: "https://thegtmos.ai", prefix: "/knowledge" },
+  "gtm": { base: "https://shawnos.ai", prefix: "/knowledge" },
   "blog": { base: "https://shawnos.ai", prefix: "/blog" },
 }
 
@@ -53,7 +53,7 @@ function clayWikiToItems(): RetrievableItem[] {
     keywords: e.keywords,
     category: `clay-wiki/${e.category}`,
     content: truncate(sectionsToText(e.sections)),
-    url: `${URLS["clay-wiki"].base}${URLS["clay-wiki"].prefix}/${e.id}`,
+    url: `${URLS["clay-wiki"].base}${URLS["clay-wiki"].prefix}`,
   }))
 }
 
@@ -65,27 +65,20 @@ function contentWikiToItems(): RetrievableItem[] {
     keywords: e.keywords,
     category: `content-wiki/${e.category}`,
     content: truncate(sectionsToText(e.sections)),
-    url: `${URLS["content-wiki"].base}${URLS["content-wiki"].prefix}/${e.id}`,
+    url: `${URLS["content-wiki"].base}${URLS["content-wiki"].prefix}`,
   }))
 }
 
 function howToWikiToItems(): RetrievableItem[] {
-  return HOW_TO_WIKI_ENTRIES.map((e: HowToWikiEntry) => {
-    const siteBase = e.canonicalSite === "gtmos"
-      ? "https://thegtmos.ai"
-      : e.canonicalSite === "contentos"
-        ? "https://thecontentos.ai"
-        : "https://shawnos.ai"
-    return {
-      id: `howto-${e.id}`,
-      title: e.title,
-      description: e.description,
-      keywords: e.keywords,
-      category: `how-to/${e.category}`,
-      content: truncate(sectionsToText(e.sections)),
-      url: `${siteBase}/how-to/${e.id}`,
-    }
-  })
+  return HOW_TO_WIKI_ENTRIES.map((e: HowToWikiEntry) => ({
+    id: `howto-${e.id}`,
+    title: e.title,
+    description: e.description,
+    keywords: e.keywords,
+    category: `how-to/${e.category}`,
+    content: truncate(sectionsToText(e.sections)),
+    url: `https://shawnos.ai/how-to/${e.id}`,
+  }))
 }
 
 function engineeringTermsToItems(): RetrievableItem[] {

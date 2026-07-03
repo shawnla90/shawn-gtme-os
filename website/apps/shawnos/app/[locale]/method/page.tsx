@@ -74,7 +74,7 @@ const states: {
     name: 'break',
     tag: 'redirect',
     body: 'stop mid-flow. question assumptions. redirect. this is the state most people skip, and it\'s the one that prevents the most wasted work.',
-    example: 'the content OS meta post came from breaking mid-workflow to ask why the process felt slow. then rebuilding the process and documenting the rebuild as the content itself.',
+    example: 'the content-pipeline meta post came from breaking mid-workflow to ask why the process felt slow. then rebuilding the process and documenting the rebuild as the content itself.',
   },
   {
     name: 'ask',
@@ -101,7 +101,7 @@ const recursiveExamples: { label: string; desc: string }[] = [
   },
   {
     label: 'content becomes infrastructure',
-    desc: 'posts about the content OS led to codifying those workflows as reusable skills. the post was the prototype. the skill was the production version.',
+    desc: 'posts about the content pipeline led to codifying those workflows as reusable skills. the post was the prototype. the skill was the production version.',
   },
   {
     label: 'skills produce content that documents the skills',

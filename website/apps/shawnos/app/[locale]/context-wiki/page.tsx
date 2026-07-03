@@ -74,7 +74,7 @@ const faqSchema = {
       name: 'What is a context repository?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'A context repository is a collection of markdown files in a GitHub repo that hold your products, personas, messaging, voice, and workflows. Update once, all AI systems use it. Your entire GTM OS repo can be your context repository. Every skill, every voice file, every partner folder. It is the work itself.',
+        text: 'A context repository is a collection of markdown files in a GitHub repo that hold your products, personas, messaging, voice, and workflows. Update once, all AI systems use it. Your entire GTM repo can be your context repository. Every skill, every voice file, every partner folder. It is the work itself.',
       },
     },
     {

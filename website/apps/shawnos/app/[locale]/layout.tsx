@@ -3,12 +3,12 @@ import { NextIntlClientProvider, hasLocale } from 'next-intl'
 import { setRequestLocale, getMessages, getTranslations } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { JetBrains_Mono, Bricolage_Grotesque, Heebo, Noto_Sans_SC, Noto_Sans_JP, Newsreader, Inter, Space_Grotesk } from 'next/font/google'
-import { Navigation, NetworkBanner, Footer, PostHogProvider, ThemeToggle } from '@shawnos/shared/components'
+import { Navigation, Footer, PostHogProvider } from '@shawnos/shared/components'
 import { ThemeProvider } from '@shawnos/shared/hooks/useTheme'
 import { FooterCredit } from '../FooterCredit'
 import { FeedbackButton } from '../components/FeedbackButton'
-import { ScrollSignupGlobal } from '../components/ScrollSignupGlobal'
 import { LanguageSwitcher } from '../components/LanguageSwitcher'
+import { ThemeToggleGag } from '../components/ThemeToggleGag'
 import { routing } from '../../i18n/routing'
 import { locales } from '../../i18n/config'
 import '../globals.css'
@@ -137,8 +137,6 @@ const personSchema = {
     'https://x.com/shawntenam',
     'https://shawntenam.substack.com',
     'https://github.com/shawnla90',
-    'https://thegtmos.ai',
-    'https://thecontentos.ai',
   ],
 }
 
@@ -164,8 +162,6 @@ const organizationSchema = {
     url: SITE_URL,
   },
   sameAs: [
-    'https://thegtmos.ai',
-    'https://thecontentos.ai',
     'https://linkedin.com/in/shawntenam',
     'https://x.com/shawntenam',
     'https://github.com/shawnla90',
@@ -223,46 +219,25 @@ export default async function LocaleLayout({ children, params }: Props) {
           centeredPill
           actions={
             <>
-              <ThemeToggle />
+              <ThemeToggleGag />
               <LanguageSwitcher />
             </>
           }
           links={[
             { href: lp('/'), label: nav('home') },
-            { href: lp('/clearbox'), label: 'Clearbox' },
+            { href: 'https://clearbox.to', label: 'Clearbox' },
             { href: lp('/blog'), label: nav('blog') },
-            // One knowledge surface — both lenses (context eng + GTM eng) under one roof.
-            { href: '#', label: 'Knowledge', children: [
-              { href: lp('/knowledge'), label: 'Knowledge hub' },
-              { href: lp('/vault'), label: 'The Vault' },
-              { href: lp('/context-wiki'), label: 'Context Wiki' },
-              { href: lp('/guide/gtm-coding-agent'), label: 'GTM Coding Agent' },
-              { href: lp('/how-to'), label: 'How-To' },
-              { href: lp('/geo'), label: 'GEO Wiki' },
-              { href: lp('/claude-daily'), label: 'The Daily' },
-            ]},
+            { href: lp('/knowledge'), label: 'Knowledge' },
             { href: lp('/reddit'), label: 'Reddit' },
             { href: lp('/watch'), label: 'Watch' },
-            { href: '#', label: nav('about'), children: [
-              { href: lp('/about'), label: 'About' },
-              { href: lp('/about/arc'), label: 'The Arc' },
-              { href: lp('/built'), label: 'Built in public' },
-              { href: lp('/log'), label: 'Log' },
-              { href: lp('/media'), label: 'Media' },
-              { href: lp('/community'), label: 'Community' },
-              { href: lp('/showcase'), label: 'Showcase' },
-              { href: lp('/updates'), label: 'Updates' },
-              { href: lp('/search'), label: 'Search' },
-            ]},
+            { href: lp('/about'), label: nav('about') },
           ]}
         />
         <main>
           <div className="page-enter">{children}</div>
         </main>
-        <NetworkBanner currentSite="shawnos" />
         <Footer siteName="ShawnOS.ai" />
         <FooterCredit />
-        <ScrollSignupGlobal />
         <FeedbackButton />
         </PostHogProvider>
         </ThemeProvider>

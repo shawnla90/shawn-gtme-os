@@ -111,7 +111,7 @@ const FEATURE_MILESTONES: FeatureMilestone[] = [
   {
     date: '2026-02-22',
     title: 'Cross-Site Updates Pages',
-    description: 'Updates feed live on all 3 sites — shawnos.ai, thegtmos.ai, thecontentos.ai. Full cross-site backlinking.',
+    description: 'Updates feed shipped with full backlinking into the knowledge hub and blog.',
     type: 'feature',
     link: '/updates',
   },
@@ -448,28 +448,6 @@ const navLink: React.CSSProperties = {
   textDecoration: 'none',
 }
 
-const networkRow: React.CSSProperties = {
-  display: 'flex',
-  gap: '12px',
-  marginTop: '12px',
-  flexWrap: 'wrap',
-}
-
-const networkLink: React.CSSProperties = {
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: '6px',
-  fontSize: '12px',
-  fontWeight: 600,
-  color: 'var(--accent)',
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '6px',
-  padding: '8px 16px',
-  textDecoration: 'none',
-  transition: 'border-color 0.15s ease',
-}
-
 /* ── page component (server) ─────────────────────── */
 
 export default async function UpdatesPage() {
@@ -592,14 +570,6 @@ export default async function UpdatesPage() {
           <span>&#9654;</span> {t('rss.badge')} — /feed/updates.xml
         </a>
 
-        <div style={networkRow}>
-          <a href="https://thegtmos.ai/updates" style={networkLink}>
-            theGTMOS.ai/updates &rarr;
-          </a>
-          <a href="https://thecontentos.ai/updates" style={networkLink}>
-            theContentOS.ai/updates &rarr;
-          </a>
-        </div>
       </ScrollRevealSection>
 
       {/* ── Feature Timeline (horizontal scroll) ── */}

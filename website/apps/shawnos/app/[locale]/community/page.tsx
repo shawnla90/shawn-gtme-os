@@ -172,7 +172,9 @@ export default async function CommunityPage({ params }: Props) {
         }}
       >
         <a
-          href="https://thegtmos.ai/community"
+          href={`https://reddit.com/r/${SUBREDDIT}`}
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             display: 'inline-block',
             padding: '14px 32px',

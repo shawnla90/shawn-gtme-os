@@ -139,7 +139,7 @@ export default async function BuiltPage({ params }: Props) {
           <p className="built-kicker">// built in public</p>
           <h1 className="built-h1">I built this in the open.</h1>
           <p className="built-lead">
-            Plumber for ten years. Then 200 cold emails a day as an SDR. Then I stopped working inside the systems and
+            Plumber for ten years. Then the SDR grind: manual lists, primary-domain sends, quota every month. Then I stopped working inside the systems and
             started building them. <strong>I&apos;m not a software engineer</strong> — and these repos have{' '}
             <strong>{fmt(stats.totalStars)} stars</strong>. Every line of this site, every agent, every pipeline:
             built by hand, in public, with a git log to prove it.

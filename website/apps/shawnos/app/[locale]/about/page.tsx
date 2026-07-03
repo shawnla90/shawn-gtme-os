@@ -60,8 +60,6 @@ export default async function AboutPage({ params }: Props) {
       'https://github.com/shawnla90',
       'https://reddit.com/r/GTMBuilders',
       'https://shawntenam.substack.com',
-      'https://thegtmos.ai',
-      'https://thecontentos.ai',
     ],
     knowsAbout: [
       'Go-to-market engineering',

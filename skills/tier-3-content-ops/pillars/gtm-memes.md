@@ -23,10 +23,10 @@ is 32GB the new minimum or does gtm engineering just eat RAM for fun?"
 true story. 😅
 ps: john cena tapping out might still be less painful than watching someone ignore deliverability rules"
 
-**"I was that SDR":**
-"What I'm thinking when someone says... we send 200+ cold emails a day per SDR. no big deal.
-true story. 😅
-P.S. I was that SDR."
+**The $70k quote:**
+"my buddy got quoted $70k a year to score his market. Clay seat, credits, a partner to wire it all together.
+rebuilt it with Claude Code in an afternoon. 😅
+p.s. the sheet rebuilds in place. next run is free."
 
 ## Pop Culture Reference Library
 

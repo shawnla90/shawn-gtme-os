@@ -543,8 +543,13 @@ export function Navigation({ siteName, links = defaultLinks, actions, circularLi
                 key={link.href}
                 href={link.href}
                 className={`nav-link${isActive(link.href) ? ' nav-link-active' : ''}`}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
                 {link.label}
+                {link.href.startsWith('http') && (
+                  <span style={{ marginLeft: 6, opacity: 0.55, fontSize: '0.85em' }}>↗</span>
+                )}
               </a>
             )
           )}
@@ -690,8 +695,13 @@ export function Navigation({ siteName, links = defaultLinks, actions, circularLi
                 href={link.href}
                 className={`nav-drawer-link${isActive(link.href) ? ' nav-drawer-link-active' : ''}`}
                 onClick={closeDrawer}
+                target={link.href.startsWith('http') ? '_blank' : undefined}
+                rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               >
                 {link.label}
+                {link.href.startsWith('http') && (
+                  <span style={{ marginLeft: 6, opacity: 0.55, fontSize: '0.85em' }}>↗</span>
+                )}
               </a>
             )
           )}

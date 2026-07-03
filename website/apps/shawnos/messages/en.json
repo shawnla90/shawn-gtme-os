@@ -129,7 +129,7 @@
     "caseStudies": {
       "headline": "Case Studies",
       "subtitle": "Featured projects from the monorepo",
-      "threeSiteNetwork": { "title": "Three-Site Network", "description": "One monorepo powering ShawnOS.ai, theGTMOS.ai, and theContentOS.ai. Shared components, shared data layer, independent deploys." },
+      "threeSiteNetwork": { "title": "The Monorepo", "description": "One codebase powering ShawnOS.ai. Shared components, shared data layer, everything shipped in public." },
       "aiContentPipeline": { "title": "AI Content Pipeline", "description": "Automated blog generation with Claude + SEO keyword research + automated publishing. Runs on a daily cron, writes drafts for human review." },
       "progressionEngine": { "title": "Progression Engine", "description": "11-tier RPG system that gamifies real work output. Pixel art avatars evolve based on XP earned from daily commits and content shipped." },
       "missionControl": { "title": "Mission Control", "description": "Internal dashboard for monitoring all systems - agent status, content pipelines, SEO metrics, and team coordination." }
@@ -148,8 +148,8 @@
       "bootLines": {
         "contentEngine": "content engine ... online",
         "threeSiteNetwork": "three-site network ... synced",
-        "gtmEngine": "gtm engine ... theGTMOS.ai",
-        "contentOs": "content os ... theContentOS.ai",
+        "gtmEngine": "gtm engine ... online",
+        "contentOs": "content pipeline ... online",
         "cursorAgent": "cursor agent ... active",
         "blogPipeline": "blog pipeline ... mounted",
         "buildInPublic": "build-in-public mode ... engaged",
@@ -159,8 +159,8 @@
     "builtWith": { "label": "built with", "fullStack": "full stack" },
     "chooseYourPath": {
       "heading": "Choose Your Path",
-      "contentSystems": { "label": "Building content systems?", "text": "theContentOS.ai" },
-      "gtmPipelines": { "label": "Building GTM pipelines?", "text": "theGTMOS.ai" },
+      "contentSystems": { "label": "Building content systems?", "text": "The Knowledge Hub" },
+      "gtmPipelines": { "label": "Building GTM pipelines?", "text": "Clearbox" },
       "stackAudit": { "label": "Need a GTM stack audit?", "text": "Get an Evaluation" },
       "readBlog": { "label": "Want to see how it works?", "text": "Read the Blog" },
       "showcase": { "label": "Want to see the components?", "text": "Showcase" }
@@ -177,14 +177,14 @@
   "About": {
     "metadata": {
       "title": "Shawn Tenam | GTM Engineer",
-      "description": "Shawn Tenam - GTM engineer building AI-native pipelines, Clay workflows, and content systems from a single monorepo. Independent consultant, Clay Certified Creator.",
+      "description": "Shawn Tenam - GTM engineer turned founder. Builds the whole GTM engine in public with coding agents: campaigns, content, and the systems that run them, from one codebase.",
       "ogTitle": "Shawn Tenam | GTM Engineer",
-      "ogDescription": "GTM engineer building AI-native pipelines, Clay workflows, and content systems. Independent consultant, Clay Certified Creator."
+      "ogDescription": "GTM engineer turned founder. Builds the whole GTM engine in public with coding agents, from one codebase."
     },
     "hero": {
       "title": "About",
       "titleAccent": "Shawn Tenam",
-      "subtitle": "GTM Engineer. Independent. Clay Certified Creator. Building AI-native pipelines from a monorepo."
+      "subtitle": "GTM engineer, now founder. Building the whole engine in public, from one codebase."
     },
     "identity": {
       "headline": "Identity",
@@ -210,10 +210,10 @@
     },
     "network": {
       "headline": "The Network",
-      "subtitle": "Three sites, one monorepo",
-      "description": "shawnos.ai is one node in a three-site system. each site owns a domain of the stack.",
-      "gtmos": { "label": "theGTMOS.ai", "description": "The GTM operating system. Frameworks, playbooks, and live builds for go-to-market engineering." },
-      "contentos": { "label": "theContentOS.ai", "description": "The content operating system. Voice-first publishing, repurpose pipelines, and content-as-code." }
+      "subtitle": "Where the work lives",
+      "description": "shawnos.ai is the home base. the product and the source code live on their own domains.",
+      "gtmos": { "label": "Clearbox", "description": "See your market. Move first. The signal-based market intelligence engine I founded." },
+      "contentos": { "label": "GitHub", "description": "The source. Agents, skills, pipelines, and this site — readable and forkable at shawnla90." }
     },
     "connect": {
       "headline": "Connect",
@@ -253,7 +253,7 @@
       "description": "I didn't go from SDR to GTM engineer in a straight line. I went through three layers, and each one rewired how I think about building.",
       "whatItTaughtMe": "what it taught me:",
       "plumber": { "title": "plumber", "subtitle": "layer 1", "body": "before tech, I was a plumber. not a metaphor. actual plumbing. diagnosing problems by listening to walls, tracing pipes nobody else wanted to touch, fixing systems under pressure with no documentation.", "lesson": "every system has a logic. follow the flow. if something breaks upstream, everything downstream fails. and nobody respects the fix until the water stops leaking." },
-      "sdr": { "title": "SDR", "subtitle": "layer 2", "body": "200+ cold emails a day. primary domains, no warmup, SalesLoft sequences, Salesforce activity logging by hand. building buying committees from scratch in accounts nobody wanted.", "lesson": "volume is a teacher. rejection is data. and the people who manually grind through outreach are the ones who actually understand what should be automated later." },
+      "sdr": { "title": "SDR", "subtitle": "layer 2", "body": "the SDR grind. primary domains, no warmup, SalesLoft sequences, Salesforce activity logging by hand. building buying committees from scratch in accounts nobody wanted.", "lesson": "volume is a teacher. rejection is data. and the people who manually grind through outreach are the ones who actually understand what should be automated later." },
       "gtmEngineer": { "title": "GTM engineer", "subtitle": "layer 3", "body": "I stopped working inside the systems and started building them. Clay tables, HubSpot automation, Instantly sequences, web reveal workflows, enrichment pipelines. the same work I used to do by hand, now running on infrastructure I designed.", "lesson": "the best builders are the ones who did the job before they automated it. you can't engineer what you don't understand." },
       "conclusion": "none of these define me. all of them sharpen what I ship."
     },
@@ -269,9 +269,9 @@
       "heading": "three sites, one system",
       "description": "this isn't vanity. it's architecture.",
       "shawnos": { "name": "shawnos.ai", "description": "the builder. the personal operating system. daily tracker, RPG progression, avatar system, API layer. this is where the infrastructure lives." },
-      "gtmos": { "name": "thegtmos.ai", "description": "the playbook. GTM engineering frameworks, workflow breakdowns, campaign architectures. the systems behind pipeline generation." },
-      "contentos": { "name": "thecontentos.ai", "description": "the voice engine. content-as-code publishing, voice DNA, repurpose pipelines. how the words get made and where they go." },
-      "footer": "three domains. one monorepo. every page, every API route, every generated image comes from the same codebase. nothing here is an accident."
+      "gtmos": { "name": "clearbox.to", "description": "the product. signal-based market intelligence. see your market, move first. the system I ran for myself, productized." },
+      "contentos": { "name": "github.com/shawnla90", "description": "the source. the monorepo behind all of it — agents, skills, pipelines, this site. readable and forkable." },
+      "footer": "three surfaces. one operator. every page, every campaign, every commit ships from the same desk. nothing here is an accident."
     },
     "buildWithMe": {
       "heading": "build with me",
@@ -353,8 +353,8 @@
       "toc": "on this page",
       "mobileToc": "table of contents",
       "fieldLabels": { "whyItMatters": "why it matters", "howYouUseIt": "how you use it", "related": "related:" },
-      "outro": { "title": "the vibe coder toolkit", "closingLine": "go build something.", "cta": { "title": "want the GTM side?", "buttonText": "GTM OS knowledge guide" } },
-      "nav": { "left": "home", "right": "GTM OS guide" }
+      "outro": { "title": "the vibe coder toolkit", "closingLine": "go build something.", "cta": { "title": "want the GTM side?", "buttonText": "GTM knowledge guide" } },
+      "nav": { "left": "home", "right": "GTM guide" }
     }
   },
   "HowTo": {

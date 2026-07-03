@@ -24,28 +24,38 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/clearbox',
+        destination: 'https://clearbox.to',
+        permanent: true,
+      },
+      {
+        source: '/:locale(en|es|he|ja|zh)/clearbox',
+        destination: 'https://clearbox.to',
+        permanent: true,
+      },
+      {
         source: '/knowledge/gtm',
-        destination: 'https://thegtmos.ai/knowledge/gtm',
+        destination: '/knowledge',
         permanent: true,
       },
       {
         source: '/content-wiki',
-        destination: 'https://thecontentos.ai/content-wiki',
+        destination: '/knowledge',
         permanent: true,
       },
       {
         source: '/content-wiki/:path*',
-        destination: 'https://thecontentos.ai/content-wiki/:path*',
+        destination: '/knowledge',
         permanent: true,
       },
       {
         source: '/clay-wiki',
-        destination: 'https://thegtmos.ai/clay-wiki',
+        destination: '/knowledge',
         permanent: true,
       },
       {
         source: '/clay-wiki/:path*',
-        destination: 'https://thegtmos.ai/clay-wiki/:path*',
+        destination: '/knowledge',
         permanent: true,
       },
       {

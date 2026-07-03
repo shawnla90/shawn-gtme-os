@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
-import { redirect } from 'next/navigation'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 import {
   HOW_TO_WIKI_ENTRIES,
@@ -15,18 +14,10 @@ import { BreadcrumbSchema, AuthorByline } from '@shawnos/shared/components'
 
 const SITE_URL = 'https://shawnos.ai'
 
-const CANONICAL_URLS: Record<CanonicalSite, string> = {
-  shawnos: 'https://shawnos.ai',
-  gtmos: 'https://thegtmos.ai',
-  contentos: 'https://thecontentos.ai',
-}
-
 /* ── static params for SSG ────────────────────────── */
 
 export function generateStaticParams() {
-  return HOW_TO_WIKI_ENTRIES
-    .filter((e) => e.canonicalSite === 'shawnos')
-    .map((entry) => ({ slug: entry.id }))
+  return HOW_TO_WIKI_ENTRIES.map((entry) => ({ slug: entry.id }))
 }
 
 /* ── dynamic metadata ─────────────────────────────── */
@@ -329,12 +320,6 @@ export default async function HowToEntryPage({
     )
   }
 
-  /* redirect non-canonical entries to their home site */
-  if (entry.canonicalSite !== 'shawnos') {
-    const canonicalBase = CANONICAL_URLS[entry.canonicalSite]
-    redirect(`${canonicalBase}/how-to/${entry.id}`)
-  }
-
   const localizedCategories = getLocalizedHowToCategories(locale)
   const catMeta = localizedCategories.find((c) => c.id === entry.category)
 
@@ -488,10 +473,10 @@ export default async function HowToEntryPage({
               {relatedEntries.map((r) => (
                 <Link
                   key={r.id}
-                  href={r.canonicalSite === 'shawnos' ? `/how-to/${r.id}` : `${CANONICAL_URLS[r.canonicalSite]}/how-to/${r.id}`}
-                  style={r.canonicalSite !== 'shawnos' ? { ...relatedChip, borderStyle: 'dashed' } : relatedChip}
+                  href={`/how-to/${r.id}`}
+                  style={relatedChip}
                 >
-                  {r.title}{r.canonicalSite !== 'shawnos' && ' ↗'}
+                  {r.title}
                 </Link>
               ))}
             </div>

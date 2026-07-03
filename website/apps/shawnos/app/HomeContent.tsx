@@ -3,9 +3,11 @@
 import Image from 'next/image'
 import { Link } from '../i18n/navigation'
 import { SmartAnimateText } from '../components/unlumen-ui/smart-animate-text'
+import { FileTree, type FileTreeElement } from '../components/unlumen-ui/file-tree'
+import MagneticButton from '../components/smoothui/magnetic-button'
 import { ButtonLink } from '@shawnos/shared/components/ui'
 import type { TimelineItem, LearningDiscipline } from '@shawnos/shared/lib'
-import { ClearboxModeDemo } from './[locale]/clearbox/ClearboxModeDemo'
+import { ClearboxModeDemo } from '../components/clearbox/ClearboxModeDemo'
 
 interface Post {
   slug: string
@@ -31,7 +33,7 @@ const ARC = [
   },
   {
     eyebrow: 'SDR',
-    sentence: '200+ cold emails a day. Primary domains, SalesLoft sequences.',
+    sentence: 'SDR years. Manual buying committees, primary-domain sends, the grind that taught me what to automate.',
     lesson: 'Volume is a teacher. Rejection is data.',
   },
   {
@@ -43,6 +45,38 @@ const ARC = [
     eyebrow: 'Founder',
     sentence: 'Now I’m building Clearbox. The system became the product.',
     lesson: 'Build the tool you wish existed.',
+  },
+]
+
+const VAULT_TREE: FileTreeElement[] = [
+  {
+    id: 'voice-dna',
+    name: 'voice-dna/',
+    type: 'folder',
+    defaultOpen: true,
+    children: [
+      { id: 'voice-dna/core-voice', name: 'core-voice.md', href: '/vault/voice-dna/core-voice' },
+      { id: 'voice-dna/voice-principles', name: 'voice-principles.md', href: '/vault/voice-dna/voice-principles' },
+      { id: 'voice-dna/viral-hooks', name: 'viral-hooks.md', href: '/vault/voice-dna/viral-hooks' },
+    ],
+  },
+  {
+    id: 'anti-slop',
+    name: 'anti-slop/',
+    type: 'folder',
+    children: [
+      { id: 'anti-slop/anti-slop-core', name: 'anti-slop-core.md', href: '/vault/anti-slop/anti-slop-core' },
+      { id: 'anti-slop/ai-pattern-detection', name: 'ai-pattern-detection.md', href: '/vault/anti-slop/ai-pattern-detection' },
+    ],
+  },
+  {
+    id: 'reddit',
+    name: 'reddit/',
+    type: 'folder',
+    children: [
+      { id: 'reddit/reddit-growth-seo', name: 'reddit-growth-seo.md', href: '/vault/reddit/reddit-growth-seo' },
+      { id: 'reddit/reddit-strategy', name: 'reddit-strategy.md', href: '/vault/reddit/reddit-strategy' },
+    ],
   },
 ]
 
@@ -163,6 +197,22 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
           .path-step + .path-step { border-left: none; border-top: 1px solid var(--canvas-border); }
         }
 
+        /* the vault — steal my files */
+        .vault-feature {
+          display: grid; grid-template-columns: minmax(280px, 460px) 1fr; gap: 48px; align-items: center;
+          background: var(--canvas-subtle); border: 1px solid var(--canvas-border); border-radius: 20px;
+          padding: 36px;
+        }
+        .vault-feature-tree { min-width: 0; }
+        .vault-feature-heading {
+          font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; letter-spacing: -0.02em;
+          color: var(--text-primary); margin: 0 0 12px;
+        }
+        .vault-feature-copy { font-size: 16px; color: var(--text-secondary); line-height: 1.6; margin: 0 0 24px; max-width: 480px; }
+        @media (max-width: 820px) {
+          .vault-feature { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
+        }
+
         /* destinations — elevated feature cards */
         .dest-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
         .dest-card {
@@ -173,6 +223,9 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         .dest-card:hover { transform: translateY(-3px); border-color: var(--text-secondary);
           background: var(--canvas-card); }
         .dest-icon { width: 44px; height: 44px; color: var(--text-primary); }
+        .dest-icon--light { display: none; }
+        [data-theme='light'] .dest-icon--dark { display: none; }
+        [data-theme='light'] .dest-icon--light { display: block; }
         .dest-kicker { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted);
           font-weight: 600; margin: 0 0 8px; }
         .dest-title { font-size: 23px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; margin: 0 0 10px; }
@@ -245,11 +298,11 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
           <h1 className="home-name">Shawn Tenam</h1>
           <p className="home-lead">Go-to-market engineer, now founder. Plumber for 10 years before that.</p>
           <p className="home-intro">
-            I work the accounts, send the programmatic email, and write the content — then build the agents
-            that run all of it. Every campaign, every post, every skill lives in one codebase, in public.
+            I build my GTM engine in public. Campaigns, content, and the agents that run them live in one
+            codebase you can read. Take what works.
           </p>
           <div className="home-cta">
-            <ButtonLink href="/clearbox" variant="primary" size="md">
+            <ButtonLink href="https://clearbox.to" target="_blank" rel="noopener noreferrer" variant="primary" size="md">
               Open Clearbox →
             </ButtonLink>
             <ButtonLink href="/reddit" variant="secondary" size="md">
@@ -257,6 +310,32 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
             </ButtonLink>
           </div>
         </header>
+
+        {/* THE VAULT — steal my files */}
+        <section className="home-section">
+          <div className="home-section-head">
+            <p className="home-kicker">Steal my files</p>
+          </div>
+          <div className="vault-feature">
+            <div className="vault-feature-tree">
+              <FileTree
+                elements={VAULT_TREE}
+                highlightColor="var(--aura-strong)"
+                showIcons
+              />
+            </div>
+            <div>
+              <h2 className="vault-feature-heading">the vault</h2>
+              <p className="vault-feature-copy">
+                23 real files from my GTM agent stack. Voice DNA, anti-slop, the Reddit system.
+                Browse them, download them, use them.
+              </p>
+              <MagneticButton asChild>
+                <Link href={'/vault' as never}>Open the vault →</Link>
+              </MagneticButton>
+            </div>
+          </div>
+        </section>
 
         {/* THE PATH */}
         <section className="home-section">
@@ -283,15 +362,16 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
           </div>
           <div className="dest-grid">
             {/* Clearbox */}
-            <Link href={'/clearbox' as never} className="dest-card">
-              <Image src="/clearbox/icon-dark.svg" alt="Clearbox" width={44} height={44} className="dest-icon" />
+            <a href="https://clearbox.to" target="_blank" rel="noopener noreferrer" className="dest-card">
+              <Image src="/clearbox/icon-dark.svg" alt="Clearbox" width={44} height={44} className="dest-icon dest-icon--dark" />
+              <Image src="/clearbox/icon-light.svg" alt="" aria-hidden width={44} height={44} className="dest-icon dest-icon--light" />
               <div>
                 <p className="dest-kicker">Now live</p>
                 <h3 className="dest-title">Clearbox</h3>
                 <p className="dest-sub">See your market. Move first.</p>
               </div>
-              <span className="dest-go">Open Clearbox →</span>
-            </Link>
+              <span className="dest-go">Open Clearbox ↗</span>
+            </a>
 
             {/* Reddit Growth Playbook */}
             <Link href={'/reddit' as never} className="dest-card">
@@ -373,12 +453,12 @@ export function HomeContent({ posts, timeline, karma, learning }: HomeContentPro
         <section className="home-section">
           <div className="home-section-head">
             <p className="home-kicker">What Clearbox is</p>
-            <Link href={'/clearbox' as never} className="home-section-link">Open the full Clearbox →</Link>
+            <a href="https://clearbox.to" target="_blank" rel="noopener noreferrer" className="home-section-link">Open the full Clearbox ↗</a>
           </div>
           <p className="clearbox-lead">
             Signal-based market intelligence. Pick a mode — lead, competitor, or engager — and Clearbox scores
             the conversations worth showing up in.{' '}
-            <Link href={'/clearbox' as never} className="clearbox-inline-link">See it live →</Link>
+            <a href="https://clearbox.to" target="_blank" rel="noopener noreferrer" className="clearbox-inline-link">See it live ↗</a>
           </p>
           <ClearboxModeDemo />
         </section>

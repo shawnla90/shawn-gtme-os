@@ -51,7 +51,7 @@ This layer sharpens the attention-grabbing power of copy across LinkedIn and X w
 - Result-first hooks drive replay value (show the outcome, then how).
 - Example (on-screen text): you're using Claude wrong. here's why.
 - Example (result-first): 30 minutes of work. 3 seconds.
-- Example (challenge): I bet you've never tried this in Cursor.
+- Example (challenge): I bet you've never tried this in Claude Code.
 
 ## Benchmarks for Success
 

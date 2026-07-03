@@ -190,7 +190,8 @@ export default async function HowToPage({
       subtitle: e.subtitle,
       category: e.category,
       difficulty: e.difficulty,
-      canonicalSite: e.canonicalSite,
+      // Every guide is served locally now — the sibling sites are gone.
+      canonicalSite: 'shawnos' as const,
     })),
     {
       id: 'how-to-build-persistent-ai-memory',
@@ -217,7 +218,7 @@ export default async function HowToPage({
       t('hubPage.description'),
     terminalCommand: 'cd ~/how-to',
     badge: t('hubPage.badge'),
-    intro: 'Most people are one prompt away from spinning up an AI agent but three years away from having a personal AI assistant that actually knows their business. The gap is AI infrastructure. These guides cover how to build that foundation from scratch: agent memory systems, MCP server connections, parallel agent pipelines, and security patterns that work without paid tools. Every guide is a working playbook from real builds — specific steps, real edge cases, no theory. Build your own AI content OS or automation pipeline and own it completely.',
+    intro: 'People are one prompt away from spinning up an AI agent but three years away from having a personal AI assistant that actually knows their business. The gap is AI infrastructure. These guides cover how to build that foundation from scratch: agent memory systems, MCP server connections, parallel agent pipelines, and security patterns that work without paid tools. Every guide is a working playbook from real builds — specific steps, real edge cases, no theory. Build your own AI content pipeline or automation stack and own it completely.',
     entries,
     categories,
     navLinks: {
