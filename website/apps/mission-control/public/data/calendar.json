@@ -1,169 +1,169 @@
 {
-  "generated": "2026-07-02T04:26:08.072Z",
+  "generated": "2026-07-03T04:31:29.953Z",
   "events": [
     {
-      "id": "commit-23651f5",
-      "title": "chore(crypto): evening signal update 2026-07-01",
+      "id": "commit-bc9290e",
+      "title": "fix(build): untrack legacy /live route — imports ai-news-cac",
       "type": "system",
-      "datetime": "2026-07-01T17:30:08-04:00",
+      "datetime": "2026-07-02T21:02:29-04:00",
       "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-01",
+      "description": "fix(build): untrack legacy /live route — imports ai-news-cache.json that isn't in git",
       "metadata": {
-        "commitHash": "23651f5"
+        "commitHash": "bc9290e"
       }
     },
     {
-      "id": "commit-cc26f9b",
-      "title": "chore(crypto): morning signal update 2026-07-01",
+      "id": "commit-5dbe4f8",
+      "title": "fix(footer): remove the Substack subscribe capture from the ",
       "type": "system",
-      "datetime": "2026-07-01T07:00:05-04:00",
+      "datetime": "2026-07-02T20:58:00-04:00",
       "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-01",
+      "description": "fix(footer): remove the Substack subscribe capture from the shared footer",
       "metadata": {
-        "commitHash": "cc26f9b"
+        "commitHash": "5dbe4f8"
       }
     },
     {
-      "id": "commit-ed89593",
-      "title": "chore: daily tracker scan 2026-06-30",
+      "id": "commit-dfd60e6",
+      "title": "chore: retrigger railway deploy",
       "type": "system",
-      "datetime": "2026-07-01T00:34:01-04:00",
+      "datetime": "2026-07-02T20:46:54-04:00",
       "status": "completed",
-      "description": "chore: daily tracker scan 2026-06-30",
+      "description": "chore: retrigger railway deploy",
       "metadata": {
-        "commitHash": "ed89593"
+        "commitHash": "dfd60e6"
       }
     },
     {
-      "id": "commit-7c00435",
-      "title": "chore(crypto): evening signal update 2026-06-30",
+      "id": "commit-3015a35",
+      "title": "feat(site): phase 2 — flat nav, home rework, reddit report, ",
       "type": "system",
-      "datetime": "2026-06-30T17:30:02-04:00",
+      "datetime": "2026-07-02T20:10:17-04:00",
       "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-06-30",
+      "description": "feat(site): phase 2 — flat nav, home rework, reddit report, blog backfill, voice DNA refresh",
       "metadata": {
-        "commitHash": "7c00435"
+        "commitHash": "3015a35"
       }
     },
     {
-      "id": "commit-9798d59",
-      "title": "chore(crypto): morning signal update 2026-06-30",
+      "id": "commit-33e035b",
+      "title": "fix(deploy): bundle content/ + data/ into runner image; allo",
       "type": "system",
-      "datetime": "2026-06-30T07:00:04-04:00",
+      "datetime": "2026-07-02T19:40:20-04:00",
       "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-06-30",
+      "description": "fix(deploy): bundle content/ + data/ into runner image; allow YouTube in CSP",
       "metadata": {
-        "commitHash": "9798d59"
+        "commitHash": "33e035b"
       }
     },
     {
-      "id": "commit-9b9cf39",
-      "title": "chore: daily tracker scan 2026-06-29",
+      "id": "commit-20094a8",
+      "title": "merge: absorb main's tracker-scan commit before shipping the",
       "type": "system",
-      "datetime": "2026-06-30T00:29:48-04:00",
+      "datetime": "2026-07-02T15:12:29-04:00",
       "status": "completed",
-      "description": "chore: daily tracker scan 2026-06-29",
+      "description": "merge: absorb main's tracker-scan commit before shipping the revival",
       "metadata": {
-        "commitHash": "9b9cf39"
+        "commitHash": "20094a8"
       }
     },
     {
-      "id": "commit-fe38b87",
-      "title": "chore(crypto): evening signal update 2026-06-29",
+      "id": "commit-e7b9271",
+      "title": "fix(vault): format YAML-parsed dates as YYYY-MM-DD in file h",
       "type": "system",
-      "datetime": "2026-06-29T17:30:05-04:00",
+      "datetime": "2026-07-02T15:08:33-04:00",
       "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-06-29",
+      "description": "fix(vault): format YAML-parsed dates as YYYY-MM-DD in file header",
       "metadata": {
-        "commitHash": "fe38b87"
+        "commitHash": "e7b9271"
       }
     },
     {
-      "id": "commit-78e4a46",
-      "title": "chore(crypto): morning signal update 2026-06-29",
+      "id": "commit-01673b0",
+      "title": "feat(shawnos): reddit playbook v3 + July 2026 programmable-G",
       "type": "system",
-      "datetime": "2026-06-29T07:00:08-04:00",
+      "datetime": "2026-07-02T15:03:04-04:00",
       "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-06-29",
+      "description": "feat(shawnos): reddit playbook v3 + July 2026 programmable-GTM knowledge update",
       "metadata": {
-        "commitHash": "78e4a46"
+        "commitHash": "01673b0"
       }
     },
     {
-      "id": "commit-3ebbbc5",
-      "title": "chore: daily tracker scan 2026-06-28",
+      "id": "commit-fa4d753",
+      "title": "content: ep1 two-agent-stack blog + relaunch essay v2 (stage",
       "type": "system",
-      "datetime": "2026-06-29T00:27:26-04:00",
+      "datetime": "2026-07-02T14:16:27-04:00",
       "status": "completed",
-      "description": "chore: daily tracker scan 2026-06-28",
+      "description": "content: ep1 two-agent-stack blog + relaunch essay v2 (staged, not published)",
       "metadata": {
-        "commitHash": "3ebbbc5"
+        "commitHash": "fa4d753"
       }
     },
     {
-      "id": "commit-ee65bda",
-      "title": "chore(crypto): evening signal update 2026-06-28",
+      "id": "commit-3ff423b",
+      "title": "feat(shawnos): the Vault — browse and download my real GTM-a",
       "type": "system",
-      "datetime": "2026-06-28T17:30:07-04:00",
+      "datetime": "2026-07-02T14:12:28-04:00",
       "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-06-28",
+      "description": "feat(shawnos): the Vault — browse and download my real GTM-agent files",
       "metadata": {
-        "commitHash": "ee65bda"
+        "commitHash": "3ff423b"
       }
     },
     {
-      "id": "commit-20adc25",
-      "title": "chore(crypto): morning signal update 2026-06-28",
+      "id": "commit-6d4c4ab",
+      "title": "chore(crypto): morning signal update 2026-07-02",
       "type": "system",
-      "datetime": "2026-06-28T07:00:06-04:00",
+      "datetime": "2026-07-02T07:00:07-04:00",
       "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-06-28",
+      "description": "chore(crypto): morning signal update 2026-07-02",
       "metadata": {
-        "commitHash": "20adc25"
+        "commitHash": "6d4c4ab"
       }
     },
     {
-      "id": "commit-bbf25a1",
-      "title": "chore: daily tracker scan 2026-06-27",
+      "id": "commit-068616c",
+      "title": "feat(shawnos): YouTube for real — Data API catalog on /watch",
       "type": "system",
-      "datetime": "2026-06-28T00:27:35-04:00",
+      "datetime": "2026-07-02T01:29:20-04:00",
       "status": "completed",
-      "description": "chore: daily tracker scan 2026-06-27",
+      "description": "feat(shawnos): YouTube for real — Data API catalog on /watch + blog embeds",
       "metadata": {
-        "commitHash": "bbf25a1"
+        "commitHash": "068616c"
       }
     },
     {
-      "id": "commit-75d2207",
-      "title": "chore(crypto): evening signal update 2026-06-27",
+      "id": "commit-7ce4994",
+      "title": "feat(shawnos): nav IA — kill the More drawer",
       "type": "system",
-      "datetime": "2026-06-27T17:30:05-04:00",
+      "datetime": "2026-07-02T01:21:10-04:00",
       "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-06-27",
+      "description": "feat(shawnos): nav IA — kill the More drawer",
       "metadata": {
-        "commitHash": "75d2207"
+        "commitHash": "7ce4994"
       }
     },
     {
-      "id": "commit-35bbc16",
-      "title": "chore(crypto): morning signal update 2026-06-27",
+      "id": "commit-1d11383",
+      "title": "feat(shawnos): vendor the component kit — SmoothUI set + Unl",
       "type": "system",
-      "datetime": "2026-06-27T07:00:11-04:00",
+      "datetime": "2026-07-02T01:20:16-04:00",
       "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-06-27",
+      "description": "feat(shawnos): vendor the component kit — SmoothUI set + Unlumen file tree",
       "metadata": {
-        "commitHash": "35bbc16"
+        "commitHash": "1d11383"
       }
     },
     {
-      "id": "commit-ce1781b",
-      "title": "feat(shawnos): phase 7 — sharpen the GTM-engineer narrative ",
+      "id": "commit-2bd4f94",
+      "title": "feat(shawnos): aura design pass — Clearbox violet tokens, ra",
       "type": "system",
-      "datetime": "2026-06-27T04:29:19-04:00",
+      "datetime": "2026-07-02T01:10:35-04:00",
       "status": "completed",
-      "description": "feat(shawnos): phase 7 — sharpen the GTM-engineer narrative + surface /built",
+      "description": "feat(shawnos): aura design pass — Clearbox violet tokens, radiant hero, engineered grid",
       "metadata": {
-        "commitHash": "ce1781b"
+        "commitHash": "2bd4f94"
       }
     }
   ],
