@@ -1,5 +1,4 @@
 import React from 'react'
-import { NewsletterSignup } from './NewsletterSignup'
 
 interface FooterProps {
   siteName?: string
@@ -21,8 +20,6 @@ export function Footer({ siteName }: FooterProps) {
 
   return (
     <footer>
-      <NewsletterSignup />
-
       <div
         style={{
           padding: '24px',
