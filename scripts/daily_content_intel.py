@@ -1442,25 +1442,42 @@ Write the LinkedIn post now. Tease 2-3 of the best highlights (specific thread t
         print(f"  DRY RUN: would schedule to Typefully for 10:00 AM ET")
         return
 
-    # Schedule for 10:00 AM ET next day
+    # Schedule for 10:00 AM ET next day (Typefully API v2; v1 was retired)
     from datetime import timedelta
     target_dt = datetime.strptime(target_date, "%Y-%m-%d")
     publish_dt = target_dt + timedelta(days=1)
     schedule_iso = publish_dt.strftime("%Y-%m-%dT10:00:00-04:00")  # ET (EDT)
 
+    headers = {
+        "Authorization": f"Bearer {api_key}",
+        "Content-Type": "application/json",
+    }
     try:
+        sets_resp = requests.get(
+            "https://api.typefully.com/v2/social-sets",
+            headers=headers, timeout=15)
+        sets_resp.raise_for_status()
+        results = sets_resp.json().get("results", [])
+        if not results:
+            print("  WARN: Typefully returned no social sets")
+            return
+        social_set_id = results[0]["id"]
+
         resp = requests.post(
-            "https://api.typefully.com/v1/drafts/",
-            headers={
-                "X-API-KEY": api_key,
-                "Content-Type": "application/json",
-            },
+            f"https://api.typefully.com/v2/social-sets/{social_set_id}/drafts",
+            headers=headers,
             json={
-                "content": linkedin_text,
-                "schedule-date": schedule_iso,
+                "platforms": {
+                    "linkedin": {
+                        "enabled": True,
+                        "posts": [{"text": linkedin_text}],
+                    },
+                },
+                "publish_at": schedule_iso,
+                "draft_title": f"Claude Code Daily {target_date}",
                 "share": True,
             },
-            timeout=15,
+            timeout=30,
         )
         data = resp.json()
         if resp.status_code in (200, 201):
