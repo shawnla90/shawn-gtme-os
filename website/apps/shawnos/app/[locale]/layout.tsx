@@ -227,6 +227,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             { href: lp('/'), label: nav('home') },
             { href: 'https://clearbox.to', label: 'Clearbox' },
             { href: lp('/blog'), label: nav('blog') },
+            { href: lp('/shows'), label: 'Shows' },
             { href: lp('/knowledge'), label: 'Knowledge' },
             { href: lp('/reddit'), label: 'Reddit' },
             { href: lp('/watch'), label: 'Watch' },

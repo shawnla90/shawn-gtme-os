@@ -20,17 +20,28 @@ type Filter = 'all' | TimelineSource
 
 const PAGE_SIZE = 20
 
+const SOURCE_LABELS: Record<TimelineSource, string> = {
+  blog: 'Blog',
+  reddit: 'Reddit',
+  linkedin: 'LinkedIn',
+  newsletter: 'Newsletter',
+  substack: 'Substack',
+}
+
+// display order; substack is retired and never rendered
+const SOURCE_ORDER: TimelineSource[] = ['blog', 'reddit', 'linkedin', 'newsletter']
+
 export function BlogTimeline({
   initialItems,
-  tagline = 'Live feed — everything I publish: blog, Substack, Reddit.',
+  tagline = 'Live feed — everything I publish: blog posts, Reddit, LinkedIn, the newsletter.',
 }: BlogTimelineProps) {
   const [filter, setFilter] = useState<Filter>('all')
   const [category, setCategory] = useState<string>('all')
   const [visible, setVisible] = useState(PAGE_SIZE)
 
   const counts = useMemo(() => {
-    const c = { all: initialItems.length, blog: 0, substack: 0, reddit: 0 }
-    for (const i of initialItems) c[i.source]++
+    const c: Record<string, number> = { all: initialItems.length }
+    for (const i of initialItems) c[i.source] = (c[i.source] ?? 0) + 1
     return c
   }, [initialItems])
 
@@ -54,11 +65,13 @@ export function BlogTimeline({
   const sliced = filtered.slice(0, visible)
   const hasMore = visible < filtered.length
 
+  // only render pills for sources that actually have items — no zeros
   const tabs: PillTabItem[] = [
     { id: 'all', label: `All · ${counts.all}` },
-    { id: 'blog', label: `Blog · ${counts.blog}` },
-    { id: 'substack', label: `Substack · ${counts.substack}` },
-    { id: 'reddit', label: `Reddit · ${counts.reddit}` },
+    ...SOURCE_ORDER.filter((s) => (counts[s] ?? 0) > 0).map((s) => ({
+      id: s,
+      label: `${SOURCE_LABELS[s]} · ${counts[s]}`,
+    })),
   ]
 
   const categoryTabs: PillTabItem[] = [
@@ -98,7 +111,7 @@ export function BlogTimeline({
           }}
         >
           <Image
-            src="/clearbox/pfp.png"
+            src="/avatars/shawn.jpg"
             alt="Shawn Tenam"
             width={44}
             height={44}
@@ -154,8 +167,8 @@ export function BlogTimeline({
             onChange={(id) => {
               setFilter(id as Filter)
               setVisible(PAGE_SIZE)
-              // source + topic are AND-ed; substack/reddit carry no topic, so clear it
-              if (id === 'substack' || id === 'reddit') setCategory('all')
+              // source + topic are AND-ed; only blog items carry a topic, so clear it
+              if (id !== 'all' && id !== 'blog') setCategory('all')
             }}
             ariaLabel="Filter feed by source"
           />

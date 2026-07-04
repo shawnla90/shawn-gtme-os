@@ -4,50 +4,41 @@ import { useEffect, useRef, useState } from 'react'
 import { ThemeToggle } from '@shawnos/shared/components'
 import { useTheme } from '@shawnos/shared/hooks/useTheme'
 
-const GAG_KEY = 'light-mode-gag'
-const GAG_MS = 1200
+const PEEK_MS = 900 // how long the visitor gets to believe in light mode
+const GAG_MS = 1400 // glitch overlay duration before dark returns
 
 /**
- * Wraps the shared ThemeToggle. The first time a visitor flips dark -> light
- * in a session, it holds the switch for ~1.2s, flashes a glitchy full-screen
- * "there is no light mode." overlay, then lets the light theme through.
- * Every toggle after that behaves normally. light -> dark never gags.
+ * Wraps the shared ThemeToggle. Flipping dark -> light lets light mode
+ * through for a moment, then a glitchy "there is no light mode." overlay
+ * takes it back and the site returns to dark. Light mode never persists;
+ * that is the joke.
  */
 export function ThemeToggleGag() {
   const { theme, setTheme } = useTheme()
   const [gagActive, setGagActive] = useState(false)
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const timersRef = useRef<ReturnType<typeof setTimeout>[]>([])
 
-  // Never strand the overlay: clear the timer on unmount.
+  // Never strand the overlay or a pending revert: clear timers on unmount.
   useEffect(() => {
     return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current)
+      for (const t of timersRef.current) clearTimeout(t)
     }
   }, [])
 
   const handleClickCapture = (e: React.MouseEvent) => {
     if (theme !== 'dark' || gagActive) return
-    let seen = true
-    try {
-      seen = sessionStorage.getItem(GAG_KEY) === '1'
-    } catch {
-      seen = true
-    }
-    if (seen) return
 
-    // Intercept this dark -> light switch and play the gag first.
+    // Let them taste light mode, then take it away.
     e.preventDefault()
     e.stopPropagation()
-    try {
-      sessionStorage.setItem(GAG_KEY, '1')
-    } catch {
-      /* storage unavailable — gag once per mount instead */
-    }
-    setGagActive(true)
-    timeoutRef.current = setTimeout(() => {
-      setGagActive(false)
-      setTheme('light')
-    }, GAG_MS)
+    setTheme('light')
+    timersRef.current.push(
+      setTimeout(() => setGagActive(true), PEEK_MS),
+      setTimeout(() => {
+        setTheme('dark')
+        setGagActive(false)
+      }, PEEK_MS + GAG_MS),
+    )
   }
 
   return (
@@ -66,15 +57,15 @@ export function ThemeToggleGag() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: '#fafafa',
-            animation: `ttg-flash ${GAG_MS}ms steps(1, end) forwards`,
+            background: '#0a0a0a',
+            animation: `ttg-swallow ${GAG_MS}ms steps(1, end) forwards`,
             pointerEvents: 'none',
           }}
         >
           <style>{`
-            @keyframes ttg-flash {
-              0% { background: #fafafa; }
-              12% { background: #0a0a0a; }
+            @keyframes ttg-swallow {
+              0% { background: rgba(10, 10, 10, 0.55); }
+              18% { background: #0a0a0a; }
               100% { background: #0a0a0a; }
             }
             @keyframes ttg-jitter {

@@ -11,7 +11,6 @@ const socialLinks = [
   { href: 'https://www.tiktok.com/@shawnos.ai', label: 'TikTok' },
   { href: 'https://github.com/shawnla90', label: 'GitHub' },
   { href: 'https://reddit.com/r/GTMBuilders', label: 'Reddit' },
-  { href: 'https://shawntenam.substack.com', label: 'Substack' },
   { href: 'https://discord.gg/6eKe49nth', label: 'Discord' },
 ]
 

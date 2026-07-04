@@ -12,6 +12,8 @@ const sourceColor: Record<TimelineSource, string> = {
   blog: 'var(--accent)',
   substack: '#FF6719',
   reddit: '#FF4500',
+  linkedin: '#0A66C2',
+  newsletter: '#6D5EE9',
 }
 
 export function SourceBadge({ label, source }: SourceBadgeProps) {

@@ -53,7 +53,7 @@ export default async function HomePage({ params }: Props) {
     blogHrefBase: locale === 'en' ? '/blog' : `/${locale}/blog`,
     limit: 12,
     excludeCategories: ['claude-daily'],
-  })
+  }).filter((i) => i.source !== 'substack')
 
   const learning = getLearningDisciplines(DATA_ROOT).disciplines
 

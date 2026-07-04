@@ -3,7 +3,7 @@ import path from 'path'
 import { getAllPosts, type Post } from './posts'
 import { resolveDataRoot } from './dataRoot'
 
-export type TimelineSource = 'blog' | 'substack' | 'reddit'
+export type TimelineSource = 'blog' | 'substack' | 'reddit' | 'linkedin' | 'newsletter'
 
 export interface TimelineAuthor {
   name: string
@@ -70,9 +70,12 @@ export function blogPostsToTimelineItems(
     .filter((p) => p.date)
     .map((p) => {
       const ts = new Date(p.date).toISOString()
+      // Level Up GTM issues are the newsletter, not regular blog posts
+      const isNewsletter = p.category === 'level-up-gtm'
+      const source = (isNewsletter ? 'newsletter' : 'blog') as TimelineSource
       return {
         id: `blog:${p.slug}`,
-        source: 'blog' as const,
+        source,
         timestamp: ts,
         author: SHAWN_AUTHOR,
         title: p.title,
@@ -80,8 +83,8 @@ export function blogPostsToTimelineItems(
         href: `${blogHrefBase}/${p.slug}`,
         isExternal: false,
         badge: {
-          label: p.category ? `blog · ${p.category}` : 'blog',
-          source: 'blog' as const,
+          label: isNewsletter ? 'level up gtm' : p.category ? `blog · ${p.category}` : 'blog',
+          source,
         },
         category: p.category,
         meta: { readingTime: p.readingTime },
@@ -165,6 +168,44 @@ export function readRedditSelfTimelineItems(dataRoot?: string): TimelineItem[] {
     })
 }
 
+interface LinkedInCacheItem {
+  id: string
+  title: string
+  excerpt: string
+  url: string
+  postedAt: string
+  likes?: number
+  comments?: number
+}
+
+interface LinkedInCache {
+  items: LinkedInCacheItem[]
+}
+
+/** Shawn's actually-posted LinkedIn posts (not drafts). Populated by a
+ * profile-activity scrape into data/linkedin/self-posts.json; empty until
+ * that cache exists. */
+export function readLinkedInSelfTimelineItems(dataRoot?: string): TimelineItem[] {
+  const root = dataRoot ?? resolveDataRoot()
+  const cachePath = path.join(root, 'linkedin', 'self-posts.json')
+  const cache = readJsonSafe<LinkedInCache>(cachePath, { items: [] })
+  return cache.items
+    .filter((i) => i.postedAt)
+    .map((i) => ({
+      id: `linkedin:${i.id}`,
+      source: 'linkedin' as const,
+      timestamp: new Date(i.postedAt).toISOString(),
+      author: SHAWN_AUTHOR,
+      title: i.title,
+      body: i.excerpt,
+      href: i.url,
+      isExternal: true,
+      badge: { label: 'linkedin', source: 'linkedin' as const },
+      meta: { karma: i.likes, comments: i.comments },
+      isFresh: hoursSince(i.postedAt) < 24,
+    }))
+}
+
 export interface GetTimelineItemsOptions {
   contentDir: string
   blogHrefBase?: string
@@ -183,8 +224,9 @@ export function getTimelineItems(opts: GetTimelineItemsOptions): TimelineItem[] 
   const blog = blogPostsToTimelineItems(posts, blogHrefBase)
   const substack = readSubstackTimelineItems()
   const reddit = readRedditSelfTimelineItems()
+  const linkedin = readLinkedInSelfTimelineItems()
 
-  let items: TimelineItem[] = [...blog, ...substack, ...reddit].sort(
+  let items: TimelineItem[] = [...blog, ...substack, ...reddit, ...linkedin].sort(
     (a, b) =>
       new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime(),
   )
@@ -202,6 +244,8 @@ export function timelineCountsBySource(
     blog: 0,
     substack: 0,
     reddit: 0,
+    linkedin: 0,
+    newsletter: 0,
   }
   for (const i of items) counts[i.source]++
   return counts

@@ -46,12 +46,13 @@ export default async function BlogIndex({ params }: Props) {
   setRequestLocale(locale)
   const blogHrefBase = locale === 'en' ? '/blog' : `/${locale}/blog`
   const contentDir = getContentDir(locale)
+  // no limit tight enough to cut the backdated posts; substack is retired
   const items = getTimelineItems({
     contentDir,
     blogHrefBase,
-    limit: 80,
+    limit: 400,
     excludeCategories: ['claude-daily'],
-  })
+  }).filter((i) => i.source !== 'substack')
 
   // claude-daily recaps live on their own /claude-daily route — keep them out
   // of the main blog so the evergreen posts surface. Featured hero honors the
