@@ -20,6 +20,67 @@ function deriveSlug(pathname: string): string | undefined {
   return undefined
 }
 
+const DOWNLOAD_EXTS = /\.(zip|md|pdf|txt|json|csv|mp4|png|jpg)$/i
+
+// Global click delegate: file downloads + outbound clicks. Capture-phase so
+// the event is queued before same-tab navigation; sendBeacon survives it.
+function PostHogClickTracking() {
+  const pathname = usePathname()
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement | null
+      const a = target?.closest?.("a[href]") as HTMLAnchorElement | null
+      if (!a) return
+      const href = a.getAttribute("href") || ""
+      if (!href || href.startsWith("#")) return
+
+      const page_type = derivePageType(pathname || "/")
+
+      const isDownload = a.hasAttribute("download") || DOWNLOAD_EXTS.test(href.split("?")[0])
+      if (isDownload) {
+        const path = href.split("?")[0]
+        const file_name = path.split("/").pop() || path
+        posthog.capture(
+          "file_download",
+          {
+            href,
+            file_name,
+            file_ext: (file_name.split(".").pop() || "").toLowerCase(),
+            is_vault: href.includes("/downloads/vault/"),
+            page_type,
+          },
+          { transport: "sendBeacon" },
+        )
+        return
+      }
+
+      let url: URL
+      try {
+        url = new URL(href, window.location.origin)
+      } catch {
+        return
+      }
+      if (url.origin === window.location.origin) return
+      posthog.capture(
+        "outbound_click",
+        {
+          href: url.href,
+          destination_host: url.hostname.replace(/^www\./, ""),
+          is_clearbox: url.hostname.includes("clearbox.to"),
+          link_text: (a.textContent || "").trim().slice(0, 80),
+          page_type,
+        },
+        { transport: "sendBeacon" },
+      )
+    }
+    document.addEventListener("click", onClick, true)
+    return () => document.removeEventListener("click", onClick, true)
+  }, [pathname])
+
+  return null
+}
+
 function PostHogPageview() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -99,6 +160,7 @@ export function PostHogProvider({ children }: { children: React.ReactNode }) {
     <PHProvider client={posthog}>
       <Suspense fallback={null}>
         <PostHogPageview />
+        <PostHogClickTracking />
       </Suspense>
       {children}
     </PHProvider>
