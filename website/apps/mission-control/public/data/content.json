@@ -1,20 +1,26 @@
 {
-  "generated": "2026-07-03T04:01:06.000Z",
+  "generated": "2026-07-04T04:00:26.000Z",
   "totals": {
-    "total_content": 386,
+    "total_content": 391,
     "total_drafts": 132,
-    "total_final": 254,
-    "total_words": 287873,
+    "total_final": 259,
+    "total_words": 290203,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
   },
   "pipeline": {
+    "reddit": {
+      "draft": 23,
+      "final": 3,
+      "total": 26,
+      "words": 10535
+    },
     "website": {
       "draft": 1,
-      "final": 103,
-      "total": 104,
-      "words": 137222
+      "final": 104,
+      "total": 105,
+      "words": 138578
     },
     "nio-log": {
       "draft": 0,
@@ -24,9 +30,9 @@
     },
     "linkedin": {
       "draft": 49,
-      "final": 64,
-      "total": 113,
-      "words": 48214
+      "final": 65,
+      "total": 114,
+      "words": 48344
     },
     "substack": {
       "draft": 13,
@@ -39,15 +45,53 @@
       "final": 13,
       "total": 59,
       "words": 18563
-    },
-    "reddit": {
-      "draft": 23,
-      "final": 0,
-      "total": 23,
-      "words": 9691
     }
   },
   "recent": [
+    {
+      "platform": "reddit",
+      "title": "r/ClaudeAI",
+      "slug": "ccd-comeback-claudeai",
+      "date": "2026-07-04",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 267,
+      "file_path": "content/reddit/final/2026-07-04_ccd-comeback-claudeai.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "r/ClaudeCode",
+      "slug": "ccd-comeback-claudecode",
+      "date": "2026-07-04",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 262,
+      "file_path": "content/reddit/final/2026-07-04_ccd-comeback-claudecode.md"
+    },
+    {
+      "platform": "reddit",
+      "title": "r/GTMBuilders",
+      "slug": "ccd-comeback-gtmbuilders",
+      "date": "2026-07-04",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 315,
+      "file_path": "content/reddit/final/2026-07-04_ccd-comeback-gtmbuilders.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Friday, July 03, 2026",
+      "slug": "claude-daily-2026-07-03",
+      "date": "2026-07-03",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1356,
+      "file_path": "content/website/final/claude-daily-2026-07-03.md"
+    },
     {
       "platform": "website",
       "title": "Full-Stack GTM: the org chart collapsed into one person",
@@ -553,50 +597,6 @@
       "arc": null,
       "word_count": 1923,
       "file_path": "content/substack/final/2026-04-22_pick-your-primitive.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Wednesday, April 22, 2026",
-      "slug": "claude-daily-2026-04-22",
-      "date": "2026-04-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1435,
-      "file_path": "content/website/final/claude-daily-2026-04-22.md"
-    },
-    {
-      "platform": "website",
-      "title": "GTM Coding Agents Chapter 13: Your GTM Stack Has No Git Log",
-      "slug": "gtm-coding-agents-chapter-13-living-repo",
-      "date": "2026-04-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1390,
-      "file_path": "content/website/final/gtm-coding-agents-chapter-13-living-repo.md"
-    },
-    {
-      "platform": "website",
-      "title": "Pick Your Primitive: Why I Run CLI While Everyone's Hyping MCP",
-      "slug": "pick-your-primitive-cli-vs-mcp",
-      "date": "2026-04-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 2183,
-      "file_path": "content/website/final/pick-your-primitive-cli-vs-mcp.md"
-    },
-    {
-      "platform": "x",
-      "title": "pick your primitive",
-      "slug": "pick-your-primitive",
-      "date": "2026-04-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 466,
-      "file_path": "content/x/final/2026-04-22_pick-your-primitive.txt"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-07-03",
+      "grade": "D",
+      "score": 112,
+      "words": 12948,
+      "shipped": 12,
+      "cost": 0.0
+    },
+    {
       "date": "2026-07-02",
       "grade": "C",
       "score": 247,
@@ -1246,14 +1254,6 @@
     },
     {
       "date": "2026-06-20",
-      "grade": "D",
-      "score": 3,
-      "words": 5555,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-06-19",
       "grade": "D",
       "score": 3,
       "words": 5555,

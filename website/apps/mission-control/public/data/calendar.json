@@ -1,6 +1,116 @@
 {
-  "generated": "2026-07-03T04:31:29.953Z",
+  "generated": "2026-07-04T04:09:58.571Z",
   "events": [
+    {
+      "id": "commit-3b1dfdc",
+      "title": "feat: posthog file_download + outbound_click tracking (globa",
+      "type": "milestone",
+      "datetime": "2026-07-03T23:51:03-04:00",
+      "status": "completed",
+      "description": "feat: posthog file_download + outbound_click tracking (global click delegate)",
+      "metadata": {
+        "commitHash": "3b1dfdc"
+      }
+    },
+    {
+      "id": "commit-9baff48",
+      "title": "fix: ship favicon.ico (Clearbox mark) for Safari + upgrade a",
+      "type": "deployment",
+      "datetime": "2026-07-03T23:35:10-04:00",
+      "status": "completed",
+      "description": "fix: ship favicon.ico (Clearbox mark) for Safari + upgrade avatar to 302px headshot",
+      "metadata": {
+        "commitHash": "9baff48"
+      }
+    },
+    {
+      "id": "commit-c0a1262",
+      "title": "fix: Typefully v1 retired — schedule LinkedIn via API v2 soc",
+      "type": "deployment",
+      "datetime": "2026-07-03T23:10:46-04:00",
+      "status": "completed",
+      "description": "fix: Typefully v1 retired — schedule LinkedIn via API v2 social-sets drafts",
+      "metadata": {
+        "commitHash": "c0a1262"
+      }
+    },
+    {
+      "id": "commit-0e28754",
+      "title": "feat: claude daily digest 2026-07-03",
+      "type": "milestone",
+      "datetime": "2026-07-03T23:06:10-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-03",
+      "metadata": {
+        "commitHash": "0e28754"
+      }
+    },
+    {
+      "id": "commit-1b8b7ba",
+      "title": "chore: swap avatar to LinkedIn headshot",
+      "type": "system",
+      "datetime": "2026-07-03T22:27:23-04:00",
+      "status": "completed",
+      "description": "chore: swap avatar to LinkedIn headshot",
+      "metadata": {
+        "commitHash": "1b8b7ba"
+      }
+    },
+    {
+      "id": "commit-feec514",
+      "title": "feat: shows hub + feed fixes + light-mode gag revert (phase ",
+      "type": "milestone",
+      "datetime": "2026-07-03T22:20:11-04:00",
+      "status": "completed",
+      "description": "feat: shows hub + feed fixes + light-mode gag revert (phase 3 feedback)",
+      "metadata": {
+        "commitHash": "feec514"
+      }
+    },
+    {
+      "id": "commit-63d836c",
+      "title": "feat: phase 3 — Claude Code Daily comeback + site touches",
+      "type": "milestone",
+      "datetime": "2026-07-03T21:23:56-04:00",
+      "status": "completed",
+      "description": "feat: phase 3 — Claude Code Daily comeback + site touches",
+      "metadata": {
+        "commitHash": "63d836c"
+      }
+    },
+    {
+      "id": "commit-35002c6",
+      "title": "chore(crypto): evening signal update 2026-07-03",
+      "type": "system",
+      "datetime": "2026-07-03T17:30:06-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-03",
+      "metadata": {
+        "commitHash": "35002c6"
+      }
+    },
+    {
+      "id": "commit-11448a7",
+      "title": "chore(crypto): morning signal update 2026-07-03",
+      "type": "system",
+      "datetime": "2026-07-03T07:00:04-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-03",
+      "metadata": {
+        "commitHash": "11448a7"
+      }
+    },
+    {
+      "id": "commit-451144d",
+      "title": "chore: daily tracker scan 2026-07-02",
+      "type": "system",
+      "datetime": "2026-07-03T00:31:30-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-02",
+      "metadata": {
+        "commitHash": "451144d"
+      }
+    },
     {
       "id": "commit-bc9290e",
       "title": "fix(build): untrack legacy /live route — imports ai-news-cac",
@@ -54,116 +164,6 @@
       "description": "fix(deploy): bundle content/ + data/ into runner image; allow YouTube in CSP",
       "metadata": {
         "commitHash": "33e035b"
-      }
-    },
-    {
-      "id": "commit-20094a8",
-      "title": "merge: absorb main's tracker-scan commit before shipping the",
-      "type": "system",
-      "datetime": "2026-07-02T15:12:29-04:00",
-      "status": "completed",
-      "description": "merge: absorb main's tracker-scan commit before shipping the revival",
-      "metadata": {
-        "commitHash": "20094a8"
-      }
-    },
-    {
-      "id": "commit-e7b9271",
-      "title": "fix(vault): format YAML-parsed dates as YYYY-MM-DD in file h",
-      "type": "system",
-      "datetime": "2026-07-02T15:08:33-04:00",
-      "status": "completed",
-      "description": "fix(vault): format YAML-parsed dates as YYYY-MM-DD in file header",
-      "metadata": {
-        "commitHash": "e7b9271"
-      }
-    },
-    {
-      "id": "commit-01673b0",
-      "title": "feat(shawnos): reddit playbook v3 + July 2026 programmable-G",
-      "type": "system",
-      "datetime": "2026-07-02T15:03:04-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): reddit playbook v3 + July 2026 programmable-GTM knowledge update",
-      "metadata": {
-        "commitHash": "01673b0"
-      }
-    },
-    {
-      "id": "commit-fa4d753",
-      "title": "content: ep1 two-agent-stack blog + relaunch essay v2 (stage",
-      "type": "system",
-      "datetime": "2026-07-02T14:16:27-04:00",
-      "status": "completed",
-      "description": "content: ep1 two-agent-stack blog + relaunch essay v2 (staged, not published)",
-      "metadata": {
-        "commitHash": "fa4d753"
-      }
-    },
-    {
-      "id": "commit-3ff423b",
-      "title": "feat(shawnos): the Vault — browse and download my real GTM-a",
-      "type": "system",
-      "datetime": "2026-07-02T14:12:28-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): the Vault — browse and download my real GTM-agent files",
-      "metadata": {
-        "commitHash": "3ff423b"
-      }
-    },
-    {
-      "id": "commit-6d4c4ab",
-      "title": "chore(crypto): morning signal update 2026-07-02",
-      "type": "system",
-      "datetime": "2026-07-02T07:00:07-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-02",
-      "metadata": {
-        "commitHash": "6d4c4ab"
-      }
-    },
-    {
-      "id": "commit-068616c",
-      "title": "feat(shawnos): YouTube for real — Data API catalog on /watch",
-      "type": "system",
-      "datetime": "2026-07-02T01:29:20-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): YouTube for real — Data API catalog on /watch + blog embeds",
-      "metadata": {
-        "commitHash": "068616c"
-      }
-    },
-    {
-      "id": "commit-7ce4994",
-      "title": "feat(shawnos): nav IA — kill the More drawer",
-      "type": "system",
-      "datetime": "2026-07-02T01:21:10-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): nav IA — kill the More drawer",
-      "metadata": {
-        "commitHash": "7ce4994"
-      }
-    },
-    {
-      "id": "commit-1d11383",
-      "title": "feat(shawnos): vendor the component kit — SmoothUI set + Unl",
-      "type": "system",
-      "datetime": "2026-07-02T01:20:16-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): vendor the component kit — SmoothUI set + Unlumen file tree",
-      "metadata": {
-        "commitHash": "1d11383"
-      }
-    },
-    {
-      "id": "commit-2bd4f94",
-      "title": "feat(shawnos): aura design pass — Clearbox violet tokens, ra",
-      "type": "system",
-      "datetime": "2026-07-02T01:10:35-04:00",
-      "status": "completed",
-      "description": "feat(shawnos): aura design pass — Clearbox violet tokens, radiant hero, engineered grid",
-      "metadata": {
-        "commitHash": "2bd4f94"
       }
     }
   ],
