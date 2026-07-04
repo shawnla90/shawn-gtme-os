@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import { ScrollRevealSection, StaggerContainer, StaggerItem, MotionReveal } from '@shawnos/shared/components'
 import { Link } from '../../../i18n/navigation'
 
@@ -22,13 +22,6 @@ interface Highlights {
   pulse: string | null
 }
 
-type StreamId = 'ai' | 'gtm'
-
-const STREAMS: { id: StreamId; label: string; blurb: string }[] = [
-  { id: 'ai', label: 'AI Desk', blurb: 'models, Hugging Face, Claude Code, and the agent arms race.' },
-  { id: 'gtm', label: 'Full-Stack GTM', blurb: 'the SDR, the RevOps guy, the GTM engineer — somehow all one person now.' },
-]
-
 const INK = 'var(--text-primary)'
 const DIM = 'color-mix(in srgb, var(--text-primary) 27%, transparent)'
 
@@ -42,24 +35,16 @@ const SECTIONS = [
 ]
 
 export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highlights?: Highlights }) {
-  const [stream, setStream] = useState<StreamId>('ai')
-
   const sorted = useMemo(
     () => [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()),
     [posts],
   )
-  const streamOf = (p: Post): StreamId => (p.stream === 'gtm' ? 'gtm' : 'ai')
-  const counts = useMemo(() => {
-    let ai = 0, gtm = 0
-    for (const p of sorted) (streamOf(p) === 'gtm' ? (gtm += 1) : (ai += 1))
-    return { ai, gtm }
-  }, [sorted])
 
-  const active = sorted.filter((p) => streamOf(p) === stream)
+  const active = sorted
   const latest = active[0]
   const archive = active.slice(1)
   const showHighlights =
-    stream === 'ai' && highlights && (highlights.bestComment || highlights.trollOfTheDay || highlights.funFacts.length > 0)
+    highlights && (highlights.bestComment || highlights.trollOfTheDay || highlights.funFacts.length > 0)
 
   const card: React.CSSProperties = {
     padding: '20px', background: 'var(--canvas-subtle)', border: `1px solid ${DIM}`,
@@ -89,32 +74,21 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
           text-transform: uppercase; color: var(--text-primary); border: 1px solid ${DIM}; border-radius: var(--radius-pill); padding: 3px 10px; }
         .aura-count, .aura-rss { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); text-decoration: none; }
         .aura-rss { border: 1px solid var(--canvas-border); border-radius: var(--radius-pill); padding: 3px 9px; }
-
-        .aura-tabs { max-width: 960px; margin: 28px auto 0; padding: 0 24px; display: flex; gap: 8px; flex-wrap: wrap; }
-        .aura-tab { font-family: var(--font-sans); font-size: 14px; font-weight: 600; padding: 9px 18px;
-          border-radius: var(--radius-pill); border: 1px solid var(--canvas-border); background: transparent;
-          color: var(--text-secondary); cursor: pointer; transition: all 0.15s ease; }
-        .aura-tab[data-active="true"] { background: var(--text-primary); color: var(--text-on-accent); border-color: var(--text-primary); }
-        .aura-tab-n { font-family: var(--font-mono); font-size: 11px; opacity: 0.7; margin-left: 6px; }
-        .aura-blurb { max-width: 960px; margin: 14px auto 0; padding: 0 24px; font-size: 14px; color: var(--text-muted);
-          font-family: var(--font-mono); }
       `}</style>
 
-      {/* Aura hero */}
+      {/* hero */}
       <section className="full-bleed aura-hero">
         <MotionReveal variant="fadeUp" delay={0.1}>
           <div className="aura-inner">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/clearbox/aura-logo.png" alt="Aura" className="aura-logo" />
             <div style={{ flex: 1, minWidth: 0 }}>
-              <h1 className="aura-word">The Daily</h1>
+              <h1 className="aura-word">Claude Code Daily</h1>
               <p className="aura-tag">
-                Aura reads the market every day — what shipped in AI, and what moved in go-to-market.
-                Two desks, one signal engine, zero filler.
+                The daily show for Claude Code builders. News, repos, roasts, and the
+                Reddit comments you missed. New episode every weekday, weekend edition Saturdays.
               </p>
               <div className="aura-meta">
                 <span className="aura-live">live · daily</span>
-                <span className="aura-count">{sorted.length} digests</span>
+                <span className="aura-count">{sorted.length} episodes</span>
                 <a href="/feed/claude-daily.xml" className="aura-rss">RSS</a>
               </div>
             </div>
@@ -122,26 +96,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
         </MotionReveal>
       </section>
 
-      {/* stream tabs */}
-      <div className="aura-tabs" role="tablist" aria-label="Daily streams">
-        {STREAMS.map((s) => (
-          <button
-            key={s.id}
-            type="button"
-            role="tab"
-            aria-selected={stream === s.id}
-            data-active={stream === s.id}
-            className="aura-tab"
-            onClick={() => setStream(s.id)}
-          >
-            {s.label}
-            <span className="aura-tab-n">{s.id === 'ai' ? counts.ai : counts.gtm}</span>
-          </button>
-        ))}
-      </div>
-      <p className="aura-blurb">{STREAMS.find((s) => s.id === stream)?.blurb}</p>
-
-      {/* highlights — AI desk only, from the latest episode */}
+      {/* highlights from the latest episode */}
       {showHighlights && highlights && (
         <section style={{ padding: '24px', maxWidth: '960px', margin: '8px auto 0' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '12px', alignItems: 'start' }}>
@@ -178,9 +133,7 @@ export function ClaudeDailyContent({ posts, highlights }: { posts: Post[]; highl
           <div style={{ padding: '48px 32px', textAlign: 'center', color: 'var(--text-muted)', fontSize: '13px',
             background: 'var(--canvas-subtle)', border: '1px solid var(--border)', borderRadius: 'var(--radius-lg)',
             fontFamily: 'var(--font-mono)' }}>
-            {stream === 'gtm'
-              ? 'The Full-Stack GTM desk goes live with the next run — Aura is wiring the sources now.'
-              : 'No digests yet. The first one drops soon.'}
+            No episodes yet. The first one drops soon.
           </div>
         ) : (
           <>

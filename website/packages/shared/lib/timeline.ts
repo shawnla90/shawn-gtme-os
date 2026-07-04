@@ -43,7 +43,7 @@ export interface TimelineItem {
 const SHAWN_AUTHOR: TimelineAuthor = {
   name: 'Shawn Tenam',
   handle: '@shawntenam',
-  avatar: '/clearbox/pfp.png',
+  avatar: '/avatars/shawn.jpg',
 }
 
 function hoursSince(input: string | number | Date): number {

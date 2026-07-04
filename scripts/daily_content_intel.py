@@ -118,64 +118,65 @@ def validate_anti_slop(text):
     score = max(0.0, 100.0 - len(violations) * 10.0)
     return score, violations, fixed
 
-# ── Reddit Public JSON Client ─────────────────────────────────────────
+# ── Reddit via Playwright (clearbox_reddit transport) ─────────────────
+# Reddit's public JSON API 403-blocks plain HTTP from this machine
+# (since 2026-06). old.reddit HTML through a real headless Chromium is
+# the path that works: same transport as ~/clearbox-reddit and
+# ~/clearbox-newsletter. Imported lazily so the other phases never need
+# playwright installed.
 
-REDDIT_HEADERS = {
-    "User-Agent": "ShawnOS ContentIntel/1.0 (content scanner)",
-}
-
-def fetch_reddit_json(url, retries=2, quiet=False):
-    """Fetch Reddit's public JSON endpoint with retry logic."""
-    for attempt in range(retries + 1):
-        try:
-            resp = requests.get(url, headers=REDDIT_HEADERS, timeout=15)
-            if resp.status_code == 429:
-                if attempt < retries:
-                    wait = min(int(resp.headers.get("Retry-After", 3)), 10)
-                    if not quiet:
-                        print(f"    rate limited, waiting {wait}s...")
-                    time.sleep(wait)
-                    continue
-                return None
-            resp.raise_for_status()
-            return resp.json()
-        except Exception as e:
-            if attempt < retries:
-                time.sleep(2)
-                continue
-            if not quiet:
-                print(f"    ERROR fetching {url}: {e}", file=sys.stderr)
-            return None
-    return None
+def load_reddit_transport():
+    """Bridge to the clearbox_reddit package. Returns (browser, old_reddit)."""
+    clearbox_reddit_dir = str(Path.home() / "clearbox-reddit")
+    if clearbox_reddit_dir not in sys.path:
+        sys.path.insert(0, clearbox_reddit_dir)
+    from clearbox_reddit import browser, old_reddit
+    return browser, old_reddit
 
 
-def fetch_subreddit_posts(sub_name, sort="hot", limit=50):
-    """Fetch posts from a subreddit using public JSON API."""
-    url = f"https://www.reddit.com/r/{sub_name}/{sort}.json?limit={limit}&raw_json=1"
-    data = fetch_reddit_json(url)
-    if not data or "data" not in data:
-        return []
-    return [child["data"] for child in data["data"].get("children", [])
-            if child.get("kind") == "t3"]
+def _row_to_post(row):
+    """Map an old.reddit listing row to the public-JSON post shape."""
+    permalink = row.get("permalink") or ""
+    for host in ("https://old.reddit.com", "https://www.reddit.com"):
+        if permalink.startswith(host):
+            permalink = permalink[len(host):]
+    return {
+        "id": row["id"],
+        "title": row.get("title") or "",
+        "selftext": row.get("body") or "",
+        "score": row.get("score") or 0,
+        "num_comments": row.get("num_comments") or 0,
+        "upvote_ratio": 0,
+        "permalink": permalink,
+        "created_utc": row.get("created_utc") or 0,
+    }
 
 
-def fetch_post_comments(sub_name, post_id, limit=5):
-    """Fetch top comments for a post using public JSON API."""
-    url = f"https://www.reddit.com/r/{sub_name}/comments/{post_id}.json?limit={limit}&sort=best&raw_json=1"
-    data = fetch_reddit_json(url)
-    if not data or len(data) < 2:
-        return []
+def fetch_subreddit_posts(page, old_reddit, sub_name, sort="hot", limit=50):
+    """Fetch posts from a subreddit listing via old.reddit HTML."""
+    rows = old_reddit.fetch_subreddit_things(page, sub_name, sort=sort, max_pages=1)
+    posts = [_row_to_post(r) for r in rows if r.get("kind") == "post"]
+    return posts[:limit]
+
+
+def fetch_post_comments(page, old_reddit, permalink, limit=5):
+    """Top-level comments + selftext for a post. Returns (comments, selftext)."""
+    thread = old_reddit.fetch_post(page, permalink)
+    if not thread:
+        return [], ""
     comments = []
-    for child in data[1]["data"].get("children", [])[:limit]:
-        if child.get("kind") != "t1":
+    for c in thread.get("comments", []):
+        if c.get("depth", 0) > 0:
             continue
-        c = child["data"]
         comments.append({
             "author": c.get("author", "[deleted]"),
-            "score": c.get("score", 0),
+            "score": c.get("score") or 0,
             "body": (c.get("body", "") or "")[:300],
         })
-    return comments
+        if len(comments) >= limit:
+            break
+    selftext = (thread.get("post") or {}).get("body") or ""
+    return comments, selftext
 
 # ── Grok API ──────────────────────────────────────────────────────────
 
@@ -204,7 +205,8 @@ def grok_chat(api_key, messages, config):
 def call_claude(system_prompt, user_prompt, model="sonnet", timeout=None):
     """Call Claude via CLI. Uses sonnet for speed, opus for blog quality."""
     if timeout is None:
-        timeout = 900 if model == "opus" else 300
+        # claude -p has shown ~10min startup under multi-session contention
+        timeout = 1200
     full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
 
     result = subprocess.run(
@@ -551,8 +553,8 @@ def update_story_tracker(body, raw_data, target_date):
 #  PHASE 1: COLLECT
 # ══════════════════════════════════════════════════════════════════════
 
-def phase_collect(target_date, config, dry_run=False):
-    """Scan subreddits via Reddit public JSON API for trending posts."""
+def phase_collect(target_date, config, dry_run=False, weekend=False):
+    """Scan subreddits via old.reddit HTML (Playwright) for trending posts."""
     print("\n── PHASE 1: COLLECT ──")
 
     all_subs = config["subreddits"]["primary"] + config["subreddits"]["secondary"]
@@ -561,6 +563,9 @@ def phase_collect(target_date, config, dry_run=False):
     new_limit = collect_config.get("new_limit", 25)
     top_comments_limit = collect_config.get("top_comments", 5)
     hours_lookback = collect_config.get("hours_lookback", 24)
+    if weekend:
+        hours_lookback = collect_config.get("weekend_hours_lookback", 72)
+        print("  weekend edition: 72h lookback")
 
     # Date-anchored cutoff: use target_date window, not "now"
     now = datetime.now(timezone.utc)
@@ -582,13 +587,15 @@ def phase_collect(target_date, config, dry_run=False):
 
     collected = []
 
-    for sub_name in all_subs:
+    reddit_browser, old_reddit = load_reddit_transport()
+    with reddit_browser.session(headless=True) as (ctx, page):
+      for sub_name in all_subs:
         print(f"  scanning r/{sub_name}...")
         seen_ids = set()
         posts_raw = []
 
         # Hot posts
-        hot_posts = fetch_subreddit_posts(sub_name, sort="hot", limit=hot_limit)
+        hot_posts = fetch_subreddit_posts(page, old_reddit, sub_name, sort="hot", limit=hot_limit)
         for p in hot_posts:
             if p.get("created_utc", 0) < cutoff or p["id"] in seen_ids:
                 continue
@@ -596,15 +603,12 @@ def phase_collect(target_date, config, dry_run=False):
             posts_raw.append(p)
 
         # New posts
-        new_posts = fetch_subreddit_posts(sub_name, sort="new", limit=new_limit)
+        new_posts = fetch_subreddit_posts(page, old_reddit, sub_name, sort="new", limit=new_limit)
         for p in new_posts:
             if p.get("created_utc", 0) < cutoff or p["id"] in seen_ids:
                 continue
             seen_ids.add(p["id"])
             posts_raw.append(p)
-
-        # Rate limit: small delay between subreddits
-        time.sleep(1)
 
         # Build post entries without comments first
         sub_posts = []
@@ -630,15 +634,19 @@ def phase_collect(target_date, config, dry_run=False):
                 "created": created,
             })
 
-        # Only fetch comments for top 10 posts by velocity (avoids rate limiting)
+        # Only fetch comments for top 10 posts by velocity (browser.goto
+        # already paces navigations; listing pages carry no selftext, so
+        # the permalink visit also backfills it for these posts)
         sub_posts.sort(key=lambda x: -x["velocity_score"])
         for i, sp in enumerate(sub_posts):
+            post = sp["post"]
             post_comments = []
             if i < 10:
-                post_comments = fetch_post_comments(sub_name, sp["id"], limit=top_comments_limit)
-                time.sleep(1)
+                post_comments, selftext = fetch_post_comments(
+                    page, old_reddit, sp["permalink"], limit=top_comments_limit)
+                if selftext and not post.get("selftext"):
+                    post["selftext"] = selftext
 
-            post = sp["post"]
             collected.append({
                 "id": sp["id"],
                 "subreddit": sub_name,
@@ -1048,7 +1056,7 @@ def phase_generate(target_date, config, dry_run=False):
 #  PHASE 4: BLOG DIGEST
 # ══════════════════════════════════════════════════════════════════════
 
-def phase_blog(target_date, config, dry_run=False):
+def phase_blog(target_date, config, dry_run=False, weekend=False):
     """Generate Claude Code Daily blog digest."""
     print("\n── PHASE 4: BLOG DIGEST ──")
 
@@ -1117,7 +1125,17 @@ def phase_blog(target_date, config, dry_run=False):
     top_comments_data = sorted(all_comments, key=lambda x: -x["score"])[:20]
 
     # Find posts with linked repos
-    repo_posts = [p for p in posts if "github.com" in (p.get("selftext_preview", "") + p.get("url", ""))]
+    repo_posts = [p for p in posts if "github.com" in
+                  (p.get("title", "") + p.get("selftext_preview", "") + p.get("url", ""))]
+
+    weekend_block = ""
+    if weekend:
+        weekend_block = """
+This is the WEEKEND EDITION. It covers the last 72 hours, the week's tail.
+Looser, longer read. Same segments, but you can breathe: bigger pulse, more
+context on the arcs that ran all week, and builder takeaways people can
+actually build over the weekend.
+"""
 
     system_prompt = f"""{voice_system}
 
@@ -1137,7 +1155,7 @@ It's the place where r/ClaudeCode becomes entertainment.
 
 You are the anchor of this show. Confident, witty, a little unhinged but always informed.
 Think of yourself as the Jon Stewart of Claude Code news. You roast, you inform, you entertain.
-
+{weekend_block}
 Structure (use these EXACT headings in this order):
 
 ## the pulse
@@ -1323,14 +1341,14 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
     excerpt = excerpt.replace('"', "'")
 
     slug = f"claude-daily-{target_date}"
-    # stream routes the digest to a desk on /claude-daily: 'ai' (AI Desk) or 'gtm' (Full-Stack GTM)
-    stream = (config.get("blog_digest", {}) or {}).get("stream", "ai")
+    title = f"Claude Code Daily: {formatted_date}"
+    if weekend:
+        title = f"Claude Code Daily, Weekend Edition: {formatted_date}"
     frontmatter = f"""---
-title: "Claude Code Daily: {formatted_date}"
+title: "{title}"
 date: "{target_date}"
 excerpt: "{excerpt}"
 category: "claude-daily"
-stream: "{stream}"
 featured: false
 ---"""
 
@@ -1652,6 +1670,8 @@ def main():
     parser.add_argument("--phase", choices=["collect", "analyze", "generate", "blog", "publish", "all"],
                         default="all", help="Run a specific phase.")
     parser.add_argument("--stats", action="store_true", help="Show pipeline history.")
+    parser.add_argument("--weekend", action="store_true",
+                        help="Weekend edition: 72h lookback, looser longer read.")
     args = parser.parse_args()
 
     if args.stats:
@@ -1670,7 +1690,7 @@ def main():
     start = time.time()
 
     if args.phase in ("collect", "all"):
-        phase_collect(target_date, config, dry_run=args.dry_run)
+        phase_collect(target_date, config, dry_run=args.dry_run, weekend=args.weekend)
 
     if args.phase in ("analyze", "all"):
         phase_analyze(target_date, config, dry_run=args.dry_run)
@@ -1679,7 +1699,7 @@ def main():
         phase_generate(target_date, config, dry_run=args.dry_run)
 
     if args.phase in ("blog", "all"):
-        phase_blog(target_date, config, dry_run=args.dry_run)
+        phase_blog(target_date, config, dry_run=args.dry_run, weekend=args.weekend)
 
     if args.phase in ("publish", "all"):
         phase_publish(target_date, config, dry_run=args.dry_run)

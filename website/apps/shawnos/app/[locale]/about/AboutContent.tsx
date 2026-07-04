@@ -11,6 +11,7 @@ import {
   SectionHeadline,
 } from '@shawnos/shared/components'
 import { PageHero } from '../../components/PageHero'
+import { ShortEmbed } from '../../components/ShortEmbed'
 import { TechStackGrid } from './TechStackGrid'
 import ContributionGraph from '../../../components/smoothui/contribution-graph'
 import contributionsRaw from '@shawnos/shared/data/github-contributions.json'
@@ -67,10 +68,46 @@ export function AboutContent() {
 
       {/* Identity */}
       <ScrollRevealSection background="var(--canvas)">
-        <SectionHeadline subtitle={t('identity.subtitle')}>{t('identity.headline')}</SectionHeadline>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/avatars/shawn.jpg"
+            alt="Shawn Tenam"
+            style={{
+              width: 96,
+              height: 96,
+              borderRadius: '50%',
+              objectFit: 'cover',
+              border: '1px solid var(--border)',
+              flexShrink: 0,
+            }}
+          />
+          <div style={{ flex: 1 }}>
+            <SectionHeadline subtitle={t('identity.subtitle')}>{t('identity.headline')}</SectionHeadline>
+          </div>
+        </div>
         <p style={paragraph}>
           {t('identity.paragraph')}
         </p>
+      </ScrollRevealSection>
+
+      {/* The human */}
+      <ScrollRevealSection background="var(--canvas-subtle)">
+        <div
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '12px',
+            color: 'var(--text-muted)',
+            letterSpacing: '0.08em',
+            marginBottom: '16px',
+          }}
+        >
+          {'// the human'}
+        </div>
+        <p style={{ ...paragraph, maxWidth: '620px' }}>
+          tech founder + anime nerd. sixty seconds of the person behind the commits.
+        </p>
+        <ShortEmbed videoId="il2iJFcFXWU" title="tech founder + anime nerd" />
       </ScrollRevealSection>
 
       {/* Built in public — the highlight */}

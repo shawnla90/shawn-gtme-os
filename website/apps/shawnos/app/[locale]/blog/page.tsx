@@ -56,8 +56,12 @@ export default async function BlogIndex({ params }: Props) {
   // claude-daily recaps live on their own /claude-daily route — keep them out
   // of the main blog so the evergreen posts surface. Featured hero honors the
   // `featured:` frontmatter flag (newest first).
-  const allPosts = getAllPosts(contentDir).filter((p) => p.category !== 'claude-daily')
+  const everyPost = getAllPosts(contentDir)
+  const allPosts = everyPost.filter((p) => p.category !== 'claude-daily')
   const featuredPosts = allPosts.filter((p) => p.featured).slice(0, 3)
+  const latestDaily = everyPost
+    .filter((p) => p.category === 'claude-daily')
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())[0]
 
   const collectionSchema = {
     '@context': 'https://schema.org',
@@ -76,6 +80,49 @@ export default async function BlogIndex({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionSchema) }}
       />
+      {latestDaily && (
+        <section style={{ maxWidth: '1080px', margin: '0 auto', padding: '32px 24px 0' }}>
+          <a
+            href="/claude-daily"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '16px',
+              flexWrap: 'wrap',
+              border: '1px solid var(--canvas-border)',
+              borderRadius: '12px',
+              padding: '14px 20px',
+              background: 'var(--canvas-subtle)',
+              textDecoration: 'none',
+            }}
+          >
+            <span style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+              <span
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '10px',
+                  fontWeight: 700,
+                  letterSpacing: '0.1em',
+                  textTransform: 'uppercase',
+                  color: 'var(--text-primary)',
+                  border: '1px solid var(--canvas-border)',
+                  borderRadius: '999px',
+                  padding: '3px 10px',
+                }}
+              >
+                claude code daily
+              </span>
+              <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text-primary)' }}>
+                {latestDaily.title}
+              </span>
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 600, color: 'var(--text-primary)', whiteSpace: 'nowrap' }}>
+              latest episode →
+            </span>
+          </a>
+        </section>
+      )}
       {featuredPosts.length > 0 && (
         <section
           style={{
