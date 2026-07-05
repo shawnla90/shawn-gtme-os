@@ -223,6 +223,8 @@ def call_claude(system_prompt, user_prompt, model="sonnet", timeout=None):
         print(f"ERROR: claude CLI failed (exit {result.returncode})", file=sys.stderr)
         if result.stderr:
             print(f"  stderr: {result.stderr[:500]}", file=sys.stderr)
+        if result.stdout:
+            print(f"  stdout: {result.stdout[:500]}", file=sys.stderr)
         return None
 
     return result.stdout.strip()
@@ -1276,6 +1278,11 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
 
     content = call_claude(system_prompt, user_prompt, model="opus")
     if not content:
+        # opus has been flaky via claude -p (hangs/exit 1 while sonnet answers
+        # instantly) — a sonnet episode beats a missed night.
+        print("  opus failed, falling back to sonnet")
+        content = call_claude(system_prompt, user_prompt, model="sonnet")
+    if not content:
         print("  ERROR: blog generation failed")
         sys.exit(1)
 
@@ -1293,7 +1300,8 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
             f"{user_prompt}\n\n"
             f"IMPORTANT: avoid these patterns:\n{violation_list}"
         )
-        retry_content = call_claude(system_prompt, retry_prompt, model="opus")
+        retry_content = (call_claude(system_prompt, retry_prompt, model="opus")
+                         or call_claude(system_prompt, retry_prompt, model="sonnet"))
         if retry_content:
             score2, violations2, fixed2 = validate_anti_slop(retry_content)
             if score2 > score:
@@ -1319,6 +1327,9 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
 
     if _looks_bogus(body):
         print(f"  ✗ blog body failed validation (len={len((body or '').strip())}) — refusing to write a stub")
+        reject_path = REPO_ROOT / "data" / "daily-log" / f"rejected-blog-{target_date}.txt"
+        reject_path.write_text(body or "")
+        print(f"    rejected body saved: {reject_path}")
         return None
 
     # Update story tracker with today's content

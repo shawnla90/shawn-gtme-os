@@ -169,8 +169,14 @@ fi
 
 # ── Step 1l: Content intel scanner (r/ClaudeCode daily digest) ────────
 # Retry up to 3 times with backoff — Claude API can be flaky at midnight
+# Skip when the episode already exists (the 00:00 launchd cron
+# com.shawnos.content-intel owns weekday runs; this is the safety net).
 INTEL_SUCCESS=false
-for INTEL_ATTEMPT in 1 2 3; do
+if [[ -f "content/website/final/claude-daily-$TARGET_DATE.md" ]]; then
+  log "Claude Daily $TARGET_DATE already published — skipping content intel"
+  INTEL_SUCCESS=true
+fi
+[[ "$INTEL_SUCCESS" == "true" ]] || for INTEL_ATTEMPT in 1 2 3; do
   log "Running daily_content_intel.py --date $TARGET_DATE (attempt $INTEL_ATTEMPT/3)"
   if $PYTHON scripts/daily_content_intel.py --date "$TARGET_DATE" >> "$LOGFILE" 2>&1; then
     log "Content intel scanner completed"

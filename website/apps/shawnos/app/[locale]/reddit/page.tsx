@@ -23,8 +23,7 @@ export const revalidate = 3600
 
 const SITE_URL = 'https://shawnos.ai'
 
-// TODO: swap to Beehiiv subscribe URL
-const SUBSCRIBE_URL = 'https://clearbox.to'
+const SUBSCRIBE_URL = 'https://clearbox.beehiiv.com'
 
 type Props = {
   params: Promise<{ locale: string }>

@@ -9,8 +9,7 @@ import { Link } from '../../../i18n/navigation'
 
 const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
 
-// TODO: swap for the Beehiiv subscribe URL when Shawn provides it
-const SUBSCRIBE_URL = 'https://clearbox.to'
+const SUBSCRIBE_URL = 'https://clearbox.beehiiv.com'
 
 function getContentDir(locale: string) {
   const localeDir = path.join(CONTENT_BASE, locale)
