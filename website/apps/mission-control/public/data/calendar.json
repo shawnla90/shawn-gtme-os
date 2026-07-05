@@ -1,6 +1,39 @@
 {
-  "generated": "2026-07-04T04:09:58.571Z",
+  "generated": "2026-07-05T04:09:45.545Z",
   "events": [
+    {
+      "id": "commit-2727a15",
+      "title": "chore(crypto): evening signal update 2026-07-04",
+      "type": "system",
+      "datetime": "2026-07-04T17:30:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-04",
+      "metadata": {
+        "commitHash": "2727a15"
+      }
+    },
+    {
+      "id": "commit-8df0679",
+      "title": "chore(crypto): morning signal update 2026-07-04",
+      "type": "system",
+      "datetime": "2026-07-04T07:00:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-04",
+      "metadata": {
+        "commitHash": "8df0679"
+      }
+    },
+    {
+      "id": "commit-11bcfa5",
+      "title": "chore: daily tracker scan 2026-07-03",
+      "type": "system",
+      "datetime": "2026-07-04T00:09:59-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-03",
+      "metadata": {
+        "commitHash": "11bcfa5"
+      }
+    },
     {
       "id": "commit-3b1dfdc",
       "title": "feat: posthog file_download + outbound_click tracking (globa",
@@ -110,68 +143,13 @@
       "metadata": {
         "commitHash": "451144d"
       }
-    },
-    {
-      "id": "commit-bc9290e",
-      "title": "fix(build): untrack legacy /live route — imports ai-news-cac",
-      "type": "system",
-      "datetime": "2026-07-02T21:02:29-04:00",
-      "status": "completed",
-      "description": "fix(build): untrack legacy /live route — imports ai-news-cache.json that isn't in git",
-      "metadata": {
-        "commitHash": "bc9290e"
-      }
-    },
-    {
-      "id": "commit-5dbe4f8",
-      "title": "fix(footer): remove the Substack subscribe capture from the ",
-      "type": "system",
-      "datetime": "2026-07-02T20:58:00-04:00",
-      "status": "completed",
-      "description": "fix(footer): remove the Substack subscribe capture from the shared footer",
-      "metadata": {
-        "commitHash": "5dbe4f8"
-      }
-    },
-    {
-      "id": "commit-dfd60e6",
-      "title": "chore: retrigger railway deploy",
-      "type": "system",
-      "datetime": "2026-07-02T20:46:54-04:00",
-      "status": "completed",
-      "description": "chore: retrigger railway deploy",
-      "metadata": {
-        "commitHash": "dfd60e6"
-      }
-    },
-    {
-      "id": "commit-3015a35",
-      "title": "feat(site): phase 2 — flat nav, home rework, reddit report, ",
-      "type": "system",
-      "datetime": "2026-07-02T20:10:17-04:00",
-      "status": "completed",
-      "description": "feat(site): phase 2 — flat nav, home rework, reddit report, blog backfill, voice DNA refresh",
-      "metadata": {
-        "commitHash": "3015a35"
-      }
-    },
-    {
-      "id": "commit-33e035b",
-      "title": "fix(deploy): bundle content/ + data/ into runner image; allo",
-      "type": "system",
-      "datetime": "2026-07-02T19:40:20-04:00",
-      "status": "completed",
-      "description": "fix(deploy): bundle content/ + data/ into runner image; allow YouTube in CSP",
-      "metadata": {
-        "commitHash": "33e035b"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 15,
-    "completedEvents": 15,
+    "totalEvents": 13,
+    "completedEvents": 13,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 15,
+    "deploymentsThisWeek": 13,
     "upcomingCronJobs": 0
   }
 }
