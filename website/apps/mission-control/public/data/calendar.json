@@ -1,6 +1,72 @@
 {
-  "generated": "2026-07-05T04:09:45.545Z",
+  "generated": "2026-07-06T04:09:56.067Z",
   "events": [
+    {
+      "id": "commit-a3f81f7",
+      "title": "chore(crypto): evening signal update 2026-07-05",
+      "type": "system",
+      "datetime": "2026-07-05T17:30:06-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-05",
+      "metadata": {
+        "commitHash": "a3f81f7"
+      }
+    },
+    {
+      "id": "commit-fc59424",
+      "title": "feat: beehiiv subscribe url live + daily pipeline hardening ",
+      "type": "milestone",
+      "datetime": "2026-07-05T16:41:57-04:00",
+      "status": "completed",
+      "description": "feat: beehiiv subscribe url live + daily pipeline hardening (opus fallback, stub dump, cron idempotency)",
+      "metadata": {
+        "commitHash": "fc59424"
+      }
+    },
+    {
+      "id": "commit-aa16da5",
+      "title": "feat: claude daily digest 2026-07-04",
+      "type": "milestone",
+      "datetime": "2026-07-05T16:31:37-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-04",
+      "metadata": {
+        "commitHash": "aa16da5"
+      }
+    },
+    {
+      "id": "commit-27e6e36",
+      "title": "feat: claude daily digest 2026-07-04",
+      "type": "milestone",
+      "datetime": "2026-07-05T16:21:16-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-04",
+      "metadata": {
+        "commitHash": "27e6e36"
+      }
+    },
+    {
+      "id": "commit-d69b58d",
+      "title": "chore(crypto): morning signal update 2026-07-05",
+      "type": "system",
+      "datetime": "2026-07-05T07:00:06-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-05",
+      "metadata": {
+        "commitHash": "d69b58d"
+      }
+    },
+    {
+      "id": "commit-32ac5b5",
+      "title": "chore: daily tracker scan 2026-07-04",
+      "type": "system",
+      "datetime": "2026-07-05T00:09:46-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-04",
+      "metadata": {
+        "commitHash": "32ac5b5"
+      }
+    },
     {
       "id": "commit-2727a15",
       "title": "chore(crypto): evening signal update 2026-07-04",
@@ -33,123 +99,13 @@
       "metadata": {
         "commitHash": "11bcfa5"
       }
-    },
-    {
-      "id": "commit-3b1dfdc",
-      "title": "feat: posthog file_download + outbound_click tracking (globa",
-      "type": "milestone",
-      "datetime": "2026-07-03T23:51:03-04:00",
-      "status": "completed",
-      "description": "feat: posthog file_download + outbound_click tracking (global click delegate)",
-      "metadata": {
-        "commitHash": "3b1dfdc"
-      }
-    },
-    {
-      "id": "commit-9baff48",
-      "title": "fix: ship favicon.ico (Clearbox mark) for Safari + upgrade a",
-      "type": "deployment",
-      "datetime": "2026-07-03T23:35:10-04:00",
-      "status": "completed",
-      "description": "fix: ship favicon.ico (Clearbox mark) for Safari + upgrade avatar to 302px headshot",
-      "metadata": {
-        "commitHash": "9baff48"
-      }
-    },
-    {
-      "id": "commit-c0a1262",
-      "title": "fix: Typefully v1 retired — schedule LinkedIn via API v2 soc",
-      "type": "deployment",
-      "datetime": "2026-07-03T23:10:46-04:00",
-      "status": "completed",
-      "description": "fix: Typefully v1 retired — schedule LinkedIn via API v2 social-sets drafts",
-      "metadata": {
-        "commitHash": "c0a1262"
-      }
-    },
-    {
-      "id": "commit-0e28754",
-      "title": "feat: claude daily digest 2026-07-03",
-      "type": "milestone",
-      "datetime": "2026-07-03T23:06:10-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-07-03",
-      "metadata": {
-        "commitHash": "0e28754"
-      }
-    },
-    {
-      "id": "commit-1b8b7ba",
-      "title": "chore: swap avatar to LinkedIn headshot",
-      "type": "system",
-      "datetime": "2026-07-03T22:27:23-04:00",
-      "status": "completed",
-      "description": "chore: swap avatar to LinkedIn headshot",
-      "metadata": {
-        "commitHash": "1b8b7ba"
-      }
-    },
-    {
-      "id": "commit-feec514",
-      "title": "feat: shows hub + feed fixes + light-mode gag revert (phase ",
-      "type": "milestone",
-      "datetime": "2026-07-03T22:20:11-04:00",
-      "status": "completed",
-      "description": "feat: shows hub + feed fixes + light-mode gag revert (phase 3 feedback)",
-      "metadata": {
-        "commitHash": "feec514"
-      }
-    },
-    {
-      "id": "commit-63d836c",
-      "title": "feat: phase 3 — Claude Code Daily comeback + site touches",
-      "type": "milestone",
-      "datetime": "2026-07-03T21:23:56-04:00",
-      "status": "completed",
-      "description": "feat: phase 3 — Claude Code Daily comeback + site touches",
-      "metadata": {
-        "commitHash": "63d836c"
-      }
-    },
-    {
-      "id": "commit-35002c6",
-      "title": "chore(crypto): evening signal update 2026-07-03",
-      "type": "system",
-      "datetime": "2026-07-03T17:30:06-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-03",
-      "metadata": {
-        "commitHash": "35002c6"
-      }
-    },
-    {
-      "id": "commit-11448a7",
-      "title": "chore(crypto): morning signal update 2026-07-03",
-      "type": "system",
-      "datetime": "2026-07-03T07:00:04-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-03",
-      "metadata": {
-        "commitHash": "11448a7"
-      }
-    },
-    {
-      "id": "commit-451144d",
-      "title": "chore: daily tracker scan 2026-07-02",
-      "type": "system",
-      "datetime": "2026-07-03T00:31:30-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-07-02",
-      "metadata": {
-        "commitHash": "451144d"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 13,
-    "completedEvents": 13,
+    "totalEvents": 9,
+    "completedEvents": 9,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 13,
+    "deploymentsThisWeek": 9,
     "upcomingCronJobs": 0
   }
 }
