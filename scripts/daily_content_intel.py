@@ -1325,12 +1325,38 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
             return True
         return False
 
-    if _looks_bogus(body):
-        print(f"  ✗ blog body failed validation (len={len((body or '').strip())}) — refusing to write a stub")
-        reject_path = REPO_ROOT / "data" / "daily-log" / f"rejected-blog-{target_date}.txt"
-        reject_path.write_text(body or "")
-        print(f"    rejected body saved: {reject_path}")
+    def _recover_from_tmp(text, date):
+        # The agent sometimes writes the real digest to a temp file and returns only a
+        # summary ("Done. ... written to /private/tmp/claude-code-daily-<date>.md").
+        # Read the artifact it actually wrote before giving up on the night.
+        import re
+        cands = re.findall(r'/(?:private/)?tmp/[^\s`"\')]+\.md', text or "")
+        cands += [f"/private/tmp/claude-code-daily-{date}.md",
+                  f"/tmp/claude-code-daily-{date}.md"]
+        for p in cands:
+            try:
+                t = Path(p).read_text().strip()
+            except Exception:
+                continue
+            if t.startswith("---"):  # strip any frontmatter; we rebuild it below
+                parts = t.split("---", 2)
+                if len(parts) >= 3:
+                    t = parts[2].strip()
+            if "##" in t and len(t) >= 400:
+                return t
         return None
+
+    if _looks_bogus(body):
+        recovered = _recover_from_tmp(body, target_date)
+        if recovered and not _looks_bogus(recovered):
+            print(f"  ✓ recovered digest from temp artifact (len={len(recovered.strip())})")
+            body = recovered
+        else:
+            print(f"  ✗ blog body failed validation (len={len((body or '').strip())}) — refusing to write a stub")
+            reject_path = REPO_ROOT / "data" / "daily-log" / f"rejected-blog-{target_date}.txt"
+            reject_path.write_text(body or "")
+            print(f"    rejected body saved: {reject_path}")
+            return None
 
     # Update story tracker with today's content
     update_story_tracker(body, raw_data, target_date)
