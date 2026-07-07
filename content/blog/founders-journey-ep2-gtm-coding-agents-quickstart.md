@@ -74,7 +74,7 @@ When Claude Code reads a big repo you've already built, you're working with cach
 
 One more rule: don't mix repos. If you run an agency and build your own product, scaffold them separately. I keep Lead Alchemy (the agency) and Clearbox (the SaaS) as two repos so the context and taxonomy stay specific to each and I always control where I'm pointing the agent.
 
-And a skill I built the same day I recorded this: auto-open. Any time an agent produces a file or folder I'd otherwise have to go dig for, it opens automatically. Finder on a Mac is not great, and when you run multi-session across a dozen folders like I do, that one skill saves real friction.
+And a skill I built the same day I recorded this: auto-open. Any time an agent produces a file or folder I'd otherwise have to go dig for, it opens automatically. Finder on a Mac is not great, and when you run multi-session across a dozen folders like I do, that one skill saves real friction. [Grab it from the vault](/vault/context-engineering/auto-open-skill) — and while you're there, the [copy-to-clipboard skill](/vault/content-ops/copy-to-clipboard-skill) I use to drop a finished LinkedIn or Reddit post straight onto my clipboard, formatted, no markdown to clean up.
 
 ## the payoff: a CLAUDE.md under 200 lines and a README
 
