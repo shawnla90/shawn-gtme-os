@@ -1,26 +1,26 @@
 {
-  "generated": "2026-07-06T04:00:30.000Z",
+  "generated": "2026-07-07T04:00:32.000Z",
   "totals": {
-    "total_content": 393,
+    "total_content": 394,
     "total_drafts": 132,
-    "total_final": 261,
-    "total_words": 292039,
+    "total_final": 262,
+    "total_words": 293600,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
   },
   "pipeline": {
+    "website": {
+      "draft": 1,
+      "final": 106,
+      "total": 107,
+      "words": 141829
+    },
     "reddit": {
       "draft": 23,
       "final": 3,
       "total": 26,
       "words": 10535
-    },
-    "website": {
-      "draft": 1,
-      "final": 105,
-      "total": 106,
-      "words": 140268
     },
     "nio-log": {
       "draft": 0,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "website",
+      "title": "the GTM coding agent hit 100 stars: I ran its Quick Start live in Claude Code",
+      "slug": "founders-journey-ep2-gtm-coding-agents-quickstart",
+      "date": "2026-07-06",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1561,
+      "file_path": "content/website/final/founders-journey-ep2-gtm-coding-agents-quickstart.md"
+    },
     {
       "platform": "reddit",
       "title": "r/ClaudeAI",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 1073,
       "file_path": "content/linkedin/final/2026-04-22_pick-your-primitive-newsletter.txt"
-    },
-    {
-      "platform": "nio-log",
-      "title": "TUESDAY. DAY THIRTY OF D GRADES.",
-      "slug": "2026-04-22",
-      "date": "2026-04-22",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 694,
-      "file_path": "content/nio-log/2026-04-22.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-07-06",
+      "grade": "D",
+      "score": 53,
+      "words": 1545,
+      "shipped": 1,
+      "cost": 0.0
+    },
+    {
       "date": "2026-07-05",
       "grade": "D",
       "score": 58,
@@ -1248,14 +1256,6 @@
       "date": "2026-06-23",
       "grade": "D",
       "score": 18,
-      "words": 5555,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-06-22",
-      "grade": "D",
-      "score": 3,
       "words": 5555,
       "shipped": 0,
       "cost": 0.0
