@@ -11,6 +11,7 @@ import { locales } from '../../../../i18n/config'
 import { TableOfContents } from './TableOfContents'
 import { ArticleReveal, HeaderReveal } from './ArticleReveal'
 import { BlogTracking } from './BlogTracking'
+import { QuickstartTerminal } from '../../../../components/blog/QuickstartTerminal'
 
 // Monochrome accent for the dark-only claude-daily terminal panel.
 // This panel hardcodes a dark background (#0d1117 / #161b22) regardless of
@@ -125,6 +126,15 @@ export default async function BlogPost({
   const post = getPostBySlug(slug, contentDir)
   const htmlContent = withYouTubeEmbeds(await markdownToHtml(post.content))
   const faqs = extractFAQs(post.content)
+
+  // {{quickstart-terminal}} on its own line becomes an interactive island; split
+  // the rendered HTML into the halves that bracket the <QuickstartTerminal/>.
+  const quickstartParts = htmlContent.split(
+    /<p>\s*(?:\{|&#123;){2}quickstart-terminal(?:\}|&#125;){2}\s*<\/p>/,
+  )
+  const hasQuickstart = quickstartParts.length > 1
+  // TOC only needs headings — hand it the marker-free html (rejoined split halves).
+  const tocHtml = quickstartParts.join('')
 
   const postUrl = `${SITE_URL}/blog/${slug}`
   const ogImage = `${SITE_URL}/og?title=${encodeURIComponent(post.title)}&subtitle=${encodeURIComponent(post.excerpt)}`
@@ -438,7 +448,7 @@ export default async function BlogPost({
             header. On desktop this element is hidden by CSS and the sidebar
             aside (below) is shown instead.
           */}
-          <TableOfContents html={htmlContent} mobileOnly />
+          <TableOfContents html={tocHtml} mobileOnly />
 
           <HeaderReveal>
             <header style={{ marginBottom: 32 }}>
@@ -508,10 +518,18 @@ export default async function BlogPost({
           </HeaderReveal>
 
           <ArticleReveal>
-            <div
-              className="prose"
-              dangerouslySetInnerHTML={{ __html: htmlContent }}
-            />
+            {hasQuickstart ? (
+              <>
+                <div className="prose" dangerouslySetInnerHTML={{ __html: quickstartParts[0] }} />
+                <QuickstartTerminal />
+                <div
+                  className="prose"
+                  dangerouslySetInnerHTML={{ __html: quickstartParts.slice(1).join('') }}
+                />
+              </>
+            ) : (
+              <div className="prose" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+            )}
           </ArticleReveal>
 
           <footer
@@ -535,7 +553,7 @@ export default async function BlogPost({
         </article>
 
         {/* Desktop sidebar TOC — hidden on mobile via CSS */}
-        <TableOfContents html={htmlContent} desktopOnly />
+        <TableOfContents html={tocHtml} desktopOnly />
       </div>
     </>
   )
