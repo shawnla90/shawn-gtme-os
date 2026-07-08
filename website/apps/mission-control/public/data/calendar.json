@@ -1,6 +1,83 @@
 {
-  "generated": "2026-07-07T04:10:12.980Z",
+  "generated": "2026-07-08T04:04:26.678Z",
   "events": [
+    {
+      "id": "commit-535f05f",
+      "title": "chore(crypto): evening signal update 2026-07-07",
+      "type": "system",
+      "datetime": "2026-07-07T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-07",
+      "metadata": {
+        "commitHash": "535f05f"
+      }
+    },
+    {
+      "id": "commit-dbb0d2a",
+      "title": "feat(blog): publish Founder's Journey Ep2 post (2pm go-live)",
+      "type": "system",
+      "datetime": "2026-07-07T13:47:16-04:00",
+      "status": "completed",
+      "description": "feat(blog): publish Founder's Journey Ep2 post (2pm go-live)",
+      "metadata": {
+        "commitHash": "dbb0d2a"
+      }
+    },
+    {
+      "id": "commit-bb5d4aa",
+      "title": "chore(crypto): morning signal update 2026-07-07",
+      "type": "system",
+      "datetime": "2026-07-07T07:00:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-07",
+      "metadata": {
+        "commitHash": "bb5d4aa"
+      }
+    },
+    {
+      "id": "commit-3ee5fab",
+      "title": "feat: claude daily digest 2026-07-07",
+      "type": "milestone",
+      "datetime": "2026-07-07T01:18:15-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-07",
+      "metadata": {
+        "commitHash": "3ee5fab"
+      }
+    },
+    {
+      "id": "commit-8c032f4",
+      "title": "fix: auto-recover daily digest from temp artifact instead of",
+      "type": "deployment",
+      "datetime": "2026-07-07T00:59:38-04:00",
+      "status": "completed",
+      "description": "fix: auto-recover daily digest from temp artifact instead of rejecting stub",
+      "metadata": {
+        "commitHash": "8c032f4"
+      }
+    },
+    {
+      "id": "commit-2dd3e97",
+      "title": "feat: recover + publish Claude Code Daily 2026-07-06 (Fable ",
+      "type": "milestone",
+      "datetime": "2026-07-07T00:43:55-04:00",
+      "status": "completed",
+      "description": "feat: recover + publish Claude Code Daily 2026-07-06 (Fable Monday)",
+      "metadata": {
+        "commitHash": "2dd3e97"
+      }
+    },
+    {
+      "id": "commit-0f004c7",
+      "title": "chore: daily tracker scan 2026-07-06",
+      "type": "system",
+      "datetime": "2026-07-07T00:10:13-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-06",
+      "metadata": {
+        "commitHash": "0f004c7"
+      }
+    },
     {
       "id": "commit-6551921",
       "title": "feat(vault): auto-open + copy-to-clipboard skills as downloa",
@@ -66,68 +143,13 @@
       "metadata": {
         "commitHash": "4469be3"
       }
-    },
-    {
-      "id": "commit-a3f81f7",
-      "title": "chore(crypto): evening signal update 2026-07-05",
-      "type": "system",
-      "datetime": "2026-07-05T17:30:06-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-05",
-      "metadata": {
-        "commitHash": "a3f81f7"
-      }
-    },
-    {
-      "id": "commit-fc59424",
-      "title": "feat: beehiiv subscribe url live + daily pipeline hardening ",
-      "type": "milestone",
-      "datetime": "2026-07-05T16:41:57-04:00",
-      "status": "completed",
-      "description": "feat: beehiiv subscribe url live + daily pipeline hardening (opus fallback, stub dump, cron idempotency)",
-      "metadata": {
-        "commitHash": "fc59424"
-      }
-    },
-    {
-      "id": "commit-aa16da5",
-      "title": "feat: claude daily digest 2026-07-04",
-      "type": "milestone",
-      "datetime": "2026-07-05T16:31:37-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-07-04",
-      "metadata": {
-        "commitHash": "aa16da5"
-      }
-    },
-    {
-      "id": "commit-27e6e36",
-      "title": "feat: claude daily digest 2026-07-04",
-      "type": "milestone",
-      "datetime": "2026-07-05T16:21:16-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-07-04",
-      "metadata": {
-        "commitHash": "27e6e36"
-      }
-    },
-    {
-      "id": "commit-d69b58d",
-      "title": "chore(crypto): morning signal update 2026-07-05",
-      "type": "system",
-      "datetime": "2026-07-05T07:00:06-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-05",
-      "metadata": {
-        "commitHash": "d69b58d"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 11,
-    "completedEvents": 11,
+    "totalEvents": 13,
+    "completedEvents": 13,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 11,
+    "deploymentsThisWeek": 13,
     "upcomingCronJobs": 0
   }
 }
