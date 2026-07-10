@@ -29,7 +29,8 @@
     "react": "^19",
     "react-dom": "^19",
     "react-tweet": "^3.3.1",
-    "react-use-measure": "^2.1.7"
+    "react-use-measure": "^2.1.7",
+    "rough-notation": "^0.5.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -118,6 +118,23 @@ def validate_anti_slop(text):
     score = max(0.0, 100.0 - len(violations) * 10.0)
     return score, violations, fixed
 
+
+def strip_preamble(text):
+    """Drop any assistant preamble before the first markdown H2 section.
+
+    The daily body contract requires it to start with '## the pulse'. Anything
+    the model emits before the first '## ' heading (e.g. "Sure, here's the
+    digest:") is commentary that must never be published. Frontmatter is rebuilt
+    separately, so discarding everything up to the first '##' is safe. If no
+    '## ' heading exists, return the text unchanged so _looks_bogus rejects it.
+    """
+    if not text:
+        return text
+    m = re.search(r"^##\s", text, flags=re.MULTILINE)
+    if m:
+        return text[m.start():].lstrip()
+    return text
+
 # ── Reddit via Playwright (clearbox_reddit transport) ─────────────────
 # Reddit's public JSON API 403-blocks plain HTTP from this machine
 # (since 2026-06). old.reddit HTML through a real headless Chromium is
@@ -1214,6 +1231,7 @@ Rules:
 - Humor should be natural, not forced. Dry wit > trying too hard.
 - Don't use quotation marks around phrases (no "air quotes").
 - Roasting is fine. Being mean is not. Punch up, not down.
+- HIGHLIGHT: in each of "hottest thread", "best comment award", "troll of the day", and "fun facts", wrap the single most quotable phrase (3 to 8 words) in ==double equals== so the site can marker-highlight it. Exactly one per section. Never wrap headings, usernames, blockquotes, or whole sentences.
 - DEDUP RULES (critical):
   - Posts with is_returning=true appeared in PREVIOUS days. They are NOT new today.
   - For "hottest thread" and "the pulse": PRIORITIZE posts where is_returning=false. Only feature a returning post if it has genuinely massive new activity since yesterday.
@@ -1310,6 +1328,10 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
                 print(f"  retry anti-slop: {score:.0f}%")
 
     body = fixed or content
+    # Fail-safe: strip any assistant preamble the model prepended before the
+    # first '## ' section. Without this, a line like "Sure, here's the digest:"
+    # gets published verbatim (the 2026-07-08 incident).
+    body = strip_preamble(body)
 
     # Guard against CLI tool-summary artifacts. The Apr-2026 failure mode: the agent
     # wrote the post to a temp file and returned "Done. The blog post is at
@@ -1322,6 +1344,11 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
         if low.startswith("done") or "/private/tmp" in text or "the blog post is at" in low:
             return True
         if "##" not in text:
+            return True
+        # Contract: the body must START with a '## ' section (the pulse). If it
+        # doesn't, a preamble slipped past strip_preamble (or there's no real
+        # heading) — refuse to publish rather than leak commentary.
+        if not text.strip().startswith("##"):
             return True
         return False
 

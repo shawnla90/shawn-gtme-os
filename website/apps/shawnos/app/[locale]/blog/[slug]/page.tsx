@@ -12,34 +12,10 @@ import { TableOfContents } from './TableOfContents'
 import { ArticleReveal, HeaderReveal } from './ArticleReveal'
 import { BlogTracking } from './BlogTracking'
 import { QuickstartTerminal } from '../../../../components/blog/QuickstartTerminal'
-
-// Monochrome accent for the dark-only claude-daily terminal panel.
-// This panel hardcodes a dark background (#0d1117 / #161b22) regardless of
-// the page theme, so we use a concrete light gray here (not a theme token)
-// to keep the accent legible against the fixed-dark panel in both themes.
-const GREEN = '#E6E6E6'
-const GREEN_DIM = '#E6E6E644'
-
-const CLAUDE_ART = `██████╗ ██╗       █████╗  ██╗   ██╗ ██████╗  ███████╗
-██╔════╝ ██║      ██╔══██╗ ██║   ██║ ██╔══██╗ ██╔════╝
-██║      ██║      ███████║ ██║   ██║ ██║  ██║ █████╗
-██║      ██║      ██╔══██║ ██║   ██║ ██║  ██║ ██╔══╝
-╚██████╗ ███████╗ ██║  ██║ ╚██████╔╝ ██████╔╝ ███████╗
- ╚═════╝ ╚══════╝ ╚═╝  ╚═╝  ╚═════╝  ╚═════╝  ╚══════╝`
-
-const DAILY_ART = `██████╗   █████╗  ██╗ ██╗      ██╗   ██╗
-██╔══██╗ ██╔══██╗ ██║ ██║      ╚██╗ ██╔╝
-██║  ██║ ███████║ ██║ ██║       ╚████╔╝
-██║  ██║ ██╔══██║ ██║ ██║        ╚██╔╝
-██████╔╝ ██║  ██║ ██║ ███████╗    ██║
-╚═════╝  ╚═╝  ╚═╝ ╚═╝ ╚══════╝    ╚═╝`
-
-const C_ART = ` ██████╗
-██╔════╝
-██║
-██║
-╚██████╗
- ╚═════╝`
+import { ClearboxDailyHero } from '../../../components/clearbox-aura/ClearboxDailyHero'
+import { ClearboxReadingRails } from '../../../components/clearbox-aura/ClearboxReadingRails'
+import { ClearboxPipelineFinale } from '../../../components/clearbox-aura/ClearboxPipelineFinale'
+import { DigestHighlights } from '../../../components/clearbox-aura/DigestHighlights'
 
 const SITE_URL = 'https://shawnos.ai'
 const CONTENT_BASE = path.join(process.cwd(), '../../../content/website/final')
@@ -124,7 +100,12 @@ export default async function BlogPost({
   const t = await getTranslations('Blog')
   const contentDir = getContentDir(locale, slug)
   const post = getPostBySlug(slug, contentDir)
-  const htmlContent = withYouTubeEmbeds(await markdownToHtml(post.content))
+  let htmlContent = withYouTubeEmbeds(await markdownToHtml(post.content))
+  if (post.category === 'claude-daily') {
+    // ==phrase== markers → inline highlight spans (rough-notation targets).
+    // Applied after markdownToHtml so the sanitizer doesn't strip it (GFM ignores ==).
+    htmlContent = htmlContent.replace(/==([^=\n]{2,80})==/g, '<span class="cb-hl">$1</span>')
+  }
   const faqs = extractFAQs(post.content)
 
   // {{quickstart-terminal}} on its own line becomes an interactive island; split
@@ -190,13 +171,21 @@ export default async function BlogPost({
         ]}
       />
 
+      {/* Daily editions only: typed hero + pinned scraper/aura rails flanking the read. */}
+      {post.category === 'claude-daily' && (
+        <>
+          <ClearboxDailyHero />
+          <ClearboxReadingRails />
+        </>
+      )}
+
       {/*
         Outer wrapper: on desktop becomes a flex row (content + toc sidebar).
         The TableOfContents component renders BOTH a .toc-mobile and .toc-desktop
         element internally; CSS shows only the appropriate one per breakpoint.
         We position it as the second flex child so it appears on the right.
       */}
-      <div className="blog-post-layout">
+      <div className={`blog-post-layout${post.category === 'claude-daily' ? ' blog-post-wide' : ''}`}>
         {/* Main content column */}
         <article className="blog-post-content" style={{ fontFamily: 'var(--font-sans)' }}>
           <script
@@ -227,221 +216,6 @@ export default async function BlogPost({
             &larr; {post.category === 'claude-daily' ? 'Claude Code Daily' : t('backToBlog')}
           </Link>
 
-          {post.category === 'claude-daily' && (
-            <div
-              style={{
-                padding: '28px 24px',
-                marginBottom: '28px',
-                background: '#0d1117',
-                border: `1px solid ${GREEN_DIM}`,
-                borderRadius: '8px',
-                position: 'relative',
-                overflow: 'hidden',
-              }}
-            >
-              {/* top accent line */}
-              <div
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '1px',
-                  background: `linear-gradient(90deg, transparent, ${GREEN}, transparent)`,
-                }}
-              />
-
-              {/* logo + mascot row */}
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '24px' }}>
-                {/* left: CLAUDE + DAILY block art */}
-                <div style={{ minWidth: 0 }}>
-                  <pre
-                    style={{
-                      fontFamily: 'var(--font-mono), monospace',
-                      fontSize: 'clamp(5px, 1.4vw, 8px)',
-                      lineHeight: 1.15,
-                      letterSpacing: '0.02em',
-                      whiteSpace: 'pre',
-                      margin: 0,
-                      padding: 0,
-                      userSelect: 'none',
-                      color: GREEN,
-                      textShadow: `0 0 20px #E6E6E630, 0 0 4px #E6E6E620`,
-                    }}
-                  >
-                    {CLAUDE_ART}
-                  </pre>
-                  <pre
-                    style={{
-                      fontFamily: 'var(--font-mono), monospace',
-                      fontSize: 'clamp(5px, 1.4vw, 8px)',
-                      lineHeight: 1.15,
-                      letterSpacing: '0.02em',
-                      whiteSpace: 'pre',
-                      margin: 0,
-                      padding: 0,
-                      userSelect: 'none',
-                      color: GREEN,
-                      textShadow: `0 0 20px #E6E6E630, 0 0 4px #E6E6E620`,
-                      marginTop: '-1px',
-                    }}
-                  >
-                    {DAILY_ART}
-                  </pre>
-                </div>
-
-                {/* right: CC mascot */}
-                <div
-                  className="cc-article-mascot"
-                  style={{
-                    flexShrink: 0,
-                    position: 'relative',
-                    width: '80px',
-                    height: '80px',
-                  }}
-                >
-                  <div
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      borderRadius: '50%',
-                      background: '#161b22',
-                      border: '1px solid #E6E6E615',
-                      boxShadow: '0 0 30px #E6E6E610',
-                    }}
-                  />
-                  <pre
-                    style={{
-                      fontFamily: 'var(--font-mono), monospace',
-                      lineHeight: 1.15,
-                      whiteSpace: 'pre',
-                      margin: 0,
-                      padding: 0,
-                      userSelect: 'none',
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-58%, -62%)',
-                      fontSize: '8px',
-                      color: GREEN,
-                      textShadow: `0 0 16px #E6E6E640`,
-                    }}
-                  >
-                    {C_ART}
-                  </pre>
-                  <pre
-                    style={{
-                      fontFamily: 'var(--font-mono), monospace',
-                      lineHeight: 1.15,
-                      whiteSpace: 'pre',
-                      margin: 0,
-                      padding: 0,
-                      userSelect: 'none',
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-38%, -38%)',
-                      fontSize: '8px',
-                      color: '#FFFFFF',
-                      textShadow: `0 0 16px #E6E6E640`,
-                    }}
-                  >
-                    {C_ART}
-                  </pre>
-                </div>
-              </div>
-
-              {/* meta row */}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  marginTop: '14px',
-                }}
-              >
-                <span
-                  style={{
-                    fontSize: '10px',
-                    fontWeight: 700,
-                    color: GREEN,
-                    border: `1px solid ${GREEN_DIM}`,
-                    borderRadius: '10px',
-                    padding: '3px 10px',
-                    fontFamily: 'var(--font-mono)',
-                    letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
-                  }}
-                >
-                  live
-                </span>
-                <span
-                  style={{
-                    fontSize: '12px',
-                    color: 'var(--text-muted)',
-                    fontFamily: 'var(--font-mono)',
-                  }}
-                >
-                  the daily show for claude code builders
-                </span>
-              </div>
-
-              {/* divider */}
-              <div
-                style={{
-                  height: '1px',
-                  background: `linear-gradient(90deg, ${GREEN}20, ${GREEN}40, ${GREEN}20)`,
-                  margin: '14px 0',
-                }}
-              />
-
-              {/* section nav */}
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '6px',
-                }}
-              >
-                {[
-                  'the pulse', 'hottest thread', 'repo of the day',
-                  'best comment', 'troll of the day', 'fun facts',
-                  'code drop', 'scoreboard',
-                ].map((label) => (
-                  <a
-                    key={label}
-                    href={`#${label.replace(/\s+/g, '-')}`}
-                    style={{
-                      fontSize: '10px',
-                      fontFamily: 'var(--font-mono)',
-                      color: 'var(--text-muted)',
-                      padding: '3px 10px',
-                      borderRadius: '4px',
-                      background: '#ffffff06',
-                      border: '1px solid #ffffff0a',
-                      textDecoration: 'none',
-                      transition: 'all 0.15s ease',
-                      letterSpacing: '0.02em',
-                    }}
-                  >
-                    {label}
-                  </a>
-                ))}
-              </div>
-
-              {/* bottom accent line */}
-              <div
-                style={{
-                  position: 'absolute',
-                  bottom: 0,
-                  left: 0,
-                  right: 0,
-                  height: '1px',
-                  background: `linear-gradient(90deg, transparent, ${GREEN_DIM}, transparent)`,
-                }}
-              />
-            </div>
-          )}
 
           {/*
             Mobile TOC strip lives here inside the article column, above the
@@ -532,6 +306,8 @@ export default async function BlogPost({
             )}
           </ArticleReveal>
 
+          {post.category === 'claude-daily' && <DigestHighlights />}
+
           <footer
             style={{
               marginTop: 48,
@@ -553,8 +329,11 @@ export default async function BlogPost({
         </article>
 
         {/* Desktop sidebar TOC — hidden on mobile via CSS */}
-        <TableOfContents html={tocHtml} desktopOnly />
+        {post.category !== 'claude-daily' && <TableOfContents html={tocHtml} desktopOnly />}
       </div>
+
+      {/* Daily editions only: full-width pipeline finale + CTA. */}
+      {post.category === 'claude-daily' && <ClearboxPipelineFinale />}
     </>
   )
 }

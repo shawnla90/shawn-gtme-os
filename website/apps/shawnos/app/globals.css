@@ -115,7 +115,32 @@
   --color-popover: var(--canvas-card);
   --color-popover-foreground: var(--text-primary);
   --color-brand: var(--aura);
+  /* aura color utilities (text-aura/bg-aura) for the Clearbox vs-scraper scene */
+  --color-aura: var(--aura);
+  --color-aura-strong: var(--aura-strong);
 }
+
+/* Clearbox pulsating CTA button — expanding aura ring */
+@keyframes clearbox-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--aura) 60%, transparent); }
+  70% { box-shadow: 0 0 0 14px color-mix(in oklch, var(--aura) 0%, transparent); }
+  100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--aura) 0%, transparent); }
+}
+.clearbox-pulse { animation: clearbox-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+
+/* Claude Code Daily editions: narrow readable column so the flanking rails own
+   the gutters on widescreen. TOC sidebar is hidden for these posts. */
+.blog-post-layout.blog-post-wide { max-width: 760px; }
+@media (min-width: 900px) {
+  .blog-post-wide .blog-post-content { max-width: 760px; }
+}
+
+/* rough-notation inline highlight target — the mark is drawn over transparent text */
+.cb-hl { background: transparent; }
+
+/* typing-animation cursor blink */
+@keyframes blink-cursor { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+.animate-blink-cursor { animation: blink-cursor 1s steps(1, end) infinite; }
 
 /* === Base body styles === */
 /* Fine engineered grid painted into the body background itself —
