@@ -1,10 +1,10 @@
 {
-  "generated": "2026-07-09T04:00:25.000Z",
+  "generated": "2026-07-10T04:00:26.000Z",
   "totals": {
-    "total_content": 400,
+    "total_content": 402,
     "total_drafts": 132,
-    "total_final": 268,
-    "total_words": 298623,
+    "total_final": 270,
+    "total_words": 300074,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "website": {
       "draft": 1,
-      "final": 109,
-      "total": 110,
-      "words": 146397
+      "final": 110,
+      "total": 111,
+      "words": 147714
     },
     "reddit": {
       "draft": 23,
@@ -30,9 +30,9 @@
     },
     "linkedin": {
       "draft": 49,
-      "final": 69,
-      "total": 118,
-      "words": 48945
+      "final": 70,
+      "total": 119,
+      "words": 49079
     },
     "substack": {
       "draft": 13,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Thursday, July 09, 2026",
+      "slug": "claude-daily-2026-07-09",
+      "date": "2026-07-09",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1317,
+      "file_path": "content/website/final/claude-daily-2026-07-09.md"
+    },
     {
       "platform": "website",
       "title": "Claude Code Daily: Wednesday, July 08, 2026",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 791,
       "file_path": "content/website/final/real-signals-start-in-a-conversation.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "WEDNESDAY. DAY THIRTY-ONE OF D GRADES.",
-      "slug": "2026-04-23",
-      "date": "2026-04-23",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 698,
-      "file_path": "content/nio-log/2026-04-23.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-07-09",
+      "grade": "D",
+      "score": 86,
+      "words": 10879,
+      "shipped": 4,
+      "cost": 0.0
+    },
+    {
       "date": "2026-07-08",
       "grade": "D",
       "score": 18,
@@ -1250,14 +1258,6 @@
       "score": 209,
       "words": 24023,
       "shipped": 29,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-06-25",
-      "grade": "C",
-      "score": 207,
-      "words": 24023,
-      "shipped": 25,
       "cost": 0.0
     }
   ]
