@@ -60,9 +60,12 @@ export function DigestHighlights() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches
     const anns: RoughAnnotation[] = []
 
-    const draw = () => {
+    // `animated` only on the first pass; redraws (on width change) reposition
+    // silently so the marks never re-animate while the reader scrolls.
+    const draw = (animated: boolean) => {
       anns.forEach((a) => a.remove())
       anns.length = 0
+      const anim = animated && !reduce
 
       // 1) curated section headings
       ;(Array.from(root.querySelectorAll("h2")) as HTMLElement[]).forEach((h) => {
@@ -75,7 +78,7 @@ export function DigestHighlights() {
           padding: cfg.type === "highlight" ? 2 : cfg.type === "circle" ? 8 : 5,
           multiline: cfg.type === "underline" || cfg.type === "highlight",
           iterations: 2,
-          animate: !reduce,
+          animate: anim,
           animationDuration: 700,
         })
         a.show()
@@ -92,20 +95,32 @@ export function DigestHighlights() {
           padding: 1.5,
           multiline: true,
           iterations: 1,
-          animate: !reduce,
+          animate: anim,
           animationDuration: 500,
         })
-        // stagger so they draw in as the eye travels down
-        window.setTimeout(() => a.show(), reduce ? 0 : i * 120)
+        if (anim) window.setTimeout(() => a.show(), i * 120)
+        else a.show()
         anns.push(a)
       })
     }
 
-    const t = window.setTimeout(draw, 900)
-    const onResize = () => draw()
+    const t = window.setTimeout(() => draw(true), 900)
+
+    // Redraw ONLY on a real width change. Mobile scrolling toggles the URL bar,
+    // which fires resize with an unchanged width — ignore those so the marks
+    // don't jump. Debounce so a drag resize doesn't thrash.
+    let lastWidth = window.innerWidth
+    let debounce: number | undefined
+    const onResize = () => {
+      if (window.innerWidth === lastWidth) return
+      lastWidth = window.innerWidth
+      window.clearTimeout(debounce)
+      debounce = window.setTimeout(() => draw(false), 200)
+    }
     window.addEventListener("resize", onResize)
     return () => {
       window.clearTimeout(t)
+      window.clearTimeout(debounce)
       window.removeEventListener("resize", onResize)
       anns.forEach((a) => a.remove())
     }

@@ -27,12 +27,14 @@ export function ClearboxDailyHero() {
         <h1
           style={{
             fontFamily: "var(--font-mono)",
-            fontSize: "clamp(32px, 6vw, 60px)",
+            fontSize: "clamp(22px, 7.4vw, 58px)",
             fontWeight: 800,
             letterSpacing: "-0.03em",
-            lineHeight: 1,
+            lineHeight: 1.05,
             color: "oklch(0.985 0 0)",
             margin: 0,
+            maxWidth: "100%",
+            overflowWrap: "break-word",
           }}
         >
           <TypingAnimation as="span" duration={95} cursorStyle="block" className="leading-none tracking-[-0.03em]">

@@ -48,7 +48,6 @@ export function AuraPipeline({ format = "wide" }: { format?: SceneFormat }) {
   const cliRef = useRef<HTMLDivElement>(null);
   const outRefs = useRefArray<HTMLDivElement>(AURA_COPY.outputs.length);
 
-  const flowDir = vertical ? "flex-col" : "flex-row";
   const groupDir = vertical ? "flex-row" : "flex-col";
 
   return (
@@ -62,30 +61,24 @@ export function AuraPipeline({ format = "wide" }: { format?: SceneFormat }) {
         }}
       />
 
-      {/* eyebrow */}
-      <div
-        className={cn(
-          "absolute z-20",
-          vertical ? "left-1/2 top-12 -translate-x-1/2 text-center" : "left-14 top-11",
-        )}
-      >
-        <p className="text-[13px] font-medium uppercase tracking-[0.28em] text-aura">
-          {AURA_COPY.engine} Engine
-        </p>
-        <h2 className="mt-1 text-[26px] font-semibold tracking-tight">
-          The ingestion pipeline
-        </h2>
-      </div>
-
       {/* flow + beams share one measured container */}
       <div
         ref={container}
         className={cn(
-          "relative z-10 flex h-full w-full items-center justify-between gap-6",
-          flowDir,
-          vertical ? "px-20 py-32" : "px-16 py-28",
+          "relative z-10 flex w-full items-center gap-6",
+          vertical ? "flex-col gap-7 px-4 py-12" : "h-full flex-row justify-between px-16 py-28",
         )}
       >
+        {/* eyebrow — inline on mobile, pinned top-left on desktop */}
+        <div className={cn("z-20", vertical ? "text-center" : "absolute left-14 top-11")}>
+          <p className="text-[13px] font-medium uppercase tracking-[0.28em] text-aura">
+            {AURA_COPY.engine} Engine
+          </p>
+          <h2 className="mt-1 text-[22px] font-semibold tracking-tight sm:text-[26px]">
+            The ingestion pipeline
+          </h2>
+        </div>
+
         <ColStage header="Subreddits" dir={groupDir}>
           {AURA_COPY.subreddits.map((s, i) => (
             <NodeChip key={s} ref={subRefs[i]}>
@@ -102,7 +95,7 @@ export function AuraPipeline({ format = "wide" }: { format?: SceneFormat }) {
             return (
               <NodeChip key={k} ref={entRefs[i]} color={ENTITIES[k].color}>
                 <Icon className="size-4" style={{ color: ENTITIES[k].color }} />
-                <span className="whitespace-nowrap">{ENTITIES[k].label}</span>
+                <span className="whitespace-nowrap">{vertical ? ENTITIES[k].short : ENTITIES[k].label}</span>
               </NodeChip>
             );
           })}
@@ -209,24 +202,24 @@ export function AuraPipeline({ format = "wide" }: { format?: SceneFormat }) {
             gradientStopColor="#8b7cf6"
           />
         )}
-      </div>
 
-      {/* processed stat + wordmark */}
-      <div
-        className={cn(
-          "absolute z-20 flex items-center gap-2",
-          vertical ? "bottom-12 left-1/2 -translate-x-1/2" : "bottom-11 right-14",
-        )}
-      >
-        <span className="text-xs text-muted-foreground">
-          {AURA_COPY.processed} posts → intent-scored ·
-        </span>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/brand/clearbox-logo.svg"
-          alt="Clearbox"
-          className="h-4 w-auto opacity-85"
-        />
+        {/* processed stat + wordmark — inline on mobile, pinned bottom-right on desktop */}
+        <div
+          className={cn(
+            "z-20 flex items-center gap-2",
+            vertical ? "mt-1" : "absolute bottom-11 right-14",
+          )}
+        >
+          <span className="text-xs text-muted-foreground">
+            {AURA_COPY.processed} posts → intent-scored ·
+          </span>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/brand/clearbox-logo.svg"
+            alt="Clearbox"
+            className="h-4 w-auto opacity-85"
+          />
+        </div>
       </div>
     </div>
   );
@@ -246,7 +239,7 @@ function ColStage({
       <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
         {header}
       </span>
-      <div className={cn("flex items-center justify-center gap-3", dir)}>
+      <div className={cn("flex flex-wrap items-center justify-center gap-2.5 max-w-[300px]", dir)}>
         {children}
       </div>
     </div>

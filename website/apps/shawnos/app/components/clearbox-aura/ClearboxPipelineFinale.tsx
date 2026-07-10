@@ -28,7 +28,7 @@ const DARK_VARS = {
 function useIsNarrow() {
   const [narrow, setNarrow] = useState(false)
   useEffect(() => {
-    const mq = window.matchMedia("(max-width: 640px)")
+    const mq = window.matchMedia("(max-width: 760px)")
     const sync = () => setNarrow(mq.matches)
     sync()
     mq.addEventListener("change", sync)
@@ -100,7 +100,7 @@ export function ClearboxPipelineFinale() {
       <div
         style={{
           width: "100%",
-          height: narrow ? 820 : 600,
+          height: narrow ? "auto" : 600,
           margin: "8px 0 24px",
         }}
       >

@@ -14,6 +14,7 @@ import { BlogTracking } from './BlogTracking'
 import { QuickstartTerminal } from '../../../../components/blog/QuickstartTerminal'
 import { ClearboxDailyHero } from '../../../components/clearbox-aura/ClearboxDailyHero'
 import { ClearboxReadingRails } from '../../../components/clearbox-aura/ClearboxReadingRails'
+import { ClearboxCompareMobile } from '../../../components/clearbox-aura/ClearboxCompareMobile'
 import { ClearboxPipelineFinale } from '../../../components/clearbox-aura/ClearboxPipelineFinale'
 import { DigestHighlights } from '../../../components/clearbox-aura/DigestHighlights'
 
@@ -175,6 +176,7 @@ export default async function BlogPost({
       {post.category === 'claude-daily' && (
         <>
           <ClearboxDailyHero />
+          <ClearboxCompareMobile />
           <ClearboxReadingRails />
         </>
       )}
