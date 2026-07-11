@@ -1,39 +1,39 @@
 {
-  "last_updated": "2026-07-10T21:30:06.526507+00:00",
+  "last_updated": "2026-07-11T11:00:09.816665+00:00",
   "runs": {
     "morning": {
       "agent": "crypto-signal",
-      "timestamp": "2026-07-10T11:00:04.821053+00:00",
-      "date": "2026-07-10",
+      "timestamp": "2026-07-11T11:00:09.816665+00:00",
+      "date": "2026-07-11",
       "test_mode": false,
       "market_snapshot": {
-        "btc_dominance_pct": 56.38,
-        "total_market_cap_usd": 2289659673798.0,
-        "fear_greed_index": 23,
-        "fear_greed_label": "Extreme Fear",
+        "btc_dominance_pct": 56.31,
+        "total_market_cap_usd": 2284012025266.0,
+        "fear_greed_index": 26,
+        "fear_greed_label": "Fear",
         "assets": {
           "BTC": {
-            "price_usd": 64374,
-            "change_24h_pct": 2.65,
-            "market_cap_usd": 1291017774965.0
+            "price_usd": 64118,
+            "change_24h_pct": -0.39,
+            "market_cap_usd": 1285868175026.0
           },
           "ETH": {
-            "price_usd": 1796.5,
-            "change_24h_pct": 2.98,
-            "market_cap_usd": 216832374599.0
+            "price_usd": 1796.73,
+            "change_24h_pct": 0.02,
+            "market_cap_usd": 216838426969.0
           },
           "SOL": {
-            "price_usd": 79.39,
-            "change_24h_pct": 2.38,
-            "market_cap_usd": 46194439971.0
+            "price_usd": 77.99,
+            "change_24h_pct": -1.79,
+            "market_cap_usd": 45403905488.0
           }
         }
       },
       "signals": [
         {
           "asset": "BTC",
-          "price_usd": 64374,
-          "change_24h_pct": 2.65,
+          "price_usd": 64118,
+          "change_24h_pct": -0.39,
           "action": "hold",
           "confidence": 0.3,
           "reasoning": [
@@ -42,8 +42,8 @@
         },
         {
           "asset": "ETH",
-          "price_usd": 1796.5,
-          "change_24h_pct": 2.98,
+          "price_usd": 1796.73,
+          "change_24h_pct": 0.02,
           "action": "hold",
           "confidence": 0.3,
           "reasoning": [
@@ -52,8 +52,8 @@
         },
         {
           "asset": "SOL",
-          "price_usd": 79.39,
-          "change_24h_pct": 2.38,
+          "price_usd": 77.99,
+          "change_24h_pct": -1.79,
           "action": "hold",
           "confidence": 0.3,
           "reasoning": [
@@ -69,75 +69,6 @@
       "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
       "model": "rule-based-v1",
       "period": "morning"
-    },
-    "evening": {
-      "agent": "crypto-signal",
-      "timestamp": "2026-07-10T21:30:06.526507+00:00",
-      "date": "2026-07-10",
-      "test_mode": false,
-      "market_snapshot": {
-        "btc_dominance_pct": 56.28,
-        "total_market_cap_usd": 2278819603603.0,
-        "fear_greed_index": 23,
-        "fear_greed_label": "Extreme Fear",
-        "assets": {
-          "BTC": {
-            "price_usd": 63960,
-            "change_24h_pct": 1.17,
-            "market_cap_usd": 1282563180869.0
-          },
-          "ETH": {
-            "price_usd": 1791.71,
-            "change_24h_pct": 2.65,
-            "market_cap_usd": 216183391291.0
-          },
-          "SOL": {
-            "price_usd": 77.89,
-            "change_24h_pct": -0.12,
-            "market_cap_usd": 45328432699.0
-          }
-        }
-      },
-      "signals": [
-        {
-          "asset": "BTC",
-          "price_usd": 63960,
-          "change_24h_pct": 1.17,
-          "action": "hold",
-          "confidence": 0.3,
-          "reasoning": [
-            "no significant signals \u2014 default hold"
-          ]
-        },
-        {
-          "asset": "ETH",
-          "price_usd": 1791.71,
-          "change_24h_pct": 2.65,
-          "action": "hold",
-          "confidence": 0.3,
-          "reasoning": [
-            "no significant signals \u2014 default hold"
-          ]
-        },
-        {
-          "asset": "SOL",
-          "price_usd": 77.89,
-          "change_24h_pct": -0.12,
-          "action": "hold",
-          "confidence": 0.3,
-          "reasoning": [
-            "no significant signals \u2014 default hold"
-          ]
-        }
-      ],
-      "reddit_sentiment": {
-        "post_count": 0,
-        "avg_score": 0,
-        "top_topics": []
-      },
-      "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
-      "model": "rule-based-v1",
-      "period": "evening"
     }
   }
 }
