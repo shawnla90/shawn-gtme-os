@@ -1,6 +1,50 @@
 {
-  "generated": "2026-07-11T04:05:21.659Z",
+  "generated": "2026-07-12T04:04:15.111Z",
   "events": [
+    {
+      "id": "commit-f28fc4e",
+      "title": "chore(crypto): evening signal update 2026-07-11",
+      "type": "system",
+      "datetime": "2026-07-11T17:30:12-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-11",
+      "metadata": {
+        "commitHash": "f28fc4e"
+      }
+    },
+    {
+      "id": "commit-6a563b5",
+      "title": "chore(crypto): morning signal update 2026-07-11",
+      "type": "system",
+      "datetime": "2026-07-11T07:00:13-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-11",
+      "metadata": {
+        "commitHash": "6a563b5"
+      }
+    },
+    {
+      "id": "commit-855bda7",
+      "title": "feat: claude daily digest 2026-07-11",
+      "type": "milestone",
+      "datetime": "2026-07-11T03:51:12-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-11",
+      "metadata": {
+        "commitHash": "855bda7"
+      }
+    },
+    {
+      "id": "commit-3d2501a",
+      "title": "chore: daily tracker scan 2026-07-10",
+      "type": "system",
+      "datetime": "2026-07-11T00:05:22-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-10",
+      "metadata": {
+        "commitHash": "3d2501a"
+      }
+    },
     {
       "id": "commit-eb4de15",
       "title": "chore(crypto): evening signal update 2026-07-10",
@@ -44,68 +88,13 @@
       "metadata": {
         "commitHash": "6c02945"
       }
-    },
-    {
-      "id": "commit-a818b41",
-      "title": "fix(claude-daily): mobile optimization for the edition exper",
-      "type": "system",
-      "datetime": "2026-07-09T22:53:57-04:00",
-      "status": "completed",
-      "description": "fix(claude-daily): mobile optimization for the edition experience",
-      "metadata": {
-        "commitHash": "a818b41"
-      }
-    },
-    {
-      "id": "commit-7561803",
-      "title": "feat(claude-daily): immersive edition experience + digest fa",
-      "type": "system",
-      "datetime": "2026-07-09T20:18:08-04:00",
-      "status": "completed",
-      "description": "feat(claude-daily): immersive edition experience + digest fail-safe",
-      "metadata": {
-        "commitHash": "7561803"
-      }
-    },
-    {
-      "id": "commit-33f0c59",
-      "title": "chore(crypto): evening signal update 2026-07-09",
-      "type": "system",
-      "datetime": "2026-07-09T17:30:05-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-09",
-      "metadata": {
-        "commitHash": "33f0c59"
-      }
-    },
-    {
-      "id": "commit-05f6864",
-      "title": "chore(crypto): morning signal update 2026-07-09",
-      "type": "system",
-      "datetime": "2026-07-09T07:00:07-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-09",
-      "metadata": {
-        "commitHash": "05f6864"
-      }
-    },
-    {
-      "id": "commit-e6725e9",
-      "title": "feat: claude daily digest 2026-07-09",
-      "type": "milestone",
-      "datetime": "2026-07-09T01:56:29-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-07-09",
-      "metadata": {
-        "commitHash": "e6725e9"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 9,
-    "completedEvents": 9,
+    "totalEvents": 8,
+    "completedEvents": 8,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 9,
+    "deploymentsThisWeek": 8,
     "upcomingCronJobs": 0
   }
 }
