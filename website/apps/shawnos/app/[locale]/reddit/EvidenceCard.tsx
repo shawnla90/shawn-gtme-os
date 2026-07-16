@@ -10,7 +10,7 @@ interface EvidenceProps {
   upvotes: number
   comments: number
   views: string
-  image: string
+  image?: string
   lesson: string
   body?: string
 }
@@ -56,16 +56,18 @@ export function EvidenceCard({
 
         <p style={lessonText}>{lesson}</p>
 
-        <button
-          onClick={() => setShowScreenshot(!showScreenshot)}
-          style={toggleBtn}
-        >
-          {showScreenshot ? '▾ hide screenshot' : '▸ view screenshot'}
-        </button>
+        {image && (
+          <button
+            onClick={() => setShowScreenshot(!showScreenshot)}
+            style={toggleBtn}
+          >
+            {showScreenshot ? '▾ hide screenshot' : '▸ view screenshot'}
+          </button>
+        )}
       </div>
 
       {/* Screenshot — loads on demand */}
-      {showScreenshot && (
+      {image && showScreenshot && (
         <div style={screenshotWrap}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img

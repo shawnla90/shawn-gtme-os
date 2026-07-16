@@ -16,6 +16,16 @@ import {
   LINK_ZONES,
   LINK_ZONE_EVIDENCE,
   SIGNAL_LABELS,
+  ACCOUNT_RAMP,
+  RAMP_DONTS,
+  KARMA_ENGINE,
+  KARMA_ENGINE_SUB,
+  THE_ASK,
+  THE_ASK_EVIDENCE,
+  SHADOWBAN_CHECKS,
+  SHADOWBAN_TRIGGERS,
+  SHADOWBAN_RECOVERY,
+  DELEGATION,
   fmtViews,
 } from './reportData'
 
@@ -30,8 +40,10 @@ type Props = {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const title = 'The Reddit Growth Report: 2M+ Views, 2,334 Karma, 23 Wins'
-  const description = `The full report on building ${redditStats.totalKarma.toLocaleString()} karma and 2M+ views on Reddit, with ${(redditStats.trackedViews / 1_000_000).toFixed(2)}M views tracked live in the journey db. The karma gating system, the link map, what AI answer engines cite, and LLMO: the discipline of getting your language into the places models read.`
+  const karma = redditStats.totalKarma.toLocaleString()
+  const title = `The Reddit Growth Report: 2M+ Views, ${karma} Karma, ${redditStats.wins} Wins`
+  const ogSubtitle = `2M+ views. ${karma} karma. ${redditStats.wins} wins. the system.`
+  const description = `The full report on building ${karma} karma and 2M+ views on Reddit, with ${(redditStats.trackedViews / 1_000_000).toFixed(2)}M views tracked live in the journey db. The ramp, karma gating, the link map, how to get readers to ask for the link, shadowban recovery, and LLMO: the discipline of getting your language into the places models read.`
   return {
     title,
     description,
@@ -54,7 +66,7 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/reddit`,
       images: [
         {
-          url: `/og?title=${encodeURIComponent('The Reddit Growth Report')}&subtitle=${encodeURIComponent('2M+ views. 2,334 karma. 23 wins. the system.')}`,
+          url: `/og?title=${encodeURIComponent('The Reddit Growth Report')}&subtitle=${encodeURIComponent(ogSubtitle)}`,
           width: 1200,
           height: 630,
         },
@@ -64,7 +76,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title,
       description,
       images: [
-        `/og?title=${encodeURIComponent('The Reddit Growth Report')}&subtitle=${encodeURIComponent('2M+ views. 2,334 karma. 23 wins. the system.')}`,
+        `/og?title=${encodeURIComponent('The Reddit Growth Report')}&subtitle=${encodeURIComponent(ogSubtitle)}`,
       ],
     },
   }
@@ -74,14 +86,26 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const SECTIONS = [
   { id: 'journey', label: 'the journey' },
+  { id: 'account-ramp', label: 'the ramp' },
+  { id: 'karma-engine', label: 'karma' },
   { id: 'post-types', label: 'post types' },
   { id: 'comments', label: 'comments' },
   { id: 'karma-gating', label: 'karma gating' },
   { id: 'link-map', label: 'the link map' },
+  { id: 'the-ask', label: 'the ask' },
+  { id: 'staying-alive', label: 'staying alive' },
   { id: 'ai-citations', label: 'what AI cites' },
   { id: 'llmo', label: 'LLMO' },
+  { id: 'delegation', label: 'delegation' },
   { id: 'newsletter', label: 'the weekly report' },
 ]
+
+/**
+ * section numbers derive from SECTIONS order so inserting a section never
+ * leaves a stale hardcoded kicker behind.
+ */
+const sectionNo = (id: string) =>
+  String(SECTIONS.findIndex((s) => s.id === id) + 1).padStart(2, '0')
 
 /* ── styles ─────────────────────────────────────────── */
 
@@ -559,6 +583,7 @@ export default async function RedditPage({ params }: Props) {
 
   const karmaEra = redditStats.eras.find((e) => e.era === 'karma-building') ?? { items: 0, views: 0, score: 0 }
   const clearboxEra = redditStats.eras.find((e) => e.era === 'clearbox') ?? { items: 0, views: 0, score: 0 }
+  const karmaSub = redditStats.topSubreddits.find((s) => s.subreddit === KARMA_ENGINE_SUB)
   const liveKarma = Math.max(profile?.totalKarma ?? 0, redditStats.totalKarma)
 
   return (
@@ -711,7 +736,7 @@ export default async function RedditPage({ params }: Props) {
 
         {/* ── 02 · era timeline ── */}
         <section id="journey" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 01</p>
+          <p style={sectionKicker}>section {sectionNo('journey')}</p>
           <h2 style={sectionTitle}>the journey: zero to cited-by-AI</h2>
           <p style={sectionIntro}>
             the account ran in two deliberate eras. the first built trust, the second cashed it in. the order matters: every shortcut I tested that skipped era one died in the automod queue.
@@ -749,7 +774,7 @@ export default async function RedditPage({ params }: Props) {
               <p style={eraTitle}>cited by AI</p>
               <p style={eraStats}>unlinked brand mentions surfacing in AI answers</p>
               <p style={eraDesc}>
-                the threads from both eras are now training material. AI answer engines cite them, and the product name travels without a URL attached. sections 06 and 07 break down the mechanism.
+                the threads from both eras are now training material. AI answer engines cite them, and the product name travels without a URL attached. sections {sectionNo('ai-citations')} and {sectionNo('llmo')} break down the mechanism.
               </p>
             </div>
           </div>
@@ -780,9 +805,71 @@ export default async function RedditPage({ params }: Props) {
           <hr style={sectionDivider} />
         </section>
 
+        {/* ── the ramp ── */}
+        <section id="account-ramp" className="rr-section" style={sectionStyle}>
+          <p style={sectionKicker}>section {sectionNo('account-ramp')}</p>
+          <h2 style={sectionTitle}>the ramp: starting an account that survives</h2>
+          <p style={sectionIntro}>
+            a new account that opens with a comment about its own product is the exact shape every filter on the platform was built to catch. Reddit reads behavior before it reads words. the ramp below is the slow part, and it decides whether anything after it works.
+          </p>
+
+          {ACCOUNT_RAMP.map((r) => (
+            <div key={r.stage} style={archetypeCard}>
+              <div style={archetypeTop}>
+                <span style={archetypeName}>
+                  {r.emoji} {r.stage}
+                </span>
+                <span style={archetypeStats}>{r.window}</span>
+              </div>
+              <p style={archetypeDesc}>{r.desc}</p>
+            </div>
+          ))}
+
+          <p style={receiptCallout}>
+            era one on this account: {karmaEra.items} posts and comments, {fmtViews(karmaEra.views)} views, zero product mentions.
+          </p>
+
+          <h3 style={subHeading}>the three ways people skip it</h3>
+          {RAMP_DONTS.map((d) => (
+            <div key={d.rule} style={ruleCard}>
+              <span style={ruleNumber}>{d.emoji}</span>
+              <div style={{ flex: 1 }}>
+                <p style={ruleTitle}>{d.rule}</p>
+                <p style={ruleDetail}>{d.detail}</p>
+              </div>
+            </div>
+          ))}
+          <hr style={sectionDivider} />
+        </section>
+
+        {/* ── karma engine ── */}
+        <section id="karma-engine" className="rr-section" style={sectionStyle}>
+          <p style={sectionKicker}>section {sectionNo('karma-engine')}</p>
+          <h2 style={sectionTitle}>karma: farm your own interests</h2>
+          <p style={sectionIntro}>
+            karma is the toll every gated sub charges before it lets you speak. the cheapest place to earn it is the subs you would be reading anyway, because the comments cost you nothing and read as real without you trying. the sections after this one are useless until the account clears the floors in section {sectionNo('karma-gating')}.
+          </p>
+
+          {KARMA_ENGINE.map((k) => (
+            <div key={k.move} style={commentCard}>
+              <h3 style={commentName}>
+                {k.emoji} {k.move}
+              </h3>
+              <p style={commentDesc}>{k.desc}</p>
+            </div>
+          ))}
+
+          {karmaSub && (
+            <p style={receiptCallout}>
+              the receipt: r/{karmaSub.subreddit} on this account. {karmaSub.items} posts and comments, {fmtViews(karmaSub.views)} views, {karmaSub.score} score, and nothing to sell. it outranks every product sub here by views. the interest was real first and the karma was the byproduct.
+            </p>
+          )}
+          <hr style={sectionDivider} />
+        </section>
+
         {/* ── 03 · post types ── */}
         <section id="post-types" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 02</p>
+          <p style={sectionKicker}>section {sectionNo('post-types')}</p>
           <h2 style={sectionTitle}>the 8 post types that work</h2>
           <p style={sectionIntro}>
             tested across 15 months. each type below carries its flagship receipt: the real post, the real numbers, and the value-lead note for SaaS, B2B marketing, Clay, and GTM-engineering readers.
@@ -834,7 +921,7 @@ export default async function RedditPage({ params }: Props) {
 
         {/* ── 04 · comments ── */}
         <section id="comments" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 03</p>
+          <p style={sectionKicker}>section {sectionNo('comments')}</p>
           <h2 style={sectionTitle}>comments: where karma actually lives</h2>
           <p style={sectionIntro}>
             my highest-performing piece of content on Reddit is a comment. 239 upvotes, 27K views, one sentence about ADHD and Claude Code. here are the 7 comment types I run and the flagship example for each.
@@ -865,7 +952,7 @@ export default async function RedditPage({ params }: Props) {
 
         {/* ── 05 · karma gating ── */}
         <section id="karma-gating" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 04</p>
+          <p style={sectionKicker}>section {sectionNo('karma-gating')}</p>
           <h2 style={sectionTitle}>karma gating: the thresholds</h2>
           <p style={sectionIntro}>
             every sub you want to post in has a gate. some gates are posted in the rules: minimum karma, minimum account age. some are invisible: automod quietly removes your post and the views flatline at zero. know the gate before you post, or your best work dies in the queue.
@@ -917,7 +1004,7 @@ export default async function RedditPage({ params }: Props) {
 
         {/* ── 06 · the link map ── */}
         <section id="link-map" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 05</p>
+          <p style={sectionKicker}>section {sectionNo('link-map')}</p>
           <h2 style={sectionTitle}>the link map: three zones, three rules</h2>
           <p style={sectionIntro}>
             where a link lives decides whether a human ever votes on your post. get the zone wrong and the automod buries you first.
@@ -940,14 +1027,89 @@ export default async function RedditPage({ params }: Props) {
           </div>
 
           <p style={receiptCallout}>
-            the stronger move: skip the URL entirely. somebody asks, you describe what the thing does. &quot;I built a scanner that reads every complaint thread and labels each one lead, competitor, or engager.&quot; the reader who wants it will find it. the description is the link.
+            the stronger move: skip the URL entirely. somebody asks, you describe what the thing does. &quot;I built a scanner that reads every complaint thread and labels each one lead, competitor, or engager.&quot; the reader who wants it will find it. the description is the link. section {sectionNo('the-ask')} is how you get asked on purpose.
+          </p>
+          <hr style={sectionDivider} />
+        </section>
+
+        {/* ── the ask ── */}
+        <section id="the-ask" className="rr-section" style={sectionStyle}>
+          <p style={sectionKicker}>section {sectionNo('the-ask')}</p>
+          <h2 style={sectionTitle}>the ask: get them to request the link</h2>
+          <p style={sectionIntro}>
+            a link you drop is an ad. the same link, handed over because someone asked for it, is an answer. the sub scores those differently and so does everyone reading. the ask is the part you can engineer.
+          </p>
+
+          {THE_ASK.map((a) => (
+            <div key={a.move} style={zoneCard}>
+              <p style={zoneName}>
+                {a.emoji} {a.move}
+              </p>
+              <p style={zoneDesc}>{a.desc}</p>
+            </div>
+          ))}
+
+          <div style={{ marginTop: '20px' }}>
+            <Collapse label="the receipt: a post with no links, and the reply asking for them" sublabel={`${THE_ASK_EVIDENCE.sub} · ${THE_ASK_EVIDENCE.views} views`}>
+              <EvidenceCard {...THE_ASK_EVIDENCE} />
+            </Collapse>
+          </div>
+
+          <p style={receiptCallout}>
+            the ask is the permission slip. it converts a URL from something you pushed into something the thread requested, and it is the only version of a link that a sub will let you post twice.
+          </p>
+          <hr style={sectionDivider} />
+        </section>
+
+        {/* ── staying alive ── */}
+        <section id="staying-alive" className="rr-section" style={sectionStyle}>
+          <p style={sectionKicker}>section {sectionNo('staying-alive')}</p>
+          <h2 style={sectionTitle}>staying alive: shadowbans and silent removals</h2>
+          <p style={sectionIntro}>
+            Reddit rarely tells you that you are gone. the post sits there in your own browser looking fine while the views never move, and you keep talking to a room that stopped receiving you weeks ago. check first, then fix the account rather than the post.
+          </p>
+
+          <h3 style={subHeading}>three checks that take a minute</h3>
+          {SHADOWBAN_CHECKS.map((c) => (
+            <div key={c.check} style={zoneCard}>
+              <p style={zoneName}>
+                {c.emoji} {c.check}
+              </p>
+              <p style={zoneDesc}>{c.how}</p>
+            </div>
+          ))}
+
+          <h3 style={subHeading}>what actually trips it</h3>
+          {SHADOWBAN_TRIGGERS.map((t) => (
+            <div key={t.trigger} style={ruleCard}>
+              <span style={ruleNumber}>{t.emoji}</span>
+              <div style={{ flex: 1 }}>
+                <p style={ruleTitle}>{t.trigger}</p>
+                <p style={ruleDetail}>{t.detail}</p>
+              </div>
+            </div>
+          ))}
+
+          <h3 style={subHeading}>getting back</h3>
+          {SHADOWBAN_RECOVERY.map((r) => (
+            <div key={r.step} style={ruleCard}>
+              <span style={ruleNumber}>{r.emoji}</span>
+              <div style={{ flex: 1 }}>
+                <p style={ruleTitle}>{r.step}</p>
+                <p style={ruleDetail}>{r.detail}</p>
+              </div>
+            </div>
+          ))}
+
+          <p style={receiptCallout}>
+            this account has never been banned. not because it got away with anything, but because it never ran the plays that get you banned.
           </p>
           <hr style={sectionDivider} />
         </section>
 
         {/* ── 07 · what AI cites ── */}
         <section id="ai-citations" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 06</p>
+          <p style={sectionKicker}>section {sectionNo('ai-citations')}</p>
           <h2 style={sectionTitle}>what AI cites: no-link mentions still index</h2>
           <p style={sectionIntro}>
             mention a product by name, in context, answering a real question, and it gets indexed with zero URLs involved. Google indexes Reddit within hours. LLMs cite Reddit threads. an unlinked brand mention inside a high-signal answer becomes retrievable, and the model repeats it to the next person who asks.
@@ -1025,7 +1187,7 @@ export default async function RedditPage({ params }: Props) {
 
         {/* ── 08 · LLMO ── */}
         <section id="llmo" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 07</p>
+          <p style={sectionKicker}>section {sectionNo('llmo')}</p>
           <h2 style={sectionTitle}>LLMO: language-level model optimization</h2>
           <p style={sectionIntro}>
             the discipline on top of SEO and GEO. you&apos;re injecting your language, your phrasing, your voice into the places models read, so the model&apos;s answer sounds like you and points back to you.
@@ -1042,9 +1204,32 @@ export default async function RedditPage({ params }: Props) {
           <hr style={sectionDivider} />
         </section>
 
+        {/* ── delegation ── */}
+        <section id="delegation" className="rr-section" style={sectionStyle}>
+          <p style={sectionKicker}>section {sectionNo('delegation')}</p>
+          <h2 style={sectionTitle}>delegation: handing the account to someone else</h2>
+          <p style={sectionIntro}>
+            everything above assumes a person is reading the thread and a person is writing the reply. that person does not have to be you. a VA is a human, which is the entire requirement. it fails when the VA is handed an account and a goal and nothing else, because you cannot run this blind.
+          </p>
+
+          {DELEGATION.map((d) => (
+            <div key={d.name} style={commentCard}>
+              <h3 style={commentName}>
+                {d.emoji} {d.name}
+              </h3>
+              <p style={commentDesc}>{d.desc}</p>
+            </div>
+          ))}
+
+          <p style={receiptCallout}>
+            the 24-hour pull is what makes this safe. your VA opens a scored list of the threads worth answering, with the rules for each sub attached, instead of a blank search bar and an instruction to go be helpful. the account stays human. the work stops depending on you being awake.
+          </p>
+          <hr style={sectionDivider} />
+        </section>
+
         {/* ── 09 · closer: the weekly report ── */}
         <section id="newsletter" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section 08</p>
+          <p style={sectionKicker}>section {sectionNo('newsletter')}</p>
           <div style={newsletterBlock}>
             <p style={newsletterTitle}>the weekly version of this report</p>
             <p style={newsletterDesc}>

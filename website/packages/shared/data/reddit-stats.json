@@ -1,92 +1,92 @@
 {
- "asOf": "2026-07-01",
- "totalKarma": 2334,
- "linkKarma": 1455,
- "commentKarma": 879,
- "totalPosts": 158,
- "totalComments": 537,
- "trackedViews": 1394015,
- "wins": 23,
+ "asOf": "2026-07-14",
+ "totalKarma": 2439,
+ "linkKarma": 1555,
+ "commentKarma": 884,
+ "totalPosts": 172,
+ "totalComments": 559,
+ "trackedViews": 1489921,
+ "wins": 24,
  "eras": [
-  {
-   "era": "clearbox",
-   "items": 273,
-   "views": 234453,
-   "score": 782
-  },
   {
    "era": "karma-building",
    "items": 422,
-   "views": 1159562,
-   "score": 2226
+   "views": 1168148,
+   "score": 2219
+  },
+  {
+   "era": "clearbox",
+   "items": 309,
+   "views": 321773,
+   "score": 911
   }
  ],
  "topSubreddits": [
   {
    "subreddit": "ClaudeCode",
-   "items": 158,
-   "views": 669495,
-   "score": 855
+   "items": 173,
+   "views": 733346,
+   "score": 931
   },
   {
    "subreddit": "ClaudeAI",
    "items": 44,
-   "views": 367900,
-   "score": 424
+   "views": 370100,
+   "score": 430
   },
   {
    "subreddit": "GTMbuilders",
-   "items": 104,
-   "views": 121565,
-   "score": 369
+   "items": 113,
+   "views": 140786,
+   "score": 414
   },
   {
    "subreddit": "gtmengineering",
-   "items": 149,
-   "views": 82611,
-   "score": 422
+   "items": 155,
+   "views": 87472,
+   "score": 421
   },
   {
    "subreddit": "OnePiece",
    "items": 15,
    "views": 71000,
-   "score": 168
+   "score": 167
   },
   {
    "subreddit": "NYCapartments",
    "items": 13,
    "views": 32000,
-   "score": 277
+   "score": 274
   },
   {
    "subreddit": "ClaudeGTM",
-   "items": 16,
-   "views": 18952,
-   "score": 30
+   "items": 20,
+   "views": 22104,
+   "score": 34
   },
   {
    "subreddit": "hubspot",
    "items": 11,
-   "views": 17200,
-   "score": 61
+   "views": 18300,
+   "score": 60
   },
   {
    "subreddit": "UseApolloIo",
    "items": 10,
-   "views": 4000,
-   "score": 24
+   "views": 4100,
+   "score": 25
   },
   {
    "subreddit": "buildinpublic",
    "items": 10,
-   "views": 1958,
+   "views": 2088,
    "score": 10
   }
  ],
  "topPost": {
   "title": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data.",
   "subreddit": "ClaudeCode",
-  "score": 307,
+  "score": 302,
   "views": 252000
  }
 }

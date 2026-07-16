@@ -10,7 +10,8 @@ export interface Evidence {
   upvotes: number
   comments: number
   views: string
-  image: string
+  /** screenshot path. omit when the receipt is the quoted body itself. */
+  image?: string
   body?: string
   lesson: string
 }
@@ -19,6 +20,76 @@ export interface Evidence {
 
 export const fmtViews = (n: number) =>
   n >= 1_000_000 ? `${(n / 1_000_000).toFixed(2)}M` : `${Math.round(n / 1000)}K`
+
+/* ── the ramp: starting an account that survives ────── */
+
+export const ACCOUNT_RAMP = [
+  {
+    emoji: '👀',
+    stage: 'read like a person',
+    window: 'before your first comment',
+    desc: 'a fresh account with no scroll history that opens with a comment is the exact shape Reddit is built to catch. scroll. open threads. stay on the ones you actually want to read. vote. the platform reads dwell and movement long before it reads your words, and an account with no behavior behind it hits a filter that has already decided.',
+  },
+  {
+    emoji: '💬',
+    stage: 'comment on things that have nothing to do with you',
+    window: 'the first weeks',
+    desc: 'your interests are the warmup. dogs, your team, your city, whatever you would have opened anyway. these subs cost you nothing, carry no promotional weight, and teach you how Reddit talks. an account that only ever surfaces near its own category reads as a plant, because it is one.',
+  },
+  {
+    emoji: '🏠',
+    stage: 'earn the home subs',
+    window: 'weeks, not days',
+    desc: 'pick the few subs you intend to be known in and become a face there before you ask them for anything. answer questions you already know the answer to. lose arguments. get the automod rules wrong once and learn them. the account below ran 422 posts and comments in this mode before it ever mentioned a product.',
+  },
+  {
+    emoji: '📌',
+    stage: 'then post',
+    window: 'once the account has a past',
+    desc: 'by the time you post something you care about, the account has a scroll history, a vote history, karma on both sides of the ledger, and a name a few regulars recognize. the post lands into that context. the same post from a two-week-old account lands into a filter.',
+  },
+]
+
+export const RAMP_DONTS = [
+  {
+    emoji: '🚫',
+    rule: 'do not buy accounts',
+    detail: 'bought accounts and warmed accounts carry someone else\'s history, and the history is the asset. if you are going to use Reddit to engage, do it real or do not do it at all. it can hurt you more than it can help you.',
+  },
+  {
+    emoji: '🤖',
+    rule: 'do not let a model write your comments',
+    detail: 'Reddit runs its own AI detection and the subs run their own on top of it. a comment that reads as generated costs you the thread, then the sub, then the account. the automation belongs off Reddit, in the part nobody is scanning.',
+  },
+  {
+    emoji: '⏱️',
+    rule: 'do not compress the ramp',
+    detail: 'skipping era one costs you era two. every shortcut I tested died in the automod queue, and the account that eventually worked is the one that did the slow version first.',
+  },
+]
+
+/* ── karma via self-interest ────────────────────────── */
+
+export const KARMA_ENGINE = [
+  {
+    emoji: '🎯',
+    move: 'farm where you already are',
+    desc: 'the karma that makes you postable is easiest to earn in the subs you would read on a Sunday. you already know the references, the voice, and what a bad take looks like, so the comments land without effort. r/OnePiece has nothing to do with GTM and it outranks every product sub on this account by views.',
+  },
+  {
+    emoji: '⚖️',
+    move: 'let the 50/50 split happen to you',
+    desc: 'subs gate on comment karma as much as post karma, and the accounts that read as real carry both. that balance is a consequence of commenting more than you post, not a quota to hit. if you are counting toward a target you are already writing like someone counting.',
+  },
+  {
+    emoji: '🔁',
+    move: 'genuine interest is what scales',
+    desc: 'karma farming as a chore stops within a week, and the account goes quiet at exactly the moment it needed history. the subs you actually care about are the ones you will still be in three months from now, which is the horizon that matters.',
+  },
+]
+
+/** the sub that proves the point: pure interest, zero commercial intent. */
+export const KARMA_ENGINE_SUB = 'OnePiece'
 
 /* ── the 8 post types ───────────────────────────────── */
 
@@ -446,6 +517,44 @@ export const LINK_ZONE_EVIDENCE: Evidence = {
   lesson: 'the link landed because the culture allows it and the reader asked for exactly this. same comment in r/ClaudeCode would read as spam.',
 }
 
+/* ── engineering the ask ────────────────────────────── */
+
+export const THE_ASK = [
+  {
+    emoji: '🧱',
+    move: 'ship the whole thing, keep the URL',
+    desc: 'the post has to be complete on its own. the numbers, the method, the thing you learned, all of it readable without leaving the thread. a post that withholds the substance to force a click reads as an ad and gets treated as one. a post that gives everything and happens to come from somewhere leaves the reader wanting the somewhere.',
+  },
+  {
+    emoji: '🕳️',
+    move: 'leave the obvious next question unanswered',
+    desc: 'give the reader the output and let the artifact behind it stay implied. the daily writeup below covered what shipped and what mattered, and never linked the posts it was summarizing. that gap is the whole mechanism. the reader hits the edge of what you gave them and the only way forward is to ask.',
+  },
+  {
+    emoji: '👤',
+    move: 'make the answer findable without you',
+    desc: 'the profile is pinned, the repo is public, the site is one search away. readers who do not want to ask can just go, and readers who ask get a reply in the thread where the sub can see it was requested. either path ends in the same place and neither one is you dropping a URL into a body.',
+  },
+  {
+    emoji: '💬',
+    move: 'answer in the thread, not the DMs',
+    desc: 'when someone asks, the reply belongs in public under their comment. the sub reads it as an answer because it is one. the request is the permission slip, and it only works if the request is visible above the link.',
+  },
+]
+
+export const THE_ASK_EVIDENCE: Evidence = {
+  title: 'r/ClaudeCode · a daily writeup that shipped with zero links',
+  sub: 'r/ClaudeCode',
+  tag: 'The ask',
+  tagColor: '#22c55e',
+  upvotes: 23,
+  comments: 8,
+  views: '31K',
+  body: '"Could you ad links to the posts you\'re covering on that day? I want to read the 5 stages post for example. Great service, ty."',
+  lesson:
+    'the post was a summary of threads and it linked none of them. a reader asked for the links and thanked me in the same breath. that comment is worth more than the URL it asked for, because the sub watched someone request it.',
+}
+
 /* ── what AI cites: the three signal labels ─────────── */
 
 export const SIGNAL_LABELS = [
@@ -463,5 +572,91 @@ export const SIGNAL_LABELS = [
     emoji: '🔍',
     name: 'engager',
     desc: 'the conversation is the asset. someone asking a question, challenging your take, sharing their own stack. every reply tells you what to build next, who to talk to, and which pitch lands. Aura scores these for relationship depth.',
+  },
+]
+
+/* ── staying alive: shadowbans and silent removals ──── */
+
+export const SHADOWBAN_CHECKS = [
+  {
+    emoji: '🕵️',
+    check: 'the logged-out check',
+    how: 'open your post in a private window. if it is there for you and gone for a signed-out browser, the post is buried and nobody told you. run this on anything that matters within an hour of posting.',
+  },
+  {
+    emoji: '🆕',
+    check: 'the new queue check',
+    how: 'sort the sub by new and find your own post in the list. missing from /new means automod ate it. this is the check that catches a removal while you can still do something about it.',
+  },
+  {
+    emoji: '📉',
+    check: 'the flatline',
+    how: 'views that stop dead a few hours in, on an account that normally does not flatline, is a removal you have not found yet. a slow post decays. a removed post stops.',
+  },
+]
+
+export const SHADOWBAN_TRIGGERS = [
+  {
+    emoji: '🔗',
+    trigger: 'a URL in the post body',
+    detail: 'this is the one that kills quietly. many subs auto-remove on any link from an account under their karma or age floor, and the removal is invisible from your side.',
+  },
+  {
+    emoji: '⏩',
+    trigger: 'posting faster than a person',
+    detail: 'several subs in a short window, or the same post reshaped across them, reads as a campaign. it is the pattern that gets accounts sitewide-filtered rather than sub-removed.',
+  },
+  {
+    emoji: '📢',
+    trigger: 'a profile that is all pitch',
+    detail: 'mods check profiles. an account whose history is nothing but its own product is an easy call, and the ban covers everything you posted, not just the post that triggered it.',
+  },
+]
+
+export const SHADOWBAN_RECOVERY = [
+  {
+    emoji: '✉️',
+    step: 'message the mods, once, like a person',
+    detail: 'say what you posted, ask what rule it hit, and offer to repost it correctly. mods approve removed posts constantly for people who ask well. arguing with them is how a removal becomes a ban.',
+  },
+  {
+    emoji: '🧹',
+    step: 'fix the account, not the post',
+    detail: 'if the removal came from a karma or age floor, the post was never the problem. go back to the ramp, earn the floor, and repost later. the same post lands fine from an account the filter trusts.',
+  },
+  {
+    emoji: '🚪',
+    step: 'if the account is sitewide filtered, stop',
+    detail: 'a sitewide shadowban does not get fixed by posting more. it gets fixed by an appeal and by the account behaving normally for a stretch. a new account to escape it is the move that turns a filter into a permanent one.',
+  },
+]
+
+/* ── delegation: the VA, the API, and the guardrail ─── */
+
+export const DELEGATION = [
+  {
+    emoji: '🧍',
+    name: 'the VA is a human, which is the whole point',
+    desc: 'human engagement means a person reads the thread and a person writes the reply. that person can be a competent VA who knows your business and lives in your subs. the reading and the writing stay human. everything that happens before and after them is yours to automate.',
+  },
+  {
+    emoji: '🎯',
+    name: 'they need the business, not a script',
+    desc: 'a VA who does not understand what you sell writes comments that are polite and useless, which the sub smells immediately. they need the offer, the objections, the words your customers actually use, and enough context to know when the honest answer is that your thing is wrong for this person. that answer is the one that earns the next thread.',
+  },
+  {
+    emoji: '📡',
+    name: 'without the data they are guessing',
+    desc: 'a VA told to go be helpful on Reddit is scrolling blind. they do not know which of last night\'s threads is worth a reply, which sub is about to remove them for it, or which question has been asked forty times this month. they burn hours in the wrong places and the one thread that mattered scrolled past at 3am.',
+  },
+  {
+    emoji: '🛡️',
+    name: 'the pull is the queue and the guardrail',
+    desc: 'the API hands them the last 24 hours already sorted: the threads worth answering, the sub each one lives in, and what the account is cleared to do there. they open a short list instead of a firehose, and the rules travel with the list. that is what makes handing the account to someone else survivable.',
+  },
+  {
+    emoji: '⚙️',
+    name: 'automate off Reddit, always',
+    desc: 'the pull, the scoring, the routing, the content it feeds, the copy it sharpens, the ICP context it fills in, all of that runs off-platform where nothing is scanning for it. the only thing that touches Reddit is a person typing. that line is what keeps the account alive, and it does not move because you hired someone.',
   },
 ]
