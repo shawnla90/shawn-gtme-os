@@ -42,6 +42,7 @@ const toggleBtn: React.CSSProperties = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
+  flexWrap: 'wrap',
   gap: '12px',
   width: '100%',
   padding: '12px 16px',
@@ -59,12 +60,18 @@ const toggleLabel: React.CSSProperties = {
   fontWeight: 500,
   color: 'var(--text-primary)',
   letterSpacing: '-0.01em',
+  minWidth: 0,
 }
 
+/**
+ * No nowrap. It suited the short chip this was built for ("r/x · 12K views")
+ * and broke once sublabels started carrying thread titles: on a phone the
+ * span refused to wrap and pushed the whole document ~120px wide.
+ */
 const toggleSub: React.CSSProperties = {
   fontFamily: 'var(--font-editorial-body)',
   fontSize: '12px',
   fontWeight: 500,
   color: 'var(--rr-accent)',
-  whiteSpace: 'nowrap',
+  minWidth: 0,
 }

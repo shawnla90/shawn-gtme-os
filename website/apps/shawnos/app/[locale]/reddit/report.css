@@ -12,6 +12,8 @@
   --gutter: clamp(20px, 5vw, 64px);
   --exhibit-max: 1240px;
   --nav-h: 44px;
+  --rail-l: 200px;
+  --rail-r: 288px;
 
   /* reddit orange reads at 5.8:1 on the dark canvas but only 3.15:1 on the
      light one, under the 4.5:1 floor for text. darken it for light mode. */
@@ -52,6 +54,58 @@
   --rr-ink: #e8e6e3;
 }
 
+/* ── the three-column body ────────────────────────── */
+
+/**
+ * v6 killed the 880px cap, which made the page wide but left the gutters
+ * empty: a 68ch column centred in 1440px is still a strip with dead space
+ * either side. The rails fill it with work — nav on the left, the exhibit for
+ * whatever section you are reading on the right.
+ *
+ * One row, three columns, align-items:start. That is what lets the asides be
+ * position:sticky: they are grid items in a single tall row, so each sticks
+ * across the whole scroll of .rr-main rather than inside its own band.
+ */
+.rr-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  gap: 0;
+  max-width: var(--exhibit-max);
+  margin-inline: auto;
+}
+
+.rr-rail-l,
+.rr-rail-r {
+  display: none; /* opt in per breakpoint below; mobile gets the strip */
+  position: sticky;
+  top: calc(var(--nav-h) + 24px);
+  max-height: calc(100vh - var(--nav-h) - 48px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+/* the left rail arrives first: nav is the more useful of the two */
+@media (min-width: 1100px) {
+  .rr-body {
+    grid-template-columns: var(--rail-l) minmax(0, 1fr);
+    gap: 0 40px;
+  }
+  .rr-rail-l {
+    display: block;
+  }
+}
+
+@media (min-width: 1360px) {
+  .rr-body {
+    grid-template-columns: var(--rail-l) minmax(0, 1fr) var(--rail-r);
+    gap: 0 44px;
+  }
+  .rr-rail-r {
+    display: block;
+  }
+}
+
 /* ── the reading line ─────────────────────────────── */
 
 .rr-col {
@@ -59,7 +113,11 @@
   margin-inline: auto;
 }
 
-/* exhibits escape the measure and use the canvas */
+/**
+ * Exhibits escape the measure and take the main column. They stop at the
+ * rails rather than the viewport: past them is the nav and the exhibit panel,
+ * not dead space, so there is nothing left to escape into.
+ */
 .rr-bleed {
   max-width: var(--exhibit-max);
   margin-inline: auto;
@@ -145,6 +203,16 @@
 }
 .rr-step:first-of-type {
   border-top: 0;
+}
+
+/**
+ * min-width:0 or the 1fr track refuses to shrink below its content's
+ * min-content width: a grid track is minmax(auto, 1fr), and `auto` floors at
+ * min-content. On a 375px screen the step body held its widest unbreakable
+ * token and pushed the document 140px wide.
+ */
+.rr-step-body {
+  min-width: 0;
 }
 
 .rr-step-mark {
@@ -244,6 +312,144 @@
   height: 3px;
   background: var(--rr-accent);
   z-index: 200;
+  transition: width 0.15s ease-out;
+}
+
+/* the strip is the narrow-screen nav; the left rail replaces it at 1100px */
+@media (min-width: 1100px) {
+  .rr-nav {
+    display: none;
+  }
+}
+
+/* ── left rail: the same nav, stood up ────────────── */
+
+.rr-railnav {
+  border-left: 1px solid var(--border);
+}
+.rr-railnav a {
+  display: block;
+  padding: 7px 0 7px 14px;
+  margin-left: -1px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.rr-railnav a:hover {
+  color: var(--text-primary);
+}
+.rr-railnav a[aria-current='true'] {
+  color: var(--rr-accent);
+  border-left-color: var(--rr-accent);
+  font-weight: 600;
+}
+.rr-railnav-n {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.5;
+  margin-right: 8px;
+}
+
+/* ── right rail: the exhibit for the section you are in ── */
+
+.rr-rail-head {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin: 0 0 12px;
+}
+
+.rr-rail-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--canvas-subtle);
+}
+
+/* a rail stat: the number, then what it is, then what it does not say */
+.rr-rail-stat-n {
+  font-family: var(--font-editorial-display);
+  font-size: 30px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--rr-accent);
+  margin: 0 0 6px;
+}
+.rr-rail-stat-l {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--rr-ink);
+  margin: 0;
+}
+.rr-rail-note {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  margin: 10px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+/* the comparison bars used by several rails */
+.rr-rail-bar-row {
+  margin-bottom: 12px;
+}
+.rr-rail-bar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+.rr-rail-bar-k {
+  font-size: 12px;
+  color: var(--rr-ink);
+}
+.rr-rail-bar-v {
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--rr-accent);
+}
+.rr-rail-bar {
+  height: 5px;
+  border-radius: 3px;
+  background: var(--rr-accent);
+  min-width: 2px;
+}
+.rr-rail-bar--mute {
+  background: var(--text-secondary);
+  opacity: 0.4;
+}
+
+/* the fallback: never blank, never filler. real context instead. */
+.rr-rail-where {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+.rr-rail-where-n {
+  font-family: var(--font-editorial-display);
+  font-size: 15px;
+  color: var(--rr-ink);
+  margin: 0 0 10px;
+}
+.rr-rail-where-bar {
+  height: 3px;
+  border-radius: 2px;
+  background: var(--border);
+  margin: 12px 0;
+  overflow: hidden;
+}
+.rr-rail-where-fill {
+  height: 100%;
+  background: var(--rr-accent);
   transition: width 0.15s ease-out;
 }
 

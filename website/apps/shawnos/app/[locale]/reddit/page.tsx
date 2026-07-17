@@ -6,7 +6,14 @@ import { fetchUserProfile } from '@shawnos/shared/lib/reddit'
 import redditStats from '@shawnos/shared/data/reddit-stats.json'
 import { EvidenceCard } from './EvidenceCard'
 import { Collapse } from './Collapse'
-import { ReportNav } from './ReportNav'
+import {
+  ChromeProvider,
+  ProgressBar,
+  NavStrip,
+  NavRail,
+  RightRail,
+} from './ReportChrome'
+import { buildRails } from './ReportRails'
 import { Shell, Column, Bleed, Step, Note } from './PlaybookShell'
 import { CompoundChart } from './CompoundChart'
 import './report.css'
@@ -143,7 +150,9 @@ const heroGlow: React.CSSProperties = {
   top: '-40px',
   left: '50%',
   transform: 'translateX(-50%)',
-  width: '420px',
+  // decorative, but a flat 420px is wider than a phone and it dragged the
+  // document sideways with it
+  width: 'min(420px, 100%)',
   height: '260px',
   borderRadius: '50%',
   background: 'radial-gradient(ellipse, rgba(109, 94, 233, 0.18), rgba(255, 69, 0, 0.06) 60%, transparent 75%)',
@@ -318,6 +327,9 @@ export default async function RedditPage({ params }: Props) {
 
 
       <Shell>
+        <ChromeProvider sections={SECTIONS}>
+        <ProgressBar />
+
         {/* ── 01 · report hero ── */}
         <section className="rr-hero">
           <div style={heroGlow} aria-hidden />
@@ -370,8 +382,16 @@ export default async function RedditPage({ params }: Props) {
           views are counted post-by-post in the journey db, {redditStats.totalPosts} posts deep · reddit reports no view count on comments, so the {redditStats.totalComments} comments here are not in that number · karma split: {redditStats.linkKarma.toLocaleString()} link / {redditStats.commentKarma} comment · top post: {redditStats.topPost.score}↑ in r/{redditStats.topPost.subreddit}
         </p>
 
-        {/* ── sticky section nav (scroll-spy + reading progress) ── */}
-        <ReportNav sections={SECTIONS} />
+        {/* ── sticky section nav: the strip below 1100px, the left rail above ── */}
+        <NavStrip />
+
+        {/* ── the three-column body: nav · reading column · exhibit ── */}
+        <div className="rr-body">
+          <aside className="rr-rail-l" aria-label="report sections">
+            <NavRail />
+          </aside>
+
+          <div className="rr-main">
 
         {/* ── 02 · era timeline ── */}
         <section id="journey" className="rr-section">
@@ -824,6 +844,12 @@ export default async function RedditPage({ params }: Props) {
             case study: reddit is king &rarr;
           </a>
         </div>
+
+          </div>
+
+          <RightRail rails={buildRails()} asOf={redditStats.asOf} />
+        </div>
+        </ChromeProvider>
       </Shell>
     </>
   )
