@@ -1,0 +1,455 @@
+/**
+ * The Reddit report's type + layout system.
+ *
+ * Replaces ~54 inline CSSProperties objects. Everything here is one of three
+ * things: the reading line, an exhibit that escapes it, or a token. The old
+ * page had nine prose styles at 14-15px, three line-heights, and no shared
+ * source, all inside an 880px box.
+ */
+
+.rr-shell {
+  --measure: 68ch;
+  --gutter: clamp(20px, 5vw, 64px);
+  --exhibit-max: 1240px;
+  --nav-h: 44px;
+
+  /* reddit orange reads at 5.8:1 on the dark canvas but only 3.15:1 on the
+     light one, under the 4.5:1 floor for text. darken it for light mode. */
+  --rr-accent: #ff4500;
+  --rr-accent-soft: rgba(255, 69, 0, 0.1);
+
+  width: 100%;
+  padding: 0 var(--gutter) 96px;
+  font-family: var(--font-editorial-body);
+  color: var(--text-primary);
+}
+
+@media (prefers-color-scheme: light) {
+  .rr-shell {
+    --rr-accent: #b22d00;
+    --rr-accent-soft: rgba(178, 45, 0, 0.08);
+  }
+}
+:root[data-theme='light'] .rr-shell {
+  --rr-accent: #b22d00;
+  --rr-accent-soft: rgba(178, 45, 0, 0.08);
+}
+:root[data-theme='dark'] .rr-shell {
+  --rr-accent: #ff4500;
+  --rr-accent-soft: rgba(255, 69, 0, 0.1);
+}
+
+/* ── the reading line ─────────────────────────────── */
+
+.rr-col {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* exhibits escape the measure and use the canvas */
+.rr-bleed {
+  max-width: var(--exhibit-max);
+  margin-inline: auto;
+  margin-block: 40px;
+}
+
+.rr-section {
+  padding: 72px 0 8px;
+  scroll-margin-top: calc(var(--nav-h) + 20px);
+  border-top: 1px solid var(--border);
+}
+.rr-section:first-of-type {
+  border-top: 0;
+}
+
+/* ── type ─────────────────────────────────────────── */
+
+.rr-kicker {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--rr-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 12px;
+}
+
+.rr-h2 {
+  font-family: var(--font-editorial-display);
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin: 0 0 18px;
+  max-width: 22ch; /* headlines break before the measure does */
+}
+
+.rr-h3 {
+  font-family: var(--font-editorial-display);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  margin: 48px 0 14px;
+}
+
+/* the standfirst: one size up from body, primary colour, sets the section */
+.rr-standfirst {
+  font-family: var(--font-editorial-display);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+/* body. 17px because this is long-form on a desktop, not UI chrome. */
+.rr-p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0 0 20px;
+}
+.rr-p:last-child {
+  margin-bottom: 0;
+}
+
+.rr-p strong,
+.rr-standfirst strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ── steps: prose, not cards ──────────────────────── */
+
+.rr-step {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+}
+.rr-step:first-of-type {
+  border-top: 0;
+}
+
+.rr-step-mark {
+  font-family: var(--font-editorial-display);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--rr-accent);
+  padding-top: 2px;
+  font-variant-numeric: tabular-nums;
+}
+
+.rr-step-title {
+  font-family: var(--font-editorial-display);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.rr-step-aside {
+  font-family: var(--font-editorial-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── the receipt line ─────────────────────────────── */
+
+.rr-note {
+  font-family: var(--font-editorial-display);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin: 28px 0;
+  padding: 16px 20px;
+  border-left: 2px solid var(--rr-accent);
+  background: var(--rr-accent-soft);
+  border-radius: 0 8px 8px 0;
+}
+
+/* ── nav ──────────────────────────────────────────── */
+
+.rr-nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: color-mix(in srgb, var(--canvas) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+}
+.rr-nav::-webkit-scrollbar {
+  display: none;
+}
+.rr-nav-inner {
+  display: flex;
+  gap: 2px;
+  white-space: nowrap;
+  max-width: var(--exhibit-max);
+  margin-inline: auto;
+}
+.rr-nav a {
+  display: inline-block;
+  padding: 13px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.rr-nav a:hover {
+  color: var(--text-primary);
+}
+/* 13 sections do not fit a phone and the scrollbar is hidden, so without an
+   active mark the reader cannot tell where they are or that more exists. */
+.rr-nav a[aria-current='true'] {
+  color: var(--rr-accent);
+  border-bottom-color: var(--rr-accent);
+  font-weight: 600;
+}
+
+.rr-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--rr-accent);
+  z-index: 200;
+  transition: width 0.15s ease-out;
+}
+
+/* ── exhibits ─────────────────────────────────────── */
+
+.rr-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.rr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  min-width: 560px;
+}
+.rr-table th {
+  text-align: left;
+  padding: 14px 18px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--rr-accent);
+  background: var(--rr-accent-soft);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.rr-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.rr-table tr:last-child td {
+  border-bottom: 0;
+}
+.rr-table td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* stat band */
+.rr-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.rr-stat {
+  background: var(--canvas);
+  padding: 28px 20px;
+  text-align: center;
+}
+.rr-stat-n {
+  font-size: clamp(30px, 3.4vw, 42px);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--rr-accent);
+  margin: 0 0 6px;
+  line-height: 1;
+}
+.rr-stat-l {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.rr-caption {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  text-align: center;
+  margin: 14px auto 0;
+  max-width: 64ch;
+}
+
+/* ── mobile ───────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .rr-shell {
+    --gutter: 18px;
+  }
+  .rr-section {
+    padding-top: 48px;
+  }
+  .rr-p {
+    font-size: 16px;
+  }
+  .rr-step {
+    grid-template-columns: 1.75rem 1fr;
+    gap: 14px;
+  }
+}
+
+/* ── hero ─────────────────────────────────────────── */
+
+.rr-hero {
+  position: relative;
+  text-align: center;
+  padding: 72px 0 44px;
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+.rr-hero-glow {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  height: 260px;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(109, 94, 233, 0.18),
+    rgba(255, 69, 0, 0.06) 60%,
+    transparent 75%
+  );
+  filter: blur(60px);
+  pointer-events: none;
+}
+.rr-hero-kicker {
+  position: relative;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 18px;
+}
+.rr-hero-title {
+  position: relative;
+  font-family: var(--font-display-walsh);
+  font-size: clamp(44px, 8vw, 88px);
+  font-weight: 500;
+  line-height: 0.94;
+  letter-spacing: -0.05em;
+  color: var(--text-primary);
+  margin: 0 0 22px;
+}
+.rr-hero-thesis {
+  font-family: var(--font-editorial-display);
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text-primary);
+  margin: 0 auto 14px;
+  letter-spacing: -0.01em;
+}
+.rr-hero-sub {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-secondary);
+  margin: 0 auto;
+  max-width: 58ch;
+}
+
+/* ── archetype: evidence, so it stays a card ──────── */
+
+.rr-archetype {
+  padding: 26px 0;
+  border-top: 1px solid var(--border);
+}
+.rr-archetype:first-of-type {
+  border-top: 0;
+}
+.rr-archetype-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.rr-archetype-name {
+  font-family: var(--font-editorial-display);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.rr-archetype-stats {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--rr-accent);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.rr-valuelead {
+  font-family: var(--font-editorial-display);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--rr-accent);
+  margin: 0 0 16px;
+}
+
+/* the one-line takeaway inside a step */
+.rr-highlight {
+  display: block;
+  font-family: var(--font-editorial-display);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--rr-accent);
+  margin: 12px 0 14px;
+}
+
+/* ── chart ────────────────────────────────────────── */
+
+.rr-chart {
+  margin: 0;
+  padding: 24px 8px 8px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--canvas-subtle);
+}
+.rr-chart .rr-caption {
+  padding: 0 16px 8px;
+}

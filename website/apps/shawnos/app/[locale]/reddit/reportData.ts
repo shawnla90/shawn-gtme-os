@@ -3,23 +3,59 @@ import redditStats from '@shawnos/shared/data/reddit-stats.json'
 /* ── shared types ───────────────────────────────────── */
 
 export interface Evidence {
+  /**
+   * reddit id. every number on the card is looked up from the journey db via
+   * this — nothing is typed. hand-typed stats froze at screenshot time while
+   * the posts kept growing: every one had drifted, and two were *overstated*,
+   * which a monotonic view counter makes indefensible.
+   */
+  redditId?: string
   title: string
   sub: string
   tag: string
   tagColor: string
-  upvotes: number
-  comments: number
-  views: string
   /** screenshot path. omit when the receipt is the quoted body itself. */
   image?: string
   body?: string
   lesson: string
 }
 
+/** A row of the generated per-item index. See clearbox_reddit/export_website_stats.py. */
+export interface PostStat {
+  kind: 'post' | 'comment'
+  subreddit: string
+  score: number
+  /** posts only. */
+  comments?: number
+  /** posts only. reddit shows author view counts on comments too, but the
+   *  tracker does not scrape them, so they are absent rather than invented. */
+  views?: number
+  title?: string
+}
+
+const POSTS = (redditStats as { posts?: Record<string, PostStat> }).posts ?? {}
+
+/** Look up an item's live numbers. Returns undefined for anything not in the db. */
+export const stat = (redditId?: string): PostStat | undefined =>
+  redditId ? POSTS[redditId] : undefined
+
 /* ── formatting helper ──────────────────────────────── */
 
 export const fmtViews = (n: number) =>
   n >= 1_000_000 ? `${(n / 1_000_000).toFixed(2)}M` : `${Math.round(n / 1000)}K`
+
+/**
+ * The one-line stat string under an archetype. Built from the db, so a comment
+ * simply has no views clause rather than an invented one.
+ */
+export const statLine = (redditId?: string): string => {
+  const p = stat(redditId)
+  if (!p) return ''
+  const parts = [`${p.score} upvotes`]
+  if (p.comments != null) parts.push(`${p.comments} comments`)
+  if (p.views != null) parts.push(`${fmtViews(p.views)} views`)
+  return parts.join(', ')
+}
 
 /* ── the ramp: starting an account that survives ────── */
 
@@ -28,7 +64,7 @@ export const ACCOUNT_RAMP = [
     emoji: '👀',
     stage: 'read like a person',
     window: 'before your first comment',
-    desc: 'a fresh account with no scroll history that opens with a comment is the exact shape Reddit is built to catch. scroll. open threads. stay on the ones you actually want to read. vote. the platform reads dwell and movement long before it reads your words, and an account with no behavior behind it hits a filter that has already decided.',
+    desc: 'scroll. open threads. stay on the ones you actually want to read. vote. I have no idea what Reddit measures and neither does anyone outside Reddit, but a day-old account whose entire history is one comment about its own product is the easiest possible thing to catch, and I have never seen one survive. an account that has been used like an account has somewhere to hide.',
   },
   {
     emoji: '💬',
@@ -40,7 +76,7 @@ export const ACCOUNT_RAMP = [
     emoji: '🏠',
     stage: 'earn the home subs',
     window: 'weeks, not days',
-    desc: 'pick the few subs you intend to be known in and become a face there before you ask them for anything. answer questions you already know the answer to. lose arguments. get the automod rules wrong once and learn them. the account below ran 422 posts and comments in this mode before it ever mentioned a product.',
+    desc: 'pick the few subs you intend to be known in and become a face there before you ask them for anything. answer questions you already know the answer to. lose arguments. get the automod rules wrong once and learn them. the account below ran 422 posts and comments in this mode before it ever mentioned Clearbox.',
   },
   {
     emoji: '📌',
@@ -59,7 +95,7 @@ export const RAMP_DONTS = [
   {
     emoji: '🤖',
     rule: 'do not let a model write your comments',
-    detail: 'Reddit runs its own AI detection and the subs run their own on top of it. a comment that reads as generated costs you the thread, then the sub, then the account. the automation belongs off Reddit, in the part nobody is scanning.',
+    detail: 'plenty of subs run their own bot and AI filters, and the humans in them are faster than any filter. a comment that reads as generated costs you the thread, then the sub, then the account. the automation belongs off Reddit, in the part nobody is reading.',
   },
   {
     emoji: '⏱️',
@@ -74,12 +110,12 @@ export const KARMA_ENGINE = [
   {
     emoji: '🎯',
     move: 'farm where you already are',
-    desc: 'the karma that makes you postable is easiest to earn in the subs you would read on a Sunday. you already know the references, the voice, and what a bad take looks like, so the comments land without effort. r/OnePiece has nothing to do with GTM and it outranks every product sub on this account by views.',
+    desc: 'the karma that makes you postable is easiest to earn in the subs you would read on a Sunday. you already know the references, the voice, and what a bad take looks like, so the comments land without effort. r/OnePiece has nothing to do with GTM and it pulled more views on this account than r/hubspot, r/UseApolloIo and r/buildinpublic combined.',
   },
   {
     emoji: '⚖️',
-    move: 'let the 50/50 split happen to you',
-    desc: 'subs gate on comment karma as much as post karma, and the accounts that read as real carry both. that balance is a consequence of commenting more than you post, not a quota to hit. if you are counting toward a target you are already writing like someone counting.',
+    move: 'let the split happen to you',
+    desc: 'subs gate on comment karma as much as post karma, and the accounts that read as real carry both. this one sits around 2:1 link to comment, which is not a target I hit, it is just what falls out of commenting far more often than you post. if you are counting toward a ratio you are already writing like someone counting.',
   },
   {
     emoji: '🔁',
@@ -98,7 +134,6 @@ export const POST_ARCHETYPES: {
   emoji: string
   desc: string
   valueLead: string
-  stats: string
   evidence: Evidence
 }[] = [
   {
@@ -106,15 +141,13 @@ export const POST_ARCHETYPES: {
     emoji: '📡',
     desc: 'scan complaints, releases, pricing pages. turn the pattern into a post. people upvote synthesis they could not do themselves.',
     valueLead: 'for B2B marketing: synthesize 30 customer complaints instead of 3 LinkedIn posts. for SaaS: link the raw scan output.',
-    stats: '308 upvotes, 115 comments, ~50K views',
     evidence: {
       title: 'Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why.',
       sub: 'r/ClaudeCode',
       tag: 'Pattern Read',
       tagColor: '#fbbf24',
-      upvotes: 308,
-      comments: 115,
-      views: '~50K',
+      redditId: '1s5qxyq',
+
       image: '/images/reddit-evidence/rate-limit-max-plan-308.png',
       body: 'three months on the $200 Max plan, zero rate limits. ran Claude over every rate-limit complaint thread in this sub to figure out what the heavy users were doing wrong. shared the pattern.',
       lesson: 'the scan was the value. cross-posted variant in r/ClaudeAI hit 227 upvotes the same way.',
@@ -125,18 +158,16 @@ export const POST_ARCHETYPES: {
     emoji: '🏗️',
     desc: 'show what you shipped. numbers, repos, screenshots. the post is the hook, the comments deliver the depth.',
     valueLead: 'for SaaS: numbers + a public repo. for Clay: a working stack diagram with the table count and the cost.',
-    stats: '71 upvotes, 225 comments, 145K views',
     evidence: {
       title: 'been mass building with Claude Code every day for 6 weeks straight.',
       sub: 'r/ClaudeCode',
       tag: 'Showcase',
       tagColor: '#4ade80',
-      upvotes: 71,
-      comments: 225,
-      views: '145K',
+      redditId: '1rv3cw2',
+
       image: '/images/reddit-evidence/6week-claude-code.png',
       body: 'shipped 4 open source repos, 3 production websites, a content pipeline across 6 platforms, and cron jobs running nightly on a single Mac Mini. all Claude Code.',
-      lesson: 'the post was the hook, the comments were the delivery. 225 comments because I replied to every single one.',
+      lesson: 'the post was the hook, the comments were the delivery. I replied to every single one.',
     },
   },
   {
@@ -144,15 +175,13 @@ export const POST_ARCHETYPES: {
     emoji: '❓',
     desc: 'ask something you genuinely want to know. technical depth invites technical answers. real stakes invite real answers.',
     valueLead: 'for GTM eng: name your real constraint, with real hardware and real budget attached. for Clay: include the table you got stuck on.',
-    stats: '22 upvotes, 48 comments, 45K views',
     evidence: {
       title: 'anyone running Claude Code over SSH from a thin client?',
       sub: 'r/ClaudeCode',
       tag: 'Question',
       tagColor: '#58a6ff',
-      upvotes: 22,
-      comments: 48,
-      views: '45K',
+      redditId: '1rtxsmh',
+
       image: '/images/reddit-evidence/ssh-thin-client.png',
       body: "picking up a MacBook Neo as a portable terminal. all my actual compute lives on a Mac Mini that runs 24/7. the plan is basically: SSH in, tmux attach, run Claude Code on the Mini's hardware.",
       lesson: 'genuine question, I was actually buying the Neo. 48 comments of real technical answers because people could tell it was real.',
@@ -163,15 +192,13 @@ export const POST_ARCHETYPES: {
     emoji: '😂',
     desc: 'relatable humor, perfectly timed. post when a feature drops or a trend is peaking.',
     valueLead: 'for any audience: the joke has to land for an insider. one specific reference beats five generic punchlines.',
-    stats: '95 upvotes, 23 comments, 18K views',
     evidence: {
       title: 'life now with cc remote control',
       sub: 'r/ClaudeCode',
       tag: 'Humor',
       tagColor: '#f472b6',
-      upvotes: 95,
-      comments: 23,
-      views: '18K',
+      redditId: '1rsfzmv',
+
       image: '/images/reddit-evidence/cc-remote-gosling.png',
       body: 'Ryan Gosling meme, posted the morning Claude Code remote access dropped. zero effort, maximum relatability.',
       lesson: 'timing is everything. this took 30 seconds to post and outperformed nearly all of my long-form content.',
@@ -182,18 +209,16 @@ export const POST_ARCHETYPES: {
     emoji: '🔀',
     desc: "find unexpected subreddits where your story resonates. a plumber's son in r/NYCapartments outperformed everything in my home subs.",
     valueLead: 'for SaaS founders: bring your operator story to subs that buy what you sell, on top of the subs that build what you sell.',
-    stats: '188 upvotes, 26 comments, 28K views',
     evidence: {
       title: "I spent 10 years as a plumber in NYC alongside my dad. Now I'm using tech to share everything he knows. for free.",
       sub: 'r/NYCapartments',
       tag: 'Advice/Question',
       tagColor: '#58a6ff',
-      upvotes: 188,
-      comments: 26,
-      views: '28K',
+      redditId: '1rq991a',
+
       image: '/images/reddit-evidence/dad-plumber-nyc.png',
       body: "I'm Shawn. For 10 years I worked plumbing in New York City with my father, Reuven. Not holding tools. running jobs. Every borough. Pre-war brownstones where nothing is where the blueprints say it is.",
-      lesson: 'my highest-upvoted post is in a plumbing subreddit. find where your story fits that nobody expects.',
+      lesson: 'a plumbing story in an apartment sub outscored most of what I have posted about software. find where your story fits that nobody expects.',
     },
   },
   {
@@ -201,15 +226,13 @@ export const POST_ARCHETYPES: {
     emoji: '🔥',
     desc: 'ride breaking news within hours. have a real opinion backed by experience.',
     valueLead: 'for Clay: 18 months of daily usage is the receipt. for B2B marketing: name the vendor and the line item.',
-    stats: '21 upvotes, 18 comments, ~6K views',
     evidence: {
       title: "Clay's new pricing changes what I build with. here's my updated stack.",
       sub: 'r/gtmengineering',
       tag: 'Hot Take',
       tagColor: '#f87171',
-      upvotes: 21,
-      comments: 18,
-      views: '~6K',
+      redditId: '1rrecae',
+
       image: '/images/reddit-evidence/clay-pricing-dual.png',
       body: '18 months of daily Clay usage. the new pricing model changed which workflows still make sense and which ones moved to Supabase + Sheets. here is the side-by-side and what each tool now owns.',
       lesson: 'a hot take with a stack diagram beats a hot take with adjectives. the receipts moved the conversation.',
@@ -220,15 +243,13 @@ export const POST_ARCHETYPES: {
     emoji: '🎁',
     desc: 'give away something useful. checklists, frameworks, audits. publish inline, link the live artifact in the body.',
     valueLead: 'for Clay: the actual checklist you use, copy-paste ready. for GTM eng: the SQL query or the Python script.',
-    stats: '25 upvotes, 8 comments, ~8K views',
     evidence: {
       title: 'open-sourced my entire GTM engineering stack. not selling anything yet.',
       sub: 'r/gtmengineering',
       tag: 'Resource',
       tagColor: '#c084fc',
-      upvotes: 25,
-      comments: 8,
-      views: '~8K',
+      redditId: '1rvq836',
+
       image: '/images/reddit-evidence/open-sourced-gtm-stack-25.png',
       body: 'MIT-licensed monorepo. ABM pipeline, Clay wiki, voice system, the full publishing pipeline, the works. every script that runs my business is in there. no email gate, no waitlist.',
       lesson: 'pure value. the people who watched me give it away are the ones who hire me later.',
@@ -239,15 +260,13 @@ export const POST_ARCHETYPES: {
     emoji: '🧠',
     desc: 'career arc, methodology, thesis. show the journey, link the receipts.',
     valueLead: 'for SaaS founders: name the specific transition (job → first dollar → second dollar). for GTM eng: name the tools that died and the tools that replaced them.',
-    stats: '27 upvotes, 9 comments, 4.1K views',
     evidence: {
       title: 'from SDR to solo GTM engineer. the AI development method behind my entire operation',
       sub: 'r/gtmengineering',
       tag: 'Thought Piece',
       tagColor: '#4ade80',
-      upvotes: 27,
-      comments: 9,
-      views: '4.1K',
+      redditId: '1roenoy',
+
       image: '/images/reddit-evidence/sdr-to-gtm-engineer.png',
       body: '3 months ago I started using Claude Code heavy. since then I have shipped four full stack websites, built an arsenal of reusable skills, a voice system for content, a progression engine. all one monorepo, one Mac Mini.',
       lesson: 'career arc story. linked the repos directly. showed the method and the results.',
@@ -260,7 +279,7 @@ export const POST_ARCHETYPES: {
 export const CRAFT_RULES = [
   {
     rule: 'the post is the hook, the comments are the delivery',
-    detail: 'write a tight post. then drop the depth, the links, the repos in the comments. this is how you get 225 comments on a single post.',
+    detail: 'write a tight post. then drop the depth, the links, the repos in the comments. the 6-week showcase below did 224 comments that way.',
   },
   {
     rule: 'publish everything fully',
@@ -294,7 +313,7 @@ export const GATE_TABLE = [
   },
   {
     gate: 'account age',
-    where: 'sub rules, commonly 30+ days',
+    where: 'sub rules, read them per sub',
     clear: 'start commenting the day you make the account. the clock runs while you build comment karma.',
   },
   {
@@ -305,7 +324,7 @@ export const GATE_TABLE = [
   {
     gate: 'crowd trust',
     where: 'unwritten, read from your profile',
-    clear: `a balanced karma split. mine is ${redditStats.linkKarma.toLocaleString()} link / ${redditStats.commentKarma} comment, close to 50/50. the split is the tell that you live there.`,
+    clear: `karma on both sides of the ledger. mine is ${redditStats.linkKarma.toLocaleString()} link / ${redditStats.commentKarma} comment, roughly 2:1. carrying real comment karma is the tell that you live there rather than just post there.`,
   },
 ]
 
@@ -314,14 +333,14 @@ export const GATE_TABLE = [
 export const GATING_STEPS = [
   {
     rule: 'pick 3 subreddits that match your niche',
-    detail: "5K-50K members is the sweet spot. judge a sub by its engagement ratio rather than subscriber count. mine: r/ClaudeCode, r/gtmengineering, r/GTMBuilders. then find each sub's gate before you post: minimum karma, minimum account age, automod filters. every sub has one.",
+    detail: "judge a sub by its engagement ratio rather than subscriber count: a small sub where every thread has real replies beats a huge one where nothing moves. mine: r/ClaudeCode, r/gtmengineering, r/GTMBuilders. then find each sub's gate before you post: minimum karma, minimum account age, automod filters. the gate is in the sidebar and the wiki, and it is different everywhere.",
   },
   {
     rule: 'comment for weeks before you post',
     detail: "comment naturally, add value, comment again. the karma you build hyping other people's work is what lets you post your own later without reading as a self-promoter. by the time you drop your first showcase, the sub already knows your name.",
   },
   {
-    rule: 'target the 50/50 post-comment split',
+    rule: 'earn comment karma, not just post karma',
     detail: `${redditStats.linkKarma.toLocaleString()} link / ${redditStats.commentKarma} comment karma is my real split right now. comments are where a sub learns to trust you, posts are where that trust pays out.`,
   },
 ]
@@ -333,18 +352,18 @@ export const COMMENT_TYPES: {
   emoji: string
   desc: string
   highlight: string
-  example: { image: string; context: string; upvotes: number; views: string; text: string }
+  example: { redditId?: string; image?: string; context: string; text: string }
 }[] = [
   {
     name: 'the mega comment',
     emoji: '💎',
     desc: "a comment that IS a post. one sentence that captures the moment so perfectly it outperforms every post you've ever written.",
-    highlight: '239 upvotes, 27K views. my highest-performing piece of content is a comment.',
+    highlight: 'my highest-upvoted comment anywhere. one sentence about ADHD and Claude Code.',
     example: {
+      redditId: 'o9xairb',
+
       image: '/images/reddit-evidence/comment-adhd-btw-237.png',
       context: 'r/ClaudeCode · "Claude just released /BTW and it\'s clutch"',
-      upvotes: 239,
-      views: '27K',
       text: '"Ah man, this is a gift to us Claude Code homies that have the ADHD brain. pressing escape and changes their plans every three sub-agent runs."',
     },
   },
@@ -356,8 +375,6 @@ export const COMMENT_TYPES: {
     example: {
       image: '/images/reddit-evidence/comment-claude-appstore.png',
       context: 'r/ClaudeAI · "Claude overtaken ChatGPT in App Store"',
-      upvotes: 30,
-      views: '5.9K',
       text: '"No surprise. now we have remote control access. You basically have a dev in your back pocket and Opus 4.6 is elite."',
     },
   },
@@ -367,10 +384,10 @@ export const COMMENT_TYPES: {
     desc: 'short, punchy, personality. zero fluff. keeps you visible between big posts.',
     highlight: 'low effort, high personality. the comments that make people check your profile.',
     example: {
+      redditId: 'o9dh2lc',
+
       image: '/images/reddit-evidence/comment-skill-issue.png',
       context: 'r/vibecoding · "Vibe coding sucks"',
-      upvotes: 9,
-      views: '170',
       text: '"Skill issue my guy. You gotta learn version control"',
     },
   },
@@ -378,12 +395,12 @@ export const COMMENT_TYPES: {
     name: 'the cross-pollinator',
     emoji: '🔗',
     desc: "drop your work in someone else's thread when it is genuinely relevant. relevance is the whole play.",
-    highlight: "the plumber website dropped in r/ClaudeCode got 10K views. 5% of that is 500 visitors to dad's site.",
+    highlight: "the plumber website dropped in r/ClaudeCode got 10K views. I have no idea how many clicked through, and anyone who tells you a comment's CTR is guessing.",
     example: {
+      redditId: 'oapxd4n',
+
       image: '/images/reddit-evidence/comment-crosspollin-plumber-claudecode.png',
       context: 'r/ClaudeCode · own post, replying about what he shipped',
-      upvotes: 5,
-      views: '10K',
       text: '"theplumbernyc.com Website I built for my father\'s company is already averaging 2,000 visitors a week."',
     },
   },
@@ -391,12 +408,12 @@ export const COMMENT_TYPES: {
     name: 'the thread keeper',
     emoji: '🔄',
     desc: "reply to every commenter on your own posts. every reply bumps the post and shows you're real.",
-    highlight: 'your own thread is your territory. this is where a modest post turns into 225 comments and 145K views.',
+    highlight: 'your own thread is your territory. the 6-week showcase turned 72 upvotes into 224 comments and a quarter million views, because the depth was all in the replies.',
     example: {
+      redditId: 'o9ruak0',
+
       image: '/images/reddit-evidence/comment-podcast-idea.png',
       context: 'r/NYCapartments · someone suggests a podcast',
-      upvotes: 10,
-      views: '708',
       text: '"Oh that sounds like a cool idea. I\'ve actually been pushing him to do a podcast"',
     },
   },
@@ -406,10 +423,10 @@ export const COMMENT_TYPES: {
     desc: "genuine excitement for someone else's work. builds real relationships.",
     highlight: 'the karma you build hyping others lets you post your own work without looking like a self-promoter.',
     example: {
+      redditId: 'o9jdlnz',
+
       image: '/images/reddit-evidence/comment-jury-rigged-fire.png',
       context: 'r/ClaudeCode · "My jury-rigged rate limit solution"',
-      upvotes: 8,
-      views: '796',
       text: '"yeah not gonna lie, that\'s fire. If I could I\'d sponsor you to get a Claude Code max plan"',
     },
   },
@@ -419,10 +436,10 @@ export const COMMENT_TYPES: {
     desc: "state the principle in someone else's thread without selling. the comment is the credential.",
     highlight: 'value-leading proof in B2B subs, where readers buy what you build. the kind of comment that gets profile-checked.',
     example: {
+      redditId: 'olojoio',
+
       image: '/images/reddit-evidence/comment-b2bmarketing-reddit-art.png',
       context: 'r/b2bmarketing · thread on Reddit growth tactics',
-      upvotes: 8,
-      views: '~1K',
       text: '"Reddit is an art though. To share value and grow your brand on Reddit is such a different muscle from LinkedIn or X. the readers are sharper and the immune system is faster."',
     },
   },
@@ -436,9 +453,8 @@ export const EXTRA_RECEIPTS: Evidence[] = [
     sub: 'r/ClaudeAI',
     tag: 'Pattern Read',
     tagColor: '#fbbf24',
-    upvotes: 227,
-    comments: 122,
-    views: '~40K',
+    redditId: '1s5r0hj',
+
     image: '/images/reddit-evidence/max-plan-claudeai-227.png',
     body: 'cross-post variant of the rate-limit thread, sharpened for r/ClaudeAI. same scan, different framing.',
     lesson: 'the same pattern read works in two subs when the framing matches the audience.',
@@ -448,9 +464,8 @@ export const EXTRA_RECEIPTS: Evidence[] = [
     sub: 'r/gtmengineering',
     tag: 'Pattern Read',
     tagColor: '#fbbf24',
-    upvotes: 65,
-    comments: 42,
-    views: '~30K',
+    redditId: '1s9ylfe',
+
     image: '/images/reddit-evidence/supabase-replaced-clay-65.png',
     body: 'workflow-by-workflow swap after Clay re-priced. each task: what Clay did, what replaced it, what it now costs.',
     lesson: 'competitor-mention magnet. half the comments were Clay users running the same math.',
@@ -460,9 +475,8 @@ export const EXTRA_RECEIPTS: Evidence[] = [
     sub: 'r/hubspot',
     tag: 'Showcase',
     tagColor: '#4ade80',
-    upvotes: 33,
-    comments: 29,
-    views: '~15K',
+    redditId: '1ss3ma7',
+
     image: '/images/reddit-evidence/hubspot-cli-gotchas-33.png',
     body: 'CLI-first HubSpot CRM ops, all 7 gotchas listed inline with the workaround under each.',
     lesson: 'r/hubspot was a brand-new sub for me. real receipts beat domain history.',
@@ -472,12 +486,11 @@ export const EXTRA_RECEIPTS: Evidence[] = [
     sub: 'r/GTMbuilders',
     tag: 'Thought Piece',
     tagColor: '#4ade80',
-    upvotes: 7,
-    comments: 14,
-    views: '~2K',
+    redditId: '1su7zj1',
+
     image: '/images/reddit-evidence/intent-signals-qualification-7.png',
     body: 'the Clearbox thesis stated in plain English. someone scrolling a problem thread is showing you which problem to solve first.',
-    lesson: 'low score, high conversion. 3 of the 14 commenters turned into Clearbox early-access signups.',
+    lesson: 'low score, high conversion. commenters from this thread became early-access signups, which is the whole argument against reading upvotes as impact.',
   },
 ]
 
@@ -500,7 +513,7 @@ export const LINK_ZONES = [
     emoji: '👤',
     zone: 'profile',
     verdict: 'home turf',
-    desc: 'your profile is the one zone automods leave alone. pin the site, pin the repo, pin the offer. every good comment sends readers there, and the click is theirs to make.',
+    desc: 'automod polices threads, not your profile. pin the site, pin the repo, pin the offer. every good comment sends readers there, and the click is theirs to make. mods do read profiles, so it still has to look like a person, not a billboard.',
   },
 ]
 
@@ -509,9 +522,8 @@ export const LINK_ZONE_EVIDENCE: Evidence = {
   sub: '',
   tag: 'Comment',
   tagColor: '#FF4500',
-  upvotes: 5,
-  comments: 0,
-  views: '2.8K',
+  redditId: 'oab1cv3',
+
   image: '/images/reddit-evidence/comment-crosspollin-plumber-frankenstein.png',
   body: '"You should definitely check out some of the homeowner guide articles in his website"',
   lesson: 'the link landed because the culture allows it and the reader asked for exactly this. same comment in r/ClaudeCode would read as spam.',
@@ -547,9 +559,6 @@ export const THE_ASK_EVIDENCE: Evidence = {
   sub: 'r/ClaudeCode',
   tag: 'The ask',
   tagColor: '#22c55e',
-  upvotes: 23,
-  comments: 8,
-  views: '31K',
   body: '"Could you ad links to the posts you\'re covering on that day? I want to read the 5 stages post for example. Great service, ty."',
   lesson:
     'the post was a summary of threads and it linked none of them. a reader asked for the links and thanked me in the same breath. that comment is worth more than the URL it asked for, because the sub watched someone request it.',
@@ -603,8 +612,8 @@ export const SHADOWBAN_TRIGGERS = [
   },
   {
     emoji: '⏩',
-    trigger: 'posting faster than a person',
-    detail: 'several subs in a short window, or the same post reshaped across them, reads as a campaign. it is the pattern that gets accounts sitewide-filtered rather than sub-removed.',
+    trigger: 'the same post reshaped across several subs at once',
+    detail: 'volume itself has never hurt this account. the karma-building era ran 422 items in five weeks, 34 of them in a single day, and nothing was ever removed for pace. what draws the automod is the same thing rewritten five ways and fired into five subs inside an hour, which reads as a campaign because it is one.',
   },
   {
     emoji: '📢',
@@ -617,7 +626,7 @@ export const SHADOWBAN_RECOVERY = [
   {
     emoji: '✉️',
     step: 'message the mods, once, like a person',
-    detail: 'say what you posted, ask what rule it hit, and offer to repost it correctly. mods approve removed posts constantly for people who ask well. arguing with them is how a removal becomes a ban.',
+    detail: 'say what you posted, ask what rule it hit, and offer to repost it correctly. in my experience mods reinstate more often than people expect, because almost nobody asks politely. arguing with them is how a removal becomes a ban.',
   },
   {
     emoji: '🧹',
@@ -626,8 +635,8 @@ export const SHADOWBAN_RECOVERY = [
   },
   {
     emoji: '🚪',
-    step: 'if the account is sitewide filtered, stop',
-    detail: 'a sitewide shadowban does not get fixed by posting more. it gets fixed by an appeal and by the account behaving normally for a stretch. a new account to escape it is the move that turns a filter into a permanent one.',
+    step: 'if it is sitewide, stop posting',
+    detail: 'this account has never been sitewide filtered, so I have never run this play and will not pretend otherwise. what I am confident of is the part that is just arithmetic: posting more into a filter does not clear the filter, and spinning up a fresh account to escape one is how people turn a temporary problem into a permanent one.',
   },
 ]
 

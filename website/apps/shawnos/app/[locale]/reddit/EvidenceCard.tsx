@@ -2,31 +2,31 @@
 
 import React, { useState } from 'react'
 
+import { stat, fmtViews } from './reportData'
+
 interface EvidenceProps {
+  /** reddit id — every number below is looked up from it. see reportData.stat(). */
+  redditId?: string
   title: string
   sub: string
   tag: string
   tagColor: string
-  upvotes: number
-  comments: number
-  views: string
   image?: string
   lesson: string
   body?: string
 }
 
 export function EvidenceCard({
+  redditId,
   title,
   sub,
   tag,
   tagColor,
-  upvotes,
-  comments,
-  views,
   image,
   lesson,
   body,
 }: EvidenceProps) {
+  const s = stat(redditId)
   const [showScreenshot, setShowScreenshot] = useState(false)
 
   return (
@@ -42,17 +42,25 @@ export function EvidenceCard({
 
         {body && <p style={bodyText}>{body}</p>}
 
-        <div style={statsRow}>
-          <span style={stat}>
-            <span style={statIcon}>↑</span> {upvotes}
-          </span>
-          <span style={stat}>
-            <span style={statIcon}>💬</span> {comments}
-          </span>
-          <span style={stat}>
-            <span style={statIcon}>👁</span> {views}
-          </span>
-        </div>
+        {/* live from the db. a comment renders no views clause because reddit
+            does not report them, not because we forgot. */}
+        {s && (
+          <div style={statsRow}>
+            <span style={statCell}>
+              <span style={statIcon}>↑</span> {s.score}
+            </span>
+            {s.comments != null && (
+              <span style={statCell}>
+                <span style={statIcon}>💬</span> {s.comments}
+              </span>
+            )}
+            {s.views != null && (
+              <span style={statCell}>
+                <span style={statIcon}>👁</span> {fmtViews(s.views)}
+              </span>
+            )}
+          </div>
+        )}
 
         <p style={lessonText}>{lesson}</p>
 
@@ -149,7 +157,7 @@ const statsRow: React.CSSProperties = {
   marginBottom: '12px',
 }
 
-const stat: React.CSSProperties = {
+const statCell: React.CSSProperties = {
   fontFamily: 'var(--font-editorial-body)',
   fontSize: '13px',
   fontWeight: 600,
@@ -162,7 +170,7 @@ const stat: React.CSSProperties = {
 
 const statIcon: React.CSSProperties = {
   fontSize: '12px',
-  color: '#FF4500',
+  color: 'var(--rr-accent)',
 }
 
 const lessonText: React.CSSProperties = {
@@ -174,13 +182,13 @@ const lessonText: React.CSSProperties = {
   fontStyle: 'italic',
   margin: '0 0 12px',
   paddingLeft: '14px',
-  borderLeft: '2px solid #FF450044',
+  borderLeft: '2px solid color-mix(in srgb, var(--rr-accent) 27%, transparent)',
 }
 
 const toggleBtn: React.CSSProperties = {
   background: 'none',
   border: 'none',
-  color: '#FF4500',
+  color: 'var(--rr-accent)',
   fontSize: '12px',
   fontWeight: 600,
   cursor: 'pointer',

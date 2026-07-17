@@ -6,6 +6,10 @@ import { fetchUserProfile } from '@shawnos/shared/lib/reddit'
 import redditStats from '@shawnos/shared/data/reddit-stats.json'
 import { EvidenceCard } from './EvidenceCard'
 import { Collapse } from './Collapse'
+import { ReportNav } from './ReportNav'
+import { Shell, Column, Bleed, Step, Note } from './PlaybookShell'
+import { CompoundChart } from './CompoundChart'
+import './report.css'
 import {
   POST_ARCHETYPES,
   CRAFT_RULES,
@@ -27,7 +31,19 @@ import {
   SHADOWBAN_RECOVERY,
   DELEGATION,
   fmtViews,
+  statLine,
+  stat,
+  type Evidence,
 } from './reportData'
+
+/** Collapse sublabel, from the db. Comments carry no view count, so they get a score. */
+const collapseSub = (e: Evidence) => {
+  const s = stat(e.redditId)
+  if (!s) return e.sub
+  return s.views != null
+    ? `${e.sub} · ${fmtViews(s.views)} views`
+    : `${e.sub} · ${s.score} upvotes`
+}
 
 export const revalidate = 3600
 
@@ -41,9 +57,13 @@ type Props = {
 
 export async function generateMetadata(): Promise<Metadata> {
   const karma = redditStats.totalKarma.toLocaleString()
-  const title = `The Reddit Growth Report: 2M+ Views, ${karma} Karma, ${redditStats.wins} Wins`
-  const ogSubtitle = `2M+ views. ${karma} karma. ${redditStats.wins} wins. the system.`
-  const description = `The full report on building ${karma} karma and 2M+ views on Reddit, with ${(redditStats.trackedViews / 1_000_000).toFixed(2)}M views tracked live in the journey db. The ramp, karma gating, the link map, how to get readers to ask for the link, shadowban recovery, and LLMO: the discipline of getting your language into the places models read.`
+  // Every figure here is generated. The headline is trackedViews (posts only —
+  // reddit reports no view counts on comments), never a rounded-up estimate:
+  // a number with a query behind it survives being challenged.
+  const views = `${(redditStats.trackedViews / 1_000_000).toFixed(1)}M`
+  const title = `The Reddit Growth Report: ${views} Tracked Views, ${karma} Karma, in ${redditStats.accountMonths} Months`
+  const ogSubtitle = `${views} tracked views. ${karma} karma. ${redditStats.accountMonths} months. the system.`
+  const description = `The full report on building ${karma} karma and ${views} tracked views on Reddit from a standing start in ${redditStats.accountMonths} months, every number read live from the journey db. The ramp, karma gating, the link map, how to get readers to ask for the link, shadowban recovery, and LLMO: the discipline of getting your language into the places models read.`
   return {
     title,
     description,
@@ -109,20 +129,14 @@ const sectionNo = (id: string) =>
 
 /* ── styles ─────────────────────────────────────────── */
 
+/**
+ * Reddit orange, but only where it passes. #FF4500 is 3.15:1 on the light
+ * canvas and 2.74:1 on light cards — both fail WCAG AA for text. --rr-accent
+ * darkens it in light mode and keeps the real orange in dark. Large display
+ * numbers can still use ORANGE directly; body-sized text must not.
+ */
 const ORANGE = '#FF4500'
-
-const pageWrap: React.CSSProperties = {
-  maxWidth: 880,
-  margin: '0 auto',
-  padding: '40px 20px 80px',
-  fontFamily: 'var(--font-editorial-body)',
-}
-
-const heroSection: React.CSSProperties = {
-  position: 'relative',
-  textAlign: 'center',
-  padding: '56px 0 40px',
-}
+const ACCENT = 'var(--rr-accent)'
 
 const heroGlow: React.CSSProperties = {
   position: 'absolute',
@@ -137,200 +151,31 @@ const heroGlow: React.CSSProperties = {
   pointerEvents: 'none',
 }
 
-const heroKicker: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '12px',
-  fontWeight: 600,
-  color: 'var(--text-secondary)',
-  textTransform: 'uppercase',
-  letterSpacing: '0.14em',
-  margin: '0 0 18px',
-}
 
-const heroTitle: React.CSSProperties = {
-  position: 'relative',
-  fontFamily: 'var(--font-display-walsh)',
-  fontSize: 'clamp(44px, 8.5vw, 96px)',
-  fontWeight: 500,
-  color: 'var(--text-primary)',
-  lineHeight: 0.94,
-  margin: '0 0 22px',
-  letterSpacing: '-0.05em',
-}
 
 const heroAccent: React.CSSProperties = {
   color: ORANGE,
   fontWeight: 500,
 }
 
-const heroThesis: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '18px',
-  fontWeight: 400,
-  lineHeight: 1.55,
-  color: 'var(--text-primary)',
-  maxWidth: 620,
-  margin: '0 auto 14px',
-  letterSpacing: '-0.01em',
-}
 
-const heroSub: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '15px',
-  fontWeight: 400,
-  lineHeight: 1.65,
-  color: 'var(--text-secondary)',
-  maxWidth: 580,
-  margin: '0 auto',
-}
 
-const bigStatBand: React.CSSProperties = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-  gap: '14px',
-  margin: '36px 0 10px',
-}
 
-const bigStatCard: React.CSSProperties = {
-  background: 'var(--canvas-subtle)',
-  border: '1px solid rgba(255, 69, 0, 0.18)',
-  borderRadius: '12px',
-  padding: '22px 16px',
-  textAlign: 'center',
-}
 
-const bigStatNumber: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '34px',
-  fontWeight: 600,
-  fontVariantNumeric: 'tabular-nums',
-  color: ORANGE,
-  margin: '0 0 6px',
-  letterSpacing: '-0.02em',
-}
 
-const bigStatLabel: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '11px',
-  fontWeight: 500,
-  color: 'var(--text-secondary)',
-  textTransform: 'uppercase',
-  letterSpacing: '0.08em',
-}
 
-const statFootnote: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '12px',
-  color: 'var(--text-secondary)',
-  textAlign: 'center',
-  margin: '0 0 8px',
-}
 
-const sectionStyle: React.CSSProperties = {
-  padding: '48px 0 8px',
-}
 
-const sectionKicker: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '11px',
-  fontWeight: 600,
-  color: ORANGE,
-  textTransform: 'uppercase',
-  letterSpacing: '0.14em',
-  margin: '0 0 10px',
-}
 
-const sectionTitle: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '30px',
-  fontWeight: 400,
-  color: 'var(--text-primary)',
-  margin: '0 0 14px',
-  letterSpacing: '-0.02em',
-  lineHeight: 1.2,
-}
 
-const sectionIntro: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '15px',
-  fontWeight: 400,
-  color: 'var(--text-secondary)',
-  lineHeight: 1.7,
-  marginBottom: '22px',
-}
 
-const subHeading: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '21px',
-  fontWeight: 500,
-  color: 'var(--text-primary)',
-  margin: '32px 0 12px',
-  letterSpacing: '-0.01em',
-}
 
-const receiptCallout: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '14px',
-  color: ORANGE,
-  lineHeight: 1.6,
-  margin: '20px 0',
-  padding: '12px 16px',
-  background: 'rgba(255, 69, 0, 0.06)',
-  borderLeft: `2px solid ${ORANGE}`,
-  borderRadius: '4px',
-  fontStyle: 'italic',
-}
 
 /* era timeline */
-const eraRow: React.CSSProperties = {
-  display: 'flex',
-  gap: '16px',
-  padding: '20px 22px',
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '12px',
-  marginBottom: '12px',
-  alignItems: 'flex-start',
-}
 
-const eraMarker: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '13px',
-  fontWeight: 600,
-  color: ORANGE,
-  minWidth: '64px',
-  paddingTop: '3px',
-  textTransform: 'uppercase',
-  letterSpacing: '0.08em',
-  fontVariantNumeric: 'tabular-nums',
-}
 
-const eraTitle: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '18px',
-  fontWeight: 500,
-  color: 'var(--text-primary)',
-  margin: '0 0 4px',
-  letterSpacing: '-0.01em',
-}
 
-const eraStats: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '13px',
-  fontWeight: 600,
-  fontVariantNumeric: 'tabular-nums',
-  color: ORANGE,
-  margin: '0 0 6px',
-}
 
-const eraDesc: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '14px',
-  fontWeight: 400,
-  color: 'var(--text-secondary)',
-  lineHeight: 1.65,
-  margin: 0,
-}
 
 /* archetype + rule cards */
 const archetypeCard: React.CSSProperties = {
@@ -360,141 +205,26 @@ const archetypeName: React.CSSProperties = {
 const archetypeStats: React.CSSProperties = {
   fontFamily: 'var(--font-editorial-body)',
   fontSize: '12px',
-  color: ORANGE,
+  color: ACCENT,
   fontWeight: 600,
   fontVariantNumeric: 'tabular-nums',
   whiteSpace: 'nowrap',
 }
 
-const archetypeDesc: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '14px',
-  fontWeight: 400,
-  color: 'var(--text-secondary)',
-  lineHeight: 1.65,
-  margin: '8px 0 0',
-}
 
-const archetypeValueLead: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '13px',
-  color: ORANGE,
-  lineHeight: 1.55,
-  margin: '6px 0 12px',
-  fontStyle: 'italic',
-  fontWeight: 400,
-  opacity: 0.9,
-}
 
-const ruleCard: React.CSSProperties = {
-  display: 'flex',
-  gap: '16px',
-  padding: '16px 20px',
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '10px',
-  marginBottom: '10px',
-}
 
-const ruleNumber: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '24px',
-  fontWeight: 300,
-  color: ORANGE,
-  minWidth: '32px',
-  lineHeight: 1,
-  paddingTop: '2px',
-  fontVariantNumeric: 'tabular-nums',
-}
 
-const ruleTitle: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '16px',
-  fontWeight: 500,
-  color: 'var(--text-primary)',
-  margin: '0 0 4px',
-  letterSpacing: '-0.01em',
-}
-
-const ruleDetail: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '14px',
-  fontWeight: 400,
-  color: 'var(--text-secondary)',
-  lineHeight: 1.65,
-  margin: 0,
-}
 
 /* comment type cards */
-const commentCard: React.CSSProperties = {
-  marginBottom: '32px',
-  paddingBottom: '26px',
-  borderBottom: '1px solid var(--border)',
-}
 
-const commentName: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '20px',
-  fontWeight: 500,
-  color: 'var(--text-primary)',
-  margin: '0 0 8px',
-  letterSpacing: '-0.01em',
-}
 
-const commentDesc: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '14px',
-  fontWeight: 400,
-  color: 'var(--text-secondary)',
-  lineHeight: 1.65,
-  margin: '0 0 6px',
-}
 
-const commentHighlight: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '14px',
-  color: ORANGE,
-  fontWeight: 400,
-  margin: '0 0 14px',
-  fontStyle: 'italic',
-}
 
 /* link map zone cards */
-const zoneCard: React.CSSProperties = {
-  background: 'var(--canvas-subtle)',
-  border: '1px solid var(--border)',
-  borderRadius: '12px',
-  padding: '20px 22px',
-  marginBottom: '12px',
-}
 
-const zoneName: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-display)',
-  fontSize: '19px',
-  fontWeight: 500,
-  color: 'var(--text-primary)',
-  margin: '0 0 8px',
-  letterSpacing: '-0.01em',
-}
 
-const zoneVerdict: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '11px',
-  fontWeight: 600,
-  color: ORANGE,
-  textTransform: 'uppercase',
-  letterSpacing: '0.1em',
-  marginLeft: '10px',
-}
 
-const zoneDesc: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '14px',
-  fontWeight: 400,
-  color: 'var(--text-secondary)',
-  lineHeight: 1.7,
-  margin: 0,
-}
 
 /* CTA blocks */
 const bridgeBlock: React.CSSProperties = {
@@ -507,11 +237,10 @@ const bridgeBlock: React.CSSProperties = {
 }
 
 const bridgeText: React.CSSProperties = {
-  fontFamily: 'var(--font-editorial-body)',
-  fontSize: '15px',
-  fontWeight: 400,
-  color: 'var(--text-secondary)',
+  fontSize: '17px',
   lineHeight: 1.7,
+  color: 'var(--text-secondary)',
+  maxWidth: '68ch',
   margin: '0 0 20px',
 }
 
@@ -557,11 +286,6 @@ const newsletterDesc: React.CSSProperties = {
   margin: '0 auto 22px',
 }
 
-const sectionDivider: React.CSSProperties = {
-  border: 'none',
-  borderTop: '1px solid var(--border)',
-  margin: '40px 0 0',
-}
 
 const vaultLinkStyle: React.CSSProperties = {
   fontFamily: 'var(--font-editorial-body)',
@@ -592,87 +316,10 @@ export default async function RedditPage({ params }: Props) {
         items={[{ name: 'The Reddit Growth Report', url: `${SITE_URL}/reddit` }]}
       />
 
-      {/* page-local styles: sticky section nav, anchor offsets, table scroll */}
-      <style>{`
-        .rr-nav {
-          position: sticky;
-          top: 0;
-          z-index: 40;
-          background: var(--canvas);
-          border-bottom: 1px solid var(--border);
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none;
-        }
-        .rr-nav::-webkit-scrollbar { display: none; }
-        .rr-nav-inner {
-          display: flex;
-          gap: 4px;
-          max-width: 880px;
-          margin: 0 auto;
-          padding: 0 20px;
-          white-space: nowrap;
-        }
-        .rr-nav a {
-          display: inline-block;
-          padding: 12px 12px;
-          font-family: var(--font-editorial-body);
-          font-size: 13px;
-          font-weight: 500;
-          color: var(--text-secondary);
-          text-decoration: none;
-          border-bottom: 2px solid transparent;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-        .rr-nav a:hover {
-          color: #FF4500;
-          border-bottom-color: #FF4500;
-        }
-        .rr-section {
-          scroll-margin-top: 56px;
-        }
-        .rr-table-wrap {
-          overflow-x: auto;
-          border: 1px solid var(--border);
-          border-radius: 12px;
-          margin-bottom: 22px;
-        }
-        .rr-table {
-          width: 100%;
-          border-collapse: collapse;
-          font-family: var(--font-editorial-body);
-          font-size: 14px;
-          min-width: 560px;
-        }
-        .rr-table th {
-          text-align: left;
-          padding: 12px 16px;
-          font-size: 11px;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.08em;
-          color: #FF4500;
-          background: rgba(255, 69, 0, 0.06);
-          border-bottom: 1px solid var(--border);
-        }
-        .rr-table td {
-          padding: 12px 16px;
-          color: var(--text-secondary);
-          line-height: 1.55;
-          border-bottom: 1px solid var(--border);
-          vertical-align: top;
-        }
-        .rr-table tr:last-child td { border-bottom: none; }
-        .rr-table td:first-child {
-          color: var(--text-primary);
-          font-weight: 600;
-          white-space: nowrap;
-        }
-      `}</style>
 
-      <div style={pageWrap}>
+      <Shell>
         {/* ── 01 · report hero ── */}
-        <section style={heroSection}>
+        <section className="rr-hero">
           <div style={heroGlow} aria-hidden />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
@@ -688,99 +335,61 @@ export default async function RedditPage({ params }: Props) {
               position: 'relative',
             }}
           />
-          <p style={heroKicker}>report · updated {redditStats.asOf} · u/Shawntenam</p>
-          <h1 style={heroTitle}>
+          <p className="rr-hero-kicker">report · updated {redditStats.asOf} · u/Shawntenam</p>
+          <h1 className="rr-hero-title">
             The <span style={heroAccent}>Reddit</span> Growth Report
           </h1>
-          <p style={heroThesis}>
+          <p className="rr-hero-thesis">
             Reddit is where AI models learn what to recommend. this report is the system that got my work cited: the karma gates, the link map, and the language layer on top.
           </p>
-          <p style={heroSub}>
-            15 months. {redditStats.totalPosts} posts and {redditStats.totalComments} comments across r/ClaudeCode, r/gtmengineering, r/GTMbuilders and 15 other subs. every number below is real and live-tracked.
+          <p className="rr-hero-sub">
+            {redditStats.accountMonths} months, from a standing start on {redditStats.firstItemDate}. {redditStats.totalPosts} posts and {redditStats.totalComments} comments across {redditStats.subredditsTouched} subreddits. every number below is read from the journey db at build time, not typed in.
           </p>
         </section>
 
-        {/* the headline numbers */}
-        <div style={bigStatBand}>
-          <div style={bigStatCard}>
-            <p style={bigStatNumber}>2M+</p>
-            <p style={bigStatLabel}>cumulative views</p>
+        {/* the headline numbers — all four generated from the journey db */}
+        <Bleed><div className="rr-stats">
+          <div className="rr-stat">
+            <p className="rr-stat-n">{(redditStats.trackedViews / 1_000_000).toFixed(1)}M</p>
+            <p className="rr-stat-l">tracked views</p>
           </div>
-          <div style={bigStatCard}>
-            <p style={bigStatNumber}>{liveKarma.toLocaleString()}</p>
-            <p style={bigStatLabel}>total karma</p>
+          <div className="rr-stat">
+            <p className="rr-stat-n">{liveKarma.toLocaleString()}</p>
+            <p className="rr-stat-l">total karma</p>
           </div>
-          <div style={bigStatCard}>
-            <p style={bigStatNumber}>{redditStats.wins}</p>
-            <p style={bigStatLabel}>tracked wins</p>
+          <div className="rr-stat">
+            <p className="rr-stat-n">{redditStats.wins}</p>
+            <p className="rr-stat-l">flagged threads</p>
           </div>
-          <div style={bigStatCard}>
-            <p style={bigStatNumber}>15</p>
-            <p style={bigStatLabel}>months</p>
+          <div className="rr-stat">
+            <p className="rr-stat-n">{redditStats.accountMonths}</p>
+            <p className="rr-stat-l">months</p>
           </div>
-        </div>
-        <p style={statFootnote}>
-          {(redditStats.trackedViews / 1_000_000).toFixed(2)}M of the 2M+ views are tracked post-by-post in the journey db · karma split: {redditStats.linkKarma.toLocaleString()} link / {redditStats.commentKarma} comment · top post: {redditStats.topPost.score}↑ in r/{redditStats.topPost.subreddit}
+        </div></Bleed>
+        <p className="rr-caption">
+          views are counted post-by-post in the journey db, {redditStats.totalPosts} posts deep · reddit reports no view count on comments, so the {redditStats.totalComments} comments here are not in that number · karma split: {redditStats.linkKarma.toLocaleString()} link / {redditStats.commentKarma} comment · top post: {redditStats.topPost.score}↑ in r/{redditStats.topPost.subreddit}
         </p>
 
-        {/* ── sticky section nav ── */}
-        <nav className="rr-nav" aria-label="report sections">
-          <div className="rr-nav-inner">
-            {SECTIONS.map((s) => (
-              <a key={s.id} href={`#${s.id}`}>
-                {s.label}
-              </a>
-            ))}
-          </div>
-        </nav>
+        {/* ── sticky section nav (scroll-spy + reading progress) ── */}
+        <ReportNav sections={SECTIONS} />
 
         {/* ── 02 · era timeline ── */}
-        <section id="journey" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('journey')}</p>
-          <h2 style={sectionTitle}>the journey: zero to cited-by-AI</h2>
-          <p style={sectionIntro}>
+        <section id="journey" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('journey')}</p>
+          <h2 className="rr-h2">the journey: zero to cited-by-AI</h2>
+          <p className="rr-standfirst">
             the account ran in two deliberate eras. the first built trust, the second cashed it in. the order matters: every shortcut I tested that skipped era one died in the automod queue.
           </p>
 
-          <div style={eraRow}>
-            <span style={eraMarker}>era 01</span>
-            <div style={{ flex: 1 }}>
-              <p style={eraTitle}>karma building</p>
-              <p style={eraStats}>
-                {karmaEra.items} posts + comments · {fmtViews(karmaEra.views)} views · {karmaEra.score.toLocaleString()} score
-              </p>
-              <p style={eraDesc}>
-                comments first, showcases later. built the 50/50 karma split, learned each sub&apos;s gate, and became a known name in the home subs before asking anything of them.
-              </p>
-            </div>
-          </div>
+          <Step n="era 01" title="karma building" aside={<>{karmaEra.items} posts + comments · {fmtViews(karmaEra.views)} views · {karmaEra.score.toLocaleString()} score</>}>comments first, showcases later. earned karma on both sides of the ledger, learned each sub&apos;s gate, and became a known name in the home subs before asking anything of them.</Step>
 
-          <div style={eraRow}>
-            <span style={eraMarker}>era 02</span>
-            <div style={{ flex: 1 }}>
-              <p style={eraTitle}>clearbox</p>
-              <p style={eraStats}>
-                {clearboxEra.items} posts + comments · {fmtViews(clearboxEra.views)} views · {clearboxEra.score.toLocaleString()} score
-              </p>
-              <p style={eraDesc}>
-                trust converted into pipeline. named the product in context, tracked every thread, and turned {redditStats.wins} conversations into tracked wins: signups, calls, and customers.
-              </p>
-            </div>
-          </div>
+          <Step n="era 02" title="clearbox" aside={<>{clearboxEra.items} posts + comments · {fmtViews(clearboxEra.views)} views · {clearboxEra.score.toLocaleString()} score</>}>trust converted into pipeline. named the product in context, tracked every thread, and flagged {redditStats.wins} of them as worth acting on: the questions, the competitor gripes, the people describing the problem I built for.</Step>
 
-          <div style={eraRow}>
-            <span style={eraMarker}>now</span>
-            <div style={{ flex: 1 }}>
-              <p style={eraTitle}>cited by AI</p>
-              <p style={eraStats}>unlinked brand mentions surfacing in AI answers</p>
-              <p style={eraDesc}>
-                the threads from both eras are now training material. AI answer engines cite them, and the product name travels without a URL attached. sections {sectionNo('ai-citations')} and {sectionNo('llmo')} break down the mechanism.
-              </p>
-            </div>
-          </div>
+          <Step n="now" title="cited by AI" aside={<>the name travelling without a link on it</>}>the threads from both eras are now training material. AI answer engines cite them, and the product name travels without a URL attached. sections {sectionNo('ai-citations')} and {sectionNo('llmo')} break down the mechanism.</Step>
 
-          <h3 style={subHeading}>where the views live</h3>
-          <div className="rr-table-wrap">
+          <h3 className="rr-h3">where the views live</h3>
+          <Bleed><div className="rr-table-wrap">
             <table className="rr-table">
               <thead>
                 <tr>
@@ -801,15 +410,29 @@ export default async function RedditPage({ params }: Props) {
                 ))}
               </tbody>
             </table>
-          </div>
-          <hr style={sectionDivider} />
+          </div></Bleed>
+
+          <Column>
+            <h3 className="rr-h3">the part nobody shows you</h3>
+            <p className="rr-p">
+              a post on a feed is dead in two days. these are not. every post in the chart below was already old when I started snapshotting, and {redditStats.compound.cohortGrew} of {redditStats.compound.cohortPosts} of them still gained views over the next 20 days. the oldest one still climbing was published {redditStats.compound.oldestStillGrowing}.
+            </p>
+          </Column>
+          <Bleed>
+            <CompoundChart
+              series={redditStats.compound.series}
+              windowStart={redditStats.compound.windowStart}
+            />
+          </Bleed>
+          </Column>
         </section>
 
         {/* ── the ramp ── */}
-        <section id="account-ramp" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('account-ramp')}</p>
-          <h2 style={sectionTitle}>the ramp: starting an account that survives</h2>
-          <p style={sectionIntro}>
+        <section id="account-ramp" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('account-ramp')}</p>
+          <h2 className="rr-h2">the ramp: starting an account that survives</h2>
+          <p className="rr-standfirst">
             a new account that opens with a comment about its own product is the exact shape every filter on the platform was built to catch. Reddit reads behavior before it reads words. the ramp below is the slow part, and it decides whether anything after it works.
           </p>
 
@@ -821,94 +444,79 @@ export default async function RedditPage({ params }: Props) {
                 </span>
                 <span style={archetypeStats}>{r.window}</span>
               </div>
-              <p style={archetypeDesc}>{r.desc}</p>
+              <p className="rr-p">{r.desc}</p>
             </div>
           ))}
 
-          <p style={receiptCallout}>
-            era one on this account: {karmaEra.items} posts and comments, {fmtViews(karmaEra.views)} views, zero product mentions.
+          <p className="rr-note">
+            era one on this account: {karmaEra.items} posts and comments, {fmtViews(karmaEra.views)} views, before Clearbox existed to mention.
           </p>
 
-          <h3 style={subHeading}>the three ways people skip it</h3>
+          <h3 className="rr-h3">the three ways people skip it</h3>
           {RAMP_DONTS.map((d) => (
-            <div key={d.rule} style={ruleCard}>
-              <span style={ruleNumber}>{d.emoji}</span>
-              <div style={{ flex: 1 }}>
-                <p style={ruleTitle}>{d.rule}</p>
-                <p style={ruleDetail}>{d.detail}</p>
-              </div>
-            </div>
+            <Step key={d.rule} n={d.emoji} title={d.rule}>{d.detail}</Step>
           ))}
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── karma engine ── */}
-        <section id="karma-engine" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('karma-engine')}</p>
-          <h2 style={sectionTitle}>karma: farm your own interests</h2>
-          <p style={sectionIntro}>
+        <section id="karma-engine" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('karma-engine')}</p>
+          <h2 className="rr-h2">karma: farm your own interests</h2>
+          <p className="rr-standfirst">
             karma is the toll every gated sub charges before it lets you speak. the cheapest place to earn it is the subs you would be reading anyway, because the comments cost you nothing and read as real without you trying. the sections after this one are useless until the account clears the floors in section {sectionNo('karma-gating')}.
           </p>
 
           {KARMA_ENGINE.map((k) => (
-            <div key={k.move} style={commentCard}>
-              <h3 style={commentName}>
-                {k.emoji} {k.move}
-              </h3>
-              <p style={commentDesc}>{k.desc}</p>
-            </div>
+            <Step key={k.move} n={k.emoji} title={k.move}>{k.desc}</Step>
           ))}
 
           {karmaSub && (
-            <p style={receiptCallout}>
-              the receipt: r/{karmaSub.subreddit} on this account. {karmaSub.items} posts and comments, {fmtViews(karmaSub.views)} views, {karmaSub.score} score, and nothing to sell. it outranks every product sub here by views. the interest was real first and the karma was the byproduct.
+            <p className="rr-note">
+              the receipt: r/{karmaSub.subreddit} on this account. {karmaSub.items} posts and comments, {fmtViews(karmaSub.views)} views, {karmaSub.score} score, and nothing to sell. more views than r/hubspot, r/UseApolloIo and r/buildinpublic combined. the interest was real first and the karma was the byproduct.
             </p>
           )}
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── 03 · post types ── */}
-        <section id="post-types" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('post-types')}</p>
-          <h2 style={sectionTitle}>the 8 post types that work</h2>
-          <p style={sectionIntro}>
-            tested across 15 months. each type below carries its flagship receipt: the real post, the real numbers, and the value-lead note for SaaS, B2B marketing, Clay, and GTM-engineering readers.
+        <section id="post-types" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('post-types')}</p>
+          <h2 className="rr-h2">the 8 post types that work</h2>
+          <p className="rr-standfirst">
+            tested across {redditStats.accountMonths} months. each type below carries its flagship receipt: the real post, its live numbers, and the value-lead note for SaaS, B2B marketing, Clay, and GTM-engineering readers.
           </p>
 
           {POST_ARCHETYPES.map((a) => (
-            <div key={a.name} style={archetypeCard}>
-              <div style={archetypeTop}>
-                <span style={archetypeName}>
+            <div key={a.name} className="rr-archetype">
+              <div className="rr-archetype-top">
+                <span className="rr-archetype-name">
                   {a.emoji} {a.name}
                 </span>
-                <span style={archetypeStats}>{a.stats}</span>
+                <span className="rr-archetype-stats">{statLine(a.evidence.redditId)}</span>
               </div>
-              <p style={archetypeDesc}>{a.desc}</p>
-              <p style={archetypeValueLead}>↳ {a.valueLead}</p>
-              <Collapse label="the receipt" sublabel={`${a.evidence.sub} · ${a.evidence.views} views`}>
+              <p className="rr-p">{a.desc}</p>
+              <p className="rr-valuelead">↳ {a.valueLead}</p>
+              <Collapse label="the receipt" sublabel={collapseSub(a.evidence)}>
                 <EvidenceCard {...a.evidence} />
               </Collapse>
             </div>
           ))}
 
-          <h3 style={subHeading}>the 6 craft rules</h3>
-          <p style={sectionIntro}>
+          <h3 className="rr-h3">the 6 craft rules</h3>
+          <p className="rr-standfirst">
             every rule came from watching what worked and what got me destroyed. the entry system that earns you the right to post at all lives in the karma gating section.
           </p>
 
           {CRAFT_RULES.map((r, i) => (
-            <div key={i} style={ruleCard}>
-              <span style={ruleNumber}>{i + 1}</span>
-              <div style={{ flex: 1 }}>
-                <p style={ruleTitle}>{r.rule}</p>
-                <p style={ruleDetail}>{r.detail}</p>
-              </div>
-            </div>
+            <Step key={i} n={i + 1} title={r.rule}>{r.detail}</Step>
           ))}
 
           <div style={{ marginTop: '24px' }}>
             <Collapse label="more receipts" sublabel={`${EXTRA_RECEIPTS.length} additional posts with screenshots`}>
-              <p style={sectionIntro}>
+              <p className="rr-standfirst">
                 every post below is real. screenshots straight from the Reddit dashboard, wins and flops included.
               </p>
               {EXTRA_RECEIPTS.map((e, i) => (
@@ -916,49 +524,49 @@ export default async function RedditPage({ params }: Props) {
               ))}
             </Collapse>
           </div>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── 04 · comments ── */}
-        <section id="comments" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('comments')}</p>
-          <h2 style={sectionTitle}>comments: where karma actually lives</h2>
-          <p style={sectionIntro}>
-            my highest-performing piece of content on Reddit is a comment. 239 upvotes, 27K views, one sentence about ADHD and Claude Code. here are the 7 comment types I run and the flagship example for each.
+        <section id="comments" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('comments')}</p>
+          <h2 className="rr-h2">comments: where karma actually lives</h2>
+          <p className="rr-standfirst">
+            my highest-upvoted comment anywhere is one sentence about ADHD and Claude Code. reddit shows me view counts on comments but my tracker only scrapes them for posts, so upvotes are the number I can stand behind here. these are the 7 comment types I run and the flagship example for each.
           </p>
 
           {COMMENT_TYPES.map((ct) => (
-            <div key={ct.name} style={commentCard}>
-              <h3 style={commentName}>
-                {ct.emoji} {ct.name}
-              </h3>
-              <p style={commentDesc}>{ct.desc}</p>
-              <p style={commentHighlight}>{ct.highlight}</p>
-              <EvidenceCard
-                title={ct.example.context}
-                sub=""
-                tag="Comment"
-                tagColor={ORANGE}
-                upvotes={ct.example.upvotes}
-                comments={0}
-                views={ct.example.views}
-                image={ct.example.image}
-                body={ct.example.text}
-                lesson=""
-              />
-            </div>
+            <Step key={ct.name} n={ct.emoji} title={ct.name}>
+              {ct.desc}
+              <span className="rr-highlight">{ct.highlight}</span>
+              <Collapse label="the comment" sublabel={ct.example.context}>
+                <EvidenceCard
+                  title={ct.example.context}
+                  sub=""
+                  tag="Comment"
+                  tagColor={ORANGE}
+                  redditId={ct.example.redditId}
+                  image={ct.example.image}
+                  body={ct.example.text}
+                  lesson=""
+                />
+              </Collapse>
+            </Step>
           ))}
+          </Column>
         </section>
 
         {/* ── 05 · karma gating ── */}
-        <section id="karma-gating" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('karma-gating')}</p>
-          <h2 style={sectionTitle}>karma gating: the thresholds</h2>
-          <p style={sectionIntro}>
+        <section id="karma-gating" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('karma-gating')}</p>
+          <h2 className="rr-h2">karma gating: the thresholds</h2>
+          <p className="rr-standfirst">
             every sub you want to post in has a gate. some gates are posted in the rules: minimum karma, minimum account age. some are invisible: automod quietly removes your post and the views flatline at zero. know the gate before you post, or your best work dies in the queue.
           </p>
 
-          <div className="rr-table-wrap">
+          <Bleed><div className="rr-table-wrap">
             <table className="rr-table">
               <thead>
                 <tr>
@@ -977,20 +585,14 @@ export default async function RedditPage({ params }: Props) {
                 ))}
               </tbody>
             </table>
-          </div>
+          </div></Bleed>
 
-          <h3 style={subHeading}>the entry system</h3>
+          <h3 className="rr-h3">the entry system</h3>
           {GATING_STEPS.map((r, i) => (
-            <div key={i} style={ruleCard}>
-              <span style={ruleNumber}>{i + 1}</span>
-              <div style={{ flex: 1 }}>
-                <p style={ruleTitle}>{r.rule}</p>
-                <p style={ruleDetail}>{r.detail}</p>
-              </div>
-            </div>
+            <Step key={i} n={i + 1} title={r.rule}>{r.detail}</Step>
           ))}
 
-          <p style={receiptCallout}>
+          <p className="rr-note">
             the receipt: my karma-building era ran {karmaEra.items} posts and comments for {fmtViews(karmaEra.views)} views before the clearbox era started ({clearboxEra.items} items, {fmtViews(clearboxEra.views)} views). the gate-building phase came first. it always does.
           </p>
 
@@ -999,162 +601,129 @@ export default async function RedditPage({ params }: Props) {
               the actual files: /vault → reddit/ →
             </a>
           </p>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── 06 · the link map ── */}
-        <section id="link-map" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('link-map')}</p>
-          <h2 style={sectionTitle}>the link map: three zones, three rules</h2>
-          <p style={sectionIntro}>
+        <section id="link-map" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('link-map')}</p>
+          <h2 className="rr-h2">the link map: three zones, three rules</h2>
+          <p className="rr-standfirst">
             where a link lives decides whether a human ever votes on your post. get the zone wrong and the automod buries you first.
           </p>
 
           {LINK_ZONES.map((z) => (
-            <div key={z.zone} style={zoneCard}>
-              <p style={zoneName}>
-                {z.emoji} {z.zone}
-                <span style={zoneVerdict}>{z.verdict}</span>
-              </p>
-              <p style={zoneDesc}>{z.desc}</p>
-            </div>
+            <Step key={z.zone} n={z.emoji} title={z.zone} aside={z.verdict}>{z.desc}</Step>
           ))}
 
           <div style={{ marginTop: '20px' }}>
-            <Collapse label="the receipt: a link that landed" sublabel="r/NYCapartments · 2.8K views">
+            <Collapse label="the receipt: a link that landed" sublabel={collapseSub(LINK_ZONE_EVIDENCE)}>
               <EvidenceCard {...LINK_ZONE_EVIDENCE} />
             </Collapse>
           </div>
 
-          <p style={receiptCallout}>
+          <p className="rr-note">
             the stronger move: skip the URL entirely. somebody asks, you describe what the thing does. &quot;I built a scanner that reads every complaint thread and labels each one lead, competitor, or engager.&quot; the reader who wants it will find it. the description is the link. section {sectionNo('the-ask')} is how you get asked on purpose.
           </p>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── the ask ── */}
-        <section id="the-ask" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('the-ask')}</p>
-          <h2 style={sectionTitle}>the ask: get them to request the link</h2>
-          <p style={sectionIntro}>
+        <section id="the-ask" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('the-ask')}</p>
+          <h2 className="rr-h2">the ask: get them to request the link</h2>
+          <p className="rr-standfirst">
             a link you drop is an ad. the same link, handed over because someone asked for it, is an answer. the sub scores those differently and so does everyone reading. the ask is the part you can engineer.
           </p>
 
           {THE_ASK.map((a) => (
-            <div key={a.move} style={zoneCard}>
-              <p style={zoneName}>
-                {a.emoji} {a.move}
-              </p>
-              <p style={zoneDesc}>{a.desc}</p>
-            </div>
+            <Step key={a.move} n={a.emoji} title={a.move}>{a.desc}</Step>
           ))}
 
           <div style={{ marginTop: '20px' }}>
-            <Collapse label="the receipt: a post with no links, and the reply asking for them" sublabel={`${THE_ASK_EVIDENCE.sub} · ${THE_ASK_EVIDENCE.views} views`}>
+            <Collapse label="the receipt: a post with no links, and the reply asking for them" sublabel={collapseSub(THE_ASK_EVIDENCE)}>
               <EvidenceCard {...THE_ASK_EVIDENCE} />
             </Collapse>
           </div>
 
-          <p style={receiptCallout}>
+          <p className="rr-note">
             the ask is the permission slip. it converts a URL from something you pushed into something the thread requested, and it is the only version of a link that a sub will let you post twice.
           </p>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── staying alive ── */}
-        <section id="staying-alive" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('staying-alive')}</p>
-          <h2 style={sectionTitle}>staying alive: shadowbans and silent removals</h2>
-          <p style={sectionIntro}>
+        <section id="staying-alive" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('staying-alive')}</p>
+          <h2 className="rr-h2">staying alive: shadowbans and silent removals</h2>
+          <p className="rr-standfirst">
             Reddit rarely tells you that you are gone. the post sits there in your own browser looking fine while the views never move, and you keep talking to a room that stopped receiving you weeks ago. check first, then fix the account rather than the post.
           </p>
 
-          <h3 style={subHeading}>three checks that take a minute</h3>
+          <h3 className="rr-h3">three checks that take a minute</h3>
           {SHADOWBAN_CHECKS.map((c) => (
-            <div key={c.check} style={zoneCard}>
-              <p style={zoneName}>
-                {c.emoji} {c.check}
-              </p>
-              <p style={zoneDesc}>{c.how}</p>
-            </div>
+            <Step key={c.check} n={c.emoji} title={c.check}>{c.how}</Step>
           ))}
 
-          <h3 style={subHeading}>what actually trips it</h3>
+          <h3 className="rr-h3">what actually trips it</h3>
           {SHADOWBAN_TRIGGERS.map((t) => (
-            <div key={t.trigger} style={ruleCard}>
-              <span style={ruleNumber}>{t.emoji}</span>
-              <div style={{ flex: 1 }}>
-                <p style={ruleTitle}>{t.trigger}</p>
-                <p style={ruleDetail}>{t.detail}</p>
-              </div>
-            </div>
+            <Step key={t.trigger} n={t.emoji} title={t.trigger}>{t.detail}</Step>
           ))}
 
-          <h3 style={subHeading}>getting back</h3>
+          <h3 className="rr-h3">getting back</h3>
           {SHADOWBAN_RECOVERY.map((r) => (
-            <div key={r.step} style={ruleCard}>
-              <span style={ruleNumber}>{r.emoji}</span>
-              <div style={{ flex: 1 }}>
-                <p style={ruleTitle}>{r.step}</p>
-                <p style={ruleDetail}>{r.detail}</p>
-              </div>
-            </div>
+            <Step key={r.step} n={r.emoji} title={r.step}>{r.detail}</Step>
           ))}
 
-          <p style={receiptCallout}>
+          <p className="rr-note">
             this account has never been banned. not because it got away with anything, but because it never ran the plays that get you banned.
           </p>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── 07 · what AI cites ── */}
-        <section id="ai-citations" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('ai-citations')}</p>
-          <h2 style={sectionTitle}>what AI cites: no-link mentions still index</h2>
-          <p style={sectionIntro}>
-            mention a product by name, in context, answering a real question, and it gets indexed with zero URLs involved. Google indexes Reddit within hours. LLMs cite Reddit threads. an unlinked brand mention inside a high-signal answer becomes retrievable, and the model repeats it to the next person who asks.
+        <section id="ai-citations" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('ai-citations')}</p>
+          <h2 className="rr-h2">what AI cites: no-link mentions still index</h2>
+          <p className="rr-standfirst">
+            mention a product by name, in context, answering a real question, and it gets indexed with zero URLs involved. Reddit threads rank fast and LLMs cite them. an unlinked brand mention inside a high-signal answer becomes retrievable, and the model repeats it to the next person who asks.
           </p>
 
-          <p style={receiptCallout}>
-            the receipt: {redditStats.wins} tracked wins came through this pipeline. {fmtViews(redditStats.trackedViews)} live-tracked views is the surface those wins came from.
+          <p className="rr-note">
+            the receipt: {redditStats.wins} threads flagged high-value out of {redditStats.totalPosts + redditStats.totalComments} tracked, scored on the value of the conversation rather than the upvotes. {fmtViews(redditStats.trackedViews)} tracked views is the surface they came from.
           </p>
 
-          <h3 style={subHeading}>every conversation is worth more than the close</h3>
-          <p style={sectionIntro}>
-            buy-intent threads are under 1% of the value. the other 99% is qualification surface area. every thread your buyers post sorts into one of three labels, and each label tells you the next move:
+          <h3 className="rr-h3">every conversation is worth more than the close</h3>
+          <p className="rr-standfirst">
+            the threads where someone is ready to buy are a rounding error next to the threads that tell you who they are. every thread your buyers post sorts into one of three labels, and each label tells you the next move:
           </p>
 
           {SIGNAL_LABELS.map((s) => (
-            <div key={s.name} style={zoneCard}>
-              <p style={zoneName}>
-                {s.emoji} {s.name}
-              </p>
-              <p style={zoneDesc}>{s.desc}</p>
-            </div>
+            <Step key={s.name} n={s.emoji} title={s.name}>{s.desc}</Step>
           ))}
 
           <div style={{ marginTop: '20px' }}>
-            <Collapse label="the receipt: mentions that converted" sublabel="2 threads · 5 tracked wins">
+            <Collapse label="the receipt: two mentions that did the work" sublabel="r/GTMbuilders · r/gtmengineering">
               <EvidenceCard
                 title="Intent signals are qualification scores, not buying intent."
                 sub="r/GTMbuilders"
                 tag="Lead Signal"
                 tagColor="#fbbf24"
-                upvotes={7}
-                comments={14}
-                views="~2K"
+                redditId="1su7zj1"
                 image="/images/reddit-evidence/intent-signals-qualification-7.png"
                 body="the Clearbox thesis stated in plain English. someone scrolling a problem thread is showing you which problem to solve first."
-                lesson="low post-score, high conversion. 3 of the 14 commenters turned into Clearbox early-access signups."
+                lesson="low post-score, high conversion. commenters from this thread became early-access signups, which is the whole argument against reading upvotes as impact."
               />
               <EvidenceCard
                 title="Supabase + Google Sheets + Claude Code replaced Clay for me. here is how."
                 sub="r/gtmengineering"
                 tag="Competitor Signal"
                 tagColor="#f87171"
-                upvotes={65}
-                comments={42}
-                views="~30K"
+                redditId="1s9ylfe"
                 image="/images/reddit-evidence/supabase-replaced-clay-65.png"
                 body="workflow-by-workflow swap after Clay re-priced. each task: what Clay did, what replaced it, what it now costs."
                 lesson="competitor-mention magnet. the swap diagram attracts competitor-shopping readers on its own."
@@ -1182,17 +751,18 @@ export default async function RedditPage({ params }: Props) {
               See your market. Move first. →
             </a>
           </div>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── 08 · LLMO ── */}
-        <section id="llmo" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('llmo')}</p>
-          <h2 style={sectionTitle}>LLMO: language-level model optimization</h2>
-          <p style={sectionIntro}>
+        <section id="llmo" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('llmo')}</p>
+          <h2 className="rr-h2">LLMO: language-level model optimization</h2>
+          <p className="rr-standfirst">
             the discipline on top of SEO and GEO. you&apos;re injecting your language, your phrasing, your voice into the places models read, so the model&apos;s answer sounds like you and points back to you.
           </p>
-          <p style={sectionIntro}>
+          <p className="rr-standfirst">
             the mechanism is voice consistency. the same voice across Reddit, blog, and site teaches the model one coherent entity, and one coherent entity is what gets cited. this is why the same voice DNA files run everything I publish, from a one-liner comment to a 2,000-word post.
           </p>
 
@@ -1201,35 +771,32 @@ export default async function RedditPage({ params }: Props) {
               the actual files: /vault → reddit/ →
             </a>
           </p>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── delegation ── */}
-        <section id="delegation" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('delegation')}</p>
-          <h2 style={sectionTitle}>delegation: handing the account to someone else</h2>
-          <p style={sectionIntro}>
+        <section id="delegation" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('delegation')}</p>
+          <h2 className="rr-h2">delegation: handing the account to someone else</h2>
+          <p className="rr-standfirst">
             everything above assumes a person is reading the thread and a person is writing the reply. that person does not have to be you. a VA is a human, which is the entire requirement. it fails when the VA is handed an account and a goal and nothing else, because you cannot run this blind.
           </p>
 
           {DELEGATION.map((d) => (
-            <div key={d.name} style={commentCard}>
-              <h3 style={commentName}>
-                {d.emoji} {d.name}
-              </h3>
-              <p style={commentDesc}>{d.desc}</p>
-            </div>
+            <Step key={d.name} n={d.emoji} title={d.name}>{d.desc}</Step>
           ))}
 
-          <p style={receiptCallout}>
+          <p className="rr-note">
             the 24-hour pull is what makes this safe. your VA opens a scored list of the threads worth answering, with the rules for each sub attached, instead of a blank search bar and an instruction to go be helpful. the account stays human. the work stops depending on you being awake.
           </p>
-          <hr style={sectionDivider} />
+          </Column>
         </section>
 
         {/* ── 09 · closer: the weekly report ── */}
-        <section id="newsletter" className="rr-section" style={sectionStyle}>
-          <p style={sectionKicker}>section {sectionNo('newsletter')}</p>
+        <section id="newsletter" className="rr-section">
+          <Column>
+          <p className="rr-kicker">section {sectionNo('newsletter')}</p>
           <div style={newsletterBlock}>
             <p style={newsletterTitle}>the weekly version of this report</p>
             <p style={newsletterDesc}>
@@ -1245,6 +812,7 @@ export default async function RedditPage({ params }: Props) {
               or join r/GTMBuilders if you want to build alongside us →
             </a>
           </p>
+          </Column>
         </section>
 
         {/* related */}
@@ -1256,7 +824,7 @@ export default async function RedditPage({ params }: Props) {
             case study: reddit is king &rarr;
           </a>
         </div>
-      </div>
+      </Shell>
     </>
   )
 }

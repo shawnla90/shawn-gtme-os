@@ -7,6 +7,10 @@
  "totalComments": 559,
  "trackedViews": 1489921,
  "wins": 24,
+ "firstItemDate": "2026-02-27",
+ "lastItemDate": "2026-07-12",
+ "accountMonths": 4.4,
+ "subredditsTouched": 48,
  "eras": [
   {
    "era": "karma-building",
@@ -88,5 +92,4284 @@
   "subreddit": "ClaudeCode",
   "score": 302,
   "views": 252000
+ },
+ "posts": {
+  "1uem7na": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 38,
+   "comments": 2,
+   "views": 13000,
+   "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
+  },
+  "1ueqdp8": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 429,
+   "title": "claude code = terminal, codex = app, remote control hack!!! #claudecode ..."
+  },
+  "1ueqd40": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 2,
+   "views": 525,
+   "title": "claude code = terminal, codex = app, remote control hack!!! #claudecode ..."
+  },
+  "1ueqcki": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 1,
+   "comments": 0,
+   "views": 1700,
+   "title": "claude code = terminal, codex = app, remote control hack!!! #claudecode ..."
+  },
+  "1ueqbzc": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 1,
+   "comments": 0,
+   "views": 759,
+   "title": "claude code = terminal, codex = app, remote control hack!!! #claudecode ..."
+  },
+  "1uemb4a": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 368,
+   "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
+  },
+  "1uem8v0": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 296,
+   "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
+  },
+  "1uem894": {
+   "kind": "post",
+   "subreddit": "AI_Sales",
+   "score": 2,
+   "comments": 2,
+   "views": 330,
+   "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
+  },
+  "1ue4prs": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 4,
+   "comments": 1,
+   "views": 519,
+   "title": "I make Claude & Codex argue #buildinpublic #claudecode #codex"
+  },
+  "1udxd5k": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 4,
+   "comments": 0,
+   "views": 1900,
+   "title": "$70K clay proposal \u2192 $0 with Claude Code"
+  },
+  "1ue4pw8": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 397,
+   "title": "I make Claude & Codex argue #buildinpublic #claudecode #codex"
+  },
+  "1ue3syb": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 1,
+   "comments": 0,
+   "views": 331,
+   "title": "I make Claude & Codex argue  #buildinpublic #claudecode #codex"
+  },
+  "1udxdla": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 565,
+   "title": "$70K clay proposal \u2192 $0 with Claude Code"
+  },
+  "1uacdp7": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 27,
+   "comments": 3,
+   "views": 15000,
+   "title": "10 Python scripts I run for GTM, and the exact prompt to build each one"
+  },
+  "1uadle9": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 3,
+   "comments": 0,
+   "views": 661,
+   "title": "10 Python scripts I run for GTM, and the exact prompt to build each one"
+  },
+  "1uadlnz": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 1100,
+   "title": "10 Python scripts I run for GTM, and the exact prompt to build each one"
+  },
+  "1u8xqgm": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 7,
+   "comments": 4,
+   "views": 3300,
+   "title": "Claude Code vs Codex for GTM builders: which one are you actually shipping with?"
+  },
+  "1u8xr3x": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 2,
+   "comments": 1,
+   "views": 1300,
+   "title": "Claude Code vs Codex for GTM builders: which one are you actually shipping with?"
+  },
+  "1u8xqqa": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 0,
+   "views": 487,
+   "title": "Claude Code vs Codex for GTM builders: which one are you actually shipping with?"
+  },
+  "1u8j347": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 0,
+   "views": 353,
+   "title": "I'm moving a client off Lovable to Next.js right now. Here's the full playbook (and why it's an AEO move, not a vanity rebuild)"
+  },
+  "1u8j2ux": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 800,
+   "title": "I'm moving a client off Lovable to Next.js right now. Here's the full playbook (and why it's an AEO move, not a vanity rebuild)"
+  },
+  "1u7x7ym": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 13,
+   "comments": 17,
+   "views": 5900,
+   "title": "I'm moving a client off Lovable to Next.js right now. Here's the full playbook (and why it's an AEO move, not a vanity rebuild)"
+  },
+  "1u61m4s": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 52,
+   "comments": 1,
+   "views": 28000,
+   "title": "10 more repos I use in my actual GTM stack"
+  },
+  "1u61zei": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 4,
+   "comments": 0,
+   "views": 718,
+   "title": "10 more repos I use in my actual GTM stack"
+  },
+  "1u61yts": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 4,
+   "comments": 1,
+   "views": 3000,
+   "title": "10 more repos I use in my actual GTM stack"
+  },
+  "1u4yt8n": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 2,
+   "views": 2300,
+   "title": "Has anyone run outbound from Claude Code/codex+ ACS?"
+  },
+  "1u4yulp": {
+   "kind": "post",
+   "subreddit": "saasbuild",
+   "score": 1,
+   "comments": 0,
+   "views": 361,
+   "title": "Has anyone run outbound from Claude Code/codex+ ACS?"
+  },
+  "1u4yty2": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 975,
+   "title": "Has anyone run outbound from Claude Code/codex+ ACS?"
+  },
+  "1u4ytrk": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 430,
+   "title": "Has anyone run outbound from Claude Code/codex+ ACS?"
+  },
+  "1u3jmuq": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 3,
+   "comments": 0,
+   "views": 579,
+   "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
+  },
+  "1u3jm8n": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 0,
+   "views": 2000,
+   "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
+  },
+  "1u3jo6j": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 2,
+   "comments": 0,
+   "views": 1000,
+   "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
+  },
+  "1u3jnll": {
+   "kind": "post",
+   "subreddit": "miro",
+   "score": 2,
+   "comments": 0,
+   "views": 571,
+   "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
+  },
+  "1u254h4": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 15,
+   "comments": 4,
+   "views": 8200,
+   "title": "10 repos you can copy, fork, and adapt right now."
+  },
+  "1u255b1": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 2,
+   "comments": 0,
+   "views": 1600,
+   "title": "10 repos you can copy, fork, and adapt right now."
+  },
+  "1u254ud": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 0,
+   "views": 555,
+   "title": "10 repos you can copy, fork, and adapt right now."
+  },
+  "1u1qzhr": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 6,
+   "views": 1300,
+   "title": "Why I Built GTM Builders...Slight Rant + Value Drop"
+  },
+  "1u1rp6r": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 494,
+   "title": "Why I Built GTM Builders...Slight Rant + Value Drop"
+  },
+  "1ty4my7": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 17,
+   "comments": 36,
+   "views": 6400,
+   "title": "My prediction is that the go-to-market engineering role will evolve into a generalist position."
+  },
+  "1ty3eau": {
+   "kind": "post",
+   "subreddit": "UseApolloIo",
+   "score": 5,
+   "comments": 5,
+   "views": 2900,
+   "title": "My Claude code session just confirmed that Apollo is your first run engine."
+  },
+  "1ty3hbl": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 4,
+   "comments": 1,
+   "views": 4000,
+   "title": "My Claude code session just confirmed that Apollo is your first run engine."
+  },
+  "1ty3g5f": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 3,
+   "comments": 0,
+   "views": 824,
+   "title": "My Claude code session just confirmed that Apollo is your first run engine."
+  },
+  "1tw3icv": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 10,
+   "comments": 11,
+   "views": 2500,
+   "title": "What's up builders, sharing my latest client workflow process with you guys. 20k deal, 60 day build + ongoing consulting. Week and a half in. Here's how it's going."
+  },
+  "1tw3iu2": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 423,
+   "title": "What's up builders, sharing my latest client workflow process with you guys. 20k deal, 60 day build + ongoing consulting. Week and a half in. Here's how it's going."
+  },
+  "1toksov": {
+   "kind": "post",
+   "subreddit": "UseApolloIo",
+   "score": 6,
+   "comments": 10,
+   "views": 1200,
+   "title": "Apollo's API covers most of what teams spend Clay or ZoomInfo credits on. three steps, in order, across every VC portfolio scrape I run."
+  },
+  "1tomg3b": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 0,
+   "views": 706,
+   "title": "Apollo's API covers most of what teams spend Clay or ZoomInfo credits on. three steps, in order, across every VC portfolio scrape I run."
+  },
+  "1toms1v": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 0,
+   "comments": 1,
+   "views": 1100,
+   "title": "Three Apollo API patterns across VC portfolio scrapes (a16z, YC, Sequoia) + gotchas"
+  },
+  "1tk7ywm": {
+   "kind": "post",
+   "subreddit": "hubspot",
+   "score": 9,
+   "comments": 9,
+   "views": 6300,
+   "title": "A few weeks back I posted here about running HubSpot CRM work through Claude Code CLI and the seven gotchas I hit."
+  },
+  "1tk8biq": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 0,
+   "views": 1100,
+   "title": "dropping a play before the weekend. hubspot landing pages, generated programmatically."
+  },
+  "1tk8bw7": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 0,
+   "views": 371,
+   "title": "dropping a play before the weekend. hubspot landing pages, generated programmatically."
+  },
+  "1th8qqh": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 4,
+   "comments": 15,
+   "views": 2000,
+   "title": "Curious how the rest of you are handling this. I'm scraping a lot, fast, multiple terminals at once."
+  },
+  "1th8rdu": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 1,
+   "views": 930,
+   "title": "Curious how the rest of you are handling this. I'm scraping a lot, fast, multiple terminals at once."
+  },
+  "1tane1g": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 4,
+   "comments": 0,
+   "views": 3500,
+   "title": "Meta Ad Library + Claude Code: how I built a competitor positioning scraper, what the 18-column taxonomy looks like, and what I broke first."
+  },
+  "1tangju": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 3,
+   "comments": 0,
+   "views": 1800,
+   "title": "Meta Ad Library + Claude Code: how I built a competitor positioning scraper, what the 18-column taxonomy looks like, and what I broke first."
+  },
+  "1tanexp": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 0,
+   "comments": 1,
+   "views": 983,
+   "title": "Meta Ad Library + Claude Code: how I built a competitor positioning scraper, what the 18-column taxonomy looks like, and what I broke first."
+  },
+  "1t7uk0c": {
+   "kind": "post",
+   "subreddit": "OnePiece",
+   "score": 58,
+   "comments": 84,
+   "views": 71000,
+   "title": "Which Devil Fruit would you choose, but there\u2019s a catch"
+  },
+  "1t1a7ym": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 5,
+   "comments": 10,
+   "views": 2000,
+   "title": "Built a full YC + a16z company scraper with Claude Code - no Apify, no paid tools"
+  },
+  "1t1a8uh": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 4,
+   "comments": 0,
+   "views": 1200,
+   "title": "Built a full YC + a16z company scraper with Claude Code - no Apify, no paid tools"
+  },
+  "1t1a8ei": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 2,
+   "views": 908,
+   "title": "Built a full YC + a16z company scraper with Claude Code - no Apify, no paid tools"
+  },
+  "1su7zj1": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 5,
+   "comments": 19,
+   "views": 1300,
+   "title": "Intent signals are qualification scores, not buying intent"
+  },
+  "1su8c3j": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 0,
+   "comments": 0,
+   "views": 578,
+   "title": "Intent signals are qualification scores, not buying intent"
+  },
+  "1ss3ma7": {
+   "kind": "post",
+   "subreddit": "hubspot",
+   "score": 32,
+   "comments": 32,
+   "views": 12000,
+   "title": "3 weeks running HubSpot from Claude Code CLI instead of MCP. 7 gotchas."
+  },
+  "1sojfdr": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 5,
+   "comments": 2,
+   "views": 1400,
+   "title": "Built a web-visitor-intel dashboard with Claude Code. Curious what you'd add."
+  },
+  "1sojisg": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 14,
+   "views": 1900,
+   "title": "Honest take: MidBound vs Vector vs RB2B."
+  },
+  "1sly13q": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 4,
+   "comments": 6,
+   "views": 1400,
+   "title": "Intel stack that treats SQLite as version control. Apify CLI + Claude subprocess + d3-force in one repo."
+  },
+  "1sfjmgm": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 10,
+   "comments": 18,
+   "views": 1900,
+   "title": "building a GTM dashboard alongside my database. sharing it as it grows."
+  },
+  "1sfjszk": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 10,
+   "comments": 3,
+   "views": 1200,
+   "title": "building a GTM dashboard alongside my database. sharing it as it grows."
+  },
+  "1sfjmqc": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 1,
+   "comments": 0,
+   "views": 222,
+   "title": "building a GTM dashboard alongside my database. sharing it as it grows."
+  },
+  "1sdjd0v": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 74,
+   "comments": 20,
+   "views": 95000,
+   "title": "5,355 upvotes on a post about teaching Claude to talk like a caveman. the Claude subreddits had a weekend."
+  },
+  "1sdjgtc": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 1,
+   "views": 2000,
+   "title": "Weekend Recap: The 10 posts, 3 repos, and 2 code drops that actually mattered (April 3-5)"
+  },
+  "1sc2ckw": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 1,
+   "views": 5200,
+   "title": "I tracked 178 posts across 5 Claude subreddits yesterday. Claude Code 2.1.92 shipped the usage visibility tools everyone's been asking for while the community was busy fighting about OpenClaw."
+  },
+  "1s9ylfe": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 69,
+   "comments": 43,
+   "views": 11000,
+   "title": "Supabase + Google Sheets + Claude Code replaced Clay for me. here's how I run enrichment, scoring, and prospecting without credit limits or waterfall headaches"
+  },
+  "1s9yac0": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 10,
+   "comments": 8,
+   "views": 3200,
+   "title": "GTM with coding agents: the full stack, every command, and 4 workflows you can run today"
+  },
+  "1sa06f7": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 3,
+   "comments": 2,
+   "views": 2100,
+   "title": "I built an entire GTM operation through Claude Code while my co-founder built the product. neither of us hit rate limits"
+  },
+  "1sa090w": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 0,
+   "comments": 8,
+   "views": 3300,
+   "title": "using Claude Code for go-to-market, not just code. context engineering patterns that keep sessions productive."
+  },
+  "1s9zygj": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 0,
+   "comments": 2,
+   "views": 404,
+   "title": "building a product with my co-founder. I run all GTM from 4 terminal sessions on a Mac Mini. here's the full setup"
+  },
+  "1s9z1l3": {
+   "kind": "post",
+   "subreddit": "saasbuild",
+   "score": 1,
+   "comments": 0,
+   "views": 234,
+   "title": "Supabase + Google Sheets + Claude Code replaced Clay for me. here's how I run enrichment, scoring, and prospecting without credit limits or waterfall headaches"
+  },
+  "1s9yaq8": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 0,
+   "comments": 0,
+   "views": 600,
+   "title": "GTM with coding agents: the full stack, every command, and 4 workflows you can run today"
+  },
+  "1s5qxyq": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 302,
+   "comments": 115,
+   "views": 252000,
+   "title": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data."
+  },
+  "1s5r0hj": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 227,
+   "comments": 122,
+   "views": 238000,
+   "title": "On the $200 Max plan and never been rate limited once. Ran the numbers to find out why everyone else is."
+  },
+  "1s6fieo": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 2,
+   "comments": 10,
+   "views": 7700,
+   "title": "Part two of the rate limit saga: things I'm actually doing to prevent ever getting throttled on the $200 max plan"
+  },
+  "1s6fh3w": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 0,
+   "views": 2000,
+   "title": "What I'm doing to actually prevent any rate limits aside from being in the right time zone"
+  },
+  "1s5kzls": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 3,
+   "comments": 0,
+   "views": 590,
+   "title": "Hey builders, dropping a repo I just finished building out. It's basically coding agents for GTM starter kit.. not your LinkedIn skill pack.!!!"
+  },
+  "1s5r6bl": {
+   "kind": "post",
+   "subreddit": "ContextEngineering",
+   "score": 1,
+   "comments": 1,
+   "views": 1200,
+   "title": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data."
+  },
+  "1s5r41i": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 0,
+   "comments": 0,
+   "views": 503,
+   "title": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data."
+  },
+  "1s5kz3h": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 0,
+   "comments": 2,
+   "views": 2300,
+   "title": "Hey builders, dropping a repo I just finished building out. It's basically coding agents for GTM starter kit.. not your LinkedIn skill pack.!!!"
+  },
+  "1s3240b": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 1,
+   "comments": 1,
+   "views": 2000,
+   "title": "Claude Daily: March 24 recap. /dream shipped, the community invented a pharmacy, and a deaf developer built something more important than all of it."
+  },
+  "1s321yw": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 1,
+   "comments": 3,
+   "views": 1700,
+   "title": "Claude Code Daily: March 25 edition is liveClaude Code Daily: March 24 recap. /dream shipped, the community invented a pharmacy, and a deaf developer built something more important than all of it."
+  },
+  "1s2t6da": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 2,
+   "comments": 1,
+   "views": 4000,
+   "title": "Okay, I know everyone has their version of a context system. I know I'm not reinventing the wheel here.If you're new to Claude Code, this is great. If not, feel free to offer your take"
+  },
+  "1s24yit": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 23,
+   "comments": 28,
+   "views": 31000,
+   "title": "Been tracking Claude Code releases daily and writing up what actually matters from the subreddit noise. today's edition"
+  },
+  "1s257ld": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 1,
+   "comments": 2,
+   "title": "Claude Daily Monday edition. Here's everything you need to know. The  community has spoken"
+  },
+  "1s21mtk": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 388,
+   "title": "Sharing something with the group that might shift how you think about content ops."
+  },
+  "1s21mmi": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 0,
+   "comments": 1,
+   "views": 785,
+   "title": "Sharing something with the group that might shift how you think about content ops."
+  },
+  "1s01cxh": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 3,
+   "comments": 2,
+   "views": 6100,
+   "title": "March 20 Claude Daily...Here's the real value"
+  },
+  "1s019zj": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 0,
+   "views": 444,
+   "title": "March 20 Claude Daily...Here's the real value"
+  },
+  "1s018bg": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 2,
+   "views": 772,
+   "title": "March 20 Claude Daily...Here's the real value"
+  },
+  "1s018w3": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 1,
+   "comments": 0,
+   "views": 678,
+   "title": "March 20 Claude Code Daily...Here's the real value"
+  },
+  "1rzgfi8": {
+   "kind": "post",
+   "subreddit": "theplumbernyc",
+   "score": 1,
+   "comments": 0,
+   "views": 457,
+   "title": "Part 2 From the plumber's son: what young tradespeople should be doing right now that most aren't"
+  },
+  "1rykecv": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 6,
+   "views": 1100,
+   "title": "Claude Code Daily is live."
+  },
+  "1rykgh9": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 0,
+   "views": 791,
+   "title": "Claude Code Daily is live."
+  },
+  "1rykfez": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 450,
+   "title": "Claude Code Daily is live."
+  },
+  "1rxsxq3": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 2,
+   "comments": 3,
+   "views": 2800,
+   "title": "vibe coding at 2 AM looks like on a MacBook Neo + Mini"
+  },
+  "1rxszin": {
+   "kind": "post",
+   "subreddit": "MacbookNeo",
+   "score": 0,
+   "comments": 0,
+   "views": 1300,
+   "title": "vibe coding at 2 AM looks like on a MacBook Neo + Mini"
+  },
+  "1rxsyxm": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 1,
+   "comments": 0,
+   "views": 183,
+   "title": "vibe coding at 2 AM looks like on a MacBook Neo + Mini"
+  },
+  "1rwjqf3": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 11,
+   "comments": 8,
+   "views": 2500,
+   "title": "30 days on Reddit. 1,100 karma, 300K views. here's every comment and post type that worked. and what didn't"
+  },
+  "1rwkatf": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 8,
+   "comments": 10,
+   "views": 3500,
+   "title": "I spent a month treating Reddit like a growth channel for GTM engineering. here's what worked."
+  },
+  "1rwl9ga": {
+   "kind": "post",
+   "subreddit": "claude",
+   "score": 1,
+   "comments": 1,
+   "title": "I'm not a developer. 6 weeks ago I'd never touched Next.js. here's what I shipped with Claude Code."
+  },
+  "1rvq836": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 26,
+   "comments": 8,
+   "views": 13000,
+   "title": "open-sourced my entire GTM engineering stack. not selling anything yet.... just tired of the gatekeeping."
+  },
+  "1rwl58g": {
+   "kind": "post",
+   "subreddit": "ClaudeAI",
+   "score": 0,
+   "comments": 5,
+   "views": 18000,
+   "title": "I'm not a developer. 6 weeks ago I'd never touched Next.js. here's what I shipped with Claude Code."
+  },
+  "1rw03od": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 1,
+   "comments": 1,
+   "views": 943,
+   "title": "update on the 6-week build post + owning a mistake"
+  },
+  "1rv3cw2": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 72,
+   "comments": 224,
+   "views": 246000,
+   "title": "been mass building with Claude Code every day for 6 weeks straight. just left my agency a week ago betting on this stack full time."
+  },
+  "1rv3j5j": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 9,
+   "comments": 2,
+   "views": 3000,
+   "title": "what's up builders. dropping a LinkedIn post this morning that covers everything I've been building for the last 6 weeks with Claude Code."
+  },
+  "1rv3d1i": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 1,
+   "comments": 0,
+   "views": 387,
+   "title": "been mass building with Claude Code every day for 6 weeks straight. just left my agency a week ago betting on this stack full time."
+  },
+  "1ruth29": {
+   "kind": "post",
+   "subreddit": "midjourney",
+   "score": 0,
+   "comments": 0,
+   "views": 1500,
+   "title": "Built a deep-dive page on using Midjourney for website building.would love feedback"
+  },
+  "1rtxsmh": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 23,
+   "comments": 49,
+   "views": 72000,
+   "title": "anyone running Claude Code over SSH from a thin client?"
+  },
+  "1rtvolz": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 11,
+   "comments": 3,
+   "views": 12000,
+   "title": "Testing the new 1M context window be like..."
+  },
+  "1rtxsv2": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 1,
+   "comments": 0,
+   "views": 647,
+   "title": "anyone running Claude Code over SSH from a thin client?"
+  },
+  "1rt2la2": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 10,
+   "comments": 0,
+   "views": 5200,
+   "title": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --> 1M tokens."
+  },
+  "1rt9x4o": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 0,
+   "views": 548,
+   "title": "this was built before this subreddit existed. 4 sites, one monorepo, one Mac Mini. so im re-sharing...feedback appreciated"
+  },
+  "1rsfzmv": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 98,
+   "comments": 23,
+   "views": 27000,
+   "title": "life now with cc remote control"
+  },
+  "1rt2jp4": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 4,
+   "comments": 3,
+   "views": 1500,
+   "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price."
+  },
+  "1rt9p91": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 1,
+   "comments": 0,
+   "views": 467,
+   "title": "life now with cc remote control"
+  },
+  "1rt2zrk": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 12,
+   "views": 4700,
+   "title": "200k --> 1M context window. same price. the compaction anxiety era is over. LFG!!!!"
+  },
+  "1rsweqs": {
+   "kind": "post",
+   "subreddit": "askaplumber",
+   "score": 1,
+   "comments": 0,
+   "views": 219,
+   "title": "I spent 10 years as a plumber in NYC alongside my dad. Now I'm using tech to share everything he knows. for free."
+  },
+  "1rs14vv": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 20,
+   "comments": 17,
+   "views": 5600,
+   "title": "Clay's new pricing changes what I build with. here's my updated stack."
+  },
+  "1rs1f6n": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 11,
+   "comments": 8,
+   "views": 1300,
+   "title": "tool devotion is a trap. Clay just proved the thesis."
+  },
+  "1rrecae": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 6,
+   "comments": 24,
+   "views": 11000,
+   "title": "Clay Just Changed Their Entire Pricing Model. Here's My Take After 18 Months of grinding"
+  },
+  "1rrf0i5": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 6,
+   "views": 1700,
+   "title": "Clay's New Pricing. What It Actually Means If You're Not Living Inside Clay All Day"
+  },
+  "1rr4hlb": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 7,
+   "comments": 1,
+   "views": 1100,
+   "title": "stop renting your audience. build your own website."
+  },
+  "1rr4iee": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 3,
+   "comments": 0,
+   "views": 451,
+   "title": "stop renting your audience. build your own website."
+  },
+  "1rq991a": {
+   "kind": "post",
+   "subreddit": "NYCapartments",
+   "score": 189,
+   "comments": 26,
+   "views": 32000,
+   "title": "I spent 10 years as a plumber in NYC alongside my dad. Now I'm using tech to share everything he knows. for free."
+  },
+  "1rrc4bw": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 1,
+   "comments": 0,
+   "views": 1000,
+   "title": "/Contexthandoffs + Claude Code sessions be like"
+  },
+  "1rr7swx": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 1,
+   "comments": 1,
+   "views": 208,
+   "title": "building a community for people actually shipping with AI"
+  },
+  "1rr6ssa": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 1,
+   "comments": 5,
+   "views": 1700,
+   "title": "building a community for people actually shipping with AI"
+  },
+  "1rqg2sq": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 11,
+   "comments": 6,
+   "views": 2300,
+   "title": "Before You Hire a Clay Agency. Free Audit Checklist"
+  },
+  "1rqnk03": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 2,
+   "views": 720,
+   "title": "if you've ever felt like you were built for more than configuring someone else's tool.READ THIS."
+  },
+  "1rqk2oy": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 0,
+   "views": 1300,
+   "title": "builder-led growth is not a strategy. it's a rejection of everything that's broken."
+  },
+  "1rqitww": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 11,
+   "views": 1200,
+   "title": "the new GTM resume is a GitHub repo and Reddit karma"
+  },
+  "1rqnmtg": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 342,
+   "title": "if you've ever felt like you were built for more than configuring someone else's tool.READ THIS."
+  },
+  "1rqku0m": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 340,
+   "title": "builder-led growth is not a strategy. it's a rejection of everything that's broken."
+  },
+  "1rqixpo": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 8,
+   "views": 1100,
+   "title": "the new GTM resume is a GitHub repo and Reddit karma"
+  },
+  "1rqg2zr": {
+   "kind": "post",
+   "subreddit": "SaaS",
+   "score": 1,
+   "comments": 0,
+   "views": 223,
+   "title": "Before You Hire a Clay Agency. Free Audit Checklist"
+  },
+  "1rq99j7": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 2,
+   "comments": 1,
+   "views": 192,
+   "title": "I spent 10 years as a plumber in NYC alongside my dad. Now I'm using tech to share everything he knows. for free."
+  },
+  "1roenoy": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 26,
+   "comments": 9,
+   "views": 7100,
+   "title": "from SDR to solo GTM engineer. the AI development method behind my entire operation"
+  },
+  "1rosk43": {
+   "kind": "post",
+   "subreddit": "claude",
+   "score": 0,
+   "comments": 0,
+   "views": 726,
+   "title": "from SDR to solo GTM engineer. the AI development method behind my entire operation"
+  },
+  "1rof0eb": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 1,
+   "comments": 0,
+   "views": 322,
+   "title": "from SDR to solo GTM engineer. the AI development method behind my entire operation"
+  },
+  "1roepik": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 0,
+   "views": 834,
+   "title": "I built a methodology for working with Claude Code after weeks of heavy use. looking for early feedback"
+  },
+  "otmznw1": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oszgzkh": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "ost1ki0": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 4
+  },
+  "osfkm20": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 3
+  },
+  "os9wlku": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "os7jgeu": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "os7izgv": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "os7ip7w": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "os7ibrj": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "orn20gw": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "org5cv2": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "or5ub5n": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oqx927o": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "oqwxemk": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 1
+  },
+  "oqwpt1w": {
+   "kind": "comment",
+   "subreddit": "GEO_optimization",
+   "score": 1
+  },
+  "oquupg4": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oqss68f": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oqscel2": {
+   "kind": "comment",
+   "subreddit": "saasbuild",
+   "score": 2
+  },
+  "oqs48qd": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oqs3t3c": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oqs3l0z": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oqs37ry": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oqrgwyf": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oqrcut6": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oqi6605": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "oqe5r7i": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "oqc9fr9": {
+   "kind": "comment",
+   "subreddit": "devworld",
+   "score": 1
+  },
+  "oqau3rd": {
+   "kind": "comment",
+   "subreddit": "devworld",
+   "score": 1
+  },
+  "oqatc1a": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 0
+  },
+  "oqasubu": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oq5arle": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oq49v2d": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oq42wmn": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oq3w5v8": {
+   "kind": "comment",
+   "subreddit": "buildinpublic",
+   "score": 1
+  },
+  "oq3uxcv": {
+   "kind": "comment",
+   "subreddit": "startups",
+   "score": 3
+  },
+  "oq1daws": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oq0t2le": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oq0m5bo": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 2
+  },
+  "opzzp0y": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opzyy9j": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opzym8i": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opzy33i": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 2
+  },
+  "opzfx2j": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 2
+  },
+  "opunhb0": {
+   "kind": "comment",
+   "subreddit": "MacroStartups",
+   "score": 1
+  },
+  "opuncsw": {
+   "kind": "comment",
+   "subreddit": "devworld",
+   "score": 1
+  },
+  "opulfkj": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opu8t78": {
+   "kind": "comment",
+   "subreddit": "AIAgentsStack",
+   "score": 1
+  },
+  "opu5ik3": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opu47g2": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opu24a9": {
+   "kind": "comment",
+   "subreddit": "startupaccelerator",
+   "score": 1
+  },
+  "optllor": {
+   "kind": "comment",
+   "subreddit": "startupaccelerator",
+   "score": 1
+  },
+  "optleu8": {
+   "kind": "comment",
+   "subreddit": "saasbuild",
+   "score": 1
+  },
+  "opt2c8v": {
+   "kind": "comment",
+   "subreddit": "saasbuild",
+   "score": 1
+  },
+  "opt1kfu": {
+   "kind": "comment",
+   "subreddit": "buildinpublic",
+   "score": 1
+  },
+  "opt02nb": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opsxun3": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opswnui": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opsvmbl": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opsuic4": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opstn6r": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opst4g9": {
+   "kind": "comment",
+   "subreddit": "Affiliatemarketing",
+   "score": 1
+  },
+  "opssgjb": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 2
+  },
+  "opsr71g": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opsq3di": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opspdqb": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opsp1t0": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "ops6dqy": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 2
+  },
+  "ops03u1": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "oprzldt": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "oprz13y": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 3
+  },
+  "opry5tw": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 0
+  },
+  "oprvtpa": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "oprt6g4": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opnfvwd": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "opmas7b": {
+   "kind": "comment",
+   "subreddit": "salesdevelopment",
+   "score": 1
+  },
+  "opm5hi3": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "opll7e0": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 2
+  },
+  "opkgzqn": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 1
+  },
+  "opjq4qp": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 1
+  },
+  "opjihjm": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 1
+  },
+  "opj53zm": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "ophyuv4": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "ophjgl1": {
+   "kind": "comment",
+   "subreddit": "GrowthHacking",
+   "score": 1
+  },
+  "ophd4jr": {
+   "kind": "comment",
+   "subreddit": "GrowthHacking",
+   "score": 1
+  },
+  "opgxfua": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opgwqop": {
+   "kind": "comment",
+   "subreddit": "GrowthHacking",
+   "score": 1
+  },
+  "opgvv61": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opgv3yk": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 1
+  },
+  "opgtlae": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opgq1pk": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opgpbbn": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opgn3i4": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 2
+  },
+  "opgmyby": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opgly8j": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opfz5zq": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opfb17s": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 2
+  },
+  "opevmi0": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 1
+  },
+  "opetxem": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 1
+  },
+  "opet1v1": {
+   "kind": "comment",
+   "subreddit": "Entrepreneur",
+   "score": 1
+  },
+  "opesazx": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "operdsn": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 0
+  },
+  "opeqe3v": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "opeoacd": {
+   "kind": "comment",
+   "subreddit": "AskMarketing",
+   "score": 1
+  },
+  "opembq2": {
+   "kind": "comment",
+   "subreddit": "GrowthHacking",
+   "score": 1
+  },
+  "op026kw": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oooxc9s": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 1
+  },
+  "oolagmn": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 1
+  },
+  "oo2a8hp": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oo26a8j": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 2
+  },
+  "onhphbg": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "ongd59p": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "omrvcri": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "omrv1zv": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "omrsvm2": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "omqd2wy": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "omm3xc6": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "omj0rkz": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "om8a6us": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 1
+  },
+  "om1ueip": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "om1rs7q": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "om1mr45": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "om0bq19": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "om09qfw": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "olucnp6": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 0
+  },
+  "oluaccp": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "olojoio": {
+   "kind": "comment",
+   "subreddit": "b2bmarketing",
+   "score": 7
+  },
+  "olojgiq": {
+   "kind": "comment",
+   "subreddit": "b2bmarketing",
+   "score": 2
+  },
+  "olo6hkd": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "olo60pp": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 2
+  },
+  "olnu53v": {
+   "kind": "comment",
+   "subreddit": "Anthropic",
+   "score": 1
+  },
+  "okuoufy": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 1
+  },
+  "okrzm9j": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 1
+  },
+  "okrsijy": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 5
+  },
+  "okrs8if": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 4
+  },
+  "okrrgm9": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 12
+  },
+  "okrozvb": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 7
+  },
+  "okrm3b4": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 17
+  },
+  "okqdp0d": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "okqd9lc": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 1
+  },
+  "okbs9hh": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "okbrghg": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ojs8s3u": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ojn6yek": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 4
+  },
+  "ojmg353": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ojmfpcz": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "ojmfn32": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 5
+  },
+  "oigy28k": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oia5rww": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": -2
+  },
+  "oia30vu": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": -4
+  },
+  "oi9qn9k": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oi9q4ic": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": -3
+  },
+  "oi968x0": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ohz6q0g": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ohz6fso": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ohqjhcq": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 1
+  },
+  "ohp612w": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 2
+  },
+  "ohp5jcy": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 1
+  },
+  "ohp4p11": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 3
+  },
+  "ohp2l1j": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "ohlae86": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 0
+  },
+  "ohl870l": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 2
+  },
+  "ohl5nsr": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ohl3otu": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 2
+  },
+  "ohl2ccv": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 4
+  },
+  "ohl114r": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 3
+  },
+  "ohkyoj4": {
+   "kind": "comment",
+   "subreddit": "hubspot",
+   "score": 1
+  },
+  "ohj3izb": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ohcenk5": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oh0mv98": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oh0ms06": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oh0l5fb": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "ogye94r": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "og88jiy": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oftlwe1": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 1
+  },
+  "ofs6a8c": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 8
+  },
+  "ofpmq5p": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ofoggja": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "ofo5c2w": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ofgjljd": {
+   "kind": "comment",
+   "subreddit": "GEO_optimization",
+   "score": 2
+  },
+  "ofgj1it": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 3
+  },
+  "ofgikv8": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ofgi91d": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 7
+  },
+  "ofc1cpb": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 49
+  },
+  "ofc13i6": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 8
+  },
+  "ofc0ozz": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "of20r4v": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "of0mufk": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "of0mibg": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "of0m6hy": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "of0l1ul": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oetnqgp": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "oen0qgx": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 2
+  },
+  "oej46x7": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 2
+  },
+  "oej0uep": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 3
+  },
+  "oeiipev": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oe4gxpg": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oe0r5ba": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "odzuik5": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "odyvz77": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "odykj5u": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "odwzyiy": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "odwjgeb": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "odtwkam": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "odtw6ih": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "odtvshb": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "odswbf4": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "odsl1ql": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "odsfmn0": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "odscgyc": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "odra2tv": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "odc45jt": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "od5ohga": {
+   "kind": "comment",
+   "subreddit": "salesdevelopment",
+   "score": 2
+  },
+  "od5nxng": {
+   "kind": "comment",
+   "subreddit": "GEO_optimization",
+   "score": 0
+  },
+  "od2uyh4": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "od1rlfz": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "od1p7nr": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "od10wq6": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "od0sje8": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "od0s2l1": {
+   "kind": "comment",
+   "subreddit": "MacbookNeo",
+   "score": 1
+  },
+  "oczau5q": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ocwy1bd": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "ocwx7vv": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -1
+  },
+  "ocwwued": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -3
+  },
+  "ocwvq8m": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "ocwuqdj": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -6
+  },
+  "ocwugyw": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 4
+  },
+  "ocwub2p": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ocwtpnr": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ocwt4gq": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -18
+  },
+  "ocwskpw": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": -1
+  },
+  "ocws6q4": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -22
+  },
+  "ocwrixj": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -2
+  },
+  "ocwpwvk": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 5
+  },
+  "ocwpjtx": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 5
+  },
+  "ocwp71g": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 7
+  },
+  "ocwoxhv": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ocwonq6": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 8
+  },
+  "ocwofy4": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -29
+  },
+  "ocwnro5": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ocwng2t": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ocwlqfg": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 7
+  },
+  "ocwfg64": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ocwc8sg": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 1
+  },
+  "ocw85io": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 1
+  },
+  "ocqcelj": {
+   "kind": "comment",
+   "subreddit": "salesdevelopment",
+   "score": 0
+  },
+  "ocq86r4": {
+   "kind": "comment",
+   "subreddit": "salesdevelopment",
+   "score": 2
+  },
+  "ocpz95e": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "ocpxvj4": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 0
+  },
+  "oco1eqa": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "ocm811w": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ociqejo": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "ocicomo": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "ochukhx": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ocgvlty": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ocgbrik": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "occe56c": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "occaukb": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 5
+  },
+  "oc9yl5g": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oc9xki2": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oc9xi95": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "oc8et11": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oc5yr7p": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oc5ptf1": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "oc5p29r": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oc5n8ng": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 4
+  },
+  "oc5g6xo": {
+   "kind": "comment",
+   "subreddit": "b2bmarketing",
+   "score": 1
+  },
+  "oc5fw5q": {
+   "kind": "comment",
+   "subreddit": "b2bmarketing",
+   "score": 1
+  },
+  "oc5fob3": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "oc5dy2g": {
+   "kind": "comment",
+   "subreddit": "b2bmarketing",
+   "score": 1
+  },
+  "oc4wq0a": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oc3a3po": {
+   "kind": "comment",
+   "subreddit": "theplumbernyc",
+   "score": 1
+  },
+  "oc39z4g": {
+   "kind": "comment",
+   "subreddit": "theplumbernyc",
+   "score": 1
+  },
+  "oc20l5z": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oc1zigi": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oc1ykzw": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "obxsr5k": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "obxofgd": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "obx5rsj": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "obv6kw1": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "obrhglq": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "obq527i": {
+   "kind": "comment",
+   "subreddit": "theplumbernyc",
+   "score": 1
+  },
+  "obq1zc6": {
+   "kind": "comment",
+   "subreddit": "salesdevelopment",
+   "score": 1
+  },
+  "obpry5p": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oboxylg": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "obm808a": {
+   "kind": "comment",
+   "subreddit": "claude",
+   "score": 1
+  },
+  "obm3v5a": {
+   "kind": "comment",
+   "subreddit": "claude",
+   "score": 3
+  },
+  "objw488": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "obg4txm": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "obfbdf6": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "obdais5": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "obd9y8h": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "obclbba": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ob90bp6": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ob8274k": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob80dc5": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7xizr": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7xcmu": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7x0c2": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7wshy": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7vpi4": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "ob7v96k": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7v3cr": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "ob7ulfg": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ob7uc3c": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7u01t": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7sh8m": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7ryur": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7dkxg": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob7dhrw": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob5fs42": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ob2lj0t": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "ob1awbj": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ob0ntfz": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "ob0jrv4": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": -2
+  },
+  "ob0cnpy": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "ob06k6m": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ob04em4": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oaz0vbn": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oayrbyj": {
+   "kind": "comment",
+   "subreddit": "macbook",
+   "score": 2
+  },
+  "oaw65hm": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oavkt1l": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oavf5ac": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oauy718": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oauxo2m": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oauv1tj": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oauqwpm": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oau6c4w": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oau3ek5": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oas8pz2": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oas8hym": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "oas7gzl": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oas70br": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oas6hm8": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "oas13ga": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oas05of": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -10
+  },
+  "oarzjmx": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "oarz58w": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oarz14j": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oaryfrz": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oary5n2": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 5
+  },
+  "oarxn0w": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -7
+  },
+  "oarxcfp": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oarxa5v": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -17
+  },
+  "oarwq6d": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -3
+  },
+  "oarwocn": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 4
+  },
+  "oarwfft": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "oapy38k": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -1
+  },
+  "oapxd4n": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 5
+  },
+  "oapx2am": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oapsrok": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -1
+  },
+  "oapsf6q": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oaps8jt": {
+   "kind": "comment",
+   "subreddit": "MacbookNeo",
+   "score": 3
+  },
+  "oapq9rc": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "oapldjm": {
+   "kind": "comment",
+   "subreddit": "macbook",
+   "score": 1
+  },
+  "oaniybq": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "oamumxd": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oamqqub": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "oamepiw": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oam75ra": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "oajdnmc": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oajafmm": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oaj4zp1": {
+   "kind": "comment",
+   "subreddit": "TheFounders",
+   "score": 1
+  },
+  "oaiuqvr": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 4
+  },
+  "oai6sc1": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oahlmza": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oahj2w3": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 6
+  },
+  "oahiwg0": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oahg4j2": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oahfbz4": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 4
+  },
+  "oahf43d": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "oagwjkb": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "oagwc4w": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oad0p6h": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oac5f3p": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oac2onx": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oabtayj": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oabq1ra": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oabpivv": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 3
+  },
+  "oabnpoi": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 6
+  },
+  "oabhszv": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "oabg4o7": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oabezma": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "oabbyah": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oab6yu1": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oab1dqx": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 0
+  },
+  "oab1cv3": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 4
+  },
+  "oab11vj": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 2
+  },
+  "oa9uq6j": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "oa6r1g2": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 0
+  },
+  "oa6n16r": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oa6my3w": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 3
+  },
+  "oa56d3u": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oa4z5dl": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oa4yocx": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oa4xs8i": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oa4rfcr": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "oa3r4u8": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 3
+  },
+  "oa36pwk": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "oa2pb6p": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "oa2mnzm": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "oa2ewk7": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "oa2egfh": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "oa0913t": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o9zzf9u": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "o9zwna3": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o9zthc6": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "o9zphdf": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "o9zpa99": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "o9zftnv": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o9zeq2h": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9zeovs": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9zejg6": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "o9ybwqs": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "o9y9t4r": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "o9xn0qq": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o9xdwal": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o9xdqhn": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "o9xairb": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 237
+  },
+  "o9x9pm2": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 1
+  },
+  "o9x8ay0": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9wom6i": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 1
+  },
+  "o9wghaf": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9wf3tj": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 1
+  },
+  "o9tfrvt": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "o9t6tc4": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9t5ccl": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9su7js": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9sth18": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9sqzvh": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": -2
+  },
+  "o9sm68r": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 3
+  },
+  "o9sajiz": {
+   "kind": "comment",
+   "subreddit": "movingtoNYC",
+   "score": 1
+  },
+  "o9s84nw": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 3
+  },
+  "o9s377o": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 46
+  },
+  "o9ruak0": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 9
+  },
+  "o9r1ixq": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 3
+  },
+  "o9r118n": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 3
+  },
+  "o9r056m": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 8
+  },
+  "o9qzzur": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 3
+  },
+  "o9qyxck": {
+   "kind": "comment",
+   "subreddit": "NYCapartments",
+   "score": 11
+  },
+  "o9qumhf": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 4
+  },
+  "o9qajcb": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "o9py7cd": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o9ptcod": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 0
+  },
+  "o9p9snl": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 5
+  },
+  "o9miku2": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 1
+  },
+  "o9mbzny": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 13
+  },
+  "o9m6r7t": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 1
+  },
+  "o9m1o8j": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 7
+  },
+  "o9m193a": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 6
+  },
+  "o9m0v7o": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 3
+  },
+  "o9lxvs1": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 32
+  },
+  "o9lx7g1": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 9
+  },
+  "o9lwxd2": {
+   "kind": "comment",
+   "subreddit": "AskNYC",
+   "score": 83
+  },
+  "o9jdz1p": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o9jdlnz": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 8
+  },
+  "o9j9beh": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o9j7qw9": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 3
+  },
+  "o9j7dei": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "o9g4pmo": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o9g485f": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o9fhpvp": {
+   "kind": "comment",
+   "subreddit": "vibecoding",
+   "score": 3
+  },
+  "o9fhhjm": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "o9ef36h": {
+   "kind": "comment",
+   "subreddit": "vibecoding",
+   "score": 1
+  },
+  "o9e0qhg": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o9dvqxy": {
+   "kind": "comment",
+   "subreddit": "BlackboxAI_",
+   "score": 1
+  },
+  "o9dvjif": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 3
+  },
+  "o9dhfs9": {
+   "kind": "comment",
+   "subreddit": "Millennials",
+   "score": 1
+  },
+  "o9dh2lc": {
+   "kind": "comment",
+   "subreddit": "vibecoding",
+   "score": 9
+  },
+  "o9ddcdy": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "o99lzps": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o99lr9v": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o998zax": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o98t1va": {
+   "kind": "comment",
+   "subreddit": "grAIve",
+   "score": 1
+  },
+  "o98esad": {
+   "kind": "comment",
+   "subreddit": "GEO_optimization",
+   "score": 1
+  },
+  "o98e70y": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 23
+  },
+  "o98dofi": {
+   "kind": "comment",
+   "subreddit": "AI_Sales",
+   "score": 2
+  },
+  "o98cmfo": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o93gfbu": {
+   "kind": "comment",
+   "subreddit": "vibecoding",
+   "score": 1
+  },
+  "o902wh0": {
+   "kind": "comment",
+   "subreddit": "claude",
+   "score": 1
+  },
+  "o8xpqvw": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o8xnh4k": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o8xndqi": {
+   "kind": "comment",
+   "subreddit": "claude",
+   "score": 2
+  },
+  "o8xn5zh": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "o8xjip2": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o8xfmfh": {
+   "kind": "comment",
+   "subreddit": "ClaudeHomies",
+   "score": 1
+  },
+  "o8xejjh": {
+   "kind": "comment",
+   "subreddit": "ClaudeHomies",
+   "score": 1
+  },
+  "o8xe6pz": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o8x8p1t": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 4
+  },
+  "o8x8duk": {
+   "kind": "comment",
+   "subreddit": "clawdbot",
+   "score": 1
+  },
+  "o8x86ka": {
+   "kind": "comment",
+   "subreddit": "claude",
+   "score": 3
+  },
+  "o8x78n4": {
+   "kind": "comment",
+   "subreddit": "ClaudeCowork",
+   "score": 1
+  },
+  "o8x0r0q": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "o8qd5wo": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 0
+  },
+  "o8oe0et": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o8odfx7": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o8nyrk2": {
+   "kind": "comment",
+   "subreddit": "GEO_optimization",
+   "score": 1
+  },
+  "o8jc3z3": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "o8i52ob": {
+   "kind": "comment",
+   "subreddit": "ClaudeCowork",
+   "score": 1
+  },
+  "o8gfz7l": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o8cx7xx": {
+   "kind": "comment",
+   "subreddit": "AiBuilders",
+   "score": 1
+  },
+  "o8cvfxn": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "o870wrt": {
+   "kind": "comment",
+   "subreddit": "Anthropic",
+   "score": 1
+  },
+  "o86j753": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o858pvg": {
+   "kind": "comment",
+   "subreddit": "claude",
+   "score": 2
+  },
+  "o855c0y": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 1
+  },
+  "o851rzo": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o851al4": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o84u289": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o84br2s": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o843mdl": {
+   "kind": "comment",
+   "subreddit": "ClaudeHomies",
+   "score": 1
+  },
+  "o8438r3": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "o80mxj2": {
+   "kind": "comment",
+   "subreddit": "AiBuilders",
+   "score": 1
+  },
+  "o80mkva": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 5
+  },
+  "o7ziqgw": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 9
+  },
+  "o7ziduw": {
+   "kind": "comment",
+   "subreddit": "claude",
+   "score": 2
+  },
+  "o7zh3f9": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 2
+  },
+  "o7yxhjp": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o7yx1tc": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o7ywf7a": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "o7yr3cc": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 31
+  },
+  "o7yjlyq": {
+   "kind": "comment",
+   "subreddit": "GEO_optimization",
+   "score": 1
+  },
+  "o7yjb2a": {
+   "kind": "comment",
+   "subreddit": "OnlyAICoding",
+   "score": 1
+  },
+  "o7yj4vk": {
+   "kind": "comment",
+   "subreddit": "OnlyAICoding",
+   "score": 1
+  },
+  "o7uf32v": {
+   "kind": "comment",
+   "subreddit": "favikon",
+   "score": 1
+  },
+  "o7ucwvh": {
+   "kind": "comment",
+   "subreddit": "SaaS",
+   "score": 3
+  },
+  "o7ub9j2": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o7u7bo4": {
+   "kind": "comment",
+   "subreddit": "favikon",
+   "score": 2
+  },
+  "o7tuarm": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o7toaee": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o7su50y": {
+   "kind": "comment",
+   "subreddit": "ContextEngineering",
+   "score": 1
+  },
+  "o7rcipd": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "o7rc2uo": {
+   "kind": "comment",
+   "subreddit": "OnlyAICoding",
+   "score": 1
+  },
+  "o7rbp1c": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "o7rbe8m": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "1uewyxo": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 375,
+   "title": "Set effort to max. (terminal hack) part 5 in my new YT series. The long form got cut on this episode, but the shorts are live. Check them out."
+  },
+  "1uewyca": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 653,
+   "title": "Set effort to max. (terminal hack) use accordingly, though."
+  },
+  "1uewwqk": {
+   "kind": "post",
+   "subreddit": "buildinpublic",
+   "score": 1,
+   "comments": 0,
+   "views": 170,
+   "title": "Set effort to max. (terminal hack) for the building public crowd, sharing my founder's journey, with all the rough edges, sorry for the bad audio"
+  },
+  "1uewve8": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 0,
+   "views": 2000,
+   "title": "Set effort to max. (terminal hack)"
+  },
+  "1uewuk1": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 1,
+   "comments": 0,
+   "views": 445,
+   "title": "Set effort to max. (terminal hack)"
+  },
+  "1ufw2ov": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 4,
+   "comments": 0,
+   "views": 1400,
+   "title": "33 domains. New ACS account. Building the moat in public."
+  },
+  "1ufwal0": {
+   "kind": "post",
+   "subreddit": "SaaS",
+   "score": 0,
+   "comments": 0,
+   "views": 279,
+   "title": "Building my SaaS email infrastructure from scratch: 33 new domains, isolated ACS warming nest & real-time dashboard (Part 1)"
+  },
+  "1ufw6ep": {
+   "kind": "post",
+   "subreddit": "saasbuild",
+   "score": 1,
+   "comments": 1,
+   "views": 321,
+   "title": "Building email infrastructure for my SaaS in public: 33 new domains, isolated ACS warming nest (Part 1)"
+  },
+  "1uffq02": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 1,
+   "comments": 0,
+   "views": 429,
+   "title": "Be neurotic with your AI. #buildinpublic #claude  #vibecoding"
+  },
+  "otsi9yg": {
+   "kind": "comment",
+   "subreddit": "AI_Sales",
+   "score": 1
+  },
+  "otzyad7": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "1ujeupe": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 0,
+   "views": 630,
+   "title": "SQLite = GTM god mode ifyky. and if u dont i got you."
+  },
+  "oun15gd": {
+   "kind": "comment",
+   "subreddit": "ClaudeAI",
+   "score": 1
+  },
+  "1ujwebv": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 10,
+   "comments": 2,
+   "views": 2900,
+   "title": "My current GTM builder stack for turning actual work into content"
+  },
+  "1ul0oq3": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 0,
+   "views": 750,
+   "title": "Claude for Terminal + Codex in the App: This Is My Founder's Journey (Ep..."
+  },
+  "1ul0qul": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 752,
+   "title": "Claude for Terminal + Codex in the App: This Is My Founder's Journey (Ep..."
+  },
+  "1ul0pb7": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 1,
+   "views": 594,
+   "title": "Claude for Terminal + Codex in the App: This Is My Founder's Journey (Ep..."
+  },
+  "ov1w3mv": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "1un0c8x": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 61,
+   "comments": 26,
+   "views": 56000,
+   "title": "Reddit killed my scraper two months ago. Claude Code just rebuilt its own daily show."
+  },
+  "1un0m9e": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 4,
+   "views": 1100,
+   "title": "Reddit JSON died, so I rebuilt the transport layer for a GTM content pipeline."
+  },
+  "1un0lpu": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "title": "I rebuilt a daily GTM content engine around Claude + Reddit signals."
+  },
+  "1un0lb7": {
+   "kind": "post",
+   "subreddit": "AiBuilders",
+   "score": 0,
+   "comments": 0,
+   "views": 904,
+   "title": "I rebuilt an AI content loop after Reddit killed the JSON input."
+  },
+  "1un0aqm": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 10,
+   "comments": 1,
+   "views": 4500,
+   "title": "Bringing back my automated daily content engine. Full stack breakdown for anyone who wants to run this play in their own niche."
+  },
+  "ovgvv15": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": -2
+  },
+  "ovgt0ir": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ovgoolx": {
+   "kind": "comment",
+   "subreddit": "VibeCodeDevs",
+   "score": 1
+  },
+  "ovgnzme": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ovgn0va": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ovglgua": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 4
+  },
+  "ovgknbd": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ovghmg2": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 3
+  },
+  "ovge75x": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 6
+  },
+  "ovcrlyd": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ovjqmup": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 2
+  },
+  "ovjm0qt": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "ovrdlue": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -2
+  },
+  "ovr4rgi": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "ovr49yh": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": -8
+  },
+  "1uplv6r": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 9,
+   "comments": 5,
+   "views": 5000,
+   "title": "I scraped every GTM thread across 9 subs from the past two weeks and pulled the stuff you can actually use. all of it is here."
+  },
+  "1uplvm2": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 1,
+   "views": 765,
+   "title": "I scraped every GTM thread across 9 subs from the past two weeks and pulled the stuff you can actually use. all of it is here."
+  },
+  "ow4en5k": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ow4dh8z": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "owefu3h": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "1ut7uov": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 470,
+   "title": "Claude Code Daily just dropped. Anthropic reset all the limits after Sol"
+  },
+  "1ut7u7r": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 2,
+   "views": 488,
+   "title": "Claude Code Daily just dropped. Anthropic reset all the limits after Sol"
+  },
+  "1ut7tbh": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 1,
+   "views": 1500,
+   "title": "Claude Code Daily just dropped. Anthropic reset all the limits after Sol"
+  },
+  "1ut7pk0": {
+   "kind": "post",
+   "subreddit": "ClaudeCode",
+   "score": 0,
+   "comments": 2,
+   "views": 3200,
+   "title": "Anthropic said bet. Claude Code Daily breaks it down"
+  },
+  "owu1mow": {
+   "kind": "comment",
+   "subreddit": "ClaudeCode",
+   "score": 1
+  },
+  "own53m1": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "ox0qrol": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  }
+ },
+ "compound": {
+  "windowStart": "2026-06-25",
+  "series": [
+   {
+    "date": "2026-06-25",
+    "views": 1363211,
+    "posts": 145
+   },
+   {
+    "date": "2026-06-26",
+    "views": 1370135,
+    "posts": 145
+   },
+   {
+    "date": "2026-06-27",
+    "views": 1373810,
+    "posts": 145
+   },
+   {
+    "date": "2026-06-28",
+    "views": 1379048,
+    "posts": 145
+   },
+   {
+    "date": "2026-06-29",
+    "views": 1382341,
+    "posts": 145
+   },
+   {
+    "date": "2026-06-30",
+    "views": 1384219,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-01",
+    "views": 1387502,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-02",
+    "views": 1388496,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-03",
+    "views": 1390434,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-04",
+    "views": 1392006,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-05",
+    "views": 1393405,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-06",
+    "views": 1395161,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-07",
+    "views": 1396794,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-08",
+    "views": 1398348,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-09",
+    "views": 1399068,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-10",
+    "views": 1399068,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-11",
+    "views": 1401889,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-12",
+    "views": 1403414,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-13",
+    "views": 1404004,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-14",
+    "views": 1404296,
+    "posts": 145
+   }
+  ],
+  "cohortPosts": 145,
+  "cohortGrew": 122,
+  "viewsGained": 41085,
+  "oldestStillGrowing": "2026-03-08"
  }
 }
