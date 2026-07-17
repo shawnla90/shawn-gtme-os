@@ -18,25 +18,38 @@
   --rr-accent: #ff4500;
   --rr-accent-soft: rgba(255, 69, 0, 0.1);
 
+  /* body ink. --text-secondary (7.85:1 dark) is the colour for captions and
+     meta, and it was carrying 3,000 words of body: headings popped, body
+     receded, the eye did extra work. this sits between caption grey and
+     heading white so body reads as body. 15.89:1 on the dark canvas,
+     against caption 7.85 and heading 18.97. */
+  --rr-ink: #e8e6e3;
+
   width: 100%;
   padding: 0 var(--gutter) 96px;
   font-family: var(--font-editorial-body);
   color: var(--text-primary);
 }
 
+/* light mode has a ceiling the dark one does not: its heading is 13.90:1, not
+   18.97. so the ink window here is narrow — over 12:1 to read as body, under
+   the heading or the hierarchy collapses. 12.73:1, against caption 6.99. */
 @media (prefers-color-scheme: light) {
   .rr-shell {
     --rr-accent: #b22d00;
     --rr-accent-soft: rgba(178, 45, 0, 0.08);
+    --rr-ink: #2f2c28;
   }
 }
 :root[data-theme='light'] .rr-shell {
   --rr-accent: #b22d00;
   --rr-accent-soft: rgba(178, 45, 0, 0.08);
+  --rr-ink: #2f2c28;
 }
 :root[data-theme='dark'] .rr-shell {
   --rr-accent: #ff4500;
   --rr-accent-soft: rgba(255, 69, 0, 0.1);
+  --rr-ink: #e8e6e3;
 }
 
 /* ── the reading line ─────────────────────────────── */
@@ -97,18 +110,19 @@
 /* the standfirst: one size up from body, primary colour, sets the section */
 .rr-standfirst {
   font-family: var(--font-editorial-display);
-  font-size: 19px;
-  line-height: 1.55;
+  font-size: 21px;
+  line-height: 1.5;
   color: var(--text-primary);
   margin: 0 0 8px;
 }
 
-/* body. 17px because this is long-form on a desktop, not UI chrome. */
+/* body. 19/1.75 because this is long-form on a desktop, not UI chrome, and
+   it carries the ink rather than the caption grey. */
 .rr-p {
-  font-size: 17px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin: 0 0 20px;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--rr-ink);
+  margin: 0 0 22px;
 }
 .rr-p:last-child {
   margin-bottom: 0;
@@ -144,7 +158,7 @@
 
 .rr-step-title {
   font-family: var(--font-editorial-display);
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 500;
   line-height: 1.35;
   color: var(--text-primary);
@@ -324,7 +338,11 @@
     padding-top: 48px;
   }
   .rr-p {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .rr-standfirst {
+    font-size: 19px;
   }
   .rr-step {
     grid-template-columns: 1.75rem 1fr;
