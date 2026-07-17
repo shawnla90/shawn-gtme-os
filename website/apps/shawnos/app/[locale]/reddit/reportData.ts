@@ -1,4 +1,5 @@
 import redditStats from '@shawnos/shared/data/reddit-stats.json'
+import type { IconName } from './ReportIcon'
 
 /* ── shared types ───────────────────────────────────── */
 
@@ -61,68 +62,68 @@ export const statLine = (redditId?: string): string => {
 
 export const ACCOUNT_RAMP = [
   {
-    emoji: '👀',
+    icon: 'Eye',
     stage: 'read like a person',
     window: 'before your first comment',
     desc: 'scroll. open threads. stay on the ones you actually want to read. vote. I have no idea what Reddit measures and neither does anyone outside Reddit, but a day-old account whose entire history is one comment about its own product is the easiest possible thing to catch, and I have never seen one survive. an account that has been used like an account has somewhere to hide.',
   },
   {
-    emoji: '💬',
+    icon: 'MessageCircle',
     stage: 'comment on things that have nothing to do with you',
     window: 'the first weeks',
     desc: 'your interests are the warmup. dogs, your team, your city, whatever you would have opened anyway. these subs cost you nothing, carry no promotional weight, and teach you how Reddit talks. an account that only ever surfaces near its own category reads as a plant, because it is one.',
   },
   {
-    emoji: '🏠',
+    icon: 'Home',
     stage: 'earn the home subs',
     window: 'weeks, not days',
     desc: 'pick the few subs you intend to be known in and become a face there before you ask them for anything. answer questions you already know the answer to. lose arguments. get the automod rules wrong once and learn them. the account below ran 422 posts and comments in this mode before it ever mentioned Clearbox.',
   },
   {
-    emoji: '📌',
+    icon: 'Send',
     stage: 'then post',
     window: 'once the account has a past',
     desc: 'by the time you post something you care about, the account has a scroll history, a vote history, karma on both sides of the ledger, and a name a few regulars recognize. the post lands into that context. the same post from a two-week-old account lands into a filter.',
   },
-]
+] as const
 
 export const RAMP_DONTS = [
   {
-    emoji: '🚫',
+    icon: 'Ban',
     rule: 'do not buy accounts',
     detail: 'bought accounts and warmed accounts carry someone else\'s history, and the history is the asset. if you are going to use Reddit to engage, do it real or do not do it at all. it can hurt you more than it can help you.',
   },
   {
-    emoji: '🤖',
+    icon: 'Bot',
     rule: 'do not let a model write your comments',
     detail: 'plenty of subs run their own bot and AI filters, and the humans in them are faster than any filter. a comment that reads as generated costs you the thread, then the sub, then the account. the automation belongs off Reddit, in the part nobody is reading.',
   },
   {
-    emoji: '⏱️',
+    icon: 'Timer',
     rule: 'do not compress the ramp',
     detail: 'skipping era one costs you era two. every shortcut I tested died in the automod queue, and the account that eventually worked is the one that did the slow version first.',
   },
-]
+] as const
 
 /* ── karma via self-interest ────────────────────────── */
 
 export const KARMA_ENGINE = [
   {
-    emoji: '🎯',
+    icon: 'Target',
     move: 'farm where you already are',
     desc: 'the karma that makes you postable is easiest to earn in the subs you would read on a Sunday. you already know the references, the voice, and what a bad take looks like, so the comments land without effort. r/OnePiece has nothing to do with GTM and it pulled more views on this account than r/hubspot, r/UseApolloIo and r/buildinpublic combined.',
   },
   {
-    emoji: '⚖️',
+    icon: 'Scale',
     move: 'let the split happen to you',
     desc: 'subs gate on comment karma as much as post karma, and the accounts that read as real carry both. this one sits around 2:1 link to comment, which is not a target I hit, it is just what falls out of commenting far more often than you post. if you are counting toward a ratio you are already writing like someone counting.',
   },
   {
-    emoji: '🔁',
+    icon: 'Repeat',
     move: 'genuine interest is what scales',
     desc: 'karma farming as a chore stops within a week, and the account goes quiet at exactly the moment it needed history. the subs you actually care about are the ones you will still be in three months from now, which is the horizon that matters.',
   },
-]
+] as const
 
 /** the sub that proves the point: pure interest, zero commercial intent. */
 export const KARMA_ENGINE_SUB = 'OnePiece'
@@ -131,14 +132,14 @@ export const KARMA_ENGINE_SUB = 'OnePiece'
 
 export const POST_ARCHETYPES: {
   name: string
-  emoji: string
+  icon: IconName
   desc: string
   valueLead: string
   evidence: Evidence
 }[] = [
   {
     name: 'the pattern read',
-    emoji: '📡',
+    icon: 'Radar',
     desc: 'scan complaints, releases, pricing pages. turn the pattern into a post. people upvote synthesis they could not do themselves.',
     valueLead: 'for B2B marketing: synthesize 30 customer complaints instead of 3 LinkedIn posts. for SaaS: link the raw scan output.',
     evidence: {
@@ -155,7 +156,7 @@ export const POST_ARCHETYPES: {
   },
   {
     name: 'the showcase',
-    emoji: '🏗️',
+    icon: 'Hammer',
     desc: 'show what you shipped. numbers, repos, screenshots. the post is the hook, the comments deliver the depth.',
     valueLead: 'for SaaS: numbers + a public repo. for Clay: a working stack diagram with the table count and the cost.',
     evidence: {
@@ -172,7 +173,7 @@ export const POST_ARCHETYPES: {
   },
   {
     name: 'the question',
-    emoji: '❓',
+    icon: 'HelpCircle',
     desc: 'ask something you genuinely want to know. technical depth invites technical answers. real stakes invite real answers.',
     valueLead: 'for GTM eng: name your real constraint, with real hardware and real budget attached. for Clay: include the table you got stuck on.',
     evidence: {
@@ -189,7 +190,7 @@ export const POST_ARCHETYPES: {
   },
   {
     name: 'the meme',
-    emoji: '😂',
+    icon: 'Laugh',
     desc: 'relatable humor, perfectly timed. post when a feature drops or a trend is peaking.',
     valueLead: 'for any audience: the joke has to land for an insider. one specific reference beats five generic punchlines.',
     evidence: {
@@ -206,7 +207,7 @@ export const POST_ARCHETYPES: {
   },
   {
     name: 'the crossover',
-    emoji: '🔀',
+    icon: 'Shuffle',
     desc: "find unexpected subreddits where your story resonates. a plumber's son in r/NYCapartments outperformed everything in my home subs.",
     valueLead: 'for SaaS founders: bring your operator story to subs that buy what you sell, on top of the subs that build what you sell.',
     evidence: {
@@ -223,7 +224,7 @@ export const POST_ARCHETYPES: {
   },
   {
     name: 'the hot take',
-    emoji: '🔥',
+    icon: 'Flame',
     desc: 'ride breaking news within hours. have a real opinion backed by experience.',
     valueLead: 'for Clay: 18 months of daily usage is the receipt. for B2B marketing: name the vendor and the line item.',
     evidence: {
@@ -240,7 +241,7 @@ export const POST_ARCHETYPES: {
   },
   {
     name: 'the value drop',
-    emoji: '🎁',
+    icon: 'Gift',
     desc: 'give away something useful. checklists, frameworks, audits. publish inline, link the live artifact in the body.',
     valueLead: 'for Clay: the actual checklist you use, copy-paste ready. for GTM eng: the SQL query or the Python script.',
     evidence: {
@@ -257,7 +258,7 @@ export const POST_ARCHETYPES: {
   },
   {
     name: 'the thought piece',
-    emoji: '🧠',
+    icon: 'Brain',
     desc: 'career arc, methodology, thesis. show the journey, link the receipts.',
     valueLead: 'for SaaS founders: name the specific transition (job → first dollar → second dollar). for GTM eng: name the tools that died and the tools that replaced them.',
     evidence: {
@@ -349,14 +350,14 @@ export const GATING_STEPS = [
 
 export const COMMENT_TYPES: {
   name: string
-  emoji: string
+  icon: IconName
   desc: string
   highlight: string
   example: { redditId?: string; image?: string; context: string; text: string }
 }[] = [
   {
     name: 'the mega comment',
-    emoji: '💎',
+    icon: 'Gem',
     desc: "a comment that IS a post. one sentence that captures the moment so perfectly it outperforms every post you've ever written.",
     highlight: 'my highest-upvoted comment anywhere. one sentence about ADHD and Claude Code.',
     example: {
@@ -369,7 +370,7 @@ export const COMMENT_TYPES: {
   },
   {
     name: 'the expert drop',
-    emoji: '🎯',
+    icon: 'Target',
     desc: 'answer a question with real experience and specific numbers. commit to the answer.',
     highlight: 'highest comment karma per impression. people upvote confidence backed by receipts.',
     example: {
@@ -380,7 +381,7 @@ export const COMMENT_TYPES: {
   },
   {
     name: 'the one-liner',
-    emoji: '⚡',
+    icon: 'Zap',
     desc: 'short, punchy, personality. zero fluff. keeps you visible between big posts.',
     highlight: 'low effort, high personality. the comments that make people check your profile.',
     example: {
@@ -393,7 +394,7 @@ export const COMMENT_TYPES: {
   },
   {
     name: 'the cross-pollinator',
-    emoji: '🔗',
+    icon: 'Link',
     desc: "drop your work in someone else's thread when it is genuinely relevant. relevance is the whole play.",
     highlight: "the plumber website dropped in r/ClaudeCode got 10K views. I have no idea how many clicked through, and anyone who tells you a comment's CTR is guessing.",
     example: {
@@ -406,7 +407,7 @@ export const COMMENT_TYPES: {
   },
   {
     name: 'the thread keeper',
-    emoji: '🔄',
+    icon: 'RefreshCw',
     desc: "reply to every commenter on your own posts. every reply bumps the post and shows you're real.",
     highlight: 'your own thread is your territory. the 6-week showcase turned 72 upvotes into 224 comments and a quarter million views, because the depth was all in the replies.',
     example: {
@@ -419,7 +420,7 @@ export const COMMENT_TYPES: {
   },
   {
     name: 'the hype man',
-    emoji: '🚀',
+    icon: 'Rocket',
     desc: "genuine excitement for someone else's work. builds real relationships.",
     highlight: 'the karma you build hyping others lets you post your own work without looking like a self-promoter.',
     example: {
@@ -432,7 +433,7 @@ export const COMMENT_TYPES: {
   },
   {
     name: 'the value lead',
-    emoji: '🪞',
+    icon: 'Sparkles',
     desc: "state the principle in someone else's thread without selling. the comment is the credential.",
     highlight: 'value-leading proof in B2B subs, where readers buy what you build. the kind of comment that gets profile-checked.',
     example: {
@@ -498,24 +499,24 @@ export const EXTRA_RECEIPTS: Evidence[] = [
 
 export const LINK_ZONES = [
   {
-    emoji: '🚫',
+    icon: 'Link2Off',
     zone: 'post bodies',
     verdict: 'the kill zone',
     desc: 'a URL in a post body gets auto-removed or shadow-buried in many subs. you find out days later when the views flatline at zero. describe the artifact in the post and put the link in a comment.',
   },
   {
-    emoji: '💬',
+    icon: 'MessageCircle',
     zone: 'comments',
     verdict: 'earned placement',
     desc: "drop a link in a comment when someone asks for it, or when the sub treats links as answers. the plumber-site comment in r/NYCapartments worked because a homeowner wanted the guides and the culture allows it.",
   },
   {
-    emoji: '👤',
+    icon: 'User',
     zone: 'profile',
     verdict: 'home turf',
     desc: 'automod polices threads, not your profile. pin the site, pin the repo, pin the offer. every good comment sends readers there, and the click is theirs to make. mods do read profiles, so it still has to look like a person, not a billboard.',
   },
-]
+] as const
 
 export const LINK_ZONE_EVIDENCE: Evidence = {
   title: "r/NYCapartments · someone else's plumber post",
@@ -533,26 +534,26 @@ export const LINK_ZONE_EVIDENCE: Evidence = {
 
 export const THE_ASK = [
   {
-    emoji: '🧱',
+    icon: 'Package',
     move: 'ship the whole thing, keep the URL',
     desc: 'the post has to be complete on its own. the numbers, the method, the thing you learned, all of it readable without leaving the thread. a post that withholds the substance to force a click reads as an ad and gets treated as one. a post that gives everything and happens to come from somewhere leaves the reader wanting the somewhere.',
   },
   {
-    emoji: '🕳️',
+    icon: 'HelpCircle',
     move: 'leave the obvious next question unanswered',
     desc: 'give the reader the output and let the artifact behind it stay implied. the daily writeup below covered what shipped and what mattered, and never linked the posts it was summarizing. that gap is the whole mechanism. the reader hits the edge of what you gave them and the only way forward is to ask.',
   },
   {
-    emoji: '👤',
+    icon: 'User',
     move: 'make the answer findable without you',
     desc: 'the profile is pinned, the repo is public, the site is one search away. readers who do not want to ask can just go, and readers who ask get a reply in the thread where the sub can see it was requested. either path ends in the same place and neither one is you dropping a URL into a body.',
   },
   {
-    emoji: '💬',
+    icon: 'MessagesSquare',
     move: 'answer in the thread, not the DMs',
     desc: 'when someone asks, the reply belongs in public under their comment. the sub reads it as an answer because it is one. the request is the permission slip, and it only works if the request is visible above the link.',
   },
-]
+] as const
 
 export const THE_ASK_EVIDENCE: Evidence = {
   title: 'r/ClaudeCode · a daily writeup that shipped with zero links',
@@ -568,104 +569,104 @@ export const THE_ASK_EVIDENCE: Evidence = {
 
 export const SIGNAL_LABELS = [
   {
-    emoji: '🎯',
+    icon: 'Target',
     name: 'lead',
     desc: 'pre-buy signals. the question, the complaint, the "has anyone tried X". budget pressure shows up in threads long before the switch. Aura scores these for prospect intent before the buyer self-identifies.',
   },
   {
-    emoji: '⚔️',
+    icon: 'Swords',
     name: 'competitor',
     desc: '"we just switched off X." "Apollo is overpriced." "Clay\'s new model broke our workflow." these threads tell you exactly which competitor is bleeding which segment, and what the trigger was. the comments are the dataset.',
   },
   {
-    emoji: '🔍',
+    icon: 'Search',
     name: 'engager',
     desc: 'the conversation is the asset. someone asking a question, challenging your take, sharing their own stack. every reply tells you what to build next, who to talk to, and which pitch lands. Aura scores these for relationship depth.',
   },
-]
+] as const
 
 /* ── staying alive: shadowbans and silent removals ──── */
 
 export const SHADOWBAN_CHECKS = [
   {
-    emoji: '🕵️',
+    icon: 'EyeOff',
     check: 'the logged-out check',
     how: 'open your post in a private window. if it is there for you and gone for a signed-out browser, the post is buried and nobody told you. run this on anything that matters within an hour of posting.',
   },
   {
-    emoji: '🆕',
+    icon: 'ListFilter',
     check: 'the new queue check',
     how: 'sort the sub by new and find your own post in the list. missing from /new means automod ate it. this is the check that catches a removal while you can still do something about it.',
   },
   {
-    emoji: '📉',
+    icon: 'TrendingDown',
     check: 'the flatline',
     how: 'views that stop dead a few hours in, on an account that normally does not flatline, is a removal you have not found yet. a slow post decays. a removed post stops.',
   },
-]
+] as const
 
 export const SHADOWBAN_TRIGGERS = [
   {
-    emoji: '🔗',
+    icon: 'Link2Off',
     trigger: 'a URL in the post body',
     detail: 'this is the one that kills quietly. many subs auto-remove on any link from an account under their karma or age floor, and the removal is invisible from your side.',
   },
   {
-    emoji: '⏩',
+    icon: 'Copy',
     trigger: 'the same post reshaped across several subs at once',
     detail: 'volume itself has never hurt this account. the karma-building era ran 422 items in five weeks, 34 of them in a single day, and nothing was ever removed for pace. what draws the automod is the same thing rewritten five ways and fired into five subs inside an hour, which reads as a campaign because it is one.',
   },
   {
-    emoji: '📢',
+    icon: 'Megaphone',
     trigger: 'a profile that is all pitch',
     detail: 'mods check profiles. an account whose history is nothing but its own product is an easy call, and the ban covers everything you posted, not just the post that triggered it.',
   },
-]
+] as const
 
 export const SHADOWBAN_RECOVERY = [
   {
-    emoji: '✉️',
+    icon: 'Mail',
     step: 'message the mods, once, like a person',
     detail: 'say what you posted, ask what rule it hit, and offer to repost it correctly. in my experience mods reinstate more often than people expect, because almost nobody asks politely. arguing with them is how a removal becomes a ban.',
   },
   {
-    emoji: '🧹',
+    icon: 'Wrench',
     step: 'fix the account, not the post',
     detail: 'if the removal came from a karma or age floor, the post was never the problem. go back to the ramp, earn the floor, and repost later. the same post lands fine from an account the filter trusts.',
   },
   {
-    emoji: '🚪',
+    icon: 'DoorClosed',
     step: 'if it is sitewide, stop posting',
     detail: 'this account has never been sitewide filtered, so I have never run this play and will not pretend otherwise. what I am confident of is the part that is just arithmetic: posting more into a filter does not clear the filter, and spinning up a fresh account to escape one is how people turn a temporary problem into a permanent one.',
   },
-]
+] as const
 
 /* ── delegation: the VA, the API, and the guardrail ─── */
 
 export const DELEGATION = [
   {
-    emoji: '🧍',
+    icon: 'UserCheck',
     name: 'the VA is a human, which is the whole point',
     desc: 'human engagement means a person reads the thread and a person writes the reply. that person can be a competent VA who knows your business and lives in your subs. the reading and the writing stay human. everything that happens before and after them is yours to automate.',
   },
   {
-    emoji: '🎯',
+    icon: 'Brain',
     name: 'they need the business, not a script',
     desc: 'a VA who does not understand what you sell writes comments that are polite and useless, which the sub smells immediately. they need the offer, the objections, the words your customers actually use, and enough context to know when the honest answer is that your thing is wrong for this person. that answer is the one that earns the next thread.',
   },
   {
-    emoji: '📡',
+    icon: 'Radar',
     name: 'without the data they are guessing',
     desc: 'a VA told to go be helpful on Reddit is scrolling blind. they do not know which of last night\'s threads is worth a reply, which sub is about to remove them for it, or which question has been asked forty times this month. they burn hours in the wrong places and the one thread that mattered scrolled past at 3am.',
   },
   {
-    emoji: '🛡️',
+    icon: 'Shield',
     name: 'the pull is the queue and the guardrail',
     desc: 'the API hands them the last 24 hours already sorted: the threads worth answering, the sub each one lives in, and what the account is cleared to do there. they open a short list instead of a firehose, and the rules travel with the list. that is what makes handing the account to someone else survivable.',
   },
   {
-    emoji: '⚙️',
+    icon: 'Settings2',
     name: 'automate off Reddit, always',
     desc: 'the pull, the scoring, the routing, the content it feeds, the copy it sharpens, the ICP context it fills in, all of that runs off-platform where nothing is scanning for it. the only thing that touches Reddit is a person typing. that line is what keeps the account alive, and it does not move because you hired someone.',
   },
-]
+] as const

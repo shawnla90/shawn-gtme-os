@@ -215,13 +215,33 @@
   min-width: 0;
 }
 
+/**
+ * Holds either an icon or a short label ("era 01", "now"), so it aligns a
+ * flex child rather than a text glyph. The icon inherits --rr-accent through
+ * currentColor.
+ */
 .rr-step-mark {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   font-family: var(--font-editorial-display);
   font-size: 15px;
   font-weight: 500;
   color: var(--rr-accent);
-  padding-top: 2px;
+  padding-top: 5px;
   font-variant-numeric: tabular-nums;
+}
+.rr-step-mark svg {
+  flex: none;
+}
+
+/* the inline icon in an archetype/stage name */
+.rr-inline-icon {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: -3px;
+  color: var(--rr-accent);
+  margin-right: 8px;
 }
 
 .rr-step-title {

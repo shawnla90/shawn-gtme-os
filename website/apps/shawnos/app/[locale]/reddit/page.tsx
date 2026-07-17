@@ -14,6 +14,7 @@ import {
   RightRail,
 } from './ReportChrome'
 import { buildRails } from './ReportRails'
+import { ReportIcon } from './ReportIcon'
 import { Shell, Column, Bleed, Step, Note } from './PlaybookShell'
 import { CompoundChart } from './CompoundChart'
 import './report.css'
@@ -460,7 +461,7 @@ export default async function RedditPage({ params }: Props) {
             <div key={r.stage} style={archetypeCard}>
               <div style={archetypeTop}>
                 <span style={archetypeName}>
-                  {r.emoji} {r.stage}
+                  <ReportIcon name={r.icon} className="rr-inline-icon" /> {r.stage}
                 </span>
                 <span style={archetypeStats}>{r.window}</span>
               </div>
@@ -474,7 +475,7 @@ export default async function RedditPage({ params }: Props) {
 
           <h3 className="rr-h3">the three ways people skip it</h3>
           {RAMP_DONTS.map((d) => (
-            <Step key={d.rule} n={d.emoji} title={d.rule}>{d.detail}</Step>
+            <Step key={d.rule} n={<ReportIcon name={d.icon} />} title={d.rule}>{d.detail}</Step>
           ))}
           </Column>
         </section>
@@ -489,7 +490,7 @@ export default async function RedditPage({ params }: Props) {
           </p>
 
           {KARMA_ENGINE.map((k) => (
-            <Step key={k.move} n={k.emoji} title={k.move}>{k.desc}</Step>
+            <Step key={k.move} n={<ReportIcon name={k.icon} />} title={k.move}>{k.desc}</Step>
           ))}
 
           {karmaSub && (
@@ -513,7 +514,7 @@ export default async function RedditPage({ params }: Props) {
             <div key={a.name} className="rr-archetype">
               <div className="rr-archetype-top">
                 <span className="rr-archetype-name">
-                  {a.emoji} {a.name}
+                  <ReportIcon name={a.icon} className="rr-inline-icon" /> {a.name}
                 </span>
                 <span className="rr-archetype-stats">{statLine(a.evidence.redditId)}</span>
               </div>
@@ -557,7 +558,7 @@ export default async function RedditPage({ params }: Props) {
           </p>
 
           {COMMENT_TYPES.map((ct) => (
-            <Step key={ct.name} n={ct.emoji} title={ct.name}>
+            <Step key={ct.name} n={<ReportIcon name={ct.icon} />} title={ct.name}>
               {ct.desc}
               <span className="rr-highlight">{ct.highlight}</span>
               <Collapse label="the comment" sublabel={ct.example.context}>
@@ -634,7 +635,7 @@ export default async function RedditPage({ params }: Props) {
           </p>
 
           {LINK_ZONES.map((z) => (
-            <Step key={z.zone} n={z.emoji} title={z.zone} aside={z.verdict}>{z.desc}</Step>
+            <Step key={z.zone} n={<ReportIcon name={z.icon} />} title={z.zone} aside={z.verdict}>{z.desc}</Step>
           ))}
 
           <div style={{ marginTop: '20px' }}>
@@ -659,7 +660,7 @@ export default async function RedditPage({ params }: Props) {
           </p>
 
           {THE_ASK.map((a) => (
-            <Step key={a.move} n={a.emoji} title={a.move}>{a.desc}</Step>
+            <Step key={a.move} n={<ReportIcon name={a.icon} />} title={a.move}>{a.desc}</Step>
           ))}
 
           <div style={{ marginTop: '20px' }}>
@@ -685,17 +686,17 @@ export default async function RedditPage({ params }: Props) {
 
           <h3 className="rr-h3">three checks that take a minute</h3>
           {SHADOWBAN_CHECKS.map((c) => (
-            <Step key={c.check} n={c.emoji} title={c.check}>{c.how}</Step>
+            <Step key={c.check} n={<ReportIcon name={c.icon} />} title={c.check}>{c.how}</Step>
           ))}
 
           <h3 className="rr-h3">what actually trips it</h3>
           {SHADOWBAN_TRIGGERS.map((t) => (
-            <Step key={t.trigger} n={t.emoji} title={t.trigger}>{t.detail}</Step>
+            <Step key={t.trigger} n={<ReportIcon name={t.icon} />} title={t.trigger}>{t.detail}</Step>
           ))}
 
           <h3 className="rr-h3">getting back</h3>
           {SHADOWBAN_RECOVERY.map((r) => (
-            <Step key={r.step} n={r.emoji} title={r.step}>{r.detail}</Step>
+            <Step key={r.step} n={<ReportIcon name={r.icon} />} title={r.step}>{r.detail}</Step>
           ))}
 
           <p className="rr-note">
@@ -723,7 +724,7 @@ export default async function RedditPage({ params }: Props) {
           </p>
 
           {SIGNAL_LABELS.map((s) => (
-            <Step key={s.name} n={s.emoji} title={s.name}>{s.desc}</Step>
+            <Step key={s.name} n={<ReportIcon name={s.icon} />} title={s.name}>{s.desc}</Step>
           ))}
 
           <div style={{ marginTop: '20px' }}>
@@ -804,7 +805,7 @@ export default async function RedditPage({ params }: Props) {
           </p>
 
           {DELEGATION.map((d) => (
-            <Step key={d.name} n={d.emoji} title={d.name}>{d.desc}</Step>
+            <Step key={d.name} n={<ReportIcon name={d.icon} />} title={d.name}>{d.desc}</Step>
           ))}
 
           <p className="rr-note">
