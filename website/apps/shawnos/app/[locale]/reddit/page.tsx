@@ -617,6 +617,7 @@ export default async function RedditPage({ params }: Props) {
           <p className="rr-standfirst">
             every sub you want to post in has a gate. some gates are posted in the rules: minimum karma, minimum account age. some are invisible: automod quietly removes your post and the views flatline at zero. know the gate before you post, or your best work dies in the queue.
           </p>
+          </Column>
 
           <Bleed><div className="rr-table-wrap">
             <table className="rr-table">
@@ -639,6 +640,7 @@ export default async function RedditPage({ params }: Props) {
             </table>
           </div></Bleed>
 
+          <Column>
           <h3 className="rr-h3">the entry system</h3>
           {GATING_STEPS.map((r, i) => (
             <Step key={i} n={i + 1} title={r.rule}>{r.detail}</Step>
