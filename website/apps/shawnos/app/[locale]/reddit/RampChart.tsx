@@ -164,10 +164,11 @@ export function RampChart({
           across the karma-building era the account ran{' '}
           {karma?.comments} comments to {karma?.posts} posts ({ratio(karma)}),
           and across the clearbox era {clearbox?.comments} to {clearbox?.posts}{' '}
-          ({ratio(clearbox)}). what this does not show is a clean inversion:
-          the ratio bottoms out at {r1(low)}:1 in the week of {low.weekStart}
-          {after && r1(after) ? ` and is back to ${r1(after)}:1 the week after` : ''}.
-          the eras are the trend, the weeks are noisy.
+          ({ratio(clearbox)}). read the eras for the trend and treat the weeks
+          as noise. the ratio bottoms out at {r1(low)}:1 in the week of{' '}
+          {low.weekStart}
+          {after && r1(after) ? ` and is back to ${r1(after)}:1 the week after` : ''},
+          so a single week is a mood, not a shift.
         </>
       }
     >

@@ -173,7 +173,7 @@ export function ConversationChart({
           the conversation. r/{top.subreddit} answers back at {top.perPost.toFixed(1)}{' '}
           comments per post across {top.posts} posts; r/{bottom.subreddit} at{' '}
           {bottom.perPost.toFixed(2)} across {bottom.posts}. read it against the
-          calibration chart rather than on its own: views and conversation are
+          calibration chart rather than on its own. views and conversation are
           different products and the sub decides which one you get. subs under{' '}
           {minPosts} posts are not ranked. this counts every comment on the
           thread, mine and other people&apos;s.

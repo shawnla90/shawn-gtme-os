@@ -61,9 +61,9 @@ export function CompoundChart({
           audience: it is {gained.toLocaleString()} views arriving on work that
           was already done, over {windowDays} days. the cohort is the claim:{' '}
           {cohortGrew} of {cohortPosts} of those posts gained views in the
-          window. it does
-          not show that any single post is still growing today, and it does not
-          count comments, which reddit reports no view count for.
+          window. two limits ride with it. the window closed on {asOf}, so this
+          is history rather than a claim about today. it counts posts only,
+          because reddit reports no view count on comments.
         </>
       }
     >
