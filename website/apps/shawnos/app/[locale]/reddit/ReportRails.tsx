@@ -1,6 +1,8 @@
 import React from 'react'
 import redditStats from '@shawnos/shared/data/reddit-stats.json'
 import { fmtViews } from './reportData'
+import { RampChart } from './RampChart'
+
 
 /**
  * The right rail's exhibits, one per section.
@@ -11,10 +13,9 @@ import { fmtViews } from './reportData'
  * remembered one - the section falls through to the "where you are" panel
  * until the exporter can produce it.
  *
- * Sections deliberately without a rail: account-ramp and comments (their
- * exhibits are the ramp and conversation charts, which the exporter does not
- * emit yet), and staying-alive (its headline is a first-person "never banned"
- * claim, which needs sign-off before it is published as a rail).
+ * Sections deliberately without a rail: staying-alive, whose headline is a
+ * first-person "never banned" claim and needs sign-off before it is published
+ * as a rail. It falls through to "where you are", which is real context.
  */
 
 type Rail = { head: string; body: React.ReactNode }
@@ -133,6 +134,61 @@ export function buildRails(): Record<string, Rail> {
               one anime sub out-pulled r/{rivals.map((r) => r.subreddit).join(', r/')}{' '}
               combined, on {onePiece.items} items against{' '}
               {rivals.reduce((a, r) => a + r.items, 0)}.
+            </>
+          }
+        />
+      ),
+    }
+  }
+
+  // the flagship chart, small. it proves the section it sits beside.
+  rails['account-ramp'] = {
+    head: 'week one: 30 comments, 0 posts',
+    body: (
+      <div className="rr-rail-card">
+        <RampChart
+          series={redditStats.ramp.series}
+          eras={redditStats.ramp.eras}
+          clearboxFrom={redditStats.ramp.clearboxFrom}
+          asOf={redditStats.asOf}
+          compact
+        />
+        <p className="rr-rail-note">
+          comments in accent, posts under them. the full chart is in this
+          section.
+        </p>
+      </div>
+    ),
+  }
+
+  // the spread, not the whole chart: seven bars where the top is 85x the
+  // bottom collapses to slivers in a 288px rail. the two ends carry it.
+  const convo = redditStats.conversation.rows
+  if (convo.length >= 2) {
+    const top = convo[0]
+    const bottom = convo[convo.length - 1]
+    rails.comments = {
+      head: 'which subs talk back',
+      body: (
+        <RailBars
+          rows={[
+            {
+              k: `r/${top.subreddit}`,
+              v: top.perPost,
+              fmt: `${top.perPost.toFixed(1)}/post`,
+            },
+            {
+              k: `r/${bottom.subreddit}`,
+              v: bottom.perPost,
+              fmt: `${bottom.perPost.toFixed(2)}/post`,
+              mute: true,
+            },
+          ]}
+          note={
+            <>
+              comments per post, {(top.perPost / bottom.perPost).toFixed(0)}x apart on{' '}
+              {top.posts} and {bottom.posts} posts. the sub decides whether you get
+              views or a conversation.
             </>
           }
         />

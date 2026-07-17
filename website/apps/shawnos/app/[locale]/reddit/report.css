@@ -66,12 +66,22 @@
  * position:sticky: they are grid items in a single tall row, so each sticks
  * across the whole scroll of .rr-main rather than inside its own band.
  */
+/**
+ * Wider than --exhibit-max on purpose. Capping the body at 1240 put the dead
+ * gutters back on any screen over ~1400px (340px a side at 1920, 660 at 2560),
+ * and it squeezed the reading column to within 4px of the measure, so .rr-bleed
+ * had nothing to escape into and every exhibit came out prose-width.
+ *
+ * Letting the body run means the middle column grows past the measure, which
+ * is what gives exhibits somewhere to go: at 1920 the column is ~1024 against a
+ * ~660 measure. The prose never widens — .rr-col still caps it.
+ */
 .rr-body {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-items: start;
   gap: 0;
-  max-width: var(--exhibit-max);
+  max-width: 1600px;
   margin-inline: auto;
 }
 
@@ -96,7 +106,13 @@
   }
 }
 
-@media (min-width: 1360px) {
+/**
+ * 1440, not 1360. At 1360 the right rail costs the reading column more than it
+ * is worth: the measure drops to 608px, so the prose gets *narrower* the moment
+ * the exhibit panel appears, and exhibits come out prose-width. 1440 is the
+ * first width where the rail fits and the measure still clears 68ch.
+ */
+@media (min-width: 1440px) {
   .rr-body {
     grid-template-columns: var(--rail-l) minmax(0, 1fr) var(--rail-r);
     gap: 0 44px;
@@ -689,11 +705,39 @@
 
 .rr-chart {
   margin: 0;
-  padding: 24px 8px 8px;
+  padding: 18px 8px 8px;
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--canvas-subtle);
 }
 .rr-chart .rr-caption {
   padding: 0 16px 8px;
+  text-align: left;
+  max-width: 78ch;
+}
+
+.rr-chart-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 0 16px 14px;
+}
+.rr-chart-title {
+  font-family: var(--font-editorial-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+/* the stamp rides on every chart: a number with no date is a number with no
+   claim, and this page is read months after it is written */
+.rr-chart-asof {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
 }

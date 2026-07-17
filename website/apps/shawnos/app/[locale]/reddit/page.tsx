@@ -17,6 +17,8 @@ import { buildRails } from './ReportRails'
 import { ReportIcon } from './ReportIcon'
 import { Shell, Column, Bleed, Step, Note } from './PlaybookShell'
 import { CompoundChart } from './CompoundChart'
+import { RampChart } from './RampChart'
+import { CalibrationChart, ConversationChart } from './RankedBars'
 import './report.css'
 import {
   POST_ARCHETYPES,
@@ -410,6 +412,8 @@ export default async function RedditPage({ params }: Props) {
           <Step n="now" title="cited by AI" aside={<>the name travelling without a link on it</>}>the threads from both eras are now training material. AI answer engines cite them, and the product name travels without a URL attached. sections {sectionNo('ai-citations')} and {sectionNo('llmo')} break down the mechanism.</Step>
 
           <h3 className="rr-h3">where the views live</h3>
+          </Column>
+
           <Bleed><div className="rr-table-wrap">
             <table className="rr-table">
               <thead>
@@ -443,9 +447,11 @@ export default async function RedditPage({ params }: Props) {
             <CompoundChart
               series={redditStats.compound.series}
               windowStart={redditStats.compound.windowStart}
+              asOf={redditStats.asOf}
+              cohortPosts={redditStats.compound.cohortPosts}
+              cohortGrew={redditStats.compound.cohortGrew}
             />
           </Bleed>
-          </Column>
         </section>
 
         {/* ── the ramp ── */}
@@ -472,7 +478,20 @@ export default async function RedditPage({ params }: Props) {
           <p className="rr-note">
             era one on this account: {karmaEra.items} posts and comments, {fmtViews(karmaEra.views)} views, before Clearbox existed to mention.
           </p>
+          </Column>
 
+          {/* the ramp, as a shape rather than a claim: this chart proves the
+              section it sits in */}
+          <Bleed>
+            <RampChart
+              series={redditStats.ramp.series}
+              eras={redditStats.ramp.eras}
+              clearboxFrom={redditStats.ramp.clearboxFrom}
+              asOf={redditStats.asOf}
+            />
+          </Bleed>
+
+          <Column>
           <h3 className="rr-h3">the three ways people skip it</h3>
           {RAMP_DONTS.map((d) => (
             <Step key={d.rule} n={<ReportIcon name={d.icon} />} title={d.rule}>{d.detail}</Step>
@@ -556,7 +575,19 @@ export default async function RedditPage({ params }: Props) {
           <p className="rr-standfirst">
             my highest-upvoted comment anywhere is one sentence about ADHD and Claude Code. reddit shows me view counts on comments but my tracker only scrapes them for posts, so upvotes are the number I can stand behind here. these are the 7 comment types I run and the flagship example for each.
           </p>
+          </Column>
 
+          {/* which subs actually talk back. pairs with the calibration chart
+              in section 06: views and conversation are different products. */}
+          <Bleed>
+            <ConversationChart
+              rows={redditStats.conversation.rows}
+              minPosts={redditStats.conversation.minPosts}
+              asOf={redditStats.asOf}
+            />
+          </Bleed>
+
+          <Column>
           {COMMENT_TYPES.map((ct) => (
             <Step key={ct.name} n={<ReportIcon name={ct.icon} />} title={ct.name}>
               {ct.desc}
@@ -616,6 +647,19 @@ export default async function RedditPage({ params }: Props) {
           <p className="rr-note">
             the receipt: my karma-building era ran {karmaEra.items} posts and comments for {fmtViews(karmaEra.views)} views before the clearbox era started ({clearboxEra.items} items, {fmtViews(clearboxEra.views)} views). the gate-building phase came first. it always does.
           </p>
+          </Column>
+
+          {/* the gates are counted in karma, so it matters that an upvote is
+              not a fixed quantity of anything */}
+          <Bleed>
+            <CalibrationChart
+              rows={redditStats.calibration.rows}
+              minPosts={redditStats.calibration.minPosts}
+              asOf={redditStats.asOf}
+            />
+          </Bleed>
+
+          <Column>
 
           <p style={{ textAlign: 'center', margin: '24px 0 0' }}>
             <a href="/vault" style={vaultLinkStyle}>

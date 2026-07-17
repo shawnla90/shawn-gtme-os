@@ -4371,5 +4371,223 @@
   "cohortGrew": 122,
   "viewsGained": 41085,
   "oldestStillGrowing": "2026-03-08"
+ },
+ "ramp": {
+  "series": [
+   {
+    "weekStart": "2026-02-27",
+    "comments": 30,
+    "posts": 0
+   },
+   {
+    "weekStart": "2026-03-02",
+    "comments": 42,
+    "posts": 3
+   },
+   {
+    "weekStart": "2026-03-09",
+    "comments": 108,
+    "posts": 31
+   },
+   {
+    "weekStart": "2026-03-16",
+    "comments": 77,
+    "posts": 20
+   },
+   {
+    "weekStart": "2026-03-23",
+    "comments": 66,
+    "posts": 15
+   },
+   {
+    "weekStart": "2026-03-30",
+    "comments": 17,
+    "posts": 8
+   },
+   {
+    "weekStart": "2026-04-06",
+    "comments": 21,
+    "posts": 5
+   },
+   {
+    "weekStart": "2026-04-14",
+    "comments": 5,
+    "posts": 3
+   },
+   {
+    "weekStart": "2026-04-20",
+    "comments": 21,
+    "posts": 3
+   },
+   {
+    "weekStart": "2026-04-27",
+    "comments": 5,
+    "posts": 3
+   },
+   {
+    "weekStart": "2026-05-04",
+    "comments": 12,
+    "posts": 1
+   },
+   {
+    "weekStart": "2026-05-12",
+    "comments": 13,
+    "posts": 3
+   },
+   {
+    "weekStart": "2026-05-18",
+    "comments": 8,
+    "posts": 5
+   },
+   {
+    "weekStart": "2026-05-26",
+    "comments": 5,
+    "posts": 3
+   },
+   {
+    "weekStart": "2026-06-02",
+    "comments": 78,
+    "posts": 6
+   },
+   {
+    "weekStart": "2026-06-08",
+    "comments": 17,
+    "posts": 13
+   },
+   {
+    "weekStart": "2026-06-15",
+    "comments": 8,
+    "posts": 12
+   },
+   {
+    "weekStart": "2026-06-23",
+    "comments": 3,
+    "posts": 22
+   },
+   {
+    "weekStart": "2026-06-30",
+    "comments": 17,
+    "posts": 10
+   },
+   {
+    "weekStart": "2026-07-07",
+    "comments": 6,
+    "posts": 6
+   }
+  ],
+  "eras": [
+   {
+    "era": "clearbox",
+    "comments": 216,
+    "posts": 93
+   },
+   {
+    "era": "karma-building",
+    "comments": 343,
+    "posts": 79
+   }
+  ],
+  "clearboxFrom": "2026-04-07"
+ },
+ "calibration": {
+  "minPosts": 3,
+  "rows": [
+   {
+    "subreddit": "ClaudeCode",
+    "posts": 24,
+    "views": 733346,
+    "score": 603,
+    "viewsPerUpvote": 1216.2
+   },
+   {
+    "subreddit": "ClaudeAI",
+    "posts": 7,
+    "views": 370100,
+    "score": 307,
+    "viewsPerUpvote": 1205.5
+   },
+   {
+    "subreddit": "ClaudeGTM",
+    "posts": 19,
+    "views": 22104,
+    "score": 33,
+    "viewsPerUpvote": 669.8
+   },
+   {
+    "subreddit": "GTMbuilders",
+    "posts": 48,
+    "views": 140786,
+    "score": 323,
+    "viewsPerUpvote": 435.9
+   },
+   {
+    "subreddit": "gtmengineering",
+    "posts": 43,
+    "views": 87472,
+    "score": 263,
+    "viewsPerUpvote": 332.6
+   },
+   {
+    "subreddit": "saasbuild",
+    "posts": 3,
+    "views": 916,
+    "score": 3,
+    "viewsPerUpvote": 305.3
+   },
+   {
+    "subreddit": "buildinpublic",
+    "posts": 8,
+    "views": 2088,
+    "score": 8,
+    "viewsPerUpvote": 261.0
+   }
+  ]
+ },
+ "conversation": {
+  "minPosts": 3,
+  "rows": [
+   {
+    "subreddit": "ClaudeAI",
+    "posts": 8,
+    "comments": 170,
+    "perPost": 21.25
+   },
+   {
+    "subreddit": "ClaudeCode",
+    "posts": 24,
+    "comments": 499,
+    "perPost": 20.79
+   },
+   {
+    "subreddit": "gtmengineering",
+    "posts": 43,
+    "comments": 200,
+    "perPost": 4.65
+   },
+   {
+    "subreddit": "GTMbuilders",
+    "posts": 48,
+    "comments": 181,
+    "perPost": 3.77
+   },
+   {
+    "subreddit": "buildinpublic",
+    "posts": 8,
+    "comments": 4,
+    "perPost": 0.5
+   },
+   {
+    "subreddit": "saasbuild",
+    "posts": 3,
+    "comments": 1,
+    "perPost": 0.33
+   },
+   {
+    "subreddit": "ClaudeGTM",
+    "posts": 20,
+    "comments": 5,
+    "perPost": 0.25
+   }
+  ]
  }
 }

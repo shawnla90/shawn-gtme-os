@@ -10,6 +10,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
+import { ChartFrame } from './ChartFrame'
 
 type Point = { date: string; views: number; posts: number }
 
@@ -24,9 +25,15 @@ type Point = { date: string; views: number; posts: number }
 export function CompoundChart({
   series,
   windowStart,
+  asOf,
+  cohortPosts,
+  cohortGrew,
 }: {
   series: Point[]
   windowStart: string
+  asOf: string
+  cohortPosts: number
+  cohortGrew: number
 }) {
   if (!series?.length) return null
 
@@ -42,7 +49,21 @@ export function CompoundChart({
     n >= 1000 ? `${(n / 1000).toFixed(0)}K` : String(n)
 
   return (
-    <figure className="rr-chart">
+    <ChartFrame
+      title="views arriving on posts that were already old"
+      asOf={asOf}
+      caption={
+        <>
+          every post in this chart was already published before {windowStart},
+          when snapshotting started, so none of this is a new post finding its
+          audience: it is {gained.toLocaleString()} views arriving on work that
+          was already done, over 20 days. the cohort is the claim: {cohortGrew}{' '}
+          of {cohortPosts} of those posts gained views in the window. it does
+          not show that any single post is still growing today, and it does not
+          count comments, which reddit reports no view count for.
+        </>
+      }
+    >
       <ResponsiveContainer width="100%" height={300}>
         <AreaChart data={data} margin={{ top: 8, right: 12, bottom: 4, left: 4 }}>
           <defs>
@@ -93,12 +114,6 @@ export function CompoundChart({
           />
         </AreaChart>
       </ResponsiveContainer>
-      <figcaption className="rr-caption">
-        every post in this chart was already published before {windowStart}, when
-        snapshotting started. none of this is a new post finding its audience.
-        it is {gained.toLocaleString()} views arriving on work that was already
-        done, over 20 days, while I posted nothing new into it.
-      </figcaption>
-    </figure>
+    </ChartFrame>
   )
 }
