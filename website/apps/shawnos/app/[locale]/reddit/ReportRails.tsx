@@ -80,9 +80,10 @@ export function buildRails(): Record<string, Rail> {
     ReturnType<typeof sub>
   >[]
   const rivalViews = rivals.reduce((a, s) => a + s.views, 0)
-  const ask = (redditStats.posts as Record<string, { score: number; subreddit: string }>)[
-    'oapxd4n'
-  ]
+  // the comment the link-map section renders as its receipt (LINK_ZONE_EVIDENCE)
+  const linkZone = (
+    redditStats.posts as Record<string, { score: number; subreddit: string }>
+  )['oab1cv3']
 
   const rails: Record<string, Rail> = {}
 
@@ -102,8 +103,10 @@ export function buildRails(): Record<string, Rail> {
           ]}
           note={
             <>
-              {fmtViews(karmaEra.views)} vs {fmtViews(clearboxEra.views)} views. era one
-              is bigger because it ran longer and asked for nothing.
+              {fmtViews(karmaEra.views)} vs {fmtViews(clearboxEra.views)} views. era
+              one is the bigger era and the shorter one: {karmaEra.days} days at{' '}
+              {karmaEra.itemsPerDay} items a day, against {clearboxEra.days} days at{' '}
+              {clearboxEra.itemsPerDay}.
             </>
           }
         />
@@ -142,8 +145,13 @@ export function buildRails(): Record<string, Rail> {
   }
 
   // the flagship chart, small. it proves the section it sits beside.
+  // the head reads off the first bucket rather than saying "week one": the
+  // account opened on a Friday, so bucket one is 3 days, not 7.
+  const firstWeek = redditStats.ramp.series[0]
   rails['account-ramp'] = {
-    head: 'week one: 30 comments, 0 posts',
+    head: firstWeek
+      ? `first ${firstWeek.days} days: ${firstWeek.comments} comments, ${firstWeek.posts} posts`
+      : 'the ramp',
     body: (
       <div className="rr-rail-card">
         <RampChart
@@ -235,25 +243,39 @@ export function buildRails(): Record<string, Rail> {
     ),
   }
 
-  if (ask) {
-    const askRail: Rail = {
-      head: 'the ask, in one comment',
+  /**
+   * link-map only, and it is oab1cv3, not oapxd4n.
+   *
+   * The first cut of this rail put oapxd4n on both link-map and the-ask and
+   * captioned it "a comment someone asked to follow up on". oapxd4n is Shawn
+   * dropping his own link in a thread about his own work (reportData.ts:404,
+   * "own post, replying about what he shipped") and it lives in r/ClaudeCode,
+   * so the rail invented the ask AND named the wrong sub for link-map. The
+   * link-map evidence the page actually renders is oab1cv3.
+   *
+   * the-ask gets no rail: THE_ASK_EVIDENCE carries no redditId, so there is no
+   * db-backed number for it, and the rule here is that a rail without one is
+   * not written from memory. It falls through to "where you are".
+   */
+  if (linkZone) {
+    rails['link-map'] = {
+      head: 'the link that landed',
       body: (
         <RailStat
-          n={`${ask.score}↑`}
-          label={<>a comment in r/{ask.subreddit} that someone asked to follow up on</>}
+          n={`${linkZone.score}↑`}
+          label={
+            <>a comment in r/{linkZone.subreddit} pointing a reader at the site</>
+          }
           note={
             <>
-              reddit reports no view count on comments, so this is upvotes. the number
-              is small on purpose: the ask does not need a big audience, it needs the
-              right one.
+              reddit reports no view count on comments, so this is upvotes and
+              nothing else. the number is small and that is the point: the link
+              landed because the thread wanted it, not because it travelled far.
             </>
           }
         />
       ),
     }
-    rails['the-ask'] = askRail
-    rails['link-map'] = askRail
   }
 
   const citations: Rail = {

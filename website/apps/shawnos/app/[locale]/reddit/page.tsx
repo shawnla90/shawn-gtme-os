@@ -440,13 +440,14 @@ export default async function RedditPage({ params }: Props) {
           <Column>
             <h3 className="rr-h3">the part nobody shows you</h3>
             <p className="rr-p">
-              a post on a feed is dead in two days. these are not. every post in the chart below was already old when I started snapshotting, and {redditStats.compound.cohortGrew} of {redditStats.compound.cohortPosts} of them still gained views over the next 20 days. the oldest one still climbing was published {redditStats.compound.oldestStillGrowing}.
+              a post on a feed is dead in two days. these are not. every post in the chart below was already old when I started snapshotting, and {redditStats.compound.cohortGrew} of {redditStats.compound.cohortPosts} of them still gained views over the next {redditStats.compound.windowDays} days. the oldest one still climbing was published {redditStats.compound.oldestStillGrowing}.
             </p>
           </Column>
           <Bleed>
             <CompoundChart
               series={redditStats.compound.series}
               windowStart={redditStats.compound.windowStart}
+              windowDays={redditStats.compound.windowDays}
               asOf={redditStats.asOf}
               cohortPosts={redditStats.compound.cohortPosts}
               cohortGrew={redditStats.compound.cohortGrew}

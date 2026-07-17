@@ -25,12 +25,14 @@ type Point = { date: string; views: number; posts: number }
 export function CompoundChart({
   series,
   windowStart,
+  windowDays,
   asOf,
   cohortPosts,
   cohortGrew,
 }: {
   series: Point[]
   windowStart: string
+  windowDays: number
   asOf: string
   cohortPosts: number
   cohortGrew: number
@@ -57,8 +59,9 @@ export function CompoundChart({
           every post in this chart was already published before {windowStart},
           when snapshotting started, so none of this is a new post finding its
           audience: it is {gained.toLocaleString()} views arriving on work that
-          was already done, over 20 days. the cohort is the claim: {cohortGrew}{' '}
-          of {cohortPosts} of those posts gained views in the window. it does
+          was already done, over {windowDays} days. the cohort is the claim:{' '}
+          {cohortGrew} of {cohortPosts} of those posts gained views in the
+          window. it does
           not show that any single post is still growing today, and it does not
           count comments, which reddit reports no view count for.
         </>

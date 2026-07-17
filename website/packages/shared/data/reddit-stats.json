@@ -16,13 +16,21 @@
    "era": "karma-building",
    "items": 422,
    "views": 1168148,
-   "score": 2219
+   "score": 2219,
+   "first": "2026-02-27",
+   "last": "2026-04-06",
+   "days": 38,
+   "itemsPerDay": 11.1
   },
   {
    "era": "clearbox",
    "items": 309,
    "views": 321773,
-   "score": 911
+   "score": 911,
+   "first": "2026-04-07",
+   "last": "2026-07-12",
+   "days": 95,
+   "itemsPerDay": 3.2
   }
  ],
  "topSubreddits": [
@@ -4265,6 +4273,9 @@
  },
  "compound": {
   "windowStart": "2026-06-25",
+  "windowEnd": "2026-07-14",
+  "windowDays": 19,
+  "snapshots": 20,
   "series": [
    {
     "date": "2026-06-25",
@@ -4376,101 +4387,141 @@
   "series": [
    {
     "weekStart": "2026-02-27",
+    "weekEnd": "2026-03-01",
+    "days": 3,
     "comments": 30,
     "posts": 0
    },
    {
     "weekStart": "2026-03-02",
+    "weekEnd": "2026-03-08",
+    "days": 7,
     "comments": 42,
     "posts": 3
    },
    {
     "weekStart": "2026-03-09",
+    "weekEnd": "2026-03-15",
+    "days": 7,
     "comments": 108,
     "posts": 31
    },
    {
     "weekStart": "2026-03-16",
+    "weekEnd": "2026-03-22",
+    "days": 7,
     "comments": 77,
     "posts": 20
    },
    {
     "weekStart": "2026-03-23",
+    "weekEnd": "2026-03-29",
+    "days": 7,
     "comments": 66,
     "posts": 15
    },
    {
     "weekStart": "2026-03-30",
+    "weekEnd": "2026-04-05",
+    "days": 6,
     "comments": 17,
     "posts": 8
    },
    {
     "weekStart": "2026-04-06",
+    "weekEnd": "2026-04-12",
+    "days": 5,
     "comments": 21,
     "posts": 5
    },
    {
     "weekStart": "2026-04-14",
+    "weekEnd": "2026-04-19",
+    "days": 4,
     "comments": 5,
     "posts": 3
    },
    {
     "weekStart": "2026-04-20",
+    "weekEnd": "2026-04-25",
+    "days": 6,
     "comments": 21,
     "posts": 3
    },
    {
     "weekStart": "2026-04-27",
+    "weekEnd": "2026-05-03",
+    "days": 3,
     "comments": 5,
     "posts": 3
    },
    {
     "weekStart": "2026-05-04",
+    "weekEnd": "2026-05-09",
+    "days": 4,
     "comments": 12,
     "posts": 1
    },
    {
     "weekStart": "2026-05-12",
+    "weekEnd": "2026-05-17",
+    "days": 6,
     "comments": 13,
     "posts": 3
    },
    {
     "weekStart": "2026-05-18",
+    "weekEnd": "2026-05-23",
+    "days": 5,
     "comments": 8,
     "posts": 5
    },
    {
     "weekStart": "2026-05-26",
+    "weekEnd": "2026-05-31",
+    "days": 4,
     "comments": 5,
     "posts": 3
    },
    {
     "weekStart": "2026-06-02",
+    "weekEnd": "2026-06-07",
+    "days": 6,
     "comments": 78,
     "posts": 6
    },
    {
     "weekStart": "2026-06-08",
+    "weekEnd": "2026-06-14",
+    "days": 5,
     "comments": 17,
     "posts": 13
    },
    {
     "weekStart": "2026-06-15",
+    "weekEnd": "2026-06-21",
+    "days": 6,
     "comments": 8,
     "posts": 12
    },
    {
     "weekStart": "2026-06-23",
+    "weekEnd": "2026-06-26",
+    "days": 4,
     "comments": 3,
     "posts": 22
    },
    {
     "weekStart": "2026-06-30",
+    "weekEnd": "2026-07-05",
+    "days": 6,
     "comments": 17,
     "posts": 10
    },
    {
     "weekStart": "2026-07-07",
+    "weekEnd": "2026-07-12",
+    "days": 5,
     "comments": 6,
     "posts": 6
    }

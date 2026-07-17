@@ -40,6 +40,15 @@ const POSTS = (redditStats as { posts?: Record<string, PostStat> }).posts ?? {}
 export const stat = (redditId?: string): PostStat | undefined =>
   redditId ? POSTS[redditId] : undefined
 
+/**
+ * The link:comment karma ratio, generated.
+ *
+ * The page said "roughly 2:1" in two places. It is 1,555 / 884 = 1.8:1, and
+ * rounding 1.8 up to 2 flatters the exact number the sentence is there to be
+ * honest about. It also moves every night the tracker runs.
+ */
+export const KARMA_RATIO = (redditStats.linkKarma / redditStats.commentKarma).toFixed(1)
+
 /* ── formatting helper ──────────────────────────────── */
 
 export const fmtViews = (n: number) =>
@@ -116,7 +125,7 @@ export const KARMA_ENGINE = [
   {
     icon: 'Scale',
     move: 'let the split happen to you',
-    desc: 'subs gate on comment karma as much as post karma, and the accounts that read as real carry both. this one sits around 2:1 link to comment, which is not a target I hit, it is just what falls out of commenting far more often than you post. if you are counting toward a ratio you are already writing like someone counting.',
+    desc: `subs gate on comment karma as much as post karma, and the accounts that read as real carry both. this one sits at ${KARMA_RATIO}:1 link to comment, which is not a target I hit, it is just what falls out of commenting far more often than you post. if you are counting toward a ratio you are already writing like someone counting.`,
   },
   {
     icon: 'Repeat',
@@ -185,7 +194,7 @@ export const POST_ARCHETYPES: {
 
       image: '/images/reddit-evidence/ssh-thin-client.png',
       body: "picking up a MacBook Neo as a portable terminal. all my actual compute lives on a Mac Mini that runs 24/7. the plan is basically: SSH in, tmux attach, run Claude Code on the Mini's hardware.",
-      lesson: 'genuine question, I was actually buying the Neo. 48 comments of real technical answers because people could tell it was real.',
+      lesson: `genuine question, I was actually buying the Neo. ${stat('1rtxsmh')?.comments} comments of real technical answers because people could tell it was real.`,
     },
   },
   {
@@ -208,7 +217,7 @@ export const POST_ARCHETYPES: {
   {
     name: 'the crossover',
     icon: 'Shuffle',
-    desc: "find unexpected subreddits where your story resonates. a plumber's son in r/NYCapartments outperformed everything in my home subs.",
+    desc: "find unexpected subreddits where your story resonates. a plumber's son in r/NYCapartments outscored all but two of my software posts, and those two are one story I cross-posted twice.",
     valueLead: 'for SaaS founders: bring your operator story to subs that buy what you sell, on top of the subs that build what you sell.',
     evidence: {
       title: "I spent 10 years as a plumber in NYC alongside my dad. Now I'm using tech to share everything he knows. for free.",
@@ -219,7 +228,7 @@ export const POST_ARCHETYPES: {
 
       image: '/images/reddit-evidence/dad-plumber-nyc.png',
       body: "I'm Shawn. For 10 years I worked plumbing in New York City with my father, Reuven. Not holding tools. running jobs. Every borough. Pre-war brownstones where nothing is where the blueprints say it is.",
-      lesson: 'a plumbing story in an apartment sub outscored most of what I have posted about software. find where your story fits that nobody expects.',
+      lesson: 'a plumbing story in an apartment sub, with nothing to do with what I sell, outscored nearly every post I have written about software. find where your story fits that nobody expects.',
     },
   },
   {
@@ -325,7 +334,7 @@ export const GATE_TABLE = [
   {
     gate: 'crowd trust',
     where: 'unwritten, read from your profile',
-    clear: `karma on both sides of the ledger. mine is ${redditStats.linkKarma.toLocaleString()} link / ${redditStats.commentKarma} comment, roughly 2:1. carrying real comment karma is the tell that you live there rather than just post there.`,
+    clear: `karma on both sides of the ledger. mine is ${redditStats.linkKarma.toLocaleString()} link / ${redditStats.commentKarma} comment, ${KARMA_RATIO}:1. carrying real comment karma is the tell that you live there rather than just post there.`,
   },
 ]
 
@@ -396,7 +405,7 @@ export const COMMENT_TYPES: {
     name: 'the cross-pollinator',
     icon: 'Link',
     desc: "drop your work in someone else's thread when it is genuinely relevant. relevance is the whole play.",
-    highlight: "the plumber website dropped in r/ClaudeCode got 10K views. I have no idea how many clicked through, and anyone who tells you a comment's CTR is guessing.",
+    highlight: "the plumber website dropped in r/ClaudeCode, in a thread about what I had shipped. reddit reports no view count on comments, so I cannot tell you how many saw it, let alone how many clicked through, and anyone who tells you a comment's CTR is guessing.",
     example: {
       redditId: 'oapxd4n',
 

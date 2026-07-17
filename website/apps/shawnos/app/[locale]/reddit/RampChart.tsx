@@ -13,7 +13,13 @@ import {
 } from 'recharts'
 import { ChartFrame } from './ChartFrame'
 
-type Week = { weekStart: string; comments: number; posts: number }
+type Week = {
+  weekStart: string
+  weekEnd: string
+  days: number
+  comments: number
+  posts: number
+}
 type Era = { era: string; comments: number; posts: number }
 
 /**
@@ -54,6 +60,17 @@ export function RampChart({
   const clearbox = eras.find((e) => e.era === 'clearbox')
   const ratio = (e?: Era) =>
     e && e.posts ? `${(e.comments / e.posts).toFixed(1)}:1` : null
+
+  // The "it flipped" week and what came next, found rather than remembered.
+  // Typing "0.1:1 in the week of 2026-06-23" would freeze the day the caption
+  // was written; the tracker runs daily and the low week moves.
+  const rated = series.filter((w) => w.posts > 0)
+  const low = rated.reduce(
+    (a, w) => (w.comments / w.posts < a.comments / a.posts ? w : a),
+    rated[0]
+  )
+  const after = series[series.findIndex((w) => w.weekStart === low.weekStart) + 1]
+  const r1 = (w?: Week) => (w && w.posts ? (w.comments / w.posts).toFixed(1) : null)
 
   // the era boundary lands inside a week; mark the week that contains it
   const boundaryWeek = clearboxFrom
@@ -141,13 +158,16 @@ export function RampChart({
       asOf={asOf}
       caption={
         <>
-          week one, {first.weekStart}: {first.comments} comments and{' '}
-          {first.posts} posts. across the karma-building era the account ran{' '}
+          the account opened on {first.weekStart} and spent its first{' '}
+          {first.days} days on {first.comments} comments and {first.posts} posts.
+          buckets are calendar weeks, so the first and last are part-weeks.
+          across the karma-building era the account ran{' '}
           {karma?.comments} comments to {karma?.posts} posts ({ratio(karma)}),
           and across the clearbox era {clearbox?.comments} to {clearbox?.posts}{' '}
-          ({ratio(clearbox)}). what this does not show is a clean inversion: the
-          ratio dips to 0.1:1 in the week of 2026-06-23 and returns to 1.7:1 the
-          week after. the eras are the trend, the weeks are noisy.
+          ({ratio(clearbox)}). what this does not show is a clean inversion:
+          the ratio bottoms out at {r1(low)}:1 in the week of {low.weekStart}
+          {after && r1(after) ? ` and is back to ${r1(after)}:1 the week after` : ''}.
+          the eras are the trend, the weeks are noisy.
         </>
       }
     >
