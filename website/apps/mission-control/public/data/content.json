@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-17T04:00:28.000Z",
+  "generated": "2026-07-18T04:00:31.000Z",
   "totals": {
     "total_content": 410,
     "total_drafts": 132,
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-07-17",
+      "grade": "D",
+      "score": 174,
+      "words": 12790,
+      "shipped": 3,
+      "cost": 0.0
+    },
+    {
       "date": "2026-07-16",
       "grade": "D",
       "score": 28,
@@ -1250,14 +1258,6 @@
       "score": 3,
       "words": 844,
       "shipped": 3,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-07-03",
-      "grade": "D",
-      "score": 112,
-      "words": 12948,
-      "shipped": 12,
       "cost": 0.0
     }
   ]

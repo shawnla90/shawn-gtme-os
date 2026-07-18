@@ -1,6 +1,127 @@
 {
-  "generated": "2026-07-17T04:10:01.721Z",
+  "generated": "2026-07-18T04:10:36.907Z",
   "events": [
+    {
+      "id": "commit-07657c8",
+      "title": "chore(crypto): evening signal update 2026-07-17",
+      "type": "system",
+      "datetime": "2026-07-17T17:30:06-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-17",
+      "metadata": {
+        "commitHash": "07657c8"
+      }
+    },
+    {
+      "id": "commit-eeecda3",
+      "title": "chore(crypto): morning signal update 2026-07-17",
+      "type": "system",
+      "datetime": "2026-07-17T07:00:10-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-17",
+      "metadata": {
+        "commitHash": "eeecda3"
+      }
+    },
+    {
+      "id": "commit-2ddf6e2",
+      "title": "style(reddit): grok pass on the chart captions",
+      "type": "system",
+      "datetime": "2026-07-17T01:39:19-04:00",
+      "status": "completed",
+      "description": "style(reddit): grok pass on the chart captions",
+      "metadata": {
+        "commitHash": "2ddf6e2"
+      }
+    },
+    {
+      "id": "commit-915b826",
+      "title": "fix(reddit): adversarial audit findings",
+      "type": "system",
+      "datetime": "2026-07-17T01:34:24-04:00",
+      "status": "completed",
+      "description": "fix(reddit): adversarial audit findings",
+      "metadata": {
+        "commitHash": "915b826"
+      }
+    },
+    {
+      "id": "commit-3e70f16",
+      "title": "fix(reddit): free the gate table from the reading column",
+      "type": "system",
+      "datetime": "2026-07-17T01:22:21-04:00",
+      "status": "completed",
+      "description": "fix(reddit): free the gate table from the reading column",
+      "metadata": {
+        "commitHash": "3e70f16"
+      }
+    },
+    {
+      "id": "commit-7168483",
+      "title": "feat(reddit): four charts on one frame",
+      "type": "system",
+      "datetime": "2026-07-17T01:16:16-04:00",
+      "status": "completed",
+      "description": "feat(reddit): four charts on one frame",
+      "metadata": {
+        "commitHash": "7168483"
+      }
+    },
+    {
+      "id": "commit-dc234f3",
+      "title": "feat(reddit): lucide icons in place of emoji markers",
+      "type": "system",
+      "datetime": "2026-07-17T00:59:07-04:00",
+      "status": "completed",
+      "description": "feat(reddit): lucide icons in place of emoji markers",
+      "metadata": {
+        "commitHash": "dc234f3"
+      }
+    },
+    {
+      "id": "commit-f5ba62a",
+      "title": "feat(reddit): three-column reading shell with working rails",
+      "type": "system",
+      "datetime": "2026-07-17T00:53:26-04:00",
+      "status": "completed",
+      "description": "feat(reddit): three-column reading shell with working rails",
+      "metadata": {
+        "commitHash": "f5ba62a"
+      }
+    },
+    {
+      "id": "commit-79f9374",
+      "title": "feat(reddit): body ink + long-form type scale",
+      "type": "system",
+      "datetime": "2026-07-17T00:43:12-04:00",
+      "status": "completed",
+      "description": "feat(reddit): body ink + long-form type scale",
+      "metadata": {
+        "commitHash": "79f9374"
+      }
+    },
+    {
+      "id": "commit-61b16c1",
+      "title": "feat(reddit): v5 truth pass + v6 wide shell",
+      "type": "system",
+      "datetime": "2026-07-17T00:38:27-04:00",
+      "status": "completed",
+      "description": "feat(reddit): v5 truth pass + v6 wide shell",
+      "metadata": {
+        "commitHash": "61b16c1"
+      }
+    },
+    {
+      "id": "commit-9fcf0d0",
+      "title": "chore: daily tracker scan 2026-07-16",
+      "type": "system",
+      "datetime": "2026-07-17T00:10:02-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-16",
+      "metadata": {
+        "commitHash": "9fcf0d0"
+      }
+    },
     {
       "id": "commit-11857bc",
       "title": "feat(reddit): playbook v4 — the ramp, karma, the ask, shadow",
@@ -44,35 +165,13 @@
       "metadata": {
         "commitHash": "ed08fd0"
       }
-    },
-    {
-      "id": "commit-0541688",
-      "title": "chore(crypto): evening signal update 2026-07-15",
-      "type": "system",
-      "datetime": "2026-07-15T17:30:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-15",
-      "metadata": {
-        "commitHash": "0541688"
-      }
-    },
-    {
-      "id": "commit-f8c3e3b",
-      "title": "chore(crypto): morning signal update 2026-07-15",
-      "type": "system",
-      "datetime": "2026-07-15T07:00:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-15",
-      "metadata": {
-        "commitHash": "f8c3e3b"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 6,
-    "completedEvents": 6,
+    "totalEvents": 15,
+    "completedEvents": 15,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 6,
+    "deploymentsThisWeek": 15,
     "upcomingCronJobs": 0
   }
 }
