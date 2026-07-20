@@ -1,6 +1,39 @@
 {
-  "generated": "2026-07-19T04:10:22.418Z",
+  "generated": "2026-07-20T04:10:15.058Z",
   "events": [
+    {
+      "id": "commit-e1f4b4c",
+      "title": "chore(crypto): evening signal update 2026-07-19",
+      "type": "system",
+      "datetime": "2026-07-19T17:30:04-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-19",
+      "metadata": {
+        "commitHash": "e1f4b4c"
+      }
+    },
+    {
+      "id": "commit-df471c4",
+      "title": "chore(crypto): morning signal update 2026-07-19",
+      "type": "system",
+      "datetime": "2026-07-19T07:00:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-19",
+      "metadata": {
+        "commitHash": "df471c4"
+      }
+    },
+    {
+      "id": "commit-95f0902",
+      "title": "chore: daily tracker scan 2026-07-18",
+      "type": "system",
+      "datetime": "2026-07-19T00:10:23-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-18",
+      "metadata": {
+        "commitHash": "95f0902"
+      }
+    },
     {
       "id": "commit-be9efb3",
       "title": "chore(crypto): evening signal update 2026-07-18",
@@ -33,123 +66,13 @@
       "metadata": {
         "commitHash": "1a465c8"
       }
-    },
-    {
-      "id": "commit-07657c8",
-      "title": "chore(crypto): evening signal update 2026-07-17",
-      "type": "system",
-      "datetime": "2026-07-17T17:30:06-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-17",
-      "metadata": {
-        "commitHash": "07657c8"
-      }
-    },
-    {
-      "id": "commit-eeecda3",
-      "title": "chore(crypto): morning signal update 2026-07-17",
-      "type": "system",
-      "datetime": "2026-07-17T07:00:10-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-17",
-      "metadata": {
-        "commitHash": "eeecda3"
-      }
-    },
-    {
-      "id": "commit-2ddf6e2",
-      "title": "style(reddit): grok pass on the chart captions",
-      "type": "system",
-      "datetime": "2026-07-17T01:39:19-04:00",
-      "status": "completed",
-      "description": "style(reddit): grok pass on the chart captions",
-      "metadata": {
-        "commitHash": "2ddf6e2"
-      }
-    },
-    {
-      "id": "commit-915b826",
-      "title": "fix(reddit): adversarial audit findings",
-      "type": "system",
-      "datetime": "2026-07-17T01:34:24-04:00",
-      "status": "completed",
-      "description": "fix(reddit): adversarial audit findings",
-      "metadata": {
-        "commitHash": "915b826"
-      }
-    },
-    {
-      "id": "commit-3e70f16",
-      "title": "fix(reddit): free the gate table from the reading column",
-      "type": "system",
-      "datetime": "2026-07-17T01:22:21-04:00",
-      "status": "completed",
-      "description": "fix(reddit): free the gate table from the reading column",
-      "metadata": {
-        "commitHash": "3e70f16"
-      }
-    },
-    {
-      "id": "commit-7168483",
-      "title": "feat(reddit): four charts on one frame",
-      "type": "system",
-      "datetime": "2026-07-17T01:16:16-04:00",
-      "status": "completed",
-      "description": "feat(reddit): four charts on one frame",
-      "metadata": {
-        "commitHash": "7168483"
-      }
-    },
-    {
-      "id": "commit-dc234f3",
-      "title": "feat(reddit): lucide icons in place of emoji markers",
-      "type": "system",
-      "datetime": "2026-07-17T00:59:07-04:00",
-      "status": "completed",
-      "description": "feat(reddit): lucide icons in place of emoji markers",
-      "metadata": {
-        "commitHash": "dc234f3"
-      }
-    },
-    {
-      "id": "commit-f5ba62a",
-      "title": "feat(reddit): three-column reading shell with working rails",
-      "type": "system",
-      "datetime": "2026-07-17T00:53:26-04:00",
-      "status": "completed",
-      "description": "feat(reddit): three-column reading shell with working rails",
-      "metadata": {
-        "commitHash": "f5ba62a"
-      }
-    },
-    {
-      "id": "commit-79f9374",
-      "title": "feat(reddit): body ink + long-form type scale",
-      "type": "system",
-      "datetime": "2026-07-17T00:43:12-04:00",
-      "status": "completed",
-      "description": "feat(reddit): body ink + long-form type scale",
-      "metadata": {
-        "commitHash": "79f9374"
-      }
-    },
-    {
-      "id": "commit-61b16c1",
-      "title": "feat(reddit): v5 truth pass + v6 wide shell",
-      "type": "system",
-      "datetime": "2026-07-17T00:38:27-04:00",
-      "status": "completed",
-      "description": "feat(reddit): v5 truth pass + v6 wide shell",
-      "metadata": {
-        "commitHash": "61b16c1"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 13,
-    "completedEvents": 13,
+    "totalEvents": 6,
+    "completedEvents": 6,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 13,
+    "deploymentsThisWeek": 6,
     "upcomingCronJobs": 0
   }
 }
