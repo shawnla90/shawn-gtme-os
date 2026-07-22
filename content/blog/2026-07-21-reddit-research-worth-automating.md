@@ -28,6 +28,8 @@ i open-sourced the whole second half as a skill in gtm coding agents. it is call
 
 the scripts are plain and short. you own all of it, and you can read every rule instead of trusting a black box.
 
+![The ingestion pipeline: subreddits into the engine, extracted into lead, competitor, and engagement signals, out through your agent CLI into lead magnets, content, and copy.](/blog/aura-pipeline.png)
+
 ## how to connect (the part people overthink)
 
 it does not matter what your stack is. the connect step is one authorization and one config file.
@@ -51,6 +53,8 @@ the skill runs on two sources, and i ship both because they are honest about the
 rapidapi is the quick baseline. it is fast and cheap, enough to see the signal, build the first sheet, and prove the loop to yourself.
 
 clearbox is the accurate version. it reads reddit by buying intent instead of keywords, off real content consumption, and it adds sentiment and competitor context. the difference: "best crm for small teams" and "frustrated with hubspot" are both buying signals, and only one has the keyword in it. a keyword tool catches the first. clearbox catches both, scores them for intent and fit, and hands you the few that are worth your time so you can act on them like a person and orchestrate around them like an operator.
+
+![Scraping versus understanding: a raw scraper returns 3,000 unranked, noisy maybes. clearbox returns the twelve that matter, intent-scored and ranked.](/blog/clearbox-vs-scraper.png)
 
 use rapidapi to learn the loop. move to clearbox when you want it accurate and hands-off.
 
