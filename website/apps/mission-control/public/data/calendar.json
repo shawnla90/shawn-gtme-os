@@ -1,6 +1,72 @@
 {
-  "generated": "2026-07-21T04:04:13.593Z",
+  "generated": "2026-07-22T04:04:18.060Z",
   "events": [
+    {
+      "id": "commit-9deb7ee",
+      "title": "content: add engine charts to reddit blog (pipeline + scrape",
+      "type": "system",
+      "datetime": "2026-07-21T23:59:23-04:00",
+      "status": "completed",
+      "description": "content: add engine charts to reddit blog (pipeline + scraper vs clearbox)",
+      "metadata": {
+        "commitHash": "9deb7ee"
+      }
+    },
+    {
+      "id": "commit-f0c5e56",
+      "title": "content: ship reddit-research-worth-automating blog + vault ",
+      "type": "system",
+      "datetime": "2026-07-21T23:45:33-04:00",
+      "status": "completed",
+      "description": "content: ship reddit-research-worth-automating blog + vault entry",
+      "metadata": {
+        "commitHash": "f0c5e56"
+      }
+    },
+    {
+      "id": "commit-3ec88fb",
+      "title": "chore(crypto): evening signal update 2026-07-21",
+      "type": "system",
+      "datetime": "2026-07-21T17:30:07-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-21",
+      "metadata": {
+        "commitHash": "3ec88fb"
+      }
+    },
+    {
+      "id": "commit-f64ccf5",
+      "title": "chore(crypto): morning signal update 2026-07-21",
+      "type": "system",
+      "datetime": "2026-07-21T07:00:06-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-21",
+      "metadata": {
+        "commitHash": "f64ccf5"
+      }
+    },
+    {
+      "id": "commit-e2db781",
+      "title": "feat: claude daily digest 2026-07-21",
+      "type": "milestone",
+      "datetime": "2026-07-21T03:44:33-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-21",
+      "metadata": {
+        "commitHash": "e2db781"
+      }
+    },
+    {
+      "id": "commit-0d0997d",
+      "title": "chore: daily tracker scan 2026-07-20",
+      "type": "system",
+      "datetime": "2026-07-21T00:04:14-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-20",
+      "metadata": {
+        "commitHash": "0d0997d"
+      }
+    },
     {
       "id": "commit-76cee8d",
       "title": "chore(crypto): evening signal update 2026-07-20",
@@ -55,46 +121,13 @@
       "metadata": {
         "commitHash": "d21a201"
       }
-    },
-    {
-      "id": "commit-e1f4b4c",
-      "title": "chore(crypto): evening signal update 2026-07-19",
-      "type": "system",
-      "datetime": "2026-07-19T17:30:04-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-19",
-      "metadata": {
-        "commitHash": "e1f4b4c"
-      }
-    },
-    {
-      "id": "commit-df471c4",
-      "title": "chore(crypto): morning signal update 2026-07-19",
-      "type": "system",
-      "datetime": "2026-07-19T07:00:05-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-19",
-      "metadata": {
-        "commitHash": "df471c4"
-      }
-    },
-    {
-      "id": "commit-95f0902",
-      "title": "chore: daily tracker scan 2026-07-18",
-      "type": "system",
-      "datetime": "2026-07-19T00:10:23-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-07-18",
-      "metadata": {
-        "commitHash": "95f0902"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 8,
-    "completedEvents": 8,
+    "totalEvents": 11,
+    "completedEvents": 11,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 8,
+    "deploymentsThisWeek": 11,
     "upcomingCronJobs": 0
   }
 }

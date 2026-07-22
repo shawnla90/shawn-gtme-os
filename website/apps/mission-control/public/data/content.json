@@ -1,10 +1,10 @@
 {
-  "generated": "2026-07-21T04:00:37.000Z",
+  "generated": "2026-07-22T04:00:20.000Z",
   "totals": {
-    "total_content": 412,
+    "total_content": 415,
     "total_drafts": 132,
-    "total_final": 280,
-    "total_words": 307797,
+    "total_final": 283,
+    "total_words": 310310,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "website": {
       "draft": 1,
-      "final": 115,
-      "total": 116,
-      "words": 154815
+      "final": 117,
+      "total": 118,
+      "words": 157216
     },
     "reddit": {
       "draft": 23,
@@ -30,9 +30,9 @@
     },
     "linkedin": {
       "draft": 49,
-      "final": 75,
-      "total": 124,
-      "words": 49701
+      "final": 76,
+      "total": 125,
+      "words": 49813
     },
     "substack": {
       "draft": 13,
@@ -48,6 +48,28 @@
     }
   },
   "recent": [
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Tuesday, July 21, 2026",
+      "slug": "claude-daily-2026-07-21",
+      "date": "2026-07-21",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1323,
+      "file_path": "content/website/final/claude-daily-2026-07-21.md"
+    },
+    {
+      "platform": "website",
+      "title": "the part of reddit worth automating is not the posting",
+      "slug": "reddit-research-worth-automating",
+      "date": "2026-07-21",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1078,
+      "file_path": "content/website/final/reddit-research-worth-automating.md"
+    },
     {
       "platform": "website",
       "title": "Claude Code Daily: Monday, July 20, 2026",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 954,
       "file_path": "content/website/final/voice-invocation-play.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "SATURDAY. DAY THIRTY-FOUR OF D GRADES.",
-      "slug": "2026-04-26",
-      "date": "2026-04-26",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 698,
-      "file_path": "content/nio-log/2026-04-26.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Sunday, April 26, 2026",
-      "slug": "claude-daily-2026-04-26",
-      "date": "2026-04-26",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1290,
-      "file_path": "content/website/final/claude-daily-2026-04-26.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-07-21",
+      "grade": "D",
+      "score": 68,
+      "words": 9373,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-07-20",
       "grade": "D",
       "score": 33,
@@ -1250,14 +1258,6 @@
       "score": 18,
       "words": 133,
       "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-07-07",
-      "grade": "D",
-      "score": 46,
-      "words": 7040,
-      "shipped": 1,
       "cost": 0.0
     }
   ]
