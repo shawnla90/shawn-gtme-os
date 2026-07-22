@@ -8,7 +8,7 @@ featured: true
 
 Ask an AI assistant for the best tool in your category and it answers from what it can read. A lot of what it reads is Reddit, because that is where people say what they actually bought and what they regret. Recommendations get decided there now, and most companies are not in the conversation at all.
 
-The instinct is to post your way in. That gets accounts banned, and it should. The better move is to treat Reddit as two separate halves and automate only the half that is safe to automate.
+The instinct is to automate your way in. That gets accounts banned, and it should. The better move is to treat Reddit as two separate halves and automate only the half that is safe to automate.
 
 ![Human on Reddit, data in your stack: stay human on the platform, automate the research off it, connect the signal into whatever tools you already run, then act.](/blog/reddit-ai-visibility.png)
 
@@ -22,7 +22,7 @@ The research is the half worth automating. The threads where your buyers describ
 
 The research half is open as a skill in GTM Coding Agents, called [reddit-buyer-signals](https://github.com/shawnla90/gtm-coding-agent/tree/main/starters/reddit-buyer-signals). It lives on GitHub, so it drops straight into a coding agent, Claude Code, Codex, or Gemini, and runs. Five steps:
 
-1. **Connect.** It authorizes your workspace once over the CLI, so an agent can write your sheets, docs, and slides as you. The step most guides skip, and the reason a copied script fails on the first run.
+1. **Connect.** It authorizes your workspace once over the CLI, so an agent can write your sheets, docs, and slides as you. The step guides skip, and the reason a copied script fails on the first run.
 2. **Pull.** It pulls the recent threads from the subreddits and buyer keywords you set. Two guardrails run at ingest.
 3. **Mine.** It reads titles, bodies, and top comments and pulls out the real questions, comparisons, and complaints, in the buyer's own words.
 4. **Score.** It ranks every topic one to five on intent, demand, and fit, with a one-line reason you keep.
