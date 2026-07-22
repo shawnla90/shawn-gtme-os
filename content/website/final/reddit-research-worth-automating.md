@@ -72,7 +72,13 @@ The packaging is the point, not any single piece.
 
 ## The short version
 
-Reddit decides who AI recommends. Stay human on it, automate the research off it, and pick the play that fits your company. The skills are open, the outputs are yours, and [Clearbox](https://clearbox.to) is there when you want it accurate.
+Reddit decides who AI recommends. Stay human on it, automate the research off it, and pick the play that fits your company.
+
+## Try it, and come talk to me
+
+The fastest way to feel it is to start free. [Clearbox](https://clearbox.to) reads Reddit by intent and hands you the conversations that matter, and that signal plugs straight into whatever you already orchestrate with, Claude Code, Clay, or your own scripts. Point it at your stack and you have rich, real buyer context today instead of a whiteboard guess.
+
+If you want to go deeper, DM me. I am sharing all of it. My co-founder and I get on calls to walk through how it works and the technical builds you can run on top of it, and if you would rather we just build it with you, we do that too.
 
 Shawn Tenam
 the GTM alchemist
