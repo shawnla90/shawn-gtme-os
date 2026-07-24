@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <radialGradient id="glow">
+    <stop offset="0%" stop-color="#6d5ee9" stop-opacity="0.30"/>
+    <stop offset="100%" stop-color="#6d5ee9" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="rule" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%" stop-color="#6d5ee9"/>
+    <stop offset="100%" stop-color="#6d5ee9" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+<rect width="1080" height="1350" fill="#050505"/>
+<line x1="0" y1="0" x2="0" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="90" y1="0" x2="90" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="180" y1="0" x2="180" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="270" y1="0" x2="270" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="360" y1="0" x2="360" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="450" y1="0" x2="450" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="540" y1="0" x2="540" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="630" y1="0" x2="630" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="720" y1="0" x2="720" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="810" y1="0" x2="810" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="900" y1="0" x2="900" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="990" y1="0" x2="990" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="1080" y1="0" x2="1080" y2="1350" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="0" x2="1080" y2="0" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="90" x2="1080" y2="90" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="180" x2="1080" y2="180" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="270" x2="1080" y2="270" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="360" x2="1080" y2="360" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="450" x2="1080" y2="450" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="540" x2="1080" y2="540" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="630" x2="1080" y2="630" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="720" x2="1080" y2="720" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="810" x2="1080" y2="810" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="900" x2="1080" y2="900" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="990" x2="1080" y2="990" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="1080" x2="1080" y2="1080" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="1170" x2="1080" y2="1170" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="1260" x2="1080" y2="1260" stroke="#16132a" stroke-width="1"/>
+<line x1="0" y1="1350" x2="1080" y2="1350" stroke="#16132a" stroke-width="1"/>
+<circle cx="880" cy="150" r="420" fill="url(#glow)" opacity="0.5"/>
+<text x="80" y="180" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#8b7dff" font-weight="700" text-anchor="start" letter-spacing="3">WORKFLOW 03</text>
+<text x="80" y="262" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="62" fill="#fafafa" font-weight="700" text-anchor="start" letter-spacing="0">AI answer citations</text>
+<text x="80" y="330" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="28" fill="#a3a3a3" font-weight="400" text-anchor="start" letter-spacing="0">nothing to do with contact data</text>
+<rect x="80" y="420" width="920" height="104" rx="16" fill="#0d0d12" stroke="#262626" stroke-width="1.5"/>
+<rect x="104" y="451" width="42" height="42" rx="11" fill="#6d5ee9" opacity="0.16"/>
+<text x="125" y="480" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#8b7dff" font-weight="700" text-anchor="middle" letter-spacing="0">1</text>
+<text x="170" y="464" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="34" fill="#fafafa" font-weight="600" text-anchor="start" letter-spacing="0">query set</text>
+<text x="170" y="498" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#a3a3a3" font-weight="400" text-anchor="start" letter-spacing="0">real buyer questions, not keywords</text>
+<line x1="127" y1="528" x2="127" y2="544" stroke="#6d5ee9" stroke-width="2.5" opacity="0.6"/>
+<path d="M 121 540 L 127 549 L 133 540 Z" fill="#6d5ee9" opacity="0.8"/>
+<rect x="80" y="554" width="920" height="104" rx="16" fill="#0d0d12" stroke="#262626" stroke-width="1.5"/>
+<rect x="104" y="585" width="42" height="42" rx="11" fill="#6d5ee9" opacity="0.16"/>
+<text x="125" y="614" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#8b7dff" font-weight="700" text-anchor="middle" letter-spacing="0">2</text>
+<text x="170" y="598" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="34" fill="#fafafa" font-weight="600" text-anchor="start" letter-spacing="0">capture</text>
+<text x="170" y="632" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#a3a3a3" font-weight="400" text-anchor="start" letter-spacing="0">the answers, and every source they cite</text>
+<line x1="127" y1="662" x2="127" y2="678" stroke="#6d5ee9" stroke-width="2.5" opacity="0.6"/>
+<path d="M 121 674 L 127 683 L 133 674 Z" fill="#6d5ee9" opacity="0.8"/>
+<rect x="80" y="688" width="920" height="104" rx="16" fill="#0d0d12" stroke="#262626" stroke-width="1.5"/>
+<rect x="104" y="719" width="42" height="42" rx="11" fill="#6d5ee9" opacity="0.16"/>
+<text x="125" y="748" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#8b7dff" font-weight="700" text-anchor="middle" letter-spacing="0">3</text>
+<text x="170" y="732" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="34" fill="#fafafa" font-weight="600" text-anchor="start" letter-spacing="0">extract</text>
+<text x="170" y="766" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#a3a3a3" font-weight="400" text-anchor="start" letter-spacing="0">the domains behind the citations</text>
+<line x1="127" y1="796" x2="127" y2="812" stroke="#6d5ee9" stroke-width="2.5" opacity="0.6"/>
+<path d="M 121 808 L 127 817 L 133 808 Z" fill="#6d5ee9" opacity="0.8"/>
+<rect x="80" y="822" width="920" height="104" rx="16" fill="#0d0d12" stroke="#262626" stroke-width="1.5"/>
+<rect x="104" y="853" width="42" height="42" rx="11" fill="#6d5ee9" opacity="0.16"/>
+<text x="125" y="882" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#8b7dff" font-weight="700" text-anchor="middle" letter-spacing="0">4</text>
+<text x="170" y="866" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="34" fill="#fafafa" font-weight="600" text-anchor="start" letter-spacing="0">enrich</text>
+<text x="170" y="900" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#a3a3a3" font-weight="400" text-anchor="start" letter-spacing="0">community, publisher, review site, competitor</text>
+<line x1="127" y1="930" x2="127" y2="946" stroke="#6d5ee9" stroke-width="2.5" opacity="0.6"/>
+<path d="M 121 942 L 127 951 L 133 942 Z" fill="#6d5ee9" opacity="0.8"/>
+<rect x="80" y="956" width="920" height="104" rx="16" fill="#0d0d12" stroke="#262626" stroke-width="1.5"/>
+<rect x="104" y="987" width="42" height="42" rx="11" fill="#6d5ee9" opacity="0.16"/>
+<text x="125" y="1016" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#8b7dff" font-weight="700" text-anchor="middle" letter-spacing="0">5</text>
+<text x="170" y="1000" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="34" fill="#fafafa" font-weight="600" text-anchor="start" letter-spacing="0">diff</text>
+<text x="170" y="1034" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#a3a3a3" font-weight="400" text-anchor="start" letter-spacing="0">which repeat, and which you are absent from</text>
+<rect x="80" y="96" width="180" height="4" fill="url(#rule)"/>
+<text x="80" y="1272" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" fill="#525252" font-weight="500" text-anchor="start" letter-spacing="1.5">freckle cli</text>
+<text x="1000" y="1272" font-family="'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace" font-size="24" fill="#525252" font-weight="500" text-anchor="end" letter-spacing="0">06 / 08</text>
+<text x="80" y="1226" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="26" fill="#a3a3a3" font-weight="500" text-anchor="start" letter-spacing="0">shawn ⚡ the GTM alchemist</text>
+</svg>
