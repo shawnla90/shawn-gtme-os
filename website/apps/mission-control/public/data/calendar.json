@@ -1,6 +1,50 @@
 {
-  "generated": "2026-07-23T04:03:53.969Z",
+  "generated": "2026-07-24T04:04:10.892Z",
   "events": [
+    {
+      "id": "commit-8825234",
+      "title": "chore(crypto): evening signal update 2026-07-23",
+      "type": "system",
+      "datetime": "2026-07-23T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-23",
+      "metadata": {
+        "commitHash": "8825234"
+      }
+    },
+    {
+      "id": "commit-4e816ce",
+      "title": "chore(crypto): morning signal update 2026-07-23",
+      "type": "system",
+      "datetime": "2026-07-23T07:00:05-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-23",
+      "metadata": {
+        "commitHash": "4e816ce"
+      }
+    },
+    {
+      "id": "commit-f3bcca9",
+      "title": "feat: claude daily digest 2026-07-23",
+      "type": "milestone",
+      "datetime": "2026-07-23T03:04:35-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-23",
+      "metadata": {
+        "commitHash": "f3bcca9"
+      }
+    },
+    {
+      "id": "commit-1440aff",
+      "title": "chore: daily tracker scan 2026-07-22",
+      "type": "system",
+      "datetime": "2026-07-23T00:03:55-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-22",
+      "metadata": {
+        "commitHash": "1440aff"
+      }
+    },
     {
       "id": "commit-168babb",
       "title": "content: reddit blog - add the human-half ramp section (rati",
@@ -88,79 +132,13 @@
       "metadata": {
         "commitHash": "c26260a"
       }
-    },
-    {
-      "id": "commit-9deb7ee",
-      "title": "content: add engine charts to reddit blog (pipeline + scrape",
-      "type": "system",
-      "datetime": "2026-07-21T23:59:23-04:00",
-      "status": "completed",
-      "description": "content: add engine charts to reddit blog (pipeline + scraper vs clearbox)",
-      "metadata": {
-        "commitHash": "9deb7ee"
-      }
-    },
-    {
-      "id": "commit-f0c5e56",
-      "title": "content: ship reddit-research-worth-automating blog + vault ",
-      "type": "system",
-      "datetime": "2026-07-21T23:45:33-04:00",
-      "status": "completed",
-      "description": "content: ship reddit-research-worth-automating blog + vault entry",
-      "metadata": {
-        "commitHash": "f0c5e56"
-      }
-    },
-    {
-      "id": "commit-3ec88fb",
-      "title": "chore(crypto): evening signal update 2026-07-21",
-      "type": "system",
-      "datetime": "2026-07-21T17:30:07-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-21",
-      "metadata": {
-        "commitHash": "3ec88fb"
-      }
-    },
-    {
-      "id": "commit-f64ccf5",
-      "title": "chore(crypto): morning signal update 2026-07-21",
-      "type": "system",
-      "datetime": "2026-07-21T07:00:06-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-21",
-      "metadata": {
-        "commitHash": "f64ccf5"
-      }
-    },
-    {
-      "id": "commit-e2db781",
-      "title": "feat: claude daily digest 2026-07-21",
-      "type": "milestone",
-      "datetime": "2026-07-21T03:44:33-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-07-21",
-      "metadata": {
-        "commitHash": "e2db781"
-      }
-    },
-    {
-      "id": "commit-0d0997d",
-      "title": "chore: daily tracker scan 2026-07-20",
-      "type": "system",
-      "datetime": "2026-07-21T00:04:14-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-07-20",
-      "metadata": {
-        "commitHash": "0d0997d"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 14,
-    "completedEvents": 14,
+    "totalEvents": 12,
+    "completedEvents": 12,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 14,
+    "deploymentsThisWeek": 12,
     "upcomingCronJobs": 0
   }
 }
