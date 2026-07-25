@@ -1,6 +1,50 @@
 {
-  "generated": "2026-07-24T04:04:10.892Z",
+  "generated": "2026-07-25T04:04:40.836Z",
   "events": [
+    {
+      "id": "commit-5e23327",
+      "title": "chore(crypto): evening signal update 2026-07-24",
+      "type": "system",
+      "datetime": "2026-07-24T17:30:07-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-07-24",
+      "metadata": {
+        "commitHash": "5e23327"
+      }
+    },
+    {
+      "id": "commit-8ff0bdd",
+      "title": "chore(crypto): morning signal update 2026-07-24",
+      "type": "system",
+      "datetime": "2026-07-24T07:00:04-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-07-24",
+      "metadata": {
+        "commitHash": "8ff0bdd"
+      }
+    },
+    {
+      "id": "commit-12d7c19",
+      "title": "feat: claude daily digest 2026-07-24",
+      "type": "milestone",
+      "datetime": "2026-07-24T03:41:42-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-07-24",
+      "metadata": {
+        "commitHash": "12d7c19"
+      }
+    },
+    {
+      "id": "commit-d4d75b7",
+      "title": "chore: daily tracker scan 2026-07-23",
+      "type": "system",
+      "datetime": "2026-07-24T00:04:11-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-23",
+      "metadata": {
+        "commitHash": "d4d75b7"
+      }
+    },
     {
       "id": "commit-8825234",
       "title": "chore(crypto): evening signal update 2026-07-23",
@@ -33,112 +77,13 @@
       "metadata": {
         "commitHash": "f3bcca9"
       }
-    },
-    {
-      "id": "commit-1440aff",
-      "title": "chore: daily tracker scan 2026-07-22",
-      "type": "system",
-      "datetime": "2026-07-23T00:03:55-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-07-22",
-      "metadata": {
-        "commitHash": "1440aff"
-      }
-    },
-    {
-      "id": "commit-168babb",
-      "title": "content: reddit blog - add the human-half ramp section (rati",
-      "type": "system",
-      "datetime": "2026-07-22T18:18:44-04:00",
-      "status": "completed",
-      "description": "content: reddit blog - add the human-half ramp section (ratio, karma hack, receipts)",
-      "metadata": {
-        "commitHash": "168babb"
-      }
-    },
-    {
-      "id": "commit-b119f51",
-      "title": "content: reddit blog - convert the close (free trial + conne",
-      "type": "system",
-      "datetime": "2026-07-22T18:05:55-04:00",
-      "status": "completed",
-      "description": "content: reddit blog - convert the close (free trial + connect your stack + DM/calls CTA)",
-      "metadata": {
-        "commitHash": "b119f51"
-      }
-    },
-    {
-      "id": "commit-eca98ea",
-      "title": "chore(crypto): evening signal update 2026-07-22",
-      "type": "system",
-      "datetime": "2026-07-22T17:30:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-22",
-      "metadata": {
-        "commitHash": "eca98ea"
-      }
-    },
-    {
-      "id": "commit-7efe7a8",
-      "title": "chore(crypto): morning signal update 2026-07-22",
-      "type": "system",
-      "datetime": "2026-07-22T07:00:04-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-22",
-      "metadata": {
-        "commitHash": "7efe7a8"
-      }
-    },
-    {
-      "id": "commit-ba6d0dc",
-      "title": "feat: claude daily digest 2026-07-22",
-      "type": "milestone",
-      "datetime": "2026-07-22T03:18:36-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-07-22",
-      "metadata": {
-        "commitHash": "ba6d0dc"
-      }
-    },
-    {
-      "id": "commit-b7c6b96",
-      "title": "content: reddit blog rewrite - sentence case, value-forward,",
-      "type": "system",
-      "datetime": "2026-07-22T00:21:29-04:00",
-      "status": "completed",
-      "description": "content: reddit blog rewrite - sentence case, value-forward, title 'Reddit is where AI decides who to recommend'",
-      "metadata": {
-        "commitHash": "b7c6b96"
-      }
-    },
-    {
-      "id": "commit-2ab38b9",
-      "title": "content: full-story rewrite of reddit blog (skill packaging,",
-      "type": "system",
-      "datetime": "2026-07-22T00:10:13-04:00",
-      "status": "completed",
-      "description": "content: full-story rewrite of reddit blog (skill packaging, plays, agency, where it lives)",
-      "metadata": {
-        "commitHash": "2ab38b9"
-      }
-    },
-    {
-      "id": "commit-c26260a",
-      "title": "chore: daily tracker scan 2026-07-21",
-      "type": "system",
-      "datetime": "2026-07-22T00:04:19-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-07-21",
-      "metadata": {
-        "commitHash": "c26260a"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 12,
-    "completedEvents": 12,
+    "totalEvents": 7,
+    "completedEvents": 7,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 12,
+    "deploymentsThisWeek": 7,
     "upcomingCronJobs": 0
   }
 }
