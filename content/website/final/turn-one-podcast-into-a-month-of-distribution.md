@@ -37,7 +37,7 @@ One rule made all of this possible: get the raw files. Riverside hands every gue
 
 Day 1 of the series, straight from the machine:
 
-{{video:https://uohlxmupujhxhbffspzs.supabase.co/storage/v1/object/public/leanscale-podcast-shorts/clip_01_plumber-to-claude-code_v3e.mp4 poster=https://uohlxmupujhxhbffspzs.supabase.co/storage/v1/object/public/leanscale-podcast-shorts/clip01_poster_v1.jpg}}
+{{video:https://uohlxmupujhxhbffspzs.supabase.co/storage/v1/object/public/leanscale-podcast-shorts/clip_01_plumber-to-claude-code_v4.mp4 poster=https://uohlxmupujhxhbffspzs.supabase.co/storage/v1/object/public/leanscale-podcast-shorts/clip01_poster_v1.jpg}}
 
 **Host the masters at public URLs.** Ours sit in Supabase storage. One JSON file maps every clip slug to its URL. That map is what every other system reads.
 
