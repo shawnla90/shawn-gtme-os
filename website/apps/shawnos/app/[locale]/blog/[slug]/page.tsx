@@ -3,7 +3,7 @@ import path from 'path'
 import fs from 'fs'
 import { getTranslations } from 'next-intl/server'
 import { getPostSlugs, getPostBySlug, markdownToHtml, extractFAQs } from '@shawnos/shared/lib'
-import { withYouTubeEmbeds } from '../../../../lib/youtube-embed'
+import { withYouTubeEmbeds, withVideoEmbeds } from '../../../../lib/youtube-embed'
 import { BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../../i18n/hreflang'
 import { Link } from '../../../../i18n/navigation'
@@ -101,7 +101,7 @@ export default async function BlogPost({
   const t = await getTranslations('Blog')
   const contentDir = getContentDir(locale, slug)
   const post = getPostBySlug(slug, contentDir)
-  let htmlContent = withYouTubeEmbeds(await markdownToHtml(post.content))
+  let htmlContent = withVideoEmbeds(withYouTubeEmbeds(await markdownToHtml(post.content)))
   if (post.category === 'claude-daily') {
     // ==phrase== markers → inline highlight spans (rough-notation targets).
     // Applied after markdownToHtml so the sanitizer doesn't strip it (GFM ignores ==).

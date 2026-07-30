@@ -19,3 +19,31 @@ function liteEmbed(id: string): string {
 export function withYouTubeEmbeds(html: string): string {
   return html.replace(SHORTCODE, (_m, id: string) => liteEmbed(id))
 }
+
+// {{video:https://...mp4}} on its own line becomes a self-hosted HTML5 player.
+// Runs after sanitize (like the YouTube shortcode), so the <video> tag survives.
+// GFM autolinks the URL inside the braces and even swallows the closing }} into
+// the href (as %7D%7D), so this parses the whole paragraph and cleans the URL.
+const VIDEO_SHORTCODE = /<p>\s*(?:\{|&#123;){2}video:([\s\S]*?)<\/p>/g
+
+const stripBraces = (s: string) => s.replace(/(?:%7D|&#125;|\})+$/i, '').trim()
+
+export function withVideoEmbeds(html: string): string {
+  return html.replace(VIDEO_SHORTCODE, (m, inner: string) => {
+    // Autolinked anchors reduce to their text, which is the URL itself.
+    const text = inner.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+    const [rawUrl, rawPoster] = text.split(/\s+poster=/)
+    const url = stripBraces(rawUrl ?? '')
+    const poster = rawPoster ? stripBraces(rawPoster) : ''
+    if (!/^https:\/\/[^\s"']+\.(mp4|webm)$/i.test(url)) return m
+    const posterAttr = /^https:\/\/[^\s"']+\.(jpg|jpeg|png|webp)$/i.test(poster)
+      ? ` poster="${poster}"`
+      : ''
+    return (
+      `<div class="video-embed" style="display:flex;justify-content:center;margin:2rem 0">` +
+      `<video controls playsinline preload="metadata"${posterAttr} ` +
+      `style="max-height:640px;max-width:100%;border-radius:12px;background:#000" ` +
+      `src="${url}"></video></div>`
+    )
+  })
+}
