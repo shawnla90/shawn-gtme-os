@@ -1,6 +1,50 @@
 {
-  "generated": "2026-08-01T04:03:52.755Z",
+  "generated": "2026-08-02T04:03:46.256Z",
   "events": [
+    {
+      "id": "commit-7ffcde3",
+      "title": "chore(crypto): evening signal update 2026-08-01",
+      "type": "system",
+      "datetime": "2026-08-01T17:30:03-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-08-01",
+      "metadata": {
+        "commitHash": "7ffcde3"
+      }
+    },
+    {
+      "id": "commit-8e5353a",
+      "title": "chore(crypto): morning signal update 2026-08-01",
+      "type": "system",
+      "datetime": "2026-08-01T07:00:09-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-08-01",
+      "metadata": {
+        "commitHash": "8e5353a"
+      }
+    },
+    {
+      "id": "commit-fdf0808",
+      "title": "feat: claude daily digest 2026-08-01",
+      "type": "milestone",
+      "datetime": "2026-08-01T04:08:22-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-08-01",
+      "metadata": {
+        "commitHash": "fdf0808"
+      }
+    },
+    {
+      "id": "commit-967ccd3",
+      "title": "chore: daily tracker scan 2026-07-31",
+      "type": "system",
+      "datetime": "2026-08-01T00:03:53-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-07-31",
+      "metadata": {
+        "commitHash": "967ccd3"
+      }
+    },
     {
       "id": "commit-83b0b58",
       "title": "chore(crypto): evening signal update 2026-07-31",
@@ -44,79 +88,13 @@
       "metadata": {
         "commitHash": "bed7d11"
       }
-    },
-    {
-      "id": "commit-bc7ad89",
-      "title": "chore(crypto): evening signal update 2026-07-30",
-      "type": "system",
-      "datetime": "2026-07-30T17:30:04-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-07-30",
-      "metadata": {
-        "commitHash": "bc7ad89"
-      }
-    },
-    {
-      "id": "commit-a76575a",
-      "title": "chore(crypto): morning signal update 2026-07-30",
-      "type": "system",
-      "datetime": "2026-07-30T07:00:08-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-07-30",
-      "metadata": {
-        "commitHash": "a76575a"
-      }
-    },
-    {
-      "id": "commit-87cf4ec",
-      "title": "feat: claude daily digest 2026-07-30",
-      "type": "milestone",
-      "datetime": "2026-07-30T02:09:45-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-07-30",
-      "metadata": {
-        "commitHash": "87cf4ec"
-      }
-    },
-    {
-      "id": "commit-51b2641",
-      "title": "content: fix blog clip URL to live _v4 object (Safari range ",
-      "type": "system",
-      "datetime": "2026-07-30T01:41:40-04:00",
-      "status": "completed",
-      "description": "content: fix blog clip URL to live _v4 object (Safari range fix)",
-      "metadata": {
-        "commitHash": "51b2641"
-      }
-    },
-    {
-      "id": "commit-ab9f932",
-      "title": "content: ship turn-one-podcast-into-a-month-of-distribution",
-      "type": "system",
-      "datetime": "2026-07-30T01:30:21-04:00",
-      "status": "completed",
-      "description": "content: ship turn-one-podcast-into-a-month-of-distribution",
-      "metadata": {
-        "commitHash": "ab9f932"
-      }
-    },
-    {
-      "id": "commit-f107d59",
-      "title": "chore: daily tracker scan 2026-07-29",
-      "type": "system",
-      "datetime": "2026-07-30T00:15:28-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-07-29",
-      "metadata": {
-        "commitHash": "f107d59"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 10,
-    "completedEvents": 10,
+    "totalEvents": 8,
+    "completedEvents": 8,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 10,
+    "deploymentsThisWeek": 8,
     "upcomingCronJobs": 0
   }
 }
