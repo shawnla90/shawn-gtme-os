@@ -18,7 +18,7 @@ function getContentDir(locale: string) {
 export async function generateMetadata(): Promise<Metadata> {
   const title = 'Shows | shawnos.ai'
   const description =
-    'Two shows, one engine. Claude Code Daily every weekday, Level Up GTM every Friday. Reddit-mined, narrator-hosted, zero filler.'
+    'Three shows. Claude Code Daily every weekday, Level Up GTM every Friday, and Cracked GTM twice a week with the engineers who built the systems.'
   return {
     title,
     description,
@@ -65,6 +65,14 @@ export default async function ShowsPage({ params }: Props) {
         'The weekly GTM show, mined from the lead-gen and GTM engineering subreddits. Prospecting tool of the week, what worked, what faceplanted, and the thread where operators actually helped someone.',
       count: weeklyCount > 0 ? `${weeklyCount} episodes` : 'episode 001 loading',
     },
+    {
+      href: '/cracked',
+      kicker: 'interviews · twice weekly',
+      title: 'Cracked GTM',
+      blurb:
+        'Go-to-market engineers walk through systems they actually built. Screen share, receipts, and the parts that broke. Guests come out of the builder community, not a booking agency.',
+      count: 'now booking guests',
+    },
   ]
 
   const card: React.CSSProperties = {
@@ -94,8 +102,9 @@ export default async function ShowsPage({ params }: Props) {
             Shows
           </h1>
           <p style={{ fontSize: 15, color: 'var(--text-secondary)', lineHeight: 1.55, margin: 0, maxWidth: 540 }}>
-            Two shows, one engine. A narrator reads the subreddits so you get the signal
-            with the entertainment included. Pick your cadence.
+            A narrator reads the subreddits so you get the signal with the
+            entertainment included, and once a week real builders show their
+            work on camera. Pick your cadence.
           </p>
         </div>
       </section>
