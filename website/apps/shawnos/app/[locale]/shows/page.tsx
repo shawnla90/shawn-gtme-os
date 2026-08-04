@@ -67,10 +67,10 @@ export default async function ShowsPage({ params }: Props) {
     },
     {
       href: '/cracked',
-      kicker: 'interviews · twice weekly',
+      kicker: 'conversations · now booking',
       title: 'Cracked GTM',
       blurb:
-        'Go-to-market engineers walk through systems they actually built. Screen share, receipts, and the parts that broke. Guests come out of the builder community, not a booking agency.',
+        'A podcast for the people actually building go-to-market systems. What you are building, how you are building it, and what you have figured out. Guests come out of the builder community, not a booking agency.',
       count: 'now booking guests',
     },
   ]

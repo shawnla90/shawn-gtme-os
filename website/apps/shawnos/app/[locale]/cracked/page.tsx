@@ -9,7 +9,7 @@ const INVITE_URL =
 export async function generateMetadata(): Promise<Metadata> {
   const title = 'Cracked GTM | shawnos.ai'
   const description =
-    'The show where go-to-market engineers walk through systems they actually built. Screen share, receipts, no talking-head takes. Twice a week.'
+    'A podcast for the people actually building go-to-market systems. What you are building, how you are building it, and what you have figured out. Now booking guests.'
   return {
     title,
     description,
@@ -48,44 +48,26 @@ type Props = {
   params: Promise<{ locale: string }>
 }
 
-const STEPS = [
+const TALK_ABOUT = [
   {
-    n: '01',
-    title: 'Build something and post it',
-    body: 'Join the builder community and drop what you are working on in #build-in-public. A week or two of real posts. Broken things count, they are usually the better story.',
+    label: 'What you are building',
+    body: 'The actual thing. Whatever you are deep in right now, however finished or unfinished it happens to be.',
   },
   {
-    n: '02',
-    title: 'Raise your hand',
-    body: 'Say so in #podcast, or I will come find you. No follower minimum, no title check. If you built it and you can explain it, you qualify.',
+    label: 'How you are building it',
+    body: 'The workflows, the stack, the parts you wired together yourself. This is usually where it gets good.',
   },
   {
-    n: '03',
-    title: 'Record',
-    body: 'Riverside, 35 to 45 minutes. You need a camera, a quiet room, and something you can share your screen on. That is the whole list.',
-  },
-]
-
-const SEGMENTS = [
-  {
-    label: 'How you got here',
-    body: 'The real version, not the LinkedIn version. Most people in this field arrived sideways and that path is more useful than the polished one.',
-  },
-  {
-    label: 'The build',
-    body: 'You share your screen and walk through one thing. Why you made each call, what broke, what you would do differently. This is the bulk of it.',
-  },
-  {
-    label: 'Rapid fire',
-    body: 'Your stack, your hottest take, and one thing you think people should steal from you.',
+    label: 'What you have figured out',
+    body: 'What broke, what surprised you, what you would tell someone starting the same thing. No script, no prep required.',
   },
 ]
 
 const GETS = [
-  'The full episode on YouTube.',
-  'A pack of captioned vertical clips cut from your best moments, sized for LinkedIn, Shorts, TikTok, and Reels.',
+  'The episode.',
+  'A pack of captioned vertical clips cut from the best parts, sized for wherever you post.',
   'The clips are yours. Run them anywhere, no attribution games, no permission needed.',
-  'An episode thread in the community so the room can pile on.',
+  'A chance to promote what you are building to people who actually understand it.',
 ]
 
 export default async function CrackedPage({ params }: Props) {
@@ -137,7 +119,7 @@ export default async function CrackedPage({ params }: Props) {
 
       <section className="full-bleed" style={{ padding: '72px 24px 20px' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <div style={{ ...kicker, marginBottom: 14 }}>the show · twice a week</div>
+          <div style={{ ...kicker, marginBottom: 14 }}>the show · now booking</div>
           <h1
             style={{
               fontSize: 'clamp(38px, 6vw, 64px)',
@@ -159,9 +141,10 @@ export default async function CrackedPage({ params }: Props) {
               maxWidth: 620,
             }}
           >
-            Go-to-market engineers walk through systems they actually built.
-            Screen share, receipts, and the parts that broke. No talking-head
-            takes about the future of AI in sales.
+            A podcast for the people actually building this stuff. You talk
+            about what you are building, how you are building it, and what you
+            have figured out. Not another talking-head show about the future of
+            AI in sales.
           </p>
         </div>
       </section>
@@ -183,44 +166,37 @@ export default async function CrackedPage({ params }: Props) {
           explain why you picked the waterfall order you picked, or you cannot.
           There is no prompt for having actually done the thing.
         </p>
+        <p style={body}>
+          So this is the receipts layer. Not interviews about strategy. People
+          talking about work they actually did.
+        </p>
         <p style={{ ...body, margin: 0 }}>
-          So this show is the receipts layer. Not interviews about strategy.
-          Someone opening their actual work and narrating it.
+          Being straight about where it is: I am still working out the format.
+          It will get sharper as I record. I would rather say that than pretend
+          there is a polished show sitting here waiting for you.
         </p>
       </section>
 
       <section style={section}>
         <h2 style={h2}>How you get on</h2>
-        <div style={{ display: 'grid', gap: 14 }}>
-          {STEPS.map((s) => (
-            <div key={s.n} style={card}>
-              <div style={{ ...kicker, marginBottom: 10 }}>{s.n}</div>
-              <div
-                style={{
-                  fontSize: 17,
-                  fontWeight: 700,
-                  color: 'var(--text-primary)',
-                  letterSpacing: '-0.01em',
-                  marginBottom: 8,
-                }}
-              >
-                {s.title}
-              </div>
-              <p style={{ ...body, margin: 0, fontSize: 14 }}>{s.body}</p>
-            </div>
-          ))}
-        </div>
-        <p style={{ ...body, marginTop: 18, marginBottom: 0 }}>
-          The community step is not a gate. It is the prep. Your posts end up
-          being the episode outline, which is why guests who post first have the
-          easiest recordings.
+        <p style={body}>
+          Join the community and say you want in. That is the whole process.
+        </p>
+        <p style={body}>
+          No follower minimum, nobody is checking your title, and there is
+          nothing to prepare. If you are building things and you can talk about
+          them, you qualify.
+        </p>
+        <p style={{ ...body, margin: 0 }}>
+          Posting what you are working on in the community helps, mostly because
+          it gives me something to react to. It is not required.
         </p>
       </section>
 
       <section style={section}>
-        <h2 style={h2}>What happens on the call</h2>
+        <h2 style={h2}>What we talk about</h2>
         <div style={{ display: 'grid', gap: 20 }}>
-          {SEGMENTS.map((s) => (
+          {TALK_ABOUT.map((s) => (
             <div key={s.label}>
               <div
                 style={{
