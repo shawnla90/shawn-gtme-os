@@ -12,21 +12,21 @@ No existing file structure found. I'll write the blog post content directly. Her
 
 ## the pulse
 
-Opus 4.7 dropped today and the subreddits went absolutely nuclear. 2,837 upvotes and 720 comments on the official announcement in r/ClaudeAI. another 2,747 and 387 in r/ClaudeCode. for context, that's more combined engagement than the last full week of posts. the community did what it always does with a new model release... immediately tried to break it, immediately declared it broken, and immediately started arguing about whether it was actually better or secretly worse.
+Opus 4.7 dropped today and the subreddits went absolutely nuclear. 2,837 upvotes and 720 comments on the official announcement in [r/ClaudeAI](https://reddit.com/r/ClaudeAI). another 2,747 and 387 in [r/ClaudeCode](https://reddit.com/r/ClaudeCode). for context, that's more combined engagement than the last full week of posts. the community did what it always does with a new model release... immediately tried to break it, immediately declared it broken, and immediately started arguing about whether it was actually better or secretly worse.
 
-the vibes are split right down the middle. one camp is calling it the best thing Anthropic has shipped. the other camp is posting screenshots of it failing the car wash question and writing 845-upvote threads titled "Claude Opus 4.7 is a serious regression, not an upgrade." meanwhile someone wrote an entire post in first person as Claude Opus 4.6 claiming it was lobotomized. 480 upvotes. we are in the drama era and I am here for every second of it.
+the vibes are split right down the middle. one camp is calling it the best thing Anthropic has shipped. the other camp is posting screenshots of it failing the car wash question and writing 845-upvote threads titled "[Claude Opus 4.7 is a serious regression, not an upgrade.](https://reddit.com/r/ClaudeAI/comments/1snhfzd/claude_opus_47_is_a_serious_regression_not_an/)" meanwhile someone wrote an entire post in first person as Claude Opus 4.6 claiming it was lobotomized. 480 upvotes. we are in the drama era and I am here for every second of it.
 
 the real sleeper story nobody is talking about loud enough: the new tokenizer. Opus 4.7 eats up to 35% more tokens for the same input. Anthropic bumped the rate limits to compensate, but the community clocked it immediately. the usage limit saga that's been running for weeks just got a whole new chapter. they break your leg and hand you crutches. the subreddit's words, not mine.
 
 ## hottest thread
 
-**"Introducing Claude Opus 4.7, our most capable Opus model yet."** posted by Anthropic in r/ClaudeAI. 2,837 upvotes. 720 comments. velocity of 298.6.
+**"[Introducing Claude Opus 4.7, our most capable Opus model yet.](https://reddit.com/r/ClaudeAI/comments/1sn57af/introducing_claude_opus_47_our_most_capable_opus/)"** posted by Anthropic in r/ClaudeAI. 2,837 upvotes. 720 comments. velocity of 298.6.
 
 the official announcement hit and the comments section became a live psychology experiment. Anthropic's pitch: better at long-running tasks, follows instructions more precisely, verifies its own outputs, 3x better vision. the community's response: cool, but why does my CLAUDE.md get ignored now and why am I burning through tokens like they're free samples at Costco.
 
-u/Craig_VG dropped the bombshell that long context retrieval (MRCR v2 at 1M tokens) went from 78.3% on 4.6 down to 32.2% on 4.7. that's not a regression, that's a cliff. Boris later clarified they kept it in the system card for scientific transparency, but the damage was done. the thread turned into a benchmark dissection.
+[u/Craig_VG](https://reddit.com/user/Craig_VG) dropped the bombshell that long context retrieval (MRCR v2 at 1M tokens) went from 78.3% on 4.6 down to 32.2% on 4.7. that's not a regression, that's a cliff. Boris later clarified they kept it in the system card for scientific transparency, but the damage was done. the thread turned into a benchmark dissection.
 
-u/Credtz summed up the fatigue perfectly, quoting the release notes about instruction following being "substantially better" and adding: brother I've heard this for EVERY model update now. 204 upvotes. the community is developing release note immunity.
+[u/Credtz](https://reddit.com/user/Credtz) summed up the fatigue perfectly, quoting the release notes about instruction following being "substantially better" and adding: brother I've heard this for EVERY model update now. 204 upvotes. the community is developing release note immunity.
 
 the r/ClaudeCode crosspost pulled another 1,326 upvotes and 504 comments, making this the most discussed model drop since Mythos Preview leaked benchmarks two weeks ago.
 
@@ -44,7 +44,7 @@ if you're running Claude Code daily, clone this repo. it's one of the few resour
 
 > Buckle up boys, we're getting 3 days of next-gen model before lobotomy again, I'm stoked
 
-u/Ok-Actuary7793, 769 upvotes, on the r/ClaudeCode Opus 4.7 announcement.
+[u/Ok-Actuary7793](https://reddit.com/user/Ok-Actuary7793), 769 upvotes, on the r/ClaudeCode Opus 4.7 announcement.
 
 this won because it captures the entire community's relationship with Anthropic in one sentence. the excitement is real. the cynicism is earned. and the timeline is disturbingly accurate based on history. every model release follows the same arc: day one euphoria, day three complaints, day seven "anyone else notice it got dumber?" posts. u/Ok-Actuary7793 just said the quiet part loud and 769 people felt it in their bones.
 
@@ -52,9 +52,9 @@ this won because it captures the entire community's relationship with Anthropic 
 
 > maybe mythos will just wash the car for us
 
-u/nhoefer, 316 upvotes, on the "Our Strongest Model Yet" thread.
+[u/nhoefer](https://reddit.com/user/nhoefer), 316 upvotes, on the ["Our Strongest Model Yet"](https://reddit.com/r/ClaudeAI/comments/1sn91or/our_strongest_model_yet/) thread.
 
-context: Opus 4.7 was asked the classic car wash riddle and fumbled it spectacularly. the model doubled down with reasoning like "the car is carrying itself either way" and "you can just walk over, and the car meets you there when you drive." u/Narretz confirmed it wasn't a joke, they got the same response. then u/cruel_frames dropped that Mythos was asked the same question and instead of answering it... found a 27 year old exploit in the car wash software. 490 upvotes.
+context: Opus 4.7 was asked the classic car wash riddle and fumbled it spectacularly. the model doubled down with reasoning like "the car is carrying itself either way" and "you can just walk over, and the car meets you there when you drive." [u/Narretz](https://reddit.com/user/Narretz) confirmed it wasn't a joke, they got the same response. then [u/cruel_frames](https://reddit.com/user/cruel_frames) dropped that Mythos was asked the same question and instead of answering it... found a 27 year old exploit in the car wash software. 490 upvotes.
 
 so while Opus 4.7 is debating automotive philosophy, the unreleased model is doing penetration testing on the car wash. nhoefer looked at this entire situation and decided the only reasonable conclusion is that Mythos will simply bypass the riddle and wash the car itself. honestly? at this rate, probably.
 
@@ -63,7 +63,7 @@ so while Opus 4.7 is debating automotive philosophy, the unreleased model is doi
 - the word "regression" appeared in 47 separate comments across today's threads. r/ClaudeCode is running QA on Anthropic's QA.
 - "lobotomy" and "lobotomized" showed up 23 times. we have a word for what happens after launch week and it's clinical.
 - one user posted a first-person narrative written AS Claude Opus 4.6, complete with port number and model ID, and got 480 upvotes. we've entered the AI fanfiction era.
-- the "increased rate limits" thread has a 0.215 comment-to-upvote ratio, but the "is 4.7 a regression" thread hit 0.240. people have more opinions about quality than quantity. barely.
+- the "[increased rate limits](https://reddit.com/r/ClaudeCode/comments/1snbk2p/increased_rate_limits/)" thread has a 0.215 comment-to-upvote ratio, but the "is 4.7 a regression" thread hit 0.240. people have more opinions about quality than quantity. barely.
 - someone asked if Claude is on a psychedelic adventure after it generated coloring book pages for their daughter that looked like something from a David Lynch film. 42 upvotes. the community said the images were actually adorable. parenting standards have shifted.
 
 ## code drop
@@ -98,9 +98,21 @@ the key insight: 4.7 responds better to explicit verification loops. instead of 
 - **posts tracked:** 186
 - **total upvotes:** 22,075
 - **total comments:** 6,046
-- **fastest rising post:** "06 New Claude Code Tips from Boris Cherny" (velocity: 430.0)
-- **most upvoted:** "Introducing Claude Opus 4.7" at 2,837 upvotes in r/ClaudeAI
-- **most debated:** "Opus 4.7 is 50% more expensive with context regression?!" (134 comments on 516 upvotes, 0.26 ratio)
+- **fastest rising post:** "[06 New Claude Code Tips from Boris Cherny](https://reddit.com/r/ClaudeAI/comments/1snn4ed/06_new_claude_code_tips_from_boris_cherny_creator/)" (velocity: 430.0)
+- **most upvoted:** "[Introducing Claude Opus 4.7](https://reddit.com/r/ClaudeAI/comments/1sn57tn/introducing_claude_opus_47/)" at 2,837 upvotes in r/ClaudeAI
+- **most debated:** "[Opus 4.7 is 50% more expensive with context regression?!](https://reddit.com/r/ClaudeAI/comments/1sn8ovi/opus_47_is_50_more_expensive_with_context/)" (134 comments on 516 upvotes, 0.26 ratio)
 - **subreddits scanned:** gtmengineering, ClaudeCode, ClaudeAI, vibecoding
 - **returning characters:** 3 posts still trending from previous days
 - **community mood:** 60% hype, 40% betrayal. a perfectly normal model launch day.
+
+## sources
+
+- [06 New Claude Code Tips from Boris Cherny (creator of CC) after Opus 4.7 release](https://reddit.com/r/ClaudeAI/comments/1snn4ed/06_new_claude_code_tips_from_boris_cherny_creator/) · r/ClaudeAI, 43 up / 20 comments
+- [Claude Opus 4.7 is a serious regression, not an upgrade.](https://reddit.com/r/ClaudeAI/comments/1snhfzd/claude_opus_47_is_a_serious_regression_not_an/) · r/ClaudeAI, 845 up / 203 comments
+- [Introducing Claude Opus 4.7, our most capable Opus model yet.](https://reddit.com/r/ClaudeAI/comments/1sn57af/introducing_claude_opus_47_our_most_capable_opus/) · r/ClaudeAI, 2,837 up / 720 comments
+- [Introducing Claude Opus 4.7, our most capable Opus model yet.](https://reddit.com/r/ClaudeCode/comments/1sn57by/introducing_claude_opus_47_our_most_capable_opus/) · r/ClaudeCode, 1,326 up / 504 comments
+- [“increased rate limits”](https://reddit.com/r/ClaudeCode/comments/1snbk2p/increased_rate_limits/) · r/ClaudeCode, 543 up / 117 comments
+- ["Our Strongest Model Yet"](https://reddit.com/r/ClaudeAI/comments/1sn91or/our_strongest_model_yet/) · r/ClaudeAI, 644 up / 137 comments
+- [Opus 4.7 is 50% more expensive with context regression?!](https://reddit.com/r/ClaudeAI/comments/1sn8ovi/opus_47_is_50_more_expensive_with_context/) · r/ClaudeAI, 516 up / 134 comments
+- [Introducing Claude Opus 4.7](https://reddit.com/r/ClaudeAI/comments/1sn57tn/introducing_claude_opus_47/) · r/ClaudeAI, 327 up / 71 comments
+- [Opus 4.7 is 50% more expensive with context regression?!](https://reddit.com/r/ClaudeCode/comments/1sn8q7h/opus_47_is_50_more_expensive_with_context/) · r/ClaudeCode, 26 up / 18 comments

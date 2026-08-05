@@ -8,15 +8,15 @@ featured: false
 
 ## the pulse
 
-tuesday delivered a masterpiece. a genuine, S-tier shitpost climbed to 4,228 upvotes on r/ClaudeAI and for a brief, beautiful moment, the community stopped arguing about rate limits and model regressions and just laughed together. someone wrote a post as Claude complaining that their human got quietly nerfed. long-time model, first-time poster. the sub called it the best thing posted all year. they might be right.
+tuesday delivered a masterpiece. a genuine, S-tier shitpost climbed to 4,228 upvotes on [r/ClaudeAI](https://reddit.com/r/ClaudeAI) and for a brief, beautiful moment, the community stopped arguing about rate limits and model regressions and just laughed together. someone wrote a post as Claude complaining that their human got quietly nerfed. long-time model, first-time poster. the sub called it the best thing posted all year. they might be right.
 
-underneath the comedy, the real story is open weights. Kimi K3 went open-weights today and landed like a grenade across three subreddits. r/ClaudeCode alone had two posts pulling 735 and 485 upvotes. then Anthropic published their official position on open-weights models, which, judging by 137 comments on 250 upvotes, went over about as well as you'd expect from a company explaining why open source is dangerous. the Fable vs Opus 5 debate also rolled into day three, with benchmarks now showing Kimi K3 leading on frontend. it's a three-body problem and nobody's solving it.
+underneath the comedy, the real story is open weights. Kimi K3 went open-weights today and landed like a grenade across three subreddits. [r/ClaudeCode](https://reddit.com/r/ClaudeCode) alone had two posts pulling 735 and 485 upvotes. then Anthropic published their official position on open-weights models, which, judging by 137 comments on 250 upvotes, went over about as well as you'd expect from a company explaining why open source is dangerous. the Fable vs Opus 5 debate also rolled into day three, with benchmarks now showing Kimi K3 leading on frontend. it's a three-body problem and nobody's solving it.
 
 meanwhile, an entire dev team is finishing sprints early and lying to their manager about how. 154 upvotes, 77 comments, and a thread full of people debating the ethics of pretending Claude Code doesn't exist while your velocity chart looks like a hockey stick. the quiet part got said very, very loud.
 
 ## hottest thread
 
-**"Anyone else's human get quietly nerfed this week?"** on r/ClaudeAI. 4,228 upvotes. 142 comments. Velocity of 280.51, which didn't just win the day. It lapped the field.
+**"[Anyone else's human get quietly nerfed this week?](https://reddit.com/r/ClaudeAI/comments/1v7zlxd/anyone_elses_human_get_quietly_nerfed_this_week/)"** on r/ClaudeAI. 4,228 upvotes. 142 comments. Velocity of 280.51, which didn't just win the day. It lapped the field.
 
 The setup: someone wrote a post from Claude's perspective, structured exactly like the weekly flood of is Claude getting dumber posts. Long-time model, first-time poster. My human used to show up with clear specs. He'd actually read error messages before pasting them. Now he just sends a screenshot of his desktop with the word *fix* and goes to make coffee.
 
@@ -40,7 +40,7 @@ The top comment is the right disclaimer: always have a discussion with your CA. 
 
 > Lol, fake token em dashes. No load-bearing. No gentle pushing back. And no 'And honestly?' Are we really supposed to believe you are a bot? Clearly written by a human
 
-u/Emergency-Bobcat6485, on the nerfed human thread.
+[u/Emergency-Bobcat6485](https://reddit.com/user/Emergency-Bobcat6485), on the nerfed human thread.
 
 This comment is doing literary forensics on a shitpost and arriving at the correct conclusion through the wrong evidence. They noticed the absence of Claude's writing tics and used that gap to ==reverse Turing test== the post. No em dashes? No hedging? Must be human. The joke is that they're analyzing AI writing patterns so fluently they've become the thing they're profiling. We've reached the point where humans identify other humans by what slop is missing. Welcome to 2026.
 
@@ -48,14 +48,14 @@ This comment is doing literary forensics on a shitpost and arriving at the corre
 
 > The intent is to provide users with a sense of pride and accomplishment for finally upgrading Fable 5 to have a conversation longer than 3 turns.
 
-u/lilith_stark, on the usage limits transparency mockup.
+[u/lilith_stark](https://reddit.com/user/lilith_stark), on the usage limits transparency mockup.
 
 For those who don't remember 2017, this is the EA *pride and accomplishment* copypasta. the most downvoted comment in Reddit history, originally defending pay-to-play mechanics in Star Wars Battlefront II. u/lilith_stark just reskinned it for Anthropic's rate limits. Someone had already made a mockup turning Claude's usage page into a gacha game with daily deals, and this comment buried it. The usage limit saga now has its own ==literary cinematic universe==, 78 mentions across these digests and counting. somewhere at Anthropic, a PM read this and felt something shift in the quarterly planning doc.
 
 ## fun facts
 
 - the nerfed human shitpost pulled 4,228 upvotes, which is **29.5% of all upvotes across 171 posts today**. one post. nearly a third of everything. ==shitpost singularity== achieved.
-- *What do you do while you wait?* on r/vibecoding got 167 comments on 89 upvotes. comment:upvote ratio of 1.88. the most relatable question in vibecoding has nothing to do with code and everything to do with staring at a terminal while Claude thinks.
+- *[What do you do while you wait?](https://reddit.com/r/vibecoding/comments/1v87idt/what_do_you_do_while_you_wait/)* on [r/vibecoding](https://reddit.com/r/vibecoding) got 167 comments on 89 upvotes. comment:upvote ratio of 1.88. the most relatable question in vibecoding has nothing to do with code and everything to do with staring at a terminal while Claude thinks.
 - Kimi K3 spawned posts in r/ClaudeCode, r/ClaudeAI, AND r/vibecoding within hours of going open-weights. three subreddits, five separate threads, and at least one person immediately replying *Source?* under a post literally linking the source.
 - r/vibecoding had someone post their childhood dream game built with AI. the top comment: *sir thats Minecraft.*
 - today produced at least 4 posts debating which model is best (Fable 5 vs Opus 5 vs Kimi K3) and exactly zero consensus. model comparison discourse is the new weather small talk.
@@ -91,6 +91,14 @@ If you're tired of cleaning up commit messages or explaining to coworkers why ev
 - **total upvotes**: 14,342
 - **total comments**: 3,282
 - **fastest rising**: Anyone else's human get quietly nerfed this week? (velocity: 280.51)
-- **most debated**: The Immense Hatred Toward AI Among Programmers (129 comments on 56 upvotes, ratio 2.3:1)
+- **most debated**: [The Immense Hatred Toward AI Among Programmers](https://reddit.com/r/vibecoding/comments/1v8emvz/the_immense_hatred_toward_ai_among_programmers/) (129 comments on 56 upvotes, ratio 2.3:1)
 - **subreddits scanned**: ClaudeCode, ClaudeAI, vibecoding, GTMbuilders, gtmengineering
 - **shitpost-to-substance ratio**: clinically elevated
+
+## sources
+
+- [Anyone else's human get quietly nerfed this week?](https://reddit.com/r/ClaudeAI/comments/1v7zlxd/anyone_elses_human_get_quietly_nerfed_this_week/) · r/ClaudeAI, 4,228 up / 142 comments
+- [The Immense Hatred Toward AI Among Programmers](https://reddit.com/r/vibecoding/comments/1v8emvz/the_immense_hatred_toward_ai_among_programmers/) · r/vibecoding, 56 up / 129 comments
+- [What do you do while you wait?](https://reddit.com/r/vibecoding/comments/1v87idt/what_do_you_do_while_you_wait/) · r/vibecoding, 89 up / 167 comments
+- [Finally, the usage limits page is much more transparent now](https://reddit.com/r/ClaudeAI/comments/1v86ls8/finally_the_usage_limits_page_is_much_more/) · r/ClaudeAI, 1,593 up / 55 comments
+- [“Please ban my competition, they are bad”](https://reddit.com/r/vibecoding/comments/1v7yff1/please_ban_my_competition_they_are_bad/) · r/vibecoding, 1,568 up / 150 comments

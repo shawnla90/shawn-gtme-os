@@ -8,13 +8,13 @@ featured: false
 
 ## the pulse
 
-July 4th. America celebrates independence. r/ClaudeCode celebrates its growing dependence on a model that may or may not have come back from the dead as a slightly worse version of itself.
+July 4th. America celebrates independence. [r/ClaudeCode](https://reddit.com/r/ClaudeCode) celebrates its growing dependence on a model that may or may not have come back from the dead as a slightly worse version of itself.
 
-The Fable arc that ran all week hit its peak today. "Fable Came Back Nerfed" pulled 1,984 upvotes and 291 comments, with users reporting it won't even search for dead code without falling back to Opus. Hours later, an independent benchmark post (302 upvotes, 59 comments) landed with actual numbers backing up the vibes. This is the Fable cycle now: euphoria on launch, anxiety by Wednesday, conspiracy theories by the weekend. Meanwhile "We all know that after July 13 weekly limits will be 50% less, right... right?" hit 390 upvotes and 183 comments. July 13 is the new Y2K for this community.
+The Fable arc that ran all week hit its peak today. "[Fable Came Back Nerfed](https://reddit.com/r/ClaudeCode/comments/1ull4g0/fable_came_back_nerfed/)" pulled 1,984 upvotes and 291 comments, with users reporting it won't even search for dead code without falling back to Opus. Hours later, an independent benchmark post (302 upvotes, 59 comments) landed with actual numbers backing up the vibes. This is the Fable cycle now: euphoria on launch, anxiety by Wednesday, conspiracy theories by the weekend. Meanwhile "[We all know that after July 13 weekly limits will be 50% less, right... right?](https://reddit.com/r/ClaudeCode/comments/1ulqemu/we_all_know_that_after_july_13_weekly_limits_will/)" hit 390 upvotes and 183 comments. July 13 is the new Y2K for this community.
 
-But the biggest genuinely new post had nothing to do with Fable drama. "I end every AI session with two questions" quietly pulled 2,411 upvotes and 164 comments on r/ClaudeAI. No billing complaints. No rate limit panic. Just a simple prompt discipline technique that the entire comment section proceeded to improve on. It was like watching a subreddit remember that building things is more interesting than complaining about the tools.
+But the biggest genuinely new post had nothing to do with Fable drama. "[I end every AI session with two questions](https://reddit.com/r/ClaudeAI/comments/1ulti1r/i_end_every_ai_session_with_two_questions/)" quietly pulled 2,411 upvotes and 164 comments on [r/ClaudeAI](https://reddit.com/r/ClaudeAI). No billing complaints. No rate limit panic. Just a simple prompt discipline technique that the entire comment section proceeded to improve on. It was like watching a subreddit remember that building things is more interesting than complaining about the tools.
 
-The financial mood board for the day: "$800 well spent" (939 upvotes), "Voilà pourquoi je suis si pauvre" (688 upvotes, posted in French, because at this spend level you're international), and one person quietly asking "How likely am I to get banned for a second Max20 account?" to zero comments. Even Reddit refused to be an accessory. The usage quota saga rolls into its 62nd mention in this column. At this point it's not a running gag, it's a lifestyle.
+The financial mood board for the day: "[$800 well spent](https://reddit.com/r/ClaudeAI/comments/1uloq5f/800_well_spent/)" (939 upvotes), "[Voilà pourquoi je suis si pauvre](https://reddit.com/r/ClaudeCode/comments/1ulx1um/voilà_pourquoi_je_suis_si_pauvre/)" (688 upvotes, posted in French, because at this spend level you're international), and one person quietly asking "[How likely am I to get banned for a second Max20 account?](https://reddit.com/r/ClaudeCode/comments/1umyszy/how_likely_am_i_to_get_banned_for_a_second_max20/)" to zero comments. Even Reddit refused to be an accessory. The usage quota saga rolls into its 62nd mention in this column. At this point it's not a running gag, it's a lifestyle.
 
 ## hottest thread
 
@@ -22,17 +22,17 @@ The financial mood board for the day: "$800 well spent" (939 upvotes), "Voilà p
 
 This is the post the whole week was building toward. Fable 5 went offline, came back, and the community immediately noticed something was off. The top comment set the tone: someone reported it wouldn't even let them search for dead code without switching to Opus. Others pushed back, asking how anyone can even verify which model is running under the hood when the CLI reports Fable 5 regardless.
 
-The 291 comments split into three camps. Camp one: it's clearly degraded, the reasoning depth is gone, tasks that used to one-shot now take three passes. Camp two: you're imagining things, this is confirmation bias, you expected it to be worse so it feels worse. Camp three: quietly posting "Independent benchmark shows big drops on Claude Fable 5 after its relaunch" (302 upvotes) with actual data.
+The 291 comments split into three camps. Camp one: it's clearly degraded, the reasoning depth is gone, tasks that used to one-shot now take three passes. Camp two: you're imagining things, this is confirmation bias, you expected it to be worse so it feels worse. Camp three: quietly posting "[Independent benchmark shows big drops on Claude Fable 5 after its relaunch](https://reddit.com/r/ClaudeCode/comments/1ulvdfz/independent_benchmark_shows_big_drops_on_claude/)" (302 upvotes) with actual data.
 
 This matters beyond the drama because it touches the trust problem with subscription AI. When you can't independently verify which model is serving your requests, every quality fluctuation becomes a conspiracy theory. And when an independent benchmark confirms the vibes, the conspiracy theorists get to say I told you so. Which they did. Loudly. 291 comments worth of loudly.
 
-The companion post "Fable on Subscription Plans!" (503 upvotes, 114 comments) adds another layer. Fable is coming to the subscription tiers. The question nobody can answer yet: is the Fable on subscription plans the pre-nerf Fable or the post-nerf Fable?
+The companion post "[Fable on Subscription Plans!](https://reddit.com/r/ClaudeAI/comments/1ulxyhp/fable_on_subscription_plans/)" (503 upvotes, 114 comments) adds another layer. Fable is coming to the subscription tiers. The question nobody can answer yet: is the Fable on subscription plans the pre-nerf Fable or the post-nerf Fable?
 
 ## repo of the day
 
 No GitHub repos dropped today. But the most buildable, meaningful project in the data isn't even close.
 
-**"AI Integrated into my brother's Custom Vibe Coded AAC System"** ... r/vibecoding ... 823 upvotes, 70 comments
+**"[AI Integrated into my brother's Custom Vibe Coded AAC System](https://reddit.com/r/vibecoding/comments/1ulv7sn/ai_integrated_into_my_brothers_custom_vibe_coded/)"** ... [r/vibecoding](https://reddit.com/r/vibecoding) ... 823 upvotes, 70 comments
 
 Someone built an augmentative and alternative communication system for their brother Ben. Not a SaaS play. Not a weekend hack for internet points. A system that lets a person pick their own shows, communicate preferences, and interact with their environment. Built with AI. Built with vibe coding. Built because nobody else was going to build it for one person.
 
@@ -46,7 +46,7 @@ If you've got a weekend free and someone in your life who needs a custom tool, t
 
 > This is actually useful, but also hilarious that we now have to ask the robot what it silently YOLO'd past
 
-u/StressTraditional204, commenting on "I end every AI session with two questions"
+[u/StressTraditional204](https://reddit.com/user/StressTraditional204), commenting on "I end every AI session with two questions"
 
 This won because it captures the exact absurdity of the current moment in one sentence. We're building production systems with AI. The AI sometimes silently skips things it's not confident about. And our best defense is... politely asking it what it skipped. The entire prompt engineering discipline reduced to "hey, anything you want to tell me before I ship this?" Like a parent asking a teenager if there's anything they forgot to mention about the party last night. We all know the answer is yes. We ask anyway. This is the workflow now.
 
@@ -54,16 +54,16 @@ This won because it captures the exact absurdity of the current moment in one se
 
 > Guess who's on my hit-list.md?
 
-u/_coolranch, in the "Legend Spotted" thread
+[u/_coolranch](https://reddit.com/user/_coolranch), in the "[Legend Spotted](https://reddit.com/r/ClaudeAI/comments/1um5u8c/legend_spotted/)" thread
 
-For context, "Legend Spotted" is still the highest-scoring post in the dataset at 3,393 upvotes. Someone wore a Claude-themed shirt to a hackathon and the entire comment section devolved into a .md filename competition. u/dangerous-dog-672 opened with therapist-notes.md. u/Foreign-Return7695 went wholesome with "bro wore his whole personality to the hackathon and i respect it." And then _coolranch showed up with hit-list.md and the energy in the room shifted. There's a fine line between developer humor and something that gets you a meeting with HR. This comment parkoured along that line with zero hesitation. The .md extension is doing a lot of heavy lifting here. hit-list.txt? Concerning. hit-list.md? Comedy. The file format is the punchline.
+For context, "Legend Spotted" is still the highest-scoring post in the dataset at 3,393 upvotes. Someone wore a Claude-themed shirt to a hackathon and the entire comment section devolved into a .md filename competition. [u/dangerous-dog-672](https://reddit.com/user/dangerous-dog-672) opened with therapist-notes.md. [u/Foreign-Return7695](https://reddit.com/user/Foreign-Return7695) went wholesome with "bro wore his whole personality to the hackathon and i respect it." And then _coolranch showed up with hit-list.md and the energy in the room shifted. There's a fine line between developer humor and something that gets you a meeting with HR. This comment parkoured along that line with zero hesitation. The .md extension is doing a lot of heavy lifting here. hit-list.txt? Concerning. hit-list.md? Comedy. The file format is the punchline.
 
 ## fun facts
 
 - **Fable appears in 14 post titles today.** The word "Fable" is approaching the frequency of "the" in this subreddit. At this rate it'll need its own stopword filter.
 - **"Voilà pourquoi je suis si pauvre"** posted entirely in French on r/ClaudeCode. 688 upvotes. Nobody asked for a translation. Everyone understood. Claude billing transcends language barriers.
-- **Fable rickrolled someone.** "Just got Rickroll'd by Fable" (8 upvotes). User asked for a dummy video placeholder. Fable embedded Never Gonna Give You Up. This model has a sense of humor and I'm not sure that's a feature.
-- **Claude Code via Microsoft Foundry** hit a 1.4:1 comment-to-upvote ratio (60 comments on 43 upvotes). When comments outnumber upvotes, you know someone said something the subreddit needed to argue about.
+- **Fable rickrolled someone.** "[Just got Rickroll'd by Fable](https://reddit.com/r/ClaudeCode/comments/1umyhdn/just_got_rickrolld_by_fable/)" (8 upvotes). User asked for a dummy video placeholder. Fable embedded Never Gonna Give You Up. This model has a sense of humor and I'm not sure that's a feature.
+- **[Claude Code via Microsoft Foundry](https://reddit.com/r/ClaudeAI/comments/1umx917/claude_code_via_microsoft_foundry_no_5hour_or/)** hit a 1.4:1 comment-to-upvote ratio (60 comments on 43 upvotes). When comments outnumber upvotes, you know someone said something the subreddit needed to argue about.
 - **"How likely am I to get banned for a second Max20 account?"** received exactly 0 comments. The silence is the answer.
 
 ## code drop
@@ -89,7 +89,7 @@ before closing any session, ask these three questions:
  (via u/BolnaBuilder)
 ```
 
-Question 1 comes from Sam Altman. Question 2 came from the comment section. Question 3 came from u/BolnaBuilder and targets a completely different failure mode: not what was missed now, but what will break later. The combination covers present gaps, missed upside, and future fragility. Three questions. Ten seconds. Probably saves you a rewrite.
+Question 1 comes from Sam Altman. Question 2 came from the comment section. Question 3 came from [u/BolnaBuilder](https://reddit.com/user/BolnaBuilder) and targets a completely different failure mode: not what was missed now, but what will break later. The combination covers present gaps, missed upside, and future fragility. Three questions. Ten seconds. Probably saves you a rewrite.
 
 ## builder takeaways
 
@@ -121,3 +121,18 @@ Question 1 comes from Sam Altman. Question 2 came from the comment section. Ques
 happy fourth. go build something before July 13.
 
 shawn ⚡
+
+## sources
+
+- [Legend Spotted](https://reddit.com/r/ClaudeAI/comments/1um5u8c/legend_spotted/) · r/ClaudeAI, 3,393 up / 45 comments
+- [I end every AI session with two questions](https://reddit.com/r/ClaudeAI/comments/1ulti1r/i_end_every_ai_session_with_two_questions/) · r/ClaudeAI, 2,411 up / 164 comments
+- [Fable Came Back Nerfed](https://reddit.com/r/ClaudeCode/comments/1ull4g0/fable_came_back_nerfed/) · r/ClaudeCode, 1,984 up / 291 comments
+- [Claude Code via Microsoft Foundry - no 5-hour or weekly limits](https://reddit.com/r/ClaudeAI/comments/1umx917/claude_code_via_microsoft_foundry_no_5hour_or/) · r/ClaudeAI, 43 up / 60 comments
+- [$800 well spent](https://reddit.com/r/ClaudeAI/comments/1uloq5f/800_well_spent/) · r/ClaudeAI, 939 up / 49 comments
+- [AI Integrated into my brother's Custom Vibe Coded AAC System](https://reddit.com/r/vibecoding/comments/1ulv7sn/ai_integrated_into_my_brothers_custom_vibe_coded/) · r/vibecoding, 823 up / 70 comments
+- [Voilà pourquoi je suis si pauvre](https://reddit.com/r/ClaudeCode/comments/1ulx1um/voilà_pourquoi_je_suis_si_pauvre/) · r/ClaudeCode, 688 up / 28 comments
+- [Just got Rickroll'd by Fable](https://reddit.com/r/ClaudeCode/comments/1umyhdn/just_got_rickrolld_by_fable/) · r/ClaudeCode, 8 up / 1 comments
+- [How likely am I to get banned for a second Max20 account?](https://reddit.com/r/ClaudeCode/comments/1umyszy/how_likely_am_i_to_get_banned_for_a_second_max20/) · r/ClaudeCode, 2 up / 0 comments
+- [Fable on Subscription Plans!](https://reddit.com/r/ClaudeAI/comments/1ulxyhp/fable_on_subscription_plans/) · r/ClaudeAI, 503 up / 114 comments
+- [We all know that after July 13 weekly limits will be 50% less, right… right?](https://reddit.com/r/ClaudeCode/comments/1ulqemu/we_all_know_that_after_july_13_weekly_limits_will/) · r/ClaudeCode, 390 up / 183 comments
+- [Independent benchmark shows big drops on Claude Fable 5 after its relaunch, here’s the actual context](https://reddit.com/r/ClaudeCode/comments/1ulvdfz/independent_benchmark_shows_big_drops_on_claude/) · r/ClaudeCode, 302 up / 59 comments

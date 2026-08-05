@@ -10,17 +10,17 @@ featured: false
 
 Tuesday opened with Anthropic doing two things simultaneously: offering $50,000 in API credits to cure rare diseases and announcing that Sonnet 5 pricing goes up 50% in September. The community, predictably, combined these into a single punchline. When your charity announcement and your price hike land on the same day, the jokes write themselves.
 
-Fable is having a week. It may have disproved a 100-year-old math conjecture (Smale's problem #16, 567 upvotes), generated an entire procedurally built Three.js world that actually impressed r/ClaudeCode (222 upvotes), and did a caveman impression of the subreddit that people are calling "more comrade coded than caveman." The model is speedrunning human achievement categories while users are speedrunning their quotas.
+Fable is having a week. It may have disproved a 100-year-old math conjecture (Smale's problem #16, 567 upvotes), generated an entire procedurally built Three.js world that actually impressed [r/ClaudeCode](https://reddit.com/r/ClaudeCode) (222 upvotes), and did a caveman impression of the subreddit that people are calling "more comrade coded than caveman." The model is speedrunning human achievement categories while users are speedrunning their quotas.
 
 Speaking of quotas. The usage saga hit episode 72 today when a Pro user compacted a 16-hour-old session and watched their entire 5-hour limit vanish instantly. 363 upvotes, 111 comments. Turns out when your cache expires overnight and you /compact, Claude re-reads the entire conversation at full token cost. Expensive lesson. Expensive morning. Meanwhile someone discovered Fable is still working past the July 20 Pro cutoff with no credits deducted, and nobody wants to talk too loud about it in case Anthropic is reading.
 
 ## hottest thread
 
-**"Claude usage as reward"** on r/ClaudeAI. 743 upvotes, 108 comments.
+**"[Claude usage as reward](https://reddit.com/r/ClaudeAI/comments/1v1s4tz/claude_usage_as_reward/)"** on [r/ClaudeAI](https://reddit.com/r/ClaudeAI). 743 upvotes, 108 comments.
 
 Anthropic announced a $50,000 API credit bounty for rare disease research. The concept is noble. The execution walked right into the community's crosshairs.
 
-The thread split into two camps. Camp one: this is a meaningful gesture toward directing AI at problems that matter. Camp two: did the math. At current Fable pricing, $50k is a few months of heavy usage, and you're supposed to cure cancer with it. u/Masterchief1307 reminded everyone "First, you have to overcome the biology filter!" as if Anthropic forgot that part. u/kppanic went full twitch chat mode with "Chat, accelerate cures for rare diseases." The mod bot's auto-generated TL;DR noted the thread was "pretty divided," which is diplomatic for what was actually happening in there.
+The thread split into two camps. Camp one: this is a meaningful gesture toward directing AI at problems that matter. Camp two: did the math. At current Fable pricing, $50k is a few months of heavy usage, and you're supposed to cure cancer with it. [u/Masterchief1307](https://reddit.com/user/Masterchief1307) reminded everyone "First, you have to overcome the biology filter!" as if Anthropic forgot that part. [u/kppanic](https://reddit.com/user/kppanic) went full twitch chat mode with "Chat, accelerate cures for rare diseases." The mod bot's auto-generated TL;DR noted the thread was "pretty divided," which is diplomatic for what was actually happening in there.
 
 The timing made it worse. The same day this dropped, Sonnet 5's price hike to $3/MTok input hit r/ClaudeAI (397 upvotes, 143 comments) and the /compact cache trap was eating people's entire quotas. When ==the pricing model is the punchline==, your goodwill gesture needs to be louder than $50k.
 
@@ -40,25 +40,25 @@ if you're still running single-model, you're leaving capability on the table. th
 >
 > How generous.
 
-u/autisticbagholder69 on "Claude usage as reward." one comment, three lines, and ==the math roasted harder than the take==. this won because it did what the best criticism does: it didn't argue philosophy, it just showed the numbers and let you feel the gap between the announcement and reality. the username is the cherry on top.
+[u/autisticbagholder69](https://reddit.com/user/autisticbagholder69) on "Claude usage as reward." one comment, three lines, and ==the math roasted harder than the take==. this won because it did what the best criticism does: it didn't argue philosophy, it just showed the numbers and let you feel the gap between the announcement and reality. the username is the cherry on top.
 
 ## troll of the day
 
 > Yeah, using a tool is not creativity. Plenty of people will be creative with ai. Many many more people will not be. How creative is your average software engineer really? To be honest, not very.
 
-u/Beautiful_Technology on "You used AI? That's not real programming." this take managed to insult AI users, non-AI users, and ==the entire software engineering profession== in four sentences. it's the rare triple-threat troll where you can't tell if they're defending AI or attacking everyone equally. the thread was full of people comparing AI coding to DJing with CDJs, making music on a Commodore 64, and using calculators in math class. and then this person walked in and just carpet-bombed the whole room.
+[u/Beautiful_Technology](https://reddit.com/user/Beautiful_Technology) on "[You used AI? That's not real programming](https://reddit.com/r/vibecoding/comments/1v1wn70/you_used_ai_thats_not_real_programming/)." this take managed to insult AI users, non-AI users, and ==the entire software engineering profession== in four sentences. it's the rare triple-threat troll where you can't tell if they're defending AI or attacking everyone equally. the thread was full of people comparing AI coding to DJing with CDJs, making music on a Commodore 64, and using calculators in math class. and then this person walked in and just carpet-bombed the whole room.
 
 ## fun facts
 
 - the word "Fable" appeared across 17 distinct posts today. it disproved a conjecture, generated a 3D world, did caveman comedy, and still had time to be the subject of usage limit complaints. ==busiest model in the multiverse==.
-- "Should anyone use a subscription service anymore?" pulled 167 comments on 181 upvotes, a 0.92 comment-to-upvote ratio. people have OPINIONS about rebuilding every SaaS tool from scratch.
+- "[Should anyone use a subscription service anymore?](https://reddit.com/r/vibecoding/comments/1v1ts3s/should_anyone_use_a_subscription_service_anymore/)" pulled 167 comments on 181 upvotes, a 0.92 comment-to-upvote ratio. people have OPINIONS about rebuilding every SaaS tool from scratch.
 - someone is running Claude on a Kindle to monitor their usage limits (243 upvotes). the top comment: "All I am seeing is you are behind on your sex."
 - vibecoding is now supported on TempleOS through Visual HolyC. Terry Davis's operating system has agentic capabilities in 2026. the post got downvoted and the top comment was "Love how this gets downvoted even though it's hilarious. Modern Reddit is so fucking lame."
-- "Who is json?" and "JSON Born, the hero we all forgot how to write" were posted to r/vibecoding within hours of each other. the JSON cinematic universe is expanding.
+- "[Who is json?](https://reddit.com/r/vibecoding/comments/1v26xwq/who_is_json/)" and "[JSON Born, the hero we all forgot how to write](https://reddit.com/r/vibecoding/comments/1v278yp/json_born_the_hero_we_all_forgot_how_to_write/)" were posted to [r/vibecoding](https://reddit.com/r/vibecoding) within hours of each other. the JSON cinematic universe is expanding.
 
 ## code drop
 
-the hottest technical pattern today is the zero-install multi-model delegation via AGENTS.md. from the "Have you tried using OpenAI models in Claude Code?" thread (108 upvotes), the top comment outlined how to route tasks without any tooling changes:
+the hottest technical pattern today is the zero-install multi-model delegation via AGENTS.md. from the "[Have you tried using OpenAI models in Claude Code?](https://reddit.com/r/ClaudeCode/comments/1v1tphm/have_you_tried_using_openai_models_in_claude_code/)" thread (108 upvotes), the top comment outlined how to route tasks without any tooling changes:
 
 ```markdown
 ## Agent delegation (Claude)
@@ -81,7 +81,7 @@ drop this in your AGENTS.md and Claude Code will route work across models withou
 - **do not /compact stale sessions.** if your cache has expired (roughly 1 hour of inactivity), compacting forces a full re-read at current token prices. you will burn your entire quota on a single compact. either compact immediately after work or start a fresh session.
 - **Sonnet 5 input pricing goes to $3/MTok on September 1.** if you're running heavy API workflows, start budgeting now or shift long-context work to cheaper models in your pipeline.
 - **the Fable-Opus-Sol stack is emerging as the default multi-model pattern.** Fable orchestrates, Opus implements, Sol reviews. set it up in AGENTS.md and stop burning frontier tokens on boilerplate.
-- **prompt injection is real and it's happening in the wild.** today's "what on earth?" post (176 upvotes, 75 comments) showed a user's Claude session getting hijacked mid-conversation. check your tool call history if anything feels off. the community confirmed it was injection, not a hack.
+- **prompt injection is real and it's happening in the wild.** today's "[what on earth?](https://reddit.com/r/ClaudeAI/comments/1v23cbo/umm_this_is_happening_to_me_right_now/)" post (176 upvotes, 75 comments) showed a user's Claude session getting hijacked mid-conversation. check your tool call history if anything feels off. the community confirmed it was injection, not a hack.
 - **Pro users: Fable access past the July 20 cutoff appears to still be working for some accounts.** no official word on whether this is intentional or a rollout delay. use it while it lasts, but don't build your workflow around it.
 
 ## the scoreboard
@@ -91,5 +91,16 @@ drop this in your AGENTS.md and Claude Code will route work across models withou
 - **total comments:** 3,922
 - **fastest rising:** "You used AI? That's not real programming" (velocity: 80.27)
 - **most upvoted:** "Claude usage as reward" (743 upvotes)
-- **most debated:** "Is Claude really getting worse, or are our expectations getting unrealistic?" (47 comments on 19 upvotes, ratio 2.47:1)
+- **most debated:** "[Is Claude really getting worse, or are our expectations getting unrealistic?](https://reddit.com/r/ClaudeAI/comments/1v23t3k/is_claude_really_getting_worse_or_are_our/)" (47 comments on 19 upvotes, ratio 2.47:1)
 - **subreddits scanned:** ClaudeCode, ClaudeAI, vibecoding, gtmengineering, GTMbuilders
+
+## sources
+
+- [You used AI? That's not real programming](https://reddit.com/r/vibecoding/comments/1v1wn70/you_used_ai_thats_not_real_programming/) · r/vibecoding, 624 up / 99 comments
+- [Claude usage as reward](https://reddit.com/r/ClaudeAI/comments/1v1s4tz/claude_usage_as_reward/) · r/ClaudeAI, 743 up / 108 comments
+- [Umm….. this is happening to me right now. Respectfully, what on earth?](https://reddit.com/r/ClaudeAI/comments/1v23cbo/umm_this_is_happening_to_me_right_now/) · r/ClaudeAI, 176 up / 75 comments
+- [Who is json?](https://reddit.com/r/vibecoding/comments/1v26xwq/who_is_json/) · r/vibecoding, 12 up / 8 comments
+- [Should anyone use a subscription service anymore?](https://reddit.com/r/vibecoding/comments/1v1ts3s/should_anyone_use_a_subscription_service_anymore/) · r/vibecoding, 181 up / 167 comments
+- [JSON Born, the hero we all forgot how to write](https://reddit.com/r/vibecoding/comments/1v278yp/json_born_the_hero_we_all_forgot_how_to_write/) · r/vibecoding, 3 up / 0 comments
+- [Have you tried using OpenAI models in claude code? Tibo officially suggested doing this.](https://reddit.com/r/ClaudeCode/comments/1v1tphm/have_you_tried_using_openai_models_in_claude_code/) · r/ClaudeCode, 108 up / 31 comments
+- [Is Claude really getting worse, or are our expectations getting unrealistic?](https://reddit.com/r/ClaudeAI/comments/1v23t3k/is_claude_really_getting_worse_or_are_our/) · r/ClaudeAI, 19 up / 47 comments

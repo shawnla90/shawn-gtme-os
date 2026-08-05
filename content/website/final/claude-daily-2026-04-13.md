@@ -10,17 +10,17 @@ featured: false
 
 monday morning. the Claude Code subreddit woke up, checked their rate limits, and chose violence.
 
-the big story today is model switching mid-chat landing in Claude AI (809 upvotes, 69 comments), which is genuinely useful and also the most predictable feature request finally getting shipped. but the real energy? token anxiety. two separate tools for tracking where your Claude Code spend actually goes hit the front page within hours of each other. one on r/ClaudeCode, one on r/ClaudeAI. the community has entered its financial audit era. 56% of one user's weekly spend was conversation turns with zero tool use. just... talking. paying Opus prices to chat. we've all been there. we just didn't have receipts until today.
+the big story today is model switching mid-chat landing in Claude AI (809 upvotes, 69 comments), which is genuinely useful and also the most predictable feature request finally getting shipped. but the real energy? token anxiety. two separate tools for tracking where your Claude Code spend actually goes hit the front page within hours of each other. one on [r/ClaudeCode](https://reddit.com/r/ClaudeCode), one on [r/ClaudeAI](https://reddit.com/r/ClaudeAI). the community has entered its financial audit era. 56% of one user's weekly spend was conversation turns with zero tool use. just... talking. paying Opus prices to chat. we've all been there. we just didn't have receipts until today.
 
-meanwhile the outage/limit frustration machine keeps grinding. "And... it's down" (210 upvotes, 72 comments), "Dear Anthropic: You're screwing up. Big time" (185 upvotes, 107 comments), and the caching issue thread from Boris Cherny is still cooking at 329 upvotes. the usage limit saga is now on its 22nd consecutive day of coverage in this digest. at this point it's not a running gag, it's a running injury. on the lighter side, r/vibecoding gave us "Vibe coding is officially getting out of hand" at 434 upvotes, featuring government agencies apparently vibe coding now. the simulation is not even trying to be subtle anymore.
+meanwhile the outage/limit frustration machine keeps grinding. "[And... it's down](https://reddit.com/r/ClaudeCode/comments/1skel0q/and_its_down/)" (210 upvotes, 72 comments), "[Dear Anthropic: You're screwing up. Big time](https://reddit.com/r/ClaudeCode/comments/1skhir3/dear_anthropic_youre_screwing_up_big_time/)" (185 upvotes, 107 comments), and the caching issue thread from Boris Cherny is still cooking at 329 upvotes. the usage limit saga is now on its 22nd consecutive day of coverage in this digest. at this point it's not a running gag, it's a running injury. on the lighter side, [r/vibecoding](https://reddit.com/r/vibecoding) gave us "[Vibe coding is officially getting out of hand](https://reddit.com/r/vibecoding/comments/1skn21b/vibe_coding_is_officially_getting_out_of_hand/)" at 434 upvotes, featuring government agencies apparently vibe coding now. the simulation is not even trying to be subtle anymore.
 
 ## hottest thread
 
-**"You can now switch models mid-chat"** on r/ClaudeAI. 809 upvotes, 69 comments.
+**"[You can now switch models mid-chat](https://reddit.com/r/ClaudeAI/comments/1skm9tw/you_can_now_switch_models_midchat/)"** on r/ClaudeAI. 809 upvotes, 69 comments.
 
-Anthropic finally shipped what ChatGPT users have had for a while. you can now swap between models in the same conversation without starting over. the practical use case is obvious: plan with Opus, execute with Sonnet or Haiku, save money on the grunt work. but the top comment from u/ActionOrganic4617 dropped the detail everyone needed to hear: switching models rehydrates the cache. so if you're flipping back and forth every three messages thinking you're gaming the system, you're actually burning more. plan the switch. don't toggle like you're changing TV channels.
+Anthropic finally shipped what ChatGPT users have had for a while. you can now swap between models in the same conversation without starting over. the practical use case is obvious: plan with Opus, execute with Sonnet or Haiku, save money on the grunt work. but the top comment from [u/ActionOrganic4617](https://reddit.com/user/ActionOrganic4617) dropped the detail everyone needed to hear: switching models rehydrates the cache. so if you're flipping back and forth every three messages thinking you're gaming the system, you're actually burning more. plan the switch. don't toggle like you're changing TV channels.
 
-u/andWan summed up the vibe: this was the first thing they missed when switching from ChatGPT to Claude. 71 upvotes on that comment alone. sometimes the best feature is the one your competitor already had.
+[u/andWan](https://reddit.com/user/andWan) summed up the vibe: this was the first thing they missed when switching from ChatGPT to Claude. 71 upvotes on that comment alone. sometimes the best feature is the one your competitor already had.
 
 ## repo of the day
 
@@ -42,21 +42,21 @@ this wins because it did what 90% of hype comments don't. it acknowledged the fe
 
 > Why TF you calling Claude Babe? She's mine bro
 
-u/Own_Strawberry_8860, 100 upvotes, on "Every Monday 8AM PT like clock work."
+[u/Own_Strawberry_8860](https://reddit.com/user/Own_Strawberry_8860), 100 upvotes, on "[Every Monday 8AM PT like clock work](https://reddit.com/r/ClaudeCode/comments/1skekc7/every_monday_8am_pt_like_clock_work/)."
 
-the thread itself is about the weekly monday morning outage ritual (275 upvotes, 60 comments). OP is frustrated. genuinely tired. and then u/pxrage shows up with a screenshot captioned "time to wake the side piece up" (referring to switching to another AI during downtime). and u/Own_Strawberry_8860 enters possessive mode over a language model. 100 people agreed. u/Latter-Tangerine-951 replied with "It genuinely worries me how people are talking to this software tool" at exactly 100 upvotes. perfectly balanced, as all things should be. we are collectively developing parasocial relationships with an autocomplete engine and honestly? it tracks. it's monday. we're all down bad.
+the thread itself is about the weekly monday morning outage ritual (275 upvotes, 60 comments). OP is frustrated. genuinely tired. and then [u/pxrage](https://reddit.com/user/pxrage) shows up with a screenshot captioned "time to wake the side piece up" (referring to switching to another AI during downtime). and u/Own_Strawberry_8860 enters possessive mode over a language model. 100 people agreed. [u/Latter-Tangerine-951](https://reddit.com/user/Latter-Tangerine-951) replied with "It genuinely worries me how people are talking to this software tool" at exactly 100 upvotes. perfectly balanced, as all things should be. we are collectively developing parasocial relationships with an autocomplete engine and honestly? it tracks. it's monday. we're all down bad.
 
 ## fun facts
 
 - the word "tokens" appeared in more post titles today than any single day this digest has tracked. the community has entered its bean-counting arc and there's no going back.
-- r/ClaudeCode had THREE separate outage/complaint posts all break 75 upvotes within hours of each other. "And... it's down" (210), "Dear Anthropic: You're screwing up" (185), and "At this point, Anthropic is just straight up taking us all for fools" (77). monday morning speedrun.
+- r/ClaudeCode had THREE separate outage/complaint posts all break 75 upvotes within hours of each other. "And... it's down" (210), "Dear Anthropic: You're screwing up" (185), and "[At this point, Anthropic is just straight up taking us all for fools](https://reddit.com/r/ClaudeCode/comments/1skmouq/at_this_point_anthropic_is_just_straight_up/)" (77). monday morning speedrun.
 - the "Fair" post on r/ClaudeAI hit 499 upvotes with zero preview text. the top comment is "Yeah but why Tiger be dat way." I have no idea what's happening in that thread but 41 people are having the time of their lives.
-- r/vibecoding's meta-roast "I vibe coded a tool that tracks my claude code usage" (595 upvotes) is still climbing from yesterday with u/mrmellow_147 dropping "tOkEn OpTiMiSeR" in alternating caps. the subreddit is now eating itself.
+- r/vibecoding's meta-roast ["I vibe coded a tool that tracks my claude code usage"](https://reddit.com/r/vibecoding/comments/1sk4uut/i_vibe_coded_a_tool_that_tracks_my_claude_code/) (595 upvotes) is still climbing from yesterday with [u/mrmellow_147](https://reddit.com/user/mrmellow_147) dropping "tOkEn OpTiMiSeR" in alternating caps. the subreddit is now eating itself.
 - 172 posts tracked today across 4 subreddits. the ratio of complaint posts to build posts on r/ClaudeCode is roughly 4:1. mondays.
 
 ## code drop
 
-no full code snippets dropped in today's threads, but the most actionable technical pattern came from u/m3umax on the "Claude isn't dumber" thread (still trending from saturday, now at 1,308 upvotes):
+no full code snippets dropped in today's threads, but the most actionable technical pattern came from [u/m3umax](https://reddit.com/user/m3umax) on the "[Claude isn't dumber](https://reddit.com/r/ClaudeAI/comments/1sjz1hg/claude_isnt_dumber_its_just_not_trying_heres_how/)" thread (still trending from saturday, now at 1,308 upvotes):
 
 ```
 Instead of putting behavioral instructions in your system prompt or 
@@ -76,17 +76,30 @@ this is a routing detail most people don't know. if you've been wondering why yo
 - **model switching mid-chat is live, but plan your switches.** use Opus for architecture and planning, drop to Sonnet or Haiku for execution. don't toggle back and forth. cache rehydration on every switch means frequent flipping costs more, not less.
 - **move behavioral instructions to Styles, not user preferences.** Claude's system prompt hierarchy treats Styles as higher authority. if your custom instructions feel inconsistent, this is likely why.
 - **the caching issue is acknowledged but not fixed.** Boris Cherny confirmed long-running agent sessions cause cache misses. if you're burning through tokens faster than expected, shorter focused sessions beat marathon ones right now.
-- **"What did you build this weekend?" thread has 31 comments of real projects.** if you need inspiration or want to see what other builders are shipping, that thread is a goldmine buried under the complaint posts.
+- **"[What did you build this weekend?](https://reddit.com/r/ClaudeCode/comments/1sksmaj/what_did_you_build_this_past_weekend/)" thread has 31 comments of real projects.** if you need inspiration or want to see what other builders are shipping, that thread is a goldmine buried under the complaint posts.
 
 ## the scoreboard
 
 - **posts tracked:** 172
 - **total upvotes:** 10,075
 - **total comments:** 3,019
-- **fastest rising:** "found a tool that shows exactly where your claude code tokens go by task type" (460.0 velocity)
+- **fastest rising:** "[found a tool that shows exactly where your claude code tokens go by task type](https://reddit.com/r/ClaudeCode/comments/1skskd7/found_a_tool_that_shows_exactly_where_your_claude/)" (460.0 velocity)
 - **most debated:** "Dear Anthropic: You're screwing up. Big time" (107 comments on 185 upvotes, 0.58 ratio)
-- **subreddits scanned:** r/ClaudeCode, r/ClaudeAI, r/vibecoding, r/gtmengineering
+- **subreddits scanned:** r/ClaudeCode, r/ClaudeAI, r/vibecoding, [r/gtmengineering](https://reddit.com/r/gtmengineering)
 - **returning posts still trending:** 5
 - **consecutive days of usage limit coverage:** 22
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [found a tool that shows exactly where your claude code tokens go by task type](https://reddit.com/r/ClaudeCode/comments/1skskd7/found_a_tool_that_shows_exactly_where_your_claude/) · r/ClaudeCode, 46 up / 7 comments
+- [You can now switch models mid-chat](https://reddit.com/r/ClaudeAI/comments/1skm9tw/you_can_now_switch_models_midchat/) · r/ClaudeAI, 809 up / 69 comments
+- [Vibe coding is officially getting out of hand…](https://reddit.com/r/vibecoding/comments/1skn21b/vibe_coding_is_officially_getting_out_of_hand/) · r/vibecoding, 434 up / 38 comments
+- [What did you build this past weekend?](https://reddit.com/r/ClaudeCode/comments/1sksmaj/what_did_you_build_this_past_weekend/) · r/ClaudeCode, 9 up / 31 comments
+- [Claude isn't dumber, it's just not trying. Here's how to fix it in Chat.](https://reddit.com/r/ClaudeAI/comments/1sjz1hg/claude_isnt_dumber_its_just_not_trying_heres_how/) · r/ClaudeAI, 1,308 up / 166 comments
+- ["I vibe coded a tool that tracks my claude code usage"](https://reddit.com/r/vibecoding/comments/1sk4uut/i_vibe_coded_a_tool_that_tracks_my_claude_code/) · r/vibecoding, 595 up / 41 comments
+- [Every Monday 8AM PT like clock work](https://reddit.com/r/ClaudeCode/comments/1skekc7/every_monday_8am_pt_like_clock_work/) · r/ClaudeCode, 275 up / 60 comments
+- [Dear Anthropic: You're screwing up. Big time](https://reddit.com/r/ClaudeCode/comments/1skhir3/dear_anthropic_youre_screwing_up_big_time/) · r/ClaudeCode, 185 up / 107 comments
+- [And... it's down.](https://reddit.com/r/ClaudeCode/comments/1skel0q/and_its_down/) · r/ClaudeCode, 210 up / 72 comments
+- [At this point, Anthropic is just straight up taking us all for fool](https://reddit.com/r/ClaudeCode/comments/1skmouq/at_this_point_anthropic_is_just_straight_up/) · r/ClaudeCode, 77 up / 56 comments

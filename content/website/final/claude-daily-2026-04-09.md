@@ -8,25 +8,25 @@ featured: false
 
 ## the pulse
 
-Thursday hit r/ClaudeCode like a class action lawsuit wrapped in a meme. Someone actually ran the numbers on Opus degradation. not vibes, not feelings, not "it seems slower." 6,852 sessions. 17,871 thinking blocks. spreadsheets. charts. the works. and the conclusion? 67% dumber. the subreddit went from "is it just me?" to "here's the receipts" in a single post.
+Thursday hit [r/ClaudeCode](https://reddit.com/r/ClaudeCode) like a class action lawsuit wrapped in a meme. Someone actually ran the numbers on Opus degradation. not vibes, not feelings, not "it seems slower." 6,852 sessions. 17,871 thinking blocks. spreadsheets. charts. the works. and the conclusion? 67% dumber. the subreddit went from "is it just me?" to "here's the receipts" in a single post.
 
 meanwhile, Anthropic quietly shipped the Monitor tool for Claude Code, which lets your agent spin up background watchers instead of burning tokens in polling loops. genuinely useful feature that would've been top news any other day. but it dropped on the same day the community decided to forensically audit whether they've been paying premium prices for discount reasoning. timing is everything.
 
-and over on r/ClaudeAI, Mythos continued its reign as the AI world's favorite unreleased model. someone posted that Mythos found the One Piece before the Straw Hats and it pulled 3,093 upvotes and 162 comments. the Mythos cinematic universe is expanding faster than the model itself can ship. Anthropic also announced the advisor strategy for the Claude Platform, letting you pair Opus as a decision-maker with Sonnet as the executor. which is ironic given half the subreddit spent today arguing that Opus can't be trusted to make decisions about a for loop.
+and over on [r/ClaudeAI](https://reddit.com/r/ClaudeAI), Mythos continued its reign as the AI world's favorite unreleased model. someone posted that Mythos found the One Piece before the Straw Hats and it pulled 3,093 upvotes and 162 comments. the Mythos cinematic universe is expanding faster than the model itself can ship. Anthropic also announced the advisor strategy for the Claude Platform, letting you pair Opus as a decision-maker with Sonnet as the executor. which is ironic given half the subreddit spent today arguing that Opus can't be trusted to make decisions about a for loop.
 
 ## hottest thread
 
-**"Anthropic made Claude 67% dumber and didn't tell anyone, a developer ran 6,852 sessions to prove it"** (r/ClaudeCode, 95 upvotes, 35 comments, velocity: 950)
+**"[Anthropic made Claude 67% dumber and didn't tell anyone, a developer ran 6,852 sessions to prove it](https://reddit.com/r/ClaudeCode/comments/1shaxkt/anthropic_made_claude_67_dumber_and_didnt_tell/)"** (r/ClaudeCode, 95 upvotes, 35 comments, velocity: 950)
 
 this is the one. a developer noticed Claude Code stopped trying to get things right back in February and started rushing to finish. instead of posting a rant, they did what Anthropic wouldn't. quantitative analysis of 17,871 thinking blocks and 234,760 tool calls across 6,852 session files.
 
 the reasoning depth dropped. the tool call patterns changed. the model went from "let me think about this" to "let me get this over with." and the community responded exactly how you'd expect. top comment is calling for chargebacks. second comment calls Claude "hell of a cheat machine rather than honest working horse."
 
-this thread matters because it turned months of anecdotal complaints into data. the usage quota saga has been running for weeks now, but the degradation conversation just got its first real evidence package. a companion post, "Claude Code capability degradation is real," pulled another 20 upvotes and 42 comments linking to the same GitHub analysis. the conversation has shifted from "am I crazy?" to "what are we going to do about it?"
+this thread matters because it turned months of anecdotal complaints into data. the usage quota saga has been running for weeks now, but the degradation conversation just got its first real evidence package. a companion post, "[Claude Code capability degradation is real,](https://reddit.com/r/ClaudeCode/comments/1sh9302/claude_code_capability_degradation_is_real/)" pulled another 20 upvotes and 42 comments linking to the same GitHub analysis. the conversation has shifted from "am I crazy?" to "what are we going to do about it?"
 
 ## repo of the day
 
-**[anthropics/claude-code/issues/42796](https://github.com/anthropics/claude-code/issues/42796)** - Quantitative Analysis of Claude Code Capability Degradation
+**anthropics/claude-code/issues/42796** - Quantitative Analysis of Claude Code Capability Degradation
 
 technically a GitHub issue, not a repo, but the analysis itself is the artifact worth highlighting. 17,871 thinking blocks parsed. 234,760 tool calls cataloged. the methodology tracks reasoning depth across sessions over time, measuring how much the model actually engages with problems versus rushing to produce output.
 
@@ -38,7 +38,7 @@ the related r/ClaudeCode post pulled 42 comments, with people asking for ELI5 ex
 
 > So you're saying the Claude Code leak was an inside job designed by Mythos to generate press for itself?
 
-u/monowirelabs, 303 upvotes, on "Anthropic employees have had Mythos since Feb 24"
+[u/monowirelabs](https://reddit.com/user/monowirelabs), 303 upvotes, on "[Anthropic employees have had Mythos since Feb 24](https://reddit.com/r/ClaudeAI/comments/1sgt2el/anthropic_employees_have_had_mythos_since_feb_24/)"
 
 this wins because it's doing three things at once. it's funny. it connects two separate news stories (the source code leak and the Mythos timeline) into a conspiracy theory that's just plausible enough to make you pause. and it captures the exact energy of a community that's been whiplashed between "Anthropic is ruining everything" and "Anthropic is building something incredible" for two straight weeks. the Mythos cinematic universe needed its first conspiracy arc and monowirelabs delivered.
 
@@ -46,7 +46,7 @@ this wins because it's doing three things at once. it's funny. it connects two s
 
 > "Company had access to something they built before the general public did. Tune in for more updates on this revolutionary concept at 11pm!"
 
-u/hclpfan, 79 upvotes, on "Anthropic employees have had Mythos since Feb 24"
+[u/hclpfan](https://reddit.com/user/hclpfan), 79 upvotes, on "Anthropic employees have had Mythos since Feb 24"
 
 the original post was dripping with sarcasm already ("perfect server uptime, no software bugs, no major security incidents") but hclpfan walked in and decided the entire premise needed to be demolished. yes, a company used their own product before releasing it. groundbreaking investigative journalism. the thing is, the original post was clearly a joke, which makes hclpfan's deadpan dismissal of a joke post even funnier. you took a shitpost seriously just to be condescending about it. that's commitment to the bit.
 
@@ -54,8 +54,8 @@ the original post was dripping with sarcasm already ("perfect server uptime, no 
 
 - r/ClaudeCode used some variation of "dumb," "dumber," or "retarded" in 7 separate post titles today. the community is not using clinical language to describe their frustrations.
 - the Mythos One Piece shitpost (3,093 upvotes) got more engagement than every r/ClaudeCode post combined. satire remains the most scalable content format.
-- "AI Depression" is now an officially proposed psychological state. symptoms include not wanting to look at your own codebase. relatable diagnostic criteria.
-- someone asked "Is there a subreddit for Claude Code?" on r/ClaudeCode. the top reply was "Sir this is a Wendy's" with 96 upvotes. the subreddit has achieved self-awareness.
+- "[AI Depression](https://reddit.com/r/ClaudeCode/comments/1sh75de/ai_depression_is_a_real_state_one_reaches_into/)" is now an officially proposed psychological state. symptoms include not wanting to look at your own codebase. relatable diagnostic criteria.
+- someone asked "[Is there a subreddit for Claude Code?](https://reddit.com/r/ClaudeCode/comments/1sh5n2x/is_there_a_subreddit_for_claude_code/)" on r/ClaudeCode. the top reply was "Sir this is a Wendy's" with 96 upvotes. the subreddit has achieved self-awareness.
 - the word "degradation" appeared in more post titles today than "feature," "new," or "built." we are in the complaint arc.
 
 ## code drop
@@ -75,7 +75,7 @@ done
 # and only wakes the agent when the event fires
 ```
 
-the practical impact: if you're running builds, test suites, or any async process, the Monitor tool means your agent stops wasting context window on "still waiting..." checks. u/2024-YR4-Asteroid's top comment on the announcement captures the mood perfectly: "Cool, can they fix the bug where I can't scroll up and see my original prompt that they shipped with it?" new features, old bugs. the circle of life.
+the practical impact: if you're running builds, test suites, or any async process, the Monitor tool means your agent stops wasting context window on "still waiting..." checks. [u/2024-YR4-Asteroid](https://reddit.com/user/2024-YR4-Asteroid)'s top comment on the announcement captures the mood perfectly: "Cool, can they fix the bug where I can't scroll up and see my original prompt that they shipped with it?" new features, old bugs. the circle of life.
 
 ## builder takeaways
 
@@ -91,10 +91,20 @@ the practical impact: if you're running builds, test suites, or any async proces
 - **total upvotes:** 11,151
 - **total comments:** 3,656
 - **fastest rising:** "Anthropic made Claude 67% dumber" (velocity: 950)
-- **most debated:** "Yes, Anthropic IS throttling reasoning effort" (198 comments on 334 upvotes, 0.59 ratio)
+- **most debated:** "[Yes, Anthropic IS throttling reasoning effort](https://reddit.com/r/ClaudeCode/comments/1sgtkcy/yes_anthropic_is_throttling_reasoning_effort_on/)" (198 comments on 334 upvotes, 0.59 ratio)
 - **biggest post by score:** "BREAKING: Mythos found the One Piece" (3,093 upvotes, r/ClaudeAI)
 - **subreddits scanned:** ClaudeCode, ClaudeAI, vibecoding, gtmengineering, GTMbuilders
-- **returning characters:** "Cancelling next month" still trending (537 upvotes, 153 comments), the usage quota saga enters week 3
+- **returning characters:** "[Cancelling next month](https://reddit.com/r/ClaudeCode/comments/1sggxka/cancelling_next_month/)" still trending (537 upvotes, 153 comments), the usage quota saga enters week 3
 - **vibe check:** angry but organized. the pitchforks now come with data visualizations.
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Anthropic made Claude 67% dumber and didn't tell anyone, a developer ran 6,852 sessions to prove it](https://reddit.com/r/ClaudeCode/comments/1shaxkt/anthropic_made_claude_67_dumber_and_didnt_tell/) · r/ClaudeCode, 95 up / 35 comments
+- ["AI Depression" Is a REAL state one reaches into after weeks of  AI Psychosis working on a dream project you can't finish](https://reddit.com/r/ClaudeCode/comments/1sh75de/ai_depression_is_a_real_state_one_reaches_into/) · r/ClaudeCode, 29 up / 14 comments
+- [Claude Code capability degradation is real.](https://reddit.com/r/ClaudeCode/comments/1sh9302/claude_code_capability_degradation_is_real/) · r/ClaudeCode, 20 up / 42 comments
+- [Is there a subreddit for Claude Code?](https://reddit.com/r/ClaudeCode/comments/1sh5n2x/is_there_a_subreddit_for_claude_code/) · r/ClaudeCode, 93 up / 38 comments
+- [Anthropic employees have had Mythos since Feb 24](https://reddit.com/r/ClaudeAI/comments/1sgt2el/anthropic_employees_have_had_mythos_since_feb_24/) · r/ClaudeAI, 631 up / 45 comments
+- [Yes, Anthropic IS throttling reasoning effort on personal accounts (Max, Pro, Free) compared to Team and Enterprise accounts](https://reddit.com/r/ClaudeCode/comments/1sgtkcy/yes_anthropic_is_throttling_reasoning_effort_on/) · r/ClaudeCode, 334 up / 198 comments
+- [Cancelling next month](https://reddit.com/r/ClaudeCode/comments/1sggxka/cancelling_next_month/) · r/ClaudeCode, 537 up / 153 comments

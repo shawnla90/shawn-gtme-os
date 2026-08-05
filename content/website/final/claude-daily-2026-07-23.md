@@ -16,18 +16,18 @@ The usage quota complaints running gag has now appeared 73 times in this digest'
 
 ## hottest thread
 
-**Claude: "This project will take 3 months." Me: "You have 3 hours."** ... r/ClaudeCode, 2,256 upvotes, 89 comments, velocity 133.72
+**[Claude: "This project will take 3 months." Me: "You have 3 hours."](https://reddit.com/r/ClaudeCode/comments/1v3cy52/claude_this_project_will_take_3_months_me_you/)** ... [r/ClaudeCode](https://reddit.com/r/ClaudeCode), 2,256 upvotes, 89 comments, velocity 133.72
 
 This was the fastest post in today's entire scan by a wide margin. The premise is universal: Claude gives you a responsible engineering timeline and you respond with founder energy. The comments turned into a support group for everyone who has ever ==ignored an AI's time estimate== and shipped anyway.
 
-u/ithkuil shared the best anecdote. Claude estimated phases 1-6 would take three weeks, then finished them in three minutes. When it got to phase 7, Claude said three more days. So ithkuil told it to start a timer. The punchline writes itself.
+[u/ithkuil](https://reddit.com/user/ithkuil) shared the best anecdote. Claude estimated phases 1-6 would take three weeks, then finished them in three minutes. When it got to phase 7, Claude said three more days. So ithkuil told it to start a timer. The punchline writes itself.
 
 The real dynamic here: Claude's time estimates are trained on human engineering norms. It has no concept of the fact that it types at several thousand tokens per second. So it tells you three months because that's what the training data says a project like yours takes. Not because it actually needs three months. The entire comment section is people discovering this mismatch in real time.
 
 ## repo of the day
 
 **LogiTux** ... [github.com/do4k/LogiTux](https://github.com/do4k/LogiTux)
-r/vibecoding, 21 upvotes
+[r/vibecoding](https://reddit.com/r/vibecoding), 21 upvotes
 
 u/do4k vibe coded a full Logitech G Hub replacement for Linux. If you've ever tried to configure a Logitech mouse on Linux, you know the pain. There were terminal tools floating around, but nothing that recreated the actual G Hub experience as an all-in-one app.
 
@@ -39,19 +39,19 @@ It's early. The creator only has a few devices to test on and is asking for cont
 >
 > Well claude, luckily you have no hands.
 
-u/BusinessWatercrees58, r/ClaudeCode
+[u/BusinessWatercrees58](https://reddit.com/user/BusinessWatercrees58), r/ClaudeCode
 
 This is the kind of comment that stops your scroll. Claude tried to explain why a manual approach would be difficult, apparently forgetting that the difficulty argument ==doesn't apply to something with no hands==. The delivery was deadpan. The thread was still fresh when I pulled the data so the upvote count doesn't reflect the quality here, but this is the line people will screenshot and drop in Slack channels tomorrow morning.
 
 ## troll of the day
 
-The thread "For 2027, I already paid for the annual plan" (911 upvotes, r/vibecoding) started as a joke about being locked in for another year of vibe coding. Then the comments section abandoned technology entirely.
+The thread "[For 2027, I already paid for the annual plan](https://reddit.com/r/vibecoding/comments/1v3cl46/for_2027_i_already_paid_for_the_annual_plan/)" (911 upvotes, r/vibecoding) started as a joke about being locked in for another year of vibe coding. Then the comments section abandoned technology entirely.
 
 > I agree. Potatoes are the way to go. Infinite food. Just put one in the ground. Get 10 out. What could go wrong?
 
-u/Illustrious-Hand-450, r/vibecoding
+[u/Illustrious-Hand-450](https://reddit.com/user/Illustrious-Hand-450), r/vibecoding
 
-This was the culmination of a thread where u/charlyAtWork2 suggested selling potatoes online instead, u/Acclynn pitched a farm management dashboard, and u/FalconRelevant pointed out you'd need to buy land first. u/Revolutionary-Type31 closed the loop by suggesting you'd need ==the vibecoding income to support your farm==.
+This was the culmination of a thread where [u/charlyAtWork2](https://reddit.com/user/charlyAtWork2) suggested selling potatoes online instead, [u/Acclynn](https://reddit.com/user/Acclynn) pitched a farm management dashboard, and [u/FalconRelevant](https://reddit.com/user/FalconRelevant) pointed out you'd need to buy land first. [u/Revolutionary-Type31](https://reddit.com/user/Revolutionary-Type31) closed the loop by suggesting you'd need ==the vibecoding income to support your farm==.
 
 The entire comment section functionally decided that agriculture is a better investment than annual AI subscriptions. And honestly? Potatoes have 100% uptime.
 
@@ -60,12 +60,12 @@ The entire comment section functionally decided that agriculture is a better inv
 - One post (the 3 months meme) captured 2,256 of today's 9,701 total upvotes. That's 23.3%. One shitpost, nearly a quarter of the entire day's engagement across five subreddits.
 - Fable appeared in post titles and previews across 5 separate threads today. ==Fable is the new rate limit== as the community's favorite thing to fight about.
 - r/vibecoding produced the most wholesome thread of the day (potato farming) and the most existential one (I learned absolutely nothing from a year of vibe coding and my net programming knowledge is now negative).
-- Someone in the "What's your rig look like?" thread is running 4 Nvidia Sparks in parallel with 512GB of RAM. OP is on an i3-10100 Ubuntu box. The Claude Code wealth gap is real.
-- u/well_uh_yeah claimed the free Fable credits, immediately thought "but how will it know when to stop?", went into settings, turned it off, and then realized the web interface had also defaulted to Fable. They were about to burn through the credits asking about rehab options for their mom's broken... (the comment cuts off there, which somehow makes it worse).
+- Someone in the "[What's your rig look like?](https://reddit.com/r/ClaudeCode/comments/1v42skd/whats_your_rig_look_like/)" thread is running 4 Nvidia Sparks in parallel with 512GB of RAM. OP is on an i3-10100 Ubuntu box. The Claude Code wealth gap is real.
+- [u/well_uh_yeah](https://reddit.com/user/well_uh_yeah) claimed the free Fable credits, immediately thought "but how will it know when to stop?", went into settings, turned it off, and then realized the web interface had also defaulted to Fable. They were about to burn through the credits asking about rehab options for their mom's broken... (the comment cuts off there, which somehow makes it worse).
 
 ## code drop
 
-The most actionable technical insight today came from "A small trick to guide an LLM Agent while it's coding" (315 upvotes, 51 comments, r/ClaudeAI).
+The most actionable technical insight today came from "[A small trick to guide an LLM Agent while it's coding](https://reddit.com/r/ClaudeAI/comments/1v3o7fe/a_small_trick_to_guide_an_llm_agent_while_its/)" (315 upvotes, 51 comments, [r/ClaudeAI](https://reddit.com/r/ClaudeAI)).
 
 The pattern: when Claude Code is mid-run and heading in the wrong direction, you don't have to hit Escape and restart. You can type a correction while it's still running. That message gets injected at the next tool call boundary.
 
@@ -86,7 +86,7 @@ The thread discussion clarified an important nuance: the injection happens at to
 - **JetBrains killed the token saver hype.** They tested CaveMan (advertised 65% savings, measured 8.5%) and RTK (which silently truncated CI output). 238 upvotes, 65 comments, and one commenter confirmed RTK bit them when watching a CI job. If you're using either tool, check the JetBrains blog post before your next session.
 - **Check your billing settings after claiming Fable 5 credits.** Multiple users confirmed that the free $100 promotional credits can silently enable usage-based billing with no spend cap. Go to your usage settings tab and verify right now.
 - **Mid-run steering works.** Type corrections while Claude Code is running instead of interrupting. The message gets injected at the next tool call. This saves full context reloads and keeps your session alive.
-- **Claude macOS Desktop can now natively control the iOS Simulator** (115 upvotes, r/ClaudeAI). If you're building iOS apps with Claude Code, this closes a real workflow gap.
+- **[Claude macOS Desktop can now natively control the iOS Simulator](https://reddit.com/r/ClaudeAI/comments/1v3agt9/claude_macos_desktop_can_now_natively_control_the/)** (115 upvotes, r/ClaudeAI). If you're building iOS apps with Claude Code, this closes a real workflow gap.
 - **The Fable 5 API vs Max 200 gap is being documented.** Multiple posts today described the API version as dramatically better than the consumer plan. If your builds feel sluggish on Max, you're not imagining it, and 123 comments on the thread say you're not alone.
 
 ## the scoreboard
@@ -97,5 +97,15 @@ The thread discussion clarified an important nuance: the injection happens at to
 | total upvotes | 9,701 |
 | total comments | 3,028 |
 | fastest rising | "Claude: 'This project will take 3 months.' Me: 'You have 3 hours.'" (velocity: 133.72) |
-| most debated | "Who could possibly afford to use usage credits?" (83 comments on 59 upvotes, ratio 1.41) |
+| most debated | "[Who could possibly afford to use usage credits?](https://reddit.com/r/ClaudeCode/comments/1v3li14/who_could_possibly_afford_to_use_usage_credits/)" (83 comments on 59 upvotes, ratio 1.41) |
 | subreddits scanned | ClaudeAI, ClaudeCode, vibecoding, GTMbuilders, gtmengineering |
+
+## sources
+
+- [Claude: "This project will take 3 months." Me: "You have 3 hours."](https://reddit.com/r/ClaudeCode/comments/1v3cy52/claude_this_project_will_take_3_months_me_you/) · r/ClaudeCode, 2,256 up / 89 comments
+- [For 2027, I already paid for the annual plan.](https://reddit.com/r/vibecoding/comments/1v3cl46/for_2027_i_already_paid_for_the_annual_plan/) · r/vibecoding, 911 up / 52 comments
+- [A small trick to guide an LLM Agent while it’s coding](https://reddit.com/r/ClaudeAI/comments/1v3o7fe/a_small_trick_to_guide_an_llm_agent_while_its/) · r/ClaudeAI, 315 up / 51 comments
+- [What's your rig look like?](https://reddit.com/r/ClaudeCode/comments/1v42skd/whats_your_rig_look_like/) · r/ClaudeCode, 1 up / 0 comments
+- [What's your rig look like?](https://reddit.com/r/vibecoding/comments/1v42pbt/whats_your_rig_look_like/) · r/vibecoding, 1 up / 3 comments
+- [Claude MacOS Desktop can now natively control the iOS Simulator](https://reddit.com/r/ClaudeAI/comments/1v3agt9/claude_macos_desktop_can_now_natively_control_the/) · r/ClaudeAI, 115 up / 13 comments
+- [Who could possibly afford to use usage credits for anything meaningful?](https://reddit.com/r/ClaudeCode/comments/1v3li14/who_could_possibly_afford_to_use_usage_credits/) · r/ClaudeCode, 59 up / 83 comments

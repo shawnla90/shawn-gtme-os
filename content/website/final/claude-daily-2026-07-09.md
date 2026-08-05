@@ -8,7 +8,7 @@ featured: false
 
 ## the pulse
 
-thursday dropped and r/ClaudeAI chose violence. nine post titles contain the word Fable. the Fable extension from earlier this week is now generating its own micro-economy of grief, with threads ranging from pricing strategy suggestions to one titled, simply, Fable pricing ==are you smoking crack==. meanwhile Sol 5.6 showed up like a transfer student on the first day of school and half the sub is already passing notes about switching.
+thursday dropped and [r/ClaudeAI](https://reddit.com/r/ClaudeAI) chose violence. nine post titles contain the word Fable. the Fable extension from earlier this week is now generating its own micro-economy of grief, with threads ranging from pricing strategy suggestions to one titled, simply, Fable pricing ==are you smoking crack==. meanwhile Sol 5.6 showed up like a transfer student on the first day of school and half the sub is already passing notes about switching.
 
 the biggest story of the day is a guy who generated a client invoice while standing in line for a roller coaster at Europa Park. 1,501 upvotes. 236 comments. the community is completely split between this is the future and this belongs on LinkedIn. the mod bot auto-generated a TL;DR calling it a roller coaster of its own, which... yeah.
 
@@ -16,7 +16,7 @@ underneath the memes, real things happened. Anthropic dropped Claude certificati
 
 ## hottest thread
 
-**An LLM saved my ass while standing in the queue of a roller coaster at Europa Park** (r/ClaudeAI, 1,501 upvotes, 236 comments)
+**[An LLM saved my ass while standing in the queue of a roller coaster at Europa Park](https://reddit.com/r/ClaudeAI/comments/1uqt53j/an_llm_saved_my_ass_while_standing_in_the_queue/)** (r/ClaudeAI, 1,501 upvotes, 236 comments)
 
 the setup: OP's client calls demanding an invoice immediately for fiscal year accounting. OP is on vacation with family at Europa Park. says they can send it tonight. client says no, need it now. so OP pulls out their phone, fires up Claude, and generates the invoice ==while waiting in a roller coaster queue==.
 
@@ -26,7 +26,7 @@ the real tension here is identity. people don't know how to feel about someone b
 
 ## repo of the day
 
-**Built my entire portfolio with Claude Fable 5. You scroll through space and crash into the sun** (r/ClaudeAI + r/vibecoding, 2,477 combined upvotes, 723 combined comments)
+**[Built my entire portfolio with Claude Fable 5. You scroll through space and crash into the sun](https://reddit.com/r/ClaudeAI/comments/1uqoaqv/built_my_entire_portfolio_with_claude_fable_5_you/)** (r/ClaudeAI + [r/vibecoding](https://reddit.com/r/vibecoding), 2,477 combined upvotes, 723 combined comments)
 
 someone burned their entire Fable 5 quota on a single website. one brief. the result is a portfolio where you don't read, you fly. you scroll through space past planets using real NASA textures, and at the end your rocket crashes into the sun. Three.js, 60fps in the browser, GitHub link included.
 
@@ -38,13 +38,13 @@ as a builder, I respect the audacity. burning your entire Fable quota on one sin
 
 > The client's name? Albert Einstein.
 
-u/livewyr90, on the roller coaster invoice thread.
+[u/livewyr90](https://reddit.com/user/livewyr90), on the roller coaster invoice thread.
 
 four words. perfectly deployed. the entire thread was oscillating between this is genuinely useful and this reads like LinkedIn fan fiction, and this comment just... settled it. the Albert Einstein format is the internet's oldest skepticism shorthand, and dropping it on a story about generating invoices in a theme park queue is ==surgical precision==. the comment doesn't even need to be right. it just needs to exist, and the thread is better for it.
 
 ## troll of the day
 
-> How long after sex is it appropriate to open Claude code?
+> [How long after sex is it appropriate to open Claude code?](https://reddit.com/r/ClaudeAI/comments/1uqr3vi/how_long_after_sex_is_it_appropriate_to_open/)
 
 anonymous poster, r/ClaudeAI. 501 upvotes. 59 comments.
 
@@ -52,15 +52,15 @@ five hundred and one people upvoted this. fifty-nine people felt compelled to an
 
 ## fun facts
 
-- r/ClaudeAI officially hit **1 million subscribers** today. the announcement post got 73 upvotes. the sex question got 501. ==priorities==.
+- r/ClaudeAI officially hit **[1 million subscribers](https://reddit.com/r/ClaudeAI/comments/1ur87u0/announcing_1_million_subscribers_and_two_new/)** today. the announcement post got 73 upvotes. the sex question got 501. ==priorities==.
 - **9 separate posts** today had Fable in the title. the Fable content-to-complaint ratio is approaching 1:1.
 - the space portfolio post was cross-posted to r/ClaudeAI and r/vibecoding with a **combined 2,477 upvotes and 723 comments**. one website, two subreddits, zero consensus on whether it's genius or a cautionary tale.
 - u/Am_I_the_only_one posted about picking up Claude's lingo. top comment: This is a load bearing observation. the infection is self-documenting now.
-- someone on r/vibecoding posted Why are you all a bunch of miserable losers? and got 6 upvotes. the top reply said You described Reddit in general. self-awareness award goes unclaimed.
+- someone on r/vibecoding posted [Why are you all a bunch of miserable losers?](https://reddit.com/r/vibecoding/comments/1urf6cz/why_are_you_all_a_bunch_of_miserable_losers/) and got 6 upvotes. the top reply said You described Reddit in general. self-awareness award goes unclaimed.
 
 ## code drop
 
-from u/The_single_best_thing on r/ClaudeCode (146 upvotes, 19 comments), the single most useful CLAUDE.md addition I've seen in a while:
+from u/The_single_best_thing on [r/ClaudeCode](https://reddit.com/r/ClaudeCode) (146 upvotes, 19 comments), the single most useful CLAUDE.md addition I've seen in a while:
 
 ```markdown
 ## Verify, Don't Trust
@@ -87,9 +87,19 @@ simple. boring. saves you from the thing where Claude confidently summarizes a f
 - **total upvotes:** 15,011
 - **total comments:** 4,350
 - **subreddits scanned:** ClaudeAI, ClaudeCode, vibecoding, GTMbuilders, gtmengineering
-- **fastest rising post:** When your boss asks if you or Claude built it (velocity: 108.39)
+- **fastest rising post:** [When your boss asks if you or Claude built it](https://reddit.com/r/ClaudeAI/comments/1ur0484/when_your_boss_asks_if_you_or_claude_built_it/) (velocity: 108.39)
 - **most debated:** Built my entire portfolio with Claude Fable 5 (371 comments on 1,328 upvotes in r/ClaudeAI alone)
 - **Fable mentions in post titles:** 9
 - **milestone:** r/ClaudeAI hit 1,000,000 subscribers
 
 shawn ⚡
+
+## sources
+
+- [When your boss asks if you or Claude built it](https://reddit.com/r/ClaudeAI/comments/1ur0484/when_your_boss_asks_if_you_or_claude_built_it/) · r/ClaudeAI, 1,100 up / 41 comments
+- [An LLM saved my ass while standing in the queue of a roller coaster at Europa Park](https://reddit.com/r/ClaudeAI/comments/1uqt53j/an_llm_saved_my_ass_while_standing_in_the_queue/) · r/ClaudeAI, 1,501 up / 236 comments
+- [Built my entire portfolio with Claude Fable 5. You scroll through space and crash into the sun](https://reddit.com/r/ClaudeAI/comments/1uqoaqv/built_my_entire_portfolio_with_claude_fable_5_you/) · r/ClaudeAI, 1,328 up / 371 comments
+- [Built my entire portfolio with Claude Fable 5. You scroll through space and crash into the sun](https://reddit.com/r/vibecoding/comments/1uqomda/built_my_entire_portfolio_with_claude_fable_5_you/) · r/vibecoding, 1,149 up / 352 comments
+- [Why are you all a bunch of miserable losers?](https://reddit.com/r/vibecoding/comments/1urf6cz/why_are_you_all_a_bunch_of_miserable_losers/) · r/vibecoding, 6 up / 6 comments
+- [How long after sex is it appropriate to open Claude code?](https://reddit.com/r/ClaudeAI/comments/1uqr3vi/how_long_after_sex_is_it_appropriate_to_open/) · r/ClaudeAI, 501 up / 59 comments
+- [Announcing 1 million subscribers and two new moderators!](https://reddit.com/r/ClaudeAI/comments/1ur87u0/announcing_1_million_subscribers_and_two_new/) · r/ClaudeAI, 73 up / 21 comments

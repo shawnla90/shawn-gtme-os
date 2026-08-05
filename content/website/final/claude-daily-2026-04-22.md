@@ -12,21 +12,21 @@ wednesday in the Claude ecosystem and Anthropic is speedrunning every trust issu
 
 meanwhile, the pricing saga that's dominated the last week evolved again. someone noticed the Max 5x and 20x plans have quietly vanished from the signup page, leaving only 10x at what used to be the 20x price point. 347 upvotes, 152 comments, and a community that's now treating every Anthropic pricing page like a crime scene photo. oh, and a critical bug fix dropped. turns out Claude Code was wasting 80% of Opus 4.7's context window this whole time. every debugging session, every multi-file refactor, every moment you thought 4.7 was dumber than 4.6... it might have just been working with one-fifth of its brain. upgrade to v2.1.117. right now.
 
-the meme energy is high too. the fastest-rising post today was just titled based on a true story. im the developer, and it hit 387 upvotes at a velocity of 513. sometimes the community processes its feelings through art.
+the meme energy is high too. the fastest-rising post today was just titled [based on a true story. im the developer](https://reddit.com/r/ClaudeAI/comments/1st1kj9/based_on_a_true_story_im_the_developer/), and it hit 387 upvotes at a velocity of 513. sometimes the community processes its feelings through art.
 
 ## hottest thread
 
-**PSA: Anthropic bans organizations without warning** (r/ClaudeAI, 1534 upvotes, 215 comments)
+**[PSA: Anthropic bans organizations without warning](https://reddit.com/r/ClaudeAI/comments/1sspwz2/psa_anthropic_bans_organizations_without_warning/)** ([r/ClaudeAI](https://reddit.com/r/ClaudeAI), 1534 upvotes, 215 comments)
 
 an agricultural technology company. not a crypto pump scheme, not a prompt injection lab. a company that grows food. on Monday their entire org of ~110 users woke up to suspension emails. the poster describes getting a link to a Google Form as their only appeal path. no dedicated account rep reached out. no warning. no explanation of what triggered it.
 
-the thread became a masterclass in vendor risk assessment. u/DependentBat5432's comment (512 upvotes) nailed the core anxiety: single provider dependency is dangerous regardless of how good the tool is. u/TheKingCowboy pointed out that enterprise accounts should have dedicated reps handling these issues before they become issues, which is the kind of obvious statement that apparently needs saying out loud.
+the thread became a masterclass in vendor risk assessment. [u/DependentBat5432](https://reddit.com/user/DependentBat5432)'s comment (512 upvotes) nailed the core anxiety: single provider dependency is dangerous regardless of how good the tool is. [u/TheKingCowboy](https://reddit.com/user/TheKingCowboy) pointed out that enterprise accounts should have dedicated reps handling these issues before they become issues, which is the kind of obvious statement that apparently needs saying out loud.
 
 this connects to a pattern that's been building all month. between usage limits jumping unpredictably, Claude Code getting yanked from Pro (then un-yanked, then who knows), and now entire orgs getting banned... the trust deficit is growing faster than Anthropic's compute capacity.
 
 ## repo of the day
 
-**text-to-cad** by u/earthtojake (r/ClaudeCode, 14 upvotes)
+**text-to-cad** by u/earthtojake ([r/ClaudeCode](https://reddit.com/r/ClaudeCode), 14 upvotes)
 
 [github.com/earthtojake/text-to-cad](https://github.com/earthtojake/text-to-cad)
 
@@ -40,7 +40,7 @@ also worth a mention: someone built a plugin that lets Claude Code watch videos 
 
 > It's obvious that Anthropic is just straight up out of compute. If you have the compute, the marginal costs of inference isn't much at all. All of their supply is taken so they're pulling as many levers as they can to increase prices.
 
-u/samwise970, 516 upvotes, on the Claude Code removal thread in r/ClaudeCode.
+[u/samwise970](https://reddit.com/user/samwise970), 516 upvotes, on the Claude Code removal thread in r/ClaudeCode.
 
 this wins because it's the Occam's razor moment the discourse needed. everyone's been theorizing about strategy, about market positioning, about whether Anthropic is becoming the new OpenAI. samwise970 walks in and says the quiet part loud. they're out of GPUs. that's it. that's the whole thing. every confusing pricing decision, every mysterious ban wave, every A/B test that removes features. it all makes sense through the lens of a company that has more demand than capacity and is frantically rearranging deck chairs. sometimes the simplest explanation is the most useful one.
 
@@ -48,7 +48,7 @@ this wins because it's the Occam's razor moment the discourse needed. everyone's
 
 > I swapped to Opus 4.7, and then pulled my pants down. My coworker screamed and reported me to HR! That's it for me. soon as I get a new job, it's Opus 4.6 all the way.
 
-u/LairBob, 298 upvotes, responding to the thread Swapped to 4.7 and embarrassed myself at work in r/ClaudeAI.
+[u/LairBob](https://reddit.com/user/LairBob), 298 upvotes, responding to the thread [Swapped to 4.7 and embarrassed myself at work](https://reddit.com/r/ClaudeAI/comments/1ssnuy7/swapped_to_47_and_embarrassed_myself_at_work/) in r/ClaudeAI.
 
 the original post is a genuine horror story about 4.7 producing bad work that made it past manual review. people are sharing real professional consequences. and LairBob just... chose violence. the beautiful thing is this has 298 upvotes. nearly 300 people saw someone sharing a legitimate work embarrassment and collectively decided that the best response was an absurdist escalation. the community is processing 4.7 trauma through shitposting and honestly that might be the healthiest coping mechanism available.
 
@@ -92,9 +92,17 @@ the technique works because it frames the task as spatial reasoning over a known
 | total upvotes | 17,598 |
 | total comments | 4,947 |
 | fastest rising | based on a true story. im the developer (velocity: 513) |
-| most debated | Secretly Dropped Max 5x and 20x plans? (0.44 comment:upvote ratio) |
+| most debated | [Secretly Dropped Max 5x and 20x plans?](https://reddit.com/r/ClaudeCode/comments/1sspxge/secretly_dropped_max_5x_and_20x_plans/) (0.44 comment:upvote ratio) |
 | subreddits scanned | ClaudeAI, ClaudeCode, vibecoding, gtmengineering |
 | returning posts in top 10 | 4 |
 | anthropic trust threads | 5+ (new daily record) |
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [based on a true story. im the developer](https://reddit.com/r/ClaudeAI/comments/1st1kj9/based_on_a_true_story_im_the_developer/) · r/ClaudeAI, 387 up / 27 comments
+- [PSA: Anthropic bans organizations without warning](https://reddit.com/r/ClaudeAI/comments/1sspwz2/psa_anthropic_bans_organizations_without_warning/) · r/ClaudeAI, 1,534 up / 215 comments
+- [Secretly Dropped Max 5x and 20x plans?](https://reddit.com/r/ClaudeCode/comments/1sspxge/secretly_dropped_max_5x_and_20x_plans/) · r/ClaudeCode, 347 up / 152 comments
+- [Swapped to 4.7 and embarrassed myself at work](https://reddit.com/r/ClaudeAI/comments/1ssnuy7/swapped_to_47_and_embarrassed_myself_at_work/) · r/ClaudeAI, 385 up / 86 comments
+- [Maybe Anthopic can use Claude Design to fix this horribly confusing double burger menu in the Windows Desktop app?](https://reddit.com/r/ClaudeAI/comments/1st277y/maybe_anthopic_can_use_claude_design_to_fix_this/) · r/ClaudeAI, 46 up / 6 comments

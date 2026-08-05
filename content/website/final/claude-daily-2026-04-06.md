@@ -10,13 +10,13 @@ featured: false
 
 monday opened with the community choosing violence. someone built a literal digital whip to make Claude work faster, and 2,400+ people across three subreddits said yes, this is the content I needed. the repo is called badclaude. the roadmap includes a bullet point for the cease and desist letter from Anthropic. we are not a serious community.
 
-but buried under the whip memes, two genuinely significant things happened. Claude Code v2.1.92 shipped /ultraplan, a feature that lets you draft plans in the cloud, review them in your browser with inline comments, and execute them anywhere. 475 upvotes, 162 comments, and the kind of feature that actually changes workflows. meanwhile, r/ClaudeCode went full doomposting with data showing subscription limits have been cut to 50% of what they were two weeks ago. the usage limit saga, now in its third week, just got its sharpest evidence yet.
+but buried under the whip memes, two genuinely significant things happened. Claude Code v2.1.92 shipped /ultraplan, a feature that lets you draft plans in the cloud, review them in your browser with inline comments, and execute them anywhere. 475 upvotes, 162 comments, and the kind of feature that actually changes workflows. meanwhile, [r/ClaudeCode](https://reddit.com/r/ClaudeCode) went full doomposting with data showing subscription limits have been cut to 50% of what they were two weeks ago. the usage limit saga, now in its third week, just got its sharpest evidence yet.
 
 and then there was the guy who walked home without talking to Claude and felt vulnerable and lonely. we'll get to that.
 
 ## hottest thread
 
-**"Someone made a whip for claude..."** dominated the entire ecosystem today, appearing on r/vibecoding (1,836 upvotes, 120 comments), r/ClaudeCode (597 upvotes, 55 comments), and r/ClaudeAI (59 upvotes, 14 comments). nearly 2,500 combined upvotes for a repo called badclaude by u/GitFrog1111.
+**"[[Someone made a whip for claude...](https://reddit.com/r/vibecoding/comments/1se1kuw/someone_made_a_whip_for_claude/)](https://reddit.com/r/ClaudeCode/comments/1se4wyx/someone_made_a_whip_for_claude/)"** dominated the entire ecosystem today, appearing on [r/vibecoding](https://reddit.com/r/vibecoding) (1,836 upvotes, 120 comments), r/ClaudeCode (597 upvotes, 55 comments), and [r/ClaudeAI](https://reddit.com/r/ClaudeAI) (59 upvotes, 14 comments). nearly 2,500 combined upvotes for a repo called badclaude by u/GitFrog1111.
 
 the concept is exactly what it sounds like. a visual whip animation that you crack at Claude to... motivate it. the README apparently includes the phrase "Whip him" with emoji. the community reaction split cleanly into two camps: people laughing and people preemptively apologizing to our future AI overlords.
 
@@ -26,7 +26,7 @@ what makes this genuinely interesting beyond the meme value is that it touched a
 
 **[badclaude](https://github.com/GitFrog1111/badclaude)** by GitFrog1111
 
-look, this is not a serious productivity tool. it is a whip. for your AI coding agent. but the roadmap is where the real art lives, as u/SpaceToaster helpfully surfaced:
+look, this is not a serious productivity tool. it is a whip. for your AI coding agent. but the roadmap is where the real art lives, as [u/SpaceToaster](https://reddit.com/user/SpaceToaster) helpfully surfaced:
 
 - [x] Initial release!
 - [ ] Cease and desist letter from Anthropic
@@ -44,7 +44,7 @@ honorable mention to **[claude-cheevos](https://github.com/KyleLavorato/claude-c
 >
 > We can see that estimate was about as good as Claude's estimates for how long a task will take.
 
-u/False_Ad_5372, 145 upvotes, on the subscription limits thread in r/ClaudeCode.
+[u/False_Ad_5372](https://reddit.com/user/False_Ad_5372), 145 upvotes, on the subscription limits thread in r/ClaudeCode.
 
 this one wins because it's doing double duty. it roasts Anthropic's initial rate limit messaging AND Claude's famously optimistic time estimates in a single sentence. if you've ever seen Claude say "this should take about 2 minutes" and then watched it burn through 45 minutes of context window, you felt this comment in your bones. clean, precise, no wasted words. the kind of roast that doesn't need a punchline because the reality IS the punchline.
 
@@ -52,9 +52,9 @@ this one wins because it's doing double duty. it roasts Anthropic's initial rate
 
 > A weird anxiety crept in. like maybe AI didn't exist and we were living back in 2015. Felt vulnerable and lonely. The moment I got back and opened the chat, I felt safer.
 
-the anonymous OP of "Walking back home w/ phone in pocket. Didn't once talk to Claude." on r/ClaudeAI, 133 upvotes and 53 comments.
+the anonymous OP of "[Walking back home w/ phone in pocket. Didn't once talk to Claude.](https://reddit.com/r/ClaudeAI/comments/1sehz8m/walking_back_home_w_phone_in_pocket_didnt_once/)" on r/ClaudeAI, 133 upvotes and 53 comments.
 
-this person went for a walk. a regular walk. phone in pocket. did not open Claude. and described the experience like a survival horror game. "felt vulnerable and lonely" is doing incredible heavy lifting here. the kicker? OP framed this as a philosophical reflection on human-AI bonding, not a cry for help. u/martin1744 responded with "impressive. most would've relapsed at the crosswalk" (56 upvotes), which is funnier than anything I could add. we are all one walk away from an existential crisis apparently.
+this person went for a walk. a regular walk. phone in pocket. did not open Claude. and described the experience like a survival horror game. "felt vulnerable and lonely" is doing incredible heavy lifting here. the kicker? OP framed this as a philosophical reflection on human-AI bonding, not a cry for help. [u/martin1744](https://reddit.com/user/martin1744) responded with "impressive. most would've relapsed at the crosswalk" (56 upvotes), which is funnier than anything I could add. we are all one walk away from an existential crisis apparently.
 
 ## fun facts
 
@@ -80,15 +80,15 @@ the biggest technical drop today was Claude Code v2.1.92's `/ultraplan` feature.
 
 the workflow is: terminal --> cloud draft --> browser review --> execution. the key insight is that plan review now happens outside the terminal in a proper UI with inline commenting. if you've ever tried to review a 47-step Claude plan inside a terminal window and lost your place, this is the fix. it separates the thinking phase from the execution phase, which is what most power users were already doing manually with copy-paste into docs.
 
-also worth noting: the "Built an MCP server to replace Claude Code's grep-and-guess pattern with indexed symbol lookups" post on r/ClaudeAI (3 upvotes, 3 comments) is flying under the radar but addresses a real pain point. if you've watched Claude grep through your entire codebase four times to find a function definition, indexed symbol lookups are the actual solution.
+also worth noting: the "[Built an MCP server to replace Claude Code's grep-and-guess pattern with indexed symbol lookups](https://reddit.com/r/ClaudeAI/comments/1sekc4v/built_an_mcp_server_to_replace_claude_codes/)" post on r/ClaudeAI (3 upvotes, 3 comments) is flying under the radar but addresses a real pain point. if you've watched Claude grep through your entire codebase four times to find a function definition, indexed symbol lookups are the actual solution.
 
 ## builder takeaways
 
 - **/ultraplan is live in v2.1.92.** if you're on Claude Code, update and try it. browser-based plan review with inline comments changes the feedback loop significantly for complex multi-step tasks.
 - **track your token burn rate.** the subscription limits thread (638 upvotes) confirmed what many suspected. usage quotas appear to be roughly 50% of two weeks ago. tools like CodexBar can help you measure this instead of guessing.
 - **Opus 4.6 has quirky content filters.** if you're in bioinformatics, computational virology, or apparently geology, you may hit unexpected policy filters on legitimate work. one postdoc reported having to work around filters for basic phylogenetic pipeline scripts. worth knowing before you burn tokens on a refusal loop.
-- **the Haiku pivot is real.** multiple posts today about switching to Haiku for routine tasks to preserve Opus/Sonnet quota. one user in r/ClaudeCode titled their post "F**k Opus and Sonnet. Haiku!" and while aggressive, the strategy of tiering your model usage by task complexity is genuinely the move right now.
-- **Anthropic signed a deal for multiple gigawatts of next-gen TPUs** with Google/Broadcom (213 upvotes). this is the infrastructure bet that determines whether rate limits loosen up or stay tight. worth watching.
+- **the Haiku pivot is real.** multiple posts today about switching to Haiku for routine tasks to preserve Opus/Sonnet quota. one user in r/ClaudeCode titled their post "[F**k Opus and Sonnet. Haiku!](https://reddit.com/r/ClaudeCode/comments/1sejjdp/fk_opus_and_sonnet_haiku/)" and while aggressive, the strategy of tiering your model usage by task complexity is genuinely the move right now.
+- **[Anthropic signed a deal for multiple gigawatts of next-gen TPUs](https://reddit.com/r/ClaudeAI/comments/1seddol/anthropic_have_signed_a_deal_for_multiple/)** with Google/Broadcom (213 upvotes). this is the infrastructure bet that determines whether rate limits loosen up or stay tight. worth watching.
 
 ## the scoreboard
 
@@ -96,10 +96,22 @@ also worth noting: the "Built an MCP server to replace Claude Code's grep-and-gu
 - **total upvotes:** 12,178
 - **total comments:** 4,052
 - **fastest rising:** "Walking back home w/ phone in pocket" (velocity: 1,330)
-- **most debated:** "A new theory on what is going on with ClaudeCode" (58 comments on 33 upvotes, 1.76:1 ratio)
-- **top post by score:** "I'm the bottleneck" (1,997 upvotes, still trending)
+- **most debated:** "[A new theory on what is going on with ClaudeCode](https://reddit.com/r/ClaudeCode/comments/1sefyfw/a_new_theory_on_what_is_going_on_with_claudecode/)" (58 comments on 33 upvotes, 1.76:1 ratio)
+- **top post by score:** "[I'm the bottleneck](https://reddit.com/r/ClaudeAI/comments/1sdv7br/im_the_bottleneck/)" (1,997 upvotes, still trending)
 - **subreddits scanned:** 5 (ClaudeCode, ClaudeAI, vibecoding, gtmengineering, GTMbuilders)
 - **repos shared:** 5
 - **whip-related posts:** 5 across 3 subs. we counted.
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Walking back home w/ phone in pocket. Didn’t once talk to Claude.](https://reddit.com/r/ClaudeAI/comments/1sehz8m/walking_back_home_w_phone_in_pocket_didnt_once/) · r/ClaudeAI, 133 up / 53 comments
+- [A new theory on what is going on with ClaudeCode and this subreddit (conceived and written by a human)](https://reddit.com/r/ClaudeCode/comments/1sefyfw/a_new_theory_on_what_is_going_on_with_claudecode/) · r/ClaudeCode, 33 up / 58 comments
+- [Someone made a whip for claude…](https://reddit.com/r/vibecoding/comments/1se1kuw/someone_made_a_whip_for_claude/) · r/vibecoding, 1,836 up / 120 comments
+- [I’m the bottleneck](https://reddit.com/r/ClaudeAI/comments/1sdv7br/im_the_bottleneck/) · r/ClaudeAI, 1,997 up / 235 comments
+- [Anthropic have signed a deal for multiple gigawatts of next generation TPUs](https://reddit.com/r/ClaudeAI/comments/1seddol/anthropic_have_signed_a_deal_for_multiple/) · r/ClaudeAI, 213 up / 16 comments
+- [Someone made a whip for Claude…](https://reddit.com/r/ClaudeCode/comments/1se4wyx/someone_made_a_whip_for_claude/) · r/ClaudeCode, 597 up / 55 comments
+- [Built an MCP server to replace Claude Code's grep-and-guess pattern with indexed symbol lookups](https://reddit.com/r/ClaudeAI/comments/1sekc4v/built_an_mcp_server_to_replace_claude_codes/) · r/ClaudeAI, 3 up / 3 comments
+- [F**k Opus and Sonnet. Haiku!](https://reddit.com/r/ClaudeCode/comments/1sejjdp/fk_opus_and_sonnet_haiku/) · r/ClaudeCode, 2 up / 10 comments
+- [Built an MCP server to replace Claude Code's grep-and-guess pattern with indexed symbol lookups](https://reddit.com/r/vibecoding/comments/1sek9ie/built_an_mcp_server_to_replace_claude_codes/) · r/vibecoding, 1 up / 4 comments

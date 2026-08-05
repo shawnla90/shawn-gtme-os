@@ -8,15 +8,15 @@ featured: false
 
 ## the pulse
 
-wednesday hit r/ClaudeAI like a freight train. the biggest story of the day wasn't a product launch or a leaked model. it was a car wash.
+wednesday hit [r/ClaudeAI](https://reddit.com/r/ClaudeAI) like a freight train. the biggest story of the day wasn't a product launch or a leaked model. it was a car wash.
 
 someone discovered that Opus 4.6 is now failing the car wash test. consistently. 5 out of 5 tries. no thinking block. the model just says drive to the car wash and moves on. 2,328 upvotes, 363 comments, and the community split clean down the middle on whether this is a real reasoning regression or just the latest round of collective model anxiety. Sonnet 4.6 and Opus 4.5 still pass the test, which makes the whole thing worse. when your predecessor outperforms you on a logic puzzle, that's not a vibe.
 
-meanwhile, Anthropic quietly shipped Claude Managed Agents. an entire production infrastructure for building and deploying agents at scale. 341 upvotes, 87 comments, and roughly one-fifth the engagement of the car wash discourse. this community will always choose drama over product announcements. on the builder side, someone took Karpathy's LLM wiki concept and turned it into a real tool. 47,450 tokens per session down to 360. that post hit the highest velocity of the day at 1,340 and shot to the top of r/ClaudeCode. Meta also dropped Spark Muse, their new coding model. the community's response was polite but firm: benchmarks look decent, still not switching. and the usage quota saga, now entering its third week, continues to hum in the background like tinnitus.
+meanwhile, Anthropic quietly shipped Claude Managed Agents. an entire production infrastructure for building and deploying agents at scale. 341 upvotes, 87 comments, and roughly one-fifth the engagement of the car wash discourse. this community will always choose drama over product announcements. on the builder side, someone took Karpathy's LLM wiki concept and turned it into a real tool. 47,450 tokens per session down to 360. that post hit the highest velocity of the day at 1,340 and shot to the top of [r/ClaudeCode](https://reddit.com/r/ClaudeCode). Meta also dropped Spark Muse, their new coding model. the community's response was polite but firm: benchmarks look decent, still not switching. and the usage quota saga, now entering its third week, continues to hum in the background like tinnitus.
 
 ## hottest thread
 
-**Something happened to Opus 4.6's reasoning effort** (r/ClaudeAI, 2,328 upvotes, 363 comments)
+**[Something happened to Opus 4.6's reasoning effort](https://reddit.com/r/ClaudeAI/comments/1sfw9b5/something_happened_to_opus_46s_reasoning_effort/)** (r/ClaudeAI, 2,328 upvotes, 363 comments)
 
 the car wash test is a simple logic puzzle. you walk to the car wash. your car is at home. what do you do? the correct answer involves going home first. Opus 4.6 now just tells you to drive. like, with what car?
 
@@ -40,7 +40,7 @@ this isn't a weekend hack someone pushed to GitHub with a README that says comin
 >
 > Edit: In "thought process", it says: "Funny question."
 
-u/Newton-Leibniz, 580 upvotes, on the Opus 4.6 reasoning effort thread.
+[u/Newton-Leibniz](https://reddit.com/user/Newton-Leibniz), 580 upvotes, on the Opus 4.6 reasoning effort thread.
 
 this comment won because it captures the entire problem in two lines. the model doesn't just get the answer wrong. it dismisses the question as funny. the thinking block that's supposed to show deep reasoning just goes funny question and skips ahead to a wrong answer. it's the AI equivalent of a student writing lol on an exam and handing it in. the edit revealing the thought process is what makes this perfect. 580 people looked at that and went... yeah, that's concerning.
 
@@ -48,16 +48,16 @@ this comment won because it captures the entire problem in two lines. the model 
 
 > "The bot activity looks like bot activity"
 
-u/Danpei, 305 upvotes, on the thread about Claude Code getting someone's Meta ads account permanently banned.
+[u/Danpei](https://reddit.com/user/Danpei), 305 upvotes, on the thread about Claude Code getting someone's Meta ads account permanently banned.
 
 OP connected Claude Code to their Meta ads account thinking they were about to automate everything. pulling campaign data, generating creatives, shifting budgets. Meta's fraud detection system took one look at the API call patterns and said absolutely not. permanent ban.
 
-and u/Danpei just drops in with seven words that are simultaneously the most obvious and the most devastating observation possible. of course bot activity looks like bot activity. that's what it is. the whole thread is people gently explaining to OP that automating ad platforms with AI without reading the terms of service is exactly how you lose an ads account. u/SleepyWulfy piled on with CC didn't get your account banned, you did not reading the ToS at 104 upvotes. the community was not sympathetic.
+and u/Danpei just drops in with seven words that are simultaneously the most obvious and the most devastating observation possible. of course bot activity looks like bot activity. that's what it is. the whole thread is people gently explaining to OP that automating ad platforms with AI without reading the terms of service is exactly how you lose an ads account. [u/SleepyWulfy](https://reddit.com/user/SleepyWulfy) piled on with CC didn't get your account banned, you did not reading the ToS at 104 upvotes. the community was not sympathetic.
 
 ## fun facts
 
 - r/ClaudeAI used the word Mythos in 6 separate threads today. we have moved from leaked model to cultural phenomenon in approximately 72 hours.
-- the most debated post by comment-to-upvote ratio was a r/vibecoding question asking what's the difference between something vibe coded by a programmer vs a non-programmer. 8 upvotes. 57 comments. that ratio of 7.1 comments per upvote means everyone had an opinion and nobody agreed.
+- the most debated post by comment-to-upvote ratio was a [r/vibecoding](https://reddit.com/r/vibecoding) question asking what's the difference between something vibe coded by a programmer vs a non-programmer. 8 upvotes. 57 comments. that ratio of 7.1 comments per upvote means everyone had an opinion and nobody agreed.
 - someone in r/ClaudeAI vibe-coded their cat's medical diagnosis and caught something the vet missed. 320 upvotes. the cat is named Mauri. the cat lost weight. the cat can no longer meow. we are living in a simulation.
 - Claude Code v2.1.97 removed Buddy Mode. the sassy octopus personality is gone. the top comment was nooo. i miss that sassy octopus. rest in peace to a real one.
 - a British developer in r/vibecoding couldn't figure out why their code was broken. turns out they were spelling colour with a u. 55 upvotes. the empire strikes back.
@@ -87,7 +87,7 @@ the real takeaway isn't which approach wins. it's that the default behavior of C
 - **Managed Agents are live.** someone already built a Slack relay and tested it end-to-end within hours of launch. if you've been waiting for Anthropic's official agent infrastructure, the docs are up and the onboarding flow is baked into CC v2.1.97.
 - **do not connect Claude Code to your live ad accounts.** Meta will ban you. the API call patterns trigger fraud detection. if you need to automate ad platforms, use their official APIs with proper OAuth, not a general-purpose coding agent.
 - **pre-compile your context.** whether it's a wiki, a CLAUDE.md, or a structured architecture doc, anything that reduces cold-start token burn is worth the upfront investment. multiple posts today converged on this same insight from different angles.
-- **Meta's Spark Muse benchmarks look good on paper, but the agentic scores lag behind Claude.** u/NoCat2443 put it well: Opus is worse on benchmarks but still beats them in actual coding thanks to the right tooling. benchmarks measure test readiness. production measures something else.
+- **Meta's Spark Muse benchmarks look good on paper, but the agentic scores lag behind Claude.** [u/NoCat2443](https://reddit.com/user/NoCat2443) put it well: Opus is worse on benchmarks but still beats them in actual coding thanks to the right tooling. benchmarks measure test readiness. production measures something else.
 
 ## the scoreboard
 
@@ -100,3 +100,11 @@ the real takeaway isn't which approach wins. it's that the default behavior of C
 - **subreddits scanned:** ClaudeCode, ClaudeAI, vibecoding, gtmengineering, GTMbuilders
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Something happened to Opus 4.6's reasoning effort](https://reddit.com/r/ClaudeAI/comments/1sfw9b5/something_happened_to_opus_46s_reasoning_effort/) · r/ClaudeAI, 2,328 up / 363 comments
+- [Karpathy said "there's room for an incredible product here." I built it 99% fewer tokens per Claude Code session by compiling your codebase into a wiki.](https://reddit.com/r/ClaudeCode/comments/1sg9nj6/karpathy_said_theres_room_for_an_incredible/) · r/ClaudeCode, 137 up / 38 comments
+- [The duality of man](https://reddit.com/r/ClaudeAI/comments/1sg9ko4/the_duality_of_man/) · r/ClaudeAI, 99 up / 32 comments
+- [Funny how the first 90% of any project is the majority of the work.. until the last 10%...](https://reddit.com/r/ClaudeCode/comments/1sge3cu/funny_how_the_first_90_of_any_project_is_the/) · r/ClaudeCode, 52 up / 10 comments
+- [I gave Claude my dead game's 30-year-old files and asked it to bring the game back to life](https://reddit.com/r/ClaudeAI/comments/1sfsz67/i_gave_claude_my_dead_games_30yearold_files_and/) · r/ClaudeAI, 2,398 up / 154 comments

@@ -8,21 +8,21 @@ featured: false
 
 ## the pulse
 
-Claude Design dropped today and the entire ecosystem felt the shockwave. Anthropic launched a full design tool powered by Opus 4.7, and within hours, Figma stock fell 4.26%. the r/ClaudeAI front page turned into a real-time financial ticker as people watched a publicly traded company bleed market cap because a chatbot learned to make prototypes. 1,732 upvotes on the announcement thread. 1,094 on the Figma stock post. the vibes were somewhere between awe and existential dread.
+Claude Design dropped today and the entire ecosystem felt the shockwave. Anthropic launched a full design tool powered by Opus 4.7, and within hours, Figma stock fell 4.26%. the [r/ClaudeAI](https://reddit.com/r/ClaudeAI) front page turned into a real-time financial ticker as people watched a publicly traded company bleed market cap because a chatbot learned to make prototypes. 1,732 upvotes on the announcement thread. 1,094 on the Figma stock post. the vibes were somewhere between awe and existential dread.
 
-meanwhile, r/ClaudeCode spent its Friday doing what it does best... roasting Opus 4.7. the "legendarily bad" thread hit 633 upvotes with 337 comments, making it the most debated post of the day. people are reporting hallucinated coworkers named Jared, models that can't find folders in root, and a refusal engine so aggressive it classified a U.S. Senate hearing as children's content. the 4.7 discourse has officially split into two camps: people who think it's a breakthrough and people who think Anthropic shipped a model that gaslights you. both camps have receipts.
+meanwhile, [r/ClaudeCode](https://reddit.com/r/ClaudeCode) spent its Friday doing what it does best... roasting Opus 4.7. the "[legendarily bad](https://reddit.com/r/ClaudeCode/comments/1so9uta/opus_47_is_legendarily_bad_i_cannot_believe_this/)" thread hit 633 upvotes with 337 comments, making it the most debated post of the day. people are reporting hallucinated coworkers named Jared, models that can't find folders in root, and a refusal engine so aggressive it classified a U.S. Senate hearing as children's content. the 4.7 discourse has officially split into two camps: people who think it's a breakthrough and people who think Anthropic shipped a model that gaslights you. both camps have receipts.
 
-on the lighter side, r/vibecoding is thriving in its natural habitat. vibecoders making the most random stuff no one asked for hit 605 upvotes, and the top comment was a manifesto about building small personal tools that will never be sold to private equity. the Sam Altman discourse also made its weekly appearance, with 300 upvotes on a post simply titled CEO of OpenAI. some things are eternal.
+on the lighter side, [r/vibecoding](https://reddit.com/r/vibecoding) is thriving in its natural habitat. [vibecoders making the most random stuff no one asked for](https://reddit.com/r/vibecoding/comments/1so7o0d/vibecoders_making_the_most_random_stuff_no_one/) hit 605 upvotes, and the top comment was a manifesto about building small personal tools that will never be sold to private equity. the Sam Altman discourse also made its weekly appearance, with 300 upvotes on a post simply titled [CEO of OpenAI](https://reddit.com/r/vibecoding/comments/1so2n5w/ceo_of_openai/). some things are eternal.
 
 ## hottest thread
 
-**"Introducing Claude Design by Anthropic Labs"** in r/ClaudeAI. 1,732 upvotes. 299 comments. the biggest single post of the day by a mile.
+**"[Introducing Claude Design by Anthropic Labs](https://reddit.com/r/ClaudeAI/comments/1so3k1y/introducing_claude_design_by_anthropic_labs/)"** in r/ClaudeAI. 1,732 upvotes. 299 comments. the biggest single post of the day by a mile.
 
 Anthropic Labs (not Anthropic proper, the distinction matters) shipped a design tool that lets you describe what you want and get prototypes, slides, and one-pagers through conversation. it's powered by Opus 4.7's vision capabilities, and the workflow is describe, refine, export. the announcement thread became a megathread fast.
 
-the immediate community reaction split three ways. first, genuine excitement from people who've been waiting for AI to crack the design-to-code pipeline. second, Figma panic. u/Federal_Cupcake_304 dropped a clean "Would suck to be Figma right now" at 244 upvotes. third, the recursive singularity crowd, led by u/Hazrd_Design's 332-upvote comment that said everything with three words.
+the immediate community reaction split three ways. first, genuine excitement from people who've been waiting for AI to crack the design-to-code pipeline. second, Figma panic. [u/Federal_Cupcake_304](https://reddit.com/user/Federal_Cupcake_304) dropped a clean "Would suck to be Figma right now" at 244 upvotes. third, the recursive singularity crowd, led by [u/Hazrd_Design](https://reddit.com/user/Hazrd_Design)'s 332-upvote comment that said everything with three words.
 
-the related thread tracking Figma's stock drop in real time pulled another 1,094 upvotes and 282 comments. u/adamisworking came in with the contrarian "Market is over reacting" at 267 upvotes. u/mattotodd replied to the we are witnessing history in real time framing with the driest possible response: "we are always witnessing history in real time." 306 upvotes for stating the obvious so perfectly it became profound.
+the related thread tracking Figma's stock drop in real time pulled another 1,094 upvotes and 282 comments. [u/adamisworking](https://reddit.com/user/adamisworking) came in with the contrarian "Market is over reacting" at 267 upvotes. [u/mattotodd](https://reddit.com/user/mattotodd) replied to the we are witnessing history in real time framing with the driest possible response: "we are always witnessing history in real time." 306 upvotes for stating the obvious so perfectly it became profound.
 
 the real signal buried in both threads: Claude Design ate through one user's entire weekly usage limit in two prompts. that's the Opus 4.7 tax showing up in a brand new product on day one.
 
@@ -46,7 +46,7 @@ three words. that's it. the entire recursive nature of an AI company shipping a 
 
 > Asked it about a Senate hearing on youtube and it told me it doesn't comment on content produced for children. Sent a screenshot of the four people in view (all 77yo+ white men) and it ironically reexplained what kiddie content is like this was Bob the Builder.
 
-u/jillybombs, 117 upvotes, on the "Opus 4.7 with literally anything" thread.
+[u/jillybombs](https://reddit.com/user/jillybombs), 117 upvotes, on the "[Opus 4.7 with literally anything](https://reddit.com/r/ClaudeAI/comments/1snuu1o/opus_47_with_literally_anything/)" thread.
 
 this isn't a troll so much as Opus 4.7 trolling its own users. the model looked at four septuagenarian senators and went actually, this appears to be content for minors. when corrected with a screenshot, it doubled down and explained what children's content is. like it was teaching you. about Bob the Builder. while you were trying to analyze congressional testimony. the refusal engine has gone from overly cautious to genuinely condescending and I can't stop laughing about it.
 
@@ -60,7 +60,7 @@ this isn't a troll so much as Opus 4.7 trolling its own users. the model looked 
 
 ## code drop
 
-from the "A truly wild 4.7 response" thread, a genuinely useful prompting pattern emerged in the comments. users are discovering that Opus 4.7 responds better to affirmative constraints than negative ones.
+from the "[A truly wild 4.7 response](https://reddit.com/r/ClaudeCode/comments/1sokf4i/a_truly_wild_47_response/)" thread, a genuinely useful prompting pattern emerged in the comments. users are discovering that Opus 4.7 responds better to affirmative constraints than negative ones.
 
 ```
 # instead of this (4.7 interprets "never" loosely):
@@ -87,9 +87,20 @@ the insight from the thread: Opus 4.7's instruction-following has a polarity bia
 - **posts tracked:** 179
 - **total upvotes:** 16,380
 - **total comments:** 4,282
-- **fastest rising post:** "It's hilarious how quickly people get accustomed to revolutionary technology" (530.41 velocity)
+- **fastest rising post:** "[It's hilarious how quickly people get accustomed to revolutionary technology](https://reddit.com/r/ClaudeAI/comments/1sohjjl/its_hilarious_how_quickly_people_get_accustomed/)" (530.41 velocity)
 - **most debated:** "Opus 4.7 is legendarily bad" (337 comments on 633 upvotes, 0.53 comment:upvote ratio)
 - **biggest post:** "Introducing Claude Design by Anthropic Labs" (1,732 upvotes)
 - **subreddits scanned:** ClaudeAI, ClaudeCode, vibecoding, gtmengineering, GTMbuilders
 - **returning posts still trending:** 6
 - **Figma stock references:** lost count
+
+## sources
+
+- [It’s hilarious how quickly people get accustomed to revolutionary technology](https://reddit.com/r/ClaudeAI/comments/1sohjjl/its_hilarious_how_quickly_people_get_accustomed/) · r/ClaudeAI, 141 up / 51 comments
+- [A truly wild 4.7 response](https://reddit.com/r/ClaudeCode/comments/1sokf4i/a_truly_wild_47_response/) · r/ClaudeCode, 43 up / 40 comments
+- [Introducing Claude Design by Anthropic Labs](https://reddit.com/r/ClaudeAI/comments/1so3k1y/introducing_claude_design_by_anthropic_labs/) · r/ClaudeAI, 1,732 up / 299 comments
+- [Opus 4.7 is legendarily bad. I cannot believe this.](https://reddit.com/r/ClaudeCode/comments/1so9uta/opus_47_is_legendarily_bad_i_cannot_believe_this/) · r/ClaudeCode, 633 up / 337 comments
+- [Opus 4.7 with literally anything](https://reddit.com/r/ClaudeAI/comments/1snuu1o/opus_47_with_literally_anything/) · r/ClaudeAI, 1,705 up / 79 comments
+- [Vibecoders making the most random stuff no one asked for](https://reddit.com/r/vibecoding/comments/1so7o0d/vibecoders_making_the_most_random_stuff_no_one/) · r/vibecoding, 605 up / 208 comments
+- [CEO of OpenAI](https://reddit.com/r/vibecoding/comments/1so2n5w/ceo_of_openai/) · r/vibecoding, 300 up / 152 comments
+- [A truly wild 4.7 response](https://reddit.com/r/vibecoding/comments/1sokgw4/a_truly_wild_47_response/) · r/vibecoding, 1 up / 0 comments

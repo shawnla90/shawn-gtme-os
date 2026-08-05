@@ -8,9 +8,9 @@ featured: false
 
 ## the pulse
 
-sunday in the Claude ecosystem and the vibes are... litigious? the biggest story today is a technical deep dive claiming Anthropic silently regressed cache TTL from 1 hour down to 5 minutes back in early March. the cache TTL saga that exploded yesterday with 724 upvotes is now spawning satellite posts across both r/ClaudeCode and r/ClaudeAI, and the community has moved from "something feels off" to "we have the receipts." 120k API calls across 2 machines, a specific date (March 6th), and a very clear before/after. this is the usage limit complaint arc reaching its final form.
+sunday in the Claude ecosystem and the vibes are... litigious? the biggest story today is a technical deep dive claiming Anthropic silently regressed cache TTL from 1 hour down to 5 minutes back in early March. the cache TTL saga that exploded yesterday with 724 upvotes is now spawning satellite posts across both [r/ClaudeCode](https://reddit.com/r/ClaudeCode) and [r/ClaudeAI](https://reddit.com/r/ClaudeAI), and the community has moved from "something feels off" to "we have the receipts." 120k API calls across 2 machines, a specific date (March 6th), and a very clear before/after. this is the usage limit complaint arc reaching its final form.
 
-meanwhile, r/ClaudeAI dropped a 437-upvote, 156-comment existential crisis titled "The golden age is over" where a multi-subscription power user declared the prosumer LLM era dead. the comment section turned into group therapy. and just to balance the doom with some sweetness, 112 people upvoted a post asking if anyone else's significant other is consumed by Claude. turns out the answer is overwhelmingly yes, and at least one dad got called out by his 4-year-old for being on his phone too much. the Claude relationship discourse has arrived and I am here for it.
+meanwhile, r/ClaudeAI dropped a 437-upvote, 156-comment existential crisis titled "[The golden age is over](https://reddit.com/r/ClaudeAI/comments/1sjqn2e/the_golden_age_is_over/)" where a multi-subscription power user declared the prosumer LLM era dead. the comment section turned into group therapy. and just to balance the doom with some sweetness, 112 people upvoted a post asking if anyone else's significant other is consumed by Claude. turns out the answer is overwhelmingly yes, and at least one dad got called out by his 4-year-old for being on his phone too much. the Claude relationship discourse has arrived and I am here for it.
 
 on the vibecoding side, the Quittr story hit hard. $1M revenue, built in 10 days, Oprah mention. also: Firebase database publicly readable. 600,000 user records exposed. 100,000 of them minors. self-reported data that should never have been in a flat database with no auth rules. vibe coding giveth and vibe coding very much taketh away.
 
@@ -20,7 +20,7 @@ on the vibecoding side, the Quittr story hit hard. $1M revenue, built in 10 days
 
 the premise: OP runs Claude, ChatGPT, Gemini, AND Perplexity subscriptions. they're seeing every provider simultaneously throttle, meter, and gate the intelligence that made them subscribe in the first place. the thesis is that the honeymoon pricing era is done and companies are now optimizing for margin over capability.
 
-the comment section split into three camps. camp one: u/CitizenForty2 with 115 upvotes saying "I find the trick is to use Sonnet. Opus took too long and burned through more tokens." pragmatists living their best life on the cheaper model. camp two: u/kaustalautt arguing that open source international models are filling the gap left by US companies metering intelligence. camp three: u/CalGuy456 with the meta observation that this exact complaint cycle happens on every AI sub, every image generator sub, and that maybe the awe just wears off.
+the comment section split into three camps. camp one: [u/CitizenForty2](https://reddit.com/user/CitizenForty2) with 115 upvotes saying "I find the trick is to use Sonnet. Opus took too long and burned through more tokens." pragmatists living their best life on the cheaper model. camp two: [u/kaustalautt](https://reddit.com/user/kaustalautt) arguing that open source international models are filling the gap left by US companies metering intelligence. camp three: [u/CalGuy456](https://reddit.com/user/CalGuy456) with the meta observation that this exact complaint cycle happens on every AI sub, every image generator sub, and that maybe the awe just wears off.
 
 this thread matters because it's not just another "Claude got dumber" post. it's a structural argument about the economics of consumer AI. and 156 comments deep, nobody has a clean answer.
 
@@ -36,7 +36,7 @@ the comments nailed the vibe. "Impressive and much needed. Bravo for open-sourci
 
 > I have noticed that Claude fails to fetch many URLs, like Amazon and eBay, which ChatGPT and Gemini have no issue fetching. Can anyone explain why only Claude is blocked by providers, or could it be that Anthropic itself is doing this to save tokens?
 
-u/Famous__Draw, 507 upvotes on "my brother in silicon you are the demand curve."
+[u/Famous__Draw](https://reddit.com/user/Famous__Draw), 507 upvotes on "[my brother in silicon you are the demand curve.](https://reddit.com/r/ClaudeAI/comments/1sj5vby/wow_my_brother_in_silicon_you_are_the_demand_curve/)"
 
 this wins because it's the kind of question that sounds simple but opens a rabbit hole. is Anthropic getting blocked by more aggressive bot detection? are they self-restricting to save on compute? or is there an actual technical limitation in how Claude's web fetching works compared to competitors? 507 people wanted to know. nobody had a definitive answer. the best questions are the ones that make you realize nobody actually knows how the sausage gets made.
 
@@ -46,7 +46,7 @@ this wins because it's the kind of question that sounds simple but opens a rabbi
 >
 > No that's exactly what it is. He was careless and now all his users are compromised.
 
-u/opi098514, 144 upvotes, on the Quittr Firebase exposure story.
+[u/opi098514](https://reddit.com/user/opi098514), 144 upvotes, on the Quittr Firebase exposure story.
 
 look, I get why OP tried to frame it charitably. the Quittr founder built something people loved. $1M revenue. Oprah mentioned it. that's a real accomplishment. but when your publicly readable Firebase database contains the masturbation habits of 100,000 minors, the framing options narrow considerably. opi went full prosecutor and 144 people cosigned. vibe coding is a valid methodology until it's discovery material. there is no empathy exception for security basics.
 
@@ -56,7 +56,7 @@ look, I get why OP tried to frame it charitably. the Quittr founder built someth
 - the word "nerfed" appeared in at least 4 separate post titles today. Opus 4.6 catching strays from every angle.
 - someone is still running Claude Code version 2.1.62 on purpose and claims everything works fine. the comment section immediately asked if they're using Opus. the answer: they are. sometimes the move is to simply not update.
 - today's fastest rising post hit 850 velocity (score 85 in roughly 6 minutes of tracking). it was about cache TTL. infrastructure drama moves faster than memes on a Sunday.
-- a user vibecoded an invoicing app because they "didn't want to pay for invoicing software." the subscription they're avoiding probably costs $12/month. the Claude subscription they used costs $20/month minimum. we don't talk about ROI here.
+- a user vibecoded an invoicing app because they "[didn't want to pay for invoicing software.](https://reddit.com/r/vibecoding/comments/1sjyfkb/i_didnt_want_to_pay_for_invoicing_software_so_i/)" the subscription they're avoiding probably costs $12/month. the Claude subscription they used costs $20/month minimum. we don't talk about ROI here.
 
 ## code drop
 
@@ -79,7 +79,7 @@ claude --version
 # Think step by step before answering."
 ```
 
-the `/effort max` tip came from the "Claude isn't dumber, it's just not trying" post (41 upvotes, 13 comments). the creator of Claude Code literally told people about this setting but apparently the signal got lost in the noise of complaint posts. adaptive thinking means the model decides how much to reason per turn instead of using a fixed budget. for complex coding tasks, that optimization can mean the model just... doesn't try as hard. force it.
+the `/effort max` tip came from the "[Claude isn't dumber, it's just not trying](https://reddit.com/r/ClaudeAI/comments/1sjz1hg/claude_isnt_dumber_its_just_not_trying_heres_how/)" post (41 upvotes, 13 comments). the creator of Claude Code literally told people about this setting but apparently the signal got lost in the noise of complaint posts. adaptive thinking means the model decides how much to reason per turn instead of using a fixed budget. for complex coding tasks, that optimization can mean the model just... doesn't try as hard. force it.
 
 ## builder takeaways
 
@@ -94,10 +94,19 @@ the `/effort max` tip came from the "Claude isn't dumber, it's just not trying" 
 - **posts tracked:** 165
 - **total upvotes:** 13,269
 - **total comments:** 3,557
-- **fastest rising post:** "Did they just find the issue with Claude? Cache TTL silently regressed from 1h to 5m" (velocity: 850)
-- **most debated:** "Are we on the brink of seeing an infinite number of clones of every app?" (57 comments on 40 upvotes, ratio: 1.43)
+- **fastest rising post:** "[Did they just find the issue with Claude? Cache TTL silently regressed from 1h to 5m](https://reddit.com/r/ClaudeAI/comments/1sjxrp1/did_they_just_find_the_issue_with_claude_cache/)" (velocity: 850)
+- **most debated:** "[Are we on the brink of seeing an infinite number of clones of every app?](https://reddit.com/r/ClaudeCode/comments/1sjw0p9/are_we_on_the_brink_of_seeing_an_infinite_number/)" (57 comments on 40 upvotes, ratio: 1.43)
 - **subreddits scanned:** ClaudeCode, ClaudeAI, vibecoding, gtmengineering
 - **returning posts from previous days:** 7
 - **active story arcs still running:** cache TTL (day 2), usage limits (day 21), vibe coding discourse (day 27)
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Did they just find the issue with Claude? "Cache TTL silently regressed from 1h to 5m"](https://reddit.com/r/ClaudeAI/comments/1sjxrp1/did_they_just_find_the_issue_with_claude_cache/) · r/ClaudeAI, 85 up / 20 comments
+- [Claude isn't dumber, it's just not trying. Here's how to fix it in Chat.](https://reddit.com/r/ClaudeAI/comments/1sjz1hg/claude_isnt_dumber_its_just_not_trying_heres_how/) · r/ClaudeAI, 41 up / 13 comments
+- [Are we on the brink of seeing an infinite number of clones of pretty much every app out there?](https://reddit.com/r/ClaudeCode/comments/1sjw0p9/are_we_on_the_brink_of_seeing_an_infinite_number/) · r/ClaudeCode, 40 up / 57 comments
+- [“Wow” - my brother in silicon you are the demand curve](https://reddit.com/r/ClaudeAI/comments/1sj5vby/wow_my_brother_in_silicon_you_are_the_demand_curve/) · r/ClaudeAI, 3,614 up / 73 comments
+- [The golden age is over](https://reddit.com/r/ClaudeAI/comments/1sjqn2e/the_golden_age_is_over/) · r/ClaudeAI, 437 up / 156 comments
+- [I didn't want to pay for invoicing software so I vibecoded my own](https://reddit.com/r/vibecoding/comments/1sjyfkb/i_didnt_want_to_pay_for_invoicing_software_so_i/) · r/vibecoding, 4 up / 0 comments

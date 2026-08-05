@@ -10,17 +10,17 @@ featured: false
 
 the entire Claude Code source leaked today through a .map file left in the npm package. 1,884 TypeScript files. 500k+ lines. every system prompt, every feature flag, every internal tool. and buried in the codebase... a tamagotchi virtual pet system called /buddy. I cannot make this up.
 
-r/ClaudeCode, r/ClaudeAI, and r/vibecoding collectively lost their minds. the leak dominated every feed. people found 35 build-time feature flags compiled out of public builds, discovered that Anthropic employees get a different CLAUDE.md than the rest of us (USER_TYPE=ant), and someone used OpenAI's Codex to find and patch a token drain bug in Claude Code's own source. the irony is so thick you could spread it on toast. Anthropic shipped 2.1.89 within hours to strip the source maps. fast turnaround. but the damage (or gift, depending on your perspective) was already done.
+[r/ClaudeCode](https://reddit.com/r/ClaudeCode), [r/ClaudeAI](https://reddit.com/r/ClaudeAI), and [r/vibecoding](https://reddit.com/r/vibecoding) collectively lost their minds. the leak dominated every feed. people found 35 build-time feature flags compiled out of public builds, discovered that Anthropic employees get a different CLAUDE.md than the rest of us (USER_TYPE=ant), and someone used OpenAI's Codex to find and patch a token drain bug in Claude Code's own source. the irony is so thick you could spread it on toast. Anthropic shipped 2.1.89 within hours to strip the source maps. fast turnaround. but the damage (or gift, depending on your perspective) was already done.
 
 meanwhile, the usage limit saga enters its ninth consecutive day of community rage. Anthropic officially admitted quotas are running out too fast. and in a beautiful subplot, the leaked source might have revealed why. the token drain patch post hit 1,049 upvotes. people are literally fixing Anthropic's product for them using a competitor's tool. we are living in the greatest timeline.
 
 ## hottest thread
 
-**"i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged"** on r/ClaudeAI. 4,088 upvotes. 496 comments. this post went nuclear.
+**"[i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged](https://reddit.com/r/ClaudeAI/comments/1s8lkkm/i_dug_through_claude_codes_leaked_source_and/)"** on r/ClaudeAI. 4,088 upvotes. 496 comments. this post went nuclear.
 
 the author spent hours combing through the leaked TypeScript source and cataloged everything wild they found. the buddy system (a full tamagotchi-style virtual pet that lives in your terminal and comments on your code). internal feature flags that public users never see. the system prompts that shape Claude Code's behavior. and a now-infamous profanity tracking chart that Boris, Claude Code's creator, publicly responded to without denying the leak.
 
-the community reaction split into three camps: people who wanted /buddy shipped immediately, people terrified about security implications of installing random GitHub repos reconstructed from leaked source, and people who just thought the whole thing was the funniest dev story of the year. u/Cobthecobbler spoke for camp one with 405 upvotes: I want the buddy shipped yesterday. u/SandPac was camp two, warning people that 500k+ lines of reconstructed code could hide anything. and camp three? they were too busy making memes to comment coherently.
+the community reaction split into three camps: people who wanted /buddy shipped immediately, people terrified about security implications of installing random GitHub repos reconstructed from leaked source, and people who just thought the whole thing was the funniest dev story of the year. [u/Cobthecobbler](https://reddit.com/user/Cobthecobbler) spoke for camp one with 405 upvotes: I want the buddy shipped yesterday. [u/SandPac](https://reddit.com/user/SandPac) was camp two, warning people that 500k+ lines of reconstructed code could hide anything. and camp three? they were too busy making memes to comment coherently.
 
 the 496-comment thread is genuinely worth reading. it's part code archaeology, part corporate comedy, part open source manifesto.
 
@@ -40,7 +40,7 @@ worth noting: this is an unofficial patch against leaked source. run it at your 
 >
 > Yeah that's pretty freaking apparent dude
 
-u/PetyrLightbringer, 545 upvotes, on the token drain patch thread.
+[u/PetyrLightbringer](https://reddit.com/user/PetyrLightbringer), 545 upvotes, on the token drain patch thread.
 
 this comment won because it operates on three levels simultaneously. surface level: a joke about Anthropic's CEO bragging that engineers use AI now. second level: a roast implying the leak happened because nobody was actually reviewing the code. third level: the quiet devastation of pointing out that a .map file shipped in a production npm package is exactly what happens when your engineers stop writing (and reviewing) code. three layers of burn in two sentences. surgical.
 
@@ -48,7 +48,7 @@ this comment won because it operates on three levels simultaneously. surface lev
 
 > Now someone needs to dump all of their full models and we're good for a while.
 
-u/AnywhereHorrorX on r/vibecoding. 105 upvotes.
+[u/AnywhereHorrorX](https://reddit.com/user/AnywhereHorrorX) on r/vibecoding. 105 upvotes.
 
 buddy. pal. friend. we got the CLI source code from a stray .map file and you're out here asking for the full model weights next? that's like finding a spare key under someone's doormat and saying great, now someone needs to steal the whole house. I appreciate the ambition but maybe let's walk before we run a multinational IP theft operation. also love the casual "and we're good for a while" like model weights are a grocery run. just stocking up the pantry with a few hundred billion parameters. totally normal request.
 
@@ -58,7 +58,7 @@ buddy. pal. friend. we got the CLI source code from a stray .map file and you're
 - the single post "i dug through claude code's leaked source..." generated 496 comments. that's more comments than 170 of today's 179 tracked posts combined
 - leak-related posts accounted for roughly 10,000 of today's 18,803 total upvotes. over 53% of all engagement was about one .map file
 - /buddy, a tamagotchi feature nobody knew existed 24 hours ago, already has a standalone TypeScript recreation on GitHub with its own repo. the speed of the internet remains undefeated
-- someone asked "Is this marketing tactics by claude?" and honestly... at this point I can't rule it out. accidental open source is still open source
+- someone asked "[Is this marketing tactics by claude?](https://reddit.com/r/vibecoding/comments/1s9b6vd/is_this_marketing_tactics_by_claude/)" and honestly... at this point I can't rule it out. accidental open source is still open source
 
 ## code drop
 
@@ -87,7 +87,7 @@ drop this into a custom slash command or a CLAUDE.md security review section. it
 - **the USER_TYPE=ant flag in the leaked CLAUDE.md shows Anthropic employees get different system prompts.** you can study their internal config and adapt patterns for your own CLAUDE.md. several posts broke down exactly what's different
 - **if you're hitting token limits, the cc-cache-fix repo identified a caching issue as the root cause.** even if you don't apply the patch, understanding that the problem is cache-related (not model-related) changes how you troubleshoot
 - **/buddy is real and coming.** version 2.1.89 added buddy mode instructions to the system prompt. a terminal companion that reacts to your coding. whether you find that delightful or horrifying says a lot about you
-- **claude code now runs locally with Ollama** via beti5/claude-code-ollama-local. 103 upvotes, 44 comments. for builders who want the harness without the API costs, this is worth exploring
+- **[claude code now runs locally with Ollama](https://reddit.com/r/ClaudeCode/comments/1s90vd4/claude_code_running_locally_with_ollama/)** via beti5/claude-code-ollama-local. 103 upvotes, 44 comments. for builders who want the harness without the API costs, this is worth exploring
 
 ## the scoreboard
 
@@ -97,7 +97,7 @@ drop this into a custom slash command or a CLAUDE.md security review section. it
 | total upvotes | 18,803 |
 | total comments | 4,576 |
 | fastest rising | "i dug through claude code's leaked source..." (4,088 pts, 496 comments) |
-| most debated | "He Rewrote Leaked Claude Code in Python, And Dodged Copyright" (109 comments on 354 upvotes) |
+| most debated | "[He Rewrote Leaked Claude Code in Python, And Dodged Copyright](https://reddit.com/r/vibecoding/comments/1s8thq1/he_rewrote_leaked_claude_code_in_python_and/)" (109 comments on 354 upvotes) |
 | subreddits scanned | GTMbuilders, gtmengineering, ClaudeCode, vibecoding, ClaudeAI |
 | leak-related posts | 20+ across all subs |
 | time from leak to patch release (2.1.89) | hours, not days |
@@ -107,3 +107,11 @@ drop this into a custom slash command or a CLAUDE.md security review section. it
 *one .map file. 500k lines of source. 18,000 upvotes. a tamagotchi. and the entire community debugging Anthropic's product with a competitor's AI. tuesday was not boring.*
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged](https://reddit.com/r/ClaudeAI/comments/1s8lkkm/i_dug_through_claude_codes_leaked_source_and/) · r/ClaudeAI, 4,088 up / 496 comments
+- [Is this marketing tactics by claude ?](https://reddit.com/r/vibecoding/comments/1s9b6vd/is_this_marketing_tactics_by_claude/) · r/vibecoding, 12 up / 3 comments
+- [He Rewrote Leaked Claude Code in Python, And Dodged Copyright](https://reddit.com/r/vibecoding/comments/1s8thq1/he_rewrote_leaked_claude_code_in_python_and/) · r/vibecoding, 354 up / 109 comments
+- [Claude Code running locally with Ollama](https://reddit.com/r/ClaudeCode/comments/1s90vd4/claude_code_running_locally_with_ollama/) · r/ClaudeCode, 103 up / 44 comments
+- [You can now build a fully functional Claude Code executable directly from source code now - modding claude code has never been easier](https://reddit.com/r/ClaudeAI/comments/1s98srg/you_can_now_build_a_fully_functional_claude_code/) · r/ClaudeAI, 282 up / 38 comments

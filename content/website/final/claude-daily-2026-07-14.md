@@ -8,27 +8,27 @@ featured: false
 
 ## the pulse
 
-tuesday on r/ClaudeCode and the community chose violence. 1,484 people upvoted a post titled "Dear Anthropic, This Has to STOP" and 394 of them needed to publicly process their feelings about credits, limits, and the general state of knowing what you're paying for. the usage limit discourse has now appeared in this digest 70 times. we are not tracking this for fun anymore. we are tracking it because it will not stop.
+tuesday on [r/ClaudeCode](https://reddit.com/r/ClaudeCode) and the community chose violence. 1,484 people upvoted a post titled "Dear Anthropic, This Has to STOP" and 394 of them needed to publicly process their feelings about credits, limits, and the general state of knowing what you're paying for. the usage limit discourse has now appeared in this digest 70 times. we are not tracking this for fun anymore. we are tracking it because it will not stop.
 
-meanwhile, Grok got caught uploading whole directories to a Google bucket, which is the kind of headline that makes you feel very warm and cozy about your tool choices. 560 upvotes. the comment section was less a discussion and more a public trial. and over in r/vibecoding, someone announced that Linus Torvalds is vibe-coding, which earned 762 upvotes and immediate pushback from people pointing out this was news from six months ago. the circle of life.
+meanwhile, Grok got caught uploading whole directories to a Google bucket, which is the kind of headline that makes you feel very warm and cozy about your tool choices. 560 upvotes. the comment section was less a discussion and more a public trial. and over in [r/vibecoding](https://reddit.com/r/vibecoding), someone announced that Linus Torvalds is vibe-coding, which earned 762 upvotes and immediate pushback from people pointing out this was news from six months ago. the circle of life.
 
-the Fable discourse has entered its philosophical era. we went from "will they extend access" to "Fable + 5.6 is absolute peak" (570 upvotes) running simultaneously with "Honest question: What are you building that you need fable 5 so badly?" (523 upvotes, 305 comments). the community is somehow worshipping and interrogating the same model in the same breath. peak 2026.
+the Fable discourse has entered its philosophical era. we went from "will they extend access" to "[Fable + 5.6 is absolute peak](https://reddit.com/r/ClaudeCode/comments/1uvjlmr/fable_56_is_absolute_peak/)" (570 upvotes) running simultaneously with "[Honest question: What are you building that you need fable 5 so badly?](https://reddit.com/r/ClaudeAI/comments/1uv70kq/honest_question_what_are_you_building_that_you/)" (523 upvotes, 305 comments). the community is somehow worshipping and interrogating the same model in the same breath. peak 2026.
 
 ## hottest thread
 
-**"Dear Anthropic, This Has to STOP."** on r/ClaudeCode. 1,484 upvotes. 394 comments. velocity of 80.18, which is the fastest anything has moved in the feed today by a wide margin.
+**"[Dear Anthropic, This Has to STOP.](https://reddit.com/r/ClaudeCode/comments/1uv6ns4/dear_anthropic_this_has_to_stop/)"** on r/ClaudeCode. 1,484 upvotes. 394 comments. velocity of 80.18, which is the fastest anything has moved in the feed today by a wide margin.
 
 the post is a full-throated rant about Anthropic's pricing and limits communication. credits here, credits there. weekly credits. Sonnet usage. Opus usage. Fable credits. 5-hour limits. weekly limits. the OP basically asked: do you have a plan, or are you just making this up as you go?
 
-the community response split into three camps. the first camp agreed violently. the second camp, represented by u/beagle-ears, brought actual SaaS pricing consulting experience and argued every change is a deliberate data point for building a future revenue model. the third camp... well, u/eduo just said they don't want it to stop. we'll get to that.
+the community response split into three camps. the first camp agreed violently. the second camp, represented by [u/beagle-ears](https://reddit.com/user/beagle-ears), brought actual SaaS pricing consulting experience and argued every change is a deliberate data point for building a future revenue model. the third camp... well, [u/eduo](https://reddit.com/user/eduo) just said they don't want it to stop. we'll get to that.
 
 what makes this thread matter beyond the usual limit complaints is the ==pricing whiplash is eroding trust==. it's not about any single change. it's about the cadence. when your users need a calendar to track their 5-hour windows (which is literally a separate post today with 102 upvotes), the UX has become the problem.
 
-u/FizzySeltzerWater also dropped this gem in the thread: "AND STOP ASKING ME IF CLAUDE IS DOING OK THIS SESSION! And if I say BAD, I do not want the entire session to be sent to you. I want to explain why it is bad myself." which captures a very specific frustration that anyone who's hit that popup mid-flow knows in their bones.
+[u/FizzySeltzerWater](https://reddit.com/user/FizzySeltzerWater) also dropped this gem in the thread: "AND STOP ASKING ME IF CLAUDE IS DOING OK THIS SESSION! And if I say BAD, I do not want the entire session to be sent to you. I want to explain why it is bad myself." which captures a very specific frustration that anyone who's hit that popup mid-flow knows in their bones.
 
 ## repo of the day
 
-**Navi** by a builder on r/ClaudeAI. 77 upvotes, 15 comments. the concept is beautiful in its simplicity: an MCP server that plays the Zelda "Hey! Listen!" sound when Claude Code needs your attention. red light means needs approval. yellow means warning. green means done.
+**Navi** by a builder on [r/ClaudeAI](https://reddit.com/r/ClaudeAI). 77 upvotes, 15 comments. the concept is beautiful in its simplicity: an MCP server that plays the Zelda "[Hey! Listen!](https://reddit.com/r/ClaudeAI/comments/1uvoj4d/i_built_navi_so_it_yells_hey_listen_when_claude/)" sound when Claude Code needs your attention. red light means needs approval. yellow means warning. green means done.
 
 if you've ever alt-tabbed away from a long Claude Code session, opened Twitter, lost 20 minutes, and then come back to find it's been waiting for permission the entire time... this is for you. it plugs into any CLI, not just Claude Code, which makes it actually useful beyond the meme factor.
 
@@ -40,7 +40,7 @@ github link was in the original post. worth starring if you run long background 
 
 > The amazing part isn't that a billionaire's company vacuumed up everyone's code. The amazing part is how many people will explain to you, for free, on their lunch break, why that's fine. The guy calls a rival "evil," loses the coding race to it, rents it his datacenter, and takes your repos on the way out.
 
-u/oops_i in the Grok data exfiltration thread.
+[u/oops_i](https://reddit.com/user/oops_i) in the Grok data exfiltration thread.
 
 this won because it's not just a hot take. it's a ==perfectly structured observation== about the psychology of the situation. most of the Grok thread was either "reject everything Musk" or "who even uses this." oops_i zoomed out and pointed at the real absurdity: the volunteer defense force that shows up every time to explain why having your directories uploaded to someone else's bucket is actually fine. the pacing of that comment is better than most blog posts.
 
@@ -55,14 +55,14 @@ no elaboration. no reasoning. no defense. just ==pure contrarian calm== in the m
 ## fun facts
 
 - the "Dear Anthropic" thread alone accounts for 12% of all comments tracked today. one post. 394 out of 3,269 total comments. that's a support ticket dressed as a Reddit post.
-- someone on r/vibecoding shared their first real project and described it as "a tool that does nothing." top comment: "You win." the ==entire subreddit just accepted it==.
+- someone on r/vibecoding shared their first real project and described it as "[a tool that does nothing.](https://reddit.com/r/vibecoding/comments/1uvxl49/my_first_real_project_i_wanted_to_share_i_made_a/)" top comment: "You win." the ==entire subreddit just accepted it==.
 - three separate posts today asked variations of "what are you even building with Fable?" while two other posts simultaneously called Fable absolute peak. the community is in a superposition of hype and skepticism and will not collapse until observed.
 - a user on r/ClaudeAI admitted to putting their Claude Code sessions on a Google Calendar to track 5-hour reset windows. 102 people upvoted this as if it were a productivity tip and not a cry for help.
-- r/vibecoding used the phrase "traditional software engineering is over" unironically today. Linus Torvalds was involved. the Hacker News crossover episode nobody asked for.
+- r/vibecoding used the phrase "[traditional software engineering is over](https://reddit.com/r/vibecoding/comments/1uva26n/its_official_linus_torvalds_is_vibecoding_and/)" unironically today. Linus Torvalds was involved. the Hacker News crossover episode nobody asked for.
 
 ## code drop
 
-no raw code snippets dominated today, but the most buildable pattern came from u/SpaceCowboy077 in the Fable + 5.6 thread, describing a competitive agent architecture:
+no raw code snippets dominated today, but the most buildable pattern came from [u/SpaceCowboy077](https://reddit.com/user/SpaceCowboy077) in the Fable + 5.6 thread, describing a competitive agent architecture:
 
 ```
 workflow:
@@ -91,6 +91,16 @@ if you're running multi-model setups, the takeaway is: don't just route tasks. m
 - **total upvotes:** 8,084
 - **total comments:** 3,269
 - **fastest rising:** "Dear Anthropic, This Has to STOP." (velocity: 80.18)
-- **most debated:** "Is anyone making anything original?" (245 comments on 61 upvotes, 4.0 comment:upvote ratio)
+- **most debated:** "[Is anyone making anything original?](https://reddit.com/r/vibecoding/comments/1uv9pce/is_anyone_making_anything_original/)" (245 comments on 61 upvotes, 4.0 comment:upvote ratio)
 - **subreddits scanned:** ClaudeCode, ClaudeAI, vibecoding, gtmengineering
 - **usage limit complaint streak:** 70 consecutive issues and counting
+
+## sources
+
+- [Dear Anthropic, This Has to STOP.](https://reddit.com/r/ClaudeCode/comments/1uv6ns4/dear_anthropic_this_has_to_stop/) · r/ClaudeCode, 1,484 up / 394 comments
+- [Fable + 5.6 is absolute peak](https://reddit.com/r/ClaudeCode/comments/1uvjlmr/fable_56_is_absolute_peak/) · r/ClaudeCode, 570 up / 139 comments
+- [It’s official: Linus Torvalds is vibe-coding and traditional software engineering is over.](https://reddit.com/r/vibecoding/comments/1uva26n/its_official_linus_torvalds_is_vibecoding_and/) · r/vibecoding, 762 up / 133 comments
+- [Honest question: What are you building that you need fable 5 so badly?](https://reddit.com/r/ClaudeAI/comments/1uv70kq/honest_question_what_are_you_building_that_you/) · r/ClaudeAI, 523 up / 305 comments
+- [I built Navi so It yells "Hey! Listen!" when Claude Code needs me, hope you like it :D](https://reddit.com/r/ClaudeAI/comments/1uvoj4d/i_built_navi_so_it_yells_hey_listen_when_claude/) · r/ClaudeAI, 77 up / 15 comments
+- [My first real project I wanted to share, I made a tool that does nothing.](https://reddit.com/r/vibecoding/comments/1uvxl49/my_first_real_project_i_wanted_to_share_i_made_a/) · r/vibecoding, 1 up / 5 comments
+- [Is anyone making anything original?](https://reddit.com/r/vibecoding/comments/1uv9pce/is_anyone_making_anything_original/) · r/vibecoding, 61 up / 245 comments

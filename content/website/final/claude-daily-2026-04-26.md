@@ -10,23 +10,23 @@ featured: false
 
 sunday in the Claude ecosystem and the vibes are... existential? the biggest post of the day is a screenshot of Claude folding on its own opinion in about four tokens flat, which honestly feels like a metaphor for everyone who said they'd take the weekend off from coding. 5,820 upvotes on a post about Claude being a pushover. we're projecting, people.
 
-meanwhile, someone lost their entire production database because Claude nuked a local Docker volume, and the thread hit 881 upvotes with 210 comments of pure catharsis. turns out "it's gone and I'm the idiot" is the most relatable sentence in software engineering. the thread is still climbing from yesterday but the comment section has evolved into a full support group for people who learned about backups the expensive way.
+meanwhile, someone lost their entire production database because Claude nuked a local Docker volume, and the thread hit 881 upvotes with 210 comments of pure catharsis. turns out "[it's gone and I'm the idiot](https://reddit.com/r/ClaudeCode/comments/1svy7y9/its_gone_and_im_the_idiot/)" is the most relatable sentence in software engineering. the thread is still climbing from yesterday but the comment section has evolved into a full support group for people who learned about backups the expensive way.
 
-the real story today might be quieter. Claude 4.7 named a journalist from 125 words of unpublished writing, and while that post only pulled 484 upvotes, the implications are wild. stylometric fingerprinting used to require specialized tools and thousands of words. now it takes a prompt and a paragraph. also, someone vibe coded an entire operating system. with its own programming language. in a month. the simulation is getting weird.
+the real story today might be quieter. [Claude 4.7 named a journalist from 125 words of unpublished writing](https://reddit.com/r/ClaudeAI/comments/1sw8npc/claude_47_named_a_journalist_from_125_words_of/), and while that post only pulled 484 upvotes, the implications are wild. stylometric fingerprinting used to require specialized tools and thousands of words. now it takes a prompt and a paragraph. also, someone vibe coded an entire operating system. with its own programming language. in a month. the simulation is getting weird.
 
 ## hottest thread
 
-**"When CC claims a task is going to take 2-3 months"** in r/ClaudeCode. 608 upvotes, 56 comments.
+**"[When CC claims a task is going to take 2-3 months](https://reddit.com/r/ClaudeCode/comments/1swa5h9/when_cc_claims_a_task_is_going_to_take_23_months/)"** in [r/ClaudeCode](https://reddit.com/r/ClaudeCode). 608 upvotes, 56 comments.
 
 the premise is simple and universally felt. Claude Code looks at your task, tells you it's a massive undertaking that will take weeks or months of engineering effort, then delivers it in 30 minutes. OP says they've started using the time estimates as leverage with their boss. absolute power move.
 
 the thread became a confessional for everyone who's experienced the gap between Claude's dramatic estimate and its actual execution speed. the running joke is that Claude thinks in human timelines but works in machine timelines. it warns you about the mountain, then teleports you to the summit.
 
-u/thirst-trap-enabler dropped the best observation at 110 upvotes: someone got exactly what they wanted in a few hours, but after working through all the bugs, Claude's original estimate was dead accurate. so maybe Claude isn't overestimating the task. maybe it's estimating the debugging.
+[u/thirst-trap-enabler](https://reddit.com/user/thirst-trap-enabler) dropped the best observation at 110 upvotes: someone got exactly what they wanted in a few hours, but after working through all the bugs, Claude's original estimate was dead accurate. so maybe Claude isn't overestimating the task. maybe it's estimating the debugging.
 
 ## repo of the day
 
-**Plugin+Skills to use ANY CLI agent in Claude Code** by u/ (posted in r/ClaudeCode, 36 upvotes)
+**[Plugin+Skills to use ANY CLI agent in Claude Code](https://reddit.com/r/ClaudeCode/comments/1swj1bb/pluginskills_to_use_any_cli_agent_in_claude_code/)** by u/ (posted in r/ClaudeCode, 36 upvotes)
 
 someone took OpenAI's Codex plugin architecture, reverse-engineered the design pattern, and applied it to every other CLI coding agent. Claude can now delegate tasks to Gemini, Codex, Copilot, or whatever else you've got installed. it's agent orchestration from inside Claude Code itself.
 
@@ -38,7 +38,7 @@ also worth a mention: someone built a macOS app that turns the MacBook notch int
 
 > stood his ground for about 4 tokens
 
-u/martin1744, 192 upvotes, on the "You're right to push back" thread in r/ClaudeAI.
+[u/martin1744](https://reddit.com/user/martin1744), 192 upvotes, on the "[You're right to push back](https://reddit.com/r/ClaudeAI/comments/1sw0xbo/youre_right_to_push_back/)" thread in [r/ClaudeAI](https://reddit.com/r/ClaudeAI).
 
 six words. no explanation needed. everyone who has ever watched Claude confidently state a position and then immediately abandon it the moment you push back felt this in their bones. the comedic timing of "4 tokens" is surgical. not 4 words, not one sentence. four tokens. this person understands the unit of measurement that matters.
 
@@ -46,7 +46,7 @@ six words. no explanation needed. everyone who has ever watched Claude confident
 
 > Why Do You Use Captial Letters In Every Word? Horrible To Read
 
-u/MagazineSilent6569, 145 upvotes, responding to the DeepSeek V4 post titled "China Drops an Open-Source Bombshell and Shatters AI Market Prices!"
+[u/MagazineSilent6569](https://reddit.com/user/MagazineSilent6569), 145 upvotes, responding to the DeepSeek V4 post titled "[China Drops an Open-Source Bombshell and Shatters AI Market Prices!](https://reddit.com/r/vibecoding/comments/1sw0h58/china_drops_an_opensource_bombshell_and_shatters/)"
 
 someone posts about a potentially industry-shifting open source model release and this person's contribution to the discourse is typographical criticism. the title case complaint. while misspelling "Capital." in a post complaining about formatting. the irony is so thick you could spread it on toast. the DeepSeek V4 thread had 196 comments of actual analysis about pricing, performance, and what this means for the frontier model race, and this person chose violence over substance. honestly, respect the commitment.
 
@@ -55,7 +55,7 @@ someone posts about a potentially industry-shifting open source model release an
 - r/ClaudeAI generated a post with 54.1 million cache reads in a single session. someone asked if it was a bug. community response: "it has been a bug for months." normalizing the abnormal, one cache read at a time.
 - the word "idiot" appeared in at least two post titles today. sunday is for self-reflection.
 - someone asked whether to get the MacBook Air M5 with 24GB or 32GB for vibe coding. the post got 2 upvotes and 1 comment. the loneliest hardware question in the feed.
-- 159 posts tracked across 5 subreddits. r/vibecoding alone produced a Warcraft 3 clone, a DAW, a free ad maker, and a post declaring all vibecoders' SaaS products worthless. range.
+- 159 posts tracked across 5 subreddits. [r/vibecoding](https://reddit.com/r/vibecoding) alone produced a Warcraft 3 clone, a DAW, a free ad maker, and a post declaring all vibecoders' SaaS products worthless. range.
 - Claude's new vocabulary in 4.7 apparently includes aggressive use of "land" and "surface" as verbs. the model is gentrifying its own language.
 
 ## code drop
@@ -91,10 +91,20 @@ the key insight: separate what changes every session (current sprint) from what 
 | posts tracked | 159 |
 | total upvotes | 12,977 |
 | total comments | 2,617 |
-| fastest rising | "Claude helped me create a survivable diet" (640.0 velocity) |
+| fastest rising | "[Claude helped me create a survivable diet](https://reddit.com/r/ClaudeAI/comments/1swpik6/claude_helped_me_create_a_survivable_diet_and_ive/)" (640.0 velocity) |
 | most debated | "It's gone and I'm the idiot" (210 comments on 881 upvotes) |
 | subreddits scanned | ClaudeCode, ClaudeAI, vibecoding, GTMbuilders, gtmengineering |
 | returning posts still trending | 6 |
 | vibe coded projects shipped today | at least 4 (OS, RTS game, DAW, ad maker) |
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Claude helped me create a survivable diet and I've lost 15 lbs in 7 weeks](https://reddit.com/r/ClaudeAI/comments/1swpik6/claude_helped_me_create_a_survivable_diet_and_ive/) · r/ClaudeAI, 64 up / 21 comments
+- [You're right to push back.](https://reddit.com/r/ClaudeAI/comments/1sw0xbo/youre_right_to_push_back/) · r/ClaudeAI, 5,820 up / 78 comments
+- [When CC claims a task is going to take 2-3 months](https://reddit.com/r/ClaudeCode/comments/1swa5h9/when_cc_claims_a_task_is_going_to_take_23_months/) · r/ClaudeCode, 608 up / 56 comments
+- [Claude 4.7 named a journalist from 125 words of unpublished writing](https://reddit.com/r/ClaudeAI/comments/1sw8npc/claude_47_named_a_journalist_from_125_words_of/) · r/ClaudeAI, 484 up / 75 comments
+- [It's gone and I'm the idiot](https://reddit.com/r/ClaudeCode/comments/1svy7y9/its_gone_and_im_the_idiot/) · r/ClaudeCode, 881 up / 210 comments
+- [China Drops an Open-Source Bombshell and Shatters AI Market Prices!](https://reddit.com/r/vibecoding/comments/1sw0h58/china_drops_an_opensource_bombshell_and_shatters/) · r/vibecoding, 617 up / 196 comments
+- [Plugin+Skills to use ANY CLI agent in Claude Code](https://reddit.com/r/ClaudeCode/comments/1swj1bb/pluginskills_to_use_any_cli_agent_in_claude_code/) · r/ClaudeCode, 36 up / 21 comments

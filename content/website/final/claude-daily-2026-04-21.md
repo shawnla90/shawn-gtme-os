@@ -10,21 +10,21 @@ featured: false
 
 the Claude Code subreddits went full riot mode today. if you opened Reddit any time after noon, every third post was some variation of "wait, did Anthropic just yank Claude Code from Pro?" and the answer, depending on which hour you checked the pricing page, was either yes, no, or a quantum superposition of both.
 
-here is what actually happened. someone noticed the claude.com/pricing page no longer listed Claude Code under the $20 Pro plan. screenshots spread. pitchforks materialized. then Anthropic's Head of Growth posted a statement saying it's a test on ~2% of new prosumer signups and existing subscribers aren't affected. the community responded with the energy of someone being told the building isn't on fire while standing in smoke. six separate posts about this hit the front page across r/ClaudeAI and r/ClaudeCode, combining for over 4,000 upvotes and 1,600+ comments. the usage limit saga that's been simmering since March just found its main character arc.
+here is what actually happened. someone noticed the claude.com/pricing page no longer listed Claude Code under the $20 Pro plan. screenshots spread. pitchforks materialized. then Anthropic's Head of Growth posted a statement saying it's a test on ~2% of new prosumer signups and existing subscribers aren't affected. the community responded with the energy of someone being told the building isn't on fire while standing in smoke. six separate posts about this hit the front page across [r/ClaudeAI](https://reddit.com/r/ClaudeAI) and [r/ClaudeCode](https://reddit.com/r/ClaudeCode), combining for over 4,000 upvotes and 1,600+ comments. the usage limit saga that's been simmering since March just found its main character arc.
 
-meanwhile, buried under the pricing apocalypse, someone discovered Claude had been catching cryptominers on their NAS for two years, Anthropic's unreleased Mythos model got accessed by unauthorized users, and a post titled "RIP Vibe Coding 2024-2026" continued its second day of existential mourning. just a normal Tuesday.
+meanwhile, buried under the pricing apocalypse, someone discovered Claude had been catching cryptominers on their NAS for two years, Anthropic's unreleased Mythos model got accessed by unauthorized users, and a post titled "[RIP Vibe Coding 2024-2026](https://reddit.com/r/vibecoding/comments/1srdpdg/rip_vibe_coding_20242026/)" continued its second day of existential mourning. just a normal Tuesday.
 
 ## hottest thread
 
-**"PSA: Claude Pro no longer lists Claude Code as an included feature"** in r/ClaudeAI. 1,767 upvotes. 586 comments. velocity off the charts.
+**"[PSA: Claude Pro no longer lists Claude Code as an included feature](https://reddit.com/r/ClaudeAI/comments/1srzhd7/psa_claude_pro_no_longer_lists_claude_code_as_an/)"** in r/ClaudeAI. 1,767 upvotes. 586 comments. velocity off the charts.
 
 the post itself was simple. someone checked the pricing page, Claude Code wasn't listed under Pro anymore, and they screenshotted it. that's it. no editorializing needed. the community took it from there.
 
 what made this thread nuclear wasn't just the news. it was the timing. this dropped the same week Opus 4.7 shipped with a tokenizer change that quietly made sessions more expensive, the same month cache TTL got cut from an hour to five minutes, and against the backdrop of months of usage limit complaints. each of those was a paper cut. this felt like the knife.
 
-the r/ClaudeCode mirror post hit 1,050 upvotes with 449 comments of its own. a third post framing it as "Claude Code removed from Pro plan" pulled another 368 upvotes. and a fourth from a potential new customer asking "Does Claude's $20 Plan No Longer Include Claude Code?" added 472 more. four threads, same story, all raging independently because the community couldn't even consolidate its fury fast enough.
+the r/ClaudeCode mirror post hit 1,050 upvotes with 449 comments of its own. a third post framing it as "[Claude Code removed from Pro plan](https://reddit.com/r/ClaudeCode/comments/1ss3b0t/claude_code_removed_from_anthropics_pro_plan/)" pulled another 368 upvotes. and a fourth from a potential new customer asking "[Does Claude's $20 Plan No Longer Include Claude Code?](https://reddit.com/r/ClaudeAI/comments/1ss3asp/does_claudes_20_plan_no_longer_include_claude_code/)" added 472 more. four threads, same story, all raging independently because the community couldn't even consolidate its fury fast enough.
 
-Anthropic's official response (523 upvotes, 224 comments) tried to contain it. "running a small test on ~2% of new prosumer signups." the community pointed out that updating all your public documentation for a 2% test is... a choice.
+Anthropic's official response (523 upvotes, 224 comments) tried to contain it. "[running a small test on ~2% of new prosumer signups.](https://reddit.com/r/ClaudeCode/comments/1ss56c6/for_clarity_were_running_a_small_test_on_2_of_new/)" the community pointed out that updating all your public documentation for a 2% test is... a choice.
 
 ## repo of the day
 
@@ -40,7 +40,7 @@ also worth a mention: u/I built a /graphify skill that maps codebases into knowl
 
 > They might have the worst PR department ever
 
-u/ODaysForDays, 853 upvotes, on "PSA: Claude Pro no longer lists Claude Code as an included feature" in r/ClaudeAI.
+[u/ODaysForDays](https://reddit.com/user/ODaysForDays), 853 upvotes, on "PSA: Claude Pro no longer lists Claude Code as an included feature" in r/ClaudeAI.
 
 eight words. 853 upvotes. the highest scoring comment across all 189 posts tracked today. no explanation needed, no follow-up required. just a clean, devastating summary of how Anthropic managed to turn a 2% A/B test into a full community meltdown by updating their public pricing page before telling anyone what was happening. when your PR strategy is "change the website and hope nobody notices," you get the comment section you deserve.
 
@@ -48,7 +48,7 @@ eight words. 853 upvotes. the highest scoring comment across all 189 posts track
 
 > lmao I get people are pissed at the usage cuts but to say Claude and Codex are dead is fucking hilarious. You guys are so god damn entitled.
 
-u/Sufficient-Farmer243, 263 upvotes, on "RIP Vibe Coding 2024-2026" in r/vibecoding.
+[u/Sufficient-Farmer243](https://reddit.com/user/Sufficient-Farmer243), 263 upvotes, on "RIP Vibe Coding 2024-2026" in [r/vibecoding](https://reddit.com/r/vibecoding).
 
 walking into a thread where people are eulogizing vibe coding and calling everyone entitled is a power move. the thing is... they're not entirely wrong? the post they're responding to is literally a funeral for the concept of prompting your way to production, which has existed as a mainstream idea for approximately 18 months. we're writing obituaries for toddlers. but also, telling a community of people who pay $20-200/month that they're entitled for wanting the features listed on the pricing page is... bold. 263 people upvoted this, which means the community is simultaneously furious at Anthropic AND furious at itself for being furious. beautiful.
 
@@ -57,7 +57,7 @@ walking into a thread where people are eulogizing vibe coding and calling everyo
 - the word "Pro" appeared in post titles 14 times today. "removed," "no longer," and "RIP" appeared a combined 11 times. the vibe was not ambiguous.
 - r/ClaudeAI and r/ClaudeCode posted the same Anthropic response as separate threads. combined: 628 upvotes, 281 comments. the subreddits are having the same argument in parallel like poorly coordinated AI agents.
 - the cryptominer post (508 upvotes) is the most wholesome story buried under the most chaotic news day. Claude found malware that had been running for two years. nobody cared because the pricing page changed.
-- "Make no mistakes!" hit 4,007 upvotes with only 49 comments. that is an 81:1 upvote-to-comment ratio. people are upvoting and leaving. the lurker post.
+- "[Make no mistakes!](https://reddit.com/r/ClaudeAI/comments/1sre84i/make_no_mistakes/)" hit 4,007 upvotes with only 49 comments. that is an 81:1 upvote-to-comment ratio. people are upvoting and leaving. the lurker post.
 - someone built a "NoCap" transparency protocol because they got tired of Claude saying "You're right, sorry." it got 4 upvotes. the market has spoken and it does not care about Claude's feelings.
 
 ## code drop
@@ -96,11 +96,23 @@ if you haven't audited your CLAUDE.md since the TTL change, you're spending roug
 | posts tracked | 189 |
 | total upvotes | 19,148 |
 | total comments | 5,132 |
-| fastest rising | "Anthropic response to Claude Code change" (5,230 velocity) |
+| fastest rising | "[Anthropic response to Claude Code change](https://reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/)" (5,230 velocity) |
 | most upvoted | "Make no mistakes!" (4,007 upvotes) |
-| most debated | "Best Options for Replacing Claude Code?" (134 comments on 63 upvotes, 2.13 ratio) |
+| most debated | "[Best Options for Replacing Claude Code?](https://reddit.com/r/ClaudeCode/comments/1ss3zbo/best_options_for_replacing_claude_code_im_done/)" (134 comments on 63 upvotes, 2.13 ratio) |
 | subreddits scanned | ClaudeAI, ClaudeCode, vibecoding, gtmengineering |
 | posts about Pro plan removal | 8 (42% of all front-page posts) |
 | returning threads | 5 |
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Anthropic response to Claude Code change](https://reddit.com/r/ClaudeAI/comments/1ss5fi4/anthropic_response_to_claude_code_change/) · r/ClaudeAI, 523 up / 224 comments
+- [Anthropic response to Claude Code change](https://reddit.com/r/ClaudeCode/comments/1ss5ouv/anthropic_response_to_claude_code_change/) · r/ClaudeCode, 105 up / 57 comments
+- [PSA: Claude Pro no longer lists Claude Code as an included feature](https://reddit.com/r/ClaudeAI/comments/1srzhd7/psa_claude_pro_no_longer_lists_claude_code_as_an/) · r/ClaudeAI, 1,767 up / 586 comments
+- [Does Claude's $20 Plan No Longer Include Claude Code?](https://reddit.com/r/ClaudeAI/comments/1ss3asp/does_claudes_20_plan_no_longer_include_claude_code/) · r/ClaudeAI, 472 up / 176 comments
+- [Claude Code removed from Anthropic's Pro plan](https://reddit.com/r/ClaudeCode/comments/1ss3b0t/claude_code_removed_from_anthropics_pro_plan/) · r/ClaudeCode, 368 up / 117 comments
+- [Make no mistakes!](https://reddit.com/r/ClaudeAI/comments/1sre84i/make_no_mistakes/) · r/ClaudeAI, 4,007 up / 49 comments
+- [RIP Vibe Coding 2024–2026](https://reddit.com/r/vibecoding/comments/1srdpdg/rip_vibe_coding_20242026/) · r/vibecoding, 1,603 up / 449 comments
+- [Best Options for Replacing Claude Code? I'm done after opus 4.7](https://reddit.com/r/ClaudeCode/comments/1ss3zbo/best_options_for_replacing_claude_code_im_done/) · r/ClaudeCode, 63 up / 134 comments
+- ["For clarity, we're running a small test on ~2% of new prosumer signups. Existing Pro and Max subscribers aren't affected" - Anthropic Head Of Growth](https://reddit.com/r/ClaudeCode/comments/1ss56c6/for_clarity_were_running_a_small_test_on_2_of_new/) · r/ClaudeCode, 4 up / 2 comments

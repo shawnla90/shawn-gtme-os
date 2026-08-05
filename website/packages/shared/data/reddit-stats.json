@@ -1,22 +1,22 @@
 {
- "asOf": "2026-07-20",
- "totalKarma": 2470,
- "linkKarma": 1576,
- "commentKarma": 894,
- "totalPosts": 176,
- "totalComments": 568,
- "trackedViews": 1518547,
- "wins": 24,
+ "asOf": "2026-08-05",
+ "totalKarma": 2498,
+ "linkKarma": 1595,
+ "commentKarma": 903,
+ "totalPosts": 192,
+ "totalComments": 595,
+ "trackedViews": 1558923,
+ "wins": 25,
  "firstItemDate": "2026-02-27",
- "lastItemDate": "2026-07-20",
- "accountMonths": 4.7,
+ "lastItemDate": "2026-08-04",
+ "accountMonths": 5.2,
  "subredditsTouched": 49,
  "eras": [
   {
    "era": "karma-building",
    "items": 422,
-   "views": 1171580,
-   "score": 2235,
+   "views": 1184321,
+   "score": 2236,
    "first": "2026-02-27",
    "last": "2026-04-06",
    "days": 38,
@@ -24,12 +24,12 @@
   },
   {
    "era": "clearbox",
-   "items": 322,
-   "views": 346967,
-   "score": 978,
+   "items": 365,
+   "views": 374602,
+   "score": 1063,
    "first": "2026-04-07",
-   "last": "2026-07-20",
-   "days": 103,
+   "last": "2026-08-04",
+   "days": 119,
    "itemsPerDay": 3.1
   }
  ],
@@ -37,50 +37,50 @@
   {
    "subreddit": "ClaudeCode",
    "items": 173,
-   "views": 734659,
-   "score": 940
+   "views": 741638,
+   "score": 935
   },
   {
    "subreddit": "ClaudeAI",
    "items": 44,
-   "views": 371300,
+   "views": 372400,
    "score": 425
   },
   {
    "subreddit": "GTMbuilders",
-   "items": 118,
-   "views": 158039,
-   "score": 444
+   "items": 142,
+   "views": 174283,
+   "score": 494
   },
   {
    "subreddit": "gtmengineering",
-   "items": 158,
-   "views": 89392,
-   "score": 444
+   "items": 169,
+   "views": 96738,
+   "score": 459
   },
   {
    "subreddit": "OnePiece",
-   "items": 15,
-   "views": 71000,
-   "score": 170
+   "items": 17,
+   "views": 75800,
+   "score": 178
   },
   {
    "subreddit": "NYCapartments",
    "items": 13,
    "views": 32000,
-   "score": 274
+   "score": 279
   },
   {
    "subreddit": "ClaudeGTM",
-   "items": 21,
-   "views": 23361,
-   "score": 36
+   "items": 23,
+   "views": 25321,
+   "score": 37
   },
   {
    "subreddit": "hubspot",
    "items": 12,
-   "views": 18300,
-   "score": 63
+   "views": 18400,
+   "score": 62
   },
   {
    "subreddit": "linkedinautomation",
@@ -90,9 +90,9 @@
   },
   {
    "subreddit": "UseApolloIo",
-   "items": 10,
-   "views": 4100,
-   "score": 26
+   "items": 13,
+   "views": 5007,
+   "score": 36
   }
  ],
  "topPost": {
@@ -105,7 +105,7 @@
   "1uem7na": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 38,
+   "score": 37,
    "comments": 2,
    "views": 13000,
    "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
@@ -115,7 +115,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 442,
+   "views": 470,
    "title": "claude code = terminal, codex = app, remote control hack!!! #claudecode ..."
   },
   "1ueqd40": {
@@ -123,7 +123,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 2,
-   "views": 530,
+   "views": 565,
    "title": "claude code = terminal, codex = app, remote control hack!!! #claudecode ..."
   },
   "1ueqcki": {
@@ -139,7 +139,7 @@
    "subreddit": "GTMbuilders",
    "score": 1,
    "comments": 0,
-   "views": 782,
+   "views": 812,
    "title": "claude code = terminal, codex = app, remote control hack!!! #claudecode ..."
   },
   "1uemb4a": {
@@ -147,7 +147,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 380,
+   "views": 408,
    "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
   },
   "1uem8v0": {
@@ -155,7 +155,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 302,
+   "views": 333,
    "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
   },
   "1uem894": {
@@ -163,7 +163,7 @@
    "subreddit": "AI_Sales",
    "score": 2,
    "comments": 2,
-   "views": 336,
+   "views": 366,
    "title": "rebuilt a $70k market-scoring tool with claude code in an afternoon. here is the whole workflow."
   },
   "1ue4prs": {
@@ -171,13 +171,13 @@
    "subreddit": "gtmengineering",
    "score": 4,
    "comments": 1,
-   "views": 524,
+   "views": 552,
    "title": "I make Claude & Codex argue #buildinpublic #claudecode #codex"
   },
   "1udxd5k": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 6,
+   "score": 5,
    "comments": 0,
    "views": 1900,
    "title": "$70K clay proposal \u2192 $0 with Claude Code"
@@ -187,7 +187,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 408,
+   "views": 430,
    "title": "I make Claude & Codex argue #buildinpublic #claudecode #codex"
   },
   "1ue3syb": {
@@ -195,7 +195,7 @@
    "subreddit": "GTMbuilders",
    "score": 1,
    "comments": 0,
-   "views": 349,
+   "views": 390,
    "title": "I make Claude & Codex argue  #buildinpublic #claudecode #codex"
   },
   "1udxdla": {
@@ -203,13 +203,13 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 572,
+   "views": 595,
    "title": "$70K clay proposal \u2192 $0 with Claude Code"
   },
   "1uacdp7": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 27,
+   "score": 28,
    "comments": 3,
    "views": 15000,
    "title": "10 Python scripts I run for GTM, and the exact prompt to build each one"
@@ -219,7 +219,7 @@
    "subreddit": "gtmengineering",
    "score": 3,
    "comments": 0,
-   "views": 669,
+   "views": 691,
    "title": "10 Python scripts I run for GTM, and the exact prompt to build each one"
   },
   "1uadlnz": {
@@ -233,9 +233,9 @@
   "1u8xqgm": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 7,
+   "score": 6,
    "comments": 4,
-   "views": 3300,
+   "views": 3400,
    "title": "Claude Code vs Codex for GTM builders: which one are you actually shipping with?"
   },
   "1u8xr3x": {
@@ -243,7 +243,7 @@
    "subreddit": "ClaudeGTM",
    "score": 2,
    "comments": 1,
-   "views": 1300,
+   "views": 1400,
    "title": "Claude Code vs Codex for GTM builders: which one are you actually shipping with?"
   },
   "1u8xqqa": {
@@ -251,7 +251,7 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 0,
-   "views": 491,
+   "views": 511,
    "title": "Claude Code vs Codex for GTM builders: which one are you actually shipping with?"
   },
   "1u8j347": {
@@ -259,7 +259,7 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 0,
-   "views": 356,
+   "views": 373,
    "title": "I'm moving a client off Lovable to Next.js right now. Here's the full playbook (and why it's an AEO move, not a vanity rebuild)"
   },
   "1u8j2ux": {
@@ -267,15 +267,15 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 804,
+   "views": 822,
    "title": "I'm moving a client off Lovable to Next.js right now. Here's the full playbook (and why it's an AEO move, not a vanity rebuild)"
   },
   "1u7x7ym": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 13,
+   "score": 14,
    "comments": 17,
-   "views": 5900,
+   "views": 6000,
    "title": "I'm moving a client off Lovable to Next.js right now. Here's the full playbook (and why it's an AEO move, not a vanity rebuild)"
   },
   "1u61m4s": {
@@ -289,15 +289,15 @@
   "1u61zei": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 3,
+   "score": 4,
    "comments": 0,
-   "views": 723,
+   "views": 760,
    "title": "10 more repos I use in my actual GTM stack"
   },
   "1u61yts": {
    "kind": "post",
    "subreddit": "ClaudeGTM",
-   "score": 3,
+   "score": 4,
    "comments": 1,
    "views": 3000,
    "title": "10 more repos I use in my actual GTM stack"
@@ -315,7 +315,7 @@
    "subreddit": "saasbuild",
    "score": 1,
    "comments": 0,
-   "views": 364,
+   "views": 383,
    "title": "Has anyone run outbound from Claude Code/codex+ ACS?"
   },
   "1u4yty2": {
@@ -323,7 +323,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 981,
+   "views": 1000,
    "title": "Has anyone run outbound from Claude Code/codex+ ACS?"
   },
   "1u4ytrk": {
@@ -331,7 +331,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 440,
+   "views": 458,
    "title": "Has anyone run outbound from Claude Code/codex+ ACS?"
   },
   "1u3jmuq": {
@@ -339,15 +339,15 @@
    "subreddit": "gtmengineering",
    "score": 3,
    "comments": 0,
-   "views": 589,
+   "views": 607,
    "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
   },
   "1u3jm8n": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 3,
+   "score": 4,
    "comments": 0,
-   "views": 2100,
+   "views": 2400,
    "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
   },
   "1u3jo6j": {
@@ -355,7 +355,7 @@
    "subreddit": "ClaudeGTM",
    "score": 2,
    "comments": 0,
-   "views": 1000,
+   "views": 1100,
    "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
   },
   "1u3jnll": {
@@ -363,15 +363,15 @@
    "subreddit": "miro",
    "score": 2,
    "comments": 0,
-   "views": 592,
+   "views": 667,
    "title": "I wrote up the Miro version as Chapter 17 in my GTM Coding Agents repo. here's why you should check it out"
   },
   "1u254h4": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 16,
+   "score": 15,
    "comments": 5,
-   "views": 8300,
+   "views": 8600,
    "title": "10 repos you can copy, fork, and adapt right now."
   },
   "1u255b1": {
@@ -387,7 +387,7 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 0,
-   "views": 560,
+   "views": 578,
    "title": "10 repos you can copy, fork, and adapt right now."
   },
   "1u1qzhr": {
@@ -395,7 +395,7 @@
    "subreddit": "GTMbuilders",
    "score": 3,
    "comments": 6,
-   "views": 1300,
+   "views": 1400,
    "title": "Why I Built GTM Builders...Slight Rant + Value Drop"
   },
   "1u1rp6r": {
@@ -403,7 +403,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 499,
+   "views": 519,
    "title": "Why I Built GTM Builders...Slight Rant + Value Drop"
   },
   "1ty4my7": {
@@ -411,7 +411,7 @@
    "subreddit": "gtmengineering",
    "score": 17,
    "comments": 36,
-   "views": 6700,
+   "views": 7300,
    "title": "My prediction is that the go-to-market engineering role will evolve into a generalist position."
   },
   "1ty3eau": {
@@ -425,7 +425,7 @@
   "1ty3hbl": {
    "kind": "post",
    "subreddit": "ClaudeGTM",
-   "score": 5,
+   "score": 4,
    "comments": 1,
    "views": 4000,
    "title": "My Claude code session just confirmed that Apollo is your first run engine."
@@ -435,13 +435,13 @@
    "subreddit": "gtmengineering",
    "score": 3,
    "comments": 0,
-   "views": 830,
+   "views": 849,
    "title": "My Claude code session just confirmed that Apollo is your first run engine."
   },
   "1tw3icv": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 10,
+   "score": 9,
    "comments": 11,
    "views": 2500,
    "title": "What's up builders, sharing my latest client workflow process with you guys. 20k deal, 60 day build + ongoing consulting. Week and a half in. Here's how it's going."
@@ -451,15 +451,15 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 427,
+   "views": 444,
    "title": "What's up builders, sharing my latest client workflow process with you guys. 20k deal, 60 day build + ongoing consulting. Week and a half in. Here's how it's going."
   },
   "1toksov": {
    "kind": "post",
    "subreddit": "UseApolloIo",
-   "score": 6,
+   "score": 7,
    "comments": 10,
-   "views": 1200,
+   "views": 1300,
    "title": "Apollo's API covers most of what teams spend Clay or ZoomInfo credits on. three steps, in order, across every VC portfolio scrape I run."
   },
   "1tomg3b": {
@@ -467,7 +467,7 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 0,
-   "views": 712,
+   "views": 733,
    "title": "Apollo's API covers most of what teams spend Clay or ZoomInfo credits on. three steps, in order, across every VC portfolio scrape I run."
   },
   "1toms1v": {
@@ -483,7 +483,7 @@
    "subreddit": "hubspot",
    "score": 8,
    "comments": 9,
-   "views": 6300,
+   "views": 6400,
    "title": "A few weeks back I posted here about running HubSpot CRM work through Claude Code CLI and the seven gotchas I hit."
   },
   "1tk8biq": {
@@ -499,13 +499,13 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 0,
-   "views": 374,
+   "views": 390,
    "title": "dropping a play before the weekend. hubspot landing pages, generated programmatically."
   },
   "1th8qqh": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 3,
+   "score": 5,
    "comments": 15,
    "views": 2000,
    "title": "Curious how the rest of you are handling this. I'm scraping a lot, fast, multiple terminals at once."
@@ -515,7 +515,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 1,
-   "views": 934,
+   "views": 951,
    "title": "Curious how the rest of you are handling this. I'm scraping a lot, fast, multiple terminals at once."
   },
   "1tane1g": {
@@ -523,7 +523,7 @@
    "subreddit": "GTMbuilders",
    "score": 4,
    "comments": 0,
-   "views": 3700,
+   "views": 4400,
    "title": "Meta Ad Library + Claude Code: how I built a competitor positioning scraper, what the 18-column taxonomy looks like, and what I broke first."
   },
   "1tangju": {
@@ -531,21 +531,21 @@
    "subreddit": "ClaudeGTM",
    "score": 3,
    "comments": 0,
-   "views": 1900,
+   "views": 2100,
    "title": "Meta Ad Library + Claude Code: how I built a competitor positioning scraper, what the 18-column taxonomy looks like, and what I broke first."
   },
   "1tanexp": {
    "kind": "post",
    "subreddit": "gtmengineering",
    "score": 0,
-   "comments": 1,
-   "views": 1000,
+   "comments": 2,
+   "views": 1100,
    "title": "Meta Ad Library + Claude Code: how I built a competitor positioning scraper, what the 18-column taxonomy looks like, and what I broke first."
   },
   "1t7uk0c": {
    "kind": "post",
    "subreddit": "OnePiece",
-   "score": 58,
+   "score": 59,
    "comments": 84,
    "views": 71000,
    "title": "Which Devil Fruit would you choose, but there\u2019s a catch"
@@ -553,17 +553,17 @@
   "1t1a7ym": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 6,
+   "score": 7,
    "comments": 10,
-   "views": 2100,
+   "views": 2200,
    "title": "Built a full YC + a16z company scraper with Claude Code - no Apify, no paid tools"
   },
   "1t1a8uh": {
    "kind": "post",
    "subreddit": "ClaudeGTM",
-   "score": 4,
+   "score": 3,
    "comments": 0,
-   "views": 1200,
+   "views": 1300,
    "title": "Built a full YC + a16z company scraper with Claude Code - no Apify, no paid tools"
   },
   "1t1a8ei": {
@@ -571,13 +571,13 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 2,
-   "views": 912,
+   "views": 931,
    "title": "Built a full YC + a16z company scraper with Claude Code - no Apify, no paid tools"
   },
   "1su7zj1": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 5,
+   "score": 6,
    "comments": 19,
    "views": 1400,
    "title": "Intent signals are qualification scores, not buying intent"
@@ -587,13 +587,13 @@
    "subreddit": "gtmengineering",
    "score": 0,
    "comments": 0,
-   "views": 581,
+   "views": 596,
    "title": "Intent signals are qualification scores, not buying intent"
   },
   "1ss3ma7": {
    "kind": "post",
    "subreddit": "hubspot",
-   "score": 32,
+   "score": 31,
    "comments": 32,
    "views": 12000,
    "title": "3 weeks running HubSpot from Claude Code CLI instead of MCP. 7 gotchas."
@@ -601,9 +601,9 @@
   "1sojfdr": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 4,
+   "score": 5,
    "comments": 2,
-   "views": 1400,
+   "views": 1500,
    "title": "Built a web-visitor-intel dashboard with Claude Code. Curious what you'd add."
   },
   "1sojisg": {
@@ -611,13 +611,13 @@
    "subreddit": "GTMbuilders",
    "score": 3,
    "comments": 14,
-   "views": 1900,
+   "views": 2000,
    "title": "Honest take: MidBound vs Vector vs RB2B."
   },
   "1sly13q": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 3,
+   "score": 2,
    "comments": 6,
    "views": 1400,
    "title": "Intel stack that treats SQLite as version control. Apify CLI + Claude subprocess + d3-force in one repo."
@@ -625,7 +625,7 @@
   "1sfjmgm": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 10,
+   "score": 11,
    "comments": 18,
    "views": 2000,
    "title": "building a GTM dashboard alongside my database. sharing it as it grows."
@@ -633,7 +633,7 @@
   "1sfjszk": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 8,
+   "score": 9,
    "comments": 3,
    "views": 1200,
    "title": "building a GTM dashboard alongside my database. sharing it as it grows."
@@ -643,13 +643,13 @@
    "subreddit": "buildinpublic",
    "score": 1,
    "comments": 0,
-   "views": 225,
+   "views": 241,
    "title": "building a GTM dashboard alongside my database. sharing it as it grows."
   },
   "1sdjd0v": {
    "kind": "post",
    "subreddit": "ClaudeAI",
-   "score": 72,
+   "score": 71,
    "comments": 20,
    "views": 95000,
    "title": "5,355 upvotes on a post about teaching Claude to talk like a caveman. the Claude subreddits had a weekend."
@@ -667,15 +667,15 @@
    "subreddit": "ClaudeCode",
    "score": 0,
    "comments": 1,
-   "views": 5200,
+   "views": 5300,
    "title": "I tracked 178 posts across 5 Claude subreddits yesterday. Claude Code 2.1.92 shipped the usage visibility tools everyone's been asking for while the community was busy fighting about OpenClaw."
   },
   "1s9ylfe": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 72,
+   "score": 68,
    "comments": 43,
-   "views": 11000,
+   "views": 12000,
    "title": "Supabase + Google Sheets + Claude Code replaced Clay for me. here's how I run enrichment, scoring, and prospecting without credit limits or waterfall headaches"
   },
   "1s9yac0": {
@@ -707,7 +707,7 @@
    "subreddit": "buildinpublic",
    "score": 0,
    "comments": 2,
-   "views": 407,
+   "views": 423,
    "title": "building a product with my co-founder. I run all GTM from 4 terminal sessions on a Mac Mini. here's the full setup"
   },
   "1s9z1l3": {
@@ -715,7 +715,7 @@
    "subreddit": "saasbuild",
    "score": 1,
    "comments": 0,
-   "views": 237,
+   "views": 254,
    "title": "Supabase + Google Sheets + Claude Code replaced Clay for me. here's how I run enrichment, scoring, and prospecting without credit limits or waterfall headaches"
   },
   "1s9yaq8": {
@@ -723,7 +723,7 @@
    "subreddit": "gtmengineering",
    "score": 0,
    "comments": 0,
-   "views": 603,
+   "views": 627,
    "title": "GTM with coding agents: the full stack, every command, and 4 workflows you can run today"
   },
   "1s5qxyq": {
@@ -737,9 +737,9 @@
   "1s5r0hj": {
    "kind": "post",
    "subreddit": "ClaudeAI",
-   "score": 225,
+   "score": 229,
    "comments": 122,
-   "views": 239000,
+   "views": 240000,
    "title": "On the $200 Max plan and never been rate limited once. Ran the numbers to find out why everyone else is."
   },
   "1s6fieo": {
@@ -747,7 +747,7 @@
    "subreddit": "ClaudeAI",
    "score": 1,
    "comments": 10,
-   "views": 7800,
+   "views": 7900,
    "title": "Part two of the rate limit saga: things I'm actually doing to prevent ever getting throttled on the $200 max plan"
   },
   "1s6fh3w": {
@@ -763,7 +763,7 @@
    "subreddit": "gtmengineering",
    "score": 4,
    "comments": 0,
-   "views": 593,
+   "views": 611,
    "title": "Hey builders, dropping a repo I just finished building out. It's basically coding agents for GTM starter kit.. not your LinkedIn skill pack.!!!"
   },
   "1s5r6bl": {
@@ -771,7 +771,7 @@
    "subreddit": "ContextEngineering",
    "score": 1,
    "comments": 1,
-   "views": 1200,
+   "views": 1400,
    "title": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data."
   },
   "1s5r41i": {
@@ -779,7 +779,7 @@
    "subreddit": "GTMbuilders",
    "score": 0,
    "comments": 0,
-   "views": 507,
+   "views": 561,
    "title": "Never hit a rate limit on $200 Max. Had Claude scan every complaint to figure out why. Here's the actual data."
   },
   "1s5kz3h": {
@@ -787,7 +787,7 @@
    "subreddit": "GTMbuilders",
    "score": 0,
    "comments": 2,
-   "views": 2400,
+   "views": 2800,
    "title": "Hey builders, dropping a repo I just finished building out. It's basically coding agents for GTM starter kit.. not your LinkedIn skill pack.!!!"
   },
   "1s3240b": {
@@ -803,7 +803,7 @@
    "subreddit": "ClaudeCode",
    "score": 1,
    "comments": 3,
-   "views": 1700,
+   "views": 1800,
    "title": "Claude Code Daily: March 25 edition is liveClaude Code Daily: March 24 recap. /dream shipped, the community invented a pharmacy, and a deaf developer built something more important than all of it."
   },
   "1s2t6da": {
@@ -811,15 +811,15 @@
    "subreddit": "ClaudeCode",
    "score": 2,
    "comments": 1,
-   "views": 4100,
+   "views": 4400,
    "title": "Okay, I know everyone has their version of a context system. I know I'm not reinventing the wheel here.If you're new to Claude Code, this is great. If not, feel free to offer your take"
   },
   "1s24yit": {
    "kind": "post",
    "subreddit": "ClaudeCode",
-   "score": 23,
+   "score": 22,
    "comments": 28,
-   "views": 31000,
+   "views": 32000,
    "title": "Been tracking Claude Code releases daily and writing up what actually matters from the subreddit noise. today's edition"
   },
   "1s257ld": {
@@ -834,7 +834,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 391,
+   "views": 410,
    "title": "Sharing something with the group that might shift how you think about content ops."
   },
   "1s21mmi": {
@@ -842,13 +842,13 @@
    "subreddit": "GTMbuilders",
    "score": 0,
    "comments": 1,
-   "views": 788,
+   "views": 809,
    "title": "Sharing something with the group that might shift how you think about content ops."
   },
   "1s01cxh": {
    "kind": "post",
    "subreddit": "ClaudeAI",
-   "score": 3,
+   "score": 2,
    "comments": 2,
    "views": 6100,
    "title": "March 20 Claude Daily...Here's the real value"
@@ -858,7 +858,7 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 0,
-   "views": 447,
+   "views": 464,
    "title": "March 20 Claude Daily...Here's the real value"
   },
   "1s018bg": {
@@ -866,7 +866,7 @@
    "subreddit": "GTMbuilders",
    "score": 2,
    "comments": 2,
-   "views": 777,
+   "views": 797,
    "title": "March 20 Claude Daily...Here's the real value"
   },
   "1s018w3": {
@@ -874,7 +874,7 @@
    "subreddit": "ClaudeCode",
    "score": 1,
    "comments": 0,
-   "views": 681,
+   "views": 700,
    "title": "March 20 Claude Code Daily...Here's the real value"
   },
   "1rzgfi8": {
@@ -882,7 +882,7 @@
    "subreddit": "theplumbernyc",
    "score": 1,
    "comments": 0,
-   "views": 490,
+   "views": 544,
    "title": "Part 2 From the plumber's son: what young tradespeople should be doing right now that most aren't"
   },
   "1rykecv": {
@@ -890,7 +890,7 @@
    "subreddit": "GTMbuilders",
    "score": 4,
    "comments": 6,
-   "views": 1100,
+   "views": 1200,
    "title": "Claude Code Daily is live."
   },
   "1rykgh9": {
@@ -898,7 +898,7 @@
    "subreddit": "ClaudeCode",
    "score": 0,
    "comments": 0,
-   "views": 794,
+   "views": 813,
    "title": "Claude Code Daily is live."
   },
   "1rykfez": {
@@ -906,7 +906,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 453,
+   "views": 471,
    "title": "Claude Code Daily is live."
   },
   "1rxsxq3": {
@@ -914,7 +914,7 @@
    "subreddit": "ClaudeCode",
    "score": 2,
    "comments": 3,
-   "views": 2800,
+   "views": 2900,
    "title": "vibe coding at 2 AM looks like on a MacBook Neo + Mini"
   },
   "1rxszin": {
@@ -930,13 +930,13 @@
    "subreddit": "buildinpublic",
    "score": 1,
    "comments": 0,
-   "views": 186,
+   "views": 204,
    "title": "vibe coding at 2 AM looks like on a MacBook Neo + Mini"
   },
   "1rwjqf3": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 12,
+   "score": 10,
    "comments": 8,
    "views": 2500,
    "title": "30 days on Reddit. 1,100 karma, 300K views. here's every comment and post type that worked. and what didn't"
@@ -946,7 +946,7 @@
    "subreddit": "gtmengineering",
    "score": 9,
    "comments": 10,
-   "views": 3500,
+   "views": 3600,
    "title": "I spent a month treating Reddit like a growth channel for GTM engineering. here's what worked."
   },
   "1rwl9ga": {
@@ -959,9 +959,9 @@
   "1rvq836": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 29,
+   "score": 27,
    "comments": 8,
-   "views": 13000,
+   "views": 14000,
    "title": "open-sourced my entire GTM engineering stack. not selling anything yet.... just tired of the gatekeeping."
   },
   "1rwl58g": {
@@ -977,7 +977,7 @@
    "subreddit": "ClaudeCode",
    "score": 1,
    "comments": 1,
-   "views": 947,
+   "views": 970,
    "title": "update on the 6-week build post + owning a mistake"
   },
   "1rv3cw2": {
@@ -991,9 +991,9 @@
   "1rv3j5j": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 9,
+   "score": 8,
    "comments": 2,
-   "views": 3100,
+   "views": 3200,
    "title": "what's up builders. dropping a LinkedIn post this morning that covers everything I've been building for the last 6 weeks with Claude Code."
   },
   "1rv3d1i": {
@@ -1001,7 +1001,7 @@
    "subreddit": "buildinpublic",
    "score": 1,
    "comments": 0,
-   "views": 390,
+   "views": 410,
    "title": "been mass building with Claude Code every day for 6 weeks straight. just left my agency a week ago betting on this stack full time."
   },
   "1ruth29": {
@@ -1009,21 +1009,21 @@
    "subreddit": "midjourney",
    "score": 0,
    "comments": 0,
-   "views": 1500,
+   "views": 1600,
    "title": "Built a deep-dive page on using Midjourney for website building.would love feedback"
   },
   "1rtxsmh": {
    "kind": "post",
    "subreddit": "ClaudeCode",
-   "score": 23,
+   "score": 24,
    "comments": 49,
-   "views": 73000,
+   "views": 76000,
    "title": "anyone running Claude Code over SSH from a thin client?"
   },
   "1rtvolz": {
    "kind": "post",
    "subreddit": "ClaudeCode",
-   "score": 11,
+   "score": 12,
    "comments": 3,
    "views": 12000,
    "title": "Testing the new 1M context window be like..."
@@ -1033,15 +1033,15 @@
    "subreddit": "GTMbuilders",
    "score": 1,
    "comments": 0,
-   "views": 650,
+   "views": 674,
    "title": "anyone running Claude Code over SSH from a thin client?"
   },
   "1rt2la2": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 9,
+   "score": 11,
    "comments": 0,
-   "views": 5400,
+   "views": 5700,
    "title": "yo. enough clay pricing talk....Claude Code v2.1.75 just landed and they quietly 5x'd the context window. 200k --> 1M tokens."
   },
   "1rt9x4o": {
@@ -1049,23 +1049,23 @@
    "subreddit": "GTMbuilders",
    "score": 2,
    "comments": 0,
-   "views": 551,
+   "views": 570,
    "title": "this was built before this subreddit existed. 4 sites, one monorepo, one Mac Mini. so im re-sharing...feedback appreciated"
   },
   "1rsfzmv": {
    "kind": "post",
    "subreddit": "ClaudeCode",
-   "score": 97,
+   "score": 98,
    "comments": 23,
-   "views": 27000,
+   "views": 28000,
    "title": "life now with cc remote control"
   },
   "1rt2jp4": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 4,
+   "score": 5,
    "comments": 3,
-   "views": 1600,
+   "views": 1700,
    "title": "Claude Code just dropped 1M context window and I'm losing it. 5x more room, same price."
   },
   "1rt9p91": {
@@ -1073,15 +1073,15 @@
    "subreddit": "GTMbuilders",
    "score": 1,
    "comments": 0,
-   "views": 470,
+   "views": 489,
    "title": "life now with cc remote control"
   },
   "1rt2zrk": {
    "kind": "post",
    "subreddit": "ClaudeCode",
-   "score": 1,
+   "score": 0,
    "comments": 12,
-   "views": 4700,
+   "views": 4800,
    "title": "200k --> 1M context window. same price. the compaction anxiety era is over. LFG!!!!"
   },
   "1rsweqs": {
@@ -1089,7 +1089,7 @@
    "subreddit": "askaplumber",
    "score": 1,
    "comments": 0,
-   "views": 222,
+   "views": 238,
    "title": "I spent 10 years as a plumber in NYC alongside my dad. Now I'm using tech to share everything he knows. for free."
   },
   "1rs14vv": {
@@ -1111,9 +1111,9 @@
   "1rrecae": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 6,
-   "comments": 24,
-   "views": 11000,
+   "score": 5,
+   "comments": 25,
+   "views": 12000,
    "title": "Clay Just Changed Their Entire Pricing Model. Here's My Take After 18 Months of grinding"
   },
   "1rrf0i5": {
@@ -1121,15 +1121,15 @@
    "subreddit": "GTMbuilders",
    "score": 3,
    "comments": 6,
-   "views": 1700,
+   "views": 1800,
    "title": "Clay's New Pricing. What It Actually Means If You're Not Living Inside Clay All Day"
   },
   "1rr4hlb": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 7,
+   "score": 8,
    "comments": 1,
-   "views": 1100,
+   "views": 1200,
    "title": "stop renting your audience. build your own website."
   },
   "1rr4iee": {
@@ -1137,7 +1137,7 @@
    "subreddit": "gtmengineering",
    "score": 3,
    "comments": 0,
-   "views": 454,
+   "views": 473,
    "title": "stop renting your audience. build your own website."
   },
   "1rq991a": {
@@ -1153,7 +1153,7 @@
    "subreddit": "ClaudeCode",
    "score": 1,
    "comments": 0,
-   "views": 1000,
+   "views": 1100,
    "title": "/Contexthandoffs + Claude Code sessions be like"
   },
   "1rr7swx": {
@@ -1161,7 +1161,7 @@
    "subreddit": "buildinpublic",
    "score": 1,
    "comments": 1,
-   "views": 211,
+   "views": 229,
    "title": "building a community for people actually shipping with AI"
   },
   "1rr6ssa": {
@@ -1175,7 +1175,7 @@
   "1rqg2sq": {
    "kind": "post",
    "subreddit": "gtmengineering",
-   "score": 10,
+   "score": 11,
    "comments": 6,
    "views": 2300,
    "title": "Before You Hire a Clay Agency. Free Audit Checklist"
@@ -1185,7 +1185,7 @@
    "subreddit": "GTMbuilders",
    "score": 2,
    "comments": 2,
-   "views": 729,
+   "views": 754,
    "title": "if you've ever felt like you were built for more than configuring someone else's tool.READ THIS."
   },
   "1rqk2oy": {
@@ -1193,13 +1193,13 @@
    "subreddit": "GTMbuilders",
    "score": 3,
    "comments": 0,
-   "views": 1300,
+   "views": 1400,
    "title": "builder-led growth is not a strategy. it's a rejection of everything that's broken."
   },
   "1rqitww": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 3,
+   "score": 4,
    "comments": 11,
    "views": 1300,
    "title": "the new GTM resume is a GitHub repo and Reddit karma"
@@ -1209,7 +1209,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 345,
+   "views": 362,
    "title": "if you've ever felt like you were built for more than configuring someone else's tool.READ THIS."
   },
   "1rqku0m": {
@@ -1217,7 +1217,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 343,
+   "views": 361,
    "title": "builder-led growth is not a strategy. it's a rejection of everything that's broken."
   },
   "1rqixpo": {
@@ -1225,7 +1225,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 8,
-   "views": 1100,
+   "views": 1200,
    "title": "the new GTM resume is a GitHub repo and Reddit karma"
   },
   "1rqg2zr": {
@@ -1233,7 +1233,7 @@
    "subreddit": "SaaS",
    "score": 1,
    "comments": 0,
-   "views": 228,
+   "views": 245,
    "title": "Before You Hire a Clay Agency. Free Audit Checklist"
   },
   "1rq99j7": {
@@ -1241,7 +1241,7 @@
    "subreddit": "buildinpublic",
    "score": 2,
    "comments": 1,
-   "views": 195,
+   "views": 213,
    "title": "I spent 10 years as a plumber in NYC alongside my dad. Now I'm using tech to share everything he knows. for free."
   },
   "1roenoy": {
@@ -1249,7 +1249,7 @@
    "subreddit": "gtmengineering",
    "score": 27,
    "comments": 9,
-   "views": 7200,
+   "views": 7600,
    "title": "from SDR to solo GTM engineer. the AI development method behind my entire operation"
   },
   "1rosk43": {
@@ -1257,7 +1257,7 @@
    "subreddit": "claude",
    "score": 0,
    "comments": 0,
-   "views": 729,
+   "views": 747,
    "title": "from SDR to solo GTM engineer. the AI development method behind my entire operation"
   },
   "1rof0eb": {
@@ -1265,7 +1265,7 @@
    "subreddit": "buildinpublic",
    "score": 1,
    "comments": 0,
-   "views": 325,
+   "views": 343,
    "title": "from SDR to solo GTM engineer. the AI development method behind my entire operation"
   },
   "1roepik": {
@@ -1273,7 +1273,7 @@
    "subreddit": "ClaudeCode",
    "score": 0,
    "comments": 0,
-   "views": 837,
+   "views": 855,
    "title": "I built a methodology for working with Claude Code after weeks of heavy use. looking for early feedback"
   },
   "otmznw1": {
@@ -1289,7 +1289,7 @@
   "ost1ki0": {
    "kind": "comment",
    "subreddit": "gtmengineering",
-   "score": 6
+   "score": 4
   },
   "osfkm20": {
    "kind": "comment",
@@ -1944,22 +1944,22 @@
   "okrs8if": {
    "kind": "comment",
    "subreddit": "OnePiece",
-   "score": 6
+   "score": 4
   },
   "okrrgm9": {
    "kind": "comment",
    "subreddit": "OnePiece",
-   "score": 12
+   "score": 11
   },
   "okrozvb": {
    "kind": "comment",
    "subreddit": "OnePiece",
-   "score": 7
+   "score": 8
   },
   "okrm3b4": {
    "kind": "comment",
    "subreddit": "OnePiece",
-   "score": 18
+   "score": 17
   },
   "okqdp0d": {
    "kind": "comment",
@@ -1989,7 +1989,7 @@
   "ojn6yek": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": 3
+   "score": 5
   },
   "ojmg353": {
    "kind": "comment",
@@ -2019,7 +2019,7 @@
   "oia30vu": {
    "kind": "comment",
    "subreddit": "gtmengineering",
-   "score": -3
+   "score": -4
   },
   "oi9qn9k": {
    "kind": "comment",
@@ -2029,7 +2029,7 @@
   "oi9q4ic": {
    "kind": "comment",
    "subreddit": "gtmengineering",
-   "score": -4
+   "score": -3
   },
   "oi968x0": {
    "kind": "comment",
@@ -2094,7 +2094,7 @@
   "ohl2ccv": {
    "kind": "comment",
    "subreddit": "hubspot",
-   "score": 5
+   "score": 4
   },
   "ohl114r": {
    "kind": "comment",
@@ -2149,7 +2149,7 @@
   "ofs6a8c": {
    "kind": "comment",
    "subreddit": "gtmengineering",
-   "score": 9
+   "score": 7
   },
   "ofpmq5p": {
    "kind": "comment",
@@ -2184,7 +2184,7 @@
   "ofgi91d": {
    "kind": "comment",
    "subreddit": "gtmengineering",
-   "score": 6
+   "score": 7
   },
   "ofc1cpb": {
    "kind": "comment",
@@ -2194,7 +2194,7 @@
   "ofc13i6": {
    "kind": "comment",
    "subreddit": "OnePiece",
-   "score": 7
+   "score": 8
   },
   "ofc0ozz": {
    "kind": "comment",
@@ -2244,7 +2244,7 @@
   "oej0uep": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": 4
+   "score": 3
   },
   "oeiipev": {
    "kind": "comment",
@@ -2384,12 +2384,12 @@
   "ocwx7vv": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 0
+   "score": -2
   },
   "ocwwued": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": -4
+   "score": -3
   },
   "ocwvq8m": {
    "kind": "comment",
@@ -2399,12 +2399,12 @@
   "ocwuqdj": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": -5
+   "score": -6
   },
   "ocwugyw": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": 2
+   "score": 3
   },
   "ocwub2p": {
    "kind": "comment",
@@ -2429,27 +2429,27 @@
   "ocws6q4": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": -21
+   "score": -22
   },
   "ocwrixj": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": -2
+   "score": -1
   },
   "ocwpwvk": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": 4
+   "score": 5
   },
   "ocwpjtx": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 5
+   "score": 4
   },
   "ocwp71g": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": 7
+   "score": 6
   },
   "ocwoxhv": {
    "kind": "comment",
@@ -2459,12 +2459,12 @@
   "ocwonq6": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": 9
+   "score": 7
   },
   "ocwofy4": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": -27
+   "score": -31
   },
   "ocwnro5": {
    "kind": "comment",
@@ -2479,7 +2479,7 @@
   "ocwlqfg": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 6
+   "score": 7
   },
   "ocwfg64": {
    "kind": "comment",
@@ -2559,7 +2559,7 @@
   "occaukb": {
    "kind": "comment",
    "subreddit": "GTMbuilders",
-   "score": 5
+   "score": 6
   },
   "oc9yl5g": {
    "kind": "comment",
@@ -2844,7 +2844,7 @@
   "ob0jrv4": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": -1
+   "score": -2
   },
   "ob0cnpy": {
    "kind": "comment",
@@ -2974,7 +2974,7 @@
   "oary5n2": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 6
+   "score": 5
   },
   "oarxn0w": {
    "kind": "comment",
@@ -2994,12 +2994,12 @@
   "oarwq6d": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": -4
+   "score": -3
   },
   "oarwocn": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 3
+   "score": 4
   },
   "oarwfft": {
    "kind": "comment",
@@ -3014,12 +3014,12 @@
   "oapxd4n": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 6
+   "score": 4
   },
   "oapx2am": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 4
+   "score": 3
   },
   "oapsrok": {
    "kind": "comment",
@@ -3089,7 +3089,7 @@
   "oaiuqvr": {
    "kind": "comment",
    "subreddit": "gtmengineering",
-   "score": 4
+   "score": 5
   },
   "oai6sc1": {
    "kind": "comment",
@@ -3104,7 +3104,7 @@
   "oahj2w3": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 6
+   "score": 8
   },
   "oahiwg0": {
    "kind": "comment",
@@ -3119,7 +3119,7 @@
   "oahfbz4": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 4
+   "score": 5
   },
   "oahf43d": {
    "kind": "comment",
@@ -3204,7 +3204,7 @@
   "oab1cv3": {
    "kind": "comment",
    "subreddit": "NYCapartments",
-   "score": 5
+   "score": 7
   },
   "oab11vj": {
    "kind": "comment",
@@ -3364,7 +3364,7 @@
   "o9xairb": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 235
+   "score": 236
   },
   "o9x9pm2": {
    "kind": "comment",
@@ -3459,7 +3459,7 @@
   "o9r056m": {
    "kind": "comment",
    "subreddit": "NYCapartments",
-   "score": 8
+   "score": 9
   },
   "o9qzzur": {
    "kind": "comment",
@@ -3469,12 +3469,12 @@
   "o9qyxck": {
    "kind": "comment",
    "subreddit": "NYCapartments",
-   "score": 9
+   "score": 11
   },
   "o9qumhf": {
    "kind": "comment",
    "subreddit": "AskNYC",
-   "score": 5
+   "score": 4
   },
   "o9qajcb": {
    "kind": "comment",
@@ -3494,7 +3494,7 @@
   "o9p9snl": {
    "kind": "comment",
    "subreddit": "AskNYC",
-   "score": 6
+   "score": 5
   },
   "o9miku2": {
    "kind": "comment",
@@ -3514,7 +3514,7 @@
   "o9m1o8j": {
    "kind": "comment",
    "subreddit": "AskNYC",
-   "score": 6
+   "score": 8
   },
   "o9m193a": {
    "kind": "comment",
@@ -3524,7 +3524,7 @@
   "o9m0v7o": {
    "kind": "comment",
    "subreddit": "AskNYC",
-   "score": 3
+   "score": 4
   },
   "o9lxvs1": {
    "kind": "comment",
@@ -3534,7 +3534,7 @@
   "o9lx7g1": {
    "kind": "comment",
    "subreddit": "AskNYC",
-   "score": 10
+   "score": 9
   },
   "o9lwxd2": {
    "kind": "comment",
@@ -3549,7 +3549,7 @@
   "o9jdlnz": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 8
+   "score": 9
   },
   "o9j9beh": {
    "kind": "comment",
@@ -3794,7 +3794,7 @@
   "o858pvg": {
    "kind": "comment",
    "subreddit": "claude",
-   "score": 2
+   "score": 3
   },
   "o855c0y": {
    "kind": "comment",
@@ -3839,7 +3839,7 @@
   "o80mkva": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 3
+   "score": 4
   },
   "o7ziqgw": {
    "kind": "comment",
@@ -3874,7 +3874,7 @@
   "o7yr3cc": {
    "kind": "comment",
    "subreddit": "ClaudeAI",
-   "score": 32
+   "score": 31
   },
   "o7yjlyq": {
    "kind": "comment",
@@ -3951,7 +3951,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 0,
-   "views": 384,
+   "views": 414,
    "title": "Set effort to max. (terminal hack) part 5 in my new YT series. The long form got cut on this episode, but the shorts are live. Check them out."
   },
   "1uewyca": {
@@ -3959,7 +3959,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 664,
+   "views": 687,
    "title": "Set effort to max. (terminal hack) use accordingly, though."
   },
   "1uewwqk": {
@@ -3967,7 +3967,7 @@
    "subreddit": "buildinpublic",
    "score": 1,
    "comments": 0,
-   "views": 177,
+   "views": 197,
    "title": "Set effort to max. (terminal hack) for the building public crowd, sharing my founder's journey, with all the rough edges, sorry for the bad audio"
   },
   "1uewve8": {
@@ -3983,7 +3983,7 @@
    "subreddit": "GTMbuilders",
    "score": 1,
    "comments": 0,
-   "views": 461,
+   "views": 488,
    "title": "Set effort to max. (terminal hack)"
   },
   "1ufw2ov": {
@@ -3991,7 +3991,7 @@
    "subreddit": "GTMbuilders",
    "score": 5,
    "comments": 0,
-   "views": 1400,
+   "views": 1500,
    "title": "33 domains. New ACS account. Building the moat in public."
   },
   "1ufwal0": {
@@ -4007,7 +4007,7 @@
    "subreddit": "saasbuild",
    "score": 1,
    "comments": 1,
-   "views": 338,
+   "views": 364,
    "title": "Building email infrastructure for my SaaS in public: 33 new domains, isolated ACS warming nest (Part 1)"
   },
   "1uffq02": {
@@ -4015,7 +4015,7 @@
    "subreddit": "GTMbuilders",
    "score": 1,
    "comments": 0,
-   "views": 452,
+   "views": 512,
    "title": "Be neurotic with your AI. #buildinpublic #claude  #vibecoding"
   },
   "otsi9yg": {
@@ -4033,7 +4033,7 @@
    "subreddit": "GTMbuilders",
    "score": 3,
    "comments": 0,
-   "views": 705,
+   "views": 874,
    "title": "SQLite = GTM god mode ifyky. and if u dont i got you."
   },
   "oun15gd": {
@@ -4044,7 +4044,7 @@
   "1ujwebv": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 10,
+   "score": 9,
    "comments": 2,
    "views": 3000,
    "title": "My current GTM builder stack for turning actual work into content"
@@ -4054,7 +4054,7 @@
    "subreddit": "GTMbuilders",
    "score": 2,
    "comments": 0,
-   "views": 818,
+   "views": 919,
    "title": "Claude for Terminal + Codex in the App: This Is My Founder's Journey (Ep..."
   },
   "1ul0qul": {
@@ -4062,7 +4062,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 783,
+   "views": 827,
    "title": "Claude for Terminal + Codex in the App: This Is My Founder's Journey (Ep..."
   },
   "1ul0pb7": {
@@ -4070,20 +4070,20 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 1,
-   "views": 614,
+   "views": 647,
    "title": "Claude for Terminal + Codex in the App: This Is My Founder's Journey (Ep..."
   },
   "ov1w3mv": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 3
+   "score": 2
   },
   "1un0c8x": {
    "kind": "post",
    "subreddit": "ClaudeCode",
-   "score": 65,
+   "score": 63,
    "comments": 26,
-   "views": 56000,
+   "views": 57000,
    "title": "Reddit killed my scraper two months ago. Claude Code just rebuilt its own daily show."
   },
   "1un0m9e": {
@@ -4106,15 +4106,15 @@
    "subreddit": "AiBuilders",
    "score": 0,
    "comments": 0,
-   "views": 965,
+   "views": 1000,
    "title": "I rebuilt an AI content loop after Reddit killed the JSON input."
   },
   "1un0aqm": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 10,
+   "score": 11,
    "comments": 1,
-   "views": 4600,
+   "views": 4700,
    "title": "Bringing back my automated daily content engine. Full stack breakdown for anyone who wants to run this play in their own niche."
   },
   "ovgvv15": {
@@ -4145,7 +4145,7 @@
   "ovglgua": {
    "kind": "comment",
    "subreddit": "ClaudeCode",
-   "score": 4
+   "score": 3
   },
   "ovgknbd": {
    "kind": "comment",
@@ -4195,9 +4195,9 @@
   "1uplv6r": {
    "kind": "post",
    "subreddit": "GTMbuilders",
-   "score": 9,
-   "comments": 5,
-   "views": 5200,
+   "score": 10,
+   "comments": 4,
+   "views": 5400,
    "title": "I scraped every GTM thread across 9 subs from the past two weeks and pulled the stuff you can actually use. all of it is here."
   },
   "1uplvm2": {
@@ -4205,7 +4205,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 1,
-   "views": 826,
+   "views": 890,
    "title": "I scraped every GTM thread across 9 subs from the past two weeks and pulled the stuff you can actually use. all of it is here."
   },
   "ow4en5k": {
@@ -4228,7 +4228,7 @@
    "subreddit": "ClaudeGTM",
    "score": 1,
    "comments": 0,
-   "views": 739,
+   "views": 835,
    "title": "Claude Code Daily just dropped. Anthropic reset all the limits after Sol"
   },
   "1ut7u7r": {
@@ -4236,7 +4236,7 @@
    "subreddit": "gtmengineering",
    "score": 1,
    "comments": 2,
-   "views": 739,
+   "views": 797,
    "title": "Claude Code Daily just dropped. Anthropic reset all the limits after Sol"
   },
   "1ut7tbh": {
@@ -4244,7 +4244,7 @@
    "subreddit": "GTMbuilders",
    "score": 3,
    "comments": 2,
-   "views": 1900,
+   "views": 2000,
    "title": "Claude Code Daily just dropped. Anthropic reset all the limits after Sol"
   },
   "1ut7pk0": {
@@ -4252,7 +4252,7 @@
    "subreddit": "ClaudeCode",
    "score": 0,
    "comments": 2,
-   "views": 3200,
+   "views": 3300,
    "title": "Anthropic said bet. Claude Code Daily breaks it down"
   },
   "owu1mow": {
@@ -4274,8 +4274,8 @@
    "kind": "post",
    "subreddit": "GTMbuilders",
    "score": 20,
-   "comments": 9,
-   "views": 15000,
+   "comments": 10,
+   "views": 16000,
    "title": "Ran Claude Code subagents over my entire LinkedIn network to build a warm outreach engine. Full breakdown."
   },
   "1uxneu6": {
@@ -4291,7 +4291,7 @@
    "subreddit": "ClaudeGTM",
    "score": 2,
    "comments": 0,
-   "views": 728,
+   "views": 904,
    "title": "Ran Claude Code subagents over my entire LinkedIn network to build a warm outreach engine. Full breakdown."
   },
   "1uxn2hl": {
@@ -4299,7 +4299,7 @@
    "subreddit": "gtmengineering",
    "score": 2,
    "comments": 1,
-   "views": 707,
+   "views": 825,
    "title": "Ran Claude Code subagents over my entire LinkedIn network to build a warm outreach engine. Full breakdown."
   },
   "oxyk1qh": {
@@ -4320,7 +4320,7 @@
   "oxxlhtl": {
    "kind": "comment",
    "subreddit": "hubspot",
-   "score": 2
+   "score": 3
   },
   "oxxke0c": {
    "kind": "comment",
@@ -4346,13 +4346,276 @@
    "kind": "comment",
    "subreddit": "GTMbuilders",
    "score": 1
+  },
+  "1v26k0p": {
+   "kind": "post",
+   "subreddit": "OnePiece",
+   "score": 9,
+   "comments": 2,
+   "views": 4800,
+   "title": "yo op fam built a live One Piece globe that changes with your chapter who wants to help map it?"
+  },
+  "1v1y3sc": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 3,
+   "views": 605,
+   "title": "1,518,547 views in 4.7 months, and the graph that explains all of it is about comments."
+  },
+  "1v1y37t": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 0,
+   "views": 1500,
+   "title": "1,518,547 views in 4.7 months, and the graph that explains all of it is about comments."
+  },
+  "oyt6vxp": {
+   "kind": "comment",
+   "subreddit": "OnePiece",
+   "score": 0
+  },
+  "oyrlfok": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "1v3yuv2": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 9,
+   "comments": 0,
+   "views": 4000,
+   "title": "GTM builders, this is another piece of the system I actually run. Plus, free workflow builder prompt"
+  },
+  "1v3yvr2": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 442,
+   "title": "GTM builders, this is another piece of the system I actually run. Plus, free workflow builder prompt"
+  },
+  "1v3yv05": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 1,
+   "views": 372,
+   "title": "GTM builders, this is another piece of the system I actually run. Plus, free workflow builder prompt"
+  },
+  "1v5sku6": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 3,
+   "comments": 4,
+   "views": 1600,
+   "title": "The Apollo API plus a coding agent, writing to a SQLite store I own."
+  },
+  "1v5vkhg": {
+   "kind": "post",
+   "subreddit": "AI_Sales",
+   "score": 2,
+   "comments": 0,
+   "views": 189,
+   "title": "The Apollo API plus a coding agent, writing to a SQLite store I own."
+  },
+  "1v5q19r": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 2,
+   "comments": 0,
+   "views": 339,
+   "title": "The Apollo API plus a coding agent, writing to your own SQLite database."
+  },
+  "1v5pgd1": {
+   "kind": "post",
+   "subreddit": "UseApolloIo",
+   "score": 5,
+   "comments": 0,
+   "views": 807,
+   "title": "The Apollo API plus a coding agent, writing to your own SQLite database."
+  },
+  "ozmoolt": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "ozknimb": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 2
+  },
+  "ozjpccz": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 1
+  },
+  "ozrr8j5": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "1v8iq1l": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 7,
+   "comments": 21,
+   "views": 2800,
+   "title": "What if GTM Builders became the place where we test new AI tools before everyone else?"
+  },
+  "1v8l9zj": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 1,
+   "views": 394,
+   "title": "What if GTM Builders became the place where we test new AI tools before everyone else?"
+  },
+  "1v8l9vw": {
+   "kind": "post",
+   "subreddit": "ClaudeGTM",
+   "score": 1,
+   "comments": 0,
+   "views": 460,
+   "title": "What if GTM Builders became the place where we test new AI tools before everyone else?"
+  },
+  "p07xx0d": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p07neia": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p07nc4h": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p07nanq": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "p07n7yb": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p07gl2p": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p071f53": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p06ms5d": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p06m9o9": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p06m35g": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p051byq": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p04t66u": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 2
+  },
+  "p0x3lz7": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p0wi5vd": {
+   "kind": "comment",
+   "subreddit": "UseApolloIo",
+   "score": 2
+  },
+  "p0whtee": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "1vf2dc7": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 1,
+   "comments": 4,
+   "views": 654,
+   "title": "Follow-up to the GTM workspace post from last week. Two things: a dumb mistake worth sharing, and a change in direction."
+  },
+  "1vew839": {
+   "kind": "post",
+   "subreddit": "gtmengineering",
+   "score": 1,
+   "comments": 0,
+   "views": 176,
+   "title": "We recorded a podcast that doesn't exist publicly for 2 more weeks. The distribution for it started a week ago."
+  },
+  "1vew7wd": {
+   "kind": "post",
+   "subreddit": "GTMbuilders",
+   "score": 2,
+   "comments": 0,
+   "views": 780,
+   "title": "We recorded a podcast that doesn't exist publicly for 2 more weeks. The distribution for it started a week ago."
+  },
+  "p1ljn8q": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 3
+  },
+  "p1ljkgl": {
+   "kind": "comment",
+   "subreddit": "gtmengineering",
+   "score": 2
+  },
+  "p1lhs9t": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p1k9iit": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p1gwgt8": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
+  },
+  "p1oe5st": {
+   "kind": "comment",
+   "subreddit": "GTMbuilders",
+   "score": 1
   }
  },
  "compound": {
   "windowStart": "2026-06-25",
-  "windowEnd": "2026-07-20",
-  "windowDays": 25,
-  "snapshots": 22,
+  "windowEnd": "2026-08-05",
+  "windowDays": 41,
+  "snapshots": 38,
   "series": [
    {
     "date": "2026-06-25",
@@ -4463,11 +4726,91 @@
     "date": "2026-07-20",
     "views": 1409268,
     "posts": 145
+   },
+   {
+    "date": "2026-07-21",
+    "views": 1410647,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-22",
+    "views": 1411358,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-23",
+    "views": 1412745,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-24",
+    "views": 1413433,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-25",
+    "views": 1416021,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-26",
+    "views": 1416718,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-27",
+    "views": 1418309,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-28",
+    "views": 1419996,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-29",
+    "views": 1421781,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-30",
+    "views": 1422468,
+    "posts": 145
+   },
+   {
+    "date": "2026-07-31",
+    "views": 1422633,
+    "posts": 145
+   },
+   {
+    "date": "2026-08-01",
+    "views": 1422633,
+    "posts": 145
+   },
+   {
+    "date": "2026-08-02",
+    "views": 1424409,
+    "posts": 145
+   },
+   {
+    "date": "2026-08-03",
+    "views": 1424685,
+    "posts": 145
+   },
+   {
+    "date": "2026-08-04",
+    "views": 1424872,
+    "posts": 145
+   },
+   {
+    "date": "2026-08-05",
+    "views": 1426046,
+    "posts": 145
    }
   ],
   "cohortPosts": 145,
-  "cohortGrew": 128,
-  "viewsGained": 46057,
+  "cohortGrew": 136,
+  "viewsGained": 62835,
   "oldestStillGrowing": "2026-03-08"
  },
  "ramp": {
@@ -4621,17 +4964,31 @@
    },
    {
     "weekStart": "2026-07-20",
-    "weekEnd": "2026-07-20",
-    "days": 1,
-    "comments": 1,
-    "posts": 0
+    "weekEnd": "2026-07-25",
+    "days": 5,
+    "comments": 7,
+    "posts": 10
+   },
+   {
+    "weekStart": "2026-07-27",
+    "weekEnd": "2026-07-31",
+    "days": 3,
+    "comments": 15,
+    "posts": 3
+   },
+   {
+    "weekStart": "2026-08-03",
+    "weekEnd": "2026-08-04",
+    "days": 2,
+    "comments": 6,
+    "posts": 3
    }
   ],
   "eras": [
    {
     "era": "clearbox",
-    "comments": 225,
-    "posts": 97
+    "comments": 252,
+    "posts": 113
    },
    {
     "era": "karma-building",
@@ -4647,51 +5004,58 @@
    {
     "subreddit": "ClaudeAI",
     "posts": 7,
-    "views": 371300,
-    "score": 302,
-    "viewsPerUpvote": 1229.5
+    "views": 372400,
+    "score": 304,
+    "viewsPerUpvote": 1225.0
    },
    {
     "subreddit": "ClaudeCode",
     "posts": 24,
-    "views": 734659,
-    "score": 609,
-    "viewsPerUpvote": 1206.3
+    "views": 741638,
+    "score": 608,
+    "viewsPerUpvote": 1219.8
    },
    {
     "subreddit": "ClaudeGTM",
-    "posts": 20,
-    "views": 23361,
-    "score": 35,
-    "viewsPerUpvote": 667.5
+    "posts": 22,
+    "views": 25321,
+    "score": 36,
+    "viewsPerUpvote": 703.4
    },
    {
     "subreddit": "GTMbuilders",
-    "posts": 49,
-    "views": 158039,
-    "score": 347,
-    "viewsPerUpvote": 455.4
+    "posts": 55,
+    "views": 174283,
+    "score": 376,
+    "viewsPerUpvote": 463.5
    },
    {
     "subreddit": "gtmengineering",
-    "posts": 44,
-    "views": 89392,
-    "score": 271,
-    "viewsPerUpvote": 329.9
+    "posts": 49,
+    "views": 96738,
+    "score": 276,
+    "viewsPerUpvote": 350.5
    },
    {
     "subreddit": "saasbuild",
     "posts": 3,
-    "views": 939,
+    "views": 1001,
     "score": 3,
-    "viewsPerUpvote": 313.0
+    "viewsPerUpvote": 333.7
    },
    {
     "subreddit": "buildinpublic",
     "posts": 8,
-    "views": 2116,
+    "views": 2260,
     "score": 8,
-    "viewsPerUpvote": 264.5
+    "viewsPerUpvote": 282.5
+   },
+   {
+    "subreddit": "UseApolloIo",
+    "posts": 3,
+    "views": 5007,
+    "score": 18,
+    "viewsPerUpvote": 278.2
    }
   ]
  },
@@ -4711,16 +5075,22 @@
     "perPost": 20.79
    },
    {
+    "subreddit": "UseApolloIo",
+    "posts": 3,
+    "comments": 15,
+    "perPost": 5.0
+   },
+   {
     "subreddit": "gtmengineering",
-    "posts": 44,
-    "comments": 201,
-    "perPost": 4.57
+    "posts": 49,
+    "comments": 208,
+    "perPost": 4.24
    },
    {
     "subreddit": "GTMbuilders",
-    "posts": 49,
-    "comments": 192,
-    "perPost": 3.92
+    "posts": 55,
+    "comments": 221,
+    "perPost": 4.02
    },
    {
     "subreddit": "buildinpublic",
@@ -4736,9 +5106,9 @@
    },
    {
     "subreddit": "ClaudeGTM",
-    "posts": 21,
+    "posts": 23,
     "comments": 5,
-    "perPost": 0.24
+    "perPost": 0.22
    }
   ]
  }

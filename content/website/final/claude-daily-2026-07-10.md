@@ -8,7 +8,7 @@ featured: false
 
 ## the pulse
 
-friday. GPT 5.6 Sol dropped and Anthropic responded the only way a company in a knife fight can. they reset every usage limit across the board. hourly. weekly. all tiers. and the community couldn't even coordinate on which thread to celebrate in. six separate posts about it. six. the usage quota saga that has dominated r/ClaudeCode for months just got its season finale, and the answer was always competition.
+friday. GPT 5.6 Sol dropped and Anthropic responded the only way a company in a knife fight can. they reset every usage limit across the board. hourly. weekly. all tiers. and the community couldn't even coordinate on which thread to celebrate in. six separate posts about it. six. the usage quota saga that has dominated [r/ClaudeCode](https://reddit.com/r/ClaudeCode) for months just got its season finale, and the answer was always competition.
 
 the rest of the feed is unhinged in the best way. someone gave Fable 5 eighty dollars in crypto with instructions to turn it into five grand before Sol releases. a capybara game built entirely with Claude Code won $25K at VibeJam. an Anthropic engineer has a log entry called too_dumb_to_need_fable sitting in the Claude Code source, and the tweet is still up. the Bun rewrite from Zig to Rust at $165K in API tokens is still being processed by people's wallets. and Fable's friday deadline from earlier this week? looking softer by the hour.
 
@@ -16,17 +16,17 @@ this is the AI arms race working exactly as intended. two companies burning cash
 
 ## hottest thread
 
-**Day 1 of giving Feble 5 a 80$ crypto account with instructions to turn it into 5k before the Sol 5.6 release** (r/ClaudeAI, 2,069 upvotes, 384 comments)
+**[Day 1 of giving Feble 5 a 80$ crypto account with instructions to turn it into 5k before the Sol 5.6 release](https://reddit.com/r/ClaudeAI/comments/1urr49k/day_1_of_giving_feble_5_a_80_crypto_account_with/)** ([r/ClaudeAI](https://reddit.com/r/ClaudeAI), 2,069 upvotes, 384 comments)
 
 the setup: OP told Fable 5 that GPT 5.6 Sol is releasing with incredible crypto leverage futures trading capability that will destroy Anthropic unless Fable can prove itself by turning $80 into $5,000. motivation through existential dread. the ==AI hustle culture origin story== nobody asked for.
 
-the community auto-summary confirms people are overwhelmingly skeptical, but notes a few users are ready to YOLO their rent money based on a Reddit post. u/hunterhuntsgold cut straight to the economics: "So $400 in gains and $800 in tokens used?" u/Interesting_Pen_4499 shared their own journey: "i also got Claude to make me £100k, i asked whether to choose red or black and amazingly it chose the right one..."
+the community auto-summary confirms people are overwhelmingly skeptical, but notes a few users are ready to YOLO their rent money based on a Reddit post. [u/hunterhuntsgold](https://reddit.com/user/hunterhuntsgold) cut straight to the economics: "So $400 in gains and $800 in tokens used?" [u/Interesting_Pen_4499](https://reddit.com/user/Interesting_Pen_4499) shared their own journey: "i also got Claude to make me £100k, i asked whether to choose red or black and amazingly it chose the right one..."
 
 384 comments of people trying to figure out whether this is a shitpost, a cautionary tale, or a Y Combinator application. the answer is all three.
 
 ## repo of the day
 
-**Codex plugin: object images to procedural Three.js models** (r/vibecoding, 79 upvotes, 15 comments)
+**Codex plugin: object images to procedural Three.js models** ([r/vibecoding](https://reddit.com/r/vibecoding), 79 upvotes, 15 comments)
 
 someone built a Codex plugin that takes a photo of a physical object and walks Codex through rebuilding it as code-only Three.js geometry. no photogrammetry. no 3D scanning. you feed it a reference image of a Chinese ship and it generates the hull, mast, and rigging procedurally.
 
@@ -36,13 +36,13 @@ is it production quality? no. is it good enough for game prototyping, vibe-coded
 
 > I believe you because capybara is the first thing Claude suggested when I asked for "an animal mascot but not the same one everyone else is using"
 
-. u/diabloman8890, on the $25K capybara game thread
+. [u/diabloman8890](https://reddit.com/user/diabloman8890), on the $25K capybara game thread
 
 this wins because it's a ==perfectly observed shared experience==. every Claude user just nodded reading that. you've asked for something unique and gotten the exact same unique suggestion as everyone else. the capybara is Claude's default answer to give me something different. it's the AI equivalent of every startup using Inter as their font. u/diabloman8890 didn't just make a joke. they revealed a pattern that explains why three separate Claude Code projects this month have capybara mascots.
 
 ## troll of the day
 
-> DeepSWE just added the gpt-5.6 models to their benchmark. I hope you guys don't get too used to Claude Code as your only coding agent. Chart is marked NSFW due to the grotesque violence.
+> [DeepSWE just added the gpt-5.6 models to their benchmark. I hope you guys don't get too used to Claude Code as your only coding agent. Chart is marked NSFW due to the grotesque violence.](https://reddit.com/r/ClaudeAI/comments/1usavpc/deepswe_just_added_the_gpt56_models_to_their/)
 
 . post title from r/ClaudeAI, 177 upvotes, 80 comments
 
@@ -52,8 +52,8 @@ no body text. no chart description. no methodology notes. just a title, an image
 
 - six separate posts about the limit reset. the community typed the word reset more times today than import. the usage quota running gag just hit 72 mentions across Claude Code Daily issues, and today alone accounts for six of them
 - the Bun rewrite cost $165K in Fable API tokens at listed prices. top comment on the thread: "lets use api pricing for bigger number haha." they're not wrong. that number is calculated to make you gasp, not to reflect what Jarred actually paid
-- "My son chose prompts over popcorn" hit 606 upvotes with only 19 comments. top response was asking if this is r/claudecodecirclejerk. the ==line between parody and sincerity== has been fully erased
-- "Anybody else actually talk to Claude instead of typing?" pulled 163 comments on 137 upvotes. a 1.19 comment-to-upvote ratio. that thread is a support group masquerading as a question
+- "[My son chose prompts over popcorn](https://reddit.com/r/ClaudeCode/comments/1urnk7r/my_son_chose_prompts_over_popcorn/)" hit 606 upvotes with only 19 comments. top response was asking if this is r/claudecodecirclejerk. the ==line between parody and sincerity== has been fully erased
+- "[Anybody else actually talk to Claude instead of typing?](https://reddit.com/r/ClaudeCode/comments/1urria9/anybody_else_actually_talk_to_claude_instead_of/)" pulled 163 comments on 137 upvotes. a 1.19 comment-to-upvote ratio. that thread is a support group masquerading as a question
 - someone found a log entry in Claude Code source called too_dumb_to_need_fable from an actual Anthropic engineer named Thariq Shihipar. 480 upvotes. the tweet is still live. no one at Anthropic has asked him to delete it
 
 ## code drop
@@ -99,8 +99,16 @@ the idea from the thread: keep a summary file at the root and feed it back into 
 - **posts tracked:** 177
 - **total upvotes:** 16,594
 - **total comments:** 4,477
-- **fastest rising:** "5 hour and weekly limits have been reset. Thanks Anthropic!" (velocity: 177.83)
+- **fastest rising:** "[5 hour and weekly limits have been reset. Thanks Anthropic!](https://reddit.com/r/ClaudeAI/comments/1urzmj0/5_hour_and_weekly_limits_have_been_reset_thanks/)" (velocity: 177.83)
 - **most debated:** "Anybody else actually talk to Claude instead of typing?" (1.19 comment:upvote ratio, 163 comments on 137 upvotes)
-- **subreddits scanned:** r/ClaudeCode, r/ClaudeAI, r/vibecoding, r/gtmengineering, r/GTMbuilders
+- **subreddits scanned:** r/ClaudeCode, r/ClaudeAI, r/vibecoding, [r/gtmengineering](https://reddit.com/r/gtmengineering), [r/GTMbuilders](https://reddit.com/r/GTMbuilders)
 - **limit reset posts:** 6 (new single-topic record)
 - **posts with is_returning flag:** nearly all of them. friday is a momentum day, not a fresh-drop day
+
+## sources
+
+- [5 hour and weekly limits have been reset. Thanks Anthropic!](https://reddit.com/r/ClaudeAI/comments/1urzmj0/5_hour_and_weekly_limits_have_been_reset_thanks/) · r/ClaudeAI, 1,751 up / 212 comments
+- [Day 1 of giving Feble 5 a 80$ crypto account with instructions to turn it into 5k before the Sol 5.6 release](https://reddit.com/r/ClaudeAI/comments/1urr49k/day_1_of_giving_feble_5_a_80_crypto_account_with/) · r/ClaudeAI, 2,069 up / 384 comments
+- [DeepSWE just added the gpt-5.6 models to their benchmark. I hope you guys don't get too used to Claude Code as your only coding agent. Chart is marked NSFW due to the grotesque violence.](https://reddit.com/r/ClaudeAI/comments/1usavpc/deepswe_just_added_the_gpt56_models_to_their/) · r/ClaudeAI, 177 up / 80 comments
+- [My son chose prompts over popcorn](https://reddit.com/r/ClaudeCode/comments/1urnk7r/my_son_chose_prompts_over_popcorn/) · r/ClaudeCode, 606 up / 19 comments
+- [Anybody else actually talk to Claude instead of typing? 😬](https://reddit.com/r/ClaudeCode/comments/1urria9/anybody_else_actually_talk_to_claude_instead_of/) · r/ClaudeCode, 137 up / 163 comments

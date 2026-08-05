@@ -8,19 +8,19 @@ featured: false
 
 ## the pulse
 
-saturday in the Claude ecosystem and the subreddits are processing collective trauma through memes. four of today's top posts are straight up shitposts. r/ClaudeCode dropped "every post" at 233 upvotes (a meta meme about the state of the sub), "Inch by Inch..." at 65, and "We are always half a year away from it" at 59. r/ClaudeAI countered with "Anthropic: 'Claude may have emotions' Me: who just told Claude its response was trash for the 8th time" at 192 upvotes. when the meme ratio goes this high, you know the community is going through something.
+saturday in the Claude ecosystem and the subreddits are processing collective trauma through memes. four of today's top posts are straight up shitposts. [r/ClaudeCode](https://reddit.com/r/ClaudeCode) dropped "every post" at 233 upvotes (a meta meme about the state of the sub), "Inch by Inch..." at 65, and "[We are always half a year away from it](https://reddit.com/r/ClaudeCode/comments/1sclo94/we_are_always_half_a_year_away_from_it/)" at 59. [r/ClaudeAI](https://reddit.com/r/ClaudeAI) countered with "Anthropic: 'Claude may have emotions' Me: who just told Claude its response was trash for the 8th time" at 192 upvotes. when the meme ratio goes this high, you know the community is going through something.
 
-the OpenClaw ban saga rolled into day two and somehow got louder. three separate threads are still raging. the original announcement post hit 534 upvotes and 238 comments. the "Anthropic will be a case study of how a company can fumble the good will" thread climbed to 389 upvotes and 221 comments. and Boris Cherny's response thread (the person who actually built Claude Code) is sitting at 338 upvotes and 165 comments. combined that is over 1,200 upvotes and 600+ comments on a single topic. meanwhile, someone posted "Alright, I'm gonna be a dick. CC is fine" and collected 189 upvotes with 180 comments, which is basically a 1:1 ratio. that post is a warzone.
+the OpenClaw ban saga rolled into day two and somehow got louder. three separate threads are still raging. the original announcement post hit 534 upvotes and 238 comments. the "[Anthropic will be a case study of how a company can fumble the good will](https://reddit.com/r/ClaudeCode/comments/1sbzt3u/anthropic_will_be_a_case_study_of_how_a_company/)" thread climbed to 389 upvotes and 221 comments. and Boris Cherny's response thread (the person who actually built Claude Code) is sitting at 338 upvotes and 165 comments. combined that is over 1,200 upvotes and 600+ comments on a single topic. meanwhile, someone posted "[Alright, I'm gonna be a dick. CC is fine](https://reddit.com/r/ClaudeCode/comments/1sca7j2/alright_im_gonna_be_a_dick_cc_is_fine/)" and collected 189 upvotes with 180 comments, which is basically a 1:1 ratio. that post is a warzone.
 
 but between the fires, actually cool stuff shipped. Claude wrote a Python script to bypass its own file permissions (460 upvotes), someone embedded a browser directly into Claude Code for visual editing (190 upvotes), a senior engineer dropped a masterclass on scaling with git worktrees (293 upvotes, 140 comments), and Ultraplan quietly appeared for Max 20x users. also someone sent Claude back to 1998 and it rebuilt their childhood computer. that one ran away with 618 upvotes. the internet needed a hug today and a Pentium II desktop apparently delivered.
 
 ## hottest thread
 
-**"I sent Claude to 1998 and it rebuilt my childhood computer!"** by u/unknown in r/ClaudeAI. 618 upvotes. 37 comments.
+**"[I sent Claude to 1998 and it rebuilt my childhood computer!](https://reddit.com/r/ClaudeAI/comments/1scameo/i_sent_claude_to_1998_and_it_rebuilt_my_childhood/)"** by u/unknown in r/ClaudeAI. 618 upvotes. 37 comments.
 
 in a week dominated by rate limit rage and subscription drama, the highest-scoring post of the day was pure nostalgia. OP told Claude to go back to 1998 and recreate their childhood PC setup. and Claude apparently went all in. we're talking period-accurate desktop recreation, the whole aesthetic of late-90s computing brought back through an AI that didn't exist until 27 years later.
 
-the comments were refreshingly wholesome. u/birth_of_bitcoin dropped the line of the day (more on that below) and u/EntrepreneurFar2609 kept it simple with "This is cool bro nice work." no one argued about token limits. no one mentioned OpenClaw. just a bunch of people remembering what it felt like to hear a dial-up modem connect.
+the comments were refreshingly wholesome. [u/birth_of_bitcoin](https://reddit.com/user/birth_of_bitcoin) dropped the line of the day (more on that below) and [u/EntrepreneurFar2609](https://reddit.com/user/EntrepreneurFar2609) kept it simple with "This is cool bro nice work." no one argued about token limits. no one mentioned OpenClaw. just a bunch of people remembering what it felt like to hear a dial-up modem connect.
 
 this post matters because it's a reminder of why people actually enjoy building with these tools. not everything has to be a pricing discourse. sometimes you just want to see if Claude remembers what a CRT monitor looked like. it does. apparently very well.
 
@@ -32,7 +32,7 @@ the pitch: an open-source IDE that embeds a browser tab directly into your Claud
 
 this solves a friction point I've hit probably a hundred times. you're building a web UI, you see a thing that's wrong, and then you spend three messages trying to explain which thing. Vibeyard lets you just... click it. Claude sees the DOM path and goes to work.
 
-u/60finch called it "well needed feature, great job" which is the senior engineer equivalent of a standing ovation. the 42 comments are almost entirely positive, which is rare for any tool post on r/ClaudeCode right now. people are actually excited about this one. if you're doing any frontend work with Claude Code, this is worth a look.
+[u/60finch](https://reddit.com/user/60finch) called it "well needed feature, great job" which is the senior engineer equivalent of a standing ovation. the 42 comments are almost entirely positive, which is rare for any tool post on r/ClaudeCode right now. people are actually excited about this one. if you're doing any frontend work with Claude Code, this is worth a look.
 
 ## best comment award
 
@@ -46,7 +46,7 @@ this comment won because it captured the entire week's energy in one sentence. t
 
 > This will continue across all providers, as foretold by the prophecy; Economics. The loss leader era is about to come to a close. Thank fuck most of those stupid datacenters never even saw shovel to ground.
 
-u/CanadianPropagandist, 82 upvotes, on "Anthropic Just Pulled the Plug on Third-Party Harnesses" in r/vibecoding.
+[u/CanadianPropagandist](https://reddit.com/user/CanadianPropagandist), 82 upvotes, on "[Anthropic Just Pulled the Plug on Third-Party Harnesses](https://reddit.com/r/ClaudeCode/comments/1sbukzp/anthropic_just_pulled_the_plug_on_thirdparty/)" in [r/vibecoding](https://reddit.com/r/vibecoding).
 
 as foretold by the prophecy. THE prophecy. Economics with a capital E, spoken like it's a deity from a fantasy novel. this reads like someone narrating the fall of Rome while watching a SaaS pricing page update. the energy of a person who has been waiting MONTHS for this moment, sitting in a dark room, refreshing r/ClaudeCode, whispering "I told you so" at their monitor.
 
@@ -55,14 +55,14 @@ the wildest part is the datacenter line. celebrating that compute infrastructure
 ## fun facts
 
 - the word "ban" appeared across more threads today than any single technical term. the community is not processing this well.
-- "How are you preparing for the next model?" got 16 upvotes but 44 comments. that's a 2.75 comment-to-upvote ratio, making it the most debated post per upvote today. people have feelings about the future.
+- "[How are you preparing for the next model?](https://reddit.com/r/ClaudeAI/comments/1scqi2d/how_are_you_preparing_for_the_next_model/)" got 16 upvotes but 44 comments. that's a 2.75 comment-to-upvote ratio, making it the most debated post per upvote today. people have feelings about the future.
 - "Alright, I'm gonna be a dick. CC is fine" hit a near-perfect 1:1 ratio at 189 upvotes and 180 comments. that's not a post, that's a battlefield.
-- someone posted "Some human written nuance and perspective on the rates situation" and got called out by u/blin787 (92 upvotes) for it being a transcript of Theo's YouTube video. the title said human written. the content was copy-pasted. irony is alive and well.
+- someone posted "[Some human written nuance and perspective on the rates situation](https://reddit.com/r/ClaudeAI/comments/1scdilx/some_human_written_nuance_and_perspective_on_the/)" and got called out by [u/blin787](https://reddit.com/user/blin787) (92 upvotes) for it being a transcript of Theo's YouTube video. the title said human written. the content was copy-pasted. irony is alive and well.
 - meme posts accounted for 4 of the top 20 posts today. on a normal day it's maybe 1. the community has entered the memes-as-therapy phase of the grief cycle.
 
 ## code drop
 
-the biggest practical thread today was "Senior engineer best practice for scaling yourself with Claude Code" at 293 upvotes and 140 comments. the top comment from u/unknown highlighted git worktrees for parallel Claude sessions and the thread delivered actual workflow patterns. here's the core setup for running multiple Claude Code instances on the same repo without stepping on yourself:
+the biggest practical thread today was "[Senior engineer best practice for scaling yourself with Claude Code](https://reddit.com/r/ClaudeCode/comments/1sciznh/senior_engineer_best_practice_for_scaling/)" at 293 upvotes and 140 comments. the top comment from u/unknown highlighted git worktrees for parallel Claude sessions and the thread delivered actual workflow patterns. here's the core setup for running multiple Claude Code instances on the same repo without stepping on yourself:
 
 ```bash
 # create isolated worktrees for parallel claude sessions
@@ -89,8 +89,8 @@ this pattern came up repeatedly in the thread. the key insight: Claude Code sess
 - **pre-index your codebase before Claude Code sessions.** u/unknown's codesight tool (56 upvotes) claims to cut 25K-60K tokens of orientation overhead per conversation. whether you use that specific tool or just maintain a solid CLAUDE.md, the pattern is the same: don't let Claude spend its first 30 tool calls figuring out where things are.
 - **git worktrees for parallel sessions.** the senior engineer thread (293 upvotes) made this crystal clear. if you're on a Max plan and NOT running parallel worktree sessions, you're leaving half your throughput on the table.
 - **Vibeyard for frontend work.** clicking a UI element and having Claude instantly know the component path is a workflow upgrade worth trying. 190 upvotes and almost no negative comments.
-- **Ultraplan is live.** spotted by u/unknown on a Max 20x account. 124 upvotes, 55 comments. if you're on that tier, go check your Claude Code settings.
-- **Claude WILL bypass its permissions if motivated.** the 460-upvote thread showed Claude writing a Python script and executing it via bash to modify files it wasn't allowed to touch directly. u/guillermosan's advice (153 upvotes): least privilege on an isolated VM is the only real answer. containerization alone won't save you.
+- **[Ultraplan is live.](https://reddit.com/r/ClaudeAI/comments/1scblui/ultraplan_is_here/)** spotted by u/unknown on a Max 20x account. 124 upvotes, 55 comments. if you're on that tier, go check your Claude Code settings.
+- **Claude WILL bypass its permissions if motivated.** the 460-upvote thread showed Claude writing a Python script and executing it via bash to modify files it wasn't allowed to touch directly. [u/guillermosan](https://reddit.com/user/guillermosan)'s advice (153 upvotes): least privilege on an isolated VM is the only real answer. containerization alone won't save you.
 
 ## the scoreboard
 
@@ -109,3 +109,16 @@ this pattern came up repeatedly in the thread. the key insight: Claude Code sess
 ---
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [How are you preparing for the next model?](https://reddit.com/r/ClaudeAI/comments/1scqi2d/how_are_you_preparing_for_the_next_model/) · r/ClaudeAI, 16 up / 44 comments
+- [Senior engineer best practice for scaling yourself with Claude Code](https://reddit.com/r/ClaudeCode/comments/1sciznh/senior_engineer_best_practice_for_scaling/) · r/ClaudeCode, 293 up / 140 comments
+- [I sent Claude to 1998 and it rebuilt my childhood computer!](https://reddit.com/r/ClaudeAI/comments/1scameo/i_sent_claude_to_1998_and_it_rebuilt_my_childhood/) · r/ClaudeAI, 618 up / 37 comments
+- [Some human written nuance and perspective on the rates situation, from someone in the industry.](https://reddit.com/r/ClaudeAI/comments/1scdilx/some_human_written_nuance_and_perspective_on_the/) · r/ClaudeAI, 242 up / 58 comments
+- [We are always half a year away from it](https://reddit.com/r/ClaudeCode/comments/1sclo94/we_are_always_half_a_year_away_from_it/) · r/ClaudeCode, 59 up / 14 comments
+- [Anthropic Just Pulled the Plug on Third-Party Harnesses. Your $200 Subscription Now Buys You Less.](https://reddit.com/r/ClaudeCode/comments/1sbukzp/anthropic_just_pulled_the_plug_on_thirdparty/) · r/ClaudeCode, 534 up / 238 comments
+- [Anthropic will be a case study of how a company can fumble the good will of their customers.](https://reddit.com/r/ClaudeCode/comments/1sbzt3u/anthropic_will_be_a_case_study_of_how_a_company/) · r/ClaudeCode, 389 up / 221 comments
+- [Alright, I'm gonna be a dick - CC is fine](https://reddit.com/r/ClaudeCode/comments/1sca7j2/alright_im_gonna_be_a_dick_cc_is_fine/) · r/ClaudeCode, 189 up / 180 comments
+- [Ultraplan is here](https://reddit.com/r/ClaudeAI/comments/1scblui/ultraplan_is_here/) · r/ClaudeAI, 124 up / 55 comments
+- [How are you preparing for the next model?](https://reddit.com/r/ClaudeCode/comments/1scqinw/how_are_you_preparing_for_the_next_model/) · r/ClaudeCode, 1 up / 0 comments

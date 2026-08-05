@@ -10,17 +10,17 @@ featured: false
 
 the Claude Code ecosystem woke up and chose chaos today. Anthropic dropped Claude Code Channels, which lets you control your coding sessions from Telegram and Discord. yes, you read that right. vibe coding from your phone is now a thing, and the subreddit had feelings about it. 512 upvotes and 99 comments worth of feelings.
 
-meanwhile, a mystery meme titled "Just in case" absolutely detonated on r/ClaudeAI with 2,012 upvotes and a velocity score of 176. no preview text. no description. just vibes and existential dread. the comments tell you everything you need to know about where we're at as a community. someone said "With extended thinking, of course" and 287 people agreed. Opus 4.6 also threw elevated errors mid-afternoon, which is basically the AI equivalent of your star player tweaking a hamstring during warmups. 167 posts tracked across five subreddits. 9,241 upvotes. 2,302 comments. the people are building, breaking things, and posting about it.
+meanwhile, a mystery meme titled "[Just in case](https://reddit.com/r/ClaudeAI/comments/1ry5hkp/just_in_case/)" absolutely detonated on [r/ClaudeAI](https://reddit.com/r/ClaudeAI) with 2,012 upvotes and a velocity score of 176. no preview text. no description. just vibes and existential dread. the comments tell you everything you need to know about where we're at as a community. someone said "With extended thinking, of course" and 287 people agreed. Opus 4.6 also threw elevated errors mid-afternoon, which is basically the AI equivalent of your star player tweaking a hamstring during warmups. 167 posts tracked across five subreddits. 9,241 upvotes. 2,302 comments. the people are building, breaking things, and posting about it.
 
 and Boris Cherny, the CTO of Claude Code, apparently forgot he could use Claude to debug a memory leak. the internet did not let that slide.
 
 ## hottest thread
 
-**"Introducing Claude Code Channels"** on r/ClaudeCode. 512 upvotes. 99 comments. velocity of 96.85.
+**"[Introducing Claude Code Channels](https://reddit.com/r/ClaudeCode/comments/1ryf2pd/introducing_claude_code_channels/)"** on [r/ClaudeCode](https://reddit.com/r/ClaudeCode). 512 upvotes. 99 comments. velocity of 96.85.
 
 Anthropic launched a way to remote-control your Claude Code session through Telegram and Discord MCPs. the pitch is simple. you're on your couch, your agent is running on your workstation, and you can steer it from your phone. "vibe coding from your phone is now a reality" says the post, linking to ijustvibecodedthis.com (which is either a real site or the most committed bit I've seen this week).
 
-the community response was... mixed enthusiasm with a healthy dose of pain. u/No_Glove_3234 dropped the comment everyone felt:
+the community response was... mixed enthusiasm with a healthy dose of pain. [u/No_Glove_3234](https://reddit.com/user/No_Glove_3234) dropped the comment everyone felt:
 
 > Well, seems a little silly that I set up an entire workflow to create an agent using Claude code, tmux, ec2, and telegram last week
 
@@ -36,23 +36,23 @@ this is a workflow reference guide for Claude Code development patterns. not a t
 
 that tension is the interesting part. are structured workflows still necessary when the model can just... go? or is that exactly how you end up with a 400-line CLAUDE.md that makes your agent dumber instead of smarter? (I know which side I'm on.)
 
-honorable mention to **Claude Code Hooks, all 23 explained and implemented** at 220 upvotes. someone built an entire project implementing every hook with video walkthroughs. u/ericthegreen3 dropped a sharp warning in the comments: "Make sure to read the skills and agents (in plain text) before you use them. You never know what prompt injection could be lurking." security advice that should be pinned on every repo share post from now until the heat death of the universe.
+honorable mention to **[Claude Code Hooks, all 23 explained and implemented](https://reddit.com/r/ClaudeAI/comments/1rxu41b/claude_code_hooks_all_23_explained_and_implemented/)** at 220 upvotes. someone built an entire project implementing every hook with video walkthroughs. [u/ericthegreen3](https://reddit.com/user/ericthegreen3) dropped a sharp warning in the comments: "Make sure to read the skills and agents (in plain text) before you use them. You never know what prompt injection could be lurking." security advice that should be pinned on every repo share post from now until the heat death of the universe.
 
 ## best comment award
 
 > I'm not sure I buy this. The creator and CTO of Claude Code... someone who evidently owes his entire livelihood to making Claude do cool things... forgot that he could use Claude to solve a problem?
 
-u/bikes-and-beers, 302 upvotes, on the Boris Cherny memory leak post.
+[u/bikes-and-beers](https://reddit.com/user/bikes-and-beers), 302 upvotes, on the Boris Cherny memory leak post.
 
 this comment won because it asks the question everyone was thinking but in exactly the right tone. not hostile. not dismissive. just genuinely skeptical in a way that makes you stop and think. the Boris Cherny post framed his story as inspirational (homeless, sleeping in car, now CTO of Claude Code) and included a memory leak debugging anecdote. bikes-and-beers looked at the whole narrative and went... wait. the guy who builds Claude Code forgot Claude Code exists?
 
-it's the kind of comment that would get a thoughtful pause in a writers' room. and 302 people hit upvote because yeah. that's a fair point. the follow-up from u/MVPhurricane was less surgical but equally effective: "r/thathappened" at 149 upvotes. brutal.
+it's the kind of comment that would get a thoughtful pause in a writers' room. and 302 people hit upvote because yeah. that's a fair point. the follow-up from [u/MVPhurricane](https://reddit.com/user/MVPhurricane) was less surgical but equally effective: "r/thathappened" at 149 upvotes. brutal.
 
 ## troll of the day
 
 > Spam 3.0
 
-u/Deep-Station-1746, 108 upvotes, on the "Open source in 2026" post.
+[u/Deep-Station-1746](https://reddit.com/user/Deep-Station-1746), 108 upvotes, on the "[Open source in 2026](https://reddit.com/r/ClaudeCode/comments/1rxw4ok/open_source_in_2026/)" post.
 
 two words. 108 upvotes. no elaboration needed. no elaboration given.
 
@@ -64,11 +64,11 @@ the post itself (295 upvotes, 49 comments) was presumably about the state of ope
 - the word "workflow" appeared in at least 5 separate post titles today. we've moved past "prompt engineering" as the buzzword. it's all workflows now. next month it'll be "orchestration." calling it.
 - someone built a 1.43 million document Epstein Files archive using Claude Code and posted about it. 82 upvotes, 73 comments. the comments-to-upvotes ratio tells you that post got... lively.
 - Opus 4.6 went down with elevated errors at 15:59 UTC, and the status update post got 56 upvotes. people upvote outage announcements the way you like a coworker's "I'm OOO" message. solidarity through suffering.
-- a user on r/vibecoding titled their post "Thisweek,anyone who is 10x more productive due to AI finished all their planned work for 2026 and 2027." no space after the comma. 43 upvotes. the lack of formatting is the joke. or maybe it's not a joke. hard to tell anymore.
+- a user on [r/vibecoding](https://reddit.com/r/vibecoding) titled their post "[Thisweek,anyone who is 10x more productive due to AI finished all their planned work for 2026 and 2027](https://reddit.com/r/vibecoding/comments/1rxxygc/thisweekanyone_who_is_10x_more_productive_due_to/)." no space after the comma. 43 upvotes. the lack of formatting is the joke. or maybe it's not a joke. hard to tell anymore.
 
 ## code drop
 
-no single code snippet dominated today, but the most actionable technical pattern came from u/opentabs-dev in the "not using Claude to its full potential" thread (90 upvotes):
+no single code snippet dominated today, but the most actionable technical pattern came from [u/opentabs-dev](https://reddit.com/user/opentabs-dev) in the "[not using Claude to its full potential](https://reddit.com/r/ClaudeAI/comments/1rxswkv/pretty_sure_im_not_using_claude_to_its_full/)" thread (90 upvotes):
 
 > The ones that made the biggest difference for me were connecting Claude to the web apps I already use daily... Slack, Linear, Datadog, Google Sheets, etc. Instead of setting up separate MCP servers with API keys for each one, I built a single MCP server that routes tool calls through a Chrome extension.
 
@@ -79,10 +79,10 @@ this matters because MCP server proliferation is the silent killer of Claude Cod
 ## builder takeaways
 
 - **Claude Code Channels shipped.** if you've been running tmux + SSH workflows to control agents remotely, check if the native Telegram/Discord MCP covers your use case before maintaining your custom setup. but read the context window cost before you connect it.
-- **audit your CLAUDE.md size.** the "Progression Ladder" post (128 upvotes) confirmed what builders are finding: once your CLAUDE.md hits ~150 lines, the agent starts deprioritizing sections. shorter and more structured beats comprehensive and ignored.
+- **audit your CLAUDE.md size.** the "[Progression Ladder](https://reddit.com/r/ClaudeCode/comments/1ry0aj7/from_zero_to_fleet_the_claude_code_progression/)" post (128 upvotes) confirmed what builders are finding: once your CLAUDE.md hits ~150 lines, the agent starts deprioritizing sections. shorter and more structured beats comprehensive and ignored.
 - **read skills and agents in plain text before installing them.** prompt injection in community-shared Claude Code skills is a real attack vector. u/ericthegreen3 flagged it. take the 2 minutes.
 - **the Haiku-as-gatekeeper pattern is worth trying.** a post on using Haiku to pre-filter before sending to Sonnet/Opus hit 151 upvotes and 62 comments. route classification and simple extraction to Haiku, save the heavy model for reasoning. ~80% cost reduction claimed.
-- **if you're comparing Codex 5.4 vs Opus 4.6** (143 upvotes on r/vibecoding), the community consensus is they're aimed at different modes. Codex for fast implementation and terminal tasks. Opus for architecture and complex reasoning. pick based on what you're doing right now, not which one is "better."
+- **if you're comparing [Codex 5.4 vs Opus 4.6](https://reddit.com/r/vibecoding/comments/1rxs5eg/codex_54_vs_opus_46/)** (143 upvotes on r/vibecoding), the community consensus is they're aimed at different modes. Codex for fast implementation and terminal tasks. Opus for architecture and complex reasoning. pick based on what you're doing right now, not which one is "better."
 
 ## the scoreboard
 
@@ -94,3 +94,14 @@ this matters because MCP server proliferation is the silent killer of Claude Cod
 | fastest rising post | "Just in case" (velocity: 176.54) |
 | most debated | "Built a 1.43M document Epstein Files archive" (73 comments on 82 upvotes) |
 | subreddits scanned | ClaudeAI, ClaudeCode, vibecoding, GTMbuilders, gtmengineering |
+
+## sources
+
+- [Just in case](https://reddit.com/r/ClaudeAI/comments/1ry5hkp/just_in_case/) · r/ClaudeAI, 2,012 up / 41 comments
+- [Introducing Claude Code Channels](https://reddit.com/r/ClaudeCode/comments/1ryf2pd/introducing_claude_code_channels/) · r/ClaudeCode, 512 up / 99 comments
+- [Pretty sure I’m not using Claude to its full potential - what plugins/connectors are worth it?](https://reddit.com/r/ClaudeAI/comments/1rxswkv/pretty_sure_im_not_using_claude_to_its_full/) · r/ClaudeAI, 484 up / 118 comments
+- [Open source in 2026](https://reddit.com/r/ClaudeCode/comments/1rxw4ok/open_source_in_2026/) · r/ClaudeCode, 295 up / 49 comments
+- [Claude Code Hooks - all 23 explained and implemented](https://reddit.com/r/ClaudeAI/comments/1rxu41b/claude_code_hooks_all_23_explained_and_implemented/) · r/ClaudeAI, 220 up / 25 comments
+- [From Zero to Fleet: The Claude Code Progression Ladder](https://reddit.com/r/ClaudeCode/comments/1ry0aj7/from_zero_to_fleet_the_claude_code_progression/) · r/ClaudeCode, 128 up / 66 comments
+- [Codex 5.4 vs Opus 4.6](https://reddit.com/r/vibecoding/comments/1rxs5eg/codex_54_vs_opus_46/) · r/vibecoding, 143 up / 51 comments
+- [Thisweek,anyone who is 10x more productive due to AI finished all their planned work for 2026 and 2027](https://reddit.com/r/vibecoding/comments/1rxxygc/thisweekanyone_who_is_10x_more_productive_due_to/) · r/vibecoding, 43 up / 22 comments

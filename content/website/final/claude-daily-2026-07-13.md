@@ -8,21 +8,21 @@ featured: false
 
 ## the pulse
 
-Monday morning and Anthropic has done it again. Fable 5 access extended to July 19. Third consecutive last-minute reprieve for a model that was supposed to leave paid subscriptions weeks ago. The community response split perfectly between relief and exhaustion, with r/ClaudeAI generating nearly 4,000 upvotes on the announcement alone while r/ClaudeCode asked the question everyone's been asking since the first extension: how long will this keep happening?
+Monday morning and Anthropic has done it again. Fable 5 access extended to July 19. Third consecutive last-minute reprieve for a model that was supposed to leave paid subscriptions weeks ago. The community response split perfectly between relief and exhaustion, with [r/ClaudeAI](https://reddit.com/r/ClaudeAI) generating nearly 4,000 upvotes on the announcement alone while [r/ClaudeCode](https://reddit.com/r/ClaudeCode) asked the question everyone's been asking since the first extension: how long will this keep happening?
 
-The competitive pressure is mounting from every direction. OpenAI dropped the 5-hour limit on Codex. GPT 5.6 Sol is out and gaining ground. Someone posted evidence that the Codex subreddit is allegedly deleting complaint posts (348 upvotes, 177 comments on that thread alone). And a 636-upvote post titled "Anthropic, I think you really need to react. You're slowly losing ground." laid out the full case for why the Fable launch-pull-extend cycle is doing real damage.
+The competitive pressure is mounting from every direction. OpenAI dropped the 5-hour limit on Codex. GPT 5.6 Sol is out and gaining ground. Someone posted evidence that the Codex subreddit is allegedly deleting complaint posts (348 upvotes, 177 comments on that thread alone). And a 636-upvote post titled "[Anthropic, I think you really need to react. You're slowly losing ground.](https://reddit.com/r/ClaudeCode/comments/1uuqz4l/anthropic_i_think_you_really_need_to_react_youre/)" laid out the full case for why the Fable launch-pull-extend cycle is doing real damage.
 
 But buried under the drama, a high school teacher wrote about getting their life back with Claude, someone hit Day 43 of building GTA 6 with AI agents, and Anthropic quietly poached a Nobel laureate from Google DeepMind. The ecosystem is simultaneously falling apart and leveling up. Normal Monday.
 
 ## hottest thread
 
-**"Access has been extended!"** on r/ClaudeAI. 3,883 upvotes. 637 comments. Velocity score of 357, the fastest post we've tracked this month.
+**"[Access has been extended!](https://reddit.com/r/ClaudeAI/comments/1uul693/access_has_been_extended/)"** on r/ClaudeAI. 3,883 upvotes. 637 comments. Velocity score of 357, the fastest post we've tracked this month.
 
-The post had no body text. Just the title. And 637 people showed up to process their feelings about it publicly. This is the Fable extension saga reaching its final form. The original deadline came and went. Then it got pushed to Friday. Now July 19. The pattern is so established that u/ffgg333 asked the most tired question in the thread: will they do this every time forever one day before it is removed?
+The post had no body text. Just the title. And 637 people showed up to process their feelings about it publicly. This is the Fable extension saga reaching its final form. The original deadline came and went. Then it got pushed to Friday. Now July 19. The pattern is so established that [u/ffgg333](https://reddit.com/user/ffgg333) asked the most tired question in the thread: will they do this every time forever one day before it is removed?
 
-The companion post on r/ClaudeCode, "Here we go again!!!" pulled 1,706 upvotes and 347 comments with basically the same energy but more technical anger. Between the two threads, over 5,500 upvotes and nearly 1,000 comments on a single product decision that was announced via tweet.
+The companion post on r/ClaudeCode, "[Here we go again!!!](https://reddit.com/r/ClaudeCode/comments/1uul766/here_we_go_again/)" pulled 1,706 upvotes and 347 comments with basically the same energy but more technical anger. Between the two threads, over 5,500 upvotes and nearly 1,000 comments on a single product decision that was announced via tweet.
 
-What makes this moment different from the previous extensions is the context. "Is Anthropic shooting themselves in the foot by pulling Fab 5 from subscriptions tonight?" hit 917 upvotes with 334 comments. "I'm paying $200/month, and after tomorrow, I can't access Anthropic's best model with my sub?" pulled 731 with 297. The frustration isn't about the model anymore. It's about the ==trust damage compounding== with every cycle. Builders can't plan when the roadmap changes via tweet the night before.
+What makes this moment different from the previous extensions is the context. "[Is Anthropic shooting themselves in the foot by pulling Fab 5 from subscriptions tonight?](https://reddit.com/r/ClaudeAI/comments/1uu9egf/is_anthropic_shooting_themselves_in_the_foot_by/)" hit 917 upvotes with 334 comments. "[I'm paying $200/month, and after tomorrow, I can't access Anthropic's best model with my sub?](https://reddit.com/r/ClaudeAI/comments/1uudibj/im_paying_200month_and_after_tomorrow_i_cant/)" pulled 731 with 297. The frustration isn't about the model anymore. It's about the ==trust damage compounding== with every cycle. Builders can't plan when the roadmap changes via tweet the night before.
 
 Yesterday u/ruuurbag warned the sub value was about to drop like a rock if Anthropic followed through on both the Fable removal and the limit reduction. They didn't follow through. But the rock is still there.
 
@@ -30,7 +30,7 @@ Yesterday u/ruuurbag warned the sub value was about to drop like a rock if Anthr
 
 No repos dropped today, so here's the most buildable thread instead.
 
-**"Our store was paying X per month for SMS texting when the order is ready. 30 mins on Claude Code, now our SMS infra is 100% free"** on r/vibecoding.
+**"[Our store was paying X per month for SMS texting when the order is ready. 30 mins on Claude Code, now our SMS infra is 100% free](https://reddit.com/r/vibecoding/comments/1uuws2e/our_store_was_paying_x_per_month_for_sms_texting/)"** on [r/vibecoding](https://reddit.com/r/vibecoding).
 
 OP had an old Samsung laying around and found open-source repos that turn an Android phone into an SMS relay endpoint via local API. 30 minutes in Claude Code to wire it up. Monthly SaaS bill eliminated.
 
@@ -42,7 +42,7 @@ If you want to try this yourself, search GitHub for Android SMS gateway or SMS r
 
 > Hmmm they should rename Fable to Hormuz Pro.
 
-u/Captain_Klrk in "Here we go again!!!" on r/ClaudeCode.
+[u/Captain_Klrk](https://reddit.com/user/Captain_Klrk) in "Here we go again!!!" on r/ClaudeCode.
 
 Five words. One geopolitical reference. Fable 5 got pulled because of U.S. government restrictions, and Captain_Klrk casually named it the ==chokepoint nobody asked for==. The Strait of Hormuz comparison is perfect. A critical resource that keeps getting blocked and unblocked based on political dynamics nobody downstream can control. Builders just want to ship code. Instead they're watching trade policy press briefings.
 
@@ -50,7 +50,7 @@ Five words. One geopolitical reference. Fable 5 got pulled because of U.S. gover
 
 > Ah, great. I always wanted to build my business based on guessing if a tech is available tomorrow. I fucking hate American companies!
 
-u/AppealSame4367 in "Here we go again!!!" on r/ClaudeCode.
+[u/AppealSame4367](https://reddit.com/user/AppealSame4367) in "Here we go again!!!" on r/ClaudeCode.
 
 The delivery is ==unhinged but directionally correct==. If you're building production software on a model that gets announced, pulled, extended, extended again, and extended a third time via tweet with no blog post... you are gambling. Every AI builder right now is running production on models whose availability, pricing, and capability can change overnight. AppealSame4367 just said it at maximum volume.
 
@@ -59,14 +59,14 @@ The real kicker: this isn't even an Anthropic-specific problem. OpenAI changes p
 ## fun facts
 
 - "Access has been extended!" accounts for 20% of all upvotes tracked today. one post. no body text. just a title and ==3,883 people exhaling==
-- r/vibecoding's top meme "This MEME will be legendery in 20 years" misspelled legendary. a post about being remembered forever, with a typo in the title. poetry
+- r/vibecoding's top meme "[This MEME will be legendery in 20 years](https://reddit.com/r/vibecoding/comments/1uu68bi/this_meme_will_be_legendery_in_20_years_remind_me/)" misspelled legendary. a post about being remembered forever, with a typo in the title. poetry
 - the word "extend" or "extension" appears in at least 7 different post titles today. Anthropic's product strategy has become a content engine for the subreddits it's frustrating
 - someone admitted to skipping time with their family to grind Fable sessions before the deadline. another commenter replied: "Dude, don't skip out on life to use Fable. That's fucking crazy." r/ClaudeCode providing free therapy 69 days running
 - Anthropic poached Nobel laureate John Jumper (AlphaFold) from Google DeepMind AND Berkeley's CS division chair Jelani Nelson in the same two-week stretch. speed-running the talent tree while the subreddit speed-runs the grief cycle
 
 ## code drop
 
-No code snippets were shared today, but the most actionable technical pattern came from "Vibecoded apps are a security nightmare" on r/vibecoding (246 upvotes, 119 comments).
+No code snippets were shared today, but the most actionable technical pattern came from "[Vibecoded apps are a security nightmare](https://reddit.com/r/vibecoding/comments/1uuhcwi/vibecoded_apps_are_a_security_nightmare/)" on r/vibecoding (246 upvotes, 119 comments).
 
 OP found a recently posted chat app and broke it completely within 30 minutes. The top comment nailed the core issue: in order to do software engineering, vibe or not, you have to be a software engineer.
 
@@ -103,3 +103,14 @@ Then fix what it finds and run it again. The build step is fun. The audit step i
 | subreddits scanned | ClaudeCode, ClaudeAI, vibecoding, gtmengineering |
 | Fable extension posts | 7+ |
 | usage quota complaint streak | day 69. nice. |
+
+## sources
+
+- [Access has been extended!](https://reddit.com/r/ClaudeAI/comments/1uul693/access_has_been_extended/) · r/ClaudeAI, 3,883 up / 637 comments
+- [Here we go again!!!](https://reddit.com/r/ClaudeCode/comments/1uul766/here_we_go_again/) · r/ClaudeCode, 1,706 up / 347 comments
+- [Anthropic, I think you really need to react. You're slowly losing ground.](https://reddit.com/r/ClaudeCode/comments/1uuqz4l/anthropic_i_think_you_really_need_to_react_youre/) · r/ClaudeCode, 636 up / 165 comments
+- [This MEME will be legendery in 20 years (Remind me)](https://reddit.com/r/vibecoding/comments/1uu68bi/this_meme_will_be_legendery_in_20_years_remind_me/) · r/vibecoding, 1,673 up / 52 comments
+- [Is Anthropic shooting themselves in the foot by pulling Fab 5 from subscriptions tonight?](https://reddit.com/r/ClaudeAI/comments/1uu9egf/is_anthropic_shooting_themselves_in_the_foot_by/) · r/ClaudeAI, 917 up / 334 comments
+- [I'm paying $200/month, and after tomorrow, I can't access Anthropic's best model with my sub?](https://reddit.com/r/ClaudeAI/comments/1uudibj/im_paying_200month_and_after_tomorrow_i_cant/) · r/ClaudeAI, 731 up / 297 comments
+- [Vibecoded apps are a security nightmare](https://reddit.com/r/vibecoding/comments/1uuhcwi/vibecoded_apps_are_a_security_nightmare/) · r/vibecoding, 246 up / 119 comments
+- [Our store was paying X per month for sms texting when the order is ready, customer outreach etc. We had this samsung laying around, 30 mins on claude code, now our SMS infra is 100% free](https://reddit.com/r/vibecoding/comments/1uuws2e/our_store_was_paying_x_per_month_for_sms_texting/) · r/vibecoding, 28 up / 14 comments

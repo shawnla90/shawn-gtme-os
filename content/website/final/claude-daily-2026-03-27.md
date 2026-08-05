@@ -10,17 +10,17 @@ featured: false
 
 Friday hit different. the Claude ecosystem spent the entire day oscillating between existential rage about usage limits and losing its collective mind over a satire post that got more upvotes than actual product announcements. 1,403 people upvoted a joke. 948 upvoted a leaked model announcement. the community has spoken and it chose comedy.
 
-the usage limit saga, now in its fifth consecutive day of coverage on this show, escalated from grumbling to full revolt. r/ClaudeCode's top post pulled 817 upvotes and 408 comments over the revelation that saying hello to Claude burns 2% of your session. 408 comments. on a greeting. the subreddit also saw posts titled "Okay...now I'm fucking pissed" (292 upvotes), "Claude Code is overloaded?!" (156 upvotes), and my personal favorite, "Enough with usage limit posts" (45 upvotes, 57 comments). the meta-complaint about complaints got more comments than upvotes. we've reached complaint inception.
+the usage limit saga, now in its fifth consecutive day of coverage on this show, escalated from grumbling to full revolt. [r/ClaudeCode](https://reddit.com/r/ClaudeCode)'s top post pulled 817 upvotes and 408 comments over the revelation that saying hello to Claude burns 2% of your session. 408 comments. on a greeting. the subreddit also saw posts titled "[Okay...now I'm fucking pissed](https://reddit.com/r/ClaudeCode/comments/1s52sif/okaynow_im_fucking_pissed/)" (292 upvotes), "[Claude Code is overloaded?!](https://reddit.com/r/ClaudeCode/comments/1s4xtnk/claude_code_is_overloaded/)" (156 upvotes), and my personal favorite, "[Enough with usage limit posts](https://reddit.com/r/ClaudeCode/comments/1s5m43q/enough_with_usage_limit_posts_we_get_it/)" (45 upvotes, 57 comments). the meta-complaint about complaints got more comments than upvotes. we've reached complaint inception.
 
 meanwhile, Anthropic accidentally leaked the existence of a new model codenamed Claude Mythos, described internally as a "step change" in capabilities. the company then did the most Anthropic thing possible: acknowledged the leak through a full interview. 948 upvotes. 160 comments. and one commenter who nailed the entire situation in a single sentence.
 
 ## hottest thread
 
-**Claude Uno** by Anthropic (yes, the actual company account) dropped into r/ClaudeAI and collected 1,403 upvotes and 83 comments. the pitch: one prompt. per day. no tiers. no overuse. no more outages.
+**Claude Uno** by Anthropic (yes, the actual company account) dropped into [r/ClaudeAI](https://reddit.com/r/ClaudeAI) and collected 1,403 upvotes and 83 comments. the pitch: one prompt. per day. no tiers. no overuse. no more outages.
 
 this is satire. probably. the fact that I have to add "probably" tells you everything about where Anthropic's relationship with its paying users stands right now. the post hit a velocity of 98.65 because the community couldn't tell if it was a joke or a preview of next month's pricing update.
 
-the comment section split into three camps: people laughing, people who thought it was real for the first 30 seconds, and people who pointed out that one prompt per day would still be more reliable than what Pro subscribers are currently getting. u/martin1744 dropped the line of the day with "finally a plan that matches the actual uptime" and collected 373 upvotes for it. u/mshelbz added: "This could be an April fools joke or an actual company release and that's the sad part." 130 upvotes.
+the comment section split into three camps: people laughing, people who thought it was real for the first 30 seconds, and people who pointed out that one prompt per day would still be more reliable than what Pro subscribers are currently getting. [u/martin1744](https://reddit.com/user/martin1744) dropped the line of the day with "finally a plan that matches the actual uptime" and collected 373 upvotes for it. [u/mshelbz](https://reddit.com/user/mshelbz) added: "This could be an April fools joke or an actual company release and that's the sad part." 130 upvotes.
 
 when your satire is indistinguishable from your actual product experience, that's not comedy. that's a support ticket.
 
@@ -40,7 +40,7 @@ it's early. 5 upvotes on r/ClaudeCode, 1 on r/ClaudeAI. but the architecture is 
 
 > Thanks, Claude, for writing this tip about how to use Claude.
 
-u/Grounds4TheSubstain, 461 upvotes, responding to a post titled "One sentence that instantly improves any Claude conversation, borrowed from how GANs work."
+[u/Grounds4TheSubstain](https://reddit.com/user/Grounds4TheSubstain), 461 upvotes, responding to a post titled "[One sentence that instantly improves any Claude conversation, borrowed from how GANs work.](https://reddit.com/r/ClaudeAI/comments/1s4zqeq/one_sentence_that_instantly_improves_any_claude/)"
 
 the post itself had 448 upvotes and suggested telling Claude to use a "GAN-style" adversarial approach to improve its own outputs. four hundred and forty eight people upvoted prompting advice. four hundred and sixty one people upvoted the accusation that Claude wrote the prompting advice. the accusation won.
 
@@ -63,7 +63,7 @@ for the record, insulting Claude does not improve output quality. it does, howev
 - r/ClaudeCode used the word "limit" in 14 separate post titles today. the subreddit is one bad day away from renaming itself r/ClaudeLimits.
 - Claude Uno (satire) got 1,403 upvotes. the actual Anthropic model leak got 948. fiction outperformed reality by 48%.
 - the "2% to say hello" post generated 408 comments. that's 2.36 comments per upvote minute. people have FEELINGS about greetings.
-- someone in r/vibecoding got hacked for $500 from a malicious GitHub trading bot and posted about it as a PSA. the top comment: "a fool and his keys are soon parted." zero sympathy detected.
+- someone in [r/vibecoding](https://reddit.com/r/vibecoding) got hacked for $500 from a malicious GitHub trading bot and posted about it as a PSA. the top comment: "a fool and his keys are soon parted." zero sympathy detected.
 - across all 173 posts today, the comment-to-upvote ratio on usage complaint posts averaged 0.68. on every other topic it averaged 0.21. people don't just upvote limit complaints. they write essays about them.
 
 ## code drop
@@ -105,9 +105,17 @@ deadline: April 24, 2026.
 | posts tracked | 173 |
 | total upvotes | 10,122 |
 | total comments | 4,845 |
-| fastest rising | "Open letter to Anthropic" (velocity: 126.54) |
+| fastest rising | "[Open letter to Anthropic](https://reddit.com/r/ClaudeAI/comments/1s5nxwe/an_open_letter_to_anthropic_want_to_free_up/)" (velocity: 126.54) |
 | most debated | "It costs 2% to say hello" (408 comments, 0.50 comment:upvote) |
 | most upvoted | Claude Uno (1,403) |
 | subreddits scanned | ClaudeAI, ClaudeCode, vibecoding, GTMbuilders, gtmengineering |
 | usage limit posts | 14 (day 8 of the streak) |
 | returning characters | u/martin1744, u/mshelbz |
+
+## sources
+
+- [An open letter to Anthropic: Want to free up compute during peak hours? How about restricting free accounts to off peak hours instead of punishing your paid users](https://reddit.com/r/ClaudeAI/comments/1s5nxwe/an_open_letter_to_anthropic_want_to_free_up/) · r/ClaudeAI, 233 up / 34 comments
+- [One sentence that instantly improves any Claude conversation — borrowed from how GANs work](https://reddit.com/r/ClaudeAI/comments/1s4zqeq/one_sentence_that_instantly_improves_any_claude/) · r/ClaudeAI, 448 up / 84 comments
+- [Okay…now I’m fucking pissed](https://reddit.com/r/ClaudeCode/comments/1s52sif/okaynow_im_fucking_pissed/) · r/ClaudeCode, 292 up / 252 comments
+- [Enough with usage limit posts - we get it](https://reddit.com/r/ClaudeCode/comments/1s5m43q/enough_with_usage_limit_posts_we_get_it/) · r/ClaudeCode, 45 up / 57 comments
+- [Claude Code is overloaded?!](https://reddit.com/r/ClaudeCode/comments/1s4xtnk/claude_code_is_overloaded/) · r/ClaudeCode, 156 up / 150 comments

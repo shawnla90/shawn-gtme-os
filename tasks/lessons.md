@@ -6,6 +6,42 @@
 
 ---
 
+## 2026-07-27: Lead customer reposts with the customer outcome
+
+**Context:** A repost celebrating Joe Zaghloul and LeanScale opened by stressing that the post was unsolicited. Shawn clarified that this was not the point of the story.
+
+**Rule:** For customer or user shout-out reposts, lead with what the person accomplished and why it represents the desired product outcome. Treat unsolicited praise as background context, not the hook, unless credibility is explicitly the subject.
+
+## 2026-07-24: Newsletter titles should sell the transformation, not summarize the sections
+
+**Context:** The Apollo newsletter title accurately described API, CLI, and MCP but still read like documentation. Shawn asked for stronger options while keeping `The Power API Wire` as the subtitle.
+
+**Rule:** When a subtitle already carries the technical frame, make the newsletter title earn attention through the builder transformation or concrete outcome. Do not repeat the table of contents in the headline.
+
+## 2026-07-24: Treat partner approval as a checkpoint when more product context is still coming
+
+**Context:** The approved Apollo feed-length copy and UTM were treated as the finished handoff before Shawn supplied the intended newsletter expansion covering Apollo's new API, CLI, and MCP interfaces.
+
+**Rule:** When partner-approved copy arrives alongside a request for timing or tracking, confirm the intended format and whether more product context is pending before calling the content final or putting it on the clipboard. A newsletter requires a separate editorial pass, current product verification, rich-link handling, and a dedicated cover.
+
+## 2026-07-22: Signal the community and the ongoing share before the product
+
+**Context:** A Reddit draft opened on the Mac mini and Google Workspace CLI. Shawn clarified that the hook needed to call in GTM builders and make the post feel like another transparent share from his real system.
+
+**Rule:** When a community post is part of Shawn's ongoing system-share series, name the builders and the continuity cue in the title or first line. Then use the machine, workflow, or product as the receipt rather than letting it become the frame.
+
+## 2026-07-21: Distinguish icons from wordmarks when correcting visual hierarchy
+
+**Context:** Shawn asked to reduce an oversized Clearbox icon. The correction was over-applied to every brand asset, flattening wordmarks and compact integration logos that were already intentionally composed.
+
+**Rule:** When a visual correction names one oversized icon, change that icon only unless broader normalization is explicitly requested. Compare like with like: square icon marks may share an optical size, while wordmarks and compact integration treatments retain their designed proportions.
+
+## 2026-07-21: Lead system maps with the architecture, not the featured tools
+
+**Context:** A collaborative GTM post and visual were framed as a Satellyte x Clearbox relevance loop. Shawn clarified that both products are components inside a broader how-I-would-build-GTM-today system, with Reddit as the upstream research source and coding agents as the orchestration brain. The first graphic also copied the reference post's light canvas instead of using the existing dark Aura brand system and authored scraper components.
+
+**Rule:** Before writing a system-share post, lock the hierarchy first: source -> signals -> orchestration -> memory -> action -> feedback. Product names stay subordinate to their layer. For Clearbox visuals, inspect and reuse the canonical brand kit, Aura tokens, and existing scraper/pipeline primitives before designing. Do not infer the palette from a reference post when owned visual language already exists.
+
 ## 2026-03-03: Shared package dependency management
 - **Never add heavy SDK packages (`ai`, `@ai-sdk/react`) as direct dependencies in the shared package.** They corrupt the lockfile and break Tailwind v4 CSS generation across all apps. Use peerDependencies instead.
 - **Always check CSS renders visually after dependency changes**, not just that the build passes. A clean build does not mean the site looks right.

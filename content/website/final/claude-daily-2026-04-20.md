@@ -16,7 +16,7 @@ also, someone used Claude Code to recover two decades of corrupted data across f
 
 ## hottest thread
 
-**"ANTHROPIC: 'When you trigger 4.7's anxiety, your outputs get worse.' Here's the actionable playbook for putting 4.7 in a good mood (so you get optimal outputs):"** posted to r/ClaudeCode. 600 upvotes, 317 comments.
+**"ANTHROPIC: 'When you trigger 4.7's anxiety, your outputs get worse.' Here's the actionable playbook for putting 4.7 in a good mood (so you get optimal outputs):"** posted to [r/ClaudeCode](https://reddit.com/r/ClaudeCode). 600 upvotes, 317 comments.
 
 this one dominated the day because it hit a nerve everyone was already feeling. the post references an x.com thread from @itsolelehmann breaking down how 4.7's safety layer essentially spirals when it detects adversarial intent, eating tokens while second-guessing itself. the playbook suggests warmup prompts, positive framing, and structured reassurance.
 
@@ -36,7 +36,7 @@ ironic that the model everyone's complaining about being anxious and indecisive 
 
 > Nice. Now the damn thing needs foreplay to get in the mood.
 
-u/thatm, 394 upvotes, on the 4.7 anxiety playbook thread.
+[u/thatm](https://reddit.com/user/thatm), 394 upvotes, on the 4.7 anxiety playbook thread.
 
 this won because it perfectly captures the absurdity of where we've landed. two years ago we were engineering prompts for accuracy. now we're engineering emotional states. u/thatm distilled 317 comments of discourse into one line that made me actually laugh out loud. brevity is the soul of wit and this comment has more soul than most blog posts about prompt engineering.
 
@@ -53,7 +53,7 @@ look. I respect conviction. and the comment that "for 2 days it flagged Anthropi
 - r/ClaudeCode generated 317 comments on a single thread about Claude's emotional state. that's more engagement than some product launches get.
 - the word "anxiety" appeared in a coding subreddit 40+ times today. we're building with feelings now.
 - Amazon's $25B investment post got 338 upvotes but only 21 comments. everyone upvoted and moved on. nobody had follow-up questions about $25 billion. just "plz sir more tokens."
-- a post titled "Opus 4.6 went drunk" described it as "working with replit a year ago." the top comment was simply: "It's all shit now." poetry.
+- a post titled "[Opus 4.6 went drunk](https://reddit.com/r/ClaudeCode/comments/1sr89gx/opus_46_went_drunk/)" described it as "working with replit a year ago." the top comment was simply: "It's all shit now." poetry.
 - someone built a satirical tariff refund portal using Claude, Netlify, and rage. their tech stack literally listed "rage" as a dependency.
 
 ## code drop
@@ -101,3 +101,11 @@ the post only got 3 upvotes (no comments yet), but given that the usage limit co
 ---
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Opus 4.6 went drunk](https://reddit.com/r/ClaudeCode/comments/1sr89gx/opus_46_went_drunk/) · r/ClaudeCode, 6 up / 8 comments
+- [Amazon to invest up to $25 billion in Anthropic as part of $100 billion cloud deal](https://reddit.com/r/ClaudeAI/comments/1sr8q0k/amazon_to_invest_up_to_25_billion_in_anthropic_as/) · r/ClaudeAI, 338 up / 21 comments
+- [How is this change acceptable?](https://reddit.com/r/ClaudeCode/comments/1srbb8v/how_is_this_change_acceptable/) · r/ClaudeCode, 18 up / 30 comments
+- [What two decades of data loss trauma does to a woman. (Claude Code)](https://reddit.com/r/ClaudeAI/comments/1sqv4g9/what_two_decades_of_data_loss_trauma_does_to_a/) · r/ClaudeAI, 1,215 up / 94 comments
+- [The Opus 4.6 vs 4.7 Controversy in one image](https://reddit.com/r/ClaudeAI/comments/1sr4gq2/the_opus_46_vs_47_controversy_in_one_image/) · r/ClaudeAI, 258 up / 48 comments

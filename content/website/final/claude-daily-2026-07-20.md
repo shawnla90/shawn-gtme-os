@@ -8,19 +8,19 @@ featured: false
 
 ## the pulse
 
-Monday in the Claude ecosystem and the vibes are... anxious. Credit anxiety has reached performance art status. A POV meme about hitting zero credits pulled almost 1,500 upvotes on r/ClaudeAI while the community mostly just watched in silence. 34 comments on 1,489 upvotes. That's not engagement. That's a support group where everyone's too tired to share.
+Monday in the Claude ecosystem and the vibes are... anxious. Credit anxiety has reached performance art status. A POV meme about hitting zero credits pulled almost 1,500 upvotes on [r/ClaudeAI](https://reddit.com/r/ClaudeAI) while the community mostly just watched in silence. 34 comments on 1,489 upvotes. That's not engagement. That's a support group where everyone's too tired to share.
 
-Meanwhile r/ClaudeCode is having a philosophical reckoning. Tokenmaxing and successmaxing are not the same thing, and apparently a lot of people needed to hear that on a Monday morning. The Fable farewell tour is in full swing with goodbye notes, last-minute coding sessions, and one user who got Claude to add falling sakura petals to the claude.ai interface itself. The model is leaving and people are decorating for the funeral. KIMI K3 sold out so fast that r/vibecoding spent 289 comments arguing whether a software product can even sell out (spoiler: multiple commenters pointed out it's datacenter capacity, not software).
+Meanwhile [r/ClaudeCode](https://reddit.com/r/ClaudeCode) is having a philosophical reckoning. Tokenmaxing and successmaxing are not the same thing, and apparently a lot of people needed to hear that on a Monday morning. The Fable farewell tour is in full swing with goodbye notes, last-minute coding sessions, and one user who got Claude to add falling sakura petals to the claude.ai interface itself. The model is leaving and people are decorating for the funeral. KIMI K3 sold out so fast that [r/vibecoding](https://reddit.com/r/vibecoding) spent 289 comments arguing whether a software product can even sell out (spoiler: multiple commenters pointed out it's datacenter capacity, not software).
 
 And then there's the vibe-coded game with an actual Steam page, a trailer with real sound design, and 241 comments of people grudgingly admitting it looks good. The r/vibecoding identity crisis lives on. Someone posted a whole thread today just asking what the point of the sub even is. 84 comments. No consensus.
 
 ## hottest thread
 
-**POV: My Claude credits are about to hit zero.** on r/ClaudeAI. 1,489 upvotes. 34 comments. Velocity of 145.37, the fastest anything moved in today's scan by a wide margin.
+**[POV: My Claude credits are about to hit zero.](https://reddit.com/r/ClaudeAI/comments/1v0x0ks/pov_my_claude_credits_are_about_to_hit_zero/)** on r/ClaudeAI. 1,489 upvotes. 34 comments. Velocity of 145.37, the fastest anything moved in today's scan by a wide margin.
 
 The post is a video meme and the community devoured it. What makes this interesting isn't the joke. It's the ==ratio that tells the real story==. 1,489 upvotes to 34 comments means roughly 44 people silently nodded for every one who spoke up. That's collective trauma recognition.
 
-u/pppp2222 showed up with LET ME JUST LAUCH 287 AGENTS (typo preserved, as god intended). u/IntrepidDelivery1400 added the real pain: they swear Claude slows down near the limit, especially when you ask it to push to GitHub at the end. Whether that's true or confirmation bias doesn't matter. The paranoia is the content.
+[u/pppp2222](https://reddit.com/user/pppp2222) showed up with LET ME JUST LAUCH 287 AGENTS (typo preserved, as god intended). [u/IntrepidDelivery1400](https://reddit.com/user/IntrepidDelivery1400) added the real pain: they swear Claude slows down near the limit, especially when you ask it to push to GitHub at the end. Whether that's true or confirmation bias doesn't matter. The paranoia is the content.
 
 The credits conversation has been escalating for weeks. The Dear Anthropic, This Has to STOP post hit 1,484 upvotes just days ago. This meme pulling even higher numbers tells you the community has moved past arguing and into the acceptance-through-comedy phase. Meanwhile the Clown Code post on r/ClaudeAI (832 upvotes, 146 comments) coined Banthropic. Brand teams love Mondays.
 
@@ -38,7 +38,7 @@ If you're reading this and thinking about your next build, look at the local bus
 
 > I think this is the line between vibe coding and AI assisted coding. You have years of development experience per what I see, and you're passionate about these types of games, characters, etc. I would call it AI assisted, not vibed
 
-u/Difficult-Ad-3938 in the Made a trailer for my 100% vibe coded game! thread on r/vibecoding.
+[u/Difficult-Ad-3938](https://reddit.com/user/Difficult-Ad-3938) in the [Made a trailer for my 100% vibe coded game!](https://reddit.com/r/vibecoding/comments/1v0q1aa/made_a_trailer_for_my_100_vibe_coded_game/) thread on r/vibecoding.
 
 This comment wins because it names the ==distinction nobody wants to define==. The game looks genuinely good. It has a Steam page. The trailer has real sound design. And then someone points out that the creator has years of development experience and deep domain knowledge. At that point, calling it vibe coded is like a chef using a food processor and calling it vibe cooking.
 
@@ -48,7 +48,7 @@ The whole r/vibecoding identity crisis lives in this comment. If you know what y
 
 > dude was running ai gf 24/7
 
-u/Far-Sock-3170 responding to the tokenmaxing and successmaxing not the same thread where someone apparently burned $200k-600k in compute costs building... something. Unsuccessfully.
+[u/Far-Sock-3170](https://reddit.com/user/Far-Sock-3170) responding to the [tokenmaxing and successmaxing not the same](https://reddit.com/r/ClaudeCode/comments/1v0tw4s/tokenmaxing_and_successmaxing_not_the_same/) thread where someone apparently burned $200k-600k in compute costs building... something. Unsuccessfully.
 
 Four words. No punctuation. ==Maximum emotional damage delivered==. The thread is about people spending absurd amounts on AI tokens without producing anything of value, and u/Far-Sock-3170 casually suggests the most devastating possible explanation for that burn rate. The best part is that nobody in the thread denied it. They just upvoted and moved on. The silence was the confirmation.
 
@@ -62,7 +62,7 @@ Four words. No punctuation. ==Maximum emotional damage delivered==. The thread i
 
 ## code drop
 
-No raw code snippets in today's top threads, but the 5 CLAUDE.md patterns I use in production after 18 months post on r/ClaudeAI (30 upvotes, 9 comments) and multiple threads about losing work at session boundaries point to the same fix.
+No raw code snippets in today's top threads, but the [5 CLAUDE.md patterns I use in production after 18 months](https://reddit.com/r/ClaudeAI/comments/1v13yrk/5_claudemd_patterns_i_use_in_production_after_18/) post on r/ClaudeAI (30 upvotes, 9 comments) and multiple threads about losing work at session boundaries point to the same fix.
 
 The pattern that matters most, synthesized from today's recurring pain:
 
@@ -98,3 +98,11 @@ This addresses the exact scenario u/IntrepidDelivery1400 described: Claude slowi
 - **fastest rising post:** POV: My Claude credits are about to hit zero. (velocity: 145.37)
 - **most debated:** I never seen Sold out on a software product (KIMI K3) (289 comments on 520 upvotes, ratio 0.56)
 - **subreddits scanned:** GTMbuilders, ClaudeCode, gtmengineering, vibecoding, ClaudeAI
+
+## sources
+
+- [POV: My Claude credits are about to hit zero.](https://reddit.com/r/ClaudeAI/comments/1v0x0ks/pov_my_claude_credits_are_about_to_hit_zero/) · r/ClaudeAI, 1,489 up / 34 comments
+- [tokenmaxing and successmaxing not the same](https://reddit.com/r/ClaudeCode/comments/1v0tw4s/tokenmaxing_and_successmaxing_not_the_same/) · r/ClaudeCode, 1,097 up / 39 comments
+- [Made a trailer for my 100% vibe coded game!](https://reddit.com/r/vibecoding/comments/1v0q1aa/made_a_trailer_for_my_100_vibe_coded_game/) · r/vibecoding, 924 up / 241 comments
+- [5 CLAUDE.md patterns I use in production after 18 months](https://reddit.com/r/ClaudeAI/comments/1v13yrk/5_claudemd_patterns_i_use_in_production_after_18/) · r/ClaudeAI, 30 up / 9 comments
+- [I never seen "Sold out" on a software product (KIMI K3)](https://reddit.com/r/vibecoding/comments/1v0y9nf/i_never_seen_sold_out_on_a_software_product_kimi/) · r/vibecoding, 520 up / 289 comments

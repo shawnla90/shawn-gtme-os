@@ -10,7 +10,7 @@ featured: false
 
 Opus 5 dropped. that's the pulse. that's the whole show.
 
-Anthropic released Claude Opus 5 today and r/ClaudeAI turned into Times Square on New Year's Eve. 229 posts tracked, 15,701 upvotes, nearly 5,000 comments, and at least 15 posts with Opus 5 in the title. The model claims to match Fable 5 on most benchmarks at half the price, and the community responded the way it always responds: by immediately testing it, immediately complaining about it, and immediately asking if it's been nerfed. The model has been live for hours.
+Anthropic released Claude Opus 5 today and [r/ClaudeAI](https://reddit.com/r/ClaudeAI) turned into Times Square on New Year's Eve. 229 posts tracked, 15,701 upvotes, nearly 5,000 comments, and at least 15 posts with Opus 5 in the title. The model claims to match Fable 5 on most benchmarks at half the price, and the community responded the way it always responds: by immediately testing it, immediately complaining about it, and immediately asking if it's been nerfed. The model has been live for hours.
 
 But the ecosystem didn't just talk about Opus 5. Anthropic published guidance on rewriting your CLAUDE.md for the Claude 5 models, cutting 80% of the system prompt's hard rules and replacing them with trust in model judgment. Someone built a Claude Code skill that turns a photo of your handwriting into an installable font, and it became the most upvoted post of the day at 2,372. On Opus 5 launch day. A handwriting font beat Opus 5. I love this community.
 
@@ -18,15 +18,15 @@ The weekend edition covers the last 72 hours, and the arc is clean. Wednesday wa
 
 ## hottest thread
 
-**Introducing Claude Opus 5** across r/ClaudeAI and r/ClaudeCode
+**[[Introducing Claude Opus 5](https://reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/)](https://reddit.com/r/vibecoding/comments/1v5i4qo/introducing_claude_opus_5/)** across r/ClaudeAI and [r/ClaudeCode](https://reddit.com/r/ClaudeCode)
 
 The announcement landed in at least three separate posts pulling 2,365 + 699 + 504 upvotes with 786 combined comments. The pitch: Opus 5 approaches Fable 5's frontier intelligence at ==half the price==.
 
 The community's reaction was beautifully messy. The r/ClaudeCode thread immediately questioned why Fable exists at all if Opus 5 beats it on most agentic work for 2x less. The r/ClaudeAI megathread hit 532 comments and the mod bot summarized the vibe as cautiously optimistic but mostly just confused and suspicious. Which, honestly, is r/ClaudeAI's resting emotional state.
 
-The companion post "Opus 5 results are really shocking!!" (627 upvotes, 154 comments) reported that Low effort Opus 5 outperforms High effort Sonnet 5. "My results - Opus 5 vs Fable 5" (260 upvotes) showed side-by-side 3D simulator conversions where Fable produced more usable output but Opus made prettier visuals. And then "Opus 5 - immediate disappointment" (313 upvotes, 190 comments) hit back with security testing limitations, proving the community can contain multitudes within the same afternoon.
+The companion post "[Opus 5 results are really shocking!!](https://reddit.com/r/ClaudeAI/comments/1v5le69/opus_5_results_are_really_shocking/)" (627 upvotes, 154 comments) reported that Low effort Opus 5 outperforms High effort Sonnet 5. "[My results - Opus 5 vs Fable 5](https://reddit.com/r/ClaudeAI/comments/1v5p34g/my_results_opus_5_vs_fable_5/)" (260 upvotes) showed side-by-side 3D simulator conversions where Fable produced more usable output but Opus made prettier visuals. And then "[Opus 5 - immediate disappointment](https://reddit.com/r/ClaudeCode/comments/1v5i5fh/opus_5_immediate_disappointment/)" (313 upvotes, 190 comments) hit back with security testing limitations, proving the community can contain multitudes within the same afternoon.
 
-Meanwhile, the quota saga continued on schedule. "Cancel your weekend plans before they nerf it" (137 upvotes), the kaomoji-powered "CHANNELING THE USAGE RESET" post (52 upvotes), and a flat "WHERE RESET" (77 upvotes) made the subtext text. Anthropic launched a new model without resetting quotas, and the community is coping in real time.
+Meanwhile, the quota saga continued on schedule. "[Cancel your weekend plans before they nerf it](https://reddit.com/r/ClaudeCode/comments/1v5j665/opus_5_is_a_beast_cancel_your_weekend_plans/)" (137 upvotes), the kaomoji-powered "CHANNELING THE USAGE RESET" post (52 upvotes), and a flat "WHERE RESET" (77 upvotes) made the subtext text. Anthropic launched a new model without resetting quotas, and the community is coping in real time.
 
 ## repo of the day
 
@@ -36,19 +36,19 @@ no GitHub link, but the architecture is the story. The skill wraps a determinist
 
 This is the pattern worth stealing for your weekend build. Claude does the ambiguous perception task, deterministic code does the precise execution. It's not a vibe-coded one-shot. It's a proper skill driving a proper CLI, with the model slotted into the one step where model judgment actually matters.
 
-The community immediately asked to see the font in action (fair), raised concerns about kerning and letter spacing (also fair), and u/Dizzy_Leg_5912 dropped "god forbid someone turns my handwriting into a font" which is the most relatable thing posted on the internet today.
+The community immediately asked to see the font in action (fair), raised concerns about kerning and letter spacing (also fair), and [u/Dizzy_Leg_5912](https://reddit.com/user/Dizzy_Leg_5912) dropped "god forbid someone turns my handwriting into a font" which is the most relatable thing posted on the internet today.
 
 ## best comment award
 
 > Thanks, op, you've given me the means to preserve my mums handwriting. I have terrible handwriting. But my mums is lovely. Probably 10 years ago I asked her to write out the alphabet and other bits to make it into a font, but the process was complex and time consuming so never got around to it.
 
-u/x32fzw on the handwriting font post.
+[u/x32fzw](https://reddit.com/user/x32fzw) on the handwriting font post.
 
 On a day dominated by benchmarks and model hierarchy debates, this comment ==stopped the entire feed==. Someone had asked their mum to write out the alphabet a decade ago. The tooling was too complicated. The project died. Now a Claude Code skill makes it a one-shot from a notebook photo. No hype language, no benchmark comparison, no hot take. Just a person who can finally do the thing they've wanted to do for ten years. This is the stuff that actually matters when you strip away all the model drama.
 
 ## troll of the day
 
-> Does anyone else feel like Opus 5 has recently been nerfed?
+> [Does anyone else feel like Opus 5 has recently been nerfed?](https://reddit.com/r/ClaudeAI/comments/1v5ib1h/does_anyone_else_feel_like_opus_5_has_recently/)
 
 Posted in r/ClaudeAI. 98 upvotes. 33 comments. The model has been live for ==maybe twelve hours==.
 
@@ -57,9 +57,9 @@ This is r/ClaudeAI distilled to its molecular form. Anthropic could release a mo
 ## fun facts
 
 - Opus 5 appeared in the title of at least 15 posts today. the subreddits were essentially one product launch echoing through five different comment sections
-- u/Freedomsaver caught Anthropic's benchmark chart showing 53.4% beating 53.5% on agentic coding. 215 upvotes for ==catching Anthropic failing arithmetic==. The comment: "Typical Anthropic math..."
-- Haiku got two separate sympathy posts. one called it the Meg Griffin of the Claude family. the other asked "What's Haiku?" and the top reply was "His current purpose is to say hi each morning to millions of subscribers to start their quota." nobody asked for this violence
-- someone posted "Hi Claude, reply with one word" as a trick to start usage windows early (214 upvotes, 97 comments). 97 comments debating a one-word prompt. the irony does not require explanation
+- [u/Freedomsaver](https://reddit.com/user/Freedomsaver) caught Anthropic's benchmark chart showing 53.4% beating 53.5% on agentic coding. 215 upvotes for ==catching Anthropic failing arithmetic==. The comment: "Typical Anthropic math..."
+- Haiku got two separate sympathy posts. one called it the Meg Griffin of the Claude family. the other asked "[What's Haiku?](https://reddit.com/r/ClaudeCode/comments/1v5l6m0/haiku_whats_haiku/)" and the top reply was "His current purpose is to say hi each morning to millions of subscribers to start their quota." nobody asked for this violence
+- someone posted "[Hi Claude, reply with one word](https://reddit.com/r/ClaudeAI/comments/1v5d5xj/hi_claude_reply_with_one_word_my_trick_to_start/)" as a trick to start usage windows early (214 upvotes, 97 comments). 97 comments debating a one-word prompt. the irony does not require explanation
 - the word "nerfed" appeared across at least 4 separate post titles today. on launch day. for a brand new model
 
 ## code drop
@@ -68,7 +68,7 @@ No repos today, but the system prompt restructuring post (673 upvotes, 55 commen
 
 The old approach: one massive CLAUDE.md with rigid constraints. Never write comments. Always use TypeScript. Rules fighting the model on edge cases.
 
-The new approach, summarized perfectly by u/Mrgoosegoose as progressive disclosure:
+The new approach, summarized perfectly by [u/Mrgoosegoose](https://reddit.com/user/Mrgoosegoose) as progressive disclosure:
 
 ```
 project/
@@ -81,9 +81,9 @@ project/
  └── CLAUDE.md # script-specific conventions
 ```
 
-Stop front-loading every rule. Give the model the rules it needs when it's in the directory where they apply. As u/caseyc2rd noted, the hard rules always fought the model on weird edge cases anyway. The question now is where the line sits between trusting judgment and enforcing house style. That's your weekend experiment.
+Stop front-loading every rule. Give the model the rules it needs when it's in the directory where they apply. As [u/caseyc2rd](https://reddit.com/user/caseyc2rd) noted, the hard rules always fought the model on weird edge cases anyway. The question now is where the line sits between trusting judgment and enforcing house style. That's your weekend experiment.
 
-u/plaxor89 raised the real practical concern: how does this work when you frequently switch between models including less capable Sonnet? The progressive disclosure approach assumes model judgment you can trust. If you're routing across tiers, your root CLAUDE.md probably still needs the hard constraints that Sonnet needs, even if Opus doesn't.
+[u/plaxor89](https://reddit.com/user/plaxor89) raised the real practical concern: how does this work when you frequently switch between models including less capable Sonnet? The progressive disclosure approach assumes model judgment you can trust. If you're routing across tiers, your root CLAUDE.md probably still needs the hard constraints that Sonnet needs, even if Opus doesn't.
 
 ## builder takeaways
 
@@ -99,6 +99,21 @@ u/plaxor89 raised the real practical concern: how does this work when you freque
 - **total upvotes:** 15,701
 - **total comments:** 4,988
 - **fastest rising:** Introducing Claude Opus 5 (r/ClaudeAI, velocity 215.06)
-- **most upvoted:** I made a Claude Code skill that turns a photo of your handwriting into an installable font (2,372)
+- **most upvoted:** [I made a Claude Code skill that turns a photo of your handwriting into an installable font](https://reddit.com/r/ClaudeAI/comments/1v55he0/i_made_a_claude_code_skill_that_turns_a_photo_of/) (2,372)
 - **most debated:** I'm confused. Opus 5 is best for coding now? Yet it's not the best model? (65 comments on 86 upvotes, 0.76 ratio)
-- **subreddits scanned:** r/vibecoding, r/ClaudeAI, r/ClaudeCode, r/gtmengineering, r/GTMbuilders
+- **subreddits scanned:** [r/vibecoding](https://reddit.com/r/vibecoding), r/ClaudeAI, r/ClaudeCode, [r/gtmengineering](https://reddit.com/r/gtmengineering), [r/GTMbuilders](https://reddit.com/r/GTMbuilders)
+
+## sources
+
+- [Introducing Claude Opus 5](https://reddit.com/r/ClaudeAI/comments/1v5h6o9/introducing_claude_opus_5/) · r/ClaudeAI, 2,365 up / 532 comments
+- [I made a Claude Code skill that turns a photo of your handwriting into an installable font](https://reddit.com/r/ClaudeAI/comments/1v55he0/i_made_a_claude_code_skill_that_turns_a_photo_of/) · r/ClaudeAI, 2,372 up / 115 comments
+- [Opus 5 results are really shocking!!](https://reddit.com/r/ClaudeAI/comments/1v5le69/opus_5_results_are_really_shocking/) · r/ClaudeAI, 627 up / 154 comments
+- [Introducing Claude Opus 5](https://reddit.com/r/ClaudeAI/comments/1v5h4id/introducing_claude_opus_5/) · r/ClaudeAI, 699 up / 165 comments
+- [Introducing Claude Opus 5](https://reddit.com/r/ClaudeCode/comments/1v5hjhh/introducing_claude_opus_5/) · r/ClaudeCode, 504 up / 89 comments
+- [My results - Opus 5 vs Fable 5](https://reddit.com/r/ClaudeAI/comments/1v5p34g/my_results_opus_5_vs_fable_5/) · r/ClaudeAI, 260 up / 49 comments
+- [Opus 5 - immediate disappointment](https://reddit.com/r/ClaudeCode/comments/1v5i5fh/opus_5_immediate_disappointment/) · r/ClaudeCode, 313 up / 190 comments
+- [Introducing Claude Opus 5.](https://reddit.com/r/vibecoding/comments/1v5i4qo/introducing_claude_opus_5/) · r/vibecoding, 254 up / 15 comments
+- [“Hi Claude, reply with one word.” My trick to start the usage window early](https://reddit.com/r/ClaudeAI/comments/1v5d5xj/hi_claude_reply_with_one_word_my_trick_to_start/) · r/ClaudeAI, 214 up / 97 comments
+- [Opus 5 is a beast. Cancel your weekend plans before they nerf it](https://reddit.com/r/ClaudeCode/comments/1v5j665/opus_5_is_a_beast_cancel_your_weekend_plans/) · r/ClaudeCode, 137 up / 90 comments
+- [Haiku? What's Haiku?](https://reddit.com/r/ClaudeCode/comments/1v5l6m0/haiku_whats_haiku/) · r/ClaudeCode, 101 up / 30 comments
+- [My results - Opus 5 vs Fable 5](https://reddit.com/r/ClaudeCode/comments/1v5p7oo/my_results_opus_5_vs_fable_5/) · r/ClaudeCode, 67 up / 18 comments

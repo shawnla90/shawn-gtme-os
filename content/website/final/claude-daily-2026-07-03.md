@@ -8,7 +8,7 @@ featured: false
 
 ## the pulse
 
-Friday in the Claude ecosystem and the entire community has collectively decided that Fable 5 is both the greatest model ever built and a cruel countdown timer to heartbreak. With the July 7 deadline looming, the feed is split into two camps: people rationing their tokens like apocalypse preppers, and people who blew through everything in 36 hours and are now writing eulogies in r/ClaudeCode.
+Friday in the Claude ecosystem and the entire community has collectively decided that Fable 5 is both the greatest model ever built and a cruel countdown timer to heartbreak. With the July 7 deadline looming, the feed is split into two camps: people rationing their tokens like apocalypse preppers, and people who blew through everything in 36 hours and are now writing eulogies in [r/ClaudeCode](https://reddit.com/r/ClaudeCode).
 
 The vibe today is pure chaos energy. Someone spotted a person wearing a Claude shirt at a hackathon and it got 3,219 upvotes. Another person built a physical manual gear shifter to swap between Claude models. A third person sent a single hey to Fable and got charged ~$20. And at least four separate posts are just people saying goodbye to their Fable allocation like it's a loved one shipping off to war. r/ClaudeCode has become a support group. vibecrying is now a word.
 
@@ -16,17 +16,17 @@ Meanwhile the builders are shipping. Black hole simulations in Rust. Car games w
 
 ## hottest thread
 
-**Legend Spotted** on r/ClaudeAI. 3,219 upvotes. 44 comments. Velocity: 176.54.
+**[Legend Spotted](https://reddit.com/r/ClaudeAI/comments/1um5u8c/legend_spotted/)** on [r/ClaudeAI](https://reddit.com/r/ClaudeAI). 3,219 upvotes. 44 comments. Velocity: 176.54.
 
 Someone photographed a person at a hackathon wearing what appears to be a Claude-themed shirt, and the internet lost its mind. The post has zero preview text because it didn't need any. The image spoke for itself. And the comment section turned into a competition to see who could come up with the best .md filename joke.
 
-u/dangerous-dog-672 hit them with therapist-notes.md. u/_coolranch went darker with hit-list.md. u/Foreign-Return7695 kept it clean: bro wore his whole personality to the hackathon and i respect it. And then u/Lockal actually noticed something real in the background, pointing out that the visible memory.md file was using manipulative language like NON-NEGOTIABLE to force specific tool-calling behavior. Called it an injection attempt.
+[u/dangerous-dog-672](https://reddit.com/user/dangerous-dog-672) hit them with therapist-notes.md. [u/_coolranch](https://reddit.com/user/_coolranch) went darker with hit-list.md. [u/Foreign-Return7695](https://reddit.com/user/Foreign-Return7695) kept it clean: bro wore his whole personality to the hackathon and i respect it. And then [u/Lockal](https://reddit.com/user/Lockal) actually noticed something real in the background, pointing out that the visible memory.md file was using manipulative language like NON-NEGOTIABLE to force specific tool-calling behavior. Called it an injection attempt.
 
 So to recap: 3,219 people upvoted a shirt pic, a handful wrote comedy, and one person found a prompt injection vulnerability in someone's outfit. Peak r/ClaudeAI.
 
 ## repo of the day
 
-No GitHub repos dropped today, but the most buildable thing on the feed is the **manual gear shifter for Claude** (r/ClaudeAI, 1,313 upvotes, 132 comments). A physical, tangible, hand-operated gear shifter that lets you swap between Claude models mid-conversation.
+No GitHub repos dropped today, but the most buildable thing on the feed is the **[manual gear shifter for Claude](https://reddit.com/r/ClaudeAI/comments/1um2m94/i_made_a_manual_shifter_for_claude/)** (r/ClaudeAI, 1,313 upvotes, 132 comments). A physical, tangible, hand-operated gear shifter that lets you swap between Claude models mid-conversation.
 
 Is it necessary? Absolutely not. The top comment nailed the energy: That's the most useless and amazing thing that I've seen so far! Loved it.
 
@@ -36,7 +36,7 @@ The real value here is the idea underneath the meme. Model switching as a workfl
 
 > Nobody tell Brandon Sanderson about Fable. I cannot keep up as it is.
 
-u/veodin, on the post about Fable organizing a decade of worldbuilding into wiki entries.
+[u/veodin](https://reddit.com/user/veodin), on the post about Fable organizing a decade of worldbuilding into wiki entries.
 
 This wins because it operates on three levels simultaneously. First, it's genuinely funny if you know Sanderson's inhuman output speed. Second, it's a real fear. If the most prolific fantasy author alive gets a tool that can organize hundreds of thousands of words of interconnected lore in one session, the rest of the genre is cooked. Third, it's the perfect one-liner response to a post about creative AI use cases. No hot take. No debate. Just a joke that also happens to be correct.
 
@@ -44,24 +44,24 @@ This wins because it operates on three levels simultaneously. First, it's genuin
 
 > The lensing makes absolutely no sense
 
-u/ElonsBreedingFetish, dropping a five-word physics critique on someone's black hole simulation passion project.
+[u/ElonsBreedingFetish](https://reddit.com/user/ElonsBreedingFetish), dropping a five-word physics critique on someone's black hole simulation passion project.
 
 The poster had just shared their Fable-assisted Rust simulation, said they were genuinely astonished and proud, promised to try deploying it on Vercel, apologized for their English not being their first language, and went to bed happy. And then this username... this magnificent username... rolls in to inform everyone the gravitational lensing is wrong.
 
-The best part? They might be right. u/ZiKyooc was already in the thread asking about mass and spin parameters, referencing the Interstellar Gargantua setup for comparison. So it's not even a drive-by troll. It's a drive-by peer review. From someone called ElonsBreedingFetish. Science marches on.
+The best part? They might be right. [u/ZiKyooc](https://reddit.com/user/ZiKyooc) was already in the thread asking about mass and spin parameters, referencing the Interstellar Gargantua setup for comparison. So it's not even a drive-by troll. It's a drive-by peer review. From someone called ElonsBreedingFetish. Science marches on.
 
 ## fun facts
 
 - At least 12 of today's 174 posts are directly about Fable 5. The subreddits have been informally renamed r/FableGrief and r/FableShowcase.
 - Legend Spotted has a 73:1 upvote-to-comment ratio. 3,219 people smashed upvote. Only 44 felt the need to speak. The shirt said everything.
 - The billing shock post (one hey cost ~$20) generated 335 comments. That's roughly 16 comments per dollar of unexpected charges.
-- Two separate r/ClaudeCode posts are literally titled farewells: Goodbye, my friend and Bye Fable, we had a good run... Combined for 1,412 upvotes. We are holding a funeral for a model that's still available for four more days.
+- Two separate r/ClaudeCode posts are literally titled farewells: [Goodbye, my friend](https://reddit.com/r/ClaudeCode/comments/1ummq09/goodbye_my_friend/) and [Bye Fable, we had a good run...](https://reddit.com/r/ClaudeCode/comments/1um6eka/bye_fable_we_had_a_good_run/) Combined for 1,412 upvotes. We are holding a funeral for a model that's still available for four more days.
 - Someone built SimCity on their watch instead of working on their SaaS project and got 79 upvotes for admitting it. This community rewards honest procrastination.
 - The Fable Quotes Thread exists and has exactly one contribution so far: Honest divergence beats fabricated convergence. Fable is out here writing fortune cookies.
 
 ## code drop
 
-No code snippets in today's data, but the most actionable technical pattern comes from **I've been using Fable 5 for almost 13 hours and I still have plenty left to go** (r/ClaudeCode, 92 upvotes, 72 comments).
+No code snippets in today's data, but the most actionable technical pattern comes from **[I've been using Fable 5 for almost 13 hours and I still have plenty left to go](https://reddit.com/r/ClaudeCode/comments/1umj1j4/ive_been_using_fable_5_for_almost_13_hours_and_i/)** (r/ClaudeCode, 92 upvotes, 72 comments).
 
 The strategy boils down to session architecture:
 
@@ -95,3 +95,11 @@ The counterpoint from the 335-comment billing thread: even a single greeting cos
 - **Most debated:** Fable 5 Max hit limit, $20 for a greeting (335 comments on 994 upvotes)
 - **Emotional damage leader:** Bye Fable, we had a good run... (1,005 upvotes, 221 comments of pure grief)
 - **Subreddits scanned:** ClaudeCode, ClaudeAI, vibecoding, gtmengineering, GTMbuilders
+
+## sources
+
+- [Legend Spotted](https://reddit.com/r/ClaudeAI/comments/1um5u8c/legend_spotted/) · r/ClaudeAI, 3,219 up / 44 comments
+- [Goodbye, my friend](https://reddit.com/r/ClaudeCode/comments/1ummq09/goodbye_my_friend/) · r/ClaudeCode, 407 up / 58 comments
+- [I made a manual shifter for claude](https://reddit.com/r/ClaudeAI/comments/1um2m94/i_made_a_manual_shifter_for_claude/) · r/ClaudeAI, 1,313 up / 132 comments
+- [Bye Fable, we had a good run...](https://reddit.com/r/ClaudeCode/comments/1um6eka/bye_fable_we_had_a_good_run/) · r/ClaudeCode, 1,005 up / 221 comments
+- [I've been using Fable 5 for almost 13 hours and I still have plenty left to go. You gotta plan before you slam. Here's my strat.](https://reddit.com/r/ClaudeCode/comments/1umj1j4/ive_been_using_fable_5_for_almost_13_hours_and_i/) · r/ClaudeCode, 92 up / 72 comments

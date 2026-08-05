@@ -244,7 +244,7 @@ export default function ContentOSHowToPage() {
           lineHeight: '1.4',
         }}
       >
-        How to build an AI agent with Claude Code — personal AI assistant setup, Claude Code agent configuration, and the content OS stack that runs without you.
+        How to build an AI agent with Claude Code — ai agent automation, personal AI assistant setup, Claude Code agent configuration, and the content OS stack that runs without you.
       </h1>
       <p
         style={{
@@ -255,7 +255,7 @@ export default function ContentOSHowToPage() {
           fontSize: '1rem',
         }}
       >
-        These guides are built for the AI assistant for solopreneurs - solo operators running their own content stack without a team behind them. If you are the writer, the publisher, the strategist, and the editor all at once, this is your playbook. Each guide is written for practitioners who want a system that actually runs, not a demo that breaks after one use.
+        These guides are built for the AI assistant for solopreneurs - solo operators who want real ai agent automation running their own content stack without a team behind them. If you are the writer, the publisher, the strategist, and the editor all at once, this is your playbook. Each guide is written for practitioners who want a system that actually runs, not a demo that breaks after one use.
       </p>
       <HowToWikiPage config={config} />
       <section
@@ -293,6 +293,47 @@ export default function ContentOSHowToPage() {
           </div>
         ))}
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: SITE_URL,
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'How-To',
+                item: `${SITE_URL}/how-to`,
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Course',
+            name: 'AI Agent Automation Course',
+            description:
+              'Step-by-step guides for ai agent automation — from Claude Code agent setup and memory systems to full content OS architecture that runs without a paid API.',
+            provider: {
+              '@type': 'Organization',
+              name: 'ContentOS',
+              sameAs: SITE_URL,
+            },
+            url: `${SITE_URL}/how-to`,
+          }),
+        }}
+      />
     </>
   )
 }

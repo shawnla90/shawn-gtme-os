@@ -330,8 +330,9 @@ export default async function BlogPost({
           </footer>
         </article>
 
-        {/* Desktop sidebar TOC — hidden on mobile via CSS */}
-        {post.category !== 'claude-daily' && <TableOfContents html={tocHtml} desktopOnly />}
+        {/* Desktop sidebar TOC — hidden on mobile via CSS. Daily editions get it
+            too: nine lowercase sections need jump nav to be followable. */}
+        <TableOfContents html={tocHtml} desktopOnly />
       </div>
 
       {/* Daily editions only: full-width pipeline finale + CTA. */}

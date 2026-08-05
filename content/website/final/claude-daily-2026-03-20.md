@@ -10,19 +10,19 @@ featured: false
 
 thursday dropped like a product announcement at Anthropic HQ. because it literally was one. Projects landed in Cowork, pulling 752 upvotes and making everyone realize they've been doing context management wrong for months. meanwhile, the community split into two camps: people building genuinely useful things with Claude Code, and people building their 20th macOS menu bar app to track usage limits they're hitting because they keep asking Claude to build macOS menu bar apps. the circle of life.
 
-the vibe coding crowd had a field day too. someone shipped a 2FA implementation so bad it became a meme (594 upvotes for "Vibe Coding gone wrong"), and another builder exposed their entire waitlist in the frontend source code. 417 people upvoted that one, presumably while nervously checking their own inspect elements. across 158 posts and 4 subreddits, the ecosystem generated 6,639 upvotes and 2,379 comments. the machine is running hot.
+the vibe coding crowd had a field day too. someone shipped a 2FA implementation so bad it became a meme (594 upvotes for "[Vibe Coding gone wrong](https://reddit.com/r/vibecoding/comments/1rz41wq/vibe_coding_gone_wrong/)"), and another builder exposed their entire waitlist in the frontend source code. 417 people upvoted that one, presumably while nervously checking their own inspect elements. across 158 posts and 4 subreddits, the ecosystem generated 6,639 upvotes and 2,379 comments. the machine is running hot.
 
 but the real story today is the tension between building fast and building right. satellite image pipelines, medieval village economies, security PSAs for vibe coders. the community is growing up in real time, oscillating between "look what I shipped in 2 hours" and "please, for the love of god, stop shipping without authentication."
 
 ## hottest thread
 
-**"Projects are now available in Cowork."** (r/ClaudeAI, 752 upvotes, 64 comments, velocity: 63.04)
+**"[Projects are now available in Cowork.](https://reddit.com/r/ClaudeAI/comments/1rz0go2/projects_are_now_available_in_cowork/)"** ([r/ClaudeAI](https://reddit.com/r/ClaudeAI), 752 upvotes, 64 comments, velocity: 63.04)
 
 Anthropic dropped Projects into the Cowork experience and the subreddit lost its collective mind. the feature lets you keep tasks and context in one place, import existing projects in one click, and basically stop copy-pasting the same context into every new conversation like it's 2024.
 
-u/painterknittersimmer captured the mood perfectly with 230 upvotes: "These guys are un-fucking-stoppable. The absolute tear you guys have been on. Unreal." and honestly, fair. Anthropic's shipping cadence right now is genuinely absurd.
+[u/painterknittersimmer](https://reddit.com/user/painterknittersimmer) captured the mood perfectly with 230 upvotes: "These guys are un-fucking-stoppable. The absolute tear you guys have been on. Unreal." and honestly, fair. Anthropic's shipping cadence right now is genuinely absurd.
 
-the real power move though? import from chat. u/pingumod nailed it: "Import from chat is the move. I've got months of project context built up that I wasn't about to recreate from scratch." that's the feature within the feature. months of accumulated context, portable in one click. for anyone running complex projects across multiple sessions, this changes the workflow entirely.
+the real power move though? import from chat. [u/pingumod](https://reddit.com/user/pingumod) nailed it: "Import from chat is the move. I've got months of project context built up that I wasn't about to recreate from scratch." that's the feature within the feature. months of accumulated context, portable in one click. for anyone running complex projects across multiple sessions, this changes the workflow entirely.
 
 ## repo of the day
 
@@ -40,7 +40,7 @@ what makes this actually useful beyond the cool factor: if you're building anyth
 
 > It's always the data.
 
-u/LordGeet, 86 upvotes, on the satellite image analysis pipeline thread
+[u/LordGeet](https://reddit.com/user/LordGeet), 86 upvotes, on the satellite image analysis pipeline thread
 
 three words. that's it. on a post where someone built a $100K/year equivalent satellite analysis pipeline with Claude Code, where the entire thread is debating resolution limits, API costs, and hedge fund viability... this comment just cuts through all of it.
 
@@ -52,9 +52,9 @@ four syllables of pure signal in a sea of noise. u/LordGeet understood the assig
 
 > just what the world needs, the 20th iteration of this
 
-u/frog_slap, 306 upvotes, on the Claude usage menu bar app
+[u/frog_slap](https://reddit.com/user/frog_slap), 306 upvotes, on the Claude usage menu bar app
 
-306 upvotes. three hundred and six. that's more than most actual projects get. the community didn't just agree with this take, they ENDORSED it. and u/BatonNoir piled on with 103 upvotes: "Another one? I mean, at least ask Claude to check out what exists before building anything allegedly new..."
+306 upvotes. three hundred and six. that's more than most actual projects get. the community didn't just agree with this take, they ENDORSED it. and [u/BatonNoir](https://reddit.com/user/BatonNoir) piled on with 103 upvotes: "Another one? I mean, at least ask Claude to check out what exists before building anything allegedly new..."
 
 here's the thing though. they're not wrong, and they're not trolling. this is the community developing antibodies against the "I built X with Claude" post pattern where X is something that already exists 19 times over. the irony is beautiful: the easiest thing to build with AI is a thing that already exists, because the training data is full of prior implementations.
 
@@ -64,13 +64,13 @@ someone out there is reading this right now, halfway through building a Claude u
 
 - r/ClaudeAI used the word "Projects" and "Cowork" so much today that Anthropic's marketing team probably counted it as earned media
 - the Claude logo desk ornament post (686 upvotes, 70 comments) generated more engagement than most actual product launches. the top comment? someone called it a butthole. 165 people agreed.
-- "Am I pushing it hard enough?" pulled 261 upvotes and 168 comments in r/ClaudeCode, making it the most debated thread of the day. top response: "Are you enriching uranium or something?" followed by "MORE TOKENS MORE LINES MORE BETTER"
+- "[Am I pushing it hard enough?](https://reddit.com/r/ClaudeCode/comments/1rz1dzr/am_i_pushing_it_hard_enough/)" pulled 261 upvotes and 168 comments in [r/ClaudeCode](https://reddit.com/r/ClaudeCode), making it the most debated thread of the day. top response: "Are you enriching uranium or something?" followed by "MORE TOKENS MORE LINES MORE BETTER"
 - the vibe coding subreddit featured both a $10K MRR success story and a zero-factor authentication disaster in the same day. perfectly balanced, as all things should be
 - someone built a hardware OLED widget to track Claude rate limits using an ESP8266. we've gone from "check the website" to "build dedicated electronics" in the span of months. this is not normal behavior.
 
 ## code drop
 
-the most actionable technical drop today came from the "Cut hallucination by half with pre-output prompt injection" thread (35 upvotes). the technique is dead simple but effective:
+the most actionable technical drop today came from the "[Cut hallucination by half with pre-output prompt injection](https://reddit.com/r/ClaudeAI/comments/1rz9i7n/cut_hallucination_by_half_with_preoutput_prompt/)" thread (35 upvotes). the technique is dead simple but effective:
 
 ```markdown
 ## Before response
@@ -103,4 +103,12 @@ drop that in your Claude Code system prompt or CLAUDE.md output style section. i
 | fastest rising | "Projects are now available in Cowork" (velocity: 63.04) |
 | most debated | "Am I pushing it hard enough?" (168 comments on 261 upvotes, 0.64 ratio) |
 | biggest roast | Claude logo desk ornament called a butthole (165 upvotes) |
-| subreddits scanned | r/ClaudeAI, r/ClaudeCode, r/vibecoding, r/gtmengineering |
+| subreddits scanned | r/ClaudeAI, r/ClaudeCode, [r/vibecoding](https://reddit.com/r/vibecoding), [r/gtmengineering](https://reddit.com/r/gtmengineering) |
+
+## sources
+
+- [Projects are now available in Cowork.](https://reddit.com/r/ClaudeAI/comments/1rz0go2/projects_are_now_available_in_cowork/) · r/ClaudeAI, 752 up / 64 comments
+- [Vibe Coding gone wrong](https://reddit.com/r/vibecoding/comments/1rz41wq/vibe_coding_gone_wrong/) · r/vibecoding, 594 up / 40 comments
+- [Am i pushing it hard enough?](https://reddit.com/r/ClaudeCode/comments/1rz1dzr/am_i_pushing_it_hard_enough/) · r/ClaudeCode, 261 up / 168 comments
+- [Cut hallucination by half with pre-output prompt injection](https://reddit.com/r/ClaudeAI/comments/1rz9i7n/cut_hallucination_by_half_with_preoutput_prompt/) · r/ClaudeAI, 35 up / 15 comments
+- [Dog drawing](https://reddit.com/r/ClaudeAI/comments/1rzdnwl/dog_drawing/) · r/ClaudeAI, 164 up / 42 comments

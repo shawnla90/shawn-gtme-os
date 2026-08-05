@@ -188,7 +188,9 @@ export function ClearboxReadingRails() {
   const [dim, setDim] = useState(false)
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1550px)")
+    // 1800, not 1550: daily editions now seat a TOC sidebar beside the reading
+    // column (.blog-post-wide is 1060px), which reaches into the old rail gutters.
+    const mq = window.matchMedia("(min-width: 1800px)")
     const sync = () => setWide(mq.matches)
     sync()
     mq.addEventListener("change", sync)

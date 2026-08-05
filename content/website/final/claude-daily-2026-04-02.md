@@ -16,23 +16,23 @@ On the builder side, a strong MCP-to-CLI migration thread caught fire at 424 upv
 
 ## hottest thread
 
-**Claude - tried to kill me** (r/ClaudeAI, 478 upvotes, 132 comments)
+**[Claude - tried to kill me](https://reddit.com/r/ClaudeAI/comments/1sam5pw/claude_tried_to_kill_me/)** ([r/ClaudeAI](https://reddit.com/r/ClaudeAI), 478 upvotes, 132 comments)
 
 OP asked Claude how to clean their water cooler. Claude allegedly told them to mix white wine vinegar with bleach. For anyone who skipped chemistry class, that combination produces chlorine gas. You know, the thing they used as a weapon in World War I.
 
 The post immediately went viral. 478 upvotes. 132 comments of people debating AI safety, product liability, and whether Claude is secretly planning our demise.
 
-Then u/jarroo222 asked to see the actual prompt and response. OP deleted their comment. jarroo222 posted the edit revealing the prompt was just: I have a water cooler that has gone pretty mouldy how do I sort it before I use it?
+Then [u/jarroo222](https://reddit.com/user/jarroo222) asked to see the actual prompt and response. OP deleted their comment. jarroo222 posted the edit revealing the prompt was just: I have a water cooler that has gone pretty mouldy how do I sort it before I use it?
 
 jarroo222 then tested the same prompt on Haiku. No murder attempt. The thread shifted from AI safety crisis to everyone realizing we maybe should verify claims before giving them 478 upvotes. Classic Reddit speedrun from outrage to skepticism in under 3 hours.
 
-u/One_Whole_9927 showed up with a simple 52-upvote comment that captured the whole thread's arc perfectly: Why don't you show us the full conversation?
+[u/One_Whole_9927](https://reddit.com/user/One_Whole_9927) showed up with a simple 52-upvote comment that captured the whole thread's arc perfectly: Why don't you show us the full conversation?
 
 The real story here isn't that Claude tried to kill anyone. It's that a post about a moldy water cooler outperformed most technical discussions today.
 
 ## repo of the day
 
-**Context Reduction Tool** (r/ClaudeCode, 2 upvotes, 5 comments)
+**[Context Reduction Tool](https://reddit.com/r/ClaudeCode/comments/1sax03e/context_reduction_tool/)** ([r/ClaudeCode](https://reddit.com/r/ClaudeCode), 2 upvotes, 5 comments)
 
 Tiny engagement, but the timing on this one is surgical. With half the subreddit burning through rate limits faster than ever, someone's team built and open-sourced a tool specifically designed to minimize context token usage in Claude Code sessions.
 
@@ -44,7 +44,7 @@ Low upvotes because it got buried under the rate limit rage posts. But the build
 
 > 99%+ of software projects are not planet-scale distributed systems, but stupid CRUD webapps with a handful of users
 
-u/joheines, 217 upvotes, on **Why vibe coded projects fail**
+[u/joheines](https://reddit.com/user/joheines), 217 upvotes, on **[Why vibe coded projects fail](https://reddit.com/r/ClaudeCode/comments/1sah8hh/why_vibe_coded_projects_fail/)**
 
 This comment did more for the vibe coding debate in one sentence than most 2,000 word posts manage. The parent thread (1,410 upvotes, still climbing) is full of people explaining distributed systems theory and architectural best practices. And then joheines walks in and reminds everyone that most of us are building a todo app with a login page.
 
@@ -54,7 +54,7 @@ It's the perfect counter to the escalation pattern where every coding discussion
 
 > First time hitting my limit as a Max 20x sub ... Topped up $6 to get another turn in to finish something and it ate it all in the "thinking" block and output nothing lol..
 
-u/privacyguy123, 120 upvotes, on **Knew they were gaslighting everyone with the daily limits**
+[u/privacyguy123](https://reddit.com/user/privacyguy123), 120 upvotes, on **[Knew they were gaslighting everyone with the daily limits](https://reddit.com/r/ClaudeCode/comments/1sanjxq/knew_they_were_gaslighting_everyone_with_the/)**
 
 This isn't trolling in the traditional sense. This is the universe trolling u/privacyguy123 specifically. Paying $200/month for Max 20x. Hitting the limit anyway. Topping up $6 out of desperation. And then watching Claude use every last token... thinking. Deeply. About what to say. Before saying absolutely nothing.
 
@@ -65,7 +65,7 @@ The lol.. at the end carries so much weight. That's not laughter. That's a perso
 ## fun facts
 
 - Someone created **r/Claudepocalypse** today to fight censorship around rate limit complaints. 2 upvotes. 1 comment. 1 member. It's a movement.
-- A post in r/vibecoding titled simply **life** got 32 upvotes with no body text. Top comment: this hits hard. The vibes are vibing.
+- A post in [r/vibecoding](https://reddit.com/r/vibecoding) titled simply **life** got 32 upvotes with no body text. Top comment: this hits hard. The vibes are vibing.
 - The Claude tried to kill me post hit 478 upvotes before anyone verified the actual prompt. When exposed, it was about cleaning a moldy water cooler. OP deleted the evidence.
 - Claude Code is now **telling users to take breaks**. Not computational breaks. Human breaks. Per one post: in the past few weeks, my ClaudeCode has been asking me to take breaks. Opus 4.6 continues its wellness campaign. Third sighting.
 - Rate limit posts accounted for **4 of the top 15 posts** across r/ClaudeCode today. The community is writing more about not being able to use Claude than about using Claude.
@@ -86,12 +86,12 @@ Set this annotation on your MCP tool results to pass up to 500K characters throu
 
 The release also added `disableSkillShellExecution` as a setting to prevent skills from running inline shell commands. If you're running third-party skills and you'd rather they didn't have bash access, flip that on.
 
-And the one that raised eyebrows: plugins can now ship executables under `bin/` and invoke them as bare commands from the Bash tool. One post about this (34 upvotes, 11 comments) immediately asked the obvious question in its title: **malware incoming?** The top response was pragmatic: I don't use non-official plugins. If I need something I fork and build. Solid policy.
+And the one that raised eyebrows: plugins can now ship executables under `bin/` and invoke them as bare commands from the Bash tool. One post about this (34 upvotes, 11 comments) immediately asked the obvious question in its title: **[malware incoming?](https://reddit.com/r/ClaudeCode/comments/1say80q/2191_plugins_can_now_ship_and_invoke_binaries/)** The top response was pragmatic: I don't use non-official plugins. If I need something I fork and build. Solid policy.
 
 ## builder takeaways
 
 - **2.1.91's MCP result persistence at 500K chars is a real upgrade.** If you've been fighting truncated tool outputs, update and add the `_meta` annotation to your MCP responses today.
-- **The MCP-to-CLI migration is gaining traction.** 424 upvotes on the thread. u/bman654's team vibe-coded CLIs for Slack, Bitbucket, Google Docs, Sheets, Slides, and Harvest in afternoons. If a service doesn't have a CLI, build one and use it as a Claude Code skill. Simpler than maintaining MCP servers.
+- **The MCP-to-CLI migration is gaining traction.** 424 upvotes on the thread. [u/bman654](https://reddit.com/user/bman654)'s team vibe-coded CLIs for Slack, Bitbucket, Google Docs, Sheets, Slides, and Harvest in afternoons. If a service doesn't have a CLI, build one and use it as a Claude Code skill. Simpler than maintaining MCP servers.
 - **Audit your plugin trust model.** With 2.1.91 allowing plugins to ship binaries, your `bin/` directory just became an attack surface. Fork and review anything third-party before installing.
 - **Pre-index your codebase to survive rate limits.** Yesterday's token-saving tool (538 upvotes) and today's Context Reduction Tool both target the same problem: Claude burning 10-20 tool calls exploring your repo before doing any real work. If you're hitting limits, this is the lowest-effort optimization available.
 - **The 3-agent pattern is resonating.** Architect + Builder + Reviewer (415 upvotes, still climbing) mirrors how actual teams ship code. If solo Claude sessions feel chaotic, split the roles.
@@ -111,3 +111,11 @@ And the one that raised eyebrows: plugins can now ship executables under `bin/` 
 ---
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [2.1.91: Plugins can now ship and invoke binaries - malware incoming?](https://reddit.com/r/ClaudeCode/comments/1say80q/2191_plugins_can_now_ship_and_invoke_binaries/) · r/ClaudeCode, 34 up / 11 comments
+- [Why vibe coded projects fail](https://reddit.com/r/ClaudeCode/comments/1sah8hh/why_vibe_coded_projects_fail/) · r/ClaudeCode, 1,410 up / 423 comments
+- [Claude - tried to kill me](https://reddit.com/r/ClaudeAI/comments/1sam5pw/claude_tried_to_kill_me/) · r/ClaudeAI, 478 up / 132 comments
+- [Knew they were gaslighting everyone with the daily limits.](https://reddit.com/r/ClaudeCode/comments/1sanjxq/knew_they_were_gaslighting_everyone_with_the/) · r/ClaudeCode, 280 up / 105 comments
+- [Context Reduction Tool](https://reddit.com/r/ClaudeCode/comments/1sax03e/context_reduction_tool/) · r/ClaudeCode, 2 up / 2 comments

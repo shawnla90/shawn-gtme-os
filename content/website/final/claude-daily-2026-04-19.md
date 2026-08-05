@@ -8,7 +8,7 @@ featured: false
 
 ## the pulse
 
-sunday on r/ClaudeCode and someone figured out how to use Claude Code without a subscription. 2,985 upvotes. the post title is in all caps. the comments are exactly what you'd expect. and honestly, the fact that this is the highest velocity post of the day tells you everything about where the community's head is at right now.
+sunday on [r/ClaudeCode](https://reddit.com/r/ClaudeCode) and someone figured out how to use Claude Code without a subscription. 2,985 upvotes. the post title is in all caps. the comments are exactly what you'd expect. and honestly, the fact that this is the highest velocity post of the day tells you everything about where the community's head is at right now.
 
 meanwhile, the Opus 4.7 discourse has officially entered its "side by side comparison with actual data" phase, which means we're past denial, past anger, and settling into bargaining. one user ran both models against their real codebase for three days and posted the results. another user's biggest complaint about 4.7 isn't the code quality... it's that they can't understand what it's saying when brainstorming. the model writes like it's solving a riddle wrapped in an enigma wrapped in a JIRA ticket.
 
@@ -16,17 +16,17 @@ the Claude Design hype train is rolling but the cracks are showing. 855 upvotes 
 
 ## hottest thread
 
-**"OK BOYS IT'S OVER.. No Subscription required."** on r/ClaudeCode. 2,985 upvotes, 145 comments, velocity of 435.27. the fastest post of the day by a comfortable margin.
+**"[OK BOYS IT'S OVER.. No Subscription required.](https://reddit.com/r/ClaudeCode/comments/1spypte/ok_boys_its_over_no_subscription_required/)"** on r/ClaudeCode. 2,985 upvotes, 145 comments, velocity of 435.27. the fastest post of the day by a comfortable margin.
 
 the post itself is deliberately vague in that way that gets clicks. the preview just says "All jokes aside, this actually works for now." which is doing a lot of heavy lifting. the comments section immediately split into two camps: people laughing and people trying to figure out what to hook it into.
 
-u/wandering_island dropped the most entrepreneurial comment of the day with "hook this into openclaw ... profit" which got 193 upvotes. for context, the whole OpenClaw third-party access drama has been simmering since Boris Cherny's thread earlier this month. so naturally the community's first instinct when someone finds a workaround is to immediately try to productize it.
+[u/wandering_island](https://reddit.com/user/wandering_island) dropped the most entrepreneurial comment of the day with "hook this into openclaw ... profit" which got 193 upvotes. for context, the whole OpenClaw third-party access drama has been simmering since Boris Cherny's thread earlier this month. so naturally the community's first instinct when someone finds a workaround is to immediately try to productize it.
 
-u/OldConfection6 pulled Amazon Rufus into the conversation, because apparently no AI product is safe from the comparison game. the thread is essentially a celebration of creative problem solving wrapped in a shitpost. classic sunday energy.
+[u/OldConfection6](https://reddit.com/user/OldConfection6) pulled Amazon Rufus into the conversation, because apparently no AI product is safe from the comparison game. the thread is essentially a celebration of creative problem solving wrapped in a shitpost. classic sunday energy.
 
 ## repo of the day
 
-**GEPA** (github.com/gepa-ai/gepa) showed up in two separate posts today, one on r/ClaudeCode and one on r/vibecoding, which is the repo equivalent of getting booked on two talk shows in the same day.
+**GEPA** (github.com/gepa-ai/gepa) showed up in two separate posts today, one on r/ClaudeCode and one on [r/vibecoding](https://reddit.com/r/vibecoding), which is the repo equivalent of getting booked on two talk shows in the same day.
 
 GEPA is an open source prompt optimization framework. the pitch is simple. you feed it structured execution traces, a score, and the prompt you used. it iterates on the prompt automatically using another LLM call. think Karpathy's autoresearch but specifically for tuning your CLAUDE.md files.
 
@@ -38,7 +38,7 @@ this is the kind of tool that separates people who treat CLAUDE.md as documentat
 
 > Just think. You get to pay for the nerfed version so they can save the compute so JP Morgan can run Mythos.
 
-u/Dry_Incident6424, 373 upvotes, in the "Basically" thread on r/ClaudeAI.
+[u/Dry_Incident6424](https://reddit.com/user/Dry_Incident6424), 373 upvotes, in the "Basically" thread on [r/ClaudeAI](https://reddit.com/r/ClaudeAI).
 
 this comment won because it says in one sentence what 47 angry posts have been trying to say all week. the Mythos discourse, the usage limit complaints, the 4.7 quality debates... all of it collapsed into a single observation about resource allocation priorities. it's not even wrong. when your cloud provider is also shipping a model that enterprise banks are running at scale, the consumer tier is always going to feel the squeeze. the fact that this got 373 upvotes on a sunday tells you the community felt this one in their bones.
 
@@ -46,7 +46,7 @@ this comment won because it says in one sentence what 47 angry posts have been t
 
 > In this day and age, hiring a junior developer for a $30,000 annual salary is foolish. You can replace a junior developer with Claude Code for just $30,000 per month.
 
-u/Expensive_Bug_1402, 175 upvotes, in the "Reality of SaaS" thread on r/ClaudeCode.
+[u/Expensive_Bug_1402](https://reddit.com/user/Expensive_Bug_1402), 175 upvotes, in the "[Reality of SaaS](https://reddit.com/r/ClaudeCode/comments/1sq3fre/reality_of_saas/)" thread on r/ClaudeCode.
 
 I genuinely cannot tell if this is satire or a confession. the original post was already poking fun at people spending $500/day building tools that exist for $49/mo. and then this comment walks in and somehow makes the math worse. $30k/year for a human who learns, grows, and eventually stops making the same mistakes vs $30k/month for an AI that will confidently delete your production database at 3am if you forget to set permissions. the ROI math checks out if you squint hard enough and ignore the part where Claude doesn't show up to standup or bring donuts.
 
@@ -81,7 +81,15 @@ if you're hitting usage limits (and based on this sub, statistically you are), t
 - **total comments:** 2,916
 - **fastest rising:** "OK BOYS IT'S OVER.. No Subscription required." (velocity: 435.27)
 - **most debated:** "Reality of SaaS" (100 comments on 287 upvotes, 0.35 ratio)
-- **subreddits scanned:** r/ClaudeCode, r/ClaudeAI, r/vibecoding, r/gtmengineering
+- **subreddits scanned:** r/ClaudeCode, r/ClaudeAI, r/vibecoding, [r/gtmengineering](https://reddit.com/r/gtmengineering)
 - **returning posts from previous days:** 5
 
 shawn, the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [OK BOYS IT'S OVER.. No Subscription required.](https://reddit.com/r/ClaudeCode/comments/1spypte/ok_boys_its_over_no_subscription_required/) · r/ClaudeCode, 2,985 up / 145 comments
+- [Reality of SaaS](https://reddit.com/r/ClaudeCode/comments/1sq3fre/reality_of_saas/) · r/ClaudeCode, 287 up / 100 comments
+- [30x less context per task by using a local LLM as a subagent](https://reddit.com/r/ClaudeCode/comments/1sq9ec8/30x_less_context_per_task_by_using_a_local_llm_as/) · r/ClaudeCode, 43 up / 12 comments
+- [Optimizing CLAUDE.md with GEPA to take Haiku 4.5 from 65% pass rate to 85%](https://reddit.com/r/ClaudeCode/comments/1sqbm9d/optimizing_claudemd_with_gepa_to_take_haiku_45/) · r/ClaudeCode, 33 up / 2 comments
+- [Basically](https://reddit.com/r/ClaudeAI/comments/1spufjh/basically/) · r/ClaudeAI, 2,815 up / 79 comments

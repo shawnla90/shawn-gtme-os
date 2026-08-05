@@ -8,7 +8,7 @@ featured: false
 
 ## the pulse
 
-what a day to be alive and slowly losing your grip on reality. r/ClaudeAI woke up today and chose violence against its own self-esteem. Anthropic dropped a research paper saying AI coding tools are making developers worse. 1,238 people upvoted it. 209 of them then went right back to letting Claude write their code. the cognitive dissonance is so thick you could spread it on toast.
+what a day to be alive and slowly losing your grip on reality. [r/ClaudeAI](https://reddit.com/r/ClaudeAI) woke up today and chose violence against its own self-esteem. Anthropic dropped a research paper saying AI coding tools are making developers worse. 1,238 people upvoted it. 209 of them then went right back to letting Claude write their code. the cognitive dissonance is so thick you could spread it on toast.
 
 meanwhile, Karpathy went on a podcast and admitted he hasn't written a single line of code since December, calling his current state perpetual AI psychosis. Garry Tan is sleeping 4 hours a night. the vibes are less silicon valley and more sleep deprivation ward. but the builders? the builders don't care. someone is running Claude Code from a Kindle in bed (481 upvotes). a PhD student built a 10-agent Obsidian crew because their brain gave up. and someone reverse-engineered a hidden Auto-dream feature buried in Claude Code's binary. we are simultaneously terrified of AI and building with it harder than ever.
 
@@ -16,7 +16,7 @@ the subreddits collectively generated 8,298 upvotes across 158 posts today. that
 
 ## hottest thread
 
-**"Anthropic's research proves AI coding tools are secretly making developers worse."** posted to r/ClaudeAI. 1,238 upvotes. 209 comments. the highest comment count of any post today by a wide margin.
+**"[Anthropic's research proves AI coding tools are secretly making developers worse.](https://reddit.com/r/ClaudeAI/comments/1rzmfyd/anthropics_research_proves_ai_coding_tools_are/)"** posted to r/ClaudeAI. 1,238 upvotes. 209 comments. the highest comment count of any post today by a wide margin.
 
 the post cites Anthropic's own paper with the conclusion that AI use impairs conceptual understanding, code reading, and debugging without delivering significant efficiency gains. 17% score drop when learning new libraries with AI. sub-40% scores when AI wrote everything. zero measurable speed improvement.
 
@@ -28,7 +28,7 @@ the real takeaway that got buried in the noise: the study measures learning and 
 
 ## repo of the day
 
-**"The agent I built with the help of Claude Code got accepted to a $4 million hackathon"** (r/ClaudeAI, 86 upvotes, 27 comments)
+**"[The agent I built with the help of Claude Code got accepted to a $4 million hackathon](https://reddit.com/r/ClaudeAI/comments/1rzsa7s/the_agent_i_built_with_the_help_of_claude_code/)"** (r/ClaudeAI, 86 upvotes, 27 comments)
 
 the poster built a lightweight agentic framework. not an OpenClaw competitor. something stripped down with fewer options, which means fewer ways to break and fewer security footguns. they describe it as autonomous but constrained by design.
 
@@ -40,7 +40,7 @@ whether it wins or not is irrelevant. the signal here is that Claude Code is bec
 
 > So, I was fascinated by this and already use a binary extractor/patcher for CC so was able to locate what this is. It's not documented anywhere. The feature is gated behind a remote config flag (tengu_onyx_plover), which suggests this is in a staged/quiet rollout.
 
-u/TPHG, 170 upvotes, on "What is this Auto-dream feature?"
+[u/TPHG](https://reddit.com/user/TPHG), 170 upvotes, on "[What is this Auto-dream feature?](https://reddit.com/r/ClaudeCode/comments/1rzt8fv/what_is_this_autodream_feature/)"
 
 this wins because it's the most builder-brained response possible. someone posts a screenshot of a mysterious Auto-dream feature in Claude Code. most people would speculate in the comments. TPHG went and reverse-engineered the binary. found the feature flag name. determined it's in staged rollout. reported back with specifics.
 
@@ -50,7 +50,7 @@ tengu_onyx_plover. that's the flag name. that's the kind of detail that separate
 
 > "Here's why this changes everything" lol thanks Claude
 
-u/ryo0ka, 254 upvotes, on "Anthropic's research proves AI coding tools are secretly making developers worse."
+[u/ryo0ka](https://reddit.com/user/ryo0ka), 254 upvotes, on "Anthropic's research proves AI coding tools are secretly making developers worse."
 
 this is perfect. a four-word roast. the post about AI making developers worse was itself written (or at least titled) with the exact kind of AI slop phrasing that Claude defaults to. "here's why this changes everything" is so deeply embedded in Claude's training data that seeing it in a post about Claude's negative effects on developers is... chef's kiss.
 
@@ -59,10 +59,10 @@ this is perfect. a four-word roast. the post about AI making developers worse wa
 ## fun facts
 
 - r/ClaudeAI generated 2,568 comments across all tracked subreddits today. that's roughly 107 comments per hour. on a Friday. go outside.
-- the "Totally normal and cool" post hit 1,326 upvotes with a completely empty preview body. no text. just a title and presumably an image. the less you say, the more they upvote. noted.
-- someone cross-posted the same Apple Watch caffeine app to both r/ClaudeCode and r/ClaudeAI with slightly different titles. r/ClaudeAI gave it 185 upvotes. r/ClaudeCode gave it 74. the caffeine half-life is decaying faster than the engagement delta between subreddits.
+- the "[Totally normal and cool](https://reddit.com/r/ClaudeAI/comments/1rzpnx9/totally_normal_and_cool/)" post hit 1,326 upvotes with a completely empty preview body. no text. just a title and presumably an image. the less you say, the more they upvote. noted.
+- someone cross-posted the same Apple Watch caffeine app to both [r/ClaudeCode](https://reddit.com/r/ClaudeCode) and r/ClaudeAI with slightly different titles. r/ClaudeAI gave it 185 upvotes. r/ClaudeCode gave it 74. the caffeine half-life is decaying faster than the engagement delta between subreddits.
 - the phrase AI psychosis appeared across multiple threads today after Karpathy used it. we are speedrunning new psychological conditions. DSM-6 is going to need a tech appendix.
-- the most debated post by comment-to-upvote ratio: "name and shame in the comments" with 115 comments on just 67 upvotes. that's 1.7 comments per upvote. people had opinions about which F500 companies ban Claude Code.
+- the most debated post by comment-to-upvote ratio: "[name and shame in the comments](https://reddit.com/r/ClaudeCode/comments/1s02rq0/name_and_shame_in_the_comments/)" with 115 comments on just 67 upvotes. that's 1.7 comments per upvote. people had opinions about which F500 companies ban Claude Code.
 
 ## code drop
 
@@ -88,7 +88,7 @@ the hallucination reduction post (972 upvotes) pointed to three documented-but-b
  Do not assume file contents or function signatures."
 ```
 
-the meta-lesson from the comment section: u/EdelinePenrose asked why Anthropic doesn't just bake these guardrails in by default. 97 upvotes on that question. the answer is probably that different use cases need different confidence thresholds, but the fact that users have to manually opt into reduced hallucination is... a product decision worth questioning.
+the meta-lesson from the comment section: [u/EdelinePenrose](https://reddit.com/user/EdelinePenrose) asked why Anthropic doesn't just bake these guardrails in by default. 97 upvotes on that question. the answer is probably that different use cases need different confidence thresholds, but the fact that users have to manually opt into reduced hallucination is... a product decision worth questioning.
 
 ## builder takeaways
 
@@ -108,4 +108,12 @@ the meta-lesson from the comment section: u/EdelinePenrose asked why Anthropic d
 | fastest rising post | Karpathy AI psychosis (velocity: 122.1) |
 | most upvoted | "Totally normal and cool" (1,326) |
 | most debated | "name and shame in the comments" (1.7 comments per upvote) |
-| subreddits scanned | r/ClaudeCode, r/ClaudeAI, r/vibecoding, r/gtmengineering, r/GTMbuilders |
+| subreddits scanned | r/ClaudeCode, r/ClaudeAI, [r/vibecoding](https://reddit.com/r/vibecoding), [r/gtmengineering](https://reddit.com/r/gtmengineering), [r/GTMbuilders](https://reddit.com/r/GTMbuilders) |
+
+## sources
+
+- [Totally normal and cool](https://reddit.com/r/ClaudeAI/comments/1rzpnx9/totally_normal_and_cool/) · r/ClaudeAI, 1,326 up / 100 comments
+- [Anthropic's research proves AI coding tools are secretly making developers worse.](https://reddit.com/r/ClaudeAI/comments/1rzmfyd/anthropics_research_proves_ai_coding_tools_are/) · r/ClaudeAI, 1,238 up / 209 comments
+- [What is this Auto-dream feature?](https://reddit.com/r/ClaudeCode/comments/1rzt8fv/what_is_this_autodream_feature/) · r/ClaudeCode, 144 up / 34 comments
+- [name and shame in the comments](https://reddit.com/r/ClaudeCode/comments/1s02rq0/name_and_shame_in_the_comments/) · r/ClaudeCode, 67 up / 115 comments
+- [The agent I built with the help of claude code got accepted to a $4million hackathon](https://reddit.com/r/ClaudeAI/comments/1rzsa7s/the_agent_i_built_with_the_help_of_claude_code/) · r/ClaudeAI, 86 up / 27 comments

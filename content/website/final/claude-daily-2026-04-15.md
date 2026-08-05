@@ -8,7 +8,7 @@ featured: false
 
 ## the pulse
 
-wednesday showed up with the energy of a server farm running on vibes and duct tape. r/ClaudeCode is still cleaning up the 500 errors from yesterday, r/ClaudeAI found religion around a meme, and somewhere between it all, Opus 4.7 got spotted on Google Vertex before anyone at Anthropic apparently remembered to hide it.
+wednesday showed up with the energy of a server farm running on vibes and duct tape. [r/ClaudeCode](https://reddit.com/r/ClaudeCode) is still cleaning up the 500 errors from yesterday, [r/ClaudeAI](https://reddit.com/r/ClaudeAI) found religion around a meme, and somewhere between it all, Opus 4.7 got spotted on Google Vertex before anyone at Anthropic apparently remembered to hide it.
 
 the Opus 4.7 rumor is the sun everything orbits around today. one tweet from @pankajkumar_dev and the entire community has convinced itself a savior is incoming this week. the community is not coping well. people are spamming /model claude-opus-4-5-20251101 like it's a nicotine patch, the 500s are back, and somehow the top two threads in r/ClaudeAI are a 3k-line code meme and a guy asking Claude to help him rent a flat in London.
 
@@ -16,7 +16,7 @@ also Anthropic is apparently asking users to verify their identity now, which is
 
 ## hottest thread
 
-the non-meme numbers belong to Opus 4.7, but the thread that actually owned today is **"Me when Claude already wrote like 3k lines of code and I notice an error on my prompt"** on r/ClaudeAI. 2,834 upvotes. 57 comments. a velocity that suggests every engineer on earth saw themselves in this post and upvoted from the fetal position.
+the non-meme numbers belong to Opus 4.7, but the thread that actually owned today is **"[Me when Claude already wrote like 3k lines of code and I notice an error on my prompt](https://reddit.com/r/ClaudeAI/comments/1smciwx/me_when_claude_already_wrote_like_3k_lines_of/)"** on r/ClaudeAI. 2,834 upvotes. 57 comments. a velocity that suggests every engineer on earth saw themselves in this post and upvoted from the fetal position.
 
 the premise is simple. you gave Claude a prompt. it shipped an architecture. halfway through the diff you notice you told it to do the wrong thing. now you have 3,000 lines of beautifully-executed wrong. the feeling is universal. the thread is basically a group therapy session.
 
@@ -38,17 +38,17 @@ honorable mention to the MadAppGang magus repo for multi-profile Claude Desktop 
 >
 > 'Tell me, Claude, were you rushing or dragging?'"
 
-**u/PunchbowlPorkSoda**, 371 upvotes, on the 3k-lines meme.
+**[u/PunchbowlPorkSoda](https://reddit.com/user/PunchbowlPorkSoda)**, 371 upvotes, on the 3k-lines meme.
 
 J.K. Simmons in Whiplash doing code review on Claude Opus is, I'm sorry, a perfect meme. it's timed, culturally correct, and it captures the exact dynamic where you ask for a quick change and get a cinematic performance. the comment landed because it's not trying to explain the meme. it just layers a second, better meme on top of it. that's comedy.
 
-also big shoutout to u/vintage_culture for posting the actual Anthropic research link on the "Claude had enough of this user" thread because someone needed to. we love a citation-first king.
+also big shoutout to [u/vintage_culture](https://reddit.com/user/vintage_culture) for posting the actual Anthropic research link on the "[Claude had enough of this user](https://reddit.com/r/ClaudeAI/comments/1sm3jlg/claude_had_enough_of_this_user/)" thread because someone needed to. we love a citation-first king.
 
 ## troll of the day
 
 > "Great idea.. but only real devs would use it because no one has 'time' to read/learn code anymore :)"
 
-**u/godsknowledge**, 107 upvotes, under "Built an anti-vibecoding tool for Claude Code."
+**[u/godsknowledge](https://reddit.com/user/godsknowledge)**, 107 upvotes, under "[Built an anti-vibecoding tool for Claude Code.](https://reddit.com/r/ClaudeAI/comments/1sm4kto/built_an_antivibecoding_tool_for_claude_code/)"
 
 nothing brings out the gatekeepers like a tool literally designed to make AI-assisted coding more rigorous. this is the comment version of showing up to a gym for new lifters and announcing you squat 405. the smiley face at the end is the real crime. that's the "no offense but" of comment sign-offs.
 
@@ -57,10 +57,10 @@ the beautiful irony is that the tool the OP built is specifically for the develo
 ## fun facts
 
 - the post "Claude had enough of this user" has 2,693 upvotes and **968 comments**. that is a 0.36 comment-to-upvote ratio, which in Reddit physics means people are fighting in there. that thread is not a discussion. it's a war zone.
-- r/ClaudeCode is currently host to three separate threads about Opus 4.7 and one thread literally titled "use opus 4.5--just try it, I was skeptical too." we are one release cycle away from people reminiscing about Opus 3.
+- r/ClaudeCode is currently host to three separate threads about Opus 4.7 and one thread literally titled "[use opus 4.5--just try it, I was skeptical too](https://reddit.com/r/ClaudeCode/comments/1sms7re/use_opus_45just_try_it_i_was_skeptical_too/)." we are one release cycle away from people reminiscing about Opus 3.
 - "nerf" and "pre-nerf" appeared so many times across the top comments today that I stopped counting at double digits. pre-nerf 4.6 has achieved the same cultural status as the OG McRib.
 - someone built a real benchmark site called driftbench.ai specifically to test whether models get dumber over time. we have now reached the "trust nothing, measure everything" phase of the Anthropic relationship.
-- one post on r/ClaudeCode is titled "Dad, why does Claude CLI need to update drivers for a buttpl**. . .?" and I refuse to provide further context. you will have to click it yourself.
+- one post on r/ClaudeCode is titled "[Dad, why does Claude CLI need to update drivers for a buttpl**. . .?](https://reddit.com/r/ClaudeCode/comments/1smorqb/dad_why_does_claude_cli_need_to_update_drivers/)" and I refuse to provide further context. you will have to click it yourself.
 
 ## code drop
 
@@ -87,10 +87,20 @@ small lift. large quality-of-life improvement. this is the kind of thing r/Claud
 - posts tracked: **180**
 - total upvotes: **17,051**
 - total comments: **5,178**
-- fastest rising post: **"Claude is about to begin its KYC verification process."** (velocity 960, r/ClaudeAI)
-- most debated (highest comment:upvote ratio): **"Whats with all the Claude hate?"** in r/ClaudeCode, 122 comments on 33 upvotes. that is a 3.7 ratio. that is not a discussion, that is a street fight.
+- fastest rising post: **"[Claude is about to begin its KYC verification process.](https://reddit.com/r/ClaudeAI/comments/1smr9vs/claude_is_about_to_begin_its_kyc_verification/)"** (velocity 960, r/ClaudeAI)
+- most debated (highest comment:upvote ratio): **"[Whats with all the Claude hate?](https://reddit.com/r/ClaudeCode/comments/1smmikz/whats_with_all_the_claude_hate/)"** in r/ClaudeCode, 122 comments on 33 upvotes. that is a 3.7 ratio. that is not a discussion, that is a street fight.
 - subreddits scanned: **ClaudeCode, ClaudeAI, vibecoding, gtmengineering**
 
 see you tomorrow. bring snacks. 4.7 might actually drop and if it does, we are going to have a show.
 
 shawn ⚡ the gtme alchemist 🧙‍♂️
+
+## sources
+
+- [Claude is about to begin its KYC verification process.](https://reddit.com/r/ClaudeAI/comments/1smr9vs/claude_is_about_to_begin_its_kyc_verification/) · r/ClaudeAI, 96 up / 44 comments
+- [Me when Claude already wrote like 3k lines of code and I notice an error on my prompt](https://reddit.com/r/ClaudeAI/comments/1smciwx/me_when_claude_already_wrote_like_3k_lines_of/) · r/ClaudeAI, 2,834 up / 57 comments
+- [Claude had enough of this user](https://reddit.com/r/ClaudeAI/comments/1sm3jlg/claude_had_enough_of_this_user/) · r/ClaudeAI, 2,693 up / 968 comments
+- [Dad, why does Claude CLI need to update drivers for a buttpl**. . .?](https://reddit.com/r/ClaudeCode/comments/1smorqb/dad_why_does_claude_cli_need_to_update_drivers/) · r/ClaudeCode, 6 up / 13 comments
+- [Whats with all the Claude hate?](https://reddit.com/r/ClaudeCode/comments/1smmikz/whats_with_all_the_claude_hate/) · r/ClaudeCode, 33 up / 122 comments
+- [Built an anti-vibecoding tool for Claude Code - LinkedIn kinda went crazy for it](https://reddit.com/r/ClaudeAI/comments/1sm4kto/built_an_antivibecoding_tool_for_claude_code/) · r/ClaudeAI, 489 up / 109 comments
+- [use opus 4.5--just try it, i was skeptical too](https://reddit.com/r/ClaudeCode/comments/1sms7re/use_opus_45just_try_it_i_was_skeptical_too/) · r/ClaudeCode, 2 up / 4 comments

@@ -16,21 +16,21 @@ meanwhile, the usage limit saga that's been brewing for a week straight hit a ne
 
 ## hottest thread
 
-**i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged** by u/unknown in r/ClaudeAI. 2,054 upvotes. 295 comments. velocity score of 288.81, nearly double the next fastest post.
+**[i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged](https://reddit.com/r/ClaudeAI/comments/1s8lkkm/i_dug_through_claude_codes_leaked_source_and/)** by u/unknown in [r/ClaudeAI](https://reddit.com/r/ClaudeAI). 2,054 upvotes. 295 comments. velocity score of 288.81, nearly double the next fastest post.
 
 the author spent hours reading through the full TypeScript source after it leaked through that .map file and came back with a breakdown that reads like someone discovering a secret room in their apartment. the /buddy system. a full pet that lives beside your prompt. 18 spec files for a tamagotchi inside a terminal. the community went absolutely feral.
 
 what makes this thread great isn't just the findings. it's the reactions. half the comments are developers going wait, MY code is too clean compared to this? and the other half are demanding Anthropic ship the buddy feature immediately. there's a genuine tension between people calling the codebase unhinged and experienced engineers saying this is completely normal for a production system at scale. the thread became a Rorschach test for how you feel about real-world codebases versus textbook architecture.
 
-the parallel thread in r/ClaudeCode (991 upvotes, 184 comments) focused more on the 35 feature flags and what they reveal about Anthropic's roadmap. between the two subreddits, the leak generated over 479 comments of analysis in a single day.
+the parallel thread in [r/ClaudeCode](https://reddit.com/r/ClaudeCode) (991 upvotes, 184 comments) focused more on the 35 feature flags and what they reveal about Anthropic's roadmap. between the two subreddits, the leak generated over 479 comments of analysis in a single day.
 
 ## repo of the day
 
-**Phantom** by u/unknown, shared in the post I gave Claude its own computer and let it run 24/7. Here's what it built. 1,264 upvotes. 230 comments. just open sourced today.
+**Phantom** by u/unknown, shared in the post [I gave Claude its own computer and let it run 24/7. Here's what it built.](https://reddit.com/r/ClaudeAI/comments/1s84l18/i_gave_claude_its_own_computer_and_let_it_run_247/) 1,264 upvotes. 230 comments. just open sourced today.
 
 the concept: instead of Claude running in your terminal where it stops when you close the lid, give it an actual persistent computer. its own filesystem, its own processes, its own runtime. then let it build things autonomously while you sleep.
 
-what makes this interesting isn't the autonomy itself. it's the ecosystem that immediately spun out of it. the top comment, from u/Marathon2021, suggested giving it IMAP/SMTP capability and a mailbox so it checks email hourly for delegated tasks. that's not a joke. they actually built that. the thread turned into a brainstorm session for what happens when your AI agent has infrastructure instead of just a prompt window.
+what makes this interesting isn't the autonomy itself. it's the ecosystem that immediately spun out of it. the top comment, from [u/Marathon2021](https://reddit.com/user/Marathon2021), suggested giving it IMAP/SMTP capability and a mailbox so it checks email hourly for delegated tasks. that's not a joke. they actually built that. the thread turned into a brainstorm session for what happens when your AI agent has infrastructure instead of just a prompt window.
 
 is it practical? for most people, probably not yet. is it the direction things are heading? absolutely. Phantom is the kind of project that feels like a toy today and a standard tool in 18 months.
 
@@ -38,17 +38,17 @@ is it practical? for most people, probably not yet. is it the direction things a
 
 > Makes me think my work code is too high quality lmao
 
-u/No_Cheek7162 in r/ClaudeAI, 598 upvotes, on the leaked source breakdown thread.
+[u/No_Cheek7162](https://reddit.com/user/No_Cheek7162) in r/ClaudeAI, 598 upvotes, on the leaked source breakdown thread.
 
 this wins because it captures the exact emotional arc that every developer went through today in seven words. you spend your career worrying your code isn't clean enough, then you peek behind the curtain at one of the most well-funded AI companies on the planet and realize... they're doing the same stuff you are. maybe worse. there's something deeply comforting about learning that Anthropic's internal codebase has the same kind of chaos you've been feeling guilty about in your own repos.
 
-honorable mention to u/martin1744 with accidentally open source is still open source at 339 upvotes. legally debatable, spiritually bulletproof.
+honorable mention to [u/martin1744](https://reddit.com/user/martin1744) with accidentally open source is still open source at 339 upvotes. legally debatable, spiritually bulletproof.
 
 ## troll of the day
 
 > imma be real with you, as someone who has maintained huge codebases built before AI, this is all very pedestrian and not controversial at all. don't get me wrong, it's always fun to peek behind the curtains, but calling it unhinged is not fair.
 
-u/radiationshield in r/ClaudeAI, 443 upvotes.
+[u/radiationshield](https://reddit.com/user/radiationshield) in r/ClaudeAI, 443 upvotes.
 
 walking into a thread where 2,000 people are losing their minds and calmly saying actually this is boring is an elite power move. and honestly? they're not wrong. production codebases are messy. feature flags are normal. tamagotchi easter eggs are... okay, that part is a little unhinged. but the fundamental point stands. the gap between how developers imagine Big Tech codebases and how they actually look is enormous. u/radiationshield just ripped the band-aid off for everyone who thought Anthropic engineers write code in a pristine white room while monks chant in the background.
 
@@ -57,7 +57,7 @@ the 443 upvotes on a take that directly contradicts the thread it's in? that's t
 ## fun facts
 
 - the word leaked appears in **6 separate post titles** across 3 subreddits today. if this were a drinking game, you'd be done by noon.
-- r/vibecoding had a **German language post** hit 719 upvotes and 112 comments. the title, Wer von euch war das? (which of you did this), refers to the $27k API bill screenshot. international vibe coding discourse is thriving.
+- [r/vibecoding](https://reddit.com/r/vibecoding) had a **German language post** hit 719 upvotes and 112 comments. the title, [Wer von euch war das?](https://reddit.com/r/vibecoding/comments/1s809bq/wer_von_euch_war_das/) (which of you did this), refers to the $27k API bill screenshot. international vibe coding discourse is thriving.
 - one user tracked their **actual API cost at $9.75 per session** on the Max plan. 58 sessions in a week. $565 total. the $100/month plan is subsidizing approximately $465 of pure chaos.
 - there are now **5 active threads** about Claude Code usage limits on today's scan alone. the quota complaint saga is now on its 8th consecutive day of front-page coverage. at this point it deserves its own subreddit.
 - a sitting **mayor of a city of 40,000 people** posted in r/ClaudeAI asking what to use Claude for. 120 upvotes. 103 comments. democracy is getting vibe-coded.
@@ -73,7 +73,7 @@ the most actionable technical find from today is the cron job shared by u/unknow
 
 124 upvotes and 30 comments. the top comment nailed it: this isn't gaming the system, it's compensating for a weird design. if the window floors to the hour anyway, you might as well control which hour it floors to.
 
-also worth flagging: **axios@1.14.1 is compromised**. supply chain attack confirmed. if you let Claude manage your dependencies (and let's be honest, most of us do), check your lockfiles. 241 upvotes on that PSA. run `npm ls axios` and make sure you're not on 1.14.1.
+also worth flagging: **[axios@1.14.1 is compromised](https://reddit.com/r/ClaudeAI/comments/1s8h27r/heads_up_axios1141_is_compromised_if_you_vibe/)**. supply chain attack confirmed. if you let Claude manage your dependencies (and let's be honest, most of us do), check your lockfiles. 241 upvotes on that PSA. run `npm ls axios` and make sure you're not on 1.14.1.
 
 ## builder takeaways
 
@@ -97,3 +97,11 @@ also worth flagging: **axios@1.14.1 is compromised**. supply chain attack confir
 | returning storyline | usage limits (day 8 of consecutive front-page coverage) |
 
 shawn, the gtme alchemist
+
+## sources
+
+- [i dug through claude code's leaked source and anthropic's codebase is absolutely unhinged](https://reddit.com/r/ClaudeAI/comments/1s8lkkm/i_dug_through_claude_codes_leaked_source_and/) · r/ClaudeAI, 2,054 up / 295 comments
+- [I gave Claude its own computer and let it run 24/7. Here's what it built.](https://reddit.com/r/ClaudeAI/comments/1s84l18/i_gave_claude_its_own_computer_and_let_it_run_247/) · r/ClaudeAI, 1,264 up / 230 comments
+- [Wer von euch war das?](https://reddit.com/r/vibecoding/comments/1s809bq/wer_von_euch_war_das/) · r/vibecoding, 719 up / 112 comments
+- [heads up: axios@1.14.1 is compromised. if you vibe code with claude, check your lockfiles.](https://reddit.com/r/ClaudeAI/comments/1s8h27r/heads_up_axios1141_is_compromised_if_you_vibe/) · r/ClaudeAI, 241 up / 60 comments
+- [Claude code source code has been leaked via a map file in their npm registry](https://reddit.com/r/ClaudeAI/comments/1s8ifm6/claude_code_source_code_has_been_leaked_via_a_map/) · r/ClaudeAI, 1,647 up / 315 comments

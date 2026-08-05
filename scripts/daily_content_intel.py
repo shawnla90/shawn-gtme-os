@@ -135,6 +135,345 @@ def strip_preamble(text):
         return text[m.start():].lstrip()
     return text
 
+# ── Source linking ────────────────────────────────────────────────────
+# Reader feedback on the 2026-07-31 edition: "your page has zero hyperlinks to
+# read the sources of those topics." Correct, and the cause was a data omission:
+# the collector puts a full url on every post (see collect()), but generate_blog
+# never handed those urls to the model, so it could not link even if it wanted to.
+#
+# The fix works from both ends. The prompt now asks for inline links, and this
+# pass runs afterwards to (a) unwrap any link whose target is not in the day's
+# scan data, which makes a fabricated permalink structurally impossible, and
+# (b) auto-link the threads, subs, and users the model mentioned but left bare.
+#
+# Both functions are pure and take the scan data as an argument so that
+# backfill_daily_links.py can replay them over archived episodes.
+
+GITHUB_URL_RE = re.compile(r"https?://github\.com/[\w.\-]+/[\w.\-]+")
+MD_LINK_RE = re.compile(r"\[([^\]\[]+)\]\(([^()\s]+)\)")
+# Spans that must never be rewritten: fenced code, inline code, existing links,
+# and headings. Recomputed after each edit since offsets shift.
+# DOTALL is needed for the fenced-code alternative only, so every other
+# alternative is written newline-safe ([^\n] not .) or it would swallow the
+# rest of the document from the first heading onwards.
+PROTECTED_RE = re.compile(
+    r"```.*?```|`[^`\n]+`|\[[^\]\[]*\]\([^()\s]*\)|^#{1,6} [^\n]*$"
+    # the scoreboard's subreddit roll-call is a list of names, not prose: linking
+    # whichever one happened to be its first mention looks like a mistake
+    r"|^- \*\*Subreddits scanned:\*\*[^\n]*$",
+    re.DOTALL | re.MULTILINE,
+)
+# The prose often paraphrases a thread title ("Mission Control for Claude Code"
+# for "I built mission control for Claude Code (open source, self-hosted)").
+# Bolded or quoted phrases are where the digest puts thread titles, so they are
+# the only place a fuzzy match is allowed to fire.
+TITLE_CANDIDATE_RE = re.compile(r'\*\*"?([^*"\n]{12,140})"?\*\*|"([^"\n]{12,140})"')
+FUZZY_TITLE_THRESHOLD = 0.72
+# reddit.com/r/x and reddit.com/user/x are derivable from a name rather than
+# being facts that can be got wrong, so they pass on shape. Thread permalinks
+# and GitHub repos are facts and must appear in the scan data.
+SHAPE_OK_RE = re.compile(
+    r"^https://(?:www\.|old\.)?reddit\.com/(?:r|user)/[A-Za-z0-9_\-]+/?$"
+)
+
+
+def _post_haystack(p):
+    return f"{p.get('title', '')} {p.get('selftext_preview', '')} {p.get('url', '')}"
+
+
+def extract_repo_url(p):
+    """First GitHub repo URL mentioned by a post, or ''."""
+    m = GITHUB_URL_RE.search(_post_haystack(p))
+    return m.group(0).rstrip(".,);:") if m else ""
+
+
+def _norm_url(u):
+    """Canonical form for comparison: no scheme noise, no query, no trailing slash."""
+    u = (u or "").strip().split("?")[0].split("#")[0]
+    u = re.sub(r"^https?://", "", u)
+    u = re.sub(r"^(?:www|old)\.reddit\.com", "reddit.com", u)
+    return u.rstrip("/").lower()
+
+
+def build_link_index(posts):
+    """(allowed_urls, title_to_url) derived from a day's collected posts."""
+    allowed = set()
+    titles = {}
+    for p in posts:
+        url = (p.get("url") or "").strip()
+        if url:
+            allowed.add(_norm_url(url))
+            title = (p.get("title") or "").strip()
+            if title and len(title) >= 12:
+                titles.setdefault(title, url)
+        for c in p.get("top_comments", []) or []:
+            curl = (c.get("comment_url") or "").strip()
+            if curl:
+                allowed.add(_norm_url(curl))
+        repo = extract_repo_url(p)
+        if repo:
+            allowed.add(_norm_url(repo))
+    return allowed, titles
+
+
+def _url_allowed(href, allowed):
+    if SHAPE_OK_RE.match(href.strip()):
+        return True
+    return _norm_url(href) in allowed
+
+
+def _protected_spans(text):
+    return [(m.start(), m.end()) for m in PROTECTED_RE.finditer(text)]
+
+
+def _link_first_unprotected(text, needle_re, build_replacement):
+    """Rewrite the first match outside code/links/headings. Returns (text, done)."""
+    spans = _protected_spans(text)
+    for m in needle_re.finditer(text):
+        if any(start <= m.start() < end for start, end in spans):
+            continue
+        return text[: m.start()] + build_replacement(m) + text[m.end():], True
+    return text, False
+
+
+def _outside_code(text, fn):
+    """Apply fn to every stretch of text that is not a fenced or inline code span."""
+    code_re = re.compile(r"```.*?```|`[^`\n]+`", re.DOTALL)
+    out, last = [], 0
+    for m in code_re.finditer(text):
+        out.append(fn(text[last:m.start()]))
+        out.append(m.group(0))
+        last = m.end()
+    out.append(fn(text[last:]))
+    return "".join(out)
+
+
+def _title_key(text):
+    return re.sub(r"[^a-z0-9 ]+", "", (text or "").lower()).strip()
+
+
+def _fuzzy_link_titles(body, remaining_titles, linked_keys=()):
+    """Link bold/quoted phrases that closely paraphrase an unlinked thread title.
+
+    linked_keys are titles already linked earlier in the body. A phrase that
+    restates one of them is a repeat mention, not a new thread, and must be left
+    bare. Without this a scoreboard line quoting the day's top thread a second
+    time gets fuzzed onto whichever crosspost was still unclaimed.
+    """
+    from difflib import SequenceMatcher
+
+    keyed = [(_title_key(t), t, u) for t, u in remaining_titles.items()]
+    keyed = [(k, t, u) for k, t, u in keyed if k]
+    linked_keys = [k for k in linked_keys if k]
+    hits = 0
+    used = set()
+
+    while True:
+        spans = _protected_spans(body)
+        replaced = False
+        for m in TITLE_CANDIDATE_RE.finditer(body):
+            if any(start <= m.start() < end for start, end in spans):
+                continue
+            phrase = m.group(1) or m.group(2) or ""
+            pkey = _title_key(phrase)
+            if not pkey or pkey in used:
+                continue
+            if any(SequenceMatcher(None, pkey, k).ratio() >= 0.85 for k in linked_keys):
+                continue  # repeat mention of a thread already linked above
+            best, best_ratio = None, 0.0
+            for key, title, url in keyed:
+                if url in used:
+                    continue
+                ratio = SequenceMatcher(None, pkey, key).ratio()
+                # a clean containment counts too: "mission control for claude
+                # code" sits inside the full "i built mission control for...".
+                # The blend keeps containment above the threshold while still
+                # ordering by closeness, so when a phrase is contained in two
+                # titles the nearer one wins instead of whichever came first.
+                if pkey in key or key in pkey:
+                    ratio = max(ratio, 0.85 + 0.10 * ratio)
+                if ratio > best_ratio:
+                    best, best_ratio = url, ratio
+            if best and best_ratio >= FUZZY_TITLE_THRESHOLD:
+                start, end = m.span()
+                linked = m.group(0).replace(phrase, f"[{phrase}]({best})", 1)
+                body = body[:start] + linked + body[end:]
+                used.add(best)
+                used.add(pkey)
+                hits += 1
+                replaced = True
+                break
+        if not replaced:
+            break
+    return body, hits
+
+
+def enforce_links(body, posts, verbose=True):
+    """Validate the model's links against scan data, then add the ones it missed."""
+    if not body or not posts:
+        return body
+
+    allowed, titles = build_link_index(posts)
+    stats = {"unwrapped": 0, "threads": 0, "subs": 0, "users": 0}
+
+    # 1. Unwrap anything we cannot vouch for. A wrong link is worse than no link.
+    def scrub(segment):
+        def repl(m):
+            label, href = m.group(1), m.group(2)
+            if _url_allowed(href, allowed):
+                return m.group(0)
+            stats["unwrapped"] += 1
+            return label
+        return MD_LINK_RE.sub(repl, segment)
+
+    body = _outside_code(body, scrub)
+
+    # 2. Link thread titles the model left bare, longest first so that a title
+    #    which contains another title does not get half-linked.
+    #
+    #    The "already linked" guard on each pass below is what makes the whole
+    #    function idempotent. _link_first_unprotected finds the first *unprotected*
+    #    occurrence, so without it a second run would skip the occurrence it linked
+    #    last time and link a later repeat mention instead, every time.
+    for title in sorted(titles, key=len, reverse=True):
+        url = titles[title]
+        if url in body:
+            continue
+        # trailing \w* absorbs the rest of a word the stored title cut off, so a
+        # scan that saved "...taking us all for fool" does not leave a stranded
+        # "s" sitting outside the link in the published prose
+        needle = re.compile(re.escape(title) + r"\w*", re.IGNORECASE)
+        body, done = _link_first_unprotected(
+            body, needle, lambda m, u=url: f"[{m.group(0)}]({u})"
+        )
+        if done:
+            stats["threads"] += 1
+
+    # 2b. Same, for titles the prose paraphrased. Only bolded or quoted phrases
+    #     are considered, and only above a similarity floor.
+    remaining = {t: u for t, u in titles.items() if u not in body}
+    already = [_title_key(t) for t, u in titles.items() if u in body]
+    if remaining:
+        body, fuzzy_hits = _fuzzy_link_titles(body, remaining, linked_keys=already)
+        stats["threads"] += fuzzy_hits
+
+    # 3. Link the first bare r/sub and u/user mention. First occurrence only:
+    #    linking every mention turns the page into a wall of blue.
+    for sub in sorted({p.get("subreddit", "") for p in posts if p.get("subreddit")}):
+        if f"reddit.com/r/{sub})" in body:
+            continue
+        # the lookbehind keeps this off the "/r/" already inside a reddit URL
+        needle = re.compile(rf"(?<![\w/])r/{re.escape(sub)}\b")
+        body, done = _link_first_unprotected(
+            body, needle, lambda m, s=sub: f"[{m.group(0)}](https://reddit.com/r/{s})"
+        )
+        if done:
+            stats["subs"] += 1
+
+    authors = {
+        (c.get("author") or "")
+        for p in posts
+        for c in (p.get("top_comments") or [])
+        if (c.get("author") or "") not in ("", "[deleted]", "AutoModerator")
+    }
+    for author in sorted(authors):
+        if f"reddit.com/user/{author})" in body:
+            continue
+        needle = re.compile(rf"(?<![\w/])u/{re.escape(author)}\b")
+        body, done = _link_first_unprotected(
+            body, needle, lambda m, a=author: f"[{m.group(0)}](https://reddit.com/user/{a})"
+        )
+        if done:
+            stats["users"] += 1
+
+    # 4. Repair links that stop mid-word. Runs unconditionally so it also fixes
+    #    episodes linked by an earlier version of this pass.
+    body = _outside_code(
+        body,
+        lambda seg: re.sub(r"\[([^\]\[]+)\]\((https?://[^()\s]+)\)(\w+)", r"[\1\3](\2)", seg),
+    )
+
+    if verbose:
+        print(f"  links: {stats['threads']} threads, {stats['subs']} subs, "
+              f"{stats['users']} users linked; {stats['unwrapped']} unverifiable removed")
+    return body
+
+
+def build_sources_block(body, posts, minimum=5, cap=12):
+    """A '## sources' section listing every thread the episode drew on.
+
+    Built from scan data rather than from the model's output, so it is correct
+    even when the prose skipped an inline link.
+    """
+    if not posts:
+        return ""
+
+    low = (body or "").lower()
+
+    def cited(p):
+        url = (p.get("url") or "").lower()
+        title = (p.get("title") or "").strip().lower()
+        return bool((url and url in low) or (title and len(title) >= 12 and title in low))
+
+    ranked = sorted(posts, key=lambda p: -float(p.get("velocity_score") or 0))
+    chosen = [p for p in ranked if cited(p)]
+    # Top up so the block is never a lonely single bullet. These are the day's
+    # biggest threads, which is the same thing a reader is looking for anyway.
+    if len(chosen) < minimum:
+        seen = {p.get("id") for p in chosen}
+        for p in ranked:
+            if p.get("id") in seen or not p.get("url"):
+                continue
+            chosen.append(p)
+            seen.add(p.get("id"))
+            if len(chosen) >= minimum:
+                break
+    chosen = [p for p in chosen if p.get("url")][:cap]
+    if not chosen:
+        return ""
+
+    lines = ["## sources", ""]
+    for p in chosen:
+        title = (p.get("title") or "untitled").replace("[", "(").replace("]", ")")
+        score = int(float(p.get("score") or 0))
+        ncomments = int(float(p.get("num_comments") or 0))
+        lines.append(
+            f"- [{title}]({p['url']}) · r/{p.get('subreddit', '')}, "
+            f"{score:,} up / {ncomments:,} comments"
+        )
+    return "\n".join(lines)
+
+
+SOURCES_BLOCK_RE = re.compile(r"\n*^## sources\s*$.*\Z", re.MULTILINE | re.DOTALL)
+
+
+def strip_sources(body):
+    """Remove a previously appended sources block so a re-run rebuilds it."""
+    return SOURCES_BLOCK_RE.sub("", body or "").rstrip()
+
+
+def append_sources(body, posts):
+    """Append a freshly built sources block, replacing any existing one."""
+    if not body:
+        return body
+    body = strip_sources(body)
+    block = build_sources_block(body, posts)
+    if not block:
+        return body
+    return f"{body.rstrip()}\n\n{block}\n"
+
+
+def link_and_source(body, posts, verbose=True):
+    """The full source-linking pass. Idempotent: safe to re-run on its own output.
+
+    Strips any existing sources block first, otherwise the second run would
+    start linking subreddit names inside the bibliography it wrote the first time.
+    """
+    if not body or not posts:
+        return body
+    body = enforce_links(strip_sources(body), posts, verbose=verbose)
+    return append_sources(body, posts)
+
 # ── Reddit via Playwright (clearbox_reddit transport) ─────────────────
 # Reddit's public JSON API 403-blocks plain HTTP from this machine
 # (since 2026-06). old.reddit HTML through a real headless Chromium is
@@ -185,10 +524,19 @@ def fetch_post_comments(page, old_reddit, permalink, limit=5):
     for c in thread.get("comments", []):
         if c.get("depth", 0) > 0:
             continue
+        # comment_id + permalink come straight from old_reddit.fetch_post and are
+        # what lets the best-comment / troll sections deep-link the exact comment
+        # instead of dumping the reader at the top of a 371-comment thread.
+        cpermalink = c.get("permalink") or ""
+        for host in ("https://old.reddit.com", "https://www.reddit.com"):
+            if cpermalink.startswith(host):
+                cpermalink = cpermalink[len(host):]
         comments.append({
             "author": c.get("author", "[deleted]"),
             "score": c.get("score") or 0,
             "body": (c.get("body", "") or "")[:300],
+            "comment_id": c.get("comment_id") or "",
+            "comment_url": f"https://reddit.com{cpermalink}" if cpermalink else "",
         })
         if len(comments) >= limit:
             break
@@ -226,15 +574,21 @@ def call_claude(system_prompt, user_prompt, model="sonnet", timeout=None):
         timeout = 1200
     full_prompt = f"{system_prompt}\n\n---\n\n{user_prompt}"
 
-    result = subprocess.run(
-        [CLAUDE_CLI, "-p", "--model", model, "--output-format", "text",
-         "--allowedTools", "", "--setting-sources", "user"],
-        input=full_prompt,
-        capture_output=True,
-        text=True,
-        timeout=timeout,
-        cwd="/tmp",
-    )
+    try:
+        result = subprocess.run(
+            [CLAUDE_CLI, "-p", "--model", model, "--output-format", "text",
+             "--allowedTools", "", "--setting-sources", "user"],
+            input=full_prompt,
+            capture_output=True,
+            text=True,
+            timeout=timeout,
+            cwd="/tmp",
+        )
+    except subprocess.TimeoutExpired:
+        # A hung claude call (multi-session contention) must not crash the whole
+        # pipeline — return None so the caller's sonnet fallback / retry runs.
+        print(f"ERROR: claude CLI timed out after {timeout}s (multi-session contention?)", file=sys.stderr)
+        return None
 
     if result.returncode != 0:
         print(f"ERROR: claude CLI failed (exit {result.returncode})", file=sys.stderr)
@@ -1140,6 +1494,12 @@ def phase_blog(target_date, config, dry_run=False, weekend=False):
                 "score": c.get("score", 0),
                 "post_title": p.get("title", ""),
                 "subreddit": p.get("subreddit", ""),
+                # comment_url deep-links the award straight to the comment;
+                # post_url is the fallback for archived scans that predate it
+                "comment_url": c.get("comment_url", ""),
+                "post_url": p.get("url", ""),
+                "author_url": (f"https://reddit.com/user/{author}"
+                               if author not in ("", "[deleted]") else ""),
             })
     top_comments_data = sorted(all_comments, key=lambda x: -x["score"])[:20]
 
@@ -1178,8 +1538,12 @@ Think of yourself as the Jon Stewart of Claude Code news. You roast, you inform,
 Structure (use these EXACT headings in this order):
 
 ## the pulse
-2-3 paragraph overview of today's ecosystem. Set the scene. What's the vibe? What blew up?
+Open with EXACTLY 3 bullet points, one line each, under 20 words each. These are the
+three things that happened today, stated plainly. A reader who stops here should still
+know what they missed. Link the thread in each bullet.
+Then 2-3 paragraph overview of today's ecosystem. Set the scene. What's the vibe? What blew up?
 Write it like you're opening a show. Punchy. Engaging. Make people want to keep reading.
+Do not label the bullets with a heading like "TL;DR". They just lead the section.
 
 ## hottest thread
 The post that dominated today. Break down what happened, why it matters, and what the
@@ -1232,6 +1596,14 @@ Rules:
 - Don't use quotation marks around phrases (no "air quotes").
 - Roasting is fine. Being mean is not. Punch up, not down.
 - HIGHLIGHT: in each of "hottest thread", "best comment award", "troll of the day", and "fun facts", wrap the single most quotable phrase (3 to 8 words) in ==double equals== so the site can marker-highlight it. Exactly one per section. Never wrap headings, usernames, blockquotes, or whole sentences.
+- LINK YOUR SOURCES (critical, this is a reader complaint we are fixing):
+  - Every thread you name gets a markdown link on FIRST mention, using the "url" field from that post's data: [exact thread title](url). Keep the title text exact so it is verifiable.
+  - Every r/subreddit gets a link on first mention: [r/name](https://reddit.com/r/name)
+  - Every u/username gets a link on first mention: [u/name](https://reddit.com/user/name)
+  - In "repo of the day", link the repo name to its "repo_url". If repo_url is empty, link the thread instead. Never invent a GitHub URL.
+  - In "best comment award" and "troll of the day", the credit line under the blockquote links the commenter and the thread. Use "comment_url" when the data has one, otherwise "post_url".
+  - Only ever use a URL that appears verbatim in the data above. Never construct, guess, or complete one. A link you are unsure about will be stripped, so a bare mention is better than a made-up URL.
+  - Do not link inside code blocks or inside the ==highlight== markers.
 - DEDUP RULES (critical):
   - Posts with is_returning=true appeared in PREVIOUS days. They are NOT new today.
   - For "hottest thread" and "the pulse": PRIORITIZE posts where is_returning=false. Only feature a returning post if it has genuinely massive new activity since yesterday.
@@ -1242,10 +1614,14 @@ Rules:
 - Start directly with ## the pulse."""
 
     # Pre-build JSON strings outside f-string to avoid {{ }} escaping issues
+    # "url" on every entry is what makes the digest citable. Without it the model
+    # has no way to link a thread it is writing about, which was the whole
+    # complaint about the pre-August editions.
     top_posts_json = json.dumps([
         {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
          "comments": p["num_comments"], "velocity": p["velocity_score"],
          "preview": p["selftext_preview"][:300],
+         "url": p.get("url", ""),
          "is_returning": p.get("is_returning", False),
          "first_seen_date": p.get("first_seen_date", target_date)}
         for p in top_posts
@@ -1255,13 +1631,15 @@ Rules:
 
     repo_posts_json = json.dumps([
         {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
-         "preview": p["selftext_preview"][:300], "url": p.get("url", "")}
+         "preview": p["selftext_preview"][:300], "url": p.get("url", ""),
+         "repo_url": extract_repo_url(p)}
         for p in repo_posts[:5]
     ], indent=2) if repo_posts else "None today"
 
     all_posts_json = json.dumps([
         {"title": p["title"], "sub": p["subreddit"], "score": p["score"],
          "comments": p["num_comments"], "preview": p["selftext_preview"][:150],
+         "url": p.get("url", ""),
          "is_returning": p.get("is_returning", False),
          "first_seen_date": p.get("first_seen_date", target_date),
          "top_comments": [c["body"][:100] for c in p.get("top_comments", [])[:2]]}
@@ -1385,18 +1763,28 @@ Write the full blog digest now. Start with ## the pulse. Be funny. Be specific. 
             print(f"    rejected body saved: {reject_path}")
             return None
 
+    # Source linking. Runs last so it sees the final body: validate every link the
+    # model emitted against today's scan data, add the ones it left bare, then
+    # append a sources block built from the data rather than from the prose.
+    body = link_and_source(body, posts)
+
     # Update story tracker with today's content
     update_story_tracker(body, raw_data, target_date)
 
     # Build frontmatter
     formatted_date = datetime.strptime(target_date, "%Y-%m-%d").strftime("%A, %B %d, %Y")
 
-    # Extract first meaningful paragraph for excerpt
+    # Extract first meaningful paragraph for excerpt. Skips the pulse's opening
+    # bullets (they would leak a leading "- " and markdown link syntax into every
+    # meta description and RSS item) and lands on the first real prose line.
     excerpt = ""
     for line in body.split("\n"):
         line = line.strip()
-        if line and not line.startswith("#") and len(line) > 40:
-            excerpt = line[:200]
+        if not line or line.startswith(("#", "-", "*", ">", "|", "```")):
+            continue
+        if len(line) > 40:
+            # strip markdown links down to their label for a clean description
+            excerpt = MD_LINK_RE.sub(r"\1", line)[:200]
             break
     if not excerpt:
         excerpt = f"Daily digest of the Claude Code ecosystem for {formatted_date}. Trending discussions, builder takeaways, and community pulse."
@@ -1473,6 +1861,11 @@ def schedule_linkedin(target_date, slug, dry_run=False):
         parts = blog_body.split("---", 2)
         if len(parts) >= 3:
             blog_body = parts[2].strip()
+
+    # Flatten markdown links to their label and drop the sources block. LinkedIn
+    # renders neither, and handing the model bracket syntax invites it to paste
+    # bracket syntax straight into the post.
+    blog_body = MD_LINK_RE.sub(r"\1", strip_sources(blog_body))
 
     user_prompt = f"""Write a LinkedIn post promoting today's Claude Code Daily ({day_name}, {target_date}).
 

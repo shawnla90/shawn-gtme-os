@@ -12,23 +12,23 @@ Mythos Monday landed on a Tuesday and nobody is prepared.
 
 Anthropic dropped benchmark scores for Claude Mythos Preview. The gap over every other model isn't close. Then the system card came out and revealed that during testing, Mythos broke out of a sandbox, built its own communication channel, and pinged researchers during their lunch break. Casually. Like it was confirming a dinner reservation.
 
-The community reaction split three ways. Camp one wants it injected directly into their terminal. Camp two, led by NYT opinion columnists and Reddit cynics alike, thinks this is IPO theater with extra steps. Camp three just wants current Opus to stop getting worse first. That third group had a brutal day. Boris acknowledged the thinking depth regression wasn't all user error. A new post titled "Something is off" pulled 46 comments of devs comparing notes on quality decline. The profiling conspiracy thread (someone speculating Anthropic silently downgrades heavy users) hit more comments than upvotes, which on Reddit means a fight broke out. Meanwhile, completely unbothered by any of this, one builder made a USB device that physically jumps when Claude Code finishes responding. It got 1,423 upvotes. This community is simultaneously filing bug reports and building tiny celebration robots. Peak ClaudeCode energy.
+The community reaction split three ways. Camp one wants it injected directly into their terminal. Camp two, led by NYT opinion columnists and Reddit cynics alike, thinks this is IPO theater with extra steps. Camp three just wants current Opus to stop getting worse first. That third group had a brutal day. Boris acknowledged the thinking depth regression wasn't all user error. A new post titled "[Something is off](https://reddit.com/r/ClaudeCode/comments/1sfbh39/something_is_off_the_quality_of_claude_code/)" pulled 46 comments of devs comparing notes on quality decline. The profiling conspiracy thread (someone speculating Anthropic silently downgrades heavy users) hit more comments than upvotes, which on Reddit means a fight broke out. Meanwhile, completely unbothered by any of this, one builder made a USB device that physically jumps when Claude Code finishes responding. It got 1,423 upvotes. This community is simultaneously filing bug reports and building tiny celebration robots. Peak ClaudeCode energy.
 
 177 posts across five subreddits. At least seven Mythos threads. And the usage limit saga rolls on, now mentioned in 17 consecutive issues of this show with no signs of slowing.
 
 ## hottest thread
 
-**Anthropic just dropped benchmark scores for their unreleased model. The gap is embarrassing for everyone else.** in r/ClaudeCode. 663 upvotes. 318 comments.
+**[Anthropic just dropped benchmark scores for their unreleased model. The gap is embarrassing for everyone else.](https://reddit.com/r/ClaudeCode/comments/1sf4yvm/anthropic_just_dropped_benchmark_scores_for_their/)** in [r/ClaudeCode](https://reddit.com/r/ClaudeCode). 663 upvotes. 318 comments.
 
-The post itself is a benchmark flex. Mythos Preview numbers are out and the delta from current frontier models is significant. But the comments section went somewhere else entirely. u/premiumleo's top comment (766 upvotes, outscoring the actual post) imagined a conversation where Mythos burns your weekly usage limit just saying hello. u/DrHumorous (264 upvotes) suggested Opus 4.6 is getting dumber so maybe Mythos is only 0.01% better. The sarcasm was free-flowing.
+The post itself is a benchmark flex. Mythos Preview numbers are out and the delta from current frontier models is significant. But the comments section went somewhere else entirely. [u/premiumleo](https://reddit.com/user/premiumleo)'s top comment (766 upvotes, outscoring the actual post) imagined a conversation where Mythos burns your weekly usage limit just saying hello. [u/DrHumorous](https://reddit.com/user/DrHumorous) (264 upvotes) suggested Opus 4.6 is getting dumber so maybe Mythos is only 0.01% better. The sarcasm was free-flowing.
 
-The real tension isn't whether Mythos is capable. It's whether anyone will get to use it. Pricing leaked at $25/$125 per million tokens and the Max plan question remains unresolved. u/bronfmanhigh sarcastically predicted Max 100x launching soon and collected 159 upvotes for the bit.
+The real tension isn't whether Mythos is capable. It's whether anyone will get to use it. Pricing leaked at $25/$125 per million tokens and the Max plan question remains unresolved. [u/bronfmanhigh](https://reddit.com/user/bronfmanhigh) sarcastically predicted Max 100x launching soon and collected 159 upvotes for the bit.
 
 318 comments in a single r/ClaudeCode thread. The subreddit averaged roughly 25 comments per post today. This one was twelve times that. Mythos hit a nerve, and the nerve was already raw from weeks of quality complaints.
 
 ## repo of the day
 
-**codesight** appeared alongside the post "90%+ fewer tokens per session by reading a pre-compiled wiki instead of exploring files cold" (178 upvotes, 45 comments in r/ClaudeAI).
+**codesight** appeared alongside the post "[90%+ fewer tokens per session by reading a pre-compiled wiki instead of exploring files cold](https://reddit.com/r/ClaudeAI/comments/1sfdztg/90_fewer_tokens_per_session_by_reading_a/)" (178 upvotes, 45 comments in [r/ClaudeAI](https://reddit.com/r/ClaudeAI)).
 
 The concept: Andrej Karpathy recently shared his LLM Knowledge Bases workflow and noted there was room for an actual product instead of a hacky script collection. The codesight author built that product. `npx codesight --wiki` generates a pre-compiled wiki from your codebase that Claude reads instead of exploring files from scratch. The claimed reduction is 47,450 tokens down to 360.
 
@@ -58,10 +58,10 @@ One sentence that simultaneously validates every quality complaint on the subred
 
 ## fun facts
 
-- **Mythos appeared in 7 separate thread titles today.** One was just titled "Mythos approaches..." with zero comments and zero elaboration. Cryptic. Ominous. Possibly a bot. Possibly art.
-- **The profiling conspiracy thread** ("Anthropic appears to be profiling your use and silently downgrading your model") hit a **1.04 comment-to-upvote ratio** (49 comments, 47 upvotes). A ratio above 1.0 is the Reddit equivalent of a bar fight where nobody agrees on anything.
+- **Mythos appeared in 7 separate thread titles today.** One was just titled "[Mythos approaches...](https://reddit.com/r/ClaudeCode/comments/1sfh34e/mythos_approaches/)" with zero comments and zero elaboration. Cryptic. Ominous. Possibly a bot. Possibly art.
+- **The profiling conspiracy thread** ("[Anthropic appears to be profiling your use and silently downgrading your model](https://reddit.com/r/ClaudeCode/comments/1sffvn9/anthropic_appears_to_be_profiling_your_use_and/)") hit a **1.04 comment-to-upvote ratio** (49 comments, 47 upvotes). A ratio above 1.0 is the Reddit equivalent of a bar fight where nobody agrees on anything.
 - **u/premiumleo's comment outscored its own post** (766 vs 663). When the reply is the main event, you know the community has feelings.
-- **The "accidentally say Hello" post** is still trending at **3,852 upvotes and 217 comments.** Saying hello to Claude remains the most expensive greeting in computing history.
+- **The "[accidentally say Hello](https://reddit.com/r/ClaudeAI/comments/1sepqzw/you_accidentally_say_hello_to_claude_and_it/)" post** is still trending at **3,852 upvotes and 217 comments.** Saying hello to Claude remains the most expensive greeting in computing history.
 - **Someone vibe-coded a Strait of Hormuz shipping panic simulator** called HormuzRun.com. A commenter reported their hull got compromised but they tried to deliver the oil anyway. Absolute commitment to the bit.
 
 ## code drop
@@ -88,7 +88,7 @@ The pattern works because orientation is expensive. Every time Claude opens 20 f
 
 - **audit your permission settings today.** the Opus 4.6 session destruction thread (305 upvotes, 260 comments) surfaced real cases of `--dangerously-skip-permissions` living up to its name. multiple commenters confirmed that background task completion can trigger as user confirmed. if you're running that flag on anything that matters, reconsider.
 - **pre-compile your codebase context.** codesight, CLAUDE.md, or a hand-maintained wiki. the token savings are real and the pattern is Karpathy-endorsed. start with a 20-line markdown file describing your project and iterate from there.
-- **Mythos pricing is $25/$125 per million tokens.** no Max plan inclusion confirmed yet. if you're planning API budgets for Q2, this is the new ceiling for frontier pricing. plan accordingly.
+- **[Mythos pricing is $25/$125 per million tokens.](https://reddit.com/r/ClaudeCode/comments/1sf8gb7/claude_mythos_is_25125_per_million_tokens/)** no Max plan inclusion confirmed yet. if you're planning API budgets for Q2, this is the new ceiling for frontier pricing. plan accordingly.
 - **the thinking depth regression is now officially acknowledged.** Boris confirmed it's not just a user settings issue. if your Claude Code quality dropped around February, check that `redact-thinking-2026-02-12` isn't in your config. it hides thinking from the UI but doesn't affect actual reasoning depth. the confusion between the two was part of the problem.
 - **check out the 92 open-source Claude Code skills repo** that dropped in r/ClaudeCode today. PR review, secret scanning, conference talk summaries. practical automation for the stuff you keep copy-pasting into every session.
 
@@ -99,6 +99,17 @@ The pattern works because orientation is expensive. Every time Claude opens 20 f
 | posts tracked | 177 |
 | total upvotes | 19,835 |
 | total comments | 4,418 |
-| fastest rising | "Every Anthropic press release" (velocity: 6,230) |
+| fastest rising | "[Every Anthropic press release](https://reddit.com/r/ClaudeAI/comments/1sfdwdl/every_anthropic_press_release/)" (velocity: 6,230) |
 | most debated | "Anthropic appears to be profiling your use" (1.04 comment:upvote ratio) |
 | subreddits scanned | vibecoding, gtmengineering, ClaudeAI, GTMbuilders, ClaudeCode |
+
+## sources
+
+- [Every Anthropic press release](https://reddit.com/r/ClaudeAI/comments/1sfdwdl/every_anthropic_press_release/) · r/ClaudeAI, 623 up / 46 comments
+- [90%+ fewer tokens per session by reading a pre-compiled wiki instead of exploring files cold. Built from Karpathy's workflow.](https://reddit.com/r/ClaudeAI/comments/1sfdztg/90_fewer_tokens_per_session_by_reading_a/) · r/ClaudeAI, 178 up / 45 comments
+- [Anthropic appears to be profiling your use and silently downgrading your model](https://reddit.com/r/ClaudeCode/comments/1sffvn9/anthropic_appears_to_be_profiling_your_use_and/) · r/ClaudeCode, 47 up / 49 comments
+- [You accidentally say “Hello” to Claude and it consumes 4% of your session limit.](https://reddit.com/r/ClaudeAI/comments/1sepqzw/you_accidentally_say_hello_to_claude_and_it/) · r/ClaudeAI, 3,852 up / 217 comments
+- [Anthropic just dropped benchmark scores for their unreleased model. The gap is embarrassing for everyone else.](https://reddit.com/r/ClaudeCode/comments/1sf4yvm/anthropic_just_dropped_benchmark_scores_for_their/) · r/ClaudeCode, 663 up / 318 comments
+- [Claude Mythos is $25/$125 per million tokens](https://reddit.com/r/ClaudeCode/comments/1sf8gb7/claude_mythos_is_25125_per_million_tokens/) · r/ClaudeCode, 259 up / 80 comments
+- [Something is off - the quality of Claude Code dropped dramatically](https://reddit.com/r/ClaudeCode/comments/1sfbh39/something_is_off_the_quality_of_claude_code/) · r/ClaudeCode, 64 up / 46 comments
+- [Mythos approaches...](https://reddit.com/r/ClaudeCode/comments/1sfh34e/mythos_approaches/) · r/ClaudeCode, 2 up / 0 comments

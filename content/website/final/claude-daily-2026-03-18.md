@@ -8,9 +8,9 @@ featured: false
 
 ## ecosystem overview
 
-big day across the Claude ecosystem. 162 posts, nearly 7,000 upvotes, and 2,590 comments across r/ClaudeAI, r/ClaudeCode, r/vibecoding, and r/gtmengineering. the dominant thread was a 1,328-upvote open letter to Anthropic about ChatGPT refugees flooding in and what it'll take to keep them. 402 comments deep. that's not a post, that's a town hall.
+big day across the Claude ecosystem. 162 posts, nearly 7,000 upvotes, and 2,590 comments across [r/ClaudeAI](https://reddit.com/r/ClaudeAI), [r/ClaudeCode](https://reddit.com/r/ClaudeCode), [r/vibecoding](https://reddit.com/r/vibecoding), and [r/gtmengineering](https://reddit.com/r/gtmengineering). the dominant thread was a 1,328-upvote open letter to Anthropic about ChatGPT refugees flooding in and what it'll take to keep them. 402 comments deep. that's not a post, that's a town hall.
 
-beyond the migration discourse, builders were shipping. someone pair-programmed 22K lines of C with Opus to fix Claude Code's file-reading inefficiency. another dev documented all 23 Claude Code hooks with real implementations. a Haiku-as-gatekeeper cost optimization pattern got traction. and r/vibecoding had its first real Codex 5.4 vs Opus 4.6 comparison thread. the vibe today was less hype, more practitioners comparing notes on what actually works in production.
+beyond the migration discourse, builders were shipping. someone pair-programmed 22K lines of C with Opus to fix Claude Code's file-reading inefficiency. another dev documented all 23 Claude Code hooks with real implementations. a Haiku-as-gatekeeper cost optimization pattern got traction. and r/vibecoding had its first real [Codex 5.4 vs Opus 4.6](https://reddit.com/r/vibecoding/comments/1rxs5eg/codex_54_vs_opus_46/) comparison thread. the vibe today was less hype, more practitioners comparing notes on what actually works in production.
 
 ## trending discussions
 
@@ -47,7 +47,7 @@ the mood is split. builders who are deep in Claude Code are more productive than
 
 but the broader r/ClaudeAI crowd is frustrated. usage limits, opacity around pricing, and the feeling that model quality fluctuates are recurring themes. the ChatGPT refugee thread crystallized something: people left OpenAI for the same reasons they're now complaining about at Anthropic. that 1,328-upvote post is a warning shot.
 
-sentiment in r/ClaudeCode specifically is more positive. builders building. the "after 10 years as an engineer, Claude Code made me love building again" thread (106 upvotes) captured something real. the tool is genuinely changing how people feel about their work. that's not hype. that's retention.
+sentiment in r/ClaudeCode specifically is more positive. builders building. the "[after 10 years as an engineer, Claude Code made me love building again](https://reddit.com/r/ClaudeCode/comments/1rxvn16/after_10_years_as_an_engineer_i_felt_like_a/)" thread (106 upvotes) captured something real. the tool is genuinely changing how people feel about their work. that's not hype. that's retention.
 
 r/vibecoding is still finding its identity. mix of newcomers asking how to verify AI output and experienced devs comparing models. the Codex vs Opus thread signals the community is maturing past "AI is magic" into "which tool for which job."
 
@@ -61,7 +61,15 @@ Opus 4.6 had elevated errors reported late in the day. status page confirmed it.
 - **subreddits covered:** r/ClaudeAI, r/ClaudeCode, r/vibecoding, r/gtmengineering
 - **highest upvoted post:** 1,328 (ChatGPT refugee open letter)
 - **most commented:** 402 comments on the same thread
-- **highest velocity post:** "Just in case" at 148.66 (580 upvotes, meme format)
+- **highest velocity post:** "[Just in case](https://reddit.com/r/ClaudeAI/comments/1ry5hkp/just_in_case/)" at 148.66 (580 upvotes, meme format)
 - **top builder post:** 22K lines of C pair-programmed with Opus (92 upvotes, 71 comments)
 - **top resource post:** all 23 Claude Code hooks explained (200 upvotes)
 - **notable milestone:** prompt-master skill hit 600 GitHub stars
+
+## sources
+
+- [Just in case](https://reddit.com/r/ClaudeAI/comments/1ry5hkp/just_in_case/) · r/ClaudeAI, 580 up / 18 comments
+- [After 10 years as an engineer, I felt like a zombie. Claude Code actually made me love building again.](https://reddit.com/r/ClaudeCode/comments/1rxvn16/after_10_years_as_an_engineer_i_felt_like_a/) · r/ClaudeCode, 106 up / 29 comments
+- [Codex 5.4 vs Opus 4.6](https://reddit.com/r/vibecoding/comments/1rxs5eg/codex_54_vs_opus_46/) · r/vibecoding, 120 up / 48 comments
+- [Dear Anthropic: the ChatGPT refugees are here. Here’s why they’ll leave again.](https://reddit.com/r/ClaudeAI/comments/1rxle6k/dear_anthropic_the_chatgpt_refugees_are_here/) · r/ClaudeAI, 1,328 up / 402 comments
+- [Literally me right now and low-key I don't like it](https://reddit.com/r/vibecoding/comments/1rxyn4p/literally_me_right_now_and_lowkey_i_dont_like_it/) · r/vibecoding, 447 up / 44 comments

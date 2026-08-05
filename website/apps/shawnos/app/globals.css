@@ -128,9 +128,10 @@
 }
 .clearbox-pulse { animation: clearbox-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
 
-/* Claude Code Daily editions: narrow readable column so the flanking rails own
-   the gutters on widescreen. TOC sidebar is hidden for these posts. */
-.blog-post-layout.blog-post-wide { max-width: 760px; }
+/* Claude Code Daily editions: the reading column stays at 760px, but the layout
+   is wide enough to seat the TOC sidebar beside it. The flanking rails move to a
+   1800px breakpoint (ClearboxReadingRails) so they never overlap the sidebar. */
+.blog-post-layout.blog-post-wide { max-width: 1060px; }
 @media (min-width: 900px) {
   .blog-post-wide .blog-post-content { max-width: 760px; }
 }

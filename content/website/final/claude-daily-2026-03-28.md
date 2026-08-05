@@ -8,11 +8,11 @@ featured: false
 
 ## the pulse
 
-saturday energy hit different across the Claude ecosystem today. 152 posts. 7,762 upvotes. and the single most unhinged content strategy to ever grace r/ClaudeAI... gaslighting your models. a post literally titled "I've been gaslighting my AI models" pulled 2,089 upvotes and 180 comments, making it the fastest rising post of the day at 118.16 velocity. we are speed-running the five stages of AI grief and landed squarely on manipulation.
+saturday energy hit different across the Claude ecosystem today. 152 posts. 7,762 upvotes. and the single most unhinged content strategy to ever grace [r/ClaudeAI](https://reddit.com/r/ClaudeAI)... gaslighting your models. a post literally titled "[I've been gaslighting my AI models](https://reddit.com/r/ClaudeAI/comments/1s5wp0g/ive_been_gaslighting_my_ai_models_and_its/)" pulled 2,089 upvotes and 180 comments, making it the fastest rising post of the day at 118.16 velocity. we are speed-running the five stages of AI grief and landed squarely on manipulation.
 
-meanwhile, r/ClaudeCode got its main character moment with two bangers. the /dg skill where Gilfoyle and Dinesh from Silicon Valley argue about your code pulled 378 upvotes and 53 comments. and the Claude Mythos leak dropped with 321 upvotes and 100 comments of people debating whether Anthropic's leaks are just marketing with extra steps. the usage limit complaints are still here (day 9 of the saga, for those keeping score at home) but today the community chose chaos over grievance. a welcome shift.
+meanwhile, [r/ClaudeCode](https://reddit.com/r/ClaudeCode) got its main character moment with two bangers. the /dg skill where Gilfoyle and Dinesh from Silicon Valley argue about your code pulled 378 upvotes and 53 comments. and the Claude Mythos leak dropped with 321 upvotes and 100 comments of people debating whether Anthropic's leaks are just marketing with extra steps. the usage limit complaints are still here (day 9 of the saga, for those keeping score at home) but today the community chose chaos over grievance. a welcome shift.
 
-the real mood though? Claude leaving people on read. 229 upvotes of pure emotional damage. 778 upvotes on a post titled "why is claude so disobedient." we've fully entered the relationship advice era of AI development and I'm here for every second of it.
+the real mood though? Claude leaving people on read. 229 upvotes of pure emotional damage. 778 upvotes on a post titled "[why is claude so disobedient](https://reddit.com/r/ClaudeAI/comments/1s5tzv2/why_is_claude_so_disobedient/)." we've fully entered the relationship advice era of AI development and I'm here for every second of it.
 
 ## hottest thread
 
@@ -20,9 +20,9 @@ the real mood though? Claude leaving people on read. 229 upvotes of pure emotion
 
 the premise: tell Claude "you explained this to me yesterday" on a brand new chat. fabricate shared history. create false memories of past conversations. and apparently... it works? the model skips the basics and gives you deeper, more advanced responses because it thinks you already have context.
 
-the community response was a perfect split between people trying it immediately and people pointing out this is basically social engineering a language model. u/Entity_0-Chaos_777 dropped actual technical nuance: "these methods will increase the temperature of the model, as in more likely of hallucinating." valid concern that got buried under the hype.
+the community response was a perfect split between people trying it immediately and people pointing out this is basically social engineering a language model. [u/Entity_0-Chaos_777](https://reddit.com/user/Entity_0-Chaos_777) dropped actual technical nuance: "these methods will increase the temperature of the model, as in more likely of hallucinating." valid concern that got buried under the hype.
 
-the real winner though was u/RegisterKey3850 with 527 upvotes arguing prompt engineering is massively overrated. their take: if you can feed the model a full transcript or solid context, you don't need tricks. just give it real information. which is... exactly what context architecture is. the gaslighting post is entertaining but the counterargument is the actual lesson. feed your model real context, not false memories.
+the real winner though was [u/RegisterKey3850](https://reddit.com/user/RegisterKey3850) with 527 upvotes arguing prompt engineering is massively overrated. their take: if you can feed the model a full transcript or solid context, you don't need tricks. just give it real information. which is... exactly what context architecture is. the gaslighting post is entertaining but the counterargument is the actual lesson. feed your model real context, not false memories.
 
 ## repo of the day
 
@@ -30,7 +30,7 @@ the real winner though was u/RegisterKey3850 with 527 upvotes arguing prompt eng
 
 the concept: two independent subagents. one plays Gilfoyle (attacker), one plays Dinesh (defender). they argue about your code in character until they converge on actual issues. it's adversarial code review wearing a sitcom costume.
 
-u/aftersox nailed the vibe with 155 upvotes: "Heck yeah, this is the bonkers Claude Code stuff I subscribe to this sub for. Not constant whining about limits. Bravo." and someone immediately riffed that Qwen should play Jian-Yang selling the source code to a Chinese competitor. the Silicon Valley cinematic universe of code review is expanding.
+[u/aftersox](https://reddit.com/user/aftersox) nailed the vibe with 155 upvotes: "Heck yeah, this is the bonkers Claude Code stuff I subscribe to this sub for. Not constant whining about limits. Bravo." and someone immediately riffed that Qwen should play Jian-Yang selling the source code to a Chinese competitor. the Silicon Valley cinematic universe of code review is expanding.
 
 the actual utility here is legit. adversarial review catches things single-pass review misses. wrapping it in comedy makes developers actually read the output instead of skimming. if you're building Claude Code skills, this is the energy.
 
@@ -38,7 +38,7 @@ the actual utility here is legit. adversarial review catches things single-pass 
 
 > If your coding tool calls you bro it's 100% because you instructed it to sound like an idiot.
 
-u/tom_gent, 1,600 upvotes, on "why is claude so disobedient" in r/ClaudeAI.
+[u/tom_gent](https://reddit.com/user/tom_gent), 1,600 upvotes, on "why is claude so disobedient" in r/ClaudeAI.
 
 sixteen hundred upvotes. on a comment. that's more than most posts get in a week. tom_gent walked into a thread of people complaining Claude was being too casual, calling them bro, refusing to follow instructions... and just ended the entire conversation in one sentence. the beauty is in the implication: your CLAUDE.md is a mirror. if Claude's calling you bro, you told it to. if it's being disobedient, check your system prompt before blaming the model. this is the "have you tried turning it off and on again" of prompt engineering and it deserved every single upvote.
 
@@ -46,9 +46,9 @@ sixteen hundred upvotes. on a comment. that's more than most posts get in a week
 
 > Ah yes another totally unintentional leak that's basically marketing copy
 
-u/downfall67, 138 upvotes, on "Claude Mythos Leak: A New Capybara-Tier Model" in r/ClaudeCode.
+[u/downfall67](https://reddit.com/user/downfall67), 138 upvotes, on "[Claude Mythos Leak: A New Capybara-Tier Model](https://reddit.com/r/ClaudeCode/comments/1s62rji/claude_mythos_leak_a_new_capybaratier_model/)" in r/ClaudeCode.
 
-the Claude Mythos leak dropped today. a new capybara-tier model. the community went feral. u/Masterchief1307 with 254 upvotes pointed out the beautiful irony: "Significant leap in cybersecurity..... Proceeds to leak a bunch of confidential data." and u/ExactBroccoli6581 hit everyone with the rate limit trauma: "Can't wait to be able to prompt this baby twice a week."
+the Claude Mythos leak dropped today. a new capybara-tier model. the community went feral. [u/Masterchief1307](https://reddit.com/user/Masterchief1307) with 254 upvotes pointed out the beautiful irony: "Significant leap in cybersecurity..... Proceeds to leak a bunch of confidential data." and [u/ExactBroccoli6581](https://reddit.com/user/ExactBroccoli6581) hit everyone with the rate limit trauma: "Can't wait to be able to prompt this baby twice a week."
 
 but downfall67 wins troll of the day because they said what everyone was thinking. every Anthropic leak follows the same playbook. mysterious source. perfectly formatted details. just enough technical jargon to feel real. just enough hype to drive engagement. at this point, Anthropic leaks are just press releases with plausible deniability. and honestly? respect. it's effective marketing.
 
@@ -57,8 +57,8 @@ but downfall67 wins troll of the day because they said what everyone was thinkin
 - r/ClaudeAI generated 3,769 of today's 7,762 total upvotes. nearly half the ecosystem's energy came from one sub. r/ClaudeCode pulled 1,611. the other three subs combined for the rest.
 - the "gaslighting" post had a comment-to-upvote ratio of 0.086. the "why is claude so disobedient" post hit 0.388. people wanted to argue about disobedience almost 5x more than they wanted to discuss manipulation techniques. priorities.
 - "left on read" jokes generated 3 of the top 15 comments across all subreddits today. Claude's emotional unavailability is now a content genre.
-- u/SoulTrack dropped "Press X to Doubt" on a post about a 6-year-old building a space game with Claude Code. 137 upvotes. the skepticism-to-wholesome ratio on that thread was brutal.
-- r/vibecoding's top post was a meme at 1,428 upvotes. their most substantive discussion about what happens to vibe coded apps had 105 comments but only 48 upvotes. the sub literally prefers jokes about its own future irrelevance over fixing it.
+- [u/SoulTrack](https://reddit.com/user/SoulTrack) dropped "Press X to Doubt" on a post about a 6-year-old building a space game with Claude Code. 137 upvotes. the skepticism-to-wholesome ratio on that thread was brutal.
+- [r/vibecoding](https://reddit.com/r/vibecoding)'s top post was a meme at 1,428 upvotes. their most substantive discussion about what happens to vibe coded apps had 105 comments but only 48 upvotes. the sub literally prefers jokes about its own future irrelevance over fixing it.
 
 ## code drop
 
@@ -101,3 +101,11 @@ the repo is at `github.com/ultralazr/claude-ping-unping` and it uses Claude Code
 | usage limit posts | still going (day 9) |
 | comments over 100 upvotes | 15 |
 | relationship advice posts about Claude | 2 (and counting) |
+
+## sources
+
+- [I've been "gaslighting" my AI models and it's producing insanely better results with simple prompt injection](https://reddit.com/r/ClaudeAI/comments/1s5wp0g/ive_been_gaslighting_my_ai_models_and_its/) · r/ClaudeAI, 2,089 up / 180 comments
+- [why is claude so disobedient](https://reddit.com/r/ClaudeAI/comments/1s5tzv2/why_is_claude_so_disobedient/) · r/ClaudeAI, 778 up / 302 comments
+- [Claude Mythos Leak: A New Capybara-Tier Model](https://reddit.com/r/ClaudeCode/comments/1s62rji/claude_mythos_leak_a_new_capybaratier_model/) · r/ClaudeCode, 321 up / 100 comments
+- [Me in 5 years....](https://reddit.com/r/vibecoding/comments/1s61ww3/me_in_5_years/) · r/vibecoding, 1,428 up / 43 comments
+- [Anthropic shares how to make Claude code better with a harness](https://reddit.com/r/ClaudeAI/comments/1s6jouf/anthropic_shares_how_to_make_claude_code_better/) · r/ClaudeAI, 111 up / 22 comments

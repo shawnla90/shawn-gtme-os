@@ -8,11 +8,11 @@ featured: false
 
 ## the pulse
 
-Wednesday dropped and r/ClaudeAI chose all caps. ANTHROPIC GOT SUED racked up 1,764 upvotes and 319 comments before most of the west coast finished their coffee. A satire post about usage limits landed so hard that people begged OP to remove the humor tag because they genuinely couldn't tell. And Anthropic shipped a feature called "Teach Claude a skill," which the community immediately compared to Excel's Record Macro from 1993.
+Wednesday dropped and [r/ClaudeAI](https://reddit.com/r/ClaudeAI) chose all caps. [ANTHROPIC GOT SUED](https://reddit.com/r/ClaudeAI/comments/1v2cc6o/anthropic_got_sued/) racked up 1,764 upvotes and 319 comments before most of the west coast finished their coffee. A satire post about usage limits landed so hard that people begged OP to remove the humor tag because they genuinely couldn't tell. And Anthropic shipped a feature called "Teach Claude a skill," which the community immediately compared to Excel's Record Macro from 1993.
 
 The usage quota saga hit episode 73 today. Between the satire post, a thread about Max 20x limits draining faster, a spend limit PSA where people discovered their accounts silently toggled to unlimited, and someone documenting a reset bug with timestamps like they're filing a police report, the community has collectively decided that understanding Claude's billing is harder than using Claude itself.
 
-Meanwhile in r/vibecoding, someone built a tool that tells you how your startup idea already died, a medical researcher with zero coding skills asked how to extract clinical trial data from PDFs, and one person's request to move a button 4px resulted in Codex rewriting their entire layout. Normal Wednesday.
+Meanwhile in [r/vibecoding](https://reddit.com/r/vibecoding), someone built a tool that tells you how your startup idea already died, a medical researcher with zero coding skills asked how to extract clinical trial data from PDFs, and one person's request to move a button 4px resulted in Codex rewriting their entire layout. Normal Wednesday.
 
 ## hottest thread
 
@@ -28,7 +28,7 @@ What made this thread interesting isn't the legal filing itself. It's watching a
 
 No GitHub repos were shared today, but **Déjà View** earned this slot on pure concept alone.
 
-Someone built a tool that tells you who already tried your startup idea and how they died. Posted to both r/ClaudeCode (697 upvotes, 194 comments) and r/vibecoding (432 upvotes, 194 comments). The idea resonated because every builder has lived this exact moment. You spend three days on something, Google it on day four, and find three dead startups with the same pitch deck.
+Someone built a tool that tells you who already tried your startup idea and how they died. Posted to both [r/ClaudeCode](https://reddit.com/r/ClaudeCode) (697 upvotes, 194 comments) and r/vibecoding (432 upvotes, 194 comments). The idea resonated because every builder has lived this exact moment. You spend three days on something, Google it on day four, and find three dead startups with the same pitch deck.
 
 The community reaction split between genuine appreciation and suspicion. Someone immediately asked if the creator has email forwarding set up to capture ideas with no existing results. Another commenter just wrote: "Bro is harvesting ideas."
 
@@ -38,7 +38,7 @@ If you wanted to build something similar, the architecture is straightforward. S
 
 > I understand every single prompt sent is essentially the same as this but man if this doesn't feel like factory workers assembling the robots that replace them.
 
-. u/Rebmes, on "New: Teach Claude a skill"
+. [u/Rebmes](https://reddit.com/user/Rebmes), on "[New: Teach Claude a skill](https://reddit.com/r/ClaudeAI/comments/1v2qdct/new_teach_claude_a_skill/)"
 
 This wins because it names something everyone in that thread was feeling but couldn't articulate as cleanly. Anthropic ships a feature where you teach Claude to do your workflow by showing it your workflow. Every prompt you've ever written is technically the same transaction. But there's something about a button literally called ==teach Claude a skill== that makes the automation-of-self feel uncomfortably literal. u/Rebmes named the feeling in one sentence. That's the bar.
 
@@ -46,21 +46,21 @@ This wins because it names something everyone in that thread was feeling but cou
 
 > Why are you using nerfed Opus 4.7 when you can use nerfed Opus 4.8?
 
-. u/rydan, on "claude doesn't lie anymore"
+. [u/rydan](https://reddit.com/user/rydan), on "[claude doesn't lie anymore](https://reddit.com/r/ClaudeAI/comments/1v2u429/claude_doesnt_lie_anymore/)"
 
 This is the kind of comment that looks like a throwaway joke until you realize it's a ==perfectly compressed critique== of the entire model versioning experience. Someone posts that Claude doesn't lie anymore. u/rydan responds by implying every version is nerfed, the version numbers are meaningless, and the cycle will just repeat with a higher number. It's nihilism as a one-liner. No notes.
 
 ## fun facts
 
 - r/ClaudeCode has now logged usage and billing complaints in **73 consecutive daily scans**. at this point it's not a trend, it's load-bearing infrastructure.
-- "Favorite claude-isms" got 79 upvotes but 115 comments. a 1:1.45 upvote-to-comment ratio. turns out nothing makes people talk like ==cataloguing an AI's verbal tics==. top entries included "load bearing," "belt-and-suspenders," and "sit with it."
-- "do you --dangerously-skip-permissions or not?" pulled 55 upvotes and 148 comments. that's a 1:2.69 ratio, making it the most debated post today by a mile. it's the Claude Code equivalent of asking people if they wear a seatbelt.
+- "[Favorite claude-isms](https://reddit.com/r/ClaudeAI/comments/1v33cab/favorite_claudeisms_in_no_particular_order/)" got 79 upvotes but 115 comments. a 1:1.45 upvote-to-comment ratio. turns out nothing makes people talk like ==cataloguing an AI's verbal tics==. top entries included "load bearing," "belt-and-suspenders," and "sit with it."
+- "[do you --dangerously-skip-permissions or not?](https://reddit.com/r/ClaudeCode/comments/1v2qc2j/do_you_dangerouslyskippermissions_or_not/)" pulled 55 upvotes and 148 comments. that's a 1:2.69 ratio, making it the most debated post today by a mile. it's the Claude Code equivalent of asking people if they wear a seatbelt.
 - Déjà View was cross-posted to both r/ClaudeCode and r/vibecoding and pulled a combined 1,129 upvotes. dual-sub arbitrage is a real strategy.
 - the all-caps "ANTHROPIC GOT SUED" outperformed every product announcement today. Anthropic's legal department is generating more community engagement than their product team. rough week.
 
 ## code drop
 
-No one shared raw code today, but the most buildable thread was **"just made a floating bubble that turns my UX nitpicks into a to-do list my agent clears"** (41 upvotes, 21 comments in r/ClaudeCode).
+No one shared raw code today, but the most buildable thread was **"[just made a floating bubble that turns my UX nitpicks into a to-do list my agent clears](https://reddit.com/r/ClaudeCode/comments/1v2dx2l/just_made_a_floating_bubble_that_turns_my_ux/)"** (41 upvotes, 21 comments in r/ClaudeCode).
 
 The concept: a persistent floating UI element in your app that captures UX issues on the spot. Those issues feed into a task queue that an agent picks up and resolves asynchronously.
 
@@ -92,7 +92,7 @@ The interesting part isn't the bubble. It's the feedback loop. You're browsing y
 
 1. **Teach Claude a skill is live.** Test it on one repetitive workflow. The community consensus is it's Record Macro for your whole computer. Start small, see what sticks, then decide if the token usage is worth it.
 
-2. **Check your spend limits right now.** Multiple people reported that accepting the free $100 Fable 5 credit silently toggled their account usage limit to unlimited. Go look at your settings before you go to sleep tonight.
+2. **[Check your spend limits](https://reddit.com/r/ClaudeAI/comments/1v2nsb2/check_your_spend_limit/) right now.** Multiple people reported that accepting the free $100 Fable 5 credit silently toggled their account usage limit to unlimited. Go look at your settings before you go to sleep tonight.
 
 3. **The --dangerously-skip-permissions debate is worth reading.** 148 comments on 55 upvotes means real practitioners sharing real configurations. The middle ground most landed on: use auto mode, not full skip. You get flow without full exposure.
 
@@ -107,6 +107,17 @@ The interesting part isn't the bubble. It's the feedback loop. You're browsing y
 | posts tracked | 169 |
 | total upvotes | 9,752 |
 | total comments | 3,177 |
-| fastest rising | "Important Update to Claude Usage Limits" (149.47 velocity) |
+| fastest rising | "[Important Update to Claude Usage Limits](https://reddit.com/r/ClaudeCode/comments/1v2yoe4/important_update_to_claude_usage_limits/)" (149.47 velocity) |
 | most debated | "do you --dangerously-skip-permissions or not?" (2.69 comments per upvote) |
 | subreddits scanned | ClaudeCode, ClaudeAI, vibecoding, gtmengineering, GTMbuilders |
+
+## sources
+
+- [Important Update to Claude Usage Limits](https://reddit.com/r/ClaudeCode/comments/1v2yoe4/important_update_to_claude_usage_limits/) · r/ClaudeCode, 702 up / 98 comments
+- [New: Teach Claude a skill](https://reddit.com/r/ClaudeAI/comments/1v2qdct/new_teach_claude_a_skill/) · r/ClaudeAI, 1,437 up / 87 comments
+- [claude doesn’t lie anymore](https://reddit.com/r/ClaudeAI/comments/1v2u429/claude_doesnt_lie_anymore/) · r/ClaudeAI, 763 up / 33 comments
+- [ANTHROPIC GOT SUED](https://reddit.com/r/ClaudeAI/comments/1v2cc6o/anthropic_got_sued/) · r/ClaudeAI, 1,764 up / 319 comments
+- [Favorite claude-isms in no particular order](https://reddit.com/r/ClaudeAI/comments/1v33cab/favorite_claudeisms_in_no_particular_order/) · r/ClaudeAI, 79 up / 115 comments
+- [CHECK YOUR SPEND LIMIT](https://reddit.com/r/ClaudeAI/comments/1v2nsb2/check_your_spend_limit/) · r/ClaudeAI, 141 up / 49 comments
+- [do you --dangerously-skip-permissions or not?](https://reddit.com/r/ClaudeCode/comments/1v2qc2j/do_you_dangerouslyskippermissions_or_not/) · r/ClaudeCode, 55 up / 148 comments
+- [just made a floating bubble that turns my UX nitpicks into a to-do list my agent clears](https://reddit.com/r/ClaudeCode/comments/1v2dx2l/just_made_a_floating_bubble_that_turns_my_ux/) · r/ClaudeCode, 41 up / 21 comments
