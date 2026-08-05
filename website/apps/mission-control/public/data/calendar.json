@@ -1,6 +1,72 @@
 {
-  "generated": "2026-08-04T04:04:16.939Z",
+  "generated": "2026-08-05T04:04:40.036Z",
   "events": [
+    {
+      "id": "commit-9fe1f74",
+      "title": "chore(crypto): evening signal update 2026-08-04",
+      "type": "system",
+      "datetime": "2026-08-04T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-08-04",
+      "metadata": {
+        "commitHash": "9fe1f74"
+      }
+    },
+    {
+      "id": "commit-1493931",
+      "title": "chore(crypto): morning signal update 2026-08-04",
+      "type": "system",
+      "datetime": "2026-08-04T07:00:19-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-08-04",
+      "metadata": {
+        "commitHash": "1493931"
+      }
+    },
+    {
+      "id": "commit-a4ececf",
+      "title": "feat: claude daily digest 2026-08-04",
+      "type": "milestone",
+      "datetime": "2026-08-04T03:13:20-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-08-04",
+      "metadata": {
+        "commitHash": "a4ececf"
+      }
+    },
+    {
+      "id": "commit-a4fb4aa",
+      "title": "Soften Cracked GTM copy — format is still being worked out",
+      "type": "system",
+      "datetime": "2026-08-04T02:05:56-04:00",
+      "status": "completed",
+      "description": "Soften Cracked GTM copy — format is still being worked out",
+      "metadata": {
+        "commitHash": "a4fb4aa"
+      }
+    },
+    {
+      "id": "commit-fa7cf85",
+      "title": "Add Cracked GTM show page at /cracked",
+      "type": "system",
+      "datetime": "2026-08-04T01:50:28-04:00",
+      "status": "completed",
+      "description": "Add Cracked GTM show page at /cracked",
+      "metadata": {
+        "commitHash": "fa7cf85"
+      }
+    },
+    {
+      "id": "commit-1bd677f",
+      "title": "chore: daily tracker scan 2026-08-03",
+      "type": "system",
+      "datetime": "2026-08-04T00:04:17-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-08-03",
+      "metadata": {
+        "commitHash": "1bd677f"
+      }
+    },
     {
       "id": "commit-0c68eb3",
       "title": "chore(crypto): evening signal update 2026-08-03",
@@ -44,35 +110,13 @@
       "metadata": {
         "commitHash": "aad7fd4"
       }
-    },
-    {
-      "id": "commit-bd46102",
-      "title": "chore(crypto): evening signal update 2026-08-02",
-      "type": "system",
-      "datetime": "2026-08-02T17:30:15-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-08-02",
-      "metadata": {
-        "commitHash": "bd46102"
-      }
-    },
-    {
-      "id": "commit-cb86f57",
-      "title": "chore(crypto): morning signal update 2026-08-02",
-      "type": "system",
-      "datetime": "2026-08-02T07:00:13-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-08-02",
-      "metadata": {
-        "commitHash": "cb86f57"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 6,
-    "completedEvents": 6,
+    "totalEvents": 10,
+    "completedEvents": 10,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 6,
+    "deploymentsThisWeek": 10,
     "upcomingCronJobs": 0
   }
 }
