@@ -1,7 +1,7 @@
 ---
 title: Reddit Engage Skill
 description: Draft and approve Reddit comments from scouted opportunities — queue-driven workflow with voice loading, inline approve/edit/reject, and human-in-the-loop rules.
-source: ~/.claude/skills/reddit-engage/SKILL.md
+source: shawn-gtme-os/.claude/skills/reddit-engage/SKILL.md
 updated: 2026-07-02
 order: 1
 ---

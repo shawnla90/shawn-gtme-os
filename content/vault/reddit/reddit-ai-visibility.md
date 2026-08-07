@@ -67,3 +67,6 @@ respond.
 
 Use the baseline to learn the loop. Plug in Clearbox when you want it accurate and hands-off. That
 is what [Clearbox](https://clearbox.to) is for: your Reddit inbox, filtered by intent.
+
+The full open version of this motion, skills and playbooks and the working engine, lives in the
+ClearboxGTM repo (github.com/shawnla90/ClearboxGTM).
