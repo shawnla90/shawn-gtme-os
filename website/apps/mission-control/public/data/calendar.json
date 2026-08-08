@@ -1,6 +1,72 @@
 {
-  "generated": "2026-08-07T04:03:30.649Z",
+  "generated": "2026-08-08T04:01:56.360Z",
   "events": [
+    {
+      "id": "commit-5bcd801",
+      "title": "chore(crypto): evening signal update 2026-08-07",
+      "type": "system",
+      "datetime": "2026-08-07T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-08-07",
+      "metadata": {
+        "commitHash": "5bcd801"
+      }
+    },
+    {
+      "id": "commit-5b42383",
+      "title": "chore(crypto): morning signal update 2026-08-07",
+      "type": "system",
+      "datetime": "2026-08-07T07:00:15-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-08-07",
+      "metadata": {
+        "commitHash": "5b42383"
+      }
+    },
+    {
+      "id": "commit-1542b49",
+      "title": "feat: claude daily digest 2026-08-07",
+      "type": "milestone",
+      "datetime": "2026-08-07T02:51:23-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-08-07",
+      "metadata": {
+        "commitHash": "1542b49"
+      }
+    },
+    {
+      "id": "commit-8ec4d1a",
+      "title": "content: ship clearboxgtm-flagship-drop",
+      "type": "system",
+      "datetime": "2026-08-07T00:44:01-04:00",
+      "status": "completed",
+      "description": "content: ship clearboxgtm-flagship-drop",
+      "metadata": {
+        "commitHash": "8ec4d1a"
+      }
+    },
+    {
+      "id": "commit-b0a3519",
+      "title": "feat(vault): reddit skill-tree parity",
+      "type": "system",
+      "datetime": "2026-08-07T00:27:55-04:00",
+      "status": "completed",
+      "description": "feat(vault): reddit skill-tree parity",
+      "metadata": {
+        "commitHash": "b0a3519"
+      }
+    },
+    {
+      "id": "commit-b6b0344",
+      "title": "chore: daily tracker scan 2026-08-06",
+      "type": "system",
+      "datetime": "2026-08-07T00:03:31-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-08-06",
+      "metadata": {
+        "commitHash": "b6b0344"
+      }
+    },
     {
       "id": "commit-9927aa8",
       "title": "chore(crypto): evening signal update 2026-08-06",
@@ -44,68 +110,13 @@
       "metadata": {
         "commitHash": "20683ac"
       }
-    },
-    {
-      "id": "commit-ce0533d",
-      "title": "Checkpoint uncommitted work across the repo",
-      "type": "system",
-      "datetime": "2026-08-05T19:32:13-04:00",
-      "status": "completed",
-      "description": "Checkpoint uncommitted work across the repo",
-      "metadata": {
-        "commitHash": "ce0533d"
-      }
-    },
-    {
-      "id": "commit-c02b759",
-      "title": "chore(crypto): evening signal update 2026-08-05",
-      "type": "system",
-      "datetime": "2026-08-05T17:30:13-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-08-05",
-      "metadata": {
-        "commitHash": "c02b759"
-      }
-    },
-    {
-      "id": "commit-2c24dfa",
-      "title": "chore(crypto): morning signal update 2026-08-05",
-      "type": "system",
-      "datetime": "2026-08-05T07:00:18-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-08-05",
-      "metadata": {
-        "commitHash": "2c24dfa"
-      }
-    },
-    {
-      "id": "commit-404f9ff",
-      "title": "feat: claude daily digest 2026-08-05",
-      "type": "milestone",
-      "datetime": "2026-08-05T04:00:34-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-08-05",
-      "metadata": {
-        "commitHash": "404f9ff"
-      }
-    },
-    {
-      "id": "commit-2fa2134",
-      "title": "chore: daily tracker scan 2026-08-04",
-      "type": "system",
-      "datetime": "2026-08-05T00:04:40-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-08-04",
-      "metadata": {
-        "commitHash": "2fa2134"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 9,
-    "completedEvents": 9,
+    "totalEvents": 10,
+    "completedEvents": 10,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 9,
+    "deploymentsThisWeek": 10,
     "upcomingCronJobs": 0
   }
 }
