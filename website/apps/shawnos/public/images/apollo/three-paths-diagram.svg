@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 720" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a0a0a"/>
+      <stop offset="100%" stop-color="#111111"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1080" height="720" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="540" y="55" fill="#ffffff" font-size="28" font-weight="700" text-anchor="middle">Build with Apollo — Three Paths</text>
+  <text x="540" y="82" fill="#888888" font-size="14" text-anchor="middle">Same data. Same filters. Different interfaces.</text>
+
+  <!-- Apollo data layer (center bar) -->
+  <rect x="90" y="560" width="900" height="60" rx="8" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <text x="540" y="596" fill="#EBF212" font-size="16" font-weight="600" text-anchor="middle">Apollo Data Layer</text>
+  <text x="540" y="614" fill="#666" font-size="11" text-anchor="middle">people search · company enrichment · sequences · contacts · news · credits</text>
+
+  <!-- Path 1: API -->
+  <rect x="90" y="120" width="280" height="400" rx="12" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <rect x="90" y="120" width="280" height="50" rx="12" fill="#1d2b1d"/>
+  <rect x="90" y="158" width="280" height="12" fill="#1a1a1a"/>
+  <text x="230" y="151" fill="#4ade80" font-size="18" font-weight="700" text-anchor="middle">API</text>
+
+  <text x="120" y="195" fill="#ccc" font-size="13" font-weight="600">Who</text>
+  <text x="120" y="215" fill="#888" font-size="12">Developers building custom</text>
+  <text x="120" y="232" fill="#888" font-size="12">pipelines and scoring systems</text>
+
+  <text x="120" y="265" fill="#ccc" font-size="13" font-weight="600">Interface</text>
+  <text x="120" y="285" fill="#888" font-size="12">Python scripts + requests</text>
+
+  <text x="120" y="318" fill="#ccc" font-size="13" font-weight="600">When to Use</text>
+  <text x="120" y="338" fill="#888" font-size="12">Batch processing, custom scoring,</text>
+  <text x="120" y="355" fill="#888" font-size="12">complex ICP logic, key rotation,</text>
+  <text x="120" y="372" fill="#888" font-size="12">database integrations</text>
+
+  <text x="120" y="405" fill="#ccc" font-size="13" font-weight="600">Example</text>
+  <rect x="110" y="415" width="245" height="28" rx="4" fill="#111"/>
+  <text x="120" y="434" fill="#4ade80" font-size="11" font-family="monospace">python3 enterprise_filter.py</text>
+
+  <text x="120" y="475" fill="#ccc" font-size="13" font-weight="600">Auth</text>
+  <text x="120" y="495" fill="#888" font-size="12">API key (env var)</text>
+
+  <!-- Path 2: CLI -->
+  <rect x="400" y="120" width="280" height="400" rx="12" fill="#1a1a1a" stroke="#EBF212" stroke-width="1.5"/>
+  <rect x="400" y="120" width="280" height="50" rx="12" fill="#2b2b0d"/>
+  <rect x="400" y="158" width="280" height="12" fill="#1a1a1a"/>
+  <text x="540" y="151" fill="#EBF212" font-size="18" font-weight="700" text-anchor="middle">CLI</text>
+
+  <text x="430" y="195" fill="#ccc" font-size="13" font-weight="600">Who</text>
+  <text x="430" y="215" fill="#888" font-size="12">Technical builders using</text>
+  <text x="430" y="232" fill="#888" font-size="12">Claude Code for GTM automation</text>
+
+  <text x="430" y="265" fill="#ccc" font-size="13" font-weight="600">Interface</text>
+  <text x="430" y="285" fill="#888" font-size="12">Terminal + shell pipes + jq</text>
+
+  <text x="430" y="318" fill="#ccc" font-size="13" font-weight="600">When to Use</text>
+  <text x="430" y="338" fill="#888" font-size="12">Programmable campaigns,</text>
+  <text x="430" y="355" fill="#888" font-size="12">quick lookups, cron automation,</text>
+  <text x="430" y="372" fill="#888" font-size="12">Claude Code workflows</text>
+
+  <text x="430" y="405" fill="#ccc" font-size="13" font-weight="600">Example</text>
+  <rect x="420" y="415" width="245" height="28" rx="4" fill="#111"/>
+  <text x="430" y="434" fill="#EBF212" font-size="11" font-family="monospace">apollo people search --title</text>
+
+  <text x="430" y="475" fill="#ccc" font-size="13" font-weight="600">Auth</text>
+  <text x="430" y="495" fill="#888" font-size="12">OAuth (browser, no key needed)</text>
+
+  <!-- Path 3: MCP -->
+  <rect x="710" y="120" width="280" height="400" rx="12" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+  <rect x="710" y="120" width="280" height="50" rx="12" fill="#1d1d2b"/>
+  <rect x="710" y="158" width="280" height="12" fill="#1a1a1a"/>
+  <text x="850" y="151" fill="#818cf8" font-size="18" font-weight="700" text-anchor="middle">MCP</text>
+
+  <text x="740" y="195" fill="#ccc" font-size="13" font-weight="600">Who</text>
+  <text x="740" y="215" fill="#888" font-size="12">Reps and non-technical team</text>
+  <text x="740" y="232" fill="#888" font-size="12">members via Claude Co-work</text>
+
+  <text x="740" y="265" fill="#ccc" font-size="13" font-weight="600">Interface</text>
+  <text x="740" y="285" fill="#888" font-size="12">Chat (natural language)</text>
+
+  <text x="740" y="318" fill="#ccc" font-size="13" font-weight="600">When to Use</text>
+  <text x="740" y="338" fill="#888" font-size="12">Quick lookups, one-off enrichment,</text>
+  <text x="740" y="355" fill="#888" font-size="12">rep-facing research, deal prep,</text>
+  <text x="740" y="372" fill="#888" font-size="12">no-code prospecting</text>
+
+  <text x="740" y="405" fill="#ccc" font-size="13" font-weight="600">Example</text>
+  <rect x="730" y="415" width="245" height="28" rx="4" fill="#111"/>
+  <text x="740" y="434" fill="#818cf8" font-size="11" font-family="monospace">"Find the VP Sales at Wiza"</text>
+
+  <text x="740" y="475" fill="#ccc" font-size="13" font-weight="600">Auth</text>
+  <text x="740" y="495" fill="#888" font-size="12">OAuth (MCP connector)</text>
+
+  <!-- Connection lines to data layer -->
+  <line x1="230" y1="520" x2="230" y2="560" stroke="#4ade80" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="540" y1="520" x2="540" y2="560" stroke="#EBF212" stroke-width="2" stroke-dasharray="4,4"/>
+  <line x1="850" y1="520" x2="850" y2="560" stroke="#818cf8" stroke-width="2" stroke-dasharray="4,4"/>
+
+  <!-- HubSpot output -->
+  <rect x="340" y="650" width="400" height="45" rx="8" fill="#1a1a1a" stroke="#f97316" stroke-width="1"/>
+  <text x="540" y="678" fill="#f97316" font-size="14" font-weight="600" text-anchor="middle">HubSpot CRM</text>
+  <line x1="540" y1="620" x2="540" y2="650" stroke="#f97316" stroke-width="1.5" stroke-dasharray="4,4"/>
+
+  <!-- Footer -->
+  <text x="540" y="715" fill="#444" font-size="11" text-anchor="middle">apollo.io/anywhere</text>
+</svg>
