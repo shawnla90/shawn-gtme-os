@@ -15,7 +15,8 @@ const CLEARBOX_URL =
 const VAULT_CHAPTER_URL =
   'https://github.com/shawnla90/gtm-coding-agent/blob/main/chapters/04-oauth-cli-apis.md'
 // Public notion.site URL for the attendee SOP — entry renders only once this is set
-const SOP_URL = ''
+const SOP_URL =
+  'https://fierce-camelotia-1fa.notion.site/Apollo-Waterfall-The-Demo-Written-Up-3ba1fb92bcd7818ea759c21f5b2ce14f'
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = "Builder's Guide to GTM with Apollo | shawnos.ai"
