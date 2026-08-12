@@ -1,6 +1,50 @@
 {
-  "generated": "2026-08-11T04:07:28.105Z",
+  "generated": "2026-08-12T04:07:10.355Z",
   "events": [
+    {
+      "id": "commit-d76de7d",
+      "title": "chore(crypto): evening signal update 2026-08-11",
+      "type": "system",
+      "datetime": "2026-08-11T17:30:20-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-08-11",
+      "metadata": {
+        "commitHash": "d76de7d"
+      }
+    },
+    {
+      "id": "commit-2ba0a0e",
+      "title": "Add /apollo page — Builder's Guide to GTM with Apollo",
+      "type": "system",
+      "datetime": "2026-08-11T15:54:01-04:00",
+      "status": "completed",
+      "description": "Add /apollo page — Builder's Guide to GTM with Apollo",
+      "metadata": {
+        "commitHash": "2ba0a0e"
+      }
+    },
+    {
+      "id": "commit-1265aeb",
+      "title": "chore(crypto): morning signal update 2026-08-11",
+      "type": "system",
+      "datetime": "2026-08-11T07:00:25-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-08-11",
+      "metadata": {
+        "commitHash": "1265aeb"
+      }
+    },
+    {
+      "id": "commit-c6c14f4",
+      "title": "chore: daily tracker scan 2026-08-10",
+      "type": "system",
+      "datetime": "2026-08-11T00:07:28-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-08-10",
+      "metadata": {
+        "commitHash": "c6c14f4"
+      }
+    },
     {
       "id": "commit-7d053c8",
       "title": "chore(crypto): evening signal update 2026-08-10",
@@ -33,46 +77,13 @@
       "metadata": {
         "commitHash": "dda30d5"
       }
-    },
-    {
-      "id": "commit-27c8c7a",
-      "title": "fix(shawnos): restore production builds",
-      "type": "system",
-      "datetime": "2026-08-09T18:10:22-04:00",
-      "status": "completed",
-      "description": "fix(shawnos): restore production builds",
-      "metadata": {
-        "commitHash": "27c8c7a"
-      }
-    },
-    {
-      "id": "commit-cbd59c2",
-      "title": "chore(crypto): evening signal update 2026-08-09",
-      "type": "system",
-      "datetime": "2026-08-09T17:30:22-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-08-09",
-      "metadata": {
-        "commitHash": "cbd59c2"
-      }
-    },
-    {
-      "id": "commit-82db3a2",
-      "title": "chore(crypto): morning signal update 2026-08-09",
-      "type": "system",
-      "datetime": "2026-08-09T07:00:22-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-08-09",
-      "metadata": {
-        "commitHash": "82db3a2"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 6,
-    "completedEvents": 6,
+    "totalEvents": 7,
+    "completedEvents": 7,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 6,
+    "deploymentsThisWeek": 7,
     "upcomingCronJobs": 0
   }
 }
