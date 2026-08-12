@@ -1,17 +1,26 @@
 import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
-import { BreadcrumbSchema } from '@shawnos/shared/components'
+import { AffiliateDisclosure, BreadcrumbSchema } from '@shawnos/shared/components'
 import { hreflang } from '../../../i18n/hreflang'
 
 const REPO_URL = 'https://github.com/shawnla90/apollo-webinar-demo'
 const REFERRAL_URL =
   'https://www.apollo.io/anywhere?utm_campaign=parent_apolloanywhere&utm_medium=referral&utm_source=shawn_tenam&utm_content=influencer'
 const WEBINAR_URL = 'https://events.apollo.io/builder-gtm-guide/'
+const GTM_AGENT_URL = 'https://github.com/shawnla90/gtm-coding-agent'
+const RELEASE_URL = 'https://github.com/shawnla90/gtm-coding-agent/releases/tag/v0.8.0'
+const AFFILIATE_URL = 'https://get.apollo.io/y3gtusoq4h9g'
+const CLEARBOX_URL =
+  'https://clearbox.to/?utm_source=shawnos&utm_medium=apollo-page&utm_campaign=apollo-webinar'
+const VAULT_CHAPTER_URL =
+  'https://github.com/shawnla90/gtm-coding-agent/blob/main/chapters/04-oauth-cli-apis.md'
+// Public notion.site URL for the attendee SOP — entry renders only once this is set
+const SOP_URL = ''
 
 export async function generateMetadata(): Promise<Metadata> {
   const title = "Builder's Guide to GTM with Apollo | shawnos.ai"
   const description =
-    'Three paths for the technical GTM builder — API, CLI, and MCP. A real campaign, open-source scoring, and a cloneable repo.'
+    'The full resource pack from the Apollo webinar — demo repo, waterfall release, the demo written up, and three paths for the technical GTM builder: API, CLI, MCP.'
   return {
     title,
     description,
@@ -84,6 +93,53 @@ const PATHS = [
       'setup-guide.md — 5-minute connection guide',
       'example-prompts.md — ready-to-use prompts',
     ],
+  },
+]
+
+const RESOURCES = [
+  ...(SOP_URL
+    ? [
+        {
+          label: 'The demo, written up',
+          href: SOP_URL,
+          desc: 'the waterfall demo as a step-by-step SOP: the commands, the gates, the output',
+        },
+      ]
+    : []),
+  {
+    label: 'Webinar demo repo',
+    href: REPO_URL,
+    desc: 'API, CLI, and MCP paths into the same Apollo data',
+  },
+  {
+    label: 'GTM Coding Agent',
+    href: GTM_AGENT_URL,
+    desc: 'the full kit: chapters, starters, skills',
+  },
+  {
+    label: 'Waterfall release (v0.8.0)',
+    href: RELEASE_URL,
+    desc: 'intent-gated lookalike expansion. the list grows itself',
+  },
+  {
+    label: 'The webinar',
+    href: WEBINAR_URL,
+    desc: "Builder's Guide to GTM with Apollo. Aug 13, 2026",
+  },
+  {
+    label: 'More builds + skills',
+    href: 'https://shawnos.ai/built',
+    desc: 'every repo on the site, one directory',
+  },
+  {
+    label: 'Sign up for Apollo',
+    href: AFFILIATE_URL,
+    desc: 'the data layer everything here runs on',
+  },
+  {
+    label: 'Clearbox',
+    href: CLEARBOX_URL,
+    desc: 'the managed version: campaigns run for you',
   },
 ]
 
@@ -244,7 +300,7 @@ export default async function ApolloPage({ params }: Props) {
                 padding: '12px 22px',
                 borderRadius: 'var(--radius-md, 8px)',
                 background: 'var(--text-primary)',
-                color: 'var(--canvas-base, #fff)',
+                color: 'var(--canvas)',
                 fontFamily: 'var(--font-mono)',
                 fontSize: 13,
                 fontWeight: 700,
@@ -276,8 +332,55 @@ export default async function ApolloPage({ params }: Props) {
         </div>
       </section>
 
-      {/* The Campaign */}
+      {/* Resource Pack Directory */}
       <section style={{ ...section, paddingTop: 40 }}>
+        <div style={{ ...kicker, marginBottom: 10 }}>resource pack</div>
+        <h2 style={h2}>Everything from the webinar</h2>
+        <p style={body}>Every resource from the session, linked from one page.</p>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gap: 14,
+          }}
+        >
+          {RESOURCES.map((r) => (
+            <a
+              key={r.label}
+              href={r.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ ...card, padding: 20, textDecoration: 'none', display: 'block' }}
+            >
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'baseline',
+                  justifyContent: 'space-between',
+                  gap: 8,
+                  marginBottom: 6,
+                }}
+              >
+                <span style={{ fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>
+                  {r.label}
+                </span>
+                <span
+                  style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--text-muted)' }}
+                >
+                  →
+                </span>
+              </div>
+              <p style={{ margin: 0, fontSize: 13, lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+                {r.desc}
+              </p>
+            </a>
+          ))}
+        </div>
+        <AffiliateDisclosure />
+      </section>
+
+      {/* The Campaign */}
+      <section style={section}>
         <h2 style={h2}>The campaign behind this</h2>
         <p style={body}>
           This repo was built around a real outreach campaign. 1,297 GTM
@@ -286,10 +389,9 @@ export default async function ApolloPage({ params }: Props) {
           Launched via Smartlead across 44 sending boxes.
         </p>
         <p style={body}>
-          14% bounce rate on launch. Diagnosed as 45% stale mailboxes plus 55%
-          fresh-box reputation issues. Fixed by filtering to verified emails
-          only — no catch-all domains. 223 LinkedIn connections accepted via
-          HeyReach.
+          Verified emails only, no catch-all domains. That standard, plus a
+          LinkedIn layer via HeyReach, turned into 223 accepted connections
+          with the exact buyers the campaign targets.
         </p>
         <p style={{ ...body, margin: 0 }}>
           The expansion play takes those 223 companies where we have a
@@ -412,6 +514,31 @@ python3 api/expand_buying_committee.py \\
         </div>
       </section>
 
+      {/* Waterfall */}
+      <section style={section}>
+        <h2 style={h2}>The list grows itself</h2>
+        <p style={body}>
+          The waterfall release (v0.8.0) turns a seed list into a full market
+          map with one command. Gates drain from deepest intent to
+          firmographic: Reddit buyer signals, hiring for the pain, fresh
+          funding, tech-stack twins, then lookalikes. Every company lands
+          tagged with the gate it came through, so the sheet explains itself
+          and outreach routes by intent tier.
+        </p>
+        <p style={{ ...body, margin: 0 }}>
+          Full breakdown in the{' '}
+          <a
+            href={RELEASE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--aura)', fontWeight: 700 }}
+          >
+            v0.8.0 release notes
+          </a>
+          .
+        </p>
+      </section>
+
       {/* API Cost Breakdown */}
       <section style={section}>
         <h2 style={h2}>What costs credits (and what does not)</h2>
@@ -479,6 +606,20 @@ python3 api/expand_buying_committee.py \\
           <span style={inlineCode}>git log --all -p | grep APOLLO</span> on
           your repo. If it returns anything, your key leaked.
         </p>
+        <p style={{ ...body, margin: 0 }}>
+          The next level is a local secrets vault: one database outside every
+          repo, keys checked out on demand, rotated once, re-pulled
+          everywhere. The pattern is written up in{' '}
+          <a
+            href={VAULT_CHAPTER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: 'var(--aura)', fontWeight: 700 }}
+          >
+            chapter 04 of the gtm-coding-agent
+          </a>
+          .
+        </p>
       </section>
 
       {/* CTA */}
@@ -512,7 +653,7 @@ python3 api/expand_buying_committee.py \\
                 padding: '12px 22px',
                 borderRadius: 'var(--radius-md, 8px)',
                 background: 'var(--text-primary)',
-                color: 'var(--canvas-base, #fff)',
+                color: 'var(--canvas)',
                 fontFamily: 'var(--font-mono)',
                 fontSize: 13,
                 fontWeight: 700,
@@ -541,6 +682,62 @@ python3 api/expand_buying_committee.py \\
               get Apollo Anywhere
             </a>
           </div>
+        </div>
+
+        {/* Clearbox bridge */}
+        <div
+          style={{
+            marginTop: 28,
+            padding: '32px 36px',
+            background:
+              'linear-gradient(135deg, rgba(109, 94, 233, 0.1), rgba(109, 94, 233, 0.03))',
+            border: '1px solid rgba(109, 94, 233, 0.25)',
+            borderRadius: 16,
+            textAlign: 'center',
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/clearbox/aura-logo.png"
+            alt="Clearbox Aura"
+            style={{
+              width: 72,
+              height: 'auto',
+              margin: '0 auto 16px',
+              display: 'block',
+              borderRadius: 8,
+            }}
+          />
+          <p
+            style={{
+              fontSize: 17,
+              lineHeight: 1.7,
+              color: 'var(--text-secondary)',
+              maxWidth: '68ch',
+              margin: '0 auto 20px',
+            }}
+          >
+            this whole pipeline is the manual version of what Clearbox runs
+            for you. every gate, every score, every list, managed.
+          </p>
+          <a
+            href={CLEARBOX_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              fontSize: 14,
+              fontWeight: 600,
+              color: '#fff',
+              background: 'var(--aura)',
+              padding: '11px 26px',
+              borderRadius: 8,
+              textDecoration: 'none',
+              letterSpacing: '0.01em',
+            }}
+          >
+            See your market. Move first. →
+          </a>
         </div>
       </section>
     </>
