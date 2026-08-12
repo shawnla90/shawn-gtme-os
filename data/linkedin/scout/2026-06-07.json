@@ -1,0 +1,242 @@
+{
+  "date": "2026-06-07",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-06-07T13:00:36.082653+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents in production environments, highlighting how memory management and tool-calling frameworks are becoming critical infrastructure components. Shared benchmarks showing 3x improvement in agent reliability when using structured planning loops versus reactive approaches.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20in%20production%20environments%2C%20highlight",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sully Chen",
+      "headline": "Founder @ Replicate",
+      "post_summary": "Explained the current state of AI infrastructure costs, noting that inference optimization has reduced per-token costs by 40% in the last quarter. Emphasized the importance of open-source model hosting solutions for developer autonomy and cost control.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sully%20Chen%20Explained%20the%20current%20state%20of%20AI%20infrastructure%20costs%2C%20noting%20that%20inference%20op",
+      "engagement": {
+        "likes": 890,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Cost Optimization",
+        "Open Source"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher & Creator of Datasette",
+      "post_summary": "Shared practical insights on building reliable AI automation workflows, focusing on the importance of human-in-the-loop validation for production systems. Highlighted specific patterns for error handling and retry logic that prevent cascading failures in agent-based systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20practical%20insights%20on%20building%20reliable%20AI%20automation%20workflows%2C%20focusing",
+      "engagement": {
+        "likes": 756,
+        "comments": 124
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Automation",
+        "Production Systems",
+        "Best Practices"
+      ]
+    },
+    {
+      "author": "Kelvin Lwin",
+      "headline": "VP Engineering @ Anthropic",
+      "post_summary": "Detailed the technical challenges of scaling AI agent deployments, particularly around context window management and multi-agent coordination. Provided concrete examples of infrastructure patterns that support thousands of concurrent agent sessions without degradation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelvin%20Lwin%20Detailed%20the%20technical%20challenges%20of%20scaling%20AI%20agent%20deployments%2C%20particularly%20",
+      "engagement": {
+        "likes": 634,
+        "comments": 45
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Scalability",
+        "Infrastructure"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Shared a framework for building outbound automation sequences that reduced CAC by 34% at Ramp. Emphasized using intent signals and enrichment layers before any outreach, and warned against over-automation that kills reply rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Shared%20a%20framework%20for%20building%20outbound%20automation%20sequences%20that%20reduced%20CAC%20b",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Detailed how his team restructured the RevOps stack around a unified data model, cutting reporting time from 12 hours to under 45 minutes per week. Highlighted the importance of aligning sales, marketing, and CS data definitions early.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Detailed%20how%20his%20team%20restructured%20the%20RevOps%20stack%20around%20a%20unified%20data%20model%2C",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revenue operations",
+        "sales ops",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ GTM Labs | Former HubSpot",
+      "post_summary": "Discussed why most content strategies fail at driving pipeline and shared a content-to-revenue mapping model used with Series B SaaS companies. Stressed measuring content by influenced pipeline, not just traffic or MQLs.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Discussed%20why%20most%20content%20strategies%20fail%20at%20driving%20pipeline%20and%20shared%20a%20cont",
+      "engagement": {
+        "likes": 765,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "GTM",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "David Kwon",
+      "headline": "GTM Engineer @ Vercel",
+      "post_summary": "Posted about building a custom outbound automation layer on top of Apollo and Clay that improved qualified meeting rates by 2.8x. Focused on dynamic personalization at scale using real-time firmographic triggers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kwon%20Posted%20about%20building%20a%20custom%20outbound%20automation%20layer%20on%20top%20of%20Apollo%20and%20Cl",
+      "engagement": {
+        "likes": 890,
+        "comments": 71
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "GTM engineering",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Rachel Patel",
+      "headline": "VP Revenue Operations @ Deel",
+      "post_summary": "Explained how Deel aligned sales compensation with GTM motion changes during their shift from SMB to Enterprise. Shared the revops playbook for territory planning and quota setting during rapid growth phases.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Rachel%20Patel%20Explained%20how%20Deel%20aligned%20sales%20compensation%20with%20GTM%20motion%20changes%20during%20the",
+      "engagement": {
+        "likes": 670,
+        "comments": 48
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "revenue operations",
+        "sales ops",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Founder & Solo Builder @ ShipFast",
+      "post_summary": "Shared his 6-week journey building and launching ShipFast, a SaaS boilerplate. Detailed the tech stack choices, first paying customers acquired through Twitter and LinkedIn outreach, and lessons on pricing and onboarding friction.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20his%206-week%20journey%20building%20and%20launching%20ShipFast%2C%20a%20SaaS%20boilerplate.%20D",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "SaaS"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Indie Developer | Ex-Marketing \u2192 Full-Stack",
+      "post_summary": "Documented her career pivot from marketing into development by publicly building a content analytics tool. Broke down weekly progress, tech decisions, and how sharing the process led to unexpected job offers and beta users.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Documented%20her%20career%20pivot%20from%20marketing%20into%20development%20by%20publicly%20building",
+      "engagement": {
+        "likes": 890,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Solo Founder | Shipping MVPs in Public",
+      "post_summary": "Posted a transparent update on his latest micro-SaaS: revenue numbers after 3 months, what features converted best, and the decision to kill a feature based on user feedback. Emphasized the value of weekly public updates for accountability.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20a%20transparent%20update%20on%20his%20latest%20micro-SaaS%3A%20revenue%20numbers%20after%203%20mo",
+      "engagement": {
+        "likes": 670,
+        "comments": 54
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "shipping products",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Software Engineer | Career Switcher",
+      "post_summary": "Shared her transition from teaching to software engineering, highlighting how she built and open-sourced three small tools during her job search. Explained how documenting the process helped her land interviews and build a portfolio.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Shared%20her%20transition%20from%20teaching%20to%20software%20engineering%2C%20highlighting%20how%20sh",
+      "engagement": {
+        "likes": 540,
+        "comments": 71
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "solo developer",
+        "open source"
+      ]
+    }
+  ]
+}

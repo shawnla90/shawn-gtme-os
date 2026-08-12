@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-31",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-31T13:00:28.614087+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the evolution of AI agents from simple chains to multi-agent systems, highlighting how LangGraph enables stateful workflows and better debugging for production AI applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20evolution%20of%20AI%20agents%20from%20simple%20chains%20to%20multi-agent%20systems%2C%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Shared insights on AI infrastructure investment trends, noting that companies building developer platforms and tooling are seeing 3-5x faster adoption rates than consumer AI applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20AI%20infrastructure%20investment%20trends%2C%20noting%20that%20companies%20bu",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Investing",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher",
+      "post_summary": "Demonstrated practical automation workflows using LLMs for code generation and testing, emphasizing the importance of human oversight in production automation systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Demonstrated%20practical%20automation%20workflows%20using%20LLMs%20for%20code%20generation%20and%20t",
+      "engagement": {
+        "likes": 756,
+        "comments": 124
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Automation",
+        "Developer Tools",
+        "LLMs"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "headline": "xAI / Tesla / Neuralink",
+      "post_summary": "Announced new xAI infrastructure developments focused on training specialized AI agents for real-world automation tasks, including integration with Tesla's robotics division.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elon%20Musk%20Announced%20new%20xAI%20infrastructure%20developments%20focused%20on%20training%20specialized%20AI",
+      "engagement": {
+        "likes": 15400,
+        "comments": 2890
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Agents",
+        "AI Infrastructure",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Head of Revenue Operations at Scale AI",
+      "post_summary": "Discussed how revenue operations teams are shifting from reactive reporting to proactive GTM engineering. Shared a framework where RevOps builds automated lead scoring models that feed directly into outbound sequences, cutting manual handoffs by 60%. Emphasized the need for unified data infrastructure across marketing, sales, and customer success.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discussed%20how%20revenue%20operations%20teams%20are%20shifting%20from%20reactive%20reporting%20to%20p",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "gtm-engineering",
+        "automation"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Founder & CEO at OutboundOS",
+      "post_summary": "Broke down the technical architecture behind modern outbound automation systems. Explained how his team uses enrichment APIs, intent signals, and dynamic sequencing to achieve 3x higher response rates than traditional cold outreach. Stressed the importance of treating outbound as a product with proper testing and iteration cycles.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Broke%20down%20the%20technical%20architecture%20behind%20modern%20outbound%20automation%20systems.",
+      "engagement": {
+        "likes": 892,
+        "comments": 156
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "automation",
+        "sales-tech"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "VP of Sales Operations at Notion",
+      "post_summary": "Shared insights on building content strategy that actually drives pipeline. Detailed how her team maps content assets to specific stages of the buyer journey and measures impact through closed-won attribution. Highlighted the shift from vanity metrics to pipeline-influenced content performance tracking.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Shared%20insights%20on%20building%20content%20strategy%20that%20actually%20drives%20pipeline.%20Deta",
+      "engagement": {
+        "likes": 743,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "sales-ops",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Director of GTM Strategy at Datadog",
+      "post_summary": "Explored the emerging discipline of GTM engineering as a bridge between product, marketing, and sales. Outlined how his team uses experimentation frameworks to test messaging, channel mix, and pricing strategies before full-scale rollout. Argued that GTM motions should be version-controlled like software products.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Explored%20the%20emerging%20discipline%20of%20GTM%20engineering%20as%20a%20bridge%20between%20product%2C",
+      "engagement": {
+        "likes": 1156,
+        "comments": 134
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "experimentation",
+        "strategy"
+      ]
+    },
+    {
+      "author": "Sarah Williams",
+      "headline": "Head of Growth at OpenAI",
+      "post_summary": "Detailed the evolution of sales operations from manual processes to AI-augmented workflows. Shared specific examples of how her team automated lead qualification and meeting scheduling, freeing reps to focus on high-value conversations. Stressed the importance of maintaining human oversight in automated systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Williams%20Detailed%20the%20evolution%20of%20sales%20operations%20from%20manual%20processes%20to%20AI-augmented",
+      "engagement": {
+        "likes": 967,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "sales-ops",
+        "ai-automation",
+        "growth"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo founder @ Finndev | Building AI tools in public",
+      "post_summary": "Alex documented his 6-week journey building and launching an AI-powered resume tool as a solo founder. He shared weekly revenue milestones, user feedback loops, and the technical challenges of scaling from 0 to 200 paying users without a team.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Alex%20documented%20his%206-week%20journey%20building%20and%20launching%20an%20AI-powered%20resume%20t",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "AI tools"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Ex-Marketing Manager turned Software Engineer | Career pivot stories",
+      "post_summary": "Maya detailed her 18-month transition from marketing to full-stack development, including her self-taught process, the projects that got her interviews, and how she landed her first engineering role at a Series B startup.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Patel%20Maya%20detailed%20her%2018-month%20transition%20from%20marketing%20to%20full-stack%20development%2C%20",
+      "engagement": {
+        "likes": 890,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "self-taught developer",
+        "career transition"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Founder @ TaskFlow | Shipping side projects in public",
+      "post_summary": "David shared his experience building a productivity SaaS while working full-time, including his decision to quit his job after reaching $3k MRR. He discussed the technical debt he accumulated and how he refactored the codebase post-launch.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20David%20shared%20his%20experience%20building%20a%20productivity%20SaaS%20while%20working%20full-time",
+      "engagement": {
+        "likes": 675,
+        "comments": 94
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "side project",
+        "SaaS",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Sarah Chen",
+      "headline": "Indie hacker | Shipping micro-SaaS products",
+      "post_summary": "Sarah broke down her process for validating and shipping 3 micro-SaaS products in 2024, including the specific customer discovery methods she used and why 2 of the 3 failed while the third reached $800 MRR.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Chen%20Sarah%20broke%20down%20her%20process%20for%20validating%20and%20shipping%203%20micro-SaaS%20products%20i",
+      "engagement": {
+        "likes": 543,
+        "comments": 67
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "micro-SaaS",
+        "product validation",
+        "indie maker"
+      ]
+    }
+  ]
+}

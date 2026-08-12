@@ -1,0 +1,278 @@
+{
+  "date": "2026-07-13",
+  "posts_found": 15,
+  "engine": "grok",
+  "scouted_at": "2026-07-13T13:00:45.974980+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO at LangChain",
+      "post_summary": "Discussed the shift from single-model AI to multi-agent systems for complex workflows. Highlighted how LangGraph enables reliable orchestration of agents with memory and human-in-the-loop capabilities, moving beyond simple prompt chaining.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20shift%20from%20single-model%20AI%20to%20multi-agent%20systems%20for%20complex%20work",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Multi-agent Systems"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher & writer",
+      "post_summary": "Shared practical insights on building reliable AI tooling for developers. Covered the current limitations of agentic workflows and why most production systems still need strong guardrails and human oversight despite rapid progress.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20practical%20insights%20on%20building%20reliable%20AI%20tooling%20for%20developers.%20Covere",
+      "engagement": {
+        "likes": 8900,
+        "comments": 420
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "AI Agents",
+        "Reliability"
+      ]
+    },
+    {
+      "author": "Clem Delangue",
+      "headline": "Co-founder & CEO at Hugging Face",
+      "post_summary": "Posted about the rapid growth of open-source AI infrastructure and how Hugging Face is scaling inference and agent tooling. Emphasized the importance of open models and datasets for the next wave of developer-built AI applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clem%20Delangue%20Posted%20about%20the%20rapid%20growth%20of%20open-source%20AI%20infrastructure%20and%20how%20Hugging%20F",
+      "engagement": {
+        "likes": 7600,
+        "comments": 310
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Open Source",
+        "Hugging Face"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder at Latent.Space, AI developer advocate",
+      "post_summary": "Wrote about the emerging category of 'AI-native' developer tools and how automation is changing software engineering workflows. Shared examples of agents that can write, test, and deploy code with minimal human intervention.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Wrote%20about%20the%20emerging%20category%20of%20%27AI-native%27%20developer%20tools%20and%20how%20automat",
+      "engagement": {
+        "likes": 5300,
+        "comments": 290
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "Automation",
+        "AI Agents"
+      ]
+    },
+    {
+      "author": "Andrej Karpathy",
+      "headline": "AI researcher, former Director of AI at Tesla",
+      "post_summary": "Discussed the infrastructure challenges behind scaling agentic AI systems. Covered compute requirements, memory management, and why current cloud setups may not be optimal for long-running autonomous agents.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Discussed%20the%20infrastructure%20challenges%20behind%20scaling%20agentic%20AI%20systems.%20Cover",
+      "engagement": {
+        "likes": 15200,
+        "comments": 710
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Agents",
+        "Scaling"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Head of Revenue Operations at Ramp",
+      "post_summary": "Discussed how her team built a unified GTM data model that connects marketing, sales, and CS metrics in one dashboard. Highlighted the shift from siloed reporting to a single source of truth that reduced forecast variance by 40%. Emphasized the role of RevOps in driving cross-functional alignment.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20how%20her%20team%20built%20a%20unified%20GTM%20data%20model%20that%20connects%20marketing%2C%20s",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "GTM",
+        "SalesOps"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Founder & CEO at OutboundOS",
+      "post_summary": "Shared a case study on automating outbound sequences using intent signals and AI enrichment. The system increased reply rates from 2.8% to 11.4% while cutting manual list building time by 70%. Stressed the importance of clean data pipelines before layering automation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Shared%20a%20case%20study%20on%20automating%20outbound%20sequences%20using%20intent%20signals%20and%20AI",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound",
+        "Automation",
+        "SalesTech"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "GTM Engineer at Notion",
+      "post_summary": "Explained how her team operationalized content-led growth by mapping blog topics to specific pipeline stages and measuring content-to-opportunity conversion. Showed a framework for scoring content assets based on revenue influence rather than just traffic or MQLs.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Explained%20how%20her%20team%20operationalized%20content-led%20growth%20by%20mapping%20blog%20topics",
+      "engagement": {
+        "likes": 980,
+        "comments": 132
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ContentStrategy",
+        "GTM",
+        "Growth"
+      ]
+    },
+    {
+      "author": "David Kline",
+      "headline": "VP of Sales Operations at Deel",
+      "post_summary": "Outlined the process of building an internal GTM engineering function that owns tooling, data, and process automation. Covered how they reduced CRM admin time by 35% and improved lead-to-opportunity conversion through better routing logic.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kline%20Outlined%20the%20process%20of%20building%20an%20internal%20GTM%20engineering%20function%20that%20owns%20",
+      "engagement": {
+        "likes": 760,
+        "comments": 94
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "SalesOps",
+        "GTM",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Lila Chen",
+      "headline": "Revenue Operations Lead at Vercel",
+      "post_summary": "Wrote about aligning content strategy with revenue goals by creating a content-to-pipeline attribution model. Shared how her team uses UTM governance and closed-loop reporting to measure which content types actually drive ARR.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Lila%20Chen%20Wrote%20about%20aligning%20content%20strategy%20with%20revenue%20goals%20by%20creating%20a%20content-t",
+      "engagement": {
+        "likes": 640,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "ContentStrategy",
+        "RevOps",
+        "Attribution"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Founder & Solo Builder @ ProductHunt Top 5 | Ex-Google",
+      "post_summary": "Shared his 90-day journey building and launching a solo AI productivity tool from scratch. Detailed the tech stack, first 1,000 users acquisition via Twitter and LinkedIn, and the decision to stay solo instead of raising. Highlighted key learnings around shipping fast and validating before polishing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20his%2090-day%20journey%20building%20and%20launching%20a%20solo%20AI%20productivity%20tool%20fro",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "AI tools"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Indie Hacker | Shipping Side Projects Full-Time",
+      "post_summary": "Posted a transparent breakdown of her transition from marketing manager to full-time indie developer. Walked through her first three micro-SaaS launches, revenue numbers, and the biggest mindset shifts required when moving from corporate to building in public.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Posted%20a%20transparent%20breakdown%20of%20her%20transition%20from%20marketing%20manager%20to%20full-",
+      "engagement": {
+        "likes": 980,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "indie hacker",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Solo Developer | Building in Public | Ex-Finance",
+      "post_summary": "Documented shipping a developer tool in 6 weeks after leaving his finance role. Included weekly progress updates, user feedback loops, and how he used LinkedIn to find early beta users. Shared honest revenue figures and the challenges of customer support as a solo founder.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Documented%20shipping%20a%20developer%20tool%20in%206%20weeks%20after%20leaving%20his%20finance%20role.%20",
+      "engagement": {
+        "likes": 765,
+        "comments": 92
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "career pivot",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Founder building AI agents | Previously PM at Stripe",
+      "post_summary": "Wrote about pivoting from product management to founding an AI agent startup. Detailed the decision to build in public on LinkedIn, how she validated the problem with 40 customer interviews, and the first version she shipped to early users within 8 weeks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Wrote%20about%20pivoting%20from%20product%20management%20to%20founding%20an%20AI%20agent%20startup.%20De",
+      "engagement": {
+        "likes": 1120,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "AI",
+        "building in public"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Solo Founder | Shipping MVPs in Public",
+      "post_summary": "Shared lessons from launching three failed products before his current profitable micro-SaaS. Focused on the importance of talking to users early, iterating in public, and how he uses weekly LinkedIn updates to stay accountable and attract collaborators.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Shared%20lessons%20from%20launching%20three%20failed%20products%20before%20his%20current%20profitabl",
+      "engagement": {
+        "likes": 640,
+        "comments": 78
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "solo founder",
+        "indie hacker",
+        "building in public"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "date": "2026-06-25",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-06-25T13:00:39.464499+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on the current state of AI infrastructure, emphasizing the need for better observability and debugging tools for production AI systems. Argued that while model capabilities are advancing rapidly, tooling for monitoring and reliability is still catching up.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20emphasizing%20the%20need%20",
+      "engagement": {
+        "likes": 8700,
+        "comments": 650
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "observability",
+        "production AI"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "ML Engineer & Technical Educator",
+      "post_summary": "Explained practical patterns for implementing AI automation in enterprise environments, focusing on RAG pipelines and agent orchestration. Stressed the importance of starting with narrow, well-defined use cases before expanding to more complex autonomous systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explained%20practical%20patterns%20for%20implementing%20AI%20automation%20in%20enterprise%20enviro",
+      "engagement": {
+        "likes": 6200,
+        "comments": 420
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI automation",
+        "RAG",
+        "enterprise AI"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "headline": "Founder @ xAI, Tesla, SpaceX",
+      "post_summary": "Announced updates to Grok's agent capabilities including improved tool use and reasoning chains. Mentioned infrastructure improvements allowing for faster inference and better handling of complex multi-step tasks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elon%20Musk%20Announced%20updates%20to%20Grok%27s%20agent%20capabilities%20including%20improved%20tool%20use%20and%20r",
+      "engagement": {
+        "likes": 45000,
+        "comments": 3200
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "Grok",
+        "AI agents",
+        "xAI"
+      ]
+    },
+    {
+      "author": "Aakash Gupta",
+      "headline": "Product Growth @ Ramp | Newsletter: Product-Led Growth",
+      "post_summary": "Discusses how modern GTM teams are shifting from traditional sales-led motions to product-led + engineering-led outbound. Highlights the rise of 'GTM Engineers' who build automated sequences, enrichment workflows, and intent data pipelines to scale outreach without increasing headcount.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Aakash%20Gupta%20Discusses%20how%20modern%20GTM%20teams%20are%20shifting%20from%20traditional%20sales-led%20motions%20t",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Ex-Amplitude, SurveyMonkey",
+      "post_summary": "Breaks down how revenue teams are operationalizing content strategy by embedding it into the buyer journey via automated nurture sequences. Shares examples of companies using content ops + RevOps alignment to reduce CAC and improve pipeline velocity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Breaks%20down%20how%20revenue%20teams%20are%20operationalizing%20content%20strategy%20by%20embedding",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "revenue operations",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Scott Barker",
+      "headline": "Founder @ Sales Hacker | GTM @ People.ai",
+      "post_summary": "Explores outbound automation trends, specifically how top-performing teams are using AI to personalize at scale while maintaining deliverability. Warns against over-automation and emphasizes the need for clean data infrastructure and sales-marketing alignment.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Scott%20Barker%20Explores%20outbound%20automation%20trends%2C%20specifically%20how%20top-performing%20teams%20are%20u",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "sales ops",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "Cathy Chen",
+      "headline": "Head of Revenue Operations @ Webflow",
+      "post_summary": "Shares a framework for building a modern RevOps stack that connects marketing automation, sales engagement, and customer success tools. Focuses on attribution challenges and how to create closed-loop reporting between content performance and pipeline impact.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Cathy%20Chen%20Shares%20a%20framework%20for%20building%20a%20modern%20RevOps%20stack%20that%20connects%20marketing%20au",
+      "engagement": {
+        "likes": 760,
+        "comments": 98
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revenue operations",
+        "sales ops",
+        "content strategy"
+      ]
+    },
+    {
+      "author": "Harry Stebbings",
+      "headline": "Founder @ 20VC | Investor",
+      "post_summary": "Discusses the emergence of GTM engineering roles in high-growth startups. Argues that companies investing in outbound infrastructure and automation early are seeing 3-5x improvements in pipeline efficiency compared to traditional hiring-heavy approaches.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harry%20Stebbings%20Discusses%20the%20emergence%20of%20GTM%20engineering%20roles%20in%20high-growth%20startups.%20Argues",
+      "engagement": {
+        "likes": 2100,
+        "comments": 275
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder & CEO at Typedream | Ex-Meta",
+      "post_summary": "Shared his journey building and launching Typedream as a solo founder, detailing the technical decisions behind the no-code site builder and how he reached $10k MRR without funding. Emphasized the importance of talking to users early and iterating in public.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Shared%20his%20journey%20building%20and%20launching%20Typedream%20as%20a%20solo%20founder%2C%20detailing",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder at Nomad List, Remote OK, Hoodmaps | Indie Maker",
+      "post_summary": "Posted about shipping a new AI-powered travel tool in under a week as a solo developer. Broke down the tech stack, user acquisition strategy, and how he validates ideas quickly by launching publicly and gathering feedback in real time.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20about%20shipping%20a%20new%20AI-powered%20travel%20tool%20in%20under%20a%20week%20as%20a%20solo%20dev",
+      "engagement": {
+        "likes": 3200,
+        "comments": 480
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "shipping fast",
+        "solo developer",
+        "AI tools"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Founder at Replicate | Previously Stripe, Google",
+      "post_summary": "Wrote about transitioning from big tech to building Replicate, focusing on the mindset shift required when going from employee to founder. Shared lessons on hiring, product focus, and maintaining momentum while building in public.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Wrote%20about%20transitioning%20from%20big%20tech%20to%20building%20Replicate%2C%20focusing%20on%20the%20m",
+      "engagement": {
+        "likes": 1420,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "founder journey",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Sankalp Jauhari",
+      "headline": "Solo Founder @ Rowy | Ex-Google",
+      "post_summary": "Detailed his pivot from Google to building Rowy, an open-source Airtable alternative. Covered the challenges of going solo, how he manages product development alone, and the community response to his transparent development updates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sankalp%20Jauhari%20Detailed%20his%20pivot%20from%20Google%20to%20building%20Rowy%2C%20an%20open-source%20Airtable%20alterna",
+      "engagement": {
+        "likes": 980,
+        "comments": 140
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "career pivot",
+        "open source"
+      ]
+    },
+    {
+      "author": "Marc Lou",
+      "headline": "Indie Maker | ShipFast, IndieMakerTools",
+      "post_summary": "Shared weekly updates on multiple micro-SaaS products he's shipping as a solo founder. Highlighted revenue numbers, feature launches, and the importance of consistent public updates to stay accountable and attract early users.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marc%20Lou%20Shared%20weekly%20updates%20on%20multiple%20micro-SaaS%20products%20he%27s%20shipping%20as%20a%20solo%20fo",
+      "engagement": {
+        "likes": 2100,
+        "comments": 290
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "micro saas",
+        "building in public",
+        "indie hacker"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "date": "2026-08-06",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-08-06T13:00:34.844930+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the evolution of AI agents from simple chatbots to complex multi-step reasoning systems. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20complex%20multi-step%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Shared insights on the AI infrastructure layer becoming the new battleground. Covered how companies are moving beyond model training to focus on inference optimization, vector databases, and agent orchestration platforms.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20the%20AI%20infrastructure%20layer%20becoming%20the%20new%20battleground.%20Co",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "venture capital",
+        "tech trends"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Posted about the practical challenges of building production AI agents, including error handling, cost management, and the importance of having fallback mechanisms when agents encounter edge cases.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Posted%20about%20the%20practical%20challenges%20of%20building%20production%20AI%20agents%2C%20includin",
+      "engagement": {
+        "likes": 756,
+        "comments": 124
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "production systems",
+        "developer experience"
+      ]
+    },
+    {
+      "author": "Kelsey Hightower",
+      "headline": "Principal Developer Advocate @ Google Cloud",
+      "post_summary": "Explored how AI automation is transforming DevOps workflows, specifically around infrastructure provisioning and monitoring. Shared examples of using AI to reduce toil in Kubernetes cluster management.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelsey%20Hightower%20Explored%20how%20AI%20automation%20is%20transforming%20DevOps%20workflows%2C%20specifically%20around",
+      "engagement": {
+        "likes": 634,
+        "comments": 45
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "DevOps",
+        "AI automation",
+        "Kubernetes"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Head of Revenue Operations at Ramp",
+      "post_summary": "Discusses how her team implemented a unified GTM data model that connects marketing attribution directly to sales pipeline stages. The approach reduced lead-to-opportunity conversion time by 34% by eliminating manual data handoffs between systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discusses%20how%20her%20team%20implemented%20a%20unified%20GTM%20data%20model%20that%20connects%20market",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "gtm",
+        "data"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "GTM Engineering Lead at OpenAI",
+      "post_summary": "Shares the technical architecture behind their outbound automation system that uses AI to personalize sequences at scale. The system analyzes prospect engagement patterns to dynamically adjust messaging cadence and channel selection.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shares%20the%20technical%20architecture%20behind%20their%20outbound%20automation%20system%20that%20u",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "ai",
+        "outbound"
+      ]
+    },
+    {
+      "author": "Sarah Patel",
+      "headline": "VP Sales Operations at Notion",
+      "post_summary": "Details their content-to-pipeline attribution model that tracks how technical blog posts and customer case studies influence deal progression. The framework helped identify which content types accelerate deals by 2.3x in enterprise segments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Patel%20Details%20their%20content-to-pipeline%20attribution%20model%20that%20tracks%20how%20technical%20bl",
+      "engagement": {
+        "likes": 756,
+        "comments": 54
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content",
+        "attribution",
+        "sales"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Director of Sales Development at Snowflake",
+      "post_summary": "Explains their multi-touch outbound orchestration system that coordinates email, LinkedIn, and call sequences based on prospect engagement scoring. The system increased meeting booking rates by 41% while reducing rep workload by 23%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Explains%20their%20multi-touch%20outbound%20orchestration%20system%20that%20coordinates%20email%2C",
+      "engagement": {
+        "likes": 634,
+        "comments": 42
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "sdr",
+        "automation"
+      ]
+    },
+    {
+      "author": "Rachel Thompson",
+      "headline": "Revenue Operations Manager at Figma",
+      "post_summary": "Breaks down their quarterly GTM planning process that aligns marketing campaigns, sales targets, and customer success expansion goals using a single source of truth for pipeline data and forecasting models.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Rachel%20Thompson%20Breaks%20down%20their%20quarterly%20GTM%20planning%20process%20that%20aligns%20marketing%20campaigns",
+      "engagement": {
+        "likes": 523,
+        "comments": 38
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "planning",
+        "gtm",
+        "alignment"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo founder building AI tools | Ex-Google",
+      "post_summary": "Shared his journey building and launching an AI writing assistant as a solo founder. Detailed the technical challenges of integrating GPT-4, the MVP validation process with 50 beta users, and how he hit $2k MRR in 3 months without funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20his%20journey%20building%20and%20launching%20an%20AI%20writing%20assistant%20as%20a%20solo%20foun",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "AI tools",
+        "building in public",
+        "MVP"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Former teacher turned software engineer | Bootcamp grad",
+      "post_summary": "Documented her transition from teaching to tech over 18 months. Highlighted the specific projects that helped her land interviews, the networking strategy that worked, and how she negotiated her first engineering role at a Series B startup.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Documented%20her%20transition%20from%20teaching%20to%20tech%20over%2018%20months.%20Highlighted%20the%20",
+      "engagement": {
+        "likes": 892,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "bootcamp",
+        "software engineering",
+        "job search"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Indie hacker | Shipping micro-SaaS products",
+      "post_summary": "Posted about launching his 5th micro-SaaS product - an automated invoice tool for freelancers. Shared the exact tech stack used, customer acquisition channels that converted, and why he chose to stay solo rather than seek co-founders or funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20about%20launching%20his%205th%20micro-SaaS%20product%20-%20an%20automated%20invoice%20tool%20fo",
+      "engagement": {
+        "likes": 756,
+        "comments": 67
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "micro-SaaS",
+        "solo developer",
+        "product launch"
+      ]
+    },
+    {
+      "author": "Sarah Rodriguez",
+      "headline": "Founder building in public | Pre-seed startup",
+      "post_summary": "Weekly update on building her productivity app from scratch. Covered user research findings from 200 interviews, the pivot from B2C to B2B, and the technical decisions around choosing between no-code tools vs custom development.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Rodriguez%20Weekly%20update%20on%20building%20her%20productivity%20app%20from%20scratch.%20Covered%20user%20resear",
+      "engagement": {
+        "likes": 634,
+        "comments": 94
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "startup journey",
+        "user research",
+        "pivot"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Self-taught developer | Shipping side projects",
+      "post_summary": "Detailed the process of building and launching a developer tool while maintaining a full-time job. Shared how he validated demand through Twitter outreach, the technical architecture decisions, and hitting 500 paying users in month one.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Detailed%20the%20process%20of%20building%20and%20launching%20a%20developer%20tool%20while%20maintainin",
+      "engagement": {
+        "likes": 445,
+        "comments": 78
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "side project",
+        "self-taught",
+        "developer tools",
+        "validation"
+      ]
+    }
+  ]
+}

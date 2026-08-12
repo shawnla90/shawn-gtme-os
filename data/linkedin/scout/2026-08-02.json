@@ -1,0 +1,260 @@
+{
+  "date": "2026-08-02",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-08-02T13:00:24.773768+00:00",
+  "sources": [
+    {
+      "author": "Karanveer Singh",
+      "headline": "AI Engineer @ Anthropic | Ex-Google",
+      "post_summary": "Discussed the shift from prompt engineering to agent orchestration, highlighting how teams are moving from simple chatbots to multi-agent systems that handle complex workflows autonomously. Shared insights on infrastructure requirements for reliable agent deployment at scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Karanveer%20Singh%20Discussed%20the%20shift%20from%20prompt%20engineering%20to%20agent%20orchestration%2C%20highlighting",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "infrastructure",
+        "automation"
+      ]
+    },
+    {
+      "author": "Sarah Chen",
+      "headline": "Principal Engineer @ Vercel | AI Infrastructure",
+      "post_summary": "Posted about the new wave of AI-native developer tools that integrate directly with existing CI/CD pipelines. Emphasized how these tools reduce deployment friction while maintaining observability for AI model performance in production environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Chen%20Posted%20about%20the%20new%20wave%20of%20AI-native%20developer%20tools%20that%20integrate%20directly%20w",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI infrastructure",
+        "automation"
+      ]
+    },
+    {
+      "author": "Marcus Rodriguez",
+      "headline": "CTO @ LangChain | Building AI Agents",
+      "post_summary": "Shared technical deep-dive on memory management patterns for long-running AI agents, covering state persistence, context window optimization, and failure recovery mechanisms. Included code examples showing practical implementation patterns.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Rodriguez%20Shared%20technical%20deep-dive%20on%20memory%20management%20patterns%20for%20long-running%20AI%20age",
+      "engagement": {
+        "likes": 756,
+        "comments": 134
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "developer tools",
+        "automation"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Head of Platform @ OpenAI",
+      "post_summary": "Discussed the infrastructure challenges of running AI agents at enterprise scale, focusing on cost optimization strategies and the importance of having robust monitoring for agent decision-making processes.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Discussed%20the%20infrastructure%20challenges%20of%20running%20AI%20agents%20at%20enterprise%20scale",
+      "engagement": {
+        "likes": 1103,
+        "comments": 92
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "automation",
+        "AI agents"
+      ]
+    },
+    {
+      "author": "Elena Vasquez",
+      "headline": "Head of Revenue Operations @ Scale AI",
+      "post_summary": "Elena detailed how her team built a unified revenue data model that connects marketing attribution, sales pipeline, and customer success metrics. The system reduced reporting time by 60% and improved forecast accuracy by 25%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Vasquez%20Elena%20detailed%20how%20her%20team%20built%20a%20unified%20revenue%20data%20model%20that%20connects%20mar",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Data Infrastructure",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "GTM Engineer @ OpenAI",
+      "post_summary": "Marcus shared his framework for building outbound automation sequences that combine intent signals with personalized multi-channel outreach. The approach increased qualified meetings by 3x while reducing manual SDR effort by 40%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Marcus%20shared%20his%20framework%20for%20building%20outbound%20automation%20sequences%20that%20comb",
+      "engagement": {
+        "likes": 2100,
+        "comments": 156
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Automation"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Content Strategy Lead @ Notion",
+      "post_summary": "Priya explained how her team uses content performance data to inform product-led growth experiments. By analyzing which content drives SQL conversion, they increased content-to-pipeline contribution by 45% in Q3.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Priya%20explained%20how%20her%20team%20uses%20content%20performance%20data%20to%20inform%20product-led",
+      "engagement": {
+        "likes": 890,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Product-Led Growth",
+        "Marketing Analytics"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "VP Sales Operations @ Ramp",
+      "post_summary": "David outlined the process of implementing a closed-loop revenue system that tracks every touchpoint from first ad click to expansion revenue. The implementation improved attribution accuracy from 60% to 94%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20David%20outlined%20the%20process%20of%20implementing%20a%20closed-loop%20revenue%20system%20that%20tra",
+      "engagement": {
+        "likes": 1450,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Attribution"
+      ]
+    },
+    {
+      "author": "Sarah Mitchell",
+      "headline": "GTM Systems Architect @ Stripe",
+      "post_summary": "Sarah described building a GTM engineering stack that automates lead scoring, routing, and follow-up sequences based on buying signals. The system reduced time-to-first-meeting from 14 days to 3 days.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Mitchell%20Sarah%20described%20building%20a%20GTM%20engineering%20stack%20that%20automates%20lead%20scoring%2C%20ro",
+      "engagement": {
+        "likes": 1670,
+        "comments": 134
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Automation",
+        "Lead Scoring"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Founder & Author | Bootstrapped to $1M ARR",
+      "post_summary": "Shared the exact revenue numbers and churn metrics from his latest micro-SaaS launch, including what acquisition channels worked and which onboarding steps caused drop-offs. Emphasized the importance of transparent weekly updates to keep himself accountable.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Shared%20the%20exact%20revenue%20numbers%20and%20churn%20metrics%20from%20his%20latest%20micro-SaaS%20la",
+      "engagement": {
+        "likes": 1200,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "indie hacker",
+        "SaaS"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Solo founder shipping AI products",
+      "post_summary": "Documented the 10-day sprint from idea to live product for his latest AI side project, including tech stack choices, pricing experiments, and the first $500 in revenue. Highlighted the decision to launch without waiting for perfect UX.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Documented%20the%2010-day%20sprint%20from%20idea%20to%20live%20product%20for%20his%20latest%20AI%20side%20pr",
+      "engagement": {
+        "likes": 950,
+        "comments": 64
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "AI",
+        "shipping"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "Founder & CEO, Winnie | ex-Google, ex-Stripe",
+      "post_summary": "Detailed her transition from big tech to founding a marketplace startup, covering the mindset shifts required and the first customer interviews that validated the problem. Stressed the value of leveraging domain expertise from previous roles.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Detailed%20her%20transition%20from%20big%20tech%20to%20founding%20a%20marketplace%20startup%2C%20coverin",
+      "engagement": {
+        "likes": 780,
+        "comments": 52
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "founder",
+        "marketplace"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Indie maker of 20+ products",
+      "post_summary": "Posted a thread breaking down the decision to sunset one of his older products and reallocate development time to a new idea, including user migration stats and revenue impact. Advised other solo founders on when to pivot vs. persevere.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20a%20thread%20breaking%20down%20the%20decision%20to%20sunset%20one%20of%20his%20older%20products%20a",
+      "engagement": {
+        "likes": 2100,
+        "comments": 143
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "product strategy",
+        "pivot"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Software engineer \u2192 indie founder",
+      "post_summary": "Shared his 6-month journey leaving a senior engineering role to build full-time, including financial runway calculations, first paying customers, and lessons learned from failed experiments. Encouraged others considering the leap.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Shared%20his%206-month%20journey%20leaving%20a%20senior%20engineering%20role%20to%20build%20full-time%2C",
+      "engagement": {
+        "likes": 650,
+        "comments": 91
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "solo founder",
+        "journey"
+      ]
+    }
+  ]
+}

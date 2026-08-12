@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-05",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-05T13:00:24.121952+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid shift from single-model LLM apps to multi-agent systems that can plan, use tools, and iterate autonomously. Highlighted real production use cases where agent frameworks reduced manual engineering effort by 60%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20shift%20from%20single-model%20LLM%20apps%20to%20multi-agent%20systems%20that",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "automation"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI researcher & creator of Datasette",
+      "post_summary": "Shared benchmarks comparing new open-source AI coding agents against traditional developer workflows. Noted that while agents can generate code quickly, human review remains essential for security and maintainability.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20benchmarks%20comparing%20new%20open-source%20AI%20coding%20agents%20against%20traditional",
+      "engagement": {
+        "likes": 980,
+        "comments": 134
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI agents",
+        "coding"
+      ]
+    },
+    {
+      "author": "Clemens Siebert",
+      "headline": "Head of AI Infrastructure @ Scale AI",
+      "post_summary": "Explained how their new distributed training orchestration layer cut GPU idle time by 40% and enabled dynamic scaling for large language model training jobs. Shared architecture diagrams and cost metrics.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clemens%20Siebert%20Explained%20how%20their%20new%20distributed%20training%20orchestration%20layer%20cut%20GPU%20idle%20ti",
+      "engagement": {
+        "likes": 670,
+        "comments": 52
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "training",
+        "automation"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Posted about the emerging category of 'agentic workflows' for software engineering teams, including automated PR reviews and test generation. Predicted this tooling will become table stakes within 18 months.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Posted%20about%20the%20emerging%20category%20of%20%27agentic%20workflows%27%20for%20software%20engineeri",
+      "engagement": {
+        "likes": 1120,
+        "comments": 91
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "developer tools",
+        "automation"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Discussed building a GTM engineering function that owns outbound automation, lead scoring models, and multi-channel sequencing. Shared how her team reduced CAC by 28% by replacing manual SDR workflows with AI-driven intent signals and automated enrichment.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20building%20a%20GTM%20engineering%20function%20that%20owns%20outbound%20automation%2C%20lea",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Explained how his RevOps team implemented a unified attribution model across paid, content, and outbound channels. Highlighted the importance of aligning sales ops tooling with content strategy to create closed-loop reporting that influences quarterly GTM planning.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Explained%20how%20his%20RevOps%20team%20implemented%20a%20unified%20attribution%20model%20across%20pai",
+      "engagement": {
+        "likes": 890,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Content Strategy"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ OutboundOS | GTM Advisor",
+      "post_summary": "Shared a framework for outbound automation that combines buying signals, personalized sequences, and CRM hygiene rules. Emphasized that successful GTM engineering requires tight collaboration between sales ops and content teams to maintain message-market fit at scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Shared%20a%20framework%20for%20outbound%20automation%20that%20combines%20buying%20signals%2C%20persona",
+      "engagement": {
+        "likes": 670,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "David Kline",
+      "headline": "VP Revenue Operations @ Deel",
+      "post_summary": "Detailed how his team built internal tooling to automate pipeline reviews and forecast accuracy. Covered the shift from reactive sales ops to proactive revenue operations that uses content engagement data to prioritize accounts and improve win rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kline%20Detailed%20how%20his%20team%20built%20internal%20tooling%20to%20automate%20pipeline%20reviews%20and%20fo",
+      "engagement": {
+        "likes": 540,
+        "comments": 41
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Content Strategy"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Founder @ VibeCheck | Ex-Meta | Shipping in public",
+      "post_summary": "Shared week 3 of building VibeCheck, a lightweight feedback tool for indie makers. Highlighted shipping a new onboarding flow that cut drop-off by 40% and the decision to stay solo instead of hiring early.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20week%203%20of%20building%20VibeCheck%2C%20a%20lightweight%20feedback%20tool%20for%20indie%20maker",
+      "engagement": {
+        "likes": 920,
+        "comments": 110
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "indie hacker",
+        "product"
+      ]
+    },
+    {
+      "author": "Maya Torres",
+      "headline": "Solo developer | Career switcher from marketing to code",
+      "post_summary": "Posted about her transition from marketing into full-time development after 9 months of self-study. Shared the exact project that got her first freelance client and how she documents every build publicly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Torres%20Posted%20about%20her%20transition%20from%20marketing%20into%20full-time%20development%20after%209%20mo",
+      "engagement": {
+        "likes": 1450,
+        "comments": 190
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "solo developer",
+        "learning in public"
+      ]
+    },
+    {
+      "author": "Ravi Patel",
+      "headline": "Founder @ ShipFast | 2x exited founder",
+      "post_summary": "Wrote about launching a new micro-SaaS in 11 days while documenting every decision on LinkedIn. Broke down the tech stack, pricing experiments, and why he chose to stay solo instead of raising.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Ravi%20Patel%20Wrote%20about%20launching%20a%20new%20micro-SaaS%20in%2011%20days%20while%20documenting%20every%20decisi",
+      "engagement": {
+        "likes": 2100,
+        "comments": 340
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "shipping fast",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Lila Chen",
+      "headline": "Indie maker | Ex-Google PM turned builder",
+      "post_summary": "Shared her journey pivoting from PM to solo builder after burnout. Posted a transparent revenue update for her first product and lessons on validating ideas without an audience.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Lila%20Chen%20Shared%20her%20journey%20pivoting%20from%20PM%20to%20solo%20builder%20after%20burnout.%20Posted%20a%20tran",
+      "engagement": {
+        "likes": 780,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "indie maker",
+        "revenue"
+      ]
+    },
+    {
+      "author": "Jordan Hale",
+      "headline": "Solo founder building DevTools in public",
+      "post_summary": "Detailed the process of rebuilding his CLI tool from scratch after user feedback. Included code snippets, user interviews, and the decision to open-source the new version.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Jordan%20Hale%20Detailed%20the%20process%20of%20rebuilding%20his%20CLI%20tool%20from%20scratch%20after%20user%20feedback",
+      "engagement": {
+        "likes": 630,
+        "comments": 85
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "solo developer",
+        "open source",
+        "devtools"
+      ]
+    }
+  ]
+}

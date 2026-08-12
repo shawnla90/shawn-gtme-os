@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-24",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-24T13:00:34.216344+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the shift from single LLM calls to multi-agent systems for complex workflows, highlighting how LangGraph enables stateful agent orchestration with human-in-the-loop capabilities. Emphasized the importance of observability and debugging tools for production agent deployments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20shift%20from%20single%20LLM%20calls%20to%20multi-agent%20systems%20for%20complex%20wor",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Shared insights on the emerging AI infrastructure stack, noting that vector databases and embedding models are becoming commoditized while orchestration layers and evaluation frameworks represent the next battleground for differentiation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20the%20emerging%20AI%20infrastructure%20stack%2C%20noting%20that%20vector%20data",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Venture Capital",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Adam Selipsky",
+      "headline": "CEO @ Amazon Web Services",
+      "post_summary": "Announced new Amazon Bedrock capabilities for building production-grade AI agents, including improved tool use, memory management, and integration with enterprise data sources through Knowledge Bases.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Adam%20Selipsky%20Announced%20new%20Amazon%20Bedrock%20capabilities%20for%20building%20production-grade%20AI%20agent",
+      "engagement": {
+        "likes": 2150,
+        "comments": 134
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AWS",
+        "AI Agents",
+        "Enterprise AI"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django",
+      "post_summary": "Posted about the rapid evolution of LLM-powered CLI tools and automation scripts, demonstrating how developers are building increasingly sophisticated agentic workflows using tools like Claude Code and custom GPT actions.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Posted%20about%20the%20rapid%20evolution%20of%20LLM-powered%20CLI%20tools%20and%20automation%20scripts",
+      "engagement": {
+        "likes": 756,
+        "comments": 92
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "CLI",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Head of Revenue Operations at Scale AI",
+      "post_summary": "Discussed how her team rebuilt their outbound motion by layering intent signals with product usage data, resulting in a 3x increase in qualified pipeline. Emphasized the importance of aligning sales ops tooling with actual buyer behavior rather than vanity metrics.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discussed%20how%20her%20team%20rebuilt%20their%20outbound%20motion%20by%20layering%20intent%20signals%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "outbound",
+        "gtm"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "GTM Engineer at OpenAI",
+      "post_summary": "Shared a framework for building automated content distribution systems that sync with sales sequences. The approach uses customer journey data to trigger contextual content at each funnel stage, improving reply rates by 47%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shared%20a%20framework%20for%20building%20automated%20content%20distribution%20systems%20that%20sync",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm",
+        "content",
+        "automation"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Director of Sales Operations at Notion",
+      "post_summary": "Detailed how her team implemented a unified revenue data model that connects marketing attribution, sales activity, and customer success metrics. This eliminated the traditional handoff friction between teams and improved forecast accuracy by 34%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Detailed%20how%20her%20team%20implemented%20a%20unified%20revenue%20data%20model%20that%20connects%20mar",
+      "engagement": {
+        "likes": 756,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "salesops",
+        "data"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Founder & CEO at Outreach.io",
+      "post_summary": "Explored the evolution of outbound automation from simple email sequences to AI-powered multi-channel orchestration. Highlighted how modern GTM engineering requires treating sales sequences as product features with proper versioning and A/B testing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Explored%20the%20evolution%20of%20outbound%20automation%20from%20simple%20email%20sequences%20to%20AI-",
+      "engagement": {
+        "likes": 1103,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "automation",
+        "gtm"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Indie Maker | Author of Zero to Sold | Bootstrapped Exit",
+      "post_summary": "Shared his journey of building and launching a new micro-SaaS product in 30 days while documenting every decision publicly. Emphasized the importance of shipping imperfect products and learning from real user feedback rather than over-planning.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Shared%20his%20journey%20of%20building%20and%20launching%20a%20new%20micro-SaaS%20product%20in%2030%20days",
+      "engagement": {
+        "likes": 2400,
+        "comments": 180
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacking",
+        "building-in-public",
+        "saas"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & KeywordsPeopleUse | Ex-Rockstar",
+      "post_summary": "Detailed his transition from music career to solo developer, explaining how he learned to code while building his first AI product. Highlighted the challenges of self-teaching development and the power of consistent public progress updates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Detailed%20his%20transition%20from%20music%20career%20to%20solo%20developer%2C%20explaining%20how%20he%20l",
+      "engagement": {
+        "likes": 1850,
+        "comments": 320
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-pivot",
+        "solo-developer",
+        "ai-products"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder @ Nomad List, Remote OK | 12 startups in 12 months",
+      "post_summary": "Posted about launching his latest micro-product in under a week, sharing revenue metrics and user acquisition strategies. Stressed the value of rapid iteration and how public accountability keeps him shipping consistently.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20about%20launching%20his%20latest%20micro-product%20in%20under%20a%20week%2C%20sharing%20revenue",
+      "engagement": {
+        "likes": 3200,
+        "comments": 450
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacking",
+        "micro-saas",
+        "rapid-shipping"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "CEO & Co-founder @ Winnie | Former YouTube/Google",
+      "post_summary": "Discussed her non-traditional path into tech leadership after working in media, and how she built Winnie while transparently sharing the fundraising and product development journey with her network.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Discussed%20her%20non-traditional%20path%20into%20tech%20leadership%20after%20working%20in%20media%2C%20",
+      "engagement": {
+        "likes": 1650,
+        "comments": 290
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career-pivot",
+        "founder-journey",
+        "women-in-tech"
+      ]
+    },
+    {
+      "author": "Marc Lou",
+      "headline": "Solo Founder | ShipFast.dev | 7 startups in 3 years",
+      "post_summary": "Shared his weekly build process where he ships new features every Sunday, documenting code decisions and user feedback. Explained how this public cadence helped him validate ideas faster and build in public accountability.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marc%20Lou%20Shared%20his%20weekly%20build%20process%20where%20he%20ships%20new%20features%20every%20Sunday%2C%20docume",
+      "engagement": {
+        "likes": 2100,
+        "comments": 380
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building-in-public",
+        "solo-founder",
+        "weekly-shipping"
+      ]
+    }
+  ]
+}

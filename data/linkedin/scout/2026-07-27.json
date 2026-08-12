@@ -1,0 +1,260 @@
+{
+  "date": "2026-07-27",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-07-27T13:00:33.228310+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the evolution of AI agent frameworks, highlighting how LangGraph enables more reliable multi-step agent workflows compared to earlier approaches. Emphasized the importance of state management and human-in-the-loop capabilities for production agent systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20evolution%20of%20AI%20agent%20frameworks%2C%20highlighting%20how%20LangGraph%20enabl",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Dmitry Shapiro",
+      "headline": "Founder & CTO @ SmythOS",
+      "post_summary": "Shared insights on building autonomous AI agents that can handle complex business processes. Covered the technical challenges of agent orchestration and the need for robust error handling in production environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Dmitry%20Shapiro%20Shared%20insights%20on%20building%20autonomous%20AI%20agents%20that%20can%20handle%20complex%20busines",
+      "engagement": {
+        "likes": 856,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Enterprise AI"
+      ]
+    },
+    {
+      "author": "Sully O'Malley",
+      "headline": "Head of Developer Relations @ Anthropic",
+      "post_summary": "Explored the infrastructure requirements for running large-scale AI agents, including compute optimization and cost management strategies. Shared benchmarks comparing different deployment approaches for agent-based applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sully%20O%27Malley%20Explored%20the%20infrastructure%20requirements%20for%20running%20large-scale%20AI%20agents%2C%20incl",
+      "engagement": {
+        "likes": 692,
+        "comments": 45
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "Scaling"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Analyzed the current state of AI tooling and infrastructure investments, noting the shift from model development to agent deployment and orchestration tools. Highlighted emerging startups building the next generation of AI infrastructure.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20current%20state%20of%20AI%20tooling%20and%20infrastructure%20investments%2C%20noting%20",
+      "engagement": {
+        "likes": 1150,
+        "comments": 78
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "Investing",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Elena Vasquez",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Built a GTM engineering framework that reduced sales cycle by 40% by integrating intent data with automated outreach sequences. Key insight: treating outbound as a product with version control and A/B testing led to 3x improvement in reply rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Vasquez%20Built%20a%20GTM%20engineering%20framework%20that%20reduced%20sales%20cycle%20by%2040%25%20by%20integrating",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Shared how his team consolidated 7 different sales tools into a unified RevOps stack, cutting manual data entry by 60%. The post details their attribution model that connects marketing touchpoints directly to closed revenue.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shared%20how%20his%20team%20consolidated%207%20different%20sales%20tools%20into%20a%20unified%20RevOps%20s",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Attribution"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Content Strategy Lead @ HubSpot | B2B SaaS",
+      "post_summary": "Explained how content-led outbound increased their SQL conversion rate by 28%. The strategy involves creating micro-content pieces specifically designed for each stage of the buyer journey, then using these as personalized touchpoints in automated sequences.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Explained%20how%20content-led%20outbound%20increased%20their%20SQL%20conversion%20rate%20by%2028%25.%20T",
+      "engagement": {
+        "likes": 756,
+        "comments": 94
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Outbound",
+        "B2B SaaS"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Founder @ OutreachScale | Sales Tech",
+      "post_summary": "Detailed the technical architecture behind their outbound automation platform that handles 50k+ personalized sequences monthly. Emphasized the importance of deliverability infrastructure and warmup protocols that maintain 95%+ inbox placement rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Detailed%20the%20technical%20architecture%20behind%20their%20outbound%20automation%20platform%20th",
+      "engagement": {
+        "likes": 634,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Outbound Automation",
+        "Sales Tech",
+        "Deliverability"
+      ]
+    },
+    {
+      "author": "Rachel Torres",
+      "headline": "VP Sales Operations @ Datadog",
+      "post_summary": "Broke down their quarterly GTM planning process that aligns marketing, sales, and customer success around shared revenue targets. Key framework involves creating 'revenue experiments' with clear hypotheses, metrics, and rollback criteria.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Rachel%20Torres%20Broke%20down%20their%20quarterly%20GTM%20planning%20process%20that%20aligns%20marketing%2C%20sales%2C%20an",
+      "engagement": {
+        "likes": 1089,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Strategy",
+        "Revenue Operations",
+        "Cross-functional"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder @ Nomad List, Remote OK | Solo developer",
+      "post_summary": "Launched a new AI-powered travel planning tool built entirely solo in 3 weeks. Shared the tech stack, revenue model, and how he validated demand through Twitter polls before coding. Emphasized shipping fast over perfection.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Launched%20a%20new%20AI-powered%20travel%20planning%20tool%20built%20entirely%20solo%20in%203%20weeks.%20S",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "AI tools"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder & Maker | ex-Google",
+      "post_summary": "Documented his pivot from Google PM to indie hacker, detailing the first $10k month from a side project. Shared specific metrics around customer acquisition costs and how he used no-code tools to validate before building.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Documented%20his%20pivot%20from%20Google%20PM%20to%20indie%20hacker%2C%20detailing%20the%20first%20%2410k%20mo",
+      "engagement": {
+        "likes": 892,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "indie hacker",
+        "product launch"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Bootstrapped founder, author of Zero to Sold",
+      "post_summary": "Wrote about the emotional journey of shutting down a failing SaaS product and pivoting to a new idea within 48 hours. Shared the framework he used to decide when to pivot vs. persevere based on user engagement data.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Wrote%20about%20the%20emotional%20journey%20of%20shutting%20down%20a%20failing%20SaaS%20product%20and%20pi",
+      "engagement": {
+        "likes": 654,
+        "comments": 78
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "pivot",
+        "SaaS",
+        "founder mental health"
+      ]
+    },
+    {
+      "author": "Marc Lou",
+      "headline": "Solo founder shipping micro-SaaS products",
+      "post_summary": "Shared his weekly build process for launching a new product every 30 days. Included his Notion template for tracking features, user feedback, and revenue milestones across his portfolio of 12 products.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marc%20Lou%20Shared%20his%20weekly%20build%20process%20for%20launching%20a%20new%20product%20every%2030%20days.%20Inclu",
+      "engagement": {
+        "likes": 445,
+        "comments": 67
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "micro-SaaS",
+        "shipping fast",
+        "solo developer"
+      ]
+    },
+    {
+      "author": "Liam Ottley",
+      "headline": "Founder building in public | ex-Amazon",
+      "post_summary": "Posted about transitioning from Amazon engineering to solo founder, including the exact script he used to get his first 100 users through cold outreach. Shared revenue numbers and the mistakes made in initial positioning.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Ottley%20Posted%20about%20transitioning%20from%20Amazon%20engineering%20to%20solo%20founder%2C%20including%20th",
+      "engagement": {
+        "likes": 723,
+        "comments": 94
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "user acquisition",
+        "building in public"
+      ]
+    }
+  ]
+}

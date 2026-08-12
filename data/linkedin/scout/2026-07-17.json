@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-17",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-17T13:00:31.064985+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents, highlighting how multi-step reasoning and tool use are becoming production-ready. Shared benchmarks showing 3x improvement in agent reliability over the past quarter.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%2C%20highlighting%20how%20multi-step%20reasonin",
+      "engagement": {
+        "likes": 1240,
+        "comments": 187
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Benchmarks"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Analyzed the AI infrastructure landscape, noting that GPU utilization rates have jumped to 85%+ for leading labs. Emphasized the shift from training to inference optimization as the next bottleneck.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20AI%20infrastructure%20landscape%2C%20noting%20that%20GPU%20utilization%20rates%20have",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "GPUs",
+        "Inference"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher",
+      "post_summary": "Shared practical examples of using LLMs for code generation and debugging workflows. Highlighted new open-source tools that reduce context-switching for developers building AI-powered applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20practical%20examples%20of%20using%20LLMs%20for%20code%20generation%20and%20debugging%20workfl",
+      "engagement": {
+        "likes": 765,
+        "comments": 93
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "LLMs",
+        "Open Source"
+      ]
+    },
+    {
+      "author": "Mustafa Suleyman",
+      "headline": "CEO @ Microsoft AI",
+      "post_summary": "Explored the convergence of automation and AI agents in enterprise settings, citing internal Microsoft deployments that reduced manual workflows by 40%. Stressed the importance of human-in-the-loop oversight.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Mustafa%20Suleyman%20Explored%20the%20convergence%20of%20automation%20and%20AI%20agents%20in%20enterprise%20settings%2C%20cit",
+      "engagement": {
+        "likes": 2100,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Enterprise AI",
+        "Automation",
+        "Microsoft"
+      ]
+    },
+    {
+      "author": "Aakash Gupta",
+      "headline": "Product Growth @ Ramp | Newsletter: Product-Led Growth",
+      "post_summary": "Discussed how GTM engineering teams are shifting from manual outbound to building automated, data-driven systems that combine intent signals, enrichment, and multi-channel sequencing. Highlighted that modern GTM engineers treat outbound like product development with metrics, experimentation, and infrastructure.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Aakash%20Gupta%20Discussed%20how%20GTM%20engineering%20teams%20are%20shifting%20from%20manual%20outbound%20to%20buildin",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Former CMO at Amplitude & Miro",
+      "post_summary": "Shared insights on revenue operations as the new backbone of scaling companies. Covered how RevOps teams are integrating content strategy with sales enablement and automation to create consistent pipeline generation rather than relying on heroics from individual reps.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Shared%20insights%20on%20revenue%20operations%20as%20the%20new%20backbone%20of%20scaling%20companies.%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revenue operations",
+        "content strategy",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Harry Stebbings",
+      "headline": "Founder @ 20VC | Investor",
+      "post_summary": "Explored how top B2B companies are building outbound automation stacks that combine AI enrichment, intent data, and personalized sequencing. Emphasized that GTM engineering roles are becoming critical for scaling without proportional headcount increases.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harry%20Stebbings%20Explored%20how%20top%20B2B%20companies%20are%20building%20outbound%20automation%20stacks%20that%20comb",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "GTM engineering",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "April Dunford",
+      "headline": "Positioning & Go-to-Market Expert | Author of Obviously Awesome",
+      "post_summary": "Discussed the intersection of content strategy and sales ops, arguing that effective GTM requires tight alignment between messaging, content assets, and automated outreach sequences. Shared examples of companies where content-led outbound significantly improved conversion rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20April%20Dunford%20Discussed%20the%20intersection%20of%20content%20strategy%20and%20sales%20ops%2C%20arguing%20that%20effec",
+      "engagement": {
+        "likes": 760,
+        "comments": 98
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "content strategy",
+        "sales ops",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder @ Finndev | Shipping indie tools",
+      "post_summary": "Shared the journey of building and launching a micro-SaaS in 6 weeks as a solo developer. Highlighted the decision to ship a minimal version without waiting for perfection, and how early user feedback shaped the roadmap. Discussed the challenges of balancing product development with marketing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20the%20journey%20of%20building%20and%20launching%20a%20micro-SaaS%20in%206%20weeks%20as%20a%20solo%20d",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Ex-Marketing Manager turned Software Engineer | Career Pivot Stories",
+      "post_summary": "Detailed her transition from marketing to software engineering after a 9-month self-taught journey. Emphasized the value of building small projects publicly and how sharing progress on LinkedIn helped land her first dev role. Offered advice on overcoming imposter syndrome during the pivot.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Detailed%20her%20transition%20from%20marketing%20to%20software%20engineering%20after%20a%209-month%20s",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "self-taught",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Founder @ DevFlow | Shipping developer tools",
+      "post_summary": "Posted about launching the beta of his latest developer productivity tool after months of solo development. Included metrics from the first 48 hours post-launch and lessons learned about positioning for a technical audience. Stressed the importance of consistent weekly updates to build an audience.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20about%20launching%20the%20beta%20of%20his%20latest%20developer%20productivity%20tool%20after%20",
+      "engagement": {
+        "likes": 765,
+        "comments": 63
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "product launch",
+        "developer tools",
+        "solo founder"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Indie Hacker & Former PM | Building in Public",
+      "post_summary": "Shared her experience pivoting from product management to full-time indie development after burnout. Documented the process of validating ideas through public Twitter threads and LinkedIn updates before coding. Highlighted how transparency helped attract early users and collaborators.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Shared%20her%20experience%20pivoting%20from%20product%20management%20to%20full-time%20indie%20develo",
+      "engagement": {
+        "likes": 890,
+        "comments": 104
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "career pivot",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Jordan Hale",
+      "headline": "Solo Developer | Shipping side projects to full-time income",
+      "post_summary": "Wrote about turning a weekend side project into a revenue-generating product over 8 months. Covered the technical stack choices, the decision to stay solo rather than hire, and the financial milestones that allowed quitting his day job. Shared revenue numbers and user growth stats.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Jordan%20Hale%20Wrote%20about%20turning%20a%20weekend%20side%20project%20into%20a%20revenue-generating%20product%20ove",
+      "engagement": {
+        "likes": 1120,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "side project",
+        "solo developer",
+        "indie hacker"
+      ]
+    }
+  ]
+}

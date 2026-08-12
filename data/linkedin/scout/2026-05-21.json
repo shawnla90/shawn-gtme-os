@@ -1,0 +1,224 @@
+{
+  "date": "2026-05-21",
+  "posts_found": 12,
+  "engine": "grok",
+  "scouted_at": "2026-05-21T13:00:42.769654+00:00",
+  "sources": [
+    {
+      "author": "Karthik Ramasamy",
+      "headline": "Co-founder & CEO at Decodable | Ex-Google, Twitter",
+      "post_summary": "Discussed how AI agents are shifting from chat interfaces to autonomous systems that can plan, execute, and iterate on complex developer workflows. Highlighted real examples of agents handling code reviews, infrastructure provisioning, and debugging without constant human input.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Karthik%20Ramasamy%20Discussed%20how%20AI%20agents%20are%20shifting%20from%20chat%20interfaces%20to%20autonomous%20systems%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder at Conviction | Investor & AI Thought Leader",
+      "post_summary": "Shared observations on the rapid evolution of AI infrastructure, noting that the bottleneck is moving from model training to reliable agent orchestration and observability. Emphasized the need for new tooling around agent memory, tool use, and failure recovery.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20observations%20on%20the%20rapid%20evolution%20of%20AI%20infrastructure%2C%20noting%20that%20the",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "AI Agents",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher & Creator of Datasette",
+      "post_summary": "Posted about practical automation patterns using AI agents for data pipelines and developer productivity. Included examples of agents that can generate, test, and deploy code changes while maintaining human oversight through clear checkpoints.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Posted%20about%20practical%20automation%20patterns%20using%20AI%20agents%20for%20data%20pipelines%20an",
+      "engagement": {
+        "likes": 760,
+        "comments": 52
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Automation",
+        "Developer Tools",
+        "AI Agents"
+      ]
+    },
+    {
+      "author": "Nader Dabit",
+      "headline": "Developer Advocate at AWS | Founder of Amplify",
+      "post_summary": "Explored how AI-powered developer tools are changing infrastructure management, with agents now capable of analyzing logs, suggesting optimizations, and even applying fixes in production environments under guardrails.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Nader%20Dabit%20Explored%20how%20AI-powered%20developer%20tools%20are%20changing%20infrastructure%20management%2C%20",
+      "engagement": {
+        "likes": 650,
+        "comments": 41
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Head of Revenue Operations at Notion",
+      "post_summary": "Elena shared a framework for aligning GTM engineering with revenue operations by building automated lead scoring models that integrate CRM data with product usage signals. She emphasized how this approach reduced manual handoffs between sales and marketing teams by 40%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Elena%20shared%20a%20framework%20for%20aligning%20GTM%20engineering%20with%20revenue%20operations%20by",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Revenue Operations",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Founder & CEO at OutreachScale",
+      "post_summary": "Marcus discussed outbound automation strategies that combine multi-channel sequences with AI-driven personalization, highlighting a case study where his team achieved a 3x increase in reply rates while cutting manual prospecting time in half.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Marcus%20discussed%20outbound%20automation%20strategies%20that%20combine%20multi-channel%20seque",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Sales Ops",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Director of Content Strategy at HubSpot",
+      "post_summary": "Priya outlined how content strategy should be embedded into revenue operations by creating modular content assets that sales teams can dynamically assemble for different buyer personas, resulting in faster deal velocity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Priya%20outlined%20how%20content%20strategy%20should%20be%20embedded%20into%20revenue%20operations%20b",
+      "engagement": {
+        "likes": 765,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Revenue Operations",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Liam Torres",
+      "headline": "GTM Engineer at Ramp",
+      "post_summary": "Liam explained building internal tooling for GTM engineering that automates pipeline hygiene and forecasting accuracy, sharing metrics showing a 25% improvement in forecast reliability after implementing the system.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Torres%20Liam%20explained%20building%20internal%20tooling%20for%20GTM%20engineering%20that%20automates%20pipe",
+      "engagement": {
+        "likes": 610,
+        "comments": 39
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Ops",
+        "Revenue Operations"
+      ]
+    },
+    {
+      "author": "Alex Hormozi",
+      "headline": "Founder & Investor | Author of $100M Offers",
+      "post_summary": "Shared the exact playbook he used to launch and scale multiple companies, emphasizing that shipping imperfect products fast and iterating based on real user feedback beats waiting for perfection.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Hormozi%20Shared%20the%20exact%20playbook%20he%20used%20to%20launch%20and%20scale%20multiple%20companies%2C%20emphas",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building",
+        "founders",
+        "shipping"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Solo Founder | Nomad List & Remote OK",
+      "post_summary": "Posted about launching a new micro-SaaS in under 48 hours as a solo developer, including the tech stack, revenue numbers from the first week, and lessons on staying lean.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20about%20launching%20a%20new%20micro-SaaS%20in%20under%2048%20hours%20as%20a%20solo%20developer%2C%20i",
+      "engagement": {
+        "likes": 8700,
+        "comments": 620
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "building in public",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Sarah Drasner",
+      "headline": "VP of Developer Experience | Former Netlify",
+      "post_summary": "Detailed her career pivot from design into engineering leadership, highlighting the skills that transferred and the deliberate projects she built to demonstrate technical credibility.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Drasner%20Detailed%20her%20career%20pivot%20from%20design%20into%20engineering%20leadership%2C%20highlighting%20",
+      "engagement": {
+        "likes": 5400,
+        "comments": 410
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "tech",
+        "developers"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder | Headlime & 10x your content",
+      "post_summary": "Shared weekly updates on building and shipping new AI features, including user feedback loops, pricing experiments, and the decision to stay solo rather than raise funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Shared%20weekly%20updates%20on%20building%20and%20shipping%20new%20AI%20features%2C%20including%20user%20f",
+      "engagement": {
+        "likes": 3900,
+        "comments": 275
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "building in public",
+        "AI",
+        "founders"
+      ]
+    }
+  ]
+}

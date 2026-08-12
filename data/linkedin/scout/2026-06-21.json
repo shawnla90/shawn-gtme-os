@@ -1,0 +1,278 @@
+{
+  "date": "2026-06-21",
+  "posts_found": 15,
+  "engine": "grok",
+  "scouted_at": "2026-06-21T13:00:29.174312+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on the current state of AI infrastructure, emphasizing the need for better observability and debugging tools for production LLM applications. Stressed that most AI failures stem from poor data pipelines rather than model limitations.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20emphasizing%20the%20need%20",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "LLM Ops",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction, AI investor",
+      "post_summary": "Analyzed the emerging AI agent startup landscape, noting that successful automation tools are those that integrate deeply with existing workflows rather than trying to replace them entirely. Mentioned specific examples in sales automation and code generation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20emerging%20AI%20agent%20startup%20landscape%2C%20noting%20that%20successful%20automat",
+      "engagement": {
+        "likes": 756,
+        "comments": 124
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Startups"
+      ]
+    },
+    {
+      "author": "Logan Kilpatrick",
+      "headline": "Former OpenAI, AI Product Leader",
+      "post_summary": "Posted about the infrastructure challenges of running AI agents at scale, particularly around cost management and rate limiting. Shared practical tips on implementing retry logic and fallback mechanisms for production agent deployments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Logan%20Kilpatrick%20Posted%20about%20the%20infrastructure%20challenges%20of%20running%20AI%20agents%20at%20scale%2C%20partic",
+      "engagement": {
+        "likes": 634,
+        "comments": 45
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Production AI",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Andrej Karpathy",
+      "headline": "AI Researcher, Former Tesla Director of AI",
+      "post_summary": "Discussed the future of developer tooling in the AI era, predicting that traditional IDEs will evolve into AI-native environments where agents handle boilerplate while humans focus on architecture and complex problem-solving.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Discussed%20the%20future%20of%20developer%20tooling%20in%20the%20AI%20era%2C%20predicting%20that%20traditi",
+      "engagement": {
+        "likes": 2150,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "AI Agents",
+        "Future of Coding"
+      ]
+    },
+    {
+      "author": "Elena Vasquez",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Discusses building a GTM engineering function from scratch at Ramp, focusing on automating lead enrichment and qualification workflows. Highlights how integrating data pipelines with sales tools reduced manual SDR work by 60%. Emphasizes the need for engineers who understand both product and sales processes.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Vasquez%20Discusses%20building%20a%20GTM%20engineering%20function%20from%20scratch%20at%20Ramp%2C%20focusing%20on%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Ops",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Shares a framework for aligning content strategy with revenue operations, showing how content can be measured as a pipeline driver rather than just brand awareness. Details experiments where targeted content sequences increased SQL conversion by 22%. Stresses the importance of RevOps owning content attribution.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shares%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%2C%20showin",
+      "engagement": {
+        "likes": 890,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ OutboundOS | GTM Automation",
+      "post_summary": "Breaks down how her team built an outbound automation system that sequences multi-channel touches based on buying signals rather than fixed cadences. Reports 3x improvement in reply rates by using real-time intent data to trigger personalized sequences. Warns against over-automation that feels robotic to prospects.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Breaks%20down%20how%20her%20team%20built%20an%20outbound%20automation%20system%20that%20sequences%20mult",
+      "engagement": {
+        "likes": 1560,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "VP Sales Operations @ Deel",
+      "post_summary": "Explores the intersection of sales ops and GTM engineering, arguing that ops teams need to evolve from process managers to systems builders. Details a case study where embedding engineers in sales ops led to a custom qualification model that improved win rates by 18%. Advocates for hiring 'full-stack' revops talent.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Explores%20the%20intersection%20of%20sales%20ops%20and%20GTM%20engineering%2C%20arguing%20that%20ops%20tea",
+      "engagement": {
+        "likes": 670,
+        "comments": 45
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Sales Ops",
+        "GTM Engineering",
+        "Revenue Operations"
+      ]
+    },
+    {
+      "author": "Rachel Torres",
+      "headline": "Content & GTM Strategy @ Webflow",
+      "post_summary": "Presents a content-to-revenue attribution model that connects blog posts and webinars directly to pipeline influence. Shows how her team uses UTM structures and CRM tagging to measure content's impact on outbound reply rates. Recommends content teams collaborate closely with sales ops for better targeting.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Rachel%20Torres%20Presents%20a%20content-to-revenue%20attribution%20model%20that%20connects%20blog%20posts%20and%20web",
+      "engagement": {
+        "likes": 540,
+        "comments": 38
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Content Strategy",
+        "Revenue Operations",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Arjun Shetty",
+      "headline": "Founder & Solo Builder @ VibeCheck | Ex-Google",
+      "post_summary": "Shared his 6-week journey building VibeCheck entirely solo after quitting Google. Detailed the tech stack, first 200 users acquired through Twitter and LinkedIn, and the decision to stay bootstrapped instead of raising.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arjun%20Shetty%20Shared%20his%206-week%20journey%20building%20VibeCheck%20entirely%20solo%20after%20quitting%20Google",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Software Engineer \u2192 Indie Developer | Shipping in Public",
+      "post_summary": "Documented her pivot from corporate engineering to full-time indie development. Posted weekly updates on building a niche SaaS for freelance designers, including revenue milestones and lessons from failed feature experiments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Patel%20Documented%20her%20pivot%20from%20corporate%20engineering%20to%20full-time%20indie%20development.%20",
+      "engagement": {
+        "likes": 890,
+        "comments": 64
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "indie hacker",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Liam Torres",
+      "headline": "Founder @ ShipFast | Helping devs ship faster",
+      "post_summary": "Wrote about launching his 4th micro-SaaS in 8 months. Broke down the exact process from idea validation to first $1k MRR, emphasizing ruthless scope reduction and launching without waiting for perfection.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Torres%20Wrote%20about%20launching%20his%204th%20micro-SaaS%20in%208%20months.%20Broke%20down%20the%20exact%20proce",
+      "engagement": {
+        "likes": 1530,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "shipping products",
+        "founder",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Sara Kline",
+      "headline": "Former Teacher \u2192 Self-Taught Developer | Building in Public",
+      "post_summary": "Shared her transition story from teaching to tech after a 9-month self-taught journey. Posted about her first deployed app, the job search struggles, and how sharing weekly progress helped her land interviews.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Kline%20Shared%20her%20transition%20story%20from%20teaching%20to%20tech%20after%20a%209-month%20self-taught%20jo",
+      "engagement": {
+        "likes": 670,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "self-taught",
+        "building in public"
+      ]
+    },
+    {
+      "author": "David Chen",
+      "headline": "Solo Founder @ Notion Templates Co.",
+      "post_summary": "Detailed how he went from idea to $3k MRR in 5 weeks by building and launching Notion templates. Focused on distribution through niche communities and iterating based on direct customer feedback.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Chen%20Detailed%20how%20he%20went%20from%20idea%20to%20%243k%20MRR%20in%205%20weeks%20by%20building%20and%20launching%20N",
+      "engagement": {
+        "likes": 980,
+        "comments": 71
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "shipping products",
+        "indie hacker"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "date": "2026-05-28",
+  "posts_found": 9,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-05-28T13:03:34.296303+00:00",
+  "sources": [
+    {
+      "author": "Aamir Qutub",
+      "headline": "Founder & CEO at Evalueserve | GTM Strategy",
+      "post_summary": "Discussed how GTM engineering is evolving beyond traditional marketing by integrating data science, automation, and cross-functional workflows to shorten sales cycles. Emphasized building repeatable outbound systems that combine intent data with personalized sequences.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Aamir%20Qutub%20Discussed%20how%20GTM%20engineering%20is%20evolving%20beyond%20traditional%20marketing%20by%20integr",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM",
+        "SalesOps",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Former CMO at Amplitude & SurveyMonkey",
+      "post_summary": "Shared a framework for aligning content strategy with revenue operations, arguing that content should be treated as a pipeline asset. Highlighted how mapping content to specific stages of the buyer journey improves conversion rates in outbound motions.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Shared%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%2C%20arguin",
+      "engagement": {
+        "likes": 1420,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ContentStrategy",
+        "RevOps",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Ryan Sorley",
+      "headline": "Co-Founder at Warmly | Ex-Salesforce",
+      "post_summary": "Explained how outbound automation tools are shifting from simple email sequencing to full GTM engineering stacks that incorporate real-time intent signals and AI-personalized messaging at scale. Warned against over-automation without human oversight.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Ryan%20Sorley%20Explained%20how%20outbound%20automation%20tools%20are%20shifting%20from%20simple%20email%20sequencin",
+      "engagement": {
+        "likes": 980,
+        "comments": 132
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound",
+        "Automation",
+        "SalesOps"
+      ]
+    },
+    {
+      "author": "Ryan Bonnici",
+      "headline": "Chief Marketing Officer at G2 | Revenue Leader",
+      "post_summary": "Broke down how modern revenue operations teams are embedding GTM engineers to own the technical infrastructure behind pipeline generation. Covered the move from siloed marketing ops to integrated RevOps platforms that track every touchpoint.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Ryan%20Bonnici%20Broke%20down%20how%20modern%20revenue%20operations%20teams%20are%20embedding%20GTM%20engineers%20to%20ow",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "GTM",
+        "SalesOps"
+      ]
+    },
+    {
+      "author": "Ryan Burgess",
+      "headline": "Head of Growth at UserTesting | GTM Operator",
+      "post_summary": "Posted about building an outbound automation engine that combines LinkedIn signals, email deliverability infrastructure, and content repurposing to drive consistent pipeline. Stressed the importance of measuring content-assisted conversions within sales ops dashboards.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Ryan%20Burgess%20Posted%20about%20building%20an%20outbound%20automation%20engine%20that%20combines%20LinkedIn%20signa",
+      "engagement": {
+        "likes": 640,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Outbound",
+        "ContentStrategy",
+        "RevOps"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Founder & Builder | Shipping solo products in public",
+      "post_summary": "Shared the journey of building and launching a micro-SaaS tool in 30 days as a solo founder. Highlighted key learnings around validating ideas quickly, handling marketing solo, and iterating based on early user feedback.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20the%20journey%20of%20building%20and%20launching%20a%20micro-SaaS%20tool%20in%2030%20days%20as%20a%20s",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "indie hacker",
+        "solo founder"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Software Engineer | Career pivot from marketing to tech",
+      "post_summary": "Detailed her transition from marketing to software engineering after a 9-month self-taught journey. Emphasized the importance of building real projects, networking on LinkedIn, and how her non-traditional background became an asset in product thinking.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Detailed%20her%20transition%20from%20marketing%20to%20software%20engineering%20after%20a%209-month%20s",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "self-taught developer",
+        "tech transition"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Indie Developer | Shipping side projects in public",
+      "post_summary": "Posted weekly updates on building a developer tool in public, including revenue milestones, tech stack decisions, and challenges of balancing a full-time job with product development.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20weekly%20updates%20on%20building%20a%20developer%20tool%20in%20public%2C%20including%20revenue%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "side project",
+        "indie developer"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Founder | Ex-consultant turned product builder",
+      "post_summary": "Shared insights from pivoting out of consulting to build her first SaaS product solo. Covered lessons on customer discovery, avoiding over-engineering, and the mental shift required when moving from service work to product ownership.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Shared%20insights%20from%20pivoting%20out%20of%20consulting%20to%20build%20her%20first%20SaaS%20product%20",
+      "engagement": {
+        "likes": 760,
+        "comments": 92
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career pivot",
+        "founder journey",
+        "product building"
+      ]
+    }
+  ]
+}

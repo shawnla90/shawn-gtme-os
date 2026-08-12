@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-09",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-09T13:00:36.306498+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO at LangChain",
+      "post_summary": "Discussed the shift from single LLM calls to multi-agent systems for complex workflows, highlighting how LangGraph enables stateful agent orchestration and better debugging for production AI applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20shift%20from%20single%20LLM%20calls%20to%20multi-agent%20systems%20for%20complex%20wor",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder at Latent.Space",
+      "post_summary": "Shared insights on the emerging AI infrastructure stack, covering model serving, vector databases, and evaluation frameworks needed to move AI agents from prototype to production reliably.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Shared%20insights%20on%20the%20emerging%20AI%20infrastructure%20stack%2C%20covering%20model%20serving%2C",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "MLOps",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Adept Team",
+      "headline": "AI Research at Adept",
+      "post_summary": "Posted about their latest work on action models that allow AI agents to interact with software UIs directly, reducing the need for brittle API integrations in automation workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Adept%20Team%20Posted%20about%20their%20latest%20work%20on%20action%20models%20that%20allow%20AI%20agents%20to%20interact",
+      "engagement": {
+        "likes": 760,
+        "comments": 52
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher",
+      "post_summary": "Explained practical patterns for building reliable LLM-powered tools, including structured output, tool use, and error handling strategies that developers can implement today.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Explained%20practical%20patterns%20for%20building%20reliable%20LLM-powered%20tools%2C%20including%20",
+      "engagement": {
+        "likes": 890,
+        "comments": 71
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "LLMs",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Head of Revenue Operations at Notion",
+      "post_summary": "Discussed how her team built a unified GTM data model that connects marketing, sales, and CS metrics into a single source of truth. Highlighted the shift from siloed dashboards to a revenue operating system that reduced reporting time by 60%. Emphasized the importance of aligning incentives across functions.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20how%20her%20team%20built%20a%20unified%20GTM%20data%20model%20that%20connects%20marketing%2C%20s",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "GTM",
+        "SalesOps"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Founder & CEO at OutboundOS",
+      "post_summary": "Shared a framework for outbound automation that combines intent signals with multi-channel sequencing. Explained how his team reduced manual prospecting by 80% while improving reply rates through dynamic personalization at scale. Stressed the need for clean data infrastructure before layering automation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Shared%20a%20framework%20for%20outbound%20automation%20that%20combines%20intent%20signals%20with%20mul",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound",
+        "Automation",
+        "SalesTech"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "GTM Engineer at Ramp",
+      "post_summary": "Broke down how her team operationalized content-led growth by embedding content performance metrics directly into the sales CRM. Showed the process of building content attribution models that influence pipeline generation. Argued that GTM engineering requires treating content as a product with its own lifecycle.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Broke%20down%20how%20her%20team%20operationalized%20content-led%20growth%20by%20embedding%20content%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM",
+        "ContentStrategy",
+        "RevOps"
+      ]
+    },
+    {
+      "author": "David Chen",
+      "headline": "VP of Sales Operations at Deel",
+      "post_summary": "Explained the evolution of sales ops into revenue operations, focusing on how they centralized lead scoring, routing, and forecasting models. Shared lessons from migrating from multiple point solutions to a composable RevOps stack. Highlighted the role of data engineering in enabling real-time revenue visibility.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Chen%20Explained%20the%20evolution%20of%20sales%20ops%20into%20revenue%20operations%2C%20focusing%20on%20how%20th",
+      "engagement": {
+        "likes": 760,
+        "comments": 98
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "SalesOps",
+        "RevOps",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Sofia Patel",
+      "headline": "Director of Content Strategy at Webflow",
+      "post_summary": "Outlined a content-to-pipeline framework that maps content assets to specific stages of the buyer journey and sales process. Discussed how her team collaborates with GTM engineering to measure content influence on closed-won revenue. Advocated for treating content ops as a core revenue function.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sofia%20Patel%20Outlined%20a%20content-to-pipeline%20framework%20that%20maps%20content%20assets%20to%20specific%20st",
+      "engagement": {
+        "likes": 620,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "ContentStrategy",
+        "GTM",
+        "Revenue"
+      ]
+    },
+    {
+      "author": "Arpit Mohan",
+      "headline": "Founder @ SuperTokens | Ex-Amazon",
+      "post_summary": "Shared the journey of building and launching an open-source auth solution as a solo founder. Highlighted the challenges of balancing product development, community building, and customer support without a large team. Emphasized the importance of shipping fast and iterating based on real user feedback.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arpit%20Mohan%20Shared%20the%20journey%20of%20building%20and%20launching%20an%20open-source%20auth%20solution%20as%20a%20s",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "open source"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & 10+ AI products",
+      "post_summary": "Posted about pivoting from a content agency to shipping multiple AI SaaS products solo. Discussed how he validates ideas quickly, builds MVPs in days, and uses public updates to attract early users and investors. Shared metrics on revenue growth from recent launches.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Posted%20about%20pivoting%20from%20a%20content%20agency%20to%20shipping%20multiple%20AI%20SaaS%20product",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AI products",
+        "solo founder",
+        "shipping fast"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Founder & Engineer | Building in Public",
+      "post_summary": "Detailed his transition from a non-technical role into full-time indie hacking. Described learning to code while building and launching three micro-SaaS tools in under a year. Focused on transparency around failures, revenue numbers, and lessons from going all-in on product building.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Detailed%20his%20transition%20from%20a%20non-technical%20role%20into%20full-time%20indie%20hacking.%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "indie hacker",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Sanket Sahu",
+      "headline": "Co-founder @ GeekyAnts & NativeBase",
+      "post_summary": "Wrote about the realities of shipping a design system as a small founding team. Covered technical decisions, community contributions, and how consistent public updates helped grow adoption. Included reflections on balancing product work with hiring and funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sanket%20Sahu%20Wrote%20about%20the%20realities%20of%20shipping%20a%20design%20system%20as%20a%20small%20founding%20team.%20",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "product building",
+        "open source",
+        "founder journey"
+      ]
+    }
+  ]
+}

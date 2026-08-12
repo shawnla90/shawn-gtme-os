@@ -1,0 +1,242 @@
+{
+  "date": "2026-05-26",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-05-26T13:00:24.591984+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how developer frameworks are shifting from prompt engineering to agent orchestration and memory management.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "LangChain"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Shared insights on AI infrastructure scaling challenges, noting that inference costs are dropping 10x every 18 months. Emphasized the need for better developer tooling around model routing, caching, and observability in production AI systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20AI%20infrastructure%20scaling%20challenges%2C%20noting%20that%20inference%20c",
+      "engagement": {
+        "likes": 8900,
+        "comments": 567
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "Scaling"
+      ]
+    },
+    {
+      "author": "Matt Welsh",
+      "headline": "Former Google Brain, Founder @ Fixie.ai",
+      "post_summary": "Explored the automation potential of AI agents in software development workflows, particularly around code generation, testing, and deployment. Argued that the next wave of developer tools will focus on agentic workflows rather than copilots.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Matt%20Welsh%20Explored%20the%20automation%20potential%20of%20AI%20agents%20in%20software%20development%20workflows",
+      "engagement": {
+        "likes": 6700,
+        "comments": 423
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Elad Gil",
+      "headline": "Investor & Author",
+      "post_summary": "Analyzed the AI infrastructure market consolidation, predicting that 2025 will see major M&A activity as companies race to build end-to-end AI platforms. Stressed the importance of developer experience in winning the infrastructure layer.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elad%20Gil%20Analyzed%20the%20AI%20infrastructure%20market%20consolidation%2C%20predicting%20that%202025%20will%20s",
+      "engagement": {
+        "likes": 5400,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "M&A",
+        "Developer Experience"
+      ]
+    },
+    {
+      "author": "Alex Hormozi",
+      "headline": "Founder @ Acquisition.com | Author of $100M Offers",
+      "post_summary": "Discussed how outbound automation combined with strong offer positioning can 10x pipeline without increasing headcount. Shared a framework for aligning GTM engineering with sales ops to reduce CAC while scaling revenue.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Hormozi%20Discussed%20how%20outbound%20automation%20combined%20with%20strong%20offer%20positioning%20can%2010x",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Ex- Amplitude, SurveyMonkey",
+      "post_summary": "Explored how content strategy should be treated as a core GTM motion rather than a support function. Highlighted examples of revenue operations teams embedding content into outbound sequences to improve conversion rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Explored%20how%20content%20strategy%20should%20be%20treated%20as%20a%20core%20GTM%20motion%20rather%20than",
+      "engagement": {
+        "likes": 8700,
+        "comments": 410
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "GTM engineering",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "David Gerhardt",
+      "headline": "Co-Founder @ Pavilion | Revenue Leader",
+      "post_summary": "Broke down the shift from traditional sales ops to GTM engineering, emphasizing automation of outbound processes and data-driven decision making. Shared metrics showing how integrated revenue operations teams outperform siloed ones.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Gerhardt%20Broke%20down%20the%20shift%20from%20traditional%20sales%20ops%20to%20GTM%20engineering%2C%20emphasizing%20",
+      "engagement": {
+        "likes": 6300,
+        "comments": 295
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "sales ops",
+        "outbound automation"
+      ]
+    },
+    {
+      "author": "April Dunford",
+      "headline": "Positioning Expert | Author of Obviously Awesome",
+      "post_summary": "Argued that content strategy must be tightly coupled with GTM engineering to avoid messaging drift during scaling. Provided examples of how revenue operations can operationalize positioning through automated content distribution.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20April%20Dunford%20Argued%20that%20content%20strategy%20must%20be%20tightly%20coupled%20with%20GTM%20engineering%20to%20avo",
+      "engagement": {
+        "likes": 5100,
+        "comments": 340
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "content strategy",
+        "GTM engineering",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Daniel Vassallo",
+      "headline": "Independent maker & former AWS engineer",
+      "post_summary": "Shared his journey of building and launching a simple SaaS product solo, detailing the exact tech stack, first 100 paying customers, and how he avoided venture funding to stay independent.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Daniel%20Vassallo%20Shared%20his%20journey%20of%20building%20and%20launching%20a%20simple%20SaaS%20product%20solo%2C%20detaili",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder at Nomad List & Remote OK",
+      "post_summary": "Posted a transparent update on shipping new features to his products, including revenue numbers, user growth, and the challenges of maintaining multiple solo-built tools without a team.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20a%20transparent%20update%20on%20shipping%20new%20features%20to%20his%20products%2C%20including%20",
+      "engagement": {
+        "likes": 3200,
+        "comments": 340
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "shipping",
+        "solo founder"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Author & bootstrapped founder",
+      "post_summary": "Wrote about his transition from corporate software engineering to full-time indie product building, including lessons on marketing, customer discovery, and maintaining momentum without co-founders.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Wrote%20about%20his%20transition%20from%20corporate%20software%20engineering%20to%20full-time%20indi",
+      "engagement": {
+        "likes": 970,
+        "comments": 145
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "bootstrapped",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "Founder & CEO at Winnie",
+      "post_summary": "Shared her experience as a technical founder who coded and shipped the initial version of her startup alone before hiring, highlighting the importance of talking to users early and iterating fast.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Shared%20her%20experience%20as%20a%20technical%20founder%20who%20coded%20and%20shipped%20the%20initial%20v",
+      "engagement": {
+        "likes": 1120,
+        "comments": 98
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "founder",
+        "shipping",
+        "technical founder"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder of Headlime & 10x your content",
+      "post_summary": "Documented building a new AI product in public over 30 days, sharing weekly progress, tech decisions, user feedback loops, and how he validated demand before writing code.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Documented%20building%20a%20new%20AI%20product%20in%20public%20over%2030%20days%2C%20sharing%20weekly%20prog",
+      "engagement": {
+        "likes": 760,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "AI",
+        "solo developer"
+      ]
+    }
+  ]
+}

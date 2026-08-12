@@ -1,0 +1,260 @@
+{
+  "date": "2026-08-04",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-08-04T13:00:29.543303+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the shift from single-model AI to multi-agent systems, highlighting how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20shift%20from%20single-model%20AI%20to%20multi-agent%20systems%2C%20highlighting%20ho",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI researcher & creator of Datasette",
+      "post_summary": "Shared insights on the current state of AI infrastructure, emphasizing the need for better observability tools and debugging frameworks as AI systems become more complex and production-critical.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20emphasizing%20the%20need%20",
+      "engagement": {
+        "likes": 8700,
+        "comments": 654
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Observability",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Analyzed the emerging AI agent startup ecosystem, noting that infrastructure plays are gaining more traction than application-layer companies as enterprises seek reliable agent deployment platforms.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20emerging%20AI%20agent%20startup%20ecosystem%2C%20noting%20that%20infrastructure%20pla",
+      "engagement": {
+        "likes": 15200,
+        "comments": 1200
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Startups",
+        "Infrastructure"
+      ]
+    },
+    {
+      "author": "Matt Rickard",
+      "headline": "Founder @ Replicate",
+      "post_summary": "Explored the evolution of AI automation tools, specifically how new frameworks are enabling developers to move from prompt engineering to building robust, production-grade AI workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Matt%20Rickard%20Explored%20the%20evolution%20of%20AI%20automation%20tools%2C%20specifically%20how%20new%20frameworks%20a",
+      "engagement": {
+        "likes": 6300,
+        "comments": 420
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "Automation",
+        "AI Workflows",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Head of Revenue Operations at Scale AI",
+      "post_summary": "Discussed how GTM engineering teams are building automated lead scoring systems that integrate CRM data with intent signals to prioritize outbound sequences. Shared metrics showing 40% improvement in SQL conversion rates after implementing predictive routing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discussed%20how%20GTM%20engineering%20teams%20are%20building%20automated%20lead%20scoring%20systems%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "revenue operations",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Founder & CEO at Outreach.io",
+      "post_summary": "Explained the evolution of outbound automation from basic email sequences to AI-powered multi-channel orchestration. Highlighted how modern platforms can dynamically adjust messaging based on prospect engagement patterns across email, LinkedIn, and phone.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Explained%20the%20evolution%20of%20outbound%20automation%20from%20basic%20email%20sequences%20to%20AI-",
+      "engagement": {
+        "likes": 2100,
+        "comments": 156
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "sales technology",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Sarah Kim",
+      "headline": "VP of Content Strategy at HubSpot",
+      "post_summary": "Shared a framework for aligning content strategy with revenue operations by mapping content assets to specific stages of the buyer journey. Demonstrated how content performance data feeds into GTM planning and sales enablement priorities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Kim%20Shared%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%20by%20mapp",
+      "engagement": {
+        "likes": 890,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "revenue operations",
+        "sales enablement"
+      ]
+    },
+    {
+      "author": "David Park",
+      "headline": "Director of Sales Operations at Snowflake",
+      "post_summary": "Detailed how his team reduced manual data entry by 60% through automated pipeline hygiene processes. Covered the technical implementation of data validation rules and the impact on forecast accuracy and sales rep productivity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Park%20Detailed%20how%20his%20team%20reduced%20manual%20data%20entry%20by%2060%25%20through%20automated%20pipelin",
+      "engagement": {
+        "likes": 1450,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales ops",
+        "automation",
+        "pipeline management"
+      ]
+    },
+    {
+      "author": "Rachel Thompson",
+      "headline": "GTM Engineering Lead at OpenAI",
+      "post_summary": "Explored the intersection of product-led growth and traditional outbound motions, explaining how GTM engineers can build systems that identify expansion opportunities within existing accounts using usage data and behavioral signals.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Rachel%20Thompson%20Explored%20the%20intersection%20of%20product-led%20growth%20and%20traditional%20outbound%20motions",
+      "engagement": {
+        "likes": 1670,
+        "comments": 134
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "product-led growth",
+        "expansion"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Founder @ Row Zero | Ex-Microsoft",
+      "post_summary": "Shared the 18-month journey of building Row Zero, a spreadsheet that connects directly to data warehouses. Highlighted the decision to stay solo for the first year, the technical challenges of handling billion-row datasets, and how customer interviews shaped the product roadmap.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20the%2018-month%20journey%20of%20building%20Row%20Zero%2C%20a%20spreadsheet%20that%20connects%20di",
+      "engagement": {
+        "likes": 2400,
+        "comments": 187
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building-in-public",
+        "solo-founder",
+        "data-tools"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Indie Hacker | Shipping Side Projects",
+      "post_summary": "Detailed the launch of her third micro-SaaS in 8 months, a Figma-to-React component converter. Broke down the $47k ARR achieved with 3 hours/day development time, the pricing experiments that doubled conversion, and the content strategy that replaced traditional marketing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Patel%20Detailed%20the%20launch%20of%20her%20third%20micro-SaaS%20in%208%20months%2C%20a%20Figma-to-React%20compon",
+      "engagement": {
+        "likes": 1650,
+        "comments": 203
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacker",
+        "micro-saas",
+        "side-project"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Career Switcher \u2192 Software Engineer @ Stripe",
+      "post_summary": "Documented his 14-month transition from restaurant management to software engineering. Shared the exact curriculum that got him interview-ready, the 200+ applications process, and how building three portfolio projects became more valuable than his bootcamp certificate.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Documented%20his%2014-month%20transition%20from%20restaurant%20management%20to%20software%20engine",
+      "engagement": {
+        "likes": 3200,
+        "comments": 412
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-pivot",
+        "self-taught",
+        "job-search"
+      ]
+    },
+    {
+      "author": "Sarah Chen",
+      "headline": "Solo Developer | ex-Google",
+      "post_summary": "Chronicled building and launching a privacy-focused analytics tool in 6 weeks. Covered the technical decisions around GDPR compliance, the $12k pre-launch waitlist strategy, and why she turned down acquisition offers to maintain independence.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Chen%20Chronicled%20building%20and%20launching%20a%20privacy-focused%20analytics%20tool%20in%206%20weeks.%20C",
+      "engagement": {
+        "likes": 1890,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo-developer",
+        "privacy-tech",
+        "independence"
+      ]
+    },
+    {
+      "author": "Marcus Rodriguez",
+      "headline": "Founder @ Vibe Check | 2x Founder",
+      "post_summary": "Posted about pivoting his B2B SaaS after 8 months of zero traction. Explained the customer discovery process that revealed enterprise sales cycles were killing momentum, the pivot to SMB-focused product, and the metrics that validated the new direction within 3 weeks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Rodriguez%20Posted%20about%20pivoting%20his%20B2B%20SaaS%20after%208%20months%20of%20zero%20traction.%20Explained%20th",
+      "engagement": {
+        "likes": 980,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "pivot",
+        "customer-discovery",
+        "b2b-saas"
+      ]
+    }
+  ]
+}

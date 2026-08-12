@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-15",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-15T13:00:37.111560+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO at LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents, highlighting how LangGraph enables reliable multi-step workflows and the shift from simple chatbots to production-grade agent systems. Emphasized the importance of observability and human-in-the-loop controls for enterprise adoption.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%2C%20highlighting%20how%20LangGraph%20enables%20r",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangGraph",
+        "enterprise AI"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI researcher & creator of Datasette",
+      "post_summary": "Shared insights on building lightweight AI tooling for developers, covering new open-source libraries that simplify prompt engineering and evaluation. Stressed the need for transparent, auditable infrastructure when deploying agents at scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20building%20lightweight%20AI%20tooling%20for%20developers%2C%20covering%20new%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "open source",
+        "AI infrastructure"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder at Conviction & AI investor",
+      "post_summary": "Analyzed the current AI infrastructure landscape, noting that compute costs and latency remain the biggest bottlenecks for agentic systems. Highlighted emerging startups focused on specialized inference and orchestration layers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20current%20AI%20infrastructure%20landscape%2C%20noting%20that%20compute%20costs%20and%20",
+      "engagement": {
+        "likes": 1530,
+        "comments": 112
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "startups",
+        "compute"
+      ]
+    },
+    {
+      "author": "Adam Selipsky",
+      "headline": "CEO at Amazon Web Services",
+      "post_summary": "Outlined AWS's latest updates for AI automation, including new Bedrock agent capabilities and serverless options that reduce operational overhead for developers building intelligent workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Adam%20Selipsky%20Outlined%20AWS%27s%20latest%20updates%20for%20AI%20automation%2C%20including%20new%20Bedrock%20agent%20cap",
+      "engagement": {
+        "likes": 870,
+        "comments": 95
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AWS",
+        "automation",
+        "AI agents"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Notion",
+      "post_summary": "Discussed building a GTM engineering function that sits between product and sales, using data pipelines to identify expansion opportunities and automate lead qualification. Shared how her team reduced manual research time by 60% through custom scoring models.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20building%20a%20GTM%20engineering%20function%20that%20sits%20between%20product%20and%20sale",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Ops",
+        "Revenue Operations"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Deel",
+      "post_summary": "Explained how his team implemented outbound automation sequences that integrate intent signals with CRM data, resulting in a 3x increase in meeting book rates. Emphasized the importance of clean data foundations before layering automation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Explained%20how%20his%20team%20implemented%20outbound%20automation%20sequences%20that%20integrate%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Revenue Operations",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Content Strategy Lead @ Webflow | Former HubSpot",
+      "post_summary": "Shared a framework for aligning content strategy with revenue operations by mapping content assets to specific stages of the buyer journey and sales funnel. Highlighted how content can reduce sales cycle length when used as a GTM lever.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Shared%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%20by%20mapp",
+      "engagement": {
+        "likes": 1450,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Revenue Operations",
+        "GTM"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Founder & CEO @ Clay",
+      "post_summary": "Posted about the evolution of outbound automation tools and how modern GTM teams are moving beyond basic email sequences to multi-channel, intent-driven workflows. Included examples of how teams are operationalizing data enrichment at scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Posted%20about%20the%20evolution%20of%20outbound%20automation%20tools%20and%20how%20modern%20GTM%20teams",
+      "engagement": {
+        "likes": 2100,
+        "comments": 156
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Sarah Patel",
+      "headline": "VP Sales Operations @ Notion",
+      "post_summary": "Detailed how her team built a revenue operations dashboard that connects marketing attribution, sales activity, and customer success metrics. Stressed the need for cross-functional alignment between content, sales, and ops teams.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Patel%20Detailed%20how%20her%20team%20built%20a%20revenue%20operations%20dashboard%20that%20connects%20marketi",
+      "engagement": {
+        "likes": 870,
+        "comments": 71
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Content Strategy"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder @ Finny | Ex-Google",
+      "post_summary": "Shared his journey building Finny solo over 8 months, detailing the decision to quit Google, the first paying customer milestone, and lessons on customer interviews before coding. Emphasized the value of public accountability in staying consistent.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20his%20journey%20building%20Finny%20solo%20over%208%20months%2C%20detailing%20the%20decision%20to%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "product launch"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Indie Hacker & ex-Marketer turned Developer",
+      "post_summary": "Documented her career pivot from marketing into software engineering by building and shipping three small SaaS tools in public. Highlighted how sharing weekly progress helped her land freelance clients and build a portfolio without formal credentials.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Documented%20her%20career%20pivot%20from%20marketing%20into%20software%20engineering%20by%20building",
+      "engagement": {
+        "likes": 890,
+        "comments": 64
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "solo developer",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Marcus Lee",
+      "headline": "Founder @ ShipFast | Writing about product & growth",
+      "post_summary": "Posted a thread breaking down how he shipped a new feature in 4 days using no-code tools and customer feedback loops. Focused on the tradeoffs between speed and polish when bootstrapping alone.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Lee%20Posted%20a%20thread%20breaking%20down%20how%20he%20shipped%20a%20new%20feature%20in%204%20days%20using%20no-co",
+      "engagement": {
+        "likes": 670,
+        "comments": 52
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "shipping products",
+        "founder",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Software Engineer & Content Creator",
+      "post_summary": "Shared her transition from non-tech roles into development by open-sourcing side projects and documenting the process weekly. Noted how transparent updates attracted both job offers and early users for her current product.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Shared%20her%20transition%20from%20non-tech%20roles%20into%20development%20by%20open-sourcing%20side",
+      "engagement": {
+        "likes": 540,
+        "comments": 41
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career pivot",
+        "open source",
+        "building in public"
+      ]
+    }
+  ]
+}

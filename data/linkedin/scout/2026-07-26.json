@@ -1,0 +1,278 @@
+{
+  "date": "2026-07-26",
+  "posts_found": 15,
+  "engine": "grok",
+  "scouted_at": "2026-07-26T13:00:32.687925+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems that can plan, execute, and iterate on complex tasks. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Shared insights on the AI infrastructure layer becoming the new battleground, with companies racing to build the 'picks and shovels' for the AI gold rush. Covered GPU allocation challenges and the emergence of specialized inference platforms.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20the%20AI%20infrastructure%20layer%20becoming%20the%20new%20battleground%2C%20wi",
+      "engagement": {
+        "likes": 8900,
+        "comments": 654
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "GPU",
+        "Venture Capital"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher",
+      "post_summary": "Demonstrated how LLMs can now write, debug, and deploy entire web applications autonomously using tools like Claude's computer use feature. Showed a live example of building a data visualization dashboard without writing code manually.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Demonstrated%20how%20LLMs%20can%20now%20write%2C%20debug%2C%20and%20deploy%20entire%20web%20applications%20a",
+      "engagement": {
+        "likes": 15600,
+        "comments": 1200
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Emmanuel Ameisen",
+      "headline": "Head of AI @ Anthropic",
+      "post_summary": "Explained the shift from prompt engineering to agent engineering, where developers now focus on designing agent architectures, tool integrations, and evaluation frameworks rather than crafting perfect prompts.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Emmanuel%20Ameisen%20Explained%20the%20shift%20from%20prompt%20engineering%20to%20agent%20engineering%2C%20where%20develope",
+      "engagement": {
+        "likes": 7300,
+        "comments": 445
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Experience",
+        "Evaluation"
+      ]
+    },
+    {
+      "author": "Andrej Karpathy",
+      "headline": "AI Researcher & Educator",
+      "post_summary": "Posted about the emerging 'AI Software Engineer' role, where developers increasingly act as conductors orchestrating multiple AI agents rather than writing code directly. Discussed implications for software development workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Posted%20about%20the%20emerging%20%27AI%20Software%20Engineer%27%20role%2C%20where%20developers%20increasi",
+      "engagement": {
+        "likes": 22100,
+        "comments": 1850
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Software Engineering",
+        "Future of Work"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer at OpenAI | Ex-Salesforce",
+      "post_summary": "Discusses how GTM engineering teams are moving beyond basic lead scoring to building predictive models that identify expansion opportunities within existing accounts. Shares a framework for mapping product usage data to revenue outcomes using custom attribution models.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discusses%20how%20GTM%20engineering%20teams%20are%20moving%20beyond%20basic%20lead%20scoring%20to%20buil",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Revenue Operations",
+        "Sales Strategy"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations at Notion",
+      "post_summary": "Explains the shift from manual outbound processes to automated sequences that adapt based on prospect engagement signals. Details how his team reduced time-to-first-meeting by 40% while maintaining personalization at scale through dynamic content blocks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Explains%20the%20shift%20from%20manual%20outbound%20processes%20to%20automated%20sequences%20that%20ad",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Sales Ops",
+        "Revenue Operations"
+      ]
+    },
+    {
+      "author": "Sarah Kim",
+      "headline": "Content Strategy Lead at HubSpot | B2B SaaS",
+      "post_summary": "Shares data showing that content-led outbound campaigns outperform traditional cold outreach by 3x when content is mapped to specific buying committee roles. Outlines a content-to-pipeline attribution model that connects blog engagement to closed revenue.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Kim%20Shares%20data%20showing%20that%20content-led%20outbound%20campaigns%20outperform%20traditional%20c",
+      "engagement": {
+        "likes": 756,
+        "comments": 124
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Outbound",
+        "Revenue Operations"
+      ]
+    },
+    {
+      "author": "David Park",
+      "headline": "VP Sales Operations at Ramp",
+      "post_summary": "Details the operational infrastructure needed to scale outbound automation without creating technical debt. Covers the importance of building feedback loops between sales development and marketing teams to continuously optimize messaging based on response rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Park%20Details%20the%20operational%20infrastructure%20needed%20to%20scale%20outbound%20automation%20witho",
+      "engagement": {
+        "likes": 634,
+        "comments": 45
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Sales Ops",
+        "Outbound Automation",
+        "GTM Engineering"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Director of Revenue Operations at Figma",
+      "post_summary": "Examines how revenue operations teams can use intent data and buying signals to prioritize accounts for outbound campaigns. Shares a scoring methodology that combines firmographic data with behavioral signals to improve conversion rates by 60%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Examines%20how%20revenue%20operations%20teams%20can%20use%20intent%20data%20and%20buying%20signals%20to%20",
+      "engagement": {
+        "likes": 1089,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Strategy",
+        "Outbound Automation"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Founder & Author | Bootstrapped to $1M ARR",
+      "post_summary": "Shared the exact revenue numbers and customer acquisition strategy for his latest micro-SaaS product after 90 days of building in public. Emphasized how transparent weekly updates helped him validate pricing and find early adopters through LinkedIn.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Shared%20the%20exact%20revenue%20numbers%20and%20customer%20acquisition%20strategy%20for%20his%20lates",
+      "engagement": {
+        "likes": 2400,
+        "comments": 180
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building-in-public",
+        "indie-hacking",
+        "saas"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Solo Founder | AI Products | Ex-Meta",
+      "post_summary": "Documented the journey of pivoting from a failed AI wrapper idea to a successful niche tool for content creators. Detailed the technical decisions, failed experiments, and the moment he found product-market fit through user interviews.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Documented%20the%20journey%20of%20pivoting%20from%20a%20failed%20AI%20wrapper%20idea%20to%20a%20successful",
+      "engagement": {
+        "likes": 1850,
+        "comments": 240
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "ai",
+        "pivot",
+        "product-development"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "Founder & CEO at Winnie | YC Alum",
+      "post_summary": "Wrote about the decision to rebuild core features from scratch after user feedback revealed the original architecture couldn't scale. Shared the technical debt assessment process and how the team handled the 6-week rewrite without losing momentum.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Wrote%20about%20the%20decision%20to%20rebuild%20core%20features%20from%20scratch%20after%20user%20feedba",
+      "engagement": {
+        "likes": 1200,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "startup-lessons",
+        "technical-debt",
+        "scaling"
+      ]
+    },
+    {
+      "author": "Paul Copplestone",
+      "headline": "CEO & Co-founder at Supabase",
+      "post_summary": "Posted about the early days of building Supabase as a solo technical founder, including the first 100 GitHub stars, initial user feedback loops, and the moment he decided to bring on a co-founder after hitting usage limits.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Paul%20Copplestone%20Posted%20about%20the%20early%20days%20of%20building%20Supabase%20as%20a%20solo%20technical%20founder%2C%20in",
+      "engagement": {
+        "likes": 3100,
+        "comments": 320
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "open-source",
+        "founder-journey",
+        "early-stage"
+      ]
+    },
+    {
+      "author": "Shaan Puri",
+      "headline": "Founder | Ex-CEO of Bebo | Investor",
+      "post_summary": "Shared his framework for evaluating side project ideas that actually have monetization potential. Broke down the difference between 'vanity projects' and 'painkiller products' using examples from his own failed and successful builds.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Shaan%20Puri%20Shared%20his%20framework%20for%20evaluating%20side%20project%20ideas%20that%20actually%20have%20moneti",
+      "engagement": {
+        "likes": 4200,
+        "comments": 450
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "side-projects",
+        "idea-validation",
+        "monetization"
+      ]
+    }
+  ]
+}

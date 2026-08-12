@@ -1,0 +1,242 @@
+{
+  "date": "2026-06-11",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-06-11T13:00:34.628119+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents and how LangGraph enables reliable multi-step agent workflows. Highlighted real production use cases where agents handle complex developer tasks autonomously.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20and%20how%20LangGraph%20enables%20reliable%20mu",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder @ Latent.Space | AI Engineer",
+      "post_summary": "Shared insights on the current state of AI infrastructure, focusing on inference optimization and cost-effective scaling for agentic systems. Emphasized open-source tooling that developers are adopting rapidly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20focusing%20on%20inference",
+      "engagement": {
+        "likes": 1320,
+        "comments": 165
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Inference",
+        "Open Source"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher & Creator of Datasette",
+      "post_summary": "Posted about new automation patterns using LLMs for code generation and testing. Covered practical examples of how developers are integrating AI agents into CI/CD pipelines.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Posted%20about%20new%20automation%20patterns%20using%20LLMs%20for%20code%20generation%20and%20testing.",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Automation",
+        "Developer Tools",
+        "LLMs"
+      ]
+    },
+    {
+      "author": "Clem Delangue",
+      "headline": "Co-founder & CEO @ Hugging Face",
+      "post_summary": "Talked about the latest AI infrastructure advancements including new model hosting capabilities and tools that simplify deploying agents at scale for engineering teams.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clem%20Delangue%20Talked%20about%20the%20latest%20AI%20infrastructure%20advancements%20including%20new%20model%20hosti",
+      "engagement": {
+        "likes": 2100,
+        "comments": 275
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Hugging Face",
+        "Deployment"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Explains how GTM engineering teams are replacing traditional outbound SDR motions with automated intent signals and AI-driven sequences. Highlights a 3x lift in reply rates after implementing dynamic lead scoring tied directly to product usage data.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Explains%20how%20GTM%20engineering%20teams%20are%20replacing%20traditional%20outbound%20SDR%20motion",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Shares a framework for aligning content strategy with revenue operations by mapping each content asset to specific funnel stages and pipeline impact. Details how his team uses attribution modeling to prioritize which content pieces actually move deals forward.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Shares%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%20by%20mapp",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ OutboundOS | GTM Advisor",
+      "post_summary": "Breaks down how modern outbound automation stacks combine enrichment, sequencing, and deliverability monitoring into a single workflow. Warns against over-automation without human oversight and shares metrics from teams seeing 40%+ reply rates with tighter personalization.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Breaks%20down%20how%20modern%20outbound%20automation%20stacks%20combine%20enrichment%2C%20sequencing",
+      "engagement": {
+        "likes": 1530,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "David Kwon",
+      "headline": "VP Revenue Operations @ Deel",
+      "post_summary": "Discusses the evolution of sales ops into revenue operations, emphasizing unified data models across marketing, sales, and CS. Provides examples of how his team reduced CAC payback period by 22% through tighter GTM and content alignment.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kwon%20Discusses%20the%20evolution%20of%20sales%20ops%20into%20revenue%20operations%2C%20emphasizing%20unifie",
+      "engagement": {
+        "likes": 870,
+        "comments": 51
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "GTM Engineering"
+      ]
+    },
+    {
+      "author": "Arpit Mohan",
+      "headline": "Founder & CEO @ SuperTokens | Ex-Amazon",
+      "post_summary": "Shared his journey of pivoting from a corporate role at Amazon to building an open-source auth infrastructure startup. Highlighted the challenges of going solo initially, the first 100 paying customers milestone, and lessons on validating ideas before full-time commitment.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arpit%20Mohan%20Shared%20his%20journey%20of%20pivoting%20from%20a%20corporate%20role%20at%20Amazon%20to%20building%20an%20op",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "career pivot",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & 2X Exit | Indie Maker",
+      "post_summary": "Posted about launching a new AI writing tool in 6 weeks as a solo founder. Broke down the tech stack, customer acquisition via Twitter/LinkedIn, and revenue numbers from the first month. Emphasized the importance of shipping fast over perfection.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Posted%20about%20launching%20a%20new%20AI%20writing%20tool%20in%206%20weeks%20as%20a%20solo%20founder.%20Broke",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "shipping",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Founder @ Rowy | Previously Google",
+      "post_summary": "Detailed his transition from Google to building an open-source Airtable alternative. Shared weekly updates on product development, hiring challenges as a solo founder, and how community contributions accelerated feature releases.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Detailed%20his%20transition%20from%20Google%20to%20building%20an%20open-source%20Airtable%20alternat",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "builder",
+        "open source",
+        "career pivot"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder @ Nomad List & Remote OK | Indie Maker",
+      "post_summary": "Posted a transparent update on his latest micro-SaaS launch, including user growth metrics, tech decisions made in a weekend, and the realities of maintaining multiple products solo. Focused on the mindset of consistent small releases.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20a%20transparent%20update%20on%20his%20latest%20micro-SaaS%20launch%2C%20including%20user%20grow",
+      "engagement": {
+        "likes": 3200,
+        "comments": 380
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "shipping",
+        "solo developer"
+      ]
+    },
+    {
+      "author": "Sankalp Jauhari",
+      "headline": "Software Engineer \u2192 Founder @ CommandBar",
+      "post_summary": "Wrote about leaving his engineering role to build a devtool startup. Covered the emotional aspects of the career pivot, early user interviews conducted while still employed, and how he validated demand before quitting.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sankalp%20Jauhari%20Wrote%20about%20leaving%20his%20engineering%20role%20to%20build%20a%20devtool%20startup.%20Covered%20the",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career pivot",
+        "founder",
+        "building in public"
+      ]
+    }
+  ]
+}

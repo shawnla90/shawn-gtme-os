@@ -1,0 +1,260 @@
+{
+  "date": "2026-06-27",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-06-27T13:00:26.110832+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents and how LangGraph is enabling more reliable multi-step agent workflows. Highlighted real production use cases where agents are moving beyond demos into enterprise deployments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20and%20how%20LangGraph%20is%20enabling%20more%20re",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Enterprise AI"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on the current state of AI tooling and why most 'AI agents' still require significant human oversight. Emphasized practical developer tooling improvements over hype around autonomous agents.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20tooling%20and%20why%20most%20%27AI%20agents%27%20stil",
+      "engagement": {
+        "likes": 980,
+        "comments": 156
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "AI Agents",
+        "LLMs"
+      ]
+    },
+    {
+      "author": "Kelvin Liew",
+      "headline": "Head of AI Infrastructure @ Scale AI",
+      "post_summary": "Detailed the infrastructure challenges of running large-scale AI agents in production, including memory management, cost optimization, and observability. Shared metrics from their internal agent deployments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelvin%20Liew%20Detailed%20the%20infrastructure%20challenges%20of%20running%20large-scale%20AI%20agents%20in%20produ",
+      "engagement": {
+        "likes": 670,
+        "comments": 42
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "MLOps",
+        "Scalability"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "ML Engineer & Educator",
+      "post_summary": "Explained how developers can build reliable automation pipelines using current AI tools without over-engineering. Focused on practical patterns for integrating LLMs into existing developer workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explained%20how%20developers%20can%20build%20reliable%20automation%20pipelines%20using%20current%20A",
+      "engagement": {
+        "likes": 540,
+        "comments": 31
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "Automation",
+        "Developer Tools",
+        "LLMs"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Head of GTM Engineering @ Ramp",
+      "post_summary": "Discussed building a GTM engineering function that sits between product and sales, using data pipelines to score ICP fit and automate lead enrichment. Shared how their team reduced time-to-first-meeting by 40% by embedding outbound signals directly into CRM workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20building%20a%20GTM%20engineering%20function%20that%20sits%20between%20product%20and%20sale",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Ops",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Founder & CEO @ OutboundOS",
+      "post_summary": "Explained how his team built an outbound automation stack combining Clay, Instantly, and custom scoring models. Highlighted the shift from volume-based outreach to signal-driven sequences that improved reply rates by 3x while cutting wasted sends.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Explained%20how%20his%20team%20built%20an%20outbound%20automation%20stack%20combining%20Clay%2C%20Instan",
+      "engagement": {
+        "likes": 1320,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Sales Tech",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "VP Revenue Operations @ Notion",
+      "post_summary": "Shared a framework for aligning content strategy with revenue operations by mapping content assets to specific funnel stages and buyer personas. Emphasized using attribution data to double down on high-converting content types rather than vanity metrics.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Shared%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%20by%20mapp",
+      "engagement": {
+        "likes": 980,
+        "comments": 140
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "David Kline",
+      "headline": "Director of Sales Operations @ Deel",
+      "post_summary": "Detailed how his team operationalized GTM experiments using a centralized RevOps dashboard that tracks experiment velocity, win rates, and pipeline impact. Stressed the importance of giving sales teams self-serve access to experiment results.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kline%20Detailed%20how%20his%20team%20operationalized%20GTM%20experiments%20using%20a%20centralized%20RevOps",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Sales Ops",
+        "RevOps",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Sofia Patel",
+      "headline": "GTM Engineer @ Vercel",
+      "post_summary": "Wrote about building internal tooling that connects product usage data directly to outbound sequences, allowing sales to trigger personalized outreach based on feature adoption signals rather than static lists.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sofia%20Patel%20Wrote%20about%20building%20internal%20tooling%20that%20connects%20product%20usage%20data%20directly%20",
+      "engagement": {
+        "likes": 640,
+        "comments": 82
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound",
+        "Product-Led Growth"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Founder @ SideProjectLab | Ex-Google | Shipping in public",
+      "post_summary": "Shared his journey building and launching a niche productivity tool over 8 weeks as a solo founder. Highlighted the decision to skip a full MVP and instead release a single core feature that solved one painful workflow for freelancers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20his%20journey%20building%20and%20launching%20a%20niche%20productivity%20tool%20over%208%20weeks",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Software Engineer \u2192 Indie Developer | Career Pivot Advocate",
+      "post_summary": "Detailed her transition from a 6-year corporate engineering role into full-time indie development. Posted weekly updates on her first paid product, including how she validated demand through cold outreach to 40 potential users before writing code.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Detailed%20her%20transition%20from%20a%206-year%20corporate%20engineering%20role%20into%20full-time%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "solo developer"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Founder of DevToolsCo | Shipping micro-SaaS in public",
+      "post_summary": "Posted a transparent breakdown of his latest micro-SaaS launch, including failed experiments, the exact tech stack used, and how he reached $2k MRR within 6 weeks by posting daily progress threads on LinkedIn.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20a%20transparent%20breakdown%20of%20his%20latest%20micro-SaaS%20launch%2C%20including%20failed",
+      "engagement": {
+        "likes": 1560,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "micro saas",
+        "building in public",
+        "founder"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Former PM turned Solo Builder | Product at 0 to 1",
+      "post_summary": "Shared lessons from pivoting out of product management into solo building. Focused on how she used her PM skills to scope a tiny tool for other PMs and validated it through 15 customer interviews before shipping.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Shared%20lessons%20from%20pivoting%20out%20of%20product%20management%20into%20solo%20building.%20Focus",
+      "engagement": {
+        "likes": 720,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "product",
+        "solo founder"
+      ]
+    },
+    {
+      "author": "Jordan Hale",
+      "headline": "Full-stack dev building in public | Ex-startup engineer",
+      "post_summary": "Documented his decision to leave a stable startup job to build a developer tooling product solo. Posted code snippets, user feedback loops, and the exact pricing experiments that led to his first 50 paying users.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Jordan%20Hale%20Documented%20his%20decision%20to%20leave%20a%20stable%20startup%20job%20to%20build%20a%20developer%20tooli",
+      "engagement": {
+        "likes": 890,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "building in public",
+        "developer tools"
+      ]
+    }
+  ]
+}

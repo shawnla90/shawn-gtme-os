@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-25",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-25T13:00:31.599272+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the shift from single-model AI to multi-agent systems where specialized agents collaborate on complex tasks. Highlighted how LangGraph enables stateful, controllable agent workflows that can handle real production use cases beyond simple chatbots.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20shift%20from%20single-model%20AI%20to%20multi-agent%20systems%20where%20specialize",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "multi-agent systems"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on building reliable AI tooling infrastructure, emphasizing the need for proper evaluation frameworks and testing methodologies. Stressed that current AI tools lack the robustness needed for production developer workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20building%20reliable%20AI%20tooling%20infrastructure%2C%20emphasizing%20the%20",
+      "engagement": {
+        "likes": 892,
+        "comments": 156
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "developer tools",
+        "evaluation frameworks"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "AI/ML Engineer & Educator",
+      "post_summary": "Explained the practical challenges of deploying AI agents in production environments, focusing on observability, error handling, and cost management. Provided specific examples of how agent failures cascade in complex workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explained%20the%20practical%20challenges%20of%20deploying%20AI%20agents%20in%20production%20environm",
+      "engagement": {
+        "likes": 654,
+        "comments": 78
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "production deployment",
+        "MLOps"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "headline": "Founder @ xAI, Tesla, SpaceX",
+      "post_summary": "Announced new AI infrastructure developments at xAI, including expanded GPU clusters for training next-generation models. Discussed implications for autonomous agent development and real-time inference capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elon%20Musk%20Announced%20new%20AI%20infrastructure%20developments%20at%20xAI%2C%20including%20expanded%20GPU%20clus",
+      "engagement": {
+        "likes": 45200,
+        "comments": 3200
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI infrastructure",
+        "xAI",
+        "GPU clusters"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Head of Revenue Operations at Scale AI",
+      "post_summary": "Discusses how her team built a unified GTM data model that connects marketing, sales, and customer success metrics. The model reduced reporting time by 60% and improved forecast accuracy by 25%. Emphasizes the importance of treating revenue data as a product with proper versioning and governance.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discusses%20how%20her%20team%20built%20a%20unified%20GTM%20data%20model%20that%20connects%20marketing%2C%20s",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "GTM Engineering",
+        "Data Strategy"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "GTM Engineer at OpenAI",
+      "post_summary": "Shares a framework for building outbound automation sequences that feel personalized at scale. Details how they use intent signals and buying committee mapping to trigger specific outreach cadences. Warns against over-automation that removes the human element from enterprise sales.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shares%20a%20framework%20for%20building%20outbound%20automation%20sequences%20that%20feel%20personal",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Strategy"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "VP of Sales Operations at Notion",
+      "post_summary": "Explains how content strategy should be integrated into revenue operations rather than treated as a separate marketing function. Shows how her team maps content assets to specific stages of the buyer journey and measures content-assisted pipeline generation. Includes specific metrics they track for content ROI.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Explains%20how%20content%20strategy%20should%20be%20integrated%20into%20revenue%20operations%20rathe",
+      "engagement": {
+        "likes": 756,
+        "comments": 54
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Revenue Operations",
+        "Sales Enablement"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Director of Sales Ops at Ramp",
+      "post_summary": "Details the process of building an outbound automation system that increased their SQL conversion rate by 34%. Focuses on the technical architecture including data enrichment, intent scoring, and multi-channel orchestration. Stresses the importance of having clean CRM data before implementing automation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Details%20the%20process%20of%20building%20an%20outbound%20automation%20system%20that%20increased%20the",
+      "engagement": {
+        "likes": 634,
+        "comments": 41
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Sales Ops",
+        "Process Optimization"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo founder building AI tools | Ex-Google",
+      "post_summary": "Alex documented his 6-week journey building and launching an AI writing assistant as a solo founder. He shared weekly revenue milestones, user acquisition tactics, and the technical challenges of integrating multiple LLM APIs while keeping infrastructure costs under $50/month.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Alex%20documented%20his%206-week%20journey%20building%20and%20launching%20an%20AI%20writing%20assistan",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacker",
+        "ai-tools",
+        "solo-founder"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Former teacher turned software engineer | Career pivot stories",
+      "post_summary": "Maya detailed her transition from elementary school teacher to backend developer over 14 months. She outlined her self-taught path through free resources, building three portfolio projects, and how she leveraged transferable skills from classroom management into agile team leadership.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Patel%20Maya%20detailed%20her%20transition%20from%20elementary%20school%20teacher%20to%20backend%20developer",
+      "engagement": {
+        "likes": 2100,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-pivot",
+        "self-taught",
+        "career-change"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Building micro-SaaS in public | 2 products live",
+      "post_summary": "David shared his experience launching a niche invoicing tool for freelancers and the subsequent pivot after receiving user feedback. He discussed the importance of shipping quickly, the metrics he tracks weekly, and how transparent sharing helped him acquire his first 50 paying customers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20David%20shared%20his%20experience%20launching%20a%20niche%20invoicing%20tool%20for%20freelancers%20and",
+      "engagement": {
+        "likes": 890,
+        "comments": 67
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "micro-saas",
+        "building-in-public",
+        "user-feedback"
+      ]
+    },
+    {
+      "author": "Sarah Chen",
+      "headline": "Ex-marketing \u2192 Full-stack developer | Bootcamp grad",
+      "post_summary": "Sarah chronicled her career switch from digital marketing to full-stack development, highlighting the specific projects that helped her stand out in interviews. She emphasized how her marketing background gave her unique insight into user acquisition and retention strategies for the SaaS product she's now building.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Chen%20Sarah%20chronicled%20her%20career%20switch%20from%20digital%20marketing%20to%20full-stack%20developm",
+      "engagement": {
+        "likes": 1450,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-transition",
+        "bootcamp",
+        "full-stack"
+      ]
+    },
+    {
+      "author": "Marcus Rodriguez",
+      "headline": "Indie developer shipping side projects | YC W23",
+      "post_summary": "Marcus posted about his decision to leave a stable tech job to focus on his side project full-time. He shared the financial planning involved, the technical architecture decisions for scaling from 0 to 10k users, and lessons learned about customer support as a solo operator.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Rodriguez%20Marcus%20posted%20about%20his%20decision%20to%20leave%20a%20stable%20tech%20job%20to%20focus%20on%20his%20side",
+      "engagement": {
+        "likes": 1670,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-dev",
+        "side-project",
+        "startup"
+      ]
+    }
+  ]
+}

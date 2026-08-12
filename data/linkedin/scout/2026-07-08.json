@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-08",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-08T13:00:40.695712+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO at LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chains to autonomous systems capable of multi-step reasoning and tool use. Highlighted how developer tooling around memory, planning, and evaluation is becoming critical infrastructure for production agents.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chains%20to%20autonomous%20syst",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI researcher & creator of Datasette",
+      "post_summary": "Shared insights on building reliable AI infrastructure for agents, emphasizing the need for better observability, testing frameworks, and cost controls. Warned against overhyping agent capabilities without robust backend systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20building%20reliable%20AI%20infrastructure%20for%20agents%2C%20emphasizing%20t",
+      "engagement": {
+        "likes": 8900,
+        "comments": 420
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "observability",
+        "automation"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "AI Engineer & Educator",
+      "post_summary": "Explored practical patterns for deploying AI agents in production environments, including orchestration with tools like CrewAI and AutoGen. Stressed the importance of human-in-the-loop automation to reduce hallucination risks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explored%20practical%20patterns%20for%20deploying%20AI%20agents%20in%20production%20environments%2C%20",
+      "engagement": {
+        "likes": 6700,
+        "comments": 310
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "automation",
+        "production"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder at Latent Space & AI Engineer",
+      "post_summary": "Analyzed the emerging stack for AI developer tools, covering vector databases, agent frameworks, and evaluation platforms. Predicted consolidation around a few key infrastructure players in the next 12 months.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Analyzed%20the%20emerging%20stack%20for%20AI%20developer%20tools%2C%20covering%20vector%20databases%2C%20a",
+      "engagement": {
+        "likes": 5400,
+        "comments": 290
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI infrastructure",
+        "stack"
+      ]
+    },
+    {
+      "author": "Alex Hormozi",
+      "headline": "Founder @ Acquisition.com | Author of $100M Offers",
+      "post_summary": "Discussed how outbound automation combined with content strategy can scale lead gen without increasing headcount. Emphasized building systems that compound over time rather than one-off campaigns.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Hormozi%20Discussed%20how%20outbound%20automation%20combined%20with%20content%20strategy%20can%20scale%20lead%20",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "content strategy",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Ex-Notion, Amplitude, SurveyMonkey",
+      "post_summary": "Shared a framework for aligning product-led growth with outbound motions. Highlighted how sales ops and revenue operations teams should co-own GTM engineering to reduce friction in the buyer journey.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Shared%20a%20framework%20for%20aligning%20product-led%20growth%20with%20outbound%20motions.%20Highli",
+      "engagement": {
+        "likes": 8900,
+        "comments": 420
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "sales ops",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Harry Stebbings",
+      "headline": "Founder @ 20VC | Investor",
+      "post_summary": "Posted about the rise of GTM engineering roles and how startups are hiring operators who blend sales ops, automation, and content to drive pipeline. Shared examples from recent portfolio companies.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harry%20Stebbings%20Posted%20about%20the%20rise%20of%20GTM%20engineering%20roles%20and%20how%20startups%20are%20hiring%20opera",
+      "engagement": {
+        "likes": 6700,
+        "comments": 310
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "sales ops",
+        "outbound automation"
+      ]
+    },
+    {
+      "author": "April Dunford",
+      "headline": "Positioning Expert | Author of Obviously Awesome",
+      "post_summary": "Explained how content strategy should be engineered into the GTM process from day one. Argued that revenue operations teams need to treat content as infrastructure, not just marketing support.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20April%20Dunford%20Explained%20how%20content%20strategy%20should%20be%20engineered%20into%20the%20GTM%20process%20from%20da",
+      "engagement": {
+        "likes": 5400,
+        "comments": 290
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "GTM engineering",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Kyle Poyar",
+      "headline": "Operating Partner @ OpenView | SaaS Metrics Expert",
+      "post_summary": "Broke down metrics for measuring outbound automation effectiveness and how sales ops leaders can use them to optimize revenue operations. Included benchmarks from top-performing SaaS companies.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kyle%20Poyar%20Broke%20down%20metrics%20for%20measuring%20outbound%20automation%20effectiveness%20and%20how%20sales",
+      "engagement": {
+        "likes": 4100,
+        "comments": 185
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "sales ops",
+        "outbound automation",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder @ Finny | Ex-Google",
+      "post_summary": "Shared his journey building Finny, a personal finance tool, as a solo founder. Detailed the first 3 months of development, early user acquisition through Twitter threads, and how he validated the idea with 50 beta users before launching publicly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20his%20journey%20building%20Finny%2C%20a%20personal%20finance%20tool%2C%20as%20a%20solo%20founder.%20D",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder & Engineer @ Notion Templates Co",
+      "post_summary": "Wrote about pivoting from marketing to full-time indie development. Explained how she shipped her first Notion template product in 6 weeks while working a full-time job and reached $2k MRR within 3 months of launch.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Wrote%20about%20pivoting%20from%20marketing%20to%20full-time%20indie%20development.%20Explained%20ho",
+      "engagement": {
+        "likes": 890,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "indie maker",
+        "product launch"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Building DevTools in Public | Ex-Meta",
+      "post_summary": "Posted a transparent update on his open-source CLI tool for developers. Shared weekly metrics including 1.2k GitHub stars gained, challenges with documentation, and lessons from handling his first 50 issues from the community.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20a%20transparent%20update%20on%20his%20open-source%20CLI%20tool%20for%20developers.%20Shared%20w",
+      "engagement": {
+        "likes": 675,
+        "comments": 94
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "open source",
+        "devtools",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Solo Developer | Career Switcher from Teaching",
+      "post_summary": "Detailed her transition from high school teacher to shipping her first SaaS product, a lesson planning tool. Covered learning to code via bootcamp, the 8-month build process, and securing her first 20 paying customers through educator communities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Detailed%20her%20transition%20from%20high%20school%20teacher%20to%20shipping%20her%20first%20SaaS%20prod",
+      "engagement": {
+        "likes": 542,
+        "comments": 76
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "solo developer",
+        "edtech"
+      ]
+    }
+  ]
+}

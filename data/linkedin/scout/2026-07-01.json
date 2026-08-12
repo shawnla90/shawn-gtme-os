@@ -1,0 +1,242 @@
+{
+  "date": "2026-07-01",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-07-01T13:00:39.133790+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO at LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on the current state of LLM infrastructure and the challenges of running production AI systems at scale. Covered cost optimization strategies and the importance of observability in AI deployments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20LLM%20infrastructure%20and%20the%20challenges%20of",
+      "engagement": {
+        "likes": 8700,
+        "comments": 620
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "LLMs",
+        "production"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "AI Engineer & Educator",
+      "post_summary": "Explained practical approaches to building AI automation pipelines using open-source tools. Demonstrated how combining vector databases with agent frameworks can create robust document processing workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explained%20practical%20approaches%20to%20building%20AI%20automation%20pipelines%20using%20open-so",
+      "engagement": {
+        "likes": 5600,
+        "comments": 340
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "AI agents",
+        "open source"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "headline": "Founder at xAI, Tesla, SpaceX",
+      "post_summary": "Posted about Grok's latest capabilities in autonomous task execution and reasoning. Mentioned infrastructure improvements enabling more complex multi-agent collaboration scenarios.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elon%20Musk%20Posted%20about%20Grok%27s%20latest%20capabilities%20in%20autonomous%20task%20execution%20and%20reasoni",
+      "engagement": {
+        "likes": 45200,
+        "comments": 3100
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI agents",
+        "Grok",
+        "xAI"
+      ]
+    },
+    {
+      "author": "Andrej Karpathy",
+      "headline": "AI Researcher, ex-Tesla, ex-OpenAI",
+      "post_summary": "Discussed the future of developer tooling in the age of AI coding assistants. Covered how infrastructure needs are shifting from traditional DevOps to AI-specific monitoring and evaluation frameworks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Discussed%20the%20future%20of%20developer%20tooling%20in%20the%20age%20of%20AI%20coding%20assistants.%20Co",
+      "engagement": {
+        "likes": 28900,
+        "comments": 1850
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI infrastructure",
+        "coding"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Head of Revenue Operations at Ramp",
+      "post_summary": "Discussed how her team built a unified GTM data model that connects marketing, sales, and CS metrics in one dashboard. Highlighted the shift from siloed reporting to a single source of truth that reduced forecast variance by 40%. Emphasized the importance of aligning RevOps with product for accurate pipeline health tracking.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discussed%20how%20her%20team%20built%20a%20unified%20GTM%20data%20model%20that%20connects%20marketing%2C%20s",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "GTM",
+        "SalesOps"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Founder & CEO at OutboundOS",
+      "post_summary": "Shared a case study on automating personalized cold email sequences using AI-driven intent signals. Explained how his team reduced manual list building by 70% while improving reply rates through dynamic content insertion based on prospect behavior. Stressed the need for human oversight in high-value outbound campaigns.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shared%20a%20case%20study%20on%20automating%20personalized%20cold%20email%20sequences%20using%20AI-dri",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound",
+        "Automation",
+        "Sales"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "VP of Content Strategy at Notion",
+      "post_summary": "Outlined a framework for aligning content with revenue stages, mapping blog posts, webinars, and case studies to specific funnel touchpoints. Shared how her team uses attribution data to double down on content that drives SQLs rather than just top-of-funnel traffic. Advocated for tighter collaboration between content and sales enablement.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Outlined%20a%20framework%20for%20aligning%20content%20with%20revenue%20stages%2C%20mapping%20blog%20post",
+      "engagement": {
+        "likes": 980,
+        "comments": 132
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ContentStrategy",
+        "GTM",
+        "Revenue"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Director of Sales Operations at Brex",
+      "post_summary": "Described implementing a GTM engineering approach where sales processes are treated like product features with version control and A/B testing. Covered building internal tooling that auto-scores leads based on multi-signal data rather than static ICP criteria. Noted a 25% lift in conversion rates after rolling out the new system.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Described%20implementing%20a%20GTM%20engineering%20approach%20where%20sales%20processes%20are%20trea",
+      "engagement": {
+        "likes": 760,
+        "comments": 94
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "SalesOps",
+        "GTMEngineering",
+        "Process"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Founder @ Row Zero | Ex-Microsoft",
+      "post_summary": "Shared the journey of building and shipping Row Zero, a no-code data tool, as a solo founder. Highlighted how he validated the idea through customer interviews, built an MVP in weeks, and iterated based on early user feedback without raising funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20the%20journey%20of%20building%20and%20shipping%20Row%20Zero%2C%20a%20no-code%20data%20tool%2C%20as%20a%20",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Software Engineer | Career Pivot from Marketing",
+      "post_summary": "Detailed her transition from marketing to software engineering after a 9-month self-taught journey. Posted about completing her first freelance project and how sharing weekly progress on LinkedIn helped her land interviews and build a support network.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Patel%20Detailed%20her%20transition%20from%20marketing%20to%20software%20engineering%20after%20a%209-month%20s",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "self-taught developer",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Liam Torres",
+      "headline": "Indie Maker | Shipping Side Projects",
+      "post_summary": "Posted about launching his third micro-SaaS product in 2024, a lightweight invoicing tool for freelancers. Broke down the tech stack, user acquisition channels, and revenue milestones reached within the first month of going live.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Torres%20Posted%20about%20launching%20his%20third%20micro-SaaS%20product%20in%202024%2C%20a%20lightweight%20invoi",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "shipping products",
+        "solo developer"
+      ]
+    },
+    {
+      "author": "Sara Kline",
+      "headline": "Founder & Engineer @ Kineviz",
+      "post_summary": "Shared lessons from pivoting her startup from B2C to B2B after initial traction stalled. Explained the decision-making process, customer discovery interviews, and how transparent updates helped attract new co-founders and early enterprise users.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Kline%20Shared%20lessons%20from%20pivoting%20her%20startup%20from%20B2C%20to%20B2B%20after%20initial%20traction%20",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "startup pivot",
+        "building in public",
+        "founder"
+      ]
+    }
+  ]
+}

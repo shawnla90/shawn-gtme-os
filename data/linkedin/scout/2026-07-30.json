@@ -1,0 +1,260 @@
+{
+  "date": "2026-07-30",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-07-30T13:00:29.658025+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the shift from single-model inference to multi-agent orchestration, highlighting how LangGraph enables stateful workflows and human-in-the-loop controls. Emphasized that production AI systems now require explicit memory management and tool-use APIs rather than simple prompt chaining.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20shift%20from%20single-model%20inference%20to%20multi-agent%20orchestration%2C%20hi",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Datasette, AI researcher",
+      "post_summary": "Shared benchmarks showing that smaller, specialized models fine-tuned for tool calling outperform larger general models on agentic tasks. Argued that the next wave of developer tooling will focus on evaluation harnesses and synthetic data generation for agent training rather than raw model scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20benchmarks%20showing%20that%20smaller%2C%20specialized%20models%20fine-tuned%20for%20tool%20c",
+      "engagement": {
+        "likes": 980,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Model Evaluation",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Sara Hooker",
+      "headline": "VP Research @ Cohere",
+      "post_summary": "Posted about the infrastructure challenges of running reliable agent fleets at scale, including token-budget management, retry logic, and cost attribution. Stressed that current frameworks lack the observability primitives needed for production agent deployments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Hooker%20Posted%20about%20the%20infrastructure%20challenges%20of%20running%20reliable%20agent%20fleets%20at%20s",
+      "engagement": {
+        "likes": 1120,
+        "comments": 54
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Observability",
+        "Agents"
+      ]
+    },
+    {
+      "author": "Kelvin Lwin",
+      "headline": "Head of AI Platform @ Notion",
+      "post_summary": "Detailed how Notion built an internal agent framework on top of their existing blocks architecture, allowing users to chain actions across databases, pages, and external APIs. Shared lessons on sandboxing and permission scoping to prevent runaway agent behavior.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelvin%20Lwin%20Detailed%20how%20Notion%20built%20an%20internal%20agent%20framework%20on%20top%20of%20their%20existing%20b",
+      "engagement": {
+        "likes": 670,
+        "comments": 41
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "Developer Tools",
+        "Automation",
+        "AI Agents"
+      ]
+    },
+    {
+      "author": "Elena Vasquez",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Discusses building a GTM data warehouse that unifies CRM, marketing automation, and product usage data. Emphasizes creating a single source of truth for pipeline metrics and how this reduced their sales cycle by 23%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Vasquez%20Discusses%20building%20a%20GTM%20data%20warehouse%20that%20unifies%20CRM%2C%20marketing%20automation%2C%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "data infrastructure",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Shares framework for outbound automation that combines intent data with behavioral triggers. Details how they built sequences that adapt based on prospect engagement patterns rather than fixed cadences.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shares%20framework%20for%20outbound%20automation%20that%20combines%20intent%20data%20with%20behavior",
+      "engagement": {
+        "likes": 892,
+        "comments": 156
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "revenue operations",
+        "intent data"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Director of Content Strategy @ HubSpot",
+      "post_summary": "Analyzes how content-led growth impacts sales pipeline velocity. Presents data showing that prospects who engage with 3+ pieces of technical content have 40% higher close rates than those who only see sales collateral.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Analyzes%20how%20content-led%20growth%20impacts%20sales%20pipeline%20velocity.%20Presents%20data%20s",
+      "engagement": {
+        "likes": 654,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "content strategy",
+        "sales enablement",
+        "pipeline velocity"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Sales Operations Lead @ Stripe",
+      "post_summary": "Breaks down their approach to territory planning using predictive analytics. Shows how they moved from static territory assignments to dynamic models that adjust based on account scoring and rep capacity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Breaks%20down%20their%20approach%20to%20territory%20planning%20using%20predictive%20analytics.%20Sho",
+      "engagement": {
+        "likes": 743,
+        "comments": 92
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales ops",
+        "territory planning",
+        "predictive analytics"
+      ]
+    },
+    {
+      "author": "Rachel Torres",
+      "headline": "GTM Systems Architect @ Airtable",
+      "post_summary": "Details the technical architecture behind their automated lead scoring system. Explains how they integrated product usage data with firmographic signals to create a 15-variable scoring model that improved MQL-to-SQL conversion by 31%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Rachel%20Torres%20Details%20the%20technical%20architecture%20behind%20their%20automated%20lead%20scoring%20system.%20E",
+      "engagement": {
+        "likes": 567,
+        "comments": 134
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "lead scoring",
+        "automation"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Indie Maker & Author | Bootstrapped Transistor.fm to $1M+ ARR",
+      "post_summary": "Shared the exact revenue numbers and customer acquisition tactics from his latest micro-SaaS launch, including how he used Twitter threads to drive 40% of early signups. Emphasized the importance of shipping a deliberately scoped MVP instead of overbuilding features.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Shared%20the%20exact%20revenue%20numbers%20and%20customer%20acquisition%20tactics%20from%20his%20lates",
+      "engagement": {
+        "likes": 1200,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacking",
+        "bootstrapping",
+        "saas"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & Permanent.ai | Ex-Makerpad",
+      "post_summary": "Documented his transition from no-code tools to shipping a full-stack AI product in 6 weeks as a solo founder. Broke down the tech stack decisions and how he validated demand through a waitlist before writing code.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Documented%20his%20transition%20from%20no-code%20tools%20to%20shipping%20a%20full-stack%20AI%20product",
+      "engagement": {
+        "likes": 890,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "ai",
+        "solo-founder",
+        "product-launch"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "CEO & Co-founder @ Winnie | Formerly Google, YouTube",
+      "post_summary": "Detailed her non-traditional path from PM roles into founding a vertical SaaS company, highlighting the specific skills from her corporate career that accelerated her first year of fundraising and hiring.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Detailed%20her%20non-traditional%20path%20from%20PM%20roles%20into%20founding%20a%20vertical%20SaaS%20co",
+      "engagement": {
+        "likes": 650,
+        "comments": 92
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-transition",
+        "founder-journey",
+        "saas"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Indie Maker | Founder @ Nomad List, Remote OK",
+      "post_summary": "Posted a transparent monthly revenue breakdown across his 12 micro-products, revealing which ones are maintained vs. sunsetted. Shared his criteria for deciding when to double down versus when to archive a project.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20a%20transparent%20monthly%20revenue%20breakdown%20across%20his%2012%20micro-products%2C%20rev",
+      "engagement": {
+        "likes": 2100,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacking",
+        "revenue",
+        "micro-saas"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Software Engineer \u2192 Indie Founder | Building in Public",
+      "post_summary": "Chronicled his first 90 days after leaving a FAANG job to build a developer tool, including the specific productivity systems he adopted and how he structured his days without a traditional manager.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Chronicled%20his%20first%2090%20days%20after%20leaving%20a%20FAANG%20job%20to%20build%20a%20developer%20tool",
+      "engagement": {
+        "likes": 540,
+        "comments": 78
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-pivot",
+        "building-in-public",
+        "productivity"
+      ]
+    }
+  ]
+}

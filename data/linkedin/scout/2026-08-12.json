@@ -1,0 +1,234 @@
+{
+  "date": "2026-08-12",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-12T13:02:31.351550+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer | Founder @ Latent Space | Building in public",
+      "post_summary": "Claude's new agentic behaviors in the 4.x family are quietly changing how people build multi-step pipelines. Tool use latency dropped ~40% compared to Sonnet 3.5 in our benchmarks. The shift from 'chat UX' to 'agent loop UX' is the real unlock nobody's talking about.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3800,
+        "comments": 214
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "Claude",
+        "developer tools",
+        "LLM"
+      ]
+    },
+    {
+      "author": "Anya Chaturvedi",
+      "headline": "Infrastructure Eng @ Anthropic alum \u2192 Building AI-native DevOps tooling | ex-Google",
+      "post_summary": "We spent 3 months trying to build reliable evals for autonomous agents. The hard part isn't the model \u2014 it's that agents fail in combinatorial ways that don't map to unit tests. Here's the framework we landed on: deterministic scaffolding, stochastic model, graded outcomes.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 389
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "evals",
+        "agents",
+        "engineering"
+      ]
+    },
+    {
+      "author": "Lior Ben-David",
+      "headline": "Founder | GTM x AI automation | helping RevOps teams close faster with agents",
+      "post_summary": "I replaced our entire SDR sequence with a Claude Code agent that reads CRM signals, writes contextual emails, and queues them for approval. $0 in new headcount. 3x reply rate. The 'AI will take jobs' discourse is wrong \u2014 it's taking tasks, and freeing people to do the part that actually matters.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7200,
+        "comments": 521
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI automation",
+        "GTM",
+        "agents",
+        "RevOps"
+      ]
+    },
+    {
+      "author": "Priya Mehrotra",
+      "headline": "Staff Eng @ Cursor | Previously Replit | obsessed with devtools that think",
+      "post_summary": "The MCP protocol is having a quiet moment. Over 200 MCP servers indexed in the last 30 days. What started as a Claude-specific protocol is becoming the USB-C of AI tool integration. If you're building a dev tool and ignoring MCP right now, you're building for 2023.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4600,
+        "comments": 307
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "MCP",
+        "developer tools",
+        "AI infrastructure",
+        "protocols"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Advisor",
+      "post_summary": "AI SDRs are getting blamed for killing outbound. But the real problem is that most teams gave AI a broken playbook to automate. Garbage in, garbage out. Before you buy another tool, audit your ICP definition, your sequencing logic, and your signal stack. Fix the fundamentals first \u2014 then automate them.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 213
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "AI SDR",
+        "GTM strategy"
+      ]
+    },
+    {
+      "author": "Caitlin Ayers",
+      "headline": "RevOps Lead | HubSpot \u2192 Salesforce migrations | B2B SaaS",
+      "post_summary": "We reduced our sales cycle by 18 days without hiring anyone. The fix: a single enrichment waterfall (Clay \u2192 Apollo \u2192 Clearbit) that auto-populated 14 CRM fields on every inbound lead before it ever hit a rep's queue. Reps stopped doing manual research. They just sold. The ops work took 3 weeks. The ROI was immediate.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2341,
+        "comments": 178
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "Clay",
+        "CRM automation",
+        "sales efficiency"
+      ]
+    },
+    {
+      "author": "Jasmine Patel",
+      "headline": "GTM Engineer @ Series B SaaS | ex-Outreach | Building in public",
+      "post_summary": "Hot take: most 'GTM engineers' are just ops people who learned to write Clay formulas. Real GTM engineering means owning the data pipeline from signal detection to rep action \u2014 including the webhook, the scoring model, and the routing logic. The bar is higher than it looks. Here's what the actual stack requires.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3102,
+        "comments": 394
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "signal detection",
+        "outbound automation"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Founder @ Pipelane | Helping B2B teams build content that converts pipeline",
+      "post_summary": "LinkedIn content is becoming the new cold email \u2014 and it's dying for the same reason. Everyone copied the format without understanding the signal. The posts that still drive real pipeline in 2026 share one thing: they document a specific failure or decision with a measurable result attached. Opinion without evidence is just noise. Here's the framework we use with clients.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1593,
+        "comments": 261
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "demand gen",
+        "LinkedIn",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Indie hacker | Shipped 3 products in 12 months | Building in public",
+      "post_summary": "Priya shares that her AI-powered resume screener just crossed $4k MRR with zero ad spend \u2014 all from a single Reddit thread. She breaks down the exact distribution playbook: one niche subreddit, one honest post about the problem she solved, and a free tier that converted at 11%. Ends with 'I quit my PM job 8 months ago. This is what betting on yourself looks like.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinginpublic",
+        "saas",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Ex-accountant \u2192 full-stack dev | Self-taught in 14 months | Now building GTM tools",
+      "post_summary": "Marcus posts a side-by-side screenshot: his January 2025 bank statement from his accounting job vs. his first freelance invoice from July 2026 for the same dollar amount. He describes the 14-month grind \u2014 nights on The Odin Project, weekends building throwaway apps, one rejection from a bootcamp that told him he 'wasn't technical enough.' The post ends: 'Nobody gives you permission to switch. You just go.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8700,
+        "comments": 612
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "codeeveryday",
+        "techcareer"
+      ]
+    },
+    {
+      "author": "Lena Hoffmann",
+      "headline": "Solo dev | Shipped 11 Claude-powered tools | Documenting the agentic builder era",
+      "post_summary": "Lena documents her workflow shift from 'I write all the code' to 'I spec, review, and steer agents.' She shows a screenshot of a Claude Code session that built a working Stripe integration in 23 minutes while she wrote the PRD. Her take: the bottleneck is no longer coding \u2014 it's knowing what to build and having the judgment to catch bad output. 'Taste is the new moat.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 433
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "claudecode",
+        "agenticbuilding",
+        "solodev",
+        "aitools"
+      ]
+    },
+    {
+      "author": "Derek Osei",
+      "headline": "Founder @ Stackthread | B2B SaaS | prev. eng @ Stripe",
+      "post_summary": "Derek shares a brutally honest month-12 update on his B2B startup: 6 paying customers, $1,800 MRR, and a pipeline that converted at 4%. He lists the three things he got wrong in year one \u2014 targeting too broad, building before talking to customers, and mistaking LinkedIn engagement for market validation. Closes with his revised ICP and a public commitment to 10 customer calls in August.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 341
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "startuplife",
+        "b2bsaas",
+        "buildinginpublic",
+        "founderjourney"
+      ]
+    }
+  ]
+}

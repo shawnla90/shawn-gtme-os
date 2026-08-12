@@ -1,0 +1,242 @@
+{
+  "date": "2026-05-31",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-05-31T13:00:26.755250+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Clemens Siebert",
+      "headline": "Head of AI Infrastructure @ Scale AI",
+      "post_summary": "Shared insights on scaling AI infrastructure for production agent deployments, emphasizing the need for robust GPU orchestration, cost monitoring, and observability layers. Warned against underestimating data pipeline complexity when moving agents from prototype to production.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clemens%20Siebert%20Shared%20insights%20on%20scaling%20AI%20infrastructure%20for%20production%20agent%20deployments%2C%20e",
+      "engagement": {
+        "likes": 8700,
+        "comments": 420
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "scaling",
+        "production"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder @ Latent Space, AI Engineer",
+      "post_summary": "Posted about the emerging category of 'agentic IDEs' and how tools like Cursor and Aider are changing developer workflows. Argued that the next wave of automation will come from agents that can read, modify, and test entire codebases autonomously.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Posted%20about%20the%20emerging%20category%20of%20%27agentic%20IDEs%27%20and%20how%20tools%20like%20Cursor%20a",
+      "engagement": {
+        "likes": 9300,
+        "comments": 510
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "automation",
+        "AI coding"
+      ]
+    },
+    {
+      "author": "Raza Habib",
+      "headline": "Co-founder & CEO @ Humanloop",
+      "post_summary": "Explored the tension between fully autonomous AI agents and human oversight in enterprise settings. Shared data showing that hybrid workflows with selective human review achieve higher reliability than pure agent automation for complex tasks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Raza%20Habib%20Explored%20the%20tension%20between%20fully%20autonomous%20AI%20agents%20and%20human%20oversight%20in%20e",
+      "engagement": {
+        "likes": 6100,
+        "comments": 290
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI agents",
+        "enterprise",
+        "automation"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Head of Revenue Operations @ ScaleForge",
+      "post_summary": "Elena shared a framework for aligning GTM engineering with revenue operations by building automated lead scoring models that integrate CRM data with outbound sequences. She emphasized that sales ops teams should own the data pipelines rather than relying on marketing automation alone.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Elena%20shared%20a%20framework%20for%20aligning%20GTM%20engineering%20with%20revenue%20operations%20by",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "Revenue Operations",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Founder & GTM Engineer @ OutboundOS",
+      "post_summary": "Marcus broke down how his team reduced outbound reply rates from 3% to 18% by layering intent signals into automated sequences and using dynamic content blocks based on prospect firmographics. He stressed the importance of content strategy feeding directly into outbound automation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Marcus%20broke%20down%20how%20his%20team%20reduced%20outbound%20reply%20rates%20from%203%25%20to%2018%25%20by%20la",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Content Strategy",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "VP Sales Operations @ GrowthLayer",
+      "post_summary": "Priya discussed building a unified revenue operations dashboard that tracks pipeline velocity across both inbound and outbound channels. She highlighted how GTM engineering teams can use this data to iterate on messaging and automation rules weekly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Priya%20discussed%20building%20a%20unified%20revenue%20operations%20dashboard%20that%20tracks%20pipe",
+      "engagement": {
+        "likes": 760,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "David Kline",
+      "headline": "Director of Content Strategy @ RevForge",
+      "post_summary": "David explained how his content team collaborates with sales ops to create modular assets that power personalized outbound sequences. He noted that treating content as infrastructure rather than campaigns leads to higher conversion rates in automated outreach.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kline%20David%20explained%20how%20his%20content%20team%20collaborates%20with%20sales%20ops%20to%20create%20modul",
+      "engagement": {
+        "likes": 645,
+        "comments": 41
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Content Strategy",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Daniel Vassallo",
+      "headline": "Independent Maker & Author | Ex-Amazon",
+      "post_summary": "Shared his journey of leaving a stable job to build small, profitable products solo. Highlighted how focusing on simple tools and consistent shipping led to sustainable income without chasing VC funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Daniel%20Vassallo%20Shared%20his%20journey%20of%20leaving%20a%20stable%20job%20to%20build%20small%2C%20profitable%20products%20s",
+      "engagement": {
+        "likes": 4200,
+        "comments": 310
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "indiehacker",
+        "solopreneur"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder @ Nomad List & Remote OK",
+      "post_summary": "Posted about shipping a new micro-SaaS in under a week using no-code tools. Emphasized rapid iteration, public progress updates, and learning from real user feedback instead of over-planning.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20about%20shipping%20a%20new%20micro-SaaS%20in%20under%20a%20week%20using%20no-code%20tools.%20Emph",
+      "engagement": {
+        "likes": 3100,
+        "comments": 280
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "saas",
+        "nocode"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "Founder & CEO @ Winnie | Ex-Google, Ex-YouTube",
+      "post_summary": "Discussed her transition from big tech to founding a startup. Covered the mindset shift required, handling uncertainty, and the value of publicly documenting both wins and setbacks during the early stages.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Discussed%20her%20transition%20from%20big%20tech%20to%20founding%20a%20startup.%20Covered%20the%20mindse",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founderjourney",
+        "careerchange",
+        "buildinginpublic"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Bootstrapped Founder & Author | Ex-Google",
+      "post_summary": "Wrote about pivoting from corporate engineering to indie product development. Shared specific tactics for validating ideas quickly, pricing experiments, and maintaining momentum while building alone.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Wrote%20about%20pivoting%20from%20corporate%20engineering%20to%20indie%20product%20development.%20Sh",
+      "engagement": {
+        "likes": 2400,
+        "comments": 175
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "bootstrapping",
+        "careerpivot"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & 10xAlt | Indie Maker",
+      "post_summary": "Detailed the process of building and launching multiple AI tools in public. Focused on transparent metrics sharing, audience growth through consistent updates, and lessons from failed launches.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Detailed%20the%20process%20of%20building%20and%20launching%20multiple%20AI%20tools%20in%20public.%20Focu",
+      "engagement": {
+        "likes": 1650,
+        "comments": 140
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "buildinginpublic",
+        "ai",
+        "productlaunch"
+      ]
+    }
+  ]
+}

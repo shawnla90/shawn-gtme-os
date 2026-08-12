@@ -1,0 +1,152 @@
+{
+  "date": "2026-07-29",
+  "posts_found": 8,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-07-29T13:03:18.244739+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems that can plan, reason, and execute multi-step workflows. Highlighted how LangGraph enables developers to build reliable agent architectures with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Shared insights on the AI infrastructure investment landscape, noting that companies building foundational models are seeing 10x infrastructure costs compared to traditional SaaS. Emphasized the shift toward specialized AI compute and data pipeline optimization.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20the%20AI%20infrastructure%20investment%20landscape%2C%20noting%20that%20compa",
+      "engagement": {
+        "likes": 8900,
+        "comments": 567
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Venture Capital",
+        "Tech Investment"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher",
+      "post_summary": "Demonstrated how Claude 3.5 Sonnet can now write complete web applications from scratch, including frontend, backend, and database integration. Showed practical examples of using AI for rapid prototyping and the implications for developer productivity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Demonstrated%20how%20Claude%203.5%20Sonnet%20can%20now%20write%20complete%20web%20applications%20from%20",
+      "engagement": {
+        "likes": 15600,
+        "comments": 1200
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Development",
+        "Claude AI",
+        "Developer Productivity"
+      ]
+    },
+    {
+      "author": "Natan Silnitsky",
+      "headline": "Staff Software Engineer @ Wix",
+      "post_summary": "Explained how Wix is implementing AI-powered automation for website generation and user experience personalization. Detailed the technical architecture using retrieval-augmented generation and the challenges of maintaining brand consistency with AI-generated content.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Natan%20Silnitsky%20Explained%20how%20Wix%20is%20implementing%20AI-powered%20automation%20for%20website%20generation%20a",
+      "engagement": {
+        "likes": 6700,
+        "comments": 423
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Automation",
+        "Web Development",
+        "Enterprise AI"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer @ Ramp | Ex-Notion",
+      "post_summary": "Shared a detailed breakdown of how her team built a custom outbound automation system that reduced manual SDR work by 60%. The system uses AI to qualify leads and auto-personalize sequences based on buying signals from multiple data sources.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Shared%20a%20detailed%20breakdown%20of%20how%20her%20team%20built%20a%20custom%20outbound%20automation%20s",
+      "engagement": {
+        "likes": 890,
+        "comments": 127
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Vercel",
+      "post_summary": "Discussed how his team restructured their content strategy to align with revenue goals, creating a content-to-pipeline attribution model that helped justify a 3x increase in content investment while showing direct impact on closed-won deals.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Discussed%20how%20his%20team%20restructured%20their%20content%20strategy%20to%20align%20with%20revenue",
+      "engagement": {
+        "likes": 654,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "revenue operations",
+        "attribution"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Sales Operations Director @ Rippling",
+      "post_summary": "Explained their approach to building a unified revenue data platform that connects CRM, marketing automation, and customer success tools. The system provides real-time visibility into pipeline health and automatically flags at-risk deals for intervention.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Explained%20their%20approach%20to%20building%20a%20unified%20revenue%20data%20platform%20that%20connec",
+      "engagement": {
+        "likes": 743,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales ops",
+        "revenue operations",
+        "data platform"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Founder @ OutboundOS | GTM Advisor",
+      "post_summary": "Shared insights from analyzing 50+ outbound automation implementations, revealing that most teams focus on volume rather than signal quality. His framework prioritizes intent data and buying committee mapping over sheer email volume.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Shared%20insights%20from%20analyzing%2050%2B%20outbound%20automation%20implementations%2C%20revealin",
+      "engagement": {
+        "likes": 521,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "GTM strategy",
+        "intent data"
+      ]
+    }
+  ]
+}

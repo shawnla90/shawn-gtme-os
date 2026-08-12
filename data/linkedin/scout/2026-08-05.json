@@ -1,0 +1,242 @@
+{
+  "date": "2026-08-05",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-08-05T13:00:29.186602+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to complex multi-step reasoning systems. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20complex%20multi",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Shared insights on AI infrastructure scaling challenges, noting that inference costs are dropping 10x every 18 months. Emphasized the need for better developer tooling around model evaluation and monitoring in production environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20AI%20infrastructure%20scaling%20challenges%2C%20noting%20that%20inference%20c",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "Scaling"
+      ]
+    },
+    {
+      "author": "Matt Welsh",
+      "headline": "Former Google/Apple ML Engineer",
+      "post_summary": "Explained how autonomous agents are changing software development workflows, particularly in code generation and testing. Stressed the importance of human oversight in agent-driven development processes.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Matt%20Welsh%20Explained%20how%20autonomous%20agents%20are%20changing%20software%20development%20workflows%2C%20par",
+      "engagement": {
+        "likes": 756,
+        "comments": 124
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "headline": "xAI / Tesla / Neuralink",
+      "post_summary": "Posted about Grok's new agent capabilities for real-time web browsing and code execution. Demonstrated how the system can autonomously research topics and generate working code snippets.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elon%20Musk%20Posted%20about%20Grok%27s%20new%20agent%20capabilities%20for%20real-time%20web%20browsing%20and%20code%20e",
+      "engagement": {
+        "likes": 15400,
+        "comments": 892
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Agents",
+        "Grok",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Explains how her team built an automated lead scoring system that increased SQL conversion by 34% by combining intent data with CRM activity signals. Details the technical stack and the 3-week implementation timeline.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Explains%20how%20her%20team%20built%20an%20automated%20lead%20scoring%20system%20that%20increased%20SQL%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 89
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "sales ops",
+        "automation"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Shares a framework for aligning marketing and sales data models to eliminate attribution gaps. Walks through their quarterly revenue reconciliation process that reduced forecast variance from 23% to 8%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shares%20a%20framework%20for%20aligning%20marketing%20and%20sales%20data%20models%20to%20eliminate%20att",
+      "engagement": {
+        "likes": 892,
+        "comments": 67
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revenue operations",
+        "attribution",
+        "forecasting"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ OutboundOS | Sales Automation",
+      "post_summary": "Details how her team reduced cold email response time from 4 days to 6 hours using AI-powered personalization at scale. Includes specific metrics on open rates and meeting book rates from their 50,000+ monthly sends.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Details%20how%20her%20team%20reduced%20cold%20email%20response%20time%20from%204%20days%20to%206%20hours%20usi",
+      "engagement": {
+        "likes": 756,
+        "comments": 124
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "AI",
+        "personalization"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "VP Content Strategy @ HubSpot",
+      "post_summary": "Breaks down their content-to-pipeline attribution model that maps 47 content assets to 12 buying stages. Shows how this data-driven approach increased content-assisted revenue by 28% quarter-over-quarter.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Breaks%20down%20their%20content-to-pipeline%20attribution%20model%20that%20maps%2047%20content%20ass",
+      "engagement": {
+        "likes": 634,
+        "comments": 45
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "content strategy",
+        "attribution",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Founder & Author | Bootstrapped Exit | Teaching Indie Hacking",
+      "post_summary": "Shared the complete financial breakdown of his SaaS exit, including monthly recurring revenue progression from $0 to $4k MRR over 18 months. Emphasized the importance of transparent pricing experiments and customer interviews that led to product-market fit.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Shared%20the%20complete%20financial%20breakdown%20of%20his%20SaaS%20exit%2C%20including%20monthly%20recu",
+      "engagement": {
+        "likes": 2400,
+        "comments": 180
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacking",
+        "bootstrapping",
+        "saas"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder at Headlime & KeywordsPeopleAlsoAsk | AI Entrepreneur",
+      "post_summary": "Documented his journey building an AI content tool from idea to $10k MRR in 4 months as a solo founder. Detailed the technical stack choices, failed marketing experiments, and the pivot that finally worked with SEO-focused landing pages.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Documented%20his%20journey%20building%20an%20AI%20content%20tool%20from%20idea%20to%20%2410k%20MRR%20in%204%20mo",
+      "engagement": {
+        "likes": 1850,
+        "comments": 320
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "ai-tools",
+        "solo-founder",
+        "content"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "CEO & Co-founder at Winnie | Ex-Google, Ex-Stripe",
+      "post_summary": "Wrote about transitioning from big tech to startup founder, sharing the mental model shifts required. Highlighted how her experience at Google taught her systems thinking that directly applies to building scalable startup processes.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Wrote%20about%20transitioning%20from%20big%20tech%20to%20startup%20founder%2C%20sharing%20the%20mental%20m",
+      "engagement": {
+        "likes": 1200,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-transition",
+        "founder-journey",
+        "big-tech"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder at Nomad List, Remote OK | Indie Maker",
+      "post_summary": "Posted his monthly public revenue report showing $150k+ across his micro-SaaS products. Broke down which features drove the most revenue and how he decides what to build next based on user feedback patterns.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20his%20monthly%20public%20revenue%20report%20showing%20%24150k%2B%20across%20his%20micro-SaaS%20pr",
+      "engagement": {
+        "likes": 3100,
+        "comments": 420
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "micro-saas",
+        "public-revenue",
+        "indie-maker"
+      ]
+    },
+    {
+      "author": "Shaan Puri",
+      "headline": "Founder & Investor | Ex-Milk Road, Blab",
+      "post_summary": "Shared lessons from his failed startup attempt before current successes, focusing on the specific mistakes around premature scaling and hiring before product-market fit. Included concrete examples of what he would do differently.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Shaan%20Puri%20Shared%20lessons%20from%20his%20failed%20startup%20attempt%20before%20current%20successes%2C%20focusin",
+      "engagement": {
+        "likes": 950,
+        "comments": 150
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "startup-lessons",
+        "failure-analysis",
+        "founder-advice"
+      ]
+    }
+  ]
+}

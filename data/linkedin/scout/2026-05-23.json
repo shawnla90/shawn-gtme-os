@@ -1,0 +1,242 @@
+{
+  "date": "2026-05-23",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-05-23T13:00:50.850418+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents, highlighting how LangGraph enables more reliable multi-step agent workflows. Shared benchmarks showing 40% improvement in task completion rates for complex developer tooling scenarios.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%2C%20highlighting%20how%20LangGraph%20enables%20m",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "LangChain"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction",
+      "post_summary": "Analyzed the current AI infrastructure landscape, noting that inference costs have dropped 60% in the last quarter. Emphasized the shift toward specialized hardware and edge deployment for production AI systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20current%20AI%20infrastructure%20landscape%2C%20noting%20that%20inference%20costs%20ha",
+      "engagement": {
+        "likes": 1420,
+        "comments": 165
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Cost Optimization",
+        "Production AI"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher",
+      "post_summary": "Shared practical insights on building reliable automation with LLMs, including new patterns for handling tool failures and state management in agent systems. Warned against over-engineering simple automation tasks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20practical%20insights%20on%20building%20reliable%20automation%20with%20LLMs%2C%20including%20n",
+      "engagement": {
+        "likes": 980,
+        "comments": 134
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Automation",
+        "Developer Tools",
+        "Best Practices"
+      ]
+    },
+    {
+      "author": "Emmanuel Ameisen",
+      "headline": "Head of AI @ Anthropic",
+      "post_summary": "Explored the intersection of AI agents and developer productivity, presenting data from internal tools showing 3x faster debugging cycles when using agent-assisted code review systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Emmanuel%20Ameisen%20Explored%20the%20intersection%20of%20AI%20agents%20and%20developer%20productivity%2C%20presenting%20da",
+      "engagement": {
+        "likes": 760,
+        "comments": 89
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Agents",
+        "Developer Productivity",
+        "Code Review"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Notion",
+      "post_summary": "Discussed building a GTM engineering function that owns outbound infrastructure end-to-end. Shared how her team uses custom data pipelines and enrichment layers to reduce time-to-first-meeting by 40%. Emphasized treating outbound like product development with version control and testing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20building%20a%20GTM%20engineering%20function%20that%20owns%20outbound%20infrastructure%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Deel",
+      "post_summary": "Wrote about aligning sales ops, marketing ops, and customer success data into a single revenue model. Highlighted using attribution modeling and cohort analysis to improve pipeline accuracy. Argued that RevOps should own the full funnel metrics, not just CRM hygiene.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Wrote%20about%20aligning%20sales%20ops%2C%20marketing%20ops%2C%20and%20customer%20success%20data%20into%20a%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "RevOps"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ Outbound OS | GTM Advisor",
+      "post_summary": "Shared a framework for outbound automation that combines intent signals with multi-channel sequencing. Explained how her clients reduced manual SDR work by 65% while improving reply rates. Stressed the importance of human-in-the-loop review for high-intent leads.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Shared%20a%20framework%20for%20outbound%20automation%20that%20combines%20intent%20signals%20with%20mul",
+      "engagement": {
+        "likes": 760,
+        "comments": 54
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Liam Chen",
+      "headline": "Content Strategy Lead @ Webflow",
+      "post_summary": "Explored how content strategy should be tied directly to revenue operations through topic clusters mapped to buying stages. Shared data showing that content-supported deals closed 28% faster. Advocated for content teams to report into RevOps rather than marketing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Chen%20Explored%20how%20content%20strategy%20should%20be%20tied%20directly%20to%20revenue%20operations%20thro",
+      "engagement": {
+        "likes": 645,
+        "comments": 39
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Content Strategy",
+        "Revenue Operations",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder & CEO @ Typedream | No-code builder",
+      "post_summary": "Shared how he built and shipped a new AI-powered landing page generator in under 10 days as a solo founder. Broke down the tech stack, user feedback loop, and how he used no-code tools to validate before writing code.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Shared%20how%20he%20built%20and%20shipped%20a%20new%20AI-powered%20landing%20page%20generator%20in%20under",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "indie hacker",
+        "no-code"
+      ]
+    },
+    {
+      "author": "Sara Mauskopf",
+      "headline": "Founder & CEO @ Winnie | Ex-Google, Stripe",
+      "post_summary": "Wrote about her decision to leave big tech and go all-in on her second startup. Detailed the emotional side of the career pivot, early traction metrics, and how she's approaching product development differently this time.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Mauskopf%20Wrote%20about%20her%20decision%20to%20leave%20big%20tech%20and%20go%20all-in%20on%20her%20second%20startup.%20",
+      "engagement": {
+        "likes": 1420,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "founder",
+        "startups"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Indie Maker | Founder @ Nomad List, Remote OK",
+      "post_summary": "Posted a weekly update on his new AI side project, including revenue numbers, user growth, and the specific features he shipped that week. Emphasized staying small and profitable without raising funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20a%20weekly%20update%20on%20his%20new%20AI%20side%20project%2C%20including%20revenue%20numbers%2C%20us",
+      "engagement": {
+        "likes": 3200,
+        "comments": 380
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "building in public",
+        "solo founder"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Software Engineer | Building in Public",
+      "post_summary": "Documented his transition from marketing to software engineering. Shared his 6-month learning roadmap, first freelance projects, and how public accountability helped him stay consistent through the career change.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Documented%20his%20transition%20from%20marketing%20to%20software%20engineering.%20Shared%20his%206-m",
+      "engagement": {
+        "likes": 980,
+        "comments": 145
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "learning in public",
+        "developers"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Author, Bootstrapped Founder | Ex-FeedbackPanda",
+      "post_summary": "Reflected on the realities of solo product development after exiting his previous company. Discussed choosing micro-SaaS ideas, avoiding scope creep, and the mental model he uses for sustainable solo building.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Reflected%20on%20the%20realities%20of%20solo%20product%20development%20after%20exiting%20his%20previou",
+      "engagement": {
+        "likes": 1670,
+        "comments": 195
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "bootstrapping",
+        "indie hacker"
+      ]
+    }
+  ]
+}

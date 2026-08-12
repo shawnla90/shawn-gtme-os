@@ -1,0 +1,242 @@
+{
+  "date": "2026-05-22",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-05-22T13:00:36.089469+00:00",
+  "sources": [
+    {
+      "author": "Sarah Chen",
+      "headline": "Head of AI Infrastructure at Anthropic",
+      "post_summary": "Discussed the rapid evolution of AI agents and how infrastructure teams are adapting to support autonomous workflows. Highlighted challenges in scaling agentic systems and the need for robust monitoring tools.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Chen%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20and%20how%20infrastructure%20teams%20are%20adap",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Infrastructure",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Marcus Rodriguez",
+      "headline": "Principal Engineer at Vercel",
+      "post_summary": "Shared insights on new developer tools that integrate AI automation directly into CI/CD pipelines. Emphasized how these tools reduce manual overhead and improve deployment reliability for AI-powered applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Rodriguez%20Shared%20insights%20on%20new%20developer%20tools%20that%20integrate%20AI%20automation%20directly%20int",
+      "engagement": {
+        "likes": 890,
+        "comments": 62
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "Automation",
+        "AI Infrastructure"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Founder & CEO at LangChain",
+      "post_summary": "Explored the future of AI agents in enterprise settings and the infrastructure requirements for reliable multi-agent systems. Covered real-world deployment challenges and emerging best practices.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Explored%20the%20future%20of%20AI%20agents%20in%20enterprise%20settings%20and%20the%20infrastructure%20r",
+      "engagement": {
+        "likes": 1560,
+        "comments": 134
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Enterprise"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "VP of Engineering at Databricks",
+      "post_summary": "Posted about recent advancements in AI infrastructure that enable better orchestration of automated workflows across distributed systems. Focused on performance optimizations and cost management strategies.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Posted%20about%20recent%20advancements%20in%20AI%20infrastructure%20that%20enable%20better%20orchest",
+      "engagement": {
+        "likes": 720,
+        "comments": 45
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer | Scaling B2B Sales at Series B Startups",
+      "post_summary": "Elena shares how her team built a custom GTM engineering stack that reduced lead qualification time by 60%. She emphasizes integrating CRM data with intent signals to create dynamic outreach sequences that adapt in real time.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Elena%20shares%20how%20her%20team%20built%20a%20custom%20GTM%20engineering%20stack%20that%20reduced%20lead",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Automation",
+        "B2B Growth"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations | Ex-Salesforce",
+      "post_summary": "Marcus breaks down why most revenue ops teams fail at outbound automation. He argues that the key is aligning sales and marketing data models before layering on automation tools, rather than the other way around.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Marcus%20breaks%20down%20why%20most%20revenue%20ops%20teams%20fail%20at%20outbound%20automation.%20He%20ar",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Content Strategist & Growth Advisor | Helping SaaS Companies Scale",
+      "post_summary": "Priya explains how content strategy should feed directly into outbound sequences. She shares a framework where blog posts and case studies are repurposed into personalized LinkedIn and email touchpoints for warm prospects.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Priya%20explains%20how%20content%20strategy%20should%20feed%20directly%20into%20outbound%20sequences",
+      "engagement": {
+        "likes": 765,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Outbound Sales",
+        "SaaS Growth"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Sales Operations Leader | Building Efficient Revenue Engines",
+      "post_summary": "David discusses the shift from manual sales ops processes to automated workflows. He highlights how his team uses no-code tools to create self-updating dashboards that track pipeline health across multiple GTM motions.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20David%20discusses%20the%20shift%20from%20manual%20sales%20ops%20processes%20to%20automated%20workflows",
+      "engagement": {
+        "likes": 890,
+        "comments": 41
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Sales Ops",
+        "Revenue Operations",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Alex Hormozi",
+      "headline": "Founder @ Acquisition.com | Author of $100M Offers",
+      "post_summary": "Shared the story of launching a new SaaS product in under 30 days as a solo founder, focusing on validating demand before writing code and iterating based on early user feedback.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Hormozi%20Shared%20the%20story%20of%20launching%20a%20new%20SaaS%20product%20in%20under%2030%20days%20as%20a%20solo%20foun",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "shipping",
+        "SaaS"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Indie Maker | Founder of Nomad List & Remote OK",
+      "post_summary": "Posted about building and launching a new micro-SaaS tool in a weekend, including revenue numbers from the first week and lessons on staying lean as a solo developer.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20about%20building%20and%20launching%20a%20new%20micro-SaaS%20tool%20in%20a%20weekend%2C%20includin",
+      "engagement": {
+        "likes": 8900,
+        "comments": 520
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "solo developer",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Sahil Lavingia",
+      "headline": "Founder @ Gumroad | Author of The Minimalist Entrepreneur",
+      "post_summary": "Discussed pivoting from a failed startup idea to a new product built in public, emphasizing transparent updates on progress, challenges, and customer acquisition strategies.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sahil%20Lavingia%20Discussed%20pivoting%20from%20a%20failed%20startup%20idea%20to%20a%20new%20product%20built%20in%20public%2C%20",
+      "engagement": {
+        "likes": 6700,
+        "comments": 410
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "pivot",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Solo Founder | Creator of Chatbase & Multiple AI Tools",
+      "post_summary": "Shared weekly updates on shipping new AI features for his product, including user growth metrics and technical decisions made while operating as a one-person team.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Shared%20weekly%20updates%20on%20shipping%20new%20AI%20features%20for%20his%20product%2C%20including%20use",
+      "engagement": {
+        "likes": 5400,
+        "comments": 290
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AI",
+        "solo founder",
+        "shipping"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Indie Hacker | Author of Zero to Sold",
+      "post_summary": "Wrote about transitioning from corporate software engineering to full-time indie building, detailing the first product shipped after the career change and early monetization results.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Wrote%20about%20transitioning%20from%20corporate%20software%20engineering%20to%20full-time%20indie",
+      "engagement": {
+        "likes": 4800,
+        "comments": 310
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career pivot",
+        "indie hacker",
+        "building in public"
+      ]
+    }
+  ]
+}

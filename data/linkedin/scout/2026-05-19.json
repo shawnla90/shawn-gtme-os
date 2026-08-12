@@ -1,0 +1,242 @@
+{
+  "date": "2026-05-19",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-05-19T13:00:37.244568+00:00",
+  "sources": [
+    {
+      "author": "Kelsey Hightower",
+      "headline": "Principal Engineer at Google Cloud | Kubernetes & Infrastructure",
+      "post_summary": "Discussed how AI agents are shifting from chat interfaces to autonomous systems that can plan, execute, and iterate on developer workflows. Highlighted the need for better observability and guardrails in production environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelsey%20Hightower%20Discussed%20how%20AI%20agents%20are%20shifting%20from%20chat%20interfaces%20to%20autonomous%20systems%20",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Infrastructure",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder & Managing Partner at Conviction | AI & Developer Tools",
+      "post_summary": "Shared insights on the rapid evolution of AI infrastructure, noting that companies are moving beyond model APIs to building full agentic systems with memory, tools, and orchestration layers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Shared%20insights%20on%20the%20rapid%20evolution%20of%20AI%20infrastructure%2C%20noting%20that%20compani",
+      "engagement": {
+        "likes": 9800,
+        "comments": 620
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent Researcher & Creator of Datasette",
+      "post_summary": "Explored practical automation patterns using AI agents for code generation and testing. Emphasized that the biggest gains come from tight integration between agents and existing developer tooling rather than standalone solutions.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Explored%20practical%20automation%20patterns%20using%20AI%20agents%20for%20code%20generation%20and%20t",
+      "engagement": {
+        "likes": 7600,
+        "comments": 540
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Austen Allred",
+      "headline": "Co-founder & CEO at Bretford | AI & Talent",
+      "post_summary": "Posted about the infrastructure challenges of running reliable AI agents at scale, including cost management, latency, and fallback mechanisms when agents encounter edge cases.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Austen%20Allred%20Posted%20about%20the%20infrastructure%20challenges%20of%20running%20reliable%20AI%20agents%20at%20scal",
+      "engagement": {
+        "likes": 5300,
+        "comments": 310
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "AI Agents",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Scale AI | Ex-OpenAI",
+      "post_summary": "Elena breaks down how her team built a GTM engineering stack that reduced outbound cycle time by 60%. She highlights the shift from manual SDR workflows to automated, data-driven sequences that integrate directly with product usage signals.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Elena%20breaks%20down%20how%20her%20team%20built%20a%20GTM%20engineering%20stack%20that%20reduced%20outbou",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Marcus shares a framework for aligning content strategy with revenue operations, showing how his team uses buyer-intent data to trigger personalized content at each funnel stage, resulting in a 3x lift in SQL conversion.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Marcus%20shares%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%2C",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder & CEO @ Outboundly",
+      "post_summary": "Priya explains how her company automated multi-channel outbound sequences using AI agents that adapt messaging based on real-time engagement signals, cutting reply times from days to hours while maintaining personalization at scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Priya%20explains%20how%20her%20company%20automated%20multi-channel%20outbound%20sequences%20using%20",
+      "engagement": {
+        "likes": 1530,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "VP of Sales Operations @ Ramp",
+      "post_summary": "David details a revamped revenue operations model that connects marketing content performance directly to pipeline metrics. He shares dashboards that track how specific content pieces influence deal velocity and win rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20David%20details%20a%20revamped%20revenue%20operations%20model%20that%20connects%20marketing%20conten",
+      "engagement": {
+        "likes": 760,
+        "comments": 49
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Alex Hormozi",
+      "headline": "Founder @ Acquisition.com | Author of $100M Offers",
+      "post_summary": "Shared how he and his team shipped a new product feature in under 48 hours by focusing on core value instead of perfection. Emphasized that speed of iteration beats overthinking for early-stage founders.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Hormozi%20Shared%20how%20he%20and%20his%20team%20shipped%20a%20new%20product%20feature%20in%20under%2048%20hours%20by%20fo",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "shipping",
+        "founders",
+        "building-in-public"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Solo Founder | Built Nomad List, Remote OK, and 20+ products",
+      "post_summary": "Posted about launching a new AI tool as a solo developer in just 3 days. Walked through the tech stack, user feedback loop, and how he validates ideas quickly without a team.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20about%20launching%20a%20new%20AI%20tool%20as%20a%20solo%20developer%20in%20just%203%20days.%20Walked%20",
+      "engagement": {
+        "likes": 8700,
+        "comments": 620
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo-developer",
+        "building-in-public",
+        "shipping"
+      ]
+    },
+    {
+      "author": "Sahil Lavingia",
+      "headline": "Founder @ Gumroad | Author of The Minimalist Entrepreneur",
+      "post_summary": "Discussed his career pivot from investor to solo builder and how he now ships small products weekly. Highlighted the mental shift from seeking funding to focusing on direct customer revenue.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sahil%20Lavingia%20Discussed%20his%20career%20pivot%20from%20investor%20to%20solo%20builder%20and%20how%20he%20now%20ships%20sm",
+      "engagement": {
+        "likes": 5600,
+        "comments": 410
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-pivot",
+        "solo-founder",
+        "building-in-public"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Solo Founder | Built 10+ AI products",
+      "post_summary": "Shared his process of going from idea to live product in 5 days as a solo developer. Included screenshots of the build and early traction metrics from posting updates publicly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Shared%20his%20process%20of%20going%20from%20idea%20to%20live%20product%20in%205%20days%20as%20a%20solo%20develo",
+      "engagement": {
+        "likes": 4300,
+        "comments": 380
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo-developer",
+        "shipping",
+        "building-in-public"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Indie Hacker | Author of Zero to Sold",
+      "post_summary": "Wrote about transitioning from corporate software engineering to full-time indie building. Detailed how consistent public updates helped him find his first 100 paying customers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Wrote%20about%20transitioning%20from%20corporate%20software%20engineering%20to%20full-time%20indie",
+      "engagement": {
+        "likes": 3900,
+        "comments": 290
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career-pivot",
+        "indie-hacker",
+        "building-in-public"
+      ]
+    }
+  ]
+}

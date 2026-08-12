@@ -1,0 +1,278 @@
+{
+  "date": "2026-06-14",
+  "posts_found": 15,
+  "engine": "grok",
+  "scouted_at": "2026-06-14T13:00:31.237816+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chains to autonomous multi-step systems. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chains%20to%20autonomous%20mult",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder @ Latent.Space | AI Engineer",
+      "post_summary": "Shared insights on the current state of AI infrastructure, noting that most companies are over-engineering agent systems when simpler RAG + tool calling approaches suffice. Emphasized focusing on reliability over complexity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20noting%20that%20most%20comp",
+      "engagement": {
+        "likes": 8700,
+        "comments": 654
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "AI agents",
+        "best practices"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django | AI & Data Ethics",
+      "post_summary": "Posted about new open-source tools for monitoring and debugging LLM applications in production. Covered practical approaches to observability that help teams understand agent behavior and failure modes.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Posted%20about%20new%20open-source%20tools%20for%20monitoring%20and%20debugging%20LLM%20applications",
+      "engagement": {
+        "likes": 6300,
+        "comments": 412
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "LLM observability",
+        "AI infrastructure"
+      ]
+    },
+    {
+      "author": "Clemens Siebert",
+      "headline": "Head of AI @ Automattic",
+      "post_summary": "Detailed how WordPress.com automated content moderation using a multi-agent system that reduced human review workload by 78%. Shared architecture patterns and lessons learned from scaling agent workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clemens%20Siebert%20Detailed%20how%20WordPress.com%20automated%20content%20moderation%20using%20a%20multi-agent%20syst",
+      "engagement": {
+        "likes": 5200,
+        "comments": 378
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "AI agents",
+        "case study"
+      ]
+    },
+    {
+      "author": "Kelvin Liew",
+      "headline": "Staff Software Engineer @ Anthropic",
+      "post_summary": "Explained the infrastructure challenges of running AI agents at scale, including token management, rate limiting, and cost optimization. Provided concrete examples from Claude's agent deployments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelvin%20Liew%20Explained%20the%20infrastructure%20challenges%20of%20running%20AI%20agents%20at%20scale%2C%20including",
+      "engagement": {
+        "likes": 4800,
+        "comments": 291
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI infrastructure",
+        "scaling",
+        "cost optimization"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer @ Ramp | Ex-Notion",
+      "post_summary": "Shared a framework for building outbound automation sequences that combine intent signals with personalized multi-channel touches. Emphasized measuring reply rates and pipeline velocity instead of vanity metrics like open rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Shared%20a%20framework%20for%20building%20outbound%20automation%20sequences%20that%20combine%20inten",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Vercel",
+      "post_summary": "Discussed how his team restructured content strategy around buyer journey stages rather than product features. Showed data on how aligning content with sales stages improved SQL conversion by 34%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Discussed%20how%20his%20team%20restructured%20content%20strategy%20around%20buyer%20journey%20stages",
+      "engagement": {
+        "likes": 890,
+        "comments": 62
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Founder @ OutboundOS | GTM Advisor",
+      "post_summary": "Broke down a 3-step process for engineering outbound motions using enrichment data and AI personalization at scale. Highlighted the importance of building feedback loops between sales and marketing teams.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Broke%20down%20a%203-step%20process%20for%20engineering%20outbound%20motions%20using%20enrichment%20da",
+      "engagement": {
+        "likes": 1560,
+        "comments": 104
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "VP Revenue Operations @ Attentive",
+      "post_summary": "Explained how his RevOps team implemented a unified attribution model across paid, organic, and outbound channels. Shared the tech stack decisions and change management approach that drove adoption.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Explained%20how%20his%20RevOps%20team%20implemented%20a%20unified%20attribution%20model%20across%20pai",
+      "engagement": {
+        "likes": 720,
+        "comments": 45
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "GTM Engineering"
+      ]
+    },
+    {
+      "author": "Sarah Thompson",
+      "headline": "Director of Content Strategy @ Gong",
+      "post_summary": "Detailed how content teams can partner with sales ops to create assets that directly support outbound sequences. Included examples of modular content blocks that reps can mix and match based on prospect signals.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Thompson%20Detailed%20how%20content%20teams%20can%20partner%20with%20sales%20ops%20to%20create%20assets%20that%20dire",
+      "engagement": {
+        "likes": 680,
+        "comments": 39
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Content Strategy",
+        "Sales Ops",
+        "Revenue Operations"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder @ ShipFast | Building in Public",
+      "post_summary": "Shared week 3 metrics after launching his solo-built SaaS product: 340 signups, $1.2k MRR, and the specific onboarding friction points he identified from user interviews. Outlined the next three features he's prioritizing based on direct feedback.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20week%203%20metrics%20after%20launching%20his%20solo-built%20SaaS%20product%3A%20340%20signups%2C%20",
+      "engagement": {
+        "likes": 890,
+        "comments": 124
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "indiehacker",
+        "saas"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Former Teacher \u2192 Software Engineer | Career Pivot Stories",
+      "post_summary": "Documented her transition from teaching to full-time developer after 9 months of self-study. Highlighted the three projects that helped her land interviews and the specific technical concepts that finally clicked during her job search.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Documented%20her%20transition%20from%20teaching%20to%20full-time%20developer%20after%209%20months%20of",
+      "engagement": {
+        "likes": 1240,
+        "comments": 187
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "learninpublic",
+        "techcareer"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Founder & Engineer @ TinyTools | Shipping Weekly",
+      "post_summary": "Posted a detailed breakdown of launching his third micro-SaaS in 8 days using no-code + custom code hybrid. Included revenue numbers from day one, the distribution channels that worked, and what he'd do differently on the next build.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20a%20detailed%20breakdown%20of%20launching%20his%20third%20micro-SaaS%20in%208%20days%20using%20no",
+      "engagement": {
+        "likes": 670,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "microsaas",
+        "founder"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Indie Developer | 2x Acquired | Now Solo Again",
+      "post_summary": "Wrote about going solo again after acquisition and the mental shift required when there's no team to validate ideas. Shared her current product validation process using waitlists and the first 72 hours of user conversations post-launch.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Wrote%20about%20going%20solo%20again%20after%20acquisition%20and%20the%20mental%20shift%20required%20whe",
+      "engagement": {
+        "likes": 520,
+        "comments": 78
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "solo",
+        "validation"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Ex-Finance \u2192 Full-Stack Developer | Building Side Projects",
+      "post_summary": "Detailed his first month as a full-time indie developer after quitting finance. Covered the daily routine changes, how he's tracking progress on his current product, and the unexpected challenges of self-accountability without coworkers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Detailed%20his%20first%20month%20as%20a%20full-time%20indie%20developer%20after%20quitting%20finance.%20",
+      "engagement": {
+        "likes": 410,
+        "comments": 63
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "careerpivot",
+        "indiedev",
+        "buildinginpublic"
+      ]
+    }
+  ]
+}

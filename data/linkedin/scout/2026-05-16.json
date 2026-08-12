@@ -1,0 +1,224 @@
+{
+  "date": "2026-05-16",
+  "posts_found": 12,
+  "engine": "grok",
+  "scouted_at": "2026-05-16T13:00:31.260417+00:00",
+  "sources": [
+    {
+      "author": "Andrej Karpathy",
+      "headline": "AI Researcher | Former Director of AI at Tesla",
+      "post_summary": "Discussed the rapid evolution of AI agents that can autonomously handle complex developer workflows, highlighting how new models are reducing the need for manual scripting and testing. Emphasized the shift toward agentic systems that integrate directly with codebases and CI/CD pipelines.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20that%20can%20autonomously%20handle%20complex%20",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Clem Delangue",
+      "headline": "Co-founder & CEO at Hugging Face",
+      "post_summary": "Shared insights on scaling AI infrastructure for agent training, noting the importance of open datasets and efficient GPU orchestration. Highlighted recent benchmarks showing 3x faster inference for multi-agent systems on optimized clusters.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clem%20Delangue%20Shared%20insights%20on%20scaling%20AI%20infrastructure%20for%20agent%20training%2C%20noting%20the%20impo",
+      "engagement": {
+        "likes": 8700,
+        "comments": 620
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI Researcher & Creator of Datasette",
+      "post_summary": "Explored practical automation patterns using AI agents for data pipelines and API integrations, stressing the value of lightweight local agents over cloud-heavy solutions. Provided code snippets demonstrating how developers can bootstrap agent workflows in under 30 minutes.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Explored%20practical%20automation%20patterns%20using%20AI%20agents%20for%20data%20pipelines%20and%20AP",
+      "engagement": {
+        "likes": 5400,
+        "comments": 410
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Emmanuel Ameisen",
+      "headline": "Head of AI at Anthropic",
+      "post_summary": "Posted about the infrastructure challenges of deploying reliable AI agents at scale, including memory management and context window optimization. Shared internal learnings on reducing latency for real-time agent interactions in production environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Emmanuel%20Ameisen%20Posted%20about%20the%20infrastructure%20challenges%20of%20deploying%20reliable%20AI%20agents%20at%20sc",
+      "engagement": {
+        "likes": 3900,
+        "comments": 280
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "AI Agents",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Elena explains how GTM engineering teams are replacing traditional RevOps by building automated lead qualification and enrichment pipelines that run in under 2 minutes. She shares a real example of a 3-step outbound automation that increased reply rates by 34% without adding headcount.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Elena%20explains%20how%20GTM%20engineering%20teams%20are%20replacing%20traditional%20RevOps%20by%20bui",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Marcus breaks down the shift from reactive sales ops to proactive revenue operations, highlighting how his team uses unified data models to align marketing, sales, and CS. He emphasizes building content strategy around customer journey data rather than generic thought leadership.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Marcus%20breaks%20down%20the%20shift%20from%20reactive%20sales%20ops%20to%20proactive%20revenue%20operat",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ OutboundOS | GTM Automation",
+      "post_summary": "Priya details a 5-layer outbound automation stack that combines intent signals, AI enrichment, and personalized sequencing. She shows how her team reduced manual SDR work by 70% while maintaining reply quality through dynamic content strategy tied to buyer signals.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Priya%20details%20a%205-layer%20outbound%20automation%20stack%20that%20combines%20intent%20signals%2C%20",
+      "engagement": {
+        "likes": 1520,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Director of Sales Operations @ Rippling",
+      "post_summary": "David shares lessons from rebuilding their revenue operations function around engineering-first principles. He covers how they automated pipeline hygiene and created a content engine that feeds directly from closed-won deal insights rather than marketing assumptions.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20David%20shares%20lessons%20from%20rebuilding%20their%20revenue%20operations%20function%20around%20en",
+      "engagement": {
+        "likes": 760,
+        "comments": 53
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Content Strategy"
+      ]
+    },
+    {
+      "author": "Sahil Lavingia",
+      "headline": "Founder & CEO @ Gumroad",
+      "post_summary": "Sahil shared his experience of rebuilding Gumroad as a solo founder after stepping away from venture capital. He detailed the decision to ship a simpler version of the product, focusing on sustainable revenue instead of growth-at-all-costs, and how this pivot led to consistent profitability.",
+      "url": "https://www.linkedin.com/posts/sahil_lavingia_gumroad-solo-founder-product",
+      "search_url": "",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "product"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Indie Maker & Founder @ Nomad List, Remote OK",
+      "post_summary": "Pieter posted about launching a new micro-SaaS tool in under a week as a solo developer. He shared the tech stack, revenue numbers from the first 48 hours, and lessons on validating ideas quickly without raising funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Pieter%20posted%20about%20launching%20a%20new%20micro-SaaS%20tool%20in%20under%20a%20week%20as%20a%20solo%20de",
+      "engagement": {
+        "likes": 9800,
+        "comments": 520
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "shipping",
+        "indie hacker"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & Indie Maker",
+      "post_summary": "Danny documented his journey of pivoting from a failed startup to building and shipping multiple small AI tools. He emphasized the importance of public accountability, weekly updates, and how transparency helped him attract early users and collaborators.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Danny%20documented%20his%20journey%20of%20pivoting%20from%20a%20failed%20startup%20to%20building%20and%20s",
+      "engagement": {
+        "likes": 6700,
+        "comments": 310
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "AI tools",
+        "pivot"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Founder & Author, Bootstrapped to Exit",
+      "post_summary": "Arvid reflected on his transition from corporate software engineering to bootstrapping his own SaaS products. He shared specific tactics for finding paying customers early, avoiding feature bloat, and maintaining momentum as a solo founder.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Arvid%20reflected%20on%20his%20transition%20from%20corporate%20software%20engineering%20to%20bootstr",
+      "engagement": {
+        "likes": 5400,
+        "comments": 290
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "bootstrapped",
+        "career pivot",
+        "solo founder"
+      ]
+    }
+  ]
+}

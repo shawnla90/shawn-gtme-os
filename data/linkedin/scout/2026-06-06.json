@@ -1,0 +1,260 @@
+{
+  "date": "2026-06-06",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-06-06T13:00:28.224052+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on the current state of AI infrastructure, emphasizing the need for better observability and debugging tools for LLM applications. Stressed that production AI systems require robust monitoring similar to traditional software infrastructure.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20emphasizing%20the%20need%20",
+      "engagement": {
+        "likes": 8700,
+        "comments": 654
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "LLM observability",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction, AI investor",
+      "post_summary": "Analyzed the emerging AI automation landscape, noting that 2024's agent startups are focusing on vertical-specific automation rather than general agents. Predicted consolidation in the AI tooling space as companies prioritize ROI over flashy demos.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20emerging%20AI%20automation%20landscape%2C%20noting%20that%202024%27s%20agent%20startups",
+      "engagement": {
+        "likes": 15200,
+        "comments": 1200
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI automation",
+        "startups",
+        "AI agents"
+      ]
+    },
+    {
+      "author": "Matt Welsh",
+      "headline": "Former Google, Professor @ Harvard",
+      "post_summary": "Explored how AI agents are transforming software development workflows, from code generation to automated testing and deployment. Argued that the next wave of developer tools will be agent-native rather than traditional IDEs.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Matt%20Welsh%20Explored%20how%20AI%20agents%20are%20transforming%20software%20development%20workflows%2C%20from%20cod",
+      "engagement": {
+        "likes": 6300,
+        "comments": 420
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI agents",
+        "software engineering"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ OpenAI | Ex-Salesforce",
+      "post_summary": "Discusses building a GTM engineering function that combines data pipelines, intent signals, and automated outreach to shorten sales cycles by 40%. Emphasizes treating outbound as a product with version control and A/B testing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discusses%20building%20a%20GTM%20engineering%20function%20that%20combines%20data%20pipelines%2C%20inte",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Ramp",
+      "post_summary": "Shares how his team unified CRM, enrichment, and sequencing tools into a single RevOps stack, cutting manual work by 60%. Stresses the importance of clean data foundations before layering automation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Shares%20how%20his%20team%20unified%20CRM%2C%20enrichment%2C%20and%20sequencing%20tools%20into%20a%20single%20",
+      "engagement": {
+        "likes": 1320,
+        "comments": 165
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder & CEO @ Lavender | Ex-Outreach",
+      "post_summary": "Breaks down why most outbound automation fails: lack of personalization at scale. Advocates for AI that understands buyer context rather than just templated sequences, backed by win-rate data from 50k+ emails.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Breaks%20down%20why%20most%20outbound%20automation%20fails%3A%20lack%20of%20personalization%20at%20scale",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Sales",
+        "AI"
+      ]
+    },
+    {
+      "author": "David Kwon",
+      "headline": "Director of Content Strategy @ Notion",
+      "post_summary": "Explains how content-led GTM reduced CAC by 35% through targeted thought leadership and sales enablement assets. Details the content-to-pipeline attribution model his team built.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kwon%20Explains%20how%20content-led%20GTM%20reduced%20CAC%20by%2035%25%20through%20targeted%20thought%20leaders",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Content Strategy",
+        "GTM",
+        "Marketing"
+      ]
+    },
+    {
+      "author": "Sofia Patel",
+      "headline": "VP Sales Operations @ Deel",
+      "post_summary": "Outlines building a closed-loop revenue system connecting marketing attribution, sales activity, and customer success metrics. Highlights the shift from siloed ops to unified revenue intelligence.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sofia%20Patel%20Outlines%20building%20a%20closed-loop%20revenue%20system%20connecting%20marketing%20attribution%2C",
+      "engagement": {
+        "likes": 640,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Daniel Vassallo",
+      "headline": "Independent maker & author | Ex-Amazon",
+      "post_summary": "Shared his journey of leaving a stable job to build small, profitable products solo. Highlighted how focusing on tiny tools that solve personal problems led to sustainable income without chasing VC funding or massive scale.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Daniel%20Vassallo%20Shared%20his%20journey%20of%20leaving%20a%20stable%20job%20to%20build%20small%2C%20profitable%20products%20s",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie-hacking",
+        "solo-founder",
+        "building-in-public"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder @ Nomad List & Remote OK",
+      "post_summary": "Posted about shipping a new micro-SaaS feature in under 48 hours as a solo founder. Emphasized the power of rapid iteration and talking directly to users instead of over-engineering.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Posted%20about%20shipping%20a%20new%20micro-SaaS%20feature%20in%20under%2048%20hours%20as%20a%20solo%20found",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo-founder",
+        "shipping",
+        "indie-hacking"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & 10+ bootstrapped products",
+      "post_summary": "Detailed his transition from traditional employment to full-time indie hacking. Shared lessons from failing multiple products before finding product-market fit through consistent public building and transparent updates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Detailed%20his%20transition%20from%20traditional%20employment%20to%20full-time%20indie%20hacking.%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career-pivot",
+        "building-in-public",
+        "indie-hacking"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Author of Zero to Sold | Bootstrapped founder",
+      "post_summary": "Wrote about leaving corporate tech to bootstrap an education product. Focused on how documenting the entire process publicly helped him build an audience and get early customers before the product was finished.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Wrote%20about%20leaving%20corporate%20tech%20to%20bootstrap%20an%20education%20product.%20Focused%20on",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building-in-public",
+        "solo-founder",
+        "career-pivot"
+      ]
+    },
+    {
+      "author": "Marc Lou",
+      "headline": "Solo founder shipping micro-SaaS in public",
+      "post_summary": "Shared weekly updates on building and launching multiple small tools. Highlighted how maintaining a public changelog and revenue dashboard helped him stay accountable and attract early adopters.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marc%20Lou%20Shared%20weekly%20updates%20on%20building%20and%20launching%20multiple%20small%20tools.%20Highlighte",
+      "engagement": {
+        "likes": 620,
+        "comments": 88
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building-in-public",
+        "shipping",
+        "indie-hacking"
+      ]
+    }
+  ]
+}

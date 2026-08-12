@@ -1,0 +1,242 @@
+{
+  "date": "2026-06-17",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-06-17T13:00:27.954360+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO at LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents, highlighting how multi-agent systems are moving from experimental to production-ready with better orchestration frameworks. Emphasized the need for robust evaluation metrics as agent complexity increases in real-world applications.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%2C%20highlighting%20how%20multi-agent%20systems",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Multi-Agent Systems"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Founder, Datasette; AI & Python expert",
+      "post_summary": "Shared insights on building reliable AI tooling and automation pipelines, warning against overhyping agent capabilities without proper guardrails. Covered practical developer tools for monitoring and debugging LLM-based automations.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20building%20reliable%20AI%20tooling%20and%20automation%20pipelines%2C%20warnin",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "AI Automation",
+        "LLMs"
+      ]
+    },
+    {
+      "author": "Clemens Siebert",
+      "headline": "Head of AI Infrastructure at Scale AI",
+      "post_summary": "Posted about scaling AI infrastructure challenges, focusing on cost optimization for inference workloads and the shift toward specialized hardware for agentic workloads. Included benchmarks comparing different orchestration platforms.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clemens%20Siebert%20Posted%20about%20scaling%20AI%20infrastructure%20challenges%2C%20focusing%20on%20cost%20optimization",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Scaling",
+        "Inference"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "AI Engineer & Educator",
+      "post_summary": "Explored practical automation use cases with AI agents in developer workflows, including code generation pipelines and testing automation. Stressed the importance of human-in-the-loop systems for production reliability.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explored%20practical%20automation%20use%20cases%20with%20AI%20agents%20in%20developer%20workflows%2C%20i",
+      "engagement": {
+        "likes": 760,
+        "comments": 98
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Developer Workflow"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer at OpenAI | Ex-Salesforce",
+      "post_summary": "Discussed how GTM engineering teams are shifting from manual lead lists to building automated data pipelines that qualify and route prospects in real-time. Highlighted a case where implementing intent signals reduced time-to-first-outreach by 60%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discussed%20how%20GTM%20engineering%20teams%20are%20shifting%20from%20manual%20lead%20lists%20to%20build",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Automation",
+        "Revenue Operations"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations at Notion",
+      "post_summary": "Shared a framework for aligning sales ops with product-led growth motions. Explained how his team uses unified data models to create a single source of truth between marketing, sales, and customer success for better forecasting accuracy.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shared%20a%20framework%20for%20aligning%20sales%20ops%20with%20product-led%20growth%20motions.%20Expla",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "PLG"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Founder & CEO at OutboundOS",
+      "post_summary": "Broke down the evolution of outbound automation from basic email sequencing to AI-driven multi-channel orchestration. Included metrics showing how modern stacks improved reply rates by 3x while cutting manual work by half.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Broke%20down%20the%20evolution%20of%20outbound%20automation%20from%20basic%20email%20sequencing%20to%20A",
+      "engagement": {
+        "likes": 1450,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Sales Tech",
+        "GTM"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Content Strategy Lead at HubSpot",
+      "post_summary": "Explored how content strategy directly fuels top-of-funnel pipeline when integrated with sales outreach. Shared examples of repurposing customer interviews into targeted LinkedIn and email sequences that generated measurable meetings.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Explored%20how%20content%20strategy%20directly%20fuels%20top-of-funnel%20pipeline%20when%20integra",
+      "engagement": {
+        "likes": 720,
+        "comments": 53
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Content Strategy",
+        "Demand Gen",
+        "Sales"
+      ]
+    },
+    {
+      "author": "Pieter Levels",
+      "headline": "Founder at Nomad List & Remote OK",
+      "post_summary": "Shared his journey of building and shipping multiple micro-SaaS products as a solo founder, highlighting how he validates ideas quickly and launches without a team. Emphasized focusing on real user problems over complex features.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Pieter%20Levels%20Shared%20his%20journey%20of%20building%20and%20shipping%20multiple%20micro-SaaS%20products%20as%20a%20so",
+      "engagement": {
+        "likes": 12500,
+        "comments": 890
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "saas"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder & Creator at Headlime & 10x.com",
+      "post_summary": "Detailed the process of pivoting from traditional dev work to building AI-powered tools solo, including lessons from shipping his latest product in under 3 weeks and iterating based on early user feedback.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Detailed%20the%20process%20of%20pivoting%20from%20traditional%20dev%20work%20to%20building%20AI-powere",
+      "engagement": {
+        "likes": 8700,
+        "comments": 620
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "ai tools",
+        "solo developer",
+        "product launch"
+      ]
+    },
+    {
+      "author": "Arvid Kahl",
+      "headline": "Founder, Author & Indie Hacker",
+      "post_summary": "Discussed career transition from corporate software engineering to full-time indie hacking, sharing specific tactics for finding paying customers while building in public and maintaining transparency about revenue.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arvid%20Kahl%20Discussed%20career%20transition%20from%20corporate%20software%20engineering%20to%20full-time%20ind",
+      "engagement": {
+        "likes": 6400,
+        "comments": 410
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "career pivot",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Marc Lou",
+      "headline": "Solo Founder at ShipFast & Maker's Path",
+      "post_summary": "Posted about rapidly shipping a new boilerplate product for developers, including metrics on time-to-launch and how public updates helped attract early adopters and collaborators.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marc%20Lou%20Posted%20about%20rapidly%20shipping%20a%20new%20boilerplate%20product%20for%20developers%2C%20includin",
+      "engagement": {
+        "likes": 5200,
+        "comments": 375
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "shipping fast",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Sasha Sadilova",
+      "headline": "Software Engineer turned Founder",
+      "post_summary": "Shared her story of pivoting from a stable tech job to building her own productivity app as a solo developer, covering challenges like self-doubt and strategies for consistent public progress updates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sasha%20Sadilova%20Shared%20her%20story%20of%20pivoting%20from%20a%20stable%20tech%20job%20to%20building%20her%20own%20producti",
+      "engagement": {
+        "likes": 3900,
+        "comments": 285
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career pivot",
+        "solo developer",
+        "productivity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "date": "2026-07-12",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-07-12T13:00:30.856170+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chains to multi-step autonomous systems, highlighting how LangGraph enables reliable agent workflows. Emphasized the shift from prompt engineering to building robust agent infrastructure with memory and tool use.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chains%20to%20multi-step%20auto",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on the current state of AI tooling for developers, noting that while LLMs are powerful, the real bottleneck is reliable automation and evaluation infrastructure. Warned against overhyping agents without proper testing frameworks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20tooling%20for%20developers%2C%20noting%20that%20w",
+      "engagement": {
+        "likes": 8900,
+        "comments": 420
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI tooling",
+        "automation",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction, ex-Greylock",
+      "post_summary": "Analyzed the emerging AI infrastructure stack, comparing it to the early cloud computing era. Highlighted opportunities in observability, evaluation, and deployment tools for production AI systems beyond just model training.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20emerging%20AI%20infrastructure%20stack%2C%20comparing%20it%20to%20the%20early%20cloud%20c",
+      "engagement": {
+        "likes": 7600,
+        "comments": 310
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "startups",
+        "automation"
+      ]
+    },
+    {
+      "author": "Matt Rickard",
+      "headline": "Founder @ Replicate, ex-YC",
+      "post_summary": "Posted about the practical challenges of running AI agents in production, focusing on cost management, latency optimization, and the need for better developer tooling around agent orchestration and monitoring.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Matt%20Rickard%20Posted%20about%20the%20practical%20challenges%20of%20running%20AI%20agents%20in%20production%2C%20focusi",
+      "engagement": {
+        "likes": 5400,
+        "comments": 290
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "infrastructure",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "headline": "xAI, Tesla, SpaceX",
+      "post_summary": "Commented on the future of AI automation and how xAI's infrastructure approach differs from competitors, touching on training efficiency and the role of agents in scaling AI capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elon%20Musk%20Commented%20on%20the%20future%20of%20AI%20automation%20and%20how%20xAI%27s%20infrastructure%20approach%20d",
+      "engagement": {
+        "likes": 45200,
+        "comments": 8900
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI infrastructure",
+        "automation",
+        "xAI"
+      ]
+    },
+    {
+      "author": "Alex Hormozi",
+      "headline": "Founder @ Acquisition.com | Author of $100M Offers",
+      "post_summary": "Discussed building repeatable outbound systems at scale by combining sales ops tooling with content-led qualification. Emphasized that revenue operations should own the full funnel from lead gen to closed won, not just post-MQL metrics.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Hormozi%20Discussed%20building%20repeatable%20outbound%20systems%20at%20scale%20by%20combining%20sales%20ops%20t",
+      "engagement": {
+        "likes": 12400,
+        "comments": 680
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "revenue operations",
+        "outbound automation"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Former CMO @ Amplitude, SurveyMonkey",
+      "post_summary": "Shared a framework for GTM engineering that treats product-led growth and outbound as a single system. Highlighted how content strategy should feed directly into sales sequences rather than living in separate marketing silos.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Shared%20a%20framework%20for%20GTM%20engineering%20that%20treats%20product-led%20growth%20and%20outbou",
+      "engagement": {
+        "likes": 8900,
+        "comments": 410
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "content strategy",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Harry Stebbings",
+      "headline": "Founder @ 20VC | Investor",
+      "post_summary": "Posted about how top-performing SaaS companies are now building dedicated GTM engineering teams that own outbound automation, data enrichment, and sales ops infrastructure. Argued this is becoming a core competitive advantage.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harry%20Stebbings%20Posted%20about%20how%20top-performing%20SaaS%20companies%20are%20now%20building%20dedicated%20GTM%20en",
+      "engagement": {
+        "likes": 6700,
+        "comments": 320
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "outbound automation",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "April Dunford",
+      "headline": "Positioning Expert | Author of Obviously Awesome",
+      "post_summary": "Explained how content strategy must be tightly coupled with revenue operations to drive pipeline. Shared examples of companies using thought leadership content as the first touch in automated outbound sequences.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20April%20Dunford%20Explained%20how%20content%20strategy%20must%20be%20tightly%20coupled%20with%20revenue%20operations%20t",
+      "engagement": {
+        "likes": 5400,
+        "comments": 290
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "content strategy",
+        "revenue operations",
+        "outbound automation"
+      ]
+    },
+    {
+      "author": "Arpit Mohan",
+      "headline": "Founder & CEO @ Ambit | Ex-Google, Twitter",
+      "post_summary": "Shared the journey of building Ambit from scratch as a solo founder, detailing the first 90 days of product development, customer interviews, and the decision to stay bootstrapped instead of raising. Emphasized the importance of shipping weekly updates publicly to stay accountable.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arpit%20Mohan%20Shared%20the%20journey%20of%20building%20Ambit%20from%20scratch%20as%20a%20solo%20founder%2C%20detailing%20t",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "indiehacker",
+        "founderjourney"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & 10+ AI products | Indie Maker",
+      "post_summary": "Posted about launching his 12th product in 18 months as a solo builder. Broke down the tech stack, how he validates ideas in 48 hours, and the revenue numbers from his latest AI tool. Highlighted the shift from agency work to product-led income.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Posted%20about%20launching%20his%2012th%20product%20in%2018%20months%20as%20a%20solo%20builder.%20Broke%20do",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solopreneur",
+        "ai",
+        "productlaunch"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Founder @ Row Zero | Ex-Microsoft, Amazon",
+      "post_summary": "Detailed his career pivot from big tech engineering leadership to founding a startup. Shared the mental shift required, how he used his network to validate the problem, and the first version he shipped to 50 users in two weeks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Detailed%20his%20career%20pivot%20from%20big%20tech%20engineering%20leadership%20to%20founding%20a%20sta",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "founder",
+        "startuplife"
+      ]
+    },
+    {
+      "author": "Sankalp Jauhari",
+      "headline": "Solo Founder @ Typedream | Building in Public",
+      "post_summary": "Wrote about the challenges of being a solo developer maintaining a no-code website builder. Shared weekly metrics, how he handles customer support alone, and the decision to turn down a small acquisition offer to keep building independently.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sankalp%20Jauhari%20Wrote%20about%20the%20challenges%20of%20being%20a%20solo%20developer%20maintaining%20a%20no-code%20websi",
+      "engagement": {
+        "likes": 760,
+        "comments": 98
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solodeveloper",
+        "buildinginpublic",
+        "nocode"
+      ]
+    },
+    {
+      "author": "Lydia Hallie",
+      "headline": "Software Engineer | Content Creator | Ex-Netlify",
+      "post_summary": "Discussed her transition from full-time engineering to independent technical content creation and product experiments. Shared how she structures her week between client work, open source contributions, and shipping small tools publicly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Lydia%20Hallie%20Discussed%20her%20transition%20from%20full-time%20engineering%20to%20independent%20technical%20con",
+      "engagement": {
+        "likes": 1340,
+        "comments": 187
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "careerpivot",
+        "developer",
+        "indiecreator"
+      ]
+    }
+  ]
+}

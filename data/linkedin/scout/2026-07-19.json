@@ -1,0 +1,278 @@
+{
+  "date": "2026-07-19",
+  "posts_found": 15,
+  "engine": "grok",
+  "scouted_at": "2026-07-19T13:00:33.091458+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents, highlighting how multi-agent systems are moving from research to production. Shared insights on infrastructure challenges like memory management and tool integration that developers face when scaling agents.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%2C%20highlighting%20how%20multi-agent%20systems",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LangChain",
+        "infrastructure"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder @ Latent.Space | AI Engineer",
+      "post_summary": "Explored the current state of AI developer tooling, emphasizing the gap between hype and practical automation frameworks. Covered emerging patterns in agent orchestration and the need for better debugging and observability tools.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Explored%20the%20current%20state%20of%20AI%20developer%20tooling%2C%20emphasizing%20the%20gap%20between%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI agents",
+        "automation"
+      ]
+    },
+    {
+      "author": "Clem Delangue",
+      "headline": "Co-founder & CEO @ Hugging Face",
+      "post_summary": "Posted about open-source AI infrastructure advancements, focusing on how new model serving and agent deployment frameworks are lowering barriers for developers. Highlighted recent Hugging Face updates enabling easier agent fine-tuning.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clem%20Delangue%20Posted%20about%20open-source%20AI%20infrastructure%20advancements%2C%20focusing%20on%20how%20new%20mod",
+      "engagement": {
+        "likes": 1560,
+        "comments": 112
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "open source",
+        "Hugging Face"
+      ]
+    },
+    {
+      "author": "Matt Rickard",
+      "headline": "Founder @ Replicate | Ex-Stripe",
+      "post_summary": "Analyzed the infrastructure layer for AI agents, discussing containerization, scaling, and cost optimization challenges. Shared lessons from running production agent workloads and the importance of reliable tool calling.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Matt%20Rickard%20Analyzed%20the%20infrastructure%20layer%20for%20AI%20agents%2C%20discussing%20containerization%2C%20sc",
+      "engagement": {
+        "likes": 720,
+        "comments": 45
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "automation",
+        "scaling"
+      ]
+    },
+    {
+      "author": "Logan Kilpatrick",
+      "headline": "Head of Product @ OpenAI",
+      "post_summary": "Shared updates on OpenAI's latest agent capabilities and developer platform improvements. Focused on how new APIs are enabling more reliable automation workflows and reducing hallucination in agent decision-making.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Logan%20Kilpatrick%20Shared%20updates%20on%20OpenAI%27s%20latest%20agent%20capabilities%20and%20developer%20platform%20impr",
+      "engagement": {
+        "likes": 1890,
+        "comments": 134
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "OpenAI",
+        "AI agents",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Discusses how GTM engineering teams are building internal tooling to automate lead enrichment and scoring, replacing manual SDR workflows. Highlights a 3x increase in qualified pipeline after implementing custom data pipelines between CRM and enrichment tools.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discusses%20how%20GTM%20engineering%20teams%20are%20building%20internal%20tooling%20to%20automate%20le",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Sales Ops",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Shares a framework for aligning content strategy with revenue operations by mapping top-of-funnel content to specific pipeline stages. Shows how content-to-opportunity attribution improved forecasting accuracy by 22%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Shares%20a%20framework%20for%20aligning%20content%20strategy%20with%20revenue%20operations%20by%20mapp",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ OutboundOS | GTM Advisor",
+      "post_summary": "Breaks down how outbound automation stacks can be built without spammy sequences by layering intent signals, personalized copy generation, and multi-channel orchestration. Includes a case study showing 41% reply rate improvement.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Breaks%20down%20how%20outbound%20automation%20stacks%20can%20be%20built%20without%20spammy%20sequences",
+      "engagement": {
+        "likes": 1530,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales"
+      ]
+    },
+    {
+      "author": "David Kline",
+      "headline": "VP Sales Operations @ Deel",
+      "post_summary": "Explains the shift from traditional sales ops to revenue operations, focusing on building unified data models across marketing, sales, and CS. Details how this reduced handoff friction and improved win rates by 18%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kline%20Explains%20the%20shift%20from%20traditional%20sales%20ops%20to%20revenue%20operations%2C%20focusing%20on",
+      "engagement": {
+        "likes": 870,
+        "comments": 53
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Lina Torres",
+      "headline": "GTM Systems Architect | Ex-HubSpot",
+      "post_summary": "Covers the technical architecture behind modern outbound automation, including how to integrate enrichment APIs, CRM triggers, and AI copy tools into a single orchestration layer. Warns against over-automation without human review checkpoints.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Lina%20Torres%20Covers%20the%20technical%20architecture%20behind%20modern%20outbound%20automation%2C%20including%20h",
+      "engagement": {
+        "likes": 1120,
+        "comments": 79
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Arpit Mohan",
+      "headline": "Founder & CEO @ Ambit | Ex-Google, Stripe",
+      "post_summary": "Shared his experience building Ambit as a solo founder, detailing the first 6 months of product development, customer interviews, and shipping an MVP without a team. Emphasized the importance of talking to users early and iterating fast.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arpit%20Mohan%20Shared%20his%20experience%20building%20Ambit%20as%20a%20solo%20founder%2C%20detailing%20the%20first%206%20mo",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo founder",
+        "building in public",
+        "MVP"
+      ]
+    },
+    {
+      "author": "Danny Postma",
+      "headline": "Founder @ Headlime & 2X acquired founder",
+      "post_summary": "Posted about launching a new AI product in 10 days as a solo developer, including the tech stack used, challenges with marketing, and first revenue numbers. Focused on the realities of shipping fast without a team.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Danny%20Postma%20Posted%20about%20launching%20a%20new%20AI%20product%20in%2010%20days%20as%20a%20solo%20developer%2C%20includin",
+      "engagement": {
+        "likes": 980,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solo developer",
+        "AI product",
+        "shipping"
+      ]
+    },
+    {
+      "author": "Vic Vijayakumar",
+      "headline": "Founder @ Row Zero | Ex-Meta, Amazon",
+      "post_summary": "Wrote about transitioning from big tech to founding a data tool startup. Shared lessons from his career pivot, the decision to build in public, and how transparency helped attract early users and collaborators.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Vic%20Vijayakumar%20Wrote%20about%20transitioning%20from%20big%20tech%20to%20founding%20a%20data%20tool%20startup.%20Shared%20",
+      "engagement": {
+        "likes": 670,
+        "comments": 54
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "founder",
+        "building in public"
+      ]
+    },
+    {
+      "author": "Sankalp Jauhari",
+      "headline": "Indie Maker & Solo Founder",
+      "post_summary": "Documented his journey building and launching a productivity SaaS product alone. Covered weekly progress updates, user feedback loops, and the mental side of solo development and marketing.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sankalp%20Jauhari%20Documented%20his%20journey%20building%20and%20launching%20a%20productivity%20SaaS%20product%20alone.",
+      "engagement": {
+        "likes": 540,
+        "comments": 63
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "solo founder",
+        "SaaS"
+      ]
+    },
+    {
+      "author": "Maya Akimova",
+      "headline": "Software Engineer \u2192 Founder | Building in Public",
+      "post_summary": "Shared her transition from a traditional engineering role into founding her own AI tooling startup. Highlighted the challenges of learning sales and marketing as a technical founder and the value of sharing the journey publicly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Akimova%20Shared%20her%20transition%20from%20a%20traditional%20engineering%20role%20into%20founding%20her%20own%20",
+      "engagement": {
+        "likes": 410,
+        "comments": 48
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "career pivot",
+        "building in public",
+        "AI"
+      ]
+    }
+  ]
+}

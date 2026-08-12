@@ -1,0 +1,224 @@
+{
+  "date": "2026-05-20",
+  "posts_found": 12,
+  "engine": "grok",
+  "scouted_at": "2026-05-20T13:00:40.081919+00:00",
+  "sources": [
+    {
+      "author": "Mustafa Suleyman",
+      "headline": "CEO & Co-Founder at Inflection AI",
+      "post_summary": "Discussed the rapid evolution of AI agents that can autonomously handle complex workflows, emphasizing the shift from chatbots to proactive systems that integrate deeply with enterprise tools and developer environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Mustafa%20Suleyman%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20that%20can%20autonomously%20handle%20complex%20",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Enterprise AI"
+      ]
+    },
+    {
+      "author": "Andrej Karpathy",
+      "headline": "AI Researcher & Educator",
+      "post_summary": "Shared insights on building scalable AI infrastructure for training and deploying agents, highlighting new open-source developer tools that simplify orchestration and reduce compute overhead in production environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Andrej%20Karpathy%20Shared%20insights%20on%20building%20scalable%20AI%20infrastructure%20for%20training%20and%20deployin",
+      "engagement": {
+        "likes": 9800,
+        "comments": 720
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "Open Source"
+      ]
+    },
+    {
+      "author": "Emmanuel Ameisen",
+      "headline": "Head of AI at Hugging Face",
+      "post_summary": "Explored practical automation patterns using AI agents for code generation and testing, stressing the importance of robust infrastructure layers that support reliable multi-agent collaboration in developer workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Emmanuel%20Ameisen%20Explored%20practical%20automation%20patterns%20using%20AI%20agents%20for%20code%20generation%20and%20t",
+      "engagement": {
+        "likes": 6500,
+        "comments": 410
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder at Conviction",
+      "post_summary": "Analyzed recent funding trends in AI infrastructure startups focused on agent platforms, noting how new developer tooling is accelerating the move from experimental prototypes to production-grade automation systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20recent%20funding%20trends%20in%20AI%20infrastructure%20startups%20focused%20on%20agent%20pl",
+      "engagement": {
+        "likes": 5200,
+        "comments": 310
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "Funding",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer at OpenAI",
+      "post_summary": "Discusses how GTM engineering teams are building automated outbound sequences that combine intent data with AI personalization, resulting in 3x higher reply rates while maintaining compliance and brand voice.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discusses%20how%20GTM%20engineering%20teams%20are%20building%20automated%20outbound%20sequences%20th",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "AI Sales"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations at Ramp",
+      "post_summary": "Shares a framework for aligning sales ops with content strategy to create self-serve enablement assets that reduced onboarding time by 40% and improved win rates in enterprise deals.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Shares%20a%20framework%20for%20aligning%20sales%20ops%20with%20content%20strategy%20to%20create%20self-s",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Enablement"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Sales Ops Leader at Notion",
+      "post_summary": "Breaks down how her team automated lead scoring and routing using no-code tools combined with CRM workflows, cutting manual handoffs by 60% and improving pipeline velocity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Breaks%20down%20how%20her%20team%20automated%20lead%20scoring%20and%20routing%20using%20no-code%20tools%20",
+      "engagement": {
+        "likes": 765,
+        "comments": 52
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Sales Ops",
+        "Automation",
+        "Pipeline Management"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Founder at GTM Labs",
+      "post_summary": "Explores the shift from traditional outbound to GTM engineering, where teams treat sales processes like product development with experimentation, metrics, and iteration cycles.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Explores%20the%20shift%20from%20traditional%20outbound%20to%20GTM%20engineering%2C%20where%20teams%20tre",
+      "engagement": {
+        "likes": 1120,
+        "comments": 91
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound",
+        "Sales Process"
+      ]
+    },
+    {
+      "author": "Alex Rivera",
+      "headline": "Solo Founder @ ProductFlow | Ex-Google",
+      "post_summary": "Shared the journey of building and launching a no-code analytics tool as a solo founder over 6 months. Highlighted key challenges like customer discovery, iterating on feedback, and the decision to bootstrap instead of seeking funding. Emphasized the importance of consistent weekly updates to stay accountable.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Rivera%20Shared%20the%20journey%20of%20building%20and%20launching%20a%20no-code%20analytics%20tool%20as%20a%20solo%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "SoloFounder",
+        "BuildingInPublic",
+        "ProductLaunch"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Indie Developer & Founder | Shipping Side Projects",
+      "post_summary": "Posted about pivoting from marketing to full-time indie development after shipping three small tools that gained traction. Discussed learning to code while maintaining a day job and the mindset shift required to treat side projects seriously. Included lessons on validating ideas quickly before investing time.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Posted%20about%20pivoting%20from%20marketing%20to%20full-time%20indie%20development%20after%20shippi",
+      "engagement": {
+        "likes": 890,
+        "comments": 64
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "CareerPivot",
+        "IndieHacker",
+        "SideProjects"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Founder & Builder | AI Tools for Developers",
+      "post_summary": "Detailed the process of building an open-source AI code assistant from scratch as a solo developer. Covered technical decisions, community contributions, and how weekly public updates helped attract early users and collaborators. Stressed the value of transparency in gaining trust.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Detailed%20the%20process%20of%20building%20an%20open-source%20AI%20code%20assistant%20from%20scratch%20a",
+      "engagement": {
+        "likes": 1560,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "BuildingInPublic",
+        "OpenSource",
+        "SoloDev"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Software Engineer | Career Transition Coach",
+      "post_summary": "Shared her experience transitioning from teaching to software engineering at age 35. Outlined a structured 9-month learning plan, key resources used, and how contributing to open source helped land her first role. Focused on practical advice for non-traditional backgrounds entering tech.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Shared%20her%20experience%20transitioning%20from%20teaching%20to%20software%20engineering%20at%20age",
+      "engagement": {
+        "likes": 720,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "CareerPivot",
+        "TechTransition",
+        "LearningInPublic"
+      ]
+    }
+  ]
+}

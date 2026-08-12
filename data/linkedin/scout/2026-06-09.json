@@ -1,0 +1,242 @@
+{
+  "date": "2026-06-09",
+  "posts_found": 13,
+  "engine": "grok",
+  "scouted_at": "2026-06-09T13:01:49.172457+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents, highlighting how multi-agent systems are moving from experimental prototypes to production-ready workflows. Emphasized the importance of memory, tool use, and orchestration layers in building reliable agents.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%2C%20highlighting%20how%20multi-agent%20systems",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Multi-Agent Systems"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder @ Latent.Space | AI Engineer",
+      "post_summary": "Shared insights on the current state of AI infrastructure, focusing on the shift toward specialized runtimes and inference optimization. Argued that developer experience tooling is becoming the key differentiator for AI platforms.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20focusing%20on%20the%20shift",
+      "engagement": {
+        "likes": 1320,
+        "comments": 165
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "Inference"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django | AI & Data Consultant",
+      "post_summary": "Posted about practical automation using LLMs for developer workflows, including code generation, testing, and documentation. Highlighted real-world examples of how small teams are leveraging AI agents to 10x productivity.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Posted%20about%20practical%20automation%20using%20LLMs%20for%20developer%20workflows%2C%20including%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "Automation",
+        "LLMs"
+      ]
+    },
+    {
+      "author": "Clem Delangue",
+      "headline": "Co-founder & CEO @ Hugging Face",
+      "post_summary": "Talked about open-source AI infrastructure trends, particularly around model serving and agent frameworks. Stressed the growing importance of standardized agent protocols and evaluation benchmarks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clem%20Delangue%20Talked%20about%20open-source%20AI%20infrastructure%20trends%2C%20particularly%20around%20model%20ser",
+      "engagement": {
+        "likes": 2100,
+        "comments": 285
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Open Source",
+        "AI Infrastructure",
+        "Agents"
+      ]
+    },
+    {
+      "author": "Alex Hormozi",
+      "headline": "Founder @ Acquisition.com",
+      "post_summary": "Discussed how modern GTM teams are replacing traditional SDR roles with automated outbound systems. Shared a framework for building outbound automation that combines intent data, personalized sequences, and AI follow-ups to increase reply rates without increasing headcount.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Hormozi%20Discussed%20how%20modern%20GTM%20teams%20are%20replacing%20traditional%20SDR%20roles%20with%20automate",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM",
+        "outbound automation",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Former CMO @ Amplitude, SurveyMonkey",
+      "post_summary": "Explained how content strategy should be treated as a core GTM motion rather than top-of-funnel marketing. Shared examples of how product-led content and customer education sequences can reduce CAC and improve sales velocity when integrated into revenue operations.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Explained%20how%20content%20strategy%20should%20be%20treated%20as%20a%20core%20GTM%20motion%20rather%20tha",
+      "engagement": {
+        "likes": 6700,
+        "comments": 420
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "GTM",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Rick Nucci",
+      "headline": "Co-founder & CEO @ Guru",
+      "post_summary": "Broke down how sales ops teams are evolving into 'GTM engineering' functions. Highlighted the shift toward building internal tooling, data pipelines, and automation layers that connect marketing, sales, and customer success into a unified revenue system.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Rick%20Nucci%20Broke%20down%20how%20sales%20ops%20teams%20are%20evolving%20into%20%27GTM%20engineering%27%20functions.%20Hi",
+      "engagement": {
+        "likes": 3100,
+        "comments": 285
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales ops",
+        "GTM engineering",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Kasey Jones",
+      "headline": "GTM Engineer | Founder @ RevSure",
+      "post_summary": "Shared a case study on implementing outbound automation for a Series B SaaS company. Covered how they used buying signals, enrichment, and multi-channel sequences to generate 3x more qualified meetings while cutting manual outreach by 60%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kasey%20Jones%20Shared%20a%20case%20study%20on%20implementing%20outbound%20automation%20for%20a%20Series%20B%20SaaS%20comp",
+      "engagement": {
+        "likes": 1850,
+        "comments": 167
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "GTM engineering",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Tomasz Tunguz",
+      "headline": "VC @ Theory Ventures | Former Redpoint",
+      "post_summary": "Analyzed how top-performing companies are restructuring revenue operations around data and automation. Argued that GTM engineering roles are becoming critical for scaling efficiently, especially as teams look to reduce reliance on headcount growth.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Tomasz%20Tunguz%20Analyzed%20how%20top-performing%20companies%20are%20restructuring%20revenue%20operations%20aroun",
+      "engagement": {
+        "likes": 4200,
+        "comments": 310
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "revenue operations",
+        "GTM engineering",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder | Building AI tools in public",
+      "post_summary": "Shared his journey building and launching an AI writing assistant over 90 days as a solo founder. Detailed the product decisions, user feedback loops, and how he reached 1k users without funding or a team.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20his%20journey%20building%20and%20launching%20an%20AI%20writing%20assistant%20over%2090%20days%20a",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "solo founder",
+        "AI tools"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Ex-Marketer turned Software Engineer | Career Pivot Stories",
+      "post_summary": "Documented her transition from marketing to full-stack development over 10 months. Highlighted the specific projects that helped her land her first dev role and the mindset shifts required during the pivot.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Documented%20her%20transition%20from%20marketing%20to%20full-stack%20development%20over%2010%20month",
+      "engagement": {
+        "likes": 980,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "learning to code",
+        "tech transition"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Indie Hacker | Shipping side projects weekly",
+      "post_summary": "Posted about launching his third micro-SaaS in 2024, including the tech stack, pricing experiments, and early revenue numbers. Focused on the lessons from previous failed launches.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Posted%20about%20launching%20his%20third%20micro-SaaS%20in%202024%2C%20including%20the%20tech%20stack%2C%20p",
+      "engagement": {
+        "likes": 670,
+        "comments": 92
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indie hacker",
+        "micro saas",
+        "shipping products"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Founder @ BuildSpace | Helping developers ship faster",
+      "post_summary": "Shared insights from mentoring 200+ solo developers on their first product launches. Covered common failure points and the frameworks she teaches for validating ideas before building.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Shared%20insights%20from%20mentoring%20200%2B%20solo%20developers%20on%20their%20first%20product%20launc",
+      "engagement": {
+        "likes": 1540,
+        "comments": 203
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "mentorship",
+        "product launch",
+        "developer community"
+      ]
+    }
+  ]
+}

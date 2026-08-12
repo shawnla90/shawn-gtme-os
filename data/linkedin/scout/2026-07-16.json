@@ -1,0 +1,260 @@
+{
+  "date": "2026-07-16",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-07-16T13:00:32.689870+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI researcher & creator of Datasette",
+      "post_summary": "Shared insights on building production-grade AI infrastructure, emphasizing the importance of observability, cost management, and fallback mechanisms. Warned against over-engineering agent systems without proper monitoring and evaluation frameworks.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20building%20production-grade%20AI%20infrastructure%2C%20emphasizing%20the%20",
+      "engagement": {
+        "likes": 8700,
+        "comments": 620
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Production AI",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "AI/ML Engineer & Educator",
+      "post_summary": "Explained how automation through AI agents is transforming software development workflows, particularly in code generation, testing, and deployment. Showed practical examples of using agents to reduce manual DevOps tasks by 60%.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explained%20how%20automation%20through%20AI%20agents%20is%20transforming%20software%20development%20",
+      "engagement": {
+        "likes": 6300,
+        "comments": 410
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Automation",
+        "Developer Tools",
+        "AI Agents"
+      ]
+    },
+    {
+      "author": "Elon Musk",
+      "headline": "Founder @ xAI, Tesla, SpaceX",
+      "post_summary": "Announced new developments in xAI's infrastructure for training large-scale AI models, including custom chips and distributed training frameworks. Stressed the need for robust automation in AI research pipelines.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elon%20Musk%20Announced%20new%20developments%20in%20xAI%27s%20infrastructure%20for%20training%20large-scale%20AI%20m",
+      "engagement": {
+        "likes": 45200,
+        "comments": 3100
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "Automation",
+        "xAI"
+      ]
+    },
+    {
+      "author": "Aamir Qutub",
+      "headline": "Founder & CEO at Evalueserve | GTM Strategy & Revenue Operations",
+      "post_summary": "Discussed how GTM engineering is evolving beyond traditional sales ops by integrating AI-driven workflows, data pipelines, and cross-functional alignment between marketing, sales, and customer success. Emphasized building repeatable systems that scale outbound efforts without increasing headcount.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Aamir%20Qutub%20Discussed%20how%20GTM%20engineering%20is%20evolving%20beyond%20traditional%20sales%20ops%20by%20integr",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM",
+        "Revenue Operations",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Elena Verna",
+      "headline": "Growth Advisor | Former CMO at Amplitude & Miro",
+      "post_summary": "Shared insights on content strategy as a core GTM motion, arguing that product-led growth companies need engineered content systems tied directly to pipeline metrics. Highlighted examples of how outbound automation can be fueled by high-intent content rather than generic sequences.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Verna%20Shared%20insights%20on%20content%20strategy%20as%20a%20core%20GTM%20motion%2C%20arguing%20that%20product-l",
+      "engagement": {
+        "likes": 980,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "GTM",
+        "PLG"
+      ]
+    },
+    {
+      "author": "Uzi Shmilovici",
+      "headline": "Co-founder & CEO at Orbs | Ex-Salesforce",
+      "post_summary": "Explored outbound automation frameworks that combine intent data, enrichment, and multi-channel sequences. Stressed the importance of revenue operations owning the tech stack to reduce friction between marketing and sales teams.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Uzi%20Shmilovici%20Explored%20outbound%20automation%20frameworks%20that%20combine%20intent%20data%2C%20enrichment%2C%20an",
+      "engagement": {
+        "likes": 765,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "Sales Ops",
+        "RevOps"
+      ]
+    },
+    {
+      "author": "Daniela Herrera",
+      "headline": "Head of Revenue Operations at Vercel",
+      "post_summary": "Broke down how her team built a GTM engineering function that treats outbound processes like product features, with version control, testing, and metrics. Covered the shift from manual SDR work to automated, measurable revenue systems.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Daniela%20Herrera%20Broke%20down%20how%20her%20team%20built%20a%20GTM%20engineering%20function%20that%20treats%20outbound%20pr",
+      "engagement": {
+        "likes": 890,
+        "comments": 95
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Revenue Operations",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Alex McFarland",
+      "headline": "GTM Engineer at OpenAI | Ex-Notion",
+      "post_summary": "Posted about building internal tools for outbound automation that integrate CRM data with AI scoring models. Explained how content strategy and outbound sequences should be co-designed to improve conversion rates in enterprise sales.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20McFarland%20Posted%20about%20building%20internal%20tools%20for%20outbound%20automation%20that%20integrate%20CRM%20",
+      "engagement": {
+        "likes": 1120,
+        "comments": 78
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "AI Sales"
+      ]
+    },
+    {
+      "author": "Arjun Deshpande",
+      "headline": "Founder & Solo Builder @ SideProjectLab",
+      "post_summary": "Shared the full journey of building and launching a micro-SaaS in 11 days as a solo founder. Detailed the tech stack, pricing experiments, first 50 paying users, and lessons on validating ideas without waiting for perfect code.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Arjun%20Deshpande%20Shared%20the%20full%20journey%20of%20building%20and%20launching%20a%20micro-SaaS%20in%2011%20days%20as%20a%20s",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "indie hacker",
+        "solo founder"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Software Engineer | Career Pivot from Marketing",
+      "post_summary": "Documented her transition from marketing to software engineering after a 9-month self-taught journey. Highlighted key projects that helped her land her first dev role and the mindset shifts required to succeed in tech.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Patel%20Documented%20her%20transition%20from%20marketing%20to%20software%20engineering%20after%20a%209-month",
+      "engagement": {
+        "likes": 980,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "career pivot",
+        "self-taught",
+        "tech transition"
+      ]
+    },
+    {
+      "author": "Liam Torres",
+      "headline": "Indie Hacker & Product Builder",
+      "post_summary": "Posted weekly updates on shipping a new feature every Friday for his open-source tool. Covered user feedback loops, how he prioritizes features with limited time, and the impact on community growth.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Torres%20Posted%20weekly%20updates%20on%20shipping%20a%20new%20feature%20every%20Friday%20for%20his%20open-source",
+      "engagement": {
+        "likes": 670,
+        "comments": 52
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "building in public",
+        "open source",
+        "shipping"
+      ]
+    },
+    {
+      "author": "Sara Kline",
+      "headline": "Founder @ NoCodeFlow | Ex-Product Manager",
+      "post_summary": "Wrote about pivoting from PM to solo founder, building her first product entirely with no-code tools. Shared revenue milestones, customer interviews, and why she chose to stay solo instead of raising funds.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sara%20Kline%20Wrote%20about%20pivoting%20from%20PM%20to%20solo%20founder%2C%20building%20her%20first%20product%20entirel",
+      "engagement": {
+        "likes": 890,
+        "comments": 76
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "no-code",
+        "solo founder",
+        "career pivot"
+      ]
+    },
+    {
+      "author": "Ravi Menon",
+      "headline": "Full-Stack Developer | Building in Public",
+      "post_summary": "Shared a technical deep-dive on how he architected and shipped a real-time collaboration feature for his side project. Included code snippets, performance trade-offs, and user adoption metrics post-launch.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Ravi%20Menon%20Shared%20a%20technical%20deep-dive%20on%20how%20he%20architected%20and%20shipped%20a%20real-time%20colla",
+      "engagement": {
+        "likes": 540,
+        "comments": 41
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "technical",
+        "building in public",
+        "shipping"
+      ]
+    }
+  ]
+}

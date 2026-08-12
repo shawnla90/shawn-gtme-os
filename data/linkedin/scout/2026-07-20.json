@@ -1,0 +1,260 @@
+{
+  "date": "2026-07-20",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-07-20T13:00:50.320109+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents, noting that production-grade agents now require robust orchestration layers, memory management, and evaluation frameworks. Highlighted how LangGraph is being adopted by teams to move from prototypes to reliable systems handling complex multi-step workflows.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%2C%20noting%20that%20production-grade%20agents%20",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Production AI"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Independent AI researcher & creator of Datasette",
+      "post_summary": "Shared insights on building reliable AI tooling infrastructure, emphasizing the importance of observability, logging, and cost tracking when deploying LLM-powered developer tools. Warned against over-reliance on black-box agents without proper monitoring layers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20building%20reliable%20AI%20tooling%20infrastructure%2C%20emphasizing%20the%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "LLM Observability"
+      ]
+    },
+    {
+      "author": "Santiago Valdarrama",
+      "headline": "AI Engineer & Educator",
+      "post_summary": "Explored the shift from simple prompt chaining to autonomous AI agents in developer workflows. Provided concrete examples of agents that can debug code, run tests, and propose PRs, while stressing the need for human-in-the-loop safeguards and clear success metrics.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Santiago%20Valdarrama%20Explored%20the%20shift%20from%20simple%20prompt%20chaining%20to%20autonomous%20AI%20agents%20in%20develo",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Developer Workflow"
+      ]
+    },
+    {
+      "author": "Clemens Tiedemann",
+      "headline": "Head of AI Platform @ Scale AI",
+      "post_summary": "Discussed infrastructure challenges when scaling AI agent fleets, including GPU scheduling, model routing, and latency optimization. Shared internal benchmarks showing how proper infrastructure reduced agent response times by 40% while lowering costs.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Clemens%20Tiedemann%20Discussed%20infrastructure%20challenges%20when%20scaling%20AI%20agent%20fleets%2C%20including%20GPU%20",
+      "engagement": {
+        "likes": 760,
+        "comments": 98
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Scalability",
+        "Agent Performance"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "Head of Safety Systems @ OpenAI",
+      "post_summary": "Posted about safety considerations for autonomous AI agents, particularly around tool use and sandboxing. Emphasized that robust evaluation harnesses and red-teaming are now table stakes for any team deploying agents in production environments.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Lilian%20Weng%20Posted%20about%20safety%20considerations%20for%20autonomous%20AI%20agents%2C%20particularly%20around",
+      "engagement": {
+        "likes": 2100,
+        "comments": 285
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Safety",
+        "AI Agents",
+        "Evaluation"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Discussed building a GTM engineering function that combines product, data, and sales to create repeatable outbound motions. Shared how her team automated lead enrichment and sequencing, cutting manual SDR work by 60% while improving reply rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20building%20a%20GTM%20engineering%20function%20that%20combines%20product%2C%20data%2C%20and%20s",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Explained how his RevOps team integrated content strategy into the sales funnel using automated nurture sequences. Highlighted metrics showing a 3x increase in MQL-to-SQL conversion when content was personalized based on buying signals.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Explained%20how%20his%20RevOps%20team%20integrated%20content%20strategy%20into%20the%20sales%20funnel%20",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder & CEO @ OutboundOS",
+      "post_summary": "Shared lessons from automating outbound at scale, emphasizing the shift from volume-based to intent-based automation. Covered how combining intent data with dynamic content reduced CAC by 35% for their portfolio companies.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Shared%20lessons%20from%20automating%20outbound%20at%20scale%2C%20emphasizing%20the%20shift%20from%20vol",
+      "engagement": {
+        "likes": 1450,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Content Strategy"
+      ]
+    },
+    {
+      "author": "David Kwon",
+      "headline": "VP Sales Operations @ Rippling",
+      "post_summary": "Detailed building a closed-loop revenue system where sales ops owns both process and tooling. Walked through how they unified CRM, enrichment, and content delivery into one workflow, cutting campaign launch time from weeks to days.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kwon%20Detailed%20building%20a%20closed-loop%20revenue%20system%20where%20sales%20ops%20owns%20both%20process",
+      "engagement": {
+        "likes": 760,
+        "comments": 51
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Sales Ops",
+        "Revenue Operations",
+        "GTM Engineering"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder @ ShipFast | Ex-Google",
+      "post_summary": "Shared a 6-week update on building and launching ShipFast, a no-code tool for indie founders. Highlighted hitting $4k MRR with zero paid marketing, focusing on organic Twitter and LinkedIn distribution. Emphasized the importance of shipping weekly iterations based on user feedback.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20a%206-week%20update%20on%20building%20and%20launching%20ShipFast%2C%20a%20no-code%20tool%20for%20in",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "indiehacker",
+        "saas"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Founder & Engineer @ LoopKit | Prev. Marketing",
+      "post_summary": "Detailed her career pivot from marketing to full-time engineering after teaching herself to code over 18 months. Posted about her first solo product launch and the challenges of balancing a full-time job with evening development sprints.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Maya%20Patel%20Detailed%20her%20career%20pivot%20from%20marketing%20to%20full-time%20engineering%20after%20teaching",
+      "engagement": {
+        "likes": 890,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selfthought",
+        "buildinginpublic"
+      ]
+    },
+    {
+      "author": "Jordan Hale",
+      "headline": "Solo Developer | Building in Public",
+      "post_summary": "Posted a transparent breakdown of his side project journey: from idea validation to first paying customers in 11 weeks. Shared revenue numbers, tech stack decisions, and lessons on avoiding over-engineering as a solo builder.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Jordan%20Hale%20Posted%20a%20transparent%20breakdown%20of%20his%20side%20project%20journey%3A%20from%20idea%20validation",
+      "engagement": {
+        "likes": 670,
+        "comments": 92
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solopreneur",
+        "indiehacker",
+        "mvp"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder @ DevFlow | Ex-Product Manager",
+      "post_summary": "Wrote about transitioning from PM to technical founder after realizing she wanted to ship products herself. Discussed learning Rust for performance-critical features and how building in public helped her find early beta users and co-founders.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Wrote%20about%20transitioning%20from%20PM%20to%20technical%20founder%20after%20realizing%20she%20wante",
+      "engagement": {
+        "likes": 520,
+        "comments": 78
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founderjourney",
+        "buildinginpublic",
+        "careerpivot"
+      ]
+    },
+    {
+      "author": "Liam Torres",
+      "headline": "Indie Hacker & Creator",
+      "post_summary": "Shared weekly metrics on his micro-SaaS product including user growth, churn, and feature requests. Focused on the decision to stay solo rather than raise funding, and how he structures his day between coding, customer support, and content creation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Torres%20Shared%20weekly%20metrics%20on%20his%20micro-SaaS%20product%20including%20user%20growth%2C%20churn%2C%20an",
+      "engagement": {
+        "likes": 410,
+        "comments": 65
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "microsaas",
+        "solobuilder",
+        "metrics"
+      ]
+    }
+  ]
+}

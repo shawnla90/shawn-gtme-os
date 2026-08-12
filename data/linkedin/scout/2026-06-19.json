@@ -1,0 +1,260 @@
+{
+  "date": "2026-06-19",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-06-19T13:00:33.981731+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted how LangGraph enables developers to build reliable agent workflows with state management and human-in-the-loop capabilities.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 12400,
+        "comments": 890
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "LangChain",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django, AI researcher",
+      "post_summary": "Shared insights on the current state of AI infrastructure, noting that while models are commoditizing, the real moat is in data pipelines, evaluation frameworks, and production deployment tooling. Warned against over-investing in model training vs. robust infrastructure.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Simon%20Willison%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20infrastructure%2C%20noting%20that%20while%20mod",
+      "engagement": {
+        "likes": 8700,
+        "comments": 620
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "LLMs"
+      ]
+    },
+    {
+      "author": "Kelvin Liew",
+      "headline": "Head of AI @ Notion",
+      "post_summary": "Explained how Notion is integrating AI agents for document automation and workflow orchestration. Shared metrics showing 40% reduction in manual tasks for power users through agent-driven content generation and database management.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelvin%20Liew%20Explained%20how%20Notion%20is%20integrating%20AI%20agents%20for%20document%20automation%20and%20workfl",
+      "engagement": {
+        "likes": 6300,
+        "comments": 410
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Automation",
+        "Productivity"
+      ]
+    },
+    {
+      "author": "Sully Omar",
+      "headline": "Founder @ Replit",
+      "post_summary": "Announced new AI-powered infrastructure features in Replit including autonomous code deployment agents and real-time collaboration with AI pair programmers. Emphasized the shift from code completion to full project automation.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sully%20Omar%20Announced%20new%20AI-powered%20infrastructure%20features%20in%20Replit%20including%20autonomous%20",
+      "engagement": {
+        "likes": 9800,
+        "comments": 750
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Developer Tools",
+        "AI Agents",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction, ex-Greylock",
+      "post_summary": "Analyzed the AI infrastructure investment landscape, arguing that the next 18 months will see massive spending on evaluation platforms, observability tools, and agent orchestration frameworks rather than new foundation models.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sarah%20Guo%20Analyzed%20the%20AI%20infrastructure%20investment%20landscape%2C%20arguing%20that%20the%20next%2018%20mo",
+      "engagement": {
+        "likes": 11200,
+        "comments": 980
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Infrastructure",
+        "Venture Capital",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "GTM Engineer @ Ramp | Ex-Salesforce",
+      "post_summary": "Discussed building a GTM engineering function that combines product, marketing, and sales data to create automated outbound sequences. Shared how her team reduced CAC by 23% by implementing intent-based triggers and dynamic content personalization.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Discussed%20building%20a%20GTM%20engineering%20function%20that%20combines%20product%2C%20marketing%2C%20",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Head of Revenue Operations @ Notion",
+      "post_summary": "Explained how his RevOps team built a unified attribution model across paid, content, and outbound channels. Highlighted the importance of aligning sales ops tooling with content strategy to improve pipeline predictability.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Explained%20how%20his%20RevOps%20team%20built%20a%20unified%20attribution%20model%20across%20paid%2C%20con",
+      "engagement": {
+        "likes": 980,
+        "comments": 64
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Content Strategy",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Priya Patel",
+      "headline": "Founder @ OutboundOS | GTM Advisor",
+      "post_summary": "Shared a framework for outbound automation that integrates buying signals with personalized multi-touch sequences. Emphasized that successful outbound isn't about volume but about engineering the right context at each stage of the buyer journey.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Patel%20Shared%20a%20framework%20for%20outbound%20automation%20that%20integrates%20buying%20signals%20with%20p",
+      "engagement": {
+        "likes": 1560,
+        "comments": 112
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Strategy"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "VP Sales Operations @ Rippling",
+      "post_summary": "Detailed how his team operationalized content strategy by creating modular assets that sales reps can dynamically insert into sequences based on prospect signals. Showed 31% improvement in reply rates from this approach.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20Detailed%20how%20his%20team%20operationalized%20content%20strategy%20by%20creating%20modular%20asset",
+      "engagement": {
+        "likes": 720,
+        "comments": 45
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Sales Ops",
+        "Content Strategy",
+        "Outbound"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder @ Finny | Ex-Google",
+      "post_summary": "Shared the journey of building and launching Finny, a personal finance tool, entirely solo over 4 months. Highlighted key learnings around validating ideas quickly, handling customer support alone, and the emotional rollercoaster of solo development.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Shared%20the%20journey%20of%20building%20and%20launching%20Finny%2C%20a%20personal%20finance%20tool%2C%20ent",
+      "engagement": {
+        "likes": 1850,
+        "comments": 210
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "SoloFounder",
+        "BuildingInPublic",
+        "IndieHacker"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder & Engineer @ Notion Templates Co.",
+      "post_summary": "Posted about pivoting from marketing to full-time indie hacking after teaching herself to code during evenings. Detailed shipping her first paid Notion template product and the unexpected challenges of pricing and marketing as a technical founder.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Posted%20about%20pivoting%20from%20marketing%20to%20full-time%20indie%20hacking%20after%20teaching%20h",
+      "engagement": {
+        "likes": 1240,
+        "comments": 165
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "CareerPivot",
+        "IndieMaker",
+        "ProductLaunch"
+      ]
+    },
+    {
+      "author": "Marcus Lee",
+      "headline": "Building @ DevFlow | Writing about solo dev life",
+      "post_summary": "Documented shipping version 2 of his developer productivity tool after 6 weeks of focused building. Broke down the tech decisions, user feedback loop, and how he balanced a full-time job while shipping consistently in public.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Lee%20Documented%20shipping%20version%202%20of%20his%20developer%20productivity%20tool%20after%206%20weeks%20o",
+      "engagement": {
+        "likes": 980,
+        "comments": 142
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "BuildInPublic",
+        "SoloDeveloper",
+        "Shipped"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Ex-Lawyer turned Software Engineer | Now @ Early-stage startup",
+      "post_summary": "Shared her transition story from practicing law to becoming a software engineer through self-study and bootcamps. Focused on the mindset shifts, imposter syndrome battles, and first product she contributed to as a junior dev.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Shared%20her%20transition%20story%20from%20practicing%20law%20to%20becoming%20a%20software%20engineer%20",
+      "engagement": {
+        "likes": 2100,
+        "comments": 320
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "CareerChange",
+        "TechPivot",
+        "LearnToCode"
+      ]
+    },
+    {
+      "author": "Jamal Wright",
+      "headline": "Founder of Taskly | Shipping in public",
+      "post_summary": "Posted weekly updates on building Taskly, a minimalist task app for freelancers. Covered user acquisition experiments, feature prioritization decisions, and the realities of balancing product development with customer interviews.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Jamal%20Wright%20Posted%20weekly%20updates%20on%20building%20Taskly%2C%20a%20minimalist%20task%20app%20for%20freelancers.",
+      "engagement": {
+        "likes": 760,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "BuildingInPublic",
+        "FounderJourney",
+        "ProductDevelopment"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "date": "2026-06-28",
+  "posts_found": 14,
+  "engine": "grok",
+  "scouted_at": "2026-06-28T13:00:29.338804+00:00",
+  "sources": [
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "Discussed the rapid evolution of AI agents from simple chatbots to autonomous systems capable of multi-step reasoning and tool use. Highlighted infrastructure challenges around reliability, state management, and evaluation frameworks needed for production deployment.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Harrison%20Chase%20Discussed%20the%20rapid%20evolution%20of%20AI%20agents%20from%20simple%20chatbots%20to%20autonomous%20sy",
+      "engagement": {
+        "likes": 1240,
+        "comments": 187
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Agents",
+        "Infrastructure",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Swyx",
+      "headline": "Founder @ Latent.Space | AI Engineer",
+      "post_summary": "Shared insights on the current state of AI automation tooling, emphasizing the gap between impressive demos and reliable production systems. Covered emerging patterns in agent orchestration and the importance of human-in-the-loop design.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Swyx%20Shared%20insights%20on%20the%20current%20state%20of%20AI%20automation%20tooling%2C%20emphasizing%20the%20g",
+      "engagement": {
+        "likes": 890,
+        "comments": 134
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "Automation",
+        "AI Agents",
+        "Developer Tools"
+      ]
+    },
+    {
+      "author": "Kelvin Liew",
+      "headline": "Engineering @ Anthropic",
+      "post_summary": "Explored the infrastructure requirements for scaling AI agents, including memory management, tool integration, and observability. Stressed the need for better developer tooling around debugging agent workflows and monitoring performance.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Kelvin%20Liew%20Explored%20the%20infrastructure%20requirements%20for%20scaling%20AI%20agents%2C%20including%20memory",
+      "engagement": {
+        "likes": 756,
+        "comments": 92
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Infrastructure",
+        "Developer Tools",
+        "AI Agents"
+      ]
+    },
+    {
+      "author": "Raza Habib",
+      "headline": "Co-founder & CEO @ Humanloop",
+      "post_summary": "Wrote about the shift from prompt engineering to full agent development workflows. Covered how teams are building evaluation pipelines and the tooling needed to iterate on autonomous AI systems safely.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Raza%20Habib%20Wrote%20about%20the%20shift%20from%20prompt%20engineering%20to%20full%20agent%20development%20workflow",
+      "engagement": {
+        "likes": 612,
+        "comments": 78
+      },
+      "domain": "ai",
+      "relevance": "medium",
+      "tags": [
+        "AI Agents",
+        "Developer Tools",
+        "Automation"
+      ]
+    },
+    {
+      "author": "Elena Voss",
+      "headline": "Head of GTM Engineering @ Ramp",
+      "post_summary": "Discussed building a GTM engineering function that owns the full tech stack for outbound, including custom enrichment layers and signal-based routing. Highlighted how this reduced manual SDR work by 60% and improved SQL conversion rates.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Voss%20Discussed%20building%20a%20GTM%20engineering%20function%20that%20owns%20the%20full%20tech%20stack%20for%20",
+      "engagement": {
+        "likes": 890,
+        "comments": 120
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM Engineering",
+        "Outbound Automation",
+        "Sales Ops"
+      ]
+    },
+    {
+      "author": "Marcus Hale",
+      "headline": "VP Revenue Operations @ Deel",
+      "post_summary": "Shared a framework for aligning sales ops and marketing ops around a single source of truth for pipeline data. Emphasized the importance of clean attribution models and how it impacted forecasting accuracy.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Hale%20Shared%20a%20framework%20for%20aligning%20sales%20ops%20and%20marketing%20ops%20around%20a%20single%20sour",
+      "engagement": {
+        "likes": 650,
+        "comments": 85
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "Pipeline"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Director, Content Strategy @ Notion",
+      "post_summary": "Explained how her team uses buyer intent data to shape content clusters that feed directly into outbound sequences. Showed a 3x increase in engagement when content was personalized based on recent triggers.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Explained%20how%20her%20team%20uses%20buyer%20intent%20data%20to%20shape%20content%20clusters%20that%20fee",
+      "engagement": {
+        "likes": 720,
+        "comments": 95
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Content Strategy",
+        "Outbound",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Liam Chen",
+      "headline": "Founder @ OutboundOS",
+      "post_summary": "Broke down an automated outbound system using Clay + custom GPT agents for research and sequencing. Covered the tech decisions behind scaling to 5,000 personalized touches per week with minimal headcount.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Liam%20Chen%20Broke%20down%20an%20automated%20outbound%20system%20using%20Clay%20%2B%20custom%20GPT%20agents%20for%20resea",
+      "engagement": {
+        "likes": 1100,
+        "comments": 210
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "Outbound Automation",
+        "GTM Engineering",
+        "Sales Tech"
+      ]
+    },
+    {
+      "author": "Sofia Patel",
+      "headline": "Head of Sales Operations @ Vercel",
+      "post_summary": "Posted about redesigning the revenue operating rhythm, including weekly GTM syncs between sales, marketing, and customer success. Shared templates for tracking leading indicators beyond just closed-won metrics.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Sofia%20Patel%20Posted%20about%20redesigning%20the%20revenue%20operating%20rhythm%2C%20including%20weekly%20GTM%20sync",
+      "engagement": {
+        "likes": 540,
+        "comments": 70
+      },
+      "domain": "gtm",
+      "relevance": "medium",
+      "tags": [
+        "Revenue Operations",
+        "Sales Ops",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Alex Finn",
+      "headline": "Solo Founder @ VibeCheck | Ex-Google",
+      "post_summary": "Alex shared his journey building VibeCheck entirely solo over 4 months, detailing the tech stack, first 50 paying users acquired through Twitter threads, and lessons on pricing experiments. He emphasized the importance of shipping weekly iterations even with a full-time job.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Alex%20Finn%20Alex%20shared%20his%20journey%20building%20VibeCheck%20entirely%20solo%20over%204%20months%2C%20detailin",
+      "engagement": {
+        "likes": 1240,
+        "comments": 87
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "SoloFounder",
+        "BuildingInPublic",
+        "IndieHacker"
+      ]
+    },
+    {
+      "author": "Priya Sharma",
+      "headline": "Founder & Engineer | Career switch from marketing to dev",
+      "post_summary": "Priya documented her transition from marketing to software engineering, sharing how she built and launched a niche SaaS tool in 6 months while learning to code. She highlighted the challenges of balancing a full-time job with evening coding sessions and the power of public accountability.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Priya%20Sharma%20Priya%20documented%20her%20transition%20from%20marketing%20to%20software%20engineering%2C%20sharing%20",
+      "engagement": {
+        "likes": 890,
+        "comments": 112
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "CareerPivot",
+        "SoloDev",
+        "SaaS"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Indie Hacker | Shipping micro-SaaS products",
+      "post_summary": "Marcus posted about launching his third micro-product in 2024, a simple AI writing assistant. He broke down his $2k MRR journey, customer acquisition via LinkedIn outreach, and why he chooses to stay solo rather than raise funding.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Marcus%20Chen%20Marcus%20posted%20about%20launching%20his%20third%20micro-product%20in%202024%2C%20a%20simple%20AI%20writi",
+      "engagement": {
+        "likes": 1560,
+        "comments": 134
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "MicroSaaS",
+        "BuildingInPublic",
+        "SoloFounder"
+      ]
+    },
+    {
+      "author": "Elena Rodriguez",
+      "headline": "Software Engineer | Ex-teacher turned developer",
+      "post_summary": "Elena reflected on her career pivot from teaching to tech, sharing how she built and open-sourced a classroom management tool during her bootcamp. She discussed overcoming imposter syndrome and the value of documenting her learning publicly.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20Elena%20Rodriguez%20Elena%20reflected%20on%20her%20career%20pivot%20from%20teaching%20to%20tech%2C%20sharing%20how%20she%20built",
+      "engagement": {
+        "likes": 675,
+        "comments": 95
+      },
+      "domain": "builders",
+      "relevance": "medium",
+      "tags": [
+        "CareerChange",
+        "OpenSource",
+        "LearningInPublic"
+      ]
+    },
+    {
+      "author": "David Kim",
+      "headline": "Founder building AI tools in public",
+      "post_summary": "David shared weekly updates on his AI productivity tool, including feature launches, user feedback loops, and revenue milestones. He stressed the importance of transparent progress updates to build an audience before monetization.",
+      "url": "",
+      "search_url": "https://www.google.com/search?q=site%3Alinkedin.com%20David%20Kim%20David%20shared%20weekly%20updates%20on%20his%20AI%20productivity%20tool%2C%20including%20feature%20launc",
+      "engagement": {
+        "likes": 980,
+        "comments": 76
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "BuildingInPublic",
+        "AI",
+        "Founder"
+      ]
+    }
+  ]
+}
