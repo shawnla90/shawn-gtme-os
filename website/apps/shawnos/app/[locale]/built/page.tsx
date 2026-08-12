@@ -254,7 +254,7 @@ export default async function BuiltPage({ params }: Props) {
               ★ {flagship?.name ?? 'gtm-coding-agent'} on GitHub
             </a>
             <a className="built-btn built-btn--ghost" href="/knowledge">Open the knowledge hub →</a>
-            <a className="built-btn built-btn--ghost" href="https://discord.gg/6eKe49nth" target="_blank" rel="noopener noreferrer">Build alongside us →</a>
+            <a className="built-btn built-btn--ghost" href="https://clearbox.beehiiv.com/" target="_blank" rel="noopener noreferrer">Build alongside us →</a>
           </div>
         </section>
       </div>

@@ -194,9 +194,9 @@ function buildTabs(): KnowledgeTabSummary[] {
       label: 'Contacts',
       lens: 'gtm',
       description: 'The network surface lands here. Builders, operators, collaborators.',
-      samples: [{ title: 'Being curated. Join the Discord to get on it.' }],
-      fullHref: 'https://discord.gg/6eKe49nth',
-      fullLabel: 'Join the Discord',
+      samples: [{ title: 'Being curated. Connect on LinkedIn to get on it.' }],
+      fullHref: 'https://www.linkedin.com/in/shawntenam',
+      fullLabel: 'Connect on LinkedIn',
     },
   ]
 }

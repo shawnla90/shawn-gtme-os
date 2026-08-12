@@ -391,11 +391,12 @@ export default async function ApolloPage({ params }: Props) {
         </p>
         <p style={body}>
           Verified emails only, no catch-all domains. That standard, plus a
-          LinkedIn layer via HeyReach, turned into 223 accepted connections
-          with the exact buyers the campaign targets.
+          self-hosted LinkedIn layer that puts a personal note on every touch,
+          turned into 272 accepted connections with the exact buyers the
+          campaign targets.
         </p>
         <p style={{ ...body, margin: 0 }}>
-          The expansion play takes those 223 companies where we have a
+          The expansion play takes those 272 companies where we have a
           relationship and finds the full buying committee at each. That is
           what the demo shows.
         </p>
