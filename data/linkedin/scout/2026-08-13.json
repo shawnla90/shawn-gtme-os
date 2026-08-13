@@ -1,0 +1,232 @@
+{
+  "date": "2026-08-13",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-13T13:01:25.685029+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "Founder @ Latent Space | AI Engineer",
+      "post_summary": "Claude's new token-efficient tool use dropped yesterday and nobody's talking about how it changes the cost math for agentic loops. I ran a benchmark: 3x fewer tokens on multi-step tool calls. If you're billing by input tokens, your agent costs just got restructured overnight.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3200,
+        "comments": 187
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "claude",
+        "ai-agents",
+        "cost-optimization",
+        "llm"
+      ]
+    },
+    {
+      "author": "Lenny Rachitsky",
+      "headline": "Author of Lenny's Newsletter | Product & Growth",
+      "post_summary": "I interviewed 40 PMs who've shipped AI features in the last 6 months. The ones who flopped shared one pattern: they let the model decide UX. The ones who won kept the model in the engine room and put humans at the wheel. AI autonomy is a dial, not a switch.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8900,
+        "comments": 412
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "product-management",
+        "ai-ux",
+        "ai-agents",
+        "product"
+      ]
+    },
+    {
+      "author": "Alessio Fanelli",
+      "headline": "Partner @ Decibel Ventures | Co-host Latent Space Podcast",
+      "post_summary": "The new wave of AI infra companies isn't competing on model quality anymore \u2014 it's competing on orchestration latency and observability. We just led a seed into a team building structured trace tooling for multi-agent systems. Debugging agents is the new DevOps.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2100,
+        "comments": 94
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "observability",
+        "multi-agent",
+        "venture"
+      ]
+    },
+    {
+      "author": "Aman Khan",
+      "headline": "Staff Eng @ [stealth] | prev Stripe | building in AI infra",
+      "post_summary": "Hot take: most 'AI automation' demos you see on LinkedIn are scripted. Real production agents fail 30-40% of the time on edge cases nobody thought to test. The companies winning right now aren't the ones with the best models \u2014 they're the ones with the best evals and the tightest fallback loops.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5600,
+        "comments": 331
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "evals",
+        "production-ai",
+        "developer-tools"
+      ]
+    },
+    {
+      "author": "Kyle Poyar",
+      "headline": "Operating Partner at OpenView | Growth & PLG Advisor",
+      "post_summary": "Most outbound teams are optimizing the wrong thing. They're measuring email open rates while their best-fit accounts are making buying decisions in Slack communities and Reddit threads they'll never see. The shift from channel-based outbound to signal-based outbound is real \u2014 companies doing it right are booking 3x more meetings with half the headcount. Here's what the modern stack actually looks like.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 214
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "signal-based-outbound",
+        "gtm-engineering",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Liam Moroney",
+      "headline": "Head of Marketing @ Teal | B2B Demand Gen & Revenue Ops",
+      "post_summary": "Unpopular opinion: most 'GTM engineers' are just RevOps people who learned to use Clay. Real GTM engineering means owning the system end-to-end \u2014 from ICP signal ingestion through enrichment, scoring, routing, and sequence personalization \u2014 with code, not just no-code workflows. The bar is rising fast and most teams are 12 months behind where they need to be.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2103,
+        "comments": 389
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "revops",
+        "outbound-automation"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "Growth Advisor | Former VP Marketing @ Cognism, Nextiva, Sales Hacker",
+      "post_summary": "Content strategy in 2026 looks nothing like 2023. Dark social is the dominant distribution channel \u2014 your buyers are sharing your content in DMs, Slack groups, and WhatsApp threads you can't attribute. If your entire content budget is chasing tracked clicks and UTM parameters, you're optimizing a system that's already dead. The founders winning are publishing consistently on LinkedIn and letting word-of-mouth compound.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3412,
+        "comments": 471
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "dark-social",
+        "b2b-marketing"
+      ]
+    },
+    {
+      "author": "Jen Allen-Knuth",
+      "headline": "Community Growth @ Lavender | Challenger Sale Practitioner | Ex-Challenger Inc.",
+      "post_summary": "I reviewed 200 cold emails sent by AI agents last month. 94% of them opened with a compliment about the company's 'impressive growth' or referenced a LinkedIn post from 6 months ago. Buyers are already pattern-matching AI outreach and deleting it instantly. The reps winning aren't sending smarter AI emails \u2014 they're sending fewer, more specific ones that show they actually read the prospect's last earnings call or product launch.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4891,
+        "comments": 632
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound-automation",
+        "ai-sales",
+        "cold-email"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Built and sold my first SaaS in 14 months | Now building #2",
+      "post_summary": "Priya shares a raw breakdown of her first $10k MRR month \u2014 including the three features she almost built that would have killed the product. She leads with the specific Stripe screenshot and walks through the decision to ignore enterprise requests and stay focused on the indie hacker segment.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3800,
+        "comments": 214
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "saas",
+        "indiehacker"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "ex-Finance \u2192 Software Engineer | 18 months of self-teaching | Now at Stripe",
+      "post_summary": "Marcus posts a before/after of his life two years apart \u2014 Excel spreadsheets vs. a pull request merged into Stripe's codebase. He breaks down the exact curriculum he followed, which resources he wasted money on, and what finally clicked. Ends with a call to DM him if you're considering the same pivot.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 12400,
+        "comments": 891
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "techcareer",
+        "codingjourney"
+      ]
+    },
+    {
+      "author": "Lena Hoffman",
+      "headline": "Building Clio \u2014 AI research assistant for solo consultants | Day 1 in public",
+      "post_summary": "Lena announces she's shipping a full SaaS in 30 days using Claude's API and Next.js, with daily updates posted publicly. She shares her Notion roadmap, her first 47 waitlist signups from a single tweet, and the moment she almost gave up on day 3. Closes with her week-one revenue: $340.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2100,
+        "comments": 178
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "AI",
+        "solodev",
+        "30daychallenge"
+      ]
+    },
+    {
+      "author": "Dev Patel",
+      "headline": "Founder @ Stackform | Vibe-coded my way to $50k ARR | Claude Code addict",
+      "post_summary": "Dev argues that the skill gap between a great engineer and a great founder has never been smaller \u2014 he built his entire backend using Claude Code without writing a single line of SQL from scratch. He breaks down exactly which parts AI got wrong, where he had to intervene, and why the bottleneck is now distribution, not engineering.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5700,
+        "comments": 342
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "vibecoding",
+        "AItools",
+        "founder",
+        "ClaudeCode"
+      ]
+    }
+  ]
+}
