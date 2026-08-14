@@ -1,0 +1,233 @@
+{
+  "date": "2026-08-14",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-14T13:01:24.100896+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer @ Smol AI | Writing about the AI Engineer landscape",
+      "post_summary": "Posted a thread breaking down why most 'AI agent' demos fail in production: they confuse planning with execution. Argues that the real bottleneck isn't LLM capability but state management and error recovery. Includes a diagram of the agent loop most teams skip.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 218
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "production-ai",
+        "llm"
+      ]
+    },
+    {
+      "author": "Gergely Orosz",
+      "headline": "Author of The Pragmatic Engineer | Ex-Uber, Skype",
+      "post_summary": "Shared that three senior engineers at a mid-size company just quit after their company mandated AI coding tools without a rollout plan. Says the real issue isn't the tools \u2014 it's that no one asked the engineers what they actually needed. Getting massive traction in the dev tools discourse.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 541
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "ai-adoption",
+        "engineering-culture"
+      ]
+    },
+    {
+      "author": "Sarah Chen",
+      "headline": "Head of AI Infrastructure @ Scale AI | Former Google Brain",
+      "post_summary": "Called out the hidden cost no one talks about in agentic AI: context window bloat at scale. A single 100-step agent run can cost 10x what teams budget for. Dropped a framework for token budgeting in multi-agent pipelines and it's being reshared across infra teams.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 183
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "llm-costs",
+        "multi-agent"
+      ]
+    },
+    {
+      "author": "Lenny Rachitsky",
+      "headline": "Author of Lenny's Newsletter | Product & growth advisor",
+      "post_summary": "Posted a screenshot: a solo founder closed $40K MRR in 90 days building an automation tool with Claude Code and zero full-time engineers. Asked his audience 'is this the new venture-backed startup?' \u2014 comments are split between inspiration and concern about what this means for hiring.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11200,
+        "comments": 874
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "claude-code",
+        "solofounder",
+        "ai-agents"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | GTM Advisor | Helping revenue teams hit number",
+      "post_summary": "AI SDRs aren't replacing humans - they're exposing bad ICP definitions. If your automated outbound is getting 0.3% reply rates, the problem isn't the tool. It's that you never knew exactly who you were selling to. Fix the signal layer first, then automate.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 203
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "AI SDR",
+        "outbound",
+        "ICP",
+        "gtm engineering"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "VP Marketing | B2B demand gen | ex-Cognism, Nextiva, Sales Hacker",
+      "post_summary": "Hot take: most RevOps teams are building dashboards nobody uses. I audited 6 companies last quarter. The orgs printing pipeline had one thing in common - they stopped measuring activity and started measuring buying signal velocity. Reps know what's hot before the CRM does.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2310,
+        "comments": 178
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "pipeline",
+        "buying signals",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Tito Bohrt",
+      "headline": "CEO at AltiSales | Outbound Sales Expert | I build elite SDR teams",
+      "post_summary": "I ran the same sequence two ways: one with generic personalization tokens, one where we pulled the contact's last 3 LinkedIn posts and referenced something real. Reply rate went from 4% to 11%. The playbook hasn't changed - the bar for what counts as 'personalized' has.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3102,
+        "comments": 412
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "personalization",
+        "sequences",
+        "SDR"
+      ]
+    },
+    {
+      "author": "Liam Moroney",
+      "headline": "Co-founder at Tack | B2B content that drives pipeline | ex-Pavilion",
+      "post_summary": "Content strategy for B2B in 2026: stop writing for search engines, start writing for the 3% who are actively buying right now. Your best-performing asset shouldn't be a blog post - it should be the specific opinion your ICP is arguing about on Slack right now. Find that conversation. Own it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1654,
+        "comments": 289
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "B2B marketing",
+        "demand gen",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Shipped 3 products in 12 months | Ex-Google PM",
+      "post_summary": "Priya shares a screenshot of her SaaS hitting $10k MRR with zero paid ads, breaking down exactly which 3 distribution channels drove it. She talks about quitting her PM job 14 months ago with $40k in savings and the moment she realized building in public was her actual growth strategy, not a side hobby.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "saas",
+        "indiehacker"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Software engineer \u2192 AI product builder | Shipped NeuralDraft last week",
+      "post_summary": "Marcus posts a raw, no-filter breakdown of shipping his first AI tool with Claude as the backbone \u2014 what worked, what broke in production on day one, and the support ticket that made him completely rethink his onboarding. Includes the actual error log screenshot. Ends with 'I'm not a startup. I'm one person. And that's the point.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2800,
+        "comments": 189
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AI",
+        "buildinpublic",
+        "solodev",
+        "shipping"
+      ]
+    },
+    {
+      "author": "Leila Huang",
+      "headline": "Career pivoter | Finance \u2192 Full-stack dev | 18 months, no bootcamp",
+      "post_summary": "Leila shares the exact learning path she used to go from Excel jockey to landing a $115k frontend role \u2014 no bootcamp, no CS degree, just a specific sequence of 6 free resources and 4 paid ones. She's direct about what she wasted time on and what actually mattered. The post includes a downloadable Notion roadmap that gets shared 800+ times.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9100,
+        "comments": 703
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selflearning",
+        "webdev",
+        "techjobs"
+      ]
+    },
+    {
+      "author": "Dev Krishnamurthy",
+      "headline": "Building Stackform in public | Developer tools | Prev: Staff Eng @ Stripe",
+      "post_summary": "Dev posts his month-3 transparency report: $0 to $3,200 MRR, 47 churned users, and one enterprise deal that almost closed but didn't. He names the exact moment he almost quit and what changed his mind. The post is structured as a P&L-style breakdown \u2014 revenue, churn, runway, and what he's building next \u2014 with zero spin.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3600,
+        "comments": 241
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "devtools",
+        "startuplife",
+        "transparency"
+      ]
+    }
+  ]
+}
