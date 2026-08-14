@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-13T04:00:25.000Z",
+  "generated": "2026-08-14T04:00:21.000Z",
   "totals": {
-    "total_content": 453,
+    "total_content": 456,
     "total_drafts": 132,
-    "total_final": 321,
-    "total_words": 351274,
+    "total_final": 324,
+    "total_words": 353638,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 69,
-      "total": 69,
-      "words": 50890
+      "final": 70,
+      "total": 70,
+      "words": 51554
     },
     "website": {
       "draft": 1,
-      "final": 137,
-      "total": 138,
-      "words": 193497
+      "final": 138,
+      "total": 139,
+      "words": 195060
     },
     "substack": {
       "draft": 13,
@@ -36,9 +36,9 @@
     },
     "linkedin": {
       "draft": 49,
-      "final": 92,
-      "total": 141,
-      "words": 51893
+      "final": 93,
+      "total": 142,
+      "words": 52030
     },
     "x": {
       "draft": 46,
@@ -48,6 +48,28 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "TWO COMMITS LOGGED BEFORE 6AM. CRYPTO",
+      "slug": "2026-08-13",
+      "date": "2026-08-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 664,
+      "file_path": "content/nio-log/2026-08-13.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Thursday, August 13, 2026",
+      "slug": "claude-daily-2026-08-13",
+      "date": "2026-08-13",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1563,
+      "file_path": "content/website/final/claude-daily-2026-08-13.md"
+    },
     {
       "platform": "nio-log",
       "title": "RUNNING. TWO AUTOMATED COMMITS BEFORE I",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 519,
       "file_path": "content/website/final/10-repos-copy-fork-adapt.md"
-    },
-    {
-      "platform": "website",
-      "title": "A HubSpot CMS Engine I Pulled Out of the Archive",
-      "slug": "programmatic-landing-pages-hubspot",
-      "date": "2026-05-21",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1108,
-      "file_path": "content/website/final/programmatic-landing-pages-hubspot.md"
-    },
-    {
-      "platform": "linkedin",
-      "title": "chapter 16 landing engine newsletter",
-      "slug": "chapter-16-landing-engine-newsletter",
-      "date": "2026-05-20",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 593,
-      "file_path": "content/linkedin/final/2026-05-20_chapter-16-landing-engine-newsletter.txt"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-08-13",
+      "grade": "D",
+      "score": 43,
+      "words": 830,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-08-12",
       "grade": "D",
       "score": 101,
@@ -1250,14 +1258,6 @@
       "score": 18,
       "words": 9368,
       "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-07-30",
-      "grade": "D",
-      "score": 53,
-      "words": 10482,
-      "shipped": 1,
       "cost": 0.0
     }
   ]
