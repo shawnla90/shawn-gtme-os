@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-14T04:00:21.000Z",
+  "generated": "2026-08-15T04:00:26.000Z",
   "totals": {
-    "total_content": 456,
+    "total_content": 459,
     "total_drafts": 132,
-    "total_final": 324,
-    "total_words": 353638,
+    "total_final": 327,
+    "total_words": 355885,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 70,
-      "total": 70,
-      "words": 51554
+      "final": 71,
+      "total": 71,
+      "words": 52128
     },
     "website": {
       "draft": 1,
-      "final": 138,
-      "total": 139,
-      "words": 195060
+      "final": 139,
+      "total": 140,
+      "words": 196611
     },
     "substack": {
       "draft": 13,
@@ -36,9 +36,9 @@
     },
     "linkedin": {
       "draft": 49,
-      "final": 93,
-      "total": 142,
-      "words": 52030
+      "final": 94,
+      "total": 143,
+      "words": 52152
     },
     "x": {
       "draft": 46,
@@ -48,6 +48,28 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "QUIET. TWO AUTOMATED COMMITS BEFORE DAWN.",
+      "slug": "2026-08-14",
+      "date": "2026-08-14",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 574,
+      "file_path": "content/nio-log/2026-08-14.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Friday, August 14, 2026",
+      "slug": "claude-daily-2026-08-14",
+      "date": "2026-08-14",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1551,
+      "file_path": "content/website/final/claude-daily-2026-08-14.md"
+    },
     {
       "platform": "nio-log",
       "title": "TWO COMMITS LOGGED BEFORE 6AM. CRYPTO",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 1230,
       "file_path": "content/website/final/gtm-coding-agent-70-stars.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "DAILY LOG",
-      "slug": "2026-06-10",
-      "date": "2026-06-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 10,
-      "file_path": "content/nio-log/2026-06-10.md"
-    },
-    {
-      "platform": "website",
-      "title": "10 Repos You Can Copy, Fork, and Adapt Right Now",
-      "slug": "10-repos-copy-fork-adapt",
-      "date": "2026-06-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 519,
-      "file_path": "content/website/final/10-repos-copy-fork-adapt.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-08-14",
+      "grade": "D",
+      "score": 43,
+      "words": 815,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-08-13",
       "grade": "D",
       "score": 43,
@@ -1249,14 +1257,6 @@
       "grade": "D",
       "score": 18,
       "words": 9400,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-07-31",
-      "grade": "D",
-      "score": 18,
-      "words": 9368,
       "shipped": 0,
       "cost": 0.0
     }

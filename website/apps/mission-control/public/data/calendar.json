@@ -1,6 +1,72 @@
 {
-  "generated": "2026-08-14T04:01:23.529Z",
+  "generated": "2026-08-15T04:01:30.173Z",
   "events": [
+    {
+      "id": "commit-218a4a2",
+      "title": "chore(crypto): evening signal update 2026-08-14",
+      "type": "system",
+      "datetime": "2026-08-14T17:30:23-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-08-14",
+      "metadata": {
+        "commitHash": "218a4a2"
+      }
+    },
+    {
+      "id": "commit-e7205cc",
+      "title": "feat: daily LinkedIn posts 2026-08-14",
+      "type": "milestone",
+      "datetime": "2026-08-14T09:10:21-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-08-14",
+      "metadata": {
+        "commitHash": "e7205cc"
+      }
+    },
+    {
+      "id": "commit-887d554",
+      "title": "feat: nio.log 2026-08-14 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-08-14T08:00:51-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-08-14 — automated daily post",
+      "metadata": {
+        "commitHash": "887d554"
+      }
+    },
+    {
+      "id": "commit-7428f04",
+      "title": "chore(crypto): morning signal update 2026-08-14",
+      "type": "system",
+      "datetime": "2026-08-14T07:00:23-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-08-14",
+      "metadata": {
+        "commitHash": "7428f04"
+      }
+    },
+    {
+      "id": "commit-5e3a36c",
+      "title": "feat: claude daily digest 2026-08-14",
+      "type": "milestone",
+      "datetime": "2026-08-14T00:11:29-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-08-14",
+      "metadata": {
+        "commitHash": "5e3a36c"
+      }
+    },
+    {
+      "id": "commit-6f288d8",
+      "title": "chore: daily tracker scan 2026-08-13",
+      "type": "system",
+      "datetime": "2026-08-14T00:01:24-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-08-13",
+      "metadata": {
+        "commitHash": "6f288d8"
+      }
+    },
     {
       "id": "commit-2de57be",
       "title": "chore(crypto): evening signal update 2026-08-13",
@@ -66,112 +132,13 @@
       "metadata": {
         "commitHash": "cc76c1f"
       }
-    },
-    {
-      "id": "commit-5abc9fa",
-      "title": "chore(crypto): evening signal update 2026-08-12",
-      "type": "system",
-      "datetime": "2026-08-12T17:31:00-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-08-12",
-      "metadata": {
-        "commitHash": "5abc9fa"
-      }
-    },
-    {
-      "id": "commit-88f18c6",
-      "title": "fix: drop dead Discord invite from site-wide footer",
-      "type": "deployment",
-      "datetime": "2026-08-12T15:58:40-04:00",
-      "status": "completed",
-      "description": "fix: drop dead Discord invite from site-wide footer",
-      "metadata": {
-        "commitHash": "88f18c6"
-      }
-    },
-    {
-      "id": "commit-7344640",
-      "title": "fix: apollo page truth pass — 272 connections, self-hosted L",
-      "type": "deployment",
-      "datetime": "2026-08-12T15:54:46-04:00",
-      "status": "completed",
-      "description": "fix: apollo page truth pass — 272 connections, self-hosted LinkedIn layer, replace dead Discord invite",
-      "metadata": {
-        "commitHash": "7344640"
-      }
-    },
-    {
-      "id": "commit-0c4f470",
-      "title": "feat: apollo directory links the published attendee SOP",
-      "type": "milestone",
-      "datetime": "2026-08-12T14:56:36-04:00",
-      "status": "completed",
-      "description": "feat: apollo directory links the published attendee SOP",
-      "metadata": {
-        "commitHash": "0c4f470"
-      }
-    },
-    {
-      "id": "commit-50df46c",
-      "title": "feat: apollo page becomes webinar resource directory",
-      "type": "milestone",
-      "datetime": "2026-08-12T14:47:17-04:00",
-      "status": "completed",
-      "description": "feat: apollo page becomes webinar resource directory",
-      "metadata": {
-        "commitHash": "50df46c"
-      }
-    },
-    {
-      "id": "commit-066efd6",
-      "title": "feat: daily LinkedIn posts 2026-08-12",
-      "type": "milestone",
-      "datetime": "2026-08-12T09:12:25-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-08-12",
-      "metadata": {
-        "commitHash": "066efd6"
-      }
-    },
-    {
-      "id": "commit-2cd4b8f",
-      "title": "feat: nio.log 2026-08-12 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-08-12T08:00:54-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-08-12 — automated daily post",
-      "metadata": {
-        "commitHash": "2cd4b8f"
-      }
-    },
-    {
-      "id": "commit-c0829e0",
-      "title": "chore(crypto): morning signal update 2026-08-12",
-      "type": "system",
-      "datetime": "2026-08-12T07:00:24-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-08-12",
-      "metadata": {
-        "commitHash": "c0829e0"
-      }
-    },
-    {
-      "id": "commit-efce65a",
-      "title": "feat: claude daily digest 2026-08-12",
-      "type": "milestone",
-      "datetime": "2026-08-12T00:11:22-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-08-12",
-      "metadata": {
-        "commitHash": "efce65a"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 15,
-    "completedEvents": 15,
+    "totalEvents": 12,
+    "completedEvents": 12,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 15,
+    "deploymentsThisWeek": 12,
     "upcomingCronJobs": 0
   }
 }
