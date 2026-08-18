@@ -1,0 +1,233 @@
+{
+  "date": "2026-08-17",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-17T13:01:19.291700+00:00",
+  "sources": [
+    {
+      "author": "Swyx",
+      "headline": "AI Engineer | Founder @ Latent Space | Building the AI Engineer community",
+      "post_summary": "Dropped a detailed breakdown of how Claude's extended thinking mode is changing the economics of agentic pipelines. When you can bill for reasoning tokens separately, the cost-per-correct-output math inverts \u2014 suddenly long-horizon tasks that felt too expensive become the cheapest path. This is the sleeper shift nobody's pricing into their infra decisions.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 218
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "llm-infra",
+        "cost-optimization"
+      ]
+    },
+    {
+      "author": "Lenny Bogdonoff",
+      "headline": "Staff Engineer @ Anthropic | Previously: OpenAI | Building tools for AI builders",
+      "post_summary": "We quietly shipped multi-agent handoff with full memory carry-over last week and the internal adoption curve is vertical. The pattern that works: treat context as a first-class artifact, not an afterthought. Every agent hand-off is a structured document, not a summary. Teams that got this right cut debugging time by 60%.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 342
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "multi-agent",
+        "context-engineering",
+        "ai-engineering"
+      ]
+    },
+    {
+      "author": "Alessio Fanelli",
+      "headline": "Partner @ Decibel Ventures | Co-host @ Latent Space Podcast | Investing in AI-native dev tools",
+      "post_summary": "Five AI dev tool startups I talked to this week all said the same thing: their biggest competitor is Claude Code, not each other. This is what platform risk looks like in real time \u2014 not a slow squeeze but a fast collapse of the mid-market. The winners will be the ones who build on top of the wave, not beside it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4700,
+        "comments": 289
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "ai-infra",
+        "venture"
+      ]
+    },
+    {
+      "author": "Hamel Husain",
+      "headline": "Independent AI Consultant | Ex-GitHub, Hugging Face | Helping companies actually ship AI products",
+      "post_summary": "Controversial take: most 'AI agent' demos are just API chaining with a for-loop. Real agents need three things you almost never see in a demo \u2014 durable state, graceful degradation, and an eject hatch for humans. Until eval frameworks catch up to these requirements, we're measuring the wrong things and shipping the wrong things.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6200,
+        "comments": 471
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "evals",
+        "ai-engineering"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Strategy",
+      "post_summary": "We cut our SDR team by 40% and grew pipeline by 60%. The secret: we stopped using reps for research and qualification and built an AI-first outbound engine instead. Here's the exact stack and workflow we shipped in 6 weeks.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "ai-sdrs",
+        "gtm-engineering",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "Tamara Gielen",
+      "headline": "VP Revenue Operations @ Series B SaaS | RevOps Systems | GTM Alignment",
+      "post_summary": "Your CRM is lying to you. After auditing 12 RevOps orgs this year, the #1 problem isn't bad data \u2014 it's that no one owns the definition of 'qualified.' Every team has a different answer. Here's the single-source-of-truth doc we use to fix it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 198
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "crm",
+        "pipeline-quality",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Jason Vargas",
+      "headline": "Head of Growth Engineering | Clay, Apollo, AI Outbound | B2B GTM",
+      "post_summary": "I built a Clay \u2192 Apollo \u2192 Smartlead waterfall that auto-researches 500 accounts a day, writes personalized first lines from their job posts, and books 3x more meetings than our old spray-and-pray sequences. Full breakdown with the exact tables and prompts in the comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3411,
+        "comments": 487
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "clay",
+        "apollo",
+        "outbound-automation",
+        "gtm-engineering",
+        "personalization"
+      ]
+    },
+    {
+      "author": "Lara Vandenberg",
+      "headline": "Content Strategy \u2192 Pipeline | B2B SaaS | Dark funnel & demand gen",
+      "post_summary": "Most B2B content teams are optimizing for impressions. The teams winning in 2026 are optimizing for reactivation \u2014 content that gets forwarded to buying committees. I mapped our last 8 closed-won deals back to which specific posts they shared internally. The results were not what I expected.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1654,
+        "comments": 143
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "dark-funnel",
+        "demand-gen",
+        "pipeline-attribution"
+      ]
+    },
+    {
+      "author": "Maya Krishnamurthy",
+      "headline": "Solo founder | Built and sold my first SaaS | Now building #2 in public",
+      "post_summary": "Maya shipped her second product in 47 days using Claude Code and Cursor, documenting every build session on LinkedIn. She broke down her MRR progression week by week ($0 \u2192 $3,200) and shared the exact moment she realized she'd priced too low. The post resonated because she included the rejection screenshots alongside the wins.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4800,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "SaaS",
+        "indiehacker"
+      ]
+    },
+    {
+      "author": "Derek Osei",
+      "headline": "Ex-accountant \u2192 developer | 14 months of learning | Shipped my first paid product last week",
+      "post_summary": "Derek posted a side-by-side of his first messy Python script from 14 months ago versus the Go API he shipped to paying customers last Tuesday. He was brutally honest about the 6-month plateau where he almost quit, and what finally clicked. Career pivoters flooded the comments with their own timelines.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11200,
+        "comments": 891
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "buildinpublic",
+        "learntocode"
+      ]
+    },
+    {
+      "author": "Priya Nambiar",
+      "headline": "GTM engineer | Replacing $40k/yr tools with $200/mo AI agents | Writing about it",
+      "post_summary": "Priya documented how she replaced her company's entire outbound stack with three Claude agents she built over a weekend, cutting tooling costs from $3,800/mo to $180/mo. She included the actual system prompts, the failure modes she hit, and why most people building AI agents are over-engineering them. Post spread fast in RevOps and GTM circles.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7300,
+        "comments": 540
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AIagents",
+        "GTMengineering",
+        "buildinpublic",
+        "automation"
+      ]
+    },
+    {
+      "author": "Tom Callahan",
+      "headline": "Shipping one micro-SaaS per month | 0 VC | 100% bootstrapped",
+      "post_summary": "Tom posted a raw retrospective after month 6 of his shipping streak \u2014 three products dead, two still alive, one generating $890/mo passively. He shared his exact validation checklist that he now runs before writing a single line of code, and admitted the two survivors came from scratching his own itches rather than 'finding a market.' The comment section turned into a masterclass on micro-SaaS positioning.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6100,
+        "comments": 427
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "microsaas",
+        "bootstrapped",
+        "buildinpublic",
+        "solodev"
+      ]
+    }
+  ]
+}

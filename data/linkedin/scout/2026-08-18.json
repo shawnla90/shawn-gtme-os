@@ -1,0 +1,229 @@
+{
+  "date": "2026-08-18",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-18T13:01:35.613306+00:00",
+  "sources": [
+    {
+      "author": "Swyx Wang",
+      "headline": "AI Engineer | Founder @ Latent Space | ex-AWS",
+      "post_summary": "Posted a breakdown of why most 'agentic' startups are actually just prompt wrappers with a for-loop. Real agents need persistent memory, tool use, and failure recovery \u2014 not just multi-step prompting. Thread got traction after he shared internal evals showing 60% of agent failures happen at handoff points between steps.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "LLM evals",
+        "agentic AI"
+      ]
+    },
+    {
+      "author": "Gergely Orosz",
+      "headline": "Author of The Pragmatic Engineer | ex-Uber Staff Eng",
+      "post_summary": "Shared data from a survey of 800+ senior engineers: 71% now use AI coding tools daily, but only 23% say it's made them meaningfully faster on complex features. The gap is in context management \u2014 AI is fast at greenfield, slow at understanding existing systems. Post hit 6k likes within 12 hours.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 541
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI coding",
+        "engineering productivity"
+      ]
+    },
+    {
+      "author": "Alexandr Wang",
+      "headline": "CEO @ Scale AI",
+      "post_summary": "Argued that the real bottleneck for enterprise AI in 2026 isn't the model \u2014 it's data infrastructure. Companies that built clean data pipelines 2 years ago are now running agents at scale. Everyone else is still fighting data quality fires. Called it 'the boring moat nobody talks about.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9100,
+        "comments": 712
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "data pipeline",
+        "enterprise AI"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "Head of Safety @ OpenAI | AI Researcher",
+      "post_summary": "Quiet post about multi-agent orchestration patterns going unexpectedly viral: shared a diagram of how parallel subagent architectures collapse under ambiguous goal decomposition. The core insight \u2014 agents don't fail because they're dumb, they fail because the task spec was underspecified at the top. 400+ reshares in 48 hours.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5300,
+        "comments": 429
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "multi-agent",
+        "AI orchestration",
+        "agent design"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline Generation | Revenue Intelligence",
+      "post_summary": "AI SDRs are killing reply rates. I analyzed 50,000 outbound sequences and found that fully automated AI outreach gets 0.3% reply rates vs 4.1% for human-in-the-loop sequences. The problem isn't AI \u2014 it's removing human judgment from signal interpretation. Here's the exact workflow we use to let AI do 80% of the work while keeping humans on the 20% that converts.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ai-sdr",
+        "outbound",
+        "pipeline-generation",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Jen Allen-Knuth",
+      "headline": "Community Growth at Lavender | Former Chief Evangelist | LinkedIn Top Voice",
+      "post_summary": "Cold email is not dead. Lazy cold email is dead. I've sent 400 emails this month with a 38% open rate and 12% reply rate. The difference: I stopped writing emails about my product and started writing emails about their problem \u2014 with evidence I actually researched them. Sharing the exact framework (3 sentences, 1 insight, 1 ask) that's working in 2026.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 489
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "cold-email",
+        "outbound",
+        "sales-development",
+        "personalization"
+      ]
+    },
+    {
+      "author": "Tito Bohrt",
+      "headline": "CEO at AltiSales | Outbound Sales Expert | Building the best SDR teams in the world",
+      "post_summary": "RevOps teams are being asked to own AI tool evaluation now. That's a mistake. Evaluated 12 AI prospecting tools last quarter across 6 clients. The tools aren't the bottleneck \u2014 the ICP definition is. Every team that failed with AI outbound had the same root cause: a vague ICP with no tier-1 signal definition. Fix the data layer before buying the automation layer.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 241
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "icp",
+        "sales-ops",
+        "gtm-strategy",
+        "ai-prospecting"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "Demand Gen & Content Strategy | Advisor | ex-Cognism, Nextiva, Sales Hacker",
+      "post_summary": "Everyone is publishing AI-generated content and wondering why their LinkedIn reach dropped 60%. Here's what actually works in 2026: POV-first posts with a specific contrarian stance, backed by one real data point from your own pipeline. I went from 800 to 14,000 impressions per post by doing one thing \u2014 saying something most people in my industry are afraid to say out loud. Thread on the exact approach below.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3560,
+        "comments": 407
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "linkedin-growth",
+        "demand-gen",
+        "thought-leadership"
+      ]
+    },
+    {
+      "author": "Maya Krishnan",
+      "headline": "Indie hacker | Shipped 3 products in 6 months | ex-Google PM",
+      "post_summary": "Maya shared her MRR dashboard screenshot showing $0 to $4,200 in 90 days with a B2B Notion template business. She broke down the exact distribution channels that worked (Reddit > LinkedIn > cold email) and the ones that flopped. Ended with the uncomfortable truth: the product took 2 weeks, the distribution took 3 months.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "indiehacker",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "Jordan Okafor",
+      "headline": "Software engineer \u2192 founder | Building AI tools for small law firms | Day 147",
+      "post_summary": "Jordan posted a raw thread about getting his first enterprise churn after 8 months of retention \u2014 a $1,800/mo client who left because of a missing bulk-export feature he had deprioritized 4 times. He shared the exact Loom the client sent and what he's rebuilding. No spin, no lessons-learned wrapper \u2014 just the sting of it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 412
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "startuplife",
+        "SaaS",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Priya Menon",
+      "headline": "Left nursing after 9 years | Now a self-taught dev | Building healthcare scheduling tools",
+      "post_summary": "Priya wrote about passing her first technical interview at a Series B startup 14 months after writing her first line of Python \u2014 while working night shifts. She was transparent about using Claude Code to accelerate learning, what she still doesn't understand, and why she's turning down the offer to keep building her own product.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8700,
+        "comments": 634
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaughtdev",
+        "womenintech"
+      ]
+    },
+    {
+      "author": "Dani Reeves",
+      "headline": "Solo dev | Shipped 11 Chrome extensions | $18k MRR | No funding, no team",
+      "post_summary": "Dani broke down her 'boring product' thesis \u2014 every one of her 11 extensions solves a problem she personally had and can describe in one sentence to a non-technical person. She revealed her full revenue split across the portfolio and argued that most indie devs overbuild v1 because they're optimizing for their portfolio, not for paying users.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6200,
+        "comments": 503
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solodev",
+        "indiehacker",
+        "bootstrapped"
+      ]
+    }
+  ]
+}
