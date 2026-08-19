@@ -1,0 +1,232 @@
+{
+  "date": "2026-08-19",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-19T13:01:22.188226+00:00",
+  "sources": [
+    {
+      "author": "Shreya Kapoor",
+      "headline": "Staff Engineer @ Anthropic | Building agent infrastructure | Ex-Google",
+      "post_summary": "Posted about how Claude Code's new persistent memory across sessions is changing their internal dev workflows \u2014 engineers are spending 40% less time re-explaining context to AI. Included a short demo of a multi-session bug fix that required zero re-prompting. Sparked debate in comments about whether AI memory is a feature or a crutch.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "claude-code",
+        "ai-agents",
+        "developer-productivity"
+      ]
+    },
+    {
+      "author": "Marcus Delgado",
+      "headline": "Founder @ Argo AI Infra | ex-AWS | Helping teams cut LLM costs by 60%",
+      "post_summary": "Shared a teardown of a $140k/month LLM bill that got reduced to $52k in 30 days without changing model quality \u2014 the culprit was unoptimized context windows and redundant embedding calls. Called out the pattern of 'inference bloat' as the new cloud waste. Post hit because it had a real before/after architecture diagram.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 471
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "llm-cost",
+        "ai-infrastructure",
+        "inference-optimization"
+      ]
+    },
+    {
+      "author": "Priya Nambiar",
+      "headline": "Head of Product @ Vertex | AI Automation | GTM Engineering",
+      "post_summary": "Wrote about deploying a multi-agent system that replaced a 6-person SDR team \u2014 not to fire people, but to redeploy them into higher-leverage roles. Framed it as the first real case of 'AI expansion, not replacement' she'd seen work at scale. Comments are split between skeptics asking for the data and practitioners sharing similar stories.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9100,
+        "comments": 892
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "sales-automation",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Tom Okafor",
+      "headline": "DevTools Investor @ Gradient | Prev: Vercel, Linear | Open source advocate",
+      "post_summary": "Called MCP (Model Context Protocol) the 'USB-C moment for AI tooling' \u2014 argued that within 18 months, any dev tool without an MCP server will feel as outdated as software without an API. Listed 12 tools that shipped MCP servers this week alone. The comment section became an unofficial MCP directory.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11300,
+        "comments": 604
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "mcp",
+        "developer-tools",
+        "ai-ecosystem"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Advisor",
+      "post_summary": "Most outbound teams are running 2019 playbooks in 2026. The reps sending 500 generic emails/day are getting 0.1% reply rates while the teams running 50 hyper-personalized sequences with buying signal triggers are hitting 8-12%. The volume era is over. Signal-led outbound is the only motion that still works.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "sales",
+        "gtm-engineering",
+        "signal-led"
+      ]
+    },
+    {
+      "author": "Maggie Zhu",
+      "headline": "RevOps Lead @ Series B SaaS | GTM Systems | Clay + HubSpot",
+      "post_summary": "We cut our SDR team from 8 to 3 and doubled pipeline in 6 months. Not by working harder \u2014 by rebuilding the entire GTM stack around Clay, Apollo, and one AI sequencing layer. The 3 remaining SDRs now do what 8 couldn't: they only touch accounts that have shown 3+ buying signals in the last 30 days.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 487
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "gtm-engineering",
+        "automation",
+        "clay"
+      ]
+    },
+    {
+      "author": "Jason Vargas",
+      "headline": "Head of Sales Development @ Rippling | Outbound Obsessed",
+      "post_summary": "Hot take: your content strategy IS your outbound strategy now. Buyers ignore cold email but they're reading your LinkedIn posts. The reps who comment thoughtfully on ICP content and post their own POVs are booking 3x more meetings than reps who just dial and blast. Social proximity beats cold reach every time.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 241
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "outbound",
+        "social-selling",
+        "linkedin"
+      ]
+    },
+    {
+      "author": "Priya Nath",
+      "headline": "GTM Engineer | Building revenue systems at the intersection of AI + ops | ex-Salesforce",
+      "post_summary": "The GTM Engineer role didn't exist 3 years ago. Now it's the most important hire in a sub-50 person GTM org. Not a salesperson. Not a marketer. Not a traditional ops hire. Someone who can write a Clay enrichment waterfall, prompt Claude to score ICPs, and push a HubSpot workflow \u2014 all before lunch. This is what modern revenue infrastructure looks like.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3561,
+        "comments": 398
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "revops",
+        "ai",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Indie hacker | Shipped 6 products in 12 months | $47K MRR | Building in public",
+      "post_summary": "Crossed $47K MRR yesterday with zero VC funding. 18 months ago I was a burned-out senior engineer at a FAANG. The turning point wasn't a viral post or a lucky break \u2014 it was shipping something ugly every 2 weeks until one stuck. Here's the exact timeline.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 387
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder",
+        "saas"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Ex-nurse turned developer | Shipped my first SaaS in 90 days | Healthcare AI",
+      "post_summary": "I learned to code while working 12-hour hospital shifts. No bootcamp. No CS degree. Just YouTube, Claude, and a problem I lived every day. My app for nurse scheduling just hit 200 paying users. Every 'you're not technical enough' DM was fuel.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8900,
+        "comments": 612
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "learntocode",
+        "buildinpublic",
+        "healthtech"
+      ]
+    },
+    {
+      "author": "Jordan Okafor",
+      "headline": "Solo dev building vertical AI agents | 3 products live | ex-Shopify",
+      "post_summary": "I replaced my entire market research workflow with a Claude agent I built in a weekend. What used to take 6 hours now takes 11 minutes. I'm open-sourcing the architecture today \u2014 link in comments. This is what 'AI-native' actually means in practice.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3100,
+        "comments": 244
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "aiagents",
+        "solodev",
+        "opensource",
+        "claudeai"
+      ]
+    },
+    {
+      "author": "Sofia Reyes",
+      "headline": "Product designer \u2192 founder | Building B2B tools for small teams | Revenue-first",
+      "post_summary": "Week 14 of building in public. Honest numbers: $2,100 MRR, 3 churned customers, 1 enterprise lead that went cold. Most build-in-public posts show the wins. I'm showing the loss review I ran last Sunday and what it changed about our ICP.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5700,
+        "comments": 490
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "transparency",
+        "startuplife",
+        "b2bsaas"
+      ]
+    }
+  ]
+}
