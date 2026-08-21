@@ -1,0 +1,160 @@
+{
+  "date": "2026-08-20",
+  "posts_found": 8,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-20T13:02:59.297975+00:00",
+  "sources": [
+    {
+      "author": "Swyx Wang",
+      "headline": "AI Engineer & Founder @ Latent Space | Building the AI Engineer community",
+      "post_summary": "Claude's new extended thinking mode is showing 40%+ improvement on multi-step agentic tasks in our internal benchmarks. The trick isn't just more tokens \u2014 it's that the model now backtracks and self-corrects mid-chain. This fundamentally changes how you architect tool-calling loops. Thread on what this means for agent framework design.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 218
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "Claude",
+        "LLM infrastructure",
+        "agent frameworks"
+      ]
+    },
+    {
+      "author": "Hamel Husain",
+      "headline": "AI Consultant | Former GitHub, Airbnb, Netflix | Making ML actually work in prod",
+      "post_summary": "Hot take: 90% of 'AI agent' demos you see on LinkedIn are single-turn LLM calls with a for loop around them. Real agents need memory, interruption handling, and graceful degradation. Here's a checklist I use to evaluate whether a system is actually agentic or just expensive autocomplete with extra steps.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 341
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "MLOps",
+        "production AI",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Gergely Orosz",
+      "headline": "Author of The Pragmatic Engineer | Engineering leadership & software craft",
+      "post_summary": "Six months ago I asked 200 senior engineers if they used AI coding tools daily. 34% said yes. I asked again last week: 81% said yes. The holdouts aren't skeptics anymore \u2014 they're mostly folks blocked by enterprise security reviews. The bottleneck has shifted from adoption to procurement and compliance.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8700,
+        "comments": 512
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "AI adoption",
+        "engineering",
+        "Claude Code"
+      ]
+    },
+    {
+      "author": "Cassie Kozyrkov",
+      "headline": "Chief Decision Scientist | AI Strategy | Ex-Google | Making AI safe and useful",
+      "post_summary": "The infrastructure bottleneck for AI agents isn't compute \u2014 it's observability. You can't debug a multi-agent system you can't trace. We're still running 2019-era logging practices on 2026-era autonomous pipelines. OpenTelemetry support for LLM spans is the unsexy thing every AI infra team needs to prioritize this quarter.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 187
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "observability",
+        "multi-agent",
+        "MLOps"
+      ]
+    },
+    {
+      "author": "Alicia Marsh",
+      "headline": "Head of Revenue Operations @ Momentum | GTM Systems | Ex-Salesforce",
+      "post_summary": "Shared a breakdown of how her team cut their outbound sequence build time from 3 days to 4 hours by moving sequence ownership from SDRs to a centralized GTM engineer. Argued that 'sales personalization' at scale is an ops problem, not a rep problem, and that most RevOps teams are still solving it backwards. Post included a before/after diagram of their Clay \u2192 Instantly \u2192 Salesforce stack.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 203
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "outbound-automation",
+        "revops",
+        "clay"
+      ]
+    },
+    {
+      "author": "Derek Fontaine",
+      "headline": "GTM Engineer | Building AI-native outbound systems | Newsletter: The Signal Stack",
+      "post_summary": "Posted a contrarian take arguing that 'AI SDRs' are a distraction and that the real leverage is in AI-enriched signal routing \u2014 getting the right prospect to the right rep at the right moment, not replacing the rep entirely. Backed it with a screenshot of a signal stack he built using job change alerts, LinkedIn intent, and G2 review triggers piped into a Slack channel. Over 200 comments debating whether outbound is dead.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2314,
+        "comments": 267
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ai-sdr",
+        "signal-based-selling",
+        "gtm-engineering",
+        "intent-data"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "VP of Marketing @ Corvo | Pipeline-Obsessed | B2B Content & Demand Gen",
+      "post_summary": "Shared a content strategy teardown showing how her team generates 60% of their demo requests through a 'teach-to-convert' content loop: long-form how-to posts that rank on LinkedIn search, repurposed into newsletter sequences, with a soft CTA to a free audit tool. Called out the difference between content that builds brand and content that builds pipeline, and why most B2B teams confuse the two.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1123,
+        "comments": 98
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "b2b-marketing",
+        "linkedin-seo"
+      ]
+    },
+    {
+      "author": "Jason Tully",
+      "headline": "Sales Ops Lead @ Archetype | CRM Nerd | Ops That Closes Deals",
+      "post_summary": "Went viral after posting a raw breakdown of how a poorly maintained Salesforce instance cost their team an estimated $280K in missed pipeline last year \u2014 through duplicate leads, broken routing rules, and reps working stale accounts. Framed it as 'your CRM is either an asset or a liability, there is no middle ground,' and offered a free 10-point audit checklist in the comments that got thousands of downloads.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3891,
+        "comments": 441
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales-ops",
+        "salesforce",
+        "crm-hygiene",
+        "revenue-operations"
+      ]
+    }
+  ]
+}

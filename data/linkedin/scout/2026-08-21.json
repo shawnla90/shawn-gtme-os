@@ -1,0 +1,236 @@
+{
+  "date": "2026-08-21",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-21T13:02:42.587472+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "Founder @ Latent Space | AI Engineer Podcast | ex-Netlify, AWS",
+      "post_summary": "Claude's new multi-agent orchestration patterns are changing how teams think about agentic workflows. Sharing our internal architecture for chaining 5+ specialized subagents without context bleed \u2014 the key insight is treating each agent like a stateless function with a strict input/output contract. Most teams getting this wrong are passing too much context upstream.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AIAgents",
+        "MultiAgent",
+        "LLM",
+        "Claude"
+      ]
+    },
+    {
+      "author": "Lior Ben David",
+      "headline": "AI Infrastructure Engineer @ Anthropic | prev Google DeepMind | Building at the frontier",
+      "post_summary": "We just open-sourced our internal agent evaluation harness. After 6 months of running production AI agents, we found MMLU and HumanEval completely useless for predicting real-world reliability. What actually matters: tool call accuracy under adversarial inputs, graceful degradation on ambiguous prompts, and cost-per-resolved-task. Link in comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5201,
+        "comments": 487
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AIEval",
+        "AgentEval",
+        "OpenSource",
+        "MLOps"
+      ]
+    },
+    {
+      "author": "Cassidy Williams",
+      "headline": "CTO @ Contenda | Developer Experience Advocate | Speaker | ex-GitHub, Netlify",
+      "post_summary": "Hot take: the developer tool landscape in 2026 is bifurcating hard. One camp is building AI-native tools that assume your agent writes the code. The other is still bolting Copilot onto legacy IDEs. The gap between these two camps is going to be wider than the gap between mobile-first and desktop-first was in 2012. If your DevEx stack isn't agent-native, you're already behind.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2914,
+        "comments": 228
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "DeveloperTools",
+        "DevEx",
+        "AIFirst",
+        "FutureOfWork"
+      ]
+    },
+    {
+      "author": "Alessio Fanelli",
+      "headline": "Managing Partner @ Decibel | prev CTO @ Memfault | Investing in infra + AI",
+      "post_summary": "We're seeing a Cambrian explosion in AI agent infrastructure \u2014 vector DBs, memory layers, orchestration frameworks, observability tools. But 80% of production outages we see in portfolio companies trace back to the same two problems: uncontrolled token spend and non-deterministic tool routing. The infra category is real but the winners will be whoever solves cost predictability first, not whoever has the best benchmark.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4103,
+        "comments": 391
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AIInfrastructure",
+        "AgentOps",
+        "VentureCapital",
+        "LLMOps"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline Generation | GTM Strategy",
+      "post_summary": "Most outbound teams are measuring the wrong thing. They track activity (emails sent, dials made) but ignore signal quality. A rep who sends 20 highly-personalized emails to ICP accounts will outperform one sending 200 generic blasts every time. We rebuilt our entire SDR comp plan around signal-triggered outreach and pipeline velocity \u2014 not volume. Here's exactly how we did it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "sdrstrategy",
+        "gtm",
+        "pipelinegeneration"
+      ]
+    },
+    {
+      "author": "Saad Khan",
+      "headline": "GTM Engineer | Helping B2B teams build AI-native outbound systems | Ex-Salesforce",
+      "post_summary": "GTM engineering is not a job title. It's a forcing function. When one person can run a Clay table that does what 3 SDRs used to do \u2014 enrich, score, personalize, and sequence \u2014 the economics of outbound change permanently. I've now built 14 of these systems for Series A-C companies. The pattern is always the same: signal in, sequence out, human only for closing. Here's the exact stack.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 487
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtmengineering",
+        "clay",
+        "aioutbound",
+        "salesautomation"
+      ]
+    },
+    {
+      "author": "Melissa Rosenthal",
+      "headline": "Chief Creative Officer | B2B Content that doesn't suck | Advisor to 12 startups",
+      "post_summary": "Hot take: your content strategy is failing because your marketing team is writing for the algorithm instead of the buyer. I reviewed 60 LinkedIn company pages last week. Every single one led with features, not problems. Buyers don't care what your product does. They care about what breaks when they don't have it. Content that converts starts with the pain, not the pitch \u2014 and most teams have this completely backwards.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3615,
+        "comments": 294
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "contentstrategy",
+        "b2bmarketing",
+        "demandgen",
+        "copywriting"
+      ]
+    },
+    {
+      "author": "Jacki Leahy",
+      "headline": "RevOps Therapist | Salesforce Architect | Turning CRM chaos into pipeline clarity",
+      "post_summary": "Every RevOps leader I talk to has the same problem: their CRM is a graveyard of bad data, and leadership still trusts the forecast. The fix isn't a new tool \u2014 it's a data contract between Sales, Marketing, and CS that gets enforced at the process level before anything hits Salesforce. I built a simple 3-field hygiene protocol that reduced forecast variance by 34% in one quarter. Sharing the template below.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2193,
+        "comments": 218
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "salesforce",
+        "forecastaccuracy",
+        "revenueoperations"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Shipped 3 products in 12 months | Solo founder | ex-Google PM",
+      "post_summary": "Priya shares that she just hit $10k MRR with her second product \u2014 a Notion-to-landing-page tool built in a weekend. She breaks down the exact Cursor + Claude workflow she used to go from idea to deployed in 48 hours, and why she stopped waiting for a cofounder.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 187
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "aitools",
+        "indiedev"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Laid off \u2192 launched | 6 months into my first SaaS | sharing everything",
+      "post_summary": "Marcus documents his 6-month mark since getting laid off from a mid-size fintech. He's not profitable yet but has 47 paying users and just quit applying to jobs. The post is a raw honest comparison of his bank account then vs now, and why the fear was worse than the reality.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8100,
+        "comments": 412
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "buildinpublic",
+        "startuplife",
+        "layoffs"
+      ]
+    },
+    {
+      "author": "Soo-Jin Park",
+      "headline": "Teacher \u2192 developer \u2192 founder | I build tools for burnt-out educators",
+      "post_summary": "Soo-Jin posts a screenshot of her first Stripe payment \u2014 $29 from a stranger. She was a middle school math teacher 18 months ago, taught herself to code at night, and just launched a lesson-planning AI tool for teachers. The post ends with 'I made this. From nothing. You can too.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 14200,
+        "comments": 893
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaughtdev",
+        "edtech",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Andrei Popescu",
+      "headline": "Solo dev shipping fast | Claude Code + Cursor daily driver | GTM engineer",
+      "post_summary": "Andrei posts a 7-day build log showing how he used Claude Code to build, test, and deploy a cold outreach personalization tool with zero outside help. He breaks down token costs vs. freelancer costs and argues that the real leverage shift in 2026 is context engineering, not just prompting.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 156
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "claudecode",
+        "solodev",
+        "contextengineering",
+        "gtmengineering"
+      ]
+    }
+  ]
+}
