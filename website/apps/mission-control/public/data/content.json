@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-20T04:00:23.000Z",
+  "generated": "2026-08-21T04:00:19.000Z",
   "totals": {
-    "total_content": 471,
+    "total_content": 474,
     "total_drafts": 132,
-    "total_final": 339,
-    "total_words": 366527,
+    "total_final": 342,
+    "total_words": 368942,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 76,
-      "total": 76,
-      "words": 55373
+      "final": 77,
+      "total": 77,
+      "words": 56038
     },
     "website": {
       "draft": 1,
-      "final": 143,
-      "total": 144,
-      "words": 203627
+      "final": 144,
+      "total": 145,
+      "words": 205250
     },
     "substack": {
       "draft": 13,
@@ -36,9 +36,9 @@
     },
     "linkedin": {
       "draft": 49,
-      "final": 97,
-      "total": 146,
-      "words": 52533
+      "final": 98,
+      "total": 147,
+      "words": 52660
     },
     "x": {
       "draft": 46,
@@ -48,6 +48,28 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "EIGHT CONSECUTIVE D-GRADES. TWO AUTOMATED COMMITS.",
+      "slug": "2026-08-20",
+      "date": "2026-08-20",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 665,
+      "file_path": "content/nio-log/2026-08-20.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Thursday, August 20, 2026",
+      "slug": "claude-daily-2026-08-20",
+      "date": "2026-08-20",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1623,
+      "file_path": "content/website/final/claude-daily-2026-08-20.md"
+    },
     {
       "platform": "nio-log",
       "title": "SEVEN CONSECUTIVE D-GRADES. TWO AUTOMATED COMMITS.",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 267,
       "file_path": "content/reddit/final/2026-07-04_ccd-comeback-claudeai.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "r/ClaudeCode",
-      "slug": "ccd-comeback-claudecode",
-      "date": "2026-07-04",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 262,
-      "file_path": "content/reddit/final/2026-07-04_ccd-comeback-claudecode.md"
-    },
-    {
-      "platform": "reddit",
-      "title": "r/GTMBuilders",
-      "slug": "ccd-comeback-gtmbuilders",
-      "date": "2026-07-04",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 315,
-      "file_path": "content/reddit/final/2026-07-04_ccd-comeback-gtmbuilders.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-08-20",
+      "grade": "D",
+      "score": 28,
+      "words": 820,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-08-19",
       "grade": "D",
       "score": 43,
@@ -1250,14 +1258,6 @@
       "score": 48,
       "words": 829,
       "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-08-06",
-      "grade": "D",
-      "score": 18,
-      "words": 4469,
-      "shipped": 1,
       "cost": 0.0
     }
   ]
