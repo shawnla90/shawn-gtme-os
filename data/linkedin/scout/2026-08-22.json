@@ -1,0 +1,234 @@
+{
+  "date": "2026-08-22",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-22T13:02:48.155591+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer | Founder @ Latent Space | Building the AI Engineer community",
+      "post_summary": "Claude's extended thinking + tool use is now genuinely better than GPT-4o for multi-step agent tasks in my benchmarks. The gap isn't small. Sharing my eval framework and results \u2014 the infrastructure choices you make today will lock you in for 18 months.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 412
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "llm-benchmarks",
+        "claude",
+        "ai-infrastructure"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "Head of Safety @ OpenAI | Researcher | Author of Lil'Log",
+      "post_summary": "We just open-sourced our internal agent evaluation harness. 6 months of work distilled into 400 lines of Python. The hardest part wasn't the evals \u2014 it was agreeing on what 'success' even means when agents can take 40+ tool calls to finish a task.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6201,
+        "comments": 589
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "evals",
+        "open-source",
+        "developer-tools"
+      ]
+    },
+    {
+      "author": "Gergely Orosz",
+      "headline": "Author of The Pragmatic Engineer | Ex-Uber, Skype",
+      "post_summary": "I surveyed 1,200 senior engineers on AI coding tools. 68% say Claude Code has replaced their need for Stack Overflow. But 41% say they trust AI-generated code less than 6 months ago \u2014 not more. The confidence gap is real and it's shaping how teams build.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9134,
+        "comments": 1043
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "claude-code",
+        "engineering-culture",
+        "ai-adoption"
+      ]
+    },
+    {
+      "author": "Alessio Fanelli",
+      "headline": "Managing Partner @ Decibel | Co-host Latent Space Podcast | Prev CTO @ Codeium",
+      "post_summary": "The AI infrastructure stack is collapsing into three layers faster than anyone predicted: model, orchestration, and memory. Companies still building at layer 2 are getting commoditized. The ones winning are betting everything on proprietary memory and context management.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4512,
+        "comments": 378
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "automation",
+        "venture-capital",
+        "ai-stack"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline Confidence | Revenue Intelligence",
+      "post_summary": "Most companies measure pipeline coverage wrong. They count everything in stage 2+, but 60% of it will never close. The metric that actually predicts quarter outcomes is 'committed pipeline velocity' \u2014 deals moving at least one stage in the last 14 days. Sharing the exact dashboard we use to separate real pipeline from wishful thinking.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revenue-operations",
+        "pipeline",
+        "sales-forecasting"
+      ]
+    },
+    {
+      "author": "Vin Matano",
+      "headline": "GTM Engineer | Outbound Automation | I build the systems B2B teams use to scale without headcount",
+      "post_summary": "I rebuilt our outbound stack using Claude + Clay + Lemlist and cut SDR research time by 73%. The unlock wasn't AI writing emails \u2014 it was AI enriching intent signals before a human ever touches a sequence. Here's the exact workflow: trigger \u2192 enrich \u2192 score \u2192 route \u2192 sequence. No more spray and pray.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4103,
+        "comments": 489
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "outbound-automation",
+        "clay",
+        "ai-sales"
+      ]
+    },
+    {
+      "author": "Jen Spencer",
+      "headline": "CEO at SmartBug Media | Revenue-Driven Marketing | HubSpot Partner",
+      "post_summary": "Content strategy in 2026 is a distribution problem, not a creation problem. We have more content than ever and less organic reach than ever. The brands winning right now have one thing in common: they treat LinkedIn as the top of a conversion funnel with a clear next step, not a broadcast channel. Here's the 3-part framework we use for every client to turn posts into pipeline.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 247
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "linkedin-marketing",
+        "b2b-marketing"
+      ]
+    },
+    {
+      "author": "Brendan Weitz",
+      "headline": "Head of Sales Ops at Lattice | GTM Systems | RevOps nerd building the stack behind the number",
+      "post_summary": "Hot take: most CRMs are lying to your leadership team. Bad data hygiene means your win rates, ACV, and time-to-close are all wrong \u2014 and you're making quota and hiring decisions off garbage. I audited our Salesforce instance last quarter and found 34% of closed-won records had the wrong close date. The fix isn't a new tool. It's a data contract between sales and ops. Sharing the 5-field standard we enforce at every deal stage.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3411,
+        "comments": 378
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales-ops",
+        "crm",
+        "revops",
+        "salesforce"
+      ]
+    },
+    {
+      "author": "Maya Chen",
+      "headline": "Solo founder | Built and sold my first SaaS in 18 months | Now building #2",
+      "post_summary": "Maya posted about hitting $10k MRR with zero marketing budget, attributing it entirely to shipping fast and talking to users daily. She broke down her exact week-by-week revenue milestones from $0 to $10k. The post resonated because she showed the actual Stripe dashboard screenshot and admitted the first 6 months felt like shouting into the void.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "saas",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "James Okafor",
+      "headline": "Ex-Deloitte consultant \u2192 indie developer | Quit my $200k job to build tools for small businesses",
+      "post_summary": "James wrote about the moment he realized his consulting salary was funding someone else's vision, not his own. He detailed his 90-day plan to replace his income through a bootstrapped invoicing tool he built for tradespeople. The post hit because he was radically transparent about his runway, his fear, and the exact week his wife stopped asking when he was going back to a real job.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 542
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "buildinpublic",
+        "solodev",
+        "quitmyjob"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Full-stack dev | Building AI tools for non-technical founders | Formerly Amazon SDE II",
+      "post_summary": "Priya shared how she shipped a working product in 72 hours using Claude Code and Cursor, comparing it to a similar project that took her team 6 weeks at Amazon. She was careful not to hype-post \u2014 she called out three things that still broke and what it actually cost in API fees. The practical honesty drove thousands of saves from developers weighing AI-assisted dev workflows.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5600,
+        "comments": 421
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AItools",
+        "buildinpublic",
+        "claudecode",
+        "solodev"
+      ]
+    },
+    {
+      "author": "Tom Brecker",
+      "headline": "Product engineer turned founder | 3 failed products, 1 that's working | Writing about the gap",
+      "post_summary": "Tom posted a teardown of his three failed SaaS attempts versus what's finally working \u2014 a B2B niche tool for HVAC contractors managing field service jobs. The key insight he shared: he stopped building for people like himself and started building for people who hate software. The post went wide because he named the exact mistake most builder posts won't touch: building for the wrong avatar.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3900,
+        "comments": 287
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "productmarket",
+        "buildinpublic",
+        "b2bsaas",
+        "founderlessons"
+      ]
+    }
+  ]
+}
