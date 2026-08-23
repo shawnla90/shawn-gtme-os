@@ -1,0 +1,230 @@
+{
+  "date": "2026-08-23",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-23T13:01:20.542458+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer @ Latent Space | Building the AI Engineer community",
+      "post_summary": "We just crossed 100k AI Engineers in our community. 18 months ago this title didn't exist. What changed: the stack stabilized. Embeddings \u2192 RAG \u2192 agents \u2192 evals. Every company now has at least one person whose full-time job is prompt routing and context window budgeting. The job title won.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI Engineer",
+        "ai agents",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "Head of Safety Research @ OpenAI",
+      "post_summary": "The hardest unsolved problem in agentic AI isn't reasoning \u2014 it's interruption. When should an agent stop and ask? Too often: useless. Too rarely: catastrophic. We've been studying this in production systems and the failure modes are consistent: agents over-index on task completion and under-index on state uncertainty. Sharing a framework we use internally to think about confidence thresholds for autonomous action.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 521
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai agents",
+        "AI safety",
+        "agentic AI"
+      ]
+    },
+    {
+      "author": "Greg Brockman",
+      "headline": "President @ OpenAI",
+      "post_summary": "Something subtle happened in the last 6 months: AI infrastructure spend became a competitive moat, not just a cost center. The companies buying inference capacity at scale now aren't doing it for a chatbot. They're pre-positioning for workflows that don't exist yet. This is the same logic behind AWS in 2008. The infra bet is the product bet.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 12400,
+        "comments": 847
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "AI strategy",
+        "enterprise AI"
+      ]
+    },
+    {
+      "author": "Alex Goodman",
+      "headline": "Founder @ BuildShip | No-code AI workflow automation",
+      "post_summary": "We analyzed 10,000 AI automations built on our platform last quarter. The #1 use case isn't content or customer support anymore \u2014 it's internal data routing. Someone asks a question in Slack, an agent pulls from 4 different internal tools, synthesizes an answer, and logs the interaction. Boring? Yes. High ROI? Completely. The enterprise AI wave isn't flashy. It's plumbing.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3100,
+        "comments": 278
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "ai agents",
+        "enterprise AI",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | GTM Strategy | Pipeline Generation | AI in Sales",
+      "post_summary": "Most teams are using AI to do more outbound. The winners are using AI to do better outbound. I ran a 90-day test: AI-personalized sequences at 20% of the volume outperformed spray-and-pray by 3x on booked meetings. The era of signal-based selling is here and most stacks aren't built for it yet.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "ai-sales",
+        "signal-based-selling"
+      ]
+    },
+    {
+      "author": "Jess Schultz",
+      "headline": "Founder @ Amplify GTM | RevOps Advisor | HubSpot & Salesforce Architect",
+      "post_summary": "RevOps is becoming the most political job in a company. You own the data everyone argues about, the tools everyone blames, and the attribution nobody agrees on. The best RevOps leaders I've seen stop trying to be neutral and start acting like product managers \u2014 owning decisions, not just systems.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5214,
+        "comments": 487
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "salesops",
+        "career"
+      ]
+    },
+    {
+      "author": "Devin Reed",
+      "headline": "Head of Content Strategy @ Clari | Ex-Gong | I write about content that drives pipeline",
+      "post_summary": "Your content calendar is a vanity project if it's not connected to pipeline stages. We mapped every content asset to a buyer journey phase and killed 40% of what we were producing. Engagement went down. Pipeline influenced went up 28%. Fewer pieces, more intent \u2014 that's the shift most B2B content teams need to make.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 263
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "b2b-marketing",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "Tamara Schwartz",
+      "headline": "GTM Engineer @ Series B SaaS | Clay + Apollo + AI Workflows | Outbound Infrastructure",
+      "post_summary": "Spent 3 months building a GTM stack that replaces 4 SDRs with 1 engineer and a $900/month tool budget. Clay for enrichment and signals, Apollo for sequencing, Claude for personalization at scale, Attio as the source of truth. Not saying you should fire your SDRs \u2014 saying you should 10x what one can do. Here's the full build.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7831,
+        "comments": 894
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "clay",
+        "outbound-automation",
+        "ai-stack"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Founder @ Stackform | Building AI-native B2B tools | prev. Stripe",
+      "post_summary": "Shipped our first paid feature with zero marketing spend \u2014 just a Loom demo posted in three Slack communities. 47 signups in 48 hours. The lesson: distribution is a product decision, not an afterthought. Here's exactly what we sent and where.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3800,
+        "comments": 214
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "founder",
+        "distribution",
+        "SaaS"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Solo dev turned SaaS founder | $0 \u2192 $8k MRR in 6 months | Claude Code daily driver",
+      "post_summary": "I quit my $180k eng job 7 months ago to build solo. People said I was crazy. Last week I crossed $8k MRR. I'm not posting this to flex \u2014 I'm posting it because the biggest thing that held me back was not believing it was possible without a co-founder or VC. Here's what actually moved the needle.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11200,
+        "comments": 487
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solofounder",
+        "MRR",
+        "buildinpublic",
+        "indiehacker"
+      ]
+    },
+    {
+      "author": "Jordan Kim",
+      "headline": "Product Engineer | Career pivoter (teacher \u2192 dev, 2023) | Building @Clarifai side project",
+      "post_summary": "18 months ago I was grading essays. This week I shipped a feature used by 2,000 people. No bootcamp magic \u2014 just obsessive consistency: 1 hour of code every morning before school, then 2 hours after. The pivot wasn't about talent. It was about not letting the gap between where I was and where I wanted to be feel permanent.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7600,
+        "comments": 332
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "developer",
+        "coding"
+      ]
+    },
+    {
+      "author": "Leila Santos",
+      "headline": "Co-founder @ Draftly | AI writing tools for GTM teams | formerly HubSpot PM",
+      "post_summary": "We almost killed our startup last month. User growth was flat, burn was accelerating, and my co-founder and I hadn't agreed on the core ICP in weeks. What saved us: a 4-hour whiteboard session where we finally said out loud what we both knew but were avoiding. Brutal honesty is a product strategy. Here's what we cut and why it immediately unblocked us.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 278
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "startup",
+        "founder",
+        "buildinpublic",
+        "productmarket"
+      ]
+    }
+  ]
+}
