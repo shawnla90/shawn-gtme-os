@@ -1,0 +1,237 @@
+{
+  "date": "2026-08-24",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-24T13:01:25.590737+00:00",
+  "sources": [
+    {
+      "author": "Swyx (shawn wang)",
+      "headline": "AI Engineer @ Latent Space | Building in public",
+      "post_summary": "Claude's new agent SDK just dropped and the context window story is finally making sense. Ran a 10-agent orchestration loop with 200k token shared memory \u2014 zero hallucinations on tool handoffs. The key insight: stateful agents with persistent context are a completely different category than stateless LLM calls.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "claude",
+        "anthropic",
+        "llm"
+      ]
+    },
+    {
+      "author": "Lior Ben David",
+      "headline": "Founder @ AgentOps | AI Infrastructure | ex-Google",
+      "post_summary": "The dirty secret nobody talks about: 73% of AI agent failures in production are observability failures, not model failures. You can't debug what you can't see. We've now processed 50M agent traces and the pattern is clear \u2014 teams shipping agents without evals are flying blind.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 412
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "observability",
+        "agentic-ai",
+        "mlops"
+      ]
+    },
+    {
+      "author": "Alessio Fanelli",
+      "headline": "Partner @ Decibel VC | Co-host Latent Space Podcast",
+      "post_summary": "Cursor just crossed $500M ARR and they're not slowing down. The developer tools category is being completely rewritten in 18 months. What's underappreciated: this isn't IDE replacement \u2014 it's the first time a dev tool has become the actual reasoning layer for engineers. Every tool category above and below it gets repriced.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 634
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "cursor",
+        "ai-coding",
+        "vc"
+      ]
+    },
+    {
+      "author": "Deb Liu",
+      "headline": "CEO @ Ancestry | Board Director | ex-Meta VP",
+      "post_summary": "I asked 6 different AI agents to research and book a vendor contract for me end-to-end last week. Only one completed it without human intervention. The gap between demo agents and production agents is still enormous \u2014 but it's closing faster than most enterprises realize. The companies with agent-ready data infra right now will have a 12-month head start on everyone else.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "automation",
+        "enterprise-ai",
+        "future-of-work"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline Clarity | Revenue Intelligence",
+      "post_summary": "Most GTM teams are optimizing the wrong thing. They're A/B testing subject lines while their ICP definition is 18 months stale. I audited 40 pipeline reviews last quarter \u2014 31 of them had the same root cause: wrong accounts in, not wrong messaging. Fix the list before you fix the copy.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm",
+        "pipeline",
+        "icp",
+        "outbound"
+      ]
+    },
+    {
+      "author": "Saad Khan",
+      "headline": "Head of Revenue Ops @ Series B SaaS | Clay + AI Automation | Helping GTM teams do more with less",
+      "post_summary": "We replaced a 3-person SDR team with a Clay + Claude workflow and booked 40% more qualified meetings last month. Not because AI is magic \u2014 because we stopped sending generic sequences to unqualified accounts. The hard truth: most outbound problems are data problems, not copy problems. Here's the exact stack we use.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4103,
+        "comments": 489
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound-automation",
+        "clay",
+        "ai",
+        "sdr",
+        "revops"
+      ]
+    },
+    {
+      "author": "Lara Acosta",
+      "headline": "LinkedIn Growth for B2B Founders | 100M+ impressions generated | DM me 'content'",
+      "post_summary": "Founders keep asking why their LinkedIn posts get zero engagement. The answer is always the same: you're writing about your product instead of your buyer's problem. The top 1% of B2B creators on this platform talk about the pain first, proof second, and product never. I broke down 30 posts that went viral in SaaS this quarter \u2014 here's the exact structure they all share.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6712,
+        "comments": 541
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "linkedin",
+        "b2b-content",
+        "founder-brand",
+        "content-strategy"
+      ]
+    },
+    {
+      "author": "Jen Allen-Knuth",
+      "headline": "Chief Evangelist | Community-Led Growth | Demand Gen without the spam",
+      "post_summary": "The cold outbound playbook that worked in 2021 is dead. Open rates are down 60%. Reply rates are under 1%. But I'm seeing a new motion working right now: warm signal-based outreach using job change alerts, funding triggers, and community engagement as the entry point. The reps who close the most in 2026 aren't sending more emails \u2014 they're sending fewer, better-timed ones. Here's what the new sequence looks like.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3298,
+        "comments": 407
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "signal-based-selling",
+        "demand-gen",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Built and sold my first SaaS in 14 months | ex-Google PM",
+      "post_summary": "Priya shares a screenshot of her Stripe dashboard hitting $10k MRR with the caption 'built this alone, nights and weekends, while working full-time.' She breaks down the exact three channels that drove growth \u2014 cold email, a Reddit post that went viral, and one podcast appearance. Ends with 'the loneliest part wasn't the work, it was not knowing if it was working.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solofounder",
+        "buildinpublic",
+        "SaaS",
+        "MRR"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Laid off \u2192 shipped my first product in 30 days | Backend dev turned indie hacker",
+      "post_summary": "Marcus documents day 30 of his public build log, explaining how he went from a Meta layoff to launching a developer tool that already has 200 paying users. He shares the Claude Code + Railway + Stripe stack he used and admits he nearly quit on day 12. The post resonates because of the raw timeline and specific cost breakdown ($43/month in infra for $1,800 MRR).",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6700,
+        "comments": 491
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "layoff",
+        "indiedev",
+        "buildinpublic",
+        "careerpivot"
+      ]
+    },
+    {
+      "author": "Jess Tran",
+      "headline": "Self-taught dev | Shipped 3 products | No CS degree, no VC | Documenting the real path",
+      "post_summary": "Jess posts a brutally honest retrospective on her three product launches \u2014 one total flop, one that broke even, one that now makes $4k/month passively. She credits the failure of the first two to building without talking to customers and the success of the third to spending 30 days doing nothing but customer interviews before writing a line of code. The framing 'I stopped building and started listening' becomes the hook that spreads.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8100,
+        "comments": 623
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "selftaught",
+        "productmarket",
+        "buildinpublic",
+        "solodev"
+      ]
+    },
+    {
+      "author": "Daniel Osei",
+      "headline": "GTM Engineer | Helping founders automate outbound with AI agents | ex-Salesforce AE",
+      "post_summary": "Daniel shares a Loom walkthrough of an AI-powered outbound system he built for a client that booked 22 qualified calls in 7 days with zero manual outreach. He breaks down the exact stack \u2014 Clay, Apollo, Claude, and a custom webhook \u2014 and explains why he left a six-figure AE role to build these systems for founders. The post triggers a flood of 'how do I hire you' comments and ignites debate about whether AI outbound is the future or spam.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3900,
+        "comments": 284
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "GTMengineer",
+        "AIagents",
+        "outbound",
+        "careerpivot"
+      ]
+    }
+  ]
+}
