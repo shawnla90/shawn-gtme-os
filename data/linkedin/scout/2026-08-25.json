@@ -1,0 +1,236 @@
+{
+  "date": "2026-08-25",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-25T13:01:25.686060+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer @ Smol AI | Building the AI Engineer community",
+      "post_summary": "Dropped a detailed breakdown of how Claude's new extended thinking mode changes the economics of agentic loops \u2014 when to use it vs. when it's overkill. Key insight: thinking tokens are cheap relative to the retry cost of a wrong tool call. Includes a cost comparison table across 5 real workflows.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "claude",
+        "ai-agents",
+        "llm-economics",
+        "agentic-workflows"
+      ]
+    },
+    {
+      "author": "Beyang Liu",
+      "headline": "Co-founder & CTO at Sourcegraph | Code intelligence",
+      "post_summary": "We benchmarked 6 coding agents on real production codebases (not toy problems). The gap between 'demo performance' and 'monorepo performance' is still brutal \u2014 context window utilization, not raw capability, is what separates the winners. Here's the exact benchmark setup we used, fully open-sourced.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4103,
+        "comments": 498
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "coding-agents",
+        "developer-tools",
+        "benchmarks",
+        "ai-engineering"
+      ]
+    },
+    {
+      "author": "Alessio Fanelli",
+      "headline": "Partner at Decibel | Host of Latent Space Podcast",
+      "post_summary": "AI infrastructure is hitting a weird inflection: compute costs are dropping faster than most model companies priced in. Three infra startups I've talked to this week are pivoting from 'sell GPU access' to 'sell agent orchestration.' The commodity layer is shifting faster than anyone expected \u2014 sharing what I'm seeing.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3219,
+        "comments": 287
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "venture",
+        "gpu",
+        "agent-orchestration"
+      ]
+    },
+    {
+      "author": "Lenny Bogdonoff",
+      "headline": "Staff Engineer | Building AI-native internal tools | ex-Notion",
+      "post_summary": "Replaced our entire internal tooling team's sprint with a single Claude Code agent + MCP server connected to our Postgres schema. 11 tools shipped in 4 days. The unlock wasn't the model \u2014 it was giving the agent read access to our actual DB so it could self-correct. Thread on what the setup looks like.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5672,
+        "comments": 641
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "claude-code",
+        "mcp",
+        "internal-tools",
+        "automation",
+        "ai-agents"
+      ]
+    },
+    {
+      "author": "Kyle Poyar",
+      "headline": "Operating Partner at OpenView | Growth & GTM Strategy",
+      "post_summary": "AI SDRs are not replacing human SDRs \u2014 they're exposing which SDRs were never doing the hard parts. The reps surviving the automation wave are the ones who can run discovery like a consultant, not just book meetings. The job is changing, not disappearing.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "AI SDR",
+        "sales automation",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "VP Marketing | B2B Demand Gen | ex-Cognism, Aura, Sales Hacker",
+      "post_summary": "Stopped running content to capture demand. Started running content to create it. The playbook: find the question your ICP is asking before they know they need your category, own that answer at scale, and let intent signals tell you when to reach out. Pipeline went up 40% in 6 months without increasing ad spend.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2800,
+        "comments": 214
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "demand creation",
+        "B2B marketing"
+      ]
+    },
+    {
+      "author": "Tara Robertson",
+      "headline": "Head of Revenue Operations | GTM Systems & Pipeline Efficiency | SaaS",
+      "post_summary": "Your CRM is lying to you. Not because anyone lied \u2014 because your stage definitions were written by someone who left in 2022. We audited our pipeline last quarter and found 34% of 'Stage 3' deals had never had a second meeting. Fixed the definitions, fixed the forecast. RevOps is data hygiene before it's anything else.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1900,
+        "comments": 176
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revenue operations",
+        "CRM",
+        "pipeline forecasting"
+      ]
+    },
+    {
+      "author": "Florin Tatulea",
+      "headline": "Head of Sales Development | Outbound Systems Builder | Clay & AI Automation",
+      "post_summary": "Built an outbound system last month that pulls job change signals from LinkedIn, enriches with Clay, scores by ICP fit, and routes to the right rep in under 4 hours \u2014 zero manual work. Booked 11 meetings in the first two weeks. The moat isn't the tools, it's the signal logic. Most teams are automating the wrong triggers.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4100,
+        "comments": 342
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "Clay",
+        "GTM engineering",
+        "signal-based selling"
+      ]
+    },
+    {
+      "author": "Maya Krishnamurthy",
+      "headline": "Indie hacker | Quit my PM job to build solo | $0 \u2192 $4k MRR in 6 months",
+      "post_summary": "Maya shared her exact month-by-month revenue chart after quitting her $180k PM role at Notion to build a niche B2B SaaS tool for construction project managers. She broke down how she got her first 10 paying customers without a single cold email \u2014 only Reddit and niche Slack communities. The post ended with 'nobody told me the loneliest part wouldn't be the building, it'd be the silence between launches.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder",
+        "saas"
+      ]
+    },
+    {
+      "author": "Derek Osei-Bonsu",
+      "headline": "ex-Deloitte consultant \u2192 software engineer | Career pivoter | Building tools for other career changers",
+      "post_summary": "Derek documented his 14-month self-taught coding journey from management consultant to landing a senior engineering role at a Series B startup \u2014 including the 3 failed technical interviews, the bootcamp he regrets paying for, and the free resources that actually moved the needle. He attached a raw spreadsheet of every job application with outcome data. The post called out the gatekeeping in hiring for career changers with brutal honesty.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11800,
+        "comments": 742
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "softwareengineer",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Priya Sandhu",
+      "headline": "Solo dev | Shipped 3 products in 12 months | Claude Code + Cursor power user",
+      "post_summary": "Priya posted a real-time breakdown of how she shipped a full SaaS MVP in 11 days using Claude Code as her pair programmer \u2014 including the exact prompts she used, where the AI got it wrong and cost her 6 hours of debugging, and what she would never let an AI touch again. She included a short screen recording of her workflow. The post sparked a heated thread about whether 'vibe coding' was real engineering or technical debt disguised as speed.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6700,
+        "comments": 529
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "claudecode",
+        "vibecoding",
+        "solodev",
+        "buildinpublic",
+        "aitools"
+      ]
+    },
+    {
+      "author": "Tomasz Wierzbicki",
+      "headline": "Founder @ Patchwork | Bootstrapped | GTM engineer turned CEO | Warsaw",
+      "post_summary": "Tomasz wrote a post titled 'We almost killed the company in month 9' \u2014 a candid account of the moment his co-founder left, runway dropped to 47 days, and he had to decide whether to raise, sell, or push. He chose to push, fired two contractors, personally called every churned customer, and 90 days later hit their first $20k MRR month. He ended with a single line: 'The data doesn't tell you to keep going. That part is just you.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8900,
+        "comments": 614
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founderjourney",
+        "bootstrapped",
+        "startuplife",
+        "buildinpublic",
+        "survival"
+      ]
+    }
+  ]
+}
