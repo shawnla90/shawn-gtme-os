@@ -1,0 +1,235 @@
+{
+  "date": "2026-08-26",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-26T13:01:20.969766+00:00",
+  "sources": [
+    {
+      "author": "Swyx (shawn wang)",
+      "headline": "AI Engineer & Founder @ Latent Space | Building the AI Engineer community",
+      "post_summary": "Claude's new 'computer use' is getting slept on. Ran it against a real QA workflow yesterday \u2014 it navigated a legacy web app, filed a bug report, and updated the ticket in Linear. Zero code. The shift from 'AI that writes code' to 'AI that operates software' is happening faster than most teams realize. Your internal tooling is about to become the most important AI surface you own.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 214
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "computer-use",
+        "ai-agents",
+        "automation"
+      ]
+    },
+    {
+      "author": "Lior Ben David",
+      "headline": "AI Product Leader | Ex-Meta | Building at the intersection of LLMs and developer experience",
+      "post_summary": "Hot take: most 'AI agent' demos fail in production because teams skip the boring part \u2014 evals. We just open-sourced our internal eval harness after 6 months of running Claude + GPT-4o in production. 12 production failures. 11 of them were caught in evals we didn't build fast enough. The agent isn't the product. The eval loop is the product.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5102,
+        "comments": 388
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "evals",
+        "llmops",
+        "developer-tools",
+        "ai-agents"
+      ]
+    },
+    {
+      "author": "Aditi Sharma",
+      "headline": "Staff Engineer @ Anthropic | Model Infrastructure | Previously Google DeepMind",
+      "post_summary": "Everyone's talking about context windows. Nobody's talking about what happens to your inference bill when you actually use them. We ran benchmarks on 200k vs 1M token workloads for document analysis agents \u2014 cost per useful output went up 6x before we added caching. Prompt caching + retrieval hybrid is still the right architecture for 90% of enterprise use cases. Long context is a capability, not a strategy.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2913,
+        "comments": 176
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "inference",
+        "prompt-caching",
+        "llmops"
+      ]
+    },
+    {
+      "author": "Greg Kamradt",
+      "headline": "Founder @ ChunkViz | AI Educator | Helping devs actually ship AI products",
+      "post_summary": "I audited 50 'AI automation' posts from the last 30 days. 43 of them were Zapier + GPT with a nicer UI. The real unlock right now is multi-agent orchestration with persistent memory \u2014 one agent that plans, one that executes, one that verifies. We built this for a client's outbound workflow and cut 14 hours of manual research to 40 minutes. The architecture is simple. Most people just don't ship it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4421,
+        "comments": 301
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "multi-agent",
+        "automation",
+        "ai-workflow",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Tina Rosario",
+      "headline": "Head of Revenue Operations @ Mosaic | GTM Systems | HubSpot & Clay",
+      "post_summary": "We cut our SDR team from 8 to 3 and pipeline went up 22%. The secret wasn't AI \u2014 it was finally admitting that 60% of our outbound was noise. Built a Clay waterfall that scores intent before any human touches a lead. Less volume, way more signal.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 214
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "outbound",
+        "clay",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "GTM Engineer | Building outbound infrastructure for B2B SaaS | ex-Outreach",
+      "post_summary": "Most people use AI for personalization. The real unlock is using it for disqualification. I built a Claude-powered enrichment layer that kills 70% of prospects before they ever hit a sequence. Your reps should only see leads that already have a reason to buy.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2314,
+        "comments": 289
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "ai-outbound",
+        "sales-ops",
+        "enrichment"
+      ]
+    },
+    {
+      "author": "Priya Nambiar",
+      "headline": "VP of Marketing @ Leadfront | Content-Led Growth | B2B Pipeline",
+      "post_summary": "We stopped writing thought leadership and started documenting our actual mistakes. Engagement tripled. Turns out LinkedIn rewards honesty over polish \u2014 a post about a campaign that failed 3x outperformed every 'here's how we scaled' post we've ever published. Distribution is a mirror.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3102,
+        "comments": 401
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "b2b-marketing",
+        "linkedin-growth",
+        "demand-gen"
+      ]
+    },
+    {
+      "author": "Derek Osei",
+      "headline": "Founder @ Stackline GTM | Revenue Architecture | Helping SaaS teams build systems that scale",
+      "post_summary": "The companies winning in outbound right now have one thing in common: they treat their tech stack like a product. Versioned workflows, documented triggers, rollback plans. Sales ops is becoming software engineering. If your sequences aren't in version control, you're flying blind.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1589,
+        "comments": 176
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "sales-ops",
+        "gtm-engineering",
+        "outbound-automation",
+        "revops"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Shipped 3 products in 12 months | ex-Google PM",
+      "post_summary": "Priya shares how she replaced her $180k Google salary with $12k MRR in 11 months \u2014 not by going viral, but by solving one boring problem for one specific buyer. Breaks down her exact pricing evolution from $29/mo to $299/mo and why most indie founders underprice out of fear, not strategy.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solofounder",
+        "buildinpublic",
+        "saas",
+        "pricing"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Vibe coder \u2192 $8k MRR | I build AI tools with Claude Code and zero CS degree",
+      "post_summary": "Marcus documents shipping a full SaaS product in 4 days using Claude Code with no prior programming background \u2014 a Notion-to-email automation tool that hit 40 paying users before he knew what a database index was. Post goes deep on what 'vibe coding' actually means when money is on the line and where the gaps show up fast.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 412
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "vibecoding",
+        "claudecode",
+        "nocode",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Daniela Restrepo",
+      "headline": "10 years in nursing \u2192 software engineer | Career pivoter | Building @HealthStack",
+      "post_summary": "Daniela posts a brutally honest 18-month recap of her pivot from ICU nurse to working software engineer \u2014 including the bootcamp that wasted $14k, the cold applications that went nowhere, and the open-source contribution that finally got a recruiter to reply. Closes with the one mindset shift that actually moved the needle.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8700,
+        "comments": 634
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "womenintech",
+        "softwareengineer",
+        "breakintotech"
+      ]
+    },
+    {
+      "author": "James Okafor",
+      "headline": "Building Clearpath in public | GTM engineer | AI-native outbound",
+      "post_summary": "James shares his week 8 build-in-public update: $0 to $3,200 MRR with zero paid ads, only by posting the messy middle of building \u2014 churn, refunds, a broken onboarding that cost him 6 trials. Argues that transparency about failures converts better than polished case studies and includes the exact DM that closed his first $500/mo customer.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 198
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "gtm",
+        "startuplife",
+        "mrr"
+      ]
+    }
+  ]
+}
