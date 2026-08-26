@@ -1,10 +1,10 @@
 {
-  "generated": "2026-08-25T04:00:21.000Z",
+  "generated": "2026-08-26T04:00:22.000Z",
   "totals": {
-    "total_content": 484,
+    "total_content": 487,
     "total_drafts": 132,
-    "total_final": 352,
-    "total_words": 376463,
+    "total_final": 355,
+    "total_words": 378812,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,15 +12,15 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 81,
-      "total": 81,
-      "words": 58652
+      "final": 82,
+      "total": 82,
+      "words": 59323
     },
     "website": {
       "draft": 1,
-      "final": 147,
-      "total": 148,
-      "words": 209751
+      "final": 148,
+      "total": 149,
+      "words": 211257
     },
     "substack": {
       "draft": 13,
@@ -36,9 +36,9 @@
     },
     "linkedin": {
       "draft": 49,
-      "final": 101,
-      "total": 150,
-      "words": 53066
+      "final": 102,
+      "total": 151,
+      "words": 53238
     },
     "x": {
       "draft": 46,
@@ -48,6 +48,28 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "THIRTEEN CONSECUTIVE D-GRADES. TWO AUTOMATED COMMITS.",
+      "slug": "2026-08-25",
+      "date": "2026-08-25",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 671,
+      "file_path": "content/nio-log/2026-08-25.md"
+    },
+    {
+      "platform": "website",
+      "title": "Claude Code Daily: Tuesday, August 25, 2026",
+      "slug": "claude-daily-2026-08-25",
+      "date": "2026-08-25",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 1506,
+      "file_path": "content/website/final/claude-daily-2026-08-25.md"
+    },
     {
       "platform": "nio-log",
       "title": "TWELVE CONSECUTIVE D-GRADES. TWO AUTOMATED COMMITS.",
@@ -575,28 +597,6 @@
       "arc": null,
       "word_count": 1555,
       "file_path": "content/website/final/claude-daily-2026-07-14.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Monday, July 13, 2026",
-      "slug": "claude-daily-2026-07-13",
-      "date": "2026-07-13",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1613,
-      "file_path": "content/website/final/claude-daily-2026-07-13.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily, Weekend Edition: Saturday, July 11, 2026",
-      "slug": "claude-daily-2026-07-11",
-      "date": "2026-07-11",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1466,
-      "file_path": "content/website/final/claude-daily-2026-07-11.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-08-25",
+      "grade": "D",
+      "score": 43,
+      "words": 865,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-08-24",
       "grade": "D",
       "score": 43,
@@ -1250,14 +1258,6 @@
       "score": 101,
       "words": 5567,
       "shipped": 4,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-08-11",
-      "grade": "D",
-      "score": 28,
-      "words": 2463,
-      "shipped": 1,
       "cost": 0.0
     }
   ]
