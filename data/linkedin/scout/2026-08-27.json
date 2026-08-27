@@ -1,0 +1,233 @@
+{
+  "date": "2026-08-27",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-27T13:01:19.450007+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "Head of Developer Experience @ Smol AI | AI Engineer",
+      "post_summary": "Posted a breakdown of the 'context window arms race' \u2014 why Claude 4's 1M token window changes agent architecture fundamentally. Argues most multi-agent setups are just workarounds for small context, and now that's a solved problem. Thread went viral among AI engineers debating whether long-context kills RAG.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "context-window",
+        "llm-architecture"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "VP of Research @ OpenAI",
+      "post_summary": "Shared a quiet observation: the orgs shipping production AI agents fastest right now aren't the ones with the best models \u2014 they're the ones who solved memory and state persistence first. Referenced internal benchmarks showing agent reliability doubles when you separate working memory from long-term retrieval. No deck, no slides \u2014 just the insight.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11800,
+        "comments": 542
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "memory",
+        "production-ai"
+      ]
+    },
+    {
+      "author": "Theo Browne",
+      "headline": "CEO @ t3.gg | Builder of things on the internet",
+      "post_summary": "Hot take post: 'Claude Code just made senior engineers 10x more valuable, not replaceable.' Made the case that the ceiling on what one developer can ship in a week has completely broken \u2014 but only for people who already understand the stack. Junior devs copy-pasting AI output are shipping bugs at 10x speed. Sparked 400+ comment debate.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 8900,
+        "comments": 421
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "claude-code",
+        "ai-productivity"
+      ]
+    },
+    {
+      "author": "Eno Reyes",
+      "headline": "Infrastructure Engineer @ Modal | Previously AWS",
+      "post_summary": "Posted a cost teardown of running 100 concurrent AI agents for a month \u2014 GPU hours, API tokens, egress, orchestration overhead broken down line by line. The surprise finding: inference cost is now the smallest line item. Orchestration infra and retry logic are eating the budget. Practical takeaways for teams building at scale.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3700,
+        "comments": 287
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "cost-optimization",
+        "ai-agents"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Strategy",
+      "post_summary": "Most outbound sequences are built backwards. You pick a tool, then craft messaging around its constraints. The best GTM teams I've seen flip this: write the message first, then pick the channel and cadence that serves it. AI can generate 1,000 personalized emails \u2014 but if the core message is wrong, you've just automated failure at scale.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1840,
+        "comments": 213
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "gtm-strategy",
+        "sales-automation"
+      ]
+    },
+    {
+      "author": "Jen Allen-Knuth",
+      "headline": "Community Growth at Lavender | Former Chief Evangelist | Sales Nerd",
+      "post_summary": "SDRs aren't dying \u2014 the spray-and-pray SDR is dying. What's replacing it is a new role: GTM engineer. Part ops, part builder, part analyst. They write Clay tables before breakfast and A/B test subject lines before lunch. The companies hiring for this hybrid role are running circles around teams with 10x the headcount.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3120,
+        "comments": 387
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "sdr",
+        "sales-roles",
+        "clay"
+      ]
+    },
+    {
+      "author": "Tito Bohrt",
+      "headline": "CEO at AltiSales | Outbound Sales Expert | Revenue Leader",
+      "post_summary": "We ran the same outbound campaign with two lists: one bought from ZoomInfo, one built from first-party signals (job changes + tech installs + LinkedIn engagement). Reply rate on the signal-based list was 4.1% vs 0.6% on the ZoomInfo pull. Same sequence, same reps, same offer. The data is the moat now \u2014 not the copy.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2450,
+        "comments": 291
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound-automation",
+        "intent-signals",
+        "data-enrichment",
+        "revops"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "Demand Gen Advisor | Former VP Marketing at Nextiva & Aura",
+      "post_summary": "Content strategy in 2026: stop publishing for Google, start publishing for AI. Your buyers are asking Claude and ChatGPT what tools to use before they ever touch a search bar. If your brand isn't in the training data or showing up in AI answers, you're invisible to a growing slice of your pipeline. This is the new SEO \u2014 and most teams aren't playing it yet.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2780,
+        "comments": 344
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "ai-seo",
+        "demand-gen",
+        "gtm"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Built and sold my first SaaS in 18 months | Now building #2",
+      "post_summary": "Priya shares a raw breakdown of her MRR journey from $0 to $12k \u2014 including the month she almost quit. She posts a simple chart, no fancy design, and ends with 'the unglamorous middle is where most people quit.' The vulnerability and specificity of the revenue numbers drove massive reshares.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4800,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "saas",
+        "mrr"
+      ]
+    },
+    {
+      "author": "Marcus Delgado",
+      "headline": "Ex-nurse \u2192 self-taught developer | Shipping apps that matter | Career pivoter",
+      "post_summary": "Marcus documents week 14 of his coding journey after leaving a 9-year nursing career. He just shipped his first paying customer \u2014 a scheduling tool for home health aides. The post is a single photo of his laptop screen at 11pm with one line: 'First $49. It's real now.' Comments flooded with people mid-pivot saying 'this is exactly what I needed to see.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7200,
+        "comments": 589
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "buildinpublic",
+        "developer"
+      ]
+    },
+    {
+      "author": "Tom Brewster",
+      "headline": "Vibe coder | Shipped 6 products with Claude Code | No CS degree, no problem",
+      "post_summary": "Tom shares a thread-style post cataloging the 6 micro-SaaS products he shipped in 90 days using AI coding tools \u2014 total cost under $200, total revenue $3.1k. He breaks down which ones flopped and why, without hiding failures. The honesty about what didn't work is what made it go viral in dev circles.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9100,
+        "comments": 743
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "vibecoding",
+        "microsaas",
+        "aitools",
+        "buildinpublic",
+        "indiedev"
+      ]
+    },
+    {
+      "author": "Daniela Fontaine",
+      "headline": "PM turned founder | Building B2B tools for ops teams | 2 kids, 1 startup",
+      "post_summary": "Daniela posts a candid account of closing her first $500/mo B2B contract \u2014 signed on a Thursday afternoon between school pickup and dinner. She talks about the specific cold outreach message that worked (and pastes it verbatim), which sent the post into reshare territory. Ends with: 'No playbook. Just iterations.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5600,
+        "comments": 421
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "b2b",
+        "founder",
+        "coldoutreach",
+        "buildinpublic",
+        "pmtofounder"
+      ]
+    }
+  ]
+}
