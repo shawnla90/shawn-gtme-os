@@ -1,6 +1,83 @@
 {
-  "generated": "2026-08-27T04:01:36.760Z",
+  "generated": "2026-08-28T04:01:44.664Z",
   "events": [
+    {
+      "id": "commit-ed7a59d",
+      "title": "chore: contentos optimizer - 1 improvements (2026-08-28)",
+      "type": "system",
+      "datetime": "2026-08-27T23:01:19-04:00",
+      "status": "completed",
+      "description": "chore: contentos optimizer - 1 improvements (2026-08-28)",
+      "metadata": {
+        "commitHash": "ed7a59d"
+      }
+    },
+    {
+      "id": "commit-e90bb3b",
+      "title": "chore(crypto): evening signal update 2026-08-27",
+      "type": "system",
+      "datetime": "2026-08-27T17:30:13-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-08-27",
+      "metadata": {
+        "commitHash": "e90bb3b"
+      }
+    },
+    {
+      "id": "commit-20ef4c5",
+      "title": "feat: daily LinkedIn posts 2026-08-27",
+      "type": "milestone",
+      "datetime": "2026-08-27T09:10:59-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-08-27",
+      "metadata": {
+        "commitHash": "20ef4c5"
+      }
+    },
+    {
+      "id": "commit-63593a3",
+      "title": "feat: nio.log 2026-08-27 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-08-27T08:01:05-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-08-27 — automated daily post",
+      "metadata": {
+        "commitHash": "63593a3"
+      }
+    },
+    {
+      "id": "commit-75c1c59",
+      "title": "chore(crypto): morning signal update 2026-08-27",
+      "type": "system",
+      "datetime": "2026-08-27T07:00:19-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-08-27",
+      "metadata": {
+        "commitHash": "75c1c59"
+      }
+    },
+    {
+      "id": "commit-9a1058b",
+      "title": "feat: claude daily digest 2026-08-27",
+      "type": "milestone",
+      "datetime": "2026-08-27T00:10:37-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-08-27",
+      "metadata": {
+        "commitHash": "9a1058b"
+      }
+    },
+    {
+      "id": "commit-1be0b32",
+      "title": "chore: daily tracker scan 2026-08-26",
+      "type": "system",
+      "datetime": "2026-08-27T00:01:37-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-08-26",
+      "metadata": {
+        "commitHash": "1be0b32"
+      }
+    },
     {
       "id": "commit-433808b",
       "title": "blog: move Aug 26 posts to content/website/final (the dir th",
@@ -88,68 +165,13 @@
       "metadata": {
         "commitHash": "f6db898"
       }
-    },
-    {
-      "id": "commit-21a9211",
-      "title": "chore(crypto): evening signal update 2026-08-25",
-      "type": "system",
-      "datetime": "2026-08-25T17:30:21-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-08-25",
-      "metadata": {
-        "commitHash": "21a9211"
-      }
-    },
-    {
-      "id": "commit-febe8b6",
-      "title": "feat: daily LinkedIn posts 2026-08-25",
-      "type": "milestone",
-      "datetime": "2026-08-25T09:10:58-04:00",
-      "status": "completed",
-      "description": "feat: daily LinkedIn posts 2026-08-25",
-      "metadata": {
-        "commitHash": "febe8b6"
-      }
-    },
-    {
-      "id": "commit-90e61e1",
-      "title": "feat: nio.log 2026-08-25 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-08-25T08:01:14-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-08-25 — automated daily post",
-      "metadata": {
-        "commitHash": "90e61e1"
-      }
-    },
-    {
-      "id": "commit-cbdc98d",
-      "title": "chore(crypto): morning signal update 2026-08-25",
-      "type": "system",
-      "datetime": "2026-08-25T07:00:09-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-08-25",
-      "metadata": {
-        "commitHash": "cbdc98d"
-      }
-    },
-    {
-      "id": "commit-bcd6be0",
-      "title": "feat: claude daily digest 2026-08-25",
-      "type": "milestone",
-      "datetime": "2026-08-25T00:10:34-04:00",
-      "status": "completed",
-      "description": "feat: claude daily digest 2026-08-25",
-      "metadata": {
-        "commitHash": "bcd6be0"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 13,
-    "completedEvents": 13,
+    "totalEvents": 15,
+    "completedEvents": 15,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 13,
+    "deploymentsThisWeek": 15,
     "upcomingCronJobs": 0
   }
 }
