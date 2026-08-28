@@ -1,0 +1,235 @@
+{
+  "date": "2026-08-28",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-28T13:01:23.598625+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer & Developer Advocate | Latent.Space",
+      "post_summary": "Claude's new 'computer use' capabilities just hit GA and the benchmark numbers are deceptive. The real unlock isn't the SOTA score \u2014 it's that every operator can now build fully autonomous browser workflows without custom scrapers. Ran 3 internal tests: 2 passed cold, 1 needed a retry. This is the infra shift, not the model quality story.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 218
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "Claude",
+        "computer use",
+        "automation"
+      ]
+    },
+    {
+      "author": "Lior Ben David",
+      "headline": "Founder @ AgentOps | Making AI agents observable in production",
+      "post_summary": "We just crossed 10,000 agent sessions traced in AgentOps this week. The #1 failure mode we keep seeing: agents that hallucinate tool call parameters on step 3+ when context window fills up. Not a model problem \u2014 it's a context management problem. Here's the 3-pattern fix our best customers are using.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2100,
+        "comments": 304
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "observability",
+        "LLM ops",
+        "context engineering"
+      ]
+    },
+    {
+      "author": "Abi Aryan",
+      "headline": "ML Engineer | AI Infrastructure | Ex-Google Brain",
+      "post_summary": "Everyone is shipping MCP servers this week and most of them will be abandoned in 90 days. The pattern that actually survives: MCP as a thin routing layer over existing internal APIs you already maintain, not a net-new surface. Dropped a breakdown of 5 production MCP patterns we've seen hold up at scale vs. the 4 that collapse under real load.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1870,
+        "comments": 141
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "MCP",
+        "AI infrastructure",
+        "developer tools",
+        "production AI"
+      ]
+    },
+    {
+      "author": "Greg Baugues",
+      "headline": "Developer Relations @ Anthropic | Building with Claude",
+      "post_summary": "Something quietly changed in how teams are budgeting for AI in Q3: it's moving from 'model API spend' as a line item to 'agent compute' as a separate infrastructure budget, similar to how orgs eventually separated cloud from IT. The devs who understand token economics at the orchestration layer \u2014 not just the prompt layer \u2014 are the ones getting headcount approved right now.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 387
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "developer tools",
+        "AI infrastructure",
+        "token economics"
+      ]
+    },
+    {
+      "author": "Kyle Poyar",
+      "headline": "Operating Partner at OpenView | PLG & GTM Strategy",
+      "post_summary": "Posted a breakdown of how AI SDRs are actually performing 6 months in \u2014 open rates up, reply rates down, meeting quality tanking. The dirty secret: AI outbound is flooding inboxes with personalized noise, and buyers are getting better at ignoring it faster than vendors can iterate. The real moat is now signal selection, not message generation.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "AI SDR",
+        "outbound automation",
+        "GTM strategy"
+      ]
+    },
+    {
+      "author": "Jen Allen-Knuth",
+      "headline": "Community Growth at Lavender | Former Chief Evangelist",
+      "post_summary": "Shared a hot take that most RevOps teams are optimizing for pipeline velocity when the actual bottleneck is signal quality at the top of funnel. Used a real example: a client cut their outbound volume by 60%, focused only on intent-triggered accounts, and booked 2x more qualified meetings. Less spray, more snipe.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2100,
+        "comments": 194
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "intent data",
+        "pipeline quality",
+        "outbound"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "B2B Growth Advisor | ex-Cognism, Nextiva, Sales Hacker",
+      "post_summary": "Wrote a thread-style post arguing that LinkedIn content is now the highest-ROI GTM motion for mid-market SaaS \u2014 not because it generates direct leads, but because it pre-warms every cold email and cold call your team sends. Backed it with data: accounts where a decision-maker follows your company page convert at 3x the rate. 'Dark pipeline is content-driven.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4800,
+        "comments": 341
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "dark pipeline",
+        "LinkedIn GTM",
+        "B2B marketing"
+      ]
+    },
+    {
+      "author": "Rosalyn Santa Elena",
+      "headline": "Founder, The RevOps Collective | Fractional CRO | GTM Advisor",
+      "post_summary": "Called out the gap between how companies buy RevOps tooling and how they actually use it \u2014 most stacks have 4-6 tools doing overlapping jobs with zero data handoff between them. Proposed a 'GTM engineering layer' as the new function that sits between ops and engineering, owns the data contracts, and ships automations without waiting on a 6-week sprint cycle.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2700,
+        "comments": 218
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "RevOps",
+        "sales ops",
+        "tech stack"
+      ]
+    },
+    {
+      "author": "Priya Menon",
+      "headline": "Founder @ Loopkit | Ex-Stripe | Building AI dev tools solo",
+      "post_summary": "Priya shared that she hit $10k MRR with zero marketing spend \u2014 just shipping daily and posting build logs on LinkedIn. She broke down her exact week-by-week timeline from idea to first paying customer in 34 days, including the one cold DM that landed her anchor customer.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4800,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "indiehacker",
+        "solofounder",
+        "saas"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Software Engineer \u2192 Founder | Shipped 3 products in 90 days | Claude Code addict",
+      "post_summary": "Marcus posted a raw breakdown of how he used Claude Code to build and deploy a full SaaS product in a single weekend \u2014 not a toy, a real product with auth, billing, and a waitlist. He argued that the bottleneck is no longer code and called out the founders still waiting to 'learn to code' before starting.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7200,
+        "comments": 521
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "claudecode",
+        "vibecoding",
+        "ai",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Danielle Osei",
+      "headline": "Left corporate HR after 11 years | Now building RevOps tools for SMBs | documenting the pivot",
+      "post_summary": "Danielle wrote an honest post about month 6 of her career pivot from HR director to indie developer \u2014 no salary, savings getting thin, and a product finally getting traction. She shared a screenshot of her first Stripe notification and the text she sent her mom, making it one of the most-shared career pivot posts of the week.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11400,
+        "comments": 893
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "buildinpublic",
+        "techfounder",
+        "solodev"
+      ]
+    },
+    {
+      "author": "James Lior",
+      "headline": "Solo dev shipping B2B tools | Bootstrapped | GTM nerd | Previously @HubSpot",
+      "post_summary": "James posted a contrarian take arguing that 'build in public' has become performance theater \u2014 founders posting vanity metrics instead of real lessons. He shared the three things he stopped posting about and what actually helped him close customers, including a specific outbound tactic that generated 12 demos in one week.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5600,
+        "comments": 447
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "gtm",
+        "outbound",
+        "buildinpublic",
+        "b2b"
+      ]
+    }
+  ]
+}
