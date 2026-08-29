@@ -1,0 +1,232 @@
+{
+  "date": "2026-08-29",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-29T13:01:36.721065+00:00",
+  "sources": [
+    {
+      "author": "Shreya Rajpal",
+      "headline": "Co-founder & CEO at Guardrails AI | Building the reliability layer for LLMs",
+      "post_summary": "Shared a breakdown of why most AI agent failures in production aren't model failures \u2014 they're orchestration failures. Argued that teams are over-investing in prompt engineering and under-investing in state management and retry logic. Included a diagram of the 5 most common agent loop failure modes her team has observed across 200+ enterprise deployments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "llm-reliability",
+        "production-ai",
+        "mlops"
+      ]
+    },
+    {
+      "author": "Zach DeWitt",
+      "headline": "Partner at Wing VC | Early-stage AI infrastructure investor",
+      "post_summary": "Posted a take on the emerging 'agent billing problem' \u2014 how infrastructure companies are scrambling to build consumption models for agents that run for hours or days, not milliseconds. Called out that most current SaaS pricing breaks entirely when the user is a bot. Predicted we'll see a new pricing primitive emerge in the next 12 months built around outcomes, not seats or tokens.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5210,
+        "comments": 489
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "agent-economy",
+        "saas-pricing",
+        "venture"
+      ]
+    },
+    {
+      "author": "Ines Montani",
+      "headline": "Co-founder & CEO at Explosion | Creator of spaCy and Prodigy",
+      "post_summary": "Wrote a pointed post arguing that 'vibe coding' is producing a generation of developers who can ship fast but can't debug anything. Shared three real support tickets from users who had Claude write their entire pipeline and had no idea why it was failing. Closed with: the skill gap isn't between junior and senior devs anymore \u2014 it's between people who understand the code and people who prompted it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9132,
+        "comments": 874
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "vibe-coding",
+        "ai-coding",
+        "software-engineering"
+      ]
+    },
+    {
+      "author": "Alex Graveley",
+      "headline": "Founder at Tusk | Previously GitHub Copilot Founding Engineer",
+      "post_summary": "Dropped a thread on what separates the AI coding agents that actually close PRs from the ones that spin in loops \u2014 specifically: memory architecture. Argued that the next 6 months will be won by agents that maintain a persistent, queryable understanding of a codebase rather than re-reading files on every task. Named file-level embeddings + diff-aware indexing as the two unlocks most teams are missing.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4673,
+        "comments": 401
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "developer-tools",
+        "code-generation",
+        "ai-infrastructure"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | GTM Advisor | LinkedIn Top Voice",
+      "post_summary": "Most outbound teams are measuring the wrong thing. They obsess over reply rate when they should obsess over meeting-to-pipeline conversion. Shared a framework for how we rebuilt our GTM motion around 3 signal layers \u2014 intent, fit, and timing \u2014 and cut our sequence volume by 40% while 2x-ing qualified pipeline.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3200,
+        "comments": 187
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "pipeline",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Jen Allen-Knuth",
+      "headline": "Founder at DemandJen | Helping sellers create demand, not just capture it",
+      "post_summary": "Cold email is not dead. Lazy cold email is dead. Wrote 5 emails last week using public LinkedIn activity + job change signals as the only personalization trigger. 3 of them booked. The difference isn't AI \u2014 it's knowing what your buyer just did and making that the opening line. Sharing the exact template structure.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2800,
+        "comments": 241
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "cold-email",
+        "outbound",
+        "personalization"
+      ]
+    },
+    {
+      "author": "Shiv Narayanan",
+      "headline": "CEO at How To SaaS | RevOps & GTM Strategy for B2B SaaS",
+      "post_summary": "Your RevOps team is stuck maintaining Salesforce instead of building leverage. The shift I'm seeing at companies scaling past $20M ARR: RevOps becoming GTM engineering \u2014 writing Clay plays, owning the data layer, building automated signal pipelines. It's a new job description hiding inside an old title.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1950,
+        "comments": 134
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "gtm-engineering",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Amanda Natividad",
+      "headline": "VP Marketing at SparkToro | Content & Audience Research",
+      "post_summary": "LinkedIn posts that go viral in B2B aren't the ones with the best insights \u2014 they're the ones that make the reader feel like they finally have permission to say something they already believed. Studied 60 posts over 500K impressions in the past 90 days. The pattern isn't contrarian takes. It's validated frustration.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4100,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "linkedin",
+        "b2b-marketing"
+      ]
+    },
+    {
+      "author": "Maya Patel",
+      "headline": "Indie hacker | Built 3 apps to $10k MRR | ex-Google | Building in public",
+      "post_summary": "Maya posted her 90-day revenue dashboard after quitting her FAANG job to build solo. She shared a screenshot of her Stripe dashboard hitting $10k MRR with a thread breaking down exactly which acquisition channel drove 80% of signups (it was a single Reddit comment). The post resonated because she included the month she almost quit.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder",
+        "mrr"
+      ]
+    },
+    {
+      "author": "James Okonkwo",
+      "headline": "Software engineer \u2192 AI product builder | Shipped 6 tools with Claude API | No VC, no team",
+      "post_summary": "James documented how he replaced his entire freelance income in 4 months by building micro-SaaS tools on top of Claude and selling them to agencies. He shared his exact tech stack, pricing model, and which niches converted best. The hook: 'I used to bill $150/hr. Now I wake up to Stripe notifications.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 489
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AI",
+        "solodev",
+        "claudeapi",
+        "freelance"
+      ]
+    },
+    {
+      "author": "Sara Lindqvist",
+      "headline": "Career pivoter | 18 months from nurse to fullstack dev | Now shipping real products",
+      "post_summary": "Sara posted an honest breakdown of her 18-month career transition from nursing to software development \u2014 including the 4 months where she applied to 80 jobs and got 2 callbacks. She landed her first role not through applications but by shipping a public tool that solved a healthcare scheduling problem she knew firsthand. The post ended with her first merged PR at a startup.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11200,
+        "comments": 743
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "buildinpublic",
+        "techcareer"
+      ]
+    },
+    {
+      "author": "Daniel Cho",
+      "headline": "Founder @ Stacklane | B2B SaaS | Cold outbound obsessive | $0 to $40k ARR in 6 months",
+      "post_summary": "Daniel shared a raw post about the week his co-founder quit, his runway dropped to 60 days, and he had to decide whether to shut down or go fully solo. He chose solo, cut burn by 70%, and hit his first profitable month 8 weeks later. The post included a Loom link walking through his exact cost-cutting decisions and which features he killed.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3900,
+        "comments": 271
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "saas",
+        "startup",
+        "buildinpublic"
+      ]
+    }
+  ]
+}
