@@ -1,0 +1,233 @@
+{
+  "date": "2026-08-30",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-30T13:01:23.245772+00:00",
+  "sources": [
+    {
+      "author": "Swyx (swyx)",
+      "headline": "AI Engineer | Founder @ Smol AI | Latent Space Podcast",
+      "post_summary": "Claude's new extended thinking + tool use combination is quietly the most underrated capability drop of 2026. I benchmarked it against GPT-4o on a multi-step data pipeline task \u2014 Claude finished in 3 tool calls vs 11. The gap in planning quality is getting embarrassing. Thread on what this means for agent architectures.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3800,
+        "comments": 214
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "claude",
+        "ai-agents",
+        "llm-benchmarks",
+        "extended-thinking"
+      ]
+    },
+    {
+      "author": "Shreya Shankar",
+      "headline": "CS PhD @ UC Berkeley | AI data quality & pipelines | prev Google Brain",
+      "post_summary": "Hot take: most 'AI agent' startups are just prompt chains with a try/catch block. Real agentic systems need structured evals, memory scoping, and deterministic fallback paths \u2014 none of which you can bolt on after the fact. We published a framework for auditing agent reliability and the failure modes are predictable if you know where to look.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 187
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "evals",
+        "mlops",
+        "reliability"
+      ]
+    },
+    {
+      "author": "Tom Preston-Werner",
+      "headline": "Founder @ RedwoodJS | Co-founder GitHub | Angel investor",
+      "post_summary": "We just shipped full Claude Code integration into RedwoodJS and it changed how I think about developer tooling permanently. The question is no longer 'how do we make devs faster' \u2014 it's 'what does a project structure look like when the AI is a first-class collaborator from day one?' Sharing the decisions we made and why.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 331
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "claude-code",
+        "dx",
+        "ai-native"
+      ]
+    },
+    {
+      "author": "Michelle Pokrass",
+      "headline": "Head of Product @ Modal | prev Stripe | infra for AI workloads",
+      "post_summary": "GPU utilization math that nobody wants to talk about: at current H100 spot pricing, most startups are burning 40-60% of compute on cold start overhead and idle workers between agent tasks. Serverless GPU infra solves this but requires rethinking your job queue architecture from scratch. Here's the pattern we see winning.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2100,
+        "comments": 143
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "gpu",
+        "mlops",
+        "cost-optimization"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Advisor",
+      "post_summary": "Most GTM teams are running outbound in 2026 the same way they ran it in 2022. The problem isn't the channel \u2014 it's the signal layer. I broke down how we rebuilt our ICP trigger stack using job change alerts, funding rounds, and intent data layered against our existing CRM. The result: 3x reply rates on the same sequence with 40% fewer sends.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 213
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "gtm-engineering",
+        "signal-based-selling"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "Growth Advisor | B2B Demand Gen | ex-Nextiva, Aura, Sales Hacker",
+      "post_summary": "Hot take: most 'content strategy' teams are actually just a blog that generates zero pipeline. Real demand gen content makes buyers feel understood before they ever talk to sales. I'm sharing the exact content brief framework I use to write posts that generate inbound demo requests \u2014 not just impressions \u2014 with a free template in the comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2341,
+        "comments": 389
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "b2b-marketing"
+      ]
+    },
+    {
+      "author": "Devin Reed",
+      "headline": "Head of Content Strategy at Clari | LinkedIn Top Voice | B2B Content",
+      "post_summary": "We audited 6 months of LinkedIn posts from 50 B2B SaaS founders. The posts that generated pipeline had three things in common: a counterintuitive opening line, a specific number in the first 100 words, and a CTA that asked a question instead of dropping a link. The posts that didn't? They led with their company name. Stop leading with your company name.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3102,
+        "comments": 447
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "linkedin",
+        "content-strategy",
+        "b2b-saas"
+      ]
+    },
+    {
+      "author": "Alexis Petrichor",
+      "headline": "RevOps Lead @ Series B SaaS | Clay & Apollo Power User | GTM Systems",
+      "post_summary": "I built a fully automated outbound system using Clay, Apollo, and a Claude prompt that writes first lines personalized to each prospect's last LinkedIn post. Cost: $400/month in tooling. Output: 1,200 personalized emails per week with a 6.8% reply rate. Here's the exact workflow I use \u2014 no vendor deal, no affiliate link, just the build.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4218,
+        "comments": 612
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "outbound-automation",
+        "clay",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Built and sold my first SaaS | Now doing it again, in public",
+      "post_summary": "Priya shares that her AI-assisted customer support tool just crossed $8k MRR with zero paid ads, built entirely during nights and weekends while working a full-time PM job. She breaks down her exact stack (Next.js, Anthropic API, Supabase) and the one cold outreach email that landed her first 10 paying customers. Post ends with 'I almost quit in month 3. Glad I didn't.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "saas",
+        "MRR"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Ex-accountant \u2192 Software developer | 18 months in | Building tools for tradespeople",
+      "post_summary": "Marcus posts a raw before/after: left a 12-year accounting career at 34, learned to code via free resources and Claude, and just shipped his first paid product \u2014 a simple job-quoting app for HVAC contractors. He shows actual Stripe revenue ($340 in week one) and admits it took him 6 months to stop feeling like an imposter. The vulnerability and specificity drive massive comment engagement.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 512
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "codingjourney",
+        "buildinpublic",
+        "laterbloom"
+      ]
+    },
+    {
+      "author": "Soren Lindqvist",
+      "headline": "Developer Advocate turned indie maker | Shipping one product per quarter",
+      "post_summary": "Soren posts a thread-style breakdown of how he used Claude Code and Cursor to ship a full browser extension in 11 hours \u2014 including the exact prompts, the three moments where the AI got it wrong and how he caught it, and the product hunt post that followed. Frames it as 'this isn't about replacing developers, it's about what one developer can now do alone' \u2014 a take that splits the comments hard.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 427
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AI",
+        "indiedev",
+        "claudecode",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Ama Asante",
+      "headline": "Founder @ Stacklane | Helping non-technical founders ship faster | YC W25",
+      "post_summary": "Ama shares the uncomfortable truth that her YC batch had 6 teams building nearly identical 'AI for X' products, and the only ones still alive 8 months later are the ones who talked to 50 customers before writing a line of code. The post is blunt, names no one, and ends with a checklist of five questions to answer before building. Resonates hard with the over-indexed builder crowd.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9300,
+        "comments": 681
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "startups",
+        "productmarket",
+        "YC"
+      ]
+    }
+  ]
+}
