@@ -1,0 +1,231 @@
+{
+  "date": "2026-08-31",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-08-31T13:01:17.042266+00:00",
+  "sources": [
+    {
+      "author": "Swyx (shawn wang)",
+      "headline": "AI Engineer | Founder @ Smol AI | Host of Latent Space Podcast",
+      "post_summary": "Claude's new model context protocol hit 10,000 MCP servers in the wild this week. The agent ecosystem is moving faster than anyone predicted. Three patterns emerging that separate the ones getting production traction from the ones that demo well and die quietly.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3800,
+        "comments": 214
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "mcp",
+        "ai-agents",
+        "claude",
+        "developer-tools"
+      ]
+    },
+    {
+      "author": "Shreya Rajpal",
+      "headline": "CEO @ Guardrails AI | Building safe, reliable AI systems",
+      "post_summary": "We just killed our monolithic AI pipeline and replaced it with 11 specialized sub-agents. Build time dropped 60%. Failure surface shrunk dramatically. The mental model shift: stop thinking about prompts, start thinking about contracts between agents.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5200,
+        "comments": 387
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "multi-agent",
+        "llmops",
+        "automation"
+      ]
+    },
+    {
+      "author": "Theo Browne",
+      "headline": "CEO @ t3.gg | TypeScript, Next.js, and whatever ships",
+      "post_summary": "Hot take: 90% of AI agent frameworks are solving the wrong problem. You don't need another abstraction layer \u2014 you need reliable tool calling and deterministic state management. Here's the stack we're actually using in production with zero framework overhead.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4100,
+        "comments": 502
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "ai-infrastructure",
+        "typescript",
+        "agents"
+      ]
+    },
+    {
+      "author": "Cassie Kozyrkov",
+      "headline": "Chief Decision Scientist | AI Leadership & Strategy | Ex-Google",
+      "post_summary": "Everyone is racing to build AI agents. Almost no one is building the evals to know if they're working. I reviewed 40 production agent deployments last quarter \u2014 31 had no automated reliability testing whatsoever. The infrastructure gap isn't compute, it's observability.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6700,
+        "comments": 641
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "llmops",
+        "evals",
+        "ai-agents"
+      ]
+    },
+    {
+      "author": "Kyle Poyar",
+      "headline": "Growth Advisor | Partner at OpenView | PLG & GTM Strategy",
+      "post_summary": "AI SDRs are not replacing human SDRs \u2014 they're exposing which reps were already replaceable. The top 20% are using AI to 10x their output. The bottom 40% are being automated out. The real question isn't 'will AI replace sales?' It's 'what does a rep do that AI can't?' Most companies don't have a good answer yet.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3200,
+        "comments": 187
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ai-sdr",
+        "sales-automation",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Vin Matano",
+      "headline": "GTM Engineer | Cold Email Nerd | Turning data into pipeline at scale",
+      "post_summary": "We sent 90,000 cold emails last month. Our highest-performing sequence had zero personalization tokens \u2014 just a dead-simple problem statement and a one-line CTA. The campaigns with the most 'personalization' had the worst reply rates. Buyers don't want to feel researched. They want to feel understood. These are very different things.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2850,
+        "comments": 241
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "cold-email",
+        "outbound-automation",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Jen Spencer",
+      "headline": "CRO | Revenue Operations Leader | GTM Systems Architect | B2B SaaS",
+      "post_summary": "Your RevOps team is drowning in tooling but starving for signal. We consolidated from 14 point solutions to 6 and our pipeline visibility actually went up. The problem was never missing data \u2014 it was that no one trusted the data we had. Fewer tools, ruthless data hygiene, one source of truth. That's the whole playbook.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1940,
+        "comments": 132
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "sales-ops",
+        "gtm-strategy"
+      ]
+    },
+    {
+      "author": "Alec Paul",
+      "headline": "Head of Demand Gen | B2B Content that builds pipeline | ex-Gong",
+      "post_summary": "We stopped writing 'thought leadership' and started writing about the exact objections our AEs hear on every demo call. Conversion from content went up 3x in a quarter. The best content strategy for 2026 is your sales call library. Mine your Gong recordings, find the patterns, write the posts. Distribution is still hard. Relevance is not.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2410,
+        "comments": 163
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Indie hacker | Built 3 products, 1 ramen profitable | ex-Google",
+      "post_summary": "Priya shares that she quit her $280k Google job 14 months ago to build solo. Her third product just hit $4,200 MRR. The post breaks down what the first two failures taught her that made the third one work \u2014 focusing on a problem she personally had instead of chasing trends.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4800,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Software engineer \u2192 AI product builder | Shipping daily | No VC, no team",
+      "post_summary": "Marcus posts a screenshot of his Claude Code terminal at 11pm with the caption 'my cofounder.' He explains how he shipped a full B2B SaaS MVP in 6 days using AI coding tools \u2014 something that would have taken 3 months two years ago. Ends with the line: 'The moat is no longer code. It's taste and speed.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7100,
+        "comments": 489
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AItools",
+        "buildinpublic",
+        "solodev",
+        "claudecode"
+      ]
+    },
+    {
+      "author": "Leila Okonkwo",
+      "headline": "Career pivoter | Former nurse \u2192 self-taught dev | 18 months in",
+      "post_summary": "Leila documents month 18 of her career pivot from ICU nurse to software developer. She just landed her first paid freelance contract \u2014 $3,500 for a client dashboard. The post is raw about how many rejections came before it and includes a photo of the rejection spreadsheet she kept. Closes with: 'I stopped tracking rejections. I started tracking shipped projects.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11200,
+        "comments": 743
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selfteught",
+        "techcareer",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Daniel Str\u00f8m",
+      "headline": "Founder @ Loopdesk | B2B SaaS | Previously failed twice, now paying rent",
+      "post_summary": "Daniel posts his company's 12-month revenue chart \u2014 a flat line for 9 months and then a hockey stick in the last 3. He attributes the inflection to one change: stopped building features and started calling 5 customers per week. The post challenges founders obsessed with product to consider whether they have a sales problem, not a product problem.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5600,
+        "comments": 401
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "saas",
+        "founder",
+        "sales",
+        "buildinpublic"
+      ]
+    }
+  ]
+}
