@@ -1,0 +1,232 @@
+{
+  "date": "2026-09-01",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-01T13:01:32.078224+00:00",
+  "sources": [
+    {
+      "author": "Sarah Chen",
+      "headline": "Staff Engineer @ Anthropic | Building agentic systems | ex-Google Brain",
+      "post_summary": "Claude's new extended thinking mode is changing how we architect multi-agent pipelines. I ran 200 evals comparing standard vs extended thinking on complex orchestration tasks \u2014 the gap is wider than I expected. Sharing the breakdown and what it means for teams building production agents.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 218
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "agents",
+        "claude",
+        "evals",
+        "llm"
+      ]
+    },
+    {
+      "author": "Marcus Holloway",
+      "headline": "Founder @ Conduit AI | AI infrastructure for enterprise | prev Databricks",
+      "post_summary": "We just cut our agent inference costs 61% by moving from API calls to self-hosted Llama 3.1 for the retrieval layer, keeping frontier models only for final synthesis. Most teams are massively over-spending on the wrong part of the stack. Here's the architecture decision tree we use.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 341
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "cost-optimization",
+        "llama",
+        "self-hosted"
+      ]
+    },
+    {
+      "author": "Priya Nambiar",
+      "headline": "Head of Developer Experience @ Vercel | AI tooling | TypeScript obsessed",
+      "post_summary": "The Model Context Protocol is quietly becoming the USB-C of AI tooling and most developers are still sleeping on it. Every major IDE, agent framework, and data connector is shipping MCP support this quarter. I mapped out the ecosystem as it stands today \u2014 the consolidation is moving faster than I predicted 6 months ago.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 492
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "mcp",
+        "developer-tools",
+        "ai-ecosystem",
+        "tooling"
+      ]
+    },
+    {
+      "author": "James Okafor",
+      "headline": "GTM Engineer | Automating B2B revenue ops | Building in public",
+      "post_summary": "I replaced a 4-person BDR team with a Claude Code agent that runs our entire top-of-funnel: research, personalization, sequencing, and reply routing. Month 1 results: pipeline volume up 3x, cost per meeting down 78%. The uncomfortable truth is that most SDR work was always pattern-matching on data \u2014 and agents are just better at it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9200,
+        "comments": 673
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "gtm",
+        "ai-agents",
+        "revenue-ops"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Helping revenue teams grow faster with AI",
+      "post_summary": "Most GTM teams are running 14 different tools and none of them talk to each other. The real ROI of AI in sales isn't the AI \u2014 it's finally having a data layer that forces you to clean up your stack. We cut 6 tools and 3x'd pipeline coverage in 90 days.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "sales-ops",
+        "ai-in-sales"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "Demand Gen & Growth Advisor | Ex-Cognism, Nextiva, Sales Hacker",
+      "post_summary": "Cold outbound is not dead. Lazy outbound is dead. I've been auditing sequences for 3 years and the #1 mistake is still the same: leads get 7 generic touches with no signal-based trigger. Companies using job change + tech stack + intent signals as the entry condition are booking 4x more meetings from the same contact volume.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 198
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound-automation",
+        "demand-gen",
+        "cold-email"
+      ]
+    },
+    {
+      "author": "Melissa Sargeant",
+      "headline": "CMO | B2B Revenue Growth | Content-Led GTM | Board Advisor",
+      "post_summary": "The content teams winning right now aren't publishing more \u2014 they're publishing less but distributing smarter. One anchor piece per week, sliced into 12 derivative assets across 4 channels, with every piece tracked to pipeline in the CRM. Volume was never the strategy. Distribution velocity is.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3201,
+        "comments": 427
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "b2b-marketing",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "Brendan Short",
+      "headline": "Founder @ The Signal | Outbound infrastructure for modern GTM teams",
+      "post_summary": "RevOps is having an identity crisis. Half the team is building data pipelines. The other half is still manually updating Salesforce fields. The companies that figured it out hired a GTM engineer \u2014 someone who can write Clay formulas, query Snowflake, and also sit in a deal review. That hybrid role is the unlock for the next 3 years.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1654,
+        "comments": 283
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "gtm-engineering",
+        "sales-infrastructure"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Building Loopback (AI meeting notes \u2192 CRM sync) | prev eng @ Stripe",
+      "post_summary": "Priya shares that she hit $8k MRR with zero paid marketing by posting daily build updates on LinkedIn for 90 days. Breaks down the exact post format she used, how transparency about failures drove more signups than wins did, and why she almost quit at day 47.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3200,
+        "comments": 187
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "solofounder",
+        "indiehacker",
+        "saas"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Ex-teacher turned SWE | 14 months of self-teaching \u2192 landed $130k L3 @ Google | Sharing the real path",
+      "post_summary": "Marcus posts a side-by-side of his first rejected coding challenge from 18 months ago and the one he passed last week at Google. Honest about the 200+ rejections in between, the single mentor who changed his trajectory, and why bootcamp marketing undersells how hard the middle part is.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11400,
+        "comments": 643
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "techjobs",
+        "codingjourney"
+      ]
+    },
+    {
+      "author": "Rena Okafor",
+      "headline": "Building Cartful in public | E-commerce personalization for Shopify | YC W25",
+      "post_summary": "Rena writes a post-mortem on a feature she spent 6 weeks building that zero users adopted. Walks through the assumption she never validated, the three customer calls that would have killed the idea in day 3, and what she shipped instead that grew weekly actives 40% in two weeks.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2800,
+        "comments": 214
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "startups",
+        "productlessons",
+        "yc",
+        "buildinginpublic"
+      ]
+    },
+    {
+      "author": "Daniel Str\u00f8m",
+      "headline": "Solo dev | Shipped 6 products in 12 months | 1 survived | Writing about what I learned",
+      "post_summary": "Daniel argues that the 'ship fast and validate' advice fails solo devs because they burn out shipping things they don't care about. He makes the case for building one thing you'd use yourself for a full year before calling it a product, referencing how his surviving tool started as an internal script he was embarrassed to show anyone.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5700,
+        "comments": 389
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solodev",
+        "indiemaker",
+        "productthinking",
+        "buildinginpublic"
+      ]
+    }
+  ]
+}
