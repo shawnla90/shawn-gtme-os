@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-02",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-02T13:01:17.630245+00:00",
+  "sources": [
+    {
+      "author": "Swyx (swyx)",
+      "headline": "AI Engineer | Co-founder @ Smol AI | Latent Space Podcast",
+      "post_summary": "Claude's new extended thinking + tool use combo is quietly breaking every benchmark I had for 'what agents can do.' Just shipped a coding agent that autonomously debugged a 3,000-line codebase, filed its own GitHub issues, and fixed them \u2014 zero human input. The era of agents that plan AND execute is here, and most people still think we're in the 'chat with a PDF' phase.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "claude",
+        "developer-tools"
+      ]
+    },
+    {
+      "author": "Cassie Kozyrkov",
+      "headline": "Chief Decision Scientist | AI Strategist | ex-Google | Keynote Speaker",
+      "post_summary": "Hot take: most companies building 'AI agents' are actually building very expensive if/else trees with a GPT wrapper. Real agentic infrastructure requires memory, tool orchestration, failure recovery, and audit trails \u2014 not just chaining prompts. I've seen 6 enterprise pilots this month. Only 1 had all four. That's your moat if you're building in this space.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 541
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "enterprise-ai",
+        "agents"
+      ]
+    },
+    {
+      "author": "Greg Brockman",
+      "headline": "President, OpenAI",
+      "post_summary": "We're at an inflection point where inference cost curves are dropping faster than model capability curves are rising. What that means: the bottleneck is shifting from 'can the model do this' to 'can your architecture handle the throughput.' The infra teams are the new product teams. Huge congrats to the engineers making this real.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 12400,
+        "comments": 892
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "inference",
+        "openai"
+      ]
+    },
+    {
+      "author": "Lenny Rachitsky",
+      "headline": "Author of Lenny's Newsletter | ex-Airbnb Product Lead",
+      "post_summary": "Just ran a survey of 400 PMs at AI-native companies. 67% say their #1 bottleneck is NOT the model \u2014 it's evaluation pipelines. They can't tell if their agent is getting better or worse between deploys. The teams winning are the ones who've built robust evals first, then iterated the model. Build your evals before you build your product.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 427
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-product",
+        "evals",
+        "developer-tools"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline generation fanatic | Ex-Looker",
+      "post_summary": "AI SDRs are not replacing human SDRs. They're exposing which human SDRs were never doing human work to begin with. The reps who survive this wave are the ones who were already doing things AI can't: building real relationships, navigating org charts, reading the room. The reps who get replaced? They were copy-pasting sequences too.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "ai-sdr",
+        "sales",
+        "outbound"
+      ]
+    },
+    {
+      "author": "Vin Matano",
+      "headline": "GTM Engineer | Helping B2B teams build outbound systems that don't suck",
+      "post_summary": "We 3x'd reply rates by stopping personalization at the email level and starting it at the list level. Most teams spend 80% of their time writing 'personalized' intros to the wrong people. We spent that time instead building a Clay waterfall that only surfaces accounts with 3+ buying signals active simultaneously. Fewer sends, more pipeline.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2193,
+        "comments": 187
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "clay",
+        "outbound-automation",
+        "gtm-engineering",
+        "signal-based-selling"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "Growth Advisor | Ex-Cognism, Nextiva | B2B demand gen that actually converts",
+      "post_summary": "Hot take: most B2B content strategies are just SEO strategies with a LinkedIn distribution layer slapped on top. That's not a content strategy, that's a content calendar. Real content strategy starts with the question your buyer is asking at 11pm when nobody's watching, not the keyword with 4,400 monthly searches. Build for the dark funnel or keep wondering why your MQLs don't close.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 429
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "dark-funnel",
+        "b2b-marketing"
+      ]
+    },
+    {
+      "author": "Dannie Herzberg",
+      "headline": "Head of Sales @ Miro | PLG \u2192 Enterprise motion | Revenue architect",
+      "post_summary": "RevOps in 2026 is less about Salesforce hygiene and more about data architecture decisions that determine whether your GTM team can move fast or not. I've seen $50M ARR companies paralyzed because their CRM schema was designed for a company half their size. The ops debt compounds silently until it doesn't. The best RevOps hires I've made were engineers who also understood how salespeople think.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2876,
+        "comments": 241
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "sales-ops",
+        "crm",
+        "gtm-strategy"
+      ]
+    },
+    {
+      "author": "Priya Sundaram",
+      "headline": "Indie hacker | Shipped 3 products in 2026 | ex-Google PM",
+      "post_summary": "Priya shares that her AI scheduling tool just crossed $10k MRR \u2014 8 months after leaving Google with no co-founder, no funding, and no audience. She breaks down the exact three distribution channels that drove growth and why she regrets waiting so long to charge for it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "Marcus Chen",
+      "headline": "Software engineer \u2192 founder | Building AI tools for small law firms",
+      "post_summary": "Marcus posts a screenshot of his first cold outbound email that got a reply from a paying customer, then walks through exactly what he changed after 47 ignored emails. He emphasizes that specificity about the problem \u2014 not the product \u2014 was the unlock.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2800,
+        "comments": 189
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "b2bsaas",
+        "outbound",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Tara Okonkwo",
+      "headline": "Teacher \u2192 developer | 18 months of learning in public | Now shipping",
+      "post_summary": "Tara shares the exact moment she realized her bootcamp education was insufficient and what she actually did to get her first freelance client \u2014 a local restaurant owner \u2014 by building them a simple reservation tool. She's documenting the financial math of her transition from $38k/year teaching to $6k/month freelance.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6100,
+        "comments": 540
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "learntocode",
+        "techmigration"
+      ]
+    },
+    {
+      "author": "Dmitri Volkov",
+      "headline": "Solo dev | Claude Code power user | Shipping faster than most teams",
+      "post_summary": "Dmitri posts a breakdown of how he replaced a $180k/year engineering hire with a structured Claude Code workflow \u2014 not to brag, but to show the exact prompting system and file structure he uses to keep a solo operation running like a 4-person team. Includes his actual CLAUDE.md and context handoff template.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9400,
+        "comments": 820
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "claudecode",
+        "aitools",
+        "solodev",
+        "buildinpublic"
+      ]
+    }
+  ]
+}
