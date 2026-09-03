@@ -21,6 +21,11 @@ reducer silently ignores every transport action at runtime. `lib/delivery-log.ts
 `lib/sse-events.ts` (transport stream) are also two implementations of one idea.
 
 ## Build
+0. Your branch starts at `integrate/niobot-v3` (initiatives-api, tamagotchi, error-retry-ui merged; sse-transport rejected by
+   the coordinator on `tsc`). First: `git merge --no-ff --no-edit par/niobot-v3/sse-transport` (the textual merge is clean),
+   then run `cd website/apps/nio-chat && npx tsc --noEmit` and paste the ~11 errors into your first handoff block as the
+   starting evidence (`msgId` vs `id`, `'failed'`/`'truncated'` not in the UI vocab, `fireChatRequest`/`streamResponse`
+   arity mismatches around ChatProvider.tsx L720-790).
 1. Single source of truth for the action union and vocabularies in `lib/types.ts`: keep the reducer's names (`id`, `sending`,
    `offline`) and ADD what the transport needs (`truncated` message status; `lastEventId?` on CONNECTION_STATE). Map transport
    `pending` -> `sending`, `done` -> `idle`, `failed` -> `offline` at the shim boundary, or better, delete the shim's private
