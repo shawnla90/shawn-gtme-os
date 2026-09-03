@@ -29,7 +29,7 @@ render() {
     if [ -d "$wt" ]; then
       ahead="$(git -C "$wt" rev-list --count "$BASE_BRANCH..HEAD" 2>/dev/null || echo '?')"
       dirty="$(git -C "$wt" status --porcelain 2>/dev/null | grep -vc '^?? HANDOFF.md$' || true)"
-      ms="$(grep -E '^## Milestone:' "$wt/HANDOFF.md" 2>/dev/null | tail -1 | sed -E 's/^## Milestone: *//; s/ *<!--.*$//' | cut -c1-34)"
+      ms="$(grep -E '^## Milestone:' "$wt/HANDOFF.md" 2>/dev/null | tail -1 | sed -E 's/^## Milestone: *//; s/ *<!--.*$//' | cut -c1-34 || true)"
       blockers="$(awk '/^## Milestone:/{b=""; inb=0} /^### Blockers/{inb=1; next} /^### /{inb=0} inb && /^- /{b=b $0 "\n"} END{printf "%s", b}' "$wt/HANDOFF.md" 2>/dev/null | grep -v -- '- none' || true)"
     else
       ahead="gone"; dirty="-"; ms="(worktree missing)"; blockers=""

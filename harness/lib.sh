@@ -75,8 +75,8 @@ last_log_line() {
       elif .type=="result" then "RESULT: "+(.subtype // "") + " " + ((.result // "")|tostring)
       elif .type=="user" then "tool_result"
       elif .type=="system" then "system:"+(.subtype // "")
-      else .type end' 2>/dev/null | tr '\n' ' ')"
+      else .type end' 2>/dev/null | tr '\n' ' ' || true)"
     [ -n "$out" ] && line="$out"
   fi
-  printf '%s' "$line" | cut -c1-"${2:-100}"
+  printf '%s' "$line" | cut -c1-"${2:-100}" || true
 }
