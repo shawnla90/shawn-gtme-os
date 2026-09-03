@@ -1,0 +1,231 @@
+{
+  "date": "2026-09-03",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-03T13:01:13.394346+00:00",
+  "sources": [
+    {
+      "author": "Sarah Chen",
+      "headline": "Staff Engineer @ Anthropic | Previously Google DeepMind | Building reliable AI systems",
+      "post_summary": "Just shipped a breakdown of how we think about agent reliability at scale. The dirty secret: 80% of agent failures aren't model failures \u2014 they're tool call failures, context window mismanagement, and bad retry logic. Most teams are optimizing the wrong layer. Here's what actually moves the needle.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "aiagents",
+        "reliability",
+        "llmops"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Founder @ Stackwise | YC W25 | Ex-Stripe | Making infra boring again",
+      "post_summary": "We crossed $1M ARR this week. 11 months, 3 engineers, zero enterprise sales team. The entire motion was Claude Code + a Slack channel. I'll tell you what surprised me: the bottleneck was never the AI \u2014 it was the humans who couldn't review output fast enough. Sharing the exact workflow we use to ship 10x faster without losing quality.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 541
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "devtools",
+        "startups",
+        "claudecode",
+        "aiworkflow"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Head of Platform Engineering @ Databricks | Distributed systems nerd | Speaker",
+      "post_summary": "Hot take: MCP is the API design pattern that finally solves tool integration for agents \u2014 but 90% of implementations get the auth model wrong and ship context leaks. Spent the last two weeks auditing 12 production MCP servers. The failure modes are consistent and fixable. Thread below.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3100,
+        "comments": 227
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "mcp",
+        "security",
+        "aiinfrastructure",
+        "agents"
+      ]
+    },
+    {
+      "author": "Jordan Okafor",
+      "headline": "GTM Engineer | AI-native revenue ops | Building the RevOps stack of 2027",
+      "post_summary": "Everyone is talking about AI SDRs. Nobody is talking about what happens after the meeting books. The real leverage is in the handoff: structured context from the agent to the AE, pre-researched in real time, synced to CRM before the call starts. We 3x'd AE close rate in 60 days by fixing the handoff, not the top of funnel.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2600,
+        "comments": 189
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "aiagents",
+        "revops",
+        "gtmengineering",
+        "automation"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Strategy",
+      "post_summary": "AI SDRs are not replacing human SDRs. They're replacing the 4 hours a day humans waste on research, sequencing, and CRM hygiene. The teams winning right now aren't cutting headcount \u2014 they're redirecting it. One rep doing strategic work beats three doing mechanical work every time.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3200,
+        "comments": 187
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "AI SDR",
+        "GTM engineering",
+        "outbound automation"
+      ]
+    },
+    {
+      "author": "Tamara Boyce",
+      "headline": "RevOps Lead @ Series B SaaS | HubSpot \u2192 Salesforce migrations | Pipeline analytics",
+      "post_summary": "We killed our 14-step outbound sequence last quarter. Replaced it with a 3-touch sequence with a real personalization signal in step 1. Reply rate went from 1.8% to 6.3%. The lesson: most sequences are long because nobody wants to make the hard decision about what actually matters.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2800,
+        "comments": 241
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "sales ops",
+        "email sequencing"
+      ]
+    },
+    {
+      "author": "Marcus Edgerton",
+      "headline": "GTM Engineer | Clay + Apollo + AI | Building revenue infrastructure for B2B startups",
+      "post_summary": "Most GTM engineers are just power users of Clay. Real GTM engineering is owning the data pipeline end to end \u2014 enrichment logic, routing rules, scoring models, CRM hygiene automation, and alerting when something breaks. Took me 18 months to learn the difference. Now I charge accordingly.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4100,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM engineering",
+        "Clay",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Priya Nath",
+      "headline": "VP of Marketing | B2B Content Strategy | Demand Gen | ex-Gong, ex-Drift",
+      "post_summary": "Dark social is not a strategy. Posting consistently on LinkedIn IS a strategy \u2014 and it compounds. We traced 31% of inbound demos last quarter back to a LinkedIn post from 60+ days prior. The content your buyers read before they ever fill out a form is doing more work than your paid ads. Invest accordingly.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5700,
+        "comments": 428
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "demand generation",
+        "LinkedIn organic"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Quit my FAANG job to build in public | 0 \u2192 $8k MRR in 90 days | Founder @ Loopkit",
+      "post_summary": "Priya shares a raw breakdown of her first 90 days after leaving Google \u2014 including the month she made $0, the cold DM that landed her first 10 customers, and the exact pricing mistake that cost her $2k in revenue. Ends with: 'nobody talks about the weeks before the screenshot.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "indiehacker",
+        "saas"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Self-taught dev \u2192 shipped 3 products | Writing about the unglamorous parts of building solo",
+      "post_summary": "Marcus posts a simple before/after: 18 months ago he was copying Stack Overflow answers and didn't understand what an API was. Today he just crossed $1k MRR on a tool he built in a weekend. The post is mostly about what changed \u2014 not the code skills, but the willingness to ship ugly v1s without apologizing.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 521
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "selftaught",
+        "careerpivot",
+        "buildinpublic",
+        "developer"
+      ]
+    },
+    {
+      "author": "Tomas Eriksson",
+      "headline": "Building AI tools for small businesses | ex-agency founder | shipping weekly",
+      "post_summary": "Tomas shares that he spent 3 weeks building an AI feature nobody asked for, then added a dead-simple CSV export in 2 hours and got 40 upgrade requests the same day. The lesson he draws: 'I keep optimizing for impressive. My users keep asking for boring.' Thread format with real Stripe screenshots.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3100,
+        "comments": 278
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "productlessons",
+        "solodev",
+        "ai",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Danielle Osei",
+      "headline": "Teacher \u2192 Software Engineer in 14 months | Now building EdTech solo | Career changer helping career changers",
+      "post_summary": "Danielle posts about the moment she realized her bootcamp job hunt strategy was wrong \u2014 she was applying to 20 jobs a day and getting nothing, then landed 3 offers in 3 weeks after switching to building one small public project and writing about it. Post breaks down the exact project, the exact posts, and the exact emails she sent. Comments flooded with other career-pivoters asking for the template.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9400,
+        "comments": 843
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "codingbootcamp",
+        "techcareer",
+        "buildinpublic"
+      ]
+    }
+  ]
+}
