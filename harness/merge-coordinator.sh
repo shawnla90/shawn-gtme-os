@@ -81,7 +81,7 @@ for s in "${ordered[@]}"; do
   overlap=""; for f in $changed; do case " $merged_files " in *" $f "*) overlap="$overlap $f";; esac; done
   [ -n "$overlap" ] && warn "touches files already merged by an earlier stream:$overlap"
   r_files[$j]="$(printf '%s' "$changed" | tr '\n' ' ')"
-  if [ "$dry" = 1 ]; then r_result[$j]="DRY-RUN"; j=$((j+1)); continue; fi
+  if [ "$dry" = 1 ]; then r_result[$j]="DRY-RUN"; merged_files="$merged_files $changed"; j=$((j+1)); continue; fi
   pre="$(git -C "$iwt" rev-parse HEAD)"
   if git -C "$iwt" merge --no-ff --no-edit -m "integrate($run): merge $br" "$br" >/dev/null 2>&1; then
     if run_tests "$changed"; then
