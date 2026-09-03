@@ -231,6 +231,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             { href: lp('/cracked'), label: 'Cracked GTM' },
             { href: lp('/knowledge'), label: 'Knowledge' },
             { href: lp('/reddit'), label: 'Reddit' },
+            { href: lp('/tokens'), label: 'Tokens' },
             { href: lp('/watch'), label: 'Watch' },
             { href: lp('/about'), label: nav('about') },
           ]}

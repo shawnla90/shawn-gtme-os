@@ -55,6 +55,7 @@
     "./data/github-contributions.json": "./data/github-contributions.json",
     "./data/youtube-videos.json": "./data/youtube-videos.json",
     "./data/reddit-stats.json": "./data/reddit-stats.json",
+    "./data/tokens-ledger.json": "./data/tokens-ledger.json",
     "./styles": "./styles/tokens.css",
     "./data/guide-manifest": "./data/guide-manifest.ts"
   },
