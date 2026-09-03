@@ -25,6 +25,7 @@ harness/
 | handoff | `harness/handoffs/<run>/<stream>.md` (tracked, unique path so merges never collide); `<worktree>/HANDOFF.md` is an untracked symlink to it |
 
 Override the root with `HARNESS_WT_ROOT`, the base branch with `HARNESS_BASE_BRANCH` (default `main`).
+A second wave that builds on the first wave's result runs with `HARNESS_BASE_BRANCH=integrate/<run>` and a new run name.
 
 ## Typical run
 
