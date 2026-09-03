@@ -22,7 +22,7 @@ harness/
 | run files | `~/.worktrees/<repo>/_runs/<run>/<stream>/{run.log,run.pid,supervisor.pid,run.meta,status}` |
 | stream index | `~/.worktrees/<repo>/_runs/<run>/streams.list` |
 | integration | `~/.worktrees/<repo>/<run>/_integrate` on branch `integrate/<run>` |
-| handoff | `<worktree>/HANDOFF.md`, committed with the stream's work |
+| handoff | `harness/handoffs/<run>/<stream>.md` (tracked, unique path so merges never collide); `<worktree>/HANDOFF.md` is an untracked symlink to it |
 
 Override the root with `HARNESS_WT_ROOT`, the base branch with `HARNESS_BASE_BRANCH` (default `main`).
 
@@ -51,7 +51,7 @@ git checkout main && git merge --ff-only integrate/niobot-v3 && git push
 
 ## HANDOFF.md protocol
 
-`spawn-parallel.sh` writes the header (task id, branch, worktree, prompt, run log). After every milestone and
+`spawn-parallel.sh` writes the header (task id, branch, worktree, prompt, run log) to `harness/handoffs/<run>/<stream>.md`, commits it, and links `HANDOFF.md` at the worktree root to it. After every milestone and
 before stopping for any reason, the agent runs:
 
 ```bash

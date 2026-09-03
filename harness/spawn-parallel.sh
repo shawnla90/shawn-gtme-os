@@ -81,7 +81,8 @@ for i in "${!names[@]}"; do
     link) link_node_modules "$wt";;
     install) [ -f "$wt/website/package.json" ] && (cd "$wt/website" && npm install --no-audit --no-fund >/dev/null) && info "npm install done for $s";;
   esac
-  cat > "$wt/HANDOFF.md" <<HD
+  hrel="$(handoff_rel "$run" "$s")"; mkdir -p "$wt/$(dirname "$hrel")"
+  cat > "$wt/$hrel" <<HD
 # HANDOFF — $run / $s
 
 | field | value |
@@ -92,12 +93,15 @@ for i in "${!names[@]}"; do
 | prompt | \`${p:-none}\` |
 | created | $(now_iso) |
 | run log | \`$(run_dir "$run" "$s")/run.log\` |
+| canonical file | \`$hrel\` (HANDOFF.md at the worktree root is a symlink to it) |
 
 Fresh session: read the newest **Milestone** block below, run its **Resume** commands, trust only **Verified** lines.
 Append a block after every milestone and before stopping:
 \`$HARNESS_DIR/handoff-append.sh --task $run/$s --milestone "<name>" --verified "<claim> :: <command that proved it>" ...\`
 
 HD
+  ensure_handoff_link "$wt" "$run" "$s"
+  git -C "$wt" add "$hrel" && git -C "$wt" commit -q -m "handoff($s): open $run/$s"
   printf '%s\t%s\t%s\t%s\n' "$s" "$wt" "$br" "${p:-}" >> "$sf"
   ok "worktree $s -> $wt ($br)"
 done

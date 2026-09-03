@@ -39,6 +39,13 @@ wt_path()     { echo "$WT_ROOT/$1/$2"; }            # run stream
 branch_name() { echo "par/$1/$2"; }                 # run stream
 run_dir()     { echo "$RUNS_DIR/$1/$2"; }           # run stream
 streams_file(){ echo "$RUNS_DIR/$1/streams.list"; } # run
+handoff_rel(){ echo "harness/handoffs/$1/$2.md"; }       # run stream : tracked, unique per stream so merges never collide
+# ensure_handoff_link <wt> <run> <stream> : untracked HANDOFF.md symlink at the worktree root -> canonical file
+ensure_handoff_link() {
+  local wt="$1" rel; rel="$(handoff_rel "$2" "$3")"
+  [ -L "$wt/HANDOFF.md" ] || { rm -f "$wt/HANDOFF.md"; ln -s "$rel" "$wt/HANDOFF.md"; }
+  local excl="$REPO/.git/info/exclude"; grep -qx 'HANDOFF.md' "$excl" 2>/dev/null || echo 'HANDOFF.md' >> "$excl"
+}
 
 # streams_of <run> -> prints "stream<TAB>wt<TAB>branch<TAB>prompt" lines
 streams_of() {

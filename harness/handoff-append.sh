@@ -24,11 +24,13 @@ done
 [ -z "$wt" ] && wt="$(git rev-parse --show-toplevel 2>/dev/null || true)"
 [ -n "$wt" ] || die "not inside a git worktree; pass --wt"
 require_abs "$wt"
-[ -f "$wt/HANDOFF.md" ] || die "no HANDOFF.md in $wt (created by spawn-parallel.sh)"
+[ -e "$wt/HANDOFF.md" ] || [ -f "$wt/$(handoff_rel "${task%%/*}" "${task##*/}")" ] || die "no handoff file in $wt (created by spawn-parallel.sh)"
 
-stream="${task##*/}"
-committed="$(git -C "$wt" diff --name-only "$BASE_BRANCH...HEAD" 2>/dev/null | grep -v '^HANDOFF.md$' || true)"
-uncommitted="$(git -C "$wt" status --porcelain 2>/dev/null | awk '{print $2}' | grep -v '^HANDOFF.md$' || true)"
+stream="${task##*/}"; runname="${task%%/*}"
+hrel="$(handoff_rel "$runname" "$stream")"; hfile="$wt/$hrel"
+[ -f "$hfile" ] || hfile="$wt/HANDOFF.md"   # pre-migration worktrees
+committed="$(git -C "$wt" diff --name-only "$BASE_BRANCH...HEAD" 2>/dev/null | grep -vE '^HANDOFF.md$|^harness/handoffs/' || true)"
+uncommitted="$(git -C "$wt" status --porcelain 2>/dev/null | awk '{print $2}' | grep -vE '^HANDOFF.md$|^harness/handoffs/' || true)"
 commits="$(git -C "$wt" log --oneline "$BASE_BRANCH..HEAD" 2>/dev/null || true)"
 head_sha="$(git -C "$wt" rev-parse --short HEAD)"
 
@@ -51,9 +53,9 @@ head_sha="$(git -C "$wt" rev-parse --short HEAD)"
   if [ ${#assumed[@]} -eq 0 ]; then echo '- none'; else for a in "${assumed[@]}"; do echo "- $a"; done; fi
   echo '### Blockers'
   if [ ${#blockers[@]} -eq 0 ]; then echo '- none'; else for b in "${blockers[@]}"; do echo "- $b"; done; fi
-} >> "$wt/HANDOFF.md"
-ok "appended milestone '$ms' to $wt/HANDOFF.md"
+} >> "$hfile"
+ok "appended milestone '$ms' to $hfile"
 
 if [ "$do_commit" = 1 ]; then
-  git -C "$wt" add HANDOFF.md && git -C "$wt" commit -q -m "handoff($stream): $ms" && ok "committed HANDOFF.md"
+  git -C "$wt" add "${hfile#"$wt"/}" && git -C "$wt" commit -q -m "handoff($stream): $ms" && ok "committed ${hfile#"$wt"/}"
 fi

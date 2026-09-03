@@ -76,7 +76,7 @@ for s in "${ordered[@]}"; do
   fi
   ahead="$(git -C "$iwt" rev-list --count "HEAD..$br")"
   if [ "$ahead" = 0 ]; then info "nothing to merge"; r_result[$j]="SKIPPED-EMPTY"; j=$((j+1)); continue; fi
-  changed="$(git -C "$iwt" diff --name-only "HEAD...$br" | grep -v '^HANDOFF.md$' || true)"
+  changed="$(git -C "$iwt" diff --name-only "HEAD...$br" | grep -vE '^HANDOFF.md$|^harness/handoffs/' || true)"
   git -C "$iwt" diff --stat "HEAD...$br" | tail -n 25
   overlap=""; for f in $changed; do case " $merged_files " in *" $f "*) overlap="$overlap $f";; esac; done
   [ -n "$overlap" ] && warn "touches files already merged by an earlier stream:$overlap"
