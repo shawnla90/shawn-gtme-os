@@ -36,7 +36,7 @@ render() {
     fi
     pid="$(cat "$d/run.pid" 2>/dev/null || true)"
     if pid_alive "$pid"; then pstate="alive:$pid"; else pstate="$(cat "$d/status" 2>/dev/null || echo 'not-launched')"; fi
-    if [ -f "$d/run.log" ]; then age="$(age_str $(( now - $(mtime "$d/run.log") )))"; last="$(last_log_line "$d/run.log" 90)"; else age="-"; last="(no log)"; fi
+    if [ -f "$d/run.log" ]; then a=$(( now - $(mtime "$d/run.log") )); [ "$a" -lt 0 ] && a=0; age="$(age_str "$a")"; last="$(last_log_line "$d/run.log" 90)"; else age="-"; last="(no log)"; fi
     if [ "$json" = 1 ]; then
       rows+=("$(jq -nc --arg s "$s" --arg br "$br" --arg wt "$wt" --arg ahead "$ahead" --arg dirty "$dirty" --arg pid "$pstate" --arg age "$age" --arg ms "$ms" --arg last "$last" --arg bl "$blockers" \
         '{stream:$s,branch:$br,worktree:$wt,ahead:$ahead,dirty:$dirty,pid:$pid,log_age:$age,last_milestone:$ms,last_log:$last,blockers:$bl}')")
