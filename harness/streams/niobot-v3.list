@@ -1,0 +1,5 @@
+# stream            prompt
+initiatives-api     harness/streams/niobot-v3/initiatives-api.md
+tamagotchi          harness/streams/niobot-v3/tamagotchi.md
+error-retry-ui      harness/streams/niobot-v3/error-retry-ui.md
+sse-transport       harness/streams/niobot-v3/sse-transport.md
