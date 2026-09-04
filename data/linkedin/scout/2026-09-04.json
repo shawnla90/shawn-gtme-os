@@ -1,0 +1,232 @@
+{
+  "date": "2026-09-04",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-04T13:01:35.441726+00:00",
+  "sources": [
+    {
+      "author": "Swyx (swyx)",
+      "headline": "AI Engineer @ Latent Space | Building in public",
+      "post_summary": "Claude 3.5 Sonnet's tool use reliability just crossed a threshold that makes multi-step agent loops actually production-viable. I ran 500 evals this week \u2014 success rate went from 67% to 89% on complex tool chaining. The gap between 'demo works' and 'prod works' is finally closing.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2840,
+        "comments": 187
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "claude",
+        "llm-eval"
+      ]
+    },
+    {
+      "author": "Abi Noda",
+      "headline": "CEO @ DX | Developer experience & productivity research",
+      "post_summary": "We just published data from 1,200 developers on AI coding tools. 71% say Copilot/Cursor saves them time. But only 38% say it improved code quality. The productivity gain is real \u2014 the quality narrative is still being sold harder than it's being earned.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "ai-coding",
+        "productivity"
+      ]
+    },
+    {
+      "author": "Sarah Nagy",
+      "headline": "Founding Engineer @ Modal Labs | Serverless GPU infra",
+      "post_summary": "Hot take: most 'AI infrastructure' startups are just reselling AWS with a prettier API and 4x the margin. The real infra problem is cold start latency on inference, not provisioning UX. Three companies are actually solving it. The rest are building dashboards.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3670,
+        "comments": 241
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "gpu",
+        "inference"
+      ]
+    },
+    {
+      "author": "Lenny Rachitsky",
+      "headline": "Product | Newsletter & Podcast for PMs and founders",
+      "post_summary": "The companies winning with AI agents right now have one thing in common: they picked ONE workflow, made it 10x better than human-speed, and charged for that outcome \u2014 not the platform. Notion AI, Cursor, Perplexity. Nobody bought 'an AI platform.' They bought a specific job done faster.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7200,
+        "comments": 498
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "product-strategy",
+        "automation"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | GTM Leader | Revenue Intelligence Evangelist",
+      "post_summary": "Our SDR team sent 50,000 emails last quarter. 12 meetings booked. We shut it down. Replaced it with a 3-person GTM engineering pod running intent-triggered sequences \u2014 6 weeks in, 40 meetings booked from 2,100 touches. The math on spray-and-pray outbound is finally broken enough that leadership is listening.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "outbound",
+        "sdrs",
+        "pipeline"
+      ]
+    },
+    {
+      "author": "Brianne Kimmel",
+      "headline": "Founder @ Worklife Ventures | Investing in the future of work",
+      "post_summary": "RevOps is becoming a misnomer. The teams winning right now aren't operating revenue \u2014 they're engineering it. Clay, n8n, Apify, and a Claude API key are replacing a $180k BDR hire. I'm calling this the GTM stack collapse, and it's happening faster than most sales leaders realize.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 487
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "gtm-engineering",
+        "ai-automation",
+        "sales-stack"
+      ]
+    },
+    {
+      "author": "Anthony Kennada",
+      "headline": "CEO @ AudiencePlus | Former CMO @ Gainsight, Hopin, Front",
+      "post_summary": "Most B2B content strategies are SEO plays dressed up as thought leadership. The brands actually winning pipeline from content in 2025 are doing something different: they're building owned audiences that their competitors' ads can't reach. Newsletter \u2192 community \u2192 product-led sales is the motion. Not blog \u2192 rank \u2192 convert.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3900,
+        "comments": 228
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "owned-audience",
+        "b2b-marketing",
+        "demand-gen"
+      ]
+    },
+    {
+      "author": "Vin Matano",
+      "headline": "GTM Engineer | I build outbound systems that don't need SDRs",
+      "post_summary": "Here's the Clay workflow I used to book 22 meetings in 10 days for a Series A SaaS: job posting signals \u2192 hiring intent score \u2192 waterfall enrich \u2192 personalized first line via GPT \u2192 send via Smartlead. Total build time: 4 hours. Total cost per meeting: $11. Dropping the full breakdown in the comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 634
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "clay",
+        "outbound-automation",
+        "gtm-engineering",
+        "cold-email"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Indie hacker | Shipped 3 products in 12 months | Ex-Google PM \u2192 solo founder",
+      "post_summary": "Priya shares that she quit her $280k Google PM job 14 months ago to build solo. Her third product just hit $8k MRR. The post breaks down the exact moment she stopped building features nobody asked for and started talking to 5 users every single week \u2014 and how that one change flipped her trajectory.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildingInPublic",
+        "soloFounder",
+        "productMarketFit"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Vibe coder | Shipped 12 apps with Claude Code | No CS degree | Teaching others to do the same",
+      "post_summary": "Marcus posts a before/after screenshot: 6 months ago he was a high school history teacher with zero coding background. Today he has a SaaS with 200 paying customers built entirely with AI coding tools. The post lists the 4 tools he used, the one mistake that almost made him quit, and why he thinks the 'you need to learn to code first' advice is outdated.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 541
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "noCode",
+        "AITools",
+        "careerPivot",
+        "vibeCoding"
+      ]
+    },
+    {
+      "author": "Tomas Kurek",
+      "headline": "Solo dev | Building RevenuePulse in public | From 0 \u2192 $5k MRR | Czech Republic \ud83c\udde8\ud83c\uddff",
+      "post_summary": "Tomas posts his monthly build-in-public update: August was his best month yet \u2014 $5,240 MRR, 2 churn conversations that taught him more than 10 sales calls, and the specific onboarding step he killed that doubled activation. He includes a hand-drawn funnel diagram and says the biggest unlock was charging 3x what he originally planned.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 207
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildingInPublic",
+        "SaaS",
+        "bootstrapped",
+        "MRR"
+      ]
+    },
+    {
+      "author": "Danielle Osei",
+      "headline": "Backend engineer @ Stripe \u2192 founder | Obsessed with B2B GTM tooling | YC W25",
+      "post_summary": "Danielle writes about the week her YC batch demo day went live and the batch company with the worst demo got the most investor meetings \u2014 because their founder sent 40 personalized video follow-ups the night before. The post argues that distribution is a technical skill, not a soft skill, and that engineers who learn it become unstoppable. She ends with the outreach script that got them 6 pilots.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5600,
+        "comments": 389
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "YCombinator",
+        "GTM",
+        "startups",
+        "founderSales"
+      ]
+    }
+  ]
+}
