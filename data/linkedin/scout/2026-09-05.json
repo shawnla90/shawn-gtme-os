@@ -1,0 +1,231 @@
+{
+  "date": "2026-09-05",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-05T13:01:17.632878+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "Founder @ Latent Space | AI Engineer, ex-Netlify, ex-AWS",
+      "post_summary": "Shared a breakdown of why most 'AI agent' demos fail in production \u2014 the gap isn't the LLM, it's the lack of deterministic guardrails around tool calls. Cited three internal postmortems from AI infra teams. The thread resonated because it named the dirty secret nobody posts about: agents that look great in demos are flaky at p95.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "production-ai",
+        "llm-infrastructure"
+      ]
+    },
+    {
+      "author": "Cassie Kozyrkov",
+      "headline": "Chief Decision Scientist | AI Strategy | ex-Google | Keynote Speaker",
+      "post_summary": "Posted a hot take: 'The companies winning with AI agents right now aren't using the fanciest models \u2014 they're the ones who spent 6 months on evals.' Included a simple 2x2 grid showing model quality vs. eval rigor and where most enterprise rollouts fail. Struck a nerve with CTOs and ML platform teams.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 512
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-strategy",
+        "evals",
+        "enterprise-ai"
+      ]
+    },
+    {
+      "author": "Tom Donahue",
+      "headline": "Founding Engineer @ stealth AI infra | prev Staff SWE @ Stripe | building in public",
+      "post_summary": "Detailed how his team replaced a 400-line Python orchestration script with a Claude Code agent running inside a GitHub Action \u2014 cut setup time from 2 days to 45 minutes per new microservice. Shared the exact prompt structure and the one gotcha (context window blowout on large diffs) that burned them twice before they fixed it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 247
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "ai-agents",
+        "automation",
+        "devops"
+      ]
+    },
+    {
+      "author": "Sarah Guo",
+      "headline": "Founder @ Conviction | Investor in AI infrastructure | prev Greylock",
+      "post_summary": "Argued that the next infra bottleneck for AI agents isn't compute or context \u2014 it's identity and permissions. 'Your agent needs a passport, not just an API key.' Called out the whitespace between OAuth, service accounts, and the emerging agentic identity layer, and named three startups quietly building in this space.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 389
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "agentic-security",
+        "startup-investing"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Strategy",
+      "post_summary": "AI SDRs are not replacing human reps \u2014 they're exposing which reps were never doing real work. The teams seeing 3x pipeline from AI outbound aren't cutting headcount. They're freeing their best reps to do the 20% of work that actually closes deals. The math is simple: AI handles volume, humans handle judgment.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "AI SDR",
+        "outbound automation",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "Vin Matano",
+      "headline": "B2B Content Strategist | Helping GTM teams build pipelines with content | Creator Economy for Sales",
+      "post_summary": "I analyzed 90 days of outbound campaigns across 12 SaaS companies. The ones with the highest reply rates all had one thing in common: they led with a specific trigger, not a persona. 'I saw you just hired 3 AEs' outperforms 'VP of Sales at a Series B company' every single time. Signal-led > ICP-led.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 187
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "signal-based selling",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Natalie Furness",
+      "headline": "RevOps Consultant | Founder at RevOps Automated | Helping B2B SaaS scale without the chaos",
+      "post_summary": "Your CRM is lying to you. Not because someone entered bad data \u2014 because your pipeline stages don't reflect buyer behavior, they reflect what your sales team is comfortable admitting. Stage 3 doesn't mean 'Champion identified.' It means 'rep doesn't want to move it back to Stage 1.' Fix your stage definitions before you fix your data.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3104,
+        "comments": 428
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "CRM",
+        "pipeline management",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Tom Lavery",
+      "headline": "CEO at Jiminny | Conversation Intelligence | Helping revenue teams unlock insights from every customer interaction",
+      "post_summary": "Content is now the new cold call. The reps hitting quota in 2026 have a LinkedIn presence that warms every outbound touch before it lands. Buyers Google your name before they reply to your email. If your profile is a resume, you're starting every deal 20% behind. Build in public or get outcompeted by someone who does.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2211,
+        "comments": 263
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "personal brand",
+        "outbound",
+        "B2B sales"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Indie hacker | Built 3 products, 1 profitable | ex-Google PM",
+      "post_summary": "Priya shared that her AI-powered SOW generator hit $12k MRR after 8 months of building nights and weekends. She broke down the exact moment she stopped adding features and started talking to customers \u2014 and how that single shift doubled her conversion rate in 6 weeks.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 412
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "SaaS",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Laid off \u2192 shipped my first app in 90 days | Claude API + Next.js | DM me if you're in the same boat",
+      "post_summary": "Marcus documented his entire journey from a January layoff at a Fortune 500 to launching a B2B tool for freelance contractors \u2014 with zero prior coding background. The post resonated because he was brutally honest: the first two ideas flopped, he almost quit in week 6, and the version that got traction looked nothing like his original plan.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9102,
+        "comments": 887
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "buildinpublic",
+        "layoffs",
+        "solodev"
+      ]
+    },
+    {
+      "author": "Sione Tuilagi",
+      "headline": "Full-stack dev | Shipping in public | $0 \u2192 $3k MRR in 4 months",
+      "post_summary": "Sione posted a raw screenshot comparing his week 1 commit history (3 commits, all README edits) to week 16 (47 commits, first paying customer). No motivational spin \u2014 just the actual diff. He called out the specific week he wanted to delete the repo and why he didn't. Developers and first-time builders flooded the comments with their own inflection-point stories.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5213,
+        "comments": 631
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solodev",
+        "startuplife",
+        "consistency"
+      ]
+    },
+    {
+      "author": "Elena Marchetti",
+      "headline": "Former teacher \u2192 Software engineer | 2 years in | Writing about the gap nobody talks about",
+      "post_summary": "Elena's post called out the specific skills bootcamps don't teach: reading other people's spaghetti code, estimating timelines honestly, and the art of the good-enough PR. She framed it as a letter to her bootcamp self, but the point of view was sharp enough that senior engineers were sharing it as onboarding reading material.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7688,
+        "comments": 743
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "softwareengineering",
+        "bootcamp",
+        "techcareers"
+      ]
+    }
+  ]
+}
