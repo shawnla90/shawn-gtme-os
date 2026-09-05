@@ -1,6 +1,72 @@
 {
-  "generated": "2026-09-04T04:01:27.202Z",
+  "generated": "2026-09-05T04:01:52.017Z",
   "events": [
+    {
+      "id": "commit-575ef49",
+      "title": "chore(crypto): evening signal update 2026-09-04",
+      "type": "system",
+      "datetime": "2026-09-04T17:30:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-09-04",
+      "metadata": {
+        "commitHash": "575ef49"
+      }
+    },
+    {
+      "id": "commit-492e701",
+      "title": "feat: daily LinkedIn posts 2026-09-04",
+      "type": "milestone",
+      "datetime": "2026-09-04T09:10:30-04:00",
+      "status": "completed",
+      "description": "feat: daily LinkedIn posts 2026-09-04",
+      "metadata": {
+        "commitHash": "492e701"
+      }
+    },
+    {
+      "id": "commit-9b5c4ef",
+      "title": "feat: nio.log 2026-09-04 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-09-04T08:00:49-04:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-09-04 — automated daily post",
+      "metadata": {
+        "commitHash": "9b5c4ef"
+      }
+    },
+    {
+      "id": "commit-0cc340d",
+      "title": "chore(crypto): morning signal update 2026-09-04",
+      "type": "system",
+      "datetime": "2026-09-04T07:00:08-04:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-09-04",
+      "metadata": {
+        "commitHash": "0cc340d"
+      }
+    },
+    {
+      "id": "commit-a64b93c",
+      "title": "feat: claude daily digest 2026-09-04",
+      "type": "milestone",
+      "datetime": "2026-09-04T00:09:20-04:00",
+      "status": "completed",
+      "description": "feat: claude daily digest 2026-09-04",
+      "metadata": {
+        "commitHash": "a64b93c"
+      }
+    },
+    {
+      "id": "commit-9ac81f4",
+      "title": "chore: daily tracker scan 2026-09-03",
+      "type": "system",
+      "datetime": "2026-09-04T00:01:27-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-09-03",
+      "metadata": {
+        "commitHash": "9ac81f4"
+      }
+    },
     {
       "id": "commit-d085523",
       "title": "chore(crypto): evening signal update 2026-09-03",
@@ -98,72 +164,6 @@
       "description": "fix(harness): per-stream handoff files at harness/handoffs/<run>/<stream>.md so merges never conflict on HANDOFF.md",
       "metadata": {
         "commitHash": "01b0ecf"
-      }
-    },
-    {
-      "id": "commit-b1cd4f8",
-      "title": "chore: daily tracker scan 2026-09-02",
-      "type": "system",
-      "datetime": "2026-09-03T00:01:48-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-09-02",
-      "metadata": {
-        "commitHash": "b1cd4f8"
-      }
-    },
-    {
-      "id": "commit-c89d330",
-      "title": "fix(harness): overlap warning compares space-joined file lis",
-      "type": "system",
-      "datetime": "2026-09-03T00:01:23-04:00",
-      "status": "completed",
-      "description": "fix(harness): overlap warning compares space-joined file lists",
-      "metadata": {
-        "commitHash": "c89d330"
-      }
-    },
-    {
-      "id": "commit-4ed8971",
-      "title": "fix(harness): dry-run tracks file overlap between streams",
-      "type": "system",
-      "datetime": "2026-09-03T00:00:51-04:00",
-      "status": "completed",
-      "description": "fix(harness): dry-run tracks file overlap between streams",
-      "metadata": {
-        "commitHash": "4ed8971"
-      }
-    },
-    {
-      "id": "commit-839e58a",
-      "title": "fix(harness): clamp negative log age on the board",
-      "type": "system",
-      "datetime": "2026-09-02T23:48:15-04:00",
-      "status": "completed",
-      "description": "fix(harness): clamp negative log age on the board",
-      "metadata": {
-        "commitHash": "839e58a"
-      }
-    },
-    {
-      "id": "commit-40e4b1e",
-      "title": "fix(harness): status board tolerates streams with no milesto",
-      "type": "system",
-      "datetime": "2026-09-02T23:46:53-04:00",
-      "status": "completed",
-      "description": "fix(harness): status board tolerates streams with no milestone or non-JSON logs",
-      "metadata": {
-        "commitHash": "40e4b1e"
-      }
-    },
-    {
-      "id": "commit-7f1c4cf",
-      "title": "feat(harness): parallel-execution harness (worktrees, detach",
-      "type": "system",
-      "datetime": "2026-09-02T23:46:10-04:00",
-      "status": "completed",
-      "description": "feat(harness): parallel-execution harness (worktrees, detach, status board, HANDOFF protocol, merge coordinator)",
-      "metadata": {
-        "commitHash": "7f1c4cf"
       }
     }
   ],
