@@ -1,0 +1,236 @@
+{
+  "date": "2026-09-06",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-06T13:01:35.282978+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer | Founder @ Latent Space | Building in public",
+      "post_summary": "Just hit 1M tokens/min throughput on our new inference stack \u2014 without a single GPU upgrade. The secret: aggressive KV-cache sharing across concurrent agent sessions. Most teams are leaving 60-70% of their compute on the table by treating each agent call as isolated. Thread on how we did it.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 412
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "inference",
+        "AI agents",
+        "performance"
+      ]
+    },
+    {
+      "author": "Alessio Fanelli",
+      "headline": "Partner @ Decibel | prev CTO @ Supervised | AI/ML infrastructure investor",
+      "post_summary": "After 200+ conversations with AI-native startups this year, the pattern is clear: the companies winning in 2026 are not the ones with the best models \u2014 they're the ones with the best evals. Evals are now the new moat. Sharing our framework for how we grade eval quality during diligence.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5120,
+        "comments": 638
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "evals",
+        "AI agents",
+        "developer tools",
+        "AI infrastructure"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "VP of Research @ OpenAI | Long-time AI researcher",
+      "post_summary": "We've been quietly running multi-agent systems in production for 9 months. The failure mode nobody talks about: agents that are individually correct but collectively inconsistent. Shared state management \u2014 not model quality \u2014 is what breaks agentic pipelines at scale. Here's what we learned.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9231,
+        "comments": 1047
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "multi-agent",
+        "production AI",
+        "automation"
+      ]
+    },
+    {
+      "author": "Greg Brockman",
+      "headline": "President @ OpenAI",
+      "post_summary": "Claude Code, Cursor, Devin \u2014 we're entering the phase where AI coding agents aren't just autocomplete, they're the developer. In the last 30 days our internal teams shipped 40% more features with 30% fewer engineers on the loop. The bottleneck has shifted from writing code to reviewing it. That changes everything about how you hire and structure eng teams.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 14782,
+        "comments": 2103
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI coding agents",
+        "developer tools",
+        "future of work",
+        "automation"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline generation obsessive | GTM advisor",
+      "post_summary": "Most outbound teams are measuring the wrong thing. They optimize for sent volume when they should optimize for reply rate per ICP segment. After auditing 47 outbound programs, the top 10% all share one trait: they have a defined 'minimum viable signal' before a rep touches an account. Spray and pray is dead \u2014 signal-led is the new outbound.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "pipeline",
+        "GTM",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "Growth & Demand Gen | B2B SaaS | Former Cognism, Aura, Nextiva",
+      "post_summary": "Hot take: content strategy in 2026 is a distribution problem, not a creation problem. Everyone is producing more content than ever but organic reach keeps compressing. The companies winning are those who treat every piece of content as a paid amplification asset from day one \u2014 not an afterthought. If you don't have a '$0 organic, $X paid' line in your content budget, you're already behind.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 204
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "distribution",
+        "B2B"
+      ]
+    },
+    {
+      "author": "Tara Robertson",
+      "headline": "RevOps Leader | GTM Systems & Data Infrastructure | Helping B2B teams scale predictably",
+      "post_summary": "RevOps teams are drowning in tools and starving for signal. The average mid-market GTM stack now has 14+ tools touching the revenue funnel \u2014 and most of them produce data that contradicts each other. The unlock isn't adding another tool. It's designating one system of record and forcing everything else to write to it. Boring advice, but the $10M+ ARR companies I've worked with all had to learn it the hard way.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3412,
+        "comments": 287
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "GTM-stack",
+        "data",
+        "operations"
+      ]
+    },
+    {
+      "author": "Mattia Schaper",
+      "headline": "Co-Founder at 21sales | Helping AEs close more with AI-native outbound",
+      "post_summary": "GTM engineering is becoming the most valuable role in B2B sales that most companies don't have a job req for yet. It's the intersection of sales strategy, data enrichment, workflow automation, and prompt engineering \u2014 and the people who can do all four are getting poached constantly. In 18 months this will be a standard title at every Series B+ company. If you're in sales ops right now, start learning the automation stack.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4105,
+        "comments": 431
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM-engineering",
+        "automation",
+        "sales-ops",
+        "AI"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder | Built and sold my first SaaS in 14 months | Writing about the unglamorous parts",
+      "post_summary": "Priya shares a raw breakdown of her MRR journey from $0 to $8k, including the month she almost quit. She shows a screenshot of her Stripe dashboard and talks about the one cold email template that converted 12% of outreach. Ends with 'nobody talks about the 8 months before the inflection point.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "saas",
+        "startups"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Ex-teacher \u2192 Software Engineer in 18 months | No CS degree | Now at a Series B startup",
+      "post_summary": "Marcus documents the exact 18-month self-teaching timeline that landed him a $112k engineering role with no degree and no bootcamp. He lists the five projects he built, the three rejections that stung, and the one portfolio project that got a recruiter to reply in 4 hours. Honest about the financial strain during the transition.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11800,
+        "comments": 742
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "softwareengineer",
+        "nodegree"
+      ]
+    },
+    {
+      "author": "Theo Bakker",
+      "headline": "Building AI tools for SMBs | Shipped 3 products this year | 1 person, no investors",
+      "post_summary": "Theo posts a behind-the-scenes look at shipping a production AI agent in 72 hours using Claude, Vercel, and a $0 infra budget. He includes the actual system prompt architecture, explains two things that broke spectacularly, and shares that the tool hit 200 signups before he even wrote a landing page. Frames it as a proof of concept for what one person can ship in 2026.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3600,
+        "comments": 211
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "aitools",
+        "solodev",
+        "buildinpublic",
+        "claudeapi"
+      ]
+    },
+    {
+      "author": "Danielle Osei",
+      "headline": "Product Manager turned founder | Building the tool I wish existed when I was in corp | Pre-revenue, post-fear",
+      "post_summary": "Danielle writes about leaving a $180k PM job at a Fortune 500 to build a B2B workflow tool she kept pitching internally and getting shot down. Six weeks in, she has 14 design partners, $0 in revenue, and more energy than she's had in years. She reflects on the identity shift from 'person with a salary' to 'person with a vision' and why she stopped waiting for permission.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7100,
+        "comments": 489
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "founder",
+        "careerpivot",
+        "productmanagement",
+        "entrepreneurship"
+      ]
+    }
+  ]
+}
