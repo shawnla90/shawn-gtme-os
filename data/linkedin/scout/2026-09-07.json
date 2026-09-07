@@ -1,0 +1,232 @@
+{
+  "date": "2026-09-07",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-07T13:01:21.186590+00:00",
+  "sources": [
+    {
+      "author": "Swyx (swyx)",
+      "headline": "Developer Relations @ Latent Space | AI Engineer",
+      "post_summary": "Claude's new extended thinking models are making multi-step agentic tasks dramatically more reliable. We ran 50 benchmarks comparing structured reasoning vs. vanilla prompting on tool-calling chains \u2014 the gap is now 34%. The era of 'dumb orchestration' wrappers is over.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 218
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "Claude",
+        "benchmarks",
+        "tool use"
+      ]
+    },
+    {
+      "author": "Luc Perkins",
+      "headline": "Developer Advocate @ Cloudflare Workers AI",
+      "post_summary": "We just shipped MCP support natively in Cloudflare Workers. You can now run a Model Context Protocol server at the edge with zero infra setup \u2014 deploy in 30 seconds. This changes how teams wire AI agents to internal tools without standing up their own backend.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 341
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "MCP",
+        "Cloudflare",
+        "AI infrastructure",
+        "developer tools"
+      ]
+    },
+    {
+      "author": "Harrison Chase",
+      "headline": "Co-founder & CEO @ LangChain",
+      "post_summary": "The biggest mistake teams make with agentic systems: they treat the LLM as the bottleneck when the real failure point is context management. Most agents fail not because the model is wrong \u2014 they fail because the model got the wrong information at the wrong time. We're releasing a new memory layer this week that addresses this directly.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 512
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "LangChain",
+        "AI agents",
+        "memory",
+        "context engineering"
+      ]
+    },
+    {
+      "author": "Abi Noda",
+      "headline": "CEO @ DX (Developer Experience) | Former GitHub",
+      "post_summary": "New data from 400 engineering teams: 61% have adopted AI coding assistants but only 22% report a measurable productivity gain. The delta comes down to one variable \u2014 whether the team invested in prompt hygiene and context setup upfront. Tooling is table stakes. Habits are the moat.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 389
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer productivity",
+        "AI coding",
+        "engineering culture",
+        "data"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | GTM Advisor | Revenue Intelligence Evangelist",
+      "post_summary": "Most outbound teams are measuring the wrong thing. They're optimizing for reply rate when they should be optimizing for pipeline quality. I ran the numbers on 10,000 sequences last quarter \u2014 the campaigns with 3x lower reply rates generated 2x more closed-won. Here's the counterintuitive framework we used to reorient the entire motion.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 203
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "pipeline",
+        "revenue-operations"
+      ]
+    },
+    {
+      "author": "Sangram Vajre",
+      "headline": "Co-Founder at GTM Partners | Bestselling Author | Category Creator",
+      "post_summary": "GTM engineering is becoming the most important hire in B2B SaaS and most CEOs still don't know what it is. It's not sales ops, it's not marketing ops \u2014 it sits at the intersection of both and uses code + AI to compress the time between signal and action. The companies that figure this out in 2026 will have a structural advantage that compounds for years.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3204,
+        "comments": 418
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "b2b",
+        "ai-sales"
+      ]
+    },
+    {
+      "author": "Devin Reed",
+      "headline": "Head of Content Strategy at Clari | Ex-Gong | Helping B2B marketers drive revenue with content",
+      "post_summary": "Content strategy in 2026 isn't about posting more \u2014 it's about owning a signal loop. The best GTM teams I've studied treat every piece of content as a data collection instrument: what does engagement tell you about who's in-market, what pain resonates, and where the deal is in the funnel. Most teams still think of content as brand. The ones winning treat it as pipeline intelligence.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2391,
+        "comments": 287
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "pipeline",
+        "b2b-marketing"
+      ]
+    },
+    {
+      "author": "Jen Spencer",
+      "headline": "CEO at SmartBug Media | RevOps Advocate | Helping revenue teams scale without chaos",
+      "post_summary": "RevOps teams are drowning in tech debt and nobody's talking about it. We audited 40 mid-market stacks this year \u2014 the average company is paying for 14 tools that overlap on core functions, and 6 of those tools have zero adoption past the first 90 days. Before you automate your outbound, you need to fix your data model. Bad data + AI = faster garbage at scale.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1623,
+        "comments": 341
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "sales-ops",
+        "tech-stack"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Indie hacker | Shipped 3 products in 90 days | ex-Google PM",
+      "post_summary": "Priya shares that she quit her PM job at Google 6 months ago with $40k saved and just crossed $8k MRR. She breaks down the exact stack she used (Next.js, Stripe, Resend), how she found her first 10 paying customers on Reddit, and what she'd do differently. Ends with her real P&L screenshot.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3840,
+        "comments": 412
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder",
+        "mrr"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Solo dev \u2192 SaaS founder | Vibe coding my way to ramen profitability",
+      "post_summary": "Marcus posts a raw, unfiltered look at shipping his 7th micro-SaaS in 18 months \u2014 6 of which made $0. He describes the exact moment his current tool clicked, how he used Claude Code to cut build time from 3 weeks to 4 days, and why he stopped listening to 'validate before you build' advice. 847 words of no-BS honesty.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5210,
+        "comments": 638
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "solodev",
+        "saas",
+        "claudecode",
+        "buildinpublic"
+      ]
+    },
+    {
+      "author": "Daniela Romero",
+      "headline": "Nurse turned software engineer | 18 months, 0 CS degree, hired at a startup",
+      "post_summary": "Daniela documents the exact curriculum she followed to go from ICU nurse to a hired frontend engineer \u2014 no bootcamp, just free resources, personal projects, and 400+ rejected applications. She lists the 3 portfolio projects that actually got callbacks, the salary she negotiated, and what nursing taught her about debugging under pressure.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11200,
+        "comments": 1470
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selfttaught",
+        "webdev",
+        "techjobs"
+      ]
+    },
+    {
+      "author": "James Okafor",
+      "headline": "Building AI tools for small businesses | Shipping every week | $0 \u2192 $3k MRR",
+      "post_summary": "James posts his weekly ship log: what he built, what broke, what users actually said. This week: he added a Slack integration his users begged for, it took 6 hours, and it immediately became the top reason people upgraded to paid. He includes a Loom link showing the feature and the Stripe notification that followed.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2190,
+        "comments": 287
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "aitools",
+        "weeklyship",
+        "bootstrapped"
+      ]
+    }
+  ]
+}
