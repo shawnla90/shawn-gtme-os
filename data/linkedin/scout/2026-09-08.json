@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-08",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-08T13:01:33.910462+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer | Building smxyz.com | Previously Cloudflare, AWS",
+      "post_summary": "Claude's new extended thinking with 10x context is breaking every benchmark we had for agentic coding loops. Ran a 47-file refactor end-to-end with zero human intervention. The gap between 'AI assistant' and 'AI engineer' just collapsed. Thread on what this means for your team's headcount math.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3847,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "claude",
+        "coding-agents"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "Head of Safety Research @ OpenAI | ex-Berkeley",
+      "post_summary": "Every team I talk to is discovering the same thing: multi-agent systems fail silently at the handoff layer, not the task layer. Your agents complete their individual steps correctly but the context window between them is where the real bugs live. Published a framework for structuring agent handoffs that cut our error rate 60%.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5621,
+        "comments": 489
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "multi-agent",
+        "ai-infrastructure",
+        "llmops"
+      ]
+    },
+    {
+      "author": "Abi Tyas Tunggal",
+      "headline": "Co-founder @ StackAware | Previously Canva Security",
+      "post_summary": "Hot take: the MCP protocol is becoming the TCP/IP of AI tooling and most companies don't realize it yet. Spent this week mapping which vendors have shipped MCP servers natively vs. which are still exposing raw REST endpoints. The ones without native MCP support will feel it in Q1 sales cycles.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2193,
+        "comments": 207
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "mcp",
+        "developer-tools",
+        "ai-infrastructure"
+      ]
+    },
+    {
+      "author": "Shreya Shankar",
+      "headline": "ML Engineer @ Voxel51 | PhD Stanford | Data-centric AI",
+      "post_summary": "We just replaced a 12-person data labeling pipeline with 2 engineers and an agent workflow running on structured outputs. Not because the AI is perfect \u2014 it isn't \u2014 but because the eval loop is fast enough that two humans can supervise 50k decisions per day instead of making them. The leverage is in the review layer, not the generation layer.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 378
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "automation",
+        "ai-agents",
+        "data-labeling",
+        "llmops"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline Generation | Revenue Intelligence",
+      "post_summary": "Most GTM teams are measuring pipeline velocity wrong. They track time-to-close but ignore signal-to-sequence lag \u2014 the gap between a buying signal firing and an SDR actually touching it. At Clari we found teams with sub-4-hour signal response rates close 31% more deals than teams responding in 24+ hours. The bottleneck isn't headcount. It's routing logic.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1847,
+        "comments": 203
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "pipeline",
+        "GTM engineering",
+        "signal-based selling"
+      ]
+    },
+    {
+      "author": "Tito Bohrt",
+      "headline": "CEO at AltiSales | Outbound Sales Systems | SDR Training",
+      "post_summary": "Cold email is not dead. Bad cold email is dead. We ran 12 A/B tests across 6 clients this quarter. The control: persona-based templates. The test: job-change triggered sequences sent within 72 hours of a champion moving to a new company. The job-change sequences booked 4.2x more meetings with zero increase in send volume. Timing is the variable nobody is optimizing.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2341,
+        "comments": 318
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound automation",
+        "cold email",
+        "signal-based outbound"
+      ]
+    },
+    {
+      "author": "Jacki Leahy",
+      "headline": "RevOps Therapist | Founder at Activate the Magic | HubSpot Architect",
+      "post_summary": "Revenue Operations is not a technology problem. It's a data trust problem. I've walked into 40+ RevOps audits and the pattern is always the same: Salesforce is dirty, reps don't trust the data, so they work around it, which makes the data dirtier. You can't automate your way out of this. The fix is a weekly 20-minute data stewardship ritual with the AE team \u2014 not a new tool.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3102,
+        "comments": 441
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revenue operations",
+        "RevOps",
+        "CRM hygiene",
+        "data quality"
+      ]
+    },
+    {
+      "author": "Amanda Natividad",
+      "headline": "VP Marketing at SparkToro | Audience Research | Content Strategy",
+      "post_summary": "The LinkedIn algorithm shift nobody is talking about: dwell time now outweighs raw engagement. A post with 200 saves and 40 comments where readers spent 45 seconds is beating a post with 800 likes and 10 comments. This changes your content strategy completely \u2014 you want posts that make people stop and think, not posts that are easy to like. Write for the pause, not the tap.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4218,
+        "comments": 567
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "LinkedIn algorithm",
+        "B2B content",
+        "demand gen"
+      ]
+    },
+    {
+      "author": "Priya Nambiar",
+      "headline": "Indie hacker | Built 3 products in 18 months | ex-Google SWE",
+      "post_summary": "Quit her $280K Google job 18 months ago to build solo. Just hit $12K MRR across two products with zero funding. Breaks down the exact stack, pricing experiments, and the one distribution channel that changed everything \u2014 LinkedIn DMs from competitors' unhappy customers.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4800,
+        "comments": 312
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "Marcus Delgado",
+      "headline": "Shipping daily with Claude Code | GTM engineer | Previously: teacher for 9 years",
+      "post_summary": "Nine months ago he was grading papers. Today he shipped his 4th Claude Code-assisted product and landed his first $3K/month retainer client. Documents the exact learning path \u2014 no CS degree, no bootcamp \u2014 just 90 minutes a night and an AI pair programmer. Hits hard with career-pivot readers.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7200,
+        "comments": 589
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "claudecode",
+        "selfbuilt"
+      ]
+    },
+    {
+      "author": "Lena Hoffmann",
+      "headline": "Founder @ Stacklane (YC W26) | B2B SaaS | Building in public",
+      "post_summary": "Week 6 build-in-public update: churn spiked to 18% after a pricing change, two enterprise deals stalled, and the co-founder relationship is strained. Unusually honest post that avoids the highlight-reel trap \u2014 includes a screenshot of the revenue dashboard showing the dip. Comments section blew up with founders sharing their own hidden struggles.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9100,
+        "comments": 743
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "founder",
+        "startuptransparency"
+      ]
+    },
+    {
+      "author": "Kwame Asante",
+      "headline": "Solo dev shipping agentic tools | MCP + Claude | Open source contributor",
+      "post_summary": "Spent a weekend wiring together 4 MCP servers into a single agent loop that runs his entire content pipeline \u2014 research, drafting, scheduling, and analytics \u2014 without him touching a keyboard. Posted the full architecture diagram and GitHub repo link. Went viral in the developer community as a practical 'this is what agentic workflows actually look like in production' example.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6400,
+        "comments": 428
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "agenticAI",
+        "MCP",
+        "solodev",
+        "buildinpublic"
+      ]
+    }
+  ]
+}
