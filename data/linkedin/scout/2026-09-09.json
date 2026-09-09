@@ -1,0 +1,237 @@
+{
+  "date": "2026-09-09",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-09T13:01:24.136969+00:00",
+  "sources": [
+    {
+      "author": "Swyx (shawwn)",
+      "headline": "AI Engineer \u2022 Founder @ Latent Space \u2022 helping developers ship AI products",
+      "post_summary": "Claude's new agent SDK just dropped and the default token budget per tool call is 32k \u2014 meaning a single agentic loop can burn through $40 before you blink. Here's the mental model shift developers need: budget tokens like you budget API calls, not like you budget RAM. Three patterns that cut agent costs 80% without sacrificing capability.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3200,
+        "comments": 287
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "Claude",
+        "developer tools",
+        "cost optimization"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "Head of Safety Systems @ OpenAI \u2022 Research on agents, RLHF, and alignment",
+      "post_summary": "We're seeing a clear inflection: companies that deployed AI agents in 2024 as 'assistants' are now redeploying them as autonomous operators with real system access. The failure modes are completely different. Assistant failures are embarrassing. Operator failures are lawsuits. The engineering rigor gap between the two is enormous and most teams aren't ready.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5800,
+        "comments": 412
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI agents",
+        "AI safety",
+        "enterprise AI",
+        "autonomous systems"
+      ]
+    },
+    {
+      "author": "Guillermo Rauch",
+      "headline": "CEO @ Vercel \u2022 Building the frontend cloud for AI-native apps",
+      "post_summary": "Hot take: the 'AI infrastructure' layer is collapsing faster than anyone predicted. Twelve months ago you needed a dedicated ML platform team to ship a production AI feature. Today a single developer with v0, a managed vector DB, and an LLM API can ship the same thing in a week. The infra winners aren't the picks-and-shovels \u2014 they're the ones who made the picks disappear.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4100,
+        "comments": 334
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "AI infrastructure",
+        "developer tools",
+        "platform",
+        "LLM"
+      ]
+    },
+    {
+      "author": "Jared Palmer",
+      "headline": "CTO @ Vercel \u2022 Creator of Turborepo and tRPC \u2022 building tools developers love",
+      "post_summary": "Spent the last two weeks benchmarking Claude Code, Cursor, and Codex on the same 50 real production tasks \u2014 not toy problems, not HackerNews examples. The results were surprising enough that I'm writing them up properly. Spoiler: raw model capability matters less than context management. The tool that wins is the one that feeds the model the right 8k tokens, not the one with the biggest context window.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6700,
+        "comments": 521
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer tools",
+        "Claude Code",
+        "Cursor",
+        "coding agents",
+        "benchmarks"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | GTM Advisor | LinkedIn Top Voice",
+      "post_summary": "Most outbound teams are measuring the wrong thing. They optimize for sends and replies when they should be optimizing for pipeline-to-close rate by persona. Shared a framework we used to cut sequences by 60% and double qualified pipeline. The counterintuitive truth: less volume with tighter ICP beats spray and pray every time.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "pipeline",
+        "ICP",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Tara Robertson",
+      "headline": "Head of Revenue Operations @ Series B SaaS | RevOps community builder",
+      "post_summary": "We finally killed our 47-field Salesforce opportunity object. Cut it to 11 fields, made them all required, and CRM hygiene went from 34% to 91% in 6 weeks. The lesson: your reps aren't lazy, your data model is punishing them. Clean architecture beats enforcement every time.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 187
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "salesforce",
+        "CRM",
+        "data-hygiene"
+      ]
+    },
+    {
+      "author": "Zach Vidibor",
+      "headline": "GTM Engineer | Building outbound infrastructure for B2B founders | Clay + AI workflows",
+      "post_summary": "I built a Clay \u2192 Smartlead \u2192 Slack alert loop that auto-identifies accounts showing intent signals, writes a first-line using GPT, and routes to the right rep in under 4 minutes. The whole system cost $340/month to run and generated 14 meetings in the first 30 days. Dropping the full build breakdown in the comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3412,
+        "comments": 541
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "clay",
+        "outbound-automation",
+        "AI"
+      ]
+    },
+    {
+      "author": "Lashay Lewis",
+      "headline": "Content-Led Revenue | B2B Content Strategy | Helping SaaS companies turn content into pipeline",
+      "post_summary": "Unpopular opinion: your SEO blog is not a content strategy. Content strategy is a system that moves buyers from problem-aware to solution-ready. I mapped out the exact 5-stage content motion we used to drive 38% of closed-won deals from content touches in Q2. Most teams are stuck at the top of the funnel because they never built the middle.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2105,
+        "comments": 263
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "pipeline",
+        "SEO",
+        "demand-gen"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Solo founder \u2192 $8k MRR in 6 months | Building Formli in public | Ex-Salesforce PM",
+      "post_summary": "Priya shares the exact moment she stopped trying to build for everyone and niched down to HR teams at 50-200 person companies. Revenue went from $800 to $8k MRR in 90 days. Post includes a screenshot of her Stripe dashboard and the one cold DM template that converted 3 enterprise pilots.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "solofounder",
+        "saas",
+        "mrr"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Laid off from Meta \u2192 shipped my first product in 47 days | AI tools for small law firms",
+      "post_summary": "Marcus documents the week-by-week arc of going from FAANG engineer to solo builder after his team was cut. He's brutally honest about the identity crisis, the first bad idea he killed, and how he used Claude Code to compress months of dev time into weeks. First paying customer came from a Reddit comment, not LinkedIn.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5100,
+        "comments": 412
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "buildinginpublic",
+        "layoffs",
+        "AItools"
+      ]
+    },
+    {
+      "author": "Tom\u00e1s Reyes",
+      "headline": "Developer turned founder | Bootstrapped to ramen profitable | Building Queuely for async teams",
+      "post_summary": "Tom\u00e1s posts a raw breakdown of his first 100 signups \u2014 where they came from, what made them convert, and what made 60 of them churn. The insight: his onboarding assumed users knew what async-first meant. He rewrote it in plain English and churn dropped 40%. Ends with 'stop shipping features, fix your onboarding.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2800,
+        "comments": 194
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "bootstrapped",
+        "productlessons",
+        "startups"
+      ]
+    },
+    {
+      "author": "Dana Cho",
+      "headline": "Finance \u2192 self-taught dev \u2192 shipped 3 products in 2 years | Documenting the journey",
+      "post_summary": "Dana shares the uncomfortable truth that her first two products failed not because of code quality but because she built in a vacuum. Product three \u2014 a cash flow tool for freelancers \u2014 is profitable because she spent 30 days in freelance Facebook groups before writing a single line. Post resonates hard with career switchers and gets flooded with 'I needed to see this today' comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6700,
+        "comments": 531
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaughtdev",
+        "buildinginpublic",
+        "productmarket"
+      ]
+    }
+  ]
+}
