@@ -1,0 +1,235 @@
+{
+  "date": "2026-09-11",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-11T13:01:33.161091+00:00",
+  "sources": [
+    {
+      "author": "Shreya Patel",
+      "headline": "Staff Engineer @ Vercel | Building at the intersection of AI + DX",
+      "post_summary": "Wrote about how her team cut CI/CD pipeline time by 67% by inserting a Claude-based triage agent before their test runner \u2014 it routes flaky tests, skips redundant coverage, and explains failures in plain English before a human sees them. The real unlock wasn't the LLM, it was giving the agent write-access to the queue. Most teams are still running agents in read-only mode and wondering why ROI is low.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "devtools",
+        "cicd",
+        "developer-productivity"
+      ]
+    },
+    {
+      "author": "Marcus Holloway",
+      "headline": "Founder @ AgentLayer | Ex-AWS | Prev: built infra for 40M users",
+      "post_summary": "Called out the 'agent wrapper' bubble \u2014 pointing out that 80% of AI agent startups are just thin wrappers around Claude or GPT-4o with a Zapier-style UI, and the infrastructure layer (sandboxing, memory persistence, tool auth) is still almost entirely unsolved. Predicted that the next 12 months will see 3-4 picks-and-shovels infra companies worth $1B+ while most wrapper apps consolidate or die. The thread sparked a massive debate in the comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 641
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "agents",
+        "startups",
+        "ai-bubble"
+      ]
+    },
+    {
+      "author": "Lena Fischer",
+      "headline": "Head of Platform Engineering @ Notion | Previously: Stripe, Figma",
+      "post_summary": "Shared a breakdown of Notion's internal experiment with 'context engineering' as a formal discipline \u2014 they now have a dedicated context engineer on each product team whose job is to design the data that gets handed to agents, not the agents themselves. The framing: 'We stopped treating context as an afterthought and started treating it like schema design.' Performance gains on internal automations were 3x after 6 weeks. Post went viral in the infra and platform eng communities.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5500,
+        "comments": 428
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "context-engineering",
+        "ai-agents",
+        "platform-engineering",
+        "llm-ops"
+      ]
+    },
+    {
+      "author": "Devon Achebe",
+      "headline": "AI Infrastructure @ Anthropic | Writer on model deployment patterns",
+      "post_summary": "Posted a real cost breakdown from a production multi-agent system: a 7-agent pipeline running Sonnet 4.6 was burning $18k/month until they added a lightweight Haiku router that pre-classifies task complexity \u2014 dropped total spend to $3.2k/month with near-identical output quality. The key insight was that most tasks hitting Sonnet were genuinely Haiku-grade. Included a simple routing heuristic framework that's been forked hundreds of times on GitHub since posting.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 9100,
+        "comments": 774
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "cost-optimization",
+        "multi-agent",
+        "llm-routing"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | GTM Advisor | Revenue Intelligence",
+      "post_summary": "We ran a 90-day experiment: AI-written outbound vs. human-written outbound. The results surprised everyone. AI won on volume. Humans won on reply rate. But the real insight was what happened when we combined them \u2014 personalized signal-triggered AI drafts reviewed by reps before send. Pipeline from outbound jumped 34%.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "ai-sales",
+        "gtm-engineering"
+      ]
+    },
+    {
+      "author": "Gaetano DiNardi",
+      "headline": "VP Marketing | B2B Demand Gen | Pipeline-obsessed",
+      "post_summary": "Hot take: most RevOps teams are measuring the wrong thing. They're optimizing MQL-to-SQL conversion when the real bottleneck is ICP fit at the top. We ripped out our lead scoring model, replaced it with account-level intent + job change signals, and disqualification rate dropped 40% in 60 days. The funnel is fine. The data feeding it wasn't.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 1923,
+        "comments": 187
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "lead-scoring",
+        "demand-gen",
+        "icp"
+      ]
+    },
+    {
+      "author": "Tito Bohrt",
+      "headline": "Founder @ AltiSales | Cold Email Nerd | SDR Trainer",
+      "post_summary": "Everyone's building Clay tables. Almost nobody is building the system that runs AFTER Clay. Here's the infrastructure gap killing outbound in 2026: you scraped 10,000 accounts, enriched them, scored them \u2014 and then routed them into a sequence tool with no routing logic. The problem isn't data. It's the handoff from data to action. That's the GTM engineering layer most teams skip.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3104,
+        "comments": 429
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "gtm-engineering",
+        "outbound-automation",
+        "clay",
+        "sales-ops"
+      ]
+    },
+    {
+      "author": "Asia Orangio",
+      "headline": "CEO @ DemandMaven | SaaS Growth Advisor | ex-ProfitWell",
+      "post_summary": "Content that converts in 2026 looks nothing like content that ranked in 2022. We stopped writing SEO-first blog posts for a SaaS client and replaced the budget with a LinkedIn thought leadership program + weekly newsletter. Organic pipeline from content went up 3x in one quarter. The channel isn't dead \u2014 the format is. Search engines want answers. Buyers want perspective.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2211,
+        "comments": 263
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "b2b-marketing",
+        "pipeline",
+        "thought-leadership"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Indie hacker | Built and sold 2 SaaS tools | Now building my third",
+      "post_summary": "Priya shares that her solo-built tool just hit $10k MRR after 14 months of building in public with zero paid ads. She breaks down the exact content strategy that drove organic signups and why she almost quit at month 9. The post ends with a teardown of her first 100 paying customers.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "SaaS",
+        "solofounder"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Ex-teacher \u2192 software engineer in 18 months | Writing about the real transition",
+      "post_summary": "Marcus documents the moment he accepted his first engineering offer after teaching high school history for 11 years. He shares the rejection count (47), the one thing bootcamp didn't teach him, and the specific GitHub project that finally landed the interview. Authentic and unglamorous.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11800,
+        "comments": 892
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "softwareengineer",
+        "bootcamp",
+        "techcareer"
+      ]
+    },
+    {
+      "author": "Daniel Osei",
+      "headline": "Founder @ Stacklane | Building AI-native dev tools | Prev eng @ Stripe",
+      "post_summary": "Daniel posts a screenshot of Claude Code autonomously shipping a full feature end-to-end with no human intervention and asks whether senior engineers are actually reviewing AI-generated PRs or just rubber-stamping them. He argues the real bottleneck is now code review bandwidth, not code generation. Spicy take that splits the comments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3600,
+        "comments": 541
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "AItools",
+        "claudecode",
+        "devtools",
+        "softwaredevelopment"
+      ]
+    },
+    {
+      "author": "Leila Hamdan",
+      "headline": "Building Recalibrate in public | Former PM \u2192 solo founder | $0 to first revenue",
+      "post_summary": "Leila shares week 22 of her building-in-public series: she finally charged her first customer $49 after months of free beta users and nearly refunded it out of imposter syndrome. She reflects on the psychological gap between building something and calling yourself a founder. Raw and specific with screenshots of the Stripe notification.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7100,
+        "comments": 624
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "solofounder",
+        "firstrevenue",
+        "founderlife"
+      ]
+    }
+  ]
+}
