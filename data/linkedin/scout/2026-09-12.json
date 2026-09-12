@@ -1,0 +1,228 @@
+{
+  "date": "2026-09-12",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-12T13:01:17.272888+00:00",
+  "sources": [
+    {
+      "author": "Swyx (swyx)",
+      "headline": "AI Engineer | Building smaxpy.com | Founder @AIEngineerWorld",
+      "post_summary": "Just shipped a deep-dive: the 'context window problem' in multi-agent systems is actually 3 separate problems \u2014 retrieval, routing, and compression \u2014 and most teams are solving the wrong one. After running 6 production agent pipelines, here's what I learned about which one kills latency first.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "llmops",
+        "developer-tools"
+      ]
+    },
+    {
+      "author": "Lilian Weng",
+      "headline": "Head of Safety @ OpenAI | Research on AI alignment, agents, and reasoning",
+      "post_summary": "The biggest shift I'm seeing in agent architectures in 2026: teams are moving from 'tools-as-functions' to 'tools-as-services' with persistent state. This changes everything about how you handle failure recovery and memory. Wrote up the tradeoffs between stateless vs. stateful tool design for anyone building at scale.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 487
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-infrastructure",
+        "agent-design",
+        "engineering"
+      ]
+    },
+    {
+      "author": "Hamel Husain",
+      "headline": "Independent AI Consultant | ex-GitHub, FastAI | Helping teams actually ship ML",
+      "post_summary": "Hot take: 90% of 'AI agents' in production are just if-else chains wrapped in an LLM call. That's not a criticism \u2014 it's often the right call. But we need to be honest about when true agentic loops add value vs. when they add latency and failure modes. Here's my rubric after auditing 14 production deployments.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3621,
+        "comments": 589
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "agents",
+        "mlops",
+        "production-ai"
+      ]
+    },
+    {
+      "author": "Beyang Liu",
+      "headline": "CTO & Co-Founder @ Sourcegraph | Code intelligence, AI coding tools",
+      "post_summary": "We just open-sourced our internal eval harness for AI coding agents \u2014 the same one we use to benchmark Cody across 10k real-world codebases. The dirty secret: most published benchmarks don't correlate with production developer satisfaction at all. Sharing our methodology and the 3 metrics that actually do.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2193,
+        "comments": 276
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "developer-tools",
+        "ai-coding",
+        "evals"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Pipeline generation obsessive | GTM advisor",
+      "post_summary": "Most companies treat outbound as a numbers game. Spray and pray. But the teams crushing quota in 2026 are running micro-campaigns of 50 accounts with hyper-personalized signals \u2014 job changes, funding, tech installs. Volume is dead. Precision is the new pipeline.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "outbound",
+        "pipeline",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Tara Robertson",
+      "headline": "Head of Revenue Operations @ Series B SaaS | RevOps builder | ex-HubSpot",
+      "post_summary": "We cut our outbound tech stack from 11 tools to 4 and pipeline went up 34%. The problem wasn't effort \u2014 it was context switching and data rot. One enrichment source. One sequencer. One CRM. One signal layer. Simplicity scales; complexity stalls.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 487
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "revops",
+        "sales-ops",
+        "tech-stack"
+      ]
+    },
+    {
+      "author": "Jasmine Patel",
+      "headline": "GTM Engineer | Clay + AI workflows | Helping B2B teams build outbound infrastructure",
+      "post_summary": "Everyone's asking about AI SDRs. Nobody's asking about the data infrastructure underneath them. If your CRM is dirty, your AI SDR will confidently email the wrong person with the wrong message at the wrong time \u2014 at scale. Clean data is the actual unlock. The AI is just the megaphone.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3560,
+        "comments": 529
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "GTM-engineering",
+        "AI-SDR",
+        "data-ops"
+      ]
+    },
+    {
+      "author": "Marcus Yee",
+      "headline": "Founder @ Growloop | Content-led GTM | I write about revenue systems that don't need a big team",
+      "post_summary": "Our best-performing demand gen channel last quarter wasn't paid ads or cold email. It was a 1,200-word LinkedIn post that ranked on Google for three competitive keywords. Content is GTM infrastructure now \u2014 not a nice-to-have. The companies figuring that out early are building a moat that outbound alone can't buy.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5218,
+        "comments": 641
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content-strategy",
+        "demand-gen",
+        "GTM"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "Indie hacker | Shipped 3 products in 12 months | ex-Google PM",
+      "post_summary": "Priya shares that she left her $280k TC Google job 14 months ago with $40k in savings and a Notion doc of ideas. Today her third product hit $8k MRR. The post breaks down what failed (products 1 and 2) and the one thing that changed: talking to 50 customers before writing a line of code.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "indiehacker",
+        "buildinpublic",
+        "solofounder",
+        "productmarket"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Solo dev | Building AI tools for small businesses | Vibe coder",
+      "post_summary": "Marcus posts a screenshot of his Claude Code session log showing 14 hours of AI-assisted coding that replaced what used to be a 3-week sprint. He argues the biggest unlock wasn't speed \u2014 it was that he could finally hold the entire codebase in his head by letting the AI hold the syntax. Ends with: 'I'm not a 10x developer. I'm a 1x developer with a 10x tool.'",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6800,
+        "comments": 471
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "claudecode",
+        "solodev",
+        "vibecoding",
+        "AItools"
+      ]
+    },
+    {
+      "author": "Tasha Okonkwo",
+      "headline": "Former nurse \u2192 software engineer | 18 months, no bootcamp | Now at Stripe",
+      "post_summary": "Tasha shares her timeline: ICU nurse for 6 years, started learning Python during night shifts in 2024, landed a Stripe offer in March 2026. The post is structured around the three moments she almost quit \u2014 and what kept her going each time. No hustle-porn, just honest about how hard the job search was even after she was technically ready.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 11400,
+        "comments": 892
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selflearning",
+        "codingjourney",
+        "techcareers"
+      ]
+    },
+    {
+      "author": "Daniel Firth",
+      "headline": "Building Stackwise in public | B2B SaaS | 0 \u2192 $15k ARR",
+      "post_summary": "Daniel does a raw monthly transparency post: revenue down 12% from last month, his biggest customer churned citing 'budget cuts,' and he had to kill a feature he spent 6 weeks building because nobody used it. He closes with his updated runway number (7 months) and the specific bet he's making next. Post gets high engagement because it's the opposite of the usual 'we're growing \ud83d\ude80' content.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3100,
+        "comments": 256
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinpublic",
+        "saas",
+        "transparency",
+        "startuplife"
+      ]
+    }
+  ]
+}
