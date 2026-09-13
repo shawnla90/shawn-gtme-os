@@ -1,0 +1,235 @@
+{
+  "date": "2026-09-13",
+  "posts_found": 12,
+  "engine": "claude-fallback",
+  "scouted_at": "2026-09-13T13:01:14.158129+00:00",
+  "sources": [
+    {
+      "author": "Swyx (Shawn Wang)",
+      "headline": "AI Engineer | Latent Space Podcast | Founder @smol.ai",
+      "post_summary": "Wrote up why 'agent frameworks' are collapsing into LLM providers themselves. OpenAI has Assistants, Anthropic has the Agent SDK, Google has Vertex AI Agents. In 12 months the middleware layer disappears. The moat is evals and memory, not orchestration.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4200,
+        "comments": 318
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "llm",
+        "developer-tools",
+        "infrastructure"
+      ]
+    },
+    {
+      "author": "Lior Ben David",
+      "headline": "AI Tools & Automation | Helping 50k+ professionals ship faster with AI",
+      "post_summary": "I ran the same 10-step agentic workflow across Claude Code, Cursor, and Devin. Claude Code finished in 4 min with zero hallucinations. Cursor took 9 min and broke one test. Devin... still running. Sharing the full benchmark breakdown and what actually matters when picking a coding agent for production.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 7800,
+        "comments": 541
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "claude-code",
+        "coding-agents",
+        "developer-tools",
+        "automation"
+      ]
+    },
+    {
+      "author": "Cassie Kozyrkov",
+      "headline": "Chief Decision Scientist | AI Strategy | Ex-Google | Speaker",
+      "post_summary": "Everyone is hiring 'AI engineers' but almost no one can define what that role actually owns. Is it prompt engineering? Fine-tuning? Evals? Infra? I've interviewed 40 teams this year and the job description is meaningless 80% of the time. Here's the 3-question test I use to figure out if a company actually knows what they need.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 5300,
+        "comments": 429
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-engineering",
+        "hiring",
+        "ai-infrastructure",
+        "career"
+      ]
+    },
+    {
+      "author": "Simon Willison",
+      "headline": "Co-creator of Django | Building LLM tools | llm.datasette.io",
+      "post_summary": "The thing nobody talks about with multi-agent systems: token costs compound fast. A 3-agent pipeline each making 5 tool calls can burn $0.40 per run at current pricing. At 10k runs/day that's $1.4M/year just in inference. The hidden cost of agentic AI isn't the engineering \u2014 it's the API bill. Sharing my real numbers from production.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6100,
+        "comments": 387
+      },
+      "domain": "ai",
+      "relevance": "high",
+      "tags": [
+        "ai-agents",
+        "llm-costs",
+        "ai-infrastructure",
+        "automation"
+      ]
+    },
+    {
+      "author": "Kyle Coleman",
+      "headline": "CMO at Clari | Revenue Intelligence | GTM Strategy",
+      "post_summary": "AI SDRs aren't replacing human sellers \u2014 they're exposing which human sellers were never really selling. The reps who thrived on volume are panicking. The ones who built real relationships are thriving. Signal over noise always wins in the long run.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2847,
+        "comments": 312
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "AI SDR",
+        "sales",
+        "GTM engineering"
+      ]
+    },
+    {
+      "author": "Vin Matano",
+      "headline": "Outbound @ Demandbase | Building in public | GTM Nerd",
+      "post_summary": "I ran 3 cold email campaigns last quarter. One at 1,000 contacts, one at 500, one at 200. The 200-contact campaign had 6x the reply rate. Tighter ICP, sharper signal, better copy. Volume is a cope \u2014 precision is the real lever in modern outbound.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4102,
+        "comments": 487
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "cold email",
+        "outbound",
+        "ICP",
+        "sales ops"
+      ]
+    },
+    {
+      "author": "Lara Acosta",
+      "headline": "LinkedIn Organic Growth | Helped 300+ founders build personal brands | Content \u2260 fluff",
+      "post_summary": "Most B2B content fails because founders write for the algo, not for their buyer. The posts that actually convert pipeline are the ones that document a real decision you made and what happened. Earned insight beats polished insight every single time. Your LinkedIn is a sales call that scales.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6731,
+        "comments": 621
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "content strategy",
+        "LinkedIn",
+        "B2B marketing",
+        "personal brand"
+      ]
+    },
+    {
+      "author": "Jaakko Paalanen",
+      "headline": "CRO at Leadfeeder | Revenue Operations | Pipeline that actually closes",
+      "post_summary": "RevOps teams are sitting on a goldmine they're ignoring: the CRM graveyard. We audited 18 months of closed-lost deals and found 23% had buying signals in the last 90 days \u2014 new budget cycle, new hire, product mention on LinkedIn. Your best pipeline is already in your system. You just stopped looking.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3219,
+        "comments": 278
+      },
+      "domain": "gtm",
+      "relevance": "high",
+      "tags": [
+        "RevOps",
+        "pipeline",
+        "CRM",
+        "revenue operations"
+      ]
+    },
+    {
+      "author": "Lena Park",
+      "headline": "Solo founder | Building Formly \u2014 AI form builder | $0 to $8k MRR in 6 months",
+      "post_summary": "Lena shares her monthly revenue milestone post: hit $8k MRR with zero paid ads, just building in public on LinkedIn and X. Breaks down exactly which three distribution channels drove signups, with screenshots of her Stripe dashboard and a candid reflection on the month she almost quit.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 3400,
+        "comments": 287
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "buildinginpublic",
+        "solofounder",
+        "mrr",
+        "indiehacker"
+      ]
+    },
+    {
+      "author": "Marcus Webb",
+      "headline": "Ex-accountant \u2192 self-taught developer | Shipped 3 SaaS tools | Writing about the pivot",
+      "post_summary": "Marcus posts a 'one year ago today' reflection on leaving a 12-year accounting career to learn to code at 34. He lists the exact resources he used, the first $1 he made online, and the moment he realized the career change was actually working. Raw, specific, no-hype tone.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 6100,
+        "comments": 512
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "careerpivot",
+        "selftaught",
+        "techcareer",
+        "buildinginpublic"
+      ]
+    },
+    {
+      "author": "Priya Nair",
+      "headline": "PM turned founder | Building Contextly \u2014 AI meeting notes for operators | YC S26",
+      "post_summary": "Priya shares a 'things I got wrong about building a product' post after YC Demo Day. She lists five assumptions she made as a PM that didn't hold when she became the founder \u2014 including why user interviews lie and why your first 10 customers should feel like a weird support group. Each point is specific and counterintuitive.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 4800,
+        "comments": 341
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "ycombinator",
+        "productmanagement",
+        "founder",
+        "startups"
+      ]
+    },
+    {
+      "author": "Dev Ramirez",
+      "headline": "Developer Advocate | Shipping side projects publicly | AI tooling obsessed",
+      "post_summary": "Dev posts a real-time build log: 'built and shipped a Claude Code plugin in a Saturday afternoon, here's the exact 6-step process with timestamps.' Includes what broke, what he Googled, and a working GitHub link at the end. The transparency and speed make it immediately shareable in developer communities.",
+      "url": "",
+      "search_url": "",
+      "engagement": {
+        "likes": 2900,
+        "comments": 198
+      },
+      "domain": "builders",
+      "relevance": "high",
+      "tags": [
+        "claudecode",
+        "devtools",
+        "buildinpublic",
+        "AI"
+      ]
+    }
+  ]
+}
