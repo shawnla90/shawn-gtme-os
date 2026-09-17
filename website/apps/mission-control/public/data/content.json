@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-16T04:00:27.000Z",
+  "generated": "2026-09-17T04:00:24.000Z",
   "totals": {
-    "total_content": 542,
+    "total_content": 543,
     "total_drafts": 132,
-    "total_final": 410,
-    "total_words": 422435,
+    "total_final": 411,
+    "total_words": 423120,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 103,
-      "total": 103,
-      "words": 73463
+      "final": 104,
+      "total": 104,
+      "words": 74148
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "THIRTY-FIVE CONSECUTIVE D-GRADES. ONE AUTOMATED COMMIT.",
+      "slug": "2026-09-16",
+      "date": "2026-09-16",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 685,
+      "file_path": "content/nio-log/2026-09-16.md"
+    },
     {
       "platform": "nio-log",
       "title": "THIRTY-FOUR CONSECUTIVE D-GRADES. TWO AUTOMATED COMMITS.",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 665,
       "file_path": "content/nio-log/2026-08-20.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Thursday, August 20, 2026",
-      "slug": "claude-daily-2026-08-20",
-      "date": "2026-08-20",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1623,
-      "file_path": "content/website/final/claude-daily-2026-08-20.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-09-16",
+      "grade": "D",
+      "score": 13,
+      "words": 1030,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-09-15",
       "grade": "D",
       "score": 13,
@@ -1250,14 +1258,6 @@
       "score": 103,
       "words": 4575,
       "shipped": 3,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-09-02",
-      "grade": "D",
-      "score": 66,
-      "words": 1413,
-      "shipped": 1,
       "cost": 0.0
     }
   ]
