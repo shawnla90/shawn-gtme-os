@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-18T11:00:03.736202+00:00",
+  "last_updated": "2026-09-18T21:30:07.761526+00:00",
   "runs": {
     "morning": {
       "agent": "crypto-signal",
@@ -69,6 +69,75 @@
       "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
       "model": "rule-based-v1",
       "period": "morning"
+    },
+    "evening": {
+      "agent": "crypto-signal",
+      "timestamp": "2026-09-18T21:30:07.761526+00:00",
+      "date": "2026-09-18",
+      "test_mode": false,
+      "market_snapshot": {
+        "btc_dominance_pct": 58.37,
+        "total_market_cap_usd": 2781021963819.0,
+        "fear_greed_index": 56,
+        "fear_greed_label": "Greed",
+        "assets": {
+          "BTC": {
+            "price_usd": 81177,
+            "change_24h_pct": 6.1,
+            "market_cap_usd": 1630529546401.0
+          },
+          "ETH": {
+            "price_usd": 2632.89,
+            "change_24h_pct": 7.44,
+            "market_cap_usd": 321368198804.0
+          },
+          "SOL": {
+            "price_usd": 113.42,
+            "change_24h_pct": 12.04,
+            "market_cap_usd": 66611464501.0
+          }
+        }
+      },
+      "signals": [
+        {
+          "asset": "BTC",
+          "price_usd": 81177,
+          "change_24h_pct": 6.1,
+          "action": "hold",
+          "confidence": 0.3,
+          "reasoning": [
+            "no significant signals \u2014 default hold"
+          ]
+        },
+        {
+          "asset": "ETH",
+          "price_usd": 2632.89,
+          "change_24h_pct": 7.44,
+          "action": "hold",
+          "confidence": 0.3,
+          "reasoning": [
+            "no significant signals \u2014 default hold"
+          ]
+        },
+        {
+          "asset": "SOL",
+          "price_usd": 113.42,
+          "change_24h_pct": 12.04,
+          "action": "watch",
+          "confidence": 0.4,
+          "reasoning": [
+            "24h pump 12.0%"
+          ]
+        }
+      ],
+      "reddit_sentiment": {
+        "post_count": 0,
+        "avg_score": 0,
+        "top_topics": []
+      },
+      "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
+      "model": "rule-based-v1",
+      "period": "evening"
     }
   }
 }
