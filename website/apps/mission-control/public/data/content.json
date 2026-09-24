@@ -1,10 +1,10 @@
 {
-  "generated": "2026-09-23T04:00:29.000Z",
+  "generated": "2026-09-24T04:00:28.000Z",
   "totals": {
-    "total_content": 549,
+    "total_content": 550,
     "total_drafts": 132,
-    "total_final": 417,
-    "total_words": 427217,
+    "total_final": 418,
+    "total_words": 427946,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 110,
-      "total": 110,
-      "words": 78245
+      "final": 111,
+      "total": 111,
+      "words": 78974
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "FORTY-TWO CONSECUTIVE D-GRADES. ONE AUTOMATED COMMIT.",
+      "slug": "2026-09-23",
+      "date": "2026-09-23",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 729,
+      "file_path": "content/nio-log/2026-09-23.md"
+    },
     {
       "platform": "nio-log",
       "title": "FORTY-ONE CONSECUTIVE D-GRADES. ONE AUTOMATED COMMIT.",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 632,
       "file_path": "content/nio-log/2026-08-24.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Monday, August 24, 2026",
-      "slug": "claude-daily-2026-08-24",
-      "date": "2026-08-24",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1629,
-      "file_path": "content/website/final/claude-daily-2026-08-24.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-09-23",
+      "grade": "D",
+      "score": 13,
+      "words": 1030,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-09-22",
       "grade": "D",
       "score": 13,
@@ -1249,14 +1257,6 @@
       "grade": "D",
       "score": 28,
       "words": 1125,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-09-09",
-      "grade": "D",
-      "score": 43,
-      "words": 1174,
       "shipped": 0,
       "cost": 0.0
     }
