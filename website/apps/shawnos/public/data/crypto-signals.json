@@ -1,15 +1,15 @@
 {
-  "last_updated": "2026-09-29T11:00:03.739168+00:00",
+  "last_updated": "2026-09-30T00:30:05.279386+00:00",
   "runs": {
-    "morning": {
+    "evening": {
       "agent": "crypto-signal",
-      "timestamp": "2026-09-29T11:00:03.739168+00:00",
-      "date": "2026-09-29",
+      "timestamp": "2026-09-30T00:30:05.279386+00:00",
+      "date": "2026-09-30",
       "test_mode": false,
       "market_snapshot": {
-        "btc_dominance_pct": 58.77,
-        "total_market_cap_usd": 2869181072014.0,
-        "fear_greed_index": 73,
+        "btc_dominance_pct": 58.39,
+        "total_market_cap_usd": 2865535198566.0,
+        "fear_greed_index": 71,
         "fear_greed_label": "Greed",
         "assets": {
           "BTC": {
@@ -68,7 +68,7 @@
       },
       "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
       "model": "rule-based-v1",
-      "period": "morning"
+      "period": "evening"
     }
   }
 }
