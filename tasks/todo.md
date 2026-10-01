@@ -204,3 +204,16 @@
 - Saved an 88-word LinkedIn first-comment TLDR with the Apollo partnership disclosure and approved influencer UTM.
 - Verified zero anti-slop flags, zero safety hits, ASCII-safe copy, valid manifest JSON, and HTTP 200 from the tracked Apollo Anywhere link.
 - Confirmed the macOS clipboard matches the saved comment byte-for-byte.
+
+## 2026-10-01 ApolloNEXT content pack (creator contract: newsletter, article, post, reddit)
+
+- [x] Load voice system, playbooks, prior Apollo pack notes, agent routing.
+- [x] Fact-check ApolloNEXT, Curl CEO, Builder Studio, Messaging OS, Website Visitors, API params, Willy Hernandez (subagent). Sheet: `reports/2026-10-01_apollo-next-pack/research.md`.
+- [x] Lock decisions + deliverable map + agent routing: `reports/2026-10-01_apollo-next-pack/CONTEXT.md`.
+- [x] Build ungated receipt: `scripts/apollo/title_search_workflow.py` (search -> dedupe -> title post-filter -> domain cap -> optional enrich). Compile, dry-run, filter checks pass.
+- [x] Draft LinkedIn newsletter: `content/linkedin/drafts/2026-10-01_apollo-next-newsletter.md`.
+- [ ] Reviewer pass (anti-slop 29, safety, substance) on newsletter.
+- [ ] Shawn approves newsletter.
+- [ ] Wave 2 on approval: Apollo channel post, GTME play post, r/GTMBuilders post.
+- [ ] Blog article via `/publish-blog` from approved newsletter.
+- [ ] Cover + screenshots. Pre-publish checklist. Brand Affiliate label.
