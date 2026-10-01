@@ -12,7 +12,7 @@ visual: cover 1200x627 (ApolloNEXT lockup, same style as the July pack) + 1 conf
 # Title options
 
 1. Apollo just told the builders they are the roadmap
-2. the most important tool in an agency stack doubled down on the people who build with it
+2. if you run an agency, Apollo is the stack. ApolloNEXT made that louder
 3. I asked Apollo's CEO if small shops still matter, then went home and wrote a script
 
 **Subtitle:** Learnings from ApolloNEXT: initial reactions
@@ -21,7 +21,7 @@ visual: cover 1200x627 (ApolloNEXT lockup, same style as the July pack) + 1 conf
 
 [INSERT IMAGE: cover 1200x627, drop at the very top]
 
-Disclosure first. I am on a content creator contract with Apollo. It started the organic way: I posted on Reddit about what I was doing with their API, people kept asking questions, and Apollo noticed. Nothing in this issue was reviewed by them before I wrote it. Take the opinion with that context.
+Disclosure first. I am on a content creator contract with Apollo. It started the organic way: I posted on Reddit about what I was doing with their API, people kept asking questions, and Apollo noticed. Nothing in this issue was reviewed by them before I wrote it. Read it with that in mind.
 
 **TL;DR**
 
@@ -39,29 +39,29 @@ Messaging OS is the execution side. It reads buying signals and decides who gets
 
 The Intelligence Layer is the part that makes both of those possible. It is the signal and data engine underneath. Website visits, job changes, hiring, tech stack, all feeding one place.
 
-My honest read: I build versions of these pieces myself with Python and SQLite, and I will keep doing that for clients who need control. Builder Studio is the one that got my attention, because the people it serves are the operators who were never going to open a terminal. If it actually writes real code on real Apollo data, that is a different category of tool than a drag-and-drop workflow builder. First test when the beta opens up for me: can it reproduce my title filter workflow (below) without me writing a line?
+I build versions of these pieces myself with Python and SQLite, and I will keep doing that for clients who need control. Builder Studio is the one that got my attention, because the people it serves are the operators who were never going to open a terminal. If it writes real code on real Apollo data, it belongs in a different bucket from a drag-and-drop workflow builder, and the benchmark I will run is at the bottom of this issue.
 
 ## Apollo and agencies
 
-Walk the floor at ApolloNEXT and count the agency logos. Outbound shops, RevOps consultancies, fractional GTM teams. That is who Apollo is building for, and it has been that way for a while. If you run an agency, Apollo is the most important tool in your stack. Data, sequencing, dialer, and now the build surface, in one bill your clients already understand.
+The room at ApolloNEXT was heavy on agencies. Outbound shops, RevOps consultancies, fractional GTM teams. That is who Apollo is building for, and it has been that way for a while. If you run an agency, Apollo is the most important tool in your stack: data, sequencing, dialer, and now the build surface, on one bill your clients already understand.
 
-The new announcements double down on that. Builder Studio is essentially a way for an agency to ship client-specific tooling on Apollo's rails instead of stitching four subscriptions together.
+The new announcements double down on that. Builder Studio gives an agency a way to ship client-specific tooling on Apollo's rails instead of stitching four subscriptions together.
 
 [INSERT IMAGE: conference photo, floor or panel]
 
 ## Meeting Matt Curl
 
-Matt Curl moved from COO to CEO in February. Tim Zheng, who founded the company, is chairman now. Curl advised Apollo for years before joining full time, and he came up through go-to-market, not through a finance seat.
+Matt Curl moved from COO to CEO in February. Tim Zheng, who founded the company, is chairman now. Curl advised Apollo for years before joining full time, and his background is go-to-market.
 
 I got to talk to him in person. He told us the story of how the CEO move happened, and he took questions. Mine was the one a small operator asks: does a one-person shop still matter to a company at your size?
 
-The answer was yes, and it was specific. [SHAWN: paste the exact line if you want a direct quote. Otherwise this paraphrase stands.] The mission to build for SMBs and the people who serve them is not slide-deck language for him. The way he talked about transparency with customers, about pricing, about the fact that everyone in the room is building something and needs data providers that do not get in the way, matched what I have seen from the company for two and a half years.
+He said yes, and he explained why: SMBs and the people who serve them are the customer base Apollo grew on, and the plan is to keep building for them. [SHAWN: paste the exact line here if you want a direct quote. Otherwise this paraphrase stands.] He talked about transparency with customers, about pricing, and about the fact that everyone in the room is building something and needs data providers that do not get in the way. That is what I have seen from the company for two and a half years, so hearing it from the CEO, unprompted, to a one-person shop, landed.
 
-That matters more than any single feature. Plenty of GTM tools are run by people who have not sent a cold email in a decade. This one is not.
+The person running one of the most important GTM tools in the space has done the job the tool is for. That shapes the roadmap more than any single feature does.
 
 ## The backstory, briefly
 
-In January I left my agency. Great agency, great people. We worked very closely with one vendor that has a great product, and that closeness started to shape the work. At the end of the day I am a go-to-market engineer. I work for the client, not the vendor.
+In January I left my agency. It was a good agency with good people. We worked very closely with one vendor, and that vendor has a strong product. My own direction changed. I am a go-to-market engineer, and I work for the client, not the vendor.
 
 Apollo has never asked me to work for them. They have never gotten in the way of a client build or made it look like I was supposed to push something. That is the whole reason the relationship became a contract instead of ending.
 
@@ -71,7 +71,7 @@ For context on who is saying this: three and a half years in this industry, ten 
 
 I have used Apollo heavily for two and a half years. Since January, the heavy use moved to the API through Claude Code. Filter by title, seniority, geo, company size, time in seat. Build your own intent waterfall: free web fingerprint first, Apollo on the rows worth paying for, verify, then push.
 
-Two things I noticed this quarter. Website visitor identification got real. Company-level is free, person-level is a paid add-on, and the June release added a workflows tab and UTM attribution. The same search endpoint I already script against now exposes visitor filters (intent level, pages visited, confidence tier), which means web traffic becomes one more column in a Python script instead of a separate dashboard.
+Two things I noticed this quarter. Website visitor identification is now worth evaluating. Company-level is free, person-level is a paid add-on, and the June release added a workflows tab and UTM attribution. The same search endpoint I already script against now exposes visitor filters (intent level, pages visited, confidence tier), which means web traffic becomes one more column in a Python script instead of a separate dashboard.
 
 Willy Hernandez at The GTM Factory tested the visitor identification before I did and published what he found. If that is the piece you are evaluating, read his breakdown or reach out to him directly. [SHAWN: confirm spelling Willy vs. Willie, and whether to link his profile.]
 

@@ -212,7 +212,7 @@
 - [x] Lock decisions + deliverable map + agent routing: `reports/2026-10-01_apollo-next-pack/CONTEXT.md`.
 - [x] Build ungated receipt: `scripts/apollo/title_search_workflow.py` (search -> dedupe -> title post-filter -> domain cap -> optional enrich). Compile, dry-run, filter checks pass.
 - [x] Draft LinkedIn newsletter: `content/linkedin/drafts/2026-10-01_apollo-next-newsletter.md`.
-- [ ] Reviewer pass (anti-slop 29, safety, substance) on newsletter.
+- [x] Reviewer pass (anti-slop 29, safety, substance) on newsletter. 9 fixes applied; user-requested backstory, plumber line, and named people kept by design.
 - [ ] Shawn approves newsletter.
 - [ ] Wave 2 on approval: Apollo channel post, GTME play post, r/GTMBuilders post.
 - [ ] Blog article via `/publish-blog` from approved newsletter.
