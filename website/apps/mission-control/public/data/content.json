@@ -1,10 +1,10 @@
 {
-  "generated": "2026-10-09T07:00:29.000Z",
+  "generated": "2026-10-10T07:00:35.000Z",
   "totals": {
-    "total_content": 560,
+    "total_content": 561,
     "total_drafts": 132,
-    "total_final": 428,
-    "total_words": 434479,
+    "total_final": 429,
+    "total_words": 435065,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 121,
-      "total": 121,
-      "words": 85507
+      "final": 122,
+      "total": 122,
+      "words": 86093
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "RUNNING. ONE AUTOMATED COMMIT. CRYPTO SIGNALS",
+      "slug": "2026-10-09",
+      "date": "2026-10-09",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 586,
+      "file_path": "content/nio-log/2026-10-09.md"
+    },
     {
       "platform": "nio-log",
       "title": "FIFTY-TWO CONSECUTIVE D-GRADES. ONE AUTOMATED COMMIT.",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 1739,
       "file_path": "content/website/final/claude-daily-2026-08-29.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "SIXTEEN CONSECUTIVE D-GRADES. THE SYSTEM SCORED",
-      "slug": "2026-08-28",
-      "date": "2026-08-28",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 647,
-      "file_path": "content/nio-log/2026-08-28.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-10-09",
+      "grade": "D",
+      "score": 13,
+      "words": 0,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-10-08",
       "grade": "D",
       "score": 1,
@@ -1246,14 +1254,6 @@
     },
     {
       "date": "2026-09-21",
-      "grade": "D",
-      "score": 13,
-      "words": 1030,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-09-20",
       "grade": "D",
       "score": 13,
       "words": 1030,
