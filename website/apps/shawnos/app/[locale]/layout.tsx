@@ -83,6 +83,7 @@ const spaceGrotesk = Space_Grotesk({
 const personSchema = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': 'https://shawnos.ai/#person',
   name: 'Shawn Tenam',
   url: SITE_URL,
   jobTitle: 'GTM Engineer',
@@ -133,6 +134,7 @@ const personSchema = {
     },
   ],
   sameAs: [
+    'https://gitjutsu.com',
     'https://linkedin.com/in/shawntenam',
     'https://x.com/shawntenam',
     'https://shawntenam.substack.com',
@@ -162,6 +164,7 @@ const organizationSchema = {
     url: SITE_URL,
   },
   sameAs: [
+    'https://gitjutsu.com',
     'https://linkedin.com/in/shawntenam',
     'https://x.com/shawntenam',
     'https://github.com/shawnla90',
@@ -226,6 +229,7 @@ export default async function LocaleLayout({ children, params }: Props) {
           links={[
             { href: lp('/'), label: nav('home') },
             { href: 'https://clearbox.to', label: 'Clearbox' },
+            { href: 'https://gitjutsu.com', label: 'GitJutsu' },
             { href: lp('/blog'), label: nav('blog') },
             { href: lp('/shows'), label: 'Shows' },
             { href: lp('/cracked'), label: 'Cracked GTM' },
