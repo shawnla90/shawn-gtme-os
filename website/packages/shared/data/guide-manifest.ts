@@ -137,7 +137,8 @@ const chapters: GuideChapter[] = [
     subtitle: 'CLI vs MCP vs API. When each one is the right call, and why the answer depends on who you are more than what you’re doing.',
     part: 3,
     partTitle: 'The Operating System',
-    githubPath: 'chapters/11-pick-your-primitive.md',
+    // The repo renumbered its chapters; chapters/11-pick-your-primitive.md no longer exists there.
+    // Without a path the GitHub CTA links to the repo root instead of a 404.
   },
   {
     order: 12,
