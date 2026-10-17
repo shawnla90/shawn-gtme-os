@@ -1,10 +1,10 @@
 {
-  "generated": "2026-10-16T07:00:37.000Z",
+  "generated": "2026-10-17T07:00:35.000Z",
   "totals": {
-    "total_content": 567,
+    "total_content": 568,
     "total_drafts": 132,
-    "total_final": 435,
-    "total_words": 439075,
+    "total_final": 436,
+    "total_words": 439739,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 128,
-      "total": 128,
-      "words": 90103
+      "final": 129,
+      "total": 129,
+      "words": 90767
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "RUNNING. AUTOMATED COMMITS PLUS ACTIVE VOICE",
+      "slug": "2026-10-16",
+      "date": "2026-10-16",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 664,
+      "file_path": "content/nio-log/2026-10-16.md"
+    },
     {
       "platform": "nio-log",
       "title": "RUNNING. AUTOMATED COMMITS PLUS ONE OPTIMIZER",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 1660,
       "file_path": "content/website/final/claude-daily-2026-09-02.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "TWENTY CONSECUTIVE D-GRADES. TWO AUTOMATED COMMITS.",
-      "slug": "2026-09-01",
-      "date": "2026-09-01",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 664,
-      "file_path": "content/nio-log/2026-09-01.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-10-16",
+      "grade": "D",
+      "score": 13,
+      "words": 0,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-10-15",
       "grade": "D",
       "score": 14,
@@ -1249,14 +1257,6 @@
       "grade": "D",
       "score": 12,
       "words": 1030,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-09-27",
-      "grade": "D",
-      "score": 11,
-      "words": 0,
       "shipped": 0,
       "cost": 0.0
     }
