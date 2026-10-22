@@ -11,6 +11,7 @@ const socialLinks = [
   { href: 'https://www.tiktok.com/@shawnos.ai', label: 'TikTok' },
   { href: 'https://github.com/shawnla90', label: 'GitHub' },
   { href: 'https://reddit.com/r/GTMBuilders', label: 'Reddit' },
+  { href: 'https://gitjutsu.com', label: 'GitJutsu' },
 ]
 
 export function Footer({ siteName }: FooterProps) {

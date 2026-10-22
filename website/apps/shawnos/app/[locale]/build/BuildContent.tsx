@@ -288,11 +288,34 @@ export function BuildContent() {
           </p>
         </MotionReveal>
 
+        <MotionReveal variant="fadeUp" delay={0.5}>
+          <p
+            style={{
+              fontSize: 'clamp(13px, 1.4vw, 15px)',
+              color: 'var(--text-secondary)',
+              fontFamily: 'var(--font-mono)',
+              lineHeight: 1.7,
+              maxWidth: 580,
+              margin: '0 auto 40px',
+              padding: '14px 18px',
+              border: '1px dashed var(--border)',
+              borderRadius: '8px',
+            }}
+          >
+            looking for the embedded GTM engineering system (campaigns, workflows, signals and agents in a repo you own)?
+            that work lives at{' '}
+            <a href="https://gitjutsu.com/build" style={{ color: 'var(--accent)', textDecoration: 'underline' }}>
+              gitjutsu.com
+            </a>
+            .
+          </p>
+        </MotionReveal>
+
         <MotionReveal variant="fadeUp" delay={0.55}>
           <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', justifyContent: 'center' }}>
             <MagneticHover>
               <a
-                href="https://calendly.com/shawntenam/30min"
+                href="https://cal.com/shawn-lead-alchemy/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -683,7 +706,7 @@ export function BuildContent() {
           </p>
           <MagneticHover>
             <a
-              href="https://calendly.com/shawntenam/30min"
+              href="https://cal.com/shawn-lead-alchemy/30min"
               target="_blank"
               rel="noopener noreferrer"
               style={{
