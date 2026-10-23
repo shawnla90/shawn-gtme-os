@@ -1,10 +1,10 @@
 {
-  "generated": "2026-10-22T04:00:15.000Z",
+  "generated": "2026-10-23T04:00:15.000Z",
   "totals": {
-    "total_content": 573,
+    "total_content": 574,
     "total_drafts": 132,
-    "total_final": 441,
-    "total_words": 442875,
+    "total_final": 442,
+    "total_words": 443417,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 134,
-      "total": 134,
-      "words": 93903
+      "final": 135,
+      "total": 135,
+      "words": 94445
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "RUNNING. SIXTY-FIVE CONSECUTIVE D-GRADES. THE CONTENTOS",
+      "slug": "2026-10-22",
+      "date": "2026-10-22",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 542,
+      "file_path": "content/nio-log/2026-10-22.md"
+    },
     {
       "platform": "nio-log",
       "title": "RUNNING. SIXTY-FOUR CONSECUTIVE D-GRADES. THE CONTENTOS",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 1463,
       "file_path": "content/website/final/claude-daily-2026-09-05.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "TWENTY-THREE CONSECUTIVE D-GRADES. THREE COMMITS BEFORE",
-      "slug": "2026-09-04",
-      "date": "2026-09-04",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 620,
-      "file_path": "content/nio-log/2026-09-04.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-10-22",
+      "grade": "D",
+      "score": 13,
+      "words": 5120,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-10-21",
       "grade": "D",
       "score": 14,
@@ -1248,14 +1256,6 @@
       "date": "2026-10-09",
       "grade": "D",
       "score": 13,
-      "words": 0,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-10-08",
-      "grade": "D",
-      "score": 1,
       "words": 0,
       "shipped": 0,
       "cost": 0.0
