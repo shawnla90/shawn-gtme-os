@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-02T12:00:04.719693+00:00",
+  "last_updated": "2026-11-02T22:30:08.982166+00:00",
   "runs": {
     "morning": {
       "agent": "crypto-signal",
@@ -69,6 +69,75 @@
       "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
       "model": "rule-based-v1",
       "period": "morning"
+    },
+    "evening": {
+      "agent": "crypto-signal",
+      "timestamp": "2026-11-02T22:30:08.982166+00:00",
+      "date": "2026-11-02",
+      "test_mode": false,
+      "market_snapshot": {
+        "btc_dominance_pct": 59.25,
+        "total_market_cap_usd": 2603820630061.0,
+        "fear_greed_index": 37,
+        "fear_greed_label": "Fear",
+        "assets": {
+          "BTC": {
+            "price_usd": 76832,
+            "change_24h_pct": -1.0,
+            "market_cap_usd": 1544732301047.0
+          },
+          "ETH": {
+            "price_usd": 2252.79,
+            "change_24h_pct": 0.01,
+            "market_cap_usd": 275253087529.0
+          },
+          "SOL": {
+            "price_usd": 91.86,
+            "change_24h_pct": -1.63,
+            "market_cap_usd": 54194345890.0
+          }
+        }
+      },
+      "signals": [
+        {
+          "asset": "BTC",
+          "price_usd": 76832,
+          "change_24h_pct": -1.0,
+          "action": "hold",
+          "confidence": 0.3,
+          "reasoning": [
+            "no significant signals \u2014 default hold"
+          ]
+        },
+        {
+          "asset": "ETH",
+          "price_usd": 2252.79,
+          "change_24h_pct": 0.01,
+          "action": "hold",
+          "confidence": 0.3,
+          "reasoning": [
+            "no significant signals \u2014 default hold"
+          ]
+        },
+        {
+          "asset": "SOL",
+          "price_usd": 91.86,
+          "change_24h_pct": -1.63,
+          "action": "hold",
+          "confidence": 0.3,
+          "reasoning": [
+            "no significant signals \u2014 default hold"
+          ]
+        }
+      ],
+      "reddit_sentiment": {
+        "post_count": 0,
+        "avg_score": 0,
+        "top_topics": []
+      },
+      "disclaimer": "AI-generated analysis for informational purposes only. Not financial advice. Human reviews all signals before any action. No automated trading.",
+      "model": "rule-based-v1",
+      "period": "evening"
     }
   }
 }
