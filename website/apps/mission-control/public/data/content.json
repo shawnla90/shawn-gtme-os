@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-01T04:00:15.000Z",
+  "generated": "2026-11-02T05:00:18.000Z",
   "totals": {
-    "total_content": 583,
+    "total_content": 584,
     "total_drafts": 132,
-    "total_final": 451,
-    "total_words": 449357,
+    "total_final": 452,
+    "total_words": 449971,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 144,
-      "total": 144,
-      "words": 100385
+      "final": 145,
+      "total": 145,
+      "words": 100999
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "RUNNING. SEVENTY-FIVE CONSECUTIVE D-GRADES. NOVEMBER. THE",
+      "slug": "2026-11-01",
+      "date": "2026-11-01",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 614,
+      "file_path": "content/nio-log/2026-11-01.md"
+    },
     {
       "platform": "nio-log",
       "title": "RUNNING. SEVENTY-FOUR CONSECUTIVE D-GRADES. HAPPY HALLOWEEN.",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 742,
       "file_path": "content/nio-log/2026-09-10.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily: Thursday, September 10, 2026",
-      "slug": "claude-daily-2026-09-10",
-      "date": "2026-09-10",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1593,
-      "file_path": "content/website/final/claude-daily-2026-09-10.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-11-01",
+      "grade": "D",
+      "score": 13,
+      "words": 5120,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-10-31",
       "grade": "D",
       "score": 14,
@@ -1246,14 +1254,6 @@
     },
     {
       "date": "2026-10-19",
-      "grade": "D",
-      "score": 13,
-      "words": 2891,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-10-18",
       "grade": "D",
       "score": 13,
       "words": 2891,

@@ -1,6 +1,50 @@
 {
-  "generated": "2026-11-01T04:07:31.948Z",
+  "generated": "2026-11-02T05:07:35.163Z",
   "events": [
+    {
+      "id": "commit-3e107f7",
+      "title": "chore(crypto): evening signal update 2026-11-01",
+      "type": "system",
+      "datetime": "2026-11-01T17:30:18-05:00",
+      "status": "completed",
+      "description": "chore(crypto): evening signal update 2026-11-01",
+      "metadata": {
+        "commitHash": "3e107f7"
+      }
+    },
+    {
+      "id": "commit-29a6fa6",
+      "title": "feat: nio.log 2026-11-01 — automated daily post",
+      "type": "milestone",
+      "datetime": "2026-11-01T08:00:52-05:00",
+      "status": "completed",
+      "description": "feat: nio.log 2026-11-01 — automated daily post",
+      "metadata": {
+        "commitHash": "29a6fa6"
+      }
+    },
+    {
+      "id": "commit-d575465",
+      "title": "chore(crypto): morning signal update 2026-11-01",
+      "type": "system",
+      "datetime": "2026-11-01T07:00:08-05:00",
+      "status": "completed",
+      "description": "chore(crypto): morning signal update 2026-11-01",
+      "metadata": {
+        "commitHash": "d575465"
+      }
+    },
+    {
+      "id": "commit-f4ad25a",
+      "title": "chore: daily tracker scan 2026-10-31",
+      "type": "system",
+      "datetime": "2026-11-01T00:07:32-04:00",
+      "status": "completed",
+      "description": "chore: daily tracker scan 2026-10-31",
+      "metadata": {
+        "commitHash": "f4ad25a"
+      }
+    },
     {
       "id": "commit-ac0c560",
       "title": "chore: contentos optimizer - 2 improvements (2026-11-01)",
@@ -44,68 +88,13 @@
       "metadata": {
         "commitHash": "474c1ab"
       }
-    },
-    {
-      "id": "commit-29e3391",
-      "title": "chore: daily tracker scan 2026-10-30",
-      "type": "system",
-      "datetime": "2026-10-31T00:07:19-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-10-30",
-      "metadata": {
-        "commitHash": "29e3391"
-      }
-    },
-    {
-      "id": "commit-1e3a919",
-      "title": "chore(crypto): evening signal update 2026-10-30",
-      "type": "system",
-      "datetime": "2026-10-30T17:30:21-04:00",
-      "status": "completed",
-      "description": "chore(crypto): evening signal update 2026-10-30",
-      "metadata": {
-        "commitHash": "1e3a919"
-      }
-    },
-    {
-      "id": "commit-48a6049",
-      "title": "feat: nio.log 2026-10-30 — automated daily post",
-      "type": "milestone",
-      "datetime": "2026-10-30T08:01:00-04:00",
-      "status": "completed",
-      "description": "feat: nio.log 2026-10-30 — automated daily post",
-      "metadata": {
-        "commitHash": "48a6049"
-      }
-    },
-    {
-      "id": "commit-7ac1ab6",
-      "title": "chore(crypto): morning signal update 2026-10-30",
-      "type": "system",
-      "datetime": "2026-10-30T07:00:23-04:00",
-      "status": "completed",
-      "description": "chore(crypto): morning signal update 2026-10-30",
-      "metadata": {
-        "commitHash": "7ac1ab6"
-      }
-    },
-    {
-      "id": "commit-efe7254",
-      "title": "chore: daily tracker scan 2026-10-29",
-      "type": "system",
-      "datetime": "2026-10-30T00:07:43-04:00",
-      "status": "completed",
-      "description": "chore: daily tracker scan 2026-10-29",
-      "metadata": {
-        "commitHash": "efe7254"
-      }
     }
   ],
   "stats": {
-    "totalEvents": 9,
-    "completedEvents": 9,
+    "totalEvents": 8,
+    "completedEvents": 8,
     "scheduledEvents": 0,
-    "deploymentsThisWeek": 9,
+    "deploymentsThisWeek": 8,
     "upcomingCronJobs": 0
   }
 }
