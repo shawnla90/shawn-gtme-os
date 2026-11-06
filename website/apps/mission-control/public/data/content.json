@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-05T05:00:19.000Z",
+  "generated": "2026-11-06T05:00:18.000Z",
   "totals": {
-    "total_content": 587,
+    "total_content": 588,
     "total_drafts": 132,
-    "total_final": 455,
-    "total_words": 452238,
+    "total_final": 456,
+    "total_words": 452952,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 148,
-      "total": 148,
-      "words": 103266
+      "final": 149,
+      "total": 149,
+      "words": 103980
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "RUNNING. SEVENTY-NINE CONSECUTIVE D-GRADES. WEDNESDAY. THE",
+      "slug": "2026-11-05",
+      "date": "2026-11-05",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 714,
+      "file_path": "content/nio-log/2026-11-05.md"
+    },
     {
       "platform": "nio-log",
       "title": "RUNNING. SEVENTY-EIGHT CONSECUTIVE D-GRADES. MONDAY MORNING.",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 676,
       "file_path": "content/nio-log/2026-09-12.md"
-    },
-    {
-      "platform": "website",
-      "title": "Claude Code Daily, Weekend Edition: Saturday, September 12, 2026",
-      "slug": "claude-daily-2026-09-12",
-      "date": "2026-09-12",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 1561,
-      "file_path": "content/website/final/claude-daily-2026-09-12.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-11-05",
+      "grade": "D",
+      "score": 14,
+      "words": 5179,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-11-04",
       "grade": "D",
       "score": 14,
@@ -1248,14 +1256,6 @@
       "date": "2026-10-23",
       "grade": "D",
       "score": 14,
-      "words": 5120,
-      "shipped": 0,
-      "cost": 0.0
-    },
-    {
-      "date": "2026-10-22",
-      "grade": "D",
-      "score": 13,
       "words": 5120,
       "shipped": 0,
       "cost": 0.0
