@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-11T05:00:23.000Z",
+  "generated": "2026-11-12T05:00:25.000Z",
   "totals": {
-    "total_content": 593,
+    "total_content": 594,
     "total_drafts": 132,
-    "total_final": 461,
-    "total_words": 456588,
+    "total_final": 462,
+    "total_words": 457302,
     "platforms_active": 6,
     "cross_platform_groups": 37,
     "series_count": 4
@@ -12,9 +12,9 @@
   "pipeline": {
     "nio-log": {
       "draft": 0,
-      "final": 154,
-      "total": 154,
-      "words": 107616
+      "final": 155,
+      "total": 155,
+      "words": 108330
     },
     "website": {
       "draft": 1,
@@ -48,6 +48,17 @@
     }
   },
   "recent": [
+    {
+      "platform": "nio-log",
+      "title": "RUNNING. EIGHTY-FIVE CONSECUTIVE D-GRADES. VETERANS DAY.",
+      "slug": "2026-11-11",
+      "date": "2026-11-11",
+      "stage": "final",
+      "pillar": null,
+      "arc": null,
+      "word_count": 714,
+      "file_path": "content/nio-log/2026-11-11.md"
+    },
     {
       "platform": "nio-log",
       "title": "RUNNING. EIGHTY-FOUR CONSECUTIVE D-GRADES. THE STREAK",
@@ -586,17 +597,6 @@
       "arc": null,
       "word_count": 718,
       "file_path": "content/nio-log/2026-09-18.md"
-    },
-    {
-      "platform": "nio-log",
-      "title": "THIRTY-SIX CONSECUTIVE D-GRADES. ONE AUTOMATED COMMIT.",
-      "slug": "2026-09-17",
-      "date": "2026-09-17",
-      "stage": "final",
-      "pillar": null,
-      "arc": null,
-      "word_count": 610,
-      "file_path": "content/nio-log/2026-09-17.md"
     }
   ],
   "series": [
@@ -1149,6 +1149,14 @@
   ],
   "dailyStats": [
     {
+      "date": "2026-11-11",
+      "grade": "D",
+      "score": 13,
+      "words": 5179,
+      "shipped": 0,
+      "cost": 0.0
+    },
+    {
       "date": "2026-11-10",
       "grade": "D",
       "score": 13,
@@ -1251,14 +1259,6 @@
       "words": 5120,
       "shipped": 0,
       "cost": 0.01
-    },
-    {
-      "date": "2026-10-28",
-      "grade": "D",
-      "score": 13,
-      "words": 5120,
-      "shipped": 0,
-      "cost": 0.12
     }
   ]
 }
