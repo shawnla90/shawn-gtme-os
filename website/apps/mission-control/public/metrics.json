@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-27T05:07:25.681Z",
+  "generated": "2026-11-28T05:08:26.541Z",
   "system": {
     "status": "online",
     "uptime": "live",
@@ -12,16 +12,11 @@
   },
   "calendar": [
     {
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "events": [
         {
           "time": "8:00 AM",
           "event": "nio.terminal blog generation",
-          "type": "automated"
-        },
-        {
-          "time": "6:00 AM",
-          "event": "Morning briefing scan",
           "type": "automated"
         },
         {
